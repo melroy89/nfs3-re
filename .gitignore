@@ -1,0 +1,25 @@
+# Game installation and assets remain local.
+/nfs3_decomp.rep/Electronic Arts/
+
+# Per-user Ghidra workspace and window/tool state.
+/nfs3_decomp.rep/user/
+/nfs3_decomp.rep/projectState
+
+# Ghidra locks, temporary database files, and recovery backups.
+*.lock
+*.lock~
+**/tmp*.ps
+**/~index.bak
+**/~journal.bak
+
+# Editor and OS temporary files.
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+
+# Keep nfs3_decomp.gpr and the shared files under nfs3_decomp.rep/:
+# project.prp, idata/ (including ~index.dat and db.*.gbf), and versioned/.

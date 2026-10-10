@@ -1,0 +1,11 @@
+# Keep original game files and Ghidra storage untouched; normalize public text only.
+*.md text eol=lf
+*.py text eol=lf
+*.java text eol=lf
+/.gitignore text eol=lf
+/.gitattributes text eol=lf
+/LICENSE text eol=lf
+/NOTICE text eol=lf
+
+# Ghidra database storage is binary and must retain its exact bytes.
+*.gbf binary

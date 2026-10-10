@@ -1,0 +1,12 @@
+NFS III decompilation research
+Copyright 2026 Melroy van den Berg and contributors
+
+Original project contributions are licensed under the Apache License, Version 2.0.
+
+Research target: Need for Speed III: Hot Pursuit, based on VEG's Modern Patch.
+Electronic Arts and VEG retain their respective rights in their work.
+The standalone game installation is excluded. The included Ghidra databases
+contain imported third-party program bytes; those bytes are not licensed by
+this project's Apache-2.0 license. Redistribution rights require separate review.
+Ghidra is a separate tool; it is not bundled here.
+No affiliation or endorsement by these parties is claimed.
