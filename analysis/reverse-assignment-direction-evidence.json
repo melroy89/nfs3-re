@@ -1,0 +1,102 @@
+{
+  "method": "Retained samples plus assembly004028e0 and00401430; no new runtime reads",
+  "limitation": "Positive finite base assumed for sign prediction. Desired+7b0 was not sampled; later0040bff0 may change it. Segment movement is observed, not instruction traced.",
+  "observations": [
+    {
+      "source": "reverse-strip-announcement.json",
+      "tick": 19855,
+      "master": 2,
+      "segment": 236,
+      "assignment_start": 230,
+      "wrapped_start_minus_current": -6,
+      "direction_bit": true,
+      "reverse": 1,
+      "state": 1,
+      "predicted_cruise_sign_for_positive_base": 1
+    },
+    {
+      "source": "reverse-strip-announcement.json",
+      "tick": 20067,
+      "master": 2,
+      "segment": 247,
+      "assignment_start": 230,
+      "wrapped_start_minus_current": -17,
+      "direction_bit": true,
+      "reverse": 1,
+      "state": 1,
+      "predicted_cruise_sign_for_positive_base": 1
+    },
+    {
+      "source": "reverse-strip-announcement.json",
+      "tick": 20355,
+      "master": 2,
+      "segment": 271,
+      "assignment_start": 230,
+      "wrapped_start_minus_current": -41,
+      "direction_bit": true,
+      "reverse": 1,
+      "state": 1,
+      "predicted_cruise_sign_for_positive_base": 1
+    },
+    {
+      "source": "reverse-strip-announcement.json",
+      "tick": 22763,
+      "master": 7,
+      "segment": 1173,
+      "assignment_start": 1167,
+      "wrapped_start_minus_current": -6,
+      "direction_bit": true,
+      "reverse": 1,
+      "state": 1,
+      "predicted_cruise_sign_for_positive_base": 1
+    },
+    {
+      "source": "reverse-strip-announcement.json",
+      "tick": 23720,
+      "master": 7,
+      "segment": 1247,
+      "assignment_start": 1167,
+      "wrapped_start_minus_current": -80,
+      "direction_bit": true,
+      "reverse": 1,
+      "state": 1,
+      "predicted_cruise_sign_for_positive_base": 1
+    },
+    {
+      "source": "reverse-third-strip-attempt.json",
+      "tick": 32315,
+      "master": 7,
+      "segment": 133,
+      "assignment_start": 126,
+      "wrapped_start_minus_current": -7,
+      "direction_bit": true,
+      "reverse": 1,
+      "state": 1,
+      "predicted_cruise_sign_for_positive_base": 1
+    },
+    {
+      "source": "reverse-third-strip-attempt.json",
+      "tick": 33000,
+      "master": 7,
+      "segment": 187,
+      "assignment_start": 126,
+      "wrapped_start_minus_current": -61,
+      "direction_bit": true,
+      "reverse": 1,
+      "state": 1,
+      "predicted_cruise_sign_for_positive_base": 1
+    },
+    {
+      "source": "reverse-third-strip-attempt.json",
+      "tick": 33753,
+      "master": 7,
+      "segment": 254,
+      "assignment_start": 126,
+      "wrapped_start_minus_current": -128,
+      "direction_bit": true,
+      "reverse": 1,
+      "state": 1,
+      "predicted_cruise_sign_for_positive_base": 1
+    }
+  ]
+}

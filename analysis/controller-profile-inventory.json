@@ -1,0 +1,2112 @@
+{
+  "method": "Read-only BIGF extraction; decimal fields converted to IEEE float32 using Python nearest-even conversion. Not execution of the game parser.",
+  "scope": "All .viv files under installed GAMEDATA/CARMODEL; gamedata_org excluded. No runtime samples or tuning applied.",
+  "target_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "field_ids": {
+    "idle": 12,
+    "redline": 13,
+    "manual_ratios": 7,
+    "automatic_ratios": 76,
+    "corner_modifiers": [
+      52,
+      53,
+      54
+    ]
+  },
+  "summary": {
+    "profiles": 47,
+    "idle_range": [
+      0,
+      1350
+    ],
+    "redline_range": [
+      4800,
+      8500
+    ],
+    "denominator_range": [
+      4050,
+      7480
+    ],
+    "all_denominators_positive": true,
+    "ratio_range_float32": [
+      -839.4659423828125,
+      763.1508178710938
+    ],
+    "corner_modifier_range_float32": [
+      0.3999910056591034,
+      0.9998800158500671
+    ],
+    "all_corner_modifiers_in_zero_one": true,
+    "conservative_abs_rpm_product_bound_speed_abs_le_255": 214063.8153076172
+  },
+  "profiles": [
+    {
+      "archive": "GAMEDATA/CARMODEL/456G/car.viv",
+      "archive_sha256": "3dd6d3a0a80a56c900cc4fd7c2f774fb50a3a01cb5c3998c5892b37702eeb2cc",
+      "archive_bytes": 1433603,
+      "member": "carp.txt",
+      "member_sha256": "7c538bb14ff8e67f19fcca14f8c630c14b92e329eeb837169d6cfa142dc872e2",
+      "member_offset": 304,
+      "member_bytes": 5026,
+      "classification": 1,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 6
+      },
+      "idle_rpm": 1088,
+      "redline_rpm": 7250,
+      "denominator": 6162,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -286.10260009765625,
+          0.0,
+          313.3504638671875,
+          220.4925994873047,
+          164.37571716308594,
+          129.68936157226562,
+          105.70292663574219,
+          87.15911102294922
+        ],
+        "automatic": [
+          -217.642333984375,
+          0.0,
+          302.4513244628906,
+          166.14385986328125,
+          102.17949676513672,
+          69.58423614501953,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "archive_sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "archive_bytes": 1613816,
+      "member": "carp.txt",
+      "member_sha256": "d2aa295452b2c009647e25b3dbf6ed0637696a86a453867d957637e4eed2ca98",
+      "member_offset": 304,
+      "member_bytes": 5028,
+      "classification": 2,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 6
+      },
+      "idle_rpm": 900,
+      "redline_rpm": 6000,
+      "denominator": 5100,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -289.5247497558594,
+          0.0,
+          275.32147216796875,
+          184.23768615722656,
+          134.55560302734375,
+          103.50431823730469,
+          81.04387664794922,
+          0.0
+        ],
+        "automatic": [
+          -289.5247497558594,
+          0.0,
+          227.70948791503906,
+          155.2564697265625,
+          103.50431823730469,
+          81.04387664794922,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "archive_sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "archive_bytes": 1372240,
+      "member": "carp.txt",
+      "member_sha256": "ce8eec2e7e5b40d4a780e71f1738c1ce86c2220a7d9a5a7cf95af91d7364cbc4",
+      "member_offset": 304,
+      "member_bytes": 5027,
+      "classification": 1,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 6
+      },
+      "idle_rpm": 900,
+      "redline_rpm": 6000,
+      "denominator": 5100,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -279.7103576660156,
+          0.0,
+          256.5618896484375,
+          171.6842803955078,
+          125.38739776611328,
+          96.45184326171875,
+          84.87762451171875,
+          76.19695281982422
+        ],
+        "automatic": [
+          -203.43724060058594,
+          0.0,
+          271.8418884277344,
+          144.80467224121094,
+          88.83721923828125,
+          75.51164245605469,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "archive_sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "archive_bytes": 1542245,
+      "member": "carp.txt",
+      "member_sha256": "be42bda2595da92c111a23e0a1b990edc11ce4ef077d858472525b536c659b5e",
+      "member_offset": 304,
+      "member_bytes": 5032,
+      "classification": 1,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 1095,
+      "redline_rpm": 7300,
+      "denominator": 6205,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -250.0,
+          0.0,
+          285.5,
+          207.6999969482422,
+          138.79998779296875,
+          109.0,
+          89.5,
+          0.0
+        ],
+        "automatic": [
+          -250.0,
+          0.0,
+          285.5,
+          207.6999969482422,
+          138.79998779296875,
+          109.0,
+          89.5,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "archive_sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "archive_bytes": 1581124,
+      "member": "carp.txt",
+      "member_sha256": "840c44404042aa425561e0928361f93586cdd7346d1a1c902165b534aa6f5b05",
+      "member_offset": 304,
+      "member_bytes": 5023,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 1030,
+      "redline_rpm": 7300,
+      "denominator": 6270,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -224.83126831054688,
+          0.0,
+          244.40480041503906,
+          160.8204803466797,
+          118.49929809570312,
+          93.1065902709961,
+          71.94600677490234,
+          0.0
+        ],
+        "automatic": [
+          -224.83126831054688,
+          0.0,
+          244.40480041503906,
+          160.8204803466797,
+          118.49929809570312,
+          93.1065902709961,
+          71.94600677490234,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "archive_sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "archive_bytes": 1531156,
+      "member": "carp.txt",
+      "member_sha256": "e4d1db7240075a1376fd5b7acb0e99a9362ede6ca86ee97abcff85f2cbe5ca13",
+      "member_offset": 304,
+      "member_bytes": 5034,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 1350,
+      "redline_rpm": 8500,
+      "denominator": 7150,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -356.318115234375,
+          0.0,
+          345.7761535644531,
+          238.62026977539062,
+          171.60470581054688,
+          129.93936157226562,
+          102.56302642822266,
+          83.05783081054688
+        ],
+        "automatic": [
+          -356.318115234375,
+          0.0,
+          345.7761535644531,
+          238.62026977539062,
+          171.60470581054688,
+          129.93936157226562,
+          102.56302642822266,
+          83.05783081054688
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "archive_sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "archive_bytes": 1349644,
+      "member": "carp.txt",
+      "member_sha256": "527dad66a0ddff7d268fb8bb94cb60a048983c16d5b59bae0b35515e2396942d",
+      "member_offset": 304,
+      "member_bytes": 5025,
+      "classification": 1,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 1020,
+      "redline_rpm": 8500,
+      "denominator": 7480,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -334.0256042480469,
+          0.0,
+          365.8375549316406,
+          257.4257507324219,
+          191.90911865234375,
+          151.41270446777344,
+          123.4084701538086,
+          102.72612762451172
+        ],
+        "automatic": [
+          -341.6199951171875,
+          0.0,
+          374.1499938964844,
+          263.2799987792969,
+          196.2699737548828,
+          154.84999084472656,
+          126.2099609375,
+          102.87539672851562
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.9700000286102295,
+        0.949999988079071,
+        0.9300000071525574
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "archive_sha256": "99e00c1e21a73c10fc4593309e9fd16ff26256b2aa25cd9c3b4c4baa304d4264",
+      "archive_bytes": 1747047,
+      "member": "carp.txt",
+      "member_sha256": "2b8c27e7807938629fffffb2864b6734621718af34b1d9199e03d7beb4c44a47",
+      "member_offset": 304,
+      "member_bytes": 5021,
+      "classification": 2,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 6
+      },
+      "idle_rpm": 950,
+      "redline_rpm": 6200,
+      "denominator": 5250,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -331.6547546386719,
+          0.0,
+          376.7850036621094,
+          229.84934997558594,
+          147.98519897460938,
+          111.25128173828125,
+          87.11185455322266,
+          0.0
+        ],
+        "automatic": [
+          -331.6547546386719,
+          0.0,
+          323.2584533691406,
+          158.4805908203125,
+          111.25128173828125,
+          87.11185455322266,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.9700000286102295,
+        0.949999988079071,
+        0.9300000071525574
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "archive_sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "archive_bytes": 1692981,
+      "member": "carp.txt",
+      "member_sha256": "01ea132d7f73b252daec3641a9908e3964aa9a637b4686c83c8b2913837fcf95",
+      "member_offset": 304,
+      "member_bytes": 5030,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 1155,
+      "redline_rpm": 7700,
+      "denominator": 6545,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -350.31390380859375,
+          0.0,
+          350.31390380859375,
+          241.75177001953125,
+          173.8567352294922,
+          131.6446075439453,
+          103.90899658203125,
+          84.14783477783203
+        ],
+        "automatic": [
+          -350.31390380859375,
+          0.0,
+          350.31390380859375,
+          241.75177001953125,
+          173.8567352294922,
+          131.6446075439453,
+          103.90899658203125,
+          84.14783477783203
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.9399999976158142,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "archive_sha256": "7e122baa3541699736405d117aa2539270e8400d3eeb6092d95f098259f33699",
+      "archive_bytes": 1626250,
+      "member": "carp.txt",
+      "member_sha256": "a86452d42410aa6b4e0007c6de2447dcfa1f72a7c4e6f6a24a13a3df6c3a9a89",
+      "member_offset": 304,
+      "member_bytes": 5024,
+      "classification": 2,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 6
+      },
+      "idle_rpm": 833,
+      "redline_rpm": 5554,
+      "denominator": 4721,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -373.4171447753906,
+          0.0,
+          342.513671875,
+          229.2008819580078,
+          167.39389038085938,
+          128.76454162597656,
+          88.84752655029297,
+          73.39578247070312
+        ],
+        "automatic": [
+          -213.52713012695312,
+          0.0,
+          285.324462890625,
+          151.98655700683594,
+          93.2432861328125,
+          65.27030181884766,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.9700000286102295,
+        0.949999988079071,
+        0.9300000071525574
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "archive_sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "archive_bytes": 1418514,
+      "member": "carp.txt",
+      "member_sha256": "c5e436cffd76b1027da2d354f1547642e77c39254fb1a55d8f7bf9defe59e531",
+      "member_offset": 304,
+      "member_bytes": 5025,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 975,
+      "redline_rpm": 6500,
+      "denominator": 5525,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -296.4806213378906,
+          0.0,
+          250.15553283691406,
+          177.8883819580078,
+          138.9752960205078,
+          115.15095520019531,
+          98.5461196899414,
+          76.43640899658203
+        ],
+        "automatic": [
+          -296.4806213378906,
+          0.0,
+          250.15553283691406,
+          177.8883819580078,
+          138.9752960205078,
+          115.15095520019531,
+          98.5461196899414,
+          76.43640899658203
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "archive_sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "archive_bytes": 1833943,
+      "member": "carp.txt",
+      "member_sha256": "c64f676185091d3c990ed78698bd648f59a2f1430203ca319e6cf014e2e8df1f",
+      "member_offset": 304,
+      "member_bytes": 5024,
+      "classification": 2,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 960,
+      "redline_rpm": 6400,
+      "denominator": 5440,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -272.8660583496094,
+          0.0,
+          309.99658203125,
+          189.10655212402344,
+          145.93153381347656,
+          120.02652740478516,
+          86.35002136230469,
+          0.0
+        ],
+        "automatic": [
+          -272.8660583496094,
+          0.0,
+          309.99658203125,
+          189.10655212402344,
+          145.93153381347656,
+          120.02652740478516,
+          86.35002136230469,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8700000047683716
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "archive_sha256": "c30bbe49abccb9f5c8813d0674f10dd99ee71113dc2281800de6c58662bfcd41",
+      "archive_bytes": 1773707,
+      "member": "carp.txt",
+      "member_sha256": "a59c0e3f21f8b116fff86fdf7b59389ddaddcbc76f5a01bbc956ad7551c6ac92",
+      "member_offset": 304,
+      "member_bytes": 5024,
+      "classification": 2,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 922,
+      "redline_rpm": 6150,
+      "denominator": 5228,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -272.4476623535156,
+          0.0,
+          309.521240234375,
+          188.81658935546875,
+          130.1885986328125,
+          112.08290100097656,
+          86.21762084960938,
+          0.0
+        ],
+        "automatic": [
+          -272.4476623535156,
+          0.0,
+          309.521240234375,
+          188.81658935546875,
+          130.1885986328125,
+          112.08290100097656,
+          86.21762084960938,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "archive_sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "archive_bytes": 719356,
+      "member": "carp.txt",
+      "member_sha256": "8197fc924eb834d541452b9fd2f2aeee635a1514036ea4bca154d9d77ffac004",
+      "member_offset": 268,
+      "member_bytes": 5024,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 720,
+      "redline_rpm": 4800,
+      "denominator": 4080,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -839.4659423828125,
+          0.0,
+          763.1508178710938,
+          442.6274719238281,
+          274.73431396484375,
+          198.41921997070312,
+          152.6301727294922,
+          0.0
+        ],
+        "automatic": [
+          -839.4659423828125,
+          0.0,
+          763.1508178710938,
+          442.6274719238281,
+          274.73431396484375,
+          198.41921997070312,
+          152.6301727294922,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.6999880075454712,
+        0.5999969840049744,
+        0.3999910056591034
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "archive_sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "archive_bytes": 1627106,
+      "member": "carp.txt",
+      "member_sha256": "07f92ef6c15b0f71867c65ff05e32013835f98cacd4536e3238961ad52da2fd2",
+      "member_offset": 304,
+      "member_bytes": 5036,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 1030,
+      "redline_rpm": 7300,
+      "denominator": 6270,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -224.83126831054688,
+          0.0,
+          244.40480041503906,
+          160.8204803466797,
+          118.49929809570312,
+          93.1065902709961,
+          71.94600677490234,
+          0.0
+        ],
+        "automatic": [
+          -224.83126831054688,
+          0.0,
+          244.40480041503906,
+          160.8204803466797,
+          118.49929809570312,
+          93.1065902709961,
+          71.94600677490234,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.9800000190734863,
+        0.949999988079071,
+        0.9200000166893005
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "archive_sha256": "7963e1b0758a10c4565497b6d0238923caa8c9656e6f9411f43ba1cd439bafdc",
+      "archive_bytes": 1463197,
+      "member": "carp.txt",
+      "member_sha256": "a5a3b2b0bfe36c2ac07b48d14fdf6b763e46b25d89905cb99a9be408f3f5897a",
+      "member_offset": 304,
+      "member_bytes": 5040,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 1050,
+      "redline_rpm": 7000,
+      "denominator": 5950,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -339.9063720703125,
+          0.0,
+          332.0924072265625,
+          197.69265747070312,
+          131.27418518066406,
+          96.8928451538086,
+          78.13939666748047,
+          64.85569763183594
+        ],
+        "automatic": [
+          -339.9063720703125,
+          0.0,
+          332.0924072265625,
+          197.69265747070312,
+          131.27418518066406,
+          96.8928451538086,
+          78.13939666748047,
+          64.85569763183594
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "archive_sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "archive_bytes": 1435063,
+      "member": "carp.txt",
+      "member_sha256": "c02d30a5b163a3aee6df887573e323e1a192f4ac467280350d8ec7a7e35ed9fa",
+      "member_offset": 304,
+      "member_bytes": 5037,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 1200,
+      "redline_rpm": 8000,
+      "denominator": 6800,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -459.3854064941406,
+          0.0,
+          448.8248291015625,
+          267.1827697753906,
+          177.41781616210938,
+          130.9512481689453,
+          105.60584259033203,
+          87.65284729003906
+        ],
+        "automatic": [
+          -459.3854064941406,
+          0.0,
+          448.8248291015625,
+          267.1827697753906,
+          177.41781616210938,
+          130.9512481689453,
+          105.60584259033203,
+          87.65284729003906
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.9800000190734863,
+        0.949999988079071,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "archive_sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "archive_bytes": 1549851,
+      "member": "carp.txt",
+      "member_sha256": "8a2497d8d68943eb8e98f374678b43c723992a453f4a96f5f35b2e39e2caed05",
+      "member_offset": 304,
+      "member_bytes": 5046,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 1350,
+      "redline_rpm": 8500,
+      "denominator": 7150,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -356.318115234375,
+          0.0,
+          345.7761535644531,
+          238.62026977539062,
+          171.60470581054688,
+          129.93936157226562,
+          102.56302642822266,
+          83.05783081054688
+        ],
+        "automatic": [
+          -356.318115234375,
+          0.0,
+          345.7761535644531,
+          238.62026977539062,
+          171.60470581054688,
+          129.93936157226562,
+          102.56302642822266,
+          83.05783081054688
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.9800000190734863,
+        0.949999988079071,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "archive_sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "archive_bytes": 1446604,
+      "member": "carp.txt",
+      "member_sha256": "5ac164eaa713a09c91614bc36a7e4f3e0c28fde2d04dd6a7e8fbb0514a90ba1e",
+      "member_offset": 304,
+      "member_bytes": 5028,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 1125,
+      "redline_rpm": 7500,
+      "denominator": 6375,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -418.6346130371094,
+          0.0,
+          311.923828125,
+          203.16091918945312,
+          148.7794647216797,
+          118.56754302978516,
+          94.39800262451172,
+          84.76785278320312
+        ],
+        "automatic": [
+          -418.6346130371094,
+          0.0,
+          311.923828125,
+          203.16091918945312,
+          148.7794647216797,
+          118.56754302978516,
+          94.39800262451172,
+          84.76785278320312
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "archive_sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "archive_bytes": 1723392,
+      "member": "carp.txt",
+      "member_sha256": "0b367a433d755d4c1e1216e105313d0b64929874d12bee36abbf8eb7562f6c32",
+      "member_offset": 304,
+      "member_bytes": 5024,
+      "classification": 2,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 900,
+      "redline_rpm": 6000,
+      "denominator": 5100,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -244.58116149902344,
+          0.0,
+          277.8627624511719,
+          169.5040283203125,
+          109.13272857666016,
+          91.33094024658203,
+          64.24125671386719,
+          0.0
+        ],
+        "automatic": [
+          -244.58116149902344,
+          0.0,
+          277.8627624511719,
+          169.5040283203125,
+          109.13272857666016,
+          91.33094024658203,
+          64.24125671386719,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "archive_sha256": "39eee86aa6aa2be37dc408f11a1adfc3e119df45f49dc8f364657eb819a75913",
+      "archive_bytes": 1444505,
+      "member": "carp.txt",
+      "member_sha256": "1cfef7f77b303f8eae6ca1794933e783ca8e029290c72a5fbefd57146bfa151e",
+      "member_offset": 304,
+      "member_bytes": 5028,
+      "classification": 1,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 1020,
+      "redline_rpm": 6800,
+      "denominator": 5780,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -312.5484924316406,
+          0.0,
+          286.6824035644531,
+          191.84010314941406,
+          140.10794067382812,
+          107.77533721923828,
+          94.84230041503906,
+          85.14251708984375
+        ],
+        "automatic": [
+          -312.5484924316406,
+          0.0,
+          286.6824035644531,
+          191.84010314941406,
+          140.10794067382812,
+          107.77533721923828,
+          94.84230041503906,
+          85.14251708984375
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0000/CAR.VIV",
+      "archive_sha256": "08050fb13dfeb32df48be96b9131954c5cf894ff848d57a9035134a71397da37",
+      "archive_bytes": 296926,
+      "member": "carp.txt",
+      "member_sha256": "5b0d677a03bef34292de7404eb651d177e4de326d099dbb0c40f6713f7b352db",
+      "member_offset": 68,
+      "member_bytes": 5028,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 750,
+      "redline_rpm": 5000,
+      "denominator": 4250,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -599.6185302734375,
+          0.0,
+          545.1077270507812,
+          436.086181640625,
+          283.4560241699219,
+          185.3366241455078,
+          160.2616729736328,
+          0.0
+        ],
+        "automatic": [
+          -599.6185302734375,
+          0.0,
+          545.1077270507812,
+          436.086181640625,
+          283.4560241699219,
+          185.3366241455078,
+          160.2616729736328,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0001/CAR.VIV",
+      "archive_sha256": "efba2f45779739e6fc9d2539f717fb594d460483cae53596af34ea85863d26d8",
+      "archive_bytes": 296216,
+      "member": "carp.txt",
+      "member_sha256": "22bf89de05c6fe040323be5e27407e02e40527bc8ef5e610076619c5178502c3",
+      "member_offset": 68,
+      "member_bytes": 5028,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 1000,
+      "redline_rpm": 7000,
+      "denominator": 6000,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -339.68756103515625,
+          0.0,
+          289.86669921875,
+          227.36419677734375,
+          151.27418518066406,
+          120.4758529663086,
+          99.64168548583984,
+          86.0541763305664
+        ],
+        "automatic": [
+          -339.68756103515625,
+          0.0,
+          289.86669921875,
+          227.36419677734375,
+          151.27418518066406,
+          120.4758529663086,
+          99.64168548583984,
+          86.0541763305664
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0002/CAR.VIV",
+      "archive_sha256": "31f7b837c2ee1f3ce776273a009b028c7fe0db3a8f6bb5504fdf41aa67dc51dd",
+      "archive_bytes": 296694,
+      "member": "carp.txt",
+      "member_sha256": "d2c72585eed249417f94703722318837860fa677a766d6a8bea20cd224bcb3a7",
+      "member_offset": 68,
+      "member_bytes": 5034,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 8
+      },
+      "idle_rpm": 950,
+      "redline_rpm": 6000,
+      "denominator": 5050,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -357.43731689453125,
+          0.0,
+          478.4682922363281,
+          283.913818359375,
+          188.89883422851562,
+          139.1290740966797,
+          118.76872253417969,
+          104.06402587890625
+        ],
+        "automatic": [
+          -357.43731689453125,
+          0.0,
+          478.4682922363281,
+          283.913818359375,
+          188.89883422851562,
+          139.1290740966797,
+          118.76872253417969,
+          104.06402587890625
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.9998800158500671,
+        0.9799699783325195,
+        0.9399099946022034
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0003/CAR.VIV",
+      "archive_sha256": "95590f85d1ffaa383a82caf967d6ae4548550175d064b62a4e1c42ff230e7930",
+      "archive_bytes": 295342,
+      "member": "carp.txt",
+      "member_sha256": "448a3021cd6ec5c1018fcba01cefe638b17ac03f90037a595f24def5c09a885e",
+      "member_offset": 68,
+      "member_bytes": 5026,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 6,
+        "automatic": 6
+      },
+      "idle_rpm": 750,
+      "redline_rpm": 5500,
+      "denominator": 4750,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -238.650146484375,
+          0.0,
+          319.4588928222656,
+          189.5607147216797,
+          126.1220703125,
+          102.71018981933594,
+          0.0,
+          0.0
+        ],
+        "automatic": [
+          -238.650146484375,
+          0.0,
+          319.4588928222656,
+          189.5607147216797,
+          126.1220703125,
+          102.71018981933594,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0004/CAR.VIV",
+      "archive_sha256": "9472cecd98d4eebc377e38cd5db91551736ba8bd0c4ddc391a962a97319da51b",
+      "archive_bytes": 296204,
+      "member": "carp.txt",
+      "member_sha256": "b226cace888c82bc3c7a7e8917ced43d446f423e3fee74c9d30fdf05bd92139f",
+      "member_offset": 68,
+      "member_bytes": 5016,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 6,
+        "automatic": 6
+      },
+      "idle_rpm": 990,
+      "redline_rpm": 6000,
+      "denominator": 5010,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -320.59259033203125,
+          0.0,
+          253.6333770751953,
+          152.18002319335938,
+          101.4533462524414,
+          90.2934799194336,
+          0.0,
+          0.0
+        ],
+        "automatic": [
+          -320.59259033203125,
+          0.0,
+          253.6333770751953,
+          152.18002319335938,
+          101.4533462524414,
+          90.2934799194336,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0005/CAR.VIV",
+      "archive_sha256": "aa68012fbd418f57385117b79e4167491ae00d3150d807db8d3480bceae28618",
+      "archive_bytes": 296490,
+      "member": "carp.txt",
+      "member_sha256": "93dc3a77575c7311d5bb23a9b892eccff3911b6be150a9f4422f335d14bb93b7",
+      "member_offset": 68,
+      "member_bytes": 5023,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 720,
+      "redline_rpm": 4800,
+      "denominator": 4080,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -839.4659423828125,
+          0.0,
+          763.1508178710938,
+          442.6274719238281,
+          274.73431396484375,
+          198.41921997070312,
+          152.6301727294922,
+          0.0
+        ],
+        "automatic": [
+          -839.4659423828125,
+          0.0,
+          763.1508178710938,
+          442.6274719238281,
+          274.73431396484375,
+          198.41921997070312,
+          152.6301727294922,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.6999880075454712,
+        0.5999969840049744,
+        0.3999910056591034
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0006/CAR.VIV",
+      "archive_sha256": "7418ff65a41e8135e4b1810d0418f283a994c93cc7370e00c260ef985fabbf17",
+      "archive_bytes": 296490,
+      "member": "carp.txt",
+      "member_sha256": "59a29c384df924f6113ecf7666eb31d14eeb38540f2b1be1396db9534e050ab6",
+      "member_offset": 68,
+      "member_bytes": 5024,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 825,
+      "redline_rpm": 5500,
+      "denominator": 4675,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -404.5098571777344,
+          0.0,
+          480.79901123046875,
+          315.0,
+          220.0,
+          150.8989715576172,
+          110.29899597167969,
+          0.0
+        ],
+        "automatic": [
+          -404.5098571777344,
+          0.0,
+          480.79901123046875,
+          315.0,
+          220.0,
+          150.8989715576172,
+          110.29899597167969,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0007/CAR.VIV",
+      "archive_sha256": "15edfd444a1fd3527a7998fdd880c4ca37347061458b7407115a378816bf69a2",
+      "archive_bytes": 296482,
+      "member": "carp.txt",
+      "member_sha256": "e3ec6f649d0e41acd64a2c17925017c156d9e76e82b3757a60bf5cade5661d28",
+      "member_offset": 68,
+      "member_bytes": 5016,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 0,
+      "redline_rpm": 5500,
+      "denominator": 5500,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -404.5098571777344,
+          0.0,
+          480.79901123046875,
+          315.0,
+          220.0,
+          150.8989715576172,
+          110.29899597167969,
+          0.0
+        ],
+        "automatic": [
+          -404.5098571777344,
+          0.0,
+          480.79901123046875,
+          315.0,
+          220.0,
+          150.8989715576172,
+          110.29899597167969,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0008/CAR.VIV",
+      "archive_sha256": "db9977c3f4949857f042c842ca47f850c5a7f7564190b98acd462e99d79ee4e9",
+      "archive_bytes": 296174,
+      "member": "carp.txt",
+      "member_sha256": "4e22d06ad857ccd5feecfdc6a02f4c47ffb38c5d960910bc0e20ecbea689569e",
+      "member_offset": 68,
+      "member_bytes": 5009,
+      "classification": 0,
+      "gear_counts": {
+        "manual": 6,
+        "automatic": 6
+      },
+      "idle_rpm": 0,
+      "redline_rpm": 6600,
+      "denominator": 6600,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -390.5,
+          0.0,
+          350.0,
+          195.0,
+          130.0,
+          90.0,
+          0.0,
+          0.0
+        ],
+        "automatic": [
+          -390.5,
+          0.0,
+          350.0,
+          195.0,
+          130.0,
+          90.0,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0009/CAR.VIV",
+      "archive_sha256": "8702682324f81b94c9c3c6b448bf4c7a84be5d088a88e2d8bbceb86116c4fc5b",
+      "archive_bytes": 297254,
+      "member": "carp.txt",
+      "member_sha256": "c9ec783c8ebad76fed1311f0caf67e7367e71ef95045ddc06085e6787caca293",
+      "member_offset": 68,
+      "member_bytes": 5020,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 6
+      },
+      "idle_rpm": 1050,
+      "redline_rpm": 7000,
+      "denominator": 5950,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -440.4613037109375,
+          0.0,
+          426.8668212890625,
+          256.9357604980469,
+          180.806640625,
+          135.94483947753906,
+          110.11532592773438,
+          0.0
+        ],
+        "automatic": [
+          -398.1526184082031,
+          0.0,
+          311.2142333984375,
+          221.75588989257812,
+          170.0968475341797,
+          125.9976577758789,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0010/CAR.VIV",
+      "archive_sha256": "54d82082d67d2097c98fc5828b14d5c7bfe02321ada9a22f5595ecd3cd8fee0f",
+      "archive_bytes": 296204,
+      "member": "carp.txt",
+      "member_sha256": "655341ef1ffbb4bc3fc1e9ec85cf4fd095d8aee6d4f21ddcd4d03a248f7719e8",
+      "member_offset": 68,
+      "member_bytes": 5016,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 6,
+        "automatic": 5
+      },
+      "idle_rpm": 1000,
+      "redline_rpm": 6000,
+      "denominator": 5000,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -434.5810546875,
+          0.0,
+          275.0513000488281,
+          165.03077697753906,
+          123.77308654785156,
+          89.39167022705078,
+          0.0,
+          0.0
+        ],
+        "automatic": [
+          -434.5810546875,
+          0.0,
+          222.7915496826172,
+          126.52359771728516,
+          89.39167022705078,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0011/CAR.VIV",
+      "archive_sha256": "aa7b73987e791dda2c73cfd629332aa6653b969daa79a27b674190e94b7a51ba",
+      "archive_bytes": 295342,
+      "member": "carp.txt",
+      "member_sha256": "f6ea32dd54fcfad0cead17786c40c0623a43fb31a9cd95eacd661f2ecd45c098",
+      "member_offset": 68,
+      "member_bytes": 5025,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 6
+      },
+      "idle_rpm": 800,
+      "redline_rpm": 5000,
+      "denominator": 4200,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -360.3077697753906,
+          0.0,
+          281.63299560546875,
+          212.07989501953125,
+          167.6115264892578,
+          114.02144622802734,
+          85.5160903930664,
+          0.0
+        ],
+        "automatic": [
+          -308.8352355957031,
+          0.0,
+          241.3997039794922,
+          181.78277587890625,
+          143.66702270507812,
+          97.73267364501953,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0012/CAR.VIV",
+      "archive_sha256": "c35d9068fe900fc54cef56231e99f68fef312adb8e9b197a6fbfc0d8e3d0072a",
+      "archive_bytes": 299364,
+      "member": "carp.txt",
+      "member_sha256": "2a8886f5aefbccd5a53e8db922f082a04e8abe884a23ae3eca48a132b100624e",
+      "member_offset": 68,
+      "member_bytes": 5022,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 6,
+        "automatic": 6
+      },
+      "idle_rpm": 750,
+      "redline_rpm": 5500,
+      "denominator": 4750,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -191.54513549804688,
+          0.0,
+          227.2880096435547,
+          135.63961791992188,
+          91.64839172363281,
+          66.90332794189453,
+          0.0,
+          0.0
+        ],
+        "automatic": [
+          -191.54513549804688,
+          0.0,
+          227.2880096435547,
+          135.63961791992188,
+          91.64839172363281,
+          66.90332794189453,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0013/CAR.VIV",
+      "archive_sha256": "25c5b9e2f359050e64fb4ddcea1c757491aba31b68a91495d83b80dff3275f55",
+      "archive_bytes": 297748,
+      "member": "carp.txt",
+      "member_sha256": "6b8f857be763b2da947f766ff2454363f73e73510018cb693d2dd324cd2b1ccb",
+      "member_offset": 68,
+      "member_bytes": 5021,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 750,
+      "redline_rpm": 4800,
+      "denominator": 4050,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -839.4659423828125,
+          0.0,
+          763.1508178710938,
+          442.6274719238281,
+          274.73431396484375,
+          198.41921997070312,
+          152.6301727294922,
+          0.0
+        ],
+        "automatic": [
+          -839.4659423828125,
+          0.0,
+          763.1508178710938,
+          442.6274719238281,
+          274.73431396484375,
+          198.41921997070312,
+          152.6301727294922,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.3999910056591034
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0014/CAR.VIV",
+      "archive_sha256": "5b1349f4c029430bbe6f9045e0997a078cebac81621eafb125d29c6697ad7afe",
+      "archive_bytes": 297660,
+      "member": "carp.txt",
+      "member_sha256": "44e7724252b76e5bb082f6ab5e6076a66b4157d897a76ddc97633877ca62e575",
+      "member_offset": 68,
+      "member_bytes": 5029,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 1000,
+      "redline_rpm": 6600,
+      "denominator": 5600,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -400.0,
+          0.0,
+          450.7980041503906,
+          254.0,
+          170.0,
+          120.89788818359375,
+          95.0,
+          0.0
+        ],
+        "automatic": [
+          -400.0,
+          0.0,
+          450.7980041503906,
+          254.0,
+          170.0,
+          120.89788818359375,
+          95.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0015/CAR.VIV",
+      "archive_sha256": "0d543bd89b523a89fc3f8612c2dbf4c0e824eed82219748590510402a169f0a8",
+      "archive_bytes": 295564,
+      "member": "carp.txt",
+      "member_sha256": "33868d3c0b7cfb86ff465bb99f144dbb588f82483c655bb09e1f6dfc7c08e31f",
+      "member_offset": 68,
+      "member_bytes": 5030,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 800,
+      "redline_rpm": 5500,
+      "denominator": 4700,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -404.5098571777344,
+          0.0,
+          480.79901123046875,
+          315.0,
+          220.0,
+          150.8989715576172,
+          110.29899597167969,
+          0.0
+        ],
+        "automatic": [
+          -404.5098571777344,
+          0.0,
+          480.79901123046875,
+          315.0,
+          220.0,
+          150.8989715576172,
+          110.29899597167969,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0016/CAR.VIV",
+      "archive_sha256": "2b8ae5367292ad4d2bf281fda77dd3eebb0b7a55a14b96d30fa6d932c3d74f6f",
+      "archive_bytes": 297154,
+      "member": "carp.txt",
+      "member_sha256": "5f69dbdd21f0ca25a47a7e184714ff3ac9973440d561198a68721a24f3ee63a9",
+      "member_offset": 68,
+      "member_bytes": 5029,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 1000,
+      "redline_rpm": 6600,
+      "denominator": 5600,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -400.0,
+          0.0,
+          450.7980041503906,
+          254.0,
+          170.0,
+          120.89788818359375,
+          95.0,
+          0.0
+        ],
+        "automatic": [
+          -400.0,
+          0.0,
+          450.7980041503906,
+          254.0,
+          170.0,
+          120.89788818359375,
+          95.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0000/CAR.VIV",
+      "archive_sha256": "0208bd543dfac99f76628608127ecf7c6eb1e97f06d264b93806dc127dd14cb8",
+      "archive_bytes": 717516,
+      "member": "carp.txt",
+      "member_sha256": "052a51daa42bd444aee2209202cc7221f9e942eac1e20af7d567dd51661aa262",
+      "member_offset": 120,
+      "member_bytes": 5010,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 6,
+        "automatic": 6
+      },
+      "idle_rpm": 900,
+      "redline_rpm": 6000,
+      "denominator": 5100,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -214.20692443847656,
+          0.0,
+          262.21881103515625,
+          144.0356903076172,
+          92.33057403564453,
+          64.63140106201172,
+          0.0,
+          0.0
+        ],
+        "automatic": [
+          -214.20692443847656,
+          0.0,
+          262.21881103515625,
+          144.0356903076172,
+          92.33057403564453,
+          64.63140106201172,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0001/CAR.VIV",
+      "archive_sha256": "d8cb60654b8bfff7354d4a5f044f0d3851555edb0748d8c08d64c5769d1abd7c",
+      "archive_bytes": 806684,
+      "member": "carp.txt",
+      "member_sha256": "4f1c12d0536d5810f1242f8d8dba0388af9ab5a0f9fb65e6b273b79c71fe51fd",
+      "member_offset": 120,
+      "member_bytes": 5023,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 7
+      },
+      "idle_rpm": 1030,
+      "redline_rpm": 7300,
+      "denominator": 6270,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -224.83126831054688,
+          0.0,
+          244.40480041503906,
+          160.8204803466797,
+          118.49929809570312,
+          93.1065902709961,
+          71.94600677490234,
+          0.0
+        ],
+        "automatic": [
+          -224.83126831054688,
+          0.0,
+          244.40480041503906,
+          160.8204803466797,
+          118.49929809570312,
+          93.1065902709961,
+          71.94600677490234,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0002/CAR.VIV",
+      "archive_sha256": "0c217e047e25e525dc3abb3f0916685672191505db528d96fa58e924b74aef8d",
+      "archive_bytes": 615596,
+      "member": "carp.txt",
+      "member_sha256": "b24694e7304d00c72e622861a27597e2e16cc8b3175f52a6c413db8ac76c8c86",
+      "member_offset": 120,
+      "member_bytes": 5014,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 6
+      },
+      "idle_rpm": 900,
+      "redline_rpm": 6000,
+      "denominator": 5100,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -332.24700927734375,
+          0.0,
+          441.0865478515625,
+          240.59266662597656,
+          160.39511108398438,
+          118.8642349243164,
+          95.95064544677734,
+          0.0
+        ],
+        "automatic": [
+          -272.8370361328125,
+          0.0,
+          300.1207580566406,
+          163.7022247314453,
+          109.13481903076172,
+          97.44180297851562,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0003/CAR.VIV",
+      "archive_sha256": "4186c2d8f690b467e4b59f173af3243df3f044d11c0a3276051691cafd9c250d",
+      "archive_bytes": 725260,
+      "member": "carp.txt",
+      "member_sha256": "7bda5fa5b4d6c2ddb0ffed54abbaaf1c419d3115f4f6a02c555fda2e9fe11d07",
+      "member_offset": 120,
+      "member_bytes": 5019,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 7,
+        "automatic": 6
+      },
+      "idle_rpm": 950,
+      "redline_rpm": 6200,
+      "denominator": 5250,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -331.6547546386719,
+          0.0,
+          376.7850036621094,
+          229.84934997558594,
+          147.98519897460938,
+          111.25128173828125,
+          87.11185455322266,
+          0.0
+        ],
+        "automatic": [
+          -331.6547546386719,
+          0.0,
+          323.2584533691406,
+          158.4805908203125,
+          111.25128173828125,
+          87.11185455322266,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0004/CAR.VIV",
+      "archive_sha256": "a0e50c776ef279b8bff62da27df2c9f93446464dd39af05feb8f9f4e2825191c",
+      "archive_bytes": 680988,
+      "member": "carp.txt",
+      "member_sha256": "0750b4213be2b4f8e70a0a6ce6cdd91915b97cbb4069206dbaceb484395f6328",
+      "member_offset": 120,
+      "member_bytes": 5021,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 6,
+        "automatic": 6
+      },
+      "idle_rpm": 750,
+      "redline_rpm": 5500,
+      "denominator": 4750,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -191.54513549804688,
+          0.0,
+          227.2880096435547,
+          135.63961791992188,
+          91.64839172363281,
+          66.90332794189453,
+          0.0,
+          0.0
+        ],
+        "automatic": [
+          -191.54513549804688,
+          0.0,
+          227.2880096435547,
+          135.63961791992188,
+          91.64839172363281,
+          66.90332794189453,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0005/CAR.VIV",
+      "archive_sha256": "d0849b6f5076ba69133d8db7f304f4d0cd6bbe4f0260ca783dea33e4f4c2b18c",
+      "archive_bytes": 729464,
+      "member": "carp.txt",
+      "member_sha256": "802c0b4e075ef6a2eec5e4e0c277a56a51efbaeaaa66c970d177b8e98ef27971",
+      "member_offset": 120,
+      "member_bytes": 5027,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 6
+      },
+      "idle_rpm": 900,
+      "redline_rpm": 6000,
+      "denominator": 5100,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -279.7103576660156,
+          0.0,
+          256.5618896484375,
+          171.6842803955078,
+          125.38739776611328,
+          96.45184326171875,
+          84.87762451171875,
+          76.19695281982422
+        ],
+        "automatic": [
+          -203.43724060058594,
+          0.0,
+          271.8418884277344,
+          144.80467224121094,
+          88.83721923828125,
+          75.51164245605469,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "archive_sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "archive_bytes": 1390047,
+      "member": "carp.txt",
+      "member_sha256": "062356355e76a0cd2a5008d49bb90a03da650b4152480e5569ddd1467a920236",
+      "member_offset": 304,
+      "member_bytes": 5027,
+      "classification": 1,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 6
+      },
+      "idle_rpm": 900,
+      "redline_rpm": 6000,
+      "denominator": 5100,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -279.7103576660156,
+          0.0,
+          256.5618896484375,
+          171.6842803955078,
+          125.38739776611328,
+          96.45184326171875,
+          84.87762451171875,
+          76.19695281982422
+        ],
+        "automatic": [
+          -203.43724060058594,
+          0.0,
+          271.8418884277344,
+          144.80467224121094,
+          88.83721923828125,
+          62.18605422973633,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.8999999761581421,
+        0.8500000238418579
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VICT/car.viv",
+      "archive_sha256": "a4432706bd475449a63d73ceb8abd06ed0577103d3a2eab12a4ac4178eaa75b0",
+      "archive_bytes": 717922,
+      "member": "carp.txt",
+      "member_sha256": "d78b8f8ba50cc26ce0178786dab9ba35460a76169277c45e3b71439323bde2c3",
+      "member_offset": 136,
+      "member_bytes": 5010,
+      "classification": 3,
+      "gear_counts": {
+        "manual": 6,
+        "automatic": 6
+      },
+      "idle_rpm": 900,
+      "redline_rpm": 6000,
+      "denominator": 5100,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -214.20692443847656,
+          0.0,
+          262.21881103515625,
+          144.0356903076172,
+          92.33057403564453,
+          64.63140106201172,
+          0.0,
+          0.0
+        ],
+        "automatic": [
+          -214.20692443847656,
+          0.0,
+          262.21881103515625,
+          144.0356903076172,
+          92.33057403564453,
+          64.63140106201172,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.7999879717826843,
+        0.6999970078468323,
+        0.5999910235404968
+      ]
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "archive_sha256": "fddec296ef128eafe5c01eb8c4325b79c9a0ffde18e422fbd5527d6f11e54ce7",
+      "archive_bytes": 1112404,
+      "member": "carp.txt",
+      "member_sha256": "c2e1d34b7878aaa68b65606483a22def0690b6a554ac09886f221c9bc320ca35",
+      "member_offset": 268,
+      "member_bytes": 5020,
+      "classification": 1,
+      "gear_counts": {
+        "manual": 8,
+        "automatic": 6
+      },
+      "idle_rpm": 900,
+      "redline_rpm": 6000,
+      "denominator": 5100,
+      "velocity_to_rpm_float32": {
+        "manual": [
+          -279.7103576660156,
+          0.0,
+          256.5618896484375,
+          171.6842803955078,
+          125.38739776611328,
+          96.45184326171875,
+          84.87762451171875,
+          76.19695281982422
+        ],
+        "automatic": [
+          -203.43724060058594,
+          0.0,
+          271.8418884277344,
+          144.80467224121094,
+          88.83721923828125,
+          62.18605422973633,
+          0.0,
+          0.0
+        ]
+      },
+      "corner_speed_modifiers_float32": [
+        0.949999988079071,
+        0.9300000071525574,
+        0.8999999761581421
+      ]
+    }
+  ]
+}

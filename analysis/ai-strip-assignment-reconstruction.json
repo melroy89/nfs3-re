@@ -1,0 +1,56 @@
+{
+  "source": "runtime/long-pursuit-ai-strip-deployment.json",
+  "sample_tick": 25288,
+  "target_master": 1,
+  "target_segment": 352,
+  "segment_count": 1463,
+  "candidates": [
+    {
+      "master": 2,
+      "police_index": 0,
+      "segment": 306,
+      "gap": -46,
+      "decision": "already pursuing"
+    },
+    {
+      "master": 3,
+      "police_index": 1,
+      "segment": 344,
+      "gap": -8,
+      "decision": "already pursuing"
+    },
+    {
+      "master": 4,
+      "police_index": 2,
+      "segment": 1113,
+      "gap": 761,
+      "decision": "eligible"
+    },
+    {
+      "master": 5,
+      "police_index": 3,
+      "segment": 706,
+      "gap": 354,
+      "decision": "eligible"
+    },
+    {
+      "master": 6,
+      "police_index": 4,
+      "segment": 37,
+      "gap": -315,
+      "decision": "raw gap <=50"
+    },
+    {
+      "master": 7,
+      "police_index": 5,
+      "segment": 1123,
+      "gap": 771,
+      "decision": "not a strict nearer candidate"
+    }
+  ],
+  "selected_master": 5,
+  "predicted_start": 700,
+  "observed_assignment_tick": 25291,
+  "observed_assignment_hex": "0000bc0203000000",
+  "limitation": "Non-atomic pre-assignment snapshot reconstruction, not exact instruction trace."
+}

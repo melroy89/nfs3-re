@@ -1,0 +1,15 @@
+# Race-exit/menu hang observed in Wine
+
+User reported progressive slowdown after leaving the GOFAST race for the menu, eventually appearing hung. The reset sampler was stopped, its process absence verified, and the game remained alive. No debugger was attached (TracerPid0). A two-second /proc CPU delta measured the main thread at100% of one core. No kernel messages appeared in the preceding five minutes; memory and I/O pressure averages were zero at inspection. These observations do not establish the cause of the earlier slowdown.
+
+A separate bounded read-only perf capture used cpu-clock:u at19Hz for3seconds, PID88396, yielding57 samples in /tmp/nfs3-hang-perf.data. It completed and did not suspend or terminate the game. Displayed samples included00410a03 (StopMusicStreamAndReleaseLoadedMap),004e76d1/004e76d6 (ServicePeriodicCallbacks),00500e21/28 (sound critical-section entry),004ffc9d (voice-handle validation),00501671 (sound voice status), plus Wine addresses. This is statistical instruction-pointer evidence, not a complete call-stack trace.
+
+004109d0 waits while004e74f0 returns signed positive, servicing periodic callbacks between polls; no local timeout. The sampled00410a03 lies in this music-stop polling path. This strongly directs follow-up to music stream/voice shutdown and scheduler progress. It does not establish which state remains positive, the audio backend failure mechanism, or GOFAST causation. No memory patch, game termination or executable modification was performed. Further runtime/reset testing remains on hold until the hang is resolved.
+
+## Recovery and bounded static follow-up
+
+User subsequently reported responsiveness returning with lingering slowdown, then normal speed after a clean restart. No hang fix was applied. A persistent deadlock is therefore not established; the sampled stop loop may have been a temporary wait during shutdown and does not alone explain the progressive menu slowdown.
+
+Assembly narrows the stop condition:004109d6 loads006fbb54 intoEDX and enters only when zero. No intervening instruction changesEDX before004e7470, so that wrapper receives duration100 inEAX and target volume0 inEDX. It stores target byte00564702=0 and calls004e9420 to fade the stream voice.004e74f0 returns the effective signed voice-volume byte via00501670 when the handle is valid, otherwise falls back to signed00564702. Thus an invalid handle by itself returns0 and ends this wait if the target remains unchanged; it is not sufficient to explain indefinite positive polling. Getter00501670 samples voice+31 after releasing the audio critical section, so this is not a lock-protected snapshot of subsequent state.
+
+Remaining candidates include delayed audio-service progress, a competing target/voice update, and backend scheduling; none was established by the short profile. The game binary remains unchanged. Reset capture now supports --reset-only and configurable interval; use0.05 seconds for the bounded reset test, omitting repeated physics/spike reads. This reduces work but does not claim sampling caused the slowdown.

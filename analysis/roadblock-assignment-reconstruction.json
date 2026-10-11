@@ -1,0 +1,79 @@
+{
+  "source": "runtime/ai-roadblock-assignment.json",
+  "before_tick": 12536,
+  "after_tick": 12540,
+  "limitation": "Reconstruction from asynchronous sampled fields, not exact call inputs; normal-direction valid-segment arithmetic only. Police order uses captured police_index.",
+  "candidates": [
+    {
+      "master": 2,
+      "segment": 56,
+      "wrapped_gap": -43,
+      "passes_role_target_flags": false,
+      "new_minimum": false
+    },
+    {
+      "master": 3,
+      "segment": 1144,
+      "wrapped_gap": -418,
+      "passes_role_target_flags": true,
+      "new_minimum": false
+    },
+    {
+      "master": 4,
+      "segment": 58,
+      "wrapped_gap": -41,
+      "passes_role_target_flags": false,
+      "new_minimum": false
+    },
+    {
+      "master": 5,
+      "segment": 62,
+      "wrapped_gap": -37,
+      "passes_role_target_flags": false,
+      "new_minimum": false
+    },
+    {
+      "master": 6,
+      "segment": 351,
+      "wrapped_gap": 252,
+      "passes_role_target_flags": true,
+      "new_minimum": true
+    },
+    {
+      "master": 7,
+      "segment": 166,
+      "wrapped_gap": 67,
+      "passes_role_target_flags": true,
+      "new_minimum": true
+    }
+  ],
+  "predicted_pair": [
+    6,
+    7
+  ],
+  "predicted_midpoint": 258,
+  "observed_records_command_handled_start_span_direction_policy": [
+    {
+      "master": 6,
+      "record": [
+        4,
+        0,
+        258,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "master": 7,
+      "record": [
+        4,
+        1,
+        258,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

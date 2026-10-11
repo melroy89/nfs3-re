@@ -1,0 +1,43 @@
+{
+  "evidence_type": "analytical witness, not game runtime",
+  "function": "004ca160",
+  "assumptions": [
+    "identity vehicle rotation",
+    "wheel center at origin",
+    "active armed record admitted by segment gate",
+    "finite exactly representable transformed vertices"
+  ],
+  "vertices": [
+    [
+      0.375,
+      0.25,
+      0.875
+    ],
+    [
+      0.875,
+      0.25,
+      0.375
+    ],
+    [
+      0.875,
+      -0.25,
+      0.375
+    ],
+    [
+      0.375,
+      -0.25,
+      0.875
+    ]
+  ],
+  "outcodes": [
+    32,
+    2,
+    2,
+    32
+  ],
+  "common_outcode": 0,
+  "algorithm_accepts": true,
+  "exact_intersection": false,
+  "separating_plane_proof": "Every quad point has x+z=1.25; every point in cube [-0.5,0.5]^3 has x+z<=1.0. Gap 0.25.",
+  "shape_note": "Vertical rectangle of height0.5, matching the constructor vertical extrusion; installed-track reachability is unproven."
+}

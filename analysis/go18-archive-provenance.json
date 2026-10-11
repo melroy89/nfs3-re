@@ -1,0 +1,44 @@
+{
+  "scope": "Static installed archive and Ghidra string verification; no GO18 runtime capture",
+  "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0002/CAR.VIV",
+  "sha256": "0c217e047e25e525dc3abb3f0916685672191505db528d96fa58e924b74aef8d",
+  "entries": [
+    {
+      "name": "carp.txt",
+      "offset": 120,
+      "size": 5014
+    },
+    {
+      "name": "car.fce",
+      "offset": 5136,
+      "size": 35220
+    },
+    {
+      "name": "car00.tga",
+      "offset": 40356,
+      "size": 262188
+    },
+    {
+      "name": "car.bnk",
+      "offset": 302544,
+      "size": 168380
+    },
+    {
+      "name": "ocar.bnk",
+      "offset": 470924,
+      "size": 45668
+    },
+    {
+      "name": "scar.bnk",
+      "offset": 516592,
+      "size": 99004
+    }
+  ],
+  "filename_chain": {
+    "registered_model_basename": "car",
+    "00537330": "%sp",
+    "00537334": "%s.txt",
+    "result": "carp.txt"
+  },
+  "member_sha256": "b24694e7304d00c72e622861a27597e2e16cc8b3175f52a6c413db8ac76c8c86"
+}

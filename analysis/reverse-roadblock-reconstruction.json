@@ -1,0 +1,64 @@
+{
+  "source": "runtime/reverse-roadblock-announcement.json",
+  "pre_assignment_tick": 12205,
+  "observed_assignment_tick": 12209,
+  "segment_count": 1463,
+  "target_segment": 1385,
+  "candidates": [
+    {
+      "master": 2,
+      "segment": 689,
+      "reverse_forward_gap": 696,
+      "eligible": true,
+      "new_record_minimum": true
+    },
+    {
+      "master": 3,
+      "segment": 1248,
+      "reverse_forward_gap": 137,
+      "eligible": true,
+      "new_record_minimum": true
+    },
+    {
+      "master": 4,
+      "segment": 1081,
+      "reverse_forward_gap": 304,
+      "eligible": true,
+      "new_record_minimum": false
+    },
+    {
+      "master": 5,
+      "segment": 1407,
+      "reverse_forward_gap": -22,
+      "eligible": false,
+      "new_record_minimum": false
+    },
+    {
+      "master": 6,
+      "segment": 1412,
+      "reverse_forward_gap": -27,
+      "eligible": false,
+      "new_record_minimum": false
+    },
+    {
+      "master": 7,
+      "segment": 376,
+      "reverse_forward_gap": -454,
+      "eligible": true,
+      "new_record_minimum": false
+    }
+  ],
+  "selected_masters": [
+    2,
+    3
+  ],
+  "signed_pair_delta": -559,
+  "rejected_by_signed_delta_ge400": false,
+  "predicted_midpoint": 969,
+  "observed_midpoint": 969,
+  "nearest_two_eligible_masters": [
+    3,
+    4
+  ],
+  "limitation": "Reconstruction of non-atomic pre-assignment snapshot, not exact instruction trace."
+}

@@ -914,3 +914,147 @@ These findings are static unless explicitly stated otherwise; no new Wine test o
 - **Gear update — `004a90a0`, `UpdateVehicleGearFromRPMThresholds`:** the added plate comment complements the existing evidence at `004a91c8`; complete tuning-table bounds and exceptional RPM behavior remain unresolved.
 
 Names, comments and subsystem/AnalystNamed tags were read back from the persistent Ghidra project. The final inventory contained 3,916 function entries, including 1,322 `FUN_*` names. This is an inventory, not a percentage of behavior understood. The project was saved; the executable fingerprint remained unchanged.
+
+
+## Astra live police follow-up
+
+Read-only Wine sampling now corroborates the distinction between selectable human police and AI police profiles, human-police/AI-racer stop completion, and spike-strip deployment/removal. The spike-strip control binding resolves the identity of six formerly generic timed-track-event functions; names and supporting comments are saved in Ghidra. Detailed evidence and remaining limits are in [police-torque-runtime.md](police-torque-runtime.md) and [spike-strip-runtime.md](spike-strip-runtime.md). A subsequent racer-side countdown capture confirms four AI501/0002 profiles with torque[21]=0.0 and AI callback004088f0; a reachable full-drivetrain path remains unproven; no spike-hit effect was confirmed.
+
+Player-racer lifecycle follow-up: the same local limit3 run captured first/second ticket completion with racer state0 and the third stop with stops3/state4, matching Melroy’s Busted report. Reciprocal links and group counters clear; the temporary AI bit clears on both nonterminal and terminal completion while callback pointers stay unchanged. See [police-torque-runtime.md](police-torque-runtime.md) and its retained runtime snapshots. Post-terminal reacquisition and other limits remain unresolved.
+
+## GOFAST startup lookup verified
+
+Menu-entered GOFAST with Diablo SV automatic/default tuning produces final-gear index45, beyond torque[0..40], selecting the adjacent maximum-velocity field. Static calculation from retained live inputs exactly reproduces vehicle+58c. See [runtime evidence and limits](gofast-final-gear-runtime.md). This establishes the startup lookup, not its visible driving consequences.
+
+## Bounded controller and gear contracts
+
+[Controller quotient review](controller-quotient-contract.md) verifies integer division before conversion, finite-state clamping and positive denominators in all47 installed CARP profiles. [AI gear review](ai-gear-fallback.md) adds local shift-helper bound preservation and a candidate guarantee for94 untuned profile/transmission cases at finite speed magnitude0..600. These close bounded contracts; global reachable speed/gear validity, tuning and visible controller behavior remain unresolved. Parent-reviewed annotations are saved in Ghidra.
+
+## Callback lifecycle and capacity audit
+
+[Direct lifecycle review](callback-list-lifecycle.md) confines resolved insertion/removal callers to initialization/teardown and bounds ordinary single-initialization list occupancy at114/50 for valid N<=16, versus144 capacity each. Normal shutdown follows race-loop return; abort shutdown precedes gameplay. Category and force-feedback predicate differences remain explicit, with indirect/concurrent mutation and abnormal reentry unresolved. No runtime mutation or gameplay defect is claimed.
+
+## Pursuit-assist reset ordering and cadence
+
+[Reset contract](pursuit-assist-reset-contract.md) records strict-minimum participant selection, forced-call semantics, pre-guard segment changes, phase rejection and default directional offsets. Cooldown32 decrements on the even-tick contact callback; a priority21 player reset can be decremented at priority50 in the same tick. Runtime accepted/rejected placement and reference/world consistency remain unresolved.
+
+## RUSHHOUR cap versus roster
+
+[Traffic contract](rushhour-traffic-contract.md) separates menu-entered override survival from roster allocation and reactivation: ordinary solo allocation is7/6/0 for opponent selectors0/1/2 with traffic enabled, versus override cap15. Delay modifiers and tick1920 gate remain; failed cap checks retry every third eligible invocation. Runtime population/counter and menu availability remain unresolved.
+
+## Best-lane display identified
+
+[Display evidence](lane-adherence-display.md) resolves English text IDs to "in best lane" and singular/plural cone hits, names renderer00489900, and traces gated lane samples through the even-tick contact callback. Runtime presentation and recovery outcomes remain open.
+
+## Police reset cooldown runtime corroboration
+
+[Two captured inputs22 ticks apart](runtime/police-reset-cooldown-rejection.json) distinguish accepted placement from the second cooldown-rejected reset: reference changes before rejection, horizontal position does not relocate, cooldown does not restart, and reference later recovers. User observed one reset with quick taps. See [bounded conclusions and remaining scope](pursuit-assist-reset-contract.md).
+
+## Series continuation and eliminated-human contracts
+
+[Series menu analysis](series-terminal-menu-contract.md) binds the postgame resource to its button handler and distinguishes enabled-key lookup from selected-entry dispatch. Result filters at004cf000/004cef80 and their composition at004cf090 are documented in Ghidra: surviving human results exclude numeric state2, while the separate state1 query is not human-only. Neither query can re-enable a terminal-track gate. Loaded-state bounds and actual final-round continuation remain unresolved.
+
+Mode2 generation produces seven ascending track entries with track8 last, matching the endpoint at006fd40a. Eliminated humans remain registered, receive the model selected by canonical asset ID0x21, and acquire category bit0x80; normalization assigns result state2 and excludes them from the surviving-human query. The installed KNOC asset identifies the substitution as Knockout. This does not establish spectator controls or camera behaviour. Function comments preserve the producer, registration and result-copy evidence; full details and addresses are in the linked report.
+
+## Spike contact, roadblock assignment and late escalation
+
+[Spike-strip analysis](spike-strip-runtime.md) now separates a hit followed by recovery without arrest from a hit followed by pursuit and arrest. The retained [recovery capture](runtime/spike-contact-and-recovery.json) and [arrest capture](runtime/spike-contact-and-arrest.json) support the officer-target ownership distinction. Static contact geometry, wheel-effect bits and feedback gates are documented separately from live observations; exact contact timing and some visual mappings remain open.
+
+In the subsequent racer-side run, Melroy heard a roadblock request but saw no completed roadblock. [Assignment samples](runtime/ai-roadblock-assignment.json) show paired command4 records and states8/9, then pursuit diversion; no sampled state10/11 establishes completed placement. The [reconstruction](roadblock-assignment-reconstruction.json) reproduces midpoint258 from the sampled pair and corroborates the cancellation window. Function00403b20 is named AssignRoadblockPolicePairAheadOfPlayer; its successful return means assignments installed, not a visible obstacle completed. Comments at004032e0,00403b20,00403ed0 and00403180 retain these distinctions.
+
+The reorientation helper00403180 requires every scanned racer to pass an approximate-distance threshold of240 position units. It uses an axis-ordered max-plus-quarter-min estimate, not established metres or Euclidean distance. Sampled proximity supplies context only: the observed officer was in state9, so execution of the state10 gate is not proven.
+
+[Scheduler samples](runtime/police-tactic-scheduling.json) corroborate stored group ticks11880/12208/12536. Static code requires a signed tick difference greater than320, updates the group timestamp before selection, and suppresses both selectors when the caller matches the announcement marker. Otherwise strip selection precedes roadblock selection, then support recruitment. The observed328-tick spacing is not a universal cadence. The support comment at004043a0 corrects an older argument interpretation: helper00404340 assigns command3 with span8, not command8.
+
+[Late-run evidence](runtime/ai-strip-request-no-deployment.json) records the strip-request bit first observed at20663, but no active strip or police strip-assignment bit across11482 samples spanning6942 unique ticks. At21490 all sampled free officers fail the raw forward-gap test; the race then finishes. This explains a bounded missed opportunity, not every scheduler decision or a general deployment defect. Sampling was non-atomic. AI strip placement and completed roadblock behaviour remain unresolved; a longer racer-side race is the next useful test, with the sampler verified before gameplay instructions.
+
+These changes affect saved Ghidra analysis metadata and documentation only. The executable remains unchanged; SCRATCHPAD.md remains the concise status and backlog index.
+
+## Opponent response countdown scheduler and startup reload
+
+Assembly00404840 and its sole resolved direct caller00409c83 establish a state1-only decrement path, after activation and profile-reduction gates. Controller registration0042c876 uses priority21 on the even-tick list, dispatched at004c4a7f. With unchanged registration and uninterrupted eligible state1, the positive countdown decrements once per two simulation ticks; other controller states skip this call. This is a static scheduling contract, not a measured duration in seconds.
+
+The competing50000 producer at0040488e precedes the decrement. Its strict tick window1152<tick<1216 admits31 even-tick opportunities,1154..1214. Each qualifying call reloads50000 and then leaves49999 for categorybit08. With valid segment indices, its strict segment window selects the final two track segments. It reads the first master vehicle's byte+50d but assigns the first player pointer as target; those identities must not be conflated across arbitrary rosters. Player input bit04 writes+50d at004314e7, while physics has additional writers, so a nonzero byte alone does not prove a key press. Positive countdown blocks the profile-based reload at00404a43.
+
+The parsed-instruction search returned one immediate0xc350 producer and eleven operands containing0x6e4; aliases and bulk writes remain outside that search. The complete refinement is saved in Ghidra's00404840 comment. Runtime activation, effects and broader AI-profile invariants remain open. The current longer Hot Pursuit test targets police deployment, not this startup condition.
+
+## AI spike deployment and player ticket corroborated
+
+The longer race captured AI command0/span3 assignment, state3->4 deployment and an active strip at segment703 with arming tick25326. Melroy saw it and deliberately crossed: player tyre mask0->3 coincides with reported damage to both front tyres. The previously unassigned deploying AI officer acquired the human racer, despite the original strip assignment targeting the other racer. First-ticket completion clears the mask/link and restores control, with reset cooldown31 briefly present; stop limit9, result state0. This closes the bounded normal-direction deployment/player-hit/nonterminal-recovery case. Left/right bit order, quantified handling effects, reverse/seam deployment and completed roadblock placement remain open. See [full evidence and limitations](spike-strip-runtime.md#ai-deployment-human-front-wheel-hit-and-nonterminal-recovery) and [retained samples](runtime/long-pursuit-ai-strip-deployment.json). Ghidra00403d30/00401650 comments are saved; the sampler is stopped.
+
+Release-reset refinement: player state7 calls00429100 directly at004059f5 after the group stop phase ends, without a strip-flag test. This differs from conditional helper004056e0 and explains how reset can occur despite finalization clearing flag40. Samples show controller7->2, category07->05 and cooldown0->31 with input_bits0 around completion. Ghidra00405740 and the focused report preserve this evidence and its non-atomic timing limitation.
+
+Assignment-pointer lifetime refinement: strip contact clears officer+711bit08 before attachment, while attachment requires that bit to clear the original auxiliary group's+58. The prior group's pointer remains through26537, after the other racer's ticket completes and officer+730 clears. A nonzero+58 blocks a later selector invocation, but permanent suppression or an actual failed repeat attempt is not established. See [ordering and scope](spike-strip-runtime.md#contact-bypasses-one-assignment-pointer-cleanup-path); comments saved at00401650/004018b0.
+
+## Reverse roadblock and strip attempts
+
+[Reverse roadblock reconstruction](reverse-roadblock-reconstruction.json) distinguishes the actual record-minima pair2/3 from nearest pair3/4. Signed pair delta-559 passes the one-sided400 check, and midpoint969 matches the assignments. Ghidra00403b20 records this runtime witness. No completed roadblock was visually reported.
+
+Three reverse strip assignments were overridden by pursuit before any sampled deployment. The first two clear the old group pointer during ordinary acquisition, corroborating the cleanup distinction from strip contact. All three show increasing segment movement away from their nearby lower-index assignment intervals. The full direction/speed chain remains unresolved; this is not proof of a universal reverse bug. [Third-attempt evidence](runtime/reverse-third-strip-attempt.json) includes the full capture summary:13821 samples,10820 unique ticks406..35359, no active strip observed. The sampler is stopped. See [focused report](spike-strip-runtime.md#third-reverse-attempt-and-capture-endpoint).
+
+Follow-up resolves the local sign chain:004028e0 sets directionbit10 from negative wrapped start-current delta;00401430 flips cruise-speed sign once for reverse and once for that bit. With both set, the flips cancel. [Retained witnesses](reverse-assignment-direction-evidence.json) show this flag combination and movement away from lower assignment intervals. Comments at both functions are saved. Subsequent speed adjustment0040bff0 and full dynamics remain outside this bounded proof; no universal reverse-deployment failure is claimed.
+
+Reverse U-turn observation: Melroy reports no visible turn-around by oncoming
+police. This remains separate from the assignment sign proof: pursuit
+helper00402910 explicitly adjusts for reverse, and context producer00401780
+uses target direction/category fields. [Evidence boundary and follow-up
+fields](spike-strip-runtime.md#reported-absence-of-reverse-track-pursuit-u-turns)
+are also recorded in its saved Ghidra comment. A later radio announcement
+occurred after sampling stopped and supplies no additional memory evidence.
+
+## AI501 full-drivetrain candidate via GO18
+
+Verified menu/loader/roster chain: GO18 selects18, loader adds483 to resolve
+501/pursuit0002, and regular session0 preserves the override while Hot Pursuit
+strips it. This supplies a built-in runtime candidate without changing the
+executable. Actual human profile and full-drivetrain consumption remain open;
+see [test contract](police-torque-runtime.md#go18-built-in-candidate-for-full-drivetrain-reachability).
+The route and limitations are saved in Ghidra0042c950.
+
+GO18 provenance refinement:0042c2a0 reads physics text from the same global
+archive loaded by the override-aware loader, then parses into[vehicle+528].
+The substitution covers physics input, not only appearance; basename
+compatibility, tuning and live execution still require verification. See the
+[resolved source chain](police-torque-runtime.md#override-archive-supplies-physics-text).
+
+Drivetrain004aaed1 is now named `UpdateEngineRPMAndComputeDriveResponse` with
+a saved evidence plate. [Torque consumption gates](police-torque-runtime.md#full-drivetrain-entry-versus-actual-torque-interpolation)
+separate neutral/shift/state bypasses from current-RPM, redline and idle
+interpolation. This tightens the pending GO18 test without claiming live use.
+
+## Physics missing-field defaults
+
+[Parser/defaulting evidence](physics-parser-defaults.md) distinguishes empty
+input from incomplete nonempty input and preserves the all112-float AI reset.
+A newly verified destination discrepancy makes missing external field79 write
+the field11 destination+1b8 instead of+1bc. All47 installed profile headers
+include79 and67..74, so no installed trigger is established. Ghidra004b0bb0
+is saved; malformed-input reachability and wider safety remain unresolved.
+
+Physics parser follow-up names004b1380/004b0940/004b09d0 and establishes
+local synchronous caller ordering. Expanded installed inventory matches all80
+header slots in47 files with maximum normalized line450 bytes; numeric
+validity and global serialization remain open. See [coverage and ownership](physics-parser-defaults.md#installed-header-coverage-and-local-ownership).
+
+## Successful reverse strip deployment observed
+
+A fresh capture establishes an active reverse-track strip at360/lane7, owned
+by master4 in state4. Human approach at segment366 has tyre mask0 and the user
+reports proximity. This resolves existence of reverse deployment, not the
+missed assignment-to-activation transition. [Evidence](runtime/reverse-active-strip.json)
+and [limits](spike-strip-runtime.md#active-reverse-strip-finally-captured) are
+saved; Ghidra00403030 records the distinction from earlier failed attempts.
+
+Reverse contact/recovery is now captured: user-reported front tyres match
+mask0->3 at73463, deploying officer joins existing group1->2, third ticket
+under limit9 clears mask/link at74022, controller2/category05 returns at74025
+with reset cooldown30. [Contact](runtime/reverse-strip-contact.json) and
+[recovery](runtime/reverse-strip-ticket-recovery.json) are preserved; Ghidra
+comments saved. Sampler stopped at paused tick74061. Initial deployment
+transition, seams and individual left/right identities remain unresolved.
+
+Final handoff pass: named004b0900 `IsCarPhysicsValueLine` after assembly and
+character-table verification (first digit or minus, no complete numeric
+validation). Saved abort return-path comments at00401010/004ea290 and
+expanded physics-parser-defaults.md. Current state and next steps are in
+[model handoff](model-handoff.md).

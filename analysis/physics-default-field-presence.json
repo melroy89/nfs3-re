@@ -1,0 +1,289 @@
+{
+  "scope": "Read-only installed CARP field-header inventory; not execution of parser",
+  "count": 47,
+  "missing_field79": 0,
+  "rows": [
+    {
+      "archive": "GAMEDATA/CARMODEL/456G/car.viv",
+      "field11": "3.530000",
+      "field79": "3.530000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "field11": "3.540000",
+      "field79": "3.540000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "field11": "3.420000",
+      "field79": "3.150000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "field11": "4.090000",
+      "field79": "4.090000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "field11": "3.831900",
+      "field79": "3.831900",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "field11": "3.810000",
+      "field79": "3.810000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "field11": "4.180000",
+      "field79": "4.180000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "field11": "3.450000",
+      "field79": "3.450000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "field11": "3.860000",
+      "field79": "3.860000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "field11": "4.350000",
+      "field79": "3.150000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "field11": "2.909000",
+      "field79": "2.909000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "field11": "3.060000",
+      "field79": "3.060000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "field11": "3.100000",
+      "field79": "3.100000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "field11": "7.700000",
+      "field79": "7.700000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "field11": "3.831900",
+      "field79": "3.831900",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "field11": "2.830000",
+      "field79": "2.830000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "field11": "4.010000",
+      "field79": "4.010000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "field11": "3.810000",
+      "field79": "3.810000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "field11": "4.450000",
+      "field79": "4.450000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "field11": "2.650000",
+      "field79": "2.650000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "field11": "3.760000",
+      "field79": "3.760000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0000/CAR.VIV",
+      "field11": "4.000000",
+      "field79": "4.000000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0001/CAR.VIV",
+      "field11": "4.500000",
+      "field79": "4.500000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0002/CAR.VIV",
+      "field11": "3.810000",
+      "field79": "3.810000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0003/CAR.VIV",
+      "field11": "3.810000",
+      "field79": "3.810000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0004/CAR.VIV",
+      "field11": "3.600000",
+      "field79": "3.600000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0005/CAR.VIV",
+      "field11": "7.700000",
+      "field79": "7.700000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0006/CAR.VIV",
+      "field11": "4.000000",
+      "field79": "4.000000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0007/CAR.VIV",
+      "field11": "4.000000",
+      "field79": "4.000000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0008/CAR.VIV",
+      "field11": "4.000000",
+      "field79": "4.000000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0009/CAR.VIV",
+      "field11": "4.100000",
+      "field79": "3.800000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0010/CAR.VIV",
+      "field11": "4.880000",
+      "field79": "4.880000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0011/CAR.VIV",
+      "field11": "4.200000",
+      "field79": "3.600000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0012/CAR.VIV",
+      "field11": "3.540000",
+      "field79": "3.540000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0013/CAR.VIV",
+      "field11": "7.700000",
+      "field79": "7.700000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0014/CAR.VIV",
+      "field11": "4.000000",
+      "field79": "4.000000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0015/CAR.VIV",
+      "field11": "4.000000",
+      "field79": "4.000000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/0016/CAR.VIV",
+      "field11": "4.000000",
+      "field79": "4.000000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0000/CAR.VIV",
+      "field11": "3.270000",
+      "field79": "3.270000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0001/CAR.VIV",
+      "field11": "3.831900",
+      "field79": "3.831900",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0002/CAR.VIV",
+      "field11": "4.850000",
+      "field79": "3.300000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0003/CAR.VIV",
+      "field11": "3.450000",
+      "field79": "3.450000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0004/CAR.VIV",
+      "field11": "3.540000",
+      "field79": "3.540000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0005/CAR.VIV",
+      "field11": "3.420000",
+      "field79": "3.150000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "field11": "3.420000",
+      "field79": "3.150000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VICT/car.viv",
+      "field11": "3.270000",
+      "field79": "3.270000",
+      "missing_ai_sections": []
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "field11": "3.420000",
+      "field79": "3.150000",
+      "missing_ai_sections": []
+    }
+  ]
+}
