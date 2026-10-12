@@ -1,0 +1,10 @@
+{
+  "scope": "Current regular files recursively under GAMEDATA and gamedata_org; case-insensitive localized FEDATA basenames; excludes other roots and later runtime writes",
+  "roots": [
+    "/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/GAMEDATA",
+    "/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/gamedata_org"
+  ],
+  "loose_localized_fedata": [],
+  "archive_hashes_checked": 114,
+  "archive_hash_mismatches": []
+}

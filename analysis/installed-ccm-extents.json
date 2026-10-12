@@ -1,0 +1,85 @@
+{
+  "scope": "Loose installed GAMEDATA/TRACKS CCM files; stored signed count offset4, stride28, header8; file extent only, no runtime completeness claim",
+  "files": [
+    {
+      "path": "GAMEDATA/TRACKS/TRK000/TR00.CCM",
+      "size": 176,
+      "header_hex": "0100000006000000",
+      "count": 6,
+      "required_bytes": 176,
+      "extent_valid": true,
+      "trailing_bytes": 0,
+      "sha256": "32258b6609f05982fe57830432d473ed9f9d1afe551bbb0812de9af8f45d8291"
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK001/TR01.CCM",
+      "size": 120,
+      "header_hex": "0100000004000000",
+      "count": 4,
+      "required_bytes": 120,
+      "extent_valid": true,
+      "trailing_bytes": 0,
+      "sha256": "7342bdd682659160ef0328a8b6ce6d70e033294cc75635b9b125d7f5dbc295bb"
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK003/TR03.CCM",
+      "size": 120,
+      "header_hex": "0100000004000000",
+      "count": 4,
+      "required_bytes": 120,
+      "extent_valid": true,
+      "trailing_bytes": 0,
+      "sha256": "edbdd23e1445770db50620a07f3eb8a7cae244437fdb8e75945a89f20d7d7d4c"
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK004/TR04.CCM",
+      "size": 232,
+      "header_hex": "0100000008000000",
+      "count": 8,
+      "required_bytes": 232,
+      "extent_valid": true,
+      "trailing_bytes": 0,
+      "sha256": "1e8c9ef614dd79fd1e1672fc694ef39b8c497db6a671c563d26d88601c0d9c2d"
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK005/TR05.CCM",
+      "size": 148,
+      "header_hex": "0100000005000000",
+      "count": 5,
+      "required_bytes": 148,
+      "extent_valid": true,
+      "trailing_bytes": 0,
+      "sha256": "d217aec2d7449f15979627b4f71550b58e90df23b6922490281bc17d2f854f77"
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK006/TR06.CCM",
+      "size": 708,
+      "header_hex": "0100000019000000",
+      "count": 25,
+      "required_bytes": 708,
+      "extent_valid": true,
+      "trailing_bytes": 0,
+      "sha256": "2ba13cfe175309b14ff5ce06007166b3ca6d196935ec7af473d0cced4e55bc40"
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK007/TR07.CCM",
+      "size": 120,
+      "header_hex": "0100000004000000",
+      "count": 4,
+      "required_bytes": 120,
+      "extent_valid": true,
+      "trailing_bytes": 0,
+      "sha256": "74dacc9057d7aeb86f8bcf8c6d412e93a705b18843586983f36dcb9515e9092b"
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK008/TR08.CCM",
+      "size": 316,
+      "header_hex": "010000000b000000",
+      "count": 11,
+      "required_bytes": 316,
+      "extent_valid": true,
+      "trailing_bytes": 0,
+      "sha256": "29541b6a3d4038736e459e3b983eb141b11d0f483ea017d88c9f56f1f9c3ecee"
+    }
+  ]
+}

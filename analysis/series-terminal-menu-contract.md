@@ -261,3 +261,111 @@ This grounds the special model identity without assuming its registry slot.
 Default controller00431430 has no local category80 input-suppression check;
 callback initialization0042c400 selects player controls by default, with AI
 and network ownership overrides. Full driving/camera behavior remains open.
+
+## Cursor positioning after selection
+
+Named00449ea0 `SetFrontendCursorToSelectedEntry` after full assembly review.
+Sentinel100 returns without cursor changes. Otherwise it indexes signed
+start+selection at stride0xbc and positions X at x+trunc(3*width/4), Y at
+y+trunc(height/2), then calls the cursor setter. It does not check disabled
+flags or policy. Therefore the navigation helper's final cursor update adds
+no eligibility guard to the previously documented selection flow. Global
+selection validity and final-round invocation remain unresolved.
+
+## Per-frame button rendering and availability
+
+Recovered registered callback004607c0..00461267 as
+`RenderFrontendButtonAndUpdateAvailability`. Type5 template+2c points here;
+template+30 remains input callback00461270. The menu update pass invokes+2c
+before hover/key processing, subject to its entry/priority conditions.
+
+The racenow branch updates bit0 only with nonzero network session, host role
+and the applicable rendering path. It clears bit0 when
+(00662968==0 OR gate004cf090 succeeds) AND readiness0049ab60 succeeds;
+otherwise sets it. In particular00662968==0 skips the mode gate, not readiness.
+Nonhost rendering draws the readiness indicator. This is a network-host
+availability producer, not proof of offline terminal-series revalidation.
+Retained selection/modal state and other disabled-bit producers remain open.
+Ghidra comment records the corrected branch conditions and broader render role.
+
+## Reverse navigation and policy scope
+
+Named00449f30 `SelectPreviousEligibleFrontendEntry` after full assembly
+review. Sentinel100/no valid prior selects the last eligible record; ordinary
+reverse navigation decrements and wraps0 to the final record. Like forward
+navigation,0400 retains the entry before eligibility checks, and the wrapped
+scan has no full-cycle stop. Stable all-ineligible lists therefore require an
+upstream invariant; no reachable postgame example is established.
+
+Policy004499b0 is network-only: offline session0 returns1 without token
+checking. Its callers add rejection bit0 to temporary flags, not persistent
+entry storage. Thus this policy cannot supply offline terminal-series
+revalidation. Actual postgame initialization/flag lifetime remains open.
+
+## Offline stored availability producer
+
+Initializer0044efd0 looks up racenow using00539494 and calls gate004cf090
+at0044f2dc. False stores bit0 into entry+4 at0044f2e5. This establishes an
+offline-capable persistent disable producer, separate from the network-only
+policy's temporary flags and render callback's host-only refresh. Selection
+ordering/retention and eventual next-race behavior remain open; initializer
+comment saved in Ghidra.
+
+## Registry-to-runtime postgame binding
+
+Parent assembly review of00442b10 closes the missing binding: named
+`BindFrontendMenuCallbacksByName`. It scans24-byte rows00555c48, compares
+row name against runtime descriptor+14, and copies five DWORDs row+4..+14
+to descriptor+0..+10. Postgame row00556038 names00537d94='postgame'; its
+00556044 pointer0044efd0 therefore becomes descriptor+8, not a guessed
+registry/runtime structure alias. Loader00449510 assigns descriptor name
+before calling the binder. Adjacent control1 starts00556050.
+
+For that normal bound descriptor, initialization0044ab40 resets selections
+100, restores templates, invokes0044efd0 (including offline racenow disable),
+then initializes/layouts entries; RunFrontendMenuLoop's first selection pass
+follows. This closes normal initial ordering. Later transitions, mutated
+callbacks/flags and retained selection still require lifecycle evidence.
+
+## Postgame frame helper boundary
+
+Per-frame0044eda0's explicit body does not re-evaluate the offline terminal
+gate or write descriptor selection/prior fields. Its racenow write only
+re-disables after a network-session loss in session modes above1. Result-tab
+state/flags are distinct controls. Helper004c9860 is now named
+`ProcessBackgroundSoundTasks`: it dispatches the periodic
+scheduler then004c9380, named `UpdateSoundBankSequenceAndCleanup` from its
+voice-expiration, next-patch and bank cleanup logic. Neither explicit body
+adds terminal selection validation, but scheduled callbacks remain indirect
+state-changing edges. Saved Ghidra comments; no global non-reentry claim.
+
+## Selection retention reachability boundary
+
+Navigation00449f30/0044a0c0 retains the current entry when flag0400 is set.
+Hover0044a6b0 also retains it during a dialog or latch00559250. The main loop
+rechecks dialog state before input dispatch, so modal retention alone does
+not establish an action path. Known0400 writers belong to car-color, HUD,
+cascade and droplist controls; the racenow type5 template has0800, and its
+postgame initializer only adds disabled bit0. No concrete racenow0400
+producer or retained disabled-racenow invocation was found. Direct latch
+references show a read and clear, without a nonzero writer; aliased writes
+remain outside this bounded inventory.
+
+Fresh initialization resets selection to100 and applies the postgame disable
+before the first scan, whose1301 exclusion mask includes bit0. That ordinary
+path therefore skips disabled racenow. Later mutation/indirect callbacks and
+actual action reachability remain open; conditional retention code alone is
+not evidence of a bypass.
+
+## Offline action-to-race route
+
+Type5 template00556e40 binds entry+30 to00461270. Enter0d and racenow token
+matching at0046128c..004612a8 take the simple offline action6 return when
+007a22e0==0 (004612b1..004612bf). This handler does not inspect disabled bit0
+or call terminal gate004cf090. Frontend loop0044b230 returns the action via
+004732b0; application004a3db0 dispatches states6/7 to RunRaceSession004a3690.
+The inspected race-start and mode1/mode2 roster routes consume progression
+without calling004cf090. This closes the explicit action-route trace, not a
+terminal bypass: no concrete disabled-racenow dispatch was established, and
+race setup can fail for separate reasons. The observed terminal policy is
+frontend availability/selection enforcement.

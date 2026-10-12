@@ -1,0 +1,10 @@
+{
+  "scope": "Decoded output-count arithmetic before one signed8 token; entry produced0..31; no claim of input bounds or memory safety",
+  "cases": 8192,
+  "maximum_produced": 159,
+  "witness_before": 31,
+  "witness_token": -128,
+  "zero_token_emitted": 0,
+  "zero_token_source_advance": 1,
+  "input_extent_bound": null
+}

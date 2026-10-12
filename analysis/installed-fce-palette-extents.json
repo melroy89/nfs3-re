@@ -1,0 +1,866 @@
+{
+  "required_member_size": 2304,
+  "scope": "BIGF VIV files under installed GAMEDATA and gamedata_org; duplicate/original trees retained separately",
+  "members": [
+    {
+      "path": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "member": "car.fce",
+      "offset": 5328,
+      "size": 152948,
+      "archive_size": 1581124,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "member": "car.fce",
+      "offset": 5292,
+      "size": 29668,
+      "archive_size": 719356,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "member": "car.fce",
+      "offset": 5340,
+      "size": 160500,
+      "archive_size": 1627106,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "member": "car.fce",
+      "offset": 5336,
+      "size": 138636,
+      "archive_size": 1542245,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 147908,
+      "archive_size": 1613816,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "sha256": "39eee86aa6aa2be37dc408f11a1adfc3e119df45f49dc8f364657eb819a75913",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 143124,
+      "archive_size": 1444505,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 149100,
+      "archive_size": 1390047,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 134436,
+      "archive_size": 1418514,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 139748,
+      "archive_size": 1349644,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "member": "car.fce",
+      "offset": 5328,
+      "size": 150724,
+      "archive_size": 1833943,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "sha256": "7963e1b0758a10c4565497b6d0238923caa8c9656e6f9411f43ba1cd439bafdc",
+      "member": "car.fce",
+      "offset": 5344,
+      "size": 156708,
+      "archive_size": 1463197,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "sha256": "fddec296ef128eafe5c01eb8c4325b79c9a0ffde18e422fbd5527d6f11e54ce7",
+      "member": "car.fce",
+      "offset": 5288,
+      "size": 147052,
+      "archive_size": 1112404,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/VICT/car.viv",
+      "sha256": "a4432706bd475449a63d73ceb8abd06ed0577103d3a2eab12a4ac4178eaa75b0",
+      "member": "car.fce",
+      "offset": 5146,
+      "size": 33284,
+      "archive_size": 717922,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "member": "car.fce",
+      "offset": 5336,
+      "size": 135444,
+      "archive_size": 1692981,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "member": "car.fce",
+      "offset": 5340,
+      "size": 126532,
+      "archive_size": 1531156,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "sha256": "99e00c1e21a73c10fc4593309e9fd16ff26256b2aa25cd9c3b4c4baa304d4264",
+      "member": "car.fce",
+      "offset": 5328,
+      "size": 149492,
+      "archive_size": 1747047,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 146772,
+      "archive_size": 1446604,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/456G/car.viv",
+      "sha256": "3dd6d3a0a80a56c900cc4fd7c2f774fb50a3a01cb5c3998c5892b37702eeb2cc",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 149524,
+      "archive_size": 1433603,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "member": "car.fce",
+      "offset": 5344,
+      "size": 135508,
+      "archive_size": 1435063,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "member": "car.fce",
+      "offset": 5352,
+      "size": 133060,
+      "archive_size": 1549851,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "sha256": "c30bbe49abccb9f5c8813d0674f10dd99ee71113dc2281800de6c58662bfcd41",
+      "member": "car.fce",
+      "offset": 5328,
+      "size": 151684,
+      "archive_size": 1773707,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 144932,
+      "archive_size": 1372240,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "member": "car.fce",
+      "offset": 5328,
+      "size": 146164,
+      "archive_size": 1723392,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "sha256": "7e122baa3541699736405d117aa2539270e8400d3eeb6092d95f098259f33699",
+      "member": "car.fce",
+      "offset": 5328,
+      "size": 150420,
+      "archive_size": 1626250,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0006/CAR.VIV",
+      "sha256": "7418ff65a41e8135e4b1810d0418f283a994c93cc7370e00c260ef985fabbf17",
+      "member": "car.fce",
+      "offset": 5092,
+      "size": 29236,
+      "archive_size": 296490,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0013/CAR.VIV",
+      "sha256": "25c5b9e2f359050e64fb4ddcea1c757491aba31b68a91495d83b80dff3275f55",
+      "member": "car.fce",
+      "offset": 5092,
+      "size": 30468,
+      "archive_size": 297748,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0000/CAR.VIV",
+      "sha256": "08050fb13dfeb32df48be96b9131954c5cf894ff848d57a9035134a71397da37",
+      "member": "car.fce",
+      "offset": 5096,
+      "size": 29668,
+      "archive_size": 296926,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0014/CAR.VIV",
+      "sha256": "5b1349f4c029430bbe6f9045e0997a078cebac81621eafb125d29c6697ad7afe",
+      "member": "car.fce",
+      "offset": 5100,
+      "size": 30372,
+      "archive_size": 297660,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0016/CAR.VIV",
+      "sha256": "2b8ae5367292ad4d2bf281fda77dd3eebb0b7a55a14b96d30fa6d932c3d74f6f",
+      "member": "car.fce",
+      "offset": 5100,
+      "size": 29892,
+      "archive_size": 297154,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0011/CAR.VIV",
+      "sha256": "aa7b73987e791dda2c73cfd629332aa6653b969daa79a27b674190e94b7a51ba",
+      "member": "car.fce",
+      "offset": 5096,
+      "size": 28084,
+      "archive_size": 295342,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0010/CAR.VIV",
+      "sha256": "54d82082d67d2097c98fc5828b14d5c7bfe02321ada9a22f5595ecd3cd8fee0f",
+      "member": "car.fce",
+      "offset": 5084,
+      "size": 28932,
+      "archive_size": 296204,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0002/CAR.VIV",
+      "sha256": "31f7b837c2ee1f3ce776273a009b028c7fe0db3a8f6bb5504fdf41aa67dc51dd",
+      "member": "car.fce",
+      "offset": 5104,
+      "size": 29428,
+      "archive_size": 296694,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0008/CAR.VIV",
+      "sha256": "db9977c3f4949857f042c842ca47f850c5a7f7564190b98acd462e99d79ee4e9",
+      "member": "car.fce",
+      "offset": 5080,
+      "size": 28932,
+      "archive_size": 296174,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0009/CAR.VIV",
+      "sha256": "8702682324f81b94c9c3c6b448bf4c7a84be5d088a88e2d8bbceb86116c4fc5b",
+      "member": "car.fce",
+      "offset": 5088,
+      "size": 30004,
+      "archive_size": 297254,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0005/CAR.VIV",
+      "sha256": "aa68012fbd418f57385117b79e4167491ae00d3150d807db8d3480bceae28618",
+      "member": "car.fce",
+      "offset": 5092,
+      "size": 29236,
+      "archive_size": 296490,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0012/CAR.VIV",
+      "sha256": "c35d9068fe900fc54cef56231e99f68fef312adb8e9b197a6fbfc0d8e3d0072a",
+      "member": "car.fce",
+      "offset": 5092,
+      "size": 32084,
+      "archive_size": 299364,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0004/CAR.VIV",
+      "sha256": "9472cecd98d4eebc377e38cd5db91551736ba8bd0c4ddc391a962a97319da51b",
+      "member": "car.fce",
+      "offset": 5084,
+      "size": 28932,
+      "archive_size": 296204,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0007/CAR.VIV",
+      "sha256": "15edfd444a1fd3527a7998fdd880c4ca37347061458b7407115a378816bf69a2",
+      "member": "car.fce",
+      "offset": 5084,
+      "size": 29236,
+      "archive_size": 296482,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0003/CAR.VIV",
+      "sha256": "95590f85d1ffaa383a82caf967d6ae4548550175d064b62a4e1c42ff230e7930",
+      "member": "car.fce",
+      "offset": 5096,
+      "size": 28084,
+      "archive_size": 295342,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0015/CAR.VIV",
+      "sha256": "0d543bd89b523a89fc3f8612c2dbf4c0e824eed82219748590510402a169f0a8",
+      "member": "car.fce",
+      "offset": 5100,
+      "size": 28276,
+      "archive_size": 295564,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0001/CAR.VIV",
+      "sha256": "efba2f45779739e6fc9d2539f717fb594d460483cae53596af34ea85863d26d8",
+      "member": "car.fce",
+      "offset": 5096,
+      "size": 28932,
+      "archive_size": 296216,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0000/CAR.VIV",
+      "sha256": "0208bd543dfac99f76628608127ecf7c6eb1e97f06d264b93806dc127dd14cb8",
+      "member": "car.fce",
+      "offset": 5132,
+      "size": 33284,
+      "archive_size": 717516,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0002/CAR.VIV",
+      "sha256": "0c217e047e25e525dc3abb3f0916685672191505db528d96fa58e924b74aef8d",
+      "member": "car.fce",
+      "offset": 5136,
+      "size": 35220,
+      "archive_size": 615596,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0005/CAR.VIV",
+      "sha256": "d0849b6f5076ba69133d8db7f304f4d0cd6bbe4f0260ca783dea33e4f4c2b18c",
+      "member": "car.fce",
+      "offset": 5148,
+      "size": 149100,
+      "archive_size": 729464,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0004/CAR.VIV",
+      "sha256": "a0e50c776ef279b8bff62da27df2c9f93446464dd39af05feb8f9f4e2825191c",
+      "member": "car.fce",
+      "offset": 5144,
+      "size": 34804,
+      "archive_size": 680988,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0003/CAR.VIV",
+      "sha256": "4186c2d8f690b467e4b59f173af3243df3f044d11c0a3276051691cafd9c250d",
+      "member": "car.fce",
+      "offset": 5140,
+      "size": 41044,
+      "archive_size": 725260,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0001/CAR.VIV",
+      "sha256": "d8cb60654b8bfff7354d4a5f044f0d3851555edb0748d8c08d64c5769d1abd7c",
+      "member": "car.fce",
+      "offset": 5144,
+      "size": 160500,
+      "archive_size": 806684,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Corv/car.viv",
+      "sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 144932,
+      "archive_size": 1372240,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Knoc/CAR.VIV",
+      "sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "member": "car.fce",
+      "offset": 5292,
+      "size": 29668,
+      "archive_size": 719356,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Fm50/car.viv",
+      "sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "member": "car.fce",
+      "offset": 5336,
+      "size": 135444,
+      "archive_size": 1692981,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Jxjr/car.viv",
+      "sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 134436,
+      "archive_size": 1418514,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Diab/car.viv",
+      "sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "member": "car.fce",
+      "offset": 5328,
+      "size": 152948,
+      "archive_size": 1581124,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Vcop/CAR.VIV",
+      "sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 149100,
+      "archive_size": 1390047,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Sl60/car.viv",
+      "sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "member": "car.fce",
+      "offset": 5328,
+      "size": 146164,
+      "archive_size": 1723392,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Peln/CAR.VIV",
+      "sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "member": "car.fce",
+      "offset": 5352,
+      "size": 133060,
+      "archive_size": 1549851,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Elni/car.viv",
+      "sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "member": "car.fce",
+      "offset": 5340,
+      "size": 126532,
+      "archive_size": 1531156,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Amd7/car.viv",
+      "sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 147908,
+      "archive_size": 1613816,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Cout/car.viv",
+      "sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "member": "car.fce",
+      "offset": 5336,
+      "size": 138636,
+      "archive_size": 1542245,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Scig/car.viv",
+      "sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 146772,
+      "archive_size": 1446604,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Merc/car.viv",
+      "sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "member": "car.fce",
+      "offset": 5344,
+      "size": 135508,
+      "archive_size": 1435063,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Lcop/CAR.VIV",
+      "sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "member": "car.fce",
+      "offset": 5340,
+      "size": 160500,
+      "archive_size": 1627106,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/f355/car.viv",
+      "sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "member": "car.fce",
+      "offset": 5332,
+      "size": 139748,
+      "archive_size": 1349644,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Jxk8/car.viv",
+      "sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "member": "car.fce",
+      "offset": 5328,
+      "size": 150724,
+      "archive_size": 1833943,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0006/CAR.VIV",
+      "sha256": "7418ff65a41e8135e4b1810d0418f283a994c93cc7370e00c260ef985fabbf17",
+      "member": "car.fce",
+      "offset": 5092,
+      "size": 29236,
+      "archive_size": 296490,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0013/CAR.VIV",
+      "sha256": "25c5b9e2f359050e64fb4ddcea1c757491aba31b68a91495d83b80dff3275f55",
+      "member": "car.fce",
+      "offset": 5092,
+      "size": 30468,
+      "archive_size": 297748,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0000/CAR.VIV",
+      "sha256": "08050fb13dfeb32df48be96b9131954c5cf894ff848d57a9035134a71397da37",
+      "member": "car.fce",
+      "offset": 5096,
+      "size": 29668,
+      "archive_size": 296926,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0014/CAR.VIV",
+      "sha256": "5b1349f4c029430bbe6f9045e0997a078cebac81621eafb125d29c6697ad7afe",
+      "member": "car.fce",
+      "offset": 5100,
+      "size": 30372,
+      "archive_size": 297660,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0016/CAR.VIV",
+      "sha256": "2b8ae5367292ad4d2bf281fda77dd3eebb0b7a55a14b96d30fa6d932c3d74f6f",
+      "member": "car.fce",
+      "offset": 5100,
+      "size": 29892,
+      "archive_size": 297154,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0011/CAR.VIV",
+      "sha256": "aa7b73987e791dda2c73cfd629332aa6653b969daa79a27b674190e94b7a51ba",
+      "member": "car.fce",
+      "offset": 5096,
+      "size": 28084,
+      "archive_size": 295342,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0010/CAR.VIV",
+      "sha256": "54d82082d67d2097c98fc5828b14d5c7bfe02321ada9a22f5595ecd3cd8fee0f",
+      "member": "car.fce",
+      "offset": 5084,
+      "size": 28932,
+      "archive_size": 296204,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0002/CAR.VIV",
+      "sha256": "31f7b837c2ee1f3ce776273a009b028c7fe0db3a8f6bb5504fdf41aa67dc51dd",
+      "member": "car.fce",
+      "offset": 5104,
+      "size": 29428,
+      "archive_size": 296694,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0008/CAR.VIV",
+      "sha256": "db9977c3f4949857f042c842ca47f850c5a7f7564190b98acd462e99d79ee4e9",
+      "member": "car.fce",
+      "offset": 5080,
+      "size": 28932,
+      "archive_size": 296174,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0009/CAR.VIV",
+      "sha256": "8702682324f81b94c9c3c6b448bf4c7a84be5d088a88e2d8bbceb86116c4fc5b",
+      "member": "car.fce",
+      "offset": 5088,
+      "size": 30004,
+      "archive_size": 297254,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0005/CAR.VIV",
+      "sha256": "aa68012fbd418f57385117b79e4167491ae00d3150d807db8d3480bceae28618",
+      "member": "car.fce",
+      "offset": 5092,
+      "size": 29236,
+      "archive_size": 296490,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0012/CAR.VIV",
+      "sha256": "c35d9068fe900fc54cef56231e99f68fef312adb8e9b197a6fbfc0d8e3d0072a",
+      "member": "car.fce",
+      "offset": 5092,
+      "size": 32084,
+      "archive_size": 299364,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0004/CAR.VIV",
+      "sha256": "9472cecd98d4eebc377e38cd5db91551736ba8bd0c4ddc391a962a97319da51b",
+      "member": "car.fce",
+      "offset": 5084,
+      "size": 28932,
+      "archive_size": 296204,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0007/CAR.VIV",
+      "sha256": "15edfd444a1fd3527a7998fdd880c4ca37347061458b7407115a378816bf69a2",
+      "member": "car.fce",
+      "offset": 5084,
+      "size": 29236,
+      "archive_size": 296482,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0003/CAR.VIV",
+      "sha256": "95590f85d1ffaa383a82caf967d6ae4548550175d064b62a4e1c42ff230e7930",
+      "member": "car.fce",
+      "offset": 5096,
+      "size": 28084,
+      "archive_size": 295342,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0015/CAR.VIV",
+      "sha256": "0d543bd89b523a89fc3f8612c2dbf4c0e824eed82219748590510402a169f0a8",
+      "member": "car.fce",
+      "offset": 5100,
+      "size": 28276,
+      "archive_size": 295564,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0001/CAR.VIV",
+      "sha256": "efba2f45779739e6fc9d2539f717fb594d460483cae53596af34ea85863d26d8",
+      "member": "car.fce",
+      "offset": 5096,
+      "size": 28932,
+      "archive_size": 296216,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0000/CAR.VIV",
+      "sha256": "0208bd543dfac99f76628608127ecf7c6eb1e97f06d264b93806dc127dd14cb8",
+      "member": "car.fce",
+      "offset": 5132,
+      "size": 33284,
+      "archive_size": 717516,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0002/CAR.VIV",
+      "sha256": "0c217e047e25e525dc3abb3f0916685672191505db528d96fa58e924b74aef8d",
+      "member": "car.fce",
+      "offset": 5136,
+      "size": 35220,
+      "archive_size": 615596,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0005/CAR.VIV",
+      "sha256": "d0849b6f5076ba69133d8db7f304f4d0cd6bbe4f0260ca783dea33e4f4c2b18c",
+      "member": "car.fce",
+      "offset": 5148,
+      "size": 149100,
+      "archive_size": 729464,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0004/CAR.VIV",
+      "sha256": "a0e50c776ef279b8bff62da27df2c9f93446464dd39af05feb8f9f4e2825191c",
+      "member": "car.fce",
+      "offset": 5144,
+      "size": 34804,
+      "archive_size": 680988,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0003/CAR.VIV",
+      "sha256": "4186c2d8f690b467e4b59f173af3243df3f044d11c0a3276051691cafd9c250d",
+      "member": "car.fce",
+      "offset": 5140,
+      "size": 41044,
+      "archive_size": 725260,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0001/CAR.VIV",
+      "sha256": "d8cb60654b8bfff7354d4a5f044f0d3851555edb0748d8c08d64c5769d1abd7c",
+      "member": "car.fce",
+      "offset": 5144,
+      "size": 160500,
+      "archive_size": 806684,
+      "extent_valid": true,
+      "palette_extent_valid": true
+    }
+  ]
+}

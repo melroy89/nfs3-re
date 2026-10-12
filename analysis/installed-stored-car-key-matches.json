@@ -1,0 +1,86 @@
+{
+  "scope": "First nine nonzero file-backed stored keys at00554f84; exact16-byte FEDATA.ENG identifier matching; no claim these nine define full supported table extent",
+  "rows": [
+    {
+      "selector": 0,
+      "identifier": 23,
+      "identifier_hex": "17000000000000000000000000000000",
+      "matching_archives": [
+        "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+        "gamedata_org/CarModel/Amd7/car.viv"
+      ]
+    },
+    {
+      "selector": 1,
+      "identifier": 19,
+      "identifier_hex": "13000000000000000000000000000000",
+      "matching_archives": [
+        "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+        "gamedata_org/CarModel/Corv/car.viv"
+      ]
+    },
+    {
+      "selector": 2,
+      "identifier": 2,
+      "identifier_hex": "02000000000000000000000000000000",
+      "matching_archives": [
+        "GAMEDATA/CARMODEL/F355/CAR.VIV",
+        "gamedata_org/CarModel/f355/car.viv"
+      ]
+    },
+    {
+      "selector": 3,
+      "identifier": 31,
+      "identifier_hex": "1f000000000000000000000000000000",
+      "matching_archives": [
+        "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+        "gamedata_org/CarModel/Fm50/car.viv"
+      ]
+    },
+    {
+      "selector": 4,
+      "identifier": 30,
+      "identifier_hex": "1e000000000000000000000000000000",
+      "matching_archives": [
+        "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+        "gamedata_org/CarModel/Scig/car.viv"
+      ]
+    },
+    {
+      "selector": 5,
+      "identifier": 24,
+      "identifier_hex": "18000000000000000000000000000000",
+      "matching_archives": [
+        "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+        "gamedata_org/CarModel/Jxk8/car.viv"
+      ]
+    },
+    {
+      "selector": 6,
+      "identifier": 15,
+      "identifier_hex": "0f000000000000000000000000000000",
+      "matching_archives": [
+        "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+        "gamedata_org/CarModel/Cout/car.viv"
+      ]
+    },
+    {
+      "selector": 7,
+      "identifier": 16,
+      "identifier_hex": "10000000000000000000000000000000",
+      "matching_archives": [
+        "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+        "gamedata_org/CarModel/Diab/car.viv"
+      ]
+    },
+    {
+      "selector": 8,
+      "identifier": 21,
+      "identifier_hex": "15000000000000000000000000000000",
+      "matching_archives": [
+        "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+        "gamedata_org/CarModel/Sl60/car.viv"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "evidence_type": "read-only occupied-record string inventory",
+  "offset_basis": "00450fe0 stack layout relative to copied recordEBP-0x730",
+  "files": [
+    {
+      "path": "/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/FEDATA/STATS/records.dat",
+      "sha256": "20940c347632a5547eed90a9b3ada645dd1838d05794f49390534415a6d928ff",
+      "fields": {
+        "participant_name": {
+          "capacity": 11,
+          "records": 3,
+          "unterminated": 0,
+          "maximum_bytes_before_nul": 6
+        },
+        "car_display_name": {
+          "capacity": 256,
+          "records": 3,
+          "unterminated": 0,
+          "maximum_bytes_before_nul": 21
+        },
+        "metadata_0": {
+          "capacity": 256,
+          "records": 3,
+          "unterminated": 0,
+          "maximum_bytes_before_nul": 11
+        },
+        "metadata_1": {
+          "capacity": 257,
+          "records": 3,
+          "unterminated": 0,
+          "maximum_bytes_before_nul": 9
+        }
+      }
+    },
+    {
+      "path": "/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/fedata_org/stats/RECORDS.DAT",
+      "sha256": "8c473b3e3339a193e8c896956a682fc8221eb0eb4bd836303f786129fc7a2787",
+      "fields": {
+        "participant_name": {
+          "capacity": 11,
+          "records": 127,
+          "unterminated": 0,
+          "maximum_bytes_before_nul": 9
+        },
+        "car_display_name": {
+          "capacity": 256,
+          "records": 127,
+          "unterminated": 0,
+          "maximum_bytes_before_nul": 21
+        },
+        "metadata_0": {
+          "capacity": 256,
+          "records": 127,
+          "unterminated": 0,
+          "maximum_bytes_before_nul": 12
+        },
+        "metadata_1": {
+          "capacity": 257,
+          "records": 127,
+          "unterminated": 0,
+          "maximum_bytes_before_nul": 13
+        }
+      }
+    }
+  ]
+}

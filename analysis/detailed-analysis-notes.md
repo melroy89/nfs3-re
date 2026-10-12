@@ -435,7 +435,7 @@ Recent static follow-up priorities (detailed evidence is saved in the Ghidra pro
 
 | Medium: screenshot concurrency and image boundaries | Capture `004c452c`; thread `004e3078`; GDI+ init/cleanup `004e2eb0` / `004e2fac`; writer `004e3014` | Recover dimension/allocation invariants, encoder availability and concurrent worker/cleanup ownership. Preserve 15/16/24/32-bit conversion, bottom-up rows, RGB565 masks and DWORD padding. Atomic counter increment does not reserve a filename; shutter sound reports thread launch and thread exit ignores save status. Begin with static and isolated instruction-equivalent cases; later controlled screenshot tests across supported depths/formats and shutdown timing only if needed. No reachable defect established. |
 | Medium: cone placement and cached geometry | Cone position initializer `00493640`; seed/profile helpers `004934c0` / `00493380`; geometry loader `00475240`; helper `00474db0`; cleanup `00475b10` | Complete cone state/matrix/surface/color semantics and smoothing boundaries. Four smoothing passes update in place; EDX carries previous/current segment between side iterations, so do not substitute a symmetric simultaneous filter. Preserve fixed-point IMUL/SHL/SHR/ADC and x87 FISTP rounding. Recover cached geometry format, extrusion/topology construction, adjacency cancellation and buffer ownership before applying full layouts. Begin with assembly and resource comparisons; later controlled track/cone scenes only if static evidence requires them. The former cone tail is now confirmed velocity; motion lasts 128 ticks, followed by a 512-tick respawn countdown. Include one-wrap segment assumptions, signed tick catch-up, bounce below reset Y without position clamping, vehicle effect/counter semantics and depth/resource-variant contracts. Later controlled cone strikes, waiting for respawn and track-boundary/view tests only if static evidence requires them. |
-| Medium: x87 inverse-angle helper | `004f9482`; quaternion interpolation caller `004b725b`; helper `0051a1ba` | Resolve exact x87 input/result stack contract, squared-input endpoint classification and exceptional/range fallback before naming or claiming acos equivalence. Inspect callees and isolated instruction-equivalent finite, endpoint, out-of-range and NaN cases first. No game testing currently required. |
+x87 inverse-angle follow-up: `004f9482`, quaternion callsite `004b725b`, helper `0051a1ba`. Ordinary stack flow, endpoints, masked-unordered handling, domain-handler delegation and the local finite-domain caller gate are resolved in [x87 inverse-angle contract](x87-inverse-angle-contract.md). Remaining Astra work is the compatibility approximation, exception policy/unmasked behavior and unit/output-normalization invariants. These residuals do not reopen the established bounded findings or imply libm numerical equivalence.
 
 | Medium: INI environment and runtime ownership boundaries | Environment override `004fb734`; search `004fb300`; window handler lookup/comparator `004cc660` / `004cc650`; sound unload `004e217c` | Trace reachable section/key lengths before reporting overflow: uppercase copies may exhaust capacity, yet underscore insertion and remaining-count decrement are unconditional. Establish search stride/count/address and comparator subtraction-overflow invariants. Recover lazy critical-section creation and sound export/worker lifetime across shutdown. Start with static call/resource bounds and isolated cases; runtime scenarios only if needed. No reachable defect established. |
 
@@ -1058,3 +1058,1576 @@ character-table verification (first digit or minus, no complete numeric
 validation). Saved abort return-path comments at00401010/004ea290 and
 expanded physics-parser-defaults.md. Current state and next steps are in
 [model handoff](model-handoff.md).
+
+Parser ownership follow-up: confirmed companion profile initialization is
+separate from vehicle working-state clearing; empty parse does not implicitly
+load defaults. Named shared cursor0055ed88, presence-array start0055ed8c and
+default-image start0055f874 with data comments, preserving existing widths.
+Two Luna workers are independently checking resource callback and abort-policy
+restoration boundaries; their conclusions have not yet been applied.
+
+Scheduler registration follow-up: inspected the16-record timed callback registrar
+and its seven direct registration sites. Named `InitializeAsyncResourceIO`
+004f0da0 from win_async.c/initasync diagnostics and queue/thread setup, and
+`StartPathfinderSoundStream`004e6f0c from SNDpathstartstream diagnostics and
+stream initialization. Ghidra comments retain register ABI caveats, unchecked
+path-copy bounds and unresolved failure/readiness conditions. Registration
+sites also include raster, sound-context and network-discovery services;
+this inventory does not prove that scheduled callbacks cannot reenter loaders.
+Project saved; no binary or runtime writes.
+
+Preparation import refinement:004465e0 snapshots0x176c bytes beginning
+006fbb4c plus two12-byte ranges, optional-loads a resource, resolves its
+primary car references and only then copies0x20f0 bytes to006fbb40 before
+restoring the snapshots. Resolver-failure branch frees the loaded buffer and
+returns0 without success-path restoration; inspected resolver writes are to
+that buffer, so this is not evidence of global corruption. No local loaded
+length gate precedes header access or the fixed-size copy. Recorded exact
+branches in Ghidra; malformed-file admission and upstream bounds remain open.
+
+Optional-loader caller naming: named00446800
+`LoadAndResolveTrnPreparationResource` and004465e0
+`LoadAndResolveKotPreparationResource`, using caller extension construction
+and verified resolver/copy operations. Named00488a80
+`LoadLocalCarArchiveShapeMetrics`: local car.viv shape payload,12 hotspot
+pairs and derived angles/distances are observed; exact HUD component semantics
+remain qualified. Saved Ghidra comments and original ABI limitations.
+
+TRN/KOT admission follow-up: read-only caller reconstruction locates menu
+load action00446c50, registered for loadnow at004474f3. Nonempty selected
+paths receive TRN/KOT suffixes and call the named importers without an
+intervening length query. Generic loader rejects zero size, but the observed
+chain does not establish a minimum length before resolver offset reads or
+fixed0x20f0 copy. This closes the local absence-of-check question, not actual
+malformed-file behavior or global file provenance. Network roster callback
+and ownership boundaries are consolidated in network-roster-admission.md.
+
+Frontend continuation pass: recovered registered button render/update callback
+004607c0 and named reverse selection00449f30 plus cursor positioning00449ea0.
+Separated offline initializer's persistent racenow disable from network-only
+render refresh and temporary selection policy. Full record binding and later
+retention remain open. Spike/force-feedback pass bounds direct mask writers
+to0..15 and confirms creation-time period is not a dynamic floor; hardware
+consequences remain unvalidated. Reports and Ghidra comments saved.
+
+## Inverse-angle stack and domain trace
+
+Two previously unnamed helpers now have evidence comments and descriptive
+names in Ghidra:004f9482 ComputeX87AcosWithDomainHandler and0051a1ba
+SqrtX87OrDispatchDomainError. Ordinary-domain x87 stack flow, endpoint and
+masked-unordered branches, and selector1 domain-handler delegation are
+established. Compatibility approximation, error policy and caller invariants
+remain partial. See[x87 inverse-angle contract](x87-inverse-angle-contract.md).
+
+## Pursuit member removal caller refinement
+
+RemovePoliceFromPursuitGroup00401a20 skips a NULL group link. Nonnull absent
+membership still decrements the count. Attach004018b0 establishes link plus
+member append on the inspected path; detach00401a80 trusts this invariant and
+preserves both on the non-player phase2 refusal. ResetFlaggedPolicePursuitLinks
+004042b0 has one direct caller00401f1a in BeginPoliceStop: group count>1,
+player-police category, zero stop counter and another selected member. It
+clears links after removal, excluding an immediate ordinary second removal
+through that reset path. Actual membership is not revalidated, and aliased
+or stale state remains open. Saved refinement in Ghidra00401a20; no runtime
+occurrence or general membership-safety claim.
+
+## Secondary ownership and caller-bound refinements
+
+INI direct integer/string reader names fit within26 bytes includingNUL;
+see[INI environment contract](ini-environment-contract.md). Screenshot capture
+and worker formulas/local lifetime are documented separately; no local GDI+
+shutdown wait proves actual overlap, see[screenshot lifecycle](screenshot-lifecycle-contract.md).
+Window-handler search004fb300 is generic, with fixed stride8 and bounded
+observed registration IDs; first-use lock and external admissions remain open.
+00508390 is named InitializeDirectDrawWindowSession with proof comments.
+See[window handler contract](window-message-handler-contract.md).
+
+## Race preparation and sound service worker
+
+Recovered61-byte worker0048ec40 as RunSoundServiceEventWorker and named its
+callback/handshake controller0048ec80 SetSoundServiceWorkerCallbackAndWait.
+Sound stop waits for callback-loop retirement before backend stop; full worker
+and handler lifetime remains partial. See[sound shutdown](sound-driver-shutdown-contract.md).
+Race preparation helpers now named/commented:00410aa0
+ReleaseOptionalMusicStreamBeforeRace,004bc8e0
+PrepareRaceRenderStateAndTemporaryArena,00434a90 ApplyPackedSceneColorToRenderer.
+Their local sequencing is established; partial-init cleanup/resource ownership
+and abort-return paths remain open. Screenshot encoder initialization also
+requires a positive count and adequate76-byte-record extent; parent assembly
+verified its unguarded first iteration. See[screenshot lifecycle](screenshot-lifecycle-contract.md).
+
+## Multiplayer setup framing and music-list ownership
+
+Setup sender004c5e80 sends exactly2192 bytes in ten208-byte and one112-byte
+chunks, each prefixed with type5. Client restoration preserves only record
++14 when the saved signed value is0..49, and always+68, across sixteen
+108-byte records. This is selective restoration, not transfer rollback.
+Reader004f6640 admits only an exactly peeked complete frame under its
+configured WORD length limit. The absent-index unpacker fallback reaches
+004c6080 through004a6440; that append has no aggregate2192-byte check.
+Configured frame bounds, indexed unpacker behavior, ordering and teardown
+remain open. Ghidra004c6080 now links these contracts.
+
+Music creators00410330/00410370 return through004e4790/004e45f0/004e4420;
+the initializer publishes the returned object as both list head and tail,
+with next+70 zero. Thus ordinary creation supports the head-equal branch
+of004e4b50 when00410aa0 releases00552598. The non-head branch unlinks and
+frees its target but also clears both global list pointers; remaining-list
+preservation is not established. Caller EDX is the preserved zero gate
+value used to clear00552598. Reentry, abort-return and indirect mutation
+remain open; this does not resolve the reported music-stop hang.
+
+Camera constructor increment evidence is recorded in
+[CCM and camera contract](ccm-camera-contract.md#stored-transition-increment).
+All findings are static; no runtime capture or binary change.
+
+## Contact recovery scheduling
+
+The alternate-tick registration and active-vehicle gate are now traced.
+Countdown+8a0 subtracts0..12 units per invocation and can reload; it is
+distinct from+524 input cooldown. See
+[contact recovery countdown](contact-recovery-countdown-contract.md).
+Ghidra00429260 includes the scheduling proof; collision/placement outcomes
+remain open.
+
+## Music fade service dependency
+
+Voice ramp update/clamping and its active-record gates are assembly-verified
+in00500c80. Duration in004e9420 divides a per-service update delta; no
+millisecond interpretation is established. See
+[menu wait investigation](runtime-menu-hang.md#static-fade-progress-dependency).
+The historical hang remains unresolved.
+
+## Music head writer audit
+
+All176 decoded direct references to005645b8 were inspected. Its writes
+are confined to initializer004e44a7 and teardown004e4b35/004e4bcf/004e4c3c.
+Worker traversal updates tail rather than head. This strengthens the ordinary
+creator-to-release head-equality contract documented above. Indirect aliases,
+reentry and returning abort paths prevent a universal ownership claim.
+Ghidra004e4b50 records this bounded negative search.
+
+## Installed FCE palette extents
+
+ReadCarFcePaletteFromArchive0049c700 reads member+7fc/4 bytes,
++800/256 bytes and+28/12 bytes after only a nonzero-length check.
+Its fixed access therefore requires member length>=0x900; read/seek
+returns are ignored. All86 car.fce members found in BIGF VIV archives
+under installed GAMEDATA and gamedata_org have valid in-file extents
+and satisfy that requirement; minimum length28084 bytes. Original and
+active trees are counted separately, not deduplicated as unique models.
+
+[Inventory](installed-fce-palette-extents.json) records paths, hashes,
+offsets and lengths. This closes the bounded asset-extent question,
+not runtime full reads or malformed/custom archive admission. Ghidra
+0049c700 includes the extent proof and limitation.
+
+## Music worker exit notification
+
+Recovered and named RunMusicStreamStateWorker004e53c0. Assembly
+004e53c9..53e2 publishes wake event+0xa8 and signals+0xa4 at startup.
+Command+0x24=8 selects state+0x20=8. Shutdown004e5572..55b4 closes
+nonzero file+0x1c, clears it, closes wake event+0xa8, signals+0xa4,
+and returns. This establishes the normal exit notification producer
+for the teardown event wait, not an OS-thread join. The same event is
+also signaled at startup; startup consumption and event lifetime must
+be reconciled before treating any signal as unique proof of retirement.
+
+The recovered worker has no direct+0x28 operand. The earlier+0x28
+poll producer remains unresolved. File-I/O retry004e629d..62c4 calls
+005013b0 and alertable sleep without checking command+0x24 inside
+that loop; therefore unconditional prompt shutdown is not established.
+No historical slowdown cause or executable modification is inferred.
+
+See [shutdown contract](sound-driver-shutdown-contract.md). Ghidra worker comment saved.
+
+## Startup consumes the ordinary event notification
+
+InitializeHeadMusicStreamAndStartWorker004e4420 creates event+0xa4
+via004dfb00 at004e4556..455b (ESI is stream+0x8c). The wrapper calls
+CreateEventA with manual-reset=false and initial-state=false. After a
+nonzero worker-launch result,004e4581..4587 waits on+a4 before returning.
+004dfb70 uses004df6f0 to wait indefinitely on one handle; the latter
+calls WaitForMultipleObjectsEx. An ordinary successful auto-reset wait
+consumes the startup notification, consuming that notification in the ordinary successful path. Other
+command notifications also use this event, as qualified below.
+
+The initializer ignores the wait return, including failure, so this
+is not unconditional proof. A returning launch-failure diagnostic
+also reaches the wait at004e45bf..45c5. The separate+0x28 producer,
+concurrency and guaranteed worker termination remain unresolved.
+Name/comment saved in Ghidra; no binary modification.
+
+## Shared command and lifecycle notification event
+
+Further assembly qualifies the startup finding: worker004e53c0 also
+signals+a4 at004e5872 after selecting state2, and004e5998 after
+selecting state7 from state20. This event is not exclusive to startup
+and exit. ReplacePendingMusicStreamCommands004e4d70 waits on+a4 for
+commands11,13,20 after waking+a8; it ignores the wait result. Pending
+command notifications and call serialization remain to be reconciled
+before a shutdown wait can uniquely establish retirement. Startup
+consumption alone does not establish that broader claim.
+
+Named QueueMusicStreamCommand004e4c60 and
+ReplacePendingMusicStreamCommands004e4d70. Both manipulate the pending
+node list+78/+7c under+ac lock, store node parameter+90/command+94,
+and wake+a8. Replacement drains prior nodes, but does not locally test
+the replacement pool-acquisition result before writing it. Reachability of
+pool exhaustion/returning diagnostics remains unproven.
+
+A full decoded instruction operand scan matched1392 occurrences of
+0x28 without truncation; in004e4000..004e6fff only the two teardown
+comparisons appear. This excludes only direct matching operands.
+Initializer004e4502 writes stream+28=0 through rebased ESI-64, so
+alias/rebased accesses still require analysis. No producer setting1
+is established and no permanent-unused-field claim is made.
+
+## Music command pool admission
+
+AcquireMusicStreamCommandNode004e6b30 is a preallocated free-list pop,
+not a heap allocator. Global head+74 is the free head; node+98 is the
+next link. Empty pool with EAX policy0 unlocks and returnsNULL. With
+nonzero policy it diagnoses NO_STREAM_BLOCK, then dereferences the
+free head if the abort handler returns. QueueMusicStreamCommand checks
+the returned node; ReplacePendingMusicStreamCommands does not. The
+replacement path first recycles pending nodes, which may make a node
+available, but an unconditional nonempty-pool invariant is not proven.
+
+RecycleMusicStreamCommandNode004e6a20 prepends a node under head+ac
+lock without a local membership/double-return check.
+CheckMusicStreamFreeCommandNodeCount004e6a70 counts available nodes
+under that lock and returns whether the requested count was reached;
+it does not reserve them. Init004e45f0 allocates/zeros stream metadata
+and command storage using0xc0+align16(0x9c*count), with arithmetic
+masking/overflow details retained in assembly;004e4420 links nodes
+from stream+c0 through004e69e0. Pool-count domain and exhaustion
+reachability remain unresolved. Three helper names/comments saved.
+
+## Installed command capacity and admission checks
+
+File-backed DWORD005645a4 is8. Its five decoded direct xrefs are
+reads in initialization/allocation; no decoded direct writer appears
+in that xref set. This establishes the installed initial value, not
+immutability against aliases or runtime mutation. Eight0x9c-byte nodes
+require0x4e0 command bytes; metadata allocation is0x5a0 including0xc0
+header. The initializer links the free list from stream+c0.
+
+Named QueueSoundStreamWithCommandCapacityCheck004e78a0. Its active
+path checks1 free node for mode0 at004e799b..79a0, or2 for the other
+mode at004e79d1..79d6, and returns-13 if unavailable. It separately
+checks byte queue-counter sum>18 under the sound lock, then releases
+that lock before free-node checks. These checks do not reserve nodes
+or hold the pool lock through subsequent enqueue; concurrency remains
+unproven. Initial inactive paths bypass those capacity checks.
+
+All three direct replacement wrappers pass fatal policy1:
+004e4f20 command13 (waits),004e4fe0 command20 (waits), and004e4f60
+command18 (does not wait). Draining pending nodes precedes acquisition,
+but active/other owners and pool exhaustion are not fully reconciled.
+No observed runtime failure is asserted. Name/comment saved in Ghidra.
+
+## Music ring acquisition and idle predicate
+
+Named AcquireMusicStreamRingChunk004e6740 and IsHeadMusicStreamIdle
+004e68e0, verified against assembly. Acquisition returns0 for pending
+commands11/13/20/23, states1/2 or unavailable data; state14 returns-2.
+Under+ac lock it wraps header marker-1 to ring base+4, checks header
+length against signed contiguous availability, advances read+14 and
+moves length-8 between+b8/bc counters. Marker-3 returns-1 and signals
+head+a8; it advances release+18 if equal to the marker location, or
+rewrites marker-2 for later retirement. Ordinary return is a header
+pointer. No local positive/minimum8-byte length guard appears; writer
+invariants and owned-chunk release remain to be reconciled.
+
+The idle predicate is unlocked: true for missing head, or state7 with
+no pending+78 commands. It does not prove worker retirement or absence
+of owned chunks. The decoded direct+28 operand scan also finds no
+matches in004e7000..004e9fff; rebased aliases remain outside that proof.
+Ghidra names/comments saved. No runtime or executable modification.
+
+## Contiguous release frontier
+
+Named ReclaimReleasedMusicStreamRingChunks004e6660. Under stream+ac
+lock it stops when release+18 reaches read+14 or producer+10. Header
+marker-2 subtracts length-8 from outstanding payload+bc and advances
+release by length; marker-1 wraps release to base+4. Any ordinary
+outstanding header stops reclamation, so a later released node cannot
+be reclaimed past an earlier outstanding node.004e68a0, already named
+MarkSoundStreamNodeReleasedAndSignal, writes-2 and signals+a8 without
+heap deallocation. This connects release notification to delayed
+contiguous reclamation, not immediate reusable ownership.
+
+The reclaimer is called by worker state7 and the three free-space
+helpers004e66e0/6710/6720. Header validity, duplicate release, pointer
+membership and all consumer completion paths remain unproven. No
+local length validation was added or inferred. Ghidra comment saved.
+
+## Consumer queue cleanup and tag dispatch
+
+Named ReleaseQueuedSoundStreamChunksAndClearPointers004e7ff8. Under
+the sound-library lock it preserves next, releases each queued node
+through tail, then releases nonNULL retired00564688. All three queue
+pointers are cleared even when initial head00564680 isNULL; that
+branch skips retired-node release. The invariant that a retired node
+implies a nonNULL head has not been established. No list-cycle/tail
+membership checks occur locally. This is a conditional ownership
+question, not a demonstrated leak or runtime failure.
+
+Purge004e7b28 first stops/waits for the voice and services periodic
+callbacks, then invokes queue cleanup under the sound lock and resets
+stream state/unregisters a timed callback. Abort-return and service
+count deadline details still require assembly review.
+
+Named DispatchSoundStreamChunkByTag004e7f30. Under the sound lock it
+dispatches five tag values to004e8078/80cc/8258/82c4/82ec; unknown
+tags are marked released immediately. Tag payload validation and
+handler ownership remain open. Ghidra names/comments saved.
+
+## Recovered timed stream callback and retained retired node
+
+Recovered ServiceQueuedSoundStreamPlayback004e85a8, body921 bytes,
+registered by004e8944. State4 (stream-state byte005646fd) calls
+004e7df4 and tests signed stream+b8>5000.004e68c0, now named
+GetMusicStreamQueuedPayloadBytes, reads+b8;5000 is a payload-byte
+threshold here, not a duration. This branch drains pending consumer
+queue, skips nonterminal node equal retired00564688, releases tail,
+clears head/tail, preserves retired pointer, resets counters, and then
+acquires/dispatches replacement chunks before selecting state2.
+
+Therefore retired-implies-nonempty-head is not unconditional at
+intermediate points. Whether the callback returns with empty head
+and an outstanding retired node requires the refill/chunk sequence
+and state4 reachability. No runtime leak or use-after-free is proven.
+Refill004e8328 normally retires the previous node when advancing to a
+new node, then records the just-consumed node at00564688. Initializer
+004e8944 clears head/tail but also preserves that retired pointer.
+
+State3 callback cleanup waits for voice expiration before queue
+release/reinitialization; lifecycle/failure details remain partial.
+Ghidra callback recovery, helper name and comments saved.
+
+## Purge voice wait deadline
+
+Named PurgeSoundStreamerAfterVoiceExpiration004e7b28. Assembly captures
+DWORD00a09afc+200 with wrapping addition, then polls004e8fd0 until
+any nonzero result. Unsigned deadline<current at004e7b6f..75 invokes
+the abort diagnostic; if it returns, the code services periodic
+callbacks and retries. The ordinary waiting path also services them.
+00a09afc increments in00500c80 per sound-service invocation, so200
+is not a proven millisecond deadline. Wrap/stalled service and
+returning abort prevent claiming unconditional bounded termination.
+
+CheckSoundVoiceHandleExpired004e8fd0 preserves caller EDX (deadline)
+and returns0 while voice lookup004ffc9c is nonnegative,1 for negative
+lookup, or-10 when sound is uninitialized. Purge accepts any nonzero
+result, including that error. After wait it locks, cleans queue, resets
+state, invokes004ff660 and unregisters timed callback004e85a8 if
+flagged. Callers are shutdown004e784c and music stop004109d0. This
+adds exact deadline/poll semantics without proving backend silence,
+thread retirement, all owned-chunk release or historical hang cause.
+Ghidra comment/name saved; executable unchanged.
+
+## Display initialization does not add screenshot dimension bounds
+
+Named InitializeRasterDisplayModeAndSurfaces00517620, verified in
+assembly. It stores selector004bedcc result into current-mode0055fec0
+before driver selection009ef958. On explicit driver failure it returns0
+without restoring that index in this body. On success it constructs
+surface records, copies their dimensions/format into configuration,
+then calls ApplyDriverDisplayMode004beeb0 with the stored same index.
+The latter's equal-current-index path bypasses differing-index range
+validation. Selector fallback1 is not a proof of an eligible record
+when no eligible mode exists. No maximum dimension/area bound is
+introduced here. Driver-provided extents and caller failure recovery
+remain unresolved; no malformed driver result was observed.
+
+This narrows the screenshot producer audit without claiming a reachable
+overflow or adding checks to the binary. Ghidra name/comment saved.
+
+## Direct screenshot request admission
+
+The decoded direct caller set of004c4480 is frontend input00451969,
+loading progress00495274 and race loop004c5481. Capture004c452c has
+only004c4499 as decoded direct caller. Request007a2778 is a Boolean
+latch: its direct writes are producer004cdc80/004cdcb0 setting1 and
+consumer004c44ac clearing0. A processing invocation attempts at most
+one launch and clears the latch on success or failure. It has no
+atomic consume, lock or outstanding-worker completion gate.
+
+This closes the bounded request representation/caller-routing question.
+It does not prove universal main-thread ownership or exclude indirect
+calls/reentry. Sequential requests may launch another encoder without
+waiting for the previous worker; actual overlap and initialization
+concurrency have not been captured. Producer004cdc50 also has unusual
+repeated-zero request behaviour already documented in Ghidra; event
+mapping is still partial, so it is not described as ordinary key-up.
+Ghidra consumer comment saved.
+
+## Worker output-format ownership
+
+Capture header snapshots width/height/depth only. Worker004e31d0
+passes shared extension007a2780 by pointer to filename formatting,
+then004e31ef separately loads it to choose BMP or PNG/JPEG. Direct
+writes found are INI loading004b56a7 and normalization004c44e2. Thus
+a format snapshot is not part of the per-worker capture object.
+
+PNG/JPEG branches select encoder CLSID pointer0054d7a0/7b0 and JPEG
+parameters0054d7c0 before writer004e3014. The writer uses supplied
+arguments, without another extension load. A mutation between filename
+formatting and dispatch could disagree, but actual reload/concurrent
+mutation is not proven. This is distinct from shared GDI+ export/token
+lifetime, which remains unresolved. No mismatch was observed. Ghidra
+worker comment saved; binary unchanged.
+
+## BMP filename admission and write completion
+
+Worker filename probe004f91ec tests GetFileAttributesA success and
+non-directory bit, without reserving the path. The later BMP save
+004eeae0 uses AcquireResourceWriteHandle004e2ae0 flags0x232.
+OpenNativeFileHandle004e3620 translates these to write access
+0x40000000, share0, disposition2 and attributes0x08000080. Disposition2
+is CREATE_ALWAYS: an existing writable file is truncated, whereas
+CREATE_NEW would fail if it already existed. Share0 only protects an
+already-open handle lifetime. [Microsoft CreateFileA contract](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea).
+
+This closes the bounded BMP open-policy question: the existence probe
+is not an exclusive name reservation. Actual collision/overwrite is
+not observed, and concurrent workers normally use distinct atomic
+counter values until wrap/reset/external interference. Nonzero short
+resource writes are not locally rejected by004eeae0; the screenshot
+worker ignores its return and always exits0. PNG/JPEG uses its separate
+GDI+ path; this CREATE_ALWAYS proof applies to the BMP branch only.
+Ghidra write-helper comment saved; no executable changes.
+
+## Filename counter initialization and wrapping
+
+The only decoded direct counter reset006fd1e0 is004c451b: ordinary
+MOV0 when directory setup succeeds and DirectoryContainsNonDotEntry
+returns0. That includes empty enumeration and search failure; it does
+not derive a maximum existing screenshot number. Cached-ready path
+rechecks directory existence and skips reset on success. Worker
+LOCK XADD then INC uses low32(old+1), with no wrap guard or lock
+shared with reset. Actual concurrent reset/encoding is not captured.
+
+File-backed prefix0053f7f4 is .\screenshots\ (14 characters);
+format0053f804 is nfs3_%04d.%s. Width4 is a minimum: signed32 decimal
+can occupy11 characters. With a stable normalized3-character extension,
+the combined name requires at most35 bytes includingNUL, fitting the
+worker260-byte local buffer. This conditional calculation does not
+prove arbitrary aliased format/extension mutation safe. Existing-file
+probe retries names but does not reserve them. Ghidra initializer
+comment updated and saved; binary unchanged.
+
+## Mouse handler retains a prior callback independently
+
+Recovered HandleMouseSetCursorAndChainPreviousHandler00436930,79
+bytes. Mouse init saves lookup(message0x20) into00554ef4 at004351e1
+and registers this handler. It forwards six stack slots to the saved
+callback when nonNULL, ignores its return, then checks lowWORD fifth
+argument==1. On that condition it calls SetCursor(NULL), writes1 to
+the incoming sixth stack slot, and returns1; otherwise returns0. The
+custom six-argument/RET24 ABI is not a direct four-argument WNDPROC.
+The stack-slot write is not a pointed-to result write.
+
+The prior callback pointer survives separately from table membership;
+removing its table entry alone cannot invalidate this saved reference.
+The decoded00554ef4 xref set shows only initialization write and two
+handler reads. Cleanup restoration, reinitialization and pointed-to
+module lifetime remain unresolved. No stale invocation was captured.
+Ghidra recovery/name/comment saved; executable unchanged.
+
+## Mouse cleanup and conditional reinitialization chain
+
+Assembly00434fd0 closes the mouse event, unacquires/releases device,
+clears mouse/context, but does not restore/unregister message0x20 or
+clear saved prior00554ef4. Sole decoded direct shutdown caller is
+ShutdownGameSubsystems004b5da2. Mouse initialization's sole decoded
+direct caller is InitializeDirectInputSubsystem00434fb6; subsystem
+initialization also has lazy input-device entry paths.
+
+If shutdown were followed by successful mouse reinitialization while
+00436930 remained registered, lookup would save that same handler as
+its own previous callback.00436930 has no self-pointer guard, so a
+later chain call would recurse. This is a conditional static consequence,
+not a proven reachable sequence or observed failure. Window table
+replacement/destruction and terminal lifecycle must be reconciled
+before asserting it. Ghidra handler comment updated and saved.
+
+## Ordinary main-loop exit ordering
+
+Sole decoded direct ShutdownGameSubsystems caller004a3f48 follows
+RunGameApplication's action10 exit. Ordinary continuation004a3f4d..
+3f7c unwinds runtime cleanup and returns; it does not branch back to
+the action loop or directly reinitialize input. The application's sole
+decoded direct caller is005242de in RunGameWithOptionalStackWorkspace.
+Thus the conditional mouse self-chain is not explained by ordinary
+menu/race transitions in this loop. Indirect finalizer callbacks,
+abnormal reentry and another application invocation are not excluded.
+This narrows reachability while leaving the broad lifecycle item partial.
+Ghidra shutdown comment updated; executable unchanged.
+
+## Application wrapper invokes the game once
+
+Full assembly00524290..5242ec calls RunGameApplication once at
+005242de, then immediately calls FinalizeRuntimeAndExitApplication
+004dfd04. If finalization unexpectedly returns, it restores the frame
+and returns; there is no local retry/reinvocation. Sole decoded direct
+wrapper caller is005158e5 in stack-runtime startup. Combined with
+action10 terminal ordering, this closes the bounded ordinary local
+shutdown-to-reinitialization question: neither inspected loop nor
+wrapper supplies that sequence. Mutable hooks/indirect reentry and
+delegated exit remain separate, so universal callback lifetime is
+still partial. Ghidra wrapper comment saved.
+
+## Installed VIV directory and member extents
+
+Inventoried all114 .viv files under GAMEDATA and gamedata_org, counting
+active/original trees separately. All are BIGF, declared file sizes
+match actual bytes, directory headers and NUL-terminated names fit
+the declared directory, and all1169 member payload spans are within
+the file and begin at/after directory end. The extra48 bytes read by
+OpenArchiveDirectory0043b830 also fit in every inspected file.
+
+Assembly confirms allocation and read length both use directory_end
++0x30, with wrapping32-bit arithmetic, and seek/read returns are
+ignored. Zero-fill before read does not prove complete I/O. This
+closes installed artifact extents only; custom/malformed archives,
+short reads, parser traversal and ownership remain open.
+[Inventory](installed-viv-directory-extents.json) records every archive
+hash/header and member offset/length. Ghidra opener comment saved.
+No runtime or binary modification.
+
+## Member lookup and basename termination
+
+FindArchiveMemberByName004679f0 uses unsigned header count+8,
+starts records+10, returns first ASCII-case-insensitive match, and
+scans NUL names on misses. It does not consult directory end+0xc or
+buffer length. EBX/ECX are offset/length output pointers; miss zeros
+both. A zero-length member cannot be distinguished from miss by
+length alone. Installed inventory names are at most12 bytes and have
+no ASCII-casefold duplicates within any of114 archives.
+
+FindArchiveMemberByBasename0043b9d0 finds the last backslash, then
+copies29 bytes through004e0e30 into a32-byte local area without an
+explicit terminator. The copy helper pads remaining bytes only; an
+input basename>=29 bytes need not terminate before lookup. Installed
+member-name lengths do not prove requested caller basename lengths.
+Long-query reachability, short reads and arbitrary header/count/name
+validity remain open. Ghidra comments refined and saved.
+
+## Direct basename queries
+
+Seven decoded callsites occur in registry discovery, palette reading,
+car transfer, vehicle sound and identification speech. Fixed vehicle
+sound queries scar.bnk/car.bnk/ocard.bnk/ocardd.bnk are at most10
+characters; palette uses car.fce (7), transfer constructs final
+carp.txt (8). Identification uses IPNCspch.bnk (12) or IP%sspch.bnk
+with twelve file-backed two-character codes at00412920: RD,GR,BL,YL,
+WT,BK,OR,PU,SV,BR,DK,LT. A valid index therefore also yields12.
+These fit the29-byte copy with zero-padding.
+
+Registry query fedata.%s still depends on language-code provenance;
+identification index bounds, full path construction and non-direct
+callers remain open. This is a conditional caller-domain refinement,
+not proof that every possible lookup request terminates safely.
+Ghidra basename-helper comment saved; binary unchanged.
+
+## Validated registry language query bound
+
+Registry00439e71 passes language index007a3a50 to004782b0. Sole
+decoded direct writer004a6eb9 stores0..5 after a six-string language
+match, or0 after fallback. RunGameApplication invokes validation
+004a6e68 before subsystem initialization004b5c00. Getter table0055d12c
+contains seven verified NUL codes eng/ger/fre/spa/ita/swe/jap at
+0053b21c; ordinary selected first six are each3 characters.
+
+Consequently validated registry basename fedata.<code> is10 characters
+and fits29-byte copying with termination. This closes that ordinary
+query-bound question. Getter itself has no index check; arbitrary
+inputs, aliased mutation, full path assembly and identification speech
+index provenance remain open. Ghidra getter comment saved.
+
+## Identification speech code index producer
+
+Named ClassifyRgbForRacerIdentificationSpeech00431280 and
+ComputeRgbSquaredDistanceLow3200431250. Classifier selects among359
+fixed16-byte RGB/class records at005537c4, seeding row0 and keeping
+strictly smaller signed wrapped squared distance; an improved zero
+ends scan. All359 file-backed output classes are0..11 (class10 absent).
+Thus every selected row supplies a valid12-entry speech index while
+the table is unchanged, irrespective of exceptional distance ordering.
+Ordinary byte RGB distance is at most195075 and does not wrap.
+
+Sole speech-loader caller0040a010 supplies this class or replaces it
+with99 for custom identity.00413750 tests99 before table indexing;
+its random generic-name branch also bypasses indexing. This closes
+the ordinary file-backed identification query index/name-length
+contract, not mutable table aliases, all RGB semantics, path bounds,
+bank slot capacity or complete runtime reads. Names/comments saved.
+
+## Separate speech-language index bound
+
+InitializeGameDataPaths004a6ec4 loads validated007a3a50 intoECX at
+004a6ee5. Its path/string helpers leaveECX unchanged; attributes
+wrapper004f915e explicitly saves/restores it. Localized-directory
+success retains the index; failure004a6f24 sets0 before sole decoded
+direct speech-index write004a6f26 to007a2764. Thus ordinary validated
+0..5 remains0..5, fitting the separate seven-entry language arrays in
+0040a010 and00413750. This is independent of the twelve-entry color
+classification table. The fallback changes speech language locally,
+without proving every requested bank exists or complete reads succeed.
+Aliased mutation and full path bounds remain open. Ghidra path
+initializer comment updated/saved; executable unchanged.
+
+## Transfer read-unit correction and archive-close ownership
+
+SendCarArchiveDataChunks0049b9b0 passes EDX=positive chunk size<=208
+and EBX=1 to ReadBufferedFileElements004e9200. Full assembly reader
+004e9404..08 divides accumulated bytes by saved element size. Nonzero
+therefore confirms one completed requested element; partial EOF
+returns0 and sender exits-1 before sending that chunk. The previous
+Ghidra statement that a nonzero short byte count could be sent was
+incorrect and has been replaced. This closes the local read-unit
+question, not reader hooks/invalid state or network delivery.
+
+CloseArchiveDirectory0043b9b0 frees EAX directory, closes stream at
+[EDX], then clears that stream slot. It cannot clear caller directory
+pointer passed by value. Transfer normal completion passes its local
+stream slot and global0079f978 directory value; the global remains
+unchanged after free. Its decoded writes occur only in Prepare at
+0049b920. Zero-read sender path exits before cleanup. Normal repeated
+Prepare overwrites the global, but error caller cleanup/reentry and
+metadata lifetime still need tracing. No double-free/leak observed.
+Ghidra sender comment corrected/saved; executable unchanged.
+
+## Immediate transfer caller ignores failed-read status
+
+Both SendCarArchiveDataChunks callsites in TransferParticipantCarResources
+0049bab0 immediately overwrite EAX with0x3c at0049bb7b/0049bc33
+and invoke marker wait004a6a10. Neither checks-1 nor performs archive
+cleanup there. Thus sender rejection of a partial element does not
+propagate as an immediate caller failure, and its pre-close exit is
+not locally repaired. The caller's sole decoded entry is0049acdb in
+network profile setup. Marker timeout/abort policy is independent and
+does not prove file cleanup. Actual failed read, resource retention,
+peer result and broader teardown/reentry remain unresolved. Ghidra
+caller comment saved; executable unchanged.
+
+## Transfer setup failure admission and installed physics members
+
+PrepareCarArchiveTransfer stores OpenArchiveDirectory return0079f978
+at0049b920 and unconditionally passes it to basename lookup0049b943.
+No directory/stream success guard intervenes; null directory reaches
+lookup's header+8 access. Member miss zeros offset/length, but setup
+still seeks, writes length0 into control header and sends28 bytes.
+Seek result is ignored. These are conditional failure paths, not
+captured runtime defects.
+
+All86 installed/original car.viv entries in the hashed VIV inventory
+contain nonempty carp.txt. This closes bounded member presence, not
+registry-path correctness or open/allocation/complete-read success.
+Ghidra setup comment refined/saved; executable unchanged.
+
+## Car-transfer receiver stage boundary
+
+Assembly confirms offer0049b45c supplies packet+0x18 as expected
+file length to InitializeCarResourceTransfer, with no local check of
+its return. Append0049b66c..67f adds the complete incoming length
+modulo32 bits and checks exact equality only after copy/write. File
+completion0049b693..6a9 switches the same state0055e5bc to a fixed
+300-byte memory stage at0079f97c. Type16 wrapper0049b508 decrements
+incoming length and advances payload without a local minimum check.
+No local excess-chunk splitting/clamping or immediate zero-length
+completion exists. This establishes the receiver's two-stage boundary;
+upstream frame minimum, ordering, legitimate sender pairing, overlap
+and cleanup remain unresolved. No runtime defect demonstrated.
+Ghidra append comment saved; executable unchanged.
+
+## Paired car-transfer emission partition
+
+Prepare0049b95b advertises member length at header+0x18. Callers
+0049bb6b/0049bc28 load the same field into sender EBX, pairing
+types15/16 and17/18. For positive signed length and complete reads,
+each payload is min(remaining,208); subtraction reaches zero without
+crossing the declared file boundary. Metadata is a separate300-byte
+loop emitting208 then92, matching the receiver's fixed memory stage.
+This closes local chunk partition arithmetic, conditional on ordered,
+complete delivery, successful initialization and unchanged shared state.
+Zero/nonpositive lengths skip file chunks and do not establish the
+receiver's file-to-memory transition.
+
+Dispatcher004a6440 checks abort/type range but no EBX minimum before
+indirect callback004a645e. Both data wrappers decrement EBX then
+advance payload; both setup handlers read+0x14/+0x18 without local
+length checks. Fallback flattening00512470 supplies aggregate length,
+but dispatcher does not validate it. Provider admission, framing,
+ordering, overlapping sessions and cleanup remain open; no malformed
+packet or runtime defect demonstrated. Ghidra comments saved.
+
+## Receiver open failure and zero-length state
+
+Initialize0049b54c/553 clears offset/status before attempting file open,
+stores expected length at+4, but file branch leaves destination+8
+untouched. Failed open stores0 at+0x10 and returns-1 without restoring
+stopped status; both setup handlers ignore that return. Append chooses
+memory versus file solely from+0x10, so a subsequent payload after
+failed open uses retained destination+8. Initial file-backed20-byte
+state0055e5bc decodes as{1,0,0,0,0}; destination initially0, or can
+retain0079f97c after a prior metadata stage. This is a conditional
+state-confusion path, not a captured runtime failure or exploitability
+claim. Actual open-failure reachability, provider delivery and lifecycle
+remain unresolved.
+
+Expected length0 has no immediate transition in initializer. Sender
+skips file payloads for nonpositive signed length and sends metadata;
+positive cumulative metadata lengths208/300 do not equal0. Thus the
+ordinary zero-length emission sequence cannot itself trigger the
+receiver file-to-memory transition. Installed86 car.viv archives have
+nonempty carp.txt; missing/custom members and failed I/O remain open.
+Ghidra initializer proof comment saved; binary unchanged.
+
+## Registry target retention after transfer
+
+Discovery entry00439d9e invokes cache reset004399f0, which clears
+50 pointer cells005f3c00 only. It does not reset last-discovered
+00554f74, initially0 in file-backed bytes. Its sole decoded direct
+writer0043a328 follows successful append. Allocation failure00439fef,
+metadata-view failure0043a270 and no-new-model scans retain the old
+value. Getter0043bbf0 merely loads it. All four transfer setters
+0043bc00/40/70/90 test nonzero, without generation or membership
+validation; transfer0049b7c7 ignores discovery result before them.
+Thus their null guards cannot establish the intended fresh transfer
+target. Actual stale-target mutation, indirect aliases and lifetime
+remain unresolved. Existing display setter interpretation is confirmed:
+0x100 is a variadic argument, not a capacity bound; received text is
+the format. No runtime defect demonstrated. Discovery proof comment
+saved in Ghidra; binary unchanged.
+
+## Temporary directory cleanup name predicate
+
+Recovered/named0043bcf0 RemoveCarDirectoriesWithThreeDigitPPrefix.
+It requires uppercase P followed by three characters whose ctype
+bit0x20 is set; inspected file-backed00564ef0 identifies decimal
+digits. There is no name[4]==NUL check, so this matches a prefix,
+not an exact four-character name. It builds a300-byte local path
+without a local length bound and invokes004389d0 without checking
+its result. Flag08 removal calls this before rediscovery, whereas
+full registry teardown calls per-node resource-path cleanup0043b2a0.
+Neither reviewed cleanup body directly clears last-discovered pointer.
+Name predicate is established; deletion success, runtime directory
+contents, path limits and stale-target lifetime remain unresolved.
+Ghidra name/comment saved; game assets unchanged.
+
+## Temporary cleanup traversal and result propagation
+
+DeleteFilesThenRemoveDirectory004389d0 deletes only non-directory
+entries, then attempts removal of the parent. Nested directories
+are skipped, not recursively removed. Per-file permission/delete
+results are ignored; EAX reports only final removal-wrapper status.
+Caller0043bcf0 ignores that status too, so local transfer cleanup
+does not propagate deletion failure. Empty enumeration and search
+failure both lead to the final parent-removal attempt.
+
+For uninterrupted traversal, first/next enumeration exhaustion
+calls FindClose and clears shared00554f7c. First-search failure
+clears the slot. Only these two routines have decoded direct refs
+to it. FindFirst overwrites an existing handle without preclosing,
+so reentry/early-exit callers require separate proof. The ordinary
+cleanup loop does drain to exhaustion; no handle leak is established
+for that local sequence. Names/comments already existed; expanded
+cleanup proof saved. Filesystem results/concurrency/path bounds
+remain unresolved. No actual deletions or binary changes performed.
+
+## Archived car display-string content
+
+Parsed274 localized FEDATA members in active/original VIV trees,
+excluding fedata.fsh image assets. Metadata view00439bd0 supplies
+count at+0x2d and buffer-relative offsets at+0x2f; getter00439af0
+selects third string with offset at+0x37. All274 third strings have
+valid in-member NUL-terminated spans, maximum22 bytes and no percent
+characters. Hashed member/archive evidence is stored in
+installed-car-display-strings.json.
+
+This closes only archived source-text content. Sender00439250 may
+use model+0x10 or alternate ID-based tables; loose localized files,
+runtime modifications, peer content and complete reads are outside
+this inventory. Display setter still treats received text as format
+with no capacity argument. Ghidra setter comment updated/saved.
+No game assets changed.
+
+## Current loose metadata override check
+
+A recursive filesystem check, independent of rg ignore rules, found
+no regular localized FEDATA files under either GAMEDATA or
+gamedata_org. All114 archive SHA256 values still match the directory
+inventory used for the274 display-string extraction. Evidence is
+installed-car-display-source-check.json. This closes current loose
+override presence for these two roots only; alternate configured
+roots, later writes, special IDs500..599 and live/transformed strings
+remain outside the content proof. No full network format-safety claim.
+
+## Special display-name ID extent
+
+GetCarModelDisplayName00439250 admits500..599 and loads
+[0055c944+4*ID]. The effective base for500 is0055d114.
+Inspected400-byte file-backed span contains six actual strings for
+500..505: cvic/eagl/falc/rovr/vett/diab. IDs506..512 alias
+neighboring seven language-code pointers0055d12c;513..515 yield
+DWORD100, and516..599 yield0. The accepted range therefore does
+not establish100 valid display pointers. No100-element array was
+created across these adjacent objects. Upstream special-ID admission,
+runtime table changes and car-transfer reachability remain unresolved;
+no invalid-ID access observed at runtime. Getter proof comment saved.
+
+## Dynamic-text caller excludes special car IDs
+
+LookupDynamicText004d17b0 accepts car-label IDs0x7bd..0x7ee,
+subtracts0x7bd intoEDX and forwards that value at004d180e to
+display getter004d1810. Intervening predicate00439cc0 calls
+00439a50/00439c10; both preserveEDX. Hence this specific caller
+supplies0..49 and cannot enter special500..599 branch. It does not
+establish registry presence: missing-model predicate returns0 and
+still reaches display getter, whose node+10 calculation has no
+NULL guard. Other callers and runtime registry/cache lifetime remain
+open. Dynamic-text Ghidra proof comment saved.
+
+## Transfer eligibility is not model-ID admission
+
+CheckCarIdentifierFlags41Clear00439530 resolves a sixteen-byte ID
+through00439990, an uncapped linked-list scan returning first ordinal
+or-1. It immediately calls flag40 accessor00439570, then flag01
+accessor00439680 if needed. Both call getter00439a50 and dereference
+model+0x380 without NULL checks. Getter rejects signed indices>49,
+but lacks negative-index rejection before cache indexing. Thus the
+boolean predicate used at0049bb52/0049bc00 cannot establish a valid
+ordinary/special model domain or successful identifier lookup. A
+stable valid registry of at most50 entries is an independent
+precondition, not a result of this flag test. Upstream registry count,
+model ID and peer profile admission remain open. Ghidra predicate
+comment expanded/saved; no runtime or binary changes.
+
+## Participant readiness does not validate car identifiers
+
+ReceiveNetworkParticipantStateBlock0049b310 copies96 wire bytes
+to slot*96 without model validation. Readiness0049ab60 requires
+connection state, participant count>=2, mapped slots and nonzero
+profile ready byte+8. It never resolves a car identifier. Later
+ApplyNetworkProfilesToRaceParticipantSetup0049ad69 resolves the
+identifier and0049ad6e stores EAX into setup model field without
+checking-1. Therefore readiness and profile presence do not establish
+model admission or successful post-transfer discovery. Legitimate
+profile producers, sender authority and registry lifetime remain open.
+Ghidra readiness proof comment saved; binary unchanged.
+
+## Local profile selected-model provenance
+
+Sender0049a93e loads selected DWORD006fd2bc and obtains identifier
+via00439520, which calls model getter then adds0x31c without
+NULL guard. Local-slot validity only gates profile sending; selected
+model/flags/defaults remain unchecked here. Stored-key resolver
+00439a10 writes identifier lookup result at00439a2f without checking
+-1. Cheat producer004528fc likewise stores lookup result, gated by
+ECX policy rather than lookup success. These establish additional
+unvalidated producers, not a reachable runtime failure: missing-ID
+configuration/cheat circumstances, menu indirect writes and cache
+lifetime remain unresolved. Sender proof comment saved in Ghidra.
+
+## Command-line car selector admission
+
+Option index7 at0055ec6c points0053d65c '-CAR='. Generic%d
+parse004a52b0 computes destination007a2008 without a local numeric
+domain check. When endpoint is nonempty, transport-two session
+0049e1ba loads that DWORD and0049e1c1 calls stored-key resolver.
+Resolver00439a14 immediately reads[00554f84+4*EAX] without bounds,
+builds a zero-padded16-byte key, resolves it and stores index without
+checking-1. Final parser gate validates neither car index nor this
+table extent. Thus this startup chain does not establish valid
+selected-model admission. Full startup reachability, table domain
+and downstream reconciliation remain open; no malformed launch was
+executed. Resolver Ghidra proof comment saved.
+
+## Car selector startup ordering
+
+RunFrontendSetup direct-network branch requires0055b03c!=0 and
+nonempty endpoint. PNUM>1 calls client wrapper0049e220, otherwise
+host wrapper0049e2e0; both call0049e080 before result handling or
+client roster wait. The unchecked car-key resolver0049e1c1 executes
+before backend initialization004a5b00 at0049e1d8. Successful routes
+rejoin frontend menu at00473267, so subsequent menu reconciliation
+cannot protect the earlier key-table read. This closes the ordering
+question only; initial flag source is resolved below (file-backed1).
+Supported key-table extent and full startup/runtime reachability remain open. Resolver comment
+expanded/saved in Ghidra.
+
+## First-entry direct-start flag source
+
+File-backed DWORD0055b03c is1. Its decoded direct xrefs are three
+reads in RunFrontendSetup and sole write00473269 clearing0 before
+ordinary menu. Therefore initial direct-route enable does not require
+a separate command-line flag setter. Nonempty endpoint selects that
+first-entry route; network failure exits before clearing it. This
+resolves the missing initial producer question, not bulk/indirect
+mutations, reentry or full runtime startup. Prior notes listing the
+initial flag producer as unknown are superseded by this byte check.
+Ghidra frontend comment saved; binary unchanged.
+
+## Stored car-key installed presence
+
+First nine nonzero file-backed DWORDs at00554f84 are
+23,19,2,31,30,24,15,16,21. Their zero-padded16-byte identifiers
+exactly match FEDATA.ENG records in both active/original trees:
+AMD7,CORV,F355,FM50,SCIG,JXK8,COUT,DIAB,SL60 respectively.
+Evidence: installed-stored-car-key-matches.json, referencing the
+hashed VIV directory inventory. Following inspected DWORDs are0;
+this is not proof of a declared nine-entry table or supported input
+bound. Installed key presence is resolved for these nine values;
+discovery filters/allocation/reads, runtime membership and arbitrary
+selectors remain unresolved. Resolver Ghidra comment saved.
+
+## Replay RLE malformed-token count bound
+
+DecodeRle32ByteBlock004bca80 checks output count only between
+complete runs. Entry count0..31 plus signed8 token absolute count
+(max128 for-128) bounds one decoded channel to159 output bytes.
+Witness:31 prior bytes then128-literal token. Exhaustive8192
+count/token combinations are recorded in replay-rle-token-bound.json.
+Zero token consumes one source byte and emits none, so output-count
+termination does not impose a finite source-read bound. Wrapper
+004bcee0 copies first32 bytes per channel but advances compressed
+cursor by full consumed count; that copy does not bound decoder
+scratch writes. Actual scratch extent/input admission and malformed
+replay reachability remain unresolved. Ghidra proof comment saved;
+no original-binary execution or binary changes.
+
+## Replay encoder paired-stream partition and expansion
+
+Encoder004bc9b0 partitions exactly32 source bytes into nonzero
+repeat/literal tokens; final singleton is ff,value. Its unmodified
+complete output therefore makes the paired decoder stop exactly at32,
+excluding malformed-token overshoot. This is conditional on stream
+integrity and correct cursor, not arbitrary replay-file admission.
+
+Segment-cost dynamic programming for32 source bytes yields maximum
+44 encoded bytes. A block of k singleton bytes followed by repeat
+r>=2 costs(k+1 if k>0 else0)+2; distinct trailing k>=2 costs k+2
+because final singleton is separate. Witness[0,1,1]*10+[0,2]
+attains44. Four independently worst-case channels total176 bytes,
+so the wrapper128-byte reservation is not a compression upper bound.
+Actual aggregate buffer capacity/remaining checks and reachable input
+patterns remain unresolved. Ghidra encoder proof comment saved;
+static/offline arithmetic only, no original-binary execution.
+
+## Replay stream end aliases initialized table
+
+Initializer004bcbb0..c6 clears exactly0x1e000 bytes beginning
+007a5f48; exclusive end is007c3f48.004bcbf6 then initializes
+16DWORDs at that exact address to0xb, followed by600-row stride64
+table setup. Thus adjacent space is live initialized table storage,
+not demonstrated padding. Append guard checks signed cursor+128<N
+once, then copies all four encoded channels without another check.
+For ordinary nonnegative cursor, largest admitted value isN-129;
+176 bytes conditionally end atN+47, affecting first47 table bytes.
+This is an arithmetic upper bound, not proof that the cursor and
+four worst-case channel patterns co-occur during gameplay. Source
+constraints, reachable cursor residue and actual runtime corruption
+remain open. Ghidra append proof comment saved; binary unchanged.
+
+## Replay sample filter does not exclude expansion witness
+
+RecordParticipantReplayInputTick004bd000 gathers four bytes via
+0048f6a0, writes separate32-byte channels and flushes at cursor32.
+Copy helper004c6840 reads current sample007d36f0+4*participant.
+First three bytes are unchanged; fourth output=x&~oldLatch, with
+newLatch=x&0xf2. Offline enumeration of all256 initial latch bytes
+shows[0,1,1]*10+[0,2] survives unchanged: first0 clears the latch,
+and1 is outside0xf2. Hence this filter alone does not exclude the
+44-byte fourth-channel witness. Actual sample producers and
+simultaneous worst-case four-channel gameplay input remain open.
+Ghidra gather comment saved; no runtime testing or binary changes.
+
+## Replay input sequence source mapping
+
+ConsumeParticipantInputSequence004c67a0 masks sequence to127.
+Four-byte sample address is007d3714+participant*512+sequence*4;
+current sample destination is007d36f0+participant*4. Replay gather
+reads that destination through004c6840. Producer004c6530 copies
+four supplied bytes into producer&127, sets ready and advances
+producer; callers include collected-player and network input paths.
+
+When006fd50c is nonzero, consumer refreshes only local row006fd4f4,
+but clears sequence ready flags for every configured human row.
+Nonlocal current samples therefore retain previous values in that
+branch; this is not an all-row refresh. Selector006fd3a0>1 skips
+refresh, clearing and sequence increment. Alternate remote-control
+paths and recording/consume scheduling remain unresolved. Consumer
+Ghidra comment expanded/saved; no runtime or binary changes.
+
+## Replay recording controller cadence
+
+Initializer0042c400 installs replay callback at vehicle+0x5fc and
+player controller00431430 at+0x600; AI bit02 replaces controller
+and clears replay callback. Player controller0043145c invokes
+replay callback before applying gathered controls. Controller list
+007d3690 executes on even simulation ticks004c4a6a..7f; race
+input consumption also checks even outer ticks004c52e1..f1 and
+uses sequence=tick>>1. Thus half-rate input refresh does not
+automatically imply duplicate recorded sample pairs: recording is
+controller-driven as well. Exact outer/simulation tick alignment,
+alternate callbacks and pause/playback cadence remain unresolved.
+State0/1 records, other replay states apply playback. Ghidra callback
+comment expanded/saved; no runtime or binary changes.
+
+## Collected replay controls producer
+
+CollectBoundPlayerInputsAndActionHistory0048f550 builds the sample
+at0079c338 through binding callbacks00554e34. Channel0 is low byte
+of arithmetic-shifted(callback1-callback0)/2; channel1/2 are low
+bytes of callbacks2/3. Channel3 packs eight boolean action results.
+Session1 collects two rows; others one. Dispatch0048fa10 appends
+both rows for session1, selected local row for session0, and submits
+other sessions through networking. These establish axis/action
+producer roles, but callback ranges and active bindings remain open.
+No simultaneous input-pattern reachability claim. Ghidra producer
+comment saved; binary unchanged.
+
+## Binding evaluator output ranges
+
+Digital joystick button004316c0, POV004316f0 and keyboard004317d0
+evaluators return0 or255; class0 returns0. Axis00431740 uses byte
+bounds but doubled interior distances, so exact branch range is
+0..508, not a universal0..255 clamp. Collector truncates axis
+channels1/2 to low byte; channel0 takes low byte of signed half
+difference. These ranges alone do not constrain equality-run lengths:
+RLE depends on equality only, and binary[0,255,255]*10+[0,255]
+has the same44-byte expansion as the earlier witness. Actual
+configured bindings and simultaneous channel timing remain open.
+Ghidra axis comment saved; no runtime or binary changes.
+
+## Player control byte application
+
+Assembly at00431478 loads DWORD0079c4a5 and arithmetic-shifts it
+by24, extracting signed byte0079c4a8 into vehicle DWORD+518.
+The overlapping DWORD symbol therefore reflects an instruction
+access across adjacent bytes; it does not establish a separate
+four-byte control value. Bytes0079c4a9/aa go to vehicle+504/505.
+The input callback+5fc executes before these field updates.
+
+Action masks04/08/80 become booleans at+50d/+50e/+512;40 cycles
++660 modulo3;02 requests ordinary or leader-relative reset according
+to vehicle+200 bit20. User key names are not inferred from masks.
+Ghidra controller header reconciled with these exact operations.
+Static assembly evidence only; binary and runtime memory unchanged.
+
+## Current versus requested shift state
+
+Parent-reviewed Luna evidence distinguishes vehicle current/applied
+selector+50b from requested+506. Caller004314a6/be loads+50b,
+helper return is stored at004314c9 to+506, and transition processing
+004a9bc4 compares these fields before updating+50b and saving old
+current into+50a. Action10 advances and20 lowers, with advance
+precedence. Three-state down maps every value>1 to1; only up or
+no input can preserve a value>2. This corrects an initial worker
+claim before annotation. Multiple controller writers prevent a
+global range conclusion. Ghidra controller header saved.
+
+Binding-map review corroborates existing annotations: configuration
+records stride52 bytes while runtime player rows stride48 bytes.
+Source fields7/9 map into history slots46/45, not the player sample;
+player action slot4 remains zero after ordinary table initialization.
+Fixed keyboard actions occupy slots24..55 and map to history bits
+slot-minus24; these are separate from the eight player sample bits.
+Concrete key/action names and full timing invariants remain open.
+Static analysis only; no executable or runtime changes.
+
+## Fixed action consumers, corrected against assembly
+
+RunRaceLoop maps fixed slots31/32 to held bits7/8 and calls
+004be970 with+1/-1 for viewport geometry. Slots39/40 are BOTH
+held bits15/16, calling0048eb60 with0/1 for view parameters.
+Slot44 bit20 rising edge calls004187e0 stream-volume toggle;
+slot42 bit18 calls00418840 vehicle-effect-volume toggle. Scene
+cycle00423b80 instead uses bit22 and is not installed by the
+fixed-binding routine. Parent assembly review corrected worker
+misassociation of adjacent calls before saving the Ghidra comment.
+This closes these local slot-to-consumer mappings, while human
+key labels, view units and broad camera/input contracts stay open.
+
+Viewport scale follow-up: named two helpers and verified binary32
+steps+/-0.1, ordinary[1,4] preservation, two-local-view dispatch
+and bounds-derived extent/centre updates. Bit15 increases while
+bit16 decreases the setting. See[Camera contract](ccm-camera-contract.md#local-viewport-scale-controls).
+Ghidra annotations saved; static only, executable unchanged.
+
+Camera coordinate follow-up: CCM keys and placement/query vehicle
+segment indices use the active geometry domain, while reverse
+progress is derived separately. This narrows the historical
+coordinate uncertainty; visible reverse camera and later writers
+remain open. See[Camera contract](ccm-camera-contract.md#shared-geometry-indices-versus-reverse-progress).
+Parent-reviewed Luna evidence saved in Ghidra.
+
+Constructor/weather handoff: verified and saved initialized request17
+eligibility for modes1..7,11..13; named viewport scene initializer.
+Weather initialization consumes a zero-extended BYTE modulo3,
+separate from the weather-enable flag. Complex runtime transition,
+aggregate arena and atmospheric identity questions are explicitly
+deferred in model-handoff.md for Astra, following user clarification.
+No binary changes.
+
+Viewport classification helpers named:00481f90 tests enabled
+configured rectangle spans against0.5;0048ccf0 combines that
+predicate with exact scale1 into numeric classes0/1/2. Full assembly
+and constant checked. Negative/unordered spans are not rejected
+as invalid. Conservative names/comments preserve unresolved UI
+meaning and custom register ABI; Ghidra saved. No binary changes.
+
+Small helper pass: six parent-reviewed Luna candidates received
+assembly-backed names and comments: global render-chain append
+004bbf40, route-option processing004bc060, explicit-depth processing
+004bc0b0, base-scene vehicle getter00422ba0, scene float-or-one
+004227e0 and fixed action-history bit0 reader0048f920. Queue
+wrappers clear their pair after routing/processing; this is not
+proof of storage retirement. Scene float fallback treats either
+signed zero as absent; unknown field purpose stays qualified.
+Names/comments read back and project saved. No binary changes.
+
+Render arena reset boundary verified: viewport entry resets cursor
+to raw base, separating successive views but not proving backend
+retirement. World-effect payload maximum96000 and configured8MiB
+allocation recorded in[Render arena contract](render-arena-contract.md).
+Aggregate/lifetime work remains for Astra. Ghidra header saved.
+
+Viewport membership helpers named00423ab0/00423ae0: fixed25-DWORD
+list predicate and guarded indexed-setting write. Membership guard
+does not validate destination index. Original register ABI and
+numeric list meaning kept qualified; Ghidra saved.
+
+Frame/successor helper pass: named004bc650 frame viewport-state
+finalizer and004bc670 dialog/mouse refresh. Also named00423a20
+nonzero configured-value iterator and00423a60 successor-map
+initializer: four candidate values,25 defaults, fallback2, then
+previous-to-next links. Iterator preservesEDX; it does not return
+an index there. Candidate bounds/duplicate policy and scene labels
+remain qualified. Ghidra saved. A Luna audit confirmed existing
+SCRATCHPAD camera/arena resolved-versus-open wording; no broad
+closure justified. No binary changes.
+
+Weather evidence index added in[Weather mode contract](weather-mode-contract.md):
+initialized0..2 range and enable distinction are resolved; names,
+active-count admission and wider pool ownership remain open for
+Astra. Luna ledger audit found no justified broad closure.
+
+Camera setting data labels: named four verified menu-choice-index
+globals006fbba8/ac/b0/b4 and added descriptor/mapping proof
+comments. They are choice indices, not direct scene-mode IDs.
+Mapper pseudocode refreshed; project saved.
+
+
+### Historical backlog reconciliation
+
+The focused reports refine the older unresolved prompts above. The physics
+full-copy default image is initialized and available before race loading;
+source lifetime, aliased writes, malformed parsing and shared ownership remain
+open in [physics parser defaults](physics-parser-defaults.md).
+
+The recovered socket-select worker and type1 frame-limit producer are documented
+in [network roster admission](network-roster-admission.md). They do not resolve
+the separate service-discovery worker, lobby admission, queue capacity, sender
+authority or concurrent teardown contracts. Local transfer read units and
+receiver stages are established in [archive directory contract](archive-directory-contract.md);
+peer outcomes, marker waits, cleanup and model admission remain open.
+
+Six timed-event identities and normal/reverse spike-contact captures supersede
+the early uncertainty about spike-strip identity and observed contact. The
+bounded normal-direction local police reset/cooldown capture is also resolved.
+[Spike-strip evidence](spike-strip-runtime.md) and
+[reset contract](pursuit-assist-reset-contract.md) retain the distinct open
+roadblock placement, reverse/seam, contact-role, capacity, handling and broader
+reset questions. The SCRATCHPAD statuses remain bounded accordingly.
+
+Audio conversion, voice-record ownership and numerical contracts remain a
+separate Open table item; host shutdown findings do not close them. Complex
+residuals remain assigned to Astra.
+
+
+### Sound pitch dispatch boundary refinement
+
+Live Ghidra assembly at00522f50 confirms unsigned upper clamping: zero
+passes unchanged; any DWORD above0x80000, including signed-negative bit
+patterns, becomes0x80000. The record offset is index*0xde4 using 32-bit
+shift/subtract arithmetic. The wrapper has no local index or callback-null
+check. Its two stack arguments are record+0xd64 and the clamped value;
+the caller removes both after the indirect call through record+0xdb0.
+This bounded mapping is resolved and saved in the Ghidra plate comment.
+Caller index admission, callback lifetime, source pitch bounds and numerical
+equivalence remain open for Astra; the audio table item stays Open.
+
+The only direct Ghidra xref to00522f50 is00502da5 in
+ApplyPlatformSoundVoicePitch00502d30. Assembly confirms methods0..2
+forward the original index without a local bounds check and zero-extend
+two WORD rate operands before00522f10. No local nonzero-divisor check
+exists. This route discards dispatch return with XOR EAX,EAX. Method3
+uses the separate009ef64c callback and does not establish the same clamp.
+Saved caller comments retain the unresolved upstream bounds and ownership;
+this is not evidence of a reachable failure.
+
+
+### Configured audio-rate producer
+
+Ghidra xrefs to009ef614 identify five direct writes in
+HandleSoundDriverWindowMessage004e225c. After009ef61c returns signed-positive,
+flag precedence is0800→22050,0400→16000,1000→32000,2000→44100,0200→11025.
+All recognized assignments are nonzero. Multiple flags select the first in
+that order. An unrecognized flag combination stores status-8 without assigning
+a new rate; query failure and the stop branch also leave the rate unchanged.
+The conditional producer is resolved, with a saved Ghidra comment. Call ordering,
+indirect/overlapping writes and pre-initialization consumers remain unresolved;
+this does not prove every pitch-converter invocation has a nonzero divisor.
+
+
+### Pitch converter final rounding
+
+Assembly00522f37 calls TruncateX87ValueTowardZero004dfd56 immediately
+before FISTP DWORD at00522f3c. The helper saves the control word, loads0x0c3f,
+executes FRNDINT and restores the caller word. Thus finite values with a
+signed32-representable truncated result convert toward zero at the final
+store. This resolves the former unspecified final-conversion helper semantics
+in00522f10; its Ghidra comment now records the bounded conclusion. Earlier
+arithmetic still uses ambient control state. Intermediate precision, invalid
+inputs, overflow, unmasked exceptions and numerical equivalence remain open.
+
+
+### Pitch-factor zero and INT_MIN behavior
+
+Parent assembly review and Luna read-only review agree:00522e90 initializes
+a float1.0 accumulator. Zero returns it directly. INT_MIN negates modulo32
+to itself at00522ecf; signed CMP against1/JL at00522ed7..d9 returns that
+same1.0 without reading factors. This resolves the local INT_MIN question
+in the historical audio prompt, not its caller reachability or intended meaning.
+The saved Ghidra comment now distinguishes this result from unresolved input
+bounds and signed shift-overflow behavior. Full-domain equivalence remains open.
+
+
+### Playback method3 conversion differs from the mixer ratio path
+
+StartPlatformSoundPlayback00522510 loads the pitch helper argument as a full
+DWORD at00522896; this callsite supplies no narrowing or local bound. After
+00522e90, it multiplies by a zero-extended descriptor WORD rate, truncates
+through004dfd56, and FISTP-stores a QWORD at005228c6. Only the low DWORD is
+then passed to009ef640. This is a signed64 conversion followed by low32-bit
+selection, unlike00522f10's signed32 integer store. Finite signed64 values
+outside signed32 therefore cannot be assumed to share the latter's conversion
+behavior. Callback failure takes the fallback at00522900. Ghidra comments
+are saved; caller range, exceptional behavior and backend ABI remain Open.
+
+
+### Sample-converter admission and callback boundary
+
+Assembly004e1afb..fe uses signed CMP/JG for channels>2; it establishes
+no positive lower bound. The range branch004e1bac..c0 requires signed end>0,
+then computes end-start+1 and advances the working pointer by start*8,
+without local ordering/original-count checks. In particular end0 does not
+select an inclusive one-frame range. VirtualFree's result is ignored before
+return0. The only decoded xref is callback publication004e1e46 to an indirect
+DLL export at004e1e6e, not a direct conversion caller. Argument admission must
+therefore be traced through that DLL route; direct-call absence proves no
+caller bounds. These refinements are saved in Ghidra. Allocation ownership,
+callback range provenance and failure reachability remain for Astra.
+
+
+### Frontend lap normalization boundary
+
+Parent verified004cf160/190 and sole decoded decoder caller0044c295.
+Reconciliation readsDWORD006fd4ae, SAR16 extracts the lowWORD selector
+at006fd4b0; decoder compares AX and yields2,4,8, then CWDE/store006fd4b4.
+Thus this particular post-reconciliation write belongs to{2,4,8}, even for
+invalid selector words. Mode1 first encodes literal2 when signed006fd3b0>1,
+otherwise4; mode2 encodes EAX2 and stores selector0. Other modes retain the
+selector before decoding. Ghidra comment saved. This local normalization
+does not prove every lap-count writer, network admission or per-lap storage
+capacity. Whole-path limits remain unresolved for Astra.
+
+
+### Timed-dialog local admission refinement
+
+Parent verified Luna review of InitializeFrontendTimedDialog00444a80:
+count admission is nonzero-only, not positive, plus nonnull text pointer.
+Rejected calls clear00558b0c/00558b38 but retain prior active/mode/context.
+EAX is input count on rejection and forwarded00443a90 output on acceptance,
+not a normalized boolean. Duration INT_MIN stays negative after NEG and
+forces policy1 by the subsequent signed test. These local facts are saved
+in Ghidra; caller count/duration reachability, clock units/wrap and context
+ownership remain Astra questions.
+
+
+### Choice-dialog admission and raw return
+
+Parent verified Luna findings at00444c20: text count is nonzero-only;
+signed-negative values are not locally rejected. Choice count likewise
+accepts negatives under its nonzero/signed<10 test. The mode>=4 check
+reads existing00558c5c, not incoming stack mode. Rejection jumps00444f40
+without assigning EAX, retaining the original text count and prior
+active/mode/context after clearing two fields. Accepted path forwards
+00444570's cursor-position result. It is not a uniform status boolean.
+Ghidra comments saved; caller admission, layout bounds and state ownership
+remain Open in the frontend contract.
+
+
+### Timed-dialog expiry callback veto
+
+Parent verified00444b60 and frame service00445f50 against Luna findings.
+Positive-duration expiry returns4; frame service forwards it to optional
+00558b18 callback with EDX pointing to a local byte initialized1 each frame.
+Callback may clear it to suppress00445f10 dialog clearing for that frame.
+Without a callback or with nonzero byte, clearing proceeds. The veto itself
+does not update the timer/start; later repeated expiry depends on callback
+and global mutation. INT_MIN duration remains nonpositive after initializer
+negation and does not enter the expiry gate. Local routing is resolved in
+saved Ghidra comments; clock units/wrap guarantees, caller domains and
+callback lifetime remain open for Astra.
+
+
+### Fixed-duration localized notice caller
+
+Named0044e170 ShowLocalizedNoticeWithFixedDuration after complete assembly
+review. It looks up incoming EAX text ID, stores pointer006644a8, then calls
+00444a80 with count1, array006644a8, duration0x400, policy1, context0.
+This caller has fixed positive count/duration; clock units, text-ID admission
+and shared-array ownership remain separate. Raw EAX is forwarded and has
+no established uniform status meaning. Ghidra name/comment saved and read back.
+
+
+### Timed-dialog nominal scheduling rate
+
+Verified startup MOV EAX,0x80 at004b5cca before timer initialization004b5ccf:
+requested128 pulses/second, interval0x7d000 (7.8125 ms). This closes only
+the requested-rate question. Active worker iterations remain distinct from
+wall-clock time; delivery and concurrency guarantees remain open for Astra.
+See [frontend contract](frontend-dialog-contract.md#nominal-timer-rate-at-startup).
+
+
+### Ghost loader local read-status admission
+
+Assembly00477b50 confirms an unsigned inclusive0..0x41574 byte-count
+gate, no local minimum length, and no test of reader return before the
+car-model validator. Nonzero validator result publishes success; failure
+retains prior loaded flag. See[pose contract](pose-ghost-contract.md#local-ghost-loader-admission).
+SCRATCHPAD also reconciles previously established static human-role count
+boundaries and non-player phase2 detachment refusal, while preserving their
+runtime ownership/reachability questions. No broad closure is asserted.
+
+
+### Prepared-model validator signed-count boundary
+
+00478100 accepts matching magic with signed count+19d0<=0 by skipping
+the model loop (0047811a/20). Positive counts drive0x6c-stride accesses;
+this helper has no file-length or pose-sample count check. Ghidra comment
+saved. This narrows the ghost-loader admission question without claiming
+malformed-input reachability or downstream safety. See[pose contract](pose-ghost-contract.md#immediate-validator-boundary).
+
+
+### Ghost save extent uses published current index
+
+00477d81 publishes current recorded index;004777d0 emits0x20f4+18*index
+without+1. For unchanged nonnegative index this excludes its just-written
+sample from the byte span. Pointer helper004779e0 has signed upper check
+14400 only; recorder requests predecessor index too. Intended endpoint and
+negative-index conventions remain open; no defect claim. See[pose contract](pose-ghost-contract.md#writer-extent-and-direct-index-producer).
+
+
+### Palette distance unordered and precision boundary
+
+0049d240 comparison uses extended candidate versus binary32 stored best,
+and JNC accepts unordered as well as ordered smaller distance under masked
+invalid. Ordinary equal finite distance retains earlier entry. Ghidra comment
+saved; exceptional reachability remains open. See[personality selection](personality-selection-contract.md).
+
+
+### Mirrored normalizer direct loading caller
+
+00478bb0 has one decoded call004dbc3b in004dbbe0. Full caller assembly
+places it after environment loading00478340 and helpers0041d960/004bc870,
+with abort polls separating stages. Nonzero004dbc28 poll skips normalization;
+004dbc40 polls afterward. This establishes the local loading route only.
+Source schema,17th stack value provenance, destination consumers and actual
+reachability remain Astra work; no car-slot capacity is inferred. Ghidra
+normalizer comment refined and saved.
+
+
+### Race completion latch publication order
+
+Full assembly CheckRaceCompletion004ceae0 skips nonzero007d369c;
+a successful predicate stores1 at004ceb24 before finalizer004ceb2a.
+This prevents ordinary synchronous reentry through the same function while
+the latch remains set. No concurrency/reset-lifetime guarantee is inferred.
+Unsigned race modes>3 retain EAX0 and skip finalization locally. Existing
+completion predicates retain their distinct exclusion/network/status gates;
+performance categories, tick-wrap admission and persistence remain open.
+Ghidra dispatcher comment refined, saved and read back.
+
+
+### Race completion latch is shared exit state
+
+Direct writer inventory for007d369c includes initialization clear004c460f,
+pause-action stores1 at004c4c7e/004c4cbf/004c4d0e/004c4d57, and race-loop
+writes004c5434/004c54e5, besides completion004ceb24. Assembly verifies
+the initialization clear and pause stores. Thus nonzero is not exclusive
+evidence of successful finishing; prior “completion latch” wording describes
+its local use, not a universal status enum. Other write operands, full reset
+ordering, indirect mutation and concurrent ownership remain open. Saved
+qualification in Ghidra004ceae0.
+
+
+### Alternate exit path publishes after finalization
+
+004c54e0 finalizes with EAX1 before004c54e5 stores exit flag1. ESI1 is
+preserved by finalizer PUSH/POP. Thus the completion dispatcher's prior
+publication is not universal. Ghidra qualification saved; event007a22dc
+identity and complete lifecycle remain open. See[race completion](race-completion-contract.md#alternate-finalization-order).
+
+
+### Vehicle-result record updater named
+
+Named00450fe0 UpdateStoredRecordsFromVehicleResult after complete assembly
+review: conditional record insertion followed by independent best nonzero
+lap-summary update, EAX result bits2/4 and1. No disk persistence occurs here.
+Comment retains participant/model/lap/string admission and first stack DWORD
+initialization questions for Astra. See[stored records](stored-records-contract.md#vehicle-result-updater-named).
+
+
+### Record-result mask consumer cells
+
+004512f0 maps mask1/4/2 to kind0/2/1 and slots0/1. Leaf0044e7f0 writes
+00664440+8*kind+4*slot, so these six decoded calls target only six DWORDs
+through00664454. ECX preservation verified; visible labels and global
+ownership remain open. Ghidra comment refreshed and saved.
+
+
+### Result notification audio wrappers named
+
+Named004c9990 StartIndexedResultAnnouncementSound and004c99f0
+CheckResultAnnouncementVoiceExpired after full assembly/audio-callee review.
+Shared handle007dd82c and result-flag consumer0044ea60 establish notification
+routing; sample identity, consumption/failure policy and lifecycle remain open.
+Clear helper0044e7d0 covers0x68 bytes including six record-result flags.
+Ghidra saved; no runtime or binary changes.
+
+
+### Pending result notification consumer named
+
+Named0044ea60 ConsumePendingResultAnnouncementFlags after complete
+assembly/jump-table review. Recorded numeric mode priorities and post-audio
+flag clearing without success check. Gate register and global lifetime
+remain partial. Ghidra saved; see[stored records](stored-records-contract.md#notification-flag-consumer-named).
+
+
+### Result notification gate register dependency resolved
+
+Full assembly00500e20/004ffc9c/00500e7c explicitly saves/restores ECX
+on normal returns, resolving0044ea60 scan-bound preservation through
+004e8fd0. Configured1/2 slots survive the gate; nonlocal/concurrent
+contracts remain open. Ghidra and focused report corrected.
+
+
+### Record qualification does not establish capacity admission
+
+0044f960 accepts signed count<10 immediately, otherwise may accept via
+NULL sorted lookup or smaller signed time. Its gate at00451075 therefore
+does not establish0..10 for insertion004511d6. Actual count producers and
+loaded-file reachability remain open. Ghidra insertion comment saved.
+
+
+### Installed record database extents verified
+
+Read-only active/backup records.dat inventory matches0x4197c/header16.
+Assembly-derived33 blocks per file fit with active counts0..2 and backup
+0..8, all0..10. Retained hashes and every offset/count in
+installed-records-database-extents.json. Added saved/read-back Ghidra
+comments at loader0044f510 and selector0044f670. This closes installed-file
+extents/counts only; selector admission, actual reads, strings, custom files
+and mutation remain open. SCRATCHPAD bounded closure added.
+
+
+### Installed records: occupied-string termination
+
+Verified current hashes and independently recomputed all occupied-record
+string bounds: active3 records, backup127, all four ranges terminated.
+See [stored records evidence](stored-records-contract.md#installed-occupied-record-strings).
+Enriched the existing installed-file closure; broader records contracts
+remain Partial. Binary and runtime memory were not modified.
+
+
+### Astra ledger evidence-link audit
+
+The current ledger has 50 Closed, 36 Partial and 1 Open investigation rows.
+Every Closed row has an evidence link; all linked local files and Markdown
+heading anchors exist. The [audit inventory](astra-ledger-link-audit.json)
+records the row titles and targets. This is structural verification only:
+it does not prove the linked claims, close the remaining contracts or imply
+a completion percentage. Complex unresolved work remains deferred to Astra
+under the model boundary recorded in SCRATCHPAD.md.
+
+
+### Backlog reconciliation: static rotation and recovery gates
+
+Luna compared the current ledger with preserved original evidence. Corrected
+two overly broad unresolved descriptions: byte7 selects quarter/three-quarter
+turn rotation in00403180;00409b70 has strict384-tick attempt spacing after
+startup tick1152, pursuit/network suppression and timestamp-before-reset.
+These are preserved static findings from astra-backlog-context.md, not fresh
+runtime validation. Observed placement, actual reset success, suppression
+behavior and cadence questions remain open. Both parent rows remain Partial;
+no additional Closed row was created.
+
+
+### Focused ledger reconciliation: audio and frontend
+
+Luna audited archive/resource/audio/music and frontend/input/window/screenshot
+rows against their focused reports. Parent checked audio-conversion-contract.md
+and the saved toggle-menu/tooltip evidence before narrowing stale residual
+phrases. Audio packer/pitch local mechanics are established; numeric admission,
+ambient state and ownership remain open. Frontend AL-only result behavior and
+local mode4/tooltip mechanics are known; prototype typing, caller provenance,
+layout consumption and the explicit tooltip boundary questions remain open.
+No reviewed parent row qualifies for full closure, and no new Closed rows
+were added. Live Ghidra comments corroborate the retained replay endpoint
+and race-finalization boundaries. No executable/runtime changes were made.
+
+
+### Gameplay and networking backlog reconciliation
+
+Luna reviewed multiplayer, movement, car registry/transfer and series rows
+against focused evidence reports. Parent checked the offline action-to-race
+section: action6 reaches RunRaceSession locally, while concrete dispatch
+of disabled racenow remains unproved. Corrected the ledger accordingly.
+A separate Luna review covered physics, AI, personality, traffic, pursuit,
+spikes, collision and reset. Parent checked the reset-placement and contact
+geometry reports: static ten-pass fallback and candidate geometry are known;
+dense placement correctness and runtime/exceptional geometry remain open.
+Narrowed those residual descriptions without changing Partial statuses.
+Also removed stale report-level unknowns for the already-proved default lap
+source and local notification ordering/installed occupied-string termination.
+Executable and sound-driver hashes still match the established baseline;
+git diff --check passed. No runtime test or binary change occurred.
+
+
+Rendering/history reconciliation: Luna found no status contradiction in
+x87, arena/sort, camera/CCM, weather, ghost or replay RLE rows. Restored
+explicit effect-pose count/time/blend/viewport questions, weather identity
+and visible appearance, and cone wrap/catch-up/bounce/resource questions to
+the ledger so broader wording does not obscure the preserved historical
+scope. These remain unresolved for Astra; no closure was added.
+
+
+### Backlog status-review completion boundary
+
+Reviewed all36 remaining Partial rows and the Open historical-scope umbrella
+using parent report/Ghidra checks and three Luna domain audits. Callback-list
+ownership was checked directly against callback-list-lifecycle.md: direct
+lifecycle/single-initialization capacity findings are established; indirect
+mutation, predicate stability and teardown/reentry remain unresolved. The
+[per-row dispositions](astra-backlog-review.json) retain each unresolved
+investigation and evidence pointers. The status reconciliation is complete;
+the unresolved research is explicitly not complete. Final ledger totals are
+50 Closed,36 Partial,1 Open. No closure was inferred from a valid link alone.

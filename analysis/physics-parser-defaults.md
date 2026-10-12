@@ -31,8 +31,9 @@ provides no installed missing-header trigger; it does not prove all values
 are valid, every header is accepted by the binary parser, or custom input is
 unreachable. Ghidra004b0bb0 records the discrepancy and evidence boundary.
 
-Remaining: default-source initialization/lifetime, malformed entry bounds,
-shared parser ownership, abort policy across callers and subsequent mutation.
+Initial full-copy default availability is resolved below. Remaining: source
+lifetime/aliased mutation, malformed entry bounds, global shared-parser
+ownership and abort-policy reachability across callers.
 
 ## File-backed default image
 
@@ -101,3 +102,73 @@ select backward copying at count0. Together with minimum allocation and
 parser early return, this resolves the local suppressed-missing-entry chain,
 conditional on valid pool state and returning error handlers. Actual normal
 race reachability of suppressed errors remains open. Ghidra004ea4f0 saved.
+
+## Profile initialization before parsing
+
+Race initializer0042c738..0042c741 zeros16 companion records at005eabe0
+(stride0x4ac, total0x4ac0), and0042c79c/0042c7b0 selects the slot passed to
+0042c350. The latter stores that pointer at vehicle+528 before parsing.
+`ClearVehiclePhysicsWorkingState`004285f0 writes the vehicle's own+224..2e0
+region; it does not copy the embedded profile defaults into the companion.
+Thus empty parser input does not receive an implicit default profile from this
+helper. Under stable valid-slot setup without aliased intervening mutation,
+the destination starts zeroed. Suppressed missing-entry reachability and
+subsequent tuning/dynamics on such input remain unresolved. Saved0042c350
+comment records the local distinction.
+
+## Temporary resource abort policy
+
+Normal-return restoration is verified for the existence/open wrappers:
+`CheckResourceFileExists`004e0e60 restores0056440c on both failed-open
+(004e0e8e) and successful-close (004e0eae) branches.
+`OpenResourceHandleWithAbortPolicy`004e2ab0 restores at004e2ac7 after its
+004e28d0 call; its direct length-query caller resumes after restoration.
+
+`LoadOptionalResourceFile`004e0fe0 saves at004e0fe4, clears at004e0fea,
+delegates at004e0ff0 and restores at004e0ff5. Unlike a purely local flag
+change, that dynamic extent includes audio top-up waits004e0edb/004e0f2e
+and conditional post-load callback dispatch004e0f9d. The registered callback
+00517f10..00518037 checks headers, pool size and CRC, resizes allocations,
+and performs policy-gated error handling. Its inspected body/helpers contain
+no direct physics-parser or nested resource-loader call. Startup setter
+00518040 is now named `RegisterResourceFilePostLoadCallback`; static slot
+references show registration and reads, without a reset/unregister write.
+
+`SaveResourceFileWithoutAbort`004eebb0 similarly saves at004eebb4, clears
+at004eebba, delegates004eeae0 at004eebc0 and restores at004eebc5. Its inspected
+open/write/close chain contains no callback or audio wait. These findings
+resolve ordinary wrapper restoration, but do not prove restoration following
+nonlocal exits, serialization of the shared global, or absence of indirect
+reentry through other paths. The normal physics loader uses mandatory004e0ec0
+rather than optional004e0fe0; suppressed missing-entry race reachability
+therefore remains open. Ghidra comments preserve these scope limits.
+
+Audio-wait refinement: `WaitForAudioStreamTopUp`004ff7c0 includes a
+main-thread wait loop calling `ServicePeriodicCallbacks`004e7630. That
+scheduler dispatches due function pointers from16 records, guarded against
+reentering each active record. Thus the optional-loader disabled-policy
+window has a concrete indirect callback surface beyond the post-load hook.
+This is a conditional static route, not evidence that a scheduled target
+actually reparses physics or that the wait branch runs during race loading.
+Known direct optional-loader caller paths do not connect to004b1380 in the
+analyzed graph; unresolved indirect edges prevent a global non-reentry claim.
+
+The wait also calls `RequestAudioStreamTopUp`004ff670, now named and
+commented in Ghidra. This helper creates a completion event if absent,
+clears completion and invokes009f6a50 under a thread-dependent critical
+section; with no callback it marks completion and signals the event.
+The observed installed audio-service path has another reader callback.
+Additionally, timed async poller004f0d20 invokes a job-provided completion
+pointer at004f0d77, and the wait uses alertable SleepEx. Consequently a
+complete non-reentry proof requires job-target/APC provenance as well as
+scheduler records. No active callback or APC target has been established
+that reaches physics parsing; these surfaces remain conditional, not defects.
+
+Async completion refinement: known type2 submitter004f1370 explicitly zeros
+job+24. Type3 submitter004f1500 accepts ECX there, but its sole direct caller
+004f15d0 clears ECX before delegation. Worker004f1820 routes zero-callback
+jobs to status queue+38; only nonzero callbacks enter completion queue+54,
+whose poller calls job+24. Thus these traced submissions do not demonstrate
+completion-callback reentry. Arbitrary heap writers/alternate entries and
+runtime queue state remain outside this bounded result. Named004f1370
+`QueueAsyncFileSelection` and saved submission/wrapper comments in Ghidra.

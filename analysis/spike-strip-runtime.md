@@ -737,3 +737,22 @@ initial deployment approach, all handling effects, seam placement or universal
 repeatability. Existing master4 attachment expanded an already occupied
 player pursuit group, unlike the earlier empty-group case. Ghidra00401650
 and00405740 preserve contact and recovery evidence respectively.
+
+## Direct mask producer range
+
+The candidate helper constructs only1<<i for i0..3. The untruncated24-hit
+instruction search for vehicle+99c finds direct stores only at00428a2d
+(clear),0042985f (candidate OR) and0042a580 (clear). Under this direct writer
+contract the accumulated field remains0..15. Therefore the force-feedback
+whole-DWORD predicate mask!=3 selects other low-nibble masks, without needing
+upper-bit variants. Aliased/bulk writes remain outside displacement-search
+coverage; wheel side identities and actual hardware effects remain open.
+Updated contact-dispatch Ghidra comment to reflect the retained actual-hit
+runtime evidence, replacing its older unresolved-runtime wording.
+
+Period-floor follow-up: finite baseline frequency is5..17. Subtract-five
+surface classes7/12,17,18 can reach0 without a lower clamp; initial slot1
+creation period29412 does not floor later updates. Conversion/submission
+has no local numeric guard. This confirms the conditional arithmetic path,
+while actual x87/backend/device consequences remain unvalidated. Ghidra
+periodic-effect comment saved with this scope.

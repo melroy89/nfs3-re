@@ -1,0 +1,7560 @@
+{
+  "scope": "All .viv files under installed GAMEDATA and gamedata_org; original and active trees counted separately",
+  "archives": [
+    {
+      "path": "GAMEDATA/AUDIO/SFX/IPSPCHE.VIV",
+      "sha256": "094b7ed00c0c2b58b2086961fcdc68fa24d581a613cf8c840e08e224c41f8e46",
+      "file_bytes": 1046776,
+      "magic": "BIGF",
+      "declared_bytes": 1046776,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 81772
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 82064,
+          "bytes": 80172
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 162236,
+          "bytes": 82232
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 244468,
+          "bytes": 81624
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 326092,
+          "bytes": 81396
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 407488,
+          "bytes": 79644
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 487132,
+          "bytes": 80592
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 567724,
+          "bytes": 80276
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 648000,
+          "bytes": 74448
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 722448,
+          "bytes": 81036
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 803484,
+          "bytes": 81564
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 885048,
+          "bytes": 80596
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 965644,
+          "bytes": 81132
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/AUDIO/SFX/IPSPCHF.VIV",
+      "sha256": "e47352be6c5d1de3f782e9309b109e68c4914665219eb04a20c55730c91975ed",
+      "file_bytes": 1096404,
+      "magic": "BIGF",
+      "declared_bytes": 1096404,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 85352
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 85644,
+          "bytes": 82196
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 167840,
+          "bytes": 83884
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 251724,
+          "bytes": 84732
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 336456,
+          "bytes": 85596
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 422052,
+          "bytes": 84808
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 506860,
+          "bytes": 83768
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 590628,
+          "bytes": 84012
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 674640,
+          "bytes": 75700
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 750340,
+          "bytes": 87496
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 837836,
+          "bytes": 84532
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 922368,
+          "bytes": 85572
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 1007940,
+          "bytes": 88464
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/AUDIO/SFX/IPSPCHG.VIV",
+      "sha256": "070a0b6dd2a74eb0be0414f94d269d7916b5db2479a4a4a9b124d5f195026399",
+      "file_bytes": 1148488,
+      "magic": "BIGF",
+      "declared_bytes": 1148488,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 89372
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 89664,
+          "bytes": 89028
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 178692,
+          "bytes": 88500
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 267192,
+          "bytes": 85276
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 352468,
+          "bytes": 89880
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 442348,
+          "bytes": 85480
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 527828,
+          "bytes": 82412
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 610240,
+          "bytes": 93228
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 703468,
+          "bytes": 89656
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 793124,
+          "bytes": 89260
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 882384,
+          "bytes": 90120
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 972504,
+          "bytes": 88288
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 1060792,
+          "bytes": 87696
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/AUDIO/SFX/IPSPCHI.VIV",
+      "sha256": "24f98c9c7ffbbef514184a5da1357602e6a718f46c38c7aa39441551d6ed7542",
+      "file_bytes": 1431256,
+      "magic": "BIGF",
+      "declared_bytes": 1431256,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 107672
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 107964,
+          "bytes": 106304
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 214268,
+          "bytes": 111700
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 325968,
+          "bytes": 109728
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 435696,
+          "bytes": 110476
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 546172,
+          "bytes": 108688
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 654860,
+          "bytes": 101964
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 756824,
+          "bytes": 113116
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 869940,
+          "bytes": 109924
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 979864,
+          "bytes": 109516
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 1089380,
+          "bytes": 120348
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 1209728,
+          "bytes": 111032
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 1320760,
+          "bytes": 110496
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/AUDIO/SFX/IPSPCHS.VIV",
+      "sha256": "e26abcdd95150f1f3616b2f31cb4f2ac543fe28988f1a774bbae5de593d4e47e",
+      "file_bytes": 1071600,
+      "magic": "BIGF",
+      "declared_bytes": 1071600,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 80704
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 80996,
+          "bytes": 81104
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 162100,
+          "bytes": 82016
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 244116,
+          "bytes": 86680
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 330796,
+          "bytes": 81348
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 412144,
+          "bytes": 81400
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 493544,
+          "bytes": 83580
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 577124,
+          "bytes": 85556
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 662680,
+          "bytes": 76144
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 738824,
+          "bytes": 83344
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 822168,
+          "bytes": 82432
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 904600,
+          "bytes": 82296
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 986896,
+          "bytes": 84704
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/456G/car.viv",
+      "sha256": "3dd6d3a0a80a56c900cc4fd7c2f774fb50a3a01cb5c3998c5892b37702eeb2cc",
+      "file_bytes": 1433603,
+      "magic": "BIGF",
+      "declared_bytes": 1433603,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5026
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 149524
+        },
+        {
+          "name": "car00.tga",
+          "offset": 154856,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 417044,
+          "bytes": 730
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 417776,
+          "bytes": 676
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 418452,
+          "bytes": 728
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 419180,
+          "bytes": 734
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 419916,
+          "bytes": 663
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 420580,
+          "bytes": 505
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 421088,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 552200,
+          "bytes": 727
+        },
+        {
+          "name": "car.bnk",
+          "offset": 552928,
+          "bytes": 175004
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 727932,
+          "bytes": 60800
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 788732,
+          "bytes": 60808
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 849540,
+          "bytes": 112360
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 961900,
+          "bytes": 471703
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "file_bytes": 1613816,
+      "magic": "BIGF",
+      "declared_bytes": 1613816,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5028
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 147908
+        },
+        {
+          "name": "car00.tga",
+          "offset": 153240,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 415428,
+          "bytes": 646
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 416076,
+          "bytes": 611
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 416688,
+          "bytes": 459
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 417148,
+          "bytes": 711
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 417860,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 548972,
+          "bytes": 673
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 549648,
+          "bytes": 691
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 550340,
+          "bytes": 697
+        },
+        {
+          "name": "car.bnk",
+          "offset": 551040,
+          "bytes": 226236
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 777276,
+          "bytes": 65588
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 842864,
+          "bytes": 65580
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 908444,
+          "bytes": 130072
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1038516,
+          "bytes": 575300
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/AMD7/IPSPCHE.VIV",
+      "sha256": "6514a2d549c3d8a8442269ac45a30760a4aee6c1d3df98dd3c060fe3423e7ade",
+      "file_bytes": 1259144,
+      "magic": "BIGF",
+      "declared_bytes": 1259144,
+      "member_count": 15,
+      "directory_end": 332,
+      "directory_plus_48_fits": true,
+      "parsed_members": 15,
+      "parsed_directory_bytes": 331,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 332,
+          "bytes": 83424
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 83756,
+          "bytes": 83132
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 166888,
+          "bytes": 85072
+        },
+        {
+          "name": "ipchspch.bnk",
+          "offset": 251960,
+          "bytes": 86056
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 338016,
+          "bytes": 84904
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 422920,
+          "bytes": 84548
+        },
+        {
+          "name": "iplbspch.bnk",
+          "offset": 507468,
+          "bytes": 87920
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 595388,
+          "bytes": 84096
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 679484,
+          "bytes": 77056
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 756540,
+          "bytes": 84648
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 841188,
+          "bytes": 83896
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 925084,
+          "bytes": 83028
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 1008112,
+          "bytes": 84320
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 1092432,
+          "bytes": 83216
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 1175648,
+          "bytes": 83496
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "file_bytes": 1372240,
+      "magic": "BIGF",
+      "declared_bytes": 1372240,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5027
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 144932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 150264,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 412452,
+          "bytes": 709
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 413164,
+          "bytes": 717
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 413884,
+          "bytes": 663
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 414548,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 545660,
+          "bytes": 718
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 546380,
+          "bytes": 708
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 547088,
+          "bytes": 649
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 547740,
+          "bytes": 700
+        },
+        {
+          "name": "car.bnk",
+          "offset": 548440,
+          "bytes": 194032
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 742472,
+          "bytes": 65376
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 807848,
+          "bytes": 65360
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 873208,
+          "bytes": 131288
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1004496,
+          "bytes": 367744
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/CORV/IPSPCHE.VIV",
+      "sha256": "f824d5d083e15204d241280f584e561511a76b8d66cd0a12f67ca5672a42d26d",
+      "file_bytes": 944716,
+      "magic": "BIGF",
+      "declared_bytes": 944716,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 72448
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 72740,
+          "bytes": 73216
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 145956,
+          "bytes": 73516
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 219472,
+          "bytes": 73140
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 292612,
+          "bytes": 73372
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 365984,
+          "bytes": 71828
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 437812,
+          "bytes": 66104
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 503916,
+          "bytes": 73860
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 577776,
+          "bytes": 74320
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 652096,
+          "bytes": 73344
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 725440,
+          "bytes": 74660
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 800100,
+          "bytes": 71412
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 871512,
+          "bytes": 73204
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "file_bytes": 1542245,
+      "magic": "BIGF",
+      "declared_bytes": 1542245,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5032
+        },
+        {
+          "name": "car.fce",
+          "offset": 5336,
+          "bytes": 138636
+        },
+        {
+          "name": "car00.tga",
+          "offset": 143972,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 406160,
+          "bytes": 671
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 406832,
+          "bytes": 682
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 407516,
+          "bytes": 618
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 408136,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 539248,
+          "bytes": 699
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 539948,
+          "bytes": 677
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 540628,
+          "bytes": 651
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 541280,
+          "bytes": 677
+        },
+        {
+          "name": "car.bnk",
+          "offset": 541960,
+          "bytes": 221016
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 762976,
+          "bytes": 66608
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 829584,
+          "bytes": 66600
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 896184,
+          "bytes": 154224
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1050408,
+          "bytes": 491837
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/COUT/IPSPCHE.VIV",
+      "sha256": "941cf39a965f7df9f9e27b2b3f6e33a8109f7eccda6e9ca29a49cdce7149d7e8",
+      "file_bytes": 1041632,
+      "magic": "BIGF",
+      "declared_bytes": 1041632,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 80604
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 80896,
+          "bytes": 79768
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 160664,
+          "bytes": 82764
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 243428,
+          "bytes": 81072
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 324500,
+          "bytes": 80312
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 404812,
+          "bytes": 79808
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 484620,
+          "bytes": 73892
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 558512,
+          "bytes": 79172
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 637684,
+          "bytes": 81956
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 719640,
+          "bytes": 79288
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 798928,
+          "bytes": 81688
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 880616,
+          "bytes": 80580
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 961196,
+          "bytes": 80436
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "file_bytes": 1581124,
+      "magic": "BIGF",
+      "declared_bytes": 1581124,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5023
+        },
+        {
+          "name": "car.fce",
+          "offset": 5328,
+          "bytes": 152948
+        },
+        {
+          "name": "car00.tga",
+          "offset": 158276,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 420464,
+          "bytes": 683
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 421148,
+          "bytes": 692
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 421840,
+          "bytes": 685
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 422528,
+          "bytes": 689
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 423220,
+          "bytes": 630
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 423852,
+          "bytes": 619
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 424472,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 555584,
+          "bytes": 687
+        },
+        {
+          "name": "car.bnk",
+          "offset": 556272,
+          "bytes": 217136
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 773408,
+          "bytes": 69528
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 842936,
+          "bytes": 69544
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 912480,
+          "bytes": 152288
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1064768,
+          "bytes": 516356
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/DIAB/IPSPCHE.VIV",
+      "sha256": "19302d3ae53afc025be8a34761ca228977f722cacc2f5807ec6f8813d936f264",
+      "file_bytes": 1040116,
+      "magic": "BIGF",
+      "declared_bytes": 1040116,
+      "member_count": 14,
+      "directory_end": 312,
+      "directory_plus_48_fits": true,
+      "parsed_members": 14,
+      "parsed_directory_bytes": 310,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 312,
+          "bytes": 75016
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 75328,
+          "bytes": 73068
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 148396,
+          "bytes": 76628
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 225024,
+          "bytes": 74136
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 299160,
+          "bytes": 74476
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 373636,
+          "bytes": 75048
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 448684,
+          "bytes": 74632
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 523316,
+          "bytes": 73552
+        },
+        {
+          "name": "iplbspch.bnk",
+          "offset": 596868,
+          "bytes": 77564
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 674432,
+          "bytes": 73648
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 748080,
+          "bytes": 68664
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 816744,
+          "bytes": 75080
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 891824,
+          "bytes": 74668
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 966492,
+          "bytes": 73624
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "file_bytes": 1531156,
+      "magic": "BIGF",
+      "declared_bytes": 1531156,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5034
+        },
+        {
+          "name": "car.fce",
+          "offset": 5340,
+          "bytes": 126532
+        },
+        {
+          "name": "car00.tga",
+          "offset": 131872,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 394060,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 525172,
+          "bytes": 300
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 525472,
+          "bytes": 300
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 525772,
+          "bytes": 306
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 526080,
+          "bytes": 296
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 526376,
+          "bytes": 304
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 526680,
+          "bytes": 305
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 526988,
+          "bytes": 300
+        },
+        {
+          "name": "car.bnk",
+          "offset": 527288,
+          "bytes": 212704
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 739992,
+          "bytes": 99072
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 839064,
+          "bytes": 99048
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 938112,
+          "bytes": 172408
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1110520,
+          "bytes": 420636
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "file_bytes": 1349644,
+      "magic": "BIGF",
+      "declared_bytes": 1349644,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5025
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 139748
+        },
+        {
+          "name": "car00.tga",
+          "offset": 145080,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 407244,
+          "bytes": 757
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 408004,
+          "bytes": 688
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 408692,
+          "bytes": 678
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 409372,
+          "bytes": 745
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 410120,
+          "bytes": 744
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 410864,
+          "bytes": 748
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 411612,
+          "bytes": 744
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 412356,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 543468,
+          "bytes": 208736
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 752204,
+          "bytes": 61992
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 814196,
+          "bytes": 61984
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 876180,
+          "bytes": 136824
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1013004,
+          "bytes": 336640
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "sha256": "99e00c1e21a73c10fc4593309e9fd16ff26256b2aa25cd9c3b4c4baa304d4264",
+      "file_bytes": 1747047,
+      "magic": "BIGF",
+      "declared_bytes": 1747047,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5021
+        },
+        {
+          "name": "car.fce",
+          "offset": 5328,
+          "bytes": 149492
+        },
+        {
+          "name": "car00.tga",
+          "offset": 154820,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 417008,
+          "bytes": 349
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 417360,
+          "bytes": 723
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 418084,
+          "bytes": 348
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 418432,
+          "bytes": 358
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 418792,
+          "bytes": 352
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 419144,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 550256,
+          "bytes": 351
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 550608,
+          "bytes": 352
+        },
+        {
+          "name": "car.bnk",
+          "offset": 550960,
+          "bytes": 261752
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 812712,
+          "bytes": 74536
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 887248,
+          "bytes": 74544
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 961792,
+          "bytes": 151312
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1113104,
+          "bytes": 633943
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "file_bytes": 1692981,
+      "magic": "BIGF",
+      "declared_bytes": 1692981,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5030
+        },
+        {
+          "name": "car.fce",
+          "offset": 5336,
+          "bytes": 135444
+        },
+        {
+          "name": "car00.tga",
+          "offset": 140780,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 402968,
+          "bytes": 724
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 403692,
+          "bytes": 668
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 404360,
+          "bytes": 714
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 405076,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 536188,
+          "bytes": 722
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 536912,
+          "bytes": 727
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 537640,
+          "bytes": 655
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 538296,
+          "bytes": 725
+        },
+        {
+          "name": "car.bnk",
+          "offset": 539024,
+          "bytes": 239216
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 778240,
+          "bytes": 75680
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 853920,
+          "bytes": 75672
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 929592,
+          "bytes": 152416
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1082008,
+          "bytes": 610973
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "sha256": "7e122baa3541699736405d117aa2539270e8400d3eeb6092d95f098259f33699",
+      "file_bytes": 1626250,
+      "magic": "BIGF",
+      "declared_bytes": 1626250,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5328,
+          "bytes": 150420
+        },
+        {
+          "name": "car00.tga",
+          "offset": 155748,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 417912,
+          "bytes": 662
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 418576,
+          "bytes": 358
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 418936,
+          "bytes": 350
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 419288,
+          "bytes": 356
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 419644,
+          "bytes": 353
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 420000,
+          "bytes": 355
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 420356,
+          "bytes": 356
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 420712,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 551824,
+          "bytes": 275612
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 827436,
+          "bytes": 87824
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 915260,
+          "bytes": 87816
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 1003076,
+          "bytes": 158764
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1161840,
+          "bytes": 464410
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "file_bytes": 1418514,
+      "magic": "BIGF",
+      "declared_bytes": 1418514,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5025
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 134436
+        },
+        {
+          "name": "car00.tga",
+          "offset": 139768,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 401956,
+          "bytes": 614
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 402572,
+          "bytes": 566
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 403140,
+          "bytes": 612
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 403752,
+          "bytes": 541
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 404296,
+          "bytes": 615
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 404912,
+          "bytes": 615
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 405528,
+          "bytes": 624
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 406152,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 537264,
+          "bytes": 232104
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 769368,
+          "bytes": 60188
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 829556,
+          "bytes": 60180
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 889736,
+          "bytes": 148708
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1038444,
+          "bytes": 380070
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/JXJR/IPSPCHE.VIV",
+      "sha256": "348d5b52494b1f36d18cf9a3fe73ca76fe359cf046ac64a4a846645831919da2",
+      "file_bytes": 982564,
+      "magic": "BIGF",
+      "declared_bytes": 982564,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 76708
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 77000,
+          "bytes": 75092
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 152092,
+          "bytes": 78480
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 230572,
+          "bytes": 76324
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 306896,
+          "bytes": 76032
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 382928,
+          "bytes": 75592
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 458520,
+          "bytes": 75812
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 534332,
+          "bytes": 75632
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 609964,
+          "bytes": 70196
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 680160,
+          "bytes": 75776
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 755936,
+          "bytes": 76036
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 831972,
+          "bytes": 74496
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 906468,
+          "bytes": 76096
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "file_bytes": 1833943,
+      "magic": "BIGF",
+      "declared_bytes": 1833943,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5328,
+          "bytes": 150724
+        },
+        {
+          "name": "car00.tga",
+          "offset": 156052,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 418240,
+          "bytes": 554
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 418796,
+          "bytes": 393
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 419192,
+          "bytes": 613
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 419808,
+          "bytes": 625
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 420436,
+          "bytes": 613
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 421052,
+          "bytes": 549
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 421604,
+          "bytes": 614
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 422220,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 553332,
+          "bytes": 236384
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 789716,
+          "bytes": 62064
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 851780,
+          "bytes": 62056
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 913836,
+          "bytes": 134336
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1048172,
+          "bytes": 785771
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/JXK8/IPSPCHE.VIV",
+      "sha256": "348d5b52494b1f36d18cf9a3fe73ca76fe359cf046ac64a4a846645831919da2",
+      "file_bytes": 982564,
+      "magic": "BIGF",
+      "declared_bytes": 982564,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 76708
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 77000,
+          "bytes": 75092
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 152092,
+          "bytes": 78480
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 230572,
+          "bytes": 76324
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 306896,
+          "bytes": 76032
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 382928,
+          "bytes": 75592
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 458520,
+          "bytes": 75812
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 534332,
+          "bytes": 75632
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 609964,
+          "bytes": 70196
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 680160,
+          "bytes": 75776
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 755936,
+          "bytes": 76036
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 831972,
+          "bytes": 74496
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 906468,
+          "bytes": 76096
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "sha256": "c30bbe49abccb9f5c8813d0674f10dd99ee71113dc2281800de6c58662bfcd41",
+      "file_bytes": 1773707,
+      "magic": "BIGF",
+      "declared_bytes": 1773707,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5328,
+          "bytes": 151684
+        },
+        {
+          "name": "car00.tga",
+          "offset": 157012,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 419200,
+          "bytes": 654
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 419856,
+          "bytes": 658
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 420516,
+          "bytes": 586
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 421104,
+          "bytes": 640
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 421744,
+          "bytes": 609
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 422356,
+          "bytes": 655
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 423012,
+          "bytes": 421
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 423436,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 554548,
+          "bytes": 167888
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 722436,
+          "bytes": 56168
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 778604,
+          "bytes": 56184
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 834788,
+          "bytes": 125080
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 959868,
+          "bytes": 813839
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/JXKR/ipspche.viv",
+      "sha256": "348d5b52494b1f36d18cf9a3fe73ca76fe359cf046ac64a4a846645831919da2",
+      "file_bytes": 982564,
+      "magic": "BIGF",
+      "declared_bytes": 982564,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 76708
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 77000,
+          "bytes": 75092
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 152092,
+          "bytes": 78480
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 230572,
+          "bytes": 76324
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 306896,
+          "bytes": 76032
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 382928,
+          "bytes": 75592
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 458520,
+          "bytes": 75812
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 534332,
+          "bytes": 75632
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 609964,
+          "bytes": 70196
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 680160,
+          "bytes": 75776
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 755936,
+          "bytes": 76036
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 831972,
+          "bytes": 74496
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 906468,
+          "bytes": 76096
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "file_bytes": 719356,
+      "magic": "BIGF",
+      "declared_bytes": 719356,
+      "member_count": 14,
+      "directory_end": 268,
+      "directory_plus_48_fits": true,
+      "parsed_members": 14,
+      "parsed_directory_bytes": 268,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 268,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5292,
+          "bytes": 29668
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34960,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 297124,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 297428,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 297732,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 298036,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 298340,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 298644,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 298948,
+          "bytes": 301
+        },
+        {
+          "name": "car.bnk",
+          "offset": 299252,
+          "bytes": 168816
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 468068,
+          "bytes": 64272
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 532340,
+          "bytes": 64264
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 596604,
+          "bytes": 122752
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "file_bytes": 1627106,
+      "magic": "BIGF",
+      "declared_bytes": 1627106,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5036
+        },
+        {
+          "name": "car.fce",
+          "offset": 5340,
+          "bytes": 160500
+        },
+        {
+          "name": "car00.tga",
+          "offset": 165840,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 428028,
+          "bytes": 385
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 428416,
+          "bytes": 381
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 428800,
+          "bytes": 366
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 429168,
+          "bytes": 372
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 429540,
+          "bytes": 379
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 429920,
+          "bytes": 380
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 430300,
+          "bytes": 374
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 430676,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 561788,
+          "bytes": 220360
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 782148,
+          "bytes": 85072
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 867220,
+          "bytes": 85064
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 952284,
+          "bytes": 152688
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1104972,
+          "bytes": 522134
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "sha256": "7963e1b0758a10c4565497b6d0238923caa8c9656e6f9411f43ba1cd439bafdc",
+      "file_bytes": 1463197,
+      "magic": "BIGF",
+      "declared_bytes": 1463197,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5040
+        },
+        {
+          "name": "car.fce",
+          "offset": 5344,
+          "bytes": 156708
+        },
+        {
+          "name": "car00.tga",
+          "offset": 162052,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 424216,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 555328,
+          "bytes": 622
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 555952,
+          "bytes": 629
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 556584,
+          "bytes": 567
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 557152,
+          "bytes": 628
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 557780,
+          "bytes": 407
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 558188,
+          "bytes": 638
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 558828,
+          "bytes": 584
+        },
+        {
+          "name": "car.bnk",
+          "offset": 559412,
+          "bytes": 224720
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 784132,
+          "bytes": 69760
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 853892,
+          "bytes": 69768
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 923660,
+          "bytes": 143848
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1067508,
+          "bytes": 395689
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/LSTM/ipspche.viv",
+      "sha256": "0180e8cae847290b3e5f7dd0f1a2931c70eb3f5a5e93a3e95c6ebddec7f61c7f",
+      "file_bytes": 899168,
+      "magic": "BIGF",
+      "declared_bytes": 899168,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 69556
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 69848,
+          "bytes": 69376
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 139224,
+          "bytes": 70224
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 209448,
+          "bytes": 69776
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 279224,
+          "bytes": 69548
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 348772,
+          "bytes": 67912
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 416684,
+          "bytes": 69868
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 486552,
+          "bytes": 69196
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 555748,
+          "bytes": 62600
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 618348,
+          "bytes": 70252
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 688600,
+          "bytes": 71164
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 759764,
+          "bytes": 69028
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 828792,
+          "bytes": 70376
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "file_bytes": 1435063,
+      "magic": "BIGF",
+      "declared_bytes": 1435063,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5037
+        },
+        {
+          "name": "car.fce",
+          "offset": 5344,
+          "bytes": 135508
+        },
+        {
+          "name": "car00.tga",
+          "offset": 140852,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 403040,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 534152,
+          "bytes": 642
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 534796,
+          "bytes": 653
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 535452,
+          "bytes": 667
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 536120,
+          "bytes": 638
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 536760,
+          "bytes": 607
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 537368,
+          "bytes": 638
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 538008,
+          "bytes": 595
+        },
+        {
+          "name": "car.bnk",
+          "offset": 538604,
+          "bytes": 230800
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 769404,
+          "bytes": 69448
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 838852,
+          "bytes": 69432
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 908284,
+          "bytes": 155804
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1064088,
+          "bytes": 370975
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "file_bytes": 1549851,
+      "magic": "BIGF",
+      "declared_bytes": 1549851,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5046
+        },
+        {
+          "name": "car.fce",
+          "offset": 5352,
+          "bytes": 133060
+        },
+        {
+          "name": "car00.tga",
+          "offset": 138412,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 400600,
+          "bytes": 315
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 400916,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 532028,
+          "bytes": 321
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 532352,
+          "bytes": 315
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 532668,
+          "bytes": 321
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 532992,
+          "bytes": 309
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 533304,
+          "bytes": 315
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 533620,
+          "bytes": 313
+        },
+        {
+          "name": "car.bnk",
+          "offset": 533936,
+          "bytes": 212704
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 746640,
+          "bytes": 99072
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 845712,
+          "bytes": 99048
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 944760,
+          "bytes": 172408
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1117168,
+          "bytes": 432683
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "file_bytes": 1446604,
+      "magic": "BIGF",
+      "declared_bytes": 1446604,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5028
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 146772
+        },
+        {
+          "name": "car00.tga",
+          "offset": 152104,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 414292,
+          "bytes": 634
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 414928,
+          "bytes": 661
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 415592,
+          "bytes": 590
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 416184,
+          "bytes": 644
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 416828,
+          "bytes": 568
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 417396,
+          "bytes": 647
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 418044,
+          "bytes": 426
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 418472,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 549584,
+          "bytes": 179440
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 729024,
+          "bytes": 43640
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 772664,
+          "bytes": 43656
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 816320,
+          "bytes": 102144
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 918464,
+          "bytes": 528140
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/SCIG/IPSPCHE.VIV",
+      "sha256": "adf10d65c4cc02e2785ed7785ed229685c4e6363db3daee83b996293f3dbc2a8",
+      "file_bytes": 866136,
+      "magic": "BIGF",
+      "declared_bytes": 866136,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 67804
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 68096,
+          "bytes": 66296
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 134392,
+          "bytes": 68420
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 202812,
+          "bytes": 67164
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 269976,
+          "bytes": 66948
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 336924,
+          "bytes": 66132
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 403056,
+          "bytes": 60104
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 463160,
+          "bytes": 66256
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 529416,
+          "bytes": 67884
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 597300,
+          "bytes": 66176
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 663476,
+          "bytes": 68056
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 731532,
+          "bytes": 66412
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 797944,
+          "bytes": 68192
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "file_bytes": 1723392,
+      "magic": "BIGF",
+      "declared_bytes": 1723392,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5328,
+          "bytes": 146164
+        },
+        {
+          "name": "car00.tga",
+          "offset": 151492,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 413656,
+          "bytes": 699
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 414356,
+          "bytes": 646
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 415004,
+          "bytes": 694
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 415700,
+          "bytes": 692
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 416392,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 547504,
+          "bytes": 701
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 548208,
+          "bytes": 641
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 548852,
+          "bytes": 473
+        },
+        {
+          "name": "car.bnk",
+          "offset": 549328,
+          "bytes": 266112
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 815440,
+          "bytes": 59192
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 874632,
+          "bytes": 59208
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 933840,
+          "bytes": 126208
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1060048,
+          "bytes": 663344
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "sha256": "39eee86aa6aa2be37dc408f11a1adfc3e119df45f49dc8f364657eb819a75913",
+      "file_bytes": 1444505,
+      "magic": "BIGF",
+      "declared_bytes": 1444505,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5028
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 143124
+        },
+        {
+          "name": "car00.tga",
+          "offset": 148456,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 410644,
+          "bytes": 563
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 411208,
+          "bytes": 507
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 411716,
+          "bytes": 520
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 412236,
+          "bytes": 566
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 412804,
+          "bytes": 342
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 413148,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 544260,
+          "bytes": 565
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 544828,
+          "bytes": 573
+        },
+        {
+          "name": "car.bnk",
+          "offset": 545404,
+          "bytes": 202352
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 747756,
+          "bytes": 46064
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 793820,
+          "bytes": 46056
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 839876,
+          "bytes": 113592
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 953468,
+          "bytes": 491037
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/SR42/ipspche.viv",
+      "sha256": "f46261d640615e1c8f03f2eee207edfd144a9cbcb675f90e60c6e2027a3e8bec",
+      "file_bytes": 940956,
+      "magic": "BIGF",
+      "declared_bytes": 940956,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 72648
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 72940,
+          "bytes": 72636
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 145576,
+          "bytes": 74020
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 219596,
+          "bytes": 73108
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 292704,
+          "bytes": 72876
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 365580,
+          "bytes": 72048
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 437628,
+          "bytes": 66152
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 503780,
+          "bytes": 72680
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 576460,
+          "bytes": 73712
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 650172,
+          "bytes": 72136
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 722308,
+          "bytes": 74060
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 796368,
+          "bytes": 71780
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 868148,
+          "bytes": 72808
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0000/CAR.VIV",
+      "sha256": "08050fb13dfeb32df48be96b9131954c5cf894ff848d57a9035134a71397da37",
+      "file_bytes": 296926,
+      "magic": "BIGF",
+      "declared_bytes": 296926,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5028
+        },
+        {
+          "name": "car.fce",
+          "offset": 5096,
+          "bytes": 29668
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34764,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0001/CAR.VIV",
+      "sha256": "efba2f45779739e6fc9d2539f717fb594d460483cae53596af34ea85863d26d8",
+      "file_bytes": 296216,
+      "magic": "BIGF",
+      "declared_bytes": 296216,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5028
+        },
+        {
+          "name": "car.fce",
+          "offset": 5096,
+          "bytes": 28932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34028,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0002/CAR.VIV",
+      "sha256": "31f7b837c2ee1f3ce776273a009b028c7fe0db3a8f6bb5504fdf41aa67dc51dd",
+      "file_bytes": 296694,
+      "magic": "BIGF",
+      "declared_bytes": 296694,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5034
+        },
+        {
+          "name": "car.fce",
+          "offset": 5104,
+          "bytes": 29428
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34532,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0003/CAR.VIV",
+      "sha256": "95590f85d1ffaa383a82caf967d6ae4548550175d064b62a4e1c42ff230e7930",
+      "file_bytes": 295342,
+      "magic": "BIGF",
+      "declared_bytes": 295342,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5026
+        },
+        {
+          "name": "car.fce",
+          "offset": 5096,
+          "bytes": 28084
+        },
+        {
+          "name": "car00.tga",
+          "offset": 33180,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0004/CAR.VIV",
+      "sha256": "9472cecd98d4eebc377e38cd5db91551736ba8bd0c4ddc391a962a97319da51b",
+      "file_bytes": 296204,
+      "magic": "BIGF",
+      "declared_bytes": 296204,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5016
+        },
+        {
+          "name": "car.fce",
+          "offset": 5084,
+          "bytes": 28932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34016,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0005/CAR.VIV",
+      "sha256": "aa68012fbd418f57385117b79e4167491ae00d3150d807db8d3480bceae28618",
+      "file_bytes": 296490,
+      "magic": "BIGF",
+      "declared_bytes": 296490,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5023
+        },
+        {
+          "name": "car.fce",
+          "offset": 5092,
+          "bytes": 29236
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34328,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0006/CAR.VIV",
+      "sha256": "7418ff65a41e8135e4b1810d0418f283a994c93cc7370e00c260ef985fabbf17",
+      "file_bytes": 296490,
+      "magic": "BIGF",
+      "declared_bytes": 296490,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5092,
+          "bytes": 29236
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34328,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0007/CAR.VIV",
+      "sha256": "15edfd444a1fd3527a7998fdd880c4ca37347061458b7407115a378816bf69a2",
+      "file_bytes": 296482,
+      "magic": "BIGF",
+      "declared_bytes": 296482,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5016
+        },
+        {
+          "name": "car.fce",
+          "offset": 5084,
+          "bytes": 29236
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34320,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0008/CAR.VIV",
+      "sha256": "db9977c3f4949857f042c842ca47f850c5a7f7564190b98acd462e99d79ee4e9",
+      "file_bytes": 296174,
+      "magic": "BIGF",
+      "declared_bytes": 296174,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5009
+        },
+        {
+          "name": "car.fce",
+          "offset": 5080,
+          "bytes": 28932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34012,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0009/CAR.VIV",
+      "sha256": "8702682324f81b94c9c3c6b448bf4c7a84be5d088a88e2d8bbceb86116c4fc5b",
+      "file_bytes": 297254,
+      "magic": "BIGF",
+      "declared_bytes": 297254,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5020
+        },
+        {
+          "name": "car.fce",
+          "offset": 5088,
+          "bytes": 30004
+        },
+        {
+          "name": "car00.tga",
+          "offset": 35092,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0010/CAR.VIV",
+      "sha256": "54d82082d67d2097c98fc5828b14d5c7bfe02321ada9a22f5595ecd3cd8fee0f",
+      "file_bytes": 296204,
+      "magic": "BIGF",
+      "declared_bytes": 296204,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5016
+        },
+        {
+          "name": "car.fce",
+          "offset": 5084,
+          "bytes": 28932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34016,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0011/CAR.VIV",
+      "sha256": "aa7b73987e791dda2c73cfd629332aa6653b969daa79a27b674190e94b7a51ba",
+      "file_bytes": 295342,
+      "magic": "BIGF",
+      "declared_bytes": 295342,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5025
+        },
+        {
+          "name": "car.fce",
+          "offset": 5096,
+          "bytes": 28084
+        },
+        {
+          "name": "car00.tga",
+          "offset": 33180,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0012/CAR.VIV",
+      "sha256": "c35d9068fe900fc54cef56231e99f68fef312adb8e9b197a6fbfc0d8e3d0072a",
+      "file_bytes": 299364,
+      "magic": "BIGF",
+      "declared_bytes": 299364,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5022
+        },
+        {
+          "name": "car.fce",
+          "offset": 5092,
+          "bytes": 32084
+        },
+        {
+          "name": "car00.tga",
+          "offset": 37176,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0013/CAR.VIV",
+      "sha256": "25c5b9e2f359050e64fb4ddcea1c757491aba31b68a91495d83b80dff3275f55",
+      "file_bytes": 297748,
+      "magic": "BIGF",
+      "declared_bytes": 297748,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5021
+        },
+        {
+          "name": "car.fce",
+          "offset": 5092,
+          "bytes": 30468
+        },
+        {
+          "name": "car00.tga",
+          "offset": 35560,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0014/CAR.VIV",
+      "sha256": "5b1349f4c029430bbe6f9045e0997a078cebac81621eafb125d29c6697ad7afe",
+      "file_bytes": 297660,
+      "magic": "BIGF",
+      "declared_bytes": 297660,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5029
+        },
+        {
+          "name": "car.fce",
+          "offset": 5100,
+          "bytes": 30372
+        },
+        {
+          "name": "car00.tga",
+          "offset": 35472,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0015/CAR.VIV",
+      "sha256": "0d543bd89b523a89fc3f8612c2dbf4c0e824eed82219748590510402a169f0a8",
+      "file_bytes": 295564,
+      "magic": "BIGF",
+      "declared_bytes": 295564,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5030
+        },
+        {
+          "name": "car.fce",
+          "offset": 5100,
+          "bytes": 28276
+        },
+        {
+          "name": "car00.tga",
+          "offset": 33376,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/0016/CAR.VIV",
+      "sha256": "2b8ae5367292ad4d2bf281fda77dd3eebb0b7a55a14b96d30fa6d932c3d74f6f",
+      "file_bytes": 297154,
+      "magic": "BIGF",
+      "declared_bytes": 297154,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5029
+        },
+        {
+          "name": "car.fce",
+          "offset": 5100,
+          "bytes": 29892
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34992,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0000/CAR.VIV",
+      "sha256": "0208bd543dfac99f76628608127ecf7c6eb1e97f06d264b93806dc127dd14cb8",
+      "file_bytes": 717516,
+      "magic": "BIGF",
+      "declared_bytes": 717516,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5010
+        },
+        {
+          "name": "car.fce",
+          "offset": 5132,
+          "bytes": 33284
+        },
+        {
+          "name": "car00.tga",
+          "offset": 38416,
+          "bytes": 262188
+        },
+        {
+          "name": "car.bnk",
+          "offset": 300604,
+          "bytes": 210224
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 510828,
+          "bytes": 70320
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 581148,
+          "bytes": 136368
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0001/CAR.VIV",
+      "sha256": "d8cb60654b8bfff7354d4a5f044f0d3851555edb0748d8c08d64c5769d1abd7c",
+      "file_bytes": 806684,
+      "magic": "BIGF",
+      "declared_bytes": 806684,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5023
+        },
+        {
+          "name": "car.fce",
+          "offset": 5144,
+          "bytes": 160500
+        },
+        {
+          "name": "car00.tga",
+          "offset": 165644,
+          "bytes": 262188
+        },
+        {
+          "name": "car.bnk",
+          "offset": 427832,
+          "bytes": 179696
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 607528,
+          "bytes": 87816
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 695344,
+          "bytes": 111340
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0002/CAR.VIV",
+      "sha256": "0c217e047e25e525dc3abb3f0916685672191505db528d96fa58e924b74aef8d",
+      "file_bytes": 615596,
+      "magic": "BIGF",
+      "declared_bytes": 615596,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5014
+        },
+        {
+          "name": "car.fce",
+          "offset": 5136,
+          "bytes": 35220
+        },
+        {
+          "name": "car00.tga",
+          "offset": 40356,
+          "bytes": 262188
+        },
+        {
+          "name": "car.bnk",
+          "offset": 302544,
+          "bytes": 168380
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 470924,
+          "bytes": 45668
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 516592,
+          "bytes": 99004
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0003/CAR.VIV",
+      "sha256": "4186c2d8f690b467e4b59f173af3243df3f044d11c0a3276051691cafd9c250d",
+      "file_bytes": 725260,
+      "magic": "BIGF",
+      "declared_bytes": 725260,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5019
+        },
+        {
+          "name": "car.fce",
+          "offset": 5140,
+          "bytes": 41044
+        },
+        {
+          "name": "car00.tga",
+          "offset": 46184,
+          "bytes": 262162
+        },
+        {
+          "name": "car.bnk",
+          "offset": 308348,
+          "bytes": 210224
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 518572,
+          "bytes": 70320
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 588892,
+          "bytes": 136368
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0004/CAR.VIV",
+      "sha256": "a0e50c776ef279b8bff62da27df2c9f93446464dd39af05feb8f9f4e2825191c",
+      "file_bytes": 680988,
+      "magic": "BIGF",
+      "declared_bytes": 680988,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5021
+        },
+        {
+          "name": "car.fce",
+          "offset": 5144,
+          "bytes": 34804
+        },
+        {
+          "name": "car00.tga",
+          "offset": 39948,
+          "bytes": 262188
+        },
+        {
+          "name": "car.bnk",
+          "offset": 302136,
+          "bytes": 179696
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 481832,
+          "bytes": 87816
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 569648,
+          "bytes": 111340
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/TRAFFIC/PURSUIT/0005/CAR.VIV",
+      "sha256": "d0849b6f5076ba69133d8db7f304f4d0cd6bbe4f0260ca783dea33e4f4c2b18c",
+      "file_bytes": 729464,
+      "magic": "BIGF",
+      "declared_bytes": 729464,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5027
+        },
+        {
+          "name": "car.fce",
+          "offset": 5148,
+          "bytes": 149100
+        },
+        {
+          "name": "car00.tga",
+          "offset": 154248,
+          "bytes": 262162
+        },
+        {
+          "name": "car.bnk",
+          "offset": 416412,
+          "bytes": 168380
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 584792,
+          "bytes": 45668
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 630460,
+          "bytes": 99004
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "file_bytes": 1390047,
+      "magic": "BIGF",
+      "declared_bytes": 1390047,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5027
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 149100
+        },
+        {
+          "name": "car00.tga",
+          "offset": 154432,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 416596,
+          "bytes": 364
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 416960,
+          "bytes": 380
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 417340,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 548452,
+          "bytes": 373
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 548828,
+          "bytes": 381
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 549212,
+          "bytes": 378
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 549592,
+          "bytes": 385
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 549980,
+          "bytes": 380
+        },
+        {
+          "name": "car.bnk",
+          "offset": 550360,
+          "bytes": 194032
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 744392,
+          "bytes": 65360
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 809752,
+          "bytes": 65376
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 875128,
+          "bytes": 131288
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1006416,
+          "bytes": 383631
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/VICT/car.viv",
+      "sha256": "a4432706bd475449a63d73ceb8abd06ed0577103d3a2eab12a4ac4178eaa75b0",
+      "file_bytes": 717922,
+      "magic": "BIGF",
+      "declared_bytes": 717922,
+      "member_count": 7,
+      "directory_end": 136,
+      "directory_plus_48_fits": true,
+      "parsed_members": 7,
+      "parsed_directory_bytes": 136,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 136,
+          "bytes": 5010
+        },
+        {
+          "name": "car.fce",
+          "offset": 5146,
+          "bytes": 33284
+        },
+        {
+          "name": "car00.tga",
+          "offset": 38430,
+          "bytes": 262188
+        },
+        {
+          "name": "car.bnk",
+          "offset": 300618,
+          "bytes": 210224
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 510842,
+          "bytes": 70320
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 581162,
+          "bytes": 136368
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 717530,
+          "bytes": 392
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "sha256": "fddec296ef128eafe5c01eb8c4325b79c9a0ffde18e422fbd5527d6f11e54ce7",
+      "file_bytes": 1112404,
+      "magic": "BIGF",
+      "declared_bytes": 1112404,
+      "member_count": 14,
+      "directory_end": 268,
+      "directory_plus_48_fits": true,
+      "parsed_members": 14,
+      "parsed_directory_bytes": 267,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 268,
+          "bytes": 5020
+        },
+        {
+          "name": "car.fce",
+          "offset": 5288,
+          "bytes": 147052
+        },
+        {
+          "name": "car00.tga",
+          "offset": 152340,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 414528,
+          "bytes": 715
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 415244,
+          "bytes": 656
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 415900,
+          "bytes": 694
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 416596,
+          "bytes": 674
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 417272,
+          "bytes": 716
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 417988,
+          "bytes": 708
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 418696,
+          "bytes": 715
+        },
+        {
+          "name": "car.bnk",
+          "offset": 419412,
+          "bytes": 161384
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 580796,
+          "bytes": 65700
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 646496,
+          "bytes": 98164
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 744660,
+          "bytes": 367744
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "GAMEDATA/CARMODEL/WALM/IPSPCHE.VIV",
+      "sha256": "529a1ef231aa12f09aa1a75812204cd2ecbac2f910e0261148dc4116360f184c",
+      "file_bytes": 944828,
+      "magic": "BIGF",
+      "declared_bytes": 944828,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 72796
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 73088,
+          "bytes": 73196
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 146284,
+          "bytes": 73500
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 219784,
+          "bytes": 73124
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 292908,
+          "bytes": 73352
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 366260,
+          "bytes": 71804
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 438064,
+          "bytes": 66072
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 504136,
+          "bytes": 73840
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 577976,
+          "bytes": 74304
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 652280,
+          "bytes": 73324
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 725604,
+          "bytes": 74644
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 800248,
+          "bytes": 71392
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 871640,
+          "bytes": 73188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/Audio/SFX/IPSPCHE.VIV",
+      "sha256": "094b7ed00c0c2b58b2086961fcdc68fa24d581a613cf8c840e08e224c41f8e46",
+      "file_bytes": 1046776,
+      "magic": "BIGF",
+      "declared_bytes": 1046776,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 81772
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 82064,
+          "bytes": 80172
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 162236,
+          "bytes": 82232
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 244468,
+          "bytes": 81624
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 326092,
+          "bytes": 81396
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 407488,
+          "bytes": 79644
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 487132,
+          "bytes": 80592
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 567724,
+          "bytes": 80276
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 648000,
+          "bytes": 74448
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 722448,
+          "bytes": 81036
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 803484,
+          "bytes": 81564
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 885048,
+          "bytes": 80596
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 965644,
+          "bytes": 81132
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/Audio/SFX/IPSPCHF.VIV",
+      "sha256": "e47352be6c5d1de3f782e9309b109e68c4914665219eb04a20c55730c91975ed",
+      "file_bytes": 1096404,
+      "magic": "BIGF",
+      "declared_bytes": 1096404,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 85352
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 85644,
+          "bytes": 82196
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 167840,
+          "bytes": 83884
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 251724,
+          "bytes": 84732
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 336456,
+          "bytes": 85596
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 422052,
+          "bytes": 84808
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 506860,
+          "bytes": 83768
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 590628,
+          "bytes": 84012
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 674640,
+          "bytes": 75700
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 750340,
+          "bytes": 87496
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 837836,
+          "bytes": 84532
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 922368,
+          "bytes": 85572
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 1007940,
+          "bytes": 88464
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/Audio/SFX/IPSPCHG.VIV",
+      "sha256": "070a0b6dd2a74eb0be0414f94d269d7916b5db2479a4a4a9b124d5f195026399",
+      "file_bytes": 1148488,
+      "magic": "BIGF",
+      "declared_bytes": 1148488,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 89372
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 89664,
+          "bytes": 89028
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 178692,
+          "bytes": 88500
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 267192,
+          "bytes": 85276
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 352468,
+          "bytes": 89880
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 442348,
+          "bytes": 85480
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 527828,
+          "bytes": 82412
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 610240,
+          "bytes": 93228
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 703468,
+          "bytes": 89656
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 793124,
+          "bytes": 89260
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 882384,
+          "bytes": 90120
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 972504,
+          "bytes": 88288
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 1060792,
+          "bytes": 87696
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/Audio/SFX/IPSPCHI.VIV",
+      "sha256": "24f98c9c7ffbbef514184a5da1357602e6a718f46c38c7aa39441551d6ed7542",
+      "file_bytes": 1431256,
+      "magic": "BIGF",
+      "declared_bytes": 1431256,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 107672
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 107964,
+          "bytes": 106304
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 214268,
+          "bytes": 111700
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 325968,
+          "bytes": 109728
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 435696,
+          "bytes": 110476
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 546172,
+          "bytes": 108688
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 654860,
+          "bytes": 101964
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 756824,
+          "bytes": 113116
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 869940,
+          "bytes": 109924
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 979864,
+          "bytes": 109516
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 1089380,
+          "bytes": 120348
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 1209728,
+          "bytes": 111032
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 1320760,
+          "bytes": 110496
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/Audio/SFX/IPSPCHS.VIV",
+      "sha256": "e26abcdd95150f1f3616b2f31cb4f2ac543fe28988f1a774bbae5de593d4e47e",
+      "file_bytes": 1071600,
+      "magic": "BIGF",
+      "declared_bytes": 1071600,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 80704
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 80996,
+          "bytes": 81104
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 162100,
+          "bytes": 82016
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 244116,
+          "bytes": 86680
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 330796,
+          "bytes": 81348
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 412144,
+          "bytes": 81400
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 493544,
+          "bytes": 83580
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 577124,
+          "bytes": 85556
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 662680,
+          "bytes": 76144
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 738824,
+          "bytes": 83344
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 822168,
+          "bytes": 82432
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 904600,
+          "bytes": 82296
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 986896,
+          "bytes": 84704
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Amd7/IPspchE.viv",
+      "sha256": "6514a2d549c3d8a8442269ac45a30760a4aee6c1d3df98dd3c060fe3423e7ade",
+      "file_bytes": 1259144,
+      "magic": "BIGF",
+      "declared_bytes": 1259144,
+      "member_count": 15,
+      "directory_end": 332,
+      "directory_plus_48_fits": true,
+      "parsed_members": 15,
+      "parsed_directory_bytes": 331,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 332,
+          "bytes": 83424
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 83756,
+          "bytes": 83132
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 166888,
+          "bytes": 85072
+        },
+        {
+          "name": "ipchspch.bnk",
+          "offset": 251960,
+          "bytes": 86056
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 338016,
+          "bytes": 84904
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 422920,
+          "bytes": 84548
+        },
+        {
+          "name": "iplbspch.bnk",
+          "offset": 507468,
+          "bytes": 87920
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 595388,
+          "bytes": 84096
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 679484,
+          "bytes": 77056
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 756540,
+          "bytes": 84648
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 841188,
+          "bytes": 83896
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 925084,
+          "bytes": 83028
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 1008112,
+          "bytes": 84320
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 1092432,
+          "bytes": 83216
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 1175648,
+          "bytes": 83496
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Amd7/car.viv",
+      "sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "file_bytes": 1613816,
+      "magic": "BIGF",
+      "declared_bytes": 1613816,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5028
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 147908
+        },
+        {
+          "name": "car00.tga",
+          "offset": 153240,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 415428,
+          "bytes": 646
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 416076,
+          "bytes": 611
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 416688,
+          "bytes": 459
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 417148,
+          "bytes": 711
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 417860,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 548972,
+          "bytes": 673
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 549648,
+          "bytes": 691
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 550340,
+          "bytes": 697
+        },
+        {
+          "name": "car.bnk",
+          "offset": 551040,
+          "bytes": 226236
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 777276,
+          "bytes": 65588
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 842864,
+          "bytes": 65580
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 908444,
+          "bytes": 130072
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1038516,
+          "bytes": 575300
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Corv/IPspchE.viv",
+      "sha256": "f824d5d083e15204d241280f584e561511a76b8d66cd0a12f67ca5672a42d26d",
+      "file_bytes": 944716,
+      "magic": "BIGF",
+      "declared_bytes": 944716,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 72448
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 72740,
+          "bytes": 73216
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 145956,
+          "bytes": 73516
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 219472,
+          "bytes": 73140
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 292612,
+          "bytes": 73372
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 365984,
+          "bytes": 71828
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 437812,
+          "bytes": 66104
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 503916,
+          "bytes": 73860
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 577776,
+          "bytes": 74320
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 652096,
+          "bytes": 73344
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 725440,
+          "bytes": 74660
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 800100,
+          "bytes": 71412
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 871512,
+          "bytes": 73204
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Corv/car.viv",
+      "sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "file_bytes": 1372240,
+      "magic": "BIGF",
+      "declared_bytes": 1372240,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5027
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 144932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 150264,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 412452,
+          "bytes": 709
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 413164,
+          "bytes": 717
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 413884,
+          "bytes": 663
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 414548,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 545660,
+          "bytes": 718
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 546380,
+          "bytes": 708
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 547088,
+          "bytes": 649
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 547740,
+          "bytes": 700
+        },
+        {
+          "name": "car.bnk",
+          "offset": 548440,
+          "bytes": 194032
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 742472,
+          "bytes": 65376
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 807848,
+          "bytes": 65360
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 873208,
+          "bytes": 131288
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1004496,
+          "bytes": 367744
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Cout/IPspchE.viv",
+      "sha256": "941cf39a965f7df9f9e27b2b3f6e33a8109f7eccda6e9ca29a49cdce7149d7e8",
+      "file_bytes": 1041632,
+      "magic": "BIGF",
+      "declared_bytes": 1041632,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 80604
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 80896,
+          "bytes": 79768
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 160664,
+          "bytes": 82764
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 243428,
+          "bytes": 81072
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 324500,
+          "bytes": 80312
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 404812,
+          "bytes": 79808
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 484620,
+          "bytes": 73892
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 558512,
+          "bytes": 79172
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 637684,
+          "bytes": 81956
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 719640,
+          "bytes": 79288
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 798928,
+          "bytes": 81688
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 880616,
+          "bytes": 80580
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 961196,
+          "bytes": 80436
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Cout/car.viv",
+      "sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "file_bytes": 1542245,
+      "magic": "BIGF",
+      "declared_bytes": 1542245,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5032
+        },
+        {
+          "name": "car.fce",
+          "offset": 5336,
+          "bytes": 138636
+        },
+        {
+          "name": "car00.tga",
+          "offset": 143972,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 406160,
+          "bytes": 671
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 406832,
+          "bytes": 682
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 407516,
+          "bytes": 618
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 408136,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 539248,
+          "bytes": 699
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 539948,
+          "bytes": 677
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 540628,
+          "bytes": 651
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 541280,
+          "bytes": 677
+        },
+        {
+          "name": "car.bnk",
+          "offset": 541960,
+          "bytes": 221016
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 762976,
+          "bytes": 66608
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 829584,
+          "bytes": 66600
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 896184,
+          "bytes": 154224
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1050408,
+          "bytes": 491837
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Diab/IPspchE.viv",
+      "sha256": "19302d3ae53afc025be8a34761ca228977f722cacc2f5807ec6f8813d936f264",
+      "file_bytes": 1040116,
+      "magic": "BIGF",
+      "declared_bytes": 1040116,
+      "member_count": 14,
+      "directory_end": 312,
+      "directory_plus_48_fits": true,
+      "parsed_members": 14,
+      "parsed_directory_bytes": 310,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 312,
+          "bytes": 75016
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 75328,
+          "bytes": 73068
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 148396,
+          "bytes": 76628
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 225024,
+          "bytes": 74136
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 299160,
+          "bytes": 74476
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 373636,
+          "bytes": 75048
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 448684,
+          "bytes": 74632
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 523316,
+          "bytes": 73552
+        },
+        {
+          "name": "iplbspch.bnk",
+          "offset": 596868,
+          "bytes": 77564
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 674432,
+          "bytes": 73648
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 748080,
+          "bytes": 68664
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 816744,
+          "bytes": 75080
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 891824,
+          "bytes": 74668
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 966492,
+          "bytes": 73624
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Diab/car.viv",
+      "sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "file_bytes": 1581124,
+      "magic": "BIGF",
+      "declared_bytes": 1581124,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5023
+        },
+        {
+          "name": "car.fce",
+          "offset": 5328,
+          "bytes": 152948
+        },
+        {
+          "name": "car00.tga",
+          "offset": 158276,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 420464,
+          "bytes": 683
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 421148,
+          "bytes": 692
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 421840,
+          "bytes": 685
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 422528,
+          "bytes": 689
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 423220,
+          "bytes": 630
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 423852,
+          "bytes": 619
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 424472,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 555584,
+          "bytes": 687
+        },
+        {
+          "name": "car.bnk",
+          "offset": 556272,
+          "bytes": 217136
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 773408,
+          "bytes": 69528
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 842936,
+          "bytes": 69544
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 912480,
+          "bytes": 152288
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1064768,
+          "bytes": 516356
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Elni/car.viv",
+      "sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "file_bytes": 1531156,
+      "magic": "BIGF",
+      "declared_bytes": 1531156,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5034
+        },
+        {
+          "name": "car.fce",
+          "offset": 5340,
+          "bytes": 126532
+        },
+        {
+          "name": "car00.tga",
+          "offset": 131872,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 394060,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 525172,
+          "bytes": 300
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 525472,
+          "bytes": 300
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 525772,
+          "bytes": 306
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 526080,
+          "bytes": 296
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 526376,
+          "bytes": 304
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 526680,
+          "bytes": 305
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 526988,
+          "bytes": 300
+        },
+        {
+          "name": "car.bnk",
+          "offset": 527288,
+          "bytes": 212704
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 739992,
+          "bytes": 99072
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 839064,
+          "bytes": 99048
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 938112,
+          "bytes": 172408
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1110520,
+          "bytes": 420636
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Fm50/car.viv",
+      "sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "file_bytes": 1692981,
+      "magic": "BIGF",
+      "declared_bytes": 1692981,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5030
+        },
+        {
+          "name": "car.fce",
+          "offset": 5336,
+          "bytes": 135444
+        },
+        {
+          "name": "car00.tga",
+          "offset": 140780,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 402968,
+          "bytes": 724
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 403692,
+          "bytes": 668
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 404360,
+          "bytes": 714
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 405076,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 536188,
+          "bytes": 722
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 536912,
+          "bytes": 727
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 537640,
+          "bytes": 655
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 538296,
+          "bytes": 725
+        },
+        {
+          "name": "car.bnk",
+          "offset": 539024,
+          "bytes": 239216
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 778240,
+          "bytes": 75680
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 853920,
+          "bytes": 75672
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 929592,
+          "bytes": 152416
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1082008,
+          "bytes": 610973
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Jxjr/IPspchE.viv",
+      "sha256": "348d5b52494b1f36d18cf9a3fe73ca76fe359cf046ac64a4a846645831919da2",
+      "file_bytes": 982564,
+      "magic": "BIGF",
+      "declared_bytes": 982564,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 76708
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 77000,
+          "bytes": 75092
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 152092,
+          "bytes": 78480
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 230572,
+          "bytes": 76324
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 306896,
+          "bytes": 76032
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 382928,
+          "bytes": 75592
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 458520,
+          "bytes": 75812
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 534332,
+          "bytes": 75632
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 609964,
+          "bytes": 70196
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 680160,
+          "bytes": 75776
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 755936,
+          "bytes": 76036
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 831972,
+          "bytes": 74496
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 906468,
+          "bytes": 76096
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Jxjr/car.viv",
+      "sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "file_bytes": 1418514,
+      "magic": "BIGF",
+      "declared_bytes": 1418514,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5025
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 134436
+        },
+        {
+          "name": "car00.tga",
+          "offset": 139768,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 401956,
+          "bytes": 614
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 402572,
+          "bytes": 566
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 403140,
+          "bytes": 612
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 403752,
+          "bytes": 541
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 404296,
+          "bytes": 615
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 404912,
+          "bytes": 615
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 405528,
+          "bytes": 624
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 406152,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 537264,
+          "bytes": 232104
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 769368,
+          "bytes": 60188
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 829556,
+          "bytes": 60180
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 889736,
+          "bytes": 148708
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1038444,
+          "bytes": 380070
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Jxk8/IPspchE.viv",
+      "sha256": "348d5b52494b1f36d18cf9a3fe73ca76fe359cf046ac64a4a846645831919da2",
+      "file_bytes": 982564,
+      "magic": "BIGF",
+      "declared_bytes": 982564,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 76708
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 77000,
+          "bytes": 75092
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 152092,
+          "bytes": 78480
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 230572,
+          "bytes": 76324
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 306896,
+          "bytes": 76032
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 382928,
+          "bytes": 75592
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 458520,
+          "bytes": 75812
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 534332,
+          "bytes": 75632
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 609964,
+          "bytes": 70196
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 680160,
+          "bytes": 75776
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 755936,
+          "bytes": 76036
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 831972,
+          "bytes": 74496
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 906468,
+          "bytes": 76096
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Jxk8/car.viv",
+      "sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "file_bytes": 1833943,
+      "magic": "BIGF",
+      "declared_bytes": 1833943,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5328,
+          "bytes": 150724
+        },
+        {
+          "name": "car00.tga",
+          "offset": 156052,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 418240,
+          "bytes": 554
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 418796,
+          "bytes": 393
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 419192,
+          "bytes": 613
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 419808,
+          "bytes": 625
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 420436,
+          "bytes": 613
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 421052,
+          "bytes": 549
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 421604,
+          "bytes": 614
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 422220,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 553332,
+          "bytes": 236384
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 789716,
+          "bytes": 62064
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 851780,
+          "bytes": 62056
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 913836,
+          "bytes": 134336
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1048172,
+          "bytes": 785771
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Knoc/CAR.VIV",
+      "sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "file_bytes": 719356,
+      "magic": "BIGF",
+      "declared_bytes": 719356,
+      "member_count": 14,
+      "directory_end": 268,
+      "directory_plus_48_fits": true,
+      "parsed_members": 14,
+      "parsed_directory_bytes": 268,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 268,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5292,
+          "bytes": 29668
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34960,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 297124,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 297428,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 297732,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 298036,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 298340,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 298644,
+          "bytes": 301
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 298948,
+          "bytes": 301
+        },
+        {
+          "name": "car.bnk",
+          "offset": 299252,
+          "bytes": 168816
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 468068,
+          "bytes": 64272
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 532340,
+          "bytes": 64264
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 596604,
+          "bytes": 122752
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Lcop/CAR.VIV",
+      "sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "file_bytes": 1627106,
+      "magic": "BIGF",
+      "declared_bytes": 1627106,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5036
+        },
+        {
+          "name": "car.fce",
+          "offset": 5340,
+          "bytes": 160500
+        },
+        {
+          "name": "car00.tga",
+          "offset": 165840,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 428028,
+          "bytes": 385
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 428416,
+          "bytes": 381
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 428800,
+          "bytes": 366
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 429168,
+          "bytes": 372
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 429540,
+          "bytes": 379
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 429920,
+          "bytes": 380
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 430300,
+          "bytes": 374
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 430676,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 561788,
+          "bytes": 220360
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 782148,
+          "bytes": 85072
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 867220,
+          "bytes": 85064
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 952284,
+          "bytes": 152688
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1104972,
+          "bytes": 522134
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Merc/car.viv",
+      "sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "file_bytes": 1435063,
+      "magic": "BIGF",
+      "declared_bytes": 1435063,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5037
+        },
+        {
+          "name": "car.fce",
+          "offset": 5344,
+          "bytes": 135508
+        },
+        {
+          "name": "car00.tga",
+          "offset": 140852,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 403040,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 534152,
+          "bytes": 642
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 534796,
+          "bytes": 653
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 535452,
+          "bytes": 667
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 536120,
+          "bytes": 638
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 536760,
+          "bytes": 607
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 537368,
+          "bytes": 638
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 538008,
+          "bytes": 595
+        },
+        {
+          "name": "car.bnk",
+          "offset": 538604,
+          "bytes": 230800
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 769404,
+          "bytes": 69448
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 838852,
+          "bytes": 69432
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 908284,
+          "bytes": 155804
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1064088,
+          "bytes": 370975
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Peln/CAR.VIV",
+      "sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "file_bytes": 1549851,
+      "magic": "BIGF",
+      "declared_bytes": 1549851,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5046
+        },
+        {
+          "name": "car.fce",
+          "offset": 5352,
+          "bytes": 133060
+        },
+        {
+          "name": "car00.tga",
+          "offset": 138412,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 400600,
+          "bytes": 315
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 400916,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 532028,
+          "bytes": 321
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 532352,
+          "bytes": 315
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 532668,
+          "bytes": 321
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 532992,
+          "bytes": 309
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 533304,
+          "bytes": 315
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 533620,
+          "bytes": 313
+        },
+        {
+          "name": "car.bnk",
+          "offset": 533936,
+          "bytes": 212704
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 746640,
+          "bytes": 99072
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 845712,
+          "bytes": 99048
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 944760,
+          "bytes": 172408
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1117168,
+          "bytes": 432683
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Scig/IPspchE.viv",
+      "sha256": "adf10d65c4cc02e2785ed7785ed229685c4e6363db3daee83b996293f3dbc2a8",
+      "file_bytes": 866136,
+      "magic": "BIGF",
+      "declared_bytes": 866136,
+      "member_count": 13,
+      "directory_end": 292,
+      "directory_plus_48_fits": true,
+      "parsed_members": 13,
+      "parsed_directory_bytes": 289,
+      "members": [
+        {
+          "name": "ipbkspch.bnk",
+          "offset": 292,
+          "bytes": 67804
+        },
+        {
+          "name": "ipblspch.bnk",
+          "offset": 68096,
+          "bytes": 66296
+        },
+        {
+          "name": "ipbrspch.bnk",
+          "offset": 134392,
+          "bytes": 68420
+        },
+        {
+          "name": "ipdkspch.bnk",
+          "offset": 202812,
+          "bytes": 67164
+        },
+        {
+          "name": "ipgrspch.bnk",
+          "offset": 269976,
+          "bytes": 66948
+        },
+        {
+          "name": "ipltspch.bnk",
+          "offset": 336924,
+          "bytes": 66132
+        },
+        {
+          "name": "ipncspch.bnk",
+          "offset": 403056,
+          "bytes": 60104
+        },
+        {
+          "name": "iporspch.bnk",
+          "offset": 463160,
+          "bytes": 66256
+        },
+        {
+          "name": "ippuspch.bnk",
+          "offset": 529416,
+          "bytes": 67884
+        },
+        {
+          "name": "iprdspch.bnk",
+          "offset": 597300,
+          "bytes": 66176
+        },
+        {
+          "name": "ipsvspch.bnk",
+          "offset": 663476,
+          "bytes": 68056
+        },
+        {
+          "name": "ipwtspch.bnk",
+          "offset": 731532,
+          "bytes": 66412
+        },
+        {
+          "name": "ipylspch.bnk",
+          "offset": 797944,
+          "bytes": 68192
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Scig/car.viv",
+      "sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "file_bytes": 1446604,
+      "magic": "BIGF",
+      "declared_bytes": 1446604,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5028
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 146772
+        },
+        {
+          "name": "car00.tga",
+          "offset": 152104,
+          "bytes": 262188
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 414292,
+          "bytes": 634
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 414928,
+          "bytes": 661
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 415592,
+          "bytes": 590
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 416184,
+          "bytes": 644
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 416828,
+          "bytes": 568
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 417396,
+          "bytes": 647
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 418044,
+          "bytes": 426
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 418472,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 549584,
+          "bytes": 179440
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 729024,
+          "bytes": 43640
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 772664,
+          "bytes": 43656
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 816320,
+          "bytes": 102144
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 918464,
+          "bytes": 528140
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Sl60/car.viv",
+      "sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "file_bytes": 1723392,
+      "magic": "BIGF",
+      "declared_bytes": 1723392,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5328,
+          "bytes": 146164
+        },
+        {
+          "name": "car00.tga",
+          "offset": 151492,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 413656,
+          "bytes": 699
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 414356,
+          "bytes": 646
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 415004,
+          "bytes": 694
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 415700,
+          "bytes": 692
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 416392,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 547504,
+          "bytes": 701
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 548208,
+          "bytes": 641
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 548852,
+          "bytes": 473
+        },
+        {
+          "name": "car.bnk",
+          "offset": 549328,
+          "bytes": 266112
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 815440,
+          "bytes": 59192
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 874632,
+          "bytes": 59208
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 933840,
+          "bytes": 126208
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1060048,
+          "bytes": 663344
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0000/CAR.VIV",
+      "sha256": "08050fb13dfeb32df48be96b9131954c5cf894ff848d57a9035134a71397da37",
+      "file_bytes": 296926,
+      "magic": "BIGF",
+      "declared_bytes": 296926,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5028
+        },
+        {
+          "name": "car.fce",
+          "offset": 5096,
+          "bytes": 29668
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34764,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0001/CAR.VIV",
+      "sha256": "efba2f45779739e6fc9d2539f717fb594d460483cae53596af34ea85863d26d8",
+      "file_bytes": 296216,
+      "magic": "BIGF",
+      "declared_bytes": 296216,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5028
+        },
+        {
+          "name": "car.fce",
+          "offset": 5096,
+          "bytes": 28932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34028,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0002/CAR.VIV",
+      "sha256": "31f7b837c2ee1f3ce776273a009b028c7fe0db3a8f6bb5504fdf41aa67dc51dd",
+      "file_bytes": 296694,
+      "magic": "BIGF",
+      "declared_bytes": 296694,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5034
+        },
+        {
+          "name": "car.fce",
+          "offset": 5104,
+          "bytes": 29428
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34532,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0003/CAR.VIV",
+      "sha256": "95590f85d1ffaa383a82caf967d6ae4548550175d064b62a4e1c42ff230e7930",
+      "file_bytes": 295342,
+      "magic": "BIGF",
+      "declared_bytes": 295342,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5026
+        },
+        {
+          "name": "car.fce",
+          "offset": 5096,
+          "bytes": 28084
+        },
+        {
+          "name": "car00.tga",
+          "offset": 33180,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0004/CAR.VIV",
+      "sha256": "9472cecd98d4eebc377e38cd5db91551736ba8bd0c4ddc391a962a97319da51b",
+      "file_bytes": 296204,
+      "magic": "BIGF",
+      "declared_bytes": 296204,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5016
+        },
+        {
+          "name": "car.fce",
+          "offset": 5084,
+          "bytes": 28932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34016,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0005/CAR.VIV",
+      "sha256": "aa68012fbd418f57385117b79e4167491ae00d3150d807db8d3480bceae28618",
+      "file_bytes": 296490,
+      "magic": "BIGF",
+      "declared_bytes": 296490,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5023
+        },
+        {
+          "name": "car.fce",
+          "offset": 5092,
+          "bytes": 29236
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34328,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0006/CAR.VIV",
+      "sha256": "7418ff65a41e8135e4b1810d0418f283a994c93cc7370e00c260ef985fabbf17",
+      "file_bytes": 296490,
+      "magic": "BIGF",
+      "declared_bytes": 296490,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5024
+        },
+        {
+          "name": "car.fce",
+          "offset": 5092,
+          "bytes": 29236
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34328,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0007/CAR.VIV",
+      "sha256": "15edfd444a1fd3527a7998fdd880c4ca37347061458b7407115a378816bf69a2",
+      "file_bytes": 296482,
+      "magic": "BIGF",
+      "declared_bytes": 296482,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5016
+        },
+        {
+          "name": "car.fce",
+          "offset": 5084,
+          "bytes": 29236
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34320,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0008/CAR.VIV",
+      "sha256": "db9977c3f4949857f042c842ca47f850c5a7f7564190b98acd462e99d79ee4e9",
+      "file_bytes": 296174,
+      "magic": "BIGF",
+      "declared_bytes": 296174,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5009
+        },
+        {
+          "name": "car.fce",
+          "offset": 5080,
+          "bytes": 28932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34012,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0009/CAR.VIV",
+      "sha256": "8702682324f81b94c9c3c6b448bf4c7a84be5d088a88e2d8bbceb86116c4fc5b",
+      "file_bytes": 297254,
+      "magic": "BIGF",
+      "declared_bytes": 297254,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5020
+        },
+        {
+          "name": "car.fce",
+          "offset": 5088,
+          "bytes": 30004
+        },
+        {
+          "name": "car00.tga",
+          "offset": 35092,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0010/CAR.VIV",
+      "sha256": "54d82082d67d2097c98fc5828b14d5c7bfe02321ada9a22f5595ecd3cd8fee0f",
+      "file_bytes": 296204,
+      "magic": "BIGF",
+      "declared_bytes": 296204,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5016
+        },
+        {
+          "name": "car.fce",
+          "offset": 5084,
+          "bytes": 28932
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34016,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0011/CAR.VIV",
+      "sha256": "aa7b73987e791dda2c73cfd629332aa6653b969daa79a27b674190e94b7a51ba",
+      "file_bytes": 295342,
+      "magic": "BIGF",
+      "declared_bytes": 295342,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5025
+        },
+        {
+          "name": "car.fce",
+          "offset": 5096,
+          "bytes": 28084
+        },
+        {
+          "name": "car00.tga",
+          "offset": 33180,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0012/CAR.VIV",
+      "sha256": "c35d9068fe900fc54cef56231e99f68fef312adb8e9b197a6fbfc0d8e3d0072a",
+      "file_bytes": 299364,
+      "magic": "BIGF",
+      "declared_bytes": 299364,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5022
+        },
+        {
+          "name": "car.fce",
+          "offset": 5092,
+          "bytes": 32084
+        },
+        {
+          "name": "car00.tga",
+          "offset": 37176,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0013/CAR.VIV",
+      "sha256": "25c5b9e2f359050e64fb4ddcea1c757491aba31b68a91495d83b80dff3275f55",
+      "file_bytes": 297748,
+      "magic": "BIGF",
+      "declared_bytes": 297748,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5021
+        },
+        {
+          "name": "car.fce",
+          "offset": 5092,
+          "bytes": 30468
+        },
+        {
+          "name": "car00.tga",
+          "offset": 35560,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0014/CAR.VIV",
+      "sha256": "5b1349f4c029430bbe6f9045e0997a078cebac81621eafb125d29c6697ad7afe",
+      "file_bytes": 297660,
+      "magic": "BIGF",
+      "declared_bytes": 297660,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5029
+        },
+        {
+          "name": "car.fce",
+          "offset": 5100,
+          "bytes": 30372
+        },
+        {
+          "name": "car00.tga",
+          "offset": 35472,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0015/CAR.VIV",
+      "sha256": "0d543bd89b523a89fc3f8612c2dbf4c0e824eed82219748590510402a169f0a8",
+      "file_bytes": 295564,
+      "magic": "BIGF",
+      "declared_bytes": 295564,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5030
+        },
+        {
+          "name": "car.fce",
+          "offset": 5100,
+          "bytes": 28276
+        },
+        {
+          "name": "car00.tga",
+          "offset": 33376,
+          "bytes": 262188
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/0016/CAR.VIV",
+      "sha256": "2b8ae5367292ad4d2bf281fda77dd3eebb0b7a55a14b96d30fa6d932c3d74f6f",
+      "file_bytes": 297154,
+      "magic": "BIGF",
+      "declared_bytes": 297154,
+      "member_count": 3,
+      "directory_end": 68,
+      "directory_plus_48_fits": true,
+      "parsed_members": 3,
+      "parsed_directory_bytes": 67,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 68,
+          "bytes": 5029
+        },
+        {
+          "name": "car.fce",
+          "offset": 5100,
+          "bytes": 29892
+        },
+        {
+          "name": "car00.tga",
+          "offset": 34992,
+          "bytes": 262162
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0000/CAR.VIV",
+      "sha256": "0208bd543dfac99f76628608127ecf7c6eb1e97f06d264b93806dc127dd14cb8",
+      "file_bytes": 717516,
+      "magic": "BIGF",
+      "declared_bytes": 717516,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5010
+        },
+        {
+          "name": "car.fce",
+          "offset": 5132,
+          "bytes": 33284
+        },
+        {
+          "name": "car00.tga",
+          "offset": 38416,
+          "bytes": 262188
+        },
+        {
+          "name": "car.bnk",
+          "offset": 300604,
+          "bytes": 210224
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 510828,
+          "bytes": 70320
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 581148,
+          "bytes": 136368
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0001/CAR.VIV",
+      "sha256": "d8cb60654b8bfff7354d4a5f044f0d3851555edb0748d8c08d64c5769d1abd7c",
+      "file_bytes": 806684,
+      "magic": "BIGF",
+      "declared_bytes": 806684,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5023
+        },
+        {
+          "name": "car.fce",
+          "offset": 5144,
+          "bytes": 160500
+        },
+        {
+          "name": "car00.tga",
+          "offset": 165644,
+          "bytes": 262188
+        },
+        {
+          "name": "car.bnk",
+          "offset": 427832,
+          "bytes": 179696
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 607528,
+          "bytes": 87816
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 695344,
+          "bytes": 111340
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0002/CAR.VIV",
+      "sha256": "0c217e047e25e525dc3abb3f0916685672191505db528d96fa58e924b74aef8d",
+      "file_bytes": 615596,
+      "magic": "BIGF",
+      "declared_bytes": 615596,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5014
+        },
+        {
+          "name": "car.fce",
+          "offset": 5136,
+          "bytes": 35220
+        },
+        {
+          "name": "car00.tga",
+          "offset": 40356,
+          "bytes": 262188
+        },
+        {
+          "name": "car.bnk",
+          "offset": 302544,
+          "bytes": 168380
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 470924,
+          "bytes": 45668
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 516592,
+          "bytes": 99004
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0003/CAR.VIV",
+      "sha256": "4186c2d8f690b467e4b59f173af3243df3f044d11c0a3276051691cafd9c250d",
+      "file_bytes": 725260,
+      "magic": "BIGF",
+      "declared_bytes": 725260,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5019
+        },
+        {
+          "name": "car.fce",
+          "offset": 5140,
+          "bytes": 41044
+        },
+        {
+          "name": "car00.tga",
+          "offset": 46184,
+          "bytes": 262162
+        },
+        {
+          "name": "car.bnk",
+          "offset": 308348,
+          "bytes": 210224
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 518572,
+          "bytes": 70320
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 588892,
+          "bytes": 136368
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0004/CAR.VIV",
+      "sha256": "a0e50c776ef279b8bff62da27df2c9f93446464dd39af05feb8f9f4e2825191c",
+      "file_bytes": 680988,
+      "magic": "BIGF",
+      "declared_bytes": 680988,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5021
+        },
+        {
+          "name": "car.fce",
+          "offset": 5144,
+          "bytes": 34804
+        },
+        {
+          "name": "car00.tga",
+          "offset": 39948,
+          "bytes": 262188
+        },
+        {
+          "name": "car.bnk",
+          "offset": 302136,
+          "bytes": 179696
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 481832,
+          "bytes": 87816
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 569648,
+          "bytes": 111340
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Traffic/PURSUIT/0005/CAR.VIV",
+      "sha256": "d0849b6f5076ba69133d8db7f304f4d0cd6bbe4f0260ca783dea33e4f4c2b18c",
+      "file_bytes": 729464,
+      "magic": "BIGF",
+      "declared_bytes": 729464,
+      "member_count": 6,
+      "directory_end": 120,
+      "directory_plus_48_fits": true,
+      "parsed_members": 6,
+      "parsed_directory_bytes": 117,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 120,
+          "bytes": 5027
+        },
+        {
+          "name": "car.fce",
+          "offset": 5148,
+          "bytes": 149100
+        },
+        {
+          "name": "car00.tga",
+          "offset": 154248,
+          "bytes": 262162
+        },
+        {
+          "name": "car.bnk",
+          "offset": 416412,
+          "bytes": 168380
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 584792,
+          "bytes": 45668
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 630460,
+          "bytes": 99004
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/Vcop/CAR.VIV",
+      "sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "file_bytes": 1390047,
+      "magic": "BIGF",
+      "declared_bytes": 1390047,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5027
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 149100
+        },
+        {
+          "name": "car00.tga",
+          "offset": 154432,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 416596,
+          "bytes": 364
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 416960,
+          "bytes": 380
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 417340,
+          "bytes": 131112
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 548452,
+          "bytes": 373
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 548828,
+          "bytes": 381
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 549212,
+          "bytes": 378
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 549592,
+          "bytes": 385
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 549980,
+          "bytes": 380
+        },
+        {
+          "name": "car.bnk",
+          "offset": 550360,
+          "bytes": 194032
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 744392,
+          "bytes": 65360
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 809752,
+          "bytes": 65376
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 875128,
+          "bytes": 131288
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1006416,
+          "bytes": 383631
+        }
+      ],
+      "issues": []
+    },
+    {
+      "path": "gamedata_org/CarModel/f355/car.viv",
+      "sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "file_bytes": 1349644,
+      "magic": "BIGF",
+      "declared_bytes": 1349644,
+      "member_count": 16,
+      "directory_end": 304,
+      "directory_plus_48_fits": true,
+      "parsed_members": 16,
+      "parsed_directory_bytes": 304,
+      "members": [
+        {
+          "name": "carp.txt",
+          "offset": 304,
+          "bytes": 5025
+        },
+        {
+          "name": "car.fce",
+          "offset": 5332,
+          "bytes": 139748
+        },
+        {
+          "name": "car00.tga",
+          "offset": 145080,
+          "bytes": 262162
+        },
+        {
+          "name": "fedata.spa",
+          "offset": 407244,
+          "bytes": 757
+        },
+        {
+          "name": "fedata.fre",
+          "offset": 408004,
+          "bytes": 688
+        },
+        {
+          "name": "fedata.ita",
+          "offset": 408692,
+          "bytes": 678
+        },
+        {
+          "name": "fedata.ger",
+          "offset": 409372,
+          "bytes": 745
+        },
+        {
+          "name": "fedata.bri",
+          "offset": 410120,
+          "bytes": 744
+        },
+        {
+          "name": "fedata.swe",
+          "offset": 410864,
+          "bytes": 748
+        },
+        {
+          "name": "fedata.eng",
+          "offset": 411612,
+          "bytes": 744
+        },
+        {
+          "name": "fedata.fsh",
+          "offset": 412356,
+          "bytes": 131112
+        },
+        {
+          "name": "car.bnk",
+          "offset": 543468,
+          "bytes": 208736
+        },
+        {
+          "name": "ocard.bnk",
+          "offset": 752204,
+          "bytes": 61992
+        },
+        {
+          "name": "ocar.bnk",
+          "offset": 814196,
+          "bytes": 61984
+        },
+        {
+          "name": "scar.bnk",
+          "offset": 876180,
+          "bytes": 136824
+        },
+        {
+          "name": "dash.qfs",
+          "offset": 1013004,
+          "bytes": 336640
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

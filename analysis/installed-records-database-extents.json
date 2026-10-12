@@ -1,0 +1,550 @@
+{
+  "evidence_type": "read-only filesystem inventory, not game-loader execution",
+  "layout_basis": "0044f670 assembly: base+0x16e0+category*0x15634+track*0x1f1c;3 groups of11 blocks tile allocated size;block=4+10*0x31c",
+  "files": [
+    {
+      "path": "/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/FEDATA/STATS/records.dat",
+      "size": 268668,
+      "sha256": "20940c347632a5547eed90a9b3ada645dd1838d05794f49390534415a6d928ff",
+      "header": 16,
+      "blocks": [
+        {
+          "category": 0,
+          "track": 0,
+          "offset": 5856,
+          "count": 1,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 1,
+          "offset": 13820,
+          "count": 2,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 2,
+          "offset": 21784,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 3,
+          "offset": 29748,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 4,
+          "offset": 37712,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 5,
+          "offset": 45676,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 6,
+          "offset": 53640,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 7,
+          "offset": 61604,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 8,
+          "offset": 69568,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 9,
+          "offset": 77532,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 10,
+          "offset": 85496,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 0,
+          "offset": 93460,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 1,
+          "offset": 101424,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 2,
+          "offset": 109388,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 3,
+          "offset": 117352,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 4,
+          "offset": 125316,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 5,
+          "offset": 133280,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 6,
+          "offset": 141244,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 7,
+          "offset": 149208,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 8,
+          "offset": 157172,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 9,
+          "offset": 165136,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 10,
+          "offset": 173100,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 0,
+          "offset": 181064,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 1,
+          "offset": 189028,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 2,
+          "offset": 196992,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 3,
+          "offset": 204956,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 4,
+          "offset": 212920,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 5,
+          "offset": 220884,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 6,
+          "offset": 228848,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 7,
+          "offset": 236812,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 8,
+          "offset": 244776,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 9,
+          "offset": 252740,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 10,
+          "offset": 260704,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        }
+      ]
+    },
+    {
+      "path": "/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/fedata_org/stats/RECORDS.DAT",
+      "size": 268668,
+      "sha256": "8c473b3e3339a193e8c896956a682fc8221eb0eb4bd836303f786129fc7a2787",
+      "header": 16,
+      "blocks": [
+        {
+          "category": 0,
+          "track": 0,
+          "offset": 5856,
+          "count": 8,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 1,
+          "offset": 13820,
+          "count": 6,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 2,
+          "offset": 21784,
+          "count": 6,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 3,
+          "offset": 29748,
+          "count": 6,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 4,
+          "offset": 37712,
+          "count": 6,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 5,
+          "offset": 45676,
+          "count": 6,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 6,
+          "offset": 53640,
+          "count": 6,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 7,
+          "offset": 61604,
+          "count": 6,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 8,
+          "offset": 69568,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 9,
+          "offset": 77532,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 0,
+          "track": 10,
+          "offset": 85496,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 0,
+          "offset": 93460,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 1,
+          "offset": 101424,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 2,
+          "offset": 109388,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 3,
+          "offset": 117352,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 4,
+          "offset": 125316,
+          "count": 5,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 5,
+          "offset": 133280,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 6,
+          "offset": 141244,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 7,
+          "offset": 149208,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 8,
+          "offset": 157172,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 9,
+          "offset": 165136,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 1,
+          "track": 10,
+          "offset": 173100,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 0,
+          "offset": 181064,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 1,
+          "offset": 189028,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 2,
+          "offset": 196992,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 3,
+          "offset": 204956,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 4,
+          "offset": 212920,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 5,
+          "offset": 220884,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 6,
+          "offset": 228848,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 7,
+          "offset": 236812,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 8,
+          "offset": 244776,
+          "count": 4,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 9,
+          "offset": 252740,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        },
+        {
+          "category": 2,
+          "track": 10,
+          "offset": 260704,
+          "count": 0,
+          "count_in_0_10": true,
+          "block_within_file": true
+        }
+      ]
+    }
+  ]
+}

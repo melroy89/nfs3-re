@@ -2,6 +2,29 @@
 
 Preserved entry points, prior findings and original unresolved contracts from the working scratchpad. This is context, not a completion ledger. Current statuses live in `SCRATCHPAD.md`; specific findings link to their evidence reports. No item becomes resolved merely by being moved here. The secondary historical contracts in [detailed-analysis-notes.md](detailed-analysis-notes.md#historical-unresolved-contracts) remain within the audit.
 
+## Resolved portions of the historical questions
+
+The table below preserves original questions and must not override later evidence.
+These specific portions have since been resolved; their broader rows remain
+Open/Partial in SCRATCHPAD:
+
+- GOFAST Diablo automatic/default case: live final-gear index45 and coefficient
+  match are retained in [GOFAST runtime](gofast-final-gear-runtime.md). Other
+  configurations and handling consequences remain untested.
+- Lane adherence: English label/render route and gated even-tick sampling are
+  established in [lane display](lane-adherence-display.md). Runtime display and
+  recovery success remain open.
+- Opponent response countdown: state1/even-tick decrement and competing startup
+  reload50000 are established in [detailed notes](detailed-analysis-notes.md#opponent-response-countdown-scheduler-and-startup-reload).
+  Runtime activation, effective settings and physical units remain open.
+- Contact recovery cadence has a bounded scheduler proof in
+  [recovery contract](contact-recovery-countdown-contract.md). Reset acceptance,
+  placement and real-time guarantees remain separate.
+- Timed-dialog decoded caller counts, expiry callback routing, worker-counter
+  source and nominal startup rate are established in
+  [frontend contract](frontend-dialog-contract.md). Indirect admission,
+  ownership, actual delivery and wrap remain open.
+
 ## Original investigation context
 
 Start with static tracing in the same project. Runtime tests are proposed, not completed. Preserve original numerical behavior and establish caller invariants before defect claims or future modifications.
@@ -19,6 +42,6 @@ Start with static tracing in the same project. Runtime tests are proposed, not c
 | Medium | Traffic and police activation accounting | `0040c210`, `00405d40`, `00405dc0`, `0040df10`, `0040cb90`, `004c47c7`; compare actual active traffic with the cap expression during mixed pursuit and remote-human-police updates. Normal transitions prevent repeat counter changes; synchronous session reset clears the count after state reset. Police reactivation is constant true. Check scheduler/asynchronous ownership and category accounting. RUSHHOUR sets track cap15/base delay0 without allocating15 cars; tick/countdown/modifier gates still apply. |
 | Medium | Physics tuning/control schemas | `004abd9c`, `004aab41`, `004ad2e1`, `004ae85b`, `004aeffc`, `004af140`, `004a1610`, `004a1ce0`, `004a83d3`; units, profile classes, caller bounds and numerical policy. Include 00407fa0 AI motion-response units, coordinate axes and behavior/surface adjustments; compare active controller output with resulting motion. Prioritize police501 torque sample21 near5376RPM (zero survives finite installed tuning) and the track-profile controller integer quotient at004a83d3; confirm active controller before interpreting either. AI gear writer004061b0 is bounded by profile count only on successful candidate selection; investigate the no-winner fallback contract and other gear writers before claiming a global index bound. |
 
-Additional unresolved work on replay/pose codecs, rendering/arenas, cameras/CCM, weather/effects, audio, input/force feedback, archives and stream/thread ownership is preserved in the historical backlog. It is secondary to the current goal unless it supports a scoped question.
+Additional unresolved work on replay/pose codecs, rendering/arenas, cameras/CCM, weather/effects, audio, input/force feedback, archives and stream/thread ownership is preserved in the historical backlog. It remains within the active goal; its secondary priority does not exclude any unresolved contract.
 
-Spike-strip follow-up: the former timed-track-event chain is now identified through the localized control binding and live deployment/removal. Six functions have SpikeStrip names. Record+4c is an arming/earliest-removal tick, not expiry; stop cleanup independently clears deployed strips. Actual hit effects and wheel-bit identities remain unvalidated. See RE repo analysis/spike-strip-runtime.md.
+Spike-strip follow-up: the former timed-track-event chain is now identified through the localized control binding and live deployment/removal. Six functions have SpikeStrip names. Record+4c is an arming/earliest-removal tick, not expiry; stop cleanup independently clears deployed strips. This historical entry predates the captured hit effects; current closures and remaining wheel-side questions are recorded in SCRATCHPAD.md and spike-strip-runtime.md. See RE repo analysis/spike-strip-runtime.md.

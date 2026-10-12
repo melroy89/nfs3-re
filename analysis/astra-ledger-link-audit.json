@@ -1,0 +1,978 @@
+{
+  "scope": "Structural evidence-link audit only; does not validate claims or close unresolved contracts.",
+  "counts": {
+    "Closed": 50,
+    "Partial": 36,
+    "Open": 1
+  },
+  "broken_links": [],
+  "rows": [
+    {
+      "status": "Closed",
+      "investigation": "Local human-police terminal stop, limit1",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/police-torque-runtime.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Local racer tickets and terminal arrest, limit3",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/runtime/racer-terminal-arrest.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Human-police versus AI-police profile identity",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/police-torque-runtime.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "AI501 torque zero survives ordinary startup",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/runtime/ai-police-torque-baseline.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Spike-strip identity, arming and manual removal",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/spike-strip-runtime.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "AI strip deployment and local racer nonterminal recovery",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/runtime/long-pursuit-ai-strip-deployment.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Reverse-track active spike-strip deployment exists",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/runtime/reverse-active-strip.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Reverse local racer spike contact and nonterminal recovery",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/runtime/reverse-strip-ticket-recovery.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "AI gear no-winner ABI and unordered comparison",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/ai-gear-fallback.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Track-profile controller quotient and installed denominators",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/controller-quotient-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "AI gear candidate within untuned speed0..600",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/ai-gear-fallback.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Series result-filter and gate composition",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/series-terminal-menu-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Mode2 generated series endpoint binding",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/series-terminal-menu-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Eliminated-human registration and result exclusion",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/series-terminal-menu-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Local frontend navigation and offline disable producer",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/series-terminal-menu-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Series terminal policy and next-race actions",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/series-terminal-menu-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Multiplayer loading, synchronization and abort",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#multiplayer-setup-framing-and-music-list-ownership",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Network motion and controller ownership",
+      "evidence_links": []
+    },
+    {
+      "status": "Closed",
+      "investigation": "Car-transfer sender read-unit contract",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#transfer-read-unit-correction-and-archive-close-ownership",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Paired car-transfer emission partition",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#paired-car-transfer-emission-partition",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Temporary car directory name predicate",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#temporary-directory-cleanup-name-predicate",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Archived car display-string content",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/installed-car-display-strings.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Initial direct-network route flag",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#first-entry-direct-start-flag-source",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Special car display-name ID extent",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#special-display-name-id-extent",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Received car registry target",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#registry-target-retention-after-transfer",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Car-transfer receiver stage boundary",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#receiver-open-failure-and-zero-length-state",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Admission, disconnect and provider ownership",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/network-roster-admission.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Pursuit roles, budgets and stop lifecycle",
+      "evidence_links": []
+    },
+    {
+      "status": "Partial",
+      "investigation": "Police interception and paired assignments",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/reverse-roadblock-reconstruction.json",
+          "exists": true,
+          "anchor_found": null
+        },
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/reverse-assignment-direction-evidence.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Local police reset and rapid-repeat cooldown",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/runtime/police-reset-cooldown-rejection.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Pursuit-assist reset",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/pursuit-assist-reset-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Contact recovery countdown callback cadence",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/contact-recovery-countdown-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Collision, dynamics and recovery",
+      "evidence_links": []
+    },
+    {
+      "status": "Partial",
+      "investigation": "AI profiles, skill and response",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#opponent-response-countdown-scheduler-and-startup-reload",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Resource abort-policy normal-return restoration",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/physics-parser-defaults.md#temporary-resource-abort-policy",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Physics parser and profile safety",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/physics-parser-defaults.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "AI501 full-drivetrain reachability",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/police-torque-runtime.md#go18-built-in-candidate-for-full-drivetrain-reachability",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Callback list ownership",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/callback-list-lifecycle.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Personality, palette and random-selection contracts",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/personality-selection-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Lane adherence display and recovery",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/lane-adherence-display.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Escalation and post-terminal acquisition",
+      "evidence_links": []
+    },
+    {
+      "status": "Partial",
+      "investigation": "Car/track capacities and resource validation",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/track-width-contract.md",
+          "exists": true,
+          "anchor_found": null
+        },
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "GOFAST final-gear lookup, Diablo automatic/default tuning",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/gofast-final-gear-runtime.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Traffic activation, placement and density",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/rushhour-traffic-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Physics tuning/control contracts",
+      "evidence_links": []
+    },
+    {
+      "status": "Closed",
+      "investigation": "Captured spike hit without arrest, occupied human officer",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/runtime/spike-contact-and-recovery.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Spike hit attaches unassigned human officer and completes arrest",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/runtime/spike-contact-and-arrest.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Police tactic scheduler and announcement suppression",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/spike-strip-runtime.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Spike-strip contact and damage",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/spike-strip-runtime.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Installed loose CCM record extents",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/ccm-camera-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "x87 inverse-angle helper",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/x87-inverse-angle-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "INI environment names from observed direct callers",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/ini-environment-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Direct screenshot request representation and routing",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/screenshot-lifecycle-contract.md#direct-screenshot-request-admission",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "BMP screenshot file-open policy",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/screenshot-lifecycle-contract.md#bmp-filename-admission-and-write-completion",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Screenshot dimensions and worker ownership",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/screenshot-lifecycle-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Ordinary application shutdown does not locally restart input",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/window-message-handler-contract.md#application-wrapper-invokes-the-game-once",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Window message-handler table",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/window-message-handler-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Pitch-factor zero and INT_MIN local results",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#pitch-factor-zero-and-int_min-behavior",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Pitch converter final rounding for finite representable results",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#pitch-converter-final-rounding",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Conditional configured audio-rate selection",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#configured-audio-rate-producer",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Audio conversion, voice buffers and decoder numerics",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/audio-conversion-contract.md",
+          "exists": true,
+          "anchor_found": null
+        },
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Sound-driver stop and unload",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/sound-driver-shutdown-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Ordinary camera transition increment producer",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/ccm-camera-contract.md#stored-transition-increment",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Installed sound-driver host-callback route",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/runtime-menu-hang.md#installed-dll-host-callback-route",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Installed FCE palette member extents",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/installed-fce-palette-extents.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Music stream worker shutdown",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/sound-driver-shutdown-contract.md#music-worker-exit-notification",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Validated registry archive query length",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#validated-registry-language-query-bound",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "File-backed identification speech query index",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#identification-speech-code-index-producer",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Validated speech-language index",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#separate-speech-language-index-bound",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Installed car archive physics member presence",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#transfer-setup-failure-admission-and-installed-physics-members",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Installed VIV directory and member extents",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/installed-viv-directory-extents.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Replay RLE input/output bounds",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/replay-rle-token-bound.json",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Timed-dialog expiry callback routing",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#timed-dialog-expiry-callback-veto",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Five named timed-dialog caller count/duration domains",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/frontend-dialog-contract.md#verified-timed-dialog-callers",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Ten decoded timed-dialog callsite local count setups",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/frontend-dialog-contract.md#direct-call-setup-reconciliation",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Timed-dialog clock counter producer",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/frontend-dialog-contract.md#dialog-clock-producer",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Frontend dialog, cursor and profile contracts",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "DirectInput and force-feedback device/effect contracts",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Cone lifecycle and cached surface geometry",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Scene and effect callback ownership",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/ccm-camera-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Aggregate render and weather/effect pools",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/render-arena-contract.md",
+          "exists": true,
+          "anchor_found": null
+        },
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/weather-mode-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Packed pose and ghost/replay lifecycle",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/pose-ghost-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Default lap-count initialization",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/lap-count-producers.md#default-source-proof-boundary",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Local result-notification selection and consumption",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/stored-records-contract.md#notification-flag-consumer-named",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Closed",
+      "investigation": "Installed records database extents, counts and occupied strings",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/stored-records-contract.md#installed-database-extents",
+          "exists": true,
+          "anchor_found": true
+        }
+      ]
+    },
+    {
+      "status": "Partial",
+      "investigation": "Lap-count producers and storage capacity",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/lap-count-producers.md",
+          "exists": true,
+          "anchor_found": null
+        },
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/race-completion-contract.md",
+          "exists": true,
+          "anchor_found": null
+        },
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/stored-records-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    },
+    {
+      "status": "Open",
+      "investigation": "Secondary historical Astra contracts",
+      "evidence_links": [
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/ccm-camera-contract.md",
+          "exists": true,
+          "anchor_found": null
+        },
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/render-arena-contract.md",
+          "exists": true,
+          "anchor_found": null
+        },
+        {
+          "target": "/home/melroy/Documents/projects/nfs3-re/analysis/weather-mode-contract.md",
+          "exists": true,
+          "anchor_found": null
+        }
+      ]
+    }
+  ]
+}

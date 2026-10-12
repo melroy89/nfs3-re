@@ -1,0 +1,317 @@
+{
+  "task": "Review open/partial Astra backlog and close only completed findings",
+  "model_boundary": "Sol6.1 plus Luna static audits; complex unresolved work retained for future Astra",
+  "review_basis": "Parent report/readback checks and three Luna domain audits documented in detailed-analysis-notes.md; link existence is not semantic proof.",
+  "reviewed_remaining_rows": [
+    {
+      "investigation": "Series terminal policy and next-race actions",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/series-terminal-menu-contract.md"
+      ]
+    },
+    {
+      "investigation": "Multiplayer loading, synchronization and abort",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#multiplayer-setup-framing-and-music-list-ownership"
+      ]
+    },
+    {
+      "investigation": "Network motion and controller ownership",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/astra-backlog-context.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts"
+      ]
+    },
+    {
+      "investigation": "Special car display-name ID extent",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#special-display-name-id-extent"
+      ]
+    },
+    {
+      "investigation": "Received car registry target",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#registry-target-retention-after-transfer"
+      ]
+    },
+    {
+      "investigation": "Car-transfer receiver stage boundary",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md#receiver-open-failure-and-zero-length-state"
+      ]
+    },
+    {
+      "investigation": "Admission, disconnect and provider ownership",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/network-roster-admission.md"
+      ]
+    },
+    {
+      "investigation": "Pursuit roles, budgets and stop lifecycle",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/astra-backlog-context.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts"
+      ]
+    },
+    {
+      "investigation": "Police interception and paired assignments",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/reverse-roadblock-reconstruction.json",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/reverse-assignment-direction-evidence.json"
+      ]
+    },
+    {
+      "investigation": "Pursuit-assist reset",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/pursuit-assist-reset-contract.md"
+      ]
+    },
+    {
+      "investigation": "Collision, dynamics and recovery",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/astra-backlog-context.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts"
+      ]
+    },
+    {
+      "investigation": "AI profiles, skill and response",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#opponent-response-countdown-scheduler-and-startup-reload"
+      ]
+    },
+    {
+      "investigation": "Physics parser and profile safety",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/physics-parser-defaults.md"
+      ]
+    },
+    {
+      "investigation": "AI501 full-drivetrain reachability",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/police-torque-runtime.md#go18-built-in-candidate-for-full-drivetrain-reachability"
+      ]
+    },
+    {
+      "investigation": "Callback list ownership",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/callback-list-lifecycle.md"
+      ]
+    },
+    {
+      "investigation": "Personality, palette and random-selection contracts",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/personality-selection-contract.md"
+      ]
+    },
+    {
+      "investigation": "Lane adherence display and recovery",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/lane-adherence-display.md"
+      ]
+    },
+    {
+      "investigation": "Escalation and post-terminal acquisition",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/astra-backlog-context.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts"
+      ]
+    },
+    {
+      "investigation": "Car/track capacities and resource validation",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/track-width-contract.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/archive-directory-contract.md"
+      ]
+    },
+    {
+      "investigation": "Traffic activation, placement and density",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/rushhour-traffic-contract.md"
+      ]
+    },
+    {
+      "investigation": "Physics tuning/control contracts",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/astra-backlog-context.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts"
+      ]
+    },
+    {
+      "investigation": "Spike-strip contact and damage",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/spike-strip-runtime.md"
+      ]
+    },
+    {
+      "investigation": "x87 inverse-angle helper",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/x87-inverse-angle-contract.md"
+      ]
+    },
+    {
+      "investigation": "Screenshot dimensions and worker ownership",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/screenshot-lifecycle-contract.md"
+      ]
+    },
+    {
+      "investigation": "Window message-handler table",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/window-message-handler-contract.md"
+      ]
+    },
+    {
+      "investigation": "Audio conversion, voice buffers and decoder numerics",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/audio-conversion-contract.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts"
+      ]
+    },
+    {
+      "investigation": "Sound-driver stop and unload",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/sound-driver-shutdown-contract.md"
+      ]
+    },
+    {
+      "investigation": "Music stream worker shutdown",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/sound-driver-shutdown-contract.md#music-worker-exit-notification"
+      ]
+    },
+    {
+      "investigation": "Replay RLE input/output bounds",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/replay-rle-token-bound.json"
+      ]
+    },
+    {
+      "investigation": "Frontend dialog, cursor and profile contracts",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts"
+      ]
+    },
+    {
+      "investigation": "DirectInput and force-feedback device/effect contracts",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts"
+      ]
+    },
+    {
+      "investigation": "Cone lifecycle and cached surface geometry",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/detailed-analysis-notes.md#historical-unresolved-contracts"
+      ]
+    },
+    {
+      "investigation": "Scene and effect callback ownership",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/ccm-camera-contract.md"
+      ]
+    },
+    {
+      "investigation": "Aggregate render and weather/effect pools",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/render-arena-contract.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/weather-mode-contract.md"
+      ]
+    },
+    {
+      "investigation": "Packed pose and ghost/replay lifecycle",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/pose-ghost-contract.md"
+      ]
+    },
+    {
+      "investigation": "Lap-count producers and storage capacity",
+      "retained_status": "Partial",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/lap-count-producers.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/race-completion-contract.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/stored-records-contract.md"
+      ]
+    },
+    {
+      "investigation": "Secondary historical Astra contracts",
+      "retained_status": "Open",
+      "disposition": "Reviewed; unresolved clauses retained. No evidence supports full closure.",
+      "evidence": [
+        "/home/melroy/Documents/projects/nfs3-re/analysis/ccm-camera-contract.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/render-arena-contract.md",
+        "/home/melroy/Documents/projects/nfs3-re/analysis/weather-mode-contract.md"
+      ]
+    }
+  ],
+  "result": "50 Closed,36 Partial,1 Open. Remaining research is not completed by this reconciliation."
+}
