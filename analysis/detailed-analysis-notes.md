@@ -2631,3 +2631,17 @@ mutation, predicate stability and teardown/reentry remain unresolved. The
 investigation and evidence pointers. The status reconciliation is complete;
 the unresolved research is explicitly not complete. Final ledger totals are
 50 Closed,36 Partial,1 Open. No closure was inferred from a valid link alone.
+
+
+### Session closing handoff
+
+Commit `ee700d5` contains the saved Ghidra annotations, focused evidence
+reports and backlog status reconciliation. The review ran as Sol6.1 with
+Luna workers; it did not resolve the complex Astra investigations. Remaining
+Astra work and runtime test planning stay in SCRATCHPAD.md, outside this
+repository in the game installation. Do not duplicate that task list here.
+
+Ghidra program `nfs3.exe` was saved successfully before the commit. No game
+binary or asset changes were made during this review, and no new runtime
+capture was started. Existing runtime reports describe earlier captured
+scenarios; they must not be treated as fresh observations.
