@@ -1,7 +1,7 @@
 # Personality and palette selection status
 
 This report separates saved bounded findings from the remaining Astra work.
-Original context is preserved in[backlog context](astra-backlog-context.md).
+Historical findings are preserved in [consolidated context findings](detailed-analysis-notes.md#consolidated-context-findings).
 
 ## Nearest palette numeric boundary
 

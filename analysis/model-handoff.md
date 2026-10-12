@@ -3,7 +3,8 @@
 ## Scope and authoritative state
 
 Continue the full open/partial Astra backlog in the game-directory
-SCRATCHPAD.md and analysis/astra-backlog-context.md. Close only bounded
+SCRATCHPAD.md. Historical evidence is retained in
+analysis/detailed-analysis-notes.md#consolidated-context-findings. Close only bounded
 questions with evidence; do not declare the whole goal complete. Work is
 Ghidra metadata/docs and read-only runtime inspection. No executable, assets
 or live-memory writes. No commit/push in this batch. Preserve all uncommitted
