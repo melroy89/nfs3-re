@@ -12312,3 +12312,1581 @@ Rechecked00495a10 initializer and all current xrefs to clock accumulator, latest
 - **Evidence:** Complete warning/stop variant pseudocode and established selector-loop plates.
 - **Behavior:** Named warning sample index, different-sample flag, handle and target-index aliases. Named the separate previous-sample globals used by warning and stop no-repeat loops; these are shared across target slots rather than indexed per target.
 - **Limits:** Selection and prior-index updates do not prove successful playback. Kept the mixed attenuation temporary and random-helper ABI unchanged; stop single-variant repeat exception remains documented. No executable or runtime-memory changes.
+
+### Police stop-voice cleanup status distinction
+
+- **Function:** `UpdatePoliceStopVoiceCompletion` (`004c8ac0`).
+- **Evidence:** Complete current pseudocode, aligned assembly `004c8ac0..004c8b2a`, and existing `CheckSoundVoiceHandleExpired` lifecycle contract.
+- **Behavior:** Named the active-flag byte offset. Added an EOL comment at `004c8b0f`: cleanup tests nonzero helper status, so disabled-audio status `-10` also passes the status gate before the active-entry check.
+- **Limits:** This is handle-status cleanup, not proof of successful playback or natural sample completion. Preserved-register/result-pair artifacts remain generic pending full helper ABI review. No executable or runtime-memory changes.
+
+### Warning-voice cleanup precedes owner admission
+
+- **Function:** `UpdateSpatialPoliceWarningVoice` (`004c8810`).
+- **Evidence:** Full aligned assembly `004c8810..004c89a3` and current pseudocode readback.
+- **Behavior:** Named target master index and incoming warning owner ID. Cleanup at `004c8836..004c8880` precedes owner comparison `004c889c`; nonzero lifecycle status, including audio-disabled `-10`, can clear an active warning without owner matching. Owner matching gates ongoing spatial updates. Updated plate and branch comment.
+- **Limits:** Mixed status/busy temporary remains generic. Below-threshold attenuation uses wrapping integer arithmetic; negative-distance admission and full helper ABI are not established. No playback-completion, executable-change or runtime-memory-write claim.
+
+### Police radio bank selector and local state writes
+
+- **Function:** `LoadPoliceRadioVoiceBank` (`004c9890`).
+- **Evidence:** Complete current pseudocode and aligned assembly `004c9890..004c998e`.
+- **Behavior:** Named bank selector, 256-byte bank path and copied-character aliases. Selector indexes the filename table at `004c98f8`; session mode 1 appends a suffix. Zero selector loads bank slot 1; nonzero loads slot 2 then writes `007dd838=1`. Added branch comment at `004c9954`.
+- **Limits:** No direct flag clear in the zero branch; loader side effects and other writers remain separate. No local selector bounds or path-capacity checks established. Filename/persona meanings and actual load success remain qualified. No executable or runtime-memory changes.
+
+### Shared sequence sound-bank gate and formatted basename aliases
+
+- **Function/data:** `BuildIndexedSequenceBankPathAndTryLoad` (`004c94e0`), `g_nSequenceSoundBankLoadedGate` (`007dd838`).
+- **Evidence:** Current complete wrapper/loader/release pseudocode, retained assembly-reviewed plates and 11 direct references to the gate.
+- **Behavior:** Named the shared gate, distinguishing it from a police-persona-only flag; sequenced registration and police-radio loading both set it. Added a data comment with producer/release addresses. Named wrapper basename index, hexadecimal suffix, two path buffers and load-acceptance result.
+- **Limits:** Label describes observed admission/release usage, not complete ownership or lifecycle correctness. Width `%02x` is minimum formatting width; existing unchecked index/path caveats remain. No executable or runtime-memory changes.
+
+### Sequence voice handle, active gate and sample index
+
+- **Function/data:** `StartSequencedBankSampleAndStoreVoiceHandle` (`004c9340`); `g_nSequenceOrResultVoiceHandle` (`007dd82c`), `g_nSoundBankSequenceActiveGate` (`007dd830`), `g_nSoundBankSequenceSampleIndex` (`007dd834`).
+- **Evidence:** Complete aligned wrapper assembly `004c9340..004c9379`, current sequence updater/stop-request pseudocode and independent Luna audit.
+- **Behavior:** Named three shared sequence globals and the incoming sample-index alias. Stores at `004c9363/68/6e` are unconditional after the playback helper returns; added a data comment distinguishing processing admission from successful playback.
+- **Limits:** Raw handle can retain failure `-1`; active gate is not playback confirmation. Full asynchronous ownership, sequence schema and sample identities remain unresolved. No executable or runtime-memory changes.
+
+### Race speech channel admission and publication aliases
+
+- **Functions:** `SubmitRaceSpeechWithChannelCooldown` (`004c8f90`), `TrySubmitRandomizedRaceSpeechWhenChannelReady` (`004c9010`).
+- **Evidence:** Current complete pseudocode, retained REA plates and aligned submission assembly `004c8f90..004c9000`.
+- **Behavior:** Named channel/request-kind aliases in submission and channel/requested-ID aliases in randomized admission. Added EOL comment at `004c8fee`: signed tick must be at least 512; channel state is published before queue/play delegation without local result inspection or rollback.
+- **Limits:** Request-kind versus cooldown units remain qualified, random-helper ABI remains unchanged, and channel state is not proof of audible playback. No local channel-bound proof or runtime/executable changes.
+
+### Participant-metric and timing speech aliases
+
+- **Functions:** `TrySubmitParticipantMetricRaceSpeech` (`004c9090`), `TrySubmitRaceSpeechFromTimingValue` (`004c91a0`).
+- **Evidence:** Complete current pseudocode and retained assembly-reviewed entry plates.
+- **Behavior:** Named participant, scan index, selected metric, channel and request-enable aliases, plus timing selector channel/value. Added repeatable comment explaining that the metric alias retains incoming ECX when the qualifying participant scan finds no match.
+- **Limits:** No default metric or timing units inferred; existing wrapped arithmetic, RNG-state effects and unknown ABI inputs remain unchanged. No runtime or executable changes.
+
+### Route speech cursor and selected-vehicle aliases
+
+- **Function/data:** `UpdateRaceRouteSpeechCues` (`004c8d10`), `g_apRouteSpeechCursors` (`007dd380`).
+- **Evidence:** Complete current pseudocode and retained assembly-reviewed route-record plate.
+- **Behavior:** Named view/channel index, selected vehicle, direction-adjusted motion scalar and route-word cursor. Named cursor slots and documented variable-length record traversal and the next-record `-2` rewind marker.
+- **Limits:** Mixed arithmetic/code temporaries remain generic; no complete record structure, array extent, physical units or resource bounds inferred. No executable or runtime-memory changes.
+
+### Route tutorial resource publication
+
+- **Function/data:** `InitializeRaceSpeechState` (`004c8370`), `g_pRouteSpeechResourceBase` (`007dd828`).
+- **Evidence:** Complete aligned initializer assembly `004c8370..004c843f` and current route updater null-cursor gate.
+- **Behavior:** Named shared resource base, tutorial path and copied-character aliases. Loader result is published at `004c841d`, copied into both cursor slots at `004c8422/27`, then two lap counters are zeroed. Added publication comment.
+- **Limits:** No local release of an old base or success check before replacement; external cleanup ordering remains necessary to establish lifetime. Mixed loop-index/string-scan temporary remains generic. No executable or runtime-memory changes.
+
+### Route resource cleanup preserved-zero proof
+
+- **Functions:** `FreeRaceSpeechRouteBuffer` (`004c8440`), `FreeMemoryPoolBlock` (`004e1890`).
+- **Evidence:** Current cleanup pseudocode, aligned cleanup assembly and full free-helper body through `004e198e`.
+- **Behavior:** Named preserved-zero ECX alias. Callee saves ECX at `004e1891` and restores it on both returning epilogues (`004e191b`, `004e198c`), proving the base/cursor writes after free are zero. Added listing comment at `004c8458`.
+- **Limits:** Free result is ignored; zeroed pointers do not prove successful deallocation. Non-returning exceptional paths and whole-resource lifetime sequencing remain outside this bounded proof. No executable or runtime-memory changes.
+
+### Police radio region query aliases and midpoint tie
+
+- **Functions:** `SelectClosestPoliceRadioRegion` (`004c8470`), `FindPoliceRadioTrackRegion` (`004c8550`).
+- **Evidence:** Complete current pseudocode and aligned nearest-gap assembly `004c84cb..004c8542`.
+- **Behavior:** Named query position, output and record aliases in both functions; nearest selector also names sentinel/result/type. Added tie comment at `004c84e1`: strict gap admission, preceding boundary only when strictly closer, following record on equal computed distances.
+- **Limits:** Position units, table extent and upstream admission remain unresolved. Signed comparisons operate on wrapping arithmetic; no absolute-distance generalization. Containing-region output leaves its distance slot untouched. No executable or runtime-memory changes.
+
+### Radio region query return and output distinctions
+
+- **Functions:** `FindPoliceRadioTrackRegion` (`004c8550`), `SelectClosestPoliceRadioRegion` (`004c8470`).
+- **Evidence:** Current renamed pseudocode readback and independently audited nearest-gap assembly.
+- **Behavior:** Added repeatable comment distinguishing containing-region `[start,end)` success 0/miss -1 from nearest-gap success 1/miss 0. Containing query writes output DWORDs 0 and 2 only; distance DWORD1 remains untouched. Both leave output untouched on miss.
+- **Limits:** Nearest-gap strict boundaries are not containing-region membership. Units and upstream table admission remain unresolved. Executable SHA-256 rechecked against the recorded baseline and matches; documentation diff check passed.
+
+### Speech request state index versus queue selection
+
+- **Function:** `QueueOrPlayRaceSpeechRequest` (`004c85a0`).
+- **Evidence:** Complete current pseudocode and aligned assembly `004c85a0..004c86c1`.
+- **Behavior:** Named request pointer, state channel index, pending count/buffer and raw playback result. State indexing maps signed channels greater than 1 to zero, whereas queue-buffer choice uses original channel zero versus nonzero. Added comment at `004c8663` documenting the distinction and signed count guard.
+- **Limits:** Negative channels/counts are not locally rejected; upstream admission and reachability remain unproven. Nine-DWORD copy is observed, but complete field semantics remain partial. No executable or runtime-memory changes.
+
+### Speech queue dequeue is independent of playback acceptance
+
+- **Function:** `UpdateRaceSpeechQueue` (`004c86d0`).
+- **Evidence:** Complete aligned assembly `004c86d0..004c880c` and inspected delegate `004c85a0`.
+- **Behavior:** Named next queued request and shift destination pointers. Added comment at `004c877f`: after delegation, pending count is unconditionally decremented and remaining 36-byte requests shifted. Delegate suppression can return without playback; caller does not inspect acceptance.
+- **Limits:** Global-state scheduling/reachability remains unresolved; no observed dropped-speech claim. Mixed channel/count/loop temporary and helper ABI artifacts remain generic. No executable or runtime-memory changes.
+
+### Shared sequence and result-announcement voice handle
+
+- **Function/data:** `StartIndexedResultAnnouncementSound` (`004c9990`), `g_nSequenceOrResultVoiceHandle` (`007dd82c`).
+- **Evidence:** Current result-announcement pseudocode/assembly-reviewed plate and eight direct references covering both sequence and result consumers.
+- **Behavior:** Refined the previous sequence-only label to include result announcements. Sequence start writes at `004c9363`, result start at `004c99b9`; both processing families read the same storage. Added shared-use data comment and updated earlier label reference.
+- **Limits:** Cross-mode scheduling and lifetime are unresolved; shared storage alone does not prove interference. Raw failure results remain possible. No executable or runtime-memory changes.
+
+### Traffic-model and police-profile selector aliases
+
+- **Functions:** `SelectTrackTrafficCarModel` (`004735c0`), `SelectPoliceDriverProfile` (`00473570`).
+- **Evidence:** Complete current pseudocode and existing assembly/raw-table reviewed plates.
+- **Behavior:** Named selected traffic model ID, counted-pool entry index and selected police-profile ordinal before the +7 conversion. These names distinguish model variety/profile selection from vehicle population.
+- **Limits:** Existing selector-generator, registry availability, tuning-unit and lifecycle questions remain deferred. No new range/type/prototype claims or executable/runtime-memory changes.
+
+### Traffic and police participant setup aliases
+
+- **Functions:** `InitializeTrafficRaceParticipant` (`00473a70`), `InitializePoliceRaceParticipant` (`00473890`).
+- **Evidence:** Complete current pseudocode and retained register/model/profile assembly comments.
+- **Behavior:** Named setup-record pointers, selected model/profile values, alternate-model predicate and seven-value tuning-copy cursors/counts. Existing police model-code versus personality-profile distinction remains explicit.
+- **Limits:** Full setup structure, unknown flag-byte meaning and custom ABI remain partial; no new difficulty or capacity interpretation. Existing Astra contracts remain deferred. No executable or runtime-memory changes.
+
+### Per-lap estimate bookkeeping aliases
+
+- **Function:** `InitializeRaceLapEstimates` (`004ce5a0`).
+- **Evidence:** Complete current pseudocode and retained assembly/caller/layout-reviewed plate.
+- **Behavior:** Named participant state, missing-estimate count, random estimate increment and float-converted track segment count. Mixed estimate/index/pointer temporaries remain generic to avoid false single-purpose names.
+- **Limits:** Existing lap-array overlap at index 8, arithmetic units and upstream lap admission remain Astra questions. No additional runtime testing, capacity claim or executable modification.
+
+### Least-used setup selector bookkeeping aliases
+
+- **Function:** `SelectLeastUsedSetupOption` (`00473360`).
+- **Evidence:** Complete current pseudocode and existing full assembly/count/probe-bound comments.
+- **Behavior:** Named usage row, sampled seed byte, counter offset, scan threshold, candidate option index and count. These expose the circular threshold scan without changing its byte-counter wrap behavior.
+- **Limits:** Positive count, row/storage admission and generator indexing remain caller contracts; existing bounded-termination proof is conditional on them. No executable or runtime-memory changes.
+
+### Setup lookup offset and opponent model result aliases
+
+- **Functions:** `GetRaceSetupRandomTableValue` (`00474c60`), `SelectOpponentCarModel` (`004734d0`).
+- **Evidence:** Current complete pseudocode and retained assembly/caller contracts.
+- **Behavior:** Named deterministic lookup offset and selected model-index result, preserving signed remainder and grouped/explicit selection paths.
+- **Limits:** Result name does not establish registry validity or uniqueness; grouped double increment and upstream selector questions remain qualified. No executable or runtime-memory changes.
+
+### Group ordinal and usage-index aliases
+
+- **Functions:** `IncrementSetupOptionUsage` (`004733b0`), `GetEligibleCarModelIndexFromGroup` (`0043a6b0`).
+- **Evidence:** Complete current pseudocode and retained assembly-reviewed register contracts.
+- **Behavior:** Named usage row/option index and group entry ordinal/group index. The latter explicitly distinguishes group position from the resolved registry model index.
+- **Limits:** Existing unchecked indices, NULL-to-zero ambiguity, missing identifier result and duplicate-identifier semantics remain unchanged. No executable or runtime-memory changes.
+
+### Registry identifier comparison aliases
+
+- **Function:** `FindCarModelIndexByIdentifier` (`00439990`).
+- **Evidence:** Complete current pseudocode and existing assembly-reviewed 16-byte registry-search contract.
+- **Behavior:** Named comparison result, remaining bytes, registry index, both identifier cursors and byte comparison flags. First matching registry entry and -1 miss behavior remain unchanged.
+- **Limits:** Combined iteration result/register-preservation artifact remains generic; no registry lifetime or pointer-admission guarantee inferred. No executable or runtime-memory changes.
+
+### Car-model cache lookup aliases
+
+- **Functions:** `GetCarModelColorSelectorLimitPlusOne` (`00439760`), `GetCarModelRecordByIndex` (`00439a50`).
+- **Evidence:** Complete current pseudocode and retained full getter/cache-clear assembly contracts.
+- **Behavior:** Named requested model index and returned/model record aliases. Kept iteration register-pair artifacts generic rather than forcing recovered prototypes.
+- **Limits:** Negative indices, missing-record handling and cache invalidation remain existing caller/lifetime questions. No new slot-capacity guarantee, executable or runtime-memory changes.
+
+### Built-in identifier and human fallback aliases
+
+- **Functions:** `CheckBuiltinCarIdentifier` (`00439620`), `CheckCarModelOpponentEligibility` (`0043a4f0`).
+- **Evidence:** Complete current pseudocode and existing identifier/eligibility assembly contracts.
+- **Behavior:** Named identifier DWORD pointer and fallback human model index. Preserved distinction between built-in identifier value and registry index; mixed flag-result/preserved-index temporary remains generic.
+- **Limits:** No complete identifier schema or registry-bound guarantee inferred. Existing role gates and local-session fallback policy are unchanged. No executable or runtime-memory changes.
+
+### Eligible model group scan aliases
+
+- **Function:** `RebuildEligibleCarModelGroups` (`0043a580`).
+- **Evidence:** Complete current pseudocode and retained assembly-reviewed group capacity/append contracts.
+- **Behavior:** Named model scan count and eligible model record; kept reused scan-index/group-count register artifact generic. Reviewed display-name comparator evidence remains consistent with name sorting rather than registry-index order.
+- **Limits:** Existing category/count/cache extent contracts remain Astra work; no slot expansion or safety guarantee. No executable or runtime-memory changes.
+
+### Model metadata pointer aliases and identifier null arithmetic
+
+- **Functions:** `GetCarModelGroupSelector` (`00439730`), `GetCarModelIdentifier` (`00439520`).
+- **Evidence:** Complete current pseudocode and retained getter contracts.
+- **Behavior:** Named both model-record aliases. Added identifier helper comment: missing record produces arithmetic address `0x31c`, not NULL; this helper computes the address without dereferencing it.
+- **Limits:** Consumer pointer admission and registry lifetime remain unresolved. Group selector getter still dereferences its lookup result without a local null guard. No executable or runtime-memory changes.
+
+### Car-model iterator storage aliases
+
+- **Functions:** `BeginCarModelIteration` (`00438a80`), `AdvanceCarModelIteration` (`00438aa0`).
+- **Evidence:** Complete current pseudocode and retained registry-domain/assembly contracts.
+- **Behavior:** Named caller iterator slots, first model record and next model record. Advance reads the node link only for a nonnull current node; caller slot itself must remain valid.
+- **Limits:** No cycle detection or registry mutation/lifetime guarantee inferred; original ABI artifacts retained. No executable or runtime-memory changes.
+
+### Eligibility orchestration boundary aliases
+
+- **Function:** `ApplyCarSelectionEligibilityMask` (`0043a6e0`).
+- **Evidence:** Current complete pseudocode and retained entry/tail assembly review.
+- **Behavior:** Named selectable-model count, original opponent selection, original second-human model index and repair-request alias. These expose already reviewed boundary bookkeeping; large middle mask dispatch was not reinterpreted.
+- **Limits:** Full mask truth table, helper preservation, table extents and invalid count/index admission remain deferred to the existing Astra backlog. Mixed loop/result and extra-register artifacts remain generic. No executable or runtime-memory changes.
+
+### Network text list aliases
+
+- **Functions:** `AppendNetworkTextNode` (`0042d8b0`), `FreeNetworkTextChain` (`0042d910`).
+- **Evidence:** Complete current pseudocode and retained assembly-reviewed node-link/copy contracts.
+- **Behavior:** Named message sequence/text, new node, preserved anchor and first/current chain nodes. Existing links at +68/+6c and bounded 100-byte copy semantics remain unchanged.
+- **Limits:** Full-width copy does not guarantee NUL termination; chain traversal assumes valid acyclic links. Helper-register artifacts retained where not independently refined. No executable or runtime-memory changes.
+
+### Pending network text queue aliases
+
+- **Functions:** `QueueNetworkText` (`0042da30`), `ClearPendingNetworkText` (`0042d940`).
+- **Evidence:** Complete current pseudocode and retained lock/sequence/teardown contracts.
+- **Behavior:** Named incoming message text, appended node and queue-state pointer reread after chain free. Existing sequence increment before allocation and initialized-lock precondition remain explicit.
+- **Limits:** No concurrent lifetime guarantee, delivery confirmation or allocation-failure rollback inferred. No executable or runtime-memory changes.
+
+### Pending text sequence publication and flush aliases
+
+- **Functions:** `QueueNetworkText` (`0042da30`), `FlushPendingNetworkTextToHistory` (`0042d9b0`).
+- **Evidence:** Current complete flush pseudocode, aligned enqueue assembly and independent Luna audit.
+- **Behavior:** Added EOL at `0042da70`: sequence published before append, zero result skips only tail update, no rollback. Named flush pending node and state reread after free.
+- **Limits:** Sequence gaps are not delivery/loss evidence; allocation failure can cause them. Lock lifetime, concurrent mutation and display-copy termination remain caller/helper contracts. No executable or runtime-memory changes.
+
+### Network text relay source and notification distinction
+
+- **Function:** `ReceiveNetworkTextMessage` (`0042d710`).
+- **Evidence:** Complete current pseudocode and retained control-packet/relay assembly contract.
+- **Behavior:** Named source connection and peer index. Added repeatable comment distinguishing receive notification after queue call from actual allocation or display acceptance; source peer is excluded from host relay.
+- **Limits:** Transport framing, pointer/count admission and display lifetime remain unresolved. No executable or runtime-memory changes.
+
+### Network text send scan and allocation aliases
+
+- **Functions:** `SendNetworkTextMessage` (`0042d810`), `AllocateNetworkTextNode` (`0042d860`).
+- **Evidence:** Complete current pseudocode and retained packet-size/node-layout assembly contracts.
+- **Behavior:** Named text scan cursor, scanned character, remaining scan count and allocated/returned node aliases. Original packet framing and 0x70-byte node allocation remain unchanged.
+- **Limits:** No new caller-independent string bound or transport-delivery guarantee; allocator/fill register artifacts retained. No executable or runtime-memory changes.
+
+### Network display wrapping buffer aliases
+
+- **Function:** `WrapNetworkTextIntoHistory` (`0042d620`).
+- **Evidence:** Complete current pseudocode and retained text-width/copy contract.
+- **Behavior:** Named copied text buffer, fragment buffer, fragment write index and scanned character. Reused copy/scan/source-index temporary remains generic.
+- **Limits:** Exact long-word/newline handling, full-width termination and helper register preservation remain partial; no completed wrapping-equivalence claim. No executable or runtime-memory changes.
+
+### Participant packet component copy ordering
+
+- **Function:** `ApplyNetworkParticipantVectorFields` (`0043dab0`).
+- **Evidence:** Complete aligned assembly `0043dab0..0043db17` and current pseudocode.
+- **Behavior:** Named packet pointer. Added repeatable comment: index byte +1 is loaded three times, once before each component store, and payload DWORDs are copied sequentially.
+- **Limits:** No nonaliasing/stable-input contract inferred; vector meaning and transport admission remain partial. No executable or runtime-memory changes.
+
+### Replicated vehicle motion-scale aliases
+
+- **Function:** `CalculateNetworkVehicleMotionScale` (`00408f10`).
+- **Evidence:** Complete current pseudocode and retained assembly-reviewed threshold/scaling comments.
+- **Behavior:** Named vehicle, post-read preserved vehicle, signed correction delta and motion-scale output. Existing one-sided negative threshold and role-specific human-racer boundary remain explicit.
+- **Limits:** Mixed read-status/threshold temporary remains generic; replication ownership and flag semantics remain deferred. No new runtime validation or executable changes.
+
+### Network correction placement and velocity aliases
+
+- **Function:** `ApplyNetworkVehiclePositionCorrection` (`0040bd80`).
+- **Evidence:** Complete current pseudocode and retained full assembly placement/velocity contract.
+- **Behavior:** Named vehicle, mutable correction record, selected speed scalar, vertical offset, segment-record base and fixed-point tangent scale. Reused delta/helper-result/vehicle temporary remains generic.
+- **Limits:** Existing reverse geometry, short-track wrapping, speed admission and role-specific correction questions remain Astra work. No runtime testing or executable changes.
+
+### AI replication history clearing aliases
+
+- **Function:** `ClearAIVehicleReplicationHistory` (`004c7fd0`).
+- **Evidence:** Complete current pseudocode and retained assembly/caller history-clear contract.
+- **Behavior:** Named race vehicle index, player-count-relative AI index and current/next history row indices. The loop clears one WORD across 20 rows under the replication lock.
+- **Limits:** Upper AI-index admission and lock lifetime remain unresolved; row stride alone is not a complete capacity proof. No executable or runtime-memory changes.
+
+### Replication correction reader aliases and partial outputs
+
+- **Function:** `ReadVehicleReplicationCorrection` (`004c8040`).
+- **Evidence:** Complete current pseudocode and retained assembly/caller reader contract.
+- **Behavior:** Named output record, race index, update sequence and correction/history byte offsets. Added comment distinguishing branch-dependent output writes: AI sequence is written before failure exits; human path does not initialize sequence, AI path does not initialize float +8.
+- **Limits:** False return does not imply unchanged output or fully initialized record. Mixed AI-index/use-count temporary remains generic; capacity, sequence wrap and ownership remain deferred. No executable or runtime-memory changes.
+
+### Participant state-control aliases
+
+- **Functions:** `ApplyNetworkVehicleStateThree` (`004c7e80`), `SendParticipantStateControlMessages` (`004c7ea0`).
+- **Evidence:** Complete current pseudocode and retained full sender/registered-control assembly contracts.
+- **Behavior:** Named receive packet pointer, sender participant index and control-message type. Original distinct player/race pointer tables and partial header initialization remain documented.
+- **Limits:** No state-enum meaning, complete payload schema or synchronization guarantee inferred; helper register artifacts retained. No executable or runtime-memory changes.
+
+### Replication lock release preserved-zero proof
+
+- **Functions:** `ReleaseReplicatedUpdateCriticalSection` (`004c7bb0`), `ReleasePooledCriticalSection` (`004eb360`).
+- **Evidence:** Complete aligned wrapper and helper assembly through `004eb38b`.
+- **Behavior:** Named preserved-zero EDX alias and added EOL at `004c7bc0`. Null helper path leaves EDX unchanged; nonnull path saves/restores it, proving shared pointer clear on normal return.
+- **Limits:** Register proof does not establish safe concurrent lock destruction or user shutdown sequencing. No executable or runtime-memory changes.
+
+### Sequenced participant update aliases and admission ordering
+
+- **Function:** `ReceiveNetworkSequencedParticipantUpdate` (`004c7d30`).
+- **Evidence:** Complete current pseudocode and retained registered-control assembly contract.
+- **Behavior:** Named packet, participant slot, relay peer index and ready/use-count byte pointer. Added comment: equal signed sequence values pass; sequence publication precedes local lock while payload/readiness updates occur inside it.
+- **Limits:** External serialization and writer/reader ownership remain unresolved; ordering alone does not establish a race. Reused record-offset/AI-loop temporary remains generic. No executable or runtime-memory changes.
+
+### Sequenced vehicle broadcast aliases
+
+- **Function:** `BroadcastSequencedVehicleUpdate` (`004c7bd0`).
+- **Evidence:** Complete current pseudocode and retained assembly/caller packet-building contract.
+- **Behavior:** Named update sequence, client-side AI opponent index and host-side vehicle pointer slot. Mixed history-row/host-loop temporary and rebased stack packet fragments remain generic.
+- **Limits:** No full stack-packet structure, sequence-wrap guarantee or count/storage validation inferred. Existing runtime/ownership questions remain deferred. No executable or runtime-memory changes.
+
+### Mixed replication-pair output type correction
+
+- **Function:** `DecodeNetworkShortPair` (`004c8350`).
+- **Evidence:** Full aligned assembly `004c8350..004c8364` and final decompiler readback.
+- **Behavior:** Named packed input/output aliases and changed output pointer to `void *`, allowing distinct casts: float store at +0 and unsigned DWORD store at +4. Final pseudocode now matches FILD/FSTP followed by zero-extended integer MOV.
+- **Limits:** Complete record schema/units and input-output overlap contract remain unresolved; phantom prototype input retained. No executable or runtime-memory changes.
+
+### Replication pair conversion ordering and preserved aliases
+
+- **Functions:** `PackLocalVehicleReplicationPair` (`004c8310`), `DecodeNetworkShortPair` (`004c8350`).
+- **Evidence:** Full aligned pack/decode assembly and final typed decoder readback.
+- **Behavior:** Named packer truncated scalar and combined preserved output/player-index artifact. Added decoder EOL at `004c8357`: second input WORD is read after first float output store.
+- **Limits:** Overlap may change later input; no in-place expansion guarantee. Exact scalar units and exceptional x87 conversion remain deferred. Combined alias describes register preservation, not a source-level 64-bit API. No executable or runtime-memory changes.
+
+### Track-wrap current and previous segment aliases
+
+- **Function:** `UpdateVehicleTrackWrapCounters` (`0042cc20`).
+- **Evidence:** Complete current pseudocode and retained full assembly/caller contract.
+- **Behavior:** Named vehicle, current segment index and previous segment index. Existing direction-specific 50/500 thresholds and counter bookkeeping remain unchanged.
+- **Limits:** Counter +204/+208 semantics and track-domain assumptions remain unresolved; aliases do not assign lap-count meanings. No executable or runtime-memory changes.
+
+### Shared track archive member-name storage
+
+- **Function/data:** `FormatTrackGoArchiveMemberName` (`00467c20`), `g_szTrackGoArchiveMemberName` (`00678a94`).
+- **Evidence:** Current pseudocode, existing complete formatter/caller assembly plate and two direct data references.
+- **Behavior:** Named shared member-name buffer and added overwrite/minimum-width lifetime comment. Direct references are formatter-local, but returned pointer escapes to callers.
+- **Limits:** No buffer extent or retained-pointer lifetime guarantee inferred. No executable or runtime-memory changes.
+
+### Pursuit dropdown and view track-side aliases
+
+- **Functions:** `CheckHotPursuitTrackDropdownName` (`00472924`), `UpdateViewTrackSideMatchCounter` (`00426370`).
+- **Evidence:** Complete current pseudocode and retained assembly/caller plates.
+- **Behavior:** Named dropdown comparison/result and view scene/predicate/mode aliases. Mixed vehicle-pointer/slot temporary remains generic.
+- **Limits:** Dropdown predicate is not track eligibility; side category and counter/reset-field roles remain partial. No executable or runtime-memory changes.
+
+### Gear candidate and projected RPM aliases
+
+- **Function:** `UpdateVehicleGearFromRPMThresholds` (`004a90a0`).
+- **Evidence:** Complete current pseudocode and retained REA/assembly gear-domain proof.
+- **Behavior:** Named vehicle, upshift/single-downshift/double-downshift candidates, top-gear exclusion, three projected RPM values and sound bearing. Existing raw float-bit comparisons remain untouched.
+- **Limits:** Upstream validity, numerical edge cases and actual shift behavior remain Astra/runtime work. This is naming of established local mechanics, not resolution of those contracts. No executable or runtime-memory changes.
+
+### Angular component clipping aliases
+
+- **Functions:** `ClampVehicleAngularVelocity` (`0042e720`), `ClampContactAngularRates` (`004a20c0`).
+- **Evidence:** Complete current pseudocode and retained assembly/raw-bit comparison contracts.
+- **Behavior:** Named vehicle pointers, component candidates and contact-clamp raw-bit intermediates/stores. Names preserve component order without asserting coordinate-axis units.
+- **Limits:** NaN handling and signed raw-bit comparisons retained; clipping is not magnitude normalization. Physical units/configuration/runtime response remain deferred. No executable or runtime-memory changes.
+
+### Gear-ratio editor slider aliases
+
+- **Function:** `ApplyGearRatioSlider` (`00427590`).
+- **Evidence:** Complete current pseudocode and retained callback/CE-field mapping contract.
+- **Behavior:** Named minimum, slider input, lower-clamped candidate and reused range/interpolation/maximum-storage temporaries. Existing x87 interpolation and editor-field store remain unchanged.
+- **Limits:** No exceptional-value equivalence or full physics effect inferred; reused aliases explicitly preserve changing roles. No executable or runtime-memory changes.
+
+### Deferred glyph geometry rendering routine
+
+- **Function:** `FUN_00475b50`.
+- **Evidence:** Bounded current decompiler triage; large body, no complete assembly audit.
+- **Behavior:** Observed countdown text geometry, 0x238-byte selected visual record, character traversal, transform/color/lighting branches and recursive fallback. Added qualified Ghidra comment and SCRATCHPAD Astra entry.
+- **Limits:** Full ABI, scratch/vertex extents and numerical/render-mode semantics unresolved. Retained generic name; no runtime or executable changes.
+
+### Countdown visual setter aliases and renderer triage
+
+- **Functions:** `SetSelectedCountdownVisualRecord` (`00477170`), deferred `FUN_00475b50`.
+- **Evidence:** Current setter pseudocode, retained assembly/four-caller review and Luna read-only triage.
+- **Behavior:** Named color-like input, three-word vector input and selected-record byte offset. Luna confirms setter is already named; broad renderer candidate is countdown glyph geometry, supported by resource/caller use.
+- **Limits:** Renderer remains generic pending complete bounded audit rather than adopting a provisional role as final. Exact visual identity/vector units remain unresolved; no executable or runtime-memory changes.
+
+### Visual auxiliary clear-loop aliases
+
+- **Function:** `ClearSelectedVisualRecordAuxiliarySlots` (`00474d50`).
+- **Evidence:** Complete current pseudocode and retained eight-iteration assembly contract.
+- **Behavior:** Named selected-record byte offset, auxiliary slot index and slot byte offset, exposing the eight 0x40-stride stores without assigning unproven slot semantics.
+- **Limits:** Selected-index admission and broader visual-record ownership remain unresolved. No executable or runtime-memory changes.
+
+### Glyph resource path/options and release aliases
+
+- **Functions:** `LoadOrGenerateGlyphGeometryResource` (`00475240`), `ReleaseCountdownTextGeometryResource` (`00475b10`).
+- **Evidence:** Current entry/release pseudocode and retained loader packing/release assembly contracts.
+- **Behavior:** Named resource path, incoming/saved option bits and preserved-zero release alias. Changes stay at established entry/lifetime boundaries rather than reinterpreting generation mathematics.
+- **Limits:** Full glyph topology, buffer extents and option meanings remain unresolved. No executable or runtime-memory changes.
+
+### Countdown text width accumulation aliases
+
+- **Function:** `CalculateCountdownTextWidth` (`00476fb0`).
+- **Evidence:** Complete current pseudocode and retained full assembly/per-character rounding contract.
+- **Behavior:** Named text cursor, preserved cursor, accumulated width and truncated width. Existing per-character x87 truncation remains distinct from final-only rounding.
+- **Limits:** Missing register-carried advance arithmetic in pseudocode, exceptional conversion and resource lifetime remain qualified in plate. No executable or runtime-memory changes.
+
+### Countdown glyph advance scale label
+
+- **Function/data:** `CalculateCountdownTextWidth` (`00476fb0`), `g_flCountdownTextAdvanceScale` (`00679014`).
+- **Evidence:** Full aligned width-helper assembly and 12 direct references, including overlay writes.
+- **Behavior:** Named float multiplier used for each glyph/fallback advance; added data comment on per-character reread and truncation.
+- **Limits:** Label does not establish full rendered geometry scale or physical units; indirect mutation/lifetime remain unproven. No executable or runtime-memory changes.
+
+### Recovered selected visual base-value setter
+
+- **Function:** `SetSelectedVisualRecordBaseColorValue` (`00477030`), previously undefined code.
+- **Evidence:** Complete aligned 58-byte body `00477030..00477069`, coherent prologue/epilogue and decompiler readback after function creation.
+- **Behavior:** Guards selected index -1/record+4, writes incoming EAX to color-like +14 and clears auxiliary slots. Named input and added qualified plate.
+- **Limits:** No direct xrefs found; reachability and exact color format unresolved. Mode/vector fields unchanged by this body; no upper-index check. Function inventory increases by one; unnamed count unchanged. No executable or runtime-memory changes.
+
+### Selected visual base-triplet aliases
+
+- **Function:** `SetSelectedVisualRecordBaseTriplet` (`00477070`).
+- **Evidence:** Complete aligned assembly `00477070..004770b7` and current pseudocode.
+- **Behavior:** Named three base-value inputs and record byte offset; stores +8/+c/+10 and mode zero followed by auxiliary clear.
+- **Limits:** Exact color/shading roles remain unassigned, selected-index upper bound unresolved. No executable or runtime-memory changes.
+
+### Recovered selected visual mode-one configuration
+
+- **Function:** `ConfigureSelectedVisualRecordModeOne` (`004770c0`), previously undefined code.
+- **Evidence:** Full aligned body `004770c0..00477115`, coherent prologue/RET8 and bounded xref query.
+- **Behavior:** Created neutral named function; qualified plate records mode1, three register values and two stack DWORD stores before auxiliary clear.
+- **Limits:** No direct references found; exact visual field semantics and reachability unresolved. No executable or runtime-memory changes; inventory gains one named function.
+
+### Recovered selected visual mode-two configuration
+
+- **Function:** `ConfigureSelectedVisualRecordModeTwo` (`00477120`), previously undefined code.
+- **Evidence:** Full aligned body `00477120..0047716e` and decompiler readback after creation; no direct xrefs found.
+- **Behavior:** Created function and named color-like/vector/offset aliases. Mode2 uses the same +14 and +20/+24/+28 writes as mode3 countdown setter, followed by auxiliary clear; added qualified plate.
+- **Limits:** Exact mode semantics, input admission and reachability unresolved. No executable or runtime-memory changes; inventory gains one named function.
+
+### Visual auxiliary slot allocation aliases and failure state
+
+- **Function:** `AddSelectedVisualRecordSlot` (`004771c0`).
+- **Evidence:** Complete current pseudocode and retained full assembly/caller contract; Luna independently confirmed adjacent recovered setters.
+- **Behavior:** Named color-like/vector inputs, record offset/pointer and slot-or-failure result. Added comment distinguishing mode4 write before full-slot failure from invalid-record -2 exit before writes.
+- **Limits:** Exact slot fields and visual semantics remain partial; failure does not uniformly imply unchanged state. No executable or runtime-memory changes.
+
+### Selected visual field 2C setter boundary
+
+- **Function:** `SetSelectedVisualRecordField2C` (`00477470`).
+- **Evidence:** Full aligned body `00477470..004774a4` and current pseudocode.
+- **Behavior:** Named raw field input and added store comment distinguishing it from mode setters: no auxiliary clear or mode write.
+- **Limits:** Field remains semantically unknown; pointer-like caller values do not establish a complete type. No executable or runtime-memory changes.
+
+### Ghost save and pose-sample pointer aliases
+
+- **Functions:** `SaveGhostRecordingIfAllowed` (`004777d0`), `GetRecordedPoseSamplePointer` (`004779e0`), `GetPlaybackPoseSamplePointer` (`00477a10`).
+- **Evidence:** Complete current pseudocode and retained assembly/endpoint arithmetic contracts.
+- **Behavior:** Named save path, recorded index, playback selected index and eight-times-index address intermediate.
+- **Limits:** Existing count/index lower-bound and endpoint-policy questions remain deferred; array typing can obscure byte stride, so assembly contract remains authoritative. No executable or runtime-memory changes.
+
+### Packed track-relative position decoder aliases
+
+- **Function:** `DecodeTrackSegmentRelativePosition` (`00477850`).
+- **Evidence:** Complete current pseudocode and retained full signed-word/coordinate assembly contract.
+- **Behavior:** Named packed pose, output, segment coordinate pointer, second/third coordinates and overlapping word-pair loads. Names distinguish extraction storage from decoded components.
+- **Limits:** Segment admission, fixed-coordinate units and complete pose schema remain qualified; original return/custom ABI retained. No executable or runtime-memory changes.
+
+### Track-relative pose encoder inputs and origin aliases
+
+- **Function:** `EncodeTrackSegmentRelativePosition` (`004778c0`).
+- **Evidence:** Complete current pseudocode and retained full assembly/constant/layout contract.
+- **Behavior:** Named packed output, three world-coordinate inputs, signed segment word, metadata word, two origin coordinates and fixed-origin conversion scale. Reused offset/third-coordinate temporary remains generic.
+- **Limits:** Current x87 rounding, packed truncation/wrap and segment admission remain unchanged; pseudocode float casts are not a full precision-equivalence claim. No executable or runtime-memory changes.
+
+### Pose interpolation adapter aliases
+
+- **Function:** `InterpolatePoseSamplesAndBuildRotationMatrix` (`00477990`).
+- **Evidence:** Complete current pseudocode and retained assembly/caller quaternion adapter contract.
+- **Behavior:** Named interpolation weight and eight-byte blended packed-quaternion storage. Preserved custom register/stack argument caveats.
+- **Limits:** Quaternion normalization, handedness and numerical error remain deferred; no interpolation-equivalence or runtime claim. No executable or runtime-memory changes.
+
+### Ghost recording header initialization aliases
+
+- **Function:** `InitializeGhostRecordingBuffer` (`00477a50`).
+- **Evidence:** Complete current pseudocode and retained full clear/copy assembly contract.
+- **Behavior:** Named remaining header DWORD count and preparation/recording header cursors. Existing whole-buffer clear followed by 0x20f0-byte header copy remains unchanged.
+- **Limits:** Full preparation schema and mode/lifetime contracts remain partial; no stored-sample or round-trip validation inferred. No executable or runtime-memory changes.
+
+### Ghost loader admission and header-copy aliases
+
+- **Function:** `LoadGhostRecordingResource` (`00477b50`).
+- **Evidence:** Complete current pseudocode and retained assembly/read-result/header-restoration contracts.
+- **Behavior:** Named resource byte count, acceptance result, loaded/prepared header cursors and saved preparation settings. Reused scan/status/count temporaries remain generic.
+- **Limits:** No minimum-length, complete-read, embedded sample-count or round-trip guarantee inferred; partial buffer mutation on failure remains documented. No executable or runtime-memory changes.
+
+### Replay extension handle aliases and loaded-flag qualification
+
+- **Functions:** `WriteReplayPoseExtension` (`00477ac0`), `ReadReplayPoseExtension` (`00477b00`).
+- **Evidence:** Complete current pseudocode and retained full IO/caller contracts.
+- **Behavior:** Named stream/file-handle inputs. Added reader comment distinguishing loaded-flag publication from checked complete reads.
+- **Limits:** Existing sample-count, buffer extent and round-trip questions remain deferred. No executable or runtime-memory changes.
+
+### Recorded pose producer publication aliases
+
+- **Function:** `UpdateRecordedVehiclePoseSample` (`00477c20`).
+- **Evidence:** Complete current pseudocode and retained full pose-write/publication assembly contract.
+- **Behavior:** Named published/tick-derived indices, reused current/previous sample pointer and preserved vehicle aliases after lookup/encoding.
+- **Limits:** Tick-zero previous index, exceptional orientation conversion and save endpoint intent remain deferred. No executable or runtime-memory changes.
+
+### Playback pose adapter admission result
+
+- **Function:** `InterpolatePlaybackVehiclePose` (`00477d90`).
+- **Evidence:** Complete current pseudocode and retained full assembly/custom-ABI contract.
+- **Behavior:** Named matrix-output argument and added comment separating returned 1 from numerical output validation. Loaded flag gates execution; helper results are not locally validated.
+- **Limits:** Endpoint, count and numerical equivalence remain deferred. High return half remains an ABI artifact; no executable or runtime-memory changes.
+
+### Pursuit removal and stop-clear aliases
+
+- **Functions:** `RemovePoliceFromPursuitGroup` (`00401a20`), `ClearPoliceStopStateFields` (`00401e20`).
+- **Evidence:** Complete current pseudocode and retained assembly/membership-invariant comments.
+- **Behavior:** Named police vehicle, group, member scan, indexed address and reused found-index/reduced-count temporary; named stop-clear vehicle.
+- **Limits:** Removal membership/count invariants and two cleared stop-field identities remain unresolved. Existing missing-member caveats preserved; no executable or runtime-memory changes.
+
+### Pursuit detach and timeout vehicle aliases
+
+- **Functions:** `DetachPoliceFromPursuitTarget` (`00401a80`), `UpdatePoliceStopTimeout` (`00401fb0`).
+- **Evidence:** Complete current pseudocode and retained phase-guard/caller contracts.
+- **Behavior:** Named police vehicle, post-removal group/vehicle and post-statistics vehicle aliases; timeout vehicle named. Mixed statistic/vehicle temporary remains generic.
+- **Limits:** Statistic identities, shared lifetime and terminal-stop runtime questions remain deferred; existing runtime evidence retains its original bounds. No new runtime testing or executable changes.
+
+### Police-stop transform preparation aliases
+
+- **Function:** `PreparePoliceStopParticipantTrackTransforms` (`00401c20`).
+- **Evidence:** Complete current pseudocode and retained full extraction/query/side-selection assembly contract.
+- **Behavior:** Named stopped participant, matrix copy count/cursors and first query material record. Unknown query flags and side identity remain generic.
+- **Limits:** Second-side fallback remains unvalidated locally; naming does not prove placement success. Existing numerical/runtime questions remain deferred. No executable or runtime-memory changes.
+
+### Police-stop offset transform arithmetic aliases
+
+- **Function:** `UpdatePoliceStopParticipantOffsetTransform` (`00401b50`).
+- **Evidence:** Complete current pseudocode and retained full assembly/raw-constant/helper contract.
+- **Behavior:** Named participant, side selector, scaled side vector, double/float heading turns, angle offset, raw vector-scale bits and wrapped heading adjustment.
+- **Limits:** Side identity, handedness and physical units remain unresolved; raw constants/rounding and output-only position behavior preserved. No executable or runtime-memory changes.
+
+### Pursuit attachment argument and bookkeeping aliases
+
+- **Function:** `AttachPoliceToPursuitGroup` (`004018b0`).
+- **Evidence:** Complete current pseudocode and retained assembly/caller/strip-ordering contracts.
+- **Behavior:** Named officer/target, attachment reason and preserved reason/vehicle after strip clear, group start tick, reason counter and selected speed excess. Mixed old/new group temporary remains generic.
+- **Limits:** Existing membership/capacity and assignment-back-reference lifetime questions remain deferred; no new runtime inference. No executable or runtime-memory changes.
+
+### Police slot-link and nearest-gap aliases
+
+- **Functions:** `InitializePoliceVehicleSlotLinks` (`004012c0`), `GetNearestPoliceTrackSegmentDistance` (`004013b0`).
+- **Evidence:** Complete current pseudocode and retained assembly/register contracts.
+- **Behavior:** Named slot indices/vehicle pointers, selected gap magnitude, nearest segment gap, source segment and helper-preserved vehicle aliases. Repeated delta calls and signed arithmetic remain unchanged.
+- **Limits:** No world-distance units or count/pointer admission inferred; wrapping negation and 10000 sentinel retained. No executable or runtime-memory changes.
+
+### Spike contact pursuit bookkeeping aliases
+
+- **Function:** `UpdatePursuitAfterSpikeStripContact` (`00401650`).
+- **Evidence:** Complete current pseudocode and retained full assembly/contact runtime contracts.
+- **Behavior:** Named contacted vehicle/group, police slot, selected gap magnitude and post-gap officer alias.
+- **Limits:** Existing bounded runtime observations are unchanged; individual wheel bits, assignment lifetime and terminal recovery questions remain deferred. No new runtime testing or executable changes.
+
+### Stop finalization participant and counter aliases
+
+- **Function:** `FinalizePoliceStop` (`00401ff0`).
+- **Evidence:** Complete current pseudocode and retained static plus bounded prior runtime contracts.
+- **Behavior:** Named officer, group, target flag pointer, completion tick, completed-stop count, stopped target and post-timing officer alias. Reused statistic/limit/delay temporary remains generic.
+- **Limits:** Existing terminal-call admission, tuning-row bounds and asynchronous runtime limits preserved. No additional runtime test, executable or runtime-memory changes.
+
+### Police response-index updater aliases
+
+- **Functions:** `DecrementPositivePoliceResponseIndex` (`00401330`), `IncrementPoliceResponseIndexUpToEight` (`00401350`).
+- **Evidence:** Complete current pseudocode and retained signed/unsigned assembly contracts.
+- **Behavior:** Named both police-vehicle aliases. Decrement retains signed-positive test; increment retains unsigned-below-eight test.
+- **Limits:** Response index remains distinct from group count and unproven voice identity; invalid values are not repaired. No executable or runtime-memory changes.
+
+### Stop entry officer-selection aliases
+
+- **Function:** `BeginPoliceStop` (`00401e40`).
+- **Evidence:** Complete current pseudocode and retained assembly/caller plus bounded runtime contracts.
+- **Behavior:** Named officer/group, selected officer, original flag byte, nearest candidate distance, member index and post-transform officer alias. Mixed processing-count/deadline temporary remains generic.
+- **Limits:** No new selection validity, all-mode stop or runtime completion claim. Existing numerical/caller invariants remain deferred. No executable or runtime-memory changes.
+
+### Police stop eligibility bookkeeping aliases
+
+- **Function:** `CheckPoliceStopConditions` (`00402110`).
+- **Evidence:** Complete current pseudocode and retained static caller/phase contract.
+- **Behavior:** Named officer/group, target controller-phase predicate, post-distance/post-warning officer aliases and low Boolean result. Reused target/multiplier/delay temporary remains generic.
+- **Limits:** Decompiler unreachable warning, exact thresholds and full numerical/caller outcomes remain qualified; no new runtime or executable changes.
+
+### Pursuit replacement aliases and historical counter terminology
+
+- **Function:** `TryAcquireOrReplacePolicePursuitTarget` (`00402cb0`).
+- **Evidence:** Complete current pseudocode and retained full assembly/detach-admission contract.
+- **Behavior:** Named officer, candidate and priority result. Added clarification that historical link-count wording refers to response index +71c, not actual group membership +2c; wrapper increment does not prove replacement acceptance.
+- **Limits:** Terminal-player reachability and protected-phase behavior remain existing Astra questions. No executable or runtime-memory changes.
+
+### Police target recruitment variable names
+
+- **Function:** `00403f80 CalculatePoliceTargetPriority`.
+- **Evidence:** Existing assembly-backed plate and fresh decompiler readback; seven variable aliases applied and verified.
+- **Behavior:** Names now distinguish the optional recruiting officer, target vehicle and flags, pursuit group, segment speed limit, and separate ordinary AI/player recruitment slot calculations. The slot variables hold the base allowance first and the membership-subtracted result later.
+- **Limits:** Custom register ABI artifacts remain visible. These ordinary recruitment allowances are not universal storage capacities; terminal-target and runtime questions remain deferred in SCRATCHPAD.md. Analysis metadata only.
+
+### Police target selection ties and deferred candidates
+
+- **Function:** `00402e10 SelectPolicePursuitTarget`.
+- **Evidence:** Fresh full assembly review through RET at `00402f6c`, decompiler readback, and eight verified variable aliases.
+- **Behavior:** Strict signed score improvement keeps the earliest table entry on equal scores. Assignment restrictions apply only after selecting the best candidate; a deferred best candidate does not cause a fallback scan. The auxiliary gate requires matching target, gap below five and elapsed secondary timer above 256 while the primary elapsed timer is at most 960. Final attach receives the chosen target in EBX, despite misleading decompiler arguments.
+- **Limits:** Signed NEG is only an absolute-value approximation for INT_MIN; tick arithmetic wraps and comparisons are signed. Timer units and runtime reachability are not inferred here. Register ABI remains incomplete; no binary or runtime-memory modifications.
+
+### Encoded lateral score band versus deployment predicate
+
+- **Functions:** `00402d90 AddAILaneScoresForTrackLateralBounds`, `00402f70 IsVehicleOffsetOutsideEncodedSegmentBand`.
+- **Evidence:** Live function inventory, decompilation, and raw comparison/arithmetic instructions at `00402db7`/`00402dd7` versus `00402f97`/`00402fb7`. Vehicle alias added to the predicate.
+- **Behavior:** Both read segment-record byte +13 and vehicle +638. The score helper uses inclusive `[6-highNibble,7+lowNibble]`; the predicate contracts each endpoint by one to `[7-highNibble,6+lowNibble]`. Outer boundary values can therefore receive an inside score while satisfying the outside predicate. Encoding zero yields score interval `[6,7]` and an empty predicate interval `[7,6]`. Neither body reads the reverse flag.
+- **Limits:** This proves different integer thresholds, not physical width or intended hysteresis. The predicate meaningful return is EAX boolean; apparent 64-bit output includes preserved EDX and remains an ABI artifact. No executable changes.
+
+### Wrapped interval comparison domains and full-lap degeneracy
+
+- **Function:** `0040f000 CheckWrappedTrackSegmentInterval`; assignment wrapper `00402fd0`.
+- **Evidence:** Full assembly through `0040f048`; five variable aliases and decompiler readback.
+- **Behavior:** Endpoint correction uses signed comparisons and at most one wrap, but membership uses unsigned comparisons. With endpoint below start, membership is query >= start OR query <= endpoint; otherwise it is the inclusive ordinary interval. The sign of span does not reverse this membership rule. For normalized start and positive segment count, zero and plus/minus one-full-lap spans all produce endpoint equal to start and accept only that one segment.
+- **Limits:** The helper does not enforce normalized inputs or validate count. Epilogue `0040f03f` writes its original count snapshot back to the global; the decompiler omits that ordinarily redundant store. No runtime/concurrency claim or executable modification.
+
+### Wrapped delta half-lap ties and track-speed aliases
+
+- **Functions:** `0040e120 CalculateWrappedTrackSegmentDelta`, `0040ed40 GetTrackSegmentSpeedLimit`.
+- **Evidence:** Full delta assembly through `0040e15b`; fresh decompiler readback of both functions and four verified variable aliases.
+- **Behavior:** Delta is first segment minus reference, with one strict signed correction beyond plus/minus half-count. Half-count division truncates toward zero; with positive even count, exact half-lap ties preserve the original delta sign. Epilogue `0040e151` writes the initial track-count snapshot back unchanged in ordinary execution. Speed helper now names its segment input and selected limit.
+- **Limits:** Inputs/count are not validated, DWORD arithmetic can wrap, and the snapshot write is absent from pseudocode. No physical speed-unit or runtime validation added.
+
+### Relative track offset direction truth table
+
+- **Function:** `0040e160 CalculateVehicleRelativeTrackSegment`.
+- **Evidence:** Full assembly through RET `0040e1ac`; existing decompilation compared with XOR/branch instructions.
+- **Behavior:** Reverse zero negates offsets only when vehicle +621 bit10 is set; reverse one negates only when that bit is clear. The comparison uses the full reverse DWORD, so other values preserve the offset. Single-wrap branch selection uses the effective offset sign before adding the current segment. Epilogue writes the saved count back to its global.
+- **Limits:** No boolean normalization or input/count validation is performed locally. DWORD overflow and INT_MIN negation remain possible outside expected domains; this establishes arithmetic, not runtime reachability. Analysis comments only.
+
+### Lane mask saturation and preserved segment argument
+
+- **Functions:** `0040e200 GetTrackSegmentLaneMask`, `0040e220 GetClampedTrackLaneMaskBit`, `0040e270 GetAILaneBitMask`.
+- **Evidence:** Full assembly through `0040e2ac`; three selector/index/shift aliases added to the clamped helper.
+- **Behavior:** Both bit generators wrap selector+1, clamp signed to 0..15, and map ordinary lanes 0..13 to bits 14..1. INT_MAX wraps to a negative value and maps bit15. The clamped helper restores the original segment from EBX before its nested call; misleading CONCAT31 in pseudocode is not a modified segment. Raw mask reader sign-extends the lane WORD before AND, so masks with upper bits can observe the sign extension; generated low16 one-bit masks cannot.
+- **Limits:** Returns are raw masked values rather than normalized booleans. Segment bounds and exceptional selector reachability remain caller obligations; no runtime or executable edits.
+
+### Lane occupancy inward offsets and AI record aliases
+
+- **Functions:** `0040e350 UpdateVehicleLaneOccupancy`, `0040e3c0 ConfigureTrackAIParameterRecord`.
+- **Evidence:** Full assembly through `0040e3fc`; raw double bytes at `005367cc` and `005367d4`; eight record/input aliases verified by decompiler readback.
+- **Behavior:** Occupancy side samples are lateral minus half extent plus 0.5, and lateral plus half extent minus 0.5. These contract the sampled extent for ordinary positive half extent, clarifying earlier generic padding wording. Each x87 side expression is rounded to float before conversion; outputs are written sequentially. AI record inputs now distinguish cap/delay and offset-qualified unknown fields, retaining the untouched +10 field.
+- **Limits:** No local half-extent minimum or side-output sorting; physical units/orientation remain qualified. Unknown AI field semantics were not invented, and the custom ABI remains unchanged. No executable changes.
+
+### AI getter absolute displacements versus row offsets
+
+- **Functions:** `0040ec70 ReadIndexedRaceStateValue`, `0040eca0 ReadIndexedTrackAIValueWithNibbleFallback`.
+- **Evidence:** Fresh assembly reads at `0040ec84` and `0040ecb4`; current decompiler row-base expression.
+- **Behavior:** Absolute addresses 0056ef8c and 0056ef88 correspond respectively to row +0c and +08 from base 0056ef80. Replaced ambiguous historical “no +8 displacement” wording: do not add +08 twice to the absolute address, but +08 is correct relative to row base. Fallback byte base+37 is second segment record+13 at stride 24, not the vehicle current segment.
+- **Limits:** Both table paths accept signed negative selectors locally; table DWORDs are not normalized booleans. EDX preservation causes apparent 64-bit returns. Unknown row semantics and resource availability remain qualified.
+
+### Recovered indexed AI field 1C floating-point getter
+
+- **Function:** Newly recovered `0040ece0 ReadIndexedTrackAIField1CFloatWithDefault`, 51 bytes through RET `0040ed12`.
+- **Evidence:** Full raw assembly, successful Ghidra function creation, float prototype and decompiler readback. Current direct-xref query found none.
+- **Behavior:** Signed selector below 11 reads row +1c as float; otherwise returns raw default 0x41d6930c (26.821800231933594). Returns via x87 ST0 while restoring EAX/EDX. Correcting the inferred integer return restored the previously hidden computation; selected local named accordingly.
+- **Limits:** Negative selector unguarded; field units and reachability unknown. Generic calling-convention warning remains rather than inventing a source ABI. No binary modifications.
+
+### AI initializer aliases and zero-floored speed maximum
+
+- **Function:** `0040e410 InitializeTrackAITuningTables`.
+- **Evidence:** Fresh complete decompilation and existing assembly-backed setter mapping; five variable aliases applied.
+- **Behavior:** Names now distinguish speed-sample index/value, final-row traffic cap and field14 bits, and the condition-adjustment variable reused as field18. Maximum begins at zero and changes only for an ordered greater sample, so negative-only samples leave zero. Recovered row+1c getter fallback bits 41d6930c differ from ordinary initializer bits 4156930c.
+- **Limits:** The constants do not establish field units; NaNs are not normalized by the maximum scan. Custom register ABI remains incompletely recovered. Analysis metadata only.
+
+### AI speed-scale setter and getter field linkage
+
+- **Functions:** `0040ee80 GetSelectedTrackAISpeedScale`, `0040e3c0 ConfigureTrackAIParameterRecord`.
+- **Evidence:** Current getter decompilation and existing assembly-backed field selection; three aliases updated across setter/getter.
+- **Behavior:** Setter +14/+18 raw inputs now identify ordinary-skill and alternate-or-mode speed-scale bits. Getter uses +18 for modes 1/2 or nonzero AI skill selection, otherwise +14; its row byte offset now has an explicit name.
+- **Limits:** Raw DWORD setter storage remains unchanged; no unverified difficulty names or numerical tuning assumptions added. Field +1c purpose remains unresolved despite its recovered float getter. Analysis metadata only.
+
+### AI speed-buffer ownership and teardown naming
+
+- **Function:** `0040ec40 ReleaseAISpeedTableBuffer`, formerly `ReleaseRaceSessionScratchPointer`.
+- **Evidence:** Full teardown assembly through `0040ec61`, loader ownership contract, and current profile-pointer xrefs (loader write, nibble-reader read).
+- **Behavior:** Frees and clears owning speed buffer; does not clear interior profile pointer or change fallback flag. Refined name now identifies the actual resource.
+- **Limits:** Reader exclusion during teardown depends on callers; local missing invalidation is not evidence of reachable invalid access. Decompiler extraout_ECX reflects helper-preserved zero used to clear the pointer. No executable edits.
+
+### Opponent speed-factor aliases and direction sign toggles
+
+- **Function:** `00409330 CalculateOpponentDesiredSpeed`.
+- **Evidence:** Current full decompilation, nine successful factor/cap aliases, and assembly `00409449` through RET `004094a8`.
+- **Behavior:** Final desired-speed bits are sign-toggled once for any nonzero reverse DWORD and once for vehicle +621 bit10; both toggles cancel exactly, preserving payload/magnitude. This differs from relative-segment helper full-DWORD equality for noncanonical reverse values; equivalence assumes reverse 0/1.
+- **Limits:** Factor names follow established callees; merged sample/product local stays qualified. No NaN arithmetic-normalization claim or runtime validation. Executable unchanged.
+
+### AI following-speed constants named from direct consumers
+
+- **Data/function:** `005366a4 g_dblAIOppositeMotionDesiredSpeedFactor`, `005366ac g_dblAIFollowingGapSpeedScale`; `0040bff0 AdjustAISpeedForCenterLaneVehicleAhead`.
+- **Evidence:** Raw double bytes, single direct reader for each constant, and established full assembly contract. One merged correction/output local renamed.
+- **Behavior:** 0.4 scales desired speed when ordered-negative motion predicates differ; exact 0.5793742757821553 scales neighbor motion for rounded following-gap threshold. Comments retain exceptional-comparison and current-rounding qualifications.
+- **Limits:** Names reflect local arithmetic roles, not proven physical heading or units. No runtime/binary changes.
+
+### Speed-indexed acceleration aliases and unordered cap branch
+
+- **Function:** `004064f0 CalculateAISpeedIndexedAcceleration`.
+- **Evidence:** Five verified rename operations; focused raw assembly at `0040663e` through RET `004066bf`.
+- **Behavior:** Names distinguish vehicle, acceleration-table index, unwrapped relative segment delta, adjusted acceleration and returned value. Low-index category cap uses FCOMP/JBE: ordered values above 12 become 12, while unordered comparisons retain the saved value. This differs from desired-speed combined-factor unordered-to-one branch.
+- **Limits:** No new catch-up mode, tuning-unit or runtime interpretations. Floating-point exceptions and caller invariants remain qualified; executable untouched.
+
+### AI integration aliases and corrected magnitude branch wording
+
+- **Function:** `004066c0 IntegrateAIDesiredSpeedApproach`.
+- **Evidence:** Seven variable aliases; fresh assembly at `00406844` through RET `0040687d`.
+- **Behavior:** Names expose direction-adjusted error, direction float, helper result, merged register roles and magnitude-like output. Corrected inconsistent later plate sentence: FLDZ/FCOMP followed by JAE takes the sign-flip path for ordered zero/negative; ordered positive and unordered comparisons copy current-speed bits. Earlier plate sentence already described this correctly.
+- **Limits:** This is not unconditional fabs, and merged-register aliases do not repair the source ABI. Runtime and physical units remain deferred. No executable modification.
+
+### Braking magnitude variable roles and raw motion test
+
+- **Function:** `004063e0 CalculateAIBrakingMagnitude`.
+- **Evidence:** Current decompilation and retained assembly-backed plate; six variable aliases applied.
+- **Behavior:** Names distinguish direction-adjusted error, magnitude-like error, adjusted/returned braking magnitude, vehicle, and profile-return/preserved-register artifact. The motion mask test accepts any nonzero magnitude bits, including exceptional float encodings; it is not an ordered positive comparison.
+- **Limits:** Vehicle +509 meaning stays provisional. Apparent paired return is a register-preservation artifact, not a source-level 64-bit contract; no runtime or executable changes.
+
+### Catch-up factor variables and exact state domains
+
+- **Function:** `004090a0 CalculateOpponentCatchUpSpeedFactor`.
+- **Evidence:** Fresh complete decompilation, existing branch-specific assembly comments, four variable aliases applied.
+- **Behavior:** State zero selects the behind-reference policy; exact state two selects fixed-factor policy; all other nonzero values take the ahead-gap policy. The decompiler redundant unsigned comparison does not restrict that default to state one. Names distinguish vehicle, progress threshold and selected/returned factor.
+- **Limits:** Unexpected state reachability and progress units remain unknown. Threshold arithmetic retains signed DWORD wrap; no new runtime/binary changes.
+
+### Remaining unnamed viewport predicate triage
+
+- **Function:** `FUN_00422aa0`.
+- **Evidence:** Fresh decompilation and existing complete aligned assembly contract; five variable aliases applied.
+- **Behavior:** Effective camera mode, predicate result, viewport slot/byte offset and preserved-selector return artifact now have descriptive names.
+- **Limits:** Existing evidence still does not identify the exact gated rendering feature. Retained generic function name rather than reducing the unnamed count with an unsupported feature name. `FUN_0041ffd0` likewise remains deferred per its unresolved geometry contract.
+
+### Unnamed scalar-grid routine bounded triage
+
+- **Function:** `FUN_0047ae10`.
+- **Evidence:** Fresh complete pseudocode; seven arithmetic-local aliases applied.
+- **Behavior:** Visible 13x13 grid initialization/remapping, 20 in-place neighbor-adjustment passes and final color packing. Named scratch grid, pass counter, current cell, neighbor count and weighted deltas.
+- **Limits:** Full assembly/caller feature identification remains unaudited; no terrain/cloud/water identity assigned. Function name retained until stronger evidence, with explicit Ghidra triage comment. No runtime or binary changes.
+
+### Scalar-grid sky-loader context
+
+- **Functions:** `FUN_0047ae10`, `0047ac30 LoadTrackSkyResourcesForConditions`.
+- **Evidence:** Current grid xref query identifies direct caller `0047ada9`; fresh caller decompilation and its assembly-backed resource contract. Three loader aliases applied.
+- **Behavior:** Grid initializer runs after sky.fsh resource release and before final loading-abort poll. Loader variables now name resource pointer, path and driver-selected descriptor mode.
+- **Limits:** Sky initialization context narrows the domain but does not identify a precise visual layer or justify a geometry algorithm name. Grid function remains generic pending assembly/consumer audit. No executable edits.
+
+### Constant-zero leaf renamed after independent audit
+
+- **Function:** `00450fd0 ReturnZeroCallbackLeaf`, formerly `FUN_00450fd0`.
+- **Evidence:** Parent and Luna full five-instruction assembly review; current data xref at 005560a8.
+- **Behavior:** Returns EAX zero, preserves other general registers and changes flags via XOR. Name describes the verified operation; callback subsystem remains unknown.
+- **Limits:** No direct calls observed in current xrefs, not proof of inactivity. Luna retained FUN_00441cb0 because shared-tail ownership is unresolved and FUN_00459670 because compound frontend rectangle/descriptor behavior needs deeper review. Executable unchanged.
+
+### Unnamed visual orientation routine local names
+
+- **Function:** `FUN_0047f090`.
+- **Evidence:** Fresh pseudocode and existing bounded assembly contract; seven context/matrix/angle aliases applied.
+- **Behavior:** Names identify visual context, template-copy cursors/scratch, the two known rotation-helper outputs and adjusted turn value.
+- **Limits:** Complete orientation meaning and packed basis contract remain unresolved, so function name is retained and no deeper Astra analysis attempted. Existing contextual evidence is preserved; executable unchanged.
+
+### Vector-based force-feedback preparation renamed
+
+- **Function:** `00471270 PrepareVectorBasedForceFeedbackSlot0Update`, formerly FUN_00471270.
+- **Evidence:** Luna interface triage and parent full aligned assembly review, readiness branch at 00471290 and sole update call at 00471428.
+- **Behavior:** Readiness-gated relative-vector/matrix calculation prepares direction and two intensity-derived integer parameters for the established slot0 submit helper. The operation-based name avoids asserting a precise contact class or coordinate orientation.
+- **Limits:** Exact angle wrapping, exceptional x87 semantics and intensity units remain deferred; original ABI retained. No runtime or binary changes.
+
+### Two verified no-op leaves classified by operation
+
+- **Functions:** `00422c80 NoOpLeaf_00422c80`, `00482610 NoOpLeaf_00482610`.
+- **Evidence:** Fresh full raw assembly of both five-byte routines; current incoming-reference queries returned none.
+- **Behavior:** Balanced EBP frame and RET only, preserving registers/flags with no payload accesses or calls. Address suffixes distinguish identical operations without inventing subsystem identities.
+- **Limits:** Unknown runtime reachability and subsystem purpose remain explicit. These descriptive names classify trivial behavior rather than establish new game-feature understanding. Executable unchanged.
+
+### Unnamed HUD tile loop variables
+
+- **Function:** `FUN_00489240`.
+- **Evidence:** Fresh complete decompilation and established bounded assembly/consumer plate; nine local aliases applied.
+- **Behavior:** Tile width/height, current left/top, unclipped right/bottom, viewport bounds and descriptor index now have clear names, exposing nested tiling and edge clipping.
+- **Limits:** Exact visual surface remains unproven; function name retained. Pointer capacities, tile increments and raw unsigned bound storage remain qualified. No runtime/binary changes.
+
+### Third empty leaf classified consistently
+
+- **Function:** `0048cae0 NoOpLeaf_0048cae0`, formerly FUN_0048cae0.
+- **Evidence:** Parent and Luna complete five-byte assembly audit; fresh xref query found none.
+- **Behavior:** Balanced EBP frame and immediate return; no computed result or payload effects, registers and flags preserved.
+- **Limits:** Operation-based name only; subsystem and runtime reachability remain unknown. Larger neighboring geometry functions stay deferred. Executable unchanged.
+
+### Spatial color contribution count versus vehicle count
+
+- **Function:** `FUN_004b97b0`.
+- **Evidence:** Fresh complete pseudocode and existing assembly-verified final reducer; ten variable aliases applied.
+- **Behavior:** The denominator counts accepted contributions, not unique vehicles. Successful +734 contribution falls through to +660 evaluation and can contribute twice; a present +734 path failing its geometry tests skips +660 for that candidate. Names expose RGB sums, count, vehicle scan and packed result.
+- **Limits:** Geometry and exceptional arithmetic remain deferred; this flow observation does not establish exact light classes. No executable or runtime-memory changes.
+
+### Memory-pool diagnostic exit no-op classified
+
+- **Function:** `00497cb0 NoOpMemoryPoolDiagnosticsExitHook`, formerly FUN_00497cb0.
+- **Evidence:** Parent/Luna complete five-byte leaf audit and current direct caller 00497b88 in RunInteractiveMemoryPoolDiagnostics.
+- **Behavior:** Empty balanced-frame leaf preserves registers and flags; name records the observed exit-call context.
+- **Limits:** Original intended hook purpose remains unknown; no cleanup effect inferred. Executable unchanged.
+
+### MMX pair interpolation interface variables
+
+- **Function:** `FUN_00527290`.
+- **Evidence:** Current pseudocode and existing complete aligned assembly contract; nine parameter/state aliases applied.
+- **Behavior:** Count, source/output, cursor/phase state pointers, steps and live accumulators now have operation-based names. The existing plate preserves carry propagation, signed saturation and minimum-one-iteration behavior.
+- **Limits:** Exact lane format and MMX/x87 lifecycle remain deferred; generic function name retained and no ABI/type rewrite attempted. Executable unchanged.
+
+### MMX byte-output loop interface and counter overflow caveat
+
+- **Function:** `FUN_005270f0`.
+- **Evidence:** Parent full aligned assembly through 0052716f and Luna triage; nine parameter/state aliases applied.
+- **Behavior:** Byte-output loop updates phase with ADD and cursor with ADC, preserving carry; incoming MM0 participates in unpacking. PUSHAD/POPAD restores general registers; no scalar return or EMMS.
+- **Limits:** INT_MIN count DEC wraps to INT_MAX but sets OF, so JG remains false; all signed counts <=1 perform one iteration. Preserve flags when translating this loop. Exact packed sample/weight format and lifecycle remain deferred; no runtime or binary changes.
+
+### MMX overlapping output stores and buffer extent
+
+- **Function:** `FUN_00527170`.
+- **Evidence:** Full parent assembly through 0052720c, Luna triage and nine interface/state aliases.
+- **Behavior:** Reads overlapping DWORDs at word-indexed source and +2; stores DWORD while advancing output by two bytes. For positive N and valid nonwrapping pointers, touched output extent is 2*N+2 bytes. MOVD between phase ADD and cursor ADC preserves carry.
+- **Limits:** Final extra two bytes require caller allocation/padding evidence before drawing a defect conclusion. Incoming MM0 and MMX/x87 lifecycle remain qualified; function name retained. No runtime/binary writes.
+
+### Phase-weighted MMX word-output loop named
+
+- **Function:** `00527210 ProcessPhaseWeightedWordOutputMMX`, formerly FUN_00527210.
+- **Evidence:** Complete 128-byte assembly through RET 0052728f; nine interface/state aliases.
+- **Behavior:** Signed-word PMADDWD with phase-derived weights, logical shift 15 and low-word output; no saturating pack. MOVD initializes MM0 locally, unlike neighboring byte-output routines. Phase/cursor update uses ADD/ADC.
+- **Limits:** Operation-based name leaves channel format, coefficient precision and lifecycle unresolved. Does not assert ideal interpolation semantics; no runtime/binary writes.
+
+### Saturated MMX word-pair output routine named
+
+- **Function:** `00527290 ProcessSaturatedPairOutputMMX`, formerly FUN_00527290.
+- **Evidence:** Fresh full aligned assembly through RET 00527326; prior complete mechanics plate retained.
+- **Behavior:** Phase-derived word weights drive signed PMADDWD, arithmetic shift 15 and PACKSSDW; low DWORD contains two saturated output words and output advances four bytes. Incoming MM1 affects only discarded upper packed words.
+- **Limits:** Name describes instruction-level operation, not audio channel format or ideal interpolation equivalence. Existing bounds/lifecycle qualifications retained; executable unchanged.
+
+### MMX overlap accommodated by caller scalar tail
+
+- **Function:** `FUN_0051fcfc`, caller of FUN_00527170.
+- **Evidence:** Fresh full caller pseudocode and established helper output-extent contract; six state/source/tail aliases applied.
+- **Behavior:** For original N>=2, caller passes N-1 to bulk helper: its 2*(N-1)+2 touched bytes equal nominal 2*N output extent. Scalar tail overwrites the final pair. This narrows the earlier output-padding question for this caller.
+- **Limits:** Actual allocation size, invalid count domains and source prefix/history margins remain unproved. Full scalar format math deferred; no runtime or executable edits.
+
+### Second MMX wrapper history-prefix distinction
+
+- **Function:** `FUN_0051fe30`.
+- **Evidence:** Fresh complete pseudocode comparison with 0051fcfc and known helper contract; six aliases applied.
+- **Behavior:** Resets cursor, processes N-1 bulk pairs and writes scalar tail. Two independent history flags can prepend two cached pairs, moving source back four bytes when both are set.
+- **Limits:** Prefix storage and actual output allocation remain caller contracts; full scalar/format math deferred. Findings explicitly pseudocode-derived pending independent assembly corroboration. No binary changes.
+
+### Source-history prefix assembly corroboration and handoff inventory
+
+- **Function:** `FUN_0051fe30`.
+- **Evidence:** Parent assembly 0051ff62..0051ff70 and 0051fe30..0051fe72; ESI derives from source input, with two conditional backward pairs.
+- **Behavior:** Confirms earlier pseudocode-derived original-source [-4..-1] writes when both history flags are set, followed by cursor reset.
+- **Limits:** Allocation margins and numerical format remain unproved. SCRATCHPAD generic inventory refreshed from live Ghidra: 4,017 functions, 67 FUN names; detailed findings remain here and in Ghidra. Executable unchanged.
+
+### Exact-slot runtime callback wrapper named
+
+- **Function:** `0052ed20 InvokeRuntimeCallbackSlot00567853`, formerly FUN_0052ed20.
+- **Evidence:** Complete seven-byte assembly CALL [00567853]; RET and existing bounded interface plate.
+- **Behavior:** Forwards ambient state to the indirect slot without setup or validation; returns only if callback returns. Name identifies dispatch operation/slot without assigning an exception-handler subtype.
+- **Limits:** Target lifecycle, signature and specific callback role remain unresolved. Stateful numerical recurrence 0052b300 remains explicitly deferred. No executable changes.
+
+### Runtime callback slot and default no-op named together
+
+- **Data/function:** `00567853 g_pfnRuntimeCallbackSlot00567853`, `004ff620 NoOpDefaultRuntimeCallback`.
+- **Evidence:** Current slot xrefs/initial-target annotation and raw single-byte RET at default target.
+- **Behavior:** Slot now has a callback-pointer name matching the dispatch wrapper; default target name describes its initial binding and no-op operation.
+- **Limits:** No specific exception-handler subtype assigned; absence of recorded slot writers does not prove immutability. No binary changes.
+
+### Arithmetic-only page traversal variable names
+
+- **Function:** `FUN_005011a0`.
+- **Evidence:** Fresh pseudocode and existing complete assembly plate; six traversal/extent aliases applied.
+- **Behavior:** Names distinguish base, capped extent reused as page count, aligned/ backward cursors and iteration counts. Existing annotation explicitly records that the apparent touchmempages loop does not dereference pages.
+- **Limits:** No page-touch/prefetch/locking behavior inferred from source strings. Purpose and caller contracts remain deferred; executable unchanged.
+
+### Input/modal constant-zero stub named
+
+- **Function:** `004feffc ReturnZeroInputAndModalStub`, formerly FUN_004feffc.
+- **Evidence:** Parent/Luna complete XOR EAX,EAX; RET audit and known cursor/mouse/modal callers.
+- **Behavior:** Returns zero, preserves other GPRs and changes flags. Name distinguishes observed caller domains from other zero-return leaves.
+- **Limits:** No original runtime API identity inferred. Compiler exception-scope fragments 004f7b7d/004f7b8c retain generic names because their shared frame ownership needs separate treatment. No binary changes.
+
+### Packed-nibble raster compositor interface triage
+
+- **Function:** `FUN_00518870`.
+- **Evidence:** Fresh complete pseudocode; eleven addressing/loop aliases applied.
+- **Behavior:** Names expose destination coordinates, source row/pixel offset, packed-byte stride/count and word destination. Visible 16/15-bit blend paths, delegated 8-bit rows and clipped pixel fallback retained.
+- **Limits:** Full packed-alpha arithmetic, odd/zero dimensions and clipping contracts need assembly/caller audit; generic function name retained. No executable or runtime-memory changes.
+
+### Sound-service and shared-runtime RET leaves classified
+
+- **Functions:** `004e257c NoOpSoundVoiceServiceHook`, `004ff0f4 NoOpSharedRuntimeHook`.
+- **Evidence:** Parent/Luna complete single-byte RET verification; sound-service and heterogeneous runtime caller contexts.
+- **Behavior:** Both preserve registers/flags and perform no local payload work. Names classify observed no-op operations and call domains.
+- **Limits:** Original hook identities remain unknown; no cleanup, locking or callback dispatch inferred. Executable unchanged.
+
+### Compiler scope success epilogue fragment labeled explicitly
+
+- **Entry:** `004f7b8c CompilerScopeDispatchSuccessEpilogue`, formerly FUN_004f7b8c.
+- **Evidence:** Parent/Luna complete MOV EAX,1 and register-pop/RET fragment audit; established predecessor branches.
+- **Behavior:** Name identifies a shared success epilogue consuming the parent saved-register frame. Alternate entry +5 preserves carried EAX.
+- **Limits:** This remains a fragment represented as a function by the existing database; no boundary or ABI repair, and no independent-call claim. Naming coverage includes these entries. Executable unchanged.
+
+### Compiler scope handler-result continuation labeled
+
+- **Entry:** `004f7b7d CompilerScopeHandlerResultContinuation`, formerly FUN_004f7b7d.
+- **Evidence:** Parent fresh aligned fragment assembly and prior complete parent scope graph annotation, independently triaged by Luna.
+- **Behavior:** Restores carried handler state then dispatches handler EAX result: -1 to restore epilogue, zero to predecessor scope, other values to cleanup path.
+- **Limits:** Shared continuation, not independently callable API; existing database boundaries retained. No original handler policy semantics inferred beyond branches. Executable unchanged.
+
+### Pool-address lookup candidate variables
+
+- **Function:** `FUN_00509c00`.
+- **Evidence:** Fresh complete pseudocode and existing assembly-backed sentinel caveat; four aliases applied.
+- **Behavior:** Names identify query address, node, pool index and carried payload candidate.
+- **Limits:** Generic name retained: zero-node flag access and sentinel invariants remain unresolved, so no safe conventional allocation-lookup contract asserted. Packed decoder 0050ed50 remains Astra-deferred. No executable changes.
+
+### Runtime formatting conversion interface aliases
+
+- **Function:** `FUN_004fe9d4`.
+- **Evidence:** Fresh full pseudocode; five variable aliases applied for visible conversion dispatch and cursor/string roles.
+- **Behavior:** Names expose conversion character, format state, argument cursor pointer, text/output cursor and measured byte count.
+- **Limits:** No complete printf conformity, segmented-pointer ABI or multibyte contract asserted. Numeric division entries 0052643c/0052648f remain deferred for deeper numerical review. No executable changes.
+
+### Playback-pose geometry detail triage
+
+- **Function:** `FUN_004b9df0`.
+- **Evidence:** Fresh complete pseudocode; three detail-selection/optional-mode aliases and explicit bounded Ghidra plate.
+- **Behavior:** Successful playback pose plus resource gates precede three strict detail thresholds; bands 0/1 queue five part submissions, bands 2/3 one.
+- **Limits:** Full ABI, resource identity and metric arguments remain unresolved; no whole-function name or runtime geometry claim. Executable unchanged.
+
+### Constant minus-one and one leaves classified
+
+- **Functions:** `004d56c0 ReturnMinusOneLeaf004D56C0`, `004df380 ReturnOneLeaf004DF380`.
+- **Evidence:** Parent/Luna complete ten-byte balanced-frame assembly audit.
+- **Behavior:** Return EAX ffffffff and 1 respectively, preserving other general registers and flags. Address-qualified names describe operations only.
+- **Limits:** No success/failure/sentinel interpretation or subsystem identity established. Executable unchanged.
+
+### Zero-nibble scanner named with unbounded admission caveat
+
+- **Function:** `004d19b0 ScanPackedBytesUntilZeroNibble`, formerly FUN_004d19b0.
+- **Evidence:** Parent complete assembly through RET004d19ff, Luna independent triage and six variable aliases.
+- **Behavior:** Admitted scan tests both nibbles, advances byte cursor until either is zero. Width-like input controls read admission rather than a per-row width boundary; ordinary positive values do not bound scan length.
+- **Limits:** Existing unusual loop/negative-domain caveats retained. No bounds-safety, intended transparency policy or reachable-defect claim; executable unchanged.
+
+### Renamed leaf comment consistency
+
+- **Entries:** 004d56c0, 004df380, 004e257c and 004ff0f4.
+- **Evidence:** Current Ghidra plate readback compared with applied operation-based names.
+- **Behavior:** Removed stale “generic name retained” wording while preserving all unknown purpose/reachability caveats.
+- **Limits:** Comment consistency only, no additional subsystem understanding or executable changes.
+
+### Signed-byte phase-weighted block wrapper named
+
+- **Function:** `0051f9ac GeneratePhaseWeightedSignedByteBlockWithTail`, formerly FUN_0051f9ac.
+- **Evidence:** Parent full assembly through 0051fa7c, Luna independent review and five interface aliases.
+- **Behavior:** Optional source-history prefix, N-1 MMX bulk outputs and scalar weighted signed-byte tail. Final cursor state is overwritten from pre-flag-write state+10 signed byte, not simply retained as the advanced index.
+- **Limits:** Count admission, history margins and state schema remain unresolved; no ideal interpolation or stream-format claim. Executable unchanged.
+
+### Cached-history signed-byte block variant named
+
+- **Function:** `0051fa8c GenerateCachedHistorySignedByteBlock`, formerly FUN_0051fa8c.
+- **Evidence:** Parent full-body assembly review and Luna triage; five interface aliases applied.
+- **Behavior:** Up to two source prefix bytes, reset cursor, MMX bulk and weighted scalar tail. Retains advanced cursor; unsigned truncated-phase versus full-step comparison controls extra cached-byte flag, distinguishing 0051f9ac.
+- **Limits:** Count and buffer admission, exact state format and MMX/x87 lifecycle remain deferred. Executable unchanged.
+
+### Pool payload candidate lookup named with sentinel limits
+
+- **Function:** `00509c00 FindPoolPayloadCandidateForAddress`, formerly FUN_00509c00.
+- **Evidence:** Fresh full local assembly through RET00509c4d.
+- **Behavior:** Scans pool-linked payload ranges and flags, returning candidate or zero; operation-based candidate name preserves the distinction from a proven safe allocation query.
+- **Limits:** Zero-node flag access and carried payload value remain explicitly documented; no conventional sentinel behavior or invalid-address safety claimed. No boundary/ABI or executable changes.
+
+### Signed-word output wrapper interface triage
+
+- **Function:** `FUN_005200ec`.
+- **Evidence:** Fresh full pseudocode, established MMX helper contract, five interface aliases.
+- **Behavior:** Cached word source prefix and N-1 bulk outputs precede scalar tail with two sequential writes to the final output word.
+- **Limits:** Independent full assembly audit pending with Luna; no function rename yet. Count admission, precise truncation and state ownership remain qualified. Executable unchanged.
+
+### Signed-word block wrapper named after assembly verification
+
+- **Function:** `005200ec GeneratePhaseWeightedSignedWordBlockWithTail`, formerly FUN_005200ec.
+- **Evidence:** Parent full assembly and Luna independent audit through005201d4.
+- **Behavior:** Confirms sequential tail-word truncation and stores. Prefix target is source minus two bytes (ESI from third argument), correcting the worker initial output-prefix description. Cursor is ultimately overwritten from signed state byte +12 before +11 flag publication.
+- **Limits:** Buffer margins, count admission and state format remain unresolved; no binary changes.
+
+### Cached-word history variant interface triage
+
+- **Function:** `FUN_005201e4`.
+- **Evidence:** Fresh full pseudocode and five interface aliases.
+- **Behavior:** Two cached-word prefix flags, cursor reset, bulk plus scalar tail and retained advanced cursor distinguish the variant from005200ec.
+- **Limits:** Independent assembly audit assigned to Luna; no function rename yet. Buffer margins, count admission and format unresolved. Executable unchanged.
+
+### Cached-word output wrapper named after full review
+
+- **Function:** `005201e4 GenerateCachedHistorySignedWordBlock`, formerly FUN_005201e4.
+- **Evidence:** Parent full assembly through005202f9 and Luna independent audit.
+- **Behavior:** Both cached prefixes target source, confirmed by ESI/EDX origin; full review corrects the worker initial output-prefix wording. Cursor reset/retention and unsigned extra-cache gate distinguish the variant.
+- **Limits:** History name describes cache mechanics; stream schema, allocation and count admission remain unknown. Executable unchanged.
+
+### Paired-word wrapper interface triage
+
+- **Function:** `FUN_0052046c`.
+- **Evidence:** Fresh complete pseudocode and five interface aliases.
+- **Behavior:** Two-word cached prefix and pair-indexed source feed bulkN-1 plus scalar final pair. Tail performs sequential low-word stores, while bulk helper packs with saturation.
+- **Limits:** Bulk/tail numerical equivalence and channel identity not asserted; full assembly audit pending with Luna. Executable unchanged.
+
+### Signed-word pair wrapper with packed cursor cache named
+
+- **Function:** `0052046c GenerateSignedWordPairsWithPackedCursorCache`, formerly FUN_0052046c.
+- **Evidence:** Parent and Luna full aligned assembly review.
+- **Behavior:** Cached source pair prefix, N-1 bulk outputs and scalar final pair; each tail component truncates/stores separately. Final cursor is overwritten from signed state byte +16, before +15 flag write.
+- **Limits:** No stereo/channel interpretation or bulk-tail numerical equivalence; bounds/count admission unresolved. Executable unchanged.
+
+### Signed-word pair wrapper with retained phase-carry cache
+
+- **Function:** `005205bc GenerateSignedWordPairsWithPhaseCarryCache`, formerly FUN_005205bc; five interface/scratch aliases applied.
+- **Evidence:** Parent full aligned assembly review through0052073e and independent Luna audit; fresh Ghidra pseudocode.
+- **Behavior:** Flags +15/+14 prepend cached pairs to writable source, up to eight preceding bytes. Resets cursor, generates N-1 bulk pairs plus scalar tail for admitted positive N. Scalar lanes truncate/store/reload before adding the second weighted term. Retains advanced cursor; unsigned truncated phase versus full step controls extra cache +0c/+0e and flag +14. Both exits set +15.
+- **Limits:** Source margins, count admission, channel identity and bulk-tail numerical equivalence remain unknown. Scalar has no bulk PACKSSDW saturation. No runtime or executable changes.
+
+### Recovered word-pair phase-step dispatch setter
+
+- **Function:** `00520740 SetWordPairPhaseStepAndDispatch`, newly recovered standalone163-byte body; state/new-step aliases applied.
+- **Evidence:** Full aligned assembly00520740-005207e2, data reference00520819 and refreshed pseudocode.
+- **Behavior:** Stores unsigned step+8 and selects indirect callback pairs for below/equal/above0x10000. Changed steps clear cursor, phase and flags+14/+15/+16 except when both values are strictly below or both strictly above threshold. Unchanged values preserve history. Returns zero.
+- **Limits:** Callback ABI, state extent and caller admission unresolved. Function recovery changes analysis metadata only; executable unchanged.
+
+### Phase-weighted MMX byte and overlapping output helpers named
+
+- **Functions:** `005270f0 ApplyPhaseWeightedMMXByteOutput`; `00527170 ApplyPhaseWeightedMMXOverlappingDwordOutput`.
+- **Evidence:** Parent full aligned assembly review and independent Luna audit; supplementary repeatable comments preserve existing plate analysis.
+- **Behavior:** Both consume incoming MM0 without initialization, preserve GPRs and advance cursor with phase carry. First writes one byte per iteration; second writes four bytes with stride two, touching2N+2 bytes for positive N. Do-first DEC/JG executes once for signed counts<=1, including INT_MIN because overflow prevents JG.
+- **Limits:** Names describe mechanics only. Source/channel format, caller MMX/x87 lifecycle and allocation remain unresolved; no EMMS or scalar result. No runtime or executable changes.
+
+### Protocol dispatcher input and ABI triage
+
+- **Function:** `FUN_005133a0`; four context/tag/payload/reply-scratch aliases added.
+- **Evidence:** Fresh complete pseudocode, entry assembly005133a0-0051344f, direct call reference00514fd7.
+- **Behavior:** EAX context copied to ESI and context+10 to EBP; EBX unsigned tag dispatch includes EA6E6F21/EA627965/EA616464. Entry saves incoming ECX/EDX/EBX and reads first stack argument; shown exits RET4.
+- **Limits:** Current two-parameter fastcall pseudocode omits actual register/stack inputs. Full branch, payload extent and callback/lifetime audit remains outstanding; no whole-function rename or ABI replacement. No runtime or executable changes.
+
+### Signed-byte pair cache variants named
+
+- **Functions:** `0051fcfc GenerateSignedBytePairsWithPackedCursorCache`; `0051fe30 GenerateSignedBytePairsWithPhaseCarryCache`.
+- **Evidence:** Parent full aligned body reviews and independent Luna audit. Existing aliases retained; repeatable comments supplement prior evidence.
+- **Behavior:** N-1 overlapping MMX outputs plus scalar final pair for admitted positive N. Scalar signed-byte products wrap32 bits, logically shift16, sum and arithmetically shift8 before low-byte stores. First variant prepends one cached source pair and overwrites final cursor from signed state byte+12. Second can prepend two pairs, resets initial cursor, retains advanced cursor and uses unsigned truncated-phase versus full-step gate for extra cache.
+- **Limits:** Prefixes modify source, not output. Channel format, buffer margins, count admission, MMX lifecycle and bulk-tail numerical equivalence remain unresolved. No runtime or executable changes.
+
+### Packed signed high-word accumulation helper triage
+
+- **Function:** `FUN_0051f897`; four multiplier/count/source/destination aliases applied.
+- **Evidence:** Full aligned assembly0051f897-0051f92f and current pseudocode; independent Luna audit requested.
+- **Behavior:** Four actual stack arguments; preserved GPRs make apparent scalar return/register inputs decompiler artifacts. Positive N processes N DWORD pairs with signed PMULHW then PADDSW in-place accumulation: four QWORDs per eight-count batch, DWORD remainder. Multipliers repeat four WORD lanes per bulk QWORD, low two per remainder DWORD.
+- **Limits:** No EMMS or nonpositive-count early return. Caller count admission, allocation and MMX/x87 lifecycle unresolved. Whole-function name awaits independent audit; executable unchanged.
+
+### Dual-multiplier interleaved accumulation triage
+
+- **Function:** `FUN_0051f7ad`; four multiplier/count/source/destination aliases.
+- **Evidence:** Complete aligned assembly0051f7ad-0051f842 and fresh pseudocode.
+- **Behavior:** Positive N source WORDs produce N accumulated DWORD pairs using signed high-word multiplication by two coefficient vectors, interleaving and signed saturating addition. Bulk handles four source words; tail stores only low interleaved pair, excluding preserved upper EAX bits from MOV AX.
+- **Limits:** Four stack arguments and preserved GPRs contradict apparent fastcall scalar-return artifacts. No EMMS or nonpositive-count early return. Format, bounds and caller admission unknown; name retained pending further review. Executable unchanged.
+
+### Signed high-word accumulator named after independent review
+
+- **Function:** `0051f897 AccumulateSignedHighWordProductsMMX`, formerly FUN_0051f897.
+- **Evidence:** Parent and independent Luna complete assembly reviews agree on PMULHW/PADDSW and positive DWORD-count contract.
+- **Behavior:** Mechanical name now applied; existing plate and interface aliases retained.
+- **Limits:** Zero enters bulk then tail, so worker observation of eight bulk entries does not establish total zero-count extent. Caller count admission and MMX lifecycle remain unresolved; executable unchanged.
+
+### Byte-pair accumulation incoming-MMX dependency
+
+- **Function:** `FUN_0051f6c7`; four interface aliases added.
+- **Evidence:** Full aligned assembly0051f6c7-0051f74c and pseudocode.
+- **Behavior:** Positive N consumes2N source bytes and updates2N destination WORDs with PMULHW/PADDSW. Bulk unpack reads incoming MM4/MM5 and feeds them back; tail explicitly builds bytes[0,src0,0,src1].
+- **Limits:** Bulk unpack is not proven zero-extension, nor bulk/tail numerically equivalent. Four stack arguments, preserved GPRs, no scalar output/EMMS/nonpositive-count early return. Caller MMX state, count admission and bounds unresolved; executable unchanged.
+
+### Interleaved signed high-word accumulator named
+
+- **Function:** `0051f7ad MixDualMultiplierInterleavedWordPairsMMX`, formerly FUN_0051f7ad.
+- **Evidence:** Independent Luna complete review corroborates parent assembly and positive-count extents.
+- **Behavior:** N source WORDs update N destination DWORD pairs through two multiplier vectors, interleaved signed high products and signed saturating addition. Tail stored low DWORD excludes high EAX bits.
+- **Limits:** Nonpositive-count admission, array overlap and MMX lifecycle unresolved. Operation-based name avoids channel/format inference. Executable unchanged.
+
+### Byte-to-pair dual-multiplier accumulation triage
+
+- **Function:** `FUN_0051f5dd`; four multiplier/count/source/destination aliases added.
+- **Evidence:** Complete aligned assembly0051f5dd-0051f67d and pseudocode.
+- **Behavior:** Positive N source bytes update N destination DWORD pairs through two signed high-word product vectors, interleave and saturating accumulation. Bulk unpack consumes incoming MM6; scalar tail explicitly supplies source byte<<8.
+- **Limits:** Bulk/tail equivalence, incoming MMX lifecycle, format/count admission and allocation unresolved. Four stack args and preserved GPRs explain scalar-return artifacts; no EMMS. Executable unchanged.
+
+### Deferred x87 angle-helper dispatch contract
+
+- **Function:** `FUN_0051f320`.
+- **Evidence:** Fresh pseudocode and aligned entry0051f320-0051f3bb.
+- **Behavior:** Spills incoming ST0/ST1 as80-bit values, tests significand integer bits/exponents, loads absolute operands and installs control word(old|0x033f)&0xf3ff before helper00526aeb(EAX=15). Pseudocode reports FPATAN fallback and unresolved table0056cb38 at0051f479.
+- **Limits:** Table targets, control-word restoration, exceptional values and x87 result ordering need complex review; no whole-function naming or ABI rewrite. Executable unchanged.
+
+### Stateful byte-pair MMX mixer named
+
+- **Function:** `0051f6c7 MixBytePairsWithStatefulMMXUnpack`, formerly FUN_0051f6c7.
+- **Evidence:** Independent Luna assembly audit corroborates parent complete review.
+- **Behavior:** Mechanical name preserves incoming-MM4/MM5 dependency. Zero count locally executes one bulk and one tail pair, touching10 source bytes and20 destination bytes.
+- **Limits:** Count admission/allocation unknown; this is not proof of reachable overrun. Source/channel format and MMX lifecycle remain unresolved. Executable unchanged.
+
+### x87 operation dispatch table identified
+
+- **Function/data:** `FUN_00526aeb`; `0056ccdc g_apX87OperationDispatchTargets`.
+- **Evidence:** Entry SUB ESP,2c / JMP[EAX*4+table], first16 raw DWORD entries through0056cd1b, caller0051f3b6 selects15 ->00526b9f.
+- **Behavior:** Targets own cleanup; indirect CALL/return pseudocode is misleading. Early targets contain divide/reverse/pop x87 variants and INT6 paths.
+- **Limits:** Observed16-entry boundary is not full table extent. Selector admission, stack/exception contracts and complete targets deferred with angle-helper investigation. Metadata only; executable unchanged.
+
+### Stateful dual-coefficient byte mixer named
+
+- **Function:** `0051f5dd MixBytesIntoDualCoefficientPairsWithStatefulUnpackMMX`, formerly FUN_0051f5dd.
+- **Evidence:** Independent Luna full-body audit corroborates parent; first stack argument points to both multiplier QWORDs at+0/+8, second is count.
+- **Behavior:** Name retains incoming-MM6 bulk dependency. Zero count executes one bulk plus one tail, reading5 source bytes and updating20 destination bytes locally.
+- **Limits:** Caller admission/allocation unresolved, so local zero behavior is not a reachable-defect claim. Format and MMX lifecycle remain unknown; executable unchanged.
+
+### Vehicle wheel-response orchestration interface triage
+
+- **Function:** `FUN_004ad7a3`; incoming/saved vehicle, profile pointer and wheel-index aliases added.
+- **Evidence:** Complete current pseudocode and aligned entry004ad7a3-004ad85b.
+- **Behavior:** Entry transposes vehicle+190 to scratch, loads profile+528 and clears+4e0/+4e4/+4e8. Pseudocode contains four-wheel response loops and later damping004aea88.
+- **Limits:** Large scratch frame is split into apparent arrays; pseudocode array-bound appearances do not prove stack overflow. Numerical branches, scratch layout and physical units remain complex deferred work; no semantic function rename. Executable unchanged.
+
+### Vehicle render color and track-probe interface triage
+
+- **Function:** `FUN_004ba350`; six vehicle/context/color/segment aliases applied.
+- **Evidence:** Fresh full pseudocode, entry004ba350-004ba3cc, four named vehicle-part renderer call references.
+- **Behavior:** EAX context, EDX vehicle and saved EBX color feed position/segment side-nibble probes; later pseudocode performs RGB/HSV transformations and geometry packed-color application.
+- **Limits:** Whole probe/helper-preservation and color/return contract remain unaudited; current fastcall signature omits inputs. No semantic rename or executable changes.
+
+### x87 division helper return-contract correction
+
+- **Function:** `FUN_005269d4`.
+- **Evidence:** Full aligned instructions005269d4-00526aea; current pseudocode incorrectly presents uint return and integer classification flow.
+- **Behavior:** Loads80-bit operands from caller stack+10/+4; shown exits execute FDIVP producing x87 result. Selected scaling branches temporarily change control word and restore saved word before division/reclassification. Scratch+1c/+20 belongs to caller frame.
+- **Limits:** Numerical/exception contract, byte table meaning and exact ABI remain deferred; no prototype rewrite or semantic function rename. Executable unchanged.
+
+### Viewport vehicle/camera rendering predicate named mechanically
+
+- **Function:** `00422aa0 CheckViewportVehicleAndCameraRenderGate`, formerly FUN_00422aa0.
+- **Evidence:** Parent complete aligned body review and independent Luna body/caller audit; five HUD/layout/race-render call references.
+- **Behavior:** Existing tick/vehicle/global/camera predicate is now named by tested inputs and rendering caller role. Fast-true global bypasses camera tests after vehicle/tick gate.
+- **Limits:** Exact HUD feature and uniform caller selector intent remain unproven; one caller leaves vehicle pointer in EAX. Earlier retain-generic naming decision superseded only mechanically; no new feature/ABI claim. Executable unchanged.
+
+### Procedural grid coordinate labels clarified
+
+- **Data:** `006ff9fc g_afProceduralGridPointCoordinates`, `006ff170 g_afProceduralGridCellCoordinates`, `006ff178 g_dwProceduralGridFirstCellPackedColor`.
+- **Evidence:** Fresh0047ae10 pseudocode and aligned entry arithmetic;13x13 iteration with12-byte record stride.
+- **Behavior:** Cell records contain float row/column plus packed color+8. Point records carry three coordinate components. First packed color label is an interior record field, not contiguous independent color array.
+- **Limits:** No new structure type or full-array definition; downstream schema and exact visual feature unproven. Function remains generic pending full numerical audit. Executable unchanged.
+
+### Arithmetic-only aligned-range routine named
+
+- **Function:** `005011a0 IteratePageAlignedRangeArithmetic`, formerly FUN_005011a0.
+- **Evidence:** Parent and independent Luna complete body reviews; caller AllocateAndInitializeCdStreamStorage.
+- **Behavior:** Name describes aligned cursor arithmetic and bounded backward scans; loops have no target-page accesses. EAX base/EDX extent, no stack arguments, EAX/EBX/EDX scratch.
+- **Limits:** Source touchmempages label does not establish actual touching. Intended purpose/domain remain unknown; earlier generic-name decision superseded mechanically only. Executable unchanged.
+
+### Double-bit multiplication helper input aliases
+
+- **Function:** `FUN_005267ff`; four operand-half aliases applied.
+- **Evidence:** Entry005267ff-00526858 establishes EDX:EAX and ECX:EBX inputs; probe-enabled FLD/FMUL jumps shared tail00526674.
+- **Behavior:** Aliases capture initial bit-pair roles; variables later mutate for normalization.
+- **Limits:** Probe-disabled integer math, rounding/underflow/exceptions and complete return ABI remain complex deferred work. No function rename/prototype rewrite or executable changes.
+
+### Procedural grid final packing and base distinction verified
+
+- **Function/data:** `FUN_0047ae10`, grid cell color006ff178 and coordinate middle field006ffa00.
+- **Evidence:** Parent aligned final loop0047b235-0047b347, independent Luna packing audit with base attribution corrected by parent.
+- **Behavior:** ESI=006ff170+12*(13*ECX+EDX), EDI=006ff9fc+same offset. Color store[ESI+8] writes169 cell colors; height store[EDI+4] updates separate coordinate grid. Mask01e0 clear replicates low byte across4 lanes; nonzero mask supplies global-derived high byte and replicates low byte across3 lanes.
+- **Limits:** Worker initially swapped bases; register-origin check corrects it. Channel meaning and full remapping/smoothing numeric contract remain unknown; generic function retained. Executable unchanged.
+
+### HUD tile descriptor initial index resolved
+
+- **Function:** `FUN_00489240`.
+- **Evidence:** Aligned entry00489240-004893af and camera-helper preservation at00423b00.
+- **Behavior:** Required007a3d10==0 loads ECX=0; camera helper preserves it;004892dd stores initial tile descriptor index zero. Pseudocode extraout_ECX does not represent unknown starting index.
+- **Limits:** Descriptor capacity, tiling increments and exact visual identity remain unresolved; no function/prototype rename or executable changes.
+
+### Audio top-up shared continuation named mechanically
+
+- **Function/fragment:** `004ff7f0 ContinueAudioTopUpWaitByThreadIdentity`, formerly FUN_004ff7f0.
+- **Evidence:** Parent aligned004ff700-004ff811 including004ff7c0 fallthrough and shared exits.
+- **Behavior:** Thread identity selects callback-pumping loop or native-handle wait; callback loop requires nonzero handle and zero latch. Lock diagnostic rejoins if handler returns.
+- **Limits:** This is shared continuation metadata, not proof of standalone callable ABI/body ownership. Lifetime/concurrency remain deferred. Independent Luna confirmation requested; executable unchanged.
+
+### Stack-double x87 division dispatch wrapper named mechanically
+
+- **Function:** `005270a4 DispatchStackDoubleDivisionByX87Top`, formerly FUN_005270a4.
+- **Evidence:** Complete local aligned assembly005270a4-005270ef rechecked against existing plate.
+- **Behavior:** All-ones stack operand exponent selects direct FDIVR; finite path invokes00526f9a with TOP-dependent adjacent-register preservation. EAX preserved, RET8.
+- **Limits:** Mechanical wrapper name does not assert complete helper arithmetic/exception equivalence or ordinary C ABI. Existing complex numeric questions remain deferred; executable unchanged.
+
+### Track-vector scratch aliases and continuation corroboration
+
+- **Functions:** `FUN_0047f090`; `004ff7f0 ContinueAudioTopUpWaitByThreadIdentity`.
+- **Evidence:** Track-vector aligned entry0047f090-0047f13e; independent Luna audio fallthrough/shared-exit review.
+- **Behavior:** Four track scratch aliases preserve actual signed-byte extraction+14/+15/+16 from unaligned DWORD loads+11/+12/+13, followed by shift9 and scaling. Luna confirms audio continuation stack-state sharing.
+- **Limits:** No complete orientation semantics or independently callable audio ABI asserted. Remaining numeric/lifetime questions deferred; executable unchanged.
+
+### Sampled track-coordinate helper aliases
+
+- **Function:** `FUN_0041ffd0`; eight context/output/mode/record/index/coordinate scratch aliases applied.
+- **Evidence:** Current complete pseudocode matched existing assembly-backed entry/exit plate.
+- **Behavior:** Names expose selected36-byte record and three coordinate DWORD outputs without rewriting arithmetic.
+- **Limits:** Carry/wrapping/IDIV behavior, physical units and mode identity remain unresolved; no whole-function rename or ABI change. Executable unchanged.
+
+### Frontend rectangle overlap candidate aliases
+
+- **Function:** `FUN_00459670`; seven candidate rectangle/element/output and secondary overlap aliases.
+- **Evidence:** Fresh full pseudocode and entry00459670-004596cf.
+- **Behavior:** Four-value rectangle bounds, split-session half-region and element-pair policy precede overlap tests and frontend descriptor scan.
+- **Limits:** Full exception policy, helper preservation, scratch definite assignment and unordered float behavior remain complex deferred review. No function/prototype rename or reachable-defect claim. Executable unchanged.
+
+### Frontend mouse adjustment state triage
+
+- **Function:** `FUN_0045a120`; entry and adjustment-code aliases applied.
+- **Evidence:** Fresh full pseudocode and aligned entry0045a120-0045a1ed.
+- **Behavior:** Mouse poll and entry WORD+7c/byte+5 mask04 track adjustment lifecycle; release clears state and invokes layout/reclamp helpers. Active paths use DWORD+78 code and finish rectangle normalization into+70.
+- **Limits:** Numerous extraout-register/x87 artifacts obscure exact helper ABI and geometry; full policy/numerical review deferred. No whole-function rename or executable changes.
+
+### Runtime printf conversion dispatcher entry contract
+
+- **Function:** `FUN_004fe9d4`; existing conversion/state/text aliases retained.
+- **Evidence:** Fresh pseudocode and aligned entry004fe9d4-004fea46; Luna focused ABI/exit audit requested.
+- **Behavior:** EAX output buffer ->ESI/EDI, EBX conversion state ->ECX; saves ES then sets ES=DS. Clears six state counters+20..+34 and dispatches on byte+15.
+- **Limits:** Segmented selector/pointer-looking pseudocode result is not established numeric64 API. Full format policy, vararg widths and buffer/selector contracts unresolved; no semantic rename. Executable unchanged.
+
+### Texture-atlas packing loop aliases
+
+- **Function:** `FUN_004d4ae0`; seven atlas/source cursor and tile-ordinal aliases applied.
+- **Evidence:** Current complete pseudocode and existing assembly-backed conversion/packing plate.
+- **Behavior:** Atlas cursors feed36-byte metadata offsets+08/+0c; remainder source cursors feed+10/+14. Source tile loops step0x100. Tile ordinal names a counter only.
+- **Limits:** No successful-upload-count interpretation, packing invariant proof or capacity claim; helper ABI and final result remain unresolved. Executable unchanged.
+
+### Formatting dispatcher register return corroboration
+
+- **Function:** `FUN_004fe9d4`.
+- **Evidence:** Luna bounded input/exit audit; parent entry bytes8cd8/8ec0 and exit004fefd0 recheck.
+- **Behavior:** EAX output, EBX state, EDX argument-cursor-slot pointer; incoming ECX overwritten. Exit copies EDI to EAX and current ES to EDX before restoring saved ES. Entry sets ES=DS.
+- **Limits:** Worker initially described selector-set instruction as selector read; parent corrected. Selector:offset-like pair is not proven numeric64 API; complete segmented/format policy deferred. Executable unchanged.
+
+### Six-lane packed-block orchestration aliases
+
+- **Function:** `FUN_004f3600`; shortcut-mask and mixed decode-result/value aliases added.
+- **Evidence:** Fresh pseudocode and aligned entry004f3600-004f369f; Luna orchestration audit requested.
+- **Behavior:** Bits01..20 select six block processing paths; fill/transform versus biased-byte writers precede16 lookup packing calls.
+- **Limits:** Stream/channel identity, helper ABI and exact bit consumption unresolved; no whole-function name yet. Executable unchanged.
+
+### Packed-block output stride and packing stage
+
+- **Function:** `FUN_004f3600`, stage004f3721-004f3858.
+- **Evidence:** Parent full aligned orchestration listing, including branch continuations through004f3a06.
+- **Behavior:** Six block paths converge to16 lookup-pack calls. Primary row input advances64 bytes, secondary32 per two calls; output base incoming EDX, row stride derived from incoming EBX SAR1 then SHL2. ECX preserved around first seven packing calls and restored before eighth.
+- **Limits:** Helper preservation, exact bitstream/channel schema and output allocation/stride admission unresolved; no executable changes.
+
+### Playback geometry pose scratch aliases
+
+- **Function:** `FUN_004b9df0`; geometry record and translation scratch triple aliases applied.
+- **Evidence:** Current pseudocode and existing bounded pose/projection plate.
+- **Behavior:** Converted pose triple feeds projection, then is transformed in-place; final Z scratch supplies submitted depth minus007dcfe0.
+- **Limits:** Initial/final scratch roles differ; no coordinate units or full register ABI asserted. Generic function retained; executable unchanged.
+
+### Six flagged-block orchestration named
+
+- **Function:** `004f3600 DecodeSixFlaggedBlocksAndPackOutputRows`, formerly FUN_004f3600.
+- **Evidence:** Parent full aligned assembly and Luna independent complete body004f3600-004f3a06; caller PlayMadMovieFromBufferedStream.
+- **Behavior:** Six decoded/shortcut groups converge to16 output packing calls; previously documented stride and input-base mechanics retained.
+- **Limits:** Name describes orchestration only, not codec/channel identity, bitstream grammar or complete decoder correctness. Helper ABI/allocation/transform questions remain unresolved. Executable unchanged.
+
+### Packed-nibble compositor loop aliases
+
+- **Function:** `FUN_00518870`; five fast/clipped row,565/555 byte-count and mixed palette/offset aliases.
+- **Evidence:** Fresh full pseudocode and existing packed-nibble triage plate.
+- **Behavior:** Names separate fast destination row and clipped row; output masks identify565/555 packing. One local changes from palette base to clipped column offset.
+- **Limits:** Full blend arithmetic, parity/count admission and ABI unresolved; independent entry/odd-width review requested. Executable unchanged.
+
+### Color contribution records and compositor inputs clarified
+
+- **Functions:** `FUN_004b97b0` and `FUN_00518870`.
+- **Evidence:** Current contribution pseudocode/existing assembly-backed plate; parent compositor aligned entry00518870-00518954.
+- **Behavior:** Six contribution-volume/attenuation/color aliases added without light-type interpretation. Compositor actual inputs EAX destinationX, EDX destinationY, ECX source row, EBX source offset, stack width/rows; fastcall omits two register inputs.
+- **Limits:** Color geometry/nonfinite behavior and compositor parity/admission/blend arithmetic remain unresolved. Executable unchanged.
+
+### Register-indexed x87 dispatcher named mechanically
+
+- **Function:** `00526aeb DispatchX87OperationByRegisterSelector`, formerly FUN_00526aeb.
+- **Evidence:** Previously verified SUB ESP,2c then JMP[EAX*4+0056ccdc] and target-table evidence.
+- **Behavior:** Name captures dispatch entry only; target continuations own cleanup.
+- **Limits:** Complete target/table extent, selector admission and operation numerical/exception equivalence remain deferred. No full conventional ABI or arithmetic correctness claim; executable unchanged.
+
+### HUD token-selection interface aliases
+
+- **Function:** `FUN_0045e3d0`; incoming/saved bank, group and token-scratch aliases.
+- **Evidence:** Fresh complete pseudocode and existing aligned3x2x16 entry-loop evidence.
+- **Behavior:** Bank/group dimensions select preference/token rows;256-byte scratch supports copied/formatted HUD image tokens.
+- **Limits:** No player/difficulty identity, token-length safety or full flag-policy claim. Function remains generic pending complete static review; executable unchanged.
+
+### HUD track-polyline helper interface triage
+
+- **Function:** `FUN_0048b5f0`; five vehicle/flip/scale/sample-step/polyline aliases.
+- **Evidence:** Fresh complete pseudocode.
+- **Behavior:** Viewport setup and eight HUD quads surround neighboring track sampling, connected point projections and vehicle-shaped quads; initial rejection detaches quads/returns0, visible path returns1.
+- **Limits:** Feature identity, helper preservation, abnormal sample-loop progress and coordinate/x87 contracts remain unaudited. Generic name retained; executable unchanged.
+
+### Weather-gated quad input and scratch aliases
+
+- **Function:** `FUN_00491bc0`; six position/segment/corner/result aliases.
+- **Evidence:** Existing verified entry/exit plate plus current full pseudocode.
+- **Behavior:** Exposes position triple, track segment, twelve-float corner scratch and nullable render-record flow.
+- **Limits:** Allocator custom ABI, complete geometry and effect identity remain unresolved; aliases do not establish allocation size or numeric correctness. Executable unchanged.
+
+### Vehicle model-effect loop and color aliases
+
+- **Function:** `FUN_004b8740`; six vehicle/color/entry/phase/scale aliases applied.
+- **Evidence:** Fresh pseudocode and existing verified pursuit-gated model-token branch.
+- **Behavior:** Names expose model-entry iteration and reusable quad scale/color/phase scratch across token branches.
+- **Limits:** No lamp/siren identity or stale-scratch defect asserted; full branch/helper/numeric review remains outstanding. Executable unchanged.
+
+### Recovered byte-pair phase-step dispatch setter
+
+- **Function:** `0051ff88 SetBytePairPhaseStepAndDispatch`, newly recovered163-byte body; two input aliases.
+- **Evidence:** Complete aligned assembly0051ff88-0052002a and data reference00520061.
+- **Behavior:** Updates step+8 and indirect slots+18/+1c for below/equal/above10000; changed steps reset phase/cursor/flags except within strict same-side ranges. Equality preserves history. Returns0.
+- **Limits:** Callback ABI/state extent unresolved; metadata recovery only. Executable unchanged.
+
+### Recovered byte-pair identity callbacks
+
+- **Functions:** `0051fcc8 ReturnBytePairIdentityCountArgument`; `0051fe24 BindBytePairIdentitySourceToOutputSlot`.
+- **Evidence:** Complete aligned5-byte/11-byte leaves and equal-step dispatch stores in0051ff88.
+- **Behavior:** First returns second stack DWORD unchanged. Second copies third stack DWORD into fourth-argument pointer slot, binding source without copying samples.
+- **Limits:** Family ABI types provisional; output slot must be valid, no local null guard. Metadata recovery only; executable unchanged.
+
+### Recovered word-pair identity callbacks
+
+- **Functions:** `00520438 ReturnWordPairIdentityCountArgument`; `005205b0 BindWordPairIdentitySourceToOutputSlot`.
+- **Evidence:** Full5-byte/11-byte aligned leaves; equal-step dispatch stores from00520740.
+- **Behavior:** Returns second DWORD count unchanged, or binds third DWORD source to fourth-argument output slot without sample copy.
+- **Limits:** Wider family ABI/types provisional; no local output-slot guard. Metadata recovery only; executable unchanged.
+
+### Recovered word-block phase-step setter
+
+- **Function:** `005202fc SetWordBlockPhaseStepAndDispatch`, newly recovered163-byte body; two input aliases.
+- **Evidence:** Full aligned005202fc-0052039e, initializer pointer store005203db and matching named word-block callbacks.
+- **Behavior:** Step+8 and indirect slots+18/+1c select below/equal/above10000 callback pairs. Changed steps reset cursor/phase/flags except within strict same-side ranges; equality preserves history. Returns0.
+- **Limits:** Family state extent and callback ABI unresolved; metadata only, executable unchanged.
+
+### Recovered word-block phase state initializer
+
+- **Function:** `005203a0 InitializeWordBlockPhaseDispatchState`,68-byte recovered body and four input aliases.
+- **Evidence:** Full aligned005203a0-005203e3; SelectSoundMixingBackendCallbacks data reference004ffdc0.
+- **Behavior:** Clears cursor/phase, cachedWORD+0e and flags+10/+11; sets+12=1, stores three callback slot pointers and installs005202fc setter through first. Returns0.
+- **Limits:** Step+8/cache+0c not initialized here; count/output callbacks await setter. Caller allocation/ordering and pointer guards unresolved. Metadata only; executable unchanged.
+
+### Visual rotation matrix destination resolved
+
+- **Function/data:** `FUN_0047f090`, product00791a5c-00791a7f.
+- **Evidence:** Luna tail/helper audit and parent aligned call-site0047f299-0047f2d5.
+- **Behavior:** Final matrix multiply receives two local matrices and literal EBX output00791a5c. Preceding helper preserves EDX/EBX. Top routine restores six non-EAX GPRs and plainRET.
+- **Limits:** Exact HUD feature, angle clamping/wrapping and orientation semantics unresolved; generic name retained. Executable unchanged.
+
+### Recovered word-block identity callbacks
+
+- **Functions:** `005200b8 ReturnWordBlockIdentityCountArgument`; `005201d8 BindWordBlockIdentitySourceToOutputSlot`.
+- **Evidence:** Full5-byte/11-byte leaves and equal-step stores005202fc.
+- **Behavior:** Second stack DWORD passes through unchanged; third stack DWORD binds to fourth-argument slot without sample copy.
+- **Limits:** Wider family types/ABI provisional; slot pointer unguarded. Metadata recovery only; executable unchanged.
+
+### Recovered byte-block dispatch setter and initializer
+
+- **Functions:** `0051fb94 SetByteBlockPhaseStepAndDispatch`; `0051fc38 InitializeByteBlockPhaseDispatchState`.
+- **Evidence:** Full aligned163-byte/66-byte bodies and initializer setter-pointer store0051fc71.
+- **Behavior:** Setter chooses below/equal/above10000 callback pairs and resets cursor/phase/flags on changed cross-category steps. Initializer clears cursor/phase/cache+0d/flags+0e/+0f, sets+10=1 and installs setter through first slot.
+- **Limits:** Initializer leaves step+8/cache+0c and latter callback slots unpopulated. State extent/types/caller admission unresolved; metadata recovery only, executable unchanged.
+
+### Track-basis visual matrix builder named mechanically
+
+- **Function:** `0047f090 BuildTrackBasisDrivenVisualRotationMatrix`, formerly FUN_0047f090.
+- **Evidence:** Parent complete aligned582-byte body and Luna tail/helper review.
+- **Behavior:** Signed track triplets feed context dot products, optional reverse factor, angle adjustments and composed rotation matrix00791a5c.
+- **Limits:** Exact HUD feature/orientation and exceptional helper semantics unresolved. Ordered/unordered branch behavior must not be collapsed to generic clamp policy. Mechanical name supersedes earlier retain-generic decision only; executable unchanged.
+
+### Averaged vehicle-volume color helper named
+
+- **Function:** `004b97b0 AddAveragedVehicleVolumeColorContributions`, formerly FUN_004b97b0.
+- **Evidence:** Parent complete aligned1040-byte body004b97b0-004b9bbf; independent Luna corroboration requested.
+- **Behavior:** Accepted volumes, not vehicles, determine averaging count. Accepted+734 can add+660; failed+734 inclusion skips+660. Ambient FISTP channels accumulate32-bit, signed-average and clamp incoming RGB, forcinghighFF only with contributions.
+- **Limits:** Exact light identity, nonfinite/overflow/divisor admission remain unresolved. Mechanical name only; executable unchanged.
+
+### Viewport tile and overlay orchestration named
+
+- **Function:** `00489240 RenderViewportTilesAndVehicleOverlayQuads`, formerly FUN_00489240.
+- **Evidence:** Parent complete aligned body00489240-0048962c; existing gate/index/palette mapping. Luna corroboration requested.
+- **Behavior:** Nested viewport tiles read44-byte descriptors from index0, clamp right/bottom and submit four vertices, followed by vehicle/optional/fixed-border/rotated quad helpers.
+- **Limits:** Exact effect/resource identity, increment admission/termination and descriptor capacity unresolved; mechanical name only. No executable changes.
+
+### Recovered word-pair phase state initializer
+
+- **Function:** `005207e4 InitializeWordPairPhaseDispatchState`,62-byte recovered body; four input aliases.
+- **Evidence:** Full aligned005207e4-00520821; setter store00520819.
+- **Behavior:** Clears cursor/phase/flags+14/+15/+16, stores callback slots+18/+1c/+20 and installs00520740. Notably final flag+16 is0, unlike word-block initializer+12=1.
+- **Limits:** Step and pair caches remain untouched; count/output slots await setter, caller ordering/pointer validity unresolved. Metadata only; executable unchanged.
+
+### Track-side probe weights and viewport-render corroboration
+
+- **Functions:** `FUN_004ba350`; `RenderViewportTilesAndVehicleOverlayQuads`.
+- **Evidence:** Parent complete aligned004ba350-004ba807; Luna complete viewport-render review.
+- **Behavior:** Probe-exit offset feeds256-16*offset and256-32*offset weights; viewport renderer zero-index/four-pointer submission confirmed.
+- **Limits:** Probe-helper preservation under independent review; HSV formula/output semantics not yet renamed. Viewport callback cleanup/step/capacity still unresolved. Executable unchanged.
+
+### Track-side geometry color helper named
+
+- **Function:** `004ba350 ApplyTrackSideAdjustedGeometryColors`, formerly FUN_004ba350.
+- **Evidence:** Parent complete aligned004ba350-004ba807 and existing420bf0 register-preservation contract.
+- **Behavior:** Activated neighbor probes test offsets1..7, exit on failure or offset8 after successes, deriving two color weights. RGB/HSV adjustment produces two geometry colors. Disabled returns0; enabled returns cached global context field, not Boolean success.
+- **Limits:** Effect identity, exact helper math and abnormal segment admission unresolved; mechanical name only. Executable unchanged.
+
+### Recovered byte-pair phase state initializer
+
+- **Function:** `0052002c InitializeBytePairPhaseDispatchState`,62-byte recovered body; four inputs named.
+- **Evidence:** Complete aligned0052002c-00520069 and setter install00520061.
+- **Behavior:** Clears cursor/phase/flags+10/+11/+12, stores callback slots+14/+18/+1c and installs0051ff88. Flag+12=0 differs from word-block initializer+12=1.
+- **Limits:** Step/pair caches and latter callback contents untouched; caller ordering/allocation unresolved. Metadata recovery only; executable unchanged.
+
+### Recovered byte-block identity callbacks
+
+- **Functions:** `0051f978 ReturnByteBlockIdentityCountArgument`; `0051fa80 BindByteBlockIdentitySourceToOutputSlot`.
+- **Evidence:** Full aligned5-byte/11-byte leaves and setter0051fb94 equal-step assignments.
+- **Behavior:** Count passes through; source binds to output slot without sample copy.
+- **Limits:** Broad types/ABI provisional; slot pointer unguarded. Metadata recovery only; executable unchanged.
+
+### Playback pose detail-band renderer named
+
+- **Function:** `004b9df0 RenderPlaybackPoseGeometryByDetailBand`, formerly FUN_004b9df0.
+- **Evidence:** Luna complete aligned004b9df0-004ba311; parent entry/pseudocode review and raw00540100 double2^-16.
+- **Behavior:** Bands0/1 dispatch selectors0..4/5..9; bands2/3 dispatch0a/0b. Shared submission tail follows.
+- **Limits:** Custom register ABI, physical units, resource identity and metric formula unresolved; no meaningful return claimed. Executable unchanged.
+
+### Recovered cached byte-pair source-span callback
+
+- **Function:** `0051fcd0 CalculateBytePairCachedSourceSpan`,43-byte recovered body; two input aliases.
+- **Evidence:** Complete aligned0051fcd0-0051fcfa and below10000-step callback assignment0051ff88.
+- **Behavior:** Wrapping((count-1)*step+phase) logicalSHR16, plus1 plus(flag+11==0), minus signed state byte+10. No state writes.
+- **Limits:** Result is span arithmetic, not admission/bounds/positivity proof; malformed-count domain and format unresolved. Executable unchanged.
+
+### Recovered cached word source-span callbacks
+
+- **Functions:** `005200c0 CalculateWordBlockCachedSourceSpan`; `00520440 CalculateWordPairCachedSourceSpan`.
+- **Evidence:** Complete aligned43-byte bodies and below10000-step dispatch assignments.
+- **Behavior:** Wrapping product/phase logicalSHR16 plus1 and missing-prefix extra1, minus signed cache byte. Word-block uses flag+11/subtractbyte+10; word-pair uses+15/+14. No state writes.
+- **Limits:** Count admission, result extent and allocation remain unresolved; metadata only, executable unchanged.
+
+### Bank/group frontend flag updater named
+
+- **Function:** `0045e3d0 UpdateFrontendFlagsForBankAndGroup`, formerly FUN_0045e3d0.
+- **Evidence:** Luna complete aligned0045e3d0-0045e959; parent entry/pseudocode review.
+- **Behavior:** Token-bank traversal and matched entry flag updates with related mirror/speed/RPM helpers. Inputs EAX descriptor/EDX bank/EBX group, no stack args or meaningful result.
+- **Limits:** Flag10 visibility meaning, token lengths/config semantics and caller boundary identity unresolved. Mechanical name only; executable unchanged.
+
+### Remaining generic entry annotation audit
+
+- **Functions:** Remaining30 generic entries checked for entry comments; six explicitly deferred physics/decoder/math entries received navigation plates linking existing SCRATCHPAD uncertainty.
+- **Evidence:** Live function inventory and entry-comment readback; current authoritative backlog.
+- **Behavior:** Deferred notes now appear directly at004a1610/004aca4f/00510e48/0052643c/0052648f/00526642.
+- **Limits:** These are navigation comments, not new body audits or semantic renames.0047d580 remains pending documentation review. Executable unchanged.
+
+### Deferred large quad-projection helper entry
+
+- **Function:** `FUN_0047d580`; three context/integer-scale aliases added.
+- **Evidence:** Fresh pseudocode and aligned entry0047d580-0047d5db.
+- **Behavior:** EAX context retained, EDX selector copied, EBX integer FILD/scaled; pseudocode contains repeated projection/outcode and clipped quad paths.
+- **Limits:** Full frame/record layout, custom ABI, selector/clipping/numerical contracts unresolved. Apparent32-DWORD copy into small local declaration requires frame reconciliation before bounds claims. Deferred to Astra; executable unchanged.
+
+### Recovered cached byte-block source-span callback
+
+- **Function:** `0051f980 CalculateByteBlockCachedSourceSpan`,43-byte recovered body; two inputs named.
+- **Evidence:** Complete aligned0051f980-0051f9aa; below10000-step dispatch0051fb94.
+- **Behavior:** Wrapping product/phase logicalSHR16 plus1 and missing-prefix extra1, minus signedbyte+0e; no state writes.
+- **Limits:** Count positivity/admission and allocation not established. Metadata only; executable unchanged.
+
+### Recovered word-block span and cache-advance callback
+
+- **Function:** `00520070 CalculateWordBlockSourceSpanAndCacheAdvance`,70-byte body; two inputs named.
+- **Evidence:** Full aligned00520070-005200b5 and005202fc above10000 dispatch.
+- **Behavior:** Base span b=logicalSHR16(wrapping(count-1)*step+phase)+1; returns b+old signedbyte+12+(flag+11==0), writes+12 with low8(next-count phase quotient-b).
+- **Limits:**32-bit wrapping retained; count admission, bounds and format unresolved. Metadata only; executable unchanged.
+
+### Recovered byte-pair span/cache-advance callback
+
+- **Function:** `0051fc80 CalculateBytePairSourceSpanAndCacheAdvance`,70-byte recovered body; two inputs named.
+- **Evidence:** Full aligned0051fc80-0051fcc5 and0051ff88 callback assignment.
+- **Behavior:** Wrapping phase/product quotient yields base span; adds old signedbyte+12/missing-prefix adjustment, then updates+12 from next quotient delta.
+- **Limits:** No positivity/admission/bounds claim; format unresolved. Metadata only; executable unchanged.
+
+### Runtime conversion dispatcher named
+
+- **Function:** `004fe9d4 FormatRuntimeConversionFromArgumentCursor`, formerly FUN_004fe9d4.
+- **Evidence:** Luna complete004fe9d4-004fefdb control-flow audit; parent entry/exit register review.
+- **Behavior:** Dispatches one conversion, consumes cursor-slot arguments and delegates formatting; unknown conversion emits literal byte. Selector:offset-like return retained as uncertainty.
+- **Limits:** No printf conformance, complete flag/segmented ABI or bounds guarantee. Mechanical name only; executable unchanged.
+
+### Recovered word-pair span/cache-advance callback
+
+- **Function:** `005203f0 CalculateWordPairSourceSpanAndCacheAdvance`,70-byte recovered body; two inputs named.
+- **Evidence:** Full aligned005203f0-00520435 and00520740 above10000 dispatch.
+- **Behavior:** Wrapping product/phase quotient yields base span; returns old signedbyte+16/missing-prefix-adjusted span, writes+16 with next quotient delta.
+- **Limits:** Count/extent/format admission unproven; metadata only, executable unchanged.
+
+### Existing byte-block extent helper family name refined
+
+- **Function:** `0051f930 CalculateByteBlockSourceSpanAndCacheAdvance`, formerly ComputeScaledIndexExtentAndStoreDeltaByte.
+- **Evidence:** Fresh70-byte aligned review and0051fb94/0051f9ac family linkage; original exact arithmetic plate retained.
+- **Behavior:** Existing q/r calculation and cache byte+10 update now use consistent family name.
+- **Limits:** Already-known function, not inventory recovery. Count admission/units unresolved; executable unchanged.
+
+### Packed-nibble palette compositor named
+
+- **Function:** `00518870 CompositePackedNibblePaletteRectangle`, formerly FUN_00518870.
+- **Evidence:** Luna full aligned00518870-00518d4a; parent input/pseudocode review.
+- **Behavior:**16/15-bit manual paths process both nibbles for rounded-up packed-byte count, with no odd-tail mask; general clipped path also processes pairs. Depth8 delegates005239ec. Custom six inputs andRET8 retained.
+- **Limits:** Last low nibble can address one beyond nominal odd width, not proof of reachable overrun. Caller dimensions/clipping/allocation and blend equivalence unresolved. Executable unchanged.
+
+### Shape texture tile and remainder-atlas builder named
+
+- **Function:** `004d4ae0 BuildShapeTextureTilesAndRemainderAtlas`, formerly FUN_004d4ae0.
+- **Evidence:** Complete aligned assembly from004d4ae0 through RET8 at004d502d, fresh Ghidra pseudocode and existing direct caller00488c29 in LoadLocalCarArchiveShapeMetrics.
+- **Behavior:** Custom register inputs select supplied shapes or resource lookup and output records; two stack arguments provide mutable format/conversion state and first-shape output slot. Converts two temporary shapes, traverses the first converted shape in256 increments, and uploads tiles into44-byte records. Tile ordinal increments before each helper call. Builds a square remainder atlas with36-byte rectangle metadata, creates its texture in the next output record and uploads through009ef964. Successful exit returns the pre-atlas ordinal; the atlas itself does not increment that value. Nonzero tile-helper result or zero backend-create handle takes cleanup and returns zero. Upload return is not tested.
+- **Limits:** This is an operation-level name. Complete rectangle packing/capacity, admitted dimensions, arithmetic overflow and loop progress, exact format policy and backend ownership remain unproved. No local allocation-null validation observed. Ghidra plate and return-site comment preserve these distinctions; executable unchanged.
+
+### Sampled track-record offset writer named
+
+- **Function:** `0041ffd0 WriteSampledTrackRecordWithPackedOffsets`, formerly FUN_0041ffd0.
+- **Evidence:** Independent Luna and parent full aligned0041ffd0-00420224 assembly review; live Ghidra entry/exit and data-flow agreement.
+- **Behavior:** EAX context DWORD+10 selects a36-byte track record using truncating half-step, signed remainder and single-wrap corrections. EDX receives its first three DWORDs adjusted by mode-dependent packed fields and signed-byte basis products; EAX returns selected index. Incoming EBX mode selects addition using low nibble/+1b byte or subtraction using high nibble/+17 byte. ECX/ESI/EDI/EBP restored; EBX/EDX volatile, no stack arguments. SHR sets ADC carry from product bit15; the input factors shifted15 and9 make the product divisible by2^24, so that bit is zero in these six paths. Final basis products use wrapping32-bit IMUL.
+- **Limits:** Name identifies observed operations, not coordinate units or left/right policy. Single-wrap logic is not general modulo; zero step reaches IDIV, malformed extreme inputs and DF environment remain caller concerns. Full admission, geometry and runtime validation remain deferred. Comments updated; executable unchanged.
+
+### Weather/material projected quad record builder named
+
+- **Function:** `00491bc0 BuildWeatherMaterialProjectedQuadRecord`, formerly FUN_00491bc0.
+- **Evidence:** Full aligned00491bc0-00492361 assembly and fresh Ghidra pseudocode; allocator004bbde0 custom contract checked separately.
+- **Behavior:** EAX descriptor plus eight stack DWORDs: XYZ, packed color, segment, span float, optional direction-record pointer and sign selector. Span slot becomes half-span. Weather/mode/side/material gates precede direction and corner construction, optional track-plane height adjustment, four-vertex projection and outcode/winding rejection. Driver/global-factor path optionally modulates color. Requests160bytes through an output-pointer slot with separate boolean return, writes32-byte header plus four32-byte projected vertices, and returns allocation pointer. All non-EAX GPRs restored; RET20h. Preserved EDX explains misleading longlong pseudocode return. No local list insertion.
+- **Limits:** Effect identity, full exceptional x87/rounding semantics, descriptor schema, winding/global policy, caller admission and arena failure side effects remain unresolved. Operation name and four argument aliases describe observed data flow; no runtime or executable changes.
+
+### HUD track polylines and vehicle markers named
+
+- **Function:** `0048b5f0 RenderHudTrackPolylinesAndVehicleMarkers`, formerly FUN_0048b5f0.
+- **Evidence:** Luna matched all882 instruction addresses0048b5f0-0048c0dd between Ghidra and installed-binary objdump. Parent reviewed entry, sample-loop, marker and exit assembly plus pseudocode; cleanup helper00431900 explicitly preserves EBX.
+- **Behavior:** EAX viewport selector, EDX reference vehicle, EBX other vehicle-like object, ECX packed background color; no stack inputs. Attaches eight HUD quads, gates on two dot metrics, draws clipped background and two sampled green track polylines, then oriented other-object and centered reference markers. Failed metric gate detaches quads and returns0; visible path returns1. Saves ESI/EDI/EBP only. Sampling starts at reference segment minus200; ambient FISTP determines step, and separate counter advances from-500 to500. Rejected distant points break line connectivity and advance index1; accepted samples advance by step.
+- **Limits:** Exact UI identity/units, complete helper-carried schemas, x87 exceptional behavior and caller admission remain unresolved. Nonpositive/invalid step progress and single-wrap range assumptions are not validated; unordered distance compare follows JBE into accepted path. No reachable-defect claim or runtime evidence. Project annotations only.
+
+### Atlas rectangle copier ABI and transpose clarified
+
+- **Function:** `004d4440 CopyShapeRectangleToAtlas`; eight data-flow aliases refined.
+- **Evidence:** Complete aligned004d4440-004d4577 assembly and Ghidra pseudocode.
+- **Behavior:** EAX rectangle index, EDX converted source shape, EBX destination atlas base, no stack inputs; ESI/EDI/EBP saved, no semantic return.36-byte record fields+4 destination stride,+8/+c destinationXY,+10/+14 sourceXY,+18/+1c destination width/height,+20 transpose flag; record+0 unused locally. Copies16-bit cells normally or transposes source reads using sourceOrigin[x*sourceStride+y]. Source stride is signed DWORD[shape+2] SAR16, pixel base shape+10h. Signed loop bounds permit no copies for nonpositive dimensions.
+- **Limits:** No local index/bounds/aliasing/overflow checks or overlap-safe behavior. Pixel format beyond16-bit cells, admitted rectangles and full packing invariants remain unresolved. Ghidra plate replaces the older incomplete ABI note; executable unchanged.
+
+### Shared shape-texture rectangle globals labelled
+
+- **Data:** `00792310 g_nShapeTextureRectangleCount` and `00792090 g_pShapeTextureRectangleFirstTileRecord`. Existing storage types retained.
+- **Evidence:** Luna bounded producer/consumer audit and26 count xrefs; parent builder/copier assembly review plus renderer00488851-0048886f.
+- **Behavior:** Count tracks appended36-byte render/copy rectangle records across builder and tile helper, and bounds the renderer's signed loop. It is distinct from output tile ordinal/texture count. Record field+0 is an associated44-byte output tile-record pointer; renderer dereferences its+4 texture handle for render state1. Base label names the first strided field, not a contiguous pointer array. Other field meanings are recorded in the copier plate.
+- **Limits:** Array extent, capacity, admitted rectangles and complete packing correctness remain unproved. Labels/comments only; no executable changes.
+
+### Bounded static pass completion audit
+
+- **Scope:** Evidence-backed static naming and annotations, using Luna read-only audits and parent assembly review; exclude complex Astra investigations and additional runtime testing. This does not complete reverse engineering of the game.
+- **Inventory:** Fresh list_functions_enhanced returns4,040 internal entries with24 FUN names (99.4% have other names); no external functions occur in that returned list. Program-info reports4,247 under a broader denominator, so it is not used for this percentage. Generic names remaining are explicitly indexed in SCRATCHPAD.md and mapped to deferred investigations. Naming coverage includes library names, stubs and analyst names, not understanding coverage.
+- **Annotation verification:** Read back nonempty entry comments for all24 remaining generic functions, and current comments for recent track/HUD/weather/atlas functions and two shared data labels. Latest corresponding detailed entries exist. Corrected stale weather-quad repeatable comment: separate allocator boolean/output-pointer relationship is now established, while numerical/geometry uncertainties remain.
+- **Preservation:** save_program reports success for nfs3.exe; git diff --check passes. Installed executable SHA-256 remains2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb. Database generation changes are preserved; no commit performed by this audit.
+- **Limits:** No Wine/runtime validation in this static pass, no full reconstruction or complete numerical correctness claim. Remaining Astra backlog contains both unnamed functions and unresolved contracts in already-named functions. Future work should start from that backlog rather than treating the percentage as gameplay completion.
+
+- **Independent handoff cross-check:** Luna confirmed the live24-entry FUN set exactly matches SCRATCHPAD's deferred inventory and found no untracked easy candidate in that set. Its function-documentation tool omitted repeatable entry comments at00475b50/004b8740; direct get_comment verified those comments, and matching deferred-entry plates were added so both interfaces expose the handoff. This checks scope mapping and annotation presence, not correctness of complex function bodies.
