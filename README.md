@@ -4,6 +4,10 @@ Reverse engineering and decompilation of **Need for Speed III: Hot Pursuit** usi
 
 The target is based on [VEG's Modern Patch v1.6.1](https://veg.by/en/projects/nfs3/), with small copyright and version-text changes in `nfs3.exe` and the setup menu preparing our local **1.6.2** version. See [target provenance](docs/TARGET.md) for details and the executable fingerprint.
 
+![NFS III analysis in Ghidra](images/nfs3_ghidra.png)
+
+*The annotated Ghidra project includes descriptive function names, comments, types, and references. 99.4% of internal functions have names.*
+
 ## Install Ghidra
 
 1. Download the latest stable release from [Ghidra releases](https://github.com/NationalSecurityAgency/ghidra/releases). Under **Assets**, choose the **`.zip` with `PUBLIC` in its name**, such as `ghidra_<version>_PUBLIC_<date>.zip`. Avoid the **Source code** archives.
