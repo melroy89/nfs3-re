@@ -15,7 +15,7 @@ The full scratchpad remains in the ignored game directory. Its older validation 
 | Property | Value |
 | --- | --- |
 | Filename | `nfs3.exe` |
-| Local location | `nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe` |
+| Repository location | `nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe` |
 | Size | 1,699,840 bytes |
 | SHA-256 | `2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb` |
 | Ghidra installation | 12.1.4 |
@@ -37,4 +37,4 @@ On Windows PowerShell:
 Get-FileHash C:\path\to\nfs3.exe -Algorithm SHA256
 ```
 
-The upstream download alone does not reproduce the local modifications. Before publishing transferable annotations, document reproducible modification instructions or a suitable original helper script, and verify the resulting hash. The standalone executable is excluded from Git; its imported bytes are present in the Ghidra databases.
+The upstream download alone does not reproduce the local modifications. Before publishing transferable annotations, document reproducible modification instructions or a suitable original helper script, and verify the resulting hash. The standalone executable and `FEDATA/MENUS/setup.mnu` are tracked under `nfs3_decomp.rep/Electronic Arts/Need For Speed III/`. All other installation files remain ignored. The menu contains `Visit veg.by (v1.6.2)` and has SHA-256 `d55b7c5a1e169408ddd20e8033f429be35f77614b02b7a6756363e1bf16f2782`. Both tracked files match the copies used in the local Wine installation; imported executable bytes also remain in the Ghidra databases.

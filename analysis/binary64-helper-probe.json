@@ -1,0 +1,1507 @@
+{
+  "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "method": "Native Linux i386 execution of unchanged extracted helper bytes; FINIT default control word; synthetic operands and dispatch flag",
+  "code_range": "00526642..0052699b",
+  "zero_tail": "local equivalent at0052c88a",
+  "overflow_tail": "stub at0052c8a7 records branch and returns signed infinity; original error reporting omitted",
+  "case_count": 1168,
+  "normal_random_mismatches": [
+    {
+      "case": "normal_random_27",
+      "a": "40991cccc2b349a2",
+      "b": "3eeed42307855686",
+      "path": "integer",
+      "op": "subtract",
+      "result": "40991cccbed8c542",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_31",
+      "a": "c39400e5032e49b6",
+      "b": "c0d59a761239315b",
+      "path": "integer",
+      "op": "subtract",
+      "result": "c39400e5032e485d",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_43",
+      "a": "b9ef83eb597092c0",
+      "b": "bd03879bbb8bd6d6",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3d03879bbb8bd6cf",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_69",
+      "a": "c09d83a4daa27a03",
+      "b": "bdc2b5324bb631e0",
+      "path": "integer",
+      "op": "subtract",
+      "result": "c09d83a4daa2796e",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_86",
+      "a": "bb538d3f2ad1e031",
+      "b": "bb2566ac2ab3684f",
+      "path": "integer",
+      "op": "subtract",
+      "result": "bb50e069a57b7328",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_92",
+      "a": "3d0ebbbcf9ff3d15",
+      "b": "3e2dc2d6bc14dd37",
+      "path": "integer",
+      "op": "subtract",
+      "result": "be2dc2cf0d259eb8",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_101",
+      "a": "bb4ccd33b5a9f32e",
+      "b": "be36d52ed5050980",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3e36d52ed5050947",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_103",
+      "a": "c27493afc62bedfd",
+      "b": "c30388023345917e",
+      "path": "integer",
+      "op": "subtract",
+      "result": "43037db85b627b88",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_128",
+      "a": "4465e917c4fcd68a",
+      "b": "43eee0aeed3a598b",
+      "path": "integer",
+      "op": "subtract",
+      "result": "4465ca37160f9c31",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_146",
+      "a": "be9aa929db1cef95",
+      "b": "bf7f48fc955e3706",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3f7f4891f0b6ca93",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_170",
+      "a": "3c690cb1a3faad0b",
+      "b": "3ae443b1bcec33a9",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3c690cb18fb6fb4f",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_177",
+      "a": "c34922af0c3cc7b3",
+      "b": "c06525eb2e65db8f",
+      "path": "integer",
+      "op": "subtract",
+      "result": "c34922af0c3cc75f",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_178",
+      "a": "3baf9fda7b893e61",
+      "b": "3e6226a994da5b21",
+      "path": "integer",
+      "op": "subtract",
+      "result": "be6226a994da5928",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_183",
+      "a": "3a1f219aad98ba83",
+      "b": "3af134ea2f8ab99a",
+      "path": "integer",
+      "op": "subtract",
+      "result": "baf1346da9200338",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_192",
+      "a": "406f461bf55a9d2a",
+      "b": "3e39353df8fe4ef5",
+      "path": "integer",
+      "op": "subtract",
+      "result": "406f461bf5577683",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_213",
+      "a": "3bc87f6d302f1951",
+      "b": "3a2fac5a5391ff06",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3bc87f6d284402bd",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_214",
+      "a": "4419cc91a919afae",
+      "b": "4303719cb6fb51a0",
+      "path": "integer",
+      "op": "subtract",
+      "result": "4419cc87f04b5431",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_215",
+      "a": "bcb3925b05e034a3",
+      "b": "badebbb2f062fe63",
+      "path": "integer",
+      "op": "subtract",
+      "result": "bcb3925b056545d8",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_239",
+      "a": "3e1b8fb42462f8e5",
+      "b": "3b8e6142ef142243",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3e1b8fb42462e9b5",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_242",
+      "a": "39863b22dd83f86b",
+      "b": "3becb51e6246e4a8",
+      "path": "integer",
+      "op": "subtract",
+      "result": "bbecb51e62468bbc",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_249",
+      "a": "40551e4ac674a0f6",
+      "b": "3e9115bcde644072",
+      "path": "integer",
+      "op": "subtract",
+      "result": "40551e4ac5634529",
+      "overflow_stub": false
+    },
+    {
+      "case": "normal_random_250",
+      "a": "3d144cd3b3d40707",
+      "b": "3aea66bc6f92972d",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3d144cd3b3d0ba30",
+      "overflow_stub": false
+    }
+  ],
+  "directed_cases": [
+    {
+      "case": "ordinary",
+      "a": "4008000000000000",
+      "b": "4000000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "ordinary",
+      "a": "4008000000000000",
+      "b": "4000000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "4018000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "ordinary",
+      "a": "4008000000000000",
+      "b": "4000000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "ordinary",
+      "a": "4008000000000000",
+      "b": "4000000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "4018000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "cancel",
+      "a": "4008000000000000",
+      "b": "4008000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "cancel",
+      "a": "4008000000000000",
+      "b": "4008000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "4022000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "cancel",
+      "a": "4008000000000000",
+      "b": "4008000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "cancel",
+      "a": "4008000000000000",
+      "b": "4008000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "4022000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "negative_zero",
+      "a": "8000000000000000",
+      "b": "4000000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "c000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "negative_zero",
+      "a": "8000000000000000",
+      "b": "4000000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "negative_zero",
+      "a": "8000000000000000",
+      "b": "4000000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "c000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "negative_zero",
+      "a": "8000000000000000",
+      "b": "4000000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "rhs_zero",
+      "a": "8000000000000000",
+      "b": "0000000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "8000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "rhs_zero",
+      "a": "8000000000000000",
+      "b": "0000000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "rhs_zero",
+      "a": "8000000000000000",
+      "b": "0000000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "8000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "rhs_zero",
+      "a": "8000000000000000",
+      "b": "0000000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "zero_inf",
+      "a": "0000000000000000",
+      "b": "7ff0000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "fff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "zero_inf",
+      "a": "0000000000000000",
+      "b": "7ff0000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "zero_inf",
+      "a": "0000000000000000",
+      "b": "7ff0000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "fff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "zero_inf",
+      "a": "0000000000000000",
+      "b": "7ff0000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "zero_nan",
+      "a": "0000000000000000",
+      "b": "7ff8000000000001",
+      "path": "integer",
+      "op": "subtract",
+      "result": "fff8000000000001",
+      "overflow_stub": false
+    },
+    {
+      "case": "zero_nan",
+      "a": "0000000000000000",
+      "b": "7ff8000000000001",
+      "path": "integer",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "zero_nan",
+      "a": "0000000000000000",
+      "b": "7ff8000000000001",
+      "path": "x87",
+      "op": "subtract",
+      "result": "fff8000000000001",
+      "overflow_stub": false
+    },
+    {
+      "case": "zero_nan",
+      "a": "0000000000000000",
+      "b": "7ff8000000000001",
+      "path": "x87",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "tiny_negative",
+      "a": "8000000000000001",
+      "b": "3ff0000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "bff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "tiny_negative",
+      "a": "8000000000000001",
+      "b": "3ff0000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "8000000400000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "tiny_negative",
+      "a": "8000000000000001",
+      "b": "3ff0000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "bff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "tiny_negative",
+      "a": "8000000000000001",
+      "b": "3ff0000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_half",
+      "a": "0010000000000000",
+      "b": "3fe0000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "bfe0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_half",
+      "a": "0010000000000000",
+      "b": "3fe0000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "0008000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_half",
+      "a": "0010000000000000",
+      "b": "3fe0000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "bfe0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_half",
+      "a": "0010000000000000",
+      "b": "3fe0000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "0008000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_quarter",
+      "a": "0010000000000000",
+      "b": "3fd0000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "bfd0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_quarter",
+      "a": "0010000000000000",
+      "b": "3fd0000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "0000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_quarter",
+      "a": "0010000000000000",
+      "b": "3fd0000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "bfd0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_quarter",
+      "a": "0010000000000000",
+      "b": "3fd0000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "0004000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_eighth",
+      "a": "0010000000000000",
+      "b": "3fc0000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "bfc0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_eighth",
+      "a": "0010000000000000",
+      "b": "3fc0000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "0008000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_eighth",
+      "a": "0010000000000000",
+      "b": "3fc0000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "bfc0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "min_normal_eighth",
+      "a": "0010000000000000",
+      "b": "3fc0000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "0002000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subnormal",
+      "a": "0000000000000001",
+      "b": "4000000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "c000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subnormal",
+      "a": "0000000000000001",
+      "b": "4000000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "0000000800000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subnormal",
+      "a": "0000000000000001",
+      "b": "4000000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "c000000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subnormal",
+      "a": "0000000000000001",
+      "b": "4000000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "0000000000000002",
+      "overflow_stub": false
+    },
+    {
+      "case": "overflow",
+      "a": "7fefffffffffffff",
+      "b": "4000000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "7fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "overflow",
+      "a": "7fefffffffffffff",
+      "b": "4000000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "7ff0000000000000",
+      "overflow_stub": true
+    },
+    {
+      "case": "overflow",
+      "a": "7fefffffffffffff",
+      "b": "4000000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "7fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "overflow",
+      "a": "7fefffffffffffff",
+      "b": "4000000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "7ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.0",
+      "a": "3ff0000000000000",
+      "b": "3fc0000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fec000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.0",
+      "a": "3ff0000000000000",
+      "b": "3fc0000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3fc0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.0",
+      "a": "3ff0000000000000",
+      "b": "3fc0000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fec000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.0",
+      "a": "3ff0000000000000",
+      "b": "3fc0000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3fc0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.25",
+      "a": "3ff0000000000000",
+      "b": "3fc4000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3feb000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.25",
+      "a": "3ff0000000000000",
+      "b": "3fc4000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3fc4000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.25",
+      "a": "3ff0000000000000",
+      "b": "3fc4000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3feb000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.25",
+      "a": "3ff0000000000000",
+      "b": "3fc4000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3fc4000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.5",
+      "a": "3ff0000000000000",
+      "b": "3fc8000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fea000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.5",
+      "a": "3ff0000000000000",
+      "b": "3fc8000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3fc8000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.5",
+      "a": "3ff0000000000000",
+      "b": "3fc8000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fea000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.5",
+      "a": "3ff0000000000000",
+      "b": "3fc8000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3fc8000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.75",
+      "a": "3ff0000000000000",
+      "b": "3fcc000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fe9000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.75",
+      "a": "3ff0000000000000",
+      "b": "3fcc000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3fcc000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.75",
+      "a": "3ff0000000000000",
+      "b": "3fcc000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fe9000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_3_1.75",
+      "a": "3ff0000000000000",
+      "b": "3fcc000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3fcc000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.0",
+      "a": "3ff0000000000000",
+      "b": "3f50000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3feff80000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.0",
+      "a": "3ff0000000000000",
+      "b": "3f50000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3f50000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.0",
+      "a": "3ff0000000000000",
+      "b": "3f50000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3feff80000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.0",
+      "a": "3ff0000000000000",
+      "b": "3f50000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3f50000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.25",
+      "a": "3ff0000000000000",
+      "b": "3f54000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3feff60000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.25",
+      "a": "3ff0000000000000",
+      "b": "3f54000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3f54000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.25",
+      "a": "3ff0000000000000",
+      "b": "3f54000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3feff60000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.25",
+      "a": "3ff0000000000000",
+      "b": "3f54000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3f54000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.5",
+      "a": "3ff0000000000000",
+      "b": "3f58000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3feff40000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.5",
+      "a": "3ff0000000000000",
+      "b": "3f58000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3f58000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.5",
+      "a": "3ff0000000000000",
+      "b": "3f58000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3feff40000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.5",
+      "a": "3ff0000000000000",
+      "b": "3f58000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3f58000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.75",
+      "a": "3ff0000000000000",
+      "b": "3f5c000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3feff20000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.75",
+      "a": "3ff0000000000000",
+      "b": "3f5c000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3f5c000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.75",
+      "a": "3ff0000000000000",
+      "b": "3f5c000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3feff20000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_10_1.75",
+      "a": "3ff0000000000000",
+      "b": "3f5c000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3f5c000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.0",
+      "a": "3ff0000000000000",
+      "b": "3e10000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fefffffff800000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.0",
+      "a": "3ff0000000000000",
+      "b": "3e10000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3e10000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.0",
+      "a": "3ff0000000000000",
+      "b": "3e10000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fefffffff800000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.0",
+      "a": "3ff0000000000000",
+      "b": "3e10000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3e10000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.25",
+      "a": "3ff0000000000000",
+      "b": "3e14000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fefffffff600000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.25",
+      "a": "3ff0000000000000",
+      "b": "3e14000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3e14000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.25",
+      "a": "3ff0000000000000",
+      "b": "3e14000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fefffffff600000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.25",
+      "a": "3ff0000000000000",
+      "b": "3e14000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3e14000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.5",
+      "a": "3ff0000000000000",
+      "b": "3e18000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fefffffff400000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.5",
+      "a": "3ff0000000000000",
+      "b": "3e18000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3e18000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.5",
+      "a": "3ff0000000000000",
+      "b": "3e18000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fefffffff400000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.5",
+      "a": "3ff0000000000000",
+      "b": "3e18000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3e18000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.75",
+      "a": "3ff0000000000000",
+      "b": "3e1c000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fefffffff200000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.75",
+      "a": "3ff0000000000000",
+      "b": "3e1c000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3e1c000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.75",
+      "a": "3ff0000000000000",
+      "b": "3e1c000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fefffffff200000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_30_1.75",
+      "a": "3ff0000000000000",
+      "b": "3e1c000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3e1c000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.0",
+      "a": "3ff0000000000000",
+      "b": "3ca0000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.0",
+      "a": "3ff0000000000000",
+      "b": "3ca0000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3ca0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.0",
+      "a": "3ff0000000000000",
+      "b": "3ca0000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.0",
+      "a": "3ff0000000000000",
+      "b": "3ca0000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3ca0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.25",
+      "a": "3ff0000000000000",
+      "b": "3ca4000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3feffffffffffffe",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.25",
+      "a": "3ff0000000000000",
+      "b": "3ca4000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3ca4000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.25",
+      "a": "3ff0000000000000",
+      "b": "3ca4000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.25",
+      "a": "3ff0000000000000",
+      "b": "3ca4000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3ca4000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.5",
+      "a": "3ff0000000000000",
+      "b": "3ca8000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.5",
+      "a": "3ff0000000000000",
+      "b": "3ca8000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3ca8000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.5",
+      "a": "3ff0000000000000",
+      "b": "3ca8000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3feffffffffffffe",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.5",
+      "a": "3ff0000000000000",
+      "b": "3ca8000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3ca8000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.75",
+      "a": "3ff0000000000000",
+      "b": "3cac000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3feffffffffffffe",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.75",
+      "a": "3ff0000000000000",
+      "b": "3cac000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3cac000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.75",
+      "a": "3ff0000000000000",
+      "b": "3cac000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3feffffffffffffe",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_53_1.75",
+      "a": "3ff0000000000000",
+      "b": "3cac000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3cac000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.0",
+      "a": "3ff0000000000000",
+      "b": "3c90000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.0",
+      "a": "3ff0000000000000",
+      "b": "3c90000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3c90000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.0",
+      "a": "3ff0000000000000",
+      "b": "3c90000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.0",
+      "a": "3ff0000000000000",
+      "b": "3c90000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3c90000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.25",
+      "a": "3ff0000000000000",
+      "b": "3c94000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.25",
+      "a": "3ff0000000000000",
+      "b": "3c94000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3c94000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.25",
+      "a": "3ff0000000000000",
+      "b": "3c94000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.25",
+      "a": "3ff0000000000000",
+      "b": "3c94000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3c94000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.5",
+      "a": "3ff0000000000000",
+      "b": "3c98000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.5",
+      "a": "3ff0000000000000",
+      "b": "3c98000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3c98000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.5",
+      "a": "3ff0000000000000",
+      "b": "3c98000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.5",
+      "a": "3ff0000000000000",
+      "b": "3c98000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3c98000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.75",
+      "a": "3ff0000000000000",
+      "b": "3c9c000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.75",
+      "a": "3ff0000000000000",
+      "b": "3c9c000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3c9c000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.75",
+      "a": "3ff0000000000000",
+      "b": "3c9c000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3fefffffffffffff",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_54_1.75",
+      "a": "3ff0000000000000",
+      "b": "3c9c000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3c9c000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.0",
+      "a": "3ff0000000000000",
+      "b": "3c80000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.0",
+      "a": "3ff0000000000000",
+      "b": "3c80000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3c80000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.0",
+      "a": "3ff0000000000000",
+      "b": "3c80000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.0",
+      "a": "3ff0000000000000",
+      "b": "3c80000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3c80000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.25",
+      "a": "3ff0000000000000",
+      "b": "3c84000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.25",
+      "a": "3ff0000000000000",
+      "b": "3c84000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3c84000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.25",
+      "a": "3ff0000000000000",
+      "b": "3c84000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.25",
+      "a": "3ff0000000000000",
+      "b": "3c84000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3c84000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.5",
+      "a": "3ff0000000000000",
+      "b": "3c88000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.5",
+      "a": "3ff0000000000000",
+      "b": "3c88000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3c88000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.5",
+      "a": "3ff0000000000000",
+      "b": "3c88000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.5",
+      "a": "3ff0000000000000",
+      "b": "3c88000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3c88000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.75",
+      "a": "3ff0000000000000",
+      "b": "3c8c000000000000",
+      "path": "integer",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.75",
+      "a": "3ff0000000000000",
+      "b": "3c8c000000000000",
+      "path": "integer",
+      "op": "multiply",
+      "result": "3c8c000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.75",
+      "a": "3ff0000000000000",
+      "b": "3c8c000000000000",
+      "path": "x87",
+      "op": "subtract",
+      "result": "3ff0000000000000",
+      "overflow_stub": false
+    },
+    {
+      "case": "subtract_rounding_55_1.75",
+      "a": "3ff0000000000000",
+      "b": "3c8c000000000000",
+      "path": "x87",
+      "op": "multiply",
+      "result": "3c8c000000000000",
+      "overflow_stub": false
+    }
+  ],
+  "limits": "Not Wine gameplay evidence; no caller admission, all IEEE inputs, alternate rounding modes, x87 status flags or error callback lifecycle guarantee."
+}

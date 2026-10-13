@@ -1,6 +1,6 @@
 # Release preparation
 
-The intended release contains the populated Ghidra analysis databases and original documentation. It excludes the standalone game installation, personal UI state, locks, and temporary files.
+The intended release contains the populated Ghidra analysis databases, original documentation, and the two modified local v1.6.2 files documented in the README (`nfs3.exe` and `FEDATA/MENUS/setup.mnu`). The rest of the game installation, personal UI state, locks, and temporary files remain excluded.
 
 ## Before publication
 

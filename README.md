@@ -2,7 +2,12 @@
 
 Reverse engineering and decompilation of **Need for Speed III: Hot Pursuit** using Ghidra. The completed static analysis pass includes descriptive function names, comments, types, and references. Complex follow-up investigations are documented separately; this project provides an annotated Ghidra database rather than a buildable game reconstruction.
 
-The target is based on [VEG's Modern Patch v1.6.1](https://veg.by/en/projects/nfs3/), with small copyright and version-text changes in `nfs3.exe` and the setup menu preparing our local **1.6.2** version. See [target provenance](docs/TARGET.md) for details and the executable fingerprint.
+The target is based on [VEG's Modern Patch v1.6.1](https://veg.by/en/projects/nfs3/), with small copyright and version-text changes in `nfs3.exe` and the setup menu preparing our local **1.6.2** version. The two modified files are included under [`nfs3_decomp.rep/Electronic Arts/Need For Speed III/`](nfs3_decomp.rep/Electronic%20Arts/Need%20For%20Speed%20III/):
+
+- `nfs3.exe`: local v1.6.2 version/About text and VEG & Melroy attribution.
+- `FEDATA/MENUS/setup.mnu`: updated `Visit veg.by (v1.6.2)` menu text.
+
+See [target provenance](docs/TARGET.md) for details and file fingerprints.
 
 ![NFS III analysis in Ghidra](images/nfs3_ghidra.png)
 
@@ -48,9 +53,15 @@ The `.gpr` file is an empty project marker; the analysis is stored in the matchi
 2. Expand **Electronic Arts → Need For Speed III** and double-click **nfs3.exe**.
 3. Select a function under **Symbol Tree → Functions** to inspect its assembly and pseudocode. Use **Window → Decompiler** if the pane is hidden, or press **G** to navigate to an address.
 
-The standalone `nfs3_decomp.rep/Electronic Arts/` game directory is excluded and is **not needed to browse the saved analysis**. The similarly named folder inside Ghidra is part of the database. Game files are needed separately to run the game.
+Only the two modified files listed above are tracked from the standalone game directory; all other game files remain excluded. These standalone files are **not needed to browse the saved analysis**: the similarly named folder inside Ghidra is part of the database. A separate game installation and its remaining assets are required to play.
 
 Save regularly. Save and close Ghidra before committing database changes, making backups, or upgrading. See [release preparation](docs/RELEASE.md) for validation status.
+
+## Bug reports and game improvements
+
+The reverse-engineered code and annotated Ghidra project give us a foundation for investigating bugs, implementing fixes, and adapting the game. You can now [open an issue](https://github.com/melroy89/nfs3-re/issues) to report a problem or propose an improvement, such as multiplayer changes, expanded race options, or adjustments to pursuit and traffic behavior.
+
+For bugs, include your game/patch version, operating system or Wine version, reproduction steps, and expected versus actual behavior. For feature requests, describe how you want the game to behave and why the change would help. Each proposal still needs investigation and in-game validation; see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## Contributing and license
 

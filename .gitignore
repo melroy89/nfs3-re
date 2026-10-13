@@ -1,5 +1,13 @@
-# Game installation and assets remain local.
-/nfs3_decomp.rep/Electronic Arts/
+# Track only the two modified v1.6.2 files; other game assets remain local.
+/nfs3_decomp.rep/Electronic Arts/*
+!/nfs3_decomp.rep/Electronic Arts/Need For Speed III/
+/nfs3_decomp.rep/Electronic Arts/Need For Speed III/*
+!/nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe
+!/nfs3_decomp.rep/Electronic Arts/Need For Speed III/FEDATA/
+/nfs3_decomp.rep/Electronic Arts/Need For Speed III/FEDATA/*
+!/nfs3_decomp.rep/Electronic Arts/Need For Speed III/FEDATA/MENUS/
+/nfs3_decomp.rep/Electronic Arts/Need For Speed III/FEDATA/MENUS/*
+!/nfs3_decomp.rep/Electronic Arts/Need For Speed III/FEDATA/MENUS/setup.mnu
 
 # Per-user Ghidra workspace and window/tool state.
 /nfs3_decomp.rep/user/
