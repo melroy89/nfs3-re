@@ -1,0 +1,3446 @@
+{
+  "source": "hud-layout-target23.jsonl",
+  "method": "Non-atomic 5Hz read-only process memory samples; transition subset, no input-event trace",
+  "samples": [
+    {
+      "t": 1.7737000234774314e-05,
+      "unix_time": 1791911568.596229,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        0
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          634,
+          599
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5005000233650208,
+          0.12999999523162842,
+          0.5544999837875366,
+          0.33000001311302185
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          634,
+          599
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5005000233650208,
+          0.12999999523162842,
+          0.5544999837875366,
+          0.33000001311302185
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 52.8557121369995,
+      "unix_time": 1791911621.4519236,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 11,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e338",
+        "type": 31,
+        "flags": 3072,
+        "item": 8,
+        "xy": [
+          744,
+          497
+        ],
+        "right_bottom": [
+          1176,
+          583
+        ],
+        "normalized_words": [
+          220,
+          248,
+          144,
+          38
+        ],
+        "rectangle": [
+          0.46000000834465027,
+          0.38749998807907104,
+          0.5400000214576721,
+          0.6124999523162842
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          634,
+          599
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5005000233650208,
+          0.12999999523162842,
+          0.5544999837875366,
+          0.33000001311302185
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 151.16653931499968,
+      "unix_time": 1791911719.7627509,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 152.5687501350003,
+      "unix_time": 1791911721.1649616,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 152.76892580999993,
+      "unix_time": 1791911721.365137,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 153.56985211799838,
+      "unix_time": 1791911722.1660633,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 153.7700335019981,
+      "unix_time": 1791911722.3662448,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 197.215257388998,
+      "unix_time": 1791911765.8114688,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "t": 201.02069157200094,
+      "unix_time": 1791911769.616903,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 202.42249708099916,
+      "unix_time": 1791911771.0187085,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "t": 205.42544594300125,
+      "unix_time": 1791911774.0216577,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 206.02607960299792,
+      "unix_time": 1791911774.6222908,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 224.64586144900022,
+      "unix_time": 1791911793.242073,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 224.84604767400015,
+      "unix_time": 1791911793.4422588,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 225.44653197799926,
+      "unix_time": 1791911794.0427432,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          541
+        ],
+        "right_bottom": [
+          633,
+          598
+        ],
+        "normalized_words": [
+          240,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.1302083283662796,
+          0.5537037253379822,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 225.8468809429978,
+      "unix_time": 1791911794.4430926,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          562
+        ],
+        "right_bottom": [
+          633,
+          619
+        ],
+        "normalized_words": [
+          249,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.520370364189148,
+          0.1302083283662796,
+          0.5731481313705444,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          562
+        ],
+        "right_bottom": [
+          633,
+          619
+        ],
+        "normalized_words": [
+          249,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.520370364189148,
+          0.1302083283662796,
+          0.5731481313705444,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 226.84782988799998,
+      "unix_time": 1791911795.4440413,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          247,
+          559
+        ],
+        "right_bottom": [
+          630,
+          616
+        ],
+        "normalized_words": [
+          248,
+          82,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5175926089286804,
+          0.12864583730697632,
+          0.5703703761100769,
+          0.328125
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          247,
+          559
+        ],
+        "right_bottom": [
+          630,
+          616
+        ],
+        "normalized_words": [
+          248,
+          82,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5175926089286804,
+          0.12864583730697632,
+          0.5703703761100769,
+          0.328125
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 227.04803258899847,
+      "unix_time": 1791911795.6442442,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          550
+        ],
+        "right_bottom": [
+          633,
+          607
+        ],
+        "normalized_words": [
+          244,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5092592835426331,
+          0.1302083283662796,
+          0.5620370507240295,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          550
+        ],
+        "right_bottom": [
+          633,
+          607
+        ],
+        "normalized_words": [
+          244,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5092592835426331,
+          0.1302083283662796,
+          0.5620370507240295,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 227.24834224000006,
+      "unix_time": 1791911795.8445537,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          544
+        ],
+        "right_bottom": [
+          633,
+          601
+        ],
+        "normalized_words": [
+          241,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5037037134170532,
+          0.1302083283662796,
+          0.5564814805984497,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          250,
+          544
+        ],
+        "right_bottom": [
+          633,
+          601
+        ],
+        "normalized_words": [
+          241,
+          83,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5037037134170532,
+          0.1302083283662796,
+          0.5564814805984497,
+          0.3296875059604645
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 227.44861101100105,
+      "unix_time": 1791911796.0448222,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          253,
+          539
+        ],
+        "right_bottom": [
+          636,
+          596
+        ],
+        "normalized_words": [
+          239,
+          84,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4990740716457367,
+          0.13177083432674408,
+          0.5518518686294556,
+          0.33125001192092896
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          253,
+          539
+        ],
+        "right_bottom": [
+          636,
+          596
+        ],
+        "normalized_words": [
+          239,
+          84,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4990740716457367,
+          0.13177083432674408,
+          0.5518518686294556,
+          0.33125001192092896
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 227.84896920100073,
+      "unix_time": 1791911796.4451807,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          247,
+          541
+        ],
+        "right_bottom": [
+          630,
+          598
+        ],
+        "normalized_words": [
+          240,
+          82,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12864583730697632,
+          0.5537037253379822,
+          0.328125
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          247,
+          541
+        ],
+        "right_bottom": [
+          630,
+          598
+        ],
+        "normalized_words": [
+          240,
+          82,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12864583730697632,
+          0.5537037253379822,
+          0.328125
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 228.04924365999977,
+      "unix_time": 1791911796.6454551,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          541
+        ],
+        "right_bottom": [
+          627,
+          598
+        ],
+        "normalized_words": [
+          240,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12708333134651184,
+          0.5537037253379822,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          541
+        ],
+        "right_bottom": [
+          627,
+          598
+        ],
+        "normalized_words": [
+          240,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12708333134651184,
+          0.5537037253379822,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "t": 228.45028111300053,
+      "unix_time": 1791911797.0464926,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          244,
+          541
+        ],
+        "right_bottom": [
+          627,
+          598
+        ],
+        "normalized_words": [
+          240,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12708333134651184,
+          0.5537037253379822,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          244,
+          541
+        ],
+        "right_bottom": [
+          627,
+          598
+        ],
+        "normalized_words": [
+          240,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12708333134651184,
+          0.5537037253379822,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 229.25122256399845,
+      "unix_time": 1791911797.847434,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          541
+        ],
+        "right_bottom": [
+          627,
+          598
+        ],
+        "normalized_words": [
+          240,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12708333134651184,
+          0.5537037253379822,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          541
+        ],
+        "right_bottom": [
+          627,
+          598
+        ],
+        "normalized_words": [
+          240,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12708333134651184,
+          0.5537037253379822,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "t": 230.2522557609991,
+      "unix_time": 1791911798.848467,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          541
+        ],
+        "right_bottom": [
+          627,
+          598
+        ],
+        "normalized_words": [
+          240,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12708333134651184,
+          0.5537037253379822,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          541
+        ],
+        "right_bottom": [
+          627,
+          598
+        ],
+        "normalized_words": [
+          240,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12708333134651184,
+          0.5537037253379822,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 230.65261828000075,
+      "unix_time": 1791911799.2488296,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          547
+        ],
+        "right_bottom": [
+          627,
+          604
+        ],
+        "normalized_words": [
+          243,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5064814686775208,
+          0.12708333134651184,
+          0.5592592358589172,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          547
+        ],
+        "right_bottom": [
+          627,
+          604
+        ],
+        "normalized_words": [
+          243,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5064814686775208,
+          0.12708333134651184,
+          0.5592592358589172,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 230.85289601499971,
+      "unix_time": 1791911799.4491072,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          547
+        ],
+        "right_bottom": [
+          624,
+          604
+        ],
+        "normalized_words": [
+          243,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5064814686775208,
+          0.12552084028720856,
+          0.5592592358589172,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          547
+        ],
+        "right_bottom": [
+          624,
+          604
+        ],
+        "normalized_words": [
+          243,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5064814686775208,
+          0.12552084028720856,
+          0.5592592358589172,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 231.25320768799793,
+      "unix_time": 1791911799.8494194,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          538
+        ],
+        "right_bottom": [
+          627,
+          595
+        ],
+        "normalized_words": [
+          239,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12708333134651184,
+          0.5509259104728699,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          244,
+          538
+        ],
+        "right_bottom": [
+          627,
+          595
+        ],
+        "normalized_words": [
+          239,
+          81,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12708333134651184,
+          0.5509259104728699,
+          0.3265624940395355
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 231.8536889829993,
+      "unix_time": 1791911800.4499004,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          247,
+          541
+        ],
+        "right_bottom": [
+          630,
+          598
+        ],
+        "normalized_words": [
+          240,
+          82,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12864583730697632,
+          0.5537037253379822,
+          0.328125
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          247,
+          541
+        ],
+        "right_bottom": [
+          630,
+          598
+        ],
+        "normalized_words": [
+          240,
+          82,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12864583730697632,
+          0.5537037253379822,
+          0.328125
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 232.45414655299828,
+      "unix_time": 1791911801.050358,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          541
+        ],
+        "right_bottom": [
+          624,
+          598
+        ],
+        "normalized_words": [
+          240,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12552084028720856,
+          0.5537037253379822,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          541
+        ],
+        "right_bottom": [
+          624,
+          598
+        ],
+        "normalized_words": [
+          240,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5009258985519409,
+          0.12552084028720856,
+          0.5537037253379822,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 232.6543145229989,
+      "unix_time": 1791911801.250526,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          538
+        ],
+        "right_bottom": [
+          624,
+          595
+        ],
+        "normalized_words": [
+          239,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12552084028720856,
+          0.5509259104728699,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          538
+        ],
+        "right_bottom": [
+          624,
+          595
+        ],
+        "normalized_words": [
+          239,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12552084028720856,
+          0.5509259104728699,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 233.25497930499841,
+      "unix_time": 1791911801.8511908,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          241,
+          538
+        ],
+        "right_bottom": [
+          624,
+          595
+        ],
+        "normalized_words": [
+          239,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12552084028720856,
+          0.5509259104728699,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          241,
+          538
+        ],
+        "right_bottom": [
+          624,
+          595
+        ],
+        "normalized_words": [
+          239,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12552084028720856,
+          0.5509259104728699,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "t": 233.85560297700067,
+      "unix_time": 1791911802.4518144,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          538
+        ],
+        "right_bottom": [
+          624,
+          595
+        ],
+        "normalized_words": [
+          239,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12552084028720856,
+          0.5509259104728699,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          538
+        ],
+        "right_bottom": [
+          624,
+          595
+        ],
+        "normalized_words": [
+          239,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12552084028720856,
+          0.5509259104728699,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "t": 266.6899117899993,
+      "unix_time": 1791911835.2861233,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          538
+        ],
+        "right_bottom": [
+          624,
+          595
+        ],
+        "normalized_words": [
+          239,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12552084028720856,
+          0.5509259104728699,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          538
+        ],
+        "right_bottom": [
+          624,
+          595
+        ],
+        "normalized_words": [
+          239,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12552084028720856,
+          0.5509259104728699,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 267.090279819,
+      "unix_time": 1791911835.6864915,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          238,
+          538
+        ],
+        "right_bottom": [
+          621,
+          595
+        ],
+        "normalized_words": [
+          239,
+          79,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12395833432674408,
+          0.5509259104728699,
+          0.32343751192092896
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          238,
+          538
+        ],
+        "right_bottom": [
+          621,
+          595
+        ],
+        "normalized_words": [
+          239,
+          79,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.4981481432914734,
+          0.12395833432674408,
+          0.5509259104728699,
+          0.32343751192092896
+        ],
+        "status_link_mode": [
+          0,
+          5629432,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 267.6910314119996,
+      "unix_time": 1791911836.287243,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          238,
+          543
+        ],
+        "right_bottom": [
+          621,
+          600
+        ],
+        "normalized_words": [
+          241,
+          79,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5027777552604675,
+          0.12395833432674408,
+          0.5555555820465088,
+          0.32343751192092896
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          238,
+          543
+        ],
+        "right_bottom": [
+          621,
+          600
+        ],
+        "normalized_words": [
+          241,
+          79,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5027777552604675,
+          0.12395833432674408,
+          0.5555555820465088,
+          0.32343751192092896
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 267.89120025399825,
+      "unix_time": 1791911836.4874115,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          238,
+          547
+        ],
+        "right_bottom": [
+          621,
+          604
+        ],
+        "normalized_words": [
+          243,
+          79,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5064814686775208,
+          0.12395833432674408,
+          0.5592592358589172,
+          0.32343751192092896
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          238,
+          547
+        ],
+        "right_bottom": [
+          621,
+          604
+        ],
+        "normalized_words": [
+          243,
+          79,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5064814686775208,
+          0.12395833432674408,
+          0.5592592358589172,
+          0.32343751192092896
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 268.091389666999,
+      "unix_time": 1791911836.687601,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          238,
+          552
+        ],
+        "right_bottom": [
+          621,
+          609
+        ],
+        "normalized_words": [
+          245,
+          79,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5111111402511597,
+          0.12395833432674408,
+          0.5638889074325562,
+          0.32343751192092896
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          238,
+          552
+        ],
+        "right_bottom": [
+          621,
+          609
+        ],
+        "normalized_words": [
+          245,
+          79,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5111111402511597,
+          0.12395833432674408,
+          0.5638889074325562,
+          0.32343751192092896
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 268.8923344809991,
+      "unix_time": 1791911837.4885461,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          552
+        ],
+        "right_bottom": [
+          624,
+          609
+        ],
+        "normalized_words": [
+          245,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5111111402511597,
+          0.12552084028720856,
+          0.5638889074325562,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 3072,
+        "item": 23,
+        "xy": [
+          241,
+          552
+        ],
+        "right_bottom": [
+          624,
+          609
+        ],
+        "normalized_words": [
+          245,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5111111402511597,
+          0.12552084028720856,
+          0.5638889074325562,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          0,
+          6352068,
+          0
+        ],
+        "mouse_keyboard": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "t": 273.4969739119988,
+      "unix_time": 1791911842.0931852,
+      "menu": "ps2p2r",
+      "session": 1,
+      "first": 191,
+      "selected": 20,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "split_bounds": [
+        0,
+        540
+      ],
+      "entry": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          241,
+          552
+        ],
+        "right_bottom": [
+          624,
+          609
+        ],
+        "normalized_words": [
+          245,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5111111402511597,
+          0.12552084028720856,
+          0.5638889074325562,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      },
+      "target23": {
+        "address": "0x60e9d4",
+        "type": 31,
+        "flags": 2048,
+        "item": 23,
+        "xy": [
+          241,
+          552
+        ],
+        "right_bottom": [
+          624,
+          609
+        ],
+        "normalized_words": [
+          245,
+          80,
+          128,
+          26
+        ],
+        "rectangle": [
+          0.5111111402511597,
+          0.12552084028720856,
+          0.5638889074325562,
+          0.32499998807907104
+        ],
+        "status_link_mode": [
+          1,
+          0,
+          0
+        ],
+        "mouse_keyboard": [
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

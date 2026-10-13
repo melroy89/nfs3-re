@@ -5407,7 +5407,7 @@ remain Partial. Binary and runtime memory were not modified.
 
 - **Name:** `NormalizeAndCheckFrontendEntryRectangle`.
 - **Geometry:** input EAX is entry. Signed ID `+3c >=23` selects view 1 and subtracts 23; otherwise view 0. Signed WORD X/Y at `+6/+8` and signed DWORD right/bottom at `+60/+64` are divided by viewport width/height and stored as floats at `+44/+40/+4c/+48`. No zero-dimension check. Four DWORDs are copied into the layout table at `006fbc74`, with ID stride `10` hex and vehicle/session blocks `1a4`/`348` hex.
-- **Validation boundary:** calls `004853c0` and `004800a0`; IDs `11`/`16` hex can also update the `006fbde4` rectangle when both spans fall below `00539bb4`. Calls `00459670` with rectangle pointer, view, ID, per-view value from `00677df0`, and a stack output pointer. Full validator semantics remain unresolved and deferred.
+- **Validation boundary:** calls `004853c0` and `004800a0`; IDs `11`/`16` hex can also update the `006fbde4` rectangle when both spans fall below `00539bb4`. Calls `00459670` with rectangle pointer, view, ID, per-view value from `00677df0`, and a stack output pointer. Validator semantics are covered in the later “HUD rectangle placement and conflict selection” section; caller admission and output initialization remain unresolved.
 - **Result handling:** nonzero validator result restores a previous linked entry's `+70` flag, clears the link, copies current rectangle to `+50..5c`, and returns 1. Zero replaces entry `+74` with validator output and writes its `+70=0` without a local null check, then returns 0. Do not infer flag meaning or output validity on every validator failure path.
 - **ABI/evidence:** full outer assembly inspected; EBX/ECX/EDX/ESI/EDI/EBP restored. EAX is sole result; decompiled 64-bit return is misleading. MOVSD copies assume normal clear-DF ABI. Ghidra name/comment saved; no runtime test or executable modification.
 
@@ -14301,3 +14301,97 @@ Live decompilation identifies the following ten submissions. Fixed-bar setup blo
 - **Effects link:** Live UpdateVehicleWheelEffectsAndStripState and aligned0042a694 onward confirm wheel indices0/1 use double(V+5c0)*storedDouble7.5; indices2/3 use V+5c4 converted to double. Ordered clamps0..10 preserve unordered values, then storefloat at V+94c+4*i. Subsequent strip, material and speed effect dispatchers can modify the value. Thus the physics status has a concrete per-wheel effect-intensity consumer; wheel axis identity and physical units are not thereby proven.
 - **Feedback link:** SubmitSelectedVehicleScalarFeedbackPayload already has an assembly-backed contract: positive or unordered V+5c0 quarters the signed-clamped payload magnitude using SAR2. This connects the same status to force-feedback behavior; it does not make the status itself a force in calibrated units.
 - **Changes:** Added caller/consumer linkage at004ad231 and saved Ghidra. No runtime test or executable change.
+
+
+### HUD keyboard adjustment callback recovered (`0045bd20`)
+
+- **Evidence:** Live xrefs to `00459db0` exposed twelve call sites outside defined functions. Original-byte disassembly establishes callback entry `0045bd20`, complete return boundary `0045c9ce`, and data reference `00557958`. Created `HandleHudLayoutDescriptorKeyboardAdjustment`; Ghidra recovered a 3,247-byte body and full pseudocode. This is a newly defined function, not a rename of an existing entry.
+- **Contract:** EAX supplies descriptor, incoming BX the key code. ECX/ESI/EDI/EBP are saved; EBX/EDX are volatile. Returns 0 for unhandled input and 2 for handled input. Shift+arrow starts movement; Ctrl+arrow starts edge resizing for signed descriptor ID modulo 23 equal to 17 or 22. Adjustment codes `409/809/108/208` select left/right/top/bottom. WORD+7e and byte+5 mask04 mark active keyboard adjustment. Enter commits the snapshot at `00677e08` and restores cursor selection.
+- **Validation:** Step is signed viewport width divided by 80 for both axes. Twelve move/resize paths call `00459db0`, store its result at descriptor+70, and copy eight bytes from +1a to `00677e08` only on success. Boundary clamps differ by branch; they do not establish that every validator rejection has a descriptor output.
+- **Split-screen lead:** Initialization at `0045bed0` places descriptor IDs **<=23** in the upper interval and IDs **>23** in the lower interval; the normalizer selects view 1 for IDs **>=23**. Whether descriptor 23 is admitted to this callback remains to establish. This is an observed comparison mismatch, not a demonstrated gameplay defect.
+- **Limits and next step:** Full pseudocode inspected; assembly checked for entry, activation, split bounds, representative movement validation and returns. Exact x87 resize rounding and upstream callback admission still need review. Another table-referenced code entry at `0045b940` remains outside defined functions and needs its own boundary/role audit. No runtime run or executable modification.
+- **Inventory:** After saving, live `list_functions_enhanced` returns 4,041 entries and zero `FUN_`/`UndefinedFunction_` names. Naming percentages describe defined functions, not proof all executable routines have been discovered.
+
+
+### HUD resize cursor and installed descriptor admission
+
+- **Recovered function:** `0045b940 SelectHudLayoutResizeCursor`, referenced at `00557960`; defined body `0045b940..0045bcac` (877 bytes). EAX supplies descriptor; all six other general registers are preserved. Returns low byte of descriptor+78 in EAX; decompiler EDX:EAX return is an artifact.
+- **Selection:** Active mouse/keyboard adjustment (+7c/+7e WORDs) preserves the current mode. Otherwise clears +78 and permits resizing only for IDs17/22 after one subtraction of23 for IDs>=23. Screen cursor coordinates use wrapping32-bit products with viewport dimensions and doubles1/640 and1/480. For ordinary finite values the edge threshold is strictly8 pixels, verified from original constants539c24/2c/34. Left has priority over right, then top over bottom. Modes: left409, right809, top108, bottom208, top-left50a, bottom-left60b, top-right90b, bottom-righta0a. High byte supplies edge flags consumed by mouse drag; low byte supplies cursor selection. No orthogonal containment test occurs locally.
+- **Admission evidence:** A read-only scan of installed `FEDATA/MENUS` found seven files with `[HudItem]` sections. All four split-screen files (`ps2p2c.mnu`, `ps2p2r.mnu`, `ps2p1c2r.mnu`, `ps2p1r2c.mnu`) explicitly contain `item=23`. Therefore the keyboard boundary mismatch cannot be dismissed on the assumption that23 is absent from shipped menu data. Parser-to-field binding, initialization, visibility, selection and keyboard dispatch still require confirmation before runtime reachability is established.
+- **Remaining boundaries:** Template-adjacent entries0045bcb0,0045ca90 remain outside defined functions; do not include them in naming coverage until recovered. The callback table and menu declarations are static evidence, not an observed gameplay failure. Saved Ghidra annotations; live defined-function inventory4,042, all named. Executable unchanged.
+
+
+### HUD descriptor rectangle initializer (`0045ca90`)
+
+- **Recovery and evidence:** Defined `LoadHudLayoutDescriptorRectangle` from callback pointer `0055794c`. Reviewed the complete 182-byte body through `0045cb45`; saved and read back its Ghidra plate comment.
+- **Contract:** EAX supplies descriptor D; six other general registers are preserved. Signed IDs >=23 select view1 and subtract23 for the element index. Bank is view plus one when session mode is1. Vehicle flag byte+200 bit20 selects the alternate layout variant. Copies four normalized rectangle DWORDs from `006fbc74 + bank*0x348 + variant*0x1a4 + element*0x10` into D+40..4c. Copies cached pixel X/Y low WORDs and right/bottom DWORDs from `00749758 + view*0x170 + element*0x10` into D+6/+8/+60/+64.
+- **Boundary consequence:** ID23 initializes as player-two element0, agreeing with the normalizer and differing from keyboard split-bound comparison `0045bed0`. Added an instruction comment at that comparison. Installed menu declarations support ID23 presence; callback selection and runtime reachability remain unproven.
+- **Limits:** No local index/pointer validation and no initialization here of status, links, adjustment state or normalized WORD dimensions. No Wine run or binary edit. Live inventory now4,043 defined internal functions, all named.
+
+
+### HudItem parser binding for descriptor 23
+
+- **Registry evidence:** Original executable row `00557bd4` contains ID31, the string `HudItem`, and template pointer `00557928`. `CopyMenuItemTemplateById` (`00449060`) copies all0xbc bytes into the entry array at `00604ee0`. This connects the template callbacks to installed `[HudItem]` sections.
+- **Field evidence:** Row `00558960` contains class31, key `item`, type2 and destination `00604f1c`. The field lookup admits the matching class; `StoreParsedFrontendEntryField` (`00449240`) parses a validated integer and stores four bytes at that destination plus entryIndex*0xbc. Therefore `item=23` supplies the exact DWORD at descriptor+3c consumed by the initializer, validator and keyboard handler.
+- **Consequence and limits:** The split-screen mismatch now has confirmed asset-to-field binding. Runtime visibility, selected-entry dispatch and the result of moving that item remain unobserved. Saved Ghidra comments on both registry rows; no executable modification or runtime test.
+
+
+### HUD pixel-bound normalization callback (`0045c9d0`)
+
+- **Evidence:** Template slot `0055795c` references the previously undefined body `0045c9d0..0045ca85`. Created `NormalizeHudLayoutDescriptorPixelBounds` and annotated the complete assembly contract. Original doubles `00539c74/7c` are640 and480.
+- **Behavior:** EAX supplies descriptor D. Signed WORD x/y at+6/+8 and DWORD right/bottom at+60/+64 produce normalized WORD x/y/width/height at+1c/+1a/+1e/+20. Width and height use inclusive extents (right-x+1, bottom-y+1). Arithmetic differences wrap32; x87 conversion truncates toward zero and stores low16. General registers remain preserved by the body and truncation helper; EAX remains the descriptor.
+- **Admission consequence:** No item-ID check or veto occurs here. The callback initializes normalized geometry and cannot locally exclude item23. Its exact dispatch ordering and upstream selection gates remain to inspect. No zero-dimension guard or general clamping is present. Formulas do not imply bit-exact equivalence after reordering x87 operations.
+- **State:** Saved function/comment; no executable changes or runtime test.
+
+
+### HUD keyboard dispatch and runtime capture preparation
+
+- **Dispatch evidence:** Aligned assembly `0044a339..0044a360` indexes the current menu selection, loads entry+30, and calls it with EAX=entry, EDX=menu, EBX=sign-extended input WORD. The HudItem template places `0045bd20` at+30. No item-ID comparison or local disabled-flag check occurs at that call. Existing session-policy gates still apply. Added this linkage to the existing instruction comment without replacing its prior findings.
+- **Selection evidence:** `SelectNextEligibleFrontendEntry` rejects effective flag mask0x1301; template HudItem flag0x0800 alone is admitted. Network race-now policy returns true outside its active network gate. These are conditional static facts, not proof a live item23 is selected.
+- **Menu initialization:** Registry rows `00555e28/40/58/70` bind all four ps2p menus to initializer `0044de80` and callback `0044dfd0`. Original-byte initializer inspection shows layout backup, view setup, action binding and cache updates; helper effects and later callbacks still require review. No initializer function definition or complete semantic claim added yet.
+- **Runtime preparation:** Launched NFS3 via the configured Wine prefix. Added `analysis/scripts/capture_hud_state.py`, a bounded O_RDONLY sampler (five samples/second, at most600 seconds), capturing current selected descriptor and split bounds without suspension or writes. Desktop authentication requested. No live capture success or gameplay result is established by this preparation.
+
+
+### HUD editing menu initialization and first live sampler check
+
+- **Recovered:** `0044de80 InitializeHudLayoutEditingMenu`, full331-byte body through0044dfca. Initial creation encountered undefined instruction bytes and produced a one-byte body; disassembled the known code, recreated it, and verified the full body before annotation/save.
+- **Behavior:** Resolves each view's vehicle layout variant, selects view mode3, clears66440c, and backs up0x170 bytes per active layout to662990/662b00. Binds named done/reset callbacks and refreshes view caches. No direct item23 exclusion occurs locally; helper and later callback effects remain separate.
+- **Runtime status:** The desktop prompt was dismissed; the visible-terminal sudo route subsequently succeeded. Verified Python sampler process and fresh samples from live game PID465884: menu setup, session0. This proves read access and active capture only, not HUD behavior. User instructed to start split-screen and pause during countdown. Raw capture is analysis/runtime/hud-layout-live.jsonl. Descriptor fields beyond common header are meaningful as HUD fields only when entry type31; initial type5 button samples must not be interpreted as HUD state.
+
+
+### HUD edit acceptance and rollback (`0044dfd0`)
+
+- **Recovered and saved:** `FinalizeHudLayoutEditingMenu`, complete350-byte body0044dfd0..0044e12d. A temporary active-transaction save failure was retried successfully.
+- **Rollback contract:** If66440c is zero, restores each active view's0x170-byte normalized layout backup and rebuilds all23 element caches, followed by view-cache refresh. Nonzero skips restoration. Initializer0044de80 clears the flag; bound done handler0044de00 sets it on Enter before forwarding to the normal button handler. This establishes an accept-versus-rollback distinction in memory, not a disk-save guarantee.
+- **Common cleanup:** Resets both view-related helper states via00482030, clears559264, restores mode23 through00423960 and calls004844c0 for both split views. Exact visual effects remain helper contracts.
+- **Live progress:** Capture reached ps2p2r/session1 with selectable type31 entries (observed items30,38,35,8,7,6,1). These prove live layout selection, not item23 keyboard movement or the suspected bounds defect. User was asked to switch player-two speedometer to digital and reopen Position to target item23. No measured movement result yet.
+
+
+### Player-two digital HUD baseline captured
+
+- **Live evidence:** Fresh target23 capture verified running after the first bounded sampler expired. In ps2p2r/session1 at1920x1080, item23 was selected (relative index20), flags0x0800, descriptor0060e9d4. Pixel position(250,541), inclusive bounds(634,599), normalized WORDs(top240,left83,width128,height26); status1, no linked conflict, both adjustment flags zero. This proves item23 can be selected normally in this run. User reports player-two speedometer already KPH Digital; earlier selected item1 was player one and did not establish player-two display mode.
+- **Pending action:** Requested one Shift+Down tap. Subsequent samples so far show selection changes but no target23 keyboard activation or split-bound initialization; no movement outcome asserted. Original-byte downward gate0045c1d8..0045c203 compares upper bound against y+normalizedHeight*viewportHeight/480. With baseline541 and26 at1080, candidate extent is599.5; an upper bound540 would reject movement. That is a static prediction until activation and bounds are captured.
+- **Capture refinement:** Sampler now emits common fields only for non-HUD entries, records viewport/time, and reads item23 independently of selection via bounded current-menu scan. Existing first-capture non-HUD overlay fields remain uninterpreted.
+
+
+### Live HUD keyboard adjustment: item 8 control bar
+
+- **Observed:** User identified selected item8 as the play/pause controls. In target23 capture, item8 at0060e338 initially had XY(744,497), right/bottom(1176,583). At t52.856 keyboard flag became1 and split bounds became(0,540). Subsequent Y values473 and449 differ by24 pixels, agreeing with signed width/80 at1920 pixels. Later Y454/bottom540 reached the upper-half boundary; further changes and normalized-coordinate recalculation were captured. At t97.506 keyboard flag cleared; final captured bounds were(1175,538), XY(744,454).
+- **Interpretation limit:** The sampler records state, not exact key events. The user reported movement after Shift+Down, but multiple transitions occurred; do not attribute the initial upward steps or later rounding to one key without an input trace. This validates keyboard activation and24-pixel step behavior for item8, not the item23 defect. Item23 remained at(250,541) with keyboard flag0 during these transitions.
+- **Annotation:** Saved instruction comment at0045bf13 linking the divisor80 to the observed step, with input-sequence limitation. Original executable unchanged.
+
+
+### Runtime-confirmed player-two keyboard bounds and invalid conflict link
+
+- **Evidence artifact:** [HUD transition samples](hud-layout-target23-evidence.json) retains representative original read-only samples from the active five-Hz capture. Samples are non-atomic; key events and individual instructions were not traced.
+- **Confirmed keyboard defect:** Player-two item23 was selected normally and entered keyboard adjustment (+7e=1). At1920x1080 the handler retained bounds0..540, matching its signed ID<=23 upper-half branch. Initialization and normalization map that same ID to view1. Keyboard-only intervals show unchanged coordinates; user confirms Shift+Down fails while mouse dragging moves it. Downward gate0045c203 rejects the baseline extent599.5 against540. The wrong-half keyboard bound is confirmed; no patch applied. Full-history inspection also found activation at t197.215 that an earlier latest-sample-only check missed; that earlier statement of no activation is superseded.
+- **Separate mouse-path finding:** At t227.449,231.253,232.654 and later, item23 top crossed below0.5 (pixel y538/539) and status became0 with conflict link0055e5f8. That address is outside the frontend descriptor array. Other overlaps produced aligned link0060ecc4. This is live evidence of an out-of-table conflict link during ordinary mouse editing, consistent with the statically identified uninitialized validator output on bounds rejection. The sampler did not observe the subsequent write instruction or destination, so memory-write effects and crash behavior remain unproven. No crash was observed.
+- **Annotations and test exit:** Saved comments at0045bed0,0045c203 and00459fc3. Asked user to press Enter and Cancel; later capture returned to pshud2p. Restoration of every original coordinate is not yet verified.
+
+### HUD conflict pointer destination and final checkpoint
+
+- **Static refinement:** Captured invalid conflict pointer `0055e5f8` is the mouse-wheel output storage passed by `PollFrontendInputCode` and `PollFrontendMouseConfirmCancelCode` to the mouse reader. At `00459fc9`, the failure path writes zero to conflict pointer + `0x70`, implying destination `0055e668` for that captured value. Prior-link release writes one at the same offset. This storage is not a frontend descriptor.
+- **Limits:** Neither the destination write nor its contents were captured live. Exact stack-slot provenance and ownership of `0055e668` remain unresolved; do not infer a particular damaged object or a crash. The mouse-reader call chain alone does not establish how that pointer reached the uninitialized local. No further runtime test was requested.
+- **Saved annotation:** Added and read back an instruction comment at `00459fc9`, preserving the distinction between an observed invalid link and a statically implied write destination. The existing comments document the independently confirmed player-two keyboard bounds defect.
+- **Final inventory:** Live Ghidra enumeration returns **4,046 defined internal functions**, zero external entries in that enumeration, and zero `FUN_`/`UndefinedFunction_` names. All defined internal functions have names; this is naming coverage, not proof of complete code discovery or behavioral understanding. Six HUD callbacks were recovered during this pass. README totals match.
+- **Runtime shutdown:** User closed the game and capture terminal. The final short read occurred during shutdown and is not evidence of a gameplay failure. Representative valid transitions are retained in `hud-layout-target23-evidence.json`; raw captures remain excluded from Git. The executable was not modified.
