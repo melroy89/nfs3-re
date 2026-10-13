@@ -1,0 +1,205 @@
+{
+  "scope": "Installed uppercase GAMEDATA/TRACKS/TRK*/*.COL files. COLL directory offsets are relative to the payload after the16-byte file header; type15 blocks use8-byte header and36-byte segment records.",
+  "method": "Read-only file inventory and integer sampling arithmetic from0048cdb0; not live loading/rendering evidence.",
+  "file_count": 9,
+  "rows": [
+    {
+      "path": "GAMEDATA/TRACKS/TRK000/TR00.COL",
+      "sha256": "9d3532465ad55f93fd78d3d9970b191d649f7c9a80cf527286c408706bd614f4",
+      "version": 11,
+      "file_bytes": 41504,
+      "block_count": 4,
+      "segment_blocks": [
+        {
+          "index": 3,
+          "offset": 6972,
+          "declared_bytes": 34532,
+          "required_segment_bytes": 34532,
+          "exact_record_extent": true,
+          "segment_count": 959,
+          "step": 7,
+          "points_including_closure": 138,
+          "initialized_u16_count": true,
+          "avoids_zero_step": true,
+          "fits_256_pair_sampling_bound": true
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK001/TR01.COL",
+      "sha256": "06127c6dd7c68a802bd8c98b804cbde993ec4bb2578dacce173ce1f08d538bde",
+      "version": 11,
+      "file_bytes": 60224,
+      "block_count": 4,
+      "segment_blocks": [
+        {
+          "index": 3,
+          "offset": 7548,
+          "declared_bytes": 52676,
+          "required_segment_bytes": 52676,
+          "exact_record_extent": true,
+          "segment_count": 1463,
+          "step": 11,
+          "points_including_closure": 134,
+          "initialized_u16_count": true,
+          "avoids_zero_step": true,
+          "fits_256_pair_sampling_bound": true
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK002/TR02.COL",
+      "sha256": "3d1aa1b7cae2549d8176be844ea5154ddfc91900eefa7ea5c9101743701064d5",
+      "version": 11,
+      "file_bytes": 58900,
+      "block_count": 5,
+      "segment_blocks": [
+        {
+          "index": 4,
+          "offset": 11192,
+          "declared_bytes": 47708,
+          "required_segment_bytes": 47708,
+          "exact_record_extent": true,
+          "segment_count": 1325,
+          "step": 10,
+          "points_including_closure": 134,
+          "initialized_u16_count": true,
+          "avoids_zero_step": true,
+          "fits_256_pair_sampling_bound": true
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK003/TR03.COL",
+      "sha256": "a5d29e1c8b227736948c852c716424180efff437fef9866a1eb4e7f644559195",
+      "version": 11,
+      "file_bytes": 56644,
+      "block_count": 2,
+      "segment_blocks": [
+        {
+          "index": 1,
+          "offset": 3248,
+          "declared_bytes": 53396,
+          "required_segment_bytes": 53396,
+          "exact_record_extent": true,
+          "segment_count": 1483,
+          "step": 11,
+          "points_including_closure": 136,
+          "initialized_u16_count": true,
+          "avoids_zero_step": true,
+          "fits_256_pair_sampling_bound": true
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK004/TR04.COL",
+      "sha256": "cb7f43137a4ef5b1c28f2c15b79e68e798405dfced143d66224724226ba23b99",
+      "version": 11,
+      "file_bytes": 53276,
+      "block_count": 2,
+      "segment_blocks": [
+        {
+          "index": 1,
+          "offset": 2904,
+          "declared_bytes": 50372,
+          "required_segment_bytes": 50372,
+          "exact_record_extent": true,
+          "segment_count": 1399,
+          "step": 10,
+          "points_including_closure": 141,
+          "initialized_u16_count": true,
+          "avoids_zero_step": true,
+          "fits_256_pair_sampling_bound": true
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK005/TR05.COL",
+      "sha256": "c0bdc588858140a5cee9e7e18cbb77b82a5351d3159ef9272d5880412a3e726b",
+      "version": 11,
+      "file_bytes": 67852,
+      "block_count": 4,
+      "segment_blocks": [
+        {
+          "index": 3,
+          "offset": 7004,
+          "declared_bytes": 60848,
+          "required_segment_bytes": 60848,
+          "exact_record_extent": true,
+          "segment_count": 1690,
+          "step": 13,
+          "points_including_closure": 131,
+          "initialized_u16_count": true,
+          "avoids_zero_step": true,
+          "fits_256_pair_sampling_bound": true
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK006/TR06.COL",
+      "sha256": "15e39c6386ec583dfea12e3d89786d76a199c3a82c901707bd09d8a16db71322",
+      "version": 11,
+      "file_bytes": 64584,
+      "block_count": 4,
+      "segment_blocks": [
+        {
+          "index": 3,
+          "offset": 12952,
+          "declared_bytes": 51632,
+          "required_segment_bytes": 51632,
+          "exact_record_extent": true,
+          "segment_count": 1434,
+          "step": 11,
+          "points_including_closure": 132,
+          "initialized_u16_count": true,
+          "avoids_zero_step": true,
+          "fits_256_pair_sampling_bound": true
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK007/TR07.COL",
+      "sha256": "0d77f3f79f5bd0bba4bd5431fdf1bd0c8cd3480f7ab9f29db8ea995372dac6c8",
+      "version": 11,
+      "file_bytes": 75820,
+      "block_count": 4,
+      "segment_blocks": [
+        {
+          "index": 3,
+          "offset": 13784,
+          "declared_bytes": 62036,
+          "required_segment_bytes": 62036,
+          "exact_record_extent": true,
+          "segment_count": 1723,
+          "step": 13,
+          "points_including_closure": 134,
+          "initialized_u16_count": true,
+          "avoids_zero_step": true,
+          "fits_256_pair_sampling_bound": true
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK008/TR08.COL",
+      "sha256": "4ccc12910dc6300218860eb54d7edd01fbde7af8cadc9de153dd989820275f1d",
+      "version": 11,
+      "file_bytes": 68924,
+      "block_count": 4,
+      "segment_blocks": [
+        {
+          "index": 3,
+          "offset": 24636,
+          "declared_bytes": 44288,
+          "required_segment_bytes": 44288,
+          "exact_record_extent": true,
+          "segment_count": 1230,
+          "step": 9,
+          "points_including_closure": 138,
+          "initialized_u16_count": true,
+          "avoids_zero_step": true,
+          "fits_256_pair_sampling_bound": true
+        }
+      ]
+    }
+  ]
+}

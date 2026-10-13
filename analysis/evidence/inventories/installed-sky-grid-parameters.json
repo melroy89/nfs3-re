@@ -1,0 +1,331 @@
+{
+  "scope": "Installed uppercase GAMEDATA/TRACKS/TRK*/*.HRZ files with both cloud-labelled fields; original text labels, not live parser execution.",
+  "count": 36,
+  "skipped": [],
+  "rows": [
+    {
+      "path": "GAMEDATA/TRACKS/TRK000/3TR00.HRZ",
+      "sha256": "bbf91528f21b22e23526a41fc3a874e8aead4bf87aaac3165923c47338628eb0",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 235,
+      "variance": 208,
+      "nimbus_percent": 80
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK000/3TR00N.HRZ",
+      "sha256": "5d4c7737ab7053358facaf55b20cc0a58900111e4a0d4b7723273ccfeb07918a",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 235,
+      "variance": 150,
+      "nimbus_percent": 0
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK000/3TR00NW.HRZ",
+      "sha256": "770db34de6d8be36ec4dde511112aed70c0b0325fd4ce718db888870deed9244",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 226,
+      "variance": 195,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK000/3TR00W.HRZ",
+      "sha256": "4af721b9c4b1a6bfdc77c85f5215dd7817d3fdca0fbbb75644d66b0c0e2062c0",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 250,
+      "variance": 235,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK001/3TR01.HRZ",
+      "sha256": "b1965b755e19c5b89f3172b7ca3ec8f5296cdd7989c2bec588ff2c1d4c9a8322",
+      "dome_offset": -250,
+      "dome_height_token": 250,
+      "brightness": 128,
+      "variance": 118,
+      "nimbus_percent": 0
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK001/3TR01N.HRZ",
+      "sha256": "433a70c1d1cc31fdabe70c490c7a7a8daa48c9a8b63e252e9b2126f8c0864f52",
+      "dome_offset": -250,
+      "dome_height_token": 250,
+      "brightness": 190,
+      "variance": 130,
+      "nimbus_percent": 95
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK001/3TR01NW.HRZ",
+      "sha256": "bee5a3e4c13f98169f64945c80f109ae2201b98ceb9b43f23c5241587ba54674",
+      "dome_offset": -250,
+      "dome_height_token": 250,
+      "brightness": 255,
+      "variance": 20,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK001/3TR01W.HRZ",
+      "sha256": "45ada36c25cc5c580c9f441fb830afe6a3dc8777328e96ab2d969942645cf84a",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 226,
+      "variance": 126,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK002/3TR02.HRZ",
+      "sha256": "4c48c0ede88028045ba9bce5d71d2b230229f5cd41405c6e0ac525b2bbff59c8",
+      "dome_offset": -250,
+      "dome_height_token": 250,
+      "brightness": 246,
+      "variance": 246,
+      "nimbus_percent": 90
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK002/3TR02N.HRZ",
+      "sha256": "ecaa7219241507265bba427b5365d1dd678a8213c419cb8db5867e5777adf346",
+      "dome_offset": -250,
+      "dome_height_token": 250,
+      "brightness": 255,
+      "variance": 255,
+      "nimbus_percent": 0
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK002/3TR02NW.HRZ",
+      "sha256": "c1a0d761d66109ec95c157172ce7b7ae0a7f2261e1684ed86e87414e94ebf02c",
+      "dome_offset": -250,
+      "dome_height_token": 250,
+      "brightness": 146,
+      "variance": 64,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK002/3TR02W.HRZ",
+      "sha256": "efaeaab45bb9f68ed34532cd6b3bd6f8d19c5736e1f005029f2d2e6cad2754d4",
+      "dome_offset": -250,
+      "dome_height_token": 250,
+      "brightness": 250,
+      "variance": 240,
+      "nimbus_percent": 85
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK003/3TR03.HRZ",
+      "sha256": "c42628b3fd2fd325545fb42f72fda9660cefda0e69df2a763cc8c1f90aabc552",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 209,
+      "variance": 150,
+      "nimbus_percent": 95
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK003/3TR03N.HRZ",
+      "sha256": "6d0d1ff64a8c2f392883b60b6c26611ab86e3c748eb62e67a05a872f0e873c74",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 255,
+      "variance": 250,
+      "nimbus_percent": 0
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK003/3TR03NW.HRZ",
+      "sha256": "ee299c03fcfe1c94634cef16f4cb56cd8c5892d5c10c3c7583ae1e2b11dc53c3",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 160,
+      "variance": 30,
+      "nimbus_percent": 10
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK003/3TR03W.HRZ",
+      "sha256": "8d1ee040db5ea407ef387a7850bbf477dabeebabc763fe8fa550511de7ad335b",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 180,
+      "variance": 86,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK004/3TR04.HRZ",
+      "sha256": "ccbae280a7509715d3228f0b8ec7548650a6753b4c8e88d20b2e48be1518ee25",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 252,
+      "variance": 252,
+      "nimbus_percent": 50
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK004/3TR04N.HRZ",
+      "sha256": "006322790b7beeee6402c83973092dc833d5459513afc81c8c004f055ee70515",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 255,
+      "variance": 255,
+      "nimbus_percent": 0
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK004/3TR04NW.HRZ",
+      "sha256": "b6a6518b89b48377fdc81dc38e80e60b8bc463b51d3a493787d13f11a3d0853c",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 240,
+      "variance": 180,
+      "nimbus_percent": 40
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK004/3TR04W.HRZ",
+      "sha256": "717114ab31ba4db2faee49d9d11c1cad4ca28c86469e0270c06f2ee1b73e87ea",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 186,
+      "variance": 126,
+      "nimbus_percent": 80
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK005/3TR05.HRZ",
+      "sha256": "e8bf49c101119ef4ae44c17627cb0bf9f6b6621a9c9801647ea8e64b2704a5f7",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 155,
+      "variance": 64,
+      "nimbus_percent": 50
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK005/3TR05N.HRZ",
+      "sha256": "753e9b429d512effcd0871cf168460987d8c910bebff27ccc28e83ed2629db4d",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 216,
+      "variance": 128,
+      "nimbus_percent": 0
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK005/3TR05NW.HRZ",
+      "sha256": "42129de9cb46e2047bb765708914beaed006badf3ee8324ac0ce3387c6ca9858",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 245,
+      "variance": 20,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK005/3TR05W.HRZ",
+      "sha256": "58da0b99bcd7b01a0ae06b800d84cb7cb61c7e5db8fffcfd24fb133f9087c42b",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 226,
+      "variance": 126,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK006/3TR06.HRZ",
+      "sha256": "e02c26e7445eec52a10389ea4e127137bd62ca734bf7b30e195f32cb44df5eef",
+      "dome_offset": -200,
+      "dome_height_token": 250,
+      "brightness": 255,
+      "variance": 255,
+      "nimbus_percent": 50
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK006/3TR06N.HRZ",
+      "sha256": "55c401d5dd96f6a8c3f39a09bdf8b30f191b6d6d2a8cf2a0460fe1d5838632a8",
+      "dome_offset": -200,
+      "dome_height_token": 250,
+      "brightness": 240,
+      "variance": 240,
+      "nimbus_percent": 40
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK006/3TR06NW.HRZ",
+      "sha256": "08a505275a63a789b9b5e0406c7d293431305f6ff25c93f8cd3a8bba49831881",
+      "dome_offset": -200,
+      "dome_height_token": 250,
+      "brightness": 225,
+      "variance": 200,
+      "nimbus_percent": 80
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK006/3TR06W.HRZ",
+      "sha256": "206237028e5bdfc7ad252e6c0a8d9c9ef2b76d5e37b284a0db638bc509678472",
+      "dome_offset": -200,
+      "dome_height_token": 250,
+      "brightness": 126,
+      "variance": 32,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK007/3TR07.HRZ",
+      "sha256": "ff6fff7fe302e6dceb8bc0c7e17415266d536b46afee8c8eae92a3d3bd24c29f",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 220,
+      "variance": 200,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK007/3TR07N.HRZ",
+      "sha256": "52379317847376b49f3c3af723551dd143c6975082e15222205fed4eb3f161a8",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 255,
+      "variance": 220,
+      "nimbus_percent": 0
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK007/3TR07NW.HRZ",
+      "sha256": "7ea54a67aff4bff20c6feed9f72911df19548b8731438fd1e66dd5e90cb1de46",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 150,
+      "variance": 30,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK007/3TR07W.HRZ",
+      "sha256": "4407b485570b77fe1670193af5ebb84d163884fd2af09f8e3b95fce1e6cdc788",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 170,
+      "variance": 80,
+      "nimbus_percent": 90
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK008/3TR08.HRZ",
+      "sha256": "98863e02b962749156ee742abfcdb8d7f0294aa292ff90eff527c5728c7a754e",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 255,
+      "variance": 180,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK008/3TR08N.HRZ",
+      "sha256": "3eb36468d6ff28f518346b12eb2df0d9f811b0791f47f4f0daa296ea9fb0266e",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 165,
+      "variance": 60,
+      "nimbus_percent": 30
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK008/3TR08NW.HRZ",
+      "sha256": "63be643282f0391faa00fa73c73a1bc82ec3c3b2f678ec6117eef22689f3ffaf",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 255,
+      "variance": 225,
+      "nimbus_percent": 100
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK008/3TR08W.HRZ",
+      "sha256": "4742af8f10c9b28521e4dd921457ac11b4bcb41bb7ab11d3f6c6dac4698a7e3a",
+      "dome_offset": -100,
+      "dome_height_token": 250,
+      "brightness": 230,
+      "variance": 195,
+      "nimbus_percent": 100
+    }
+  ]
+}
