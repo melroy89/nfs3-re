@@ -38,3 +38,11 @@ at0042ad28 and address formation0042ad4b. Its continuous-state branch is
 not established as another+8d4 consumer. Counter meaning, physical units
 and runtime reachability remain unresolved. Ghidra0042b780 records this
 ordering and limitation.
+
+## Recovery attempt versus relocation
+
+Assembly00428f90–004290f2 clears+8d4 and increments+2c0 before its relocation predicate. Thus+2c0 counts entry attempts here, not exclusively successful relocations. The healthy branch still increments it. Threshold tests on+10c,+e4,+ec,+15c are raw signed integer float-bit comparisons, not absolute-value tests; WORD+164 uses unsigned>5. The body has no manual-reset cooldown/start/stop-phase guards and no direct+524 write; shared callee effects remain separate. This prevents interpreting every recovery attempt as an R-style reset. Ghidra plate refined; runtime collision test remains pending.
+
+## Barrier proximity capture
+
+[Retained samples](runtime/barrier-proximity-recovery.json) contain309 distinct sampled ticks,2049–3042, in the local LCOP reverse Redrock session. The user reports hitting the left barrier, then clarified that subsequent sliding was very close to it rather than in sustained contact. Both recovery+8a0 and reset cooldown+524 were zero in every retained local sample. This establishes no observed activation in this capture, not a universal wall-contact rule or proof that a brief transition could not occur between50ms samples. Collision timing/contact geometry were not directly traced. This run does not close the collision/recovery backlog.

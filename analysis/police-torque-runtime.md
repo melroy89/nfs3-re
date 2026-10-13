@@ -162,3 +162,9 @@ interpolation call. Later clipping/scaling/replacement also means a zero
 interpolated sample does not prove zero final response or a driving defect.
 The sampler captures the gate fields; non-atomic snapshots still do not
 constitute an instruction trace.
+
+## GO18 live profile and acceleration capture
+
+User confirmed GO18 and countdown pause in a regular race. [Baseline](runtime/go18-countdown.json) records session0/race0, track1, reverse0, override flag2/selector18. Local DIAB remains registry model14 but has idle900/redline6000 and torque20..22 of247.600006/0/242.479996. Physics callback004ae4c1, category5, alternate0 and upright1 establish sampled full-physics eligibility.
+
+[Acceleration capture](runtime/go18-acceleration.json) retains144 distinct ticks516..1434 over14.411 seconds; RPM3471..6100, gears2/3/4. All retain zero torque21. There are137 snapshots with dispatcher and interpolation gates clear. At tick846, RPM is exactly5376, gear3, shift state0 and state+164=0. This establishes runtime profile and eligible-state reachability through the built-in override. It does not prove execution of the current-RPM interpolation call or its final drive response: snapshots are non-atomic, at nominal0.1s, without instruction tracing. Melroy reported acceleration felt weaker than a Class A car and described the vehicle as a police car. No distinct hesitation was explicitly reported. This subjective observation does not isolate the zero torque entry from the overall substituted profile, gearing or other dynamics. Sampler stopped after user confirmed pause; no additional driving requested.

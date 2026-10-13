@@ -1,6 +1,6 @@
 # Pursuit-assist reset contract
 
-Assembly-reviewed functions00405220,00429100,00428d60,00401500,0042b900 and both direct caller sites. This report establishes static behavior; no new runtime reset was captured.
+Assembly-reviewed functions00405220,00429100,00428d60,00401500,0042b900 and both direct caller sites. This report combines the static contract with the bounded runtime captures below.
 
 ## Selection and request ordering
 
@@ -49,3 +49,45 @@ The reference later returns to221 at tick2383 during ordinary updates, with only
 **Closed for this normal-direction local police scenario:** accepted leader-relative reset, cooldown-based rejection of the second rapid request, pre-guard reference change without second observed relocation, and subsequent reference recovery. Remaining: reverse-track placement, other rejection gates, camera/visual effects in the initial report, dense occupancy fallback, multiplayer and exceptional state. The sampler was stopped after capture; game left running.
 
 Independent repeat in the same race: [confirmation capture](runtime/police-reset-confirmation.json) observes R pulses at ticks2565/2585,20 ticks apart. First relocation gives reference254, cooldown31 and X/Z763.0594482421875/-239.42218017578125. Second changes reference to252, cooldown21 and identical X/Z; next tick2587 sample has cooldown20. User explicitly confirmed double-tapping R and seeing only one reset. This repeats the bounded cooldown rejection observation. Capture stopped; no additional player action is required for this normal-direction cooldown question.
+
+## Reverse-direction police reset corroboration
+
+Retained [event samples](runtime/reverse-police-reset-events.json) cover session0, mode3, Redrock track1, reverse1, copassist1, overrides0 and local LCOP/category0x24. The user reports two resets with roughly two seconds between them, then pausing. The sampled relocations are approximately4.69 wall-clock seconds apart; treat the user's interval as approximate, not a measured timing claim.
+
+At tick1546 local segment1389 has cooldown0 and position(100.5771,14.4801,200.2742). Participant6 is the eligible minimum ordering value1, segment1367. At tick1549 local segment1361 equals1367-6, position jumps to(-28.5807,19.8883,117.0248), cooldown30. The first input pulse was not sampled.
+
+At tick1846 local segment1362 has cooldown0; selected participant6 is segment1330. At tick1849 inputbit02 is sampled, local segment1324 equals1330-6, position jumps to(-238.5998,17.7540,160.0061), cooldown31. Both events therefore corroborate the accepted reverse leader-relative placement branch after cooldown expiry. They are not a rapid-repeat rejection test.
+
+These50ms asynchronous snapshots are not an instruction trace. They do not establish exact input duration, the precise placement-search path, dense occupancy fallback, all reverse tracks, or visual road alignment. User confirmation of two resets supports the relocation interpretation; visual placement quality remains unreported. Sampler stopped after capture; executable and live memory were not written.
+
+## Pending police arrest reset-guard validation
+
+Current targeted Astra question: does the local police reset request remain rejected during target-group phase2, independently of cooldown and race-start rejection? The capture must establish local categorybit20, race_mode3, nonNULL local target+624, and that target's group+628 phase+1c==2. Other gates must be clear: local+524==0, race-start flag nonzero, +184==0, and no applicable racer state3 gate. Ask the player to pause during the arrest before pressing R; verify these fields first.
+
+Then capture the R actionbit02, local reference and world position, reset state+174 and cooldown+524 before/after. A reference prewrite alone may occur through00405220 and does not prove relocation. Absence of movement without sampled action/input-path evidence cannot identify the rejecting guard. UpdatePlayerVehicleControls00431430 has no local phase-based early return before its R test, but its input callback runs first and controller/callback admission can still suppress the action. This is a test plan, not a completed result. Retain the backlog row as Partial until captured evidence supports a bounded conclusion.
+
+## Police arrest reset input: mixed relocation evidence
+
+[Retained snapshots](runtime/police-arrest-reset-guard-events.json) capture local LCOP/category0x24, session0, mode3, reverse Redrock, copassist1 and overrides0. User acquired a DIAB target, reported catching it, and paused at tick18894. Target6167244 had group phase2; race_started1, cooldown+524=0, blocker+184=0 and reset state+174=0. The local category has no racer bit01, so its state3 gate does not apply. The user was asked to unpause, press R once and pause again, and subsequently confirmed pausing. The user then explicitly confirmed that the car visibly teleported. This corroborates relocation rather than a reference-only or purely sampled display artifact; it does not identify the executing placement path.
+
+At tick18947 position was(-760.2371,-2.8627,-607.0535), segment571. Tick18950 samples inputbit02 with target phase2 still present, cooldown0 and reset state0, but position is already(-388.3151,-2.8723,-289.3703), segment463. Tick18953 input clears, phase remains2, position becomes(-394.9630,-2.8986,-409.0408), segment497 and recovery countdown+8a0 becomes700. At tick19007 the target remains attached and reset counters remain0. Tick19011 has target0, segment449, position(-146.8298,-15.9018,-534.9230), cooldown31 and reset state63; these are consistent with the ordinary reset completion writes32/64 and subsequent decrement after target removal.
+
+This corroborates an R action while the phase guard predicates were sampled, with no simultaneous ordinary-reset completion counters. It does NOT establish absence of relocation: world coordinates changed substantially during phase2. The static pre-guard segment write alone cannot directly explain all observed world-coordinate changes. Subsequent environment/recovery consumers or another placement path require tracing. The later reset counters are compatible with the known stop-cleanup reset path after target clearing, but asynchronous50ms snapshots do not identify the exact caller. Do not classify either change as a proven execution trace, immediate successful manual reset, or clean no-movement rejection. The pursuit-assist item remains Partial. Read-only sampler stopped; no executable or live-memory writes.
+
+### Recovery countdown interpretation
+
+At tick18950 material+18c is13, sampled orientation dot(+130,+cc) approximately0.999790, +184=0 and recovery+8a0=0. At tick18953 material becomes14 while dot remains approximately0.984925 and +184 remains0; +8a0 becomes700. This matches the material14 reload predicate in UpdateVehicleContactRecoveryCountdown00429260 without requiring an orientation-threshold failure. Reloading the countdown is not itself relocation. Recovery-attempt counter+2c0 remains0 across these samples; RecoverVehicleFromInvalidContactState00428f90 increments it on entry, before its placement decision. The observations therefore provide no positive evidence of that recovery routine completing the initial position jump. Sampling and untraced writers prevent treating the unchanged counter as an exhaustive execution exclusion.
+
+### Leader selection and dispatch cross-check
+
+The eligible minimum ordering value is1 for participant4/FM50 in the relevant snapshots. At tick18950 that participant has segment464 and local segment463, exactly the leader-minus-one reference prewrite. At tick19011 the leader has segment455 and local segment449, exactly the accepted reverse offset leader-minus-six. This supports the user's observation that police R sends the car close to the leading opponent; selection is by race-order field, not proximity to the current pursuit target. The target at the manual input remains participant1/DIAB, a different car.
+
+Local category0x24, controller00431430, physics callback004ae4c1, alternate byte0 and upright approximately0.99979/0.98493 persist at sampled ticks18947/18950/18953. Consequently the sampled state selects the non-AI full-physics branch004ad7a3 in UpdateVehiclePhysicsDispatch, rather than ProcessAIVehicleDynamics004088f0. An AI-only +1c-to-control-vector chain must not be offered as this event's demonstrated explanation. Its helper004071a0 writes velocity, not XYZ position, in any case. Exact transient execution remains unobserved.
+
+ClearPolicePursuitGroupLinks004040e0 clears member+628/+624 before its categorybit04 branch calls00405220 at00404250. This is a concrete static candidate for the later target0, cooldown31/reset63, leader-minus-six state; asynchronous samples do not prove that caller executed. The initial phase2 world-position change remains unresolved.
+
+### Ordinary position integrator recovered
+
+Created the previously undefined90-byte callback004a2c60 as `IntegrateActiveVehicleWorldPosition`, after verifying registration at0042c437 into vehicle+610 and its complete assembly. EAX supplies the vehicle. Byte+89==0 skips writes; otherwise XYZ+98/+9c/+a0 receive velocity+a4/+a8/+ac multiplied by float0053c8ec=1/64, stored in Y,Z,X order. It reads no track reference+1c and writes no reset174/cooldown524 fields. This is an exact per-invocation arithmetic contract, not a claim about tick cadence.
+
+The small velocities sampled before/during the initial jump do not explain hundreds of position units through this integrator alone. Unsampled velocity transients and other position writers remain unresolved. The non-AI physics body004ad7a3 was reviewed at pseudocode level: it computes wheel/drivetrain forces and updates linear/angular motion fields, but this pass did not establish a direct discrete XYZ relocation there or exhaustively audit its callees. Keep the initial teleport open rather than substituting an AI-only controller explanation.
