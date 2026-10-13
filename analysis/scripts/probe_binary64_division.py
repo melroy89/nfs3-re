@@ -130,5 +130,6 @@ report={'sha256':digest,'method':'Native Linux i386 execution of unchanged extra
 'overflow_tail':'stub at0052c8a7 records branch and returns signed infinity; original error reporting omitted',
 'case_count':len(rows),'normal_random_mismatches':mismatches,'directed_cases':[r for r in rows if not r['case'].startswith('normal_random_')],
 'limits':'Not Wine gameplay evidence; adjusted x87 tested only via binary64 wrapper (not extended subnormal/numerator-exponent1 branches or TOP0 branch); direct integer zero precondition inferred from assembly loops; no caller admission, all IEEE inputs, alternate rounding modes, x87 status flags or error callback lifecycle guarantee.'}
+args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps({'temporary_harness':str(t),'output':str(args.output),'case_count':len(rows),'normal_random_mismatches':len(mismatches)}))

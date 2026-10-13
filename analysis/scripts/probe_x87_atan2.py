@@ -201,6 +201,7 @@ results: .space RESULT_SIZE
                   nan_bit_mismatch_count=sum(r['both_nan'] and not r['bit_equal'] for r in rows),
                   mismatches=mismatches, directed_cases=[r for r in rows if not r['case'].startswith('random_')],
                   limits='Sampled local native arithmetic evidence, not gameplay/Wine evidence or exhaustive accuracy proof. FPATAN is a hardware comparison, not a correctly-rounded mathematical oracle. Binary64 inputs are loaded into x87 first, so subnormal doubles become normal extended values and signaling NaNs may be quieted before entry. No raw extended subnormal, unsupported encoding, unmasked exception, extra live x87 stack, or raw 80-bit result comparison. Status words recorded before final double stores but not asserted equal. ULP distance is meaningful for these same-sign finite result pairs; signed zero and NaN are retained as raw bits.')
+    args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps({key: report[key] for key in ['case_count', 'non_nan_bit_mismatch_count', 'maximum_observed_ulp_distance', 'control_failure_count', 'register_failure_count', 'nan_bit_mismatch_count']}))
 

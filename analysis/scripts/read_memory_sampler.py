@@ -1,5 +1,6 @@
 # Read-only sampler for the documented NFS3 executable and fixed address map.
 # Rediscover the PID each run; no process suspension or memory writes.
+from pathlib import Path
 import argparse
 import json
 import os
@@ -35,6 +36,7 @@ def f(b, o=0): return struct.unpack_from('<f', b, o)[0]
 if read(0x400000, 2) != b'MZ':
     raise SystemExit('Expected PE image missing')
 start = time.monotonic()
+Path(a.output).parent.mkdir(parents=True, exist_ok=True)
 with open(a.output, 'w', buffering=1) as out:
     out.write(json.dumps({'kind':'metadata','pid':a.pid,'method':'pread O_RDONLY; no suspension; samples are not atomic','reset_only':a.reset_only,'spike_only':a.spike_only,'interval':a.interval,'maps':open(proc+'/maps').read()})+'\n')
     print('Sampler ready; read-only memory access verified', flush=True)

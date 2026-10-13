@@ -1,6 +1,6 @@
 # NFS III Reversed Engineered
 
-Reverse engineering and decompilation of **Need for Speed III: Hot Pursuit** using Ghidra. All **4,046 identified internal functions are named**. The Ghidra project includes comments, types, and references. Complex follow-up investigations are documented separately; this project provides an annotated Ghidra database rather than a buildable game reconstruction.
+Reverse engineering and decompilation of **Need for Speed III: Hot Pursuit** using Ghidra. All **4,046 identified internal functions are named**. The Ghidra project includes comments, types, and references. Naming every identified function does not mean every behavior is fully understood or validated; uncertainties and follow-up investigations remain documented. This project provides an annotated Ghidra database rather than a buildable game reconstruction.
 
 The target is based on [VEG's Modern Patch v1.6.1](https://veg.by/en/projects/nfs3/), with small copyright and version-text changes in `nfs3.exe` and the setup menu preparing our local **1.6.2** version. The two modified files are included under [`nfs3_decomp.rep/Electronic Arts/Need For Speed III/`](nfs3_decomp.rep/Electronic%20Arts/Need%20For%20Speed%20III/):
 
@@ -46,6 +46,14 @@ The checkout includes the complete Ghidra project layout:
 ```text
 nfs3-re/
 ├── README.md
+├── analysis/
+│   ├── scripts/
+│   └── evidence/
+│       ├── runtime/
+│       ├── probes/
+│       ├── inventories/
+│       ├── static/
+│       └── audits/
 ├── nfs3_decomp.gpr
 └── nfs3_decomp.rep/
     ├── project.prp
@@ -62,6 +70,12 @@ The `.gpr` file is an empty project marker; the analysis is stored in the matchi
 Only the two modified files listed above are tracked from the standalone game directory; all other game files remain excluded. These standalone files are **not needed to browse the saved analysis**: the similarly named folder inside Ghidra is part of the database. A separate game installation and its remaining assets are required to play.
 
 Save regularly. Save and close Ghidra before committing database changes, making backups, or upgrading. See [release preparation](docs/RELEASE.md) for validation status.
+
+## Analysis and evidence
+
+Research notes, retained evidence and reusable analysis helpers are indexed in [analysis/](analysis/README.md), with findings recorded in the [detailed notes](analysis/detailed-analysis-notes.md). See the [script guide](analysis/scripts/README.md) for dependencies, inputs and rerun commands. Evidence includes static calculations, isolated instruction probes, installed-asset inventories and selected runtime observations; each has different limitations. All identified internal functions have descriptive names, while behavioral validation and deeper decompilation remain ongoing.
+
+Raw captures stay local under ignored `analysis/captures/`.
 
 ## How we approached the decompilation
 

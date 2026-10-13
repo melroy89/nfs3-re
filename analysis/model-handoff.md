@@ -24,7 +24,7 @@ and pgrep found no read_memory_sampler.py. User paused after successful
 reverse strip/ticket test. Do not claim passive monitoring is still running.
 Wine prefix: /home/melroy/.local/share/winegui/prefixes/NFS3.
 Runner: /home/melroy/.local/share/winegui/runners/wine-proton-11.0-2-amd64/bin/wine.
-Read-only sampler: analysis/runtime/read_memory_sampler.py, opens proc mem
+Read-only sampler: analysis/scripts/read_memory_sampler.py, opens proc mem
 O_RDONLY, no suspension. Credentials must never enter docs or commits.
 Start and verify samples before asking user to drive. Give one precise action
 and pause point. Bounded captures expire; inspect handle and fresh rows.
@@ -42,7 +42,7 @@ was not universal failure. Later active deployment is now proven:
 -74025 controller2/category05/cooldown30; racer state0, limit9.
 - capture ends paused74061, cooldown12.
 Raw: /tmp/nfs3-reverse-deployment-kAJugn/samples.jsonl.
-Retained: runtime/reverse-active-strip.json, reverse-strip-contact.json,
+Retained: evidence/runtime/reverse-active-strip.json, reverse-strip-contact.json,
 reverse-strip-ticket-recovery.json. Ghidra00403030/00401650/00405740 saved.
 Scratch has separate Closed rows for active reverse deployment and local
 contact/nonterminal recovery. Initial approach, roadblocks, seams, side

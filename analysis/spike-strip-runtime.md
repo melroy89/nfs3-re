@@ -25,7 +25,7 @@ The 80-byte record at `007dd850 + 80 * policeIndex` contains active flag `+0`, s
 
 ## Live observations
 
-Melroy drove Diablo SV police in Hot Pursuit on Redrock Ridge and used the spike-strip control. Selected transitions and the bounded sample count are in [runtime/spike-event-observations.json](runtime/spike-event-observations.json).
+Melroy drove Diablo SV police in Hot Pursuit on Redrock Ridge and used the spike-strip control. Selected transitions and the bounded sample count are in [evidence/runtime/spike-event-observations.json](evidence/runtime/spike-event-observations.json).
 
 - A strip was already active when expanded sampling began at tick 14666, with stored threshold 12770. Its persistence beyond that threshold corroborates that the threshold is not an expiry time. Initial deployment predates this capture.
 - It cleared at sampled tick 15469 as the officer's completed-stop counter advanced from 3 to 4, with input/latch zero. This is consistent with the independently verified stop-cleanup path; there was no sampled contact mask.
@@ -48,7 +48,7 @@ Reads were asynchronous and did not suspend the process. Tick and field changes 
 
 Existing numerical, register and capacity caveats remain in their Ghidra comments. Follow-up: capture an actual strip hit and inspect mask consumers before assigning wheel names or damage semantics.
 
-The read-only [sampler](runtime/read_memory_sampler.py) uses this executable's fixed address map. Rediscover the live `nfs3.exe` PID before each run; invoke it with the required local read permissions and an explicit output file. It defaults to a bounded 900-second capture and never writes process memory. Raw temporary captures remain outside this repository.
+The read-only [sampler](scripts/read_memory_sampler.py) uses this executable's fixed address map. Rediscover the live `nfs3.exe` PID before each run; invoke it with the required local read permissions and an explicit output file. It defaults to a bounded 900-second capture and never writes process memory. Raw temporary captures remain outside this repository.
 
 
 ## Static wheel-render mask mapping
@@ -182,7 +182,7 @@ x87 operation continues. The test does not clip edges or test additional
 separating axes. Transposition is only an inverse rotation if the vehicle
 matrix has the required orthonormal properties.
 
-[Analytical witness](spike-strip-geometry-witness.json): identity rotation,
+[Analytical witness](evidence/static/spike-strip-geometry-witness.json): identity rotation,
 wheel at origin, quad vertices(0.375,+/-0.25,0.875) and
 (0.875,+/-0.25,0.375). Outcodes are32,2,2,32, whose intersection is0,
 so the candidate test accepts. Every point on the quad has x+z=1.25,
@@ -201,7 +201,7 @@ and read-only; transient fields may span different updates.
 
 ## Captured opponent hit without an arrest
 
-[Retained runtime evidence](runtime/spike-contact-and-recovery.json) contains
+[Retained runtime evidence](evidence/runtime/spike-contact-and-recovery.json) contains
 536 samples spanning ticks8370..9070 from the existing LCOP police race on
 Redrock Ridge, normal direction. Capture used `--spike-only --interval0.02`;
 reads were asynchronous and did not suspend the game. The sampler was stopped
@@ -235,7 +235,7 @@ that result to unassigned police or all pursuit configurations.
 
 ## Captured hit, automatic officer attachment and arrest
 
-[Second capture](runtime/spike-contact-and-arrest.json) retains688 representative
+[Second capture](evidence/runtime/spike-contact-and-arrest.json) retains688 representative
 samples (one per sampled tick) from3500..4400 after the user restarted the
 same police race. Stop limit remained1. Although the instructions aimed at
 an existing pursuit target, the recorded officer target was0 immediately
@@ -264,8 +264,8 @@ wheel identities and exceptional contact geometry remain unresolved.
 
 ## Offline reconstruction from captured geometry
 
-[Reconstruction script](reconstruct_spike_contact.py) reads only the retained
-JSON captures and writes [results](spike-contact-reconstruction.json). It
+[Reconstruction script](scripts/reconstruct_spike_contact.py) reads only the retained
+JSON captures and writes [results](evidence/runtime/spike-contact-reconstruction.json). It
 uses the last active strip geometry and first sampled nonzero-mask vehicle
 pose, transposes the matrix as in004ca160, and preserves the explicit float
 store stages. Python double intermediates are not a full x87 emulator.
@@ -359,7 +359,7 @@ separate from spike-strip deployment, which remains unobserved in this run.
 Read-only local racer LSTM, Redrock normal capture shows group+54 bit04 by
 tick11883. Expanded assignment sampling starts while paused at12294.
 
-Retained `runtime/ai-roadblock-assignment.json` contains776 representative
+Retained `evidence/runtime/ai-roadblock-assignment.json` contains776 representative
 samples, ticks12520..15025 (50ms asynchronous reads). At12540 masters6/7
 receive command4 with common start258, span0, auxiliary target005e1120
 (player), opposite policybytes1/0. Both reach state8 by12543. Master6 reaches
@@ -395,7 +395,7 @@ This supports a specific request-without-deployment explanation, not proof
 of every missed scheduling opportunity or a general deployment defect.
 
 Retained late-run samples and full-run counts are in
-`runtime/ai-strip-request-no-deployment.json`. Both samplers are stopped;
+`evidence/runtime/ai-strip-request-no-deployment.json`. Both samplers are stopped;
 raw captures remain in /tmp/nfs3-ai-strip-FPDMiT. AI strip placement and
 arming timing remain open. No game memory or executable was modified.
 
@@ -467,7 +467,7 @@ The timestamp advances even without assignment. A different officer does
 not take the same-officer suppression branch, so this is a group timer with
 a caller-specific marker, not independent per-officer timers.
 
-`runtime/police-tactic-scheduling.json` retains the announcement transitions:
+`evidence/runtime/police-tactic-scheduling.json` retains the announcement transitions:
 stored scheduling ticks11880/12208/12536,328 apart. The first has roadblock
 announcement bit04 and caller marker6174672 (master4), the second marker0,
 and the subsequent capture shows paired command4 assignment. This agrees
@@ -485,7 +485,7 @@ caller for every observed command3 record.
 
 The ongoing longer Hot Pursuit run captured another user-reported roadblock
 recommendation. Retained evidence is in
-[long-pursuit-roadblock-announcement.json](runtime/long-pursuit-roadblock-announcement.json).
+[long-pursuit-roadblock-announcement.json](evidence/runtime/long-pursuit-roadblock-announcement.json).
 At12634 masters6/7 receive command4,start297,span0,policy1/0 and the player's
 group has announcement bit04. Both are state8 by12637. Master7 changes to
 command2/state5 targeting the player at13091; master6 does so at13949.
@@ -499,7 +499,7 @@ may be missed. The capture continues for later strip/roadblock attempts.
 ## AI deployment, human front-wheel hit and nonterminal recovery
 
 The same run subsequently captured the complete bounded sequence in
-[long-pursuit-ai-strip-deployment.json](runtime/long-pursuit-ai-strip-deployment.json).
+[long-pursuit-ai-strip-deployment.json](evidence/runtime/long-pursuit-ai-strip-deployment.json).
 The AI racer's group first shows strip-request bit02 at24966; the human
 player's group does not. This coincides with the user's reported permission
 announcement, without an audio instruction trace. Master5 receives command0,
@@ -544,7 +544,7 @@ trace or excluding unsampled input. Ghidra00405740 now records the distinction.
 
 ### Successful officer selection reconstructed
 
-[Reconstruction](ai-strip-assignment-reconstruction.json) uses tick25288:
+[Reconstruction](evidence/runtime/ai-strip-assignment-reconstruction.json) uses tick25288:
 AI target master1 is at352, N1463. Masters2/3 already pursue a target and are
 excluded. Master4 gap761 qualifies first; master5 gap354 replaces it.
 Master6 gap-315 fails and master7 gap771 is not nearer. The predicted selected
@@ -579,8 +579,8 @@ are not covered. Comments at00401650/004018b0 preserve the causal distinction.
 ## Reverse roadblock scan-order witness
 
 The reverse run's user-reported roadblock announcement corresponds to
-command4 assignments at12209. [Retained samples](runtime/reverse-roadblock-announcement.json)
-and [reconstruction](reverse-roadblock-reconstruction.json) establish a
+command4 assignments at12209. [Retained samples](evidence/runtime/reverse-roadblock-announcement.json)
+and [reconstruction](evidence/runtime/reverse-roadblock-reconstruction.json) establish a
 distinguishing case: at12205 player segment1385, N1463, free masters2/3/4 at
 689/1248/1081 have reverse wrapped forward gaps696/137/304. The scan keeps
 record minima2 then3. Master4 is closer than2 but does not replace it, since
@@ -595,7 +595,7 @@ The snapshot is non-atomic, not an instruction trace. Ghidra00403b20 is saved.
 
 ### Reverse strip assignments cancelled by pursuit acquisition
 
-[Reverse capture](runtime/reverse-strip-announcement.json) retains two attempts.
+[Reverse capture](evidence/runtime/reverse-strip-announcement.json) retains two attempts.
 At19849 master2 changes from roadblock command4 to strip command0,start230,
 span3,flags0910 and the player's group+58 points to it. At20358 it acquires
 the other racer, enters state5, clears assignment bit0800 and the original
@@ -612,7 +612,7 @@ continues; Ghidra004018b0 records the comparison.
 
 ### Third reverse attempt and capture endpoint
 
-[Third attempt](runtime/reverse-third-strip-attempt.json) targets the AI racer:
+[Third attempt](evidence/runtime/reverse-third-strip-attempt.json) targets the AI racer:
 master7 receives command0,start126,span3 at32309 (officer segment132).
 By32315 it is at133, still state1; by33756 it is at255 and switches to
 state5 with that racer as pursuit target. Thus sampled movement is toward
@@ -646,7 +646,7 @@ speed, then XORs its float sign for reverse at0040147e and for bit10 at
 | 1 | 1 | Positive |
 
 Thus a nearby lower assignment start sets the bit, but reverse mode cancels
-that sign reversal. [Eight retained witnesses](reverse-assignment-direction-evidence.json)
+that sign reversal. [Eight retained witnesses](evidence/runtime/reverse-assignment-direction-evidence.json)
 show bit10 set during the three attempts, with increasing segments away
 from the lower target intervals. This closes the local sign-composition
 question and corroborates the movement mismatch. It does not prove all
@@ -698,7 +698,7 @@ that reverse deployment can succeed; the earlier three failures were bounded
 observations, not a universal inability.
 
 At72956 the human is segment366/lane6, tyre mask0, stops2; Melroy reports
-being close to the strip. [Retained samples](runtime/reverse-active-strip.json)
+being close to the strip. [Retained samples](evidence/runtime/reverse-active-strip.json)
 include the first/latest observations. The initial assignment/state3/activation
 transition was missed. We cannot reconstruct its approach from these samples
 or infer why this attempt succeeded. The fresh sampler is live for a requested
@@ -707,7 +707,7 @@ is updated and saved.
 
 ### Reverse strip contact and front-pair damage
 
-[Contact capture](runtime/reverse-strip-contact.json): at73460 the player
+[Contact capture](evidence/runtime/reverse-strip-contact.json): at73460 the player
 is undamaged with stops2/controller2. At73463, segment360, mask becomes3
 and the active strip clears. Melroy reports the front tyres affected again,
 corroborating the front-pair mapping in reverse as well as the normal run.
@@ -723,7 +723,7 @@ do not establish exact instruction ordering within73463.
 
 ### Reverse nonterminal ticket recovery completed
 
-[Recovery capture](runtime/reverse-strip-ticket-recovery.json) closes the
+[Recovery capture](evidence/runtime/reverse-strip-ticket-recovery.json) closes the
 local reverse contact-to-release sequence, configured stop limit9. At73634
 the player has controller7/category07, mask3, stops2 and link to master4.
 At74022 stops becomes3, mask and link clear, while controller7/category07

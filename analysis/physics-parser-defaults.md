@@ -25,7 +25,7 @@ both default handlers write+1b8, at004b0d9f/004b0db1. Therefore missing79
 can overwrite a parsed11 with default0055fa30 while leaving+1bc unchanged.
 Preserve this behavior in a faithful reconstruction; do not silently correct it.
 
-[Installed header inventory](physics-default-field-presence.json) covers47
+[Installed header inventory](evidence/inventories/physics-default-field-presence.json) covers47
 CARP profiles. Every one contains field79 and all AI sections67..74. This
 provides no installed missing-header trigger; it does not prove all values
 are valid, every header is accepted by the binary parser, or custom input is
@@ -39,7 +39,7 @@ ownership and abort-policy reachability across callers.
 
 The full-copy source0055f874..0055fd1f is1196 initialized bytes in the
 executable's writable `.data` section, file offset1434228. All bytes match
-the persistent Ghidra image. [Retained bytes and hashes](physics-default-profile-image.json)
+the persistent Ghidra image. [Retained bytes and hashes](evidence/inventories/physics-default-profile-image.json)
 establish availability before race loading. Baseline values include mass1000,
 gear counts8/8, idle750/redline8000 and both field11/79 defaults4.0. The
 missing classification handler separately uses0055f3c8, so not every
@@ -55,7 +55,7 @@ Executable SHA256 remains2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6af
 
 ## Installed header coverage and local ownership
 
-[Expanded inventory](physics-header-coverage.json) matches all80 descriptor
+[Expanded inventory](evidence/inventories/physics-header-coverage.json) matches all80 descriptor
 slots exactly once in each of47 installed CARP files, using executable name
 and numeric-ID substrings in first-match order. The maximum normalized line
 is450 bytes against the2000-byte parser buffer. Files whose final byte is

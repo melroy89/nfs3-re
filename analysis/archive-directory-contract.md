@@ -14,7 +14,7 @@ Assembly confirms allocation and read length both use directory_end
 ignored. Zero-fill before read does not prove complete I/O. This
 closes installed artifact extents only; custom/malformed archives,
 short reads, parser traversal and ownership remain open.
-[Inventory](installed-viv-directory-extents.json) records every archive
+[Inventory](evidence/inventories/installed-viv-directory-extents.json) records every archive
 hash/header and member offset/length. Ghidra opener comment saved.
 No runtime or binary modification.
 

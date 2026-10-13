@@ -4,7 +4,7 @@ The bounded loading question is closed: a normal menu-entered GOFAST Single Race
 
 ## Evidence
 
-The user entered GOFAST before loading the race, selected Diablo SV with automatic transmission and paused at countdown 2. The read-only snapshot at tick404 has session0, race_mode0, override_flags1, model14/DIAB and default tuning `[1,0,1,1,1,1,1]`. See [retained sample](runtime/gofast-countdown.json).
+The user entered GOFAST before loading the race, selected Diablo SV with automatic transmission and paused at countdown 2. The read-only snapshot at tick404 has session0, race_mode0, override_flags1, model14/DIAB and default tuning `[1,0,1,1,1,1,1]`. See [retained sample](evidence/runtime/gofast-countdown.json).
 
 `ApplyCarTuningToPhysicsParameters` (004a78d6) applies the GOFAST multipliers. Its final-gear calculation uses active count7, ratio[6]=71.94600677490234 and maximum velocity162.84722900390625. Their product is11716.207841189113. Nearest, down, up and toward-zero FISTP rounding all yield integer quotient45 after signed division by256. The live x87 control word was not sampled, but its rounding choice cannot change this index for these inputs.
 

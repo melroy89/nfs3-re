@@ -109,6 +109,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = json.dumps(inventory(args.game_root), indent=2, allow_nan=False) + "\n"
     if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(result)
     else:
         print(result, end="")

@@ -3,11 +3,16 @@
 Uses Python double intermediates and explicit binary32 stores matching the
 observed stages. It is not an x87 emulator or an atomic instruction trace.
 """
+import argparse
 import json
 import struct
 from pathlib import Path
 
-BASE = Path(__file__).resolve().parent
+BASE = Path(__file__).resolve().parent.parent
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--input-dir', type=Path, default=BASE/'evidence/runtime')
+parser.add_argument('--output', type=Path, default=BASE/'evidence/runtime/spike-contact-reconstruction.json')
+args = parser.parse_args()
 
 def f32(x):
     return struct.unpack('<f', struct.pack('<f', x))[0]
@@ -33,7 +38,7 @@ def clip(poly, axis, sign):
 
 results = []
 for name, target in [('spike-contact-and-recovery', 1), ('spike-contact-and-arrest', 3)]:
-    rows = json.loads((BASE/'runtime'/f'{name}.json').read_text())['samples']
+    rows = json.loads((args.input_dir/f'{name}.json').read_text())['samples']
     first = next(i for i,r in enumerate(rows) if r['vehicles'][target]['contact_mask'])
     row = rows[first]
     v = row['vehicles'][target]
@@ -79,7 +84,8 @@ output = {'limitations':['Asynchronous sample poses, not exact contact instructi
                          'Double intermediates with explicit float stores, not full x87 emulation.',
                          'Polygon clipping concerns the sampled quad/cube, not physical tyre geometry.'],
           'results':results}
-(BASE/'spike-contact-reconstruction.json').write_text(json.dumps(output,indent=2)+'\n')
+args.output.parent.mkdir(parents=True, exist_ok=True)
+args.output.write_text(json.dumps(output,indent=2)+'\n')
 for r in results:
     print(r['capture'], 'observed/reconstructed', r['observed_mask'], r['reconstructed_mask'],
           'intersections', [w['quad_intersects_cube_at_sampled_pose'] for w in r['wheels']])

@@ -200,6 +200,7 @@ output_buffer: .fill {OUTPUT_SIZE},1,0xa5
                   method='Linux freestanding i386 ELF executing unchanged original decoder bytes at original address; no stubs or Wine',
                   limits='Synthetic valid complete canonical tables only; readable input lookahead padding; no actual asset corpus, malformed inputs, input/output bounds guarantee, alternate EBX branch or upstream dispatch validation. Five-second timeout per process. Canaries check only the allocated output tail.',
                   cases=rows)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps(dict(case_count=len(rows), all_assertions_passed=True, output=str(args.output))))
 

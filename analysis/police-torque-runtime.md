@@ -30,7 +30,7 @@ The human-police run therefore corroborates the model/controller distinction and
 
 ## AI-police live profile confirmation
 
-Melroy then selected an ordinary racer on Redrock Ridge, Hot Pursuit, traffic Off, and reported pausing during the countdown. A retained [baseline snapshot](runtime/ai-police-torque-baseline.json) has tick376, track1, session0 and eight registered vehicles. Local vehicle0 is model6 (`FM50`) with full-physics callback004ae4c1.
+Melroy then selected an ordinary racer on Redrock Ridge, Hot Pursuit, traffic Off, and reported pausing during the countdown. A retained [baseline snapshot](evidence/runtime/ai-police-torque-baseline.json) has tick376, track1, session0 and eight registered vehicles. Local vehicle0 is model6 (`FM50`) with full-physics callback004ae4c1.
 
 Four police vehicles (master indices3,4,5,7) are model501, resource`0002`. Each has live torque sample21 equal to0.0 and physics callback004088f0 (`ProcessAIVehicleDynamics`). Two other police vehicles use model504/resource`0005`; the remaining vehicle is an AI racer. Thus the malformed AI501 table entry survives normal startup in this installed build.
 
@@ -38,7 +38,7 @@ This closes the live loading/persistence question for the observed roster. It do
 
 ## Human-police stop completion
 
-While this run continued, a second sampler added simulation tick, pursuit target/group, reciprocal stop links and stop counters. The first arrest was already complete when this expanded capture began; its transition was not observed. The second arrest was captured. Selected observations are retained in [runtime/police-stop-observations.json](runtime/police-stop-observations.json).
+While this run continued, a second sampler added simulation tick, pursuit target/group, reciprocal stop links and stop counters. The first arrest was already complete when this expanded capture began; its transition was not observed. The second arrest was captured. Selected observations are retained in [evidence/runtime/police-stop-observations.json](evidence/runtime/police-stop-observations.json).
 
 | Sample tick | Human officer | AI target (master index2) | Shared group |
 | --- | --- | --- | --- |
@@ -52,7 +52,7 @@ This corroborates one human-police/AI-racer terminal stop lifecycle. It does not
 
 ## Player-racer first ticket and return of control
 
-Melroy reported receiving a first ticket, regaining control, driving briefly and pausing. The restarted sampler captured completion from the already paused stop; it did not capture pursuit acquisition or entry into the stop. Selected samples are retained in [runtime/racer-ticket-completion.json](runtime/racer-ticket-completion.json).
+Melroy reported receiving a first ticket, regaining control, driving briefly and pausing. The restarted sampler captured completion from the already paused stop; it did not capture pursuit acquisition or entry into the stop. Selected samples are retained in [evidence/runtime/racer-ticket-completion.json](evidence/runtime/racer-ticket-completion.json).
 
 | Sample tick | Player category | Player stops / racer state | Stop linkage |
 | --- | --- | --- | --- |
@@ -75,12 +75,12 @@ Remaining torque question: establish whether an unmodified, reachable path ever 
 
 ### Second player-racer ticket
 
-The same capture also recorded the user-reported second ticket. At sampled tick8576 category changed0x05->0x07; the reciprocal stop link appeared by8605. At8997 the target stop count advanced1->2, the link cleared and cooldown became9892; racer state remained0. At8999 category returned to0x05. The configured stop limit remained3. This independently corroborates nonterminal release after the second ticket; the terminal third stop was subsequently captured below. Selected evidence: [runtime/racer-second-ticket.json](runtime/racer-second-ticket.json). Tick differences describe these asynchronous observations, not guaranteed update delays.
+The same capture also recorded the user-reported second ticket. At sampled tick8576 category changed0x05->0x07; the reciprocal stop link appeared by8605. At8997 the target stop count advanced1->2, the link cleared and cooldown became9892; racer state remained0. At8999 category returned to0x05. The configured stop limit remained3. This independently corroborates nonterminal release after the second ticket; the terminal third stop was subsequently captured below. Selected evidence: [evidence/runtime/racer-second-ticket.json](evidence/runtime/racer-second-ticket.json). Tick differences describe these asynchronous observations, not guaranteed update delays.
 
 
 ### Third stop: terminal player arrest
 
-Melroy reported “Busted” on the third stop. The same read-only capture shows temporary AI category0x07 at sampled tick10695, reciprocal stop linkage by10702, then at11100 target stops2->3 and racer state0->4. Category was0x05 again, the reciprocal link cleared, group membership/processing counters were zero and cooldown was11860. Control00431430 and physics004ae4c1 callback pointers remained unchanged. Selected evidence: [runtime/racer-terminal-arrest.json](runtime/racer-terminal-arrest.json).
+Melroy reported “Busted” on the third stop. The same read-only capture shows temporary AI category0x07 at sampled tick10695, reciprocal stop linkage by10702, then at11100 target stops2->3 and racer state0->4. Category was0x05 again, the reciprocal link cleared, group membership/processing counters were zero and cooldown was11860. Control00431430 and physics004ae4c1 callback pointers remained unchanged. Selected evidence: [evidence/runtime/racer-terminal-arrest.json](evidence/runtime/racer-terminal-arrest.json).
 
 This directly corroborates the configured limit3 terminal branch in `FinalizePoliceStop`: the first two tickets leave racer state0; the third sets state4. Clearing the temporary AI-control bit also occurs at terminal completion, so that flag alone does not imply that ordinary driving has resumed. No intermediate category0x07/state4 sample was observed; sampling cannot establish that no such intermediate state existed.
 
@@ -130,7 +130,7 @@ this static provenance; live GO18 profile and execution remain unverified.
 00439300 returns literal `car` for a registered starting model. Raw Ghidra
 bytes verify templates00537330=`%sp` and00537334=`%s.txt`, yielding `carp.txt`.
 The installed pursuit0002 archive contains that exact entry at offset120,
-length5014, within its validated extent. [Archive provenance](go18-archive-provenance.json)
+length5014, within its validated extent. [Archive provenance](evidence/inventories/go18-archive-provenance.json)
 retains hashes and member bounds. Thus the original descriptor basename does
 not prevent this physics substitution for a registered starting car.
 
@@ -165,6 +165,6 @@ constitute an instruction trace.
 
 ## GO18 live profile and acceleration capture
 
-User confirmed GO18 and countdown pause in a regular race. [Baseline](runtime/go18-countdown.json) records session0/race0, track1, reverse0, override flag2/selector18. Local DIAB remains registry model14 but has idle900/redline6000 and torque20..22 of247.600006/0/242.479996. Physics callback004ae4c1, category5, alternate0 and upright1 establish sampled full-physics eligibility.
+User confirmed GO18 and countdown pause in a regular race. [Baseline](evidence/runtime/go18-countdown.json) records session0/race0, track1, reverse0, override flag2/selector18. Local DIAB remains registry model14 but has idle900/redline6000 and torque20..22 of247.600006/0/242.479996. Physics callback004ae4c1, category5, alternate0 and upright1 establish sampled full-physics eligibility.
 
-[Acceleration capture](runtime/go18-acceleration.json) retains144 distinct ticks516..1434 over14.411 seconds; RPM3471..6100, gears2/3/4. All retain zero torque21. There are137 snapshots with dispatcher and interpolation gates clear. At tick846, RPM is exactly5376, gear3, shift state0 and state+164=0. This establishes runtime profile and eligible-state reachability through the built-in override. It does not prove execution of the current-RPM interpolation call or its final drive response: snapshots are non-atomic, at nominal0.1s, without instruction tracing. Melroy reported acceleration felt weaker than a Class A car and described the vehicle as a police car. No distinct hesitation was explicitly reported. This subjective observation does not isolate the zero torque entry from the overall substituted profile, gearing or other dynamics. Sampler stopped after user confirmed pause; no additional driving requested.
+[Acceleration capture](evidence/runtime/go18-acceleration.json) retains144 distinct ticks516..1434 over14.411 seconds; RPM3471..6100, gears2/3/4. All retain zero torque21. There are137 snapshots with dispatcher and interpolation gates clear. At tick846, RPM is exactly5376, gear3, shift state0 and state+164=0. This establishes runtime profile and eligible-state reachability through the built-in override. It does not prove execution of the current-RPM interpolation call or its final drive response: snapshots are non-atomic, at nominal0.1s, without instruction tracing. Melroy reported acceleration felt weaker than a Class A car and described the vehicle as a police car. No distinct hesitation was explicitly reported. This subjective observation does not isolate the zero torque entry from the overall substituted profile, gearing or other dynamics. Sampler stopped after user confirmed pause; no additional driving requested.

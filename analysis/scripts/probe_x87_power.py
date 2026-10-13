@@ -213,6 +213,7 @@ results: .space RESULT_SIZE
                   nearest_extended_maximum_ulp_distance=max(r['ulp_distance'] for r in compared),
                   limits='Sampled local native arithmetic evidence only; no gameplay/Wine/caller execution, callback results, errno, exception policy, or exhaustive accuracy proof. math.pow is host libm, not a correctly rounded oracle; comparison limited to nonzero finite results with finite nonzero bases and bounded exponents. Other control modes are recorded against default host math.pow only for inspection. Binary64 loads can quiet signaling NaNs before entry. No raw extended inputs/results, live extra x87 stack values, or unmasked exceptions. General registers are not asserted. Successful completion verifies the guarded 0051655c callback was not reached for sampled cases. Dispatch sentinels are synthetic, not original game results.',
                   cases=rows)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps({k: v for k, v in report.items() if k not in ['cases', 'extraction_audit', 'limits', 'method']}))
 

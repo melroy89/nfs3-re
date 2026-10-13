@@ -123,7 +123,7 @@ backup0..8, all within0..10. This closes the recorded installed-file extent
 and count inventory, not actual track/category admission, complete loader
 reads, later mutation or custom-file validation. Occupied record-string
 termination is independently established below; source-copy bounds remain open. Hashes and
-all offsets/counts retained in[JSON inventory](installed-records-database-extents.json).
+all offsets/counts retained in[JSON inventory](evidence/inventories/installed-records-database-extents.json).
 
 
 ## Installed occupied-record strings
@@ -133,7 +133,7 @@ four assembly-derived string ranges in each occupied 0x31c-byte record:
 offsets/capacities 4/11, 15/256, 271/256 and 527/257. All ranges contain a
 NUL: 3 occupied active records and 127 backup records. Maximum bytes before
 NUL are respectively 6/21/11/9 and 9/21/12/13. File hashes and independently
-recomputed counts/maxima match the [string inventory](installed-records-string-bounds.json).
+recomputed counts/maxima match the [string inventory](evidence/inventories/installed-records-string-bounds.json).
 
 This closes occupied-string termination for these exact installed files. It
 does not prove bounds of the updater's source copies, unused records, custom

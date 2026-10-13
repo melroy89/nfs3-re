@@ -52,12 +52,12 @@ Output conversion is at `004a89af–004a8a22`. Both255 and256 produce zero gas a
 
 ## Installed resource evidence
 
-[controller-profile-inventory.json](controller-profile-inventory.json) records all 47 extracted profiles, per-archive and per-member SHA-256, member offset/size, classification, gear counts, idle/redline, both eight-entry velocity-to-RPM tables, and three corner speed modifiers. [inventory_car_physics.py](inventory_car_physics.py) reproduces it using only the Python standard library:
+[controller-profile-inventory.json](evidence/inventories/controller-profile-inventory.json) records all 47 extracted profiles, per-archive and per-member SHA-256, member offset/size, classification, gear counts, idle/redline, both eight-entry velocity-to-RPM tables, and three corner speed modifiers. [inventory_car_physics.py](scripts/inventory_car_physics.py) reproduces it using only the Python standard library:
 
 ```sh
-python3 analysis/inventory_car_physics.py \
+python3 analysis/scripts/inventory_car_physics.py \
   '/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III' \
-  --output analysis/controller-profile-inventory.json
+  --output analysis/evidence/inventories/controller-profile-inventory.json
 ```
 
 The script reads the active `GAMEDATA/CARMODEL` tree and excludes the backup `gamedata_org`. It checks BIGF declared size, member extents, duplicate numeric fields, eight-entry ratio widths, and finite numerical values. Decimal floats are converted to IEEE float32 using Python nearest-even conversion; this is a resource inventory, not execution or emulation of the game's text parser. Archive hashes make later resource drift reviewable.

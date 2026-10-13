@@ -1,0 +1,245 @@
+{
+  "purpose": "Original paths and byte hashes for evidence relocation; historical paths inside evidence are preserved.",
+  "files": {
+    "analysis/ai-strip-assignment-reconstruction.json": {
+      "destination": "analysis/evidence/runtime/ai-strip-assignment-reconstruction.json",
+      "sha256": "9ff3d605345b388f20eb4a6f51b1e0d4641a596a1301af8e41a1d5a2f50ab0ee"
+    },
+    "analysis/astra-backlog-review.json": {
+      "destination": "analysis/evidence/audits/astra-backlog-review.json",
+      "sha256": "8c446a5e9299040bb74c0389fc356bbcbf89785d6e2e5c2dac68f8f367839f4a"
+    },
+    "analysis/astra-ledger-link-audit.json": {
+      "destination": "analysis/evidence/audits/astra-ledger-link-audit.json",
+      "sha256": "3e04520f1bb7215fbe37e2df470f6db40fb2b26694c2d39f961aa66a8192da44"
+    },
+    "analysis/binary64-division-probe.json": {
+      "destination": "analysis/evidence/probes/binary64-division-probe.json",
+      "sha256": "943ac380f2d9eaba068bb27b4ece80a9974e2ade4be1236c6f97f53ede52ef48"
+    },
+    "analysis/binary64-helper-probe.json": {
+      "destination": "analysis/evidence/probes/binary64-helper-probe.json",
+      "sha256": "84f55f82d9525dd89d8322777e136a5bd786a8c1a99969f54aaaba47f60e0855"
+    },
+    "analysis/controller-profile-inventory.json": {
+      "destination": "analysis/evidence/inventories/controller-profile-inventory.json",
+      "sha256": "1632705407269c9db3273109a58fe76d9db8ff1ed7e0fcf94c73cef01e33b5fe"
+    },
+    "analysis/go18-archive-provenance.json": {
+      "destination": "analysis/evidence/inventories/go18-archive-provenance.json",
+      "sha256": "5512d495db5cf235db31923ce837af186272cd6aae32bcf9254ff3a3dbe3aa37"
+    },
+    "analysis/hud-layout-target23-evidence.json": {
+      "destination": "analysis/evidence/runtime/hud-layout-target23-evidence.json",
+      "sha256": "2c77d6b39810b87bc4b45299e8c6f5e00530de14e0f9302d5cb5f7b0fbef6bba"
+    },
+    "analysis/installed-car-display-source-check.json": {
+      "destination": "analysis/evidence/inventories/installed-car-display-source-check.json",
+      "sha256": "91b51096653767cdc681e511908c86189ec1d6f69854442f6cf62e7fc63a4b5b"
+    },
+    "analysis/installed-car-display-strings.json": {
+      "destination": "analysis/evidence/inventories/installed-car-display-strings.json",
+      "sha256": "e26a0914ad58b422c447d91ac0e73814f8b2a0f7ed2fa0fa9453ebc07fb59409"
+    },
+    "analysis/installed-ccm-extents.json": {
+      "destination": "analysis/evidence/inventories/installed-ccm-extents.json",
+      "sha256": "fac99d7972095fd7144dda85c00bd064e2bdd959ca6637d9903e037f4d7cb49b"
+    },
+    "analysis/installed-fce-palette-extents.json": {
+      "destination": "analysis/evidence/inventories/installed-fce-palette-extents.json",
+      "sha256": "9cdfb3cb3c12a36f45c030564ad2a2d0c7ff064d70d9b9f3470ed9da1b96bf68"
+    },
+    "analysis/installed-records-database-extents.json": {
+      "destination": "analysis/evidence/inventories/installed-records-database-extents.json",
+      "sha256": "a4fff36250edbf5bbef90e0a361fe761171ba7c62fdc4286aec69b9d86b11b21"
+    },
+    "analysis/installed-records-string-bounds.json": {
+      "destination": "analysis/evidence/inventories/installed-records-string-bounds.json",
+      "sha256": "4eaf02156e87897d644914dd82298078e39b5580cfc1a61b3e026134e31d7c18"
+    },
+    "analysis/installed-stored-car-key-matches.json": {
+      "destination": "analysis/evidence/inventories/installed-stored-car-key-matches.json",
+      "sha256": "b3de7dc81581ca792332143ce920d3be38f3e2cd13b2dac79f5140e5f522ebe5"
+    },
+    "analysis/installed-viv-directory-extents.json": {
+      "destination": "analysis/evidence/inventories/installed-viv-directory-extents.json",
+      "sha256": "3e6cd164513fcf28c5e636db57181df44ea12cc3679d283db73fd382bcd9b705"
+    },
+    "analysis/packed-prefix-decoder-probe.json": {
+      "destination": "analysis/evidence/probes/packed-prefix-decoder-probe.json",
+      "sha256": "25fff3580968fc175123f0c33e40166053ebef2677bbf6fb01737bea7e2c6f57"
+    },
+    "analysis/physics-default-field-presence.json": {
+      "destination": "analysis/evidence/inventories/physics-default-field-presence.json",
+      "sha256": "49b334f3c5935b2186bb148555790a1249e977c93bf572781110f01d27305af1"
+    },
+    "analysis/physics-default-profile-image.json": {
+      "destination": "analysis/evidence/inventories/physics-default-profile-image.json",
+      "sha256": "049be3bedbab6896d7369bdfe476f9bbe637824be4502b86193ff27300e53b69"
+    },
+    "analysis/physics-header-coverage.json": {
+      "destination": "analysis/evidence/inventories/physics-header-coverage.json",
+      "sha256": "c30e73c61533f254c9f5ceeb3e9a866e700112bd92394eb39c94920b8b811c38"
+    },
+    "analysis/replay-rle-token-bound.json": {
+      "destination": "analysis/evidence/static/replay-rle-token-bound.json",
+      "sha256": "5e49bbf348eb42a223393ff9425e1afa312c9e4bd86ef2eb6da7975a961cd5b2"
+    },
+    "analysis/reverse-assignment-direction-evidence.json": {
+      "destination": "analysis/evidence/runtime/reverse-assignment-direction-evidence.json",
+      "sha256": "5af1b5b991c752c8cdc73f437bac2e27a340ea59f8739ea815718bcdf8bbbd99"
+    },
+    "analysis/reverse-roadblock-reconstruction.json": {
+      "destination": "analysis/evidence/runtime/reverse-roadblock-reconstruction.json",
+      "sha256": "a750fc736358160b31de5d6726b5f692f2bd1a89b13deadf33a0a53d509a1451"
+    },
+    "analysis/roadblock-assignment-reconstruction.json": {
+      "destination": "analysis/evidence/runtime/roadblock-assignment-reconstruction.json",
+      "sha256": "9242c57b940d6bdd94f166876d191691ecdfe085bf6e30dceb775a566ad5a6e4"
+    },
+    "analysis/runtime/ai-police-torque-baseline.json": {
+      "destination": "analysis/evidence/runtime/ai-police-torque-baseline.json",
+      "sha256": "ba3951edb38177348a0066710f9e9f93910ebcc2194b9651bfdc4bf5e6e70c3f"
+    },
+    "analysis/runtime/ai-roadblock-assignment.json": {
+      "destination": "analysis/evidence/runtime/ai-roadblock-assignment.json",
+      "sha256": "6842b36636f9b57b7b3a2ec8686cb52fbe6ed17014c6b3ff3196cbc57f46a169"
+    },
+    "analysis/runtime/ai-strip-request-no-deployment.json": {
+      "destination": "analysis/evidence/runtime/ai-strip-request-no-deployment.json",
+      "sha256": "a2936874060e23b50c10403099f60afd4552cc34291b49c4bf177427e585da31"
+    },
+    "analysis/runtime/barrier-followup-paused-baseline.json": {
+      "destination": "analysis/evidence/runtime/barrier-followup-paused-baseline.json",
+      "sha256": "4fc276238a053d69c506a5b3ebbc99ca88ea3cfd66bff15fd726d4b9c5b54458"
+    },
+    "analysis/runtime/barrier-proximity-recovery.json": {
+      "destination": "analysis/evidence/runtime/barrier-proximity-recovery.json",
+      "sha256": "0764a6e591b9586d8516c81a449bb11f466df6aeb8a351c7a4a20b361838abb0"
+    },
+    "analysis/runtime/go18-acceleration.json": {
+      "destination": "analysis/evidence/runtime/go18-acceleration.json",
+      "sha256": "21ee75f6e19bcbe86e3aecda2c661de21c1082638a93a01e2a710783110ecd6c"
+    },
+    "analysis/runtime/go18-countdown.json": {
+      "destination": "analysis/evidence/runtime/go18-countdown.json",
+      "sha256": "e9402a0dc89d285f3518e7a5b34a8ab4820ec6c746e937043cfaba89f33c29ae"
+    },
+    "analysis/runtime/gofast-countdown.json": {
+      "destination": "analysis/evidence/runtime/gofast-countdown.json",
+      "sha256": "ffcc275516e4ac1d9c47ae9e6e36aad44ef5290814e72291b3c3b77cc5435256"
+    },
+    "analysis/runtime/long-pursuit-ai-strip-deployment.json": {
+      "destination": "analysis/evidence/runtime/long-pursuit-ai-strip-deployment.json",
+      "sha256": "62a9f16b5239a969028b8bde7192dab15ad138e03c2a7a02f0beba5c75ab8cf8"
+    },
+    "analysis/runtime/long-pursuit-roadblock-announcement.json": {
+      "destination": "analysis/evidence/runtime/long-pursuit-roadblock-announcement.json",
+      "sha256": "aefd7a2802dbc33f27f307c9febf6d54f30a301b0ae2e03bfd08320764dbf907"
+    },
+    "analysis/runtime/long-pursuit-strip-announcement.json": {
+      "destination": "analysis/evidence/runtime/long-pursuit-strip-announcement.json",
+      "sha256": "37532d1b8e0486d217c91ba5b43ef869ea1b8b72b7e3ece8c8989ec733cb63cd"
+    },
+    "analysis/runtime/police-arrest-reset-guard-events.json": {
+      "destination": "analysis/evidence/runtime/police-arrest-reset-guard-events.json",
+      "sha256": "c342b95fba7c9e4fdbd7300ba680791b63fd2ff71924671297585c67d8996b5c"
+    },
+    "analysis/runtime/police-reset-confirmation.json": {
+      "destination": "analysis/evidence/runtime/police-reset-confirmation.json",
+      "sha256": "ec023f002a5cf2e29b555df2284faf76cc0637718a12367b022947bcc2987e9c"
+    },
+    "analysis/runtime/police-reset-cooldown-rejection.json": {
+      "destination": "analysis/evidence/runtime/police-reset-cooldown-rejection.json",
+      "sha256": "d8bbc72e50d6f54bda8fe4a0d26bac261d63bcb567ee7472624462e682b7eafe"
+    },
+    "analysis/runtime/police-reset-two-taps.json": {
+      "destination": "analysis/evidence/runtime/police-reset-two-taps.json",
+      "sha256": "e6ee8b96ed3566cfd901aec442f694f6ab6bed7504e9764e1603c25f5d654a1c"
+    },
+    "analysis/runtime/police-stop-observations.json": {
+      "destination": "analysis/evidence/runtime/police-stop-observations.json",
+      "sha256": "a3beb446147c74b9e7f6095a94eabc1df91a738a5d22ca1d50370e26159a7fd7"
+    },
+    "analysis/runtime/police-tactic-scheduling.json": {
+      "destination": "analysis/evidence/runtime/police-tactic-scheduling.json",
+      "sha256": "b467c345b092d5e89dae670c39bda332ca9896a2b69f1df9263615b47e8651af"
+    },
+    "analysis/runtime/racer-second-ticket.json": {
+      "destination": "analysis/evidence/runtime/racer-second-ticket.json",
+      "sha256": "f945de7321ec805e411e73d71fbd18b1969122563eba8c8c95cf588e403f55ed"
+    },
+    "analysis/runtime/racer-terminal-arrest.json": {
+      "destination": "analysis/evidence/runtime/racer-terminal-arrest.json",
+      "sha256": "50e4cca66e406ab5a416b957de280bd5e4e3e63abcba0a352e1275eb6c8bb97c"
+    },
+    "analysis/runtime/racer-ticket-completion.json": {
+      "destination": "analysis/evidence/runtime/racer-ticket-completion.json",
+      "sha256": "01ba5707a90182f936a1ecbffcb14c42b6b3a1550fed1352cec8ce7bf87fce44"
+    },
+    "analysis/runtime/racer-ticket-in-progress.json": {
+      "destination": "analysis/evidence/runtime/racer-ticket-in-progress.json",
+      "sha256": "fca91c9e2b6c96e919b677842678663f4d42a5d44e731e1ebd31c4744a32bc59"
+    },
+    "analysis/runtime/reverse-active-strip.json": {
+      "destination": "analysis/evidence/runtime/reverse-active-strip.json",
+      "sha256": "0d291a85d2430c0c8c7dbe2e34dd4b54ea49945348728458777d2c61501ab16e"
+    },
+    "analysis/runtime/reverse-police-reset-baseline.json": {
+      "destination": "analysis/evidence/runtime/reverse-police-reset-baseline.json",
+      "sha256": "fadabd7636921684382f9d3678466eb777ee6d114c0ca580f5addcec24e36f43"
+    },
+    "analysis/runtime/reverse-police-reset-events.json": {
+      "destination": "analysis/evidence/runtime/reverse-police-reset-events.json",
+      "sha256": "d58fdb2c92a4b99c4b36056cbf401ca399242e8f5e30e8451e23d1a83fced532"
+    },
+    "analysis/runtime/reverse-roadblock-announcement.json": {
+      "destination": "analysis/evidence/runtime/reverse-roadblock-announcement.json",
+      "sha256": "fdc6031840cd53e8a4313be84219b361cf9cedffabdb423e764c53fbbe1693c5"
+    },
+    "analysis/runtime/reverse-strip-announcement.json": {
+      "destination": "analysis/evidence/runtime/reverse-strip-announcement.json",
+      "sha256": "a88649142c8503fc6f682af0b685a61cb1d9853332ef9a932f1b984ded151179"
+    },
+    "analysis/runtime/reverse-strip-contact.json": {
+      "destination": "analysis/evidence/runtime/reverse-strip-contact.json",
+      "sha256": "e482c26c9b826e4839dea7c13f7b285509dcc575eeb24f97e89aa3cfca20da17"
+    },
+    "analysis/runtime/reverse-strip-ticket-recovery.json": {
+      "destination": "analysis/evidence/runtime/reverse-strip-ticket-recovery.json",
+      "sha256": "6c8ffb9caf4524ebc817ed3e3ed31fb2de16b49892bcc0b4e3a329f9bc99d477"
+    },
+    "analysis/runtime/reverse-third-strip-attempt.json": {
+      "destination": "analysis/evidence/runtime/reverse-third-strip-attempt.json",
+      "sha256": "68c21c7f991995ccca4280ed34e126843d656aafdf3414cfe34bc73b9a407416"
+    },
+    "analysis/runtime/spike-contact-and-arrest.json": {
+      "destination": "analysis/evidence/runtime/spike-contact-and-arrest.json",
+      "sha256": "900a95505db129f9e252bf7726d572e4980f32f3dedfd1e37c053c20eae6037f"
+    },
+    "analysis/runtime/spike-contact-and-recovery.json": {
+      "destination": "analysis/evidence/runtime/spike-contact-and-recovery.json",
+      "sha256": "4768f3c5cb8b4ead7cd1b8eba6fcd776a4d6c59550a247e77a8fdcea9b4f8697"
+    },
+    "analysis/runtime/spike-event-observations.json": {
+      "destination": "analysis/evidence/runtime/spike-event-observations.json",
+      "sha256": "f1fe7c896d86cd970a0d38e917df548d0a893880a2b7b374905fcf1a96193102"
+    },
+    "analysis/spike-contact-reconstruction.json": {
+      "destination": "analysis/evidence/runtime/spike-contact-reconstruction.json",
+      "sha256": "e79b3992668efc5345f2ef7de4c10679c834a60db94915c15c1f0f748611b0dd"
+    },
+    "analysis/spike-strip-geometry-witness.json": {
+      "destination": "analysis/evidence/static/spike-strip-geometry-witness.json",
+      "sha256": "208bf76849a15b20846ad929e06e570cc297cb62e892d06e4c20256d9af4f9c7"
+    },
+    "analysis/x87-atan2-probe.json": {
+      "destination": "analysis/evidence/probes/x87-atan2-probe.json",
+      "sha256": "8aaadd3e34a10465b9b8ee6c3f3d8120e5eb8c0f9eb6b6ed16d6b11ff2fc2936"
+    },
+    "analysis/x87-power-probe.json": {
+      "destination": "analysis/evidence/probes/x87-power-probe.json",
+      "sha256": "852e0a888e45ba5758d03f96ddd111c1bd21d338b93a2303420200758a97a650"
+    }
+  }
+}

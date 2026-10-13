@@ -8,7 +8,7 @@ precedes the header or record accesses.
 
 Read-only inventory of all eight loose installed GAMEDATA/TRACKS CCM files
 finds counts4..25 and exact sizes8+28*count, with no trailing bytes. Each
-header's first DWORD is1. [Inventory and hashes](installed-ccm-extents.json)
+header's first DWORD is1. [Inventory and hashes](evidence/inventories/installed-ccm-extents.json)
 preserve the file evidence. TRK002 has no loose CCM in this inventory; this
 does not establish archive fallback or absence of a camera path.
 
