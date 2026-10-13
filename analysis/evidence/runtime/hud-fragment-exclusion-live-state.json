@@ -1,0 +1,45 @@
+{
+  "artifact": "NFS III HUD per-view fragment-exclusion state",
+  "captured_date_local": "2026-10-14",
+  "binary": {
+    "path": "/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/nfs3.exe",
+    "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb"
+  },
+  "runtime": {
+    "process_id": 620032,
+    "process_observed_alive_after_debugger_detach": true,
+    "method": "Two read-only snapshots of the 32-bit process globals: direct /proc/PID/mem read and a GDB memory dump. The conditional hardware breakpoint at 00487620 required EDX==2; it did not hit during the short observation interval. GDB was detached after interrupting its wait at a syscall.",
+    "memory_written": false
+  },
+  "globals": {
+    "record_count_address": "0x0055d694",
+    "record_table_address": "0x00791b68",
+    "record_stride_bytes": 16,
+    "view_stride_bytes": 80,
+    "snapshots_agreed": true,
+    "views": [
+      {
+        "view_index": 0,
+        "record_count": 2,
+        "records_as_four_f32_values": [
+          [1.0, 1303.0, 181.0, 1484.0],
+          [5.0, 440.0, 177.0, 613.0]
+        ]
+      },
+      {
+        "view_index": 1,
+        "record_count": 0,
+        "records": []
+      }
+    ]
+  },
+  "limits": [
+    "The four fields are reported in storage order; their semantic axis names are not inferred from this capture.",
+    "The mode-2 caller path was not observed; the breakpoint timeout does not prove that path is unreachable.",
+    "This is one live HUD state, not a capacity or visual-behavior validation."
+  ],
+  "integrity": {
+    "executable_modified": false,
+    "runtime_memory_modified": false
+  }
+}

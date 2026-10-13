@@ -1,0 +1,21 @@
+{
+  "file_inventory_sha256": "d6219efb958ba7ffc3e4370710eea8579ee5ab0fe1f4b714dac4f5e024191b73",
+  "files_scanned": 138,
+  "limitations": [
+    "Does not parse indexed binary TEXT.* localization tables.",
+    "Does not establish which file strings reach LayoutAndRenderWrappedFrontendText.",
+    "A shorter textual scan result is not proof of safe runtime inputs or absence of dynamic strings."
+  ],
+  "longest_contiguous_tab_run": {
+    "length": 4,
+    "line": 24,
+    "path": "text/TEXT0ENG.TXT"
+  },
+  "longest_non_delimited_token": {
+    "length": 36,
+    "line": 251,
+    "path": "menus/CEDBASIC.MNU"
+  },
+  "scope": "retained fedata_org .MNU and .TXT files; raw bytes split at CR/LF",
+  "total_bytes": 441805
+}

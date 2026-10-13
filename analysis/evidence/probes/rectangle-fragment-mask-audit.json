@@ -1,0 +1,790 @@
+{
+  "target_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "method": "Original helper and 16-entry absolute jump table extracted from the fingerprinted PE and executed at their original VAs in a freestanding Linux i386 process; synthetic finite rectangles only.",
+  "function": "BuildRectangleOutsideFragmentsWithPairedCoordinates",
+  "function_range": [
+    "0x00486340",
+    "0x00486de4"
+  ],
+  "jump_table_range": [
+    "0x004862f8",
+    "0x00486337"
+  ],
+  "jump_targets": [
+    "0x0048647d",
+    "0x00486491",
+    "0x004864e7",
+    "0x0048653d",
+    "0x004865d3",
+    "0x00486627",
+    "0x004866bf",
+    "0x00486757",
+    "0x00486843",
+    "0x00486895",
+    "0x0048692a",
+    "0x004869bf",
+    "0x00486a94",
+    "0x00486b26",
+    "0x00486bf5",
+    "0x00486cd6"
+  ],
+  "source_rectangle_xyxy": [
+    0.0,
+    0.0,
+    10.0,
+    10.0
+  ],
+  "paired_source_coordinates_uvuv": [
+    100.0,
+    200.0,
+    300.0,
+    400.0
+  ],
+  "overlap_masks_tested": 16,
+  "cases": [
+    {
+      "mask": 0,
+      "clipped_source_boundaries": [],
+      "return": 1,
+      "fragment_count": 0,
+      "rectangles_xyxy": [],
+      "paired_coordinates_uvuv": [],
+      "area_sum": 0,
+      "union_area": 0.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 0.0
+    },
+    {
+      "mask": 1,
+      "clipped_source_boundaries": [
+        "yMax"
+      ],
+      "return": 1,
+      "fragment_count": 1,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          8.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          360.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 20.0,
+      "union_area": 20.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 20.0
+    },
+    {
+      "mask": 2,
+      "clipped_source_boundaries": [
+        "yMin"
+      ],
+      "return": 1,
+      "fragment_count": 1,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          10.0,
+          2.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          300.0,
+          240.0
+        ]
+      ],
+      "area_sum": 20.0,
+      "union_area": 20.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 20.0
+    },
+    {
+      "mask": 3,
+      "clipped_source_boundaries": [
+        "yMax",
+        "yMin"
+      ],
+      "return": 1,
+      "fragment_count": 2,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          10.0,
+          2.0
+        ],
+        [
+          0.0,
+          8.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          300.0,
+          240.0
+        ],
+        [
+          100.0,
+          360.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 40.0,
+      "union_area": 40.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 40.0
+    },
+    {
+      "mask": 4,
+      "clipped_source_boundaries": [
+        "xMax"
+      ],
+      "return": 1,
+      "fragment_count": 1,
+      "rectangles_xyxy": [
+        [
+          8.0,
+          0.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          260.0,
+          200.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 20.0,
+      "union_area": 20.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 20.0
+    },
+    {
+      "mask": 5,
+      "clipped_source_boundaries": [
+        "yMax",
+        "xMax"
+      ],
+      "return": 1,
+      "fragment_count": 2,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          8.0,
+          8.0,
+          10.0
+        ],
+        [
+          8.0,
+          0.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          360.0,
+          260.0,
+          400.0
+        ],
+        [
+          260.0,
+          200.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 36.0,
+      "union_area": 36.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 36.0
+    },
+    {
+      "mask": 6,
+      "clipped_source_boundaries": [
+        "yMin",
+        "xMax"
+      ],
+      "return": 1,
+      "fragment_count": 2,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          8.0,
+          2.0
+        ],
+        [
+          8.0,
+          0.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          260.0,
+          240.0
+        ],
+        [
+          260.0,
+          200.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 36.0,
+      "union_area": 36.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 36.0
+    },
+    {
+      "mask": 7,
+      "clipped_source_boundaries": [
+        "yMax",
+        "yMin",
+        "xMax"
+      ],
+      "return": 1,
+      "fragment_count": 3,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          8.0,
+          2.0
+        ],
+        [
+          0.0,
+          8.0,
+          8.0,
+          10.0
+        ],
+        [
+          8.0,
+          0.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          260.0,
+          240.0
+        ],
+        [
+          100.0,
+          360.0,
+          260.0,
+          400.0
+        ],
+        [
+          260.0,
+          200.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 52.0,
+      "union_area": 52.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 52.0
+    },
+    {
+      "mask": 8,
+      "clipped_source_boundaries": [
+        "xMin"
+      ],
+      "return": 1,
+      "fragment_count": 1,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          2.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          140.0,
+          400.0
+        ]
+      ],
+      "area_sum": 20.0,
+      "union_area": 20.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 20.0
+    },
+    {
+      "mask": 9,
+      "clipped_source_boundaries": [
+        "yMax",
+        "xMin"
+      ],
+      "return": 1,
+      "fragment_count": 2,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          2.0,
+          10.0
+        ],
+        [
+          2.0,
+          8.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          140.0,
+          400.0
+        ],
+        [
+          140.0,
+          360.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 36.0,
+      "union_area": 36.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 36.0
+    },
+    {
+      "mask": 10,
+      "clipped_source_boundaries": [
+        "yMin",
+        "xMin"
+      ],
+      "return": 1,
+      "fragment_count": 2,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          2.0,
+          10.0
+        ],
+        [
+          2.0,
+          0.0,
+          10.0,
+          2.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          140.0,
+          400.0
+        ],
+        [
+          140.0,
+          200.0,
+          300.0,
+          240.0
+        ]
+      ],
+      "area_sum": 36.0,
+      "union_area": 36.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 36.0
+    },
+    {
+      "mask": 11,
+      "clipped_source_boundaries": [
+        "yMax",
+        "yMin",
+        "xMin"
+      ],
+      "return": 1,
+      "fragment_count": 3,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          2.0,
+          10.0
+        ],
+        [
+          2.0,
+          0.0,
+          10.0,
+          2.0
+        ],
+        [
+          2.0,
+          8.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          140.0,
+          400.0
+        ],
+        [
+          140.0,
+          200.0,
+          300.0,
+          240.0
+        ],
+        [
+          140.0,
+          360.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 52.0,
+      "union_area": 52.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 52.0
+    },
+    {
+      "mask": 12,
+      "clipped_source_boundaries": [
+        "xMax",
+        "xMin"
+      ],
+      "return": 1,
+      "fragment_count": 2,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          2.0,
+          10.0
+        ],
+        [
+          8.0,
+          0.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          140.0,
+          400.0
+        ],
+        [
+          260.0,
+          200.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 40.0,
+      "union_area": 40.0,
+      "overlap_area_excess": 0.0,
+      "overlapping_fragment_pairs": [],
+      "expected_area": 40.0
+    },
+    {
+      "mask": 13,
+      "clipped_source_boundaries": [
+        "yMax",
+        "xMax",
+        "xMin"
+      ],
+      "return": 1,
+      "fragment_count": 3,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          2.0,
+          10.0
+        ],
+        [
+          2.0,
+          8.0,
+          10.0,
+          10.0
+        ],
+        [
+          8.0,
+          0.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          140.0,
+          400.0
+        ],
+        [
+          140.0,
+          360.0,
+          300.0,
+          400.0
+        ],
+        [
+          260.0,
+          200.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 56.0,
+      "union_area": 52.0,
+      "overlap_area_excess": 4.0,
+      "overlapping_fragment_pairs": [
+        {
+          "fragment_indices": [
+            1,
+            2
+          ],
+          "intersection": [
+            8.0,
+            8.0,
+            10.0,
+            10.0
+          ],
+          "area": 4.0
+        }
+      ],
+      "expected_area": 52.0
+    },
+    {
+      "mask": 14,
+      "clipped_source_boundaries": [
+        "yMin",
+        "xMax",
+        "xMin"
+      ],
+      "return": 1,
+      "fragment_count": 3,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          2.0,
+          10.0
+        ],
+        [
+          2.0,
+          0.0,
+          10.0,
+          2.0
+        ],
+        [
+          8.0,
+          0.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          140.0,
+          400.0
+        ],
+        [
+          140.0,
+          200.0,
+          300.0,
+          240.0
+        ],
+        [
+          260.0,
+          200.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 56.0,
+      "union_area": 52.0,
+      "overlap_area_excess": 4.0,
+      "overlapping_fragment_pairs": [
+        {
+          "fragment_indices": [
+            1,
+            2
+          ],
+          "intersection": [
+            8.0,
+            0.0,
+            10.0,
+            2.0
+          ],
+          "area": 4.0
+        }
+      ],
+      "expected_area": 52.0
+    },
+    {
+      "mask": 15,
+      "clipped_source_boundaries": [
+        "yMax",
+        "yMin",
+        "xMax",
+        "xMin"
+      ],
+      "return": 1,
+      "fragment_count": 4,
+      "rectangles_xyxy": [
+        [
+          0.0,
+          0.0,
+          2.0,
+          10.0
+        ],
+        [
+          2.0,
+          0.0,
+          10.0,
+          2.0
+        ],
+        [
+          2.0,
+          8.0,
+          10.0,
+          10.0
+        ],
+        [
+          8.0,
+          0.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "paired_coordinates_uvuv": [
+        [
+          100.0,
+          200.0,
+          140.0,
+          400.0
+        ],
+        [
+          140.0,
+          200.0,
+          300.0,
+          240.0
+        ],
+        [
+          140.0,
+          360.0,
+          300.0,
+          400.0
+        ],
+        [
+          260.0,
+          200.0,
+          300.0,
+          400.0
+        ]
+      ],
+      "area_sum": 72.0,
+      "union_area": 64.0,
+      "overlap_area_excess": 8.0,
+      "overlapping_fragment_pairs": [
+        {
+          "fragment_indices": [
+            1,
+            3
+          ],
+          "intersection": [
+            8.0,
+            0.0,
+            10.0,
+            2.0
+          ],
+          "area": 4.0
+        },
+        {
+          "fragment_indices": [
+            2,
+            3
+          ],
+          "intersection": [
+            8.0,
+            8.0,
+            10.0,
+            10.0
+          ],
+          "area": 4.0
+        }
+      ],
+      "expected_area": 64.0
+    },
+    {
+      "name": "disjoint",
+      "return": 0,
+      "outputs_untouched": true
+    },
+    {
+      "name": "edge_contact_x",
+      "return": 0,
+      "outputs_untouched": true
+    },
+    {
+      "name": "edge_contact_y",
+      "return": 0,
+      "outputs_untouched": true
+    }
+  ],
+  "limitations": [
+    "This finite grid validates the listed masks and paired linear mapping, not all IEEE-754 values or arbitrary x87 control words.",
+    "It does not exercise the caller loop, runtime exclusion counts, output-array capacity, aliasing, concurrent mutation, or renderer behavior.",
+    "The paired coordinates are an affine synthetic mapping; they do not identify a specific game texture or prove caller data admission."
+  ]
+}

@@ -1,0 +1,1416 @@
+{
+  "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "method": "Native Linux i386 execution of unchanged PE bytes for 00485c30; synthetic inputs; no stubs, Wine, or gameplay.",
+  "function_va": "0x00485c30",
+  "function_bytes": 747,
+  "function_sha256": "3543671c1408e9124a8dd6dfc3166f296390b768b8ea8ab881517b3c041b237f",
+  "function_end_exclusive": "0x00485f1b",
+  "cases": [
+    {
+      "case": "horizontal_left_cross",
+      "policy": 0,
+      "point": [
+        -4.0,
+        0.0
+      ],
+      "line": [
+        -4.0,
+        0.0,
+        2.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        0.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x00000000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "horizontal_left_cross",
+      "policy": 1,
+      "point": [
+        -4.0,
+        0.0
+      ],
+      "line": [
+        -4.0,
+        0.0,
+        2.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        0.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x00000000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "horizontal_right_cross",
+      "policy": 0,
+      "point": [
+        5.0,
+        0.0
+      ],
+      "line": [
+        5.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        4.0,
+        0.0
+      ],
+      "candidate_bits": [
+        "0x40800000",
+        "0x00000000"
+      ],
+      "mask_after": "0xa8",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "horizontal_right_cross",
+      "policy": 1,
+      "point": [
+        5.0,
+        0.0
+      ],
+      "line": [
+        5.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        4.0,
+        0.0
+      ],
+      "candidate_bits": [
+        "0x40800000",
+        "0x00000000"
+      ],
+      "mask_after": "0xa8",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "vertical_lower_cross",
+      "policy": 0,
+      "point": [
+        0.0,
+        -3.0
+      ],
+      "line": [
+        0.0,
+        -3.0,
+        0.0,
+        2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa1",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0000"
+    },
+    {
+      "case": "vertical_lower_cross",
+      "policy": 1,
+      "point": [
+        0.0,
+        -3.0
+      ],
+      "line": [
+        0.0,
+        -3.0,
+        0.0,
+        2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa1",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0000"
+    },
+    {
+      "case": "vertical_upper_cross",
+      "policy": 0,
+      "point": [
+        0.0,
+        4.0
+      ],
+      "line": [
+        0.0,
+        4.0,
+        0.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "vertical_upper_cross",
+      "policy": 1,
+      "point": [
+        0.0,
+        4.0
+      ],
+      "line": [
+        0.0,
+        4.0,
+        0.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_hits_lower_corner",
+      "policy": 0,
+      "point": [
+        -4.0,
+        -3.0
+      ],
+      "line": [
+        -4.0,
+        -3.0,
+        2.0,
+        3.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_hits_lower_corner",
+      "policy": 1,
+      "point": [
+        -4.0,
+        -3.0
+      ],
+      "line": [
+        -4.0,
+        -3.0,
+        2.0,
+        3.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_intersects_left_edge",
+      "policy": 0,
+      "point": [
+        -4.0,
+        -2.0
+      ],
+      "line": [
+        -4.0,
+        -2.0,
+        2.0,
+        4.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        0.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x00000000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_intersects_left_edge",
+      "policy": 1,
+      "point": [
+        -4.0,
+        -2.0
+      ],
+      "line": [
+        -4.0,
+        -2.0,
+        2.0,
+        4.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        0.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x00000000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_enters_left_edge",
+      "policy": 0,
+      "point": [
+        -4.0,
+        1.0
+      ],
+      "line": [
+        -4.0,
+        1.0,
+        2.0,
+        -2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        0.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x00000000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_enters_left_edge",
+      "policy": 1,
+      "point": [
+        -4.0,
+        1.0
+      ],
+      "line": [
+        -4.0,
+        1.0,
+        2.0,
+        -2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        0.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x00000000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_enters_lower_edge",
+      "policy": 0,
+      "point": [
+        -4.0,
+        -5.0
+      ],
+      "line": [
+        -4.0,
+        -5.0,
+        2.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa1",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_enters_lower_edge",
+      "policy": 1,
+      "point": [
+        -4.0,
+        -5.0
+      ],
+      "line": [
+        -4.0,
+        -5.0,
+        2.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa1",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_enters_upper_edge",
+      "policy": 0,
+      "point": [
+        -4.0,
+        5.0
+      ],
+      "line": [
+        -4.0,
+        5.0,
+        2.0,
+        2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -0.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0x80000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "diagonal_enters_upper_edge",
+      "policy": 1,
+      "point": [
+        -4.0,
+        5.0
+      ],
+      "line": [
+        -4.0,
+        5.0,
+        2.0,
+        2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -0.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0x80000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "extension_intersection_beyond_segment",
+      "policy": 0,
+      "point": [
+        -5.0,
+        0.0
+      ],
+      "line": [
+        -5.0,
+        0.0,
+        -4.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x4000"
+    },
+    {
+      "case": "extension_intersection_beyond_segment",
+      "policy": 1,
+      "point": [
+        -5.0,
+        0.0
+      ],
+      "line": [
+        -5.0,
+        0.0,
+        -4.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x4000"
+    },
+    {
+      "case": "parallel_line_outside_y_bounds",
+      "policy": 0,
+      "point": [
+        -4.0,
+        5.0
+      ],
+      "line": [
+        -4.0,
+        5.0,
+        4.0,
+        5.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        "Infinity",
+        5.0
+      ],
+      "candidate_bits": [
+        "0x7f800000",
+        "0x40a00000"
+      ],
+      "mask_after": "0xa0",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0004"
+    },
+    {
+      "case": "parallel_line_outside_y_bounds",
+      "policy": 1,
+      "point": [
+        -4.0,
+        5.0
+      ],
+      "line": [
+        -4.0,
+        5.0,
+        4.0,
+        5.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00000000",
+      "accepted_pointer": false,
+      "candidate_components": [
+        "Infinity",
+        5.0
+      ],
+      "candidate_bits": [
+        "0x7f800000",
+        "0x40a00000"
+      ],
+      "mask_after": "0xa0",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0004"
+    },
+    {
+      "case": "vertical_segment_on_x_midline",
+      "policy": 0,
+      "point": [
+        0.0,
+        -4.0
+      ],
+      "line": [
+        0.0,
+        -4.0,
+        0.0,
+        4.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa1",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0000"
+    },
+    {
+      "case": "vertical_segment_on_x_midline",
+      "policy": 1,
+      "point": [
+        0.0,
+        -4.0
+      ],
+      "line": [
+        0.0,
+        -4.0,
+        0.0,
+        4.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa1",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0000"
+    },
+    {
+      "case": "vertical_positive_zero_delta",
+      "policy": 0,
+      "point": [
+        0.0,
+        -3.0
+      ],
+      "line": [
+        0.0,
+        -3.0,
+        -0.0,
+        2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa1",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0000"
+    },
+    {
+      "case": "vertical_positive_zero_delta",
+      "policy": 1,
+      "point": [
+        0.0,
+        -3.0
+      ],
+      "line": [
+        0.0,
+        -3.0,
+        -0.0,
+        2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        -1.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0xbf800000"
+      ],
+      "mask_after": "0xa1",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0000"
+    },
+    {
+      "case": "endpoint_exactly_on_left_edge",
+      "policy": 0,
+      "point": [
+        -2.0,
+        0.0
+      ],
+      "line": [
+        -2.0,
+        0.0,
+        2.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "endpoint_exactly_on_left_edge",
+      "policy": 1,
+      "point": [
+        -2.0,
+        0.0
+      ],
+      "line": [
+        -2.0,
+        0.0,
+        2.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "endpoint_exactly_on_lower_edge",
+      "policy": 0,
+      "point": [
+        0.0,
+        -1.0
+      ],
+      "line": [
+        0.0,
+        -1.0,
+        0.0,
+        2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x4000"
+    },
+    {
+      "case": "endpoint_exactly_on_lower_edge",
+      "policy": 1,
+      "point": [
+        0.0,
+        -1.0
+      ],
+      "line": [
+        0.0,
+        -1.0,
+        0.0,
+        2.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        0.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0x00000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x4000"
+    },
+    {
+      "case": "horizontal_segment_on_y_midline",
+      "policy": 0,
+      "point": [
+        -4.0,
+        1.0
+      ],
+      "line": [
+        -4.0,
+        1.0,
+        4.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        1.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x3f800000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "horizontal_segment_on_y_midline",
+      "policy": 1,
+      "point": [
+        -4.0,
+        1.0
+      ],
+      "line": [
+        -4.0,
+        1.0,
+        4.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        1.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x3f800000"
+      ],
+      "mask_after": "0xa4",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "point_on_left_boundary",
+      "policy": 0,
+      "point": [
+        -2.0,
+        0.0
+      ],
+      "line": [
+        -2.0,
+        0.0,
+        -2.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "point_on_left_boundary",
+      "policy": 1,
+      "point": [
+        -2.0,
+        0.0
+      ],
+      "line": [
+        -2.0,
+        0.0,
+        -2.0,
+        0.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        -2.0,
+        3.0
+      ],
+      "candidate_bits": [
+        "0xc0000000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa2",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0100"
+    },
+    {
+      "case": "zero_length_outside",
+      "policy": 0,
+      "point": [
+        -5.0,
+        5.0
+      ],
+      "line": [
+        -5.0,
+        5.0,
+        -5.0,
+        5.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        "-Infinity",
+        5.0
+      ],
+      "candidate_bits": [
+        "0xff800000",
+        "0x40a00000"
+      ],
+      "mask_after": "0xa0",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0104"
+    },
+    {
+      "case": "zero_length_outside",
+      "policy": 1,
+      "point": [
+        -5.0,
+        5.0
+      ],
+      "line": [
+        -5.0,
+        5.0,
+        -5.0,
+        5.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00000000",
+      "accepted_pointer": false,
+      "candidate_components": [
+        "-Infinity",
+        5.0
+      ],
+      "candidate_bits": [
+        "0xff800000",
+        "0x40a00000"
+      ],
+      "mask_after": "0xa0",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x0104"
+    },
+    {
+      "case": "nan_candidate_x",
+      "policy": 0,
+      "point": [
+        "NaN",
+        0.0
+      ],
+      "line": [
+        "NaN",
+        0.0,
+        1.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        "NaN",
+        3.0
+      ],
+      "candidate_bits": [
+        "0x7fc00000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa0",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x4501"
+    },
+    {
+      "case": "nan_candidate_x",
+      "policy": 1,
+      "point": [
+        "NaN",
+        0.0
+      ],
+      "line": [
+        "NaN",
+        0.0,
+        1.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00000000",
+      "accepted_pointer": false,
+      "candidate_components": [
+        "NaN",
+        3.0
+      ],
+      "candidate_bits": [
+        "0x7fc00000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa0",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x4501"
+    },
+    {
+      "case": "nan_candidate_y",
+      "policy": 0,
+      "point": [
+        0.0,
+        "NaN"
+      ],
+      "line": [
+        0.0,
+        "NaN",
+        1.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00791c08",
+      "accepted_pointer": true,
+      "candidate_components": [
+        "NaN",
+        3.0
+      ],
+      "candidate_bits": [
+        "0x7fc00000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa0",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x4501"
+    },
+    {
+      "case": "nan_candidate_y",
+      "policy": 1,
+      "point": [
+        0.0,
+        "NaN"
+      ],
+      "line": [
+        0.0,
+        "NaN",
+        1.0,
+        1.0
+      ],
+      "bounds_ymin_xmin_ymax_xmax": [
+        -1.0,
+        -2.0,
+        3.0,
+        4.0
+      ],
+      "initial_mask": 160,
+      "control_word": 895,
+      "return_pointer": "0x00000000",
+      "accepted_pointer": false,
+      "candidate_components": [
+        "NaN",
+        3.0
+      ],
+      "candidate_bits": [
+        "0x7fc00000",
+        "0x40400000"
+      ],
+      "mask_after": "0xa0",
+      "control_word_after": "0x037f",
+      "status_word_after": "0x4501"
+    }
+  ],
+  "limitations": [
+    "Only the helper is executed; wrapper and callers are not run.",
+    "Pointers and bounds are valid synthetic data; aliasing and caller reachability are not tested.",
+    "The single masked x87 control word does not establish unmasked-exception behavior or all rounding modes.",
+    "Returned candidate values are observations, not proof of canonical clipping or visual correctness."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "artifact": "NFS III analog speedometer live call-site capture",
+  "captured_date_local": "2026-10-14",
+  "binary": {
+    "path": "/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/nfs3.exe",
+    "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+    "matches_ghidra_project_copy": true
+  },
+  "runtime": {
+    "process_id": 620032,
+    "process_observed_alive_after_capture": true,
+    "debugger": "GDB read-only hardware breakpoint; detached automatically after capture",
+    "breakpoint_address": "00483895",
+    "breakpoint_hit_at_call_instruction": true
+  },
+  "user_configuration": {
+    "game_mode": "race in Wine",
+    "speedometer": "analog; user confirmed dial visible",
+    "vehicle_max_speed_reported_kph": 240
+  },
+  "sample": {
+    "eip": "0x00483895",
+    "eax_view_index": 0,
+    "stack_argument_0_float": 17.3022423,
+    "stack_argument_1_raw_dword": "0xffffffff"
+  },
+  "static_interpretation": {
+    "caller": "RenderRaceHUD at 00482b00",
+    "callee": "UpdateHudIndicatorGeometry at 0048a220",
+    "mode_values_2_or_4": "call analog geometry updater with absolute vehicle value at vehicle+0x4f4 and payload 0xffffffff",
+    "mode_values_1_or_3": "use digital scaled-value rendering path",
+    "interpretation_limit": "Sample confirms a nonzero input reached the analog per-view geometry path; it does not identify the input's displayed unit or needle/dial calibration."
+  },
+  "limitations": [
+    "One invocation, view, vehicle and HUD configuration only.",
+    "No simultaneous visual speed reading was recorded, so the raw value was not mapped to kph, mph, or another unit.",
+    "No conclusions about other speeds, layouts, profiles, split-screen views, or digital rendering."
+  ],
+  "integrity": {
+    "executable_modified": false,
+    "runtime_memory_modified": false,
+    "notes": "The hardware breakpoint observes execution without software-patching the target. The process remained alive after the debugger detached."
+  }
+}

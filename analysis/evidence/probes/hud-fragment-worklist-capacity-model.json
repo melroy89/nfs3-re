@@ -1,0 +1,330 @@
+{
+  "method": "Assembly-derived model of ClipAndSubmitHudTexturedRectangleFragments replace/append/delete/restart loop; fragment templates come from all 16 unchanged-helper cases in rectangle-fragment-mask-audit.json. The caller itself is not executed.",
+  "helper_report": "analysis/evidence/probes/rectangle-fragment-mask-audit.json",
+  "helper_target_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "caller": "ClipAndSubmitHudTexturedRectangleFragments at 00487620",
+  "local_arrays": {
+    "position_records": 15,
+    "paired_coordinate_records": 15,
+    "bytes_each": 240
+  },
+  "source_xyxy": [
+    0.0,
+    0.0,
+    100.0,
+    100.0
+  ],
+  "synthetic_exclusions_xyxy": [
+    [
+      16.0,
+      15.0,
+      38.0,
+      60.0
+    ],
+    [
+      7.0,
+      70.0,
+      75.0,
+      72.0
+    ],
+    [
+      79.0,
+      39.0,
+      84.0,
+      76.0
+    ],
+    [
+      97.0,
+      7.0,
+      99.0,
+      86.0
+    ]
+  ],
+  "exclusion_rectangles_pairwise_disjoint": true,
+  "exclusion_count": 4,
+  "result": {
+    "final_fragment_count": 28,
+    "first_out_of_bounds_append": {
+      "fragment_index": 11,
+      "exclusion_index": 2,
+      "mask": 15,
+      "worklist_count_before": 14,
+      "destination_record_index": 15,
+      "capacity": 15
+    },
+    "final_fragment_rectangles_xyxy": [
+      [
+        0.0,
+        0.0,
+        7.0,
+        100.0
+      ],
+      [
+        16.0,
+        0.0,
+        97.0,
+        15.0
+      ],
+      [
+        16.0,
+        60.0,
+        75.0,
+        70.0
+      ],
+      [
+        38.0,
+        0.0,
+        75.0,
+        70.0
+      ],
+      [
+        7.0,
+        0.0,
+        16.0,
+        70.0
+      ],
+      [
+        7.0,
+        72.0,
+        16.0,
+        100.0
+      ],
+      [
+        97.0,
+        0.0,
+        100.0,
+        7.0
+      ],
+      [
+        99.0,
+        0.0,
+        100.0,
+        15.0
+      ],
+      [
+        16.0,
+        72.0,
+        75.0,
+        100.0
+      ],
+      [
+        75.0,
+        60.0,
+        79.0,
+        100.0
+      ],
+      [
+        38.0,
+        72.0,
+        75.0,
+        100.0
+      ],
+      [
+        75.0,
+        0.0,
+        79.0,
+        100.0
+      ],
+      [
+        79.0,
+        76.0,
+        97.0,
+        100.0
+      ],
+      [
+        84.0,
+        60.0,
+        97.0,
+        100.0
+      ],
+      [
+        79.0,
+        0.0,
+        97.0,
+        39.0
+      ],
+      [
+        79.0,
+        76.0,
+        97.0,
+        100.0
+      ],
+      [
+        84.0,
+        0.0,
+        97.0,
+        100.0
+      ],
+      [
+        97.0,
+        86.0,
+        100.0,
+        100.0
+      ],
+      [
+        99.0,
+        76.0,
+        100.0,
+        100.0
+      ],
+      [
+        97.0,
+        86.0,
+        100.0,
+        100.0
+      ],
+      [
+        99.0,
+        60.0,
+        100.0,
+        100.0
+      ],
+      [
+        97.0,
+        0.0,
+        100.0,
+        7.0
+      ],
+      [
+        99.0,
+        0.0,
+        100.0,
+        39.0
+      ],
+      [
+        97.0,
+        86.0,
+        100.0,
+        100.0
+      ],
+      [
+        99.0,
+        76.0,
+        100.0,
+        100.0
+      ],
+      [
+        97.0,
+        0.0,
+        100.0,
+        7.0
+      ],
+      [
+        97.0,
+        86.0,
+        100.0,
+        100.0
+      ],
+      [
+        99.0,
+        0.0,
+        100.0,
+        100.0
+      ]
+    ],
+    "steps": [
+      {
+        "fragment_index": 0,
+        "exclusion_index": 0,
+        "mask": 15,
+        "action": "replace_first_append_rest",
+        "piece_count": 4,
+        "worklist_count": 4
+      },
+      {
+        "fragment_index": 0,
+        "exclusion_index": 1,
+        "mask": 11,
+        "action": "replace_first_append_rest",
+        "piece_count": 3,
+        "worklist_count": 6
+      },
+      {
+        "fragment_index": 1,
+        "exclusion_index": 3,
+        "mask": 14,
+        "action": "replace_first_append_rest",
+        "piece_count": 3,
+        "worklist_count": 8
+      },
+      {
+        "fragment_index": 2,
+        "exclusion_index": 1,
+        "mask": 7,
+        "action": "replace_first_append_rest",
+        "piece_count": 3,
+        "worklist_count": 10
+      },
+      {
+        "fragment_index": 3,
+        "exclusion_index": 1,
+        "mask": 7,
+        "action": "replace_first_append_rest",
+        "piece_count": 3,
+        "worklist_count": 12
+      },
+      {
+        "fragment_index": 9,
+        "exclusion_index": 2,
+        "mask": 13,
+        "action": "replace_first_append_rest",
+        "piece_count": 3,
+        "worklist_count": 14
+      },
+      {
+        "fragment_index": 11,
+        "exclusion_index": 2,
+        "mask": 15,
+        "action": "replace_first_append_rest",
+        "piece_count": 4,
+        "worklist_count": 17
+      },
+      {
+        "fragment_index": 12,
+        "exclusion_index": 3,
+        "mask": 13,
+        "action": "replace_first_append_rest",
+        "piece_count": 3,
+        "worklist_count": 19
+      },
+      {
+        "fragment_index": 13,
+        "exclusion_index": 3,
+        "mask": 13,
+        "action": "replace_first_append_rest",
+        "piece_count": 3,
+        "worklist_count": 21
+      },
+      {
+        "fragment_index": 14,
+        "exclusion_index": 3,
+        "mask": 14,
+        "action": "replace_first_append_rest",
+        "piece_count": 3,
+        "worklist_count": 23
+      },
+      {
+        "fragment_index": 15,
+        "exclusion_index": 3,
+        "mask": 13,
+        "action": "replace_first_append_rest",
+        "piece_count": 3,
+        "worklist_count": 25
+      },
+      {
+        "fragment_index": 16,
+        "exclusion_index": 3,
+        "mask": 15,
+        "action": "replace_first_append_rest",
+        "piece_count": 4,
+        "worklist_count": 28
+      }
+    ]
+  },
+  "limitations": [
+    "Only synthetic finite ordered rectangles are modeled.",
+    "The model follows reviewed caller control flow and retained original-helper output templates; it does not execute the caller bytes.",
+    "The four-record witness does not prove that the game's HUD producers can create these coordinates or reach mode 2 with them.",
+    "No live overflow, memory corruption, visual defect, or reachable game bug is established."
+  ]
+}

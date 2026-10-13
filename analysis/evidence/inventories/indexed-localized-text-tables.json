@@ -1,0 +1,161 @@
+{
+  "limitations": [
+    "The parser validates retained table structure and stored byte strings; it does not capture the active runtime language or table pointer.",
+    "The scan does not prove which strings reach LayoutAndRenderWrappedFrontendText or cover dynamically assembled text.",
+    "A clean asset inventory is not proof of safe runtime input or absence of a reachable boundary condition."
+  ],
+  "root": "/home/melroy/Documents/projects/nfs3-re/nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/text",
+  "scope": "six lowercase indexed FEDATA localization tables selected by the game's text.<language> names",
+  "tables": [
+    {
+      "entry_count": 1955,
+      "file": "text.eng",
+      "file_bytes": 35896,
+      "hud_speed_labels": {
+        "0x156": "MPH",
+        "0x157": "KPH"
+      },
+      "longest_contiguous_tab_run": {
+        "id": null,
+        "length": 0
+      },
+      "longest_non_delimited_token": {
+        "bytes_hex": "53796e6368726f6e697a696e672e2e2e",
+        "id": 13,
+        "length": 16
+      },
+      "longest_string": {
+        "id": 387,
+        "length": 201
+      },
+      "offset_table_bytes": 7820,
+      "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+      "validated_entries": 1955
+    },
+    {
+      "entry_count": 1955,
+      "file": "text.ger",
+      "file_bytes": 35150,
+      "hud_speed_labels": {
+        "0x156": "m/h",
+        "0x157": "km/h"
+      },
+      "longest_contiguous_tab_run": {
+        "id": null,
+        "length": 0
+      },
+      "longest_non_delimited_token": {
+        "bytes_hex": "40496e7465726e65742d4d61726b6574696e672d4d616e61676572",
+        "id": 940,
+        "length": 27
+      },
+      "longest_string": {
+        "id": 388,
+        "length": 221
+      },
+      "offset_table_bytes": 7820,
+      "sha256": "0e964d1966ded07f5430bf170efa8e91c3d36e97422f5a75b549271455f0f582",
+      "validated_entries": 1955
+    },
+    {
+      "entry_count": 1955,
+      "file": "text.fre",
+      "file_bytes": 37471,
+      "hud_speed_labels": {
+        "0x156": "Mph",
+        "0x157": "km/h"
+      },
+      "longest_contiguous_tab_run": {
+        "id": null,
+        "length": 0
+      },
+      "longest_non_delimited_token": {
+        "bytes_hex": "284772616e64652d4272657461676e6529",
+        "id": 606,
+        "length": 17
+      },
+      "longest_string": {
+        "id": 388,
+        "length": 229
+      },
+      "offset_table_bytes": 7820,
+      "sha256": "68cce0ae29d9d91abac71e870931f530ea552065cdf85aec5b571ac42470502a",
+      "validated_entries": 1955
+    },
+    {
+      "entry_count": 1955,
+      "file": "text.spa",
+      "file_bytes": 38216,
+      "hud_speed_labels": {
+        "0x156": "MPH",
+        "0x157": "KMH"
+      },
+      "longest_contiguous_tab_run": {
+        "id": null,
+        "length": 0
+      },
+      "longest_non_delimited_token": {
+        "bytes_hex": "416374697661722f44657361637469766172",
+        "id": 1761,
+        "length": 18
+      },
+      "longest_string": {
+        "id": 506,
+        "length": 238
+      },
+      "offset_table_bytes": 7820,
+      "sha256": "290519a9574e6e78c3b55af9c71b5e57b6e7fa40b287f5c8910f366c263d2a1d",
+      "validated_entries": 1955
+    },
+    {
+      "entry_count": 1955,
+      "file": "text.ita",
+      "file_bytes": 36309,
+      "hud_speed_labels": {
+        "0x156": "Mph",
+        "0x157": "Kmh"
+      },
+      "longest_contiguous_tab_run": {
+        "id": null,
+        "length": 0
+      },
+      "longest_non_delimited_token": {
+        "bytes_hex": "53696e63726f6e697a7a617a696f6e652e2e2e",
+        "id": 13,
+        "length": 19
+      },
+      "longest_string": {
+        "id": 383,
+        "length": 173
+      },
+      "offset_table_bytes": 7820,
+      "sha256": "8bcef28ebdd96f0cb80a083a88d3832ab684d6efe2304ef186df42b25e18c29d",
+      "validated_entries": 1955
+    },
+    {
+      "entry_count": 1955,
+      "file": "text.swe",
+      "file_bytes": 34207,
+      "hud_speed_labels": {
+        "0x156": "MPH",
+        "0x157": "KM/H"
+      },
+      "longest_contiguous_tab_run": {
+        "id": null,
+        "length": 0
+      },
+      "longest_non_delimited_token": {
+        "bytes_hex": "404c6f6b616c69736572696e677370726f647563656e7465723a",
+        "id": 949,
+        "length": 26
+      },
+      "longest_string": {
+        "id": 501,
+        "length": 184
+      },
+      "offset_table_bytes": 7820,
+      "sha256": "c64f1ac7be5bfe762c9b6a961415c994e132c66dc3660bd5763d54eeedfc9b9a",
+      "validated_entries": 1955
+    }
+  ]
+}

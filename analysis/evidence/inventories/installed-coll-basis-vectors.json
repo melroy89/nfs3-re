@@ -1,0 +1,221 @@
+{
+  "scope": "Installed uppercase GAMEDATA/TRACKS/TRK*/*.COL files; all segment records in each COLL type-15 block.",
+  "method": "For each type-15 36-byte segment record, interpret three signed-byte XYZ vectors at offsets 0x10, 0x14 and 0x18, divide each component by 128.0, then compute host binary64 Euclidean lengths and absolute pairwise dot products within that record. This follows the statically identified fallback-basis byte reads; it does not establish that every record uses this fallback.",
+  "limitations": "Installed-file evidence only. No loader execution, FRD packed-basis inventory, branch-admission check, coordinate transform, normalization emulation, or runtime geometry validation. Length/dot ranges are diagnostics, not proof that the basis is invalid.",
+  "file_count": 9,
+  "segment_record_count": 12706,
+  "basis_vector_count": 38118,
+  "zero_vector_count": 0,
+  "vector_length_min": 0.9801807968590539,
+  "vector_length_max": 0.9921875,
+  "maximum_pairwise_absolute_dot": 0.719482421875,
+  "files": [
+    {
+      "path": "GAMEDATA/TRACKS/TRK000/TR00.COL",
+      "sha256": "9d3532465ad55f93fd78d3d9970b191d649f7c9a80cf527286c408706bd614f4",
+      "version": 11,
+      "file_bytes": 41504,
+      "type15_blocks": [
+        {
+          "index": 3,
+          "offset": 6972,
+          "segment_count": 959,
+          "record_bytes": 36,
+          "basis_vector_offsets": [
+            "0x10",
+            "0x14",
+            "0x18"
+          ],
+          "basis_vector_count": 3,
+          "vector_length_min": 0.9813010038496088,
+          "vector_length_max": 0.9919414064884327,
+          "maximum_pairwise_absolute_dot": 0.719482421875
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK001/TR01.COL",
+      "sha256": "06127c6dd7c68a802bd8c98b804cbde993ec4bb2578dacce173ce1f08d538bde",
+      "version": 11,
+      "file_bytes": 60224,
+      "type15_blocks": [
+        {
+          "index": 3,
+          "offset": 7548,
+          "segment_count": 1463,
+          "record_bytes": 36,
+          "basis_vector_offsets": [
+            "0x10",
+            "0x14",
+            "0x18"
+          ],
+          "basis_vector_count": 3,
+          "vector_length_min": 0.9814564870321557,
+          "vector_length_max": 0.9921875,
+          "maximum_pairwise_absolute_dot": 0.2457275390625
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK002/TR02.COL",
+      "sha256": "3d1aa1b7cae2549d8176be844ea5154ddfc91900eefa7ea5c9101743701064d5",
+      "version": 11,
+      "file_bytes": 58900,
+      "type15_blocks": [
+        {
+          "index": 4,
+          "offset": 11192,
+          "segment_count": 1325,
+          "record_bytes": 36,
+          "basis_vector_offsets": [
+            "0x10",
+            "0x14",
+            "0x18"
+          ],
+          "basis_vector_count": 3,
+          "vector_length_min": 0.9809277436596694,
+          "vector_length_max": 0.9921875,
+          "maximum_pairwise_absolute_dot": 0.3990478515625
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK003/TR03.COL",
+      "sha256": "a5d29e1c8b227736948c852c716424180efff437fef9866a1eb4e7f644559195",
+      "version": 11,
+      "file_bytes": 56644,
+      "type15_blocks": [
+        {
+          "index": 1,
+          "offset": 3248,
+          "segment_count": 1483,
+          "record_bytes": 36,
+          "basis_vector_offsets": [
+            "0x10",
+            "0x14",
+            "0x18"
+          ],
+          "basis_vector_count": 3,
+          "vector_length_min": 0.9807099429431212,
+          "vector_length_max": 0.9919414064884327,
+          "maximum_pairwise_absolute_dot": 0.126708984375
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK004/TR04.COL",
+      "sha256": "cb7f43137a4ef5b1c28f2c15b79e68e798405dfced143d66224724226ba23b99",
+      "version": 11,
+      "file_bytes": 53276,
+      "type15_blocks": [
+        {
+          "index": 1,
+          "offset": 2904,
+          "segment_count": 1399,
+          "record_bytes": 36,
+          "basis_vector_offsets": [
+            "0x10",
+            "0x14",
+            "0x18"
+          ],
+          "basis_vector_count": 3,
+          "vector_length_min": 0.9816741221155063,
+          "vector_length_max": 0.9919721715161671,
+          "maximum_pairwise_absolute_dot": 0.6953125
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK005/TR05.COL",
+      "sha256": "c0bdc588858140a5cee9e7e18cbb77b82a5351d3159ef9272d5880412a3e726b",
+      "version": 11,
+      "file_bytes": 67852,
+      "type15_blocks": [
+        {
+          "index": 3,
+          "offset": 7004,
+          "segment_count": 1690,
+          "record_bytes": 36,
+          "basis_vector_offsets": [
+            "0x10",
+            "0x14",
+            "0x18"
+          ],
+          "basis_vector_count": 3,
+          "vector_length_min": 0.9810832859969127,
+          "vector_length_max": 0.9921875,
+          "maximum_pairwise_absolute_dot": 0.2457275390625
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK006/TR06.COL",
+      "sha256": "15e39c6386ec583dfea12e3d89786d76a199c3a82c901707bd09d8a16db71322",
+      "version": 11,
+      "file_bytes": 64584,
+      "type15_blocks": [
+        {
+          "index": 3,
+          "offset": 12952,
+          "segment_count": 1434,
+          "record_bytes": 36,
+          "basis_vector_offsets": [
+            "0x10",
+            "0x14",
+            "0x18"
+          ],
+          "basis_vector_count": 3,
+          "vector_length_min": 0.9812699042567239,
+          "vector_length_max": 0.9921875,
+          "maximum_pairwise_absolute_dot": 0.34368896484375
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK007/TR07.COL",
+      "sha256": "0d77f3f79f5bd0bba4bd5431fdf1bd0c8cd3480f7ab9f29db8ea995372dac6c8",
+      "version": 11,
+      "file_bytes": 75820,
+      "type15_blocks": [
+        {
+          "index": 3,
+          "offset": 13784,
+          "segment_count": 1723,
+          "record_bytes": 36,
+          "basis_vector_offsets": [
+            "0x10",
+            "0x14",
+            "0x18"
+          ],
+          "basis_vector_count": 3,
+          "vector_length_min": 0.9810521795023188,
+          "vector_length_max": 0.9919414064884327,
+          "maximum_pairwise_absolute_dot": 0.638671875
+        }
+      ]
+    },
+    {
+      "path": "GAMEDATA/TRACKS/TRK008/TR08.COL",
+      "sha256": "4ccc12910dc6300218860eb54d7edd01fbde7af8cadc9de153dd989820275f1d",
+      "version": 11,
+      "file_bytes": 68924,
+      "type15_blocks": [
+        {
+          "index": 3,
+          "offset": 24636,
+          "segment_count": 1230,
+          "record_bytes": 36,
+          "basis_vector_offsets": [
+            "0x10",
+            "0x14",
+            "0x18"
+          ],
+          "basis_vector_count": 3,
+          "vector_length_min": 0.9801807968590539,
+          "vector_length_max": 0.9921875,
+          "maximum_pairwise_absolute_dot": 0.2562255859375
+        }
+      ]
+    }
+  ]
+}
