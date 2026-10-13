@@ -23,3 +23,12 @@ __pycache__/
 
 # Keep nfs3_decomp.gpr and the shared files under nfs3_decomp.rep/:
 # project.prp, idata/ (including ~index.dat and db.*.gbf), and versioned/.
+
+# Local raw captures and generated exports; keep curated analysis evidence tracked.
+/analysis/captures/
+/analysis/exports/
+/analysis/tmp/
+/analysis/runtime/*.jsonl
+/analysis/runtime/*.dmp
+/analysis/runtime/*.dump
+/analysis/runtime/*.raw
