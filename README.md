@@ -63,6 +63,20 @@ Only the two modified files listed above are tracked from the standalone game di
 
 Save regularly. Save and close Ghidra before committing database changes, making backups, or upgrading. See [release preparation](docs/RELEASE.md) for validation status.
 
+## How we approached the decompilation
+
+We combined reverse-engineering tools, AI-assisted analysis, and hands-on testing:
+
+- [Ghidra](https://github.com/NationalSecurityAgency/ghidra) provided disassembly, decompiled pseudocode, cross-references, and the saved analysis database.
+- [Ghidra MCP](https://github.com/bethington/ghidra-mcp) connected the AI assistants to the live project for inspecting functions and saving names, types, labels, and comments.
+- [REA MCP](https://github.com/morluto/rea) supported binary inspection and additional reverse-engineering investigations.
+- **GPT 6.1 Sol**, assisted by **three Luna 6 sub-agents**, handled the main analysis and parallel investigations of smaller functions. Findings were reviewed before being incorporated into the project.
+- **GPT 6 Astra** investigated the more complex code, including numerical routines, physics, rendering, and unresolved calling conventions.
+
+Names and explanations were grounded in assembly, callers, constants, and data flow. Selected numerical routines were checked by executing extracted original instructions in isolated test harnesses. For questions requiring live behavior, Melroy played specific scenarios under **Wine** while runtime memory was inspected and compared with the static analysis.
+
+The resulting names are descriptive analyst assignments; the pseudocode is a reconstruction of the compiled program. Evidence and remaining uncertainties are recorded in Ghidra and the [detailed analysis notes](analysis/detailed-analysis-notes.md). Analysis annotations are saved in the project without modifying the executable; the separate version/menu edits are described above.
+
 ## Contributing and license
 
 See [contribution guidance](CONTRIBUTING.md), [sharing analysis](docs/SHARING.md), and [release preparation](docs/RELEASE.md).
