@@ -1,6 +1,6 @@
 # NFS III Reversed Engineered
 
-Reverse engineering and decompilation of **Need for Speed III: Hot Pursuit** using Ghidra. All **4,046 identified internal functions are named**. The Ghidra project includes comments, types, and references. Naming every identified function does not mean every behavior is fully understood or validated; uncertainties and follow-up investigations remain documented. This project provides an annotated Ghidra database rather than a buildable game reconstruction.
+Reverse engineering and decompilation of **Need for Speed III: Hot Pursuit** using Ghidra. All **4,046 identified internal functions are named**. The Ghidra project includes comments, types, and references. This project provides an annotated Ghidra database rather than a buildable game reconstruction.
 
 The target is based on [VEG's Modern Patch v1.6.1](https://veg.by/en/projects/nfs3/), with small copyright and version-text changes in `nfs3.exe` and the setup menu preparing our local **1.6.2** version. The two modified files are included under [`nfs3_decomp.rep/Electronic Arts/Need For Speed III/`](nfs3_decomp.rep/Electronic%20Arts/Need%20For%20Speed%20III/):
 
@@ -11,7 +11,7 @@ See [target provenance](docs/TARGET.md) for details and file fingerprints.
 
 ![NFS III analysis in Ghidra](images/nfs3_ghidra.png)
 
-*The annotated Ghidra project includes descriptive function names, comments, types, and references. 100% of the 4,046 identified internal functions have names.*
+*The annotated NFS III project in Ghidra.*
 
 ## Bug reports and game improvements
 
