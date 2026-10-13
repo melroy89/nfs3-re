@@ -1,6 +1,6 @@
-# NFS III reverse engineering
+# NFS III Reversed Engineered
 
-Work-in-progress reverse engineering and decompilation of **Need for Speed III: Hot Pursuit** using Ghidra. The project contains saved functions, names, comments, types, and references. It is not yet a complete or buildable game reconstruction.
+Reverse engineering and decompilation of **Need for Speed III: Hot Pursuit** using Ghidra. The completed static analysis pass includes descriptive function names, comments, types, and references. Complex follow-up investigations are documented separately; this project provides an annotated Ghidra database rather than a buildable game reconstruction.
 
 The target is based on [VEG's Modern Patch v1.6.1](https://veg.by/en/projects/nfs3/), with small copyright and version-text changes in `nfs3.exe` and the setup menu preparing our local **1.6.2** version. See [target provenance](docs/TARGET.md) for details and the executable fingerprint.
 
