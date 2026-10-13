@@ -22,6 +22,6 @@ The databases preserve saved analysis; decompiled C-like output is generated on 
 
 ## Optional research notes
 
-Use `analysis/` for original explanations and supporting addresses. Record the target SHA-256 and distinguish observations from hypotheses. For alternate exports, inspect every output file and validate restoration separately. GZF and project archives also contain program data.
+Use [analysis/](../analysis/README.md) for original explanations and supporting addresses, `analysis/evidence/` for reviewed evidence, and `analysis/scripts/` for reusable helpers. Keep raw captures local under ignored `analysis/captures/`. Record the target SHA-256 and distinguish observations from hypotheses. For alternate exports, inspect every output file and validate restoration separately. GZF and project archives also contain program data.
 
 Do not use `git clean -fdx` in this workspace: it would remove the ignored game installation and other local files.

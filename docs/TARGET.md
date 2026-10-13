@@ -8,7 +8,7 @@ The maintainer obtained the Modern Patch from [VEG's NFS III project page](https
 
 The research target is a local **1.6.2 preparation**, based on that patch. The maintainer describes the small changes as copyright-line and version preparation in `nfs3.exe` and the menu. The existing local scratchpad additionally records updated attribution/About text, Windows version metadata, and the setup-menu website/version prompt. This document does not assert a gameplay change or an upstream 1.6.2 release.
 
-The full scratchpad remains in the ignored game directory. Its older validation claims have not been independently rerun during repository preparation.
+The local scratchpad remains in the separate Wine game installation, outside this checkout. Published findings and retained evidence are indexed in [analysis/](../analysis/README.md). Older scratchpad claims were not independently rerun during initial repository preparation.
 
 ## Current executable
 

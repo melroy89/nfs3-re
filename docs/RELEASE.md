@@ -36,9 +36,9 @@ For public archives, use a reviewed Git commit with `git archive` rather than zi
 
 ## Validation status
 
-The repository was reorganized after Ghidra had closed, with a checksum-verified full backup. Validation results for the moved project and a separate Git-eligible copy are recorded below. No commit, push, or public release was performed.
+The checks below describe the initial project move, not the current repository revision. The repository has since been committed and pushed. The historical headless checks do not establish that a fresh clone of the latest revision has passed GUI validation or that a release has been published.
 
-### Reorganization checks (2026-10-11)
+### Historical reorganization checks (2026-10-11)
 
 - Full local backup verified with SHA-256, sizes, and permission modes before moving; project/game file hashes matched again after validation.
 - Git remained on `main` with the existing GitHub `origin`; no files were staged or committed.
@@ -46,4 +46,4 @@ The repository was reorganized after Ghidra had closed, with a checksum-verified
 - Both loaded `nfs3.exe` with 4,069 functions, 502 data types (including referenced types), 45,836 symbols, 2,385 user-defined symbols, and 3,022 listing comments.
 - Three representative functions, including `HandleGameAbort` at `00401010`, decompiled successfully with matching names and output lengths in both copies.
 - The isolated copy contained no external game installation or personal project state. This confirms that the saved analysis can be opened and decompiled without those files.
-- The GUI File/Open workflow and a real Git clone were not exercised; the isolated copy used the exact Git-eligible file list because no commit exists yet. Complete GUI verification on a committed clone before claiming that release check passed.
+- The GUI File/Open workflow and a real Git clone were not exercised; the isolated copy used the exact Git-eligible file list because no commit existed at that checkpoint. Complete GUI verification on a committed clone before claiming that release check passed.
