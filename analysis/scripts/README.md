@@ -84,3 +84,15 @@ The track-map inventory helper uses the standard library and requires installed 
 The vehicle-effect inventory uses the standard library and scans FCE members in installed `GAMEDATA/CARMODEL` VIV archives. It records archive/member hashes, tag bytes interpreted as ASCII, finite positions and member extents using the verified dispatcher offsets. It requires installed assets, no raw captures. All47 local FCE members yielded216 entries; an outside-repository rerun reproduced the report exactly. File admission does not establish post-load mutation, rendering outcomes or supported modified models. Syntax/help checks passed for all13 helpers at this checkpoint.
 
 The effect inventory also records per-part vertex extents used by the render-record builder. These support the documented nonoverlap with effect header fields for the installed models; they do not validate all triangle indices, render allocations or live ownership.
+
+`inventory_glyph_geometry.py` reads installed `GAMEDATA/RENDER/PC/TEST.GFX` using the cached loader layout. Standard library only; no raw captures. Run from the repository root:
+
+```sh
+python3 analysis/scripts/inventory_glyph_geometry.py "$NFS3_GAME_ROOT" --output analysis/captures/reruns/installed-glyph-geometry.json
+```
+
+It reports file hash, glyph counts, vector finiteness, triangle-index bounds and packed extents. It does not execute resource resolution, generation, lighting or rendering. Retained findings are in `analysis/evidence/inventories/installed-glyph-geometry.json`.
+
+The glyph helper additionally derives exact zero-area triangle counts and host binary64 normal lengths from stored binary32 values. These diagnostics do not model original x87 normalization or prove triangle winding. An outside-repository rerun reproduced the report exactly.
+
+Glyph winding diagnostics compare stored face normals with `(v1-v0) × (v2-v0)` using host binary64. Sign/cosine results describe the cached asset convention, not driver culling correctness.

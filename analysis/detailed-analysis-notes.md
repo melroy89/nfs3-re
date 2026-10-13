@@ -14499,3 +14499,304 @@ Live decompilation identifies the following ten submissions. Fixed-bar setup blo
 - **Local writes:** `BuildFceTriangleRenderRecords0049cfa0` changes header[0], builds a separately allocated render child and clears each admitted vertex+0x14. Single-texture updater `0049d320` publishes token+0x1e04. These direct preparation stores do not intentionally rewrite effect count+0x34, float3 positions+0x38 or tags+0xa04. Allocation/helper contracts and failure paths remain qualified.
 - **Installed nonoverlap:** Extended [effect inventory](evidence/inventories/installed-vehicle-effect-tags.json) records each model's part count, vertex base and part vertex extents. All47 models have6..13 parts; vertex base minimum19628, all part extents fit their member and start after header0x1f04. Effect tags end no later than0xc04, before token0x1e04. Thus admitted vertex-clear ranges and explicit header/token writes exclude the effect fields. This narrows preparation mutation without proving universal live immutability or ownership.
 - **Reproduction/annotations:** Updated helper rerun from outside repository reproduced extended report byte-for-byte. Added publication comments at `004b7e3c/004b7e5e` and refined dispatcher plate; saved/read back. Broader post-load writers, alias/lifetime rules, helper failures and visible effects remain open. Executable unchanged; no Wine run.
+
+### Vehicle damping: turning-circle parameter provenance
+
+Static parser and tuning inspection identifies the damping routine's physics `+0x258` input as CARP field **34, Turning circle**. Descriptor slot39 at `004af3b0 + 39*8` contains numeric identifier34 and normalized token `urningci`; parser case `0x27` stores the parsed float at `004b1a83`. The missing-field default at `0055facc` is binary32 **25.0**, copied at `004b0f91`.
+
+`ApplyCarTuningToPhysicsParameters` at `004a7b5f–004a7b97` adjusts this value using tuning-record float `+8`: `q = float((1 - tuning[+8]) * 0.5)`, `delta = float(q * old)`, then `new = float(old + delta)`. These separate binary32 stores and ambient x87 rounding matter; a combined algebraic expression does not preserve all rounding boundaries. `ApplyLocalMotionDependentVehicleDamping` subsequently includes this tuned value in its angular threshold. Ghidra comments record the mapping at the consumer, parser store and tuning store.
+
+This resolves the file-field identity, not its physical units, the axis identity or runtime admission of the damping branches. No game run or executable change was involved.
+
+The installed Diablo CARP uses the fuller label **turning circle radius(34)**. Adjacent mappings, verified against parser cases and descriptor identifiers, are:
+
+| Profile offset | CARP field | Installed label | Descriptor slot |
+| --- | --- | --- | --- |
+| `+0x230` |24|wheel base|29|
+| `+0x234` |25|front grip bias|30|
+| `+0x238` |26|power steering (boolean)|31|
+| `+0x23c` |27|minimum steering acceleration|32|
+| `+0x240` |28|turn in ramp|33|
+| `+0x244` |29|turn out ramp|34|
+| `+0x248` |30|lateral acceleration grip multiplier|35|
+| `+0x24c` |31|aerodynamic downforce multiplier|36|
+| `+0x250` |32|gas off factor|37|
+| `+0x254` |33|g transfer factor|38|
+| `+0x258` |34|turning circle radius|39|
+
+Field26 uses the integer reader; the other ten use the float reader. `CalculateWheelPlanarResponseRecord` directly scales its primary response by `+0x248` and constructs a limit using `+0x23c`. These are now tied to the author's field labels in its Ghidra plate comment. This mapping does not establish units or immutable loaded values: tuning modifies selected fields before consumers run.
+
+### Wheel response: reciprocal-scale callsite ABI
+
+Assembly `004aca88–004acaab` saves wheel-record float `R+4`, sets `EDX = [vehicle+0x220]+0x58`, then calls `ComputeTyreTuningWeatherResponseScale` with `EAX=vehicle`. Its returned x87 scale produces `float(saved - scale*saved)`. The helper can overwrite the nested control float with1.0 under its session/race-mode gates. It does **not** receive the wheel record or `R+4` as its mutable input. Current generic `__fastcall` pseudocode can display `param_2` as the argument because it does not describe this custom EAX/EDX ABI correctly. The callsite and wheel-function comments now explicitly distinguish these pointers. The setup field is identified below as tyre tuning; this remains static register/dataflow evidence, not a new runtime observation.
+
+All four current direct references to the reciprocal helper (`004ac298`, `004ac54a`, `004ac567`, `004acaa0`) pass the same nested input `[V+0x220]+0x58`. In `UpdateVehiclePlanarResponseRecord`, the returned ST0 is stored to binary32 before subsequent multiplication. The limiter's first call consumes ST0 directly in x87 arithmetic; its second call stores the return to binary32. Preserve these caller-specific rounding boundaries and the two distinct limiter calls.
+
+The live MCP exposes only `__stdcall`, `__cdecl`, `__fastcall` and `__thiscall`; none matches the observed EAX-first/EDX-second ABI. No incorrect standard prototype was applied. The Ghidra helper comment now records all four callsites and the limitation. Correct custom parameter storage remains a tooling follow-up, rather than a claim that the current argument display has been repaired.
+
+Startup narrows the input's storage identity: `InitializeRaceVehicles` computes participant setup pointer `006fd52c + 108*i` at `0042c76d–0042c785`, calls archive loader `0042c950` (preserving EDX), and stores that pointer in vehicle `+0x220` at `0042c796`. Therefore the helper input is setup-descriptor float `+0x58`, addressed as `006fd584 + 108*i` on this normal startup path. The earlier phrase “control field” is only descriptive shorthand; this is not established as a per-frame input channel. No direct xrefs to first-entry address `006fd584` were found; indexed accesses require further producer tracing. Ghidra's binding-site comment records this distinction.
+
+### Wheel response: tyre-tuning input identified
+
+The nested setup float `+0x58` is **tuning index6 (tyre tuning)**: the seven-float participant payload begins at `+0x40`, so its seventh float is `+0x58`. `InitializeHumanRaceParticipant` (`00473710`) copies seven floats from selected player settings `+0x50` in supported local non-series modes, otherwise from the default tuning array. `BuildRegularRaceRoster` also copies seven defaults for network participants. Independently, `ApplyTyreTuningSlider` (`00427740`) maps the slider through minimum/maximum tuning arrays at index6 and writes editor tuning index6; its existing CE-token registration evidence supports the tyre label.
+
+This closes the generic input-identity question for `ComputeTyreTuningWeatherResponseScale`: it reads and sometimes forces **participant tyre tuning**, not a per-frame control sample. The earlier unresolved-identity statements above describe the preceding investigation and are superseded by this mapping. The exact saved-profile selection chain, imported/exceptional value admission and gameplay outcomes remain qualified. The mode selector is identified below as effective weather. Ghidra's helper plate now records the identity and producer distinction.
+
+### Tyre editor domain and reciprocal bounds
+
+Raw installed tuning arrays establish tyre index6 minimum **0.0** (`0055d074`), maximum **2.0** (`0055d058`) and default **1.0** (`0055d03c`). Complete callback assembly `00427740–004277c2` clamps finite ordered slider results to this interval before storing editor index6 at `005e10f8`. This is a callback bound, not validation of arbitrary imported profiles, NaNs or later mutations.
+
+For finite tyre input in `[0,2]`, stable constants and normally operating masked x87 arithmetic, the reciprocal helper's denominator floors4/6/16 keep the scale positive. Branch maxima are0.75 (flagged mode2),0.5 (flagged mode1),0.25 (unflagged mode2), approximately1/6 (unflagged mode1), and0.0625 (other modes). Thus the wheel caller's `saved - scale*saved` uses a nonnegative mathematical coefficient of at least0.25 within this domain; separate floating-point rounding still applies. This bound does not establish downstream wheel-force direction or behavior outside the editor domain. Ghidra callback-store and helper comments record the evidence and qualifications.
+
+### Tyre response: effective weather selector
+
+The reciprocal helper's `V+0x160` branch selector is populated by `UpdateVehicleTrackEnvironment` (`004a08c0`): vehicle byte`+0x89` gates refresh; disabled weather stores0, otherwise `GetEffectiveWeatherMode` supplies the configured particle/weather mode, then `CheckTrackSideNibbleEqualsTwoAtPosition` can force0. The aligned stores are `004a08f7`, `004a090e` and `004a091a`. Existing initializer evidence zero-extends track source byte`008ca1e8` and applies unsigned remainder3, yielding modes0–2.
+
+Thus the helper's1/2 coefficient families are **weather-mode families**, not car classes. This connects environment selection to tyre-tuning response without assigning unverified rain/snow identities. Refresh may be skipped and other initialization paths still matter; current evidence does not prove every live field value is freshly computed. The producer store and reciprocal helper comments now record this contract. This supersedes the generic mode-class uncertainty for the normal environment-update path, while appearance and runtime timing remain open.
+
+### Tyre response: MADLAND coefficient family
+
+The remaining flag at `006fd4fc & 0x20` is **MADLAND**. Existing frontend dispatch evidence is corroborated by raw encoded bytes at `005594dc` (subtract9 yields `MADLAND`) and the aligned byte-OR at `00452861`. `ComputeTyreTuningWeatherResponseScale` tests this bit at `004abde0`, selecting its altered weather-mode coefficients and the mode1/2 reciprocal multiplier3. Thus the earlier “flagged” coefficient families are specifically MADLAND families on the traced frontend path. Regular/session0 retains the flags; other regular sessions clear them, while Hot Pursuit retains only0x10 and strips MADLAND. This explains why a normal pursuit run cannot validate these flagged branches through this cheat path. No MADLAND runtime experiment was performed; the helper and flag-test comments now record the activation/lifecycle link.
+
+The helper at `004abd9c` is now named `ComputeTyreTuningWeatherResponseScale` (formerly `ComputeVehiclePhysicsProfileReciprocalScale`). This reflects the verified tyre-tuning input and effective-weather selector; MADLAND selects an alternate coefficient family. Refreshed wheel pseudocode uses the new name. Function totals are unchanged.
+
+### Glyph renderer: installed cached-geometry admission
+
+A new reusable asset inventory applies the verified cached loader layout to installed `GAMEDATA/RENDER/PC/TEST.GFX` (162852 bytes, SHA256 `b56f7d49ee6def17a9d8d67aef39292c3b535eeddfb5bc0c794e5ffd7c81e5c2`). It contains90 glyph records, character codes33–122. Every triangle index is below its glyph vertex count; all position/vertex-normal/face-normal floats are finite. Packed payload reconstruction starts at0x2010 and ends exactly at file length. Maximum per-glyph counts are80 vertices and156 triangles; apostrophe, comma and hyphen have empty geometry.
+
+Evidence: [installed glyph inventory](evidence/inventories/installed-glyph-geometry.json), generated by `analysis/scripts/inventory_glyph_geometry.py`. This narrows malformed source/index concerns for this installed cached file. It does not prove runtime resource selection, full generated-path equivalence, lighting-state consistency or visual equivalence. Normal lengths and cached winding are measured below. The renderer remains qualified on those contracts.
+
+Extended cached-glyph inventory finds **zero exact zero-area triangles and zero zero-length normals**. Across stored vertex and face normals, host binary64 Euclidean lengths range0.9999998623815599–1.0000001264396388, consistent with rounded unit vectors. These are offline calculations from stored binary32 values, not execution of the original normalization or proof of winding/culling equivalence. An independent rerun from outside the repository reproduces the extended JSON byte-for-byte.
+
+Cached-glyph flat/extruded count audit: all90 records satisfy total vertices=2×base vertices and flat triangle count<=total triangle count. Every index in the flat-triangle prefix is below base-vertex count. Every base vertex has a matching XY partner at Z=1, with original Z=0. Totals are1473 base/2946 total vertices and1325 flat/5596 total triangles. The inventory now retains these per-glyph checks and independently reproduces exactly. This corroborates the stored paired-depth layout and flat prefix; it does not prove sidewall winding or generated-path equality.
+
+Cached winding convention is now measured: for all5596 triangles, stored face normal has a **negative** dot product with `(vertex1-vertex0) × (vertex2-vertex0)` in listed index order. Host binary64 cosine spans−1.0000000000000002 to−0.9999999999999973 (tiny excursions below−1 are calculation rounding). No positive or zero dots occur. This establishes consistent opposite orientation in the retained cached asset, not an erroneous normal: renderer culling and normal-generation cross-product order may deliberately use that convention. The reusable report retains per-glyph sign counts and cosine ranges, independently reproduced outside the repository. Generated-path winding equivalence and final driver culling remain open.
+
+### Glyph generation: reversed normal edge order
+
+First sidewall triangle generation in `EmitGlyphEdgeTrianglePairWithNormals` constructs local vector`EBP-0x38 = v2-v0` and `EBP-0x2c = v1-v0`, normalizes each, then sets EAX to the former and EDX to the latter before calling `CalculateNormalizedVectorCrossProduct` at `0047503b`. Cross-product leaf `004e0160–004e0195` computes EAX-vector × EDX-vector, so this sidewall normal uses the **reversed edge order** relative to `(v1-v0) × (v2-v0)`. The local stores and register setup were checked in aligned assembly from `00474db0`.
+
+This supplies a generation-side explanation for the cached asset's consistently opposite normals, rather than treating that sign as a defect. It establishes the first sidewall triangle's construction; full second-triangle/front/back generation equivalence, floating-point bit identity and final driver culling are still separate questions. Helper plate/callsite comments now preserve the order explicitly.
+
+Second emitted sidewall triangle checked independently: stores`004750c4–004751f9` form the same `v1-v0`/`v2-v0` locals and call`00475225` again crosses the normalized edges in reversed order. Both emitted triangles therefore share the measured convention. Eight verified stack arguments now have descriptive array/count/output names in Ghidra; refreshed pseudocode confirms them. This supersedes the second-triangle order uncertainty above, while byte-register argument display, degenerate inputs and complete generation equivalence remain qualified.
+
+### Glyph generation: front/back index and normal pattern
+
+The generation branch preserves each source front triple, assigns fixed normal`(0,0,-1)` at`00475790–0047579d`, then emits its back triple in reversed order with base-vertex count added to each index and fixed normal`(0,0,+1)` at`004757eb–004757f8`. Aligned loader assembly and refreshed pseudocode agree. Extended installed-file inventory verifies these exact front/back index relationships and normals for every cached glyph; an independent rerun matches the retained JSON. This closes the cached front/back-pattern question. Full source-to-cache generation equality, allocation/adjacency admission and renderer culling remain unproved. The front-normal store now carries the pattern comment in Ghidra.
+
+### Pursuit marker: direct quad depth reuse
+
+Aligned `DrawClippedQuad` assembly `004c12e0–004c143e` establishes EAX/EDX/EBX/ECX as four mutable vertex pointers. Common outcode AND rejection returns before local vertex writes; all-zero OR takes the direct quad route. For each vertex, depth`+8` is rebuilt from reciprocal`+0xc`: sign-clear raw q<=1.0 selects `float(1-q)`, otherwise zero, followed by separately rounded multiplication by driver depth scale and addition of bias. The direct path does not locally change reciprocal q.
+
+Consequently repeated direct submissions of the marker's reused vertices do not compound the previous converted depth, provided q, driver globals and rounding remain stable and the callback does not mutate inputs. This narrows the prior generic depth-side-effect concern without asserting partial-clipping or driver behavior. Direct quad submission lacks the triangle route's canonical-NaN screening. Ghidra helper and marker comments record the distinction; no runtime rendering claim.
+
+### Pursuit marker: partial-route scratch ownership
+
+`DrawClippedQuad` passes pointer triples`(v0,v1,v2)` at`004c166a` and`(v0,v2,v3)` at`004c18f3` to `ClipAndDrawTexturedTriangle`, together with copied outcodes and their union mask. The clipper copies original x/y/reciprocal, perspective-scaled UV and expanded colors into shared36-byte records`007d3570/007d3594/007d35b8`. Initialized pointer table`005600d4` contains those exact three scratch addresses; clipping intersections are written to`007d1198`, and final packed driver vertices to`007cdbb0`.
+
+With intact tables, nonaliasing sources and admitted scratch capacities, the clipper's local stores operate on scratch/output rather than original marker vertices. This narrows partial-route mutation concerns; it is not a universal const, capacity or reentrancy guarantee. Driver callback mutation and shared-state lifetime remain unresolved. Ghidra clipper and marker comments preserve the pointer-chain evidence and conditions.
+
+Readability follow-up: renamed12 marker variables for target selector, world/camera/screen coordinates, projected depth, reciprocal depth and outcode. Renamed the clipper input-pointer array, outcodes and incoming union mask. Refreshed pseudocode confirms marker names; generic register ABI and floating-point interpretations retain the assembly qualifications above. No new functions or executable changes.
+
+### Pursuit marker: backend quad export boundary
+
+EXE export-lookup pair`004f83d8/004f83dc` associates string`0054d46c`, `_THRASH_drawquad@16`, with callback slot`009ef94c`. The direct quad path pushes four vertex pointers. Installed software, DX8 and Glide3x driver DLLs all export that decorated name at preferred addresses`60004ea0`, `60002790` and`60003480` respectively. These are file preferred VAs, not live mappings or proof of the selected backend.
+
+The software export wrapper reads four stack pointers and dispatches several internal routines according to driver state; inspected branches return with`RET16`. Thus the callback is a backend boundary, not one universally verified implementation. No callback nonmutation claim follows from the export name or wrapper. Current backend selection and deeper helper behavior remain open. DLLs were only read, not imported or modified. Callback-slot Ghidra comment records the mapping.
+
+Inspected installed DLL fingerprints:
+
+- `drivers/softtri/softtria.dll`: SHA256 `9479203471f4dd615788769bac365043d903505af370c48df69e5d6a1e6f8732`.
+- `drivers/dx8/dx8a.dll`: SHA256 `ddb8a55514bc650384e349cf3830946c149f71234e90a41327f69aca793e81b8`.
+- `drivers/glide3x/voodoo2a.dll`: SHA256 `f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b`.
+
+### Pursuit marker: configured nGlide wrapper preserves source vertices
+
+Current local `nfs3.ini` sets `ThrashDriver=nglide`; `drivers/nglide/thrash.ini` selects `voodoo2a.dll`, type`voodoo`. That DLL has SHA256 `f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b`, identical to the inspected Glide3x driver copy. Configuration is not proof of a currently loaded module; the game remains closed.
+
+Complete aligned quad export `60003480–600035ee` reads all four original vertices into four32-byte records in a0x80-byte stack workspace. Depth/color/UV conversions write those copies. Two calls through driver slot`600114f8` receive only pointers into the stack copies, followed by`RET16`. No wrapper-local source write or original vertex pointer passed to those calls was found. This closes the configured wrapper's direct pointer-mutation question under normal nonaliasing execution; it does not prove downstream callbacks never access other shared state, retain pointers or reenter. The dynamic slot was not identified from a static import entry. No claim is made for other renderers or live backend selection. Ghidra's EXE callback-slot comment records the supporting DLL evidence.
+
+### nGlide triangle callback identity and state replacement
+
+Driver lookup pair`60001210` binds `_grDrawTriangle@12` (name`6000f264`) to slot`60011088`. Initialization`600010c5–600010ca` copies that address into quad-wrapper triangle slot`600114f8`. However, state update`60002a26` can replace the latter with internal wrapper`60001690`; the normal branch restores the selected direct pointer at`60002a64`. The replacement wrapper makes state-setting calls and invokes another triangle slot twice before returning`RET12`.
+
+Therefore the downstream callback is identified for the direct initialization path, but quad submission is not universally two direct Glide calls: state can introduce additional passes. This resolves the previous unnamed-slot note without claiming live state selection or complete downstream equivalence. EXE callsite`004c1433` now links the driver lookup and replacement boundary in its Ghidra comment. Addresses remain preferred DLL VAs.
+
+### Network dispatcher: immediate wrapper admission and temporary context
+
+Aligned raw wrapper`00514f70–0051504a` reloads peer, tag, message and stack length before calling`005133a0`; it contains no local message-length admission check. Therefore the dispatcher's unchecked payload accesses are not justified by this immediate wrapper alone; upstream transport admission remains to trace. This is a proof boundary, not a runtime defect claim.
+
+The wrapper copies an80-byte template`00512f10` to its stack and stores the owner at temporary context`+0x10`. If owner`+0x18` is null, it temporarily installs that stack pointer; otherwise it uses the existing context. After dispatch it clears owner`+0x18` only when it still equals this stack context, preserving an existing or callback-replaced pointer. This explains local lifetime cleanup but does not prove asynchronous callback nonretention or reentry safety. Ghidra currently reports no enclosing function for the raw wrapper; a plate comment records the contract without creating a misleading one-byte function. Executable unchanged.
+
+Network wrapper reachability boundary: current Ghidra xrefs report a sole incoming data pointer at`00568a28` containing`00514f70`; no direct callsite is identified. Neighboring initialized DWORDs`005689f0–00568a24` contain related code pointers, but table base/registration and virtual caller are not yet established. Do not infer a complete transport vtable ABI or upstream packet admission from adjacency. A data comment records this next tracing point; no function definition was fabricated at the raw wrapper.
+
+### Network callback-table registration recovered
+
+Raw immediate-pointer search finds base`005689e8` referenced at`004f642c`. Instructions`004f6422–004f6441` publish this operation table to`009f25b0[index]` and companion state`00566e24` to`009f25d0[index]`, then increment shared count`00566de4`. The wrapper pointer`00568a28` is therefore table offset`+0x40`. This closes the prior table-base/registration uncertainty, without assigning a complete interface schema.
+
+Indirect calls at offset`+0x40` still require per-call table provenance and ABI verification; numeric offset equality alone is insufficient. No upstream packet-length or registration-capacity guarantee follows from this publication sequence. Ghidra table-entry and publication comments preserve the chain. The earlier interior disassembly start was not used to infer a function boundary; only aligned instructions in the recovered sequence support this result.
+
+### Network receive-side operation callback candidates
+
+At`004f54da`, the callback comes from table`[owner+4]+0x40`, matching the registered protocol-table slot when owner table is`005689e8`. Preceding transport call`004f54a9` uses`[owner+8]+0x58` with a172-byte stack buffer. Local gates require returned EAX nonzero and tag nonzero; the returned EAX is forwarded as the wrapper's length argument, together with a local output-flag pointer. No per-tag minimum-length comparison occurs in`004f5480–004f54da`.
+
+Raw entry`004f5710` contains another candidate at`004f577e`: transport return nonzero gates forwarding of message pointer,20-byte copied peer, tag and returned EAX as length. Both callsite comments record the register/stack arguments. Complete owner-table provenance, transport return semantics and buffer-capacity enforcement remain conditional. In particular, `InvokeNetworkGamePayloadCompare` also calls an offset`+0x40` on a different descriptor interface, so offset matching alone must not merge these contracts. No malformed packet was sent and no runtime multiplayer defect is claimed.
+
+### Network owner operation-table selection
+
+Raw owner initializer`004f4d10` clears0xac bytes and iterates registered operation tables. At`004f4d76–004f4d85`, owner`+8` receives`009f25d0[i]`, and owner`+4` receives`009f25b0[i]`. It then invokes table`+8` initialization and advances while the return remains zero, bounded locally by the mutable registered count. Together with the recovered registration, this establishes how an owner can acquire protocol table`005689e8`, whose`+0x40` is`00514f70`.
+
+Selection is conditional on registration order and initializer results, not a universal fixed table. The receive-side calls through owner`+4` are therefore supported operation-callback candidates on this selected-table path; complete live selection, companion transport semantics and callback lifetime remain unresolved. Ghidra's publication comment links these stages. No runtime or executable modification.
+
+### Network transport receive: bounded copy and returned byte count
+
+Companion table`00566e24+0x58` contains raw entry`004f61f0`. Complete aligned body`004f61f0–004f6345` establishes EAX=transport state, EDX=20-byte peer input/output, EBX=tag input/output pointer, ECX=destination, and one stack capacity argument (`RET4`). It searches queued records through`0050e5a0` with predicate`004f5a80` and removes records rejected by its clock comparison. The exact predicate-selection policy requires separate interpretation; do not assume a conventional matching predicate. For an accepted node, signed candidate length is node DWORD`+8` minus4. With nonnegative caller capacity, chosen count is bounded to`[0,capacity]`; negative candidates become0. It copies peer from node`+0xc`, tag from`+0x20`, and chosen payload bytes from`+0x28`, then returns the node to the free queue, signals the worker event and returns chosen count in EAX. No match clears the output tag and returns0.
+
+This resolves transport-return identity on the selected companion path: the172-capacity caller forwards copied payload byte count, bounded0–172, rather than a Boolean status. It establishes an upper copy bound, **not** a protocol-specific minimum length. Queue-producer validation, node length/source extents, signed arithmetic admission and live transport selection remain open. Ghidra's raw-entry plate records the contract without inventing a one-byte function or changing executable bytes.
+
+### Network queue producer: header admission boundary
+
+Raw producer`004f5950–004f5a2b` calls WSOCK32 ordinal17 thunk`00533e5c` with transport socket`+0x58`, node buffer`+0x24`, requested capacity0x11c (284 bytes), zero flags and address outputs. Returned length is stored at node`+8`. Admission requires a positive result, optional address-filter acceptance, nonzero decoded tag, returned length>=4 and address length14. It records clock`0079c1a0` at node`+4`, decoded tag at`+0x20` and converted20-byte peer at`+0xc`. Worker`004f5b10` passes accepted nodes to queue`state+0x8c` through`0050ded0`.
+
+No per-tag payload minimum is checked here: the four-byte tag header is the only explicit lower size gate in this producer. The tag DWORD is read before that gate. Together with the receive count clamp, this narrows the source of lengths without proving malformed input effects, node allocation extents or every backend's transport behavior. The predicate returns nonzero to select a node; its clock/tag/peer policy must be interpreted from exact branches rather than assumed from the queue API name. Ghidra's producer plate records the local admission sequence; no packets were generated or transmitted.
+
+### Network queue predicate: tag-dependent peer filter
+
+Complete predicate`004f5a80–004f5aba` and queue extractor`0050e5a0` establish that **nonzero selects a node**. Let T be wrapping32-bit clock`0079c1a0+16`, compared signed with node`+4`:
+
+| Condition, in order | Predicate result | Receive action |
+| --- | --- | --- |
+| T < node stamp |1|Selected, then discarded by the receiver's same comparison|
+| T >= stamp and node tag differs from query tag |1|Selected without peer comparison|
+| T >= stamp, tags equal, compared peer bytes equal |1|Selected|
+| T >= stamp, tags equal, compared peer bytes differ |0|Skipped while searching|
+
+Peer helper`004f5fe0–004f600b` compares exactly eight bytes at offset`+4` of each20-byte peer record and returns1 for equality,0 otherwise. Therefore this is a tag-dependent peer filter, not a pure tag match or full peer-identifier comparison. The control receive caller seeds the query tag with EA`dat`; other tags can still be selected. This resolves the prior generic predicate-policy uncertainty. Clock wrapping, concurrent changes, transport selection and payload admission remain qualified. Ghidra predicate and equality-leaf comments preserve the exact conditions.
+
+### Network packet-node pool and receive extents
+
+Complete transport-constructor assembly from`004f5c10` shows an allocation request0x140a8 bytes, cleared to that size. Node region starts at state`+0xa8`; loop`004f5c86–004f5ca7` spans0x14000 bytes in strides0x140, yielding **256 packet nodes of320 bytes**. Queue insertion places these nodes on the free list.
+
+The producer's receive buffer starts at node`+0x24`; requested0x11c bytes end exactly at node`+0x140`. Removing the four-byte tag leaves payload at`+0x28` with maximum0x118 (280) bytes, also ending at node boundary. Thus requested receive extents fit this constructor's admitted node layout. This does not prove allocation success, OS return/error semantics, intact queue membership or lifetime/concurrency. A Ghidra constructor comment links the allocation arithmetic to the producer and consumer offsets.
+
+### Network packet ownership: recycle, not per-packet free
+
+Queue helper verification corrects the earlier loose release wording: `0050de50` is head insertion, not deallocation. Worker`004f5b10` pops from free queue`state+0x70` through`0050df60`, fills that node, appends accepted packets to received queue`state+0x8c` through`0050ded0`, and pushes failed fills back to the free queue. Consumer`004f61f0` extracts a node from received queue through`0050e5a0`, copies its data, pushes it back to the free queue at`004f631c`, then signals the worker event through`SetKernelEventFromAccumulator` at`004f6328`. **No per-packet memory free occurs on this path.**
+
+Each queue helper holds its own critical section during membership changes; the payload fill/copy occurs between extraction and republication. This establishes intended ownership transfer across the two queues, not whole-session teardown exclusion, callback nonretention or absence of double membership under all callers. The raw receiver's Ghidra plate now uses the precise recycle terminology.
+
+Networking annotation checkpoint: dispatcher incoming peer and player-reply copy cursors now have descriptive names, verified in refreshed pseudocode. Its main plate links the recovered registration/owner/transport/queue chain so the original complex routine carries the relevant upstream proof boundaries directly. All original payload/callback/capacity qualifications remain; no executable or runtime-memory writes.
+
+### Hosted-player capacity producer and allocated row extent
+
+Raw hosted-list constructor`00514650–00514818` receives settings with capacity N at`+0x30`. Zero is normalized to32 (`005147e1`); unsigned N<2 or N>32 invokes assertion diagnostics, rather than clamping. Allocation size at`005146f4–0051473d` is`0xec + 100*(N-2) = 0x88 + 100*(N-1)`. The constructor copies13 DWORDs of settings into list`+0x54`, placing N at list`+0x84`, and clears occupancy mask`+0x50`.
+
+For admitted N2–32, this supplies **1–31 remote100-byte rows** starting at`+0x88`, consistent with a32-bit occupancy mask. With stable admitted capacity/mask and normal valid initialization, the dispatcher's `popcount(mask)<N-1` gate guarantees a free in-range insertion slot. This narrows the previously untraced capacity producer without proving invalid-domain behavior, nonreturn of assertion handlers, later capacity mutation or every live host setup. Constructor and dispatcher Ghidra plates now link the allocation/copy chain. No multiplayer test or executable modification.
+
+### Hosted capacity: nominal game caller and returning assertions
+
+`InitializeNetworkSessionFromServiceSelection0049e5f0` assigns settings DWORD`007a046c` to2 when transport mode is0, otherwise8. At`0049e798`, it passes EDX=`007a043c` to `NET_newgame` wrapper`004f4f10`, which invokes operation table`+0x1c`—the recovered constructor`00514650` on protocol table`005689e8`. Because `007a046c = settings+0x30`, this connects the nominal game values **2 or8** to the hosted capacity, yielding1 or7 remote rows under stable settings and normal helper behavior. This is not a claim of whole-game expansion capacity or every backend's limit.
+
+Rechecked `HandleGameAbort00401010`: it can return when the abort guard is already set, or when optional callback`00564414` returns0. Therefore constructor diagnostics outside2–32 must not be treated as unconditional guards. The valid nominal caller values narrow ordinary admission, while aliased/global changes and alternate callers remain qualified. Ghidra caller/assertion comments now preserve both facts.
+
+### Hosted-player record type
+
+Created and read back Ghidra `NetworkHostedPlayerRecord`, exactly100 bytes: opaque92-byte `aCopiedPlayerPayload` at0, DWORD `dwRefreshStamp` at0x5c and DWORD `dwSlotIndex` at0x60. `InsertNetworkPlayerRecordIntoFreeSlot00513320` copies23 DWORDs, writes global`00566dd4` to the stamp and inserted index to the final DWORD. The payload remains opaque to avoid assigning unsupported subfield meanings. This type records a verified layout for later use; it was not applied to arbitrary live/static pointers or used to force the custom calling convention. Project saved; no executable changes.
+
+### Queued-packet record type
+
+Created and read back Ghidra `NetworkQueuedPacketRecord`, exactly320 bytes:
+
+| Offset | Size | Field | Evidence |
+| --- | --- | --- | --- |
+|0x00|4|`pNext`|Queue link helpers|
+|0x04|4|`dwReceiveStamp`|Producer clock store|
+|0x08|4|`nReceivedByteCount`|Transport return store; includes raw tag|
+|0x0c|20|`aPeerIdentifier`|Producer conversion/consumer copy|
+|0x20|4|`dwDecodedTag`|Producer byte-order conversion|
+|0x24|4|`aRawTagBytes`|Start of receive buffer|
+|0x28|280|`aPayloadBytes`|Remaining requested receive-buffer capacity|
+
+The byte count includes the raw four-byte tag, while the consumer subtracts4 before copying payload. Buffer capacity is not initialized payload length: bytes beyond the returned count remain outside validated content. Queue links use opaque `void *` pending broader ownership typing. Type creation preserves the verified schema without applying it to uncertain addresses or altering custom-ABI prototypes. Project saved.
+
+### Hosted list type applied to insertion pseudocode
+
+Created Ghidra `NetworkHostedPlayerList`: opaque prefix0x50, occupancy DWORD at0x50, opaque settings prefix48 bytes at0x54, capacity DWORD at0x84, then `NetworkHostedPlayerRecord aPlayerRecords[1]` at0x88. Its236-byte size models the **minimum admitted allocation** (N=2). The one-element tail is a variable-allocation idiom, not a claim that capacity is one: actual allocated tail has N−1 records, as proved above.
+
+Applied this pointer type to the insertion routine's verified EAX list variable. Refreshed pseudocode now shows `dwTotalPlayerCapacity`, `dwOccupancyMask`, `aPlayerRecords[slot].dwRefreshStamp` and `.dwSlotIndex`, replacing raw offset expressions. Renamed five locals/parameters for list, slot, copy cursor, remaining words and source payload. The 92-byte copy still advances by DWORDs; no unsupported full payload schema or calling-convention change was introduced. Read-back confirms layout and project saved.
+
+### Hosted-player lookup typing and name refinement
+
+`005132a0` is now `FindMatchingHostedNetworkPlayerRecord` (formerly `FindMatchingNetworkGameRecord`), reflecting its occupancy-mask scan of100-byte hosted-player rows. Applied the verified hosted-list pointer type to its incoming EAX variable; Ghidra propagated record-pointer typing and a matching pointer return automatically. Renamed list, slot and candidate-record variables. Refreshed pseudocode shows capacity/mask fields and record-stride iteration explicitly.
+
+The refresh-stamp store still contains `extraout_ECX`, because the generic comparator ABI does not express preserved byte-offset state. Do not interpret that display as an unknown record stride or force a speculative prototype. The assembly contract above remains authoritative; comparator identity and lifetime remain qualified. Project saved, function totals unchanged.
+
+### Hosted-player comparator resolved on the selected companion
+
+Initialized companion slot`00566e24+0x40` (`00566e64`) points to peer comparator`004f5fe0`. Combined with the constructor's list-owner pointer and `InvokeNetworkGamePayloadCompare` forwarding, the hosted lookup compares exactly eight bytes at query`+4` and row`+4`, returning1 for equality. This resolves comparator identity on this selected companion path; other transports remain separate.
+
+Lookup`005132df` computes ECX=`100*slot`. Both comparator wrapper and selected leaf explicitly preserve ECX, so stamp store`005132f8` reaches `list+0xe4+100*slot = row+0x5c`. The decompiler's `extraout_ECX` does not indicate unknown arithmetic on this verified path; it reflects the incomplete generic calling convention. Ghidra lookup and wrapper comments now explain the preservation proof. No live peer-identity or multiplayer correctness claim.
+
+### Predicted contact query: cache acceptance and basis selection
+
+Contact callsite`004a17a6` selects reuse mode1. Before updater`004a17c1`, instructions`004a17be–004a17c0` copy predicted fixed-point XYZ into the local query's`+4/+8/+0xc`. Therefore the updater's accepted-cache path, which does not itself copy incoming XYZ, does not leave this caller's local coordinates at the prior vehicle position.
+
+Accepted cached-quad path in `UpdateTrackQueryLocationWithQuadReuse0041f6e0` clears query WORDs`+0x68/+0x6a`. Intervening material getter`004207e0` does not restore`+0x6a`; contact eligibility test`004a17f4` consequently skips the new surface-basis/interpolation branch on that path, retaining the local basis initially copied from vehicle`+0x124`. This resolves a caller-specific query/basis selection question without claiming all query pointers are valid or refresh-generated bases are correct. Ghidra main/callsite comments now preserve the sequencing. No runtime branch observation or executable change.
+
+### Track-query state type and reuse-helper typing
+
+Created/read back Ghidra `TrackQueryState`, exactly120 bytes. Known members include signed fixed-position XYZ at`+4/+8/+0xc`, opaque quad/material pointers`+0x14/+0x18`, twelve cached-quad coordinate DWORDs`+0x24–0x53`, initialization value`+0x64`, two WORDs`+0x68/+0x6a`, query flag`+0x6c`, cached index`+0x70` and reuse mode`+0x74`. Other fields retain offset-based or opaque names; no complete query schema is claimed.
+
+Applied the type to the reuse helper's verified EDX query pointer and named requested-position/reuse-mode inputs. Refreshed pseudocode now displays the position, quad, material, cache and mode members directly. Split opaque`+0x1c/+0x20` into DWORD state fields so known DWORD clearing remains readable rather than four byte assignments. Custom EAX/EDX/EBX ABI and coordinate-range/winding qualifications remain unchanged. No speculative application to the whole vehicle or overlapping local arrays. Project saved.
+
+Applied `TrackQueryState *` to the material getter's verified EAX input and named the EDX condition `requireQuad`. Refreshed pseudocode shows quad/material pointers and the `nReuseMode=-1` fallback explicitly; no change-word write is introduced. Re-read the final query layout after splitting state DWORDs: size remains120 bytes and all known offsets are intact. This typing does not validate the pointed material record or establish its full schema.
+
+### Track-query basis-source members refined
+
+The already audited surface-basis builder provides stronger identities for three query members: `+0x10` is signed segment index into36-byte records; `+0x1c` is a pointer to six packed signed basis WORDs used when selector`+0x64 == 2`; the latter is now named `dwBasisSourceSelector`, replacing the weaker initialization-only label. Refined these fields in `TrackQueryState` to `nSegmentIndex`, `pPackedBasisWords` (`short *`) and `dwBasisSourceSelector`.
+
+Applied the query pointer type to `BuildTrackQuerySurfaceBasisAndOrigin` and named its verified query, fixed-basis output and fixed-origin output variables. Refreshed pseudocode now distinguishes packed basis selection from segment-record fallback through named members. Packed source validity, source-selector producers and full basis orthogonality/units remain qualified. This refinement supersedes the earlier opaque/DWORD treatment of`+0x10/+0x1c`; no binary change.
+
+### Packed track basis: producer pointer chain
+
+Surface-selection branch`0041eb42–0041eb81` checks material byte`+1` low nibble against14; its non14 arm sets query selector`+0x64=2` and query flag`+0x6c=0`. It obtains the packed-basis table from query track block`[+0x59c]`, then selects a12-byte entry using unsigned material byte0. The resulting pointer is stored to query`+0x1c`, matching the basis builder's six signed-WORD consumption. Corresponding producer arms at`0041ee00`, `0041f13d` and recovery`0041f570` use the same selector/table pattern; full admission policies remain in their enclosing searches.
+
+Refined query`+0` to opaque `pTrackBlock` (initializer binds segment-group block) and`+0x20` to opaque `pSurfaceDescriptor` (surface search dereferences it). These pointer identities replace raw storage labels while leaving pointed schemas unresolved. Ghidra's first producer-store comment links the selection to the consumer. Table extent, material-index validity, selector transitions and runtime basis correctness remain open; no new live validation.
+
+### Packed track basis: FRD allocation count
+
+FRD loader`00419c20` reads each block's packed-basis count at relative`+0x598` (first block address`00571908`). Instructions`00419de6–00419e0b` request12×count bytes and publish the table at block`+0x59c`. Instructions`00419e9d–00419eb9` read the same12×count bytes into it. This independently corroborates the12-byte/six-WORD entry stride used by the query selector and surface-basis consumer.
+
+The loader's local allocation/read arithmetic does not establish `material.byte0<count`, arena success, overflow safety or source-file extents. Those remain the exact next admission questions; an installed FRD inventory would require parsing the preceding variable sections rather than searching for plausible byte patterns. Ghidra's table-publication comment records the count/pointer relationship. No asset modifications or runtime test.
+
+### Predicted contact: guarded normalization does not establish a unit normal
+
+Both contact normalization calls—velocity copy`004a1646` and horizontalized normal`004a1979`—use `NormalizeVector3AndGetLength004972f0`. Its stored-length magnitude-zero gate returns positive0 without modifying the vector; otherwise it divides by stored float length and scales components. This differs from the unguarded renderer normalizer`004e01c0`.
+
+The contact caller discards the returned length and performs no zero-result branch before the corner-plane call`004a199b`. Thus these normalization calls themselves avoid zero-length division, but a zero horizontal vector is not rejected merely by calling the helper. Later corner/resolver admission and exceptional arithmetic remain separate; no runtime zero-normal path was demonstrated. Ghidra main/callsite comments now distinguish the guarded helper from unit-normal assumptions.
+
+### Plane-contact resolver: ABI and finite zero-normal boundary
+
+Full aligned resolver`0042ee10–0042efdb` establishes EAX=vehicle, EDX=contact point, ECX=plane origin and EBX=normal; no stack arguments, plain RET, ESI/EDI/EBP saved. Renamed the three visible input variables accordingly; the generic prototype still omits EBX's custom input.
+
+Both penetration and contact-velocity projections are rounded to binary32 before their ordered-negative tests. Finite zero normal with finite intermediate geometry/velocity produces zero projections, so this resolver skips its position correction, impulse, event and damping writes. Unordered projections also do not enter these ordered-negative branches. This is a conditional static result, not proof that zero normals occur in valid gameplay. The corner caller still clamps angular velocity unconditionally, so the wider caller is not established as a no-op.
+
+Resolver return1 means the approach/response branch was entered, even when the impulse helper returns zero; it is not proof of a nonzero impulse or visible response. Ghidra's resolver plate now records ABI, gates and return meaning. No runtime observation or binary changes.
+
+### Predicted contact: typed local query
+
+Applied verified120-byte `TrackQueryState` to the contact routine's copied local query. Refreshed pseudocode now shows predicted fixed XYZ assignments and eligibility through `pQuad`, `pMaterial`, `wChangeWord6a` and `dwQueryFlag6c`, replacing split stack temporaries. Named the copied query, incoming/saved vehicle, predicted world XYZ and three reference components. The query copy remains30 DWORDs; the decompiler's incrementing struct-pointer cast represents that raw copy, not a sequence of120-byte records.
+
+Generic helper signatures still display phantom inputs (for example a zero first argument at the reuse call); the assembly EAX/EDX/EBX contract remains authoritative. Local typing changes no executable storage or runtime behavior and does not validate query pointers. Project saved.
+
+### Query change flags: precise identities
+
+Renamed query WORD`+0x68` to `wSegmentChanged` and WORD`+0x6a` to `wQuadOrSegmentChanged`, based on `RefreshTrackQueryAndChangeFlags0041f650`: the first compares old/new segment index; the second tests quad-pointer difference OR segment change. The latter is deliberately not called a general material/basis-valid flag: material or packed-basis changes are not independently compared here. Cached acceptance clears both.
+
+Applied query typing to the refresh helper and named its previous quad/segment variables. Some output expressions remain raw because downstream custom ECX preservation is not fully represented; no speculative type propagation was used to hide that limitation. The contact eligibility check now inherits the precise flag names. Project saved; prior offset-based change-word labels are superseded.
+
+### Preliminary installed segment-basis diagnostic
+
+A read-only calculation across the nine installed COLL type15 blocks inspected12706 segment records. For signed-byte vectors at offsets0x10/0x14/0x18, converted as byte/128 in the fallback basis path, no vector had zero length. Host binary64 lengths ranged0.9801807968590539–0.9921875; maximum absolute pairwise dot was0.719482421875. These stored vectors therefore must not be assumed exactly unit or mutually orthogonal. This preliminary calculation is not yet retained as a reusable report and does not cover FRD packed-basis entries, query-selected branch admission or live transforms. Its interpretation needs follow-up before broader basis-quality conclusions.
+
+Analysis paused at the user's request. Ghidra annotations and types are saved; latest work remains uncommitted after checkpoint985c7b0. No new runtime validation or executable changes were made in this pass.
