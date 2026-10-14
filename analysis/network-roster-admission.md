@@ -40,6 +40,20 @@ prove the accepted incoming range, a cross-transport invariant or safe storage
 for every downstream loop. Those admission and capacity questions remain
 deferred for runtime/Astra review.
 
+The count fields belong to different stages:
+
+| Field | Stage | Producer/consumer |
+| --- | --- | --- |
+| `g_nNetworkAdmissionCount` (`007a01e0`) | Outstanding admission reservations | Host event producers reserve before enqueue; service failure and connection cleanup release. |
+| `g_nPendingNetworkRequestCount` (`007a01ec`) | Pending ring occupancy | Enqueue increments; service dequeue decrements; ring has six records. |
+| `g_nNetworkRosterParticipantCount` (`007a2276`) | Advertised network roster count | Local roster producer serializes it; receiver copies the wire WORD without normalization. |
+| `g_nConfiguredParticipantCount` (`006fd510`) | Race setup total | Four mode builders write it; `InitializeRaceVehicles` consumes it without a local 16-entry clamp. |
+| `g_nConfiguredHumanParticipantCount` (`006fd514`) | Configured human-participant input | Builders derive it from human racers in regular/mode-one/mode-two and from racers plus police in Hot Pursuit; it is separate from the network roster WORD. |
+
+These values are related by setup and transport paths, but they are not
+interchangeable counts. In particular, the `<7` reservation gate does not
+validate the advertised WORD or clamp the race setup total.
+
 The eight identifier bytes at wire offset`+0x59` are now annotated as well.
 The local roster producer stores the low byte returned by
 `GetNpsLocalUserIdLowByte` in slot0 and, on
@@ -84,6 +98,45 @@ write.
 `ServiceHostNetworkAdmissions` (`0049eae0`) is the only second caller of `InitializeNetworkParticipantEndpoint` (`0049efb0`); the client join path passes slot0. In host state3, after a pending request is dequeued, the service tests endpoint active flags for indices0..7. Assembly `0049eb7f..0049eb88` exits the scan when the signed slot reaches8 and branches to the common setup at`0049ebd7`; it does not reject the request. The call at`0049ebec` forwards EDX=8. The initializer sign-extends DX and computes `007a22e8 + slot*0x6c`, writes fields at record+`0x2a/+0x2c/+0x2e`, copies20 bytes at+`0x34`, and has no local slot check. For slot8, this is one stride past the eight indices probed by the service. These writes occur before the later connection-layer success/failure branch.
 
 The producer `TryQueueNetworkAdmissionRequest` (`0049e320`) gates on a separate reservation counter below7 and increments it before enqueue. The six-record ring writer `EnqueuePendingNetworkRequest` (`0049f6a0`) advances modulo6 and has no local full check. This admission gate may constrain a queued request coinciding with all eight active flags, but the counter is not compared with those flags here. `HandleNpsConnectionEvent` (`004a5e50`) is registered through a callback record passed to indirect `NPSConnectToServer`; the admission service is called from the lobby-processing path. No in-binary evidence establishes callback timing, threading or serialization, so the cross-state invariant remains unresolved. This is therefore a conditional static capacity-boundary candidate, not a confirmed out-of-bounds runtime defect or evidence that nine players are supported. The exact backing extent/adjacent ownership and runtime reachability/consequence remain open. Ghidra comments were updated; REA shipped-artifact dossier `ev_3cb033b36010cf0b2f88404a82e069596bfadace95f65f5e9640f30af738209` corroborates the function-body observation. No runtime/network traffic was exercised and the executable was unchanged.
+
+## Admission reservation versus ring occupancy
+
+`g_nNetworkAdmissionCount` (`007a01e0`) is separate from pending-ring
+occupancy `g_nPendingNetworkRequestCount` (`007a01ec`). Each reviewed producer
+requires the admission count below7, increments it before enqueueing, and the
+unique-payload producer does so only after a new peer-table insertion. The
+six-record ring has no full check: enqueue increments its occupancy and wraps
+the write index modulo6; dequeue decrements occupancy and wraps the read index
+modulo6. Reset zeros both counters and both indices. Thus seven successful
+producer calls before any dequeue would wrap a write onto a previously used
+ring index. This is a static conditional, not evidence that the external
+provider delivers callbacks in that order.
+
+The reservation count is not released merely when the host drains a queued
+request. Successful connection setup increments the separate advertised
+roster count and leaves the reservation count unchanged; connection-method
+failure decrements it. `CloseNetworkParticipantConnection` also decrements it
+when the endpoint record has a nonnull connection handle. This is consistent
+with a count spanning pending requests and accepted peer reservations, but
+does not prove a one-to-one invariant with queue occupancy or endpoint flags.
+The host's 0–7 endpoint scan and this below-7 admission gate therefore cannot
+be substituted for one another when assessing the conditional slot-8 path.
+The complete direct-xref census for `007a01e0` has six sites: the producer
+gate/increment at`0049e334/0049e345`, service-failure decrement at`0049ec16`,
+connection-cleanup check/decrement at`0049ecd3/0049ece6`, and reset at`0049f668`.
+It has no direct reference in `ReceiveNetworkParticipantRoster` (`004a68d0`),
+so that receiver has no local admission-counter check. This census does not
+exclude indirect aliases or external provider policy.
+REA Ghidra evidence for the two counter xref inventories and producer/service,
+cleanup, enqueue and dequeue bodies is `ev_55f8ce9452718bc1ee812634b8ca4bbed182e2002b16346857e4b42acf312e1e`,
+`ev_5364322e464c47e7a5c8b93ba52578e53653a296ca0ff398037611277695f5a4`,
+`ev_5b4c89c4e5f50074bfa092f939dc17db8c2dbc127d3dc2cd0cf6415d75e2dbe7`,
+`ev_c10e41e5541ef917a997d90629ad53b246e0246ca0169d1f877ec95cb2340c5c`,
+`ev_9bdeb174931d1dba76c3dd21b602fa0270c13bdf48a06ac61a0acac72cc96472`,
+`ev_78c3d25c8345be324a1ed0591e1fa57403b85567eb300c4996b18374a543e7ea`,
+and `ev_7e1f7788554524df779cc19abcffb7cf62872e54b7c1b001f743ef2687d6192b`.
+They refer to shipped `nfs3.exe` SHA-256 `2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb`; REA's imported
+analysis database is separate from the persistent project.
 
 ## Buffer ownership versus validation
 

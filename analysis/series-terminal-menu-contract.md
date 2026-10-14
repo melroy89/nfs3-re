@@ -76,10 +76,20 @@ Recovered the previously undefined template callback00461900..00461a66 as
 `InitializeFrontendButtonStyleAndShapes`. The type5 template+24 points here.
 Full executable disassembly was checked before creating its Ghidra function.
 It resolves style+44 into WORD+48, loads up to three shape handles, assigns
-style-dependent coordinates, and disables `hostonly` tokens when networking
-is active and the local host-role flag is zero. It does not directly set0400
-or rewrite the button input/action callbacks. Style-coordinate assembly uses
-scale4; the decompiler's inferred indexing is not authoritative.
+style-dependent coordinates, and handles `hostonly` tokens. The token branch
+requires a nonnull entry+10, nonzero network marker `007a22e0`, and zero WORD
+`007a22da`; an exact token match sets bit0 in the entry flags at+4. The
+type5 named-key lookup treats bit0 as disabled, so this is an input-availability
+gate, not proof that the control is hidden. `ServiceHostNetworkAdmissions`
+(`0049eae0`) enters host admission only in network state3 with
+`007a22da != 0`; zero dispatches to client service `004a69c0`. This confirms
+the flag's host/client role and polarity, and shows that `hostonly` disables
+the control for clients in an active network session. Network settings
+synchronization agrees: the nonzero mismatch path builds a type2 message from
+local settings, while the zero path adopts changed received settings. The
+callback does not directly set0400 or rewrite button
+input/action callbacks. Style-coordinate assembly uses scale4; the
+decompiler's inferred indexing is not authoritative.
 
 A parsed-instruction search for OR byte[register+5],4 found five frontend
 sites:00456d14,0045a1dc,0045be21,00461d84,0046354c. There was also an unrelated

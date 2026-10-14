@@ -1,6 +1,7 @@
 {
   "method": "Read-only BIGF extraction; decimal fields converted to IEEE float32 using Python nearest-even conversion. Not execution of the game parser.",
   "scope": "All .viv files under installed GAMEDATA/CARMODEL; gamedata_org excluded. No runtime samples or tuning applied.",
+  "uses_anti_lock_policy": "CARP field17 is parsed as an integer and stored as its low byte; the profile initializer defaults this byte to0 when absent. Raw absence is retained as null. Inventory does not establish which profiles are loaded at runtime.",
   "target_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
   "field_ids": {
     "idle": 12,
@@ -11,10 +12,16 @@
       52,
       53,
       54
-    ]
+    ],
+    "uses_anti_lock": 17
   },
   "summary": {
     "profiles": 47,
+    "anti_lock_low_byte_values": [
+      0,
+      1
+    ],
+    "anti_lock_nonzero_profiles": 35,
     "idle_range": [
       0,
       1350
@@ -49,6 +56,8 @@
       "member_offset": 304,
       "member_bytes": 5026,
       "classification": 1,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 6
@@ -93,6 +102,8 @@
       "member_offset": 304,
       "member_bytes": 5028,
       "classification": 2,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 6
@@ -137,6 +148,8 @@
       "member_offset": 304,
       "member_bytes": 5027,
       "classification": 1,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 6
@@ -181,6 +194,8 @@
       "member_offset": 304,
       "member_bytes": 5032,
       "classification": 1,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -225,6 +240,8 @@
       "member_offset": 304,
       "member_bytes": 5023,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -269,6 +286,8 @@
       "member_offset": 304,
       "member_bytes": 5034,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -313,6 +332,8 @@
       "member_offset": 304,
       "member_bytes": 5025,
       "classification": 1,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -357,6 +378,8 @@
       "member_offset": 304,
       "member_bytes": 5021,
       "classification": 2,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 6
@@ -401,6 +424,8 @@
       "member_offset": 304,
       "member_bytes": 5030,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -445,6 +470,8 @@
       "member_offset": 304,
       "member_bytes": 5024,
       "classification": 2,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 6
@@ -489,6 +516,8 @@
       "member_offset": 304,
       "member_bytes": 5025,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -533,6 +562,8 @@
       "member_offset": 304,
       "member_bytes": 5024,
       "classification": 2,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -577,6 +608,8 @@
       "member_offset": 304,
       "member_bytes": 5024,
       "classification": 2,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -621,6 +654,8 @@
       "member_offset": 268,
       "member_bytes": 5024,
       "classification": 3,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -665,6 +700,8 @@
       "member_offset": 304,
       "member_bytes": 5036,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -709,6 +746,8 @@
       "member_offset": 304,
       "member_bytes": 5040,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -753,6 +792,8 @@
       "member_offset": 304,
       "member_bytes": 5037,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -797,6 +838,8 @@
       "member_offset": 304,
       "member_bytes": 5046,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -841,6 +884,8 @@
       "member_offset": 304,
       "member_bytes": 5028,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -885,6 +930,8 @@
       "member_offset": 304,
       "member_bytes": 5024,
       "classification": 2,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -929,6 +976,8 @@
       "member_offset": 304,
       "member_bytes": 5028,
       "classification": 1,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -973,6 +1022,8 @@
       "member_offset": 68,
       "member_bytes": 5028,
       "classification": 0,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -1017,6 +1068,8 @@
       "member_offset": 68,
       "member_bytes": 5028,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -1061,6 +1114,8 @@
       "member_offset": 68,
       "member_bytes": 5034,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 8
@@ -1105,6 +1160,8 @@
       "member_offset": 68,
       "member_bytes": 5026,
       "classification": 0,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 6,
         "automatic": 6
@@ -1149,6 +1206,8 @@
       "member_offset": 68,
       "member_bytes": 5016,
       "classification": 0,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 6,
         "automatic": 6
@@ -1193,6 +1252,8 @@
       "member_offset": 68,
       "member_bytes": 5023,
       "classification": 3,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -1237,6 +1298,8 @@
       "member_offset": 68,
       "member_bytes": 5024,
       "classification": 0,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -1281,6 +1344,8 @@
       "member_offset": 68,
       "member_bytes": 5016,
       "classification": 0,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -1325,6 +1390,8 @@
       "member_offset": 68,
       "member_bytes": 5009,
       "classification": 0,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 6,
         "automatic": 6
@@ -1369,6 +1436,8 @@
       "member_offset": 68,
       "member_bytes": 5020,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 6
@@ -1413,6 +1482,8 @@
       "member_offset": 68,
       "member_bytes": 5016,
       "classification": 3,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 6,
         "automatic": 5
@@ -1457,6 +1528,8 @@
       "member_offset": 68,
       "member_bytes": 5025,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 6
@@ -1501,6 +1574,8 @@
       "member_offset": 68,
       "member_bytes": 5022,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 6,
         "automatic": 6
@@ -1545,6 +1620,8 @@
       "member_offset": 68,
       "member_bytes": 5021,
       "classification": 3,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -1589,6 +1666,8 @@
       "member_offset": 68,
       "member_bytes": 5029,
       "classification": 3,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -1633,6 +1712,8 @@
       "member_offset": 68,
       "member_bytes": 5030,
       "classification": 3,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -1677,6 +1758,8 @@
       "member_offset": 68,
       "member_bytes": 5029,
       "classification": 3,
+      "uses_anti_lock_raw": "0",
+      "uses_anti_lock_low_byte": 0,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -1721,6 +1804,8 @@
       "member_offset": 120,
       "member_bytes": 5010,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 6,
         "automatic": 6
@@ -1765,6 +1850,8 @@
       "member_offset": 120,
       "member_bytes": 5023,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 7
@@ -1809,6 +1896,8 @@
       "member_offset": 120,
       "member_bytes": 5014,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 6
@@ -1853,6 +1942,8 @@
       "member_offset": 120,
       "member_bytes": 5019,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 7,
         "automatic": 6
@@ -1897,6 +1988,8 @@
       "member_offset": 120,
       "member_bytes": 5021,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 6,
         "automatic": 6
@@ -1941,6 +2034,8 @@
       "member_offset": 120,
       "member_bytes": 5027,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 6
@@ -1985,6 +2080,8 @@
       "member_offset": 304,
       "member_bytes": 5027,
       "classification": 1,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 6
@@ -2029,6 +2126,8 @@
       "member_offset": 136,
       "member_bytes": 5010,
       "classification": 3,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 6,
         "automatic": 6
@@ -2073,6 +2172,8 @@
       "member_offset": 268,
       "member_bytes": 5020,
       "classification": 1,
+      "uses_anti_lock_raw": "1",
+      "uses_anti_lock_low_byte": 1,
       "gear_counts": {
         "manual": 8,
         "automatic": 6

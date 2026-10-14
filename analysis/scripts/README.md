@@ -31,7 +31,7 @@ NFS3_BINARY="$PWD/nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe"
 | `inventory_frontend_text_boundaries.py` | Longest raw token and contiguous tab run in retained `fedata_org` `.MNU`/`.TXT` files; does not parse indexed localization tables | Required JSON `--output` |
 | `inventory_localized_text_table.py` | Validates the six indexed `text.<language>` tables and inventories HUD speed labels, token lengths and tab runs | Defaults to `analysis/evidence/inventories/indexed-localized-text-tables.json`; override with `--output` |
 | `inventory_sky_grid_parameters.py` | Labelled cloud/dome settings from installed track HRZ files | Required JSON `--output` |
-| `inventory_car_physics.py` | CARP physics profiles from a complete installed game directory | JSON on stdout, or `--output` |
+| `inventory_car_physics.py` | CARP physics profiles, including raw and low-byte `usesanti` values, from a complete installed game directory | JSON on stdout, or `--output` |
 | `inventory_car_selector_categories.py` | FEDATA selector fields across installed VIV car archives and supported language suffixes | Required JSON `--output` |
 | `reconstruct_spike_contact.py` | Retained spike-contact-and-recovery/arrest JSON samples | Defaults to `analysis/evidence/runtime/spike-contact-reconstruction.json`; override recommended for comparison |
 | `read_memory_sampler.py` | Live physics, pursuit/reset and spike geometry; PID required | Required `--output` JSONL |

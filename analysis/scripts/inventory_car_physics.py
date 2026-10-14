@@ -58,6 +58,8 @@ def inventory(game_root):
             if any(len(values) != 8 for values in ratios.values()):
                 raise ValueError(f"Expected eight ratio entries: {path}")
             modifiers = [float32(fields[key]) for key in (52, 53, 54)]
+            anti_lock_raw = fields.get(17)
+            anti_lock_value = int(anti_lock_raw or "0") & 0xFF
             if not all(math.isfinite(x) for values in ratios.values() for x in values):
                 raise ValueError(f"Nonfinite ratio: {path}")
             if not all(math.isfinite(x) for x in modifiers):
@@ -71,6 +73,8 @@ def inventory(game_root):
                 "member_offset": offset,
                 "member_bytes": size,
                 "classification": int(fields[1]),
+                "uses_anti_lock_raw": anti_lock_raw,
+                "uses_anti_lock_low_byte": anti_lock_value,
                 "gear_counts": {"manual": int(fields[3]), "automatic": int(fields[75])},
                 "idle_rpm": idle,
                 "redline_rpm": redline,
@@ -85,10 +89,13 @@ def inventory(game_root):
     return {
         "method": "Read-only BIGF extraction; decimal fields converted to IEEE float32 using Python nearest-even conversion. Not execution of the game parser.",
         "scope": "All .viv files under installed GAMEDATA/CARMODEL; gamedata_org excluded. No runtime samples or tuning applied.",
+        "uses_anti_lock_policy": "CARP field17 is parsed as an integer and stored as its low byte; the profile initializer defaults this byte to0 when absent. Raw absence is retained as null. Inventory does not establish which profiles are loaded at runtime.",
         "target_sha256": digest((root / "nfs3.exe").read_bytes()),
-        "field_ids": {"idle": 12, "redline": 13, "manual_ratios": 7, "automatic_ratios": 76, "corner_modifiers": [52, 53, 54]},
+        "field_ids": {"idle": 12, "redline": 13, "manual_ratios": 7, "automatic_ratios": 76, "corner_modifiers": [52, 53, 54], "uses_anti_lock": 17},
         "summary": {
             "profiles": len(rows),
+            "anti_lock_low_byte_values": sorted({r["uses_anti_lock_low_byte"] for r in rows}),
+            "anti_lock_nonzero_profiles": sum(r["uses_anti_lock_low_byte"] != 0 for r in rows),
             "idle_range": [min(r["idle_rpm"] for r in rows), max(r["idle_rpm"] for r in rows)],
             "redline_range": [min(r["redline_rpm"] for r in rows), max(r["redline_rpm"] for r in rows)],
             "denominator_range": [min(r["denominator"] for r in rows), max(r["denominator"] for r in rows)],

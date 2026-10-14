@@ -4,6 +4,8 @@ This directory contains reviewed research notes, retained evidence and reproduci
 
 - [Detailed findings and investigation history](detailed-analysis-notes.md)
 - [Network roster admission and count contract](network-roster-admission.md)
+- [Installed CARP physics profile inventory](evidence/inventories/controller-profile-inventory.json)
+- [Installed car selector categories](evidence/inventories/installed-car-selector-categories.json)
 - [Evidence categories and provenance](evidence/README.md)
 - [Helper scripts, dependencies and rerun commands](scripts/README.md)
 - [Temporary-artifact review](temporary-artifact-review.md)
