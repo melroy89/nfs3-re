@@ -91,13 +91,28 @@ In the separate all-eight-active fallthrough, the host scan passes slot8 to the
 name copier before endpoint initialization; its destination begins at
 `007a25dc + 88`. The backing extent of this source-name region is not established,
 so this remains conditional address evidence, not a confirmed out-of-bounds
-write.
+write. A narrower adjacent-global alias is now established by address arithmetic:
+`DequeuePendingNetworkRequest` copies the full 31-byte ring record into the
+service's 32-byte local buffer, and the host name copier advances by two bytes
+per iteration, stopping when either source byte is NUL without testing the
+11-byte destination width. Slot8's destination begins at `007a2634`; the Ghidra
+label `g_szGameIniPath` begins at `007a263c` and has direct references from
+`InitializeGameIniPath`, `ReadGameIniInteger` and `ReadGameIniString`. If the
+first five source byte-pairs are nonzero, the copy reaches the INI-path address
+before endpoint initialization. This is conditional overlap evidence, not an
+observed path overwrite: slot8 reachability, peer-name provenance and
+termination, path lifetime and runtime effect remain unverified. The path
+symbol's storage extent is not typed, so no larger overwrite range is claimed.
 
 ## Full-table host admission fallthrough
 
 `ServiceHostNetworkAdmissions` (`0049eae0`) is the only second caller of `InitializeNetworkParticipantEndpoint` (`0049efb0`); the client join path passes slot0. In host state3, after a pending request is dequeued, the service tests endpoint active flags for indices0..7. Assembly `0049eb7f..0049eb88` exits the scan when the signed slot reaches8 and branches to the common setup at`0049ebd7`; it does not reject the request. The call at`0049ebec` forwards EDX=8. The initializer sign-extends DX and computes `007a22e8 + slot*0x6c`, writes fields at record+`0x2a/+0x2c/+0x2e`, copies20 bytes at+`0x34`, and has no local slot check. For slot8, this is one stride past the eight indices probed by the service. These writes occur before the later connection-layer success/failure branch.
 
 The producer `TryQueueNetworkAdmissionRequest` (`0049e320`) gates on a separate reservation counter below7 and increments it before enqueue. The six-record ring writer `EnqueuePendingNetworkRequest` (`0049f6a0`) advances modulo6 and has no local full check. This admission gate may constrain a queued request coinciding with all eight active flags, but the counter is not compared with those flags here. `HandleNpsConnectionEvent` (`004a5e50`) is registered through a callback record passed to indirect `NPSConnectToServer`; the admission service is called from the lobby-processing path. No in-binary evidence establishes callback timing, threading or serialization, so the cross-state invariant remains unresolved. This is therefore a conditional static capacity-boundary candidate, not a confirmed out-of-bounds runtime defect or evidence that nine players are supported. The exact backing extent/adjacent ownership and runtime reachability/consequence remain open. Ghidra comments were updated; REA shipped-artifact dossier `ev_3cb033b36010cf0b2f88404a82e069596bfadace95f65f5e9640f30af738209` corroborates the function-body observation. No runtime/network traffic was exercised and the executable was unchanged.
+
+### Peer-event payload provenance
+
+On host event `0x203`, `HandleNpsConnectionEvent` (`004a5e50`) passes the peer-name pointer in EAX and zero-extends event byte0 into EDX before calling `TryQueueNetworkAdmissionRequest` (`0049e320`). That producer stores DL only in byte0 of a 20-byte local scratch buffer, then `EnqueuePendingNetworkRequest` (`0049f6a0`) copies all20 bytes into the pending record. `ServiceHostNetworkAdmissions` later copies the payload to endpoint record+`0x34`; `FindNpsEndpointByUserId` (`004a5f30`) compares the first byte there against the incoming peer ID. A direct-xref sweep of `007a231c..007a232f` finds no other direct reads in the 20-byte field; `+0x38..+0x44` have separate session-setup writes. This establishes only the first-byte ID use. The other19 bytes are not initialized by the reviewed producer, but pointer-based/indirect or external provider consumers and any behavioral effect remain unresolved. The Ghidra notes are saved at `0049e320` and `0049e34b`; defer runtime interpretation to Astra. No network runtime test was performed.
 
 ## Admission reservation versus ring occupancy
 
