@@ -12080,6 +12080,16 @@ REA evidence: encoder/caller dossier `ev_c0c6d72c3e23153536dae7b6c006c8454b25108
 
 Writer-path dossiers: default initializer `ev_0627b2df7c6da8b35eb698efd861ea7eb9a08704676f7355d8f21a85e3b86473`; race configuration path `ev_56112a23660b18ab290cc9908ef7f0071ea92b0cf3e4b9863965464569dc46ce`; mode-selected 2/4 path `ev_f163c22d4e53239d096ee3f899558417f0ad3ebd9a8809dfa6086fa08b44a365`; saved-value loader `ev_30a882db378f5bec6520cf8a76a5968f531f6b0497b83d1e7303394b28dee2df`.
 
+### Race-result snapshot storage and offset identity — issue #7
+
+The post-race result pipeline builds two counted snapshot banks. `BuildRaceResultSnapshotsAndUpdateProgression` (`00455410`) passes category 0 base `006647b0` and count cell `00677d30` to `CopyFlagOneVehiclesToResultRecords` (`00455210`), then category 1 base `0066e270` and count cell `00677d34` to `CopyFlagTwentyVehiclesToResultRecords` (`00455280`). Each helper copies a full `0x9ac`-byte race-vehicle record into the next row and increments its count; neither has a local sixteen-row capacity check. `BuildSortedParticipantRecordIndexMap` (`00455c10`) constructs sixteen row pointers per category with `0x9ac` row stride and `0x9ac0` category stride. Its two-element count array is `g_nParticipantResultRecordCounts` at `00677d30`. This establishes the addressed bank layout, not an upstream count invariant.
+
+The persistent Ghidra project now names `006647b0` `g_abParticipantRaceResultSnapshotStorage` and types it as opaque `byte[79232]` (`0x13580` bytes), covering both observed banks through `00677d2f`. Its plate comment records the two-category layout and missing capacity guard; the pre-existing EOL comment retains the embedded lap-array and Astra caveats. The global audit reports six xrefs and no documentation issues.
+
+The configured comparator (`CompareParticipantRecordPointersByConfiguredKey`, `00455840`) reads a float at snapshot-row `+0x2b8` for sort key 2. Since the copy helpers transfer the complete row from the live vehicle object, this is the copied value of live vehicle `+0x2b8`. The separate saved-record path in `UpdateStoredRecordsFromVehicleResult` (`00450fe0`) copies that live value into `+0x314` of a distinct `0x31c`-byte record passed to `InsertOrReplaceStoredRecordAndRefreshRanks` (`0044fa10`). The equal numeric offsets therefore do not establish equal field identity across these layouts. The lap-estimate initializer’s `+0x298 + 4*i` sequence reaches live-object `+0x2b8` at index 8; that exact alias still does not establish allocation extent, supported lap counts or a reachable defect.
+
+Fresh REA/Ghidra dossiers: result pipeline `ev_af06045e6602e0534e03fc23bc0a8db8087d237556010a45c854444e4a199daf`; category-0 copier `ev_c26a264f283e803c61deb351519b58126f65ca49294324251fecd81ea122436e`; category-1 copier `ev_94864ee96c39048a22523115fefd24f8182a287dabfc31ebd9d87423fef9ecfe`; index builder `ev_a77ed8f3ed39088bd465622e534bdb9bae3533c0097f5fc2dba730a3cfc575bb`; saved-record updater `ev_f68f75f9d7aca2063d839d5fae45319798073d9aa7a0175a961992141bf78265`. Persistent Ghidra names, byte-array type and comments were read back and the project saved. Static analysis only; the executable and runtime memory were not modified.
+
 ### Performance milestone timing aliases
 
 - **Function:** `UpdateVehiclePerformanceMilestoneTimings` (`004cdf10`).

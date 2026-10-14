@@ -59,6 +59,15 @@ The ordinary menu2/4/8 choices use indices0..7, while broader writers require
 separate admission/order proof. Ghidra comment records this boundary for Astra.
 
 
+## Race-result snapshot bank boundary
+
+`BuildRaceResultSnapshotsAndUpdateProgression` (`00455410`) supplies category 0 storage `006647b0` and count `00677d30` to `CopyFlagOneVehiclesToResultRecords` (`00455210`), then category 1 storage `0066e270` and count `00677d34` to `CopyFlagTwentyVehiclesToResultRecords` (`00455280`). Each helper copies a whole `0x9ac`-byte vehicle record and increments the destination count without a local sixteen-row check. `BuildSortedParticipantRecordIndexMap` (`00455c10`) uses sixteen local row pointers, `0x9ac` row stride and `0x9ac0` category stride. The persistent Ghidra project now labels `006647b0` `g_abParticipantRaceResultSnapshotStorage` with opaque type `byte[79232]`; the range ends immediately before the two-DWORD count array `g_nParticipantResultRecordCounts` at `00677d30`.
+
+The race-result comparator (`00455840`) reads key-2 float `+0x2b8` from these copied rows, which preserve the source vehicle bytes. `UpdateStoredRecordsFromVehicleResult` (`00450fe0`) separately copies the live vehicle value at `+0x2b8` into `+0x314` of a `0x31c`-byte saved record. Do not treat `+0x2b8` as the same field in the distinct saved-record layout. The initializer's per-lap metric sequence at `+0x298` reaches live-object `+0x2b8` at index8; capacity, supported count and intended field semantics remain open. Ghidra global audit and comment readbacks passed; project saved. No runtime or executable change.
+
+REA evidence IDs: pipeline `ev_af06045e6602e0534e03fc23bc0a8db8087d237556010a45c854444e4a199daf`; copy helpers `ev_c26a264f283e803c61deb351519b58126f65ca49294324251fecd81ea122436e` / `ev_94864ee96c39048a22523115fefd24f8182a287dabfc31ebd9d87423fef9ecfe`; index builder `ev_a77ed8f3ed39088bd465622e534bdb9bae3533c0097f5fc2dba730a3cfc575bb`; vehicle-result updater `ev_f68f75f9d7aca2063d839d5fae45319798073d9aa7a0175a961992141bf78265`.
+
+
 ## Existing type evidence
 
 Live Ghidra type inspection confirms Nfs3RaceSettingsWirePacket is40 bytes,

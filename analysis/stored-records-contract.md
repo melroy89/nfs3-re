@@ -46,6 +46,11 @@ rank refresh later writes that field. No uninitialized-use consequence is
 asserted without consumer/order proof. Ghidra name/comment saved.
 
 
+## Live vehicle value versus saved-record field
+
+`UpdateStoredRecordsFromVehicleResult` reads the live vehicle DWORD at `+0x2b8` into stack-record field `+0x314`, then passes a `0x31c`-byte record to insertion. Separately, the result-snapshot comparator (`00455840`) reads float `+0x2b8` from `0x9ac`-byte rows copied wholesale from live vehicle records. The saved-record `+0x2b8` offset belongs to a different layout; its meaning is not inferred from the snapshot comparator. The shared live source value and the observed stored destination offset are now noted in both Ghidra function comments. See [lap-count producer and snapshot evidence](lap-count-producers.md#race-result-snapshot-bank-boundary).
+
+
 ## Result-mask consumer domain
 
 Both decoded00450fe0 calls are in UpdateSelectedTrackLapResultProgressFlags
