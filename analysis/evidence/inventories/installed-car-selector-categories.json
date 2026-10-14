@@ -1,0 +1,3900 @@
+{
+  "method": "Read-only BIGF directory parsing. FEDATA DWORD+8 is interpreted using the signed arithmetic shift at nfs3.exe 0043a171; no game code is executed.",
+  "scope": "FEDATA members in installed GAMEDATA/CARMODEL/**/*.viv whose suffix is in the executable's seven-code language table; loose FEDATA files, other suffixes, alternate roots, custom assets and runtime model admission are excluded.",
+  "target_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "field_basis": {
+    "source_member_offset": 8,
+    "source_width_bytes": 4,
+    "operation": "signed little-endian DWORD arithmetic-shift-right 16",
+    "destination_model_record_offset": 904,
+    "language_codes_from_executable_table": [
+      "eng",
+      "fre",
+      "ger",
+      "ita",
+      "jap",
+      "spa",
+      "swe"
+    ],
+    "destination_consumer_domain": [
+      0,
+      1,
+      2
+    ],
+    "category_array_index": "selector + 1; category 0 is the combined group",
+    "static_references": [
+      "0043a171",
+      "0043a580",
+      "0043a6e0"
+    ]
+  },
+  "summary": {
+    "archive_count": 58,
+    "fedata_member_count": 139,
+    "model_directory_count": 24,
+    "language_counts": {
+      "eng": 24,
+      "fre": 23,
+      "ger": 23,
+      "ita": 23,
+      "spa": 23,
+      "swe": 23
+    },
+    "ignored_fedata_suffix_counts_not_in_executable_language_table": {
+      "bri": 23,
+      "fsh": 21
+    },
+    "selector_model_counts": {
+      "0": 9,
+      "1": 7,
+      "2": 7,
+      "255": 1
+    },
+    "models_with_language_selector_mismatch": 0
+  },
+  "models": [
+    {
+      "model_root": "456G",
+      "model_identifier_hexes": [
+        "19000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/456G/car.viv"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        1
+      ]
+    },
+    {
+      "model_root": "AMD7",
+      "model_identifier_hexes": [
+        "17000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/AMD7/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        2
+      ]
+    },
+    {
+      "model_root": "CORV",
+      "model_identifier_hexes": [
+        "13000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/CORV/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        1
+      ]
+    },
+    {
+      "model_root": "COUT",
+      "model_identifier_hexes": [
+        "0f000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/COUT/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        1
+      ]
+    },
+    {
+      "model_root": "DIAB",
+      "model_identifier_hexes": [
+        "10000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/DIAB/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        0
+      ]
+    },
+    {
+      "model_root": "ELNI",
+      "model_identifier_hexes": [
+        "27000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/ELNI/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        0
+      ]
+    },
+    {
+      "model_root": "F355",
+      "model_identifier_hexes": [
+        "02000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/F355/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        1
+      ]
+    },
+    {
+      "model_root": "FFAL",
+      "model_identifier_hexes": [
+        "25000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/FFAL/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        2
+      ]
+    },
+    {
+      "model_root": "FM50",
+      "model_identifier_hexes": [
+        "1f000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/FM50/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        0
+      ]
+    },
+    {
+      "model_root": "HGTS",
+      "model_identifier_hexes": [
+        "26000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/HGTS/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        2
+      ]
+    },
+    {
+      "model_root": "JXJR",
+      "model_identifier_hexes": [
+        "11000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/JXJR/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        0
+      ]
+    },
+    {
+      "model_root": "JXK8",
+      "model_identifier_hexes": [
+        "18000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/JXK8/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        2
+      ]
+    },
+    {
+      "model_root": "JXKR",
+      "model_identifier_hexes": [
+        "23000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/JXKR/car.viv"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        2
+      ]
+    },
+    {
+      "model_root": "KNOC",
+      "model_identifier_hexes": [
+        "21000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/KNOC/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        255
+      ]
+    },
+    {
+      "model_root": "LCOP",
+      "model_identifier_hexes": [
+        "24000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/LCOP/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        0
+      ]
+    },
+    {
+      "model_root": "LSTM",
+      "model_identifier_hexes": [
+        "1a000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/LSTM/car.viv"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        0
+      ]
+    },
+    {
+      "model_root": "MERC",
+      "model_identifier_hexes": [
+        "12000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/MERC/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        0
+      ]
+    },
+    {
+      "model_root": "PELN",
+      "model_identifier_hexes": [
+        "31000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/PELN/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        0
+      ]
+    },
+    {
+      "model_root": "SCIG",
+      "model_identifier_hexes": [
+        "1e000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/SCIG/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        0
+      ]
+    },
+    {
+      "model_root": "SL60",
+      "model_identifier_hexes": [
+        "15000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/SL60/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        2
+      ]
+    },
+    {
+      "model_root": "SR42",
+      "model_identifier_hexes": [
+        "1b000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/SR42/car.viv"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        2
+      ]
+    },
+    {
+      "model_root": "VCOP",
+      "model_identifier_hexes": [
+        "20000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/VCOP/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        1
+      ]
+    },
+    {
+      "model_root": "VICT",
+      "model_identifier_hexes": [
+        "26020000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/VICT/car.viv"
+      ],
+      "localized_member_count": 1,
+      "languages": [
+        "eng"
+      ],
+      "selector_values": [
+        1
+      ]
+    },
+    {
+      "model_root": "WALM",
+      "model_identifier_hexes": [
+        "29000000000000000000000000000000"
+      ],
+      "archive_paths": [
+        "GAMEDATA/CARMODEL/WALM/CAR.VIV"
+      ],
+      "localized_member_count": 6,
+      "languages": [
+        "eng",
+        "fre",
+        "ger",
+        "ita",
+        "spa",
+        "swe"
+      ],
+      "selector_values": [
+        1
+      ]
+    }
+  ],
+  "localized_members": [
+    {
+      "archive": "GAMEDATA/CARMODEL/456G/car.viv",
+      "model_root": "456G",
+      "archive_sha256": "3dd6d3a0a80a56c900cc4fd7c2f774fb50a3a01cb5c3998c5892b37702eeb2cc",
+      "archive_bytes": 1433603,
+      "member": "fedata.ger",
+      "member_offset": 417044,
+      "member_bytes": 730,
+      "member_sha256": "eaad348aefaa8b3997443fa67a807b2b39803d39ab120f6a4326061147df0fa0",
+      "model_identifier_hex": "19000000000000000000000000000000",
+      "model_identifier_first_dword_le": 25,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/456G/car.viv",
+      "model_root": "456G",
+      "archive_sha256": "3dd6d3a0a80a56c900cc4fd7c2f774fb50a3a01cb5c3998c5892b37702eeb2cc",
+      "archive_bytes": 1433603,
+      "member": "fedata.fre",
+      "member_offset": 417776,
+      "member_bytes": 676,
+      "member_sha256": "6877c01288b32791e234575d68708cbf18b4af11f4f5af7c828625b73f996b15",
+      "model_identifier_hex": "19000000000000000000000000000000",
+      "model_identifier_first_dword_le": 25,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/456G/car.viv",
+      "model_root": "456G",
+      "archive_sha256": "3dd6d3a0a80a56c900cc4fd7c2f774fb50a3a01cb5c3998c5892b37702eeb2cc",
+      "archive_bytes": 1433603,
+      "member": "fedata.eng",
+      "member_offset": 418452,
+      "member_bytes": 728,
+      "member_sha256": "131a85ff3c812021abdf92d79e7a86ff9fe9c79430623d701590688eaf9310f0",
+      "model_identifier_hex": "19000000000000000000000000000000",
+      "model_identifier_first_dword_le": 25,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/456G/car.viv",
+      "model_root": "456G",
+      "archive_sha256": "3dd6d3a0a80a56c900cc4fd7c2f774fb50a3a01cb5c3998c5892b37702eeb2cc",
+      "archive_bytes": 1433603,
+      "member": "fedata.spa",
+      "member_offset": 419180,
+      "member_bytes": 734,
+      "member_sha256": "076709bfcd6a58eca874762b781da0370e7bc7492e74b315f68e06f64fb0b5fe",
+      "model_identifier_hex": "19000000000000000000000000000000",
+      "model_identifier_first_dword_le": 25,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/456G/car.viv",
+      "model_root": "456G",
+      "archive_sha256": "3dd6d3a0a80a56c900cc4fd7c2f774fb50a3a01cb5c3998c5892b37702eeb2cc",
+      "archive_bytes": 1433603,
+      "member": "fedata.ita",
+      "member_offset": 419916,
+      "member_bytes": 663,
+      "member_sha256": "53ee6522a2cd2b72358d38419483dd7af5a7c09a48c40b44549c00e3e27ec390",
+      "model_identifier_hex": "19000000000000000000000000000000",
+      "model_identifier_first_dword_le": 25,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/456G/car.viv",
+      "model_root": "456G",
+      "archive_sha256": "3dd6d3a0a80a56c900cc4fd7c2f774fb50a3a01cb5c3998c5892b37702eeb2cc",
+      "archive_bytes": 1433603,
+      "member": "fedata.swe",
+      "member_offset": 552200,
+      "member_bytes": 727,
+      "member_sha256": "5be6ed3268bffaf262c29a461bdb7fc15c87dfc53abf02e244cd8c7c11be951d",
+      "model_identifier_hex": "19000000000000000000000000000000",
+      "model_identifier_first_dword_le": 25,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "model_root": "AMD7",
+      "archive_sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "archive_bytes": 1613816,
+      "member": "fedata.fre",
+      "member_offset": 415428,
+      "member_bytes": 646,
+      "member_sha256": "10c0ddbe3452868a199fa1500e2c43193fba54cf88902accc1ffd07ce931b284",
+      "model_identifier_hex": "17000000000000000000000000000000",
+      "model_identifier_first_dword_le": 23,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "model_root": "AMD7",
+      "archive_sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "archive_bytes": 1613816,
+      "member": "fedata.ita",
+      "member_offset": 416076,
+      "member_bytes": 611,
+      "member_sha256": "db6fcbad5196d4a58209b2ea520e5a418a0ffbd284132600b492b3ddcc282ee8",
+      "model_identifier_hex": "17000000000000000000000000000000",
+      "model_identifier_first_dword_le": 23,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "model_root": "AMD7",
+      "archive_sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "archive_bytes": 1613816,
+      "member": "fedata.ger",
+      "member_offset": 417148,
+      "member_bytes": 711,
+      "member_sha256": "278734cf634b308ed771f86f6f49719ce1a3f6be7a3f19bd825552dc42bc7665",
+      "model_identifier_hex": "17000000000000000000000000000000",
+      "model_identifier_first_dword_le": 23,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "model_root": "AMD7",
+      "archive_sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "archive_bytes": 1613816,
+      "member": "fedata.spa",
+      "member_offset": 548972,
+      "member_bytes": 673,
+      "member_sha256": "d61e2e634ff8c96bc8905be8908fcdad2be3228f298d22fde0b181d47ef9b536",
+      "model_identifier_hex": "17000000000000000000000000000000",
+      "model_identifier_first_dword_le": 23,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "model_root": "AMD7",
+      "archive_sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "archive_bytes": 1613816,
+      "member": "fedata.swe",
+      "member_offset": 549648,
+      "member_bytes": 691,
+      "member_sha256": "d2df8a3766865a9140ff4a77271664d280abc79359ebd249ab3c05e8dd5cbb17",
+      "model_identifier_hex": "17000000000000000000000000000000",
+      "model_identifier_first_dword_le": 23,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/AMD7/CAR.VIV",
+      "model_root": "AMD7",
+      "archive_sha256": "52fe2a30a3a7cebaed028240792d258c86826d4c9c4e1ce211d63143e13528ef",
+      "archive_bytes": 1613816,
+      "member": "fedata.eng",
+      "member_offset": 550340,
+      "member_bytes": 697,
+      "member_sha256": "8e0604419535eb88cd683d9828c2ef6ea0478650e14b7928d6d9f0a43d8f713b",
+      "model_identifier_hex": "17000000000000000000000000000000",
+      "model_identifier_first_dword_le": 23,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "model_root": "CORV",
+      "archive_sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "archive_bytes": 1372240,
+      "member": "fedata.ger",
+      "member_offset": 412452,
+      "member_bytes": 709,
+      "member_sha256": "d6664ca9d012c658457733118b9a84ae7d7faa9739512e60aec69c4a6bec0ba0",
+      "model_identifier_hex": "13000000000000000000000000000000",
+      "model_identifier_first_dword_le": 19,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "model_root": "CORV",
+      "archive_sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "archive_bytes": 1372240,
+      "member": "fedata.fre",
+      "member_offset": 413884,
+      "member_bytes": 663,
+      "member_sha256": "e1b39b6a64d8400f8302e16df4ecf6f809ffb79c953372a8df4b0386c86c122b",
+      "model_identifier_hex": "13000000000000000000000000000000",
+      "model_identifier_first_dword_le": 19,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "model_root": "CORV",
+      "archive_sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "archive_bytes": 1372240,
+      "member": "fedata.swe",
+      "member_offset": 545660,
+      "member_bytes": 718,
+      "member_sha256": "b6feba171428645bbabdb6501733fa58c29d3ccc60257470ac8a5d59a51a2e39",
+      "model_identifier_hex": "13000000000000000000000000000000",
+      "model_identifier_first_dword_le": 19,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "model_root": "CORV",
+      "archive_sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "archive_bytes": 1372240,
+      "member": "fedata.eng",
+      "member_offset": 546380,
+      "member_bytes": 708,
+      "member_sha256": "4181ceb4ac3fb016a4b53e3cd2addda755ddcbac3e48d0c1e794e9507fad97e9",
+      "model_identifier_hex": "13000000000000000000000000000000",
+      "model_identifier_first_dword_le": 19,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "model_root": "CORV",
+      "archive_sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "archive_bytes": 1372240,
+      "member": "fedata.ita",
+      "member_offset": 547088,
+      "member_bytes": 649,
+      "member_sha256": "0817eb2ad2b541b3fa9b8ba6e0cac53a4ebccd3dff41bbdb3c108563ff49f267",
+      "model_identifier_hex": "13000000000000000000000000000000",
+      "model_identifier_first_dword_le": 19,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/CORV/CAR.VIV",
+      "model_root": "CORV",
+      "archive_sha256": "08aaea07480cad3e840a0e8d0bafcd51fa90e2d305c0a25568e1c3c5f3029588",
+      "archive_bytes": 1372240,
+      "member": "fedata.spa",
+      "member_offset": 547740,
+      "member_bytes": 700,
+      "member_sha256": "cbc94c2269d5d9d6774a66b580740bbcf12c3f562c2c8f4edc6281b3fa5a8884",
+      "model_identifier_hex": "13000000000000000000000000000000",
+      "model_identifier_first_dword_le": 19,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "model_root": "COUT",
+      "archive_sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "archive_bytes": 1542245,
+      "member": "fedata.ger",
+      "member_offset": 406160,
+      "member_bytes": 671,
+      "member_sha256": "fabbb401c360cba3555a83dafcbde346426ffc1ea3b1744cd6663d0f4af4a570",
+      "model_identifier_hex": "0f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 15,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "model_root": "COUT",
+      "archive_sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "archive_bytes": 1542245,
+      "member": "fedata.spa",
+      "member_offset": 406832,
+      "member_bytes": 682,
+      "member_sha256": "446c13d77a72a04976baf5ad6560aeda531fb05f7f6d29f44842a64bd1a24543",
+      "model_identifier_hex": "0f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 15,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "model_root": "COUT",
+      "archive_sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "archive_bytes": 1542245,
+      "member": "fedata.ita",
+      "member_offset": 407516,
+      "member_bytes": 618,
+      "member_sha256": "aac3ec2b331a6f682c38b56ff5c2259a1664d1383a31bfcc7aeb44684e82735f",
+      "model_identifier_hex": "0f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 15,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "model_root": "COUT",
+      "archive_sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "archive_bytes": 1542245,
+      "member": "fedata.swe",
+      "member_offset": 539248,
+      "member_bytes": 699,
+      "member_sha256": "698fb7b63e1b35b4e59c6381088b694a6c372bc4311877d41d925fe238032e07",
+      "model_identifier_hex": "0f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 15,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "model_root": "COUT",
+      "archive_sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "archive_bytes": 1542245,
+      "member": "fedata.eng",
+      "member_offset": 539948,
+      "member_bytes": 677,
+      "member_sha256": "fe2f993a315b5eacbbed4005d17220a1ef7dde9d733eea1bcb83dc9e4b770cb6",
+      "model_identifier_hex": "0f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 15,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/COUT/CAR.VIV",
+      "model_root": "COUT",
+      "archive_sha256": "ae1637e1810e38385808337211bb775996878b5055f1cff8e2f0eb12b4caa89c",
+      "archive_bytes": 1542245,
+      "member": "fedata.fre",
+      "member_offset": 540628,
+      "member_bytes": 651,
+      "member_sha256": "b63ea4a9554226dd0de612ce5fe8d27e2bdeeb49e56e9d9f8f98b88d79e895c4",
+      "model_identifier_hex": "0f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 15,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "model_root": "DIAB",
+      "archive_sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "archive_bytes": 1581124,
+      "member": "fedata.ger",
+      "member_offset": 420464,
+      "member_bytes": 683,
+      "member_sha256": "643ab1de11522b5c2fc9fb1a19b1ad7cc106147269253e77fbec1fc4a751a3dd",
+      "model_identifier_hex": "10000000000000000000000000000000",
+      "model_identifier_first_dword_le": 16,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "model_root": "DIAB",
+      "archive_sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "archive_bytes": 1581124,
+      "member": "fedata.spa",
+      "member_offset": 421148,
+      "member_bytes": 692,
+      "member_sha256": "bedc7d1619ec2357a7632ae1f9ce5c5adc168d9c32765c1353459979b44670c1",
+      "model_identifier_hex": "10000000000000000000000000000000",
+      "model_identifier_first_dword_le": 16,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "model_root": "DIAB",
+      "archive_sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "archive_bytes": 1581124,
+      "member": "fedata.swe",
+      "member_offset": 421840,
+      "member_bytes": 685,
+      "member_sha256": "3e18fcb42503e7770fd8b825c9325f7a4baf232ad778ca9835e03a8a3cc0463c",
+      "model_identifier_hex": "10000000000000000000000000000000",
+      "model_identifier_first_dword_le": 16,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "model_root": "DIAB",
+      "archive_sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "archive_bytes": 1581124,
+      "member": "fedata.eng",
+      "member_offset": 422528,
+      "member_bytes": 689,
+      "member_sha256": "4143d5f1aaa12e86fda2c45ffb7b8719bc51329ebc35dd4dbe81f01bdc085bfb",
+      "model_identifier_hex": "10000000000000000000000000000000",
+      "model_identifier_first_dword_le": 16,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "model_root": "DIAB",
+      "archive_sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "archive_bytes": 1581124,
+      "member": "fedata.fre",
+      "member_offset": 423220,
+      "member_bytes": 630,
+      "member_sha256": "6ad5dee4789e5b6fa98311dbbd8ad677c903237b081be093bc46656723c725e0",
+      "model_identifier_hex": "10000000000000000000000000000000",
+      "model_identifier_first_dword_le": 16,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/DIAB/CAR.VIV",
+      "model_root": "DIAB",
+      "archive_sha256": "e024cee818723df3545f56cd36765c75121285ac8d3475debda87cc74762d315",
+      "archive_bytes": 1581124,
+      "member": "fedata.ita",
+      "member_offset": 423852,
+      "member_bytes": 619,
+      "member_sha256": "7636518917aea7bc16a6fa8dd8d0a77f5443fd6a99c5651613f761b3d98a03d1",
+      "model_identifier_hex": "10000000000000000000000000000000",
+      "model_identifier_first_dword_le": 16,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "model_root": "ELNI",
+      "archive_sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "archive_bytes": 1531156,
+      "member": "fedata.swe",
+      "member_offset": 525172,
+      "member_bytes": 300,
+      "member_sha256": "0ab6f948a7ae0228e02ce804769375eb8f6e926587c0e7b9c3ad88b7175f3362",
+      "model_identifier_hex": "27000000000000000000000000000000",
+      "model_identifier_first_dword_le": 39,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "model_root": "ELNI",
+      "archive_sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "archive_bytes": 1531156,
+      "member": "fedata.ita",
+      "member_offset": 525772,
+      "member_bytes": 306,
+      "member_sha256": "cb2cc3745181e51d7881aecc5d930ca88a66893050c704d7e8c111ce2b6ae58f",
+      "model_identifier_hex": "27000000000000000000000000000000",
+      "model_identifier_first_dword_le": 39,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "model_root": "ELNI",
+      "archive_sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "archive_bytes": 1531156,
+      "member": "fedata.ger",
+      "member_offset": 526080,
+      "member_bytes": 296,
+      "member_sha256": "c042e045adbbf49015529de9e96150983a842a7882cc154313cf9b792f3d68b8",
+      "model_identifier_hex": "27000000000000000000000000000000",
+      "model_identifier_first_dword_le": 39,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "model_root": "ELNI",
+      "archive_sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "archive_bytes": 1531156,
+      "member": "fedata.fre",
+      "member_offset": 526376,
+      "member_bytes": 304,
+      "member_sha256": "e5e21b8e7e77b689c89f9248e25c445ddb1eb97044571dd2daf87eecf528a125",
+      "model_identifier_hex": "27000000000000000000000000000000",
+      "model_identifier_first_dword_le": 39,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "model_root": "ELNI",
+      "archive_sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "archive_bytes": 1531156,
+      "member": "fedata.spa",
+      "member_offset": 526680,
+      "member_bytes": 305,
+      "member_sha256": "06af5b3b3332cfa1e122cfbf60b34681010d5b69515a81b0aeab23e37d54d60b",
+      "model_identifier_hex": "27000000000000000000000000000000",
+      "model_identifier_first_dword_le": 39,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/ELNI/CAR.VIV",
+      "model_root": "ELNI",
+      "archive_sha256": "23b6918421eb896a72938cac4181fdcf3dcf4ca315753985e2a33d84cd2fe4ee",
+      "archive_bytes": 1531156,
+      "member": "fedata.eng",
+      "member_offset": 526988,
+      "member_bytes": 300,
+      "member_sha256": "0ab6f948a7ae0228e02ce804769375eb8f6e926587c0e7b9c3ad88b7175f3362",
+      "model_identifier_hex": "27000000000000000000000000000000",
+      "model_identifier_first_dword_le": 39,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "model_root": "F355",
+      "archive_sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "archive_bytes": 1349644,
+      "member": "fedata.spa",
+      "member_offset": 407244,
+      "member_bytes": 757,
+      "member_sha256": "993082c4fddefeaaae0556ee91dc999e21bc4199c989ff44079c8679f90c11f6",
+      "model_identifier_hex": "02000000000000000000000000000000",
+      "model_identifier_first_dword_le": 2,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "model_root": "F355",
+      "archive_sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "archive_bytes": 1349644,
+      "member": "fedata.fre",
+      "member_offset": 408004,
+      "member_bytes": 688,
+      "member_sha256": "4aaf8019eaf7d78fadf2be4989e83ea4ce3bd2e0b3fbb03f6f80eaf2c2e41450",
+      "model_identifier_hex": "02000000000000000000000000000000",
+      "model_identifier_first_dword_le": 2,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "model_root": "F355",
+      "archive_sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "archive_bytes": 1349644,
+      "member": "fedata.ita",
+      "member_offset": 408692,
+      "member_bytes": 678,
+      "member_sha256": "74b3aa565ca67eb405b0d23f536590bd970720e5f4458a81727da092a5356068",
+      "model_identifier_hex": "02000000000000000000000000000000",
+      "model_identifier_first_dword_le": 2,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "model_root": "F355",
+      "archive_sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "archive_bytes": 1349644,
+      "member": "fedata.ger",
+      "member_offset": 409372,
+      "member_bytes": 745,
+      "member_sha256": "31e6058a0044383e8754d7a8f22c02e225e112b8ff756dcace1d8983be798e1e",
+      "model_identifier_hex": "02000000000000000000000000000000",
+      "model_identifier_first_dword_le": 2,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "model_root": "F355",
+      "archive_sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "archive_bytes": 1349644,
+      "member": "fedata.swe",
+      "member_offset": 410864,
+      "member_bytes": 748,
+      "member_sha256": "98152ed602050bf0dbcad19e7ba8cabf79fc197138fc0bdb5d730b905486cf90",
+      "model_identifier_hex": "02000000000000000000000000000000",
+      "model_identifier_first_dword_le": 2,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/F355/CAR.VIV",
+      "model_root": "F355",
+      "archive_sha256": "9a5d7a56de7c3e28c2fdb63aae0c2b9a0b9fff8d4432529e20ecd2894b73e6f4",
+      "archive_bytes": 1349644,
+      "member": "fedata.eng",
+      "member_offset": 411612,
+      "member_bytes": 744,
+      "member_sha256": "d61ba0e8e7d1fd852f7198ae5b1b672fef010557f849d288c00e2d9dd1eb3ae5",
+      "model_identifier_hex": "02000000000000000000000000000000",
+      "model_identifier_first_dword_le": 2,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "model_root": "FFAL",
+      "archive_sha256": "99e00c1e21a73c10fc4593309e9fd16ff26256b2aa25cd9c3b4c4baa304d4264",
+      "archive_bytes": 1747047,
+      "member": "fedata.fre",
+      "member_offset": 417008,
+      "member_bytes": 349,
+      "member_sha256": "464936f8bd417c468a5cd121080f57902b8104167a9319c35d806c2300d4a8e7",
+      "model_identifier_hex": "25000000000000000000000000000000",
+      "model_identifier_first_dword_le": 37,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "model_root": "FFAL",
+      "archive_sha256": "99e00c1e21a73c10fc4593309e9fd16ff26256b2aa25cd9c3b4c4baa304d4264",
+      "archive_bytes": 1747047,
+      "member": "fedata.eng",
+      "member_offset": 417360,
+      "member_bytes": 723,
+      "member_sha256": "106309aee757ca0264d5af0035e0686eb90e9f5f1348b863c11c835051a1f2fc",
+      "model_identifier_hex": "25000000000000000000000000000000",
+      "model_identifier_first_dword_le": 37,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "model_root": "FFAL",
+      "archive_sha256": "99e00c1e21a73c10fc4593309e9fd16ff26256b2aa25cd9c3b4c4baa304d4264",
+      "archive_bytes": 1747047,
+      "member": "fedata.ger",
+      "member_offset": 418084,
+      "member_bytes": 348,
+      "member_sha256": "204c3718eb7eff9b84ae7bfbde09cb831298432cff9a433ca5d2a28e40d2446c",
+      "model_identifier_hex": "25000000000000000000000000000000",
+      "model_identifier_first_dword_le": 37,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "model_root": "FFAL",
+      "archive_sha256": "99e00c1e21a73c10fc4593309e9fd16ff26256b2aa25cd9c3b4c4baa304d4264",
+      "archive_bytes": 1747047,
+      "member": "fedata.spa",
+      "member_offset": 418432,
+      "member_bytes": 358,
+      "member_sha256": "c22e0082b1fd79145ee7c556903308ebeb7db3e32cc584eda5feaba76cf12543",
+      "model_identifier_hex": "25000000000000000000000000000000",
+      "model_identifier_first_dword_le": 37,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "model_root": "FFAL",
+      "archive_sha256": "99e00c1e21a73c10fc4593309e9fd16ff26256b2aa25cd9c3b4c4baa304d4264",
+      "archive_bytes": 1747047,
+      "member": "fedata.ita",
+      "member_offset": 418792,
+      "member_bytes": 352,
+      "member_sha256": "e7a82c3da27c943aea9f93158a7245cb2fba52f1a70b36d3b5dc6864a6f66d81",
+      "model_identifier_hex": "25000000000000000000000000000000",
+      "model_identifier_first_dword_le": 37,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FFAL/CAR.VIV",
+      "model_root": "FFAL",
+      "archive_sha256": "99e00c1e21a73c10fc4593309e9fd16ff26256b2aa25cd9c3b4c4baa304d4264",
+      "archive_bytes": 1747047,
+      "member": "fedata.swe",
+      "member_offset": 550608,
+      "member_bytes": 352,
+      "member_sha256": "3b5aae9c4e466daadf4e4765882ac0784b863d6b8b9e5f741b3837793b6c59fb",
+      "model_identifier_hex": "25000000000000000000000000000000",
+      "model_identifier_first_dword_le": 37,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "model_root": "FM50",
+      "archive_sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "archive_bytes": 1692981,
+      "member": "fedata.eng",
+      "member_offset": 402968,
+      "member_bytes": 724,
+      "member_sha256": "908a2cabb409833fccb8cf318ed1a1a1cbef5b855284158872a23eb609010b54",
+      "model_identifier_hex": "1f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 31,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "model_root": "FM50",
+      "archive_sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "archive_bytes": 1692981,
+      "member": "fedata.fre",
+      "member_offset": 403692,
+      "member_bytes": 668,
+      "member_sha256": "ae526994c1bbbb0b710693ee2b477b5d363b4cac5b75238d2c29a786531386b0",
+      "model_identifier_hex": "1f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 31,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "model_root": "FM50",
+      "archive_sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "archive_bytes": 1692981,
+      "member": "fedata.ger",
+      "member_offset": 404360,
+      "member_bytes": 714,
+      "member_sha256": "68f7ebe967cb919b04584d854eb5a61ff88da8578c3e7c31812fbce0b0020fac",
+      "model_identifier_hex": "1f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 31,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "model_root": "FM50",
+      "archive_sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "archive_bytes": 1692981,
+      "member": "fedata.swe",
+      "member_offset": 536188,
+      "member_bytes": 722,
+      "member_sha256": "e04f975f4ed23e1845b5c71517c97e61e3e55bf53323b2213f0ed94184fc2955",
+      "model_identifier_hex": "1f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 31,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "model_root": "FM50",
+      "archive_sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "archive_bytes": 1692981,
+      "member": "fedata.spa",
+      "member_offset": 536912,
+      "member_bytes": 727,
+      "member_sha256": "c2f316ee5edb9195bf3cbeecc41d6a543b4d279ce07f9fd4eaadb80cef62f552",
+      "model_identifier_hex": "1f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 31,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/FM50/CAR.VIV",
+      "model_root": "FM50",
+      "archive_sha256": "7aa11b3b03c238d507aa8e56aed7d1e661da58daf3ae2ce8f6c9698deefec6e6",
+      "archive_bytes": 1692981,
+      "member": "fedata.ita",
+      "member_offset": 537640,
+      "member_bytes": 655,
+      "member_sha256": "6fdf6636b11d1c60997cb8d7bbe9fd41f176fcb003718c20e933ce7ef8af7edc",
+      "model_identifier_hex": "1f000000000000000000000000000000",
+      "model_identifier_first_dword_le": 31,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "model_root": "HGTS",
+      "archive_sha256": "7e122baa3541699736405d117aa2539270e8400d3eeb6092d95f098259f33699",
+      "archive_bytes": 1626250,
+      "member": "fedata.eng",
+      "member_offset": 417912,
+      "member_bytes": 662,
+      "member_sha256": "5097202902f305c61529bc44abcf27b3f680c33cf0b9d620d9c23b56389c6031",
+      "model_identifier_hex": "26000000000000000000000000000000",
+      "model_identifier_first_dword_le": 38,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "model_root": "HGTS",
+      "archive_sha256": "7e122baa3541699736405d117aa2539270e8400d3eeb6092d95f098259f33699",
+      "archive_bytes": 1626250,
+      "member": "fedata.ger",
+      "member_offset": 418576,
+      "member_bytes": 358,
+      "member_sha256": "f42d7e51a501db30e25ace85d38b35eb4bf71fb068fcb3df543f6b3e77d7f363",
+      "model_identifier_hex": "26000000000000000000000000000000",
+      "model_identifier_first_dword_le": 38,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "model_root": "HGTS",
+      "archive_sha256": "7e122baa3541699736405d117aa2539270e8400d3eeb6092d95f098259f33699",
+      "archive_bytes": 1626250,
+      "member": "fedata.ita",
+      "member_offset": 418936,
+      "member_bytes": 350,
+      "member_sha256": "1efc958ff87510910bcaf775fc9af42c520595abc63e36b6fab3246c84757192",
+      "model_identifier_hex": "26000000000000000000000000000000",
+      "model_identifier_first_dword_le": 38,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "model_root": "HGTS",
+      "archive_sha256": "7e122baa3541699736405d117aa2539270e8400d3eeb6092d95f098259f33699",
+      "archive_bytes": 1626250,
+      "member": "fedata.swe",
+      "member_offset": 419288,
+      "member_bytes": 356,
+      "member_sha256": "c227ed8e262841c9c489f2f4670608f53d343318049f66e9f02f79ec8dedce1b",
+      "model_identifier_hex": "26000000000000000000000000000000",
+      "model_identifier_first_dword_le": 38,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "model_root": "HGTS",
+      "archive_sha256": "7e122baa3541699736405d117aa2539270e8400d3eeb6092d95f098259f33699",
+      "archive_bytes": 1626250,
+      "member": "fedata.fre",
+      "member_offset": 419644,
+      "member_bytes": 353,
+      "member_sha256": "67b87a4332647283bc563ac148c40df5fc3ab142cbede367ac6e0a3d91b03a8d",
+      "model_identifier_hex": "26000000000000000000000000000000",
+      "model_identifier_first_dword_le": 38,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/HGTS/CAR.VIV",
+      "model_root": "HGTS",
+      "archive_sha256": "7e122baa3541699736405d117aa2539270e8400d3eeb6092d95f098259f33699",
+      "archive_bytes": 1626250,
+      "member": "fedata.spa",
+      "member_offset": 420356,
+      "member_bytes": 356,
+      "member_sha256": "7ac585d079af3d62a73eb78517fe3f38a21139cf7748554def39c73266a64840",
+      "model_identifier_hex": "26000000000000000000000000000000",
+      "model_identifier_first_dword_le": 38,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "model_root": "JXJR",
+      "archive_sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "archive_bytes": 1418514,
+      "member": "fedata.spa",
+      "member_offset": 401956,
+      "member_bytes": 614,
+      "member_sha256": "c64af9347c5e930a50785710ae87e4f1d71289df8009c3d5cc48f9ccac1f4966",
+      "model_identifier_hex": "11000000000000000000000000000000",
+      "model_identifier_first_dword_le": 17,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "model_root": "JXJR",
+      "archive_sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "archive_bytes": 1418514,
+      "member": "fedata.fre",
+      "member_offset": 402572,
+      "member_bytes": 566,
+      "member_sha256": "4b769b21c88b50ef2e13242c98b74a6939ea58b72ced7e32532296179c2a102f",
+      "model_identifier_hex": "11000000000000000000000000000000",
+      "model_identifier_first_dword_le": 17,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "model_root": "JXJR",
+      "archive_sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "archive_bytes": 1418514,
+      "member": "fedata.ita",
+      "member_offset": 403752,
+      "member_bytes": 541,
+      "member_sha256": "a1394b871a9ea9bcf60b7dc21fa69d0a84337172f64ff1d5b8ebebcf700f591f",
+      "model_identifier_hex": "11000000000000000000000000000000",
+      "model_identifier_first_dword_le": 17,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "model_root": "JXJR",
+      "archive_sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "archive_bytes": 1418514,
+      "member": "fedata.eng",
+      "member_offset": 404296,
+      "member_bytes": 615,
+      "member_sha256": "20b86726d6b1fc458c73441ac0a9b51ee2443a58e7a72ba34295deb71a89bb6f",
+      "model_identifier_hex": "11000000000000000000000000000000",
+      "model_identifier_first_dword_le": 17,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "model_root": "JXJR",
+      "archive_sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "archive_bytes": 1418514,
+      "member": "fedata.ger",
+      "member_offset": 404912,
+      "member_bytes": 615,
+      "member_sha256": "833044044be4ce28633bc0364bb1a259608b352b936c1dbae21ed150b33d05b0",
+      "model_identifier_hex": "11000000000000000000000000000000",
+      "model_identifier_first_dword_le": 17,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXJR/CAR.VIV",
+      "model_root": "JXJR",
+      "archive_sha256": "3037b4b8b2c8077619d6fc44b47dc618e47a4859d8327000e093c6eb18de4716",
+      "archive_bytes": 1418514,
+      "member": "fedata.swe",
+      "member_offset": 405528,
+      "member_bytes": 624,
+      "member_sha256": "bbabf61ef5c4cb0aa67c9a46222021d946746d688f7adb40f302a865a81dc5db",
+      "model_identifier_hex": "11000000000000000000000000000000",
+      "model_identifier_first_dword_le": 17,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "model_root": "JXK8",
+      "archive_sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "archive_bytes": 1833943,
+      "member": "fedata.fre",
+      "member_offset": 418240,
+      "member_bytes": 554,
+      "member_sha256": "e0ce9e89531f4f2b005c3a5362c2337040c6f9517b35ced38403ed957b9df9d4",
+      "model_identifier_hex": "18000000000000000000000000000000",
+      "model_identifier_first_dword_le": 24,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "model_root": "JXK8",
+      "archive_sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "archive_bytes": 1833943,
+      "member": "fedata.eng",
+      "member_offset": 419192,
+      "member_bytes": 613,
+      "member_sha256": "45e5c2c417f035346701e4da048b8665c45ca8a9846e65091f3ffd504d9361ff",
+      "model_identifier_hex": "18000000000000000000000000000000",
+      "model_identifier_first_dword_le": 24,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "model_root": "JXK8",
+      "archive_sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "archive_bytes": 1833943,
+      "member": "fedata.spa",
+      "member_offset": 419808,
+      "member_bytes": 625,
+      "member_sha256": "ca7045c1cb0577c64bb437623720f13b94d5dfe6aae78600d3b6e06801eb228b",
+      "model_identifier_hex": "18000000000000000000000000000000",
+      "model_identifier_first_dword_le": 24,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "model_root": "JXK8",
+      "archive_sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "archive_bytes": 1833943,
+      "member": "fedata.swe",
+      "member_offset": 420436,
+      "member_bytes": 613,
+      "member_sha256": "8a84abe59672db8d7ccaadbec3a85adf1ce22648f3c1a9fd03ceea38c655b8b4",
+      "model_identifier_hex": "18000000000000000000000000000000",
+      "model_identifier_first_dword_le": 24,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "model_root": "JXK8",
+      "archive_sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "archive_bytes": 1833943,
+      "member": "fedata.ita",
+      "member_offset": 421052,
+      "member_bytes": 549,
+      "member_sha256": "637e9afbaa514d297b96fddabd219e380b5c9c828c600b0239087604e8a46167",
+      "model_identifier_hex": "18000000000000000000000000000000",
+      "model_identifier_first_dword_le": 24,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXK8/CAR.VIV",
+      "model_root": "JXK8",
+      "archive_sha256": "fc2817bf178513155928962cb7f20bb9e3943af22819a13ececb05e0f5170200",
+      "archive_bytes": 1833943,
+      "member": "fedata.ger",
+      "member_offset": 421604,
+      "member_bytes": 614,
+      "member_sha256": "1fa1852e22ee00313bc708e856e7bae877a54ae80fca389ab8523fb262a70170",
+      "model_identifier_hex": "18000000000000000000000000000000",
+      "model_identifier_first_dword_le": 24,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "model_root": "JXKR",
+      "archive_sha256": "c30bbe49abccb9f5c8813d0674f10dd99ee71113dc2281800de6c58662bfcd41",
+      "archive_bytes": 1773707,
+      "member": "fedata.spa",
+      "member_offset": 419200,
+      "member_bytes": 654,
+      "member_sha256": "020f062cc6c29b1ed4918fa246e260ba1c7cc98bd2bfe85e6333e857e99d82d7",
+      "model_identifier_hex": "23000000000000000000000000000000",
+      "model_identifier_first_dword_le": 35,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "model_root": "JXKR",
+      "archive_sha256": "c30bbe49abccb9f5c8813d0674f10dd99ee71113dc2281800de6c58662bfcd41",
+      "archive_bytes": 1773707,
+      "member": "fedata.ger",
+      "member_offset": 419856,
+      "member_bytes": 658,
+      "member_sha256": "0403eb27197deb34058c1405ba1f141e462cc45aca0517fde0af4705b3b9e903",
+      "model_identifier_hex": "23000000000000000000000000000000",
+      "model_identifier_first_dword_le": 35,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "model_root": "JXKR",
+      "archive_sha256": "c30bbe49abccb9f5c8813d0674f10dd99ee71113dc2281800de6c58662bfcd41",
+      "archive_bytes": 1773707,
+      "member": "fedata.ita",
+      "member_offset": 420516,
+      "member_bytes": 586,
+      "member_sha256": "5d071ca98cc3eb171b8dbff6801c61aa741ac073eb70fd7dae0c27c949153579",
+      "model_identifier_hex": "23000000000000000000000000000000",
+      "model_identifier_first_dword_le": 35,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "model_root": "JXKR",
+      "archive_sha256": "c30bbe49abccb9f5c8813d0674f10dd99ee71113dc2281800de6c58662bfcd41",
+      "archive_bytes": 1773707,
+      "member": "fedata.swe",
+      "member_offset": 421104,
+      "member_bytes": 640,
+      "member_sha256": "ad9d9b9c08d0c3127c7d5c64d21cbcef5d7e25ad42653353145ce34c6e0c3ba3",
+      "model_identifier_hex": "23000000000000000000000000000000",
+      "model_identifier_first_dword_le": 35,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "model_root": "JXKR",
+      "archive_sha256": "c30bbe49abccb9f5c8813d0674f10dd99ee71113dc2281800de6c58662bfcd41",
+      "archive_bytes": 1773707,
+      "member": "fedata.fre",
+      "member_offset": 421744,
+      "member_bytes": 609,
+      "member_sha256": "590ad1b4b40364af5a616a017ce5b8bfa83e86c96c919d3b4a9b1a3484a6a337",
+      "model_identifier_hex": "23000000000000000000000000000000",
+      "model_identifier_first_dword_le": 35,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/JXKR/car.viv",
+      "model_root": "JXKR",
+      "archive_sha256": "c30bbe49abccb9f5c8813d0674f10dd99ee71113dc2281800de6c58662bfcd41",
+      "archive_bytes": 1773707,
+      "member": "fedata.eng",
+      "member_offset": 422356,
+      "member_bytes": 655,
+      "member_sha256": "fde5c82af64356ca2aa039db69728d5118c90524d21444710cf3fa76cebc4f0c",
+      "model_identifier_hex": "23000000000000000000000000000000",
+      "model_identifier_first_dword_le": 35,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "model_root": "KNOC",
+      "archive_sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "archive_bytes": 719356,
+      "member": "fedata.ger",
+      "member_offset": 297124,
+      "member_bytes": 301,
+      "member_sha256": "771100208dfc958d5c7d26d7715ee0ec6d6427cbe7069a864b9a6e0751c3cc41",
+      "model_identifier_hex": "21000000000000000000000000000000",
+      "model_identifier_first_dword_le": 33,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 16711680,
+      "selector_source_high_word": 255,
+      "selector_after_signed_shift": 255,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "model_root": "KNOC",
+      "archive_sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "archive_bytes": 719356,
+      "member": "fedata.eng",
+      "member_offset": 297428,
+      "member_bytes": 301,
+      "member_sha256": "771100208dfc958d5c7d26d7715ee0ec6d6427cbe7069a864b9a6e0751c3cc41",
+      "model_identifier_hex": "21000000000000000000000000000000",
+      "model_identifier_first_dword_le": 33,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 16711680,
+      "selector_source_high_word": 255,
+      "selector_after_signed_shift": 255,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "model_root": "KNOC",
+      "archive_sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "archive_bytes": 719356,
+      "member": "fedata.fre",
+      "member_offset": 297732,
+      "member_bytes": 301,
+      "member_sha256": "771100208dfc958d5c7d26d7715ee0ec6d6427cbe7069a864b9a6e0751c3cc41",
+      "model_identifier_hex": "21000000000000000000000000000000",
+      "model_identifier_first_dword_le": 33,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 16711680,
+      "selector_source_high_word": 255,
+      "selector_after_signed_shift": 255,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "model_root": "KNOC",
+      "archive_sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "archive_bytes": 719356,
+      "member": "fedata.spa",
+      "member_offset": 298036,
+      "member_bytes": 301,
+      "member_sha256": "771100208dfc958d5c7d26d7715ee0ec6d6427cbe7069a864b9a6e0751c3cc41",
+      "model_identifier_hex": "21000000000000000000000000000000",
+      "model_identifier_first_dword_le": 33,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 16711680,
+      "selector_source_high_word": 255,
+      "selector_after_signed_shift": 255,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "model_root": "KNOC",
+      "archive_sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "archive_bytes": 719356,
+      "member": "fedata.ita",
+      "member_offset": 298644,
+      "member_bytes": 301,
+      "member_sha256": "771100208dfc958d5c7d26d7715ee0ec6d6427cbe7069a864b9a6e0751c3cc41",
+      "model_identifier_hex": "21000000000000000000000000000000",
+      "model_identifier_first_dword_le": 33,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 16711680,
+      "selector_source_high_word": 255,
+      "selector_after_signed_shift": 255,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/KNOC/CAR.VIV",
+      "model_root": "KNOC",
+      "archive_sha256": "3673ae43e90a37eae845f996f623fb7973aa46a1f1c2210266cdc148e69353ec",
+      "archive_bytes": 719356,
+      "member": "fedata.swe",
+      "member_offset": 298948,
+      "member_bytes": 301,
+      "member_sha256": "771100208dfc958d5c7d26d7715ee0ec6d6427cbe7069a864b9a6e0751c3cc41",
+      "model_identifier_hex": "21000000000000000000000000000000",
+      "model_identifier_first_dword_le": 33,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 16711680,
+      "selector_source_high_word": 255,
+      "selector_after_signed_shift": 255,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "model_root": "LCOP",
+      "archive_sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "archive_bytes": 1627106,
+      "member": "fedata.spa",
+      "member_offset": 428028,
+      "member_bytes": 385,
+      "member_sha256": "0cb76523fbc6704dd92501c4f8e61b078176e1827c0cc24a07afa689b4c27a71",
+      "model_identifier_hex": "24000000000000000000000000000000",
+      "model_identifier_first_dword_le": 36,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "model_root": "LCOP",
+      "archive_sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "archive_bytes": 1627106,
+      "member": "fedata.swe",
+      "member_offset": 428416,
+      "member_bytes": 381,
+      "member_sha256": "dd7011de5db145f8eca76975823e2a3ed72678b881be1da6b1ca1b5fb81535e1",
+      "model_identifier_hex": "24000000000000000000000000000000",
+      "model_identifier_first_dword_le": 36,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "model_root": "LCOP",
+      "archive_sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "archive_bytes": 1627106,
+      "member": "fedata.ger",
+      "member_offset": 428800,
+      "member_bytes": 366,
+      "member_sha256": "ef2cf2f4b6f33e4b56bcde6425c5fcaf3c621a3e0b9261f65ac8b8ce68032504",
+      "model_identifier_hex": "24000000000000000000000000000000",
+      "model_identifier_first_dword_le": 36,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "model_root": "LCOP",
+      "archive_sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "archive_bytes": 1627106,
+      "member": "fedata.fre",
+      "member_offset": 429168,
+      "member_bytes": 372,
+      "member_sha256": "5e253da02f30801d43b67881f598468f4d4e4d2d0548e5812ddc275132682f67",
+      "model_identifier_hex": "24000000000000000000000000000000",
+      "model_identifier_first_dword_le": 36,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "model_root": "LCOP",
+      "archive_sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "archive_bytes": 1627106,
+      "member": "fedata.eng",
+      "member_offset": 429540,
+      "member_bytes": 379,
+      "member_sha256": "dafab2981b5fd9378be936dcab3151e384ff39930e3620a773a1c11ff45f20d2",
+      "model_identifier_hex": "24000000000000000000000000000000",
+      "model_identifier_first_dword_le": 36,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LCOP/CAR.VIV",
+      "model_root": "LCOP",
+      "archive_sha256": "cf2c8433a3c24017650165a0de51e56b7492804e5b0a9b4f9a57ec512fc9d6b3",
+      "archive_bytes": 1627106,
+      "member": "fedata.ita",
+      "member_offset": 430300,
+      "member_bytes": 374,
+      "member_sha256": "9860b9da34af5b2ab32177087937edb1f4b8893545b5378a2f7862ce82990aca",
+      "model_identifier_hex": "24000000000000000000000000000000",
+      "model_identifier_first_dword_le": 36,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "model_root": "LSTM",
+      "archive_sha256": "7963e1b0758a10c4565497b6d0238923caa8c9656e6f9411f43ba1cd439bafdc",
+      "archive_bytes": 1463197,
+      "member": "fedata.swe",
+      "member_offset": 555328,
+      "member_bytes": 622,
+      "member_sha256": "0816fbaef8ce715c65e067f963cbbc8af7cd36b529e4b6deaf72733658b932fe",
+      "model_identifier_hex": "1a000000000000000000000000000000",
+      "model_identifier_first_dword_le": 26,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "model_root": "LSTM",
+      "archive_sha256": "7963e1b0758a10c4565497b6d0238923caa8c9656e6f9411f43ba1cd439bafdc",
+      "archive_bytes": 1463197,
+      "member": "fedata.ger",
+      "member_offset": 555952,
+      "member_bytes": 629,
+      "member_sha256": "2369885912af0d2783136fc8d86b907a064aeadee4333d068fcd093ddc2f8ffb",
+      "model_identifier_hex": "1a000000000000000000000000000000",
+      "model_identifier_first_dword_le": 26,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "model_root": "LSTM",
+      "archive_sha256": "7963e1b0758a10c4565497b6d0238923caa8c9656e6f9411f43ba1cd439bafdc",
+      "archive_bytes": 1463197,
+      "member": "fedata.ita",
+      "member_offset": 556584,
+      "member_bytes": 567,
+      "member_sha256": "15fffef92c3e060c6ac64cb11b06606a1e175a61566dd1aba3df7c50179b282b",
+      "model_identifier_hex": "1a000000000000000000000000000000",
+      "model_identifier_first_dword_le": 26,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "model_root": "LSTM",
+      "archive_sha256": "7963e1b0758a10c4565497b6d0238923caa8c9656e6f9411f43ba1cd439bafdc",
+      "archive_bytes": 1463197,
+      "member": "fedata.eng",
+      "member_offset": 557152,
+      "member_bytes": 628,
+      "member_sha256": "bc5e8989f383bd1861324945d1ccdd395370e16a0ac58fd46358ffe3c2355ab6",
+      "model_identifier_hex": "1a000000000000000000000000000000",
+      "model_identifier_first_dword_le": 26,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "model_root": "LSTM",
+      "archive_sha256": "7963e1b0758a10c4565497b6d0238923caa8c9656e6f9411f43ba1cd439bafdc",
+      "archive_bytes": 1463197,
+      "member": "fedata.spa",
+      "member_offset": 558188,
+      "member_bytes": 638,
+      "member_sha256": "fb9c20e2d18b7b933c4fab126fb95c8e023d1892f6f69951310dfeac8f44c7e1",
+      "model_identifier_hex": "1a000000000000000000000000000000",
+      "model_identifier_first_dword_le": 26,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/LSTM/car.viv",
+      "model_root": "LSTM",
+      "archive_sha256": "7963e1b0758a10c4565497b6d0238923caa8c9656e6f9411f43ba1cd439bafdc",
+      "archive_bytes": 1463197,
+      "member": "fedata.fre",
+      "member_offset": 558828,
+      "member_bytes": 584,
+      "member_sha256": "0d01fcfd0bb45c2640306b45cf067a15144a1ed6ef067f403e24ba9f57912148",
+      "model_identifier_hex": "1a000000000000000000000000000000",
+      "model_identifier_first_dword_le": 26,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "model_root": "MERC",
+      "archive_sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "archive_bytes": 1435063,
+      "member": "fedata.ger",
+      "member_offset": 534152,
+      "member_bytes": 642,
+      "member_sha256": "08d6e07bc81cfee4d58c19aa67ddbd694927cc5c82d2128923cd93f2bed0f25d",
+      "model_identifier_hex": "12000000000000000000000000000000",
+      "model_identifier_first_dword_le": 18,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "model_root": "MERC",
+      "archive_sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "archive_bytes": 1435063,
+      "member": "fedata.spa",
+      "member_offset": 534796,
+      "member_bytes": 653,
+      "member_sha256": "986a9b1a9ca2a5faff4b58628d5cb3433290f74ef41d0a6fc858bda0a8ee97cf",
+      "model_identifier_hex": "12000000000000000000000000000000",
+      "model_identifier_first_dword_le": 18,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "model_root": "MERC",
+      "archive_sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "archive_bytes": 1435063,
+      "member": "fedata.swe",
+      "member_offset": 535452,
+      "member_bytes": 667,
+      "member_sha256": "729b61c756d591897d5c1ae58e7d0aa5868cc61a7dd2a97eb31f17fa8df602fe",
+      "model_identifier_hex": "12000000000000000000000000000000",
+      "model_identifier_first_dword_le": 18,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "model_root": "MERC",
+      "archive_sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "archive_bytes": 1435063,
+      "member": "fedata.eng",
+      "member_offset": 536120,
+      "member_bytes": 638,
+      "member_sha256": "010f48c20a6894526b9da18adce4798f9047d2bb841e320aac3aea319b826abe",
+      "model_identifier_hex": "12000000000000000000000000000000",
+      "model_identifier_first_dword_le": 18,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "model_root": "MERC",
+      "archive_sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "archive_bytes": 1435063,
+      "member": "fedata.fre",
+      "member_offset": 536760,
+      "member_bytes": 607,
+      "member_sha256": "a1cf78488a0e92c17cf658916f4941a43f7fe7cce1ff0d583d0f2d84024cc47e",
+      "model_identifier_hex": "12000000000000000000000000000000",
+      "model_identifier_first_dword_le": 18,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/MERC/CAR.VIV",
+      "model_root": "MERC",
+      "archive_sha256": "d5ecafdf0bbfc595b9fbde2a17c70302872c150463ffcdcaeb1e314b06503905",
+      "archive_bytes": 1435063,
+      "member": "fedata.ita",
+      "member_offset": 538008,
+      "member_bytes": 595,
+      "member_sha256": "23166108166c3792b02d1c964741abdc38e64eb07f46c424373cf6617c42b55d",
+      "model_identifier_hex": "12000000000000000000000000000000",
+      "model_identifier_first_dword_le": 18,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "model_root": "PELN",
+      "archive_sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "archive_bytes": 1549851,
+      "member": "fedata.ita",
+      "member_offset": 532028,
+      "member_bytes": 321,
+      "member_sha256": "79fed77a12654040ef0f3176266d24ebfeccd1c90b549a2db399521ab6856410",
+      "model_identifier_hex": "31000000000000000000000000000000",
+      "model_identifier_first_dword_le": 49,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "model_root": "PELN",
+      "archive_sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "archive_bytes": 1549851,
+      "member": "fedata.swe",
+      "member_offset": 532352,
+      "member_bytes": 315,
+      "member_sha256": "c972d12eae2bfae4b7b98d2d4841fed113dcfc2a3c0e106c1776ad70d12b09fe",
+      "model_identifier_hex": "31000000000000000000000000000000",
+      "model_identifier_first_dword_le": 49,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "model_root": "PELN",
+      "archive_sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "archive_bytes": 1549851,
+      "member": "fedata.spa",
+      "member_offset": 532668,
+      "member_bytes": 321,
+      "member_sha256": "77a52214981d9609ab2397a280f4392780c00526097281758842c61235a9b167",
+      "model_identifier_hex": "31000000000000000000000000000000",
+      "model_identifier_first_dword_le": 49,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "model_root": "PELN",
+      "archive_sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "archive_bytes": 1549851,
+      "member": "fedata.ger",
+      "member_offset": 532992,
+      "member_bytes": 309,
+      "member_sha256": "9f49bd690e03ff4f9246f436a05aa4490617c7a8348747553ada14a39b873ebe",
+      "model_identifier_hex": "31000000000000000000000000000000",
+      "model_identifier_first_dword_le": 49,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "model_root": "PELN",
+      "archive_sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "archive_bytes": 1549851,
+      "member": "fedata.eng",
+      "member_offset": 533304,
+      "member_bytes": 315,
+      "member_sha256": "c972d12eae2bfae4b7b98d2d4841fed113dcfc2a3c0e106c1776ad70d12b09fe",
+      "model_identifier_hex": "31000000000000000000000000000000",
+      "model_identifier_first_dword_le": 49,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/PELN/CAR.VIV",
+      "model_root": "PELN",
+      "archive_sha256": "ca3ee0fdaa76df067de1b80b4ed196653756ce1d65438c1654a9b9dbf0ddd39d",
+      "archive_bytes": 1549851,
+      "member": "fedata.fre",
+      "member_offset": 533620,
+      "member_bytes": 313,
+      "member_sha256": "df0ad368fc39e225ae2b97f5fe68faa5bebed54aa0318b4d1c760eb20a8c6064",
+      "model_identifier_hex": "31000000000000000000000000000000",
+      "model_identifier_first_dword_le": 49,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 0,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 1,
+        "+0x8": 0,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "model_root": "SCIG",
+      "archive_sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "archive_bytes": 1446604,
+      "member": "fedata.spa",
+      "member_offset": 414292,
+      "member_bytes": 634,
+      "member_sha256": "6d6add4b682bf6a4fe4dfd7e35312228cc15ae8f23c8451f8693596846154384",
+      "model_identifier_hex": "1e000000000000000000000000000000",
+      "model_identifier_first_dword_le": 30,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "model_root": "SCIG",
+      "archive_sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "archive_bytes": 1446604,
+      "member": "fedata.swe",
+      "member_offset": 414928,
+      "member_bytes": 661,
+      "member_sha256": "abebff66736615346cb87bfe1fd3910e23c8f532150f10ad2130a772225cf611",
+      "model_identifier_hex": "1e000000000000000000000000000000",
+      "model_identifier_first_dword_le": 30,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "model_root": "SCIG",
+      "archive_sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "archive_bytes": 1446604,
+      "member": "fedata.fre",
+      "member_offset": 415592,
+      "member_bytes": 590,
+      "member_sha256": "878efd7bbf25327c577044f134bb6d59c6a03f1e3d70f7ff67e3764a7e2a4c98",
+      "model_identifier_hex": "1e000000000000000000000000000000",
+      "model_identifier_first_dword_le": 30,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "model_root": "SCIG",
+      "archive_sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "archive_bytes": 1446604,
+      "member": "fedata.eng",
+      "member_offset": 416184,
+      "member_bytes": 644,
+      "member_sha256": "f0e85c5a7c44be0aaee19b574cf2d04e412ee3775a5471363fbdbb98614f0b37",
+      "model_identifier_hex": "1e000000000000000000000000000000",
+      "model_identifier_first_dword_le": 30,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "model_root": "SCIG",
+      "archive_sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "archive_bytes": 1446604,
+      "member": "fedata.ita",
+      "member_offset": 416828,
+      "member_bytes": 568,
+      "member_sha256": "4c52db2862388a0480c6a184ab013705c32291e297a3a0f78a6349f0cdbaf84a",
+      "model_identifier_hex": "1e000000000000000000000000000000",
+      "model_identifier_first_dword_le": 30,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SCIG/CAR.VIV",
+      "model_root": "SCIG",
+      "archive_sha256": "331da40bcd4793cac4f64dea25cf1057246daa9b29e4df9e230b1ebb9df67b94",
+      "archive_bytes": 1446604,
+      "member": "fedata.ger",
+      "member_offset": 417396,
+      "member_bytes": 647,
+      "member_sha256": "155f9d4d4e2077c69b2ca6d3f7bc9098ca5c51f1abbb73dee4e8ee619de05910",
+      "model_identifier_hex": "1e000000000000000000000000000000",
+      "model_identifier_first_dword_le": 30,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 1,
+      "selector_source_high_word": 0,
+      "selector_after_signed_shift": 0,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "model_root": "SL60",
+      "archive_sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "archive_bytes": 1723392,
+      "member": "fedata.swe",
+      "member_offset": 413656,
+      "member_bytes": 699,
+      "member_sha256": "c89def1f8806af48a50e45ebadf1faa72326258ab8ea1dcba370fe5368a48d7f",
+      "model_identifier_hex": "15000000000000000000000000000000",
+      "model_identifier_first_dword_le": 21,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "model_root": "SL60",
+      "archive_sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "archive_bytes": 1723392,
+      "member": "fedata.ita",
+      "member_offset": 414356,
+      "member_bytes": 646,
+      "member_sha256": "78465d48ce6fb8dff86ad8bc48a7cc8cc4c6c5dd695c366613bdcec3b560ffc9",
+      "model_identifier_hex": "15000000000000000000000000000000",
+      "model_identifier_first_dword_le": 21,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "model_root": "SL60",
+      "archive_sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "archive_bytes": 1723392,
+      "member": "fedata.eng",
+      "member_offset": 415004,
+      "member_bytes": 694,
+      "member_sha256": "82889cd5068097d0cdf873f0a095d6b307f465401d4d375f86a0bccdc20d0f01",
+      "model_identifier_hex": "15000000000000000000000000000000",
+      "model_identifier_first_dword_le": 21,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "model_root": "SL60",
+      "archive_sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "archive_bytes": 1723392,
+      "member": "fedata.ger",
+      "member_offset": 415700,
+      "member_bytes": 692,
+      "member_sha256": "3f4665dbff5530f3a30413bccac348bf6f62904efb13dab60945d2b990957827",
+      "model_identifier_hex": "15000000000000000000000000000000",
+      "model_identifier_first_dword_le": 21,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "model_root": "SL60",
+      "archive_sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "archive_bytes": 1723392,
+      "member": "fedata.spa",
+      "member_offset": 547504,
+      "member_bytes": 701,
+      "member_sha256": "df829388230bbde3a9468f9ab2737e37fd991b412e3b5d0a604d3386493937e2",
+      "model_identifier_hex": "15000000000000000000000000000000",
+      "model_identifier_first_dword_le": 21,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SL60/CAR.VIV",
+      "model_root": "SL60",
+      "archive_sha256": "39fa625562a9d9c1e2e7daccd8129fcbc98b00a2f3377282fd2b5e0aff6c50c5",
+      "archive_bytes": 1723392,
+      "member": "fedata.fre",
+      "member_offset": 548208,
+      "member_bytes": 641,
+      "member_sha256": "cfc3ddd11bbe4e9265b16ac3a5de861be59a43d7babba6e1f9bd4283db6ff55e",
+      "model_identifier_hex": "15000000000000000000000000000000",
+      "model_identifier_first_dword_le": 21,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "model_root": "SR42",
+      "archive_sha256": "39eee86aa6aa2be37dc408f11a1adfc3e119df45f49dc8f364657eb819a75913",
+      "archive_bytes": 1444505,
+      "member": "fedata.eng",
+      "member_offset": 410644,
+      "member_bytes": 563,
+      "member_sha256": "042f9c19e123f701a1aa2f7f189ba886cf5978667857c719462e01c0e75f8f98",
+      "model_identifier_hex": "1b000000000000000000000000000000",
+      "model_identifier_first_dword_le": 27,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "model_root": "SR42",
+      "archive_sha256": "39eee86aa6aa2be37dc408f11a1adfc3e119df45f49dc8f364657eb819a75913",
+      "archive_bytes": 1444505,
+      "member": "fedata.ita",
+      "member_offset": 411208,
+      "member_bytes": 507,
+      "member_sha256": "7f2a76d599914a246eb2935db6c4d2b873d922357cb0239fdeabdd981e475263",
+      "model_identifier_hex": "1b000000000000000000000000000000",
+      "model_identifier_first_dword_le": 27,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "model_root": "SR42",
+      "archive_sha256": "39eee86aa6aa2be37dc408f11a1adfc3e119df45f49dc8f364657eb819a75913",
+      "archive_bytes": 1444505,
+      "member": "fedata.fre",
+      "member_offset": 411716,
+      "member_bytes": 520,
+      "member_sha256": "9742780a2bc20777dfa7c4c757ff5ed2f7405a6c623d1fc5deee89a72ca7d8bf",
+      "model_identifier_hex": "1b000000000000000000000000000000",
+      "model_identifier_first_dword_le": 27,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "model_root": "SR42",
+      "archive_sha256": "39eee86aa6aa2be37dc408f11a1adfc3e119df45f49dc8f364657eb819a75913",
+      "archive_bytes": 1444505,
+      "member": "fedata.swe",
+      "member_offset": 412236,
+      "member_bytes": 566,
+      "member_sha256": "a71ac296a34594c050c559da31d5fd24365352eca5d71a079bc1e0ebe7cebbec",
+      "model_identifier_hex": "1b000000000000000000000000000000",
+      "model_identifier_first_dword_le": 27,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "model_root": "SR42",
+      "archive_sha256": "39eee86aa6aa2be37dc408f11a1adfc3e119df45f49dc8f364657eb819a75913",
+      "archive_bytes": 1444505,
+      "member": "fedata.ger",
+      "member_offset": 544260,
+      "member_bytes": 565,
+      "member_sha256": "a4c63adb739fcdce91887cdc5f012871a1bfff473d0af190886c1e278d0d588c",
+      "model_identifier_hex": "1b000000000000000000000000000000",
+      "model_identifier_first_dword_le": 27,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/SR42/car.viv",
+      "model_root": "SR42",
+      "archive_sha256": "39eee86aa6aa2be37dc408f11a1adfc3e119df45f49dc8f364657eb819a75913",
+      "archive_bytes": 1444505,
+      "member": "fedata.spa",
+      "member_offset": 544828,
+      "member_bytes": 573,
+      "member_sha256": "aedbe2823b0d2c5a2d83a1b7c312d15a676b940c3b3feda6d12cc6b50d0bd839",
+      "model_identifier_hex": "1b000000000000000000000000000000",
+      "model_identifier_first_dword_le": 27,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 131073,
+      "selector_source_high_word": 2,
+      "selector_after_signed_shift": 2,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 1,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "model_root": "VCOP",
+      "archive_sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "archive_bytes": 1390047,
+      "member": "fedata.ger",
+      "member_offset": 416596,
+      "member_bytes": 364,
+      "member_sha256": "fd35a3ec5284c3f30406ee2944116c37ffab4fef22461ec3c503c10ea41907c8",
+      "model_identifier_hex": "20000000000000000000000000000000",
+      "model_identifier_first_dword_le": 32,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "model_root": "VCOP",
+      "archive_sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "archive_bytes": 1390047,
+      "member": "fedata.ita",
+      "member_offset": 416960,
+      "member_bytes": 380,
+      "member_sha256": "1ed95cf5a25b0d47b933a9925721c9e22a6d32c59396209d5bd696b7d3078d81",
+      "model_identifier_hex": "20000000000000000000000000000000",
+      "model_identifier_first_dword_le": 32,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "model_root": "VCOP",
+      "archive_sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "archive_bytes": 1390047,
+      "member": "fedata.fre",
+      "member_offset": 548452,
+      "member_bytes": 373,
+      "member_sha256": "fc8da38cf08455f55b8c6d527866045410d325dbea15f931f32aeaee97dddb9a",
+      "model_identifier_hex": "20000000000000000000000000000000",
+      "model_identifier_first_dword_le": 32,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "model_root": "VCOP",
+      "archive_sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "archive_bytes": 1390047,
+      "member": "fedata.swe",
+      "member_offset": 549212,
+      "member_bytes": 378,
+      "member_sha256": "bb8b41a357166afcf25ef161ff1bfa483d7b3a2da84bb09f06c6d1d83644f830",
+      "model_identifier_hex": "20000000000000000000000000000000",
+      "model_identifier_first_dword_le": 32,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "model_root": "VCOP",
+      "archive_sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "archive_bytes": 1390047,
+      "member": "fedata.spa",
+      "member_offset": 549592,
+      "member_bytes": 385,
+      "member_sha256": "b755b4eec11343ae959ec58f044645c7fe0e39bb7e29f5c63320991863d22653",
+      "model_identifier_hex": "20000000000000000000000000000000",
+      "model_identifier_first_dword_le": 32,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VCOP/CAR.VIV",
+      "model_root": "VCOP",
+      "archive_sha256": "13b373eeb644b8e0dfd2d268676cf0a36445d0f01007f4dad59445fa5800bc8a",
+      "archive_bytes": 1390047,
+      "member": "fedata.eng",
+      "member_offset": 549980,
+      "member_bytes": 380,
+      "member_sha256": "71b8918cf64566d1518527aa5d4ed027e341cd0cd618637d4ea29afd1df1e18a",
+      "model_identifier_hex": "20000000000000000000000000000000",
+      "model_identifier_first_dword_le": 32,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/VICT/car.viv",
+      "model_root": "VICT",
+      "archive_sha256": "a4432706bd475449a63d73ceb8abd06ed0577103d3a2eab12a4ac4178eaa75b0",
+      "archive_bytes": 717922,
+      "member": "fedata.eng",
+      "member_offset": 717530,
+      "member_bytes": 392,
+      "member_sha256": "4fa77890203912ee9a6098d2e9bf56211d1befb6fef49fe4ace8d5cc5bcb692a",
+      "model_identifier_hex": "26020000000000000000000000000000",
+      "model_identifier_first_dword_le": 550,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 1,
+        "+0x14": 1
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "model_root": "WALM",
+      "archive_sha256": "fddec296ef128eafe5c01eb8c4325b79c9a0ffde18e422fbd5527d6f11e54ce7",
+      "archive_bytes": 1112404,
+      "member": "fedata.eng",
+      "member_offset": 414528,
+      "member_bytes": 715,
+      "member_sha256": "2f4713b11bd42d2219c09064f01aa201119f426779ea53ee5f6afe910841e713",
+      "model_identifier_hex": "29000000000000000000000000000000",
+      "model_identifier_first_dword_le": 41,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "eng",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "model_root": "WALM",
+      "archive_sha256": "fddec296ef128eafe5c01eb8c4325b79c9a0ffde18e422fbd5527d6f11e54ce7",
+      "archive_bytes": 1112404,
+      "member": "fedata.ita",
+      "member_offset": 415244,
+      "member_bytes": 656,
+      "member_sha256": "f5bc97453460cb5c2c7be258b1c0c7e5431b673537841fafaae36b6bff013b05",
+      "model_identifier_hex": "29000000000000000000000000000000",
+      "model_identifier_first_dword_le": 41,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ita",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "model_root": "WALM",
+      "archive_sha256": "fddec296ef128eafe5c01eb8c4325b79c9a0ffde18e422fbd5527d6f11e54ce7",
+      "archive_bytes": 1112404,
+      "member": "fedata.ger",
+      "member_offset": 415900,
+      "member_bytes": 694,
+      "member_sha256": "46f5dd4662d12529f9ca82db0adc5ac65a3cb0c8261d740f5c02328be81ca1d3",
+      "model_identifier_hex": "29000000000000000000000000000000",
+      "model_identifier_first_dword_le": 41,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "ger",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "model_root": "WALM",
+      "archive_sha256": "fddec296ef128eafe5c01eb8c4325b79c9a0ffde18e422fbd5527d6f11e54ce7",
+      "archive_bytes": 1112404,
+      "member": "fedata.fre",
+      "member_offset": 416596,
+      "member_bytes": 674,
+      "member_sha256": "d636eaa58ea9ca59a9eebb026d6c6519ae1ce39203ed998a73214e4ed2dbfeea",
+      "model_identifier_hex": "29000000000000000000000000000000",
+      "model_identifier_first_dword_le": 41,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "fre",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "model_root": "WALM",
+      "archive_sha256": "fddec296ef128eafe5c01eb8c4325b79c9a0ffde18e422fbd5527d6f11e54ce7",
+      "archive_bytes": 1112404,
+      "member": "fedata.spa",
+      "member_offset": 417988,
+      "member_bytes": 708,
+      "member_sha256": "be57c5da78e300a5b059e355ecf6daf01ca5a21d15af6e52516da40362c5284c",
+      "model_identifier_hex": "29000000000000000000000000000000",
+      "model_identifier_first_dword_le": 41,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "spa",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    },
+    {
+      "archive": "GAMEDATA/CARMODEL/WALM/CAR.VIV",
+      "model_root": "WALM",
+      "archive_sha256": "fddec296ef128eafe5c01eb8c4325b79c9a0ffde18e422fbd5527d6f11e54ce7",
+      "archive_bytes": 1112404,
+      "member": "fedata.swe",
+      "member_offset": 418696,
+      "member_bytes": 715,
+      "member_sha256": "ec53c6756143da32b0ecfa6d205b5588fa941e51de361a5a4125e122b1b4f2c7",
+      "model_identifier_hex": "29000000000000000000000000000000",
+      "model_identifier_first_dword_le": 41,
+      "model_identifier_tail_12_bytes_zero": true,
+      "language": "swe",
+      "selector_source_dword_le": 65537,
+      "selector_source_high_word": 1,
+      "selector_after_signed_shift": 1,
+      "metadata_flag_words": {
+        "+0x6": 0,
+        "+0x8": 1,
+        "+0xe": 0,
+        "+0x10": 0,
+        "+0x14": 0
+      }
+    }
+  ],
+  "language_mismatches": [],
+  "limitations": [
+    "A matching installed asset does not prove that the game enumerates or successfully loads it.",
+    "Static selector values and consumer indices do not prove a normal UI or race path reaches an out-of-range store.",
+    "This report covers the selected installation only and does not represent modified/community car packs."
+  ]
+}

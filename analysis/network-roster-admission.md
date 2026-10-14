@@ -92,8 +92,9 @@ the earlier worker inference before persistence.
 
 Writable entries call004f67b0, exceptional entries004f6860; combined
 nonzero status reaches removal004f6870. Running/stop bytes are+47/+46.
-Per-connection+10/state+4 frame-limit producer remains unknown; select
-set cap64 does not establish frame-size or participant-capacity bounds.
+Per-connection+10/state+4 frame-limit producer is recovered below; select
+set cap64 does not establish frame-size or participant-capacity bounds. The
+runtime provider word and later state mutation remain unresolved.
 Queue collector provenance, state allocation and concurrent lifetime remain
 open. Static evidence only; Ghidra entry and proof comment saved.
 
@@ -150,8 +151,9 @@ Raw callback table0056ac10 has DWORD type5, with0051c100 at+4.
 requires context DWORD type1, so ordinary type5 records are excluded from
 the socket reader despite sharing queue009f2628. Queue membership alone
 does not prove reader reachability. An apparent pointer-versus-length field
-mismatch was rejected after this provider-type check. The true type1
-state+4 frame-limit producer remains open, as do context mutation/reentry.
+mismatch was rejected after this provider-type check. The type1
+state+4 producer is recovered below; runtime value, later mutation and
+context reentry remain open.
 Ghidra constructor name/comment preserve this distinction.
 
 ## Type1 socket frame-limit initialization
@@ -160,16 +162,15 @@ Context00566e8c raw DWORD is1; its open callback+4 is004f6c50.
 Wrapper004f7380 selects this context through004f5130. Recovered names:
 OpenSocketProviderConnectionLayer and InitializeSocketConnectionState.
 Constructor instructions004f6c89..b2 initialize state+4 to1024 when
-WORD009f37e8 is zero; otherwise store low16(zeroextended config-2).
+WORD009f37e8 is zero; otherwise store low16(zeroextended provider WORD-2).
 State+6/+8 are cleared and connection+10 is published at004f6ccb.
 
 The default permits at most1026-byte framed peek, preceding reader live
-metadata at offset0x404 (1028). This closes the default local extent
-calculation, not arbitrary configuration safety or aggregate setup bounds.
-Nonzero configuration provenance/range and subsequent state writers remain
-open. Initial function creation reported a one-byte body despite broader
-decompilation; first160 bytes were deliberately decoded and verified, so
-full body recovery must still be checked. No runtime observation or binary
+metadata at offset0x404 (1028). This closes the zero-word default extent
+calculation, not arbitrary provider-output safety or aggregate setup bounds.
+Actual nonzero provider value/range and subsequent state writers remain
+open. The entry definition was rebuilt to a980-byte body; frame-limit setup
+was assembly-checked, while error and lifetime paths remain unaudited. No runtime observation or binary
 modification.
 
 ## Socket limit source: startup output

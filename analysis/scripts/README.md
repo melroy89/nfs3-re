@@ -32,6 +32,7 @@ NFS3_BINARY="$PWD/nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe"
 | `inventory_localized_text_table.py` | Validates the six indexed `text.<language>` tables and inventories HUD speed labels, token lengths and tab runs | Defaults to `analysis/evidence/inventories/indexed-localized-text-tables.json`; override with `--output` |
 | `inventory_sky_grid_parameters.py` | Labelled cloud/dome settings from installed track HRZ files | Required JSON `--output` |
 | `inventory_car_physics.py` | CARP physics profiles from a complete installed game directory | JSON on stdout, or `--output` |
+| `inventory_car_selector_categories.py` | FEDATA selector fields across installed VIV car archives and supported language suffixes | Required JSON `--output` |
 | `reconstruct_spike_contact.py` | Retained spike-contact-and-recovery/arrest JSON samples | Defaults to `analysis/evidence/runtime/spike-contact-reconstruction.json`; override recommended for comparison |
 | `read_memory_sampler.py` | Live physics, pursuit/reset and spike geometry; PID required | Required `--output` JSONL |
 | `capture_hud_state.py` | Live selected HUD descriptor, item23 and split bounds; PID required | JSONL on stdout |
@@ -61,6 +62,7 @@ For inventory, point to your complete installation (the repository's two game fi
 ```sh
 NFS3_GAME_ROOT='/home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III'
 python3 analysis/scripts/inventory_car_physics.py "$NFS3_GAME_ROOT" --output analysis/captures/reruns/controller-profile-inventory.json
+python3 analysis/scripts/inventory_car_selector_categories.py "$NFS3_GAME_ROOT" --output analysis/captures/reruns/installed-car-selector-categories.json
 python3 analysis/scripts/inventory_sky_grid_parameters.py "$NFS3_GAME_ROOT" --output analysis/captures/reruns/installed-sky-grid-parameters.json
 python3 analysis/scripts/inventory_track_map_segments.py "$NFS3_GAME_ROOT" --output analysis/captures/reruns/installed-track-map-segments.json
 python3 analysis/scripts/inventory_coll_basis_vectors.py "$NFS3_GAME_ROOT" --output analysis/captures/reruns/installed-coll-basis-vectors.json
@@ -109,7 +111,9 @@ The track-map inventory helper uses the standard library and requires installed 
 
 `inventory_track_frd_basis_indices.py` uses the standard library and requires matching installed uppercase `GAMEDATA/TRACKS/TRK*/*.FRD` and `.COL` files. It follows the loader's first per-block FRD pass through the packed-basis tables at block+`0x598`, maps COLL type15 segment ordinals to FRD descriptors, and checks each selected material byte0 against that block's basis count. It records file hashes, table offsets, counts and index extrema. It stops before later FRD loader passes and does not execute the game or establish successful runtime loading. The retained asset report is `analysis/evidence/inventories/installed-track-frd-basis-indices.json`.
 
-The vehicle-effect inventory uses the standard library and scans FCE members in installed `GAMEDATA/CARMODEL` VIV archives. It records archive/member hashes, tag bytes interpreted as ASCII, finite positions and member extents using the verified dispatcher offsets. It requires installed assets, no raw captures. All47 local FCE members yielded216 entries; an outside-repository rerun reproduced the report exactly. File admission does not establish post-load mutation, rendering outcomes or supported modified models. The current script inventory has22 Python helpers, including the unchanged-code geometry probes and the assembly-derived HUD worklist model.
+The selector-category inventory uses the standard library and reads FEDATA members in installed `GAMEDATA/CARMODEL` VIV archives whose suffix appears in the executable's language-code table. It records archive/member hashes, the little-endian DWORD at FEDATA+8 interpreted with the loader's arithmetic shift, the identifier at+0x18, and related metadata flag words. It requires the complete installed game directory and no raw captures. The retained report covers58 archives,139 supported-language FEDATA members across24 model directories; six languages are present and localized selector values agree within each directory. `KNOC` has selector255; this file finding does not prove loader admission or a reachable group-store write. Other FEDATA suffixes, loose files, modified cars and runtime state are outside the report. The current script inventory has23 Python helpers, including the unchanged-code geometry probes and the assembly-derived HUD worklist model.
+
+The vehicle-effect inventory uses the standard library and scans FCE members in installed `GAMEDATA/CARMODEL` VIV archives. It records archive/member hashes, tag bytes interpreted as ASCII, finite positions and member extents using the verified dispatcher offsets. It requires installed assets, no raw captures. All47 local FCE members yielded216 entries; an outside-repository rerun reproduced the report exactly. File admission does not establish post-load mutation, rendering outcomes or supported modified models.
 
 The effect inventory also records per-part vertex extents used by the render-record builder. These support the documented nonoverlap with effect header fields for the installed models; they do not validate all triangle indices, render allocations or live ownership.
 
