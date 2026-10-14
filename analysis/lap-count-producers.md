@@ -12,6 +12,8 @@ domains from game-wide admission and storage capacity.
 |0049e17d supplied transport setup|Full DWORD007a200c, previously traced CLI -LAPS source|
 |0047248f default initialization|Literal2; explicit transitive ECX preservation verified|
 
+Ghidra's direct xrefs-to audit for `006fd4b4` corroborates this writer inventory: the only direct write references are initializer `0047248f`, menu reconciliation `0044c29b`, mode1 roster `004743ad`/`004743b9`, mode2 roster `00474011`, network-settings publication `0049a829`, and supplied transport setup `0049e17d`. This closes the direct-reference inventory in the current program database; it does not rule out writes through aliases, bulk copies or unmodeled indirect paths.
+
 Network writer0049a822..29 has no local menu decoder before publishing
 the packet byte. Therefore frontend2/4/8 normalization cannot be generalized
 to every lap-count write. This does not prove an arbitrary byte is admitted

@@ -3,6 +3,7 @@
 This directory contains reviewed research notes, retained evidence and reproducible analysis helpers.
 
 - [Detailed findings and investigation history](detailed-analysis-notes.md)
+- [Network roster admission and count contract](network-roster-admission.md)
 - [Evidence categories and provenance](evidence/README.md)
 - [Helper scripts, dependencies and rerun commands](scripts/README.md)
 - [Temporary-artifact review](temporary-artifact-review.md)

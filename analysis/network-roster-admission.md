@@ -18,6 +18,67 @@ eight roster positions, compacting nonlocal entries into remote rows; this
 fixed scan is distinct from the advertised count and overall gameplay limit.
 Its first invocation bypasses lock0055ecb4 under007a2210==0.
 
+## Roster count lifecycle
+
+The 124-byte wire record is now typed as `Nfs3ParticipantRosterWirePacket` at
+`007a2214`. Its signed participant-count WORD is `g_nNetworkRosterParticipantCount`
+at `007a2276` (wire offset `+0x62`); disassembly often reads the containing
+DWORD at `007a2274` and applies `SAR 16`. This is distinct from derived
+`g_nConfiguredHumanParticipantCount` at `006fd514`.
+
+Direct writers establish several phase values: `ResetNetworkSessionState` and
+`InitializeNetworkSessionFromServiceSelection` store1;
+`InitializeNetworkClientAndAwaitRoster` stores0 before waiting;
+`ResetAndStartNetworkTransportTwoSession` stores1;
+`InitializeNetworkSessionTimingAndCounters` stores2;
+`ServiceHostNetworkAdmissions` conditionally increments after its status gate;
+and `BuildAndBroadcastNetworkParticipantRoster` resets to1 then increments for
+each active row among seven scanned remote slots. That producer yields1..8 under
+stable row state. `ReceiveNetworkParticipantRoster` copies all0x7c bytes,
+including the count, without normalizing it. These local setup values do not
+prove the accepted incoming range, a cross-transport invariant or safe storage
+for every downstream loop. Those admission and capacity questions remain
+deferred for runtime/Astra review.
+
+The eight identifier bytes at wire offset`+0x59` are now annotated as well.
+The local roster producer stores the low byte returned by
+`GetNpsLocalUserIdLowByte` in slot0 and, on
+transport2, appends active remote-row identifiers at the current roster count.
+The receiver scans all eight slots, skips identifiers equal to the local
+identifier from the same getter, and compacts the rest into remote rows. This
+establishes layout and ordering only; identifier uniqueness, validity and
+consistency with the advertised count remain unproved.
+
+## Name-slot width and copy boundaries
+
+The roster type now represents its88-byte name region as eight
+`Nfs3ParticipantNameSlot` records of11 bytes each. `CheckPlayerProfileNameLength`
+requires a nonnull, nonempty NUL-terminated byte string of length at most10;
+`HandlePrimaryPlayerNamePrompt` calls it before copying the local profile name
+from `006fd2fc`. That local limit fits one wire slot. The localized fallback
+chosen on validation failure is not revalidated at this callsite.
+
+Roster serialization copies two adjacent bytes per loop iteration and stops
+when either copied byte is NUL. It does not compare the output cursor with the
+11-byte slot width. Host admission uses the same terminator-only copy from the
+11-byte name portion of a `PendingNetworkRequestRecord` into
+`007a25dc + 11*slot`; the receiver's fixed `0x7c`-byte copy does not validate
+each name. No local maximum or terminator check is established for this remote
+name path, so behavior beyond the slot boundary depends on upstream input
+invariants that remain unverified.
+
+There is also a layout alias candidate: name-copy base `007a25dc` equals
+endpoint base `007a22e8 + 7*0x6c`. Host admission scans endpoint index7 and
+writes its corresponding name at `007a25dc + 7*11`. The addresses are derived
+from the reviewed instructions, but allocation extent, intended lifetime
+overlap and runtime consequence are unknown. Keep this for Astra/runtime
+validation; it is not a confirmed defect or a proven endpoint/name capacity.
+In the separate all-eight-active fallthrough, the host scan passes slot8 to the
+name copier before endpoint initialization; its destination begins at
+`007a25dc + 88`. The backing extent of this source-name region is not established,
+so this remains conditional address evidence, not a confirmed out-of-bounds
+write.
+
 ## Full-table host admission fallthrough
 
 `ServiceHostNetworkAdmissions` (`0049eae0`) is the only second caller of `InitializeNetworkParticipantEndpoint` (`0049efb0`); the client join path passes slot0. In host state3, after a pending request is dequeued, the service tests endpoint active flags for indices0..7. Assembly `0049eb7f..0049eb88` exits the scan when the signed slot reaches8 and branches to the common setup at`0049ebd7`; it does not reject the request. The call at`0049ebec` forwards EDX=8. The initializer sign-extends DX and computes `007a22e8 + slot*0x6c`, writes fields at record+`0x2a/+0x2c/+0x2e`, copies20 bytes at+`0x34`, and has no local slot check. For slot8, this is one stride past the eight indices probed by the service. These writes occur before the later connection-layer success/failure branch.

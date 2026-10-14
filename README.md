@@ -73,7 +73,7 @@ Save regularly. Save and close Ghidra before committing database changes, making
 
 ## Analysis and evidence
 
-Research notes, retained evidence and reusable analysis helpers are indexed in [analysis/](analysis/README.md), with findings recorded in the [detailed notes](analysis/detailed-analysis-notes.md). See the [script guide](analysis/scripts/README.md) for dependencies, inputs and rerun commands. Evidence includes static calculations, isolated instruction probes, installed-asset inventories and selected runtime observations; each has different limitations. All identified internal functions have descriptive names, while behavioral validation and deeper decompilation remain ongoing.
+Research notes, retained evidence and reusable analysis helpers are indexed in [analysis/](analysis/README.md), with findings recorded in the [detailed notes](analysis/detailed-analysis-notes.md). See the [script guide](analysis/scripts/README.md) for dependencies, inputs and rerun commands. Evidence includes static calculations, isolated instruction probes, installed-asset inventories and selected runtime observations; each has different limitations. Most internal functions have descriptive names and annotations; a small generic-name backlog, behavioral validation and deeper decompilation remain ongoing.
 
 Raw captures stay local under ignored `analysis/captures/`.
 
