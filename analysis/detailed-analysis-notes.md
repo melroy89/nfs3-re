@@ -2316,9 +2316,9 @@ The current-sample table's direct data references are the consumer itself and `C
 
 `SubmitNetworkPlayerInput` (`004c60c0`) has two statically distinct layouts. The synchronized transport-1 path builds and sends a 33-byte frame: type byte 6 plus a 32-byte area populated by `BuildNetworkInputFrameWithFallback`. The alternate path obtains AL from `GetNetworkInputLeadByte` (`004c69c0`), stores type 6 at `g_bSingleInputMessageType` (`007d36e4`), stores AL at `g_bSingleInputLeadByte` (`007d36e5`), copies four raw sample bytes to `g_abSingleInputSampleBytes` (`007d36e6`), and sends six bytes from the message base. These fields are now typed `byte`, `byte`, and `byte[4]` respectively, with data comments and producer/receiver plate comments in Ghidra.
 
-`GetNetworkInputLeadByte` returns a modulo-256 difference in AL: in transport 0 it subtracts the local producer sequence from the other of the first two producer sequences; other transports subtract the consumed sequence from producer row 0. The compact receiver `ReceiveNetworkBufferedInputMessage` (`004c61e0`) sign-extends packet byte +1 before calling `UpdateNetworkInputHighWaterByte` (`004c6a10`), then reads the four-byte sample at packet +2. For transport 1 it maps the sender and applies remote lead correction under the race lock; the other transport path selects a participant row and appends the sample. This confirms signed 8-bit interpretation of the compact lead, not an unsigned delta or elapsed-time unit.
+`GetNetworkInputLeadByte` returns a modulo-256 difference in AL: in transport 0 it subtracts the local producer sequence from the other of the first two producer sequences; other transports subtract the consumed sequence from producer row 0. The compact receiver `ReceiveNetworkBufferedInputMessage` (`004c61e0`) sign-extends packet byte +1 before calling `UpdateNetworkInputHighWaterByte` (`004c6a10`), then reads the four-byte sample at packet +2. For transport 1 it maps the sender and applies remote lead correction under the race lock; the other transport path selects a participant row and appends the sample. The updater is called before peer lookup and append admission, so a candidate may raise the shared mark even if the subsequent sample append is rejected. The mark therefore does not confirm sample acceptance. This confirms signed 8-bit interpretation of the compact lead, not an unsigned delta or elapsed-time unit.
 
-The high-water updater compares signed EAX with the zero-extended stored byte and writes AL only when the candidate is greater. `ResetAndSynchronizeInputRings` (`004c63f0`) clears the byte; `ShouldDeferParticipantInput` (`004c6ae0`) can halve it, so it is not strictly monotonic across the whole input cycle. In the normal initialized state, wrapped lead values `0x80..0xff` become negative after sign extension and cannot raise a nonnegative stored mark. The handler itself does not check payload extent; dispatcher/framing and indexed-unpacker validation remain separate reachability boundaries. Static Ghidra assembly/xref evidence only, no network/Wine runtime test or executable modification.
+The high-water updater compares signed EAX with the zero-extended stored byte and writes AL only when the candidate is greater. `ResetAndSynchronizeInputRings` (`004c63f0`) clears the byte; `ShouldDeferParticipantInput` (`004c6ae0`) can halve it, so it is not strictly monotonic across the whole input cycle. In the normal initialized state, wrapped lead values `0x80..0xff` become negative after sign extension and cannot raise a nonnegative stored mark. The saved global comments at `007d3714` and `007d4714` document the separate eight-by-128 sample and ready arrays (4096 bytes each), their `0x200` row stride, initialization and append/consume roles; the direct-xref censuses are nine sites for sample storage and eight for ready flags. Those static xref counts are not runtime access counts. The handler itself does not check payload extent; dispatcher/framing and indexed-unpacker validation remain separate reachability boundaries. Static Ghidra assembly/xref evidence only, no network/Wine runtime test or executable modification.
 
 `CopyCurrentParticipantInputSample` now names its EAX index local `participantIndex`, its EDX byte-pointer parameter `outputSample`, and its source cursor `currentSampleCursor`. The loop assembly transfers exactly one DWORD (four sample bytes) per call; the helper has no local participant-index bound. These local aliases improve readability without changing the custom register-ABI caveat or proving the caller's full index domain. The saved Ghidra decompilation was read back; no executable change.
 
@@ -3638,7 +3638,7 @@ The direct-xref audit resolves the option's writer paths. `InitializeDefaultGame
 
 ### Knockout track selector and AI/traffic parameter table
 
-The global at`0056ef80` is labeled `g_aTrackAIParameterRecords` and typed as nine `TrackAIParameterRecord` entries of`0x20` bytes each. Static setter/getter use establishes DWORD fields at`+0/+4` (traffic limit and reactivation-delay range), `dwTrackPlacementMode` at`+8`, signed `nTrackAIDirectionSign` at`+0x0c`, and an opaque DWORD at`+0x10`; the setter does not write`+0x10`, and direct-xref checks at all nine row addresses (`0056ef90` through`0056f090`, stride`0x20`) found no code references. Float speed-scale fields occupy`+0x14/+0x18`, and a float-valued`+0x1c` read has an unknown semantic role. The initializer fills nine rows for race modes0..3; modes0/3 supply per-track limit/delay values, while modes1/2 supply zero for those fields. The later bit-0x20 override applies to row3 at offset`+0x60` through the same setter, so it remains inside the nine-row span; the RUSHHOUR setter override can take precedence. Offset`+0x160` begins the adjacent reciprocal table, not an extra parameter record. No role is inferred for the unreferenced field; indirect aliases or runtime/external writes are not excluded.
+The global at`0056ef80` is labeled `g_aTrackAIParameterRecords` and typed as nine `TrackAIParameterRecord` entries of`0x20` bytes each. This is a tuning-table extent, not evidence of selectable-track count or backing capacity; frontend unlock and selector domains are covered separately below. Static setter/getter use establishes DWORD fields at`+0/+4` (traffic limit and reactivation-delay range), `dwTrackPlacementMode` at`+8`, signed `nTrackAIDirectionSign` at`+0x0c`, and an opaque DWORD at`+0x10`; the setter does not write`+0x10`, and direct-xref checks at all nine row addresses (`0056ef90` through`0056f090`, stride`0x20`) found no code references. Float speed-scale fields occupy`+0x14/+0x18`, and a float-valued`+0x1c` read has an unknown semantic role. The initializer fills nine rows for race modes0..3; modes0/3 supply per-track limit/delay values, while modes1/2 supply zero for those fields. The later bit-0x20 override applies to row3 at offset`+0x60` through the same setter, so it remains inside the nine-row span; the RUSHHOUR setter override can take precedence. Offset`+0x160` begins the adjacent reciprocal table, not an extra parameter record. No role is inferred for the unreferenced field; indirect aliases or runtime/external writes are not excluded.
 
 `ReadSelectedTrackPlacementModeOrSegmentFlag` (`0040eca0`) reads row`+0x08` for signed selected-track indices below11, without rejecting negative values; for indices11 and above it returns a boolean based on the high nibble of active segment-record byte`+0x37`. `g_dwSelectedTrackPlacementMode` (`0056f228`) caches that result. `CalculateFallbackRaceStartPlacement` uses zero to select segment-derived start offsets and nonzero to select a centered placement formula. `InitializeVehicleFromTrackAssignmentRecord` and `InitializeTrafficVehicleAIState` also use the cached zero/nonzero value to govern a vehicle placement-side bit; the traffic initializer may set that bit from a random threshold only when the mode is zero. Every known call to `ConfigureTrackAIParameterRecord` in `InitializeTrackAITuningTables` passes zero for this field, including the special row override. Thus the observed default rows use segment-derived placement, while nonzero row-mode reachability and the selector's nine-row bounds remain unresolved. This field controls placement selection, not traffic density. Ghidra renamed the struct field, getter and cache and saved their evidence comments; no runtime test or executable change.
 
@@ -5967,6 +5967,44 @@ other sessions through networking. These establish axis/action
 producer roles, but callback ranges and active bindings remain open.
 No simultaneous input-pattern reachability claim. Ghidra producer
 comment saved; binary unchanged.
+
+The same collector evaluates a separate set of32 configured bindings
+and packs the nonzero results into a DWORD, with binding ordinal `i`
+ending in bit `i`. It increments `DAT_0079c4ac`, stores the mask at
+`0079c2b8 + (DAT_0079c4ac & 0x1f) * 4`, then calls the dispatcher.
+This is a 32-entry, DWORD-sized ring write; the exact-address xref
+query returned no direct references to the table base, so readers and
+full lifecycle are not established. `DAT_0079c4ac` is reset to zero
+only on the first guarded initialization through `0042dcb0` (the
+called helper preserves EDX); it is also copied to the race-loop
+watermark `007d3688`. In `RunRaceLoop` (`004c4e40`), a lead greater
+than16 fast-forwards that watermark to the collection sequence before
+the loop consumes new work. This scheduler sequence is distinct from
+the per-participant producer/consumer counters and their128-slot input
+rings described under issue #1. Candidate persistent names are
+`g_adwCollectedBindingMasks` for the ring and
+`g_nInputCollectionSequence` for the counter; neither was applied in
+the persistent Ghidra project during this pass. Fresh shipped-artifact
+Ghidra evidence: collector `ev_86770e693e2296fd19f0e3a4bbcdc497222c30aeb2cfdc58763acae0b88a2e70`, initialization `ev_f130f8dfba51acd2e950a7cdef149ae27bde2ba0d1eb7ed11de2227c25cfc744`, loop `ev_ffb9bb304d39a4f2ee419a36192a7a965db6baa5337e0d4b2610c06c35e1e08f`, and participant consumer `ev_fdb080e691017477a668ccb8604ce998ebb3db559ae9a43401e82884d9ea9111`. These dossiers came from REA's ephemeral Ghidra import; the executable is unchanged.
+
+The ring index wraps at32 entries, but the sequence and loop watermark
+use full-width signed values; the mask does not rebase their ordering.
+The eight direct-reference sites for `DAT_0079c4ac` are limited to its
+one-time guarded zeroing, per-collection increment and scheduler/input
+reads (`ev_0c1ba8d479d80b43fb8fd403447391b9d913f62d60b52edfb40dfb5d2c0bfcee`).
+A signed 32-bit wrap could therefore change the loop's lead comparison
+and `watermark <= sequence` test while the low-five-bit ring index keeps
+cycling. This is an arithmetic boundary only; counter lifetime, wrap
+reachability and runtime effect are not established.
+
+Race-loop setup also seeds the watermark: `FUN_004c4740` clears the
+loop-control counters, invokes the observed setup helpers, then copies
+`DAT_0079c4ac` to `007d3688` at `004c480d..12`; its sole analyzed caller
+is `004a33b0` (`ev_b59c71b983a266dbb4c1f273f4d5820dfdc07c8dfc1a395d3a6b7a0086f5f15c`).
+`RunRaceLoop` (`004c4e40`) takes the same snapshot at entry. This aligns
+the work watermark with the collection sequence at race setup and loop
+entry; the observed setup helper does not clear the 32-slot mask table.
+Whether any stale mask slot is subsequently consumed remains unknown.
 
 ### Binding evaluator output ranges
 
@@ -14636,6 +14674,43 @@ Fresh REA/Ghidra dossiers: result pipeline `ev_af06045e6602e0534e03fc23bc0a8db80
 - **Output:** Clamp R+10 to [-limit,+limit] for finite nonnegative limit. Nonzero raw selector optionally zeros this result when V+50d is nonzero and signed raw abs(V+4f4)<3f000000, then multiplies by stored float0.8; zero selector multiplies by float1.4. Set R+20=0,R+24=primary, call004ac3af, rotate output with the same angle, copy status to V+5c0/nonzero or V+5c4/zero. Do not reinterpret selector as float equality or assume rotation is an inverse.
 - **Validation and remaining work:** Name and comments saved and read back from live Ghidra. The current inventory has one generic function, `0047d580`; `004ad7a3` is now named and annotated. Physical units, profile/control identities, admitted capacity signs and complete delegated-helper effects remain unresolved. No Wine run or executable modification.
 
+### PlayStation handling and ABS manual cross-check — issue #13
+
+The reproduced 1998 PlayStation manual distinguishes `ARCADE` and
+`SIMULATION` as a Game Setup `STYLE` choice; it says Simulation varies
+performance and handling by circuit and is required to access Advanced
+Settings. Its Player Car menu also offers ABS ON/OFF only for equipped
+models, describing ON as preventing tire lock/skid under excessive
+braking. The manual is hosted on Manualzz, rather than an EA archive, so
+this is a manual-text reference whose scan provenance has not been
+independently authenticated. The user-referenced GameSurge guide page
+remained inaccessible during this review. Source: [PlayStation manual reproduction](https://manualzz.com/doc/7321146/electronic-arts-need-for-speed-hot-pursuit-video-game-use...)
+(Game Setup style and Player Car sections).
+
+The reproduced Windows manual documents brake-balance tuning and an
+Assists menu where `BRAKING` means computer-applied corner speed
+reduction and `TRACTION` prevents wheelspin; its described menu does not
+list an ABS toggle. This distinguishes braking assist and traction
+assist from the PlayStation manual's per-car ABS equipment switch, but a
+manual's menu description is not a complete code-level absence proof.
+Source: [Windows manual reproduction](https://oldgamesdownload.com/wp-content/uploads/Need_for_Speed_III_Hot_Pursuit_Manual_Win_EN.pdf)
+(Car Tuning and Assists sections).
+
+The PC executable's existing `usesanti` CARP field and conditional wheel
+response clamp establish an anti-lock-related per-car data path, not a
+user-selectable PlayStation-style physics mode. Ghidra's defined-string
+inventory additionally contains `kMenuCED04DBGABSEquip001` beside
+`kMenuCED04DBGBRAKES001`, `kMenuCED04DBGMaxBraki001`, and other
+`CED04DBG` brake labels. The ABS label's direct reference is a pointer
+entry at `00563568`, not a code address; its code/menu reachability and
+the labels' intended meaning are unresolved. These strings are leads,
+not proof that a debug menu is exposed. Fresh shipped-artifact REA/Ghidra
+evidence: `ev_b0ae5bf1334d525989f6cbeb760c0eb9b67251b1b6df86a4debfb9f4c5f12bfb`,
+`ev_a92e1c226264112fbfb1d158e99bd68bff6bca142605974ae67392d36012e309`,
+and `ev_2909544acc7a775f04f60562e14cfee692000c26a36a698a8971d40904fbe9ab`.
+No PSX binary comparison or runtime handling test was performed; no
+executable modification.
+
 
 ### Four-wheel orchestration frame and selector producers
 
@@ -15265,7 +15340,7 @@ The subsystem initializer `InitializeGameSubsystems004b5c00` passes global descr
 
 REA's ephemeral Ghidra FunctionManager did not assign `0041d7e4` to a procedure (`resolve_containing_procedure` returned `not_in_procedure`), although the instruction is executable and the address is supplied by initialization as a callback. The persistent project now defines the complete 47-byte entry as `RunRaceInputCollectionWorker`, with a saved plate comment and a call-site comment at `004b5d55`. `InitializeGameSubsystems` passes it in EAX to `CreateLibraryManagedThread` with stack-size0, priority code1 and descriptor `007a3aac`. The wrapper publishes the native thread handle in descriptor DWORD0, resumes the thread, then yields; this is not a worker-ready handshake. The callback creates an auto-reset, initially nonsignaled event, stores its `HANDLE` in `g_hRaceSynchronizationWorkerEvent` (`005efdf0`), and waits indefinitely on the local handle. After each wake, descriptor DWORD0 is the run sentinel: zero closes the callback-owned event and returns; nonzero calls `CollectBoundPlayerInputsAndActionHistory` (`0048f550`) and waits again. This is event-driven input collection, not a direct per-frame call. Event creation and wait results are unchecked; repeated sampling after a persistent wait failure is a conditional possibility, not runtime evidence. The global has four direct references, the type/comment audit reports no issues, and the saved worker body spans `0041d7e4..0041d812`. REA instruction evidence records the worker entry (`ev_1b8c51365e1ad7c8d0d57dc0eb1dc81ab7430950f22681cd83e7761c664a8472`), its call to the collector (`ev_4d25a8119966f2513d4c1a6f5f232a17bed7bf310fb858d566decc4151de2b8e`), startup's callback pointer (`ev_072fc7b4002d0dd0190707ada61967ada46c2745db3537f10653e44e5aba11ad`), and the ephemeral no-containing-procedure result (`ev_28c28166b591115ae4b303506b86ead4e857bf30d5c517de363cf47bc77ac13b`); startup assembly also confirms argument setup (`ev_a9825f718fe1ca8f796ad65df19c01076d7a0a7d78b198a471ca137ff26ce234`).
 
-The ordinary stop path is `ShutdownGameSubsystems004b5d84` → `RequestRaceSynchronizationWorkerStop0042dc20`. The stop routine closes the thread handle, writes zero to the descriptor sentinel, then signals `g_hRaceSynchronizationWorkerEvent` (`005efdf0`); it does not join or terminate the worker and ignores the close result. The worker later closes its event but does not clear the global handle. The stop operation is not safe to assume repeatable: a second invocation may close a null thread handle and signal a stale event handle. Only one ordinary shutdown callsite was identified, so this is a latent lifecycle boundary, not a demonstrated normal-path failure.
+The ordinary stop path is `ShutdownGameSubsystems004b5d84` → `RequestRaceSynchronizationWorkerStop0042dc20`. The stop routine closes the thread handle, writes zero to the descriptor sentinel, then signals `g_hRaceSynchronizationWorkerEvent` (`005efdf0`); it does not join or terminate the worker and ignores the close result. The worker later closes its event but does not clear the global handle. The stop operation is not safe to assume repeatable: a second invocation may close a null thread handle and signal a stale event handle. A fresh shipped-artifact Ghidra dossier identifies one direct caller, `004a3db0`, with the shutdown call at `004a3f48`, after its mode loop exits and the visible subsystem/audio teardown calls; that caller is itself referenced from `00524290` (Evidence `ev_9c25206fc4ebdb13284f6376269db66e6263b68fd7ee9579fe7ffbda7f30273d`). This narrows the observed call path to the top-level shutdown route, but does not prove that process termination or early-error paths always reach it. The dossier is from REA's ephemeral Ghidra import, so it adds no persistent Ghidra annotation in this pass. This remains a latent lifecycle boundary, not a demonstrated normal-path failure.
 
 Two additional functions signal the same event: `SignalRaceSynchronizationEvent0042dc40`, reached from `ConsumeReplicatedParticipantUpdates004c8250` when a nonlocal pending sequence is ahead and exceeds the shared sequence by more than `0x20`; and `AdvanceRaceClockCountersAndSignalEvent0042dc60`, reached by the registered race-clock callback when full-rate and half-rate counters transition to even. The clock callback is unregistered during race-session shutdown, but no in-flight callback drain is shown. The signal cadence is statically expressed in callback-counter parity; no wall-clock sampling rate is established.
 
@@ -15455,6 +15530,16 @@ Let P be the original participant producer and B=`producer[0]`. When the strict 
 The direct-xref inventory for ready flags shows initialization, regular append, this remote append, missing-sample fallback, and consumption as the complete current set of references. Initialization marks slots0..3 ready and sets each producer to4 while the shared consumer starts at0. Regular append checks the producer slot before writing and advances by one; consumption clears the consumed sequence for each configured row and advances the shared consumer. In the ordinary contiguous, nonwrapped pending interval, lead correction changes sample contents but preserves the occupied slot interval, so the ready bitmap need not move. The adjusted tail slot is not rechecked locally; validity of that ready interval remains an upstream ring invariant, not a guarantee made by this helper. Signed absolute-counter wrap and malformed producer/consumer state are outside this conclusion.
 
 Ghidra's function plate and repeatable comment at the shift loop now record the exact bounds, sample movement, and qualified ready-flag interpretation. Static assembly and xref review only; no network/runtime behavior or defect is claimed.
+
+### Input sequence counter widths and signed-wrap boundary — issue #1
+
+`g_nParticipantInputProducerSequences` (`007d5718`) is `int[8]`; `g_nConsumedInputSequence` (`007d5714`) is a signed 32-bit `int`. `ResetAndSynchronizeInputRings` (`004c63f0`) sets all eight producers to4 and the consumer to0. `AppendParticipantInputSample` increments the selected producer after a successful append; `BuildNetworkInputFrameWithFallback` also increments rows when filling a missing ready slot. The consumer advances by one in `ConsumeParticipantInputSequence`. No epoch extension or explicit counter rebase appears in these globals' direct-reference inventories beyond synchronization reset; pointer aliases or writes outside the current program-analysis boundary are not excluded.
+
+Reset cadence is bounded by its sole direct caller, `RunRaceSession` (`004a3690`): call site `004a37de` is inside the outer session loop immediately before `RunRaceLoop`. If loop-control global `007d3698` remains nonzero after the loop, session reinitialization repeats and reaches the reset again. `InitializeRaceSimulationCallbacks` sets that control to1; pause-menu paths also write it, but their UI meanings are not inferred here. For race-playback selector values `>=2`, the reset function returns early after clearing only `g_nLatestAvailableInputSequence`; it leaves producer and consumer counters unchanged. Thus normal-mode counters get a reset at each loop entry, not continuously during one uninterrupted loop, and playback paths do not share that reset behavior. Ghidra EOL at `004a37de` records this caller-level boundary.
+
+The sample and ready-array indices use `sequence & 0x7f`, giving an explicit 128-slot ring wrap. That mask is distinct from full-width comparisons: `ShouldDeferParticipantInput` compares signed producer/consumer counters and adds signed lead limits, `AppendRemoteInputSampleWithLeadCorrection` uses a signed comparison of `P` against `producer[0] + tolerance`, and `GetNetworkInputSyncTargetSequence` returns signed `producer[0] + 2`. Compact type-6 lead generation uses only low-byte differences, then the receiver sign-extends that byte. Thus modulo-128 storage, low-byte wire lead and signed 32-bit throttle ordering are separate domains. Crossing the signed 32-bit boundary can change comparison outcomes even while masked ring addresses continue cycling; the exact lifetime, synchronization guarantees and runtime effect have not been tested. This is a static boundary, not evidence of a reachable defect. Ghidra global comments record the counter widths, reset values, increment sites and direct-xref counts.
+
+The separate scheduler value `g_nLatestAvailableInputSequence` (`00560104`) is also a signed 32-bit `int`, but it is not interchangeable with a producer or consumer counter. Its 11 direct references include reset assignments to3/0, increments in input/frame paths, producer-derived assignments in `AppendParticipantInputSample`, and a replay-state reset in `RunRaceLoop`. In one network/session branch, `AppendParticipantInputSample` selects the signed minimum of producer rows0 and1, subtracts1, and overwrites this value at `004c6660`; it can therefore move backward. At `004c4e98..004c4ebd`, `RunRaceLoop` computes `value*2` with a 32-bit `ADD`, compares the target using signed arithmetic against the clock delta, and may add one. The doubled target can overflow at `value >= 0x40000000`; no saturation or explicit overflow branch is present in this path. This is a static arithmetic boundary only: value reachability, counter lifetime, scheduler consequences and timing units remain unvalidated. Ghidra records the xref summary on the global and EOL notes at `004c6660` and `004c4e9d`.
 
 ### Session and transport input-defer policy — issue #1
 
