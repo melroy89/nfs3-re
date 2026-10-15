@@ -5970,41 +5970,136 @@ comment saved; binary unchanged.
 
 The same collector evaluates a separate set of32 configured bindings
 and packs the nonzero results into a DWORD, with binding ordinal `i`
-ending in bit `i`. It increments `DAT_0079c4ac`, stores the mask at
-`0079c2b8 + (DAT_0079c4ac & 0x1f) * 4`, then calls the dispatcher.
-This is a 32-entry, DWORD-sized ring write; the exact-address xref
-query returned no direct references to the table base, so readers and
-full lifecycle are not established. `DAT_0079c4ac` is reset to zero
-only on the first guarded initialization through `0042dcb0` (the
-called helper preserves EDX); it is also copied to the race-loop
-watermark `007d3688`. In `RunRaceLoop` (`004c4e40`), a lead greater
-than16 fast-forwards that watermark to the collection sequence before
-the loop consumes new work. This scheduler sequence is distinct from
-the per-participant producer/consumer counters and their128-slot input
-rings described under issue #1. Candidate persistent names are
-`g_adwCollectedBindingMasks` for the ring and
-`g_nInputCollectionSequence` for the counter; neither was applied in
-the persistent Ghidra project during this pass. Fresh shipped-artifact
-Ghidra evidence: collector `ev_86770e693e2296fd19f0e3a4bbcdc497222c30aeb2cfdc58763acae0b88a2e70`, initialization `ev_f130f8dfba51acd2e950a7cdef149ae27bde2ba0d1eb7ed11de2227c25cfc744`, loop `ev_ffb9bb304d39a4f2ee419a36192a7a965db6baa5337e0d4b2610c06c35e1e08f`, and participant consumer `ev_fdb080e691017477a668ccb8604ce998ebb3db559ae9a43401e82884d9ea9111`. These dossiers came from REA's ephemeral Ghidra import; the executable is unchanged.
+ending in bit `i`. It increments `g_dwInputActionHistorySequence`
+(`0079c4ac`), stores the mask at
+`g_dwInputActionMaskHistory[sequence & 31]` (`0079c2b8`), then calls
+the dispatcher. The persistent Ghidra project types the history as
+`uint[32]` and the producer sequence as `uint`; the separate consumer
+watermark `g_nInputActionHistoryIndex` (`007d3688`) is an `int`. The
+first guarded initialization zeros the producer sequence through
+`0042dcb0`; the ring itself is not cleared by the observed race setup.
+This scheduler sequence is distinct from the per-participant
+producer/consumer counters and their128-slot input rings described
+under issue #1.
+
+### Action-mask history consumers and scheduling — issue #14
+
+`CheckActionMaskStateOrRisingEdge` (`0048f7b0`) reads the current
+32-slot action-mask history using `g_nInputActionHistoryIndex & 31`.
+Its incoming action ordinal is masked to five bits before forming a
+bit mask. With its EDX mode argument zero it returns1 when that bit is
+set in the current row (held state). With nonzero EDX it returns1 only
+when the current row has the bit and the previous sequence row does
+not (a rising edge). Its observed callers include `RunRaceLoop`,
+`TryEnterRacePauseMenu`, `ProcessPausedRaceKeyboardControls`, and
+`UpdatePlayerRaceSpeechAndMusicEvents`; the many callsites demonstrate
+shared use. Caller sites map a subset of ordinals below; a complete
+action map, physical-key mapping and caller-specific input modes remain
+unresolved.
+
+Caller instructions identify a partial set of internal action ordinals
+and downstream effects. These ordinal values select bits in the global
+32-bit action-history rows; they are distinct from the eight-bit
+per-player mask stored in replay/input sample byte+3 and do not by
+themselves identify a physical key or user-facing control label.
+`ProcessPausedRaceKeyboardControls` queries ordinal `0x01` as a rising
+edge while the race menu is hidden, then toggles the hidden-menu state.
+In `RunRaceLoop`, held ordinals `0x07` and `0x08` call
+`AdjustActiveViewportGeometry` with positive and negative directions;
+rising ordinal `0x09` calls `AdvanceSelectedParameterPreset`, which
+cycles its selector modulo4 for prior values0..3 before applying the
+selected record.
+Rising ordinal `0x0b` calls `TogglePrimaryViewVariantFlagAndRefresh`;
+`0x0c` and `0x0d` call `ToggleViewLayoutFlagAndRefresh` with selectors0
+and1; `0x0e` calls `SynchronizeTwoViewHudLayoutState`; and held
+ordinals `0x0f`/`0x10` call `AdjustScaleSettingsForLocalViewports` with
+selectors0/1. Rising ordinal `0x12` toggles configured vehicle-effect
+volumes, while `0x14` toggles configured stream volume. Ordinals
+`0x15` and `0x17` are sampled as held states into
+`g_anViewportHeldActionResults: int[2]` at `0079c4a0` (`0x17` only in
+session mode1). `RunRaceLoop` writes element0 from ordinal `0x15` and
+element1 from `0x17`; the viewport gate at `00422aa0`, scene-transform
+code and render-history helpers access the cache by viewport stride.
+This supports the array layout and held-action role, but the exact
+control labels and gated visual feature remain unresolved. Ghidra
+records 16 direct references and the documented writer/consumer sites;
+REA xref evidence is
+`ev_51418cd2759ccb042186a4af479f08e5c55951d85f19d1c4d2a95b545b229105`.
+Rising ordinal `0x16` and rising ordinal `0x18` (the latter only in
+session mode1) invoke `AdvanceParticipantViewportSceneMode`; no
+user-facing scene or camera label is inferred. In the audio controller,
+rising ordinals `0x02`/`0x03`/`0x04` gate distinct race-speech helper
+calls, and rising `0x13` toggles a DWORD state before a mode-3 callback; the semantic
+names of those actions remain unverified.
+
+This mapping is based on immediate values and local call effects in
+`RunRaceLoop`, `ProcessPausedRaceKeyboardControls`, and
+`UpdatePlayerRaceSpeechAndMusicEvents`, not a complete action table.
+The `0x09` path is a confirmed connection to the optional preset
+proposal (GitHub issue #16). `AdvanceSelectedParameterPreset`
+increments the DWORD at `006fbc28`, performs signed `IDIV 4`, and stores
+the signed remainder; prior values0..3 therefore cycle0→1→2→3→0.
+Negative or out-of-range values are not normalized to0..3 by that
+operation. `ApplySelectedParameterPreset` uses the selector with a
+0x40-byte stride into static data and applies mode-dependent offsets,
+but the preset labels and meaning of the records remain unresolved.
+This does not prove a user-facing preset menu or that every selector
+value is valid. Evidence IDs:
+`RunRaceLoop` `ev_540fb84f787529be7d5cd2454821378ea484c0f5df89fa46801c43a5fde4b5a5`,
+paused controls `ev_a6cdbf25b2aeaf1cec21bf87236b6397a3caaf00714ae7b137da46a2a8c287a0`,
+audio controller `ev_4ab4003ec02b3f6e6f23be588ab62c253458aa8152bd3366aff05b82e219f8f5`,
+and preset advance `ev_2d55a0f035ffe93f381f855cd13b0e08a0eb29c15c9e2dbde4d1138f89892110`.
+
+`ResetSimulationAndInitializeRaceSubsystems` (`004c4740`) snapshots
+the producer sequence into the consumer watermark during setup, and
+`RunRaceLoop` (`004c4e40`) snapshots it again at entry. During the loop,
+if signed `producer - watermark` is greater than16, the watermark is
+advanced directly to the latest producer value. Otherwise action
+consumers run while the watermark is no greater than the producer,
+then the signed watermark increments by one per processed pass. The
+ring slot uses only the low five bits, independently of the full-width
+sequence ordering. This establishes a bounded catch-up policy that can
+skip older action-history rows when lag exceeds16; it does not establish
+a wall-clock sampling cadence or that every input row is consumed.
+
+Evidence: fresh REA shipped-artifact Ghidra dossiers for the collector
+`ev_a2d1ee298ea4c7834cade0678348ee6948f4fdc7d2e64d0f56e9e64e67e94d1b`,
+the action reader `ev_8535a47a5a63f12e71c221a7cf603e51430c2a33fe6f2e43073668880dd9a917`,
+its code references `ev_98cc0a9515299431af5133744bcab03c7fa40ae909cb8ca14502b96556657073`,
+and the race loop `ev_540fb84f787529be7d5cd2454821378ea484c0f5df89fa46801c43a5fde4b5a5`.
+These are static observations from an ephemeral Ghidra import of the
+same executable; the persistent Ghidra project carries the descriptive
+names and comments. Action-bit mapping, signed sequence-wrap behavior,
+thread synchronization, runtime cadence and the ring's behavior under
+concurrent sampling remain unvalidated. No runtime or executable
+changes were made.
 
 The ring index wraps at32 entries, but the sequence and loop watermark
-use full-width signed values; the mask does not rebase their ordering.
-The eight direct-reference sites for `DAT_0079c4ac` are limited to its
-one-time guarded zeroing, per-collection increment and scheduler/input
-reads (`ev_0c1ba8d479d80b43fb8fd403447391b9d913f62d60b52edfb40dfb5d2c0bfcee`).
-A signed 32-bit wrap could therefore change the loop's lead comparison
-and `watermark <= sequence` test while the low-five-bit ring index keeps
-cycling. This is an arithmetic boundary only; counter lifetime, wrap
-reachability and runtime effect are not established.
+use full-width values; the mask does not rebase their ordering. Direct
+references to the sequence include initialization, per-collection
+increment and scheduler/input reads
+(`ev_0c1ba8d479d80b43fb8fd403447391b9d913f62d60b52edfb40dfb5d2c0bfcee`).
+Some consumer arithmetic uses signed comparisons, while the stored
+producer global is typed unsigned to reflect its incrementing DWORD;
+instruction-level signedness therefore governs the lead and ordering
+branches. A signed 32-bit wrap could change those comparisons even as
+the low-five-bit ring index continues cycling. This is a static
+arithmetic boundary only; counter lifetime, wrap reachability and
+runtime effect are not established. Race-loop setup and entry both
+seed the watermark; whether any stale mask slot is subsequently
+consumed remains unknown.
 
-Race-loop setup also seeds the watermark: `FUN_004c4740` clears the
-loop-control counters, invokes the observed setup helpers, then copies
-`DAT_0079c4ac` to `007d3688` at `004c480d..12`; its sole analyzed caller
-is `004a33b0` (`ev_b59c71b983a266dbb4c1f273f4d5820dfdc07c8dfc1a395d3a6b7a0086f5f15c`).
-`RunRaceLoop` (`004c4e40`) takes the same snapshot at entry. This aligns
-the work watermark with the collection sequence at race setup and loop
-entry; the observed setup helper does not clear the 32-slot mask table.
-Whether any stale mask slot is subsequently consumed remains unknown.
+Race-loop setup also seeds the watermark: `ResetSimulationAndInitializeRaceSubsystems`
+(`004c4740`) clears loop-control counters, invokes the observed setup
+helpers, then copies the producer sequence to the consumer watermark at
+`004c480d..12`; its sole analyzed caller is `004a33b0`
+(`ev_b59c71b983a266dbb4c1f273f4d5820dfdc07c8dfc1a395d3a6b7a0086f5f15c`).
+The eight direct-reference sites for the producer sequence are limited
+to its one-time guarded zeroing, per-collection increment and
+scheduler/input reads
+(`ev_0c1ba8d479d80b43fb8fd403447391b9d913f62d60b52edfb40dfb5d2c0bfcee`).
+The observed setup helper does not clear the 32-slot mask table.
+Whether a stale slot is consumed after setup remains unknown.
 
 ### Binding evaluator output ranges
 
@@ -15410,6 +15505,26 @@ All four roster builders—`BuildRegularRaceRoster` (`00473bf0`), `BuildRaceMode
 `BuildHotPursuitRoster` (`00474640`) branches on the selected human car's police flag in local single-player. With a human racer, the baseline branch configures one AI racer, six AI police and four traffic cars; with a human police car, it configures six AI racers, no AI police and one traffic car. Add the one human participant to those class counts. The common traffic-construction gate drops traffic and resets its count when `g_nTrafficDisabled` is nonzero.
 
 The `0055eb2e & 0x20` branch is a separate special configuration: it selects Aggressive skill and overwrites the local role budgets with two AI police and three traffic cars, while preserving the role-specific AI-racer value. It also clears `g_nTrafficDisabled`, so its traffic count passes the final construction gate. The flag's user-facing meaning remains unproved.
+
+The byte is now named `g_bCrossSystemFeatureFlags` and typed `byte` in
+Ghidra, without assigning a specific product or menu identity. Its
+bit0x20 gates the roster branch above and separate paths in
+`InitializeTrackAITuningTables`, `CalculateAISpeedIndexedAcceleration`,
+roadblock assignment, `RunRaceLoop`, configuration/loading, frontend,
+vehicle and network routines. The persistent Ghidra project lists46
+direct references, all reads; no direct writer was found. REA's
+separate xref dossier lists45 references and omits Ghidra's
+`0043f830` reference in `HandleNetworkTransportMenuCallback`; REA
+instruction inspection at that address did not decode it. The provider
+inventory discrepancy remains unresolved, so counts are provider-
+specific. The mapped byte at `0055eb2e` is0 in the shipped image. This
+is static initial state, not proof the bit remains clear at runtime:
+indirect/bulk writes, external patching and other runtime mutation are
+not excluded. The flag owner and reachability of these special branches
+remain unresolved. This byte is distinct from `g_dwAISkillSelection`,
+which stores the selected Normal/Aggressive menu value. REA xref
+dossier: `ev_abed508d9dd134fbed6d7309f7ec02437bff3319e4681fdef55e9157d1f7dc09`.
+No executable bytes were changed.
 
 Split-screen mode has three fixed role outcomes after classifying its two humans. Two human racers configure zero AI racers, six AI police and four traffic (12 total before the common traffic gate). Two human police configure six AI racers and no AI police or traffic (8 total). A mixed racer/police pair configures six traffic and no AI classes (8 before traffic gating, or 2 when traffic is disabled). These are configured counts, not backing-array capacities.
 
