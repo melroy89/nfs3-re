@@ -9832,7 +9832,7 @@ Removal uses sentinel eight and decrements even when no member is found. Interce
 
 Pair-distance rejection is signed>=400 only. Unlikeintercept, radio stage continues allocation in same call. Byte7 sidepolicy resolved via00403180: nonzero0.25-turn/zero0.75-turn rotation afterparticipantdistance>=240 gate. States8->9->10->11 linkinterval,+7c4 threshold6.5,reorientation andtriplestopdamping; targetacquisition divertsstate5.
 
-State9+7c4 is magnitude-like currentmotion outputfromsignedintegrated+7c0 (`00406870`), distinctfromdesired+7b0 andnotatimer; physicalunitsunproven. Alternateproducer0042ce70 recoveredandnamed: registeredracecallbackloops005efac8/count005efd9c, activebyte+89; signed+7c0=dot(velocity+a4,axis+13c), magnitude-like+7c4. Also updateslane/lateral/orientation scalars; axisnormalization,units,listmembership andcallbackcadence remainunverified. Helpers0042cdd0/0042cd00 namedwithnumericalcontracts.
+State9+7c4 is magnitude-like current-motion output from signed integrated+7c0 (`00406870`), distinct from desired+7b0 and not a timer. The participant-measurement formatter scales the same+7c4 field by its M/K conversion factors, strongly supporting an internal metres/second interpretation, though labels remain undecoded. Alternate producer `UpdateActiveVehicleTrackAndMotionScalars` (`0042ce70`) is a registered race callback over `005efac8`/`005efd9c`, gated by vehicle byte+89; signed+7c0 is a dot product of velocity+a4 with track-motion axis+13c, and+7c4 stores the sign-selected magnitude-like value. This makes+7c4 a longitudinal track-axis scalar, not total 3D speed. Units are likely m/s only if that axis is normalized. `PlaceVehicleAtTrackSegment` initially normalizes its packed basis rows, but its subsequent `BuildVehicleTrackTransform` call replaces them from the track-query basis without a following normalization in that path; therefore the normalized-axis condition is not established for all active vehicles. Axis normalization, list membership and callback cadence remain unresolved. Helpers `ProjectVehicleVelocityOntoMotionAxis` (`0042cdd0`) and `CalculateWeightedAbsoluteVehicleAxisProjection` (`0042cd00`) retain their numerical contracts. REA exact store evidence: AI integration `00406870` `ev_510fcd834fbbfa64de332705688b0571c96c3e669080410709202fbad9f56ac6`; active-vehicle callback `0042cf25` `ev_8c8b86c37c38b5d98e4922d55ff4d8dc6f82efccdf4b1a044c43ca35fa8d0ee0`.
 
 Pursuit-assist reset chain `00405220` -> `00429100`: reference-segment write precedes reset guards and accepted reset adds a direction-dependent segment offset.
 
@@ -11212,7 +11212,7 @@ Rechecked00495a10 initializer and all current xrefs to clock accumulator, latest
 
 - **Function:** `00485180`, `FormatHudVehicleMeasurementRecord` (formerly generic).
 - **Evidence:** Parent full assembly `00485180..0048535f` and raw format-string bytes. Inputs are EAX view, EDX signed slot, ECX vehicle, EBX metadata. Slots at least eight clamp to seven; negative values are not clamped. Null vehicle clears only its separate pointer-table entry. Otherwise fills metadata and vehicle reference in a view-stride `0x140`, slot-stride `0x28` record and formats scaled/truncated vehicle measurements.
-- **Caveats:** The extended-path selector compares signed raw bits at vehicle `+0x6f0` against `0x40000000`, not float magnitude. Both format strings begin and terminate with `%d %s`; extra pushed variadic arguments do not prove additional visible text. Exact units, metadata identity and buffer capacity remain unresolved. Evidence-backed plate and project saved; executable unchanged.
+- **Caveats:** The extended-path selector compares signed raw bits at vehicle `+0x6f0` against `0x40000000`, not float magnitude. Both format strings begin and terminate with `%d %s`; extra pushed variadic arguments do not prove additional visible text. The normal path scales vehicle float `+0x7c4` with the selected M/K display factor (`2.236900091` or `3.599999905`), truncates the product, and formats it with the corresponding localized string. These values strongly support an internal metres/second speed converted to mph or km/h, but this remains an inference because IDs `0x156/0x157` are not decoded. Metadata identity and buffer capacity remain unresolved. REA instruction evidence: multiplier selections `ev_84880f4ed0d0b3e30a4cfe09edd47bb1238ac0be2c9e9f086dfe10aa878fbf90`, `ev_1094edef19679c9cff8631711ab193983aa381111d12d5f40468c9f8aeaf492e`; `+0x7c4` load `ev_f099c4348f9ca0daca7b21f4b9721fa9487e12519213b4e17664116a084dca94`. Evidence-backed plate and project saved; executable unchanged.
 
 ### Visible HUD rectangle quad refresh
 
@@ -13591,8 +13591,8 @@ Fresh REA/Ghidra dossiers: result pipeline `ev_af06045e6602e0534e03fc23bc0a8db80
 
 - **Function:** `004066c0 IntegrateAIDesiredSpeedApproach`.
 - **Evidence:** Seven variable aliases; fresh assembly at `00406844` through RET `0040687d`.
-- **Behavior:** Names expose direction-adjusted error, direction float, helper result, merged register roles and magnitude-like output. Corrected inconsistent later plate sentence: FLDZ/FCOMP followed by JAE takes the sign-flip path for ordered zero/negative; ordered positive and unordered comparisons copy current-speed bits. Earlier plate sentence already described this correctly.
-- **Limits:** This is not unconditional fabs, and merged-register aliases do not repair the source ABI. Runtime and physical units remain deferred. No executable modification.
+- **Behavior:** Names expose direction-adjusted error, direction float, helper result, merged register roles and `magnitudeLikeCurrentTrackSpeed: float`. The local is the sign-selected output from signed integrated+7c0 written to vehicle+7c4. Corrected inconsistent later plate sentence: FLDZ/FCOMP followed by JAE takes the sign-flip path for ordered zero/negative; ordered positive and unordered comparisons copy current-speed bits. Earlier plate sentence already described this correctly.
+- **Limits:** This is not unconditional fabs, and merged-register aliases do not repair the source ABI. The shared participant-measurement formatter applies mph/km/h-like factors to+7c4, supporting m/s as an inference but not proving the axis normalization, units or runtime behavior. No executable modification.
 
 ### Braking magnitude variable roles and raw motion test
 
@@ -15514,11 +15514,18 @@ roadblock assignment, `RunRaceLoop`, configuration/loading, frontend,
 vehicle and network routines. The persistent Ghidra project lists46
 direct references, all reads; no direct writer was found. REA's
 separate xref dossier lists45 references and omits Ghidra's
-`0043f830` reference in `HandleNetworkTransportMenuCallback`; REA
-instruction inspection at that address did not decode it. The provider
-inventory discrepancy remains unresolved, so counts are provider-
-specific. The mapped byte at `0055eb2e` is0 in the shipped image. This
-is static initial state, not proof the bit remains clear at runtime:
+`0043f830` reference in `HandleNetworkTransportMenuCallback`. The
+persistent project decodes this as `TEST byte ptr [0055eb2e],0x10`. In
+the callback's event-code1, selected-option0 and transport-selector0
+path, a set bit sets `g_nRaceMode` to3, marks the callback handled and
+returns5. This establishes the local branch effect, not the flag's
+user-facing meaning. REA's exact instruction probe reports this address
+undecodable and its xref inventory omits the reference. The provider
+inventory discrepancy remains unresolved, so counts are provider-specific. REA
+evidence: xrefs `ev_79bcab34e84cad0eb1b39e08bc9c093621b5ea9db0d57561f9a70d002d59850d`,
+instruction probe `ev_26e64cdc2296776d406b13250391aabb795c103e89f8fd29c613807343b2c884`.
+The mapped byte at `0055eb2e` is0 in the shipped image. This is static
+initial state, not proof the bit remains clear at runtime:
 indirect/bulk writes, external patching and other runtime mutation are
 not excluded. The flag owner and reachability of these special branches
 remain unresolved. This byte is distinct from `g_dwAISkillSelection`,
@@ -15709,6 +15716,8 @@ The skill-adjusted `+0x10` row field at `0056ea80` still has only its initialize
 In `UpdateOpponentTargetCountdownAndProximityEvent` (`00404840`), Ghidra now types the incoming EAX vehicle local and the first-player pointer as `void *`, keeps the opening-window helper result as `int`, and names/types the float scratch as `signAdjustedVehicleField7B0`. Assembly shows the scratch is assigned `-vehicle+0x7b0` when the ordered float is `<=0`, and otherwise copies the field unchanged; NaN therefore follows the unchanged branch. The helper's return is tested for exact zero before the subsequent timed-event and audio paths. These local annotations clarify the gate's data flow but do not resolve the register ABI, field meaning, audio event semantics or runtime behavior. Project saved; executable unchanged.
 
 In its downstream acceleration consumer, `CalculateAISpeedIndexedAcceleration` (`004064f0`), Ghidra now types the EAX vehicle as `void *`, the bounded speed-table index and raw relative-segment difference as `int`, and the adjusted and returned acceleration values as `float`. This aligns with the assembly's indexed float load, signed index/segment branches and stored float modifiers before the x87 ST0 return. The existing instruction comment at`004065bd` already captures the positive-`+0x6e4` multiplier `0x3fa66666` (~1.3) and its observed producers; the local typing does not infer acceleration units or prove an in-game difficulty effect. Saved and read back in the live project; no executable modification.
+
+The later alternate acceleration path at `0040667b` requires both `g_bCrossSystemFeatureFlags & 0x20` and vehicle flags `+0x200 & 0x20`. It compares the vehicle float at `+0x7c4` against the newly named `g_dCrossSystemAccelerationThreshold: double` (`00536274`, value20.0). `JBE` skips scaling for ordered values at or below20.0 and for unordered comparisons; only ordered values above20.0 reach the multiply by `g_dCrossSystemAccelerationMultiplier: double` (`0053627c`, value0.5). Each constant has one direct read xref in this function; raw mapped bytes and exact `FCOMP`/`FMUL` operands corroborate the double width. REA instruction evidence: comparison `ev_e854d60d5a13182d275e363ed1fb479e709e22299552772e2fa0670647b071fb`, multiply `ev_3bae4f3f6c72bfc5bf0976a043645b2f38d6deef07f8f980f97dc6f97f36fab3`. The separate participant-measurement formatter applies m/s-to-mph/km/h-like factors to the same `+0x7c4` field, so20.0 is likely m/s; unit labels and this interpretation remain inferred. Feature ownership and runtime reachability remain unknown; this is a static alternate path, not proof of a player-visible setting or behavior.
 
 ### Current Ghidra function-name inventory snapshot
 
