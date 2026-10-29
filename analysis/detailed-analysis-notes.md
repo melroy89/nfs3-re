@@ -15932,3 +15932,37 @@ The earlier direct-xref gap is narrowed: `006fd2ac` is configuration offset `0x1
 ### Normal AI difficulty gameplay follow-up
 
 [AI difficulty and profile controls](ai-difficulty-gameplay-controls.md) separates the Normal/Aggressive ordinal006fd4f0, profile-key tuning, CrossSystem0055eb2e and MADLAND006fd4fc flags, and police construction/escalation. Parent Ghidra decompilation review corroborated00404690/00404a00/004064f0; assembly00404a36..00404ad0 and00406584..004065cf confirms the skill/target gates and float-store acceleration modifiers. Installed opponent.mnu binds both skill controls to listname=ai. Timer callback cadence and physical/progress units remain unresolved; no live comparison performed.
+
+
+### Gameplay-assist localized menu crosswalk
+
+[Gameplay assist menu crosswalk](gameplay-assist-menu-crosswalk.md) resolves six level.mnu controls through descriptor+0x10 storage and token table00561c44 to installed English text. Collision006fd484 is explicitly Collision Recovery (ID57f), ordinal0Off/1On; regular builder copies it to006fd4a0. Pursuit help says Teleports Cop after a bust, but does not identify the actual relocation instruction. Active-assist bits are stored as record metadata, not locally rejected by record creation. No live settings or effect comparison sampled.
+
+
+### Normal traffic options follow-up
+
+[Traffic density and option behavior](traffic-density-options-behavior.md) maps descriptor0055667c: keytraffic/list005561ca/storage006fd4e8, On0/Off1. Parent reviewed ordinary/HP builders and reactivation/getter paths. Ordinary solo trafficOn allocates7/6/0 records with None/One/FullGrid opponents; localHP racer budget1human+1AIracer+6police+4traffic differs from police budget1human+6AIracers+1traffic. Track caps do not allocate roster entries. Raw initializer EBX values at0040e4bc..0040e5f4 and0040e61b..0040e753 confirm identical normal mode0/3 base delay vectors[40,120,80,100,40,120,80,80,20]. Mode3 row4 is40, correcting the preliminary120 transcription. Visible population and wall-clock cadence remain unobserved.
+
+
+### Normal multiplayer discovery follow-up
+
+[Multiplayer discovery and join options](multiplayer-discovery-options.md) separates IPX provider-backed game-list refresh/selected-record join from TCP manual-address entry and port selection9803/1030. Parent reviewed key chains and recovered InitializeTCPConnectionDialog0043fe50 (140bytes) and HandleTCPConnectionDialogSelection0043f760 (105bytes), with custom ABI comments saved/read back. Both exact boundaries were checked against original PE objdump. No direct ingress to0043fe50 was found by refreshed xref query; direct connect.mnu tcp/racenet registration remains open. Legacy NPS export names are not proof of an operating public lobby; no online tournament service or actual connection was established.
+
+
+### Traction assistance direct physics consumers
+
+[Traction assistance gameplay behavior](traction-assist-gameplay-behavior.md) connects level.mnu traction006fd488 to ordinary runtime006fd4a4 (HP clears). All five direct physics reads reviewed: three coefficient gates004aacfa/004aad7d/004aae13 and two limiter gates004ac588/004ac8d8. Raw constants0053dcf8/fc/dd04 are3fb47ae1 (~1.41); this scales selected coefficients, not proven universal grip. Separate006fd4fc bit01 can trigger the wheel-coefficient multiplier. Physical units, live input/effect and PSX comparison remain open.
+
+
+### Braking assist and AI progress units
+
+[Braking assist](braking-assist-gameplay-behavior.md) identifies effective006fd490 as an automatic track-speed gas/brake aid plus setup-time frontbia+0.05/gtransfe-0.05 adjustments, separate from usesanti. Parent reviewed004a9bc4 admission and004a78d6 adjustments. [AI units](ai-acceleration-gameplay-units.md) gives progress+8=vehicle204*N+segmentTerm (or0 when208>0), confirmed from selected original bytes0042ce10..62; the >100 Normal gate is segment-step progress. Longitudinal+7c4 remains physically uncalibrated and even-tick scheduling does not establish Hz.
+
+### Connect initializer active-build correction
+
+Parent verified selected nfs3.exe SHA2a20f804... descriptor00555f00 points at004405c0/00440730. Initializer004405c0 registers TCP0043fe50 at004406ee, modem0043ff50 and serial0043fee0. Active004406c7 jumps to004406de, skipping NOPs where backup nfs3_org.exe SHAb390be67... contains a RaceNet store. Backup registration cannot establish active RaceNet routing. [Crosswalk](connect-menu-dispatch-crosswalk.md) corrects that provenance error. Parent recovered/annotated InitializeConnectPlayersMenuCallbacks004405c0; autoanalysis discovered10 further generic routines, queued for bounded helper review. This supersedes the earlier unresolved TCP registration while leaving RaceNet and actual provider success open.
+
+
+### Connect catalog helpers: first reviewed batch
+
+[Connect/provider helper audit](connect-provider-helper-audit.md) records five newly discovered functions. Parent corrected service rows to44bytes, indexed name rows to30bytes and Modem empty-list gate to disable, then named/annotated HasNetworkServiceSelectorAfterCatalogInit0049e360, RefreshNetworkServiceCatalog0049f030, InitializeNetworkServiceCatalogIfEmpty0049f150, PopulateIndexedProviderNameList004c41d0 and EnumerateNetworkProviderCandidates004f4c70. Five further helpers remain pending. Current function inventory4329/list4122 includes these discoveries; no code-discovery completeness is claimed.
