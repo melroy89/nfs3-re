@@ -50,3 +50,15 @@ service ev_d85c67f9fa9b5a0f6579deeefa2580876628ebd85987af9b9107ad559eb35115.
 These are static provider pseudocode observations, not execution traces.
 Backend errors, stalled cursor or unavailable fill regions can bypass this
 route; none was captured in the historical slowdown. Its cause remains open.
+
+
+## Zero-delta and effective-volume narrowing
+
+Parent follow-up inspected live Ghidra pseudocode for004e9420/005014a0 and independently decoded original bytes005014a0..00501537 with objdump. At stop target0 and duration100, for a stable nonnegative current16.16 value C, signed truncation gives delta=-C/100. Delta is zero only for C0..99; those values have C>>16=0. Effective-volume recomputation at005014b5..005014e8 multiplies that shifted value by the other factors, so its initial effective byte becomes0. Optional modulation via record+58 multiplies this byte and therefore preserves0. The final optional response table at record+4c can replace0 with table[0] (00501526..31).
+
+Therefore a zero delta alone does not imply a persistently positive effective byte after recomputation when C is nonnegative and response mapping is absent or table[0]=0. This is a conditional arithmetic result, not a closure of the hang: zero delta may bypass recalculation in the service path, an earlier effective byte may remain stale, table[0] can differ, and concurrent writes/service eligibility are not captured. Negative or mutated inputs fall outside the bounded argument.
+
+A future read-only capture should retain the selected music handle00564690, target00564702, sound initialization state, all16 raw0x60-byte voice records at00a09b3c, and caller polling/service progress. In each eligible voice retain handle+0, state+0c, delta+18, target+1c, current+20, effective byte+31 and response/modulation pointers+4c/+58. Resolve the selected handle through the validated handle contract; do not assume its raw value is a row index. For a mapped response table record table[0] only after verifying readable mapping. Samples are asynchronous and cannot establish writer order. No game was running during this pass; cause remains OPEN.
+
+
+Capture preparation: `analysis/scripts/sample_music_shutdown.py` implements the bounded fixed-map voice snapshot above. CLI help and three invalid duration/interval cases passed without creating output. Live memory acquisition remains NOT RUN until the game is launched and readiness verified. The user has been asked to wait at the main menu; no race action requested before capture.

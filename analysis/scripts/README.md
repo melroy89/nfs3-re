@@ -128,3 +128,15 @@ It reports file hash, glyph counts, vector finiteness, triangle-index bounds and
 The glyph helper additionally derives exact zero-area triangle counts and host binary64 normal lengths from stored binary32 values. These diagnostics do not model original x87 normalization or prove triangle winding. An outside-repository rerun reproduced the report exactly.
 
 Glyph winding diagnostics compare stored face normals with `(v1-v0) × (v2-v0)` using host binary64. Sign/cosine results describe the cached asset convention, not driver culling correctness.
+
+## Music-shutdown capture
+
+`sample_music_shutdown.py` is a bounded read-only sampler for the unresolved race-exit/menu slowdown. It fingerprints the supplied executable, verifies the live fixed-map code signature and process identity, and captures16 raw voice records plus the music handle/target. It does not suspend, write memory, or follow voice pointers. Output creation is exclusive to preserve prior captures.
+
+After rediscovering the correct PID and coordinating the scenario:
+
+```sh
+sudo python3 analysis/scripts/sample_music_shutdown.py "$NFS3_PID" --exe "$NFS3_EXE" --seconds 180 --interval 0.1 --output analysis/captures/music-shutdown.jsonl
+```
+
+Set `NFS3_EXE` to the exact installed build; never embed credentials. Confirm the READY message and sample growth before asking for game actions. Start at the main menu, enter a normal single race with music enabled, then return to the menu; record action times and reported responsiveness. A smooth run does not reproduce the historical GOFAST slowdown. Capture snapshots cannot establish callback cadence/writer order by themselves. CLI help and three invalid-duration/interval cases were checked; no live capture has yet qualified this helper.
