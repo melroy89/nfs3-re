@@ -144,3 +144,7 @@ Set `NFS3_EXE` to the exact installed build; never embed credentials. Confirm th
 ## Bounded HUD exclusion model
 
 Run `python3 analysis/scripts/model_hud_bounded_exclusion_capacity.py` to enumerate194481 ordered two-rectangle topologies from the retained original-helper templates and assembly-derived caller model. Output: `analysis/evidence/probes/hud-bounded-exclusion-capacity.json`. It records peak and final populations separately and checks overflow across every case, including cases later deleted. Parent rerun reproduced maximum peak/final11 and no overflow. This is a model, not original caller execution or runtime admission proof; see `analysis/hud-exclusion-reachability-audit.md` for default producer gates and nondefault/stale-state limitations.
+
+## Replay encoder original-byte probe
+
+Run `python3 analysis/scripts/probe_replay_encoder.py "$NFS3_EXE" --output analysis/evidence/probes/replay-encoder-original-byte-probe.json`. Requires GNU as/ld and Linux i386 execution support; it validates the executable fingerprint and executes unchanged extracted encoder bytes in a temporary freestanding ELF.520 synthetic rows match (including the Handbrake04 action witness) the branch model, including44-byte maximum witness and8/8/15/34 intermediate lengths. Recorder cursor arithmetic is checked against static caller evidence; recorder/game/Wine execution, actual input configuration and runtime overwrite are not established. Temporary harness files are removed after the subprocess returns.

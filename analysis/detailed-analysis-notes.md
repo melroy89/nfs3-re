@@ -15885,3 +15885,50 @@ The [dispatch audit](frontend-loader-lifecycle-dispatch-audit.md) bounds direct/
 ### Second research checkpoint qualification
 
 Saved Ghidra and closed through the frontend normally; JVM absence and project lock removal verified. Staged complete shared database state, exported a separate backup and validation copy from the staged tree. Ghidra12.1.4 analyzeHeadless read-only/noanalysis reopened that copy successfully; verified12 saved annotation addresses including glyph, controller, HUD, resource and screenshot follow-ups, with4316 functions. Exit0. All evidence JSON in the exported tree parsed and cached diff check passed. This validates saved snapshot/readback and artifact structure, not gameplay or remaining lifecycle claims.
+
+
+### Usesanti clamp formula audit: raw versus adjusted capacity
+
+Parent live004aca4f and004abd9c review corrected the [audit](usesanti-response-semantics-audit.md): usesanti clamps to RAW R+4, while the separately computed local float(R+4-scale*R+4) feeds later response calculations. Scale helper input is participant tyre tuning[V+220]+58, notR+4. Normal limiter clears/replaces transient marker R+2c. Player00431430 directly sets V+50d from actionmask04, so exclusively engine-derived provenance was removed. EOL004acd99 read back and saved. Bounded branch/dataflow audit DONE; physical ABS/feedback/units and active runtime profile remain OPEN.
+
+
+### Lap representation and storage-boundary audit reviewed
+
+Parent live004ce280/004ce5a0 review corroborates [lap audit](lap-storage-capacity-audit.md): metric update uses signed index<8 without lower guard; transition stores timing through old+234 before copying+204; initializer loops directly over configured count and index8 aliases+2b8. Ordinary2/4/8 totals avoid that specific alias only when live indices correspond to0..N-1. Live counters are DWORD, distinct from selectorWORD, wireBYTE and series progressionWORD. Bounded representation/consumer audit DONE; allocation and end-to-end admission remain OPEN.
+
+
+### Replay reserve expansion: original-byte corroboration
+
+Parent probe_replay_encoder.py extracts unchanged004bc9b0..004bca7e at originalVA into a freestandingi386 ELF and isolatedscratch;519 synthetic source rows all match the branch model. Directed native outputs confirm44-byte row and8/8/15/34 intermediate rows. Parent live004bcda0 review confirms single signedcursor+128<122880 preflight, fourcopies/increments, no per-copy check or terminator. Constructive arithmetic697*176+65=122737 followed by176 ends122913,33 beyond. See [reservation audit](replay-recorder-reservation-audit.md), retained replay-encoder-original-byte-probe.json and README rerun. Updated plate read back and saved. Bounded expansion/reservation question DONE; actual joint input admission/profile/recording and live table consequence remain OPEN. No game/Wine or live-memory writes.
+
+
+### Police terminal-state versus controller-state audit reviewed
+
+Parent live00405430/00405630/004018b0/00409c00/00431430 review corroborates [audit](police-terminal-reacquisition-audit.md) distinctions. Stopapproval reads target+6e0 (6/7), not terminal result+2c4; same-case later stores may overwrite intermediate controller4. Human retainedcallback00431430 uses playerstatemachine00405740, notAI00409c00. Attachment establishes officer.group=target.group at attach; later stability and callback/finalization timing need separate proof. Bounded caller/field/path audit DONE; ordinary tableindex9 bound remains conditional, post-terminal reentry not proven safe or reachable. EOL00405430 read back and Ghidra saved.
+
+
+### Controller UI action crosswalk DONE; replay witness corrected
+
+Parent exact text.eng decode, row-dispatch pointer/MOV EDI checks and live setup/controller review corroborate [crosswalk](controller-action-label-crosswalk.md): Accelerate slot2/sample+1, Brake slot3/sample+2, Handbrake row4/slot6/mask04/player+50d. Reset02,Horn08,Shiftup10,Shiftdown20,Lights40,Spikestrip80 are supported; slot4/bit01 has no ordinary setup writer. Eight-bit sample loop is0048f573..5a9; later0048f645..691 is separate32-bit history. Active-profile/hardware calibration remains open.
+
+Replay action witness correction: unsupported bit01 source was withdrawn. Level-sensitive Handbrake04 pattern[0,4,4]*10+[0,2] also emits44 bytes, and intermediate0/4 runs emit8. Parent native probe rerun now520 cases, all model matches; cursor122737/end122913 arithmetic unchanged. This supersedes earlier519-case/current-value witness references; joint temporal/UI admission remains unproven.
+
+
+### Multiplayer setup framing and abort gates reviewed
+
+Parent live004c5e80/004c6080 corroborates10*208+112 data bytes, copied into local packet storage, and EBX-1 accumulation.004c64e0 guards synchronization release on !loadingAbort/playback<2;004c5560 optionally restores packet layer.004a65e0 restores packet layer, services callbacks, closes connections and resets state via004a6390. These distinct gates do not by themselves establish an active-callback barrier. [Audit](multiplayer-setup-abort-lifecycle-audit.md) preserves valid-producer conditional fit and actual runtime delivery/late callback gaps. Updated type5 plate read back and saved; bounded framing/gate audit DONE, teardown barrier remains OPEN.
+
+
+### Stored control-binding persistence reviewed
+
+Parent live00472980 confirms exact20f0 file/copy/header path;004904d0 receives mode inEAX and selects single006fd20c or mode1 double006fd240.39 mappedDWORDs at file16cc/1700 decoded independently in repository candidate(e9e67b...a449d) and Wine-prefix candidate(2294092f...2c781); fullfilehashes differ but allbindingwords match fallbackkeyboardtables. [Audit](control-binding-persistence-audit.md) now distinguishes candidates and stored versus runtime selection. P1Reset fallback corrected toEnd (scan4f), notHome. No config writes or unrelated fields emitted. Bounded persistence mapping DONE; active path/mode and physical-device behavior remain open. User steers subsequent work to normal gameplay/reliability rather than security-oriented investigation.
+
+
+### Track-index-8 configuration persistence follow-up
+
+The earlier direct-xref gap is narrowed: `006fd2ac` is configuration offset `0x176c`, inside the full `0x20f0` load/save blob at `006fbb40`. Saver00472820 clears only snapshot offset0x1860; header refresh004723f0 changes only the first12 bytes. Accepted-file loading avoids the default reset, while default initializer00472404 clears the flag. Aggregate serialization is established; successful disk save/restart and menu visibility remain unobserved. See [track-eight-unlock-persistence.md](track-eight-unlock-persistence.md).
+
+
+### Normal AI difficulty gameplay follow-up
+
+[AI difficulty and profile controls](ai-difficulty-gameplay-controls.md) separates the Normal/Aggressive ordinal006fd4f0, profile-key tuning, CrossSystem0055eb2e and MADLAND006fd4fc flags, and police construction/escalation. Parent Ghidra decompilation review corroborated00404690/00404a00/004064f0; assembly00404a36..00404ad0 and00406584..004065cf confirms the skill/target gates and float-store acceleration modifiers. Installed opponent.mnu binds both skill controls to listname=ai. Timer callback cadence and physical/progress units remain unresolved; no live comparison performed.

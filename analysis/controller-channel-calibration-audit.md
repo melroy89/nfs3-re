@@ -1,5 +1,9 @@
 # Controller channels and axis calibration audit
 
+## Current status
+
+The later [UI action crosswalk](controller-action-label-crosswalk.md) closes the action-label gap left by this bounded pass: slot2/sample+1 is Accelerate; slot3/sample+2 is Brake; player actionmask04/vehicle+50d is Handbrake. Earlier unresolved-action wording below describes this pass before that crosswalk. Hardware calibration and active configuration remain unresolved.
+
 ## Scope and result
 
 This is a static audit of the exact installed NFS III tree at `nfs3_decomp.rep/Electronic Arts/Need For Speed III`. The executable analyzed was `nfs3.exe`, SHA-256 `2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb`. The ephemeral REA/Ghidra session was closed without a snapshot; no persistent analysis project, executable, input device, or gameplay state was changed.
