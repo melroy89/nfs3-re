@@ -16042,3 +16042,15 @@ Parent-reviewed active instructions at `004432c0..004434ee` and `00442db0..00442
 ### Sound estimate divisor producer
 
 [Voice scale source](sound-voice-scale-field.md) now traces constructor context byte+0x6c into voice record+0x0b, then stream startup into `005646ff`. Parent independently checked slot address arithmetic `00501b03..00501b14`, source copy `00501ce4/e7`, and selected-record load/store `004e8a8d/93`. The physical unit and source field/tag identity remain unresolved; this does not establish milliseconds. Repeatable data annotation saved.
+
+### Network series result ownership and audio default
+
+[Result ownership](network-series-result-ownership.md) connects the ordinary race-result call gate to type12 exchange, host nonhuman transmission/relay, local snapshots and mode1/2 progress updaters. The exchanged vehicle224..2e3 range excludes local descriptor220 and separate global series arrays; no host-only check surrounds the two updater calls. Complete peer agreement and next-round synchronization remain open. Parent reviewed instruction paths and table bytes; no network execution. [Audio scale source](sound-voice-scale-field.md) now includes the normal context+6c default15 at005017d0 and distinct parsed-tag array; parent checked initializer/reset/merge bodies and preserved the prior divisor annotation. Physical unit remains unresolved.
+
+### Normal controller slot15 lifecycle
+
+[Device-slot lifecycle](controller-device-slot-lifecycle.md) distinguishes successful registration count/pool/query/reader from the frontend0..14 refresh. Parent reviewed enumeration00435600, registration00436980, all-slot recursion00435690 including explicit index0 call, reader004358f0, label0043d9f0 and refresh loop00472c90. Slot15 is within the16-slot normal domain and count16 is conditional on16 successful callbacks. Actual hardware availability and stale/unrefreshed frontend effects remain unobserved. Prior refresh-bound EOL annotation retained and extended.
+
+### Ordinary network-toggle indirect write
+
+[Toggle semantics](network-session-toggle-semantics.md) resolves the pointer-array question: initializer00445750 receives menu-row count2 and table005556e0, while generic Enter00445635..00445659 indexes that table directly after checking index0/1. Pointer006fd50c is atindex3 and is not reached by this ordinary two-row write. Parent verified call0043f4cb/count0043f4b2, raw table, generic initializer/handler, and corrected a worker conflation: selector-zero call0043f65f belongs to0043f640; active TCP0043f760 calls at0043f78e after a nonzero helper return. Adjacent Positional/Controller text does not establish an exposed control for006fd50c. No UI/network execution.
