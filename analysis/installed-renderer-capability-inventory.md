@@ -73,3 +73,7 @@ The patch `readme_en.txt` identifies itself as Modern Patch v1.6.1 dated 2016-10
 ## Remaining decisive evidence
 
 To close renderer identity, a later read-only module-map capture during the running menu/race would need to include the actual mapped wrapper and driver files (or equivalent loader evidence) and their paths. To close higher-resolution support, static use-sites of `0x007a278c` must be connected across all texture producers and allocations, then normal rendered output at configured levels must be observed. This report did not change the game, configuration, executable, or persistent analysis database.
+
+## Loaded backend in the ordinary Traffic Off run
+
+Later periodic `/proc/PID/maps` capture during the user-driven ordinary race now shows both installed `drivers/nglide/glide3x.dll` and `drivers/nglide/voodoo2a.dll` mapped in the game process. [Retained map lines](evidence/runtime/ordinary-single-race-traffic-off-observation.json) include a post-start timestamp and exact capture-prefix digest. Fresh on-disk SHA-256 checks match the two driver/wrapper hashes above. This closes the prior early-maps-only identification gap for this run; it does not trace each texture call or prove a larger rendered asset size, live descriptor value or performance.

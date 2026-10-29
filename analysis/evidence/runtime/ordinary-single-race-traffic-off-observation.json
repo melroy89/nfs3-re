@@ -1,0 +1,127 @@
+{
+  "scope": "Ordinary local Single Race Hometown/forward/2laps/None/TrafficOff. User confirmed no visible traffic and paused. Roster observations are asynchronous; no memory writes.",
+  "exe_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "source_capture": "/tmp/nfs3-traffic-off-20261029.jsonl",
+  "source_prefix_bytes": 13130380,
+  "source_prefix_sha256": "669af3ba5c2a18c3b3bdc2cc35ce26c6475da7afdea328b523f1492202ad586a",
+  "sample_count_in_prefix": 1864,
+  "capture_errors_in_prefix": 0,
+  "first_race_sample": {
+    "t": 96.92407755300155,
+    "gameplay": {
+      "globals": {
+        "session_mode": 0,
+        "race_mode": 0,
+        "track": 0,
+        "laps": 2,
+        "reverse": 0,
+        "opponent_choice": 0,
+        "opponent_model_choice": 0,
+        "traffic_disabled": 1,
+        "ai_skill": 1,
+        "local_index": 0,
+        "configured_vehicles": 1,
+        "configured_humans": 1,
+        "human_racers": 1,
+        "ai_racers": 0,
+        "ai_police": 0,
+        "inactive_ai": 0,
+        "registry_count": 24,
+        "simulation_tick": 9,
+        "race_sequence": 9,
+        "race_exit": 2
+      },
+      "vehicles": [
+        {
+          "index": 0,
+          "pointer": 6164768,
+          "progress": 1,
+          "segment": 1,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 0,
+          "auxiliary_wrap": 0,
+          "result_state": 0,
+          "activation_state": 0,
+          "activation_countdown": 0
+        }
+      ],
+      "vehicle_scan_skipped": false
+    }
+  },
+  "paused_sample": {
+    "t": 186.90786235500127,
+    "gameplay": {
+      "globals": {
+        "session_mode": 0,
+        "race_mode": 0,
+        "track": 0,
+        "laps": 2,
+        "reverse": 0,
+        "opponent_choice": 0,
+        "opponent_model_choice": 0,
+        "traffic_disabled": 1,
+        "ai_skill": 1,
+        "local_index": 0,
+        "configured_vehicles": 1,
+        "configured_humans": 1,
+        "human_racers": 1,
+        "ai_racers": 0,
+        "ai_police": 0,
+        "inactive_ai": 0,
+        "registry_count": 24,
+        "simulation_tick": 3206,
+        "race_sequence": 3206,
+        "race_exit": 2
+      },
+      "vehicles": [
+        {
+          "index": 0,
+          "pointer": 6164768,
+          "progress": 370,
+          "segment": 370,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 0,
+          "auxiliary_wrap": 0,
+          "result_state": 1,
+          "activation_state": 0,
+          "activation_countdown": 0
+        }
+      ],
+      "vehicle_scan_skipped": false
+    }
+  },
+  "user_observation": "Paused; clearly no traffic, as expected.",
+  "loaded_module_sample": {
+    "t": 180.48560328900203,
+    "mapping_lines": [
+      "10000000-10116000 r-xp 00000000 103:05 164646205                         /home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/drivers/nglide/glide3x.dll",
+      "10116000-10127000 rwxp 00116000 103:05 164646205                         /home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/drivers/nglide/glide3x.dll",
+      "1f9f0000-1f9f2000 rwxp 00127000 103:05 164646205                         /home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/drivers/nglide/glide3x.dll",
+      "1f9f2000-1fa25000 r-xp 00129000 103:05 164646205                         /home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/drivers/nglide/glide3x.dll",
+      "60000000-60001000 r-xp 00000000 103:05 164646206                         /home/melroy/.local/share/winegui/prefixes/NFS3/drive_c/Program Files/Electronic Arts/Need For Speed III/drivers/nglide/voodoo2a.dll"
+    ]
+  },
+  "completed_capture": {
+    "raw_capture_bytes": 20474800,
+    "raw_capture_sha256": "090e6306971316f0d9ff7865ad1e57114bc9b55055be9315ce6cf8e21923f1ef",
+    "samples": 2927,
+    "elapsed_seconds": 293.6474029130004,
+    "capture_errors": 0
+  },
+  "main_menu_return": {
+    "user_confirmed": true,
+    "screenshot_sha256": "888ddd70c2767cc05789a9946a7e5fd4ce9a94070164fe8969655c3f03fe88cb",
+    "visual_observation": "Main Menu / One Player Single Race, Diablo SV, Hometown2laps, Opponent None.",
+    "game_survived_capture_parent_exit": true,
+    "same_process_start_verified": true,
+    "game_pid": 210297,
+    "game_session": 210297,
+    "primary_display_restored": "1920x1080@60, HDMI-A-0+1920+0; DisplayPort-1+0+0, DisplayPort-0+3840+0"
+  }
+}

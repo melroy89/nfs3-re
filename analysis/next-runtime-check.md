@@ -1,6 +1,6 @@
 # Next coordinated runtime check: ordinary Traffic Off
 
-Status: **PREPARED, NOT RUN**. This is the missing Off comparison for issues11/12, using the completed [Traffic On baseline](evidence/runtime/ordinary-single-race-traffic-observation.json). It does not qualify other modes, tracks, larger grids or a density slider. Do not launch the game until the user is ready; do not edit the executable, configuration files or live memory.
+Status: **DONE for the stated ordinary comparison and capture-survival check**. [Recorded result](evidence/runtime/ordinary-single-race-traffic-off-observation.json): TrafficOff, one human vehicle, no traffic records, user-observed absence of traffic, actual main-menu screenshot,2,927samples without capture errors, and the same Wine game process survives capture-parent exit. Primary display restored to1920×1080. The steps below document the executed scenario. This is the missing Off comparison for issues11/12, using the completed [Traffic On baseline](evidence/runtime/ordinary-single-race-traffic-observation.json). It does not qualify other modes, tracks, larger grids or a density slider. Do not launch the game until the user is ready; do not edit the executable, configuration files or live memory.
 
 ## Player steps
 
