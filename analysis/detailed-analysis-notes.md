@@ -16078,3 +16078,11 @@ The older network-lobby action6/application-state gap is now narrowed in [next-r
 ### Postgame network readiness integration
 
 [Readiness lifecycle](network-postgame-readiness-lifecycle.md) joins shared postgame rendering to panel buffers and host/client synchronization. Parent verified renderer ordinarycontext00559234==0 requires priority8/active-session and nameunequal literalipx at00538fc4; strcmp0 skips, not succeeds. Installed postgame.mnu includes priority8 and24. Reviewed buffer allocation/free calls00440970, panelgate004415e9..0044163a and existing0049abd0: inactive-session helperreturn1 is distinct from caller active-session predicate. Buffer/ready/livepeer/load success remain qualified. EOL0044a629 saved.
+
+### Remote-human and replay ghost collision distinction
+
+[Ghost collision feasibility](network-ghost-collision-feasibility.md) separates pose renderer004b9df0 from livepair callback004311d0. Parent verified callback initializer0042c400 leaves618 installed through network override, pairappend004310c0, driver00430c80 and full separation/response bodies0042fee0/0042f280. Driver cap is33calls, not32. Fields88/89 gate broadercontact/render work; timer174 also affects live drawing at004bbc78..004bbca8. Thus no existing collision-only remoteghost setting is established by these gates. Field writers and actual runtime behavior remain open; no executable or live-memory changes.
+
+### Pause codelinks and event ordinals
+
+Parent reviewed the new [pause event handoff](network-series-interruption-policy.md#pause-menu-choices-and-numeric-event-handoff): installedpause.mnu PSE_CONTINUE/PSE_RESTART and rawtokenbytes00539068/78 ->coordinator0044bd7d/9e returns1/2 ->resolvercall004c4c0c, with session overrides possible ->retainedreturnblocks004c58b4/004c58d6 ->separate handlerbranches004c4c16/004c4c69. Neither directbranch writes exitDWORD007d36b4; eventordinals are distinct from exitstates. Quit/3..5 and visible/live interruption policy remain open. Removed the report dependency on an unreviewed historical draft; publication links must resolve to staged/tracked files, not merely local untracked drafts.
