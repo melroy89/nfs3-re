@@ -16148,3 +16148,11 @@ User selectedNone/TrafficOn and reported visiblegreytraffic, thenpaused. Read-on
 ### Environment-strip descriptor population and extent input
 
 Parent full41dc60/41db10/478b70 bodies trace descriptorarraypopulation beforeeightpointerpublication; raw4d4080 copies sourceheaderWORD4/6 todescriptor0/2. Alternate4d41a0 overwritesboth with4d4120 smallerextent/flooredpower-of-two thresholdpolicy capped256. [Normalizer report](setup-normalizer-gameplay-domain.md) now identifiesextentproducer, withbranch-specificsquareoutput ratherthan universalassetheight/cap. Actualselectedbackend/runtimeupload remainsopen; no17th-valueinvestigation pursued.
+
+### Reviewed menu classes, texture extent policies and preset research
+
+Parent rawtype-table review distinguishes cascade17/key5378370/template556ea8/input4624a0 fromdroplist29/key5378378/template556f0c/input463ff0. Actualcascade readsentry60 andacceptedstore462661, closingthelapclassassignment gap. Op-car prefixloader stopsatfirstbit10 record (43a3b6->43a407), notsparse-skips; keyboardpath ismapped, whilecoordinatehelper465ca0 record+44 isnottemplate+2c. Parent removedthatunsupportedmousecallbackmapping beforepublication.
+
+[Renderer inventory](installed-renderer-capability-inventory.md) isindependentlyhash/config/READMEchecked. Parser4b56d5 maps0..3 to256..2048; renderer4b5bd6..4b5bf5 reducesextent againstunsignedminimumofdescriptor14/20 byhalving. Squarebuffer49cea0 furtherreducesagainstbothsourcesizes. Directusereferences donotproveallbackendlimits oractualhigher-resolutionoutput; firstcapturemaps precedefullstartup.
+
+[Preset matrix](race-setup-preset-compatibility.md) separatesinitializer/imported/live values. Parentreconciled thefull0x890blockcoverage:skill6fd4f0 atoffset154 andassistselectors/runtimewithinblock. Missingnamed40-bytelobbyfields thereforedonotproveno skills/assisttransfer; finalpeerorderingstillunverified. NoClassicpresetimplementationoruniversaldefaultsclaim.
