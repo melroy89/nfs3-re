@@ -20,6 +20,42 @@ The bounded static naming/annotation pass is complete; remaining complex investi
 
 Delegation workflow: Luna workers, when assigned, investigate bounded, separate questions read-only. Parent reviews assembly before names/types/comments and saves. Complex cross-system cases go to Astra. Static observations and missing local guards are not proof of reachable game defects.
 
+## Current screenshot follow-up
+
+- **DONE:** bounded screenshot source/allocation/worker handoff audit; successful per-job allocation is worker-owned, failed launch frees it, thread handle closes without join. See analysis/screenshot-worker-admission-audit.md.
+- **OPEN:** source-mode stability during preparation, driver dimension bounds, wrapped allocation admission, shared format/GDI+ overlap and teardown timing. No observed race claimed.
+
+## Current HUD exclusion follow-up
+
+- **DONE:** bounded fresh-default producer/count and ordered-two-exclusion model audit. Role gates limit the combined default list to2; parent reran194481 topologies, peak/final max11 with0 overflowing cases across the whole scan. See analysis/hud-exclusion-reachability-audit.md.
+- **OPEN:** nondefault selector co-reachability, stale conditional-record lifecycle and nonfinite/inverted geometry. Earlier four-rectangle witness remains synthetic, not evidence of default overflow.
+
+## Current async-resource follow-up
+
+- **DONE:** bounded frontend reset ownership-edge audit: read nodes carry destination pointers, normal phases consume completion before advancement, reset queues type2 NUL selection and frees buffers, teardown then frees nested context. See analysis/frontend-resource-reset-ownership-audit.md.
+- **DONE:** bounded worker FIFO/type2 audit: NUL selection cannot overtake prior reads and does not remove them; helper must return before next dispatch. ReadFile NULL-OVERLAPPED997 retry behavior is not a universal OS completion guarantee. See analysis/async-selection-worker-ordering-audit.md.
+- **DONE:** menu-change active+b1 guard and direct reset caller inventory; lifecycle callbacks00467700/00467930 lack request checks, dispatch serialization remains unresolved (analysis/frontend-reset-pending-reachability-audit.md).
+- **DONE:** bounded lifecycle pointer/base-reference search in analysis/frontend-loader-lifecycle-dispatch-audit.md; parent raw byte scan reproduced sole code-pointer occurrences and no literal base/slot addresses.
+- **OPEN:** lifecycle owner/dispatch/teardown reachability with an actually pending request and unusual read-error lifetime. Pointer adjacency is not a proven registered callback type. No use-after-free execution established; no-local-wait alone is insufficient.
+
+## Current controller and source-admission follow-up
+
+- **DONE:** bounded axis evaluator00431740 piecewise arithmetic audit; parent original-byte review corrected saturation and bound orientation (analysis/controller-channel-calibration-audit.md). Channels+1/+2 remain evaluator slots2/3; exact action labels and live hardware calibration OPEN.
+- **DONE:** bounded car/track source metadata gate review in analysis/car-track-source-metadata-admission-audit.md; registry/cache/group extents stay distinct. Mode-two generator seventh output(index6)=8.
+- **OPEN:** effective custom-car/track admission, negative metadata ordinal reachability, TRN extent and network selector enforcement; no universal expansion capacity established.
+
+## Current traffic retry follow-up
+
+- **DONE:** conditional retry proof for stable valid installed-track domain withH<=8: select floor(S/20) consecutive post-wrap candidates, circular gaps>=20, each human rejects at most5, hence an in-range candidate exists within at most125 checks for installed counts959..1723. See analysis/traffic-retry-termination-audit.md.
+- **OPEN:** universal human-count/position stability and custom-track admission. SyntheticH10/S959 rejects93 valid candidates then accepts out-of-range1102; this is arithmetic evidence, not runtime or infinite-loop evidence.
+
+## Current glyph and arrest/reset follow-up
+
+- **DONE:** installed-source glyph pointer arithmetic:90 GF records match cache topology;83/87 nonempty generated normal ranges misbased,0 cross their own packed segment, minimum tail margin36 bytes. Parent independently reproduced source parse and all ranges. See analysis/glyph-generated-pointer-audit.md and evidence/inventories/generated-glyph-pointer-ranges.json.
+- **OPEN:** actual cache-miss generation, normal-pointer consumption and visible effect; general malformed-source/allocation safety are separate.
+- **DONE:** bounded arrest/R reference-consumer audit: parent verified+88 gate and direct004a2885/004a2b78 call edges; retained samples show recovery_gate_88=0 (distinct from alternate+8a).
+- **PARTIAL:** arrest/R reference feeds contact queries before reset completion counters; no direct XYZ writer established in reviewed normal path. Runtime write-watch needed to identify relocation writer. See analysis/arrest-reset-relocation-audit.md.
+
 ## Current network and runtime follow-up
 
 - **DONE:** bounded direct registration audit of connection+30 unpacker collection; fresh socket-open path initializes it empty, sole observed append routine00512710 has no recovered direct ingress. See analysis/network-unpacker-registration.md.

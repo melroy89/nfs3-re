@@ -15833,3 +15833,55 @@ DONE refers to this bounded instruction audit only. Received-count policy, table
 ### Checkpoint snapshot qualification
 
 Saved program and closed the working GUI before staging the complete shared database state. Inline normal-exit scripting was unavailable; after tool windows closed, the saved JVM was terminated with SIGTERM and its absence verified. A separate backup and validation copy were exported from the staged Git tree. Ghidra12.1.4 analyzeHeadless opened the validation copy read-only with no analysis; CheckpointReadback verified nonempty saved comments at00473d62,004b4919,004b4ed0,004b4f0c and00512710, and reported4316 functions. Exit0. This qualifies snapshot reopening and annotation persistence, not gameplay or multiplayer behavior.
+
+
+### Installed generated-glyph ranges: bounded extent audit DONE
+
+Parent independently parsed TEST.GF: bytes0/1 give first/count, then each record advances2+8*N+3*Tflat;90 records reach exact EOF15941 and all source counts match cached inventory. Last doubledV20 and independently reproduced per-glyph ranges show83/87 nonempty normals misbased,0 ranges exceeding their own segment, minimum tail margin36. Of25 late pointers,18 start inside intended normal region and7 after it; all25 extend into later payload. See [audit](glyph-generated-pointer-audit.md) and retained generated-glyph-pointer-ranges.json. EOL00475a1e read back and Ghidra saved. Live generation/consumption and general allocation safety remain OPEN.
+
+
+### Arrest/R contact reference-consumer audit DONE; relocation unresolved
+
+Parent live assembly confirms004a285a tests+88,004a2885 calls004a21a0 and004a2b78 calls004a1610.004a21a0 uses XYZ and segment+1c for its query without reset completion counters. Retained18947/18950/18953 local samples contain recovery_gate_88=0; this is distinct from sampler alternate at+8a. The [audit](arrest-reset-relocation-audit.md) was corrected to name that field precisely. EOL004a2885 read back and Ghidra saved. The direct reference-consumer question is DONE; actual relocation writer remains OPEN and requires instruction-level runtime evidence. No live game or memory writes.
+
+
+### Traffic retry conditional termination audit
+
+The [retry audit](traffic-retry-termination-audit.md) derives an installed-count sufficient bound under stable valid positions andH<=8. Parent tightened its circular proof: choose exactlyfloor(S/20) consecutive post-wrap20-spaced candidates, so the wrap seam gap is at least20; a strict <50 neighborhood covers at most5. InstalledS>=959 supplies at least47 candidates versus at most40 rejected by8 humans, yielding the stated conservative125-check ceiling. Parent independently reproduced syntheticH10/S959:93 valid candidates rejected, then candidate1102 accepted at k100. Conditional arithmetic work DONE; upstream/runtime preconditions and invalid-result consequence remain OPEN.
+
+
+### Axis evaluator and source-admission review
+
+Parent original-byte00431740..004317c2 review corrects the [axis audit](controller-channel-calibration-audit.md): ordered bounds saturate low0/high255, reversed bounds reverse that saturation; interior doubling uses the first bound unless its endpoint is0 (ordered) or255 (reversed), not nearest-bound distance. a=b returns0. Examplea1/b255/x255 yields508 before low-byte truncation. Bounded arithmetic audit DONE; live binding labels/calibration remain OPEN. [Car/track source audit](car-track-source-metadata-admission-audit.md) distinguishes source gates and consumer extents; parent corrected seventh mode-two output to zero-based index6, not index7. General metadata/network admission remains unresolved.
+
+
+### Frontend async ownership edges: bounded audit DONE
+
+The [ownership audit](frontend-resource-reset-ownership-audit.md) maps queue destination fields, phase completion consumption, reset and nested-context teardown. Parent live0046796a context confirms reset followed by free00467975/clear0046797a, and the EOL was read back and saved. Reset type2 NUL selection is queued, not a proven cancellation primitive; normal prior-completion ordering and zero-submit failure exits prevent inferring an actual pending-read overlap from missing local wait alone. Worker queue semantics and a teardown caller with pending IDs remain OPEN. No runtime hazard claimed.
+
+
+### HUD fresh-default exclusion bound: bounded audit DONE
+
+Parent live00485880 confirms six-bank selector68=3/6c=1 defaults;0048d110 gates disable middle two producers, and role gates separate non-police fourth producer from police conditional updater. Under fresh rebuild/single conditional-record lifecycle, default list<=2. Parent reran194481 ordered-two-rectangle topologies with model_hud_bounded_exclusion_capacity.py:170456 disjoint, maximum peak and final11, no overflowing append across ANY case. Peak and aggregate-overflow tracking were added after review to avoid hiding transient overflow in a deleted/nonmaximum-final case. EOL0048d2ac read back and Ghidra saved. [Report](hud-exclusion-reachability-audit.md) qualifies finite ordered/model domain; nondefault/cache/stale/nonfinite scenarios remain OPEN.
+
+
+### Async worker FIFO and frontend selection guards
+
+The [worker audit](async-selection-worker-ordering-audit.md) resolves head-insert/tail-pop FIFO and type2 NUL selection semantics. Parent0050dff0 review confirms tail removal; original004e3c5a..004e3c95 confirms NULL OVERLAPPED ReadFile,997->SleepEx/retry, not completion polling. This closes bounded queue ordering/type2 handling; OS lifetime on unusual errors remains open. EOL004f1a97 read back and Ghidra saved. [Reachability audit](frontend-reset-pending-reachability-audit.md) finds active+b1 gate on normal selection updates and callback-table entries00557398/39c for unchecked init/teardown paths. Exact lifecycle dispatch/serialization remains open; no actual pending-read reset is proven.
+
+Installed VIV preheader extent follow-up: all122 .viv files under the selected installation have BIGF16-byte preheaders, declared size equal physical size, and directory_end+32 (frontend header-read size) within file size without uint32 addition wrap. Retained installed-viv-preheader-extents.json records paths, raw16-byte header values and HEADER-ONLY hashes. Bounded installed-file extent audit DONE; member-directory validity, malformed/custom-source admission, allocation success and live complete reads are not established.
+
+
+### Screenshot worker admission/ownership audit DONE
+
+Parent live004c452c review confirms per-capture job header/pixels, failure cleanup and transfer to worker on successful CreateThread; thread handle is closed immediately, not joined. [Audit](screenshot-worker-admission-audit.md) records driver mode source gates and wrapped capture/output allocation arithmetic. Parent additionally qualifies repeated live mode reads during preparation: per-job storage does not prove atomic input consistency. Shared format/GDI+ state and worker overlap/teardown remain OPEN. Updated launcher plate read back and Ghidra saved. No runtime claim.
+
+
+### Frontend lifecycle pointer search DONE; dispatch owner unresolved
+
+The [dispatch audit](frontend-loader-lifecycle-dispatch-audit.md) bounds direct/xref/raw-pointer searches around00557390. Parent raw scan reproduces one occurrence each of00467700/00467930 and zero literal00557390/98/9c addresses. These adjacent pointer entries do not establish type/owner or invocation policy. No pending-reset execution or serialization proof. The remaining discriminator is computed/external registration or runtime callback correlation; this search is DONE without closing the lifecycle investigation.
+
+
+### Second research checkpoint qualification
+
+Saved Ghidra and closed through the frontend normally; JVM absence and project lock removal verified. Staged complete shared database state, exported a separate backup and validation copy from the staged tree. Ghidra12.1.4 analyzeHeadless read-only/noanalysis reopened that copy successfully; verified12 saved annotation addresses including glyph, controller, HUD, resource and screenshot follow-ups, with4316 functions. Exit0. All evidence JSON in the exported tree parsed and cached diff check passed. This validates saved snapshot/readback and artifact structure, not gameplay or remaining lifecycle claims.

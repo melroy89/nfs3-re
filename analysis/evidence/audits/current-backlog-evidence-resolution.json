@@ -1,0 +1,27 @@
+{
+  "method": "Resolve missing historical audit references using retained migration manifest; original evidence bytes preserved",
+  "historical_audit": "analysis/evidence/audits/astra-backlog-review.json",
+  "historical_audit_sha256": "8c446a5e9299040bb74c0389fc356bbcbf89785d6e2e5c2dac68f8f367839f4a",
+  "resolved": [
+    {
+      "investigation": "Police interception and paired assignments",
+      "historical_reference": "/home/melroy/Documents/projects/nfs3-re/analysis/reverse-roadblock-reconstruction.json",
+      "current_path": "analysis/evidence/runtime/reverse-roadblock-reconstruction.json",
+      "migration_sha256_matches": true
+    },
+    {
+      "investigation": "Police interception and paired assignments",
+      "historical_reference": "/home/melroy/Documents/projects/nfs3-re/analysis/reverse-assignment-direction-evidence.json",
+      "current_path": "analysis/evidence/runtime/reverse-assignment-direction-evidence.json",
+      "migration_sha256_matches": true
+    },
+    {
+      "investigation": "Replay RLE input/output bounds",
+      "historical_reference": "/home/melroy/Documents/projects/nfs3-re/analysis/replay-rle-token-bound.json",
+      "current_path": "analysis/evidence/static/replay-rle-token-bound.json",
+      "migration_sha256_matches": true
+    }
+  ],
+  "unresolved": [],
+  "limits": "Link and byte-identity checks do not establish investigation closure."
+}

@@ -140,3 +140,7 @@ sudo python3 analysis/scripts/sample_music_shutdown.py "$NFS3_PID" --exe "$NFS3_
 ```
 
 Set `NFS3_EXE` to the exact installed build; never embed credentials. Confirm the READY message and sample growth before asking for game actions. Start at the main menu, enter a normal single race with music enabled, then return to the menu; record action times and reported responsiveness. A smooth run does not reproduce the historical GOFAST slowdown. Capture snapshots cannot establish callback cadence/writer order by themselves. CLI help and three invalid-duration/interval cases were checked; no live capture has yet qualified this helper.
+
+## Bounded HUD exclusion model
+
+Run `python3 analysis/scripts/model_hud_bounded_exclusion_capacity.py` to enumerate194481 ordered two-rectangle topologies from the retained original-helper templates and assembly-derived caller model. Output: `analysis/evidence/probes/hud-bounded-exclusion-capacity.json`. It records peak and final populations separately and checks overflow across every case, including cases later deleted. Parent rerun reproduced maximum peak/final11 and no overflow. This is a model, not original caller execution or runtime admission proof; see `analysis/hud-exclusion-reachability-audit.md` for default producer gates and nondefault/stale-state limitations.

@@ -1,0 +1,129 @@
+{
+  "method": "Exhaustive axis-order model of two ordered rectangles clipped to one ordered source rectangle, using all retained original-helper templates and the assembly-derived 00487620 caller model.",
+  "executable_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "helper_report": "analysis/evidence/probes/rectangle-fragment-mask-audit.json",
+  "helper_target_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "caller_model": "analysis/scripts/model_hud_fragment_worklist_capacity.py",
+  "local_array_capacity_each": 15,
+  "source_xyxy_representative": [
+    0.0,
+    0.0,
+    5.0,
+    5.0
+  ],
+  "endpoint_domain_representative": [
+    0.0,
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    5.0
+  ],
+  "rectangle_interval_orderings_per_axis": 21,
+  "exhaustive_case_count": 194481,
+  "pairwise_disjoint_case_count": 170456,
+  "maximum_all_two_rectangles": {
+    "count": 11,
+    "witness": {
+      "rectangles_xyxy": [
+        [
+          1.0,
+          2.0,
+          2.0,
+          3.0
+        ],
+        [
+          3.0,
+          1.0,
+          4.0,
+          4.0
+        ]
+      ],
+      "first_overflow": null,
+      "peak_worklist_count": 11,
+      "final_worklist_count": 11
+    }
+  },
+  "maximum_pairwise_disjoint_two_rectangles": {
+    "count": 11,
+    "witness": {
+      "rectangles_xyxy": [
+        [
+          1.0,
+          2.0,
+          2.0,
+          3.0
+        ],
+        [
+          3.0,
+          1.0,
+          4.0,
+          4.0
+        ]
+      ],
+      "first_overflow": null,
+      "peak_worklist_count": 11,
+      "final_worklist_count": 11
+    }
+  },
+  "maximum_peak_all_two_rectangles": {
+    "count": 11,
+    "witness": {
+      "rectangles_xyxy": [
+        [
+          1.0,
+          2.0,
+          2.0,
+          3.0
+        ],
+        [
+          3.0,
+          1.0,
+          4.0,
+          4.0
+        ]
+      ],
+      "first_overflow": null,
+      "peak_worklist_count": 11,
+      "final_worklist_count": 11
+    }
+  },
+  "maximum_peak_pairwise_disjoint_two_rectangles": {
+    "count": 11,
+    "witness": {
+      "rectangles_xyxy": [
+        [
+          1.0,
+          2.0,
+          2.0,
+          3.0
+        ],
+        [
+          3.0,
+          1.0,
+          4.0,
+          4.0
+        ]
+      ],
+      "first_overflow": null,
+      "peak_worklist_count": 11,
+      "final_worklist_count": 11
+    }
+  },
+  "any_overflow_witness_all_cases": null,
+  "any_overflow_witness_pairwise_disjoint_cases": null,
+  "result": {
+    "maximum_fragment_count": 11,
+    "maximum_disjoint_fragment_count": 11,
+    "maximum_peak_worklist_count": 11,
+    "maximum_disjoint_peak_worklist_count": 11,
+    "overflow_in_any_case": false,
+    "overflow_in_any_pairwise_disjoint_case": false
+  },
+  "coverage_reason": "For two axis-aligned rectangles, each axis has four exclusion endpoints plus the two source endpoints. Six ordered coordinate levels represent every strict ordering; tied levels represent equalities. Coordinates outside the source clip to a source edge before the helper mask and output geometry are selected, so their distances do not add cases. The grid therefore covers every finite ordered rectangle-intersection topology for two exclusions.",
+  "limitations": [
+    "This proves only the fragment-count bound for at most two ordinary ordered exclusions through the modeled caller logic.",
+    "It does not prove runtime path selection, persistent counter lifecycle across every cache transition, arbitrary nonfinite values, or renderer effects.",
+    "Nondefault selector combinations may enable more than two geometry producers; their joint reachability and exact transformed rectangles are not modeled here."
+  ]
+}
