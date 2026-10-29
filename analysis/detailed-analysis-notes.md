@@ -15996,3 +15996,28 @@ Parent verified selected nfs3.exe SHA2a20f804... descriptor00555f00 points at004
 ### Race joystick raw-axis source
 
 [Source map](controller-axis-runtime-source-map.md) distinguishes race005eff80 from frontend capture005f3d50. Parent reviewed004315a0,004358f0 and00431740: device-specific132byte records, successful raw8DWORD copies torecord+50, failure clearing and evaluatorSAR8/packed bounds. Descending bounds can reverse the mapping without raw sample negation. Hardware/driver/property range, center and deadzone remain separate; savedrepeatable comment005eff80 records the source boundary.
+
+
+### Placement query reset and same-pass reuse
+
+[Refresh lifecycle](placement-query-refresh-lifecycle.md) is parent-reviewed against queryinitializer/binder0041e940/0041e8f0, reuse0041f6e0 and distance/environment004a0580/004a08c0. Initializer clearsqueryquad, notvehicle88. Close-distance marker consumption mayquery before later184/20gate and mayclear184; laterquery canreuse a fresh same-pass quad. Active-placement basis extraction0049ffa0 remains separate fromqueryrefresh. Parent annotated004a0ab6/004a0c7d; nonzero vehicle184/88 producers and actualruntimeeffects remain unproven.
+
+
+### Normal series endpoint lifecycle
+
+[Series lifecycle](series-normal-terminal-lifecycle.md) separates eight-trackmode1 ordinal7/currentID7/finalresultordinal8 from seven-trackKnockout ordinal6/currentID8/finalresultordinal7. Parent checked increments00455129/00455200 and main-menu resetcalls0047319f..c6, saved matching EOL comments. Eligibility usescurrenttrack/finalmapentry; RaceAgain retains progression while main-menu entry resets. Exactescape Main_Menu numericmapping and live UI confirmation remain pending.
+
+
+### Deadzone UI to stored preferences and device properties
+
+[Property setup/UI audit](controller-axis-property-setup.md) now connects eight widgettokens/pointers to setup00443070, valuechange00442ef0 ->ApplyDeadzoneAxisSliderValues00442dd0 ->cachedpair006fc970+136*device+48+8*axis ->setter00435b40. Separate00442ff0 poll onlyupdatesindicator;00442e60 mapswidgettoaxis. Parent full original-byte review and conservative function/ABI names saved. Cache atconfigoffsete30 persists viafullblob schema; identitymatch refresh00472c28/52 restorescached percentages, mismatch copiesfreshrecord. No save/devicewrite observed; Done/Cancel staging andhardwarecalibration remain open.
+
+
+### Postgame Back numeric mapping resolved
+
+[Normal series lifecycle](series-normal-terminal-lifecycle.md) now completes the static Back chain: escape token selectsinstalledtype5 Back row; generichandler00461339 returns3 withnooptionalcallback/nextmenu; postgame0047331a callsrootloop withEDX0; rootboundary0044b719 convertsaction3 to11; outerstate11 entersmainmenu004730d0/resetblocks. Parent verifiedinstructions andsavedEOL0044b719. Postgame006fd3a0 clearing isplaybackmode, not a series progression reset. No interactive menu observation performed.
+
+
+### Sound playback reconfiguration and caller-driven retries
+
+[Sound lifecycle](sound-playback-reconfiguration-lifecycle.md) separates oneattempt004e89f8 from headercaller004e80cc (changedheader setsstate3), and existing periodic ServiceQueuedSoundStreamPlayback004e85a8 state1 directretrybranches/state3 remainingcount+voiceexpiry polling/reset1. Parent reviewed corebodies, fullcallbackrawassembly and slotpublisher004ff660/consumer004ff670; separate lock00564480 doesnotestablish callbackquiescence withsoundlock00a09b04. State3hasnolocaldeadline; no actualhang/playback observed. No security/adversarial input investigation performed.
