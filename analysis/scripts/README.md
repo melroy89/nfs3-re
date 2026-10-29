@@ -149,4 +149,14 @@ Run `python3 analysis/scripts/model_hud_bounded_exclusion_capacity.py` to enumer
 
 Run `python3 analysis/scripts/probe_replay_encoder.py "$NFS3_EXE" --output analysis/evidence/probes/replay-encoder-original-byte-probe.json`. Requires GNU as/ld and Linux i386 execution support; it validates the executable fingerprint and executes unchanged extracted encoder bytes in a temporary freestanding ELF.520 synthetic rows match (including the Handbrake04 action witness) the branch model, including44-byte maximum witness and8/8/15/34 intermediate lengths. Recorder cursor arithmetic is checked against static caller evidence; recorder/game/Wine execution, actual input configuration and runtime overwrite are not established. Temporary harness files are removed after the subprocess returns.
 
-Runtime launcher note: the temporary parent launcher did not create a separate Wine session; stopping that capture was followed by game exit. Future launchers must use an independently owned child session and verify game survival after sampling ends. The sampler itself sends no signal to the game.
+The temporary launcher used for the first run shared its process session with Wine; stopping that capture was followed by game exit. The permanent `launch_music_shutdown_capture.py` launches Wine in its own session and runs the sampler in the same parent process, retaining normal parent-to-child read permission without sudo. It refuses an already running game, the wrong executable fingerprint, invalid timing, or existing output/log paths before launching. It never intentionally signals the game or restores/changes display settings.
+
+For a separately coordinated new run:
+
+```sh
+python3 analysis/scripts/launch_music_shutdown_capture.py --exe "$NFS3_EXE" --prefix "$NFS3_PREFIX" --seconds 180 --interval 0.1 --gameplay-state --output analysis/captures/music-shutdown-new.jsonl
+```
+
+The Wine log is created exclusively beside that capture. Readiness still requires the READY message and growing samples. A disposable child-process integration probe verified parent read-only access with a separate child session and child survival after the parent/tool command ended; the owned probe was cleaned up. Existing-output and invalid-duration checks passed without launching Wine. The corrected helper has not yet been exercised with a new game run, so Wine survival and display restoration remain explicit next-run checks.
+
+The sampler also emits a `kind=maps` record every30seconds, in addition to the initial metadata map. Later module presence can establish mapping during that interval; it does not prove API calls or successful rendering. The previous completed capture predates these periodic records and therefore remains early-map-only evidence.

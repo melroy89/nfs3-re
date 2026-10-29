@@ -31,5 +31,5 @@ The ordinary Hometown/forward/stock-Diablo/None/TrafficOn test confirmed visible
 
 1. Finish reviewing unpublished ordinary model-menu and renderer evidence; retain only claims supported by raw instructions/files/loaded-module observations.
 2. Consolidate the remaining normal static capacity/ownership questions into specific evidence requests. Preserve the full subsystem ledger; do not repeatedly reopen completed naming or basic arithmetic audits.
-3. Use a separate, explicitly coordinated runtime scenario for the next decisive question. Before another launch, correct child-session handling and verify capture readiness, display state and game survival after capture completion.
+3. Use a separate, explicitly coordinated runtime scenario for the next decisive question. Child-session handling now has a permanent launcher and a passed disposable-child read/survival probe. On the next game launch, verify capture readiness, display state and actual Wine survival after capture completion.
 4. Multiplayer acceptance requires two peers; controller acceptance requires suitable physical hardware. Keep those requirements open until exercised. Do not replace them with further unrelated static annotations.

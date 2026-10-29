@@ -56,7 +56,7 @@ def gameplay_snapshot(read):
             "vehicle_scan_skipped": not 0 <= count <= 16}
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("pid", type=int)
     parser.add_argument("--exe", required=True, type=Path)
@@ -65,7 +65,7 @@ def main():
     parser.add_argument("--interval", type=float, default=0.1)
     parser.add_argument("--gameplay-state", action="store_true",
                         help="also sample setup globals and up to16 vehicle activity records")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if args.pid <= 0:
         parser.error("pid must be positive")
     if not math.isfinite(args.seconds) or not 1 <= args.seconds <= 600:
@@ -123,10 +123,17 @@ def main():
             print("READY: fixed ranges and read-only access verified; capture running", flush=True)
             begin = time.monotonic()
             count = 0
+            last_maps = 0.0
             while not stopping and time.monotonic() - begin < args.seconds:
                 try:
                     if identity() != started:
                         raise OSError("process identity changed")
+                    elapsed = time.monotonic() - begin
+                    if elapsed - last_maps >= 30:
+                        emit({"kind": "maps", "t": elapsed,
+                              "maps": proc.joinpath("maps").read_text(),
+                              "limits": "Module presence at this timestamp; not proof of API calls"})
+                        last_maps = elapsed
                     raw = read(0xA09B3C, 16 * 0x60)
                     voices = []
                     for index in range(16):
