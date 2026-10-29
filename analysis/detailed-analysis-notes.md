@@ -16156,3 +16156,7 @@ Parent rawtype-table review distinguishes cascade17/key5378370/template556ea8/in
 [Renderer inventory](installed-renderer-capability-inventory.md) isindependentlyhash/config/READMEchecked. Parser4b56d5 maps0..3 to256..2048; renderer4b5bd6..4b5bf5 reducesextent againstunsignedminimumofdescriptor14/20 byhalving. Squarebuffer49cea0 furtherreducesagainstbothsourcesizes. Directusereferences donotproveallbackendlimits oractualhigher-resolutionoutput; firstcapturemaps precedefullstartup.
 
 [Preset matrix](race-setup-preset-compatibility.md) separatesinitializer/imported/live values. Parentreconciled thefull0x890blockcoverage:skill6fd4f0 atoffset154 andassistselectors/runtimewithinblock. Missingnamed40-bytelobbyfields thereforedonotproveno skills/assisttransfer; finalpeerorderingstillunverified. NoClassicpresetimplementationoruniversaldefaultsclaim.
+
+### Configured nGlide advertised extent source
+
+Parent independentlyhashedDLLs anddecoded driverresolverrow60001280(name6000f388`_grGet@12`, slot600110c0), query60001a0c..20 andnGlidearm10008a4e..62: selector0a writesconstant2048. Driveraboutdefaults256 becomeadvertised2048 afterinit; notgameconfig callbackorGPUmeasurement. EXEexportmap bindsinit9ef978,selectdisplay9ef944,about9ef980 (pageflip9ef940distinct); successchain52473a->refresh4f853c precedescapconsumer4b5bd6. [Renderer inventory](installed-renderer-capability-inventory.md) retainsconditionalconfiguredpairvsactualmappedruntime distinction. No game/settingschange.
