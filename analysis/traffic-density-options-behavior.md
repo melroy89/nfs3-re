@@ -8,6 +8,12 @@ The roster consumer uses the same field as an enable gate despite its zero-for-O
 
 The `hostonly` token adds a network-role gate. The static menu-style handler disables the corresponding input control for the client-side state it checks; it does not prove that the control is hidden. Race setup reconciliation forces the Traffic index to Off in modes 1 and 2, while ordinary race mode 0 is not forced off there. Hot Pursuit's mode 3 is also not forced off by that specific reconciliation branch. The shared opponent-menu asset plus the mode and roster code support the setting's ordinary-race and Hot Pursuit semantics; the exact menu presentation/reachability for every mode was not runtime-sampled.
 
+## Why Traffic can be unavailable in Single Race
+
+`UpdateRaceOpponentSelectionControls` (`00427190`) looks up `TRAFFIC_BUTTON` and `TRAFFIC_CASCADE` and applies an additional opponent-count gate. In ordinary race mode0, selector `006fd4d0 == 2` (Full Grid) sets button disabled bit0 at `004271ce` and cascade flags `0x1001` at `00427208`. Other ordinary opponent counts clear those masks at `004271d4` and `00427210`. Thus selecting None or One re-enables the controls in this path; Full Grid disables them. This is separate from the roster arithmetic that also leaves no traffic slots with Full Grid.
+
+Modes other than0/3 set these disabling masks, consistent with the series policy. Mode3 skips these particular mask updates, leaving its other initialization/role gates separate. The same routine disables the opponent-number controls in mode3. These are exact menu-state writes, not a claim that flag0x1000 alone means hidden or that every menu interaction was observed. The user reported Traffic unavailable with ordinary Full Grid selected; the concurrent read-only capture confirmed race mode0, opponent selector2 and TrafficOff while still at setup. Switching the controls and the resulting roster are separate runtime checks.
+
 ## Ordinary-race roster budget
 
 `BuildRegularRaceRoster` constructs the human racer(s), then AI opponents, then fills any remaining slots with traffic when Traffic is On. Its supported opponent choices come from the installed `opponent.mnu` list and localization: None (`0`), One (`1`), and Full Grid (`2`). For a normal single human racer and ordinary mode 0, the roster arithmetic is:

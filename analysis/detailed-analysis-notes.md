@@ -16136,3 +16136,7 @@ Parent reviewed438eb0 andpartition helpers438e30/438d60/438dc0/438d20, allocatio
 ### Lap list lookup offset and generic writer proof
 
 Parent raw442c80 returnsrow+4 (5563ec relativebase5563e8), notrow+c; this corrects the worker’s followup offset interpretation before publication. Count442c50 therefore yields3 forlaps list5561fa. Parent decodedtextIDse0/de/df to2/4/8, read full463ff0 and isolatedclosedLeft/Right stores4640eb/464161 plus acceptedopenEnter46429d; Enter464184 reads initialselection. [Lap followup](lap-choice-gameplay-domain.md#reviewed-list-and-generic-ordinal-writer-follow-up) retains only parser/templatecallback linkage as remaining static gap in this chain.
+
+### Ordinary Traffic control availability depends on opponent count
+
+User reported Traffic unavailable while preparing normal SingleRace. Livecapture observedmode0/opponentselector2/trafficdisabled1. Parent full427190 body traces namedTRAFFIC_BUTTON/CASCADE lookups: mode0+FullGrid setsbit01/bits1001; otherordinarycounts clear them; modes1/2disable, mode3skips these maskwrites. [Traffic report](traffic-density-options-behavior.md#why-traffic-can-be-unavailable-in-single-race) now explains changingNumberofOpponents beforeTraffic. Runtime changed-control/roster observation remains pending.
