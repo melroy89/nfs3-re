@@ -16132,3 +16132,7 @@ Parent reviewed full478bb0/478320, loadingwrapper4dbbe0 and renderer479b90, then
 ### Conditional identity of the omitted car-group ordinal
 
 Parent reviewed438eb0 andpartition helpers438e30/438d60/438dc0/438d20, allocationclear439ff9..43a002, and retainedKNOC metadata (selector255, mappedflagwords0, ID33). [Car report](car-selector-gameplay-domain.md) now traces aggregate ordinary/police/categoryFF/remainder order. If all24installedmodels are admitted with noextra source and originalflag08clear, KNOC is final and count-minus-one omitsit. This is conditional loaded-set reasoning, not a structural sentinel or live registry proof.
+
+### Lap list lookup offset and generic writer proof
+
+Parent raw442c80 returnsrow+4 (5563ec relativebase5563e8), notrow+c; this corrects the worker’s followup offset interpretation before publication. Count442c50 therefore yields3 forlaps list5561fa. Parent decodedtextIDse0/de/df to2/4/8, read full463ff0 and isolatedclosedLeft/Right stores4640eb/464161 plus acceptedopenEnter46429d; Enter464184 reads initialselection. [Lap followup](lap-choice-gameplay-domain.md#reviewed-list-and-generic-ordinal-writer-follow-up) retains only parser/templatecallback linkage as remaining static gap in this chain.
