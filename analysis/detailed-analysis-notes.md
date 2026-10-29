@@ -16160,3 +16160,7 @@ Parent rawtype-table review distinguishes cascade17/key5378370/template556ea8/in
 ### Configured nGlide advertised extent source
 
 Parent independentlyhashedDLLs anddecoded driverresolverrow60001280(name6000f388`_grGet@12`, slot600110c0), query60001a0c..20 andnGlidearm10008a4e..62: selector0a writesconstant2048. Driveraboutdefaults256 becomeadvertised2048 afterinit; notgameconfig callbackorGPUmeasurement. EXEexportmap bindsinit9ef978,selectdisplay9ef944,about9ef980 (pageflip9ef940distinct); successchain52473a->refresh4f853c precedescapconsumer4b5bd6. [Renderer inventory](installed-renderer-capability-inventory.md) retainsconditionalconfiguredpairvsactualmappedruntime distinction. No game/settingschange.
+
+### Ordinary local counter cadence measured from retained samples
+
+Offlineanalysisofcompletedcapture retains342-sample steppingblock0->2196 over34.247765monotonicseconds (64.120972/s), plus35-samplepostpauseblock2196->2406 over3.412413s (61.540027/s). Sequence7d36b0 equalstick7d3684 inthese samples. [Evidence](evidence/runtime/ordinary-race-counter-cadence.json) preservesstrictpositive-stepsegmentation/endpoints/rawhash. Localcountercontextonly; notrenderFPS, callbacktrace, universalfixedclock ornetworklatencyunits.

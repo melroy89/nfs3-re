@@ -59,3 +59,9 @@ All REA evidence below is from the exact executable identified above.
 - Conditional m/s inference and projection provenance are also discussed in [the detailed notes](detailed-analysis-notes.md#pursuit-roles-budgets-and-stop-lifecycle), with formatter evidence `ev_84880f4ed0d0b3e30a4cfe09edd47bb1238ac0be2c9e9f086dfe10aa878fbf90`, `ev_1094edef19679c9cff8631711ab193983aa381111d12d5f40468c9f8aeaf492e`, and `ev_f099c4348f9ca0daca7b21f4b9721fa9487e12519213b4e17664116a084dca94`.
 
 Parent readback corroborated progress producer0042ce10 against original selected-executable instructions and motion callback0042ce70/AI integrator004066c0 against the shared Ghidra program. Segment-step units and magnitude-like longitudinal motion are established; physical calibration and per-second cadence remain qualified.
+
+## Observed counter cadence in one ordinary race
+
+The completed read-only Hometown/forward/None/TrafficOn capture provides a bounded wall-clock comparison. Its first positive-stepping block contains342samples and advances simulation counter `007d3684` from0 to2196 over34.247765seconds of monotonic sample time, averaging64.120972ticks/second. A shorter post-pause block advances210ticks over3.412413seconds, averaging61.540027ticks/second. Race sequence `007d36b0` equals the simulation counter in every retained block sample.
+
+[Cadence evidence and segmentation rule](evidence/runtime/ordinary-race-counter-cadence.json) retain both blocks, endpoints and full raw-capture hash. The requested sample interval is0.1seconds, fields are asynchronous, and pause/start boundaries affect short-block averages. This supports approximately64counter increments/second in the longer observed local block; it does not prove a universal fixed frequency, rendered FPS, direct callback counts, physical motion units or multiplayer lead/latency timing. The known even-tick callback gate remains a separate static fact.
