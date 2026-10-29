@@ -15981,3 +15981,18 @@ Parent verified selected nfs3.exe SHA2a20f804... descriptor00555f00 points at004
 ### Car registry refresh lifecycle
 
 [Lifecycle audit](car-registry-refresh-lifecycle.md) links existing cache/group routines into ordinary discovery/removal/setup paths. Parent checked loader00439d9e reset,0043a34a reorder,0043a49c group rebuild; marked-car cleanup0043b3e2 reload and race-setup00474cb3 rebuild. Transfer completion remains tied to earlier static body with unresolved dispatch/redraw order. No new cap, runtime update or generic frontend-reentry guarantee follows.
+
+
+### Connect menu session selection callback
+
+[Selection-state audit](connect-menu-selection-state.md) maps descriptor+10 invocation0044b37c/0044bcee to recovered UpdateConnectMenuSessionMode00440730. Parent full original-byte review confirms sessionmode006fd3b0 values2modem/3serial/4IPX-TCP-RaceNet, return0; this is not a provider-dialog action. UnboundRaceNet nextmenu mainmult conditionally uses genericbutton action5 ifEnter is dispatched; normal catalog absence disables item. Runtime/modal selection and alternate catalog state remain qualified.
+
+
+### Active received-car completion route
+
+[Transfer dispatch](car-transfer-completion-dispatch.md) and updated [registry lifecycle](car-registry-refresh-lifecycle.md) distinguish the real static receive path from older updater0043ae60. Parent verified packet table17/18 slots0055ed00/04 ->0049b470/0049b520, wrapper0049b52a ->0049b5f0, and memory-stage completion loader0049b7c7/setters0043bc00/40/70/90/loader0049b7ef. Types15/17 and16/18 are paired directions, not independently file/metadata stage labels. No call to0043ae60 appears in this route; bounded no-ingress result is not universal indirect-call exclusion. Loader returns/setter target, actual transfer success and redraw remain qualified.
+
+
+### Race joystick raw-axis source
+
+[Source map](controller-axis-runtime-source-map.md) distinguishes race005eff80 from frontend capture005f3d50. Parent reviewed004315a0,004358f0 and00431740: device-specific132byte records, successful raw8DWORD copies torecord+50, failure clearing and evaluatorSAR8/packed bounds. Descending bounds can reverse the mapping without raw sample negation. Hardware/driver/property range, center and deadzone remain separate; savedrepeatable comment005eff80 records the source boundary.
