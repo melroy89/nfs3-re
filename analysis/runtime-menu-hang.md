@@ -62,3 +62,7 @@ A future read-only capture should retain the selected music handle00564690, targ
 
 
 Capture preparation: `analysis/scripts/sample_music_shutdown.py` implements the bounded fixed-map voice snapshot above. CLI help and three invalid duration/interval cases passed without creating output. Live memory acquisition remains NOT RUN until the game is launched and readiness verified. The user has been asked to wait at the main menu; no race action requested before capture.
+
+## Live preflight for the ordinary-race comparison
+
+The exact installed image was launched in its existing Wine prefix from a parent capture process. Direct sibling-process reading was denied; parent-to-child O_RDONLY access succeeded without changing OS policy. Capture verified the live code signature and all fixed ranges, reported READY, and produced growing0.1-second samples. The sampler now optionally captures setup globals and bounded vehicle activity alongside the16 audio voice records. This proves acquisition works; it does not reproduce the slowdown or establish race-exit behavior. The coordinated scenario is a stock Diablo, Hometown forward/day/dry,2laps, no opponents, TrafficOn; approximately60seconds driving, then Quit toMainMenu and20seconds waiting. Scenario execution and resulting analysis are pending. Raw capture remains outside the repository until a reviewed bounded extract is prepared.
