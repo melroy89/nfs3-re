@@ -23,3 +23,9 @@ The user reports feeling Fanatec force feedback on the host, then clarifies that
 - Peer-to-peer mode, independent physical machines, separate networks and public-service availability.
 
 The basic TCP lobby, chat delivery and two-peer race-load/rendering checks are DONE for this scenario. The broader networking research and enhancement issues remain open.
+
+## Subsequent driving observation
+
+The user confirms both cars are visible and movement appears in sync while driving `Melroy_VM` with the keyboard. A bounded read-only VM snapshot independently confirms sessionmode4/racemode0, Hometown/forward/2laps, two configured human racers, zero AI/traffic and local index1. Both vehicle records are active category0x05. At simulation/sequence18970 their progress values are9 and60, wrap counters0 and result states0; neither is proved finished. The exact executable digest and fixed-code signature were checked before opening the process memory O_RDONLY. These asynchronous fields do not measure network latency or cross-peer position error.
+
+The user also feels wheel effects while driving the VM car. The generating process and any device-forwarding route are not established. Host wheel driving remains unsuitable; no calibrated force-feedback or general controller-compatibility conclusion follows.

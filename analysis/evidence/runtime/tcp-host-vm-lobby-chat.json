@@ -31,7 +31,7 @@
     }
   },
   "remaining": [
-    "Visible peer motion consistency while driving VM car",
+    "Measured timing/divergence/recovery and stronger synchronized peer-position comparisons",
     "Results and complete-race agreement",
     "Full series and reconnect/interruption behavior",
     "WAN latency and independent physical peers"
@@ -61,6 +61,73 @@
   "controller_user_report": {
     "force_feedback": "User feels Fanatec force feedback during host multiplayer.",
     "driving": "User subsequently clarifies host wheel controls are not really working; will drive VM with keyboard.",
-    "interpretation": "Force-feedback observation does not establish usable steering/pedal input."
+    "interpretation": "Force-feedback observation does not establish usable steering/pedal input.",
+    "effect_while_vm_driving": "User feels effects at the wheel while driving VM with keyboard; actual effect-generating process/device-forwarding route not established."
+  },
+  "visible_sync_user_confirmation": {
+    "both_cars_visible": true,
+    "motion_in_sync": true,
+    "vm_keyboard_driving": true,
+    "scope": "User-observed ordinary LAN behavior; not measured latency/divergence."
+  },
+  "vm_read_only_race_snapshot": {
+    "identity": "VM game PID3525; executable SHA and fixed code signature verified before O_RDONLY read",
+    "state": {
+      "globals": {
+        "session_mode": 4,
+        "race_mode": 0,
+        "track": 0,
+        "laps": 2,
+        "reverse": 0,
+        "opponent_choice": 0,
+        "opponent_model_choice": 0,
+        "traffic_disabled": 1,
+        "ai_skill": 1,
+        "local_index": 1,
+        "configured_vehicles": 2,
+        "configured_humans": 2,
+        "human_racers": 2,
+        "ai_racers": 0,
+        "ai_police": 0,
+        "inactive_ai": 0,
+        "registry_count": 24,
+        "simulation_tick": 18970,
+        "race_sequence": 18970,
+        "race_exit": 2
+      },
+      "vehicles": [
+        {
+          "index": 0,
+          "pointer": 6164768,
+          "progress": 9,
+          "segment": 9,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 0,
+          "auxiliary_wrap": 0,
+          "result_state": 0,
+          "activation_state": 0,
+          "activation_countdown": 0
+        },
+        {
+          "index": 1,
+          "pointer": 6167244,
+          "progress": 60,
+          "segment": 60,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 0,
+          "auxiliary_wrap": 0,
+          "result_state": 0,
+          "activation_state": 0,
+          "activation_countdown": 0
+        }
+      ],
+      "vehicle_scan_skipped": false
+    }
   }
 }
