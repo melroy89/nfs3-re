@@ -16070,3 +16070,11 @@ The older network-lobby action6/application-state gap is now narrowed in [next-r
 ### Series tie-policy parent review
 
 [Tie policy](series-result-tie-policy.md) separates score key/categorybit4 from the final ascending signed238 fallback. Parent reviewed comparator00455840 and estimate producer004ce5a0; missing-lap estimate correction uses shared PRNG, without establishing peer divergence. Corrected worker block associations: selector3 roundscore usesflagblock00455b05; selector4 cumulative uses00455a3c. Only the bit80 prepass in004552f0 is mode2-only; common status bucket/rank writes begin00455340. Also corrected the earlier [result ownership](network-series-result-ownership.md) wording: updater00455070 rebuilds selector1 descending at004550f1/f7, not cumulative-score ordering. Zero helper004e070c preserves EBX1, confirming the reversal argument. Runtime policy/peer equality remain unverified.
+
+### Ordinary series interruption gates
+
+[Interruption policy](network-series-interruption-policy.md) records the exact promotion: exit!=1, savedcontext0, signedsessionmode>1, and(abortWORD!=0 ORsessionstateDWORD==0) ->exit2 at004a3815. Parent and two Luna checks independently reviewed rawbranches; state2 jumps004a3763 and returns11, not a retryloop. Result call004a385f requires freshstate0 andECX0; ECXloadedfromsavedcontext survives00410370 including optional004e4790 PUSH/POP ECX. Actual visible/transport events selecting these states and live peer agreement remain open. Unreviewed historical securitydrafts are not dependencies of this normal report.
+
+### Postgame network readiness integration
+
+[Readiness lifecycle](network-postgame-readiness-lifecycle.md) joins shared postgame rendering to panel buffers and host/client synchronization. Parent verified renderer ordinarycontext00559234==0 requires priority8/active-session and nameunequal literalipx at00538fc4; strcmp0 skips, not succeeds. Installed postgame.mnu includes priority8 and24. Reviewed buffer allocation/free calls00440970, panelgate004415e9..0044163a and existing0049abd0: inactive-session helperreturn1 is distinct from caller active-session predicate. Buffer/ready/livepeer/load success remain qualified. EOL0044a629 saved.
