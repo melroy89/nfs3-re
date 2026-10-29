@@ -16140,3 +16140,7 @@ Parent raw442c80 returnsrow+4 (5563ec relativebase5563e8), notrow+c; this correc
 ### Ordinary Traffic control availability depends on opponent count
 
 User reported Traffic unavailable while preparing normal SingleRace. Livecapture observedmode0/opponentselector2/trafficdisabled1. Parent full427190 body traces namedTRAFFIC_BUTTON/CASCADE lookups: mode0+FullGrid setsbit01/bits1001; otherordinarycounts clear them; modes1/2disable, mode3skips these maskwrites. [Traffic report](traffic-density-options-behavior.md#why-traffic-can-be-unavailable-in-single-race) now explains changingNumberofOpponents beforeTraffic. Runtime changed-control/roster observation remains pending.
+
+### Ordinary traffic runtime baseline corroborated
+
+User selectedNone/TrafficOn and reported visiblegreytraffic, thenpaused. Read-only parent-ownedWine capture has matching mode0/Hometown/forward/2laps,1human+7category12traffic, noAIracers/police. Atpausedtick2196, traffic89/state630 pairs arefive1/2 andtwo0/1; sharedinactive2. Allinactive tick1953 precedes firstsampledactivationtick1960, consistentwith1920gate/countdown. [Bounded retained evidence](evidence/runtime/ordinary-single-race-traffic-observation.json); exactactivationtick/visiblecount/globaldensitypolicy notclaimed. Menuexit/audio comparison remainsongoing.
