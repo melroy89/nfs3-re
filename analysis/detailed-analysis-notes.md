@@ -16098,3 +16098,5 @@ Parent reviewed the new [pause event handoff](network-series-interruption-policy
 ### Reviewed scheduling and Quit confirmation follow-up
 
 Parent verified00430cd0 clears pair count005537bc and0042c830 registers vehicle+618 on007d3690 at priority0x28. Together with the simulation-step tail, this bounds timer174 in callback invocations. Quit confirmation actions12/11/10 reach resolver events3/4/5; Main Menu writes exit2 and System exit1. Race Results stores ECX after helpers whose transitive preservation remains under review. These bounded static findings leave visible runtime behavior open.
+
+Parent reviewed Luna’s transitive ECX audit after checkpoint57a1edd:004186a0 and00470fc0 preserve incoming ECX on normal returns through their nested callees. Race Results/event3 therefore stores exit0, satisfying the exit-state portion of builder admission; other outer predicates and runtime peer agreement remain separate.
