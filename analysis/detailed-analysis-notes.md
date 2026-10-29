@@ -16128,3 +16128,7 @@ Parent raw bytes confirm20-byte lapsrow begins00556424, key00537e44, list005561f
 ### Environment-strip normalizer domain resolved
 
 Parent reviewed full478bb0/478320, loadingwrapper4dbbe0 and renderer479b90, then parserstore478762 plus47a880/4782e0 calls. [Normalizer report](setup-normalizer-gameplay-domain.md) resolves16selectedresource pointers and17normalizedscalar stores as environmentstrip rendering setup, not car/participant capacity. Mirrorflag55d15c is a parsed positional integer; eight source-pointer population and final local numerator/use remain open. Ordinary rendering-domain audit DONE; no runtime visual or failure claim.
+
+### Conditional identity of the omitted car-group ordinal
+
+Parent reviewed438eb0 andpartition helpers438e30/438d60/438dc0/438d20, allocationclear439ff9..43a002, and retainedKNOC metadata (selector255, mappedflagwords0, ID33). [Car report](car-selector-gameplay-domain.md) now traces aggregate ordinary/police/categoryFF/remainder order. If all24installedmodels are admitted with noextra source and originalflag08clear, KNOC is final and count-minus-one omitsit. This is conditional loaded-set reasoning, not a structural sentinel or live registry proof.
