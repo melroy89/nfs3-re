@@ -1,0 +1,99 @@
+{
+  "scope": "Xbox360 pad connected before restarting Wine/NFS3. Linux and game enumeration succeed; user attempted remapping but reports poor responsiveness. Usable gameplay compatibility is not established.",
+  "exe_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "source_capture": "/tmp/nfs3-controller-startup-20261029.jsonl",
+  "source_prefix_bytes": 6378248,
+  "source_prefix_sha256": "b10123250c6120c08e3c264bbd96507b05783c8afea72565ba97b448cfe5661b",
+  "samples_in_prefix": 867,
+  "capture_errors_in_prefix": 0,
+  "registered_sample": {
+    "t": 86.9597908350006,
+    "registered_count": 1,
+    "frontend_count": 1,
+    "device_interface_present": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "user_preference": "Leave default bindings for now.",
+  "user_observations": [
+    "Controller was not working when connected after game launch.",
+    "After restarting with controller connected: seems to work actually.",
+    "Tried remapping; controller is not responding very well."
+  ],
+  "limitations": [
+    "Earlier pre-restart game enumeration count was not sampled.",
+    "One registered interface does not prove each stick/trigger binding or gameplay correctness.",
+    "Race cache is not frontend binding cache; zero race values before race start do not prove a device failure.",
+    "Sampled device0 race-axis cache remained zero; no synchronized physical-stick protocol or acquisition-result trace establishes why.",
+    "No Wine versus native Windows comparison, controlled calibration, force feedback, reconnect or saved-remap reload acceptance."
+  ],
+  "completed_capture": {
+    "bytes": 13520626,
+    "sha256": "a55e069f5f742c7452d6bf599bf7841d805c84e9101b6f11e2cb10a0b3f0f7d8",
+    "samples": 1800,
+    "elapsed": 180.73277477100055,
+    "capture_errors": 0
+  },
+  "race_observation": {
+    "samples": 1010,
+    "last_tick": 888,
+    "observed_first_four_binding_sets": [
+      [
+        8323073,
+        8453889,
+        2,
+        258
+      ]
+    ],
+    "device0_axis_ranges": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "same_game_survives_capture_parent_exit": true
+}

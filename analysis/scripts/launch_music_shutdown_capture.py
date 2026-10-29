@@ -30,6 +30,7 @@ def main():
     parser.add_argument("--seconds", type=float, default=180)
     parser.add_argument("--interval", type=float, default=0.1)
     parser.add_argument("--gameplay-state", action="store_true")
+    parser.add_argument("--controller-state", action="store_true")
     args = parser.parse_args()
     if not math.isfinite(args.seconds) or not 1 <= args.seconds <= 600:
         parser.error("seconds must be finite and between 1 and 600")
@@ -85,6 +86,8 @@ def main():
             "--seconds", str(args.seconds), "--interval", str(args.interval)]
     if args.gameplay_state:
         argv.append("--gameplay-state")
+    if args.controller_state:
+        argv.append("--controller-state")
     sampler.main(argv)
     status = "still running" if child.poll() is None else f"exited ({child.returncode})"
     print(f"Capture complete; game process {status}. No game signal sent.", flush=True)

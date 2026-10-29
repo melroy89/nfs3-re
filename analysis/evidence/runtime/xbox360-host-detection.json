@@ -1,0 +1,12 @@
+{
+  "scope": "Linux host enumeration after Xbox360 controller connected while NFS3 already running; no game input acceptance claim.",
+  "device_name": "Microsoft X-Box 360 pad",
+  "vendor": "045e",
+  "product": "028e",
+  "joystick_node": "/dev/input/js0",
+  "input_inventory_block": "I: Bus=0003 Vendor=045e Product=028e Version=0114\nN: Name=\"Microsoft X-Box 360 pad\"\nP: Phys=usb-0000:4a:00.0-9/input0\nS: Sysfs=/devices/pci0000:40/0000:40:03.6/0000:48:00.0/0000:49:0c.0/0000:4a:00.0/usb7/7-9/7-9:1.0/input/input20\nU: Uniq=\nH: Handlers=event18 js0 \nB: PROP=0\nB: EV=20000b\nB: KEY=7cdb000000000000 0 0 0 0\nB: ABS=3003f\nB: FF=107030000 0",
+  "reported_axes": 8,
+  "reported_buttons": 11,
+  "game_detected": "One game joystick registered after restart; see xbox360-game-startup-detection.json",
+  "binding_axis_range_gameplay_save_reload": "Remapping attempted; poor responsiveness reported. Controlled range/gameplay/save-reload acceptance not established."
+}

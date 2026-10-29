@@ -43,3 +43,9 @@ These edges distinguish “enumerated/usable” domains: slot 15 is within the D
 - Prior record-layout and bounded enumeration evidence is in the “Input-device menu label and slot-state updates” and “DirectInput enumeration index 16 storage alias” sections of `analysis/detailed-analysis-notes.md`. This report deliberately does not extend into the out-of-bounds case.
 
 No executable, configuration, device, or persistent Ghidra project was modified.
+
+## Xbox360 runtime follow-up
+
+The user connected a Microsoft X-Box360 pad (USB045e:028e) while NFS3 was running. Linux exposed event18/js0 with8axes and11buttons. The user initially reported it not working. After an ordinary game restart with the pad connected, read-only samples show registered count00554ef8=1, frontend count006fd204=1 and exactly one nonnull interface slot. The user initially reported it seemed to work, then attempted remapping and reported poor responsiveness. This establishes startup enumeration for this installed Linux/Wine/game combination, **not usable driving compatibility** or a proven hotplug failure mechanism: the pre-restart game count was not sampled.
+
+[Host evidence](evidence/runtime/xbox360-host-detection.json) and [game capture](evidence/runtime/xbox360-game-startup-detection.json) distinguish those layers. The completed capture has1,800samples and no capture-level errors; its prefix/full SHA-256 and observed binding sets are retained. Device0 race-axis cache samples remained zero. Without synchronized physical movements and acquisition-result tracing, those zeros do not distinguish unpolled state, failed acquisition or another input-path condition. Buttons/triggers, calibration, deadzone, focus/reconnect, saved-remap reload and native-Windows behavior remain unqualified. The game survived capture-parent exit and the primary display was read back at1920×1080.

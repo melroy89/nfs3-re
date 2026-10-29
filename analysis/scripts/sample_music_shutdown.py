@@ -56,6 +56,20 @@ def gameplay_snapshot(read):
             "vehicle_scan_skipped": not 0 <= count <= 16}
 
 
+def controller_snapshot(read):
+    """Bounded raw game-side evidence; Linux/Wine device ranges remain separate."""
+    integer = lambda address: struct.unpack("<i", read(address, 4))[0]
+    return {
+        "registered_count": integer(0x554EF8),
+        "frontend_count": integer(0x6FD204),
+        "device_interface_present": [bool(p) for p in struct.unpack(
+            "<16I", read(0x5F1FB8, 64))],
+        "first_four_action_bindings": list(struct.unpack("<4I", read(0x79C340, 16))),
+        "race_axis_cache": [list(struct.unpack("<8i", read(
+            0x5EFF80 + 0x84 * device, 32))) for device in range(16)],
+    }
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("pid", type=int)
@@ -65,6 +79,8 @@ def main(argv=None):
     parser.add_argument("--interval", type=float, default=0.1)
     parser.add_argument("--gameplay-state", action="store_true",
                         help="also sample setup globals and up to16 vehicle activity records")
+    parser.add_argument("--controller-state", action="store_true",
+                        help="also sample bounded device counts, bindings and race axis caches")
     args = parser.parse_args(argv)
     if args.pid <= 0:
         parser.error("pid must be positive")
@@ -152,6 +168,8 @@ def main(argv=None):
                           "voices": voices}
                     if args.gameplay_state:
                         sample["gameplay"] = gameplay_snapshot(read)
+                    if args.controller_state:
+                        sample["controller"] = controller_snapshot(read)
                     emit(sample)
                     count += 1
                 except (OSError, ProcessLookupError) as error:

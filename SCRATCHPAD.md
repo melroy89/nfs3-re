@@ -30,6 +30,7 @@ Delegation workflow: Luna workers, when assigned, investigate bounded, separate 
 
 | Status | Finished audit / evidence | Remaining |
 | --- | --- | --- |
+| DONE | Xbox360 host/startup enumeration observed:8axes/11buttons on Linux; game registers one joystick after restart.1,800read-only samples. [Runtime](analysis/controller-device-slot-lifecycle.md#xbox360-runtime-follow-up). | User reports poor responsiveness despite remapping; driving compatibility, ranges/triggers/calibration and save/reconnect remain PARTIAL/OPEN. |
 | DONE | Matched ordinary None/TrafficOff runtime: one human record, no traffic, actual main-menu return; configured nGlide modules mapped.2,927samples, zero capture errors; game survives capture-parent exit and primary display restored1080p. [Evidence](analysis/evidence/runtime/ordinary-single-race-traffic-off-observation.json). | Other tracks/modes/density/performance, peer and controller qualification remain open. |
 | DONE | Car-selection persistence: series profiles materialize16-byte model IDs and remap saved ordinals against the current registry; ordinary config load copies the blob directly. [Identity](analysis/car-selection-persistence-and-identity.md). | Actual reordered-install save/reload and peer behavior; indirect later selection changes. |
 | DONE | Configured Glide driver texture-memory preflight and per-mip upload calls traced beyond advertised extent. [Renderer](analysis/installed-renderer-capability-inventory.md). | Actual loaded backend, full wrapper upload behavior, larger output and performance. |
