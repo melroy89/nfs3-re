@@ -1,0 +1,123 @@
+{
+  "scope": "Fanatec Linux detection and NFS3 startup enumeration. Binding and gameplay acceptance pending.",
+  "device_inventory": "I: Bus=0003 Vendor=0eb7 Product=0020 Version=0111\nN: Name=\"Fanatec FANATEC Wheel\"\nP: Phys=usb-0000:4a:00.0-5/input0\nS: Sysfs=/devices/pci0000:40/0000:40:03.6/0000:48:00.0/0000:49:0c.0/0000:4a:00.0/usb7/7-5/7-5:1.0/0003:0EB7:0020.0009/input/input23\nU: Uniq=\nH: Handlers=event18 js0 \nB: PROP=0\nB: EV=20001b\nB: KEY=1fffffffffff fffffffffffe0000 0 0 0 0 0 ffff00000000 0 0 0 0\nB: ABS=100000300ff\nB: MSC=10\nB: FF=1f7f0000 0",
+  "linux_reported_axes": 11,
+  "linux_reported_buttons": 108,
+  "source_capture": "/tmp/nfs3-fanatec-startup-20261029.jsonl",
+  "source_prefix_bytes": 13561501,
+  "source_prefix_sha256": "6f09834ede8ac4f6138e9916289aba8484bb78104ed73f296b976e65609baf0f",
+  "exe_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "sample": {
+    "t": 184.21584610300124,
+    "registered_count": 1,
+    "frontend_count": 1,
+    "device_interface_present": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "capture_errors_in_prefix": 0,
+  "binding_screen_observation": "Screenshot shows Enter new control for Steer right; acceptance unconfirmed.",
+  "binding_screen_sha256": "2b2fffa604d22c7ef4447c61d16752482dd6c1c59154bfb27a57c224097e1078",
+  "linux_axis_observation": {
+    "scope": "Read-only20second Linux joystick event observation during attempted Fanatec binding; includes initial state events. Not DirectInput calibration or accepted game mapping.",
+    "device": "/dev/input/js0",
+    "events": 119,
+    "axes": {
+      "0": {
+        "min": 20222,
+        "max": 20222,
+        "last": 20222,
+        "events": 1
+      },
+      "1": {
+        "min": 32767,
+        "max": 32767,
+        "last": 32767,
+        "events": 1
+      },
+      "2": {
+        "min": 32767,
+        "max": 32767,
+        "last": 32767,
+        "events": 1
+      },
+      "3": {
+        "min": -32767,
+        "max": -32767,
+        "last": -32767,
+        "events": 1
+      },
+      "4": {
+        "min": -32767,
+        "max": -32767,
+        "last": -32767,
+        "events": 1
+      },
+      "5": {
+        "min": 32767,
+        "max": 32767,
+        "last": 32767,
+        "events": 1
+      },
+      "6": {
+        "min": 32767,
+        "max": 32767,
+        "last": 32767,
+        "events": 1
+      },
+      "7": {
+        "min": 0,
+        "max": 0,
+        "last": 0,
+        "events": 1
+      },
+      "8": {
+        "min": 0,
+        "max": 0,
+        "last": 0,
+        "events": 1
+      },
+      "9": {
+        "min": 0,
+        "max": 0,
+        "last": 0,
+        "events": 1
+      },
+      "10": {
+        "min": -32767,
+        "max": -32767,
+        "last": -32767,
+        "events": 1
+      }
+    }
+  },
+  "limitations": [
+    "Initial Linux axis states do not prove movement.",
+    "Game race cache does not represent frontend binding acquisition.",
+    "No accepted wheel/pedal binding, controlled range test, gameplay, force feedback or save/reload proof yet."
+  ],
+  "completed_capture": {
+    "bytes": 19223284,
+    "sha256": "437f49f95b124b6e3f2d413719af9586ef7c483a93ccb62806c8dad44ee65f9a",
+    "samples": 2612,
+    "elapsed_seconds": 262.21240536000187,
+    "capture_errors": 0
+  },
+  "latest_binding_screen_sha256": "aff96e46992d2dc43eca7f20ce35de2204b6005327de213d8eddb41c39157950",
+  "same_game_survives_capture_parent_exit": true
+}
