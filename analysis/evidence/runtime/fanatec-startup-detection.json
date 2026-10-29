@@ -119,5 +119,11 @@
     "capture_errors": 0
   },
   "latest_binding_screen_sha256": "aff96e46992d2dc43eca7f20ce35de2204b6005327de213d8eddb41c39157950",
-  "same_game_survives_capture_parent_exit": true
+  "same_game_survives_capture_parent_exit": true,
+  "user_followup": {
+    "in_game_name": "User confirms Fanatec wheel listed in the Dead Zone section.",
+    "control_response": "User did not find it working usefully; accepted steering/pedal response remains unverified.",
+    "other_games": "User reports hid-fanatecff works in other Linux games. This does not establish the active driver or cause in this run.",
+    "decision": "Leave further controller troubleshooting deferred for now."
+  }
 }
