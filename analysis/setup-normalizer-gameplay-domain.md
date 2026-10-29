@@ -51,6 +51,10 @@ EXE='nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe'
 objdump -D -Mintel --start-address=0x478bb0 --stop-address=0x478c63 "$EXE"
 objdump -D -Mintel --start-address=0x4dbbe0 --stop-address=0x4dbbff "$EXE"
 objdump -D -Mintel --start-address=0x4dbc19 --stop-address=0x4dbc46 "$EXE"
+objdump -D -Mintel --start-address=0x41daa0 --stop-address=0x41dae0 "$EXE"
+objdump -D -Mintel --start-address=0x41d960 --stop-address=0x41da38 "$EXE"
+objdump -D -Mintel --start-address=0x41dc60 --stop-address=0x41dcc0 "$EXE"
+objdump -D -Mintel --start-address=0x478b70 --stop-address=0x478ba4 "$EXE"
 objdump -D -Mintel --start-address=0x479b90 --stop-address=0x479ec9 "$EXE"
 ```
 
@@ -125,13 +129,24 @@ instruction sequence proves the read/write, not a particular runtime value or
 whether downstream code consumes that final slot.
 
 The PE image bytes at `0055d1d0..0055d1ef` are zero in the original file image.
-The normalizer’s direct references to this address are indexed reads, and the
-bounded direct disassembly found no direct store to that table. This does not
-show the table is zero when the setup path runs: a write through an alias,
-resource-loading mechanism, or another initialization route may supply the
-runtime pointers. The table’s population path and the exact `.hrz` source
-record labels remain unresolved. Accordingly, the two-WORD memory shape is
-assembly-confirmed while its field semantics are not.
+The normal loading path does construct this table at runtime. `0041dae0`
+allocates a resource-group buffer through `0041daa0`, which stores the
+allocator result in `005dd858`. `0041d960` calls `0041dae0` before
+`0041dc60`; the latter passes `[005dd858]` to `00478b70`. That helper is
+the resolved writer of the eight table entries: for indices
+`i=0..7`, it writes `[0055d1d0 + 4*i] = [005dd858] + 44*i`
+(`00478b81..00478b96`; the stride is `(4*i-i)*4-i`, then `*4`). Thus the
+eight pointers address byte offsets 0, 44, …, 308 in the allocated
+resource-group buffer. The image's zero bytes describe its initial data, not
+the post-loader table.
+
+The payload producer is also traced. When resource-group source `005dd850` is nonzero, `0041dc60` calls `BuildIndexedShapeTexturesWithLoadingProgress` (`0041db10`) with destination `[005dd858]` before publishing the eight pointers. The builder advances its destination by44bytes after each successfully resolved shape (`0041db9d`). It selects `004d4080` when `007a3a58 & 2` is clear and `004d41a0` when that bit is set.
+
+In `004d4080`, source-header WORDs at+4/+6 are copied to descriptor WORDs at+0/+2 (`004d409e..004d40af`), before texture creation and UV-field setup. Thus the normalizer's two WORDs are the texture descriptor's two stored extents, rather than participant parameters. The first extent is ignored by the normalizer; the second is divided by the maximum second extent across the16selected descriptors.
+
+The alternate `004d41a0` initially copies the same source extents, then calls `004d4120` and replaces both descriptor WORDs with the same selected square side at `004d4230..004d4233`. `004d4120` takes the smaller signed input extent, returns256 for values at least256, otherwise the largest threshold from128/64/32/16/8/4/2 not exceeding it, and returns1 below2. This is a branch-specific texture-size policy, not a universal maximum for every renderer or all game textures. Therefore the normalizer can use the square output extent rather than the original second source extent on this branch.
+
+This resolves the descriptor-content producer and the normalization input's structural meaning. It does not establish which branch ran in a particular race, the full source-asset schema, successful texture upload, renderer limits or the visible effect of the normalized ratio.
 
 ## Observed consumer and capacity relevance
 
@@ -156,10 +171,10 @@ race participants or registered car models.
 
 ## Remaining limits
 
-- The runtime producer for pointer entries at `0055d1d0` was not recovered;
-  the image’s zero bytes are not runtime-state evidence.
-- The two WORD meanings in the pointed source records are unknown; only the
-  second WORD’s use as a normalization numerator is proven.
+- The normal runtime construction of the eight pointer entries at
+  `0055d1d0` is recovered as eight 44-byte-spaced addresses into the buffer
+  held at `005dd858`. The descriptor extent producer is traced through `0041db10` and its two texture-construction branches; actual runtime contents remain unobserved.
+- The two WORDs are stored texture extents; the selected backend branch and actual loaded values were not sampled, and successful upload/visual behavior remain unverified.
 - The meaning/domain of parsed mirror-mode values beyond the observed
   zero/nonzero behavior remains unknown.
 - The 17th numerator is read from local slot 16 without a local store. Its

@@ -16144,3 +16144,7 @@ User reported Traffic unavailable while preparing normal SingleRace. Livecapture
 ### Ordinary traffic runtime baseline corroborated
 
 User selectedNone/TrafficOn and reported visiblegreytraffic, thenpaused. Read-only parent-ownedWine capture has matching mode0/Hometown/forward/2laps,1human+7category12traffic, noAIracers/police. Atpausedtick2196, traffic89/state630 pairs arefive1/2 andtwo0/1; sharedinactive2. Allinactive tick1953 precedes firstsampledactivationtick1960, consistentwith1920gate/countdown. [Bounded retained evidence](evidence/runtime/ordinary-single-race-traffic-observation.json); exactactivationtick/visiblecount/globaldensitypolicy notclaimed. Menuexit/audio comparison remainsongoing.
+
+### Environment-strip descriptor population and extent input
+
+Parent full41dc60/41db10/478b70 bodies trace descriptorarraypopulation beforeeightpointerpublication; raw4d4080 copies sourceheaderWORD4/6 todescriptor0/2. Alternate4d41a0 overwritesboth with4d4120 smallerextent/flooredpower-of-two thresholdpolicy capped256. [Normalizer report](setup-normalizer-gameplay-domain.md) now identifiesextentproducer, withbranch-specificsquareoutput ratherthan universalassetheight/cap. Actualselectedbackend/runtimeupload remainsopen; no17th-valueinvestigation pursued.
