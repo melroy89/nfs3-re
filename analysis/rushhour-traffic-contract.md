@@ -18,7 +18,7 @@ The full direct-xref inventory for inverse option `g_nTrafficDisabled` (`006fd4e
 
 ## Cap and delay
 
-`InitializeTrackAITuningTables` configures row+0 cap and row+4 base delay by track ID for race modes0 and3. For IDs0..8, mode0 caps are `[8,6,9,5,7,6,5,5,12]` and base delays `[40,120,80,100,40,120,80,80,20]`; mode3 caps are the same, with delays `[40,120,80,100,120,120,80,80,20]`. Modes1/2 configure both fields to zero. The cap is the selected row value returned by `GetConfiguredTrafficVehicleLimit`; it is not the roster allocation or a direct traffic-density count.
+`InitializeTrackAITuningTables` configures row+0 cap and row+4 base delay by track ID for race modes0 and3. For IDs0..8, mode0 caps are `[8,6,9,5,7,6,5,5,12]` and base delays `[40,120,80,100,40,120,80,80,20]`; mode3 caps are the same, with delays `[40,120,80,100,40,120,80,80,20]`. Modes1/2 configure both fields to zero. The cap is the selected row value returned by `GetConfiguredTrafficVehicleLimit`; it is not the roster allocation or a direct traffic-density count.
 
 ConfigureTrackAIParameterRecord0040e3c0 sets record+0=15 and+4=0 under bit08. GetConfiguredTrafficVehicleLimit0040ef10 returns the selected record+0 without a weather/night adjustment. GetTrafficReactivationDelayRange0040eed0 adds200 for nonzero006fd4cc and400 for nonzero006fd4c8 after reading base delay. Therefore RUSHHOUR ranges are0/200/400/600, not universally0.
 
@@ -110,3 +110,7 @@ is reused on the next setup, and the delayed ordinary traffic activation
 follows early human refresh; no pre-refresh stale singleton read is established
 in the zero-opponent/zero-police solo traffic route. Other modes, invalid
 progress, indirect/asynchronous teardown/setup consumers remain unresolved.
+
+## Active-image delay correction
+
+Parent rechecked the active executable SHA-256 `2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb`. The mode jump table at `0040e400` maps mode0 to `0040e4b2` and mode3 to `0040e611`. Both track4 rows pass EBX=`0x28` (40): `0040e558` and `0040e6b7`, with destination `0056f000`. The older mode3 track4 value120 was a transcription error; corrected here and in the detailed notes. This changes the documented base delay, not an executable or configuration.
