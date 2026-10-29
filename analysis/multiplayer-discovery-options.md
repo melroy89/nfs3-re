@@ -57,3 +57,7 @@ Reviewed: the active selected executable's menu/callback and service-selection p
 Parent review corroborated the manual-address callback0043f680, list refresh0043f220/provider enumeration0049e3d0, and raw TCP initializer0043fe50 plus callback0043f760. The latter two were recovered as named functions in the shared Ghidra project after full original-byte boundary review (ends0043fedb/0043f7c8). Their comments were saved. A refreshed xref query still found no direct ingress to0043fe50. This adds recoverable UI code, not a proven menu-to-dialog transition or functioning service.
 
 Local follow-up corrected the exact NPS key to HKLM\SOFTWARE\EA-NPS\DLL. The saved Wine registry has no matching key and the game directory has no NPS-named library; neither is a live-provider or service test. See [local NPS evidence](nps-provider-installation-evidence.md).
+
+## Later ordinary runtime baseline
+
+The [host/VM client-server TCP test](network-host-vm-runtime-baseline.md) now observes successful manual join, a two-player lobby on both peers, built-in chat delivery and both peers loading/rendering Hometown racing. This supersedes the lack of runtime evidence for that specific manual-TCP route; it does not establish IPX discovery, public/WAN service, full race/results agreement or series completion.
