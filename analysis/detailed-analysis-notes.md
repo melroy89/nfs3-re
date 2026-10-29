@@ -16100,3 +16100,7 @@ Parent reviewed the new [pause event handoff](network-series-interruption-policy
 Parent verified00430cd0 clears pair count005537bc and0042c830 registers vehicle+618 on007d3690 at priority0x28. Together with the simulation-step tail, this bounds timer174 in callback invocations. Quit confirmation actions12/11/10 reach resolver events3/4/5; Main Menu writes exit2 and System exit1. Race Results stores ECX after helpers whose transitive preservation remains under review. These bounded static findings leave visible runtime behavior open.
 
 Parent reviewed Luna’s transitive ECX audit after checkpoint57a1edd:004186a0 and00470fc0 preserve incoming ECX on normal returns through their nested callees. Race Results/event3 therefore stores exit0, satisfying the exit-state portion of builder admission; other outer predicates and runtime peer agreement remain separate.
+
+### Normal motion-update sequence and pending/display handoff
+
+Parent reviewed sender004c7bd0, receiver004c7d30, wrapper004c81c0, consumer004c8250 and reader004c8040 plus normal RunRaceLoop004c53d2..004c545c. [Motion report](network-motion-coordinate-units.md#ordinary-update-ordering-and-simulation-cadence) now records odd-sequence consumption, send on sequence&31==0 in that branch, equal signed sequence acceptance, ready-row replacement/local skip, and direct role-specific relay/history paths. Simulation counter007d3684 is distinct. Full ownership, seams and runtime smoothing remain open; no packet/game execution.

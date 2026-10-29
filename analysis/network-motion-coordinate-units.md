@@ -29,6 +29,20 @@ The player-row correction delta is therefore a signed16 difference of segment-pr
 
 The motion scalar is quantized to an integer before transmission in this path. Its source and decoded value are longitudinal track-axis motion, while physical calibration and axis normalization remain qualified. No universal metres-per-second interpretation or player-visible smoothing effect is established.
 
+## Ordinary update ordering and simulation cadence
+
+The race-loop sequence at `007d36b0` controls this path. In the normal step branch, `RunRaceLoop` calls `004c81c0` with that sequence at `004c53d2..004c53d7`, calls the simulation-step helper `004c48d0` at `004c53e1`, then calls the type11 sender at `004c5457` only when `(sequence & 31) == 0`. It increments the sequence at `004c545c`. Other loop branches can advance simulation or sequence differently, so this is the identified normal branch, not a promise of one send every32 rendered frames or a measured time interval.
+
+`004c81c0` admits pending-to-display consumption only on odd incoming sequence values, playback selector `006fd3a0 <= 1`, session mode other than0/1, and enabled `006fd50c`. The sender has the same playback/session/feature gates. These are separate from the simulation callback counter `007d3684` used for vehicle-list scheduling in [ghost collision feasibility](network-ghost-collision-feasibility.md).
+
+For ordinary participant updates, the sender uses the low byte of local roster slot `007a2278` as packet byte1, the incoming sequence as DWORD+4, the packed local vehicle pair at+8, and input-state byte at+0xc. The packer selects the local index `006fd4f4` through the player vehicle table `005efa48`. The receiver uses packet byte1 to select a20-byte pending row at `007dd070`; it rejects an incoming sequence only when the stored sequence is **signed greater** (`004c7d56..004c7d59`). Equal sequences pass this comparison. Accepted records replace the row sequence, decoded pair and state byte and set its ready flag to1. This is a latest accepted record per row, not an observed interpolation queue.
+
+Consumption loops human indices below `006fd514`, skips the local index `006fd4f4`, and copies only ready rows into12-byte display rows at `007dd010`. It clears each consumed ready flag. If no new ready row exists, it leaves that display row unchanged. A future-sequence condition can call `0042dc40` before copying; the inspected code still continues to the copy afterward. This establishes direct branch behavior without assigning a time unit or assuming helper return timing.
+
+The host-role branch (`WORD[007a22da] != 0`) can relay a received type11 update to roster peers1 through count-1, excluding the packet's participant slot, when transport `007a22e4 != 2` (`004c7d5f..004c7d99`). Independently, a received packet for slot0 supplies the AI progress/history rows at `007dd2a0` (`004c7df3..004c7e37`). The sender's non-host branch records local AI progress in a20-row history ring indexed by signed `(sequence >> 5) % 20`; the correction reader requires an exact stored sequence match before comparing received AI progress with that history (`004c810f..004c8189`). These paths support a role-dependent progress comparison; they do not establish universal peer ownership or successful delivery.
+
+**DONE:** normal-branch sequence cadence, equal-sequence acceptance, pending/display replacement, local-row skip, and direct role-dependent relay/history branches. **OPEN:** complete roster-to-vehicle identity across all modes, provider callback ordering, live packet timing, progress seams/reverse behavior and visible smoothing. No packets were sent and no game/runtime-memory changes were made.
+
 ## Evidence and remaining work
 
 Parent Ghidra readback covered the progress producer, full pair packer004c8310..004c834d, mixed-type decoder, sender, receiver, pending/display copy, correction reader and both motion/position consumers. Instruction anchors: pack stores004c8336/004c8344; pending-to-display004c82da/db; reader copies004c8078..004c8099 and subtracts at004c80a4. These are selected-program static observations, with custom register ABI retained.
