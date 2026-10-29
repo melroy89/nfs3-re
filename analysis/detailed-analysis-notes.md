@@ -16112,3 +16112,11 @@ Parent reread0042cc20/0042ce10, direction initialization0042bcb0 and linked copy
 ### Vehicle activity-byte identity and normal transitions
 
 Parent reproduced the [activity census](vehicle-activity-lifecycle.md):53 byte-form references (32offset88/21offset89). Reviewed405d40/405dc0, state machine40df10 and predicates405cd0/405e20/401240. Constructor89=1, ordinary transitions clear/set89 and change630state/inactivecounter. Apparent88=1 writer4667d0 is frontend mouse-drag state: parent checked mouse poll49c080/451500 and raw UI caller466cf4..466e56 through44a660. Matching displacement is not shared object identity. No vehicle88nonzero writer identified in bounded byte-form census; wider/aliased stores and runtime remain open.
+
+### Requested correction segment versus reverse placement
+
+Parent full0040bd80/00428d60 readback separates initialrequested s-d (clamp±200, one conditionalwrap, no reverse sign branch) from reverse-aware fallbacksearch and placementorientation. [Motion report](network-motion-coordinate-units.md#requested-relocation-segment-and-reverse-mode-boundary) records exact same-lap algebra in each direction. Finalgeometry/runtime behavior remains open; no defect or correction claimed.
+
+### Reviewed car-pool and lap-choice gameplay domains
+
+Parent reviewed43a580/43a4f0/43a6b0/4734d0 and eligibility helpers, checked image554f50=1/direct-read xrefs, and independently recomputed the nine installed direct-predicate models from retained FEDATA inventory. [Car selector report](car-selector-gameplay-domain.md) separates aggregate/category pointer pools from player model indices. Parent reviewed lap encoder/decoder4cf160/4cf190,44c240..44c29b and474ca0 dispatch; [lap report](lap-choice-gameplay-domain.md) distinguishes decoded totals/mode overrides from unresolved generated UI rows and event writer. These are bounded static domain results, not capacity or live menu proof.

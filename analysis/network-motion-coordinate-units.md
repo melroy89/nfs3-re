@@ -58,6 +58,14 @@ Both increase the unquantized coordinate by1 under these assumptions. At the opp
 
 This resolves only the arithmetic of the stated adjacent-segment seam. It does not prove actual segment numbering, jump/teleport ordering, loaded-track count agreement, packet ordering, or rendered correction continuity. On the wire only low16 progress bits survive, and the reader uses a signed16 difference; correct unquantized seam arithmetic alone does not prove synchronization at every seam.
 
+## Requested relocation segment and reverse-mode boundary
+
+The correction reader gives player delta `d = signed16(localProgress - receivedProgress)`. In `0040bd80`, after the global `007d3680 != 0` and vehicle `+0x184 == 0` gates, `d` is clamped to[-200,200]. The requested segment is then `s - d` (`0040bdf5..0040be04`), where `s` is the current segment. The body does not negate this requested delta according to `006fd4c0`. If `d <= 0`, it subtractsN once when the result is at leastN; if `d > 0`, it addsN once when the result is negative. This is one conditional wrap, not a general modulo operation.
+
+That requested segment is passed to placement search `00428d60`. The search can choose another segment and lateral offset; after an unsuccessful initial candidate it advances search segments by+1 forward or-1 reverse (`00428f07..00428f30`). Both an initially accepted center and exhausted search use the original requested center path at `00428f43`; placement receives the reverse flag at `00428f6a..00428f76`. Thus reverse-aware orientation/search exists downstream, while the initial `s-d` arithmetic is unchanged.
+
+For a same-lap, no-wrap coordinate comparison, the forward progress formula makes `d = s_local - s_received`, so `s_local-d` equals the received segment. The reverse formula instead makes `d = s_received - s_local`, so that same expression is `2*s_local-s_received`. This algebra identifies the direction question precisely; it does **not** establish the final relocated segment, a reachable gameplay defect, or the helper's complete geometry effect. Actual reverse-mode relocation, producer identity and placement-search outcome remain unobserved. No correction or binary change was made.
+
 ## Evidence and remaining work
 
 Parent Ghidra readback covered the progress producer, full pair packer004c8310..004c834d, mixed-type decoder, sender, receiver, pending/display copy, correction reader and both motion/position consumers. Instruction anchors: pack stores004c8336/004c8344; pending-to-display004c82da/db; reader copies004c8078..004c8099 and subtracts at004c80a4. These are selected-program static observations, with custom register ABI retained.
