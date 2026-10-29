@@ -16086,3 +16086,15 @@ The older network-lobby action6/application-state gap is now narrowed in [next-r
 ### Pause codelinks and event ordinals
 
 Parent reviewed the new [pause event handoff](network-series-interruption-policy.md#pause-menu-choices-and-numeric-event-handoff): installedpause.mnu PSE_CONTINUE/PSE_RESTART and rawtokenbytes00539068/78 ->coordinator0044bd7d/9e returns1/2 ->resolvercall004c4c0c, with session overrides possible ->retainedreturnblocks004c58b4/004c58d6 ->separate handlerbranches004c4c16/004c4c69. Neither directbranch writes exitDWORD007d36b4; eventordinals are distinct from exitstates. Quit/3..5 and visible/live interruption policy remain open. Removed the report dependency on an unreviewed historical draft; publication links must resolve to staged/tracked files, not merely local untracked drafts.
+
+### Temporary correction interval and pause action translation
+
+[Ghost feasibility](network-ghost-collision-feasibility.md) now includes normal174 writers. Parent checked three explicit64stores0040bf27/004290e0/00429240 afterreset00428970 and prior decrement/renderconsumers; constructor/resetzero provenance remains separately bounded. Interval is callback-counted and affects more than collision. EOL0040bf27 saved. Parent fullpausecoordinator0044bac0 review also establishes frontendactions12/11/10 ->resolverevents3/4/5 at0044bcf6..0044bd2b; genericaction3 does not directlybecomeevent3, instead reaching tokenchecks or0. EOL0044bcf6 saved; concreteQuit optionalcallback/dialog route remains active investigation.
+
+### Public-lobby in-binary call-path boundary
+
+[Public-lobby feasibility](public-lobby-call-path-feasibility.md) bounds activeRaceNet and indirectprovider enumeration. Parent verified NPSGetServerList literal0053d9e8 ->loaderstore004a56e4 ->slot007a21c4, currentxrefonlystore, fullrawbroker005143d0..005144aa andcandidate table005689e8+10. Broker publishes temporarycontext+18 and calls backend methods30/34. Corrected two-table provenance identifies backend00566e24 targets004f5fa0/004f5fc0, distinct from generic005689e8 entries. The former reaches family6 broadcast-shaped probe005127d0; this does not establish NPS identity or a public master. Existing slotplate retained withfollow-up; rawbroker plate added without claiming recovered standardABI. Separate gatedNPSconnect route is not publicdiscovery proof; external/runtimedependencies remain open.
+
+### Reviewed scheduling and Quit confirmation follow-up
+
+Parent verified00430cd0 clears pair count005537bc and0042c830 registers vehicle+618 on007d3690 at priority0x28. Together with the simulation-step tail, this bounds timer174 in callback invocations. Quit confirmation actions12/11/10 reach resolver events3/4/5; Main Menu writes exit2 and System exit1. Race Results stores ECX after helpers whose transitive preservation remains under review. These bounded static findings leave visible runtime behavior open.
