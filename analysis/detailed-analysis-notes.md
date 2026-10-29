@@ -16120,3 +16120,11 @@ Parent full0040bd80/00428d60 readback separates initialrequested s-d (clamp±200
 ### Reviewed car-pool and lap-choice gameplay domains
 
 Parent reviewed43a580/43a4f0/43a6b0/4734d0 and eligibility helpers, checked image554f50=1/direct-read xrefs, and independently recomputed the nine installed direct-predicate models from retained FEDATA inventory. [Car selector report](car-selector-gameplay-domain.md) separates aggregate/category pointer pools from player model indices. Parent reviewed lap encoder/decoder4cf160/4cf190,44c240..44c29b and474ca0 dispatch; [lap report](lap-choice-gameplay-domain.md) distinguishes decoded totals/mode overrides from unresolved generated UI rows and event writer. These are bounded static domain results, not capacity or live menu proof.
+
+### Lap descriptor row-boundary correction
+
+Parent raw bytes confirm20-byte lapsrow begins00556424, key00537e44, list005561fa, null+8/+c, selectorpointer006fd4b0 atrow+10=00556434. Key00537e4c and lists0055625c/62 are nextdirectionrow00556438. Updated [lap report](lap-choice-gameplay-domain.md) to remove prior neighboring-row conflation. ListWORDse0/de/df/0 now identified; exact generic consumer/event path remains under review.
+
+### Environment-strip normalizer domain resolved
+
+Parent reviewed full478bb0/478320, loadingwrapper4dbbe0 and renderer479b90, then parserstore478762 plus47a880/4782e0 calls. [Normalizer report](setup-normalizer-gameplay-domain.md) resolves16selectedresource pointers and17normalizedscalar stores as environmentstrip rendering setup, not car/participant capacity. Mirrorflag55d15c is a parsed positional integer; eight source-pointer population and final local numerator/use remain open. Ordinary rendering-domain audit DONE; no runtime visual or failure claim.
