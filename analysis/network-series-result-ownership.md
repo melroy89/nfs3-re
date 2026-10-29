@@ -15,7 +15,7 @@ The result builder contains no host-only gate around tournament scoring or Knock
 3. `00455456/64`: build result order maps through `00455c10`; `00455469` normalizes results through `004552f0`.
 4. Race mode1 calls `00455070` at `00455477`; mode2 calls `00455140` at `00455485`. Neither call has a host/client-role test around it.
 
-Mode1 updater separately returns early when `004cef80` is nonzero. It awards per-round WORD points from `00454f10` and adds them to cumulative WORD scores `006fd44e + 2*identity`; the first eight award values are `[30,25,20,16,12,8,4,0]`. It rebuilds the cumulative ordering then increments progression `006fd40c` at `00455129`. Mode2 updates eligibility/order and increments `006fd3bc` at `00455200`. See [normal series lifecycle](series-normal-terminal-lifecycle.md) for endpoint/reset details. This trace does not establish what every helper outcome means for disconnects or abandoned races.
+Mode1 updater separately returns early when `004cef80` is nonzero. It awards per-round WORD points from `00454f10` and adds them to cumulative WORD scores `006fd44e + 2*identity`; the first eight award values are `[30,25,20,16,12,8,4,0]`. It rebuilds selector1 with reversal (descending `+0x238`) for stored ordering, then increments progression `006fd40c` at `00455129`. Mode2 updates eligibility/order and increments `006fd3bc` at `00455200`. See [normal series lifecycle](series-normal-terminal-lifecycle.md) for endpoint/reset details. This trace does not establish what every helper outcome means for disconnects or abandoned races.
 
 ## Role-dependent state exchange
 

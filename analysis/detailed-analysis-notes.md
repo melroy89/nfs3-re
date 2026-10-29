@@ -16054,3 +16054,19 @@ Parent-reviewed active instructions at `004432c0..004434ee` and `00442db0..00442
 ### Ordinary network-toggle indirect write
 
 [Toggle semantics](network-session-toggle-semantics.md) resolves the pointer-array question: initializer00445750 receives menu-row count2 and table005556e0, while generic Enter00445635..00445659 indexes that table directly after checking index0/1. Pointer006fd50c is atindex3 and is not reached by this ordinary two-row write. Parent verified call0043f4cb/count0043f4b2, raw table, generic initializer/handler, and corrected a worker conflation: selector-zero call0043f65f belongs to0043f640; active TCP0043f760 calls at0043f78e after a nonzero helper return. Adjacent Positional/Controller text does not establish an exposed control for006fd50c. No UI/network execution.
+
+### Host series state in next-round setup
+
+[Next-round state](network-series-next-round-state.md) maps KO progress/eligibility, mode1 progress and cumulative scores into host setup range006fd39c..006fdc2b. Client post-copy restoration affects participant-record14/68 only. Parent reviewed full sender004c5e80 and append004c6080 plus ordering004a36f3/f8 ->004a346b ->00477fba. Ordinary8score WORDs fit firstd0chunk; a16WORD span atoffsetb2 crosses that boundary, so first-chunk inclusion is explicitly bounded. Complete transfer and runtime agreement remain unverified. No network execution.
+
+### Series AI option policy
+
+[Series AI options](network-series-ai-option-semantics.md) separates ordinary None/One/FullGrid from series forced-fill. Parent raw-byte review confirms session<2 at0044c014 jumps to0044c095, so FullGrid/trafficOff stores0044c0b4/bc also apply locally (subject top guard00662968); only006fd504 normalization above is network-session gated. Skill1 stores are00474328(mode1) and00473eff(mode2), before later roster branching. Optional AI-off/count control and a complete live online series remain unproved. EOL annotation saved.
+
+### Network frontend action6 forwarding refinement
+
+The older network-lobby action6/application-state gap is now narrowed in [next-round state](network-series-next-round-state.md#conditional-frontend-action-forwarding). Parent verified panel-result retention0044a606/632 ->return0044a644 ->loopstore0044b39c ->rawtable0044b208 ->case6/7 clears loop-live0044b76c ->return0044b936 ->postgameforward00473336 ->applicationtable004a3d94 ->racepreparation004a3ef4. This is conditional on no intervening action override; actual live callback/readiness/initialization remains unverified. Original0044163a comment retained with a superseding follow-up.
+
+### Series tie-policy parent review
+
+[Tie policy](series-result-tie-policy.md) separates score key/categorybit4 from the final ascending signed238 fallback. Parent reviewed comparator00455840 and estimate producer004ce5a0; missing-lap estimate correction uses shared PRNG, without establishing peer divergence. Corrected worker block associations: selector3 roundscore usesflagblock00455b05; selector4 cumulative uses00455a3c. Only the bit80 prepass in004552f0 is mode2-only; common status bucket/rank writes begin00455340. Also corrected the earlier [result ownership](network-series-result-ownership.md) wording: updater00455070 rebuilds selector1 descending at004550f1/f7, not cumulative-score ordering. Zero helper004e070c preserves EBX1, confirming the reversal argument. Runtime policy/peer equality remain unverified.
