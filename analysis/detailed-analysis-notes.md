@@ -15966,3 +15966,18 @@ Parent verified selected nfs3.exe SHA2a20f804... descriptor00555f00 points at004
 ### Connect catalog helpers: first reviewed batch
 
 [Connect/provider helper audit](connect-provider-helper-audit.md) records five newly discovered functions. Parent corrected service rows to44bytes, indexed name rows to30bytes and Modem empty-list gate to disable, then named/annotated HasNetworkServiceSelectorAfterCatalogInit0049e360, RefreshNetworkServiceCatalog0049f030, InitializeNetworkServiceCatalogIfEmpty0049f150, PopulateIndexedProviderNameList004c41d0 and EnumerateNetworkProviderCandidates004f4c70. Five further helpers remain pending. Current function inventory4329/list4122 includes these discoveries; no code-discovery completeness is claimed.
+
+
+### Exact NPS registry lookup and saved prefix evidence
+
+[Local NPS evidence](nps-provider-installation-evidence.md) corrects symbol-derived path to actual bytes0053da94: SOFTWARE\EA-NPS\DLL underHKLM. Parent corrected/read back Ghidra plate004a5880. Targeted saved-system.reg header comparison finds no exact/descendant key; game-tree inventory19DLL/ASI files contains noNPS-named library. These are on-disk/filename observations only, not live Wine registry or provider/service proof. No registry values emitted or external services queried.
+
+
+### Provider runtime helpers and catalog selectors
+
+[Runtime helper audit](provider-runtime-helper-audit.md) is parent-reviewed: OpenIpxSocketAndStartReceiver004f5c10, StopIpxReceiverAndReleaseState004f5ea0 (polls+1c zero), RegisterIpxProviderAfterSocketProbe004f63d0, RegisterTcpGatherProviderAfterSocketProbe004f7830 (GetSystemMetrics63, not a key query), GetTapiRecordStringByIndex004fa5f0. Names/ABI comments saved/read back. [Service selector crosswalk](network-service-selector-crosswalk.md) links registeredIPX companion name toordinaryselector1 and separate synthesizedTCP row toselector2; parent corrected source immediate0049f0a7=0053c6d0(TCP), not0053c6f0(DirectPlayIPX). Recovered callbackAppendEnumeratedNetworkServiceRow0049f200 preserves specialDirectPlay selector-write qualification. Inventory4330/list4123/thunks36/generic0; discovery completeness and live provider/session behavior remain open.
+
+
+### Car registry refresh lifecycle
+
+[Lifecycle audit](car-registry-refresh-lifecycle.md) links existing cache/group routines into ordinary discovery/removal/setup paths. Parent checked loader00439d9e reset,0043a34a reorder,0043a49c group rebuild; marked-car cleanup0043b3e2 reload and race-setup00474cb3 rebuild. Transfer completion remains tied to earlier static body with unresolved dispatch/redraw order. No new cap, runtime update or generic frontend-reentry guarantee follows.
