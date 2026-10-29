@@ -33,3 +33,7 @@ The ordinary Hometown/forward/stock-Diablo/None/TrafficOn test confirmed visible
 2. Consolidate the remaining normal static capacity/ownership questions into specific evidence requests. Preserve the full subsystem ledger; do not repeatedly reopen completed naming or basic arithmetic audits.
 3. **DONE:** the [ordinary Traffic Off comparison](next-runtime-check.md), actual main-menu return, later loaded-module maps and actual Wine survival after capture-parent exit are observed.2,927samples completed without capture errors; primary display restored to1920×1080. This closes the local baseline and launcher-survival checks only.
 4. Multiplayer acceptance requires two peers; controller acceptance requires suitable physical hardware. Keep those requirements open until exercised. Do not replace them with further unrelated static annotations.
+
+## End-of-session checkpoint: host and Debian13 VM
+
+The [two-peer TCP baseline](network-host-vm-runtime-baseline.md) now covers host/join, both lobbies, built-in chat, both race loads, user-observed synchronized movement and the VM participant's two-lap finished state. Subsequent host Quit Race yields matching **Aborted/N/A** summaries on both peers, including matching per-player top speeds. This is an abort-path result check, not a normal two-finisher result or full series. The host/VM multiplayer test setup works and is retained. Controller usability remains partial; further troubleshooting was deferred. Testing ended at the user's request; all other acceptance gaps above remain open.

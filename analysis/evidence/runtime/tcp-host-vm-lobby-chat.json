@@ -31,10 +31,11 @@
     }
   },
   "remaining": [
+    "Normal two-finished-car results and placements",
     "Measured timing/divergence/recovery and stronger synchronized peer-position comparisons",
-    "Results and complete-race agreement",
-    "Full series and reconnect/interruption behavior",
-    "WAN latency and independent physical peers"
+    "Full series and reconnect/interruption variants",
+    "WAN latency and independent physical peers",
+    "Usable host wheel controls and VM mouse capture"
   ],
   "host_socket_readback": [
     "ESTAB      0      0                    192.168.1.227:9803                192.168.1.111:34019 users:((\"nfs3.exe\",pid=252254,fd=76),(\"wineserver\",pid=252138,fd=263))"
@@ -128,6 +129,48 @@
         }
       ],
       "vehicle_scan_skipped": false
+    }
+  },
+  "vm_finish_observation": {
+    "user_reported_done": true,
+    "readonly_state": {
+      "elapsed": 2.4305999886564678e-05,
+      "tick": 32158,
+      "local_index": 1,
+      "laps": 2,
+      "wrap": 2,
+      "progress": 1921,
+      "result_state": 3
+    },
+    "interpretation": "VM local participant completed2wraps for configured2laps and reached result state3. Not proof of a normally completed whole session or matching final placements."
+  },
+  "after_host_quit_race": {
+    "user_report": "Both aborted.",
+    "both_peer_summaries_agree": true,
+    "displayed_rows": [
+      {
+        "player": "Melroy",
+        "place": "N/A",
+        "total_time": "Aborted",
+        "top_speed_kph": "121.68"
+      },
+      {
+        "player": "Melroy_VM",
+        "place": "N/A",
+        "total_time": "Aborted",
+        "top_speed_kph": "262.51"
+      }
+    ],
+    "tcp_still_established": true,
+    "screenshots": {
+      "host": {
+        "source": "/tmp/nfs3-host-after-race-abort.png",
+        "sha256": "6065e319ed98b9644bd345b47d6e035d7e76978655b3863571b9b5a4e36146cb"
+      },
+      "vm": {
+        "source": "/tmp/nfs3-vm-after-race-abort.png",
+        "sha256": "f95ef1d41a414821f384c728fa588b7b82159f5e15e979f9c8fd813e019fed6d"
+      }
     }
   }
 }

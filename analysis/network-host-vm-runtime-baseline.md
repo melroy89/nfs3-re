@@ -18,7 +18,7 @@ The user reports feeling Fanatec force feedback on the host, then clarifies that
 
 - Visible remote motion on both peers and response after focus switches.
 - Quantified timing, divergence/recovery, seams, collision and input-provider behavior.
-- Complete race/results agreement, ready/next-round behavior and a complete online series.
+- Normal two-finisher race/results agreement, ready/next-round behavior and a complete online series; the exercised abort summaries agree as documented below.
 - Graceful leave/rejoin and disconnect outcomes.
 - Peer-to-peer mode, independent physical machines, separate networks and public-service availability.
 
@@ -29,3 +29,11 @@ The basic TCP lobby, chat delivery and two-peer race-load/rendering checks are D
 The user confirms both cars are visible and movement appears in sync while driving `Melroy_VM` with the keyboard. A bounded read-only VM snapshot independently confirms sessionmode4/racemode0, Hometown/forward/2laps, two configured human racers, zero AI/traffic and local index1. Both vehicle records are active category0x05. At simulation/sequence18970 their progress values are9 and60, wrap counters0 and result states0; neither is proved finished. The exact executable digest and fixed-code signature were checked before opening the process memory O_RDONLY. These asynchronous fields do not measure network latency or cross-peer position error.
 
 The user also feels wheel effects while driving the VM car. The generating process and any device-forwarding route are not established. Host wheel driving remains unsuitable; no calibrated force-feedback or general controller-compatibility conclusion follows.
+
+## VM finish followed by host abort
+
+The user completed the VM car's two laps. The guarded read-only monitor observes local participant1 with wrap counter2 for configured2laps, progress1921 and result state3 at tick32158. Its view subsequently shows the unfinished host car. This is a completed VM participant, not a normal whole-session completion.
+
+The host then used Quit Race because its wheel controls prevented finishing the other car. **Both peer race summaries display both entries as Aborted, place N/A.** They agree on the player names and top speeds: Melroy121.68KPH and Melroy_VM262.51KPH. The established TCP connection remains. Screenshot digests and the pre-abort finished state are retained in the evidence artifact. The earlier VM finish state therefore must not be presented as a preserved final winning result: the subsequent global-abort summary labels both aborted.
+
+This verifies matching ordinary abort summaries for this exercised sequence. It does not qualify a normal two-finisher result table, final placements, a complete tournament/knockout series, all interruption policies or reconnect behavior. The user ended testing for the night. The working host/VM setup is retained; no further test is scheduled or automatically launched.
