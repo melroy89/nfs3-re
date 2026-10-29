@@ -16021,3 +16021,16 @@ Parent verified selected nfs3.exe SHA2a20f804... descriptor00555f00 points at004
 ### Sound playback reconfiguration and caller-driven retries
 
 [Sound lifecycle](sound-playback-reconfiguration-lifecycle.md) separates oneattempt004e89f8 from headercaller004e80cc (changedheader setsstate3), and existing periodic ServiceQueuedSoundStreamPlayback004e85a8 state1 directretrybranches/state3 remainingcount+voiceexpiry polling/reset1. Parent reviewed corebodies, fullcallbackrawassembly and slotpublisher004ff660/consumer004ff670; separate lock00564480 doesnotestablish callbackquiescence withsoundlock00a09b04. State3hasnolocaldeadline; no actualhang/playback observed. No security/adversarial input investigation performed.
+
+
+### Network correction progress and motion field provenance
+
+[Coordinate units](network-motion-coordinate-units.md) connects progressproducer0042ce10 ->pairpacker004c8310 (truncated7c0,lowWORD8) ->type11sender004c7bd0/receiver004c7d30 ->mixeddecoder004c8350 ->pending/displaycopy004c8250 ->correctionreader004c8040. Playerdelta is signed16 low-word segment-progress difference; existing00408f10 threshold20/50 andgain use that coordinate, not physical distance/time. Positioncorrection0040bd80 derives segmentplacement separately. Seam/ownership/history, speedphysicalcalibration and live smoothing remain unverified; no network execution performed.
+
+### Deadzone preference exit lifecycle
+
+Parent-reviewed active instructions at `004432c0..004434ee` and `00442db0..00442dcc` establish the entry snapshot, Enter-only Cancel gate clear, and supported-axis rollback. Installed `deadzone.mnu` binds `escape done` to the same item. Three callback routines are now represented and named in the shared Ghidra program. See [the bounded lifecycle report](deadzone-preference-commit-lifecycle.md). Disk persistence and physical device effects remain unverified.
+
+### Series profile and sound notification follow-up
+
+[Series save/resume](series-save-resume-lifecycle.md) connects explicit TRN/KOT full-blob save/import to progress consumers; filesystem success and live continuation remain unverified. Parent checked the TRN writer at `004468c0` and existing importer at `00446800`; the writer sets its local flag before the unchecked file-writer return. [Sound notification units](sound-stream-notification-units.md) separates chunk tally, payload bytes, unassigned estimate units and the nominal timer deadline. Parent checked `004e7c58..004e7f2c` and the Pathfinder hook `004e6d94..004e6dc6`; no audio execution was performed.
