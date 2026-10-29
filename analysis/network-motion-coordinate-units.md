@@ -43,6 +43,21 @@ The host-role branch (`WORD[007a22da] != 0`) can relay a received type11 update 
 
 **DONE:** normal-branch sequence cadence, equal-sequence acceptance, pending/display replacement, local-row skip, and direct role-dependent relay/history branches. **OPEN:** complete roster-to-vehicle identity across all modes, provider callback ordering, live packet timing, progress seams/reverse behavior and visible smoothing. No packets were sent and no game/runtime-memory changes were made.
 
+## Directional seam arithmetic: bounded normal case
+
+The wrap updater `0042cc20` compares current segment `vehicle+0x1c` with previous segment `vehicle+4`. Forward mode increments `+0x208` when previous is exactly0 and current is greater than500. A forward crossing from previous greater than500 into current0..50 instead decrements a positive `+0x208`, or increments `+0x204` when `+0x208 <= 0`. Reverse mode increments `+0x208` on the greater-than500 to0..50 crossing; its opposite crossing (previous at most50, current greater than500) decrements positive `+0x208` or increments `+0x204`. It then stores current as previous. These are exact asymmetric threshold tests, not a general shortest-path calculation.
+
+With `N > 501`, adjacent seam segments0 andN-1, and incoming auxiliary counter0, the intended-direction arithmetic is:
+
+| Mode | Previous → current | Wrap result | Progress before → after |
+| --- | --- | --- | --- |
+| Forward | N-1 →0 | increment lap/progress counterL | LN+N-1 →(L+1)N |
+| Reverse | 0 →N-1 | increment lap/progress counterL | LN+N →(L+1)N+1 |
+
+Both increase the unquantized coordinate by1 under these assumptions. At the opposite-direction seam, the updater increases the auxiliary counter, and producer `0042ce10` outputs0 while that counter is positive. Returning across the qualified intended-direction seam can reduce the auxiliary counter instead of incrementingL. Initialization `0042bcb0` startsL at0 and auxiliary at0 forward/1 reverse (`0042be1b..0042be3b`); linked-motion copy `00408520` can replace both from another vehicle. Thus startup, wrong-direction crossings and linked vehicles need their own state history.
+
+This resolves only the arithmetic of the stated adjacent-segment seam. It does not prove actual segment numbering, jump/teleport ordering, loaded-track count agreement, packet ordering, or rendered correction continuity. On the wire only low16 progress bits survive, and the reader uses a signed16 difference; correct unquantized seam arithmetic alone does not prove synchronization at every seam.
+
 ## Evidence and remaining work
 
 Parent Ghidra readback covered the progress producer, full pair packer004c8310..004c834d, mixed-type decoder, sender, receiver, pending/display copy, correction reader and both motion/position consumers. Instruction anchors: pack stores004c8336/004c8344; pending-to-display004c82da/db; reader copies004c8078..004c8099 and subtracts at004c80a4. These are selected-program static observations, with custom register ABI retained.

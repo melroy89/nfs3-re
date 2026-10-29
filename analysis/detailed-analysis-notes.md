@@ -16104,3 +16104,11 @@ Parent reviewed Luna’s transitive ECX audit after checkpoint57a1edd:004186a0 a
 ### Normal motion-update sequence and pending/display handoff
 
 Parent reviewed sender004c7bd0, receiver004c7d30, wrapper004c81c0, consumer004c8250 and reader004c8040 plus normal RunRaceLoop004c53d2..004c545c. [Motion report](network-motion-coordinate-units.md#ordinary-update-ordering-and-simulation-cadence) now records odd-sequence consumption, send on sequence&31==0 in that branch, equal signed sequence acceptance, ready-row replacement/local skip, and direct role-specific relay/history paths. Simulation counter007d3684 is distinct. Full ownership, seams and runtime smoothing remain open; no packet/game execution.
+
+### Bounded directional-seam coordinate arithmetic
+
+Parent reread0042cc20/0042ce10, direction initialization0042bcb0 and linked copy00408520. [Motion report](network-motion-coordinate-units.md#directional-seam-arithmetic-bounded-normal-case) derives adjacent-seam+1 progress in both directions whenN>501 and auxiliary208=0, preserving asymmetric50/500 tests. Opposite-direction crossing raises auxiliary and suppresses coordinate to0; reverse initialization starts auxiliary1. This narrows arithmetic, not actual packet/runtime seam correctness.
+
+### Vehicle activity-byte identity and normal transitions
+
+Parent reproduced the [activity census](vehicle-activity-lifecycle.md):53 byte-form references (32offset88/21offset89). Reviewed405d40/405dc0, state machine40df10 and predicates405cd0/405e20/401240. Constructor89=1, ordinary transitions clear/set89 and change630state/inactivecounter. Apparent88=1 writer4667d0 is frontend mouse-drag state: parent checked mouse poll49c080/451500 and raw UI caller466cf4..466e56 through44a660. Matching displacement is not shared object identity. No vehicle88nonzero writer identified in bounded byte-form census; wider/aliased stores and runtime remain open.
