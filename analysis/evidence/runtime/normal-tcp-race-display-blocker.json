@@ -1,0 +1,268 @@
+{
+  "scope": "Bounded follow-up for a normal two-finisher TCP race and next-race transition. Execution blocked by persistent black rendering in the VM; not a passed normal-results test.",
+  "exe_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "private_evidence_root": "/home/melroy/.local/state/nfs3-re/runtime/20261030-normal-tcp",
+  "source_manifest": "SHA256SUMS",
+  "vm_source_archive": {
+    "file": "vm-peer-evidence.tar.gz",
+    "sha256": "a99645a68733532faed878cb1c8c72dda1117e41c85f164fe7a0275818628c10",
+    "verified_against_guest_archive_hash": true
+  },
+  "vm_capture": {
+    "file": "vm-archive/vm-race.jsonl",
+    "sha256": "9da99ca84d5ab52c7c8528c44e819b464e0c5a312bff78759925416bb25de4cb",
+    "samples": 2396,
+    "capture_errors": 0,
+    "end": {
+      "kind": "end",
+      "samples": 2396,
+      "elapsed": 600.0000684229999
+    }
+  },
+  "first_host_finish_seen_on_vm": {
+    "t": 316.6288147779999,
+    "gameplay": {
+      "globals": {
+        "session_mode": 4,
+        "race_mode": 0,
+        "track": 0,
+        "laps": 2,
+        "reverse": 0,
+        "opponent_choice": 0,
+        "opponent_model_choice": 0,
+        "traffic_disabled": 1,
+        "ai_skill": 1,
+        "local_index": 1,
+        "configured_vehicles": 2,
+        "configured_humans": 2,
+        "human_racers": 2,
+        "ai_racers": 0,
+        "ai_police": 0,
+        "inactive_ai": 0,
+        "registry_count": 24,
+        "simulation_tick": 14963,
+        "race_sequence": 14963,
+        "race_exit": 2
+      },
+      "vehicles": [
+        {
+          "index": 0,
+          "pointer": 6164768,
+          "progress": 1919,
+          "segment": 1,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 2,
+          "auxiliary_wrap": 0,
+          "result_state": 3,
+          "activation_state": 0,
+          "activation_countdown": 0
+        },
+        {
+          "index": 1,
+          "pointer": 6167244,
+          "progress": 4,
+          "segment": 4,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 0,
+          "auxiliary_wrap": 0,
+          "result_state": 0,
+          "activation_state": 0,
+          "activation_countdown": 0
+        }
+      ],
+      "vehicle_scan_skipped": false
+    },
+    "bindings": [
+      19204,
+      19716,
+      18436,
+      20484
+    ]
+  },
+  "last_host_finish_seen_on_vm": {
+    "t": 599.7970449300001,
+    "gameplay": {
+      "globals": {
+        "session_mode": 4,
+        "race_mode": 0,
+        "track": 0,
+        "laps": 2,
+        "reverse": 0,
+        "opponent_choice": 0,
+        "opponent_model_choice": 0,
+        "traffic_disabled": 1,
+        "ai_skill": 1,
+        "local_index": 1,
+        "configured_vehicles": 2,
+        "configured_humans": 2,
+        "human_racers": 2,
+        "ai_racers": 0,
+        "ai_police": 0,
+        "inactive_ai": 0,
+        "registry_count": 24,
+        "simulation_tick": 33086,
+        "race_sequence": 33086,
+        "race_exit": 2
+      },
+      "vehicles": [
+        {
+          "index": 0,
+          "pointer": 6164768,
+          "progress": 1930,
+          "segment": 12,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 2,
+          "auxiliary_wrap": 0,
+          "result_state": 3,
+          "activation_state": 0,
+          "activation_countdown": 0
+        },
+        {
+          "index": 1,
+          "pointer": 6167244,
+          "progress": 4,
+          "segment": 4,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 0,
+          "auxiliary_wrap": 0,
+          "result_state": 0,
+          "activation_state": 0,
+          "activation_countdown": 0
+        }
+      ],
+      "vehicle_scan_skipped": false
+    },
+    "bindings": [
+      19204,
+      19716,
+      18436,
+      20484
+    ]
+  },
+  "last_live_vm_state": {
+    "observed_utc": "2026-10-30T12:32:28.669175+00:00",
+    "pid": 1985,
+    "process_start": "27147",
+    "gameplay": {
+      "globals": {
+        "session_mode": 4,
+        "race_mode": 0,
+        "track": 0,
+        "laps": 2,
+        "reverse": 0,
+        "opponent_choice": 0,
+        "opponent_model_choice": 0,
+        "traffic_disabled": 1,
+        "ai_skill": 1,
+        "local_index": 1,
+        "configured_vehicles": 2,
+        "configured_humans": 2,
+        "human_racers": 2,
+        "ai_racers": 0,
+        "ai_police": 0,
+        "inactive_ai": 0,
+        "registry_count": 24,
+        "simulation_tick": 73828,
+        "race_sequence": 73828,
+        "race_exit": 2
+      },
+      "vehicles": [
+        {
+          "index": 0,
+          "pointer": 6164768,
+          "progress": 1929,
+          "segment": 11,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 2,
+          "auxiliary_wrap": 0,
+          "result_state": 3,
+          "activation_state": 0,
+          "activation_countdown": 0
+        },
+        {
+          "index": 1,
+          "pointer": 6167244,
+          "progress": 4,
+          "segment": 4,
+          "byte_88": 0,
+          "active_89": 1,
+          "correction_timer": 0,
+          "category": 5,
+          "wrap_counter": 0,
+          "auxiliary_wrap": 0,
+          "result_state": 0,
+          "activation_state": 0,
+          "activation_countdown": 0
+        }
+      ],
+      "vehicle_scan_skipped": false
+    }
+  },
+  "user_reports": [
+    "Host completed both laps.",
+    "VM game window became persistently black; Alt+Tab and other attempted recovery did not help.",
+    "User declined another game restart or replay and requested wrap-up."
+  ],
+  "wine_errors": [
+    "011c:err:system:NtUserChangeDisplaySettings Changing L\"\\\\\\\\.\\\\DISPLAY1\" display settings returned -2.",
+    "011c:err:d3d:wined3d_restore_display_modes Failed to restore all outputs to their registry display settings, error -2.",
+    "011c:err:d3d:wined3d_swapchain_cleanup Failed to restore display mode, hr 0x8876086a.",
+    "011c:err:d3d:wined3d_unregister_window Window 00050056 is not registered with wined3d.",
+    "011c:err:system:NtUserChangeDisplaySettings Changing L\"\\\\\\\\.\\\\DISPLAY1\" display settings returned -2.",
+    "011c:err:system:NtUserChangeDisplaySettings Changing L\"\\\\\\\\.\\\\DISPLAY1\" display settings returned -2."
+  ],
+  "outcomes": {
+    "tcp_host_join": "passed for this LAN pair",
+    "host_finish_propagation_to_vm": "passed: vehicle0 wrap2/result3 observed on VM",
+    "normal_both_finisher_results": "blocked: VM car remained unfinished",
+    "lobby_return_and_second_race": "not run due VM display failure",
+    "vm_virtual_desktop_recovery": "not applied after user cancelled restart"
+  },
+  "screenshots": {
+    "host-connected.png": {
+      "relative_private_path": "host-connected.png",
+      "sha256": "4e50c9819b33c6ed4286b0d7c72730bdbfccd2eb59cd59bc0e94a2c4f6567895"
+    },
+    "vm-connected.png": {
+      "relative_private_path": "vm-connected.png",
+      "sha256": "7ce5e3c7e2e242f3062013d585277288bf83c6e39a7c9424d72b0d38fc11ea15"
+    },
+    "host-first-finish.png": {
+      "relative_private_path": "host-first-finish.png",
+      "sha256": "8d1def6394245ef5981125f704b07560aab0d12159ec29da6e681a57875b9791"
+    },
+    "vm-host-finished.png": {
+      "relative_private_path": "vm-host-finished.png",
+      "sha256": "db7e7cb24d74ce442c135d846aa70855a095149632605aa956f512d22329f1b4"
+    },
+    "vm-black-final.png": {
+      "relative_private_path": "vm-black-final.png",
+      "sha256": "dcc54188f173716247c8fffc986aed740988036d7e691b47ab7d7f93decf0596"
+    },
+    "host-after-vm-black.png": {
+      "relative_private_path": "host-after-vm-black.png",
+      "sha256": "5b250fd264b576265f9df71431ec7fd55198c9ed0eaa40f8bc907a0e72b28d65"
+    }
+  },
+  "limits": [
+    "Host direct-memory access was unavailable after its capture parent ended; host UI/socket observations used instead.",
+    "VM simulation advance and ESTAB TCP state do not prove the failed render path or all network operations were healthy.",
+    "Wine display-mode/swapchain errors are recorded; exact fault cause is not established.",
+    "Earlier raw /tmp evidence remains unavailable; this new pass has a persistent archive."
+  ]
+}

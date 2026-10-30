@@ -39,3 +39,5 @@ The host then used Quit Race because its wheel controls prevented finishing the 
 This verifies matching ordinary abort summaries for this exercised sequence. It does not qualify a normal two-finisher result table, final placements, a complete tournament/knockout series, all interruption policies or reconnect behavior. The user ended testing for the night. The working host/VM setup is retained; no further test is scheduled or automatically launched.
 
 Evidence retention: the selected JSON observations and screenshot digests are committed, but the `/tmp` screenshot files themselves are no longer present at final review. The historical screenshot observations are documented above; this checkout alone cannot replay their visual inspection or rehash the missing originals.
+
+The later [bounded normal-results follow-up](normal-tcp-race-validation.md) confirms the opposite role’s host finish reached the VM, but persistent VM black rendering prevented the VM finish and normal result/next-race checks. Its raw evidence is archived persistently; no successful normal-results claim follows.
