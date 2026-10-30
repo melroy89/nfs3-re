@@ -49,3 +49,8 @@ The `00485c30` plate records test scope/results, extended/reloaded comparison be
 - **Later — expanded runtime scope:** alternate control words/exception modes, other optimizations/compilers, aliases/reentrancy and actual caller integration need their own evidence. Native Windows and a production Linux port remain untested.
 
 No other reference sample or unrelated scratchpad investigation was reconstructed. The standalone functional slice is complete; full ABI/machine equivalence and integration remain separate gates.
+
+
+## Static caller-dependence follow-up
+
+A subsequent [read-only caller audit](line-boundary-x87-callers.md) found no direct C0/C2/C3 consumption at the six known helper callsites. Multiple returns propagate those bits, and bounded HUD ancestor paths reach unreviewed render/transform callees or outer returns. This narrows the limitation but does not clear it globally or qualify a game-facing replacement. The follow-up inspected saved instructions and retained results; it did not rerun these tests or change the maintained C, raw exports, executable or Ghidra database.

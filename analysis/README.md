@@ -2,6 +2,7 @@
 
 This directory contains reviewed research notes, retained evidence and reproducible analysis helpers.
 
+- [Line-boundary x87 caller-dependence audit](line-boundary-x87-callers.md)
 - [First line-boundary C module and differential results](line-boundary-reconstruction-results.md)
 - [Three-function reference-export results](reference-export-results.md)
 - [Incremental C reconstruction readiness and staged blockers](recompilation-readiness.md)

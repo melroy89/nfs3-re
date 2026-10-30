@@ -1,0 +1,424 @@
+{
+  "scope": "Read-only static C0/C2/C3 liveness review of six known callsites and bounded HUD ancestors; no tests rerun",
+  "executable_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+  "database": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+  "database_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+  "source_inventory_sha256": "bb4f1ea522e46227602109413d1337282a2058cfbd0afbbb5a12c6cc18c41e8b",
+  "script_sha256": "b264a1b17efff6a6a6b15df5c54773c289abae76031433f7fd794386f93edd3a",
+  "functions": [
+    {
+      "entry": "00485c30",
+      "name": "CalculateLineBoundaryIntersectionCandidate",
+      "body": "[[00485c30, 00485f1a]]",
+      "incoming": [
+        "From: 00485ff0 To: 00485c30 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00486071 To: 00485c30 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 004861cf To: 00485c30 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00486247 To: 00485c30 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 0048627e To: 00485c30 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 004862cd To: 00485c30 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    },
+    {
+      "entry": "00485f20",
+      "name": "ClipFloatSegmentToRectangle",
+      "body": "[[00485f20, 004860a0]]",
+      "incoming": [
+        "From: 00487c2d To: 00485f20 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00487c40 To: 00485f20 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00487c52 To: 00485f20 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00487424 To: 00485f20 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    },
+    {
+      "entry": "004860b0",
+      "name": "BuildRectangleCrossingSegmentOutsideFragments",
+      "body": "[[004860b0, 004862f4]]",
+      "incoming": [
+        "From: 004874a8 To: 004860b0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    },
+    {
+      "entry": "004873e0",
+      "name": "AppendHudLineWithOptionalRectangleClipping",
+      "body": "[[004873e0, 004875fe]]",
+      "incoming": [
+        "From: 0048dd78 To: 004873e0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 0048def2 To: 004873e0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 0048e0ea To: 004873e0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    },
+    {
+      "entry": "00487a30",
+      "name": "ClipAndEmitTintedTriangleAgainstRectangle",
+      "body": "[[00487a30, 00488025]]",
+      "incoming": [
+        "From: 0048a206 To: 00487a30 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    },
+    {
+      "entry": "0049bf40",
+      "name": "AdvanceRenderBatchVertexCursor",
+      "body": "[[0049bf40, 0049bf58]]",
+      "incoming": [
+        "From: 0048db13 To: 0049bf40 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 0048754e To: 0049bf40 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 004875b9 To: 0049bf40 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    },
+    {
+      "entry": "00486f70",
+      "name": "QueueTintedQuad",
+      "body": "[[00486f70, 004870b1]]",
+      "incoming": [
+        "From: 00487db4 To: 00486f70 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00487e99 To: 00486f70 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00487fb2 To: 00486f70 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00488017 To: 00486f70 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    },
+    {
+      "entry": "004870c0",
+      "name": "AppendTintedTriangleToBatch",
+      "body": "[[004870c0, 00487205]]",
+      "incoming": [
+        "From: 00487b2a To: 004870c0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00487deb To: 004870c0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00487e34 To: 004870c0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 00487ecf To: 004870c0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    },
+    {
+      "entry": "0048d4c0",
+      "name": "RenderTrackMapAndVehicleMarkers",
+      "body": "[[0048d4c0, 0048e76c]]",
+      "incoming": [
+        "From: 00482e8c To: 0048d4c0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 004836f1 To: 0048d4c0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 0045b285 To: 0048d4c0 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    },
+    {
+      "entry": "00489e00",
+      "name": "RenderEngineRpmNeedle",
+      "body": "[[00489e00, 0048a214]]",
+      "incoming": [
+        "From: 00483845 To: 00489e00 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT",
+        "From: 0045b1e2 To: 00489e00 Type: UNCONDITIONAL_CALL Op: 0 DEFAULT"
+      ]
+    }
+  ],
+  "frontiers": [
+    {
+      "caller": "00485f20",
+      "callsite": "00485ff0",
+      "target": "00485c30",
+      "frontier": [
+        {
+          "kind": "overwrite",
+          "address": "0048601c",
+          "instruction": "FCOMP float ptr [EDI + 0x4]"
+        },
+        {
+          "kind": "return_propagation",
+          "address": "004860a0",
+          "instruction": "RET"
+        }
+      ]
+    },
+    {
+      "caller": "00485f20",
+      "callsite": "00486071",
+      "target": "00485c30",
+      "frontier": [
+        {
+          "kind": "return_propagation",
+          "address": "00486090",
+          "instruction": "RET"
+        },
+        {
+          "kind": "return_propagation",
+          "address": "004860a0",
+          "instruction": "RET"
+        }
+      ]
+    },
+    {
+      "caller": "004860b0",
+      "callsite": "004861cf",
+      "target": "00485c30",
+      "frontier": [
+        {
+          "kind": "return_propagation",
+          "address": "004861e9",
+          "instruction": "RET"
+        }
+      ]
+    },
+    {
+      "caller": "004860b0",
+      "callsite": "00486247",
+      "target": "00485c30",
+      "frontier": [
+        {
+          "kind": "return_propagation",
+          "address": "00486262",
+          "instruction": "RET"
+        }
+      ]
+    },
+    {
+      "caller": "004860b0",
+      "callsite": "0048627e",
+      "target": "00485c30",
+      "frontier": [
+        {
+          "kind": "return_propagation",
+          "address": "00486292",
+          "instruction": "RET"
+        },
+        {
+          "kind": "callee_overwrites_before_first_status_read",
+          "address": "004862cd",
+          "instruction": "CALL 0x00485c30"
+        }
+      ]
+    },
+    {
+      "caller": "004860b0",
+      "callsite": "004862cd",
+      "target": "00485c30",
+      "frontier": [
+        {
+          "kind": "return_propagation",
+          "address": "004862f4",
+          "instruction": "RET"
+        }
+      ]
+    },
+    {
+      "caller": "004873e0",
+      "callsite": "00487424",
+      "target": "00485f20",
+      "frontier": [
+        {
+          "kind": "callee_overwrites_before_first_status_read",
+          "address": "004874a8",
+          "instruction": "CALL 0x004860b0"
+        },
+        {
+          "kind": "return_propagation",
+          "address": "004875fc",
+          "instruction": "RET 0x4"
+        }
+      ]
+    },
+    {
+      "caller": "004873e0",
+      "callsite": "004874a8",
+      "target": "004860b0",
+      "frontier": [
+        {
+          "kind": "callee_overwrites_before_first_status_read",
+          "address": "004874a8",
+          "instruction": "CALL 0x004860b0"
+        },
+        {
+          "kind": "return_propagation",
+          "address": "004875fc",
+          "instruction": "RET 0x4"
+        }
+      ]
+    },
+    {
+      "caller": "00487a30",
+      "callsite": "00487c2d",
+      "target": "00485f20",
+      "frontier": [
+        {
+          "kind": "callee_overwrites_before_first_status_read",
+          "address": "00487c40",
+          "instruction": "CALL 0x00485f20"
+        }
+      ]
+    },
+    {
+      "caller": "00487a30",
+      "callsite": "00487c40",
+      "target": "00485f20",
+      "frontier": [
+        {
+          "kind": "callee_overwrites_before_first_status_read",
+          "address": "00487c52",
+          "instruction": "CALL 0x00485f20"
+        }
+      ]
+    },
+    {
+      "caller": "00487a30",
+      "callsite": "00487c52",
+      "target": "00485f20",
+      "frontier": [
+        {
+          "kind": "unresolved_call",
+          "address": "00487db4",
+          "instruction": "CALL 0x00486f70"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "00487e34",
+          "instruction": "CALL 0x004870c0"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "00487e99",
+          "instruction": "CALL 0x00486f70"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "00487fb2",
+          "instruction": "CALL 0x00486f70"
+        },
+        {
+          "kind": "return_propagation",
+          "address": "00487fd6",
+          "instruction": "RET"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "00488017",
+          "instruction": "CALL 0x00486f70"
+        },
+        {
+          "kind": "return_propagation",
+          "address": "00488025",
+          "instruction": "RET"
+        }
+      ]
+    },
+    {
+      "caller": "0048d4c0",
+      "callsite": "0048dd78",
+      "target": "004873e0",
+      "frontier": [
+        {
+          "kind": "unresolved_call",
+          "address": "0048dd78",
+          "instruction": "CALL 0x004873e0"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "0048ddb5",
+          "instruction": "CALL 0x0048cb50"
+        }
+      ]
+    },
+    {
+      "caller": "0048d4c0",
+      "callsite": "0048def2",
+      "target": "004873e0",
+      "frontier": [
+        {
+          "kind": "unresolved_call",
+          "address": "0048df74",
+          "instruction": "CALL 0x0048cb50"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "0048e16e",
+          "instruction": "CALL 0x0048cb50"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "0048e241",
+          "instruction": "CALL 0x0048cb50"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "0048e333",
+          "instruction": "CALL 0x00477d90"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "0048e3bf",
+          "instruction": "CALL 0x0048cc60"
+        }
+      ]
+    },
+    {
+      "caller": "0048d4c0",
+      "callsite": "0048e0ea",
+      "target": "004873e0",
+      "frontier": [
+        {
+          "kind": "unresolved_call",
+          "address": "0048e16e",
+          "instruction": "CALL 0x0048cb50"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "0048e241",
+          "instruction": "CALL 0x0048cb50"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "0048e333",
+          "instruction": "CALL 0x00477d90"
+        },
+        {
+          "kind": "unresolved_call",
+          "address": "0048e3bf",
+          "instruction": "CALL 0x0048cc60"
+        }
+      ]
+    },
+    {
+      "caller": "00489e00",
+      "callsite": "0048a206",
+      "target": "00487a30",
+      "frontier": [
+        {
+          "kind": "return_propagation",
+          "address": "0048a214",
+          "instruction": "RET"
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "readers": [
+      "FNSTSW",
+      "FSTSW",
+      "FNSTENV",
+      "FSTENV",
+      "FSAVE",
+      "FNSAVE",
+      "FXSAVE"
+    ],
+    "incoming_condition_bits_replaced_by": [
+      "FCOM/FCOMP/FCOMPP",
+      "FUCOM/FUCOMP/FUCOMPP",
+      "FTST",
+      "FXAM",
+      "FPU initialization/restore"
+    ],
+    "confirmed_entry_overwrites": {
+      "00485c30": "00485c9d FCOMP before first FNSTSW",
+      "00485f20": "00485f3b FCOMP before first FNSTSW",
+      "004860b0": "004860cc FCOMP before first FNSTSW"
+    },
+    "transparent_leaf": "0049bf40: integer-only body, no calls/status read; returns incoming x87 condition bits",
+    "control_flow": "Explore both conditional successors; stop at first read/overwrite/return/unresolved call. Feasibility is overapproximated; external calls are not assumed transparent."
+  },
+  "conclusion": {
+    "six_direct_calls_read_incoming_condition_bits": false,
+    "state_can_escape_direct_callers": true,
+    "game_facing_replacement_qualified": false,
+    "remaining_scope": [
+      "Unknown callee behavior at render/transform calls",
+      "State propagated from RenderEngineRpmNeedle00489e00 to its caller",
+      "Undiscovered indirect callers and asynchronous FPU-state observers",
+      "Other ABI/register/flags/tags/exception/input-admission integration gates"
+    ]
+  }
+}
