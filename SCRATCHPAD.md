@@ -4,6 +4,8 @@ Keep this file concise and undated. Detailed function evidence, original names, 
 
 ## Scope and current work
 
+Bounded reconstruction-readiness documentation: **DONE**. [Eight-item report](analysis/recompilation-readiness.md) selects leaf00485c30, records the address manifest/export procedure, custom register contracts, data/dependency boundaries, comparison plan and staged blockers. Ghidra storage/comments were saved and read back; executable bytes are unchanged. No C export/reconstruction/compilation was performed. Reference-export repeatability and later implementation gates remain pending; this does not close the gameplay backlog or qualify the whole game to rebuild.
+
 Current priority: normal gameplay behavior, practical limits, usable controls and loading reliability. Preserve earlier evidence; do not pursue further security-oriented or adversarial-input investigations. Historical malformed-input, overflow and attack-oriented follow-ups in the ledger are deferred by this scope change, not marked DONE. Continue the ordinary gameplay portions of mixed rows.
 
 Continue evidence-based reverse engineering in Ghidra, prioritizing the systems behind GitHub issues #1–#16. Read existing evidence first, refine names/types/comments only when supported, save the project, and keep detailed evidence and limitations in `analysis/detailed-analysis-notes.md`. Use focused Wine observations only when static analysis cannot resolve a gameplay question; defer complex cross-system/runtime questions to Astra. No feature implementation, executable-byte changes or runtime-memory writes.
