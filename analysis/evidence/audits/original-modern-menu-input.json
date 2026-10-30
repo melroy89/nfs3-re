@@ -1,0 +1,147 @@
+{
+  "kind": "static-menu-input-chat-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00441700",
+          "end": "004417ef",
+          "bytes_sha256": "d149e8aef63f3f92c3e5165f3cf4f823e6b3a087e0f4aa457369760bcb08290d",
+          "assembly": "analysis/captures/modern-differences/menu-input/original-00441700.asm",
+          "assembly_sha256": "d90baed8a43962cb18b7e0a851fbef8b2322600913302ebab48a8952590fcefa"
+        },
+        {
+          "start": "00441b20",
+          "end": "00441c87",
+          "bytes_sha256": "0a3e4f5c9ab06ed095b9a4bb8bd682624c181b07dd8e8f574ff94be790456b71",
+          "assembly": "analysis/captures/modern-differences/menu-input/original-00441b20.asm",
+          "assembly_sha256": "ddbaf1a4e60ed96cb7ce6571d45c0e8ba648b49990d4d3f738510fd6f9bb5141"
+        },
+        {
+          "start": "0042d810",
+          "end": "0042d856",
+          "bytes_sha256": "ef4837923aa17e0bb9038bfdc94d8813f52b4ae7f2f90ded2715dffc8e6b7c39",
+          "assembly": "analysis/captures/modern-differences/menu-input/original-0042d810.asm",
+          "assembly_sha256": "864dce9b08909e444411eb4e34dab9dab17930440364dd25ccec1e18f6e617d0"
+        },
+        {
+          "start": "00449f30",
+          "end": "0044a0b5",
+          "bytes_sha256": "02bb9ce49403fcc843fb691620f63a70ebaef0f702820629c904380da45a2750",
+          "assembly": "analysis/captures/modern-differences/menu-input/original-00449f30.asm",
+          "assembly_sha256": "cba697b7dd46921580106a6b76141d4065d986f2a2094a22f1248d5ed9442669"
+        },
+        {
+          "start": "0044a0c0",
+          "end": "0044a23b",
+          "bytes_sha256": "35bc118080281aee5245490f6a072b9de3bebe181b303d22279dd67ebc49bd45",
+          "assembly": "analysis/captures/modern-differences/menu-input/original-0044a0c0.asm",
+          "assembly_sha256": "d56903d6ac6a23d59913ff8a35e181a3f6a8807ccb23ce5b94fd071ec89401d7"
+        },
+        {
+          "start": "0044a240",
+          "end": "0044a2c9",
+          "bytes_sha256": "af67ab73931fd0c18340f58cabeff47ae4763ff9ddb686c35ec236ecf157a048",
+          "assembly": "analysis/captures/modern-differences/menu-input/original-0044a240.asm",
+          "assembly_sha256": "78074fb732b06c08348d101333c265a99c648c79cb79bcaf9a68c487fa484080"
+        },
+        {
+          "start": "0044a2d0",
+          "end": "0044a439",
+          "bytes_sha256": "3a747dd0bd559ca53d6f4b4dce6672bbc2529b0778199a574904f5eba97b08af",
+          "assembly": "analysis/captures/modern-differences/menu-input/original-0044a2d0.asm",
+          "assembly_sha256": "358118d1ae4ab44189f0116c7e7beb22b3c5203b8eb15d26f2a6f6a0bab053a9"
+        }
+      ],
+      "strings": {
+        "00538fbc": "escape",
+        "00537834": ": "
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00441700",
+          "end": "004417ef",
+          "bytes_sha256": "d149e8aef63f3f92c3e5165f3cf4f823e6b3a087e0f4aa457369760bcb08290d",
+          "assembly": "analysis/captures/modern-differences/menu-input/official_modern-00441700.asm",
+          "assembly_sha256": "1e7a6e29192b20d7b9ec1a2090a8c8dda866f1de4bbb847d47b6db7d5315182e"
+        },
+        {
+          "start": "00441b20",
+          "end": "00441c87",
+          "bytes_sha256": "2f7524824bd0b9cfb3d383b083630b501cd084ff0595b190fd3781e28e5fd9f9",
+          "assembly": "analysis/captures/modern-differences/menu-input/official_modern-00441b20.asm",
+          "assembly_sha256": "a6700f4e97758dd4f6f7a57e6e36d27783460a4ea1c35fbc29f016b642e0bddf"
+        },
+        {
+          "start": "0042d810",
+          "end": "0042d856",
+          "bytes_sha256": "ef4837923aa17e0bb9038bfdc94d8813f52b4ae7f2f90ded2715dffc8e6b7c39",
+          "assembly": "analysis/captures/modern-differences/menu-input/official_modern-0042d810.asm",
+          "assembly_sha256": "d5b78bc541dec4eff8f56b9008f2c524fe357e400bd1a7e7890887877db5adc1"
+        },
+        {
+          "start": "00449f30",
+          "end": "0044a0b5",
+          "bytes_sha256": "02bb9ce49403fcc843fb691620f63a70ebaef0f702820629c904380da45a2750",
+          "assembly": "analysis/captures/modern-differences/menu-input/official_modern-00449f30.asm",
+          "assembly_sha256": "251b8427ec104179aa601e042910b592522e1da983bd41dcb10284fe0a64a751"
+        },
+        {
+          "start": "0044a0c0",
+          "end": "0044a23b",
+          "bytes_sha256": "35bc118080281aee5245490f6a072b9de3bebe181b303d22279dd67ebc49bd45",
+          "assembly": "analysis/captures/modern-differences/menu-input/official_modern-0044a0c0.asm",
+          "assembly_sha256": "f6f6ce1612873f38e532f0611148abb94c1fbc231ca2651af673cf92bd14c449"
+        },
+        {
+          "start": "0044a240",
+          "end": "0044a2c2",
+          "bytes_sha256": "7e21c10ca8e8fa184b5b303fe0e74960ddd7f18d148719b694cf83c074d1d444",
+          "assembly": "analysis/captures/modern-differences/menu-input/official_modern-0044a240.asm",
+          "assembly_sha256": "0e0fdc627206abe73bc1835b02203d21e05390eaa738a44e40dbb3ce574c4d2c"
+        },
+        {
+          "start": "0044a2d0",
+          "end": "0044a436",
+          "bytes_sha256": "4f16dec19f4b0d9c2f36f7ebbc9977b643a32ead5db134fb442b44bd53745bc9",
+          "assembly": "analysis/captures/modern-differences/menu-input/official_modern-0044a2d0.asm",
+          "assembly_sha256": "2c74391f2a0a739f734ada4a78745112f23a7153ab546148c94c2832100f3436"
+        },
+        {
+          "start": "004f1fcc",
+          "end": "004f1ff0",
+          "bytes_sha256": "68b6c146c2f01c248a7472b7372697bbe35ff95b695b4606ca429a2578f4cd67",
+          "assembly": "analysis/captures/modern-differences/menu-input/official_modern-004f1fcc.asm",
+          "assembly_sha256": "c635ce2ed556e426827744488a260b4e9251eef05534b2a1b160471babab3d5d"
+        },
+        {
+          "start": "004f93ec",
+          "end": "004f9400",
+          "bytes_sha256": "7c7ce14cdc8adb214f2ebba5a1cc2ac9bac93919b2431804b54e37d0ad761a2d",
+          "assembly": "analysis/captures/modern-differences/menu-input/official_modern-004f93ec.asm",
+          "assembly_sha256": "f90e55da14839d1bb0d588955d571196becc2b678dc9204d6adfccf7306d211f"
+        }
+      ],
+      "strings": {
+        "00538fbc": "escape",
+        "0053be28": "keyup",
+        "0053be2e": "keydown",
+        "0053be36": "keyleft",
+        "0053be3e": "keyright",
+        "00537834": ": "
+      }
+    }
+  },
+  "limits": [
+    "No UI/network/target execution.",
+    "Active-entry callbacks and every asset-defined navigation action not validated.",
+    "Empty-string rejection is a caller guard, not a universal send API contract."
+  ]
+}

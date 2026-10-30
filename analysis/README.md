@@ -3,6 +3,7 @@
 This directory contains reviewed research notes, retained evidence and reproducible analysis helpers.
 
 - [Original versus Modern Patch: baseline, measured differences and remaining work](original-modern-differences.md)
+- [Original versus Modern menu navigation and multiplayer chat input](original-modern-menu-input.md)
 - [Original versus Modern viewport reference geometry and aspect factors](original-modern-viewport-geometry.md)
 - [Original versus Modern border geometry](original-modern-border-geometry.md)
 - [Original versus Modern display-mode admission and sorted menu list](original-modern-display-modes.md)

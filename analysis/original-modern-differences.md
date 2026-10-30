@@ -126,7 +126,11 @@ The [display-mode comparison](original-modern-display-modes.md) traces exact-4:3
 
 The [viewport comparison](original-modern-viewport-geometry.md) derives the centred 4:3 reference rectangle, changed internal setter ABI, dynamic aspect-factor writes and profile rectangle rounding differences. The [border comparison](original-modern-border-geometry.md) traces the cached thickness source and changed wrapper call, while keeping the original same-address global’s meaning separate. Complete HUD/camera/map consumers and visual correctness remain pending.
 
-## 14. Prioritized semantic work remaining
+## 14. Menu and multiplayer text input
+
+The [input comparison](original-modern-menu-input.md) traces Tab/Shift+Tab routing, explicit Tab/Escape bypass of the lobby handler, generalized named-arrow actions and the new empty-text send guard. The lobby handler, previous/next routines and send routine are byte-identical; the relevant changes are in their callers. Active entry callbacks can still consume keys, and actual original/Modern UI behavior remains untested.
+
+## 15. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following high-change clusters are investigation seeds, not yet completed before/after explanations:
 
@@ -140,7 +144,7 @@ The full JSON inventory gives every current Modern local function name, entry/ra
 | `004e3078` ScreenshotEncodingThread | 451 / 464 | Original synchronous counterpart mapped in screenshot report; GDI+ success, resources and runtime lifetime remain |
 | `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; initialization selectors/compatibility consumers still pending |
 | `004b5580` LoadGameIniSettings | 374 / 393 | Exact key/default/type/error behavior versus original system settings |
-| `0044a2d0` DispatchFrontendMenuKeyToSelectedEntry | 332 / 358 | Exact key/focus actions and behavior removed or added |
+| `0044a2d0` DispatchFrontendMenuKeyToSelectedEntry | 332 / 358 | Dispatcher/named keys/chat guard traced; all assets, entry callbacks and sound paths remain |
 | `00485880` InitializeDefaultHudLayoutProfileSettings | 332 / 375 | Original HUD data loading versus synthesized layout |
 
 Continue by matching original functions/control-flow neighborhoods, documenting changed instructions/data and linking the corresponding release-note ID. When a same-VA comparison is not a valid counterpart, explicitly map moved/reused/deleted code instead of interpreting a large byte count as a rewrite of the same routine.
@@ -151,4 +155,4 @@ The 290 catalog entries span multiple releases and include driver/assets/configu
 
 `analysis/scripts/ghidra/ExportFunctionInventory.java` exports metadata only. `analysis/scripts/compare_nfs3_executables.py` compares PE sections, imports/resources and selected body bytes without changing an executable or producing C. The JSON records input identities and inventory provenance. Raw downloads, original analysis database, disassemblies and metadata dumps remain under ignored `analysis/captures/modern-differences/`.
 
-Completed so far: exact three-way baseline, initial whole-code/function inventory, precision policy explanation, import/resource deltas, and the existing RaceNet byte witness. **Still pending:** full semantic mapping of changed regions, catalog-to-code coverage and decisive cross-version runtime compatibility tests. This is progress toward the active audit, not a claim that every Modern Patch change is understood.
+Completed static chapters are linked above: exact three-way baseline and whole-code inventory; precision, loader/configuration, windows/screenshots, network ports/input, startup/heap, display/texture, viewport/border comparisons; plus import/resource deltas and the existing RaceNet byte witness. **Still pending:** full semantic mapping of changed regions, catalog-to-code coverage and decisive cross-version runtime compatibility tests. This is progress toward the active audit, not a claim that every Modern Patch change is understood.

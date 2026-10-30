@@ -211,3 +211,7 @@ Run `python3 analysis/scripts/audit_display_mode_difference.py` and `python3 ana
 ## Original versus Modern viewport and border geometry
 
 Run `python3 analysis/scripts/audit_viewport_geometry_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). It retains initializer/setter/border spans, six builder caller instructions and exact file-backed float values in `analysis/evidence/audits/original-modern-viewport-geometry.json`. Raw assembly remains ignored. No rendering or target execution. See [viewport formulas](../original-modern-viewport-geometry.md) and [border changes](../original-modern-border-geometry.md).
+
+## Original versus Modern menu input and chat
+
+Run `python3 analysis/scripts/audit_menu_input_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). It captures matched dispatch/named-key/chat paths and asserts identical lobby, previous/next and sender body bytes. Output: `analysis/evidence/audits/original-modern-menu-input.json`; raw assembly stays ignored. No UI, network or target execution. See [the input comparison](../original-modern-menu-input.md).
