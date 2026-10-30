@@ -38,3 +38,10 @@ Get-FileHash C:\path\to\nfs3.exe -Algorithm SHA256
 ```
 
 The upstream download alone does not reproduce the local modifications. Before publishing transferable annotations, document reproducible modification instructions or a suitable original helper script, and verify the resulting hash. The standalone executable and `FEDATA/MENUS/setup.mnu` are tracked under `nfs3_decomp.rep/Electronic Arts/Need For Speed III/`. All other installation files remain ignored. The menu contains `Visit veg.by (v1.6.2)` and has SHA-256 `d55b7c5a1e169408ddd20e8033f429be35f77614b02b7a6756363e1bf16f2782`. Both tracked files match the copies used in the local Wine installation; imported executable bytes also remain in the Ghidra databases.
+
+
+## Separate original/backup comparison artifact
+
+The installed `nfs3_org.exe` is present both in the NFS3 Wine prefix and the ignored game directory beside the tracked patched executable. The two copies have SHA-256 `b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b` and size 1,589,248 bytes. Its supplied original/backup identity is distinct from independently establishing an unmodified retail release/version.
+
+Limited earlier work compared its RaceNet callback registration; it was not the main Ghidra reconstruction/probe target. A later [precision-policy comparison](../analysis/og-modern-x87-precision.md) directly inspected both binaries and verified original single-precision control blocks removed by Modern Patch. That does not authenticate every original-version provenance claim or establish replay/multiplayer compatibility. The current saved Ghidra project remains Modern Patch analysis.

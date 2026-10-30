@@ -2,6 +2,7 @@
 
 This directory contains reviewed research notes, retained evidence and reproducible analysis helpers.
 
+- [Original versus Modern Patch x87 precision comparison](og-modern-x87-precision.md)
 - [Line-boundary x87 caller-dependence audit](line-boundary-x87-callers.md)
 - [First line-boundary C module and differential results](line-boundary-reconstruction-results.md)
 - [Three-function reference-export results](reference-export-results.md)

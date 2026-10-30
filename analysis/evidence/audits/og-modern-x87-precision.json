@@ -1,0 +1,144 @@
+{
+  "scope": "Read-only static x87 precision policy comparison; no new game/runtime/probe execution",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "size": 1589248,
+      "image_base": "0x400000",
+      "entry": "0x4f7fa0",
+      "precision_clear_sites": [
+        "49516f",
+        "4955df",
+        "4a3e83",
+        "4a3ec9",
+        "4b622f",
+        "4bc807"
+      ],
+      "helper_00485c30_sha256": "3543671c1408e9124a8dd6dfc3166f296390b768b8ea8ab881517b3c041b237f"
+    },
+    "modern": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "size": 1699840,
+      "image_base": "0x400000",
+      "entry": "0x4f7fa0",
+      "precision_clear_sites": [],
+      "helper_00485c30_sha256": "3543671c1408e9124a8dd6dfc3166f296390b768b8ea8ab881517b3c041b237f"
+    }
+  },
+  "witnesses": [
+    {
+      "binary": "original",
+      "start": "00495159",
+      "end_exclusive": "00495180",
+      "purpose": "reset-save-clear-load",
+      "hex": "9bdbe39b9bd93decf379009ba1ecf37900a3f4f3790025fff0ffffa3ecf37900d92decf379009b",
+      "sha256": "a6918cdabb0a14e4566c3822bd0315494c199bb0c520e338690a78110b143035"
+    },
+    {
+      "binary": "original",
+      "start": "004a3e6d",
+      "end_exclusive": "004a3e94",
+      "purpose": "application frontend return to single",
+      "hex": "9bdbe39b9bd93decf379009ba1ecf37900a3f4f3790025fff0ffffa3ecf37900d92decf379009b",
+      "sha256": "a6918cdabb0a14e4566c3822bd0315494c199bb0c520e338690a78110b143035"
+    },
+    {
+      "binary": "original",
+      "start": "004a3eb3",
+      "end_exclusive": "004a3eda",
+      "purpose": "second frontend return to single",
+      "hex": "9bdbe39b9bd93decf379009ba1ecf37900a3f4f3790025fff0ffffa3ecf37900d92decf379009b",
+      "sha256": "a6918cdabb0a14e4566c3822bd0315494c199bb0c520e338690a78110b143035"
+    },
+    {
+      "binary": "original",
+      "start": "004bc680",
+      "end_exclusive": "004bc69d",
+      "purpose": "race frame entry conditional extended restore",
+      "hex": "535152565589e589c6833d703a7a0000750b9bdbe39bd92df4f379009b",
+      "sha256": "cabf37987ae702bb37fa67987738e10d0d5aa96a8024c8c2b5de5db4c4d2b14b"
+    },
+    {
+      "binary": "original",
+      "start": "004bc7e8",
+      "end_exclusive": "004bc81e",
+      "purpose": "race frame return to single",
+      "hex": "833d703a7a000075279bdbe39b9bd93decf379009ba1ecf37900a3f4f3790025fff0ffffa3ecf37900d92decf379009b5d5e5a595bc3",
+      "sha256": "62be0c0015cef0fbf7f42a2caa7eb38f2377c51fbe26b35721b3428997cdec08"
+    },
+    {
+      "binary": "original",
+      "start": "004dfd56",
+      "end_exclusive": "004dfd73",
+      "purpose": "local round-to-integer helper",
+      "hex": "509bd93c249bff3424c64424011fd92c24d9fcd96c24049b8d642408c3",
+      "sha256": "e8e5057d4262fa80aa524f7f130d273e0dd9b35f25cbc72950dd0c7c37277a21"
+    },
+    {
+      "binary": "modern",
+      "start": "00495159",
+      "end_exclusive": "0049518d",
+      "purpose": "epilogue and removed reset block",
+      "hex": "8da5920100005d5f5e5a595bc3909090909090909090909090909090909090909090909090909090909090909090909090909090",
+      "sha256": "46daea42d928142607733d6e0d464810632ea60f19ff37e8083ce4a241f2a169"
+    },
+    {
+      "binary": "modern",
+      "start": "004a3ea0",
+      "end_exclusive": "004a3ee8",
+      "purpose": "extended application loop",
+      "hex": "9bdbe39b837de00a745eb80d000000e88cdafaff8b45e083e80683f80677e1ff2485943d4a00e805f2fcff8945e0c745f400000000ebc9e8d4f3fcff8945e0c745f401000000ebb8",
+      "sha256": "6b5d99ab006d7012cc61e85047e6000d46cac5881c1c5218ed4b37d2996a6cbd"
+    },
+    {
+      "binary": "modern",
+      "start": "004bc680",
+      "end_exclusive": "004bc6a7",
+      "purpose": "unconditional race frame FINIT",
+      "hex": "535152565589e59bdbe39b89c6eb18909090909090909090909090909090909090909090909090",
+      "sha256": "85215bbb981e968d84ca7c5a120ae82ec073054382bcc744b4a33f9ef6cac6b1"
+    },
+    {
+      "binary": "modern",
+      "start": "004bc7de",
+      "end_exclusive": "004bc81e",
+      "purpose": "earlier return and removed reset block",
+      "hex": "5d5e5a595bc390909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090",
+      "sha256": "b863b2635da7aef02183ec505f20971b0661fcbf786e0a34d3c40925da077138"
+    },
+    {
+      "binary": "modern",
+      "start": "004dfd56",
+      "end_exclusive": "004dfd6d",
+      "purpose": "temporary control word0c3f FRNDINT",
+      "hex": "683f0c0000d97c2402d92c24d9fcd96c24028d642404c3",
+      "sha256": "d58ea03c32163153a67e58218927072255791905188317db76d506811b595d59"
+    }
+  ],
+  "patch_readme": {
+    "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/readme_en.txt",
+    "sha256": "02bf4684dce1073b4fe7c00c747f020b43508b0cf1407b5dc3f3b864ea46d81d",
+    "claim_line": 174,
+    "claim": "- FPU always uses extended precision for all calculations.",
+    "section": "Modern Patch v1.6.0 [2016/09/22]"
+  },
+  "interpretation": {
+    "reset_word": "0x037f",
+    "single_after_and": "0x007f",
+    "calculation": "0x037f & 0xfffff0ff == 0x007f",
+    "precision_control": {
+      "00": "24-bit significand",
+      "10": "53-bit significand",
+      "11": "64-bit significand"
+    },
+    "remaining_unknowns": [
+      "Runtime coverage of every race/network/replay path/thread",
+      "Specific other-port float-everywhere test results and performance",
+      "Cross-version replay/network determinism and protocol compatibility",
+      "Full Modern Patch delta beyond reviewed precision controls"
+    ],
+    "local_helper_exception": "Modern004dfd56 loads0x0c3f around FRNDINT then restores priorCW; PC00 transient, FRNDINT is not governed by PC; not evidence of general single-precision racing arithmetic"
+  }
+}
