@@ -3,6 +3,8 @@
 This directory contains reviewed research notes, retained evidence and reproducible analysis helpers.
 
 - [Original versus Modern Patch: baseline, measured differences and remaining work](original-modern-differences.md)
+- [Original versus Modern startup error mode, affinity and option defaults](original-modern-startup-policy.md)
+- [Original versus Modern RAM pool size](original-modern-heap-initialization.md)
 - [Original versus Modern endpoint defaults and colon-port parsing](original-modern-network-endpoints.md)
 - [Original versus Modern network port menu and retry](original-modern-network-port-menu.md)
 - [Original versus Modern screenshot input, format and worker paths](original-modern-screenshots.md)

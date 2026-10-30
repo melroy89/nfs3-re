@@ -199,3 +199,7 @@ Run `python3 analysis/scripts/audit_screenshot_difference.py` from the repositor
 ## Original versus Modern network port paths
 
 Run `python3 analysis/scripts/audit_network_port_difference.py` from the repository root (Python `pefile`, GNU `objdump`; baseline definitions from `audit_thrash_loader_difference.py`). It checks both fingerprints and captures matched service initialization, endpoint adapter/dispatch, menu bodies and new Modern getter/parser/retry spans. Curated output: `analysis/evidence/audits/original-modern-network-port.json`; raw assembly stays ignored. No socket, game or instruction execution. See [endpoint findings](../original-modern-network-endpoints.md) and [menu findings](../original-modern-network-port-menu.md).
+
+## Original versus Modern startup policy and RAM pool
+
+Run `python3 analysis/scripts/audit_startup_policy_difference.py` from the repository root (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). It captures removed original error-mode sites, Modern configuration/API resolution, RAM pool entry/adapter/allocator and original null-pointer guard. Curated output: `analysis/evidence/audits/original-modern-startup-policy.json`. Raw assembly stays ignored; no target/API execution or Ghidra mutation. See [startup policy](../original-modern-startup-policy.md) and [heap comparison](../original-modern-heap-initialization.md).

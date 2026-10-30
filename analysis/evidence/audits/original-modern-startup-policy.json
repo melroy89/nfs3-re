@@ -1,0 +1,133 @@
+{
+  "kind": "static-startup-policy-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004a3ad9",
+          "end": "004a3b3a",
+          "bytes_sha256": "7ea35474bc8da0228707743b952eadf8c1087a8931b9b3b4e59dd6106c158f7d",
+          "assembly": "analysis/captures/modern-differences/startup-policy/original-004a3ad9.asm",
+          "assembly_sha256": "212518323eb31e88b1e8096300aec0fbb235a659cc9bd4d2550159eda580a4cb"
+        },
+        {
+          "start": "004f7900",
+          "end": "004f79ed",
+          "bytes_sha256": "581f18b0657aeb5f80f916d86dcb3780135ecce4768f598092a6f6a5c7f545dd",
+          "assembly": "analysis/captures/modern-differences/startup-policy/original-004f7900.asm",
+          "assembly_sha256": "dd6e62205c682bc200d257c8edf714101cb174a52bb01f6d6882c06a28e62ca4"
+        },
+        {
+          "start": "004f9270",
+          "end": "004f92df",
+          "bytes_sha256": "6a0f68ae24aedc2872916316631452b66e2ae99c74b235802f40f902be4f3593",
+          "assembly": "analysis/captures/modern-differences/startup-policy/original-004f9270.asm",
+          "assembly_sha256": "3041dadc4409bcac183605a40ac7e313abd8cbec973fa6a870294d7587b8ef7d"
+        },
+        {
+          "start": "004f8930",
+          "end": "004f8a7d",
+          "bytes_sha256": "64da29b78bb0c52abe5ff09101de44900c8997a4f0622e286c42887685758260",
+          "assembly": "analysis/captures/modern-differences/startup-policy/original-004f8930.asm",
+          "assembly_sha256": "715959a1a972792d31c421709317dd971381b184e044d302b82d8ece731a825e"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004a3ad9",
+          "end": "004a3b3a",
+          "bytes_sha256": "72b2a40795bf5af6cadc7ecff425e33fabc6b91d291ccd3ff2d8cf69f8f2a5ca",
+          "assembly": "analysis/captures/modern-differences/startup-policy/official_modern-004a3ad9.asm",
+          "assembly_sha256": "2ee8f28f370dde0fc5bef8c904d34db51ab0ec5fd3199e256d9b4bfddbe5e591"
+        },
+        {
+          "start": "004f7900",
+          "end": "004f79ed",
+          "bytes_sha256": "581f18b0657aeb5f80f916d86dcb3780135ecce4768f598092a6f6a5c7f545dd",
+          "assembly": "analysis/captures/modern-differences/startup-policy/official_modern-004f7900.asm",
+          "assembly_sha256": "59044a3028cdc4b1ff4eeb3b6381ff175a0d5275d170c84510b694c4a12bd9bb"
+        },
+        {
+          "start": "004f9270",
+          "end": "004f92df",
+          "bytes_sha256": "114a9ba5130ce4b0d61de972264a19099a4e1ffc6219f718af0dc43e80c69b49",
+          "assembly": "analysis/captures/modern-differences/startup-policy/official_modern-004f9270.asm",
+          "assembly_sha256": "02c6e4482c45ed8a1b11939270a0cd549d04832d21431895be7d63d3468b6af2"
+        },
+        {
+          "start": "004f8930",
+          "end": "004f8a7d",
+          "bytes_sha256": "a5e46f8642933503a9adcf3b59c2a3cbfecf13b407a0ffd51730b6a2f59706a8",
+          "assembly": "analysis/captures/modern-differences/startup-policy/official_modern-004f8930.asm",
+          "assembly_sha256": "3c3c65e57e35cb72b6295f6bdfbe341eaf3ca29e03a0749a1ad587dff3f3984c"
+        },
+        {
+          "start": "004b5580",
+          "end": "004b5709",
+          "bytes_sha256": "7c7a2f33dd7e633a51633a5532c54fd22b892a5454eb365d798253b7f2ae607b",
+          "assembly": "analysis/captures/modern-differences/startup-policy/official_modern-004b5580.asm",
+          "assembly_sha256": "70de2038d8390b5c438bc2c7bd1f0c6c6b305a7e51c0c341c20c3004d8a0c43a"
+        },
+        {
+          "start": "004f1ea0",
+          "end": "004f1ed2",
+          "bytes_sha256": "4d2068f7da02621d21424a2251610f014e41708595aa76ab5def8a1495968689",
+          "assembly": "analysis/captures/modern-differences/startup-policy/official_modern-004f1ea0.asm",
+          "assembly_sha256": "e5904cde60cf7c9dc534bae54fc67aa0534c217077ea65f0629bcc80f876a6e4"
+        },
+        {
+          "start": "004a3e49",
+          "end": "004a3e7e",
+          "bytes_sha256": "9d9c08b6bebca0eb3f313b0abd9f3eec751cd11a458b0ca3e8f64f6df72ef0d8",
+          "assembly": "analysis/captures/modern-differences/startup-policy/official_modern-004a3e49.asm",
+          "assembly_sha256": "611aa043dec47c14da074a72059272b4a632593becadb47b8ee942ff9d94bec1"
+        },
+        {
+          "start": "004b5c00",
+          "end": "004b5c62",
+          "bytes_sha256": "7598561f43ccb0ef9766e42efcc360c75f88c6363a52cf0815463be0de8babe5",
+          "assembly": "analysis/captures/modern-differences/startup-policy/official_modern-004b5c00.asm",
+          "assembly_sha256": "c0f20bfb7a6c6007dd597573bc0b31b5ef081a037832a0b52dc55770e4755248"
+        }
+      ],
+      "strings": {
+        "0053f5f4": "NoErrorReporting",
+        "0053f608": "SingleProcAffinity",
+        "0053f630": "NoMovies",
+        "0053f63c": "OwnHeapLimitMb",
+        "0053f64c": "PreventMinimize",
+        "0053f65c": "LoadingSplashTime",
+        "0053f670": "IntroSplashTime",
+        "0053f680": "Use32bitModeInMenu",
+        "0053f694": "Hide16bitModes",
+        "0053f6a4": "ScreenshoterEnabled",
+        "0053f6b8": "ScreenshoterFormat",
+        "0053f6cc": "png",
+        "0053f6d0": "AllowHugeTextures",
+        "0053f6e4": "WindowedMode",
+        "0053f78c": "KERNEL32.DLL",
+        "0053f79c": "SetProcessAffinityMask"
+      },
+      "resolved_static_imports": {
+        "00534504": "GetCurrentProcess",
+        "0053454c": "GetModuleHandleA",
+        "00534558": "GetProcAddress",
+        "0053458c": "LoadLibraryA",
+        "005345e4": "SetErrorMode"
+      }
+    }
+  },
+  "limits": [
+    "No OS policy change or target execution.",
+    "Original callsite witnesses are not a complete original startup CFG.",
+    "Current option defaults do not prove historical release defaults."
+  ],
+  "allocator_004f7900_bytes_identical": true
+}

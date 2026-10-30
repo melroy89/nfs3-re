@@ -9,6 +9,9 @@
 - [Official download and local-edit provenance](evidence/audits/modern-official-provenance.json).
 - [290-entry release-note catalog](modern-patch-change-catalog.md): a traceability backlog, not 290 verified code changes.
 - [RaceNet callback comparison](connect-menu-dispatch-crosswalk.md): earlier explicit original-versus-active-binary evidence.
+- [Renderer loader](original-modern-renderer-loading.md), [configuration precedence](original-modern-configuration.md), [window callbacks](original-modern-window-handling.md) and [screenshots](original-modern-screenshots.md): instruction-level comparisons and bounded unknowns.
+- [Network endpoints](original-modern-network-endpoints.md) and [menu toggle/retry](original-modern-network-port-menu.md): default/selected ports and revised adapter behavior.
+- [Startup policy/defaults](original-modern-startup-policy.md) and [RAM pool](original-modern-heap-initialization.md): optional OS requests, configurable size and retained allocator instructions.
 
 Read-only PE parsing, disassembly and Ghidra metadata inspection were used. The original was separately imported/analyzed under ignored `analysis/captures/modern-differences/ghidra-original/`; the established Modern Ghidra project, executable and maintained C were not modified. No new game, multiplayer, replay or instruction-probe execution was performed for this audit.
 
@@ -111,7 +114,11 @@ The [screenshot comparison](original-modern-screenshots.md) traces original Alt+
 
 The [endpoint comparison](original-modern-network-endpoints.md) traces original literal 1030 versus Modern configured/default 9803, comma normalization and colon-port handling. The [menu comparison](original-modern-network-port-menu.md) identifies the two-value toggle and conditional alternate-port retry. Local notice suppression/reinitialization changes are traced; actual occupied-port joining and original/Modern race synchronization remain untested.
 
-## 11. Prioritized semantic work remaining
+## 11. Startup policy and RAM pool
+
+The [startup comparison](original-modern-startup-policy.md) traces optional error-mode suppression, dynamically resolved affinity mask 1, and the final binary’s settings defaults/clamps. The [RAM pool comparison](original-modern-heap-initialization.md) confirms original fixed 16 MiB versus configurable default 32 MiB, the original null-backing-pointer guard and unchanged allocator instructions. Effective OS policy, allocator callback state and historical multicore fixes remain separate, untested claims.
+
+## 12. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following high-change clusters are investigation seeds, not yet completed before/after explanations:
 
