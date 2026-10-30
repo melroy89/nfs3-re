@@ -38,7 +38,7 @@ The [configuration evidence manifest](evidence/audits/original-modern-configurat
 
 - This is a static comparison of these exact supplied-original and official-package executables. It is not a claim about every retail revision or later Modern Patch build.
 - The environment helper's construction and lookup behavior are statically visible. No process environment was changed or queried at runtime.
-- `007a263c` is pushed as an immediate buffer address (not loaded indirectly from a pointer slot) for the filename argument passed to the INI APIs. This report does not resolve every initialization path that assigns it or prove disk-level INI loading.
+- `007a263c` is pushed as an immediate buffer address (not loaded indirectly from a pointer slot) for the filename argument passed to the INI APIs. The later [startup-path comparison](original-modern-startup-paths.md) traces its ordinary producer and basename/fallback selection; every alias/initialization path and disk-level loading remain outside this chapter.
 - Original registry imports, new INI calls and the README support the system-setting migration, without proving elimination of registry use. Specific original registry key/value mappings have not been reconstructed here.
 - The separate renderer configuration (`thrash.ini`) is out of scope; its parsing and environment-variable setup should not be conflated with game-setting fallback.
 - The locally installed `nfs3.exe` has a different fingerprint from this official-package executable and is not used for this comparison.

@@ -1,0 +1,313 @@
+{
+  "kind": "static-startup-path-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004a38f0",
+          "end": "004a39d2",
+          "bytes_sha256": "878936212e5ad5b3b190cfa7116fbe63d7ea5949028a98d28dd54ea68c937a3d",
+          "assembly": "analysis/captures/modern-differences/startup-paths/original-004a38f0.asm",
+          "assembly_sha256": "71853bf1da28bc38863d499177c4d482ef162ea2bc1de0ce49abf97a56659b33"
+        },
+        {
+          "start": "004e3340",
+          "end": "004e33a0",
+          "bytes_sha256": "6658da1ae8317e69a52b44ecf8b354df15944357c358c917f38e26d70c36d774",
+          "assembly": "analysis/captures/modern-differences/startup-paths/original-004e3340.asm",
+          "assembly_sha256": "279f27740c631650dc36109958de211b51522da3215b624b1aa8cf541bed46c9"
+        },
+        {
+          "start": "004f0260",
+          "end": "004f027b",
+          "bytes_sha256": "ada08bae0d3b8e69b8b57b46e2685c08ef2b6edc2f12faceaa5c7f0a0f1ac0de",
+          "assembly": "analysis/captures/modern-differences/startup-paths/original-004f0260.asm",
+          "assembly_sha256": "ad95d4342577c5ee7edc2acc3b474256622053b94ae753cd85bd82a73dd84017"
+        },
+        {
+          "start": "004475a0",
+          "end": "004477fd",
+          "bytes_sha256": "b4e287fda1890a5f65009b8d3fa4aacb37dd364644dc380965ed5b84d629b513",
+          "assembly": "analysis/captures/modern-differences/startup-paths/original-004475a0.asm",
+          "assembly_sha256": "7887013445ad8dd228153214cc0caa0ec44c8050f5956bf34f21660af0326a25"
+        },
+        {
+          "start": "004a3d4a",
+          "end": "004a3f7d",
+          "bytes_sha256": "0708234afcbc002165e6be420276ea58181c6ca2df42471e03339d1372c355e7",
+          "assembly": "analysis/captures/modern-differences/startup-paths/original-004a3d4a.asm",
+          "assembly_sha256": "b66b31e43f495f7aa1d36dad7a29f9b0b9a15348df4e67944c11505017749d5f"
+        },
+        {
+          "start": "004fce30",
+          "end": "004fce35",
+          "bytes_sha256": "38009bbb749bb371cb3fb10c5167b712ad7b5a77ded4d1764ceb85bab8d9ea98",
+          "assembly": "analysis/captures/modern-differences/startup-paths/original-004fce30.asm",
+          "assembly_sha256": "621b12f2ad6870ce8abb47f9b7f9bbf19d377e2270fb8e24c82f28a76c239cef"
+        }
+      ],
+      "static_imports": {
+        "00534490": "CreateDirectoryA",
+        "00534520": "GetFileAttributesA",
+        "00534544": "GetModuleFileNameA",
+        "005345d4": "SetCurrentDirectoryA"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004a38f0",
+          "end": "004a3938",
+          "bytes_sha256": "3623356480259f3df232d86ba83b358ed9395d796d3a256ccd41fbcdb90b40d6",
+          "assembly": "analysis/captures/modern-differences/startup-paths/official_modern-004a38f0.asm",
+          "assembly_sha256": "83861e3c193b64beb60e3a7352175d7ec82ec1f60e8ed06e331d844758f53e14"
+        },
+        {
+          "start": "004a3984",
+          "end": "004a39c6",
+          "bytes_sha256": "d5eb024a8e3736db07797439147785a88061577f05710b3590d348d55f122a65",
+          "assembly": "analysis/captures/modern-differences/startup-paths/official_modern-004a3984.asm",
+          "assembly_sha256": "b8ee7f0193ba097eb591c682ea3afc154a2c5d946db3e434fc5e426354fd3a8b"
+        },
+        {
+          "start": "004a3e24",
+          "end": "004a3e7e",
+          "bytes_sha256": "73b834f300432e46423f01af67551c105ae7f6e0595b2e07f76030ed107d2b65",
+          "assembly": "analysis/captures/modern-differences/startup-paths/official_modern-004a3e24.asm",
+          "assembly_sha256": "3c68d4b5a23fc391f5ecdff54bd372a816d2a58c6e5036e7dbd28b2211e2e6a7"
+        },
+        {
+          "start": "004a6e10",
+          "end": "004a6f2e",
+          "bytes_sha256": "be5540b29088b65f28fd7d64f065a30d0e8ad332fc418c4ea1239a325edc0519",
+          "assembly": "analysis/captures/modern-differences/startup-paths/official_modern-004a6e10.asm",
+          "assembly_sha256": "a4046e2ffbc70419aed24f47e056045210307fcabea87b044dab3ded70ef76c2"
+        },
+        {
+          "start": "004f915e",
+          "end": "004f916a",
+          "bytes_sha256": "c6bc2bbba02a625ee1bcad086c5527f2ab4f7c2cbfd264d9e1172ce900e4c2b3",
+          "assembly": "analysis/captures/modern-differences/startup-paths/official_modern-004f915e.asm",
+          "assembly_sha256": "cfdee0c680b275d6d229f2aeafdc2441eb3482b4c1ff0d20727d3329c221235f"
+        },
+        {
+          "start": "004f916c",
+          "end": "004f9187",
+          "bytes_sha256": "e292c880163781c5f9571f6827d3579b233c438e89bdf032e18af3274092e93d",
+          "assembly": "analysis/captures/modern-differences/startup-paths/official_modern-004f916c.asm",
+          "assembly_sha256": "44c00f398e8e8ac97c3f0d96c95853d45174afac78887a2fee67f2b4bce5cac0"
+        },
+        {
+          "start": "004f91ec",
+          "end": "004f9229",
+          "bytes_sha256": "252eb3ce839ab5e4c6bcea7b87f3a991cbb093d21b9e4a0033b55c8e2b47f7c5",
+          "assembly": "analysis/captures/modern-differences/startup-paths/official_modern-004f91ec.asm",
+          "assembly_sha256": "d60e4515a73c083b5e05f86426e5b841f716a3b08511d22f5d718414fd5fba26"
+        }
+      ],
+      "static_imports": {
+        "00534490": "CreateDirectoryA",
+        "00534520": "GetFileAttributesA",
+        "00534544": "GetModuleFileNameA",
+        "005345d4": "SetCurrentDirectoryA"
+      },
+      "default_path_slots": [
+        {
+          "slot": 0,
+          "destination_va": "007a27b4",
+          "value": ".\\gamedata\\tracks\\"
+        },
+        {
+          "slot": 1,
+          "destination_va": "007a2834",
+          "value": ".\\gamedata\\tracks\\tutor\\"
+        },
+        {
+          "slot": 2,
+          "destination_va": "007a28b4",
+          "value": ".\\gamedata\\carmodel\\"
+        },
+        {
+          "slot": 3,
+          "destination_va": "007a2934",
+          "value": ".\\gamedata\\render\\pc\\"
+        },
+        {
+          "slot": 4,
+          "destination_va": "007a29b4",
+          "value": ".\\gamedata\\dashhud\\"
+        },
+        {
+          "slot": 5,
+          "destination_va": "007a2a34",
+          "value": ".\\gamedata\\audio\\pc\\"
+        },
+        {
+          "slot": 6,
+          "destination_va": "007a2ab4",
+          "value": ".\\gamedata\\audio\\sfx\\"
+        },
+        {
+          "slot": 7,
+          "destination_va": "007a2b34",
+          "value": ".\\gamedata\\audio\\speech\\"
+        },
+        {
+          "slot": 8,
+          "destination_va": "007a2bb4",
+          "value": ".\\fedata\\"
+        },
+        {
+          "slot": 9,
+          "destination_va": "007a2c34",
+          "value": ".\\fedata\\plac\\car.viv"
+        },
+        {
+          "slot": 10,
+          "destination_va": "007a2cb4",
+          "value": ".\\fedata\\movies\\"
+        },
+        {
+          "slot": 11,
+          "destination_va": "007a2d34",
+          "value": ".\\fedata\\menus\\"
+        },
+        {
+          "slot": 12,
+          "destination_va": "007a2db4",
+          "value": ".\\fedata\\art\\"
+        },
+        {
+          "slot": 13,
+          "destination_va": "007a2e34",
+          "value": ".\\fedata\\text\\"
+        },
+        {
+          "slot": 14,
+          "destination_va": "007a2eb4",
+          "value": ".\\fedata\\text\\"
+        },
+        {
+          "slot": 15,
+          "destination_va": "007a2f34",
+          "value": ".\\fedata\\save\\"
+        },
+        {
+          "slot": 16,
+          "destination_va": "007a2fb4",
+          "value": ".\\fedata\\stats\\"
+        },
+        {
+          "slot": 17,
+          "destination_va": "007a3034",
+          "value": ".\\fedata\\config\\"
+        },
+        {
+          "slot": 18,
+          "destination_va": "007a30b4",
+          "value": ".\\fedata\\stats\\carspecs\\"
+        },
+        {
+          "slot": 19,
+          "destination_va": "007a3134",
+          "value": ".\\fedata\\art\\slides\\"
+        },
+        {
+          "slot": 20,
+          "destination_va": "007a31b4",
+          "value": ".\\fedata\\art\\track\\"
+        },
+        {
+          "slot": 21,
+          "destination_va": "007a3234",
+          "value": ".\\fedata\\art\\showcase\\"
+        }
+      ],
+      "directory_tables": {
+        "required_existing": [
+          {
+            "destination_va": "007a27b4",
+            "default_path": ".\\gamedata\\tracks\\"
+          },
+          {
+            "destination_va": "007a28b4",
+            "default_path": ".\\gamedata\\carmodel\\"
+          },
+          {
+            "destination_va": "007a2934",
+            "default_path": ".\\gamedata\\render\\pc\\"
+          },
+          {
+            "destination_va": "007a29b4",
+            "default_path": ".\\gamedata\\dashhud\\"
+          },
+          {
+            "destination_va": "007a2a34",
+            "default_path": ".\\gamedata\\audio\\pc\\"
+          },
+          {
+            "destination_va": "007a2ab4",
+            "default_path": ".\\gamedata\\audio\\sfx\\"
+          },
+          {
+            "destination_va": "007a2b34",
+            "default_path": ".\\gamedata\\audio\\speech\\"
+          },
+          {
+            "destination_va": "007a2d34",
+            "default_path": ".\\fedata\\menus\\"
+          },
+          {
+            "destination_va": "007a2db4",
+            "default_path": ".\\fedata\\art\\"
+          },
+          {
+            "destination_va": "007a2e34",
+            "default_path": ".\\fedata\\text\\"
+          },
+          {
+            "destination_va": "007a3134",
+            "default_path": ".\\fedata\\art\\slides\\"
+          },
+          {
+            "destination_va": "007a31b4",
+            "default_path": ".\\fedata\\art\\track\\"
+          },
+          {
+            "destination_va": "007a3234",
+            "default_path": ".\\fedata\\art\\showcase\\"
+          }
+        ],
+        "create_if_absent": [
+          {
+            "destination_va": "007a2f34",
+            "default_path": ".\\fedata\\save\\"
+          },
+          {
+            "destination_va": "007a2fb4",
+            "default_path": ".\\fedata\\stats\\"
+          },
+          {
+            "destination_va": "007a3034",
+            "default_path": ".\\fedata\\config\\"
+          },
+          {
+            "destination_va": "007a30b4",
+            "default_path": ".\\fedata\\stats\\carspecs\\"
+          }
+        ]
+      },
+      "ini_fallback": "nfs3.ini"
+    }
+  },
+  "limits": [
+    "No working-directory/API/file changes or target execution.",
+    "Original same-VA function is unrelated; no semantic match inferred.",
+    "Path table strings are initialization defaults; runtime locale/config changes can alter slots."
+  ]
+}

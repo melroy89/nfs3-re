@@ -219,3 +219,7 @@ Run `python3 analysis/scripts/audit_menu_input_difference.py` (Python `pefile`, 
 ## Original versus Modern HUD presets and loading artwork
 
 Run `python3 analysis/scripts/audit_hud_layout_difference.py` and `python3 analysis/scripts/audit_loading_artwork_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). They retain input/span hashes and preset/constant provenance in `original-modern-hud-layout.json` and `original-modern-loading-artwork.json` under `analysis/evidence/audits/`. The scripts check the retained shared HUD tail and floor/ceil bodies. Raw assembly stays ignored. No target/renderer execution. See [HUD](../original-modern-hud-layout.md) and [loading](../original-modern-loading-artwork.md) findings.
+
+## Original versus Modern startup paths
+
+Run `python3 analysis/scripts/audit_startup_paths_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). It captures original setter/frontend witnesses and Modern startup/CWD/INI/directory helpers. It resolves initialized path slots from the file-backed source table, without misreading destination BSS as file strings. Output: `analysis/evidence/audits/original-modern-startup-paths.json`; raw captures stay ignored. No filesystem/API/target mutation. See [the path comparison](../original-modern-startup-paths.md).

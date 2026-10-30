@@ -134,7 +134,11 @@ The [input comparison](original-modern-menu-input.md) traces Tab/Shift+Tab routi
 
 The [HUD initializer comparison](original-modern-hud-layout.md) traces original locale-selected `*def.pos` parsing versus Modern embedded coordinate data and x87 aspect adjustment, plus exact six-profile header defaults. The [loading-artwork comparison](original-modern-loading-artwork.md) traces 300 small-tile iterations versus six larger/overlapping tiles, reference-rectangle placement and changed progress calculations. Both retain the original floor/ceil helper bodies; this is not a new floor/ceil algorithm. Original asset-to-preset correspondence, full progress meaning and rendered output remain pending.
 
-## 16. Prioritized semantic work remaining
+## 16. Startup paths, INI basename selection and directories
+
+The [startup-path comparison](original-modern-startup-paths.md) traces Modern’s explicit executable-directory attempt, its ignored API result/210-character gate, executable-basename INI preference and fallback, 22 initialized path slots and 13-required/four-create directory tables. Original already has directory setters and a frontend switch/restore path; the change is not a newly imported API. Ordinary INI producer-to-reader linkage and conditional screenshot-directory anchoring are now explained. Complete original installation discovery and later CWD/path writes remain separate.
+
+## 17. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 
