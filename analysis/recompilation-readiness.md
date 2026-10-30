@@ -56,3 +56,17 @@ All entries below are **pending**, unless explicitly stated otherwise above:
 6. Explicit toolchain, ABI/build boundaries and confirmed dependency inventory.
 7. Complete scoped comparison matrix and probe limitations.
 8. Prioritized blockers by reference-export, compilation, linking and runtime-validation stage; saved Ghidra changes/readback or explicit no-change justification.
+
+## Saved storage correction checkpoint
+
+A fresh headless read-only reopen after saving confirmed language `x86:LE:32:default`, compiler specification `windows`, and 4,340 functions. Three signatures now use explicit custom storage rather than an incorrect standard calling convention:
+
+| Function | Inputs | Return storage |
+|---|---|---|
+| `00485c30` | EAX candidate float2; EDX source line float4; EBX bounds float4; ECX policy; entry stack+4 BYTE-mask pointer | EAX float-pointer or null |
+| `004abd9c` | EAX opaque vehicle pointer; EDX mutable tyre-tuning float pointer | ST0, ten-byte physical x87 storage |
+| `00518640` | EAX destination; EDX source; EBX unsigned 32-bit byte count | EAX original destination |
+
+`float10` on `004abd9c` describes physical return storage only. The assembly rounds the result to binary32 before loading ST0; a future C interface should describe that value separately from an ABI adapter. This does not recover an original C long-double declaration. Preserved registers, flags and side effects require separate contracts; custom parameter metadata does not encode them.
+
+The correction was saved to `db.3143.gbf` and independently reopened read-only. The prior database is preserved by Git and a private backup under `/home/melroy/.local/state/nfs3-re/readiness/f9-before`. Executable SHA-256 was rechecked unchanged after saving. Caller prototypes and full behavior review remain pending. An initial parameter-name collision prevented the first update; the subsequent update used distinct names and readback verified all three signatures.
