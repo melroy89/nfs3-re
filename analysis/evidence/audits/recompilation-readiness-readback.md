@@ -178,3 +178,20 @@ Retained original-byte oracle inspected, not rerun:
 - Twenty source vectors × two policy values, mask seeded `a0`, FNINIT/CW `037f` every row, scratch zero-seeded only once. It captures EAX return, two raw float words, mask, CW and SW. Preserved GPRs, EFLAGS, caller execution, populated x87 stack, concurrent calls and reconstructed C are not covered.
 
 Final scope: verified saved metadata/contracts and bounded original instruction/data facts; inferred future toolchain/interface choices; unresolved export repeatability, complete machine equivalence, arbitrary aliasing/initialization and game integration.
+
+## Follow-up handoff review
+
+Reviewed from commit `828a1ce71ac7f975b01b62aac7413323e722ca49`. Section 6's proposed 32-bit Windows model is **ILP32**, not LLP64. Its pointer/int/long widths were already correct and remain 4 bytes. This corrects a terminology defect in the proposal; it changes neither the saved compiler specification nor any executable/database bytes.
+
+An independent read-only report review checked all eight handoff areas and the installed `CppExporter.java` constructor, selection and failure-output handling. It found no additional actionable contract/evidence inconsistency. Parent inspection also checked the retained probe source/results and source-backed exporter behavior. The exclusion rule is now worded explicitly to include the two caller-context entries, avoiding any suggestion that their rows add to the 4,130 exclusions. The acceptance table now has one row per handoff item, and the next-phase sequence separates sample export, type/expression/toolchain preparation, standalone implementation/linking and comparison, removing the earlier circular wording about completing priorities 1–4 before their own work.
+
+Current file SHA-256 checks matched the values above for the executable, `db.3144.gbf`, probe script and retained probe result. Read-only PE parsing again counted 207 imports; the retained fixture still has 40 rows. The user separately reported a successful independent read-only reopen verifying the three custom register signatures, saved comments and 4,340 entries, with matching executable/database/probe hashes. This follow-up did not repeat that reopen or mutate Ghidra: the existing saved corrections remain appropriate, and the model-label correction belongs in Markdown. No new save/readback cycle is necessary when no Ghidra change is made.
+
+Remaining unknowns retain their stage and follow-up in report §8:
+
+- **Reference export:** no output/re-export equivalence has been observed; execute the three-address two-run procedure only after authorization.
+- **Module compilation:** C types, any emitted unsupported constructs and the explicit x87/store model remain unimplemented; inventory actual reference output and pin/qualify the ILP32 toolchain in the next phase.
+- **Linking:** the standalone symbols/CRT/adapter are specified as proposals, not linked artifacts; inspect real helpers/imports and prove ABI when those objects exist.
+- **Runtime validation:** no C-versus-original comparison exists; extend register/FPU capture and execute the stated fixture on both implementations. Actual loader/startup, alias/reentrancy and caller/game integration require separate evidence before expanding that scope.
+
+No C export or reconstruction source, toolchain installation, compilation/linking, new instruction probe or unrelated scratchpad investigation was performed during this follow-up. The completed deliverable is the bounded readiness audit and actionable next-phase plan, with later engineering gates explicitly unqualified.

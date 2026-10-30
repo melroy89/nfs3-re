@@ -33,7 +33,7 @@ All intervals below are half-open. Function names are labels; the primary key is
 | `00518640` | `0051868d` | Register/segment helper check; sample C, not module one | Not run: phase prohibits C export |
 | `00485f20` | `004860a1` | Caller context only | Deliberately excluded from first sample/module |
 | `004860b0` | `004862f5` | Caller context only | Deliberately excluded from first sample/module |
-| Every other local entry | Saved function body | Outside the three-address reference sample | Deliberately excluded: 4,130 local entries in total, including the two caller rows |
+| All local entries except the three selected samples | Saved function body | Outside the three-address reference sample; includes the two caller-context rows above | Deliberately excluded: 4,130 local entries in total |
 | 207 external entries | External address space | Import/interface inventory, not local implementations | Deliberately excluded from body export |
 
 Actual C-export counts: **0 successful, 0 failed, 0 timed out, 3 not run; 4,130 local and 207 external entries excluded**. “Not run” is not a successful export. Thunks must retain their inventory identity rather than silently being counted as reconstructed bodies.
@@ -121,7 +121,7 @@ No suspect original behavior was corrected. Policies, write-before-rejection, co
 
 **First future artifact:** a standalone 32-bit Windows console **test executable** containing the C leaf plus a comparison harness. It is not a DLL replacement, patched executable or running-game component. First acceptance scope: the ordered, finite fixture witnesses under CW `037f`, followed by the full retained 40-row fixture as separately reported exceptional coverage.
 
-**Proposed toolchain:** GCC/MinGW-w64 targeting `i686-w64-mingw32`, C11, PE32, Windows LLP64 sizes (32-bit pointer/int/long, 8-bit bytes, binary32 float). Candidate baseline flags: `-std=c11 -O0 -g -m32 -march=i686 -mfpmath=387 -fno-fast-math -ffp-contract=off -frounding-math -fexcess-precision=standard`, no LTO. These are a proposal, not a sufficient equivalence recipe: explicit extended intermediates and binary32 stores must follow the instruction contract. Globally adding `-ffloat-store` can introduce extra rounding and is not a solution. GCC documents excess precision and rounding limits; see [x86 options](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html), [optimization options](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html), and [x86 calling attributes](https://gcc.gnu.org/onlinedocs/gcc/x86-Attributes.html).
+**Proposed toolchain:** GCC/MinGW-w64 targeting `i686-w64-mingw32`, C11, PE32, Windows **ILP32** data model (32-bit pointer/int/long, 8-bit bytes, binary32 float). Candidate baseline flags: `-std=c11 -O0 -g -m32 -march=i686 -mfpmath=387 -fno-fast-math -ffp-contract=off -frounding-math -fexcess-precision=standard`, no LTO. These are a proposal, not a sufficient equivalence recipe: explicit extended intermediates and binary32 stores must follow the instruction contract. Globally adding `-ffloat-store` can introduce extra rounding and is not a solution. GCC documents excess precision and rounding limits; see [x86 options](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html), [optimization options](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html), and [x86 calling attributes](https://gcc.gnu.org/onlinedocs/gcc/x86-Attributes.html).
 
 The cross compiler was **not found on PATH**; native GCC is 13.3.0. No toolchain was installed or invoked to compile anything. Pin the actual cross-compiler/binutils/CRT versions before the next phase. Assert type sizes, floating representation and selected long-double behavior in that future harness; MinGW long-double layout must not be inferred from Ghidra's 8-byte Windows `long double` setting.
 
@@ -168,7 +168,7 @@ The documentation deliverables are **done**; subsequent engineering/qualificatio
 | Priority / address | Evidence and required action | Confidence | Work status | Affected stage |
 |---|---|---|---|---|
 | 1 — sample `00485c30`, `004abd9c`, `00518640` | Baseline/options/selection recorded in §1; execute two fresh sample exports and reconcile per-entry outputs/errors/omissions when C export is authorized | Unresolved output/repeatability | Blocked by this phase's no-export scope | Reference export |
-| 2 — `00485c30`, `00791c08/0c` | Contracts/layouts/contiguous body verified; convert x87 operations and binary32 boundaries into supported C constructs without changing alias/shared-storage semantics | Verified original contract, unresolved C expression model | Pending next implementation phase | Module compilation |
+| 2 — `00485c30`, `00791c08/0c` | Contracts/layouts/contiguous body verified; define the required scalar/array types and emitted-construct inventory, then convert x87 operations and binary32 boundaries into supported C constructs without changing alias/shared-storage semantics | Verified original contract, unresolved C expression model | Pending next implementation phase | Module compilation |
 | 3 — `00485c30` test boundary | Proposed MinGW i686 toolchain absent; pin compiler/binutils/CRT, verify widths and x87 evaluation, select explicit stores/extended temporaries and supported flags | Inferred proposal | Pending | Module compilation |
 | 4 — `00485c30` adapter / `004f7fa0` game entry | Standalone main/CRT and own scratch suffice for first link; define symbols and adapter, prove RET4/ABI. Do not use original game entry/startup/resources as a standalone link specification | Verified boundary, unresolved implementation | Pending | Linking |
 | 5 — `00485c30` fixture | Run C and oracle on the same target/state; compare all planned outputs and extend register/FPU capture before claiming machine equivalence | Verified retained original behavior; C absent | Pending | Runtime validation |
@@ -186,12 +186,24 @@ The documentation deliverables are **done**; subsequent engineering/qualificatio
 
 ### Documentation-phase acceptance check
 
-- **Done:** named first module, original-address manifest, dependency map and deliberate exclusions (§1/§6).
-- **Done:** verified or explicitly unresolved contracts for the leaf and relevant callers; requested register corrections saved/read back (§2 and evidence).
-- **Done:** reproducible export plan, precise scope blocker for the modest repeatability check, and honest zero-export coverage (§1).
-- **Done:** layout/initialization/resource distinctions and special machine/UB/reentrancy treatment (§4/§5).
-- **Done:** concrete original-versus-C comparison plan, exactness policy, ordinary/boundary inputs and stub limits (§7).
-- **Done:** prioritized blockers by stage with confidence separate from status (§8).
-- **Done:** Ghidra storage/comments saved and independently reopened; executable/function hashes unchanged (readback evidence).
+| Handoff item | Acceptance | Later-phase limit |
+|---|---|---|
+| 1. Baseline and export procedure | **Complete:** exact target/snapshot, exporter/options, address manifest, omissions and repeatability procedure recorded | Actual export/re-export remains blocked by the no-export scope; no exporter success is claimed |
+| 2. Signatures and register contracts | **Complete:** three custom signatures saved/read back; relevant callers and hidden-state caveats recorded | Complete flags/x87/alias domains and caller prototype recovery remain scoped follow-ups |
+| 3. Boundaries and control flow | **Complete:** five contiguous bodies, direct calls and known references inspected | Unrelated dispatcher and broader indirect-call discovery remain outside this module |
+| 4. Data, layouts and initialization | **Complete:** required arrays/scratch/mask, storage classes, relocations and resources distinguished | Actual loader/startup indirect writes and game resource necessity remain unresolved |
+| 5. Machine behavior | **Complete:** x87 rounding/status, widths, masking, alias/alignment/UB and shared-state risks identified | A supported C expression/type model and expanded machine-state comparisons remain pending |
+| 6. Module and build boundary | **Complete:** leaf00485c30, dependency/symbol map, standalone test artifact and ILP32/ABI proposal defined | Toolchain/version/CRT selection, implementation and link verification remain pending |
+| 7. Original-versus-C comparison | **Complete:** retained 40-row oracle, exactness policy, additional cases and stub limits documented | No reconstructed C or new differential execution exists |
+| 8. Staged readiness report | **Complete:** blockers have evidence, action, confidence, work status and affected stage; saved Ghidra readback recorded | Reference export, compilation, linking and runtime qualification are separate future gates |
 
-Next authorized phase should implement only the reference-export sample and first leaf test harness after addressing priorities 1–4. It need not wait for the whole scratchpad, multiplayer results, controllers or dispatcher investigation. This report authorizes none of those next-phase actions by itself.
+The follow-up review corrected the ILP32 label without changing the already-correct pointer/int/long sizes. Independent report/source review found no additional contract or evidence inconsistency. The separately reported read-only Ghidra review confirmed all three custom signatures, saved comments and 4,340 entries; current file hashes also match the retained evidence. No additional Ghidra mutation was justified. See the [follow-up evidence record](evidence/audits/recompilation-readiness-readback.md#follow-up-handoff-review).
+
+### Actionable next-phase order (requires separate authorization)
+
+1. **Reference export:** implement only the three-entry runner/ledger and execute the two-run sample check from §1. Stop on unexplained output differences, missing bodies or unaccounted failures. This does not require a C toolchain or closing the scratchpad.
+2. **Module compilation preparation:** freeze the leaf's admitted inputs, types, shared-storage semantics and explicit x87 rounding model. Inventory unsupported constructs/types in the actual reference output once it exists; do not assume decompiler convenience types or pseudo-operations are compilable or supplied by a library. Select and pin the proposed ILP32 compiler/binutils/CRT and resolve priorities 2–3 before implementation.
+3. **Standalone implementation/linking:** only when authorized, create the maintained leaf, defined scratch symbol, original-register adapter and ordinary test startup; compile/link that bounded test executable. Inspect actual emitted helpers/imports and verify the ABI. This addresses priority 4 without linking the whole game.
+4. **Runtime comparison:** execute both original and reconstructed implementations under identical fixture/state conditions. Apply the finite, full-fixture, machine-state and later integration gates from §7 separately. Extend into callers or game startup only when the chosen next module needs them.
+
+This sequence does not require multiplayer results, controller work, dispatcher recovery or every unrelated scratchpad investigation. The current deliverable is the completed audit and this plan; it does not authorize any of these future export, implementation, installation, compilation/linking or probe actions.
