@@ -1,0 +1,25 @@
+{
+  "vendor_page": "https://veg.by/en/projects/nfs3/",
+  "download_url": "https://veg.by/files/nfs3/nfs3_modern_patch.7z",
+  "download_date": "2026-10-31",
+  "archive_bytes": 1663896,
+  "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+  "readme_matches_installed": true,
+  "code_operand": {
+    "instruction": "004a534e MOV ESI,immediate32",
+    "official_target": "0053d698",
+    "local_target": "00a52bf2",
+    "changed_bytes": [
+      "004a534f",
+      "004a5350",
+      "004a5351"
+    ],
+    "official_about": "Need For Speed III: Hot Pursuit [1998/09/03]\n(C) 1998 Electronic Arts\nModern Patch v1.6.1 [2016/10/28]\n(C) 2016 VEG <me@veg.by>\n\n",
+    "local_about": "Need For Speed III: Hot Pursuit [1998/09/03]\n(C) 1998 Electronic Arts\nModern Patch v1.6.2 [2026/10/10]\n(C) 2016-2026 VEG & Melroy\nVEG: <me@veg.by>\n\n"
+  },
+  "limits": [
+    "No publisher signature or independently authenticated original-retail baseline",
+    "Official/local resources compared by logical resource identity; no game execution",
+    "Original versus Modern semantic function matching is not implied by same-address bytes"
+  ]
+}

@@ -167,3 +167,19 @@ The sampler also emits a `kind=maps` record every30seconds, in addition to the i
 `export_reference_samples.py` and `ghidra/ExportReferenceSample.java` export only `00485c30`, `004abd9c` and `00518640` from an isolated, hash-checked saved snapshot. They create reference C/headers under ignored `analysis/captures/reference-exports/`; they do not create maintained C, install tools, compile/link C or execute game/probe instructions. The coordinator pins options/tool/runner identities, retains per-entry diagnostics/results, imposes deadlines and compares two runs. Inline warnings embedded in exported text require the additional source inspection recorded in the run manifests.
 
 See [completed results and exact invocation](../reference-export-results.md) and [the bounded export procedure](../recompilation-readiness.md#pinned-reference-export-procedure-executed-for-the-fixed-sample). Existing results are never overwritten. Raw files stay local; curated metadata is tracked separately.
+
+## Original versus official Modern byte inventory
+
+`ghidra/ExportFunctionInventory.java` exports function names, half-open address ranges, thunk markers and program identity. Run it on the saved Modern project with `-readOnly -noanalysis`; analyze the original in a separate capture project. Do not import the original over the maintained Modern program. The comparison requires Python `pefile` and the retained metadata inventories:
+
+```sh
+python3 analysis/scripts/compare_nfs3_executables.py \
+  --original 'nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe' \
+  --modern analysis/captures/modern-differences/upstream/package/nfs3.exe \
+  --local 'nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe' \
+  --functions analysis/captures/modern-differences/functions-modern.json \
+  --original-functions analysis/captures/modern-differences/functions-original.json \
+  --output analysis/captures/modern-differences/comparison-rerun.json
+```
+
+Compare the rerun JSON with the retained [curated inventory](../evidence/audits/original-modern-function-diff.json). Inputs and their hashes are recorded in that inventory; raw downloads and Ghidra metadata remain ignored. Same-address bytes establish byte correspondence, not semantic function matching. Original autoanalysis entries are boundary candidates. See [the measured report and limitations](../original-modern-differences.md).
