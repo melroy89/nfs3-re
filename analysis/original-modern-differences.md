@@ -95,7 +95,11 @@ The official/local code comparison establishes that this region is the same in t
 
 The [renderer-loading comparison](original-modern-renderer-loading.md) establishes the original `004f8390` / Modern `004f84a8` correspondence: all 34 export names retain their pointer slots, while Modern adds mandatory export/null-descriptor checks, table-driven cleanup and changes local fallback/return behavior. It also traces driver-specific INI/ENV configuration. Original selection precedence, renderer DLL implementation changes and runtime acceptance remain separate work.
 
-## 7. Prioritized semantic work remaining
+## 7. Game configuration lookup
+
+The [configuration comparison](original-modern-configuration.md) traces the Modern caller and INI/environment readers: explicit INI values precede environment defaults, then caller defaults. Original registry imports and the new profile API calls support a migration, but each original setting/key still needs mapping. The configured filename is passed as direct buffer address `007a263c`; its complete initialization history remains unresolved.
+
+## 8. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following high-change clusters are investigation seeds, not yet completed before/after explanations:
 

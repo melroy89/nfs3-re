@@ -1,0 +1,103 @@
+{
+  "kind": "static-instruction-span-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004b5580",
+          "end": "004b5709",
+          "bytes": 393,
+          "bytes_sha256": "793d37d4066a69c99d358d202550a8c8626e311da745946b25a61a479082b8eb",
+          "assembly": "analysis/captures/modern-differences/configuration/original-004b5580.asm",
+          "assembly_sha256": "c6e9370d7730f79fda54d0807426ecee40754127e665374fa564d6cb98003eaf"
+        },
+        {
+          "start": "004fb6f0",
+          "end": "004fb76a",
+          "bytes": 122,
+          "bytes_sha256": "ea3416bcb19343d7e55b2bdc281a18afe27ac9bc2778b2e042f0e121ed85da58",
+          "assembly": "analysis/captures/modern-differences/configuration/original-004fb6f0.asm",
+          "assembly_sha256": "95ab7788335fcb7c81d636f8844d2fc6b5a18d91824a239c680db500c16db847"
+        },
+        {
+          "start": "004fb790",
+          "end": "004fb81b",
+          "bytes": 139,
+          "bytes_sha256": "873e147b44b3a605e46f81e39ec3837a2f3ffd125f00d27e75f6fbc4bfa837f8",
+          "assembly": "analysis/captures/modern-differences/configuration/original-004fb790.asm",
+          "assembly_sha256": "68f8fd053001e3fed53732a04fb70c22dc470fc7617407693856845596540b9d"
+        },
+        {
+          "start": "0050ead0",
+          "end": "0050eb2a",
+          "bytes": 90,
+          "bytes_sha256": "b457b67c61410eb28ba8d75c682f111ad05dbdc34f16bb35cf467be96e406dbc",
+          "assembly": "analysis/captures/modern-differences/configuration/original-0050ead0.asm",
+          "assembly_sha256": "b4a1839c5ce7be6da28c1bbdd66bf1ef5e32e83bff9cfb2f3a911d0e6f913a71"
+        },
+        {
+          "start": "00523d10",
+          "end": "00523d91",
+          "bytes": 129,
+          "bytes_sha256": "8d26e0f6be7ae6a1a137fa84bb17752ea0165b2b7e48938e8722294016c9cfb8",
+          "assembly": "analysis/captures/modern-differences/configuration/original-00523d10.asm",
+          "assembly_sha256": "b83baeeecb72c005baaa17e6c797c01f2149eeda45afdb551b5d667f78b161c2"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004b5580",
+          "end": "004b5709",
+          "bytes": 393,
+          "bytes_sha256": "7c7a2f33dd7e633a51633a5532c54fd22b892a5454eb365d798253b7f2ae607b",
+          "assembly": "analysis/captures/modern-differences/configuration/official_modern-004b5580.asm",
+          "assembly_sha256": "70de2038d8390b5c438bc2c7bd1f0c6c6b305a7e51c0c341c20c3004d8a0c43a"
+        },
+        {
+          "start": "004fb6f0",
+          "end": "004fb76a",
+          "bytes": 122,
+          "bytes_sha256": "7561724ab6ce19c42b4b2ef57ca2cdd5a700d1936d6ef98f8f8b0f6a4fc8932a",
+          "assembly": "analysis/captures/modern-differences/configuration/official_modern-004fb6f0.asm",
+          "assembly_sha256": "0f7eaea5ff9c7c9bd83a6facf43556264a8ab9c5f0678e58fa54ac4ea475d6e7"
+        },
+        {
+          "start": "004fb790",
+          "end": "004fb81b",
+          "bytes": 139,
+          "bytes_sha256": "873e147b44b3a605e46f81e39ec3837a2f3ffd125f00d27e75f6fbc4bfa837f8",
+          "assembly": "analysis/captures/modern-differences/configuration/official_modern-004fb790.asm",
+          "assembly_sha256": "ee74f5c1a89980fd6a418bf48fe12f22970b6d31d84b8fe3fecf9a5e89b31fc7"
+        },
+        {
+          "start": "0050ead0",
+          "end": "0050eb2a",
+          "bytes": 90,
+          "bytes_sha256": "b457b67c61410eb28ba8d75c682f111ad05dbdc34f16bb35cf467be96e406dbc",
+          "assembly": "analysis/captures/modern-differences/configuration/official_modern-0050ead0.asm",
+          "assembly_sha256": "f4d9f9e36c4ca5d41804332b312f9e92c02193a2555ee64946ed1973b4a35c65"
+        },
+        {
+          "start": "00523d10",
+          "end": "00523d91",
+          "bytes": 129,
+          "bytes_sha256": "8d26e0f6be7ae6a1a137fa84bb17752ea0165b2b7e48938e8722294016c9cfb8",
+          "assembly": "analysis/captures/modern-differences/configuration/official_modern-00523d10.asm",
+          "assembly_sha256": "0479b3fd454f4539351602a7d6da10fc23d953a088b203b89440fcb60ac292da"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Same-address spans do not imply original function correspondence.",
+    "No game or instruction execution.",
+    "Registry-to-INI setting-by-setting mapping remains unresolved."
+  ]
+}
