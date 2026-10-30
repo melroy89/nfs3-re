@@ -1,0 +1,147 @@
+{
+  "scope": "First maintained C leaf00485c30; standalone tests only, no game replacement",
+  "source_hashes": {
+    "reconstruction/line_boundary.c": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437",
+    "reconstruction/line_boundary.h": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad",
+    "reconstruction/tests/test_line_boundary.py": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f",
+    "reconstruction/tests/test_line_boundary_windows.py": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab",
+    "reconstruction/tests/windows_harness.c": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd",
+    "reconstruction/tests/windows_adapter.S": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f"
+  },
+  "native": {
+    "raw": "analysis/tmp/line-boundary-differential.json",
+    "sha256": "5e8025edc8a6af82ab3e747d3061d70d37356fbc0de00a74a5b35822f0000559",
+    "row_count": 304,
+    "functional_match": true,
+    "control_word_differences": 0,
+    "status_word_differences": 252,
+    "sw_xor_counts": {
+      "0x0100": 244,
+      "0x0000": 52,
+      "0x4000": 4,
+      "0x4500": 4
+    },
+    "exception_bit_differences": 0,
+    "top_bit_differences": 0,
+    "compiler": "gcc 13.3.0; -m32 C11 O0 x87 no-fast-math, contraction-off, rounding-math, standard excess precision, freestanding"
+  },
+  "windows": {
+    "raw": "analysis/captures/line-boundary-windows/differential.json",
+    "sha256": "32ad89a9a9ce376a325f2d6baf1bf72a1e389355ecbce55cfad4ddf7486cb5eb",
+    "fixture_count": 40,
+    "functional_match": true,
+    "control_word_differences": 0,
+    "status_word_differences": 32,
+    "wine_version": "wine-9.0 (Ubuntu 9.0~repack-4build3)",
+    "compiler": "/home/melroy/.local/opt/nfs3-mingw/usr/bin/i686-w64-mingw32-gcc-posix",
+    "compile_command": [
+      "/home/melroy/.local/opt/nfs3-mingw/usr/bin/i686-w64-mingw32-gcc-posix",
+      "-std=c11",
+      "-O0",
+      "-g",
+      "-mfpmath=387",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-frounding-math",
+      "-fexcess-precision=standard",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-mno-sse",
+      "-static",
+      "-Wl,--image-base,0x10000000",
+      "/home/melroy/Documents/projects/nfs3-re/reconstruction/tests/windows_harness.c",
+      "/home/melroy/Documents/projects/nfs3-re/reconstruction/tests/windows_adapter.S",
+      "/home/melroy/Documents/projects/nfs3-re/reconstruction/line_boundary.c",
+      "-o",
+      "/home/melroy/Documents/projects/nfs3-re/analysis/captures/line-boundary-windows/line_boundary_windows.exe"
+    ],
+    "artifacts": {
+      "original_function_path": "/home/melroy/Documents/projects/nfs3-re/analysis/captures/line-boundary-windows/original_00485c30.bin",
+      "original_function_sha256": "3543671c1408e9124a8dd6dfc3166f296390b768b8ea8ab881517b3c041b237f",
+      "input_vectors_path": "/home/melroy/Documents/projects/nfs3-re/analysis/captures/line-boundary-windows/vectors.bin",
+      "input_vectors_sha256": "4087864a7a752525fc2ba9336bf278cb6135c4aa0484e14b1ffd427fc77eb0be",
+      "windows_pe_path": "/home/melroy/Documents/projects/nfs3-re/analysis/captures/line-boundary-windows/line_boundary_windows.exe",
+      "windows_pe_sha256": "5383fe1fac8fe749969702bceb4b9ebc48c6a41f6f3cbaadb2055fc28b029bdb",
+      "raw_results_path": "/home/melroy/Documents/projects/nfs3-re/analysis/captures/line-boundary-windows/results.bin",
+      "raw_results_sha256": "a84653c700052963484b47781e1f073eb22435314382812bcf3bbc0376fd3244"
+    },
+    "relocation": {
+      "count": 29,
+      "verified_against": "PE HIGHLOW records for selected747bytefunction",
+      "source_file_unchanged": true
+    },
+    "sw_xor_counts": {
+      "0x0100": 24,
+      "0x0000": 8,
+      "0x4000": 4,
+      "0x4500": 4
+    },
+    "exception_bit_differences": 0,
+    "top_bit_differences": 0,
+    "pe_machine": "0x14c",
+    "pe_optional_magic": "0x10b",
+    "pe_image_base": "0x10000000",
+    "imports": [
+      "KERNEL32.dll",
+      "msvcrt.dll"
+    ]
+  },
+  "original_crosscheck": "Both runners reproduce all40 retained original rows, including raw scratch, mask, CW and SW",
+  "ghidra": {
+    "program": "/Electronic Arts/Need For Speed III/nfs3.exe",
+    "database": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3145.gbf",
+    "database_sha256": "13d3fe37095b286ab7e998a0f7a4123abd877dfbf6c37706c919b054fe6cd74b",
+    "changes": [
+      "00791c08 float4",
+      "00791c0c float4",
+      "00485c30 bounded functional-test comment"
+    ],
+    "save_live_readback": true,
+    "isolated_readback": "passed: two float4 globals, unchanged body, custom ABI/plate and all three existing signatures; 4340 functions",
+    "isolated_readback_sha256": "875c38e5d471ab5b688f9c6114e5aacc26014cabb554f1516ee0c54eb569483b"
+  },
+  "limits": [
+    "Only aligned nonaliasing valid synthetic buffers, serialized shared scratch and CW037f",
+    "No complete x87 condition/tag/register or EFLAGS equivalence",
+    "No native Windows machine or actual game/caller validation",
+    "Only GCCx87 O0 builds tested; no optimized-code qualification"
+  ],
+  "toolchain": {
+    "installation": "user-local extracted Ubuntu repository packages; no sudo credentials or global package changes",
+    "root": "/home/melroy/.local/opt/nfs3-mingw",
+    "packages": [
+      {
+        "filename": "binutils-mingw-w64-i686_2.41.90.20240122-1ubuntu1+11.4_amd64.deb",
+        "sha256": "5236ef254532c1f4ebddbce898e884fe9cc1ac4803092211ec615cbdeba7aafb",
+        "identity": "Package: binutils-mingw-w64-i686\nVersion: 2.41.90.20240122-1ubuntu1+11.4\nArchitecture: amd64"
+      },
+      {
+        "filename": "gcc-mingw-w64-base_13.2.0-6ubuntu1+26.1_amd64.deb",
+        "sha256": "a30c07e807e9874ea93909448c5d6d37f9569ebe60ad32de8e490aad198538a3",
+        "identity": "Package: gcc-mingw-w64-base\nVersion: 13.2.0-6ubuntu1+26.1\nArchitecture: amd64"
+      },
+      {
+        "filename": "gcc-mingw-w64-i686-posix-runtime_13.2.0-6ubuntu1+26.1_amd64.deb",
+        "sha256": "650bcd76e0c56c713428950aec8823fd517f911eaad80406907379a69d36ad0a",
+        "identity": "Package: gcc-mingw-w64-i686-posix-runtime\nVersion: 13.2.0-6ubuntu1+26.1\nArchitecture: amd64"
+      },
+      {
+        "filename": "gcc-mingw-w64-i686-posix_13.2.0-6ubuntu1+26.1_amd64.deb",
+        "sha256": "8c63daeb59c96044c2a5c26b5a3a2b793237f3e10d3428bb659401122b8e501c",
+        "identity": "Package: gcc-mingw-w64-i686-posix\nVersion: 13.2.0-6ubuntu1+26.1\nArchitecture: amd64"
+      },
+      {
+        "filename": "mingw-w64-common_11.0.1-3build1_all.deb",
+        "sha256": "4a42fd30fbc3838c58c929d8a4882682fc12408bb7a0e6cafa913c0f0a57c187",
+        "identity": "Package: mingw-w64-common\nVersion: 11.0.1-3build1\nArchitecture: all"
+      },
+      {
+        "filename": "mingw-w64-i686-dev_11.0.1-3build1_all.deb",
+        "sha256": "903e09f47c0e441f9476a32efc745430a0cc39b1c33a13ea1f1d0414a24b7970",
+        "identity": "Package: mingw-w64-i686-dev\nVersion: 11.0.1-3build1\nArchitecture: all"
+      }
+    ],
+    "compiler": "/home/melroy/.local/opt/nfs3-mingw/usr/bin/i686-w64-mingw32-gcc-posix"
+  }
+}

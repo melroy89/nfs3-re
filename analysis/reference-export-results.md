@@ -69,4 +69,4 @@ python3 analysis/scripts/export_reference_samples.py \
 
 The coordinator refuses to overwrite an existing configuration/run directory. Preserve the completed runs before any future rerun; use a separately retained checkout/output namespace rather than deleting or overwriting evidence. Inline source warnings additionally require text inspection as performed above; the coordinator's initial diagnostics cover process/decompiler/exporter messages.
 
-**Next phase, not started:** decide the supported C/type/x87 model for only `00485c30`, then create and validate its standalone maintained test module when authorized. There is no need to resolve unrelated scratchpad work before that bounded phase.
+**Subsequent phase:** the authorized first leaf has now been implemented and functionally tested; see [its separate results and remaining machine-state gates](line-boundary-reconstruction-results.md). These reference-export files and hashes remain the original saved-baseline artifacts.

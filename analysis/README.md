@@ -2,6 +2,7 @@
 
 This directory contains reviewed research notes, retained evidence and reproducible analysis helpers.
 
+- [First line-boundary C module and differential results](line-boundary-reconstruction-results.md)
 - [Three-function reference-export results](reference-export-results.md)
 - [Incremental C reconstruction readiness and staged blockers](recompilation-readiness.md)
 - [Detailed findings and investigation history](detailed-analysis-notes.md)
