@@ -183,3 +183,7 @@ python3 analysis/scripts/compare_nfs3_executables.py \
 ```
 
 Compare the rerun JSON with the retained [curated inventory](../evidence/audits/original-modern-function-diff.json). Inputs and their hashes are recorded in that inventory; raw downloads and Ghidra metadata remain ignored. Same-address bytes establish byte correspondence, not semantic function matching. Original autoanalysis entries are boundary candidates. See [the measured report and limitations](../original-modern-differences.md).
+
+## Original versus Modern THRASH loader
+
+Run `python3 analysis/scripts/audit_thrash_loader_difference.py` from the repository root. Requires Python `pefile` and GNU `objdump`. It checks both executable hashes, captures pinned instruction spans, decodes Modern's name/slot table as data, and compares all 34 bindings with the original explicit lookups/stores. Output: `analysis/evidence/audits/original-modern-thrash-loader.json`; raw assembly remains under ignored `analysis/captures/modern-differences/thrash-loader/`. The parent repeated the script and reproduced identical curated JSON. This is static evidence only; no renderer or game execution.

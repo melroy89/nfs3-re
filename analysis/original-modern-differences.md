@@ -91,7 +91,11 @@ The existing [connect menu crosswalk](connect-menu-dispatch-crosswalk.md) direct
 
 The official/local code comparison establishes that this region is the same in the downloaded Modern release. The earlier mistake of treating original registration as active Modern evidence must not recur in broader cross-version analysis.
 
-## 6. Prioritized semantic work remaining
+## 6. Renderer loading: verified semantic comparison
+
+The [renderer-loading comparison](original-modern-renderer-loading.md) establishes the original `004f8390` / Modern `004f84a8` correspondence: all 34 export names retain their pointer slots, while Modern adds mandatory export/null-descriptor checks, table-driven cleanup and changes local fallback/return behavior. It also traces driver-specific INI/ENV configuration. Original selection precedence, renderer DLL implementation changes and runtime acceptance remain separate work.
+
+## 7. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following high-change clusters are investigation seeds, not yet completed before/after explanations:
 
@@ -100,10 +104,10 @@ The full JSON inventory gives every current Modern local function name, entry/ra
 | `0047f650` BuildNineTexturedRectangleBorderQuads | 800 / 828 | Original function correspondence, layout/geometry calculations and callers |
 | `004be5e0` InitializeViewportGeometryForProfile | 608 / 634 | Original projection/FOV arithmetic versus current viewport profile |
 | `004cd6c0` InitializeGameWindow | 514 / 918 | Original/Modern window styles, sizing and message paths |
-| `004b5844` LoadThrashDriverSettings | 486 / 504 | Trace new INI/driver path construction and original loading policy |
+| `004b5844` LoadThrashDriverSettings | 486 / 504 | Modern INI/driver path traced in renderer report; original selection policy still pending |
 | `00494cb0` RenderTiledLoadingArtworkAndInitializeProgressBounds | 480 / 748 | Original scaling/progress boundaries versus tile paths |
 | `004e3078` ScreenshotEncodingThread | 451 / 464 | Establish original correspondence (if any), new resource/GDI+ calls and lifetime |
-| `004b5a58` InitializeThrashRenderer | 407 / 421 | Dynamic library/export resolution and compatibility flags |
+| `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; initialization selectors/compatibility consumers still pending |
 | `004b5580` LoadGameIniSettings | 374 / 393 | Exact key/default/type/error behavior versus original system settings |
 | `0044a2d0` DispatchFrontendMenuKeyToSelectedEntry | 332 / 358 | Exact key/focus actions and behavior removed or added |
 | `00485880` InitializeDefaultHudLayoutProfileSettings | 332 / 375 | Original HUD data loading versus synthesized layout |

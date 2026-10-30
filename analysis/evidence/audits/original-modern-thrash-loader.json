@@ -1,0 +1,388 @@
+{
+  "kind": "static-dual-binary-instruction-witness",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "ranges": [
+        {
+          "start": "004f8390",
+          "exclusive_end": "004f8793",
+          "bytes_sha256": "a89065f76a7fde509536f1d48a22113dd8b41b40868283153679903c61d07392",
+          "assembly": "analysis/captures/modern-differences/thrash-loader/original-004f8390.asm",
+          "assembly_sha256": "b68404ef3684d5f6a509197cc4477a8fe9d5e11f6428b716ee0208b0ffd99272"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "ranges": [
+        {
+          "start": "004f84a8",
+          "exclusive_end": "004f853b",
+          "bytes_sha256": "44565df16c2c3b4525b365eba4bac353d21e1719795fcf27ece6655382291de4",
+          "assembly": "analysis/captures/modern-differences/thrash-loader/official_modern-004f84a8.asm",
+          "assembly_sha256": "53a7e38a000f79a7b78d3de27f81ee3b0bd3e60a5e4043fe3a0455b98e98bf88"
+        },
+        {
+          "start": "004b5844",
+          "exclusive_end": "004b5a3c",
+          "bytes_sha256": "e5b2a333f6160060bed2b4c4db9df404b3559fdefeff8bf179e32468da2b3d57",
+          "assembly": "analysis/captures/modern-differences/thrash-loader/official_modern-004b5844.asm",
+          "assembly_sha256": "ce8d36eb5c7449c32a8fea4fae3bfb90d34c0421e1bec742a8c00498179fde2e"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No target execution or renderer DLL validation.",
+    "Release-to-release introduction dates not verified.",
+    "Modern export-table addresses are data, not instructions."
+  ],
+  "original_explicit_bindings": [
+    {
+      "export": "_THRASH_about@0",
+      "slot_va": "009ef980"
+    },
+    {
+      "export": "_THRASH_clearwindow@0",
+      "slot_va": "009ef970"
+    },
+    {
+      "export": "_THRASH_clip@16",
+      "slot_va": "009ef92c"
+    },
+    {
+      "export": "_THRASH_drawline@8",
+      "slot_va": "009ef928"
+    },
+    {
+      "export": "_THRASH_drawlinemesh@12",
+      "slot_va": "009ef90c"
+    },
+    {
+      "export": "_THRASH_drawlinestrip@8",
+      "slot_va": "009ef908"
+    },
+    {
+      "export": "_THRASH_drawpoint@4",
+      "slot_va": "009ef910"
+    },
+    {
+      "export": "_THRASH_drawpointstrip@8",
+      "slot_va": "009ef904"
+    },
+    {
+      "export": "_THRASH_drawpointmesh@12",
+      "slot_va": "009ef900"
+    },
+    {
+      "export": "_THRASH_drawquad@16",
+      "slot_va": "009ef94c"
+    },
+    {
+      "export": "_THRASH_drawquadmesh@12",
+      "slot_va": "009ef930"
+    },
+    {
+      "export": "_THRASH_drawtri@12",
+      "slot_va": "009ef974"
+    },
+    {
+      "export": "_THRASH_drawtrifan@8",
+      "slot_va": "009ef960"
+    },
+    {
+      "export": "_THRASH_drawtrimesh@12",
+      "slot_va": "009ef924"
+    },
+    {
+      "export": "_THRASH_drawtristrip@8",
+      "slot_va": "009ef91c"
+    },
+    {
+      "export": "_THRASH_flushwindow@0",
+      "slot_va": "009ef950"
+    },
+    {
+      "export": "_THRASH_idle@0",
+      "slot_va": "009ef93c"
+    },
+    {
+      "export": "_THRASH_init@0",
+      "slot_va": "009ef978"
+    },
+    {
+      "export": "_THRASH_is@0",
+      "slot_va": "009ef984"
+    },
+    {
+      "export": "_THRASH_lockwindow@0",
+      "slot_va": "009ef954"
+    },
+    {
+      "export": "_THRASH_pageflip@0",
+      "slot_va": "009ef940"
+    },
+    {
+      "export": "_THRASH_readrect@20",
+      "slot_va": "009ef920"
+    },
+    {
+      "export": "_THRASH_restore@0",
+      "slot_va": "009ef97c"
+    },
+    {
+      "export": "_THRASH_selectdisplay@4",
+      "slot_va": "009ef944"
+    },
+    {
+      "export": "_THRASH_setstate@8",
+      "slot_va": "009ef96c"
+    },
+    {
+      "export": "_THRASH_settexture@4",
+      "slot_va": "009ef934"
+    },
+    {
+      "export": "_THRASH_setvideomode@12",
+      "slot_va": "009ef958"
+    },
+    {
+      "export": "_THRASH_sync@4",
+      "slot_va": "009ef948"
+    },
+    {
+      "export": "_THRASH_talloc@20",
+      "slot_va": "009ef968"
+    },
+    {
+      "export": "_THRASH_treset@0",
+      "slot_va": "009ef918"
+    },
+    {
+      "export": "_THRASH_tupdate@12",
+      "slot_va": "009ef964"
+    },
+    {
+      "export": "_THRASH_unlockwindow@4",
+      "slot_va": "009ef95c"
+    },
+    {
+      "export": "_THRASH_window@4",
+      "slot_va": "009ef938"
+    },
+    {
+      "export": "_THRASH_writerect@20",
+      "slot_va": "009ef914"
+    }
+  ],
+  "modern_export_table": [
+    {
+      "table_va": "004f8390",
+      "export": "_THRASH_about@0",
+      "name_va": "0054d3a4",
+      "slot_va": "009ef980"
+    },
+    {
+      "table_va": "004f8398",
+      "export": "_THRASH_clearwindow@0",
+      "name_va": "0054d3b4",
+      "slot_va": "009ef970"
+    },
+    {
+      "table_va": "004f83a0",
+      "export": "_THRASH_clip@16",
+      "name_va": "0054d3cc",
+      "slot_va": "009ef92c"
+    },
+    {
+      "table_va": "004f83a8",
+      "export": "_THRASH_drawline@8",
+      "name_va": "0054d3dc",
+      "slot_va": "009ef928"
+    },
+    {
+      "table_va": "004f83b0",
+      "export": "_THRASH_drawlinemesh@12",
+      "name_va": "0054d3f0",
+      "slot_va": "009ef90c"
+    },
+    {
+      "table_va": "004f83b8",
+      "export": "_THRASH_drawlinestrip@8",
+      "name_va": "0054d408",
+      "slot_va": "009ef908"
+    },
+    {
+      "table_va": "004f83c0",
+      "export": "_THRASH_drawpoint@4",
+      "name_va": "0054d420",
+      "slot_va": "009ef910"
+    },
+    {
+      "table_va": "004f83c8",
+      "export": "_THRASH_drawpointmesh@12",
+      "name_va": "0054d450",
+      "slot_va": "009ef900"
+    },
+    {
+      "table_va": "004f83d0",
+      "export": "_THRASH_drawpointstrip@8",
+      "name_va": "0054d434",
+      "slot_va": "009ef904"
+    },
+    {
+      "table_va": "004f83d8",
+      "export": "_THRASH_drawquad@16",
+      "name_va": "0054d46c",
+      "slot_va": "009ef94c"
+    },
+    {
+      "table_va": "004f83e0",
+      "export": "_THRASH_drawquadmesh@12",
+      "name_va": "0054d480",
+      "slot_va": "009ef930"
+    },
+    {
+      "table_va": "004f83e8",
+      "export": "_THRASH_drawtri@12",
+      "name_va": "0054d498",
+      "slot_va": "009ef974"
+    },
+    {
+      "table_va": "004f83f0",
+      "export": "_THRASH_drawtrifan@8",
+      "name_va": "0054d4ac",
+      "slot_va": "009ef960"
+    },
+    {
+      "table_va": "004f83f8",
+      "export": "_THRASH_drawtrimesh@12",
+      "name_va": "0054d4c4",
+      "slot_va": "009ef924"
+    },
+    {
+      "table_va": "004f8400",
+      "export": "_THRASH_drawtristrip@8",
+      "name_va": "0054d4dc",
+      "slot_va": "009ef91c"
+    },
+    {
+      "table_va": "004f8408",
+      "export": "_THRASH_flushwindow@0",
+      "name_va": "0054d4f4",
+      "slot_va": "009ef950"
+    },
+    {
+      "table_va": "004f8410",
+      "export": "_THRASH_idle@0",
+      "name_va": "0054d50c",
+      "slot_va": "009ef93c"
+    },
+    {
+      "table_va": "004f8418",
+      "export": "_THRASH_init@0",
+      "name_va": "0054d51c",
+      "slot_va": "009ef978"
+    },
+    {
+      "table_va": "004f8420",
+      "export": "_THRASH_is@0",
+      "name_va": "0054d52c",
+      "slot_va": "009ef984"
+    },
+    {
+      "table_va": "004f8428",
+      "export": "_THRASH_lockwindow@0",
+      "name_va": "0054d53c",
+      "slot_va": "009ef954"
+    },
+    {
+      "table_va": "004f8430",
+      "export": "_THRASH_pageflip@0",
+      "name_va": "0054d554",
+      "slot_va": "009ef940"
+    },
+    {
+      "table_va": "004f8438",
+      "export": "_THRASH_readrect@20",
+      "name_va": "0054d568",
+      "slot_va": "009ef920"
+    },
+    {
+      "table_va": "004f8440",
+      "export": "_THRASH_restore@0",
+      "name_va": "0054d57c",
+      "slot_va": "009ef97c"
+    },
+    {
+      "table_va": "004f8448",
+      "export": "_THRASH_selectdisplay@4",
+      "name_va": "0054d590",
+      "slot_va": "009ef944"
+    },
+    {
+      "table_va": "004f8450",
+      "export": "_THRASH_setstate@8",
+      "name_va": "0054d5a8",
+      "slot_va": "009ef96c"
+    },
+    {
+      "table_va": "004f8458",
+      "export": "_THRASH_settexture@4",
+      "name_va": "0054d5bc",
+      "slot_va": "009ef934"
+    },
+    {
+      "table_va": "004f8460",
+      "export": "_THRASH_setvideomode@12",
+      "name_va": "0054d5d4",
+      "slot_va": "009ef958"
+    },
+    {
+      "table_va": "004f8468",
+      "export": "_THRASH_sync@4",
+      "name_va": "0054d5ec",
+      "slot_va": "009ef948"
+    },
+    {
+      "table_va": "004f8470",
+      "export": "_THRASH_talloc@20",
+      "name_va": "0054d5fc",
+      "slot_va": "009ef968"
+    },
+    {
+      "table_va": "004f8478",
+      "export": "_THRASH_treset@0",
+      "name_va": "0054d610",
+      "slot_va": "009ef918"
+    },
+    {
+      "table_va": "004f8480",
+      "export": "_THRASH_tupdate@12",
+      "name_va": "0054d624",
+      "slot_va": "009ef964"
+    },
+    {
+      "table_va": "004f8488",
+      "export": "_THRASH_unlockwindow@4",
+      "name_va": "0054d638",
+      "slot_va": "009ef95c"
+    },
+    {
+      "table_va": "004f8490",
+      "export": "_THRASH_window@4",
+      "name_va": "0054d650",
+      "slot_va": "009ef938"
+    },
+    {
+      "table_va": "004f8498",
+      "export": "_THRASH_writerect@20",
+      "name_va": "0054d664",
+      "slot_va": "009ef914"
+    }
+  ],
+  "all_34_export_names_and_slots_match": true
+}
