@@ -118,7 +118,11 @@ The [endpoint comparison](original-modern-network-endpoints.md) traces original 
 
 The [startup comparison](original-modern-startup-policy.md) traces optional error-mode suppression, dynamically resolved affinity mask 1, and the final binary’s settings defaults/clamps. The [RAM pool comparison](original-modern-heap-initialization.md) confirms original fixed 16 MiB versus configurable default 32 MiB, the original null-backing-pointer guard and unchanged allocator instructions. Effective OS policy, allocator callback state and historical multicore fixes remain separate, untested claims.
 
-## 12. Prioritized semantic work remaining
+## 12. Display modes and texture extents
+
+The [display-mode comparison](original-modern-display-modes.md) traces exact-4:3/15-or-16-bit original admission versus Modern approximate aspect/16-or-32-bit admission, internal callback ABI changes, sorting and `Hide16bitModes` grouping. It records the inclusive count boundary separately from the advertised 100-mode limit. The [texture comparison](original-modern-texture-limits.md) follows configured extents, renderer reductions and fixed/bypass branches; the original helper is not universally capped at 256. Driver DLL behavior, all list storage/reachability and actual rendering remain untested.
+
+## 13. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following high-change clusters are investigation seeds, not yet completed before/after explanations:
 

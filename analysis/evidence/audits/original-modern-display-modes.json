@@ -1,0 +1,51 @@
+{
+  "kind": "static-display-mode-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004bed90",
+          "end": "004bee72",
+          "bytes_sha256": "ff88ba280cea0606c66f86e484e3acb4fbc63cb59a8340c443f9ca39516fbb0d",
+          "assembly": "analysis/captures/modern-differences/display-modes/original-004bed90.asm",
+          "assembly_sha256": "8d5f4cf1e717fa550655655010ec505246102a679dd16c21af5bb34673d02589"
+        },
+        {
+          "start": "00448210",
+          "end": "004482e8",
+          "bytes_sha256": "d71ef68d10f4864d4cb19676a60d69412c57db14e7c3917bb6a95542c7fd04c9",
+          "assembly": "analysis/captures/modern-differences/display-modes/original-00448210.asm",
+          "assembly_sha256": "6a4b81cc3acff9216fe775e748e01c29d010e908217809369690b20d4844f75e"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004bed90",
+          "end": "004beeb0",
+          "bytes_sha256": "e5a6cd112ea159afdb87a88b6426e026938c204484fe1b3ccc9986e24b5bb874",
+          "assembly": "analysis/captures/modern-differences/display-modes/official_modern-004bed90.asm",
+          "assembly_sha256": "2e286082325a2570f0437875fab50e1087a9615fbf351e78b4422cbf5746799b"
+        },
+        {
+          "start": "00448210",
+          "end": "00448345",
+          "bytes_sha256": "939dd13a86731036fbcde7bd102cabb691fba35a4b959a1688581d76ff5438b7",
+          "assembly": "analysis/captures/modern-differences/display-modes/official_modern-00448210.asm",
+          "assembly_sha256": "4731e1b51b99abbad06a7b654b95e22bddbc0903a728e95ad60ead587e8a171e"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Driver-provided records were not executed or mutated.",
+    "Menu count boundary is not a proved reachable storage fault.",
+    "Driver DLL enumeration limits and actual UI behavior remain untested."
+  ]
+}

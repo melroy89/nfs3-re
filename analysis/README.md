@@ -3,6 +3,8 @@
 This directory contains reviewed research notes, retained evidence and reproducible analysis helpers.
 
 - [Original versus Modern Patch: baseline, measured differences and remaining work](original-modern-differences.md)
+- [Original versus Modern display-mode admission and sorted menu list](original-modern-display-modes.md)
+- [Original versus Modern texture extent limits](original-modern-texture-limits.md)
 - [Original versus Modern startup error mode, affinity and option defaults](original-modern-startup-policy.md)
 - [Original versus Modern RAM pool size](original-modern-heap-initialization.md)
 - [Original versus Modern endpoint defaults and colon-port parsing](original-modern-network-endpoints.md)

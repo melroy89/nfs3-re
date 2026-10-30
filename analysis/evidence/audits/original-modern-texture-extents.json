@@ -1,0 +1,135 @@
+{
+  "kind": "static-texture-extent-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0041db67",
+          "end": "0041db8c",
+          "bytes_sha256": "04095d14d6f7e08ae0d53b6afc87751b86475e1400acda1362a2c546e0618563",
+          "assembly": "analysis/captures/modern-differences/texture-extents/original-0041db67.asm",
+          "assembly_sha256": "6191a7d71cc1ae049ab6404fa756855af5a404ebedf6313962664d7edbcd83f3"
+        },
+        {
+          "start": "004b7d30",
+          "end": "004b7d7d",
+          "bytes_sha256": "8558b8f4bb404b75b0ba0ce4cf6adb0fccc2fe277f139161b8a92da773c1fe9a",
+          "assembly": "analysis/captures/modern-differences/texture-extents/original-004b7d30.asm",
+          "assembly_sha256": "12a09fd124941f2f350b4ef60cf5bcd01510171b113015a178064f349d03b9c5"
+        },
+        {
+          "start": "004d4120",
+          "end": "004d4194",
+          "bytes_sha256": "44550f08a3ceb6bb134ab4973949c68eb0738dff415184285cbbe584e6f37a04",
+          "assembly": "analysis/captures/modern-differences/texture-extents/original-004d4120.asm",
+          "assembly_sha256": "e738afdc9622976257ecd40ac55d3f609a692246c643d5c0e74fe5dea9f4b424"
+        },
+        {
+          "start": "004d41a0",
+          "end": "004d43db",
+          "bytes_sha256": "28371fb10d27123de889759896b3b98b10f7359fcb6f6852666ea2fe5a94b91e",
+          "assembly": "analysis/captures/modern-differences/texture-extents/original-004d41a0.asm",
+          "assembly_sha256": "16d6b67a33664abd4634cd6dc05bf4936374f6b98ed486c6f3057ed84ad3c249"
+        },
+        {
+          "start": "0049d1b2",
+          "end": "0049d1c5",
+          "bytes_sha256": "82a6ec27fbeae679c70b21bbdbb34b1aa52fbcbc94e7eb2caa666ddb014f591d",
+          "assembly": "analysis/captures/modern-differences/texture-extents/original-0049d1b2.asm",
+          "assembly_sha256": "1137638f543b4cf6bfb4b38cb07532f1c5eebf032dfb9ef688c8e4e9ba4a42f2"
+        },
+        {
+          "start": "0049d3d0",
+          "end": "0049d3e3",
+          "bytes_sha256": "ef133ac550869d39d38159f6ef9a48dd33b8438d7a8eb81b0cc6330db3c56eaa",
+          "assembly": "analysis/captures/modern-differences/texture-extents/original-0049d3d0.asm",
+          "assembly_sha256": "01a7a6ccb945b55c42562436fbd89f3407bf441aeb66566f906853665a0b19b3"
+        },
+        {
+          "start": "0049cea0",
+          "end": "0049cf91",
+          "bytes_sha256": "7eac97de73e392c8b16cdfab57eabcfcf6321699d33779aca32fedd799060a7f",
+          "assembly": "analysis/captures/modern-differences/texture-extents/original-0049cea0.asm",
+          "assembly_sha256": "7df15c307046f2f12df428636041bf1c44575186237e7a6ac50d027dc83706a5"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0041db67",
+          "end": "0041db8c",
+          "bytes_sha256": "e799b35356da8a9d99dcd2c1ff70af3d425f4bf22406dc7e48fca9b642587cfe",
+          "assembly": "analysis/captures/modern-differences/texture-extents/official_modern-0041db67.asm",
+          "assembly_sha256": "c6962976d7f2838df227129ed80934a1500fb70123d233c202c63adf9a28aa8f"
+        },
+        {
+          "start": "004b7d30",
+          "end": "004b7d7d",
+          "bytes_sha256": "163005cdfc34da8f887ae12436b913df49604c930421073fe0a0a16582ba01d5",
+          "assembly": "analysis/captures/modern-differences/texture-extents/official_modern-004b7d30.asm",
+          "assembly_sha256": "9c79f972cacde032136c01129f681c11c3f87af5da7c2e120749514ccf4329a5"
+        },
+        {
+          "start": "004d4120",
+          "end": "004d4194",
+          "bytes_sha256": "44550f08a3ceb6bb134ab4973949c68eb0738dff415184285cbbe584e6f37a04",
+          "assembly": "analysis/captures/modern-differences/texture-extents/official_modern-004d4120.asm",
+          "assembly_sha256": "30bca7bf43be02572d71230f0e2044b57838a1c19a53e6dad1b0b50a5a63e665"
+        },
+        {
+          "start": "004d41a0",
+          "end": "004d43db",
+          "bytes_sha256": "28371fb10d27123de889759896b3b98b10f7359fcb6f6852666ea2fe5a94b91e",
+          "assembly": "analysis/captures/modern-differences/texture-extents/official_modern-004d41a0.asm",
+          "assembly_sha256": "3cfc34ac210054ec1a5b48192a15f1fcfb262f0d70099db7ddeb70f5e2092448"
+        },
+        {
+          "start": "0049d1b2",
+          "end": "0049d1c5",
+          "bytes_sha256": "82a6ec27fbeae679c70b21bbdbb34b1aa52fbcbc94e7eb2caa666ddb014f591d",
+          "assembly": "analysis/captures/modern-differences/texture-extents/official_modern-0049d1b2.asm",
+          "assembly_sha256": "cd8e663fd08ba3045fedcc6e9d731dad5aed8d74eafefcdb4b2c62397206a82b"
+        },
+        {
+          "start": "0049d3d0",
+          "end": "0049d3e3",
+          "bytes_sha256": "ef133ac550869d39d38159f6ef9a48dd33b8438d7a8eb81b0cc6330db3c56eaa",
+          "assembly": "analysis/captures/modern-differences/texture-extents/official_modern-0049d3d0.asm",
+          "assembly_sha256": "6b97ae8595ea9f84e0bff4228fdbab42db9ffbb7365cee0fefed49fa0260911d"
+        },
+        {
+          "start": "0049cea0",
+          "end": "0049cedd",
+          "bytes_sha256": "8d1d941039952eabb09fb10a4a4e01da5391fd6fb08c02b44790706b2b045fbb",
+          "assembly": "analysis/captures/modern-differences/texture-extents/official_modern-0049cea0.asm",
+          "assembly_sha256": "2b27bfae2e0746479a976840db9d3985dfb901903d63e88665c2ba893e9e5d37"
+        },
+        {
+          "start": "004b56d5",
+          "end": "004b56f6",
+          "bytes_sha256": "7dbbaa8837bae0574be315a861f2cfb02e780002b5c0eb35633b49f92bf66f5e",
+          "assembly": "analysis/captures/modern-differences/texture-extents/official_modern-004b56d5.asm",
+          "assembly_sha256": "087d4a4a47593199b2bdabb795543e7f580ec283317a00719deb8238a639e2f3"
+        },
+        {
+          "start": "004b5bd6",
+          "end": "004b5bfb",
+          "bytes_sha256": "c59cbc25e05506f6bddf90b423f7306dc9aa2ed90015a50b008d608d988a6a06",
+          "assembly": "analysis/captures/modern-differences/texture-extents/official_modern-004b5bd6.asm",
+          "assembly_sha256": "c67d24e07c4758102a95d84c2da9980351d6295cab7192d5566a0f5fc74e28f1"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No asset, driver or target execution.",
+    "Original helper has a dimension-pass-through branch, not a universal 256 cap.",
+    "Renderer descriptor values and allocation/upload success unverified."
+  ]
+}
