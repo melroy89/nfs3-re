@@ -1,0 +1,158 @@
+{
+  "kind": "static-loading-artwork-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00494cb0",
+          "end": "00494fa0",
+          "bytes_sha256": "c3ac74cc902b2a02a5784a01977933d149be895f1b54fa46fec9279a35573b41",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/original-00494cb0.asm",
+          "assembly_sha256": "50f2d086e2fa7cf366d358fcc1f7dc50e46fd5d655a1393e6a231deaf6ddd162"
+        },
+        {
+          "start": "004beb20",
+          "end": "004beb3f",
+          "bytes_sha256": "4b2182ab81dce1a46b6fc17c5dba8d137f18138c2ab585f3d006854dd375d5f6",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/original-004beb20.asm",
+          "assembly_sha256": "7e02a0e753286730a81d86bf519003c7ccca64e06e7cbbc5ddf919a6ebb1cdef"
+        },
+        {
+          "start": "00431bc0",
+          "end": "00431c1a",
+          "bytes_sha256": "7053d2e68b3c3e74323682aa5fe362850b13bd838bbcddf0ea77b12e5f318518",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/original-00431bc0.asm",
+          "assembly_sha256": "7ae0f3b344e7ae2a45cb0672065120a3f6186692f08d09747ecbb94a1c4f45ff"
+        },
+        {
+          "start": "004ef760",
+          "end": "004ef82c",
+          "bytes_sha256": "9d3e903a8b405241986e7747af6718b684a5e1fd17b31a0009c5955ba0769e48",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/original-004ef760.asm",
+          "assembly_sha256": "308800e14155c7355a8eb8660f82b8b1e062dab28ce01ceaaa2b778008c73809"
+        },
+        {
+          "start": "004ef1b0",
+          "end": "004ef1e0",
+          "bytes_sha256": "d8e1d842b8db3e178f96e847456e2f040a437dfba93b2417904d23df000c2b58",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/original-004ef1b0.asm",
+          "assembly_sha256": "8ee17bef77b54b2e36f4df6d9f50a2741f0046dcabd70a11421c5ab581aeb984"
+        },
+        {
+          "start": "004f1c30",
+          "end": "004f1c6c",
+          "bytes_sha256": "a80aaa5681a38801de22a34c36a92c5b808a834e2b141d0ff95e7b0c93ad29b0",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/original-004f1c30.asm",
+          "assembly_sha256": "c563410ecf5f45af3a315ae81372dc334a0d3f7ce03037858fec4bb1ee9268f6"
+        },
+        {
+          "start": "004f2d78",
+          "end": "004f2d93",
+          "bytes_sha256": "42be07d2bf703b8355d72ad0e0fec7270cfc13016cdc3fcb7ab206c516be73c2",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/original-004f2d78.asm",
+          "assembly_sha256": "f9d6e93728125cbc39edab0815b70e8b66ec6d68427f066220de1820f262efe6"
+        }
+      ],
+      "float_constants": {
+        "0053bddc": {
+          "bits_le": "cdcccc3a",
+          "binary32": 0.0015625000232830644
+        },
+        "0053bde0": {
+          "bits_le": "8988083b",
+          "binary32": 0.0020833334419876337
+        },
+        "0053bdf0": {
+          "bits_le": "0080e143",
+          "binary32": 451.0
+        },
+        "0053bdf4": {
+          "bits_le": "00000041",
+          "binary32": 8.0
+        },
+        "0053bdf8": {
+          "bits_le": "00004040",
+          "binary32": 3.0
+        },
+        "0053bdfc": {
+          "bits_le": "00002044",
+          "binary32": 640.0
+        }
+      },
+      "step_double": 32.0
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00494cb0",
+          "end": "00494f9c",
+          "bytes_sha256": "1acb94808f1eee324abac9660275ea67210be728c7a86e2ad2d1bec82c56e616",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/official_modern-00494cb0.asm",
+          "assembly_sha256": "30a9503d17498a8ac7e87c7287879d8551c09595483d0f47dae4370865a73867"
+        },
+        {
+          "start": "004beb20",
+          "end": "004beb3f",
+          "bytes_sha256": "4b2182ab81dce1a46b6fc17c5dba8d137f18138c2ab585f3d006854dd375d5f6",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/official_modern-004beb20.asm",
+          "assembly_sha256": "ff4a50446dc265d1a7dea8c0733889d2066e7873aac571c867270876ab298ef3"
+        },
+        {
+          "start": "00431bc0",
+          "end": "00431c1a",
+          "bytes_sha256": "7053d2e68b3c3e74323682aa5fe362850b13bd838bbcddf0ea77b12e5f318518",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/official_modern-00431bc0.asm",
+          "assembly_sha256": "6fa23cc32d26771517fb513688c564290e1a361a718324e8ca0668734a107b2a"
+        },
+        {
+          "start": "004ef760",
+          "end": "004ef82c",
+          "bytes_sha256": "9d3e903a8b405241986e7747af6718b684a5e1fd17b31a0009c5955ba0769e48",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/official_modern-004ef760.asm",
+          "assembly_sha256": "16c34feb1380d55e0235967a9999c70815bb3409845319e83eee6994305918f3"
+        },
+        {
+          "start": "004ef1b0",
+          "end": "004ef1e0",
+          "bytes_sha256": "d8e1d842b8db3e178f96e847456e2f040a437dfba93b2417904d23df000c2b58",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/official_modern-004ef1b0.asm",
+          "assembly_sha256": "136bad79f176bc9cb277ede4cf1e6539f67f8694132e754739148610eaaf9a30"
+        },
+        {
+          "start": "004f1c30",
+          "end": "004f1c6c",
+          "bytes_sha256": "a80aaa5681a38801de22a34c36a92c5b808a834e2b141d0ff95e7b0c93ad29b0",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/official_modern-004f1c30.asm",
+          "assembly_sha256": "aaa490636c03b47f0a01308c739c3b5e58ed50669b10525c91477fc5b1818897"
+        },
+        {
+          "start": "004f2d78",
+          "end": "004f2d93",
+          "bytes_sha256": "42be07d2bf703b8355d72ad0e0fec7270cfc13016cdc3fcb7ab206c516be73c2",
+          "assembly": "analysis/captures/modern-differences/loading-artwork/official_modern-004f2d78.asm",
+          "assembly_sha256": "456f3b8dfb22b978d31385c8bbc2ca8323d0ffaa17fe123e548fe1695592b96c"
+        }
+      ],
+      "float_constants": {
+        "0053bdcc": {
+          "bits_le": "cdcccc3a",
+          "binary32": 0.0015625000232830644
+        },
+        "0053bdd0": {
+          "bits_le": "8988083b",
+          "binary32": 0.0020833334419876337
+        }
+      }
+    }
+  },
+  "limits": [
+    "No target/rendering execution or performance measurement.",
+    "Register liveness distinguishes helper arguments from preserved caller state.",
+    "No full pixel/ownership/failure equivalence claim."
+  ]
+}

@@ -215,3 +215,7 @@ Run `python3 analysis/scripts/audit_viewport_geometry_difference.py` (Python `pe
 ## Original versus Modern menu input and chat
 
 Run `python3 analysis/scripts/audit_menu_input_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). It captures matched dispatch/named-key/chat paths and asserts identical lobby, previous/next and sender body bytes. Output: `analysis/evidence/audits/original-modern-menu-input.json`; raw assembly stays ignored. No UI, network or target execution. See [the input comparison](../original-modern-menu-input.md).
+
+## Original versus Modern HUD presets and loading artwork
+
+Run `python3 analysis/scripts/audit_hud_layout_difference.py` and `python3 analysis/scripts/audit_loading_artwork_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). They retain input/span hashes and preset/constant provenance in `original-modern-hud-layout.json` and `original-modern-loading-artwork.json` under `analysis/evidence/audits/`. The scripts check the retained shared HUD tail and floor/ceil bodies. Raw assembly stays ignored. No target/renderer execution. See [HUD](../original-modern-hud-layout.md) and [loading](../original-modern-loading-artwork.md) findings.

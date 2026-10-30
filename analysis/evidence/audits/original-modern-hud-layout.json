@@ -1,0 +1,84 @@
+{
+  "kind": "static-hud-preset-default-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00485680",
+          "end": "00485876",
+          "bytes_sha256": "afd99acccfd8a49a52cefc7ac386cfdbd07769c3245d82dd6e881a4df2e9b70c",
+          "assembly": "analysis/captures/modern-differences/hud-layout/original-00485680.asm",
+          "assembly_sha256": "ff5148907ab38fd64fe924f3a67dd914f59921f2f3b8400b2e0a75e6d89b4bef"
+        },
+        {
+          "start": "00485880",
+          "end": "00485a51",
+          "bytes_sha256": "38025cc5d46974bea9169329a732fec952fb810f53bef8d82577c1e9a21d3a60",
+          "assembly": "analysis/captures/modern-differences/hud-layout/original-00485880.asm",
+          "assembly_sha256": "40bffc3e0392b0e804f67703c42387833efc1dd134d2d9a3d1c4694b76dfaa0f"
+        }
+      ],
+      "strings": {
+        "0053b660": "%s%cdef.pos",
+        "0053b66c": ": -(,)",
+        "0053b674": "%s",
+        "0053b678": "%f"
+      },
+      "locale_character_table_hex": "65676673697700"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00485680",
+          "end": "0048575b",
+          "bytes_sha256": "bca74e803ee62551b860d2668f5464be65fbad84e0adc462df15aec32058378a",
+          "assembly": "analysis/captures/modern-differences/hud-layout/official_modern-00485680.asm",
+          "assembly_sha256": "3bd3033bdcc9ce92544c32e31e4c257bf1fd00905ea46cb7b66fa62843c1d9dd"
+        },
+        {
+          "start": "0048582c",
+          "end": "00485876",
+          "bytes_sha256": "c4470c6540a99e31ff0ca16e2999267614506735e43147fc1e6c3b7b2608c5c6",
+          "assembly": "analysis/captures/modern-differences/hud-layout/official_modern-0048582c.asm",
+          "assembly_sha256": "0e2b7305a619c2d111e0e41730242de214cdd22163cd63d29872d462154016fc"
+        },
+        {
+          "start": "00485880",
+          "end": "004859f7",
+          "bytes_sha256": "58fdcf6df097b1423daecbcf6bc08fab95ee1d0bcd285cbb1463d48061dae26b",
+          "assembly": "analysis/captures/modern-differences/hud-layout/official_modern-00485880.asm",
+          "assembly_sha256": "607f83837a3b07d696ad1d4ae7da7224dcef2511a0f39d6968d4d03642e05efa"
+        },
+        {
+          "start": "00448400",
+          "end": "00448425",
+          "bytes_sha256": "3caf95d6a4ea5765544827e167af5adb5b9eb657d860115944f0a39217b71b4a",
+          "assembly": "analysis/captures/modern-differences/hud-layout/official_modern-00448400.asm",
+          "assembly_sha256": "88f27e2e03ce2ff2063f1897da19abf82c423158ab6e67a98e7568e52458675f"
+        }
+      ],
+      "embedded_preset_table": {
+        "va": "0053eb20",
+        "bytes": 2304,
+        "file_offset": 1299744,
+        "sha256": "00e3c6b1e4b5f42e345e837845343a99c2798cb41686c8d6136a6c835bb2abbc"
+      },
+      "aspect_constants": {
+        "0053f420": 0.75,
+        "0053f424": 1.3333333730697632
+      },
+      "symmetric_divisor_signed_int32": 2
+    }
+  },
+  "limits": [
+    "No HUD/asset/target execution.",
+    "Header fields are documented by offsets rather than unverified visual meanings.",
+    "Shared-frame tail is not an independently callable ordinary function."
+  ],
+  "shared_frame_tail_0048582c_bytes_identical": true
+}

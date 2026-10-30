@@ -130,9 +130,13 @@ The [viewport comparison](original-modern-viewport-geometry.md) derives the cent
 
 The [input comparison](original-modern-menu-input.md) traces Tab/Shift+Tab routing, explicit Tab/Escape bypass of the lobby handler, generalized named-arrow actions and the new empty-text send guard. The lobby handler, previous/next routines and send routine are byte-identical; the relevant changes are in their callers. Active entry callbacks can still consume keys, and actual original/Modern UI behavior remains untested.
 
-## 15. Prioritized semantic work remaining
+## 15. HUD presets and loading artwork
 
-The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following high-change clusters are investigation seeds, not yet completed before/after explanations:
+The [HUD initializer comparison](original-modern-hud-layout.md) traces original locale-selected `*def.pos` parsing versus Modern embedded coordinate data and x87 aspect adjustment, plus exact six-profile header defaults. The [loading-artwork comparison](original-modern-loading-artwork.md) traces 300 small-tile iterations versus six larger/overlapping tiles, reference-rectangle placement and changed progress calculations. Both retain the original floor/ceil helper bodies; this is not a new floor/ceil algorithm. Original asset-to-preset correspondence, full progress meaning and rendered output remain pending.
+
+## 16. Prioritized semantic work remaining
+
+The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 
 | Current Modern entry / label | Differing same-VA body bytes | Required next evidence |
 |---|---:|---|
@@ -140,12 +144,12 @@ The full JSON inventory gives every current Modern local function name, entry/ra
 | `004be5e0` InitializeViewportGeometryForProfile | 608 / 634 | Reference/aspect/profile-rectangle deltas traced; all projection consumers and visual comparison remain |
 | `004cd6c0` InitializeGameWindow | 514 / 918 | Initializer/callback lifecycle traced; actual styles, sizing and hook callback semantics remain |
 | `004b5844` LoadThrashDriverSettings | 486 / 504 | Modern INI/driver path traced in renderer report; original selection policy still pending |
-| `00494cb0` RenderTiledLoadingArtworkAndInitializeProgressBounds | 480 / 748 | Original scaling/progress boundaries versus tile paths |
+| `00494cb0` RenderTiledLoadingArtworkAndInitializeProgressBounds | 480 / 748 | Tile/reference/rounding deltas traced; full progress/UI contract and output remain |
 | `004e3078` ScreenshotEncodingThread | 451 / 464 | Original synchronous counterpart mapped in screenshot report; GDI+ success, resources and runtime lifetime remain |
 | `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; initialization selectors/compatibility consumers still pending |
-| `004b5580` LoadGameIniSettings | 374 / 393 | Exact key/default/type/error behavior versus original system settings |
+| `004b5580` LoadGameIniSettings | 374 / 393 | Modern defaults/API effects traced; original setting-by-setting registry mapping remains |
 | `0044a2d0` DispatchFrontendMenuKeyToSelectedEntry | 332 / 358 | Dispatcher/named keys/chat guard traced; all assets, entry callbacks and sound paths remain |
-| `00485880` InitializeDefaultHudLayoutProfileSettings | 332 / 375 | Original HUD data loading versus synthesized layout |
+| `00485880` InitializeDefaultHudLayoutProfileSettings | 332 / 375 | File versus embedded preset source and header stores traced; asset/consumer/reset mapping remains |
 
 Continue by matching original functions/control-flow neighborhoods, documenting changed instructions/data and linking the corresponding release-note ID. When a same-VA comparison is not a valid counterpart, explicitly map moved/reused/deleted code instead of interpreting a large byte count as a rewrite of the same routine.
 
@@ -155,4 +159,4 @@ The 290 catalog entries span multiple releases and include driver/assets/configu
 
 `analysis/scripts/ghidra/ExportFunctionInventory.java` exports metadata only. `analysis/scripts/compare_nfs3_executables.py` compares PE sections, imports/resources and selected body bytes without changing an executable or producing C. The JSON records input identities and inventory provenance. Raw downloads, original analysis database, disassemblies and metadata dumps remain under ignored `analysis/captures/modern-differences/`.
 
-Completed static chapters are linked above: exact three-way baseline and whole-code inventory; precision, loader/configuration, windows/screenshots, network ports/input, startup/heap, display/texture, viewport/border comparisons; plus import/resource deltas and the existing RaceNet byte witness. **Still pending:** full semantic mapping of changed regions, catalog-to-code coverage and decisive cross-version runtime compatibility tests. This is progress toward the active audit, not a claim that every Modern Patch change is understood.
+Completed static chapters are linked above: exact three-way baseline and whole-code inventory; precision, loader/configuration, windows/screenshots, network ports/input, startup/heap, display/texture, viewport/border, HUD presets/loading artwork comparisons; plus import/resource deltas and the existing RaceNet byte witness. **Still pending:** full semantic mapping of changed regions, catalog-to-code coverage and decisive cross-version runtime compatibility tests. This is progress toward the active audit, not a claim that every Modern Patch change is understood.
