@@ -16,7 +16,7 @@ The user reports feeling Fanatec force feedback on the host, then clarifies that
 
 ## Acceptance still open
 
-- Visible remote motion on both peers and response after focus switches.
+- The user observed both cars moving in sync during this LAN run; measured latency/divergence/recovery and input/focus-switch response remain open.
 - Quantified timing, divergence/recovery, seams, collision and input-provider behavior.
 - Normal two-finisher race/results agreement, ready/next-round behavior and a complete online series; the exercised abort summaries agree as documented below.
 - Graceful leave/rejoin and disconnect outcomes.
@@ -37,3 +37,5 @@ The user completed the VM car's two laps. The guarded read-only monitor observes
 The host then used Quit Race because its wheel controls prevented finishing the other car. **Both peer race summaries display both entries as Aborted, place N/A.** They agree on the player names and top speeds: Melroy121.68KPH and Melroy_VM262.51KPH. The established TCP connection remains. Screenshot digests and the pre-abort finished state are retained in the evidence artifact. The earlier VM finish state therefore must not be presented as a preserved final winning result: the subsequent global-abort summary labels both aborted.
 
 This verifies matching ordinary abort summaries for this exercised sequence. It does not qualify a normal two-finisher result table, final placements, a complete tournament/knockout series, all interruption policies or reconnect behavior. The user ended testing for the night. The working host/VM setup is retained; no further test is scheduled or automatically launched.
+
+Evidence retention: the selected JSON observations and screenshot digests are committed, but the `/tmp` screenshot files themselves are no longer present at final review. The historical screenshot observations are documented above; this checkout alone cannot replay their visual inspection or rehash the missing originals.
