@@ -1,0 +1,527 @@
+{
+  "capture_root": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56",
+  "comparison": {
+    "all_exports_successful": true,
+    "all_outputs_identical": true,
+    "baseline": {
+      "database_path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3144.gbf",
+      "database_sha256": "00b157c74363b3d10efd1138c537d7127f7bbf7cd97dfbf52dc4ccbb86fa2c5a",
+      "executable_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "git_archive_sha256": "ca081deb03b3b830a554b37ede05b1a69c324cdc130da97833b58ee0bce2701d",
+      "git_commit": "add636a2a9b558f86fc066a7fbd42d67485580ed",
+      "options_digest": "eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56"
+    },
+    "files": [
+      {
+        "file": "00485c30.c",
+        "identical": true,
+        "run_1_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+        "run_2_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+      },
+      {
+        "file": "00485c30.h",
+        "identical": true,
+        "run_1_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+        "run_2_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+      },
+      {
+        "file": "00485c30.options.xml",
+        "identical": true,
+        "run_1_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f",
+        "run_2_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f"
+      },
+      {
+        "file": "004abd9c.c",
+        "identical": true,
+        "run_1_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+        "run_2_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+      },
+      {
+        "file": "004abd9c.h",
+        "identical": true,
+        "run_1_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+        "run_2_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+      },
+      {
+        "file": "004abd9c.options.xml",
+        "identical": true,
+        "run_1_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f",
+        "run_2_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f"
+      },
+      {
+        "file": "00518640.c",
+        "identical": true,
+        "run_1_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+        "run_2_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+      },
+      {
+        "file": "00518640.h",
+        "identical": true,
+        "run_1_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+        "run_2_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+      },
+      {
+        "file": "00518640.options.xml",
+        "identical": true,
+        "run_1_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f",
+        "run_2_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f"
+      }
+    ],
+    "source_database_unchanged": true,
+    "source_executable_unchanged": true
+  },
+  "inspection": "Exported C/H and inline warning comments inspected; warnings captured separately from empty process/decompiler diagnostics",
+  "retention": {
+    "raw_exports": "Local ignored analysis/captures tree; not maintained source",
+    "run_manifest_sha256": {
+      "run-1": "afaaa12214ed0bee5af0457986f599421e6b033586a1adaeb41e1884a27bba51",
+      "run-2": "24c3ec97f870be27ab2e114c0f7808525ccdef61d8297ee91ef0fdf895403aef"
+    }
+  },
+  "runs": [
+    {
+      "attempts": [
+        {
+          "elapsed_seconds": 3.9212858459995914,
+          "entry": "00485c30",
+          "export_result": {
+            "artifacts": {
+              "00485c30.c": {
+                "bytes": 7084,
+                "sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+              },
+              "00485c30.h": {
+                "bytes": 137,
+                "sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+              }
+            },
+            "body": "[[00485c30, 00485f1a]]",
+            "body_bytes": 747,
+            "body_sha256": "3543671c1408e9124a8dd6dfc3166f296390b768b8ea8ab881517b3c041b237f",
+            "decompile_completed": true,
+            "decompile_message": "",
+            "decompile_timeout": false,
+            "effective_options_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f",
+            "elapsed_seconds": 0.546604399,
+            "entry": "00485c30",
+            "exporter_log": "",
+            "exporter_return": true,
+            "function_count": 4340,
+            "name": "CalculateLineBoundaryIntersectionCandidate",
+            "parameters": [
+              "candidate:float *32:EAX:4",
+              "sourceLine:float *32:EDX:4",
+              "bounds:float *32:EBX:4",
+              "returnPolicy:uint:ECX:4",
+              "edgeMask:byte *32:Stack[0x4]:4"
+            ],
+            "return": "float *32:EAX:4",
+            "simplification_style": "decompile",
+            "stack_purge": 4,
+            "status": "success"
+          },
+          "headless_diagnostics": [],
+          "log": "00485c30.log",
+          "log_sha256": "2d460634ff6b3be8b8dcbf3dba5181f519bae4c5c39c6f14c3dc657f992a14b9",
+          "post_export_inspection": {
+            "failure_placeholder_present": false,
+            "inline_warnings": [
+              "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+              "/* WARNING: Unknown calling convention */"
+            ],
+            "method": "Inspect exported text; collect complete /* WARNING: ... */ comments (DOTALL)"
+          },
+          "process_deadline_seconds": 120,
+          "process_exit_code": 0,
+          "status": "success"
+        },
+        {
+          "elapsed_seconds": 3.5226813739991485,
+          "entry": "004abd9c",
+          "export_result": {
+            "artifacts": {
+              "004abd9c.c": {
+                "bytes": 9435,
+                "sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+              },
+              "004abd9c.h": {
+                "bytes": 92,
+                "sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+              }
+            },
+            "body": "[[004abd9c, 004ac026]]",
+            "body_bytes": 651,
+            "body_sha256": "27c7ce1baedc6282855c2aadecfdbee768f25db8649f66aa9caea4e94ba9677b",
+            "decompile_completed": true,
+            "decompile_message": "",
+            "decompile_timeout": false,
+            "effective_options_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f",
+            "elapsed_seconds": 0.556742629,
+            "entry": "004abd9c",
+            "exporter_log": "",
+            "exporter_return": true,
+            "function_count": 4340,
+            "name": "ComputeTyreTuningWeatherResponseScale",
+            "parameters": [
+              "vehicleInput:void *32:EAX:4",
+              "tyreTuningInput:float *32:EDX:4"
+            ],
+            "return": "float10:ST0:10",
+            "simplification_style": "decompile",
+            "stack_purge": 0,
+            "status": "success"
+          },
+          "headless_diagnostics": [],
+          "log": "004abd9c.log",
+          "log_sha256": "9664d58281ed13535d196c2b9fd82581519b0009ba31a665ee4b9a001e26e2d6",
+          "post_export_inspection": {
+            "failure_placeholder_present": false,
+            "inline_warnings": [
+              "/* WARNING: Unknown calling convention */"
+            ],
+            "method": "Inspect exported text; collect complete /* WARNING: ... */ comments (DOTALL)"
+          },
+          "process_deadline_seconds": 120,
+          "process_exit_code": 0,
+          "status": "success"
+        },
+        {
+          "elapsed_seconds": 3.570721517000493,
+          "entry": "00518640",
+          "export_result": {
+            "artifacts": {
+              "00518640.c": {
+                "bytes": 2411,
+                "sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+              },
+              "00518640.h": {
+                "bytes": 93,
+                "sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+              }
+            },
+            "body": "[[00518640, 0051868c]]",
+            "body_bytes": 77,
+            "body_sha256": "64b39b42ecef516f64ab5db044fa9028e0591d59af23f14583d393fbc4cd6b2c",
+            "decompile_completed": true,
+            "decompile_message": "",
+            "decompile_timeout": false,
+            "effective_options_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f",
+            "elapsed_seconds": 0.505087093,
+            "entry": "00518640",
+            "exporter_log": "",
+            "exporter_return": true,
+            "function_count": 4340,
+            "name": "MoveBytesWithOverlapAndSegmentSetup",
+            "parameters": [
+              "destination:void *32:EAX:4",
+              "source:void *32:EDX:4",
+              "byteCount:uint:EBX:4"
+            ],
+            "return": "void *32:EAX:4",
+            "simplification_style": "decompile",
+            "stack_purge": 0,
+            "status": "success"
+          },
+          "headless_diagnostics": [],
+          "log": "00518640.log",
+          "log_sha256": "e2d4b9561b5a479d1da11453d3c5e1541ba3db9f18c3e4aa5bb6218c14251c36",
+          "post_export_inspection": {
+            "failure_placeholder_present": false,
+            "inline_warnings": [
+              "/* WARNING: Unknown calling convention */"
+            ],
+            "method": "Inspect exported text; collect complete /* WARNING: ... */ comments (DOTALL)"
+          },
+          "process_deadline_seconds": 120,
+          "process_exit_code": 0,
+          "status": "success"
+        }
+      ],
+      "baseline": {
+        "database_path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3144.gbf",
+        "database_sha256": "00b157c74363b3d10efd1138c537d7127f7bbf7cd97dfbf52dc4ccbb86fa2c5a",
+        "executable_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+        "git_archive_sha256": "ca081deb03b3b830a554b37ede05b1a69c324cdc130da97833b58ee0bce2701d",
+        "git_commit": "add636a2a9b558f86fc066a7fbd42d67485580ed",
+        "options_digest": "eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56"
+      },
+      "configuration": {
+        "compiler_spec": "windows",
+        "exporter": "ghidra.app.util.exporter.CppExporter",
+        "ghidra_version": "12.1.4 PUBLIC",
+        "language": "x86:LE:32:default",
+        "locale": "C.UTF-8",
+        "newline": "LF",
+        "options": {
+          "comment_style": "CStyle",
+          "create_c": true,
+          "create_header": true,
+          "decompile_timeout_seconds": 30,
+          "defaults": "new DecompileOptions() in pinned installed JAR",
+          "emit_referenced_globals": true,
+          "emit_types": false,
+          "entry_process_deadline_seconds": 120,
+          "exclude_tags": true,
+          "tag_filter": "",
+          "warning_comments": true
+        },
+        "runner_java_sha256": "a9d107ecc1b25de048cdf13622ad2274840d4188694c9fadcdff1e2886d24b76",
+        "runner_python_sha256": "bed778fac02f8b9b14bfec9793a006d4ed6a1eb6bc9e9116147f674b9b722926",
+        "timezone": "UTC",
+        "tool_hashes": {
+          "Ghidra/Features/Decompiler/lib/Decompiler-src.zip": "cc15e14c15ad9eda7abefde73c757112e88307c81b2088b7d9ce670e258fee92",
+          "Ghidra/Features/Decompiler/lib/Decompiler.jar": "8fcbca197aee63507607f66512a64756b0ad77545964257b2048477b5faea3f4",
+          "Ghidra/Features/Decompiler/os/linux_x86_64/decompile": "4a97ff9a3dbac5757c7240a664571e82345e4abc4f67cd211cd9d402abe4543d"
+        }
+      },
+      "counts": {
+        "cancelled": 0,
+        "failure": 0,
+        "success": 3,
+        "timeout": 0
+      },
+      "exclusions": {
+        "external_count": 207,
+        "local_count": 4130,
+        "local_inventory_sha256": "94b4ca701df43c7106503e0b6ce40fb590c5b3d920ac62900444fed4af8716d7",
+        "rule": "All saved local entries except the three selected VAs, plus all external entries"
+      },
+      "isolated_database_unchanged": true,
+      "java_version": "openjdk version \"21.0.12.1\" 2026-08-18\nOpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)",
+      "run": 1,
+      "schema": 1,
+      "selection": [
+        "00485c30",
+        "004abd9c",
+        "00518640"
+      ],
+      "warning_counts": {
+        "headless_diagnostics": 0,
+        "inline_source_comments": 4
+      }
+    },
+    {
+      "attempts": [
+        {
+          "elapsed_seconds": 3.7215424699988944,
+          "entry": "00485c30",
+          "export_result": {
+            "artifacts": {
+              "00485c30.c": {
+                "bytes": 7084,
+                "sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+              },
+              "00485c30.h": {
+                "bytes": 137,
+                "sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+              }
+            },
+            "body": "[[00485c30, 00485f1a]]",
+            "body_bytes": 747,
+            "body_sha256": "3543671c1408e9124a8dd6dfc3166f296390b768b8ea8ab881517b3c041b237f",
+            "decompile_completed": true,
+            "decompile_message": "",
+            "decompile_timeout": false,
+            "effective_options_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f",
+            "elapsed_seconds": 0.563357824,
+            "entry": "00485c30",
+            "exporter_log": "",
+            "exporter_return": true,
+            "function_count": 4340,
+            "name": "CalculateLineBoundaryIntersectionCandidate",
+            "parameters": [
+              "candidate:float *32:EAX:4",
+              "sourceLine:float *32:EDX:4",
+              "bounds:float *32:EBX:4",
+              "returnPolicy:uint:ECX:4",
+              "edgeMask:byte *32:Stack[0x4]:4"
+            ],
+            "return": "float *32:EAX:4",
+            "simplification_style": "decompile",
+            "stack_purge": 4,
+            "status": "success"
+          },
+          "headless_diagnostics": [],
+          "log": "00485c30.log",
+          "log_sha256": "a1f5df6a524850c1b86a509d43aa006ab28949d44fd0def65c462b896283612d",
+          "post_export_inspection": {
+            "failure_placeholder_present": false,
+            "inline_warnings": [
+              "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+              "/* WARNING: Unknown calling convention */"
+            ],
+            "method": "Inspect exported text; collect complete /* WARNING: ... */ comments (DOTALL)"
+          },
+          "process_deadline_seconds": 120,
+          "process_exit_code": 0,
+          "status": "success"
+        },
+        {
+          "elapsed_seconds": 3.372252342998763,
+          "entry": "004abd9c",
+          "export_result": {
+            "artifacts": {
+              "004abd9c.c": {
+                "bytes": 9435,
+                "sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+              },
+              "004abd9c.h": {
+                "bytes": 92,
+                "sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+              }
+            },
+            "body": "[[004abd9c, 004ac026]]",
+            "body_bytes": 651,
+            "body_sha256": "27c7ce1baedc6282855c2aadecfdbee768f25db8649f66aa9caea4e94ba9677b",
+            "decompile_completed": true,
+            "decompile_message": "",
+            "decompile_timeout": false,
+            "effective_options_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f",
+            "elapsed_seconds": 0.564561023,
+            "entry": "004abd9c",
+            "exporter_log": "",
+            "exporter_return": true,
+            "function_count": 4340,
+            "name": "ComputeTyreTuningWeatherResponseScale",
+            "parameters": [
+              "vehicleInput:void *32:EAX:4",
+              "tyreTuningInput:float *32:EDX:4"
+            ],
+            "return": "float10:ST0:10",
+            "simplification_style": "decompile",
+            "stack_purge": 0,
+            "status": "success"
+          },
+          "headless_diagnostics": [],
+          "log": "004abd9c.log",
+          "log_sha256": "c4cd1a1eb0d7fecda0b268bbd3fd40db3386191a4f33e500794e30542961eef6",
+          "post_export_inspection": {
+            "failure_placeholder_present": false,
+            "inline_warnings": [
+              "/* WARNING: Unknown calling convention */"
+            ],
+            "method": "Inspect exported text; collect complete /* WARNING: ... */ comments (DOTALL)"
+          },
+          "process_deadline_seconds": 120,
+          "process_exit_code": 0,
+          "status": "success"
+        },
+        {
+          "elapsed_seconds": 3.570479283998793,
+          "entry": "00518640",
+          "export_result": {
+            "artifacts": {
+              "00518640.c": {
+                "bytes": 2411,
+                "sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+              },
+              "00518640.h": {
+                "bytes": 93,
+                "sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+              }
+            },
+            "body": "[[00518640, 0051868c]]",
+            "body_bytes": 77,
+            "body_sha256": "64b39b42ecef516f64ab5db044fa9028e0591d59af23f14583d393fbc4cd6b2c",
+            "decompile_completed": true,
+            "decompile_message": "",
+            "decompile_timeout": false,
+            "effective_options_sha256": "100f6b53da295d27175faa2f7de37200d56e6b5e4ca4740a0c6f62aec6ed819f",
+            "elapsed_seconds": 0.511730399,
+            "entry": "00518640",
+            "exporter_log": "",
+            "exporter_return": true,
+            "function_count": 4340,
+            "name": "MoveBytesWithOverlapAndSegmentSetup",
+            "parameters": [
+              "destination:void *32:EAX:4",
+              "source:void *32:EDX:4",
+              "byteCount:uint:EBX:4"
+            ],
+            "return": "void *32:EAX:4",
+            "simplification_style": "decompile",
+            "stack_purge": 0,
+            "status": "success"
+          },
+          "headless_diagnostics": [],
+          "log": "00518640.log",
+          "log_sha256": "f14fa07d126998240ffb2d530b249f0a762c139022dfd8e43a596b51a7a42774",
+          "post_export_inspection": {
+            "failure_placeholder_present": false,
+            "inline_warnings": [
+              "/* WARNING: Unknown calling convention */"
+            ],
+            "method": "Inspect exported text; collect complete /* WARNING: ... */ comments (DOTALL)"
+          },
+          "process_deadline_seconds": 120,
+          "process_exit_code": 0,
+          "status": "success"
+        }
+      ],
+      "baseline": {
+        "database_path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3144.gbf",
+        "database_sha256": "00b157c74363b3d10efd1138c537d7127f7bbf7cd97dfbf52dc4ccbb86fa2c5a",
+        "executable_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+        "git_archive_sha256": "ca081deb03b3b830a554b37ede05b1a69c324cdc130da97833b58ee0bce2701d",
+        "git_commit": "add636a2a9b558f86fc066a7fbd42d67485580ed",
+        "options_digest": "eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56"
+      },
+      "configuration": {
+        "compiler_spec": "windows",
+        "exporter": "ghidra.app.util.exporter.CppExporter",
+        "ghidra_version": "12.1.4 PUBLIC",
+        "language": "x86:LE:32:default",
+        "locale": "C.UTF-8",
+        "newline": "LF",
+        "options": {
+          "comment_style": "CStyle",
+          "create_c": true,
+          "create_header": true,
+          "decompile_timeout_seconds": 30,
+          "defaults": "new DecompileOptions() in pinned installed JAR",
+          "emit_referenced_globals": true,
+          "emit_types": false,
+          "entry_process_deadline_seconds": 120,
+          "exclude_tags": true,
+          "tag_filter": "",
+          "warning_comments": true
+        },
+        "runner_java_sha256": "a9d107ecc1b25de048cdf13622ad2274840d4188694c9fadcdff1e2886d24b76",
+        "runner_python_sha256": "bed778fac02f8b9b14bfec9793a006d4ed6a1eb6bc9e9116147f674b9b722926",
+        "timezone": "UTC",
+        "tool_hashes": {
+          "Ghidra/Features/Decompiler/lib/Decompiler-src.zip": "cc15e14c15ad9eda7abefde73c757112e88307c81b2088b7d9ce670e258fee92",
+          "Ghidra/Features/Decompiler/lib/Decompiler.jar": "8fcbca197aee63507607f66512a64756b0ad77545964257b2048477b5faea3f4",
+          "Ghidra/Features/Decompiler/os/linux_x86_64/decompile": "4a97ff9a3dbac5757c7240a664571e82345e4abc4f67cd211cd9d402abe4543d"
+        }
+      },
+      "counts": {
+        "cancelled": 0,
+        "failure": 0,
+        "success": 3,
+        "timeout": 0
+      },
+      "exclusions": {
+        "external_count": 207,
+        "local_count": 4130,
+        "local_inventory_sha256": "94b4ca701df43c7106503e0b6ce40fb590c5b3d920ac62900444fed4af8716d7",
+        "rule": "All saved local entries except the three selected VAs, plus all external entries"
+      },
+      "isolated_database_unchanged": true,
+      "java_version": "openjdk version \"21.0.12.1\" 2026-08-18\nOpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)",
+      "run": 2,
+      "schema": 1,
+      "selection": [
+        "00485c30",
+        "004abd9c",
+        "00518640"
+      ],
+      "warning_counts": {
+        "headless_diagnostics": 0,
+        "inline_source_comments": 4
+      }
+    }
+  ],
+  "schema": 1,
+  "scope": "Reference exports only; no maintained C, toolchain installation, C compilation/linking or new probes"
+}

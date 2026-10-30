@@ -4,6 +4,8 @@ Keep this file concise and undated. Detailed function evidence, original names, 
 
 ## Scope and current work
 
+Fixed three-function reference-export check: **DONE**. Two same-baseline runs each produced3C+3headers; corresponding source/header/options bytes match. [Results, manifests and required cleanup](analysis/reference-export-results.md). Exported references remain under ignored `analysis/captures/reference-exports/`; no maintained C, installation, C compilation/linking or new probes were performed.
+
 Bounded reconstruction-readiness documentation: **DONE**. [Eight-item report](analysis/recompilation-readiness.md) selects leaf00485c30, records the address manifest/export procedure, custom register contracts, data/dependency boundaries, comparison plan and staged blockers. Ghidra storage/comments were saved and read back; executable bytes are unchanged. No C export/reconstruction/compilation was performed. Reference-export repeatability and later implementation gates remain pending; this does not close the gameplay backlog or qualify the whole game to rebuild.
 
 Current priority: normal gameplay behavior, practical limits, usable controls and loading reliability. Preserve earlier evidence; do not pursue further security-oriented or adversarial-input investigations. Historical malformed-input, overflow and attack-oriented follow-ups in the ledger are deferred by this scope change, not marked DONE. Continue the ordinary gameplay portions of mixed rows.

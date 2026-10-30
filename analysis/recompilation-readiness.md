@@ -1,6 +1,6 @@
 # Incremental C reconstruction readiness
 
-**Documentation audit complete; reconstruction has not begun.** The named first module is the **line-boundary candidate leaf**, `00485c30`. This report establishes its investigation and comparison boundaries; it does not qualify the whole game to rebuild. No C was exported, no reconstruction sources were created, and no C compilation or new instruction-harness run was attempted. Existing scratchpad investigations remain independent work.
+**Documentation audit complete; fixed reference-export sample passed; maintained reconstruction has not begun.** The named first module is the **line-boundary candidate leaf**, `00485c30`. This report establishes its investigation and comparison boundaries; it does not qualify the whole game to rebuild. The later authorized [two-run reference-export check](reference-export-results.md) exported only the three selected functions. No maintained reconstruction sources, toolchain installation, C compilation/linking or new instruction probes were performed. Existing scratchpad investigations remain independent work.
 
 Evidence confidence is **verified** (direct inspection/retained observation), **inferred** (interpretation/proposal), or **unresolved**. Work status is **done**, **pending**, or **blocked**. A documented unresolved contract can satisfy this audit without satisfying a later reconstruction gate.
 
@@ -28,27 +28,27 @@ All intervals below are half-open. Function names are labels; the primary key is
 
 | Entry | Body end | Purpose | Current export status |
 |---|---|---|---|
-| `00485c30` | `00485f1b` | Module one; fixed repeatability sample A | Not run: phase prohibits C export |
-| `004abd9c` | `004ac027` | Register/x87 signature check; sample B, not module one | Not run: phase prohibits C export |
-| `00518640` | `0051868d` | Register/segment helper check; sample C, not module one | Not run: phase prohibits C export |
+| `00485c30` | `00485f1b` | Module one; fixed repeatability sample A | Reference export succeeded in both runs |
+| `004abd9c` | `004ac027` | Register/x87 signature check; sample B, not module one | Reference export succeeded in both runs |
+| `00518640` | `0051868d` | Register/segment helper check; sample C, not module one | Reference export succeeded in both runs |
 | `00485f20` | `004860a1` | Caller context only | Deliberately excluded from first sample/module |
 | `004860b0` | `004862f5` | Caller context only | Deliberately excluded from first sample/module |
 | All local entries except the three selected samples | Saved function body | Outside the three-address reference sample; includes the two caller-context rows above | Deliberately excluded: 4,130 local entries in total |
 | 207 external entries | External address space | Import/interface inventory, not local implementations | Deliberately excluded from body export |
 
-Actual C-export counts: **0 successful, 0 failed, 0 timed out, 3 not run; 4,130 local and 207 external entries excluded**. “Not run” is not a successful export. Thunks must retain their inventory identity rather than silently being counted as reconstructed bodies.
+Actual reference-export counts: **3 successes per run, 0 failures/timeouts/cancellations; two runs, six successful attempts covering three unique entries**. Per run, 4,130 local and 207 external entries remain excluded. [Run manifests and warnings](reference-export-results.md) account for every selected sample. Thunks must retain their inventory identity rather than silently being counted as reconstructed bodies.
 
-### Pinned future procedure (not executed)
+### Pinned reference-export procedure (executed for the fixed sample)
 
 1. Close writers; take an isolated copy of the complete `.gpr`/`.rep` pair, following [snapshot guidance](../docs/SHARING.md). Verify executable and saved-database hashes. Open the logical program with `analyzeHeadless`, `-process nfs3.exe -readOnly -noanalysis`; the project argument includes `/Electronic Arts/Need For Speed III` after `nfs3_decomp`. Do not import/reanalyse the executable into a new default database.
 2. Use Ghidra's installed `ghidra.app.util.exporter.CppExporter` (C/C++ exporter), with a **separate invocation for each manifest entry**, explicit `AddressSet(function.getBody())`, and that entry's original-address filename. Never pass a null selection: source inspection shows it selects all program memory. Validate selected entry/body hashes and reject unexpected selection/body overlaps.
 3. Instantiate `DecompileOptions` with installed defaults, set default timeout **30 seconds**, C-style comments, and warning comments on. Supply these options explicitly to `CppExporter(options, true, true, false, true, true, "")`: header on, C on, whole-program datatype emission off, referenced globals on, tag-exclusion mode on with empty tag filter. With explicit options the supplied `DecompileOptions` comment style controls output; the exporter's GUI comment preference is bypassed. Record the serialized effective options and source/JAR hashes in the run manifest. Type definitions are a separately inventoried future artifact, not silently omitted from compilation requirements.
 4. Before accepting an entry, inspect a same-options `DecompInterface.decompileFunction` result: completion, timeout/cancellation, error/warning message, and presence of a real function body. Then call the exporter and inspect its result/output. `CppExporter` can emit an “Unable to decompile” comment while returning success at the file level; a nonempty `.c` or boolean success alone is insufficient. An external **120-second per-entry process deadline** catches stalls outside the decompiler timeout. Preserve logs and partial output as failed evidence, never as a successful reference.
 5. Use a per-entry ledger containing baseline/program/version/options digest, VA, body ranges and hash, role, output paths and hashes, elapsed time, decompiler/exporter outcomes, warnings and exclusion reason. Terminal states: success, failure, timeout, cancellation or deliberate exclusion. Keep not-run/queued distinct. Record each retry separately; do not overwrite failures. Each of the three selected addresses must reconcile to one current state, with attempt history retained. The exclusion set is defined by the frozen inventory digest and the explicit rule “all other local addresses, plus all external entries”; this does not require exporting the rest of the game. Any larger future export scope needs a newly enumerated address manifest.
-6. Use future generated paths `analysis/captures/reference-exports/<baseline>/<options-digest>/run-{1,2}/00485c30.{c,h}` (and the other two sample addresses). Maintained C, when authorized, belongs under a separate `reconstruction/` tree with its own hand-maintained address map. Neither tree has been created in this phase. Generated reference text is not maintained source and must never overwrite it.
+6. Use generated reference paths `analysis/captures/reference-exports/<baseline>/<options-digest>/run-{1,2}/00485c30.{c,h}` (and the other two sample addresses). Maintained C, when authorized, belongs under a separate `reconstruction/` tree with its own hand-maintained address map. The reference tree now exists for the fixed sample; no maintained `reconstruction/` tree has been created. Generated reference text is not maintained source and must never overwrite it.
 7. From two fresh read-only opens of the same isolated snapshot, export samples A/B/C in ascending entry order into two empty run directories. Pin Java, locale, LF newlines, options, selection and headers. Compare raw SHA-256 and `diff` for **all six output files per run**, plus outcome/warning ledgers. Investigate every difference; do not discard changing globals/types/comments as harmless without explanation. Repeatability of these three bodies does not establish whole-game coverage or compilability.
 
-**Precise blocker:** the active phase explicitly forbids exporting C. Therefore the modest export/re-export check is **blocked by scope**, not by a demonstrated exporter defect. Export options and selection/error handling were inspected in the installed source; actual exporter output and repeatability remain **unresolved / pending** for the next authorized phase. Matching PE/Ghidra instruction hashes is baseline corroboration, not an export-repeatability substitute.
+**Resolved scope gate:** the documentation-only phase originally prohibited C export. The subsequent explicit reference-export authorization permitted only this three-function sample. Both runs succeeded and corresponding C/header/options outputs match byte-for-byte; see the [results and cleanup report](reference-export-results.md). Inline ABI/global-layout warnings remain reconstruction work, not export failures. No maintained C or compilation/linking/probe work was authorized or started.
 
 ## 2. Interfaces and register contracts
 
@@ -163,11 +163,11 @@ The first C harness should report every row, not just the selected finite assert
 
 ## 8. Staged readiness and prioritized blockers
 
-The documentation deliverables are **done**; subsequent engineering/qualification gates below are not. Priority is dependency order for this module, not a severity rating for the game.
+The documentation deliverables and fixed-sample reference-export check are **done**; module compilation, linking and runtime qualification are not. Priority is dependency order for this module, not a severity rating for the game.
 
 | Priority / address | Evidence and required action | Confidence | Work status | Affected stage |
 |---|---|---|---|---|
-| 1 — sample `00485c30`, `004abd9c`, `00518640` | Baseline/options/selection recorded in §1; execute two fresh sample exports and reconcile per-entry outputs/errors/omissions when C export is authorized | Unresolved output/repeatability | Blocked by this phase's no-export scope | Reference export |
+| 1 — sample `00485c30`, `004abd9c`, `00518640` | Two same-baseline runs succeeded; all six C/header files and three options files match. Coverage, inline warnings and cleanup are recorded in the [results](reference-export-results.md) | Verified for this sample/configuration | Done; all other entries remain excluded | Reference export |
 | 2 — `00485c30`, `00791c08/0c` | Contracts/layouts/contiguous body verified; define the required scalar/array types and emitted-construct inventory, then convert x87 operations and binary32 boundaries into supported C constructs without changing alias/shared-storage semantics | Verified original contract, unresolved C expression model | Pending next implementation phase | Module compilation |
 | 3 — `00485c30` test boundary | Proposed MinGW i686 toolchain absent; pin compiler/binutils/CRT, verify widths and x87 evaluation, select explicit stores/extended temporaries and supported flags | Inferred proposal | Pending | Module compilation |
 | 4 — `00485c30` adapter / `004f7fa0` game entry | Standalone main/CRT and own scratch suffice for first link; define symbols and adapter, prove RET4/ABI. Do not use original game entry/startup/resources as a standalone link specification | Verified boundary, unresolved implementation | Pending | Linking |
@@ -179,7 +179,7 @@ The documentation deliverables are **done**; subsequent engineering/qualificatio
 
 | Stage | Current evidence | Gate decision |
 |---|---|---|
-| Reference export | Exact baseline, saved metadata, bounded manifest, pinned procedure/options and explicit omissions | **Not qualified:** sample export/re-export not run by scope |
+| Reference export | Two successful three-address runs, matching source/header/options hashes, pinned baseline/configuration and accounted omissions/warnings | **Passed for the fixed sample only:** no whole-program or compilability claim |
 | Module compilation | Small leaf selected, custom interfaces corrected, data/control-flow contract and machine risks documented | **Not run:** no C exists; proposed toolchain/expression model require implementation |
 | Linking | Internal dependency-free leaf boundary, own test startup/storage, import/resource distinctions | **Not run:** no objects/adapters, no claim of game-link compatibility |
 | Runtime validation | Retained original 40-row oracle; concrete differential matrix and exclusions | **Not qualified:** reconstructed C has not been executed |
@@ -188,7 +188,7 @@ The documentation deliverables are **done**; subsequent engineering/qualificatio
 
 | Handoff item | Acceptance | Later-phase limit |
 |---|---|---|
-| 1. Baseline and export procedure | **Complete:** exact target/snapshot, exporter/options, address manifest, omissions and repeatability procedure recorded | Actual export/re-export remains blocked by the no-export scope; no exporter success is claimed |
+| 1. Baseline and export procedure | **Complete:** exact target/snapshot, exporter/options, address manifest, omissions and repeatability procedure recorded | Two-run check passed for only the three selected references; no whole-program export claim |
 | 2. Signatures and register contracts | **Complete:** three custom signatures saved/read back; relevant callers and hidden-state caveats recorded | Complete flags/x87/alias domains and caller prototype recovery remain scoped follow-ups |
 | 3. Boundaries and control flow | **Complete:** five contiguous bodies, direct calls and known references inspected | Unrelated dispatcher and broader indirect-call discovery remain outside this module |
 | 4. Data, layouts and initialization | **Complete:** required arrays/scratch/mask, storage classes, relocations and resources distinguished | Actual loader/startup indirect writes and game resource necessity remain unresolved |
@@ -201,9 +201,9 @@ The follow-up review corrected the ILP32 label without changing the already-corr
 
 ### Actionable next-phase order (requires separate authorization)
 
-1. **Reference export:** implement only the three-entry runner/ledger and execute the two-run sample check from §1. Stop on unexplained output differences, missing bodies or unaccounted failures. This does not require a C toolchain or closing the scratchpad.
-2. **Module compilation preparation:** freeze the leaf's admitted inputs, types, shared-storage semantics and explicit x87 rounding model. Inventory unsupported constructs/types in the actual reference output once it exists; do not assume decompiler convenience types or pseudo-operations are compilable or supplied by a library. Select and pin the proposed ILP32 compiler/binutils/CRT and resolve priorities 2–3 before implementation.
+1. **Reference export — completed:** the three-entry runner/ledger and two-run sample check passed. Preserve the generated references and warnings; no additional exports are needed for this bounded gate.
+2. **Module compilation preparation:** freeze the leaf's admitted inputs, types, shared-storage semantics and explicit x87 rounding model. Use the observed unsupported constructs/types and data/ABI cleanup in [the export results](reference-export-results.md); do not assume decompiler convenience types or pseudo-operations are compilable or supplied by a library. Select and pin the proposed ILP32 compiler/binutils/CRT and resolve priorities 2–3 before implementation.
 3. **Standalone implementation/linking:** only when authorized, create the maintained leaf, defined scratch symbol, original-register adapter and ordinary test startup; compile/link that bounded test executable. Inspect actual emitted helpers/imports and verify the ABI. This addresses priority 4 without linking the whole game.
 4. **Runtime comparison:** execute both original and reconstructed implementations under identical fixture/state conditions. Apply the finite, full-fixture, machine-state and later integration gates from §7 separately. Extend into callers or game startup only when the chosen next module needs them.
 
-This sequence does not require multiplayer results, controller work, dispatcher recovery or every unrelated scratchpad investigation. The current deliverable is the completed audit and this plan; it does not authorize any of these future export, implementation, installation, compilation/linking or probe actions.
+This sequence does not require multiplayer results, controller work, dispatcher recovery or every unrelated scratchpad investigation. The current delivered work is the audit plus the authorized three-function reference-export check. It does not authorize maintained implementation, installation, compilation/linking, new probes or expanded exports.

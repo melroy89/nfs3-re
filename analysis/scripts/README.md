@@ -160,3 +160,10 @@ python3 analysis/scripts/launch_music_shutdown_capture.py --exe "$NFS3_EXE" --pr
 The Wine log is created exclusively beside that capture. Readiness still requires the READY message and growing samples. A disposable child-process integration probe verified parent read-only access with a separate child session and child survival after the parent/tool command ended; the owned probe was cleaned up. Existing-output and invalid-duration checks passed without launching Wine. The corrected helper has not yet been exercised with a new game run, so Wine survival and display restoration remain explicit next-run checks.
 
 The sampler also emits a `kind=maps` record every30seconds, in addition to the initial metadata map. Later module presence can establish mapping during that interval; it does not prove API calls or successful rendering. The previous completed capture predates these periodic records and therefore remains early-map-only evidence.
+
+
+## Fixed reference-export sample
+
+`export_reference_samples.py` and `ghidra/ExportReferenceSample.java` export only `00485c30`, `004abd9c` and `00518640` from an isolated, hash-checked saved snapshot. They create reference C/headers under ignored `analysis/captures/reference-exports/`; they do not create maintained C, install tools, compile/link C or execute game/probe instructions. The coordinator pins options/tool/runner identities, retains per-entry diagnostics/results, imposes deadlines and compares two runs. Inline warnings embedded in exported text require the additional source inspection recorded in the run manifests.
+
+See [completed results and exact invocation](../reference-export-results.md) and [the bounded export procedure](../recompilation-readiness.md#pinned-reference-export-procedure-executed-for-the-fixed-sample). Existing results are never overwritten. Raw files stay local; curated metadata is tracked separately.

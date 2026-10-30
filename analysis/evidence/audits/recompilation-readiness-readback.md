@@ -1,5 +1,7 @@
 # Reconstruction-readiness readback evidence
 
+Historical documentation-phase evidence; later reference exports are recorded in [the separate results](../../reference-export-results.md).
+
 Evidence type: saved Ghidra database inspection, unchanged-file parsing and retained original-instruction probe inspection. No C export, reconstruction source generation, C compilation, gameplay or new probe execution occurred in this audit.
 
 ## Snapshot identity and inspection method
@@ -167,7 +169,7 @@ Resource paths use **type / name-or-ID / language**; all language IDs are 0. Val
 
 Installed source inspected: `Ghidra/Features/Decompiler/lib/Decompiler-src.zip`, member `ghidra/app/util/exporter/CppExporter.java`. Source archive SHA-256 `cc15e14c15ad9eda7abefde73c757112e88307c81b2088b7d9ce670e258fee92`; `Decompiler.jar` SHA-256 `8fcbca197aee63507607f66512a64756b0ad77545964257b2048477b5faea3f4`.
 
-Instantiated defaults were read without calling export: C file on, header off, C++ comments on, datatype definitions on, referenced globals on, empty tag filter, excluded-tag mode on. `DecompileOptions` default timeout is 30 seconds. The [future procedure](../../recompilation-readiness.md#pinned-future-procedure-not-executed) deliberately overrides header/type/comment choices and pins options.
+Instantiated defaults were read without calling export: C file on, header off, C++ comments on, datatype definitions on, referenced globals on, empty tag filter, excluded-tag mode on. `DecompileOptions` default timeout is 30 seconds. The [future procedure](../../recompilation-readiness.md#pinned-reference-export-procedure-executed-for-the-fixed-sample) deliberately overrides header/type/comment choices and pins options.
 
 Source inspection confirms null address selection falls back to program memory; selected functions are decompiled; diagnostics can produce an “Unable to decompile” comment rather than a function body, while file-level export returns true. This is why the per-entry procedure needs a separate completion/error ledger. None of this establishes that an export succeeded or is repeatable.
 
