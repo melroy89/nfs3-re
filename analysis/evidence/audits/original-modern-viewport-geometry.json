@@ -1,0 +1,214 @@
+{
+  "kind": "static-viewport-border-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004be570",
+          "end": "004be5d1",
+          "bytes_sha256": "bc69b769d28aa42f63bf08443a979053e8ce53ee43f564a81d45c9e152a3e129",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-004be570.asm",
+          "assembly_sha256": "6f625961666b958ced8f7dd981f2fc359150987736b5570e482928d79a5786a1"
+        },
+        {
+          "start": "004be5e0",
+          "end": "004be8d2",
+          "bytes_sha256": "48cba64786c2a9a1d9f3b9244b8b04fdf41481748c59a6b5f579e65cffbede52",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-004be5e0.asm",
+          "assembly_sha256": "a839ca8cceb15eaf9ef9314850809f4ce5f9eeba3d58d86d84b38fef5c836ee4"
+        },
+        {
+          "start": "004beb00",
+          "end": "004beb15",
+          "bytes_sha256": "5699fee5d400d1b676f427a00e267839d7d8e14ee0cbca7bdf7d910344bcff17",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-004beb00.asm",
+          "assembly_sha256": "c59083dfc89725eeb341b60089597ba61733dd3d8e9cc29cbf507497e0eacd8f"
+        },
+        {
+          "start": "004beb40",
+          "end": "004beb56",
+          "bytes_sha256": "ab6c3894850b920a8f52268384f4ee896f9f31a8c0605c02d49ae05524c914f1",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-004beb40.asm",
+          "assembly_sha256": "70f73c64e9e633de6f1f0ffaaf8c014b6d7eb1f7773ca0264aca31b9e9db1f84"
+        },
+        {
+          "start": "0047f650",
+          "end": "0047fbdc",
+          "bytes_sha256": "5aaa096517721aaedc71a13d241bb340cb65ea009eab71dee258a26263e03749",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-0047f650.asm",
+          "assembly_sha256": "591c4b39c59b73c9164968075adbd6087e959f5654e21c23fea2528b88e7e69d"
+        },
+        {
+          "start": "0048106d",
+          "end": "00481072",
+          "bytes_sha256": "7ef3c35ba9866d6260f1ca71b6370dd0e2d3f0e7eab6b7e7b6e380427072e0b2",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-0048106d.asm",
+          "assembly_sha256": "16409f6d188e7be01820f5aba3c72200293b75a904cc0447a7db70913252a500"
+        },
+        {
+          "start": "004812cd",
+          "end": "004812d2",
+          "bytes_sha256": "9aa83256e0b56e9b74c5e569ba8ba8351cd333bc08ed9cbe353a84fb406c83e2",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-004812cd.asm",
+          "assembly_sha256": "90397b7dca8197d0c80865ddb58c48767d1ef3b355f04904eb4892bd874c4ff8"
+        },
+        {
+          "start": "004813cb",
+          "end": "004813d0",
+          "bytes_sha256": "c386762d012da97cf88d13a124b8f2f9c1da2c1746e8a88c31df9dd0fd31ccd8",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-004813cb.asm",
+          "assembly_sha256": "b8341090a441ce1f264f4ed2bd7c0df49367a61c642147cc90aca23e9446122d"
+        },
+        {
+          "start": "00481b6d",
+          "end": "00481b72",
+          "bytes_sha256": "8b96359420a53dc33b1aed35c40c52a2451124f723904fd354823f601ba5aa9b",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-00481b6d.asm",
+          "assembly_sha256": "16897992cf808c190290b480d4ba6ed22cd9934fc339b7e2e609c8e487935e67"
+        },
+        {
+          "start": "00481eee",
+          "end": "00481ef3",
+          "bytes_sha256": "101c09e1ccf0f9db0d6cfa00af1b22d0b69d14e813522cd3fc44de39522af070",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-00481eee.asm",
+          "assembly_sha256": "65afa2c65e48091a5c322babd91c95822f79f705fb0d2affd3b76fd1beb1cc82"
+        },
+        {
+          "start": "0047fdc2",
+          "end": "0047fdc7",
+          "bytes_sha256": "39c15db301d0487d1ce0e6cb35ac94ccc61860ee909a66ac9cf7eedd793cf6d2",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-0047fdc2.asm",
+          "assembly_sha256": "b2c582c64422d18975797d6c28bd643cd11196fdce38f0ca12bf096579feb071"
+        }
+      ],
+      "file_backed_floats": {
+        "00538ad8": {
+          "little_endian_hex": "0000fe42",
+          "binary32_value": 127.0
+        },
+        "0053a9d4": {
+          "little_endian_hex": "000020c1",
+          "binary32_value": -10.0
+        },
+        "0053a9e0": {
+          "little_endian_hex": "00002041",
+          "binary32_value": 10.0
+        },
+        "0053b4f8": {
+          "little_endian_hex": "00008040",
+          "binary32_value": 4.0
+        },
+        "0053b4fc": {
+          "little_endian_hex": "cdcccc3a",
+          "binary32_value": 0.0015625000232830644
+        }
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004be570",
+          "end": "004be5d1",
+          "bytes_sha256": "6984e838709db38ff94856c46ada2bdb869b1e8ce7020c24bbfe7a08d5cce02b",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004be570.asm",
+          "assembly_sha256": "fcaca90bea1c4262d7105382f9805ebdbd7bbb598dc5177446523c20c651e586"
+        },
+        {
+          "start": "004be5e0",
+          "end": "004be85a",
+          "bytes_sha256": "5d932910006d95313cdd60ddfde3c6ac614afdbb0960c6e30f9db9419a8f195f",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004be5e0.asm",
+          "assembly_sha256": "4f17a866f4e83bfc0d918849a51c45d59906b9ca8a9af3f37e9c3a28897d49ba"
+        },
+        {
+          "start": "004be89c",
+          "end": "004be8b5",
+          "bytes_sha256": "9909e3b8bdf0ccc37d61d2e6405187e060086abc168c65fc6694828e86a225f6",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004be89c.asm",
+          "assembly_sha256": "f543e169c9056e3d0205fc5f8f709cb7493f75d69b27f2d47bd0fa2235b1b557"
+        },
+        {
+          "start": "0047f650",
+          "end": "0047f9bd",
+          "bytes_sha256": "b4b33356ece126eeb2eb6731892ebf92b5f96672fc63bbbad424450389afeaab",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-0047f650.asm",
+          "assembly_sha256": "3b2f23d3240de519853e91f40e1d84e4242b11e5257a7dcf1953e1f2c2375b25"
+        },
+        {
+          "start": "0048106d",
+          "end": "00481072",
+          "bytes_sha256": "7ef3c35ba9866d6260f1ca71b6370dd0e2d3f0e7eab6b7e7b6e380427072e0b2",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-0048106d.asm",
+          "assembly_sha256": "05244e06e4b2e23efd1e1eadac20fcc40d27db2e5d4dcbb3afee75a802fb02ff"
+        },
+        {
+          "start": "004812cd",
+          "end": "004812d2",
+          "bytes_sha256": "9aa83256e0b56e9b74c5e569ba8ba8351cd333bc08ed9cbe353a84fb406c83e2",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004812cd.asm",
+          "assembly_sha256": "55eba9dd2bdca54b5f26a764afeb161dcd4ff2c54b92c7f0b13fcd6b9982def5"
+        },
+        {
+          "start": "004813cb",
+          "end": "004813d0",
+          "bytes_sha256": "c386762d012da97cf88d13a124b8f2f9c1da2c1746e8a88c31df9dd0fd31ccd8",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004813cb.asm",
+          "assembly_sha256": "4ab9ccb7c642945dede249dd37735d880ea6f3c15bc73a8dc8a4bf1a779069fb"
+        },
+        {
+          "start": "00481b6d",
+          "end": "00481b72",
+          "bytes_sha256": "8b96359420a53dc33b1aed35c40c52a2451124f723904fd354823f601ba5aa9b",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-00481b6d.asm",
+          "assembly_sha256": "bfac772ca44b9a2b250e6340852eda0788724c67218c0d2897ee17d53edb386c"
+        },
+        {
+          "start": "00481eee",
+          "end": "00481ef3",
+          "bytes_sha256": "101c09e1ccf0f9db0d6cfa00af1b22d0b69d14e813522cd3fc44de39522af070",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-00481eee.asm",
+          "assembly_sha256": "1b309ce3915ec3ab5d7017658c3bc2dd9ac774228fdf266f9953d1b6aaaa2308"
+        },
+        {
+          "start": "0047fdc2",
+          "end": "0047fdc7",
+          "bytes_sha256": "cf695076f3f6c563e602718e683b1e75a59e26a3bcc573e1d5d1ff6e8c2ca08c",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-0047fdc2.asm",
+          "assembly_sha256": "abea1aaa2ff27b38a8f000efcf186e7b8525d274b27df7fe8a8b84c88c544eb1"
+        }
+      ],
+      "file_backed_floats": {
+        "00538ad8": {
+          "little_endian_hex": "0000fe42",
+          "binary32_value": 127.0
+        },
+        "0053a9d4": {
+          "little_endian_hex": "000020c1",
+          "binary32_value": -10.0
+        },
+        "0053a9e0": {
+          "little_endian_hex": "00002041",
+          "binary32_value": 10.0
+        },
+        "0053b4f8": {
+          "little_endian_hex": "00000040",
+          "binary32_value": 2.0
+        },
+        "0053b4fc": {
+          "little_endian_hex": "cdcccc3a",
+          "binary32_value": 0.0015625000232830644
+        }
+      }
+    }
+  },
+  "limits": [
+    "No rendering or target instructions executed.",
+    "Profile flags and all downstream transforms are not fully mapped.",
+    "x87 rounding/precision can affect stored integer/float results."
+  ]
+}

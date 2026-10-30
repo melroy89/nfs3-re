@@ -122,14 +122,18 @@ The [startup comparison](original-modern-startup-policy.md) traces optional erro
 
 The [display-mode comparison](original-modern-display-modes.md) traces exact-4:3/15-or-16-bit original admission versus Modern approximate aspect/16-or-32-bit admission, internal callback ABI changes, sorting and `Hide16bitModes` grouping. It records the inclusive count boundary separately from the advertised 100-mode limit. The [texture comparison](original-modern-texture-limits.md) follows configured extents, renderer reductions and fixed/bypass branches; the original helper is not universally capped at 256. Driver DLL behavior, all list storage/reachability and actual rendering remain untested.
 
-## 13. Prioritized semantic work remaining
+## 13. Viewport, aspect factors and border geometry
+
+The [viewport comparison](original-modern-viewport-geometry.md) derives the centred 4:3 reference rectangle, changed internal setter ABI, dynamic aspect-factor writes and profile rectangle rounding differences. The [border comparison](original-modern-border-geometry.md) traces the cached thickness source and changed wrapper call, while keeping the original same-address global’s meaning separate. Complete HUD/camera/map consumers and visual correctness remain pending.
+
+## 14. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following high-change clusters are investigation seeds, not yet completed before/after explanations:
 
 | Current Modern entry / label | Differing same-VA body bytes | Required next evidence |
 |---|---:|---|
-| `0047f650` BuildNineTexturedRectangleBorderQuads | 800 / 828 | Original function correspondence, layout/geometry calculations and callers |
-| `004be5e0` InitializeViewportGeometryForProfile | 608 / 634 | Original projection/FOV arithmetic versus current viewport profile |
+| `0047f650` BuildNineTexturedRectangleBorderQuads | 800 / 828 | Matched builder/inset and six callers traced; full quad/UV rewrite and visual output remain |
+| `004be5e0` InitializeViewportGeometryForProfile | 608 / 634 | Reference/aspect/profile-rectangle deltas traced; all projection consumers and visual comparison remain |
 | `004cd6c0` InitializeGameWindow | 514 / 918 | Initializer/callback lifecycle traced; actual styles, sizing and hook callback semantics remain |
 | `004b5844` LoadThrashDriverSettings | 486 / 504 | Modern INI/driver path traced in renderer report; original selection policy still pending |
 | `00494cb0` RenderTiledLoadingArtworkAndInitializeProgressBounds | 480 / 748 | Original scaling/progress boundaries versus tile paths |
