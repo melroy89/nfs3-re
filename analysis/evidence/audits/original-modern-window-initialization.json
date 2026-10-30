@@ -1,0 +1,360 @@
+{
+  "kind": "static-window-registration-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004cd6c0",
+          "end": "004cdaa0",
+          "bytes_sha256": "ceb10e477e190a0310f18931865dd3bd0aa89d850c79607f450d094d23c2774d",
+          "assembly": "analysis/captures/modern-differences/window/original-004cd6c0.asm",
+          "assembly_sha256": "19a5c149e772d6375495c10cd893c520f7eadb14a797581a4b3a294ced1257bb"
+        },
+        {
+          "start": "004cd2d0",
+          "end": "004cd348",
+          "bytes_sha256": "228975aac39547ab0e69a25a4278a63078e98b73d11471747e30cd5ea6c8f5a6",
+          "assembly": "analysis/captures/modern-differences/window/original-004cd2d0.asm",
+          "assembly_sha256": "563c60f1bdcdd620b2f92504763238b612e30e79daa223fe5a626afeec4af7ea"
+        },
+        {
+          "start": "004ccc70",
+          "end": "004cce90",
+          "bytes_sha256": "f463d148d17c1758db65fe55727b3a1c555bc1bb546acff8d7688a50df281597",
+          "assembly": "analysis/captures/modern-differences/window/original-004ccc70.asm",
+          "assembly_sha256": "3ce532cf5dc19ad7b6ad15ba9ae5a0f5d00cb0253b35429b3127cf9d460b3d9a"
+        }
+      ],
+      "registrations": [
+        {
+          "call": "004cd7d5",
+          "message": "0007",
+          "handler": "004ccd60"
+        },
+        {
+          "call": "004cd7e1",
+          "message": "0008",
+          "handler": "004ccdd0"
+        },
+        {
+          "call": "004cd7ed",
+          "message": "0005",
+          "handler": "004ccf50"
+        },
+        {
+          "call": "004cd7f9",
+          "message": "0003",
+          "handler": "004ccf50"
+        },
+        {
+          "call": "004cd805",
+          "message": "0010",
+          "handler": "004cce40"
+        },
+        {
+          "call": "004cd811",
+          "message": "0002",
+          "handler": "004cce80"
+        },
+        {
+          "call": "004cd81d",
+          "message": "000f",
+          "handler": "004cd1f0"
+        },
+        {
+          "call": "004cd829",
+          "message": "0014",
+          "handler": "004cd2a0"
+        },
+        {
+          "call": "004cd835",
+          "message": "001a",
+          "handler": "004cced0"
+        },
+        {
+          "call": "004cd844",
+          "message": "0112",
+          "handler": "004cce90"
+        },
+        {
+          "call": "004cd853",
+          "message": "0466",
+          "handler": "004cce60"
+        },
+        {
+          "call": "004cd862",
+          "message": "0102",
+          "handler": "004ccfc0"
+        },
+        {
+          "call": "004cd871",
+          "message": "0100",
+          "handler": "004cd020"
+        },
+        {
+          "call": "004cd880",
+          "message": "0104",
+          "handler": "004cd020"
+        },
+        {
+          "call": "004cd88f",
+          "message": "0101",
+          "handler": "004cd0e0"
+        },
+        {
+          "call": "004cd89e",
+          "message": "0105",
+          "handler": "004cd0e0"
+        },
+        {
+          "call": "004cd8ad",
+          "message": "0201",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd8bc",
+          "message": "0207",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd8cb",
+          "message": "0204",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd8da",
+          "message": "0203",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd8e9",
+          "message": "0209",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd8f8",
+          "message": "0206",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd907",
+          "message": "0202",
+          "handler": "004cd190"
+        },
+        {
+          "call": "004cd916",
+          "message": "0208",
+          "handler": "004cd190"
+        },
+        {
+          "call": "004cd925",
+          "message": "0205",
+          "handler": "004cd190"
+        },
+        {
+          "call": "004cd934",
+          "message": "0200",
+          "handler": "004cd190"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004cd6c0",
+          "end": "004cdaa0",
+          "bytes_sha256": "12458fdc09b29b1752ae33b698fe024482b1e95d61bfc879c6244302043b70bb",
+          "assembly": "analysis/captures/modern-differences/window/official_modern-004cd6c0.asm",
+          "assembly_sha256": "e4f04b003f8e860af46ae502a9fdc6504bfd9cf280bd969681436f7b4bd12aa8"
+        },
+        {
+          "start": "004cd2d0",
+          "end": "004cd348",
+          "bytes_sha256": "228975aac39547ab0e69a25a4278a63078e98b73d11471747e30cd5ea6c8f5a6",
+          "assembly": "analysis/captures/modern-differences/window/official_modern-004cd2d0.asm",
+          "assembly_sha256": "521b1350e43592ee4e582f19052bffc9027fde9011883ef59d268cec2f77cfce"
+        },
+        {
+          "start": "004ccb84",
+          "end": "004cce90",
+          "bytes_sha256": "bd206d9c5dab3dc09c3de10a8c286d9db0278ab8ba5be68c1f8f4dce0acbf2c4",
+          "assembly": "analysis/captures/modern-differences/window/official_modern-004ccb84.asm",
+          "assembly_sha256": "bb70434393f1a4ad96c476fd7de1dc2461bea4cefb62acfaa001d01a75859bee"
+        }
+      ],
+      "registrations": [
+        {
+          "call": "004cd783",
+          "message": "0001",
+          "handler": "004cccc4"
+        },
+        {
+          "call": "004cd78f",
+          "message": "0002",
+          "handler": "004ccce4"
+        },
+        {
+          "call": "004cd79b",
+          "message": "001c",
+          "handler": "004ccd04"
+        },
+        {
+          "call": "004cd7a7",
+          "message": "0005",
+          "handler": "004ccf50"
+        },
+        {
+          "call": "004cd7b3",
+          "message": "0003",
+          "handler": "004ccf50"
+        },
+        {
+          "call": "004cd7bf",
+          "message": "000f",
+          "handler": "004cd1f0"
+        },
+        {
+          "call": "004cd7cb",
+          "message": "0014",
+          "handler": "004cd2a0"
+        },
+        {
+          "call": "004cd7d7",
+          "message": "0010",
+          "handler": "004ccd5c"
+        },
+        {
+          "call": "004cd7e6",
+          "message": "0112",
+          "handler": "004cce90"
+        },
+        {
+          "call": "004cd7f2",
+          "message": "001a",
+          "handler": "004cced0"
+        },
+        {
+          "call": "004cd801",
+          "message": "0102",
+          "handler": "004ccfc0"
+        },
+        {
+          "call": "004cd810",
+          "message": "0100",
+          "handler": "004cd020"
+        },
+        {
+          "call": "004cd81f",
+          "message": "0104",
+          "handler": "004cd020"
+        },
+        {
+          "call": "004cd82e",
+          "message": "0101",
+          "handler": "004cd0e0"
+        },
+        {
+          "call": "004cd83d",
+          "message": "0105",
+          "handler": "004cd0e0"
+        },
+        {
+          "call": "004cd84c",
+          "message": "0201",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd85b",
+          "message": "0207",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd86a",
+          "message": "0204",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd879",
+          "message": "0203",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd888",
+          "message": "0209",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd897",
+          "message": "0206",
+          "handler": "004cd130"
+        },
+        {
+          "call": "004cd8a6",
+          "message": "0202",
+          "handler": "004cd190"
+        },
+        {
+          "call": "004cd8b5",
+          "message": "0208",
+          "handler": "004cd190"
+        },
+        {
+          "call": "004cd8c4",
+          "message": "0205",
+          "handler": "004cd190"
+        },
+        {
+          "call": "004cd8d3",
+          "message": "0200",
+          "handler": "004cd190"
+        },
+        {
+          "call": "004cd8e2",
+          "message": "0218",
+          "handler": "004ccd78"
+        },
+        {
+          "call": "004cd8f1",
+          "message": "0466",
+          "handler": "004ccd98"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No window/game execution.",
+    "Callback address equality is not proof of identical callback behavior.",
+    "Registration extraction covers only direct immediate PUSH arguments to CALL sequences in the pinned initializer span."
+  ],
+  "removed_messages": [
+    "0007",
+    "0008"
+  ],
+  "added_messages": [
+    "0001",
+    "001c",
+    "0218"
+  ],
+  "same_message_changed_handler_address": [
+    {
+      "message": "0002",
+      "original": "004cce80",
+      "modern": "004ccce4"
+    },
+    {
+      "message": "0010",
+      "original": "004cce40",
+      "modern": "004ccd5c"
+    },
+    {
+      "message": "0466",
+      "original": "004cce60",
+      "modern": "004ccd98"
+    }
+  ]
+}

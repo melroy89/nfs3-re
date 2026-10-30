@@ -187,3 +187,11 @@ Compare the rerun JSON with the retained [curated inventory](../evidence/audits/
 ## Original versus Modern THRASH loader
 
 Run `python3 analysis/scripts/audit_thrash_loader_difference.py` from the repository root. Requires Python `pefile` and GNU `objdump`. It checks both executable hashes, captures pinned instruction spans, decodes Modern's name/slot table as data, and compares all 34 bindings with the original explicit lookups/stores. Output: `analysis/evidence/audits/original-modern-thrash-loader.json`; raw assembly remains under ignored `analysis/captures/modern-differences/thrash-loader/`. The parent repeated the script and reproduced identical curated JSON. This is static evidence only; no renderer or game execution.
+
+## Original versus Modern window registrations
+
+Run `python3 analysis/scripts/audit_window_initialization_difference.py` from the repository root. Requires Python `pefile`, GNU `objdump`, and the baseline definitions in `audit_thrash_loader_difference.py`. It hash-checks both binaries, captures pinned initializer/callback/dispatcher spans and extracts 26 original versus 27 Modern direct registrations. Curated JSON: `analysis/evidence/audits/original-modern-window-initialization.json`; raw captures remain ignored. No target execution or Ghidra changes. See [findings and limitations](../original-modern-window-handling.md).
+
+## Original versus Modern screenshot paths
+
+Run `python3 analysis/scripts/audit_screenshot_difference.py` from the repository root (Python `pefile`, GNU `objdump`; shared baseline definitions in `audit_thrash_loader_difference.py`). It checks input hashes and retains instruction/filename witnesses in `analysis/evidence/audits/original-modern-screenshots.json`, with raw assembly under ignored captures. No game or instruction execution. See [the screenshot comparison](../original-modern-screenshots.md).

@@ -99,7 +99,15 @@ The [renderer-loading comparison](original-modern-renderer-loading.md) establish
 
 The [configuration comparison](original-modern-configuration.md) traces the Modern caller and INI/environment readers: explicit INI values precede environment defaults, then caller defaults. Original registry imports and the new profile API calls support a migration, but each original setting/key still needs mapping. The configured filename is passed as direct buffer address `007a263c`; its complete initialization history remains unresolved.
 
-## 8. Prioritized semantic work remaining
+## 8. Window initialization and callback lifecycle
+
+The [window comparison](original-modern-window-handling.md) records all 26/27 initializer registrations, the shift from focus callbacks to application activation, hook install/teardown changes, and an ABI/result anomaly in the added power handler. The 120-byte window dispatcher is unchanged. Actual window style/size and every focus-restoration path remain to be compared; no suspend behavior was tested.
+
+## 9. Screenshot input and encoding
+
+The [screenshot comparison](original-modern-screenshots.md) traces original Alt+P to synchronous Desktop TGA writing, versus Modern Print Screen to a pending request and encoding worker under `.\screenshots\`. Modern format selection, PNG default and BMP fallback are documented with ownership/runtime limits. No screenshot was taken.
+
+## 10. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following high-change clusters are investigation seeds, not yet completed before/after explanations:
 
@@ -107,10 +115,10 @@ The full JSON inventory gives every current Modern local function name, entry/ra
 |---|---:|---|
 | `0047f650` BuildNineTexturedRectangleBorderQuads | 800 / 828 | Original function correspondence, layout/geometry calculations and callers |
 | `004be5e0` InitializeViewportGeometryForProfile | 608 / 634 | Original projection/FOV arithmetic versus current viewport profile |
-| `004cd6c0` InitializeGameWindow | 514 / 918 | Original/Modern window styles, sizing and message paths |
+| `004cd6c0` InitializeGameWindow | 514 / 918 | Initializer/callback lifecycle traced; actual styles, sizing and hook callback semantics remain |
 | `004b5844` LoadThrashDriverSettings | 486 / 504 | Modern INI/driver path traced in renderer report; original selection policy still pending |
 | `00494cb0` RenderTiledLoadingArtworkAndInitializeProgressBounds | 480 / 748 | Original scaling/progress boundaries versus tile paths |
-| `004e3078` ScreenshotEncodingThread | 451 / 464 | Establish original correspondence (if any), new resource/GDI+ calls and lifetime |
+| `004e3078` ScreenshotEncodingThread | 451 / 464 | Original synchronous counterpart mapped in screenshot report; GDI+ success, resources and runtime lifetime remain |
 | `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; initialization selectors/compatibility consumers still pending |
 | `004b5580` LoadGameIniSettings | 374 / 393 | Exact key/default/type/error behavior versus original system settings |
 | `0044a2d0` DispatchFrontendMenuKeyToSelectedEntry | 332 / 358 | Exact key/focus actions and behavior removed or added |

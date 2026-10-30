@@ -1,0 +1,103 @@
+{
+  "kind": "static-screenshot-path-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00451810",
+          "end": "00451836",
+          "bytes_sha256": "dfd9a40fbe6c5a420b3126d6234ad9514847e9b5e2d634ebfc9c2752e11966ec",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-00451810.asm",
+          "assembly_sha256": "172ce049b8f0662a90e122d360a0028ba51ec6655ed58b073f2ed4b292252151"
+        },
+        {
+          "start": "00452410",
+          "end": "00452420",
+          "bytes_sha256": "542cdff49d3aa3b1631fdf0e1082033b3e1169ac9b396f8967b392f88a76fac1",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-00452410.asm",
+          "assembly_sha256": "0b012d7d32be3e38378ac6ec74908cef55eaac31d1babb22bbc05e61ef56c7db"
+        },
+        {
+          "start": "004c4490",
+          "end": "004c45c7",
+          "bytes_sha256": "fdc1c39842253f14983879ee65e9cc450d704b539fa1d11445728ef048509ad9",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-004c4490.asm",
+          "assembly_sha256": "b76e19ad4841c7443fde0d91ea7d049c338070af7263ae053390039ce2c94765"
+        },
+        {
+          "start": "004b6520",
+          "end": "004b6588",
+          "bytes_sha256": "bc9e24f2c6be3bb94abec72013ea59ae863884740d29a50c06773baa5f097528",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-004b6520.asm",
+          "assembly_sha256": "3b875f019236cacd66ab4a3ca08bdf104d374434738d2cd9b0aa75b6711cfc9e"
+        },
+        {
+          "start": "004eb160",
+          "end": "004eb1c0",
+          "bytes_sha256": "98915e56a25d5c21b0dff8efd47d1337dc67542eaf6d52b17f8f46d2182c4878",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-004eb160.asm",
+          "assembly_sha256": "895c1aabdf12436a5dc2369210e8b635f9a8d1c6b571377f80b496cc29c2e63f"
+        }
+      ],
+      "strings": {
+        "005401d8": "%s\\nfs3_%02d.tga",
+        "0053feb0": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders",
+        "0053fef4": "Desktop"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004ccb84",
+          "end": "004ccc40",
+          "bytes_sha256": "09b95af837e34df85cc31d567b29f2c651ee3d7b9c68de6bd06687aacde306ec",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004ccb84.asm",
+          "assembly_sha256": "6f0aa2ce3ddec5e7cdc7ee1f3c652a04c02a58752d76ef6189ce06b894263cff"
+        },
+        {
+          "start": "004cdc50",
+          "end": "004cdcbb",
+          "bytes_sha256": "66cfcad62fc277d0aec33e9ab880125505193e1b0154f2fac59cbcc7f1259b8a",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004cdc50.asm",
+          "assembly_sha256": "8c0c65fa3acc954092c854e717d22b4936abe811e77ea530ca2f773fc12d8082"
+        },
+        {
+          "start": "004c4480",
+          "end": "004c45cb",
+          "bytes_sha256": "28158ac8fe79264d438046c8f91f36d1b212c7e153a18611de01a00eb7201542",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004c4480.asm",
+          "assembly_sha256": "b93bc00910add37638daae3adee8bfaa8fd6754763f45504eba26eca01723977"
+        },
+        {
+          "start": "004e3078",
+          "end": "004e3248",
+          "bytes_sha256": "a03743db1dae98bce9a8a93dea80a33adc8ebff9b4ceeb074e2a6a73727b46e9",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004e3078.asm",
+          "assembly_sha256": "1e5d39ee5bd48f6f02046027db5308b685eaaf689cb96849f742cb9a2782b85f"
+        },
+        {
+          "start": "004b5680",
+          "end": "004b5696",
+          "bytes_sha256": "66ecef60ef71c51669787c0da5162436fd1c1378c62efa5d7ce7e0bd57007752",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004b5680.asm",
+          "assembly_sha256": "8e97c3c6024b363e786e46334c909fd4647455c41f6fd8114947bbb57f2a830e"
+        }
+      ],
+      "strings": {
+        "0053f7f4": ".\\screenshots\\",
+        "0053f804": "nfs3_%04d.%s",
+        "0053f6cc": "png"
+      }
+    }
+  },
+  "limits": [
+    "No screenshot or target instructions executed.",
+    "Spans are instruction witnesses, not a complete interprocedural graph.",
+    "Same-address regions do not imply function correspondence."
+  ]
+}

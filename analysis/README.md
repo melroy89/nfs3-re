@@ -3,6 +3,8 @@
 This directory contains reviewed research notes, retained evidence and reproducible analysis helpers.
 
 - [Original versus Modern Patch: baseline, measured differences and remaining work](original-modern-differences.md)
+- [Original versus Modern screenshot input, format and worker paths](original-modern-screenshots.md)
+- [Original versus Modern window initialization and callbacks](original-modern-window-handling.md)
 - [Original versus Modern configuration lookup and defaults](original-modern-configuration.md)
 - [Original versus Modern renderer loading and validation](original-modern-renderer-loading.md)
 - [Modern Patch release-note traceability catalog](modern-patch-change-catalog.md)
