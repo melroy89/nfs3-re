@@ -195,3 +195,7 @@ Run `python3 analysis/scripts/audit_window_initialization_difference.py` from th
 ## Original versus Modern screenshot paths
 
 Run `python3 analysis/scripts/audit_screenshot_difference.py` from the repository root (Python `pefile`, GNU `objdump`; shared baseline definitions in `audit_thrash_loader_difference.py`). It checks input hashes and retains instruction/filename witnesses in `analysis/evidence/audits/original-modern-screenshots.json`, with raw assembly under ignored captures. No game or instruction execution. See [the screenshot comparison](../original-modern-screenshots.md).
+
+## Original versus Modern network port paths
+
+Run `python3 analysis/scripts/audit_network_port_difference.py` from the repository root (Python `pefile`, GNU `objdump`; baseline definitions from `audit_thrash_loader_difference.py`). It checks both fingerprints and captures matched service initialization, endpoint adapter/dispatch, menu bodies and new Modern getter/parser/retry spans. Curated output: `analysis/evidence/audits/original-modern-network-port.json`; raw assembly stays ignored. No socket, game or instruction execution. See [endpoint findings](../original-modern-network-endpoints.md) and [menu findings](../original-modern-network-port-menu.md).

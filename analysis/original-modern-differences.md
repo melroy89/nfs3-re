@@ -107,7 +107,11 @@ The [window comparison](original-modern-window-handling.md) records all 26/27 in
 
 The [screenshot comparison](original-modern-screenshots.md) traces original Alt+P to synchronous Desktop TGA writing, versus Modern Print Screen to a pending request and encoding worker under `.\screenshots\`. Modern format selection, PNG default and BMP fallback are documented with ownership/runtime limits. No screenshot was taken.
 
-## 10. Prioritized semantic work remaining
+## 10. Network ports, endpoint conversion and menu
+
+The [endpoint comparison](original-modern-network-endpoints.md) traces original literal 1030 versus Modern configured/default 9803, comma normalization and colon-port handling. The [menu comparison](original-modern-network-port-menu.md) identifies the two-value toggle and conditional alternate-port retry. Local notice suppression/reinitialization changes are traced; actual occupied-port joining and original/Modern race synchronization remain untested.
+
+## 11. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following high-change clusters are investigation seeds, not yet completed before/after explanations:
 

@@ -2428,6 +2428,8 @@ The type-6 receive boundary differs by ingress. `ProcessPeekedLengthPrefixedConn
 - **Contract/evidence:** audited original two-byte data and direct xrefs. Getter `0043fd10` zero-extends nonzero values; zero selects9803 (`0x264b`). Value flows through the normalized address adapter as EBX into connection-layer method+0x38.
 - **Limits/validation:** current direct xref search finds only the getter read, not a writer; producer/config persistence and exact transport field semantics remain unresolved. Scalar name/type/comment saved without changing neighbouring layout. Executable unchanged.
 
+- **Later dual-binary follow-up:** The [original/Modern menu audit](original-modern-network-port-menu.md) resolves a concrete writer missed by the earlier direct-xref pass: Modern `0043fd3d` stores a DWORD at `006fd1dc`, while the getter reads a WORD. The two-value menu toggle and alternate initialization retry are now traced. The older reader-only search result is historical and must not be treated as an exhaustive writer/storage-extent claim; aliases, persistence and complete layout remain unresolved.
+
 ### Loading orchestration return-contract refinement
 
 - **Function:** `004d56f0` retains its generic name; existing orchestration comment refined with Luna review.

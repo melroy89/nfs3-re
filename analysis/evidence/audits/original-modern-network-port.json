@@ -1,0 +1,107 @@
+{
+  "kind": "static-endpoint-port-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0049e5f0",
+          "end": "0049e7f2",
+          "bytes_sha256": "2f9f979f2daf11032a2e2e216b094f77a1eb353e369c4a935b5dd5dbd42bb82c",
+          "assembly": "analysis/captures/modern-differences/network-port/original-0049e5f0.asm",
+          "assembly_sha256": "ced6f8070e4d9917ce6e23744e8ab6d7899164e7d39d6ed2af0bcda19fec1919"
+        },
+        {
+          "start": "0049e9d0",
+          "end": "0049ead3",
+          "bytes_sha256": "a946e78a5e63ebe7ea5249fb3eb9656b385b41e82dcc5fa20bef7d0861ab6b1c",
+          "assembly": "analysis/captures/modern-differences/network-port/original-0049e9d0.asm",
+          "assembly_sha256": "f472d13e0ac3866218f686d9c4e185a6ae9756b439dbc502d0f177d88f85e31a"
+        },
+        {
+          "start": "004f5050",
+          "end": "004f5066",
+          "bytes_sha256": "64429113e5f3c33948efcbf19702c54473447115e7ebd834917e0aa4e5061099",
+          "assembly": "analysis/captures/modern-differences/network-port/original-004f5050.asm",
+          "assembly_sha256": "ddd71de915e6e18a99b8eb8c92805a1c6792e3eb470a4b58895f24b9cf4e7ddf"
+        },
+        {
+          "start": "0043f760",
+          "end": "0043f7d0",
+          "bytes_sha256": "c3a4daa5b1ebe55f4bff97371776334154a9d56da9fdfd5ddf2e41a2d2da0eed",
+          "assembly": "analysis/captures/modern-differences/network-port/original-0043f760.asm",
+          "assembly_sha256": "3d70ef35860550cb2c10cff9d5a7412bcb3935261dbf77a0302c0c5ddbbaf4b2"
+        },
+        {
+          "start": "0043fe50",
+          "end": "0043fee0",
+          "bytes_sha256": "c298eaed43791fc5a4ae4071598d4522c9571c15627e3592a15a6b7e9b924ff2",
+          "assembly": "analysis/captures/modern-differences/network-port/original-0043fe50.asm",
+          "assembly_sha256": "c344561d00d1a19adc7801b9da5c426dead25ca6d349c58acff4317a19143ba2"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0049e5f0",
+          "end": "0049e7f2",
+          "bytes_sha256": "bf49c5f63349e516dbb8a113596d8bba3502fd466d6c024f73246003662bbd0b",
+          "assembly": "analysis/captures/modern-differences/network-port/official_modern-0049e5f0.asm",
+          "assembly_sha256": "1a03a9f5e5d1a5ffe0fd2463619c80657f17a9eaf7b1b5495e3f21a5130d41fe"
+        },
+        {
+          "start": "0049e9d0",
+          "end": "0049ead3",
+          "bytes_sha256": "388d38a33fbbd94e79318dce3f36ec01f479bf552d63c318a43b849adad6b3cc",
+          "assembly": "analysis/captures/modern-differences/network-port/official_modern-0049e9d0.asm",
+          "assembly_sha256": "21c25698def9daa0ef0defcd3a1f99b71fa10daa373da1491cde0f9e27a2385e"
+        },
+        {
+          "start": "004f5050",
+          "end": "004f5066",
+          "bytes_sha256": "64429113e5f3c33948efcbf19702c54473447115e7ebd834917e0aa4e5061099",
+          "assembly": "analysis/captures/modern-differences/network-port/official_modern-004f5050.asm",
+          "assembly_sha256": "b6ec00f2e89af5e81cbbf2f31aadb41b8ffc4414cdb602219f56d94dc78d06de"
+        },
+        {
+          "start": "0043f760",
+          "end": "0043f7d0",
+          "bytes_sha256": "08eadbe95d9f09513890e93d070a2e7bc5c5b7c03408e2a255759944a4a09813",
+          "assembly": "analysis/captures/modern-differences/network-port/official_modern-0043f760.asm",
+          "assembly_sha256": "6ea419168caad1af3ce6146b0c2c1a195ed26cc63a87658051ff9eee1a7d83b5"
+        },
+        {
+          "start": "0043fe50",
+          "end": "0043fee0",
+          "bytes_sha256": "83808f6ea5464d058e5e57ebd51e49e75ae1c8f2f8e10f28b7b6137b548dbb0c",
+          "assembly": "analysis/captures/modern-differences/network-port/official_modern-0043fe50.asm",
+          "assembly_sha256": "8913dfde285c44631dc236bc72e63d9fb09891828ef39d4810f22eb37540077f"
+        },
+        {
+          "start": "0043fd10",
+          "end": "0043fda0",
+          "bytes_sha256": "551ad7bf0c2a467059ce6d97edb92f1fd523bd226da0bf5db1d846401395ecbd",
+          "assembly": "analysis/captures/modern-differences/network-port/official_modern-0043fd10.asm",
+          "assembly_sha256": "e7782f9cf7fc8b833db9713a8b12cd46c7b56129520d38e3996f7894761e449b"
+        },
+        {
+          "start": "004a2f50",
+          "end": "004a2f8d",
+          "bytes_sha256": "bb3a7cbdc4c57d0763e6b839c9140a77b32a49c43089a5aefe4c4f508c0fae13",
+          "assembly": "analysis/captures/modern-differences/network-port/official_modern-004a2f50.asm",
+          "assembly_sha256": "5c707c473d041e554c91ab7774df2d3afa18666759978589b90e88a3bf0cc528"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No transport/provider or socket execution.",
+    "Port agreement does not establish simulation/replay compatibility.",
+    "Provider method +0x38 implementation and byte-order encoding not inspected here."
+  ]
+}
