@@ -90,8 +90,8 @@
   "original_crosscheck": "Both runners reproduce all40 retained original rows, including raw scratch, mask, CW and SW",
   "ghidra": {
     "program": "/Electronic Arts/Need For Speed III/nfs3.exe",
-    "database": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3145.gbf",
-    "database_sha256": "13d3fe37095b286ab7e998a0f7a4123abd877dfbf6c37706c919b054fe6cd74b",
+    "database": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+    "database_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
     "changes": [
       "00791c08 float4",
       "00791c0c float4",
@@ -99,7 +99,13 @@
     ],
     "save_live_readback": true,
     "isolated_readback": "passed: two float4 globals, unchanged body, custom ABI/plate and all three existing signatures; 4340 functions",
-    "isolated_readback_sha256": "875c38e5d471ab5b688f9c6114e5aacc26014cabb554f1516ee0c54eb569483b"
+    "isolated_readback_sha256": "289bdd4ae59da086ecd5cefe9e3e505971d92c628f3ba26562e61f0323f3ef12",
+    "previous_checkpoint": {
+      "database": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3145.gbf",
+      "database_sha256": "13d3fe37095b286ab7e998a0f7a4123abd877dfbf6c37706c919b054fe6cd74b",
+      "isolated_readback_sha256": "875c38e5d471ab5b688f9c6114e5aacc26014cabb554f1516ee0c54eb569483b"
+    },
+    "closed_checkpoint": true
   },
   "limits": [
     "Only aligned nonaliasing valid synthetic buffers, serialized shared scratch and CW037f",

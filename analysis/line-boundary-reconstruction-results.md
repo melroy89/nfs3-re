@@ -37,7 +37,7 @@ This relocation is a test-environment adaptation, not an executable patch or pro
 
 The user-opened `nfs3_decomp` session was used to type `00791c08` and `00791c0c` as four-byte floats, based on their verified FLD/FST/FSTP accesses, without changing storage or bytes. Existing global names were retained; the plugin's naming-prefix check needed a per-call override for those legacy names. Refreshed pseudocode no longer has the overlapping-smaller-symbol warning; the unknown-custom-convention warning correctly remains.
 
-The `00485c30` plate records test scope/results, extended/reloaded comparison behavior and the outstanding machine-state/integration gates. Save and live comment readback matched. The program was closed after saving to produce a consistent checkpoint; the Ghidra application remains available and the program is reopened after validation. Saved-database identity and isolated readback are recorded in the curated evidence. No other functions, game configuration or executable bytes were changed.
+The `00485c30` plate records test scope/results, extended/reloaded comparison behavior and the outstanding machine-state/integration gates. Save and live comment readback matched. The program was closed after saving to produce a consistent checkpoint; the program was initially reopened after validation. The latest follow-up checkpoint (`db.3146.gbf`) was then saved with Ghidra closed normally, independently reopened read-only, and committed; Ghidra is left closed to keep that checkpoint stable. Saved-database identity and isolated readback are recorded in the curated evidence. No other functions, game configuration or executable bytes were changed.
 
 ## Acceptance and next work
 
