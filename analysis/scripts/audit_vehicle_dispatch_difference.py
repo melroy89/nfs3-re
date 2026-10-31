@@ -19,7 +19,8 @@ def main():
         spans = [(0x4bbba0, 0x4bbcb4 if label == 'original' else 0x4bbce3),
                  (0x4bbad0, 0x4bbb94), (0x422aa0, 0x422ace),
                  (0x4bb4c0, 0x4bb5ce), (0x4b90e0, 0x4b913f),
-                 (0x4bae00, 0x4bb10f), (0x4bb200, 0x4bb495)]
+                 (0x4bae00, 0x4bb10f), (0x4bb200, 0x4bb495),
+                 (0x4e0d88, 0x4e0dee), (0x4e0dee, 0x4e0e2b), (0x4eb230, 0x4eb257)]
         if label == 'official_modern':
             spans += [(0x472d10, 0x472e1d), (0x47263c, 0x472678), (0x43778c, 0x4377c1)]
         rows = []
@@ -32,6 +33,8 @@ def main():
                          'assembly': str(path.relative_to(ROOT)),
                          'assembly_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows}
+        result['binaries'][label]['rng_initial_state_hex'] = pe.get_data(0x5644e0-0x400000, 24).hex()
+        result['binaries'][label]['rng_fraction_scale_hex'] = pe.get_data(0x54b734-0x400000, 8).hex()
         if label == 'official_modern':
             result['binaries'][label]['admission_default_tables'] = {
                 f'{a:08x}': list(pe.get_data(a-0x400000, 6)) for a in (0x472e2c, 0x472e4a)}
@@ -46,6 +49,13 @@ def main():
         pair = [result['binaries'][k]['spans'][index] for k in ('original', 'official_modern')]
         assert pair[0]['bytes_sha256'] == pair[1]['bytes_sha256']
         result['identical_render_bodies'].append(pair[0]['start'])
+    result['identical_rng_bodies'] = []
+    for index in (7, 8, 9):
+        pair = [result['binaries'][k]['spans'][index] for k in ('original', 'official_modern')]
+        assert pair[0]['bytes_sha256'] == pair[1]['bytes_sha256']
+        result['identical_rng_bodies'].append(pair[0]['start'])
+    for key in ('rng_initial_state_hex', 'rng_fraction_scale_hex'):
+        assert result['binaries']['original'][key] == result['binaries']['official_modern'][key]
     images = [pefile.PE(str(ROOT/SPECS[k][0])) for k in ('original', 'official_modern')]
     bodies = [p.get_data(0x4b90e0-0x400000, 0x5f) for p in images]
     differences = [{'address': f'{0x4b90e0+i:08x}', 'original': f'{a:02x}', 'modern': f'{b:02x}'}

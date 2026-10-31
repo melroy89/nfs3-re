@@ -97,3 +97,27 @@ The writes occur at `00472d4d` and `00472e09`. This table evaluates the dispatch
 A separate initialization block writes zero to `006fbc1c` at `00472672`. Existing config-load research also establishes bulk config restoration. Modern helper `0043778c` can restore `006fd1d8` from temporary `00664688` when token matcher `004429c0` returns nonzero. It also copies `00664684` to `006fd1d4`; on a matcher miss that second copy occurs only when fog gate `007a3a54` is zero. Adjacent menu code uses the literal tokens `GRAPH_FOG` and `GRAPH_FOG_CASCADE`, but those strings alone do not establish that `006fd1d8` is simply a named fog boolean or that context DWORD0 identifies a particular viewport. The whole option binding must be followed before assigning that semantic label.
 
 **Verified:** two direct default producers, exact six-entry tables, zero initialization and conditional restore producer. **Still unresolved:** complete UI binding and context meaning, indirect/bulk writes beyond the existing config evidence, all original default counterparts and actual runtime values. This narrows the unknowns without converting a default table into a universal renderer policy. The script retains the Modern-specific producer spans; original bytes at those reused addresses are not presented as automatically corresponding functions.
+
+## 7. Shared RNG: algorithm retained, consumption can change
+
+The downstream fraction helper `004eb230..004eb257` calls the same generator `004e0d88`, masks EAX to 16 bits, zero-extends into a temporary 64-bit integer, loads it with FILD, and multiplies by binary64 constant `0054b734` = **1/65536**. Its result is ST0 in `[0, 65535/65536]`; EAX/EDX are saved/restored. This fraction construction uses exactly representable binary values, but later object scaling/subtraction still depends on floating-point state and operands.
+
+The evidence script now verifies these complete bodies are identical in original and Modern:
+
+| Entry | Exclusive end | Function |
+|---|---|---|
+| `004e0d88` | `004e0dee` | Shared six-word generator |
+| `004e0dee` | `004e0e2b` | Seed-to-six-word initializer |
+| `004eb230` | `004eb257` | Low-16-bit fraction wrapper |
+
+The generator reads/writes shared DWORDs `005644e0..005644f4`, using an ADD/ADC chain and increment cascade, then stores/returns word0. The seed initializer takes incoming EAX, cumulatively adds literals `f22d0e56`, `96041893`, `3df3b646`, `40dde76d`, `97327ae1`, `d1a9fbe7`, and stores each intermediate DWORD to the corresponding state word. Arithmetic is modulo 2^32. It does not establish a particular generator family or mathematical quality.
+
+Both files contain the same initial state bytes:
+
+`560e2df2 e9263188 2fdd24c6 9cc40207 7d3f359e 643bdf6f`
+
+These groups are **bytes in file order**, not printed numeric DWORD values. They match the initializer's cumulative additions from seed zero, but their presence does not prove the runtime seed is zero. Runtime seed calls can overwrite them; existing race/roster/configuration research records such callers. The binary64 fraction-scale bytes also match (`000000000000f03e`).
+
+The render randomizer contains no private seed, snapshot or restore. Each admitted call reaches this shared generator once, so a difference in the gate can alter the next shared state even though the generator algorithm and initial file bytes are unchanged. Existing [music-selection comparison](original-modern-music-selection.md) establishes another consumer of `004e0d88`; the sky-grid/shared-RNG sections of [detailed notes](detailed-analysis-notes.md) establish additional use and seed-order limitations. The exact cross-subsystem call order, intervening reseeding, threading and dependency on simulation outcomes are not established here.
+
+**Result:** shared-state ownership is confirmed; render-gate differences can change shared RNG consumption under inputs where the gates disagree. **Not established:** a particular replay divergence, multiplayer desynchronization, physical trajectory change or historical patch regression. Those claims require traced state consumers and controlled runtime comparisons, not just a changed random call count.

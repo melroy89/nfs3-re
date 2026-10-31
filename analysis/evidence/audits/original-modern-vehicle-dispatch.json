@@ -54,8 +54,31 @@
           "bytes_sha256": "c942db4bb4cce93869fc73c577d3066c0a9bd0ffb33039cf1621f6e9737d6f41",
           "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004bb200.asm",
           "assembly_sha256": "011a97390efa15b43fc7bcdeb146690051112f15bd0968e6741b7d31a901a47b"
+        },
+        {
+          "start": "004e0d88",
+          "end": "004e0dee",
+          "bytes_sha256": "11757283f816d92099df3b883297158589ee6d88f4c321574b1410da94e872d3",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004e0d88.asm",
+          "assembly_sha256": "3d1e219536001b027674bc97850fb464199490b2500a7db1595e4bd22d97521b"
+        },
+        {
+          "start": "004e0dee",
+          "end": "004e0e2b",
+          "bytes_sha256": "c60c4b5eb433788df679f3249775e5d930c339d71832b94aad1479be72d30709",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004e0dee.asm",
+          "assembly_sha256": "0278136f924245086b6b844a3c5c0ed1ffb6a6f43c7a107bcc464c4de2be03db"
+        },
+        {
+          "start": "004eb230",
+          "end": "004eb257",
+          "bytes_sha256": "f1ee0c362ad17b19029d0c63fbd806d3acf6ae4acd20d3aae3c40d2fd932f613",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004eb230.asm",
+          "assembly_sha256": "d9b3c32e783a8e36953ee85d4f92b775d157e33fba5ba8562c57b351345bcbae"
         }
-      ]
+      ],
+      "rng_initial_state_hex": "560e2df2e92631882fdd24c69cc402077d3f359e643bdf6f",
+      "rng_fraction_scale_hex": "000000000000f03e"
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -111,6 +134,27 @@
           "assembly_sha256": "3cf661c9d603acd914c2ad4ee54e37662b99361633f047c5a87444a66bd4ab2b"
         },
         {
+          "start": "004e0d88",
+          "end": "004e0dee",
+          "bytes_sha256": "11757283f816d92099df3b883297158589ee6d88f4c321574b1410da94e872d3",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004e0d88.asm",
+          "assembly_sha256": "122f424d26a387cdc3c4f5a928c7d35ca82b8fe981a83bed121f6fbecb63e580"
+        },
+        {
+          "start": "004e0dee",
+          "end": "004e0e2b",
+          "bytes_sha256": "c60c4b5eb433788df679f3249775e5d930c339d71832b94aad1479be72d30709",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004e0dee.asm",
+          "assembly_sha256": "3cb3814a64c5538197a269b69c62a4a5674e362b1670d8408bd9079c18115142"
+        },
+        {
+          "start": "004eb230",
+          "end": "004eb257",
+          "bytes_sha256": "f1ee0c362ad17b19029d0c63fbd806d3acf6ae4acd20d3aae3c40d2fd932f613",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004eb230.asm",
+          "assembly_sha256": "8aac46c2ad850807199b22c8f866285589d9589a0b172bf2150c980df57005ac"
+        },
+        {
           "start": "00472d10",
           "end": "00472e1d",
           "bytes_sha256": "39803c6749cdd42cd291dd75c764511c85f7e461bc781ed31b83d0b90f65d1f8",
@@ -132,6 +176,8 @@
           "assembly_sha256": "02b9f1fb258d7176f510cbea0fd29e2c31736d3ca51196de903f78f3a071e7a3"
         }
       ],
+      "rng_initial_state_hex": "560e2df2e92631882fdd24c69cc402077d3f359e643bdf6f",
+      "rng_fraction_scale_hex": "000000000000f03e",
       "admission_default_tables": {
         "00472e2c": [
           2,
@@ -165,6 +211,11 @@
     "004bb4c0",
     "004bae00",
     "004bb200"
+  ],
+  "identical_rng_bodies": [
+    "004e0d88",
+    "004e0dee",
+    "004eb230"
   ],
   "randomizer_changed_bytes": [
     {
