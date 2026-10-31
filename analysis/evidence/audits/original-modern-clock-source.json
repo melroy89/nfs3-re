@@ -1,0 +1,524 @@
+{
+  "kind": "static-clock-loading-timing-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0048eb90",
+          "end": "0048ec3d",
+          "bytes_sha256": "6427bd9f458905998e392c5346c2a2f7d8e041ad2f5b6424f6deeeab40d0c34f",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048eb90.asm",
+          "assembly_sha256": "3665e4a8aed7ea57f691d48b3c8af1e8ba6d896bd9f3c6022a501ce02f1e415e"
+        },
+        {
+          "start": "0048ed30",
+          "end": "0048ee27",
+          "bytes_sha256": "aec7c0c58f35f64785a08f27b2fcfaf3f07d93f1c1d58db0c4daaa0dee2d2b64",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048ed30.asm",
+          "assembly_sha256": "f1722b1f7fa2fa99c09c6407772fc9e1a56dd07af57b3ccaf6359b2d0bceaea6"
+        },
+        {
+          "start": "0048eff0",
+          "end": "0048f070",
+          "bytes_sha256": "de8a26b0ba1e2e80e73d6935da1c650ef0e0fa5f88c5bddaaa7065cb7a351bfe",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048eff0.asm",
+          "assembly_sha256": "d9c7960ed65386064599eb23ae43ed41087e1227d2a8f9b6d5016fbf89c5b309"
+        },
+        {
+          "start": "0048f075",
+          "end": "0048f1e5",
+          "bytes_sha256": "b4875f4d5a697f54fb686869e1a570ab3ed17c06daca92ee900ecf0fbc11b795",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048f075.asm",
+          "assembly_sha256": "b3fe5097b768cafc4d5e1a083f63abee963fb2de30b4d80563367350c4b75ab9"
+        },
+        {
+          "start": "004f2790",
+          "end": "004f279c",
+          "bytes_sha256": "cf2049efe9ac8f4ae48baacc14d75fc7aaf3dbd5614f75e6f1899d809b519f08",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-004f2790.asm",
+          "assembly_sha256": "646e9cc343eab6196a6480f2ddb7230fde86839daf3db22d72f0b420d0328750"
+        },
+        {
+          "start": "00533d18",
+          "end": "00533d1e",
+          "bytes_sha256": "3096602a98e6da18a39f15eb309aef3893615d5e4f2c9e74ad87c3a15b8c8914",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-00533d18.asm",
+          "assembly_sha256": "7714b5c7216d3edf98f572e8811681492ab09a7d646b46c20d64012ca5bbda67"
+        },
+        {
+          "start": "004a3400",
+          "end": "004a35cb",
+          "bytes_sha256": "9fe1884af45d747e89f3768b9dd5aa46884e0bbc509db0bcb680c08381a41948",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-004a3400.asm",
+          "assembly_sha256": "b37bc2c9d77913000c9fc6f25b1e4e9b4d9dc27d7f97c0c3eff6edb7593f464b"
+        },
+        {
+          "start": "0048eb97",
+          "end": "0048eb9e",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048eb97.asm",
+          "assembly_sha256": "6ba721aad63748a2819de5377250c9e7771a5934c9049b252d28c780d3fd199a"
+        },
+        {
+          "start": "0048ebe4",
+          "end": "0048ebeb",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048ebe4.asm",
+          "assembly_sha256": "199812875ac1c1299d0eff21182c057d017892de598da7e4dfb2bdc4df877282"
+        },
+        {
+          "start": "0048ed70",
+          "end": "0048ed77",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048ed70.asm",
+          "assembly_sha256": "400b378b27863163025a1280f2325bcadcf55b222659baf351f8e802d8ea15e8"
+        },
+        {
+          "start": "0048ed8e",
+          "end": "0048ed95",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048ed8e.asm",
+          "assembly_sha256": "be2eb0810f1b876e6b54b2fb1690303403ae93ae8d86054e8782b9303e2474fe"
+        },
+        {
+          "start": "0048f13d",
+          "end": "0048f144",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048f13d.asm",
+          "assembly_sha256": "b212570d93579935fc241f0587fd88d2952113aa94a3d0683fe8258d8ce05ee5"
+        },
+        {
+          "start": "0048f160",
+          "end": "0048f167",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048f160.asm",
+          "assembly_sha256": "cdc9137fccf2d1c4b838689e97ef8a77bf4df0afd5f36acd07dbc0d0edb5f09c"
+        },
+        {
+          "start": "0048f17b",
+          "end": "0048f182",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0048f17b.asm",
+          "assembly_sha256": "9c4cd8a7ad3a389601f501aa762039efe5f290f3a08e1bb72349ea5fa4bd1990"
+        },
+        {
+          "start": "0049faba",
+          "end": "0049fac1",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0049faba.asm",
+          "assembly_sha256": "877fc7af12321bd197a99bf932ff67cdbb9dc96550b7469bd24c1c567b06e585"
+        },
+        {
+          "start": "0049fad9",
+          "end": "0049fae0",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-0049fad9.asm",
+          "assembly_sha256": "0e32bfc612ecc94386f3674f3839bf6bbc02c510e6a2436826095198cd3b691a"
+        },
+        {
+          "start": "004ed169",
+          "end": "004ed170",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-004ed169.asm",
+          "assembly_sha256": "cd93382f7c6ff0852979fc2ebd439037a0a1731bee0501700f8fffd7fad69d89"
+        },
+        {
+          "start": "004ed2ec",
+          "end": "004ed2f3",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-004ed2ec.asm",
+          "assembly_sha256": "1e9ac08a99ca8cadf388cc10e9622f097c365469722c7bf7b184b7b95a531fe2"
+        },
+        {
+          "start": "004ed366",
+          "end": "004ed36d",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-004ed366.asm",
+          "assembly_sha256": "af3a7b583298cc6d7d93fe3bd3721a1699e64674986d297f4ea69cc9251e6b9d"
+        },
+        {
+          "start": "004ed3a6",
+          "end": "004ed3ad",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-004ed3a6.asm",
+          "assembly_sha256": "ebc60ad3cd3b9afec90418dea25a5d704e95eeeeb54027ba26ef626dc9c29c2d"
+        },
+        {
+          "start": "004f6e9c",
+          "end": "004f6ea3",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-004f6e9c.asm",
+          "assembly_sha256": "187be7335a06801f4fa2b7e77aa1d4113d025bd2dbf66fcaf2de767354b4c699"
+        },
+        {
+          "start": "004f6ee3",
+          "end": "004f6eea",
+          "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-004f6ee3.asm",
+          "assembly_sha256": "e36c93288c64af5d338af666e3c3b131b3e135d50cf5eae9bf3bf3a03943b659"
+        }
+      ],
+      "clock_imports": {
+        "00534568": {
+          "dll": "KERNEL32.dll",
+          "name": "GetTickCount"
+        },
+        "00534650": {
+          "dll": "WINMM.dll",
+          "name": "timeBeginPeriod"
+        },
+        "00534654": {
+          "dll": "WINMM.dll",
+          "name": "timeEndPeriod"
+        },
+        "00534660": {
+          "dll": "WINMM.dll",
+          "name": "timeSetEvent"
+        }
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0048eb90",
+          "end": "0048ec3d",
+          "bytes_sha256": "ee81fe4c45b109a96772175cc2b4e328255906941ac4d3f42d2176dae094c9c3",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048eb90.asm",
+          "assembly_sha256": "dc8a3dd01a70ba6de5ac1332354c9eb8e0f8ca961e4a7eac29f3ce624cb8cb5a"
+        },
+        {
+          "start": "0048ed30",
+          "end": "0048ee27",
+          "bytes_sha256": "4b6bfc7ad320cc650ae6012b9099b4bc7e75030b8f62b11902bd9d59a51ac7ce",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048ed30.asm",
+          "assembly_sha256": "b70b0d2a17efe4044cab64c857b1cc4dc28ef00a17645c43f7fa7dc9586109ed"
+        },
+        {
+          "start": "0048eff0",
+          "end": "0048f070",
+          "bytes_sha256": "de8a26b0ba1e2e80e73d6935da1c650ef0e0fa5f88c5bddaaa7065cb7a351bfe",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048eff0.asm",
+          "assembly_sha256": "d8e735f3d4bc1c021e3823c49ce85505670fd52b5904c3bd2ea4b864408655d1"
+        },
+        {
+          "start": "0048f075",
+          "end": "0048f1e5",
+          "bytes_sha256": "568bc1f6566f471c64330a6c2244601bbe55b9eea06ea8695e24c3468fafab37",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048f075.asm",
+          "assembly_sha256": "433dc9bf8af6320fb7b321a2b5286b9b6243984f1472944b67037f1f940a2317"
+        },
+        {
+          "start": "004f2790",
+          "end": "004f279b",
+          "bytes_sha256": "11b01af79e6e15a08d72636a0bd8e5bc69c0995b8e0796e0eff7e26192494c82",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004f2790.asm",
+          "assembly_sha256": "2fa6f0bacd75d5c3ee68de1a51b6e4c294a61e2a635a9d3cdeadaffe70d01f17"
+        },
+        {
+          "start": "00533d18",
+          "end": "00533d1e",
+          "bytes_sha256": "3096602a98e6da18a39f15eb309aef3893615d5e4f2c9e74ad87c3a15b8c8914",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-00533d18.asm",
+          "assembly_sha256": "29d51a75aa1eefafd73deb257c5a7e9c06386e4a8f86d1f1376b7a98edbd749d"
+        },
+        {
+          "start": "004a33d0",
+          "end": "004a35a5",
+          "bytes_sha256": "67d04a6d8622022d5bb54773d8857e1553221280ea0ea87d5021afbd51b191c1",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004a33d0.asm",
+          "assembly_sha256": "7b99dd350d7cbf485bd15000a17548b4665d3b834594ad17e76034e42949ee1e"
+        },
+        {
+          "start": "00490134",
+          "end": "004901c3",
+          "bytes_sha256": "4c17c1eabdd64fb0ae28cdba7028baca3be7d7a39e32a447f3af65e4d085704d",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-00490134.asm",
+          "assembly_sha256": "b77f17892b0c638b2d3be361addc840825c6771b27c2018f65104b7d6225bf95"
+        },
+        {
+          "start": "00495230",
+          "end": "00495268",
+          "bytes_sha256": "9fbb84b944796ce7929e554748702a902a095349de176b7cfc8a6e1f46677413",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-00495230.asm",
+          "assembly_sha256": "a8b51150f53dd1a53fda8072abf2c0d7d0205b8976e11ad9003e15669e653862"
+        },
+        {
+          "start": "004955a0",
+          "end": "004955c4",
+          "bytes_sha256": "33e733bd98e970cf779d9cbe253772b4743564c9ada64157a51b7f688317103e",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004955a0.asm",
+          "assembly_sha256": "c35e76307a304db21e673c7297f16855dcf72636b977c48c51cb2b3d84c98c41"
+        },
+        {
+          "start": "00451960",
+          "end": "004519b0",
+          "bytes_sha256": "e77bdc7367dc164010180906984b6f2fee38b20d0502f4c32e8f13dceb94b5bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-00451960.asm",
+          "assembly_sha256": "8552e4e19d72a2cf18577334227e4fd60540038d742e53db7cc1d9eca5a44b43"
+        },
+        {
+          "start": "004b5624",
+          "end": "004b5634",
+          "bytes_sha256": "7107daeadd94aa768ee96973d5adcf56b284fd8a2ee999472b97deb6e0b00afb",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004b5624.asm",
+          "assembly_sha256": "39baa61fd40cb32ba37adb5a3d6aee406822213873f1c5387b10ff5b7ae906b5"
+        },
+        {
+          "start": "0048eb97",
+          "end": "0048eb9e",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048eb97.asm",
+          "assembly_sha256": "5b1cd7c8a63fd6322b3fccf1511e4dda9d2d9ef625e7c2401a5ab80793c26b21"
+        },
+        {
+          "start": "0048ebe4",
+          "end": "0048ebeb",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048ebe4.asm",
+          "assembly_sha256": "ca5b3097f48ae52fa1e6c9aa55fe21c1798bc83afd35702033bc5a085dd47cae"
+        },
+        {
+          "start": "0048ed70",
+          "end": "0048ed77",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048ed70.asm",
+          "assembly_sha256": "aafcc2fae82fc6b63193b7a041341246f32c31b829ef0672f9bfe16ac77127b8"
+        },
+        {
+          "start": "0048ed8e",
+          "end": "0048ed95",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048ed8e.asm",
+          "assembly_sha256": "5d68aba8d7b0e693e20eb99325cd7c983e271d27a49336da017179dc252ff7c9"
+        },
+        {
+          "start": "0048f13d",
+          "end": "0048f144",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048f13d.asm",
+          "assembly_sha256": "6e18dfbba772ee41b12184300d303e980b302b56cc976daca82e2bec54a8873d"
+        },
+        {
+          "start": "0048f160",
+          "end": "0048f167",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048f160.asm",
+          "assembly_sha256": "efafc56158fbb8321fedc639b1d0f634125f350a793ba4dd40b172155997c569"
+        },
+        {
+          "start": "0048f17b",
+          "end": "0048f182",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048f17b.asm",
+          "assembly_sha256": "014da7fecac8e129f59ea3ad3a2aa4cd6fa2c2c105aeaf7affeffc1cf74a6087"
+        },
+        {
+          "start": "0049faba",
+          "end": "0049fac1",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0049faba.asm",
+          "assembly_sha256": "107442b48878ae6071574d84eed694c6cb3243e648c28dcf5c750ed31873e6da"
+        },
+        {
+          "start": "0049fad9",
+          "end": "0049fae0",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0049fad9.asm",
+          "assembly_sha256": "c67d5bcf55dbf427594ba379103baee42528b75b3cbe98f8a1c635abdb38248a"
+        },
+        {
+          "start": "004ed169",
+          "end": "004ed170",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004ed169.asm",
+          "assembly_sha256": "856db63a59d36b43f8f93afbbc7f54ae6e23ff5f78c2b8b9c9dc2919cfbc05d1"
+        },
+        {
+          "start": "004ed2ec",
+          "end": "004ed2f3",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004ed2ec.asm",
+          "assembly_sha256": "d754dc671d9b71416a92241a167870295a7b41edb8eb153014d0ea52ab431171"
+        },
+        {
+          "start": "004ed366",
+          "end": "004ed36d",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004ed366.asm",
+          "assembly_sha256": "21de57f1e4e2a8b225fc5d06144fc190ff6614a0f92f3d654d6464e90765984e"
+        },
+        {
+          "start": "004ed3a6",
+          "end": "004ed3ad",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004ed3a6.asm",
+          "assembly_sha256": "1ea08bd17f78084117d64b91d6438f9a6eeb711becaa4434570f2ac2aba6f9ba"
+        },
+        {
+          "start": "004f6e9c",
+          "end": "004f6ea3",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004f6e9c.asm",
+          "assembly_sha256": "afd66496c80f525aa6815f68a3ddd38a911f7279928ee6f8f9b83800a7c64860"
+        },
+        {
+          "start": "004f6ee3",
+          "end": "004f6eea",
+          "bytes_sha256": "cca5184a96e63083e90ec462cf350a9a5e0c9d2783876a221451a2bd354c80bc",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004f6ee3.asm",
+          "assembly_sha256": "bc2ed152e7554b413e378ca1953a684f5882e6c364ecd2bc564c8ae4122dcc87"
+        }
+      ],
+      "clock_imports": {
+        "00534568": {
+          "dll": "KERNEL32.dll",
+          "name": "GetTickCount"
+        },
+        "00534650": {
+          "dll": "WINMM.dll",
+          "name": "timeBeginPeriod"
+        },
+        "00534654": {
+          "dll": "WINMM.dll",
+          "name": "timeEndPeriod"
+        },
+        "00534660": {
+          "dll": "WINMM.dll",
+          "name": "timeSetEvent"
+        },
+        "00534664": {
+          "dll": "WINMM.dll",
+          "name": "timeGetTime"
+        }
+      }
+    }
+  },
+  "clock_sites": [
+    {
+      "address": "0048eb97",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "0048ebe4",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "0048ed70",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "0048ed8e",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "0048f13d",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "0048f160",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "0048f17b",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "0049faba",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "0049fad9",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "004ed169",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "004ed2ec",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "004ed366",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "004ed3a6",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "004f2792",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "ff1564465300"
+    },
+    {
+      "address": "004f6e9c",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    },
+    {
+      "address": "004f6ee3",
+      "original_instruction_hex": "2eff1568455300",
+      "official_modern_instruction_hex": "2eff1564465300"
+    }
+  ],
+  "limits": [
+    "No target/API timing, scheduling, frame-rate or synchronization measurement.",
+    "Direct IAT sites do not exclude indirect calls or dynamically resolved time sources.",
+    "Normalized byte equality is not runtime-state equivalence."
+  ],
+  "normalized_timer_ranges": [
+    {
+      "start": "0048eb90",
+      "end": "0048ec3d",
+      "only_changes_are_clock_IAT_operands": true,
+      "sites": [
+        "0048eb97",
+        "0048ebe4"
+      ]
+    },
+    {
+      "start": "0048ed30",
+      "end": "0048ee27",
+      "only_changes_are_clock_IAT_operands": true,
+      "sites": [
+        "0048ed70",
+        "0048ed8e"
+      ]
+    },
+    {
+      "start": "0048eff0",
+      "end": "0048f070",
+      "only_changes_are_clock_IAT_operands": true,
+      "sites": []
+    },
+    {
+      "start": "0048f075",
+      "end": "0048f1e5",
+      "only_changes_are_clock_IAT_operands": true,
+      "sites": [
+        "0048f13d",
+        "0048f160",
+        "0048f17b"
+      ]
+    }
+  ]
+}

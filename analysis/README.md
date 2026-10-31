@@ -3,6 +3,8 @@
 This directory contains reviewed research notes, retained evidence and reproducible analysis helpers.
 
 - [Original versus Modern Patch: baseline, measured differences and remaining work](original-modern-differences.md)
+- [Original versus Modern clock source and retained timer algorithms](original-modern-clock-source.md)
+- [Original versus Modern loading timing and input cancellation](original-modern-loading-timing.md)
 - [Original versus Modern working directory, INI selection and data directories](original-modern-startup-paths.md)
 - [Original versus Modern HUD preset source and default records](original-modern-hud-layout.md)
 - [Original versus Modern loading artwork tiling and progress setup](original-modern-loading-artwork.md)

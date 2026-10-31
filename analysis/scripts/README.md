@@ -223,3 +223,7 @@ Run `python3 analysis/scripts/audit_hud_layout_difference.py` and `python3 analy
 ## Original versus Modern startup paths
 
 Run `python3 analysis/scripts/audit_startup_paths_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). It captures original setter/frontend witnesses and Modern startup/CWD/INI/directory helpers. It resolves initialized path slots from the file-backed source table, without misreading destination BSS as file strings. Output: `analysis/evidence/audits/original-modern-startup-paths.json`; raw captures stay ignored. No filesystem/API/target mutation. See [the path comparison](../original-modern-startup-paths.md).
+
+## Original versus Modern clock and loading timing
+
+Run `python3 analysis/scripts/audit_clock_source_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). It verifies 16 paired clock calls and exact timer-body equality after normalizing only the identified IAT operands in temporary comparison buffers. It also captures loading helpers, settings and timing/input consumers. Output: `analysis/evidence/audits/original-modern-clock-source.json`; raw assembly stays ignored. No target/API execution or executable changes. See [clock](../original-modern-clock-source.md) and [loading timing](../original-modern-loading-timing.md) findings.

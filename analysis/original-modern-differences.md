@@ -100,7 +100,7 @@ The [renderer-loading comparison](original-modern-renderer-loading.md) establish
 
 ## 7. Game configuration lookup
 
-The [configuration comparison](original-modern-configuration.md) traces the Modern caller and INI/environment readers: explicit INI values precede environment defaults, then caller defaults. Original registry imports and the new profile API calls support a migration, but each original setting/key still needs mapping. The configured filename is passed as direct buffer address `007a263c`; its complete initialization history remains unresolved.
+The [configuration comparison](original-modern-configuration.md) traces the Modern caller and INI/environment readers: explicit INI values precede environment defaults, then caller defaults. Original registry imports and the new profile API calls support a migration, but each original setting/key still needs mapping. The configured filename is passed as direct buffer address `007a263c`; its executable-basename selection and fallback are now traced in the startup-path chapter; later writes remain outside that bounded audit.
 
 ## 8. Window initialization and callback lifecycle
 
@@ -138,7 +138,11 @@ The [HUD initializer comparison](original-modern-hud-layout.md) traces original 
 
 The [startup-path comparison](original-modern-startup-paths.md) traces Modern’s explicit executable-directory attempt, its ignored API result/210-character gate, executable-basename INI preference and fallback, 22 initialized path slots and 13-required/four-create directory tables. Original already has directory setters and a frontend switch/restore path; the change is not a newly imported API. Ordinary INI producer-to-reader linkage and conditional screenshot-directory anchoring are now explained. Complete original installation discovery and later CWD/path writes remain separate.
 
-## 17. Prioritized semantic work remaining
+## 17. Clock source and loading timing
+
+The [clock comparison](original-modern-clock-source.md) verifies 16 direct GetTickCount-to-timeGetTime replacements, while three timer functions retain every other body instruction. This supports the API-change claim, not measured accuracy or frame pacing. The [loading-timing comparison](original-modern-loading-timing.md) traces seconds-to-milliseconds conversion, low-32-bit arithmetic, signed 0–10,000 ms clamp, progress throttling and input cancellation. Exact visible duration, all synchronization consumers and cross-version behavior remain untested.
+
+## 18. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 
@@ -163,4 +167,4 @@ The 290 catalog entries span multiple releases and include driver/assets/configu
 
 `analysis/scripts/ghidra/ExportFunctionInventory.java` exports metadata only. `analysis/scripts/compare_nfs3_executables.py` compares PE sections, imports/resources and selected body bytes without changing an executable or producing C. The JSON records input identities and inventory provenance. Raw downloads, original analysis database, disassemblies and metadata dumps remain under ignored `analysis/captures/modern-differences/`.
 
-Completed static chapters are linked above: exact three-way baseline and whole-code inventory; precision, loader/configuration, windows/screenshots, network ports/input, startup/heap, display/texture, viewport/border, HUD presets/loading artwork comparisons; plus import/resource deltas and the existing RaceNet byte witness. **Still pending:** full semantic mapping of changed regions, catalog-to-code coverage and decisive cross-version runtime compatibility tests. This is progress toward the active audit, not a claim that every Modern Patch change is understood.
+Completed static chapters are linked above: exact three-way baseline and whole-code inventory; precision, loader/configuration, windows/screenshots, network ports/input, startup/heap, display/texture, viewport/border, HUD presets/loading artwork, startup paths and clock/loading timing comparisons; plus import/resource deltas and the existing RaceNet byte witness. **Still pending:** full semantic mapping of changed regions, catalog-to-code coverage and decisive cross-version runtime compatibility tests. This is progress toward the active audit, not a claim that every Modern Patch change is understood.
