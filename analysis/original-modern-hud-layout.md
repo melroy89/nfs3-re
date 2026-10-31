@@ -98,3 +98,23 @@ For ordinary finite results representable in signed 32 bits, original first trun
 The 219-byte Modern saved body union excludes the twelve NOP bytes and reports eight changed in-body bytes. The full envelope includes all twenty changed bytes. Do not equate the saved-body count with complete coverage of removed rounding calls.
 
 **Bounded work status: done; confidence: verified static instructions; conditional numerical consequences derived.** A C cast truncates toward zero and would not represent Modern's general current-rounding-mode conversion contract. Reconstruction must preserve or explicitly emulate the selected semantics and the four-value operation order. Caller control-word state, actual layout values, pixel comparisons and machine-state equivalence remain unverified. See the broader [x87 comparison](og-modern-x87-precision.md) for why this local conversion policy is distinct from arithmetic precision control.
+
+## Additional consumers distinguish fitted and corrected overlay rectangles
+
+The [reference-consumer audit](scripts/audit_hud_reference_consumers.py) now verifies five additional complete same-address functions. For each, replacing exactly the listed reads (plus one constant below) in original bytes reproduces the complete Modern envelope. The expanded [manifest](evidence/audits/hud-reference-consumers.json) records every new read's instruction address, old opcode/source and Modern source.
+
+| Saved Modern entry / label | Complete envelope, exclusive end | Verified read changes |
+|---|---|---|
+| `004800a0` RefreshHudVisibleRectangleQuadsForView | `004800a0..004808af` (2,063 bytes) | `00480187`: signed FILD width `007cdac8`→`007a2748`; one additional quad constant below |
+| `00487210` StoreAndInsetIndexedFloatRectangle | `00487210..0048733c` (300 bytes) | Four FILD reads at `00487238`, `00487251`, `00487284`, `004872b3`: `007cdac8`→`007a2748` |
+| `004880b0` RenderVehicleDrivenRotatedQuads | `004880b0..00488470` (960 bytes) | `004880c7`: `007cdba0`→`007a2758`; `0048818d`/`0048832f`: `007cdb98`→`007a2750`; `004881a4`/`00488346`: `007cdb9c`→`007a2754`; all remain signed FILD |
+| `0048a660` RenderPolicePursuitStatusList | `0048a660..0048aa3e` (990 bytes) | `0048a670`, `0048a714`: signed FILD width `007cdac8`→`007a2748` |
+| `0048aa40` CalculateHUDStandingsColumnWidths | `0048aa40..0048ae69` (1,065 bytes) | Two width FLD→FILD changes, two width source-only FILD changes, one height FLD→FILD change |
+
+For the column-width function, original `0048ab47` and `0048abfa` load binary32 `0055d6b8`; Modern loads signed integer reference width `007a2748`. Original `0048ac53` loads binary32 `0055d6bc`; Modern loads signed integer reference height `007a274c`. The other two reads at `0048ac06` and `0048ae0f` retain FILD but change width address. These type changes matter even when the intended mathematical dimensions are equal: float bits are not integer dimensions.
+
+The rotated-quad function uses a **different group** from the fitted width/height consumers. Existing [overlay producer evidence](original-modern-viewport-geometry.md#overlay-rectangle-at-007a2750-separate-derived-extent-correction) establishes corrected `{x,y,width,height}` at `007a2750..007a275f`, separate from fitted group `007a2740..007a274f`. Its changed sources are therefore corrected overlay X, Y and width. Applying the fitted 4:3 formula indiscriminately to both groups would misrepresent these consumers. Initialization and later resize/update lifetime remain governed by their separately documented producers.
+
+The visible-quad refresh function also changes the immediate store at `00480831`: DWORD record `+3c` receives bits `3f450000` instead of `3f440000`, i.e. binary32 0.76953125 instead of 0.765625. This exact +0.00390625 value change is independent of the width-source replacement. The field's draw-contract meaning is not established by this store alone; it is not labelled a depth/texture-coordinate fix without a corresponding consumer trace.
+
+**Bounded work status: done for these five complete code comparisons; confidence: verified static reads, opcodes and constant bits.** Their unchanged instructions can still consume different metrics, buffers and x87 state. Remaining scope is consumer field semantics, source freshness, full alias/caller domains and rendered standings/pursuit/quad behavior. No game or instruction probes were executed, and executables/Ghidra/reconstruction sources remain unchanged.

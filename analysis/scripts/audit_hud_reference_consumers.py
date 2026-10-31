@@ -1,4 +1,4 @@
-"""Static paired reference-dimension reads in three complete HUD functions."""
+"""Static paired reference-dimension reads in complete HUD functions."""
 import hashlib
 import json
 import struct
@@ -6,7 +6,9 @@ import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT,SPECS
 
-SPANS=[(0x484b70,0x484c10),(0x48ae70,0x48b29f),(0x48d110,0x48d4b3)]
+SPANS=[(0x484b70,0x484c10),(0x48ae70,0x48b29f),(0x48d110,0x48d4b3),
+       (0x4800a0,0x4808af),(0x487210,0x48733c),(0x4880b0,0x488470),
+       (0x48a660,0x48aa3e),(0x48aa40,0x48ae69)]
 
 
 def main():
@@ -34,10 +36,34 @@ def main():
         assert new[index][offset:offset+6]==bytes.fromhex('db0548277a00')
     assert old[1][0x5b:0x61]==bytes.fromhex('d905bcd65500')
     assert new[1][0x5b:0x61]==bytes.fromhex('db054c277a00')
-    result['limits']=['Static dimension-source and FLD/FILD changes only; no HUD pixel comparison.',
+    additional_reads={
+        3:[(0x480187,0xdb,0x7cdac8,0x7a2748)],
+        4:[(a,0xdb,0x7cdac8,0x7a2748) for a in (0x487238,0x487251,0x487284,0x4872b3)],
+        5:[(0x4880c7,0xdb,0x7cdba0,0x7a2758),(0x48818d,0xdb,0x7cdb98,0x7a2750),
+           (0x4881a4,0xdb,0x7cdb9c,0x7a2754),(0x48832f,0xdb,0x7cdb98,0x7a2750),
+           (0x488346,0xdb,0x7cdb9c,0x7a2754)],
+        6:[(a,0xdb,0x7cdac8,0x7a2748) for a in (0x48a670,0x48a714)],
+        7:[(0x48ab47,0xd9,0x55d6b8,0x7a2748),(0x48abfa,0xd9,0x55d6b8,0x7a2748),
+           (0x48ac06,0xdb,0x7cdac8,0x7a2748),(0x48ac53,0xd9,0x55d6bc,0x7a274c),
+           (0x48ae0f,0xdb,0x7cdac8,0x7a2748)]}
+    for index,reads in additional_reads.items():
+        expected_body=bytearray(old[index]);start=SPANS[index][0]
+        for address,opcode,source,destination in reads:
+            offset=address-start
+            assert old[index][offset:offset+6]==bytes([opcode,5])+struct.pack('<I',source)
+            expected_body[offset:offset+6]=bytes([0xdb,5])+struct.pack('<I',destination)
+        if index==3:
+            offset=0x480831-start
+            assert old[index][offset:offset+7]==bytes.fromhex('c7403c0000443f')
+            expected_body[offset:offset+7]=bytes.fromhex('c7403c0000453f')
+        assert bytes(expected_body)==new[index]
+    result['additional_reads']={f'{SPANS[i][0]:08x}':[
+        {'instruction':f'{a:08x}','old_opcode':f'{op:02x}','old_source':f'{src:08x}',
+         'modern_source':f'{dst:08x}'} for a,op,src,dst in rows] for i,rows in additional_reads.items()}
+    result['limits']=['Static dimension-source, FLD/FILD and quad constant changes only; no HUD pixel comparison.',
         'Other globals, callers, aliasing and x87 state remain separate contracts.']
     (ROOT/'analysis/evidence/audits/hud-reference-consumers.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: complete 160/1071/931-byte bodies; four width reads and one typed height read')
+    print('PASS: eight complete bodies; dimension read replacements and one quad-field constant account for every difference')
 
 
 if __name__=='__main__':main()

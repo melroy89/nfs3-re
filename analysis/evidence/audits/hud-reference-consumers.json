@@ -22,6 +22,36 @@
           "end_exclusive": "0048d4b3",
           "sha256": "e83f7e7f1b16393dda1581bf780cb75f7243d22eb8d3233e638dfa3a6d76021d",
           "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-0048d110.asm"
+        },
+        {
+          "start": "004800a0",
+          "end_exclusive": "004808af",
+          "sha256": "6b0ea4d84035dff4e2458f172431396925079e5e8b8574d1bd5450b13bf149e5",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-004800a0.asm"
+        },
+        {
+          "start": "00487210",
+          "end_exclusive": "0048733c",
+          "sha256": "60111591559bee9cc39c5293fac3781950ed11b64937931377492255ceee8b6d",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-00487210.asm"
+        },
+        {
+          "start": "004880b0",
+          "end_exclusive": "00488470",
+          "sha256": "1ea7bf3fd3e743132fe556ea0e44cda00ed708f9eb4c7d1f029da4240cac0db7",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-004880b0.asm"
+        },
+        {
+          "start": "0048a660",
+          "end_exclusive": "0048aa3e",
+          "sha256": "d2f82a2f1f31acb6bc823588e9c46c3840bf99c6216d11f19b6a07456688ec5a",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-0048a660.asm"
+        },
+        {
+          "start": "0048aa40",
+          "end_exclusive": "0048ae69",
+          "sha256": "732f109253e8f0c55e8d9bf3ce6222bf1e76fc434b0125e26e91c73de1888fe9",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-0048aa40.asm"
         }
       ]
     },
@@ -46,12 +76,156 @@
           "end_exclusive": "0048d4b3",
           "sha256": "8ac962baab76a91bf26807c3fcd67ee0ce19c350aa65d8bcb2a638685d79e67f",
           "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-0048d110.asm"
+        },
+        {
+          "start": "004800a0",
+          "end_exclusive": "004808af",
+          "sha256": "bb2859b1a4967bf300197dd2ad00ab6a9bd3862bae0fe0e61abc28d5cddbea25",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-004800a0.asm"
+        },
+        {
+          "start": "00487210",
+          "end_exclusive": "0048733c",
+          "sha256": "39ec2baaf591927690200ae934e3478e021bc53c8a54bcf4ad516cf631451903",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-00487210.asm"
+        },
+        {
+          "start": "004880b0",
+          "end_exclusive": "00488470",
+          "sha256": "cd86673e7a9dd235d956e257c1b15ee2be7ecae9359582ce6d8a90e142d35f27",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-004880b0.asm"
+        },
+        {
+          "start": "0048a660",
+          "end_exclusive": "0048aa3e",
+          "sha256": "42d75d138220f8d766aea80cd3d966ca90355bedffcb9e250de90d357620dce3",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-0048a660.asm"
+        },
+        {
+          "start": "0048aa40",
+          "end_exclusive": "0048ae69",
+          "sha256": "6881d2549a57dee14c0abce945e32904bd41930f582abb3302045ceab8229ae4",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-0048aa40.asm"
         }
       ]
     }
   },
+  "additional_reads": {
+    "004800a0": [
+      {
+        "instruction": "00480187",
+        "old_opcode": "db",
+        "old_source": "007cdac8",
+        "modern_source": "007a2748"
+      }
+    ],
+    "00487210": [
+      {
+        "instruction": "00487238",
+        "old_opcode": "db",
+        "old_source": "007cdac8",
+        "modern_source": "007a2748"
+      },
+      {
+        "instruction": "00487251",
+        "old_opcode": "db",
+        "old_source": "007cdac8",
+        "modern_source": "007a2748"
+      },
+      {
+        "instruction": "00487284",
+        "old_opcode": "db",
+        "old_source": "007cdac8",
+        "modern_source": "007a2748"
+      },
+      {
+        "instruction": "004872b3",
+        "old_opcode": "db",
+        "old_source": "007cdac8",
+        "modern_source": "007a2748"
+      }
+    ],
+    "004880b0": [
+      {
+        "instruction": "004880c7",
+        "old_opcode": "db",
+        "old_source": "007cdba0",
+        "modern_source": "007a2758"
+      },
+      {
+        "instruction": "0048818d",
+        "old_opcode": "db",
+        "old_source": "007cdb98",
+        "modern_source": "007a2750"
+      },
+      {
+        "instruction": "004881a4",
+        "old_opcode": "db",
+        "old_source": "007cdb9c",
+        "modern_source": "007a2754"
+      },
+      {
+        "instruction": "0048832f",
+        "old_opcode": "db",
+        "old_source": "007cdb98",
+        "modern_source": "007a2750"
+      },
+      {
+        "instruction": "00488346",
+        "old_opcode": "db",
+        "old_source": "007cdb9c",
+        "modern_source": "007a2754"
+      }
+    ],
+    "0048a660": [
+      {
+        "instruction": "0048a670",
+        "old_opcode": "db",
+        "old_source": "007cdac8",
+        "modern_source": "007a2748"
+      },
+      {
+        "instruction": "0048a714",
+        "old_opcode": "db",
+        "old_source": "007cdac8",
+        "modern_source": "007a2748"
+      }
+    ],
+    "0048aa40": [
+      {
+        "instruction": "0048ab47",
+        "old_opcode": "d9",
+        "old_source": "0055d6b8",
+        "modern_source": "007a2748"
+      },
+      {
+        "instruction": "0048abfa",
+        "old_opcode": "d9",
+        "old_source": "0055d6b8",
+        "modern_source": "007a2748"
+      },
+      {
+        "instruction": "0048ac06",
+        "old_opcode": "db",
+        "old_source": "007cdac8",
+        "modern_source": "007a2748"
+      },
+      {
+        "instruction": "0048ac53",
+        "old_opcode": "d9",
+        "old_source": "0055d6bc",
+        "modern_source": "007a274c"
+      },
+      {
+        "instruction": "0048ae0f",
+        "old_opcode": "db",
+        "old_source": "007cdac8",
+        "modern_source": "007a2748"
+      }
+    ]
+  },
   "limits": [
-    "Static dimension-source and FLD/FILD changes only; no HUD pixel comparison.",
+    "Static dimension-source, FLD/FILD and quad constant changes only; no HUD pixel comparison.",
     "Other globals, callers, aliasing and x87 state remain separate contracts."
   ]
 }
