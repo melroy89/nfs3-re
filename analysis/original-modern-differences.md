@@ -320,6 +320,10 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 [The view-offset comparison](original-modern-view-offset.md) identifies a new Modern EDX mode, changed fallback offsets and a gated fixed-view update. Its complete function delta is confined to branch policy, while the later x87 transform and two helpers retain identical bytes; numeric/runtime equivalence remains unproven.
 
+## Viewport overlay gate, rectangles and added quads
+
+[The viewport overlay comparison](original-modern-view-overlay.md) maps the narrower bit gate, moved rectangle operands and added fixed-colour shapes. It also retains the complete 143-byte delta envelope: the Modern-range count of138 excludes five bytes belonging to an original CALL operand, so it is not a complete original-instruction diff.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
