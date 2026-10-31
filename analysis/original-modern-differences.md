@@ -356,6 +356,8 @@ The [night-lighting comparison](original-modern-night-lighting.md) isolates an e
 
 See also [track-chain detail selection](original-modern-track-detail.md): mirror quality policy, classifier interface changes and removed next-block classification.
 
+See also [indexed-texture loading progress](original-modern-texture-progress.md): changed stage progress budget and retained cancellation limits.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

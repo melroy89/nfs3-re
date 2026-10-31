@@ -1,0 +1,75 @@
+{
+  "kind": "static-texture-progress-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0041db10",
+          "end": "0041dbb4",
+          "sha256": "462c13b1a42d35e8e14bf88469072b3b317cce2a0f69732d8e01e7cf072361c6",
+          "assembly": "analysis/captures/modern-differences/texture-progress/original-0041db10.asm",
+          "assembly_sha256": "900fa7c00fba53832fe681c0a18a817960145b23706766fc7475bc58137de4ab"
+        },
+        {
+          "start": "004ea654",
+          "end": "004ea658",
+          "sha256": "c1bca4cbaa5b78bd8c93bb60d3901c5213d9dc5d83cd2092f96edcc69a7ab36d",
+          "assembly": "analysis/captures/modern-differences/texture-progress/original-004ea654.asm",
+          "assembly_sha256": "af9a0554f51cb40b2f155ce072d2f746c87f15a92ba1669eb673d554b3ed81de"
+        },
+        {
+          "start": "004ea658",
+          "end": "004ea665",
+          "sha256": "949cb3ca6c4739e79fe6b5779271efecdd6e29315d815b7d0e17f48efe79827d",
+          "assembly": "analysis/captures/modern-differences/texture-progress/original-004ea658.asm",
+          "assembly_sha256": "2ed50f4a279fe0ad53bd5f736e02aa30177dc7a26658e04388cad22369c30fde"
+        }
+      ],
+      "fallback_step_start_budget": [
+        15.0,
+        43.0,
+        15.0
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0041db10",
+          "end": "0041dbb4",
+          "sha256": "505a8d72fd2559f21127b5d3ef833dc3c7ede803b5b54085f4ad15cd38a4afdd",
+          "assembly": "analysis/captures/modern-differences/texture-progress/official_modern-0041db10.asm",
+          "assembly_sha256": "3bca832003a1470eba85851d600f2bd9904b65af0d4fd45ef4909e4037e3d4be"
+        },
+        {
+          "start": "004ea654",
+          "end": "004ea658",
+          "sha256": "c1bca4cbaa5b78bd8c93bb60d3901c5213d9dc5d83cd2092f96edcc69a7ab36d",
+          "assembly": "analysis/captures/modern-differences/texture-progress/official_modern-004ea654.asm",
+          "assembly_sha256": "9cbef37b9795d5a37050f2976080e9872e7b36aa7f62d69a5c6e69e3caab78cf"
+        },
+        {
+          "start": "004ea658",
+          "end": "004ea665",
+          "sha256": "949cb3ca6c4739e79fe6b5779271efecdd6e29315d815b7d0e17f48efe79827d",
+          "assembly": "analysis/captures/modern-differences/texture-progress/official_modern-004ea658.asm",
+          "assembly_sha256": "a7bfc58f666688cb2c4b4f101a11cd20c26016c04646e5015e4e910fa6fec955"
+        }
+      ],
+      "fallback_step_start_budget": [
+        81.0,
+        14.0,
+        81.0
+      ]
+    }
+  },
+  "limits": [
+    "Static only; no visible progress, duration or renderer acceptance tested.",
+    "Budget/count division and each accumulator update round through binary32 under ambient x87 state.",
+    "Skipped null entries and abort paths can prevent the nominal endpoint."
+  ]
+}
