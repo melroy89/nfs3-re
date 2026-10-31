@@ -49,6 +49,17 @@ def main():
         assert ids==expected_ids
         item['race_choice_descriptor_00556be0']=[f'{v:08x}' for v in descriptor]
         item['race_choice_label_ids']=ids
+        menu_descriptor=struct.unpack('<5I',pe.get_data(0x156bf4,20))
+        assert menu_descriptor[0]==0x5382b4 and menu_descriptor[4]==0x6fbbec
+        assert pe.get_data(0x1382b4,16).split(b'\0')[0]==b'menutunes'
+        menu_ids=[]
+        for i in range(24):
+            ident=struct.unpack('<H',pe.get_data(menu_descriptor[1]-0x400000+2*i,2))[0]
+            if ident==0:break
+            menu_ids.append(ident)
+        assert menu_ids==([466]+list(range(467,474)) if label=='original' else [1946,1944,1945]+list(range(467,474)))
+        item['menu_choice_descriptor_00556bf4']=[f'{v:08x}' for v in menu_descriptor]
+        item['menu_choice_label_ids']=menu_ids
         if label=='official_modern':
             item['menu_cycle_ids']=list(pe.get_data(0x40ff80-0x400000,6))
             item['menu_seed_map']=list(pe.get_data(0x40ff88-0x400000,20))
@@ -62,7 +73,7 @@ def main():
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
     english=subprocess.check_output(['7z','x','-so',str(archive),'fedata/text/text.eng'])
-    ids=sorted({ident for item in result['binaries'].values() for ident in item['race_choice_label_ids']})
+    ids=sorted({ident for item in result['binaries'].values() for ident in item['race_choice_label_ids']+item['menu_choice_label_ids']})
     labels={}
     for ident in ids:
         offset=struct.unpack_from('<I',english,4*ident)[0]

@@ -86,6 +86,23 @@
         171,
         172
       ],
+      "menu_choice_descriptor_00556bf4": [
+        "005382b4",
+        "0055633e",
+        "00000000",
+        "00000000",
+        "006fbbec"
+      ],
+      "menu_choice_label_ids": [
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473
+      ],
       "original_track_stems_005525a8": [
         {
           "index": 0,
@@ -264,6 +281,25 @@
         1941,
         1942
       ],
+      "menu_choice_descriptor_00556bf4": [
+        "005382b4",
+        "00556336",
+        "00000000",
+        "00000000",
+        "006fbbec"
+      ],
+      "menu_choice_label_ids": [
+        1946,
+        1944,
+        1945,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473
+      ],
       "menu_cycle_ids": [
         1,
         2,
@@ -319,9 +355,20 @@
       "463": "Track default (Rock)",
       "464": "Track default (Techno)",
       "465": "Track default (Rock or Techno)",
+      "466": "Random",
+      "467": "Whacked",
+      "468": "Romulus 3",
+      "469": "Minotaur",
+      "470": "Pi",
+      "471": "Triton",
+      "472": "Monster",
+      "473": "Whipped",
       "1941": "Random (Rock)",
       "1942": "Random (Techno)",
-      "1943": "Random (Rock or Techno)"
+      "1943": "Random (Rock or Techno)",
+      "1944": "Random (Fast)",
+      "1945": "Random (Slow)",
+      "1946": "Random (All)"
     }
   },
   "identical_music_ranges": [

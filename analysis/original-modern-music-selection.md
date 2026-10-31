@@ -39,7 +39,19 @@ For modes 0..2, it reads cursor `005525fc`, resets unsigned cursor ≥6 to zero,
 
 Seed helper `0040ff9c` calls `005177cc` with EAX=20, indexes a 20-byte mapping at `0040ff88` and writes the resulting cursor to `005525fc`. Direct call `004b5d30` establishes a seed-initialization site; the RNG helper's full range/distribution contract is not reconstructed here. Main music routine calls the cycle helper at `0041060b` before storing its result at `0055258c`.
 
-The two subsets support the mechanism behind **MP153-004**'s additional menu modes. Track names, tempo labels and menu-label-to-setting mapping still require assets/string consumers. Do not assign “Fast” and “Slow” to a numeric mask from the bit pattern alone.
+The `menutunes` descriptor at **`00556bf4`** selects `006fbbec`. Original list pointer `0055633e` contains IDs466..473: Random followed by seven titles. Modern pointer `00556336` contains IDs1946,1944,1945 followed by467..473. Decoding the hash-pinned official English resource gives modes0 **Random (All)**,1 **Random (Fast)**,2 **Random (Slow)**. The names therefore come from resource/list correspondence, not an inference from mask bits. Original IDs are decoded with the Modern language resource; original language provenance remains unverified.
+
+| Internal ID | Fixed-choice title | Modern subset membership |
+|---:|---|---|
+| 1 | Whacked | All, Slow |
+| 2 | Romulus 3 | All, Fast |
+| 3 | Minotaur | All, Slow |
+| 4 | Pi | All, Fast |
+| 5 | Triton | All, Fast |
+| 6 | Monster | None |
+| 7 | Whipped | All, Slow |
+
+The table follows the Modern fixed-setting return rule `setting−2` and the list's title IDs467..473. In particular, the mode labelled “All” excludes ID6 from both its mask and cycle table, despite a fixed choice for Monster. This is a verified selector boundary, not proof that the omission is erroneous or that the track could otherwise be played in every context. Actual musical tempo and audible playback remain untested.
 
 ## Contextual policy now checks whether playback can continue
 
@@ -53,7 +65,7 @@ These are observable call and state rules. The full meanings of the backend oper
 
 ## Catalog conclusions and unknowns
 
-- **MP153-004:** subset masks and cycling are statically supported; menu labels, asset tempo and actual playback remain unverified.
+- **MP153-004:** subset masks, cycling and Fast/Slow list labels are statically supported; musical tempo and actual playback remain unverified.
 - **MP153-005:** stored race progression is supported for modes 13..15, but other modes use `006fd4ac`; exactly one new track per race and complete advertised playlist behavior remain partial.
 - **MP153-003:** the race list names three Random modes and matches the helper’s style rules; asset coverage and actual playback remain unverified.
 - Volume fixes (**MP153-001**) and double-fade prevention (**MP153-006**) are not established by this selection analysis. They require backend/caller comparisons rather than assuming all audio claims follow from changed policy bytes.
@@ -93,3 +105,19 @@ At **`00410163`**, however, the loader compares the setting with **11**, not13. 
 **Bounded conclusion:** on this original loader path, the list's Random setting excludes the distinct `empr` stem and selects no `tech.mus` suffix. This is code-level support for part of **MP153-002**, rather than merely a modulo/table-size inference. Modern's previously retained helper explicitly gives Random modes13..15 the five-stem progression0,1,2,3,8 and respective toggle/Rock/Techno state rules. The new list labels corroborate **MP153-003**'s three mode names. The statement that exactly the “last Rock” and every Techno song were ignored across all original playback routes still requires asset-to-title mapping and caller coverage; no audible result was tested.
 
 Next: inspect actual track assets to associate stems/styles with the ten individual title IDs, follow all playback routes and progression producers, and establish caller cadence. Original UI ordinal serialization is not proven solely by the descriptor; the shared generic selector mechanism is documented in the [Frame Size setting analysis](original-modern-frame-setting.md), while this audit records the direct music-setting consumers. No new audio, RNG or instruction probes were executed; no Ghidra changes were made.
+
+## Local asset availability and title correspondence
+
+The read-only [asset inventory](evidence/inventories/local-music-assets.json), reproduced with `python3 analysis/scripts/inventory_music_assets.py`, records sizes, SHA256 hashes and first16 bytes for the supplied local `.MUS`, `.MAP` and `.LIN` files. Each of `home`, `lost`, `atla`, `alpi`, `empr` has both `rock` and `tech` triples present. These files have local-installation provenance only; this is not an original-versus-Modern asset delta or a playback/decode test.
+
+The fixed original switch pairs settings3/4 with stem0 (`home`),5/6 with1 (`lost`),7/8 with2 (`atla`),9/10 with3 (`alpi`),11/12 with8 (`empr`). Together with the retained label IDs and ordinary style parity, this associates:
+
+| Stem | Odd-setting title / Rock rule | Even-setting title / Techno rule |
+|---|---|---|
+| home | Little Sweaty Sow | Hydrus 606 |
+| lost | Snorkeling Cactus Weasels | Cetus 808 |
+| atla | Rear Flutterblast #19 | Aquilla 303 |
+| alpi | Snow Bags | Knossos |
+| empr | Flimsy | Warped |
+
+This is a selector/list association, not identification by listening or embedded song metadata. Original setting11 has the exceptional randomized style branch documented above, so its loader route cannot simply be described as always selecting `EMPRROCK.MUS`. Modern's helper uses the ordinary parity rule for all fixed settings3..12. On the inspected original Random13 route, the missing distinct Rock stem is therefore the one associated with **Flimsy**, and all five available Techno filenames are excluded. Other callers, route reachability and actual playback still require qualification.

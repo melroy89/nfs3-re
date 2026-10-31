@@ -1,0 +1,400 @@
+{
+  "kind": "local-audio-asset-inventory",
+  "directory": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/GAMEDATA/AUDIO/PC",
+  "files": [
+    {
+      "name": "ALPIROCK.LIN",
+      "size": 4844,
+      "sha256": "8c06e5765ddbf3dd95ff22b4be458d56a9c78c01799290483a86c8ac79c16e7c",
+      "first_16_bytes": "5046447800179610000000020100ffff"
+    },
+    {
+      "name": "ALPIROCK.MAP",
+      "size": 5244,
+      "sha256": "43714ddaf0d644c3b56d8bcd258c055613b399b5be273c59aed3b7b0bcb732ac",
+      "first_16_bytes": "50464478000096100000001b0103ffff"
+    },
+    {
+      "name": "ALPIROCK.MUS",
+      "size": 14376248,
+      "sha256": "422a6d76496832ba45693c2950f54080f1a7d97864345632e5726e843dda78d5",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "ALPITECH.LIN",
+      "size": 6140,
+      "sha256": "9106cc7ab285d7d4cac326be936b0c7e1590ff62249ca7787e9668d33acdca49",
+      "first_16_bytes": "504644780008bf10000000010001ffff"
+    },
+    {
+      "name": "ALPITECH.MAP",
+      "size": 6556,
+      "sha256": "4c1604880f2a496144100fbfb7d16de4bf29174f8a0f71cde9658f04c5f5041b",
+      "first_16_bytes": "5046447800bebf100000001b0103ffff"
+    },
+    {
+      "name": "ALPITECH.MUS",
+      "size": 11503268,
+      "sha256": "258aa0a331ed72c60a8c60f815e765b562c40bc96f58086c1f76b20e00cef509",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "ATLAROCK.LIN",
+      "size": 5180,
+      "sha256": "383bba979c2141dfb1de5b57de17510f9844a4d3b4cf247ea5562fdc2753bbd7",
+      "first_16_bytes": "504644780000a110000000010001ffff"
+    },
+    {
+      "name": "ATLAROCK.MAP",
+      "size": 5500,
+      "sha256": "4d02f8f830415ed41f08734a10324f0f2b16179811ff107011934ab52eaffcb4",
+      "first_16_bytes": "504644780000a110000000150103ffff"
+    },
+    {
+      "name": "ATLAROCK.MUS",
+      "size": 11040424,
+      "sha256": "0f8ba11056a5f71582b251b2ff816b0fe214960bed160c817cceb94437cd5b7d",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "ATLATECH.LIN",
+      "size": 6044,
+      "sha256": "d034a3bfa7f9e3e1e27c12f89a502b2b6699c0b1c37db647e8e4403042943f40",
+      "first_16_bytes": "50464478002abc10000000010000ffff"
+    },
+    {
+      "name": "ATLATECH.MAP",
+      "size": 6460,
+      "sha256": "4fbab71863e790b9e11a6848fd5df981977c0aadc5e0de07b00d6068bfd6fa19",
+      "first_16_bytes": "5046447800b9bc100000001b0103ffff"
+    },
+    {
+      "name": "ATLATECH.MUS",
+      "size": 8675928,
+      "sha256": "1a312e4cbccefc87ec561ba8c5cb6a03d37e4432d913fae9ee0c0033686b7cc6",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "CHUCK.MAP",
+      "size": 156,
+      "sha256": "434ed0021c528cf68423251086842103355201af728d8326310fa4ecb1a58b60",
+      "first_16_bytes": "5046447800000410000000010001ffff"
+    },
+    {
+      "name": "CHUCK.MUS",
+      "size": 5019624,
+      "sha256": "9544f40016d68509d16b198b1bf1e56b8bf14c07c55e73d31860c9dd84f1ef35",
+      "first_16_bytes": "5343486c240000005054000000010206"
+    },
+    {
+      "name": "CREDITS.MAP",
+      "size": 1212,
+      "sha256": "5bd3f538c413b245c485006bd6fb607de28f7fb53b1cb7d16816b8cb2c3cea62",
+      "first_16_bytes": "5046447800002510000000010001ffff"
+    },
+    {
+      "name": "CREDITS.MUS",
+      "size": 6987720,
+      "sha256": "085c855eb884ceed5f4c250297b2ec3d432085f0a09e1d323b4f1dabbb2e6d9c",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "EMPRROCK.LIN",
+      "size": 5116,
+      "sha256": "249ae7f1c8f5a881bfcf6fe062d38b5e2fd7fa96fe0e8f9d179d4f60cd2ae0bf",
+      "first_16_bytes": "5046447800949f10000000010001ffff"
+    },
+    {
+      "name": "EMPRROCK.MAP",
+      "size": 5500,
+      "sha256": "7b9e274028e1afbaaf0932e036797b788c444e2e499af417ecff693015216c9c",
+      "first_16_bytes": "5046447800949f10000000190103ffff"
+    },
+    {
+      "name": "EMPRROCK.MUS",
+      "size": 13809408,
+      "sha256": "60a9f8fd5e37ef2f35f4f86ec7f22818d0f67f9b97df954cc62c4596aa6ed59e",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "EMPRTECH.LIN",
+      "size": 3100,
+      "sha256": "d25876609b089a36b3ee54a16e2c09fc76ff55b33dd89abd91180a589a16ffea",
+      "first_16_bytes": "5046447800006010000000010001ffff"
+    },
+    {
+      "name": "EMPRTECH.MAP",
+      "size": 3164,
+      "sha256": "e57fe0ba5ae5a0fee960eaf8bdcfa023555cee7d5df3661d89408e316ae68654",
+      "first_16_bytes": "5046447800006010000000050003ffff"
+    },
+    {
+      "name": "EMPRTECH.MUS",
+      "size": 9246032,
+      "sha256": "0f1108602a48a1eb3798d9e6ae4a30aa31694c9d1d37109f499da42f3c0d83bf",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "HOMEROCK.LIN",
+      "size": 5532,
+      "sha256": "7870977cbf4c51aa950894946e3d9c7cf0f8197520d94f235871cee89e37cd7c",
+      "first_16_bytes": "504644780000ac10000000010001ffff"
+    },
+    {
+      "name": "HOMEROCK.MAP",
+      "size": 5916,
+      "sha256": "263d9e8d0874ffc0fa70502bac4374a8940483f57e39c7d0c622dbb7cf5fd3eb",
+      "first_16_bytes": "5046447800aaac10000000190103ffff"
+    },
+    {
+      "name": "HOMEROCK.MUS",
+      "size": 13340656,
+      "sha256": "860c4836547e747325467888c385f9276a029b296e8fcee555b67a4c48fae578",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "HOMETECH.LIN",
+      "size": 6108,
+      "sha256": "fd118e892afbdd2fffb4bc52186822474e911224859d8889bec252e2ae2a5756",
+      "first_16_bytes": "504644780010be10000000010000ffff"
+    },
+    {
+      "name": "HOMETECH.MAP",
+      "size": 6444,
+      "sha256": "1d57441e2e41a188f1dd8b7c050c895917e3b956a1302669b6ae005e007e488f",
+      "first_16_bytes": "5046447800bdbe10000000160103ffff"
+    },
+    {
+      "name": "HOMETECH.MUS",
+      "size": 7163880,
+      "sha256": "aa85b4409ca5b550bf53f56895cb60bbe9329c81ef957a1fc1ad8c0ce5fc42a8",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "LOSTROCK.LIN",
+      "size": 6172,
+      "sha256": "0d65c2ca22c76be4eed909e24c4e627d244d91b6320b4e56d0c7522501a3e66b",
+      "first_16_bytes": "504644780000c010000000010001ffff"
+    },
+    {
+      "name": "LOSTROCK.MAP",
+      "size": 6700,
+      "sha256": "4833e42be87cc49fa72ea1c7e22ecdb82efddabb05d117a2de5fb5c75a1fc3c6",
+      "first_16_bytes": "504644780000c010000000220103ffff"
+    },
+    {
+      "name": "LOSTROCK.MUS",
+      "size": 11790128,
+      "sha256": "46a6c43ee7f30fbd53359ffa94a52a2a1f470f35c0c5075215e039c4672b20dd",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "LOSTTECH.LIN",
+      "size": 6108,
+      "sha256": "70894c1fa9fe319fe732af8a14d29e23b635ce50fee4255cccae98675a41ae57",
+      "first_16_bytes": "504644780010be10000000010000ffff"
+    },
+    {
+      "name": "LOSTTECH.MAP",
+      "size": 6508,
+      "sha256": "badb5dcd156e599ad3ed8b105a5e35419d3f4be143e61fa348f59dccd9ce4b27",
+      "first_16_bytes": "5046447800bdbe100000001a0103ffff"
+    },
+    {
+      "name": "LOSTTECH.MUS",
+      "size": 7860696,
+      "sha256": "8ac6a35a32b4bb78387a4c6529065657ff27acd192e849f256b21f1f7ca28081",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "SHOW1.MAP",
+      "size": 156,
+      "sha256": "7f36edb742e558dd07020571e37969982555612e2cf24a16beb16af04d67c20b",
+      "first_16_bytes": "5046447800000410000000010001ffff"
+    },
+    {
+      "name": "SHOW1.MUS",
+      "size": 6452564,
+      "sha256": "577090b7c7da0da7bb3475640ae7435239d8bd81a1266db12b88c6bfa252746c",
+      "first_16_bytes": "5343486c240000005054000000010206"
+    },
+    {
+      "name": "SHOW2.MAP",
+      "size": 348,
+      "sha256": "9c7c2e82859cdfecee2f831089ad1ab1230f019c9f762d4043480d1474fa480c",
+      "first_16_bytes": "5046447800000a10000000010001ffff"
+    },
+    {
+      "name": "SHOW2.MUS",
+      "size": 4785408,
+      "sha256": "326e1d3f0ef986c6fdc4383773af9bc809d6365e4a5b26c2f141c498603fd6cd",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "SHOW3.MAP",
+      "size": 92,
+      "sha256": "9616fd2a0f917106dde13aec10da9eea67c8801578f11f63ffc730dd1aaa186b",
+      "first_16_bytes": "5046447800000210000000010001ffff"
+    },
+    {
+      "name": "SHOW3.MUS",
+      "size": 3713896,
+      "sha256": "8d0139448acaa99f7cd6602f8022b3cfd15cc74eea62425a1c7652314f534269",
+      "first_16_bytes": "5343486c240000005054000000010206"
+    },
+    {
+      "name": "SHOW4.MAP",
+      "size": 124,
+      "sha256": "0c2c29e47e7f76dc443bc1de17ab26a1977b2e5a3f7f4c7793eaa9dbb5ac9716",
+      "first_16_bytes": "5046447800000310000000010001ffff"
+    },
+    {
+      "name": "SHOW4.MUS",
+      "size": 5301152,
+      "sha256": "776fdcb13f70b417dfb50d733239ecc58b5376d236ed9640555b543119521308",
+      "first_16_bytes": "5343486c240000005054000000010206"
+    },
+    {
+      "name": "SHOW5.MAP",
+      "size": 124,
+      "sha256": "0c2c29e47e7f76dc443bc1de17ab26a1977b2e5a3f7f4c7793eaa9dbb5ac9716",
+      "first_16_bytes": "5046447800000310000000010001ffff"
+    },
+    {
+      "name": "SHOW5.MUS",
+      "size": 4849248,
+      "sha256": "c7529d2786c08922200f144b6f374671c7bfa953988591cebc17d874de9faab3",
+      "first_16_bytes": "5343486c240000005054000000010206"
+    },
+    {
+      "name": "SHOW6.MAP",
+      "size": 316,
+      "sha256": "035c4e71078392ead9cb3f3b2c0848a896dd39420649ff149c8700d1d52f0726",
+      "first_16_bytes": "5046447800000910000000010001ffff"
+    },
+    {
+      "name": "SHOW6.MUS",
+      "size": 4019212,
+      "sha256": "9cded49c6643731e4e7a76c11014640725bd3a62ce7a0a111daff3949e277f0b",
+      "first_16_bytes": "5343486c280000005054000000010206"
+    },
+    {
+      "name": "SHOW7.MAP",
+      "size": 124,
+      "sha256": "0c2c29e47e7f76dc443bc1de17ab26a1977b2e5a3f7f4c7793eaa9dbb5ac9716",
+      "first_16_bytes": "5046447800000310000000010001ffff"
+    },
+    {
+      "name": "SHOW7.MUS",
+      "size": 5715304,
+      "sha256": "d8fd7074a6a550297e3c128020f0b55f107165aa141b8049bf42df9132abbee6",
+      "first_16_bytes": "5343486c240000005054000000010206"
+    },
+    {
+      "name": "SHOW8.MAP",
+      "size": 156,
+      "sha256": "7f36edb742e558dd07020571e37969982555612e2cf24a16beb16af04d67c20b",
+      "first_16_bytes": "5046447800000410000000010001ffff"
+    },
+    {
+      "name": "SHOW8.MUS",
+      "size": 6452564,
+      "sha256": "577090b7c7da0da7bb3475640ae7435239d8bd81a1266db12b88c6bfa252746c",
+      "first_16_bytes": "5343486c240000005054000000010206"
+    },
+    {
+      "name": "SRV2.MAP",
+      "size": 92,
+      "sha256": "ac9855e3da3c7c1ea96b84ffc503affc185faa14e3d4253f5182f3b0aaad6f60",
+      "first_16_bytes": "5046447800000210000000010001ffff"
+    },
+    {
+      "name": "SRV2.MUS",
+      "size": 3703544,
+      "sha256": "a77d274cb1d1c98ffddf98bc8e6aa2c332e564157132262e97aa1d923089cb65",
+      "first_16_bytes": "5343486c240000005054000000010206"
+    }
+  ],
+  "race_pairs": [
+    {
+      "stem": "home",
+      "styles": {
+        "rock": [
+          "HOMEROCK.MUS",
+          "HOMEROCK.MAP",
+          "HOMEROCK.LIN"
+        ],
+        "tech": [
+          "HOMETECH.MUS",
+          "HOMETECH.MAP",
+          "HOMETECH.LIN"
+        ]
+      }
+    },
+    {
+      "stem": "lost",
+      "styles": {
+        "rock": [
+          "LOSTROCK.MUS",
+          "LOSTROCK.MAP",
+          "LOSTROCK.LIN"
+        ],
+        "tech": [
+          "LOSTTECH.MUS",
+          "LOSTTECH.MAP",
+          "LOSTTECH.LIN"
+        ]
+      }
+    },
+    {
+      "stem": "atla",
+      "styles": {
+        "rock": [
+          "ATLAROCK.MUS",
+          "ATLAROCK.MAP",
+          "ATLAROCK.LIN"
+        ],
+        "tech": [
+          "ATLATECH.MUS",
+          "ATLATECH.MAP",
+          "ATLATECH.LIN"
+        ]
+      }
+    },
+    {
+      "stem": "alpi",
+      "styles": {
+        "rock": [
+          "ALPIROCK.MUS",
+          "ALPIROCK.MAP",
+          "ALPIROCK.LIN"
+        ],
+        "tech": [
+          "ALPITECH.MUS",
+          "ALPITECH.MAP",
+          "ALPITECH.LIN"
+        ]
+      }
+    },
+    {
+      "stem": "empr",
+      "styles": {
+        "rock": [
+          "EMPRROCK.MUS",
+          "EMPRROCK.MAP",
+          "EMPRROCK.LIN"
+        ],
+        "tech": [
+          "EMPRTECH.MUS",
+          "EMPRTECH.MAP",
+          "EMPRTECH.LIN"
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Local supplied installation, not authenticated original or official Modern package provenance.",
+    "Existence and hashes only; no audio decoding, track-title metadata interpretation or playback.",
+    "No claim that these assets changed between executable versions."
+  ]
+}
