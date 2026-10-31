@@ -195,6 +195,30 @@
     "changed_bytes": 116,
     "modern_partition": "2 NOP bytes +92-byte primary table +48-byte keypad table"
   },
+  "retained_callers": {
+    "bodies": [
+      {
+        "start": "004cd020",
+        "end_exclusive": "004cd0dd",
+        "role": "Complete key-down callback with repeat enqueue",
+        "hex": "5356575589e58b5d1c8b55208b7d24837d14000f849800000089f98b3580747f0081e1ffff000039f17e0289f189f8c1e81083e07fa38c747f00a19812560085c0741203058c747f008a0025ff000000a38c747f00a18c747f00c6801848560001833d88747f0000741d4983f9ff744189fb8b158c747f00c1eb1831c083e301e83bf8ffffebe389d8e8f2f9ffff89c685c074224983f9ff741789fb8b158c747f00c1eb1889f083e301e811f8ffffebe3b8010000005d5f5e5bc21800",
+        "sha256": "139b061638ec4750a5975c2924f6a0bc3a129820e98b24d07aed4d4fb3d77cdd"
+      },
+      {
+        "start": "004cd5b9",
+        "end_exclusive": "004cd5d3",
+        "role": "Message-loop translate/zero-result branch",
+        "hex": "8b55dc8b45d8e8dcf4ffff85c0750b8d45d4502eff15a4475300",
+        "sha256": "18955178db62f421a432843df835e54decb1b049d2bfc016c89e793be77846ad"
+      }
+    ],
+    "direct_sites": [
+      "004cd0a9",
+      "004cd5bf"
+    ],
+    "queue_call": "004cd0ca ->004cc8e0",
+    "limit": "Windows-message to queue route verified; ECX repeat count live across translator/GetKeyState path, provider preservation not established. Physical delivery and consumer lifecycle remain untested."
+  },
   "limits": [
     "Static mapping/branch evidence only; no keyboard, OS, game or instruction probes.",
     "No exhaustive original/Modern input equivalence claim; actual message routing, Num Lock provider result and EDX preservation remain dependencies.",

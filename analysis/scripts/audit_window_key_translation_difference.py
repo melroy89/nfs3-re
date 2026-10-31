@@ -39,6 +39,20 @@ def main():
     changed=sum(x!=y for x,y in zip(a,b));assert changed==116
     out['outside_interval']={'start':'004ccaf6','end_exclusive':'004ccb84','bytes':142,
         'changed_bytes':116,'modern_partition':'2 NOP bytes +92-byte primary table +48-byte keypad table'}
+    callers=[]
+    for start,end,role in [(0x4cd020,0x4cd0dd,'Complete key-down callback with repeat enqueue'),
+                           (0x4cd5b9,0x4cd5d3,'Message-loop translate/zero-result branch')]:
+        paired={label:pe.get_data(start-0x400000,end-start) for label,pe in images.items()}
+        assert paired['original']==paired['official_modern']
+        data=paired['original']
+        callers.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}','role':role,
+            'hex':data.hex(),'sha256':hashlib.sha256(data).hexdigest()})
+    for site in (0x4cd0a9,0x4cd5bf):
+        data=modern.get_data(site-0x400000,5)
+        assert data[0]==0xe8 and site+5+int.from_bytes(data[1:],'little',signed=True)==0x4ccaa0
+    out['retained_callers']={'bodies':callers,'direct_sites':['004cd0a9','004cd5bf'],
+        'queue_call':'004cd0ca ->004cc8e0',
+        'limit':'Windows-message to queue route verified; ECX repeat count live across translator/GetKeyState path, provider preservation not established. Physical delivery and consumer lifecycle remain untested.'}
     out['limits']=['Static mapping/branch evidence only; no keyboard, OS, game or instruction probes.',
         'No exhaustive original/Modern input equivalence claim; actual message routing, Num Lock provider result and EDX preservation remain dependencies.',
         'Table DWORDs are data, not instructions or function pointers.']

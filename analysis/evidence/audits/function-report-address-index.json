@@ -437,7 +437,7 @@
     },
     {
       "path": "analysis/original-modern-window-key-translation.md",
-      "sha256": "e810de554d4e24bad3fcccfe84c4bc4b55249abb35786c1b299304225a121ab8"
+      "sha256": "427291d267b68a5728a24f513b0d7efc04cf2e878e6eac824c8ae84b426a3665"
     },
     {
       "path": "analysis/original-modern-window-key.md",
@@ -10282,6 +10282,15 @@
       "original_sha256": "d5f90f57b449d362272b429a81aaba2512183e903922293d5915896c9757380b",
       "modern_sha256": "b5167d6f333b3ab1922238f2302381083952c72a009e449f7ff4fd4301d3090e",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-window-key-translation.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004cd5b9",
+            "004cd5bf",
+            "004cd5d3"
+          ]
+        },
         {
           "path": "analysis/original-modern-window-key.md",
           "entry_mentioned": false,
