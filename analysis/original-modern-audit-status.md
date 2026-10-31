@@ -54,6 +54,14 @@ The recent static audits were rerun successfully after the following findings we
 
 Reproduction commands are `python3 analysis/scripts/audit_startup_requirement_difference.py`, `audit_input_worker_difference.py`, `audit_voodoo_about_setup.py` and `audit_model_presence_difference.py` (all scripts under `analysis/scripts/`). Each pins its target identity and retains exact static witnesses. Successful execution means those assertions/captures reproduce; it is not target execution or independent whole-game equivalence. No evidence label is upgraded from runtime-unverified to verified runtime by this review.
 
+## Independent review of the latest numeric contracts
+
+Two Luna6 reviewers independently checked the control-component callback and original calibration/Modern FOV numeric paths against their pinned PE instructions. Neither reported a material inaccuracy within its assigned scope. The [review checkpoint](evidence/validation/recent-static-contract-review.json) binds the reviewed commit, report/script/manifest hashes, named scopes, reviewer qualifications and three successful parent reproduction commands.
+
+The callback review confirms the52-byte delta, shared pointer/gate, finite cancellation and raw return2-to0. The numeric review confirms signed wrapping subtraction, binary32/binary64 spill ordering and negative-product−8 branch in original calibration, plus the conditional unordered107 result in Modern FOV. These findings are static; no reviewer executed a target/probe or changed Ghidra. Signed-zero, nonfinite/exception and caller/state limitations remain explicit.
+
+The original EXE, official Modern EXE, local analysis EXE and saved `db.3146.gbf` hashes were read again and match the recorded baseline. This verifies preservation for those exact artifacts; it is not a new saved-signature readback or runtime acceptance test. The broader investigation remains incomplete.
+
 ## Prioritized remaining work
 
 1. **Review substantive gaps, rather than searching for unreferenced entries.** The address-reference queue is now empty. Use each chapter’s limitations to select missing original counterparts or unresolved mechanisms, and check existing research before expanding. A chapter mention can still cover only a caller or partial span; it does not certify a whole function.

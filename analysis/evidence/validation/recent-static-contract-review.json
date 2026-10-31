@@ -1,0 +1,57 @@
+{
+  "reviewed_commit": "be82b2eb981ea36e1185c9a68ab8036e6da9da21",
+  "kind": "bounded-independent-static-contract-review",
+  "source_sha256": {
+    "analysis/original-modern-control-component-keys.md": "c085d8babf4a9cad8df44d2742b20a259f85feef61307a7a4e473b3137713fd7",
+    "analysis/scripts/audit_control_component_key_difference.py": "537f765909e8e928bae81e724b4df03070b76e27aeb77503f81255fff053fa30",
+    "analysis/evidence/audits/control-component-key-difference.json": "583377dffcb76f5e70d5258ac38b1ed67e759486e915f0a8d0603259563db5a4",
+    "analysis/original-modern-cpu-tier.md": "7dd5163c955d3d38384b6f1d415f02f71e11bef6d5ae0af66c85ff6eb2e58340",
+    "analysis/scripts/audit_cpu_tier_difference.py": "50892d18fe0020634b5c509cd3699d4f237ab59da293b690ce6670c70eb77f5a",
+    "analysis/evidence/audits/original-modern-cpu-tier.json": "3705ce7ab67cc3fd77eb285ba74e1145886935cb2886e8e683ff23c7278838a5",
+    "analysis/original-modern-projection.md": "42eb86a15cf28327fad3b5cf75e3c4b7870ed757b897a0ff0f892c4af0c30cdb",
+    "analysis/scripts/audit_projection_difference.py": "bdb37926ae222cf143c423b5383a9d872b65b27a06db6f39e7b8e6d1eb1a6494",
+    "analysis/evidence/audits/original-modern-projection.json": "773d552ba60ccf73d0e07cb87b945242c1ec211cfc7cca6288d43569e1d8b5e8"
+  },
+  "preserved_artifact_sha256": {
+    "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+    "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+    "analysis/captures/modern-differences/upstream/package/nfs3.exe": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+  },
+  "reviews": [
+    {
+      "reviewer": "Luna6 / review_control_callback",
+      "scope": "004651e0..004652ed; eligibility gate and shared callback/table/continuation",
+      "result": "No material inaccuracy found. Step deltas, finite cancellation and return2-to0 supported by independent disassembly.",
+      "qualification": "Original zero-delta sign can depend on branch/rounding; existing signed-zero/nonfinite caveats retained."
+    },
+    {
+      "reviewer": "Luna6 / review_numeric_contracts",
+      "scope": "004f1ea0 scaled difference and004dbc48 FOV clamp",
+      "result": "No concrete mistakes found. Wrap/sign/spill order, negative-product multiplier and conditional unordered107 result confirmed.",
+      "qualification": "Static only, restricted to named paths, constants and register statements; no runtime/numerical equivalence claim."
+    }
+  ],
+  "parent_reproduction": [
+    {
+      "command": "python3 analysis/scripts/audit_control_component_key_difference.py",
+      "exit_code": 0,
+      "scope": "Static byte/identity assertions and retained instruction captures"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_cpu_tier_difference.py",
+      "exit_code": 0,
+      "scope": "Static byte/identity assertions and retained instruction captures"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_projection_difference.py",
+      "exit_code": 0,
+      "scope": "Static byte/identity assertions and retained instruction captures"
+    }
+  ],
+  "limits": [
+    "Independent AI static reviews, not new instruction probes or independent game executions.",
+    "No target/game/DLL execution, compiler/toolchain operation, C reconstruction change or Ghidra mutation.",
+    "Whole-code semantic coverage, input/exception completeness, historical dates and runtime compatibility remain incomplete."
+  ]
+}
