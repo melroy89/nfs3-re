@@ -1,0 +1,99 @@
+{
+  "kind": "render-scratch-arena-backing-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004bbd70",
+          "end_exclusive": "004bbd7f",
+          "sha256": "a1df0c919a853ec723ab80ddca74eabe35fcfae5d0e698ffe4f90db7fa3c80a0",
+          "assembly": "analysis/captures/modern-differences/render-arena/original-004bbd70.asm"
+        },
+        {
+          "start": "004bbde0",
+          "end_exclusive": "004bbe3a",
+          "sha256": "7cfd13c6f23aef10f899a101139f4528e5597b6f9a458015fd208881e305caa6",
+          "assembly": "analysis/captures/modern-differences/render-arena/original-004bbde0.asm"
+        },
+        {
+          "start": "004bbd80",
+          "end_exclusive": "004bbdbc",
+          "sha256": "c902e4fa0b3ce4bdc53d2e04aa9bb5a07f465e0db4380c7eaaf28b873c7bdcde",
+          "assembly": "analysis/captures/modern-differences/render-arena/original-004bbd80.asm"
+        },
+        {
+          "start": "004bbdc0",
+          "end_exclusive": "004bbdd9",
+          "sha256": "e7d9a7f4e03842ac548b2833f88cf1b09f899d6a5f38e41f6e262e30a89f9868",
+          "assembly": "analysis/captures/modern-differences/render-arena/original-004bbdc0.asm"
+        },
+        {
+          "start": "004b56e0",
+          "end_exclusive": "004b5700",
+          "sha256": "533dc8bf06a56065cb65b0bc43b23897471f393a19bf9e0303b5d29bfb21f028",
+          "assembly": "analysis/captures/modern-differences/render-arena/original-004b56e0.asm"
+        },
+        {
+          "start": "004b5700",
+          "end_exclusive": "004b570e",
+          "sha256": "8cd1d29f3ffd1210a14bd3f6ef2b45eb1b4e8504ee5a904fadeb02cd67a7c039",
+          "assembly": "analysis/captures/modern-differences/render-arena/original-004b5700.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004bbd70",
+          "end_exclusive": "004bbd7f",
+          "sha256": "a1df0c919a853ec723ab80ddca74eabe35fcfae5d0e698ffe4f90db7fa3c80a0",
+          "assembly": "analysis/captures/modern-differences/render-arena/official_modern-004bbd70.asm"
+        },
+        {
+          "start": "004bbde0",
+          "end_exclusive": "004bbe3a",
+          "sha256": "7cfd13c6f23aef10f899a101139f4528e5597b6f9a458015fd208881e305caa6",
+          "assembly": "analysis/captures/modern-differences/render-arena/official_modern-004bbde0.asm"
+        },
+        {
+          "start": "004bbd80",
+          "end_exclusive": "004bbda4",
+          "sha256": "74f7f99e0ffc2b7620c1d4fa2813efad1f0d0dce34c2142622948115e8aa9573",
+          "assembly": "analysis/captures/modern-differences/render-arena/official_modern-004bbd80.asm"
+        },
+        {
+          "start": "004bbda4",
+          "end_exclusive": "004bbdb6",
+          "sha256": "3426929480b6811c750c1f34559d8bb8c047990f6fea7fcdd6c267daea2c8db9",
+          "assembly": "analysis/captures/modern-differences/render-arena/official_modern-004bbda4.asm"
+        },
+        {
+          "start": "004f1efc",
+          "end_exclusive": "004f1f10",
+          "sha256": "78336892b7b5ed762475f25896b09a37f5cdcc0b365cd95896b1f9b935f3f195",
+          "assembly": "analysis/captures/modern-differences/render-arena/official_modern-004f1efc.asm"
+        },
+        {
+          "start": "004f1f30",
+          "end_exclusive": "004f1f44",
+          "sha256": "d55abf7c92ee3be2024262f7ec4dd54e8bef64f5ea8ef0096bafe9fa04b4382d",
+          "assembly": "analysis/captures/modern-differences/render-arena/official_modern-004f1f30.asm"
+        }
+      ]
+    }
+  },
+  "contract": {
+    "original_request_bytes": 799744,
+    "modern_request_bytes": 8388608,
+    "headroom_subtracted": 100,
+    "base_cell": "0055fe34",
+    "cursor_cell": "0055fe38",
+    "capacity_cell": "007a3d04",
+    "modern_heap_handle_cell": "009f3d40",
+    "limits": "No allocation success, full heap lifecycle, renderer concurrency or runtime capacity test."
+  }
+}

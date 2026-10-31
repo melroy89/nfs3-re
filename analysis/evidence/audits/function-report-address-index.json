@@ -113,7 +113,7 @@
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
-      "sha256": "3f0e5df1fa7e373e36adc00be1bf339c4a0253e5f1ebec99866ace9a391ba469"
+      "sha256": "944f03e99c497e4a349dede02288b4bb696e1af1e23c0710541e6387d93921cc"
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
@@ -342,8 +342,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 259,
-    "without_address_mentions": 102
+    "with_address_mentions": 263,
+    "without_address_mentions": 98
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -7002,7 +7002,9 @@
             "004b55f5",
             "004b55ff",
             "004b560b",
-            "004b560e"
+            "004b560e",
+            "004b56e0",
+            "004b5700"
           ]
         },
         {
@@ -7694,7 +7696,15 @@
       "changed_bytes": 36,
       "original_sha256": "e9c0e0b9d9e096948bb7374b977cade265c22e52a310c1c8c339aa5861a9151a",
       "modern_sha256": "74f7f99e0ffc2b7620c1d4fa2813efad1f0d0dce34c2142622948115e8aa9573",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004bbd80"
+          ]
+        }
+      ]
     },
     {
       "entry": "004bbda4",
@@ -7712,7 +7722,15 @@
       "changed_bytes": 18,
       "original_sha256": "4e7aef26bd1bddde542d38ab8d8623ae5f029159698d3614388ad4b450e44a8a",
       "modern_sha256": "3426929480b6811c750c1f34559d8bb8c047990f6fea7fcdd6c267daea2c8db9",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004bbda4"
+          ]
+        }
+      ]
     },
     {
       "entry": "004bc160",
@@ -10194,7 +10212,15 @@
       "changed_bytes": 20,
       "original_sha256": "9d5cb11573106980129617c7800bdac865ac54af63031730b9e6d3450478d633",
       "modern_sha256": "78336892b7b5ed762475f25896b09a37f5cdcc0b365cd95896b1f9b935f3f195",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f1efc"
+          ]
+        }
+      ]
     },
     {
       "entry": "004f1f30",
@@ -10212,7 +10238,15 @@
       "changed_bytes": 20,
       "original_sha256": "c33af893de21406e3452d7fd3c3c5697fe05c39fa657c151104d20dc9045ab9f",
       "modern_sha256": "d55abf7c92ee3be2024262f7ec4dd54e8bef64f5ea8ef0096bafe9fa04b4382d",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f1f30"
+          ]
+        }
+      ]
     },
     {
       "entry": "004f1f58",
