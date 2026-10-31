@@ -72,6 +72,11 @@
       "relative_links": 5
     },
     {
+      "path": "analysis/original-modern-control-component-keys.md",
+      "sha256": "c085d8babf4a9cad8df44d2742b20a259f85feef61307a7a4e473b3137713fd7",
+      "relative_links": 4
+    },
+    {
       "path": "analysis/original-modern-cpu-tier.md",
       "sha256": "84151a4b4e0b5652e2316579fbb0c8eeb085201208fcd7a62a1e9f1fcb9a08b6",
       "relative_links": 5
@@ -98,8 +103,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "82556b221d8e7bdbce6480cac21cc1e585e51227e47a9c30ce033d2af5a2b152",
-      "relative_links": 136
+      "sha256": "71c6a84535397a2459a27868270f82222b368815e6135f7679b99770bdfbdf8b",
+      "relative_links": 137
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -303,8 +308,8 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "ef105b606d3e55ac2a45aebd2679362cfb315a32cf219ccc20746d8dfb29a68c",
-      "relative_links": 31
+      "sha256": "52b76b976cb1a9347b6094064087decb0cab38cfc8910c195fa57965d308cbd4",
+      "relative_links": 32
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
@@ -553,8 +558,8 @@
     },
     {
       "path": "analysis/original-modern-x87-observers.md",
-      "sha256": "6cea1f69a4cedd5c4ad4b60649a5c6f2a6dacc2a4ee13c76fa979b5d23de16a9",
-      "relative_links": 8
+      "sha256": "b1a6699162ad9d2a8bbce341bace7a3095b5a903f76c9659e8acecf7ccf80688",
+      "relative_links": 9
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
@@ -567,8 +572,8 @@
       "relative_links": 12
     }
   ],
-  "file_count": 113,
-  "relative_link_count": 1570,
+  "file_count": 114,
+  "relative_link_count": 1577,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

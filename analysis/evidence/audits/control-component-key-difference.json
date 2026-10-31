@@ -1,0 +1,136 @@
+{
+  "scope": "Paired callback at004651e0; raw key tokens and component updates only",
+  "baselines": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "entry": "004651e0",
+      "end_exclusive": "004652ed",
+      "bytes": 269,
+      "body_sha256": "420bc549383be7424a720eeb8f198132eb7043cd906dd08a58cf481f71b58e32",
+      "hex": "515589e583ec14ba2100000031c9e86d54feff894dfc894df885c00f84e7000000833d5089670000750731c089ec5d59c36681fb004b750db800000040b9020000008945fc6681fb004d750dba000000c0b9020000008955fc6683fb207532d9eeb902000000d81d54896700dfe09e760fd945fcd9c0dc0d6cab5300dec1eb0ed945fcd9e0dc0d6cab5300d845fcd95dfcd9eed90558896700d90554896700d845fcd9c9d845f8d9c9d91d54896700d91d58896700d81d54896700dfe09e730aa1548967008945f4eb0bd90554896700d9e0d95df4d945f4d81d74ab5300dfe09e7623d9eed81d54896700dfe09e760cc70554896700000020c1eb0ac705548967000000204189c889ec5d59c3",
+      "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe:     file format pei-i386\n\n\nDisassembly of section AUTO:\n\n004651e0 <AUTO+0x641e0>:\n  4651e0:\t51                   \tpush   ecx\n  4651e1:\t55                   \tpush   ebp\n  4651e2:\t89 e5                \tmov    ebp,esp\n  4651e4:\t83 ec 14             \tsub    esp,0x14\n  4651e7:\tba 21 00 00 00       \tmov    edx,0x21\n  4651ec:\t31 c9                \txor    ecx,ecx\n  4651ee:\te8 6d 54 fe ff       \tcall   0x44a660\n  4651f3:\t89 4d fc             \tmov    DWORD PTR [ebp-0x4],ecx\n  4651f6:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n  4651f9:\t85 c0                \ttest   eax,eax\n  4651fb:\t0f 84 e7 00 00 00    \tje     0x4652e8\n  465201:\t83 3d 50 89 67 00 00 \tcmp    DWORD PTR ds:0x678950,0x0\n  465208:\t75 07                \tjne    0x465211\n  46520a:\t31 c0                \txor    eax,eax\n  46520c:\t89 ec                \tmov    esp,ebp\n  46520e:\t5d                   \tpop    ebp\n  46520f:\t59                   \tpop    ecx\n  465210:\tc3                   \tret\n  465211:\t66 81 fb 00 4b       \tcmp    bx,0x4b00\n  465216:\t75 0d                \tjne    0x465225\n  465218:\tb8 00 00 00 40       \tmov    eax,0x40000000\n  46521d:\tb9 02 00 00 00       \tmov    ecx,0x2\n  465222:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax\n  465225:\t66 81 fb 00 4d       \tcmp    bx,0x4d00\n  46522a:\t75 0d                \tjne    0x465239\n  46522c:\tba 00 00 00 c0       \tmov    edx,0xc0000000\n  465231:\tb9 02 00 00 00       \tmov    ecx,0x2\n  465236:\t89 55 fc             \tmov    DWORD PTR [ebp-0x4],edx\n  465239:\t66 83 fb 20          \tcmp    bx,0x20\n  46523d:\t75 32                \tjne    0x465271\n  46523f:\td9 ee                \tfldz\n  465241:\tb9 02 00 00 00       \tmov    ecx,0x2\n  465246:\td8 1d 54 89 67 00    \tfcomp  DWORD PTR ds:0x678954\n  46524c:\tdf e0                \tfnstsw ax\n  46524e:\t9e                   \tsahf\n  46524f:\t76 0f                \tjbe    0x465260\n  465251:\td9 45 fc             \tfld    DWORD PTR [ebp-0x4]\n  465254:\td9 c0                \tfld    st(0)\n  465256:\tdc 0d 6c ab 53 00    \tfmul   QWORD PTR ds:0x53ab6c\n  46525c:\tde c1                \tfaddp  st(1),st\n  46525e:\teb 0e                \tjmp    0x46526e\n  465260:\td9 45 fc             \tfld    DWORD PTR [ebp-0x4]\n  465263:\td9 e0                \tfchs\n  465265:\tdc 0d 6c ab 53 00    \tfmul   QWORD PTR ds:0x53ab6c\n  46526b:\td8 45 fc             \tfadd   DWORD PTR [ebp-0x4]\n  46526e:\td9 5d fc             \tfstp   DWORD PTR [ebp-0x4]\n  465271:\td9 ee                \tfldz\n  465273:\td9 05 58 89 67 00    \tfld    DWORD PTR ds:0x678958\n  465279:\td9 05 54 89 67 00    \tfld    DWORD PTR ds:0x678954\n  46527f:\td8 45 fc             \tfadd   DWORD PTR [ebp-0x4]\n  465282:\td9 c9                \tfxch   st(1)\n  465284:\td8 45 f8             \tfadd   DWORD PTR [ebp-0x8]\n  465287:\td9 c9                \tfxch   st(1)\n  465289:\td9 1d 54 89 67 00    \tfstp   DWORD PTR ds:0x678954\n  46528f:\td9 1d 58 89 67 00    \tfstp   DWORD PTR ds:0x678958\n  465295:\td8 1d 54 89 67 00    \tfcomp  DWORD PTR ds:0x678954\n  46529b:\tdf e0                \tfnstsw ax\n  46529d:\t9e                   \tsahf\n  46529e:\t73 0a                \tjae    0x4652aa\n  4652a0:\ta1 54 89 67 00       \tmov    eax,ds:0x678954\n  4652a5:\t89 45 f4             \tmov    DWORD PTR [ebp-0xc],eax\n  4652a8:\teb 0b                \tjmp    0x4652b5\n  4652aa:\td9 05 54 89 67 00    \tfld    DWORD PTR ds:0x678954\n  4652b0:\td9 e0                \tfchs\n  4652b2:\td9 5d f4             \tfstp   DWORD PTR [ebp-0xc]\n  4652b5:\td9 45 f4             \tfld    DWORD PTR [ebp-0xc]\n  4652b8:\td8 1d 74 ab 53 00    \tfcomp  DWORD PTR ds:0x53ab74\n  4652be:\tdf e0                \tfnstsw ax\n  4652c0:\t9e                   \tsahf\n  4652c1:\t76 23                \tjbe    0x4652e6\n  4652c3:\td9 ee                \tfldz\n  4652c5:\td8 1d 54 89 67 00    \tfcomp  DWORD PTR ds:0x678954\n  4652cb:\tdf e0                \tfnstsw ax\n  4652cd:\t9e                   \tsahf\n  4652ce:\t76 0c                \tjbe    0x4652dc\n  4652d0:\tc7 05 54 89 67 00 00 \tmov    DWORD PTR ds:0x678954,0xc1200000\n  4652d7:\t00 20 c1 \n  4652da:\teb 0a                \tjmp    0x4652e6\n  4652dc:\tc7 05 54 89 67 00 00 \tmov    DWORD PTR ds:0x678954,0x41200000\n  4652e3:\t00 20 41 \n  4652e6:\t89 c8                \tmov    eax,ecx\n  4652e8:\t89 ec                \tmov    esp,ebp\n  4652ea:\t5d                   \tpop    ebp\n  4652eb:\t59                   \tpop    ecx\n  4652ec:\tc3                   \tret\n",
+      "callback_pointer_slot": "00557a34"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "entry": "004651e0",
+      "end_exclusive": "004652ed",
+      "bytes": 269,
+      "body_sha256": "79aa275a57ec18b9babc1ca80832ab664cf88d999ac015da0d027bda8ce5d2a8",
+      "hex": "515589e583ec14ba2100000031c9e86d54feff894dfc894df885c00f84e7000000833d5089670000750731c089ec5d59c36681fb004b750db80000803fb9020000008945fc6681fb004d750dba000080bfb9020000008955fc6683fb207532d90554896700d9e0d95dfcd90558896700d9e0d95df8eb1a9090909090909090909090909090909090909090909090909090d9eed90558896700d90554896700d845fcd9c9d845f8d9c9d91d54896700d91d58896700d81d54896700dfe09e730aa1548967008945f4eb0bd90554896700d9e0d95df4d945f4d81d74ab5300dfe09e7623d9eed81d54896700dfe09e760cc70554896700000020c1eb0ac705548967000000204189c889ec5d59c3",
+      "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/analysis/captures/modern-differences/upstream/package/nfs3.exe:     file format pei-i386\n\n\nDisassembly of section .code:\n\n004651e0 <.code+0x641e0>:\n  4651e0:\t51                   \tpush   ecx\n  4651e1:\t55                   \tpush   ebp\n  4651e2:\t89 e5                \tmov    ebp,esp\n  4651e4:\t83 ec 14             \tsub    esp,0x14\n  4651e7:\tba 21 00 00 00       \tmov    edx,0x21\n  4651ec:\t31 c9                \txor    ecx,ecx\n  4651ee:\te8 6d 54 fe ff       \tcall   0x44a660\n  4651f3:\t89 4d fc             \tmov    DWORD PTR [ebp-0x4],ecx\n  4651f6:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n  4651f9:\t85 c0                \ttest   eax,eax\n  4651fb:\t0f 84 e7 00 00 00    \tje     0x4652e8\n  465201:\t83 3d 50 89 67 00 00 \tcmp    DWORD PTR ds:0x678950,0x0\n  465208:\t75 07                \tjne    0x465211\n  46520a:\t31 c0                \txor    eax,eax\n  46520c:\t89 ec                \tmov    esp,ebp\n  46520e:\t5d                   \tpop    ebp\n  46520f:\t59                   \tpop    ecx\n  465210:\tc3                   \tret\n  465211:\t66 81 fb 00 4b       \tcmp    bx,0x4b00\n  465216:\t75 0d                \tjne    0x465225\n  465218:\tb8 00 00 80 3f       \tmov    eax,0x3f800000\n  46521d:\tb9 02 00 00 00       \tmov    ecx,0x2\n  465222:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax\n  465225:\t66 81 fb 00 4d       \tcmp    bx,0x4d00\n  46522a:\t75 0d                \tjne    0x465239\n  46522c:\tba 00 00 80 bf       \tmov    edx,0xbf800000\n  465231:\tb9 02 00 00 00       \tmov    ecx,0x2\n  465236:\t89 55 fc             \tmov    DWORD PTR [ebp-0x4],edx\n  465239:\t66 83 fb 20          \tcmp    bx,0x20\n  46523d:\t75 32                \tjne    0x465271\n  46523f:\td9 05 54 89 67 00    \tfld    DWORD PTR ds:0x678954\n  465245:\td9 e0                \tfchs\n  465247:\td9 5d fc             \tfstp   DWORD PTR [ebp-0x4]\n  46524a:\td9 05 58 89 67 00    \tfld    DWORD PTR ds:0x678958\n  465250:\td9 e0                \tfchs\n  465252:\td9 5d f8             \tfstp   DWORD PTR [ebp-0x8]\n  465255:\teb 1a                \tjmp    0x465271\n  465257:\t90                   \tnop\n  465258:\t90                   \tnop\n  465259:\t90                   \tnop\n  46525a:\t90                   \tnop\n  46525b:\t90                   \tnop\n  46525c:\t90                   \tnop\n  46525d:\t90                   \tnop\n  46525e:\t90                   \tnop\n  46525f:\t90                   \tnop\n  465260:\t90                   \tnop\n  465261:\t90                   \tnop\n  465262:\t90                   \tnop\n  465263:\t90                   \tnop\n  465264:\t90                   \tnop\n  465265:\t90                   \tnop\n  465266:\t90                   \tnop\n  465267:\t90                   \tnop\n  465268:\t90                   \tnop\n  465269:\t90                   \tnop\n  46526a:\t90                   \tnop\n  46526b:\t90                   \tnop\n  46526c:\t90                   \tnop\n  46526d:\t90                   \tnop\n  46526e:\t90                   \tnop\n  46526f:\t90                   \tnop\n  465270:\t90                   \tnop\n  465271:\td9 ee                \tfldz\n  465273:\td9 05 58 89 67 00    \tfld    DWORD PTR ds:0x678958\n  465279:\td9 05 54 89 67 00    \tfld    DWORD PTR ds:0x678954\n  46527f:\td8 45 fc             \tfadd   DWORD PTR [ebp-0x4]\n  465282:\td9 c9                \tfxch   st(1)\n  465284:\td8 45 f8             \tfadd   DWORD PTR [ebp-0x8]\n  465287:\td9 c9                \tfxch   st(1)\n  465289:\td9 1d 54 89 67 00    \tfstp   DWORD PTR ds:0x678954\n  46528f:\td9 1d 58 89 67 00    \tfstp   DWORD PTR ds:0x678958\n  465295:\td8 1d 54 89 67 00    \tfcomp  DWORD PTR ds:0x678954\n  46529b:\tdf e0                \tfnstsw ax\n  46529d:\t9e                   \tsahf\n  46529e:\t73 0a                \tjae    0x4652aa\n  4652a0:\ta1 54 89 67 00       \tmov    eax,ds:0x678954\n  4652a5:\t89 45 f4             \tmov    DWORD PTR [ebp-0xc],eax\n  4652a8:\teb 0b                \tjmp    0x4652b5\n  4652aa:\td9 05 54 89 67 00    \tfld    DWORD PTR ds:0x678954\n  4652b0:\td9 e0                \tfchs\n  4652b2:\td9 5d f4             \tfstp   DWORD PTR [ebp-0xc]\n  4652b5:\td9 45 f4             \tfld    DWORD PTR [ebp-0xc]\n  4652b8:\td8 1d 74 ab 53 00    \tfcomp  DWORD PTR ds:0x53ab74\n  4652be:\tdf e0                \tfnstsw ax\n  4652c0:\t9e                   \tsahf\n  4652c1:\t76 23                \tjbe    0x4652e6\n  4652c3:\td9 ee                \tfldz\n  4652c5:\td8 1d 54 89 67 00    \tfcomp  DWORD PTR ds:0x678954\n  4652cb:\tdf e0                \tfnstsw ax\n  4652cd:\t9e                   \tsahf\n  4652ce:\t76 0c                \tjbe    0x4652dc\n  4652d0:\tc7 05 54 89 67 00 00 \tmov    DWORD PTR ds:0x678954,0xc1200000\n  4652d7:\t00 20 c1 \n  4652da:\teb 0a                \tjmp    0x4652e6\n  4652dc:\tc7 05 54 89 67 00 00 \tmov    DWORD PTR ds:0x678954,0x41200000\n  4652e3:\t00 20 41 \n  4652e6:\t89 c8                \tmov    eax,ecx\n  4652e8:\t89 ec                \tmov    esp,ebp\n  4652ea:\t5d                   \tpop    ebp\n  4652eb:\t59                   \tpop    ecx\n  4652ec:\tc3                   \tret\n",
+      "callback_pointer_slot": "00557a34"
+    }
+  },
+  "difference": {
+    "changed_addresses": [
+      "0046521b",
+      "0046521c",
+      "0046522f",
+      "00465230",
+      "00465240",
+      "00465241",
+      "00465242",
+      "00465243",
+      "00465245",
+      "00465246",
+      "00465247",
+      "00465248",
+      "00465249",
+      "0046524a",
+      "0046524b",
+      "0046524c",
+      "0046524d",
+      "0046524e",
+      "0046524f",
+      "00465250",
+      "00465251",
+      "00465252",
+      "00465253",
+      "00465254",
+      "00465255",
+      "00465256",
+      "00465257",
+      "00465258",
+      "00465259",
+      "0046525a",
+      "0046525b",
+      "0046525c",
+      "0046525d",
+      "0046525e",
+      "0046525f",
+      "00465260",
+      "00465261",
+      "00465262",
+      "00465263",
+      "00465264",
+      "00465265",
+      "00465266",
+      "00465267",
+      "00465268",
+      "00465269",
+      "0046526a",
+      "0046526b",
+      "0046526c",
+      "0046526d",
+      "0046526e",
+      "0046526f",
+      "00465270"
+    ],
+    "token_4b00_delta": {
+      "original": 2.0,
+      "modern": 1.0
+    },
+    "token_4d00_delta": {
+      "original": -2.0,
+      "modern": -1.0
+    },
+    "token_0020": "Modern local deltas are negative current components at00678954/00678958 before common addition.",
+    "token_0020_return": {
+      "original": 2,
+      "modern": 0
+    },
+    "shared_continuation": "00465271..004652ed",
+    "gate_body_sha256": "2cf2a37868119d4a0d8810f96ec12fc59348ffa9d5f0f3587a7c09c2f29fe7a7",
+    "gate_body_hex": "5589e5833d3492550000740af6400508750431c05dc3b8010000005dc3",
+    "limit": "Finite/nontrapping cancellation argument only; actual UI/axis identity and runtime input not established."
+  },
+  "outside_function_interval": {
+    "start": "00464fca",
+    "end_exclusive": "004654c0",
+    "bytes": 1270,
+    "changed_bytes": 52,
+    "identities": [
+      {
+        "baseline": "original",
+        "sha256": "0121f062a72ba158afa8ce12d4fb66e190b198d8f639724f1e2574363282bea4"
+      },
+      {
+        "baseline": "official_modern",
+        "sha256": "fd7b34222a31f88309e9014843044e562f28807de0a8a6d35813c850b089182e"
+      }
+    ],
+    "scope": "All52 changed bytes in this1270-byte uncovered interval are in the paired key handler."
+  },
+  "saved_inventory_boundary": {
+    "original": {
+      "path": "analysis/captures/modern-differences/functions-original.json",
+      "sha256": "28d66dd0a2a4d88632ac52433d4f922aa645279ead39777ea849ca105a362166",
+      "executable_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "covering_entries": []
+    },
+    "modern": {
+      "path": "analysis/captures/modern-differences/functions-modern.json",
+      "sha256": "2f83dbf454ee5f8a5d138031e04ff56538c12422f3cfc2dca0bbf0d2779a21c9",
+      "executable_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "covering_entries": []
+    }
+  },
+  "limits": [
+    "Missing saved function object does not make the instructions padding.",
+    "Shared binding/envelope supports callback correspondence; table schema and visible control identity remain incomplete.",
+    "No game, key event, instruction probe, C export/compilation or Ghidra mutation."
+  ]
+}

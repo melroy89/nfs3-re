@@ -72,6 +72,10 @@
       "sha256": "1dcb9af7b334f865dfa0bf366990e45c05dcb566e2bf13c03eb37ccaf901ba79"
     },
     {
+      "path": "analysis/original-modern-control-component-keys.md",
+      "sha256": "c085d8babf4a9cad8df44d2742b20a259f85feef61307a7a4e473b3137713fd7"
+    },
+    {
       "path": "analysis/original-modern-cpu-tier.md",
       "sha256": "84151a4b4e0b5652e2316579fbb0c8eeb085201208fcd7a62a1e9f1fcb9a08b6"
     },
@@ -433,7 +437,7 @@
     },
     {
       "path": "analysis/original-modern-x87-observers.md",
-      "sha256": "6cea1f69a4cedd5c4ad4b60649a5c6f2a6dacc2a4ee13c76fa979b5d23de16a9"
+      "sha256": "b1a6699162ad9d2a8bbce341bace7a3095b5a903f76c9659e8acecf7ccf80688"
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
