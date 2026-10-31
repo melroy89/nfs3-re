@@ -159,6 +159,16 @@ def main():
         'local_cw': 'No FLDCW/FINIT; computation and exceptions depend on ambient control state.',
         'limit': 'Symbolic branch/stack trace only; no NaN/zero-dimension instruction probe or game call.'}
     result['projection_builder_272_bytes_identical']=True
+    old_defaults=images[0].get_data(0x72d10,0x208)
+    new_defaults=images[1].get_data(0x72d10,0x10c)
+    assert struct.pack('<I',0x6fbc40) not in old_defaults
+    assert images[1].get_data(0x72d92,14).hex()=='31d289154cbc6f00891540bc6f00'
+    result['view_angle_default_reset']={
+        'original_envelope':'00472d10..00472f18','original_sha256':hashlib.sha256(old_defaults).hexdigest(),
+        'modern_envelope':'00472d10..00472e1c','modern_sha256':hashlib.sha256(new_defaults).hexdigest(),
+        'modern_write':'00472d92 clears EDX;00472d9a stores0 to006fbc40, selecting Automatic.',
+        'original_boundary':'No literal006fbc40 operand in complete original default envelope; computed/transitive writes not excluded.',
+        'limits':'This default/reset path is not proof of unconditional startup, saved-value migration or all initialization order.'}
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
     english=subprocess.check_output(['7z','x','-so',str(archive),'fedata/text/text.eng'])

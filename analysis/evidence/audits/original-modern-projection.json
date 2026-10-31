@@ -639,6 +639,15 @@
     "limit": "Symbolic branch/stack trace only; no NaN/zero-dimension instruction probe or game call."
   },
   "projection_builder_272_bytes_identical": true,
+  "view_angle_default_reset": {
+    "original_envelope": "00472d10..00472f18",
+    "original_sha256": "eadf5a264076943a6fef86eb13fbb9ebb056c8ad005452fb268f23ed6c1a109f",
+    "modern_envelope": "00472d10..00472e1c",
+    "modern_sha256": "6cf00c15da9a28f9c79b99a12474a5f93e6dbd7e4d71b79b8cb06bc6cb586e25",
+    "modern_write": "00472d92 clears EDX;00472d9a stores0 to006fbc40, selecting Automatic.",
+    "original_boundary": "No literal006fbc40 operand in complete original default envelope; computed/transitive writes not excluded.",
+    "limits": "This default/reset path is not proof of unconditional startup, saved-value migration or all initialization order."
+  },
   "view_angle_labels": {
     "member": "fedata/text/text.eng",
     "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",

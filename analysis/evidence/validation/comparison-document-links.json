@@ -343,8 +343,8 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "b5e4734f1ecfb2866cd4e157d6c0aefbf63d9251a722a698271664298551f3e7",
-      "relative_links": 13
+      "sha256": "751d41b301c1b942e664db2f086e37cb6ac5e63eb1da2b85cbf2dbb6eeeff265",
+      "relative_links": 15
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1772,
+  "relative_link_count": 1774,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
