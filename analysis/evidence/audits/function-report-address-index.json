@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "18fae74b4d03619528ae7c8ccd62417156852e0955ce501724eadf5df56009a2"
+      "sha256": "c0c90005e8e3c3e2013906f81ed485d14ee3723019ed46e726bc58f1e00d59b2"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -253,7 +253,7 @@
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",
-      "sha256": "5e89340235cb980bc3a36a32bb2b82f6db6838439a13b345634e2dedfd38789c"
+      "sha256": "08eced0e6594929690ca740c6aae9b4964ccc4b2bf2d3a252bb846471dbb94bc"
     },
     {
       "path": "analysis/original-modern-pause-title.md",
@@ -401,7 +401,7 @@
     },
     {
       "path": "analysis/original-modern-track-detail.md",
-      "sha256": "1335879b50ee1d77ae170144c659e63e10668f3a0ca68374cdca72df4bbceca4"
+      "sha256": "6da2dc10b377dc78e5e2c5140e3544b9d4e5ba67812aac8e6e5c9dea545559ce"
     },
     {
       "path": "analysis/original-modern-track-length-text.md",
@@ -1134,6 +1134,13 @@
       "modern_sha256": "9f9c1337a2a62f080d5e625f48c617412e62e3d8ce8df811d560be84d9c83eb6",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-parameter-preset.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0041aa60"
+          ]
+        },
+        {
           "path": "analysis/original-modern-track-detail.md",
           "entry_mentioned": true,
           "addresses": [
@@ -1243,6 +1250,14 @@
             "0041d066",
             "0041d068",
             "0041d06d"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-parameter-preset.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0041ce55",
+            "0041ce6a"
           ]
         },
         {
@@ -7404,6 +7419,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-loading-timing.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004a33d0"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-parameter-preset.md",
           "entry_mentioned": true,
           "addresses": [
             "004a33d0"

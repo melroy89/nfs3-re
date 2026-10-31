@@ -206,9 +206,22 @@ The [numeric-scale comparison](original-modern-numeric-scale.md) maps original `
 
 The [Race Now comparison](original-modern-race-now.md) maps Modern’s complete helper and the related original credits gate. Full original counterparts and entry-flag/global meanings remain unresolved; the same address is not a valid function pairing.
 
-## 30. Parameter preset application
+## 30. View Distance preset application
 
-The [preset comparison](original-modern-parameter-preset.md) traces the original scaled-constant path versus Modern’s WORD table, two-record writes and changed conversion-count boundary. Semantic fields, full input invariants and runtime effects remain unresolved.
+The [preset comparison](original-modern-parameter-preset.md) identifies shared setting `006fbc28` as **View Distance: Full/Far/Medium/Close**. Original `0041d620` scales constants using two three-entry factor tables; Modern replaces that calculation with a256-byte WORD table and explicit writes to two84-byte records. Exact original integer arithmetic, record templates, retained caller paths and all four Modern-written fields' rendering consumers are now mapped. The source-value differences occur before floating-point conversion; they must not all be attributed to x87 precision.
+
+For **Full**, the inspected first-record distance thresholds change as follows:
+
+| Setup branch | Original | Modern |
+|---|---:|---:|
+| Day, non-two-player | 500 | 500 |
+| Day, two-player | 440 | 500 |
+| Night, non-two-player | 375 | 500 |
+| Night, two-player | 330 | 500 |
+
+Night and two-player identities are backed by shared descriptors, the two-player menu callback and official assets. Converted fields feed track-chain squared-distance classification and geometry cutoffs; Modern's second-record selection also depends on Rear View Detail. This gives bounded static support to MP100-013/014. Exact source values do not establish visible scenery distance, active second-view state, whole-game compatibility or historical introduction.
+
+The [retained track-chain comparison](original-modern-track-detail.md) separately explains the removed classifier context argument, new mirror-quality adjustment and removed discarded classification call. Remaining preset limits concern alternate writers/lifetimes, input bounds, the pre-existing +20h/+2ch field, complete coordinate/submission semantics and runtime output. Original's signed negative-count skip versus Modern's nonzero LOOP remains a conditional contract difference; its reachability is unproven.
 
 ## 31. Viewport camera selection
 

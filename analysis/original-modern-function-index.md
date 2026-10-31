@@ -30,10 +30,10 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004187e0` | ToggleConfiguredStreamVolume | 44 | 30 | [music-start](original-modern-music-start.md) |
 | `00418cc0` | OpenPathWithShellExecute | 28 | 26 | [shell-open](original-modern-shell-open.md) |
 | `0041a120` | BuildThreePayloadRecordAndAdvanceCursor | 564 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
-| `0041aa60` | ClassifyValueAgainstSelectedRecordSquaredThresholds | 55 | 51 | [track-detail](original-modern-track-detail.md), [x87-observers](original-modern-x87-observers.md) |
+| `0041aa60` | ClassifyValueAgainstSelectedRecordSquaredThresholds | 55 | 51 | [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md), [x87-observers](original-modern-x87-observers.md) |
 | `0041b9b0` | BuildAndRouteTrackSceneRenderCommands | 401 | 1 | [night-lighting](original-modern-night-lighting.md) |
 | `0041c670` | ApplyNightVehicleLightingToTrackBlockQuads | 884 | 71 | [night-lighting](original-modern-night-lighting.md) |
-| `0041cdc0` | BuildVisibleTrackBlockRenderChains | 1012 | 56 | [night-lighting](original-modern-night-lighting.md), [track-detail](original-modern-track-detail.md) |
+| `0041cdc0` | BuildVisibleTrackBlockRenderChains | 1012 | 56 | [night-lighting](original-modern-night-lighting.md), [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md) |
 | `0041d620` | ApplySelectedParameterPreset | 196 | 193 | [parameter-preset](original-modern-parameter-preset.md) |
 | `0041d7e4` | RunRaceInputCollectionWorker | 47 | 47 | [audit-status](original-modern-audit-status.md), [input-worker](original-modern-input-worker.md) |
 | `0041db10` | BuildIndexedShapeTexturesWithLoadingProgress | 164 | 49 | [texture-limits](original-modern-texture-limits.md), [texture-progress](original-modern-texture-progress.md) |
@@ -215,7 +215,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0049ea70` | BuildNetworkEndpointFromMutableAddress | 99 | 7 | [dialog-input](original-modern-dialog-input.md), [network-endpoints](original-modern-network-endpoints.md) |
 | `004a2f50` | NormalizeCommaSeparatorsAndParseColonSuffix | 61 | 57 | [network-endpoints](original-modern-network-endpoints.md), [network-port-menu](original-modern-network-port-menu.md) |
 | `004a2f90` | ScanAvailableTitleAndDemoMadFiles | 108 | 89 | [idle-movie](original-modern-idle-movie.md) |
-| `004a33d0` | PollLoadingAbortKeyState | 32 | 31 | [loading-timing](original-modern-loading-timing.md), [texture-progress](original-modern-texture-progress.md) |
+| `004a33d0` | PollLoadingAbortKeyState | 32 | 31 | [loading-timing](original-modern-loading-timing.md), [parameter-preset](original-modern-parameter-preset.md), [texture-progress](original-modern-texture-progress.md) |
 | `004a33f0` | InitializeRaceSession | 347 | 326 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [pending-overlay](original-modern-pending-overlay.md) |
 | `004a354c` | ResetLoadingProgressClock | 11 | 10 | [loading-timing](original-modern-loading-timing.md) |
 | `004a3558` | ResetLoadingProgressTimingState | 77 | 71 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md) |
