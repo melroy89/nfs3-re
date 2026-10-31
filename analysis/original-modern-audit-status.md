@@ -112,7 +112,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels153 entries vendor-only,39 bounded static,95 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels152 entries vendor-only,39 bounded static,96 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -152,3 +152,7 @@ The [renderer-loader follow-up](original-modern-renderer-loading.md#missing-driv
 ## View Angle setting linkage
 
 The projection audit now pins both option-list descriptors, the shared selector and official final English labels. [MP140-063 linkage](original-modern-projection.md#view-angle-option-list-and-release-note-correspondence) establishes the75/90/105 choices and final Automatic addition. Ordinal0 changes from fixed90 to cached automatic; intermediate-release lists, persisted-setting migration and rendered behavior remain unverified.
+
+## Audio-mode fallback linkage
+
+MP153-010 now links verified audiomode choice IDs and the [D3D/EAX-to-Stereo normalization](original-modern-config-loading.md#sound-mode-identity-d3deax-falls-back-to-stereo). The complete underlying capability helper is retained between baselines. Actual device transitions/provider behavior, audible output and release-specific introduction remain open.

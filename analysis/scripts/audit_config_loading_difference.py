@@ -8,9 +8,9 @@ from audit_thrash_loader_difference import ROOT, SPECS
 
 SPANS={'original':[(0x472980,0x472b60),(0x4728e0,0x47297d),
                    (0x4723f0,0x47242c),(0x4e0640,0x4e0658),(0x4ff4c0,0x4ff563),
-                   (0x472820,0x4728d3)],
+                   (0x472820,0x4728d3),(0x40faf0,0x40fb0f)],
        'official_modern':[(0x472980,0x472b48),(0x472230,0x472248),
-                          (0x4723f0,0x472402),(0x472820,0x4728d3)]}
+                          (0x4723f0,0x472402),(0x472820,0x4728d3),(0x40faf0,0x40fb0f)]}
 
 
 def main():
@@ -21,6 +21,10 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
+        sound_descriptor=struct.unpack('<5I',pe.get_data(0x156c08,20))
+        assert sound_descriptor[0]==0x5382c0 and sound_descriptor[4]==0x6fbc00
+        assert pe.get_string_at_rva(0x1382c0)==b'audiomode'
+        assert struct.unpack('<5H',pe.get_data(0x156364,10))==(155,156,157,158,0)
         switch_pointer=struct.unpack('<I',pe.get_data(0x15eb34+21*4,4))[0]
         switch_name=pe.get_string_at_rva(switch_pointer-0x400000).decode('ascii')
         assert switch_name==('-msdemo' if label=='original' else '')
@@ -61,6 +65,20 @@ def main():
                 for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports
                 if i.name and i.name in [b'CompareFileTime',b'GetFileTime',b'_lopen',b'_lclose',b'GetModuleFileNameA']}}
     images=[pefile.PE(str(ROOT/SPECS[label][0])) for label in ('original','official_modern')]
+    assert images[0].get_data(0xeaf0,31)==images[1].get_data(0xeaf0,31)
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    english=subprocess.check_output(['7z','x','-so',str(archive),'fedata/text/text.eng'])
+    labels=[]
+    for ident in (155,156,157,158):
+        offset=struct.unpack_from('<I',english,4*ident)[0]
+        labels.append(english[offset:english.index(b'\0',offset)].decode('latin1'))
+    assert labels==['Stereo','Mono','Dolby Surround','D3D/EAX']
+    result['sound_mode_normalization']={'descriptor':'00556c08','key':'audiomode','storage':'006fbc00',
+        'ordinal_labels':labels,'english_sha256':hashlib.sha256(english).hexdigest(),
+        'capability_helper':'0040faf0..0040fb0f identical:004e21b0(EAX=ffffffff), return Boolean mask20000h.',
+        'normalizer':'Modern00472230 changes ordinal3 to0 when capability helper returns0.',
+        'limits':'Final official English labels; backend capability source/lifetime and actual availability transition untested. Original retail labels and historical introduction unverified.'}
     old,new=[image.get_data(0x72820,0xb3) for image in images]
     assert old[:14]==new[:14] and old[27:]==new[27:]
     assert old[14:27].hex()=='f6052eeb5500200f858f000000'

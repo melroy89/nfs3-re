@@ -47,6 +47,13 @@
           "bytes_sha256": "d8caab668726c13df6e906a2153a2c49cf17cfcb9b36e44e993e5eeb931fe835",
           "assembly": "analysis/captures/modern-differences/config-loading/original-00472820.asm",
           "assembly_sha256": "c42c3626e1a37659d9b395aca08df924e46554afde5088cc012b5bc192088a39"
+        },
+        {
+          "start": "0040faf0",
+          "end": "0040fb0f",
+          "bytes_sha256": "f550b043ad288c6e1198b5a7da90ba9dfd3262e89428579861e4e58fe97e4468",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-0040faf0.asm",
+          "assembly_sha256": "677badf345e7218564a7624e56f41060d9efb0074414f4073d46e893986c6efd"
         }
       ],
       "flag_bit21_switch": {
@@ -98,6 +105,13 @@
           "bytes_sha256": "611cb7076935a767bea148ee9f7bcc04b642464d68af5cec43194c4bcf1c9024",
           "assembly": "analysis/captures/modern-differences/config-loading/official_modern-00472820.asm",
           "assembly_sha256": "ef78f3f73b8e416ceb4960bf4c5c51932d999d76382eba6c5d1d2c92621d96ff"
+        },
+        {
+          "start": "0040faf0",
+          "end": "0040fb0f",
+          "bytes_sha256": "f550b043ad288c6e1198b5a7da90ba9dfd3262e89428579861e4e58fe97e4468",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-0040faf0.asm",
+          "assembly_sha256": "55eb5e2fb6a57dcead524388b21cd68e89366033420b3069db788e7a73df6194"
         }
       ],
       "flag_bit21_switch": {
@@ -138,6 +152,21 @@
       "No per-field View Angle remapping in the header decision sequence or narrow sound normalizer00472230.",
       "Successful block copy, full save layout and later writes are not established by the header branches alone."
     ]
+  },
+  "sound_mode_normalization": {
+    "descriptor": "00556c08",
+    "key": "audiomode",
+    "storage": "006fbc00",
+    "ordinal_labels": [
+      "Stereo",
+      "Mono",
+      "Dolby Surround",
+      "D3D/EAX"
+    ],
+    "english_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "capability_helper": "0040faf0..0040fb0f identical:004e21b0(EAX=ffffffff), return Boolean mask20000h.",
+    "normalizer": "Modern00472230 changes ordinal3 to0 when capability helper returns0.",
+    "limits": "Final official English labels; backend capability source/lifetime and actual availability transition untested. Original retail labels and historical introduction unverified."
   },
   "save_entry_policy": {
     "paired_complete_span": "00472820..004728d3",
