@@ -33,3 +33,11 @@ The six droplist bindings identify concrete packaged controls associated with th
 The four cascade bindings are deliberately separate: the same list name can feed a different widget type, so their presence alone does not extend the audited droplist-renderer conclusion to cascades. Complete descriptor/loader-to-widget callback linkage remains follow-up work.
 
 The local `fedata_org/menus` backup contains mixed uppercase/lowercase copies of several names. Its provenance is not authenticated as a clean original distribution. This scan therefore makes no original-versus-Modern asset-addition claim and does not count duplicate backup files as additional historical controls. The executable call-target comparison above remains the evidence for the code change.
+
+## Separate adjacent helper: track-list policy alias
+
+The neighboring Modern helper **`00472924..00472959`** concerns different names and is not part of the car-alias matcher. It returns1 exactly when **`006fd3b8==3`** and the incoming EAX string compares equal, through the same ASCII comparator, to **`tracks`** (`00537e34`) or **`rectrk`** (`005382ec`). Otherwise it returns0. It preserves EBX/EDX; ECX is untouched by its local instructions and comparator. The mode’s higher-level meaning remains outside this finding.
+
+A paired caller witness **`00461d25..00461d51`** establishes the change: original compares only with `tracks` (`0053aa3c`), then additionally tests mode3. That conjunction selects **35** in local−`0x14`; other cases select **15**. Modern retargets the call to the new helper and selects the same two constants from its Boolean result. Thus `rectrk` receives the existing `tracks` treatment in this inspected consumer; this is an alias expansion, not evidence that mode3 itself was introduced.
+
+Three other Modern call sites are retained in the audit: **`004628ef`**, **`004634ea`**, **`00464570`**. They likewise select15 or35 from the helper result, using different widget fields/locals. Their surrounding complete original bodies and downstream units have not been audited here. The constants must not yet be called row counts, pixel heights or selection limits. Full widget linkage and visible output remain unresolved.

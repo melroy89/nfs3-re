@@ -7,6 +7,13 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "00461d25",
+          "end": "00461d51",
+          "sha256": "e4995efecf9b5d3aba5a13c012d5ab71b6464c625922a370a76857557d6d585a",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00461d25.asm",
+          "assembly_sha256": "f5275ba173669d3698a6e27bb99142763413fbbb570284c090c04896b923dad6"
+        },
+        {
           "start": "00463b74",
           "end": "00463bc5",
           "sha256": "e64d722a3d90dc3be6850adb57775d186ce03f4c3304be2101653ed773066548",
@@ -33,6 +40,13 @@
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
         {
+          "start": "00461d25",
+          "end": "00461d51",
+          "sha256": "57c19a38d61641892608d43e1218a419c5e977bd7662b182f09b3fbf41209f13",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00461d25.asm",
+          "assembly_sha256": "b2187f6343b9a5da97249fc19cfca8db35212c6e539d11d551e5077affe950f7"
+        },
+        {
           "start": "00463b74",
           "end": "00463bc5",
           "sha256": "19d4a32f30ff02193e9897b40626a5c0ea8cfdac7cc6281302910aae3f6059aa",
@@ -52,6 +66,34 @@
           "sha256": "68ca1495a293fb406cc95a93d37f33e935499502ca84d749339e1b75e8ff643d",
           "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004728f4.asm",
           "assembly_sha256": "56e4fd3c82e334457b72d876ba47c6f5f8d0624c113c90b27c64063623e13d04"
+        },
+        {
+          "start": "00472924",
+          "end": "00472959",
+          "sha256": "241088a7b0e105bbd75b31c1ecc3dca112d28282fc91ba4a45911a22fde90364",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00472924.asm",
+          "assembly_sha256": "f43baa374a5d51a0ab1adbdd8ff42f878009388f910ffaddf13e52898b0e6afd"
+        },
+        {
+          "start": "004628ec",
+          "end": "0046291a",
+          "sha256": "03c4a97546686e1213f27b90847530a0d4a701d66bfd5b2ebed54e043788b9d2",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004628ec.asm",
+          "assembly_sha256": "b913d5b78b9f9a217dee2cfa24f273278e6215d6ae3f199159ace5491f0a5a92"
+        },
+        {
+          "start": "004634e7",
+          "end": "00463501",
+          "sha256": "5b439a9160889b971121d7421fa15c922960af195afdafff4046fdc78e470729",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004634e7.asm",
+          "assembly_sha256": "73f458bd507444bc5ed62c112be7e32192a9b9f6879648c2890b88ff0a73eff5"
+        },
+        {
+          "start": "0046456d",
+          "end": "00464587",
+          "sha256": "007f83607959a9ee0bc789512551f903aa785fa369e8f7730176414252d830f2",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-0046456d.asm",
+          "assembly_sha256": "3f44e156d4dfcd68ff3944114d53d8cb97e9211af39d2ac5077d7e3accca6d4b"
         }
       ],
       "strings": {
@@ -171,6 +213,11 @@
         ]
       }
     ]
+  },
+  "track_policy_strings": {
+    "00537e34": "tracks",
+    "005382ec": "rectrk",
+    "0053aa3c": "tracks"
   },
   "limits": [
     "Static alias and caller policy only; full renderer and asset bindings not audited.",
