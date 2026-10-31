@@ -187,7 +187,71 @@
         "-?",
         "-h",
         "/h"
-      ]
+      ],
+      "network_prefixes": [
+        {
+          "index": 0,
+          "pointer": "0053d620",
+          "text": "-IP="
+        },
+        {
+          "index": 1,
+          "pointer": "0053d628",
+          "text": "-PORT="
+        },
+        {
+          "index": 2,
+          "pointer": "0053d630",
+          "text": "-NAME="
+        },
+        {
+          "index": 3,
+          "pointer": "0053d638",
+          "text": "-PLAYERS="
+        },
+        {
+          "index": 4,
+          "pointer": "0053d644",
+          "text": "-PNUM="
+        },
+        {
+          "index": 5,
+          "pointer": "0053d64c",
+          "text": "-RACE="
+        },
+        {
+          "index": 6,
+          "pointer": "0053d654",
+          "text": "-TRACK="
+        },
+        {
+          "index": 7,
+          "pointer": "0053d65c",
+          "text": "-CAR="
+        },
+        {
+          "index": 8,
+          "pointer": "0053d664",
+          "text": "-LAPS="
+        },
+        {
+          "index": 9,
+          "pointer": "0053d66c",
+          "text": "-LEVEL="
+        },
+        {
+          "index": 10,
+          "pointer": "0053d674",
+          "text": "-CLASS="
+        },
+        {
+          "index": 11,
+          "pointer": "0053d67c",
+          "text": "-AINUM="
+        }
+      ],
+      "port_scan_format": "%d",
+      "network_argument_error": "You must specify ALL of the following information:\nRebroadcaster address\nPlayer Name\nPlayer ID\nNumber of Players\n"
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -409,7 +473,71 @@
         "-?",
         "-h",
         "/h"
-      ]
+      ],
+      "network_prefixes": [
+        {
+          "index": 0,
+          "pointer": "0053d620",
+          "text": "-IP="
+        },
+        {
+          "index": 1,
+          "pointer": "0053d628",
+          "text": "-PORT="
+        },
+        {
+          "index": 2,
+          "pointer": "0053d630",
+          "text": "-NAME="
+        },
+        {
+          "index": 3,
+          "pointer": "0053d638",
+          "text": "-PLAYERS="
+        },
+        {
+          "index": 4,
+          "pointer": "0053d644",
+          "text": "-PNUM="
+        },
+        {
+          "index": 5,
+          "pointer": "0053d64c",
+          "text": "-RACE="
+        },
+        {
+          "index": 6,
+          "pointer": "0053d654",
+          "text": "-TRACK="
+        },
+        {
+          "index": 7,
+          "pointer": "0053d65c",
+          "text": "-CAR="
+        },
+        {
+          "index": 8,
+          "pointer": "0053d664",
+          "text": "-LAPS="
+        },
+        {
+          "index": 9,
+          "pointer": "0053d66c",
+          "text": "-LEVEL="
+        },
+        {
+          "index": 10,
+          "pointer": "0053d674",
+          "text": "-CLASS="
+        },
+        {
+          "index": 11,
+          "pointer": "0053d67c",
+          "text": "-AINUM="
+        }
+      ],
+      "port_scan_format": "%d",
+      "network_argument_error": "You must specify ALL of the following information:\nRebroadcaster address\nPlayer Name\nPlayer ID\nNumber of Players\n"
     }
   },
   "limits": [

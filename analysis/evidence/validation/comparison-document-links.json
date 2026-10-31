@@ -18,8 +18,8 @@
     },
     {
       "path": "analysis/original-modern-command-line.md",
-      "sha256": "2bfedccc185c380818e37c96c1d48e82dfc9cbcb2bccf720b880752c51ec8df1",
-      "relative_links": 4
+      "sha256": "d20b539ce9c2215895ff849cd4e28089f72c3b2ba1faa8804a5c9777326ed420",
+      "relative_links": 5
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
@@ -103,8 +103,8 @@
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
-      "sha256": "d1d5aa2dfe0669be6d654857f870b54b45779c000b4acc1a05eeb492ff651175",
-      "relative_links": 9
+      "sha256": "84c0c238fdf7c8a24072780d9b0c06b5ebd0ef30c3adc4a6d721f2f6150e282e",
+      "relative_links": 10
     },
     {
       "path": "analysis/original-modern-language-table.md",
@@ -328,7 +328,7 @@
     }
   ],
   "file_count": 65,
-  "relative_link_count": 477,
+  "relative_link_count": 479,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

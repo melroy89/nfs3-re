@@ -32,9 +32,13 @@ def main():
         for i in range(33):
             ptr=struct.unpack('<I',pe.get_data(0x55eb34-0x400000+4*i,4))[0]
             switches.append({'index':i,'pointer':f'{ptr:08x}','text':string(ptr)})
+        prefixes=[{'index':i,'pointer':f'{v:08x}','text':string(v)} for i,v in enumerate(struct.unpack('<12I',pe.get_data(0x15ec50,48)))]
+        assert prefixes[1]['text']=='-PORT='
         aliases=[string(v) for v in struct.unpack('<5I',pe.get_data(0x55ec3c-0x400000,20))]
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,
-            'switches':switches,'help_aliases':aliases}
+            'switches':switches,'help_aliases':aliases,'network_prefixes':prefixes,
+            'port_scan_format':string(0x53d68c),'network_argument_error':string(0x53d764)}
+    assert result['binaries']['original']['network_prefixes']==result['binaries']['official_modern']['network_prefixes']
     modern=result['binaries']['official_modern']['switches']
     assert [(r['index'],r['text']) for r in modern if r['text']]==[(0,'-driver='),(11,'-nomovies')]
     assert result['binaries']['original']['help_aliases']==result['binaries']['official_modern']['help_aliases']
