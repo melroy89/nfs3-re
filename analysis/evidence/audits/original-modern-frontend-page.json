@@ -52,6 +52,27 @@
           "bytes_sha256": "a81a2971435ac8a14ac302ade258f998feb72c8e2dc312ccbd68bed1ae5907bc",
           "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-00437820.asm",
           "assembly_sha256": "dba15b1d0a92bc8dce835b016be39609f106bcdfe9bada0fa3d33e67f1648f6b"
+        },
+        {
+          "start": "004f1f58",
+          "end": "004f1f88",
+          "bytes_sha256": "5cbc7314ba5bccd0b50de883c5d98267abfa577ea418cdcaa4c5b93f26786018",
+          "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-004f1f58.asm",
+          "assembly_sha256": "5531caa4c821b49fddefeae525178df1f2fcb7e8ff3621fec077c4ff6fd6493c"
+        },
+        {
+          "start": "004f26a0",
+          "end": "004f270e",
+          "bytes_sha256": "f19bb1b3307d13490583951b80f582f1d97e0f80ea0a6a9b0645a23111d23542",
+          "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-004f26a0.asm",
+          "assembly_sha256": "ea9cd9f8c87cf7d590edae819dd57689b36fb88888f04df393eacd5aea94cafc"
+        },
+        {
+          "start": "004f2710",
+          "end": "004f2736",
+          "bytes_sha256": "e7245d4799a1ebfcb47f4969a7887e9ea14c6de1e301d85082c74ebcf54437aa",
+          "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-004f2710.asm",
+          "assembly_sha256": "2eb4e70e91f40f6834c93319e0be4ea8b99d4bd971358e7acadd57ed4d163145"
         }
       ],
       "switch_table_first_five": [
@@ -67,6 +88,21 @@
         "0053f7e0",
         "00000000"
       ],
+      "resource_loader_imports": {
+        "0053453c": "FindResourceA",
+        "00534540": "LoadResource",
+        "00534570": "LockResource"
+      },
+      "about_resource": {
+        "type": 10,
+        "name": "ABOUT.QFS",
+        "language": 0,
+        "rva": "00645ad0",
+        "size": 47372,
+        "sha256": "d78bddc8bbce4fa2db72035ec87c87729911ea08508f02669ea93662c6cd3d8a",
+        "first_32_bytes_hex": "10fb0a8d28e453485049288d0a000100000047494d5863726564010b1801037d",
+        "header_declared_unpacked_size": 691496
+      },
       "sixth_switch_target": "00437820",
       "strings": {
         "0053f7d4": "ABOUT.QFS",

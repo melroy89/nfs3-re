@@ -16,6 +16,8 @@ def main():
         raw = (ROOT/relative).read_bytes(); assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw); images.append(pe)
         spans = [(0x441cb0, 0x44236c), (0x437820, 0x4378b6)]
+        if label == 'official_modern':
+            spans += [(0x4f1f58, 0x4f1f88), (0x4f26a0, 0x4f270e), (0x4f2710, 0x4f2736)]
         rows = []
         for start, end in spans:
             path = capture/f'{label}-{start:08x}.asm'
@@ -28,6 +30,24 @@ def main():
                'switch_table_first_five': [f'{a:08x}' for a in struct.unpack('<5I', pe.get_data(0x41c90,20))],
                'record_75_words': [f'{a:08x}' for a in struct.unpack('<4I',pe.get_data(0x155c08,16))]}
         if label == 'official_modern':
+            row['resource_loader_imports'] = {f'{i.address:08x}': i.name.decode()
+                for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports
+                if i.address in (0x53453c, 0x534540, 0x534570)}
+            resources = []
+            for t in pe.DIRECTORY_ENTRY_RESOURCE.entries:
+                for n in t.directory.entries:
+                    if t.id == 10 and str(n.name) == 'ABOUT.QFS':
+                        for lang in n.directory.entries:
+                            data = lang.data.struct
+                            payload = pe.get_data(data.OffsetToData, data.Size)
+                            assert payload[:2] == bytes.fromhex('10fb')
+                            resources.append({'type': 10, 'name': str(n.name), 'language': lang.id,
+                                'rva': f'{data.OffsetToData:08x}', 'size': data.Size,
+                                'sha256': hashlib.sha256(payload).hexdigest(),
+                                'first_32_bytes_hex': payload[:32].hex(),
+                                'header_declared_unpacked_size': int.from_bytes(payload[2:5], 'big')})
+            assert len(resources) == 1
+            row['about_resource'] = resources[0]
             row['sixth_switch_target'] = f'{struct.unpack("<I",pe.get_data(0x41ca4,4))[0]:08x}'
             row['strings'] = {f'{a:08x}': pe.get_data(a-0x400000,40).split(b'\0')[0].decode('ascii') for a in (0x53f7d4,0x53f7e0)}
         result['binaries'][label] = row

@@ -30,3 +30,13 @@ The preexisting main path creates a 608×320 intermediate raster; its allocation
 **Verified:** one-byte main-body delta, retained five cases, discontiguous new case, text-to-resource page-record change and resource/shape names. **Unresolved:** selected-index admission, resource/unpack/shape lifetime and failure contracts, payload geometry, actual displayed page and release attribution. No claim that every frontend text page was replaced or all resource-present paths render successfully.
 
 Existing [detailed notes](detailed-analysis-notes.md) document the main text/shape branches. Their earlier phrase “Original table” in the discontiguous-body investigation referred to the then-current analyzed Modern program, not the supplied-original executable; the paired five-versus-six-case evidence here resolves that ambiguity.
+
+## Resource lookup and declared allocation size
+
+Modern resource loader `004f1f58..004f1f88` preserves ECX/EDX and accepts the resource name in EAX. It calls the baseline-resolved imports `FindResourceA` (`0053453c`) with literal type **10**, then `LoadResource` (`00534540`) and `LockResource` (`00534570`), using module handle global `009f3d48` for the first two APIs. Find/load failure returns zero; the lock result is returned directly. This is a verified API chain, not a DLL-name/string inference. Successful OS resource access is not exercised.
+
+The manifest now retains the exact selected PE resource `10/ABOUT.QFS/0`: RVA `00645ad0`, **47,372 bytes**, SHA-256, and its first 32 bytes. Prefix `10 fb 0a 8d 28` selects the inspected size-reader branch at `004f26a0`: it accepts the type/signature bytes and extracts a three-byte big-endian length from bytes 2..4 using BSWAP/SHR. Here that value is **`0a8d28h = 691,496`**. Wrapper `004f2710` returns this nonzero result before its alternate format path. The page arm then requests that size through `004e1620` with pool selector 16.
+
+These observations connect resource identity, raw compressed header and requested unpacked allocation. They do not validate every compressed command, verify actual produced byte count, establish the `cred` directory entry or its dimensions, or prove allocation/decompression succeeds. The size helper takes a pointer, not an explicit resource-length argument, and this path does not call SizeofResource before parsing. The actual inspected payload is long enough for these header reads; arbitrary resource safety is not inferred.
+
+Next: inspect the unpack/shape-directory contracts or reuse a qualified offline decoder if one becomes available. No new decoder or target execution was used for this checkpoint, and payload bytes were not modified.
