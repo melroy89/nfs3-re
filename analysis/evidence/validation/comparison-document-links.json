@@ -318,8 +318,8 @@
     },
     {
       "path": "analysis/original-modern-state14.md",
-      "sha256": "54d9dd3ebae96f9c3d2ad646c6b7a4bdda6f3b8c15e4f65c01e2336d2308cb3d",
-      "relative_links": 5
+      "sha256": "7e6fa2e8bc74eb28d40136ad4a66c8d4965e6d965867ff94b4e0e0e1992c9270",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-texture-limits.md",
@@ -388,7 +388,7 @@
     }
   ],
   "file_count": 77,
-  "relative_link_count": 557,
+  "relative_link_count": 559,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

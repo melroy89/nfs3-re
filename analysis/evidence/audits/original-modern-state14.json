@@ -7,6 +7,13 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "0044b316",
+          "end": "0044b360",
+          "sha256": "165b61a84cdcaa71e6b3945e6fba20a4a298bb7c102c0d58fa8235a26f9a9cfb",
+          "assembly": "analysis/captures/modern-differences/state14/original-0044b316.asm",
+          "assembly_sha256": "53a5bd7e02b289cc8120a66f85acd1c24ce2cfc1fa83bc54dd645c2c8f8db039"
+        },
+        {
           "start": "004bc160",
           "end": "004bc176",
           "sha256": "cf9d7feeb20a20e126d2e9d297927287389fab32ff533087c372d412f58ab510",
@@ -54,6 +61,13 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "0044b316",
+          "end": "0044b360",
+          "sha256": "6ccc136e2b3990c56dd3ce8b03c9fdb12eb2b44209d7b1ab9adfb32d938f5f2d",
+          "assembly": "analysis/captures/modern-differences/state14/official_modern-0044b316.asm",
+          "assembly_sha256": "74ebafede2ff1589676f027ea7d72f9a1ceadbfd8dbe683494d67ffcceae20b9"
+        },
         {
           "start": "004bc160",
           "end": "004bc176",

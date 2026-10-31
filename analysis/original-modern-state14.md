@@ -77,3 +77,11 @@ The official Modern20-byte descriptor **`00556924`** binds literal **`fog`** at 
 Paired scene-render prefix **`004bc160..004bc176`** establishes a changed producer: Modern calls the new recomputation helper unconditionally at **`004bc16d`**, after saving incoming EAX in EBX. Original instead tests incoming EAX and, only when zero, calls **`00431c30`** at `004bc171`. The retained original helper is only `PUSH EBP; MOV EBP,ESP; POP EBP; RET`. Thus this is an added admission-state recomputation on the inspected scene route, not a rename of an original equivalent helper.
 
 Together with disabled-state cleanup, this connects the setter policy to a concrete changing admission producer. It does not prove every caller first runs this producer or that the three inputs are normalized0/1 in all modes. No runtime scene, menu option or renderer state was changed.
+
+## Frontend transition also refreshes admission
+
+The other decoded direct call to Modern recomputation is **`0044b346`**, in the frontend transition loop. Paired span **`0044b316..0044b360`** is retained in the audit. It invokes active descriptor initialization **`0044ab40`**, optionally invokes **`0044a0c0`**, normalizes a nonzero local result to3, then Modern refreshes fog admission before issuing the existing sound request. The [slideshow transition investigation](original-modern-slideshow-navigation.md) documents how this path is reached and why active/pending descriptors matter.
+
+Original’s same span has no recomputation call. At `0044b346` it instead loads ECX1, followed by EDX127 at `0044b34b`; Modern inserts the5-byte call at the first address and moves ECX1 into the second slot. Both then load sound identifier4 into EAX and call **`004181d0`** at `0044b35b`. The removed volume setup belongs to the separately changed [frontend-sound interface](original-modern-frontend-sound.md); it must not be treated as arbitrary dead-code removal or as a new caller-supplied EDX contract for Modern.
+
+This places recomputation after the inspected descriptor initialization/transition work, as well as at scene-render entry. The two observed routes can refresh the cached admission value at different points in the menu/race lifecycle. Complete transition coverage, indirect calls and every writer of the three source globals remain unresolved. No menu transition or sound was executed.
