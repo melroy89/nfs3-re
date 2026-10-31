@@ -66,7 +66,7 @@ After writing the reference rectangle, Modern calls `0047f9a4` at `004be74d`. Th
 
 - **MP100-002:** reference geometry and dynamic aspect-factor writes are concrete EXE mechanisms supporting proportion correction, not proof that all objects/HUD/cameras are correct.
 - **MP160-005:** the changed `007cdb48` first/second-group calculations are bounded evidence relevant to mirror proportions; actual imagery and other camera consumers remain pending.
-- **MP160-006:** border scaling source is linked to the new reference rectangle; map-point sizing remains a separate trace.
+- **MP160-006:** border scaling source is linked to the new reference rectangle; the [map-marker producer-to-quad trace](original-modern-map-marker-scaling.md) separately establishes marker extents. Other styles, lifecycle and rendered output remain unverified.
 
 Next: follow the three aspect-factor consumers, map all profile flags/viewport group consumers, compare remaining camera and map-point calculations, and use controlled image comparisons if visual correctness must be established. Do not silently normalize rounding, inclusive extents or suspected original behavior during reconstruction.
 
@@ -99,7 +99,7 @@ Examples derived from those instructions, **not game execution**, with X=Y=0:
 
 The main viewport initializer calls it at `004be851` after `004be3d0`. Another viewport-update path calls it at `004bea2a`, after its own `004be3d0` call and conditional state write. The captured latter region is a caller witness, not a complete analysis of that enclosing function. These two producers do not prove freshness at every overlay call; further writes/aliases and lifecycle ordering remain dependencies.
 
-This narrows the overlay change to use of a **derived, slightly expanded rectangle** rather than simple address relocation. The source-group producer/profile meaning, intended seam/coverage effect and actual visible result remain unresolved. No release-note bug is assigned from the correction alone. Preserve the literal operation order, overflow and extent semantics during original/Modern C reconstruction until a deliberate policy change is separately validated. No target instructions were executed.
+This narrows the overlay change to use of a **derived, slightly expanded rectangle** rather than simple address relocation. The following section resolves the ordinary initializer's source-group identity and flag-dependent tuples. Full profile/lifecycle admission, intended seam/coverage effect and actual visible result remain unresolved. No release-note bug is assigned from the correction alone. Preserve the literal operation order, overflow and extent semantics during original/Modern C reconstruction until a deliberate policy change is separately validated. No target instructions were executed.
 
 ## Source groups: covering frame versus physical/fitted rectangles
 

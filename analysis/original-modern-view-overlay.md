@@ -31,6 +31,8 @@ The x87 scaling and loop setup now read these corresponding source addresses:
 
 Both primary tile setup and optional overlay size calculations use the new extents. The [viewport reference geometry report](original-modern-viewport-geometry.md) establishes related Modern rectangle construction; this chapter does not assume every group/producer is interchangeable or prove live values. Merely comparing multipliers would miss this source change.
 
+The [source-group follow-up](original-modern-viewport-geometry.md#source-groups-covering-frame-versus-physicalfitted-rectangles) resolves the ordinary linkage: original reads the physical/fitted record's +10h group, whereas Modern reads an expanded derivative of the covering +0 group. For zero flags at1920×1080, the Modern initializer produces covering `{0,-180,1920,1440}`, then correction yields `{0,-180,1922,1441}`. Thus describing this as only a two-pixel horizontal expansion would omit the changed source height and origin. These are static initial tuples, not lifetime invariants or observed cabin pixels; later resize updates and clipping still matter.
+
 The retained middle tile/draw orchestration `004892dd..004894f8` is byte-identical. Its descriptor/loop/resource bounds and transitive draw implementations remain separate; the prior [function notes](detailed-analysis-notes.md#viewport-tile-and-overlay-orchestration-named) describe its bounded mechanical role.
 
 ## Descriptor-read rewrite and additional fixed-colour quads
