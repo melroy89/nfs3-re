@@ -244,10 +244,10 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004b9140` | BuildWheelSpinMatrixWithOptionalSteering | 320 | 4 | No address mention found |
 | `004b9280` | BuildHandbrakeLimitedWheelSpinMatrix | 319 | 4 | No address mention found |
 | `004ba350` | ApplyTrackSideAdjustedGeometryColors | 1204 | 37 | [geometry-color-admission](original-modern-geometry-color-admission.md) |
-| `004bbba0` | UpdateAndDispatchRaceVehicleRenderStates | 323 | 305 | [registry](original-modern-registry.md), [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
+| `004bbba0` | UpdateAndDispatchRaceVehicleRenderStates | 323 | 305 | [geometry-color-admission](original-modern-geometry-color-admission.md), [registry](original-modern-registry.md), [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004bbd80` | InitializeRenderTemporaryArena | 36 | 36 | No address mention found |
 | `004bbda4` | ReleaseRenderTemporaryArena | 18 | 18 | No address mention found |
-| `004bc160` | RenderRaceScene | 704 | 15 | [night-lighting](original-modern-night-lighting.md), [state14](original-modern-state14.md) |
+| `004bc160` | RenderRaceScene | 704 | 15 | [geometry-color-admission](original-modern-geometry-color-admission.md), [night-lighting](original-modern-night-lighting.md), [state14](original-modern-state14.md) |
 | `004bc650` | FinalizeRaceFrameViewportState | 20 | 7 | No address mention found |
 | `004bc670` | ClearDialogAndRefreshRaceMouseState | 15 | 2 | No address mention found |
 | `004bc680` | RenderRaceFrame | 332 | 17 | [night-lighting](original-modern-night-lighting.md), [og-modern-x87-precision](og-modern-x87-precision.md) |

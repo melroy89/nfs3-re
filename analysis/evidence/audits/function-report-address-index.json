@@ -16,6 +16,10 @@
   },
   "source_documents": [
     {
+      "path": "analysis/original-modern-audit-status.md",
+      "sha256": "37b86cde3fab094bd34f86ce01c18cdda0637b3fb310e531246524555687a5b1"
+    },
+    {
       "path": "analysis/original-modern-border-geometry.md",
       "sha256": "38dd4ce2a52f5ee6190981b44cd610b76cbb14e5b68a760e8b20f725ad63b446"
     },
@@ -97,7 +101,7 @@
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
-      "sha256": "f437fc45c7fb152d31e343219c4a4faf758a246d252b7467da9079b1234703ed"
+      "sha256": "ebd2cc60a001988844f709835ae0e5033270863ecb70d302917b3f56f74eaff6"
     },
     {
       "path": "analysis/original-modern-ghost-loading.md",
@@ -7610,6 +7614,14 @@
       "modern_sha256": "f1319e78d6e7ddd4fe40974b48bf7287e16bfc58bf9e2db8828d76840b8c5980",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-geometry-color-admission.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004bbba0",
+            "004bbca8"
+          ]
+        },
+        {
           "path": "analysis/original-modern-registry.md",
           "entry_mentioned": false,
           "addresses": [
@@ -7707,6 +7719,14 @@
       "original_sha256": "3a37980f41251cfeaca97251817097c438c1793057c68da58e725051a08b133c",
       "modern_sha256": "814b088142af5c2dc63eae0f06b12c295264bfd8cf750892469d2accf11e62d3",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-geometry-color-admission.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004bc274",
+            "004bc315"
+          ]
+        },
         {
           "path": "analysis/original-modern-night-lighting.md",
           "entry_mentioned": true,

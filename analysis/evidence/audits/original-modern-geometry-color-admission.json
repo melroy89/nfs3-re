@@ -71,6 +71,66 @@
           "end_exclusive": "004bb288",
           "sha256": "847241b48fbf9373862c9034226fdea82bf4f2372e6ccd724cc533f768eb71e7",
           "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bb27a.asm"
+        },
+        {
+          "start": "004bc26c",
+          "end_exclusive": "004bc279",
+          "sha256": "55d12f914bbcdb638051baa9d9b88b79152e4a33a26d738bc1979e08548b9377",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bc26c.asm"
+        },
+        {
+          "start": "004bc30d",
+          "end_exclusive": "004bc31a",
+          "sha256": "3634cdfd96fed39c26a0a54ed34bf1429c50e13faa399f588ecd7910ad1e9f50",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bc30d.asm"
+        },
+        {
+          "start": "004bbba0",
+          "end_exclusive": "004bbbb0",
+          "sha256": "d96bec04fe9f206a3d996455cc089f712fbed9aa3174870b15cdb0f813ba0f29",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bbba0.asm"
+        },
+        {
+          "start": "004bbca4",
+          "end_exclusive": "004bbcad",
+          "sha256": "4cb0b2669a70409fab72cf94cfe4f5e48f52dffcd2161d62eb4f88f9598e044e",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bbca4.asm"
+        },
+        {
+          "start": "004bb4c0",
+          "end_exclusive": "004bb4d5",
+          "sha256": "c5d420d9050edea02f6fba4679119abf94f6af86283e8e145b7274516b6b3336",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bb4c0.asm"
+        },
+        {
+          "start": "004bb53e",
+          "end_exclusive": "004bb58a",
+          "sha256": "55ad6737489e1aa6f83c5c2a4fe9d82a405b8b8dcf30efcb730f04f296f8e8a1",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bb53e.asm"
+        },
+        {
+          "start": "004baa50",
+          "end_exclusive": "004baa60",
+          "sha256": "269832152ef66aa800485f5c5267ecceade692a88891a0bffe84a527a3b73f5c",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004baa50.asm"
+        },
+        {
+          "start": "004bab70",
+          "end_exclusive": "004bab89",
+          "sha256": "22f6b6164990dddd7c6e187116147f9a7b89b5db9de5a31a2eecc103a6242df1",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bab70.asm"
+        },
+        {
+          "start": "004bae00",
+          "end_exclusive": "004bae19",
+          "sha256": "2f9cfabe03f436252ef2139ad9adf5e3255701b465098160795fd867d7a8cd4d",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bae00.asm"
+        },
+        {
+          "start": "004bb200",
+          "end_exclusive": "004bb219",
+          "sha256": "51c88b15e10abf12ba703b487d3cbfbaa9f1fcc51bfbf97186620ee3648fcd6f",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bb200.asm"
         }
       ]
     }

@@ -14,7 +14,9 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images.append(pe);rows=[]
-        for start,end in spans:
+        selected=list(spans)
+        if label=='official_modern':selected += [(0x4bc26c,0x4bc279),(0x4bc30d,0x4bc31a),(0x4bbba0,0x4bbbb0),(0x4bbca4,0x4bbcad),(0x4bb4c0,0x4bb4d5),(0x4bb53e,0x4bb58a),(0x4baa50,0x4baa60),(0x4bab70,0x4bab89),(0x4bae00,0x4bae19),(0x4bb200,0x4bb219)]
+        for start,end in selected:
             data=pe.get_data(start-0x400000,end-start)
             path=capture/f'{label}-{start:08x}.asm'
             path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))

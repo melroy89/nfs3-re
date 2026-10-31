@@ -1,5 +1,7 @@
 # Original versus Modern Patch: executable differences
 
+For current acceptance, limits and prioritized next work, see the [audit stopping-point report](original-modern-audit-status.md).
+
 For a shallow inventory, see the [complete release-note change list](#complete-release-note-change-list) below. For address-based navigation, use the [361-entry changed-function index](original-modern-function-index.md); chapter mentions are not completion evidence.
 
 **Audit in progress.** This document explains verified differences and indexes the remaining code-level investigation. It does not equate vendor release-note entries, differing bytes or Ghidra functions with independently explained gameplay changes. The original supplied executable, official Modern Patch release and local edited analysis target are kept distinct.

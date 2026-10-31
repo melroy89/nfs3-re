@@ -28,3 +28,11 @@ The unchanged tail includes track/object filtering calls, transforms, loops and 
 Paired direct calls at **`004baab3`**, **`004babe2`**, **`004bae85`** and **`004bb283`** retain target`004ba350`. The audit captures their immediate EAX/EDX/EBX setup from locals. These are call-argument witnesses, not a completed proof of the locals’ upstream producers or a universal direct-call inventory. A reconstruction should keep EAX context, EDX object and EBX input explicit until that trace is complete.
 
 The bounded finding is an expanded context1 admission at High detail with retained downstream code, plus removed/relocated early-return instructions. It is not an arithmetic rewrite or runtime visual-equivalence claim. Historical release attribution and the affected rendered effect remain pending. No catalog status is promoted from a suggestive renderer name.
+
+## Current context trace and stopping point
+
+The additional official-Modern spans retain this explicit argument chain: scene calls`004bc274`/`004bc315` load EAX=`007a3d14` before entering`004bbba0`; that function saves incoming EAX in ESI and passes ESI as EDX at`004bbca8` to`004bb4c0`. The latter retains incoming EDX in ECX and supplies it in EDX to its part-rendering calls. All four part-function prefixes save incoming EDX to the locals later passed in EAX to`004ba350`.
+
+This is strong local data-flow support for the shared viewport context, but intervening helper register preservation, aliases and every branch have not been audited end-to-end. The [existing mirror-context producer](original-modern-night-lighting.md#context-producer-optional-mirror-setting-gated-pass) supplies relevant upstream evidence, not permission to skip those remaining checks. The current report therefore keeps full context correspondence **inferred**, and the visible color effect **unresolved**.
+
+Stop this branch here for the current pass. Required follow-up, if prioritized later: verify preservation of ESI/ECX and saved context locals across intervening calls, identify the geometry/color output consumers, then decide whether a named release-note claim is supported. Do not repeatedly expand every retained callee merely to restate that runtime rendering is untested.
