@@ -492,24 +492,24 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "rows": [
         {
-          "address": "00557d84",
+          "address": "00557d80",
           "words": [
+            "00000011",
             "0053852c",
             "00000001",
-            "00604f34",
-            "00000011"
+            "00604f34"
           ],
-          "sha256": "8d868a3b9e674df5a3a6b9119bac01d26ed0565424e26dbbb3e5becff02767d1"
+          "sha256": "340cf56be78cebfffc8dc3e5e79ba0a31eb6b31a36f3a037344ccd45556bd39c"
         },
         {
-          "address": "00557dc4",
+          "address": "00557dc0",
           "words": [
+            "0000001d",
             "0053852c",
             "00000001",
-            "00604f38",
-            "0000001d"
+            "00604f38"
           ],
-          "sha256": "1c387a91242b6e993f6793453675b489e4b63f0dfb2ac8424e7055ad1d7d4a72"
+          "sha256": "c3e4d732c2aa482366127fbc8dc1eebf8a080c7909caacc21dba1c84df72a8fd"
         }
       ]
     },
@@ -518,27 +518,57 @@
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "rows": [
         {
-          "address": "00557d84",
+          "address": "00557d80",
           "words": [
+            "00000011",
             "0053852c",
             "00000001",
-            "00604f34",
-            "00000011"
+            "00604f34"
           ],
-          "sha256": "8d868a3b9e674df5a3a6b9119bac01d26ed0565424e26dbbb3e5becff02767d1"
+          "sha256": "340cf56be78cebfffc8dc3e5e79ba0a31eb6b31a36f3a037344ccd45556bd39c"
         },
         {
-          "address": "00557dc4",
+          "address": "00557dc0",
           "words": [
+            "0000001d",
             "0053852c",
             "00000001",
-            "00604f38",
-            "0000001d"
+            "00604f38"
           ],
-          "sha256": "1c387a91242b6e993f6793453675b489e4b63f0dfb2ac8424e7055ad1d7d4a72"
+          "sha256": "c3e4d732c2aa482366127fbc8dc1eebf8a080c7909caacc21dba1c84df72a8fd"
         }
       ]
     }
+  },
+  "field_writer_spans": {
+    "original": [
+      {
+        "start": "00449240",
+        "end": "004492bf",
+        "sha256": "17c8ae187b5cd5d41bcbedbb1d1cd48d340cec57c76c635e9b86979e9156f8d8",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00449240.asm"
+      },
+      {
+        "start": "00449393",
+        "end": "004493a3",
+        "sha256": "5455a1a18a64552952beb151774745f804326af6a5b6cef2fee6c2cfd7b891f0",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00449393.asm"
+      }
+    ],
+    "official_modern": [
+      {
+        "start": "00449240",
+        "end": "004492bf",
+        "sha256": "17c8ae187b5cd5d41bcbedbb1d1cd48d340cec57c76c635e9b86979e9156f8d8",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00449240.asm"
+      },
+      {
+        "start": "00449393",
+        "end": "004493a3",
+        "sha256": "5455a1a18a64552952beb151774745f804326af6a5b6cef2fee6c2cfd7b891f0",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00449393.asm"
+      }
+    ]
   },
   "limits": [
     "Authored values only; runtime widget counts not measured.",

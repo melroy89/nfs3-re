@@ -38,10 +38,17 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
-        for address in (0x557d84,0x557dc4):
+        for address in (0x557d80,0x557dc0):
             data=pe.get_data(address-0x400000,16);words=struct.unpack('<4I',data)
-            assert pe.get_data(words[0]-0x400000,11)==b'maxvisitem\0'
+            assert pe.get_data(words[1]-0x400000,11)==b'maxvisitem\0'
             rows.append({'address':f'{address:08x}','words':[f'{word:08x}' for word in words],'sha256':hashlib.sha256(data).hexdigest()})
+        spans=[]
+        capture=ROOT/'analysis/captures/modern-differences/menu-visible-counts';capture.mkdir(parents=True,exist_ok=True)
+        for start,end in [(0x449240,0x4492bf),(0x449393,0x4493a3)]:
+            path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
+            spans.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT))})
+        assert struct.unpack('<I',pe.get_data(0x4921c,4))[0]==0x4492aa
+        result.setdefault('field_writer_spans',{})[label]=spans
         result['binary_field_descriptors'][label]={'path':relative,'sha256':expected,'rows':rows}
     result['limits']=['Authored values only; runtime widget counts not measured.','Backup provenance unauthenticated; missing/ambiguous pairs reported.']
     (ROOT/'analysis/evidence/audits/menu-visible-counts.json').write_text(json.dumps(result,indent=2)+'\n')

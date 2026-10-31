@@ -85,8 +85,16 @@ No “seven new controls” claim follows from the one-way matching result. The 
 
 ## Executable binding for `maxvisitem`: parser packing still open
 
-The visible-count audit now verifies the executable baselines as well as assets and retains two16-byte descriptor rows at **`00557d84`** and **`00557dc4`**. Both refer to the exact NUL-terminated literal **`maxvisitem`**. Modern rows decode as **`{0053852c,1,00604f34,11h}`** and **`{0053852c,1,00604f38,1dh}`**; both original counterparts are retained separately in the manifest rather than assumed equal from addresses.
+The visible-count audit now verifies the executable baselines as well as assets and retains two16-byte descriptor rows at **`00557d80`** and **`00557dc0`**. Both refer to the exact NUL-terminated literal **`maxvisitem`**. Modern rows decode as **`{11h,0053852c,1,00604f34}`** and **`{1dh,0053852c,1,00604f38}`**; both original counterparts are retained separately in the manifest rather than assumed equal from addresses.
 
 The destinations lie at **`00604ee0+54h`** and **`00604ee0+58h`**, within the shared menu-construction record used by existing [menu text-field research](original-modern-menu-text-fields.md). This establishes a binary field-name binding for the authored values. It does not yet establish how the descriptor’s other words select section/type behavior, how an integer is packed into WORD components, or which final widget field receives each value.
 
 Required follow-up is the descriptor consumer and construction/copy path, then the cascade layout consumer. Until that chain is verified, the asset increases above remain authored-limit evidence, not a measured or fully derived runtime row-count change. Direct reads of nearby widget offsets are insufficient to bridge that gap by themselves. No parser or game code was executed.
+
+## Descriptor consumer resolves the two-byte store
+
+Following writer **`00449240`** corrects a prior four-byte row-alignment error: `00557d84`/`00557dc4` are the **name fields** inside rows starting at `00557d80`/`00557dc0`. The four-word row descriptions above and manifest now use the aligned starts. Values`11h/1dh` are the first word of their respective rows, not trailing conversion metadata.
+
+The writer multiplies its descriptor index by16 and reads conversion type from table base **`00557c10+8`**, destination pointer from base+`0x0c`. It subtracts construction base **`00604ee0`** from the latter, computes **`00604ee0 + 0xbc*instanceIndex + destinationOffset`**, and dispatches conversion type through **`00449218`**. Both selected rows specify type1, whose target is **`004492aa`**: call numeric conversion helper `00449130`, prepare a local DWORD but set copy length to **2**. Shared copy tail **`00449393..004493a3`** then copies exactly those two bytes to the instance destination.
+
+Thus the authored count is stored as the low WORD of the numeric conversion result at instance offsets **`0x54`** or **`0x58`**, rather than a full DWORD at a fixed global address. The audit retains paired writer spans and checks the type1 dispatch target. Numeric parsing bounds/overflow, the first descriptor word’s complete section/type admission, and the later cascade effective-count calculation remain follow-up work. This closes the local storage-width/instance-address question without claiming that the authored value is always the final visible count.
