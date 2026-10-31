@@ -1,0 +1,67 @@
+{
+  "kind": "sequence-radio-path-switch-removal",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004c94e0",
+          "end_exclusive": "004c9588",
+          "sha256": "0b91c95882360a668b25dc9f7e76c8f664dd76c99f9bb1bb942e2a9d80065aca",
+          "assembly": "analysis/captures/modern-differences/voice-bank-paths/original-004c94e0.asm",
+          "old_jump_table_address": "004c94c0",
+          "table_bytes_hex": "05954c000c954c0013954c001a954c0021954c0005954c00"
+        },
+        {
+          "start": "004c9890",
+          "end_exclusive": "004c998f",
+          "sha256": "ab168b95694941497d22b4b952a0fcc1cfb257e684648efdfb8d5cb21eb6bda6",
+          "assembly": "analysis/captures/modern-differences/voice-bank-paths/original-004c9890.asm",
+          "old_jump_table_address": "004c9874",
+          "table_bytes_hex": "b7984c00be984c00c5984c00cc984c00d3984c00b7984c00"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004c94e0",
+          "end_exclusive": "004c9588",
+          "sha256": "6fcf974b06eb6bfea8d258d0af48b555688753274673adf97b9103afeebb281e",
+          "assembly": "analysis/captures/modern-differences/voice-bank-paths/official_modern-004c94e0.asm",
+          "old_jump_table_address": "004c94c0",
+          "table_bytes_hex": "909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start": "004c9890",
+          "end_exclusive": "004c998f",
+          "sha256": "0328ffd032dc05aa424466db32cb3cec58925fc5dea2d3f438c5ab23ad269fab",
+          "assembly": "analysis/captures/modern-differences/voice-bank-paths/official_modern-004c9890.asm",
+          "old_jump_table_address": "004c9874",
+          "table_bytes_hex": "909090909090909090909090909090909090909090909090"
+        }
+      ]
+    }
+  },
+  "changes": [
+    {
+      "entry": "004c94e0",
+      "changed_region_start": "004c94f4",
+      "identical_tail_start": "004c9526",
+      "changed_bytes": 49
+    },
+    {
+      "entry": "004c9890",
+      "changed_region_start": "004c98a6",
+      "identical_tail_start": "004c98d8",
+      "changed_bytes": 49
+    }
+  ],
+  "limits": [
+    "Static function/path switch evidence only; no audio or asset validation.",
+    "Shared path initialization and selector producer limits remain in the sound-bank report."
+  ]
+}

@@ -297,7 +297,7 @@
     },
     {
       "path": "analysis/original-modern-sound-bank-language.md",
-      "sha256": "25694b9f3f414889fa411b5974e4f8cbc5bc192831ce05f6ee30639cd2204336"
+      "sha256": "182b118f352dffde470fd085cdbb6870a20831cd368c09e1fb0973a0000d6cca"
     },
     {
       "path": "analysis/original-modern-startup-paths.md",
@@ -374,8 +374,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 297,
-    "without_address_mentions": 64
+    "with_address_mentions": 299,
+    "without_address_mentions": 62
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -8909,7 +8909,18 @@
       "changed_bytes": 6,
       "original_sha256": "5016015fc506c13578bfd2f3aa715cc95e974a6cfc80dbb3b1b7ce4bd950c919",
       "modern_sha256": "34d48c9bedb20023a333cfcee147e53b56dfaac27fe0f10f0453eaa2f79ba22c",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-sound-bank-language.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004c94e0",
+            "004c94f4",
+            "004c9526",
+            "004c9543"
+          ]
+        }
+      ]
     },
     {
       "entry": "004c9890",
@@ -8931,7 +8942,18 @@
       "changed_bytes": 6,
       "original_sha256": "278b402bf8319c052d79d010b8e27e17d117ced89cd6b8baf41bd35358784792",
       "modern_sha256": "bb37b647a2f80a562e67ab2a36bfe8452229f46de35b3383d2a7f855a0f16d1a",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-sound-bank-language.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004c9890",
+            "004c98a6",
+            "004c98d8",
+            "004c98f5"
+          ]
+        }
+      ]
     },
     {
       "entry": "004cb750",

@@ -42,3 +42,22 @@ After `00413c15`, the entire remaining envelope is byte-identical except the thr
 **Work status: done for the three bounded code comparisons. Evidence confidence: verified static bytes and control flow.** Keep the cached selector separate from the active text-language field, and preserve initialization order and the shared path buffer's lifetime in a Modern reconstruction. An original reconstruction needs the original six-way mapping and out-of-range behavior instead.
 
 **Unresolved:** full cached-selector producer/helper contracts, other writes or aliases, path-buffer capacities, installed language/audio assets and actual playback. These affect runtime validation and initialization/data reconstruction. Follow up by reusing the language/configuration research to qualify those helpers and asset provenance; do not treat these three functions as proof of all language/audio behavior. No target instructions, audio tests or Ghidra changes were run in this pass.
+
+## Sequence and police-radio loaders use the same shared-path policy
+
+Two further complete same-address comparisons extend the path-switch finding above. Reproduce with [the voice-bank path audit](scripts/audit_voice_bank_paths.py); [its manifest](evidence/audits/voice-bank-paths.json) verifies pinned binaries, complete spans, original jump tables and their Modern NOP replacements.
+
+| Saved Modern entry / label | Complete envelope, exclusive end | Replaced region | Identical suffix begins |
+|---|---|---|---|
+| `004c94e0` BuildIndexedSequenceBankPathAndTryLoad | `004c94e0..004c9588` (168 bytes) | `004c94f4..004c9526` | `004c9526` |
+| `004c9890` LoadPoliceRadioVoiceBank | `004c9890..004c998f` (255 bytes) | `004c98a6..004c98d8` | `004c98d8` |
+
+In both original functions, the replaced region loads active selector `006fbb4c`, checks unsigned `>5` and dispatches through six table entries. Their exact selector-to-source mapping is the same as the race sound-bank mapping above: 0/5→`007a2b34`, 1→`007a2bb4`, 2→`007a2c34`, 3→`007a2cb4`, 4→`007a2d34`. Original tables are at `004c94c0` and `004c9874`. An out-of-range selector skips the initial local path copy, reaching `004c9543` or `004c98f5` respectively; the later code is not thereby skipped.
+
+Modern replaces each region with `MOV ESI,007a2b34; JMP copy_loop`, followed by 43 NOPs. The complete string-copy loops and subsequent indexed filename construction/loading instructions are unchanged. Modern's old jump-table locations are also entirely NOP-filled. Both Modern functions therefore use the shared path buffer independently of the active selector at these callsites; they do not implement another cached-selector lookup here.
+
+The sequence loader preserves its incoming index in ECX, selects a pointer from `00560b34 + 4*index`, formats through `004df690`, and calls `004c9240`. The radio loader preserves its incoming index in EDX and appends a pointer from `00560b50 + 4*index`, retaining its later mode-dependent suffix and loading branches. No new local bounds check is added to those indexed lookups. Identical code does not establish that their tables, assets or initialization inputs are identical at runtime.
+
+Saved Modern body unions omit each 43-byte gap: their 125/212 body-byte counts must not be mistaken for the 168/255-byte complete envelopes. The audit includes those removed switch instructions, not just the surviving bodies.
+
+**Bounded work status: done; confidence: verified static paths, tables and complete bodies.** The shared-buffer producer and runtime/audio/asset limitations above still apply. This establishes consolidation of additional path consumers, not that all audio localization is fully reconstructed or tested.
