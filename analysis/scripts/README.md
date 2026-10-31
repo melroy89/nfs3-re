@@ -249,3 +249,7 @@ Run `python3 analysis/scripts/audit_frontend_sound_difference.py` (Python pefile
 ## Original versus Modern music selection
 
 Run `python3 analysis/scripts/audit_music_selection_difference.py` (Python pefile, GNU objdump). It captures paired contextual policy, original race selection and Modern race/menu helpers, caller witnesses and exact selection tables. It also captures complete start bodies and asserts six retained ranges for the [start/volume audit](../original-modern-music-start.md). Output: `analysis/evidence/audits/original-modern-music-selection.json`; raw captures remain ignored. No audio/RNG/target execution. See [music findings](../original-modern-music-selection.md).
+
+## Original versus Modern command line
+
+Run `python3 analysis/scripts/audit_command_line_difference.py` (Python pefile, GNU objdump). It captures both complete parser spans, all 33 switch slots, five help aliases and Modern ASCII-copy helpers, and asserts the final table's two nonempty entries. Output: `analysis/evidence/audits/original-modern-command-line.json`; raw captures remain ignored. No argument/target execution. See [command-line findings](../original-modern-command-line.md).

@@ -154,7 +154,11 @@ The [frontend sound comparison](original-modern-frontend-sound.md) traces the re
 
 The [music comparison](original-modern-music-selection.md) traces menu subset cycles, race-state progression and contextual restart/continuation gates. Asset labels, other progression producers, once-per-race cadence and volume/fade claims remain separate.
 
-## 20. Prioritized semantic work remaining
+## 20. Command-line table and driver override
+
+The [command-line comparison](original-modern-command-line.md) traces 33 retained slots reduced to two nonempty names, universal driver-prefix handling, INI bypass linkage and empty-row help suppression. It also records ASCII-copy and machine-shift contracts. Full legacy option semantics, argument edge cases and runtime acceptance remain pending.
+
+## 21. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

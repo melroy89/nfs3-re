@@ -23,6 +23,7 @@ This directory contains reviewed research notes, retained evidence and reproduci
 - [Original versus Modern window creation and retained sizing](original-modern-window-geometry.md)
 - [Original versus Modern window initialization and callbacks](original-modern-window-handling.md)
 - [Original versus Modern configuration lookup and defaults](original-modern-configuration.md)
+- [Original versus Modern command-line switches and driver override](original-modern-command-line.md)
 - [Original versus Modern music start and retained volume/fade code](original-modern-music-start.md)
 - [Original versus Modern music selection and continuation](original-modern-music-selection.md)
 - [Original versus Modern frontend sound volume and throttling](original-modern-frontend-sound.md)
