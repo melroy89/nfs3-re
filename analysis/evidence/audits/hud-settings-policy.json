@@ -1,0 +1,79 @@
+{
+  "kind": "hud-settings-initializer-policy-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "0045e960",
+      "end_exclusive": "0045f07c",
+      "span_bytes": 1820,
+      "span_sha256": "d4fecb203322a74a2b5a140a310390effdc6b4b4463cb159ca95e232166e2fe2",
+      "assembly": "analysis/captures/modern-differences/hud-settings-policy/original.asm",
+      "hud_registration_hex": "f87c5300000000000000000060e9450060f14500c0f44500",
+      "strings": {
+        "0053a844": "credits",
+        "0053a84c": "singlePlayerDefaults",
+        "0053a864": "splitScreenDefaults",
+        "0053a878": "hotSplitScreenDefaults"
+      },
+      "list_words": {
+        "005562c2": [
+          413,
+          414,
+          0
+        ],
+        "005562c8": [
+          416,
+          417,
+          419,
+          420,
+          0
+        ],
+        "005562d2": [
+          416,
+          419,
+          0
+        ]
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "0045e960",
+      "end_exclusive": "0045f07c",
+      "span_bytes": 1820,
+      "span_sha256": "e87e59e2388aaa15df68bdea7f15a48ec816209d13a5f2e3aae271f2ef0cad43",
+      "assembly": "analysis/captures/modern-differences/hud-settings-policy/official_modern.asm",
+      "hud_registration_hex": "f87c5300000000000000000060e9450060f14500c0f44500",
+      "strings": {
+        "0053a844": "forsingle",
+        "0053a850": "forsplit"
+      },
+      "list_words": {
+        "005562c2": [
+          413,
+          414,
+          0
+        ],
+        "005562c8": [
+          416,
+          417,
+          419,
+          420,
+          0
+        ],
+        "005562d2": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "changed_bytes": 242,
+  "limits": [
+    "Initializer code beyond selected policy is byte-identical, not full transitive behavior equivalence.",
+    "Numeric session/mode meanings, widget flag consumers, pointer lifetimes and actual menu behavior require linked evidence.",
+    "No target execution, Ghidra edits or reconstruction changes."
+  ]
+}

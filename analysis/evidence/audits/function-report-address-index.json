@@ -148,6 +148,10 @@
       "sha256": "68e5de40cd27cb8b9df203822c0b3cee1327f54d1f9b8c1be986fe259ef56ea2"
     },
     {
+      "path": "analysis/original-modern-hud-settings-policy.md",
+      "sha256": "c0a62e92348fbb11032962c3e12fa05891cfabc20ebddce1e188ccb9faeab1e2"
+    },
+    {
       "path": "analysis/original-modern-idle-movie.md",
       "sha256": "84c0c238fdf7c8a24072780d9b0c06b5ebd0ef30c3adc4a6d721f2f6150e282e"
     },
@@ -1788,6 +1792,13 @@
         },
         {
           "path": "analysis/original-modern-graphics-menu-transition.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00437614"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-hud-settings-policy.md",
           "entry_mentioned": true,
           "addresses": [
             "00437614"

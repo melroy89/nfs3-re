@@ -442,6 +442,8 @@ The [removed DDE code comparison](original-modern-removed-dde.md) identifies ori
 
 The [force-feedback menu comparison](original-modern-force-menu-layout.md) verifies the complete initializer: Modern delegates the local Credits policy and removes six conditional widget-layout blocks while retaining value/callback setup. Device and visible behavior remain untested.
 
+The [HUD-settings policy comparison](original-modern-hud-settings-policy.md) verifies the complete initializer and its four-way-to-two-way list selection, shared policy delegation and zeroed third list. Widget flags, lifecycle and visible behavior remain qualified.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
