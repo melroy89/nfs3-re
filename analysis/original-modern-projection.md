@@ -123,7 +123,25 @@ The caller follow-up audit now retains complete paired envelopes `004dece0..004d
 
 Both builders later call `004dbde0` with context, at `004dedd2` and `004dee58`, after their command-building work. That routine reselects a projection based on context/session and the configured-angle chooser. The temporary weather setup therefore must not be described as the universal active camera or proof of the scene's final horizon. Its shared wrapper still requires the verified original integer120 versus Modern binary32-120 ABI adjustment.
 
-The next substantive horizon link is the context-dependent ordinary selector at `004dbde0`, including its rectangle choices and later centre writers. The covering-rectangle examples remain valid for the scoped temporary path; they do not establish global projection ownership or rendered output.
+The following section compares the context-dependent ordinary selector at `004dbde0`. The temporary-path examples do not establish global projection ownership or rendered output.
+
+## Ordinary projection selector: retained dispatch with changed angle ABI
+
+The caller audit now includes complete paired **`004dbde0..004dbee6`**,262 bytes. Exactly three bytes differ, at `004dbe00`, `004dbe25`, `004dbe42`: the three CALL displacements retarget original integer-angle chooser `004dbcc0` to Modern float-bit chooser `004dbc94`. All remaining body bytes are identical. Both retain this rectangle dispatch:
+
+| Condition | Rectangle supplied to `004bed20` |
+|---|---|
+| Context DWORD0==1 | `007cdb48`, the separately initialized mirror rectangle |
+| Other context, session `006fd3b0==1` | `007cda80 + wrap32(context[+4] << 5)` |
+| Other context, other session | `007cdb88`, the covering rectangle |
+
+The mirror branch chooses EBX as the logical inverse of nonzero `006fd4c4`; the other branches forward that global directly. Each obtains its angle through the version-specific chooser, moves its EAX result into EDX and calls the retained rectangle/projection adapter. The caller's source instructions match, but angle representation and downstream wrapper differ as already documented.
+
+On the non-mirror path, the tail resolves a per-view pointer through `005e10b8`, falling back to `005e10b0`, and tests object DWORD+54h with mask`7fffffffh`. A nonzero magnitude replaces **scale** `0056009c` with halfWidth times that binary32 field and scale `005600a0` with negative halfHeight times the field times retained binary64 **1.34834** at `0054972c`. A nonzero `006fd4c4` then toggles the horizontal scale sign bit. This tail does **not** write centre `005600a4/a8`. Pointer/index validity, field identity and complete writers remain unresolved; signed zero skips the override while NaN bit patterns can enter it if execution proceeds.
+
+This closes the ordinary non-two-player covering-rectangle input link, independently of the temporary weather path. The earlier Frame Size centre examples therefore also apply to this selector's covering-rectangle branch under the same initialization/state premises. The selector preserves EBX/ECX/EDX/ESI/EBP and has no stack arguments; EAX is working state, not an asserted status result.
+
+The static difference here is changed angle selection/interface, not a rewritten context dispatch or an added centre-offset formula. Other centre writers and camera orientation still prevent a complete MP160-003 horizon claim. No projection, camera or instruction probe was executed.
 
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
 

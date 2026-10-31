@@ -28,6 +28,12 @@
           "end_exclusive": "004dee71",
           "sha256": "cab43b87c326ceb770029391c8918fa76e8ff66c4ee7a0b2111a9e728d8533e2",
           "assembly": "analysis/captures/modern-differences/projection-callers/original-004dedf0.asm"
+        },
+        {
+          "start": "004dbde0",
+          "end_exclusive": "004dbee6",
+          "sha256": "eac2ca8b415a377ac79d97f8f7b397f6b7117b292fb0c600fa5dd3454df4ca11",
+          "assembly": "analysis/captures/modern-differences/projection-callers/original-004dbde0.asm"
         }
       ],
       "scaling_constants": [
@@ -41,7 +47,12 @@
           "bytes_hex": "8988083b",
           "binary32_value": 0.0020833334419876337
         }
-      ]
+      ],
+      "ordinary_projection_override_constant": {
+        "address": "0054972c",
+        "bytes_hex": "df37bef6cc92f53f",
+        "binary64_value": 1.34834
+      }
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -70,6 +81,12 @@
           "end_exclusive": "004dee71",
           "sha256": "cab43b87c326ceb770029391c8918fa76e8ff66c4ee7a0b2111a9e728d8533e2",
           "assembly": "analysis/captures/modern-differences/projection-callers/official_modern-004dedf0.asm"
+        },
+        {
+          "start": "004dbde0",
+          "end_exclusive": "004dbee6",
+          "sha256": "6c1c2cc3cfb319adb0c47dcac5521826065f722a48a4d47e634a45257491a244",
+          "assembly": "analysis/captures/modern-differences/projection-callers/official_modern-004dbde0.asm"
         }
       ],
       "scaling_constants": [
@@ -83,7 +100,12 @@
           "bytes_hex": "8988083b",
           "binary32_value": 0.0020833334419876337
         }
-      ]
+      ],
+      "ordinary_projection_override_constant": {
+        "address": "0054972c",
+        "bytes_hex": "df37bef6cc92f53f",
+        "binary64_value": 1.34834
+      }
     }
   },
   "wide_angle_direct_call_candidates": {
@@ -105,6 +127,18 @@
     }
   },
   "weather_caller_envelopes_identical": true,
+  "ordinary_projection_selector": {
+    "entry": "004dbde0",
+    "exclusive_end": "004dbee6",
+    "changed_operand_addresses": [
+      "004dbe00",
+      "004dbe25",
+      "004dbe42"
+    ],
+    "changes": "Three angle-chooser calls retarget original004dbcc0 to Modern004dbc94; all other body bytes identical.",
+    "centre_override_in_tail": false,
+    "limit": "This body retains rectangle dispatch and scale override; upstream data/chooser effects and active state are not equivalent."
+  },
   "limits": [
     "Static bytes only; no rendered output or x87 state equivalence.",
     "Callee interface correspondence relies on the linked projection comparison."

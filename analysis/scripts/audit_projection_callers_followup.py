@@ -19,7 +19,8 @@ def main():
         rows = []
         blobs[label] = []
         for start, end in [(0x495190, 0x495223), (0x4dbda0, 0x4dbddf),
-                           (0x4dece0,0x4dedea),(0x4dedf0,0x4dee71)]:
+                           (0x4dece0,0x4dedea),(0x4dedf0,0x4dee71),
+                           (0x4dbde0,0x4dbee6)]:
             data = pe.get_data(start - 0x400000, end - start)
             blobs[label].append(data)
             path = capture / f'{label}-{start:08x}.asm'
@@ -33,6 +34,7 @@ def main():
             constants.append({'address': f'{address:08x}', 'bytes_hex': data.hex(),
                 'binary32_value': struct.unpack('<f', data)[0]})
         assert [c['bytes_hex'] for c in constants] == ['cdcccc3a', '8988083b']
+        assert pe.get_data(0x14972c,8)==struct.pack('<d',1.34834)
         section=pe.sections[0]; base=pe.OPTIONAL_HEADER.ImageBase+section.VirtualAddress
         code=pe.get_data(section.VirtualAddress,section.SizeOfRawData)
         sites=[base+i for i in range(len(code)-4) if code[i]==0xe8 and base+i+5+int.from_bytes(code[i+1:i+5],'little',signed=True)==0x4dbda0]
@@ -42,10 +44,24 @@ def main():
             'method':'Every-byte E8/rel32 target scan over first code section; sites corroborated in retained full caller envelopes.',
             'limits':'Excludes indirect calls, jumps, other sections and runtime-generated code.'}
         result['binaries'][label] = {'path': relative, 'sha256': expected,
-            'spans': rows, 'scaling_constants': constants}
+            'spans': rows, 'scaling_constants': constants,
+            'ordinary_projection_override_constant':{'address':'0054972c','bytes_hex':pe.get_data(0x14972c,8).hex(),'binary64_value':1.34834}}
     old, new = blobs['original'], blobs['official_modern']
-    assert old[2:]==new[2:]
+    assert old[2:4]==new[2:4]
     result['weather_caller_envelopes_identical']=True
+    ordinary_changes=[0x4dbde0+i for i,(a,b) in enumerate(zip(old[4],new[4])) if a!=b]
+    assert ordinary_changes==[0x4dbe00,0x4dbe25,0x4dbe42]
+    for label,body in [('original',old[4]),('official_modern',new[4])]:
+        target=0x4dbcc0 if label=='original' else 0x4dbc94
+        for call in (0x4dbdff,0x4dbe24,0x4dbe41):
+            off=call-0x4dbde0
+            assert body[off:off+5]==b'\xe8'+struct.pack('<i',target-call-5)
+    result['ordinary_projection_selector']={'entry':'004dbde0','exclusive_end':'004dbee6',
+        'changed_operand_addresses':[f'{x:08x}' for x in ordinary_changes],
+        'changes':'Three angle-chooser calls retarget original004dbcc0 to Modern004dbc94; all other body bytes identical.',
+        'centre_override_in_tail':False,
+        'limit':'This body retains rectangle dispatch and scale override; upstream data/chooser effects and active state are not equivalent.'}
+
     assert [i for i, (a, b) in enumerate(zip(old[0], new[0])) if a != b] == [0x34, 0x35, 0x47, 0x48]
     assert old[0][0x32:0x38] == bytes.fromhex('d80d28be5300')
     assert new[0][0x32:0x38] == bytes.fromhex('d80dd4bd5300')
