@@ -97,3 +97,13 @@ This connects `NoDwmOffForPrimaryLock` and `DisableMaxWindowedMode` from their c
 - **MP150-044**, driver-directory wrappers: existing [optional DLL-directory wrapper analysis](detailed-analysis-notes.md#optional-dll-directory-export-wrapper-004f1ed4) and its caller support a search-directory mechanism. Wrapper loading on each supported OS/DLL is untested.
 
 The [initialization comparison](original-modern-renderer-initialization.md) now maps all original selector targets and Modern type branches. Next: trace selector producers/callers and remaining descriptor consumers; inspect the actual renderer DLLs for changes attributed to those components. Static acceptance checks do not establish that any particular third-party renderer loads or renders correctly.
+
+## Removed original renderer snapshot bank
+
+The [snapshot audit](evidence/audits/renderer-context-snapshots.json), reproduced by `python3 analysis/scripts/audit_renderer_context_snapshots.py`, classifies the large NOP region **`00517170..00517580`**. Original complete bodies **`00517170..00517362`** and **`00517370..0051755e`** restore/save a renderer snapshot. Both bodies and original cleanup wrapper **`004f87a0..004f87d9`** are entirely NOPs at their old addresses in official Modern.
+
+Each snapshot is **35 DWORDs /140 bytes** at`00564a70 + 140*index`: module handle plus the34 THRASH pointer slots already mapped above. Both functions accept signed EAX indices0..7; out-of-range values are replaced with0 and processing continues. They do not return a checked invalid-index error. Restore additionally writes active index`00564a68`; save does not establish the same active-index update. EDX is saved/restored; EAX is working state rather than a verified Boolean return.
+
+Original cleanup wrapper reads current module/index, conditionally calls FreeLibrary, clears module handle`00564a6c`, calls restore with index0, then saves into the previous index. Thus the bank participates in the observed cleanup sequence, not merely an unused table inferred from data. Slot0 contents, all bank producers and runtime switching admission remain unresolved; do not infer complete lifetime safety from this local path.
+
+Modern's table-driven unload-and-slot-clear routine is documented earlier in this chapter. The change is removal of these original snapshot-bank bodies/cleanup path in favor of the inspected Modern mechanism, **not proof that multiple rendering APIs or drivers disappeared**. The existing loader comparison already distinguishes static DirectDraw removal from dynamic renderer support. No DLL, snapshot helper or cleanup routine was executed.

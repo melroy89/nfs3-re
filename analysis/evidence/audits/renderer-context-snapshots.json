@@ -1,0 +1,111 @@
+{
+  "kind": "removed-renderer-context-snapshot-bodies",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00517170",
+          "end_exclusive": "00517362",
+          "length": 498,
+          "sha256": "fd6d2a8ad505c5a4c2d5d2bdf2322f8f7af2214f2a7ee76a4e853c0c0b5f80b9",
+          "assembly": "analysis/captures/modern-differences/renderer-snapshots/original-00517170.asm"
+        },
+        {
+          "start": "00517370",
+          "end_exclusive": "0051755e",
+          "length": 494,
+          "sha256": "b4adc394b3bc82c0bddc9964a83da44197fe9ae8aef63447f9d68758cbbfe9ef",
+          "assembly": "analysis/captures/modern-differences/renderer-snapshots/original-00517370.asm"
+        },
+        {
+          "start": "004f87a0",
+          "end_exclusive": "004f87d9",
+          "length": 57,
+          "sha256": "2960532d8e11d24e32699abf425fbf95e058618425046eac566396a2b7787f7e",
+          "assembly": "analysis/captures/modern-differences/renderer-snapshots/original-004f87a0.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00517170",
+          "end_exclusive": "00517362",
+          "length": 498,
+          "sha256": "7ffb7d7b10e79fbd7825a96fd3506d4f8823a15c536dc17bbfbcd0664af95485",
+          "assembly": "analysis/captures/modern-differences/renderer-snapshots/official_modern-00517170.asm"
+        },
+        {
+          "start": "00517370",
+          "end_exclusive": "0051755e",
+          "length": 494,
+          "sha256": "b4a30852f4d10327fcc54e403ad276c8ab46c8278c4d5cdd703e9b69d7a182ed",
+          "assembly": "analysis/captures/modern-differences/renderer-snapshots/official_modern-00517370.asm"
+        },
+        {
+          "start": "004f87a0",
+          "end_exclusive": "004f87d9",
+          "length": 57,
+          "sha256": "3bceffac1fee5de143578dd4ae6289d09edb8955a1fcaa79e9a832d681cdf80e",
+          "assembly": "analysis/captures/modern-differences/renderer-snapshots/official_modern-004f87a0.asm"
+        }
+      ]
+    }
+  },
+  "contract": {
+    "slot_count": 8,
+    "record_stride": 140,
+    "record_base": "00564a70",
+    "module_handle": "00564a6c",
+    "active_index": "00564a68",
+    "callback_slots": [
+      "009ef980",
+      "009ef970",
+      "009ef92c",
+      "009ef928",
+      "009ef90c",
+      "009ef908",
+      "009ef910",
+      "009ef904",
+      "009ef900",
+      "009ef94c",
+      "009ef930",
+      "009ef974",
+      "009ef960",
+      "009ef924",
+      "009ef91c",
+      "009ef950",
+      "009ef93c",
+      "009ef978",
+      "009ef984",
+      "009ef954",
+      "009ef940",
+      "009ef920",
+      "009ef97c",
+      "009ef944",
+      "009ef96c",
+      "009ef934",
+      "009ef958",
+      "009ef948",
+      "009ef968",
+      "009ef918",
+      "009ef964",
+      "009ef95c",
+      "009ef938",
+      "009ef914"
+    ],
+    "index_input": "EAX signed; outside0..7 becomes0",
+    "restore": "00517170",
+    "save": "00517370",
+    "caller": "Original004f87a0 cleanup calls restore0 then savepreviousindex"
+  },
+  "limits": [
+    "Static complete bodies; no renderer or target execution.",
+    "Removed same-address bodies do not establish removal of rendering support.",
+    "All snapshot data writers, initialization and runtime multi-driver switching remain unresolved."
+  ]
+}
