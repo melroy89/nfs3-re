@@ -14,6 +14,27 @@
           "assembly_sha256": "c7b67d18042df5a149b1c0249b43416aa7549e07e0f697f6e03cf0a34eac734e"
         },
         {
+          "start": "00456ce0",
+          "end": "00456e98",
+          "bytes_sha256": "ce8728a0ff93b947f425459d8e010a0bbf9c843cb61562e69768248db073f9e7",
+          "assembly": "analysis/captures/modern-differences/colour-control/original-00456ce0.asm",
+          "assembly_sha256": "4b81dc8e1f0e9a4fd0f6523fb8f5ba9e5af10ba621b7bf05371985d84d84f069"
+        },
+        {
+          "start": "00457030",
+          "end": "004571d1",
+          "bytes_sha256": "48f8a693d8492ffcc6d5e55618932e003b0faa46e265dccad4db920758f282f0",
+          "assembly": "analysis/captures/modern-differences/colour-control/original-00457030.asm",
+          "assembly_sha256": "b6a0699f18410b592460f2f9c8fb6bf47f5a807c407adce112803faddd59a21b"
+        },
+        {
+          "start": "0043ebc0",
+          "end": "0043ebec",
+          "bytes_sha256": "13cac1d985b1665ca1080fe13fcf712350df21c838aa4b40e2e71e35c98f7104",
+          "assembly": "analysis/captures/modern-differences/colour-control/original-0043ebc0.asm",
+          "assembly_sha256": "3ed4cc923a82c2c229a339f78d67c9a3c2c5d46d3999a020836c039399acee4d"
+        },
+        {
           "start": "0043e8e0",
           "end": "0043eacb",
           "bytes_sha256": "3e40cd7a53b29a7ad53a5424ddb17210c32404f22df2ca1e3bde24f2a5707894",
@@ -48,6 +69,74 @@
           "assembly": "analysis/captures/modern-differences/colour-control/original-0043ddd0.asm",
           "assembly_sha256": "17a2fc56ebe55708ffb653bd2d5c12f83442d9a22a82f78c1ba9233b265e136f"
         }
+      ],
+      "widget_bindings": [
+        {
+          "row": "00557b54",
+          "name": "carclrselect",
+          "template": "005577d0",
+          "tag": 19,
+          "template_words": [
+            "00000012",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00456ea0",
+            "00457250",
+            "00456ce0",
+            "00457030",
+            "004571e0",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000"
+          ]
+        },
+        {
+          "row": "00557b60",
+          "name": "colorwheel",
+          "template": "00557834",
+          "tag": 20,
+          "template_words": [
+            "00000013",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "0043f030",
+            "0043f160",
+            "0043ebc0",
+            "0043ec40",
+            "0043eff0",
+            "0043ef80",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000"
+          ]
+        }
       ]
     },
     "official_modern": {
@@ -60,6 +149,27 @@
           "bytes_sha256": "85522fe1b7d43faca207ff5e2df69f01a8c3a188b43b9a33bb6a05faa94fa43c",
           "assembly": "analysis/captures/modern-differences/colour-control/official_modern-0043ead0.asm",
           "assembly_sha256": "cf7f3a645cfb5461660085cbdfe69832fbae07f2ab53fc79c190cfe31d5e20c5"
+        },
+        {
+          "start": "00456ce0",
+          "end": "00456e98",
+          "bytes_sha256": "7edede97be6f0c599af68056120fd873dfdd7a351ce86d0c7275482945fa28e2",
+          "assembly": "analysis/captures/modern-differences/colour-control/official_modern-00456ce0.asm",
+          "assembly_sha256": "898b0b28ed086ea2f0edd46cf90dfa55995a28ac8f0c4fffe9e105d46031b13d"
+        },
+        {
+          "start": "00457030",
+          "end": "004571d1",
+          "bytes_sha256": "d78a09b9fd4aaa66e28e8a13665ddd64eaa2442f2c1ca67e6025912ff997783f",
+          "assembly": "analysis/captures/modern-differences/colour-control/official_modern-00457030.asm",
+          "assembly_sha256": "4e85c67092a5ca9764916e07b0caaa66a67f6da2a88335076c8ef2e29093b726"
+        },
+        {
+          "start": "0043ebc0",
+          "end": "0043ebec",
+          "bytes_sha256": "13cac1d985b1665ca1080fe13fcf712350df21c838aa4b40e2e71e35c98f7104",
+          "assembly": "analysis/captures/modern-differences/colour-control/official_modern-0043ebc0.asm",
+          "assembly_sha256": "59b90f44f71959d6b3c1d23e2400d3ce4b5941a96100efdc86f8acd53ad51e9f"
         },
         {
           "start": "0043e8e0",
@@ -96,8 +206,87 @@
           "assembly": "analysis/captures/modern-differences/colour-control/official_modern-0043ddd0.asm",
           "assembly_sha256": "46c77c39af082421d6c64fbb4722b0aa947b67badfc07748008fc94054b65ade"
         }
+      ],
+      "widget_bindings": [
+        {
+          "row": "00557b54",
+          "name": "carclrselect",
+          "template": "005577d0",
+          "tag": 19,
+          "template_words": [
+            "00000012",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00456ea0",
+            "00457250",
+            "00456ce0",
+            "00457030",
+            "004571e0",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000"
+          ]
+        },
+        {
+          "row": "00557b60",
+          "name": "colorwheel",
+          "template": "00557834",
+          "tag": 20,
+          "template_words": [
+            "00000013",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "0043f030",
+            "0043f160",
+            "0043ebc0",
+            "0043ec40",
+            "0043eff0",
+            "0043ef80",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000"
+          ]
+        }
       ]
     }
+  },
+  "dropdown_changed_byte_addresses": {
+    "00456ce0": [
+      "00456db2",
+      "00456e2a",
+      "00456e2b"
+    ],
+    "00457030": [
+      "00457107",
+      "00457142"
+    ]
   },
   "identical_ranges": [
     {
@@ -133,7 +322,7 @@
   ],
   "limits": [
     "No UI, audio or instruction execution.",
-    "No padding or universal sound-consistency conclusion from this handler.",
+    "Dropdown inset and sound operands verified separately from wheel; rendered/audible consistency untested.",
     "Original full body extends beyond Modern function range; same-VA changed-byte count is not a whole-function semantic comparison."
   ]
 }

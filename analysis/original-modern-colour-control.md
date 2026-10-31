@@ -4,7 +4,7 @@
 
 Static paired comparison of frontend colour handler **`0043ead0`**, original **232 bytes through `0043ebb8`**, Modern **181 bytes through `0043eb85`**. Reproduce with `python3 analysis/scripts/audit_colour_control_difference.py`; the [manifest](evidence/audits/original-modern-colour-control.json) retains both full bodies, shared prefix and five complete identical helpers. Exact executable identities follow the [baseline](original-modern-differences.md). No UI/audio/instruction execution or Ghidra edits.
 
-The saved Modern name identifies an HSV colour control, not the HSV automobile marque mentioned in separate logo claims. **MP140-013** bundles colour dropdown sound consistency and padding; the handler’s connection to that specific dropdown is not established. The code findings below are retained independently, and the asset follow-up distinguishes the widgets.
+The saved Modern name identifies an HSV colour control, not the HSV automobile marque mentioned in separate logo claims. **MP140-013** bundles colour dropdown sound consistency and padding; the registration follow-up below now separates the HSV wheel handler from the dropdown’s own render/input callbacks.
 
 ## Retained state machine and shorter release actions
 
@@ -30,7 +30,7 @@ The complete bodies of `0043e8e0` (hit region), `0043e7a0` (cursor-driven compon
 
 The whole-function inventory’s101 changed bytes within the181-byte Modern range omits the old function’s additional51 bytes. The paired full bodies retained here are therefore the appropriate basis for explaining the removed sound setup and reorganized exits, rather than treating that inventory count as a complete semantic diff.
 
-**MP140-013:** the three removed HSV-handler sound requests are related colour-control evidence, not verified dropdown attribution. The asset follow-up supplies a separate bounded dropdown-coordinate finding; padding and consistency with every other control remain unverified. The hit tester itself has unchanged bytes. Next inspect its caller/registration and the authored colour-control layout before attributing a padding fix or an audible result. No executable bytes or saved database state were changed.
+**MP140-013:** the three removed HSV-handler sound requests are related wheel evidence, not dropdown attribution. The registration follow-up below now verifies the dropdown’s own inset and sound-operand changes; rendered and audible consistency remain untested. The hit tester itself has unchanged bytes. Next inspect its caller/registration and the authored colour-control layout before attributing a padding fix or an audible result. No executable bytes or saved database state were changed.
 
 ## Asset follow-up: dropdown and wheel are distinct controls
 
@@ -43,6 +43,26 @@ The [asset manifest](evidence/inventories/colour-control-assets.json), reproduce
 
 For the wheel, **all shared fields** match, including HSV subrectangles and Accept/Preview coordinates. For the dropdown, the only changed shared fields are x/y; title, priority2 and player0 match. Both official records omit legacy `postonly`, `mainonly`, `EnableForDemo` and `EnableForE3Demo` fields present in the backup. Their defaults are not inferred from omission.
 
-The dropdown therefore has a verified authored left2/down12 coordinate change. It is not yet a verified internal padding change or a measured pixel result. The asset distinction also corrects the earlier premature association of the HSV release-handler changes with the release note’s **dropdown** sound claim. There is a direct call to `0043ead0` at `0043ebd9` in the retained disassembly locator, but its widget registration/caller relationship still needs explicit tracing. Do not merge these widget contracts merely because both edit car colour.
+The dropdown therefore has a verified authored left2/down12 coordinate change. It is not yet a verified internal padding change or a measured pixel result. The asset distinction also corrects the earlier premature association of the HSV release-handler changes with the release note’s **dropdown** sound claim. There is a direct call to `0043ead0` at `0043ebd9` in the retained disassembly locator, and the registration follow-up below now associates that caller with the wheel template. Do not merge these widget contracts merely because both edit car colour.
 
-For **MP140-013**, evidence remains partial: the named dropdown’s authored position changed, while the exact padding mechanism, relevant dropdown sound path and visual/audible consistency remain unverified. The complete HSV code comparison remains useful independent evidence for reconstruction, without claiming it proves that bundled release-note item.
+For **MP140-013**, the asset evidence alone remains partial. The follow-up below adds the actual dropdown callback changes; visual/audible consistency remains unverified. The complete HSV code comparison remains useful independent evidence for reconstruction, without claiming it proves that bundled release-note item.
+
+## Registration follow-up: actual dropdown inset and sound operands
+
+The expanded executable audit retains these paired12-byte widget records and100-byte templates:
+
+| Widget row | Name | Template | Template+2ch | Template+30h |
+|---|---|---|---|---|
+| `00557b54` | `carclrselect` | `005577d0` | `00456ce0` | `00457030` |
+| `00557b60` | `colorwheel` | `00557834` | `0043ebc0` | `0043ec40` |
+
+Both baselines contain the shown bindings. The wheel callback witness **`0043ebc0..0043ebec`** calls HSV handler `0043ead0` at `0043ebd9`, then other wheel helpers. This closes the widget distinction; it does not turn the wheel’s removed sounds into dropdown changes.
+
+The dropdown’s render/update counterpart **`00456ce0..00456e98`** differs at exactly three byte addresses: **`00456db2`, `00456e2a`, `00456e2b`**. Complete surrounding instructions establish:
+
+- At `00456dad..00456db1`, a coordinate WORD is loaded from control+1ch and offset by **15 originally,5 in Modern**, then stored as a WORD in the row-drawing local rectangle. The adjacent control+1ah coordinate already uses+5 in both. The patch therefore equalizes these two local insets; the eventual rendered pixel interpretation is not tested.
+- Original **`00456e29`** computes `EBX=ECX−1` through `LEA EBX,[ECX−1]`. Modern uses `LEA EBX,[ECX]` plus a NOP to retain the three-byte footprint. This register feeds the subsequent drawing call; exact baseline/pixel coverage is not inferred solely from the one-unit operand change.
+
+The dropdown input counterpart **`00457030..004571d1`** differs at exactly two bytes, **`00457107`** and **`00457142`**. These change **`MOV EAX,1` to `MOV EAX,0`** before direct sound helper calls `004181d0` at `0045710b` and `00457146`. The adjacent branches decrement/increment and constrain the selected entry before refreshing it through `00456f10`. All other bytes in that input envelope match; this is a changed sound-request ID, not removal of the call or proof of a different audio sample heard.
+
+**Updated MP140-013 conclusion:** the named dropdown has a direct verified code change to a15→5 inset and two1→0 sound operands, alongside the separately verified authored position shift. Padding intent now has stronger instruction-level support; “consistent sounds,” exact rendering, driver behavior and historical introduction still lack runtime/intermediate-release evidence. The HSV-wheel changes remain independently documented. No input, render, sound or instruction probes were executed; no saved Ghidra metadata changed.

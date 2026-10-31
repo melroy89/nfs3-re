@@ -18,7 +18,7 @@
     },
     {
       "path": "analysis/original-modern-colour-control.md",
-      "sha256": "146be6c3be7ccb3dc0c48f35c935804ba84d1da6b380450fbc65a813fa9a0ff2",
+      "sha256": "29721e99c0c678da256f1b5a036308af880b2de3c92614e0ef2992a47b80d7bf",
       "relative_links": 4
     },
     {
@@ -328,7 +328,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "90c2844b660c02b4b2a3e41cb80202ada97cfae2be03b2b97c2ee51ec38a136f",
+      "sha256": "c1143178e34402b9a3cae7cea4c853002e6f730770d8450c8b7d12be22392059",
       "relative_links": 95
     }
   ],
