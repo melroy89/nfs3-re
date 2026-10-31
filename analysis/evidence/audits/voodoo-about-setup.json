@@ -124,9 +124,364 @@
           "sha256": "c6b75acbec7d5f65b1b9c10809452e519c007d73604180eb8cc3374edf9d8676",
           "hex": "6089c5bb000000008b154cfd006039d3732789d029d8d1e801d889ee6bf82881c728300160b903000000f3a7746a770489c2ebda89c343ebd58b1d4cfd006083fb640f83ac000000ff054cfd006039d3744489d929d16bc90a6bf32881c62430016089f783c728fdf3a5b90a00000031c0f3abfc89d929d16bc9026bf30881c6d42c016089f783c708fdf3a5b90200000031c0f3abfc89d089ee6bf82881c728300160a5a5a56bf80881c7d82c0160a5a56bf82881c728300160c7470c04000000c7471001000000ad85c0ad75133b47147c03894714483b47187c1c894718eb173b47187c03894718403b47147c09894714eb0431c0eb0331c0408944241c61c3",
           "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/nfs3_decomp.rep/Electronic Arts/Need For Speed III/drivers/glide3x/voodoo2a.dll:     file format pei-i386\n\n\nDisassembly of section .code:\n\n600012e8 <.code+0x2e8>:\n600012e8:\t60                   \tpusha\n600012e9:\t89 c5                \tmov    ebp,eax\n600012eb:\tbb 00 00 00 00       \tmov    ebx,0x0\n600012f0:\t8b 15 4c fd 00 60    \tmov    edx,DWORD PTR ds:0x6000fd4c\n600012f6:\t39 d3                \tcmp    ebx,edx\n600012f8:\t73 27                \tjae    0x60001321\n600012fa:\t89 d0                \tmov    eax,edx\n600012fc:\t29 d8                \tsub    eax,ebx\n600012fe:\td1 e8                \tshr    eax,1\n60001300:\t01 d8                \tadd    eax,ebx\n60001302:\t89 ee                \tmov    esi,ebp\n60001304:\t6b f8 28             \timul   edi,eax,0x28\n60001307:\t81 c7 28 30 01 60    \tadd    edi,0x60013028\n6000130d:\tb9 03 00 00 00       \tmov    ecx,0x3\n60001312:\tf3 a7                \trepz cmps DWORD PTR ds:[esi],DWORD PTR es:[edi]\n60001314:\t74 6a                \tje     0x60001380\n60001316:\t77 04                \tja     0x6000131c\n60001318:\t89 c2                \tmov    edx,eax\n6000131a:\teb da                \tjmp    0x600012f6\n6000131c:\t89 c3                \tmov    ebx,eax\n6000131e:\t43                   \tinc    ebx\n6000131f:\teb d5                \tjmp    0x600012f6\n60001321:\t8b 1d 4c fd 00 60    \tmov    ebx,DWORD PTR ds:0x6000fd4c\n60001327:\t83 fb 64             \tcmp    ebx,0x64\n6000132a:\t0f 83 ac 00 00 00    \tjae    0x600013dc\n60001330:\tff 05 4c fd 00 60    \tinc    DWORD PTR ds:0x6000fd4c\n60001336:\t39 d3                \tcmp    ebx,edx\n60001338:\t74 44                \tje     0x6000137e\n6000133a:\t89 d9                \tmov    ecx,ebx\n6000133c:\t29 d1                \tsub    ecx,edx\n6000133e:\t6b c9 0a             \timul   ecx,ecx,0xa\n60001341:\t6b f3 28             \timul   esi,ebx,0x28\n60001344:\t81 c6 24 30 01 60    \tadd    esi,0x60013024\n6000134a:\t89 f7                \tmov    edi,esi\n6000134c:\t83 c7 28             \tadd    edi,0x28\n6000134f:\tfd                   \tstd\n60001350:\tf3 a5                \trep movs DWORD PTR es:[edi],DWORD PTR ds:[esi]\n60001352:\tb9 0a 00 00 00       \tmov    ecx,0xa\n60001357:\t31 c0                \txor    eax,eax\n60001359:\tf3 ab                \trep stos DWORD PTR es:[edi],eax\n6000135b:\tfc                   \tcld\n6000135c:\t89 d9                \tmov    ecx,ebx\n6000135e:\t29 d1                \tsub    ecx,edx\n60001360:\t6b c9 02             \timul   ecx,ecx,0x2\n60001363:\t6b f3 08             \timul   esi,ebx,0x8\n60001366:\t81 c6 d4 2c 01 60    \tadd    esi,0x60012cd4\n6000136c:\t89 f7                \tmov    edi,esi\n6000136e:\t83 c7 08             \tadd    edi,0x8\n60001371:\tfd                   \tstd\n60001372:\tf3 a5                \trep movs DWORD PTR es:[edi],DWORD PTR ds:[esi]\n60001374:\tb9 02 00 00 00       \tmov    ecx,0x2\n60001379:\t31 c0                \txor    eax,eax\n6000137b:\tf3 ab                \trep stos DWORD PTR es:[edi],eax\n6000137d:\tfc                   \tcld\n6000137e:\t89 d0                \tmov    eax,edx\n60001380:\t89 ee                \tmov    esi,ebp\n60001382:\t6b f8 28             \timul   edi,eax,0x28\n60001385:\t81 c7 28 30 01 60    \tadd    edi,0x60013028\n6000138b:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]\n6000138c:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]\n6000138d:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]\n6000138e:\t6b f8 08             \timul   edi,eax,0x8\n60001391:\t81 c7 d8 2c 01 60    \tadd    edi,0x60012cd8\n60001397:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]\n60001398:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]\n60001399:\t6b f8 28             \timul   edi,eax,0x28\n6000139c:\t81 c7 28 30 01 60    \tadd    edi,0x60013028\n600013a2:\tc7 47 0c 04 00 00 00 \tmov    DWORD PTR [edi+0xc],0x4\n600013a9:\tc7 47 10 01 00 00 00 \tmov    DWORD PTR [edi+0x10],0x1\n600013b0:\tad                   \tlods   eax,DWORD PTR ds:[esi]\n600013b1:\t85 c0                \ttest   eax,eax\n600013b3:\tad                   \tlods   eax,DWORD PTR ds:[esi]\n600013b4:\t75 13                \tjne    0x600013c9\n600013b6:\t3b 47 14             \tcmp    eax,DWORD PTR [edi+0x14]\n600013b9:\t7c 03                \tjl     0x600013be\n600013bb:\t89 47 14             \tmov    DWORD PTR [edi+0x14],eax\n600013be:\t48                   \tdec    eax\n600013bf:\t3b 47 18             \tcmp    eax,DWORD PTR [edi+0x18]\n600013c2:\t7c 1c                \tjl     0x600013e0\n600013c4:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax\n600013c7:\teb 17                \tjmp    0x600013e0\n600013c9:\t3b 47 18             \tcmp    eax,DWORD PTR [edi+0x18]\n600013cc:\t7c 03                \tjl     0x600013d1\n600013ce:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax\n600013d1:\t40                   \tinc    eax\n600013d2:\t3b 47 14             \tcmp    eax,DWORD PTR [edi+0x14]\n600013d5:\t7c 09                \tjl     0x600013e0\n600013d7:\t89 47 14             \tmov    DWORD PTR [edi+0x14],eax\n600013da:\teb 04                \tjmp    0x600013e0\n600013dc:\t31 c0                \txor    eax,eax\n600013de:\teb 03                \tjmp    0x600013e3\n600013e0:\t31 c0                \txor    eax,eax\n600013e2:\t40                   \tinc    eax\n600013e3:\t89 44 24 1c          \tmov    DWORD PTR [esp+0x1c],eax\n600013e7:\t61                   \tpopa\n600013e8:\tc3                   \tret\n"
+        },
+        {
+          "start": "60001020",
+          "end_exclusive": "60001107",
+          "bytes": 231,
+          "sha256": "1c28d126f72d5c19c9db8d4a97457ba5aff31fe9ea557d23f96cac28a6ab55ba",
+          "hex": "60a10cfd006085c00f85b00000008b15ecfc006085d2750ac705ecfc00604018006081ec0401000089e589ef680401000057ff35cc270160ff15ece1006001c7807fff5c74034febf7be04f00060e815c8000055ff1510e2006089c381c40401000085db75116804f00060ff1510e2006089c385db746abe20110060ad85c0741e5053ff15fce1006085c0740789c2ad8910ebe853ff15b4e1006031c0eb42891d0cfd0060a188100160a3f8140160a3f4140160a18c100160a3e8140160a1d027016085c07517ff15101001606880180060ff15d8100160ff05d027016031c0408944241c61c3",
+          "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/nfs3_decomp.rep/Electronic Arts/Need For Speed III/drivers/glide3x/voodoo2a.dll:     file format pei-i386\n\n\nDisassembly of section .code:\n\n60001020 <.code+0x20>:\n60001020:\t60                   \tpusha\n60001021:\ta1 0c fd 00 60       \tmov    eax,ds:0x6000fd0c\n60001026:\t85 c0                \ttest   eax,eax\n60001028:\t0f 85 b0 00 00 00    \tjne    0x600010de\n6000102e:\t8b 15 ec fc 00 60    \tmov    edx,DWORD PTR ds:0x6000fcec\n60001034:\t85 d2                \ttest   edx,edx\n60001036:\t75 0a                \tjne    0x60001042\n60001038:\tc7 05 ec fc 00 60 40 \tmov    DWORD PTR ds:0x6000fcec,0x60001840\n6000103f:\t18 00 60 \n60001042:\t81 ec 04 01 00 00    \tsub    esp,0x104\n60001048:\t89 e5                \tmov    ebp,esp\n6000104a:\t89 ef                \tmov    edi,ebp\n6000104c:\t68 04 01 00 00       \tpush   0x104\n60001051:\t57                   \tpush   edi\n60001052:\tff 35 cc 27 01 60    \tpush   DWORD PTR ds:0x600127cc\n60001058:\tff 15 ec e1 00 60    \tcall   DWORD PTR ds:0x6000e1ec\n6000105e:\t01 c7                \tadd    edi,eax\n60001060:\t80 7f ff 5c          \tcmp    BYTE PTR [edi-0x1],0x5c\n60001064:\t74 03                \tje     0x60001069\n60001066:\t4f                   \tdec    edi\n60001067:\teb f7                \tjmp    0x60001060\n60001069:\tbe 04 f0 00 60       \tmov    esi,0x6000f004\n6000106e:\te8 15 c8 00 00       \tcall   0x6000d888\n60001073:\t55                   \tpush   ebp\n60001074:\tff 15 10 e2 00 60    \tcall   DWORD PTR ds:0x6000e210\n6000107a:\t89 c3                \tmov    ebx,eax\n6000107c:\t81 c4 04 01 00 00    \tadd    esp,0x104\n60001082:\t85 db                \ttest   ebx,ebx\n60001084:\t75 11                \tjne    0x60001097\n60001086:\t68 04 f0 00 60       \tpush   0x6000f004\n6000108b:\tff 15 10 e2 00 60    \tcall   DWORD PTR ds:0x6000e210\n60001091:\t89 c3                \tmov    ebx,eax\n60001093:\t85 db                \ttest   ebx,ebx\n60001095:\t74 6a                \tje     0x60001101\n60001097:\tbe 20 11 00 60       \tmov    esi,0x60001120\n6000109c:\tad                   \tlods   eax,DWORD PTR ds:[esi]\n6000109d:\t85 c0                \ttest   eax,eax\n6000109f:\t74 1e                \tje     0x600010bf\n600010a1:\t50                   \tpush   eax\n600010a2:\t53                   \tpush   ebx\n600010a3:\tff 15 fc e1 00 60    \tcall   DWORD PTR ds:0x6000e1fc\n600010a9:\t85 c0                \ttest   eax,eax\n600010ab:\t74 07                \tje     0x600010b4\n600010ad:\t89 c2                \tmov    edx,eax\n600010af:\tad                   \tlods   eax,DWORD PTR ds:[esi]\n600010b0:\t89 10                \tmov    DWORD PTR [eax],edx\n600010b2:\teb e8                \tjmp    0x6000109c\n600010b4:\t53                   \tpush   ebx\n600010b5:\tff 15 b4 e1 00 60    \tcall   DWORD PTR ds:0x6000e1b4\n600010bb:\t31 c0                \txor    eax,eax\n600010bd:\teb 42                \tjmp    0x60001101\n600010bf:\t89 1d 0c fd 00 60    \tmov    DWORD PTR ds:0x6000fd0c,ebx\n600010c5:\ta1 88 10 01 60       \tmov    eax,ds:0x60011088\n600010ca:\ta3 f8 14 01 60       \tmov    ds:0x600114f8,eax\n600010cf:\ta3 f4 14 01 60       \tmov    ds:0x600114f4,eax\n600010d4:\ta1 8c 10 01 60       \tmov    eax,ds:0x6001108c\n600010d9:\ta3 e8 14 01 60       \tmov    ds:0x600114e8,eax\n600010de:\ta1 d0 27 01 60       \tmov    eax,ds:0x600127d0\n600010e3:\t85 c0                \ttest   eax,eax\n600010e5:\t75 17                \tjne    0x600010fe\n600010e7:\tff 15 10 10 01 60    \tcall   DWORD PTR ds:0x60011010\n600010ed:\t68 80 18 00 60       \tpush   0x60001880\n600010f2:\tff 15 d8 10 01 60    \tcall   DWORD PTR ds:0x600110d8\n600010f8:\tff 05 d0 27 01 60    \tinc    DWORD PTR ds:0x600127d0\n600010fe:\t31 c0                \txor    eax,eax\n60001100:\t40                   \tinc    eax\n60001101:\t89 44 24 1c          \tmov    DWORD PTR [esp+0x1c],eax\n60001105:\t61                   \tpopa\n60001106:\tc3                   \tret\n"
         }
       ]
     }
+  },
+  "modern_dynamic_bindings": {
+    "library_literal": "glide3x.dll",
+    "bindings": [
+      {
+        "table_va": "60001120",
+        "name_va": "6000f010",
+        "name": "_grGlideInit@0",
+        "destination_va": "60011010"
+      },
+      {
+        "table_va": "60001128",
+        "name_va": "6000f020",
+        "name": "_grGlideShutdown@0",
+        "destination_va": "60011014"
+      },
+      {
+        "table_va": "60001130",
+        "name_va": "6000f034",
+        "name": "_grSstSelect@4",
+        "destination_va": "60011018"
+      },
+      {
+        "table_va": "60001138",
+        "name_va": "6000f044",
+        "name": "_grSstWinOpen@28",
+        "destination_va": "6001101c"
+      },
+      {
+        "table_va": "60001140",
+        "name_va": "6000f058",
+        "name": "_grSstWinClose@4",
+        "destination_va": "60011020"
+      },
+      {
+        "table_va": "60001148",
+        "name_va": "6000f06c",
+        "name": "_grAlphaTestReferenceValue@4",
+        "destination_va": "60011024"
+      },
+      {
+        "table_va": "60001150",
+        "name_va": "6000f08c",
+        "name": "_grTexDownloadTable@8",
+        "destination_va": "60011028"
+      },
+      {
+        "table_va": "60001158",
+        "name_va": "6000f0a4",
+        "name": "_grRenderBuffer@4",
+        "destination_va": "6001102c"
+      },
+      {
+        "table_va": "60001160",
+        "name_va": "6000f0b8",
+        "name": "_grBufferClear@12",
+        "destination_va": "60011030"
+      },
+      {
+        "table_va": "60001168",
+        "name_va": "6000f0cc",
+        "name": "_grBufferSwap@4",
+        "destination_va": "60011034"
+      },
+      {
+        "table_va": "60001170",
+        "name_va": "6000f0dc",
+        "name": "_grFinish@0",
+        "destination_va": "60011038"
+      },
+      {
+        "table_va": "60001178",
+        "name_va": "6000f0e8",
+        "name": "_grClipWindow@16",
+        "destination_va": "6001103c"
+      },
+      {
+        "table_va": "60001180",
+        "name_va": "6000f0fc",
+        "name": "_grColorCombine@20",
+        "destination_va": "60011040"
+      },
+      {
+        "table_va": "60001188",
+        "name_va": "6000f110",
+        "name": "_grAlphaCombine@20",
+        "destination_va": "60011044"
+      },
+      {
+        "table_va": "60001190",
+        "name_va": "6000f124",
+        "name": "_grAlphaBlendFunction@16",
+        "destination_va": "60011048"
+      },
+      {
+        "table_va": "60001198",
+        "name_va": "6000f140",
+        "name": "_grCullMode@4",
+        "destination_va": "6001104c"
+      },
+      {
+        "table_va": "600011a0",
+        "name_va": "6000f150",
+        "name": "_grTexFilterMode@12",
+        "destination_va": "60011050"
+      },
+      {
+        "table_va": "600011a8",
+        "name_va": "6000f164",
+        "name": "_grDitherMode@4",
+        "destination_va": "60011054"
+      },
+      {
+        "table_va": "600011b0",
+        "name_va": "6000f174",
+        "name": "_grChromakeyMode@4",
+        "destination_va": "60011058"
+      },
+      {
+        "table_va": "600011b8",
+        "name_va": "6000f188",
+        "name": "_grAlphaTestFunction@4",
+        "destination_va": "6001105c"
+      },
+      {
+        "table_va": "600011c0",
+        "name_va": "6000f1a0",
+        "name": "_grDepthBufferMode@4",
+        "destination_va": "60011060"
+      },
+      {
+        "table_va": "600011c8",
+        "name_va": "6000f1b8",
+        "name": "_grDepthBufferFunction@4",
+        "destination_va": "60011064"
+      },
+      {
+        "table_va": "600011d0",
+        "name_va": "6000f1d4",
+        "name": "_grDepthMask@4",
+        "destination_va": "60011068"
+      },
+      {
+        "table_va": "600011d8",
+        "name_va": "6000f1e4",
+        "name": "_grFogColorValue@4",
+        "destination_va": "6001106c"
+      },
+      {
+        "table_va": "600011e0",
+        "name_va": "6000f1f8",
+        "name": "_grFogMode@4",
+        "destination_va": "60011070"
+      },
+      {
+        "table_va": "600011e8",
+        "name_va": "6000f208",
+        "name": "_grFogTable@4",
+        "destination_va": "60011074"
+      },
+      {
+        "table_va": "600011f0",
+        "name_va": "6000f218",
+        "name": "_grLfbLock@24",
+        "destination_va": "60011078"
+      },
+      {
+        "table_va": "600011f8",
+        "name_va": "6000f228",
+        "name": "_grLfbUnlock@8",
+        "destination_va": "6001107c"
+      },
+      {
+        "table_va": "60001200",
+        "name_va": "6000f238",
+        "name": "_grLfbWriteRegion@36",
+        "destination_va": "60011080"
+      },
+      {
+        "table_va": "60001208",
+        "name_va": "6000f250",
+        "name": "_grLfbReadRegion@28",
+        "destination_va": "60011084"
+      },
+      {
+        "table_va": "60001210",
+        "name_va": "6000f264",
+        "name": "_grDrawTriangle@12",
+        "destination_va": "60011088"
+      },
+      {
+        "table_va": "60001218",
+        "name_va": "6000f278",
+        "name": "_grDrawLine@8",
+        "destination_va": "6001108c"
+      },
+      {
+        "table_va": "60001220",
+        "name_va": "6000f288",
+        "name": "_grDrawPoint@4",
+        "destination_va": "60011090"
+      },
+      {
+        "table_va": "60001228",
+        "name_va": "6000f298",
+        "name": "_guGammaCorrectionRGB@12",
+        "destination_va": "60011094"
+      },
+      {
+        "table_va": "60001230",
+        "name_va": "6000f2b4",
+        "name": "_grDepthBiasLevel@4",
+        "destination_va": "60011098"
+      },
+      {
+        "table_va": "60001238",
+        "name_va": "6000f2c8",
+        "name": "_grTexMipMapMode@12",
+        "destination_va": "6001109c"
+      },
+      {
+        "table_va": "60001240",
+        "name_va": "6000f2dc",
+        "name": "_grTexCombine@28",
+        "destination_va": "600110a0"
+      },
+      {
+        "table_va": "60001248",
+        "name_va": "6000f2f0",
+        "name": "_grTexCalcMemRequired@16",
+        "destination_va": "600110a4"
+      },
+      {
+        "table_va": "60001250",
+        "name_va": "6000f30c",
+        "name": "_grTexDownloadMipMap@16",
+        "destination_va": "600110a8"
+      },
+      {
+        "table_va": "60001258",
+        "name_va": "6000f324",
+        "name": "_grTexMinAddress@4",
+        "destination_va": "600110ac"
+      },
+      {
+        "table_va": "60001260",
+        "name_va": "6000f338",
+        "name": "_grTexMaxAddress@4",
+        "destination_va": "600110b0"
+      },
+      {
+        "table_va": "60001268",
+        "name_va": "6000f34c",
+        "name": "_grTexSource@16",
+        "destination_va": "600110b4"
+      },
+      {
+        "table_va": "60001270",
+        "name_va": "6000f35c",
+        "name": "_grTexClampMode@12",
+        "destination_va": "600110b8"
+      },
+      {
+        "table_va": "60001278",
+        "name_va": "6000f370",
+        "name": "_grTexLodBiasValue@8",
+        "destination_va": "600110bc"
+      },
+      {
+        "table_va": "60001280",
+        "name_va": "6000f388",
+        "name": "_grGet@12",
+        "destination_va": "600110c0"
+      },
+      {
+        "table_va": "60001288",
+        "name_va": "6000f394",
+        "name": "_grGetString@4",
+        "destination_va": "600110c4"
+      },
+      {
+        "table_va": "60001290",
+        "name_va": "6000f3a4",
+        "name": "_grAADrawTriangle@24",
+        "destination_va": "600110c8"
+      },
+      {
+        "table_va": "60001298",
+        "name_va": "6000f3bc",
+        "name": "_grChromakeyValue@4",
+        "destination_va": "600110cc"
+      },
+      {
+        "table_va": "600012a0",
+        "name_va": "6000f3d0",
+        "name": "_grEnable@4",
+        "destination_va": "600110d0"
+      },
+      {
+        "table_va": "600012a8",
+        "name_va": "6000f3dc",
+        "name": "_grDisable@4",
+        "destination_va": "600110d4"
+      },
+      {
+        "table_va": "600012b0",
+        "name_va": "6000f3ec",
+        "name": "_grErrorSetCallback@4",
+        "destination_va": "600110d8"
+      },
+      {
+        "table_va": "600012b8",
+        "name_va": "6000f404",
+        "name": "_grTexDownloadMipMapLevelPartial@40",
+        "destination_va": "600110dc"
+      },
+      {
+        "table_va": "600012c0",
+        "name_va": "60010cc0",
+        "name": "_grVertexLayout@12",
+        "destination_va": "600127b8"
+      },
+      {
+        "table_va": "600012c8",
+        "name_va": "60010c90",
+        "name": "_grCoordinateSpace@4",
+        "destination_va": "600127bc"
+      },
+      {
+        "table_va": "600012d0",
+        "name_va": "60010ca8",
+        "name": "_grQueryResolutions@8",
+        "destination_va": "600127c0"
+      },
+      {
+        "table_va": "600012d8",
+        "name_va": "60010cd4",
+        "name": "_grGetProcAddress@4",
+        "destination_va": "600127c4"
+      }
+    ],
+    "terminator_va": "600012e0",
+    "optional_extension_name": "grSstWinOpenExt",
+    "extension_test_literal": "PIXEXT",
+    "optional_extension_result_slot": "600127c8",
+    "binding_proof": "Resolver body calls imported GetProcAddress and writes successful results to table destination slots.",
+    "limit": "Static binding on successful resolution; no loaded provider identity or execution observed."
   },
   "published_boundary": {
     "exe_path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",

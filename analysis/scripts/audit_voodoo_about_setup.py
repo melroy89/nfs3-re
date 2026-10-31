@@ -2,6 +2,7 @@
 import hashlib
 import json
 import subprocess
+import struct
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS as EXE_SPECS
 from inventory_legacy_dll_candidates import GAME
@@ -53,7 +54,7 @@ def main():
             'prefix_hex': prefix.hex(), 'disassembly': asm, 'checked_instructions': rows}
     helper_specs = {
         'legacy_candidate': [(0x600018c0, 0x60001a53)],
-        'official_matching_wrapper': [(0x600018d8, 0x60001b79), (0x600012e8, 0x600013e9)],
+        'official_matching_wrapper': [(0x600018d8, 0x60001b79), (0x600012e8, 0x600013e9), (0x60001020, 0x60001107)],
     }
     for label, spans in helper_specs.items():
         row = out['files'][label]
@@ -74,6 +75,37 @@ def main():
                         (0x60001b70, 'a3d4270160')]:
         assert modern.get_data(va-modern.OPTIONAL_HEADER.ImageBase, len(bytes.fromhex(encoded))).hex() == encoded
     assert out['files']['official_matching_wrapper']['sha256'] == candidates['files']['modern_voodoo']['sha256']
+    bindings = []
+    for index in range(128):
+        table_va = 0x60001120 + index*8
+        name_va, slot_va = struct.unpack('<II', modern.get_data(table_va-0x60000000, 8))
+        if not name_va:
+            break
+        bindings.append({'table_va': f'{table_va:08x}', 'name_va': f'{name_va:08x}',
+            'name': modern.get_string_at_rva(name_va-0x60000000).decode('ascii'),
+            'destination_va': f'{slot_va:08x}'})
+    else:
+        raise AssertionError('No resolver-table terminator')
+    by_slot = {r['destination_va']: r['name'] for r in bindings}
+    assert by_slot['600127c0'] == '_grQueryResolutions@8'
+    assert by_slot['600110c0'] == '_grGet@12'
+    assert by_slot['600110c4'] == '_grGetString@4'
+    assert by_slot['600127c4'] == '_grGetProcAddress@4'
+    imports = {i.address: (d.dll.decode(), i.name.decode() if i.name else str(i.ordinal))
+               for d in modern.DIRECTORY_ENTRY_IMPORT for i in d.imports}
+    for va, name in [(0x6000e210, 'LoadLibraryA'), (0x6000e1fc, 'GetProcAddress'),
+                     (0x6000e1b4, 'FreeLibrary')]:
+        assert imports[va][1] == name
+    library = modern.get_string_at_rva(0xf004).decode()
+    extension = modern.get_string_at_rva(0x10ce8).decode()
+    marker = modern.get_string_at_rva(0x10cf8).decode()
+    assert (library, extension, marker) == ('glide3x.dll', 'grSstWinOpenExt', 'PIXEXT')
+    out['modern_dynamic_bindings'] = {'library_literal': library, 'bindings': bindings,
+        'terminator_va': f'{table_va:08x}',
+        'optional_extension_name': extension, 'extension_test_literal': marker,
+        'optional_extension_result_slot': '600127c8',
+        'binding_proof': 'Resolver body calls imported GetProcAddress and writes successful results to table destination slots.',
+        'limit': 'Static binding on successful resolution; no loaded provider identity or execution observed.'}
     relative, wanted, _ = EXE_SPECS['official_modern']
     exe_raw = (ROOT/relative).read_bytes()
     assert hashlib.sha256(exe_raw).hexdigest() == wanted

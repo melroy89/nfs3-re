@@ -80,3 +80,24 @@ A follow-up of the same [audit and manifest](evidence/audits/voodoo-about-setup.
 At the insertion limit of100 unique keys, the inserted records occupy indices1..100. The extra index101 addresses `60013fc8..60013ff0` (half-open), from `60013000 + 101*28h`. The Modern wrapper's `.bss` header starts at `60011000`, has raw-size field3000h, virtual-size field0, raw-data pointer0 and characteristics `c0000080` (uninitialized, readable/writable). Using the section's nonzero size field gives an end at `60014000`; the extra record fits within that declared extent. This is PE storage metadata, not a read of file-backed zero bytes or confirmation of runtime loader mapping. The zero virtual-size field must not be silently represented as a conventional nonzero VirtualSize in a reconstruction manifest.
 
 The EXE eligibility helper first tests record flag bit0 (`004bee67..004bee6c`), then bit1 and signed field `+14h >= 2`; only later does it divide by height at `004bee7f`. **If the extra slot remains zero-filled, it is rejected before division and before a menu callback.** Thus the inclusive count alone does not establish a divide-by-zero or out-of-image read. Conversely, fitting section metadata does not prove the slot's live contents or rule out aliasing/writes. Exhaustive DLL write ownership, loader mapping and runtime values remain unverified. The intended sentinel interpretation is plausible but remains inferred, and no original defect or compatibility fix is claimed.
+
+## Dynamic Glide bindings behind the mode builder
+
+The [setup audit](scripts/audit_voodoo_about_setup.py) now retains the complete resolver `60001020..60001107`, parses its terminated name/destination table beginning at `60001120`, and asserts the relevant Windows imports and Glide names. Successful resolution is a verified code/data relationship, beyond finding a DLL name in strings.
+
+The resolver calls imported `LoadLibraryA` at `60001074`, with a path assembled from its own module filename and the literal `glide3x.dll`; on failure it retries the bare literal at `6000108b`. It then walks name/destination pairs, calls imported `GetProcAddress` at `600010a3`, and writes each nonzero result through that pair's destination at `600010b0`. A missing required name frees the module and returns failure. Successful completion saves the module handle. Provider selection under Windows/Wine search rules and the actual loaded file identity are not observed here.
+
+| Destination call slot | Required resolved name | Mode-builder use |
+|---|---|---|
+| `600110c0` | `_grGet@12` | Numeric capability queries, including selectors17,12,14 and10 |
+| `600110c4` | `_grGetString@4` | String queries with selectors161 and160 |
+| `600127c0` | `_grQueryResolutions@8` | Request/null-output size query, then request/stack-output population |
+| `600127c4` | `_grGetProcAddress@4` | Optional extension lookup |
+| `600110ac` | `_grTexMinAddress@4` | Subtracted from `_grTexMaxAddress@4` result when deriving descriptor `+70h` |
+| `600110b0` | `_grTexMaxAddress@4` | Supplies the initial value for that derivation |
+
+The full table is retained in the manifest; the table above selects dependencies of the inspected helper. Decorated names record the requested interface, not independent proof that every provider implements its expected ABI correctly. Numeric Glide selectors remain literal values until independently mapped to the relevant header/version; they must not acquire invented capability names.
+
+The mode builder obtains selector160 text and tests it against literal `PIXEXT` via helper `60004870`. When that test returns nonzero, it requests `grSstWinOpenExt` through the resolved Glide procedure lookup at `60001a01` and stores the returned pointer at `600127c8`. The conditional32-bit candidate path tests this same cell at `60001b3b`. Thus the earlier anonymous cell is an **optional extension lookup result**, and the two-call query is statically bound to **grQueryResolutions**. The extension string test, successful lookup and subsequent branch do not establish32-bit rendering success or the loaded provider's precision behavior.
+
+This resolves the dynamic-target identity gap for the selected paths. Remaining scope includes exact provider-specific query structure/constants, all writes/aliases to the final extra mode slot, and original-retail provenance. No DLL was loaded and no runtime test or source reconstruction occurred.
