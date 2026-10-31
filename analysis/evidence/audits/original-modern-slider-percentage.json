@@ -30,6 +30,14 @@
           "assembly_sha256": "97347b6b7c41d8dded6bea812a1a6a6204666cdf338e6f1668d4769109a385fd"
         }
       ],
+      "step_event_dispatch": {
+        "start": "0046cb80",
+        "end": "0046cbbc",
+        "bytes_sha256": "8ff5a98e873abde848e196094d7f49197e239ce44362537badd03d90f9071bd6",
+        "assembly": "analysis/captures/modern-differences/slider-percentage/original-0046cb80.asm",
+        "assembly_sha256": "1d31be8531b0061472c759adeec69c947b6eb7e324084993d6693a2c12425bc0",
+        "table_0046cb64_hex": "accb4600b6cb4600a0cb4600accb4600accb4600accb4600"
+      },
       "percentage_pair": {
         "start": "0046b3a0",
         "end": "0046c2e6",
@@ -89,6 +97,14 @@
           "assembly_sha256": "d2af1429e2842cc79905b2a18b8f08f4c7404be3d3fe192a1c384216e0425842"
         }
       ],
+      "step_event_dispatch": {
+        "start": "0046cb80",
+        "end": "0046cbbc",
+        "bytes_sha256": "8ff5a98e873abde848e196094d7f49197e239ce44362537badd03d90f9071bd6",
+        "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-0046cb80.asm",
+        "assembly_sha256": "079a0a358f1b1d365b401e37debe9fe2aae6cdc29e3ce8b6c4eeef051d4976f1",
+        "table_0046cb64_hex": "accb4600b6cb4600a0cb4600accb4600accb4600accb4600"
+      },
       "percentage_pair": {
         "start": "0046b3a0",
         "end": "0046c2e6",
@@ -128,6 +144,7 @@
   "identical_prefix_bytes": 3755,
   "quantizer_identical": true,
   "step_handler_identical": true,
+  "step_event_dispatch_identical": true,
   "percentage_pair_changed_addresses": [
     "0046c1f0"
   ]

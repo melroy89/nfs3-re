@@ -105,3 +105,21 @@ Complete `HandleSingleSliderStepInput`, `0046a860..0046a97c`, is **byte-identica
 Consequently, **if** these declarations become the instance fields without intervening overrides, this retained handler selects **0.01**, not the declared fallback0.05. That is a conditional static implication, not a measured keypress, complete asset-to-runtime binding or universal refutation of every release's behavior. Other event paths, menu callbacks, parser/template interpretation and runtime writes must be checked before saying the installed slider actually moves by1% or5%.
 
 Catalog **MP152-005** now records partial evidence: the0.05 declaration exists and changed in selected local files, but a competing0.01 primary field and retained preference rule prevent treating the full5% behavior as verified. This distinction is also why percentage display rounding and input step size remain separate claims. No input or setting was changed.
+
+## Immediate step-event dispatcher does not override step values
+
+The paired audit now captures complete `0046cb80..0046cbbc` and its six-target table at `0046cb64`; both are byte-identical. It receives the widget in EAX and an event in low WORD EBX, saves the event through ECX, reads widget WORD+42h as its type selector, then dispatches:
+
+| Widget type | Action |
+|---:|---|
+| 0 | Sign-extend event WORD and call single-slider step handler `0046a860`. |
+| 1 | Skip adjustment, return0. |
+| 2 | Sign-extend event WORD and call pair-slider handler `0046c4a0`. |
+| 3, 4, 5 | Call single-slider step handler. |
+| Unsigned WORD >5 | Call single-slider step handler via default branch. |
+
+This selector is `slidertype`/widget behavior state, distinct from the percentage-display byte+3ch. The code does not write widget+44h or+48h, replace the widget pointer, or add a Modern-only step override before `0046a860`. Its EAX result forwards the selected handler's status; preserving other dispatch registers does not imply preservation by every downstream callback.
+
+For the installed audio blocks declaring `slidertype=0`, this supplies the immediate dispatch route **if** their parsed instance field+42h has that value. It does not close the complete menu-parser/template contract or prove an actual event reached the dispatcher. No resolved direct CALL appeared in the retained disassembly search; callback/table-based invocation remains to trace rather than assuming inactivity.
+
+The 5% claim's remaining static gap is therefore upstream field instantiation/mutation and alternative event paths, not an uninspected override inside this immediate dispatcher. Runtime step behavior and historical attribution remain unverified. No game input was sent.

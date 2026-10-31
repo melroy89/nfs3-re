@@ -23,11 +23,17 @@ def main():
                 'bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,stop-start)).hexdigest(),
                 'assembly':str(helper_path.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(helper_path.read_bytes()).hexdigest()})
+        dispatch_path=capture/f'{label}-0046cb80.asm'
+        dispatch_path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel','--start-address=0x46cb80','--stop-address=0x46cbbc',relative],cwd=ROOT))
         pair_path=capture/f'{label}-0046b3a0.asm'
         pair_path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel','--start-address=0x46b3a0','--stop-address=0x46c2e6',relative],cwd=ROOT))
         prefix=pe.get_data(0x69680,0xeab);prefixes.append(prefix)
         result['binaries'][label]={'path':relative,'sha256':expected,'start':'00469680','end':f'{end:08x}',
             'helper_spans':helper_spans,
+            'step_event_dispatch':{'start':'0046cb80','end':'0046cbbc',
+                'bytes_sha256':hashlib.sha256(pe.get_data(0x6cb80,0x3c)).hexdigest(),
+                'assembly':str(dispatch_path.relative_to(ROOT)), 'assembly_sha256':hashlib.sha256(dispatch_path.read_bytes()).hexdigest(),
+                'table_0046cb64_hex':pe.get_data(0x6cb64,24).hex()},
             'percentage_pair':{'start':'0046b3a0','end':'0046c2e6',
                 'bytes_sha256':hashlib.sha256(pe.get_data(0x6b3a0,0x46c2e6-0x46b3a0)).hexdigest(),
                 'assembly':str(pair_path.relative_to(ROOT)), 'assembly_sha256':hashlib.sha256(pair_path.read_bytes()).hexdigest(),
@@ -47,6 +53,9 @@ def main():
     result['quantizer_identical']=True
     assert result['binaries']['original']['helper_spans'][0]['bytes_sha256']==result['binaries']['official_modern']['helper_spans'][0]['bytes_sha256']
     result['step_handler_identical']=True
+    for key in ('bytes_sha256','table_0046cb64_hex'):
+        assert result['binaries']['original']['step_event_dispatch'][key]==result['binaries']['official_modern']['step_event_dispatch'][key]
+    result['step_event_dispatch_identical']=True
     images=[pefile.PE(str(ROOT/SPECS[k][0])) for k in ('original','official_modern')]
     pair_bodies=[p.get_data(0x6b3a0,0x46c2e6-0x46b3a0) for p in images]
     changes=[0x46b3a0+i for i,(a,b) in enumerate(zip(*pair_bodies)) if a!=b]
