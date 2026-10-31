@@ -40,6 +40,20 @@
           "bytes_sha256": "98915e56a25d5c21b0dff8efd47d1337dc67542eaf6d52b17f8f46d2182c4878",
           "assembly": "analysis/captures/modern-differences/screenshots/original-004eb160.asm",
           "assembly_sha256": "895c1aabdf12436a5dc2369210e8b635f9a8d1c6b571377f80b496cc29c2e63f"
+        },
+        {
+          "start": "004eafc0",
+          "end": "004eb153",
+          "bytes_sha256": "9e29b5b92b8fe2a1256ae926760a010ea9ffa69c811f2900c15e24a8ebc85904",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-004eafc0.asm",
+          "assembly_sha256": "1602bd30fef05fba1e811ed3b50484dcf5796ab87f344cbf294428da0f3549af"
+        },
+        {
+          "start": "005040b8",
+          "end": "00504133",
+          "bytes_sha256": "892bc6ccbd952416df0c01228576213c5a5389c85153744a9c8ecdf5116d27ad",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-005040b8.asm",
+          "assembly_sha256": "9e27080af04bd4d6ff834d610b1d5488b4acd3b1fdf6fe3b9f4e3ab2e3d0c96c"
         }
       ],
       "strings": {

@@ -43,6 +43,8 @@ For the inspected original, Alt+P drives a direct call that captures and writes 
 
 The [repeat/numbering/sound comparison](original-modern-screenshot-feedback.md) follows the 1,000 ms request gate, atomic filename counter and embedded shutter sound, with runtime and cross-launch persistence limits.
 
+The [pixel comparison](original-modern-screenshot-pixels.md) traces original depth-16 conversion versus Modern masked RGB565 copying and the four-to-three-byte output path, without claiming measured image fidelity or compression.
+
 ## Limits
 
 - Conclusions are tied to these two fingerprints. The original artifact's exact retail provenance is not authenticated by this review.

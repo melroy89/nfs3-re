@@ -17,6 +17,7 @@ This directory contains reviewed research notes, retained evidence and reproduci
 - [Original versus Modern RAM pool size](original-modern-heap-initialization.md)
 - [Original versus Modern endpoint defaults and colon-port parsing](original-modern-network-endpoints.md)
 - [Original versus Modern network port menu and retry](original-modern-network-port-menu.md)
+- [Original versus Modern screenshot pixel representation](original-modern-screenshot-pixels.md)
 - [Original versus Modern screenshot repeat, numbering and sound](original-modern-screenshot-feedback.md)
 - [Original versus Modern screenshot input, format and worker paths](original-modern-screenshots.md)
 - [Original versus Modern window initialization and callbacks](original-modern-window-handling.md)
