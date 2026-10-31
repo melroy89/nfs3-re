@@ -285,7 +285,7 @@
     },
     {
       "path": "analysis/original-modern-resolution-defaults.md",
-      "sha256": "e1b0a6d7fe1af50dc9534c211f4379eba578ff7ead7b820a643a70419b824fec"
+      "sha256": "4e1583204815e0489f247b042db51e999a36617cb79ebdadc0c17314a62282c1"
     },
     {
       "path": "analysis/original-modern-screenshot-feedback.md",
@@ -1671,6 +1671,13 @@
       "original_sha256": "23ad635403ac42735a6aeb6ad18094cacf5318d17aa7a3563c15a2b74937629a",
       "modern_sha256": "1747b2318043138b32ca1e63c0d03190867f10048eb68a42471db559164f0775",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-resolution-defaults.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00431c1c"
+          ]
+        },
         {
           "path": "analysis/original-modern-state14.md",
           "entry_mentioned": true,
@@ -3238,7 +3245,9 @@
           "path": "analysis/original-modern-resolution-defaults.md",
           "entry_mentioned": false,
           "addresses": [
-            "004482c0"
+            "004482c0",
+            "004482e8",
+            "004482f5"
           ]
         }
       ]

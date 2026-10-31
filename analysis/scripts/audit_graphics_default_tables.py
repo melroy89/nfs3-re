@@ -36,6 +36,22 @@ def main():
             assert pe.get_data(0x472de3-0x400000,5)==bytes.fromhex('e88055fdff')
             assert pe.get_data(0x472e1b-0x400000,2)==bytes.fromhex('61c3')
             assert pe.get_data(0x472e56-0x400000,0xca)==b'\x90'*0xca
+            producer=pe.get_data(0x4482e8-0x400000,13)
+            assert producer==bytes.fromhex('31c0837e18027c02b001894710')
+            getter=pe.get_data(0x448368-0x400000,9)
+            assert getter==bytes.fromhex('e8dbffffff8b4010c3')
+            descriptor=struct.unpack('<5I',pe.get_data(0x556924-0x400000,20))
+            assert descriptor==(0x53a87c,0x5561be,0,0,0x6fd1d4)
+            assert pe.get_data(0x53a87c-0x400000,4)==b'fog\0'
+            gate=pe.get_data(0x431c1c-0x400000,23)
+            assert gate==bytes.fromhex('a1543a7a002305d4d16f00230534925500a3643a7a00c3')
+            row['fog_default_chain']={
+                'record_producer':'004482e8', 'producer_hex':producer.hex(),
+                'menu_record_field_10':'1 iff signed driver record field +18h >= 2, otherwise 0',
+                'getter':'00448368','getter_hex':getter.hex(),
+                'descriptor':'00556924','token':'fog','selector':'006fd1d4',
+                'admission_helper':'00431c1c','admission_hex':gate.hex(),
+                'limits':'Requires a valid populated selected record; empty list does not establish initialized field contents.'}
             row['final_unused_edx_table']={'address':'00472e50',
                  'values':list(pe.get_data(0x472e50-0x400000,6)),
                  'load_and_store_hex':data.hex(),
