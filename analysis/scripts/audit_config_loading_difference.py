@@ -6,9 +6,10 @@ import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
 SPANS={'original':[(0x472980,0x472b60),(0x4728e0,0x47297d),
-                   (0x4723f0,0x47242c),(0x4e0640,0x4e0658),(0x4ff4c0,0x4ff563)],
+                   (0x4723f0,0x47242c),(0x4e0640,0x4e0658),(0x4ff4c0,0x4ff563),
+                   (0x472820,0x4728d3)],
        'official_modern':[(0x472980,0x472b48),(0x472230,0x472248),
-                          (0x4723f0,0x472402)]}
+                          (0x4723f0,0x472402),(0x472820,0x4728d3)]}
 
 
 def main():
@@ -52,6 +53,19 @@ def main():
             'relevant_imports':{f'{i.address:08x}':i.name.decode()
                 for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports
                 if i.name and i.name in [b'CompareFileTime',b'GetFileTime',b'_lopen',b'_lclose',b'GetModuleFileNameA']}}
+    images=[pefile.PE(str(ROOT/SPECS[label][0])) for label in ('original','official_modern')]
+    old,new=[image.get_data(0x72820,0xb3) for image in images]
+    assert old[:14]==new[:14] and old[27:]==new[27:]
+    assert old[14:27].hex()=='f6052eeb5500200f858f000000'
+    assert new[14:27].hex()=='e8bdfbffff'+'90'*8
+    result['save_entry_policy']={
+        'paired_complete_span':'00472820..004728d3','bytes':179,
+        'changed_region':'0047282e..0047283b; all other envelope bytes identical',
+        'original':'TEST byte0055eb2e,20h; nonzero skips to epilogue004728ca.',
+        'modern':'CALL004723f0 refreshes header before remaining save admission gates; eight NOP bytes.',
+        'retained':'006fd3a0 gate, literal20f0-byte disk request,0055e88c gate, block-copy/format/write/free sequence.',
+        'limits':['Removed local flag gate is not proof of unconditional save or absence of other callers/gates.',
+                  'Modern refresh occurs even if a later gate prevents writing; actual file/API effects untested.']}
     (ROOT/'analysis/evidence/audits/original-modern-config-loading.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: config baselines, header bytes, import identities and load spans')
 

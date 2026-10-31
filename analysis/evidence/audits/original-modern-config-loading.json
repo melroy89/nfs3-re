@@ -40,6 +40,13 @@
           "bytes_sha256": "0d817cb2566a6e1c69d28ad408e2c64dbe30f5718e5c9e2a0126d2bc4d8ebc03",
           "assembly": "analysis/captures/modern-differences/config-loading/original-004ff4c0.asm",
           "assembly_sha256": "7b76a62317d4d0e0dfc0d4e19c9d040176fd559cb76871ff3cdd552d024893bc"
+        },
+        {
+          "start": "00472820",
+          "end": "004728d3",
+          "bytes_sha256": "d8caab668726c13df6e906a2153a2c49cf17cfcb9b36e44e993e5eeb931fe835",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-00472820.asm",
+          "assembly_sha256": "c42c3626e1a37659d9b395aca08df924e46554afde5088cc012b5bc192088a39"
         }
       ],
       "file_backed_header_hex": "000000000000000000000000",
@@ -76,6 +83,13 @@
           "bytes_sha256": "8eed85fc7ad86a0526d5352998eb2bd118bcdac140cdd08f82d8070ab3f8b8b9",
           "assembly": "analysis/captures/modern-differences/config-loading/official_modern-004723f0.asm",
           "assembly_sha256": "5d53ca9b360b981ffe81419b39d7c432f0fa8c68e291d5742caf7fc12feff95e"
+        },
+        {
+          "start": "00472820",
+          "end": "004728d3",
+          "bytes_sha256": "611cb7076935a767bea148ee9f7bcc04b642464d68af5cec43194c4bcf1c9024",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-00472820.asm",
+          "assembly_sha256": "ef78f3f73b8e416ceb4960bf4c5c51932d999d76382eba6c5d1d2c92621d96ff"
         }
       ],
       "file_backed_header_hex": "f02000000600000000000000",
@@ -107,6 +121,18 @@
     "limits": [
       "No per-field View Angle remapping in the header decision sequence or narrow sound normalizer00472230.",
       "Successful block copy, full save layout and later writes are not established by the header branches alone."
+    ]
+  },
+  "save_entry_policy": {
+    "paired_complete_span": "00472820..004728d3",
+    "bytes": 179,
+    "changed_region": "0047282e..0047283b; all other envelope bytes identical",
+    "original": "TEST byte0055eb2e,20h; nonzero skips to epilogue004728ca.",
+    "modern": "CALL004723f0 refreshes header before remaining save admission gates; eight NOP bytes.",
+    "retained": "006fd3a0 gate, literal20f0-byte disk request,0055e88c gate, block-copy/format/write/free sequence.",
+    "limits": [
+      "Removed local flag gate is not proof of unconditional save or absence of other callers/gates.",
+      "Modern refresh occurs even if a later gate prevents writing; actual file/API effects untested."
     ]
   }
 }
