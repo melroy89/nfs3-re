@@ -321,3 +321,7 @@ Run `python3 analysis/scripts/inventory_overlay_labels.py --game-dir "<installed
 ## Original versus Modern slider percentages
 
 Run `python3 analysis/scripts/audit_slider_percentage_difference.py`. Retains complete paired bodies and asserts a 3755-byte identical prefix in `analysis/evidence/audits/original-modern-slider-percentage.json`. No target execution. See [slider findings](../original-modern-slider-percentage.md).
+
+## Selected slider percent-type definitions
+
+Run `python3 analysis/scripts/inventory_slider_percent_types.py --game-dir "<installed game directory>"`. Retains selected menu block codelinks/types, source lines and hashes in `analysis/evidence/inventories/installed-slider-percent-types.json`. Text inventory only; see [binding evidence](../original-modern-slider-percentage.md#installed-percent-type-definitions-and-parser-descriptor).

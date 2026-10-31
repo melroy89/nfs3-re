@@ -29,6 +29,8 @@ def main():
             'bytes_sha256':hashlib.sha256(pe.get_data(0x69680,end-0x469680)).hexdigest(),
             'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
             'unchanged_prefix_sha256':hashlib.sha256(prefix).hexdigest(),
+            'percenttype_descriptor':{'address':'00558224','words_hex':pe.get_data(0x158224,16).hex(),
+                'keyword':pe.get_data(0x1386b4,30).split(b'\0')[0].decode('ascii')},
             'format':pe.get_data(0x13ae54,20).split(b'\0')[0].decode('ascii'),
             'constants_hex':{f'{a:08x}':pe.get_data(a-0x400000,4).hex() for a in (0x53ae70,0x53ae74,0x53ae78,0x53ae7c,0x53ae80)}}
     assert prefixes[0]==prefixes[1]

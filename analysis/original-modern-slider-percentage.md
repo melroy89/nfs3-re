@@ -47,3 +47,21 @@ The conversion helper itself is also different:
 Both words request RC=11 (toward zero). Original's forced high byte also sets PC=11; Modern's literal sets PC=00 and masks all six floating exceptions in the low six bits. Original instead inherits those low-byte masks. This describes installed control bits, not a claim that precision-control bits alter FRNDINT in the same way as every arithmetic instruction. Waiting/nonwaiting save sequences and exception handling also differ; those are machine-state contracts outside a plain integer return.
 
 The original percentage tail invokes its original conversion helper before FISTP; Modern's changed tail invokes neither implementation and uses direct ambient-rounding FISTP. Consequently “both executables contain a truncation helper” would not establish identical slider rounding. Ordinary/boundary numeric comparisons and exact active control words remain untested in this phase.
+
+## Installed percent-type definitions and parser descriptor
+
+The [selected menu inventory](evidence/inventories/installed-slider-percent-types.json) records nine case-distinct installed/local backup files named `audio.mnu`, `advgrph.mnu` or `cedbasic.mnu`, including source hashes, section lines, codelinks and raw `percenttype`/`slidertype` values. It is a bounded text inventory, not a full parser emulation or proof of runtime file choice.
+
+Installed `FEDATA/MENUS` definitions establish:
+
+| File | Codelinks | percenttype |
+|---|---|---:|
+| `audio.mnu` | `ASLD_MENUMUSIC`, `ASLD_MENUSOUND`, `ASLD_RACEMUSIC`, `ASLD_SOUNDFX`, `ASLD_ENGINEVOLUME`, `ASLD_SPEECHVOLUME` | 1 |
+| `advgrph.mnu` | `SFX_INTENSITY` | 1 |
+| `cedbasic.mnu` | `CE_ENGINETUNE`, `CE_BRAKEBAL`, `CE_STEERINGSPD`, `CE_BGRRATS`, `CE_SUSPENSION`, `CE_AERODYN`, `CE_TIRES` | 2 |
+
+This supplies concrete audio/effect-intensity and car-editing candidates for the two percentage mappings. It does not by itself establish callback semantics for every codelink or map the dead-zone controls to this single-slider tail. In particular, type2 is not automatically a dead-zone label: these inspected installed declarations use it for car-editing controls.
+
+The executable evidence now retains the 16-byte descriptor at `00558224`: keyword pointer to literal **`percenttype`** at `005386b4`, a default/value word, destination pointer **`00604f1c`**, and a type/dispatch word. `00604f1c - 00604ee0 = 3ch`, matching the renderer's field offset in the frontend entry template. This is an exact descriptor/offset link; parsing dispatch, write width, template instantiation and all default overrides still need direct code tracing before declaring the full asset-to-live-instance contract verified.
+
+Reproduce the asset side with `python3 analysis/scripts/inventory_slider_percent_types.py --game-dir '<installed game directory>'`; the executable audit records descriptor bytes for both baselines. Installed/backup naming does not authenticate retail or official-package provenance. No slider was moved, setting changed or numeric output measured.

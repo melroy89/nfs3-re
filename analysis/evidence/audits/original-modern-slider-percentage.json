@@ -27,6 +27,11 @@
       "assembly": "analysis/captures/modern-differences/slider-percentage/original-00469680.asm",
       "assembly_sha256": "5fbdfa61e77107d7fbb386ee0b342627e23b51888b3c98410bbc8decf168839a",
       "unchanged_prefix_sha256": "b6f275726b548490a16dc478dd0fc38211c97dcd32fcd543c8580e555503a81c",
+      "percenttype_descriptor": {
+        "address": "00558224",
+        "words_hex": "b4865300000000001c4f60000f000000",
+        "keyword": "percenttype"
+      },
       "format": "%d%c",
       "constants_hex": {
         "0053ae70": "0000003f",
@@ -61,6 +66,11 @@
       "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-00469680.asm",
       "assembly_sha256": "ec525abf343592d9c1843002296eed4d8d7837d2c3c8984eeb29d633a81c180e",
       "unchanged_prefix_sha256": "b6f275726b548490a16dc478dd0fc38211c97dcd32fcd543c8580e555503a81c",
+      "percenttype_descriptor": {
+        "address": "00558224",
+        "words_hex": "b4865300000000001c4f60000f000000",
+        "keyword": "percenttype"
+      },
       "format": "%d%c",
       "constants_hex": {
         "0053ae70": "0000003f",
