@@ -35,6 +35,20 @@
           "assembly_sha256": "68e620fd4f13803776549ecdb4d0c970e541917cc24eec1b9caeabad4c927d79"
         },
         {
+          "start": "004b6590",
+          "end": "004b67ac",
+          "bytes_sha256": "82ee0a28f9dc3450a643ba169749646908ca072d11485fda5108f217ae9ef4cc",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004b6590.asm",
+          "assembly_sha256": "19d39d9721b80c674bcbe2235d23a3fa2d5650a95391db68940891055ae7f595"
+        },
+        {
+          "start": "004b5860",
+          "end": "004b58bb",
+          "bytes_sha256": "8ae43f95246afe26de9bc8853a7add5d3e80ff8b8c34ce5145f138689c5b0d9a",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004b5860.asm",
+          "assembly_sha256": "686e08362d197825711fd073f62870bde0f429dcebcd37159d1285976c8e2285"
+        },
+        {
           "start": "004f4b80",
           "end": "004f4ba1",
           "bytes_sha256": "66a3397c7c341a91a0079c76e3eebba3fbdbd68aeeb70f10c0b0e0d3dbe7a2a0",
@@ -77,6 +91,11 @@
           "dll": "GDI32.dll"
         },
         {
+          "iat": "005344dc",
+          "name": "FreeLibrary",
+          "dll": "KERNEL32.dll"
+        },
+        {
           "iat": "00534500",
           "name": "GetCurrentDirectoryA",
           "dll": "KERNEL32.dll"
@@ -87,8 +106,18 @@
           "dll": "KERNEL32.dll"
         },
         {
+          "iat": "00534570",
+          "name": "GetVersionExA",
+          "dll": "KERNEL32.dll"
+        },
+        {
           "iat": "00534580",
           "name": "GlobalMemoryStatus",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "0053458c",
+          "name": "LoadLibraryA",
           "dll": "KERNEL32.dll"
         },
         {
@@ -148,6 +177,20 @@
           "assembly_sha256": "3cb548b967e003bb94adfc7ff56379d5f8528aa8ac34f0ccfb94ec3d0723f339"
         },
         {
+          "start": "004b6590",
+          "end": "004b67ac",
+          "bytes_sha256": "6d868d3127119d7edf200d034196e52d4457f21fa20460375c8e633fabfd30a6",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b6590.asm",
+          "assembly_sha256": "cbe6f82a9fbddee83a00c8a75a01ecea2a73af1cb47ea61d4511730f89d66344"
+        },
+        {
+          "start": "004b5860",
+          "end": "004b58bb",
+          "bytes_sha256": "40c6bd7d20fe675d52d3bdc1d4d2363a4e72523a18959ec8f96e5dd2320d1d63",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b5860.asm",
+          "assembly_sha256": "27320ac9e09fb674b303ed7f23701de9f81e0e7c64b987c72afa32d5627f56d0"
+        },
+        {
           "start": "004f4b80",
           "end": "004f4ba1",
           "bytes_sha256": "66a3397c7c341a91a0079c76e3eebba3fbdbd68aeeb70f10c0b0e0d3dbe7a2a0",
@@ -190,6 +233,11 @@
           "dll": "GDI32.dll"
         },
         {
+          "iat": "005344dc",
+          "name": "FreeLibrary",
+          "dll": "KERNEL32.dll"
+        },
+        {
           "iat": "00534500",
           "name": "GetCurrentDirectoryA",
           "dll": "KERNEL32.dll"
@@ -200,8 +248,18 @@
           "dll": "KERNEL32.dll"
         },
         {
+          "iat": "00534570",
+          "name": "LockResource",
+          "dll": "KERNEL32.dll"
+        },
+        {
           "iat": "00534580",
           "name": "GlobalMemoryStatus",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "0053458c",
+          "name": "LoadLibraryA",
           "dll": "KERNEL32.dll"
         },
         {
@@ -387,6 +445,58 @@
       ]
     },
     "limit": "Diagnostic output only; descriptor units, stream destination and observed write success not established."
+  },
+  "removed_directdraw_probe": {
+    "entry": "004b6590",
+    "end_exclusive": "004b67ac",
+    "modern_same_address": "540 NOP bytes",
+    "caller_call": "004b5872",
+    "caller_required_signed_minimum": 5,
+    "library": "DDRAW.DLL",
+    "export": "DirectDrawCreate",
+    "queried_identifiers": {
+      "0056b928": "b3a6f3e0-2b43-11cf-a2de-00aa00b93356",
+      "0056b938": "da044e00-69b2-11d0-a1d5-00aa00b8dfbb"
+    },
+    "diagnostic_table": [
+      {
+        "index": 0,
+        "pointer": "0053ec2c",
+        "text_latin1": "The Microsoft DirectX 5 drivers must be installed for Need For Speed III to run!"
+      },
+      {
+        "index": 1,
+        "pointer": "0053ec80",
+        "text_latin1": "Sie m\u00fcssen die Microsoft DirectX 5-Treiber installieren, um Need For Speed III zu starten."
+      },
+      {
+        "index": 2,
+        "pointer": "0053ecdc",
+        "text_latin1": "Vous devez installer les gestionnaires DirectX 5 de Microsoft pour que Need For Speed III fonctionne."
+      },
+      {
+        "index": 3,
+        "pointer": "0053ed44",
+        "text_latin1": "Para que funcione Need For Speed III los controladores DirectX 5 de Microsoft han de estar instalados."
+      },
+      {
+        "index": 4,
+        "pointer": "0053edac",
+        "text_latin1": "I driver DirectX 5 di Microsoft devono essere installati per poter eseguire Need For Speed III!"
+      },
+      {
+        "index": 5,
+        "pointer": "0053ee0c",
+        "text_latin1": "Microsoft DirectX 5 drivrutinerna m\u00e5ste installeras f\u00f6r att Need For Speed III ska fungera"
+      }
+    ],
+    "result_paths": {
+      "0": "OS-query/platform guard, library/export/create failure or intermediate method failure",
+      "1": "First queried interface not obtained",
+      "3": "Surface queried interface not obtained",
+      "5": "Final interface obtained and success cleanup completed"
+    },
+    "limit": "Static path tags, not a complete installed DirectX version detector or runtime result."
   },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",

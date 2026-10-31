@@ -3,6 +3,7 @@ import hashlib
 import json
 import subprocess
 import struct
+import uuid
 import pefile
 from audit_thrash_loader_difference import ROOT,SPECS
 
@@ -15,12 +16,12 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
         spans=([(0x4b5f10,0x4b5fee),(0x4b608b,0x4b6097)] if label=='original' else [(0x4b5748,0x4b57c1),(0x4b570c,0x4b5746),(0x4b5c07,0x4b5c11)])
-        spans += [(0x4b5e50,0x4b5e9a),(0x4b5ea0,0x4b5f0b),(0x4f4b80,0x4f4ba1),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55)]
+        spans += [(0x4b5e50,0x4b5e9a),(0x4b5ea0,0x4b5f0b),(0x4b6590,0x4b67ac),(0x4b5860,0x4b58bb),(0x4f4b80,0x4f4ba1),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55)]
         spans += [(0x4516a0,0x4516fa if label=='original' else 0x4516f4),(0x4f07d0,0x4f083e)]
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end':f'{end:08x}','bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
-        imports=[{'iat':f'{i.address:08x}','name':i.name.decode(),'dll':d.dll.decode()} for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x534580,0x534740,0x534754,0x534458,0x534764,0x534500,0x534514)]
+        imports=[{'iat':f'{i.address:08x}','name':i.name.decode(),'dll':d.dll.decode()} for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x534580,0x534740,0x534754,0x534458,0x534764,0x534500,0x534514,0x534570,0x53458c,0x5344dc)]
         item={'path':relative,'sha256':expected,'spans':rows,'imports':imports}
         if label=='official_modern':item['messages']={f'{a:08x}':pe.get_data(a-0x400000,240).split(b'\0')[0].decode() for a in (0x53d27a,0x53d29a,0x53d202)}
         result['binaries'][label]=item
@@ -58,6 +59,23 @@ def main():
             {'index': i, 'pointer': f'{address:08x}',
              'text_latin1': original.get_string_at_rva(address-0x400000).decode('latin1')}
             for i,address in enumerate(pointers)]
+    assert images['official_modern'].get_data(0xb6590,0x21c) == b'\x90'*0x21c
+    assert original.get_data(0xb5872,9) == bytes.fromhex('e8190d000083f8057d')
+    result['removed_directdraw_probe'] = {'entry': '004b6590', 'end_exclusive': '004b67ac',
+        'modern_same_address': '540 NOP bytes', 'caller_call': '004b5872',
+        'caller_required_signed_minimum': 5, 'library': original.get_string_at_rva(0x13fefc).decode(),
+        'export': original.get_string_at_rva(0x13ff08).decode(),
+        'queried_identifiers': {f'{va:08x}': str(uuid.UUID(bytes_le=original.get_data(va-0x400000,16)))
+                               for va in (0x56b928,0x56b938)},
+        'diagnostic_table': [],
+        'result_paths': {'0': 'OS-query/platform guard, library/export/create failure or intermediate method failure',
+                         '1': 'First queried interface not obtained', '3': 'Surface queried interface not obtained',
+                         '5': 'Final interface obtained and success cleanup completed'},
+        'limit': 'Static path tags, not a complete installed DirectX version detector or runtime result.'}
+    for i,va in enumerate(struct.unpack('<6I',original.get_data(0xb5580,24))):
+        result['removed_directdraw_probe']['diagnostic_table'].append({
+            'index': i, 'pointer': f'{va:08x}',
+            'text_latin1': original.get_string_at_rva(va-0x400000).decode('latin1')})
     result['limits']=['No memory, disk, desktop, dialog or target API execution.','Memory fields described by exact offsets; no complete API structure/type reconstruction.','Current-directory helper, API failures and diagnostic termination internals are not fully audited here.','No release-note attribution inferred solely from a changed startup routine.']
     (ROOT/'analysis/evidence/audits/original-modern-startup-requirements.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: startup requirement counterparts, caller witnesses, imports and messages')
