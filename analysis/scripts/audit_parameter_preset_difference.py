@@ -54,13 +54,16 @@ def main():
 
         row['caller_and_selector_witnesses'] = []
         for a,b in [(0x41d610,0x41d61a),(0x41d870,0x41d89d),
-                    (0x41aaf0,0x41ab02),(0x41d9fa,0x41da0b)]:
+                    (0x41aaf0,0x41ab02),(0x41d9fa,0x41da0b),
+                    (0x41deb0,0x41def9),(0x41df10,0x41e069)]:
             value=pe.get_data(a-0x400000,b-a)
             row['caller_and_selector_witnesses'].append({'start':f'{a:08x}',
                 'exclusive_end':f'{b:08x}','bytes':value.hex(),
                 'sha256':hashlib.sha256(value).hexdigest()})
         for call in (0x41aaf6,0x41d894,0x41da01):
             assert pe.get_data(call-0x400000,5)==b'\xe8'+struct.pack('<i',0x41d620-call-5)
+        assert pe.get_data(0x41debb-0x400000,14)==bytes.fromhex('31c98915d8d05d00890ddcd05d00')
+        assert pe.get_data(0x41e057-0x400000,14)==bytes.fromhex('a1dcd05d008d50018915dcd05d00')
         assert pe.get_data(0x41d610-0x400000,10)==bytes.fromhex('5589e5a328bc6f005dc3')
         assert pe.get_data(0x41d875-0x400000,31)==bytes.fromhex(
             '8b1528bc6f0042b904000000891528bc6f0089d0c1fa1ff7f9891528bc6f00')
