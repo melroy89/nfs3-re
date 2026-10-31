@@ -1,0 +1,82 @@
+{
+  "kind": "bounded-static-difference-checkpoint",
+  "reviewed_head": "2305fdf0618e4b389f9a095a0f47cf2c0be73385",
+  "comparison_start": "a0f4069",
+  "tracked_change_scope": [
+    "analysis/evidence/audits/audio-slider-rounding-difference.json",
+    "analysis/evidence/audits/control-component-key-difference.json",
+    "analysis/evidence/audits/function-report-address-index.json",
+    "analysis/evidence/audits/music-setting-change-difference.json",
+    "analysis/evidence/audits/original-modern-graphics-menu-transition.json",
+    "analysis/evidence/audits/original-modern-idle-movie.json",
+    "analysis/evidence/audits/outside-function-differences.json",
+    "analysis/evidence/validation/comparison-document-links.json",
+    "analysis/modern-patch-change-catalog.md",
+    "analysis/original-modern-audit-status.md",
+    "analysis/original-modern-common-menu-buttons.md",
+    "analysis/original-modern-control-component-keys.md",
+    "analysis/original-modern-credits-panorama.md",
+    "analysis/original-modern-differences.md",
+    "analysis/original-modern-force-menu-layout.md",
+    "analysis/original-modern-frontend-page.md",
+    "analysis/original-modern-function-index.md",
+    "analysis/original-modern-graphics-menu-transition.md",
+    "analysis/original-modern-hud-settings-policy.md",
+    "analysis/original-modern-idle-movie.md",
+    "analysis/original-modern-music-start.md",
+    "analysis/original-modern-outside-function-index.md",
+    "analysis/original-modern-startup-policy.md",
+    "analysis/scripts/audit_audio_slider_rounding_difference.py",
+    "analysis/scripts/audit_control_component_key_difference.py",
+    "analysis/scripts/audit_graphics_menu_transition_difference.py",
+    "analysis/scripts/audit_idle_movie_difference.py",
+    "analysis/scripts/audit_music_setting_change_difference.py",
+    "analysis/scripts/inventory_outside_function_differences.py"
+  ],
+  "protected_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "matches_prior_baseline": true
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "matches_prior_baseline": true
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "matches_prior_baseline": true
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "matches_prior_baseline": true
+    }
+  ],
+  "new_audio_audit_repeatability": [
+    {
+      "command": "python3 analysis/scripts/audit_audio_slider_rounding_difference.py",
+      "manifest": "analysis/evidence/audits/audio-slider-rounding-difference.json",
+      "first_run_sha256": "7afada3454cdc9df05d2ef76c89b306f5e8a4ccad1180c36ba4979c8069ed832",
+      "second_run_sha256": "7afada3454cdc9df05d2ef76c89b306f5e8a4ccad1180c36ba4979c8069ed832",
+      "match": true,
+      "stdout": "PASS: five complete callbacks,35 changed bytes at seven removed truncation calls, five127 constants"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_music_setting_change_difference.py",
+      "manifest": "analysis/evidence/audits/music-setting-change-difference.json",
+      "first_run_sha256": "9664a2014f883c5b8baaf7d458fa80a270f168fe80d86395e9a9e6ecc8664d43",
+      "second_run_sha256": "9664a2014f883c5b8baaf7d458fa80a270f168fe80d86395e9a9e6ecc8664d43",
+      "match": true,
+      "stdout": "PASS: paired complete setting-change bodies, retained prefix and pending-flag write sites"
+    }
+  ],
+  "limits": [
+    "Manifest repeatability is not independent semantic review or original instruction execution.",
+    "Tracked diff scope does not establish the absence of ignored filesystem changes.",
+    "Executable/database hashes cover these four exact files; other saved project/probe files not rehashed here.",
+    "Whole-game semantic/runtime equivalence remains unestablished."
+  ]
+}
