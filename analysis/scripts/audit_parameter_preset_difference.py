@@ -56,7 +56,9 @@ def main():
         for a,b in [(0x41d610,0x41d61a),(0x41d870,0x41d89d),
                     (0x41aaf0,0x41ab02),(0x41d9fa,0x41da0b),
                     (0x41deb0,0x41def9),(0x41df10,0x41e069),
-                    (0x41d9a3,0x41da06),(0x41defc,0x41df0c)]:
+                    (0x41d9a3,0x41da06),(0x41defc,0x41df0c),
+                    (0x41d310,0x41d349),(0x41ae90,0x41b2f4),
+                    (0x41b300,0x41b63c)]:
             value=pe.get_data(a-0x400000,b-a)
             row['caller_and_selector_witnesses'].append({'start':f'{a:08x}',
                 'exclusive_end':f'{b:08x}','bytes':value.hex(),
@@ -68,6 +70,10 @@ def main():
             for i,(offset,n) in enumerate(zip((0x24,0x28,0x38,0x3c),values)):
                 assert pe.get_data(start+i*7-0x400000,7)==bytes((0xc7,0x40,offset))+struct.pack('<I',n<<16)
         assert struct.unpack('<4I',pe.get_data(0x41defc-0x400000,16)) == (0x41df6d,0x41df99,0x41df99,0x41dfe0)
+        assert pe.get_data(0x41af7a-0x400000,25)==bytes.fromhex(
+            'a130d85d00d94108d85830dfe09e76098345f80ee9f9020000')
+        assert pe.get_data(0x41b3bf-0x400000,24)==bytes.fromhex(
+            'a130d85d00d94608d85830dfe09e760883c10ee90e020000')
         assert pe.get_data(0x41debb-0x400000,14)==bytes.fromhex('31c98915d8d05d00890ddcd05d00')
         assert pe.get_data(0x41e057-0x400000,14)==bytes.fromhex('a1dcd05d008d50018915dcd05d00')
         assert pe.get_data(0x41d610-0x400000,10)==bytes.fromhex('5589e5a328bc6f005dc3')
