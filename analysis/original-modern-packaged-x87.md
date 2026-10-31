@@ -58,3 +58,5 @@ Inside the scope, the body performs FMUL/FSUB, binary32 and binary64 stores, a c
 The same decode finds five direct callers of this record builder, at `6000c3b2`, `6000c3ce`, `6000c701`, `6000c71d` and `6000c739`. Higher-level rendering/export ownership is not inferred from adjacency or arithmetic resemblance. Indirect calls, exception paths and concurrent/reentrant access to the shared CW cell remain unverified.
 
 **Follow-up status: complete normal local caller pairing and import bindings verified statically.** This narrows the prior caller unknown without establishing a universal DLL or whole-game floating-point policy. No target execution or new instruction probe occurred.
+
+The [selected local DLL inventory](original-modern-dll-candidates.md) now records distinct legacy-style renderer candidates and their interface/import surfaces. The inspected local sound DLL matches the official member, so it is not a separate original sound baseline. No original-versus-Modern FPU implementation claim is added by those metadata matches.

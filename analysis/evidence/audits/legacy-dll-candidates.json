@@ -1,0 +1,1270 @@
+{
+  "kind": "selected-local-dll-counterpart-candidates",
+  "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+  "files": {
+    "legacy_voodoo": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/VOODOO2A.DLL",
+      "bytes": 93382,
+      "sha256": "f65f00e6fa6a5a67e11ff38d661b3d493474d0e075c9183a7b244b1143cea88e",
+      "image_base": "60000000",
+      "exports": {
+        "_THRASH_about@0": {
+          "ordinal": 1,
+          "va": "60001a60"
+        },
+        "_THRASH_clearwindow@0": {
+          "ordinal": 2,
+          "va": "600025b0"
+        },
+        "_THRASH_clip@16": {
+          "ordinal": 3,
+          "va": "600026b0"
+        },
+        "_THRASH_drawline@8": {
+          "ordinal": 4,
+          "va": "60004040"
+        },
+        "_THRASH_drawlinemesh@12": {
+          "ordinal": 5,
+          "va": "60004150"
+        },
+        "_THRASH_drawlinestrip@8": {
+          "ordinal": 6,
+          "va": "60004290"
+        },
+        "_THRASH_drawpoint@4": {
+          "ordinal": 7,
+          "va": "60004450"
+        },
+        "_THRASH_drawpointmesh@12": {
+          "ordinal": 9,
+          "va": "600044e0"
+        },
+        "_THRASH_drawpointstrip@8": {
+          "ordinal": 8,
+          "va": "60004590"
+        },
+        "_THRASH_drawquad@16": {
+          "ordinal": 10,
+          "va": "60003100"
+        },
+        "_THRASH_drawquadmesh@12": {
+          "ordinal": 11,
+          "va": "60003320"
+        },
+        "_THRASH_drawtri@12": {
+          "ordinal": 12,
+          "va": "60003570"
+        },
+        "_THRASH_drawtrifan@8": {
+          "ordinal": 13,
+          "va": "60003e00"
+        },
+        "_THRASH_drawtrimesh@12": {
+          "ordinal": 14,
+          "va": "60003700"
+        },
+        "_THRASH_drawtristrip@8": {
+          "ordinal": 15,
+          "va": "600038c0"
+        },
+        "_THRASH_flushwindow@0": {
+          "ordinal": 16,
+          "va": "600025d0"
+        },
+        "_THRASH_idle@0": {
+          "ordinal": 17,
+          "va": "60002610"
+        },
+        "_THRASH_init@0": {
+          "ordinal": 18,
+          "va": "60001d50"
+        },
+        "_THRASH_is@0": {
+          "ordinal": 19,
+          "va": "60001bf0"
+        },
+        "_THRASH_lockwindow@0": {
+          "ordinal": 20,
+          "va": "60002ef0"
+        },
+        "_THRASH_pageflip@0": {
+          "ordinal": 21,
+          "va": "600025e0"
+        },
+        "_THRASH_readrect@20": {
+          "ordinal": 22,
+          "va": "60003020"
+        },
+        "_THRASH_restore@0": {
+          "ordinal": 23,
+          "va": "60001f00"
+        },
+        "_THRASH_selectdisplay@4": {
+          "ordinal": 24,
+          "va": "60001d10"
+        },
+        "_THRASH_setstate@8": {
+          "ordinal": 25,
+          "va": "60002790"
+        },
+        "_THRASH_settexture@4": {
+          "ordinal": 26,
+          "va": "600024d0"
+        },
+        "_THRASH_setvideomode@12": {
+          "ordinal": 27,
+          "va": "600021d0"
+        },
+        "_THRASH_sync@4": {
+          "ordinal": 28,
+          "va": "60002630"
+        },
+        "_THRASH_talloc@20": {
+          "ordinal": 29,
+          "va": "600022b0"
+        },
+        "_THRASH_treset@0": {
+          "ordinal": 30,
+          "va": "60002490"
+        },
+        "_THRASH_tupdate@12": {
+          "ordinal": 31,
+          "va": "60002430"
+        },
+        "_THRASH_unlockwindow@4": {
+          "ordinal": 32,
+          "va": "60002fd0"
+        },
+        "_THRASH_window@4": {
+          "ordinal": 33,
+          "va": "60002580"
+        },
+        "_THRASH_writerect@20": {
+          "ordinal": 34,
+          "va": "60003090"
+        }
+      },
+      "imports": {
+        "USER32.dll": [
+          "CharUpperBuffA",
+          "MessageBoxA",
+          "PostMessageA",
+          "SetForegroundWindow"
+        ],
+        "KERNEL32.dll": [
+          "CloseHandle",
+          "CreateEventA",
+          "CreateFileA",
+          "CreateThread",
+          "DeleteCriticalSection",
+          "DeleteFileA",
+          "EnterCriticalSection",
+          "ExitProcess",
+          "ExitThread",
+          "FlushFileBuffers",
+          "FreeEnvironmentStringsA",
+          "FreeLibrary",
+          "GetACP",
+          "GetCPInfo",
+          "GetCommandLineA",
+          "GetCommandLineW",
+          "GetCurrentDirectoryA",
+          "GetCurrentProcessId",
+          "GetCurrentThreadId",
+          "GetCurrentThread",
+          "GetEnvironmentStrings",
+          "GetFileAttributesA",
+          "GetFileType",
+          "GetFullPathNameA",
+          "GetLastError",
+          "GetModuleFileNameA",
+          "GetModuleFileNameW",
+          "GetModuleHandleA",
+          "GetOEMCP",
+          "GetProcAddress",
+          "GetStdHandle",
+          "GetVersion",
+          "InitializeCriticalSection",
+          "LeaveCriticalSection",
+          "LoadLibraryA",
+          "MoveFileA",
+          "MultiByteToWideChar",
+          "SetConsoleCtrlHandler",
+          "SetEnvironmentVariableA",
+          "SetEnvironmentVariableW",
+          "SetEvent",
+          "SetFilePointer",
+          "SetLastError",
+          "SetStdHandle",
+          "SetUnhandledExceptionFilter",
+          "TlsAlloc",
+          "TlsFree",
+          "TlsGetValue",
+          "TlsSetValue",
+          "UnhandledExceptionFilter",
+          "VirtualAlloc",
+          "VirtualFree",
+          "VirtualQuery",
+          "WaitForSingleObject",
+          "WideCharToMultiByte",
+          "WriteFile"
+        ],
+        "DDRAW.dll": [
+          "DirectDrawCreate"
+        ]
+      },
+      "provenance": "Local legacy-style candidate; not authenticated as retail or paired to supplied original executable."
+    },
+    "legacy_d3d": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/D3DA.DLL",
+      "bytes": 98641,
+      "sha256": "ae676272438d93fd7a8da7a19250d6e8b664d8570824ab8042e2b20b38395a02",
+      "image_base": "60000000",
+      "exports": {
+        "_THRASH_about@0": {
+          "ordinal": 1,
+          "va": "60001020"
+        },
+        "_THRASH_clearwindow@0": {
+          "ordinal": 2,
+          "va": "60001118"
+        },
+        "_THRASH_clip@16": {
+          "ordinal": 3,
+          "va": "60001188"
+        },
+        "_THRASH_drawline@8": {
+          "ordinal": 4,
+          "va": "600014a0"
+        },
+        "_THRASH_drawlinemesh@12": {
+          "ordinal": 5,
+          "va": "600014fc"
+        },
+        "_THRASH_drawlinestrip@8": {
+          "ordinal": 6,
+          "va": "60001538"
+        },
+        "_THRASH_drawpoint@4": {
+          "ordinal": 7,
+          "va": "60001564"
+        },
+        "_THRASH_drawpointmesh@12": {
+          "ordinal": 9,
+          "va": "60001578"
+        },
+        "_THRASH_drawpointstrip@8": {
+          "ordinal": 8,
+          "va": "600015b0"
+        },
+        "_THRASH_drawquad@16": {
+          "ordinal": 10,
+          "va": "6000146c"
+        },
+        "_THRASH_drawquadmesh@12": {
+          "ordinal": 11,
+          "va": "60001488"
+        },
+        "_THRASH_drawtri@12": {
+          "ordinal": 12,
+          "va": "600013d0"
+        },
+        "_THRASH_drawtrifan@8": {
+          "ordinal": 13,
+          "va": "60001414"
+        },
+        "_THRASH_drawtrimesh@12": {
+          "ordinal": 14,
+          "va": "600013e8"
+        },
+        "_THRASH_drawtristrip@8": {
+          "ordinal": 15,
+          "va": "60001400"
+        },
+        "_THRASH_flushwindow@0": {
+          "ordinal": 16,
+          "va": "6000113c"
+        },
+        "_THRASH_idle@0": {
+          "ordinal": 17,
+          "va": "60001138"
+        },
+        "_THRASH_init@0": {
+          "ordinal": 18,
+          "va": "60002498"
+        },
+        "_THRASH_is@0": {
+          "ordinal": 19,
+          "va": "60002774"
+        },
+        "_THRASH_lockwindow@0": {
+          "ordinal": 20,
+          "va": "600011d4"
+        },
+        "_THRASH_pageflip@0": {
+          "ordinal": 21,
+          "va": "60001144"
+        },
+        "_THRASH_readrect@20": {
+          "ordinal": 22,
+          "va": "60002814"
+        },
+        "_THRASH_restore@0": {
+          "ordinal": 23,
+          "va": "600024a4"
+        },
+        "_THRASH_selectdisplay@4": {
+          "ordinal": 24,
+          "va": "60001654"
+        },
+        "_THRASH_setstate@8": {
+          "ordinal": 25,
+          "va": "60002b58"
+        },
+        "_THRASH_settexture@4": {
+          "ordinal": 26,
+          "va": "600034d4"
+        },
+        "_THRASH_setvideomode@12": {
+          "ordinal": 27,
+          "va": "600024f0"
+        },
+        "_THRASH_sync@4": {
+          "ordinal": 28,
+          "va": "60001180"
+        },
+        "_THRASH_talloc@20": {
+          "ordinal": 29,
+          "va": "60003534"
+        },
+        "_THRASH_treset@0": {
+          "ordinal": 30,
+          "va": "600036c8"
+        },
+        "_THRASH_tupdate@12": {
+          "ordinal": 31,
+          "va": "60003674"
+        },
+        "_THRASH_unlockwindow@4": {
+          "ordinal": 32,
+          "va": "60001368"
+        },
+        "_THRASH_window@4": {
+          "ordinal": 33,
+          "va": "600010e0"
+        },
+        "_THRASH_writerect@20": {
+          "ordinal": 34,
+          "va": "600028b0"
+        }
+      },
+      "imports": {
+        "USER32.dll": [
+          "CharUpperBuffA",
+          "ClientToScreen",
+          "GetAsyncKeyState",
+          "GetClientRect",
+          "MessageBoxA",
+          "OffsetRect",
+          "PostMessageA",
+          "SetForegroundWindow",
+          "SetRect"
+        ],
+        "KERNEL32.dll": [
+          "CloseHandle",
+          "CreateEventA",
+          "CreateFileA",
+          "CreateThread",
+          "DeleteCriticalSection",
+          "DeleteFileA",
+          "EnterCriticalSection",
+          "ExitProcess",
+          "ExitThread",
+          "FlushFileBuffers",
+          "GetACP",
+          "GetCPInfo",
+          "GetCommandLineA",
+          "GetCommandLineW",
+          "GetCurrentDirectoryA",
+          "GetCurrentProcessId",
+          "GetCurrentThreadId",
+          "GetCurrentThread",
+          "GetEnvironmentStrings",
+          "GetFileAttributesA",
+          "GetFileType",
+          "GetFullPathNameA",
+          "GetLastError",
+          "GetModuleFileNameA",
+          "GetModuleFileNameW",
+          "GetModuleHandleA",
+          "GetOEMCP",
+          "GetProcAddress",
+          "GetStdHandle",
+          "GetSystemInfo",
+          "GetVersion",
+          "InitializeCriticalSection",
+          "LeaveCriticalSection",
+          "LoadLibraryA",
+          "MoveFileA",
+          "MultiByteToWideChar",
+          "OutputDebugStringA",
+          "SetConsoleCtrlHandler",
+          "SetEnvironmentVariableA",
+          "SetEnvironmentVariableW",
+          "SetEvent",
+          "SetFilePointer",
+          "SetLastError",
+          "SetStdHandle",
+          "SetUnhandledExceptionFilter",
+          "TlsAlloc",
+          "TlsFree",
+          "TlsGetValue",
+          "TlsSetValue",
+          "UnhandledExceptionFilter",
+          "VirtualAlloc",
+          "VirtualFree",
+          "VirtualQuery",
+          "WaitForSingleObject",
+          "WideCharToMultiByte",
+          "WriteFile"
+        ],
+        "DDRAW.dll": [
+          "DirectDrawCreate",
+          "DirectDrawEnumerateA"
+        ]
+      },
+      "provenance": "Local legacy-style candidate; not authenticated as retail or paired to supplied original executable."
+    },
+    "setup_d3d": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/3dSetup/D3DA.DLL",
+      "bytes": 92514,
+      "sha256": "988cae4d164aa7872f433a1afca10791a76162d2a2272feda623fc92ddb02bb3",
+      "image_base": "60000000",
+      "exports": {
+        "_THRASH_about@0": {
+          "ordinal": 1,
+          "va": "60001020"
+        },
+        "_THRASH_clearwindow@0": {
+          "ordinal": 2,
+          "va": "60001120"
+        },
+        "_THRASH_clip@16": {
+          "ordinal": 3,
+          "va": "600011d0"
+        },
+        "_THRASH_drawline@8": {
+          "ordinal": 4,
+          "va": "600014e0"
+        },
+        "_THRASH_drawlinemesh@12": {
+          "ordinal": 5,
+          "va": "60001540"
+        },
+        "_THRASH_drawlinestrip@8": {
+          "ordinal": 6,
+          "va": "60001590"
+        },
+        "_THRASH_drawpoint@4": {
+          "ordinal": 7,
+          "va": "600015d0"
+        },
+        "_THRASH_drawpointmesh@12": {
+          "ordinal": 9,
+          "va": "600015f0"
+        },
+        "_THRASH_drawpointstrip@8": {
+          "ordinal": 8,
+          "va": "60001630"
+        },
+        "_THRASH_drawquad@16": {
+          "ordinal": 10,
+          "va": "600014a0"
+        },
+        "_THRASH_drawquadmesh@12": {
+          "ordinal": 11,
+          "va": "600014c0"
+        },
+        "_THRASH_drawtri@12": {
+          "ordinal": 12,
+          "va": "60001420"
+        },
+        "_THRASH_drawtrifan@8": {
+          "ordinal": 13,
+          "va": "60001490"
+        },
+        "_THRASH_drawtrimesh@12": {
+          "ordinal": 14,
+          "va": "60001440"
+        },
+        "_THRASH_drawtristrip@8": {
+          "ordinal": 15,
+          "va": "60001460"
+        },
+        "_THRASH_flushwindow@0": {
+          "ordinal": 16,
+          "va": "60001140"
+        },
+        "_THRASH_idle@0": {
+          "ordinal": 17,
+          "va": "60001160"
+        },
+        "_THRASH_init@0": {
+          "ordinal": 18,
+          "va": "60002120"
+        },
+        "_THRASH_is@0": {
+          "ordinal": 19,
+          "va": "60002410"
+        },
+        "_THRASH_lockwindow@0": {
+          "ordinal": 20,
+          "va": "60001220"
+        },
+        "_THRASH_pageflip@0": {
+          "ordinal": 21,
+          "va": "60001170"
+        },
+        "_THRASH_readrect@20": {
+          "ordinal": 22,
+          "va": "600024b0"
+        },
+        "_THRASH_restore@0": {
+          "ordinal": 23,
+          "va": "60002130"
+        },
+        "_THRASH_selectdisplay@4": {
+          "ordinal": 24,
+          "va": "600016e0"
+        },
+        "_THRASH_setstate@8": {
+          "ordinal": 25,
+          "va": "60002600"
+        },
+        "_THRASH_settexture@4": {
+          "ordinal": 26,
+          "va": "60002d60"
+        },
+        "_THRASH_setvideomode@12": {
+          "ordinal": 27,
+          "va": "60002170"
+        },
+        "_THRASH_sync@4": {
+          "ordinal": 28,
+          "va": "600011c0"
+        },
+        "_THRASH_talloc@20": {
+          "ordinal": 29,
+          "va": "60002dd0"
+        },
+        "_THRASH_treset@0": {
+          "ordinal": 30,
+          "va": "60002f20"
+        },
+        "_THRASH_tupdate@12": {
+          "ordinal": 31,
+          "va": "60002ef0"
+        },
+        "_THRASH_unlockwindow@4": {
+          "ordinal": 32,
+          "va": "600013c0"
+        },
+        "_THRASH_window@4": {
+          "ordinal": 33,
+          "va": "600010e0"
+        },
+        "_THRASH_writerect@20": {
+          "ordinal": 34,
+          "va": "60002550"
+        }
+      },
+      "imports": {
+        "USER32.dll": [
+          "CharUpperBuffA",
+          "ClientToScreen",
+          "GetClientRect",
+          "MessageBoxA",
+          "OffsetRect",
+          "PostMessageA",
+          "SetForegroundWindow",
+          "SetRect"
+        ],
+        "KERNEL32.dll": [
+          "CloseHandle",
+          "CreateEventA",
+          "CreateFileA",
+          "CreateThread",
+          "DeleteCriticalSection",
+          "DeleteFileA",
+          "EnterCriticalSection",
+          "ExitProcess",
+          "ExitThread",
+          "FlushFileBuffers",
+          "FreeEnvironmentStringsA",
+          "GetACP",
+          "GetCPInfo",
+          "GetCommandLineA",
+          "GetCommandLineW",
+          "GetCurrentDirectoryA",
+          "GetCurrentProcessId",
+          "GetCurrentThreadId",
+          "GetCurrentThread",
+          "GetEnvironmentStrings",
+          "GetFileAttributesA",
+          "GetFileType",
+          "GetFullPathNameA",
+          "GetLastError",
+          "GetModuleFileNameA",
+          "GetModuleFileNameW",
+          "GetModuleHandleA",
+          "GetOEMCP",
+          "GetProcAddress",
+          "GetStdHandle",
+          "GetSystemInfo",
+          "GetVersion",
+          "InitializeCriticalSection",
+          "LeaveCriticalSection",
+          "LoadLibraryA",
+          "MoveFileA",
+          "MultiByteToWideChar",
+          "OutputDebugStringA",
+          "SetConsoleCtrlHandler",
+          "SetEnvironmentVariableA",
+          "SetEnvironmentVariableW",
+          "SetEvent",
+          "SetFilePointer",
+          "SetLastError",
+          "SetStdHandle",
+          "SetUnhandledExceptionFilter",
+          "TlsAlloc",
+          "TlsFree",
+          "TlsGetValue",
+          "TlsSetValue",
+          "UnhandledExceptionFilter",
+          "VirtualAlloc",
+          "VirtualFree",
+          "VirtualQuery",
+          "WaitForSingleObject",
+          "WideCharToMultiByte",
+          "WriteFile"
+        ],
+        "DDRAW.dll": [
+          "DirectDrawCreate",
+          "DirectDrawEnumerateA"
+        ]
+      },
+      "provenance": "Local legacy-style candidate; not authenticated as retail or paired to supplied original executable."
+    },
+    "modern_voodoo": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/drivers/glide3x/voodoo2a.dll",
+      "archive_member": "drivers/glide3x/voodoo2a.dll",
+      "bytes": 69120,
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "image_base": "60000000",
+      "exports": {
+        "_THRASH_about@0": {
+          "ordinal": 1,
+          "va": "60001bb0"
+        },
+        "_THRASH_clearwindow@0": {
+          "ordinal": 2,
+          "va": "60002860"
+        },
+        "_THRASH_clip@16": {
+          "ordinal": 3,
+          "va": "600029d0"
+        },
+        "_THRASH_drawline@8": {
+          "ordinal": 4,
+          "va": "60003f20"
+        },
+        "_THRASH_drawlinemesh@12": {
+          "ordinal": 5,
+          "va": "60003fd0"
+        },
+        "_THRASH_drawlinestrip@8": {
+          "ordinal": 6,
+          "va": "600040b0"
+        },
+        "_THRASH_drawpoint@4": {
+          "ordinal": 7,
+          "va": "600041f0"
+        },
+        "_THRASH_drawpointmesh@12": {
+          "ordinal": 9,
+          "va": "60004250"
+        },
+        "_THRASH_drawpointstrip@8": {
+          "ordinal": 8,
+          "va": "600042d0"
+        },
+        "_THRASH_drawquad@16": {
+          "ordinal": 10,
+          "va": "60003480"
+        },
+        "_THRASH_drawquadmesh@12": {
+          "ordinal": 11,
+          "va": "600035f0"
+        },
+        "_THRASH_drawtri@12": {
+          "ordinal": 12,
+          "va": "600037a0"
+        },
+        "_THRASH_drawtrifan@8": {
+          "ordinal": 13,
+          "va": "60003d90"
+        },
+        "_THRASH_drawtrimesh@12": {
+          "ordinal": 14,
+          "va": "600038a0"
+        },
+        "_THRASH_drawtristrip@8": {
+          "ordinal": 15,
+          "va": "600039d0"
+        },
+        "_THRASH_flushwindow@0": {
+          "ordinal": 16,
+          "va": "60002880"
+        },
+        "_THRASH_idle@0": {
+          "ordinal": 17,
+          "va": "600028d0"
+        },
+        "_THRASH_init@0": {
+          "ordinal": 18,
+          "va": "60001eb0"
+        },
+        "_THRASH_is@0": {
+          "ordinal": 19,
+          "va": "60001d50"
+        },
+        "_THRASH_lockwindow@0": {
+          "ordinal": 20,
+          "va": "60003270"
+        },
+        "_THRASH_pageflip@0": {
+          "ordinal": 21,
+          "va": "60002890"
+        },
+        "_THRASH_readrect@20": {
+          "ordinal": 22,
+          "va": "600033a0"
+        },
+        "_THRASH_restore@0": {
+          "ordinal": 23,
+          "va": "60002090"
+        },
+        "_THRASH_selectdisplay@4": {
+          "ordinal": 24,
+          "va": "60001e60"
+        },
+        "_THRASH_setstate@8": {
+          "ordinal": 25,
+          "va": "60002ab0"
+        },
+        "_THRASH_settexture@4": {
+          "ordinal": 26,
+          "va": "60002780"
+        },
+        "_THRASH_setvideomode@12": {
+          "ordinal": 27,
+          "va": "60002400"
+        },
+        "_THRASH_sync@4": {
+          "ordinal": 28,
+          "va": "600028f0"
+        },
+        "_THRASH_talloc@20": {
+          "ordinal": 29,
+          "va": "600024e0"
+        },
+        "_THRASH_treset@0": {
+          "ordinal": 30,
+          "va": "60002740"
+        },
+        "_THRASH_tupdate@12": {
+          "ordinal": 31,
+          "va": "600026e0"
+        },
+        "_THRASH_unlockwindow@4": {
+          "ordinal": 32,
+          "va": "60003350"
+        },
+        "_THRASH_window@4": {
+          "ordinal": 33,
+          "va": "60002830"
+        },
+        "_THRASH_writerect@20": {
+          "ordinal": 34,
+          "va": "60003410"
+        }
+      },
+      "imports": {
+        "USER32.dll": [
+          "CharUpperBuffA",
+          "MessageBoxA",
+          "PostMessageA",
+          "SetForegroundWindow"
+        ],
+        "KERNEL32.dll": [
+          "CloseHandle",
+          "CreateEventA",
+          "CreateFileA",
+          "CreateThread",
+          "DeleteCriticalSection",
+          "DeleteFileA",
+          "EnterCriticalSection",
+          "ExitProcess",
+          "ExitThread",
+          "FlushFileBuffers",
+          "FreeEnvironmentStringsA",
+          "FreeLibrary",
+          "GetACP",
+          "GetCPInfo",
+          "GetCommandLineA",
+          "GetCommandLineW",
+          "GetCurrentDirectoryA",
+          "GetCurrentProcessId",
+          "GetCurrentThreadId",
+          "GetCurrentThread",
+          "GetEnvironmentStrings",
+          "GetFileAttributesA",
+          "GetFileType",
+          "GetFullPathNameA",
+          "GetLastError",
+          "GetModuleFileNameA",
+          "GetModuleFileNameW",
+          "GetModuleHandleA",
+          "GetOEMCP",
+          "GetProcAddress",
+          "GetStdHandle",
+          "GetVersion",
+          "InitializeCriticalSection",
+          "LeaveCriticalSection",
+          "LoadLibraryA",
+          "MoveFileA",
+          "MultiByteToWideChar",
+          "SetConsoleCtrlHandler",
+          "SetEnvironmentVariableA",
+          "SetEnvironmentVariableW",
+          "SetEvent",
+          "SetFilePointer",
+          "SetLastError",
+          "SetStdHandle",
+          "SetUnhandledExceptionFilter",
+          "TlsAlloc",
+          "TlsFree",
+          "TlsGetValue",
+          "TlsSetValue",
+          "UnhandledExceptionFilter",
+          "VirtualAlloc",
+          "VirtualFree",
+          "VirtualQuery",
+          "WaitForSingleObject",
+          "WideCharToMultiByte",
+          "WriteFile"
+        ]
+      },
+      "provenance": "Byte-identical to member in pinned official archive."
+    },
+    "modern_dx5": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/drivers/dx5/dx5a.dll",
+      "archive_member": "drivers/dx5/dx5a.dll",
+      "bytes": 72704,
+      "sha256": "6bd5865b05a7a9918da37ad09f643908d9decdcfdb341a23dd60a8cf70c08b42",
+      "image_base": "60000000",
+      "exports": {
+        "_THRASH_about@0": {
+          "ordinal": 1,
+          "va": "60001020"
+        },
+        "_THRASH_clearwindow@0": {
+          "ordinal": 2,
+          "va": "60001118"
+        },
+        "_THRASH_clip@16": {
+          "ordinal": 3,
+          "va": "60001188"
+        },
+        "_THRASH_drawline@8": {
+          "ordinal": 4,
+          "va": "600014a0"
+        },
+        "_THRASH_drawlinemesh@12": {
+          "ordinal": 5,
+          "va": "600014fc"
+        },
+        "_THRASH_drawlinestrip@8": {
+          "ordinal": 6,
+          "va": "60001538"
+        },
+        "_THRASH_drawpoint@4": {
+          "ordinal": 7,
+          "va": "60001564"
+        },
+        "_THRASH_drawpointmesh@12": {
+          "ordinal": 9,
+          "va": "60001578"
+        },
+        "_THRASH_drawpointstrip@8": {
+          "ordinal": 8,
+          "va": "600015b0"
+        },
+        "_THRASH_drawquad@16": {
+          "ordinal": 10,
+          "va": "6000146c"
+        },
+        "_THRASH_drawquadmesh@12": {
+          "ordinal": 11,
+          "va": "60001488"
+        },
+        "_THRASH_drawtri@12": {
+          "ordinal": 12,
+          "va": "600013d0"
+        },
+        "_THRASH_drawtrifan@8": {
+          "ordinal": 13,
+          "va": "60001414"
+        },
+        "_THRASH_drawtrimesh@12": {
+          "ordinal": 14,
+          "va": "600013e8"
+        },
+        "_THRASH_drawtristrip@8": {
+          "ordinal": 15,
+          "va": "60001400"
+        },
+        "_THRASH_flushwindow@0": {
+          "ordinal": 16,
+          "va": "6000113c"
+        },
+        "_THRASH_idle@0": {
+          "ordinal": 17,
+          "va": "60001138"
+        },
+        "_THRASH_init@0": {
+          "ordinal": 18,
+          "va": "60002498"
+        },
+        "_THRASH_is@0": {
+          "ordinal": 19,
+          "va": "60002774"
+        },
+        "_THRASH_lockwindow@0": {
+          "ordinal": 20,
+          "va": "600011d4"
+        },
+        "_THRASH_pageflip@0": {
+          "ordinal": 21,
+          "va": "60001144"
+        },
+        "_THRASH_readrect@20": {
+          "ordinal": 22,
+          "va": "60002814"
+        },
+        "_THRASH_restore@0": {
+          "ordinal": 23,
+          "va": "600024a4"
+        },
+        "_THRASH_selectdisplay@4": {
+          "ordinal": 24,
+          "va": "60001654"
+        },
+        "_THRASH_setstate@8": {
+          "ordinal": 25,
+          "va": "60002b58"
+        },
+        "_THRASH_settexture@4": {
+          "ordinal": 26,
+          "va": "600034d4"
+        },
+        "_THRASH_setvideomode@12": {
+          "ordinal": 27,
+          "va": "600024f0"
+        },
+        "_THRASH_sync@4": {
+          "ordinal": 28,
+          "va": "60001180"
+        },
+        "_THRASH_talloc@20": {
+          "ordinal": 29,
+          "va": "60003534"
+        },
+        "_THRASH_treset@0": {
+          "ordinal": 30,
+          "va": "600036c8"
+        },
+        "_THRASH_tupdate@12": {
+          "ordinal": 31,
+          "va": "60003674"
+        },
+        "_THRASH_unlockwindow@4": {
+          "ordinal": 32,
+          "va": "60001368"
+        },
+        "_THRASH_window@4": {
+          "ordinal": 33,
+          "va": "600010e0"
+        },
+        "_THRASH_writerect@20": {
+          "ordinal": 34,
+          "va": "600028b0"
+        }
+      },
+      "imports": {
+        "USER32.dll": [
+          "CharUpperBuffA",
+          "ClientToScreen",
+          "GetAsyncKeyState",
+          "GetClientRect",
+          "MessageBoxA",
+          "OffsetRect",
+          "PostMessageA",
+          "SetForegroundWindow",
+          "SetRect"
+        ],
+        "KERNEL32.dll": [
+          "CloseHandle",
+          "CreateEventA",
+          "CreateFileA",
+          "CreateThread",
+          "DeleteCriticalSection",
+          "DeleteFileA",
+          "EnterCriticalSection",
+          "ExitProcess",
+          "ExitThread",
+          "FlushFileBuffers",
+          "GetACP",
+          "GetCPInfo",
+          "GetCommandLineA",
+          "GetCommandLineW",
+          "GetCurrentDirectoryA",
+          "GetCurrentProcessId",
+          "GetCurrentThreadId",
+          "GetCurrentThread",
+          "GetEnvironmentStrings",
+          "GetFileAttributesA",
+          "GetFileType",
+          "GetFullPathNameA",
+          "GetLastError",
+          "GetModuleFileNameA",
+          "GetModuleFileNameW",
+          "GetModuleHandleA",
+          "GetOEMCP",
+          "GetProcAddress",
+          "GetStdHandle",
+          "GetSystemInfo",
+          "GetVersion",
+          "InitializeCriticalSection",
+          "LeaveCriticalSection",
+          "LoadLibraryA",
+          "MoveFileA",
+          "MultiByteToWideChar",
+          "OutputDebugStringA",
+          "SetConsoleCtrlHandler",
+          "SetEnvironmentVariableA",
+          "SetEnvironmentVariableW",
+          "SetEvent",
+          "SetFilePointer",
+          "SetLastError",
+          "SetStdHandle",
+          "SetUnhandledExceptionFilter",
+          "TlsAlloc",
+          "TlsFree",
+          "TlsGetValue",
+          "TlsSetValue",
+          "UnhandledExceptionFilter",
+          "VirtualAlloc",
+          "VirtualFree",
+          "VirtualQuery",
+          "WaitForSingleObject",
+          "WideCharToMultiByte",
+          "WriteFile"
+        ],
+        "DDRAW.dll": [
+          "DirectDrawCreate",
+          "DirectDrawEnumerateA"
+        ]
+      },
+      "provenance": "Byte-identical to member in pinned official archive."
+    },
+    "packaged_sound": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/eacsnd.dll",
+      "archive_member": "eacsnd.dll",
+      "bytes": 44032,
+      "sha256": "63f3d1bff4e6526753524423be47146e82416d1b170cd7b2e0133699587b01b3",
+      "image_base": "00400000",
+      "exports": {
+        "_iSNDdirectcaps@4": {
+          "ordinal": 3,
+          "va": "00401428"
+        },
+        "_iSNDdirectcreate3dbuf@28": {
+          "ordinal": 13,
+          "va": "0040274c"
+        },
+        "_iSNDdirectplay3d@28": {
+          "ordinal": 15,
+          "va": "00402814"
+        },
+        "_iSNDdirectpos3d@12": {
+          "ordinal": 11,
+          "va": "00402668"
+        },
+        "_iSNDdirectrate@8": {
+          "ordinal": 12,
+          "va": "0040270c"
+        },
+        "_iSNDdirectrecordpacket@4": {
+          "ordinal": 7,
+          "va": "00402104"
+        },
+        "_iSNDdirectrecordstart@16": {
+          "ordinal": 6,
+          "va": "004020fc"
+        },
+        "_iSNDdirectrecordstop@0": {
+          "ordinal": 8,
+          "va": "0040210c"
+        },
+        "_iSNDdirectremovebuf@4": {
+          "ordinal": 14,
+          "va": "004027c0"
+        },
+        "_iSNDdirectserve@0": {
+          "ordinal": 9,
+          "va": "00402324"
+        },
+        "_iSNDdirectsetfunctions@32": {
+          "ordinal": 2,
+          "va": "004013d8"
+        },
+        "_iSNDdirectstart@8": {
+          "ordinal": 4,
+          "va": "0040202c"
+        },
+        "_iSNDdirectstop@0": {
+          "ordinal": 5,
+          "va": "0040207c"
+        },
+        "_iSNDdirectstopbuf@4": {
+          "ordinal": 16,
+          "va": "004029b0"
+        },
+        "_iSNDdirectvol@8": {
+          "ordinal": 10,
+          "va": "00402618"
+        },
+        "_iSNDdllversion@0": {
+          "ordinal": 1,
+          "va": "004013c4"
+        }
+      },
+      "imports": {
+        "USER32.dll": [
+          "CharUpperBuffA"
+        ],
+        "KERNEL32.dll": [
+          "CloseHandle",
+          "CreateEventA",
+          "CreateFileA",
+          "CreateThread",
+          "DeleteCriticalSection",
+          "EnterCriticalSection",
+          "ExitProcess",
+          "ExitThread",
+          "GetACP",
+          "GetCPInfo",
+          "GetCommandLineA",
+          "GetCommandLineW",
+          "GetCurrentThreadId",
+          "GetCurrentThread",
+          "GetEnvironmentStrings",
+          "GetFileType",
+          "GetLastError",
+          "GetModuleFileNameA",
+          "GetModuleFileNameW",
+          "GetModuleHandleA",
+          "GetOEMCP",
+          "GetProcAddress",
+          "GetStdHandle",
+          "GetVersion",
+          "InitializeCriticalSection",
+          "LeaveCriticalSection",
+          "LoadLibraryA",
+          "MultiByteToWideChar",
+          "SetConsoleCtrlHandler",
+          "SetEnvironmentVariableA",
+          "SetEnvironmentVariableW",
+          "SetEvent",
+          "SetLastError",
+          "SetStdHandle",
+          "SetUnhandledExceptionFilter",
+          "TlsAlloc",
+          "TlsFree",
+          "TlsGetValue",
+          "TlsSetValue",
+          "UnhandledExceptionFilter",
+          "VirtualAlloc",
+          "VirtualFree",
+          "VirtualQuery",
+          "WaitForSingleObject",
+          "WideCharToMultiByte",
+          "WriteFile"
+        ],
+        "DSOUND.dll": [
+          "DirectSoundCreate"
+        ]
+      },
+      "provenance": "Byte-identical to member in pinned official archive."
+    }
+  },
+  "candidate_pairs": [
+    {
+      "candidate": "legacy_voodoo",
+      "modern": "modern_voodoo",
+      "same_export_names": true,
+      "export_name_count": 34,
+      "old_only_static_imports": [
+        "ddraw.dll!DirectDrawCreate"
+      ],
+      "modern_only_static_imports": [],
+      "limit": "Shared export surface and role candidate only; no matched function, API-version, data-layout or rendering equivalence claim."
+    },
+    {
+      "candidate": "legacy_d3d",
+      "modern": "modern_dx5",
+      "same_export_names": true,
+      "export_name_count": 34,
+      "old_only_static_imports": [],
+      "modern_only_static_imports": [],
+      "limit": "Shared export surface and role candidate only; no matched function, API-version, data-layout or rendering equivalence claim."
+    },
+    {
+      "candidate": "setup_d3d",
+      "modern": "modern_dx5",
+      "same_export_names": true,
+      "export_name_count": 34,
+      "old_only_static_imports": [
+        "kernel32.dll!FreeEnvironmentStringsA"
+      ],
+      "modern_only_static_imports": [
+        "user32.dll!GetAsyncKeyState"
+      ],
+      "limit": "Shared export surface and role candidate only; no matched function, API-version, data-layout or rendering equivalence claim."
+    }
+  ],
+  "sound_local_match": {
+    "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/eacsnd.dll",
+    "archive_member": "eacsnd.dll",
+    "sha256": "63f3d1bff4e6526753524423be47146e82416d1b170cd7b2e0133699587b01b3",
+    "conclusion": "This local sound DLL is not a distinct older comparison baseline."
+  },
+  "limits": [
+    "Selected file identities/interfaces only; other original installation media/backups not searched.",
+    "Static imports omit dynamic resolution and do not prove executed dependency use.",
+    "Local legacy-style files lack independent original-retail or executable-pair provenance.",
+    "No DLL loading, game/probe execution, executable or Ghidra edits."
+  ]
+}

@@ -96,6 +96,10 @@
       "sha256": "f8164fa83d46b76230f36fe09d8f1b607c02be125346357dce8dd2649e148346"
     },
     {
+      "path": "analysis/original-modern-dll-candidates.md",
+      "sha256": "3c1eaeb527a2b080bcb2ed767e20b4ce8d585b8b95c44780728e8b2c407714a5"
+    },
+    {
       "path": "analysis/original-modern-dropdown-input.md",
       "sha256": "cb990d4cdfdf8781bdd59e511483ee188a50b856934a3e8e45a3f644fc212360"
     },
@@ -241,7 +245,7 @@
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
-      "sha256": "64d13b98218128677422ff87c552d642ab323f0530508ea5e4fb28f0e0bdffee"
+      "sha256": "0b127169aa3027090f37cb541530710f003d551a0aaf30e2a152aa0e087998af"
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",

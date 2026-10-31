@@ -448,6 +448,8 @@ The [HUD-settings policy comparison](original-modern-hud-settings-policy.md) ver
 
 The [reconstruction-baseline sample comparison](original-modern-reconstruction-baselines.md) verifies all three selected reference bodies across original/official/local executables, the leaf’s29 relocation sites,104 tyre-table bytes and retained oracle identity. This supports bounded evidence reuse, not game-facing equivalence.
 
+The [local DLL candidate inventory](original-modern-dll-candidates.md) pins distinct game-root/setup renderers, shared THRASH export surfaces and static-import differences against official candidates. Local sound matches the packaged member; original-retail pairing and function-level DLL changes remain unresolved.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

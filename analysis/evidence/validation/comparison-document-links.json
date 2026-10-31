@@ -98,13 +98,18 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "2ebc358d38cc4cb753f356f0da496409c32ae3488346ae4077c855aa855c1461",
-      "relative_links": 134
+      "sha256": "9533880c5f9cc29150d2e9499a96d39d875442a452b062a842d101287a617b8b",
+      "relative_links": 135
     },
     {
       "path": "analysis/original-modern-display-modes.md",
       "sha256": "f8164fa83d46b76230f36fe09d8f1b607c02be125346357dce8dd2649e148346",
       "relative_links": 10
+    },
+    {
+      "path": "analysis/original-modern-dll-candidates.md",
+      "sha256": "3c1eaeb527a2b080bcb2ed767e20b4ce8d585b8b95c44780728e8b2c407714a5",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
@@ -303,8 +308,8 @@
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
-      "sha256": "64d13b98218128677422ff87c552d642ab323f0530508ea5e4fb28f0e0bdffee",
-      "relative_links": 3
+      "sha256": "0b127169aa3027090f37cb541530710f003d551a0aaf30e2a152aa0e087998af",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",
@@ -557,8 +562,8 @@
       "relative_links": 10
     }
   ],
-  "file_count": 111,
-  "relative_link_count": 1475,
+  "file_count": 112,
+  "relative_link_count": 1481,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
