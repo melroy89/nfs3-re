@@ -61,4 +61,6 @@ The next run `004f85c0..004f8b50` overlaps original renderer loader/initializati
 
 The [CPU calibration follow-up](original-modern-cpu-tier.md#removed-calibration-helper-span) classifies `004f1ff0..004f22b0` as the old estimator tail and calibration helpers, including conditional RDTSC and a timestamp-polled DIV workload. Modern fills the span with NOPs; CPU feature-based tier selection remains separately documented.
 
+The [DDE browser-code follow-up](original-modern-removed-dde.md) identifies original URL-command construction and its callback beneath the 621-byte NOP run `004901c3..00490430`. The run begins inside an original branch operand; lack of autoanalysis entries is not evidence of padding. Original caller reachability remains unresolved, and Modern still retains all seven DDE imports.
+
 This inventory closes the missing address/ranking map for the outside-body bytes. Their semantic classification remains pending. No binary, Ghidra database or runtime state was modified.

@@ -434,6 +434,8 @@ The [raster-session comparison](original-modern-raster-session.md) accounts for 
 
 The [small-entry follow-up](original-modern-small-entry-followup.md) accounts for a shortened no-op, vehicle-loading progress inputs (including changed referenced data), duplicate-choice helper boundaries, three Modern wrappers and the application-wrapper call retarget. Original counterparts and runtime effects remain explicit unknowns.
 
+The [removed DDE code comparison](original-modern-removed-dde.md) identifies original browser URL-command construction under a large Modern NOP span, while distinguishing retained DDE imports, unrelated Modern address reuse and unresolved original reachability.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

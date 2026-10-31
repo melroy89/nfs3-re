@@ -1,0 +1,139 @@
+{
+  "kind": "removed-original-dde-code-region",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004900b0",
+          "end_exclusive": "00490106",
+          "sha256": "73ded9b0b2afc7841be4b0d63bdef5a83824708450c34e0a615a21457ad7d690",
+          "assembly": "analysis/captures/modern-differences/removed-dde/original-004900b0.asm"
+        },
+        {
+          "start": "00490110",
+          "end_exclusive": "00490133",
+          "sha256": "79047b90e49d85343ac51cef6f0faa26b27811cf7fd6cebfdc9137bdc998f4f7",
+          "assembly": "analysis/captures/modern-differences/removed-dde/original-00490110.asm"
+        },
+        {
+          "start": "00490140",
+          "end_exclusive": "004902ee",
+          "sha256": "ce94a1028206bf080b4608c8391f93428b05feb5761fb9a3237c0c6c21452d85",
+          "assembly": "analysis/captures/modern-differences/removed-dde/original-00490140.asm"
+        },
+        {
+          "start": "004902f0",
+          "end_exclusive": "0049042c",
+          "sha256": "59e837b1da7aca0b503166d89dca3ea79cc8681a872e0401d79fabc00c0b6b63",
+          "assembly": "analysis/captures/modern-differences/removed-dde/original-004902f0.asm"
+        },
+        {
+          "start": "004901c3",
+          "end_exclusive": "00490430",
+          "sha256": "ed64657d5e44953f909410b2609c1e5ac82f179e32957307fdde9c649fd8ad5a",
+          "assembly": "analysis/captures/modern-differences/removed-dde/original-004901c3.asm"
+        }
+      ],
+      "dde_imports": [
+        "DdeClientTransaction",
+        "DdeConnect",
+        "DdeCreateStringHandleA",
+        "DdeGetLastError",
+        "DdeInitializeA",
+        "DdeQueryStringA",
+        "DdeUninitialize"
+      ],
+      "import_thunks": {
+        "00533eb6": {
+          "iat": "0053471c",
+          "name": "DdeQueryStringA"
+        },
+        "00533ebc": {
+          "iat": "00534708",
+          "name": "DdeClientTransaction"
+        },
+        "00533ec2": {
+          "iat": "00534714",
+          "name": "DdeGetLastError"
+        },
+        "00533ec8": {
+          "iat": "0053470c",
+          "name": "DdeConnect"
+        },
+        "00533ece": {
+          "iat": "00534710",
+          "name": "DdeCreateStringHandleA"
+        },
+        "00533ed4": {
+          "iat": "00534720",
+          "name": "DdeUninitialize"
+        },
+        "00533eda": {
+          "iat": "00534718",
+          "name": "DdeInitializeA"
+        }
+      },
+      "strings": {
+        "0053bb90": "NETSCAPE",
+        "0053bb9c": "IExplore",
+        "0053bba8": "WWW_OpenURL",
+        "0053bbb4": "\"",
+        "0053bbb8": ",,0xFFFFFFFF,0,,,NETREPORT",
+        "0053bbd4": "NETREPORT"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004900b0",
+          "end_exclusive": "00490106",
+          "sha256": "ea5a605e6661dae500eae244fbd2e1c2adc99b4bea976dd1ad4d37a40c186e92",
+          "assembly": "analysis/captures/modern-differences/removed-dde/official_modern-004900b0.asm"
+        },
+        {
+          "start": "00490110",
+          "end_exclusive": "00490133",
+          "sha256": "f496124c02edddb2f53e8d286f8fd069484aab451ffff15a111082533d459e3e",
+          "assembly": "analysis/captures/modern-differences/removed-dde/official_modern-00490110.asm"
+        },
+        {
+          "start": "00490140",
+          "end_exclusive": "004902ee",
+          "sha256": "0597b7f7a89a068a74db6e11d96ed6d7b40d076ac52ab36feee31800a792b5f9",
+          "assembly": "analysis/captures/modern-differences/removed-dde/official_modern-00490140.asm"
+        },
+        {
+          "start": "004902f0",
+          "end_exclusive": "0049042c",
+          "sha256": "e2bcc73c16e4bb8b2d3ff9f9aefc7022182de49e00c2a2ea66d0b0479f7c8705",
+          "assembly": "analysis/captures/modern-differences/removed-dde/official_modern-004902f0.asm"
+        },
+        {
+          "start": "004901c3",
+          "end_exclusive": "00490430",
+          "sha256": "75328b88061d6a36d57bd81fd57a3c6b096c94c64a92d4157ad290ae0c90f793",
+          "assembly": "analysis/captures/modern-differences/removed-dde/official_modern-004901c3.asm"
+        }
+      ],
+      "dde_imports": [
+        "DdeClientTransaction",
+        "DdeConnect",
+        "DdeCreateStringHandleA",
+        "DdeGetLastError",
+        "DdeInitializeA",
+        "DdeQueryStringA",
+        "DdeUninitialize"
+      ]
+    }
+  },
+  "limits": [
+    "No target execution or Ghidra writes.",
+    "Original caller reachability and user-visible activation not established.",
+    "Retained imports do not prove Modern executes DDE; removed body does not prove all browser opening disappeared.",
+    "Outside span begins within an original branch operand; it is not a function boundary."
+  ]
+}

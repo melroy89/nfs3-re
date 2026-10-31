@@ -189,9 +189,9 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0048eb90` | RunMultimediaTimerWorker | 173 | 4 | [clock-source](original-modern-clock-source.md), [title-delay](original-modern-title-delay.md) |
 | `0048ed30` | HandleMultimediaTimerPulse | 247 | 4 | [clock-source](original-modern-clock-source.md) |
 | `0048eff0` | InitializeMultimediaTimerService | 496 | 6 | [clock-source](original-modern-clock-source.md), [title-delay](original-modern-title-delay.md) |
-| `004900b0` | SubmitFixedColorAxisAlignedQuad | 21 | 21 | [view-overlay](original-modern-view-overlay.md) |
-| `004900c8` | SubmitTopAndBottomFixedColorQuads | 108 | 105 | [view-overlay](original-modern-view-overlay.md) |
-| `00490134` | UpdateThrottledLoadingProgressEstimate | 143 | 142 | [loading-timing](original-modern-loading-timing.md), [view-overlay](original-modern-view-overlay.md) |
+| `004900b0` | SubmitFixedColorAxisAlignedQuad | 21 | 21 | [removed-dde](original-modern-removed-dde.md), [view-overlay](original-modern-view-overlay.md) |
+| `004900c8` | SubmitTopAndBottomFixedColorQuads | 108 | 105 | [removed-dde](original-modern-removed-dde.md), [view-overlay](original-modern-view-overlay.md) |
+| `00490134` | UpdateThrottledLoadingProgressEstimate | 143 | 142 | [loading-timing](original-modern-loading-timing.md), [removed-dde](original-modern-removed-dde.md), [view-overlay](original-modern-view-overlay.md) |
 | `00491190` | QueueProjectedBlinkingPointEffectQuads | 2600 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
 | `00491bc0` | BuildWeatherMaterialProjectedQuadRecord | 1954 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
 | `00492370` | BuildAndQueueRotatedProjectedQuad | 1539 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
