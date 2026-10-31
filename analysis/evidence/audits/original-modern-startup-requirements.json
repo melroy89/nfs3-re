@@ -42,6 +42,34 @@
           "assembly_sha256": "19d39d9721b80c674bcbe2235d23a3fa2d5650a95391db68940891055ae7f595"
         },
         {
+          "start": "004b62a0",
+          "end": "004b6311",
+          "bytes_sha256": "3e1e8696882e585487b4a24301e24ba70fff05a6fd6e667f2379c729fcbeb441",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004b62a0.asm",
+          "assembly_sha256": "a3af3ce211518a6c14aa54f308f90d93ef7f13fe4102038c9cedd13fbe79aab2"
+        },
+        {
+          "start": "004b6320",
+          "end": "004b6400",
+          "bytes_sha256": "3306a6c0275ea76a629643ea6f8835a037bdd0cbff37a0b2c6bf6b225aa979a4",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004b6320.asm",
+          "assembly_sha256": "d720e876d6d11dc52d81315ecd90d201ac8ea888bfac9b229dd52f655d9cdf37"
+        },
+        {
+          "start": "004f93f0",
+          "end": "004f9461",
+          "bytes_sha256": "0f4d22f047413401925072e03fb980a0a11def83a1f001153cd0ef3899734469",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004f93f0.asm",
+          "assembly_sha256": "8a4c52c7995891be114db26a4432414f538b9a271af782ad7c31f1fc15a3110d"
+        },
+        {
+          "start": "004eb390",
+          "end": "004eb3bf",
+          "bytes_sha256": "21508773a3004a4ede2a653dd1c90a80ff79772cf9e51020039ff7682a12053a",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004eb390.asm",
+          "assembly_sha256": "7b6727b0e76274ab039232ba5739a3647f136a3c00d61b1c5def62aa3abe239b"
+        },
+        {
           "start": "004b5860",
           "end": "004b58bb",
           "bytes_sha256": "8ae43f95246afe26de9bc8853a7add5d3e80ff8b8c34ce5145f138689c5b0d9a",
@@ -103,6 +131,11 @@
         {
           "iat": "00534514",
           "name": "GetDiskFreeSpaceA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534518",
+          "name": "GetDriveTypeA",
           "dll": "KERNEL32.dll"
         },
         {
@@ -184,6 +217,34 @@
           "assembly_sha256": "cbe6f82a9fbddee83a00c8a75a01ecea2a73af1cb47ea61d4511730f89d66344"
         },
         {
+          "start": "004b62a0",
+          "end": "004b6311",
+          "bytes_sha256": "ba0e18772669b34b32de79839ae8f3f9105c7b3497de625a2295c39fe9d54139",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b62a0.asm",
+          "assembly_sha256": "c60bd17a76e8f92af4f8d84b458b38ffde19a955040d4fef344bd49a07b8603b"
+        },
+        {
+          "start": "004b6320",
+          "end": "004b6400",
+          "bytes_sha256": "797d20d57118f36399ddc308f7668f5a07a7dd6b37af9dc4aa0f6d9905ab1ca8",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b6320.asm",
+          "assembly_sha256": "895997d149dcda2c66ab5ee4903812bb6b025fcf9edfea0b53d3f8a6c0fa2d88"
+        },
+        {
+          "start": "004f93f0",
+          "end": "004f9461",
+          "bytes_sha256": "912ad21ac99bbbc32058b314e4262b6d72f953248aa78dedcc0e5e6b690ddc9d",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004f93f0.asm",
+          "assembly_sha256": "c7469f7617a4fb1b5155ac758ef5f1c1356abf652892f338caaf732ebc8cc7aa"
+        },
+        {
+          "start": "004eb390",
+          "end": "004eb3bf",
+          "bytes_sha256": "21508773a3004a4ede2a653dd1c90a80ff79772cf9e51020039ff7682a12053a",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004eb390.asm",
+          "assembly_sha256": "2fdcd6ca900c41a7d5543c0641f1a530083fc5b3c2f37dc28ff11e3b61bc8f6d"
+        },
+        {
           "start": "004b5860",
           "end": "004b58bb",
           "bytes_sha256": "40c6bd7d20fe675d52d3bdc1d4d2363a4e72523a18959ec8f96e5dd2320d1d63",
@@ -245,6 +306,11 @@
         {
           "iat": "00534514",
           "name": "GetDiskFreeSpaceA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534518",
+          "name": "HeapReAlloc",
           "dll": "KERNEL32.dll"
         },
         {
@@ -497,6 +563,91 @@
       "5": "Final interface obtained and success cleanup completed"
     },
     "limit": "Static path tags, not a complete installed DirectX version detector or runtime result."
+  },
+  "removed_install_media_admission": {
+    "prefix_helper": "004b62a0..004b6311",
+    "admission_helper": "004b6320..004b6400",
+    "startup_call": "004a3d67",
+    "encoded_prefix_hex": "655860626758",
+    "decoded_prefix": "remote",
+    "prefix_input_va": "007a26b4",
+    "compare_limit": 6,
+    "drive_probe_iat": "00534518",
+    "accepted_drive_type_literal": 5,
+    "filename_template": "C:NFS3.EXE",
+    "drive_indices": "0..25 inclusive",
+    "install_filename": "install.win",
+    "tables": {
+      "004b5694": [
+        {
+          "index": 0,
+          "pointer": "0053f95c",
+          "text_latin1": "To play Need For Speed III you must first install it on your computer."
+        },
+        {
+          "index": 1,
+          "pointer": "0053f9a4",
+          "text_latin1": "Um Need For Speed III zu spielen, m\u00fcssen Sie es erst auf Ihrem Computer installieren."
+        },
+        {
+          "index": 2,
+          "pointer": "0053f9fc",
+          "text_latin1": "Pour jouer \u00e0 Need For Speed III, vous devez d'abord l'installer sur votre ordinateur."
+        },
+        {
+          "index": 3,
+          "pointer": "0053fa54",
+          "text_latin1": "Para jugar Need For Speed III primero tienes que instalarlo en tu ordenador"
+        },
+        {
+          "index": 4,
+          "pointer": "0053faa0",
+          "text_latin1": "Per giocare a Need For Speed III devi prima installarlo sul tuo computer."
+        },
+        {
+          "index": 5,
+          "pointer": "0053faec",
+          "text_latin1": "F\u00f6r att spela Need For Speed III m\u00e5ste du f\u00f6rst installera det p\u00e5 dator."
+        }
+      ],
+      "004b56ac": [
+        {
+          "index": 0,
+          "pointer": "0053fb38",
+          "text_latin1": "To play Need For Speed III you must have the game CD in the CD-ROM drive"
+        },
+        {
+          "index": 1,
+          "pointer": "0053fb84",
+          "text_latin1": "Um Need For Speed III spielen zu k\u00f6nnen, mu\u00df die CD im CD-ROM-Laufwerk eingelegt sein."
+        },
+        {
+          "index": 2,
+          "pointer": "0053fbdc",
+          "text_latin1": "Pour jouer \u00e0 Need For Speed III, vous devez ins\u00e9rer le CD du jeu dans le lecteur de CD-ROM."
+        },
+        {
+          "index": 3,
+          "pointer": "0053fc38",
+          "text_latin1": "Para jugar a Need For Speed III necesita tener el CD del juego en la unidad de CD-ROM"
+        },
+        {
+          "index": 4,
+          "pointer": "0053fc90",
+          "text_latin1": "Per poter giocare deve essere presente il CD di Need For Speed III nel lettore CD-ROM"
+        },
+        {
+          "index": 5,
+          "pointer": "0053fce8",
+          "text_latin1": "F\u00f6r att spela Need For Speed III m\u00e5ste du ha spelskivan i CD-ROM spelaren"
+        }
+      ]
+    },
+    "limits": [
+      "File/path helper004f9390 and resource helper004f0330 not fully reconstructed.",
+      "The template is drive-relative, not a proven root-absolute executable path.",
+      "No media, drive, file or game operation executed."
+    ]
   },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",

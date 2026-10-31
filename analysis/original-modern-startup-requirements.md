@@ -102,3 +102,21 @@ The helper releases intermediate queried interfaces through slot8 and unloads th
 Caller `004b5872` compares the result signed against5. A lower result formats one of six language-indexed messages explicitly requiring Microsoft DirectX 5, displays MessageBoxA with flags30h, then requests termination through `004f2a7d`. Hence a method failure returning0 can trigger an installation warning even though loading DirectDraw succeeded. The diagnostic wording does not prove absence of DirectX. The complete termination-route limitation documented above still applies.
 
 Modern removes this particular probe body and changes the setup/renderer-loading sequence documented elsewhere. That does not establish that every Modern driver is independent of DirectDraw, nor prove startup success on any OS. Intermediate-release dating, live provider results and exhaustive Modern replacement checks remain separate. No target/API execution, Ghidra change or executable modification occurred.
+
+## Removed installation and media admission helpers
+
+The audit now captures original **`004b62a0..004b6311`** (113 bytes) and **`004b6320..004b6400`** (224 bytes), verifies both complete regions are NOPs in Modern, and records their literal data and message tables. Original startup directly calls the admission helper at `004a3d67`, before subsystem wrapper `004a3390`. The original helper's removal is established; exhaustive replacement or media-policy coverage across Modern is not.
+
+The small helper copies six bytes `65 58 60 62 67 58` from `0055fdc0`, adds13 to each byte modulo256 and compares the result against `007a26b4` with a length limit6. The decoded bytes are `remote`. Captured comparator `004eb390..004eb3bf` compares bytes case-sensitively and returns0 when the six-byte limit is exhausted; the caller maps that equality to EAX1, otherwise0. This is a **prefix test**, not a proved exact full-string test or a documented external user option. Inputs and later global writes remain separate contracts.
+
+The larger helper's observed sequence is:
+
+1. It copies the11-byte template `C:NFS3.EXE` (including its terminator), calls path helper `004f9390` with literal `install.win`, extracts a drive index through `004f93f0`, then calls drive probe `004f9410`. The complete path-construction contract of `004f9390` remains unresolved.
+2. The drive probe constructs a drive-root string, calls imported **GetDriveTypeA** via IAT `00534518`, and accepts only literal return5. If the first installation-path drive is accepted, the admission helper displays a language-indexed message saying the game must first be installed, then calls `004dfd04` with EAX0. Message tables have six entries; the global index is not locally bounds-checked.
+3. If the `remote` prefix helper returns nonzero, it takes the ordinary return without scanning further drives.
+4. Otherwise it scans drive indices0..25. For each accepted drive type it changes the template's first byte to `A + index` and passes it to resource/path helper `004f0330`. A nonzero result exits the scan successfully. The string is **drive-relative** (`C:NFS3.EXE`), not `C:\NFS3.EXE`; reconstructing it as a root-absolute path would change semantics.
+5. Exhaustion displays the second six-entry table's message requiring the game CD in the CD-ROM drive, then calls `004dfd04` with EAX0. The same callback/nonreturn limitations as the earlier termination-route discussion apply.
+
+The drive-type wrapper is statically tied to its actual import; the diagnostic wording and scan establish an installation/media admission role. They do **not** establish what every path/resource helper verifies, authentic media identity, successful asset access or the complete original protection mechanism. The helper preserves its six saved non-EAX registers on an ordinary return, but does not provide a defined success Boolean to startup.
+
+This closes classification of these two original entries inside the large removed startup span. Precise path-helper contracts, global-source ownership, other callers and Modern replacement policy remain follow-up work. No drive was scanned and no file, CD or game API was invoked by this audit; executable bytes and saved Ghidra state remain unchanged.

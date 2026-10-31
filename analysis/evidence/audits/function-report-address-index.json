@@ -373,7 +373,7 @@
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
-      "sha256": "c843a18484b171fab757148eb88a693543b6880a058d4210d229ab4285059a93"
+      "sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899"
     },
     {
       "path": "analysis/original-modern-state14.md",
@@ -12063,6 +12063,13 @@
       "modern_sha256": "68bba62a75d930a377603ce43ef727f86d214ce8eacf2eeb3ba21acc8037e3eb",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-startup-requirements.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f9390"
+          ]
+        },
+        {
           "path": "analysis/original-modern-view-overlay.md",
           "entry_mentioned": true,
           "addresses": [
@@ -12238,6 +12245,13 @@
           "addresses": [
             "004f93ec"
           ]
+        },
+        {
+          "path": "analysis/original-modern-startup-requirements.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004f93f0"
+          ]
         }
       ]
     },
@@ -12263,6 +12277,13 @@
           "entry_mentioned": true,
           "addresses": [
             "004f9400"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-startup-requirements.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004f9410"
           ]
         }
       ]
