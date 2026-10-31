@@ -18,7 +18,7 @@ def main():
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
         spans = [(0x489b30, 0x489c40)] if label == 'original' else [(0x489ab0, 0x489bd9), (0x4f939c, 0x4f93c5), (0x4d1430, 0x4d1450)]
-        spans += [(0x45adba, 0x45ae2c), (0x45aef0, 0x45af63), (0x4839eb, 0x483a67)]
+        spans += [(0x4d10e0,0x4d1116 if label=='original' else 0x4d1114),(0x45adba, 0x45ae2c), (0x45aef0, 0x45af63), (0x4839eb, 0x483a67)]
         rows = []
         for start, end in spans:
             path = capture/f'{label}-{start:08x}.asm'
@@ -35,6 +35,13 @@ def main():
             assert site+5+int.from_bytes(data[1:], 'little', signed=True) == target
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows}
     images = [pefile.PE(str(ROOT/SPECS[k][0])) for k in ('original', 'official_modern')]
+    old,new=images
+    assert old.get_data(0xd10e0,0x2f)==new.get_data(0xd10e0,0x2f)
+    assert old.get_data(0xd110f,2)==bytes.fromhex('ddd8')
+    assert new.get_data(0x89bd1,2)==bytes.fromhex('ddd8')
+    assert old.get_data(0xd1115,1)==b'\xc3'
+    assert new.get_data(0xd1113,1)==b'\xc3'
+    result['right_anchor_return_contract']={'entry':'004d10e0','original_end_exclusive':'004d1116','modern_end_exclusive':'004d1114','shared_prefix_end_exclusive':'004d110f','original':'FSTP ST(0) discards draw return before RET','modern':'Leaves draw x87 return; numeric-scale caller pops it at00489bd1','limits':['Static local stack effect; not a complete ABI audit of all callers.','Identical CALL targets do not establish identical helper implementations.']}
     result['caller_setup_only_retargets'] = []
     for start, end, call in ((0x45adba, 0x45ae2c, 0x45ae27), (0x45aef0, 0x45af63, 0x45af5e), (0x4839eb, 0x483a67, 0x483a62)):
         bodies = [p.get_data(start-0x400000, end-start) for p in images]

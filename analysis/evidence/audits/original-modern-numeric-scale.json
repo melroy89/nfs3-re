@@ -18,6 +18,13 @@
           "assembly_sha256": "d4311c1c124e26e4960bf7aed9a5ed144fa55812d9b0cf70f854a1fe3406e2e2"
         },
         {
+          "start": "004d10e0",
+          "end": "004d1116",
+          "bytes_sha256": "6fcd8f7b5dc5f72e531e2d0b2add90ffee882306965eeeddcde369c0aa4222bf",
+          "assembly": "analysis/captures/modern-differences/numeric-scale/original-004d10e0.asm",
+          "assembly_sha256": "bdf935ea63da104628579cf024cff3a776eec41c19e0fd63eae09ba99daecc4e"
+        },
+        {
           "start": "0045adba",
           "end": "0045ae2c",
           "bytes_sha256": "f2b2de8084655f7c6155b0ba4a35903f1659821bfb3d176fdcf29aa3e9280ba5",
@@ -66,6 +73,13 @@
           "assembly_sha256": "12b3ea86332f14a5fe96cf7168a5851b880291a8dc135818652919adb7e503b5"
         },
         {
+          "start": "004d10e0",
+          "end": "004d1114",
+          "bytes_sha256": "5e12886786f33a5ddceb773286abb5d5dd48c1a7574bd953a63e2563d8d33974",
+          "assembly": "analysis/captures/modern-differences/numeric-scale/official_modern-004d10e0.asm",
+          "assembly_sha256": "5ace6e01bced3a0348c2fb44ce031cede712325f81e12d451ddf7947254f443e"
+        },
+        {
           "start": "0045adba",
           "end": "0045ae2c",
           "bytes_sha256": "84c80da643a7431fd71072de8266ce556f74bc485f8f185eb3433af86b6daac5",
@@ -93,6 +107,18 @@
     "No UI rendering or target execution.",
     "Invalid inputs and localized asset lengths not validated."
   ],
+  "right_anchor_return_contract": {
+    "entry": "004d10e0",
+    "original_end_exclusive": "004d1116",
+    "modern_end_exclusive": "004d1114",
+    "shared_prefix_end_exclusive": "004d110f",
+    "original": "FSTP ST(0) discards draw return before RET",
+    "modern": "Leaves draw x87 return; numeric-scale caller pops it at00489bd1",
+    "limits": [
+      "Static local stack effect; not a complete ABI audit of all callers.",
+      "Identical CALL targets do not establish identical helper implementations."
+    ]
+  },
   "caller_setup_only_retargets": [
     {
       "start": "0045adba",

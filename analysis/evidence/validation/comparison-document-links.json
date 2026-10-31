@@ -68,8 +68,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "6e239fb07d2cd733d8f7f771ac57d0f91050ca2a44bfdcee3e9e0a8cf82b57f8",
-      "relative_links": 98
+      "sha256": "8d04d46441b5b3e84980851073c8a64ae76ff5390426f95d2172ae68ad721752",
+      "relative_links": 99
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -213,8 +213,8 @@
     },
     {
       "path": "analysis/original-modern-numeric-scale.md",
-      "sha256": "f1d93a0f3d8b5d08213688695dbfd499bbfffd77e5727509d58c9606f291986e",
-      "relative_links": 4
+      "sha256": "a3e5c684b0ccde2cf407e2ba4354441f88a3ad8b133b8b728a53217df8885fca",
+      "relative_links": 5
     },
     {
       "path": "analysis/original-modern-options-postgame.md",
@@ -398,7 +398,7 @@
     }
   ],
   "file_count": 79,
-  "relative_link_count": 584,
+  "relative_link_count": 586,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
