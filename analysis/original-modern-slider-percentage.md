@@ -168,10 +168,10 @@ The float parser calls the runtime formatted scanner with the retained format at
 
 **Closed:** numeric descriptor write width and instance-address calculation. **Still pending:** key-to-descriptor selection and overall file parse order, subsequent initialization/callback overrides, event delivery and actual step values. Thus the conditional1%-versus5% observation remains a bounded static result rather than a measured contradiction of the release claim.
 
-## Stop checkpoint: key selection inspected, capture follow-up pending
+## Resumed checkpoint: key-selection evidence retained
 
 Final read-only inspection traced lookup `00448f00..00448f4d`: it scans 16-byte descriptors, compares the input keyword through `004ee310`, and accepts a matching descriptor when its applicability type equals the current entry type or is generic type1. The loader witness `004496a8..00449737` reads the current entry type, calls that lookup, then forwards the returned descriptor index, current entry index and value buffer to `00449240`.
 
 The complete descriptor rows are `00558320 = {0fh,00538738,6,00604f24}` for `snap` and `00558330 = {0fh,00538740,6,00604f28}` for `r0_step`. Their fields are applicability type, keyword pointer, numeric conversion type and destination. Earlier keyword-first captures omit the preceding applicability DWORD and must not be read as complete row boundaries.
 
-These final observations were inspected directly in the hash-pinned official executable, but their additional disassembly spans have not yet been added to the reproducible audit manifest. On resumption, retain/read back those witnesses before promoting the complete parser chain to a reproducibility claim. Later field overrides, lexical parsing edge cases, actual event delivery and runtime step size remain unresolved. Investigation paused at the user's request; the broader comparison is not complete.
+After resumption, the audit script retains both spans and complete descriptor rows for both hash-pinned baselines. Readback verifies the keyword/type checks, loader arguments and full row boundaries; the key lookup body and selected loader span are byte-identical across baselines. Two runs reproduce the expanded JSON unchanged. The loader span is a witness inside a larger routine, not a complete loader-body comparison. Later field overrides, lexical parsing edge cases, actual event delivery and runtime step size remain unresolved; the broader comparison is not complete.

@@ -49,6 +49,20 @@
           "bytes_sha256": "71eab7d763f06c979d8a061192fec858ebc157e2a4f3ad0f0c0b2b6dd257ea61",
           "assembly": "analysis/captures/modern-differences/slider-percentage/original-004491b0.asm",
           "assembly_sha256": "a6b62dc22fdd2cb4a0a65525fb5ba72e960dc24ecbe48d721315066d3dcc61d2"
+        },
+        {
+          "start": "00448f00",
+          "end": "00448f4d",
+          "bytes_sha256": "cf635b3f6f3f8ff03b32b87d0a12ecfc44fb2adfbc3980c3b501fd85c1932a51",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/original-00448f00.asm",
+          "assembly_sha256": "5fe6c85281d9fa6856ad3692d8cec36f93979bae186743bcc119f4f25d78e375"
+        },
+        {
+          "start": "004496a8",
+          "end": "00449737",
+          "bytes_sha256": "f034ec98b675b1bec7dd5241fdf750503e3b439728368825cc8c7dd9fc409ecd",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/original-004496a8.asm",
+          "assembly_sha256": "8d902154eec77807faf94408c5cd33037394936a51cf4311b1d2339b4c5b0992"
         }
       ],
       "step_event_dispatch": {
@@ -77,6 +91,10 @@
       "slider_callback_row_00557718_hex": "0f000000000800000000000000000000000000000000000000000000000000000000000050cc460010cc4600e0ca460080cb4600e0cb4600000000000000000000000000000000000000000000000000",
       "float_parse_format_00538f70": "%f",
       "numeric_writer_type6_target": "83934400",
+      "complete_step_descriptor_rows": {
+        "00558320": "0f0000003887530006000000244f6000",
+        "00558330": "0f0000004087530006000000284f6000"
+      },
       "step_descriptors_hex": {
         "00558324": "3887530006000000244f60000f000000",
         "00558334": "4087530006000000284f60000f000000"
@@ -142,6 +160,20 @@
           "bytes_sha256": "71eab7d763f06c979d8a061192fec858ebc157e2a4f3ad0f0c0b2b6dd257ea61",
           "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-004491b0.asm",
           "assembly_sha256": "453fa2065d8f19a1d3b986b94cfac303ede0d503430a56bd0b791598481d0165"
+        },
+        {
+          "start": "00448f00",
+          "end": "00448f4d",
+          "bytes_sha256": "cf635b3f6f3f8ff03b32b87d0a12ecfc44fb2adfbc3980c3b501fd85c1932a51",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-00448f00.asm",
+          "assembly_sha256": "c2767eaca5859ade88533b3591b3146a3759eeef3f3f430d36d3178ad6ebdd7e"
+        },
+        {
+          "start": "004496a8",
+          "end": "00449737",
+          "bytes_sha256": "f034ec98b675b1bec7dd5241fdf750503e3b439728368825cc8c7dd9fc409ecd",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-004496a8.asm",
+          "assembly_sha256": "06f703f9b7d7ecd199cabc8bfc9d72e45861e43428e68936318bea4614ebb3a6"
         }
       ],
       "step_event_dispatch": {
@@ -170,6 +202,10 @@
       "slider_callback_row_00557718_hex": "0f000000000800000000000000000000000000000000000000000000000000000000000050cc460010cc4600e0ca460080cb4600e0cb4600000000000000000000000000000000000000000000000000",
       "float_parse_format_00538f70": "%f",
       "numeric_writer_type6_target": "83934400",
+      "complete_step_descriptor_rows": {
+        "00558320": "0f0000003887530006000000244f6000",
+        "00558330": "0f0000004087530006000000284f6000"
+      },
       "step_descriptors_hex": {
         "00558324": "3887530006000000244f60000f000000",
         "00558334": "4087530006000000284f60000f000000"
@@ -199,6 +235,7 @@
   "step_event_dispatch_identical": true,
   "slider_callback_row_identical": true,
   "template_installer_identical": true,
+  "key_lookup_and_loader_witness_identical": true,
   "percentage_pair_changed_addresses": [
     "0046c1f0"
   ]
