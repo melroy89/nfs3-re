@@ -88,6 +88,11 @@
       "sha256": "37993537bc576246c3696a0c7dc62dbf5b4b97781c5a64dd480243151e9bc496"
     }
   ],
+  "dx7_creation_guids": {
+    "60015bf8": "f5049e77-4861-11d2-a407-00a0c90629a8",
+    "60015bc8": "84e63de0-46aa-11cf-816f-0000c020156e",
+    "60015b98": "f5049e78-4861-11d2-a407-00a0c90629a8"
+  },
   "official_dx7": {
     "member": "drivers/dx7/dx7a.dll",
     "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
@@ -95,6 +100,27 @@
     "selector14_case": "60004df4",
     "dispatch_index": 14,
     "spans": [
+      {
+        "start": "600096e5",
+        "end": "600096ff",
+        "sha256": "8d8037be926ec2a5af40c3e06fa8166f0aa34eae5e3c56308abac97964dab359",
+        "assembly": "analysis/captures/modern-differences/state14/dx7-600096e5.asm",
+        "assembly_sha256": "6926e516bfa286fabaa20b1960162b56f9f2296e7e1ac2e5644fb9dfc2e12321"
+      },
+      {
+        "start": "60009f8a",
+        "end": "60009fb0",
+        "sha256": "119d514559747508e856fe3c842a6defc54b22686e5c1a10181347170aac58b2",
+        "assembly": "analysis/captures/modern-differences/state14/dx7-60009f8a.asm",
+        "assembly_sha256": "6f1d4195139b44e5810d750f92eba74dea2187361f58eaabc70a28de0ae9f398"
+      },
+      {
+        "start": "60009fd9",
+        "end": "6000a0c9",
+        "sha256": "bec84def519305710711eb3cf4fe5b73335d5a462bcbc997991d279b364231ed",
+        "assembly": "analysis/captures/modern-differences/state14/dx7-60009fd9.asm",
+        "assembly_sha256": "e2914659924691e20c2910f5279baed91ebe024b107e363dfc468e2831343cf8"
+      },
       {
         "start": "60003ca0",
         "end": "60003d64",

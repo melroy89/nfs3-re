@@ -3,6 +3,7 @@ import hashlib
 import json
 import subprocess
 import struct
+import uuid
 import pefile
 from audit_thrash_loader_difference import ROOT,SPECS
 
@@ -33,9 +34,12 @@ def main():
     target=struct.unpack('<I',pe.get_data(0x6a34+4*index,4))[0];assert target==0x60004df4
     assert struct.unpack('<f',pe.get_data(0x15448,4))[0]==1.0
     rows=[]
-    for start,end in [(0x60003ca0,0x60003d64),(0x60004df4,0x60004e59),(0x60008a10,0x60008a47)]:
+    for start,end in [(0x600096e5,0x600096ff),(0x60009f8a,0x60009fb0),(0x60009fd9,0x6000a0c9),(0x60003ca0,0x60003d64),(0x60004df4,0x60004e59),(0x60008a10,0x60008a47)]:
         path=capture/f'dx7-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
         rows.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-base,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+    guids={f'{a:08x}':str(uuid.UUID(bytes_le=pe.get_data(a-base,16))) for a in (0x60015bf8,0x60015bc8,0x60015b98)}
+    assert guids=={'60015bf8':'f5049e77-4861-11d2-a407-00a0c90629a8','60015bc8':'84e63de0-46aa-11cf-816f-0000c020156e','60015b98':'f5049e78-4861-11d2-a407-00a0c90629a8'}
+    result['dx7_creation_guids']=guids
     result['official_dx7']={'member':member,'sha256':hashlib.sha256(raw).hexdigest(),'setstate_export':'60003ca0','selector14_case':f'{target:08x}','dispatch_index':index,'spans':rows,'reciprocal_constant':1.0}
     result['limits']=['Static only; no driver invocation or visual result.','State14 semantics and complete enable-global lifecycle unresolved.']
     (ROOT/'analysis/evidence/audits/original-modern-state14.json').write_text(json.dumps(result,indent=2)+'\n')
