@@ -40,3 +40,9 @@ Thus Modern's matching branch is handled, but its own stack-slot write does not 
 **Bounded comparison status: done; evidence confidence: verified static instructions.** Preserve the six-argument ABI, prior-callback invocation, version-specific handling policy and actual stack-slot write when reconstructing machine behavior. Do not automatically correct the apparent result-write anomaly.
 
 Pending runtime/lifecycle questions are the saved callback's identity and output in each configuration, display-count balance across other callers, focus/nonclient behavior and actual host/Wine cursor effects. The earlier conditional self-chain/lifetime investigation remains explicitly bounded in the existing contract; this difference does not establish that sequence is reachable.
+
+## Release-note correspondence and remaining acceptance
+
+**MP140-069** claims improved cursor hiding, including the standard system menu. The verified final-pair changes give partial support: the retained `20h` registration now hides only for low-WORD lParam equal to1, otherwise permitting default processing, and removes its unconditional ShowCursor(0). The [removed recurring window-loop cursor request](original-modern-window-handling.md#removed-recurring-foreground-restoration-tail) and [shortened post-creation setup](original-modern-window-geometry.md#modern-shortens-post-creation-setup) are additional concrete changes in cursor policy. These are related mechanisms, not proof that they were all introduced in v1.4.0.
+
+The specific system-menu outcome remains unverified: it needs actual original/Modern message sequences and observed cursor state, including effects of the previously registered callback. Preserve the documented result-pointer-slot anomaly when comparing behavior; the intended Windows result must not be substituted for the instructions. No new runtime acceptance is claimed by linking this existing evidence to the release-note item.

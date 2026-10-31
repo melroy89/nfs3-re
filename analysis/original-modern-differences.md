@@ -467,7 +467,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **165 Claimed, 39 Static, 83 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **164 Claimed, 39 Static, 84 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -671,7 +671,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-066 | Working directory is set automatically to the directory of the exe file. | Static |
 | MP140-067 | Useless RemoteOnly ini setting was removed. | Claimed |
 | MP140-068 | The KeyboardHook ini setting was replaced by the PreventMinimize. Now it works on Windows NT also. | Partial |
-| MP140-069 | Better code for the system cursor hiding, as result the cursor isn't hidden in the standard system menu of the window. | Claimed |
+| MP140-069 | Better code for the system cursor hiding, as result the cursor isn't hidden in the standard system menu of the window. | Partial |
 | MP140-070 | Language files with text strings are included, so the patch is compatible with rare prerelease version of the game now. | Claimed |
 | MP140-071 | Opponent Name HUD element was moved to the top of screen, just under the rear view mirror. | Claimed |
 | MP140-072 | Reset HUD just after installation of this patch over the original version of NFS3. | Partial |

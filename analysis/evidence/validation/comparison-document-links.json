@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "958fe72c21b0b28813f266e09f158d703cc4b6346fe46a66c8c2b476bff991e5",
-      "relative_links": 24
+      "sha256": "18fae74b4d03619528ae7c8ccd62417156852e0955ce501724eadf5df56009a2",
+      "relative_links": 26
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "9d07acf68e5028f05543665cd9bf7c71d6a3361db5704d60a7c14bf4a0688c10",
+      "sha256": "1f578d283c11e68d89ec6b04ea9c7a626d5cec8f837cacda683e180335f4938d",
       "relative_links": 142
     },
     {
@@ -253,8 +253,8 @@
     },
     {
       "path": "analysis/original-modern-mouse-cursor.md",
-      "sha256": "5d894e06a890ebeab1f6ae378108443df1023cb84a5842e85bb1af3ad6aa57e3",
-      "relative_links": 5
+      "sha256": "7a3f64cb81bab8ed9025e0f362725bac64ba4b25cf85d475f824cda4d3d64ff4",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-movie-screenshots.md",
@@ -573,8 +573,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "2b092f88169c9268cf3370e9e7a33a63ac69c8abf142e2f404a14e73189e1b82",
-      "relative_links": 134
+      "sha256": "a1ac76744b65154fa7380f89a400cc236b4fde988182a8ad0c8574f129f69b5a",
+      "relative_links": 135
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -583,7 +583,7 @@
     }
   ],
   "file_count": 116,
-  "relative_link_count": 1676,
+  "relative_link_count": 1681,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
