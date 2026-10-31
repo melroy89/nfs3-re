@@ -240,6 +240,10 @@
       "sha256": "0ce2d2a073ee681a6ba2b4f60328c0442cae237473a9b5f941206e586ed90e04"
     },
     {
+      "path": "analysis/original-modern-packaged-x87.md",
+      "sha256": "2e7c0a8e075e27d631e4dc0a2850fafc26f15a0c5c366d82fd7ae2bf274b0d99"
+    },
+    {
       "path": "analysis/original-modern-parameter-preset.md",
       "sha256": "5e89340235cb980bc3a36a32bb2b82f6db6838439a13b345634e2dedfd38789c"
     },
@@ -425,7 +429,7 @@
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
-      "sha256": "c130e56d16b021ce9611b1734f616e1334a99a0def83c9429047f5240b6dfdea"
+      "sha256": "03e163e9b19e8add37be5da4462bd0d274ce7ce324593f00462d313bf64760c5"
     }
   ],
   "counts": {

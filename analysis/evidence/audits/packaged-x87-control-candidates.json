@@ -1,0 +1,1863 @@
+{
+  "kind": "official-package-x87-control-candidate-inventory",
+  "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+  "members": [
+    {
+      "member": "drivers/dgvoodoo/glide3x.dll",
+      "sha256": "9b06129d8afcf934f51676f1b8ce3a240fbb5ee0723eaf5de27735516e051d54",
+      "bytes": 89600,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/dgvoodoo/glide3x.dll",
+      "image_base": "10000000",
+      "sections": [
+        ".MPRESS1",
+        ".MPRESS2",
+        ".rsrc"
+      ],
+      "mpress_named_sections": true,
+      "candidate_count": 27,
+      "candidates": [
+        {
+          "va": "100025a1",
+          "disassembly": "100025a1:\td9 78 68             \tfnstcw WORD PTR [eax+0x68]"
+        },
+        {
+          "va": "10002ab4",
+          "disassembly": "10002ab4:\td9 7a 32             \tfnstcw WORD PTR [edx+0x32]"
+        },
+        {
+          "va": "100036a6",
+          "disassembly": "100036a6:\td9 69 31             \tfldcw  WORD PTR [ecx+0x31]"
+        },
+        {
+          "va": "10003842",
+          "disassembly": "10003842:\td9 ab e0 4a 7b 7f    \tfldcw  WORD PTR [ebx+0x7f7b4ae0]"
+        },
+        {
+          "va": "10003cb6",
+          "disassembly": "10003cb6:\td9 6b 77             \tfldcw  WORD PTR [ebx+0x77]"
+        },
+        {
+          "va": "100042b6",
+          "disassembly": "100042b6:\td9 3e                \tfnstcw WORD PTR [esi]"
+        },
+        {
+          "va": "10004737",
+          "disassembly": "10004737:\tdb e3                \tfninit"
+        },
+        {
+          "va": "10004a10",
+          "disassembly": "10004a10:\tdb e3                \tfninit"
+        },
+        {
+          "va": "10004dba",
+          "disassembly": "10004dba:\td9 6b c1             \tfldcw  WORD PTR [ebx-0x3f]"
+        },
+        {
+          "va": "10005691",
+          "disassembly": "10005691:\td9 7f 24             \tfnstcw WORD PTR [edi+0x24]"
+        },
+        {
+          "va": "10007a8f",
+          "disassembly": "10007a8f:\t67 d9 2a             \tfldcw  WORD PTR [bp+si]"
+        },
+        {
+          "va": "10008b57",
+          "disassembly": "10008b57:\td9 7a 74             \tfnstcw WORD PTR [edx+0x74]"
+        },
+        {
+          "va": "10009357",
+          "disassembly": "10009357:\td9 bc 9e 4b d9 3e 43 \tfnstcw WORD PTR [esi+ebx*4+0x433ed94b]"
+        },
+        {
+          "va": "1000acbb",
+          "disassembly": "1000acbb:\td9 29                \tfldcw  WORD PTR [ecx]"
+        },
+        {
+          "va": "1000bbd5",
+          "disassembly": "1000bbd5:\td9 6a c0             \tfldcw  WORD PTR [edx-0x40]"
+        },
+        {
+          "va": "1000ce9a",
+          "disassembly": "1000ce9a:\td9 69 cc             \tfldcw  WORD PTR [ecx-0x34]"
+        },
+        {
+          "va": "1000dc43",
+          "disassembly": "1000dc43:\td9 69 5e             \tfldcw  WORD PTR [ecx+0x5e]"
+        },
+        {
+          "va": "1000e636",
+          "disassembly": "1000e636:\td9 7f 77             \tfnstcw WORD PTR [edi+0x77]"
+        },
+        {
+          "va": "1000ee69",
+          "disassembly": "1000ee69:\td9 a8 72 71 f6 5f    \tfldcw  WORD PTR [eax+0x5ff67172]"
+        },
+        {
+          "va": "1000f040",
+          "disassembly": "1000f040:\td9 6c c4 ca          \tfldcw  WORD PTR [esp+eax*8-0x36]"
+        },
+        {
+          "va": "1000f3d3",
+          "disassembly": "1000f3d3:\td9 b8 ea e9 e8 15    \tfnstcw WORD PTR [eax+0x15e8e9ea]"
+        },
+        {
+          "va": "1000f833",
+          "disassembly": "1000f833:\tdb e3                \tfninit"
+        },
+        {
+          "va": "1001015b",
+          "disassembly": "1001015b:\td9 7b c8             \tfnstcw WORD PTR [ebx-0x38]"
+        },
+        {
+          "va": "1001100d",
+          "disassembly": "1001100d:\td9 ae 05 b8 2f 72    \tfldcw  WORD PTR [esi+0x722fb805]"
+        },
+        {
+          "va": "1001229c",
+          "disassembly": "1001229c:\td9 be 97 b9 50 6e    \tfnstcw WORD PTR [esi+0x6e50b997]"
+        },
+        {
+          "va": "10012897",
+          "disassembly": "10012897:\td9 79 ae             \tfnstcw WORD PTR [ecx-0x52]"
+        },
+        {
+          "va": "10013aa0",
+          "disassembly": "10013aa0:\t66 d9 7a f1          \tdata16 fnstcw WORD PTR [edx-0xf]"
+        }
+      ]
+    },
+    {
+      "member": "drivers/dgvoodoo/voodoo2a.dll",
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "bytes": 69120,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/dgvoodoo/voodoo2a.dll",
+      "image_base": "60000000",
+      "sections": [
+        ".code",
+        ".idata",
+        ".data",
+        ".bss",
+        ".edata",
+        ".reloc",
+        ".rsrc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 28,
+      "candidates": [
+        {
+          "va": "60004d8c",
+          "disassembly": "60004d8c:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004da2",
+          "disassembly": "60004da2:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "60004dc4",
+          "disassembly": "60004dc4:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004ddb",
+          "disassembly": "60004ddb:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004dfa",
+          "disassembly": "60004dfa:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004e10",
+          "disassembly": "60004e10:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "60004e4e",
+          "disassembly": "60004e4e:\t9b d9 6c 24 1c       \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004e58",
+          "disassembly": "60004e58:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "600060f2",
+          "disassembly": "600060f2:\tdb e3                \tfninit"
+        },
+        {
+          "va": "600060f4",
+          "disassembly": "600060f4:\td9 3c 24             \tfnstcw WORD PTR [esp]"
+        },
+        {
+          "va": "60008c72",
+          "disassembly": "60008c72:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60008c8a",
+          "disassembly": "60008c8a:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60008c8d",
+          "disassembly": "60008c8d:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a4a7",
+          "disassembly": "6000a4a7:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a4bc",
+          "disassembly": "6000a4bc:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a50d",
+          "disassembly": "6000a50d:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a585",
+          "disassembly": "6000a585:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a596",
+          "disassembly": "6000a596:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a6ef",
+          "disassembly": "6000a6ef:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a6f9",
+          "disassembly": "6000a6f9:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a701",
+          "disassembly": "6000a701:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a7d4",
+          "disassembly": "6000a7d4:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a7de",
+          "disassembly": "6000a7de:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a7e6",
+          "disassembly": "6000a7e6:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a9a6",
+          "disassembly": "6000a9a6:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000be0a",
+          "disassembly": "6000be0a:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6000be24",
+          "disassembly": "6000be24:\t36 d9 2f             \tfldcw  WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6000be2a",
+          "disassembly": "6000be2a:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        }
+      ]
+    },
+    {
+      "member": "drivers/dx5/dx5a.dll",
+      "sha256": "6bd5865b05a7a9918da37ad09f643908d9decdcfdb341a23dd60a8cf70c08b42",
+      "bytes": 72704,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/dx5/dx5a.dll",
+      "image_base": "60000000",
+      "sections": [
+        ".code",
+        ".idata",
+        ".data",
+        ".bss",
+        ".edata",
+        ".reloc",
+        ".rsrc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 31,
+      "candidates": [
+        {
+          "va": "60005503",
+          "disassembly": "60005503:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "60005510",
+          "disassembly": "60005510:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "60005515",
+          "disassembly": "60005515:\td9 6c 24 04          \tfldcw  WORD PTR [esp+0x4]"
+        },
+        {
+          "va": "60007aa4",
+          "disassembly": "60007aa4:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60007aba",
+          "disassembly": "60007aba:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "60007adc",
+          "disassembly": "60007adc:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60007af3",
+          "disassembly": "60007af3:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60007b12",
+          "disassembly": "60007b12:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60007b28",
+          "disassembly": "60007b28:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "60007b66",
+          "disassembly": "60007b66:\t9b d9 6c 24 1c       \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60007b70",
+          "disassembly": "60007b70:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "600081f1",
+          "disassembly": "600081f1:\tdb e3                \tfninit"
+        },
+        {
+          "va": "600081f3",
+          "disassembly": "600081f3:\td9 3c 24             \tfnstcw WORD PTR [esp]"
+        },
+        {
+          "va": "60009d1a",
+          "disassembly": "60009d1a:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60009d32",
+          "disassembly": "60009d32:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60009d35",
+          "disassembly": "60009d35:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b5e8",
+          "disassembly": "6000b5e8:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b5fd",
+          "disassembly": "6000b5fd:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b64e",
+          "disassembly": "6000b64e:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b6c6",
+          "disassembly": "6000b6c6:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b6d7",
+          "disassembly": "6000b6d7:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b830",
+          "disassembly": "6000b830:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b83a",
+          "disassembly": "6000b83a:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b842",
+          "disassembly": "6000b842:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b915",
+          "disassembly": "6000b915:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b91f",
+          "disassembly": "6000b91f:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000b927",
+          "disassembly": "6000b927:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000bae7",
+          "disassembly": "6000bae7:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000ce92",
+          "disassembly": "6000ce92:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6000ceac",
+          "disassembly": "6000ceac:\t36 d9 2f             \tfldcw  WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6000ceb2",
+          "disassembly": "6000ceb2:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        }
+      ]
+    },
+    {
+      "member": "drivers/dx6/dx6a.dll",
+      "sha256": "bc01ac47bdc6590bb787fbc4b953a1915a386191cfbcf66f3a6636e8e660aca6",
+      "bytes": 94208,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/dx6/dx6a.dll",
+      "image_base": "60000000",
+      "sections": [
+        ".text",
+        ".rdata",
+        ".data",
+        ".reloc",
+        ".rsrc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "va": "60003fe0",
+          "disassembly": "60003fe0:\td9 3b                \tfnstcw WORD PTR [ebx]"
+        },
+        {
+          "va": "60007e06",
+          "disassembly": "60007e06:\t9b d9 7d fe          \tfstcw  WORD PTR [ebp-0x2]"
+        },
+        {
+          "va": "60007e16",
+          "disassembly": "60007e16:\td9 6d fc             \tfldcw  WORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "60007e1c",
+          "disassembly": "60007e1c:\td9 6d fe             \tfldcw  WORD PTR [ebp-0x2]"
+        },
+        {
+          "va": "6000b6e3",
+          "disassembly": "6000b6e3:\t9b d9 7d fc          \tfstcw  WORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "6000b70b",
+          "disassembly": "6000b70b:\td9 6d 0c             \tfldcw  WORD PTR [ebp+0xc]"
+        }
+      ]
+    },
+    {
+      "member": "drivers/dx7/dx7a.dll",
+      "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+      "bytes": 110592,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/dx7/dx7a.dll",
+      "image_base": "60000000",
+      "sections": [
+        ".text",
+        ".rdata",
+        ".data",
+        ".reloc",
+        ".rsrc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 0,
+      "candidates": []
+    },
+    {
+      "member": "drivers/dx8/dx8a.dll",
+      "sha256": "ddb8a55514bc650384e349cf3830946c149f71234e90a41327f69aca793e81b8",
+      "bytes": 135168,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/dx8/dx8a.dll",
+      "image_base": "60000000",
+      "sections": [
+        ".text",
+        ".rdata",
+        ".data",
+        ".reloc",
+        ".rsrc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "va": "6000b633",
+          "disassembly": "6000b633:\td9 7c 24 00          \tfnstcw WORD PTR [esp+0x0]"
+        },
+        {
+          "va": "6000b644",
+          "disassembly": "6000b644:\td9 6c 24 04          \tfldcw  WORD PTR [esp+0x4]"
+        },
+        {
+          "va": "6000b65e",
+          "disassembly": "6000b65e:\td9 6c 24 00          \tfldcw  WORD PTR [esp+0x0]"
+        },
+        {
+          "va": "6000d17e",
+          "disassembly": "6000d17e:\td9 7c 24 00          \tfnstcw WORD PTR [esp+0x0]"
+        },
+        {
+          "va": "6000d18f",
+          "disassembly": "6000d18f:\td9 6c 24 04          \tfldcw  WORD PTR [esp+0x4]"
+        },
+        {
+          "va": "6000d1a9",
+          "disassembly": "6000d1a9:\td9 6c 24 00          \tfldcw  WORD PTR [esp+0x0]"
+        }
+      ]
+    },
+    {
+      "member": "drivers/glide3x/voodoo2a.dll",
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "bytes": 69120,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/glide3x/voodoo2a.dll",
+      "image_base": "60000000",
+      "sections": [
+        ".code",
+        ".idata",
+        ".data",
+        ".bss",
+        ".edata",
+        ".reloc",
+        ".rsrc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 28,
+      "candidates": [
+        {
+          "va": "60004d8c",
+          "disassembly": "60004d8c:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004da2",
+          "disassembly": "60004da2:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "60004dc4",
+          "disassembly": "60004dc4:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004ddb",
+          "disassembly": "60004ddb:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004dfa",
+          "disassembly": "60004dfa:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004e10",
+          "disassembly": "60004e10:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "60004e4e",
+          "disassembly": "60004e4e:\t9b d9 6c 24 1c       \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004e58",
+          "disassembly": "60004e58:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "600060f2",
+          "disassembly": "600060f2:\tdb e3                \tfninit"
+        },
+        {
+          "va": "600060f4",
+          "disassembly": "600060f4:\td9 3c 24             \tfnstcw WORD PTR [esp]"
+        },
+        {
+          "va": "60008c72",
+          "disassembly": "60008c72:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60008c8a",
+          "disassembly": "60008c8a:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60008c8d",
+          "disassembly": "60008c8d:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a4a7",
+          "disassembly": "6000a4a7:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a4bc",
+          "disassembly": "6000a4bc:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a50d",
+          "disassembly": "6000a50d:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a585",
+          "disassembly": "6000a585:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a596",
+          "disassembly": "6000a596:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a6ef",
+          "disassembly": "6000a6ef:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a6f9",
+          "disassembly": "6000a6f9:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a701",
+          "disassembly": "6000a701:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a7d4",
+          "disassembly": "6000a7d4:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a7de",
+          "disassembly": "6000a7de:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a7e6",
+          "disassembly": "6000a7e6:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a9a6",
+          "disassembly": "6000a9a6:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000be0a",
+          "disassembly": "6000be0a:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6000be24",
+          "disassembly": "6000be24:\t36 d9 2f             \tfldcw  WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6000be2a",
+          "disassembly": "6000be2a:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        }
+      ]
+    },
+    {
+      "member": "drivers/nglide/glide3x.dll",
+      "sha256": "87842a85d1bfda4217e691a9d4412915c74905eed818c5a727e2f2d6b814edb6",
+      "bytes": 1425408,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/nglide/glide3x.dll",
+      "image_base": "10000000",
+      "sections": [
+        ".text",
+        ".rdata",
+        ".data",
+        ".idata",
+        ".rsrc",
+        ".reloc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 208,
+      "candidates": [
+        {
+          "va": "10037098",
+          "disassembly": "10037098:\td9 7c 24 00          \tfnstcw WORD PTR [esp+0x0]"
+        },
+        {
+          "va": "100370a9",
+          "disassembly": "100370a9:\td9 6c 24 04          \tfldcw  WORD PTR [esp+0x4]"
+        },
+        {
+          "va": "100370d4",
+          "disassembly": "100370d4:\td9 6c 24 00          \tfldcw  WORD PTR [esp+0x0]"
+        },
+        {
+          "va": "10037f6b",
+          "disassembly": "10037f6b:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "10037f79",
+          "disassembly": "10037f79:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003800f",
+          "disassembly": "1003800f:\td9 6d 08             \tfldcw  WORD PTR [ebp+0x8]"
+        },
+        {
+          "va": "1003a921",
+          "disassembly": "1003a921:\td9 7c 24 00          \tfnstcw WORD PTR [esp+0x0]"
+        },
+        {
+          "va": "1003a932",
+          "disassembly": "1003a932:\td9 6c 24 04          \tfldcw  WORD PTR [esp+0x4]"
+        },
+        {
+          "va": "1003a9d7",
+          "disassembly": "1003a9d7:\td9 6c 24 00          \tfldcw  WORD PTR [esp+0x0]"
+        },
+        {
+          "va": "1003b174",
+          "disassembly": "1003b174:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003b182",
+          "disassembly": "1003b182:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003b29d",
+          "disassembly": "1003b29d:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003b342",
+          "disassembly": "1003b342:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003b350",
+          "disassembly": "1003b350:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003b3db",
+          "disassembly": "1003b3db:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003b449",
+          "disassembly": "1003b449:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003b457",
+          "disassembly": "1003b457:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003b4ec",
+          "disassembly": "1003b4ec:\td9 6d e4             \tfldcw  WORD PTR [ebp-0x1c]"
+        },
+        {
+          "va": "1003b559",
+          "disassembly": "1003b559:\td9 7d f4             \tfnstcw WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003b567",
+          "disassembly": "1003b567:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003b635",
+          "disassembly": "1003b635:\td9 6d d8             \tfldcw  WORD PTR [ebp-0x28]"
+        },
+        {
+          "va": "1003b6a2",
+          "disassembly": "1003b6a2:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003b6b0",
+          "disassembly": "1003b6b0:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003b75a",
+          "disassembly": "1003b75a:\td9 6d e0             \tfldcw  WORD PTR [ebp-0x20]"
+        },
+        {
+          "va": "1003b7c7",
+          "disassembly": "1003b7c7:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003b7d5",
+          "disassembly": "1003b7d5:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003b87f",
+          "disassembly": "1003b87f:\td9 6d e0             \tfldcw  WORD PTR [ebp-0x20]"
+        },
+        {
+          "va": "1003b8ec",
+          "disassembly": "1003b8ec:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003b8fa",
+          "disassembly": "1003b8fa:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003b9a4",
+          "disassembly": "1003b9a4:\td9 6d e0             \tfldcw  WORD PTR [ebp-0x20]"
+        },
+        {
+          "va": "1003ba11",
+          "disassembly": "1003ba11:\td9 7d f4             \tfnstcw WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003ba1f",
+          "disassembly": "1003ba1f:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003bae7",
+          "disassembly": "1003bae7:\td9 6d d8             \tfldcw  WORD PTR [ebp-0x28]"
+        },
+        {
+          "va": "1003bb54",
+          "disassembly": "1003bb54:\td9 7d f4             \tfnstcw WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003bb62",
+          "disassembly": "1003bb62:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003bc30",
+          "disassembly": "1003bc30:\td9 6d d8             \tfldcw  WORD PTR [ebp-0x28]"
+        },
+        {
+          "va": "1003bc9d",
+          "disassembly": "1003bc9d:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003bcab",
+          "disassembly": "1003bcab:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003bd55",
+          "disassembly": "1003bd55:\td9 6d e0             \tfldcw  WORD PTR [ebp-0x20]"
+        },
+        {
+          "va": "1003bdc2",
+          "disassembly": "1003bdc2:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003bdd0",
+          "disassembly": "1003bdd0:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003be21",
+          "disassembly": "1003be21:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003be8e",
+          "disassembly": "1003be8e:\td9 7d f4             \tfnstcw WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003be9c",
+          "disassembly": "1003be9c:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003bf6a",
+          "disassembly": "1003bf6a:\td9 6d d8             \tfldcw  WORD PTR [ebp-0x28]"
+        },
+        {
+          "va": "1003bfd7",
+          "disassembly": "1003bfd7:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003bfe5",
+          "disassembly": "1003bfe5:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003c08f",
+          "disassembly": "1003c08f:\td9 6d e0             \tfldcw  WORD PTR [ebp-0x20]"
+        },
+        {
+          "va": "1003c0fc",
+          "disassembly": "1003c0fc:\td9 7d f4             \tfnstcw WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003c10a",
+          "disassembly": "1003c10a:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003c1d8",
+          "disassembly": "1003c1d8:\td9 6d d8             \tfldcw  WORD PTR [ebp-0x28]"
+        },
+        {
+          "va": "1003c245",
+          "disassembly": "1003c245:\td9 7d f4             \tfnstcw WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003c253",
+          "disassembly": "1003c253:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003c321",
+          "disassembly": "1003c321:\td9 6d d8             \tfldcw  WORD PTR [ebp-0x28]"
+        },
+        {
+          "va": "1003c38e",
+          "disassembly": "1003c38e:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003c39c",
+          "disassembly": "1003c39c:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003c446",
+          "disassembly": "1003c446:\td9 6d e0             \tfldcw  WORD PTR [ebp-0x20]"
+        },
+        {
+          "va": "1003c4b3",
+          "disassembly": "1003c4b3:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003c4c1",
+          "disassembly": "1003c4c1:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003c53d",
+          "disassembly": "1003c53d:\td9 6d ec             \tfldcw  WORD PTR [ebp-0x14]"
+        },
+        {
+          "va": "1003c5aa",
+          "disassembly": "1003c5aa:\td9 7d f4             \tfnstcw WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003c5b8",
+          "disassembly": "1003c5b8:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003c686",
+          "disassembly": "1003c686:\td9 6d d8             \tfldcw  WORD PTR [ebp-0x28]"
+        },
+        {
+          "va": "1003c6f6",
+          "disassembly": "1003c6f6:\td9 7d f0             \tfnstcw WORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "1003c704",
+          "disassembly": "1003c704:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003c807",
+          "disassembly": "1003c807:\td9 6d d0             \tfldcw  WORD PTR [ebp-0x30]"
+        },
+        {
+          "va": "1003c874",
+          "disassembly": "1003c874:\td9 7d f0             \tfnstcw WORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "1003c882",
+          "disassembly": "1003c882:\td9 6d e8             \tfldcw  WORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "1003c94e",
+          "disassembly": "1003c94e:\td9 6d e4             \tfldcw  WORD PTR [ebp-0x1c]"
+        },
+        {
+          "va": "1003ca95",
+          "disassembly": "1003ca95:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003caa3",
+          "disassembly": "1003caa3:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003cb10",
+          "disassembly": "1003cb10:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003cb7d",
+          "disassembly": "1003cb7d:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003cb8b",
+          "disassembly": "1003cb8b:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003cc2b",
+          "disassembly": "1003cc2b:\td9 6d e8             \tfldcw  WORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "1003cc98",
+          "disassembly": "1003cc98:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003cca6",
+          "disassembly": "1003cca6:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003cd3b",
+          "disassembly": "1003cd3b:\td9 6d e8             \tfldcw  WORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "1003cda8",
+          "disassembly": "1003cda8:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003cdb6",
+          "disassembly": "1003cdb6:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003ce25",
+          "disassembly": "1003ce25:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003ce92",
+          "disassembly": "1003ce92:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003cea0",
+          "disassembly": "1003cea0:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003cf20",
+          "disassembly": "1003cf20:\td9 6d e8             \tfldcw  WORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "1003cf90",
+          "disassembly": "1003cf90:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003cf9e",
+          "disassembly": "1003cf9e:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003d04a",
+          "disassembly": "1003d04a:\td9 6d e0             \tfldcw  WORD PTR [ebp-0x20]"
+        },
+        {
+          "va": "1003d0b7",
+          "disassembly": "1003d0b7:\td9 7d f4             \tfnstcw WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003d0c5",
+          "disassembly": "1003d0c5:\td9 6d f0             \tfldcw  WORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "1003d17c",
+          "disassembly": "1003d17c:\td9 6d dc             \tfldcw  WORD PTR [ebp-0x24]"
+        },
+        {
+          "va": "1003d1ec",
+          "disassembly": "1003d1ec:\td9 7d f0             \tfnstcw WORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "1003d1fa",
+          "disassembly": "1003d1fa:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003d2db",
+          "disassembly": "1003d2db:\td9 6d d4             \tfldcw  WORD PTR [ebp-0x2c]"
+        },
+        {
+          "va": "1003d348",
+          "disassembly": "1003d348:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003d356",
+          "disassembly": "1003d356:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003d3d6",
+          "disassembly": "1003d3d6:\td9 6d e8             \tfldcw  WORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "1003d446",
+          "disassembly": "1003d446:\td9 7d f0             \tfnstcw WORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "1003d454",
+          "disassembly": "1003d454:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003d535",
+          "disassembly": "1003d535:\td9 6d d4             \tfldcw  WORD PTR [ebp-0x2c]"
+        },
+        {
+          "va": "1003d5a5",
+          "disassembly": "1003d5a5:\td9 7d f0             \tfnstcw WORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "1003d5b3",
+          "disassembly": "1003d5b3:\td9 6d ec             \tfldcw  WORD PTR [ebp-0x14]"
+        },
+        {
+          "va": "1003d6cc",
+          "disassembly": "1003d6cc:\td9 6d cc             \tfldcw  WORD PTR [ebp-0x34]"
+        },
+        {
+          "va": "1003d739",
+          "disassembly": "1003d739:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003d747",
+          "disassembly": "1003d747:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003d7d1",
+          "disassembly": "1003d7d1:\td9 6d e8             \tfldcw  WORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "1003d83e",
+          "disassembly": "1003d83e:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003d84c",
+          "disassembly": "1003d84c:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003d8bb",
+          "disassembly": "1003d8bb:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003db8f",
+          "disassembly": "1003db8f:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003db9d",
+          "disassembly": "1003db9d:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003dc38",
+          "disassembly": "1003dc38:\td9 6d ec             \tfldcw  WORD PTR [ebp-0x14]"
+        },
+        {
+          "va": "1003dca5",
+          "disassembly": "1003dca5:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1003dcb3",
+          "disassembly": "1003dcb3:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1003dd4b",
+          "disassembly": "1003dd4b:\td9 6d e8             \tfldcw  WORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "100402a6",
+          "disassembly": "100402a6:\td9 7d f0             \tfnstcw WORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "100402b4",
+          "disassembly": "100402b4:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "1004054e",
+          "disassembly": "1004054e:\td9 6d d4             \tfldcw  WORD PTR [ebp-0x2c]"
+        },
+        {
+          "va": "100413c9",
+          "disassembly": "100413c9:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "100413d7",
+          "disassembly": "100413d7:\td9 6d f4             \tfldcw  WORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "10041501",
+          "disassembly": "10041501:\td9 6d e8             \tfldcw  WORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "1004baba",
+          "disassembly": "1004baba:\td9 b9 04 10 e3 b9    \tfnstcw WORD PTR [ecx-0x461ceffc]"
+        },
+        {
+          "va": "10064d4a",
+          "disassembly": "10064d4a:\td9 7c 24 00          \tfnstcw WORD PTR [esp+0x0]"
+        },
+        {
+          "va": "10064d5b",
+          "disassembly": "10064d5b:\td9 6c 24 04          \tfldcw  WORD PTR [esp+0x4]"
+        },
+        {
+          "va": "10064d86",
+          "disassembly": "10064d86:\td9 6c 24 00          \tfldcw  WORD PTR [esp+0x0]"
+        },
+        {
+          "va": "10064e17",
+          "disassembly": "10064e17:\td9 7d fc             \tfnstcw WORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "10064e25",
+          "disassembly": "10064e25:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "10064e85",
+          "disassembly": "10064e85:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "10064f63",
+          "disassembly": "10064f63:\td9 7d d8             \tfnstcw WORD PTR [ebp-0x28]"
+        },
+        {
+          "va": "10064f71",
+          "disassembly": "10064f71:\td9 6d dc             \tfldcw  WORD PTR [ebp-0x24]"
+        },
+        {
+          "va": "10065147",
+          "disassembly": "10065147:\td9 6d 10             \tfldcw  WORD PTR [ebp+0x10]"
+        },
+        {
+          "va": "1006543c",
+          "disassembly": "1006543c:\td9 7d 04             \tfnstcw WORD PTR [ebp+0x4]"
+        },
+        {
+          "va": "1006544a",
+          "disassembly": "1006544a:\td9 6d 78             \tfldcw  WORD PTR [ebp+0x78]"
+        },
+        {
+          "va": "100656fa",
+          "disassembly": "100656fa:\td9 6d 7c             \tfldcw  WORD PTR [ebp+0x7c]"
+        },
+        {
+          "va": "100657a0",
+          "disassembly": "100657a0:\td9 7d 64             \tfnstcw WORD PTR [ebp+0x64]"
+        },
+        {
+          "va": "100657ae",
+          "disassembly": "100657ae:\td9 6d 7c             \tfldcw  WORD PTR [ebp+0x7c]"
+        },
+        {
+          "va": "10065a65",
+          "disassembly": "10065a65:\td9 6d 7c             \tfldcw  WORD PTR [ebp+0x7c]"
+        },
+        {
+          "va": "10065cf1",
+          "disassembly": "10065cf1:\td9 7d 68             \tfnstcw WORD PTR [ebp+0x68]"
+        },
+        {
+          "va": "10065cff",
+          "disassembly": "10065cff:\td9 6d 7c             \tfldcw  WORD PTR [ebp+0x7c]"
+        },
+        {
+          "va": "10065f41",
+          "disassembly": "10065f41:\td9 6d 7c             \tfldcw  WORD PTR [ebp+0x7c]"
+        },
+        {
+          "va": "1006626b",
+          "disassembly": "1006626b:\td9 7d fc             \tfnstcw WORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "10066279",
+          "disassembly": "10066279:\td9 6d f8             \tfldcw  WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "1006634d",
+          "disassembly": "1006634d:\td9 6d 0c             \tfldcw  WORD PTR [ebp+0xc]"
+        },
+        {
+          "va": "1006638a",
+          "disassembly": "1006638a:\td9 7d f8             \tfnstcw WORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "10066398",
+          "disassembly": "10066398:\td9 6d 08             \tfldcw  WORD PTR [ebp+0x8]"
+        },
+        {
+          "va": "1006647b",
+          "disassembly": "1006647b:\td9 6d 08             \tfldcw  WORD PTR [ebp+0x8]"
+        },
+        {
+          "va": "100664bc",
+          "disassembly": "100664bc:\td9 7d 68             \tfnstcw WORD PTR [ebp+0x68]"
+        },
+        {
+          "va": "100664ca",
+          "disassembly": "100664ca:\td9 6d 6c             \tfldcw  WORD PTR [ebp+0x6c]"
+        },
+        {
+          "va": "1006659e",
+          "disassembly": "1006659e:\td9 6d 6c             \tfldcw  WORD PTR [ebp+0x6c]"
+        },
+        {
+          "va": "1006660c",
+          "disassembly": "1006660c:\td9 7d 68             \tfnstcw WORD PTR [ebp+0x68]"
+        },
+        {
+          "va": "1006661a",
+          "disassembly": "1006661a:\td9 6d 6c             \tfldcw  WORD PTR [ebp+0x6c]"
+        },
+        {
+          "va": "1006665f",
+          "disassembly": "1006665f:\td9 6d 78             \tfldcw  WORD PTR [ebp+0x78]"
+        },
+        {
+          "va": "10066797",
+          "disassembly": "10066797:\td9 7d 68             \tfnstcw WORD PTR [ebp+0x68]"
+        },
+        {
+          "va": "100667a5",
+          "disassembly": "100667a5:\td9 6d 78             \tfldcw  WORD PTR [ebp+0x78]"
+        },
+        {
+          "va": "1006690d",
+          "disassembly": "1006690d:\td9 6d 7c             \tfldcw  WORD PTR [ebp+0x7c]"
+        },
+        {
+          "va": "100b3286",
+          "disassembly": "100b3286:\td9 2e                \tfldcw  WORD PTR [esi]"
+        },
+        {
+          "va": "100c02d6",
+          "disassembly": "100c02d6:\t9b d9 7d fe          \tfstcw  WORD PTR [ebp-0x2]"
+        },
+        {
+          "va": "100c02e6",
+          "disassembly": "100c02e6:\td9 6d fc             \tfldcw  WORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "100c02ec",
+          "disassembly": "100c02ec:\td9 6d fe             \tfldcw  WORD PTR [ebp-0x2]"
+        },
+        {
+          "va": "100c0435",
+          "disassembly": "100c0435:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "100c0b94",
+          "disassembly": "100c0b94:\t9b d9 7d fc          \tfstcw  WORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "100c0bbc",
+          "disassembly": "100c0bbc:\td9 6d 0c             \tfldcw  WORD PTR [ebp+0xc]"
+        },
+        {
+          "va": "100c0be2",
+          "disassembly": "100c0be2:\tdb e3                \tfninit"
+        },
+        {
+          "va": "100c11ce",
+          "disassembly": "100c11ce:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "100c129e",
+          "disassembly": "100c129e:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "100c59f2",
+          "disassembly": "100c59f2:\td9 ad 5e ff ff ff    \tfldcw  WORD PTR [ebp-0xa2]"
+        },
+        {
+          "va": "100c5a59",
+          "disassembly": "100c5a59:\td9 ad 5e ff ff ff    \tfldcw  WORD PTR [ebp-0xa2]"
+        },
+        {
+          "va": "100c5bee",
+          "disassembly": "100c5bee:\td9 6d 08             \tfldcw  WORD PTR [ebp+0x8]"
+        },
+        {
+          "va": "100c5c27",
+          "disassembly": "100c5c27:\td9 6c 24 06          \tfldcw  WORD PTR [esp+0x6]"
+        },
+        {
+          "va": "100c5ca6",
+          "disassembly": "100c5ca6:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "100c5cd0",
+          "disassembly": "100c5cd0:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "100c5d35",
+          "disassembly": "100c5d35:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "100c91e8",
+          "disassembly": "100c91e8:\t9b d9 7d fc          \tfstcw  WORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "100c91fe",
+          "disassembly": "100c91fe:\td9 6d 0c             \tfldcw  WORD PTR [ebp+0xc]"
+        },
+        {
+          "va": "100cb8ea",
+          "disassembly": "100cb8ea:\t9b d9 bd 5c ff ff ff \tfstcw  WORD PTR [ebp-0xa4]"
+        },
+        {
+          "va": "100cb928",
+          "disassembly": "100cb928:\t9b d9 bd 5c ff ff ff \tfstcw  WORD PTR [ebp-0xa4]"
+        },
+        {
+          "va": "100cb981",
+          "disassembly": "100cb981:\t9b d9 bd 5c ff ff ff \tfstcw  WORD PTR [ebp-0xa4]"
+        },
+        {
+          "va": "100cb9ff",
+          "disassembly": "100cb9ff:\td9 ad 5c ff ff ff    \tfldcw  WORD PTR [ebp-0xa4]"
+        },
+        {
+          "va": "100cbaf3",
+          "disassembly": "100cbaf3:\t9b d9 bd 5c ff ff ff \tfstcw  WORD PTR [ebp-0xa4]"
+        },
+        {
+          "va": "100cbb94",
+          "disassembly": "100cbb94:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "100cbbaa",
+          "disassembly": "100cbbaa:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "100cbbcc",
+          "disassembly": "100cbbcc:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "100cbbe3",
+          "disassembly": "100cbbe3:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "100cbc02",
+          "disassembly": "100cbc02:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "100cbc18",
+          "disassembly": "100cbc18:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "100cbc56",
+          "disassembly": "100cbc56:\t9b d9 6c 24 1c       \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "100cbc60",
+          "disassembly": "100cbc60:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "100cc44e",
+          "disassembly": "100cc44e:\td9 7c 24 34          \tfnstcw WORD PTR [esp+0x34]"
+        },
+        {
+          "va": "100cc45f",
+          "disassembly": "100cc45f:\td9 6c 24 38          \tfldcw  WORD PTR [esp+0x38]"
+        },
+        {
+          "va": "100cc4e0",
+          "disassembly": "100cc4e0:\td9 6c 24 34          \tfldcw  WORD PTR [esp+0x34]"
+        },
+        {
+          "va": "100cc50e",
+          "disassembly": "100cc50e:\td9 7c 24 34          \tfnstcw WORD PTR [esp+0x34]"
+        },
+        {
+          "va": "100cc51f",
+          "disassembly": "100cc51f:\td9 6c 24 38          \tfldcw  WORD PTR [esp+0x38]"
+        },
+        {
+          "va": "100cc529",
+          "disassembly": "100cc529:\td9 6c 24 34          \tfldcw  WORD PTR [esp+0x34]"
+        },
+        {
+          "va": "100cc59c",
+          "disassembly": "100cc59c:\td9 7c 24 24          \tfnstcw WORD PTR [esp+0x24]"
+        },
+        {
+          "va": "100cc5ad",
+          "disassembly": "100cc5ad:\td9 6c 24 28          \tfldcw  WORD PTR [esp+0x28]"
+        },
+        {
+          "va": "100cc5d9",
+          "disassembly": "100cc5d9:\td9 7c 24 24          \tfnstcw WORD PTR [esp+0x24]"
+        },
+        {
+          "va": "100cc5ea",
+          "disassembly": "100cc5ea:\td9 6c 24 28          \tfldcw  WORD PTR [esp+0x28]"
+        },
+        {
+          "va": "100cc5f9",
+          "disassembly": "100cc5f9:\td9 6c 24 24          \tfldcw  WORD PTR [esp+0x24]"
+        },
+        {
+          "va": "100cc706",
+          "disassembly": "100cc706:\td9 7c 24 34          \tfnstcw WORD PTR [esp+0x34]"
+        },
+        {
+          "va": "100cc717",
+          "disassembly": "100cc717:\td9 6c 24 38          \tfldcw  WORD PTR [esp+0x38]"
+        },
+        {
+          "va": "100cc798",
+          "disassembly": "100cc798:\td9 6c 24 34          \tfldcw  WORD PTR [esp+0x34]"
+        },
+        {
+          "va": "100cc7c6",
+          "disassembly": "100cc7c6:\td9 7c 24 34          \tfnstcw WORD PTR [esp+0x34]"
+        },
+        {
+          "va": "100cc7d7",
+          "disassembly": "100cc7d7:\td9 6c 24 38          \tfldcw  WORD PTR [esp+0x38]"
+        },
+        {
+          "va": "100cc7e1",
+          "disassembly": "100cc7e1:\td9 6c 24 34          \tfldcw  WORD PTR [esp+0x34]"
+        },
+        {
+          "va": "100cc857",
+          "disassembly": "100cc857:\td9 7c 24 24          \tfnstcw WORD PTR [esp+0x24]"
+        },
+        {
+          "va": "100cc868",
+          "disassembly": "100cc868:\td9 6c 24 28          \tfldcw  WORD PTR [esp+0x28]"
+        },
+        {
+          "va": "100cc894",
+          "disassembly": "100cc894:\td9 7c 24 24          \tfnstcw WORD PTR [esp+0x24]"
+        },
+        {
+          "va": "100cc8a5",
+          "disassembly": "100cc8a5:\td9 6c 24 28          \tfldcw  WORD PTR [esp+0x28]"
+        },
+        {
+          "va": "100cc8b4",
+          "disassembly": "100cc8b4:\td9 6c 24 24          \tfldcw  WORD PTR [esp+0x24]"
+        }
+      ]
+    },
+    {
+      "member": "drivers/nglide/voodoo2a.dll",
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "bytes": 69120,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/nglide/voodoo2a.dll",
+      "image_base": "60000000",
+      "sections": [
+        ".code",
+        ".idata",
+        ".data",
+        ".bss",
+        ".edata",
+        ".reloc",
+        ".rsrc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 28,
+      "candidates": [
+        {
+          "va": "60004d8c",
+          "disassembly": "60004d8c:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004da2",
+          "disassembly": "60004da2:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "60004dc4",
+          "disassembly": "60004dc4:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004ddb",
+          "disassembly": "60004ddb:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004dfa",
+          "disassembly": "60004dfa:\td9 7c 24 1c          \tfnstcw WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004e10",
+          "disassembly": "60004e10:\td9 6c 24 20          \tfldcw  WORD PTR [esp+0x20]"
+        },
+        {
+          "va": "60004e4e",
+          "disassembly": "60004e4e:\t9b d9 6c 24 1c       \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "60004e58",
+          "disassembly": "60004e58:\td9 6c 24 1c          \tfldcw  WORD PTR [esp+0x1c]"
+        },
+        {
+          "va": "600060f2",
+          "disassembly": "600060f2:\tdb e3                \tfninit"
+        },
+        {
+          "va": "600060f4",
+          "disassembly": "600060f4:\td9 3c 24             \tfnstcw WORD PTR [esp]"
+        },
+        {
+          "va": "60008c72",
+          "disassembly": "60008c72:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60008c8a",
+          "disassembly": "60008c8a:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60008c8d",
+          "disassembly": "60008c8d:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a4a7",
+          "disassembly": "6000a4a7:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a4bc",
+          "disassembly": "6000a4bc:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a50d",
+          "disassembly": "6000a50d:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a585",
+          "disassembly": "6000a585:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a596",
+          "disassembly": "6000a596:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a6ef",
+          "disassembly": "6000a6ef:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a6f9",
+          "disassembly": "6000a6f9:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a701",
+          "disassembly": "6000a701:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a7d4",
+          "disassembly": "6000a7d4:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a7de",
+          "disassembly": "6000a7de:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a7e6",
+          "disassembly": "6000a7e6:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000a9a6",
+          "disassembly": "6000a9a6:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6000be0a",
+          "disassembly": "6000be0a:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6000be24",
+          "disassembly": "6000be24:\t36 d9 2f             \tfldcw  WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6000be2a",
+          "disassembly": "6000be2a:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        }
+      ]
+    },
+    {
+      "member": "drivers/softtri/softtria.dll",
+      "sha256": "9479203471f4dd615788769bac365043d903505af370c48df69e5d6a1e6f8732",
+      "bytes": 277504,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/drivers/softtri/softtria.dll",
+      "image_base": "60000000",
+      "sections": [
+        ".code",
+        ".idata",
+        ".data",
+        ".bss",
+        ".edata",
+        ".reloc",
+        ".rsrc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 23,
+      "candidates": [
+        {
+          "va": "6003505c",
+          "disassembly": "6003505c:\td9 3c 24             \tfnstcw WORD PTR [esp]"
+        },
+        {
+          "va": "60035068",
+          "disassembly": "60035068:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003506d",
+          "disassembly": "6003506d:\td9 6c 24 04          \tfldcw  WORD PTR [esp+0x4]"
+        },
+        {
+          "va": "60036db2",
+          "disassembly": "60036db2:\tdb e3                \tfninit"
+        },
+        {
+          "va": "60036db4",
+          "disassembly": "60036db4:\td9 3c 24             \tfnstcw WORD PTR [esp]"
+        },
+        {
+          "va": "60038c32",
+          "disassembly": "60038c32:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60038c4a",
+          "disassembly": "60038c4a:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "60038c4d",
+          "disassembly": "60038c4d:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "60039f56",
+          "disassembly": "60039f56:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "60039f6b",
+          "disassembly": "60039f6b:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "60039fbc",
+          "disassembly": "60039fbc:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003a034",
+          "disassembly": "6003a034:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003a045",
+          "disassembly": "6003a045:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003a19e",
+          "disassembly": "6003a19e:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003a1a8",
+          "disassembly": "6003a1a8:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003a1b0",
+          "disassembly": "6003a1b0:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003a283",
+          "disassembly": "6003a283:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003a28d",
+          "disassembly": "6003a28d:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003a295",
+          "disassembly": "6003a295:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003a455",
+          "disassembly": "6003a455:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "6003bc7a",
+          "disassembly": "6003bc7a:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6003bc94",
+          "disassembly": "6003bc94:\t36 d9 2f             \tfldcw  WORD PTR ss:[edi]"
+        },
+        {
+          "va": "6003bc9a",
+          "disassembly": "6003bc9a:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        }
+      ]
+    },
+    {
+      "member": "eacsnd.dll",
+      "sha256": "63f3d1bff4e6526753524423be47146e82416d1b170cd7b2e0133699587b01b3",
+      "bytes": 44032,
+      "reference_path": "analysis/captures/modern-differences/driver-fpu-members/eacsnd.dll",
+      "image_base": "00400000",
+      "sections": [
+        ".code",
+        ".idata",
+        ".data",
+        ".bss",
+        ".edata",
+        ".reloc",
+        ".rsrc"
+      ],
+      "mpress_named_sections": false,
+      "candidate_count": 20,
+      "candidates": [
+        {
+          "va": "00403808",
+          "disassembly": "403808:\tdb e3                \tfninit"
+        },
+        {
+          "va": "0040380a",
+          "disassembly": "40380a:\td9 3c 24             \tfnstcw WORD PTR [esp]"
+        },
+        {
+          "va": "00403b7c",
+          "disassembly": "403b7c:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "00403b94",
+          "disassembly": "403b94:\t9b db e3             \tfinit"
+        },
+        {
+          "va": "00403b97",
+          "disassembly": "403b97:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "00403e96",
+          "disassembly": "403e96:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "00403eab",
+          "disassembly": "403eab:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "00403efc",
+          "disassembly": "403efc:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "00403f74",
+          "disassembly": "403f74:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "00403f85",
+          "disassembly": "403f85:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "004040de",
+          "disassembly": "4040de:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "004040e8",
+          "disassembly": "4040e8:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "004040f0",
+          "disassembly": "4040f0:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "004041c3",
+          "disassembly": "4041c3:\t9b d9 3c 24          \tfstcw  WORD PTR [esp]"
+        },
+        {
+          "va": "004041cd",
+          "disassembly": "4041cd:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "004041d5",
+          "disassembly": "4041d5:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "00404395",
+          "disassembly": "404395:\td9 2c 24             \tfldcw  WORD PTR [esp]"
+        },
+        {
+          "va": "00406e6d",
+          "disassembly": "406e6d:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        },
+        {
+          "va": "00406e87",
+          "disassembly": "406e87:\t36 d9 2f             \tfldcw  WORD PTR ss:[edi]"
+        },
+        {
+          "va": "00406e8d",
+          "disassembly": "406e8d:\t36 d9 3f             \tfnstcw WORD PTR ss:[edi]"
+        }
+      ]
+    }
+  ],
+  "identical_member_groups": [
+    {
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "members": [
+        "drivers/dgvoodoo/voodoo2a.dll",
+        "drivers/glide3x/voodoo2a.dll",
+        "drivers/nglide/voodoo2a.dll"
+      ]
+    }
+  ],
+  "verified_dx8_rounding_pair": {
+    "member": "drivers/dx8/dx8a.dll",
+    "start": "6000b631",
+    "end_exclusive": "6000b664",
+    "sha256": "822d52e074537538b5542b456eba4920ec1724cbd71e331f1431a980e3d0c509",
+    "assembly": "analysis/captures/modern-differences/driver-fpu-members/dx8-rounding-save-restore.asm",
+    "mask": "00000c00",
+    "save_cell": "6001ef78",
+    "contract": "First helper saves incoming CW, loads CW OR0c00h; second reloads saved CW. Precision bits0300h unaffected by OR mask.",
+    "register_effects": "O=(incoming ECX & ffff0000h)|CW. Save helper returns EAX=O, ECX=O|0c00h; restore helper returns EAX=ECX=saved DWORD. Neither promises incoming ECX preservation.",
+    "limits": "Callers, balanced pairing, concurrent ownership and runtime control state not validated."
+  },
+  "limits": [
+    "Linear executable-section decode only; embedded data, packing and alternate instruction boundaries can produce false or missing candidates.",
+    "MPRESS-named sections are not unpacked; their candidate counts are not validated code.",
+    "Not an original-versus-Modern DLL comparison or proof any candidate is reached by the game.",
+    "Only verified DX8 helper contract interpreted; no global all-80-bit or precision-regression conclusion.",
+    "No DLL/game execution, instruction probes, executable patching or Ghidra changes."
+  ]
+}
