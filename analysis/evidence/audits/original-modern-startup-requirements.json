@@ -126,6 +126,13 @@
           "assembly_sha256": "638133bf36d85b7e7f20767d4183b94ee89b1348ae61c2adb8be70dfab30c672"
         },
         {
+          "start": "004ff38c",
+          "end": "004ff3ce",
+          "bytes_sha256": "f6352f7b341019d61f3d867ff822c025a22bceeba8699bd7e3a9c1b8709b148f",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004ff38c.asm",
+          "assembly_sha256": "30be0be780030007788b47de0fc6e19d891c4d02a1cd54b7a0b396ac61a11fe0"
+        },
+        {
           "start": "004516a0",
           "end": "004516fa",
           "bytes_sha256": "9c1dbe308f9023abd31382d835986dd67e3c5b8eed70d85101beaa0ee35f098d",
@@ -145,6 +152,11 @@
           "iat": "00534458",
           "name": "GetDeviceCaps",
           "dll": "GDI32.dll"
+        },
+        {
+          "iat": "005344c0",
+          "name": "ExitProcess",
+          "dll": "KERNEL32.dll"
         },
         {
           "iat": "005344c8",
@@ -354,6 +366,13 @@
           "assembly_sha256": "f89485136b703160ac2efce99f2f2e70727b947e118e69619d284baaaeac7181"
         },
         {
+          "start": "004ff38c",
+          "end": "004ff3ce",
+          "bytes_sha256": "f6352f7b341019d61f3d867ff822c025a22bceeba8699bd7e3a9c1b8709b148f",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004ff38c.asm",
+          "assembly_sha256": "1733dfbda6498134f12998e4765f74f466aa79ad80ec243e4d6ad6821464e84c"
+        },
+        {
           "start": "004516a0",
           "end": "004516f4",
           "bytes_sha256": "11a3aec02d8fca7c783036ff38d51793fde2b5ca4f69991a20bf0666e0e8e71e",
@@ -373,6 +392,11 @@
           "iat": "00534458",
           "name": "GetDeviceCaps",
           "dll": "GDI32.dll"
+        },
+        {
+          "iat": "005344c0",
+          "name": "ExitProcess",
+          "dll": "KERNEL32.dll"
         },
         {
           "iat": "005344c8",
@@ -535,7 +559,7 @@
     "message_flags": "00000031",
     "input": "EAX unchecked table index",
     "post_dialog_call": "004f2a7d; clears EAX then calls004dfd04",
-    "limit": "Termination route includes indirect callbacks; complete nonreturn guarantee not established."
+    "limit": "Retained terminal ExitProcess boundary is verified; pre-exit hook ownership/completion remains unverified."
   },
   "removed_texture_resource_log": {
     "entry": "004b5ea0",
@@ -793,6 +817,34 @@
     "return": "zero or pointer to shared output buffer, not owned allocation",
     "filter": "GetFileAttributesA != ffffffff and attribute bit10h clear",
     "limit": "Matching instructions and IAT names do not establish identical filesystem/provider results or reentrant use."
+  },
+  "retained_termination_boundary": {
+    "identical_ranges": [
+      {
+        "start": "004f2a7d",
+        "end_exclusive": "004f2a84",
+        "bytes": 7,
+        "identical_sha256": "b8a7edca2e15c5a6bef3eca229693675dd4e603136f5a5fa0dafe7770fe19e9e"
+      },
+      {
+        "start": "004dfd04",
+        "end_exclusive": "004dfd55",
+        "bytes": 81,
+        "identical_sha256": "4b6c80298ff1619d5a90ef06470b1de4a9149111aa779240af903e0bc5303d4f"
+      },
+      {
+        "start": "004ff38c",
+        "end_exclusive": "004ff3ce",
+        "bytes": 66,
+        "identical_sha256": "f6352f7b341019d61f3d867ff822c025a22bceeba8699bd7e3a9c1b8709b148f"
+      }
+    ],
+    "final_call": "004ff3c7",
+    "iat": "005344c0",
+    "import": "ExitProcess",
+    "argument": "pushed EBX",
+    "ordinary_api_contract": "nonreturning",
+    "limit": "Pre-exit callbacks may block, terminate or transfer control; their complete ownership/state is not validated."
   },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",

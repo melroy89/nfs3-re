@@ -86,7 +86,7 @@ All12 original autoanalysis entry locators overlapping `004b5db1..004b67b0` now 
 | Original entry | Inspected role | Evidence route | Remaining boundary |
 |---|---|---|---|
 | `004b59c0` | Renderer initializer tail | [Report](original-modern-renderer-initialization.md) | Mapped Modern counterpart; complete driver/callee behavior remains partial. |
-| `004b5e50` | Corruption diagnostic | [Report](original-modern-startup-requirements.md) | Body and tables checked; complete nonreturn/caller preconditions unresolved. |
+| `004b5e50` | Corruption diagnostic | [Report](original-modern-startup-requirements.md) | Body/tables and terminal API checked; pre-exit hooks and caller preconditions unresolved. |
 | `004b5ea0` | Texture-resource log | [Report](original-modern-startup-requirements.md) | Threshold and formatted output checked; descriptor units and output destination unresolved. |
 | `004b5f10` | Resource admission checks | [Report](original-modern-startup-requirements.md) | Mapped Modern counterpart; API failures and directory selection remain partial. |
 | `004b6020` | Subsystem setup | [Report](original-modern-resolution-defaults.md) | Mapped Modern counterpart; all downstream initialization effects not qualified. |

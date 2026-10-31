@@ -23,7 +23,7 @@ The change also discards fractional MiB separately. Hypothetical8.75-MiB and7.5-
 
 Both pass **EAX=1 MiB** to helper `004516a0`, testing its result and entering a warning branch on zero. The Modern message explicitly says the hard drive has less than1MB free. The follow-up below now traces the free-byte arithmetic and geometry wrapper. Directory selection/failure and actual free space remain untested.
 
-Original low-memory and disk warnings call MessageBoxA with flags31h and select text/caption pointers through the incoming index. Return2 leads to `004f2a7d`. Modern routes both through **`004b5728`**, which uses flags51031h and a shared caption, calls the same termination helper for return2, otherwise returns. The desktop-depth failure uses separate **`004b570c`**, flags51010h, followed by `004f2a7d` regardless of dialog result. Complete termination behavior/nonlocal exit guarantees are not established here.
+Original low-memory and disk warnings call MessageBoxA with flags31h and select text/caption pointers through the incoming index. Return2 leads to `004f2a7d`. Modern routes both through **`004b5728`**, which uses flags51031h and a shared caption, calls the same termination helper for return2, otherwise returns. The desktop-depth failure uses separate **`004b570c`**, flags51010h, followed by `004f2a7d` regardless of dialog result. The terminal ExitProcess boundary is verified in the follow-up below; pre-exit callback completion/nonlocal behavior remains unverified.
 
 ## Added desktop-depth check
 
@@ -35,7 +35,7 @@ This branch checks the returned capability directly; it does not multiply by a s
 
 Modern uses PUSHAD/POPAD, preserving the incoming general registers including EAX when its ordinary path returns. It does not provide an ordinary Boolean success result. Original saves EBX/ECX/EDX/ESI/EDI/EBP, consumes incoming EAX as its diagnostic table index and leaves an operation-dependent EAX result. The two should not receive one guessed C success-return signature.
 
-Verified changes include memory-sum order/units, warning selection and flags, removed local logging and the added desktop check. Historical attribution, full localization fallback, resource API failures, directory selection, termination and observed startup acceptance remain unresolved. This is an independently documented code delta, not a claim that every system-requirement path in either executable has been compared.
+Verified changes include memory-sum order/units, warning selection and flags, removed local logging and the added desktop check. Historical attribution, full localization fallback, resource API failures, directory selection, pre-exit hook completion and observed startup acceptance remain unresolved. This is an independently documented code delta, not a claim that every system-requirement path in either executable has been compared.
 
 ## Disk-space follow-up: signed wrapping product becomes overflow-aware admission
 
@@ -63,7 +63,7 @@ The expanded startup audit captures original `004b5e50..004b5e9a` and proves all
 
 The helper consumes incoming **EAX as an unchecked index**, copies two six-DWORD tables from `004b55c8` and `004b55e0` into local storage, and uses the indexed pointers as MessageBoxA text and caption. It passes null owner and flags31h through IAT `00534764`. The first table selects the English reinstallation/corruption warning at indices0,3,4,5, German at1 and French at2. The second has six different warning-caption strings. Full pointer/text entries are retained in the [evidence manifest](evidence/audits/original-modern-startup-requirements.json); the encoded strings are decoded with Latin-1 for byte-preserving display, not a proven Windows code-page contract.
 
-After the dialog, the return value is **not tested**: execution calls `004f2a7d` unconditionally. That seven-byte thunk clears EAX and calls `004dfd04`. The captured downstream body invokes indirect hooks and routes through `004dfd30` toward `004ff38c`. This establishes an unconditional termination-route request after the diagnostic, but the callbacks and final exit routine remain outside the complete nonreturn proof. Do not declare an ordinary success/failure return based on the visible epilogue after the call, or mark the function nonreturning solely from intent.
+After the dialog, the return value is **not tested**: execution calls `004f2a7d` unconditionally. That seven-byte thunk clears EAX and calls `004dfd04`. The captured downstream body invokes indirect hooks and routes through `004dfd30` toward `004ff38c`. The follow-up below verifies the final ExitProcess boundary using existing research and identical original/Modern bytes. The routine has no supported ordinary returning success/failure contract; pre-exit callback behavior remains separate.
 
 On any ordinary return from the helper, ECX, EDX, ESI, EDI and EBP are restored. EAX is call-dependent; EBX is not saved by this helper, and its preservation would require callee contracts. No index bounds check precedes either stack-table access, so a maintained interface must establish index0..5 at callers rather than treating arbitrary integers as a supported input domain.
 
@@ -115,7 +115,7 @@ The larger helper's observed sequence is:
 2. The drive probe constructs a drive-root string, calls imported **GetDriveTypeA** via IAT `00534518`, and accepts only literal return5. If the first installation-path drive is accepted, the admission helper displays a language-indexed message saying the game must first be installed, then calls `004dfd04` with EAX0. Message tables have six entries; the global index is not locally bounds-checked.
 3. If the `remote` prefix helper returns nonzero, it takes the ordinary return without scanning further drives.
 4. Otherwise it scans drive indices0..25. For each accepted drive type it changes the template's first byte to `A + index` and passes it to enumeration helper `004f0330` (traced below). A nonzero result exits the scan successfully. The string is **drive-relative** (`C:NFS3.EXE`), not `C:\NFS3.EXE`; reconstructing it as a root-absolute path would change semantics.
-5. Exhaustion displays the second six-entry table's message requiring the game CD in the CD-ROM drive, then calls `004dfd04` with EAX0. The same callback/nonreturn limitations as the earlier termination-route discussion apply.
+5. Exhaustion displays the second six-entry table's message requiring the game CD in the CD-ROM drive, then calls `004dfd04` with EAX0. The terminal API is nonreturning under its ordinary contract; pre-exit callback completion remains unverified.
 
 The drive-type wrapper is statically tied to its actual import; the diagnostic wording and scan establish an installation/media admission role. They do **not** establish what every path/resource helper verifies, authentic media identity, successful asset access or the complete original protection mechanism. The helper preserves its six saved non-EAX registers on an ordinary return, but does not provide a defined success Boolean to startup.
 
@@ -151,3 +151,19 @@ The old admission caller only tests EAX for zero/nonzero. With its drive-relativ
 Shared handle, pattern, prefix and output buffers make these helpers stateful: starting a new search can close the previous search, and later enumeration can overwrite the returned pathname. A C reconstruction must model that lifetime/aliasing or explicitly document a changed API. These bodies establish no local synchronization or caller-owned enumeration state; concurrent or nested use requires separate ownership analysis. Equal code and initial handle values do not prove equal directory contents, timing or runtime results.
 
 This resolves the formerly anonymous `004f0330` boundary for the removed media scan. Remaining work concerns actual path/provider results, other callers and the broader Modern startup policy. No enumeration, file lookup, CD access, game execution or Ghidra edit was performed.
+
+## Shared termination chain reaches ExitProcess
+
+This follow-up reuses the established [zero-status exit-boundary research](detailed-analysis-notes.md#copy-descriptor-slots-and-zero-status-exit-boundary) and verifies it against **both** pinned EXEs. Earlier wording in this chapter left the final exit routine unresolved; that was broader than the available evidence. The audit now checks154 identical instruction bytes across these three ranges:
+
+| Range, end exclusive | Role |
+|---|---|
+| `004f2a7d..004f2a84` | Clear EAX, call `004dfd04`; the meaningful zero-status entry sequence |
+| `004dfd04..004dfd55` | Finalizer and downstream wrapper, with mutable hooks and conditional cleanup before tail-jumping to `004ff38c` |
+| `004ff38c..004ff3ce` | Mode-dependent cleanup paths join at `004ff3c6`; push EBX and call imported ExitProcess at `004ff3c7` |
+
+The audit asserts both binaries' IAT `005344c0` resolves to **ExitProcess**, and the final PUSH/CALL instruction bytes match. Under that API's ordinary contract the final call does not return. Provided preceding cleanup calls return normally, the inspected branch paths converge on that call; a visible epilogue after an earlier exit request is not evidence of a supported ordinary Boolean/working-value return.
+
+This does not prove every invocation reaches the API promptly. Mutable cleanup hooks may block, terminate earlier or transfer control, and complete hook ownership/reentrancy is not validated here. The final argument is the value in EBX at the API call; preserving intended zero-status semantics through arbitrary modified callbacks requires their register/state contracts. Those limits concern pre-exit execution and status provenance, **not an unidentified final termination target**.
+
+The seven-byte thunk range deliberately stops after its call. Existing research records that saved analysis extends the function through padding and copy-kernel jump-table data; those bytes must not be treated as executable continuation or a returning ABI. No Ghidra boundary was changed in this pass. The retained chain is shared, so the original/Modern diagnostic differences concern their admission/reporting/call sites rather than a newly introduced ExitProcess import or rewritten final exit primitive. No finalizer, callback, dialog or process-exit API was executed.

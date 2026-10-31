@@ -47,7 +47,7 @@ The recent static audits were rerun successfully after the following findings we
 
 | Evidence route | Added finding | Remaining boundary |
 |---|---|---|
-| [Startup requirements](original-modern-startup-requirements.md) | Removed corruption diagnostic, texture-resource log, DirectDraw capability probe and installation/media admission helpers; exact bodies/tables and caller branches retained. | Complete termination, path/resource helpers, provider behavior and historical attribution remain incomplete. |
+| [Startup requirements](original-modern-startup-requirements.md) | Removed corruption diagnostic, texture-resource log, DirectDraw capability probe and installation/media admission helpers; exact bodies/tables and caller branches retained. | Pre-exit hook completion, path/API failure behavior, provider results and historical attribution remain incomplete. |
 | [Worker/shutdown](original-modern-input-worker.md#complete-shutdown-envelope-around-the-worker-change) | Complete original/Modern shutdown call order, local x87-reset removal, original no-op and hook-cleanup behavior. | All teardown ownership and actual completion/synchronization unverified. |
 | [Voodoo candidate pair](original-modern-dll-candidates.md) | Descriptor setup, dynamic sorted mode producer, extra published slot and resolver-backed Glide dependencies. | Legacy provenance, final slot ownership, provider contracts and rendering unverified. |
 | [Logo producer](original-modern-frontend-page.md#logo-state-producer-preserves-eax-two-callers-discard-its-working-value) | Additional EAX preservation; both inspected producer callers overwrite the working result before use. | Other callers, memory outputs, flags and x87 equivalence not established. |

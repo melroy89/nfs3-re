@@ -7468,7 +7468,7 @@
         "original_entry": "004b59c0",
         "role": "Renderer initializer tail",
         "report": "analysis/original-modern-renderer-initialization.md",
-        "report_sha256": "0e9e2cac9efd1cb9e6e7e64aaee0e0ff37dbb89fc6d18cfcdd6a318dcad4143a",
+        "report_sha256": "a751ad6bede13a0656896e3e9dbadce2a8578ae23af342122e39e898debf8d9a",
         "remaining": "Mapped Modern counterpart; complete driver/callee behavior remains partial.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7476,15 +7476,15 @@
         "original_entry": "004b5e50",
         "role": "Corruption diagnostic",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "4345bc374e71886fd51e5595ff12feb2d3d0c6b769983fa4e1ab4954897cccf5",
-        "remaining": "Body and tables checked; complete nonreturn/caller preconditions unresolved.",
+        "report_sha256": "cad2b4d4ed1d13a29355d741ff917e558e9db30a9009432e1678ff6861facb29",
+        "remaining": "Body/tables and terminal API checked; pre-exit hooks and caller preconditions unresolved.",
         "status": "entry classified; semantic validation partial"
       },
       {
         "original_entry": "004b5ea0",
         "role": "Texture-resource log",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "4345bc374e71886fd51e5595ff12feb2d3d0c6b769983fa4e1ab4954897cccf5",
+        "report_sha256": "cad2b4d4ed1d13a29355d741ff917e558e9db30a9009432e1678ff6861facb29",
         "remaining": "Threshold and formatted output checked; descriptor units and output destination unresolved.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7492,7 +7492,7 @@
         "original_entry": "004b5f10",
         "role": "Resource admission checks",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "4345bc374e71886fd51e5595ff12feb2d3d0c6b769983fa4e1ab4954897cccf5",
+        "report_sha256": "cad2b4d4ed1d13a29355d741ff917e558e9db30a9009432e1678ff6861facb29",
         "remaining": "Mapped Modern counterpart; API failures and directory selection remain partial.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7516,7 +7516,7 @@
         "original_entry": "004b62a0",
         "role": "Six-byte remote prefix test",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "4345bc374e71886fd51e5595ff12feb2d3d0c6b769983fa4e1ab4954897cccf5",
+        "report_sha256": "cad2b4d4ed1d13a29355d741ff917e558e9db30a9009432e1678ff6861facb29",
         "remaining": "Body and compare semantics checked; global-source ownership and other callers pending.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7524,7 +7524,7 @@
         "original_entry": "004b6320",
         "role": "Installation/media admission",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "4345bc374e71886fd51e5595ff12feb2d3d0c6b769983fa4e1ab4954897cccf5",
+        "report_sha256": "cad2b4d4ed1d13a29355d741ff917e558e9db30a9009432e1678ff6861facb29",
         "remaining": "Branches, CWD construction and shared enumeration checked; API failures/provider results untested.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7556,7 +7556,7 @@
         "original_entry": "004b6590",
         "role": "DirectDraw capability probe",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "4345bc374e71886fd51e5595ff12feb2d3d0c6b769983fa4e1ab4954897cccf5",
+        "report_sha256": "cad2b4d4ed1d13a29355d741ff917e558e9db30a9009432e1678ff6861facb29",
         "remaining": "Return paths and caller gate checked; provider interfaces/runtime untested.",
         "status": "entry classified; semantic validation partial"
       }

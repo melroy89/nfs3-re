@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "1467c137c5624e4248f9e08c9edd84c184354e86cba0be42b6c4baba9f54368f"
+      "sha256": "590636ecd445a8ccc38960502df47e5297633427730f04d80929c60466a592fd"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -293,7 +293,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-initialization.md",
-      "sha256": "0e9e2cac9efd1cb9e6e7e64aaee0e0ff37dbb89fc6d18cfcdd6a318dcad4143a"
+      "sha256": "a751ad6bede13a0656896e3e9dbadce2a8578ae23af342122e39e898debf8d9a"
     },
     {
       "path": "analysis/original-modern-renderer-lifecycle.md",
@@ -301,7 +301,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "92ba2881bbdc7415531753e651015700b7156af20d70fb6da4d846f4a33e80c0"
+      "sha256": "40d3962a7fdc6bdb058435ae29430d803edd2f8ad2e8d2ccc5e2a24003ee7316"
     },
     {
       "path": "analysis/original-modern-replay-list-cursor.md",
@@ -373,7 +373,7 @@
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
-      "sha256": "4345bc374e71886fd51e5595ff12feb2d3d0c6b769983fa4e1ab4954897cccf5"
+      "sha256": "cad2b4d4ed1d13a29355d741ff917e558e9db30a9009432e1678ff6861facb29"
     },
     {
       "path": "analysis/original-modern-state14.md",

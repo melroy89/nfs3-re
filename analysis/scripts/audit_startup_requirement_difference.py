@@ -16,12 +16,12 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
         spans=([(0x4b5f10,0x4b5fee),(0x4b608b,0x4b6097)] if label=='original' else [(0x4b5748,0x4b57c1),(0x4b570c,0x4b5746),(0x4b5c07,0x4b5c11)])
-        spans += [(0x4b5e50,0x4b5e9a),(0x4b5ea0,0x4b5f0b),(0x4b6590,0x4b67ac),(0x4b62a0,0x4b6311),(0x4b6320,0x4b6400),(0x4f0330,0x4f042b),(0x4f0280,0x4f032a),(0x4f9390,0x4f93f0),(0x4e33a0,0x4e3401),(0x4f93f0,0x4f9461),(0x4eb390,0x4eb3bf),(0x4b5860,0x4b58bb),(0x4f4b80,0x4f4ba1),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55)]
+        spans += [(0x4b5e50,0x4b5e9a),(0x4b5ea0,0x4b5f0b),(0x4b6590,0x4b67ac),(0x4b62a0,0x4b6311),(0x4b6320,0x4b6400),(0x4f0330,0x4f042b),(0x4f0280,0x4f032a),(0x4f9390,0x4f93f0),(0x4e33a0,0x4e3401),(0x4f93f0,0x4f9461),(0x4eb390,0x4eb3bf),(0x4b5860,0x4b58bb),(0x4f4b80,0x4f4ba1),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55),(0x4ff38c,0x4ff3ce)]
         spans += [(0x4516a0,0x4516fa if label=='original' else 0x4516f4),(0x4f07d0,0x4f083e)]
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end':f'{end:08x}','bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
-        imports=[{'iat':f'{i.address:08x}','name':i.name.decode(),'dll':d.dll.decode()} for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x534580,0x534740,0x534754,0x534458,0x534764,0x534500,0x534514,0x534570,0x53458c,0x5344dc,0x534518,0x5345f4,0x5344c8,0x5344cc,0x5344d0,0x534520)]
+        imports=[{'iat':f'{i.address:08x}','name':i.name.decode(),'dll':d.dll.decode()} for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x534580,0x534740,0x534754,0x534458,0x534764,0x534500,0x534514,0x534570,0x53458c,0x5344dc,0x534518,0x5345f4,0x5344c8,0x5344cc,0x5344d0,0x534520,0x5344c0)]
         item={'path':relative,'sha256':expected,'spans':rows,'imports':imports}
         if label=='official_modern':item['messages']={f'{a:08x}':pe.get_data(a-0x400000,240).split(b'\0')[0].decode() for a in (0x53d27a,0x53d29a,0x53d202)}
         result['binaries'][label]=item
@@ -35,7 +35,7 @@ def main():
         'modern_same_address': '74 NOP bytes; not proof all diagnostic behavior disappeared',
         'tables': {}, 'message_flags': '00000031', 'input': 'EAX unchecked table index',
         'post_dialog_call': '004f2a7d; clears EAX then calls004dfd04',
-        'limit': 'Termination route includes indirect callbacks; complete nonreturn guarantee not established.'}
+        'limit': 'Retained terminal ExitProcess boundary is verified; pre-exit hook ownership/completion remains unverified.'}
     for va in (0x4b55c8,0x4b55e0):
         pointers = struct.unpack('<6I', original.get_data(va-0x400000,24))
         result['removed_corruption_diagnostic']['tables'][f'{va:08x}'] = [
@@ -132,6 +132,20 @@ def main():
         'admission_call': '004b63ab', 'return': 'zero or pointer to shared output buffer, not owned allocation',
         'filter': 'GetFileAttributesA != ffffffff and attribute bit10h clear',
         'limit': 'Matching instructions and IAT names do not establish identical filesystem/provider results or reentrant use.'}
+    exit_rows = []
+    for start,end in ((0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55),(0x4ff38c,0x4ff3ce)):
+        data = original.get_data(start-0x400000,end-start)
+        assert data == images['official_modern'].get_data(start-0x400000,end-start)
+        exit_rows.append({'start': f'{start:08x}', 'end_exclusive': f'{end:08x}',
+                          'bytes': len(data), 'identical_sha256': hashlib.sha256(data).hexdigest()})
+    assert original.get_data(0xff3c6,8) == bytes.fromhex('532eff15c0445300')
+    for image in images.values():
+        assert any(i.address == 0x5344c0 and i.name == b'ExitProcess'
+                   for d in image.DIRECTORY_ENTRY_IMPORT for i in d.imports)
+    result['retained_termination_boundary'] = {'identical_ranges': exit_rows,
+        'final_call': '004ff3c7', 'iat': '005344c0', 'import': 'ExitProcess',
+        'argument': 'pushed EBX', 'ordinary_api_contract': 'nonreturning',
+        'limit': 'Pre-exit callbacks may block, terminate or transfer control; their complete ownership/state is not validated.'}
     result['limits']=['No memory, disk, desktop, dialog or target API execution.','Memory fields described by exact offsets; no complete API structure/type reconstruction.','Current-directory helper, API failures and diagnostic termination internals are not fully audited here.','No release-note attribution inferred solely from a changed startup routine.']
     (ROOT/'analysis/evidence/audits/original-modern-startup-requirements.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: startup requirement counterparts, caller witnesses, imports and messages')
