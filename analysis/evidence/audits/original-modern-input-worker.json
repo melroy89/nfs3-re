@@ -35,6 +35,13 @@
           "assembly_sha256": "893e64ea7893138f6406c236ce767fe96c8e02e70a035161abe0d4ea5ab65b04"
         },
         {
+          "start": "0048f550",
+          "end": "0048f69a",
+          "sha256": "b008ac4a4b20f2b403063952ae1417421c263190c6675ed036f9db8a5e472f72",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-0048f550.asm",
+          "assembly_sha256": "9f9e888fef99560a5419c5f14d4b59478ccee9f96d56086f5705992bdfdc839c"
+        },
+        {
           "start": "0042dc40",
           "end": "0042dc57",
           "sha256": "6ab3e26cd9b974f52ad0897821cbcc3299edf47150c9e9e7cca44775cf4ad656",
@@ -111,6 +118,13 @@
           "assembly_sha256": "568396df096d27b395a8383c5bdd4cd40c545882fde355cae0088916e76321ae"
         },
         {
+          "start": "0048f550",
+          "end": "0048f69a",
+          "sha256": "b008ac4a4b20f2b403063952ae1417421c263190c6675ed036f9db8a5e472f72",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-0048f550.asm",
+          "assembly_sha256": "9e07b451e1c20489c97bbf19074502d6f84072dcb01adc34294046bc06b421ed"
+        },
+        {
           "start": "0042dc40",
           "end": "0042dc57",
           "sha256": "6ab3e26cd9b974f52ad0897821cbcc3299edf47150c9e9e7cca44775cf4ad656",
@@ -154,6 +168,24 @@
         "00534630": "WaitForMultipleObjectsEx"
       }
     }
+  },
+  "identical_collector": {
+    "start": "0048f550",
+    "end": "0048f69a",
+    "size": 330,
+    "sha256": "b008ac4a4b20f2b403063952ae1417421c263190c6675ed036f9db8a5e472f72"
+  },
+  "initial_callback_table": {
+    "address": "00554e34",
+    "sha256": "bc5d28602448628b616cc86183c80879e5076fb79edd900189025713b94d2c43",
+    "pointers": [
+      "004318b0",
+      "00431740",
+      "004316c0",
+      "004316f0",
+      "004317d0",
+      "00431800"
+    ]
   },
   "limits": [
     "No worker scheduling, shutdown race or compatibility test.",
