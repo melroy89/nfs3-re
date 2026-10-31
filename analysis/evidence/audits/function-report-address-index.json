@@ -345,7 +345,7 @@
     },
     {
       "path": "analysis/original-modern-texture-loading-followup.md",
-      "sha256": "a611247773f2e436c8f29cdf61b9bd2bda0cd4e27c2f3b3ddd52a6650ce5be7c"
+      "sha256": "e9d0770a303b72decf5edd83b194a46c8e768b7c915e1a8fd259fc1f34978eb9"
     },
     {
       "path": "analysis/original-modern-texture-progress.md",
@@ -393,13 +393,13 @@
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
-      "sha256": "2c9b27f2c7a22d6edf7e8f6d14eb9fe67c2073a21f87e045d691fa21a8bc311c"
+      "sha256": "c130e56d16b021ce9611b1734f616e1334a99a0def83c9429047f5240b6dfdea"
     }
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 343,
-    "without_address_mentions": 18
+    "with_address_mentions": 345,
+    "without_address_mentions": 16
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -5784,7 +5784,17 @@
       "changed_bytes": 5,
       "original_sha256": "2b3b38de4821a1f0a9e6f4b7b1c2eae93af2a0d0c75674d61d969c8e2909c90f",
       "modern_sha256": "201ee15d644fab8454dde7cdc537a54255060f0cfd34162c38cc07f96c83f340",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-texture-loading-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00488a80",
+            "00488a8e",
+            "00488a94"
+          ]
+        }
+      ]
     },
     {
       "entry": "00489240",
@@ -6612,7 +6622,17 @@
       "changed_bytes": 2,
       "original_sha256": "a2920f8e9237c0e3134e62596c6d3bac0ade7ffb33c70b9d4a64c8ea5e06b8fa",
       "modern_sha256": "d31e4bddd84ff85edb5b8fa081cb4a39b70bce03de97b049b9bb99e33abf9e6a",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/og-modern-x87-precision.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00495600",
+            "00495614",
+            "0049561f"
+          ]
+        }
+      ]
     },
     {
       "entry": "00495bc0",

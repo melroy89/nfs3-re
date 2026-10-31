@@ -15,7 +15,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[];blobs[label]=[]
-        for start,end in [(0x49c5c0,0x49c5f9),(0x4d3f50,0x4d4075),(0x4d5370,0x4d56a3)]:
+        for start,end in [(0x49c5c0,0x49c5f9),(0x4d3f50,0x4d4075),(0x4d5370,0x4d56a3),(0x488a80,0x48923b),(0x495600,0x4956e1)]:
             data=pe.get_data(start-0x400000,end-start);blobs[label].append(data)
             path=capture/f'{label}-{start:08x}.asm'
             path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -35,10 +35,18 @@ def main():
         assert struct.unpack('<f',old[2][offset:offset+4])[0]==36+i
         assert struct.unpack('<f',new[2][offset:offset+4])[0]==10.5+0.5*i
     assert [i for i,(a,b) in enumerate(zip(old[2],new[2])) if a!=b]==[j for o in offsets for j in (o+2,o+3)]
+    assert old[3][:14]==new[3][:14] and old[3][20:]==new[3][20:]
+    assert old[3][14:20]==bytes.fromhex('ff1580f99e00')
+    assert new[3][14:20]==bytes.fromhex('90a15c3a7a00')
+    assert old[4][:20]==new[4][:20] and old[4][31:]==new[4][31:]
+    assert old[4][20:31]==bytes.fromhex('9bdbe39bd92df4f379009b')
+    assert new[4][20:31]==bytes.fromhex('eb09')+b'\x90'*9
+    result['additional_findings']={'local_car_loader':'00488a80..0048923b: only about query replaced by cache read',
+        'background_renderer':'00495600..004956e1: only FINIT/saved-FLDCW/FWAIT block removed'}
     result['limits']=['No texture allocation, renderer query or loading display execution.',
         'Cached descriptor lifetime, query side effects and visible timing remain separate.']
     (ROOT/'analysis/evidence/audits/texture-loading-followup.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: complete 57/293/819-byte envelopes; descriptor query changes and four progress immediates')
+    print('PASS: five complete envelopes; descriptor query changes, four progress immediates and removed background x87 reset')
 
 
 if __name__=='__main__':main()

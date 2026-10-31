@@ -46,3 +46,9 @@ These four constants account for all eight changed bytes in the 819-byte loader.
 **Bounded work status: done; confidence: verified static comparisons.** Preserve the selected version's descriptor source, removed/retained external calls and float-bit arguments. Do not add a null fallback or treat removed queries as provably pure without qualifying the renderer interface.
 
 Still unverified are actual texture availability/allocation, descriptor lifetime across renderer resets, all DLL implementations, visible texture output and progress timing. Those affect runtime validation and external-interface reconstruction. No executable bytes, saved Ghidra state or maintained reconstruction sources were changed.
+
+## Local car archive loader also reuses the descriptor cache
+
+The expanded [same audit](scripts/audit_texture_loading_followup.py) now verifies complete `00488a80..0048923b` (1,979 bytes), saved as `LoadLocalCarArchiveShapeMetrics`. Its only difference is the six-byte instruction region `00488a8e..00488a94`: original calls `_THRASH_about@0` through `009ef980`; Modern uses NOP plus `MOV EAX,[007a3a5c]`. The following 1,959 bytes and initial 14 bytes are identical. The [manifest](evidence/audits/texture-loading-followup.json) retains full hashes and disassembly.
+
+This establishes another concrete cache consumer. It does not establish a changed archive path, parser, dimensions or installed asset merely because the function is an asset loader. The retained code can still produce different results if the cached descriptor differs from a fresh query or if other callees/data differ. Cache initialization, freshness and query side effects retain the earlier limitations. **Bounded status: done; confidence: verified complete static body.** No asset or target execution was performed.

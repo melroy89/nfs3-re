@@ -22,6 +22,18 @@
           "end_exclusive": "004d56a3",
           "sha256": "da0bb8e3178a5ccf3e7824f624a677f9d3cd783146faccecc8ce2d9dc429fb84",
           "assembly": "analysis/captures/modern-differences/texture-loading-followup/original-004d5370.asm"
+        },
+        {
+          "start": "00488a80",
+          "end_exclusive": "0048923b",
+          "sha256": "2b3b38de4821a1f0a9e6f4b7b1c2eae93af2a0d0c75674d61d969c8e2909c90f",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/original-00488a80.asm"
+        },
+        {
+          "start": "00495600",
+          "end_exclusive": "004956e1",
+          "sha256": "dc064385cc9d3caeb8854c7479fc0c53c69a95592be630ec1909a77ad0847337",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/original-00495600.asm"
         }
       ]
     },
@@ -46,9 +58,25 @@
           "end_exclusive": "004d56a3",
           "sha256": "ab2e6986848033ce1b88ba465055bcda817c46edf0f864acd1300e578b000f26",
           "assembly": "analysis/captures/modern-differences/texture-loading-followup/official_modern-004d5370.asm"
+        },
+        {
+          "start": "00488a80",
+          "end_exclusive": "0048923b",
+          "sha256": "201ee15d644fab8454dde7cdc537a54255060f0cfd34162c38cc07f96c83f340",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/official_modern-00488a80.asm"
+        },
+        {
+          "start": "00495600",
+          "end_exclusive": "004956e1",
+          "sha256": "503b5386e172a0a294f8196e69184e90630d7389895db70dd7aa5c38518f246c",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/official_modern-00495600.asm"
         }
       ]
     }
+  },
+  "additional_findings": {
+    "local_car_loader": "00488a80..0048923b: only about query replaced by cache read",
+    "background_renderer": "00495600..004956e1: only FINIT/saved-FLDCW/FWAIT block removed"
   },
   "limits": [
     "No texture allocation, renderer query or loading display execution.",
