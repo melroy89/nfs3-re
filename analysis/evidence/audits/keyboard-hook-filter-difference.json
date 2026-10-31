@@ -1,0 +1,46 @@
+{
+  "kind": "static-keyboard-hook-filter-comparison",
+  "end_addresses": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004ccc70",
+          "end": "004ccd5a",
+          "sha256": "df972424ec63ace33e85a2a9d00d30b9891a13d436505272b748c5571499a7e6",
+          "bytes": "5356575589e583ec048b5d188b551431f685d20f85a7000000833d4c3d9f00000f849a000000a18412560085c07434f6451f20742ec745fc3800000083fb097514b901000000890d48945500bf0f00000089ceeb5183fb1b754cbf0100000089feeb436a112eff15384753006685c07d15c745fc1d00000083fb1b7529bf0100000089feeb2083fb5b740f83fb5c740a83fb5d740583fb2c750cbe0100000031d289df8955fc85f67416833d8812560000740d8b45fc89faff158812560089c685f67407b801000000eb168b751c56538b7d1457a17c125600502eff15f446530089ec5d5f5e5bc20c00"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004ccb84",
+          "end": "004ccc3f",
+          "sha256": "c2934c9fbb0a0668fc4b6ae761e5d6d698a74ca20b144e4f029768b3342fe3b1",
+          "bytes": "5356575589e5837d14000f8586000000833d4c3d9f0000747d31db833d7c12560000751a8b451c8a18817d18000100007407817d18040100000f94c7eb0b8a5d180fba651c1f0f93c7833d8412560000742ce8f9530200740a80fb09744f80fb1b744ae8e4530200740580fb1b743e80fb5b743980fb5c743480fb5d742f833d8812560000740f80fb2c750a0fb6c7e838100000eb17ff751cff7518ff7514ff3580125600ff15f4465300eb05b80100000089ec5d5f5e5bc20c00"
+        },
+        {
+          "start": "004ccc40",
+          "end": "004ccca4",
+          "sha256": "e63b62a5d2828dc75c735a0f159fd840329b45faef66298377b8d4077f3d7a2d",
+          "bytes": "31c003058412560003058812560085c07451833d80125600007548c7057c125600000000006a00ff35483d9f006884cb4c006a0dff159047530085c07520c7057c12560001000000ff150c455300506a006884cb4c006a02ff1590475300a380125600c3"
+        },
+        {
+          "start": "004f1fd0",
+          "end": "004f1ff0",
+          "sha256": "67c29030b111fa5e2d2a9f5a7d4109ed65c9a5af4240dfc233030efede7e13d5",
+          "bytes": "b011eb02b01251520fb6c050ff15384753006685c00f9cc00fb6c085c05a59c3"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static inspection only; no OS hook behavior observed.",
+    "Original indirect filter callback and intermediate Modern releases not resolved here."
+  ]
+}

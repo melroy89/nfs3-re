@@ -66,8 +66,29 @@ The [startup settings audit](original-modern-startup-policy.md#3-current-setting
 
 This gives **partial static support for MP140-068**: the final setting exists and reaches a changed hook lifecycle, including a type `0x0d` attempt followed by the type 2 fallback. It does not establish the historical replacement of `KeyboardHook` between particular Modern releases, or successful prevention of minimization on Windows NT. The comparison has only original and final Modern baselines; MP120-011's intermediate setting and Windows-version claims remain vendor-only. Follow-up requires the relevant intermediate package for the rename and callback/OS behavior evidence for effectiveness. No such behavior was executed for this finding.
 
+## Hook filter comparison: selected keys and callback contracts
+
+The additional repeatable audit is `python3 analysis/scripts/audit_keyboard_hook_filter_difference.py`; its [hash-pinned full filter spans](evidence/audits/keyboard-hook-filter-difference.json) cover original `004ccc70..004ccd5a`, Modern `004ccb84..004ccc3f`, Modern installation and the modifier wrappers. Ends are exclusive. This supplements the initializer audit; it does not execute hook events.
+
+Both filters forward when hook code is not zero or active state `009f3d4c` is zero. Original takes the virtual key from the full wParam DWORD. Modern decodes only its low byte: in the type `0x0d` mode (`0056127c == 0`) it reads the first byte through lParam and marks down for message `0100h` or `0104h`; in fallback mode it reads the low wParam byte and derives down as the inverse of lParam bit31. The derived down/up value gates screenshot handling downstream, **not** the PreventMinimize key comparisons. Thus matching filter returns are not restricted locally to key-down events.
+
+| Selected event | Original filter | Final Modern filter |
+|---|---|---|
+| Alt+Tab / Alt+Esc | Requires original `00561284 != 0` and lParam bit29; selects scan pairs `38h/0fh` or `38h/01h` | Requires PreventMinimize nonzero and Alt wrapper nonzero; returns 1 |
+| Control+Esc | On original non-Alt path, signed GetKeyState(11h) negative selects `1dh/01h` | Requires PreventMinimize nonzero and Control wrapper nonzero; returns 1 |
+| Keys `5bh`, `5ch`, `5dh` | On the original no-Alt/no-Control path, selects scan pair `0/key` | Requires PreventMinimize nonzero; returns 1 without modifier exclusion |
+| Key `2ch` | On that same original no-Alt/no-Control path, selects scan pair `0/2ch` | Requires ScreenshoterEnabled nonzero, calls `004cdc50` with decoded down/up, then returns 1 |
+
+“Selects” is deliberately distinct from “blocks”: original calls the optional function pointer at `00561288` with EAX=first scan component and EDX=second when a candidate was selected. A null pointer leaves the selection nonzero and returns 1; a present callback's return replaces the selection, so zero forwards through CallNextHookEx instead. The Alt+Tab arm additionally stores 1 at `00559448`. The callback implementation/later effects of that store are outside this bounded comparison. Original modifier branches are ordered: a taken Alt or Control path does not fall through to the unconditional key list when its key comparison misses.
+
+Modern has no corresponding optional-callback veto on these selected blocking branches: `004ccc31` supplies literal EAX=1. Modifier helpers `004f1fd0` and `004f1fd4` use virtual keys `11h` and `12h`, returning a normalized value and ZF derived from signed AX after GetKeyState; the hook branches consume those flags. See the existing [modifier-wrapper comparison](original-modern-menu-input.md). This is a register-and-flags interface, not just a C return-value dependency.
+
+One reconstruction edge case follows from the raw setting values: the installer tests the **wrapping 32-bit sum** of `00561284` and `00561288`, rather than logical OR. Opposite nonzero values can therefore suppress installation (for example -1 and 1); two nonzero `80000000h` values also sum to zero. This is a static arithmetic consequence, not a tested user configuration. Preserve the sum or explicitly document a deliberate compatibility change; signed C addition must not introduce undefined overflow.
+
+These mechanisms explain the final filtering changes but do not prove Windows/Wine hook acceptance, modifier timing, system minimization behavior or the vendor's Windows NT compatibility claim.
+
 ## Release-note mapping and next evidence
 
-The lifecycle changes are relevant to **MP100-040**, the claim that the game no longer repeatedly restores lost focus. They are not sufficient to verify that entire claim: hook callback bodies, activation consumers and any focus-restoration API paths still need tracing. No release-introduction date can be proven from only original and final Modern binaries.
+The lifecycle changes are relevant to **MP100-040**, the claim that the game no longer repeatedly restores lost focus. They are not sufficient to verify that entire claim: activation consumers and any focus-restoration API paths still need tracing. No release-introduction date can be proven from only original and final Modern binaries.
 
-Next: compare hook callbacks and all focus/foreground API use sites; trace the earlier module/class-name producers; trace style/context producers and replacement cursor/input setup; keep the power callback anomaly separate from confirmed runtime behavior. The original and maintained Modern Ghidra databases and both executables remain unchanged.
+Next: resolve the original hook callback target and all focus/foreground API use sites; trace the earlier module/class-name producers; trace style/context producers and replacement cursor/input setup; keep the power callback anomaly separate from confirmed runtime behavior. The original and maintained Modern Ghidra databases and both executables remain unchanged.
