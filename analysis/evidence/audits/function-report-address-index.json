@@ -201,7 +201,7 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "c5afa43fb01251a45a2dbad85018cfaf7fa7fe82e11f226c8addc891e2f6a885"
+      "sha256": "73f4bb65c6871a2eedbb5991cc5e604674a96da34ad69405bf013de167a17cf3"
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -505,7 +505,9 @@
           "path": "analysis/original-modern-music-selection.md",
           "entry_mentioned": true,
           "addresses": [
-            "0040fed0"
+            "0040fed0",
+            "0040fed7",
+            "0040feed"
           ]
         }
       ]
@@ -564,7 +566,8 @@
           "path": "analysis/original-modern-music-selection.md",
           "entry_mentioned": true,
           "addresses": [
-            "0040ff9c"
+            "0040ff9c",
+            "0040ffa1"
           ]
         }
       ]

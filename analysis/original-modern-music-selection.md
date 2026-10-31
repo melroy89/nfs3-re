@@ -180,3 +180,21 @@ The race tune descriptor `tunenames` already establishes `006fbbe4` as its selec
 The Modern saved body union contains 1,113 bytes and five changed in-body bytes; it excludes the 21-byte NOP gap. This audit includes the removed original decision/store instructions. A reconstruction should keep this version-specific state coupling separate from generic menu constraints and preserve the chosen global's initialization/lifetime contract. Incidental EAX/flags also differ on reaching the common continuation; full machine-state equivalence is not assumed.
 
 **Bounded work status: done for the complete function's byte differences; confidence: verified static assignment and existing source-selector evidence.** Required follow-up is destination-state semantics, all writer/consumer paths and actual menu/audio behavior. No game or instruction probes, Ghidra writes or maintained-C edits were performed.
+
+## Direct RNG-call census: music separates from the retained shared generator
+
+The [RNG callsite audit](scripts/audit_rng_callsite_difference.py) regenerates GNU objdump disassembly from both hash-pinned executable files, validates each selected direct CALL's E8 displacement against the PE bytes, and retains the [complete address lists](evidence/audits/rng-callsite-difference.json). This is a decoded direct-call census, not an invocation-frequency or whole-program reachability measurement.
+
+The complete shared generator/seed envelope `004e0d88..004e0e2b` is byte-identical. Original has **194 decoded direct CALL sites** to `004e0d88`; Modern has **191**, all at addresses present in the original list. Exactly three original sites are absent from the Modern list:
+
+| Original site | Original music use | Final-pair interpretation |
+|---|---|---|
+| `0041001a` | Selector `0040ffd0` calls shared generator and uses unsigned remainder modulo 5. | Modern's separately mapped selection/playlist policy replaces this original selector route. |
+| `0041016f` | Setting 11 branch takes unsigned remainder modulo 100; residues 0..50 store style 1, 51..99 style 0. | The original exceptional randomized-style branch is absent from the rewritten loader; Modern fixed-setting parity policy is documented above. Residue counts are not a probability proof. |
+| `0041058f` | Menu setting 0 takes remainder modulo 7, adds 1, remaps result 6 to 2, and stores the byte cursor. | The [music-start report](original-modern-music-start.md) maps Modern menu selection and startup; this old per-call draw is no longer a direct consumer of the shared generator. |
+
+Modern's bounded LCG wrapper `005177cc` has three decoded direct callers: `0040fed7`, `0040feed` and `0040ffa1`, in the already documented race/style initialization and weighted menu-cursor initialization. Its state at `007a32b4` is distinct from the retained shared six-DWORD state `005644e0..005644f4`. This establishes an additional kind of change beyond track ranges: these inspected music routes no longer advance the old shared state through their original direct calls, while the old generator remains available to other subsystems.
+
+The [vehicle-dispatch report](original-modern-vehicle-dispatch.md#7-shared-rng-algorithm-retained-consumption-can-change) independently establishes shared render consumers and retained initial bytes. Changed consumption can alter later shared values under matching seeds and differing call histories; the census does not identify a physical simulation dependency or demonstrate replay/multiplayer desynchronization. Other gates and indirect calls can change execution frequency even at the 191 unchanged direct sites. Linear disassembly can also miss alternate boundaries or decode embedded data; no target instruction was executed.
+
+**Bounded status: done for complete decoded direct-call lists and generator/seed identity. Confidence: verified static within the declared decoding scope.** Original and Modern do not need a same-address counterpart for each new RNG wrapper: the evidence here is a changed music dependency on two distinct generators, not a claimed one-for-one replacement of every old RNG consumer. Complete seed order, synchronization, indirect consumers and observed random trajectories remain unresolved.
