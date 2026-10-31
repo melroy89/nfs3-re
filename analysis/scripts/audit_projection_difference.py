@@ -102,6 +102,11 @@ def main():
     initializer = images[0].get_data(0x23a60,0x4b)
     iterator = images[0].get_data(0x23a20,0x3e)
     assert iterator == images[1].get_data(0x23a20,0x3e)
+    mapper = images[0].get_data(0x72300,0x55)
+    assert mapper == images[1].get_data(0x72300,0x55)
+    camera_values = (0,1,4,3,2,5,6)
+    for image in images:
+        assert struct.unpack('<7h',image.get_data(0x15629e,14)) == camera_values
     assert initializer == images[1].get_data(0x23a60,0x4b)
     assert initializer[0x19:0x32].hex() == '31c04089148538105e0083f8197d0a4089148538105e00ebf1'
     result['indexed_source_candidate'] = {
@@ -117,6 +122,13 @@ def main():
                     'qualification':'Bounded four-cell scan requires cursor0..4 on continuation; reset establishes this for the inspected caller absent intervening mutation.'},
         'later_store_alias_indices':{f'{address:08x}':[f'{((address-0x5e103c)//4+k*0x40000000)&0xffffffff:08x}' for k in range(4)]
                                     for address in (0x5e1020,0x5e102c,0x5e1030,0x5e1038)},
+        'camera_table_producer':{'span':'00472300..00472355','bytes_identical':True,
+            'sha256':hashlib.sha256(mapper).hexdigest(),
+            'input_indices':['006fbba8','006fbbac','006fbbb0','006fbbb4'],
+            'lookup':'Signed WORD0055629e+2*index, implemented by DWORD load then SAR16; no local index check.',
+            'verified_indices_0_through_6':list(camera_values),
+            'conditional_exclusion':'Indices0..6 and no intervening table mutation imply outputs0..6; subsequent successor stores cannot alias the four projection source cells.',
+            'remaining':'Accepted index extent, alternate writers, startup/call order and type8 source producer remain unresolved.'},
         'limits':['Normal entry/control flow only; alternate interior entries are not excluded.',
                   'Later indexed-store range and callback results remain unresolved; this is not a global no-writer proof.']}
     for va,encoded in ((0x4dbc6e,'d8d1dfe09e7602'),(0x4dbc75,'d9c9ddd8'),

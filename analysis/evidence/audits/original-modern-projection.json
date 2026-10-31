@@ -565,6 +565,29 @@
         "bfffffff"
       ]
     },
+    "camera_table_producer": {
+      "span": "00472300..00472355",
+      "bytes_identical": true,
+      "sha256": "c7a544db6f89083a24d0f98c033ad5cc81dd8af65360d383fe4710a8af392411",
+      "input_indices": [
+        "006fbba8",
+        "006fbbac",
+        "006fbbb0",
+        "006fbbb4"
+      ],
+      "lookup": "Signed WORD0055629e+2*index, implemented by DWORD load then SAR16; no local index check.",
+      "verified_indices_0_through_6": [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6
+      ],
+      "conditional_exclusion": "Indices0..6 and no intervening table mutation imply outputs0..6; subsequent successor stores cannot alias the four projection source cells.",
+      "remaining": "Accepted index extent, alternate writers, startup/call order and type8 source producer remain unresolved."
+    },
     "limits": [
       "Normal entry/control flow only; alternate interior entries are not excluded.",
       "Later indexed-store range and callback results remain unresolved; this is not a global no-writer proof."
