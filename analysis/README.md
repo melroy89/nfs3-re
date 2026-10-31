@@ -67,3 +67,5 @@ Use Markdown for small, reviewable findings. Follow [the sharing workflow](../do
 - [Original versus Modern registry paths](original-modern-registry.md): retained online/memory queries, replaced renderer preferences and removed Desktop lookup.
 
 - [Original versus Modern vehicle dispatch](original-modern-vehicle-dispatch.md): helper admission, tick/parity bookkeeping and register preservation.
+
+- [Original versus Modern numeric scale](original-modern-numeric-scale.md): moved counterpart, measured label spacing and scale fallback.
