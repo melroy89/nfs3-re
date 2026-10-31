@@ -1,0 +1,241 @@
+{
+  "kind": "graphics-default-tier-tables",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "body_start": "00472d10",
+      "body_end_exclusive": "00472f19",
+      "body_sha256": "8c7fbe5b845c3ebd29ad2dbb8d6462f58c0d65606eb435da0feb9225e01d9775",
+      "tables": [
+        {
+          "table": "00472168",
+          "destination": "006fbc28",
+          "values": [
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "hex": "03000300020001000100"
+        },
+        {
+          "table": "00472172",
+          "destination": "006fbc2c",
+          "values": [
+            2,
+            1,
+            1,
+            0,
+            0
+          ],
+          "hex": "02000100010000000000"
+        },
+        {
+          "table": "00472186",
+          "destination": "006fbc1c",
+          "values": [
+            2,
+            2,
+            1,
+            0,
+            0
+          ],
+          "hex": "02000200010000000000"
+        },
+        {
+          "table": "00472190",
+          "destination": "006fbc30",
+          "values": [
+            2,
+            1,
+            1,
+            0,
+            0
+          ],
+          "hex": "02000100010000000000"
+        },
+        {
+          "table": "0047219a",
+          "destination": "006fbc20",
+          "values": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hex": "00000100010001000100"
+        },
+        {
+          "table": "004721a4",
+          "destination": "006fbc24",
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "hex": "00000000010001000100"
+        },
+        {
+          "table": "004721ae",
+          "destination": "006fbc3c",
+          "values": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "hex": "00000000000001000100"
+        },
+        {
+          "table": "0047217c",
+          "destination": "00791b28",
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "hex": "00000000010001000100"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "body_start": "00472d10",
+      "body_end_exclusive": "00472e1d",
+      "body_sha256": "39803c6749cdd42cd291dd75c764511c85f7e461bc781ed31b83d0b90f65d1f8",
+      "tables": [
+        {
+          "table": "00472e20",
+          "destination": "006fbc28",
+          "values": [
+            3,
+            2,
+            1,
+            1,
+            0,
+            0
+          ],
+          "hex": "030201010000"
+        },
+        {
+          "table": "00472e26",
+          "destination": "006fbc2c",
+          "values": [
+            2,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex": "020101000000"
+        },
+        {
+          "table": "00472e2c",
+          "destination": "006fbc1c",
+          "values": [
+            2,
+            2,
+            1,
+            1,
+            0,
+            0
+          ],
+          "hex": "020201010000"
+        },
+        {
+          "table": "00472e32",
+          "destination": "006fbc30",
+          "values": [
+            2,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex": "020101000000"
+        },
+        {
+          "table": "00472e38",
+          "destination": "006fbc20",
+          "values": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hex": "000101010101"
+        },
+        {
+          "table": "00472e3e",
+          "destination": "006fbc24",
+          "values": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "hex": "000001010101"
+        },
+        {
+          "table": "00472e44",
+          "destination": "006fbc3c",
+          "values": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "hex": "000000010101"
+        },
+        {
+          "table": "00472e4a",
+          "destination": "006fd1d8",
+          "values": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            0
+          ],
+          "hex": "020202020100"
+        }
+      ],
+      "final_unused_edx_table": {
+        "address": "00472e50",
+        "values": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "load_and_store_hex": "0fb691502e4700a3d4d16f00",
+        "actual_store_source": "EAX from preceding call 00448368, not EDX table load"
+      }
+    }
+  },
+  "limits": [
+    "Table indexing is version-specific; equal ordinal is not equal CPU capability.",
+    "Callee register preservation, other writers and visible setting meanings require linked research.",
+    "No target execution, executable changes or Ghidra writes."
+  ]
+}

@@ -76,3 +76,36 @@ The separate state DWORD `00564390` still has its original transition protocol: 
 Saved Modern body unions exclude the NOP gaps and list only 75/62 bytes, so their small in-body changed counts do not cover the removed stores. The audit includes the complete original operations. The old depth shadow is no longer read/written by this pair; global deadness or removal of the storage is not established.
 
 **Bounded work status: done; confidence: verified static state writes, with depth meaning grounded in the existing startup/mode research.** Reconstruction must preserve the chosen version's depth lifetime and separate flag shadow. Removing these instructions also changes incidental EAX/EDX values at the next call boundary, so full register-contract equivalence is not assumed. Pending runtime scope includes selected-mode/reset propagation, actual frontend display depth and supported renderer transitions. Executables, Ghidra state and maintained C are unchanged.
+
+## Tier tables occupy former original code; final load/store mismatch
+
+The [table audit](scripts/audit_graphics_default_tables.py) and [manifest](evidence/audits/graphics-default-tables.json) retain both complete default-initializer body hashes and the exact file-backed arrays. The outside-function interval `00472e1d..00472f20` is not wholly NOP filling: Modern has three NOPs, **54 table bytes** at `00472e20..00472e56`, then 202 NOPs. Those table bytes replace part of the original initializer's instruction stream. They must be reconstructed as data rather than decompiled as arithmetic instructions.
+
+The original tables contain five signed WORDs each; Modern uses six unsigned bytes per table. Entries below are ordered by each version's effective tier. Original and Modern tier producers differ, so equal ordinal is not an equal-CPU comparison.
+
+| Destination DWORD | Original table / values for indices 0..4 | Modern table / values for indices 0..5 |
+|---|---|---|
+| `006fbc28` | `00472168`: 3,3,2,1,1 | `00472e20`: 3,2,1,1,0,0 |
+| `006fbc2c` | `00472172`: 2,1,1,0,0 | `00472e26`: 2,1,1,0,0,0 |
+| `006fbc1c` | `00472186`: 2,2,1,0,0 | `00472e2c`: 2,2,1,1,0,0 |
+| `006fbc30` | `00472190`: 2,1,1,0,0 | `00472e32`: 2,1,1,0,0,0 |
+| `006fbc20` | `0047219a`: 0,1,1,1,1 | `00472e38`: 0,1,1,1,1,1 |
+| `006fbc24` | `004721a4`: 0,0,1,1,1 | `00472e3e`: 0,0,1,1,1,1 |
+| `006fbc3c` | `004721ae`: 0,0,0,1,1 | `00472e44`: 0,0,0,1,1,1 |
+| `00791b28` | `0047217c`: 0,0,1,1,1 | No write to this destination in the compared Modern initializer |
+| `006fd1d8` | No write in this original initializer | `00472e4a`: 2,2,2,2,1,0 |
+
+These are local table-derived writes, not unconditional final configuration values. Later branches in these bodies can override `006fbc3c`, and other initialization/configuration paths may write the same destinations. The [vehicle-dispatch comparison](original-modern-vehicle-dispatch.md) already maps consumers of `006fbc1c` and `006fd1d8`; remaining semantic setting names are not inferred from their positions in the table.
+
+The ninth Modern table, `00472e50`, contains **0,0,0,1,1,1**, but the final sequence is:
+
+```asm
+00472e0f  MOVZX EDX,BYTE PTR [ECX+00472e50]
+00472e16  MOV   DWORD PTR [006fd1d4],EAX
+00472e1b  POPAD
+00472e1c  RET
+```
+
+The store does **not** use the loaded EDX. In the local control flow EAX comes from the preceding call `00448368` at `00472de3`; TEST, conditional branches, immediate stores and MOVZX do not replace it. The [mode-selection report](original-modern-mode-selection.md) identifies `00448368` as returning the selected record's DWORD `+0x10`. The final write stores that raw EAX value, not a Boolean conversion and not a tier-table byte. POPAD then restores incoming general registers, discarding the new EDX value. Effective ECX indexing across the calls still depends on their register contracts.
+
+**Status: done for static table/layout and load/store verification; confidence: verified.** Intent is unresolved: this could be a stale load, an incorrect destination register or a deliberate retained sequence. No bug fix is applied or claimed. Determining consequences requires consumers/other writers of `006fd1d4` and caller ordering; actual startup values and visuals remain untested. Preserve the observed chosen-version behavior in reconstruction until an explicit policy decides otherwise.

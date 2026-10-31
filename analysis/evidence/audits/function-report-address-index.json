@@ -285,7 +285,7 @@
     },
     {
       "path": "analysis/original-modern-resolution-defaults.md",
-      "sha256": "eef9e0c21c3cebcd2e399f9faa52f47d707be6b23b27f9bae4156807c06ebdea"
+      "sha256": "16f6b923c716c2de3c21985bd627110fbfa45a7d9fa10abb2ac09b83ccafa3e6"
     },
     {
       "path": "analysis/original-modern-screenshot-feedback.md",
@@ -3332,6 +3332,13 @@
           "addresses": [
             "00448368"
           ]
+        },
+        {
+          "path": "analysis/original-modern-resolution-defaults.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00448368"
+          ]
         }
       ]
     },
@@ -4922,6 +4929,10 @@
             "00472dbb",
             "00472dce",
             "00472dde",
+            "00472de3",
+            "00472e0f",
+            "00472e16",
+            "00472e1b",
             "00472e1c"
           ]
         },
