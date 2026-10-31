@@ -41,6 +41,18 @@ def main():
     result['interval']={'start':'00456318','end_exclusive':'00456800','bytes':1256,
         'changed_bytes':152,'changed_addresses':[f'{va:08x}' for va in changes],
         'limit':'Tail comparison only; shared enclosing entry and full widget registration not established.'}
+    default=images['official_modern'].get_data(0x8595b,41)
+    assert default[:5]==bytes.fromhex('bb03000000')
+    destinations=[]
+    for offset in range(5,41,6):
+        instruction=default[offset:offset+6]
+        assert instruction[:2]==bytes.fromhex('891d')
+        destinations.append(int.from_bytes(instruction[2:],'little'))
+    assert destinations==[0x6fbc68+i*0x1a4 for i in range(6)]
+    result['modern_default_selector_producer']={'start':'0048595b','end_exclusive':'00485984',
+        'hex':default.hex(),'sha256':hashlib.sha256(default).hexdigest(),
+        'value':3,'destinations':[f'{va:08x}' for va in destinations],
+        'limit':'Default initializer writes only; later saved settings/editor/aliases not excluded.'}
     result['limits']=['No drawing, language lookup or instruction execution.','Selector/unit semantics, valid track indices and complete localization not established.','Third original table zeroed in Modern; all other readers not excluded.']
     (ROOT/'analysis/evidence/audits/track-length-text-difference.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired formatting tails, retained pointer tables, comma-to-dot payloads, zeroed third and152 localized interval differences')

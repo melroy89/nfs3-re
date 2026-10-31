@@ -286,6 +286,22 @@
     ],
     "limit": "Tail comparison only; shared enclosing entry and full widget registration not established."
   },
+  "modern_default_selector_producer": {
+    "start": "0048595b",
+    "end_exclusive": "00485984",
+    "hex": "bb03000000891d68bc6f00891d0cbe6f00891db0bf6f00891d54c16f00891df8c26f00891d9cc46f00",
+    "sha256": "677d323f721b18a00f45333163f661624389301cfd4c1f93547d78f66d6bc961",
+    "value": 3,
+    "destinations": [
+      "006fbc68",
+      "006fbe0c",
+      "006fbfb0",
+      "006fc154",
+      "006fc2f8",
+      "006fc49c"
+    ],
+    "limit": "Default initializer writes only; later saved settings/editor/aliases not excluded."
+  },
   "limits": [
     "No drawing, language lookup or instruction execution.",
     "Selector/unit semantics, valid track indices and complete localization not established.",
