@@ -1,0 +1,40 @@
+{
+  "kind": "static-instance-recovery-and-handle-role",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004f91d0",
+          "exclusive_end": "004f925f",
+          "sha256": "4bcc9ee72c2accae8bfff9ab958455751de3beffcb45536012d52fe75c4ac3b5",
+          "bytes": "535152833da412560000750c85c0746c89c3891da412560085c07505a1a4125600506a016a002eff15a0445300a3403d9f002eff15344553003db700000075368b0da4125600516a002eff153447530089c385c074126a09502eff1598475300532eff1588475300833d88715600007415e83798ffff31c05a595bc38b1dc8389f008b1beb8cb8010000005a595bc3"
+        },
+        {
+          "start": "004b603b",
+          "exclusive_end": "004b605d",
+          "sha256": "88a9433fc0fc63e7ae0a21b941e03a833534dfd6c6b28570ff67e95abcf0e69f",
+          "bytes": "b808fe5300891584435600890d88435600891d8c435600893590435600e873310400"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004a3df2",
+          "exclusive_end": "004a3dfd",
+          "sha256": "8750a9a05b64971f7b292bdf5a0ea3d4635281480f7edaa72e9c5a730659798e",
+          "bytes": "ff158c445300a3403d9f00"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No mutex/window/heap API execution.",
+    "Modern imports CreateMutexA; absence of all other mutex uses not established.",
+    "Original fallback metadata pointer and termination-policy writers unqualified."
+  ]
+}

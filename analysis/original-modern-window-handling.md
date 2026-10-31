@@ -111,6 +111,8 @@ At the original window-initializer call `0050844e`, BL is loaded from that state
 
 Do not infer a permanent invariant that `009f3d2d == (00564390 & 1)`: the separate installer caller can supply 1, and all intervening writes/lifetimes are not proven. Likewise, calling the byte universally “fullscreen” would exceed this evidence. The [geometry chapter](original-modern-window-geometry.md) documents the related context-byte style behavior independently; complete field/global aliasing and cross-thread transition ordering still require inspection. These original-only witnesses explain the removed mechanism's conditions, not equal setup semantics in Modern.
 
+A separate original [named-mutex/title recovery helper](original-modern-startup-requirements.md#separate-original-mutextitle-recovery-and-repurposed-handle-storage) also requests foreground focus during startup. Its duplicate-instance handling is distinct from this recurring loop and must not be counted as the same mechanism.
+
 This adds a direct mechanism to **MP100-040** beyond the activation-hook refactor. It remains partial evidence for the whole release-note claim: initial foreground/active requests at `004cd55d` and `004cd571` survive in the identical prefix, and the existing [mode-publication path](original-modern-mode-selection.md) also retains a foreground request. Removal of this loop tail does not establish absence of every possible focus-restoration route. Runtime behavior and historical release introduction remain unverified.
 
 ## Release-note mapping and next evidence
