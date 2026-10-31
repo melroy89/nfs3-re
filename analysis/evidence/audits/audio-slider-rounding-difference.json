@@ -1,0 +1,130 @@
+{
+  "kind": "static-audio-slider-rounding-comparison",
+  "baselines": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "bodies": [
+        {
+          "start": "00437990",
+          "end_exclusive": "004379af",
+          "hex": "525589e531d2e815500300dc0d78755300e8b0830a00db1de8bb6f005d5ac3",
+          "sha256": "98dc0fa52a5f825164b6da775c6badb6574ff03ed0b810391f5cbefb76c5bbe3"
+        },
+        {
+          "start": "004379b0",
+          "end_exclusive": "004379cf",
+          "hex": "525589e531d2e8f54f0300dc0d80755300e890830a00db1df0bb6f005d5ac3",
+          "sha256": "0d7cf2b2853e42e4d2af67057954071cb76a44e8ef08a0fbe2d479719314501d"
+        },
+        {
+          "start": "004379d0",
+          "end_exclusive": "00437a1d",
+          "hex": "525589e583ec0431d2e8d24f03008b1534925500d95dfc85d27519d945fcdc0d88755300e85d830a00db1df4bb6f0089ec5d5ac3d945fcdc0d88755300e844830a00db1d2029550089ec5d5ac3",
+          "sha256": "2501cedd7b822c91c1e9fc82b27e50a07c18dae544a78b11445b26d73378f7a4"
+        },
+        {
+          "start": "00437a20",
+          "end_exclusive": "00437a6d",
+          "hex": "525589e583ec0431d2e8824f03008b1534925500d95dfc85d27519d945fcdc0d90755300e80d830a00db1df8bb6f0089ec5d5ac3d945fcdc0d90755300e8f4820a00db1d2429550089ec5d5ac3",
+          "sha256": "a5fdf83bb372c7537c9cc5652a2380951a40ca6e7b389c80d497062e7a25bb5a"
+        },
+        {
+          "start": "00437a70",
+          "end_exclusive": "00437a8f",
+          "hex": "525589e531d2e8354f0300dc0d98755300e8d0820a00db1dfcbb6f005d5ac3",
+          "sha256": "545c574dd07edb243ae990194231cbe161d028122eccb8781792f811a4fc4894"
+        }
+      ],
+      "constants_00537578_hex": "0000000000c05f400000000000c05f400000000000c05f400000000000c05f400000000000c05f40"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "bodies": [
+        {
+          "start": "00437990",
+          "end_exclusive": "004379af",
+          "hex": "525589e531d2e815500300dc0d78755300eb03909090db1de8bb6f005d5ac3",
+          "sha256": "ba01ec26c86fd9bce584d0afbf9b806af499c9c9895714286ecb958eb75e3689"
+        },
+        {
+          "start": "004379b0",
+          "end_exclusive": "004379cf",
+          "hex": "525589e531d2e8f54f0300dc0d80755300eb03909090db1df0bb6f005d5ac3",
+          "sha256": "dd4309c350cb3b2ab027cf328bacd556a52ef44065669a2ddf4f7b5e827776f9"
+        },
+        {
+          "start": "004379d0",
+          "end_exclusive": "00437a1d",
+          "hex": "525589e583ec0431d2e8d24f03008b1534925500d95dfc85d27519d945fcdc0d88755300eb03909090db1df4bb6f0089ec5d5ac3d945fcdc0d88755300eb03909090db1d2029550089ec5d5ac3",
+          "sha256": "6e2399caf58eb243da1e0d61b9c78e951e7a4d0de8b2561af8d808d6c7cd4654"
+        },
+        {
+          "start": "00437a20",
+          "end_exclusive": "00437a6d",
+          "hex": "525589e583ec0431d2e8824f03008b1534925500d95dfc85d27519d945fcdc0d90755300eb03909090db1df8bb6f0089ec5d5ac3d945fcdc0d90755300eb03909090db1d2429550089ec5d5ac3",
+          "sha256": "ac40e80b9ce28b12b13068811514e4b6bca1796e0341042f97db0616c2d287c5"
+        },
+        {
+          "start": "00437a70",
+          "end_exclusive": "00437a8f",
+          "hex": "525589e531d2e8354f0300dc0d98755300eb03909090db1dfcbb6f005d5ac3",
+          "sha256": "a18e5e462c8fd0d4e72accf18b4063cbd5abf736fdd2f8f63a7323ac9b580971"
+        }
+      ],
+      "constants_00537578_hex": "0000000000c05f400000000000c05f400000000000c05f400000000000c05f400000000000c05f40"
+    }
+  },
+  "changed_addresses": [
+    "004379a1",
+    "004379a2",
+    "004379a3",
+    "004379a4",
+    "004379a5",
+    "004379c1",
+    "004379c2",
+    "004379c3",
+    "004379c4",
+    "004379c5",
+    "004379f4",
+    "004379f5",
+    "004379f6",
+    "004379f7",
+    "004379f8",
+    "00437a0d",
+    "00437a0e",
+    "00437a0f",
+    "00437a10",
+    "00437a11",
+    "00437a44",
+    "00437a45",
+    "00437a46",
+    "00437a47",
+    "00437a48",
+    "00437a5d",
+    "00437a5e",
+    "00437a5f",
+    "00437a60",
+    "00437a61",
+    "00437a81",
+    "00437a82",
+    "00437a83",
+    "00437a84",
+    "00437a85"
+  ],
+  "removed_call_sites": [
+    "004379a1",
+    "004379c1",
+    "004379f4",
+    "00437a0d",
+    "00437a44",
+    "00437a5d",
+    "00437a81"
+  ],
+  "limits": [
+    "No audio, callback or instruction execution.",
+    "Ambient x87 control/state and getter leaf contracts not universally qualified.",
+    "No claim of audible difference or historical release attribution."
+  ]
+}

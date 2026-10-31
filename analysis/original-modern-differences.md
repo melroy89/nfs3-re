@@ -456,6 +456,8 @@ The [unlisted control-component callback](original-modern-control-component-keys
 
 The [music-setting request comparison](original-modern-music-start.md#setting-change-requests-publish-the-pending-flag-earlier-and-on-both-branches) identifies an additional pending-flag change at00438260: Modern publishes before both changed-setting requests, while original publishes after only the first. This is verified local ordering; audible outcome and final helper-modified state remain untested.
 
+The [audio-slider rounding comparison](original-modern-music-start.md#five-audio-slider-callbacks-remove-explicit-truncation) verifies five complete callbacks with seven removed truncation calls. Scale127.0 and integer destinations remain, but Modern’s final FISTP follows ambient rounding; integer equality and audible effects are not assumed.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

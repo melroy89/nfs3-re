@@ -126,3 +126,19 @@ This connects to the pending flag consumed by the audio exit path above, but doe
 The new audit also retains Modern’s complete166-byte request helper **`004103a0..00410446`**. Its branch selector is EDX; it reloads the relevant live setting from global`006fbbec` or`006fbbe4`, rather than treating incoming EAX as a stable setting argument. On the nonzero-EDX path it may skip restart when current selection and continuation-state checks permit, as detailed in the [contextual policy comparison](original-modern-music-selection.md#contextual-policy-now-checks-whether-playback-can-continue). Thus the caller’s pre-call flag store can occur even when this helper skips its restart sequence.
 
 This helper has no direct absolute operand referencing pending DWORD`00554f34`; its directly written state byte is the distinct address`00552591`. The audit checks the complete body for the encoded pending address, a bounded operand-pattern observation rather than exclusion of indirect aliases. Deeper stop/start helpers and concurrent/indirect writers still prevent inferring the final pending value or audible effect from the local store alone. PUSHAD/POPAD restores incoming general registers on normal return; flags and floating state are separate.
+
+## Five audio slider callbacks remove explicit truncation
+
+The [slider audit](scripts/audit_audio_slider_rounding_difference.py) compares five complete paired callbacks; the [manifest](evidence/audits/audio-slider-rounding-difference.json) retains all bodies, constants and changed addresses. Exactly **35 bytes** change, comprising seven original CALLs to`004dfd56`, each replaced by Modern`JMP +3; NOP; NOP; NOP`. Every other byte in these bodies matches.
+
+| Complete callback, exclusive end | Original truncation call sites | Retained signed DWORD destination |
+|---|---|---|
+| `00437990..004379af` | `004379a1` | `006fbbe8` |
+| `004379b0..004379cf` | `004379c1` | `006fbbf0` |
+| `004379d0..00437a1d` | `004379f4`, `00437a0d` | `006fbbf4` when`00559234=0`, otherwise`00552920` |
+| `00437a20..00437a6d` | `00437a44`, `00437a5d` | `006fbbf8` when`00559234=0`, otherwise`00552924` |
+| `00437a70..00437a8f` | `00437a81` | `006fbbfc` |
+
+All call slider getter`0046c9b0` with EDX0, multiply its x87 result by a retained binary64 constant **127.0**, then convert with FISTP DWORD. The two split-destination callbacks first spill/reload the getter result through binary32 before multiplication. Their branch selector, spill order, destination choice and scale bytes are unchanged.
+
+Original forces truncation toward zero through its [rounding helper](original-modern-slider-percentage.md) before FISTP. Modern skips that helper, so final conversion uses ambient x87 rounding. For an exact getter result0.5, the product is63.5: original ordinarily stores63, while Modern under round-to-nearest-even stores64. This is an instruction-derived boundary example, **not an executed probe**; other rounding modes, invalid inputs, pending/unmasked exceptions and status bits need their actual machine contracts. Retained scales do not establish equal integer values or audible loudness. No callback, audio, C reconstruction or Ghidra mutation was performed.

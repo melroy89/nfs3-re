@@ -221,7 +221,7 @@
     },
     {
       "path": "analysis/original-modern-music-start.md",
-      "sha256": "bb16328b50c8e515f2f3363d9b6c9a021a4f06d2049ac7eb2bea5ac3a34332ea"
+      "sha256": "bb171c2401f4ef811dc16621af95c4c5dd17afc14a516b2c16306f7f1864f0f5"
     },
     {
       "path": "analysis/original-modern-music-worker-cleanup.md",
@@ -11062,6 +11062,13 @@
         },
         {
           "path": "analysis/original-modern-loading-artwork.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dfd56"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-music-start.md",
           "entry_mentioned": true,
           "addresses": [
             "004dfd56"
