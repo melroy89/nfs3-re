@@ -18,7 +18,7 @@ def main():
         pe=pefile.PE(data=raw)
         def string(va):return pe.get_data(va-0x400000,512).split(b'\0')[0].decode('ascii')
         spans=[(0x4a5080,0x4a54e4)]
-        if label=='official_modern':spans += [(0x4f9400,0x4f9448),(0x4f0ae0,0x4f0aee),(0x4eede0,0x4eedee)]
+        if label=='official_modern':spans += [(0x4b57f4,0x4b5841),(0x4b5844,0x4b5877),(0x4f9400,0x4f9448),(0x4f0ae0,0x4f0aee),(0x4eede0,0x4eedee)]
         rows=[]
         for start,end in spans:
             out=capture/f'{label}-{start:08x}.asm'

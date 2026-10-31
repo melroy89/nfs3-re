@@ -201,6 +201,20 @@
           "assembly_sha256": "29286df1a130f5e83855c1bcfc27e53f5bd7646fc5316743b9c908765e020a9b"
         },
         {
+          "start": "004b57f4",
+          "end": "004b5841",
+          "bytes_sha256": "6ba276529cbf7d2387301681332a1578186be91bc4e2502f46d3bda9cc3d87bb",
+          "assembly": "analysis/captures/modern-differences/command-line/official_modern-004b57f4.asm",
+          "assembly_sha256": "b6793c6306d1f9e023e2ab011519450f1fd400a9d65380a456714cf6d1c90c10"
+        },
+        {
+          "start": "004b5844",
+          "end": "004b5877",
+          "bytes_sha256": "82f621b8a857462b148a7b2c5f4f48380318d9b1c90c1b66d00005deb9eb1717",
+          "assembly": "analysis/captures/modern-differences/command-line/official_modern-004b5844.asm",
+          "assembly_sha256": "31d62f94d54f659e70655ffc4b5efff6db54895549cff1e9f10d683d4d8ae8d0"
+        },
+        {
           "start": "004f9400",
           "end": "004f9448",
           "bytes_sha256": "ddbd34237f6ef36909d8621903232a4527b6d622038890b8520ae1617a073bb1",

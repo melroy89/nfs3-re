@@ -156,7 +156,7 @@ The [music comparison](original-modern-music-selection.md) traces menu subset cy
 
 ## 20. Command-line table and driver override
 
-The [command-line comparison](original-modern-command-line.md) traces 33 retained slots reduced to two nonempty names, universal driver-prefix handling, INI bypass linkage and empty-row help suppression. It also records ASCII-copy and machine-shift contracts. Full legacy option semantics, argument edge cases and runtime acceptance remain pending.
+The [command-line comparison](original-modern-command-line.md) traces 33 retained slots reduced to two nonempty names, universal driver-prefix handling, INI bypass linkage and empty-row help suppression. It also records ASCII-copy and machine-shift contracts, and traces duplicate driver arguments: name and numeric suffix can come from different options, while an empty driver option can still bypass INI selection. Full legacy option semantics, argument edge cases and runtime acceptance remain pending.
 
 ## 21. Ghost loading and preserved current settings
 
