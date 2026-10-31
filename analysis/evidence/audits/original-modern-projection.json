@@ -277,5 +277,16 @@
     ],
     "limits": "Conditional local stores only; no complete visual or x87 state equivalence."
   },
+  "modern_fov_clamp_contract": {
+    "helper": "004dbc48..004dbc91",
+    "lower": 90.0,
+    "upper": 107.0,
+    "lower_branch": "JBE004dbc77: unordered takes jump and discards lower bound, retaining candidate.",
+    "upper_branch": "JAE004dbc88: unordered does not jump; FXCH/FSTP discards candidate, retaining107.",
+    "conditional_unordered_result": "107.0 stored at0055fecc if both comparisons are unordered and execute without trapping.",
+    "eax_residue": "Upper16 entry EAX retained; low16 is second FNSTSW snapshot, not a scalar result.",
+    "local_cw": "No FLDCW/FINIT; computation and exceptions depend on ambient control state.",
+    "limit": "Symbolic branch/stack trace only; no NaN/zero-dimension instruction probe or game call."
+  },
   "projection_builder_272_bytes_identical": true
 }

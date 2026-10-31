@@ -12,7 +12,7 @@ For ordinary positive dimensions and finite arithmetic, its mathematical summary
 
 `automatic_degrees = clamp(2 * atan(0.75 * width / height) * radians_to_degrees, 90, 107)`
 
-This yields approximately 90 degrees at 4:3 and 106.26 at 16:9, before accounting for exact x87 rounding. These are formula illustrations, not rendered/probed results. Zero height, NaNs, unordered comparisons and arbitrary malformed settings require machine-level treatment; the summary is not a substitute for those contracts.
+This yields approximately 90 degrees at 4:3 and 106.26 at 16:9, before accounting for exact x87 rounding. These are formula illustrations, not rendered/probed results. Zero height, trapping exceptions and arbitrary malformed settings still require machine-level treatment. The conditional unordered clamp path is now traced below; the mathematical summary is not a substitute for that contract.
 
 The selected-dimension producer is traced in the [HUD](original-modern-hud-layout.md) and [resolution-default](original-modern-resolution-defaults.md) reports. A direct call at `004be748` computes the cached automatic angle in the viewport-initialization neighborhood. Later dimension changes must reach an appropriate update path for that cache to remain current; this chapter does not establish every reset/caller.
 
@@ -102,3 +102,22 @@ These are binary32 approximations to 1/640 and 1/480. The source signed DWORDs a
 The byte comparison proves that this helper's changed operands are constant relocation with **no changed numeric constant**. It does not prove all x87 machine state or rendered results are identical under different inputs/control words. Aliased destination pairs can also make operation order significant, so a reconstruction should preserve access order until caller aliasing is qualified.
 
 Both follow-ups are reproduced by [the projection-caller audit](scripts/audit_projection_callers_followup.py), with full body hashes, retained disassembly locations and exact constant bytes in [its manifest](evidence/audits/projection-callers-followup.json). **Bounded work status: done; confidence: verified static evidence.** No rendering, instruction probes or Ghidra writes were performed. All broader projection and runtime limitations above remain applicable.
+
+## Automatic FOV unordered clamp and machine outputs
+
+The expanded projection audit checks the exact FCOM/FNSTSW/SAHF/branch/FXCH/FSTP sequences at `004dbc6e..004dbc8a`, both stored bound constants and the final binary32 store. This closes a local unordered-branch gap in the earlier finite-value summary. It is a **symbolic instruction/stack trace**, not a new NaN, zero-height or game probe.
+
+Immediately before the lower comparison, ST0=90 and ST1=candidate. For a comparison reporting unordered, C0/C2/C3 are1; FNSTSW AX / SAHF makes CF=ZF=1. The lower **JBE** at `004dbc73` is taken, so FSTP ST0 discards90 and leaves the unordered candidate. The upper pass loads107; its **JAE** at `004dbc84` is not taken with CF1, so FXCH followed by FSTP discards the candidate and retains107. The final store at `004dbc8a` therefore writes exact binary32 **107.0** if both comparisons report unordered and execution continues without trapping.
+
+| Candidate classification at clamp entry | Normal local outcome |
+|---|---|
+| Ordered below90 | 90 |
+| Ordered90..107 | Candidate, with final binary32 store |
+| Ordered above107 | 107 |
+| Both comparisons unordered, non-trapping continuation | 107 |
+
+Do not replace this with a generic NaN-preserving clamp or assume a different bound is chosen for unordered input. This analysis does not establish which malformed dimension combinations reach that state, how unmasked exceptions are delivered, or a safe contract for every width/height. The helper contains no local FINIT/FLDCW; ambient precision/rounding/exception state remains material.
+
+Its useful output is the store to **`0055fecc`**. No ordinary scalar return is constructed: FNSTSW writes AX twice, and the second snapshot remains in low16 EAX while high16 EAX retains the entry value. SAHF also changes integer flags. Later floating instructions can alter x87 status, so that captured AX is not asserted equal to the final status word. A C interface must not treat this residue as a reliable angle or success Boolean, nor silently claim full register/flag/state equivalence from a matching stored float.
+
+The two Modern-only observer-index sites `004dbc70/004dbc81` are therefore explained by this existing automatic-FOV mechanism, rather than two independent patch features. Same-address original code belongs to a different function envelope; the earlier paired producer/chooser/projection evidence supplies the version context. Caller EAX/flag liveness, actual cache-update frequency, rendering and historical introduction remain unverified. Executable bytes, Ghidra, raw exports and maintained C are unchanged.

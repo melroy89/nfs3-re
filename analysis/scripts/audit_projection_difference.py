@@ -53,6 +53,27 @@ def main():
         assert struct.pack('<I',address) not in new
     result['viewport_finalizer']={'start':'004213b0','end_exclusive':'00421441','envelope_bytes':145,'changed_addresses':[f'{v:08x}' for v in changed],'changed_region':['004213d4','00421430'],'condition':'Nonzero context-index table pointer whose DWORD0 equals8','retained_float_pairs':[['005e1020','0056009c'],['005e102c','005600a4'],['005e1030','005600a8'],['005e1038','005600a0']],'removed_dword_pairs':[['005e10a0','0056443c'],['005e1034','00564440'],['005e1024','00564434'],['005e1028','00564438']],'limits':'Conditional local stores only; no complete visual or x87 state equivalence.'}
     assert bodies['original']==bodies['official_modern']
+    modern = images[1]
+    for va,encoded in ((0x4dbc6e,'d8d1dfe09e7602'),(0x4dbc75,'d9c9ddd8'),
+                       (0x4dbc7f,'d8d1dfe09e7302'),(0x4dbc86,'d9c9ddd8'),
+                       (0x4dbc8a,'d91dccfe5500c3')):
+        assert modern.get_data(va-0x400000,len(bytes.fromhex(encoded))).hex() == encoded
+    assert struct.unpack('<f',modern.get_data(0x1401d0,4))[0] == 90.0
+    assert struct.unpack('<f',modern.get_data(0x1401d4,4))[0] == 107.0
+    unordered_ah = 0x45  # C3/C2/C0 mapped to ZF/PF/CF by FNSTSW AX; SAHF.
+    cf = unordered_ah & 1
+    zf = (unordered_ah >> 6) & 1
+    lower_jump = bool(cf or zf)
+    upper_jump = not bool(cf)
+    assert (cf,zf) == (1,1) and lower_jump and not upper_jump
+    result['modern_fov_clamp_contract'] = {
+        'helper': '004dbc48..004dbc91', 'lower': 90.0, 'upper': 107.0,
+        'lower_branch': 'JBE004dbc77: unordered takes jump and discards lower bound, retaining candidate.',
+        'upper_branch': 'JAE004dbc88: unordered does not jump; FXCH/FSTP discards candidate, retaining107.',
+        'conditional_unordered_result': '107.0 stored at0055fecc if both comparisons are unordered and execute without trapping.',
+        'eax_residue': 'Upper16 entry EAX retained; low16 is second FNSTSW snapshot, not a scalar result.',
+        'local_cw': 'No FLDCW/FINIT; computation and exceptions depend on ambient control state.',
+        'limit': 'Symbolic branch/stack trace only; no NaN/zero-dimension instruction probe or game call.'}
     result['projection_builder_272_bytes_identical']=True
     (ROOT/'analysis/evidence/audits/original-modern-projection.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: projection baselines, FOV/constants/callers and identical builder')

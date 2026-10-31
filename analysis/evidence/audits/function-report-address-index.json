@@ -265,7 +265,7 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "44b98327a348734c3009f82976813b89f086cbe2b00eef52d5fe5890acd8d03f"
+      "sha256": "42eb86a15cf28327fad3b5cf75e3c4b7870ed757b897a0ff0f892c4af0c30cdb"
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
@@ -433,7 +433,7 @@
     },
     {
       "path": "analysis/original-modern-x87-observers.md",
-      "sha256": "b3fc438062b7d9208de20990684dff86d68f37f18b5a6f944885868ade983806"
+      "sha256": "6cea1f69a4cedd5c4ad4b60649a5c6f2a6dacc2a4ee13c76fa979b5d23de16a9"
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -10684,7 +10684,13 @@
           "path": "analysis/original-modern-projection.md",
           "entry_mentioned": true,
           "addresses": [
-            "004dbc48"
+            "004dbc48",
+            "004dbc6e",
+            "004dbc70",
+            "004dbc73",
+            "004dbc81",
+            "004dbc84",
+            "004dbc8a"
           ]
         },
         {
