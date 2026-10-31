@@ -406,6 +406,49 @@
       "scope": "223 contiguous16-byte named descriptor rows before first null name; no dynamic/alternate table coverage."
     }
   },
+  "common_field_writer": {
+    "baselines": {
+      "original": {
+        "entry": "00449240",
+        "end_exclusive": "004493aa",
+        "hex": "5156575589e583ec1c89c789d889fb89d68d149d0000000031c929dac1e604c1e204894df429da8b8e1c7c5500c1e20281e9e04e600081c2e04e60008d3c0a8b96187c550083fa060f8715010000ff249518924400e896feffffb9010000008d75fc8845fce9e9000000e881feffffb9020000008d75f88945f8e9d4000000e86cfeffffb9040000008d75e88945e8e9bf000000e897feffffb9040000008d75ec8945ece9aa00000031dbba748f5300895df4e858fcffff8945f0e8207509008b75f039f07411ba7c8f530089f0e80d7509003b45f0752a31dbeb094381fb890700007d1d8b45f08b149d441c5600e8dc4f0a0085c075e489d8e8118508008945f4837df400740ab9040000008d75f4eb08b9040000008d75f05789c8c1e902f2a58ac880e103f2a45f89ec5d5f5e59c3e8dafbffffb9040000008d75f08945f0eb10e828feffffb9040000008d75e4d95de45789c8c1e902f2a58ac880e103f2a45f89ec5d5f5e59c3",
+        "jump_table": [
+          "00449295",
+          "004492aa",
+          "004492bf",
+          "004492d4",
+          "00449371",
+          "004492e9",
+          "00449383"
+        ],
+        "form_widths": {
+          "0": 1,
+          "1": 2,
+          "2": 4
+        }
+      },
+      "official_modern": {
+        "entry": "00449240",
+        "end_exclusive": "004493aa",
+        "hex": "5156575589e583ec1c89c789d889fb89d68d149d0000000031c929dac1e604c1e204894df429da8b8e1c7c5500c1e20281e9e04e600081c2e04e60008d3c0a8b96187c550083fa060f8715010000ff249518924400e896feffffb9010000008d75fc8845fce9e9000000e881feffffb9020000008d75f88945f8e9d4000000e86cfeffffb9040000008d75e88945e8e9bf000000e897feffffb9040000008d75ec8945ece9aa00000031dbba748f5300895df4e858fcffff8945f0e8207509008b75f039f07411ba7c8f530089f0e80d7509003b45f0752a31dbeb094381fb890700007d1d8b45f08b149d441c5600e8dc4f0a0085c075e489d8e8118508008945f48b45f485c075188b45f081387374725f750d83c004e8d4700a00e8ef8408008907eb3e909090909090909090909090e8dafbffffb9040000008d75f08945f0eb10e828feffffb9040000008d75e4d95de45789c8c1e902f2a58ac880e103f2a45f89ec5d5f5e59c3",
+        "jump_table": [
+          "00449295",
+          "004492aa",
+          "004492bf",
+          "004492d4",
+          "00449371",
+          "004492e9",
+          "00449383"
+        ],
+        "form_widths": {
+          "0": 1,
+          "1": 2,
+          "2": 4
+        }
+      }
+    },
+    "limit": "Direct destination/width analysis for common descriptors; conversion-helper side effects, dispatch applicability and later writers remain separate."
+  },
   "interior_widget_binding": {
     "exe_bindings": {
       "original": {

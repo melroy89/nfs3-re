@@ -87,3 +87,11 @@ This resolves propagation through this particular selected-entry dispatcher, whi
 The audit now reads the contiguous16-byte field-descriptor rows at **`00557c10..00558a00`** in both pinned EXEs: **223 named rows**, followed by a row with null name pointer. It retains separate table hashes and the common kind1 rows. Neither inspected table contains a kind33 or kind34 row, so this table supplies no explicitly InteriorBx- or Compass-specific named property. The kind1 names are `x`, `y`, `priority`, `help`, `codelink`, `postonly`, `mainonly`, `EnableForDemo` and `EnableForE3Demo`; their destination pointers are recorded in the manifest.
 
 This narrows the field-override search but does not close it: applicability of common descriptors, parser form widths, flag synthesis, alternate tables and later writes still need dataflow verification. In particular, absence of a type-specific row is not evidence that runtime+45h survives unchanged or that Compass bit9 is unused. The scan is bounded to this named table, not every possible menu command or runtime writer.
+
+### Common property stores do not directly overlap either byte
+
+Writer `00449240` computes its destination as `runtime_base + 188*entry_index + (descriptor_destination - runtime_base)`. Its seven-entry form jump table at `00449218` is identical in both EXEs: forms0/1/2 use one/two/four-byte stores respectively. In particular form1 selects `004492aa`, converts through `00449130`, then sets copy count2; the shared copy tail begins `00449393`. The audit retains both writer envelopes and jump-table targets.
+
+The common kind1 descriptors therefore directly write `x` at+06h (2 bytes), `y` at+08h (2), `priority` at+0ah (2), `help` at+0ch (4), `codelink` at+10h (4), `postonly` at+14h (2), `mainonly` at+16h (2), and both demo properties at+18h (2). **None of these direct destination ranges overlaps entry+05h or+45h.** In the two retained packaged InteriorBx sections, the authored x/y/priority properties thus do not directly overwrite the overlapping changed byte.
+
+This closes the direct named-common-property overwrite hypothesis within this table. It does not prove lifetime persistence: conversion-helper side effects, generic flag synthesis, alternate writes and subsequent callback dispatch remain outside that conclusion. The Compass bit9 effect and InteriorBx+45h meaning stay unresolved.

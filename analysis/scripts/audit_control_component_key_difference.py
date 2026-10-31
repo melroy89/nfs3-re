@@ -161,6 +161,17 @@ def main():
             'common_kind1_rows': [r for r in rows if r['kind']==1],
             'kind33_or34_rows': [], 'scope': '223 contiguous16-byte named descriptor rows before first null name; no dynamic/alternate table coverage.'}
     out['field_descriptor_boundary'] = descriptors
+    field_writers = {}
+    for label,pe in images.items():
+        table = struct.unpack('<7I',pe.get_data(0x49218,28))
+        assert table[:3] == (0x449295,0x4492aa,0x4492bf)
+        assert pe.get_data(0x492af,5) == bytes.fromhex('b902000000')
+        field_writers[label] = {'entry': '00449240', 'end_exclusive': '004493aa',
+            'hex': pe.get_data(0x49240,362).hex(),
+            'jump_table': [f'{x:08x}' for x in table],
+            'form_widths': {'0': 1, '1': 2, '2': 4}}
+    out['common_field_writer'] = {'baselines': field_writers,
+        'limit': 'Direct destination/width analysis for common descriptors; conversion-helper side effects, dispatch applicability and later writers remain separate.'}
     archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     archive_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     assert archive_sha == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'

@@ -73,7 +73,7 @@
     },
     {
       "path": "analysis/original-modern-control-component-keys.md",
-      "sha256": "b35ed5734e13056e329eae29c8fa9ee8a0d9359ffb160f42db0f5a61063652f9"
+      "sha256": "85f76b9ceccb955bfc23c542b624ae2782658c65eeffba1ef7911eb7a0203be4"
     },
     {
       "path": "analysis/original-modern-cpu-tier.md",
@@ -3605,6 +3605,15 @@
             "004492aa",
             "00449393",
             "004493a3"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-control-component-keys.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00449240",
+            "004492aa",
+            "00449393"
           ]
         },
         {
