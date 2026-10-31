@@ -14,7 +14,7 @@ def main():
     for label, (relative, expected, _) in SPECS.items():
         raw = (ROOT/relative).read_bytes(); assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw); images.append(pe)
-        spans = [(0x489240, 0x48962d),(0x488c6e,0x488d41)]
+        spans = [(0x489240, 0x48962d),(0x488c6e,0x488d41),(0x488b8c,0x488c33)]
         if label == 'official_modern': spans += [(0x4900c8, 0x490134), (0x4900b0, 0x4900c5), (0x4f9390, 0x4f9399)]
         rows = []
         for start, end in spans:
@@ -24,6 +24,18 @@ def main():
         out['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows, 'constants_0053b76c_to_0053b78c_hex': pe.get_data(0x13b76c, 32).hex()}
     data = [p.get_data(0x89240, 0x3ed) for p in images]
     gear_setup=[p.get_data(0x88c6e,0xd3) for p in images]
+    dash_setup=[p.get_data(0x88b8c,0xa7) for p in images]
+    assert dash_setup[0]==dash_setup[1]
+    for p in images:
+        assert p.get_string_at_rva(0x13b6ec)==b'dash.qfs'
+        assert p.get_string_at_rva(0x13b6fc)==b'0001'
+        assert p.get_string_at_rva(0x13b704)==b'0000'
+    out['primary_tile_resource_binding']={'paired_setup':'00488b8c..00488c33','bytes_identical':True,
+        'sha256':hashlib.sha256(dash_setup[0]).hexdigest(),
+        'resource':'dash.qfs at0053b6ec; shapes0000/0001 passed to004d4ae0.',
+        'destinations':'ECX00791d70; return published to primary gate007922fc.',
+        'consumer':'00489447..0048948f reads indexed record fields at00791d70+4/+8/.../+24.',
+        'limits':'Dashboard/cabin association inferred from named asset and record linkage; actual image contents and loader/renderer success not validated.'}
     assert gear_setup[0]==gear_setup[1]
     bindings=[]
     for index,name in enumerate(['geaR','geaN','gea1','gea2','gea3','gea4','gea5','gea6']):

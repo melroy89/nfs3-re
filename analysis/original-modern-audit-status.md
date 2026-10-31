@@ -112,7 +112,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels152 entries vendor-only,39 bounded static,96 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels151 entries vendor-only,39 bounded static,97 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -164,3 +164,7 @@ The [checkpoint manifest](evidence/validation/configuration-loading-audio-checkp
 Concrete added findings are indexed in the main report: original save flag versus Modern header refresh; original zero-version prefix and conditional configuration reset; View Angle label/storage/default linkage; Modern loading admission, exact-bit return and two distinct retry levels; and D3D/EAX-to-Stereo fallback using retained driver capability dispatch. The catalog has152 vendor-only,39 bounded static,96 partial and3 unresolved entries; labels are evidence classifications, not completion percentages.
 
 Remaining questions include full original default/save lifecycle, callback result/register contracts, real save migration, timing/audio/rendered outcomes and historical introduction. These findings do not resolve unrelated projection type8 sources, renderer-DLL history or every vendor claim. The broad comparison remains active and incomplete. Continue with another concrete unqualified changed mechanism rather than repeatedly restating this completed static increment.
+
+## Dashboard versus gear overlay linkage
+
+The [overlay follow-up](original-modern-view-overlay.md#primary-tile-binding-supports-a-bounded-cabin-widening-association) separates gear-labelled optional records from dash.qfs primary tiles and links the latter to the expanded rectangle. MP160-008 now has partial static support. The correction gives0..3 extent units at standard widths640..2560, not a universal cap; actual pixel coverage/seams and historical introduction remain unresolved.

@@ -19,6 +19,13 @@
           "bytes_sha256": "e458b2068ef75698f4114025e4d916f43be0e1cd31d44134ccc9105b00794434",
           "assembly": "analysis/captures/modern-differences/view-overlay/original-00488c6e.asm",
           "assembly_sha256": "eb382cb4424bdcf987526f467fbde020556ca5c6d752f0900809456d0f86f047"
+        },
+        {
+          "start": "00488b8c",
+          "end": "00488c33",
+          "bytes_sha256": "eee21d3b839b1a70844aa2ce0b884b86345c8e3f82d85f33acdb0feb72ff0789",
+          "assembly": "analysis/captures/modern-differences/view-overlay/original-00488b8c.asm",
+          "assembly_sha256": "ec95df1f6f98dab01d012b5545c346c2cdc4d180b121d4abba6a850eac685fa4"
         }
       ],
       "constants_0053b76c_to_0053b78c_hex": "00000000000070409a9999999999593f111111111111613fcdcccc3a8988083b"
@@ -40,6 +47,13 @@
           "bytes_sha256": "e458b2068ef75698f4114025e4d916f43be0e1cd31d44134ccc9105b00794434",
           "assembly": "analysis/captures/modern-differences/view-overlay/official_modern-00488c6e.asm",
           "assembly_sha256": "a83e6a604ca05184e0557acb11b8845f1bba253dfbf74eaa7222afca88802ca6"
+        },
+        {
+          "start": "00488b8c",
+          "end": "00488c33",
+          "bytes_sha256": "eee21d3b839b1a70844aa2ce0b884b86345c8e3f82d85f33acdb0feb72ff0789",
+          "assembly": "analysis/captures/modern-differences/view-overlay/official_modern-00488b8c.asm",
+          "assembly_sha256": "268f5d7407afa7437605850828328adaaf9b15402733c5a031d2ff388e043f8d"
         },
         {
           "start": "004900c8",
@@ -65,6 +79,15 @@
       ],
       "constants_0053b76c_to_0053b78c_hex": "00000000000070409a9999999999593f111111111111613fcdcccc3a8988083b"
     }
+  },
+  "primary_tile_resource_binding": {
+    "paired_setup": "00488b8c..00488c33",
+    "bytes_identical": true,
+    "sha256": "eee21d3b839b1a70844aa2ce0b884b86345c8e3f82d85f33acdb0feb72ff0789",
+    "resource": "dash.qfs at0053b6ec; shapes0000/0001 passed to004d4ae0.",
+    "destinations": "ECX00791d70; return published to primary gate007922fc.",
+    "consumer": "00489447..0048948f reads indexed record fields at00791d70+4/+8/.../+24.",
+    "limits": "Dashboard/cabin association inferred from named asset and record linkage; actual image contents and loader/renderer success not validated."
   },
   "optional_overlay_shape_bindings": {
     "paired_setup": "00488c6e..00488d41",

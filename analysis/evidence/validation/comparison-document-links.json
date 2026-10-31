@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "46a38acf81a4b24157690a44bb7d0485a3c19dac529afb360889a462cf983515",
-      "relative_links": 42
+      "sha256": "579ca37bd2430cfb93093e0a2a6acdc726236654ca92d04def60cd1c75e0158c",
+      "relative_links": 43
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "51c3eb9a15a0664ae1cdc70cac3673abba2045788dc5d889ed9e51ef93f8eb6f",
+      "sha256": "0fdc504d4fdd193d9be0c6fb1839556c8125c11418f883b9ae1d9e0eaee1a709",
       "relative_links": 147
     },
     {
@@ -538,8 +538,8 @@
     },
     {
       "path": "analysis/original-modern-view-overlay.md",
-      "sha256": "6fa83270944bcc4b5c5185a979f2ab724ee89cfdb028481b500815ebbe5f0141",
-      "relative_links": 9
+      "sha256": "06dc3f6a646b20d0cab9f13a60b00e26a3ec9bb0970cd170d48e372fe73fc91c",
+      "relative_links": 10
     },
     {
       "path": "analysis/original-modern-viewport-geometry.md",
@@ -578,8 +578,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "3c9bf03594a2970c8b9a20b00bc7897c433a1a533e871abc3a70efeb62018e7d",
-      "relative_links": 149
+      "sha256": "ac54bcbebd38435a924c073d16571ec8cdc4a007a269392fbe46c7a79bc3b1d4",
+      "relative_links": 150
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1795,
+  "relative_link_count": 1798,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
