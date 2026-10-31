@@ -271,6 +271,73 @@
     "00427143"
   ],
   "modern_logo_archive_name": "logos.qfs",
+  "visual_logo_identification": {
+    "interpretation": "256x256 BGRA32 pixels after 16-byte image header; visual labels inspected, not OCR assertions",
+    "atlas_path": "analysis/captures/modern-differences/model-presence/official-logo-atlas-1.png",
+    "atlas_png_sha256": "04a5ccd6401d30ae9815f41a0f393721a59d52e0a60f3787d6de91a454085e37",
+    "crops": [
+      {
+        "key": 0,
+        "visual_label": "Ferrari",
+        "rectangle": [
+          4,
+          123,
+          190,
+          49
+        ],
+        "path": "analysis/captures/modern-differences/model-presence/official-logo-ferrari.png",
+        "png_sha256": "d8a4065ac05c94c62999a40f7f06fb7c6089282e4316f5e6b38d3ac70bb6e95f"
+      },
+      {
+        "key": 37,
+        "visual_label": "Ford",
+        "rectangle": [
+          6,
+          4,
+          130,
+          54
+        ],
+        "path": "analysis/captures/modern-differences/model-presence/official-logo-ford.png",
+        "png_sha256": "89994928c32e902d4bcfaeb1c88ae9d0d8a8afc0439ff51b878a3078ac066f03"
+      },
+      {
+        "key": 38,
+        "visual_label": "HSV",
+        "rectangle": [
+          4,
+          59,
+          184,
+          63
+        ],
+        "path": "analysis/captures/modern-differences/model-presence/official-logo-hsv.png",
+        "png_sha256": "aa30c6b476bc91aebf60ebf791229eeb79f1a527152c4d18c6adbd799187df60"
+      },
+      {
+        "key": 26,
+        "visual_label": "Lister",
+        "rectangle": [
+          3,
+          173,
+          251,
+          27
+        ],
+        "path": "analysis/captures/modern-differences/model-presence/official-logo-lister.png",
+        "png_sha256": "c4940fe6c41bae07a1bd8ba8dc6bb4113b4458bf8d0b44739f8936685e44551f"
+      },
+      {
+        "key": 27,
+        "visual_label": "Spectre",
+        "rectangle": [
+          3,
+          213,
+          251,
+          37
+        ],
+        "path": "analysis/captures/modern-differences/model-presence/official-logo-spectre.png",
+        "png_sha256": "7383bffb7bb2721bb51bc9ab9934d07032d707647ccea0b2b66af85b11bc7661"
+      }
+    ]
+  },
   "logo_metadata_links": [
     {
       "entry_name": "0000",

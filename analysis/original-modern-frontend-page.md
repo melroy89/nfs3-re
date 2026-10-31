@@ -249,3 +249,19 @@ At **`004a4697..004a46c4`**, each visited slot advances horizontal state **`0055
 For each admitted slot, EDI starts0 and increments until12. These are **twelve local rendering passes within one visit**, not twelve game frames. The first pass uses the special base intensity/centering path already described. Later passes compute their base intensity through the retained integer sequence based on `(12-EDI)*150`, signed division by12, then signed division by2 with truncation correction. They also adjust local drawing positions; those transient locals do not replace the stored base position cells updated once per slot.
 
 Consequently the changed position-dependent fade applies over an existing multi-pass drawing pattern, while the local update-tail instructions remain unchanged. Equal instructions do not prove equal trajectories or cadence: Modern changes producer constants, list-derived extents and centering conversion before this tail. The x87/helper status, complete caller scheduling and actual frame output remain unresolved. No animation was executed.
+
+## Manufacturer identities from the official atlas
+
+Static visual decoding of the second official image entry resolves the earlier key-name uncertainty. Its header specifies256×256; interpreting the following262144 bytes after the16-byte header as BGRA32 produces a legible atlas. The existing payload rectangles align with these visible wordmarks:
+
+| Model key | Rectangle x,y,width,height | Visually identified logo |
+|---:|---|---|
+| 0 | `4,123,190,49` | Ferrari |
+| 37 (`25h`) | `6,4,130,54` | Ford |
+| 38 (`26h`) | `4,59,184,63` | HSV |
+| 26 (`1ah`) | `3,173,251,27` | Lister |
+| 27 (`1bh`) | `3,213,251,37` | Spectre |
+
+The audit retains the generated atlas/crop paths under ignored captures, their PNG hashes, exact source/member hashes and interpretation. These labels were read visually; the script checks rectangle bounds and reproduces crops, not semantic recognition. This is inert asset inspection, not rendered game output or a complete proof of every supported image format.
+
+Combined with the loader’s key predicate, this establishes the intended final-package association: Ferrari’s record bypasses model checking; Ford/HSV/Lister/Spectre records depend on their respective keys. The shared two-key presence wrapper tests Ford/HSV-associated keys37/38. The trailing conditional record implicated by the fall-through is Spectre-associated key27. Actual model registry contents and runtime manifestations remain unresolved; the visual evidence identifies the records without proving installed car availability or historic introduction dates.

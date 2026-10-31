@@ -81,6 +81,18 @@ def main():
         assert decoded[next_offset+8:next_offset+12]==b'LTBL'
         assert next_offset+8==tables[j]['decoded_offset']
         links.append({'entry_name':name.decode(),'entry_offset':offset,'header':f'{header:08x}','metadata_offset':next_offset,'returned_ltbl_offset':next_offset+8})
+    from PIL import Image
+    _,atlas_offset=struct.unpack_from('<4sI',decoded,24)
+    width,height=struct.unpack_from('<HH',decoded,atlas_offset+4)
+    assert (width,height)==(256,256)
+    atlas=Image.frombytes('RGBA',(width,height),decoded[atlas_offset+16:atlas_offset+16+width*height*4],'raw','BGRA')
+    atlas_path=capture/'official-logo-atlas-1.png';atlas.save(atlas_path)
+    crops=[]
+    for record,words,label in zip(tables[1]['records'],tables[1]['payload_words'],['Ferrari','Ford','HSV','Lister','Spectre']):
+        x,y,w,h=words;assert 0<=x<x+w<=width and 0<=y<y+h<=height
+        path=capture/f'official-logo-{label.lower()}.png';atlas.crop((x,y,x+w,y+h)).save(path)
+        crops.append({'key':record[0],'visual_label':label,'rectangle':words,'path':str(path.relative_to(ROOT)),'png_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+    result['visual_logo_identification']={'interpretation':'256x256 BGRA32 pixels after 16-byte image header; visual labels inspected, not OCR assertions','atlas_path':str(atlas_path.relative_to(ROOT)),'atlas_png_sha256':hashlib.sha256(atlas_path.read_bytes()).hexdigest(),'crops':crops}
     result['logo_metadata_links']=links
     result['official_logo_asset']={'member':'fedata/art/logos.qfs','packed_sha256':hashlib.sha256(packed).hexdigest(),'decoded_sha256':hashlib.sha256(decoded).hexdigest(),'decoded_size':len(decoded),'ltbl_magic_scan':tables}
     result['limits']=['No resource lookup or target instruction execution.','Selectors 0x25/0x26 are raw values; human-readable identities and list initialization remain unresolved.']
