@@ -395,15 +395,20 @@
       "path": "analysis/modern-patch-change-catalog.md",
       "sha256": "ea658671d8e3215c6451d3a0b04601b4a5546005f0c775fd03adc1411dcc4afa",
       "relative_links": 112
+    },
+    {
+      "path": "analysis/og-modern-x87-precision.md",
+      "sha256": "2c9b27f2c7a22d6edf7e8f6d14eb9fe67c2073a21f87e045d691fa21a8bc311c",
+      "relative_links": 7
     }
   ],
-  "file_count": 79,
-  "relative_link_count": 586,
+  "file_count": 80,
+  "relative_link_count": 593,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
     "Heading anchors use plain ATX heading text with lowercase and punctuation removal; not a full GFM renderer.",
     "Does not validate external URLs, reference-style links, HTML anchors, rendered layout or evidence truth.",
-    "Scope is original-modern-*.md reports plus the detailed change catalog, not every repository document."
+    "Scope is original-modern-*.md reports, the detailed change catalog and og-modern-x87-precision.md, not every repository document."
   ]
 }

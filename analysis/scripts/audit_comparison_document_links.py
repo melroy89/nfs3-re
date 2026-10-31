@@ -19,7 +19,7 @@ def anchors(path):
 
 
 def main():
-    files=sorted((ROOT/'analysis').glob('original-modern-*.md'))+[ROOT/'analysis/modern-patch-change-catalog.md']
+    files=sorted((ROOT/'analysis').glob('original-modern-*.md'))+[ROOT/'analysis/modern-patch-change-catalog.md',ROOT/'analysis/og-modern-x87-precision.md']
     rows=[];errors=[];total=0
     for path in files:
         raw=path.read_bytes();links=0
@@ -35,7 +35,7 @@ def main():
             if error:errors.append({'source':str(path.relative_to(ROOT)),'target':target,'error':error})
         rows.append({'path':str(path.relative_to(ROOT)),'sha256':hashlib.sha256(raw).hexdigest(),'relative_links':links});total+=links
     result={'kind':'comparison-document-relative-link-audit','files':rows,'file_count':len(rows),'relative_link_count':total,'errors':errors,
-            'limits':['Recognizes inline Markdown links without spaces or closing parentheses in destination.','Heading anchors use plain ATX heading text with lowercase and punctuation removal; not a full GFM renderer.','Does not validate external URLs, reference-style links, HTML anchors, rendered layout or evidence truth.','Scope is original-modern-*.md reports plus the detailed change catalog, not every repository document.']}
+            'limits':['Recognizes inline Markdown links without spaces or closing parentheses in destination.','Heading anchors use plain ATX heading text with lowercase and punctuation removal; not a full GFM renderer.','Does not validate external URLs, reference-style links, HTML anchors, rendered layout or evidence truth.','Scope is original-modern-*.md reports, the detailed change catalog and og-modern-x87-precision.md, not every repository document.']}
     (ROOT/'analysis/evidence/validation/comparison-document-links.json').write_text(json.dumps(result,indent=2)+'\n')
     assert not errors,errors
     print(f'PASS: {len(rows)} documents, {total} relative links, no missing recognized file/heading targets')
