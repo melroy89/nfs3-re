@@ -188,6 +188,30 @@
     },
     "limit": "Original local credits-entry gate replaced; not proof of removing credits feature or equivalent complete setup."
   },
+  "mode_copy_to_field_access": {
+    "baselines": {
+      "original": {
+        "start": "00448330",
+        "end_exclusive": "00448394",
+        "hex": "535152575589e581ec1401000089f28b0d189255003b0d14bc6f007f0831db891d14bc6f008b3514bc6f0089f0c1e00401f0c1e00201f0b9450000008dbdecfeffff8d348520126600f3a5b9450000008db5ecfeffff89d7f3a589d089ec5d5f5a595bc3",
+        "sha256": "080d2c0599f842e776fe4ac7042a4a4b9824a253011b7d35e9cda4b947b815fa",
+        "record_stride": 276,
+        "consumed_field_offset": 16
+      },
+      "official_modern": {
+        "start": "00448348",
+        "end_exclusive": "00448371",
+        "hex": "a15c82a1003b056082a100720731c0a35c82a10069c014010000053083a100c3e8dbffffff8b4010c3",
+        "sha256": "276d0daa854a71a1e411e4d211c75182579d4b6badd5979575b24018ac2897a1",
+        "record_stride": 276,
+        "consumed_field_offset": 16
+      }
+    },
+    "old_caller_buffer": "EBP-114h",
+    "old_test_local": "EBP-104h",
+    "modern_saved_result": "EBP-4",
+    "limit": "Offset correspondence verified; distinct record banks, selector bounds and producers do not establish equal field values."
+  },
   "fog_menu_assets": {
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/advgrph.mnu",

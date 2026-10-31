@@ -72,6 +72,18 @@ def main():
             'string_at_00538d7c':token}
     out['advanced_setup_policy_replacement']={'baselines':advanced,
         'limit':'Original local credits-entry gate replaced; not proof of removing credits feature or equivalent complete setup.'}
+    mode_access = {}
+    for label,(relative,expected,_) in SPECS.items():
+        pe=pefile.PE(str(ROOT/relative))
+        start,end=(0x448330,0x448394) if label=='original' else (0x448348,0x448371)
+        data=pe.get_data(start-0x400000,end-start)
+        mode_access[label]={'start':f'{start:08x}','end_exclusive':f'{end:08x}',
+            'hex':data.hex(),'sha256':hashlib.sha256(data).hexdigest(),
+            'record_stride':276,'consumed_field_offset':16}
+    out['mode_copy_to_field_access']={'baselines':mode_access,
+        'old_caller_buffer':'EBP-114h','old_test_local':'EBP-104h',
+        'modern_saved_result':'EBP-4',
+        'limit':'Offset correspondence verified; distinct record banks, selector bounds and producers do not establish equal field values.'}
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
     def parse(data):
