@@ -165,7 +165,7 @@
     },
     {
       "path": "analysis/original-modern-input-worker.md",
-      "sha256": "c56551da94c31f4eb1066fb3a8677a64df779c3427cd80b4783f2190fbc1a5d3"
+      "sha256": "79dbb1ae7e1bdf552554f7f0de71cde0d3e76e912a60859f353cce831b3b517e"
     },
     {
       "path": "analysis/original-modern-language-table.md",
@@ -8408,8 +8408,9 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-input-worker.md",
-          "entry_mentioned": false,
+          "entry_mentioned": true,
           "addresses": [
+            "004b5d84",
             "004b5d98"
           ]
         }
@@ -8656,6 +8657,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004bbda4"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-input-worker.md",
           "entry_mentioned": true,
           "addresses": [
             "004bbda4"
@@ -10144,6 +10152,14 @@
       "original_sha256": "ae2c772a5efaf8a5049ba313b4e42299e1363d0c50b2b1bb6f95501096aa3980",
       "modern_sha256": "66cfcad62fc277d0aec33e9ab880125505193e1b0154f2fac59cbcc7f1259b8a",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-input-worker.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004cdc50",
+            "004cdc84"
+          ]
+        },
         {
           "path": "analysis/original-modern-movie-screenshots.md",
           "entry_mentioned": true,

@@ -28,7 +28,7 @@ def main():
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
         images[label] = pe
-        spans = ([(0x42dc20,0x42dc40),(0x4b61f9,0x4b620a),(0x4b626f,0x4b6279),(0x4df870,0x4df894)] if label == 'original' else [(0x41d7e4,0x41d813),(0x42dc20,0x42dc3c),(0x4b5d44,0x4b5d5f),(0x4b5d84,0x4b5db1)])
+        spans = ([(0x42dc20,0x42dc40),(0x4b61f9,0x4b620a),(0x4b6250,0x4b6292),(0x4a6f70,0x4a6f75),(0x4cdc50,0x4cdc84),(0x4df870,0x4df894)] if label == 'original' else [(0x41d7e4,0x41d813),(0x42dc20,0x42dc3c),(0x4b5d44,0x4b5d5f),(0x4b5d84,0x4b5db1)])
         spans += [(0x48f550,0x48f69a),(0x42dc40,0x42dc57),(0x4dfb00,0x4dfb14),(0x4dfb20,0x4dfb3d),(0x4dfb70,0x4dfb8f),(0x4dfc00,0x4dfc0d)]
         spans += [(start,end) for start,end,_ in retained_input_ranges]
         rows=[]
@@ -52,6 +52,25 @@ def main():
     assert pointers == (0x4318b0,0x431740,0x4316c0,0x4316f0,0x4317d0,0x431800)
     result['identical_collector'] = {'start':'0048f550','end':'0048f69a','size':330,'sha256':hashlib.sha256(collector[0]).hexdigest()}
     result['initial_callback_table'] = {'address':'00554e34','sha256':hashlib.sha256(tables[0]).hexdigest(),'pointers':[f'{v:08x}' for v in pointers]}
+    old,new = images['original'],images['official_modern']
+    assert old.get_data(0xb6255,11) == bytes.fromhex('9bdbe39bd92df4f379009b')
+    assert new.get_data(0xb5d89,5) == bytes.fromhex('e816600000')
+    assert new.get_data(0xb6250,0x42) == b'\x90'*0x42
+    assert old.get_data(0xa6f70,5) == bytes.fromhex('5589e55dc3')
+    result['shutdown_envelopes'] = {
+        'original': {'start': '004b6250', 'end_exclusive': '004b6292',
+            'ordered_direct_calls': ['00410aa0','0040feb0','004a6f70','004df870','004cdc50','00471fb0','00434fd0'],
+            'final_indirect_slot': '009ef97c', 'x87_prefix': 'FINIT; FLDCW [0079f3f4]; FWAIT'},
+        'official_modern': {'start': '004b5d84', 'end_exclusive': '004b5db1',
+            'ordered_direct_calls': ['004bbda4','00410aa0','0040feb0','0042dc20','00471fb0','00434fd0'],
+            'final_indirect_slot': '009ef97c', 'local_x87_reset': False},
+        'original_removed_noop': '004a6f70..004a6f75 is PUSH EBP; MOV EBP,ESP; POP EBP; RET',
+        'original_hook_cleanup_import': '005347a8',
+        'limits': ['Equal target addresses/indirect slots do not establish callee identity or equivalent downstream effects.',
+                   'Missing local x87 reset does not establish final CW or preserved x87 state after callees.',
+                   'No complete Modern hook-teardown ownership or shutdown synchronization proof.']}
+    assert any(i.address == 0x5347a8 and i.name == b'UnhookWindowsHookEx'
+               for d in old.DIRECTORY_ENTRY_IMPORT for i in d.imports)
     result['limits']=['No worker scheduling, shutdown race or compatibility test.','Modern shutdown closes thread handle and signals event; no join established in that body.','Same address 0042dc20 denotes different roles across versions.']
     (ROOT/'analysis/evidence/audits/original-modern-input-worker.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: original worker correspondence, Modern sentinel loop, shutdown and imported primitives')

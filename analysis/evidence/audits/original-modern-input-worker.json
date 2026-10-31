@@ -21,11 +21,25 @@
           "assembly_sha256": "9b22b4afb68ed181a0224b1b0da006201f0dca4ea46c6bec0dfe32fd0ae814ed"
         },
         {
-          "start": "004b626f",
-          "end": "004b6279",
-          "sha256": "14a3e912c60fc052d23d3b099fa8bdb28b4cecc38d33ae8ec85fdd93472b72af",
-          "assembly": "analysis/captures/modern-differences/input-worker/original-004b626f.asm",
-          "assembly_sha256": "e1ded7a68f6edb6b3e33c7c98877a5a5bff2359fca7333bd1059d3be1e83cd75"
+          "start": "004b6250",
+          "end": "004b6292",
+          "sha256": "613ab1d14541722ee493e4bc771998321a285a4db9264ca38ac83e95020cde08",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004b6250.asm",
+          "assembly_sha256": "340505fbdb2b82d6150e4e142074f3ed5cadece151ecc6b952330b26c053d26a"
+        },
+        {
+          "start": "004a6f70",
+          "end": "004a6f75",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004a6f70.asm",
+          "assembly_sha256": "e83b2d570f078761afce999231c50d6b937572e618ecf98efa8e5f806ca9f81b"
+        },
+        {
+          "start": "004cdc50",
+          "end": "004cdc84",
+          "sha256": "42b88d973532766bbd442b6207b5e59b0570ebf53ac46bd0ad36054ba1713339",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004cdc50.asm",
+          "assembly_sha256": "996f848a6dd555825487bf939720191a3d7509f5ba09ed6a1bb3d2f9031265bc"
         },
         {
           "start": "004df870",
@@ -376,6 +390,44 @@
       "004316f0",
       "004317d0",
       "00431800"
+    ]
+  },
+  "shutdown_envelopes": {
+    "original": {
+      "start": "004b6250",
+      "end_exclusive": "004b6292",
+      "ordered_direct_calls": [
+        "00410aa0",
+        "0040feb0",
+        "004a6f70",
+        "004df870",
+        "004cdc50",
+        "00471fb0",
+        "00434fd0"
+      ],
+      "final_indirect_slot": "009ef97c",
+      "x87_prefix": "FINIT; FLDCW [0079f3f4]; FWAIT"
+    },
+    "official_modern": {
+      "start": "004b5d84",
+      "end_exclusive": "004b5db1",
+      "ordered_direct_calls": [
+        "004bbda4",
+        "00410aa0",
+        "0040feb0",
+        "0042dc20",
+        "00471fb0",
+        "00434fd0"
+      ],
+      "final_indirect_slot": "009ef97c",
+      "local_x87_reset": false
+    },
+    "original_removed_noop": "004a6f70..004a6f75 is PUSH EBP; MOV EBP,ESP; POP EBP; RET",
+    "original_hook_cleanup_import": "005347a8",
+    "limits": [
+      "Equal target addresses/indirect slots do not establish callee identity or equivalent downstream effects.",
+      "Missing local x87 reset does not establish final CW or preserved x87 state after callees.",
+      "No complete Modern hook-teardown ownership or shutdown synchronization proof."
     ]
   },
   "limits": [

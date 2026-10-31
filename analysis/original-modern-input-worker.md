@@ -65,3 +65,24 @@ These names are existing research labels, not additional proof of device semanti
 The immediate dispatcher’s retained branches are also concrete. Signed `006fd3a0 > 1` tests `007d36a0` and `007d36a8`, then increments `00560104` only when both are zero. On the other route, nonzero `00560108` returns immediately. Otherwise session `006fd3b0==1` submits player0’s four-byte buffer at `0079c338` to `004c6530` and submits player1’s buffer at `0079c33c` only if the first call returns nonzero. Session0 submits the first buffer using index `006fd4f4`; other session values pass it to `004c60c0`. Queue routines, state meanings and delivery timing are not established by these branches alone.
 
 This resolves the earlier specific unknown about equality of the initial callback instruction ranges: no changes were found there. Remaining input questions are transitive device/backend implementations, later pointer-table writes, binding/global initialization, queue consumers, timing and concurrency. It would be incorrect to relabel all input behavior as unchanged or infer original/Modern multiplayer compatibility from these retained ranges.
+
+## Complete shutdown envelope around the worker change
+
+The expanded audit retains **original `004b6250..004b6292`** (66 bytes) and **Modern `004b5d84..004b5db1`** (45 bytes), not just the worker-call witnesses. It proves the original66-byte same-address region is entirely NOPs in Modern, checks exact reset/call bytes, and captures two original callees needed to distinguish deletion from relocation.
+
+| Order | Original shutdown | Modern shutdown |
+|---|---|---|
+| Local entry | Save ECX/EDX/EBP, establish frame; FINIT, FLDCW `[0079f3f4]`, FWAIT | Same saved registers/frame; call `004bbda4` |
+| Shared target sequence | `00410aa0`, `0040feb0` | `00410aa0`, `0040feb0` |
+| Original extra call | `004a6f70` | None in this envelope |
+| Worker shutdown | EAX=`007a3aac`, call `004df870` | Call `0042dc20` |
+| Original hook cleanup | `004cdc50` | None in this envelope |
+| Final target sequence | `00471fb0`, `00434fd0`, indirect `[009ef97c]` | `00471fb0`, `00434fd0`, indirect `[009ef97c]` |
+
+The Modern initial call is the [render-arena release helper](original-modern-heap-initialization.md#separate-render-scratch-arena-grows-to8-mib), whose allocator/clear/free behavior is independently compared. It now occurs before the later calls in this envelope. Matching target addresses and the final slot identify retained call routing, **not complete equality of the callees or driver callback contents**.
+
+Original `004a6f70..004a6f75` is exactly PUSH EBP / MOV EBP,ESP / POP EBP / RET. Its omission removes a five-byte no-op callee and call overhead, not an established language-resource release. Original `004cdc50..004cdc84`, by contrast, tests byte `009f3d2d` and handle cell `0056127c`; if both are nonzero, it calls imported **UnhookWindowsHookEx** through `005347a8`, then clears `0056127c` and `00561280`. The return from that API is not checked before clearing. Modern's same-address `004cdc50` is the separately documented screenshot-repeat helper, so it must not inherit the old hook-cleanup role. Absence of the old call here does not prove hooks are never removed elsewhere or that shutdown leaks them.
+
+The x87 delta parallels the [frontend reset removal](og-modern-x87-precision.md#frontend-background-rendering-removes-a-local-x87-reset): original explicitly resets control/status/tag/stack state and loads the saved control word before its shutdown callees. Modern has no corresponding local reset and first delegates to arena release. This does not establish final x87 precision/state after every callee, nor show a simulation or replay trajectory change from a shutdown path. Saved-control-word ownership and exceptional state remain scoped as in the precision report.
+
+Both ordinary epilogues restore ECX/EDX/EBP and use plain RET. Neither envelope returns an explicit Boolean or checks these teardown-call results. The worker synchronization limitations above still hold. Full shutdown ordering outside these bodies, alternative entry/exit routes, hook ownership and runtime completion remain unverified. The [evidence manifest](evidence/audits/original-modern-input-worker.json) records the complete bodies, ordered calls, exact assertions and bounded limitations; no shutdown/game/API execution or Ghidra mutation occurred.

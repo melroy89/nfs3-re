@@ -246,7 +246,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004ba350` | ApplyTrackSideAdjustedGeometryColors | 1204 | 37 | [geometry-color-admission](original-modern-geometry-color-admission.md) |
 | `004bbba0` | UpdateAndDispatchRaceVehicleRenderStates | 323 | 305 | [geometry-color-admission](original-modern-geometry-color-admission.md), [registry](original-modern-registry.md), [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004bbd80` | InitializeRenderTemporaryArena | 36 | 36 | [heap-initialization](original-modern-heap-initialization.md) |
-| `004bbda4` | ReleaseRenderTemporaryArena | 18 | 18 | [heap-initialization](original-modern-heap-initialization.md) |
+| `004bbda4` | ReleaseRenderTemporaryArena | 18 | 18 | [heap-initialization](original-modern-heap-initialization.md), [input-worker](original-modern-input-worker.md) |
 | `004bc160` | RenderRaceScene | 704 | 15 | [geometry-color-admission](original-modern-geometry-color-admission.md), [night-lighting](original-modern-night-lighting.md), [state14](original-modern-state14.md) |
 | `004bc650` | FinalizeRaceFrameViewportState | 20 | 7 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004bc670` | ClearDialogAndRefreshRaceMouseState | 15 | 2 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
@@ -290,7 +290,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004cd350` | CreateGameWindowFromContext | 312 | 18 | [window-geometry](original-modern-window-geometry.md) |
 | `004cd4e0` | RunGameWindowMessageLoop | 387 | 16 | [window-key](original-modern-window-key.md) |
 | `004cd6c0` | InitializeGameWindow | 918 | 514 | [window-handling](original-modern-window-handling.md) |
-| `004cdc50` | UpdateScreenshotRequestRepeatState | 107 | 100 | [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
+| `004cdc50` | UpdateScreenshotRequestRepeatState | 107 | 100 | [input-worker](original-modern-input-worker.md), [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
 | `004d10e0` | RenderBitmapTextAtRightAnchor | 52 | 5 | [numeric-scale](original-modern-numeric-scale.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004d1430` | MeasureTextAdvance | 32 | 31 | [car-alias](original-modern-car-alias.md), [numeric-scale](original-modern-numeric-scale.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004d1450` | SetBitmapTextColor | 6 | 6 | [car-alias](original-modern-car-alias.md), [numeric-scale](original-modern-numeric-scale.md) |
