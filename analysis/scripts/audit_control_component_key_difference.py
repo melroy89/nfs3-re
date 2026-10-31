@@ -106,6 +106,15 @@ def main():
     out['compass_retained_callbacks'] = {'paired_bodies': compass_callbacks,
         'total_bytes': sum(row['bytes'] for row in compass_callbacks),
         'limit': 'Five complete callback envelopes match; initialization callback00457680 and generic dispatcher/constructor not qualified.'}
+    copy_bodies = {label: pe.get_data(0x49060,120) for label,pe in images.items()}
+    assert copy_bodies['original'] == copy_bodies['official_modern']
+    assert bytes.fromhex('b9bc000000') in copy_bodies['original']
+    out['template_copy'] = {'entry': '00449060', 'end_exclusive': '004490d8',
+        'bytes': 120, 'sha256': hashlib.sha256(copy_bodies['original']).hexdigest(),
+        'hex': copy_bodies['original'].hex(), 'copy_bytes': 188,
+        'runtime_base': '00604ee0', 'runtime_stride': 188,
+        'compass_runtime_bit_address': '00604ee0 + 188*entry_index + 4',
+        'limit': 'Copies188 bytes from selected registry template;64-byte adjacent-prefix witnesses do not establish complete source object sizes or later field overwrites.'}
     archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     archive_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     assert archive_sha == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
