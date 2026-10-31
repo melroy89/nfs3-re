@@ -18,6 +18,8 @@ def main():
         spans = [(0x441cb0, 0x44236c), (0x437820, 0x4378b6)]
         if label == 'official_modern':
             spans += [(0x4f1f58, 0x4f1f88), (0x4f26a0, 0x4f270e), (0x4f2710, 0x4f2736)]
+        spans += [(0x4ef1e0, 0x4ef26f), (0x4f2620, 0x4f269f), (0x4f2560, 0x4f261b),
+                  (0x5102a4, 0x5102ef), (0x5102f0, 0x5103ff), (0x510400, 0x510416)]
         rows = []
         for start, end in spans:
             path = capture/f'{label}-{start:08x}.asm'
@@ -51,6 +53,12 @@ def main():
             row['sixth_switch_target'] = f'{struct.unpack("<I",pe.get_data(0x41ca4,4))[0]:08x}'
             row['strings'] = {f'{a:08x}': pe.get_data(a-0x400000,40).split(b'\0')[0].decode('ascii') for a in (0x53f7d4,0x53f7e0)}
         result['binaries'][label] = row
+    result['identical_dependency_ranges'] = []
+    for start, end in ((0x4ef1e0, 0x4ef26f), (0x4f2620, 0x4f269f), (0x4f2560, 0x4f261b),
+                       (0x5102a4, 0x5102ef), (0x5102f0, 0x5103ff), (0x510400, 0x510416)):
+        pair = [p.get_data(start-0x400000, end-start) for p in images]
+        assert pair[0] == pair[1]
+        result['identical_dependency_ranges'].append({'start': f'{start:08x}', 'end': f'{end:08x}'})
     bodies = [p.get_data(0x41cb0,0x44236c-0x441cb0) for p in images]
     changes = [0x441cb0+i for i,(a,b) in enumerate(zip(*bodies)) if a!=b]
     assert changes == [0x441d03]

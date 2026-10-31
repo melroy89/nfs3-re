@@ -40,3 +40,24 @@ The manifest now retains the exact selected PE resource `10/ABOUT.QFS/0`: RVA `0
 These observations connect resource identity, raw compressed header and requested unpacked allocation. They do not validate every compressed command, verify actual produced byte count, establish the `cred` directory entry or its dimensions, or prove allocation/decompression succeeds. The size helper takes a pointer, not an explicit resource-length argument, and this path does not call SizeofResource before parsing. The actual inspected payload is long enough for these header reads; arbitrary resource safety is not inferred.
 
 Next: inspect the unpack/shape-directory contracts or reuse a qualified offline decoder if one becomes available. No new decoder or target execution was used for this checkpoint, and payload bytes were not modified.
+
+## Retained unpack and shape-directory machinery
+
+The paired audit now verifies byte identity of these complete recorded bodies/ranges:
+
+| Entry / range | Exclusive end | Role |
+|---|---|---|
+| `004ef1e0` | `004ef26f` | Find shape by four-byte tag |
+| `004f2620` | `004f269f` | Unpack wrapper with diagnostic/failure policy |
+| `004f2560` | `004f261b` | Format dispatcher |
+| `005102a4` | `005102ef` | Decoder body range 1 |
+| `005102f0` | `005103ff` | Decoder body range 2 |
+| `00510400` | `00510416` | Decoder body range 3 |
+
+The last three are the existing Ghidra function inventory's ranges for `DecodePackedBackreferenceData` at `005102a4`. Gaps are not silently included as function bytes. This is a comparison of retained code, not a proof of valid decoding for every input.
+
+For inspected payload prefix `10 fb`, the format dispatcher accepts byte1=fb and masked byte0=10, then calls `005102a4` at `004f25ee`, passing source EAX and caller-supplied destination EDX. The outer wrapper returns the dispatch result unless its zero-result diagnostic policy is activated. The page arm does not test that return before proceeding to shape lookup. Diagnostic helper `00401010` is not assumed to return or terminate universally.
+
+Shape lookup `004ef1e0` reads a directory count from object+8, compares the requested four-byte tag against eight-byte entries beginning at object+10h, and on a match returns `object + relativeOffset` from the matched entry+4. Missing-tag handling can invoke diagnostics under `0056440c`, then returns zero on a normal returning failure path. The caller reads shape dimensions without a local zero-result guard. Directory count/offset bounds are trusted in this helper; it is not a length-checked container parser.
+
+Thus Modern's new resource-page route reuses retained unpack/shape machinery for an added payload and record representation. This narrows the code delta but does not establish allocation bounds across the decoder, actual expanded bytes, presence of `cred`, visible output or equivalent behavior under every failure policy. Remaining next evidence is offline payload validation and runtime selection/rendering within the stated scope; neither was performed here.
