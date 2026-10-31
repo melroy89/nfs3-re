@@ -42,3 +42,9 @@ Run `python3 analysis/scripts/audit_texture_extent_difference.py` (Python `pefil
 - Existing Modern-side renderer inventory and source-specific bounds are documented in [installed renderer capability inventory](installed-renderer-capability-inventory.md). Its installed-build and driver observations are not substituted for evidence about the official archive binary beyond the code paths rechecked above.
 
 No game, probe, or test was run. No executable or Ghidra project was modified.
+
+## Outside-body removed tail and split instruction
+
+The outside-function interval **`0049cedd..0049cfa0`** consists of195 Modern NOP bytes, all195 differing from original. It begins **inside original instruction`0049cedb`**, `MOV DWORD PTR [EAX+4],128` (`c7 40 04 80 00 00 00`). Remaining original bytes belong to its fixed-threshold dimension selection, resampler-call/epilogue through exclusive`0049cf91`, and alignment. The [outside-body manifest](evidence/audits/outside-function-differences.json) now checks the NOP interval and boundary instruction and links the complete paired builder evidence.
+
+Modern’s shorter complete body ends exactly at`0049cedd`; the removed tail therefore does not represent removal of square texture building or resampling. Those operations remain in its configured-extent counterpart described above. This closes interval routing while retaining zero-descriptor, source-dimension, helper and driver/runtime limitations. No boundary repair or executable/Ghidra edit was made.

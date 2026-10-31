@@ -8029,5 +8029,19 @@
     },
     "dispatch_guard": "SUB EAX,6; CMP EAX,6; JA004a3ea0; JMP[004a3d94+4*EAX]",
     "limit": "Modern data/control-flow classification verified; removed original startup mechanisms only partially explained in linked reports."
+  },
+  "texture_builder_removed_tail": {
+    "interval": "0049cedd..0049cfa0",
+    "modern_nop_bytes": 195,
+    "changed_bytes": 195,
+    "original_instruction_crossing_start": {
+      "start": "0049cedb",
+      "hex": "c7400480000000"
+    },
+    "original_body_end_exclusive": "0049cf91",
+    "modern_body_end_exclusive": "0049cedd",
+    "report": "analysis/original-modern-texture-limits.md",
+    "report_sha256": "dee098f1b28d6059b7cfdb5c28a5812416ef034a04d68b1ddf4b0baabcaaa000",
+    "limit": "Removed original threshold/resampler tail and alignment; texture feature persists through shorter configured-extent counterpart. Driver/runtime acceptance unverified."
   }
 }

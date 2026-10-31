@@ -385,7 +385,7 @@
     },
     {
       "path": "analysis/original-modern-texture-limits.md",
-      "sha256": "51b5026a83f209b8258b14bdab340186b95c8c07164f48c276a52c04df7c3657"
+      "sha256": "dee098f1b28d6059b7cfdb5c28a5812416ef034a04d68b1ddf4b0baabcaaa000"
     },
     {
       "path": "analysis/original-modern-texture-loading-followup.md",
@@ -7162,7 +7162,8 @@
             "0049cea0",
             "0049cea5",
             "0049ceb9",
-            "0049cec1"
+            "0049cec1",
+            "0049cedb"
           ]
         }
       ]
