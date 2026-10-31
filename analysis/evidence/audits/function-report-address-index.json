@@ -149,7 +149,7 @@
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
-      "sha256": "017a7f059d6686eb991d03cea94643a534f66403dd8c5e418b0850f11ab366cd"
+      "sha256": "ea499bcafa8fa202dfbc60b894fac7bdda6fc56e2db16fdda5da229c283096b8"
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
@@ -3368,6 +3368,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-graphics-menu-transition.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00448330"
+          ]
+        },
+        {
           "path": "analysis/original-modern-resolution-defaults.md",
           "entry_mentioned": true,
           "addresses": [
@@ -3428,6 +3435,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-display-modes.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00448368"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-graphics-menu-transition.md",
           "entry_mentioned": true,
           "addresses": [
             "00448368"

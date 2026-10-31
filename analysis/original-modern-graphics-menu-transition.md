@@ -104,3 +104,11 @@ The paired helper **`0046cac0..0046cac8`** is an identical8-byte leaf: it writes
 That callback’s complete40-byte body **`00448570..00448598`** also matches. It gates through`0044a660` with type0fh; on admission it passes the item to getter`0046c9b0` with EDX0 and FSTP-stores the returned x87 value as binary32 global **`006fbc38`**. The complete67-byte getter matches as well: it dispatches according to item WORD+42h, spills its selected leaf result to binary32 and reloads it into ST0. Leaf interpretation, input scaling and exception behaviour are not fully qualified here.
 
 The audit retains all three bodies and hashes. Together they establish a concrete setting round trip: setup seeds item+54h from006fbc38 and registers a writeback callback; when that callback is actually invoked and admitted, its getter result updates the same global. Invocation timing, ownership/reentrancy, initial disable state and resulting renderer output remain untested.
+
+## Related setup replaces the original local credits-entry gate
+
+The paired57-byte setup span **`00448620..00448659`** begins with the same64-byte settings snapshot (`006fbc10 → 006627b0`). Original then supplies a local buffer at`EBP-114h` to`00448330`, looks up exact token **`credits`** at original`00538d7c`, and—if the item exists and signed DWORD`006fd3b0 > 1`—ORs item byte+4 with1. No matching local clear occurs in this block.
+
+Modern instead calls`00448368`, saves its EAX result to local`EBP-4`, then calls the separately documented Race Now policy`00437614` and fog support policy`004377c4` with context in EAX. It jumps across16 NOPs to the shared continuation`00448659`. Modern helper`00448368` obtains the selected mode-record pointer through`00448348` and returns DWORD record+10h. The later test at`00448709` reads this new local instead of original`EBP-104h`; relating those values requires the old copied-record layout, not merely equal stack-relative purpose.
+
+Token storage also changed: Modern`00538d7c` contains **`%s %s`**, not`credits`. The removed original lookup is not a removed credits feature, and interpreting Modern’s same address with the original string label would be wrong. The audit now retains both setup blocks and both string values. Full enclosing-function contracts, the old copied-field/new-record-field correspondence and final menu outcomes remain unresolved.

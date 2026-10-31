@@ -169,6 +169,25 @@
     ],
     "limit": "Callback registration and writeback verified; getter leaf semantics, callback invocation/lifetime, final enabled state and rendering remain unqualified."
   },
+  "advanced_setup_policy_replacement": {
+    "baselines": {
+      "original": {
+        "start": "00448620",
+        "end_exclusive": "00448659",
+        "hex": "b910000000bfb0276600be10bc6f00f3a58db5ecfeffffba7c8d5300e8effcffff89d8e8f8a3ffff85c0740d833db0d36f00017e0480480401",
+        "sha256": "f3384028e1132a862d89d7b180d4313478e20060054f8ef43e887039ee03877e",
+        "string_at_00538d7c": "credits"
+      },
+      "official_modern": {
+        "start": "00448620",
+        "end_exclusive": "00448659",
+        "hex": "b910000000bfb0276600be10bc6f00f3a5e832fdffff8945fc89d8e8d4effeff89d8e87df1feffeb1090909090909090909090909090909090",
+        "sha256": "f8eb20db585d0cb04ec13395329584ffaf41d587d39856dbb2ebb2743e87e102",
+        "string_at_00538d7c": "%s %s"
+      }
+    },
+    "limit": "Original local credits-entry gate replaced; not proof of removing credits feature or equivalent complete setup."
+  },
   "fog_menu_assets": {
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/advgrph.mnu",

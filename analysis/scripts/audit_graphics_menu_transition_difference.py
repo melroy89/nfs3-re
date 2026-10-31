@@ -61,6 +61,17 @@ def main():
             'role':role,'hex':data.hex(),'sha256':hashlib.sha256(data).hexdigest()})
     out['sfx_retained_dependencies']={'bodies':sfx_dependencies,
         'limit':'Callback registration and writeback verified; getter leaf semantics, callback invocation/lifetime, final enabled state and rendering remain unqualified.'}
+    advanced = {}
+    for label,(relative,expected,_) in SPECS.items():
+        pe=pefile.PE(str(ROOT/relative))
+        data=pe.get_data(0x48620,0x39)
+        token=pe.get_string_at_rva(0x138d7c).decode('ascii')
+        assert token==('credits' if label=='original' else '%s %s')
+        advanced[label]={'start':'00448620','end_exclusive':'00448659',
+            'hex':data.hex(),'sha256':hashlib.sha256(data).hexdigest(),
+            'string_at_00538d7c':token}
+    out['advanced_setup_policy_replacement']={'baselines':advanced,
+        'limit':'Original local credits-entry gate replaced; not proof of removing credits feature or equivalent complete setup.'}
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
     def parse(data):
