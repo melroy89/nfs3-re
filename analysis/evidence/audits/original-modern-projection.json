@@ -103,6 +103,27 @@
           "bytes_sha256": "f153ffb3423373e83b4a1a7c8d1f16d5f0e7ae69fc85f76d3da6193b343ca3a6",
           "assembly": "analysis/captures/modern-differences/projection/original-004251f0.asm",
           "assembly_sha256": "298f32b7625c8625fe6635c83657b0fd1e97c572cd622ff530ef2bc5d312c7d8"
+        },
+        {
+          "start": "00421380",
+          "end": "004213a1",
+          "bytes_sha256": "436c82e8c9fb2c5d95e23a06ebd2e3fe933f46e2eea0e04d7c73294d0758a7cf",
+          "assembly": "analysis/captures/modern-differences/projection/original-00421380.asm",
+          "assembly_sha256": "895a3442e90acbbfab8188737ec860861f800ec949f590c3081e12bced69fe3c"
+        },
+        {
+          "start": "00421450",
+          "end": "00421471",
+          "bytes_sha256": "4ae2007386e45d05f21b6676c5a78899d5909c60c01ace41e1e4a6e5cdf0a69c",
+          "assembly": "analysis/captures/modern-differences/projection/original-00421450.asm",
+          "assembly_sha256": "693c8a5b2fdde7e0e060767c2825bf5e374123b71b8a508d60f1f0b5e4bce3fd"
+        },
+        {
+          "start": "004bc470",
+          "end": "004bc529",
+          "bytes_sha256": "10935aecdeb3f08d61086a7074ca086077fd62c9bea3f7ca031e49cc699b8991",
+          "assembly": "analysis/captures/modern-differences/projection/original-004bc470.asm",
+          "assembly_sha256": "434f306d78105a9101b896980dfbad622e00da3ccb4a6c8bb914dfcbb9c6f5cd"
         }
       ],
       "view_angle_setting": {
@@ -317,6 +338,27 @@
           "bytes_sha256": "f153ffb3423373e83b4a1a7c8d1f16d5f0e7ae69fc85f76d3da6193b343ca3a6",
           "assembly": "analysis/captures/modern-differences/projection/official_modern-004251f0.asm",
           "assembly_sha256": "e2731a7a418d11d471b81aeacc366a5b50847611c9f4cafecc9042a77d8fc696"
+        },
+        {
+          "start": "00421380",
+          "end": "004213a1",
+          "bytes_sha256": "436c82e8c9fb2c5d95e23a06ebd2e3fe933f46e2eea0e04d7c73294d0758a7cf",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-00421380.asm",
+          "assembly_sha256": "84e027200f3e03a4629dbe1d485b9438a0a1a28caec4eb1e73cae3ee0d10f1ae"
+        },
+        {
+          "start": "00421450",
+          "end": "00421471",
+          "bytes_sha256": "4ae2007386e45d05f21b6676c5a78899d5909c60c01ace41e1e4a6e5cdf0a69c",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-00421450.asm",
+          "assembly_sha256": "8a11a4bddc930bd4f6da60e72cfd9add7ee0cb4f52fa3bc39cfe435bb8d97ea2"
+        },
+        {
+          "start": "004bc470",
+          "end": "004bc529",
+          "bytes_sha256": "10935aecdeb3f08d61086a7074ca086077fd62c9bea3f7ca031e49cc699b8991",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-004bc470.asm",
+          "assembly_sha256": "d81a7ffbade1d5e99370be09b39718734e605c8e4ffe63e62ef35b3bde54f35f"
         }
       ],
       "view_angle_setting": {
@@ -672,6 +714,29 @@
     "publication": "00425218 calls004238b0 with requestedEDX8 and EAX=context+0c slot;8 bypasses callback cases3/4/5/6, then0042394d publishes mode-table row8 pointer to005e10b0[slot].",
     "continuation": "00425228 dispatches mode8 through00426450 before exiting this fallback branch.",
     "limits": "Actual selector failure and later finalizer ordering/pointer stability not observed; projection source writer still unresolved."
+  },
+  "viewport_stage_order": {
+    "paired_identical_spans": [
+      {
+        "start": "00421380",
+        "end_exclusive": "004213a1",
+        "sha256": "436c82e8c9fb2c5d95e23a06ebd2e3fe933f46e2eea0e04d7c73294d0758a7cf"
+      },
+      {
+        "start": "00421450",
+        "end_exclusive": "00421471",
+        "sha256": "4ae2007386e45d05f21b6676c5a78899d5909c60c01ace41e1e4a6e5cdf0a69c"
+      },
+      {
+        "start": "004bc470",
+        "end_exclusive": "004bc529",
+        "sha256": "10935aecdeb3f08d61086a7074ca086077fd62c9bea3f7ca031e49cc699b8991"
+      }
+    ],
+    "stage0": "004bc4a4 calls00421450 withEDX0:00421380 calls004228e0 then004dbde0.",
+    "middle": "For admitted input tag0/1,004bc4f3 calls0041bb50 and004bc4fa calls004bc160.",
+    "stage2": "004bc509 calls00421450 withEDX2 ->004213b0, which calls004dbde0 before type8 restoration.",
+    "limits": "Local call order, not global scheduling; middle callees can mutate source/selection state. Finalized projection may affect later consumers; no rendered-horizon conclusion."
   },
   "indexed_source_candidate": {
     "span": "00423a60..00423aab",

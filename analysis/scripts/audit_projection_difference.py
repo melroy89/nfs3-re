@@ -24,7 +24,8 @@ def main():
         pe=pefile.PE(data=raw);rows=[]
         for start,end in SPANS[label]+[(0x4213b0,0x421441),(0x41bc90,0x41bf26),
                                       (0x422cf0,0x422d9b),(0x422da2,0x422de5),(0x42383f,0x42386b),
-                                      (0x4238b0,0x423959),(0x4251f0,0x425232)]:
+                                      (0x4238b0,0x423959),(0x4251f0,0x425232),
+                                      (0x421380,0x4213a1),(0x421450,0x421471),(0x4bc470,0x4bc529)]:
             out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -136,6 +137,16 @@ def main():
         'publication':'00425218 calls004238b0 with requestedEDX8 and EAX=context+0c slot;8 bypasses callback cases3/4/5/6, then0042394d publishes mode-table row8 pointer to005e10b0[slot].',
         'continuation':'00425228 dispatches mode8 through00426450 before exiting this fallback branch.',
         'limits':'Actual selector failure and later finalizer ordering/pointer stability not observed; projection source writer still unresolved.'}
+    order_spans=[]
+    for start,end in ((0x421380,0x4213a1),(0x421450,0x421471),(0x4bc470,0x4bc529)):
+        blob=images[0].get_data(start-0x400000,end-start)
+        assert blob==images[1].get_data(start-0x400000,end-start)
+        order_spans.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}','sha256':hashlib.sha256(blob).hexdigest()})
+    result['viewport_stage_order']={'paired_identical_spans':order_spans,
+        'stage0':'004bc4a4 calls00421450 withEDX0:00421380 calls004228e0 then004dbde0.',
+        'middle':'For admitted input tag0/1,004bc4f3 calls0041bb50 and004bc4fa calls004bc160.',
+        'stage2':'004bc509 calls00421450 withEDX2 ->004213b0, which calls004dbde0 before type8 restoration.',
+        'limits':'Local call order, not global scheduling; middle callees can mutate source/selection state. Finalized projection may affect later consumers; no rendered-horizon conclusion.'}
     initializer = images[0].get_data(0x23a60,0x4b)
     iterator = images[0].get_data(0x23a20,0x3e)
     assert iterator == images[1].get_data(0x23a20,0x3e)
