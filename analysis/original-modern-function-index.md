@@ -31,7 +31,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00418cc0` | OpenPathWithShellExecute | 28 | 26 | [shell-open](original-modern-shell-open.md) |
 | `0041a120` | BuildThreePayloadRecordAndAdvanceCursor | 564 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
 | `0041aa60` | ClassifyValueAgainstSelectedRecordSquaredThresholds | 55 | 51 | [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md), [x87-observers](original-modern-x87-observers.md) |
-| `0041b9b0` | BuildAndRouteTrackSceneRenderCommands | 401 | 1 | [night-lighting](original-modern-night-lighting.md) |
+| `0041b9b0` | BuildAndRouteTrackSceneRenderCommands | 401 | 1 | [night-lighting](original-modern-night-lighting.md), [track-detail](original-modern-track-detail.md) |
 | `0041c670` | ApplyNightVehicleLightingToTrackBlockQuads | 884 | 71 | [night-lighting](original-modern-night-lighting.md) |
 | `0041cdc0` | BuildVisibleTrackBlockRenderChains | 1012 | 56 | [night-lighting](original-modern-night-lighting.md), [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md) |
 | `0041d620` | ApplySelectedParameterPreset | 196 | 193 | [parameter-preset](original-modern-parameter-preset.md) |
@@ -169,7 +169,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00482b00` | RenderRaceHUD | 5411 | 1 | [hud-layout](original-modern-hud-layout.md), [numeric-scale](original-modern-numeric-scale.md) |
 | `00484450` | TogglePrimaryViewVariantFlagAndRefresh | 109 | 106 | [replay-mirror](original-modern-replay-mirror.md) |
 | `004844c0` | UpdateHudLayoutAttachmentsForView | 1700 | 2 | [hud-layout](original-modern-hud-layout.md), [replay-mirror](original-modern-replay-mirror.md) |
-| `00484b70` | InitializeHudScaleFactors | 160 | 3 | [hud-layout](original-modern-hud-layout.md) |
+| `00484b70` | InitializeHudScaleFactors | 160 | 3 | [hud-layout](original-modern-hud-layout.md), [numeric-scale](original-modern-numeric-scale.md) |
 | `00485680` | RestoreAndScaleDefaultHudLayoutCoordinates | 152 | 126 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [hud-layout](original-modern-hud-layout.md) |
 | `00485718` | AdjustHudHorizontalBoundsFromX87Scale | 35 | 34 | [hud-layout](original-modern-hud-layout.md) |
 | `0048573b` | AdjustHudVerticalBoundsFromX87Scale | 32 | 31 | [hud-layout](original-modern-hud-layout.md) |
@@ -184,7 +184,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0048a660` | RenderPolicePursuitStatusList | 990 | 6 | [hud-layout](original-modern-hud-layout.md) |
 | `0048aa40` | CalculateHUDStandingsColumnWidths | 1065 | 18 | [hud-layout](original-modern-hud-layout.md) |
 | `0048ae70` | RenderRaceStandingsList | 1071 | 10 | [hud-layout](original-modern-hud-layout.md) |
-| `0048d110` | UpdateHudLayoutGeometryForView | 931 | 3 | [hud-layout](original-modern-hud-layout.md) |
+| `0048d110` | UpdateHudLayoutGeometryForView | 931 | 3 | [hud-layout](original-modern-hud-layout.md), [map-marker-scaling](original-modern-map-marker-scaling.md) |
 | `0048e790` | CycleHudVariantViewportModeForView | 395 | 1 | [hud-layout](original-modern-hud-layout.md) |
 | `0048eb90` | RunMultimediaTimerWorker | 173 | 4 | [clock-source](original-modern-clock-source.md), [title-delay](original-modern-title-delay.md) |
 | `0048ed30` | HandleMultimediaTimerPulse | 247 | 4 | [clock-source](original-modern-clock-source.md) |

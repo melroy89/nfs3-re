@@ -138,7 +138,7 @@ The [display-mode comparison](original-modern-display-modes.md) traces exact-4:3
 
 ## 13. Viewport, aspect factors and border geometry
 
-The [viewport comparison](original-modern-viewport-geometry.md) derives the centred 4:3 reference rectangle, changed internal setter ABI, dynamic aspect-factor writes and profile rectangle rounding differences. The [border comparison](original-modern-border-geometry.md) traces the cached thickness source and changed wrapper call, while keeping the original same-address global’s meaning separate. Complete HUD/camera/map consumers and visual correctness remain pending.
+The [viewport comparison](original-modern-viewport-geometry.md) derives the centred 4:3 reference rectangle, changed internal setter ABI, dynamic aspect-factor writes and profile rectangle rounding differences. The [border comparison](original-modern-border-geometry.md) traces the cached thickness source and changed wrapper call, while keeping the original same-address global’s meaning separate. The [map-marker comparison](original-modern-map-marker-scaling.md) now links the changed reference-width read to retained marker-quad dimensions, closing the map-point source/consumer gap for MP160-006. Complete HUD/camera/map behavior and visual correctness remain pending.
 
 ## 14. Menu and multiplayer text input
 

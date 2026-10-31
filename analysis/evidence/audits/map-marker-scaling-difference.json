@@ -1,0 +1,135 @@
+{
+  "kind": "map-marker-scale-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0048d110",
+          "exclusive_end": "0048d4b3",
+          "sha256": "e83f7e7f1b16393dda1581bf780cb75f7243d22eb8d3233e638dfa3a6d76021d",
+          "assembly": "analysis/captures/modern-differences/map-marker-scale/original-0048d110.asm"
+        },
+        {
+          "start": "0048cc60",
+          "exclusive_end": "0048cce8",
+          "sha256": "e61f39243723c61545fa244cb25096884e6fe492c5db79272e2cc9370fd4c0df",
+          "assembly": "analysis/captures/modern-differences/map-marker-scale/original-0048cc60.asm"
+        },
+        {
+          "start": "0048d4c0",
+          "exclusive_end": "0048e76d",
+          "sha256": "a6877ce0fb2d644689112d37f438f435f88122fb5eb1d9699db29b4731786c40",
+          "assembly": "analysis/captures/modern-differences/map-marker-scale/original-0048d4c0.asm"
+        }
+      ],
+      "constants": [
+        {
+          "address": "0053b9ac",
+          "hex": "0000003f",
+          "binary32": 0.5
+        },
+        {
+          "address": "0053b9cc",
+          "hex": "00001041",
+          "binary32": 9.0
+        },
+        {
+          "address": "0053b9d0",
+          "hex": "cdcccc3a",
+          "binary32": 0.0015625000232830644
+        },
+        {
+          "address": "0053b9d4",
+          "hex": "0000b041",
+          "binary32": 22.0
+        },
+        {
+          "address": "0053b9d8",
+          "hex": "00006041",
+          "binary32": 14.0
+        },
+        {
+          "address": "0053b9dc",
+          "hex": "00002041",
+          "binary32": 10.0
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0048d110",
+          "exclusive_end": "0048d4b3",
+          "sha256": "8ac962baab76a91bf26807c3fcd67ee0ce19c350aa65d8bcb2a638685d79e67f",
+          "assembly": "analysis/captures/modern-differences/map-marker-scale/official_modern-0048d110.asm"
+        },
+        {
+          "start": "0048cc60",
+          "exclusive_end": "0048cce8",
+          "sha256": "e61f39243723c61545fa244cb25096884e6fe492c5db79272e2cc9370fd4c0df",
+          "assembly": "analysis/captures/modern-differences/map-marker-scale/official_modern-0048cc60.asm"
+        },
+        {
+          "start": "0048d4c0",
+          "exclusive_end": "0048e76d",
+          "sha256": "a6877ce0fb2d644689112d37f438f435f88122fb5eb1d9699db29b4731786c40",
+          "assembly": "analysis/captures/modern-differences/map-marker-scale/official_modern-0048d4c0.asm"
+        }
+      ],
+      "constants": [
+        {
+          "address": "0053b9ac",
+          "hex": "0000003f",
+          "binary32": 0.5
+        },
+        {
+          "address": "0053b9cc",
+          "hex": "00001041",
+          "binary32": 9.0
+        },
+        {
+          "address": "0053b9d0",
+          "hex": "cdcccc3a",
+          "binary32": 0.0015625000232830644
+        },
+        {
+          "address": "0053b9d4",
+          "hex": "0000b041",
+          "binary32": 22.0
+        },
+        {
+          "address": "0053b9d8",
+          "hex": "00006041",
+          "binary32": 14.0
+        },
+        {
+          "address": "0053b9dc",
+          "hex": "00002041",
+          "binary32": 10.0
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static producer/consumer evidence, not rendered size or runtime initialization.",
+    "Reference width follows aspect-dependent construction; not universally physical width or height."
+  ],
+  "extent_fields": {
+    "007930e4": "9*width*k",
+    "007930f8": "22*width*k",
+    "00793104": "14*width*k",
+    "007930ec": "10*width*k",
+    "k": "binary32 approximation to1/640 at0053b9d0"
+  },
+  "confirmed_square_marker_call": {
+    "site": "0048e188",
+    "width": "007930f8",
+    "height": "007930f0, copied from007930f8",
+    "consumer": "0048cc60",
+    "geometry": "centre plus/minus half extents; no claim of final rendered pixels"
+  }
+}
