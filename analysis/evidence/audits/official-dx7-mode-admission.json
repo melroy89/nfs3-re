@@ -107,5 +107,12 @@
     "capacity": "New key rejected when unsigned count>=99; equal-key replacement can still succeed.",
     "direction_flag": "Ordinary search/copy assumes DF clear; shifting setsSTD then restoresCLD.",
     "limits": "Proves final-DLL insertion policy, not an earlier release difference, every later list mutation or actual display enumeration."
+  },
+  "enumeration_population_boundary": {
+    "reset": "600025b2..600025cb zeroes1000 DWORDs at descriptor+40h pointer and clears count600fc7fc.",
+    "records": "Callback600025ec builds accepted records from supplied candidate and calls600026d4; insertion starts60017278, leaving index0 reserved.",
+    "final_count": "600025e1 increments count once after interface enumeration returns, including reserved index0.",
+    "bounded_absence": "No unconditional fixed640x480x16 candidate insertion in reviewed60002578..6000276d path.",
+    "limits": "Other mode writers, descriptor overrides, API correctness/failure and historical changes remain unqualified."
   }
 }

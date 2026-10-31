@@ -24,6 +24,8 @@ def main():
     assert pe.get_data(0x261e,12)==bytes.fromhex('81fbe00100000f829c000000')
     assert pe.get_data(0x26fe,15).hex()=='b903000000f3a77444770489c2ebda'
     assert pe.get_data(0x2718,5).hex()=='83fb637342'
+    assert pe.get_data(0x25b2,25).hex()=='b9e803000031c08b3d00c80f60f3abc705fcc70f6000000000'
+    assert pe.get_data(0x25e1,6).hex()=='ff05fcc70f60'
     exports=[{'name':x.name.decode(),'address':f'{base+x.address:08x}'} for x in pe.DIRECTORY_ENTRY_EXPORT.symbols if x.name and x.name==b'_THRASH_about@0']
     assert exports==[{'name':'_THRASH_about@0','address':'60001000'}]
     imports={i.address:i.name.decode() for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
@@ -50,6 +52,12 @@ def main():
         'capacity':'New key rejected when unsigned count>=99; equal-key replacement can still succeed.',
         'direction_flag':'Ordinary search/copy assumes DF clear; shifting setsSTD then restoresCLD.',
         'limits':'Proves final-DLL insertion policy, not an earlier release difference, every later list mutation or actual display enumeration.'}
+    result['enumeration_population_boundary']={
+        'reset':'600025b2..600025cb zeroes1000 DWORDs at descriptor+40h pointer and clears count600fc7fc.',
+        'records':'Callback600025ec builds accepted records from supplied candidate and calls600026d4; insertion starts60017278, leaving index0 reserved.',
+        'final_count':'600025e1 increments count once after interface enumeration returns, including reserved index0.',
+        'bounded_absence':'No unconditional fixed640x480x16 candidate insertion in reviewed60002578..6000276d path.',
+        'limits':'Other mode writers, descriptor overrides, API correctness/failure and historical changes remain unqualified.'}
     (ROOT/'analysis/evidence/audits/official-dx7-mode-admission.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: official DX7 member, minimum size branches and about export')
 
