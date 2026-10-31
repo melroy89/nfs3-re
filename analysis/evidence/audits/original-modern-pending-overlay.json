@@ -40,6 +40,20 @@
           "bytes_sha256": "8ab3d5e335ee1662ec2536434fa4176205d1ba233fec84f5970cd6f09eefa21d",
           "assembly": "analysis/captures/modern-differences/pending-overlay/official_modern-00494ec0.asm",
           "assembly_sha256": "b5ebfb9ae2a26fc458f4fe15ec7c590ff42bfa6bc4240933588e4476c1c3635b"
+        },
+        {
+          "start": "00494cde",
+          "end": "00494cf2",
+          "bytes_sha256": "f4338f761aade076c8695768ddc843704f527feee59c8a122afb812c97c0ee89",
+          "assembly": "analysis/captures/modern-differences/pending-overlay/official_modern-00494cde.asm",
+          "assembly_sha256": "d300ad81bc3b529b6c271039acaf83106af993b8290b8583b435453032eac048"
+        },
+        {
+          "start": "004a3500",
+          "end": "004a3544",
+          "bytes_sha256": "b472ee8302cdd5f4fc0ac370ce15a90194ffc150c212e9038b69972241c59b2d",
+          "assembly": "analysis/captures/modern-differences/pending-overlay/official_modern-004a3500.asm",
+          "assembly_sha256": "f6575d6b3b76c86d45891c2d799464304dd191bfe6a663fc6bff32eb7193deec"
         }
       ],
       "format_0053bdc8": " %s"

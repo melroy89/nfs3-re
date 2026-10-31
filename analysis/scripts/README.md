@@ -313,3 +313,7 @@ Run `python3 analysis/scripts/inventory_credits_text_range.py --game-dir "<insta
 ## Original versus Modern pending overlay
 
 Run `python3 analysis/scripts/audit_pending_overlay_difference.py`. Captures complete paired overlay bodies, selected coordinate producers and format strings in `analysis/evidence/audits/original-modern-pending-overlay.json`. No target execution. See [overlay comparison](../original-modern-pending-overlay.md).
+
+## Installed loading-abort overlay labels
+
+Run `python3 analysis/scripts/inventory_overlay_labels.py --game-dir "<installed game directory>"`. Records hashes, offset/NUL bounds and byte-preserving labels for ID235 across 18 installed/local backup files in `analysis/evidence/inventories/installed-overlay-labels.json`. No game execution; provenance/runtime-selection limits apply. See [overlay context](../original-modern-pending-overlay.md#loading-abort-context-and-installed-message-identity).

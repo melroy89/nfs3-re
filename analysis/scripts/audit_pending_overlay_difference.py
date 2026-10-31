@@ -14,6 +14,7 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw)
         spans=[(0x494bd0,0x494ca6),(0x494f42,0x494f79)] if label=='original' else [(0x494bd0,0x494c5a),(0x494ec0,0x494f12)]
+        if label == 'official_modern': spans += [(0x494cde,0x494cf2),(0x4a3500,0x4a3544)]
         rows=[]
         for start,end in spans:
             p=capture/f'{label}-{start:08x}.asm';p.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))

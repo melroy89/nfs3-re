@@ -1,0 +1,279 @@
+{
+  "kind": "installed-overlay-label-inventory",
+  "files": [
+    {
+      "path": "FEDATA/TEXT/text.eng",
+      "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+      "size": 35896,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10297,
+          "byte_length": 7,
+          "sha256": "d12da90ae086489f104f3b150ef7b7b375bb626551fd1fd3eebf1c60114bbaf4",
+          "bytes_hex": "41626f72746564",
+          "text_latin1": "Aborted"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.fre",
+      "sha256": "68cce0ae29d9d91abac71e870931f530ea552065cdf85aec5b571ac42470502a",
+      "size": 37471,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10591,
+          "byte_length": 7,
+          "sha256": "d09252c46a7b55e632764e08731ef10a6d95a5409873cada88871b4531a6e640",
+          "bytes_hex": "4162616e646f6e",
+          "text_latin1": "Abandon"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.ger",
+      "sha256": "0e964d1966ded07f5430bf170efa8e91c3d36e97422f5a75b549271455f0f582",
+      "size": 35150,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10624,
+          "byte_length": 11,
+          "sha256": "b9731e79a80505b9b3016951f403bd1b112ad7d9e793d0bcfe6062cb82f89444",
+          "bytes_hex": "4162676562726f6368656e",
+          "text_latin1": "Abgebrochen"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.ita",
+      "sha256": "8bcef28ebdd96f0cb80a083a88d3832ab684d6efe2304ef186df42b25e18c29d",
+      "size": 36309,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10673,
+          "byte_length": 9,
+          "sha256": "5c56e4286bc41b18344df2125d7dff79c7a874a6a3ff8e4b70d96b79d28b7ffb",
+          "bytes_hex": "416e6e756c6c61746f",
+          "text_latin1": "Annullato"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.spa",
+      "sha256": "290519a9574e6e78c3b55af9c71b5e57b6e7fa40b287f5c8910f366c263d2a1d",
+      "size": 38216,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10555,
+          "byte_length": 9,
+          "sha256": "f407384e2f304cf032d3eeb4d56bf6d524aebc1f215c6a57a844e05406fe349f",
+          "bytes_hex": "43616e63656c61646f",
+          "text_latin1": "Cancelado"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.swe",
+      "sha256": "c64f1ac7be5bfe762c9b6a961415c994e132c66dc3660bd5763d54eeedfc9b9a",
+      "size": 34207,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10464,
+          "byte_length": 8,
+          "sha256": "3d97f8799edb98154c816e7fbd9ba51d6717e8ae5989e441e47e155e9531b1ee",
+          "bytes_hex": "4176627275746574",
+          "text_latin1": "Avbrutet"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.ENG",
+      "sha256": "fb27fe75c9f8f6ee3d65058db0b2732ed14e1dd7aef9f1c5e5481d4078a74bcc",
+      "size": 35402,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10164,
+          "byte_length": 7,
+          "sha256": "d12da90ae086489f104f3b150ef7b7b375bb626551fd1fd3eebf1c60114bbaf4",
+          "bytes_hex": "41626f72746564",
+          "text_latin1": "Aborted"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.FRE",
+      "sha256": "315c15bbeabf3dbde4389e3be85d0bf4b851d3ad7beb498e0c42f9464a51903d",
+      "size": 36919,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10458,
+          "byte_length": 7,
+          "sha256": "d09252c46a7b55e632764e08731ef10a6d95a5409873cada88871b4531a6e640",
+          "bytes_hex": "4162616e646f6e",
+          "text_latin1": "Abandon"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.GER",
+      "sha256": "0c5ffefd171b040cc70b299100eaae984b5c92f6fd5035407ac3358de5c05628",
+      "size": 34670,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10499,
+          "byte_length": 11,
+          "sha256": "b9731e79a80505b9b3016951f403bd1b112ad7d9e793d0bcfe6062cb82f89444",
+          "bytes_hex": "4162676562726f6368656e",
+          "text_latin1": "Abgebrochen"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.ITA",
+      "sha256": "3310fd467f5433718613c34997267ba03869527c8fd8f345c758287b5546582b",
+      "size": 35789,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10541,
+          "byte_length": 9,
+          "sha256": "5c56e4286bc41b18344df2125d7dff79c7a874a6a3ff8e4b70d96b79d28b7ffb",
+          "bytes_hex": "416e6e756c6c61746f",
+          "text_latin1": "Annullato"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.SPA",
+      "sha256": "28d18d34453557b8bfca8465cb69d73b866c7d99f0236fe779bb96582fadd7a7",
+      "size": 37665,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10420,
+          "byte_length": 9,
+          "sha256": "f407384e2f304cf032d3eeb4d56bf6d524aebc1f215c6a57a844e05406fe349f",
+          "bytes_hex": "43616e63656c61646f",
+          "text_latin1": "Cancelado"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.SWE",
+      "sha256": "9ca6af7765a41bf56d2329368d57517df228724b5f26d0f8ad42ab7b9bddf5b1",
+      "size": 33692,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10333,
+          "byte_length": 8,
+          "sha256": "3d97f8799edb98154c816e7fbd9ba51d6717e8ae5989e441e47e155e9531b1ee",
+          "bytes_hex": "4176627275746574",
+          "text_latin1": "Avbrutet"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.eng",
+      "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+      "size": 35896,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10297,
+          "byte_length": 7,
+          "sha256": "d12da90ae086489f104f3b150ef7b7b375bb626551fd1fd3eebf1c60114bbaf4",
+          "bytes_hex": "41626f72746564",
+          "text_latin1": "Aborted"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.fre",
+      "sha256": "68cce0ae29d9d91abac71e870931f530ea552065cdf85aec5b571ac42470502a",
+      "size": 37471,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10591,
+          "byte_length": 7,
+          "sha256": "d09252c46a7b55e632764e08731ef10a6d95a5409873cada88871b4531a6e640",
+          "bytes_hex": "4162616e646f6e",
+          "text_latin1": "Abandon"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.ger",
+      "sha256": "0e964d1966ded07f5430bf170efa8e91c3d36e97422f5a75b549271455f0f582",
+      "size": 35150,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10624,
+          "byte_length": 11,
+          "sha256": "b9731e79a80505b9b3016951f403bd1b112ad7d9e793d0bcfe6062cb82f89444",
+          "bytes_hex": "4162676562726f6368656e",
+          "text_latin1": "Abgebrochen"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.ita",
+      "sha256": "8bcef28ebdd96f0cb80a083a88d3832ab684d6efe2304ef186df42b25e18c29d",
+      "size": 36309,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10673,
+          "byte_length": 9,
+          "sha256": "5c56e4286bc41b18344df2125d7dff79c7a874a6a3ff8e4b70d96b79d28b7ffb",
+          "bytes_hex": "416e6e756c6c61746f",
+          "text_latin1": "Annullato"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.spa",
+      "sha256": "290519a9574e6e78c3b55af9c71b5e57b6e7fa40b287f5c8910f366c263d2a1d",
+      "size": 38216,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10555,
+          "byte_length": 9,
+          "sha256": "f407384e2f304cf032d3eeb4d56bf6d524aebc1f215c6a57a844e05406fe349f",
+          "bytes_hex": "43616e63656c61646f",
+          "text_latin1": "Cancelado"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.swe",
+      "sha256": "c64f1ac7be5bfe762c9b6a961415c994e132c66dc3660bd5763d54eeedfc9b9a",
+      "size": 34207,
+      "entries": [
+        {
+          "id": 235,
+          "offset": 10464,
+          "byte_length": 8,
+          "sha256": "3d97f8799edb98154c816e7fbd9ba51d6717e8ae5989e441e47e155e9531b1ee",
+          "bytes_hex": "4176627275746574",
+          "text_latin1": "Avbrutet"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Installed and locally named backup files, not authenticated retail provenance.",
+    "Selected offsets and NUL bounds only; no runtime language selection or rendering."
+  ]
+}

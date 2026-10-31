@@ -29,3 +29,15 @@ Both use an `118h`-byte local frame containing the format destination and other 
 The retained driver calls are pointers, not proof of successful display, frame presentation or identical backend behavior. The removed ellipsis is statically visible, but its exact user-facing message and historical release association require localized text and caller admission evidence.
 
 **Verified:** paired pending/draw flow, changed format, draw-time integer inputs, selected producer storage changes and register preservation. **Unresolved:** complete message identity, coordinate units/producer equivalence, every writer, localized length admission, transitive helpers and rendered output. No precision, replay or multiplayer compatibility conclusion follows from this overlay rewrite.
+
+## Loading-abort context and installed message identity
+
+The Modern caller witness `004a3500..004a3544` connects this overlay to the loading-presentation loop. When `0055e88c` is zero, it repeats progress helper `00495230` until that helper returns nonzero, then calls `004c62a0`. When `0055e88c` is nonzero at the loop gate, it instead calls `00494bd0` at `004a3532`, calls `004df8e0` with EAX=200 and sets EAX=1 on that path. The latter helper's complete timing semantics are not established here; literal 200 is not independently labeled milliseconds by this witness.
+
+Artwork initializer `00494cb0` sets pending global `0079f288=1` at `00494cec` (EDX was loaded with 1 at `00494cde`). Thus the overlay's clear-and-draw gate is armed as part of loading artwork setup. See the existing [loading artwork](original-modern-loading-artwork.md) and [loading timing/cancellation](original-modern-loading-timing.md) comparisons for the broader input-poll path. This is a static chain, not a captured abort interaction or a universal explanation of every write to `0055e88c`.
+
+The [installed overlay label inventory](evidence/inventories/installed-overlay-labels.json) hash-identifies all 18 installed/local backup language files and validates ID **ebh (235)** offset and NUL termination within each. The inspected installed English and uppercase backup English payloads both contain **“Aborted”**. Exact bytes for each translation are retained; the JSON's Latin-1 text is a byte-preserving display, not an independently established code page. Backup naming does not authenticate retail provenance or prove which file loads at runtime.
+
+Combining that label with the paired format constants gives original English `" ... Aborted"` versus Modern `" Aborted"` for these payloads. This supports identification of the path as a loading-abort overlay while preserving the separate questions of rendering success, active language and precise trigger cause. No game was aborted for this investigation.
+
+Reproduce the label evidence with `python3 analysis/scripts/inventory_overlay_labels.py --game-dir '<installed game directory>'`. The static audit script retains the arming and caller spans alongside the renderer evidence. Remaining work: full flag-writer provenance, complete coordinate-producer correspondence, message-expansion bounds and actual rendered output.

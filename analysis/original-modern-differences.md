@@ -208,7 +208,7 @@ The [frontend-page comparison](original-modern-frontend-page.md) verifies a one-
 
 ## 33. Pending localized overlay
 
-The [overlay comparison](original-modern-pending-overlay.md) traces changed formatting and coordinated producer/consumer coordinate storage. Complete message identity, all writers and actual rendering remain pending.
+The [overlay comparison](original-modern-pending-overlay.md) traces changed formatting and coordinated producer/consumer coordinate storage. The loading-abort caller and installed ID235 labels are now traced. All flag writers, full producer correspondence and actual rendering remain pending.
 
 ## 34. Prioritized semantic work remaining
 
