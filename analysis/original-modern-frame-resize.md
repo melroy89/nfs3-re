@@ -26,7 +26,7 @@ On an admitted change it updates both four-DWORD groups: shift their origins by 
 
 ## Relationship to the Frame Size release claim
 
-**MP160-004** reports that Frame Size was extended to restore a camera shift. The paired input, resize gate and derived-rectangle refresh above are concrete relevant mechanisms. However, this evidence does not establish the visible horizon/camera effect, fully map that advertised setting to `006fbc4c`'s producer and flags, or date the delta to v1.6.0. The catalog entry therefore remains vendor-claimed with this related investigation linked; it is not promoted merely from nearby viewport code.
+**MP160-004** reports that Frame Size was extended to restore a camera shift. The paired input, resize gate and derived-rectangle refresh above are concrete relevant mechanisms. The resize witness alone does not establish the visible horizon/camera effect, its complete setting producer or the v1.6.0 introduction date. The later [Frame Size list/selector audit](original-modern-frame-setting.md) closes the UI-label and storage association and establishes two-to-four choices. MP160-004 is now partial on that stronger evidence; the visual camera-shift effect and release date remain unverified.
 
 The [view-offset](original-modern-view-offset.md), [viewport source-group](original-modern-viewport-geometry.md#source-groups-covering-frame-versus-physicalfitted-rectangles) and [projection](original-modern-projection.md) reports document distinct paths that may contribute to that visual claim. Combining their existence is still not a rendered comparison.
 

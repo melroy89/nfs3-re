@@ -1,0 +1,160 @@
+{
+  "kind": "static-frame-size-setting-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "descriptor_005567a8_words": [
+        "00538008",
+        "005561be",
+        "00000000",
+        "00000000",
+        "006fbc4c"
+      ],
+      "list_ids": [
+        229,
+        228
+      ],
+      "spans": [
+        {
+          "start": "00442c80",
+          "end": "00442cdc",
+          "bytes_sha256": "d30364496639de899e19c753e8c8e67791452a4e555cfc478bf80884e5cf4c25",
+          "assembly": "analysis/captures/modern-differences/frame-setting/original-00442c80.asm",
+          "assembly_sha256": "37a5c9015250435807e0c46d9830b632cbf92c7406bb2eba4446eb3ae1813288"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "descriptor_005567a8_words": [
+        "00538008",
+        "005591f6",
+        "00000000",
+        "00000000",
+        "006fbc4c"
+      ],
+      "list_ids": [
+        1951,
+        1952,
+        1953,
+        1954
+      ],
+      "spans": [
+        {
+          "start": "00442c80",
+          "end": "00442cdc",
+          "bytes_sha256": "d30364496639de899e19c753e8c8e67791452a4e555cfc478bf80884e5cf4c25",
+          "assembly": "analysis/captures/modern-differences/frame-setting/official_modern-00442c80.asm",
+          "assembly_sha256": "66ce7eee965ea2392ea0001683f7d2bbf537d766a3325fae4fb1dadda32aa6e5"
+        },
+        {
+          "start": "004624a0",
+          "end": "004624df",
+          "bytes_sha256": "38d1305466db1a5045af83f1b17c5e4c102d53b4f4d4bbf682a2582ce6d7f33d",
+          "assembly": "analysis/captures/modern-differences/frame-setting/official_modern-004624a0.asm",
+          "assembly_sha256": "57d979cc58b046ece6a88289f02093861e095bf1e0610928f02470996d0c69c0"
+        },
+        {
+          "start": "00462633",
+          "end": "00462663",
+          "bytes_sha256": "2d28120b91edf33f9212a9ca66f509038940cd805c08b14e932cf0a7cb3f32e6",
+          "assembly": "analysis/captures/modern-differences/frame-setting/official_modern-00462633.asm",
+          "assembly_sha256": "bbf9a90727d6529e28f5c8d392010e22e7aea7a8416b0ade96f6c0f35d919690"
+        }
+      ]
+    }
+  },
+  "label_symbol_ids": {
+    "kMenuPSGRAPHWideScre001": 1283,
+    "kMenuGRAPHICSWideScre001": 1504,
+    "kMenuGRAPHICSwidescre001": 1505
+  },
+  "official_english": {
+    "member": "fedata/text/text.eng",
+    "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "labels": {
+      "228": {
+        "offset": 10260,
+        "text": "On"
+      },
+      "229": {
+        "offset": 10263,
+        "text": "Off"
+      },
+      "1283": {
+        "offset": 28317,
+        "text": "Frame Size"
+      },
+      "1504": {
+        "offset": 31067,
+        "text": "Frame Size"
+      },
+      "1505": {
+        "offset": 31078,
+        "text": "Frame Size is..."
+      },
+      "1951": {
+        "offset": 35840,
+        "text": "Full, Centered"
+      },
+      "1952": {
+        "offset": 35855,
+        "text": "Full, Shifted"
+      },
+      "1953": {
+        "offset": 35869,
+        "text": "2:1, Centered"
+      },
+      "1954": {
+        "offset": 35883,
+        "text": "2:1, Shifted"
+      }
+    }
+  },
+  "official_menu_fields": [
+    {
+      "member": "fedata/menus/advgrph.mnu",
+      "sha256": "e74f9ff968ddf92d9499ffb91c6f7abd4cd1017ef5ad72188f49ab15031f3832",
+      "fields": [
+        {
+          "line": 73,
+          "field": "text=kMenuGRAPHICSWideScre001"
+        },
+        {
+          "line": 74,
+          "field": "listname=widescreen"
+        },
+        {
+          "line": 81,
+          "field": "text=kMenuGRAPHICSwidescre001"
+        },
+        {
+          "line": 83,
+          "field": "listname=widescreen"
+        }
+      ]
+    },
+    {
+      "member": "fedata/menus/psgraph.mnu",
+      "sha256": "e4f00933cd61145d0fb14d2396091d7b22d5246b39d9c1e35de9edb032d226a7",
+      "fields": [
+        {
+          "line": 133,
+          "field": "text=kMenuPSGRAPHWideScre001"
+        },
+        {
+          "line": 134,
+          "field": "listname=widescreen"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "No UI selection, rendering or target execution.",
+    "Matched lookup path and accepted-write spans are partial function witnesses.",
+    "Original choice IDs are decoded using official Modern English here; original retail language provenance is not established."
+  ]
+}

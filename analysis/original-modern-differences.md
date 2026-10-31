@@ -326,7 +326,7 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 ## Viewport resize input and admission
 
-[The paired resize comparison](original-modern-frame-resize.md) traces held-action +1/−1 callers, the narrower Modern bit gate and its added refresh-on-skip path. The complete adjustment helper is retained unchanged. MP160-004 remains vendor-claimed because the advertised camera-shift effect and full setting association are unresolved.
+[The paired resize comparison](original-modern-frame-resize.md) traces held-action +1/−1 callers, the narrower Modern bit gate and its added refresh-on-skip path. The complete adjustment helper is retained unchanged. The [Frame Size list/selector follow-up](original-modern-frame-setting.md) now closes the setting association and two-to-four-choice expansion, making MP160-004 partial; its advertised camera-shift effect and introduction date remain unverified.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
@@ -360,7 +360,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP160-001 | Automatic View Angle (FOV H+ mode). | Static |
 | MP160-002 | More accurate vertical view angle. | Claimed |
 | MP160-003 | Camera doesn't shift down when frame is wide (to match the FOV H+ better), the horizon is always in the middle of the screen. | Unresolved |
-| MP160-004 | Frame Size setting was extended to be able to return this camera shift. | Claimed |
+| MP160-004 | Frame Size setting was extended to be able to return this camera shift. | Partial |
 | MP160-005 | Proportions of the image in the mirror are the same regardless of the aspect ratio of the selected resolution. | Partial |
 | MP160-006 | Size of the borders and map points are calculated based on the vertical resolution. | Partial |
 | MP160-007 | More accurate positions for the following HUD elements: Rear View Mirror, Cop Detector, Analog Speedometer and Tachometer. | Partial |
