@@ -112,7 +112,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels151 entries vendor-only,39 bounded static,97 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels150 entries vendor-only,39 bounded static,98 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -174,3 +174,7 @@ The [overlay follow-up](original-modern-view-overlay.md#primary-tile-binding-sup
 The [checkpoint record](evidence/validation/renderer-dashboard-checkpoint.json) records five fresh successful static audits, exact script hashes/commands and unchanged original, official Modern, local EXE and saved-database identities. It is primary-agent reproduction, not a new independent review. The main comparison now summarizes callback registration, cleanup/cache boundaries, official DX7 descriptor ownership/environment effects, gear-versus-dashboard resource bindings and retained tile construction.
 
 The bounded increment establishes those mechanisms and leaves actual cleanup failure/reachability, driver callback conformance, post-unload consumer admission, rasterized coverage and seam removal unverified. Final DX7 component inspection is not an authenticated older-DLL comparison. The catalog currently has151 vendor-only,39 bounded static,97 partial and3 unresolved labels; the whole audit remains incomplete. Historical release pairs and runtime behavior retain their separate evidence requirements.
+
+## DX7 sorted-list claim linkage
+
+MP161-004 now has partial evidence for its bundled sorted-list subclaim: unsigned width/height/depth binary insertion, full duplicate-record replacement and new-key capacity99. The [driver report](original-modern-dx7-mode-admission.md#sorted-list-subclaim-in-mp161-004) distinguishes this from the still-unverified unsupported640×480×16 policy and release-specific history. Current labels:150 vendor-only,39 bounded static,98 partial,3 unresolved.

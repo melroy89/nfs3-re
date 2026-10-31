@@ -22,6 +22,8 @@ def main():
         rows.append({'start':f'{start:08x}','end':f'{end:08x}','bytes_sha256':hashlib.sha256(pe.get_data(start-base,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
     assert pe.get_data(0x2613,11)==bytes.fromhex('3d800200000f82a8000000')
     assert pe.get_data(0x261e,12)==bytes.fromhex('81fbe00100000f829c000000')
+    assert pe.get_data(0x26fe,15).hex()=='b903000000f3a77444770489c2ebda'
+    assert pe.get_data(0x2718,5).hex()=='83fb637342'
     exports=[{'name':x.name.decode(),'address':f'{base+x.address:08x}'} for x in pe.DIRECTORY_ENTRY_EXPORT.symbols if x.name and x.name==b'_THRASH_about@0']
     assert exports==[{'name':'_THRASH_about@0','address':'60001000'}]
     imports={i.address:i.name.decode() for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
@@ -42,6 +44,12 @@ def main():
         'strings':strings,'reader':'60009250..600092bd: getenv(prefix_key), then getenv(THRASH_key) only if first pointer null; atoi present value, else default argument.',
         'about_prefix':'600092c0..60009300 publishes environment-derived signature at descriptor+0 and version at+8; rest of override routine not fully captured here.',
         'limits':'No environment or DLL execution. Later fields/full override helper, atoi edge behavior and temporal environment mutation remain unqualified.'}
+    result['mode_ordering']={'helper':'600026d4..6000276d',
+        'key':'Unsigned lexicographic first3 DWORDs: width,height,resulting depth. REP CMPSD then JE/JA choose equal/upper/lower search paths.',
+        'duplicate':'Equal key overwrites all10 DWORDs without incrementing count, before new-entry capacity gate.',
+        'capacity':'New key rejected when unsigned count>=99; equal-key replacement can still succeed.',
+        'direction_flag':'Ordinary search/copy assumes DF clear; shifting setsSTD then restoresCLD.',
+        'limits':'Proves final-DLL insertion policy, not an earlier release difference, every later list mutation or actual display enumeration.'}
     (ROOT/'analysis/evidence/audits/official-dx7-mode-admission.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: official DX7 member, minimum size branches and about export')
 
