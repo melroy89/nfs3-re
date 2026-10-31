@@ -2,7 +2,7 @@
 
 ## Scope and evidence
 
-This extends [mode admission](original-modern-display-modes.md) and [renderer lifecycle](original-modern-renderer-lifecycle.md), using the same hash-pinned supplied original/backup and official Modern v1.6.1. The [display manifest](evidence/audits/original-modern-display-modes.json) retains original `00517610..0051788c`, Modern lookup/filter/product helpers `004bedcc..004beeaf`, and application body `004beeb0..004bef9c`. Reproduce with `python3 analysis/scripts/audit_display_mode_difference.py`. No target, driver or instruction-probe execution.
+This extends [mode admission](original-modern-display-modes.md) and [renderer lifecycle](original-modern-renderer-lifecycle.md), using the same hash-pinned supplied original/backup and official Modern v1.6.1. The [display manifest](evidence/audits/original-modern-display-modes.json) retains original `00517610..0051788d`, Modern lookup/filter/product helpers `004bedcc..004beeaf`, and application body `004beeb0..004bef9c`. Reproduce with `python3 analysis/scripts/audit_display_mode_difference.py`. No target, driver or instruction-probe execution.
 
 Existing [screenshot admission research](screenshot-worker-admission-audit.md) already traces the live mode record and its downstream capture use. This report reuses that finding and adds the original/Modern selection comparison; it does not establish general buffer-size safety or actual advertised driver modes.
 
@@ -22,7 +22,7 @@ Original `00517610` normalizes its width/height/depth inputs as documented in th
 | Otherwise height = 822 | 18 |
 | Otherwise | 1 |
 
-Width 320 is tested at `00517692`; remaining comparisons and branches are at `005177fd..0051788c`. These are literal width/height tests, **not complete resolution-pair matches**. In particular, do not silently replace heights 502/822 with more familiar values. The remaining two stack arguments are 2 and 1. Driver-specific ID meanings are not derived merely from these constants.
+Width 320 is tested at `00517692`; remaining comparisons and branches are at `005177fd..0051788d`. These are literal width/height tests, **not complete resolution-pair matches**. In particular, do not silently replace heights 502/822 with more familiar values. The remaining two stack arguments are 2 and 1. Driver-specific ID meanings are not derived merely from these constants.
 
 ## Modern descriptor lookup
 
@@ -97,3 +97,9 @@ The timing of local setup/publication also differs:
 Modern therefore can have performed local resize/setup even when the later driver request fails; this local body supplies no explicit rollback of that earlier operation. Original's absence of that call in its complete body does not exclude equivalent work inside the driver or other callers. The retained recovery callback discussed above still does not turn either local result into a verified successful switch.
 
 **Follow-up status: done for failure-branch correspondence, exact preparation factoring and argument signedness. Confidence: verified static bodies.** Remaining scope is full `004cdbd0` side effects/rollback, descriptor stability, all caller/record invariants, driver implementations and observed recovery. Do not claim mode-application equivalence or a newly added failure check from this refactoring alone. No executable, Ghidra or runtime state was changed.
+
+## Outside-body video-mode tail is unrelated to the new RNG
+
+The Modern outside-body interval **`005177de..00517890`** is178 NOP bytes, all changed from original. Its original bytes lie in the longer registered video-mode callback`00517610..0051788d`, followed by three zero alignment bytes. The final original JMP at`00517888` ends at exclusive`0051788d`; that endpoint corrects the earlier report’s one-byte-short notation and matches the existing retained capture. The interval’s initial address is not a new original function entry.
+
+Modern RNG helpers at`00517784..005177de` occupy part of the former video-mode address range. They are separately established by their caller/dataflow evidence in the [music/RNG comparison](original-modern-music-selection.md), not counterparts of original video-mode blocks at those addresses. The video-mode operation instead has mapped Modern renderer/application counterparts above. The outside-body inventory now routes this removed original tail accordingly; provider mode-ID meanings, complete callee contracts and actual driver/display acceptance remain unverified.

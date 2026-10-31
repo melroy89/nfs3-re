@@ -8043,5 +8043,16 @@
     "report": "analysis/original-modern-texture-limits.md",
     "report_sha256": "dee098f1b28d6059b7cfdb5c28a5812416ef034a04d68b1ddf4b0baabcaaa000",
     "limit": "Removed original threshold/resampler tail and alignment; texture feature persists through shorter configured-extent counterpart. Driver/runtime acceptance unverified."
+  },
+  "video_mode_removed_tail": {
+    "interval": "005177de..00517890",
+    "modern_nop_bytes": 178,
+    "original_callback_entry": "00517610",
+    "original_callback_end_exclusive": "0051788d",
+    "final_jump_hex": "e917feffff",
+    "original_trailing_zero_bytes": 3,
+    "report": "analysis/original-modern-mode-selection.md",
+    "report_sha256": "f81f580eea83cbf9b6142de3437e46f7e1bb269214739b3ca3cdc92cb9256393",
+    "limit": "Original video-mode callback tail; no correspondence with new RNG helpers at overlapping addresses."
   }
 }

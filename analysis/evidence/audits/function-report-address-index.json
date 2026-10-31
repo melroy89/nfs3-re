@@ -201,7 +201,7 @@
     },
     {
       "path": "analysis/original-modern-mode-selection.md",
-      "sha256": "4f5bb7f9ddca498da480dbd9d1daa227e0557516f4c735d9b2e330794b1634dd"
+      "sha256": "f81f580eea83cbf9b6142de3437e46f7e1bb269214739b3ca3cdc92cb9256393"
     },
     {
       "path": "analysis/original-modern-mouse-cursor.md",
@@ -12807,6 +12807,13 @@
       "original_sha256": "34e7a837dc7b05eb0b78902a802f13aba2e45f40ca99ba57c3ecb7d7a18cf05a",
       "modern_sha256": "478fca284df26e62029b4df550f35c1587c8e02552f9d783d403ca07e8b48b26",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-mode-selection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00517784"
+          ]
+        },
         {
           "path": "analysis/original-modern-music-selection.md",
           "entry_mentioned": true,

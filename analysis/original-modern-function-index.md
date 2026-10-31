@@ -365,7 +365,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004fb714` | ReadGameIniString | 32 | 32 | [configuration](original-modern-configuration.md), [language-table](original-modern-language-table.md), [registry](original-modern-registry.md) |
 | `004fb734` | LookupIniEnvironmentOverride | 54 | 53 | [configuration](original-modern-configuration.md) |
 | `00517620` | InitializeRasterDisplayModeAndSurfaces | 351 | 146 | [mode-selection](original-modern-mode-selection.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md), [resolution-defaults](original-modern-resolution-defaults.md) |
-| `00517784` | SeedRuntimeLinearCongruentialGenerator | 6 | 6 | [music-selection](original-modern-music-selection.md), [small-entry-followup](original-modern-small-entry-followup.md) |
+| `00517784` | SeedRuntimeLinearCongruentialGenerator | 6 | 6 | [mode-selection](original-modern-mode-selection.md), [music-selection](original-modern-music-selection.md), [small-entry-followup](original-modern-small-entry-followup.md) |
 | `0051778c` | AdvanceRuntimeLinearCongruentialGenerator | 29 | 28 | [music-selection](original-modern-music-selection.md) |
 | `005177ac` | GetRuntimeRandomUpper16 | 9 | 7 | [music-selection](original-modern-music-selection.md) |
 | `005177cc` | GetRuntimeRandomModulo | 18 | 16 | [music-selection](original-modern-music-selection.md) |
