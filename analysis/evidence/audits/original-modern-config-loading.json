@@ -67,5 +67,15 @@
   "limits": [
     "No config, game or instruction execution.",
     "Header acceptance is not complete serialized-field validation."
-  ]
+  ],
+  "view_angle_header_route": {
+    "storage": "006fbc40",
+    "offset_from_loaded_block_006fbb40": "00000100",
+    "accepted_header": "size20f0, version high byte0, low byte6..255 ->00472230 then00472aeb; skips00472d10.",
+    "reset_header": "Size mismatch or rejected version reaches00472d10 at00472ad7; its direct selector reset chooses0/Automatic.",
+    "limits": [
+      "No per-field View Angle remapping in the header decision sequence or narrow sound normalizer00472230.",
+      "Successful block copy, full save layout and later writes are not established by the header branches alone."
+    ]
+  }
 }

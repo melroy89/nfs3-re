@@ -63,8 +63,8 @@
     },
     {
       "path": "analysis/original-modern-config-loading.md",
-      "sha256": "78e58061d8754fd337c8ed56a3bfcee721d50cd505733fc0674b04264f61825f",
-      "relative_links": 6
+      "sha256": "d40f623c5a50fbe3c271842207fdaa6be73a22999d632b6700cbb59fd06be6a1",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-configuration.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1774,
+  "relative_link_count": 1775,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -46,3 +46,11 @@ This explains why the ghost wrapper's restored header matters: a ghost-supplied 
 ## Remaining work
 
 Verified: removed timestamp gate, retained size gate, Modern version-byte decisions and default-helper routing, and the header template/producer. Pending: all field layouts/packing, complete original default implementation, save-file semantics, read/open failures, source-template writes and cross-release compatibility. The [CPU](original-modern-cpu-tier.md), [HUD](original-modern-hud-layout.md) and resolution chapters explain selected reset consumers; they do not make this a complete serialization specification.
+
+## View Angle reset versus accepted-header path
+
+The [View Angle comparison](original-modern-projection.md#view-angle-option-list-and-release-note-correspondence) establishes that selector `006fbc40` changes meaning:0 selects fixed90 in original but Automatic in final Modern. It lies at offset`100h` from the inspected loaded-block destination `006fbb40`. This identifies a field location within the observed memory block, not a complete save-file layout or a proof that every read/copy succeeded.
+
+The config audit now asserts the header decision bytes and direct display-default call. For matching size and version WORD`0006..00ff`, the header route calls the narrow sound normalizer `00472230` and jumps past grouped defaults. Neither that local decision nor the complete normalizer remaps View Angle. Rejected header versions enter grouped defaults; Modern `00472d9a` then explicitly writes selector0, as separately asserted by the projection audit. Size mismatch additionally invokes full defaults before those grouped helpers.
+
+Thus the verified local policy is **accepted-header bypass versus explicit reset**, not an unconditional conversion of old Wide to new Normal. If a successfully copied block supplies ordinal0 and it survives later writes, final Modern interprets it as Automatic; ordinal1 retains the75-degree choice. This conditional consequence does not prove that an arbitrary original file reaches the accepted route, that no other helper migrates fields, or that a real user's setting changed. Full read/copy contracts, original header production, saved-format versions and later writers remain required before claiming cross-version configuration compatibility. No config file or game execution was used.

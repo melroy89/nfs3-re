@@ -18,6 +18,15 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
+        if label=='official_modern':
+            assert pe.get_data(0x72aac,33).hex() == '813d40bb6f00f0200000751566a144bb6f0084e475103c06720ce865f7ffffeb1e'
+            assert pe.get_data(0x72ad7,5).hex()=='e834020000'
+            result['view_angle_header_route']={
+                'storage':'006fbc40','offset_from_loaded_block_006fbb40':'00000100',
+                'accepted_header':'size20f0, version high byte0, low byte6..255 ->00472230 then00472aeb; skips00472d10.',
+                'reset_header':'Size mismatch or rejected version reaches00472d10 at00472ad7; its direct selector reset chooses0/Automatic.',
+                'limits':['No per-field View Angle remapping in the header decision sequence or narrow sound normalizer00472230.',
+                          'Successful block copy, full save layout and later writes are not established by the header branches alone.']}
         for start,end in SPANS[label]:
             out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
