@@ -73,6 +73,16 @@ For component2 less/equal0, it writes `80000000h` to both outputs and ORs bit0 i
 
 These results narrow the horizon investigation: following the old centre literals through retained Modern direct instructions is no longer a useful next step. Follow Modern's float rectangle-origin/centre producers and their renderer consumers instead. Removal of this legacy projector and its direct address literals does not by itself explain the advertised horizon position or prove every alternate projection path disappeared. No projection, renderer or game code was executed.
 
+## Retained float centre producer reaches a retained projection consumer
+
+The audit now includes complete paired geometry-consumer envelope **`0041bc90..0041bf26`**,662 bytes, and verifies exact equality. Combined with the already identical272-byte builder `004bf260..004bf370`, it establishes a concrete retained float-centre chain in both executables.
+
+The builder's first four stack floats are rectangle originX/originY/width/height. It multiplies width/height by the same binary32 constant **0.5** at `005401c0`, stores half-extents at `005600ac/b0`, then stores **originX+halfWidth** to `005600a4` and **originY+halfHeight** to `005600a8`. The instruction order matters: halfWidth is reloaded from its binary32 store before addition; halfHeight is FST-stored but remains live in x87 for addition. These are shared original/Modern instructions, not a newly introduced Modern centre formula.
+
+Within the consumer, **`0041be02..0041be39`** uses float scales `0056009c/a0`, a binary32 inverse-Z value and input component0/1, adds centre `005600a4/a8`, and writes the two projected coordinates. It also copies input component2 and the inverse-Z bits into the output record. Earlier processing/validation and later clipping remain part of the enclosing helper; this local expression is not a complete standalone projection ABI.
+
+This establishes that the new analysis should focus on changed rectangle/camera inputs and other centre writers, rather than attributing the horizon claim to a changed centre-addition or this unchanged downstream projection body. The existing viewport-finalizer path is another writer of these float globals, so the builder is not a proven sole owner. Data/state, x87 precision, output ordering and actual camera/horizon remain unverified across runs; **MP160-003 stays unresolved**.
+
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
 
 ## Viewport finalizer drops legacy projection updates

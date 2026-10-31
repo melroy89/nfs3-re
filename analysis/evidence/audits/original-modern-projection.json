@@ -61,6 +61,13 @@
           "bytes_sha256": "8198408c4a6791a789a7ba8150b927998936c842a96476c5a105dbed9495cb91",
           "assembly": "analysis/captures/modern-differences/projection/original-004213b0.asm",
           "assembly_sha256": "a0c1d136bcf04241ed6e2a2b8525dce54564a5207d2b92bf3b1bdedf6f18f89a"
+        },
+        {
+          "start": "0041bc90",
+          "end": "0041bf26",
+          "bytes_sha256": "e2fa18723ccf91c1d037070f47a537a3f7de74d0f1d07ab2e887fc2cee2518a2",
+          "assembly": "analysis/captures/modern-differences/projection/original-0041bc90.asm",
+          "assembly_sha256": "97668716a556b58581604a4ffadfa45754d5be562ae2f1f5f225e3887c9ed8bd"
         }
       ],
       "absolute_centre_address_inventory": {
@@ -152,6 +159,13 @@
           "bytes_sha256": "a9c12136acad5a5de762416311dd8c7028819f933b5b57d2e76eabf2d017f4e1",
           "assembly": "analysis/captures/modern-differences/projection/official_modern-004213b0.asm",
           "assembly_sha256": "61bfa6b11ff5279926dfb669b60fc1943527f90c84357ffa4021deba265faa21"
+        },
+        {
+          "start": "0041bc90",
+          "end": "0041bf26",
+          "bytes_sha256": "e2fa18723ccf91c1d037070f47a537a3f7de74d0f1d07ab2e887fc2cee2518a2",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-0041bc90.asm",
+          "assembly_sha256": "e98b3166bb06195d44623f02d9dd09c8f53940df77173aa85e83769ffbd122ea"
         }
       ],
       "absolute_centre_address_inventory": {
@@ -355,6 +369,25 @@
       ]
     ],
     "limits": "Conditional local stores only; no complete visual or x87 state equivalence."
+  },
+  "retained_float_centre_chain": {
+    "builder": "004bf260..004bf370",
+    "half_constant": "005401c0=0.5",
+    "centre_stores": [
+      "004bf2a0 ->005600a4",
+      "004bf2a6 ->005600a8"
+    ],
+    "half_extent_stores": [
+      "004bf284 ->005600ac",
+      "004bf28a ->005600b0"
+    ],
+    "consumer": "0041bc90..0041bf26",
+    "consumer_bytes_identical": true,
+    "local_projection": "0041be02..0041be39: scale*inverseZ*component + centre",
+    "limits": [
+      "Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.",
+      "Half-width reload and live extended half-height have distinct spill schedules."
+    ]
   },
   "modern_fov_clamp_contract": {
     "helper": "004dbc48..004dbc91",

@@ -22,7 +22,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
-        for start,end in SPANS[label]+[(0x4213b0,0x421441)]:
+        for start,end in SPANS[label]+[(0x4213b0,0x421441),(0x41bc90,0x41bf26)]:
             out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -69,6 +69,15 @@ def main():
         assert struct.pack('<I',address) not in new
     result['viewport_finalizer']={'start':'004213b0','end_exclusive':'00421441','envelope_bytes':145,'changed_addresses':[f'{v:08x}' for v in changed],'changed_region':['004213d4','00421430'],'condition':'Nonzero context-index table pointer whose DWORD0 equals8','retained_float_pairs':[['005e1020','0056009c'],['005e102c','005600a4'],['005e1030','005600a8'],['005e1038','005600a0']],'removed_dword_pairs':[['005e10a0','0056443c'],['005e1034','00564440'],['005e1024','00564434'],['005e1028','00564438']],'limits':'Conditional local stores only; no complete visual or x87 state equivalence.'}
     assert bodies['original']==bodies['official_modern']
+    assert images[0].get_data(0x1bc90,0x296)==images[1].get_data(0x1bc90,0x296)
+    assert images[0].get_data(0x1401c0,4)==images[1].get_data(0x1401c0,4)==struct.pack('<f',0.5)
+    result['retained_float_centre_chain']={
+        'builder':'004bf260..004bf370','half_constant':'005401c0=0.5',
+        'centre_stores':['004bf2a0 ->005600a4','004bf2a6 ->005600a8'],
+        'half_extent_stores':['004bf284 ->005600ac','004bf28a ->005600b0'],
+        'consumer':'0041bc90..0041bf26','consumer_bytes_identical':True,
+        'local_projection':'0041be02..0041be39: scale*inverseZ*component + centre',
+        'limits':['Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.','Half-width reload and live extended half-height have distinct spill schedules.']}
     modern = images[1]
     for va,encoded in ((0x4dbc6e,'d8d1dfe09e7602'),(0x4dbc75,'d9c9ddd8'),
                        (0x4dbc7f,'d8d1dfe09e7302'),(0x4dbc86,'d9c9ddd8'),
