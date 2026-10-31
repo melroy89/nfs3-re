@@ -414,6 +414,8 @@ The [sound-bank language comparison](original-modern-sound-bank-language.md) acc
 
 The [grouped effect-renderer comparison](original-modern-effect-renderer-masks.md) verifies eleven one-byte `40h`→`50h` mask expansions, with complete unchanged surrounding function envelopes.
 
+The [texture-loading follow-up](original-modern-texture-loading-followup.md) verifies cached/removed descriptor queries and four redistributed progress milestones in three complete function envelopes.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

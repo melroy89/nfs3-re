@@ -316,6 +316,10 @@
       "sha256": "51b5026a83f209b8258b14bdab340186b95c8c07164f48c276a52c04df7c3657"
     },
     {
+      "path": "analysis/original-modern-texture-loading-followup.md",
+      "sha256": "a611247773f2e436c8f29cdf61b9bd2bda0cd4e27c2f3b3ddd52a6650ce5be7c"
+    },
+    {
       "path": "analysis/original-modern-texture-progress.md",
       "sha256": "1e2143b3bae756653783bd9dfbc4e8be4a45c5c1eed2ec5568077a2dbb85cd31"
     },
@@ -366,8 +370,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 293,
-    "without_address_mentions": 68
+    "with_address_mentions": 296,
+    "without_address_mentions": 65
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -395,6 +399,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-frontend-page.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00401010"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-texture-loading-followup.md",
           "entry_mentioned": true,
           "addresses": [
             "00401010"
@@ -6137,6 +6148,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-texture-loading-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00495230"
+          ]
+        },
+        {
           "path": "analysis/original-modern-texture-progress.md",
           "entry_mentioned": true,
           "addresses": [
@@ -6357,7 +6375,16 @@
       "changed_bytes": 5,
       "original_sha256": "19a849b6409d087220bcb5286d12d0d4c74f2aac7b3acc3db572cef47ceff3f1",
       "modern_sha256": "5b11143bcd372afa2b34d026140b6ee574df6d6c83a1902b7b61be56070ad7c6",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-texture-loading-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0049c5c0",
+            "0049c5c5"
+          ]
+        }
+      ]
     },
     {
       "entry": "0049cea0",
@@ -9667,6 +9694,13 @@
             "004d3827",
             "004d3852"
           ]
+        },
+        {
+          "path": "analysis/original-modern-texture-loading-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004d37a0"
+          ]
         }
       ]
     },
@@ -9690,7 +9724,18 @@
       "changed_bytes": 2,
       "original_sha256": "9352ba59860b14964a38060360efdb7d6f37cd42436eac3e63e5ed4a686ecf89",
       "modern_sha256": "51517b8d6d43d98794379864cd858763c17299a3f81695f6caa44af25edebacf",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-texture-loading-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004d3f50",
+            "004d3f63",
+            "004d3f6b",
+            "004d3f97"
+          ]
+        }
+      ]
     },
     {
       "entry": "004d5370",
@@ -9708,7 +9753,19 @@
       "changed_bytes": 8,
       "original_sha256": "da0bb8e3178a5ccf3e7824f624a677f9d3cd783146faccecc8ce2d9dc429fb84",
       "modern_sha256": "ab2e6986848033ce1b88ba465055bcda817c46edf0f864acd1300e578b000f26",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-texture-loading-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004d5370",
+            "004d53a6",
+            "004d54cc",
+            "004d55cf",
+            "004d55e5"
+          ]
+        }
+      ]
     },
     {
       "entry": "004daf80",

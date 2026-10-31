@@ -1,0 +1,57 @@
+{
+  "kind": "texture-loading-followup",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0049c5c0",
+          "end_exclusive": "0049c5f9",
+          "sha256": "19a849b6409d087220bcb5286d12d0d4c74f2aac7b3acc3db572cef47ceff3f1",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/original-0049c5c0.asm"
+        },
+        {
+          "start": "004d3f50",
+          "end_exclusive": "004d4075",
+          "sha256": "4712a096fbab617561df48d3c30647943f74be213ead4f7039d99a012052a3f9",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/original-004d3f50.asm"
+        },
+        {
+          "start": "004d5370",
+          "end_exclusive": "004d56a3",
+          "sha256": "da0bb8e3178a5ccf3e7824f624a677f9d3cd783146faccecc8ce2d9dc429fb84",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/original-004d5370.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0049c5c0",
+          "end_exclusive": "0049c5f9",
+          "sha256": "5b11143bcd372afa2b34d026140b6ee574df6d6c83a1902b7b61be56070ad7c6",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/official_modern-0049c5c0.asm"
+        },
+        {
+          "start": "004d3f50",
+          "end_exclusive": "004d4075",
+          "sha256": "3c0ffb3afbe44c7f145a797e1940b1d20a246536d193bd9d3a57c48166450acd",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/official_modern-004d3f50.asm"
+        },
+        {
+          "start": "004d5370",
+          "end_exclusive": "004d56a3",
+          "sha256": "ab2e6986848033ce1b88ba465055bcda817c46edf0f864acd1300e578b000f26",
+          "assembly": "analysis/captures/modern-differences/texture-loading-followup/official_modern-004d5370.asm"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No texture allocation, renderer query or loading display execution.",
+    "Cached descriptor lifetime, query side effects and visible timing remain separate."
+  ]
+}

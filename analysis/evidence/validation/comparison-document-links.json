@@ -73,8 +73,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "8e76d09b0352c302a6a147a75d44d953cb83686f02e491b9119b8d88d85dba25",
-      "relative_links": 116
+      "sha256": "55ab1fa46f0e7d7e22334ee3530469dcec5bd45fb6eee8df75d354d0977b2229",
+      "relative_links": 117
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -118,8 +118,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "104f9ebb71d6a21091befc1cec69db0f69e8e10131d06907154d0868a920402d",
-      "relative_links": 503
+      "sha256": "d20165737590d202d2c2b66bce9c72c770bb7625efab7bd11132b405629f9f0b",
+      "relative_links": 509
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -392,6 +392,11 @@
       "relative_links": 2
     },
     {
+      "path": "analysis/original-modern-texture-loading-followup.md",
+      "sha256": "a611247773f2e436c8f29cdf61b9bd2bda0cd4e27c2f3b3ddd52a6650ce5be7c",
+      "relative_links": 7
+    },
+    {
       "path": "analysis/original-modern-texture-progress.md",
       "sha256": "1e2143b3bae756653783bd9dfbc4e8be4a45c5c1eed2ec5568077a2dbb85cd31",
       "relative_links": 4
@@ -457,8 +462,8 @@
       "relative_links": 7
     }
   ],
-  "file_count": 91,
-  "relative_link_count": 1172,
+  "file_count": 92,
+  "relative_link_count": 1186,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
