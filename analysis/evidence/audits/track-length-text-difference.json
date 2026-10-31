@@ -428,6 +428,14 @@
     ],
     "limit": "Selected packaged entries validated; no proof of runtime file selection or complete asset parser validation."
   },
+  "catalog_route": {
+    "id": "MP140-032",
+    "readme_sha256": "02bf4684dce1073b4fe7c00c747f020b43508b0cf1407b5dc3f3b864ea46d81d",
+    "line": 316,
+    "source_claim": "- Length of a track in the track info is displayed in units, which is choosed in the HUD of the 1st player.",
+    "support": "partial static",
+    "limit": "First profile cell, selector branches and official unit labels verified; live first-player bank selection, visible output and v1.4.0 introduction not verified."
+  },
   "limits": [
     "No drawing, language lookup or instruction execution.",
     "Raw selector enum names, valid track indices and runtime localization choice not established; selected official unit strings verified.",

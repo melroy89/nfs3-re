@@ -75,6 +75,15 @@ def main():
             'bytes':len(data),'table_extent':extent,'labels':labels})
     result['official_unit_assets']={'archive_sha256':archive_sha,'members':languages,
         'limit':'Selected packaged entries validated; no proof of runtime file selection or complete asset parser validation.'}
+    readme=ROOT/'analysis/captures/modern-differences/upstream/package/readme_en.txt'
+    readme_bytes=readme.read_bytes()
+    readme_sha=hashlib.sha256(readme_bytes).hexdigest()
+    assert readme_sha=='02bf4684dce1073b4fe7c00c747f020b43508b0cf1407b5dc3f3b864ea46d81d'
+    claim=readme_bytes.decode('latin1').splitlines()[315]
+    assert claim=='- Length of a track in the track info is displayed in units, which is choosed in the HUD of the 1st player.'
+    result['catalog_route']={'id':'MP140-032','readme_sha256':readme_sha,
+        'line':316,'source_claim':claim,'support':'partial static',
+        'limit':'First profile cell, selector branches and official unit labels verified; live first-player bank selection, visible output and v1.4.0 introduction not verified.'}
     result['limits']=['No drawing, language lookup or instruction execution.','Raw selector enum names, valid track indices and runtime localization choice not established; selected official unit strings verified.','Third original table zeroed in Modern; all other readers not excluded.']
     (ROOT/'analysis/evidence/audits/track-length-text-difference.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired formatting tails, retained pointer tables, comma-to-dot payloads, zeroed third and152 localized interval differences')

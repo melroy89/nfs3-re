@@ -458,12 +458,12 @@ The [music-setting request comparison](original-modern-music-start.md#setting-ch
 
 The [audio-slider rounding comparison](original-modern-music-start.md#five-audio-slider-callbacks-remove-explicit-truncation) verifies five complete callbacks with seven removed truncation calls. Scale127.0 and integer destinations remain, but Modern’s final FISTP follows ambient rounding; integer equality and audible effects are not assumed.
 
-The [track-length formatting comparison](original-modern-track-length-text.md) identifies a selector/global rewrite and localized-unit consolidation at004565d6: two pointer tables remain with decimal commas changed to dots in the second table, a third is zeroed, and the hard-coded km paths are replaced by language lookup. Exact selector/unit semantics and rendered output remain unresolved.
+The [track-length formatting comparison](original-modern-track-length-text.md) identifies a selector/global rewrite and localized-unit consolidation at004565d6: two pointer tables remain with decimal commas changed to dots in the second table, a third is zeroed, and the hard-coded km paths are replaced by language lookup. Official unit labels and first-profile/default linkage are verified, giving MP140-032 partial static support; live bank selection, rendered output and introduction remain unverified.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **168 Claimed, 39 Static, 80 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **167 Claimed, 39 Static, 81 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -630,7 +630,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-029 | NoMovie ini setting also disables demo movies on menu idle. | Partial |
 | MP140-030 | Demo movies aren't starting when the game is minimized in the menu mode (useful for the nGlide driver). | Partial |
 | MP140-031 | If demo video files are removed, the game doesn't try to play them. | Claimed |
-| MP140-032 | Length of a track in the track info is displayed in units, which is choosed in the HUD of the 1st player. | Claimed |
+| MP140-032 | Length of a track in the track info is displayed in units, which is choosed in the HUD of the 1st player. | Partial |
 | MP140-033 | “Wide Screen” setting was renamed to “2:1 Field of View”, just to avoid ambiguity. | Claimed |
 | MP140-034 | The top dropdown with the player type selection is always displayed in the HUD settings. | Claimed |
 | MP140-035 | Fixed bug, when previous text was lost on first key press when entering player name or IP address. | Claimed |

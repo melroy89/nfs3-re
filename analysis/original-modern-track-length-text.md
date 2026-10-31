@@ -53,3 +53,9 @@ The audit reads all six text-table members directly from the hash-pinned officia
 | swe | Miles | km |
 
 Thus, with these packaged assets selected, Modern selector values3/4 display the kilometer table plus`km`; other values display the mile table plus the localized miles label. The [language fallback comparison](original-modern-language-table.md#lookup-gains-guarded-fallback) separately establishes embedded fallback`km` for078ah; lower-ID fallback can instead be empty. These observations do not prove runtime asset selection, every malformed-table outcome or that all HUD selector enum names have been decoded. The old exact-label unknown is resolved for these official members, while installed replacements and original asset provenance remain separate.
+
+## Catalog claim MP140-032: partial static support
+
+The pinned README line316 says track-info length follows units chosen in the first player HUD. The audit now records the exact source bullet and README hash. The final-pair code change supports its mechanism: original formatting selects via`006fbb4c`, while Modern reads first profile cell`006fbc68`; the selector branches and six official labels establish the kilometer/mile display choice. The default producer and existing editor research connect that cell to HUD configuration.
+
+**MP140-032 is therefore Partial**, superseding vendor-only status. This does not establish actual first-player bank selection at every runtime entry, successful formatting/rendering, installed replacement assets or that the mechanism first appeared in v1.4.0. Decimal comma-to-dot payload changes are independently observed and need not be treated as part of the same historical claim.
