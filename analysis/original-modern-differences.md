@@ -274,6 +274,10 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 [The menu graph loader](original-modern-menu-loader.md) differs only in three immediate-operand bytes: original literal directory becomes a Modern initialized path buffer. The full local body comparison narrows the code delta while preserving asset, helper, initialization and filesystem limitations.
 
+## Menu text conversion and callback helpers
+
+[The field-writer comparison](original-modern-menu-text-fields.md) identifies Modern numeric `str_<ID>` lookup and removal of the original literal-text fallback. Ten official assignments connect this delta to six menu assets. The audit also checks five complete retained helpers; registration-table and runtime equivalence remain separate questions.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
