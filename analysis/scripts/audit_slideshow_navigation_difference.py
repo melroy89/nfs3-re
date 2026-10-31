@@ -53,6 +53,14 @@ def main():
         sites=[base+i for i in range(len(code)-4) if code[i]==0xe8 and base+i+5+int.from_bytes(code[i+1:i+5],'little',signed=True)==target]
         assert sites==expected_sites
         out['slot_helper_direct_call_scan'][f'{target:08x}']={'sites':[f'{v:08x}' for v in sites],'scope':'Every-byte E8/rel32 scan of official code section; excludes indirect references and other sections.'}
+    counter_refs=[base+i for i in range(len(code)-3) if code[i:i+4]==bytes.fromhex('7c476600')]
+    assert counter_refs==[0x45385b,0x453933,0x453ee4,0x453f43]
+    assert pe.get_data(0x53f0d,2)==bytes.fromhex('7e32')
+    assert pe.get_data(0x53f41,7)==bytes.fromhex('833d7c47660000')
+    section=next(s for s in pe.sections if s.Name.startswith(b'.bss'))
+    assert section.PointerToRawData==0 and section.IMAGE_SCN_CNT_UNINITIALIZED_DATA
+    assert section.VirtualAddress<=0x26477c<section.VirtualAddress+section.SizeOfRawData
+    out['counter_storage_and_references']={'slots_half_open':['00664770','0066477c'],'counter_half_open':['0066477c','00664780'],'section':'.bss','raw_pointer':section.PointerToRawData,'absolute_address_operand_candidates':[f'{v:08x}' for v in counter_refs],'scan_scope':'Literal address bytes in official code section; known instructions corroborated. Excludes computed aliases.','periodic_gate':'JLE00453f41 reaches counter test even when timing interval is not exceeded.','reset':'00451830 clears slots only, excludes counter.'}
     out['retained_previous_core'] = {'start': '0045386d', 'end': '00453931', 'sha256': hashlib.sha256(common[0]).hexdigest()}
     out['retained_action9_path_ranges'] = []
     for start, end in ((0x44aa30, 0x44aac9), (0x44a9e0, 0x44aa21), (0x44ab40, 0x44ac7c), (0x44b6c8, 0x44b707), (0x44b7a7, 0x44b7ec)):

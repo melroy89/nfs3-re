@@ -90,3 +90,22 @@ The final path frees its temporary buffers through`004e1890` and returns the sel
 An every-byte E8/rel32 target scan of the official executable’s first code section finds exactly the three retained wrapper calls (`00453e66`, `00453e93`, `00453ec1`) and one reset call (`004daff2`). Their instruction locations are corroborated by retained disassembly. This bounds the direct-call inventory: **no additional direct users were found in that section**. Indirect calls, address aliases, other sections and data-driven calls are outside that search, so the helper is not declared globally slideshow-only.
 
 This is evidence for conditional allocation avoidance at the inspected calls, not measured performance, memory savings or proof that six persistent slots are always valid. Later validation should compare first entry versus repeated refresh, resource reset between refreshes, changed image dimensions and failed update, while preserving the original/new calling protocols. No allocation or renderer call was executed.
+
+## Counter boundaries, absolute references and periodic timing
+
+The six-WORD slot-reset interval is **`[00664770,0066477c)`**; the deferred-refresh DWORD is the immediately following **`[0066477c,00664780)`**. The reset helper’s three DWORD stores do not touch the counter. Both lie in Modern’s `.bss` uninitialized storage with raw-data pointer0, not file-backed initial resource values. Loader initialization and subsequent refresh writes remain distinct stages.
+
+The official code-section literal-address scan finds exactly four occurrences of address`0066477c`, each corroborated in retained instructions:
+
+| Instruction | Effect |
+|---|---|
+| `00453859` | Next increments DWORD counter |
+| `00453931` | Previous increments DWORD counter |
+| `00453ee3` | Refresh exit stores EAX0 |
+| `00453f41` | Periodic callback compares counter with0 |
+
+The manifest records the corresponding operand-byte positions separately from instruction addresses. This is an absolute-reference inventory, not proof that no indexed alias or external callback can access the storage. For example, wrapper slot index6 would algebraically address the counter’s low WORD; inspected direct callers use0..2, and no reachable index6 call is established. Preserve the exact boundaries rather than expanding the six-slot reset to include adjacent state.
+
+Periodic callback`00453ef0` compares current timestamp`0079c1a4` with saved`00559594` plus200 using signed integer arithmetic. Its `JLE` at`00453f0d` targets **the counter test itself** at`00453f41`; the other path toggles two entry flag bits and updates the saved timestamp before reaching the same test. Consequently the200-unit interval gates that flag/timestamp work, **not the pending refresh call**. A pending nonzero counter can request refresh on a periodic invocation even when the interval has not elapsed. Timestamp units, wrap behaviour in actual sessions and callback frequency are not measured here.
+
+Multiple increments before refresh are coalesced by the nonzero test and exit clear; the code does not process one refresh per increment. It remains a wrapping DWORD, not a normalized Boolean: wrap to0 would suppress the test until another write, and a refresh exit clears pending state even on the previously documented null-resource path. These are machine-level implications, not observed failure scenarios. The instructions supply no synchronization or atomic read-and-clear protocol; actual concurrency/reentrancy reachability is unresolved. No periodic tick or game code was run.

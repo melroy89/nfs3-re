@@ -391,6 +391,27 @@
       "scope": "Every-byte E8/rel32 scan of official code section; excludes indirect references and other sections."
     }
   },
+  "counter_storage_and_references": {
+    "slots_half_open": [
+      "00664770",
+      "0066477c"
+    ],
+    "counter_half_open": [
+      "0066477c",
+      "00664780"
+    ],
+    "section": ".bss",
+    "raw_pointer": 0,
+    "absolute_address_operand_candidates": [
+      "0045385b",
+      "00453933",
+      "00453ee4",
+      "00453f43"
+    ],
+    "scan_scope": "Literal address bytes in official code section; known instructions corroborated. Excludes computed aliases.",
+    "periodic_gate": "JLE00453f41 reaches counter test even when timing interval is not exceeded.",
+    "reset": "00451830 clears slots only, excludes counter."
+  },
   "retained_previous_core": {
     "start": "0045386d",
     "end": "00453931",
