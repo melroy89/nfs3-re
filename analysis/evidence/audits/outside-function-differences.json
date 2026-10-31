@@ -8063,5 +8063,58 @@
     "unchanged_bytes": 208,
     "report": "analysis/original-modern-raster-session.md",
     "limit": "Remote shutdown tail and dimension publisher replaced by NOPs; subsequent raster setup retained."
+  },
+  "slideshow_interval_partition": {
+    "interval": "00453863..00454000",
+    "parts": [
+      {
+        "start": "00453863",
+        "end_exclusive": "00453940",
+        "role": "Moved Previous callback and alignment boundary",
+        "bytes": 221,
+        "changed_bytes": 17,
+        "original_sha256": "2448795bf77f797adf735ae149b07ade88184e77b341e4e584f1b2dfa8043a9a",
+        "modern_sha256": "32f91acec94b439356fb5420e63cbce9627c4a44b06bb609699170611a764f2a"
+      },
+      {
+        "start": "00453940",
+        "end_exclusive": "00453c00",
+        "role": "Unchanged intervening bytes",
+        "bytes": 704,
+        "changed_bytes": 0,
+        "original_sha256": "9b72a711dc1b3d0b8e464d82354a5c9cb52d17e9f81aa85bc854a2288443d29b",
+        "modern_sha256": "9b72a711dc1b3d0b8e464d82354a5c9cb52d17e9f81aa85bc854a2288443d29b"
+      },
+      {
+        "start": "00453c00",
+        "end_exclusive": "00453ef0",
+        "role": "Slideshow binding/refresh body and alignment",
+        "bytes": 752,
+        "changed_bytes": 104,
+        "original_sha256": "a2bd5ac6f08552a10af065ab1c722ea57b404949a5526cc55e1ff066f99995b1",
+        "modern_sha256": "9f2122c992391cee8b97437be098fbb65d58904736141d43f6f6cf5ab78ff88d"
+      },
+      {
+        "start": "00453ef0",
+        "end_exclusive": "00453f60",
+        "role": "Periodic refresh callback and removed stub overlap",
+        "bytes": 112,
+        "changed_bytes": 30,
+        "original_sha256": "4f1c9bf582b2a844538303164f69ea88a258e795666257ed2446c67e533956cb",
+        "modern_sha256": "4b7291ca07bde602872e0364e012f7d918e59524eba33b557a0da4c97fb24f4f"
+      },
+      {
+        "start": "00453f60",
+        "end_exclusive": "00454000",
+        "role": "Unchanged remainder",
+        "bytes": 160,
+        "changed_bytes": 0,
+        "original_sha256": "fccb706c6beb502fedca86a21a6e4ada80d1755182b9598c7f765fe653d5d2a8",
+        "modern_sha256": "fccb706c6beb502fedca86a21a6e4ada80d1755182b9598c7f765fe653d5d2a8"
+      }
+    ],
+    "report": "analysis/original-modern-slideshow-navigation.md",
+    "report_sha256": "a535dc0d4e1c6c64affdf893c75a7329dc3f3c261a24665284b643bb53c82144",
+    "limit": "Local delta routing only; complete rendering/driver/refresh lifecycle and runtime outcomes remain separately bounded."
   }
 }
