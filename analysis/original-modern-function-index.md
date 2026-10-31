@@ -103,7 +103,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00448210` | AppendEligibleDisplayModeRecord | 270 | 261 | [display-modes](original-modern-display-modes.md), [graphics-menu-transition](original-modern-graphics-menu-transition.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `00448320` | InitializeDisplayModeListOnce | 37 | 36 | [display-modes](original-modern-display-modes.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `00448348` | GetSelectedDisplayModeRecord | 32 | 32 | [display-modes](original-modern-display-modes.md), [graphics-menu-transition](original-modern-graphics-menu-transition.md) |
-| `00448368` | GetSelectedDisplayModeField10 | 9 | 9 | [display-modes](original-modern-display-modes.md) |
+| `00448368` | GetSelectedDisplayModeField10 | 9 | 9 | [display-modes](original-modern-display-modes.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `00448374` | GetSelectedDisplayModeDriverIndex | 8 | 8 | [display-modes](original-modern-display-modes.md) |
 | `00448394` | SelectClosestDisplayModeForConfiguredResolution | 105 | 103 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `00448400` | ApplySelectedDisplayModeDimensionsAndFormat | 37 | 37 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [hud-layout](original-modern-hud-layout.md), [language-table](original-modern-language-table.md), [resolution-defaults](original-modern-resolution-defaults.md) |
