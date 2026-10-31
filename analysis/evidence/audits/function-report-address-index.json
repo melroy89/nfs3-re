@@ -160,6 +160,10 @@
       "sha256": "445e55db81b5a4761ac6903bd39eecd517fd5cf8aae2bf801ed3e00ff836a6c1"
     },
     {
+      "path": "analysis/original-modern-mouse-cursor.md",
+      "sha256": "5d894e06a890ebeab1f6ae378108443df1023cb84a5842e85bb1af3ad6aa57e3"
+    },
+    {
       "path": "analysis/original-modern-movie-screenshots.md",
       "sha256": "4fd9d4938c4bd5ef0432a87068e477b6f358881a310418cae9ef73bedd34d07e"
     },
@@ -354,8 +358,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 272,
-    "without_address_mentions": 89
+    "with_address_mentions": 273,
+    "without_address_mentions": 88
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -1599,7 +1603,21 @@
       "changed_bytes": 31,
       "original_sha256": "6b29f13adef309a65889cf5619f1695914dfe7944d1cdd97022a5074a8e0dfd7",
       "modern_sha256": "02ff8b6c22e6ef1e8c938d8b9418ef19270e7a743224cea84cc5de44a0999cb3",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-mouse-cursor.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00436930",
+            "0043695d",
+            "0043695f",
+            "00436968",
+            "0043696f",
+            "00436978",
+            "0043697c"
+          ]
+        }
+      ]
     },
     {
       "entry": "00437614",

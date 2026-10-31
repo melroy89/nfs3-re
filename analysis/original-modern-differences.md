@@ -408,6 +408,8 @@ The [shape-conversion comparison](original-modern-shape-conversion.md) accounts 
 
 The [shell-open wrapper comparison](original-modern-shell-open.md) records the removed module-handle query and null owner argument; the [music-selection report](original-modern-music-selection.md#override-wrappers-follow-the-shifted-fixed-choice-index) records both retained override wrappers’ setting-index adjustment.
 
+The [mouse-cursor callback comparison](original-modern-mouse-cursor.md) distinguishes conditional cursor hiding, removed display-count calls and the result-pointer stack-slot anomaly.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

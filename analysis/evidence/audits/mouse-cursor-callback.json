@@ -1,0 +1,58 @@
+{
+  "kind": "mouse-cursor-callback-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00436930",
+          "end_exclusive": "0043697f",
+          "sha256": "6b29f13adef309a65889cf5619f1695914dfe7944d1cdd97022a5074a8e0dfd7",
+          "assembly": "analysis/captures/modern-differences/mouse-cursor-callback/original-00436930.asm"
+        },
+        {
+          "start": "004351a0",
+          "end_exclusive": "004351eb",
+          "sha256": "22c16694a9ef7d9442d4bda37f14f8ef26b427f6378edf4ac12849c38ce9a1c6",
+          "assembly": "analysis/captures/modern-differences/mouse-cursor-callback/original-004351a0.asm"
+        },
+        {
+          "start": "004cd2d0",
+          "end_exclusive": "004cd348",
+          "sha256": "228975aac39547ab0e69a25a4278a63078e98b73d11471747e30cd5ea6c8f5a6",
+          "assembly": "analysis/captures/modern-differences/mouse-cursor-callback/original-004cd2d0.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00436930",
+          "end_exclusive": "0043697f",
+          "sha256": "02ff8b6c22e6ef1e8c938d8b9418ef19270e7a743224cea84cc5de44a0999cb3",
+          "assembly": "analysis/captures/modern-differences/mouse-cursor-callback/official_modern-00436930.asm"
+        },
+        {
+          "start": "004351a0",
+          "end_exclusive": "004351eb",
+          "sha256": "22c16694a9ef7d9442d4bda37f14f8ef26b427f6378edf4ac12849c38ce9a1c6",
+          "assembly": "analysis/captures/modern-differences/mouse-cursor-callback/official_modern-004351a0.asm"
+        },
+        {
+          "start": "004cd2d0",
+          "end_exclusive": "004cd348",
+          "sha256": "228975aac39547ab0e69a25a4278a63078e98b73d11471747e30cd5ea6c8f5a6",
+          "assembly": "analysis/captures/modern-differences/mouse-cursor-callback/official_modern-004cd2d0.asm"
+        }
+      ]
+    }
+  },
+  "changed_callback_bytes_in_79_byte_envelope": 31,
+  "limits": [
+    "No cursor or window execution.",
+    "Prior callback output, global ShowCursor balance and callback lifetime are separate contracts."
+  ]
+}

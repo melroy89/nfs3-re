@@ -73,8 +73,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "d47f71d28b7ed4b8b245db9a8df3954c090f7a9be37e68123ed4e157340e7ee7",
-      "relative_links": 113
+      "sha256": "de2ab8352f9ca407866ddfa58bde1056fa00b0ceeaf1a6d9bf1b29750966940e",
+      "relative_links": 114
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -113,8 +113,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "52951494e678a5f4865fb7b6fa64b29cf3f86ede17b2f249bbeddfb796c317f1",
-      "relative_links": 480
+      "sha256": "e8880b0fd75851ff401bf785de6e404d12ddd1ded04b49908e8d63cd6feb8f48",
+      "relative_links": 481
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -190,6 +190,11 @@
       "path": "analysis/original-modern-mode-selection.md",
       "sha256": "445e55db81b5a4761ac6903bd39eecd517fd5cf8aae2bf801ed3e00ff836a6c1",
       "relative_links": 6
+    },
+    {
+      "path": "analysis/original-modern-mouse-cursor.md",
+      "sha256": "5d894e06a890ebeab1f6ae378108443df1023cb84a5842e85bb1af3ad6aa57e3",
+      "relative_links": 5
     },
     {
       "path": "analysis/original-modern-movie-screenshots.md",
@@ -442,8 +447,8 @@
       "relative_links": 7
     }
   ],
-  "file_count": 88,
-  "relative_link_count": 1131,
+  "file_count": 89,
+  "relative_link_count": 1138,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
