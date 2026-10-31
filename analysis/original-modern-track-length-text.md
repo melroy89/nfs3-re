@@ -2,7 +2,7 @@
 
 ## Evidence and boundary
 
-The [static audit](scripts/audit_track_length_text_difference.py) pins both executables and retains aligned tails from **`004565d6`** through original exclusive`00456664`, Modern exclusive`0045663a`, including their return sequences. The [manifest](evidence/audits/track-length-text-difference.json) records disassembly, bytes, tables, strings and all changed addresses. These are corresponding formatting tails, not newly established complete functions; enclosing entry/registration remains unresolved.
+The [static audit](scripts/audit_track_length_text_difference.py) pins both executables and retains aligned tails from **`004565d6`** through original exclusive`00456664`, Modern exclusive`0045663a`, including their return sequences. The [manifest](evidence/audits/track-length-text-difference.json) records disassembly, bytes, tables, strings and all changed addresses. The follow-up below now establishes complete helper entry00456590 and a shared direct caller; broader widget registration remains unresolved.
 
 Within outside-function interval`00456318..00456800` (1256 bytes), all152 changed positions lie in`004565d6..00456670`. Modern’s shorter tail is followed by NOPs through`00456670`; the preceding coordinate-selection code and remaining interval bytes match. No game, renderer, language lookup, instruction probe or Ghidra mutation was performed.
 
@@ -31,7 +31,7 @@ The first two nine-pointer tables are byte-identical across the pinned EXEs. The
 
 The original third table at`0055968c` points to decimal-dot strings matching Modern’s second-table values; the third pointer table itself is zeroed in Modern. All original pointed strings are retained in the manifest. The old format addresses are empty in Modern, while old`00538d7c` contains`credits` rather than the Modern format. Same-address string interpretation must therefore remain version-bound. Zeroing the third table does not prove absence of other original readers or complete removal of every associated data path.
 
-**Verified static:** changed selector/global, branch mapping, language IDs, format consolidation, retained pointer tables, comma-to-dot string changes, zeroed third table and local drawing arguments. **Unresolved:** complete widget/function contract, selector producers, runtime language selection, raw selector enum names, index bounds, final text/render output and historical release attribution. No precision, replay or multiplayer conclusion follows from this UI formatting rewrite.
+**Verified static:** changed selector/global, branch mapping, language IDs, format consolidation, retained pointer tables, comma-to-dot string changes, zeroed third table and local drawing arguments. **Unresolved:** complete widget ownership and machine contract, selector producers, runtime language selection, raw selector enum names, index bounds, final text/render output and historical release attribution. No precision, replay or multiplayer conclusion follows from this UI formatting rewrite.
 
 ## HUD-profile producer and default branch
 
@@ -59,3 +59,11 @@ Thus, with these packaged assets selected, Modern selector values3/4 display the
 The pinned README line316 says track-info length follows units chosen in the first player HUD. The audit now records the exact source bullet and README hash. The final-pair code change supports its mechanism: original formatting selects via`006fbb4c`, while Modern reads first profile cell`006fbc68`; the selector branches and six official labels establish the kilometer/mile display choice. The default producer and existing editor research connect that cell to HUD configuration.
 
 **MP140-032 is therefore Partial**, superseding vendor-only status. This does not establish actual first-player bank selection at every runtime entry, successful formatting/rendering, installed replacement assets or that the mechanism first appeared in v1.4.0. Decimal comma-to-dot payload changes are independently observed and need not be treated as part of the same historical claim.
+
+## Complete helper boundary and direct caller
+
+The expanded audit now captures complete helpers **original`00456590..00456664`** (212 bytes), **Modern`00456590..0045663a`** (170), with exclusive ends. Both entries save EBX/ECX/EDX/ESI/EDI/EBP, establish a frame and reserve80 local bytes; both epilogues restore those registers. Their first70 bytes match through exclusive`004565d6`, where the formatting rewrite begins.
+
+Both files contain identical direct CALL`004566a5 → 00456590`, verified from its displacement. This establishes pairing independently of equal addresses and strengthens the earlier tail-only evidence. The shared prefix chooses coordinate inputs from the selected circuit: index4 uses EBX430/EDX200; indices0/7/8 use410/250; other indices use390/465. These are raw caller arguments to the later text helper, not independently verified physical pixels. No input-dependent path in this prefix bounds the subsequent table index.
+
+The preceding routine at`00456320` returns at`00456583` and must not be merged into this helper merely because the saved-function inventory leaves the whole area uncovered. Full widget registration, caller scheduling, invalid indices and drawing/helper state remain unresolved; no Ghidra function object was created.

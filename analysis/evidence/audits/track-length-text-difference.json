@@ -284,7 +284,7 @@
       "0045666e",
       "0045666f"
     ],
-    "limit": "Tail comparison only; shared enclosing entry and full widget registration not established."
+    "limit": "Complete formatting helper00456590 paired by direct call004566a5; full widget registration remains unresolved."
   },
   "modern_default_selector_producer": {
     "start": "0048595b",
@@ -435,6 +435,30 @@
     "source_claim": "- Length of a track in the track info is displayed in units, which is choosed in the HUD of the 1st player.",
     "support": "partial static",
     "limit": "First profile cell, selector branches and official unit labels verified; live first-player bank selection, visible output and v1.4.0 introduction not verified."
+  },
+  "complete_formatting_helpers": {
+    "baselines": {
+      "original": {
+        "entry": "00456590",
+        "end_exclusive": "00456664",
+        "bytes": 212,
+        "hex": "53515256575589e583ec508b15acd46f0083fa04750cbbae010000bac8000000eb2485d2740a83fa07740583fa08750cbb9a010000bafa000000eb0abb86010000bad10100008b3d4cbb6f0085ff752bb806000000e866b2070050a1acd46f008b0c85449655005168789a53008d45b050e88a90080083c410eb3c83ff01740a83ff02740583ff05750fa1acd46f008b0c856896550051eb0da1acd46f008b34858c9655005668809a53008d45b050e84c90080083c40c68fd8c48006a00b9120000008d45b0e835bbffff89ec5d5f5e5a595bc3",
+        "sha256": "39a00c6714e89650dd4293d7ff6f76bcfdb2604529ffd03b4de9d6cd389c9ddc",
+        "shared_direct_callsite": "004566a5",
+        "call_hex": "e8e6feffff"
+      },
+      "official_modern": {
+        "entry": "00456590",
+        "end_exclusive": "0045663a",
+        "bytes": 170,
+        "hex": "53515256575589e583ec508b15acd46f0083fa04750cbbae010000bac8000000eb2485d2740a83fa07740583fa08750cbb9a010000bafa000000eb0abb86010000bad1010000a1acd46f008b0d68bc6f0083f903740583f904750e8b348568965500b88a070000eb0c8b348544965500b806000000e846b207005056687c8d53008d45b050e87690080083c41068fd8c48006a00b9120000008d45b0e85fbbffff89ec5d5f5e5a595bc3",
+        "sha256": "7d451eea2083b02322fc55e0eeb1a432b736f58f9444863e546b2c139f4341c2",
+        "shared_direct_callsite": "004566a5",
+        "call_hex": "e8e6feffff"
+      }
+    },
+    "shared_prefix_bytes": 70,
+    "limit": "Complete local helper envelopes and direct caller verified; broader owner registration, valid indices and drawing semantics remain separate."
   },
   "limits": [
     "No drawing, language lookup or instruction execution.",

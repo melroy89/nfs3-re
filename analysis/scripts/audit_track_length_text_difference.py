@@ -40,7 +40,7 @@ def main():
     assert len(changes)==152 and all(0x4565d6<=va<0x456670 for va in changes)
     result['interval']={'start':'00456318','end_exclusive':'00456800','bytes':1256,
         'changed_bytes':152,'changed_addresses':[f'{va:08x}' for va in changes],
-        'limit':'Tail comparison only; shared enclosing entry and full widget registration not established.'}
+        'limit':'Complete formatting helper00456590 paired by direct call004566a5; full widget registration remains unresolved.'}
     default=images['official_modern'].get_data(0x8595b,41)
     assert default[:5]==bytes.fromhex('bb03000000')
     destinations=[]
@@ -84,6 +84,19 @@ def main():
     result['catalog_route']={'id':'MP140-032','readme_sha256':readme_sha,
         'line':316,'source_claim':claim,'support':'partial static',
         'limit':'First profile cell, selector branches and official unit labels verified; live first-player bank selection, visible output and v1.4.0 introduction not verified.'}
+    full_helpers={}
+    for label,pe in images.items():
+        end=0x456664 if label=='original' else 0x45663a
+        data=pe.get_data(0x56590,end-0x456590)
+        call=pe.get_data(0x566a5,5)
+        assert call[0]==0xe8 and 0x4566aa+int.from_bytes(call[1:],'little',signed=True)==0x456590
+        assert data[:11]==bytes.fromhex('53515256575589e583ec50')
+        full_helpers[label]={'entry':'00456590','end_exclusive':f'{end:08x}',
+            'bytes':len(data),'hex':data.hex(),'sha256':hashlib.sha256(data).hexdigest(),
+            'shared_direct_callsite':'004566a5','call_hex':call.hex()}
+    assert images['original'].get_data(0x56590,70)==images['official_modern'].get_data(0x56590,70)
+    result['complete_formatting_helpers']={'baselines':full_helpers,
+        'shared_prefix_bytes':70,'limit':'Complete local helper envelopes and direct caller verified; broader owner registration, valid indices and drawing semantics remain separate.'}
     result['limits']=['No drawing, language lookup or instruction execution.','Raw selector enum names, valid track indices and runtime localization choice not established; selected official unit strings verified.','Third original table zeroed in Modern; all other readers not excluded.']
     (ROOT/'analysis/evidence/audits/track-length-text-difference.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired formatting tails, retained pointer tables, comma-to-dot payloads, zeroed third and152 localized interval differences')
