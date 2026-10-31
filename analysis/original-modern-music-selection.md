@@ -55,12 +55,12 @@ These are observable call and state rules. The full meanings of the backend oper
 
 - **MP153-004:** subset masks and cycling are statically supported; menu labels, asset tempo and actual playback remain unverified.
 - **MP153-005:** stored race progression is supported for modes 13..15, but other modes use `006fd4ac`; exactly one new track per race and complete advertised playlist behavior remain partial.
-- **MP153-003:** added numeric selection/style handling exists, but Rock/Techno asset and UI mapping remain unresolved.
+- **MP153-003:** the race list names three Random modes and matches the helper’s style rules; asset coverage and actual playback remain unverified.
 - Volume fixes (**MP153-001**) and double-fade prevention (**MP153-006**) are not established by this selection analysis. They require backend/caller comparisons rather than assuming all audio claims follow from changed policy bytes.
 
 The [start/volume comparison](original-modern-music-start.md) now traces original menu randomization removal and verifies retained stop/start/level/fade bodies; this narrows the unresolved volume claims. Further work: track assets/names, setting serialization/labels, progression producers, all call cadence and volume/fade helper semantics. Original `0040fefc` is inside unrelated code, so it must not be treated as the old version of Modern's new helper merely because addresses coincide.
 
-## Original random range versus ten stem entries: genre claim still unresolved
+## Original random range versus ten stem entries: bounded genre-path evidence
 
 A separate Luna 6 read-only review identified a useful follow-up to **MP153-002**. The parent verified the original selector, downstream builder instructions and table bytes directly; the expanded audit now retains the original ten-entry stem table at **`005525a8`** and both style-token strings.
 
@@ -74,6 +74,22 @@ As established above, the original `0040ffd0` RNG branch returns only0..4, where
 
 The retained builder at `0041065a` compares its current operation/selection value signed against10. Its table-index source then depends on setting `006fbbe4`: either stored `005525f8` or the saved incoming EAX value at local+286h. Later `004106b8..004106cd` selects `tech` (`005368e0`) only when `00552854 == 1` and earlier restriction flags permit it; otherwise it uses `rock` (`005368d8`). Thus genre/style is a distinct control decision, not established as indexes0..4 versus5..9.
 
-The selector's return range is proven; **a complete random-mode-to-table/style path and the vendor's specific “last Rock and all Techno” explanation are not**. In particular, the existence of a ten-entry table and a modulo-five helper does not by itself prove a defect, its reachability or the advertised fix. The catalog claim is left vendor-claimed with this related evidence linked rather than promoted on that inference.
+The race list now resolves the setting ambiguity. Its descriptor at **`00556be0`** is named `tunenames` and selects storage **`006fbbe4`**. Original list pointer **`00556320`** has 14 zero-terminated WORD IDs; Modern pointer **`00556314`** has 16. The audit retains every ID and decodes it with the hash-pinned official Modern English resource. This is not authentication of the original retail language file.
 
-Next: follow the two original direct selector callers (`00410132`, `0041042f`), map the race-music list's ordinary settings to their labels, establish all style-state producers and resulting filenames, and compare the corresponding Modern paths. Then inspect actual assets before assigning individual stems to song/genre names. No new audio, RNG or instruction probes were executed; no Ghidra changes were made.
+| Ordinal | Original label ID / official English decoding | Modern label ID / decoding |
+|---:|---|---|
+| 0 | 463 / Track default (Rock) | 465 / Track default (Rock or Techno) |
+| 1 | 464 / Track default (Techno) | 463 / Track default (Rock) |
+| 2 | 465 / Track default (Rock or Techno) | 464 / Track default (Techno) |
+| 3..12 | IDs162..171, ten individual titles | Same IDs in the same order |
+| 13 | 172 / Random | 1943 / Random (Rock or Techno) |
+| 14 | Absent | 1941 / Random (Rock) |
+| 15 | Absent | 1942 / Random (Techno) |
+
+The complete original loader envelope **`00410030..00410329`** is now retained. Subject to its entry gates, settings >=3 reach the selector call at **`00410132`**, use its return directly to index `005525a8`, and store that index in `005525f8`. For setting13 the selector therefore supplies only0..4: `home`, `lost`, `atla`, `alpi`, or duplicate `home`; it cannot supply `empr` at8.
+
+At **`00410163`**, however, the loader compares the setting with **11**, not13. Only11 calls the RNG for style selection: unsigned remainder modulo100 <=50 sets `00552854=1`, otherwise0. No probability claim follows without a verified RNG contract. Other settings use parity: odd sets0, even sets1. Setting13 thus sets0, and the later suffix gate **`004101a8..004101ec`** chooses **`rock.mus`** (`00536898`); style1 would choose **`tech.mus`** (`005368a4`). Restriction flags can force Rock, so they do not restore Techno on this path. Setting11's special branch also differs from the ordinary fixed-title parity rule; whether other callers overwrite that choice remains a separate question.
+
+**Bounded conclusion:** on this original loader path, the list's Random setting excludes the distinct `empr` stem and selects no `tech.mus` suffix. This is code-level support for part of **MP153-002**, rather than merely a modulo/table-size inference. Modern's previously retained helper explicitly gives Random modes13..15 the five-stem progression0,1,2,3,8 and respective toggle/Rock/Techno state rules. The new list labels corroborate **MP153-003**'s three mode names. The statement that exactly the “last Rock” and every Techno song were ignored across all original playback routes still requires asset-to-title mapping and caller coverage; no audible result was tested.
+
+Next: inspect actual track assets to associate stems/styles with the ten individual title IDs, follow all playback routes and progression producers, and establish caller cadence. Original UI ordinal serialization is not proven solely by the descriptor; the shared generic selector mechanism is documented in the [Frame Size setting analysis](original-modern-frame-setting.md), while this audit records the direct music-setting consumers. No new audio, RNG or instruction probes were executed; no Ghidra changes were made.

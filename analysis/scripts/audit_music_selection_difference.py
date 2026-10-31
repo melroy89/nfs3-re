@@ -12,7 +12,7 @@ RETAINED = [(0x4104f0,0x41057f),(0x4106b8,0x4107b2),
             (0x4109d0,0x410a3c),(0x4e6f0c,0x4e705c),
             (0x4e73d0,0x4e7466),(0x4e7470,0x4e74e1)]
 
-SPANS = {'original': [(0x40ffd0,0x410027),(0x4103a0,0x41045d)],
+SPANS = {'original': [(0x40ffd0,0x410027),(0x410030,0x410329),(0x4103a0,0x41045d)],
     'official_modern': [(0x40fefc,0x40ff80),(0x40ff9c,0x40fffb),
         (0x4103a0,0x410446),(0x410606,0x410615),
         (0x4b5d30,0x4b5d35),(0x4a3489,0x4a348e)]}
@@ -36,6 +36,19 @@ def main():
                 'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
         item={'path':relative,'sha256':expected,'spans':rows}
+        descriptor=struct.unpack('<5I',pe.get_data(0x156be0,20))
+        assert descriptor[0]==0x5382a8 and descriptor[4]==0x6fbbe4
+        assert pe.get_data(0x1382a8,16).split(b'\0')[0]==b'tunenames'
+        ids=[]
+        for i in range(24):
+            ident=struct.unpack('<H',pe.get_data(descriptor[1]-0x400000+2*i,2))[0]
+            if ident==0:break
+            ids.append(ident)
+        expected_ids=([463,464,465]+list(range(162,173)) if label=='original'
+                      else [465,463,464]+list(range(162,172))+[1943,1941,1942])
+        assert ids==expected_ids
+        item['race_choice_descriptor_00556be0']=[f'{v:08x}' for v in descriptor]
+        item['race_choice_label_ids']=ids
         if label=='official_modern':
             item['menu_cycle_ids']=list(pe.get_data(0x40ff80-0x400000,6))
             item['menu_seed_map']=list(pe.get_data(0x40ff88-0x400000,20))
@@ -43,9 +56,19 @@ def main():
             pointers=struct.unpack('<10I',pe.get_data(0x1525a8,40))
             item['original_track_stems_005525a8']=[{'index':i,'pointer':f'{pointer:08x}','stem':pe.get_data(pointer-0x400000,32).split(b'\0')[0].decode()} for i,pointer in enumerate(pointers)]
             assert [row['stem'] for row in item['original_track_stems_005525a8']]==['home','lost','atla','alpi','home','lost','atla','alpi','empr','chuck']
-            item['style_tokens']={f'{a:08x}':pe.get_data(a-0x400000,16).split(b'\0')[0].decode() for a in (0x5368d8,0x5368e0)}
+            item['style_tokens']={f'{a:08x}':pe.get_data(a-0x400000,16).split(b'\0')[0].decode() for a in (0x536898,0x5368a4,0x5368d8,0x5368e0)}
             item['fixed_race_targets']=[f'{v:08x}' for v in struct.unpack('<10I',pe.get_data(0x40ffa4-0x400000,40))]
         result['binaries'][label]=item
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    english=subprocess.check_output(['7z','x','-so',str(archive),'fedata/text/text.eng'])
+    ids=sorted({ident for item in result['binaries'].values() for ident in item['race_choice_label_ids']})
+    labels={}
+    for ident in ids:
+        offset=struct.unpack_from('<I',english,4*ident)[0]
+        labels[str(ident)]=english[offset:english.index(b'\0',offset)].decode('latin1')
+    result['official_english']={'member':'fedata/text/text.eng','sha256':hashlib.sha256(english).hexdigest(),'labels':labels}
+    result['limits'].append('Original list IDs decoded with official Modern English; original retail language provenance unverified.')
     result['identical_music_ranges']=[]
     for start,end in RETAINED:
         data=images['original'].get_data(start-0x400000,end-start)

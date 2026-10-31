@@ -14,6 +14,13 @@
           "assembly_sha256": "e14456ff58da7b370674c4bd1ae16736731e74ac2921ed4f2f3ef5227bf9afe2"
         },
         {
+          "start": "00410030",
+          "end": "00410329",
+          "bytes_sha256": "78d371c1a55d58604b76a0a86affde581dee10859c003158bd67491209cf1f6f",
+          "assembly": "analysis/captures/modern-differences/music-selection/original-00410030.asm",
+          "assembly_sha256": "26116523ee64c0ff4415507ee089dc0d76fa71884c55d21b539915e2b348adf0"
+        },
+        {
           "start": "004103a0",
           "end": "0041045d",
           "bytes_sha256": "7c1cb3b26c32286c56584389a843158af11748766cd908cf6f2af5fcec887849",
@@ -55,6 +62,29 @@
           "assembly": "analysis/captures/modern-differences/music-selection/original-004e7470.asm",
           "assembly_sha256": "32c7854a8928948f251203b48c7e566578750b4f0b87047412c1e3f564662e01"
         }
+      ],
+      "race_choice_descriptor_00556be0": [
+        "005382a8",
+        "00556320",
+        "00000000",
+        "00000000",
+        "006fbbe4"
+      ],
+      "race_choice_label_ids": [
+        463,
+        464,
+        465,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172
       ],
       "original_track_stems_005525a8": [
         {
@@ -109,6 +139,8 @@
         }
       ],
       "style_tokens": {
+        "00536898": "rock.mus",
+        "005368a4": "tech.mus",
         "005368d8": "rock",
         "005368e0": "tech"
       },
@@ -207,6 +239,31 @@
           "assembly_sha256": "8d466b936a3853dc3c17b994f0c26d6231a503de8e0d4299a23926b176f55a92"
         }
       ],
+      "race_choice_descriptor_00556be0": [
+        "005382a8",
+        "00556314",
+        "00000000",
+        "00000000",
+        "006fbbe4"
+      ],
+      "race_choice_label_ids": [
+        465,
+        463,
+        464,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        1943,
+        1941,
+        1942
+      ],
       "menu_cycle_ids": [
         1,
         2,
@@ -241,8 +298,32 @@
   },
   "limits": [
     "No sound/game/instruction execution.",
-    "Track asset names, RNG distribution and audible behavior unverified."
+    "Track asset names, RNG distribution and audible behavior unverified.",
+    "Original list IDs decoded with official Modern English; original retail language provenance unverified."
   ],
+  "official_english": {
+    "member": "fedata/text/text.eng",
+    "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "labels": {
+      "162": "Little Sweaty Sow",
+      "163": "Hydrus 606",
+      "164": "Snorkeling Cactus Weasels",
+      "165": "Cetus 808",
+      "166": "Rear Flutterblast #19",
+      "167": "Aquilla 303",
+      "168": "Snow Bags",
+      "169": "Knossos",
+      "170": "Flimsy",
+      "171": "Warped",
+      "172": "Random",
+      "463": "Track default (Rock)",
+      "464": "Track default (Techno)",
+      "465": "Track default (Rock or Techno)",
+      "1941": "Random (Rock)",
+      "1942": "Random (Techno)",
+      "1943": "Random (Rock or Techno)"
+    }
+  },
   "identical_music_ranges": [
     {
       "start": "004104f0",
