@@ -380,7 +380,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 
 | ID | Reported change | Review |
 |---|---|---|
-| MP153-001 | Fixed a bug of the original game which was a cause of different volume of the race music each race. | Unresolved |
+| MP153-001 | Fixed a bug of the original game which was a cause of different volume of the race music each race. | Partial |
 | MP153-002 | Fixed a bug of the original game which was a cause of ignoring of the latest Rock track and all Techno tracks when Random race music is choosed. | Partial |
 | MP153-003 | Added two additional random race music modes: Random (Rock) and Random (Techno). | Partial |
 | MP153-004 | Added two additional random menu music modes: Random (Fast) and Random (Slow). Fast: Romulus 3, Triton, Pi. Slow: Minotaur, Whipped, Whacked. | Static |
