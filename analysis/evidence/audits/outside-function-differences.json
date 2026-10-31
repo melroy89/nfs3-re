@@ -7879,5 +7879,40 @@
       "analysis/original-modern-music-start.md"
     ],
     "limit": "All differing positions assigned bounded research routes; no whole callback/backend or audible equivalence claim."
+  },
+  "force_interval_partition": {
+    "interval": "00447b3e..00448210",
+    "parts": [
+      {
+        "start": "00447b3e",
+        "end_exclusive": "00447dd0",
+        "role": "Unchanged leading code/alignment",
+        "bytes": 658,
+        "changed_bytes": 0,
+        "original_sha256": "6f9f98f46830ecebd1771322c32cd1f9b07680b62f0dfe3f0298c606c405f837",
+        "modern_sha256": "6f9f98f46830ecebd1771322c32cd1f9b07680b62f0dfe3f0298c606c405f837"
+      },
+      {
+        "start": "00447dd0",
+        "end_exclusive": "004481bd",
+        "role": "Complete force-feedback menu initializer",
+        "bytes": 1005,
+        "changed_bytes": 376,
+        "original_sha256": "c2f89eba093f74bbb00aa51bcbe11ef43c476ae20b1470ebd4e5bc3233da5b19",
+        "modern_sha256": "6f08548edc0ae2267112248047888397bcb377d9e53608e595e48036505c5d86"
+      },
+      {
+        "start": "004481bd",
+        "end_exclusive": "00448210",
+        "role": "Unchanged trailing code/alignment",
+        "bytes": 83,
+        "changed_bytes": 0,
+        "original_sha256": "121bf4036b055650fb249f7c47435cc160d69768dd2cd2ef335efbb09159ce34",
+        "modern_sha256": "121bf4036b055650fb249f7c47435cc160d69768dd2cd2ef335efbb09159ce34"
+      }
+    ],
+    "report": "analysis/original-modern-force-menu-layout.md",
+    "report_sha256": "756b44aca847ac5907e75fc79c89f91b1f1bbe5b2e56dea379c2131241dd3f54",
+    "limit": "All differing bytes confined to documented initializer; full device/menu/driver runtime behavior not established."
   }
 }

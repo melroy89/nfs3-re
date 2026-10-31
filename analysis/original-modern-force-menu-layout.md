@@ -34,3 +34,7 @@ After each jump, retained code converts the corresponding current setting throug
 **Work status: done for complete local byte delta. Confidence: verified static.** Modern relies on other producers or existing values for the omitted fields. A reconstruction should not reintroduce old in-race field writes merely because they appear in the original; nor should it assume those fields are unused. Changes to incidental registers/flags entering retained code remain possible, and retained callees can differ between versions.
 
 Required follow-up for visible behavior is the packaged widget defaults/field consumers and lifecycle state `00559234`, followed by a separately authorized menu comparison if useful. Device detection, force-feedback strength and hardware compatibility are outside this local initializer finding. Existing host/VM wheel observations are not original-versus-Modern validation. Executables, Ghidra, raw exports and maintained C are unchanged.
+
+## Outside-body interval localization
+
+The inventory now independently verifies the full1746-byte interval`00447b3e..00448210`:658 leading bytes and83 trailing bytes match across the pinned EXEs; all376 changed positions lie inside the1005-byte initializer`00447dd0..004481bd`. The [outside-body manifest](evidence/audits/outside-function-differences.json) retains each part’s hashes and count. This confirms that the seven documented replacement regions account for the interval’s entire byte delta, without treating unchanged surrounding functions as padding or claiming device/force-output equivalence.
