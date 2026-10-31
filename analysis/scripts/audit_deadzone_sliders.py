@@ -11,7 +11,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[];blobs[label]=[]
-        for start,end in [(0x442dd0,0x442e5a),(0x443070,0x44325c)]:
+        for start,end in [(0x442dd0,0x442e5a),(0x443070,0x44325c),(0x472b60,0x472d0d)]:
             data=pe.get_data(start-0x400000,end-start);blobs[label].append(data)
             path=capture/f'{label}-{start:08x}.asm'
             path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -34,10 +34,16 @@ def main():
     assert new[1][:9]==bytes.fromhex('6089e583ec0889c3be')
     assert new[1][0x194:0x198]==bytes.fromhex('89ec61c3')
     assert new[1][0x198:]==b'\x90'*(0x1ec-0x198)
+    assert [i for i,(a,b) in enumerate(zip(old[2],new[2])) if a!=b]==[0x133]
+    assert old[2][0x130:0x136]==bytes.fromhex('837dfc107d4c')
+    assert new[2][0x130:0x136]==bytes.fromhex('837dfc0f7d4c')
+    result['capability_refresh']={'entry':'00472b60','end_exclusive':'00472d0d',
+        'original_indices':'0..15','modern_indices':'0..14','record_stride':136,
+        'limits':'Slot 15 remains in the primary device domain; no runtime stale-cache observation.'}
     result['limits']=['No controller, UI or x87 instruction execution.',
         'Downstream DirectInput property semantics and effective device response are not established here.']
     (ROOT/'analysis/evidence/audits/deadzone-sliders.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: complete 138/492-byte envelopes; removed rounding calls, initializer regions and constants')
+    print('PASS: complete slider envelopes plus 429-byte refresh; sole loop-limit edit 16-to-15')
 
 
 if __name__=='__main__':main()

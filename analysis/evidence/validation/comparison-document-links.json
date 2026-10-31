@@ -83,8 +83,8 @@
     },
     {
       "path": "analysis/original-modern-deadzone-sliders.md",
-      "sha256": "19b73dcf52ad67dfd8fefcab051e50d91bd1ff794fa88b3b84507afc91434d54",
-      "relative_links": 3
+      "sha256": "1449a6289315323e4f7d90fce69b656e4e77658014a7cff7db02a9a9ee9a6830",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-dialog-input.md",
@@ -143,8 +143,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "546437622d07742ed67d66f0ee1277a268eadaa19f7637f7770209f8dbd89750",
-      "relative_links": 567
+      "sha256": "3bfa7aca86c744813757ae3a621f5edca747713b6501df5f1153a8d18967f68a",
+      "relative_links": 568
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -498,7 +498,7 @@
     }
   ],
   "file_count": 99,
-  "relative_link_count": 1319,
+  "relative_link_count": 1323,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

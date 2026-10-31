@@ -81,7 +81,7 @@
     },
     {
       "path": "analysis/original-modern-deadzone-sliders.md",
-      "sha256": "19b73dcf52ad67dfd8fefcab051e50d91bd1ff794fa88b3b84507afc91434d54"
+      "sha256": "1449a6289315323e4f7d90fce69b656e4e77658014a7cff7db02a9a9ee9a6830"
     },
     {
       "path": "analysis/original-modern-dialog-input.md",
@@ -398,8 +398,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 345,
-    "without_address_mentions": 16
+    "with_address_mentions": 346,
+    "without_address_mentions": 15
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -4807,7 +4807,18 @@
       "changed_bytes": 1,
       "original_sha256": "217abd41ac4e548b9c61623604d8a76a0c7c3b3ae0b1d6823ba0f569badfae9d",
       "modern_sha256": "24b1b54dd5df0a21cb21811b68b090c6cd360ff8651e3e25485bc668eb5467bc",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-deadzone-sliders.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00472b60",
+            "00472c8d",
+            "00472c93",
+            "00472c96"
+          ]
+        }
+      ]
     },
     {
       "entry": "00472d10",

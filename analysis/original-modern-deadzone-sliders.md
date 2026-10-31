@@ -38,3 +38,15 @@ This removes this routine's explicit flag-setting tail, not the widgets themselv
 **Bounded work status: done; evidence confidence: verified static code, constants and literals.** Preserve row-counter start, register contract, floating-point conversion policy, capability admission and callback order for the selected version. A C cast would impose truncation and would not generally match Modern's current-rounding-mode FISTP contract.
 
 **Pending:** all caller rounding states, pair-field semantics and device property application, widget flag meaning across other producers, layout-table bounds/provenance and actual input/UI behavior under Windows or Wine. These affect interfaces, data layout and runtime validation. Executable bytes, saved Ghidra state and reconstruction sources are unchanged.
+
+## Capability refresh reduces its scan from sixteen slots to fifteen
+
+The expanded [input audit](scripts/audit_deadzone_sliders.py) verifies complete same-address `00472b60..00472d0d` (429 bytes), saved as `RefreshDirectInputDeviceCapabilityCache`. Only byte `00472c93` differs: `CMP DWORD [EBP-4],16` becomes comparison against 15. The following signed `JGE exit` and all other instructions are identical. [The manifest](evidence/audits/deadzone-sliders.json) records full hashes and disassembly.
+
+The local index starts at zero, enters the body through `00472c96`, increments at `00472c8d`, then applies that bound. Thus original processes ordinals **0..15**, Modern **0..14**. This is not merely a changed display label or a decrement applied after sixteen iterations.
+
+Both call `00435690` with the ordinal and map the frontend/config cache to `006fc970 + ordinal*88h`. Null query results clear `88h` bytes; changed capability/name records can copy 22 DWORDs; unchanged records can compare eight axis-value pairs and propagate changed members through `00435b40`. The new bound skips the entire ordinal-15 refresh route, including its clear/copy/compare operations and any per-slot counter contribution.
+
+Existing [device-slot lifecycle evidence](controller-device-slot-lifecycle.md#result) establishes a separate primary 16-slot domain: normal registration can populate slot 15, initial capability query traverses all sixteen, and the race reader accepts slot 15. That evidence describes the selected Modern executable; it does not by itself prove every original interface path identical. Coupled with the direct paired refresh comparison, it shows why this edit should **not** be labelled a verified bounds fix: Modern omits refreshing a frontend slot that remains in its primary device domain.
+
+**Bounded comparison status: done; confidence: verified full refresh bodies and previously qualified Modern slot lifecycle.** Actual sixteen-device availability and stale/unrefreshed frontend consequences are unobserved. Cache extent/other writers, every original device path and author intent remain separate. Preserve the version-specific bound in reconstruction rather than silently “correcting” it. No new hardware, game or instruction probes were run; executables/Ghidra/maintained C are unchanged.

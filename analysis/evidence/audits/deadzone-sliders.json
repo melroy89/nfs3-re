@@ -16,6 +16,12 @@
           "end_exclusive": "0044325c",
           "sha256": "ec1509aac09ead23a57b4a9fe304211037a688915a0b907e6078d9256e956c27",
           "assembly": "analysis/captures/modern-differences/deadzone-sliders/original-00443070.asm"
+        },
+        {
+          "start": "00472b60",
+          "end_exclusive": "00472d0d",
+          "sha256": "217abd41ac4e548b9c61623604d8a76a0c7c3b3ae0b1d6823ba0f569badfae9d",
+          "assembly": "analysis/captures/modern-differences/deadzone-sliders/original-00472b60.asm"
         }
       ],
       "tail_widget_names": {
@@ -40,6 +46,12 @@
           "end_exclusive": "0044325c",
           "sha256": "48864d29d4b0fc9e8ab278a842fb5111837a2eda836b117be76ed14719efb13d",
           "assembly": "analysis/captures/modern-differences/deadzone-sliders/official_modern-00443070.asm"
+        },
+        {
+          "start": "00472b60",
+          "end_exclusive": "00472d0d",
+          "sha256": "24b1b54dd5df0a21cb21811b68b090c6cd360ff8651e3e25485bc668eb5467bc",
+          "assembly": "analysis/captures/modern-differences/deadzone-sliders/official_modern-00472b60.asm"
         }
       ],
       "tail_widget_names": {
@@ -49,6 +61,14 @@
         "00538a38": "SCADE"
       }
     }
+  },
+  "capability_refresh": {
+    "entry": "00472b60",
+    "end_exclusive": "00472d0d",
+    "original_indices": "0..15",
+    "modern_indices": "0..14",
+    "record_stride": 136,
+    "limits": "Slot 15 remains in the primary device domain; no runtime stale-cache observation."
   },
   "limits": [
     "No controller, UI or x87 instruction execution.",
