@@ -7635,5 +7635,60 @@
     "report": "analysis/original-modern-hud-settings-policy.md",
     "report_sha256": "a30054b2a099b01fb4fbdb6912380e6de729229615e99e96badb5d51ece70b37",
     "limit": "All interval differences localized to documented policy; equality of surrounding bytes is not full semantic equivalence."
+  },
+  "cascade_interval_partition": {
+    "interval": "00461cf4..004628d0",
+    "parts": [
+      {
+        "start": "00461cf4",
+        "end_exclusive": "00461d00",
+        "bytes": 12,
+        "role": "Unchanged leading bytes",
+        "changed_bytes": 0,
+        "original_sha256": "5870242376a53993208e26204205758aa71315b0473eef95b9a366dda3b5afb8",
+        "modern_sha256": "5870242376a53993208e26204205758aa71315b0473eef95b9a366dda3b5afb8"
+      },
+      {
+        "start": "00461d00",
+        "end_exclusive": "00462314",
+        "bytes": 1556,
+        "role": "Cascade renderer",
+        "changed_bytes": 51,
+        "original_sha256": "edf475dd7c92c0d5ec86b91da4eb7d876a5f76b5327e7183d6fd6a3fd7a890d8",
+        "modern_sha256": "5959655d743b22d3c806fd8bdf892ab3e54ecedab51f5e142bf5cf9124f794fd"
+      },
+      {
+        "start": "00462314",
+        "end_exclusive": "004624a0",
+        "bytes": 396,
+        "role": "Unchanged intervening code/alignment",
+        "changed_bytes": 0,
+        "original_sha256": "87dc4002a32dd102f9a9ff9f11da047c2cfa7061c2865fd3fc56678f3281c44b",
+        "modern_sha256": "87dc4002a32dd102f9a9ff9f11da047c2cfa7061c2865fd3fc56678f3281c44b"
+      },
+      {
+        "start": "004624a0",
+        "end_exclusive": "004628c8",
+        "bytes": 1064,
+        "role": "Cascade input compared envelope",
+        "changed_bytes": 148,
+        "original_sha256": "34a8e9bfc2b8727f464ba1c45b18862321629d2d801cbc527fc45c5cc33939e8",
+        "modern_sha256": "4fcf14e4b5993513f39917e5bfda671f93df0e032f22588bb1c90d45baa44455"
+      },
+      {
+        "start": "004628c8",
+        "end_exclusive": "004628d0",
+        "bytes": 8,
+        "role": "Modern NOP alignment after unconditional jump",
+        "changed_bytes": 8,
+        "original_sha256": "4262525e3871072574cdfa8ace17e75f78d11ef749ff5f911a84296ec976eb5c",
+        "modern_sha256": "9e8376b4aa602de084708bf231f7ab5bd700e3d623bcf47a3851ce49cbe46f08"
+      }
+    ],
+    "reports": [
+      "analysis/original-modern-car-alias.md",
+      "analysis/original-modern-common-menu-buttons.md"
+    ],
+    "limit": "Renderer/input deltas routed to existing paired audits; alignment classification is local, not exclusion of alternate entry or complete UI equivalence."
   }
 }
