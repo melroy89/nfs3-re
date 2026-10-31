@@ -218,6 +218,58 @@
           ]
         },
         {
+          "start": "004bc530",
+          "end_exclusive": "004bc559",
+          "sha256": "413c645b1c58f12e67b44de640fa3189d28caf5763610589fbfdf74b4d7917d2",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004bc530.asm",
+          "direct_calls": [
+            {
+              "site": "004bc54f",
+              "target": "00435310"
+            }
+          ]
+        },
+        {
+          "start": "004bc8b0",
+          "end_exclusive": "004bc8dd",
+          "sha256": "72f3538ce6ecde8c2f4c8bbeaf5f692d8c132882c5809fcdc2dd9420f974d169",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004bc8b0.asm",
+          "direct_calls": [
+            {
+              "site": "004bc8b3",
+              "target": "00434ae0"
+            },
+            {
+              "site": "004bc8b8",
+              "target": "00421480"
+            },
+            {
+              "site": "004bc8bd",
+              "target": "004c7130"
+            },
+            {
+              "site": "004bc8c2",
+              "target": "004dbbc0"
+            },
+            {
+              "site": "004bc8c7",
+              "target": "004cb6f0"
+            },
+            {
+              "site": "004bc8cc",
+              "target": "0047b390"
+            },
+            {
+              "site": "004bc8d1",
+              "target": "004dcd10"
+            },
+            {
+              "site": "004bc8d6",
+              "target": "004bc530"
+            }
+          ]
+        },
+        {
           "start": "004c7130",
           "end_exclusive": "004c7149",
           "sha256": "21d56f03c98dc5b708a1000a1f18cf8b3871d062f27e4c0b8c50a64b1110a9c6",
@@ -619,6 +671,18 @@
           ]
         },
         {
+          "start": "004bc530",
+          "end_exclusive": "004bc559",
+          "sha256": "413c645b1c58f12e67b44de640fa3189d28caf5763610589fbfdf74b4d7917d2",
+          "assembly": "analysis/captures/modern-differences/race-initialization/official_modern-004bc530.asm",
+          "direct_calls": [
+            {
+              "site": "004bc54f",
+              "target": "00435310"
+            }
+          ]
+        },
+        {
           "start": "004c7130",
           "end_exclusive": "004c7149",
           "sha256": "21d56f03c98dc5b708a1000a1f18cf8b3871d062f27e4c0b8c50a64b1110a9c6",
@@ -809,6 +873,24 @@
       "sha256": "353caad43dd44aa7fedafd94c77ea0f7ee6f315221fb45100f8057ad5ef54a54"
     }
   ],
+  "bypassed_original_wrapper": {
+    "entry": "004bc8b0",
+    "end_exclusive": "004bc8dd",
+    "direct_targets": [
+      "00434ae0",
+      "00421480",
+      "004c7130",
+      "004dbbc0",
+      "004cb6f0",
+      "0047b390",
+      "004dcd10",
+      "004bc530"
+    ],
+    "modern_direct_final_target": "004bc530",
+    "shared_final_body_bytes": 41,
+    "shared_final_body_sha256": "413c645b1c58f12e67b44de640fa3189d28caf5763610589fbfdf74b4d7917d2",
+    "interpretation": "Three calls are hoisted unchanged; environment/weather targets differ; two original wrapper-prefix calls are bypassed on this route."
+  },
   "removed_stub_entries": [
     "00401220",
     "0040c150",

@@ -113,8 +113,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "f41308ae1fdc62d086da51f9a906597037863c6527c8fed4852b6443a61fc4c6",
-      "relative_links": 473
+      "sha256": "9261386b5fc0a1c0284117b94db54cf16c57ef6210143c0487704d74f0b00129",
+      "relative_links": 474
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -263,7 +263,7 @@
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
-      "sha256": "031365e0513645b7aa94de592f04655919794f7ec786f960cb684855cc3adbb7",
+      "sha256": "74ba65482da764743ef34ffcd4ca06c2762c538d81e3dd570bb508d6a6cef65f",
       "relative_links": 1
     },
     {
@@ -433,7 +433,7 @@
     }
   ],
   "file_count": 86,
-  "relative_link_count": 1113,
+  "relative_link_count": 1114,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

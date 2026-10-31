@@ -213,7 +213,7 @@
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
-      "sha256": "031365e0513645b7aa94de592f04655919794f7ec786f960cb684855cc3adbb7"
+      "sha256": "74ba65482da764743ef34ffcd4ca06c2762c538d81e3dd570bb508d6a6cef65f"
     },
     {
       "path": "analysis/original-modern-race-now.md",
@@ -346,8 +346,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 265,
-    "without_address_mentions": 96
+    "with_address_mentions": 266,
+    "without_address_mentions": 95
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -4692,7 +4692,15 @@
       "changed_bytes": 30,
       "original_sha256": "7ab30073f9cc967c3a2b2fe327b4b401fdb2906697fbb89d69ff4ac03a48af01",
       "modern_sha256": "824d3b1d389a0a4d945038a6416ee1f91a3f49130df19090990841aae0d0a725",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-race-initialization.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0047b390"
+          ]
+        }
+      ]
     },
     {
       "entry": "0047b850",

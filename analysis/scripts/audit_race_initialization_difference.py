@@ -12,6 +12,8 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images.append(pe);rows=[]
         spans=[(0x4c45f0,0x4c4733 if label=='original' else 0x4c471a),(0x4c4740,0x4c481d)]
+        spans += [(0x4bc530,0x4bc559)]
+        if label=='original':spans += [(0x4bc8b0,0x4bc8dd)]
         spans += [(0x4c7130,0x4c7149),(0x4dbbc0,0x4dbbd6),(0x4cb6f0,0x4cb723),(0x47b350,0x47b37a),(0x4dcdf0,0x4dd1ed),(0x4e070c,0x4e0716)]
         if label=='original':spans += [(a,a+5) for a in leaves]+[(0x404660,0x40466a)]
         for start,end in spans:
@@ -37,6 +39,10 @@ def main():
         a,b=[pe.get_data(start-0x400000,end-start) for pe in images];assert a==b
         retained.append({'entry':f'{start:08x}','end_exclusive':f'{end:08x}','length':end-start,'sha256':hashlib.sha256(a).hexdigest()})
     out['added_reset_calls_target_retained_original_bodies']=retained
+    common_a,common_b=[pe.get_data(0xbc530,0x29) for pe in images];assert common_a==common_b
+    out['bypassed_original_wrapper']={'entry':'004bc8b0','end_exclusive':'004bc8dd','direct_targets':['00434ae0','00421480','004c7130','004dbbc0','004cb6f0','0047b390','004dcd10','004bc530'],'modern_direct_final_target':'004bc530','shared_final_body_bytes':41,'shared_final_body_sha256':hashlib.sha256(common_a).hexdigest(),'interpretation':'Three calls are hoisted unchanged; environment/weather targets differ; two original wrapper-prefix calls are bypassed on this route.'}
+    observed=next(row for row in out['binaries']['original']['spans'] if row['start']=='004bc8b0')['direct_calls']
+    assert [row['target'] for row in observed]==out['bypassed_original_wrapper']['direct_targets']
     out['removed_stub_entries']=[f'{v:08x}' for v in leaves]
     out['wrapper_to_stub']={'wrapper':'00404660','target':'00404650'}
     out['limits']=['No race, initializer or target execution.','Direct-call sequences do not establish full effects or correspondence of changed callees.','Removed stub bodies are original evidence, not inferred from Modern reuse of their addresses.']

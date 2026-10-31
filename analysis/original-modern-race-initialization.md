@@ -31,3 +31,22 @@ The audit now captures all five target bodies and asserts byte identity across t
 Ends are exclusive. The zero-fill entry clears EBX then invokes shared fill code; its entry witness is retained. Function labels for spatial/effect/weather roles come from existing analysis and do not establish full layout or every semantic effect. The `00494360` register contract and other transitive callees remain dependencies rather than being assumed harmless.
 
 The direct difference is therefore **reset sequencing of retained state-management routines**. These bytes do not show a new physics formula. Equally, unchanged callee code does not make the new invocation irrelevant: timing/order, globals and initialized data can change subsequent behaviour. Their other original callers have not been inventoried here. The later changed target`004bc8b0`→`004bc530` still needs its own counterpart check. No reset or zero-fill code was executed.
+
+## Final-target resolution: bypassed wrapper and hoisted calls
+
+The final CALL change **`004bc8b0`→`004bc530`** is not a moved-body counterpart. Complete original`004bc8b0..004bc8dd` is a wrapper with these direct targets in order:
+
+`00434ae0`, `00421480`, `004c7130`, `004dbbc0`, `004cb6f0`, `0047b390`, `004dcd10`, `004bc530`.
+
+Complete final callee **`004bc530..004bc559` (41 bytes)** exists in both binaries and is byte-identical. It clears`0055fe3c`, supplies output-cell pointers`007a3d00`, `007a3cf8`, `007a3cfc` with ECX0 to`00435310`, and restores its saved frame. Complete meaning of those cells and its callee remain external dependencies.
+
+A one-level comparison of this route therefore establishes:
+
+| Original nested route | Modern direct route | Interpretation |
+|---|---|---|
+| `004c7130`, `004dbbc0`, `004cb6f0` inside wrapper | Same targets now called by race reset | Hoisted retained calls, not three extra implementations |
+| `0047b390`, `004dcd10` | `0047b350`, `004dcdf0` | Changed environment/weather-related targets; full counterpart semantics pending |
+| Wrapper-prefix `00434ae0`, `00421480` | No corresponding direct calls on this compared route | Locally bypassed; absence from all other routes is not established |
+| Wrapper ends by calling`004bc530` | Race reset directly calls`004bc530` | Unchanged final callee reached without the wrapper |
+
+This refines the earlier direct-call inventory: “five added calls” described the outer wrapper’s instruction list, **not five net additional operations after expanding original nested calls**. Three are relocation of invocation level; two use different targets. Preserve this distinction in any reconstruction plan or patch summary. The original wrapper’s admission/timing, skipped-prefix effects and changed target bodies require separate evidence before claiming equivalent complete reset behaviour. No initializer or target instructions were executed.
