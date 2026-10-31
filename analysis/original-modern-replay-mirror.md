@@ -21,7 +21,7 @@ The predicate is evaluated **before** first-enable changes the global; it is not
 
 ## Eligibility changes in the shared predicate
 
-Both `00422aa0` entries first obtain a view/camera object and check multiple gates: a signed size threshold of 320 at `007d3684`, non-null object and absence of object byte `+0x200` mask 0x02, among others.
+Both `00422aa0` entries first obtain a view/camera object and check multiple gates: a signed threshold of 320 on global `007d3684` (identified as the race tick in existing simulation research, not a screen-size field), non-null object and absence of object byte `+0x200` mask 0x02, among others.
 
 Original additionally rejects renderer mask bits **0x180** at `007a3a58`. Later it rejects playback state **2** unconditionally unless the earlier `00559264` override has already returned success.
 

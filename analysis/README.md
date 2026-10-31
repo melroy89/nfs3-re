@@ -65,3 +65,5 @@ For each finding, record:
 Use Markdown for small, reviewable findings. Follow [the sharing workflow](../docs/SHARING.md) before including exported annotations. A note on one executable version does not automatically apply to another.
 
 - [Original versus Modern registry paths](original-modern-registry.md): retained online/memory queries, replaced renderer preferences and removed Desktop lookup.
+
+- [Original versus Modern vehicle dispatch](original-modern-vehicle-dispatch.md): helper admission, tick/parity bookkeeping and register preservation.

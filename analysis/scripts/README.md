@@ -277,3 +277,7 @@ Run `python3 analysis/scripts/audit_replay_mirror_difference.py` (Python pefile,
 ## Original versus Modern registry paths
 
 Run `python3 analysis/scripts/audit_registry_difference.py` (Python pefile, GNU objdump). It hash-checks both baselines, inventories direct open/query encodings, retains paired instruction spans/strings, asserts three identical complete bodies and three NOP-filled old helpers. Output: `analysis/evidence/audits/original-modern-registry.json`. No target or registry execution. See [registry comparison](../original-modern-registry.md).
+
+## Original versus Modern vehicle dispatch
+
+Run `python3 analysis/scripts/audit_vehicle_dispatch_difference.py` (Python pefile, GNU objdump). Retains complete paired dispatchers, the identical selection helper and mirror threshold witnesses in `analysis/evidence/audits/original-modern-vehicle-dispatch.json`. No target execution. See [dispatch comparison](../original-modern-vehicle-dispatch.md).

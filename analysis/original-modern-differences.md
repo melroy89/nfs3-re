@@ -182,7 +182,11 @@ The [replay presentation comparison](original-modern-replay-mirror.md) traces co
 
 The [registry comparison](original-modern-registry.md) inventories 15 original versus 6 Modern direct open/query call sites, traces renderer preferences into the original selector, and verifies unchanged online-DLL and memory-query bodies. Modern retains registry use; a one-for-one migration of every INI option is not established.
 
-## 27. Prioritized semantic work remaining
+## 27. Race-vehicle render scheduling
+
+The [vehicle-dispatch comparison](original-modern-vehicle-dispatch.md) traces retained participant loops, new admission around an identical selection helper, changed tick/parity bookkeeping and EAX preservation. Downstream visual effects and historical release attribution remain pending.
+
+## 28. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

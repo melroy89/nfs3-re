@@ -1,0 +1,65 @@
+{
+  "kind": "static-vehicle-dispatch-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004bbba0",
+          "end": "004bbcb4",
+          "bytes_sha256": "f041770cd10b8ac507558ea3d24b5d9d1321ecda4415ecf62426196796c19e6c",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004bbba0.asm",
+          "assembly_sha256": "6cdf47c0038a30a3ee93e98a18eba3d2c25ec51da49f9deb02edc6d85d82e9fc"
+        },
+        {
+          "start": "004bbad0",
+          "end": "004bbb94",
+          "bytes_sha256": "3ee352d4132df439ddba85649c2557e64aea1706d519d3e418f78f057d43b3ca",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004bbad0.asm",
+          "assembly_sha256": "272eec30fc28b36e10b2aa3c8fa471c3f51848bed5ba3bc56d86c2a05304c6d3"
+        },
+        {
+          "start": "00422aa0",
+          "end": "00422ace",
+          "bytes_sha256": "59f0bde6c8a02fcc57224099aa04c6efeeefa24ee95d2edea2dd926e539b499a",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-00422aa0.asm",
+          "assembly_sha256": "8cbfb5d096117734a027461e44bd693a164a93b39d2641c72d074a704d970504"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004bbba0",
+          "end": "004bbce3",
+          "bytes_sha256": "f1319e78d6e7ddd4fe40974b48bf7287e16bfc58bf9e2db8828d76840b8c5980",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004bbba0.asm",
+          "assembly_sha256": "13770a58c840073b06ed284aa93673c5fd7e464adf4fd5e7403757161aea4f8c"
+        },
+        {
+          "start": "004bbad0",
+          "end": "004bbb94",
+          "bytes_sha256": "3ee352d4132df439ddba85649c2557e64aea1706d519d3e418f78f057d43b3ca",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004bbad0.asm",
+          "assembly_sha256": "f647c7fe09e8c9fd5e6462db5bbd1190280ad4acc3a36e9e1b3be61644d17017"
+        },
+        {
+          "start": "00422aa0",
+          "end": "00422ace",
+          "bytes_sha256": "59f0bde6c8a02fcc57224099aa04c6efeeefa24ee95d2edea2dd926e539b499a",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-00422aa0.asm",
+          "assembly_sha256": "66953675e0a9104518350f5f2c666de2d2a0f45ebce70a0e4405640afe168b27"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No rendering or target execution.",
+    "Field labels are bounded by existing research; no complete vehicle structure claimed."
+  ],
+  "helper_004bbad0_identical": true
+}
