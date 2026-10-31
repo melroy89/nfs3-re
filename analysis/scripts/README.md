@@ -206,7 +206,7 @@ Run `python3 analysis/scripts/audit_startup_policy_difference.py` from the repos
 
 ## Original versus Modern display modes and texture extents
 
-Run `python3 analysis/scripts/audit_display_mode_difference.py` and `python3 analysis/scripts/audit_texture_extent_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). They capture matched enumerator/list-builder and texture caller/helper spans, retaining `original-modern-display-modes.json` and `original-modern-texture-extents.json` under `analysis/evidence/audits/`. Raw assembly remains ignored. No target, renderer or UI execution. See [display findings](../original-modern-display-modes.md) and [texture findings](../original-modern-texture-limits.md).
+Run `python3 analysis/scripts/audit_display_mode_difference.py` and `python3 analysis/scripts/audit_texture_extent_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). They capture matched enumerator/list-builder and texture caller/helper spans, retaining `original-modern-display-modes.json` and `original-modern-texture-extents.json` under `analysis/evidence/audits/`. Raw assembly remains ignored. No target, renderer or UI execution. The display capture also includes original video initialization and Modern lookup/application spans; see [mode selection](../original-modern-mode-selection.md). See [display findings](../original-modern-display-modes.md) and [texture findings](../original-modern-texture-limits.md).
 
 ## Original versus Modern viewport and border geometry
 

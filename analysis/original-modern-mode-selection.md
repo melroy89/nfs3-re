@@ -1,0 +1,63 @@
+# Original versus Modern: video-mode selection and publication
+
+## Scope and evidence
+
+This extends [mode admission](original-modern-display-modes.md) and [renderer lifecycle](original-modern-renderer-lifecycle.md), using the same hash-pinned supplied original/backup and official Modern v1.6.1. The [display manifest](evidence/audits/original-modern-display-modes.json) retains original `00517610..0051788c`, Modern lookup/filter/product helpers `004bedcc..004beeaf`, and application body `004beeb0..004bef9c`. Reproduce with `python3 analysis/scripts/audit_display_mode_difference.py`. No target, driver or instruction-probe execution.
+
+Existing [screenshot admission research](screenshot-worker-admission-audit.md) already traces the live mode record and its downstream capture use. This report reuses that finding and adds the original/Modern selection comparison; it does not establish general buffer-size safety or actual advertised driver modes.
+
+## Original hard-coded mode IDs
+
+Original `00517610` normalizes its width/height/depth inputs as documented in the lifecycle chapter. Before calling `_THRASH_setvideomode@12`, it selects the following first argument through ordered comparisons:
+
+| Condition, in priority order | Mode ID |
+|---|---:|
+| Width = 320 | 4 |
+| Width = 512 | 6 |
+| Width = 800 | 2 |
+| Width = 960 | 10 |
+| Width = 856 | 11 |
+| Width = 1024 | 13 |
+| Otherwise height = 502 | 17 |
+| Otherwise height = 822 | 18 |
+| Otherwise | 1 |
+
+Width 320 is tested at `00517692`; remaining comparisons and branches are at `005177fd..0051788c`. These are literal width/height tests, **not complete resolution-pair matches**. In particular, do not silently replace heights 502/822 with more familiar values. The remaining two stack arguments are 2 and 1. Driver-specific ID meanings are not derived merely from these constants.
+
+## Modern descriptor lookup
+
+Modern `004bedcc` receives three stack DWORDs: requested width, height and depth; it restores registers through POPAD, returns its result in EAX and ends with `RET 12`. It reads descriptor `[007a3a5c]`, count at `+0x3c`, and record base at `+0x40`. Records have stride 0x28. Index zero is skipped: the scan visits indices **1 through count inclusive**, using a signed count comparison.
+
+Only records accepted by `004bee60` are considered; the [admission report](original-modern-display-modes.md) explains that gate and its arithmetic limits. For normal positive fitting dimensions, selection is:
+
+1. Compute requested pixel area using helper `004beea4`, which returns the low 32 bits of unsigned width × height.
+2. An exact width/height/depth match ends the scan immediately with that index.
+3. Equal width/height but different depth **immediately replaces the current best** with area distance zero and a depth-mismatch flag of 1, bypassing the ordinary distance/tie comparison (`004bee1f..004bee21 -> 004bee41`).
+4. Otherwise calculate the signed absolute difference between the candidate and requested low-32-bit pixel areas.
+5. For candidates reaching the ordinary comparison, prefer smaller area distance. For equal distance, prefer a depth match (flag 0) over mismatch (flag 1). If both are tied, retain the earlier candidate. The equal-dimensions special case above can override that preference.
+6. If no candidate was selected, return **1**, without validating that record 1 exists or passes the gate.
+
+Thus this is area-distance selection with special handling for equal dimensions and an ordinary depth tie-break, **not** nearest width/height distance or aspect-ratio distance. Eligible 1280×720 and 1152×800 have equal area; for a request of 1280×720 at the same depth, an exact 1280×720 record wins, but without that exact match, area alone cannot distinguish equal-area shapes. This is an arithmetic illustration, not a driver/probe result.
+
+Machine limits matter: MUL discards the high product; SUB/NEG operate on 32 bits and comparisons are signed. NEG of `0x80000000` remains negative, so this is not a general mathematical absolute-distance function for arbitrary malformed/overflowing dimensions. No such input was executed. The no-candidate fallback must not be documented as a proven valid or safe mode.
+
+## Modern application and live record
+
+`004beeb0` takes the requested index in EAX, clamps signed values below 1 to 1, and forms `record_base + index*0x28` using low-32-bit arithmetic. Its branches are materially different:
+
+- **Same current index** (`0055fec0`): jump directly to `004bef47`, skipping the count check and driver mode call.
+- **Different index**: require signed index within `1..count`, call `_THRASH_flushwindow@0` and `_THRASH_pageflip@0`, then preparation helper `004bef9d`. Read record `+0x14`, cap it to unsigned 2, and derive another argument from a signed comparison with record `+0x18`. Resize/setup through `004cdbd0` before requesting `_THRASH_setvideomode@12` at `004bef24`.
+- **Driver returns zero**: branch to final preparation helper; skip current-index update and live-record publication. This local path does not undo the earlier resize/setup call; complete recovery elsewhere remains unverified.
+- **Driver succeeds**: update `0055fec0` and `007a3a68`, invoke `00431900`, then join the same-current path.
+
+The shared publication path refreshes the about descriptor, calls `004cdbd0` with record width/height, requests SetForegroundWindow for `[009f3d24]`, copies ten DWORDs into **`007cdae0`**, updates rectangle state through `004bebb0`, and copies eight DWORDs from `007cda60` to `007cdac0`.
+
+The record pointer was formed **before** descriptor refresh at `004bef47` and is then reused; there is no local recomputation from the refreshed descriptor. Pointer stability across the driver's about call is therefore a dependency, not something this function verifies. The same-current path likewise depends on the current index and driver catalog remaining coherent.
+
+PUSHAD/POPAD preserve the caller's general registers; there is no independent Boolean success result written to saved EAX in this function. A C reconstruction must not invent one because the internal driver call has such a return.
+
+## What this resolves and what remains
+
+Verified: original's literal mode-ID decision tree, Modern's descriptor search and tie rules, fallback index, application branch order and live-record publication. This explains how Modern handles a dynamic list beyond original's hard-coded startup selection.
+
+Still unresolved: first-run desktop-resolution producer (**MP100-011**), all driver catalog invariants, exact renderer argument meanings, descriptor/pointer lifetime, recovery after a failed switch and runtime visual/compatibility behavior. The vendor's “nearest Windows default resolution” claim is not fully verified merely by finding a general nearest-area helper.

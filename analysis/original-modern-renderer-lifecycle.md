@@ -49,4 +49,4 @@ Modern's smaller initializer does not contain this block. It instead has the con
 
 ## Further evidence required
 
-Pending: exact final-tail operation meanings, complete mode-ID lookup semantics, callback/storage users outside startup, platform helpers and actual driver acceptance/failure behavior. The original `004f8930` post-initialization path and Modern `004f8548` share several calls but differ in timer/input/callback setup; their full equivalence is not claimed. Historical release attribution and runtime compatibility remain separate questions.
+The [mode-selection comparison](original-modern-mode-selection.md) now traces the original ID decision tree, Modern search rules and final record publication. Pending: complete resize/helper semantics, callback/storage users outside startup, platform helpers and actual driver acceptance/failure behavior. The original `004f8930` post-initialization path and Modern `004f8548` share several calls but differ in timer/input/callback setup; their full equivalence is not claimed. Historical release attribution and runtime compatibility remain separate questions.

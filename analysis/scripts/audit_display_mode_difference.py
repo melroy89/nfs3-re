@@ -9,8 +9,8 @@ import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
 SPANS = {
-    'original': [(0x4bed90, 0x4bee72), (0x448210, 0x4482e8)],
-    'official_modern': [(0x4bed90, 0x4beeb0), (0x448210, 0x448345)],
+    'original': [(0x4bed90, 0x4bee72), (0x448210, 0x4482e8), (0x517610, 0x51788d)],
+    'official_modern': [(0x4bed90, 0x4beeb0), (0x448210, 0x448345), (0x4beeb0, 0x4bef9d)],
 }
 
 
