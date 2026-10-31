@@ -82,3 +82,18 @@ The expanded path requires WORD widget+`0x42` nonzero and a nonzero list pointer
 The same path computes WORD widget+`0x20` from **WORD+`0x56`**, rather than the other helper’s WORD+`0x5a`. Original stores`16 * value +5`; Modern stores`16 * value +2`, modulo65536. The shared placement then stores widget+`0x1c` from WORD+6 plus28 and widget+`0x1a` from WORD+8 plus16. The fallback path calls`00461a70` in both baselines. Its unchanged CALL operand does not prove that callee or fallback output is unchanged.
 
 This second complete body confirms the repeated5→15 width and5→2 extent changes while preserving its distinct widget offsets and original selection predicate. It does not prove the producer/meaning of WORD+`0x56`, live list contents, text metrics, rendered dimensions or historical introduction. Preserve the WORD truncation and each widget type’s field layout in reconstruction instead of merging these helpers by superficial similarity. No game code was executed.
+
+## Direct fallback and width dependencies checked
+
+The audit now retains and asserts equality of two complete direct-callee bodies, rather than relying on unchanged call addresses:
+
+| Address/body | Bytes | Paired result | Local behaviour |
+|---|---:|---|---|
+| `00461a70..00461a96` | 38 | Identical | Store WORD+`0x20`=27, WORD+`0x1e`=30, WORD+`0x1c`=WORD+6−10, WORD+`0x1a`=WORD+8 |
+| `00452020..0045208c` | 108 | Identical | Null string returns5; otherwise selects an x87 scaling path or another width routine after calling`00452100` |
+
+Ends are exclusive. `00461a70` has no calls, global accesses or floating-point instructions. It receives the writable widget pointer in EAX, preserves EDX via the stack, leaves EAX unchanged, and performs only those four WORD stores plus integer arithmetic/prologue/epilogue. For equal accessible input widget storage and a valid stack, this closes the previously unresolved **local fallback transformation**. Flags are affected by its subtraction; the unchanged body does not normalize them or define a portable C return convention.
+
+The width helper saves incoming EAX as the string pointer and uses incoming EDX as input to`00452100`. For a nonnull string it tests global`00559234`. The nonzero branch calls`004d1430`, multiplies the x87 result by the binary32 value at`005395f0`, divides by the signed DWORD at`007cdac8`, calls`004dfd56`, then FISTP-stores a signed DWORD result. The zero branch calls`004da4a0` with ECX1 and EBX/EDX0. This records the local dependency and x87 conversion chain; it does not establish the complete callees, constants’ runtime values, divisor validity, resource metrics or floating-point exceptions.
+
+Thus equal local width-helper bytes do **not** prove equal text widths across versions or configurations. The fallback is locally closed because it has no external data/callee dependency; width remains dependent on initialization, global state and additional functions. No function was executed and no runtime equivalence claim is made.

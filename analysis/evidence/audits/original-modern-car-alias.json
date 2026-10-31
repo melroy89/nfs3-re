@@ -7,6 +7,20 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "00461a70",
+          "end": "00461a96",
+          "sha256": "51393b62735afa5c3cdd900a3bbd12c6158a97f70d84ca9f82f39782019a416d",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00461a70.asm",
+          "assembly_sha256": "adeff59585b014f4ada66a7bd9fbc6bc77a9572c1db9d9a2eedd4169e1df483b"
+        },
+        {
+          "start": "00452020",
+          "end": "0045208c",
+          "sha256": "4fc6e05a738aad7c6613a3c30a82457a0fc767d1518ab3418496d90564963fd6",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00452020.asm",
+          "assembly_sha256": "261c2c824abde366717b5ec5d69d9a38fe6fbf02a2893b9d1b702fb804cc6951"
+        },
+        {
           "start": "004628d0",
           "end": "004629bf",
           "sha256": "930c687484c746016e8540c257bfe1c29cd6006ed16e3e6e0fa9376d8d64b9d3",
@@ -74,6 +88,20 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "00461a70",
+          "end": "00461a96",
+          "sha256": "51393b62735afa5c3cdd900a3bbd12c6158a97f70d84ca9f82f39782019a416d",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00461a70.asm",
+          "assembly_sha256": "d1e66178b475a9ee439588dfd495099689f5bd88810c760e28ae5edc52c717a3"
+        },
+        {
+          "start": "00452020",
+          "end": "0045208c",
+          "sha256": "4fc6e05a738aad7c6613a3c30a82457a0fc767d1518ab3418496d90564963fd6",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00452020.asm",
+          "assembly_sha256": "231926e83cfb9a10576f89d0f1aa629537500c4393f9354be0a7af079410566e"
+        },
         {
           "start": "004628d0",
           "end": "004629bf",
@@ -365,6 +393,22 @@
     ],
     "scope": "Entry through both observed RETs; excludes alignment and next function."
   },
+  "retained_layout_dependencies": [
+    {
+      "start": "00461a70",
+      "end_exclusive": "00461a96",
+      "length": 38,
+      "sha256": "51393b62735afa5c3cdd900a3bbd12c6158a97f70d84ca9f82f39782019a416d",
+      "byte_identical": true
+    },
+    {
+      "start": "00452020",
+      "end_exclusive": "0045208c",
+      "length": 108,
+      "sha256": "4fc6e05a738aad7c6613a3c30a82457a0fc767d1518ab3418496d90564963fd6",
+      "byte_identical": true
+    }
+  ],
   "additional_track_policy_callers": {
     "004628d0": {
       "name_offset": "0x60",

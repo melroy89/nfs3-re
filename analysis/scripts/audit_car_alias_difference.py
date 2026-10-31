@@ -12,7 +12,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
-        spans=[(0x4628d0,0x4629bf),(0x4634d0,0x463501),(0x463841,0x463859),(0x463875,0x463894),(0x4638a7,0x4638f4),(0x461d25,0x461d51),(0x463b74,0x463bc5),(0x4e9ec0,0x4e9efb)]
+        spans=[(0x461a70,0x461a96),(0x452020,0x45208c),(0x4628d0,0x4629bf),(0x4634d0,0x463501),(0x463841,0x463859),(0x463875,0x463894),(0x4638a7,0x4638f4),(0x461d25,0x461d51),(0x463b74,0x463bc5),(0x4e9ec0,0x4e9efb)]
         if label=='official_modern':spans.extend([(0x4728f4,0x472923),(0x472924,0x472959),(0x4628ec,0x46291a),(0x4634e7,0x463501),(0x46456d,0x464587),(0x4645e3,0x464609)])
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -56,6 +56,11 @@ def main():
     assert old.get_data(0x6297f,5)==bytes.fromhex('0505000000')
     assert new.get_data(0x6297f,5)==bytes.fromhex('0502000000')
     result['complete_004628d0']={'end_exclusive':f'{end:08x}','length':end-start,'changed_addresses':[f'{address:08x}' for address in changes],'covering_regions':[[f'{lo:08x}',f'{hi:08x}'] for lo,hi in regions],'scope':'Entry through both observed RETs; excludes alignment and next function.'}
+    result['retained_layout_dependencies']=[]
+    for start,end in [(0x461a70,0x461a96),(0x452020,0x45208c)]:
+        a,b=[pe.get_data(start-0x400000,end-start) for pe in (old,new)]
+        assert a==b
+        result['retained_layout_dependencies'].append({'start':f'{start:08x}','end_exclusive':f'{end:08x}','length':end-start,'sha256':hashlib.sha256(a).hexdigest(),'byte_identical':True})
     result['additional_track_policy_callers']={
         '004628d0':{'name_offset':'0x60','original':'35 for tracks/rectrk in any mode; otherwise15','modern':'35 only for mode3 and tracks/rectrk; otherwise15'},
         '004634d0':{'name_offset':'0x64','original':'35 for every mode3 name; otherwise15','modern':'35 only for mode3 and tracks/rectrk; otherwise15'},
