@@ -268,6 +268,10 @@
       "sha256": "21c212d6cc4247f104c331c9b0a95f36edf7201ebdcde3a652a549786b9c514e"
     },
     {
+      "path": "analysis/original-modern-reconstruction-baselines.md",
+      "sha256": "f2d346f527b18d213e39dcd7f67cef24408986bf8711c5829578da958f2460f5"
+    },
+    {
       "path": "analysis/original-modern-registry.md",
       "sha256": "bb47ccdf76e38d805e10e3f7cf3fb8b2a94e9f01e8c02138a2d0397b9bb37211"
     },

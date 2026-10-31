@@ -444,6 +444,8 @@ The [force-feedback menu comparison](original-modern-force-menu-layout.md) verif
 
 The [HUD-settings policy comparison](original-modern-hud-settings-policy.md) verifies the complete initializer and its four-way-to-two-way list selection, shared policy delegation and zeroed third list. Widget flags, lifecycle and visible behavior remain qualified.
 
+The [reconstruction-baseline sample comparison](original-modern-reconstruction-baselines.md) verifies all three selected reference bodies across original/official/local executables, the leaf’s29 relocation sites,104 tyre-table bytes and retained oracle identity. This supports bounded evidence reuse, not game-facing equivalence.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
