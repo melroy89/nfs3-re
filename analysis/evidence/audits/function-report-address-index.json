@@ -105,7 +105,7 @@
     },
     {
       "path": "analysis/original-modern-frame-resize.md",
-      "sha256": "4da81fef010b704c25f414460e37ab7e1f45eac7605c0cd2631b3ade25ecdb29"
+      "sha256": "df51add5e8f7d777566a3fb372aa769bb06488d3252f1cb515fa8fa298e0e889"
     },
     {
       "path": "analysis/original-modern-frame-setting.md",
@@ -390,8 +390,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 324,
-    "without_address_mentions": 37
+    "with_address_mentions": 325,
+    "without_address_mentions": 36
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -8552,7 +8552,16 @@
       "changed_bytes": 3,
       "original_sha256": "371f6968c58149c095fd3470615a720b2a022ec09b06f8233cb07986cdf1b461",
       "modern_sha256": "7e3bd6981a7d22196d3e2d384f11fb45438429638cbd4d8d2c7fe841c99c31d5",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-frame-resize.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004be8e0",
+            "004be901"
+          ]
+        }
+      ]
     },
     {
       "entry": "004be970",

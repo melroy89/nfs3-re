@@ -31,3 +31,29 @@ On an admitted change it updates both four-DWORD groups: shift their origins by 
 The [view-offset](original-modern-view-offset.md), [viewport source-group](original-modern-viewport-geometry.md#source-groups-covering-frame-versus-physicalfitted-rectangles) and [projection](original-modern-projection.md) reports document distinct paths that may contribute to that visual claim. Combining their existence is still not a rendered comparison.
 
 Next: map the complete user-setting/held-key producers, invoke ordinary and boundary resize paths against each version when runtime testing is in scope, and compare viewport/horizon outputs. For reconstruction, preserve direction-only input, the version-specific gate, per-group field preservation, bounds semantics and Modern refresh-on-skip behaviour. No executable bytes, saved Ghidra state, exports or maintained C were changed.
+
+## Border drawing narrows a related nonzero test to bit 1
+
+The expanded [resize audit](scripts/audit_frame_resize_difference.py) also captures complete same-address border-draw helper `004be8e0..004be968` (136 bytes, exclusive end). Only three byte positions differ, all in the seven-byte instruction at `004be901`: original `CMP DWORD [006fbc4c],0` becomes Modern `TEST BYTE [006fbc4c],2`. The following zero branch and all remaining function bytes are identical; [the manifest](evidence/audits/original-modern-frame-resize.json) records that separate gate.
+
+Both versions first decrement DWORD `007cdba8`, then compare signed DWORDs `007cdba0` and `007cda68`. If the first is less than the second, they jump straight to drawing and bypass the changed setting gate. Otherwise:
+
+- Original reaches drawing only when `006fbc4c != 0` and session `006fd3b0 != 1`.
+- Modern reaches drawing only when byte `006fbc4c & 2` is nonzero and session `006fd3b0 != 1`.
+
+Consequently this is **not** an unconditional requirement that bit 1 be set for all border draws. The earlier shortcut matters, and the decrement occurs even on paths that subsequently skip drawing.
+
+The [verified frame-choice labels](original-modern-frame-setting.md#modern-ordinal-meanings-and-consumers) map ordinary ordinals as follows for the path that reaches this gate, with session value other than 1:
+
+| Setting | Original gate | Modern gate |
+|---|---|---|
+| 0 Full, Centered | Skip | Skip |
+| 1 Full, Shifted | Draw | Skip |
+| 2 2:1, Centered | Draw | Draw |
+| 3 2:1, Shifted | Draw | Draw |
+
+The labels are Modern configuration evidence; this table does not assert that original exposed the same four choices. For arbitrary values, original tests the entire DWORD while Modern ignores all but bit 1 of the low byte. Admission validation must not be inferred from this local test.
+
+The admitted path retains its state-setting calls, two-versus-four primitive-count selection according to session value, indirect renderer call through `009ef930`, and state restoration call. The [border geometry comparison](original-modern-border-geometry.md) separately explains changed geometry construction/thickness, so identical draw instructions do not prove identical vertex buffers or visible borders.
+
+**Bounded work status: done; confidence: verified static complete function and setting correspondence.** Actual border appearance, global-counter meanings, all call paths and runtime mode transitions remain untested. Preserve the early shortcut, signed comparisons, bit test and unconditional decrement in reconstruction rather than substituting a simplified setting-only predicate. Executables and Ghidra state are unchanged.

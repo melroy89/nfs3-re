@@ -26,6 +26,13 @@
           "bytes_sha256": "55c0292bde308086776baba7e7c784e38edd7414a3417daeae10538f11618c99",
           "assembly": "analysis/captures/modern-differences/frame-resize/original-004c4fbe.asm",
           "assembly_sha256": "218d8657cd1e40759f7f54bccff79c3d3e191d50c7ab6c7694a6075242231d5d"
+        },
+        {
+          "start": "004be8e0",
+          "end": "004be968",
+          "bytes_sha256": "371f6968c58149c095fd3470615a720b2a022ec09b06f8233cb07986cdf1b461",
+          "assembly": "analysis/captures/modern-differences/frame-resize/original-004be8e0.asm",
+          "assembly_sha256": "8d23e755ab557e619b05c87687346a7cda3b08c7ddf08591e038295b526d2677"
         }
       ]
     },
@@ -53,6 +60,13 @@
           "bytes_sha256": "55c0292bde308086776baba7e7c784e38edd7414a3417daeae10538f11618c99",
           "assembly": "analysis/captures/modern-differences/frame-resize/official_modern-004c4fbe.asm",
           "assembly_sha256": "bba95d2a6100f7849de446c0439487b8004a5448c80b95601a13af9aea4f6ef9"
+        },
+        {
+          "start": "004be8e0",
+          "end": "004be968",
+          "bytes_sha256": "7e3bd6981a7d22196d3e2d384f11fb45438429638cbd4d8d2c7fe841c99c31d5",
+          "assembly": "analysis/captures/modern-differences/frame-resize/official_modern-004be8e0.asm",
+          "assembly_sha256": "2682df91768ee2567347bfb7ca8df8067e4d8647b3d57ff17b4920e6aa148500"
         }
       ]
     }
@@ -79,6 +93,13 @@
       "sha256": "a38cd61b062a0adc2385fe5489f30cdd94c33233c5a6db8a4c20380c60f7f873"
     }
   ],
+  "border_draw_gate": {
+    "entry": "004be8e0",
+    "end_exclusive": "004be968",
+    "original_test": "DWORD 006fbc4c != 0",
+    "modern_test": "BYTE 006fbc4c & 2 != 0",
+    "limits": "Earlier signed comparison shortcut and session-value-1 bypass remain unchanged."
+  },
   "changed_gate": {
     "start": "004be9a3",
     "original_hex": "833d4cbc6f0000",

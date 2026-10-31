@@ -13,7 +13,7 @@ def main():
     for label, (relative, expected, _) in SPECS.items():
         raw = (ROOT/relative).read_bytes(); assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw); images.append(pe); rows = []
-        for start,end in ((0x4be970, 0x4bea31 if label == 'original' else 0x4bea36), (0x4bea40,0x4beaf7),(0x4c4fbe,0x4c4ff2)):
+        for start,end in ((0x4be970, 0x4bea31 if label == 'original' else 0x4bea36), (0x4bea40,0x4beaf7),(0x4c4fbe,0x4c4ff2),(0x4be8e0,0x4be968)):
             path = capture/f'{label}-{start:08x}.asm'
             path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end':f'{end:08x}','bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
@@ -25,6 +25,13 @@ def main():
     assert images[0].get_data(0xbea2a,7)==images[1].get_data(0xbea2f,7)
     call=images[1].get_data(0xbea2a,5)
     assert call[0]==0xe8 and 0x4bea2f+int.from_bytes(call[1:],'little',signed=True)==0x4be85c
+    old_border,new_border=[p.get_data(0xbe8e0,136) for p in images]
+    assert [i for i,(a,b) in enumerate(zip(old_border,new_border)) if a!=b]==[0x21,0x22,0x27]
+    assert old_border[0x21:0x28]==bytes.fromhex('833d4cbc6f0000')
+    assert new_border[0x21:0x28]==bytes.fromhex('f6054cbc6f0002')
+    result['border_draw_gate']={'entry':'004be8e0','end_exclusive':'004be968',
+        'original_test':'DWORD 006fbc4c != 0','modern_test':'BYTE 006fbc4c & 2 != 0',
+        'limits':'Earlier signed comparison shortcut and session-value-1 bypass remain unchanged.'}
     result['changed_gate']={'start':'004be9a3','original_hex':images[0].get_data(0xbe9a3,7).hex(),'modern_hex':images[1].get_data(0xbe9a3,7).hex()}
     result['limits']=['No input, resizing or target execution.','Held action indexes are observed; human key labels and release-introduction dates remain separate.','Visual horizon/camera-shift effect and runtime state admission not validated.']
     (ROOT/'analysis/evidence/audits/original-modern-frame-resize.json').write_text(json.dumps(result,indent=2)+'\n')
