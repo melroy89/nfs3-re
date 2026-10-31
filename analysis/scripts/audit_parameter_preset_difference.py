@@ -52,6 +52,12 @@ def main():
                 'derivation': 'All constants=N<<16; signed64 product low16=0, so SHR carry bit15=0; joined high/low halves equal low32(product arithmetic-shift16).',
                 'scope': 'Mathematical consequence of asserted instructions; not original-instruction execution.'}
 
+        assert struct.unpack('<5I',pe.get_data(0x156460,20))==(0x537e64,0x5561be,0,0,0x6fd4c8)
+        assert pe.get_string_at_rva(0x137e64)==b'night'
+        assert struct.unpack('<3H',pe.get_data(0x1561be,6))==(229,228,0)
+        assert pe.get_string_at_rva(0x137d10)==b'mainsplt'
+        assert pe.get_data(0x555ef4-0x400000,4)==struct.pack('<I',0x45d360)
+        assert pe.get_data(0x45d36a-0x400000,10)==bytes.fromhex('c705b0d36f0001000000')
         descriptor=struct.unpack('<5I',pe.get_data(0x156730,20))
         assert descriptor==(0x537fc8,0x556252,0,0,0x6fbc28)
         assert pe.get_string_at_rva(0x137fc8)==b'viewlevel'
@@ -64,7 +70,8 @@ def main():
                     (0x41deb0,0x41def9),(0x41df10,0x41e069),
                     (0x41d9a3,0x41da06),(0x41defc,0x41df0c),
                     (0x41d310,0x41d349),(0x41ae90,0x41b2f4),
-                    (0x41b300,0x41b63c)]:
+                    (0x41b300,0x41b63c),(0x45d360,0x45d374),
+                    (0x555ee8,0x555ef8)]:
             value=pe.get_data(a-0x400000,b-a)
             row['caller_and_selector_witnesses'].append({'start':f'{a:08x}',
                 'exclusive_end':f'{b:08x}','bytes':value.hex(),
@@ -133,21 +140,23 @@ def main():
     data=subprocess.check_output(['7z','x','-so',str(archive),member])
     extent=struct.unpack_from('<I',data)[0]; assert extent%4==0 and extent<=len(data)
     labels=[]
-    for ident,expected in [(184,b'Full'),(183,b'Far'),(182,b'Medium'),(181,b'Close')]:
+    for ident,expected in [(184,b'Full'),(183,b'Far'),(182,b'Medium'),(181,b'Close'),(229,b'Off'),(228,b'On')]:
         assert ident*4<extent
         offset=struct.unpack_from('<I',data,ident*4)[0];assert extent<=offset<len(data)
         value=data[offset:data.index(b'\0',offset)];assert value==expected
         labels.append({'id':ident,'offset':offset,'text':value.decode()})
     assets=[]
-    for name in ['fedata/menus/graphics.mnu','fedata/menus/psgraph.mnu']:
+    for name in ['fedata/menus/graphics.mnu','fedata/menus/psgraph.mnu','fedata/menus/setup.mnu']:
         raw=subprocess.check_output(['7z','x','-so',str(archive),name])
         fields=[{'line':i,'text':line} for i,line in enumerate(raw.decode('latin1').splitlines(),1)
-                if line=='listname=viewlevel']
+                if line in ('listname=viewlevel','nextmenu=mainsplt','codelink=SETUP_TWOPLAYERBUTTON')]
         assert fields
         assets.append({'member':name,'sha256':hashlib.sha256(raw).hexdigest(),'viewlevel_fields':fields})
     result['view_distance_binding']={'archive_sha256':archive_sha,
         'english_member':member,'english_sha256':hashlib.sha256(data).hexdigest(),
         'labels':labels,'menu_assets':assets,
+        'night_binding':{'descriptor':'00556460','global':'006fd4c8','name':'night','choice_ids':[229,228]},
+        'split_binding':{'menu':'mainsplt','row':'00555ee8','callback_slot':'00555ef4','callback':'0045d360','store':'0045d36a','global':'006fd3b0','value':1},
         'limits':['Official asset bindings and identical executable descriptors; runtime menu/language selection not observed.']}
     assert len(comparisons)==64
     assert result['derived_integer_comparisons']['cases_with_known_field_differences']==48

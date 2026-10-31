@@ -152,4 +152,15 @@ For **Full (selector0)**, the original override makes the first record's +28h/+3
 
 These particular integer thresholds are exactly representable as binary32. The table states the preset source/conversion values, not a runtime capture or proof of equal later squared arithmetic under different x87 precision. The previously established geometry/distance consumers give these changes a concrete render-selection role.
 
-This provides **partial static support for MP100-013**, the improved Full view-distance claim. The adjective “better” and actual farther visible rendering require output validation. **MP100-014** additionally names splitscreen and night-driving modes; mapping these raw branch globals to those complete scenarios is not newly established by this finding, so that stronger scenario claim remains vendor-only. Historical introduction is not dated by the original/final pair. No game, menu, asset code or instruction probe was executed.
+This provides **partial static support for MP100-013**, the improved Full view-distance claim. The adjective “better” and actual farther visible rendering require output validation. The following evidence additionally maps the night/two-player inputs relevant to MP100-014. Historical introduction is not dated by the original/final pair. No game, menu, asset code or instruction probe was executed.
+
+## Night and two-player branch identities
+
+The expanded audit resolves both raw branch inputs using retained descriptor/producer evidence in **both** executable baselines:
+
+- **`006fd4c8`: Night setting.** Identical descriptor `00556460` names `night`, points to WORD choices229/228/0 and stores the ordinal at `006fd4c8`. The official English resource labels229 **Off**,228 **On**. Ordinary choices are0=Off and1=On. The apply routine tests nonzero; the descriptor does not prove every writer normalizes the value.
+- **`006fd3b0 == 1`: two-player setup route.** Official `setup.mnu` binds `SETUP_TWOPLAYERBUTTON` to `nextmenu=mainsplt`. The identical first16 bytes of row `00555ee8` name `mainsplt` and reference callback `0045d360` through `00555ef4`. Its retained prefix stores1 to `006fd3b0` at `0045d36a`. The [descriptor layout](original-modern-menu-callback-table.md) distinguishes this slot from changed transition/finalization fields. The existing [two-player input route](original-modern-input-worker.md) independently shows value1 collects two player buffers. This establishes the authored route, not exclusion of alternate writers or an observed splitscreen race.
+
+Together these identities and the Full table provide **partial static support for MP100-014**: original day/non-two-player supplies500; day/two-player440; night/non-two-player375; night/two-player330. Modern supplies500 in all four branches for the inspected first-record thresholds. This is the concrete source-value equalization mechanism across those named conditions; the rendering consumers are mapped above.
+
+Farther rendered scenery, second-view selection, all active state/lifetimes, historical introduction and runtime compatibility remain unverified. Equal source thresholds do not establish identical images or floating-point machine state.
