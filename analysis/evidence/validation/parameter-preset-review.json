@@ -1,0 +1,55 @@
+{
+  "kind": "bounded-preset-static-review",
+  "reviewed_head": "bb7ecd541d31b3779d0a2dcdfeb45346c7eaf084",
+  "reviewed_files": [
+    {
+      "path": "analysis/original-modern-parameter-preset.md",
+      "sha256": "0127b5d2622a13346c0f648fd23c022c5fdc6723c8c0749ede7c8a69cd3a4b72"
+    },
+    {
+      "path": "analysis/scripts/audit_parameter_preset_difference.py",
+      "sha256": "b2a4682acf9464905ac8067a948c5124c3be547ba22907bb3eca33b0d6a0b9c7"
+    },
+    {
+      "path": "analysis/evidence/audits/original-modern-parameter-preset.json",
+      "sha256": "a24a2b0d3c4cadec15bf8755b031c9b71d633b569307082bc7228c27d43c05ea"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "preset_instruction_review",
+      "model": "gpt-6-luna",
+      "result": "No concrete errors found",
+      "scope": "Note/script/retained disassembly consistency: boundaries, write map, original arithmetic, Modern source advance and local callers/producers",
+      "limitations": "Did not rerun audit or independently re-extract current binary bytes; no runtime or live Ghidra inspection."
+    },
+    {
+      "reviewer": "preset_arithmetic_review",
+      "model": "gpt-6-luna",
+      "result": "No concrete errors found",
+      "scope": "Note/script/manifest arithmetic, selector/count bounds,64 static cases,48 differing known-field cases and initialization premises",
+      "limitations": "Did not execute audit or independently validate binary bytes; no runtime/live Ghidra inspection."
+    }
+  ],
+  "root_checks": [
+    {
+      "command": "python3 analysis/scripts/audit_parameter_preset_difference.py",
+      "status": "passed"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_comparison_document_links.py",
+      "status": "passed",
+      "documents": 116,
+      "relative_links": 1705
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  ],
+  "limits": [
+    "Review is bounded to the preset chapter and evidence model, not whole-game completion.",
+    "No reconstructed C, compilation, new target-instruction probes or Ghidra writes.",
+    "Input reachability, physical field meaning, alternate lifecycles and runtime effects remain unverified."
+  ]
+}
