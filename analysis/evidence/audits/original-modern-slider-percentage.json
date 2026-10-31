@@ -7,6 +7,22 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "start": "00469680",
       "end": "0046a5ea",
+      "helper_spans": [
+        {
+          "start": "004693c0",
+          "end": "00469479",
+          "bytes_sha256": "b59a74a75fb7b06a3c65f1550347d4319587c01508c2c2cd1fcc71f046d3ade0",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/original-004693c0.asm",
+          "assembly_sha256": "ce7f44be01602c578d4d0e8461367df63a2ff397f2ea9249c8fa9017b4c71b2d"
+        },
+        {
+          "start": "004dfd56",
+          "end": "004dfd73",
+          "bytes_sha256": "e8e5057d4262fa80aa524f7f130d273e0dd9b35f25cbc72950dd0c7c37277a21",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/original-004dfd56.asm",
+          "assembly_sha256": "97347b6b7c41d8dded6bea812a1a6a6204666cdf338e6f1668d4769109a385fd"
+        }
+      ],
       "bytes_sha256": "f0b9ea87922f1997ef8702b39346326b610ff0a14c716156fd2c6531a7d76ca5",
       "assembly": "analysis/captures/modern-differences/slider-percentage/original-00469680.asm",
       "assembly_sha256": "5fbdfa61e77107d7fbb386ee0b342627e23b51888b3c98410bbc8decf168839a",
@@ -25,6 +41,22 @@
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "start": "00469680",
       "end": "0046a5af",
+      "helper_spans": [
+        {
+          "start": "004693c0",
+          "end": "00469479",
+          "bytes_sha256": "b59a74a75fb7b06a3c65f1550347d4319587c01508c2c2cd1fcc71f046d3ade0",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-004693c0.asm",
+          "assembly_sha256": "5234e5852fce0580eebdf40b14b66eda02e676b803062b09118fda5a64dff95d"
+        },
+        {
+          "start": "004dfd56",
+          "end": "004dfd6d",
+          "bytes_sha256": "d58ea03c32163153a67e58218927072255791905188317db76d506811b595d59",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-004dfd56.asm",
+          "assembly_sha256": "d2af1429e2842cc79905b2a18b8f08f4c7404be3d3fe192a1c384216e0425842"
+        }
+      ],
       "bytes_sha256": "28ce0541822c1b2b73a17d38f771b2a85c22b4c64fec0d8c501c8c5e780feffb",
       "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-00469680.asm",
       "assembly_sha256": "ec525abf343592d9c1843002296eed4d8d7837d2c3c8984eeb29d633a81c180e",
@@ -43,5 +75,6 @@
     "No UI execution or numeric input probes.",
     "Slider type meanings require producer evidence."
   ],
-  "identical_prefix_bytes": 3755
+  "identical_prefix_bytes": 3755,
+  "quantizer_identical": true
 }

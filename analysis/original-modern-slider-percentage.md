@@ -28,3 +28,22 @@ Both return EAX0 and restore EBX/ECX/ESI/EDI/EBP. The format destination starts 
 The final Modern mechanism is consistent with expanded percentage display and changed rounding. **MP150-021** (volume/alpha percentage display) and **MP153-011** (sound/dead-zone rounding) receive only partial static support: type admission and arithmetic are traced, but exact slider-type bindings, ordinary/boundary output cases, historical release introduction and rendered values are not verified.
 
 Next: map entry+3ch type producers and `004693c0`'s output contract, inspect `004dfd56`, then define bounded numeric comparisons if runtime work is authorized. No gameplay, executable bytes or Ghidra changes were made.
+
+## Quantizer identity and conversion-helper control words
+
+The paired audit now retains complete `004693c0..00469479` and asserts its bytes are identical. Existing [quantizer analysis](detailed-analysis-notes.md#normalized-float-step-quantization) establishes its two stack binary32 inputs (step, value), ST0 result and RET8. For ordinary finite nonnegative values it quantizes toward the nearest step using a 0.5 fractional threshold, preserving exact integer-step values, then clamps toward [0,1]. Raw-bit comparisons, mixed quotient/floor rounding and exceptional inputs prevent presenting that shorthand as a universal mathematical contract.
+
+Both percentage tails supply approximately0.01 as step and entry+54h as value. Thus the code change is after a retained quantization stage; it is not evidence of changing this helper's step algorithm. The ordinary [0,1] result interpretation requires the stated input assumptions, and does not assign each slider type a UI meaning.
+
+Original bias constants `0053ae7c/80` are binary32 **approximately−0.005/+0.005**. The tail selects them according to its x87 zero comparison, stores a rounded binary32 result and calls `004dfd56`. Modern no longer uses those bias locations in its percentage tail; the same addresses contain zero bytes in the inspected final binary. Their address reuse must not be mistaken for the original constants still participating in the new path.
+
+The conversion helper itself is also different:
+
+| `004dfd56` implementation | Temporary control word | Conversion and restore |
+|---|---|---|
+| Supplied original (`..004dfd73`) | Save current word, preserve its low byte, replace high byte with **1fh** | FSTCW/FWAIT, FLDCW, FRNDINT, restore saved word, FWAIT |
+| Modern (`..004dfd6d`) | Literal **0c3fh**; save prior word in the other half of the temporary DWORD | FNSTCW, FLDCW, FRNDINT, restore saved word |
+
+Both words request RC=11 (toward zero). Original's forced high byte also sets PC=11; Modern's literal sets PC=00 and masks all six floating exceptions in the low six bits. Original instead inherits those low-byte masks. This describes installed control bits, not a claim that precision-control bits alter FRNDINT in the same way as every arithmetic instruction. Waiting/nonwaiting save sequences and exception handling also differ; those are machine-state contracts outside a plain integer return.
+
+The original percentage tail invokes its original conversion helper before FISTP; Modern's changed tail invokes neither implementation and uses direct ambient-rounding FISTP. Consequently “both executables contain a truncation helper” would not establish identical slider rounding. Ordinary/boundary numeric comparisons and exact active control words remain untested in this phase.
