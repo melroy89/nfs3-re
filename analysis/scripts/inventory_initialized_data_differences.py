@@ -51,6 +51,13 @@ def main():
         'HIGHLOW overlap identifies loader-adjusted DWORD operands, not pointer types, valid targets or full ownership.',
         'Startup/later writes and computed aliases can change effective state; no target execution.']
     result['runs']=runs
+    routes=[{'start':'0055d454','end_exclusive':'0055d694','report':'original-modern-hud-layout.md',
+             'interpretation':'Original auxiliary HUD rectangles become576 file-backed zero bytes; direct original copy consumer0048580e.'},
+            {'start':'0054d67c','end_exclusive':'0054d718','report':'original-modern-screenshot-gdiplus.md',
+             'interpretation':'Run intersects original THRASH version diagnostic and Modern GDI+ DLL/export strings; same-address storage reuse, not a matched object.'}]
+    for route in routes:
+        assert any(row['start']==route['start'] and row['end_exclusive']==route['end_exclusive'] for row in runs)
+    result['selected_report_routes']=routes
     output=ROOT/'analysis/evidence/audits/initialized-data-differences.json'
     output.write_text(json.dumps(result,indent=2)+'\n')
     ranked=sorted(runs,key=lambda r:(-r['changed_bytes'],r['start']))
@@ -64,7 +71,12 @@ def main():
     for row in ranked[:25]:
         r=row['overlapping_highlow_relocations']
         lines.append(f"| `{row['start']}` | `{row['end_exclusive']}` | {row['changed_bytes']} | {len(r['original'])} | {len(r['official_modern'])} |")
-    lines += ['', '## Interpretation and remaining work','',
+    lines += ['', '## Selected runs with existing consumer evidence','',
+        'These routes reuse bounded paired research. A contiguous changed run can split strings or cross logical objects; the labels do not reconstruct an entire structure or establish startup state.','',
+        '| Changed run | Existing evidence | Bounded interpretation |','|---|---|---|']
+    for route in routes:
+        lines.append(f"| `{route['start']}..{route['end_exclusive']}` | [Report]({route['report']}) | {route['interpretation']} |")
+    lines += ['', 'Original diagnostic operand `004f876a` passes `0054d67c` to formatter `004df6c0`; the paired loader capture retains this witness. Modern resolves GDI+ names from reused storage through its screenshot initializer. This does not identify an original screenshot counterpart at that address. The [loader report](original-modern-renderer-loading.md) and [GDI+ audit](original-modern-screenshot-gdiplus.md) must be read separately before attributing a feature change.','', '## Interpretation and remaining work','',
         'A changed zero or printable byte is not sufficient to assign a type or feature. HIGHLOW overlap indicates a relocation operand, not that a changed byte itself is a complete pointer. The stored bytes here precede loader relocation, startup and later initialization writes. Unknown layouts may remain opaque; a data map does not establish reconstruction readiness.','',
         'Use existing chapters for already grounded examples: [language fallback](original-modern-language-table.md), [menu callback descriptors](original-modern-menu-callback-table.md), [HUD presets](original-modern-hud-layout.md), [frame settings](original-modern-frame-setting.md) and [music tables](original-modern-music-selection.md). Further investigation must map the actual producers/consumers and asset identity for selected remaining runs rather than inventing semantics from byte patterns.','',
         '**Inventory status: done; evidence confidence: verified static bytes and PE relocation annotations. Semantic classification: incomplete.** BSS, code-embedded tables, imports, resources and external components have separate evidence; this index does not cover them or any runtime state. Executables, Ghidra and maintained C were not modified.']

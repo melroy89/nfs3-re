@@ -203,8 +203,8 @@
     },
     {
       "path": "analysis/original-modern-initialized-data-index.md",
-      "sha256": "db86a32f9e3aadbb8e5de43d1201893f0b05a99c235987273d06d960fa351c24",
-      "relative_links": 7
+      "sha256": "df695dcb89f228078e079565fca116d752f300f2cde269a41373c8c0eb0cf8c4",
+      "relative_links": 11
     },
     {
       "path": "analysis/original-modern-input-worker.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1807,
+  "relative_link_count": 1811,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

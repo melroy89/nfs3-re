@@ -16404,5 +16404,19 @@
         ]
       }
     }
+  ],
+  "selected_report_routes": [
+    {
+      "start": "0055d454",
+      "end_exclusive": "0055d694",
+      "report": "original-modern-hud-layout.md",
+      "interpretation": "Original auxiliary HUD rectangles become576 file-backed zero bytes; direct original copy consumer0048580e."
+    },
+    {
+      "start": "0054d67c",
+      "end_exclusive": "0054d718",
+      "report": "original-modern-screenshot-gdiplus.md",
+      "interpretation": "Run intersects original THRASH version diagnostic and Modern GDI+ DLL/export strings; same-address storage reuse, not a matched object."
+    }
   ]
 }

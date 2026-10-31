@@ -36,6 +36,17 @@ The manifest retains both executable and section hashes, file offsets and all HI
 | `0053fb84` | `0053fbda` | 86 | 0 | 0 |
 | `0053f5fb` | `0053f650` | 85 | 0 | 0 |
 
+## Selected runs with existing consumer evidence
+
+These routes reuse bounded paired research. A contiguous changed run can split strings or cross logical objects; the labels do not reconstruct an entire structure or establish startup state.
+
+| Changed run | Existing evidence | Bounded interpretation |
+|---|---|---|
+| `0055d454..0055d694` | [Report](original-modern-hud-layout.md) | Original auxiliary HUD rectangles become576 file-backed zero bytes; direct original copy consumer0048580e. |
+| `0054d67c..0054d718` | [Report](original-modern-screenshot-gdiplus.md) | Run intersects original THRASH version diagnostic and Modern GDI+ DLL/export strings; same-address storage reuse, not a matched object. |
+
+Original diagnostic operand `004f876a` passes `0054d67c` to formatter `004df6c0`; the paired loader capture retains this witness. Modern resolves GDI+ names from reused storage through its screenshot initializer. This does not identify an original screenshot counterpart at that address. The [loader report](original-modern-renderer-loading.md) and [GDI+ audit](original-modern-screenshot-gdiplus.md) must be read separately before attributing a feature change.
+
 ## Interpretation and remaining work
 
 A changed zero or printable byte is not sufficient to assign a type or feature. HIGHLOW overlap indicates a relocation operand, not that a changed byte itself is a complete pointer. The stored bytes here precede loader relocation, startup and later initialization writes. Unknown layouts may remain opaque; a data map does not establish reconstruction readiness.
