@@ -26,6 +26,13 @@
           "bytes_sha256": "eee21d3b839b1a70844aa2ce0b884b86345c8e3f82d85f33acdb0feb72ff0789",
           "assembly": "analysis/captures/modern-differences/view-overlay/original-00488b8c.asm",
           "assembly_sha256": "ec95df1f6f98dab01d012b5545c346c2cdc4d180b121d4abba6a850eac685fa4"
+        },
+        {
+          "start": "004d4ae0",
+          "end": "004d5030",
+          "bytes_sha256": "8f0dcea9a7f0400072039548c961d879d4218c8fc99d0cc3727618ffad2365bd",
+          "assembly": "analysis/captures/modern-differences/view-overlay/original-004d4ae0.asm",
+          "assembly_sha256": "08e38658915722dfba267b30126f89e0514d3445a356e7893e7b024741ed35d5"
         }
       ],
       "constants_0053b76c_to_0053b78c_hex": "00000000000070409a9999999999593f111111111111613fcdcccc3a8988083b"
@@ -56,6 +63,13 @@
           "assembly_sha256": "268f5d7407afa7437605850828328adaaf9b15402733c5a031d2ff388e043f8d"
         },
         {
+          "start": "004d4ae0",
+          "end": "004d5030",
+          "bytes_sha256": "8f0dcea9a7f0400072039548c961d879d4218c8fc99d0cc3727618ffad2365bd",
+          "assembly": "analysis/captures/modern-differences/view-overlay/official_modern-004d4ae0.asm",
+          "assembly_sha256": "9b9f62b1186c165f423cee4997d81a05917f6379da04dae993cdab8b338848ad"
+        },
+        {
           "start": "004900c8",
           "end": "00490134",
           "bytes_sha256": "1a6ef11461c42852a14e4680960442aa02b5534b7b88a5720e2f7f25f7e37620",
@@ -79,6 +93,14 @@
       ],
       "constants_0053b76c_to_0053b78c_hex": "00000000000070409a9999999999593f111111111111613fcdcccc3a8988083b"
     }
+  },
+  "retained_dashboard_tile_builder": {
+    "span": "004d4ae0..004d5030",
+    "bytes": 1360,
+    "bytes_identical": true,
+    "sha256": "8f0dcea9a7f0400072039548c961d879d4218c8fc99d0cc3727618ffad2365bd",
+    "boundary": "Complete retained builder includes RET8 at004d502d; equality is not transitive equivalence of conversion/upload helpers.",
+    "limits": "No new local tile-padding algorithm in this envelope; source assets, conversion helpers, descriptor data and caller arguments can still differ."
   },
   "primary_tile_coordinates": {
     "retained_constants": {

@@ -538,8 +538,8 @@
     },
     {
       "path": "analysis/original-modern-view-overlay.md",
-      "sha256": "5bd42319557a1d522365eb28e6fe288265ecd3e418333090a77b70767df68de6",
-      "relative_links": 10
+      "sha256": "f4148cdbef32b5adb4e560d903b839f60a4eaa3a2f21ce00a7679880cf433389",
+      "relative_links": 12
     },
     {
       "path": "analysis/original-modern-viewport-geometry.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1798,
+  "relative_link_count": 1800,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

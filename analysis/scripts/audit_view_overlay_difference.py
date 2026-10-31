@@ -14,7 +14,7 @@ def main():
     for label, (relative, expected, _) in SPECS.items():
         raw = (ROOT/relative).read_bytes(); assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw); images.append(pe)
-        spans = [(0x489240, 0x48962d),(0x488c6e,0x488d41),(0x488b8c,0x488c33)]
+        spans = [(0x489240, 0x48962d),(0x488c6e,0x488d41),(0x488b8c,0x488c33),(0x4d4ae0,0x4d5030)]
         if label == 'official_modern': spans += [(0x4900c8, 0x490134), (0x4900b0, 0x4900c5), (0x4f9390, 0x4f9399)]
         rows = []
         for start, end in spans:
@@ -23,6 +23,12 @@ def main():
             rows.append({'start': f'{start:08x}', 'end': f'{end:08x}', 'bytes_sha256': hashlib.sha256(pe.get_data(start-0x400000, end-start)).hexdigest(), 'assembly': str(path.relative_to(ROOT)), 'assembly_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         out['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows, 'constants_0053b76c_to_0053b78c_hex': pe.get_data(0x13b76c, 32).hex()}
     data = [p.get_data(0x89240, 0x3ed) for p in images]
+    builders=[p.get_data(0xd4ae0,0x550) for p in images]
+    assert builders[0]==builders[1]
+    out['retained_dashboard_tile_builder']={'span':'004d4ae0..004d5030','bytes':1360,
+        'bytes_identical':True,'sha256':hashlib.sha256(builders[0]).hexdigest(),
+        'boundary':'Complete retained builder includes RET8 at004d502d; equality is not transitive equivalence of conversion/upload helpers.',
+        'limits':'No new local tile-padding algorithm in this envelope; source assets, conversion helpers, descriptor data and caller arguments can still differ.'}
     tile_constants={}
     for address,expected in ((0x53b76c,256.0),(0x53b774,1/640),(0x53b77c,1/480)):
         pairs=[p.get_data(address-0x400000,8) for p in images]
