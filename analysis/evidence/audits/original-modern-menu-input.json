@@ -144,6 +144,15 @@
     "Active-entry callbacks and every asset-defined navigation action not validated.",
     "Empty-string rejection is a caller guard, not a universal send API contract."
   ],
+  "modifier_entries": {
+    "shift": "004f1fcc",
+    "control": "004f1fd0",
+    "alt": "004f1fd4",
+    "shared_body": "004f1fd6..004f1ff0",
+    "outputs": "EAX 0/1 and final ZF from TEST EAX,EAX",
+    "preserved": "ECX, EDX; other general registers untouched locally",
+    "limits": "Original functional counterparts and complete callers unverified."
+  },
   "named_arrow_asset_inventory": {
     "tokens": [
       "keyup",

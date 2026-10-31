@@ -23,6 +23,14 @@ def main():
         spans=list(COMMON)+[(0x44a240,0x44a2c9 if label=='original' else 0x44a2c2),
                             (0x44a2d0,0x44a439 if label=='original' else 0x44a436)]
         if label=='official_modern':spans += [(0x4f1fcc,0x4f1ff0),(0x4f93ec,0x4f9400)]
+        if label=='official_modern':
+            assert pe.get_data(0xf1fcc,36)==bytes.fromhex('b010eb06b011eb02b01251520fb6c050ff15384753006685c00f9cc00fb6c085c05a59c3')
+            imports={i.address:i.name.decode() for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
+            assert imports[0x534738]=='GetAsyncKeyState'
+            result['modifier_entries']={'shift':'004f1fcc','control':'004f1fd0','alt':'004f1fd4',
+                'shared_body':'004f1fd6..004f1ff0','outputs':'EAX 0/1 and final ZF from TEST EAX,EAX',
+                'preserved':'ECX, EDX; other general registers untouched locally',
+                'limits':'Original functional counterparts and complete callers unverified.'}
         rows=[]
         for start,end in spans:
             text=subprocess.check_output(['objdump','-d','-Mintel',

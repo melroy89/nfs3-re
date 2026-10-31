@@ -78,3 +78,19 @@ There are **no `keyup`/`keydown` bindings** in this official menu-file scan, and
 The backups retain ordinary `next`/`previous` bindings in Credits and `nextslide`/`prevslide` in Slides. Their `CREDITS1.MNU` instead has `GlamNext` and `escape`; it is not paired as a simple token-prefix edit or proof of equivalent callbacks. Original retail provenance is unauthenticated, and this inventory does not establish historical introduction.
 
 This broadens the [panorama-specific linkage](original-modern-credits-panorama.md#conditional-leftright-to-panorama-callback-chain) into a complete named-token inventory of the pinned official menu set, while reusing that chapter’s callback evidence. The matched fields identify concrete authored consumers of the dispatcher’s Left/Right lookup. Full callback semantics for Slides, selected files and disabled/focus states remain separate work. No UI, network input or target instructions were executed.
+
+## Control and Alt entries share Shift's register-and-flags contract
+
+The existing [menu-input audit](scripts/audit_menu_input_difference.py) already retained complete Modern region `004f1fcc..004f1ff0` (36 bytes). It now also asserts every byte and the `GetAsyncKeyState` PE import binding. [The manifest](evidence/audits/original-modern-menu-input.json) identifies all three entry points:
+
+| Entry | Selected key code | Shared-body route |
+|---|---:|---|
+| `004f1fcc` | `10h`, Shift | Jump to `004f1fd6` |
+| `004f1fd0` | `11h`, Control | Jump to `004f1fd6` |
+| `004f1fd4` | `12h`, Alt | Fall through to `004f1fd6` |
+
+The Control entry's four saved body bytes are a prefix plus jump; they are not a complete independent implementation without the shared tail. The Alt entry includes the tail. Each zero-extends AL into EAX before pushing the key argument, saves/restores ECX/EDX, calls the API, tests AX, materializes the signed-negative result as EAX=0/1, then executes `TEST EAX,EAX`. That final TEST supplies ZF to callers; POP/RET preserve it. A previous-query low-bit indication alone does not produce EAX=1 because it does not make AX signed negative.
+
+Both EAX and final ZF are outputs. Other general registers are untouched by local instructions beyond EAX/ECX/EDX, with ECX/EDX restored; no standard C Boolean ABI promises the same flags. The direct Shift/Tab consumers documented above demonstrate why reconstruction must keep this hidden condition-code contract when calling original instructions. Complete Control/Alt caller coverage and actual focus/timing behavior remain unverified.
+
+**Work status: Modern local entry/shared-tail contracts done; original functional counterpart mapping pending. Confidence: verified static code/import.** The original same-address region falls within the older timing/calibration code discussed in the [CPU-tier comparison](original-modern-cpu-tier.md); matching numeric addresses does not identify matching modifier helpers. No keyboard or target execution, Ghidra writes or maintained-C changes were made.
