@@ -480,7 +480,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **158 Claimed, 39 Static, 90 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **157 Claimed, 39 Static, 91 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -509,7 +509,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | ID | Reported change | Review |
 |---|---|---|
 | MP160-001 | Automatic View Angle (FOV H+ mode). | Static |
-| MP160-002 | More accurate vertical view angle. | Claimed |
+| MP160-002 | More accurate vertical view angle. | Partial |
 | MP160-003 | Camera doesn't shift down when frame is wide (to match the FOV H+ better), the horizon is always in the middle of the screen. | Unresolved |
 | MP160-004 | Frame Size setting was extended to be able to return this camera shift. | Partial |
 | MP160-005 | Proportions of the image in the mirror are the same regardless of the aspect ratio of the selected resolution. | Partial |

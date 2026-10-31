@@ -59,6 +59,8 @@ The shared float builder itself computes centre coordinates from rectangle origi
 
 **MP160-001**, automatic FOV/H+ mode: the dimension-based producer, clamp, cached selection and changed projection route provide static support for the mechanism. Exact v1.6.0 introduction requires prior-release binaries; UI labels and rendered horizontal coverage remain untested.
 
+**MP160-002**, more accurate vertical angle: the paired wrapper replaces the original truncated integer approximation with the tangent/arctangent calculation above. For an ordinary90-degree horizontal input, original computes half-angle45 then truncates `13*45/16` to36; Modern's reference-aspect formula gives approximately36.87 degrees before its binary32 store. This concrete calculation change supports the claim partially. It is not a visual or whole-camera accuracy measurement: reference/live aspect, exact constants, downstream dimensions and x87 execution remain dependencies. The catalog therefore records partial support rather than leaving this mechanism vendor-only or declaring complete accuracy verified.
+
 **MP160-003**, horizon/camera shift: the removed integer-state setup is traced above, but it is not a verified explanation of the entire advertised fix. Remaining origin/camera/renderer consumers must be compared first. **MP140-033**'s setting rename likewise needs UI/string mapping.
 
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
