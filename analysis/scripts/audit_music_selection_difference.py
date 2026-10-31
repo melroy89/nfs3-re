@@ -6,17 +6,19 @@ import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
-COMMON = [(0x4104f0,0x4107b2),(0x4109d0,0x410a3c),
+COMMON = [(0x4e0dee,0x4e0e2b),(0x4104f0,0x4107b2),(0x4109d0,0x410a3c),
           (0x4e6f0c,0x4e705c),(0x4e73d0,0x4e7466),(0x4e7470,0x4e74e1)]
-RETAINED = [(0x4104f0,0x41057f),(0x4106b8,0x4107b2),
+RETAINED = [(0x4e0dee,0x4e0e2b),(0x4104f0,0x41057f),(0x4106b8,0x4107b2),
             (0x4109d0,0x410a3c),(0x4e6f0c,0x4e705c),
             (0x4e73d0,0x4e7466),(0x4e7470,0x4e74e1)]
 
-SPANS = {'original': [(0x40ffd0,0x410027),(0x410030,0x410329),(0x4103a0,0x41045d)],
+SPANS = {'original': [(0x40ffd0,0x410027),(0x410030,0x410329),(0x4103a0,0x41045d),
+        (0x4a3690,0x4a38bc)],
     'official_modern': [(0x40fefc,0x40ff80),(0x40ff9c,0x40fffb),
         (0x4103a0,0x410446),(0x410606,0x410615),
         (0x4b5d21,0x4b5d3a),(0x4a33f0,0x4a354b),
-        (0x40fed0,0x40fefa),(0x51778c,0x5177de)]}
+        (0x40fed0,0x40fefa),(0x51778c,0x5177de),
+        (0x4a3690,0x4a38bc),(0x4a35d0,0x4a3681)]}
 
 
 def main():
@@ -85,6 +87,13 @@ def main():
         labels[str(ident)]=english[offset:english.index(b'\0',offset)].decode('latin1')
     result['official_english']={'member':'fedata/text/text.eng','sha256':hashlib.sha256(english).hexdigest(),'labels':labels}
     result['limits'].append('Original list IDs decoded with official Modern English; original retail language provenance unverified.')
+    original=images['original'].get_data(0xa3690,0x22c)
+    modern=images['official_modern'].get_data(0xa3690,0x22c)
+    changed=[0x4a3690+i for i,(a,b) in enumerate(zip(original,modern)) if a!=b]
+    assert changed==list(range(0x4a36c6,0x4a36e1))+list(range(0x4a36f9,0x4a36fb))
+    assert images['official_modern'].get_data(0xa36c6,2)==bytes.fromhex('eb19')
+    assert images['official_modern'].get_data(0xa36c8,25)==b'\x90'*25
+    result['race_session_outer_changed_byte_ranges']=[['004a36c6','004a36e1'],['004a36f9','004a36fb']]
     result['identical_music_ranges']=[]
     for start,end in RETAINED:
         data=images['original'].get_data(start-0x400000,end-start)
