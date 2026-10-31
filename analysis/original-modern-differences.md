@@ -372,6 +372,8 @@ See also [renderer state14 setter policy](original-modern-state14.md): changed z
 
 See also [dialog input dispatch](original-modern-dialog-input.md): Shift/Tab normalization, direct handler table and result3 sound request.
 
+See also [dropdown input shared sound tail](original-modern-dropdown-input.md): selection-route feedback and consolidated close/update ordering.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

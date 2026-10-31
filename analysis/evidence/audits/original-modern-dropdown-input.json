@@ -1,0 +1,79 @@
+{
+  "kind": "static-dropdown-input-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00463ff0",
+          "end": "0046455d",
+          "sha256": "230205066bdf5053e27d7b5aa66f69bcd1df13be306df2c43bbafa8430eaccd7",
+          "assembly": "analysis/captures/modern-differences/dropdown-input/original-00463ff0.asm",
+          "assembly_sha256": "07052325ebb81d3356987fc2a4d0b1b928c852700d95bee613f1c3efd691bf59"
+        },
+        {
+          "start": "004640e2",
+          "end": "004640f6",
+          "sha256": "3a47c0e5c2b00c1af18244571622c854aebc14afa8e7b60d8dbc359bd2dececd",
+          "assembly": "analysis/captures/modern-differences/dropdown-input/original-004640e2.asm",
+          "assembly_sha256": "7f8226c8c2c17d87663181ac0e1215547b4765e89bb4ad116ade70984a0cc627"
+        },
+        {
+          "start": "00464158",
+          "end": "0046417b",
+          "sha256": "e94cec190661c6ddd69287a77a6d71d29faa9836456bc3ede2b2b7a42c3dcddd",
+          "assembly": "analysis/captures/modern-differences/dropdown-input/original-00464158.asm",
+          "assembly_sha256": "d439c44e56501386a916dedb90d0b2d314280ee2d09f5de0ef17b0d64e151d1f"
+        },
+        {
+          "start": "00464294",
+          "end": "004642f3",
+          "sha256": "f695f30e5f1cc6b2f6e9a5da41384dc1fe60c465317099a62d04ae410842da60",
+          "assembly": "analysis/captures/modern-differences/dropdown-input/original-00464294.asm",
+          "assembly_sha256": "33a8f36fc21e4dae811eb1141630d02b3d65fcc02756f2da8b3016b06968cd9a"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00463ff0",
+          "end": "0046455d",
+          "sha256": "fc073d2989545a09de569b6993e702b5ec454905ab450874e2252fddbf18639c",
+          "assembly": "analysis/captures/modern-differences/dropdown-input/official_modern-00463ff0.asm",
+          "assembly_sha256": "e3574f3efad890ee318488553a137e1acd7c1d59cbb112c3fdacc66794bb0fa5"
+        },
+        {
+          "start": "004640e2",
+          "end": "004640f6",
+          "sha256": "f4a5d4a9c55aa03959297d42d9f4459201be374eb5c1ca38ff70eb39ccce9076",
+          "assembly": "analysis/captures/modern-differences/dropdown-input/official_modern-004640e2.asm",
+          "assembly_sha256": "822fca961cc295858c10252a4e705c83e65c93be25a7d3dc6dbb7a2e2ff8d7f2"
+        },
+        {
+          "start": "00464158",
+          "end": "0046417b",
+          "sha256": "1c47bfacca5193c2f6d04abc3641d39d3c6f7b1b868d0bb7454df1c4ba1c8ea7",
+          "assembly": "analysis/captures/modern-differences/dropdown-input/official_modern-00464158.asm",
+          "assembly_sha256": "ffb75865d61f5b1c29a20bf29405b49c69f1017980452a0ae7363ab71582d9db"
+        },
+        {
+          "start": "00464294",
+          "end": "004642f3",
+          "sha256": "7c4838177df5aaeecbfdd3d3bf403ea0c24c25004e5b0c2386f600b7aa464118",
+          "assembly": "analysis/captures/modern-differences/dropdown-input/official_modern-00464294.asm",
+          "assembly_sha256": "71bba360952bf1219a36a8a12b3a7c169e863bb6c749bf7743e176e339cd8031"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Full span is a containing envelope, not a claim that every byte is a function instruction.",
+    "Shared sound tail and paired routes inspected; complete action semantics unresolved.",
+    "No key events, target instructions or audio execution."
+  ]
+}
