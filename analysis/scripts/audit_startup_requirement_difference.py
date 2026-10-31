@@ -16,12 +16,12 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
         spans=([(0x4b5f10,0x4b5fee),(0x4b608b,0x4b6097)] if label=='original' else [(0x4b5748,0x4b57c1),(0x4b570c,0x4b5746),(0x4b5c07,0x4b5c11)])
-        spans += [(0x4b5e50,0x4b5e9a),(0x4b5ea0,0x4b5f0b),(0x4b6590,0x4b67ac),(0x4b62a0,0x4b6311),(0x4b6320,0x4b6400),(0x4f93f0,0x4f9461),(0x4eb390,0x4eb3bf),(0x4b5860,0x4b58bb),(0x4f4b80,0x4f4ba1),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55)]
+        spans += [(0x4b5e50,0x4b5e9a),(0x4b5ea0,0x4b5f0b),(0x4b6590,0x4b67ac),(0x4b62a0,0x4b6311),(0x4b6320,0x4b6400),(0x4f9390,0x4f93f0),(0x4e33a0,0x4e3401),(0x4f93f0,0x4f9461),(0x4eb390,0x4eb3bf),(0x4b5860,0x4b58bb),(0x4f4b80,0x4f4ba1),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55)]
         spans += [(0x4516a0,0x4516fa if label=='original' else 0x4516f4),(0x4f07d0,0x4f083e)]
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end':f'{end:08x}','bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
-        imports=[{'iat':f'{i.address:08x}','name':i.name.decode(),'dll':d.dll.decode()} for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x534580,0x534740,0x534754,0x534458,0x534764,0x534500,0x534514,0x534570,0x53458c,0x5344dc,0x534518)]
+        imports=[{'iat':f'{i.address:08x}','name':i.name.decode(),'dll':d.dll.decode()} for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x534580,0x534740,0x534754,0x534458,0x534764,0x534500,0x534514,0x534570,0x53458c,0x5344dc,0x534518,0x5345f4)]
         item={'path':relative,'sha256':expected,'spans':rows,'imports':imports}
         if label=='official_modern':item['messages']={f'{a:08x}':pe.get_data(a-0x400000,240).split(b'\0')[0].decode() for a in (0x53d27a,0x53d29a,0x53d202)}
         result['binaries'][label]=item
@@ -92,7 +92,7 @@ def main():
         'drive_probe_iat': '00534518', 'accepted_drive_type_literal': 5,
         'filename_template': 'C:NFS3.EXE', 'drive_indices': '0..25 inclusive',
         'install_filename': original.get_string_at_rva(0x13fe30).decode(), 'tables': {},
-        'limits': ['File/path helper004f9390 and resource helper004f0330 not fully reconstructed.',
+        'limits': ['Path builder ordinary flow is now captured; directory failure/residue and resource helper004f0330 remain unresolved.',
                    'The template is drive-relative, not a proven root-absolute executable path.',
                    'No media, drive, file or game operation executed.']}
     for table in (0x4b5694,0x4b56ac):
@@ -100,6 +100,20 @@ def main():
             {'index': i, 'pointer': f'{va:08x}',
              'text_latin1': original.get_string_at_rva(va-0x400000).decode('latin1')}
             for i,va in enumerate(struct.unpack('<6I',original.get_data(table-0x400000,24)))]
+    cwd_bytes = original.get_data(0xe33a0,97)
+    assert cwd_bytes == images['official_modern'].get_data(0xe33a0,97)
+    assert original.get_data(0xe33af,5) == bytes.fromhex('68ff010000')
+    assert original.get_data(0xb6331,5) == bytes.fromhex('bb00010000')
+    assert original.get_data(0xb6328,6) == bytes.fromhex('81ec3c010000')
+    result['original_admission_path_builder'] = {
+        'helper': '004f9390..004f93f0', 'directory_wrapper': '004e33a0..004e3401',
+        'directory_wrapper_identical_sha256': hashlib.sha256(cwd_bytes).hexdigest(),
+        'directory_api': 'GetCurrentDirectoryA', 'directory_api_iat': '00534500',
+        'directory_requested_capacity': 511, 'caller_limit_ebx': 256,
+        'caller_local_reservation': 316, 'caller_destination': 'EBP-13ch',
+        'append': 'Copies filename at current terminating NUL; no separator insertion.',
+        'normal_append_admission': 'unsigned cwd_length <= wrap32(capacity-filename_length-1)',
+        'limit': 'Caller limit applies after fixed-capacity directory write; no long-directory runtime test.'}
     result['limits']=['No memory, disk, desktop, dialog or target API execution.','Memory fields described by exact offsets; no complete API structure/type reconstruction.','Current-directory helper, API failures and diagnostic termination internals are not fully audited here.','No release-note attribution inferred solely from a changed startup routine.']
     (ROOT/'analysis/evidence/audits/original-modern-startup-requirements.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: startup requirement counterparts, caller witnesses, imports and messages')

@@ -111,7 +111,7 @@ The small helper copies six bytes `65 58 60 62 67 58` from `0055fdc0`, adds13 to
 
 The larger helper's observed sequence is:
 
-1. It copies the11-byte template `C:NFS3.EXE` (including its terminator), calls path helper `004f9390` with literal `install.win`, extracts a drive index through `004f93f0`, then calls drive probe `004f9410`. The complete path-construction contract of `004f9390` remains unresolved.
+1. It copies the11-byte template `C:NFS3.EXE` (including its terminator), calls path helper `004f9390` with literal `install.win`, extracts a drive index through `004f93f0`, then calls drive probe `004f9410`. The CWD-based construction and its capacity limitation are traced in the follow-up below; API-failure handling remains unresolved.
 2. The drive probe constructs a drive-root string, calls imported **GetDriveTypeA** via IAT `00534518`, and accepts only literal return5. If the first installation-path drive is accepted, the admission helper displays a language-indexed message saying the game must first be installed, then calls `004dfd04` with EAX0. Message tables have six entries; the global index is not locally bounds-checked.
 3. If the `remote` prefix helper returns nonzero, it takes the ordinary return without scanning further drives.
 4. Otherwise it scans drive indices0..25. For each accepted drive type it changes the template's first byte to `A + index` and passes it to resource/path helper `004f0330`. A nonzero result exits the scan successfully. The string is **drive-relative** (`C:NFS3.EXE`), not `C:\NFS3.EXE`; reconstructing it as a root-absolute path would change semantics.
@@ -120,3 +120,20 @@ The larger helper's observed sequence is:
 The drive-type wrapper is statically tied to its actual import; the diagnostic wording and scan establish an installation/media admission role. They do **not** establish what every path/resource helper verifies, authentic media identity, successful asset access or the complete original protection mechanism. The helper preserves its six saved non-EAX registers on an ordinary return, but does not provide a defined success Boolean to startup.
 
 This closes classification of these two original entries inside the large removed startup span. Precise path-helper contracts, global-source ownership, other callers and Modern replacement policy remain follow-up work. No drive was scanned and no file, CD or game API was invoked by this audit; executable bytes and saved Ghidra state remain unchanged.
+
+## Admission path builder uses CWD and checks capacity after retrieval
+
+The follow-up captures complete original path builder **`004f9390..004f93f0`** and directory wrapper **`004e33a0..004e3401`**. The97-byte directory wrapper is identical in original and official Modern. This does **not** pair the two EXEs' `004f9390` entries: Modern's same address is an unrelated integer-to-float adapter. The [existing directory-wrapper contract](detailed-analysis-notes.md#native-directory-and-deletion-adapters) is reused and checked against the supplied original bytes.
+
+Original path builder takes EAX=destination, EDX=filename and EBX=capacity. It first calls `004e33a0` on the destination; that wrapper clears last error and calls **GetCurrentDirectoryA** with fixed size511. It then measures filename and destination lengths, computes `wrap32(capacity-filename_length-1)`, and returns0 if the unsigned destination length exceeds that result. Otherwise it copies the filename, including NUL, directly over the destination's existing NUL and returns1. **No separator is inserted.** For ordinary valid strings and fitting arithmetic, the later check bounds the concatenated result; subtraction underflow or retrieval failure is not repaired by that description.
+
+Thus the admission caller forms CWD concatenated with literal `install.win`; it does not establish an executable-relative path or open that constructed file. The immediate caller uses the result only to extract a drive index before its drive-type check. This explains why missing separator insertion is not, by itself, proof that this branch fails to open an installation file: no such open occurs in the inspected path.
+
+The capacity boundary is materially narrower than a safe generic path interface:
+
+- Admission supplies EBX256 and destination `EBP-13ch` after reserving13ch (316) local bytes.
+- The nested CWD wrapper passes511 to the API **before** the256-byte concatenation admission check. The original caller does not inspect the path builder's Boolean result before reading its drive prefix.
+- A provider writing a long CWD can therefore exceed the supplied256-byte limit, and a directory string of316 or more bytes plus its terminator would extend beyond that316-byte frame-local extent if written there. This is a conditional instruction/size consequence, not a reproduced overwrite, crash or exploit claim.
+- The directory wrapper's literal success test admits unsigned results1..511; other results enter its diagnostic route. If that diagnostic returns, buffer validity and returned EAX residue remain unresolved. Accepting511 in code is not proof of successful retrieval at that boundary.
+
+Required follow-up is the actual startup CWD bounds/ownership and diagnostic failure contract if reconstructing this path. Do not silently turn its fixed511 request into a safe256 request while claiming exact original behavior. Modern removes the surrounding installation/media helper, but retains the directory wrapper for other consumers; this evidence does not establish all remaining uses are safe or equivalent. No directory API, file operation, game or new instruction probe was run.

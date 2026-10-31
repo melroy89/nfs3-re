@@ -7476,7 +7476,7 @@
         "original_entry": "004b5e50",
         "role": "Corruption diagnostic",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "report_sha256": "0f5508fd3ed52be61599e797c6111c80151786373a2f997b5047591c386f4f5e",
         "remaining": "Body and tables checked; complete nonreturn/caller preconditions unresolved.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7484,7 +7484,7 @@
         "original_entry": "004b5ea0",
         "role": "Texture-resource log",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "report_sha256": "0f5508fd3ed52be61599e797c6111c80151786373a2f997b5047591c386f4f5e",
         "remaining": "Threshold and formatted output checked; descriptor units and output destination unresolved.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7492,7 +7492,7 @@
         "original_entry": "004b5f10",
         "role": "Resource admission checks",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "report_sha256": "0f5508fd3ed52be61599e797c6111c80151786373a2f997b5047591c386f4f5e",
         "remaining": "Mapped Modern counterpart; API failures and directory selection remain partial.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7516,7 +7516,7 @@
         "original_entry": "004b62a0",
         "role": "Six-byte remote prefix test",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "report_sha256": "0f5508fd3ed52be61599e797c6111c80151786373a2f997b5047591c386f4f5e",
         "remaining": "Body and compare semantics checked; global-source ownership and other callers pending.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7524,7 +7524,7 @@
         "original_entry": "004b6320",
         "role": "Installation/media admission",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "report_sha256": "0f5508fd3ed52be61599e797c6111c80151786373a2f997b5047591c386f4f5e",
         "remaining": "Branches and messages checked; path/resource helper contracts incomplete.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7556,7 +7556,7 @@
         "original_entry": "004b6590",
         "role": "DirectDraw capability probe",
         "report": "analysis/original-modern-startup-requirements.md",
-        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "report_sha256": "0f5508fd3ed52be61599e797c6111c80151786373a2f997b5047591c386f4f5e",
         "remaining": "Return paths and caller gate checked; provider interfaces/runtime untested.",
         "status": "entry classified; semantic validation partial"
       }

@@ -56,6 +56,20 @@
           "assembly_sha256": "d720e876d6d11dc52d81315ecd90d201ac8ea888bfac9b229dd52f655d9cdf37"
         },
         {
+          "start": "004f9390",
+          "end": "004f93f0",
+          "bytes_sha256": "b24a43ab9d7d97ac2c4987c5af5c3cc18340886cfeb97964a980697f6c571b90",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004f9390.asm",
+          "assembly_sha256": "0b15b9c4d83a97233d6f2c111d59621e7b0e7813b26bb2774f8ba43f1f5f3d9a"
+        },
+        {
+          "start": "004e33a0",
+          "end": "004e3401",
+          "bytes_sha256": "7fb648d320d5791686cff691694752c0674eb0bfc53bece2562f1635f384b93e",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004e33a0.asm",
+          "assembly_sha256": "9f1527fbfba6ea303f3ebc15772a2d83eecebe0487eda1c5971612e44ec87699"
+        },
+        {
           "start": "004f93f0",
           "end": "004f9461",
           "bytes_sha256": "0f4d22f047413401925072e03fb980a0a11def83a1f001153cd0ef3899734469",
@@ -154,6 +168,11 @@
           "dll": "KERNEL32.dll"
         },
         {
+          "iat": "005345f4",
+          "name": "SetLastError",
+          "dll": "KERNEL32.dll"
+        },
+        {
           "iat": "00534740",
           "name": "GetDesktopWindow",
           "dll": "USER32.dll"
@@ -229,6 +248,20 @@
           "bytes_sha256": "797d20d57118f36399ddc308f7668f5a07a7dd6b37af9dc4aa0f6d9905ab1ca8",
           "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b6320.asm",
           "assembly_sha256": "895997d149dcda2c66ab5ee4903812bb6b025fcf9edfea0b53d3f8a6c0fa2d88"
+        },
+        {
+          "start": "004f9390",
+          "end": "004f93f0",
+          "bytes_sha256": "89093beb4ac79c7340dc1202577b1c591d4e8a81ce2813784a10a042302e2225",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004f9390.asm",
+          "assembly_sha256": "bdcb18bae42054031624e6c27bf2d5dd75ad585a203412112253cc6b7cb21682"
+        },
+        {
+          "start": "004e33a0",
+          "end": "004e3401",
+          "bytes_sha256": "7fb648d320d5791686cff691694752c0674eb0bfc53bece2562f1635f384b93e",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004e33a0.asm",
+          "assembly_sha256": "cc9a2ec5fe4bc3e084074ea04949f1e38817fc65a2bad1560918cd6f2fd6ddf7"
         },
         {
           "start": "004f93f0",
@@ -326,6 +359,11 @@
         {
           "iat": "0053458c",
           "name": "LoadLibraryA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "005345f4",
+          "name": "SetLastError",
           "dll": "KERNEL32.dll"
         },
         {
@@ -644,10 +682,24 @@
       ]
     },
     "limits": [
-      "File/path helper004f9390 and resource helper004f0330 not fully reconstructed.",
+      "Path builder ordinary flow is now captured; directory failure/residue and resource helper004f0330 remain unresolved.",
       "The template is drive-relative, not a proven root-absolute executable path.",
       "No media, drive, file or game operation executed."
     ]
+  },
+  "original_admission_path_builder": {
+    "helper": "004f9390..004f93f0",
+    "directory_wrapper": "004e33a0..004e3401",
+    "directory_wrapper_identical_sha256": "7fb648d320d5791686cff691694752c0674eb0bfc53bece2562f1635f384b93e",
+    "directory_api": "GetCurrentDirectoryA",
+    "directory_api_iat": "00534500",
+    "directory_requested_capacity": 511,
+    "caller_limit_ebx": 256,
+    "caller_local_reservation": 316,
+    "caller_destination": "EBP-13ch",
+    "append": "Copies filename at current terminating NUL; no separator insertion.",
+    "normal_append_admission": "unsigned cwd_length <= wrap32(capacity-filename_length-1)",
+    "limit": "Caller limit applies after fixed-capacity directory write; no long-directory runtime test."
   },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",
