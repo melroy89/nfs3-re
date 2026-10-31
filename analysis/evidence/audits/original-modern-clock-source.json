@@ -562,6 +562,12 @@
     "special_case": "00490143 exact100.0 bits bypass50ms admission, but remaining-target/smoothing calculation still runs.",
     "limits": "Local retry has no explicit sleep or retry limit; callees and evolving state govern termination. No hang, frame rate or wall-clock duration observed."
   },
+  "completion_resubmission": {
+    "condition": "Estimated result bits42c80000 and ESI nonzero at0049556f..0049557d.",
+    "action": "ClearESI, call009ef948 with0, branch00495587 ->0049551d, repeating submission tail.",
+    "excluded_from_backedge": "No re-entry into00490134 timing estimator or preceding geometry construction.",
+    "limits": "At most one additional tail iteration only if intervening callees preserve cleared ESI; no renderer-buffer purpose or displayed-frame count established."
+  },
   "original_loading_input_drain": {
     "call": "004a3481 ->004f0240",
     "retained_helper": "004f0240..004f024a identical in both baselines",

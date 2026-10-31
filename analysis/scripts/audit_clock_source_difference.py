@@ -88,6 +88,12 @@ def main():
         'modern':'004a3514 checks abort;004a351d pushes100.0;004a3522 calls progress; zero return at004a3527/29 repeats from abort check.',
         'special_case':'00490143 exact100.0 bits bypass50ms admission, but remaining-target/smoothing calculation still runs.',
         'limits':'Local retry has no explicit sleep or retry limit; callees and evolving state govern termination. No hang, frame rate or wall-clock duration observed.'}
+    assert images['official_modern'].get_data(0x9556f,26).hex()=='8b45f03d0000c842751085f6740c31f66a00ff1548f99e00eb94'
+    result['completion_resubmission']={
+        'condition':'Estimated result bits42c80000 and ESI nonzero at0049556f..0049557d.',
+        'action':'ClearESI, call009ef948 with0, branch00495587 ->0049551d, repeating submission tail.',
+        'excluded_from_backedge':'No re-entry into00490134 timing estimator or preceding geometry construction.',
+        'limits':'At most one additional tail iteration only if intervening callees preserve cleared ESI; no renderer-buffer purpose or displayed-frame count established.'}
     for image in images.values():
         assert image.get_data(0xf0240,10).hex()=='e82bc7fdff85c075f7c3'
     assert images['original'].get_data(0xa3481,5).hex()=='e8bacd0400'
