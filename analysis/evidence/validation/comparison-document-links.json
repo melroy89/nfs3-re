@@ -93,8 +93,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "8c38e8965e6528ce19fd6fb167841b35e260e4ce35e7291f8983c83f5dcc7a90",
-      "relative_links": 127
+      "sha256": "1c9d2bec9ae20828060fce82f0b649b3f9eb798cd0f262e2e2673183000c6a11",
+      "relative_links": 128
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -122,6 +122,11 @@
       "relative_links": 4
     },
     {
+      "path": "analysis/original-modern-force-menu-layout.md",
+      "sha256": "a4163c98c3366f962672d3225db555f825b3b2d11713751e5bb051ddc4d2362a",
+      "relative_links": 4
+    },
+    {
       "path": "analysis/original-modern-frame-resize.md",
       "sha256": "df51add5e8f7d777566a3fb372aa769bb06488d3252f1cb515fa8fa298e0e889",
       "relative_links": 12
@@ -143,8 +148,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "0d38e2f862a0c133c69ad1863a021d4672ef775edb4f94c235a457bd56a71e89",
-      "relative_links": 591
+      "sha256": "43cf10fcaf0de3417ec487a0f5798a1cc311d83614394cebbb94e347fc045c1a",
+      "relative_links": 593
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -512,8 +517,8 @@
       "relative_links": 9
     }
   ],
-  "file_count": 102,
-  "relative_link_count": 1393,
+  "file_count": 103,
+  "relative_link_count": 1400,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

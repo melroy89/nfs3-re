@@ -108,6 +108,10 @@
       "sha256": "2fd1e7c2b1451281484937d9cde64360cc550e144199df959716d1fd0fa23c64"
     },
     {
+      "path": "analysis/original-modern-force-menu-layout.md",
+      "sha256": "a4163c98c3366f962672d3225db555f825b3b2d11713751e5bb051ddc4d2362a"
+    },
+    {
       "path": "analysis/original-modern-frame-resize.md",
       "sha256": "df51add5e8f7d777566a3fb372aa769bb06488d3252f1cb515fa8fa298e0e889"
     },
@@ -1773,6 +1777,13 @@
       "modern_sha256": "57d3b5eedc9cfd1e99793d153e1d17a01f436d191f75423302913dd7a92de059",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-force-menu-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00437614"
+          ]
+        },
+        {
           "path": "analysis/original-modern-graphics-menu-transition.md",
           "entry_mentioned": true,
           "addresses": [
@@ -3232,6 +3243,13 @@
             "004482db",
             "004482e1",
             "0044831d"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-force-menu-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00448210"
           ]
         },
         {

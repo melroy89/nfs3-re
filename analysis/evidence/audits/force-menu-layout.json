@@ -1,0 +1,121 @@
+{
+  "kind": "force-feedback-menu-layout-removal",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "00447dd0",
+      "end_exclusive": "004481bd",
+      "span_bytes": 1005,
+      "span_sha256": "c2f89eba093f74bbb00aa51bcbe11ef43c476ae20b1470ebd4e5bc3233da5b19",
+      "assembly": "analysis/captures/modern-differences/force-menu-layout/original.asm",
+      "replacement_regions": [
+        {
+          "start": "00447e07",
+          "end_exclusive": "00447e24",
+          "hex": "babc8c530089c8e82dacffff85c0740d833db0d36f00017e0480480401"
+        },
+        {
+          "start": "00447e94",
+          "end_exclusive": "00447ece",
+          "hex": "833d34925500007427c6463d0066c74640000066c746064001668b15949c550066c7466440006689560866895666eb0ac6463d0166c746400000"
+        },
+        {
+          "start": "00447f04",
+          "end_exclusive": "00447f41",
+          "hex": "833d3492550000742ac6403d0066c74040020089c266c74006400166a19c9c5500668942086689426689d066c740644000eb0ac6403d0166c740400200"
+        },
+        {
+          "start": "00447f82",
+          "end_exclusive": "00447fbb",
+          "hex": "833d34925500007426c6463d0066c74640030066c74606400166a1a09c550066c7466440006689460866894666eb0ac6463d0166c746400300"
+        },
+        {
+          "start": "00447ffc",
+          "end_exclusive": "00448035",
+          "hex": "833d34925500007426c6423d0066c74240040066c74206400166a1a49c550066c7426440006689420866894266eb0ac6423d0166c742400400"
+        },
+        {
+          "start": "00448076",
+          "end_exclusive": "004480af",
+          "hex": "833d34925500007426c6473d0066c74740060066c74706400166a1ac9c550066c7476440006689470866894766eb0ac6473d0166c747400600"
+        },
+        {
+          "start": "004480f4",
+          "end_exclusive": "0044812d",
+          "hex": "833d34925500007426c6433d0066c74340070066c74306400166a1b09c550066c7436440006689430866894366eb0ac6433d0166c743400700"
+        }
+      ],
+      "strings": {
+        "00538cbc": "FORCE_CREDITS",
+        "00538ccc": "FORCE_STICKVOLUME",
+        "00538ce0": "FORCE_ROADEFFECTS",
+        "00538cf4": "FORCE_COLLISION",
+        "00538d04": "FORCE_ENGINE",
+        "00538d14": "FORCE_BODYROLL",
+        "00538d24": "FORCE_ROADGRIP"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "00447dd0",
+      "end_exclusive": "004481bd",
+      "span_bytes": 1005,
+      "span_sha256": "6f08548edc0ae2267112248047888397bcb377d9e53608e595e48036505c5d86",
+      "assembly": "analysis/captures/modern-differences/force-menu-layout/official_modern.asm",
+      "replacement_regions": [
+        {
+          "start": "00447e07",
+          "end_exclusive": "00447e24",
+          "hex": "89c8e806f8feffeb149090909090909090909090909090909090909090"
+        },
+        {
+          "start": "00447e94",
+          "end_exclusive": "00447ece",
+          "hex": "eb389090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start": "00447f04",
+          "end_exclusive": "00447f41",
+          "hex": "eb3b9090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start": "00447f82",
+          "end_exclusive": "00447fbb",
+          "hex": "eb3790909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start": "00447ffc",
+          "end_exclusive": "00448035",
+          "hex": "eb3790909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start": "00448076",
+          "end_exclusive": "004480af",
+          "hex": "eb3790909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start": "004480f4",
+          "end_exclusive": "0044812d",
+          "hex": "eb3790909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        }
+      ],
+      "strings": {
+        "00538cbc": "",
+        "00538ccc": "FORCE_STICKVOLUME",
+        "00538ce0": "FORCE_ROADEFFECTS",
+        "00538cf4": "FORCE_COLLISION",
+        "00538d04": "FORCE_ENGINE",
+        "00538d14": "FORCE_BODYROLL",
+        "00538d24": "FORCE_ROADGRIP"
+      }
+    }
+  },
+  "changed_bytes": 376,
+  "limits": [
+    "No menu or force-feedback runtime validation.",
+    "Preserved bytes do not prove transitive callee equivalence or identical incidental register/flag state.",
+    "Field roles documented by offsets unless separately established."
+  ]
+}

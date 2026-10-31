@@ -436,6 +436,8 @@ The [small-entry follow-up](original-modern-small-entry-followup.md) accounts fo
 
 The [removed DDE code comparison](original-modern-removed-dde.md) identifies original browser URL-command construction under a large Modern NOP span, while distinguishing retained DDE imports, unrelated Modern address reuse and unresolved original reachability.
 
+The [force-feedback menu comparison](original-modern-force-menu-layout.md) verifies the complete initializer: Modern delegates the local Credits policy and removes six conditional widget-layout blocks while retaining value/callback setup. Device and visible behavior remain untested.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

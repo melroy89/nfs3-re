@@ -53,7 +53,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00431c1c` | CalculateEffectiveThrashState21Mask | 23 | 23 | [resolution-defaults](original-modern-resolution-defaults.md), [state14](original-modern-state14.md), [track-detail](original-modern-track-detail.md) |
 | `00431c34` | SetRenderState15ToFourWhenFlagSet | 25 | 23 | [state14](original-modern-state14.md) |
 | `00436930` | HandleMouseSetCursorAndChainPreviousHandler | 79 | 31 | [mouse-cursor](original-modern-mouse-cursor.md) |
-| `00437614` | UpdateFrontendRaceNowEntryFlags | 231 | 222 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [menu-callback-table](original-modern-menu-callback-table.md), [options-postgame](original-modern-options-postgame.md), [race-now](original-modern-race-now.md) |
+| `00437614` | UpdateFrontendRaceNowEntryFlags | 231 | 222 | [force-menu-layout](original-modern-force-menu-layout.md), [graphics-menu-transition](original-modern-graphics-menu-transition.md), [menu-callback-table](original-modern-menu-callback-table.md), [options-postgame](original-modern-options-postgame.md), [race-now](original-modern-race-now.md) |
 | `004376fc` | InitializeFrontendMenuSoundSlider | 65 | 62 | [frontend-sound](original-modern-frontend-sound.md) |
 | `0043778c` | MatchGraphicsOptionTokenAndCopySettings | 53 | 51 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [menu-callback-table](original-modern-menu-callback-table.md), [race-now](original-modern-race-now.md), [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004377c4` | ApplyFogGateToGraphicsOptions | 61 | 56 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [menu-callback-table](original-modern-menu-callback-table.md), [race-now](original-modern-race-now.md) |
@@ -100,7 +100,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00445680` | UpdateFrontendToggleMenuHover | 207 | 2 | [frontend-sound](original-modern-frontend-sound.md) |
 | `00445e60` | HandleFrontendDialogInputCode | 154 | 43 | [dialog-input](original-modern-dialog-input.md) |
 | `004466a0` | LoadGhostForCurrentRaceSetup | 157 | 155 | [ghost-loading](original-modern-ghost-loading.md) |
-| `00448210` | AppendEligibleDisplayModeRecord | 270 | 261 | [display-modes](original-modern-display-modes.md), [graphics-menu-transition](original-modern-graphics-menu-transition.md), [resolution-defaults](original-modern-resolution-defaults.md) |
+| `00448210` | AppendEligibleDisplayModeRecord | 270 | 261 | [display-modes](original-modern-display-modes.md), [force-menu-layout](original-modern-force-menu-layout.md), [graphics-menu-transition](original-modern-graphics-menu-transition.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `00448320` | InitializeDisplayModeListOnce | 37 | 36 | [display-modes](original-modern-display-modes.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `00448348` | GetSelectedDisplayModeRecord | 32 | 32 | [display-modes](original-modern-display-modes.md), [graphics-menu-transition](original-modern-graphics-menu-transition.md) |
 | `00448368` | GetSelectedDisplayModeField10 | 9 | 9 | [display-modes](original-modern-display-modes.md), [resolution-defaults](original-modern-resolution-defaults.md) |
