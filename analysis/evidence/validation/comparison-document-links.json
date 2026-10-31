@@ -53,8 +53,8 @@
     },
     {
       "path": "analysis/original-modern-cpu-tier.md",
-      "sha256": "d52a392ec0e0ff8c0193ce88330867fd733f16f9a6a48ebe1364264880387664",
-      "relative_links": 4
+      "sha256": "84151a4b4e0b5652e2316579fbb0c8eeb085201208fcd7a62a1e9f1fcb9a08b6",
+      "relative_links": 5
     },
     {
       "path": "analysis/original-modern-credits-panorama.md",
@@ -238,8 +238,8 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "a79a19e2f81f76e9990da7da2550590dc4909043ce0bcc52ca7f438c9072e7f0",
-      "relative_links": 9
+      "sha256": "8d9138f2ddce9153e1eec79d9c5b697a8b402e27442408534d304bf2edc956e6",
+      "relative_links": 10
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",
@@ -423,7 +423,7 @@
     }
   ],
   "file_count": 84,
-  "relative_link_count": 1091,
+  "relative_link_count": 1093,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

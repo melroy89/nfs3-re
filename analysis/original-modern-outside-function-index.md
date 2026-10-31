@@ -59,4 +59,6 @@ The largest run `004b5db1..004b67b0` overlaps original startup/setup, registry a
 
 The next run `004f85c0..004f8b50` overlaps original renderer loader/initialization code. Reuse [renderer loading](original-modern-renderer-loading.md) and [initialization](original-modern-renderer-initialization.md). The [renderer snapshot follow-up](original-modern-renderer-loading.md#removed-original-renderer-snapshot-bank) now classifies original restore/save routines in `00517170..00517580` as an eight-slot renderer snapshot bank replaced by Modern NOPs. Remaining overlap entries still require classification; no generic dead-code claim is made.
 
+The [CPU calibration follow-up](original-modern-cpu-tier.md#removed-calibration-helper-span) classifies `004f1ff0..004f22b0` as the old estimator tail and calibration helpers, including conditional RDTSC and a timestamp-polled DIV workload. Modern fills the span with NOPs; CPU feature-based tier selection remains separately documented.
+
 This inventory closes the missing address/ranking map for the outside-body bytes. Their semantic classification remains pending. No binary, Ghidra database or runtime state was modified.

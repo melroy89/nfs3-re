@@ -26,6 +26,34 @@
           "bytes_sha256": "bf83dd03caf6e742a7f050b658840288dde7418c7e593262ee66e0a44be0d393",
           "assembly": "analysis/captures/modern-differences/cpu-tier/original-0049616c.asm",
           "assembly_sha256": "be485319873c241b893b51fa102b56e48eb379a4178525eff441d0ef6306c630"
+        },
+        {
+          "start": "004f1ff0",
+          "end": "004f22b0",
+          "bytes_sha256": "608d91bd1602039a157959c4c9bbc5413d53a531711c302635771d3c27022dfd",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/original-004f1ff0.asm",
+          "assembly_sha256": "2189e3c76922455f1b66a9b1814b59ba4f500424b497d7c7a02e2cca991ac1f5"
+        },
+        {
+          "start": "004f20b0",
+          "end": "004f216d",
+          "bytes_sha256": "0fd80da47fce3a55ba7a6a927eeee44ac85e2b053ce34065cd8204ea7eebee16",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/original-004f20b0.asm",
+          "assembly_sha256": "3628149c1b1da7ab0679e567c99d2efa400fc38f81dedc1c40c945bbde516ab4"
+        },
+        {
+          "start": "004f2170",
+          "end": "004f21bd",
+          "bytes_sha256": "931d0aaa6f909e5d0dee019650c4454c101513acb9413ad4e3bfad26c4770bc5",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/original-004f2170.asm",
+          "assembly_sha256": "972caab32129d403a4cca2bfd93d604030a091983d3310a20ae887fea8832c70"
+        },
+        {
+          "start": "004f21c0",
+          "end": "004f22af",
+          "bytes_sha256": "c561d72a956808973516f6448ce7b52b22b54926362b485f67996de8897d1731",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/original-004f21c0.asm",
+          "assembly_sha256": "64c09100288bd00f371d5bae321feb14d93681ac24ea8ebbaa0da943193c0918"
         }
       ]
     },
@@ -67,6 +95,34 @@
           "bytes_sha256": "a84ecd0619b008fcd6df2a1962f31d283073b6dd5803ec2a9f448b0fb306ba79",
           "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-004a3e07.asm",
           "assembly_sha256": "5a2f8bafe86ac0033d973a5eae2cc416121697428cba71d535821a60457195d4"
+        },
+        {
+          "start": "004f1ff0",
+          "end": "004f22b0",
+          "bytes_sha256": "ad248525f4015fb15c737e0a11be3a4d19cb3cab6cad47d78b4e10cfc2d5b7ee",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-004f1ff0.asm",
+          "assembly_sha256": "62dc52ceed79f94ac205c08ee9e4c312c7f16006ac287ab55f212fa69c58f875"
+        },
+        {
+          "start": "004f20b0",
+          "end": "004f216d",
+          "bytes_sha256": "35a5ddc9fa1d43bc4811391b9c2c8c488b810fb606b7b8c3a2a11b05cd4c7ddc",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-004f20b0.asm",
+          "assembly_sha256": "fe02d1d37d5cf7eef966239d463d8422bde1f5bf546aed4d7a19e14a18662a0e"
+        },
+        {
+          "start": "004f2170",
+          "end": "004f21bd",
+          "bytes_sha256": "b320b350e130f61e1631deb096d7dfcffd97a60983d17e9b0948d67256fdc9b6",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-004f2170.asm",
+          "assembly_sha256": "d71350ce70289ef6f0360373eb49ee3cdb54c985eb3bd4821bef1b77f152ea21"
+        },
+        {
+          "start": "004f21c0",
+          "end": "004f22af",
+          "bytes_sha256": "7020336d32994aca049bcfd5bae3a1a4b1c6e2167dacc206728f6343984da208",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-004f21c0.asm",
+          "assembly_sha256": "f699a97e5e24bdd22ba47b43442dfa7f3e399be57ba9280acb696c915cb2a686"
         }
       ],
       "six_byte_default_tables": {

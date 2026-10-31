@@ -24,7 +24,8 @@ def main():
         assert hashlib.sha256(data).hexdigest() == expected
         pe = pefile.PE(data=data)
         rows = []
-        for start, end in SPANS[label]:
+        selected=SPANS[label]+[(0x4f1ff0,0x4f22b0),(0x4f20b0,0x4f216d),(0x4f2170,0x4f21bd),(0x4f21c0,0x4f22af)]
+        for start, end in selected:
             out = capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -32,6 +33,12 @@ def main():
                 'bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),
                 'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
+        removed=pe.get_data(0xf1ff0,0x2c0)
+        if label=='official_modern':assert set(removed)=={0x90}
+        else:
+            assert pe.get_data(0xf20de,2)==bytes.fromhex('0f31')
+            assert pe.get_data(0xf20fc,2)==bytes.fromhex('0f31')
+            assert pe.get_data(0xf219d,2)==bytes.fromhex('f7fb')
         item = {'path':relative,'sha256':expected,'spans':rows}
         if label == 'official_modern':
             item['six_byte_default_tables'] = {f'{va:08x}':list(pe.get_data(va-0x400000,6))
