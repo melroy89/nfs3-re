@@ -258,6 +258,154 @@
     },
     "limit": "Conditional on selected InteriorBx callback reaching admitted token0020h path; no full dispatcher equivalence, indirect caller coverage or runtime event delivery established."
   },
+  "field_descriptor_boundary": {
+    "original": {
+      "start": "00557c10",
+      "end_exclusive": "00558a00",
+      "row_count": 223,
+      "sha256": "348673854519826755c603f8568d4af6c2614a12ad0039b7e1673efec40c96da",
+      "common_kind1_rows": [
+        {
+          "va": "00557c10",
+          "kind": 1,
+          "name": "x",
+          "form": 1,
+          "destination": "00604ee6"
+        },
+        {
+          "va": "00557c20",
+          "kind": 1,
+          "name": "y",
+          "form": 1,
+          "destination": "00604ee8"
+        },
+        {
+          "va": "00557c30",
+          "kind": 1,
+          "name": "priority",
+          "form": 1,
+          "destination": "00604eea"
+        },
+        {
+          "va": "00557c40",
+          "kind": 1,
+          "name": "help",
+          "form": 5,
+          "destination": "00604eec"
+        },
+        {
+          "va": "00557c50",
+          "kind": 1,
+          "name": "codelink",
+          "form": 4,
+          "destination": "00604ef0"
+        },
+        {
+          "va": "00557c60",
+          "kind": 1,
+          "name": "postonly",
+          "form": 1,
+          "destination": "00604ef4"
+        },
+        {
+          "va": "00557c70",
+          "kind": 1,
+          "name": "mainonly",
+          "form": 1,
+          "destination": "00604ef6"
+        },
+        {
+          "va": "00557c80",
+          "kind": 1,
+          "name": "EnableForDemo",
+          "form": 1,
+          "destination": "00604ef8"
+        },
+        {
+          "va": "00557c90",
+          "kind": 1,
+          "name": "EnableForE3Demo",
+          "form": 1,
+          "destination": "00604ef8"
+        }
+      ],
+      "kind33_or34_rows": [],
+      "scope": "223 contiguous16-byte named descriptor rows before first null name; no dynamic/alternate table coverage."
+    },
+    "official_modern": {
+      "start": "00557c10",
+      "end_exclusive": "00558a00",
+      "row_count": 223,
+      "sha256": "348673854519826755c603f8568d4af6c2614a12ad0039b7e1673efec40c96da",
+      "common_kind1_rows": [
+        {
+          "va": "00557c10",
+          "kind": 1,
+          "name": "x",
+          "form": 1,
+          "destination": "00604ee6"
+        },
+        {
+          "va": "00557c20",
+          "kind": 1,
+          "name": "y",
+          "form": 1,
+          "destination": "00604ee8"
+        },
+        {
+          "va": "00557c30",
+          "kind": 1,
+          "name": "priority",
+          "form": 1,
+          "destination": "00604eea"
+        },
+        {
+          "va": "00557c40",
+          "kind": 1,
+          "name": "help",
+          "form": 5,
+          "destination": "00604eec"
+        },
+        {
+          "va": "00557c50",
+          "kind": 1,
+          "name": "codelink",
+          "form": 4,
+          "destination": "00604ef0"
+        },
+        {
+          "va": "00557c60",
+          "kind": 1,
+          "name": "postonly",
+          "form": 1,
+          "destination": "00604ef4"
+        },
+        {
+          "va": "00557c70",
+          "kind": 1,
+          "name": "mainonly",
+          "form": 1,
+          "destination": "00604ef6"
+        },
+        {
+          "va": "00557c80",
+          "kind": 1,
+          "name": "EnableForDemo",
+          "form": 1,
+          "destination": "00604ef8"
+        },
+        {
+          "va": "00557c90",
+          "kind": 1,
+          "name": "EnableForE3Demo",
+          "form": 1,
+          "destination": "00604ef8"
+        }
+      ],
+      "kind33_or34_rows": [],
+      "scope": "223 contiguous16-byte named descriptor rows before first null name; no dynamic/alternate table coverage."
+    }
+  },
   "interior_widget_binding": {
     "exe_bindings": {
       "original": {

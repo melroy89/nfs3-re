@@ -144,6 +144,23 @@ def main():
     out['selected_entry_dispatch_suffix'] = {'baselines': dispatch,
         'token_0020_exposed_return': {'original': 0, 'official_modern': 0},
         'limit': 'Conditional on selected InteriorBx callback reaching admitted token0020h path; no full dispatcher equivalence, indirect caller coverage or runtime event delivery established.'}
+    descriptors = {}
+    for label,pe in images.items():
+        data = pe.get_data(0x157c10,0xdf0)
+        rows = []
+        for offset in range(0,len(data),16):
+            kind,name,form,destination = struct.unpack_from('<4I',data,offset)
+            assert name != 0
+            rows.append({'va': f'{0x557c10+offset:08x}', 'kind': kind,
+                'name': pe.get_string_at_rva(name-0x400000).decode('ascii'),
+                'form': form, 'destination': f'{destination:08x}'})
+        assert struct.unpack('<I',pe.get_data(0x158a04,4))[0] == 0
+        assert not [r for r in rows if r['kind'] in (33,34)]
+        descriptors[label] = {'start': '00557c10', 'end_exclusive': '00558a00',
+            'row_count': len(rows), 'sha256': hashlib.sha256(data).hexdigest(),
+            'common_kind1_rows': [r for r in rows if r['kind']==1],
+            'kind33_or34_rows': [], 'scope': '223 contiguous16-byte named descriptor rows before first null name; no dynamic/alternate table coverage.'}
+    out['field_descriptor_boundary'] = descriptors
     archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     archive_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     assert archive_sha == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
