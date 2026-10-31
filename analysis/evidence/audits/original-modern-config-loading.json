@@ -54,6 +54,13 @@
           "bytes_sha256": "f550b043ad288c6e1198b5a7da90ba9dfd3262e89428579861e4e58fe97e4468",
           "assembly": "analysis/captures/modern-differences/config-loading/original-0040faf0.asm",
           "assembly_sha256": "677badf345e7218564a7624e56f41060d9efb0074414f4073d46e893986c6efd"
+        },
+        {
+          "start": "004e21b0",
+          "end": "004e2221",
+          "bytes_sha256": "1df8218f0a5cb7c4c03a9ce476fe0d679d00a7e963ca437a436de4112f36cf68",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004e21b0.asm",
+          "assembly_sha256": "cc8adeaf69d71a10ae15ac724864d33c504c5959ec95de5ad163989264bd343a"
         }
       ],
       "flag_bit21_switch": {
@@ -112,6 +119,13 @@
           "bytes_sha256": "f550b043ad288c6e1198b5a7da90ba9dfd3262e89428579861e4e58fe97e4468",
           "assembly": "analysis/captures/modern-differences/config-loading/official_modern-0040faf0.asm",
           "assembly_sha256": "55eb5e2fb6a57dcead524388b21cd68e89366033420b3069db788e7a73df6194"
+        },
+        {
+          "start": "004e21b0",
+          "end": "004e2221",
+          "bytes_sha256": "1df8218f0a5cb7c4c03a9ce476fe0d679d00a7e963ca437a436de4112f36cf68",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-004e21b0.asm",
+          "assembly_sha256": "a9c31b38afdb515eeaaecd410f8fabd997b195677175559d63f0d43ba8982f9a"
         }
       ],
       "flag_bit21_switch": {
@@ -151,6 +165,17 @@
     "limits": [
       "No per-field View Angle remapping in the header decision sequence or narrow sound normalizer00472230.",
       "Successful block copy, full save layout and later writes are not established by the header branches alone."
+    ]
+  },
+  "audio_capability_query": {
+    "paired_span": "004e21b0..004e2221",
+    "bytes_identical": true,
+    "dispatch": "Calls004e1dd4, obtains value via004eba70, pushes it to indirect009ef61c.",
+    "normal_return": "Driver EAX OR10000h only when signed-positive; zero/negative values forwarded unchanged. ECX/EDX restored.",
+    "cache_boundary": "No cached capability return in this body; query dispatch occurs each normal invocation.",
+    "limits": [
+      "Lazy service-pointer initialization and null-value diagnostic are also present; query is not assumed pure.",
+      "Driver result domain not established: negative values with20000h set satisfy the outer bit predicate. No actual error code or misdetection observed."
     ]
   },
   "sound_mode_normalization": {

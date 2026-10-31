@@ -8,9 +8,9 @@ from audit_thrash_loader_difference import ROOT, SPECS
 
 SPANS={'original':[(0x472980,0x472b60),(0x4728e0,0x47297d),
                    (0x4723f0,0x47242c),(0x4e0640,0x4e0658),(0x4ff4c0,0x4ff563),
-                   (0x472820,0x4728d3),(0x40faf0,0x40fb0f)],
+                   (0x472820,0x4728d3),(0x40faf0,0x40fb0f),(0x4e21b0,0x4e2221)],
        'official_modern':[(0x472980,0x472b48),(0x472230,0x472248),
-                          (0x4723f0,0x472402),(0x472820,0x4728d3),(0x40faf0,0x40fb0f)]}
+                          (0x4723f0,0x472402),(0x472820,0x4728d3),(0x40faf0,0x40fb0f),(0x4e21b0,0x4e2221)]}
 
 
 def main():
@@ -66,6 +66,14 @@ def main():
                 if i.name and i.name in [b'CompareFileTime',b'GetFileTime',b'_lopen',b'_lclose',b'GetModuleFileNameA']}}
     images=[pefile.PE(str(ROOT/SPECS[label][0])) for label in ('original','official_modern')]
     assert images[0].get_data(0xeaf0,31)==images[1].get_data(0xeaf0,31)
+    assert images[0].get_data(0xe21b0,0x71)==images[1].get_data(0xe21b0,0x71)
+    result['audio_capability_query']={
+        'paired_span':'004e21b0..004e2221','bytes_identical':True,
+        'dispatch':'Calls004e1dd4, obtains value via004eba70, pushes it to indirect009ef61c.',
+        'normal_return':'Driver EAX OR10000h only when signed-positive; zero/negative values forwarded unchanged. ECX/EDX restored.',
+        'cache_boundary':'No cached capability return in this body; query dispatch occurs each normal invocation.',
+        'limits':['Lazy service-pointer initialization and null-value diagnostic are also present; query is not assumed pure.',
+                  'Driver result domain not established: negative values with20000h set satisfy the outer bit predicate. No actual error code or misdetection observed.']}
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
     english=subprocess.check_output(['7z','x','-so',str(archive),'fedata/text/text.eng'])
