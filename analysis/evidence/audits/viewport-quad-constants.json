@@ -1,0 +1,46 @@
+{
+  "kind": "viewport-quad-draw-argument-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "004a75e0",
+      "end_exclusive": "004a78b6",
+      "span_sha256": "dfb5680ad686d214248df5422f7eea0fbc0b2b6945de223393c4f286d0da875d",
+      "assembly": "analysis/captures/modern-differences/viewport-quad-constants/original.asm",
+      "push_sites": [
+        "004a77bf",
+        "004a77cd",
+        "004a781d",
+        "004a782d",
+        "004a787e",
+        "004a788c"
+      ],
+      "argument_bits": "3f440000",
+      "binary32_value": 0.765625
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "004a75e0",
+      "end_exclusive": "004a78b6",
+      "span_sha256": "05d2fd8a8122411ac77717222235586c1334733da8e20d2edcf13ca70bafcd49",
+      "assembly": "analysis/captures/modern-differences/viewport-quad-constants/official_modern.asm",
+      "push_sites": [
+        "004a77bf",
+        "004a77cd",
+        "004a781d",
+        "004a782d",
+        "004a787e",
+        "004a788c"
+      ],
+      "argument_bits": "3f447ae1",
+      "binary32_value": 0.7674999833106995
+    }
+  },
+  "limits": [
+    "Draw argument semantics and visible effects unresolved.",
+    "Retained callees may differ; whole rendering equivalence not established.",
+    "No target execution, Ghidra writes or executable changes."
+  ]
+}

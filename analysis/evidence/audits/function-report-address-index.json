@@ -377,7 +377,7 @@
     },
     {
       "path": "analysis/original-modern-viewport-geometry.md",
-      "sha256": "e43ecc0e67e3b263a65c77dfe91251d1ecbafb455237ba25b0b54be82443253c"
+      "sha256": "b67346a37cf0e30f3fee4e1ec17a26c7f565087d91053205c4736a0b9a2a1189"
     },
     {
       "path": "analysis/original-modern-viewport-pose.md",
@@ -402,8 +402,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 353,
-    "without_address_mentions": 8
+    "with_address_mentions": 354,
+    "without_address_mentions": 7
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -7642,7 +7642,24 @@
       "changed_bytes": 12,
       "original_sha256": "dfb5680ad686d214248df5422f7eea0fbc0b2b6945de223393c4f286d0da875d",
       "modern_sha256": "05d2fd8a8122411ac77717222235586c1334733da8e20d2edcf13ca70bafcd49",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-viewport-geometry.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004a75e0",
+            "004a77bf",
+            "004a77cd",
+            "004a77f5",
+            "004a781d",
+            "004a782d",
+            "004a7850",
+            "004a787e",
+            "004a788c",
+            "004a78a8"
+          ]
+        }
+      ]
     },
     {
       "entry": "004b5580",

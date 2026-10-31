@@ -125,3 +125,19 @@ Thus the prior extent-correction examples using source `{0,0,W,H}` were conditio
 The expanded audit also retains complete Modern resize/update code `004be970..004bea36` and rectangle-adjustment helper `004bea40..004beaf7`. The former applies the helper to the record and eventually refreshes `007a2750`; this is why initial tuples alone are not lifetime invariants. The adjustment helper can update both groups' origins/extents after bounds tests. Its full caller/UI binding, arithmetic admission and original counterpart remain pending; this report does not attribute it to the Frame Size release-note change solely from nearby code.
 
 For reconstruction, give the physical +10h group, covering +0 group, corrected overlay group and fitted reference group distinct identities. Their storage adjacency does not make them aliases or equivalent rectangles. The intervening complete `004be3d0..004be570` helper is now retained too: it reads rectangle state to construct separate float geometry, with no calls or stores back to these source groups in its inspected body. This narrows the ordinary producer-to-correction linkage without proving all later writers absent. Runtime profile/flag admission, resize ordering, clipping and final visual acceptance remain outstanding. No original executable behaviour is inferred from the new Modern producer names alone.
+
+## Quad-set draw arguments: six changed constants
+
+The saved Modern entry `004a75e0` is labelled `DrawViewportQuadSet`. The [focused audit](scripts/audit_viewport_quad_constants.py) verifies both complete same-address function envelopes, `004a75e0..004a78b6` (726 bytes including RET), against the hash-pinned supplied original and official Modern executables. The [manifest](evidence/audits/viewport-quad-constants.json) records binary and span hashes and retained disassembly paths.
+
+Only six PUSH-immediate arguments differ:
+
+| PUSH instruction addresses | Original bits / binary32 value | Modern bits / binary32 value |
+|---|---|---|
+| `004a77bf`, `004a77cd` | `3f440000` / 0.765625 | `3f447ae1` / 0.7674999833106995 |
+| `004a781d`, `004a782d` | `3f440000` / 0.765625 | `3f447ae1` / 0.7674999833106995 |
+| `004a787e`, `004a788c` | `3f440000` / 0.765625 | `3f447ae1` / 0.7674999833106995 |
+
+The pairs feed the retained calls to `004a7310` at `004a77f5`, `004a7850` and `004a78a8`, respectively. Every other byte in the function is identical, including the viewport-query call `004beb80`, integer layout arithmetic and five earlier calls to `004a7080`. Each changed value increases by approximately 0.001875. The audit masks only these six immediate operands before comparing the complete bodies; there are 12 differing bytes in total.
+
+**Bounded work status: done; confidence: verified static arguments and complete function delta.** The binary32 interpretation describes the bit patterns; exact parameter roles require the callee contract. Texture coordinates, depth and visible effects are not established by these pushes alone. Retained callees may themselves differ between versions. No runtime validation, executable modification or Ghidra write was performed.
