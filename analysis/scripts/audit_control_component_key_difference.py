@@ -133,6 +133,17 @@ def main():
         'bytes': 324, 'sha256': hashlib.sha256(initializers['original']).hexdigest(),
         'hex': initializers['original'].hex(),
         'limit': 'Identical initializer overwrites incoming EAX with global00664798 before using it; no direct runtime-entry+45h overwrite established. Called helpers/global aliases not fully traced.'}
+    dispatch = {}
+    for label,start,end in [('original',0x44a335,0x44a439),('official_modern',0x44a339,0x44a436)]:
+        data = images[label].get_data(start-0x400000,end-start)
+        assert images[label].get_data(0x4a428,7) == bytes.fromhex('83fb02750231db')
+        dispatch[label] = {'start': f'{start:08x}', 'end_exclusive': f'{end:08x}',
+            'hex': data.hex(), 'sha256': hashlib.sha256(data).hexdigest(),
+            'disassembly': subprocess.check_output(['objdump','-d','-Mintel',
+                f'--start-address={start}',f'--stop-address={end}',str(ROOT/SPECS[label][0])],text=True)}
+    out['selected_entry_dispatch_suffix'] = {'baselines': dispatch,
+        'token_0020_exposed_return': {'original': 0, 'official_modern': 0},
+        'limit': 'Conditional on selected InteriorBx callback reaching admitted token0020h path; no full dispatcher equivalence, indirect caller coverage or runtime event delivery established.'}
     archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     archive_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     assert archive_sha == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
