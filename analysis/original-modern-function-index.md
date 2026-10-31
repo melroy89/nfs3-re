@@ -12,7 +12,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 
 | Modern entry | Saved analysis label | Body bytes | Changed bytes | Chapters mentioning an address in the saved body |
 |---|---|---:|---:|---|
-| `00401010` | HandleGameAbort | 520 | 2 | [frontend-page](original-modern-frontend-page.md), [texture-loading-followup](original-modern-texture-loading-followup.md) |
+| `00401010` | HandleGameAbort | 520 | 2 | [frontend-page](original-modern-frontend-page.md), [heap-initialization](original-modern-heap-initialization.md), [texture-loading-followup](original-modern-texture-loading-followup.md) |
 | `0040a010` | InitializeRacerIdentificationSpeechBanks | 796 | 3 | [sound-bank-language](original-modern-sound-bank-language.md) |
 | `0040fed0` | InitializeRandomMusicTrackAndStyle | 42 | 40 | [music-selection](original-modern-music-selection.md) |
 | `0040fefc` | ApplyConfiguredMusicTrackAndStyle | 132 | 130 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md) |

@@ -41,7 +41,12 @@
           "sha256": "8cd1d29f3ffd1210a14bd3f6ef2b45eb1b4e8504ee5a904fadeb02cd67a7c039",
           "assembly": "analysis/captures/modern-differences/render-arena/original-004b5700.asm"
         }
-      ]
+      ],
+      "arena_failure_message": {
+        "address": "00540148",
+        "value": "Render_GetTm() raM out of raN\n"
+      },
+      "failure_branch": "004bbe1c signed JLE to success; otherwise PUSH message and CALL 00401010"
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -83,8 +88,24 @@
           "sha256": "d55abf7c92ee3be2024262f7ec4dd54e8bef64f5ea8ef0096bafe9fa04b4382d",
           "assembly": "analysis/captures/modern-differences/render-arena/official_modern-004f1f30.asm"
         }
-      ]
+      ],
+      "arena_failure_message": {
+        "address": "00540148",
+        "value": "Render_GetTm() raM out of raN\n"
+      },
+      "failure_branch": "004bbe1c signed JLE to success; otherwise PUSH message and CALL 00401010"
     }
+  },
+  "identical_bump_consumer": {
+    "start": "004bbde0",
+    "end_exclusive": "004bbe3a",
+    "sha256": "7cfd13c6f23aef10f899a101139f4528e5597b6f9a458015fd208881e305caa6",
+    "base": "0055fe34",
+    "cursor": "0055fe38",
+    "capacity": "007a3d04",
+    "diagnostic_call": "004bbe23",
+    "target": "00401010",
+    "limits": "Signed low-32-bit pointer-distance test; output pointer/cursor already changed before failure. Handler return/termination and all car requests unverified."
   },
   "contract": {
     "original_request_bytes": 799744,

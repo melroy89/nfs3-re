@@ -141,7 +141,7 @@
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
-      "sha256": "1d48e9f7784b859ba6623ce1a2490f2626de0812e775ff39704301726a66d246"
+      "sha256": "651703396d843cb570cc574997fd17a63157086863e03a09ee04698b10b409f5"
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
@@ -447,6 +447,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-frontend-page.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00401010"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-heap-initialization.md",
           "entry_mentioned": true,
           "addresses": [
             "00401010"
