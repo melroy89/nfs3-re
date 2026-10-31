@@ -16,7 +16,7 @@ Both tails index string tables with DWORD`006fd4ac`, whose selected-circuit role
 | 1,2,5 | Table`00559668`, literal format`%s km` at`00539a80` |
 | Other | Table`0055968c`, literal format`%s km` |
 
-Modern instead reads DWORD **`006fbc68`**. Values3/4 select table`00559668` and language ID`078ah`; all others select table`00559644` and language ID6. Both paths join one formatting call through`004df690`, using **`%s %s` at`00538d7c`**. Modern therefore removes the hard-coded`km` unit from this tail and obtains the unit token through language lookup on both paths. Exact displayed translations and selector meanings require separate evidence; the change of selector address is not a proven one-to-one enum remapping.
+Modern instead reads DWORD **`006fbc68`**. Values3/4 select table`00559668` and language ID`078ah`; all others select table`00559644` and language ID6. Both paths join one formatting call through`004df690`, using **`%s %s` at`00538d7c`**. Modern therefore removes the hard-coded`km` unit from this tail and obtains the unit token through language lookup on both paths. The packaged translations are verified below; runtime file selection and selector meanings require separate evidence; the change of selector address is not a proven one-to-one enum remapping.
 
 Both then call text helper`00452190` with the same two stack constants0 and`00488cfd`, ECX18 and local string pointer`EBP-50h`; the placement inputs come from the matching earlier code. Matching call arguments do not prove identical renderer behaviour, since language/text helpers can differ.
 
@@ -31,10 +31,25 @@ The first two nine-pointer tables are byte-identical across the pinned EXEs. The
 
 The original third table at`0055968c` points to decimal-dot strings matching Modern’s second-table values; the third pointer table itself is zeroed in Modern. All original pointed strings are retained in the manifest. The old format addresses are empty in Modern, while old`00538d7c` contains`credits` rather than the Modern format. Same-address string interpretation must therefore remain version-bound. Zeroing the third table does not prove absence of other original readers or complete removal of every associated data path.
 
-**Verified static:** changed selector/global, branch mapping, language IDs, format consolidation, retained pointer tables, comma-to-dot string changes, zeroed third table and local drawing arguments. **Unresolved:** complete widget/function contract, selector producers, localized unit meanings, index bounds, final text/render output and historical release attribution. No precision, replay or multiplayer conclusion follows from this UI formatting rewrite.
+**Verified static:** changed selector/global, branch mapping, language IDs, format consolidation, retained pointer tables, comma-to-dot string changes, zeroed third table and local drawing arguments. **Unresolved:** complete widget/function contract, selector producers, runtime language selection, raw selector enum names, index bounds, final text/render output and historical release attribution. No precision, replay or multiplayer conclusion follows from this UI formatting rewrite.
 
 ## HUD-profile producer and default branch
 
 The selector is profile-header offset **+18h**, not an isolated new unit global: the existing [HUD defaults comparison](original-modern-hud-layout.md#3-header-default-changes-preserve-offsets-not-guessed-widget-names) maps six headers at`006fbc50 + i*1a4h`. The expanded audit verifies Modern producer **`0048595b..00485984`**,41 bytes: MOV EBX3 followed by six direct DWORD stores to`006fbc68 + i*1a4h`, for i0..5. These bytes establish a concrete default producer without guessing a human-facing enum name.
 
-For that default and this path’s direct read of the first profile cell, Modern chooses table`00559668` plus language ID078ah. This ties the changed display branch to existing profile initialization. It does not prove the default survives saved configuration, which bank should represent every runtime view, or that the localized label is always a particular unit. The [HUD editor dataflow](hud-exclusion-reachability-audit.md) already records independent per-bank selector writes and reachable cycle values; this display comparison must preserve those alternatives rather than treating default3 as a permanent constant. Runtime loading/selection and exact label meanings remain unresolved.
+For that default and this path’s direct read of the first profile cell, Modern chooses table`00559668` plus language ID078ah. This ties the changed display branch to existing profile initialization. It does not prove the default survives saved configuration, which bank should represent every runtime view, or which language file is actually selected at runtime. The [HUD editor dataflow](hud-exclusion-reachability-audit.md) already records independent per-bank selector writes and reachable cycle values; this display comparison must preserve those alternatives rather than treating default3 as a permanent constant. Runtime loading/selection remains unresolved; the selected packaged label meanings are established below.
+
+## Official language assets establish the unit labels
+
+The audit reads all six text-table members directly from the hash-pinned official archive, without executing a loader. For IDs6 and078ah it checks that the offset slot is within the declared DWORD table extent, the payload offset is beyond that table and within the member, and a terminating NUL exists. Member hashes, sizes, offsets and raw selected-string bytes are retained.
+
+| Official member suffix | ID6 | ID078ah |
+|---|---|---|
+| eng | Miles | km |
+| ger | Meilen | km |
+| fre | Miles | km |
+| spa | Millas | km |
+| ita | Miglia | km |
+| swe | Miles | km |
+
+Thus, with these packaged assets selected, Modern selector values3/4 display the kilometer table plus`km`; other values display the mile table plus the localized miles label. The [language fallback comparison](original-modern-language-table.md#lookup-gains-guarded-fallback) separately establishes embedded fallback`km` for078ah; lower-ID fallback can instead be empty. These observations do not prove runtime asset selection, every malformed-table outcome or that all HUD selector enum names have been decoded. The old exact-label unknown is resolved for these official members, while installed replacements and original asset provenance remain separate.

@@ -53,7 +53,29 @@ def main():
         'hex':default.hex(),'sha256':hashlib.sha256(default).hexdigest(),
         'value':3,'destinations':[f'{va:08x}' for va in destinations],
         'limit':'Default initializer writes only; later saved settings/editor/aliases not excluded.'}
-    result['limits']=['No drawing, language lookup or instruction execution.','Selector/unit semantics, valid track indices and complete localization not established.','Third original table zeroed in Modern; all other readers not excluded.']
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+    assert archive_sha=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    languages=[]
+    for language in ('eng','ger','fre','spa','ita','swe'):
+        member='fedata/text/text.'+language
+        data=subprocess.check_output(['7z','x','-so',str(archive),member])
+        extent=struct.unpack_from('<I',data)[0]
+        assert extent%4==0 and extent<=len(data)
+        labels=[]
+        for ident in (6,0x78a):
+            assert ident*4<extent
+            offset=struct.unpack_from('<I',data,ident*4)[0]
+            assert extent<=offset<len(data)
+            end=data.index(b'\0',offset)
+            labels.append({'id':ident,'offset':offset,'hex':data[offset:end].hex(),
+                'text_latin1':data[offset:end].decode('latin1')})
+        assert labels[1]['text_latin1']=='km'
+        languages.append({'member':member,'sha256':hashlib.sha256(data).hexdigest(),
+            'bytes':len(data),'table_extent':extent,'labels':labels})
+    result['official_unit_assets']={'archive_sha256':archive_sha,'members':languages,
+        'limit':'Selected packaged entries validated; no proof of runtime file selection or complete asset parser validation.'}
+    result['limits']=['No drawing, language lookup or instruction execution.','Raw selector enum names, valid track indices and runtime localization choice not established; selected official unit strings verified.','Third original table zeroed in Modern; all other readers not excluded.']
     (ROOT/'analysis/evidence/audits/track-length-text-difference.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired formatting tails, retained pointer tables, comma-to-dot payloads, zeroed third and152 localized interval differences')
 

@@ -302,9 +302,135 @@
     ],
     "limit": "Default initializer writes only; later saved settings/editor/aliases not excluded."
   },
+  "official_unit_assets": {
+    "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+    "members": [
+      {
+        "member": "fedata/text/text.eng",
+        "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+        "bytes": 35896,
+        "table_extent": 7820,
+        "labels": [
+          {
+            "id": 6,
+            "offset": 7868,
+            "hex": "4d696c6573",
+            "text_latin1": "Miles"
+          },
+          {
+            "id": 1930,
+            "offset": 35551,
+            "hex": "6b6d",
+            "text_latin1": "km"
+          }
+        ]
+      },
+      {
+        "member": "fedata/text/text.ger",
+        "sha256": "0e964d1966ded07f5430bf170efa8e91c3d36e97422f5a75b549271455f0f582",
+        "bytes": 35150,
+        "table_extent": 7820,
+        "labels": [
+          {
+            "id": 6,
+            "offset": 7867,
+            "hex": "4d65696c656e",
+            "text_latin1": "Meilen"
+          },
+          {
+            "id": 1930,
+            "offset": 34786,
+            "hex": "6b6d",
+            "text_latin1": "km"
+          }
+        ]
+      },
+      {
+        "member": "fedata/text/text.fre",
+        "sha256": "68cce0ae29d9d91abac71e870931f530ea552065cdf85aec5b571ac42470502a",
+        "bytes": 37471,
+        "table_extent": 7820,
+        "labels": [
+          {
+            "id": 6,
+            "offset": 7877,
+            "hex": "4d696c6573",
+            "text_latin1": "Miles"
+          },
+          {
+            "id": 1930,
+            "offset": 37072,
+            "hex": "6b6d",
+            "text_latin1": "km"
+          }
+        ]
+      },
+      {
+        "member": "fedata/text/text.spa",
+        "sha256": "290519a9574e6e78c3b55af9c71b5e57b6e7fa40b287f5c8910f366c263d2a1d",
+        "bytes": 38216,
+        "table_extent": 7820,
+        "labels": [
+          {
+            "id": 6,
+            "offset": 7869,
+            "hex": "4d696c6c6173",
+            "text_latin1": "Millas"
+          },
+          {
+            "id": 1930,
+            "offset": 37816,
+            "hex": "6b6d",
+            "text_latin1": "km"
+          }
+        ]
+      },
+      {
+        "member": "fedata/text/text.ita",
+        "sha256": "8bcef28ebdd96f0cb80a083a88d3832ab684d6efe2304ef186df42b25e18c29d",
+        "bytes": 36309,
+        "table_extent": 7820,
+        "labels": [
+          {
+            "id": 6,
+            "offset": 7864,
+            "hex": "4d69676c6961",
+            "text_latin1": "Miglia"
+          },
+          {
+            "id": 1930,
+            "offset": 35938,
+            "hex": "6b6d",
+            "text_latin1": "km"
+          }
+        ]
+      },
+      {
+        "member": "fedata/text/text.swe",
+        "sha256": "c64f1ac7be5bfe762c9b6a961415c994e132c66dc3660bd5763d54eeedfc9b9a",
+        "bytes": 34207,
+        "table_extent": 7820,
+        "labels": [
+          {
+            "id": 6,
+            "offset": 7871,
+            "hex": "4d696c6573",
+            "text_latin1": "Miles"
+          },
+          {
+            "id": 1930,
+            "offset": 33852,
+            "hex": "6b6d",
+            "text_latin1": "km"
+          }
+        ]
+      }
+    ],
+    "limit": "Selected packaged entries validated; no proof of runtime file selection or complete asset parser validation."
+  },
   "limits": [
     "No drawing, language lookup or instruction execution.",
-    "Selector/unit semantics, valid track indices and complete localization not established.",
+    "Raw selector enum names, valid track indices and runtime localization choice not established; selected official unit strings verified.",
     "Third original table zeroed in Modern; all other readers not excluded."
   ]
 }
