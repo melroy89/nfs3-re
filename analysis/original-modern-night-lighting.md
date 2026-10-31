@@ -17,7 +17,7 @@ The changed Modern predicate is at **`0041c687..0041c699`**. The unsigned `JA` m
 
 All changed bytes are inside **`0041c684..0041c6cc`**. The complete tail **`0041c6cc..0041c9e4`** is byte-identical, so this is an expanded entry-admission policy, not an identified rewrite of the retained lighting arithmetic. The retained body includes vehicle/resource filtering, transforms and helper submissions already investigated in [detailed notes](detailed-analysis-notes.md#night-vehicle-lighting-over-track-block-quads). Equal local instructions do not establish equal floating-point state, global inputs, called helpers or rendered output.
 
-The context’s first DWORD remains an unnamed tag. The option-binding follow-up below identifies Modern `006fd1d8` as Rear View Detail. **MP150-002** mentions headlights in the rear-view mirror, but this gate alone does not prove context1 is that viewport or explain clouds/lightnings also bundled in the claim. No catalog promotion is made on that inference.
+The context’s first DWORD is the viewport renderer’s incoming pass tag, as traced below. The option-binding follow-up below identifies Modern `006fd1d8` as Rear View Detail. **MP150-002** mentions headlights in the rear-view mirror, but the lighting gate alone does not identify that viewport or explain clouds/lightnings also bundled in the claim. No catalog promotion is made on that inference.
 
 ## Scratch sizing and preserved allocation limitation
 
@@ -33,7 +33,7 @@ The paired direct caller witness **`0041d04e..0041d06d`** pushes four stack valu
 
 The local accumulator starts0 and sums retained submission-helper results, returning it in EAX at `0041c9d9`. It is not established as a count of visible or successfully drawn primitives. Both rejection paths return0. Modern’s entry gate can therefore expose an existing body to additional contexts without proving correct output for those contexts.
 
-Next: trace context1 construction, then compare any changed helper reached only by the newly admitted cases. Keep mirror attribution, x87/numeric behavior, allocation contracts and runtime visual acceptance separate.
+Next: trace the optional pass’s camera construction, then compare any changed helper reached only by the newly admitted cases. Keep mirror attribution, x87/numeric behavior, allocation contracts and runtime visual acceptance separate.
 
 ## Modern option binding: Rear View Detail values0..2
 
@@ -44,3 +44,21 @@ Official `graphics.mnu` binds both an arrow-tab control and a cascade to `listna
 The normal selected ordinal mapping is therefore **0=High,1=Medium,2=Low**, consistent with the shared generic selector mechanism documented in the [Frame Size analysis](original-modern-frame-setting.md). On those values, Modern’s context1 lighting gate admits **High/Medium**, rejects **Low**. The descriptor establishes the option’s meaning and storage; it does not establish what the context tag itself denotes, every later writer, persisted-state validity or rendered mirror output.
 
 Original’s same-address row is a different descriptor, so it is not presented as an original `mirrorlevel` counterpart. The manifest retains that original row separately. This address difference does not prove absence of every original mirror-detail control or storage alias. Historical **MP150-002/003**, **MP151-001** and **MP152-001** require their own scoped attribution or intermediate-release evidence. The current binding is useful evidence for the final Modern mechanism without completing those bundled claims.
+
+## Context producer: optional mirror-setting-gated pass
+
+The expanded audit retains the register-forwarding chain directly from both hash-checked executables:
+
+| Address | Observed data flow |
+|---|---|
+| `004bc767..004bc777` | Optional pass supplies EAX=1 and calls `004bc470` at `004bc772`. |
+| `004bc475`, `004bc481` | Viewport renderer saves incoming EAX in ESI, then stores it at context DWORD0, `007a3d14`. |
+| `004bc4fa` | Calls scene renderer `004bc160`; both track-render branches pass context pointer `007a3d14` to `0041b9b0` at `004bc245` or `004bc29d`. |
+| `0041b9ba..0041babd` | Saves the incoming context in ESI and forwards that pointer in EAX to `0041cdc0`. |
+| `0041cdc9`, `0041d066..0041d068` | Saves context in ESI and forwards it in EAX to the night-lighting helper. |
+
+The full viewport wrapper **`004bc470..004bc529`** and optional-pass admission span **`004bc717..004bc777`** are byte-identical in this pair. The latter selects between two settings using vehicle byte `+0x200` bit`0x20`: storage **`006fbc5c`** or **`006fbe00`**, separated by `0x1a4`. Paired descriptors **`00556870`** and **`00556910`** identify those cells as **`mirror`** and **`mirrorcop`**. A nonzero selected setting additionally requires `00422aa0` to return nonzero; nonzero **`00559264`** can override those local gates. The replay-related role of this override is separately discussed in the [replay mirror analysis](original-modern-replay-mirror.md); its complete lifecycle is not established here. Earlier gating by `007a3d10` also remains part of admission.
+
+The other two visible calls to `004bc470`, at **`004bc6d8`** and **`004bc712`**, supply EAX=0. In the session1 branch, the call shared at `004bc772` also receives EAX=0 and EDX=1, so **the call address alone is insufficient to identify a mirror pass**. Its incoming register values distinguish that route from the optional EAX=1 route.
+
+This establishes tag1 as the **optional mirror-setting-gated render pass**, rather than an arbitrary guessed tag. Combined with the Rear View Detail binding, Modern admits the retained night-lighting body for that pass at High/Medium, whereas original rejects it. Full camera orientation, transitive context mutations, actual visible headlights and the claim’s clouds/lightnings remain unverified. No runtime or historical-release equivalence is claimed. The complete `0041b9b0` prefix differs elsewhere between versions; retaining both spans does not label it byte-identical.

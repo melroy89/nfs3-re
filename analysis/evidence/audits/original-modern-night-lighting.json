@@ -26,6 +26,41 @@
           "bytes_sha256": "93c333676394b217ddb1d72f67388dcb0db71f5b380cad768152be2b585a093d",
           "assembly": "analysis/captures/modern-differences/night-lighting/original-0041d04e.asm",
           "assembly_sha256": "9c69a6a586b33e6a141b1f1968703952ab6031cf4e2a538aa7de36b553a170e8"
+        },
+        {
+          "start": "004bc470",
+          "end": "004bc529",
+          "bytes_sha256": "10935aecdeb3f08d61086a7074ca086077fd62c9bea3f7ca031e49cc699b8991",
+          "assembly": "analysis/captures/modern-differences/night-lighting/original-004bc470.asm",
+          "assembly_sha256": "434f306d78105a9101b896980dfbad622e00da3ccb4a6c8bb914dfcbb9c6f5cd"
+        },
+        {
+          "start": "004bc717",
+          "end": "004bc777",
+          "bytes_sha256": "d49249db9c1f665bd3337bea70d931ef50e69019251ad9e6e7a32ed24354f9cd",
+          "assembly": "analysis/captures/modern-differences/night-lighting/original-004bc717.asm",
+          "assembly_sha256": "64040283a3d5b83fd70a0899e056528c39fbfdbe1921ee2bad43e6309175b19d"
+        },
+        {
+          "start": "004bc237",
+          "end": "004bc2a2",
+          "bytes_sha256": "cd9ea08bec8eb5e9d7cab788b14cf16369ea9c50132fa9f145a30d2f73188237",
+          "assembly": "analysis/captures/modern-differences/night-lighting/original-004bc237.asm",
+          "assembly_sha256": "eacf251c314b432b90d3fae77ba7e103023d42800d3c70a7da2aead9b02218ed"
+        },
+        {
+          "start": "0041b9b0",
+          "end": "0041bac2",
+          "bytes_sha256": "c7b142eac17f6a55b4eeeceae4560f32de91402f3d7bf0b8d6724797a8de5b16",
+          "assembly": "analysis/captures/modern-differences/night-lighting/original-0041b9b0.asm",
+          "assembly_sha256": "9243b6ffdad93ba88b69dd83f9b34ebd5acbb9927c4ac4dc9dcfe8e3bfc2b053"
+        },
+        {
+          "start": "0041cdc0",
+          "end": "0041cdd1",
+          "bytes_sha256": "1295946e64e5000a5aec17e7721c030ae101f1b0f8ba53cca28ff9294d0662aa",
+          "assembly": "analysis/captures/modern-differences/night-lighting/original-0041cdc0.asm",
+          "assembly_sha256": "74a3bdb864fc99ab69ce63553520aba626fce43426b64eff06892c0f120b83fb"
         }
       ]
     },
@@ -53,6 +88,41 @@
           "bytes_sha256": "93c333676394b217ddb1d72f67388dcb0db71f5b380cad768152be2b585a093d",
           "assembly": "analysis/captures/modern-differences/night-lighting/official_modern-0041d04e.asm",
           "assembly_sha256": "a4e6b8cfeb3c988d1129030f154969f45a5be3def58df8b25f09b61229b48cb8"
+        },
+        {
+          "start": "004bc470",
+          "end": "004bc529",
+          "bytes_sha256": "10935aecdeb3f08d61086a7074ca086077fd62c9bea3f7ca031e49cc699b8991",
+          "assembly": "analysis/captures/modern-differences/night-lighting/official_modern-004bc470.asm",
+          "assembly_sha256": "d81a7ffbade1d5e99370be09b39718734e605c8e4ffe63e62ef35b3bde54f35f"
+        },
+        {
+          "start": "004bc717",
+          "end": "004bc777",
+          "bytes_sha256": "d49249db9c1f665bd3337bea70d931ef50e69019251ad9e6e7a32ed24354f9cd",
+          "assembly": "analysis/captures/modern-differences/night-lighting/official_modern-004bc717.asm",
+          "assembly_sha256": "c571c206827246370bdad99cef1b85b38b0a9ec61248b34bcc698e178da9462f"
+        },
+        {
+          "start": "004bc237",
+          "end": "004bc2a2",
+          "bytes_sha256": "15dd61b74cdbc177022bd5e8d612757e1c91c828b9a9eec2ecec131d29839273",
+          "assembly": "analysis/captures/modern-differences/night-lighting/official_modern-004bc237.asm",
+          "assembly_sha256": "a1c933dc13c15dca4133a0ca15eb1410952b573367e4acc5406f6fcd0271d4b6"
+        },
+        {
+          "start": "0041b9b0",
+          "end": "0041bac2",
+          "bytes_sha256": "5a554b2032c20b5cb8eb5902da4e99c92c20a5ce0369cdd09b00507fc506099f",
+          "assembly": "analysis/captures/modern-differences/night-lighting/official_modern-0041b9b0.asm",
+          "assembly_sha256": "f5622a1fbcdfc1f2e96264ac31482c14dc4334c21e23faf62464e3399a5108ce"
+        },
+        {
+          "start": "0041cdc0",
+          "end": "0041cdd1",
+          "bytes_sha256": "1295946e64e5000a5aec17e7721c030ae101f1b0f8ba53cca28ff9294d0662aa",
+          "assembly": "analysis/captures/modern-differences/night-lighting/official_modern-0041cdc0.asm",
+          "assembly_sha256": "436f59883e51af013a78bcf4dc61782a7613b0621894f90530b6ad720b5eed4f"
         }
       ]
     }
@@ -119,6 +189,56 @@
       ]
     }
   ],
+  "mirror_pass_descriptors": {
+    "original": [
+      {
+        "address": "00556870",
+        "name": "mirror",
+        "words": [
+          "00538074",
+          "005561be",
+          "00000000",
+          "00000000",
+          "006fbc5c"
+        ]
+      },
+      {
+        "address": "00556910",
+        "name": "mirrorcop",
+        "words": [
+          "005380d8",
+          "005561be",
+          "00000000",
+          "00000000",
+          "006fbe00"
+        ]
+      }
+    ],
+    "official_modern": [
+      {
+        "address": "00556870",
+        "name": "mirror",
+        "words": [
+          "00538074",
+          "005561be",
+          "00000000",
+          "00000000",
+          "006fbc5c"
+        ]
+      },
+      {
+        "address": "00556910",
+        "name": "mirrorcop",
+        "words": [
+          "005380d8",
+          "005561be",
+          "00000000",
+          "00000000",
+          "006fbe00"
+        ]
+      }
+    ]
+  },
   "identical_ranges": [
     {
       "start": "0041c670",
@@ -139,11 +259,26 @@
       "start": "0041d04e",
       "end": "0041d06d",
       "sha256": "93c333676394b217ddb1d72f67388dcb0db71f5b380cad768152be2b585a093d"
+    },
+    {
+      "start": "004bc470",
+      "end": "004bc529",
+      "sha256": "10935aecdeb3f08d61086a7074ca086077fd62c9bea3f7ca031e49cc699b8991"
+    },
+    {
+      "start": "004bc717",
+      "end": "004bc777",
+      "sha256": "d49249db9c1f665bd3337bea70d931ef50e69019251ad9e6e7a32ed24354f9cd"
+    },
+    {
+      "start": "0041cdc0",
+      "end": "0041cdd1",
+      "sha256": "1295946e64e5000a5aec17e7721c030ae101f1b0f8ba53cca28ff9294d0662aa"
     }
   ],
   "limits": [
     "No graphics, night race or instruction execution.",
-    "Modern option binding verifies Rear View Detail; context type1 viewport identity remains unresolved.",
+    "Tag1 is the optional mirror-setting-gated render pass; full camera construction and rendered output remain unresolved.",
     "Identical body does not establish transitive numeric, allocation or rendered equivalence."
   ]
 }
