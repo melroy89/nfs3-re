@@ -19,7 +19,9 @@ def main():
         assert imports[0x534480] == 'ShellExecuteA'
         assert imports[0x53454c] == 'GetModuleHandleA'
         assert pe.get_data(0x136c30, 5) == b'open\0'
-        spans = [(0x410460, 0x4104a1), (0x4104b0, 0x4104ee), (0x418cc0, 0x418ceb), (0x4a4020,0x4a404f)]
+        spans = [(0x410460, 0x4104a1), (0x4104b0, 0x4104ee), (0x418cc0, 0x418ceb), (0x4a4020,0x4a404f),
+                 (0x4f7c20,0x4f7c45),(0x4f7c48,0x4f7c87)]
+        spans += [(0x4a3a1c,0x4a3a26)] if label=='original' else [(0x4a3e83,0x4a3e8d)]
         rows = []
         blobs[label] = []
         for a, b in spans:
@@ -43,6 +45,16 @@ def main():
         assert a[address - start] == 6 and b[address - start] == 8
     old, new = blobs['original'][2], blobs['official_modern'][2]
     assert blobs['original'][3]==blobs['official_modern'][3]
+    assert blobs['original'][4]==blobs['official_modern'][4]
+    assert blobs['original'][5]==blobs['official_modern'][5]
+    assert blobs['original'][6].hex()=='b820404a00e8fa410500'
+    assert blobs['official_modern'][6].hex()=='b820404a00e8933d0500'
+    result['url_callback_registration']={
+        'original':'004a3a1c supplies004a4020;004a3a21 calls004f7c20.',
+        'modern':'004a3e83 supplies004a4020;004a3e88 calls004f7c20.',
+        'registrar':'004f7c20..004f7c45 identical; signed count<32 appends EAX,returns0; else returnsffffffff. EDX preserved.',
+        'dispatcher':'004f7c48..004f7c87 identical; marks count33 then invokes saved callbacks in reverse order for ordinary valid counts.',
+        'limits':'Registration witnesses ignore return; callback execution requires dispatcher admission. Full exit reachability and all callback register preservation not established here.'}
     result['retained_shell_caller']={'span':'004a4020..004a404f','bytes_identical':True,
         'selector':'0055e894:1 chooses0053ce9c;2 chooses0053ceb8;other values return without shell call.',
         'call':'004a4048 ->00418cc0; EAX result not tested before return.',

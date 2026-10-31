@@ -28,6 +28,24 @@
           "end_exclusive": "004a404f",
           "sha256": "6378a3cf203a1006309f17ef857e0e53481a3a1a8d3bc81f79f5899445aad935",
           "assembly": "analysis/captures/modern-differences/small-wrappers/original-004a4020.asm"
+        },
+        {
+          "start": "004f7c20",
+          "end_exclusive": "004f7c45",
+          "sha256": "8a4b9e124e11695a15c19d29bebf5de39094406c986c0a042a5a8d5bdf1ef91c",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/original-004f7c20.asm"
+        },
+        {
+          "start": "004f7c48",
+          "end_exclusive": "004f7c87",
+          "sha256": "80f3dd291edfe69c0ea23ea3dd4d44dcdbe4e61a88915f299d9de1a73af90d7f",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/original-004f7c48.asm"
+        },
+        {
+          "start": "004a3a1c",
+          "end_exclusive": "004a3a26",
+          "sha256": "d3e96072c48be41141bf86c2fc2ac2b8cf58b458f444aaf3c3c2321874025fe9",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/original-004a3a1c.asm"
         }
       ],
       "imports": {
@@ -66,6 +84,24 @@
           "end_exclusive": "004a404f",
           "sha256": "6378a3cf203a1006309f17ef857e0e53481a3a1a8d3bc81f79f5899445aad935",
           "assembly": "analysis/captures/modern-differences/small-wrappers/official_modern-004a4020.asm"
+        },
+        {
+          "start": "004f7c20",
+          "end_exclusive": "004f7c45",
+          "sha256": "8a4b9e124e11695a15c19d29bebf5de39094406c986c0a042a5a8d5bdf1ef91c",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/official_modern-004f7c20.asm"
+        },
+        {
+          "start": "004f7c48",
+          "end_exclusive": "004f7c87",
+          "sha256": "80f3dd291edfe69c0ea23ea3dd4d44dcdbe4e61a88915f299d9de1a73af90d7f",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/official_modern-004f7c48.asm"
+        },
+        {
+          "start": "004a3e83",
+          "end_exclusive": "004a3e8d",
+          "sha256": "c76214737e69f0ed7a8b7dc5ae904bfe7cd9608032a0ae639d368d4f63d3e503",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/official_modern-004a3e83.asm"
         }
       ],
       "imports": {
@@ -77,6 +113,13 @@
         "0053ceb8": "http://www.NeedForSpeed.com/download.asp"
       }
     }
+  },
+  "url_callback_registration": {
+    "original": "004a3a1c supplies004a4020;004a3a21 calls004f7c20.",
+    "modern": "004a3e83 supplies004a4020;004a3e88 calls004f7c20.",
+    "registrar": "004f7c20..004f7c45 identical; signed count<32 appends EAX,returns0; else returnsffffffff. EDX preserved.",
+    "dispatcher": "004f7c48..004f7c87 identical; marks count33 then invokes saved callbacks in reverse order for ordinary valid counts.",
+    "limits": "Registration witnesses ignore return; callback execution requires dispatcher admission. Full exit reachability and all callback register preservation not established here."
   },
   "retained_shell_caller": {
     "span": "004a4020..004a404f",
