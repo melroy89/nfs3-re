@@ -116,6 +116,13 @@
           "bytes_sha256": "116a822d28e1de0d2f1922b3fa87eb2064c03730f0eccd3961bb1c75dfe22d0f",
           "assembly": "analysis/captures/modern-differences/display-modes/official_modern-0044b1a0.asm",
           "assembly_sha256": "c523036b16012beb38ab5f22f4164114244f48671d39f365fb3f3ee8cb9ae8bf"
+        },
+        {
+          "start": "00448348",
+          "end": "0044837c",
+          "bytes_sha256": "99379c643323055eacb33fa55f7e08a3c0655f95884f62eca220bb1d31863445",
+          "assembly": "analysis/captures/modern-differences/display-modes/official_modern-00448348.asm",
+          "assembly_sha256": "6226ac158f4a22cf35dfd92b51943d62fcd70413f2e37b6f7a40aedb5e0ac247"
         }
       ]
     }
@@ -125,6 +132,16 @@
     "Menu count boundary is not a proved reachable storage fault.",
     "Driver DLL enumeration limits and actual UI behavior remain untested."
   ],
+  "selected_record_accessors": {
+    "selector": "00448348",
+    "field10_accessor": "00448368",
+    "field0_accessor": "00448374",
+    "record_stride": 276,
+    "index": "00a1825c",
+    "count": "00a18260",
+    "base": "00a18330",
+    "limits": "Unsigned index normalization does not reject an empty list; original counterparts unverified."
+  },
   "recovery_call": {
     "instruction": "0044b1e5",
     "original_target": "004bef50",

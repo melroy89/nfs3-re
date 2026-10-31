@@ -13,7 +13,7 @@ SPANS = {
                  (0x472d10, 0x472f19), (0x4483a0, 0x4483fe), (0x4bef50, 0x4bf10f), (0x44b1a0,0x44b206)],
     'official_modern': [(0x4bed90, 0x4beeb0), (0x448210, 0x448345), (0x4beeb0, 0x4bef9d),
                         (0x448394, 0x448425), (0x472d10, 0x472e1d),
-                        (0x472aac, 0x472aeb), (0x4f9140, 0x4f915e), (0x44b1a0,0x44b206)],
+                        (0x472aac, 0x472aeb), (0x4f9140, 0x4f915e), (0x44b1a0,0x44b206), (0x448348,0x44837c)],
 }
 
 
@@ -41,6 +41,11 @@ def main():
                 'assembly': str(output.relative_to(ROOT)),
                 'assembly_sha256': hashlib.sha256(output.read_bytes()).hexdigest()})
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows}
+    selected_accessors=images[1].get_data(0x48348,52)
+    assert selected_accessors==bytes.fromhex('a15c82a1003b056082a100720731c0a35c82a10069c014010000053083a100c3e8dbffffff8b4010c3909090e8cfffffff8b00c3')
+    result['selected_record_accessors']={'selector':'00448348','field10_accessor':'00448368',
+        'field0_accessor':'00448374','record_stride':276,'index':'00a1825c','count':'00a18260',
+        'base':'00a18330','limits':'Unsigned index normalization does not reject an empty list; original counterparts unverified.'}
     original_recovery,modern_recovery=[p.get_data(0x4b1a0,102) for p in images]
     assert [i for i,(a,b) in enumerate(zip(original_recovery,modern_recovery)) if a!=b]==[0x46,0x47]
     assert original_recovery[0x45:0x4a]==bytes.fromhex('e8663d0700')

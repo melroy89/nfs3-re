@@ -62,3 +62,22 @@ Therefore this callback alone does not prove a strict 100-entry maximum. Driver 
 The [mode-selection comparison](original-modern-mode-selection.md) follows the original ID tree and Modern search/application consumers. Next: compare driver mode enumeration itself, all mode-list count resets/storage, old budget-field producer, and original/Modern projection/menu scaling. The [screenshot dimension audit](screenshot-worker-admission-audit.md) already explains why eligibility and selector fallback are not a general buffer-size proof; do not duplicate or overstate that research.
 
 The [DX7 driver follow-up](original-modern-dx7-mode-admission.md) separates its verified minimum-size checks from the still-unverified exact640×480 depth-forcing claim.
+
+## Selected-record helpers normalize the index but do not reject an empty list
+
+The expanded [display audit](scripts/audit_display_mode_difference.py) now verifies the complete Modern selector/accessor region `00448348..0044837c` (52 bytes including three NOPs), with exact instruction bytes and capture hashes in [the manifest](evidence/audits/original-modern-display-modes.json). These helpers use the **menu's 114h-byte records**, not the driver's 28h-byte records; equal field offsets in those two layouts must not be conflated.
+
+Selector `00448348..00448368` reads selected index `00a1825c`, compares it **unsigned** with count `00a18260`, and when index≥count sets the index global to zero. It then returns `00a18330 + wrap32(index*114h)` in EAX. Only EAX and flags are changed by its local instructions.
+
+Two complete accessors call it:
+
+| Modern accessor | End, exclusive | Return |
+|---|---|---|
+| `00448368` GetSelectedDisplayModeField10 | `00448371` | DWORD `[selected_record+10h]` |
+| `00448374` GetSelectedDisplayModeDriverIndex | `0044837c` | DWORD `[selected_record+0]` |
+
+The second saved name reflects analysis metadata; the directly verified contract here is the offset-zero DWORD. Neither accessor checks the returned pointer or count. With count zero, selector resets index to zero and returns the first record address anyway. Thus “index normalized” does not prove “valid selected mode”: empty-list admission and first-record initialization must be established by callers/producers. A maintained C interface must preserve the index-global side effect or deliberately expose a documented behavior change.
+
+For valid nonempty lists within storage capacity, the unsigned comparison rejects negative-looking/high-bit index values as out of range when they are ≥count. It is not a complete protection against malformed counts, arithmetic wrapping or invalid storage lifetime. No such malformed input was executed.
+
+**Work status: Modern local contracts verified; original functional counterpart mapping pending.** The same-address original region belongs to a different longer copy/selection path and must not be treated as two matching tiny functions. This addition documents changed-region interfaces while leaving original counterpart identification, full caller use and runtime mode behavior explicit. No executable, Ghidra or reconstruction-source changes were made.

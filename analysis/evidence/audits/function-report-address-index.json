@@ -89,7 +89,7 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "f5691cca3d95fadd3d72cdf67e2bac3cdd9fecd91ba226be283c4b2a6fea1a2d"
+      "sha256": "f8164fa83d46b76230f36fe09d8f1b607c02be125346357dce8dd2649e148346"
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
@@ -398,8 +398,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 340,
-    "without_address_mentions": 21
+    "with_address_mentions": 342,
+    "without_address_mentions": 19
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -3244,6 +3244,13 @@
       "modern_sha256": "364a2a17ec7f68eac62fc1ce0d1327b4f4236f254ea5bd2490a115998a3715d7",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-display-modes.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00448348"
+          ]
+        },
+        {
           "path": "analysis/original-modern-graphics-menu-transition.md",
           "entry_mentioned": true,
           "addresses": [
@@ -3268,7 +3275,15 @@
       "changed_bytes": 9,
       "original_sha256": "93b00e61578d0ef3ea5e66921d86fa556b31855a217305a58bffda6ee8bcaaf5",
       "modern_sha256": "de58c310d8b4b6147e4d7cf38774f7d8df5c190e6010c69562924e4cbe86b3dd",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-display-modes.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00448368"
+          ]
+        }
+      ]
     },
     {
       "entry": "00448374",
@@ -3286,7 +3301,15 @@
       "changed_bytes": 8,
       "original_sha256": "f8633d7c3b59e7b5791894d6ddb19a1ad330786b1c3bae954edebabf87770f79",
       "modern_sha256": "0734fcdf83732c4777088342f5e3a7292f8384173943116c0a38d4f5ce5150a1",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-display-modes.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00448374"
+          ]
+        }
+      ]
     },
     {
       "entry": "00448394",
