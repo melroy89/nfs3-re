@@ -236,3 +236,18 @@ Do not replace this with a generic NaN-preserving clamp or assume a different bo
 Its useful output is the store to **`0055fecc`**. No ordinary scalar return is constructed: FNSTSW writes AX twice, and the second snapshot remains in low16 EAX while high16 EAX retains the entry value. SAHF also changes integer flags. Later floating instructions can alter x87 status, so that captured AX is not asserted equal to the final status word. A C interface must not treat this residue as a reliable angle or success Boolean, nor silently claim full register/flag/state equivalence from a matching stored float.
 
 The two Modern-only observer-index sites `004dbc70/004dbc81` are therefore explained by this existing automatic-FOV mechanism, rather than two independent patch features. Same-address original code belongs to a different function envelope; the earlier paired producer/chooser/projection evidence supplies the version context. Caller EAX/flag liveness, actual cache-update frequency, rendering and historical introduction remain unverified. Executable bytes, Ghidra, raw exports and maintained C are unchanged.
+
+## View Angle option list and release-note correspondence
+
+The projection audit now pins descriptor `00556758`: both versions name `viewangle` and store its ordinal at `006fbc40`, the exact cell consumed by the paired choosers. Original points to the terminated WORD list at `005561e8`, IDs274/275; final Modern points to `005591ec`, IDs1947..1950. Official final-package English decodes these as follows; original retail text provenance is not established.
+
+| Build | Ordinal | Label from official final English | Verified chooser result |
+|---|---:|---|---|
+| Original | 0 | Wide | integer90 |
+| Original | 1 | Narrow | integer75 |
+| Final Modern | 0 | Automatic | cached binary32 angle |
+| Final Modern | 1 | Narrow (75°) | binary32 75 |
+| Final Modern | 2 | Normal (90°) | binary32 90 |
+| Final Modern | 3 | Wide (105°) | binary32 105 |
+
+This provides partial static support for MP140-063: the retained narrow angle is75, original's90-degree option corresponds numerically to final Normal, and final Wide supplies105. The source bullet describes an intermediate three-option list; the inspected final build has four entries including Automatic, consistent with its later automatic-angle mechanism. Original-versus-final cannot verify the exact v1.4.0 list or introduction date. Persisted ordinal0 also changes meaning from fixed90 to automatic; equivalence of configuration files requires explicit migration policy rather than copying indices and assuming identical behavior. Actual accepted UI writes, saved-setting migration, all camera callers and rendered output remain separate; descriptor/chooser linkage alone does not prove those paths.

@@ -31,6 +31,13 @@ def main():
                 'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
         item={'path':relative,'sha256':expected,'spans':rows}
+        descriptor=struct.unpack('<5I',pe.get_data(0x156758,20))
+        assert descriptor[0]==0x537fdc and descriptor[4]==0x6fbc40
+        assert pe.get_string_at_rva(0x137fdc)==b'viewangle'
+        expected_ids=[274,275] if label=='original' else [1947,1948,1949,1950]
+        assert list(struct.unpack('<'+'H'*(len(expected_ids)+1),pe.get_data(descriptor[1]-0x400000,2*(len(expected_ids)+1))))==expected_ids+[0]
+        item['view_angle_setting']={'descriptor':'00556758','words':[f'{v:08x}' for v in descriptor],
+            'key':'viewangle','storage':'006fbc40','ordinal_label_ids':expected_ids}
         centre_refs=[]
         for address in (0x564434,0x564438):
             needle=struct.pack('<I',address);offset=0;hits=[]
@@ -152,6 +159,16 @@ def main():
         'local_cw': 'No FLDCW/FINIT; computation and exceptions depend on ambient control state.',
         'limit': 'Symbolic branch/stack trace only; no NaN/zero-dimension instruction probe or game call.'}
     result['projection_builder_272_bytes_identical']=True
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    english=subprocess.check_output(['7z','x','-so',str(archive),'fedata/text/text.eng'])
+    labels={}
+    for ident in (274,275,1947,1948,1949,1950):
+        offset=struct.unpack_from('<I',english,4*ident)[0]
+        labels[str(ident)]=english[offset:english.index(b'\0',offset)].decode('latin1')
+    assert list(labels.values())==['Wide','Narrow','Automatic','Narrow (75°)','Normal (90°)','Wide (105°)']
+    result['view_angle_labels']={'member':'fedata/text/text.eng','sha256':hashlib.sha256(english).hexdigest(),
+        'labels':labels,'limits':'Original IDs decoded with final official Modern English; authenticated original retail labels and intermediate-release lists remain unverified.'}
     (ROOT/'analysis/evidence/audits/original-modern-projection.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: projection baselines, FOV/constants/callers and identical builder')
 

@@ -70,6 +70,22 @@
           "assembly_sha256": "97668716a556b58581604a4ffadfa45754d5be562ae2f1f5f225e3887c9ed8bd"
         }
       ],
+      "view_angle_setting": {
+        "descriptor": "00556758",
+        "words": [
+          "00537fdc",
+          "005561e8",
+          "00000000",
+          "00000000",
+          "006fbc40"
+        ],
+        "key": "viewangle",
+        "storage": "006fbc40",
+        "ordinal_label_ids": [
+          274,
+          275
+        ]
+      },
       "conditional_projection_source_storage": {
         "section": ".bss",
         "virtual_size": 0,
@@ -233,6 +249,24 @@
           "assembly_sha256": "e98b3166bb06195d44623f02d9dd09c8f53940df77173aa85e83769ffbd122ea"
         }
       ],
+      "view_angle_setting": {
+        "descriptor": "00556758",
+        "words": [
+          "00537fdc",
+          "005591ec",
+          "00000000",
+          "00000000",
+          "006fbc40"
+        ],
+        "key": "viewangle",
+        "storage": "006fbc40",
+        "ordinal_label_ids": [
+          1947,
+          1948,
+          1949,
+          1950
+        ]
+      },
       "conditional_projection_source_storage": {
         "section": ".bss",
         "virtual_size": 0,
@@ -604,5 +638,18 @@
     "local_cw": "No FLDCW/FINIT; computation and exceptions depend on ambient control state.",
     "limit": "Symbolic branch/stack trace only; no NaN/zero-dimension instruction probe or game call."
   },
-  "projection_builder_272_bytes_identical": true
+  "projection_builder_272_bytes_identical": true,
+  "view_angle_labels": {
+    "member": "fedata/text/text.eng",
+    "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "labels": {
+      "274": "Wide",
+      "275": "Narrow",
+      "1947": "Automatic",
+      "1948": "Narrow (75\u00b0)",
+      "1949": "Normal (90\u00b0)",
+      "1950": "Wide (105\u00b0)"
+    },
+    "limits": "Original IDs decoded with final official Modern English; authenticated original retail labels and intermediate-release lists remain unverified."
+  }
 }

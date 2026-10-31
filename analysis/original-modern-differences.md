@@ -480,7 +480,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **154 Claimed, 39 Static, 94 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **153 Claimed, 39 Static, 95 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -678,7 +678,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-060 | Super quick gameplay loading on modern systems (thanks Zeus for a hint). | Claimed |
 | MP140-061 | LoadingSplashTime ini setting for slowing down gameplay loading, set desired time in seconds or 0 to disable this feature (and get maximum possible speed). | Static |
 | MP140-062 | If this “splash” is enabled, it can be skipped just by pressing any key (but Esc aborts loading). | Static |
-| MP140-063 | The View Angle setting allows to enable wider view angle, which is useful for the widescreen resolutions. New set of options: Narrow, Normal (former Wide), Wide. | Claimed |
+| MP140-063 | The View Angle setting allows to enable wider view angle, which is useful for the widescreen resolutions. New set of options: Narrow, Normal (former Wide), Wide. | Partial |
 | MP140-064 | It is possible to show rear view mirror when viewing replays (using F7). | Partial |
 | MP140-065 | Autimatic creation of empty directories for saving game data. | Static |
 | MP140-066 | Working directory is set automatically to the directory of the exe file. | Static |

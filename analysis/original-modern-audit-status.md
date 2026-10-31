@@ -112,7 +112,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels154 entries vendor-only,39 bounded static,94 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels153 entries vendor-only,39 bounded static,95 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -148,3 +148,7 @@ MP161-007 now has a [branch-to-message mapping](original-modern-startup-paths.md
 ## Missing-driver diagnostic follow-up
 
 The [renderer-loader follow-up](original-modern-renderer-loading.md#missing-driver-diagnostic-correspondence) now maps the second MP161-007 subclaim: configuration constructor failure selects the missing-driver message; low-level load failure uses a distinct cannot-load message. Both named final-build diagnostic mechanisms are mapped, with retained branch captures and exact message assertions. Historical introduction, original-wide absence and runtime dialogs remain unverified; the catalog remains partial.
+
+## View Angle setting linkage
+
+The projection audit now pins both option-list descriptors, the shared selector and official final English labels. [MP140-063 linkage](original-modern-projection.md#view-angle-option-list-and-release-note-correspondence) establishes the75/90/105 choices and final Automatic addition. Ordinal0 changes from fixed90 to cached automatic; intermediate-release lists, persisted-setting migration and rendered behavior remain unverified.
