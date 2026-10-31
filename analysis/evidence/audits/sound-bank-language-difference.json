@@ -1,0 +1,159 @@
+{
+  "kind": "sound-bank-language-selection",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0040a010",
+          "end_exclusive": "0040a32c",
+          "sha256": "6cf24ef56f2c6fc3e12fdbd035bbf175b239472a67e2efd17b16c508358850d2",
+          "assembly": "analysis/captures/modern-differences/sound-bank-language/original-0040a010.asm"
+        },
+        {
+          "start": "00413750",
+          "end_exclusive": "004138d9",
+          "sha256": "111a2835d00bad299e370941766fffac0e731f3b2ef4bc0ab4b8ee5a92b5f091",
+          "assembly": "analysis/captures/modern-differences/sound-bank-language/original-00413750.asm"
+        },
+        {
+          "start": "00413bc0",
+          "end_exclusive": "004147f8",
+          "sha256": "7369a626bf00e14da6626b13ebbe671476f2176b7046ae2306ecd6cdb3b91e03",
+          "assembly": "analysis/captures/modern-differences/sound-bank-language/original-00413bc0.asm"
+        },
+        {
+          "start": "004a6ec4",
+          "end_exclusive": "004a6f2e",
+          "sha256": "68c1caf124a5c2fd21617bbc836f629e7033b25f2a1aaacf36aaf1663d61e793",
+          "assembly": "analysis/captures/modern-differences/sound-bank-language/original-004a6ec4.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0040a010",
+          "end_exclusive": "0040a32c",
+          "sha256": "90ba8ef3d9e77a331586453aaa3dc2fcf68162afa66e1f28722586eaae8ea001",
+          "assembly": "analysis/captures/modern-differences/sound-bank-language/official_modern-0040a010.asm"
+        },
+        {
+          "start": "00413750",
+          "end_exclusive": "004138d9",
+          "sha256": "f06cb0b8dcca3d3ef70cc1960c6a8c5c314da88074dd137d8f885137ae316209",
+          "assembly": "analysis/captures/modern-differences/sound-bank-language/official_modern-00413750.asm"
+        },
+        {
+          "start": "00413bc0",
+          "end_exclusive": "004147f8",
+          "sha256": "c509a0dd6a833caef028c00b8cd017c4c5d90e34b30586d3f8edbcc03a3a73f4",
+          "assembly": "analysis/captures/modern-differences/sound-bank-language/official_modern-00413bc0.asm"
+        },
+        {
+          "start": "004a6ec4",
+          "end_exclusive": "004a6f2e",
+          "sha256": "585f41cf176c02db359135ceac0821621874b791db42b43302809d8e6fe43700",
+          "assembly": "analysis/captures/modern-differences/sound-bank-language/official_modern-004a6ec4.asm"
+        }
+      ]
+    }
+  },
+  "functions": [
+    {
+      "entry": "0040a010",
+      "envelope_bytes": 796,
+      "changed_bytes": 3,
+      "changed_addresses": [
+        "0040a1a7",
+        "0040a1a8",
+        "0040a1a9"
+      ]
+    },
+    {
+      "entry": "00413750",
+      "envelope_bytes": 393,
+      "changed_bytes": 3,
+      "changed_addresses": [
+        "00413795",
+        "00413796",
+        "00413797"
+      ]
+    },
+    {
+      "entry": "00413bc0",
+      "envelope_bytes": 3128,
+      "changed_bytes": 61,
+      "changed_addresses": [
+        "00413be1",
+        "00413be2",
+        "00413be3",
+        "00413be4",
+        "00413be5",
+        "00413be6",
+        "00413be7",
+        "00413be8",
+        "00413be9",
+        "00413bea",
+        "00413beb",
+        "00413bec",
+        "00413bed",
+        "00413bee",
+        "00413bef",
+        "00413bf0",
+        "00413bf1",
+        "00413bf2",
+        "00413bf3",
+        "00413bf4",
+        "00413bf5",
+        "00413bf6",
+        "00413bf7",
+        "00413bf8",
+        "00413bf9",
+        "00413bfa",
+        "00413bfb",
+        "00413bfc",
+        "00413bfd",
+        "00413bfe",
+        "00413bff",
+        "00413c00",
+        "00413c01",
+        "00413c02",
+        "00413c03",
+        "00413c04",
+        "00413c05",
+        "00413c06",
+        "00413c07",
+        "00413c08",
+        "00413c09",
+        "00413c0a",
+        "00413c0b",
+        "00413c0c",
+        "00413c0d",
+        "00413c0e",
+        "00413c0f",
+        "00413c10",
+        "00413c11",
+        "00413c12",
+        "00413c13",
+        "00413c14",
+        "00414295",
+        "00414296",
+        "00414297",
+        "00414321",
+        "00414322",
+        "00414323",
+        "00414685",
+        "00414686",
+        "00414687"
+      ]
+    }
+  ],
+  "limits": [
+    "No game or audio execution; no asset availability validation.",
+    "Modern initializer helper contracts and all selector writers are not proved here."
+  ]
+}

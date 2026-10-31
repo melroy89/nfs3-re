@@ -410,6 +410,8 @@ The [shell-open wrapper comparison](original-modern-shell-open.md) records the r
 
 The [mouse-cursor callback comparison](original-modern-mouse-cursor.md) distinguishes conditional cursor hiding, removed display-count calls and the result-pointer stack-slot anomaly.
 
+The [sound-bank language comparison](original-modern-sound-bank-language.md) accounts for five cached-selector reads and the removed language-indexed path switch across three loading functions.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
