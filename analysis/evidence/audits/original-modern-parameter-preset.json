@@ -58,6 +58,17 @@
           181
         ]
       },
+      "retained_field_20": {
+        "constructor_store_sites": [
+          "0041dfc6",
+          "0041e00d"
+        ],
+        "raw_dword": "fffb0000",
+        "signed_value": -327680,
+        "constructor_and_apply_binary64_scale": 1.52587890625e-05,
+        "derived_stored_float_for_initialized_valid_templates": -5.0,
+        "limit": "Stored-value derivation under documented initialization/count and ordinary x87 execution; no runtime comparison or full-state claim."
+      },
       "caller_and_selector_witnesses": [
         {
           "start": "0041d610",
@@ -339,6 +350,17 @@
           182,
           181
         ]
+      },
+      "retained_field_20": {
+        "constructor_store_sites": [
+          "0041dfc6",
+          "0041e00d"
+        ],
+        "raw_dword": "fffb0000",
+        "signed_value": -327680,
+        "constructor_and_apply_binary64_scale": 1.52587890625e-05,
+        "derived_stored_float_for_initialized_valid_templates": -5.0,
+        "limit": "Stored-value derivation under documented initialization/count and ordinary x87 execution; no runtime comparison or full-state claim."
       },
       "caller_and_selector_witnesses": [
         {

@@ -64,6 +64,15 @@ def main():
         assert struct.unpack('<5H',pe.get_data(0x156252,10))==(184,183,182,181,0)
         row['viewlevel_descriptor']={'address':'00556730','words':[f'{x:08x}' for x in descriptor],
                                      'name':'viewlevel','choice_ids':[184,183,182,181]}
+        assert struct.unpack('<d',pe.get_data(0x136ce4,8))[0] == 1/65536
+        assert struct.unpack('<d',pe.get_data(0x136d6c,8))[0] == 1/65536
+        for site in (0x41dfc6,0x41e00d):
+            assert pe.get_data(site-0x400000,7)==bytes.fromhex('c740200000fbff')
+        row['retained_field_20']={'constructor_store_sites':['0041dfc6','0041e00d'],
+            'raw_dword':'fffb0000','signed_value':-327680,
+            'constructor_and_apply_binary64_scale':1/65536,
+            'derived_stored_float_for_initialized_valid_templates':-5.0,
+            'limit':'Stored-value derivation under documented initialization/count and ordinary x87 execution; no runtime comparison or full-state claim.'}
         row['caller_and_selector_witnesses'] = []
         for a,b in [(0x41d610,0x41d61a),(0x41d870,0x41d89d),
                     (0x41aaf0,0x41ab02),(0x41d9fa,0x41da0b),
