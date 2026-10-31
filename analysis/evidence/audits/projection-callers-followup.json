@@ -16,6 +16,18 @@
           "end_exclusive": "004dbddf",
           "sha256": "dbef7a2b2ff606f05f37fbf36cfe55f6de4a9fb18050e2119c8052f38c60e4d8",
           "assembly": "analysis/captures/modern-differences/projection-callers/original-004dbda0.asm"
+        },
+        {
+          "start": "004dece0",
+          "end_exclusive": "004dedea",
+          "sha256": "d2bddfcb7a7a069fd74800ad2dfef30dc85461845aab12d2dbb1b96df3d16297",
+          "assembly": "analysis/captures/modern-differences/projection-callers/original-004dece0.asm"
+        },
+        {
+          "start": "004dedf0",
+          "end_exclusive": "004dee71",
+          "sha256": "cab43b87c326ceb770029391c8918fa76e8ff66c4ee7a0b2111a9e728d8533e2",
+          "assembly": "analysis/captures/modern-differences/projection-callers/original-004dedf0.asm"
         }
       ],
       "scaling_constants": [
@@ -46,6 +58,18 @@
           "end_exclusive": "004dbddf",
           "sha256": "2c4e1f23409399c1eb6fdf585fbe0dff896034be8d97b57ded9303eff8f1f195",
           "assembly": "analysis/captures/modern-differences/projection-callers/official_modern-004dbda0.asm"
+        },
+        {
+          "start": "004dece0",
+          "end_exclusive": "004dedea",
+          "sha256": "d2bddfcb7a7a069fd74800ad2dfef30dc85461845aab12d2dbb1b96df3d16297",
+          "assembly": "analysis/captures/modern-differences/projection-callers/official_modern-004dece0.asm"
+        },
+        {
+          "start": "004dedf0",
+          "end_exclusive": "004dee71",
+          "sha256": "cab43b87c326ceb770029391c8918fa76e8ff66c4ee7a0b2111a9e728d8533e2",
+          "assembly": "analysis/captures/modern-differences/projection-callers/official_modern-004dedf0.asm"
         }
       ],
       "scaling_constants": [
@@ -62,6 +86,25 @@
       ]
     }
   },
+  "wide_angle_direct_call_candidates": {
+    "original": {
+      "sites": [
+        "004ded7a",
+        "004dee36"
+      ],
+      "method": "Every-byte E8/rel32 target scan over first code section; sites corroborated in retained full caller envelopes.",
+      "limits": "Excludes indirect calls, jumps, other sections and runtime-generated code."
+    },
+    "official_modern": {
+      "sites": [
+        "004ded7a",
+        "004dee36"
+      ],
+      "method": "Every-byte E8/rel32 target scan over first code section; sites corroborated in retained full caller envelopes.",
+      "limits": "Excludes indirect calls, jumps, other sections and runtime-generated code."
+    }
+  },
+  "weather_caller_envelopes_identical": true,
   "limits": [
     "Static bytes only; no rendered output or x87 state equivalence.",
     "Callee interface correspondence relies on the linked projection comparison."

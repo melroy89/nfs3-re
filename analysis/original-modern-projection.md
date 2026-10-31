@@ -85,7 +85,7 @@ This establishes that the new analysis should focus on changed rectangle/camera 
 
 ## Frame Size covering rectangle reaches the projection centre
 
-Three existing audits close a specific Modern input chain: [Frame Size labels/storage](original-modern-frame-setting.md), [covering-rectangle construction](original-modern-viewport-geometry.md#source-groups-covering-frame-versus-physicalfitted-rectangles), and [wide-angle caller](scripts/audit_projection_callers_followup.py). In the non-two-player branch, `004dbda0` supplies rectangle `007cdb88` to `004bed20` at `004dbdd6`. That helper passes the first four DWORDs as EAX/EDX/EBX/ECX to projection wrapper `004dbcc0` at `004bed34`; their FILD-to-float conversion reaches the retained centre builder above. The later +10h rectangle group is passed to a separate helper and must not be substituted for these projection inputs.
+Three existing audits close a specific Modern input chain: [Frame Size labels/storage](original-modern-frame-setting.md), [covering-rectangle construction](original-modern-viewport-geometry.md#source-groups-covering-frame-versus-physicalfitted-rectangles), and [wide-angle caller](scripts/audit_projection_callers_followup.py). This caller is used by the weather command builders, as established below; it is not by itself the ordinary scene-camera route. In the non-two-player branch, `004dbda0` supplies rectangle `007cdb88` to `004bed20` at `004dbdd6`. That helper passes the first four DWORDs as EAX/EDX/EBX/ECX to projection wrapper `004dbcc0` at `004bed34`; their FILD-to-float conversion reaches the retained centre builder above. The later +10h rectangle group is passed to a separate helper and must not be substituted for these projection inputs.
 
 For ordinary nonoverflowing positive dimensions with Frame Size bit1 clear, constructor height is `S=(3*W)>>2` and base origin is `D=(H-S)>>1`. Full/Centered uses Y=D; Full/Shifted (bit0 set) uses Y=D+(D>>1). Session1 overrides the constructor flags to0 and the wide-angle wrapper chooses a different per-view rectangle, so this derivation deliberately excludes that branch.
 
@@ -116,6 +116,14 @@ The verified setters `004beb00` and `004beb40` write the first and second groups
 The source dimensions, physical/fitted group and projection angles differ as well; matching centre540 is not matching projection. Reusing original ordinal1 as Modern ordinal1 also does not preserve its old framing. At640x480, original1 and Modern3 both derive centre200, but that equality is a scoped arithmetic example, not a general migration rule. The [Frame Size report](original-modern-frame-setting.md) retains the paired option IDs and official-label provenance limits.
 
 These before/after values narrow the camera-shift investigation without claiming a complete horizon explanation. The examples assume the inspected initial non-two-player route, ordinary fitting dimensions and no intervening rectangle writes. They were generated from static formulas in the viewport audit, not by running either game.
+
+## Wide-angle caller scope: temporary weather projection
+
+The caller follow-up audit now retains complete paired envelopes `004dece0..004dedea` and `004dedf0..004dee71`, both byte-identical across versions. Existing analysis labels them weather-particle and weather-overlay command builders. Their explicit wide-angle calls are **`004ded7a`** and **`004dee36`**; each reaches `004dbda0` with its context pointer. The audit scans every E8/rel32 target candidate in each first code section and finds only these two, corroborated in the retained caller instructions. This is bounded direct-call coverage, not exclusion of indirect callers or jumps.
+
+Both builders later call `004dbde0` with context, at `004dedd2` and `004dee58`, after their command-building work. That routine reselects a projection based on context/session and the configured-angle chooser. The temporary weather setup therefore must not be described as the universal active camera or proof of the scene's final horizon. Its shared wrapper still requires the verified original integer120 versus Modern binary32-120 ABI adjustment.
+
+The next substantive horizon link is the context-dependent ordinary selector at `004dbde0`, including its rectangle choices and later centre writers. The covering-rectangle examples remain valid for the scoped temporary path; they do not establish global projection ownership or rendered output.
 
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
 

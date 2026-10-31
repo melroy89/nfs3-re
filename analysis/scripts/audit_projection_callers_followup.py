@@ -18,7 +18,8 @@ def main():
         pe = pefile.PE(data=raw)
         rows = []
         blobs[label] = []
-        for start, end in [(0x495190, 0x495223), (0x4dbda0, 0x4dbddf)]:
+        for start, end in [(0x495190, 0x495223), (0x4dbda0, 0x4dbddf),
+                           (0x4dece0,0x4dedea),(0x4dedf0,0x4dee71)]:
             data = pe.get_data(start - 0x400000, end - start)
             blobs[label].append(data)
             path = capture / f'{label}-{start:08x}.asm'
@@ -32,9 +33,19 @@ def main():
             constants.append({'address': f'{address:08x}', 'bytes_hex': data.hex(),
                 'binary32_value': struct.unpack('<f', data)[0]})
         assert [c['bytes_hex'] for c in constants] == ['cdcccc3a', '8988083b']
+        section=pe.sections[0]; base=pe.OPTIONAL_HEADER.ImageBase+section.VirtualAddress
+        code=pe.get_data(section.VirtualAddress,section.SizeOfRawData)
+        sites=[base+i for i in range(len(code)-4) if code[i]==0xe8 and base+i+5+int.from_bytes(code[i+1:i+5],'little',signed=True)==0x4dbda0]
+        assert sites==[0x4ded7a,0x4dee36]
+        result.setdefault('wide_angle_direct_call_candidates',{})[label]={
+            'sites':[f'{x:08x}' for x in sites],
+            'method':'Every-byte E8/rel32 target scan over first code section; sites corroborated in retained full caller envelopes.',
+            'limits':'Excludes indirect calls, jumps, other sections and runtime-generated code.'}
         result['binaries'][label] = {'path': relative, 'sha256': expected,
             'spans': rows, 'scaling_constants': constants}
     old, new = blobs['original'], blobs['official_modern']
+    assert old[2:]==new[2:]
+    result['weather_caller_envelopes_identical']=True
     assert [i for i, (a, b) in enumerate(zip(old[0], new[0])) if a != b] == [0x34, 0x35, 0x47, 0x48]
     assert old[0][0x32:0x38] == bytes.fromhex('d80d28be5300')
     assert new[0][0x32:0x38] == bytes.fromhex('d80dd4bd5300')
