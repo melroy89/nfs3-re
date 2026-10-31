@@ -19,3 +19,13 @@ Modern compares the selected handler’s EAX with3. On equality, it pushes that 
 Paired prefix **`00445e60..00445e9a`** and complete tail **`00445ec7..00445efa`** are byte-identical. The retained tail calls optional callback `00558b18` for nonzero handler results, passing a local byte pointer in EDX; that byte controls the later close-helper call. Callback result2 is normalized to0 for the outer return. The initial scene/global admission checks also remain in the equal prefix.
 
 Handler result3’s action identity, full per-dialog navigation behavior, callback preservation and audible consistency remain unresolved. The finding gives partial support for the mini-dialog keyboard-sound claim, but is not complete validation of every dialog or every navigation action. No keyboard layout, held-key timing or UI state was tested.
+
+## First handler: Escape versus navigation feedback
+
+The expanded audit retains complete paired first handler **`00444910..004449c6`**. Exactly four byte positions differ, all within the two relative CALL operands at **`0044496b`** and **`0044498d`**. Original calls dialog cursor-position helper **`00444570`**; Modern calls wrapper **`0043eb88`**. Existing [cursor-position analysis](original-modern-cursor-position.md) verifies that wrapper requests sound0 only when cursor positioning reports a valid item. No other local instruction changes occur in this handler.
+
+Both handlers map low-WORD **`0x1b` (Escape)** to EDX3 and return it in EAX, whereas **`0x0d` (Enter)** returns1. Left/up codes `0x4b00`/`0x4800` decrement the selected index with wrap; right/down `0x4d00`/`0x5000` increment it with wrap. The cursor-call wrapper preserves EDX, so the navigation route keeps its initial result0. Unrecognized inputs also return that initial0. Count/index validity remains a separate invariant; this is not proof of safe empty-dialog navigation.
+
+Thus the new central result3 sound is concretely an Escape/cancel-associated request for this first handler. Navigation can instead request sound0 through the newly retargeted cursor wrapper, then returns0 and bypasses the central callback/close route. Enter’s result1 follows the retained callback handling without this central sound3 request. The conclusion is scoped to the inspected first handler; the other three handler contracts and all dialog callback meanings remain separate work.
+
+This connects the added sound request to an actual input value and separates it from navigation feedback. Audible volume, throttling and device behavior still depend on the changed sound helper and runtime state. No dialog key was pressed during this audit.

@@ -12,6 +12,13 @@
           "sha256": "6388b67d7c3c0d771598e4492b63b9155751ed4ee0361eb38940dd123174ff89",
           "assembly": "analysis/captures/modern-differences/dialog-input/original-00445e60.asm",
           "assembly_sha256": "7357b35bd8bc619fed42a6c9bd719e4f420602c2fff2a2d555f12e66d6616c7d"
+        },
+        {
+          "start": "00444910",
+          "end": "004449c6",
+          "sha256": "fd41bd54bbf6f75c575e8c1f47d0305061237beee4c9fe8f068a6a0f37d8d0f4",
+          "assembly": "analysis/captures/modern-differences/dialog-input/original-00444910.asm",
+          "assembly_sha256": "4f51beabb42a6de3e33788ace461dc9c163568882ccab3d926ae531eaeb0c5ef"
         }
       ],
       "dispatch_table": [
@@ -33,6 +40,13 @@
           "assembly_sha256": "4ef0bde91f132e40650d37ade776a9516c1627d15e35e1a01944ba6b05273118"
         },
         {
+          "start": "00444910",
+          "end": "004449c6",
+          "sha256": "ceea87deeee303228fb8efdab88ef067739e66fd627c900a559900da288fa6d6",
+          "assembly": "analysis/captures/modern-differences/dialog-input/official_modern-00444910.asm",
+          "assembly_sha256": "c7238de1774ba5e3dd9255fa85b96f605f8afbb451cfb8c89b3d9eb97f574064"
+        },
+        {
           "start": "004f1fcc",
           "end": "004f1ff0",
           "sha256": "68b6c146c2f01c248a7472b7372697bbe35ff95b695b4606ca429a2578f4cd67",
@@ -48,6 +62,12 @@
       ]
     }
   },
+  "first_handler_changed_addresses": [
+    "0044496c",
+    "0044496d",
+    "0044498e",
+    "0044498f"
+  ],
   "modern_key_import": {
     "00534738": "GetAsyncKeyState"
   },

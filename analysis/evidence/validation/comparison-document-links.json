@@ -63,8 +63,8 @@
     },
     {
       "path": "analysis/original-modern-dialog-input.md",
-      "sha256": "d4766d52426665aba1d89875206b8fb7cb74e62a5d7e0008846230a0931bf631",
-      "relative_links": 3
+      "sha256": "8fb8d28f3439eb681c872e8c22917dd24e9716d254ea70cfaffd4ba555d9111b",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-differences.md",
@@ -393,7 +393,7 @@
     }
   ],
   "file_count": 78,
-  "relative_link_count": 565,
+  "relative_link_count": 566,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
