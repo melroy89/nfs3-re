@@ -1,0 +1,147 @@
+{
+  "kind": "colour-control-asset-comparison",
+  "files": {
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/car1.mnu",
+      "sha256": "e85a7450867907a0705eeec5247b43e9729a19a394fd2605afafaa66d95731a8",
+      "records": {
+        "CAR_COLOR_SELECT_P1": {
+          "section": "[carclrselect]",
+          "line": 50,
+          "fields": {
+            "x": "126",
+            "y": "220",
+            "priority": "2",
+            "codelink": "CAR_COLOR_SELECT_P1",
+            "text": "kMenuCAR1selectco001",
+            "player": "0"
+          }
+        },
+        "COLOR_EDIT": {
+          "section": "[colorwheel]",
+          "line": 223,
+          "fields": {
+            "x": "163",
+            "y": "209",
+            "priority": "0",
+            "codelink": "COLOR_EDIT",
+            "title": "kMenuCAR1customco001",
+            "oktxt": "kMenuCAR1Accept001",
+            "prevtxt": "kMenuCAR1Preview001",
+            "w": "155",
+            "h": "210",
+            "vsx": "40",
+            "vsy": "22",
+            "vsw": "100",
+            "vsh": "100",
+            "hx": "15",
+            "hy": "22",
+            "hw": "15",
+            "hh": "100",
+            "cx": "105",
+            "cy": "125",
+            "cw": "40",
+            "ch": "15",
+            "okx": "2",
+            "oky": "173",
+            "prevx": "2",
+            "prevy": "152"
+          }
+        }
+      }
+    },
+    "local_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CAR1.MNU",
+      "sha256": "513614231e8001f788f8f4ce9ec8c2fb1e7001c2e0825e706d430c8dce622bcc",
+      "records": {
+        "CAR_COLOR_SELECT_P1": {
+          "section": "[carclrselect]",
+          "line": 71,
+          "fields": {
+            "x": "128",
+            "y": "208",
+            "priority": "2",
+            "codelink": "CAR_COLOR_SELECT_P1",
+            "postonly": "0",
+            "mainonly": "0",
+            "EnableForDemo": "1",
+            "EnableForE3Demo": "1",
+            "text": "kMenuCAR1selectco001",
+            "player": "0"
+          }
+        },
+        "COLOR_EDIT": {
+          "section": "[colorwheel]",
+          "line": 388,
+          "fields": {
+            "x": "163",
+            "y": "209",
+            "priority": "0",
+            "codelink": "COLOR_EDIT",
+            "postonly": "0",
+            "mainonly": "0",
+            "EnableForDemo": "1",
+            "EnableForE3Demo": "1",
+            "title": "kMenuCAR1customco001",
+            "oktxt": "kMenuCAR1Accept001",
+            "prevtxt": "kMenuCAR1Preview001",
+            "w": "155",
+            "h": "210",
+            "vsx": "40",
+            "vsy": "22",
+            "vsw": "100",
+            "vsh": "100",
+            "hx": "15",
+            "hy": "22",
+            "hw": "15",
+            "hh": "100",
+            "cx": "105",
+            "cy": "125",
+            "cw": "40",
+            "ch": "15",
+            "okx": "2",
+            "oky": "173",
+            "prevx": "2",
+            "prevy": "152"
+          }
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "CAR_COLOR_SELECT_P1": {
+      "changed_common_fields": {
+        "x": {
+          "backup": "128",
+          "official": "126"
+        },
+        "y": {
+          "backup": "208",
+          "official": "220"
+        }
+      },
+      "backup_only_fields": {
+        "EnableForDemo": "1",
+        "EnableForE3Demo": "1",
+        "mainonly": "0",
+        "postonly": "0"
+      },
+      "official_only_fields": {}
+    },
+    "COLOR_EDIT": {
+      "changed_common_fields": {},
+      "backup_only_fields": {
+        "EnableForDemo": "1",
+        "EnableForE3Demo": "1",
+        "mainonly": "0",
+        "postonly": "0"
+      },
+      "official_only_fields": {}
+    }
+  },
+  "limits": [
+    "Official final asset versus local backup; original retail provenance and historical introduction unverified.",
+    "Authored coordinates only; runtime widget padding, layout defaults, hit testing and rendered position untested.",
+    "Two distinct widgets; no inferred identity between colour-wheel handler and car-colour dropdown."
+  ]
+}

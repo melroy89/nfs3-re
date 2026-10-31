@@ -4,7 +4,7 @@
 
 Static paired comparison of frontend colour handler **`0043ead0`**, original **232 bytes through `0043ebb8`**, Modern **181 bytes through `0043eb85`**. Reproduce with `python3 analysis/scripts/audit_colour_control_difference.py`; the [manifest](evidence/audits/original-modern-colour-control.json) retains both full bodies, shared prefix and five complete identical helpers. Exact executable identities follow the [baseline](original-modern-differences.md). No UI/audio/instruction execution or Ghidra edits.
 
-The saved Modern name identifies an HSV colour control, not the HSV automobile marque mentioned in separate logo claims. **MP140-013** bundles colour dropdown sound consistency and padding; this chapter supports only the bounded sound-request/dispatch change.
+The saved Modern name identifies an HSV colour control, not the HSV automobile marque mentioned in separate logo claims. **MP140-013** bundles colour dropdown sound consistency and padding; the handler’s connection to that specific dropdown is not established. The code findings below are retained independently, and the asset follow-up distinguishes the widgets.
 
 ## Retained state machine and shorter release actions
 
@@ -30,4 +30,19 @@ The complete bodies of `0043e8e0` (hit region), `0043e7a0` (cursor-driven compon
 
 The whole-function inventory’s101 changed bytes within the181-byte Modern range omits the old function’s additional51 bytes. The paired full bodies retained here are therefore the appropriate basis for explaining the removed sound setup and reorganized exits, rather than treating that inventory count as a complete semantic diff.
 
-**MP140-013:** partial static support for removal of three bespoke release-action sound requests. Padding and consistency with every other control remain unverified; the hit tester itself has unchanged bytes. Next inspect its caller/registration and the authored colour-control layout before attributing a padding fix or an audible result. No executable bytes or saved database state were changed.
+**MP140-013:** the three removed HSV-handler sound requests are related colour-control evidence, not verified dropdown attribution. The asset follow-up supplies a separate bounded dropdown-coordinate finding; padding and consistency with every other control remain unverified. The hit tester itself has unchanged bytes. Next inspect its caller/registration and the authored colour-control layout before attributing a padding fix or an audible result. No executable bytes or saved database state were changed.
+
+## Asset follow-up: dropdown and wheel are distinct controls
+
+The [asset manifest](evidence/inventories/colour-control-assets.json), reproduced with `python3 analysis/scripts/inventory_colour_control_assets.py`, compares two selected records in official `fedata/menus/car1.mnu` with the local uppercase backup. The official member is checked directly against the hash-pinned release archive; the backup is not authenticated retail media.
+
+| Widget section / codelink | Backup | Official final asset |
+|---|---|---|
+| `[carclrselect]` / `CAR_COLOR_SELECT_P1` | x128,y208 | x126,y220 |
+| `[colorwheel]` / `COLOR_EDIT` | x163,y209,w155,h210 | Same |
+
+For the wheel, **all shared fields** match, including HSV subrectangles and Accept/Preview coordinates. For the dropdown, the only changed shared fields are x/y; title, priority2 and player0 match. Both official records omit legacy `postonly`, `mainonly`, `EnableForDemo` and `EnableForE3Demo` fields present in the backup. Their defaults are not inferred from omission.
+
+The dropdown therefore has a verified authored left2/down12 coordinate change. It is not yet a verified internal padding change or a measured pixel result. The asset distinction also corrects the earlier premature association of the HSV release-handler changes with the release note’s **dropdown** sound claim. There is a direct call to `0043ead0` at `0043ebd9` in the retained disassembly locator, but its widget registration/caller relationship still needs explicit tracing. Do not merge these widget contracts merely because both edit car colour.
+
+For **MP140-013**, evidence remains partial: the named dropdown’s authored position changed, while the exact padding mechanism, relevant dropdown sound path and visual/audible consistency remain unverified. The complete HSV code comparison remains useful independent evidence for reconstruction, without claiming it proves that bundled release-note item.
