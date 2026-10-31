@@ -100,3 +100,28 @@ Examples derived from those instructions, **not game execution**, with X=Y=0:
 The main viewport initializer calls it at `004be851` after `004be3d0`. Another viewport-update path calls it at `004bea2a`, after its own `004be3d0` call and conditional state write. The captured latter region is a caller witness, not a complete analysis of that enclosing function. These two producers do not prove freshness at every overlay call; further writes/aliases and lifecycle ordering remain dependencies.
 
 This narrows the overlay change to use of a **derived, slightly expanded rectangle** rather than simple address relocation. The source-group producer/profile meaning, intended seam/coverage effect and actual visible result remain unresolved. No release-note bug is assigned from the correction alone. Preserve the literal operation order, overflow and extent semantics during original/Modern C reconstruction until a deliberate policy change is separately validated. No target instructions were executed.
+
+## Source groups: covering frame versus physical/fitted rectangles
+
+The complete Modern initializer already retained at `004be5e0..004be85a` resolves the source group's ordinary initialization. Its first call pair targets the two groups of record **`007cdb88`** through different setters:
+
+- `004be652` calls `004be8a8`, which writes **record+10h..1ch**, therefore `007cdb98..007cdba4`. With ESI bit1 clear, this is `{0,0,W,H}` from the physical display dimensions. With bit1 set, it uses `{0, (H-(W>>1))>>1, W, W>>1}` in ordinary arithmetic.
+- `004be683` calls `004be89c`, which writes **record+0..0ch**, therefore `007cdb88..007cdb94`. It stores X=0, width W and synthetic height `S=(wrap32(3*W)) arithmetic_shift_right 2`. Its base Y is `D=(wrap32(H-S)) arithmetic_shift_right 1`.
+
+These are different groups in one record. Original overlay code reads the +10h group; Modern overlay reads a corrected derivative of the +0 group. Merely saying “both use viewport width/height” would conceal that distinction.
+
+ESI is zero when session value `006fd3b0 == 1`; otherwise it is read from `006fbc4c`. For the first group, if ESI bit0 is set the initializer changes Y to `wrap32(D + (D arithmetic_shift_right 1))`. If both bits0/1 are set, it additionally subtracts the twice-arithmetic-shifted value `wrap32(H - (W arithmetic_shift_right 1))`. These flag branches must not be erased while generalizing the ordinary zero-flag example. The overlay's own revised bit1 gate can independently reject drawing.
+
+For ordinary positive, nonoverflowing dimensions with these flags zero, the first group is a **width-based 4:3 covering frame**. It may extend vertically beyond the display, unlike the separately established fitted rectangle at `007a2740`. Derived examples, not runtime observations:
+
+| Physical display | Source group at `007cdb88` | Corrected overlay group at `007a2750` | Fitted group at `007a2740` |
+|---|---|---|---|
+| 640×480 | `{0,0,640,480}` | `{0,0,640,480}` | `{0,0,640,480}` |
+| 1920×1080 | `{0,-180,1920,1440}` | `{0,-180,1922,1441}` | `{240,0,1440,1080}` |
+| 1280×1024 | `{0,32,1280,960}` | `{0,32,1281,960}` | `{0,32,1280,960}` |
+
+Thus the prior extent-correction examples using source `{0,0,W,H}` were conditional examples of that helper, not necessarily the source produced by physical-mode initialization. In particular, a 1920×1080 display does not imply source height1080 in this zero-flag path.
+
+The expanded audit also retains complete Modern resize/update code `004be970..004bea36` and rectangle-adjustment helper `004bea40..004beaf7`. The former applies the helper to the record and eventually refreshes `007a2750`; this is why initial tuples alone are not lifetime invariants. The adjustment helper can update both groups' origins/extents after bounds tests. Its full caller/UI binding, arithmetic admission and original counterpart remain pending; this report does not attribute it to the Frame Size release-note change solely from nearby code.
+
+For reconstruction, give the physical +10h group, covering +0 group, corrected overlay group and fitted reference group distinct identities. Their storage adjacency does not make them aliases or equivalent rectangles. The intervening complete `004be3d0..004be570` helper is now retained too: it reads rectangle state to construct separate float geometry, with no calls or stores back to these source groups in its inspected body. This narrows the ordinary producer-to-correction linkage without proving all later writers absent. Runtime profile/flag admission, resize ordering, clipping and final visual acceptance remain outstanding. No original executable behaviour is inferred from the new Modern producer names alone.

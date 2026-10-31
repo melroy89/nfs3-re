@@ -322,7 +322,7 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 ## Viewport overlay gate, rectangles and added quads
 
-[The viewport overlay comparison](original-modern-view-overlay.md) maps the narrower bit gate, moved rectangle operands and added fixed-colour shapes. The rectangle producer is now traced to a distinct extent-correction helper and two update calls. The comparison also retains the complete 143-byte delta envelope: the Modern-range count of138 excludes five bytes belonging to an original CALL operand, so it is not a complete original-instruction diff.
+[The viewport overlay comparison](original-modern-view-overlay.md) maps the narrower bit gate, moved rectangle operands and added fixed-colour shapes. The rectangle producer is now traced to a distinct extent-correction helper and two update calls. Its source initialization distinguishes a width-based covering frame from physical and fitted rectangles, with explicit zero-flag examples. The comparison also retains the complete 143-byte delta envelope: the Modern-range count of138 excludes five bytes belonging to an original CALL operand, so it is not a complete original-instruction diff.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
