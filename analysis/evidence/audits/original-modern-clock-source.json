@@ -35,6 +35,13 @@
           "assembly_sha256": "b3fe5097b768cafc4d5e1a083f63abee963fb2de30b4d80563367350c4b75ab9"
         },
         {
+          "start": "004f0240",
+          "end": "004f024a",
+          "bytes_sha256": "2dc0530cf68de2cd689b61a865412cfe4ba140dbf86e1f7b36a3b496a3224056",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-004f0240.asm",
+          "assembly_sha256": "3eb76ad8ff44cf9445c94a09b75d5e3436c02dabb7760f690e9165f948eadd2f"
+        },
+        {
           "start": "004f2790",
           "end": "004f279c",
           "bytes_sha256": "cf2049efe9ac8f4ae48baacc14d75fc7aaf3dbd5614f75e6f1899d809b519f08",
@@ -211,6 +218,13 @@
           "bytes_sha256": "568bc1f6566f471c64330a6c2244601bbe55b9eea06ea8695e24c3468fafab37",
           "assembly": "analysis/captures/modern-differences/clock-source/official_modern-0048f075.asm",
           "assembly_sha256": "433dc9bf8af6320fb7b321a2b5286b9b6243984f1472944b67037f1f940a2317"
+        },
+        {
+          "start": "004f0240",
+          "end": "004f024a",
+          "bytes_sha256": "2dc0530cf68de2cd689b61a865412cfe4ba140dbf86e1f7b36a3b496a3224056",
+          "assembly": "analysis/captures/modern-differences/clock-source/official_modern-004f0240.asm",
+          "assembly_sha256": "0aad2521beffa6ed7cf0c891ba3d9a67c64c5c27ea375276be845e136ab966a4"
         },
         {
           "start": "004f2790",
@@ -520,5 +534,11 @@
         "0048f17b"
       ]
     }
-  ]
+  ],
+  "original_loading_input_drain": {
+    "call": "004a3481 ->004f0240",
+    "retained_helper": "004f0240..004f024a identical in both baselines",
+    "behavior": "Calls004cc970 repeatedly while full EAX result nonzero; exits withEAX0.",
+    "limit": "No timer read or sleep in this wrapper; source synchronization/translation may have separate effects. Not a fixed loading delay or performance measurement."
+  }
 }

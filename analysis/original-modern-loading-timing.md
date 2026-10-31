@@ -54,3 +54,9 @@ Run `python3 analysis/scripts/audit_clock_source_difference.py` (Python `pefile`
 ## Limits
 
 Static evidence comes from the two hash-pinned executables and the paired function inventory at `analysis/evidence/audits/original-modern-function-diff.json`; raw disassemblies are retained as ignored captures. The shared clock helper `004f2790`, Modern timer worker and broader timer API changes are intentionally not re-audited here. No game, probe, test or Ghidra operation was performed; no executable was modified.
+
+## Original polling call is an input drain, not a timed delay
+
+The expanded clock audit asserts original CALL `004a3481 ->004f0240` and the complete10-byte helper `004f0240..004f024a`, identical in both executables. It repeatedly calls `004cc970`, tests the full EAX result and loops while nonzero. On ordinary exit EAX is zero. There is no timer read or sleep in this wrapper. Existing [queued-input contracts](detailed-analysis-notes.md#queued-input-result-wrappers-004f00d0-004f0240) establish its dequeue source; source locking/translation and concurrent producers remain separate concerns, so this is not an atomic flush guarantee.
+
+Consequently removing this call from a loading sequence must not be described as removing a fixed sleep or establishing the “super quick gameplay loading” claim MP140-060. Its cost depends on queued input and source behavior. The already documented clock/progress restructuring, removed descriptor queries and display timing are concrete code differences, but no end-to-end loading benchmark has established that release-note claim. It remains vendor-only in the catalog. This clarification prevents a plausible timing label from replacing the actual instructions; no input or game code was executed.

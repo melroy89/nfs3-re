@@ -25,7 +25,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         data=(ROOT/relative).read_bytes();assert hashlib.sha256(data).hexdigest()==expected
         pe=pefile.PE(data=data);images[label]=pe
-        spans=list(TIMER_SPANS)+[(0x4f2790,0x4f279c if label=='original' else 0x4f279b),
+        spans=list(TIMER_SPANS)+[(0x4f0240,0x4f024a),(0x4f2790,0x4f279c if label=='original' else 0x4f279b),
                                  (0x533d18,0x533d1e)]
         if label=='original':spans += [(0x4a3400,0x4a35cb)]
         else:spans += [(0x4a33d0,0x4a35a5),(0x490134,0x4901c3),
@@ -67,6 +67,14 @@ def main():
         normalized.append({'start':f'{start:08x}','end':f'{end:08x}',
                            'only_changes_are_clock_IAT_operands':True,'sites':replaced})
     result['normalized_timer_ranges']=normalized
+    for image in images.values():
+        assert image.get_data(0xf0240,10).hex()=='e82bc7fdff85c075f7c3'
+    assert images['original'].get_data(0xa3481,5).hex()=='e8bacd0400'
+    result['original_loading_input_drain']={
+        'call':'004a3481 ->004f0240',
+        'retained_helper':'004f0240..004f024a identical in both baselines',
+        'behavior':'Calls004cc970 repeatedly while full EAX result nonzero; exits withEAX0.',
+        'limit':'No timer read or sleep in this wrapper; source synchronization/translation may have separate effects. Not a fixed loading delay or performance measurement.'}
     output=ROOT/'analysis/evidence/audits/original-modern-clock-source.json'
     output.write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: 16 clock callsites, 3 timer functions after operand normalization, loading spans')

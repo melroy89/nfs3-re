@@ -223,8 +223,8 @@
     },
     {
       "path": "analysis/original-modern-loading-timing.md",
-      "sha256": "4cd3f7db1ced80356e1b2a283f11d8c59333ef33595a0c2bcd011b40dd325e1e",
-      "relative_links": 2
+      "sha256": "fe5ff446cef3a5eb1bfd25036e2d90e24a88f4a047d44c3f28b180c82213d120",
+      "relative_links": 3
     },
     {
       "path": "analysis/original-modern-map-marker-scaling.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1781,
+  "relative_link_count": 1782,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
