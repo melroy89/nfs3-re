@@ -270,6 +270,10 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 [MP140-018 and the menu inventory](original-modern-common-menu-buttons.md) records Options/Exit additions in three official menu files versus local uppercase backups. A reproducible 52-file inventory retains routing fields and hashes, checking each official file directly against its archive member. Runtime visibility and related postgame/Race Now lifecycle claims remain separate.
 
+## Complete menu loader comparison
+
+[The menu graph loader](original-modern-menu-loader.md) differs only in three immediate-operand bytes: original literal directory becomes a Modern initialized path buffer. The full local body comparison narrows the code delta while preserving asset, helper, initialization and filesystem limitations.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
