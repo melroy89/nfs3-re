@@ -128,8 +128,8 @@
     },
     {
       "path": "analysis/original-modern-effect-renderer-masks.md",
-      "sha256": "9adeec4f3b171118d93678e0eed8af5e58da0a2b817f2594c57b89b1749842e8",
-      "relative_links": 3
+      "sha256": "c2f8bc2f4cc01bcce2f24f5f0565534473c9b4777a51670b87c1cf31a21da090",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-environment-grid.md",
@@ -318,8 +318,8 @@
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",
-      "sha256": "ccb58e3815dd25dccddb9692b83e9e851658e6d5ce84be75bca5cafedc666a33",
-      "relative_links": 12
+      "sha256": "2a43a9e3518e094a7a75e73570ccbe396e73c2884d876c3de68d4a4ac80971f2",
+      "relative_links": 13
     },
     {
       "path": "analysis/original-modern-pause-title.md",
@@ -583,7 +583,7 @@
     }
   ],
   "file_count": 116,
-  "relative_link_count": 1725,
+  "relative_link_count": 1727,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

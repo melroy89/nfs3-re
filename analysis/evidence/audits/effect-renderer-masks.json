@@ -71,7 +71,19 @@
           "sha256": "56fbcba272beb55cd9aae57578acab960f626c904bcc17e1bc860ff6c0466bf0",
           "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-004de700.asm"
         }
-      ]
+      ],
+      "retained_view_distance_scale_table": {
+        "address": "004ca480",
+        "bytes": "0000803f0000803f9a99593f3333333f",
+        "binary32_values": [
+          1.0,
+          1.0,
+          0.8500000238418579,
+          0.699999988079071
+        ],
+        "consumer_start": "004cbdcc",
+        "consumer_exclusive_end": "004cbde6"
+      }
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -143,7 +155,19 @@
           "sha256": "58eafe5ce251e0ddae6b89f92d5622213f9e65ed577436b5ac18b9d6038a6bdd",
           "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-004de700.asm"
         }
-      ]
+      ],
+      "retained_view_distance_scale_table": {
+        "address": "004ca480",
+        "bytes": "0000803f0000803f9a99593f3333333f",
+        "binary32_values": [
+          1.0,
+          1.0,
+          0.8500000238418579,
+          0.699999988079071
+        ],
+        "consumer_start": "004cbdcc",
+        "consumer_exclusive_end": "004cbde6"
+      }
     }
   },
   "functions": [

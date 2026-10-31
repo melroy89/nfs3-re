@@ -2,6 +2,7 @@
 import hashlib
 import json
 import subprocess
+import struct
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
@@ -34,7 +35,14 @@ def main():
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}',
                 'sha256':hashlib.sha256(data).hexdigest(),'assembly':str(path.relative_to(ROOT))})
-        result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows}
+        table=pe.get_data(0xca480,16)
+        assert struct.unpack('<4I',table)==(0x3f800000,0x3f800000,0x3f59999a,0x3f333333)
+        assert pe.get_data(0x4cbdcc-0x400000,26)==bytes.fromhex(
+            'a128bc6f00d982c40b5600d80c8580a44c00d85dc6dfe09e730b')
+        result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,
+            'retained_view_distance_scale_table':{'address':'004ca480','bytes':table.hex(),
+                'binary32_values':list(struct.unpack('<4f',table)),
+                'consumer_start':'004cbdcc','consumer_exclusive_end':'004cbde6'}}
     for i,(start,end,changed) in enumerate(SPANS):
         old,new=blobs['original'][i],blobs['official_modern'][i]
         offset=changed-start
