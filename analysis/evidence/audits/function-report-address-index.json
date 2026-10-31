@@ -85,7 +85,7 @@
     },
     {
       "path": "analysis/original-modern-dialog-input.md",
-      "sha256": "0e85e2fd9fa4f524c6158d7bd9e8b8ed6b36b0e0acbd622d153f236fd0ebbd8c"
+      "sha256": "e348d389e4d789533dad144c1f856e37b55261f66181585935d8e35c91143f55"
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -398,8 +398,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 342,
-    "without_address_mentions": 19
+    "with_address_mentions": 343,
+    "without_address_mentions": 18
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -2188,7 +2188,16 @@
       "changed_bytes": 2,
       "original_sha256": "64d40fb32f32bb2d6c4105d2347dfdfa6ae3853c7d2119fb01a001e05be92cc2",
       "modern_sha256": "d3076d522cb36c942de830527e3e313e79a358b6b92d098c2913a92cdc144d91",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-dialog-input.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0043f680",
+            "0043f6f3"
+          ]
+        }
+      ]
     },
     {
       "entry": "0043f760",
@@ -6920,6 +6929,13 @@
       "original_sha256": "585287e02fe3d322ca67388068d488b052d52427eea0e0cc8c79f64bc84547d7",
       "modern_sha256": "e58f1330d4f90071561a9b94470cf6646b99e5d02c9e7d1d700df3641f91c9d8",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-dialog-input.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0049ea70"
+          ]
+        },
         {
           "path": "analysis/original-modern-network-endpoints.md",
           "entry_mentioned": true,

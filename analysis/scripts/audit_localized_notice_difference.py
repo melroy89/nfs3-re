@@ -10,7 +10,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images.append(pe);rows=[]
-        spans=[(0x444a80,0x444b1d),(0x43fdd0,0x43fe0e),((0x444be0 if label=='original' else 0x43fda0),(0x444c0d if label=='original' else 0x43fdcc))]
+        spans=[(0x444a80,0x444b1d),(0x43fdd0,0x43fe0e),((0x444be0 if label=='original' else 0x43fda0),(0x444c0d if label=='original' else 0x43fdcc)),(0x43f680,0x43f75a)]
         for start,end in spans:
             data=pe.get_data(start-0x400000,end-start);out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -26,6 +26,13 @@ def main():
     assert old.get_data(0x44bf2,5)==bytes.fromhex('bb26020000')
     assert new.get_data(0x3fdb9,7)==bytes.fromhex('31c05089c389c1')
     result['correspondence']={'caller':'0043fe09','original':'00444be0','modern':'0043fda0','caller_changes':[f'{v:08x}' for v in changes],'constructor':'00444a80, complete157-byte body identical','original_lines':1,'modern_lines':2,'original_EBX':0x226,'modern_EBX':0,'shared_pointer_array':'00661090','added_localized_id':11}
+    a,b=[p.get_data(0x3f680,218) for p in images]
+    assert [i for i,(x,y) in enumerate(zip(a,b)) if x!=y]==[0x74,0x75]
+    assert a[0x73:0x78]==bytes.fromhex('e8e8540000')
+    assert b[0x73:0x78]==bytes.fromhex('e8a8060000')
+    result['service_callback']={'entry':'0043f680','end_exclusive':'0043f75a',
+        'changed_call':'0043f6f3','notice_id':12,
+        'limits':'Only notice wrapper call changes; service results and actual connectivity untested.'}
     result['limits']=['No dialog, timing, localization or target execution.','Caller retarget establishes counterpart; same-address bytes do not.','Visible text and timeout/event-loop semantics not independently validated here.']
     (ROOT/'analysis/evidence/audits/localized-notice-difference.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: moved wrapper correspondence, retained constructor and caller-only retarget')
