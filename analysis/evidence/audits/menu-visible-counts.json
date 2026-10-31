@@ -444,6 +444,48 @@
       "backup": []
     }
   ],
+  "backup_only": [
+    {
+      "member": "fedata/menus/advgrph.mnu",
+      "section": "[cascade]",
+      "listname": "viewlevel",
+      "backup": [
+        "5"
+      ]
+    },
+    {
+      "member": "fedata/menus/graphics.mnu",
+      "section": "[cascade]",
+      "listname": "widescreen",
+      "backup": [
+        "10"
+      ]
+    },
+    {
+      "member": "fedata/menus/hud.mnu",
+      "section": "[droplist]",
+      "listname": "buyERTS",
+      "backup": [
+        "15"
+      ]
+    },
+    {
+      "member": "fedata/menus/hud.mnu",
+      "section": "[droplist]",
+      "listname": "buyERTS_at75",
+      "backup": [
+        "15"
+      ]
+    },
+    {
+      "member": "fedata/menus/hud.mnu",
+      "section": "[droplist]",
+      "listname": "buyERTS_at100",
+      "backup": [
+        "15"
+      ]
+    }
+  ],
   "limits": [
     "Authored values only; runtime widget counts not measured.",
     "Backup provenance unauthenticated; missing/ambiguous pairs reported."

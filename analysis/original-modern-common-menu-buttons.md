@@ -62,3 +62,23 @@ The [visible-count audit](evidence/audits/menu-visible-counts.json), reproduced 
 Seven Modern fields lack a unique matching section/listname pair; the manifest retains them explicitly instead of treating them as unchanged or added. It also retains hashes of all52 official/backup member pairs. The comparison checks authored fields, not comments or whole-file similarity, and does not infer equivalent defaults from omitted fields.
 
 This gives partial support for **MP140-025**, increased visible elements in long lists. The actual count can still depend on list length, initialization and layout code. These changed sections are cascades; the separate droplist renderer/alias analysis must not be generalized to them solely because a list name overlaps. Backup retail provenance, runtime selected assets, actual rows displayed and historical introduction remain unverified. No UI or settings were changed.
+
+## Unpaired counts: cross-menu appearances and backup-only fields
+
+The audit now records unmatched fields in both directions. Its original seven Modern-unpaired values are:
+
+| Modern member | Section/listname | `maxvisitem` |
+|---|---|---:|
+| `advgrph.mnu` | cascade / `fog` | 5 |
+| `advgrph.mnu` | cascade / `widescreen` | 10 |
+| `camera.mnu` | cascade / `rearcamera` | 5 |
+| `graphics.mnu` | cascade / `mirrorlevel` | 5 |
+| `graphics.mnu` | cascade / `viewlevel` | 5 |
+| `hud.mnu` | droplist / `hudtypesingle` | 15 |
+| `hud.mnu` | droplist / `hudtypesplit` | 15 |
+
+Five backup-only `(member,section,listname)` bindings are also retained: `advgrph.mnu` cascade `viewlevel`5; `graphics.mnu` cascade `widescreen`10; and `hud.mnu` droplists `buyERTS`, `buyERTS_at75`, `buyERTS_at100`, each15. “Backup-only” means no matching field in that official member, not absence of the underlying feature throughout Modern.
+
+The same `widescreen` binding/count therefore appears in a different menu (backup graphics versus Modern advanced graphics), and likewise `viewlevel` (backup advanced graphics versus Modern graphics). This supports authored redistribution without inventing a count increase for those two values. Complete menu routing, widget equivalence and historical relocation still require separate linkage. The HUD names are not paired as simple renames without descriptor/consumer evidence.
+
+No “seven new controls” claim follows from the one-way matching result. The nine uniquely paired numeric increases remain distinct from this unmatched/redistributed set. Both sets retain the same backup provenance and runtime-selection limitations.
