@@ -35,3 +35,5 @@ Four retained direct-call witnesses show actual navigation retargeting:
 | `00445627` | `00444570` | `0043eb88` |
 
 These establish adoption of the validity-gated sound wrappers at those sites, not every outer keyboard/controller path or an audible result. The broader replay-list keyboard-position claim **MP140-014** is not promoted from this generic helper refactor; its specific caller and record producer still require inspection. This chapter records an independently verified change even without a unique release-note attribution.
+
+The [replay-list follow-up](original-modern-replay-list-cursor.md) now traces a separate registered selectlist input handler and its8→68 cursor Y offset correction. The replay claim has partial static support through that path, rather than these generic corner helpers.

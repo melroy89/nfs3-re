@@ -1,0 +1,106 @@
+{
+  "kind": "static-replay-list-cursor-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "span": {
+        "start": "00462fa0",
+        "end": "004633cd",
+        "bytes_sha256": "503323049741ec3a2ef5dacbd135f5bfee68346d21ffcac93c3d3df0a4912129",
+        "assembly": "analysis/captures/modern-differences/replay-list-cursor/original-00462fa0.asm",
+        "assembly_sha256": "2e2d97d9156f8ab2ff9ab58f0eb409a8f1ce79233f10b7382d70a9631ec38a23"
+      },
+      "widget_row_00557ad0": [
+        "00538384",
+        "00556ff8",
+        "00000006"
+      ],
+      "template_words": [
+        "00000015",
+        "00000200",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00462c30",
+        "00462ce0",
+        "00462d20",
+        "00462fa0",
+        "004633d0"
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "span": {
+        "start": "00462fa0",
+        "end": "004633cd",
+        "bytes_sha256": "4f3341030feb76d079a887779c62ac3f59f90605093fbbe6d4e2e9f9cf52d180",
+        "assembly": "analysis/captures/modern-differences/replay-list-cursor/official_modern-00462fa0.asm",
+        "assembly_sha256": "7c691cfc49932aa7a5910ecb29b3a093672753b7d6380ea80f369a5dbb465224"
+      },
+      "widget_row_00557ad0": [
+        "00538384",
+        "00556ff8",
+        "00000006"
+      ],
+      "template_words": [
+        "00000015",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00000000",
+        "00462c30",
+        "00462ce0",
+        "00462d20",
+        "00462fa0",
+        "004633d0"
+      ]
+    }
+  },
+  "identical_ranges": [
+    {
+      "start": "00462fa0",
+      "end": "0046326f",
+      "sha256": "92171fc75a2f02c8d4b4f5ba441332b5b3b53f27a889e76356fbb216ec1974d3"
+    },
+    {
+      "start": "00463274",
+      "end": "00463370",
+      "sha256": "bad51621481b0e59e10bc961b23293f05a2f4e305edecd2a484b1979af07d48e"
+    },
+    {
+      "start": "004633a7",
+      "end": "004633cd",
+      "sha256": "d299314534c72afc4ecaf2c7331618636b995c00f775a702bfeefab29baa6e9b"
+    }
+  ],
+  "official_asset": {
+    "member": "fedata/menus/loadsave.mnu",
+    "sha256": "ac14717b7a8a4bfe2c3cbf5267212ff2d164edf1da6ad75a315e576bf00cf329",
+    "replays_record": [
+      "[selectlist]",
+      "x=183",
+      "y=158",
+      "priority=9",
+      "codelink=replays",
+      "text=kMenuLOADSAVELoadRepl001",
+      "emptytext=kMenuLOADSAVEempty001",
+      "maxvis=10"
+    ]
+  },
+  "limits": [
+    "No keyboard, cursor, rendering or target execution.",
+    "Selectlist handler address envelope retained through its final RET; no Ghidra metadata changes.",
+    "Widget registration and authored replay control support association; full menu instantiation/runtime admission untested."
+  ]
+}

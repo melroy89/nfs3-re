@@ -53,13 +53,13 @@
     },
     {
       "path": "analysis/original-modern-cursor-position.md",
-      "sha256": "1536dcfea13064f3598a22e318b3da331b08c0c252654eda1e683f5a99bbb08c",
-      "relative_links": 3
+      "sha256": "69414237111bc0ed84d3dd4fb52a1065fd5614b6ebf3bee0cb2358eb40a20834",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "ad08ee0e2002b2a52b185ecabf6e7dc0711a83677db49d4c27d2417c5aec66ab",
-      "relative_links": 81
+      "sha256": "5ab3fc0f5b52a81a23100cfec1036c889860830ccc81fcfe483178725f4ba57e",
+      "relative_links": 82
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -242,6 +242,11 @@
       "relative_links": 7
     },
     {
+      "path": "analysis/original-modern-replay-list-cursor.md",
+      "sha256": "3d38c4b54f0f86e5c2197c6c6424aadcb9a758774ad15f23b3994b4dce04e4e1",
+      "relative_links": 4
+    },
+    {
       "path": "analysis/original-modern-replay-mirror.md",
       "sha256": "b25b2f906b558784bbcf8304079b4e969d1850041e04e5c4847282cee337b16b",
       "relative_links": 2
@@ -333,12 +338,12 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "c1143178e34402b9a3cae7cea4c853002e6f730770d8450c8b7d12be22392059",
-      "relative_links": 95
+      "sha256": "d7b92f0e3282e9cafb8a922854ae4bcfa4ad8622854063d79ca85789ee39fb57",
+      "relative_links": 96
     }
   ],
-  "file_count": 67,
-  "relative_link_count": 491,
+  "file_count": 68,
+  "relative_link_count": 498,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

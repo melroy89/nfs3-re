@@ -346,10 +346,12 @@ The [colour-control dispatch comparison](original-modern-colour-control.md) reta
 
 The [cursor-position comparison](original-modern-cursor-position.md) identifies new Boolean return contracts, narrower field reads and adopted sound wrappers in space freed by the HSV handler. Replay-specific attribution remains open.
 
+The [replay-list cursor follow-up](original-modern-replay-list-cursor.md) ties the official replay control to its selection-list callback and documents the60-unit Y correction and shared-tail retargeting.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **199 Claimed, 37 Static, 51 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **198 Claimed, 37 Static, 52 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -498,7 +500,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-011 | Consistent sounds for the mini dialogs when using the keyboard. | Claimed |
 | MP140-012 | Consistent sounds for the top dropdown lists when using the keyboard (the same as for general dropdown lists). | Claimed |
 | MP140-013 | A car color dropdown list uses consistent (with other controls) sounds and has a normal padding. | Partial |
-| MP140-014 | List of replays works correctly using keyboard (fixed an invalid positioning of the mouse cursor). Also it uses consistent sounds (like others). | Claimed |
+| MP140-014 | List of replays works correctly using keyboard (fixed an invalid positioning of the mouse cursor). Also it uses consistent sounds (like others). | Partial |
 | MP140-015 | Fixed errors of element switching order (when keyboard is used). | Claimed |
 | MP140-016 | 3D view of a car interior can be stopped using Space key. Arrow keys change rotating speed more smoothly now. | Claimed |
 | MP140-017 | Options button is placed near Exit button on the first menu screen (Game Setup). | Partial |
