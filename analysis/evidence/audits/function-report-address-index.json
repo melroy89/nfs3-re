@@ -341,7 +341,7 @@
     },
     {
       "path": "analysis/original-modern-state14.md",
-      "sha256": "05e7e4d8f25b738e82e5b2549db00055267eb9020e1ad7ef15544510bde70ebd"
+      "sha256": "ec61d8c549efcc01b30adb454842a92e219567eaea5cd534c7e398100daad49b"
     },
     {
       "path": "analysis/original-modern-texture-limits.md",
@@ -402,8 +402,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 351,
-    "without_address_mentions": 10
+    "with_address_mentions": 353,
+    "without_address_mentions": 8
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -1648,6 +1648,7 @@
           "entry_mentioned": true,
           "addresses": [
             "00431c1c",
+            "00431c20",
             "00431c30"
           ]
         },
@@ -1677,7 +1678,15 @@
       "changed_bytes": 23,
       "original_sha256": "3aeb99a8d0eb7517686e1b79c753f206f263c714f23839d28cb7772981cb92a0",
       "modern_sha256": "34b8c495719d877fbf4761940f372510638188128f88994e4a590b2cb9ea2aaf",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-state14.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00431c34"
+          ]
+        }
+      ]
     },
     {
       "entry": "00436930",
@@ -9369,7 +9378,17 @@
       "changed_bytes": 2,
       "original_sha256": "c159601159c9d4d11a02ad38774f205950ad34ca5579e33efe19cf659998423c",
       "modern_sha256": "73e4542cc2d2255c019380b8f12f54918bda816d49978aa59964e7480c91fa23",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-state14.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004c6f00",
+            "004c6fbc",
+            "004c6fc8"
+          ]
+        }
+      ]
     },
     {
       "entry": "004c94e0",

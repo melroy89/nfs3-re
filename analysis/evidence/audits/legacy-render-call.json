@@ -1,0 +1,57 @@
+{
+  "kind": "legacy-render-noop-and-fog-helper",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004c6f00",
+          "end_exclusive": "004c70eb",
+          "sha256": "f83afd2a0b452dc6dc505bda1c59b61bad6645812749b3566230faf82ae30b1e",
+          "assembly": "analysis/captures/modern-differences/legacy-render-call/original-004c6f00.asm"
+        },
+        {
+          "start": "00431c20",
+          "end_exclusive": "00431c25",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/legacy-render-call/original-00431c20.asm"
+        },
+        {
+          "start": "00431c34",
+          "end_exclusive": "00431c4d",
+          "sha256": "3aeb99a8d0eb7517686e1b79c753f206f263c714f23839d28cb7772981cb92a0",
+          "assembly": "analysis/captures/modern-differences/legacy-render-call/original-00431c34.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004c6f00",
+          "end_exclusive": "004c70eb",
+          "sha256": "b2d9401e620745a67b30247959ca8f723a9a32626ceac0b7b588379bb9978c6e",
+          "assembly": "analysis/captures/modern-differences/legacy-render-call/official_modern-004c6f00.asm"
+        },
+        {
+          "start": "00431c20",
+          "end_exclusive": "00431c25",
+          "sha256": "d386cd89d59e4a10243ee7eb5c815a7c00556114e58f15b39e26f740f03b2b5c",
+          "assembly": "analysis/captures/modern-differences/legacy-render-call/official_modern-00431c20.asm"
+        },
+        {
+          "start": "00431c34",
+          "end_exclusive": "00431c4d",
+          "sha256": "34b8c495719d877fbf4761940f372510638188128f88994e4a590b2cb9ea2aaf",
+          "assembly": "analysis/captures/modern-differences/legacy-render-call/official_modern-00431c34.asm"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No rendering or instruction execution; incidental register/flag dependencies unverified.",
+    "Modern helper is not asserted to replace original no-op; original same-address counterpart unresolved."
+  ]
+}
