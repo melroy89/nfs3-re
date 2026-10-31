@@ -29,3 +29,17 @@ Both handlers map low-WORD **`0x1b` (Escape)** to EDX3 and return it in EAX, whe
 Thus the new central result3 sound is concretely an Escape/cancel-associated request for this first handler. Navigation can instead request sound0 through the newly retargeted cursor wrapper, then returns0 and bypasses the central callback/close route. Enter’s result1 follows the retained callback handling without this central sound3 request. The conclusion is scoped to the inspected first handler; the other three handler contracts and all dialog callback meanings remain separate work.
 
 This connects the added sound request to an actual input value and separates it from navigation feedback. Audible volume, throttling and device behavior still depend on the changed sound helper and runtime state. No dialog key was pressed during this audit.
+
+## Remaining handler coverage
+
+The audit now retains complete paired timed **`00444b20..00444b60`**, edit **`00444f50..004450bd`** and toggle-menu **`00445520..0044567b`** handlers. The timed body is byte-identical; edit/toggle differences are confined to the cursor CALL operands listed below.
+
+| Call address | Original target | Modern target |
+|---|---|---|
+| `00444fd5`, `00444ffb` | `00444570` dialog position | `0043eb88` dialog position/sound wrapper |
+| `004455a1`, `004455fd` | `00445160` menu position | `0043eba0` menu position/sound wrapper |
+| `004455cb`, `00445627` | `00444570` dialog position | `0043eb88` dialog position/sound wrapper |
+
+Timed input first tests byte **`00558b4c`**: when zero it returns0; when nonzero Escape returns3, Enter1 and Space2. Edit input maps Escape to ESI3 at `00444fa6`; toggle input maps it to EDX3 at `0044566d`, and their epilogues return that value in EAX. Together with the first handler, this establishes an Escape-associated result3 route for all four dispatch targets, subject to their own gates. The added central sound3 request is therefore not limited to one handler.
+
+The paired local changes and previously verified wrapper contracts support a partial mini-dialog keyboard-sound mechanism: cursor feedback through position-validity wrappers, plus central Escape feedback. This does not prove all actions emit one sound, that callbacks do not add requests, or that audible timing/volume is consistent. The timed handler’s enable state, full edit mutation rules, toggle semantics and runtime audio remain beyond this focused comparison.
