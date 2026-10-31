@@ -354,6 +354,8 @@ The [startup requirements comparison](original-modern-startup-requirements.md) m
 
 The [night-lighting comparison](original-modern-night-lighting.md) isolates an expanded context admission gate, unchanged lighting tail and retained scratch-allocation limitation; mirror attribution remains unresolved.
 
+See also [track-chain detail selection](original-modern-track-detail.md): mirror quality policy, classifier interface changes and removed next-block classification.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

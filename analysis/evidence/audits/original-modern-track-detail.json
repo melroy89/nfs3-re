@@ -1,0 +1,229 @@
+{
+  "kind": "static-track-detail-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0041cdc0",
+          "end": "0041d210",
+          "sha256": "e99c805196a6ed2c35bf2a72f34561b7eb9dffdcc9abaa0ce475a42d13dd911e",
+          "assembly": "analysis/captures/modern-differences/track-detail/original-0041cdc0.asm",
+          "assembly_sha256": "dfd8693cca412ff1723caedad2680a38b957a49a1c6ec84958be671378b12aaa"
+        },
+        {
+          "start": "0041aa60",
+          "end": "0041aaab",
+          "sha256": "9da91bdb9bd0808ecd44552bfed1e6d6ab63c58319ab754a69de441cb5aedb92",
+          "assembly": "analysis/captures/modern-differences/track-detail/original-0041aa60.asm",
+          "assembly_sha256": "5a05b4873ef97f8799378cca057acfe986cd82addb7cdd39ee1425cec0e369ed"
+        },
+        {
+          "start": "00431c20",
+          "end": "00431c25",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/track-detail/original-00431c20.asm",
+          "assembly_sha256": "3906c27acf27344a5ad7fff0a352f155fa1945d818bb322b82b941d1007b377a"
+        }
+      ],
+      "file_backed_table_00552e20": [
+        [
+          1,
+          0,
+          150
+        ],
+        [
+          2,
+          2,
+          100
+        ],
+        [
+          3,
+          4,
+          50
+        ]
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0041cdc0",
+          "end": "0041d1f6",
+          "sha256": "0b768c487951b9f77fffdbd9beb89b66ba0a7695826ce08a13a7c32c4e4cdddb",
+          "assembly": "analysis/captures/modern-differences/track-detail/official_modern-0041cdc0.asm",
+          "assembly_sha256": "910524a2688e2c2a7294a078a0b8561607d58cee8379ec0c9cc52faa074b02a1"
+        },
+        {
+          "start": "0041aa60",
+          "end": "0041aa97",
+          "sha256": "9f9c1337a2a62f080d5e625f48c617412e62e3d8ce8df811d560be84d9c83eb6",
+          "assembly": "analysis/captures/modern-differences/track-detail/official_modern-0041aa60.asm",
+          "assembly_sha256": "80ca49b465680933d63fe028d2ffb7b4325cb8c2fe081b8e4195e4f91734fccd"
+        },
+        {
+          "start": "00431c20",
+          "end": "00431c25",
+          "sha256": "d386cd89d59e4a10243ee7eb5c815a7c00556114e58f15b39e26f740f03b2b5c",
+          "assembly": "analysis/captures/modern-differences/track-detail/official_modern-00431c20.asm",
+          "assembly_sha256": "8b3c47e5002e0d714db4b3743ee686fc2e1ef7bbbd235f1e673581927e69387c"
+        }
+      ],
+      "file_backed_table_00552e20": [
+        [
+          1,
+          0,
+          150
+        ],
+        [
+          2,
+          2,
+          100
+        ],
+        [
+          3,
+          4,
+          50
+        ]
+      ]
+    }
+  },
+  "identical_ranges": [
+    {
+      "start": "0041cdc0",
+      "end": "0041ce96",
+      "sha256": "0a93e89a8eff464162d5efd626946dc232baef31032c3fe63a3f252317ed2eae"
+    },
+    {
+      "start": "0041cf0a",
+      "end": "0041d1ef",
+      "sha256": "119ad82b30eaac9f161968b58200208a63eaead61471088f4c2f59e5eb301191"
+    }
+  ],
+  "changed_byte_count": 115,
+  "changed_addresses": [
+    "0041ce97",
+    "0041ce98",
+    "0041ce99",
+    "0041ce9a",
+    "0041ce9b",
+    "0041ce9c",
+    "0041ce9d",
+    "0041ce9e",
+    "0041ce9f",
+    "0041cea0",
+    "0041cea1",
+    "0041cea2",
+    "0041cea3",
+    "0041cea4",
+    "0041cea5",
+    "0041cea6",
+    "0041cea7",
+    "0041cea8",
+    "0041cea9",
+    "0041ceaa",
+    "0041ceab",
+    "0041ceac",
+    "0041cead",
+    "0041ceae",
+    "0041ceaf",
+    "0041ceb0",
+    "0041ceb1",
+    "0041ceb2",
+    "0041ceb3",
+    "0041ceb4",
+    "0041ceb5",
+    "0041ceb6",
+    "0041ceb7",
+    "0041ceb8",
+    "0041ceb9",
+    "0041ceba",
+    "0041cebb",
+    "0041cebc",
+    "0041cebd",
+    "0041cebe",
+    "0041cebf",
+    "0041cec0",
+    "0041cec1",
+    "0041cec2",
+    "0041cec3",
+    "0041cec4",
+    "0041cec5",
+    "0041cec6",
+    "0041cec7",
+    "0041cec8",
+    "0041cec9",
+    "0041ceca",
+    "0041cecb",
+    "0041cecc",
+    "0041cecd",
+    "0041cece",
+    "0041cecf",
+    "0041ced0",
+    "0041ced1",
+    "0041ced2",
+    "0041ced3",
+    "0041ced4",
+    "0041ced5",
+    "0041ced6",
+    "0041ced7",
+    "0041ced8",
+    "0041ced9",
+    "0041ceda",
+    "0041cedb",
+    "0041cedc",
+    "0041cedd",
+    "0041cede",
+    "0041cedf",
+    "0041cee0",
+    "0041cee1",
+    "0041cee2",
+    "0041cee3",
+    "0041cee4",
+    "0041cee5",
+    "0041cee6",
+    "0041cee7",
+    "0041cee8",
+    "0041cee9",
+    "0041ceea",
+    "0041ceeb",
+    "0041ceec",
+    "0041ceed",
+    "0041ceee",
+    "0041ceef",
+    "0041cef0",
+    "0041cef1",
+    "0041cef2",
+    "0041cef3",
+    "0041cef4",
+    "0041cef5",
+    "0041cef6",
+    "0041cef7",
+    "0041cef8",
+    "0041cef9",
+    "0041cefa",
+    "0041cefb",
+    "0041cefc",
+    "0041cefd",
+    "0041cefe",
+    "0041ceff",
+    "0041cf00",
+    "0041cf01",
+    "0041cf02",
+    "0041cf03",
+    "0041cf04",
+    "0041cf05",
+    "0041cf06",
+    "0041cf07",
+    "0041cf08",
+    "0041cf09"
+  ],
+  "limits": [
+    "Static only; no rendered output or instruction execution.",
+    "File-backed table is not proof of its later runtime contents.",
+    "No complete layout, transitive helper equivalence or historical release attribution."
+  ]
+}
