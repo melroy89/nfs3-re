@@ -43,3 +43,22 @@ These producer/consumer links statically support **MP150-009**'s separate menu-s
 ## Remaining work
 
 Pending: counter unit/initialization, all ID callers and removed-multiplier meanings, backend sample assets/mixing, complete saved-setting serialization/range checks and runtime slider/cancel behavior. Historical introduction dates require earlier patch releases. This chapter does not establish music-volume fixes, all dialog sound choices or race-effect behavior.
+
+## Five hover-call immediates change, but Modern ignores that argument
+
+The [hover-call audit](scripts/audit_frontend_hover_sound_calls.py) verifies four complete same-address original/Modern envelopes, five isolated changed bytes and direct call targets. [Its manifest](evidence/audits/frontend-hover-sound-calls.json) retains pinned executable hashes, complete-body hashes and disassembly locations.
+
+| Saved Modern entry / label | Complete envelope, exclusive end | MOV EDX sites |
+|---|---|---|
+| `004449d0` UpdateFrontendChoiceDialogHoverAndRender | `004449d0..00444a52` (130 bytes) | `004449fe` |
+| `004450c0` UpdateFrontendTextEntryDialogScene | `004450c0..0044514c` (140 bytes) | `004450ee` |
+| `00445680` UpdateFrontendToggleMenuHover | `00445680..0044574f` (207 bytes) | `004456ae`, `004456e4` |
+| `0044a6b0` FindHoveredMenuEntryOrRetainSelection | `0044a6b0..0044a860` (432 bytes) | `0044a81c` |
+
+At every listed site, original sets EDX=45 and Modern sets EDX=127. Both then execute `XOR EAX,EAX` and call `004181d0`, selecting sound ID 0. All other bytes in these four envelopes are identical, including admission branches and subsequent hover-state writes. The different caller immediates do not demonstrate a changed hover algorithm.
+
+As established by the complete callee comparison at the start of this chapter, **original uses EDX as its multiplier, Modern does not**. Modern reads configured volume `006fd1d0` instead and applies its own ID/timing admission rules. Reading these five edits alone as an increase from volume 45 to volume 127 would therefore misrepresent the active call contract. The callee's ignored argument can still be present in reconstructed assembly without representing a meaningful maintained-C parameter.
+
+The four caller comparisons do not prove identical audio behavior: original's multiplier differs from Modern's configured source, and Modern's callee gating is different. Likewise the immediate edit does not establish that effects are audibly louder, that a sound is actually emitted, or that hover movement behaves identically with different surrounding state.
+
+**Bounded work status: done; confidence: verified static callers, interpreted using the separately verified callee.** Runtime volume, sound assets, admission timing and complete UI paths remain unverified. No audio, UI or instruction probes were run; executable bytes, Ghidra state and maintained reconstruction sources are unchanged.

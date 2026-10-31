@@ -117,7 +117,7 @@
     },
     {
       "path": "analysis/original-modern-frontend-sound.md",
-      "sha256": "5768c249b27c388074d63b3aec5e0bbcbf4e1bc2aaaa821e2e4a0f3695ba4cf1"
+      "sha256": "512a4f521a7c644e55dd94dc91cf9fc99d78a4f6434d6d534a949b14ef9d4ab3"
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -390,8 +390,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 311,
-    "without_address_mentions": 50
+    "with_address_mentions": 315,
+    "without_address_mentions": 46
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -2858,7 +2858,16 @@
       "changed_bytes": 1,
       "original_sha256": "e1f7b02db03f3b87393a4f2dd1b01a29248fd07d50d2feab701dfcdcd2b18e6e",
       "modern_sha256": "1e1262a1d792f607f3d6c7705c75d14d6c3da273e83757495d3187c92bee9eeb",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-frontend-sound.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004449d0",
+            "004449fe"
+          ]
+        }
+      ]
     },
     {
       "entry": "00444c20",
@@ -2923,7 +2932,16 @@
       "changed_bytes": 1,
       "original_sha256": "3e07c9d6b88d72610a87cf92e68c933779c4270da168b032bce15ed3dbc158af",
       "modern_sha256": "4aa50dbf412f050a1cd75c921a56e9fc9ffd0c19766890a0c4ff1b14829a530b",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-frontend-sound.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004450c0",
+            "004450ee"
+          ]
+        }
+      ]
     },
     {
       "entry": "00445160",
@@ -3015,7 +3033,17 @@
       "changed_bytes": 2,
       "original_sha256": "87d84f2b96e019313fddc147354f291e01db2511ab38a35a7973c8c0566c00ab",
       "modern_sha256": "5622ec92e707a4733cb7f4b6a5207dc32d53774a3966300a3ef76ebc06a08d86",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-frontend-sound.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00445680",
+            "004456ae",
+            "004456e4"
+          ]
+        }
+      ]
     },
     {
       "entry": "00445e60",
@@ -3590,7 +3618,16 @@
       "changed_bytes": 1,
       "original_sha256": "339d9b5bc9d925cc1b2680478fa27f477aeb6c6f02a3c4f98fb41ec5d5f81310",
       "modern_sha256": "0876d4006e80538e3f988aa06d4f3650908650a527db1485d62b171945962351",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-frontend-sound.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0044a6b0",
+            "0044a81c"
+          ]
+        }
+      ]
     },
     {
       "entry": "0044b1a0",

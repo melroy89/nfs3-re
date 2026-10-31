@@ -1,0 +1,95 @@
+{
+  "kind": "frontend-hover-sound-caller-immediates",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004449d0",
+          "end_exclusive": "00444a52",
+          "sha256": "e1f7b02db03f3b87393a4f2dd1b01a29248fd07d50d2feab701dfcdcd2b18e6e",
+          "assembly": "analysis/captures/modern-differences/hover-sound-calls/original-004449d0.asm",
+          "mov_edx_sites": [
+            "004449fe"
+          ]
+        },
+        {
+          "start": "004450c0",
+          "end_exclusive": "0044514c",
+          "sha256": "3e07c9d6b88d72610a87cf92e68c933779c4270da168b032bce15ed3dbc158af",
+          "assembly": "analysis/captures/modern-differences/hover-sound-calls/original-004450c0.asm",
+          "mov_edx_sites": [
+            "004450ee"
+          ]
+        },
+        {
+          "start": "00445680",
+          "end_exclusive": "0044574f",
+          "sha256": "87d84f2b96e019313fddc147354f291e01db2511ab38a35a7973c8c0566c00ab",
+          "assembly": "analysis/captures/modern-differences/hover-sound-calls/original-00445680.asm",
+          "mov_edx_sites": [
+            "004456ae",
+            "004456e4"
+          ]
+        },
+        {
+          "start": "0044a6b0",
+          "end_exclusive": "0044a860",
+          "sha256": "339d9b5bc9d925cc1b2680478fa27f477aeb6c6f02a3c4f98fb41ec5d5f81310",
+          "assembly": "analysis/captures/modern-differences/hover-sound-calls/original-0044a6b0.asm",
+          "mov_edx_sites": [
+            "0044a81c"
+          ]
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004449d0",
+          "end_exclusive": "00444a52",
+          "sha256": "1e1262a1d792f607f3d6c7705c75d14d6c3da273e83757495d3187c92bee9eeb",
+          "assembly": "analysis/captures/modern-differences/hover-sound-calls/official_modern-004449d0.asm",
+          "mov_edx_sites": [
+            "004449fe"
+          ]
+        },
+        {
+          "start": "004450c0",
+          "end_exclusive": "0044514c",
+          "sha256": "4aa50dbf412f050a1cd75c921a56e9fc9ffd0c19766890a0c4ff1b14829a530b",
+          "assembly": "analysis/captures/modern-differences/hover-sound-calls/official_modern-004450c0.asm",
+          "mov_edx_sites": [
+            "004450ee"
+          ]
+        },
+        {
+          "start": "00445680",
+          "end_exclusive": "0044574f",
+          "sha256": "5622ec92e707a4733cb7f4b6a5207dc32d53774a3966300a3ef76ebc06a08d86",
+          "assembly": "analysis/captures/modern-differences/hover-sound-calls/official_modern-00445680.asm",
+          "mov_edx_sites": [
+            "004456ae",
+            "004456e4"
+          ]
+        },
+        {
+          "start": "0044a6b0",
+          "end_exclusive": "0044a860",
+          "sha256": "0876d4006e80538e3f988aa06d4f3650908650a527db1485d62b171945962351",
+          "assembly": "analysis/captures/modern-differences/hover-sound-calls/official_modern-0044a6b0.asm",
+          "mov_edx_sites": [
+            "0044a81c"
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static callers only; no audio or hover execution.",
+    "The separate frontend-sound comparison establishes that Modern ignores incoming EDX."
+  ]
+}
