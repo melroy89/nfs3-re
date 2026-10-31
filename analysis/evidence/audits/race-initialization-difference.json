@@ -1,0 +1,544 @@
+{
+  "kind": "race-initialization-sequence-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004c45f0",
+          "end_exclusive": "004c4733",
+          "sha256": "ec3f06d5b28f6672f967a50366c7e5660ba2adc7532260a063a149ed1e5bf5bb",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004c45f0.asm",
+          "direct_calls": [
+            {
+              "site": "004c463f",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c4660",
+              "target": "004be1f0"
+            },
+            {
+              "site": "004c4676",
+              "target": "004be1f0"
+            },
+            {
+              "site": "004c468a",
+              "target": "004be250"
+            },
+            {
+              "site": "004c468f",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46a2",
+              "target": "004df690"
+            },
+            {
+              "site": "004c46af",
+              "target": "00475240"
+            },
+            {
+              "site": "004c46b4",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46be",
+              "target": "004371d0"
+            },
+            {
+              "site": "004c46c3",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46c8",
+              "target": "0042c830"
+            },
+            {
+              "site": "004c46cd",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46d2",
+              "target": "004711e0"
+            },
+            {
+              "site": "004c46d7",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46dc",
+              "target": "00404660"
+            },
+            {
+              "site": "004c46e1",
+              "target": "00405e60"
+            },
+            {
+              "site": "004c46e6",
+              "target": "0040e410"
+            },
+            {
+              "site": "004c46eb",
+              "target": "00401220"
+            },
+            {
+              "site": "004c46f0",
+              "target": "0040cb50"
+            },
+            {
+              "site": "004c46f5",
+              "target": "0040c150"
+            },
+            {
+              "site": "004c46fa",
+              "target": "00401320"
+            },
+            {
+              "site": "004c46ff",
+              "target": "00408ad0"
+            },
+            {
+              "site": "004c4704",
+              "target": "00404c40"
+            },
+            {
+              "site": "004c4709",
+              "target": "0040a6f0"
+            },
+            {
+              "site": "004c470e",
+              "target": "00493ef0"
+            },
+            {
+              "site": "004c4713",
+              "target": "004c9d70"
+            },
+            {
+              "site": "004c4718",
+              "target": "004cdd00"
+            },
+            {
+              "site": "004c471d",
+              "target": "004129c0"
+            },
+            {
+              "site": "004c4722",
+              "target": "0044b950"
+            },
+            {
+              "site": "004c4727",
+              "target": "004bc910"
+            }
+          ]
+        },
+        {
+          "start": "004c4740",
+          "end_exclusive": "004c481d",
+          "sha256": "c029520e5e4cb676be39ae27e2dbaa12c4fa7c8f458c41891458a5d1d7cf5d60",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004c4740.asm",
+          "direct_calls": [
+            {
+              "site": "004c4761",
+              "target": "004ea4f0"
+            },
+            {
+              "site": "004c47b3",
+              "target": "004371d0"
+            },
+            {
+              "site": "004c47b8",
+              "target": "004b7c20"
+            },
+            {
+              "site": "004c47bd",
+              "target": "0042c530"
+            },
+            {
+              "site": "004c47c2",
+              "target": "0040e0f0"
+            },
+            {
+              "site": "004c47c7",
+              "target": "00401230"
+            },
+            {
+              "site": "004c47cc",
+              "target": "0040cb20"
+            },
+            {
+              "site": "004c47d1",
+              "target": "0040c140"
+            },
+            {
+              "site": "004c47d6",
+              "target": "004012c0"
+            },
+            {
+              "site": "004c47db",
+              "target": "00408ae0"
+            },
+            {
+              "site": "004c47e0",
+              "target": "00404c50"
+            },
+            {
+              "site": "004c47e5",
+              "target": "00404650"
+            },
+            {
+              "site": "004c47ea",
+              "target": "00403970"
+            },
+            {
+              "site": "004c47ef",
+              "target": "00405fb0"
+            },
+            {
+              "site": "004c47f4",
+              "target": "00493e50"
+            },
+            {
+              "site": "004c47f9",
+              "target": "004c9db0"
+            },
+            {
+              "site": "004c47fe",
+              "target": "004bc8b0"
+            },
+            {
+              "site": "004c4803",
+              "target": "004cdd00"
+            },
+            {
+              "site": "004c4808",
+              "target": "00471000"
+            }
+          ]
+        },
+        {
+          "start": "00401220",
+          "end_exclusive": "00401225",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00401220.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "0040c150",
+          "end_exclusive": "0040c155",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-0040c150.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "00408ad0",
+          "end_exclusive": "00408ad5",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00408ad0.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "00404c40",
+          "end_exclusive": "00404c45",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00404c40.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "00401230",
+          "end_exclusive": "00401235",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00401230.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "0040c140",
+          "end_exclusive": "0040c145",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-0040c140.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "00408ae0",
+          "end_exclusive": "00408ae5",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00408ae0.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "00404650",
+          "end_exclusive": "00404655",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00404650.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "00405fb0",
+          "end_exclusive": "00405fb5",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00405fb0.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "00404660",
+          "end_exclusive": "0040466a",
+          "sha256": "a2514d68ed66c961b2956d3c6653fcd8af8e76efb6a0616aeacd707863d89af9",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00404660.asm",
+          "direct_calls": [
+            {
+              "site": "00404663",
+              "target": "00404650"
+            }
+          ]
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004c45f0",
+          "end_exclusive": "004c471a",
+          "sha256": "bfdcf556ab18e38bc563b7ed215f393600930600af2f1bbe3d75048936e05d57",
+          "assembly": "analysis/captures/modern-differences/race-initialization/official_modern-004c45f0.asm",
+          "direct_calls": [
+            {
+              "site": "004c463f",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c4660",
+              "target": "004be1f0"
+            },
+            {
+              "site": "004c4676",
+              "target": "004be1f0"
+            },
+            {
+              "site": "004c468a",
+              "target": "004be250"
+            },
+            {
+              "site": "004c468f",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46a2",
+              "target": "004df690"
+            },
+            {
+              "site": "004c46af",
+              "target": "00475240"
+            },
+            {
+              "site": "004c46b4",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46be",
+              "target": "004371d0"
+            },
+            {
+              "site": "004c46c3",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46c8",
+              "target": "0042c830"
+            },
+            {
+              "site": "004c46cd",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46d2",
+              "target": "004711e0"
+            },
+            {
+              "site": "004c46d7",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004c46dc",
+              "target": "00405e60"
+            },
+            {
+              "site": "004c46e1",
+              "target": "0040e410"
+            },
+            {
+              "site": "004c46e6",
+              "target": "0040cb50"
+            },
+            {
+              "site": "004c46eb",
+              "target": "00401320"
+            },
+            {
+              "site": "004c46f0",
+              "target": "0040a6f0"
+            },
+            {
+              "site": "004c46f5",
+              "target": "00493ef0"
+            },
+            {
+              "site": "004c46fa",
+              "target": "004c9d70"
+            },
+            {
+              "site": "004c46ff",
+              "target": "004cdd00"
+            },
+            {
+              "site": "004c4704",
+              "target": "004129c0"
+            },
+            {
+              "site": "004c4709",
+              "target": "0044b950"
+            },
+            {
+              "site": "004c470e",
+              "target": "004bc910"
+            }
+          ]
+        },
+        {
+          "start": "004c4740",
+          "end_exclusive": "004c481d",
+          "sha256": "9fbc9f144c0f0b61b6b4f1d495f27b869cdb88e1dada6bcc0fcc8a9aec4a22d5",
+          "assembly": "analysis/captures/modern-differences/race-initialization/official_modern-004c4740.asm",
+          "direct_calls": [
+            {
+              "site": "004c4761",
+              "target": "004ea4f0"
+            },
+            {
+              "site": "004c47b3",
+              "target": "004371d0"
+            },
+            {
+              "site": "004c47b8",
+              "target": "004b7c20"
+            },
+            {
+              "site": "004c47bd",
+              "target": "0042c530"
+            },
+            {
+              "site": "004c47c2",
+              "target": "0040e0f0"
+            },
+            {
+              "site": "004c47c7",
+              "target": "0040cb20"
+            },
+            {
+              "site": "004c47cc",
+              "target": "004012c0"
+            },
+            {
+              "site": "004c47d1",
+              "target": "00404c50"
+            },
+            {
+              "site": "004c47d6",
+              "target": "00403970"
+            },
+            {
+              "site": "004c47db",
+              "target": "00493e50"
+            },
+            {
+              "site": "004c47e0",
+              "target": "004c9db0"
+            },
+            {
+              "site": "004c47e5",
+              "target": "004c7130"
+            },
+            {
+              "site": "004c47ea",
+              "target": "004dbbc0"
+            },
+            {
+              "site": "004c47ef",
+              "target": "004cb6f0"
+            },
+            {
+              "site": "004c47f4",
+              "target": "0047b350"
+            },
+            {
+              "site": "004c47f9",
+              "target": "004dcdf0"
+            },
+            {
+              "site": "004c47fe",
+              "target": "004bc530"
+            },
+            {
+              "site": "004c4803",
+              "target": "004cdd00"
+            },
+            {
+              "site": "004c4808",
+              "target": "00471000"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "sequence_delta": {
+    "removed_initialization_calls": [
+      "00401220",
+      "00404660",
+      "00404c40",
+      "00408ad0",
+      "0040c150"
+    ],
+    "removed_reset_calls": [
+      "00401230",
+      "00404650",
+      "00405fb0",
+      "00408ae0",
+      "0040c140"
+    ],
+    "added_reset_calls": [
+      "0047b350",
+      "004c7130",
+      "004cb6f0",
+      "004dbbc0",
+      "004dcdf0"
+    ],
+    "changed_reset_target": [
+      "004bc8b0",
+      "004bc530"
+    ],
+    "retained_call_order_verified": true
+  },
+  "removed_stub_entries": [
+    "00401220",
+    "0040c150",
+    "00408ad0",
+    "00404c40",
+    "00401230",
+    "0040c140",
+    "00408ae0",
+    "00404650",
+    "00405fb0"
+  ],
+  "wrapper_to_stub": {
+    "wrapper": "00404660",
+    "target": "00404650"
+  },
+  "limits": [
+    "No race, initializer or target execution.",
+    "Direct-call sequences do not establish full effects or correspondence of changed callees.",
+    "Removed stub bodies are original evidence, not inferred from Modern reuse of their addresses."
+  ]
+}
