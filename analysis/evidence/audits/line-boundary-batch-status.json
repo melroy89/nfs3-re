@@ -65,6 +65,26 @@
           "canonical_body": "00477990",
           "bytes": 70,
           "sha256": "d321a9a7926bb37345add9137d621827cb43ac0043f24a2e7c423a0ac38ef43c"
+        },
+        {
+          "canonical_body": "00477850",
+          "bytes": 112,
+          "sha256": "fe13bc178e4d4c09c32732b4df1a84905ce76f0ab08581e0c520dfcadf050b38"
+        },
+        {
+          "canonical_body": "004b6a30",
+          "bytes": 374,
+          "sha256": "3748edd28b5f2f8d5921f929d276796ea16276404b364e64ea1006ef2df8041c"
+        },
+        {
+          "canonical_body": "004b6ca0",
+          "bytes": 225,
+          "sha256": "43534941867dd8457a526895b7cad079aab52bbd15e3ad664bade9fc747649d6"
+        },
+        {
+          "canonical_body": "00487620",
+          "bytes": 43,
+          "sha256": "61dae5051b6beb9abeb4b278cd0f448a4f02fe3d507a1684de0ae47d0487c54c"
         }
       ]
     },
@@ -131,6 +151,26 @@
           "canonical_body": "00477990",
           "bytes": 70,
           "sha256": "d321a9a7926bb37345add9137d621827cb43ac0043f24a2e7c423a0ac38ef43c"
+        },
+        {
+          "canonical_body": "00477850",
+          "bytes": 112,
+          "sha256": "fe13bc178e4d4c09c32732b4df1a84905ce76f0ab08581e0c520dfcadf050b38"
+        },
+        {
+          "canonical_body": "004b6a30",
+          "bytes": 374,
+          "sha256": "3748edd28b5f2f8d5921f929d276796ea16276404b364e64ea1006ef2df8041c"
+        },
+        {
+          "canonical_body": "004b6ca0",
+          "bytes": 225,
+          "sha256": "43534941867dd8457a526895b7cad079aab52bbd15e3ad664bade9fc747649d6"
+        },
+        {
+          "canonical_body": "00487620",
+          "bytes": 43,
+          "sha256": "61dae5051b6beb9abeb4b278cd0f448a4f02fe3d507a1684de0ae47d0487c54c"
         }
       ]
     },
@@ -197,6 +237,26 @@
           "canonical_body": "00477990",
           "bytes": 70,
           "sha256": "d321a9a7926bb37345add9137d621827cb43ac0043f24a2e7c423a0ac38ef43c"
+        },
+        {
+          "canonical_body": "00477850",
+          "bytes": 112,
+          "sha256": "fe13bc178e4d4c09c32732b4df1a84905ce76f0ab08581e0c520dfcadf050b38"
+        },
+        {
+          "canonical_body": "004b6a30",
+          "bytes": 374,
+          "sha256": "3748edd28b5f2f8d5921f929d276796ea16276404b364e64ea1006ef2df8041c"
+        },
+        {
+          "canonical_body": "004b6ca0",
+          "bytes": 225,
+          "sha256": "43534941867dd8457a526895b7cad079aab52bbd15e3ad664bade9fc747649d6"
+        },
+        {
+          "canonical_body": "00487620",
+          "bytes": 43,
+          "sha256": "61dae5051b6beb9abeb4b278cd0f448a4f02fe3d507a1684de0ae47d0487c54c"
         }
       ]
     }
@@ -4647,6 +4707,1561 @@
         "004b6a30",
         "004b6ca0"
       ]
+    },
+    "00477850": {
+      "start": "00477850",
+      "end_exclusive": "004778c0",
+      "bytes": 112,
+      "sha256": "fe13bc178e4d4c09c32732b4df1a84905ce76f0ab08581e0c520dfcadf050b38",
+      "hex": "5152575589e583ec1889f189c28b30c1fe108d04f50000000001f08b3548d95d00c1e0028d7df401c6a5a5a58b4202c1f8108b75f4c1e00801c68b42048975e8c1f8108b75f8c1e00801c68b42068975ecc1f8108b75fcc1e00801c689cf8975f08d75e8a5a5a589c889ec5d5f5a59c3",
+      "instructions": [
+        {
+          "va": "00477850",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "va": "00477851",
+          "mnemonic": "push",
+          "operands": "edx"
+        },
+        {
+          "va": "00477852",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "va": "00477853",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "va": "00477854",
+          "mnemonic": "mov",
+          "operands": "ebp,esp"
+        },
+        {
+          "va": "00477856",
+          "mnemonic": "sub",
+          "operands": "esp,0x18"
+        },
+        {
+          "va": "00477859",
+          "mnemonic": "mov",
+          "operands": "ecx,esi"
+        },
+        {
+          "va": "0047785b",
+          "mnemonic": "mov",
+          "operands": "edx,eax"
+        },
+        {
+          "va": "0047785d",
+          "mnemonic": "mov",
+          "operands": "esi,DWORD PTR [eax]"
+        },
+        {
+          "va": "0047785f",
+          "mnemonic": "sar",
+          "operands": "esi,0x10"
+        },
+        {
+          "va": "00477862",
+          "mnemonic": "lea",
+          "operands": "eax,[esi*8+0x0]"
+        },
+        {
+          "va": "00477869",
+          "mnemonic": "add",
+          "operands": "eax,esi"
+        },
+        {
+          "va": "0047786b",
+          "mnemonic": "mov",
+          "operands": "esi,DWORD PTR ds:0x5dd948"
+        },
+        {
+          "va": "00477871",
+          "mnemonic": "shl",
+          "operands": "eax,0x2"
+        },
+        {
+          "va": "00477874",
+          "mnemonic": "lea",
+          "operands": "edi,[ebp-0xc]"
+        },
+        {
+          "va": "00477877",
+          "mnemonic": "add",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "00477879",
+          "mnemonic": "movs",
+          "operands": "DWORD PTR es:[edi],DWORD PTR ds:[esi]"
+        },
+        {
+          "va": "0047787a",
+          "mnemonic": "movs",
+          "operands": "DWORD PTR es:[edi],DWORD PTR ds:[esi]"
+        },
+        {
+          "va": "0047787b",
+          "mnemonic": "movs",
+          "operands": "DWORD PTR es:[edi],DWORD PTR ds:[esi]"
+        },
+        {
+          "va": "0047787c",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [edx+0x2]"
+        },
+        {
+          "va": "0047787f",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "00477882",
+          "mnemonic": "mov",
+          "operands": "esi,DWORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "00477885",
+          "mnemonic": "shl",
+          "operands": "eax,0x8"
+        },
+        {
+          "va": "00477888",
+          "mnemonic": "add",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "0047788a",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [edx+0x4]"
+        },
+        {
+          "va": "0047788d",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x18],esi"
+        },
+        {
+          "va": "00477890",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "00477893",
+          "mnemonic": "mov",
+          "operands": "esi,DWORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "00477896",
+          "mnemonic": "shl",
+          "operands": "eax,0x8"
+        },
+        {
+          "va": "00477899",
+          "mnemonic": "add",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "0047789b",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [edx+0x6]"
+        },
+        {
+          "va": "0047789e",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x14],esi"
+        },
+        {
+          "va": "004778a1",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004778a4",
+          "mnemonic": "mov",
+          "operands": "esi,DWORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "004778a7",
+          "mnemonic": "shl",
+          "operands": "eax,0x8"
+        },
+        {
+          "va": "004778aa",
+          "mnemonic": "add",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "004778ac",
+          "mnemonic": "mov",
+          "operands": "edi,ecx"
+        },
+        {
+          "va": "004778ae",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x10],esi"
+        },
+        {
+          "va": "004778b1",
+          "mnemonic": "lea",
+          "operands": "esi,[ebp-0x18]"
+        },
+        {
+          "va": "004778b4",
+          "mnemonic": "movs",
+          "operands": "DWORD PTR es:[edi],DWORD PTR ds:[esi]"
+        },
+        {
+          "va": "004778b5",
+          "mnemonic": "movs",
+          "operands": "DWORD PTR es:[edi],DWORD PTR ds:[esi]"
+        },
+        {
+          "va": "004778b6",
+          "mnemonic": "movs",
+          "operands": "DWORD PTR es:[edi],DWORD PTR ds:[esi]"
+        },
+        {
+          "va": "004778b7",
+          "mnemonic": "mov",
+          "operands": "eax,ecx"
+        },
+        {
+          "va": "004778b9",
+          "mnemonic": "mov",
+          "operands": "esp,ebp"
+        },
+        {
+          "va": "004778bb",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "va": "004778bc",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "va": "004778bd",
+          "mnemonic": "pop",
+          "operands": "edx"
+        },
+        {
+          "va": "004778be",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "va": "004778bf",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "x87_mmx_instructions": [],
+      "direct_call_targets": []
+    },
+    "004b6a30": {
+      "start": "004b6a30",
+      "end_exclusive": "004b6ba6",
+      "bytes": 374,
+      "sha256": "3748edd28b5f2f8d5921f929d276796ea16276404b364e64ea1006ef2df8041c",
+      "hex": "56575589e583ec1089c689d7895df0894df48b5d10b90000010029d90fbf0089caf7eac1e210c1e81011d08945fc89da0fbf07f7eac1e210c1e81011d08945f88b45fc0345f88b55146689028b0689cac1f810f7eac1e210c1e81011d08945fc8b0789dac1f810f7eac1e210c1e81011d08945f88b45fc0345f88b5514668942028b460289cac1f810f7eac1e210c1e81011d08945f88b470289dac1f810f7eac1e210c1e81011d08945fc8b45f80345fc8b5514668942048b460489cac1f810f7eac1e210c1e81011d089c68b470489dac1f810f7eac1e210c1e81011d001c68b4514668970068b45f089ca8b00f7eac1e210c1e81011d089c68b45f489da8b00f7eac1e210c1e81011d001c68b451889308b45f089ca8b4004f7eac1e210c1e81011d089c68b45f489da8b4004f7eac1e210c1e81011d001c68b45188970048b45f089ca8b4008f7eac1e210c1e81011d089c18b45f489da8b4008f7eac1e210c1e81011d001c18b451889480889ec5d5f5ec20c00",
+      "instructions": [
+        {
+          "va": "004b6a30",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "va": "004b6a31",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "va": "004b6a32",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "va": "004b6a33",
+          "mnemonic": "mov",
+          "operands": "ebp,esp"
+        },
+        {
+          "va": "004b6a35",
+          "mnemonic": "sub",
+          "operands": "esp,0x10"
+        },
+        {
+          "va": "004b6a38",
+          "mnemonic": "mov",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "004b6a3a",
+          "mnemonic": "mov",
+          "operands": "edi,edx"
+        },
+        {
+          "va": "004b6a3c",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x10],ebx"
+        },
+        {
+          "va": "004b6a3f",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0xc],ecx"
+        },
+        {
+          "va": "004b6a42",
+          "mnemonic": "mov",
+          "operands": "ebx,DWORD PTR [ebp+0x10]"
+        },
+        {
+          "va": "004b6a45",
+          "mnemonic": "mov",
+          "operands": "ecx,0x10000"
+        },
+        {
+          "va": "004b6a4a",
+          "mnemonic": "sub",
+          "operands": "ecx,ebx"
+        },
+        {
+          "va": "004b6a4c",
+          "mnemonic": "movsx",
+          "operands": "eax,WORD PTR [eax]"
+        },
+        {
+          "va": "004b6a4f",
+          "mnemonic": "mov",
+          "operands": "edx,ecx"
+        },
+        {
+          "va": "004b6a51",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6a53",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6a56",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6a59",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6a5b",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x4],eax"
+        },
+        {
+          "va": "004b6a5e",
+          "mnemonic": "mov",
+          "operands": "edx,ebx"
+        },
+        {
+          "va": "004b6a60",
+          "mnemonic": "movsx",
+          "operands": "eax,WORD PTR [edi]"
+        },
+        {
+          "va": "004b6a63",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6a65",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6a68",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6a6b",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6a6d",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x8],eax"
+        },
+        {
+          "va": "004b6a70",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "004b6a73",
+          "mnemonic": "add",
+          "operands": "eax,DWORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "004b6a76",
+          "mnemonic": "mov",
+          "operands": "edx,DWORD PTR [ebp+0x14]"
+        },
+        {
+          "va": "004b6a79",
+          "mnemonic": "mov",
+          "operands": "WORD PTR [edx],ax"
+        },
+        {
+          "va": "004b6a7c",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esi]"
+        },
+        {
+          "va": "004b6a7e",
+          "mnemonic": "mov",
+          "operands": "edx,ecx"
+        },
+        {
+          "va": "004b6a80",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6a83",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6a85",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6a88",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6a8b",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6a8d",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x4],eax"
+        },
+        {
+          "va": "004b6a90",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [edi]"
+        },
+        {
+          "va": "004b6a92",
+          "mnemonic": "mov",
+          "operands": "edx,ebx"
+        },
+        {
+          "va": "004b6a94",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6a97",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6a99",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6a9c",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6a9f",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6aa1",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x8],eax"
+        },
+        {
+          "va": "004b6aa4",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "004b6aa7",
+          "mnemonic": "add",
+          "operands": "eax,DWORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "004b6aaa",
+          "mnemonic": "mov",
+          "operands": "edx,DWORD PTR [ebp+0x14]"
+        },
+        {
+          "va": "004b6aad",
+          "mnemonic": "mov",
+          "operands": "WORD PTR [edx+0x2],ax"
+        },
+        {
+          "va": "004b6ab1",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esi+0x2]"
+        },
+        {
+          "va": "004b6ab4",
+          "mnemonic": "mov",
+          "operands": "edx,ecx"
+        },
+        {
+          "va": "004b6ab6",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6ab9",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6abb",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6abe",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6ac1",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6ac3",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x8],eax"
+        },
+        {
+          "va": "004b6ac6",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [edi+0x2]"
+        },
+        {
+          "va": "004b6ac9",
+          "mnemonic": "mov",
+          "operands": "edx,ebx"
+        },
+        {
+          "va": "004b6acb",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6ace",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6ad0",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6ad3",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6ad6",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6ad8",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x4],eax"
+        },
+        {
+          "va": "004b6adb",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "004b6ade",
+          "mnemonic": "add",
+          "operands": "eax,DWORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "004b6ae1",
+          "mnemonic": "mov",
+          "operands": "edx,DWORD PTR [ebp+0x14]"
+        },
+        {
+          "va": "004b6ae4",
+          "mnemonic": "mov",
+          "operands": "WORD PTR [edx+0x4],ax"
+        },
+        {
+          "va": "004b6ae8",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esi+0x4]"
+        },
+        {
+          "va": "004b6aeb",
+          "mnemonic": "mov",
+          "operands": "edx,ecx"
+        },
+        {
+          "va": "004b6aed",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6af0",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6af2",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6af5",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6af8",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6afa",
+          "mnemonic": "mov",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "004b6afc",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [edi+0x4]"
+        },
+        {
+          "va": "004b6aff",
+          "mnemonic": "mov",
+          "operands": "edx,ebx"
+        },
+        {
+          "va": "004b6b01",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6b04",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6b06",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6b09",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6b0c",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6b0e",
+          "mnemonic": "add",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "004b6b10",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp+0x14]"
+        },
+        {
+          "va": "004b6b13",
+          "mnemonic": "mov",
+          "operands": "WORD PTR [eax+0x6],si"
+        },
+        {
+          "va": "004b6b17",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "004b6b1a",
+          "mnemonic": "mov",
+          "operands": "edx,ecx"
+        },
+        {
+          "va": "004b6b1c",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [eax]"
+        },
+        {
+          "va": "004b6b1e",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6b20",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6b23",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6b26",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6b28",
+          "mnemonic": "mov",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "004b6b2a",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "004b6b2d",
+          "mnemonic": "mov",
+          "operands": "edx,ebx"
+        },
+        {
+          "va": "004b6b2f",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [eax]"
+        },
+        {
+          "va": "004b6b31",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6b33",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6b36",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6b39",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6b3b",
+          "mnemonic": "add",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "004b6b3d",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp+0x18]"
+        },
+        {
+          "va": "004b6b40",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [eax],esi"
+        },
+        {
+          "va": "004b6b42",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "004b6b45",
+          "mnemonic": "mov",
+          "operands": "edx,ecx"
+        },
+        {
+          "va": "004b6b47",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [eax+0x4]"
+        },
+        {
+          "va": "004b6b4a",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6b4c",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6b4f",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6b52",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6b54",
+          "mnemonic": "mov",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "004b6b56",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "004b6b59",
+          "mnemonic": "mov",
+          "operands": "edx,ebx"
+        },
+        {
+          "va": "004b6b5b",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [eax+0x4]"
+        },
+        {
+          "va": "004b6b5e",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6b60",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6b63",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6b66",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6b68",
+          "mnemonic": "add",
+          "operands": "esi,eax"
+        },
+        {
+          "va": "004b6b6a",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp+0x18]"
+        },
+        {
+          "va": "004b6b6d",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [eax+0x4],esi"
+        },
+        {
+          "va": "004b6b70",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "004b6b73",
+          "mnemonic": "mov",
+          "operands": "edx,ecx"
+        },
+        {
+          "va": "004b6b75",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [eax+0x8]"
+        },
+        {
+          "va": "004b6b78",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6b7a",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6b7d",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6b80",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6b82",
+          "mnemonic": "mov",
+          "operands": "ecx,eax"
+        },
+        {
+          "va": "004b6b84",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "004b6b87",
+          "mnemonic": "mov",
+          "operands": "edx,ebx"
+        },
+        {
+          "va": "004b6b89",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [eax+0x8]"
+        },
+        {
+          "va": "004b6b8c",
+          "mnemonic": "imul",
+          "operands": "edx"
+        },
+        {
+          "va": "004b6b8e",
+          "mnemonic": "shl",
+          "operands": "edx,0x10"
+        },
+        {
+          "va": "004b6b91",
+          "mnemonic": "shr",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6b94",
+          "mnemonic": "adc",
+          "operands": "eax,edx"
+        },
+        {
+          "va": "004b6b96",
+          "mnemonic": "add",
+          "operands": "ecx,eax"
+        },
+        {
+          "va": "004b6b98",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp+0x18]"
+        },
+        {
+          "va": "004b6b9b",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [eax+0x8],ecx"
+        },
+        {
+          "va": "004b6b9e",
+          "mnemonic": "mov",
+          "operands": "esp,ebp"
+        },
+        {
+          "va": "004b6ba0",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "va": "004b6ba1",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "va": "004b6ba2",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "va": "004b6ba3",
+          "mnemonic": "ret",
+          "operands": "0xc"
+        }
+      ],
+      "x87_mmx_instructions": [],
+      "direct_call_targets": []
+    },
+    "004b6ca0": {
+      "start": "004b6ca0",
+      "end_exclusive": "004b6d81",
+      "bytes": 225,
+      "sha256": "43534941867dd8457a526895b7cad079aab52bbd15e3ad664bade9fc747649d6",
+      "hex": "535156575589e583ec200fbf088d1c09895de08b18c1fb10895df88d341b8b58028b40048b7de0c1f8100faff8897de489c70faffec1fb10895dfc01db0fafc38945ec8b45e00fafc1897de889cf0faffe0fafcb894df48b4df80faff18945f089c80fafc30faf5dfcb90000001029f129d9c1f90c890a8b4dec01f9c1f90c894a048b4df42b4de8c1f90c894a082b7decc1ff0cb900000010897a0c8b7df029f989cf29df89fbc1fb0c895a108b5de401c3c1fb0c8b7de8895a148b5df401fbc1fb0c895a182b45e4c1f80c89421c89c829f0c1f80c89422089ec5d5f5e595bc3",
+      "instructions": [
+        {
+          "va": "004b6ca0",
+          "mnemonic": "push",
+          "operands": "ebx"
+        },
+        {
+          "va": "004b6ca1",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "va": "004b6ca2",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "va": "004b6ca3",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "va": "004b6ca4",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "va": "004b6ca5",
+          "mnemonic": "mov",
+          "operands": "ebp,esp"
+        },
+        {
+          "va": "004b6ca7",
+          "mnemonic": "sub",
+          "operands": "esp,0x20"
+        },
+        {
+          "va": "004b6caa",
+          "mnemonic": "movsx",
+          "operands": "ecx,WORD PTR [eax]"
+        },
+        {
+          "va": "004b6cad",
+          "mnemonic": "lea",
+          "operands": "ebx,[ecx+ecx*1]"
+        },
+        {
+          "va": "004b6cb0",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x20],ebx"
+        },
+        {
+          "va": "004b6cb3",
+          "mnemonic": "mov",
+          "operands": "ebx,DWORD PTR [eax]"
+        },
+        {
+          "va": "004b6cb5",
+          "mnemonic": "sar",
+          "operands": "ebx,0x10"
+        },
+        {
+          "va": "004b6cb8",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x8],ebx"
+        },
+        {
+          "va": "004b6cbb",
+          "mnemonic": "lea",
+          "operands": "esi,[ebx+ebx*1]"
+        },
+        {
+          "va": "004b6cbe",
+          "mnemonic": "mov",
+          "operands": "ebx,DWORD PTR [eax+0x2]"
+        },
+        {
+          "va": "004b6cc1",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [eax+0x4]"
+        },
+        {
+          "va": "004b6cc4",
+          "mnemonic": "mov",
+          "operands": "edi,DWORD PTR [ebp-0x20]"
+        },
+        {
+          "va": "004b6cc7",
+          "mnemonic": "sar",
+          "operands": "eax,0x10"
+        },
+        {
+          "va": "004b6cca",
+          "mnemonic": "imul",
+          "operands": "edi,eax"
+        },
+        {
+          "va": "004b6ccd",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x1c],edi"
+        },
+        {
+          "va": "004b6cd0",
+          "mnemonic": "mov",
+          "operands": "edi,eax"
+        },
+        {
+          "va": "004b6cd2",
+          "mnemonic": "imul",
+          "operands": "edi,esi"
+        },
+        {
+          "va": "004b6cd5",
+          "mnemonic": "sar",
+          "operands": "ebx,0x10"
+        },
+        {
+          "va": "004b6cd8",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x4],ebx"
+        },
+        {
+          "va": "004b6cdb",
+          "mnemonic": "add",
+          "operands": "ebx,ebx"
+        },
+        {
+          "va": "004b6cdd",
+          "mnemonic": "imul",
+          "operands": "eax,ebx"
+        },
+        {
+          "va": "004b6ce0",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x14],eax"
+        },
+        {
+          "va": "004b6ce3",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [ebp-0x20]"
+        },
+        {
+          "va": "004b6ce6",
+          "mnemonic": "imul",
+          "operands": "eax,ecx"
+        },
+        {
+          "va": "004b6ce9",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x18],edi"
+        },
+        {
+          "va": "004b6cec",
+          "mnemonic": "mov",
+          "operands": "edi,ecx"
+        },
+        {
+          "va": "004b6cee",
+          "mnemonic": "imul",
+          "operands": "edi,esi"
+        },
+        {
+          "va": "004b6cf1",
+          "mnemonic": "imul",
+          "operands": "ecx,ebx"
+        },
+        {
+          "va": "004b6cf4",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0xc],ecx"
+        },
+        {
+          "va": "004b6cf7",
+          "mnemonic": "mov",
+          "operands": "ecx,DWORD PTR [ebp-0x8]"
+        },
+        {
+          "va": "004b6cfa",
+          "mnemonic": "imul",
+          "operands": "esi,ecx"
+        },
+        {
+          "va": "004b6cfd",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp-0x10],eax"
+        },
+        {
+          "va": "004b6d00",
+          "mnemonic": "mov",
+          "operands": "eax,ecx"
+        },
+        {
+          "va": "004b6d02",
+          "mnemonic": "imul",
+          "operands": "eax,ebx"
+        },
+        {
+          "va": "004b6d05",
+          "mnemonic": "imul",
+          "operands": "ebx,DWORD PTR [ebp-0x4]"
+        },
+        {
+          "va": "004b6d09",
+          "mnemonic": "mov",
+          "operands": "ecx,0x10000000"
+        },
+        {
+          "va": "004b6d0e",
+          "mnemonic": "sub",
+          "operands": "ecx,esi"
+        },
+        {
+          "va": "004b6d10",
+          "mnemonic": "sub",
+          "operands": "ecx,ebx"
+        },
+        {
+          "va": "004b6d12",
+          "mnemonic": "sar",
+          "operands": "ecx,0xc"
+        },
+        {
+          "va": "004b6d15",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [edx],ecx"
+        },
+        {
+          "va": "004b6d17",
+          "mnemonic": "mov",
+          "operands": "ecx,DWORD PTR [ebp-0x14]"
+        },
+        {
+          "va": "004b6d1a",
+          "mnemonic": "add",
+          "operands": "ecx,edi"
+        },
+        {
+          "va": "004b6d1c",
+          "mnemonic": "sar",
+          "operands": "ecx,0xc"
+        },
+        {
+          "va": "004b6d1f",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [edx+0x4],ecx"
+        },
+        {
+          "va": "004b6d22",
+          "mnemonic": "mov",
+          "operands": "ecx,DWORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "004b6d25",
+          "mnemonic": "sub",
+          "operands": "ecx,DWORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "004b6d28",
+          "mnemonic": "sar",
+          "operands": "ecx,0xc"
+        },
+        {
+          "va": "004b6d2b",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [edx+0x8],ecx"
+        },
+        {
+          "va": "004b6d2e",
+          "mnemonic": "sub",
+          "operands": "edi,DWORD PTR [ebp-0x14]"
+        },
+        {
+          "va": "004b6d31",
+          "mnemonic": "sar",
+          "operands": "edi,0xc"
+        },
+        {
+          "va": "004b6d34",
+          "mnemonic": "mov",
+          "operands": "ecx,0x10000000"
+        },
+        {
+          "va": "004b6d39",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [edx+0xc],edi"
+        },
+        {
+          "va": "004b6d3c",
+          "mnemonic": "mov",
+          "operands": "edi,DWORD PTR [ebp-0x10]"
+        },
+        {
+          "va": "004b6d3f",
+          "mnemonic": "sub",
+          "operands": "ecx,edi"
+        },
+        {
+          "va": "004b6d41",
+          "mnemonic": "mov",
+          "operands": "edi,ecx"
+        },
+        {
+          "va": "004b6d43",
+          "mnemonic": "sub",
+          "operands": "edi,ebx"
+        },
+        {
+          "va": "004b6d45",
+          "mnemonic": "mov",
+          "operands": "ebx,edi"
+        },
+        {
+          "va": "004b6d47",
+          "mnemonic": "sar",
+          "operands": "ebx,0xc"
+        },
+        {
+          "va": "004b6d4a",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [edx+0x10],ebx"
+        },
+        {
+          "va": "004b6d4d",
+          "mnemonic": "mov",
+          "operands": "ebx,DWORD PTR [ebp-0x1c]"
+        },
+        {
+          "va": "004b6d50",
+          "mnemonic": "add",
+          "operands": "ebx,eax"
+        },
+        {
+          "va": "004b6d52",
+          "mnemonic": "sar",
+          "operands": "ebx,0xc"
+        },
+        {
+          "va": "004b6d55",
+          "mnemonic": "mov",
+          "operands": "edi,DWORD PTR [ebp-0x18]"
+        },
+        {
+          "va": "004b6d58",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [edx+0x14],ebx"
+        },
+        {
+          "va": "004b6d5b",
+          "mnemonic": "mov",
+          "operands": "ebx,DWORD PTR [ebp-0xc]"
+        },
+        {
+          "va": "004b6d5e",
+          "mnemonic": "add",
+          "operands": "ebx,edi"
+        },
+        {
+          "va": "004b6d60",
+          "mnemonic": "sar",
+          "operands": "ebx,0xc"
+        },
+        {
+          "va": "004b6d63",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [edx+0x18],ebx"
+        },
+        {
+          "va": "004b6d66",
+          "mnemonic": "sub",
+          "operands": "eax,DWORD PTR [ebp-0x1c]"
+        },
+        {
+          "va": "004b6d69",
+          "mnemonic": "sar",
+          "operands": "eax,0xc"
+        },
+        {
+          "va": "004b6d6c",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [edx+0x1c],eax"
+        },
+        {
+          "va": "004b6d6f",
+          "mnemonic": "mov",
+          "operands": "eax,ecx"
+        },
+        {
+          "va": "004b6d71",
+          "mnemonic": "sub",
+          "operands": "eax,esi"
+        },
+        {
+          "va": "004b6d73",
+          "mnemonic": "sar",
+          "operands": "eax,0xc"
+        },
+        {
+          "va": "004b6d76",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [edx+0x20],eax"
+        },
+        {
+          "va": "004b6d79",
+          "mnemonic": "mov",
+          "operands": "esp,ebp"
+        },
+        {
+          "va": "004b6d7b",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "va": "004b6d7c",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "va": "004b6d7d",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "va": "004b6d7e",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "va": "004b6d7f",
+          "mnemonic": "pop",
+          "operands": "ebx"
+        },
+        {
+          "va": "004b6d80",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "x87_mmx_instructions": [],
+      "direct_call_targets": []
+    },
+    "00487620": {
+      "start": "00487620",
+      "end_exclusive": "0048764b",
+      "bytes": 43,
+      "sha256": "61dae5051b6beb9abeb4b278cd0f448a4f02fe3d507a1684de0ae47d0487c54c",
+      "hex": "535156575589e581ecb402000083ed5a89454e89d1c74542010000008b1485601b7900d94572d81adfe09e",
+      "instructions": [
+        {
+          "va": "00487620",
+          "mnemonic": "push",
+          "operands": "ebx"
+        },
+        {
+          "va": "00487621",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "va": "00487622",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "va": "00487623",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "va": "00487624",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "va": "00487625",
+          "mnemonic": "mov",
+          "operands": "ebp,esp"
+        },
+        {
+          "va": "00487627",
+          "mnemonic": "sub",
+          "operands": "esp,0x2b4"
+        },
+        {
+          "va": "0048762d",
+          "mnemonic": "sub",
+          "operands": "ebp,0x5a"
+        },
+        {
+          "va": "00487630",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp+0x4e],eax"
+        },
+        {
+          "va": "00487633",
+          "mnemonic": "mov",
+          "operands": "ecx,edx"
+        },
+        {
+          "va": "00487635",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [ebp+0x42],0x1"
+        },
+        {
+          "va": "0048763c",
+          "mnemonic": "mov",
+          "operands": "edx,DWORD PTR [eax*4+0x791b60]"
+        },
+        {
+          "va": "00487643",
+          "mnemonic": "fld",
+          "operands": "DWORD PTR [ebp+0x72]"
+        },
+        {
+          "va": "00487646",
+          "mnemonic": "fcomp",
+          "operands": "DWORD PTR [edx]"
+        },
+        {
+          "va": "00487648",
+          "mnemonic": "fnstsw",
+          "operands": "ax"
+        },
+        {
+          "va": "0048764a",
+          "mnemonic": "sahf",
+          "operands": ""
+        }
+      ],
+      "x87_mmx_instructions": [
+        {
+          "va": "00487643",
+          "mnemonic": "fld",
+          "operands": "DWORD PTR [ebp+0x72]"
+        },
+        {
+          "va": "00487646",
+          "mnemonic": "fcomp",
+          "operands": "DWORD PTR [edx]"
+        },
+        {
+          "va": "00487648",
+          "mnemonic": "fnstsw",
+          "operands": "ax"
+        }
+      ],
+      "direct_call_targets": []
     }
   },
   "resolved_copy_boundary": {
@@ -4656,14 +6271,20 @@
     "scope": "Dispatcher and all three direct copy backends checked; no explicit x87 status/environment reader or further calls in backends.",
     "limit": "x87 integer transfers and MMX/EMMS affect other floating-point state; full machine equivalence not implied."
   },
-  "track_map_frontiers": {
-    "rectangle_submit_target": "00487620",
-    "pose_unpack_target": "00477850",
-    "pose_interpolation_targets": [
+  "resolved_track_map_boundaries": {
+    "integer_leaf_bodies": [
+      "00477850",
       "004b6a30",
       "004b6ca0"
     ],
-    "limit": "Reviewed local bodies do not read incoming condition bits; these callees and outer returns remain unresolved."
+    "rectangle_prefix": {
+      "start": "00487620",
+      "end_exclusive": "0048764b",
+      "fresh_comparison": "00487646",
+      "first_status_read": "00487648",
+      "proof": "Straight-line entry prefix; fresh FCOMP precedes first FNSTSW under normal admitted execution."
+    },
+    "remaining": "Outer-return liveness, RPM ancestry, indirect/asynchronous observers and complete x87 state."
   },
   "limits": [
     "Integer-only batch paths preserve live condition bits; x87/MMX copy paths need separate full-state contracts.",

@@ -43,7 +43,7 @@ These are real limits of the reviewed scope, not evidence that a caller actually
 | Are all downstream observers excluded? | No; render/transform callees, outer returns, indirect callers and asynchronous state observers were not proved safe. | **Pending — runtime/integration qualification:** follow these specific boundaries, recording the next consumer or definite producer before return. |
 | Is a game-facing replacement justified now? | No. This review does not prove full machine-state equivalence, and the original-register replacement adapter and broader ABI/input/FPU requirements remain separate. | **Not qualified — linking/runtime integration.** |
 
-The next bounded investigation can inspect the remaining track-map transform calls and outer return paths; the follow-ups below now cover the batch/copy cascade. If incoming status is saved, inspect the exact masks/uses to establish whether C0/C2/C3 matter; do not treat every status-word read as a semantic dependency. If an actual dependency exists, reproduce the required outgoing bits or explicitly redesign only an authorized interface. Do not silently discard the mismatch, and do not broaden this into unrelated scratchpad work or a game patch.
+The follow-ups below cover the batch/copy cascade and named track-map callees; the remaining gate is outer-return/RPM ancestry and other unreviewed observers, rather than reopening those local helpers. If incoming status is saved, inspect the exact masks/uses to establish whether C0/C2/C3 matter; do not treat every status-word read as a semantic dependency. If an actual dependency exists, reproduce the required outgoing bits or explicitly redesign only an authorized interface. Do not silently discard the mismatch, and do not broaden this into unrelated scratchpad work or a game patch.
 
 ## Batch-helper follow-up across original and Modern baselines
 
@@ -92,6 +92,23 @@ The audit now additionally checks five complete bodies, **624 bytes identical ac
 
 The HUD transform performs arithmetic under its incoming control state, so its byte identity does not establish numerical equivalence under original/Modern precision policies. Nor are arithmetic instructions treated as guaranteed C0/C2/C3 kills merely because no explicit reader appears. The inactive pose path and pointer lookup simply propagate the tracked bits; active-path conclusions stop at the listed unreviewed calls.
 
-**Current next targets:** rectangle submission `00487620`, pose unpacking `00477850`, interpolation/matrix targets `004b6a30` and `004b6ca0`, plus the earlier RPM ancestry and outer-return/indirect/asynchronous boundaries. This replaces the former blanket uncertainty for `0048cb50`, `00477d90` and `0048cc60` with inspected local contracts. No actual incoming-C-bit consumer or whole-game absence has been proved by this extension.
+**Targets at that checkpoint:** rectangle submission `00487620`, pose unpacking `00477850`, interpolation/matrix targets `004b6a30` and `004b6ca0`. The subsequent follow-up resolves those local boundaries; RPM ancestry and outer-return/indirect/asynchronous boundaries remain. This replaces the former blanket uncertainty for `0048cb50`, `00477d90` and `0048cc60` with inspected local contracts. No actual incoming-C-bit consumer or whole-game absence has been proved by this extension.
 
 Manifest schema2 stores each identical body's raw bytes, disassembly and call list **once** in `canonical_bodies`, with separate byte/hash references under each of the three pinned baselines. The script still independently reads and decodes every baseline and asserts complete body equality; this avoids triplicating identical instruction records without replacing evidence with a claim. No C, probe, target execution or Ghidra change occurred.
+
+## Named track-map callees: integer leaves and fresh comparison
+
+The next extension resolves the four specific targets from the preceding checkpoint. The audit adds **711 identical bytes** in three complete call-free integer routines, plus a **43-byte identical entry prefix**, across original, official Modern and local analysis EXEs. Total retained scope is2751 bytes. Exact opcode sets, no-call assertions and the prefix ordering proof are in the same manifest.
+
+| Range, end exclusive | Condition-bit finding |
+|---|---|
+| `00477850..004778c0` (112 bytes) | Relative-position unpacking with integer shifts/adds and MOVSD copies; no status read, x87 instruction or outgoing CALL. |
+| `004b6a30..004b6ba6` (374 bytes) | Packed interpolation via integer multiplication/carry/shifts and stores; no x87/MMX instruction or outgoing CALL. |
+| `004b6ca0..004b6d81` (225 bytes) | Fixed rotation-matrix construction via integer arithmetic; no x87/MMX instruction or outgoing CALL. |
+| `00487620..0048764b` (43-byte prefix only) | Straight-line entry reaches fresh FCOMP at `00487646`, then first FNSTSW at `00487648` and SAHF at `0048764a`. No earlier branch, CALL or status/environment read occurs in this prefix. |
+
+Under the admitted normal, non-faulting x87 contract, that **FCOMP defines fresh C0/C2/C3 before the status reader**. The rectangle submitter therefore does not read the line helper's incoming values at its first status test. Later branches/callees can use the new comparison results, but need not be analysed as observers of these particular earlier bits solely because a later FNSTSW exists. This is an entry-dominance argument about three tracked condition bits, not a declaration that the whole1025-byte rectangle submitter has been qualified.
+
+The three integer leaves preserve live x87 condition bits on normal return; they do not make the bits dead. Their enclosing pose wrappers were already locally checked, so the named active/inactive pose paths no longer stop at anonymous interpolation calls. Liveness may still propagate back to the enclosing track-map routine and its callers. Pending exception handling, x87 stack/tag/C1/other status state, arbitrary inputs, indirect entry into a body and asynchronous observers remain outside this argument.
+
+**Updated stopping point:** no incoming-C0/C2/C3 reader has been identified along the reviewed local batch/copy/track-map branches. The remaining qualification is outer track-map return/call ordering, RPM ancestry and unreviewed indirect/asynchronous observers, together with the reconstructed function's full ABI/memory/FPU contract. Do not describe resolved local targets as still pending, or turn their resolution into whole-game machine equivalence. No runtime probe or game run occurred.

@@ -13,9 +13,11 @@ COPY_RANGES = [(0x4ea4f0,0x4ea547,[0x503281,0x5033e5,0x50356d]),
 TRACK_RANGES = [(0x48cb50,0x48cc60,[]),(0x48cc60,0x48cce8,[0x487620]),
                 (0x477d90,0x477df0,[0x477a10,0x477a10,0x477990]),
                 (0x477a10,0x477a42,[]),
-                (0x477990,0x4779d6,[0x477850,0x477850,0x4b6a30,0x4b6ca0])]
+                (0x477990,0x4779d6,[0x477850,0x477850,0x4b6a30,0x4b6ca0]),
+                (0x477850,0x4778c0,[]),(0x4b6a30,0x4b6ba6,[]),(0x4b6ca0,0x4b6d81,[]),
+                (0x487620,0x48764b,[])]
 TRACK_ALLOWED = {'fld','fadd','faddp','fmul','fmulp','fstp','fsub','fsubp','fsubr','fxch',
-                 'imul','or','and','sar','sbb','je','jl'}
+                 'imul','or','and','sar','sbb','je','jl','movs','movsx','adc','shr'}
 COPY_ALLOWED = {'ja','jae','jb','je','jns','js','jl','test','emms','fild','fxch','fistp','movq'}
 ALLOWED = {'push','pop','mov','add','sub','inc','dec','shl','lea','cmp','jge','jne','jmp','call','ret','xor'}
 
@@ -49,6 +51,8 @@ def main():
                     continue
                 address,mnemonic,operands = match.groups()
                 extras = COPY_ALLOWED if start in {row[0] for row in COPY_RANGES} else (TRACK_ALLOWED if start in {row[0] for row in TRACK_RANGES} else set())
+                if start == 0x487620:
+                    extras = extras | {'fcomp','fnstsw','sahf'}
                 assert mnemonic in ALLOWED | extras, line
                 instructions.append({'va': address.zfill(8), 'mnemonic': mnemonic, 'operands': operands.strip()})
                 if mnemonic == 'call':
@@ -70,15 +74,25 @@ def main():
         'copy_bytes_identical': 1076,
         'scope': 'Dispatcher and all three direct copy backends checked; no explicit x87 status/environment reader or further calls in backends.',
         'limit': 'x87 integer transfers and MMX/EMMS affect other floating-point state; full machine equivalence not implied.'}
-    out['track_map_frontiers'] = {'rectangle_submit_target': '00487620',
-        'pose_unpack_target': '00477850', 'pose_interpolation_targets': ['004b6a30','004b6ca0'],
-        'limit': 'Reviewed local bodies do not read incoming condition bits; these callees and outer returns remain unresolved.'}
+    prefix = out['canonical_bodies']['00487620']['instructions']
+    readers = [i for i,row in enumerate(prefix) if row['mnemonic'] == 'fnstsw']
+    assert len(readers) == 1
+    reader = readers[0]
+    assert prefix[reader]['va'] == '00487648'
+    assert prefix[reader-1]['va'] == '00487646' and prefix[reader-1]['mnemonic'] == 'fcomp'
+    assert all(not row['mnemonic'].startswith('j') and row['mnemonic'] not in {'call','ret'} for row in prefix[:reader])
+    out['resolved_track_map_boundaries'] = {
+        'integer_leaf_bodies': ['00477850','004b6a30','004b6ca0'],
+        'rectangle_prefix': {'start': '00487620', 'end_exclusive': '0048764b',
+            'fresh_comparison': '00487646', 'first_status_read': '00487648',
+            'proof': 'Straight-line entry prefix; fresh FCOMP precedes first FNSTSW under normal admitted execution.'},
+        'remaining': 'Outer-return liveness, RPM ancestry, indirect/asynchronous observers and complete x87 state.'}
     out['limits'] = ['Integer-only batch paths preserve live condition bits; x87/MMX copy paths need separate full-state contracts.',
         'Copy cascade contains no explicit C0/C2/C3 reader; other outer/transform/renderer boundaries remain unresolved.',
         'Memory faults, asynchronous observers, other render/transform paths and indirect callers excluded.',
         'No game, compiler, probe, C reconstruction, Ghidra mutation or target instruction execution.']
     (ROOT/'analysis/evidence/audits/line-boundary-batch-status.json').write_text(json.dumps(out,indent=2)+'\n')
-    print('PASS: 1997 identical bytes across three baselines; canonical body evidence and narrowed track-map frontiers')
+    print('PASS: 2751 identical bytes across three baselines; integer pose leaves and dominating fresh comparison verified')
 
 
 if __name__ == '__main__':
