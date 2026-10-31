@@ -73,3 +73,9 @@ The original EXE, official Modern EXE, local analysis EXE and saved `db.3146.gbf
 For each next investigation, name the question, bounded addresses/artifacts and stopping condition up front. End it with a verified difference or a precise unknown plus required evidence. Commit coherent findings; do not turn every remaining uncertainty into another prerequisite.
 
 This handoff closes a documentation pass, not the persistent objective of explaining all Modern Patch differences. The broader audit remains active and incomplete.
+
+## Subsequent inventory reconciliation
+
+The outside-body triage now routes two further high-ranked intervals to reproduced existing evidence: `0041d6e4..0041d7e4` is the Modern256-byte preset WORD table, while `00472e1d..00472f20` contains54 Modern graphics-default table bytes surrounded by NOPs. The paired preset/default audits were rerun successfully. These are original-code-to-Modern-data transformations, not newly discovered executable functions; whole-code inventory totals are unchanged.
+
+The [InteriorBx follow-up](original-modern-control-component-keys.md) additionally establishes selected-entry return normalization,188-byte template copying, overlapping source-byte destinations, and common-property store ranges. Compass bit9 semantics and InteriorBx+45h consumers remain unresolved. That bounded menu investigation can be resumed from those exact fields; resolving it is not a prerequisite for classifying other outside-body intervals. The next broad task remains semantic classification of the inventory, with existing chapters reused before additional disassembly.
