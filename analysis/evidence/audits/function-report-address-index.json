@@ -129,7 +129,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "fb257ab78b856e6e02f4d4ac08833699731bbcdc6fe3444f938c85df29268e06"
+      "sha256": "3adaa73201f72268c4cda337b8e3d5fe11744ab044d8c1ecfcf27d003d3138ef"
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
@@ -382,8 +382,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 305,
-    "without_address_mentions": 56
+    "with_address_mentions": 306,
+    "without_address_mentions": 55
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -5035,7 +5035,23 @@
       "changed_bytes": 8,
       "original_sha256": "0b915ad804cd3a54db9742010c206da418100d81e9e787186d2117d03f82f053",
       "modern_sha256": "fd7c2b0911a332fd47cd7304bc732c25f70e23aed888ce654e97b350a8fb7e86",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00480910",
+            "00480999",
+            "004809a3",
+            "004809aa",
+            "004809b3",
+            "004809bd",
+            "004809c5",
+            "004809d3",
+            "004809df"
+          ]
+        }
+      ]
     },
     {
       "entry": "00480fc0",
@@ -10198,6 +10214,13 @@
         },
         {
           "path": "analysis/original-modern-frontend-page.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dfd56"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-hud-layout.md",
           "entry_mentioned": true,
           "addresses": [
             "004dfd56"
