@@ -7,6 +7,20 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "004bc160",
+          "end": "004bc176",
+          "sha256": "cf9d7feeb20a20e126d2e9d297927287389fab32ff533087c372d412f58ab510",
+          "assembly": "analysis/captures/modern-differences/state14/original-004bc160.asm",
+          "assembly_sha256": "8e45a3175f7e0f112a21933ebf33e5e8f2cd9f56e38450322fa1d080b2ec56df"
+        },
+        {
+          "start": "00431c30",
+          "end": "00431c35",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/state14/original-00431c30.asm",
+          "assembly_sha256": "a4fec559e50a455e1960a9a70c3cdba0fb306dbaf82514e92cee4e89457faf12"
+        },
+        {
           "start": "00431900",
           "end": "00431a99",
           "sha256": "46baff72221eee45903343ed61b30f9bfa8f66d2e07da5df69611250c18fda73",
@@ -41,6 +55,20 @@
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
         {
+          "start": "004bc160",
+          "end": "004bc176",
+          "sha256": "5b531d7bbb585777b5a79a262afc298179f6601ec9aa3f6694de88b1673bb75e",
+          "assembly": "analysis/captures/modern-differences/state14/official_modern-004bc160.asm",
+          "assembly_sha256": "8965bcd598c458540d30277f16ea5e36aa6b61ac3e15967a58344e89866807cd"
+        },
+        {
+          "start": "00431c30",
+          "end": "00431c35",
+          "sha256": "4aaee1503c9f7c29b5d1c1d742f5ee7437bd124df2ee2b54782583c07ed0a238",
+          "assembly": "analysis/captures/modern-differences/state14/official_modern-00431c30.asm",
+          "assembly_sha256": "37884594c16b20484716553e3211b6706b3714e4d9326f541b62e98dad973e36"
+        },
+        {
           "start": "00431900",
           "end": "00431a99",
           "sha256": "46baff72221eee45903343ed61b30f9bfa8f66d2e07da5df69611250c18fda73",
@@ -67,9 +95,27 @@
           "sha256": "37993537bc576246c3696a0c7dc62dbf5b4b97781c5a64dd480243151e9bc496",
           "assembly": "analysis/captures/modern-differences/state14/official_modern-00470b90.asm",
           "assembly_sha256": "69aafd18fb677bb4d41e9805beae38fc8dcfcf8050aa536477cde25c8da18ca1"
+        },
+        {
+          "start": "00431c1c",
+          "end": "00431c33",
+          "sha256": "1747b2318043138b32ca1e63c0d03190867f10048eb68a42471db559164f0775",
+          "assembly": "analysis/captures/modern-differences/state14/modern-00431c1c.asm",
+          "assembly_sha256": "532398987c6dbda6794a99a827babfa66279eb375a5c4bce886a31b21d29c1cf"
         }
       ]
     }
+  },
+  "modern_fog_descriptor": {
+    "address": "00556924",
+    "words": [
+      "0053a87c",
+      "005561be",
+      "00000000",
+      "00000000",
+      "006fd1d4"
+    ],
+    "name": "fog"
   },
   "identical_ranges": [
     {

@@ -14,10 +14,18 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
-        for start,end in [(0x431900,0x431a99),(0x470ad0,0x470b1e if label=='original' else 0x470afa),(0x470b20,0x470b6a),(0x470b90,0x470bb8)]:
+        for start,end in [(0x4bc160,0x4bc176),(0x431c30,0x431c35),(0x431900,0x431a99),(0x470ad0,0x470b1e if label=='original' else 0x470afa),(0x470b20,0x470b6a),(0x470b90,0x470bb8)]:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+        if label=='official_modern':
+            path=capture/'modern-00431c1c.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel','--start-address=0x431c1c','--stop-address=0x431c33',relative],cwd=ROOT))
+            rows.append({'start':'00431c1c','end':'00431c33','sha256':hashlib.sha256(pe.get_data(0x31c1c,23)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows}
+    modern=images['official_modern']
+    row=struct.unpack('<5I',modern.get_data(0x156924,20));assert row==(0x53a87c,0x5561be,0,0,0x6fd1d4)
+    assert modern.get_data(0x13a87c,4)==b'fog\0'
+    result['modern_fog_descriptor']={'address':'00556924','words':[f'{n:08x}' for n in row],'name':'fog'}
+    assert images['original'].get_data(0x31c30,5)==bytes.fromhex('5589e55dc3')
     result['identical_ranges']=[]
     for start,end in [(0x431900,0x431a99),(0x470b20,0x470b6a),(0x470b90,0x470bb8)]:
         a,b=[p.get_data(start-0x400000,end-start) for p in images.values()];assert a==b
