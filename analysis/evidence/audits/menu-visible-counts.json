@@ -540,8 +540,72 @@
       ]
     }
   },
+  "widget_type_bindings": {
+    "original": [
+      {
+        "row": "00557ab4",
+        "type_id": 17,
+        "name": "cascade",
+        "template": "00556ea8",
+        "row_sha256": "93e69ff303162088c3586af08215243198d0ca6e79a218a749a53d522193e54f",
+        "callbacks_by_offset": {
+          "24": "004623a0",
+          "2c": "00461d00",
+          "30": "004624a0",
+          "34": "004628d0"
+        }
+      },
+      {
+        "row": "00557ac0",
+        "type_id": 29,
+        "name": "droplist",
+        "template": "00556f0c",
+        "row_sha256": "4b0da4a60721d2cc2d3709a948e3a8218382dfe2e5b206384df509fdec68bbe3",
+        "callbacks_by_offset": {
+          "24": "00463e60",
+          "2c": "004634d0",
+          "30": "00463ff0",
+          "34": "00464560"
+        }
+      }
+    ],
+    "official_modern": [
+      {
+        "row": "00557ab4",
+        "type_id": 17,
+        "name": "cascade",
+        "template": "00556ea8",
+        "row_sha256": "93e69ff303162088c3586af08215243198d0ca6e79a218a749a53d522193e54f",
+        "callbacks_by_offset": {
+          "24": "004623a0",
+          "2c": "00461d00",
+          "30": "004624a0",
+          "34": "004628d0"
+        }
+      },
+      {
+        "row": "00557ac0",
+        "type_id": 29,
+        "name": "droplist",
+        "template": "00556f0c",
+        "row_sha256": "4b0da4a60721d2cc2d3709a948e3a8218382dfe2e5b206384df509fdec68bbe3",
+        "callbacks_by_offset": {
+          "24": "00463e60",
+          "2c": "004634d0",
+          "30": "00463ff0",
+          "34": "00464560"
+        }
+      }
+    ]
+  },
   "field_writer_spans": {
     "original": [
+      {
+        "start": "00449060",
+        "end": "004490d8",
+        "sha256": "51ceec3d6dee39d285616e7ac95a0c12898903fd1fd32a075fbb9bcb5abdf3ce",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00449060.asm"
+      },
       {
         "start": "00449240",
         "end": "004492bf",
@@ -586,6 +650,12 @@
       }
     ],
     "official_modern": [
+      {
+        "start": "00449060",
+        "end": "004490d8",
+        "sha256": "51ceec3d6dee39d285616e7ac95a0c12898903fd1fd32a075fbb9bcb5abdf3ce",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00449060.asm"
+      },
       {
         "start": "00449240",
         "end": "004492bf",

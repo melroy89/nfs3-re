@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-car-alias.md",
-      "sha256": "02eeb6316d6b2038fc558069b9e89b3578c64a2dce54a6577aa3359fc6a86812",
-      "relative_links": 3
+      "sha256": "d0d594324d200ce9f76ef6f73ee471347f31dc73899979842d7c5fbe75d6efe1",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-car-download.md",
@@ -33,7 +33,7 @@
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
-      "sha256": "80f1d26ddbba5615cbb3709a3994defe98e0035a8aea300506dfbd64332e83bf",
+      "sha256": "afb6998a21c0b5089ce257f862390a9431505194f1572a0c46f5afbf37e159e1",
       "relative_links": 8
     },
     {
@@ -68,8 +68,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "28047044e77251936e96efd147fceefc35b4375cbe5c2f262dc4071693466a64",
-      "relative_links": 100
+      "sha256": "78abbfa5fc7a4c271b7b4e1f835904ed33957518484daed0e843cd45f715828e",
+      "relative_links": 101
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -403,7 +403,7 @@
     }
   ],
   "file_count": 80,
-  "relative_link_count": 594,
+  "relative_link_count": 596,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

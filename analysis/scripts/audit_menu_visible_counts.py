@@ -43,9 +43,18 @@ def main():
             data=pe.get_data(address-0x400000,16);words=struct.unpack('<4I',data)
             assert pe.get_data(words[1]-0x400000,11)==b'maxvisitem\0'
             rows.append({'address':f'{address:08x}','words':[f'{word:08x}' for word in words],'sha256':hashlib.sha256(data).hexdigest()})
+        bindings=[]
+        for address,expected_type,expected_name,template in [(0x557ab4,0x11,'cascade',0x556ea8),(0x557ac0,0x1d,'droplist',0x556f0c)]:
+            data=pe.get_data(address-0x400000,12);type_id,name_ptr,template_ptr=struct.unpack('<3I',data)
+            name=pe.get_data(name_ptr-0x400000,16).split(b'\0')[0].decode('ascii')
+            assert (type_id,name,template_ptr)==(expected_type,expected_name,template)
+            callbacks={f'{offset:x}':f'{struct.unpack("<I",pe.get_data(template_ptr-0x400000+offset,4))[0]:08x}' for offset in (0x24,0x2c,0x30,0x34)}
+            if type_id==0x1d:assert list(callbacks.values())==['00463e60','004634d0','00463ff0','00464560']
+            bindings.append({'row':f'{address:08x}','type_id':type_id,'name':name,'template':f'{template_ptr:08x}','row_sha256':hashlib.sha256(data).hexdigest(),'callbacks_by_offset':callbacks})
+        result.setdefault('widget_type_bindings',{})[label]=bindings
         spans=[]
         capture=ROOT/'analysis/captures/modern-differences/menu-visible-counts';capture.mkdir(parents=True,exist_ok=True)
-        for start,end in [(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
+        for start,end in [(0x449060,0x4490d8),(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             spans.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT))})
         assert struct.unpack('<I',pe.get_data(0x4921c,4))[0]==0x4492aa

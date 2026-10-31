@@ -374,7 +374,7 @@ See also [dialog input dispatch](original-modern-dialog-input.md): Shift/Tab nor
 
 See also [dropdown input shared sound tail](original-modern-dropdown-input.md): selection-route feedback and consolidated close/update ordering.
 
-The [cascade count follow-up](original-modern-common-menu-buttons.md#cascade-effective-count-signed-word-minimum) corrects the overlapping stack-read interpretation: the handler compares the signed low WORD of the actual list count with the authored limit. Within0..32767 this is a minimum, shared by both executable baselines. The nine authored cap increases therefore have a concrete handler consumer; populated lists, construction copying and rendered row counts remain unverified.
+The [droplist count follow-up](original-modern-common-menu-buttons.md#droplist-effective-count-signed-word-minimum) corrects the overlapping stack-read interpretation: the handler compares the signed low WORD of the actual list count with the authored limit. Within0..32767 this is a minimum, shared by both executable baselines. This handler belongs to droplist; the nine cascade authored increases require separate callback/field tracing. Populated lists, active instance selection and rendered row counts remain unverified.
 
 The [complete expanded-list layout comparison](original-modern-common-menu-buttons.md#complete-layout-helper-difference-coverage) accounts for every changed byte in the379-byte helper: a narrower mode3/name selector, width padding5→15, and count extent5→2. The resulting width contribution can increase or decrease, depending on the list name; no universal wider-menu claim follows.
 
@@ -385,6 +385,8 @@ The [measurement-wrapper comparison](original-modern-car-alias.md#width-dependen
 The [numeric-scale anchoring follow-up](original-modern-numeric-scale.md#right-anchor-helper-changes-its-x87-return-contract) verifies an x87 return-ownership change: original anchoring helper discards the draw advance; Modern returns it and the inspected HUD-scale caller explicitly pops it. This is an ABI/stack-effect difference in addition to layout arithmetic.
 
 The [complete list-renderer comparison](original-modern-car-alias.md#complete-renderer-difference-coverage-at-004634d0) now accounts for all36 changed bytes in its2,316-byte body: the track-policy selector and two car-alias CALL retargetings. This closes local byte-difference coverage without claiming identical drawing dependencies or runtime output.
+
+The [widget registration correction](original-modern-common-menu-buttons.md#type-registration-separates-cascade-and-droplist-consumers) identifies the inspected renderer/input/layout callbacks as droplist type1dh. The nine authored cap increases are cascades type11h, requiring separate callback tracing. Their apparent linkage through matching list names was insufficient and has been corrected.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
