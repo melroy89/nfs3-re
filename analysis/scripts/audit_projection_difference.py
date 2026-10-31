@@ -100,6 +100,8 @@ def main():
         'limits':['Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.','Half-width reload and live extended half-height have distinct spill schedules.']}
     modern = images[1]
     initializer = images[0].get_data(0x23a60,0x4b)
+    iterator = images[0].get_data(0x23a20,0x3e)
+    assert iterator == images[1].get_data(0x23a20,0x3e)
     assert initializer == images[1].get_data(0x23a60,0x4b)
     assert initializer[0x19:0x32].hex() == '31c04089148538105e0083f8197d0a4089148538105e00ebf1'
     result['indexed_source_candidate'] = {
@@ -108,6 +110,13 @@ def main():
         'initial_fill':'EAX starts1, stores indices1..25 at005e1038+4*EAX:005e103c..005e109c inclusive.',
         'excluded_by_initial_fill':['005e1020','005e102c','005e1030','005e1038'],
         'later_store':'00423a9d uses005e103c+4*EDX; EDX derives from00423a20 results.',
+        'iterator':{'span':'00423a20..00423a5e','bytes_identical':True,
+                    'sha256':hashlib.sha256(iterator).hexdigest(),
+                    'reset':'Nonzero input EAX resets scan index to0.',
+                    'result':'First nonzero DWORD among006fbbc0,006fbbc4,006fbbc8,006fbbcc, or0; cursor stored at005e10c0.',
+                    'qualification':'Bounded four-cell scan requires cursor0..4 on continuation; reset establishes this for the inspected caller absent intervening mutation.'},
+        'later_store_alias_indices':{f'{address:08x}':[f'{((address-0x5e103c)//4+k*0x40000000)&0xffffffff:08x}' for k in range(4)]
+                                    for address in (0x5e1020,0x5e102c,0x5e1030,0x5e1038)},
         'limits':['Normal entry/control flow only; alternate interior entries are not excluded.',
                   'Later indexed-store range and callback results remain unresolved; this is not a global no-writer proof.']}
     for va,encoded in ((0x4dbc6e,'d8d1dfe09e7602'),(0x4dbc75,'d9c9ddd8'),

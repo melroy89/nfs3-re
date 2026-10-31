@@ -531,6 +531,40 @@
       "005e1038"
     ],
     "later_store": "00423a9d uses005e103c+4*EDX; EDX derives from00423a20 results.",
+    "iterator": {
+      "span": "00423a20..00423a5e",
+      "bytes_identical": true,
+      "sha256": "19636da4d19885f5fdf2f1acf3936f412ec2d906bec452fcab6e70200eb77225",
+      "reset": "Nonzero input EAX resets scan index to0.",
+      "result": "First nonzero DWORD among006fbbc0,006fbbc4,006fbbc8,006fbbcc, or0; cursor stored at005e10c0.",
+      "qualification": "Bounded four-cell scan requires cursor0..4 on continuation; reset establishes this for the inspected caller absent intervening mutation."
+    },
+    "later_store_alias_indices": {
+      "005e1020": [
+        "fffffff9",
+        "3ffffff9",
+        "7ffffff9",
+        "bffffff9"
+      ],
+      "005e102c": [
+        "fffffffc",
+        "3ffffffc",
+        "7ffffffc",
+        "bffffffc"
+      ],
+      "005e1030": [
+        "fffffffd",
+        "3ffffffd",
+        "7ffffffd",
+        "bffffffd"
+      ],
+      "005e1038": [
+        "ffffffff",
+        "3fffffff",
+        "7fffffff",
+        "bfffffff"
+      ]
+    },
     "limits": [
       "Normal entry/control flow only; alternate interior entries are not excluded.",
       "Later indexed-store range and callback results remain unresolved; this is not a global no-writer proof."
