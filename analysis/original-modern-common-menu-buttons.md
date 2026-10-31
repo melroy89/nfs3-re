@@ -98,3 +98,18 @@ Following writer **`00449240`** corrects a prior four-byte row-alignment error: 
 The writer multiplies its descriptor index by16 and reads conversion type from table base **`00557c10+8`**, destination pointer from base+`0x0c`. It subtracts construction base **`00604ee0`** from the latter, computes **`00604ee0 + 0xbc*instanceIndex + destinationOffset`**, and dispatches conversion type through **`00449218`**. Both selected rows specify type1, whose target is **`004492aa`**: call numeric conversion helper `00449130`, prepare a local DWORD but set copy length to **2**. Shared copy tail **`00449393..004493a3`** then copies exactly those two bytes to the instance destination.
 
 Thus the authored count is stored as the low WORD of the numeric conversion result at instance offsets **`0x54`** or **`0x58`**, rather than a full DWORD at a fixed global address. The audit retains paired writer spans and checks the type1 dispatch target. Numeric parsing bounds/overflow, the first descriptor word’s complete section/type admission, and the later cascade effective-count calculation remain follow-up work. This closes the local storage-width/instance-address question without claiming that the authored value is always the final visible count.
+
+## Cascade effective-count calculation is not a simple minimum
+
+The audit now retains paired calculation **`00464024..00464052`** and lookup/count helpers **`00442bf0..00442c49`**, **`00442c50..00442c74`**. In the input handler, local−8 contains the earlier return from `00442bf0`; the count helper result is saved separately at local−4. The observed selection is:
+
+- Load widget WORD+`0x58` by reading DWORD+`0x56` and arithmetic-shifting16; save this signed value.
+- Read DWORD local−6 and arithmetic-shift16. This extracts the signed **high WORD of local−8**, not the separately saved count.
+- If that extracted value is signed less than the authored value, choose the full count-helper result; otherwise load the authored WORD+`0x58`.
+- Store the low WORD of the chosen result at widget+`0x5a`.
+
+The local−8 producer searches20-byte list descriptors at **`005563e8`** by name and returns descriptor+8, or0 on lookup failure. It preserves incoming EDX, allowing the earlier list-pointer result to survive. Count helper `00442c50` separately obtains the WORD-list pointer via `00442c80` and increments until a zero WORD sentinel, with no local maximum-length check. Its initialization starts at0; it does not normalize the other lookup result into a count.
+
+Therefore this input calculation cannot be truthfully summarized as `min(listLength,maxvisitem)` from the inspected instructions. For a local−8 return of0 and a positive authored limit, the branch chooses the full list count even if that exceeds the limit. Whether this combination occurs for the affected lists requires actual descriptor contents and initialization linkage; no runtime excess rows are asserted. A nonzero pointer-like return also makes its upper address bits relevant to the comparison. Preserve this observed relationship during reconstruction until the data roles and intended invariant are verified.
+
+This narrows the remaining gap: the parser’s WORD store is established, but a robust universal visible-row bound is not. The nine authored increases remain useful differences without proving exact final runtime counts. No parser, count scan or widget handler was executed.

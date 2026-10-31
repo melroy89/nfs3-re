@@ -553,6 +553,24 @@
         "end": "004493a3",
         "sha256": "5455a1a18a64552952beb151774745f804326af6a5b6cef2fee6c2cfd7b891f0",
         "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00449393.asm"
+      },
+      {
+        "start": "00442bf0",
+        "end": "00442c49",
+        "sha256": "cbfcbe725db6ce4bf5b70ca651938438dbd2b1bb6a88da6188963c77c0ea6def",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00442bf0.asm"
+      },
+      {
+        "start": "00442c50",
+        "end": "00442c74",
+        "sha256": "caa1968f8b0eab2672b55c89a3948e96a00c59d06ab40b44c655858653529b32",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00442c50.asm"
+      },
+      {
+        "start": "00464024",
+        "end": "00464052",
+        "sha256": "ad86f2ce51071be136dd0def5546cbd77165631ecd972fceee57f7b28ebfc9d2",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00464024.asm"
       }
     ],
     "official_modern": [
@@ -567,6 +585,24 @@
         "end": "004493a3",
         "sha256": "5455a1a18a64552952beb151774745f804326af6a5b6cef2fee6c2cfd7b891f0",
         "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00449393.asm"
+      },
+      {
+        "start": "00442bf0",
+        "end": "00442c49",
+        "sha256": "cbfcbe725db6ce4bf5b70ca651938438dbd2b1bb6a88da6188963c77c0ea6def",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00442bf0.asm"
+      },
+      {
+        "start": "00442c50",
+        "end": "00442c74",
+        "sha256": "caa1968f8b0eab2672b55c89a3948e96a00c59d06ab40b44c655858653529b32",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00442c50.asm"
+      },
+      {
+        "start": "00464024",
+        "end": "00464052",
+        "sha256": "ad86f2ce51071be136dd0def5546cbd77165631ecd972fceee57f7b28ebfc9d2",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00464024.asm"
       }
     ]
   },
