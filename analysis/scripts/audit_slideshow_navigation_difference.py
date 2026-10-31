@@ -15,9 +15,10 @@ def main():
         raw = (ROOT / relative).read_bytes()
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw); images.append(pe)
-        spans = [(0x453840, 0x453859), (0x453860, 0x45393e), (0x453c00, 0x453c4f), (0x453ed7, 0x453eec), (0x453ef0, 0x453f48)] if label == 'original' else [(0x453850, 0x453863), (0x453864, 0x45393d), (0x453c00, 0x453c4f), (0x453ed7, 0x453eee), (0x453ef0, 0x453f58)]
+        spans = [(0x453840, 0x453859), (0x453860, 0x45393e), (0x453c00, 0x453eee), (0x453ed7, 0x453eec), (0x453ef0, 0x453f48)] if label == 'original' else [(0x453850, 0x453863), (0x453864, 0x45393d), (0x453c00, 0x453eee), (0x453ed7, 0x453eee), (0x453ef0, 0x453f58)]
         spans += [(0x44aa30, 0x44aac9), (0x44a9e0, 0x44aa21), (0x44ab40, 0x44ac7c),
                   (0x44b6c8, 0x44b707), (0x44b7a7, 0x44b7ec), (0x44b30b, 0x44b382)]
+        if label=='official_modern':spans += [(0x451810,0x45182d),(0x451830,0x45183d),(0x4d6459,0x4d64a5),(0x4dafe6,0x4daffc)]
         rows = []
         for start, end in spans:
             path = capture / f'{label}-{start:08x}.asm'
@@ -28,6 +29,20 @@ def main():
             'slides_registration_row_00555f90_hex': pe.get_data(0x155f90, 24).hex(),
             'action_switch_0044b208_hex': pe.get_data(0x4b208, 32).hex()}
         assert int.from_bytes(pe.get_data(0x4b21c, 4), 'little') == 0x44b7a7
+    old,new=images
+    start,end=0x453c00,0x453eee
+    a,b=[pe.get_data(start-0x400000,end-start) for pe in images]
+    changed=[start+i for i,(x,y) in enumerate(zip(a,b)) if x!=y]
+    regions=[(0x453c00,0x453c47),(0x453e64,0x453e6b),(0x453e91,0x453e98),(0x453ebc,0x453ec6),(0x453ee3,0x453eee)]
+    assert all(any(lo<=address<hi for lo,hi in regions) for address in changed)
+    for site,slot in [(0x453e66,1),(0x453e93,2),(0x453ec1,0)]:
+        for pe,target in [(old,0x4d6390),(new,0x451810)]:
+            data=pe.get_data(site-0x400000,5);assert data[0]==0xe8
+            assert site+5+int.from_bytes(data[1:],'little',signed=True)==target
+    assert new.get_data(0x51812,3)==bytes.fromhex('0fb6ca')
+    assert new.get_data(0x51831,5)==bytes.fromhex('bf70476600')
+    out['complete_refresh_envelope']={'start':f'{start:08x}','end_exclusive':f'{end:08x}','changed_addresses':[f'{v:08x}' for v in changed],'covering_regions':[[f'{lo:08x}',f'{hi:08x}'] for lo,hi in regions],'boundary':'Original initializer/refresh versus Modern binding wrapper plus separate refresh; includes original post-return alignment.'}
+    out['refresh_resource_slots']={'wrapper':'00451810','base':'00664770','index':'zero-extended DL','slideshow_slots':{'00453e66':1,'00453e93':2,'00453ec1':0},'reset':'00451830 clears12 bytes','limits':'Complete creator/resource lifetime and all shared-slot users unresolved.'}
     common = [p.get_data(0x5386d, 0x453931-0x45386d) for p in images]
     assert common[0] == common[1]
     out['retained_previous_core'] = {'start': '0045386d', 'end': '00453931', 'sha256': hashlib.sha256(common[0]).hexdigest()}

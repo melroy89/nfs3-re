@@ -394,6 +394,8 @@ The [cascade input comparison](original-modern-common-menu-buttons.md#cascade-in
 
 The [menu dispatcher follow-up](original-modern-common-menu-buttons.md#dispatcher-consumes-result2-and-normalizes-it-to0) connects registered input slots directly to construction records and verifies result2 as “skip generic navigation, then return0”. It also identifies Modern’s PUSHAD/POPAD return-slot convention. Other changed branches and upstream admission remain open.
 
+The [complete slideshow refresh comparison](original-modern-slideshow-navigation.md#complete-refresh-envelope-and-persistent-resource-slots) identifies three creator calls routed through persistent WORD slots, alongside the deferred-update protocol. The wrapper and reset are traced; full resource lifetime, index admission and allocation savings remain unverified.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

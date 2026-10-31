@@ -22,10 +22,10 @@
         },
         {
           "start": "00453c00",
-          "end": "00453c4f",
-          "bytes_sha256": "5d2694636c784a3e7ba2f85d8fa94693e62585c8b0cd713fb4a25ac821d86e78",
+          "end": "00453eee",
+          "bytes_sha256": "d1c646875d1a7ad6d8dd4e5eac0f89b491dab29c1c32b9b8ba1e21806ffc98f9",
           "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-00453c00.asm",
-          "assembly_sha256": "6314b922bea14b70d9768963b97fec0e329b6a45c9ffd42bba668be67c5bdda0"
+          "assembly_sha256": "b05ce75f480877c5f6d959d98b74aea30bdad2c32a92630e4e13ad31dd626b11"
         },
         {
           "start": "00453ed7",
@@ -111,10 +111,10 @@
         },
         {
           "start": "00453c00",
-          "end": "00453c4f",
-          "bytes_sha256": "b831a06f31a6e40532bb123c20e7411e7abac273e64e5ba479db63b2ed8916cd",
+          "end": "00453eee",
+          "bytes_sha256": "e28fa1e75fc87b2b20a5fc6011eb8d9ac1465b7b6e73a8502f2e8dfcd7806e1f",
           "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00453c00.asm",
-          "assembly_sha256": "b351498d8701f3ff97094c52f0bd92560b277c22aeae1bcee0e6a27b5a64b6fb"
+          "assembly_sha256": "700cd53b8e844b5e09fa86ccb08b7a121023bb5c6cc74c22320243cb6c32a06c"
         },
         {
           "start": "00453ed7",
@@ -171,6 +171,34 @@
           "bytes_sha256": "97d8107462c4f7db81400872345e42d7edc2a07a10c8b782c49fdf9f5bbf6cba",
           "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-0044b30b.asm",
           "assembly_sha256": "6df2bbd7828cd195ea8e691d606053fdf6ab30606d35b3171af956b46d10b7a3"
+        },
+        {
+          "start": "00451810",
+          "end": "0045182d",
+          "bytes_sha256": "7e4f7ed6a23c658b50f57a5d7d03d95999892ddba0ffa7798adeefd289ff5826",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00451810.asm",
+          "assembly_sha256": "62035a487d667e0ce58db93ee0ddb6b5365f33d27811a7b3d5fe24ec78987357"
+        },
+        {
+          "start": "00451830",
+          "end": "0045183d",
+          "bytes_sha256": "e0b8754502ffb555fa024c64bdbebd3c9fe582c0c10cf6a2381040e877873f69",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00451830.asm",
+          "assembly_sha256": "c39d41e247ba4d934b773e2b83bad8f5dd7d3476eac44944120a072874519479"
+        },
+        {
+          "start": "004d6459",
+          "end": "004d64a5",
+          "bytes_sha256": "807fdac3347106a6fb3745603071edffc7ab8b576f8c99813c5de819eec68dfd",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-004d6459.asm",
+          "assembly_sha256": "a4d800ef7f97275391330e3e9fd165145c0e387ba384bcabc4a2a1573df1c277"
+        },
+        {
+          "start": "004dafe6",
+          "end": "004daffc",
+          "bytes_sha256": "4edfc0690bef9134f67709c392039379e34235bfee346790c8927dbe49187a04",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-004dafe6.asm",
+          "assembly_sha256": "0c9dbb028bcca3d24f030249cabf2ba719b638627054a64adb154f8260a6f65f"
         }
       ],
       "tokens": {
@@ -180,6 +208,149 @@
       "slides_registration_row_00555f90_hex": "547d53000000000000000000003c450000000000f03e4500",
       "action_switch_0044b208_hex": "d3b84400ecb7440047b7440047b74400f6b64400a7b74400deb644002bb74400"
     }
+  },
+  "complete_refresh_envelope": {
+    "start": "00453c00",
+    "end_exclusive": "00453eee",
+    "changed_addresses": [
+      "00453c00",
+      "00453c01",
+      "00453c02",
+      "00453c03",
+      "00453c04",
+      "00453c05",
+      "00453c06",
+      "00453c07",
+      "00453c08",
+      "00453c09",
+      "00453c0a",
+      "00453c0b",
+      "00453c0c",
+      "00453c0d",
+      "00453c0e",
+      "00453c0f",
+      "00453c10",
+      "00453c11",
+      "00453c12",
+      "00453c13",
+      "00453c14",
+      "00453c15",
+      "00453c16",
+      "00453c17",
+      "00453c18",
+      "00453c19",
+      "00453c1a",
+      "00453c1b",
+      "00453c1c",
+      "00453c1d",
+      "00453c1e",
+      "00453c1f",
+      "00453c20",
+      "00453c21",
+      "00453c22",
+      "00453c23",
+      "00453c24",
+      "00453c25",
+      "00453c26",
+      "00453c27",
+      "00453c28",
+      "00453c29",
+      "00453c2a",
+      "00453c2c",
+      "00453c2d",
+      "00453c2e",
+      "00453c2f",
+      "00453c30",
+      "00453c31",
+      "00453c32",
+      "00453c33",
+      "00453c34",
+      "00453c35",
+      "00453c36",
+      "00453c37",
+      "00453c38",
+      "00453c39",
+      "00453c3a",
+      "00453c3b",
+      "00453c3c",
+      "00453c3d",
+      "00453c3e",
+      "00453c3f",
+      "00453c40",
+      "00453c41",
+      "00453c42",
+      "00453c43",
+      "00453c44",
+      "00453c45",
+      "00453c46",
+      "00453e64",
+      "00453e65",
+      "00453e67",
+      "00453e68",
+      "00453e69",
+      "00453e6a",
+      "00453e91",
+      "00453e92",
+      "00453e94",
+      "00453e95",
+      "00453e96",
+      "00453e97",
+      "00453ebc",
+      "00453ebd",
+      "00453ebe",
+      "00453ebf",
+      "00453ec0",
+      "00453ec2",
+      "00453ec3",
+      "00453ec4",
+      "00453ec5",
+      "00453ee3",
+      "00453ee4",
+      "00453ee5",
+      "00453ee6",
+      "00453ee7",
+      "00453ee8",
+      "00453ee9",
+      "00453eea",
+      "00453eeb",
+      "00453eec",
+      "00453eed"
+    ],
+    "covering_regions": [
+      [
+        "00453c00",
+        "00453c47"
+      ],
+      [
+        "00453e64",
+        "00453e6b"
+      ],
+      [
+        "00453e91",
+        "00453e98"
+      ],
+      [
+        "00453ebc",
+        "00453ec6"
+      ],
+      [
+        "00453ee3",
+        "00453eee"
+      ]
+    ],
+    "boundary": "Original initializer/refresh versus Modern binding wrapper plus separate refresh; includes original post-return alignment."
+  },
+  "refresh_resource_slots": {
+    "wrapper": "00451810",
+    "base": "00664770",
+    "index": "zero-extended DL",
+    "slideshow_slots": {
+      "00453e66": 1,
+      "00453e93": 2,
+      "00453ec1": 0
+    },
+    "reset": "00451830 clears12 bytes",
+    "limits": "Complete creator/resource lifetime and all shared-slot users unresolved."
   },
   "retained_previous_core": {
     "start": "0045386d",
