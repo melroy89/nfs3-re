@@ -20,6 +20,8 @@ def main():
                  (0x4bbad0, 0x4bbb94), (0x422aa0, 0x422ace),
                  (0x4bb4c0, 0x4bb5ce), (0x4b90e0, 0x4b913f),
                  (0x4bae00, 0x4bb10f), (0x4bb200, 0x4bb495)]
+        if label == 'official_modern':
+            spans += [(0x472d10, 0x472e1d), (0x47263c, 0x472678), (0x43778c, 0x4377c1)]
         rows = []
         for start, end in spans:
             path = capture/f'{label}-{start:08x}.asm'
@@ -30,6 +32,12 @@ def main():
                          'assembly': str(path.relative_to(ROOT)),
                          'assembly_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows}
+        if label == 'official_modern':
+            result['binaries'][label]['admission_default_tables'] = {
+                f'{a:08x}': list(pe.get_data(a-0x400000, 6)) for a in (0x472e2c, 0x472e4a)}
+            result['binaries'][label]['graphics_tokens'] = {
+                f'{a:08x}': pe.get_data(a-0x400000, 40).split(b'\0')[0].decode('ascii')
+                for a in (0x538a20, 0x538a2c)}
     a, b = [result['binaries'][k]['spans'][1] for k in ('original', 'official_modern')]
     assert a['bytes_sha256'] == b['bytes_sha256']
     result['helper_004bbad0_identical'] = True

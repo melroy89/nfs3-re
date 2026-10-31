@@ -184,7 +184,7 @@ The [registry comparison](original-modern-registry.md) inventories 15 original v
 
 ## 27. Race-vehicle render scheduling
 
-The [vehicle-dispatch comparison](original-modern-vehicle-dispatch.md) traces retained participant loops, new admission around an identical selection helper, changed tick/parity bookkeeping and EAX preservation. The downstream randomizer changes from a global snapshot gate to an object tick gate; three render bodies and their dispatch tables remain byte-identical. Downstream visual effects and historical release attribution remain pending.
+The [vehicle-dispatch comparison](original-modern-vehicle-dispatch.md) traces retained participant loops, new admission around an identical selection helper, changed tick/parity bookkeeping and EAX preservation. The downstream randomizer changes from a global snapshot gate to an object tick gate; three render bodies and their dispatch tables remain byte-identical. The admission globals now have exact CPU/renderer-tier default tables and selected initialization/restore producers; complete UI/context meanings remain unresolved. Downstream visual effects and historical release attribution remain pending.
 
 ## 28. Prioritized semantic work remaining
 

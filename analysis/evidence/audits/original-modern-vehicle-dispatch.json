@@ -109,8 +109,51 @@
           "bytes_sha256": "c942db4bb4cce93869fc73c577d3066c0a9bd0ffb33039cf1621f6e9737d6f41",
           "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004bb200.asm",
           "assembly_sha256": "3cf661c9d603acd914c2ad4ee54e37662b99361633f047c5a87444a66bd4ab2b"
+        },
+        {
+          "start": "00472d10",
+          "end": "00472e1d",
+          "bytes_sha256": "39803c6749cdd42cd291dd75c764511c85f7e461bc781ed31b83d0b90f65d1f8",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-00472d10.asm",
+          "assembly_sha256": "b2e3f27d8a9aaba51ac7e2bd033e9c31283f191c6c3853490d29a69979b7e3ee"
+        },
+        {
+          "start": "0047263c",
+          "end": "00472678",
+          "bytes_sha256": "c1ac434e654f1e2de5c017600c2c9efdfb17d8f240e7365ec5e651553b56676f",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-0047263c.asm",
+          "assembly_sha256": "3835652312cb155e339522b703523066aede6231f7f123007d81a58b14f93f75"
+        },
+        {
+          "start": "0043778c",
+          "end": "004377c1",
+          "bytes_sha256": "32bf26d7187337f95d8da4faccf391bf684cbbe407fb7f63b0dde1b207fb8837",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-0043778c.asm",
+          "assembly_sha256": "02b9f1fb258d7176f510cbea0fd29e2c31736d3ca51196de903f78f3a071e7a3"
         }
-      ]
+      ],
+      "admission_default_tables": {
+        "00472e2c": [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "00472e4a": [
+          2,
+          2,
+          2,
+          2,
+          1,
+          0
+        ]
+      },
+      "graphics_tokens": {
+        "00538a20": "GRAPH_FOG",
+        "00538a2c": "GRAPH_FOG_CASCADE"
+      }
     }
   },
   "limits": [

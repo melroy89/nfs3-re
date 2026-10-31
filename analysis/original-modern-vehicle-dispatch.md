@@ -78,3 +78,22 @@ This clarifies the caller change in section 3. Original tests a shared snapshot,
 This is still not proof of exactly one random sample per object per tick. The helper never updates the gate field itself; the two calls inside a render body can both pass before the enclosing dispatcher writes it. Calls outside that enclosing path, objects skipped by its gates, tick changes and replay resets require separate tracing. Likewise this code-level difference can change RNG consumption when the two gates disagree, but does not establish that the RNG state affects physics, that network positions diverge, or that a particular release-note claim about wheel rotation is explained completely.
 
 **Closed for this bounded follow-up:** downstream dispatch correspondence, two retained render bodies/tables, exact randomizer operand delta and its relationship to caller write ordering. **Still pending:** remaining callers, admission-global meanings, RNG-state sharing, visual validation and historical attribution.
+
+## 6. Admission-global producers: defaults are not immutable settings
+
+Modern default initializer `00472d10` supplies both globals used by the new selection-helper admission gate. The [CPU-tier comparison](original-modern-cpu-tier.md) establishes its index: unsigned score `005652a4` is capped at 5, then halved if renderer mask `007a3a58 & 6` is nonzero. The initializer reads byte tables and zero-extends each element:
+
+| Effective tier index | `006fbc1c` from table `00472e2c` | `006fd1d8` from table `00472e4a` | Resulting admission to `004bbad0` under these values |
+|---:|---:|---:|---|
+| 0 | 2 | 2 | Always |
+| 1 | 2 | 2 | Always |
+| 2 | 1 | 2 | Always |
+| 3 | 1 | 2 | Always |
+| 4 | 0 | 1 | Only when context DWORD0 equals 1 |
+| 5 | 0 | 0 | Never |
+
+The writes occur at `00472d4d` and `00472e09`. This table evaluates the dispatcher's literal predicate using those defaults; it is not a claim that a user-selected configuration, race or renderer necessarily retains them. In particular, `006fd1d8` takes value 2 in the table, so replacing it with a boolean in maintained data would lose observed state even though this dispatcher only tests zero/nonzero.
+
+A separate initialization block writes zero to `006fbc1c` at `00472672`. Existing config-load research also establishes bulk config restoration. Modern helper `0043778c` can restore `006fd1d8` from temporary `00664688` when token matcher `004429c0` returns nonzero. It also copies `00664684` to `006fd1d4`; on a matcher miss that second copy occurs only when fog gate `007a3a54` is zero. Adjacent menu code uses the literal tokens `GRAPH_FOG` and `GRAPH_FOG_CASCADE`, but those strings alone do not establish that `006fd1d8` is simply a named fog boolean or that context DWORD0 identifies a particular viewport. The whole option binding must be followed before assigning that semantic label.
+
+**Verified:** two direct default producers, exact six-entry tables, zero initialization and conditional restore producer. **Still unresolved:** complete UI binding and context meaning, indirect/bulk writes beyond the existing config evidence, all original default counterparts and actual runtime values. This narrows the unknowns without converting a default table into a universal renderer policy. The script retains the Modern-specific producer spans; original bytes at those reused addresses are not presented as automatically corresponding functions.
