@@ -23,6 +23,15 @@
           "assembly_sha256": "97347b6b7c41d8dded6bea812a1a6a6204666cdf338e6f1668d4769109a385fd"
         }
       ],
+      "percentage_pair": {
+        "start": "0046b3a0",
+        "end": "0046c2e6",
+        "bytes_sha256": "b907c032e5724e4aff1baca5703c94d431b81c7626b497c16c12be4c0addc756",
+        "assembly": "analysis/captures/modern-differences/slider-percentage/original-0046b3a0.asm",
+        "assembly_sha256": "623716dfa84872f4c624cc57b2e3768ee80f3aba8d20c9e5ff90546f0497e06c",
+        "format": "(%02d%c, %02d%c)",
+        "constant_bytes_hex": "0000c8420ad7a3bb0ad7a33b"
+      },
       "bytes_sha256": "f0b9ea87922f1997ef8702b39346326b610ff0a14c716156fd2c6531a7d76ca5",
       "assembly": "analysis/captures/modern-differences/slider-percentage/original-00469680.asm",
       "assembly_sha256": "5fbdfa61e77107d7fbb386ee0b342627e23b51888b3c98410bbc8decf168839a",
@@ -62,6 +71,15 @@
           "assembly_sha256": "d2af1429e2842cc79905b2a18b8f08f4c7404be3d3fe192a1c384216e0425842"
         }
       ],
+      "percentage_pair": {
+        "start": "0046b3a0",
+        "end": "0046c2e6",
+        "bytes_sha256": "6217a0a2bf564d1bc6e37be02af1115ffc6e59bcd28075ac7afe6ebe6fc8ee8a",
+        "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-0046b3a0.asm",
+        "assembly_sha256": "922d5523490c6fc559a5a8bfb39a6c117ba958560986ec4e77191096dcf37188",
+        "format": "(%02d%c, %02d%c)",
+        "constant_bytes_hex": "0000c8420ad7a3bb0ad7a33b"
+      },
       "bytes_sha256": "28ce0541822c1b2b73a17d38f771b2a85c22b4c64fec0d8c501c8c5e780feffb",
       "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-00469680.asm",
       "assembly_sha256": "ec525abf343592d9c1843002296eed4d8d7837d2c3c8984eeb29d633a81c180e",
@@ -86,5 +104,8 @@
     "Slider type meanings require producer evidence."
   ],
   "identical_prefix_bytes": 3755,
-  "quantizer_identical": true
+  "quantizer_identical": true,
+  "percentage_pair_changed_addresses": [
+    "0046c1f0"
+  ]
 }

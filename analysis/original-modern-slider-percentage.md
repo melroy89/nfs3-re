@@ -81,3 +81,15 @@ Installed `audio.mnu` additionally contains `ASLD_MENUSOUND`, absent from the se
 For all three selected filenames, lowercase `fedata_org/menus/*.mnu` copies are **byte-identical** to installed `FEDATA/MENUS/*.mnu`; the inventory records this explicitly. They are not independent original evidence merely because they sit in a backup folder. Uppercase files have different hashes and preserve the older declaration pattern in this bounded set; retail/package provenance remains unverified.
 
 This explains the cooperation between a changed binary type gate and changed menu declarations: applying only one side would not reproduce the observed mappings for these files. It strengthens the mechanism behind the volume/alpha percentage catalog claim while leaving complete parser binding, historical introduction, dead-zone behavior and actual formatted outputs pending. No setting or asset was changed.
+
+## Separate two-axis percentage renderer: bounded counterexample
+
+The same audit now captures complete `RenderFrontendSliderWithPercentagePair` at `0046b3a0..0046c2e6` and compares every body byte. It differs at **only `0046c1f0`**, changing the immediate in `SUB EDX,10` to `SUB EDX,20` on one caption-coordinate branch. This is a layout delta, not a rewrite of that body's percentage arithmetic.
+
+Both bodies quantize entry floats +54h/+58h through `004693c0` with approximately0.01 step, multiply by100, store binary32 intermediates, add sign-selected approximately−0.005/+0.005, store again, and call `004dfd56` before FISTP. The constants at `0053aea8..0053aeb4` are byte-identical. Format `(%02d%c, %02d%c)` is also retained; existing argument-order research places the +58h percentage before +54h in the output. EAX returns0. The routine's type-2 widget dispatch is distinct from the single-slider's **percenttype2** field; identical numeric labels must not be conflated across these two selectors.
+
+This path still depends on the changed `004dfd56` implementation documented above. Consequently unchanged caller instructions/constants do not prove identical exception handling or every numeric result. Conversely, the final original/Modern pair does not support describing the two-axis percentage body as having adopted the single-slider's direct-FISTP rewrite. No such local rewrite exists here.
+
+Existing [controller property setup research](controller-axis-property-setup.md) connects axis widgets to cached percentage pairs and device-property setters. That supports further investigation of controller-related controls, not universal proof that the catalog's historical dead-zone rounding change is represented by this one-byte layout delta. Intermediate releases, complete type/resource binding and controlled ordinary/boundary comparisons remain required for that stronger claim.
+
+**Closed:** two-axis body/constant comparison and distinction from the single-slider tail. **Still unresolved:** historical rounding attribution, active control-word/exception state, full widget binding and numeric output equivalence. No controller properties or settings were changed.
