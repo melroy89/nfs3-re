@@ -360,7 +360,7 @@ The [replay-list cursor follow-up](original-modern-replay-list-cursor.md) ties t
 
 The [title-delay comparison](original-modern-title-delay.md) maps IntroSplashTime’s0..10-second consumer, zero-skip behavior and changed clock policy, separately from movie admission.
 
-The [startup requirements comparison](original-modern-startup-requirements.md) maps changed memory arithmetic, diagnostics and the added desktop-depth gate, including overflow and fractional-MiB limits.
+The [startup requirements comparison](original-modern-startup-requirements.md) maps changed memory arithmetic and desktop-depth admission, plus removed original corruption/resource diagnostics, DirectDraw capability and installation/media gates. It distinguishes removed callers from retained directory/file-enumeration helpers and records their capacity, shared-state and API-failure limits. These additional code findings have no assigned release-note ID.
 
 The [night-lighting comparison](original-modern-night-lighting.md) isolates an expanded context admission gate, unchanged lighting tail and retained scratch-allocation limitation; mirror attribution remains unresolved.
 
@@ -453,7 +453,7 @@ The [local DLL candidate inventory](original-modern-dll-candidates.md) pins dist
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **176 Claimed, 39 Static, 72 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **172 Claimed, 39 Static, 76 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -698,7 +698,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP120-005 | Some thrash driver capabilities could be set in thrash.ini: FogSupport and LightBeams. For example, it allows to override hardcoded values and allow to use fog for d3d thrash driver (if this driver supports it). It allows to use fog in the dx6 thrash driver from NFS4/3DSETUP. | Claimed |
 | MP120-006 | Thrash driver is loaded only once. | Claimed |
 | MP120-007 | When game can't init thrash driver error message box is displayed. In the original version there was no error reporting. | Claimed |
-| MP120-008 | Resolutions count limit was extended up to 100. | Claimed |
+| MP120-008 | Resolutions count limit was extended up to 100. | Partial |
 | MP120-009 | Fixed a bug of the first release of this patch: returning to the main setup menu instead of a menu of a current game mode. | Claimed |
 | MP120-010 | Added an ini setting DirectDrawLagFix which fixes performance problems of DirectX 5/6/7 in Windows 8+ via enabling “DXPrimaryEmulation -DisableMaxWindowedMode” compatibility mode (enabled by default). | Claimed |
 | MP120-011 | Added an ini setting KeyboardHook which allows to disable keyboard hook that has been used by the game for blocking Win key and keystrokes like Ctrl+Esc, but this code doesn't work in Windows 7+ so it is better to disable it (disabled by default). | Claimed |
@@ -710,11 +710,11 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP120-017 | Resolutions count limit was extended up to 100. | Claimed |
 | MP120-018 | The driver hides resolutions with height lower than 480 pixels now. | Claimed |
 | MP120-019 | 640×480 always reported as 16-bit because intro movie doesn't works in 32-bit mode. Other resolutions are reported as 32-bit if they are available. | Claimed |
-| MP120-020 | Firstly file glide3x.dll is searched in the same directory from where voodoo2.dll is loaded, then it is searched in current directory, and then in system directory. This change allows to save several different Glide API emulators to neighbour directories and use them when needed. | Claimed |
+| MP120-020 | Firstly file glide3x.dll is searched in the same directory from where voodoo2.dll is loaded, then it is searched in current directory, and then in system directory. This change allows to save several different Glide API emulators to neighbour directories and use them when needed. | Partial |
 | MP120-021 | Thrash driver voodoo2.dll distributed with two different Glide API emulators: nGlide and dgVoodoo. You have to choose nglide or dgvoodoo instead of voodoo2 in the VideoDriver ini setting. | Claimed |
 | MP120-022 | If you would like to play NFS3 on the real 3dfx Voodoo or 3dfx Voodoo 2 hardware, create new subdirectory with name voodoo2 in the drivers directory, copy into this subdirectory thrash.ini and voodoo2.dll from the dgvoodoo subdirectory, set VideoDriver ini setting to voodoo2. | Claimed |
-| MP120-023 | glide3x.dll is loaded only once. | Claimed |
-| MP120-024 | Resolutions count limit was extended up to 100. | Claimed |
+| MP120-023 | glide3x.dll is loaded only once. | Partial |
+| MP120-024 | Resolutions count limit was extended up to 100. | Partial |
 | MP120-025 | It's a slightly changed version of voodoo2.dll with special code for the nGlide wrapper. It's created to prevent unwanted using global settings of nGlide. | Claimed |
 | MP120-026 | This is done by setting NGLIDE_* environment variables before glide3x.dll loading. Every setting is gotten from the [NGLIDE] section of according thrash.ini file. Each setting of this section is formatted like NGLIDE_SETTINGNAME and used as name of an environment variable. Names of settings and their formats can be found at the official nGlide forum: http://www.zeus-software.com/forum/viewtopic.php?f=9&t=796 | Claimed |
 | MP120-027 | If you would like to use global nGlide settings, just remove [NGLIDE] section in the ./drivers/nglide/thrash.ini file. | Claimed |

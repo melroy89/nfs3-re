@@ -98,7 +98,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "9533880c5f9cc29150d2e9499a96d39d875442a452b062a842d101287a617b8b",
+      "sha256": "37f5a6890687201fc665ad059cce38130c3545b64e2c5efbf7ce708dd40a4e79",
       "relative_links": 135
     },
     {
@@ -553,8 +553,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "3a31ec60de511cbcb1483a229e14072b9b09eb3536124d63eba79bbfda228063",
-      "relative_links": 121
+      "sha256": "91dae09f50b2dffad2ae0962bba2cdae91d6fff9cd0fd4255f8e9354e668fda7",
+      "relative_links": 127
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -563,7 +563,7 @@
     }
   ],
   "file_count": 112,
-  "relative_link_count": 1532,
+  "relative_link_count": 1538,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
