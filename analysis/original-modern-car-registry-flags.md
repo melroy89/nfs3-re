@@ -21,7 +21,7 @@ Modern skips both lookups, comparisons and conditional flag writes, retaining th
 
 ## Relationship to the Hot Pursuit claim
 
-Release-note entry **MP120-003** says Mercedes and Ferrari cars are no longer locked in Hot Pursuit. The explicit manufacturer tests and their removal give **partial static support** for that claim. The selected originals/final Modern pair does not establish the precise introducing release, the original author's licensing motive, the meaning of flag `20h` in every mode, or successful in-game selection. Those require consumer tracing and/or controlled runtime evidence. The catalog is therefore marked Partial rather than fully verified.
+Release-note entry **MP120-003** says Mercedes and Ferrari cars are no longer locked in Hot Pursuit. The explicit manufacturer tests and their removal give **partial static support** for that claim. The selected originals/final Modern pair does not establish the precise introducing release, the original author's licensing motive, the meaning of flag `20h` in every mode, or successful in-game selection. The mode-3 flag consumer is now verified below; complete admission and runtime behavior still require caller/state tracing and controlled observations. The catalog is therefore marked Partial rather than fully verified.
 
 ## Related copy-source getter changes to an initialized buffer
 
@@ -33,4 +33,22 @@ This removes this getter's hard-coded source string in favor of external initial
 
 **Bounded work status: done; confidence: verified static removal and path-address change. Claim coverage: partial.** Preserve the selected version's flag policy and address-return contract. Do not silently add back the brand restriction to Modern or assume clearing all `20h` bits is equivalent to removing these conditional ORs.
 
-**Pending:** trace record `+380` bit `20h` consumers and other producers; qualify manufacturer metadata and existing flags; trace initialization/lifetime of `007a2c34`; test actual mode admission separately. These affect data/interface reconstruction and runtime validation. Executable bytes, saved Ghidra state and reconstruction sources remain unchanged.
+**Pending:** complete record `+380` bit `20h` caller coverage and other producers beyond the verified consumer below; qualify manufacturer metadata and existing flags; trace initialization/lifetime of `007a2c34`; test actual mode admission separately. These affect data/interface reconstruction and runtime validation. Executable bytes, saved Ghidra state and reconstruction sources remain unchanged.
+
+## Follow-up: flag 20h directly rejects mode-3 eligibility
+
+The expanded [same audit](scripts/audit_car_registry_flags.py) now captures and verifies three complete functions as byte-identical in original and Modern:
+
+| Entry | End, exclusive | Verified role |
+|---|---|---|
+| `004396e0` | `004396f3` | Resolve incoming car index through `00439a50`, load DWORD record `+380`, AND with `20h`, return the mask value |
+| `00439a50` | `00439aa5` | Resolve/cache a record pointer through table `005f3c00` or retained list helpers |
+| `0043a4f0` | `0043a579` | Return a Boolean eligibility result, including a mode-3 bit-20 rejection |
+
+At `0043a4f6`, eligibility checks DWORD `006fd3b8 == 3`. Only in that mode it calls `004396e0` at `0043a4ff`; nonzero goes directly to the zero-return path at `0043a513`. This closes the previously unknown **local flag-to-rejection dependency**. Its numeric predicate is verified independently of any inferred game-mode name.
+
+The later eligibility code remains active: it checks another flag helper `004396b0`, further flag/category helpers, player mode `006fd3b0` and selected car indices `006fd2bc/006fd328`. Removing the manufacturer OR therefore removes this particular reason for rejection when the bit would otherwise be clear, not every condition for accepting Ferrari/Mercedes cars. An already-set bit, different metadata, invalid record resolution or other eligibility gates can still matter.
+
+The flag accessor has no local null check after resolution. The resolver's signed index check rejects values above 49, but does not itself reject negative indices before its first cache access. Valid-index/record admission is a precondition, not a new bounds guarantee supplied by this follow-up. Reconstruction should preserve the mask return (0 or 32), rather than conflate it with the eligibility function's explicit Boolean result.
+
+**Follow-up status: done for this consumer; confidence: verified static control flow and complete paired bodies.** The Hot Pursuit release-note association remains Partial: the record producer and mode-3 rejection mechanism are now linked, while complete menu/mode provenance, other producers/consumers, actual gameplay admission and introduction in v1.2.0 remain unverified. No runtime test or source reconstruction was performed.

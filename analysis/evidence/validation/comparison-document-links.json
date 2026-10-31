@@ -33,8 +33,8 @@
     },
     {
       "path": "analysis/original-modern-car-registry-flags.md",
-      "sha256": "47e526a8a6463b2b4b6055cd0f65c394ef8cf6022196577c1b64c00224d4fbdd",
-      "relative_links": 3
+      "sha256": "2fccfbcf3b01ac84e5cab9c7382a17d49ea2c7776da94449499daca7954eca0f",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-clock-source.md",
@@ -478,7 +478,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "6aece7238a3ddc56e20a5d430f7e935c8ca66bd531e9f07dda4d6879d4e805e3",
+      "sha256": "a7b1657d5c5aef3dcf19b3448478b0f07aa404207bc2bf2ab70702a44493c7a7",
       "relative_links": 113
     },
     {
@@ -488,7 +488,7 @@
     }
   ],
   "file_count": 97,
-  "relative_link_count": 1236,
+  "relative_link_count": 1237,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

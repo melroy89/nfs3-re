@@ -22,6 +22,24 @@
           "end_exclusive": "00439b14",
           "sha256": "34219448e68c316ac837f3f16a22403c503f93017f6eb03270b774766323f176",
           "assembly": "analysis/captures/modern-differences/car-registry-flags/original-00439af0.asm"
+        },
+        {
+          "start": "004396e0",
+          "end_exclusive": "004396f3",
+          "sha256": "8b757e8833d20efd2d8877414de0ef48cd5b5e37b2aa2d105339d93a186fcf30",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/original-004396e0.asm"
+        },
+        {
+          "start": "00439a50",
+          "end_exclusive": "00439aa5",
+          "sha256": "6551ce50c7b4dd9dda82113f0a1cbbe68e2db27725081c246c2f9664f8ee67bc",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/original-00439a50.asm"
+        },
+        {
+          "start": "0043a4f0",
+          "end_exclusive": "0043a579",
+          "sha256": "7468840c3a3af75fd6b3d9804d8756a27de353b7d8fb633247acc717657da05c",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/original-0043a4f0.asm"
         }
       ],
       "strings": {
@@ -51,6 +69,24 @@
           "end_exclusive": "00439b14",
           "sha256": "34219448e68c316ac837f3f16a22403c503f93017f6eb03270b774766323f176",
           "assembly": "analysis/captures/modern-differences/car-registry-flags/official_modern-00439af0.asm"
+        },
+        {
+          "start": "004396e0",
+          "end_exclusive": "004396f3",
+          "sha256": "8b757e8833d20efd2d8877414de0ef48cd5b5e37b2aa2d105339d93a186fcf30",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/official_modern-004396e0.asm"
+        },
+        {
+          "start": "00439a50",
+          "end_exclusive": "00439aa5",
+          "sha256": "6551ce50c7b4dd9dda82113f0a1cbbe68e2db27725081c246c2f9664f8ee67bc",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/official_modern-00439a50.asm"
+        },
+        {
+          "start": "0043a4f0",
+          "end_exclusive": "0043a579",
+          "sha256": "7468840c3a3af75fd6b3d9804d8756a27de353b7d8fb633247acc717657da05c",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/official_modern-0043a4f0.asm"
         }
       ],
       "strings": {
@@ -62,6 +98,6 @@
   },
   "limits": [
     "Static manufacturer flag assignment and getter only; no car selection or pursuit execution.",
-    "Flag consumers, path-buffer initialization and manufacturer metadata admission remain partially qualified."
+    "Complete eligibility caller coverage, path-buffer initialization and manufacturer metadata admission remain partially qualified."
   ]
 }

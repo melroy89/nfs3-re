@@ -11,7 +11,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[];blobs[label]=[]
-        for start,end in [(0x439d90,0x43a4c2),(0x43ba20,0x43ba2a),(0x439af0,0x439b14)]:
+        for start,end in [(0x439d90,0x43a4c2),(0x43ba20,0x43ba2a),(0x439af0,0x439b14),(0x4396e0,0x4396f3),(0x439a50,0x439aa5),(0x43a4f0,0x43a579)]:
             data=pe.get_data(start-0x400000,end-start);blobs[label].append(data)
             path=capture/f'{label}-{start:08x}.asm'
             path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -26,11 +26,14 @@ def main():
     for a in (0x43a22e,0x43a255):assert old[0][a-0x439d90:a-0x439d90+7]==bytes.fromhex('80888003000020')
     assert old[1]==bytes.fromhex('5589e5b8207753005dc3')
     assert new[1]==bytes.fromhex('5589e5b8342c7a005dc3')
-    assert old[2]==new[2]
+    assert old[2:]==new[2:]
+    assert old[3][8:17]==bytes.fromhex('8b808003000083e020')
+    assert old[5][6:15]==bytes.fromhex('833db8d36f00037509')
+    assert old[5][20:24]==bytes.fromhex('85c0750b')
     result['limits']=['Static manufacturer flag assignment and getter only; no car selection or pursuit execution.',
-        'Flag consumers, path-buffer initialization and manufacturer metadata admission remain partially qualified.']
+        'Complete eligibility caller coverage, path-buffer initialization and manufacturer metadata admission remain partially qualified.']
     (ROOT/'analysis/evidence/audits/car-registry-flags.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: complete 1842-byte registry envelope, 78-byte removed block and 10-byte source getter')
+    print('PASS: registry removal and getter; identical flag accessor, resolver and mode-3 eligibility body')
 
 
 if __name__=='__main__':main()
