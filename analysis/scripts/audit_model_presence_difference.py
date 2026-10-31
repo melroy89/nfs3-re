@@ -12,7 +12,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
-        spans=[(0x438ad0,0x438aed),(0x439990,0x4399e4),(0x427142,0x427147)]
+        spans=[(0x438ad0,0x438aed),(0x439990,0x4399e4),(0x4270c0,0x427182)]
         spans += [(0x439ce0,0x439d12)] if label=='original' else [(0x439cd4,0x439cfd),(0x439d00,0x439d19)]
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -21,6 +21,15 @@ def main():
         target=0x427147+int.from_bytes(data[1:],'little',signed=True)
         assert target==(0x439ce0 if label=='original' else 0x439d00)
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,'paired_caller_target':f'{target:08x}'}
+    result['background_resource_strings']={}
+    for label,pe in images.items():
+        name=pe.get_data(0x137090,12).split(b'\0')[0].decode('ascii');assert name=='opp1.qfs'
+        result['background_resource_strings'][label]=name
+    old,new=[images[k] for k in ('original','official_modern')]
+    a,b=[p.get_data(0x270c0,0xc2) for p in (old,new)]
+    changed=[0x4270c0+i for i,(x,y) in enumerate(zip(a,b)) if x!=y]
+    assert all(0x427143<=address<0x427147 for address in changed)
+    result['background_caller_changed_addresses']=[f'{address:08x}' for address in changed]
     for start,end in [(0x438ad0,0x438aed),(0x439990,0x4399e4)]:
         a,b=[p.get_data(start-0x400000,end-start) for p in images.values()];assert a==b
     result['limits']=['No resource lookup or target instruction execution.','Selectors 0x25/0x26 are raw values; human-readable identities and list initialization remain unresolved.']
