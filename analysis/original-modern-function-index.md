@@ -107,7 +107,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00448374` | GetSelectedDisplayModeDriverIndex | 8 | 8 | [display-modes](original-modern-display-modes.md) |
 | `00448394` | SelectClosestDisplayModeForConfiguredResolution | 105 | 103 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `00448400` | ApplySelectedDisplayModeDimensionsAndFormat | 37 | 37 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [hud-layout](original-modern-hud-layout.md), [language-table](original-modern-language-table.md), [resolution-defaults](original-modern-resolution-defaults.md) |
-| `00448428` | GetDisplayModeTextByDynamicId | 17 | 15 | [language-table](original-modern-language-table.md), [menu-callback-table](original-modern-menu-callback-table.md) |
+| `00448428` | GetDisplayModeTextByDynamicId | 17 | 15 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [language-table](original-modern-language-table.md), [menu-callback-table](original-modern-menu-callback-table.md) |
 | `00449240` | StoreParsedFrontendEntryField | 350 | 34 | [common-menu-buttons](original-modern-common-menu-buttons.md), [control-component-keys](original-modern-control-component-keys.md), [menu-text-fields](original-modern-menu-text-fields.md), [slider-percentage](original-modern-slider-percentage.md) |
 | `00449510` | LoadFrontendMenuDefinitionGraph | 897 | 3 | [menu-loader](original-modern-menu-loader.md), [setup-website](original-modern-setup-website.md), [slider-percentage](original-modern-slider-percentage.md) |
 | `0044a240` | FindEnabledFrontendEscapeAction | 11 | 11 | [menu-input](original-modern-menu-input.md) |

@@ -149,7 +149,7 @@
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
-      "sha256": "f78d43996ca214e4a119ada4978a210c4f315e598528ec7a7912f49a5c48c8cb"
+      "sha256": "79ed15a94528657bb34da2eb0bb8f4cdbf5ab2782af114c2aa132aea4c3d3d14"
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
@@ -3581,6 +3581,13 @@
       "original_sha256": "dacd13d7de39b603fb3d718792d19329a699af661f3c96f2fdeaf6a536638eb9",
       "modern_sha256": "397683fcd2080f20607a5932bb833577954148812f72e1eb8af94f78df866021",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-graphics-menu-transition.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00448437"
+          ]
+        },
         {
           "path": "analysis/original-modern-language-table.md",
           "entry_mentioned": true,

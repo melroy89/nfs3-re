@@ -7690,5 +7690,112 @@
       "analysis/original-modern-common-menu-buttons.md"
     ],
     "limit": "Renderer/input deltas routed to existing paired audits; alignment classification is local, not exclusion of alternate entry or complete UI equivalence."
+  },
+  "graphics_interval_partition": {
+    "interval": "00448439..00448f00",
+    "parts": [
+      {
+        "start": "00448439",
+        "end_exclusive": "00448440",
+        "role": "Boundary/alignment fragment; original instruction split",
+        "bytes": 7,
+        "changed_bytes": 7,
+        "original_sha256": "d17f08845cebf2279b5e9f320068f33dd76b9eb2919ad590e6ad75e50a22cc40",
+        "modern_sha256": "ca4b9a2ec05863e71b87c84feb71741348a30400daeddedd67bc4cdbca737252"
+      },
+      {
+        "start": "00448440",
+        "end_exclusive": "00448570",
+        "role": "Graphics init/transition counterparts and surrounding alignment",
+        "bytes": 304,
+        "changed_bytes": 214,
+        "original_sha256": "f5500f365fb1c3d96763c3e43fbac1a855a86b0e874d5b600014e323595b4299",
+        "modern_sha256": "e3f9c16de5534d94a8f7b7b72eb7fa535c33ceec6c2ccbeed7ddafa7e812a246"
+      },
+      {
+        "start": "00448570",
+        "end_exclusive": "00448631",
+        "role": "Unchanged intervening code",
+        "bytes": 193,
+        "changed_bytes": 0,
+        "original_sha256": "87d265eb0f0a5f6933ad6bf842f1a84ef45a7d8f4b274ab9d2bbfc74743584e3",
+        "modern_sha256": "87d265eb0f0a5f6933ad6bf842f1a84ef45a7d8f4b274ab9d2bbfc74743584e3"
+      },
+      {
+        "start": "00448631",
+        "end_exclusive": "00448659",
+        "role": "Related setup policy replacement",
+        "bytes": 40,
+        "changed_bytes": 36,
+        "original_sha256": "89975af7b6764dec48b3247f1527081360efac9493efcfef71ecf7181822a2d9",
+        "modern_sha256": "24f005ff0784cbfdd8e987f58d1b5146ecfc6d41492ae6a5546242f01ddf0e50"
+      },
+      {
+        "start": "00448659",
+        "end_exclusive": "00448709",
+        "role": "Unchanged continuation",
+        "bytes": 176,
+        "changed_bytes": 0,
+        "original_sha256": "8c2a7f4a11ee1ce1e3b8e2a02cd408178eda1564f4192c579da86adfac7fbb6c",
+        "modern_sha256": "8c2a7f4a11ee1ce1e3b8e2a02cd408178eda1564f4192c579da86adfac7fbb6c"
+      },
+      {
+        "start": "00448709",
+        "end_exclusive": "00448710",
+        "role": "Mode-field local test rewrite",
+        "bytes": 7,
+        "changed_bytes": 5,
+        "original_sha256": "037c2973e58eee8793f0d62bdfd98ed6d764590b2c1fd6b7653da3994cc6c1e2",
+        "modern_sha256": "d75191b29c08324cad9bdd663fbaf5756962a8f0d841781c8464eb19a4f60adf"
+      },
+      {
+        "start": "00448710",
+        "end_exclusive": "00448728",
+        "role": "Unchanged flag updates",
+        "bytes": 24,
+        "changed_bytes": 0,
+        "original_sha256": "4be5abace5bf00f3d0e4d03a4a7d97595e05f0f6aa6462f5cbade7a036f09fe9",
+        "modern_sha256": "4be5abace5bf00f3d0e4d03a4a7d97595e05f0f6aa6462f5cbade7a036f09fe9"
+      },
+      {
+        "start": "00448728",
+        "end_exclusive": "00448765",
+        "role": "SFX intensity admission tail",
+        "bytes": 61,
+        "changed_bytes": 1,
+        "original_sha256": "6e1df77235c40ec526b250b3aba7eeabf4aff04f123dd02d245a01e4a7dffe0c",
+        "modern_sha256": "26aa706d15c6647b37fbe5e68b6757e2b7d5bbcba5cc1aff9caa8222f3dd74a7"
+      },
+      {
+        "start": "00448765",
+        "end_exclusive": "00448770",
+        "role": "Unchanged alignment",
+        "bytes": 11,
+        "changed_bytes": 0,
+        "original_sha256": "6589d62eb9ed677427e26ac5c3adabcdd2e6c6ea0391c1d3ae91cfab137fd31c",
+        "modern_sha256": "6589d62eb9ed677427e26ac5c3adabcdd2e6c6ea0391c1d3ae91cfab137fd31c"
+      },
+      {
+        "start": "00448770",
+        "end_exclusive": "004487ce",
+        "role": "Cancel callback; call retargeted to fog-aware restore",
+        "bytes": 94,
+        "changed_bytes": 3,
+        "original_sha256": "da1f09553ee101ba626fe7a37f4fb9887b4292df99c92ae8f0fd6b9be9818134",
+        "modern_sha256": "5a3f67b14a18e061a07d86df044d56fae968e2283995f7b3048c4dd295b3871d"
+      },
+      {
+        "start": "004487ce",
+        "end_exclusive": "00448f00",
+        "role": "Unchanged remainder",
+        "bytes": 1842,
+        "changed_bytes": 0,
+        "original_sha256": "79a8ca460c12c6af22edaac91dea19d844bc18928d7161c90e684abed7957460",
+        "modern_sha256": "79a8ca460c12c6af22edaac91dea19d844bc18928d7161c90e684abed7957460"
+      }
+    ],
+    "report": "analysis/original-modern-graphics-menu-transition.md",
+    "report_sha256": "79ed15a94528657bb34da2eb0bb8f4cdbf5ab2782af114c2aa132aea4c3d3d14",
+    "limit": "Byte localization and bounded research routes; not complete enclosing-function/callee/runtime equivalence."
   }
 }
