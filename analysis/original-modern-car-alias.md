@@ -167,3 +167,17 @@ A bounded asset inventory finds **zero `.ffn` members** in the hash-pinned offic
 The manifest retains both paths and full hashes for each pair. This is evidence of local copy identity and package omission, **not authentication of original retail assets**, proof of runtime-selected paths, or a historical claim that no release ever changed a font. Replacement files from another distribution or loader/resource state can still affect output.
 
 For reconstruction, the current evidence therefore favors preserving the shared loader/asset interface and isolating the verified `004d1430` integerization change as a deliberate original-versus-Modern choice. Reconstructing that choice does not require inventing a changed font asset. Parsing/layout validation and real text-width comparisons remain later work; no file parser or target instructions were executed.
+
+## Complete renderer difference coverage at `004634d0`
+
+The paired capture now covers **`004634d0..00463ddc`**, exclusive end, **2,316 bytes**. Both start with the same saved-register/local-frame prologue and end with the observed RET at`00463ddb`; this boundary was inspected in the actual binaries rather than transferred from a Modern-only Ghidra entry. The audit enumerates **36 differing bytes** and asserts that all lie in:
+
+| Region (end exclusive) | Established change |
+|---|---|
+| `004634e1..00463501` | Replace mode-only35/15 selector with name-and-mode helper; relocate two retained zero-local initializations |
+| `00463b7d..00463b80` | First CALL displacement retargeted from ASCII comparator to three-car-name wrapper |
+| `00463bb0..00463bb3` | Second CALL displacement retargeted likewise |
+
+Every other byte in the captured renderer body is equal, including its local drawing/placement branches and final epilogue. This supersedes the earlier prefix-only coverage limitation for`004634d0`. It does not imply unchanged output: the rewritten predicates alter inputs to retained arithmetic, text helpers have independently documented changes, and global/asset/driver state can differ. No renderer or font subsystem equivalence follows from these byte counts.
+
+The combination also explains why the car-alias and track-policy findings belong in one renderer comparison while remaining separate mechanisms. One expands car-name matching; the other restricts mode3 padding to track names. Neither changes the underlying vehicle simulation merely by sharing a renderer with vehicle-labelled lists. Complete callback admission, active widget construction and visible behaviour remain unresolved. No game instructions or rendering tests were run.

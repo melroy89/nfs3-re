@@ -384,6 +384,8 @@ The [measurement-wrapper comparison](original-modern-car-alias.md#width-dependen
 
 The [numeric-scale anchoring follow-up](original-modern-numeric-scale.md#right-anchor-helper-changes-its-x87-return-contract) verifies an x87 return-ownership change: original anchoring helper discards the draw advance; Modern returns it and the inspected HUD-scale caller explicitly pops it. This is an ABI/stack-effect difference in addition to layout arithmetic.
 
+The [complete list-renderer comparison](original-modern-car-alias.md#complete-renderer-difference-coverage-at-004634d0) now accounts for all36 changed bytes in its2,316-byte body: the track-policy selector and two car-alias CALL retargetings. This closes local byte-difference coverage without claiming identical drawing dependencies or runtime output.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

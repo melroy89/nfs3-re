@@ -120,10 +120,10 @@
         },
         {
           "start": "004634d0",
-          "end": "00463501",
-          "sha256": "cfc5b5e2a4250eefe6e57f79fe086b947873ea50f7c59a51b2134b2efe8297dc",
+          "end": "00463ddc",
+          "sha256": "b2c7db72c3da9963f5848a37d34a8f94e0f8cf5ec82f16eb6af97dda2be8e9af",
           "assembly": "analysis/captures/modern-differences/car-alias/original-004634d0.asm",
-          "assembly_sha256": "1b6554fe0c87a1d5e797c4249a16eaf5e53b661b8a87fd78a31f8ac00daba060"
+          "assembly_sha256": "f9e9bf62c25892d18864c6ea2952912b79f0c22e966db1548d149e78555dd145"
         },
         {
           "start": "00463841",
@@ -293,10 +293,10 @@
         },
         {
           "start": "004634d0",
-          "end": "00463501",
-          "sha256": "e974e154aa725e93f8c774bd7a38974e0188afe7cfafe212dfec39c6409f6b5e",
+          "end": "00463ddc",
+          "sha256": "c5f6ce3ae48d23e667b7510d5890fc17dfd344549a9d69321af30a9529a659d7",
           "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004634d0.asm",
-          "assembly_sha256": "4dd853836b2f17fe0e6892b3c7298e579f53f1d8187826232702bc56a7b591b9"
+          "assembly_sha256": "5328dfc79372ea0db69597337ff27d8f13b07105c46bfe55eb1c87eba5d08f79"
         },
         {
           "start": "00463841",
@@ -800,6 +800,64 @@
       "file_offset": 1308104
     }
   },
+  "complete_004634d0": {
+    "start": "004634d0",
+    "end_exclusive": "00463ddc",
+    "length": 2316,
+    "changed_addresses": [
+      "004634e1",
+      "004634e2",
+      "004634e3",
+      "004634e4",
+      "004634e5",
+      "004634e6",
+      "004634e7",
+      "004634e8",
+      "004634e9",
+      "004634ea",
+      "004634eb",
+      "004634ec",
+      "004634ed",
+      "004634ee",
+      "004634ef",
+      "004634f0",
+      "004634f1",
+      "004634f2",
+      "004634f3",
+      "004634f6",
+      "004634f7",
+      "004634f8",
+      "004634f9",
+      "004634fa",
+      "004634fb",
+      "004634fc",
+      "004634fd",
+      "004634fe",
+      "004634ff",
+      "00463500",
+      "00463b7d",
+      "00463b7e",
+      "00463b7f",
+      "00463bb0",
+      "00463bb1",
+      "00463bb2"
+    ],
+    "covering_regions": [
+      [
+        "004634e1",
+        "00463501"
+      ],
+      [
+        "00463b7d",
+        "00463b80"
+      ],
+      [
+        "00463bb0",
+        "00463bb3"
+      ]
+    ],
+    "boundary": "Observed entry to final RET; not imported from an assumed original Ghidra function boundary."
+  },
   "additional_track_policy_callers": {
     "004628d0": {
       "name_offset": "0x60",
@@ -811,7 +869,7 @@
       "original": "35 for every mode3 name; otherwise15",
       "modern": "35 only for mode3 and tracks/rectrk; otherwise15"
     },
-    "scope": "Complete 004628d0 body and 004634d0 entry prefix; no runtime claim."
+    "scope": "Complete 004628d0 and 004634d0 paired bodies; no runtime claim."
   },
   "limits": [
     "Static alias and caller policy only; full renderer and asset bindings not audited.",
