@@ -227,3 +227,7 @@ Run `python3 analysis/scripts/audit_startup_paths_difference.py` (Python `pefile
 ## Original versus Modern clock and loading timing
 
 Run `python3 analysis/scripts/audit_clock_source_difference.py` (Python `pefile`, GNU `objdump`; shared hash-pinned baselines). It verifies 16 paired clock calls and exact timer-body equality after normalizing only the identified IAT operands in temporary comparison buffers. It also captures loading helpers, settings and timing/input consumers. Output: `analysis/evidence/audits/original-modern-clock-source.json`; raw assembly stays ignored. No target/API execution or executable changes. See [clock](../original-modern-clock-source.md) and [loading timing](../original-modern-loading-timing.md) findings.
+
+## Renderer selection and DirectDraw compatibility
+
+Run `python3 analysis/scripts/audit_renderer_selection_difference.py` (Python `pefile`, GNU `objdump`). It hash-checks both baselines and captures the original environment/name-selection path and Modern optional compatibility dispatch, including exact file-backed names. Output: `analysis/evidence/audits/original-modern-renderer-selection.json`. Raw captures remain ignored; no target/DLL execution. See [renderer findings](../original-modern-renderer-loading.md).

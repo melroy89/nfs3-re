@@ -68,6 +68,26 @@ API identities follow the binaries' import tables, not string inference. The pat
 
 This verifies the Modern-side mechanism and a changed loader, not a complete map of original driver selection. Original `004f87e0` separately handles `THRASH_DRIVERNAME` and a leading `!`; callers and historical selection tables still need mapping before a complete precedence comparison is claimed.
 
+## 6. Original environment override and selection wrapper
+
+The [selection/compatibility manifest](evidence/audits/original-modern-renderer-selection.json), reproduced by `python3 analysis/scripts/audit_renderer_selection_difference.py`, retains additional hash-pinned spans. Original wrapper `004f87e0..004f882d` takes a candidate name in EAX and explicitly preserves EDX:
+
+- If the candidate begins with `!`, advance past it and skip environment lookup.
+- Otherwise call `0050ead0` with file-backed key `THRASH_DRIVERNAME` at `0054d700`. A non-null result replaces the candidate; a null result leaves it unchanged. There is no nonempty-value test in this wrapper.
+- Set `00564a68` to 1 if it was zero. If module handle `00564a6c` is already nonzero, call `004f87a0` before invoking loader `004f8390`; otherwise invoke the loader directly.
+
+The inspected environment reader walks the pointer array at `00a0b154`, compares a name prefix and requires the following byte to be `=`, then returns the value pointer (`0050ead0..0050eb29`). This is stronger evidence than the key string alone, but the comparator’s full case/locale semantics and environment-array initialization are outside this scope.
+
+Original selector entry `004b59c0` accepts an index in EAX, rejects unsigned indices above 10, and dispatches through a jump table. Its first inspected branch obtains a candidate from table `0055fd68` and calls the wrapper at `004b59f9`. The 11 table strings, in index order, are `nulla.dll`, `softtria.dll`, `softlina.dll`, `voodooa.dll`, `voodoo2a.dll`, `ragea.dll`, `d3da.dll`, `powervra.dll`, `powervra.dll`, empty, empty. These are candidate names, not 11 proven successful drivers or a complete account of every selector branch. Modern’s INI/driver-directory path is already traced above; no general claim is made that environment overrides disappeared everywhere in Modern.
+
+## 7. Modern DirectDraw compatibility dispatch
+
+After configuration succeeds, `004b5a6c` loads mask `007a2790`; if nonzero it invokes `004b57c4` **before** renderer loading at `004b5a7f`. The compatibility helper resolves the file-backed pair `DDRAW.DLL` / `SetAppCompatData` through `004f1ebc`. Its underlying module helper first calls GetModuleHandleA, then LoadLibraryA only when no module handle is returned (`004f1ea0..004f1eba`); GetProcAddress resolves the export. Missing module/export makes the compatibility helper return without calls.
+
+For a resolved export, the helper scans the least-significant set bit using BSF, clears it in its private ESI copy with BTR, and calls the export after pushing **0 then the bit index** (`004b57df..004b57ec`). Thus mask bits 1 and 12 produce calls with index 1 then index 12 and a second stack argument of zero; it does not pass the mask or its powers-of-two values to the export. The loop stops when its local copy becomes zero, leaving the global mask unchanged. ECX, EDX, ESI and EDI are explicitly saved; API return values are not tested.
+
+This connects `NoDwmOffForPrimaryLock` and `DisableMaxWindowedMode` from their configuration writes to actual optional-interface calls. No export implementation was executed or inspected here. The undocumented operation meanings, supported Windows/Wine versions, module lifetime and actual performance/DWM behavior remain unresolved. A successful lookup or an unchecked call is not evidence that the requested OS behavior took effect.
+
 ## Release-note traceability and remaining work
 
 - **MP161-006**, stricter driver validity: statically supported by the mandatory-export and non-null descriptor checks above. Exact introduction in v1.6.1 requires a preceding-release binary; comparing original to final cannot date each edit.
@@ -76,4 +96,4 @@ This verifies the Modern-side mechanism and a changed loader, not a complete map
 - **MP161-008/009**, compatibility options: current key reads/defaults/bit writes confirmed. Historical rename from DirectDrawLagFix and the downstream OS effect require separate evidence.
 - **MP150-044**, driver-directory wrappers: existing [optional DLL-directory wrapper analysis](detailed-analysis-notes.md#optional-dll-directory-export-wrapper-004f1ed4) and its caller support a search-directory mechanism. Wrapper loading on each supported OS/DLL is untested.
 
-Next: trace original selection callers, Modern `SetAppCompatData` bit dispatch and descriptor consumers; inspect the actual renderer DLLs for changes attributed to those components. Static acceptance checks do not establish that any particular third-party renderer loads or renders correctly.
+Next: trace the remaining original selector branches/callers and descriptor consumers; inspect the actual renderer DLLs for changes attributed to those components. Static acceptance checks do not establish that any particular third-party renderer loads or renders correctly.

@@ -1,0 +1,138 @@
+{
+  "kind": "static-renderer-selection-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004f87e0",
+          "end": "004f882e",
+          "bytes_sha256": "5ddf7df9fa23ed85d07058449841dd2dc20e5d064c279d76da58bba7f6143d63",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/original-004f87e0.asm",
+          "assembly_sha256": "d0198fe3eb726017cc253e9d1bcc3b4b39417e8a1190250fd56d92365b46d9c7"
+        },
+        {
+          "start": "0050ead0",
+          "end": "0050eb2a",
+          "bytes_sha256": "b457b67c61410eb28ba8d75c682f111ad05dbdc34f16bb35cf467be96e406dbc",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/original-0050ead0.asm",
+          "assembly_sha256": "b4a1839c5ce7be6da28c1bbdd66bf1ef5e32e83bff9cfb2f3a911d0e6f913a71"
+        },
+        {
+          "start": "004b59c0",
+          "end": "004b5a28",
+          "bytes_sha256": "7e37198c7fab9f21fc2a487cd8441e01d33b0430f16a9ddef74e376deda79515",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/original-004b59c0.asm",
+          "assembly_sha256": "34beafb719a6a85eab0172c0c6659f161e06cd877c40fdfb25253c60b85ccda3"
+        }
+      ],
+      "environment_key": "THRASH_DRIVERNAME",
+      "driver_name_table": [
+        {
+          "index": 0,
+          "slot": "0055fd68",
+          "pointer": "0053ebb8",
+          "string": "nulla.dll"
+        },
+        {
+          "index": 1,
+          "slot": "0055fd6c",
+          "pointer": "0053ebc4",
+          "string": "softtria.dll"
+        },
+        {
+          "index": 2,
+          "slot": "0055fd70",
+          "pointer": "0053ebd4",
+          "string": "softlina.dll"
+        },
+        {
+          "index": 3,
+          "slot": "0055fd74",
+          "pointer": "0053ebe4",
+          "string": "voodooa.dll"
+        },
+        {
+          "index": 4,
+          "slot": "0055fd78",
+          "pointer": "0053ebf0",
+          "string": "voodoo2a.dll"
+        },
+        {
+          "index": 5,
+          "slot": "0055fd7c",
+          "pointer": "0053ec00",
+          "string": "ragea.dll"
+        },
+        {
+          "index": 6,
+          "slot": "0055fd80",
+          "pointer": "0053ec0c",
+          "string": "d3da.dll"
+        },
+        {
+          "index": 7,
+          "slot": "0055fd84",
+          "pointer": "0053ec18",
+          "string": "powervra.dll"
+        },
+        {
+          "index": 8,
+          "slot": "0055fd88",
+          "pointer": "0053ec18",
+          "string": "powervra.dll"
+        },
+        {
+          "index": 9,
+          "slot": "0055fd8c",
+          "pointer": "0053ec28",
+          "string": ""
+        },
+        {
+          "index": 10,
+          "slot": "0055fd90",
+          "pointer": "0053ec28",
+          "string": ""
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004b57c4",
+          "end": "004b57f3",
+          "bytes_sha256": "0f6c955b6c49049606d50a7fc7cf7c6ae05992981b22ea45d6dc6a51376a764e",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/official_modern-004b57c4.asm",
+          "assembly_sha256": "f689e6ba039f498778589c54652a814a24792256e302f8117117b313f716036f"
+        },
+        {
+          "start": "004f1ea0",
+          "end": "004f1ed2",
+          "bytes_sha256": "4d2068f7da02621d21424a2251610f014e41708595aa76ab5def8a1495968689",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/official_modern-004f1ea0.asm",
+          "assembly_sha256": "e5904cde60cf7c9dc534bae54fc67aa0534c217077ea65f0629bcc80f876a6e4"
+        },
+        {
+          "start": "004b5a58",
+          "end": "004b5acd",
+          "bytes_sha256": "63fca74c6bd6ee17a31dc0b67544f9ee86a72eebdb2b521724712ae5e4fdbb69",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/official_modern-004b5a58.asm",
+          "assembly_sha256": "346f9abc0c26477dd7a1f45dc573d7b51f5a5df298cb453c9edbe5ba48fa29bd"
+        }
+      ],
+      "optional_interface": {
+        "dll": "DDRAW.DLL",
+        "export": "SetAppCompatData"
+      }
+    }
+  },
+  "limits": [
+    "No DLL/API or target execution.",
+    "Original table entries are candidates, not proof of successful loading.",
+    "Compatibility option effects and historical introduction remain unverified."
+  ]
+}
