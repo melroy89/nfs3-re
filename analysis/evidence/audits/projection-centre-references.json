@@ -1,0 +1,1185 @@
+{
+  "kind": "absolute-float-projection-centre-references",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "targets": [
+        {
+          "address": "005600a4",
+          "counts": {
+            "FLD read": 25,
+            "FADD read": 9,
+            "FSUB read": 4,
+            "FSTP write": 2
+          },
+          "references": [
+            {
+              "instruction_va": "0041be21",
+              "operand_file_offset": 111139,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "41be21:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0041c08e",
+              "operand_file_offset": 111760,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "41c08e:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00421415",
+              "operand_file_offset": 133143,
+              "kind": "FSTP write",
+              "encoding": "d91da4005600",
+              "disassembly": "421415:\td9 1d a4 00 56 00    \tfstp   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00432838",
+              "operand_file_offset": 203834,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "432838:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0043298e",
+              "operand_file_offset": 204176,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "43298e:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00432ae3",
+              "operand_file_offset": 204517,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "432ae3:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00432c39",
+              "operand_file_offset": 204859,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "432c39:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00432d95",
+              "operand_file_offset": 205207,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "432d95:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00433168",
+              "operand_file_offset": 206186,
+              "kind": "FSUB read",
+              "encoding": "d825a4005600",
+              "disassembly": "433168:\td8 25 a4 00 56 00    \tfsub   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004331b5",
+              "operand_file_offset": 206263,
+              "kind": "FSUB read",
+              "encoding": "d825a4005600",
+              "disassembly": "4331b5:\td8 25 a4 00 56 00    \tfsub   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00433208",
+              "operand_file_offset": 206346,
+              "kind": "FSUB read",
+              "encoding": "d825a4005600",
+              "disassembly": "433208:\td8 25 a4 00 56 00    \tfsub   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00433255",
+              "operand_file_offset": 206423,
+              "kind": "FSUB read",
+              "encoding": "d825a4005600",
+              "disassembly": "433255:\td8 25 a4 00 56 00    \tfsub   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00465f32",
+              "operand_file_offset": 414516,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "465f32:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00466923",
+              "operand_file_offset": 417061,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "466923:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00466b66",
+              "operand_file_offset": 417640,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "466b66:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0047761e",
+              "operand_file_offset": 485920,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "47761e:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0047943a",
+              "operand_file_offset": 493628,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "47943a:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0047d72e",
+              "operand_file_offset": 510768,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "47d72e:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0049138b",
+              "operand_file_offset": 591757,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "49138b:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00492469",
+              "operand_file_offset": 596075,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "492469:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00492e39",
+              "operand_file_offset": 598587,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "492e39:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004930a9",
+              "operand_file_offset": 599211,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4930a9:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004947c1",
+              "operand_file_offset": 605123,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4947c1:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00494909",
+              "operand_file_offset": 605451,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "494909:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004b853f",
+              "operand_file_offset": 751937,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4b853f:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bb889",
+              "operand_file_offset": 765067,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4bb889:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bf2a0",
+              "operand_file_offset": 779938,
+              "kind": "FSTP write",
+              "encoding": "d91da4005600",
+              "disassembly": "4bf2a0:\td9 1d a4 00 56 00    \tfstp   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bf3df",
+              "operand_file_offset": 780257,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4bf3df:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bf618",
+              "operand_file_offset": 780826,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4bf618:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bf6fe",
+              "operand_file_offset": 781056,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4bf6fe:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cb959",
+              "operand_file_offset": 830811,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4cb959:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cba15",
+              "operand_file_offset": 830999,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4cba15:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cbad1",
+              "operand_file_offset": 831187,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4cbad1:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cbb8d",
+              "operand_file_offset": 831375,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4cbb8d:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cbe39",
+              "operand_file_offset": 832059,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4cbe39:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004dc021",
+              "operand_file_offset": 898083,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4dc021:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004ddcaf",
+              "operand_file_offset": 905393,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4ddcaf:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004ddcbf",
+              "operand_file_offset": 905409,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4ddcbf:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004ddcd6",
+              "operand_file_offset": 905432,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4ddcd6:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004ddce6",
+              "operand_file_offset": 905448,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4ddce6:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            }
+          ]
+        },
+        {
+          "address": "005600a8",
+          "counts": {
+            "FLD read": 29,
+            "FADD read": 5,
+            "FSUB read": 4,
+            "FSTP write": 2
+          },
+          "references": [
+            {
+              "instruction_va": "0041be29",
+              "operand_file_offset": 111147,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "41be29:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "0041c096",
+              "operand_file_offset": 111768,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "41c096:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00421425",
+              "operand_file_offset": 133159,
+              "kind": "FSTP write",
+              "encoding": "d91da8005600",
+              "disassembly": "421425:\td9 1d a8 00 56 00    \tfstp   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432840",
+              "operand_file_offset": 203842,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432840:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432996",
+              "operand_file_offset": 204184,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432996:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432aeb",
+              "operand_file_offset": 204525,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432aeb:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432c41",
+              "operand_file_offset": 204867,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432c41:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432d9d",
+              "operand_file_offset": 205215,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432d9d:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00433187",
+              "operand_file_offset": 206217,
+              "kind": "FSUB read",
+              "encoding": "d825a8005600",
+              "disassembly": "433187:\td8 25 a8 00 56 00    \tfsub   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004331d4",
+              "operand_file_offset": 206294,
+              "kind": "FSUB read",
+              "encoding": "d825a8005600",
+              "disassembly": "4331d4:\td8 25 a8 00 56 00    \tfsub   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00433227",
+              "operand_file_offset": 206377,
+              "kind": "FSUB read",
+              "encoding": "d825a8005600",
+              "disassembly": "433227:\td8 25 a8 00 56 00    \tfsub   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00433274",
+              "operand_file_offset": 206454,
+              "kind": "FSUB read",
+              "encoding": "d825a8005600",
+              "disassembly": "433274:\td8 25 a8 00 56 00    \tfsub   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00465f3a",
+              "operand_file_offset": 414524,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "465f3a:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "0046692b",
+              "operand_file_offset": 417069,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "46692b:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00466b6e",
+              "operand_file_offset": 417648,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "466b6e:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "0047763c",
+              "operand_file_offset": 485950,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "47763c:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00479442",
+              "operand_file_offset": 493636,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "479442:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "0047d736",
+              "operand_file_offset": 510776,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "47d736:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00491393",
+              "operand_file_offset": 591765,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "491393:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00492471",
+              "operand_file_offset": 596083,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "492471:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00492e41",
+              "operand_file_offset": 598595,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "492e41:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004930b1",
+              "operand_file_offset": 599219,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4930b1:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004947c9",
+              "operand_file_offset": 605131,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4947c9:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00494911",
+              "operand_file_offset": 605459,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "494911:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004b8547",
+              "operand_file_offset": 751945,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4b8547:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bb891",
+              "operand_file_offset": 765075,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4bb891:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bf2a6",
+              "operand_file_offset": 779944,
+              "kind": "FSTP write",
+              "encoding": "d91da8005600",
+              "disassembly": "4bf2a6:\td9 1d a8 00 56 00    \tfstp   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bf3e7",
+              "operand_file_offset": 780265,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4bf3e7:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bf620",
+              "operand_file_offset": 780834,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4bf620:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bf706",
+              "operand_file_offset": 781064,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4bf706:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cb973",
+              "operand_file_offset": 830837,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cb973:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cba2f",
+              "operand_file_offset": 831025,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cba2f:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cbaeb",
+              "operand_file_offset": 831213,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cbaeb:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cbba7",
+              "operand_file_offset": 831401,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cbba7:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cbe41",
+              "operand_file_offset": 832067,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cbe41:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004dc029",
+              "operand_file_offset": 898091,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4dc029:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004ddc7a",
+              "operand_file_offset": 905340,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "4ddc7a:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004ddcb7",
+              "operand_file_offset": 905401,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "4ddcb7:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004ddcde",
+              "operand_file_offset": 905440,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "4ddcde:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004ddcee",
+              "operand_file_offset": 905456,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "4ddcee:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            }
+          ]
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "targets": [
+        {
+          "address": "005600a4",
+          "counts": {
+            "FLD read": 25,
+            "FADD read": 9,
+            "FSUB read": 4,
+            "FSTP write": 2
+          },
+          "references": [
+            {
+              "instruction_va": "0041be21",
+              "operand_file_offset": 111139,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "41be21:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0041c08e",
+              "operand_file_offset": 111760,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "41c08e:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004213e6",
+              "operand_file_offset": 133096,
+              "kind": "FSTP write",
+              "encoding": "d91da4005600",
+              "disassembly": "4213e6:\td9 1d a4 00 56 00    \tfstp   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00432838",
+              "operand_file_offset": 203834,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "432838:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0043298e",
+              "operand_file_offset": 204176,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "43298e:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00432ae3",
+              "operand_file_offset": 204517,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "432ae3:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00432c39",
+              "operand_file_offset": 204859,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "432c39:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00432d95",
+              "operand_file_offset": 205207,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "432d95:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00433168",
+              "operand_file_offset": 206186,
+              "kind": "FSUB read",
+              "encoding": "d825a4005600",
+              "disassembly": "433168:\td8 25 a4 00 56 00    \tfsub   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004331b5",
+              "operand_file_offset": 206263,
+              "kind": "FSUB read",
+              "encoding": "d825a4005600",
+              "disassembly": "4331b5:\td8 25 a4 00 56 00    \tfsub   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00433208",
+              "operand_file_offset": 206346,
+              "kind": "FSUB read",
+              "encoding": "d825a4005600",
+              "disassembly": "433208:\td8 25 a4 00 56 00    \tfsub   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00433255",
+              "operand_file_offset": 206423,
+              "kind": "FSUB read",
+              "encoding": "d825a4005600",
+              "disassembly": "433255:\td8 25 a4 00 56 00    \tfsub   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00465f32",
+              "operand_file_offset": 414516,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "465f32:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00466923",
+              "operand_file_offset": 417061,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "466923:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00466b66",
+              "operand_file_offset": 417640,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "466b66:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0047761e",
+              "operand_file_offset": 485920,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "47761e:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0047943a",
+              "operand_file_offset": 493628,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "47943a:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0047d72e",
+              "operand_file_offset": 510768,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "47d72e:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "0049138b",
+              "operand_file_offset": 591757,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "49138b:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00492469",
+              "operand_file_offset": 596075,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "492469:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00492e39",
+              "operand_file_offset": 598587,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "492e39:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004930a9",
+              "operand_file_offset": 599211,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4930a9:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004947c1",
+              "operand_file_offset": 605123,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4947c1:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "00494909",
+              "operand_file_offset": 605451,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "494909:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004b853f",
+              "operand_file_offset": 751937,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4b853f:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bb889",
+              "operand_file_offset": 765067,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4bb889:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bf2a0",
+              "operand_file_offset": 779938,
+              "kind": "FSTP write",
+              "encoding": "d91da4005600",
+              "disassembly": "4bf2a0:\td9 1d a4 00 56 00    \tfstp   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bf3df",
+              "operand_file_offset": 780257,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4bf3df:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bf618",
+              "operand_file_offset": 780826,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4bf618:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004bf6fe",
+              "operand_file_offset": 781056,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4bf6fe:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cb959",
+              "operand_file_offset": 830811,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4cb959:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cba15",
+              "operand_file_offset": 830999,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4cba15:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cbad1",
+              "operand_file_offset": 831187,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4cbad1:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cbb8d",
+              "operand_file_offset": 831375,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4cbb8d:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004cbe39",
+              "operand_file_offset": 832059,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4cbe39:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004dc021",
+              "operand_file_offset": 898083,
+              "kind": "FLD read",
+              "encoding": "d905a4005600",
+              "disassembly": "4dc021:\td9 05 a4 00 56 00    \tfld    DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004ddcaf",
+              "operand_file_offset": 905393,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4ddcaf:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004ddcbf",
+              "operand_file_offset": 905409,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4ddcbf:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004ddcd6",
+              "operand_file_offset": 905432,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4ddcd6:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            },
+            {
+              "instruction_va": "004ddce6",
+              "operand_file_offset": 905448,
+              "kind": "FADD read",
+              "encoding": "d805a4005600",
+              "disassembly": "4ddce6:\td8 05 a4 00 56 00    \tfadd   DWORD PTR ds:0x5600a4"
+            }
+          ]
+        },
+        {
+          "address": "005600a8",
+          "counts": {
+            "FLD read": 29,
+            "FADD read": 5,
+            "FSUB read": 4,
+            "FSTP write": 2
+          },
+          "references": [
+            {
+              "instruction_va": "0041be29",
+              "operand_file_offset": 111147,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "41be29:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "0041c096",
+              "operand_file_offset": 111768,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "41c096:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004213f2",
+              "operand_file_offset": 133108,
+              "kind": "FSTP write",
+              "encoding": "d91da8005600",
+              "disassembly": "4213f2:\td9 1d a8 00 56 00    \tfstp   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432840",
+              "operand_file_offset": 203842,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432840:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432996",
+              "operand_file_offset": 204184,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432996:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432aeb",
+              "operand_file_offset": 204525,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432aeb:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432c41",
+              "operand_file_offset": 204867,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432c41:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00432d9d",
+              "operand_file_offset": 205215,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "432d9d:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00433187",
+              "operand_file_offset": 206217,
+              "kind": "FSUB read",
+              "encoding": "d825a8005600",
+              "disassembly": "433187:\td8 25 a8 00 56 00    \tfsub   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004331d4",
+              "operand_file_offset": 206294,
+              "kind": "FSUB read",
+              "encoding": "d825a8005600",
+              "disassembly": "4331d4:\td8 25 a8 00 56 00    \tfsub   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00433227",
+              "operand_file_offset": 206377,
+              "kind": "FSUB read",
+              "encoding": "d825a8005600",
+              "disassembly": "433227:\td8 25 a8 00 56 00    \tfsub   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00433274",
+              "operand_file_offset": 206454,
+              "kind": "FSUB read",
+              "encoding": "d825a8005600",
+              "disassembly": "433274:\td8 25 a8 00 56 00    \tfsub   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00465f3a",
+              "operand_file_offset": 414524,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "465f3a:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "0046692b",
+              "operand_file_offset": 417069,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "46692b:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00466b6e",
+              "operand_file_offset": 417648,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "466b6e:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "0047763c",
+              "operand_file_offset": 485950,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "47763c:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00479442",
+              "operand_file_offset": 493636,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "479442:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "0047d736",
+              "operand_file_offset": 510776,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "47d736:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00491393",
+              "operand_file_offset": 591765,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "491393:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00492471",
+              "operand_file_offset": 596083,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "492471:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00492e41",
+              "operand_file_offset": 598595,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "492e41:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004930b1",
+              "operand_file_offset": 599219,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4930b1:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004947c9",
+              "operand_file_offset": 605131,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4947c9:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "00494911",
+              "operand_file_offset": 605459,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "494911:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004b8547",
+              "operand_file_offset": 751945,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4b8547:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bb891",
+              "operand_file_offset": 765075,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4bb891:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bf2a6",
+              "operand_file_offset": 779944,
+              "kind": "FSTP write",
+              "encoding": "d91da8005600",
+              "disassembly": "4bf2a6:\td9 1d a8 00 56 00    \tfstp   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bf3e7",
+              "operand_file_offset": 780265,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4bf3e7:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bf620",
+              "operand_file_offset": 780834,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4bf620:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004bf706",
+              "operand_file_offset": 781064,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4bf706:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cb973",
+              "operand_file_offset": 830837,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cb973:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cba2f",
+              "operand_file_offset": 831025,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cba2f:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cbaeb",
+              "operand_file_offset": 831213,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cbaeb:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cbba7",
+              "operand_file_offset": 831401,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cbba7:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004cbe41",
+              "operand_file_offset": 832067,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4cbe41:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004dc029",
+              "operand_file_offset": 898091,
+              "kind": "FLD read",
+              "encoding": "d905a8005600",
+              "disassembly": "4dc029:\td9 05 a8 00 56 00    \tfld    DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004ddc7a",
+              "operand_file_offset": 905340,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "4ddc7a:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004ddcb7",
+              "operand_file_offset": 905401,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "4ddcb7:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004ddcde",
+              "operand_file_offset": 905440,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "4ddcde:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            },
+            {
+              "instruction_va": "004ddcee",
+              "operand_file_offset": 905456,
+              "kind": "FADD read",
+              "encoding": "d805a8005600",
+              "disassembly": "4ddcee:\td8 05 a8 00 56 00    \tfadd   DWORD PTR ds:0x5600a8"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Complete executable literal search with disassembly corroboration, not a computed-alias analysis.",
+    "No external modules, runtime-generated code, invocation order or rendering observed."
+  ]
+}

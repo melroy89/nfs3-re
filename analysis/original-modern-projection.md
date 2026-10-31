@@ -143,6 +143,21 @@ This closes the ordinary non-two-player covering-rectangle input link, independe
 
 The static difference here is changed angle selection/interface, not a rewritten context dispatch or an added centre-offset formula. Other centre writers and camera orientation still prevent a complete MP160-003 horizon claim. No projection, camera or instruction probe was executed.
 
+## Complete literal-reference inventory of the float centres
+
+Run `python3 analysis/scripts/audit_projection_centre_references.py`. The [manifest](evidence/audits/projection-centre-references.json) binds both executable hashes, searches every overlapping four-byte encoding of `005600a4/a8` across each complete file, and corroborates each containing six-byte instruction in fresh `objdump` output. All matches are absolute x87 memory operands; no unmatched literal was silently dropped. This is linear-disassembly/literal coverage, not control-flow reachability or general alias recovery.
+
+Each binary contains **40 references per centre**, including **two stores per centre**. The horizontal centre has25 FLD,9 FADD and4 FSUB reads; the vertical centre has29 FLD,5 FADD and4 FSUB reads. The four stores are:
+
+| Writer | Original centreX / centreY stores | Modern centreX / centreY stores |
+|---|---|---|
+| Rectangle/angle builder `004bf260` | `004bf2a0` / `004bf2a6` | Same |
+| Conditional viewport finalizer `004213b0` | `00421415` / `00421425` | `004213e6` / `004213f2` |
+
+Both writer contracts are already paired above: the builder computes origin plus half extent; the finalizer conditionally copies selected cached float values, with changed load/store scheduling. No additional direct literal centre writer was found. Matching reference counts do not establish equal execution, inputs or results.
+
+The horizon investigation can now stop searching for an unidentified direct absolute centre store in these EXEs. Remaining ownership questions concern which of these two writers executes last, cached-value producers, computed aliases/external code and camera orientation. The catalogue's unresolved horizon claim is retained; this audit provides no rendering or runtime-order proof.
+
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
 
 ## Viewport finalizer drops legacy projection updates
