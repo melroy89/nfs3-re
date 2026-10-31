@@ -7600,5 +7600,40 @@
     "report": "analysis/original-modern-idle-movie.md",
     "report_sha256": "614e176e16d6a12b3344e06346971b2fc3d4a667a969be0c035bc7a790522949",
     "limit": "Partition and existing semantic route verified; no runtime playback or new function creation."
+  },
+  "hud_interval_partition": {
+    "interval": "0045e95a..0045f300",
+    "parts": [
+      {
+        "start": "0045e95a",
+        "end_exclusive": "0045e960",
+        "bytes": 6,
+        "role": "Unchanged leading bytes",
+        "changed_bytes": 0,
+        "original_sha256": "e0c4e27cb22f2d527afdea98f9933f1edd53c428981e5a82764d164f9cd5847a",
+        "modern_sha256": "e0c4e27cb22f2d527afdea98f9933f1edd53c428981e5a82764d164f9cd5847a"
+      },
+      {
+        "start": "0045e960",
+        "end_exclusive": "0045f07c",
+        "bytes": 1820,
+        "role": "Complete HUD settings initializer",
+        "changed_bytes": 242,
+        "original_sha256": "d4fecb203322a74a2b5a140a310390effdc6b4b4463cb159ca95e232166e2fe2",
+        "modern_sha256": "e87e59e2388aaa15df68bdea7f15a48ec816209d13a5f2e3aae271f2ef0cad43"
+      },
+      {
+        "start": "0045f07c",
+        "end_exclusive": "0045f300",
+        "bytes": 644,
+        "role": "Unchanged trailing bytes; not classified as padding",
+        "changed_bytes": 0,
+        "original_sha256": "5c1b354e94aec2e2f181ebde160ead75fa6e64b6703c521236deff459f12c800",
+        "modern_sha256": "5c1b354e94aec2e2f181ebde160ead75fa6e64b6703c521236deff459f12c800"
+      }
+    ],
+    "report": "analysis/original-modern-hud-settings-policy.md",
+    "report_sha256": "a30054b2a099b01fb4fbdb6912380e6de729229615e99e96badb5d51ece70b37",
+    "limit": "All interval differences localized to documented policy; equality of surrounding bytes is not full semantic equivalence."
   }
 }

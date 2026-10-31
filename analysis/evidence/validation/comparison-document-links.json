@@ -193,8 +193,8 @@
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
-      "sha256": "a756beec8c61a7ed9e59f85dbe232449ed0036c0f8d892901ec799c1539fd61a",
-      "relative_links": 5
+      "sha256": "a30054b2a099b01fb4fbdb6912380e6de729229615e99e96badb5d51ece70b37",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
@@ -308,8 +308,8 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "ea57775bd3302d690d052406ca4984c9eb76400507807eb029f343b8a9166239",
-      "relative_links": 35
+      "sha256": "b1f791b92555bef60c06d907d65763f50d0974dfbb09ee1c549201dbf200a4f6",
+      "relative_links": 36
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
@@ -573,7 +573,7 @@
     }
   ],
   "file_count": 114,
-  "relative_link_count": 1599,
+  "relative_link_count": 1601,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

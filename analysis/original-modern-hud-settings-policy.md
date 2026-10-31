@@ -64,3 +64,9 @@ For provenance comparison, the local uppercase backup `fedata_org/menus/HUD.MNU`
 The paired executable consumer `0044a5cb..0044a5e5` is byte-identical in both versions. It first requires nonnull entry DWORD `+0x2c`, then tests BYTE `+5` mask `10h`; a set bit skips that callback dispatch. Otherwise it calls `[entry+0x2c]` with entry in EAX and sign-extended AX-derived value in EDX. This establishes the bit's effect on this callback route. It does not prove the callback is the entry's only draw path, nor that this bit independently excludes every input route; navigation bit0 is a separate consumer contract.
 
 **Follow-up status: done for official asset grouping, descriptor/list binding and this flag consumer; confidence: verified static.** Runtime lifecycle, complete input/render dispatch and localized list content remain explicit unknowns. No menu or target code was executed, and no backup file was changed.
+
+## Outside-body interval closure
+
+The outside-function inventory now independently checks the entire2470-byte interval `0045e95a..0045f300`: six leading bytes precede the1820-byte initializer, and644 trailing bytes follow it. Both surrounding spans are byte-identical across the pinned EXEs. **All242 interval differences** are confined to the already documented initializer policy block`0045e980..0045ea74`. Per-part hashes and changed-byte counts are retained in the [outside-body manifest](evidence/audits/outside-function-differences.json).
+
+This closes localization of the interval’s byte differences to the researched policy; it does not identify the unchanged surrounding bytes as padding or certify every callee, callback, language or runtime outcome. No Ghidra boundary edits were made.
