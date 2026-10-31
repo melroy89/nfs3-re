@@ -422,6 +422,8 @@ The [car-profile comparison](original-modern-car-profile.md) records the changed
 
 The [music-worker cleanup comparison](original-modern-music-worker-cleanup.md) verifies replacement of forced termination plus close with direct handle closure at one shutdown tail.
 
+The [dead-zone slider comparison](original-modern-deadzone-sliders.md) verifies removed truncation calls, shifted enabled-row numbering, layout/register changes and the removed named-widget flag tail.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

@@ -76,6 +76,10 @@
       "sha256": "69414237111bc0ed84d3dd4fb52a1065fd5614b6ebf3bee0cb2358eb40a20834"
     },
     {
+      "path": "analysis/original-modern-deadzone-sliders.md",
+      "sha256": "19b73dcf52ad67dfd8fefcab051e50d91bd1ff794fa88b3b84507afc91434d54"
+    },
+    {
       "path": "analysis/original-modern-dialog-input.md",
       "sha256": "e917eb10cde9b099dc20c0a8d16f263e2eb6976e2b7eb5e634b203122208b276"
     },
@@ -382,8 +386,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 306,
-    "without_address_mentions": 55
+    "with_address_mentions": 308,
+    "without_address_mentions": 53
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -2638,7 +2642,19 @@
       "changed_bytes": 4,
       "original_sha256": "07bc3f3f35626c166898e8716314560ee97331d1d0b66fa9234e3a87a1582089",
       "modern_sha256": "6ca8d82d363e78b0823e2d11ce4b19f78aeb1fd8d7065e5e55434b58be76a512",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-deadzone-sliders.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00442dd0",
+            "00442e03",
+            "00442e0d",
+            "00442e16",
+            "00442e1f"
+          ]
+        }
+      ]
     },
     {
       "entry": "00443070",
@@ -2656,7 +2672,18 @@
       "changed_bytes": 26,
       "original_sha256": "3046f084a94b5e3c9f85cde106feeaa3902df95d75f71fc416b9f1f4b5287cdd",
       "modern_sha256": "c0f1a9aded338e68e5802bc420451f47c1433872598471908ff3d09ec9cfbd39",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-deadzone-sliders.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00443070",
+            "004431da",
+            "00443204",
+            "00443207"
+          ]
+        }
+      ]
     },
     {
       "entry": "004432c0",
@@ -10207,6 +10234,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-car-alias.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dfd56"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-deadzone-sliders.md",
           "entry_mentioned": true,
           "addresses": [
             "004dfd56"

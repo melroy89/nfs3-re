@@ -77,14 +77,19 @@
       "relative_links": 4
     },
     {
+      "path": "analysis/original-modern-deadzone-sliders.md",
+      "sha256": "19b73dcf52ad67dfd8fefcab051e50d91bd1ff794fa88b3b84507afc91434d54",
+      "relative_links": 3
+    },
+    {
       "path": "analysis/original-modern-dialog-input.md",
       "sha256": "e917eb10cde9b099dc20c0a8d16f263e2eb6976e2b7eb5e634b203122208b276",
       "relative_links": 5
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "56e0835b62b119c972208e2e4fc3b9414633ccb1deab364786f78ee69e51859c",
-      "relative_links": 120
+      "sha256": "1a8a47b03b9f3d2a8610c79993fb4ea4556b4ba6d6cde163c6e0e5c5435815c0",
+      "relative_links": 121
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -128,8 +133,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "57e7ef0068cc7c44e7c7bb50ca7e81c8dad03bbefec4ba76ee6f589091620e55",
-      "relative_links": 521
+      "sha256": "67c0bb80efd35443188f19ba7871950f8e6898210e51116ec3b4478ec5137333",
+      "relative_links": 524
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -477,8 +482,8 @@
       "relative_links": 7
     }
   ],
-  "file_count": 95,
-  "relative_link_count": 1218,
+  "file_count": 96,
+  "relative_link_count": 1225,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
