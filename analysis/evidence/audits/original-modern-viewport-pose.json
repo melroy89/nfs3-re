@@ -153,5 +153,64 @@
   "identical_pose_callees": [
     "004223c0",
     "00422520"
-  ]
+  ],
+  "modern_rear_camera_binding": {
+    "descriptor": "00556550",
+    "words": [
+      "0053772c",
+      "005563aa",
+      "00000000",
+      "00000000",
+      "006fd1cc"
+    ],
+    "name": "rearcamera",
+    "selection_cell": "006fd1cc",
+    "choice_ids": [
+      1939,
+      1940,
+      0
+    ],
+    "embedded_fallback_labels": {
+      "1938": "Rear View From",
+      "1939": "Active Camera",
+      "1940": "In Car Camera"
+    },
+    "limit": "Names identify authored choices, not observed camera pose or complete input dispatch."
+  },
+  "rear_camera_menu_assets": {
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/camera.mnu",
+      "sha256": "045199397737299f864da5b5676413293a38ffba6cb5c3f787b4d2b6d1b37456",
+      "items": [
+        {
+          "section": "button",
+          "fields": {
+            "buttontype": "arrowtab",
+            "ypos": "6",
+            "priority": "11",
+            "text": "str_1938",
+            "listname": "rearcamera"
+          }
+        },
+        {
+          "section": "cascade",
+          "fields": {
+            "ypos": "6",
+            "priority": "4",
+            "notitle": "0",
+            "text": "str_1164",
+            "maxvisitem": "5",
+            "listname": "rearcamera"
+          }
+        }
+      ],
+      "provenance": "Pinned archive member"
+    },
+    "uppercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CAMERA.MNU",
+      "sha256": "bdeeb5b38abb48858e27467eb3bb37d0ba78821bd0c0e755ed3251df1b059b04",
+      "items": [],
+      "provenance": "Local backup, not authenticated as retail or paired to supplied original executable"
+    }
+  }
 }

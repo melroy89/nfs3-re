@@ -2,6 +2,7 @@
 import hashlib
 import json
 import subprocess
+import struct
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
@@ -44,6 +45,38 @@ def main():
         pair = [result['binaries'][k]['spans'][index] for k in ('original', 'official_modern')]
         assert pair[0]['bytes_sha256'] == pair[1]['bytes_sha256']
         result['identical_pose_callees'].append(pair[0]['start'])
+    pe=pefile.PE(str(ROOT/SPECS['official_modern'][0]))
+    words=struct.unpack('<5I',pe.get_data(0x556550-0x400000,20))
+    assert words==(0x53772c,0x5563aa,0,0,0x6fd1cc)
+    assert pe.get_data(0x53772c-0x400000,16).split(b'\0')[0]==b'rearcamera'
+    choices=struct.unpack('<3H',pe.get_data(0x5563aa-0x400000,6));assert choices==(1939,1940,0)
+    labels={}
+    for ident,expected in [(1938,'Rear View From'),(1939,'Active Camera'),(1940,'In Car Camera')]:
+        offset=struct.unpack('<I',pe.get_data(0x53d310-0x400000+4*(ident-0x788),4))[0]
+        value=pe.get_data(0x53d310-0x400000+offset,80).split(b'\0')[0].decode('ascii')
+        assert value==expected;labels[str(ident)]=value
+    result['modern_rear_camera_binding']={'descriptor':'00556550',
+        'words':[f'{w:08x}' for w in words],'name':'rearcamera','selection_cell':'006fd1cc',
+        'choice_ids':list(choices),'embedded_fallback_labels':labels,
+        'limit':'Names identify authored choices, not observed camera pose or complete input dispatch.'}
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    result['rear_camera_menu_assets']={}
+    for name,relative in [
+        ('official_modern','analysis/captures/modern-differences/upstream/package/fedata/menus/camera.mnu'),
+        ('uppercase_backup','nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CAMERA.MNU')]:
+        data=(ROOT/relative).read_bytes()
+        if name=='official_modern':assert data==subprocess.check_output(['7z','x','-so',str(archive),'fedata/menus/camera.mnu'])
+        sections=[];current=None
+        for line in data.decode('latin1').splitlines():
+            if line.startswith('['):
+                current={'section':line.strip('[]'),'fields':{}};sections.append(current)
+            elif current is not None and '=' in line and not line.startswith(';'):
+                key,value=line.split('=',1);current['fields'][key]=value
+        selected=[s for s in sections if s['fields'].get('listname')=='rearcamera']
+        assert len(selected)==(2 if name=='official_modern' else 0)
+        result['rear_camera_menu_assets'][name]={'path':relative,'sha256':hashlib.sha256(data).hexdigest(),
+            'items':selected,'provenance':'Pinned archive member' if name=='official_modern' else 'Local backup, not authenticated as retail or paired to supplied original executable'}
     (ROOT/'analysis/evidence/audits/original-modern-viewport-pose.json').write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: baselines, complete wrapper bodies and identical pose finalizer')
 

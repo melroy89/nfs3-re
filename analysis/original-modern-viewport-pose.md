@@ -51,9 +51,9 @@ Modern producer `0042649c..004264be` returns immediately in session 1; otherwise
 
 A second helper `004264c0..004264ec` also skips session 1. Its mixed CMPSD/MOVSD sequence deliberately advances across some fields without writing them. Assuming the forward string direction used by these routines, it copies source DWORD indices **1, 2, 5, 6, 7 and 11..19**, corresponding to offsets **4, 8, 14h, 18h, 1ch and 2ch..4ch**. Other traversed fields remain unchanged in this helper. CMPSD updates flags, but there is no conditional branch consuming those comparison results in this body; replacing it with a whole-descriptor memcpy would change storage effects.
 
-The admission global `006fd1cc` is initialized to 1 by `00472298` at store `004722a6`, after XOR EAX,EAX and MOV AL,1. Another inspected producer at `0045da2d..0045da37` restores it from DWORD `0066468c`. These witnesses establish a nonzero default and a later restore path, not a permanent value or a particular user-facing option. Configuration loading/bulk writes and complete menu binding remain separate.
+The admission global `006fd1cc` is initialized to 1 by `00472298` at store `004722a6`, after XOR EAX,EAX and MOV AL,1. Another inspected producer at `0045da2d..0045da37` restores it from DWORD `0066468c`. These witnesses establish a nonzero default and a later restore path, not a permanent value. The menu-binding follow-up below identifies the user-facing selector; configuration/bulk writes and complete lifecycle remain separate.
 
-**Closed:** extraction/blend body comparison, fixed descriptor's full snapshot origin, selected partial-update fields and two admission-global producers. **Still pending:** source descriptor initialization, snapshot call order/lifetime, full global binding and alternate writes, transitive helper changes, actual camera selection and rendered pose. No historical release attribution or runtime equivalence is inferred.
+**Closed:** extraction/blend body comparison, fixed descriptor's full snapshot origin, selected partial-update fields and two admission-global producers. **Still pending:** source descriptor initialization, snapshot call order/lifetime, all alternate global writes, transitive helper changes, actual camera selection and rendered pose; the menu binding is verified below. No historical release attribution or runtime equivalence is inferred.
 
 ## Snapshot scheduling: added calls in matched setup paths
 
@@ -71,3 +71,21 @@ The corresponding original bytes at `0042649c..004264ec` contain parts of other 
 This proves local call order at the two insertion points. It does not prove global ordering between scene initialization, every rebind, snapshot consumption, descriptor mutation and menu/config updates. Session 1 causes both snapshot helpers to return without copying, and the wrapper's new fixed-descriptor branch also excludes session 1; those local gates are consistent, but do not establish all runtime lifecycle invariants.
 
 **Next:** trace callers of the matched setup functions and remaining descriptor writes, then map the reused original mode-handler region if needed. Runtime camera behavior and release introduction remain unverified.
+
+## Rear-camera menu binding identifies the fixed-path selector
+
+The expanded pose audit now verifies official `fedata/menus/camera.mnu` against the pinned Modern archive. It contains both an arrowtab button and a cascade with `listname=rearcamera`, ypos6; the cascade's `maxvisitem` is5. Local uppercase backup `fedata_org/menus/CAMERA.MNU` has no `rearcamera` item. Both hashes and parsed fields are retained. The backup remains unauthenticated as retail and is not established as the supplied original executable's paired asset.
+
+Executable descriptor `00556550` binds exact name `rearcamera`, list pointer `005563aa`, and selection DWORD **`006fd1cc`**. The list contains WORDs **1939,1940,0**. The embedded language fallback table gives the authored meanings:
+
+| ID | Verified fallback text | Position in the list |
+|---|---|---|
+| 1938 | Rear View From | Menu label (`text=str_1938` on the button) |
+| 1939 | Active Camera | First choice |
+| 1940 | In Car Camera | Second choice |
+
+These are actual executable fallback strings, not proof of the selected external language file or a rendered label. The visible cap5 does not imply five choices. Descriptor binding establishes that these controls use the same selector already tested by the changed pose wrapper.
+
+Under the wrapper's previously verified conditions—nonzero control mode, session `006fd3b0 != 1`, selector nonzero—Modern chooses fixed descriptor `00661220` instead of the normal primary/alternate route. Original has no corresponding branch. The authored choice names and selector binding therefore support the association of the new fixed route with the in-car rear-camera option. The default initializer writes1, but actual ordinal changes from input, malformed values, source-descriptor lifetime and visible camera geometry remain untested. The branch admits any nonzero selector, not only literal1.
+
+**MP151-001: partial static support.** Official controls, two choice labels, selector identity, nonzero default and changed descriptor-selection mechanism are verified. Universal “locked in car” output, visibility/blind-spot improvement, all runtime callers and introduction in v1.5.1 require further evidence. No game, camera input, new instruction probe or Ghidra mutation was performed.
