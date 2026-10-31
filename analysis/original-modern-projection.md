@@ -4,6 +4,8 @@
 
 Static supplied-original/official-Modern comparison; exact fingerprints are in the [baseline](original-modern-differences.md). Reproduce with `python3 analysis/scripts/audit_projection_difference.py`. The [manifest](evidence/audits/original-modern-projection.json) captures original/Modern angle helpers, three paired callers, Modern producer call, exact float constants and an asserted identical projection builder. No rendering, game or instruction probes were executed.
 
+The later sections require their named companion audits as well: `audit_projection_callers_followup.py` covers temporary/ordinary caller dispatch; `audit_projection_centre_references.py` covers the complete literal-centre inventory; `audit_viewport_geometry_difference.py` generates the original/Modern rectangle examples; and `audit_frame_setting_difference.py` establishes option labels and selection storage. Run each with `python3 analysis/scripts/<name>` from the repository root. The first script alone does not reproduce the whole expanded chapter.
+
 ## Automatic angle producer and selection
 
 Modern helper **`004dbc48`** loads signed DWORD width/height from `006fd1e4/006fd1e8`, divides width by height on x87, multiplies by file-backed float 0.75, applies FPATAN with 1, doubles and multiplies by float `57.295780181884766`. Ordered comparisons clamp the result to file-backed float limits **90** and **107**, then store binary32 at **`0055fecc`**.

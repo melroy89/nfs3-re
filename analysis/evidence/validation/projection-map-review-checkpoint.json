@@ -1,0 +1,130 @@
+{
+  "kind": "bounded-projection-map-review-checkpoint",
+  "reviewed_head": "2ae05b27bf17ae9a308cc78f9857bddb99d50637",
+  "root_static_checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_projection_difference.py"
+      ],
+      "script_sha256": "7aaab8771b2062b298c72d374a5bd8355f7bed13aa8fdc23ac1d7f23bb4e06ec",
+      "exit_code": 0,
+      "stdout": "PASS: projection baselines, FOV/constants/callers and identical builder\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_projection_callers_followup.py"
+      ],
+      "script_sha256": "bdd02eb45886f5c09b567687177a27c4a6f87445f8990b178b7de83408d98b7c",
+      "exit_code": 0,
+      "stdout": "PASS: identical relocated float constants and integer-120 to binary32-120 caller adjustment\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_projection_centre_references.py"
+      ],
+      "script_sha256": "bdc14fd203aa7f09ef03e10f9d50567c0ceac80f84db93adee11b355ddfd379f",
+      "exit_code": 0,
+      "stdout": "PASS:80 corroborated absolute centre references per binary, four stores per binary in two known functions\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_viewport_geometry_difference.py"
+      ],
+      "script_sha256": "cb3d710570bc1ca012333c49415a6344ba5eaf7fba1f0d420ac61215761668ff",
+      "exit_code": 0,
+      "stdout": "PASS: both fingerprints, viewport/border instruction captures and file-backed floats\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_frame_setting_difference.py"
+      ],
+      "script_sha256": "c2af86ce6c4b68bdc019d83fb39e2a4000dd57b66b8e79e3ce39241b3182d66a",
+      "exit_code": 0,
+      "stdout": "PASS: two-to-four choice expansion, Frame Size labels, selector and DWORD write\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_map_marker_scaling_difference.py"
+      ],
+      "script_sha256": "1b6a87e1005200861f0825bf2df9d8b3e12629cd620a4a27b16e59ca6f898f57",
+      "exit_code": 0,
+      "stdout": "PASS: marker producer width replacement, identical marker/map consumers and extent constants\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_hud_layout_difference.py"
+      ],
+      "script_sha256": "044726da7a51f558fef4628e58177fdba20473be41df96f71e8753f99194a8dc",
+      "exit_code": 0,
+      "stdout": "PASS: fingerprints, HUD initialization/default spans and preset provenance\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_hud_reference_consumers.py"
+      ],
+      "script_sha256": "efd1a2b42a4a1f5180d43a6e25271736c404f93c9471ffaef86b552ff8d7e4d2",
+      "exit_code": 0,
+      "stdout": "PASS: nine complete bodies; dimension reads, quad-field constant and variant-header constant account for every difference\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_numeric_scale_difference.py"
+      ],
+      "script_sha256": "1aadb610e75223b9ba43ebdd2157756664ff49a1ae8535a137dbbf2ea2e72bf5",
+      "exit_code": 0,
+      "stdout": "PASS: baselines, moved counterpart spans and three redirected callers\n",
+      "stderr": ""
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "matches_prior_identity": true
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "matches_prior_identity": true
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "preset_instruction_review",
+      "model": "gpt-6-luna",
+      "scope": "Projection note, scripts and existing retained evidence; document/instruction-model consistency",
+      "result": "No concrete errors found",
+      "not_performed": "No script execution, fresh binary extraction, live Ghidra or runtime inspection",
+      "followup": "Clarified at chapter introduction that companion audits are required; that prose edit occurred after the review."
+    },
+    {
+      "reviewer": "preset_arithmetic_review",
+      "model": "gpt-6-luna",
+      "scope": "Map marker note/script/manifest and HUD default/role linkage; document/model consistency",
+      "result": "No concrete errors found",
+      "not_performed": "No script execution, binary-hash verification, target execution or Ghidra inspection"
+    }
+  ],
+  "limits": [
+    "Root static audits verify their pinned original/official binaries; reviewer findings are not independent raw-binary validation.",
+    "No full rendered, historical or cross-version compatibility acceptance.",
+    "No executable mutation, new instruction probe, C export, compilation or Ghidra write."
+  ]
+}

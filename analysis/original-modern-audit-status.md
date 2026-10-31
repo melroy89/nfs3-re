@@ -116,10 +116,19 @@ The catalog currently labels157 entries vendor-only,39 bounded static,91 partial
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
-| 1 | MP160-003 horizon/camera shift | Follow legacy centre cells `00564434/38` and corresponding modern camera/projection consumers from the [projection report](original-modern-projection.md); establish which removed updates still affect output | Executable inspection can advance this; visible horizon still needs rendering evidence |
+| 1 | MP160-003 horizon/camera shift | [Projection report](original-modern-projection.md) now covers ordinary/weather dispatch and direct centre writers; recover conditional type8 source initialization or qualify its admission, then camera orientation/output | Executable inspection can advance this; visible horizon still needs rendering evidence |
 | 2 | MP160-006 remaining output coverage | [Map-marker extent-to-quad chain](original-modern-map-marker-scaling.md) now established; qualify other marker styles, lifecycle and actual rendered size separately | Static source/consumer gap closed; visual scope remains unverified |
 | 3 | MP161-001/002 renderer-specific texel alignment/fog | Use [packaged DLL inventory](original-modern-dll-candidates.md) and authenticated matching older DLLs for component comparisons | EXE changes or DLL names alone cannot establish these DLL implementations/history |
 | 4 | Historical regressions such as MP153-008 or the specific MP152-001 improvement | Obtain the named intermediate-release pairs; reuse [language fallback](original-modern-language-table.md) and [rear-view mechanisms](original-modern-track-detail.md) as final-state context | Original versus final cannot isolate an intermediate regression/fix |
 | 5 | Original/Modern rendered, replay and multiplayer consequences | Compare separately identified inputs/builds within an explicitly stated runtime scope | Existing single-build captures and static derivations are not cross-version equivalence evidence |
 
 Continue with a concrete missing producer/consumer link from this queue. Do not repeat already resolved preset arithmetic, expand into unrelated scratchpad work, or treat historical/runtime requirements as blockers to all remaining static inspection. The bounded reference inventory remains complete; the broader investigation remains active and incomplete.
+
+## Projection and map review checkpoint
+
+The [checkpoint record](evidence/validation/projection-map-review-checkpoint.json) binds nine successful root audit reruns to the reviewed revision and records two Luna consistency reviews. The reviewers checked retained documentation/models and reported no concrete errors; they did not independently re-extract binaries or run the audits. The primary agent performed the fresh hash-pinned static reruns. The saved Ghidra database and local analysis executable still match their prior hashes. The projection introduction now lists the companion audits needed for its expanded sections.
+
+- **Complete within static scope:** original/Modern rectangle examples; temporary weather versus ordinary projection selection; the three changed chooser calls; complete literal-centre writer inventory; retained centre producer/consumer; non-file-backed conditional source classification; map-marker extent-to-quad link; role-profile defaults into map zoom.
+- **Still unresolved:** conditional type8 source producer/admission and ordering, computed aliases, camera orientation/final horizon, active map/profile state, all marker styles and actual rendered output. Historical claims need the appropriate intermediate pairs; runtime compatibility remains separate.
+
+The map-point mechanism gap in MP160-006 and field/consumer gap in MP140-073 are closed at the documented static boundary. The whole vendor claims are still partial. MP160-003 remains unresolved. The broader original/Modern investigation is not marked complete, and this checkpoint does not authorize or imply a rebuilt game.
