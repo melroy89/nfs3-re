@@ -1,0 +1,71 @@
+{
+  "kind": "static-config-loading-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00472980",
+          "end": "00472b60",
+          "bytes_sha256": "722614087a7928ab09e90f2e651113020c20f2d224aca63685f57d1c65da6fb4",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-00472980.asm",
+          "assembly_sha256": "3c2e65c1e5238dc310554ae4ae58b163a223e5e47d67b9e177bb8e84f5d8e89a"
+        },
+        {
+          "start": "004728e0",
+          "end": "0047297d",
+          "bytes_sha256": "8878a43a44198fcff04e9f0dc02c9235404e38cc4be422dd54508c5c52e8e843",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004728e0.asm",
+          "assembly_sha256": "631c7276b21e8bcc9d88a010dbd6c8213cdce8347af457adae6688471dce2c24"
+        }
+      ],
+      "file_backed_header_hex": "000000000000000000000000",
+      "format_string": "%sconfig.dat",
+      "relevant_imports": {
+        "0053448c": "CompareFileTime",
+        "00534528": "GetFileTime",
+        "00534544": "GetModuleFileNameA",
+        "00534644": "_lclose",
+        "00534648": "_lopen"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00472980",
+          "end": "00472b48",
+          "bytes_sha256": "0b69e1eba064946be5a7e28fbb02af74ec6981fcc3997b71e38c4ee068d46086",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-00472980.asm",
+          "assembly_sha256": "cd90e7b51eb7fdcdd1eab737bb465e55e381114f07a1bf34988839e00db333ce"
+        },
+        {
+          "start": "00472230",
+          "end": "00472248",
+          "bytes_sha256": "56f7ce4107840326aeea1b04dcd1547091123bd4541780d2f0827da2cd168870",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-00472230.asm",
+          "assembly_sha256": "f925fd06c8bb6512f23fde23c92addb3d80909d88e627ae5f1d7108bae39c5fe"
+        },
+        {
+          "start": "004723f0",
+          "end": "00472402",
+          "bytes_sha256": "8eed85fc7ad86a0526d5352998eb2bd118bcdac140cdd08f82d8070ab3f8b8b9",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-004723f0.asm",
+          "assembly_sha256": "5d53ca9b360b981ffe81419b39d7c432f0fa8c68e291d5742caf7fc12feff95e"
+        }
+      ],
+      "file_backed_header_hex": "f02000000600000000000000",
+      "format_string": "%sconfig.dat",
+      "relevant_imports": {
+        "00534544": "GetModuleFileNameA"
+      }
+    }
+  },
+  "limits": [
+    "No config, game or instruction execution.",
+    "Header acceptance is not complete serialized-field validation."
+  ]
+}

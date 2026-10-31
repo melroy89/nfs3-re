@@ -257,3 +257,7 @@ Run `python3 analysis/scripts/audit_command_line_difference.py` (Python pefile, 
 ## Original versus Modern ghost restoration
 
 Run `python3 analysis/scripts/audit_ghost_loading_difference.py` (Python pefile, GNU objdump). It captures paired outer wrappers/save-header helpers and asserts identical ghost-reader/model-resolver bodies. Output: `analysis/evidence/audits/original-modern-ghost-loading.json`; raw captures remain ignored. No ghost/game/target execution. See [ghost findings](../original-modern-ghost-loading.md).
+
+## Original versus Modern config loading
+
+Run `python3 analysis/scripts/audit_config_loading_difference.py` (Python pefile, GNU objdump). It retains paired load bodies, original file-time helpers, Modern reset/header helpers, API identities and exact header-template bytes. Output: `analysis/evidence/audits/original-modern-config-loading.json`; raw captures remain ignored. No config/API/target execution. See [config-load findings](../original-modern-config-loading.md).

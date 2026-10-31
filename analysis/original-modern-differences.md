@@ -162,7 +162,11 @@ The [command-line comparison](original-modern-command-line.md) traces 33 retaine
 
 The [ghost comparison](original-modern-ghost-loading.md) traces the changed snapshot/save order, refreshed header restoration and three additional identity-field copies. The reader/model-resolver bodies are byte-identical. These support settings/name preservation mechanisms; full file/version validation and trajectory compatibility remain separate.
 
-## 22. Prioritized semantic work remaining
+## 22. Config-file acceptance and reset routing
+
+The [config-load comparison](original-modern-config-loading.md) traces removal of the old file-time gate, retained exact file-size check, Modern size/version-byte reset decisions and header template. The version-only reset is not necessarily a full reset. Complete serialization, failure paths and cross-release file compatibility remain pending.
+
+## 23. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

@@ -56,6 +56,8 @@ The reader's file-size comparison permits files no larger than `0x41574`; this a
 
 On failure, the outer wrapper skips its success-only restoration. The inner reader's shown failure paths occur before its global preparation-block copy, but `00472820` has already run. This is not an unconditional rollback transaction; all callee side effects are not reconstructed here.
 
+The [config-load comparison](original-modern-config-loading.md) now explains size/version-byte reset decisions and the ordinary three-DWORD header template; it does not establish every serialized-field contract.
+
 ## Remaining work
 
 Verified: changed snapshot order, refreshed/restored header coverage, three additional identity copies and retained reader/resolver instructions. Pending: complete version/header format, all model/asset dependencies, name-field consumers, read/save failures and runtime ghost playback. Physics/x87 and trajectory compatibility remain separate from settings restoration. Historical release introduction requires older patch binaries; no compatible-replay claim follows from this chapter.
