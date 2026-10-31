@@ -183,8 +183,8 @@
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
-      "sha256": "651703396d843cb570cc574997fd17a63157086863e03a09ee04698b10b409f5",
-      "relative_links": 3
+      "sha256": "13145eeed813d9a575cef8e2b126767ac6400c3c295a90c8bf1ca032f0c687f2",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
@@ -583,7 +583,7 @@
     }
   ],
   "file_count": 116,
-  "relative_link_count": 1685,
+  "relative_link_count": 1688,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

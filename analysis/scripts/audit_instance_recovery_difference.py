@@ -17,7 +17,7 @@ def main():
         get = lambda a,n: pe.get_data(a-0x400000,n)
         imports = {i.address:i.name.decode() for d in pe.DIRECTORY_ENTRY_IMPORT
                    for i in d.imports if i.name}
-        spans = [(0x4f91d0,0x4f925f),(0x4b603b,0x4b605d)] if label=='original' else [(0x4a3df2,0x4a3dfd)]
+        spans = [(0x4f91d0,0x4f925f),(0x4b603b,0x4b605d)] if label=='original' else [(0x4a3df2,0x4a3dfd),(0x4f1ef4,0x4f1f58)]
         rows=[]
         for a,b in spans:
             value=get(a,b-a)
@@ -34,7 +34,18 @@ def main():
             assert pe.get_string_at_rva(0x53fe08-0x400000)==b'Need For Speed III'
         else:
             assert imports[0x53448c]=='GetProcessHeap'
+            for va,name in [(0x534644,'HeapAlloc'),(0x534518,'HeapReAlloc'),
+                            (0x534648,'HeapFree'),(0x534528,'HeapSize')]:
+                assert imports[va]==name
+            assert get(0x4f1ef4,28)==bytes.fromhex(
+                '5152506a08eb06905152506a00ff35403d9f00ff15444653005a59c3')
+            assert get(0x4f1f10,29)==bytes.fromhex(
+                '515251506a08eb06515251506a00ff35403d9f00ff15184553005a59c3')
             assert get(0x4a3df2,11)==bytes.fromhex('ff158c445300a3403d9f00')
+            assert get(0x4f1f30,20)==bytes.fromhex(
+                '5152506a00ff35403d9f00ff15484653005a59c3')
+            assert get(0x4f1f44,20)==bytes.fromhex(
+                '5152506a00ff35403d9f00ff15284553005a59c3')
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows}
     (ROOT/'analysis/evidence/audits/instance-recovery-difference.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: original mutex/title recovery, Modern heap slot producer, baseline identities')

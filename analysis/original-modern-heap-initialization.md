@@ -50,3 +50,20 @@ At `004bbe1a..004bbe1e`, signed JLE admits the request when that calculated dist
 This establishes the previously missing direct link between the enlarged arena and the named diagnostic. The full source bullet for **MP150-010** explicitly includes both the high-poly-car error claim and a corresponding buffer increase from0.8 MiB to8 MiB; the catalog's condensed wording previously omitted that second part. Original's exact799,744-byte request is approximately0.763 MiB, while Modern's request is exactly8 MiB. The associated capacities after100-byte headroom are799,644 and8,388,508 bytes.
 
 **Catalog support: partial static evidence.** The larger backing and threshold mechanism are verified and connected to the named message. The diagnostic/failure branch itself remains in Modern. For normal positive requests, fitting arithmetic and successful allocation, greater capacity permits a larger aggregate arena demand before that threshold is exceeded; this is not a guarantee that every high-poly car fits. Signed/wrapping pointer arithmetic, cursor publication before failure, reset/alignment differences, allocation failure, all request sizes and runtime utilization retain their earlier limits. No failing car or original/Modern runtime result was tested, and the final pair cannot date the change's introduction.
+
+## Process-heap producer and six register adapters
+
+The [instance/handle audit](scripts/audit_instance_recovery_difference.py), reproduced by `python3 analysis/scripts/audit_instance_recovery_difference.py`, now retains the complete Modern adapter region `004f1ef4..004f1f58` and asserts its import targets and machine bytes. Its [manifest](evidence/audits/instance-recovery-difference.json) also establishes startup `GetProcessHeap` → `009f3d40`. The [original mutex comparison](original-modern-startup-requirements.md#separate-original-mutextitle-recovery-and-repurposed-handle-storage) explains why the same global address has a different original role. These are Modern adapter contracts, not same-address original counterparts.
+
+| Entry | Incoming register arguments | Imported operation | Flags passed | Raw EAX output |
+|---|---|---|---:|---|
+| `004f1ef4` | EAX=byte count | HeapAlloc | 8 | API return |
+| `004f1efc` | EAX=byte count | HeapAlloc | 0 | API return |
+| `004f1f10` | EAX=old pointer, ECX=new byte count | HeapReAlloc | 8 | API return |
+| `004f1f18` | EAX=old pointer, ECX=new byte count | HeapReAlloc | 0 | API return |
+| `004f1f30` | EAX=pointer | HeapFree | 0 | API return |
+| `004f1f44` | EAX=pointer | HeapSize | 0 | API return |
+
+All six push the heap handle from `009f3d40`, save/restore ECX and EDX, and return the API's EAX without local error handling or normalization. Allocation's two entries share tail `004f1f01`; reallocation's entries share tail `004f1f1e`. For reallocation, the extra pushed ECX is the size argument, distinct from the saved ECX later restored. The remaining four wrappers consume pointer/size arguments directly from the named registers. Sizes and pointers are 32-bit on these inspected paths. Flag values are stated literally; caller intent and every flag-dependent outcome are not independently tested here.
+
+Reconstruction must model a process-owned heap dependency established by startup, preserve raw failure returns, and avoid treating these routines as ordinary stack-argument C calls when invoking retained instructions. ECX/EDX preservation is explicit; no condition-code output contract is promised because the API supplies the intervening flags. The wrappers do not locally validate the heap handle or enforce allocation lifetime. The render-arena call chain above is a confirmed consumer; complete caller ownership, allocation-failure behavior and thread/lifetime qualification remain pending. This does not change the separate RAM-pool finding into a proven direct Windows-heap substitution.
