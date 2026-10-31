@@ -486,6 +486,60 @@
       ]
     }
   ],
+  "binary_field_descriptors": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "rows": [
+        {
+          "address": "00557d84",
+          "words": [
+            "0053852c",
+            "00000001",
+            "00604f34",
+            "00000011"
+          ],
+          "sha256": "8d868a3b9e674df5a3a6b9119bac01d26ed0565424e26dbbb3e5becff02767d1"
+        },
+        {
+          "address": "00557dc4",
+          "words": [
+            "0053852c",
+            "00000001",
+            "00604f38",
+            "0000001d"
+          ],
+          "sha256": "1c387a91242b6e993f6793453675b489e4b63f0dfb2ac8424e7055ad1d7d4a72"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "rows": [
+        {
+          "address": "00557d84",
+          "words": [
+            "0053852c",
+            "00000001",
+            "00604f34",
+            "00000011"
+          ],
+          "sha256": "8d868a3b9e674df5a3a6b9119bac01d26ed0565424e26dbbb3e5becff02767d1"
+        },
+        {
+          "address": "00557dc4",
+          "words": [
+            "0053852c",
+            "00000001",
+            "00604f38",
+            "0000001d"
+          ],
+          "sha256": "1c387a91242b6e993f6793453675b489e4b63f0dfb2ac8424e7055ad1d7d4a72"
+        }
+      ]
+    }
+  },
   "limits": [
     "Authored values only; runtime widget counts not measured.",
     "Backup provenance unauthenticated; missing/ambiguous pairs reported."

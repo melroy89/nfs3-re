@@ -2,7 +2,9 @@
 import hashlib
 import json
 import subprocess
-from audit_thrash_loader_difference import ROOT
+import pefile
+import struct
+from audit_thrash_loader_difference import ROOT,SPECS
 from audit_controller_reset_asset import sections
 
 
@@ -32,6 +34,15 @@ def main():
             if len(values)!=1 or len(a.get(key,[]))!=1:
                 result['unpaired'].append({'member':member,'section':key[0],'listname':key[1],'modern':values,'backup':a.get(key,[])});continue
             if a[key]!=values:result['changed'].append({'member':member,'section':key[0],'listname':key[1],'backup':a[key][0],'modern':values[0]})
+    result['binary_field_descriptors']={}
+    for label,(relative,expected,_) in SPECS.items():
+        raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
+        pe=pefile.PE(data=raw);rows=[]
+        for address in (0x557d84,0x557dc4):
+            data=pe.get_data(address-0x400000,16);words=struct.unpack('<4I',data)
+            assert pe.get_data(words[0]-0x400000,11)==b'maxvisitem\0'
+            rows.append({'address':f'{address:08x}','words':[f'{word:08x}' for word in words],'sha256':hashlib.sha256(data).hexdigest()})
+        result['binary_field_descriptors'][label]={'path':relative,'sha256':expected,'rows':rows}
     result['limits']=['Authored values only; runtime widget counts not measured.','Backup provenance unauthenticated; missing/ambiguous pairs reported.']
     (ROOT/'analysis/evidence/audits/menu-visible-counts.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({'menus':len(members),'changed':result['changed'],'unpaired_count':len(result['unpaired']),'backup_only':result['backup_only']},indent=2))

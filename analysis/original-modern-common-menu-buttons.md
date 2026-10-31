@@ -82,3 +82,11 @@ Five backup-only `(member,section,listname)` bindings are also retained: `advgrp
 The same `widescreen` binding/count therefore appears in a different menu (backup graphics versus Modern advanced graphics), and likewise `viewlevel` (backup advanced graphics versus Modern graphics). This supports authored redistribution without inventing a count increase for those two values. Complete menu routing, widget equivalence and historical relocation still require separate linkage. The HUD names are not paired as simple renames without descriptor/consumer evidence.
 
 No “seven new controls” claim follows from the one-way matching result. The nine uniquely paired numeric increases remain distinct from this unmatched/redistributed set. Both sets retain the same backup provenance and runtime-selection limitations.
+
+## Executable binding for `maxvisitem`: parser packing still open
+
+The visible-count audit now verifies the executable baselines as well as assets and retains two16-byte descriptor rows at **`00557d84`** and **`00557dc4`**. Both refer to the exact NUL-terminated literal **`maxvisitem`**. Modern rows decode as **`{0053852c,1,00604f34,11h}`** and **`{0053852c,1,00604f38,1dh}`**; both original counterparts are retained separately in the manifest rather than assumed equal from addresses.
+
+The destinations lie at **`00604ee0+54h`** and **`00604ee0+58h`**, within the shared menu-construction record used by existing [menu text-field research](original-modern-menu-text-fields.md). This establishes a binary field-name binding for the authored values. It does not yet establish how the descriptor’s other words select section/type behavior, how an integer is packed into WORD components, or which final widget field receives each value.
+
+Required follow-up is the descriptor consumer and construction/copy path, then the cascade layout consumer. Until that chain is verified, the asset increases above remain authored-limit evidence, not a measured or fully derived runtime row-count change. Direct reads of nearby widget offsets are insufficient to bridge that gap by themselves. No parser or game code was executed.
