@@ -336,7 +336,7 @@
   },
   "limits": [
     "Missing saved function object does not make the instructions padding.",
-    "InteriorBx registry/template/menu binding established; full table schema, event propagation and rendered behavior remain incomplete.",
+    "InteriorBx registry/template/menu binding established; selected-entry return normalization established; full table schema, other callers and rendered behavior remain incomplete.",
     "Identical updater prefix calls changed helper004dfd56; see original-modern-slider-percentage.md for rounding/exception differences.",
     "No game, key event, instruction probe, C export/compilation or Ghidra mutation."
   ]

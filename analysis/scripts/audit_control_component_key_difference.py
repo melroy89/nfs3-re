@@ -176,7 +176,7 @@ def main():
             'executable_sha256': inventory['executable_sha256'], 'covering_entries': covering}
     out['saved_inventory_boundary'] = inventories
     out['limits'] = ['Missing saved function object does not make the instructions padding.',
-        'InteriorBx registry/template/menu binding established; full table schema, event propagation and rendered behavior remain incomplete.',
+        'InteriorBx registry/template/menu binding established; selected-entry return normalization established; full table schema, other callers and rendered behavior remain incomplete.',
         'Identical updater prefix calls changed helper004dfd56; see original-modern-slider-percentage.md for rounding/exception differences.',
         'No game, key event, instruction probe, C export/compilation or Ghidra mutation.']
     (ROOT/'analysis/evidence/audits/control-component-key-difference.json').write_text(json.dumps(out,indent=2)+'\n')

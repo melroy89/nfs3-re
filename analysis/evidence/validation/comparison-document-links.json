@@ -73,7 +73,7 @@
     },
     {
       "path": "analysis/original-modern-control-component-keys.md",
-      "sha256": "a2c60dd647cb785953d8d39d28cef6c2b0103055ef61d994fe6c451361fd1f8f",
+      "sha256": "b4e653157a4f6ae3431df33784c8997aca9cdb22211960e839c3205a1cf215e3",
       "relative_links": 5
     },
     {
@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "bc4eac105e5ff214decd22a90c2959531395de0de4905b1b905897c992e6ee61",
+      "sha256": "bed48645e83dcc55f243f966e9e52a2ae485892adc6d08e2c4e5a6deb8cd013c",
       "relative_links": 137
     },
     {
@@ -563,7 +563,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "8826fef98e20218061edf32c8d44ec3e2f968d158acb0241b4eb15afdf95c5be",
+      "sha256": "3e39bbcbefb92f25a2ce58e819fd80d4573817f8bdd92f21197f59e132ff53df",
       "relative_links": 131
     },
     {

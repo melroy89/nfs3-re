@@ -452,7 +452,7 @@ The [local DLL candidate inventory](original-modern-dll-candidates.md) pins dist
 
 The [x87 status-observer inventory](original-modern-x87-observers.md) adds a complete linear-decoding candidate index and bounded special-case analysis, separately from arithmetic precision and storage sizes. It identifies reader-address differences without treating them as independently established features or proof of runtime compatibility.
 
-The [unlisted control-component callback](original-modern-control-component-keys.md) explains all52 differing bytes in uncovered interval `00464fca..004654c0`: halved step deltas, finite component cancellation for token0020h, and a raw return-code change2→0. The InteriorBx registry/menu binding is established; rendered behavior, return-code propagation and release attribution remain unverified.
+The [unlisted control-component callback](original-modern-control-component-keys.md) explains all52 differing bytes in uncovered interval `00464fca..004654c0`: halved step deltas, finite component cancellation for token0020h, and a raw return-code change2→0. The InteriorBx registry/menu binding and selected-entry dispatcher normalization are established: both raw0020h paths expose0 through that dispatcher. Rendered behavior, other indirect callers and release attribution remain unverified.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
