@@ -188,8 +188,8 @@
     },
     {
       "path": "analysis/original-modern-night-lighting.md",
-      "sha256": "4a7a13080040dccb8ecc9db85888f74747d84d1d521c8de6ce05d0029eb28734",
-      "relative_links": 4
+      "sha256": "0d52cba6cea35454d351cfc169e0310be28c6e5851c14ea8d59bbbd1ce103827",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-numeric-scale.md",
@@ -358,7 +358,7 @@
     }
   ],
   "file_count": 71,
-  "relative_link_count": 514,
+  "relative_link_count": 516,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

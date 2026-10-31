@@ -57,6 +57,68 @@
       ]
     }
   },
+  "original_same_address_row_00556564": [
+    "00537ec0",
+    "005563aa",
+    "00000000",
+    "00000000",
+    "00660ba0"
+  ],
+  "modern_mirror_option": {
+    "descriptor_00556564": [
+      "00537720",
+      "0055623a",
+      "00000000",
+      "00000000",
+      "006fd1d8"
+    ],
+    "label_ids": [
+      187,
+      186,
+      185
+    ],
+    "english_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "labels": {
+      "187": "High",
+      "186": "Medium",
+      "185": "Low",
+      "1937": "Rear View Detail"
+    }
+  },
+  "official_menus": [
+    {
+      "member": "fedata/menus/graphics.mnu",
+      "sha256": "ac088b28fd3905369a728972c6be7638c692df98ebb57ea65981083835f71247",
+      "fields": [
+        {
+          "line": 97,
+          "text": "text=str_1937"
+        },
+        {
+          "line": 98,
+          "text": "listname=mirrorlevel"
+        },
+        {
+          "line": 106,
+          "text": "listname=mirrorlevel"
+        }
+      ]
+    },
+    {
+      "member": "fedata/menus/psgraph.mnu",
+      "sha256": "e4f00933cd61145d0fb14d2396091d7b22d5246b39d9c1e35de9edb032d226a7",
+      "fields": [
+        {
+          "line": 62,
+          "text": "text=str_1937"
+        },
+        {
+          "line": 63,
+          "text": "listname=mirrorlevel"
+        }
+      ]
+    }
+  ],
   "identical_ranges": [
     {
       "start": "0041c670",
@@ -81,7 +143,7 @@
   ],
   "limits": [
     "No graphics, night race or instruction execution.",
-    "Context type1 and option global not assigned mirror/quality names without producer evidence.",
+    "Modern option binding verifies Rear View Detail; context type1 viewport identity remains unresolved.",
     "Identical body does not establish transitive numeric, allocation or rendered equivalence."
   ]
 }

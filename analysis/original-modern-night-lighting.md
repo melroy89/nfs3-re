@@ -17,7 +17,7 @@ The changed Modern predicate is at **`0041c687..0041c699`**. The unsigned `JA` m
 
 All changed bytes are inside **`0041c684..0041c6cc`**. The complete tail **`0041c6cc..0041c9e4`** is byte-identical, so this is an expanded entry-admission policy, not an identified rewrite of the retained lighting arithmetic. The retained body includes vehicle/resource filtering, transforms and helper submissions already investigated in [detailed notes](detailed-analysis-notes.md#night-vehicle-lighting-over-track-block-quads). Equal local instructions do not establish equal floating-point state, global inputs, called helpers or rendered output.
 
-The context’s first DWORD and `006fd1d8` are deliberately left as offsets here. **MP150-002** mentions headlights in the rear-view mirror, but this gate alone does not prove context1 is that viewport or explain clouds/lightnings also bundled in the claim. No catalog promotion is made on that inference.
+The context’s first DWORD remains an unnamed tag. The option-binding follow-up below identifies Modern `006fd1d8` as Rear View Detail. **MP150-002** mentions headlights in the rear-view mirror, but this gate alone does not prove context1 is that viewport or explain clouds/lightnings also bundled in the claim. No catalog promotion is made on that inference.
 
 ## Scratch sizing and preserved allocation limitation
 
@@ -33,4 +33,14 @@ The paired direct caller witness **`0041d04e..0041d06d`** pushes four stack valu
 
 The local accumulator starts0 and sums retained submission-helper results, returning it in EAX at `0041c9d9`. It is not established as a count of visible or successfully drawn primitives. Both rejection paths return0. Modern’s entry gate can therefore expose an existing body to additional contexts without proving correct output for those contexts.
 
-Next: trace context1 construction and the option’s menu binding, then compare any changed helper reached only by the newly admitted cases. Keep mirror attribution, x87/numeric behavior, allocation contracts and runtime visual acceptance separate.
+Next: trace context1 construction, then compare any changed helper reached only by the newly admitted cases. Keep mirror attribution, x87/numeric behavior, allocation contracts and runtime visual acceptance separate.
+
+## Modern option binding: Rear View Detail values0..2
+
+The expanded manifest retains Modern20-byte descriptor **`00556564`**: name pointer `00537720` (`mirrorlevel`), WORD-list pointer **`0055623a`**, two zero fields and selector storage **`006fd1d8`**. The list is **187,186,185,0**. The hash-pinned official English resource decodes those IDs as **High, Medium, Low**, respectively; no labels are inferred from their numeric magnitude.
+
+Official `graphics.mnu` binds both an arrow-tab control and a cascade to `listname=mirrorlevel`. Its title `str_1937` resolves to **Rear View Detail**. Official `psgraph.mnu` binds a list button to the same list and title. The [menu text-field analysis](original-modern-menu-text-fields.md) documents the Modern `str_` lookup mechanism; this audit retains the exact asset member hashes and matching fields.
+
+The normal selected ordinal mapping is therefore **0=High,1=Medium,2=Low**, consistent with the shared generic selector mechanism documented in the [Frame Size analysis](original-modern-frame-setting.md). On those values, Modern’s context1 lighting gate admits **High/Medium**, rejects **Low**. The descriptor establishes the option’s meaning and storage; it does not establish what the context tag itself denotes, every later writer, persisted-state validity or rendered mirror output.
+
+Original’s same-address row is a different descriptor, so it is not presented as an original `mirrorlevel` counterpart. The manifest retains that original row separately. This address difference does not prove absence of every original mirror-detail control or storage alias. Historical **MP150-002/003**, **MP151-001** and **MP152-001** require their own scoped attribution or intermediate-release evidence. The current binding is useful evidence for the final Modern mechanism without completing those bundled claims.
