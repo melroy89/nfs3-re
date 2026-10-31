@@ -28,6 +28,20 @@
           "assembly_sha256": "107b845d4f3afffbf989299f35f56a43d060e46741a46cf9ac7fcfde21bb390f"
         },
         {
+          "start": "004b5ea0",
+          "end": "004b5f0b",
+          "bytes_sha256": "e7288585c2e3766b9fa61ebaa758fcabe1a697732f5e3506306d619c4aef300b",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004b5ea0.asm",
+          "assembly_sha256": "68e620fd4f13803776549ecdb4d0c970e541917cc24eec1b9caeabad4c927d79"
+        },
+        {
+          "start": "004f4b80",
+          "end": "004f4ba1",
+          "bytes_sha256": "66a3397c7c341a91a0079c76e3eebba3fbdbd68aeeb70f10c0b0e0d3dbe7a2a0",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004f4b80.asm",
+          "assembly_sha256": "bafa4caf0282fc538a2724c4c73875025d59bb1b5309ab35c350802bf6f694ec"
+        },
+        {
           "start": "004f2a7d",
           "end": "004f2a84",
           "bytes_sha256": "b8a7edca2e15c5a6bef3eca229693675dd4e603136f5a5fa0dafe7770fe19e9e",
@@ -125,6 +139,20 @@
           "bytes_sha256": "499b9ac7a37d28e426de0201c81452634b362b2b41e2e4bdee9780e82a2fec78",
           "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b5e50.asm",
           "assembly_sha256": "72040e8afe77e3fb4d31552898edfe30b4dbb77efc8f17b2531ebe429287bf90"
+        },
+        {
+          "start": "004b5ea0",
+          "end": "004b5f0b",
+          "bytes_sha256": "50936ec6b74e20a0c2d1525d8c85f93e4aa9f2a69045bea86cf542c650a3a49d",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b5ea0.asm",
+          "assembly_sha256": "3cb548b967e003bb94adfc7ff56379d5f8528aa8ac34f0ccfb94ec3d0723f339"
+        },
+        {
+          "start": "004f4b80",
+          "end": "004f4ba1",
+          "bytes_sha256": "66a3397c7c341a91a0079c76e3eebba3fbdbd68aeeb70f10c0b0e0d3dbe7a2a0",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004f4b80.asm",
+          "assembly_sha256": "f4e64e44bd8cfd4e26a90c3191021ffa847fb553b3de1fd7716818ef1d4aede8"
         },
         {
           "start": "004f2a7d",
@@ -278,6 +306,87 @@
     "input": "EAX unchecked table index",
     "post_dialog_call": "004f2a7d; clears EAX then calls004dfd04",
     "limit": "Termination route includes indirect callbacks; complete nonreturn guarantee not established."
+  },
+  "removed_texture_resource_log": {
+    "entry": "004b5ea0",
+    "end_exclusive": "004b5f0b",
+    "modern_same_address": "107 NOP bytes",
+    "original_setup_call": "004b60f3",
+    "input_eax": "selector; value6 adds descriptor+74h",
+    "input_edx": "unchecked language-table index",
+    "descriptor_primary_field": "70h",
+    "threshold_signed": 2097152,
+    "stream": "00566f72",
+    "format_va": "0053fde0",
+    "format": "%s: At %ld %s\n\n",
+    "formatter_adapter": "004f4b80..004f4ba1 identical across both baselines",
+    "tables": {
+      "004b55f8": [
+        {
+          "index": 0,
+          "pointer": "0053f174",
+          "text_latin1": "bytes, your texture RAM resources are too low to run Need For Speed III.\nIf you encounter problems please refer to the system requirements."
+        },
+        {
+          "index": 1,
+          "pointer": "0053f200",
+          "text_latin1": "Ihre Systemvoraussetzungen sind m\u00f6glicherweise nicht ausreichend,\num Need For Speed III laufen zu lassen.  Falls Sie auf Probleme sto\u00dfen, ziehen\nSie bitte die Referenzkarte oder die Readme-Datei zu Rate."
+        },
+        {
+          "index": 2,
+          "pointer": "0053f2cc",
+          "text_latin1": "La m\u00e9moire de votre syst\u00e8me peut \u00eatre insuffisante pour ex\u00e9cuter \nNeed For Speed III.  Si le probl\u00e8me est confirm\u00e9, veuillez vous reporter \u00e0 la \ncarte de r\u00e9f\u00e9rence et/ou au fichier lisezmoi."
+        },
+        {
+          "index": 3,
+          "pointer": "0053f38c",
+          "text_latin1": "Las caracter\u00edsticas de tu sistema no son lo suficiente r\u00e1pidas para \nNeed For Speed III.  Si tienes alg\u00fan problema por favor consulta la tarjeta \nde referencia y/o el fichero Leeme"
+        },
+        {
+          "index": 4,
+          "pointer": "0053f444",
+          "text_latin1": "Le risorse del PC possono non essere sufficienti per eseguire\nNeed For Speed III.  Se si verificano problemi leggi il manuale e/o il file readme."
+        },
+        {
+          "index": 5,
+          "pointer": "0053f4d8",
+          "text_latin1": "Dina systemresurser kan vara f\u00f6r l\u00e5ga f\u00f6r att kunna k\u00f6ra \nNeed For Speed III.  Om n\u00e5gra problem uppst\u00e5r, var v\u00e4nlig konsultera \nreferensh\u00e4ftet och/eller readme filen"
+        }
+      ],
+      "004b5610": [
+        {
+          "index": 0,
+          "pointer": "0053f134",
+          "text_latin1": "Warning"
+        },
+        {
+          "index": 1,
+          "pointer": "0053f13c",
+          "text_latin1": "Warnung"
+        },
+        {
+          "index": 2,
+          "pointer": "0053f144",
+          "text_latin1": "Avertissement"
+        },
+        {
+          "index": 3,
+          "pointer": "0053f154",
+          "text_latin1": "Advertencia"
+        },
+        {
+          "index": 4,
+          "pointer": "0053f160",
+          "text_latin1": "Attenzione"
+        },
+        {
+          "index": 5,
+          "pointer": "0053f16c",
+          "text_latin1": "Varning"
+        }
+      ]
+    },
+    "limit": "Diagnostic output only; descriptor units, stream destination and observed write success not established."
   },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",

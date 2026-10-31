@@ -15,7 +15,7 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
         spans=([(0x4b5f10,0x4b5fee),(0x4b608b,0x4b6097)] if label=='original' else [(0x4b5748,0x4b57c1),(0x4b570c,0x4b5746),(0x4b5c07,0x4b5c11)])
-        spans += [(0x4b5e50,0x4b5e9a),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55)]
+        spans += [(0x4b5e50,0x4b5e9a),(0x4b5ea0,0x4b5f0b),(0x4f4b80,0x4f4ba1),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55)]
         spans += [(0x4516a0,0x4516fa if label=='original' else 0x4516f4),(0x4f07d0,0x4f083e)]
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -38,6 +38,23 @@ def main():
     for va in (0x4b55c8,0x4b55e0):
         pointers = struct.unpack('<6I', original.get_data(va-0x400000,24))
         result['removed_corruption_diagnostic']['tables'][f'{va:08x}'] = [
+            {'index': i, 'pointer': f'{address:08x}',
+             'text_latin1': original.get_string_at_rva(address-0x400000).decode('latin1')}
+            for i,address in enumerate(pointers)]
+    assert images['official_modern'].get_data(0xb5ea0,0x6b) == b'\x90'*0x6b
+    assert original.get_data(0xf4b80,0x21) == images['official_modern'].get_data(0xf4b80,0x21)
+    assert original.get_data(0xb60f3,5) == bytes.fromhex('e8a8fdffff')
+    result['removed_texture_resource_log'] = {'entry': '004b5ea0', 'end_exclusive': '004b5f0b',
+        'modern_same_address': '107 NOP bytes', 'original_setup_call': '004b60f3',
+        'input_eax': 'selector; value6 adds descriptor+74h', 'input_edx': 'unchecked language-table index',
+        'descriptor_primary_field': '70h', 'threshold_signed': 2097152,
+        'stream': '00566f72', 'format_va': '0053fde0',
+        'format': original.get_string_at_rva(0x13fde0).decode('ascii'),
+        'formatter_adapter': '004f4b80..004f4ba1 identical across both baselines', 'tables': {},
+        'limit': 'Diagnostic output only; descriptor units, stream destination and observed write success not established.'}
+    for va in (0x4b55f8,0x4b5610):
+        pointers = struct.unpack('<6I', original.get_data(va-0x400000,24))
+        result['removed_texture_resource_log']['tables'][f'{va:08x}'] = [
             {'index': i, 'pointer': f'{address:08x}',
              'text_latin1': original.get_string_at_rva(address-0x400000).decode('latin1')}
             for i,address in enumerate(pointers)]
