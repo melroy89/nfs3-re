@@ -77,11 +77,48 @@
           "bytes_sha256": "3caf95d6a4ea5765544827e167af5adb5b9eb657d860115944f0a39217b71b4a",
           "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-00448400.asm",
           "assembly_sha256": "88f27e2e03ce2ff2063f1897da19abf82c423158ab6e67a98e7568e52458675f"
+        },
+        {
+          "start": "004377c4",
+          "end": "00437801",
+          "bytes_sha256": "d8d125b1392f4252d69dca1aeac58becaf258d8d7ffa44d9f2a7a24574a939ff",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-004377c4.asm",
+          "assembly_sha256": "d647c9d340019b729be60326d45e3f02a35ef49a60c50b1f26d238edb80f2408"
+        },
+        {
+          "start": "00437801",
+          "end": "0043781d",
+          "bytes_sha256": "e99e5b7bbc56986e8e57ec54d57eecf19c6f1838cfd0cb3deaea1d84a7a07987",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-00437801.asm",
+          "assembly_sha256": "9a3f91348cdf710349c9ddc0f14ca9566dbb1ad045ee59d53841bcf08d2a5ae9"
+        },
+        {
+          "start": "00448639",
+          "end": "00448647",
+          "bytes_sha256": "9461eb23d1d72ee27c702d2359f94aaed343e6f43a88b65412189ac8212783fe",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-00448639.asm",
+          "assembly_sha256": "8046f670d352ff5a4bc22a094b45ae1407e6b87a002a1eb6d9ca7a975b79e2fc"
+        },
+        {
+          "start": "0044d2a0",
+          "end": "0044d2c5",
+          "bytes_sha256": "4dd77250a03fc39d4f7a04343dafd94e1f4039e905e5a28c3b5882271b86890b",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-0044d2a0.asm",
+          "assembly_sha256": "9b3630eeb5dc75eff9266ca072be876e5b0ffaee1b4c0d93c41eaa187b35a2b5"
         }
       ],
       "graphics_registration_row_00556068_hex": "ac7d5300000000000000000040844400bc84440000000000",
       "cancel_token_00538d84": "CANCEL_GRAPHICS_OPTIONS",
-      "string_at_00538d7c": "%s %s"
+      "string_at_00538d7c": "%s %s",
+      "fog_control_tokens": {
+        "00538a20": "GRAPH_FOG",
+        "00538a2c": "GRAPH_FOG_CASCADE"
+      },
+      "inspected_fog_gate_direct_calls": [
+        "00448458",
+        "00448642",
+        "0044d2c0"
+      ]
     }
   },
   "limits": [

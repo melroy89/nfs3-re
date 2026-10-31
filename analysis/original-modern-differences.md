@@ -284,7 +284,7 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 ## Graphics menu transition counterpart
 
-[Original versus Modern graphics transition](original-modern-graphics-menu-transition.md) maps the redirected callback: snapshot/Cancel restore, Modern reselection, extra global outputs and final-row/depth request encoding. The report links existing display-mode evidence and keeps runtime display/persistence validation separate.
+[Original versus Modern graphics transition](original-modern-graphics-menu-transition.md) maps the redirected callback: snapshot/Cancel restore, Modern reselection, extra global outputs and final-row/depth request encoding. The report links existing display-mode evidence and keeps runtime display/persistence validation separate. Its fog-gate follow-up maps both shadow-copy directions, three checked call sites and differing snapshot order; Modern fog-support state is distinguished from the original selector at the reused address.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
