@@ -38,4 +38,25 @@ Ranked by changed bytes; the complete inventory contains every interval, not onl
 | `00472566` | `0047262b` | 197 | 197 | 197 | 0 | 0 |
 | `004961ef` | `004962c2` | 211 | 195 | 0 | 28 | 167 |
 
+## Large NOP replacements and reused research
+
+Within these uncovered intervals, **46** Modern NOP runs of at least64 bytes contain **13690** changed bytes. Their exact original/Modern hashes and overlapping original autoanalysis entries are retained in JSON. Run lengths include original bytes already equal to NOP; they are not changed-byte counts.
+
+| NOP start | End exclusive | Length | Changed bytes | Original entries overlapping |
+|---|---|---:|---:|---:|
+| `004b5db1` | `004b67b0` | 2559 | 2557 | 12 |
+| `004f85c0` | `004f8b50` | 1424 | 1417 | 5 |
+| `00517170` | `00517580` | 1040 | 1038 | 2 |
+| `004a39c6` | `004a3d94` | 974 | 973 | 2 |
+| `0040fffb` | `00410330` | 821 | 818 | 2 |
+| `004f1ff0` | `004f22b0` | 704 | 701 | 4 |
+| `004901c3` | `00490430` | 621 | 619 | 0 |
+| `0047f9bd` | `0047fbe0` | 547 | 547 | 1 |
+| `004fd280` | `004fd490` | 528 | 528 | 3 |
+| `004befcd` | `004bf110` | 323 | 323 | 1 |
+
+The largest run `004b5db1..004b67b0` overlaps original startup/setup, registry and worker routines. Reuse the [startup counterpart](original-modern-startup-requirements.md), [renderer setup](original-modern-resolution-defaults.md), [registry](original-modern-registry.md) and [input-worker](original-modern-input-worker.md) comparisons: same-address NOP removal does not mean those entire features disappeared. Their mapped Modern counterparts are elsewhere. These chapters explain selected functions, not every byte of this large run.
+
+The next run `004f85c0..004f8b50` overlaps original renderer loader/initialization code. Reuse [renderer loading](original-modern-renderer-loading.md) and [initialization](original-modern-renderer-initialization.md). Remaining overlap entries and the `00517170..00517580` run still require their own classification; no generic dead-code claim is made.
+
 This inventory closes the missing address/ranking map for the outside-body bytes. Their semantic classification remains pending. No binary, Ghidra database or runtime state was modified.

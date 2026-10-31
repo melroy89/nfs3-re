@@ -6938,5 +6938,526 @@
         ]
       ]
     }
-  ]
+  ],
+  "long_nop_replacements": {
+    "minimum_run_length": 64,
+    "run_count": 46,
+    "changed_bytes": 13690,
+    "original_inventory_sha256": "28d66dd0a2a4d88632ac52433d4f922aa645279ead39777ea849ca105a362166",
+    "runs": [
+      {
+        "start": "004b5db1",
+        "end_exclusive": "004b67b0",
+        "length": 2559,
+        "changed_bytes": 2557,
+        "original_sha256": "4dcbbe13832661e6c3b93fe79c6494e8e689ece5c4da5fe9b08dde865dd85ab5",
+        "modern_sha256": "8a56551f100ed7f9bfe3a98a1ffce33cd26447224eeeb3d0ea0a84c7146a1780",
+        "original_autoanalysis_entries_overlapping": [
+          "004b59c0",
+          "004b5e50",
+          "004b5ea0",
+          "004b5f10",
+          "004b6020",
+          "004b6250",
+          "004b62a0",
+          "004b6320",
+          "004b6400",
+          "004b64c0",
+          "004b6520",
+          "004b6590"
+        ]
+      },
+      {
+        "start": "004f85c0",
+        "end_exclusive": "004f8b50",
+        "length": 1424,
+        "changed_bytes": 1417,
+        "original_sha256": "94260e9b3d653fabff0cf0448439fb92941836eb3ae8b3024f4dc60a8024acea",
+        "modern_sha256": "d6c430169ceba5121d18c5442815d9f56a57e7fc50cc15f516d0de3311d21c8d",
+        "original_autoanalysis_entries_overlapping": [
+          "004f8390",
+          "004f87a0",
+          "004f87e0",
+          "004f8830",
+          "004f8930"
+        ]
+      },
+      {
+        "start": "00517170",
+        "end_exclusive": "00517580",
+        "length": 1040,
+        "changed_bytes": 1038,
+        "original_sha256": "fb1710d6266d51df3b58b22a42671e189808c149dfbcc00d66b90396b068fa92",
+        "modern_sha256": "2e090ed869364ce944b866e2d611183e0e603a30df33f180368d0688da1686c1",
+        "original_autoanalysis_entries_overlapping": [
+          "00517170",
+          "00517370"
+        ]
+      },
+      {
+        "start": "004a39c6",
+        "end_exclusive": "004a3d94",
+        "length": 974,
+        "changed_bytes": 973,
+        "original_sha256": "abfd9699ee2776a963c32bdd1ad3d858f93ba42aa521e53a414bc27f70e3a132",
+        "modern_sha256": "763f09ba8035531a144c21c0b527364f53b329b402d4b05f63eafb84968e4d61",
+        "original_autoanalysis_entries_overlapping": [
+          "004a38f0",
+          "004a39f0"
+        ]
+      },
+      {
+        "start": "0040fffb",
+        "end_exclusive": "00410330",
+        "length": 821,
+        "changed_bytes": 818,
+        "original_sha256": "6979d035c6f4945a9f72f6b05b7eb4e045fe14634822c880fd22319bf34a55f7",
+        "modern_sha256": "050f5ed6002864068194b276077774c401713398049c14e2855004e0fc2e84e0",
+        "original_autoanalysis_entries_overlapping": [
+          "0040ffd0",
+          "00410030"
+        ]
+      },
+      {
+        "start": "004f1ff0",
+        "end_exclusive": "004f22b0",
+        "length": 704,
+        "changed_bytes": 701,
+        "original_sha256": "608d91bd1602039a157959c4c9bbc5413d53a531711c302635771d3c27022dfd",
+        "modern_sha256": "ad248525f4015fb15c737e0a11be3a4d19cb3cab6cad47d78b4e10cfc2d5b7ee",
+        "original_autoanalysis_entries_overlapping": [
+          "004f1ef0",
+          "004f20b0",
+          "004f2170",
+          "004f21c0"
+        ]
+      },
+      {
+        "start": "004901c3",
+        "end_exclusive": "00490430",
+        "length": 621,
+        "changed_bytes": 619,
+        "original_sha256": "ed64657d5e44953f909410b2609c1e5ac82f179e32957307fdde9c649fd8ad5a",
+        "modern_sha256": "75328b88061d6a36d57bd81fd57a3c6b096c94c64a92d4157ad290ae0c90f793",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "0047f9bd",
+        "end_exclusive": "0047fbe0",
+        "length": 547,
+        "changed_bytes": 547,
+        "original_sha256": "b0c3fe0d21aef9232442e556ec27b84dfdcec0c85c30ac96f1ea7a936df8bd0b",
+        "modern_sha256": "3f21af9a0e35373f090a1d81df7b6ca5dab4d8bd60badf85b789f05c5d7a3dfc",
+        "original_autoanalysis_entries_overlapping": [
+          "0047f650"
+        ]
+      },
+      {
+        "start": "004fd280",
+        "end_exclusive": "004fd490",
+        "length": 528,
+        "changed_bytes": 528,
+        "original_sha256": "e252d9b6612f11f97b3058e670cd51fefdbcfbe2ebce748d8040654c75742ee2",
+        "modern_sha256": "60bec8295df905d637b591bb6ada1ea850137d7ea33e01a51ac387ba8bf6e87a",
+        "original_autoanalysis_entries_overlapping": [
+          "004fd280",
+          "004fd2b0",
+          "004fd3f0"
+        ]
+      },
+      {
+        "start": "004befcd",
+        "end_exclusive": "004bf110",
+        "length": 323,
+        "changed_bytes": 323,
+        "original_sha256": "61fac4e1d9dafe8320b53e1289110d7e3c9f96100d0039e76c8bdee43ab84a4e",
+        "modern_sha256": "3263b8d018a0af3f7126f2f3cb74f7262708046828ae1e4dda602c2f910da396",
+        "original_autoanalysis_entries_overlapping": [
+          "004bef50"
+        ]
+      },
+      {
+        "start": "004ccdb4",
+        "end_exclusive": "004cce90",
+        "length": 220,
+        "changed_bytes": 220,
+        "original_sha256": "c8f88edf59f9730e99922c5f229368a5866a524bd7465e840a1f7851c6514a7f",
+        "modern_sha256": "3a6a6922aaa8d75d7d571c2ee6c4717f833f9bc25b79b6d62542095aa5c37c6f",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "0048575b",
+        "end_exclusive": "0048582c",
+        "length": 209,
+        "changed_bytes": 209,
+        "original_sha256": "955247c5ca4d5c48a4921224d77a859c0441d5b547546139d9e59d52856d0903",
+        "modern_sha256": "2b3bb1a793f13940467185b4b3e45e113b89e55e204c73a69237f60f1bc6dd38",
+        "original_autoanalysis_entries_overlapping": [
+          "00485680"
+        ]
+      },
+      {
+        "start": "00454e43",
+        "end_exclusive": "00454f10",
+        "length": 205,
+        "changed_bytes": 204,
+        "original_sha256": "9b98f57ba53ebd3d27e3d7692da19114a94e926a68eb10ad1fd3ecc43dd013ab",
+        "modern_sha256": "ef0d0c713f971b20e28351e7da0c5bbbb94b7ec5552a388acc561fc0ee2673ab",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "00472e56",
+        "end_exclusive": "00472f20",
+        "length": 202,
+        "changed_bytes": 201,
+        "original_sha256": "3bc394d63fbe8905463ad5bb7a6dff33bdf5a966de47b96406cd34ecd6218dee",
+        "modern_sha256": "a3aa5c44fe593935b0874b49b12a191beadef547cfd77fb22ea8e067fb75bdb3",
+        "original_autoanalysis_entries_overlapping": [
+          "00472d10"
+        ]
+      },
+      {
+        "start": "00472566",
+        "end_exclusive": "0047262b",
+        "length": 197,
+        "changed_bytes": 197,
+        "original_sha256": "e967b8d45640242db2ff4b2020f43515377666e7a1672b5dedafae487d79db59",
+        "modern_sha256": "cecfe6698411244340b978066a71686b244dc7677b59b207baa50819578cdd03",
+        "original_autoanalysis_entries_overlapping": [
+          "004723f0"
+        ]
+      },
+      {
+        "start": "0049cedd",
+        "end_exclusive": "0049cfa0",
+        "length": 195,
+        "changed_bytes": 195,
+        "original_sha256": "d8b7d40141ebd2296ee3133df34cd4d346bbcd3b8b110e7095248c63760cb13e",
+        "modern_sha256": "331549d2a6758d03d720bd6a2c72d22a9407fdb384702710758be53034073c4e",
+        "original_autoanalysis_entries_overlapping": [
+          "0049cea0"
+        ]
+      },
+      {
+        "start": "004378d9",
+        "end_exclusive": "00437990",
+        "length": 183,
+        "changed_bytes": 183,
+        "original_sha256": "03ea98e2b306693276f8e451c44096faef03cd7c34f8ec1c999f170b012e1dbd",
+        "modern_sha256": "241507719f3204ecb36a278b003c715a9df2f5114f5014d7e09ba3df0dfe88b4",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "005177de",
+        "end_exclusive": "00517890",
+        "length": 178,
+        "changed_bytes": 178,
+        "original_sha256": "93f5b07c1f7fc07a82ea38cba8f0bff427b46cac2e8e7e9a65fe807ef6431880",
+        "modern_sha256": "7a040c1916698272e7ee3b0de7cd553f4a5b0ddb171ce49000e060cb8d531258",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "00472778",
+        "end_exclusive": "00472820",
+        "length": 168,
+        "changed_bytes": 167,
+        "original_sha256": "15361749e1cb9570308d2b1796475e00ef3fc9ff39bde6b429979cba5d735a1c",
+        "modern_sha256": "d9446aaa4de12e9107a6713b0231a9751a23d1f9f6434e9c77b78cb02ab33a81",
+        "original_autoanalysis_entries_overlapping": [
+          "004723f0"
+        ]
+      },
+      {
+        "start": "004bbce3",
+        "end_exclusive": "004bbd70",
+        "length": 141,
+        "changed_bytes": 141,
+        "original_sha256": "efb54b9f46f278bd61106e56b66188bf5478bb9d1ae693794c1216f7f65732e3",
+        "modern_sha256": "155999e511ba8aba66185c533c2a549fd1933c05fa05c0416344c6e6d3220f6e",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "0045e9e8",
+        "end_exclusive": "0045ea74",
+        "length": 140,
+        "changed_bytes": 140,
+        "original_sha256": "98d7cf465204bd71d19509e4f57b6e865fd4d762f33a9d54119e2c3c0be7e162",
+        "modern_sha256": "f0e626bdb5d55e7c10742b0dd6e24bcde068972e5113b075140a5eb586dfd02a",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "005247ab",
+        "end_exclusive": "00524820",
+        "length": 117,
+        "changed_bytes": 117,
+        "original_sha256": "2109d65ca84223ac8eb4936f4cb488ffa5d92395c7b5d2155182d3c4e03578f6",
+        "modern_sha256": "2b08f4156f51ba41f356ebbcc2adfe766e5d0c95fa96f462b1b9b11e0dd76a9d",
+        "original_autoanalysis_entries_overlapping": [
+          "00524650",
+          "005247c0"
+        ]
+      },
+      {
+        "start": "004264ec",
+        "end_exclusive": "00426560",
+        "length": 116,
+        "changed_bytes": 116,
+        "original_sha256": "178ec4ab6819eb8d4bf4d5fd07597d1ff6a2dc63fcac7de08b429da43befa87e",
+        "modern_sha256": "759ada3c8dc37ee644a9a2966efea532514834153caf8a3f1f02433056424a12",
+        "original_autoanalysis_entries_overlapping": [
+          "00426450"
+        ]
+      },
+      {
+        "start": "004a2ffc",
+        "end_exclusive": "004a3070",
+        "length": 116,
+        "changed_bytes": 116,
+        "original_sha256": "7a763d0174f84eeb8c40a69ab782926a2194a60da3392b385f031606039bc751",
+        "modern_sha256": "759ada3c8dc37ee644a9a2966efea532514834153caf8a3f1f02433056424a12",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "004dbd35",
+        "end_exclusive": "004dbda0",
+        "length": 107,
+        "changed_bytes": 107,
+        "original_sha256": "71e1e574b491f21bc9372c12f9852146a975c1357b00af0aec3dc9a68ff44fe3",
+        "modern_sha256": "50936ec6b74e20a0c2d1525d8c85f93e4aa9f2a69045bea86cf542c650a3a49d",
+        "original_autoanalysis_entries_overlapping": [
+          "004dbce0"
+        ]
+      },
+      {
+        "start": "004859f7",
+        "end_exclusive": "00485a60",
+        "length": 105,
+        "changed_bytes": 105,
+        "original_sha256": "e07da23271da1266384749afe9e8f9f45edaba8193dc0e060eac417650e7a70b",
+        "modern_sha256": "3f7666114446730191cca889a9cc3cd833c8d9f7d278830d6021d545c1522053",
+        "original_autoanalysis_entries_overlapping": [
+          "00485880"
+        ]
+      },
+      {
+        "start": "00489bd9",
+        "end_exclusive": "00489c40",
+        "length": 103,
+        "changed_bytes": 103,
+        "original_sha256": "46c8f7c2f8533b71874e9f24ad0b425ea3ab32b000add5585ec31dc7c0b254bb",
+        "modern_sha256": "dffa0c6b284002c859b8f9479c7892fdcfcf47468972b0d8b5caf66cc673f493",
+        "original_autoanalysis_entries_overlapping": [
+          "00489b30"
+        ]
+      },
+      {
+        "start": "00472155",
+        "end_exclusive": "004721b8",
+        "length": 99,
+        "changed_bytes": 99,
+        "original_sha256": "5f87bd2ba641e7ae5b06126028369f9b9fc9285d18337c4836aee3e2a92d36b6",
+        "modern_sha256": "dada9a88a7a3b2ce75729140615e5d361e2adfcb4c9cd649aee6bf94bf85c9e6",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "004cd663",
+        "end_exclusive": "004cd6c0",
+        "length": 93,
+        "changed_bytes": 93,
+        "original_sha256": "3262e819838b8771959ddbbfea4904db868d0dc2fa601c537f543660f83608c4",
+        "modern_sha256": "d9abd6571ee83a7d715c260e5dc13d37f7000d9ab909ae566b7adea763ba1ead",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "0041d813",
+        "end_exclusive": "0041d870",
+        "length": 93,
+        "changed_bytes": 92,
+        "original_sha256": "6ef91b57b3add029d90fa81824febd394d76103c7ece380c2fb2e9f3b636cb87",
+        "modern_sha256": "d9abd6571ee83a7d715c260e5dc13d37f7000d9ab909ae566b7adea763ba1ead",
+        "original_autoanalysis_entries_overlapping": [
+          "0041d620"
+        ]
+      },
+      {
+        "start": "00443208",
+        "end_exclusive": "00443260",
+        "length": 88,
+        "changed_bytes": 88,
+        "original_sha256": "414aad94505a6c790a697b1a92b31d42d59680bf462ff66350e983223e441d3b",
+        "modern_sha256": "165fd27664178d172e56dc8a9d351e6ccde71827d07703a824169d1e39a6dcd0",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "004cd488",
+        "end_exclusive": "004cd4e0",
+        "length": 88,
+        "changed_bytes": 88,
+        "original_sha256": "2541f3500654bfb74e0b9b92c834fcdb53d246d6050f3278a567d374448bef05",
+        "modern_sha256": "165fd27664178d172e56dc8a9d351e6ccde71827d07703a824169d1e39a6dcd0",
+        "original_autoanalysis_entries_overlapping": [
+          "004cd350"
+        ]
+      },
+      {
+        "start": "00410581",
+        "end_exclusive": "004105d5",
+        "length": 84,
+        "changed_bytes": 84,
+        "original_sha256": "c2a880b779409620ac95377dcc551ed2d8d3c6f970b896b5e92f288dacd5b43f",
+        "modern_sha256": "6a017f7307a1715ec4ea4b75512af81703bf2914989b85ebf6297c18a14bedf5",
+        "original_autoanalysis_entries_overlapping": [
+          "004104f0"
+        ]
+      },
+      {
+        "start": "004a6f2e",
+        "end_exclusive": "004a6f80",
+        "length": 82,
+        "changed_bytes": 82,
+        "original_sha256": "534397e1ec3eb751aaa18c5bb93bc500df92b8370cfbf30efb40ac8ef9bfc9a5",
+        "modern_sha256": "ba4f8497da83d2897d63855c4dd4139bb55837b84274f780beea150c52a80bc8",
+        "original_autoanalysis_entries_overlapping": [
+          "004a6e10",
+          "004a6f70"
+        ]
+      },
+      {
+        "start": "00434ad0",
+        "end_exclusive": "00434b20",
+        "length": 80,
+        "changed_bytes": 79,
+        "original_sha256": "b2323f1310ef8455da6c9f1fc2e7b4068ff9e2fb03730cef23f4103c00189ee3",
+        "modern_sha256": "fc724df7a6a9b84d44ae5ebd60b9228eeac89cd8633242102b0d961365e00cb4",
+        "original_autoanalysis_entries_overlapping": [
+          "00434ae0",
+          "00434af0",
+          "00434b00",
+          "00434b10"
+        ]
+      },
+      {
+        "start": "004bc950",
+        "end_exclusive": "004bc9a0",
+        "length": 80,
+        "changed_bytes": 79,
+        "original_sha256": "2326a76233a1b8fc23b35c63e35007371c373a8dc58a5bea562506bf6251b381",
+        "modern_sha256": "fc724df7a6a9b84d44ae5ebd60b9228eeac89cd8633242102b0d961365e00cb4",
+        "original_autoanalysis_entries_overlapping": [
+          "004bc950",
+          "004bc980",
+          "004bc990"
+        ]
+      },
+      {
+        "start": "0043a210",
+        "end_exclusive": "0043a25c",
+        "length": 76,
+        "changed_bytes": 76,
+        "original_sha256": "210bddd39450e0ecfc4cce5c10693a2d467eee4f16820c4373b7db76623bdc3e",
+        "modern_sha256": "435a92c99f1fd25a0250f4ec9d51126a50ad66c647c2a194a545e230fd29704b",
+        "original_autoanalysis_entries_overlapping": [
+          "00439d90"
+        ]
+      },
+      {
+        "start": "004bc7e4",
+        "end_exclusive": "004bc830",
+        "length": 76,
+        "changed_bytes": 76,
+        "original_sha256": "583394260594d3ce750e7cc9eb6132cacda599108d9d8fec8d6f34d63f1917a7",
+        "modern_sha256": "435a92c99f1fd25a0250f4ec9d51126a50ad66c647c2a194a545e230fd29704b",
+        "original_autoanalysis_entries_overlapping": [
+          "004bc680",
+          "004bc820"
+        ]
+      },
+      {
+        "start": "004a51ae",
+        "end_exclusive": "004a51f8",
+        "length": 74,
+        "changed_bytes": 74,
+        "original_sha256": "07fc7056548f13ee64fed6ac6c1c91d2fb7ff6ceb7488a641494b2427c9f512e",
+        "modern_sha256": "499b9ac7a37d28e426de0201c81452634b362b2b41e2e4bdee9780e82a2fec78",
+        "original_autoanalysis_entries_overlapping": [
+          "004a5080"
+        ]
+      },
+      {
+        "start": "004a537c",
+        "end_exclusive": "004a53c4",
+        "length": 72,
+        "changed_bytes": 72,
+        "original_sha256": "4451faf2ae46a263388ddfc50f8a8de985b96753decf31b1818bd13580842d01",
+        "modern_sha256": "aef6538e2dba92e775be05cdcc9a26b3c317bfc21f5231b9b003a025b78a02ee",
+        "original_autoanalysis_entries_overlapping": [
+          "004a5080"
+        ]
+      },
+      {
+        "start": "00447100",
+        "end_exclusive": "00447144",
+        "length": 68,
+        "changed_bytes": 68,
+        "original_sha256": "df261fbfd54ae7aae451f59457e726b44b3fc25c5ec54ca2ab260004c6d55dad",
+        "modern_sha256": "ce47c943b4b903c1ac7b90ceba787a3db355bcd794e192cd1eb2ad5a6c5eb60b",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "0041cec8",
+        "end_exclusive": "0041cf0a",
+        "length": 66,
+        "changed_bytes": 66,
+        "original_sha256": "d6df8a69c7214f927bc01f0182fed44c9c20ed2ec37684fd8226739fd22d880e",
+        "modern_sha256": "a753061e394c063db8b3c883beca4c1ccc5e5de42e093d5490439762fbb38021",
+        "original_autoanalysis_entries_overlapping": [
+          "0041cdc0"
+        ]
+      },
+      {
+        "start": "0046a5af",
+        "end_exclusive": "0046a5f0",
+        "length": 65,
+        "changed_bytes": 65,
+        "original_sha256": "9397ef81a0450253495c2653c120e3f2a0739f34387f83c8b6617103d1905cfa",
+        "modern_sha256": "a571bbf916adc62fd52ec160f847fd9b848349e49b0b045e6b83c97bea295042",
+        "original_autoanalysis_entries_overlapping": [
+          "00469680"
+        ]
+      },
+      {
+        "start": "00477fd0",
+        "end_exclusive": "00478010",
+        "length": 64,
+        "changed_bytes": 64,
+        "original_sha256": "7dde8b2b79d834d9e5114c06cd3b15e9d6779c21305c74c13e31b0c86eb6f64b",
+        "modern_sha256": "86d09c486a52e2fbaa2e62defaa96531891730cfd4ae74e7a1b1f182d4cdb850",
+        "original_autoanalysis_entries_overlapping": [
+          "00477fd0",
+          "00478000"
+        ]
+      },
+      {
+        "start": "004edb80",
+        "end_exclusive": "004edbc0",
+        "length": 64,
+        "changed_bytes": 64,
+        "original_sha256": "4ecd087631054d4a3df88242eb1dd4540c051d6b70cbff97bba5e59efd15133f",
+        "modern_sha256": "86d09c486a52e2fbaa2e62defaa96531891730cfd4ae74e7a1b1f182d4cdb850",
+        "original_autoanalysis_entries_overlapping": []
+      },
+      {
+        "start": "004cd8f8",
+        "end_exclusive": "004cd939",
+        "length": 65,
+        "changed_bytes": 61,
+        "original_sha256": "db0d8309c86aa7b2037af2b3b18d7c9f1edc81567169d281699e015c851c91a4",
+        "modern_sha256": "a571bbf916adc62fd52ec160f847fd9b848349e49b0b045e6b83c97bea295042",
+        "original_autoanalysis_entries_overlapping": [
+          "004cd6c0"
+        ]
+      }
+    ],
+    "limits": "NOP runs clipped to uncovered intervals; original autoanalysis entries are overlap locators, not proven semantic counterparts."
+  }
 }
