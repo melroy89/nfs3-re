@@ -99,6 +99,17 @@ def main():
         'local_projection':'0041be02..0041be39: scale*inverseZ*component + centre',
         'limits':['Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.','Half-width reload and live extended half-height have distinct spill schedules.']}
     modern = images[1]
+    initializer = images[0].get_data(0x23a60,0x4b)
+    assert initializer == images[1].get_data(0x23a60,0x4b)
+    assert initializer[0x19:0x32].hex() == '31c04089148538105e0083f8197d0a4089148538105e00ebf1'
+    result['indexed_source_candidate'] = {
+        'span':'00423a60..00423aab', 'bytes_identical':True,
+        'sha256':hashlib.sha256(initializer).hexdigest(),
+        'initial_fill':'EAX starts1, stores indices1..25 at005e1038+4*EAX:005e103c..005e109c inclusive.',
+        'excluded_by_initial_fill':['005e1020','005e102c','005e1030','005e1038'],
+        'later_store':'00423a9d uses005e103c+4*EDX; EDX derives from00423a20 results.',
+        'limits':['Normal entry/control flow only; alternate interior entries are not excluded.',
+                  'Later indexed-store range and callback results remain unresolved; this is not a global no-writer proof.']}
     for va,encoded in ((0x4dbc6e,'d8d1dfe09e7602'),(0x4dbc75,'d9c9ddd8'),
                        (0x4dbc7f,'d8d1dfe09e7302'),(0x4dbc86,'d9c9ddd8'),
                        (0x4dbc8a,'d91dccfe5500c3')):

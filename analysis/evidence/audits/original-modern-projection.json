@@ -519,6 +519,23 @@
       "Half-width reload and live extended half-height have distinct spill schedules."
     ]
   },
+  "indexed_source_candidate": {
+    "span": "00423a60..00423aab",
+    "bytes_identical": true,
+    "sha256": "2a2974b1e2283abd3aad95e2202f80de342fe9ed12a97f68346980619c8ba664",
+    "initial_fill": "EAX starts1, stores indices1..25 at005e1038+4*EAX:005e103c..005e109c inclusive.",
+    "excluded_by_initial_fill": [
+      "005e1020",
+      "005e102c",
+      "005e1030",
+      "005e1038"
+    ],
+    "later_store": "00423a9d uses005e103c+4*EDX; EDX derives from00423a20 results.",
+    "limits": [
+      "Normal entry/control flow only; alternate interior entries are not excluded.",
+      "Later indexed-store range and callback results remain unresolved; this is not a global no-writer proof."
+    ]
+  },
   "modern_fov_clamp_contract": {
     "helper": "004dbc48..004dbc91",
     "lower": 90.0,
