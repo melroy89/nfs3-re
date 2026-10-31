@@ -48,6 +48,13 @@
           "bytes_sha256": "850206aa9cfd0fa5c5c8d73c7309a42d57e656d61be5065b26b4f57a33d90b7a",
           "assembly": "analysis/captures/modern-differences/setup-website/original-00449762.asm",
           "assembly_sha256": "afed84da5c2a79ef1436bb61e09ad1a6393dc53bdff9805d14d2888d0239c24b"
+        },
+        {
+          "start": "00426d60",
+          "end": "00426e1d",
+          "bytes_sha256": "92dcb64fd77d3700db2b00643a9731692b10c1829c10c25ff5a22127ee405c33",
+          "assembly": "analysis/captures/modern-differences/setup-website/original-00426d60.asm",
+          "assembly_sha256": "6c491e2bd53a9042fd4accd6a64d0baad68353491c3fddc2c904e3c89d2cb784"
         }
       ],
       "retained_data": [
@@ -71,7 +78,8 @@
           "size": 4,
           "hex": "ecb74400"
         }
-      ]
+      ],
+      "car_download_token_at_00537038": "CAR_DOWNLOAD"
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -119,6 +127,13 @@
           "bytes_sha256": "850206aa9cfd0fa5c5c8d73c7309a42d57e656d61be5065b26b4f57a33d90b7a",
           "assembly": "analysis/captures/modern-differences/setup-website/official_modern-00449762.asm",
           "assembly_sha256": "ea035f3ff20919fdf0239a6dee8c37e4c1f2b414e8dfa654f465b77d3524024e"
+        },
+        {
+          "start": "00426d60",
+          "end": "00426e1d",
+          "bytes_sha256": "92dcb64fd77d3700db2b00643a9731692b10c1829c10c25ff5a22127ee405c33",
+          "assembly": "analysis/captures/modern-differences/setup-website/official_modern-00426d60.asm",
+          "assembly_sha256": "8f18807e5e08586213dd43cedb8fefd3f17b3898b42eab292f894357ba5429a1"
         }
       ],
       "retained_data": [
@@ -142,7 +157,8 @@
           "size": 4,
           "hex": "ecb74400"
         }
-      ]
+      ],
+      "car_download_token_at_00537038": "CAR_DOWNLOAD"
     }
   },
   "assets": {
@@ -232,6 +248,27 @@
         {
           "line": 123,
           "text": "codelink=SETUP_NfsWebSite"
+        }
+      ]
+    }
+  },
+  "car_download_assets": {
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/car1.mnu",
+      "sha256": "e85a7450867907a0705eeec5247b43e9729a19a394fd2605afafaa66d95731a8",
+      "download_fields": []
+    },
+    "local_uppercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CAR1.MNU",
+      "sha256": "513614231e8001f788f8f4ce9ec8c2fb1e7001c2e0825e706d430c8dce622bcc",
+      "download_fields": [
+        {
+          "line": 154,
+          "text": "codelink=CAR_DOWNLOAD"
+        },
+        {
+          "line": 160,
+          "text": "text=kMenuCAR1Download001"
         }
       ]
     }

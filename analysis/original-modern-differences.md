@@ -312,6 +312,10 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 [The postgame Options comparison](original-modern-options-postgame.md) connects removal of three asset `mainonly` fields to unchanged template defaults, parser destinations, context producer and suppression consumer. This partially supports MP140-019. The first-screen follow-up also verifies the five-byte setup-state store inserted by Modern and connects it to conditional Options Race suppression (MP140-020). Actual nested-menu admission, later flag writes and runtime visibility remain unresolved.
 
+## Obsolete Download car control
+
+[MP100-053](original-modern-car-download.md) is narrowed to removal of the authored control from the official car-menu asset. The complete car initializer and conditional binding to the retained website/download handler remain byte-identical; service removal, repair or runtime reachability is not inferred.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -655,7 +659,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-050 | Title in pause menu is more aligned now. In original version of the game it was a little misplaced. | Claimed |
 | MP100-051 | Flying brands effect added to all slides without large amount of text for consistency. For example, in original version this effect is present on main singleplayer game screen, but it is absent on main splitscreen game screen. | Claimed |
 | MP100-052 | On the first menu screen irrelevant link to Need For Speed website was replaced to “Credits...” button. Really, you can't find any mention about NFS3 on this website for 10 years or even more. | Partial |
-| MP100-053 | In choose car menu “Download car...” button is hidden because it doesn't work properly anymore. | Claimed |
+| MP100-053 | In choose car menu “Download car...” button is hidden because it doesn't work properly anymore. | Partial |
 | MP100-054 | Yellow rect which indicates current player in HUD settings screen doesn't overlaps other controls. | Claimed |
 | MP100-055 | Standard bottom set of buttons was added to camera settings screen. | Claimed |
 | MP100-056 | Based on voodoo2a.dll from the Future Cop L.A.P.D. game. It seems that it is a slightly updated NFS3 driver which uses Glide3x API instead of Glide2x API. So it seems that these drivers are highly compatible and all special effects are present. Original voodoo2a.dll from NFS3 uses Glide 2x API which doesn't have ability do detect supported resolutions. Official update of this file which uses Glide 3x API is based on NFS4 and it seems that it lacks fog effect. So it doesn't fit us. | Claimed |
