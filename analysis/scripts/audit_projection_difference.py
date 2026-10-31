@@ -22,7 +22,8 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
-        for start,end in SPANS[label]+[(0x4213b0,0x421441),(0x41bc90,0x41bf26)]:
+        for start,end in SPANS[label]+[(0x4213b0,0x421441),(0x41bc90,0x41bf26),
+                                      (0x422cf0,0x422d9b),(0x423845,0x42386b)]:
             out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -106,6 +107,17 @@ def main():
         'local_projection':'0041be02..0041be39: scale*inverseZ*component + centre',
         'limits':['Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.','Half-width reload and live extended half-height have distinct spill schedules.']}
     modern = images[1]
+    init_spans=[]
+    for start,end in ((0x422cf0,0x422d9b),(0x423845,0x42386b)):
+        blob=images[0].get_data(start-0x400000,end-start)
+        assert blob==images[1].get_data(start-0x400000,end-start)
+        init_spans.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}','sha256':hashlib.sha256(blob).hexdigest()})
+    result['indexed_slot_initializer_candidate']={'paired_identical_spans':init_spans,
+        'ordinary_index_domain':'EBX starts0; local upper bound1 for session006fd3b0==1, otherwise0; loop increments at00423865.',
+        'writes':'00422d78/00422d86 clear005e1010+8*EBX and005e1014+8*EBX; ordinary destinations005e1010..005e101c.',
+        'exclusion':'These local stores do not initialize source005e1020/2c/30/38 under that domain.',
+        'limits':['Intervening callees must preserve loop state; no whole-program index/alias invariant claimed.',
+                  'Other indexed writers and actual type8 source producer remain unresolved.']}
     initializer = images[0].get_data(0x23a60,0x4b)
     iterator = images[0].get_data(0x23a20,0x3e)
     assert iterator == images[1].get_data(0x23a20,0x3e)

@@ -68,6 +68,20 @@
           "bytes_sha256": "e2fa18723ccf91c1d037070f47a537a3f7de74d0f1d07ab2e887fc2cee2518a2",
           "assembly": "analysis/captures/modern-differences/projection/original-0041bc90.asm",
           "assembly_sha256": "97668716a556b58581604a4ffadfa45754d5be562ae2f1f5f225e3887c9ed8bd"
+        },
+        {
+          "start": "00422cf0",
+          "end": "00422d9b",
+          "bytes_sha256": "b6468d093e0201a0d083672e7bf0a51703ceae676440287f4724e7c8cc598f14",
+          "assembly": "analysis/captures/modern-differences/projection/original-00422cf0.asm",
+          "assembly_sha256": "63e2092705ff098386b5f8cad3e7a3963b8c96d0bc1e9d4119acf09edb5d5c69"
+        },
+        {
+          "start": "00423845",
+          "end": "0042386b",
+          "bytes_sha256": "3c3733c6547b4b76dda176724e8998807d9492d1ce5cdccf662e75eb816bc60a",
+          "assembly": "analysis/captures/modern-differences/projection/original-00423845.asm",
+          "assembly_sha256": "48ceb057a0176f8d784109c7e188ab81d52c4b98cf4261460752b4e1e549163b"
         }
       ],
       "view_angle_setting": {
@@ -247,6 +261,20 @@
           "bytes_sha256": "e2fa18723ccf91c1d037070f47a537a3f7de74d0f1d07ab2e887fc2cee2518a2",
           "assembly": "analysis/captures/modern-differences/projection/official_modern-0041bc90.asm",
           "assembly_sha256": "e98b3166bb06195d44623f02d9dd09c8f53940df77173aa85e83769ffbd122ea"
+        },
+        {
+          "start": "00422cf0",
+          "end": "00422d9b",
+          "bytes_sha256": "b6468d093e0201a0d083672e7bf0a51703ceae676440287f4724e7c8cc598f14",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-00422cf0.asm",
+          "assembly_sha256": "afc1aa38fa5379b7228425ccc372df5c8f227470e0c3a94cdf2c433eb3806514"
+        },
+        {
+          "start": "00423845",
+          "end": "0042386b",
+          "bytes_sha256": "3c3733c6547b4b76dda176724e8998807d9492d1ce5cdccf662e75eb816bc60a",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-00423845.asm",
+          "assembly_sha256": "42cef69dd005e5cc05ce1a354fff71c4d4858629740b19e34214bda53ee319bd"
         }
       ],
       "view_angle_setting": {
@@ -551,6 +579,27 @@
     "limits": [
       "Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.",
       "Half-width reload and live extended half-height have distinct spill schedules."
+    ]
+  },
+  "indexed_slot_initializer_candidate": {
+    "paired_identical_spans": [
+      {
+        "start": "00422cf0",
+        "end_exclusive": "00422d9b",
+        "sha256": "b6468d093e0201a0d083672e7bf0a51703ceae676440287f4724e7c8cc598f14"
+      },
+      {
+        "start": "00423845",
+        "end_exclusive": "0042386b",
+        "sha256": "3c3733c6547b4b76dda176724e8998807d9492d1ce5cdccf662e75eb816bc60a"
+      }
+    ],
+    "ordinary_index_domain": "EBX starts0; local upper bound1 for session006fd3b0==1, otherwise0; loop increments at00423865.",
+    "writes": "00422d78/00422d86 clear005e1010+8*EBX and005e1014+8*EBX; ordinary destinations005e1010..005e101c.",
+    "exclusion": "These local stores do not initialize source005e1020/2c/30/38 under that domain.",
+    "limits": [
+      "Intervening callees must preserve loop state; no whole-program index/alias invariant claimed.",
+      "Other indexed writers and actual type8 source producer remain unresolved."
     ]
   },
   "indexed_source_candidate": {
