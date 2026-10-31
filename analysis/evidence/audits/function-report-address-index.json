@@ -85,7 +85,7 @@
     },
     {
       "path": "analysis/original-modern-dialog-input.md",
-      "sha256": "e917eb10cde9b099dc20c0a8d16f263e2eb6976e2b7eb5e634b203122208b276"
+      "sha256": "0e85e2fd9fa4f524c6158d7bd9e8b8ed6b36b0e0acbd622d153f236fd0ebbd8c"
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -390,8 +390,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 320,
-    "without_address_mentions": 41
+    "with_address_mentions": 322,
+    "without_address_mentions": 39
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -2789,7 +2789,21 @@
       "changed_bytes": 8,
       "original_sha256": "ee0bb4e5d13de122374f1b336e01bc37921a6f8cb2db2289c42891fb06abc849",
       "modern_sha256": "6c553506a21e3c0ed9f4943d52dad013108b030e9bb14783c436f70c74e8ed49",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-dialog-input.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00444000",
+            "004440d8",
+            "0044410d",
+            "0044412e",
+            "00444220",
+            "00444255",
+            "00444275"
+          ]
+        }
+      ]
     },
     {
       "entry": "00444570",
@@ -2895,7 +2909,17 @@
       "changed_bytes": 20,
       "original_sha256": "e09c8f663a92ad714724a41b36c736c01daee30618f9b309c529d76d5c8c6ea3",
       "modern_sha256": "0bd6e7c9ad1f63788f9f96755a6a0d95c7eaab3504bf621bdc394f95055ddbdc",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-dialog-input.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00444c20",
+            "00444c90",
+            "00444ca6"
+          ]
+        }
+      ]
     },
     {
       "entry": "00444f50",
@@ -2921,7 +2945,10 @@
             "00444f50",
             "00444fa6",
             "00444fd5",
-            "00444ffb"
+            "00444ffb",
+            "0044504f",
+            "0044505d",
+            "00445079"
           ]
         }
       ]

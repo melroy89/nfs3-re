@@ -53,3 +53,31 @@ Original resolves the incoming localized ID through`004d1850`, stores one pointe
 Complete constructor **`00444a80..00444b1d` (157 bytes)** is byte-identical. It stores EAX as line count`00558b1c`, EDX as pointer-array address`00558b20`, timestamp`0079c1a4` into`00558b44`, and the absolute value of EBX into`00558b48`. Zero EBX sets byte`00558b4c` to1; positive EBX copies CL there. The wrapper therefore changes line count and configured timer/state inputs without rewriting this constructor. Visible wording, elapsed-time behaviour and dismissal still require their own localization/event-loop evidence.
 
 Modern’s PUSHAD/POPAD preserves incoming general registers, including EAX, while original restores its narrower saved set and leaves a constructor-derived EAX. Neither saves flags or x87 state. Both use shared pointer storage, so a maintained C interface must preserve its lifetime/overlap requirements rather than assume stack-local text arrays. Reentrancy and all notice callers remain unresolved. No dialog or instruction probes were run.
+
+## Initial edit state stops requesting first-character replacement
+
+The complete dialog initializer `00444c20..00444f48` (808 bytes, exclusive end) differs only inside `00444c90..00444ca6`. Original sets byte `00558b10` to 1, sets DWORD `00558b2c` to 1, then loads the same stack-supplied selection into EAX. Modern still sets the byte to 1, but zeros `00558b2c` before loading that selection. The common store to `00558b3c` at `00444ca6` and the rest of the initializer remain byte-identical. It is the DWORD's value, not a newly different initial selected index, that changes here.
+
+[The expanded dialog audit](scripts/audit_choice_dialog_followup.py) verifies pinned executable identities, this complete initializer, renderer and full edit-handler witness; [its manifest](evidence/audits/choice-dialog-followup.json) records hashes and exact float arguments. The insertion tail `0044504f..004450bd` is byte-identical. The full handler also contains the separately investigated cursor-call retargeting earlier in this chapter; it is **not** entirely byte-identical.
+
+That retained insertion tail supplies a concrete consumer of the changed DWORD. At `0044505d`, nonzero `00558b2c` can allow the path even when the current length has reached its limit. After character-admission helper `00443810` accepts the input, nonzero flag at `00445079` triggers:
+
+- Clear the flag.
+- Clear the 256-byte buffer at `00558b58` through `004e0640`.
+- Set current length `00558b50` to zero.
+- Continue to the ordinary append/increment sequence.
+
+With flag zero, the clear/reset block is skipped and the retained append sequence uses the current length. For an otherwise valid prefilled edit dialog, original's initial flag therefore requests replacement on the first accepted character; Modern's zero requests normal append behavior instead. This is conditional on reaching this edit path, character acceptance and buffer/length state. Other keys have their own branches, and all dialog-type admission/initial-buffer producers are not proven by this local chain.
+
+## Four renderer float arguments receive small adjustments
+
+The complete renderer `00444000..00444350` (848 bytes) differs only in four PUSH-immediate arguments:
+
+| PUSH address | Original binary32 bits / value | Modern binary32 bits / value |
+|---|---|---|
+| `004440d8`, `0044410d` | `3f0d0000` / 0.55078125 | `3f0d4ccd` / 0.551953136920929 |
+| `00444220`, `00444255` | `3ef80000` / 0.484375 | `3ef8999a` / 0.48554688692092896 |
+
+Both pairs increase by approximately 0.001171887. The respective sequences still reach draw helper `004db000` at `0044412e` and `00444275`; the surrounding pushes, x87 arithmetic, calls and branches are byte-identical. The audit establishes exact changed argument bits, not the final visible texture sample or a texel-alignment fix. Assigning texture-coordinate/depth semantics requires the draw helper's complete argument mapping and resource evidence; a nearby rendering call alone is insufficient.
+
+**Bounded work status: done; confidence: verified static initializer/consumer relationship and renderer constants.** Actual text-entry behavior, input limits/aliases, dialog-type coverage, draw-argument interpretation and rendered output remain untested. No target execution, Ghidra writes or reconstruction edits were performed. Preserve the original's replace-first policy or Modern's append policy as appropriate rather than silently choosing a preferred UX.
