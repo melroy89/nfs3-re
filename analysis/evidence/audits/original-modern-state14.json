@@ -7,6 +7,13 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "00431900",
+          "end": "00431a99",
+          "sha256": "46baff72221eee45903343ed61b30f9bfa8f66d2e07da5df69611250c18fda73",
+          "assembly": "analysis/captures/modern-differences/state14/original-00431900.asm",
+          "assembly_sha256": "d29a3615de338d57e1c6e84a9a5187f2137adb354c2c9bc92d6a3967e88456f1"
+        },
+        {
           "start": "00470ad0",
           "end": "00470b1e",
           "sha256": "7b95b61422818cd1a4490d8a190548475d8d7b7cd4fd5166c13f1ce45274abee",
@@ -34,6 +41,13 @@
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
         {
+          "start": "00431900",
+          "end": "00431a99",
+          "sha256": "46baff72221eee45903343ed61b30f9bfa8f66d2e07da5df69611250c18fda73",
+          "assembly": "analysis/captures/modern-differences/state14/official_modern-00431900.asm",
+          "assembly_sha256": "04998ab2565ed30596b02fe02760f57ffd17273dccb3403bb6ac9922513492aa"
+        },
+        {
           "start": "00470ad0",
           "end": "00470afa",
           "sha256": "3febce68ee89d95ab857c6b4da93473d6e083b232d6ff6cbbcfbe0144728b9ab",
@@ -58,6 +72,11 @@
     }
   },
   "identical_ranges": [
+    {
+      "start": "00431900",
+      "end": "00431a99",
+      "sha256": "46baff72221eee45903343ed61b30f9bfa8f66d2e07da5df69611250c18fda73"
+    },
     {
       "start": "00470b20",
       "end": "00470b6a",

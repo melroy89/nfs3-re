@@ -28,3 +28,13 @@ Original returns without a state call or cache reset when `007a3a64==0`. Modern 
 The change therefore combines removal of a zero-input exception with conditional cleanup on disabled admission. It does not prove the feature’s high-level name, the backend interpretation of value500 versus0, or that every driver accepts this state. The [renderer initialization comparison](original-modern-renderer-initialization.md) already warns that enable/global roles and initialization stores can differ across versions; this local flag use must not be mistaken for equivalent whole-game initialization.
 
 Original saves/restores EDX/EBP directly. Modern explicitly saves EDX around its enabled helper call; the reset helper saves ECX/EDX/EBP. Full transitive ABI, state-cache behavior inside `00431900`, all callers and enable-flag writers remain follow-up work. No normalized EAX status return is assigned to this setter.
+
+## Retained setter cache qualifies driver dispatch
+
+The expanded audit verifies complete **`00431900..00431a99`** is byte-identical in both baselines. For selector14 it compares incoming EDX with cache **`00554e68`** at `004319b0`. Equal values skip the renderer callback and return the initially selected EAX result1. Unequal values update that cache **before** calling slot **`009ef96c`** with stack pair `(14,value)`. Existing [renderer export binding](original-modern-renderer-loading.md) identifies that slot as `_THRASH_setstate@8`; this is a proven binding, not a name found only in strings.
+
+After the state14 callback, it saves that result in EBX and reads **`00554e5c`**. If that value is signed nonnegative, it calls the same slot again with `(21,cachedValue)`. It ultimately returns the first callback’s result rather than the reapplication result. A signed-negative cache skips the second call. Complete meaning and writers of state21’s cache remain outside this finding.
+
+Consequently the earlier0-versus500 difference is a **requested state-value** difference. Whether a driver call occurs also depends on prior cached state. The cache update is not rolled back on a failing callback in this local body; a later equal request can take the return1 fast path without retrying. No actual renderer failure is asserted, and the callback’s complete status conventions remain unresolved.
+
+Disabled-state cleanup likewise requests state14 value0 through this cache, so it need not invoke the driver when0 is already cached. Separate local cells `00678b40/44` are still reset by `00470b90`. This distinction matters for reconstruction: local cached-input cleanup, state-cache equality and renderer acceptance are three different events.
