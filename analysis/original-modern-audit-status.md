@@ -168,3 +168,9 @@ Remaining questions include full original default/save lifecycle, callback resul
 ## Dashboard versus gear overlay linkage
 
 The [overlay follow-up](original-modern-view-overlay.md#primary-tile-binding-supports-a-bounded-cabin-widening-association) separates gear-labelled optional records from dash.qfs primary tiles and links the latter to the expanded rectangle. MP160-008 now has partial static support. The correction gives0..3 extent units at standard widths640..2560, not a universal cap; actual pixel coverage/seams and historical introduction remain unresolved.
+
+## Renderer lifetime and dashboard checkpoint
+
+The [checkpoint record](evidence/validation/renderer-dashboard-checkpoint.json) records five fresh successful static audits, exact script hashes/commands and unchanged original, official Modern, local EXE and saved-database identities. It is primary-agent reproduction, not a new independent review. The main comparison now summarizes callback registration, cleanup/cache boundaries, official DX7 descriptor ownership/environment effects, gear-versus-dashboard resource bindings and retained tile construction.
+
+The bounded increment establishes those mechanisms and leaves actual cleanup failure/reachability, driver callback conformance, post-unload consumer admission, rasterized coverage and seam removal unverified. Final DX7 component inspection is not an authenticated older-DLL comparison. The catalog currently has151 vendor-only,39 bounded static,97 partial and3 unresolved labels; the whole audit remains incomplete. Historical release pairs and runtime behavior retain their separate evidence requirements.

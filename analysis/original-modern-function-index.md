@@ -177,7 +177,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00487210` | StoreAndInsetIndexedFloatRectangle | 300 | 12 | [hud-layout](original-modern-hud-layout.md) |
 | `004880b0` | RenderVehicleDrivenRotatedQuads | 960 | 15 | [hud-layout](original-modern-hud-layout.md) |
 | `00488470` | RenderRotatedTileQuadsForVehicle | 1551 | 12 | [hud-layout](original-modern-hud-layout.md), [view-overlay](original-modern-view-overlay.md) |
-| `00488a80` | LoadLocalCarArchiveShapeMetrics | 1979 | 5 | [texture-loading-followup](original-modern-texture-loading-followup.md), [track-length-text](original-modern-track-length-text.md) |
+| `00488a80` | LoadLocalCarArchiveShapeMetrics | 1979 | 5 | [texture-loading-followup](original-modern-texture-loading-followup.md), [track-length-text](original-modern-track-length-text.md), [view-overlay](original-modern-view-overlay.md) |
 | `00489240` | RenderViewportTilesAndVehicleOverlayQuads | 1000 | 138 | [view-overlay](original-modern-view-overlay.md) |
 | `004897f0` | RenderScaledColoredTextWithAlignment | 180 | 1 | [numeric-scale](original-modern-numeric-scale.md) |
 | `00489ab0` | RenderLocalizedSteppedNumericScale | 297 | 289 | [numeric-scale](original-modern-numeric-scale.md) |
@@ -223,7 +223,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004a3690` | RunRaceSession | 531 | 4 | [music-selection](original-modern-music-selection.md), [music-start](original-modern-music-start.md), [startup-paths](original-modern-startup-paths.md) |
 | `004a38f0` | SetCurrentDirectoryToExecutableDirectory | 72 | 69 | [startup-paths](original-modern-startup-paths.md) |
 | `004a3984` | ValidateRequiredGamePathsAndCreateDirectories | 66 | 64 | [startup-paths](original-modern-startup-paths.md) |
-| `004a3db0` | RunGameApplication | 497 | 316 | [cpu-tier](original-modern-cpu-tier.md), [heap-initialization](original-modern-heap-initialization.md), [idle-movie](original-modern-idle-movie.md), [music-selection](original-modern-music-selection.md), [small-entry-followup](original-modern-small-entry-followup.md), [startup-paths](original-modern-startup-paths.md), [startup-policy](original-modern-startup-policy.md), [startup-requirements](original-modern-startup-requirements.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
+| `004a3db0` | RunGameApplication | 497 | 316 | [cpu-tier](original-modern-cpu-tier.md), [heap-initialization](original-modern-heap-initialization.md), [idle-movie](original-modern-idle-movie.md), [music-selection](original-modern-music-selection.md), [shell-open](original-modern-shell-open.md), [small-entry-followup](original-modern-small-entry-followup.md), [startup-paths](original-modern-startup-paths.md), [startup-policy](original-modern-startup-policy.md), [startup-requirements](original-modern-startup-requirements.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004a5080` | ParseCommandLineAndShowUsage | 965 | 128 | [command-line](original-modern-command-line.md), [idle-movie](original-modern-idle-movie.md) |
 | `004a6e10` | InitializeGameIniPath | 85 | 82 | [idle-movie](original-modern-idle-movie.md), [language-table](original-modern-language-table.md), [startup-paths](original-modern-startup-paths.md) |
 | `004a6e68` | LoadAndValidateLanguageSetting | 89 | 86 | [idle-movie](original-modern-idle-movie.md), [language-table](original-modern-language-table.md) |
@@ -339,8 +339,8 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f6c50` | InitializeSocketConnectionState | 980 | 4 | [clock-source](original-modern-clock-source.md) |
 | `004f84a8` | LoadThrashDriverLibrary | 107 | 106 | [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f8514` | UnloadThrashDriverLibrary | 39 | 38 | [renderer-loading](original-modern-renderer-loading.md) |
-| `004f853c` | RefreshThrashDriverDescriptor | 12 | 10 | [renderer-lifecycle](original-modern-renderer-lifecycle.md) |
-| `004f8548` | InitializeGraphicsInputAndResourceServices | 120 | 110 | [renderer-lifecycle](original-modern-renderer-lifecycle.md) |
+| `004f853c` | RefreshThrashDriverDescriptor | 12 | 10 | [renderer-lifecycle](original-modern-renderer-lifecycle.md), [renderer-loading](original-modern-renderer-loading.md) |
+| `004f8548` | InitializeGraphicsInputAndResourceServices | 120 | 110 | [renderer-lifecycle](original-modern-renderer-lifecycle.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f915e` | GetPathAttributesPreservingScratchRegisters | 12 | 12 | [small-entry-followup](original-modern-small-entry-followup.md) |
 | `004f916c` | CheckPathDirectoryAttribute | 24 | 24 | [sound-bank-language](original-modern-sound-bank-language.md) |
 | `004f9184` | DirectoryContainsNonDotEntry | 101 | 95 | [screenshots](original-modern-screenshots.md), [startup-requirements](original-modern-startup-requirements.md) |

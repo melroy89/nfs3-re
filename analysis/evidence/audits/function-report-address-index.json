@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "46a38acf81a4b24157690a44bb7d0485a3c19dac529afb360889a462cf983515"
+      "sha256": "4648d350d6277025bd2078dcf3882bb79527859f26f319eaa508fdaf954d561c"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -109,7 +109,7 @@
     },
     {
       "path": "analysis/original-modern-dx7-mode-admission.md",
-      "sha256": "7a740550d220487c1b39a922e7bdd572db070c77702a1160ce75f67856419a79"
+      "sha256": "9f896abf6ff6ba04c208f4693c84b8b3ad7f066ce4737e82c174aeae1e7e7272"
     },
     {
       "path": "analysis/original-modern-effect-renderer-masks.md",
@@ -309,7 +309,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "3f00a671870f09cfb674cb00b269eac0c35cbbecc7096ba5bc966bbfa535061d"
+      "sha256": "9f36e852484de425a189642923d57498ca49fba2c868822f618c66c7de7d6655"
     },
     {
       "path": "analysis/original-modern-replay-list-cursor.md",
@@ -349,7 +349,7 @@
     },
     {
       "path": "analysis/original-modern-shell-open.md",
-      "sha256": "c275784877aaa0d765c1de1cc07d5df61aecc40f3aa7e6a2ac61cc82bb92b3f2"
+      "sha256": "5743dd5485cf9ffd07f82eb2346d2f22c560014ee59fdb40e79d47a1179c97e7"
     },
     {
       "path": "analysis/original-modern-slider-percentage.md",
@@ -421,7 +421,7 @@
     },
     {
       "path": "analysis/original-modern-view-overlay.md",
-      "sha256": "27968e266ddd6e921b6745528a6c33d5d1bc1566bf5167dedff8bef0309e6c42"
+      "sha256": "f4148cdbef32b5adb4e560d903b839f60a4eaa3a2f21ce00a7679880cf433389"
     },
     {
       "path": "analysis/original-modern-viewport-geometry.md",
@@ -6159,6 +6159,16 @@
           "addresses": [
             "00488cfd"
           ]
+        },
+        {
+          "path": "analysis/original-modern-view-overlay.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00488b8c",
+            "00488c33",
+            "00488c6e",
+            "00488d41"
+          ]
         }
       ]
     },
@@ -6190,7 +6200,12 @@
             "00489240",
             "0048928c",
             "004892dd",
+            "00489447",
+            "0048948f",
+            "004894af",
             "004894f8",
+            "0048954f",
+            "004895a2",
             "004895fc",
             "00489613",
             "00489619"
@@ -7825,6 +7840,13 @@
           "addresses": [
             "004a3dfd",
             "004a3e02"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-shell-open.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a3e83"
           ]
         },
         {
@@ -12160,9 +12182,11 @@
             "004f84e3",
             "004f84e9",
             "004f84f5",
+            "004f84fa",
             "004f84ff",
             "004f8506",
             "004f850b",
+            "004f850d",
             "004f8512"
           ]
         }
@@ -12191,6 +12215,7 @@
           "addresses": [
             "004f8514",
             "004f8517",
+            "004f851d",
             "004f8522",
             "004f8528",
             "004f8537"
@@ -12221,6 +12246,14 @@
           "addresses": [
             "004f853c"
           ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f853c",
+            "004f8542"
+          ]
         }
       ]
     },
@@ -12243,6 +12276,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-renderer-lifecycle.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f8548"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
           "entry_mentioned": true,
           "addresses": [
             "004f8548"

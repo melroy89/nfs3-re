@@ -110,6 +110,8 @@ The official/local code comparison establishes that this region is the same in t
 
 The [renderer-loading comparison](original-modern-renderer-loading.md) establishes the original `004f8390` / Modern `004f84a8` correspondence: all 34 export names retain their pointer slots, while Modern adds mandatory export/null-descriptor checks, table-driven cleanup and changes local fallback/return behavior. It also traces driver-specific INI/ENV configuration. Original selection precedence, renderer DLL implementation changes and runtime acceptance remain separate work.
 
+The cleanup follow-up distinguishes three contracts: zero-handle cleanup skips slot clearing; deferred-cleanup registration failure does not change load success; and the cached about descriptor is separate from the cleared export slots. The shared callback registry is retained between executables. For packaged DX7, the descriptor points into module-owned storage and fresh about calls reread environment overrides, so stable pointer identity alone does not justify treating queries as pure or proving cache validity across unload/reset.
+
 ## 7. Game configuration lookup
 
 The [configuration comparison](original-modern-configuration.md) traces the Modern caller and INI/environment readers: explicit INI values precede environment defaults, then caller defaults. Original registry imports and the new profile API calls support a migration. The [registry follow-up](original-modern-registry.md) maps original renderer values and retained online/memory queries; generic key producers and complete migration coverage remain pending. The configured filename is passed as direct buffer address `007a263c`; its executable-basename selection and fallback are now traced in the startup-path chapter; later writes remain outside that bounded audit.
@@ -355,6 +357,8 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 [The viewport overlay comparison](original-modern-view-overlay.md) maps the narrower bit gate, moved rectangle operands and added fixed-colour shapes. The rectangle producer is now traced to a distinct extent-correction helper and two update calls. Its source initialization distinguishes a width-based covering frame from physical and fitted rectangles, with explicit zero-flag examples. The comparison also retains the complete 143-byte delta envelope: the Modern-range count of138 excludes five bytes belonging to an original CALL operand, so it is not a complete original-instruction diff.
 
+Its resource follow-up separates optional gear-labelled records from primary dash.qfs tiles, and follows the expanded rectangle through retained tile-coordinate construction to vertex submission. The complete1360-byte tile builder is identical; source rectangles, assets and changed conversion helpers remain separate dependencies. MP160-008 has partial static support: ordinary widths640..2560 produce0..3 extra extent units, but this is neither a global cap nor verified pixel coverage/seam removal.
+
 ## Viewport resize input and admission
 
 [The paired resize comparison](original-modern-frame-resize.md) traces held-action +1/−1 callers, the narrower Modern bit gate and its added refresh-on-skip path. The complete adjustment helper is retained unchanged. The [Frame Size list/selector follow-up](original-modern-frame-setting.md) now closes the setting association and two-to-four-choice expansion, making MP160-004 partial; its advertised camera-shift effect and introduction date remain unverified.
@@ -370,6 +374,8 @@ The [idle movie controller comparison](original-modern-idle-movie.md) traces NoM
 The [movie screenshot comparison](original-modern-movie-screenshots.md) separates unchanged movie-stop logic from the changed screenshot consumer and handled Print Screen hook path.
 
 The [official DX7 mode-admission follow-up](original-modern-dx7-mode-admission.md) locates minimum640×480 checks in a packaged driver, with original-driver and exact-size depth-policy limits stated.
+
+The same final-package audit now pins descriptor ownership and its environment reader: DX7-prefixed values take precedence over THRASH-prefixed values, including descriptor signature/version overrides. This explains concrete about-query side effects; it does not establish historical driver changes without a justified older counterpart.
 
 The [current comparison-document link audit](evidence/validation/comparison-document-links.json) records file hashes and checks relative file targets and plain ATX heading anchors. Its parser limitations are explicit; external URLs and rendered Markdown are not validated. Reproduce with `python3 analysis/scripts/audit_comparison_document_links.py`.
 
