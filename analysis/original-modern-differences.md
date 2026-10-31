@@ -262,6 +262,10 @@ After the registry, vehicle-dispatch, numeric-scale and Race Now follow-ups, all
 
 This is reproducible static coverage, not a count of fully explained vendor changes or a whole-game completion percentage. Remaining changed-function regions, external components/assets and historical release claims still require the broader comparison described above. Prioritize the remaining high-change `0041d620` preset application and `004228e0` viewport-pose wrapper next, while retaining the bounded follow-ups in this table.
 
+## Setup website button follow-up
+
+[MP100-052: website versus Credits](original-modern-setup-website.md) records removal of the website entry in the official menu asset, alongside byte-identical original/Modern callback and conditional binding. The replacement Credits activation route remains unresolved.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -604,7 +608,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-049 | Buggy background animation in graphics settings and opponents choosing screens were fixed. | Claimed |
 | MP100-050 | Title in pause menu is more aligned now. In original version of the game it was a little misplaced. | Claimed |
 | MP100-051 | Flying brands effect added to all slides without large amount of text for consistency. For example, in original version this effect is present on main singleplayer game screen, but it is absent on main splitscreen game screen. | Claimed |
-| MP100-052 | On the first menu screen irrelevant link to Need For Speed website was replaced to “Credits...” button. Really, you can't find any mention about NFS3 on this website for 10 years or even more. | Claimed |
+| MP100-052 | On the first menu screen irrelevant link to Need For Speed website was replaced to “Credits...” button. Really, you can't find any mention about NFS3 on this website for 10 years or even more. | Partial |
 | MP100-053 | In choose car menu “Download car...” button is hidden because it doesn't work properly anymore. | Claimed |
 | MP100-054 | Yellow rect which indicates current player in HUD settings screen doesn't overlaps other controls. | Claimed |
 | MP100-055 | Standard bottom set of buttons was added to camera settings screen. | Claimed |
