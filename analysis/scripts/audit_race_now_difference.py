@@ -16,7 +16,7 @@ def main():
         raw = (ROOT/relative).read_bytes()
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
-        spans = [(0x437600, 0x4377be)] if label == 'original' else [(0x437614, 0x4376fb), (0x437600, 0x437612)]
+        spans = [(0x437600, 0x4377be), (0x4377d0, 0x43798e)] if label == 'original' else [(0x437614, 0x4376fb), (0x437600, 0x437612)]
         if label == 'official_modern':
             spans += [(0x4374d5, 0x4374dc), (0x437600, 0x437611), (0x437e39, 0x437e49),
                       (0x43d5dc, 0x43d5e3), (0x442ae1, 0x442ae8), (0x4432e9, 0x4432f0),
@@ -37,6 +37,27 @@ def main():
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows,
             'tokens': {f'{a:08x}': pe.get_data(a-0x400000, 40).split(b'\0')[0].decode('ascii')
                        for a in (0x53a998, 0x53a990, 0x53714c, 0x537494, 0x53750c, 0x537518, 0x537524, 0x537530, 0x53753c, 0x537548, 0x537554, 0x537560, 0x53756c)}}
+    def normalized_instructions(start, end):
+        source = (capture/f'original-{start:08x}.asm').read_text()
+        instructions = []
+        import re
+        for line in source.splitlines():
+            parts = line.split('\t')
+            if len(parts) < 3 or not parts[0].strip().endswith(':'):
+                continue
+            instruction = parts[2].strip()
+            def normalize_address(match):
+                value = int(match.group(), 16)
+                return f'local+{value-start:x}' if start <= value < end else match.group()
+            instructions.append(re.sub(r'0x[0-9a-f]+', normalize_address, instruction))
+        return instructions
+    old_fun = normalized_instructions(0x437600, 0x4377be)
+    old_hard = normalized_instructions(0x4377d0, 0x43798e)
+    assert old_fun == old_hard and len(old_fun) > 100
+    result['original_funkeys_hardkeys_normalized_instructions'] = {
+        'count': len(old_fun), 'matching': True,
+        'normalization': 'objdump mnemonic/operands; function-local targets replaced by offsets; external target addresses retained',
+        'sha256': hashlib.sha256(('\n'.join(old_fun)+'\n').encode()).hexdigest()}
     images = [pefile.PE(str(ROOT/SPECS[k][0])) for k in ('original', 'official_modern')]
     result['inspected_direct_callers'] = []
     modern = images[1]
@@ -57,6 +78,19 @@ def main():
         bodies = [p.get_data(start-0x400000, end-start) for p in images]
         assert bodies[0] == bodies[1]
         result['identical_helpers'].append(f'{start:08x}')
+    result['hardkeys_asset_funtxt_fields'] = {}
+    archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest() == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    for label, relative in (
+        ('official_modern', 'analysis/captures/modern-differences/upstream/package/fedata/menus/hardkeys.mnu'),
+        ('local_uppercase_backup', 'nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/HARDKEYS.MNU')):
+        data = (ROOT/relative).read_bytes()
+        if label == 'official_modern':
+            assert data == subprocess.check_output(['7z', 'x', '-so', str(archive), 'fedata/menus/hardkeys.mnu'])
+        fields = [{'line': i, 'text': line} for i, line in enumerate(data.decode('latin1').splitlines(), 1) if line.lower().startswith('codelink=funtxt_')]
+        result['hardkeys_asset_funtxt_fields'][label] = {'path': relative, 'sha256': hashlib.sha256(data).hexdigest(), 'fields': fields}
+    assert not result['hardkeys_asset_funtxt_fields']['official_modern']['fields']
+    assert len(result['hardkeys_asset_funtxt_fields']['local_uppercase_backup']['fields']) == 5
     (ROOT/'analysis/evidence/audits/original-modern-race-now-entry.json').write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: baselines, Modern helper, original credits gate and exact tokens')
 

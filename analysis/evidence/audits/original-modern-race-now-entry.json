@@ -14,6 +14,13 @@
           "assembly_sha256": "9c57b954e2dc9cd042e8d6f99112662b327a50ad2b0b606e3479a26f1cd4c945"
         },
         {
+          "start": "004377d0",
+          "end": "0043798e",
+          "bytes_sha256": "56e87490e5903623b22bb6c3c54c2c6367194920b62f2db5147f6fd87004f917",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/original-004377d0.asm",
+          "assembly_sha256": "37b0ee88558428a9066ff05a884f171415c45f624229af8c9df1624fa96ed5a2"
+        },
+        {
           "start": "00442a40",
           "end": "00442a95",
           "bytes_sha256": "530a40e49d7fc33f0e99423114292b6e67a6c842aa135572a8a36c9aa0ba4730",
@@ -225,6 +232,12 @@
     "Original setup body includes credits gating and coordinate writes; not a one-to-one helper match.",
     "No menu or target execution."
   ],
+  "original_funkeys_hardkeys_normalized_instructions": {
+    "count": 108,
+    "matching": true,
+    "normalization": "objdump mnemonic/operands; function-local targets replaced by offsets; external target addresses retained",
+    "sha256": "e1ef2d9f57d4bdd5733e480008b22693581acc35aca568f2d6b8c669be86f063"
+  },
   "inspected_direct_callers": [
     "004374d7",
     "0043760a",
@@ -264,5 +277,38 @@
     "00442a40",
     "004cf090",
     "0044a5cb"
-  ]
+  ],
+  "hardkeys_asset_funtxt_fields": {
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/hardkeys.mnu",
+      "sha256": "fe56eb639260f0215b6a1f449c956638d3e7f87db9c3422222233a72c5d9ddf0",
+      "fields": []
+    },
+    "local_uppercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/HARDKEYS.MNU",
+      "sha256": "ef31a1f26dffc976c7f5d430af4d67495dcce77ad12eb67d085c05b5256b5efd",
+      "fields": [
+        {
+          "line": 262,
+          "text": "codelink=FUNTXT_2"
+        },
+        {
+          "line": 281,
+          "text": "codelink=FUNTXT_3"
+        },
+        {
+          "line": 300,
+          "text": "codelink=FUNTXT_4"
+        },
+        {
+          "line": 319,
+          "text": "codelink=FUNTXT_56"
+        },
+        {
+          "line": 338,
+          "text": "codelink=FUNTXT_7"
+        }
+      ]
+    }
+  }
 }
