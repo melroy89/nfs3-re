@@ -45,10 +45,26 @@ The hash-checked official `credits1.mnu` defines three buttons:
 
 Its subtitle entry uses `codelink=subtitle`. The selected uppercase local backup uses `GlamNext` (`LL1of2`), an Escape/`kTextBackDots` button (`LL2of2`) and `GlamSub`. Backup provenance is not authenticated retail provenance.
 
-This supplies **partial static support for MP140-024** (common Back/Next controls for the panorama page), and **partial support for MP140-022** through authored `keyleft`/`keyright` tokens and bound direction callbacks. Actual arrow-key dispatch, the other slideshow/general-Credits contexts, visible output, panorama rendering and v1.4.0 introduction remain unverified. MP140-023's noticeable More button is not established by this page's controls.
+This supplies **partial static support for MP140-024** (common Back/Next controls for the panorama page), and **partial support for MP140-022** through authored `keyleft`/`keyright` tokens and bound direction callbacks. The conditional static arrow-dispatch route is now connected below. Actual input delivery, other contexts' callback implementations, visible output, panorama rendering and v1.4.0 introduction remain unverified. MP140-023's noticeable More button is not established by this page's controls.
 
 ## Reconstruction follow-up
 
 Keep original and Modern navigation/label policies separate, preserve the saved state and pointer lifetimes, and explicitly model Modern's discontiguous missing-entry exit. Qualification should cover all four ordinary indices, backward wrap from zero, missing buttons/subtitle/slider, language-resource lifetime, Enter/arrow/Escape dispatch and transition restoration. Do not silently repair unchecked original lookups or treat the original shared buffers as reentrant.
 
 These findings account for two redirected registration fields; they do not establish whole-Credits equivalence or a complete panorama implementation. Executable bytes, saved Ghidra state, raw exports and maintained C remain unchanged.
+
+## Conditional Left/Right-to-panorama callback chain
+
+The existing [paired menu-input investigation](original-modern-menu-input.md) already establishes that Modern adds named arrow actions after current-entry input handling. This follow-up retains the specific scanner/dispatch ranges and complete generic button handler alongside the panorama evidence, rather than treating the asset token alone as functional proof.
+
+For ordinary admitted input:
+
+1. `0044a315..0044a362` first offers the key to the currently selected entry's input callback at `+30h`, when present. A nonzero handled result prevents the named-arrow fallback. Earlier session/modal gates also remain relevant.
+2. Left code `4b00h` uses literal `keyleft` (`0053be36`) at `0044a3cb`; Right code `4d00h` uses `keyright` (`0053be3e`) at `0044a3f2`.
+3. Scanner `0044a24c..0044a2c2` searches from the context's signed starting index through `bch`-stride entries until type-zero sentinel. It selects the first type-5 entry with a non-null matching codelink and bit 0 of flags byte+4 clear, and returns its relative index. It does not apply every navigation filter used by other scanners.
+4. On a match, `0044a409..0044a41e` writes that relative index to context WORDs+1ah/+1ch, sets EBX=13 (Enter), passes the context in EDX, and invokes the matched entry's `+30h` input handler. Missing named action falls back to ordinary previous/next selection instead.
+5. The retained button template at `00556e40` sets `+30h=00461270` and file-backed `+58h=0`. In the simple-button branch, Enter with non-null item callback+64h invokes it at `004613cd`. The panorama initializer supplies `00454d8c` for Previous and `00454d70` for Next, connecting to the decrement/increment paths above.
+
+This closes the **static conditional route** from authored `keyleft previous` / `keyright next` to the panorama callbacks. It requires successfully loaded/initialized entries, the named button being enabled, ordinary template state and the earlier/current-entry handlers declining the arrow. No keyboard event, current selection or rendered transition was observed.
+
+The expanded manifest also checks the official `credits.mnu` and `slides.mnu` directly against the pinned archive. They contain `keyleft previous` / `keyright next`, and `keyleft prevslide` / `keyright nextslide`, respectively. These are relevant authored routes for MP140-022; their complete callback implementations and context-specific admission remain separate from the panorama chain verified here. Thus the catalog entry remains partial rather than promoting a three-context runtime claim from one conditional chain.

@@ -91,6 +91,27 @@
           "bytes_sha256": "f718e5cce225c9253008ae89fc17ad48e7c9a8bbecd0e047b58dfafd4395d56d",
           "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-0045d77e.asm",
           "assembly_sha256": "439d68f0941625447b34f8f6d6c219558b225b975fe209a70e6f6e27941456a5"
+        },
+        {
+          "start": "0044a24c",
+          "end": "0044a2c2",
+          "bytes_sha256": "d17f9512eebe96f32e504583ead0b316cb4b69970a3992d59d4f758dec025231",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-0044a24c.asm",
+          "assembly_sha256": "440a6cafcd29bc486faa83e2ce1ec585f0d08a0ab44056a3a11e643b50d1c215"
+        },
+        {
+          "start": "0044a315",
+          "end": "0044a436",
+          "bytes_sha256": "6f772457270db53111a54bc8cb0e525b97c5ade6262522087fda88bdd6a86920",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-0044a315.asm",
+          "assembly_sha256": "c220d55e8c3f54cb9aede5482cf3e5236fc8a9f86aed1078335e3c6039c032a8"
+        },
+        {
+          "start": "00461270",
+          "end": "004613db",
+          "bytes_sha256": "05535ada2c4ddee94fef7333c037a248dea3d6acca35928f23ea6837ffd55d26",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-00461270.asm",
+          "assembly_sha256": "fadb52a98ea9dfb78d152dcc8cd245e5bdb304eef9bc35bcce9d41047d7b0a4f"
         }
       ],
       "label_id_words_005563dc_hex": "e101e201e501e501",
@@ -102,6 +123,11 @@
         "005398e8": "",
         "005398ec": "",
         "005398f4": ""
+      },
+      "button_template_00556e40_hex": "0500000000080000000000000000000000000000000000000000000000000000000000000019460000000000c007460070124600e0134600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000a023460000000000001d4600a0244600d028460020234600000000000000000000000000000000000000000000000000",
+      "arrow_tokens": {
+        "0053be36": "keyleft",
+        "0053be3e": "keyright"
       }
     }
   },
@@ -207,6 +233,36 @@
       ]
     }
   },
+  "official_related_arrow_fields": [
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/credits.mnu",
+      "sha256": "5272486659a41e2dc9543fd5a25b7842f3e4e731d9444427e9160b7f49e55da9",
+      "fields": [
+        {
+          "line": 20,
+          "field": "codelink=keyright next"
+        },
+        {
+          "line": 32,
+          "field": "codelink=keyleft previous"
+        }
+      ]
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/slides.mnu",
+      "sha256": "e6d63bcf70bd98ec11d121c9e9fbee88872c914f9fea82abefa08d897358e784",
+      "fields": [
+        {
+          "line": 39,
+          "field": "codelink=keyright nextslide"
+        },
+        {
+          "line": 51,
+          "field": "codelink=keyleft prevslide"
+        }
+      ]
+    }
+  ],
   "limits": [
     "No rendering, keyboard or callback execution.",
     "The distant missing-Next exit is retained; unrelated entry paths to its shared code are not analyzed.",

@@ -58,3 +58,7 @@ Sender `0042d810..0042d855` is **70 identical bytes** in both executables. It ha
 - **MP140-009:** explicit Tab/Escape bypass of the multiplayer handler/gate is verified; actual chat-focus UI behavior remains untested.
 
 Next: compare asset-defined navigation tokens and affected menu templates; trace named-action callback producers and menu-sound differences; validate the relevant UI states if an observable behavior claim is needed. The [Modern-to-Modern runtime observations](normal-tcp-race-validation.md) are not an original/Modern input comparison.
+
+## Panorama named-arrow integration follow-up
+
+The [panorama callback comparison](original-modern-credits-panorama.md#conditional-leftright-to-panorama-callback-chain) now connects the named Left/Right scanner through the generic button template/input handler to the initialized panorama Previous/Next callbacks. It retains the required code/template witnesses and official tokens for all three related menu assets. This advances the earlier asset/callback follow-up within that bounded context; other slideshow callbacks, admission states and runtime input delivery remain unverified.
