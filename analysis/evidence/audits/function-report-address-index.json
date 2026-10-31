@@ -261,7 +261,7 @@
     },
     {
       "path": "analysis/original-modern-slider-percentage.md",
-      "sha256": "f871e04973f9bcc44d1b49ef6fbed5cba889d637be3be7aaca666c67fa2a2665"
+      "sha256": "6504685e74f8360ce902391eac8c55d439cfff780d2b79ad656ace00b66d505a"
     },
     {
       "path": "analysis/original-modern-slideshow-navigation.md",
@@ -338,8 +338,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 256,
-    "without_address_mentions": 105
+    "with_address_mentions": 257,
+    "without_address_mentions": 104
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -4028,7 +4028,17 @@
       "changed_bytes": 37,
       "original_sha256": "f57097fea1e8fc9cb40ca21fd074b80fe99d3e7a404fac837549efdcf45ad89d",
       "modern_sha256": "657d3abd10021669c65dd5464c426f526ff37c58b17c46605624810f02dd03d6",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-slider-percentage.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0046ab10",
+            "0046ab1f",
+            "0046ab49"
+          ]
+        }
+      ]
     },
     {
       "entry": "0046b3a0",

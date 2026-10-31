@@ -175,3 +175,13 @@ Final read-only inspection traced lookup `00448f00..00448f4d`: it scans 16-byte 
 The complete descriptor rows are `00558320 = {0fh,00538738,6,00604f24}` for `snap` and `00558330 = {0fh,00538740,6,00604f28}` for `r0_step`. Their fields are applicability type, keyword pointer, numeric conversion type and destination. Earlier keyword-first captures omit the preceding applicability DWORD and must not be read as complete row boundaries.
 
 After resumption, the audit script retains both spans and complete descriptor rows for both hash-pinned baselines. Readback verifies the keyword/type checks, loader arguments and full row boundaries; the key lookup body and selected loader span are byte-identical across baselines. Two runs reproduce the expanded JSON unchanged. The loader span is a witness inside a larger routine, not a complete loader-body comparison. Later field overrides, lexical parsing edge cases, actual event delivery and runtime step size remain unresolved; the broader comparison is not complete.
+
+## Single-slider initializer changes geometry and index signedness
+
+The audit now retains complete paired **`0046ab10..0046abac`**, exclusive end, **156 bytes**. All differences lie in`0046ab1f..0046ab49`; the99-byte tail from`0046ab49` is identical. The envelope includes five Modern NOP bytes excluded from its saved body union, so it must not be confused with the151-byte saved-function size.
+
+When widget byte+`0x3d` is nonzero, original obtains the signed WORD at+`0x40` via DWORD+`0x3e` shifted16; Modern zero-extends WORD+`0x40` directly. Both use it as a four-byte-stride table index. Original stores WORD+6 from table`00559c6c` plus148; Modern uses plus151. Original stores WORD+8 from table`00559c94` unchanged; Modern subtracts1 before that WORD store. For equal ordinary indices/table values, these are **+3 and−1 internal coordinate arguments**, with16-bit wrapping. Physical-pixel effects and the flag’s full meaning remain unverified.
+
+For indices whose high bit is set, original negative indexing and Modern positive indexing differ; no local range guard is added here. This is a signedness/operand-width change, not proof that either arbitrary-input path is safe. When the byte flag is0, both skip the changed block.
+
+The retained tail calls`0046a980`, passes DWORD+`0x48` through`00469530` and DWORD+`0x54` through`00469480`, saves WORD+`0x0a` to+`0xb2`, and performs renderer-state-gated geometry updates. Its calls/globals remain dependencies; identical tail bytes alone do not establish identical initialized values or outputs. No slider, key input or initializer was executed, and no historical alignment claim is promoted from these offsets.

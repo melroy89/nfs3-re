@@ -63,6 +63,13 @@
           "bytes_sha256": "f034ec98b675b1bec7dd5241fdf750503e3b439728368825cc8c7dd9fc409ecd",
           "assembly": "analysis/captures/modern-differences/slider-percentage/original-004496a8.asm",
           "assembly_sha256": "8d902154eec77807faf94408c5cd33037394936a51cf4311b1d2339b4c5b0992"
+        },
+        {
+          "start": "0046ab10",
+          "end": "0046abac",
+          "bytes_sha256": "faa0b03b81f22d84c72dbcf1fa87f22eb67e2c80569f714b2e382e178efea7e6",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/original-0046ab10.asm",
+          "assembly_sha256": "ed769b7ce3fed1411781be435cc56717348dac0ba674395058ace2fe613f7f7d"
         }
       ],
       "step_event_dispatch": {
@@ -174,6 +181,13 @@
           "bytes_sha256": "f034ec98b675b1bec7dd5241fdf750503e3b439728368825cc8c7dd9fc409ecd",
           "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-004496a8.asm",
           "assembly_sha256": "06f703f9b7d7ecd199cabc8bfc9d72e45861e43428e68936318bea4614ebb3a6"
+        },
+        {
+          "start": "0046ab10",
+          "end": "0046abac",
+          "bytes_sha256": "bf380a31bf903a4a80c0981e5cc2a131ffaf5c5e0c577e19889c6b810c5ae691",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-0046ab10.asm",
+          "assembly_sha256": "aed24b1b58ee8e38e8baa217e3800bd1f21f971141a814ac3bc8bf0dbd95c38c"
         }
       ],
       "step_event_dispatch": {
@@ -236,6 +250,64 @@
   "slider_callback_row_identical": true,
   "template_installer_identical": true,
   "key_lookup_and_loader_witness_identical": true,
+  "single_slider_initialization": {
+    "start": "0046ab10",
+    "end_exclusive": "0046abac",
+    "envelope_bytes": 156,
+    "changed_addresses": [
+      "0046ab1f",
+      "0046ab20",
+      "0046ab21",
+      "0046ab22",
+      "0046ab23",
+      "0046ab24",
+      "0046ab25",
+      "0046ab26",
+      "0046ab27",
+      "0046ab28",
+      "0046ab29",
+      "0046ab2a",
+      "0046ab2b",
+      "0046ab2c",
+      "0046ab2d",
+      "0046ab2e",
+      "0046ab2f",
+      "0046ab30",
+      "0046ab31",
+      "0046ab32",
+      "0046ab33",
+      "0046ab34",
+      "0046ab35",
+      "0046ab36",
+      "0046ab37",
+      "0046ab38",
+      "0046ab39",
+      "0046ab3a",
+      "0046ab3b",
+      "0046ab3c",
+      "0046ab3d",
+      "0046ab3e",
+      "0046ab3f",
+      "0046ab40",
+      "0046ab41",
+      "0046ab42",
+      "0046ab43",
+      "0046ab44",
+      "0046ab45",
+      "0046ab46",
+      "0046ab47",
+      "0046ab48"
+    ],
+    "changed_region": [
+      "0046ab1f",
+      "0046ab49"
+    ],
+    "identical_tail_start": "0046ab49",
+    "condition": "widget byte0x3d nonzero",
+    "coordinate_changes": "WORD+6 offset148->151; WORD+8 table value->table value-1",
+    "index_change": "signed WORD+0x40 ->unsigned WORD+0x40",
+    "limits": "Widget flags, index admission and screen scaling not established by this comparison."
+  },
   "percentage_pair_changed_addresses": [
     "0046c1f0"
   ]
