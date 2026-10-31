@@ -10,7 +10,11 @@
           "line": 124,
           "codelink": "SFX_INTENSITY",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         }
       ]
     },
@@ -23,42 +27,66 @@
           "line": 1,
           "codelink": "ASLD_MENUMUSIC",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 35,
           "codelink": "ASLD_MENUSOUND",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 69,
           "codelink": "ASLD_RACEMUSIC",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 103,
           "codelink": "ASLD_SOUNDFX",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 137,
           "codelink": "ASLD_ENGINEVOLUME",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 171,
           "codelink": "ASLD_SPEECHVOLUME",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         }
       ]
     },
@@ -71,49 +99,77 @@
           "line": 100,
           "codelink": "CE_ENGINETUNE",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 137,
           "codelink": "CE_BRAKEBAL",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 174,
           "codelink": "CE_STEERINGSPD",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 211,
           "codelink": "CE_BGRRATS",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 248,
           "codelink": "CE_SUSPENSION",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 285,
           "codelink": "CE_AERODYN",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 322,
           "codelink": "CE_TIRES",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.100000",
+          "r0_step": "0.100000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         }
       ]
     },
@@ -126,7 +182,11 @@
           "line": 238,
           "codelink": "SFX_INTENSITY",
           "percenttype": "0",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.000000",
+          "r0_step": "0.100000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         }
       ]
     },
@@ -139,35 +199,55 @@
           "line": 1,
           "codelink": "ASLD_MENUMUSIC",
           "percenttype": "0",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.000000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 41,
           "codelink": "ASLD_RACEMUSIC",
           "percenttype": "0",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.000000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 81,
           "codelink": "ASLD_SOUNDFX",
           "percenttype": "0",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.000000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 121,
           "codelink": "ASLD_ENGINEVOLUME",
           "percenttype": "0",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.000000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 161,
           "codelink": "ASLD_SPEECHVOLUME",
           "percenttype": "0",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.000000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         }
       ]
     },
@@ -180,49 +260,77 @@
           "line": 213,
           "codelink": "CE_ENGINETUNE",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 255,
           "codelink": "CE_BRAKEBAL",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 297,
           "codelink": "CE_STEERINGSPD",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 339,
           "codelink": "CE_BGRRATS",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 381,
           "codelink": "CE_SUSPENSION",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 423,
           "codelink": "CE_AERODYN",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 465,
           "codelink": "CE_TIRES",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.100000",
+          "r0_step": "0.100000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         }
       ]
     },
@@ -235,7 +343,11 @@
           "line": 124,
           "codelink": "SFX_INTENSITY",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         }
       ]
     },
@@ -248,42 +360,66 @@
           "line": 1,
           "codelink": "ASLD_MENUMUSIC",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 35,
           "codelink": "ASLD_MENUSOUND",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 69,
           "codelink": "ASLD_RACEMUSIC",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 103,
           "codelink": "ASLD_SOUNDFX",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 137,
           "codelink": "ASLD_ENGINEVOLUME",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 171,
           "codelink": "ASLD_SPEECHVOLUME",
           "percenttype": "1",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.050000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         }
       ]
     },
@@ -296,49 +432,77 @@
           "line": 100,
           "codelink": "CE_ENGINETUNE",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 137,
           "codelink": "CE_BRAKEBAL",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 174,
           "codelink": "CE_STEERINGSPD",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 211,
           "codelink": "CE_BGRRATS",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 248,
           "codelink": "CE_SUSPENSION",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 285,
           "codelink": "CE_AERODYN",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.010000",
+          "r0_step": "0.010000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         },
         {
           "section": "[slider]",
           "line": 322,
           "codelink": "CE_TIRES",
           "percenttype": "2",
-          "slidertype": "0"
+          "slidertype": "0",
+          "snap": "0.100000",
+          "r0_step": "0.100000",
+          "r1_step": "0.000000",
+          "r2_step": "0.000000"
         }
       ]
     }

@@ -93,3 +93,15 @@ This path still depends on the changed `004dfd56` implementation documented abov
 Existing [controller property setup research](controller-axis-property-setup.md) connects axis widgets to cached percentage pairs and device-property setters. That supports further investigation of controller-related controls, not universal proof that the catalog's historical dead-zone rounding change is represented by this one-byte layout delta. Intermediate releases, complete type/resource binding and controlled ordinary/boundary comparisons remain required for that stronger claim.
 
 **Closed:** two-axis body/constant comparison and distinction from the single-slider tail. **Still unresolved:** historical rounding attribution, active control-word/exception state, full widget binding and numeric output equivalence. No controller properties or settings were changed.
+
+## Five-percent step claim: declared fallback versus selected step
+
+The asset inventory now retains `snap` and `r0_step/r1_step/r2_step` values. The selected installed audio and effect-intensity blocks declare **`r0_step=0.050000`**, compared with **0.010000** in the matched uppercase backups. They also retain **`snap=0.010000`** in the inspected installed blocks. These are distinct fields and must not be collapsed into a single advertised step.
+
+Executable descriptors connect literal `snap` to template destination `00604f24` (entry+44h), and `r0_step` to `00604f28` (entry+48h), at descriptor addresses `00558324` / `00558334`. The audit retains their raw words for both binaries. Complete parser write/instance creation still remains outside this bounded descriptor observation.
+
+Complete `HandleSingleSliderStepInput`, `0046a860..0046a97c`, is **byte-identical** between executables. Its ordinary finite-input selection uses +44h whenever `0 < value <= 1`; otherwise it falls back to +48h. Event codes `4b00h` / `4d00h` subtract/add that selected value, with clamping and subsequent update/quantization described in existing analysis. Return status2 indicates a handled path, not proof of a changed value at a limit.
+
+Consequently, **if** these declarations become the instance fields without intervening overrides, this retained handler selects **0.01**, not the declared fallback0.05. That is a conditional static implication, not a measured keypress, complete asset-to-runtime binding or universal refutation of every release's behavior. Other event paths, menu callbacks, parser/template interpretation and runtime writes must be checked before saying the installed slider actually moves by1% or5%.
+
+Catalog **MP152-005** now records partial evidence: the0.05 declaration exists and changed in selected local files, but a competing0.01 primary field and retained preference rule prevent treating the full5% behavior as verified. This distinction is also why percentage display rounding and input step size remain separate claims. No input or setting was changed.

@@ -19,7 +19,7 @@ def main():
                     current={'section':line,'line':number}
                 elif current is not None and '=' in line:
                     k,v=line.split('=',1)
-                    if k.lower() in ('codelink','percenttype','slidertype'):current[k.lower()]=v
+                    if k.lower() in ('codelink','percenttype','slidertype','snap','r0_step','r1_step','r2_step'):current[k.lower()]=v
             if current and 'percenttype' in current:blocks.append(current)
             files.append({'path':str(path.relative_to(root)),'sha256':hashlib.sha256(raw).hexdigest(),'blocks':blocks})
     assert files

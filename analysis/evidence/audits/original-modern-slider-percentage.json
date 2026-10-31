@@ -9,6 +9,13 @@
       "end": "0046a5ea",
       "helper_spans": [
         {
+          "start": "0046a860",
+          "end": "0046a97c",
+          "bytes_sha256": "ea3c2835198f2553ac4a54a3f7ea228fad01766107e2268e241b0287cf284b83",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/original-0046a860.asm",
+          "assembly_sha256": "42b378bc77660472aaef5ce91a1a8788ed5291226755053ed2e14972411fdba4"
+        },
+        {
           "start": "004693c0",
           "end": "00469479",
           "bytes_sha256": "b59a74a75fb7b06a3c65f1550347d4319587c01508c2c2cd1fcc71f046d3ade0",
@@ -36,6 +43,10 @@
       "assembly": "analysis/captures/modern-differences/slider-percentage/original-00469680.asm",
       "assembly_sha256": "5fbdfa61e77107d7fbb386ee0b342627e23b51888b3c98410bbc8decf168839a",
       "unchanged_prefix_sha256": "b6f275726b548490a16dc478dd0fc38211c97dcd32fcd543c8580e555503a81c",
+      "step_descriptors_hex": {
+        "00558324": "3887530006000000244f60000f000000",
+        "00558334": "4087530006000000284f60000f000000"
+      },
       "percenttype_descriptor": {
         "address": "00558224",
         "words_hex": "b4865300000000001c4f60000f000000",
@@ -56,6 +67,13 @@
       "start": "00469680",
       "end": "0046a5af",
       "helper_spans": [
+        {
+          "start": "0046a860",
+          "end": "0046a97c",
+          "bytes_sha256": "ea3c2835198f2553ac4a54a3f7ea228fad01766107e2268e241b0287cf284b83",
+          "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-0046a860.asm",
+          "assembly_sha256": "b6c8ce09d586b541a26d8216b7c65760155d945638736ceec89c7c50a1062751"
+        },
         {
           "start": "004693c0",
           "end": "00469479",
@@ -84,6 +102,10 @@
       "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-00469680.asm",
       "assembly_sha256": "ec525abf343592d9c1843002296eed4d8d7837d2c3c8984eeb29d633a81c180e",
       "unchanged_prefix_sha256": "b6f275726b548490a16dc478dd0fc38211c97dcd32fcd543c8580e555503a81c",
+      "step_descriptors_hex": {
+        "00558324": "3887530006000000244f60000f000000",
+        "00558334": "4087530006000000284f60000f000000"
+      },
       "percenttype_descriptor": {
         "address": "00558224",
         "words_hex": "b4865300000000001c4f60000f000000",
@@ -105,6 +127,7 @@
   ],
   "identical_prefix_bytes": 3755,
   "quantizer_identical": true,
+  "step_handler_identical": true,
   "percentage_pair_changed_addresses": [
     "0046c1f0"
   ]
