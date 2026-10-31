@@ -36,6 +36,26 @@ def main():
     for start,end in conversion+[(0x4960e0,0x496104),(0x496109,0x49616c),(0x4961ab,0x4961db),(0x4961e0,0x4961ef),(0x4438b0,0x4438ba)]:
         raw=images['original'].get_data(start-0x400000,end-start);assert raw==images['official_modern'].get_data(start-0x400000,end-start)
         result['identical_ranges'].append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(raw).hexdigest()})
+    selector_storage = {}
+    for label,pe in images.items():
+        rva = 0x15e54c
+        section = next(section for section in pe.sections
+                       if section.VirtualAddress <= rva < section.VirtualAddress + section.SizeOfRawData)
+        data = pe.get_data(rva,4)
+        assert data == b'\0'*4
+        selector_storage[label] = {'va': '0055e54c', 'initial_hex': data.hex(),
+            'section': section.Name.rstrip(b'\0').decode(),
+            'file_offset': pe.get_offset_from_rva(rva), 'storage': 'file-backed'}
+    modern = images['official_modern']
+    assert modern.get_data(0x96268,4) == bytes.fromhex('fec02403')
+    assert modern.get_data(0x9626c,7) == bytes.fromhex('0fa30568277a00')
+    assert modern.get_data(0x9627a,7) == bytes.fromhex('8b0485f0614900')
+    result['selector_initialization_and_width'] = {'baselines': selector_storage,
+        'update': 'AL=(AL+1)&3; upper24 EAX bits retained',
+        'bit_test': '0049626c uses full EAX memory bit index',
+        'pointer_lookup': '0049627a uses full EAX scaled by4',
+        'invariant': 'Starting from file-backed zero, inspected iteration/store preserves0..3 absent other writers.',
+        'limit': 'No exclusion of aliases, indirect/bulk writes, corrupted state or alternate initialization.'}
     result['limits']=['No movies, window interaction or target execution.','No historical intermediate release inspected.','Window activation producer reused from the linked window-handling investigation.','No universal timer-unit or invalid selector-state contract inferred.']
     (ROOT/'analysis/evidence/audits/original-modern-idle-movie.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired idle controller, NoMovies mask producer, attribute API and retained timer/input helpers')

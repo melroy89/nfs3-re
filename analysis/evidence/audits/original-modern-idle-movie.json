@@ -266,6 +266,29 @@
       "sha256": "5301a1ab38114c93259d6998656bbf4080065c6533c0b86621f99448738680f7"
     }
   ],
+  "selector_initialization_and_width": {
+    "baselines": {
+      "original": {
+        "va": "0055e54c",
+        "initial_hex": "00000000",
+        "section": "DGROUP",
+        "file_offset": 1429324,
+        "storage": "file-backed"
+      },
+      "official_modern": {
+        "va": "0055e54c",
+        "initial_hex": "00000000",
+        "section": ".data",
+        "file_offset": 1429324,
+        "storage": "file-backed"
+      }
+    },
+    "update": "AL=(AL+1)&3; upper24 EAX bits retained",
+    "bit_test": "0049626c uses full EAX memory bit index",
+    "pointer_lookup": "0049627a uses full EAX scaled by4",
+    "invariant": "Starting from file-backed zero, inspected iteration/store preserves0..3 absent other writers.",
+    "limit": "No exclusion of aliases, indirect/bulk writes, corrupted state or alternate initialization."
+  },
   "limits": [
     "No movies, window interaction or target execution.",
     "No historical intermediate release inspected.",
