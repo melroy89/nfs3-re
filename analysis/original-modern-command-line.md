@@ -87,3 +87,28 @@ For a matched prefix index1, the retained dispatch **`004a5317..004a5326`** reac
 At **`004a5480`**, nonzero `007a1fdc` also activates checks for other required launch fields. The retained error text names rebroadcaster address, player name, player ID and number of players. A network-setup consumer at `0049e1cb` loads this field into ECX before `004a5b00`; this address is a locator outside this parser’s retained function envelope, not a complete network ABI proof. Together the matched `-PORT=` table/dispatch establishes a concrete producer, without claiming that it is the only write to the global.
 
 This resolves a [movie-policy unknown](original-modern-idle-movie.md): both playback wrappers reject nonzero `007a1fdc`, so that gate is associated with the network-launch port, distinct from **NoMovies / `-nomovies` bit11**. The original idle controller rejects it before music stop/playback policy; Modern removes that early test but still reaches the identical wrapper gate. Consequently, a configured port can suppress the actual movie request even after Modern’s idle controller reaches its stop/select/restart sequence. This is static control flow, not proof of a visible or audible network-session defect.
+
+## Retained prefix handlers and storage map
+
+The expanded audit verifies **byte equality** for complete network-prefix dispatch/assignment envelope **`004a520b..004a5334`**, final launch-field checks **`004a5480..004a54e3`**, and copy helper **`004e0e30..004e0e59`**. Thus the following are retained behaviors within that scope, despite changes elsewhere in the containing parser:
+
+| Prefix index / name | Destination and matched-handler behavior |
+|---|---|
+| 0 / `-IP=` | `007a1fa0`; reject empty or length>=60 suffix, otherwise copy including terminator |
+| 1 / `-PORT=` | `007a1fdc`; `%d` conversion, mark recognized on nonzero conversion result |
+| 2 / `-NAME=` | `007a1fe0`; copy at most11 bytes from original argument suffix, zero-pad unused count |
+| 3 / `-PLAYERS=` | `007a1ff8`; numeric handler |
+| 4 / `-PNUM=` | `007a1ffc`; numeric handler |
+| 5 / `-RACE=` | `007a2000`; numeric handler |
+| 6 / `-TRACK=` | `007a2004`; numeric handler |
+| 7 / `-CAR=` | `007a2008`; numeric handler |
+| 8 / `-LAPS=` | `007a200c`; numeric handler |
+| 9 / `-LEVEL=` | `007a2010`; numeric handler |
+| 10 / `-CLASS=` | `007a2014`; numeric handler |
+| 11 / `-AINUM=` | `007a2018`; numeric handler |
+
+The common numeric branch computes **`007a1fec + 4*prefix_index`**, passes the suffix in the scratch argument and format `%d` to `004f0548`, and marks recognition on nonzero conversion result. It has no local per-field range checking. This does not establish every field’s later gameplay interpretation, protocol width, valid domain or successful network launch.
+
+For Name, the caller deliberately returns to the **original argv pointer plus matched-prefix length**, rather than copying the transformed scratch suffix. Helper `004e0e30` preserves ECX/ESI, returns the original destination in EAX, advances EDX while copying and returns EDX=0. It pads only the remainder of its supplied11-byte count. For a source at least11 bytes long, this helper does not append an additional terminator or write byte12. Preexisting destination bytes and later consumers remain separate concerns; a reconstruction must not silently change the retained bounded-copy behavior.
+
+The final launch checks require the IP and Name buffers to be nonempty and `007a1ff8` nonzero when Port is nonzero. They do **not** individually test `007a1ffc` there, despite the error text mentioning Player ID. This is the exact local check sequence, not evidence that player ID is optional throughout the remaining network stack. No command-line or network probe was executed.

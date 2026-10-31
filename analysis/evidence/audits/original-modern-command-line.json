@@ -12,6 +12,13 @@
           "bytes_sha256": "c5b3385d57d9be5fc948591d172c9e121ea264120ad78ba53ab95d4961a94c46",
           "assembly": "analysis/captures/modern-differences/command-line/original-004a5080.asm",
           "assembly_sha256": "08c76b4f40b638a3da40343e90deaa56b551a4d239503a71904fe457d40ed917"
+        },
+        {
+          "start": "004e0e30",
+          "end": "004e0e59",
+          "bytes_sha256": "348244837cdf83566bcd50b45ce02f71b7fa9a0e15fc4af961629b29fab09f8e",
+          "assembly": "analysis/captures/modern-differences/command-line/original-004e0e30.asm",
+          "assembly_sha256": "d6ad8a1eb1d7d84559123467a39a7fdec6fff52154ed5325f0f876c7c39d88b6"
         }
       ],
       "switches": [
@@ -263,6 +270,13 @@
           "bytes_sha256": "6ba7419ae4537908377682240aa68c911723fdfeb4f84618234dc73dea026370",
           "assembly": "analysis/captures/modern-differences/command-line/official_modern-004a5080.asm",
           "assembly_sha256": "29286df1a130f5e83855c1bcfc27e53f5bd7646fc5316743b9c908765e020a9b"
+        },
+        {
+          "start": "004e0e30",
+          "end": "004e0e59",
+          "bytes_sha256": "348244837cdf83566bcd50b45ce02f71b7fa9a0e15fc4af961629b29fab09f8e",
+          "assembly": "analysis/captures/modern-differences/command-line/official_modern-004e0e30.asm",
+          "assembly_sha256": "49d458a2a3f7cf57978a680441f3312d843a39816d2fd89e0afd86a37ef33a9e"
         },
         {
           "start": "004b57f4",
@@ -544,5 +558,22 @@
     "No command-line/game execution.",
     "Table recognition is not full downstream option semantics.",
     "No universal claim that legacy options have no other parser path."
+  ],
+  "identical_network_parser_ranges": [
+    {
+      "start": "004a520b",
+      "end": "004a5334",
+      "sha256": "953defea83a4178831a8ed0288396c5d34a97b8e895ca484d2f7a9c4db2262b7"
+    },
+    {
+      "start": "004a5480",
+      "end": "004a54e3",
+      "sha256": "81506dd5d3a427a89d42e123300b83bcc65ea84f2a512ed1dedf21acb70df028"
+    },
+    {
+      "start": "004e0e30",
+      "end": "004e0e59",
+      "sha256": "348244837cdf83566bcd50b45ce02f71b7fa9a0e15fc4af961629b29fab09f8e"
+    }
   ]
 }
