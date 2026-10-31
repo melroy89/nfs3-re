@@ -64,10 +64,10 @@
         },
         {
           "start": "00495230",
-          "end": "0049527f",
-          "bytes_sha256": "d6a0fd2c458fc874940dc04f0b276a5df98e784dddd3447d5d44e4832eb70845",
+          "end": "004955fb",
+          "bytes_sha256": "b7bba6603f858e60ff0c657adf834d2ac98a0d6d7b04e2e45fdb9d4b978c276e",
           "assembly": "analysis/captures/modern-differences/clock-source/original-00495230.asm",
-          "assembly_sha256": "a1dfc6de87994a19a3fecf82bab3f831b07d3507ddb2a807caa84f49a4225d61"
+          "assembly_sha256": "fbed747c5a4c774e760c4712449c2056bd2392c4aacadc316cf5426c272fbe64"
         },
         {
           "start": "0048eb97",
@@ -263,10 +263,10 @@
         },
         {
           "start": "00495230",
-          "end": "00495279",
-          "bytes_sha256": "87075fd6c82fb3221b6b09af0458e003b375716e8729d5c3508b9b3b7020fb3d",
+          "end": "0049559f",
+          "bytes_sha256": "d56286003d6497fe5ec929558a34c93141b113cb2a904e5f022039acc059f45f",
           "assembly": "analysis/captures/modern-differences/clock-source/official_modern-00495230.asm",
-          "assembly_sha256": "c10af10e3ba69bc52e7f0738ae9bdd0c0be660bf0609ea8d40c2078d74605104"
+          "assembly_sha256": "579224cdf002cb95d7c0e3c5ed23b076489230ceb802afc84d2ea2e51d350d6e"
         },
         {
           "start": "004955a0",
@@ -549,6 +549,12 @@
       "Prefixes only, not complete rendering-body equivalence or complete callback effects.",
       "Concrete update admission change; no end-to-end loading benchmark or release attribution."
     ]
+  },
+  "loading_progress_return": {
+    "modern": "00495589..00495594 returns1 exactly when raw DWORD local-10 equals incoming stack DWORD+1c; else0. Early gates return0.",
+    "comparison": "Integer bit equality, not float numeric equality or approximate completion.",
+    "original": "Tail004955c9..004955f0 resets/loads x87 control state; no corresponding local SETE return normalization.",
+    "limits": "Caller dependence and transitive x87 behavior remain unqualified; full body captures do not alone establish equivalence."
   },
   "original_loading_input_drain": {
     "call": "004a3481 ->004f0240",

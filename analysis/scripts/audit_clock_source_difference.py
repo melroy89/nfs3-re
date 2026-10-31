@@ -27,9 +27,9 @@ def main():
         pe=pefile.PE(data=data);images[label]=pe
         spans=list(TIMER_SPANS)+[(0x4f0240,0x4f024a),(0x4f2790,0x4f279c if label=='original' else 0x4f279b),
                                  (0x533d18,0x533d1e)]
-        if label=='original':spans += [(0x4a3400,0x4a35cb),(0x495230,0x49527f)]
+        if label=='original':spans += [(0x4a3400,0x4a35cb),(0x495230,0x4955fb)]
         else:spans += [(0x4a33d0,0x4a35a5),(0x490134,0x4901c3),
-                      (0x495230,0x495279),(0x4955a0,0x4955c4),(0x451960,0x4519b0),
+                      (0x495230,0x49559f),(0x4955a0,0x4955c4),(0x451960,0x4519b0),
                       (0x4b5624,0x4b5634)]
         spans += [(a,a+7) for a in SITES if a!=0x4f2792]
         rows=[]
@@ -74,6 +74,12 @@ def main():
         'modern_prefix':'00495230..00495279: active flag, input/abort handling, timing helper00490134; signed-negative result returns0 through00495594 before calls00434b20/004c4480.',
         'limits':['Prefixes only, not complete rendering-body equivalence or complete callback effects.',
                   'Concrete update admission change; no end-to-end loading benchmark or release attribution.']}
+    assert images['official_modern'].get_data(0x95589,11).hex()=='31c08b5df0395d1c0f94c0'
+    result['loading_progress_return']={
+        'modern':'00495589..00495594 returns1 exactly when raw DWORD local-10 equals incoming stack DWORD+1c; else0. Early gates return0.',
+        'comparison':'Integer bit equality, not float numeric equality or approximate completion.',
+        'original':'Tail004955c9..004955f0 resets/loads x87 control state; no corresponding local SETE return normalization.',
+        'limits':'Caller dependence and transitive x87 behavior remain unqualified; full body captures do not alone establish equivalence.'}
     for image in images.values():
         assert image.get_data(0xf0240,10).hex()=='e82bc7fdff85c075f7c3'
     assert images['original'].get_data(0xa3481,5).hex()=='e8bacd0400'
