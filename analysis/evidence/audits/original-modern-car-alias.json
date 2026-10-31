@@ -7,6 +7,34 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "004d1000",
+          "end": "004d10d8",
+          "sha256": "7c05633fbd2c6171ab8e1f0834ae7e1d67b61ee9b7176280c8514bbbcefb1f4b",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004d1000.asm",
+          "assembly_sha256": "0fc486a21592eb45a7d5f2d2d6489b02af7c141989aa1716864bf4e4d4365d3e"
+        },
+        {
+          "start": "004d06f0",
+          "end": "004d071b",
+          "sha256": "7d019308785865711ac98f2332e33f54e9978bbdcd73e2e7c1c41b8c0d482428",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004d06f0.asm",
+          "assembly_sha256": "f5b51b2648f3a93e1d92d3ee5afc9b09a29f9a7e17a62dd2d9a849fd4ea86c32"
+        },
+        {
+          "start": "004d09f2",
+          "end": "004d0a0f",
+          "sha256": "93d5fbbb2e8214071e4e391883751a3996e868434dbace49dca869e02af852ff",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004d09f2.asm",
+          "assembly_sha256": "93fcd63737a7ce590f1ff728d514070110eebc52fbd87c3d27bc487a278eb570"
+        },
+        {
+          "start": "004dfd56",
+          "end": "004dfd73",
+          "sha256": "e8e5057d4262fa80aa524f7f130d273e0dd9b35f25cbc72950dd0c7c37277a21",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004dfd56.asm",
+          "assembly_sha256": "97347b6b7c41d8dded6bea812a1a6a6204666cdf338e6f1668d4769109a385fd"
+        },
+        {
           "start": "00452100",
           "end": "0045210a",
           "sha256": "41e1a85cde84bfdaaeaf72fb70a1a6485bdcaf65b57a1b442305e5722ad75495",
@@ -102,6 +130,34 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "004d1000",
+          "end": "004d10d8",
+          "sha256": "7c05633fbd2c6171ab8e1f0834ae7e1d67b61ee9b7176280c8514bbbcefb1f4b",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004d1000.asm",
+          "assembly_sha256": "17f9fc5eafb36a5c9ad2dcd171d702e122debf0c2d0250436d589fc528f0270c"
+        },
+        {
+          "start": "004d06f0",
+          "end": "004d071b",
+          "sha256": "7d019308785865711ac98f2332e33f54e9978bbdcd73e2e7c1c41b8c0d482428",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004d06f0.asm",
+          "assembly_sha256": "176ca17c5c291bef859c2bc4a70ba5751026de51dcf3b518d6c81d0e387e1022"
+        },
+        {
+          "start": "004d09f2",
+          "end": "004d0a0f",
+          "sha256": "93d5fbbb2e8214071e4e391883751a3996e868434dbace49dca869e02af852ff",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004d09f2.asm",
+          "assembly_sha256": "cb077649cadc94f839e496bb3334591bcac4c477d16336e2f4735ffdf1001869"
+        },
+        {
+          "start": "004dfd56",
+          "end": "004dfd6d",
+          "sha256": "d58ea03c32163153a67e58218927072255791905188317db76d506811b595d59",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004dfd56.asm",
+          "assembly_sha256": "d2af1429e2842cc79905b2a18b8f08f4c7404be3d3fe192a1c384216e0425842"
+        },
         {
           "start": "00452100",
           "end": "0045210a",
@@ -441,6 +497,27 @@
       "end_exclusive": "0045210a",
       "length": 10,
       "sha256": "41e1a85cde84bfdaaeaf72fb70a1a6485bdcaf65b57a1b442305e5722ad75495",
+      "byte_identical": true
+    },
+    {
+      "start": "004d1000",
+      "end_exclusive": "004d10d8",
+      "length": 216,
+      "sha256": "7c05633fbd2c6171ab8e1f0834ae7e1d67b61ee9b7176280c8514bbbcefb1f4b",
+      "byte_identical": true
+    },
+    {
+      "start": "004d06f0",
+      "end_exclusive": "004d071b",
+      "length": 43,
+      "sha256": "7d019308785865711ac98f2332e33f54e9978bbdcd73e2e7c1c41b8c0d482428",
+      "byte_identical": true
+    },
+    {
+      "start": "004d09f2",
+      "end_exclusive": "004d0a0f",
+      "length": 29,
+      "sha256": "93d5fbbb2e8214071e4e391883751a3996e868434dbace49dca869e02af852ff",
       "byte_identical": true
     }
   ],
