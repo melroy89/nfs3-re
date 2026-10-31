@@ -140,3 +140,19 @@ These are **packaged defaults**, not effective settings on this machine. Six of 
 A case-insensitive byte search finds **no `LightBeams` or `VideoDriver` literal** in the22 selected members, under either ASCII or UTF-16LE encoding. The same pinned README contains `LightBeams` at line403 in the v1.2.0 capability-settings bullet. This is a historical/final-package mismatch in available evidence, not proof that the old feature never existed or all beam rendering was removed. Raw searches omit compressed/encoded or dynamically constructed strings, external components and other encodings; packed provider contents are not unpacked here. The result does not qualify game or provider behavior.
 
 For **MP120-005**, the FogSupport parser/configuration portion is supported; the LightBeams setting still requires an intermediate-release binary/configuration pair or a verified alternate reader. For **MP120-004**, the final ThrashDriver spelling is independently confirmed by both EXE literal and packaged INI. Keep those distinctions when choosing a reconstruction interface: a historical README spelling must not silently become a final-binary option name. No historical introduction date or runtime rendering success is inferred.
+
+## Compatibility mask persistence and adapter return contract
+
+The expanded [selection audit](scripts/audit_renderer_selection_difference.py) now asserts the exact BSF/BTR/PUSH/CALL loop, both configuration BTS instructions and the actual module/procedure IAT names. Its [manifest](evidence/audits/original-modern-renderer-selection.json) records the bounded state/register contract in addition to the complete existing captures.
+
+Within the two-setting block `004b599e..004b59e4`, nonzero reads set global mask `007a2790` bit12 (`DisableMaxWindowedMode`) or bit1 (`NoDwmOffForPrimaryLock`); zero reads branch around BTS. Thus, absent other writes, the local update is:
+
+`after = before | (disable != 0 ? 0x1000 : 0) | (no_dwm != 0 ? 0x2 : 0)`
+
+This is an accumulating set operation, **not assignment of the complete mask from current Boolean settings**. False/default0 does not locally clear a prior bit. Reconfiguration lifetime, initial global ownership and concurrent writes still need caller analysis before inferring an observed stale-setting bug.
+
+Adapter `004b57c4` copies incoming EAX into ESI, obtains optional `DDRAW.DLL!SetAppCompatData`, and iterates its private copy in ascending set-bit order. Input`00001002h` produces `(1,0)` then `(12,0)` stack-argument calls. BTR modifies ESI only; it does not clear the published global mask. A repeated adapter call can therefore reissue those requests. The selected provider's signature, callee stack cleanup and interpretation of indices remain external ABI requirements, not implementation proof from the name alone.
+
+The adapter saves/restores ECX, EDX, ESI and EDI. It returns without a provider call if lookup fails, leaving EAX0. With a resolved export and zero input mask, BSF sets ZF and the loop exits with EAX still containing the resolved pointer. With a nonzero mask, EAX is whatever the last provider call left; that result is not tested or normalized. Therefore it must not be reconstructed as a reliable Boolean success API merely because a decompiler gives it a scalar return. Its ordinary loader caller also does not establish OS success by checking that return.
+
+Underlying `004f1ea0` first uses GetModuleHandleA and requests LoadLibraryA only on a null result. `004f1ebc` resolves the export afterward. These local bodies do not track whether a module handle is borrowed or a newly acquired load reference, and show no corresponding FreeLibrary; whole-process module lifetime/cleanup remains unverified. The evidence establishes optional requests and local state handling, not a DirectDraw/Wine compatibility effect, reduced lag, supported OS range or historical default. No DLL/API execution, compatibility toggle or timing test occurred.

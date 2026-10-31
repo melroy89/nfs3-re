@@ -59,6 +59,23 @@ def main():
             item['initial_state_pairs'] = list(struct.unpack('<10I', pe.get_data(0x55fd94-0x400000, 40)))
             item['optional_interface'] = {'dll': string(0x53f76c), 'export': string(0x53f778)}
             assert item['optional_interface'] == {'dll': 'DDRAW.DLL', 'export': 'SetAppCompatData'}
+            assert pe.get_data(0xb57df,15) == bytes.fromhex('0fbcce740a0fb3ce6a0051ffd7ebf1')
+            assert pe.get_data(0xb599e+27,8) == bytes.fromhex('0fba2d90277a000c')
+            assert pe.get_data(0xb59dc,8) == bytes.fromhex('0fba2d90277a0001')
+            iat = {i.address: i.name for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports}
+            assert iat[0x53454c] == b'GetModuleHandleA'
+            assert iat[0x53458c] == b'LoadLibraryA'
+            assert iat[0x534558] == b'GetProcAddress'
+            item['compatibility_bit_contract'] = {
+                'global_mask': '007a2790', 'input': 'EAX copied into private ESI',
+                'configuration_updates': 'Only set bits12/1 on nonzero settings; false paths do not clear bits.',
+                'dispatch': 'BSF/BTR removes lowest private set bit, calls resolved function(index,0), repeats.',
+                'example_input_00001002': [[1,0],[12,0]],
+                'zero_mask_with_resolved_export': 'No provider call; EAX remains resolved pointer.',
+                'nonzero_mask_result': 'Last provider EAX not checked or normalized.',
+                'local_saved_registers': ['ECX','EDX','ESI','EDI'],
+                'limit': 'No provider implementation/OS effect or complete module reference lifetime proof.'}
+
         result['binaries'][label] = item
     assert retained['original'] == retained['official_modern']
     result['retained_setup_tail'] = {'start': '005176aa', 'end': '0051776c',
