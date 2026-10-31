@@ -138,3 +138,17 @@ Neither helper writes the selected tick field. Consequently the enclosing dispat
 For C reconstruction, preserve wrapped DWORD subtraction followed by signed interpretation and the signed `>0` admission test; plain signed C subtraction can overflow and introduce undefined behavior. Preserve the original x87 operations and binary32 stores at the selected version's precision contract. Do not silently replace the per-object tick with a global frame delta.
 
 **Bounded work status: done; confidence: verified static bodies and file-backed constants.** Remaining scope is the complete object-tick lifecycle, all callers, visual wheel behaviour and controlled replay/network comparison. These local timing changes do not prove a physics change, replay incompatibility or multiplayer desynchronization.
+
+## Frame finalization adds a snapshot call; dialog cleanup bypasses one reset
+
+[The frame-cleanup audit](scripts/audit_race_frame_cleanup.py) adds complete original/Modern caller/callee witnesses, with hashes and disassembly locations in [its manifest](evidence/audits/race-frame-cleanup.json). This qualifies the earlier observation that removal of the vehicle dispatcher's snapshot store does not mean that shared snapshot stops updating.
+
+Original `004bc650..004bc65f` is 15 bytes: calls `00434990`, `00434a70`, then returns. Modern `004bc650..004bc664` is 20 bytes: it retains those two calls and inserts `CALL 004b7c20` at `004bc65d` before the epilogue. The added target's complete 15-byte body `004b7c20..004b7c2f` is byte-identical in original and Modern and copies race tick DWORD `007d3684` to shared snapshot `0055fe28`.
+
+The verified change is a new caller edge to an existing snapshot helper. It does not establish how often the enclosing finalizer runs, whether the tick changes between earlier work and this store, or that this store replaces every removed dispatcher write one-for-one. All-path cadence and concurrency remain separate. Its additional EAX result is also not automatically equivalent to the old final callee's return value.
+
+A separate 15-byte helper `004bc670..004bc67f` retains its later call `004bc530`, but changes the first call at `004bc673` from original `0044be20` to Modern `00445f10`. The original 20-byte wrapper `0044be20..0044be34` zeroes DWORD `00559234` then calls `00445f10`. Modern NOP-fills that wrapper. Direct target `00445f10..00445f33` is byte-identical between versions and clears DWORDs `00558b18`, `00558b14`, `00558b0c` and byte `00558b10`.
+
+Therefore this retarget preserves the direct dialog-clear operation while dropping this wrapper's reset of `00559234`. It is not only call flattening: one global write is absent from this local route. Later `004bc530` behavior is already bounded in the [race-initialization/reset comparison](original-modern-race-initialization.md). Any subsequent indirect effects must be traced separately before claiming that the global necessarily remains nonzero after the complete operation.
+
+**Bounded work status: done; confidence: verified static call edges and exact stores.** Required follow-up is finalizer caller cadence, the active meaning/other writers of `00559234`, and actual menu/race transition behavior. Preserve these version-specific writes and their order in reconstruction; do not silently restore the old wrapper reset to Modern. No executable bytes, Ghidra state or maintained C were changed.
