@@ -197,7 +197,21 @@ def main():
         'caption_latin1':original.get_string_at_rva(0x13ce54).decode('latin1'),
         'selected_entry':0,'message_flags':48,
         'interval_partition':{'start':'004a2ffc','end_exclusive':'004a3070','old_zero_prefix_bytes':84,'old_table_bytes':24,'old_alignment_bytes':8,'modern_nop_bytes':116},
-        'limit':'Specific original FindWindow warning branch removed; other instance checks, class-pointer lifetime and real window detection not established.'}
+        'limit':'Original inline warning replaced by relocated Modern caller/common fatal helper; FindWindow detector retained. Class-pointer lifetime and real window detection not established.'}
+    assert gate==modern.get_data(0xa38c0,34)
+    modern_caller=modern.get_data(0xa3e0c,24)
+    assert modern_caller[:5]==bytes.fromhex('e8affaffff')
+    assert modern.get_string_at_rva(0x13d02c)==b'The game is already running.'
+    failure_helper=modern.get_data(0xb570c,25)
+    assert failure_helper[:5]==bytes.fromhex('6810100500')
+    assert modern.get_data(0xb571f,5)==bytes.fromhex('e859d30300')
+    result['removed_existing_window_warning']['modern_counterpart']={
+        'gate_identical':True,'caller_start':'004a3e0c','caller_end_exclusive':'004a3e24',
+        'caller_hex':modern_caller.hex(),'text_va':'0053d02c',
+        'text':'The game is already running.','failure_helper':'004b570c',
+        'failure_helper_hex':failure_helper.hex(),'message_flags':0x51010,
+        'terminal_target':'004f2a7d',
+        'limit':'Existing-window gate retained; inline warning table replaced by common fatal path. Provider/window results and complete cleanup remain untested.'}
     result['limits']=['No memory, disk, desktop, dialog or target API execution.','Memory fields described by exact offsets; no complete API structure/type reconstruction.','Current-directory helper, API failures and diagnostic termination internals are not fully audited here.','No release-note attribution inferred solely from a changed startup routine.']
     (ROOT/'analysis/evidence/audits/original-modern-startup-requirements.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: startup requirement counterparts, caller witnesses, imports and messages')

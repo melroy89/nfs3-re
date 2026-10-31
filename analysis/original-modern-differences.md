@@ -460,7 +460,7 @@ The [audio-slider rounding comparison](original-modern-music-start.md#five-audio
 
 The [track-length formatting comparison](original-modern-track-length-text.md) identifies a selector/global rewrite and localized-unit consolidation at004565d6: two pointer tables remain with decimal commas changed to dots in the second table, a third is zeroed, and the hard-coded km paths are replaced by language lookup. Official unit labels and first-profile/default linkage are verified, giving MP140-032 partial static support; live bank selection, rendered output and introduction remain unverified.
 
-The [existing-window startup warning comparison](original-modern-startup-requirements.md#removed-existing-window-warning-and-embedded-table) identifies an original FindWindowA/MessageBoxA branch replaced by Modern NOPs. Its associated116-byte gap was mostly original zero/data, including a six-pointer table whose inspected consumer uses only entry0; no global multiple-instance claim is made.
+The [existing-window startup warning comparison](original-modern-startup-requirements.md#removed-existing-window-warning-and-embedded-table) pairs the retained FindWindowA detector with Modern’s relocated caller and common fatal warning helper: text, flags and exit routing change. The old116-byte zero/data/table region becomes NOPs; that replacement does not remove instance detection.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list

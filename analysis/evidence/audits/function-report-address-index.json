@@ -377,7 +377,7 @@
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
-      "sha256": "fa6d68fd87ecf8a2e82d2b36de460263211c2ca696eb4779c08e903bdfff4ef5"
+      "sha256": "7c1f0779eabe8fd86745fd0b4d203d335763f2738a8b26aafd72c200c1bad600"
     },
     {
       "path": "analysis/original-modern-state14.md",
@@ -7749,6 +7749,7 @@
           "path": "analysis/original-modern-startup-requirements.md",
           "entry_mentioned": false,
           "addresses": [
+            "004a3e0c",
             "004a3f6c"
           ]
         },

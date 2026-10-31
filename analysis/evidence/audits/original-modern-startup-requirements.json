@@ -984,7 +984,20 @@
       "old_alignment_bytes": 8,
       "modern_nop_bytes": 116
     },
-    "limit": "Specific original FindWindow warning branch removed; other instance checks, class-pointer lifetime and real window detection not established."
+    "limit": "Original inline warning replaced by relocated Modern caller/common fatal helper; FindWindow detector retained. Class-pointer lifetime and real window detection not established.",
+    "modern_counterpart": {
+      "gate_identical": true,
+      "caller_start": "004a3e0c",
+      "caller_end_exclusive": "004a3e24",
+      "caller_hex": "e8affaffff85c0740fb82cd05300e8ed180100e948010000",
+      "text_va": "0053d02c",
+      "text": "The game is already running.",
+      "failure_helper": "004b570c",
+      "failure_helper_hex": "6810100500682cce5300506a00ff1564475300e859d30300c3",
+      "message_flags": 331792,
+      "terminal_target": "004f2a7d",
+      "limit": "Existing-window gate retained; inline warning table replaced by common fatal path. Provider/window results and complete cleanup remain untested."
+    }
   },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",
