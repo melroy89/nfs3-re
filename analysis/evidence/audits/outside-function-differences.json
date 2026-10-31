@@ -7949,5 +7949,58 @@
     "report": "analysis/original-modern-credits-panorama.md",
     "report_sha256": "98cd4df7f63a5e3d97c5d287c1df8c00c0ff9c2901348537fea4c2cba56644d3",
     "limit": "All differences routed to callback replacement/relocation research; distant shared exit and called language/input helpers remain separately bounded."
+  },
+  "logo_interval_partition": {
+    "interval": "004a40a4..004a4ba0",
+    "parts": [
+      {
+        "start": "004a40a4",
+        "end_exclusive": "004a40c0",
+        "role": "Unchanged leading bytes",
+        "bytes": 28,
+        "changed_bytes": 0,
+        "original_sha256": "f4a3497696ee2ec7f6a43fb115d9bf1f480321f7f046bd2ae310c6737fa2da4f",
+        "modern_sha256": "f4a3497696ee2ec7f6a43fb115d9bf1f480321f7f046bd2ae310c6737fa2da4f"
+      },
+      {
+        "start": "004a40c0",
+        "end_exclusive": "004a4390",
+        "role": "Logo producer bodies and alignment",
+        "bytes": 720,
+        "changed_bytes": 126,
+        "original_sha256": "abc7fb8973bd2868aacdd4e15f9d065e9dd689522e143c5de9bc851082d471c2",
+        "modern_sha256": "e291d8c56fa5a1a28f52b06cc63fe7e1a0c64dd551614cde0666440a587723ad"
+      },
+      {
+        "start": "004a4390",
+        "end_exclusive": "004a444c",
+        "role": "Overlapping old loader/animation and expanded Modern loader",
+        "bytes": 188,
+        "changed_bytes": 183,
+        "original_sha256": "8e4716c41c560dd2b092753d708c6e8799f9a3c8d62d260dd1790bc173d6175c",
+        "modern_sha256": "4d4bbc4eaa929443b6a5e30abb0217fde0310fd72dd4c0cd13dd8b05bf236712"
+      },
+      {
+        "start": "004a444c",
+        "end_exclusive": "004a46f0",
+        "role": "Paired animation body/epilogue and padding",
+        "bytes": 676,
+        "changed_bytes": 181,
+        "original_sha256": "1505e547bf9de06959a410dc98437ac8a8ba22700a229150b135edfdc3d7ae7a",
+        "modern_sha256": "c32027dd617bdf92f9c7a5d1404718d74a06474138d6230aace76c47265bc8a2"
+      },
+      {
+        "start": "004a46f0",
+        "end_exclusive": "004a4ba0",
+        "role": "Unchanged trailing bytes",
+        "bytes": 1200,
+        "changed_bytes": 0,
+        "original_sha256": "d81c73c48f69e2e5f58729812a81cacd4b7f10b6bfa4e251681a08d9d924b204",
+        "modern_sha256": "d81c73c48f69e2e5f58729812a81cacd4b7f10b6bfa4e251681a08d9d924b204"
+      }
+    ],
+    "report": "analysis/original-modern-frontend-page.md",
+    "report_sha256": "fd4c0f10d07e00a8673ca2a3a9cc7840c5f631629413b5c48acc3590c791fc1d",
+    "limit": "Same-address partitions overlap different old/new function roles; counterpart calls/registration and report evidence govern semantics, not these partitions."
   }
 }

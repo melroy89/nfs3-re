@@ -298,3 +298,9 @@ The two captured direct calls in the paired animation envelope are identical at 
 Thus **neither inspected call site depends on the original working EAX**. A maintained helper for these callers need not invent a meaningful scalar return value from the original decompilation. This does not authorize ignoring EAX at unknown indirect callers or establish whole-function equivalence: memory writes, changed constants/counts, flags and x87 state remain material. PUSHAD/POPAD preserve neither flags nor floating-point state, and the producer still has the previously documented count/precondition limits.
 
 Exact prologue/epilogue bytes, both calls, immediate overwrite witnesses and equality of the initialization continuation are retained in the [manifest](evidence/audits/original-modern-model-presence.json). The executable and Ghidra remain unchanged; no animation or instruction probe was run.
+
+## Outside-body logo interval partition
+
+The full2812-byte interval **`004a40a4..004a4ba0`** is now partitioned in the [outside-body manifest](evidence/audits/outside-function-differences.json). All490 differing positions lie in the producer/alignment range`004a40c0..004a4390`, overlapping loader/animation range`004a4390..004a444c`, or animation/epilogue range`004a444c..004a46f0`. The28 leading bytes and1200 trailing bytes match. Exact per-part hashes/counts are retained and asserted.
+
+These are comparison partitions, not counterpart function definitions: original animation starts`004a4410`, while Modern’s expanded loader occupies part of that old animation prefix before its moved animation entry`004a444c`. Existing shared callsites and complete counterpart envelopes establish the semantic pairings. Producer/index invariants, the conditional decoded-source boundary, callback scheduling and actual frames remain limited as described above; accounting for byte positions does not close those questions.
