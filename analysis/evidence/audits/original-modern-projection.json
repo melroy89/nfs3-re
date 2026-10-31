@@ -89,6 +89,20 @@
           "bytes_sha256": "4f7208274049845359787a90209309d664fbd359a4747ba785de471f7aa12f71",
           "assembly": "analysis/captures/modern-differences/projection/original-0042383f.asm",
           "assembly_sha256": "92b2cc608979f6c2bac969d63ac17bfafc933930bcfc858375e1c89ecf517dc9"
+        },
+        {
+          "start": "004238b0",
+          "end": "00423959",
+          "bytes_sha256": "f02e9958bc6f227e3d313c73111b5b678d3d23cdde0f4650f45072bb45ab8e69",
+          "assembly": "analysis/captures/modern-differences/projection/original-004238b0.asm",
+          "assembly_sha256": "d22f0e5b3d1bfc3690c9c8c4f02b572e5616c2fa39bd4a53915ea60c86b73431"
+        },
+        {
+          "start": "004251f0",
+          "end": "00425232",
+          "bytes_sha256": "f153ffb3423373e83b4a1a7c8d1f16d5f0e7ae69fc85f76d3da6193b343ca3a6",
+          "assembly": "analysis/captures/modern-differences/projection/original-004251f0.asm",
+          "assembly_sha256": "298f32b7625c8625fe6635c83657b0fd1e97c572cd622ff530ef2bc5d312c7d8"
         }
       ],
       "view_angle_setting": {
@@ -289,6 +303,20 @@
           "bytes_sha256": "4f7208274049845359787a90209309d664fbd359a4747ba785de471f7aa12f71",
           "assembly": "analysis/captures/modern-differences/projection/official_modern-0042383f.asm",
           "assembly_sha256": "da3c120091bbd0c857369832d60e539bad570cf1e3771897c233c35e41c8a765"
+        },
+        {
+          "start": "004238b0",
+          "end": "00423959",
+          "bytes_sha256": "f02e9958bc6f227e3d313c73111b5b678d3d23cdde0f4650f45072bb45ab8e69",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-004238b0.asm",
+          "assembly_sha256": "51ce0068c100af040ca9b477b539bcc1710961b2c2b9b5fc6e5e19960030b29e"
+        },
+        {
+          "start": "004251f0",
+          "end": "00425232",
+          "bytes_sha256": "f153ffb3423373e83b4a1a7c8d1f16d5f0e7ae69fc85f76d3da6193b343ca3a6",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-004251f0.asm",
+          "assembly_sha256": "e2731a7a418d11d471b81aeacc366a5b50847611c9f4cafecc9042a77d8fc696"
         }
       ],
       "view_angle_setting": {
@@ -626,6 +654,24 @@
     "initializer": "Normal mode loop visits1..24; common00422dd8 stores mode number at descriptor+0. Slot loop initializes0 or0/1 according to session.",
     "meaning": "Type8 is not excluded by a null mode-table row or missing ordinary initialization.",
     "limits": "This does not prove actual selection/publication into005e10b0, finalizer reachability, valid vehicle state or missing projection source production."
+  },
+  "type8_selection_witness": {
+    "paired_identical_spans": [
+      {
+        "start": "004238b0",
+        "end_exclusive": "00423959",
+        "sha256": "f02e9958bc6f227e3d313c73111b5b678d3d23cdde0f4650f45072bb45ab8e69"
+      },
+      {
+        "start": "004251f0",
+        "end_exclusive": "00425232",
+        "sha256": "f153ffb3423373e83b4a1a7c8d1f16d5f0e7ae69fc85f76d3da6193b343ca3a6"
+      }
+    ],
+    "condition": "004251f0 receives selector00423d90 resultffffffff at00425208.",
+    "publication": "00425218 calls004238b0 with requestedEDX8 and EAX=context+0c slot;8 bypasses callback cases3/4/5/6, then0042394d publishes mode-table row8 pointer to005e10b0[slot].",
+    "continuation": "00425228 dispatches mode8 through00426450 before exiting this fallback branch.",
+    "limits": "Actual selector failure and later finalizer ordering/pointer stability not observed; projection source writer still unresolved."
   },
   "indexed_source_candidate": {
     "span": "00423a60..00423aab",

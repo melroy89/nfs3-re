@@ -23,7 +23,8 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
         for start,end in SPANS[label]+[(0x4213b0,0x421441),(0x41bc90,0x41bf26),
-                                      (0x422cf0,0x422d9b),(0x422da2,0x422de5),(0x42383f,0x42386b)]:
+                                      (0x422cf0,0x422d9b),(0x422da2,0x422de5),(0x42383f,0x42386b),
+                                      (0x4238b0,0x423959),(0x4251f0,0x425232)]:
             out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -125,6 +126,16 @@ def main():
         'initializer':'Normal mode loop visits1..24; common00422dd8 stores mode number at descriptor+0. Slot loop initializes0 or0/1 according to session.',
         'meaning':'Type8 is not excluded by a null mode-table row or missing ordinary initialization.',
         'limits':'This does not prove actual selection/publication into005e10b0, finalizer reachability, valid vehicle state or missing projection source production.'}
+    selected_spans=[]
+    for start,end in ((0x4238b0,0x423959),(0x4251f0,0x425232)):
+        blob=images[0].get_data(start-0x400000,end-start)
+        assert blob==images[1].get_data(start-0x400000,end-start)
+        selected_spans.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}','sha256':hashlib.sha256(blob).hexdigest()})
+    result['type8_selection_witness']={'paired_identical_spans':selected_spans,
+        'condition':'004251f0 receives selector00423d90 resultffffffff at00425208.',
+        'publication':'00425218 calls004238b0 with requestedEDX8 and EAX=context+0c slot;8 bypasses callback cases3/4/5/6, then0042394d publishes mode-table row8 pointer to005e10b0[slot].',
+        'continuation':'00425228 dispatches mode8 through00426450 before exiting this fallback branch.',
+        'limits':'Actual selector failure and later finalizer ordering/pointer stability not observed; projection source writer still unresolved.'}
     initializer = images[0].get_data(0x23a60,0x4b)
     iterator = images[0].get_data(0x23a20,0x3e)
     assert iterator == images[1].get_data(0x23a20,0x3e)
