@@ -88,3 +88,11 @@ The [scene-admission comparison](original-modern-state14.md#modern-scene-entry-r
 For the comparison, local uppercase backup `fedata_org/menus/ADVGRPH.MNU` contains no item with `listname=fog`, while official Modern contains the two above. Both file hashes and selected fields are retained. This backup is **not authenticated as retail or paired to the supplied original executable**; its absence is bounded asset evidence, not proof that no original menu/configuration/command route could affect fog.
 
 **MP150-008 now has partial static support:** a concrete menu route and bound fog-control mechanism are verified in final Modern, with a qualified backup contrast. Complete input dispatch, actual ordinal changes, renderer output and historical introduction remain unverified. No menu, driver, game or new instruction probe was executed, and the established Ghidra project is unchanged.
+
+## SFX intensity control admits an additional renderer-state bit
+
+The complete paired local tail **`00448728..00448765`**,61 bytes, differs at exactly one byte: TEST mask at`0044873e` changes **40h → 50h**. Both versions look up token **`SFX_INTENSITY`** at`00538e3c` through`00442a40`; a missing item skips setup. For a present item they test global byte`007a3a58`.
+
+If no tested bit is set, the retained branch ORs item byte+4 with1. Otherwise it loads binary32 global`006fbc38`, stores that value to item+54h, passes callback`00448570` in EDX and calls`0046cac0`. The remaining instructions and return tail match byte-for-byte. For equal state with bit10h set and bit40h clear, Modern therefore takes the setup branch where original takes the OR-mask01h branch. States with bit40h already set, or neither bit set, select the same local branch.
+
+This establishes an additional control-admission case, not a proven renderer identity or visible improvement. The admitted branch does not locally clear item byte+4 bit0, so final enabled state also depends on prior item state and the called setup helper. The expanded audit retains both61-byte tails, exact changed offset, token and masks. Actual menu input, helper effects, renderer output and historical attribution remain unverified.

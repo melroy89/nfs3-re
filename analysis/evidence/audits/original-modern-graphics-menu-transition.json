@@ -121,6 +121,28 @@
       ]
     }
   },
+  "sfx_intensity_admission": {
+    "baselines": {
+      "original": {
+        "start": "00448728",
+        "end_exclusive": "00448765",
+        "hex": "ba3c8e530089d8e80ca3ffff85c07422f605583a7a0040750680480401eb13d90538bc6f00ba70854400d95854e86643020031c089ec5d5f5e5a595bc3",
+        "sha256": "6e1df77235c40ec526b250b3aba7eeabf4aff04f123dd02d245a01e4a7dffe0c",
+        "admission_mask": 64
+      },
+      "official_modern": {
+        "start": "00448728",
+        "end_exclusive": "00448765",
+        "hex": "ba3c8e530089d8e80ca3ffff85c07422f605583a7a0050750680480401eb13d90538bc6f00ba70854400d95854e86643020031c089ec5d5f5e5a595bc3",
+        "sha256": "26aa706d15c6647b37fbe5e68b6757e2b7d5bbcba5cc1aff9caa8222f3dd74a7",
+        "admission_mask": 80
+      }
+    },
+    "token": "SFX_INTENSITY",
+    "token_va": "00538e3c",
+    "state_byte": "007a3a58",
+    "limit": "Local control setup admission only; renderer bit identities, final enabled state, input and visual effect untested."
+  },
   "fog_menu_assets": {
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/advgrph.mnu",

@@ -35,6 +35,20 @@ def main():
                 data = pe.get_data(site-0x400000, 5)
                 assert data[0] == 0xe8 and site+5+int.from_bytes(data[1:], 'little', signed=True) == 0x4377c4
             out['binaries'][label]['inspected_fog_gate_direct_calls'] = [f'{site:08x}' for site in sites]
+    intensity = {}
+    for label,(relative,expected,_) in SPECS.items():
+        pe=pefile.PE(str(ROOT/relative))
+        body=pe.get_data(0x48728,0x3d)
+        assert pe.get_string_at_rva(0x138e3c)==b'SFX_INTENSITY'
+        assert pe.get_data(0x48738,7)==bytes.fromhex('f605583a7a00')+bytes([0x40 if label=='original' else 0x50])
+        intensity[label]={'start':'00448728','end_exclusive':'00448765',
+            'hex':body.hex(),'sha256':hashlib.sha256(body).hexdigest(),
+            'admission_mask':0x40 if label=='original' else 0x50}
+    a,b=[bytes.fromhex(intensity[label]['hex']) for label in SPECS]
+    assert [i for i,(x,y) in enumerate(zip(a,b)) if x!=y]==[0x16]
+    out['sfx_intensity_admission']={'baselines':intensity,'token':'SFX_INTENSITY',
+        'token_va':'00538e3c','state_byte':'007a3a58',
+        'limit':'Local control setup admission only; renderer bit identities, final enabled state, input and visual effect untested.'}
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
     def parse(data):
