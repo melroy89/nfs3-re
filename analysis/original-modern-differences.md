@@ -174,7 +174,11 @@ The [projection comparison](original-modern-projection.md) traces dimension-deri
 
 The [language comparison](original-modern-language-table.md) traces the v1.6.0 marker test, compatibility flag, table-coverage tests, 27 embedded fallback entries and changed dynamic display-label range. This is selected-string fallback rather than complete format validation; external localized assets and historical regression claims remain pending.
 
-## 25. Prioritized semantic work remaining
+## 25. Replay mirror/variant admission
+
+The [replay presentation comparison](original-modern-replay-mirror.md) traces coordinated toggle, eligibility and refresh gates around state 2 and an enable global. It records the action-11 input caller separately from the still-incomplete F7 binding chain. Full mirror consumers, reset paths and rendered behavior remain pending; replay trajectory compatibility is separate.
+
+## 26. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

@@ -1,0 +1,106 @@
+{
+  "kind": "static-replay-mirror-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00484450",
+          "end": "004844c0",
+          "bytes_sha256": "1c7dee5500970fccad77246221bc6344524c096d96918f6aeeed3f7389f4fbbb",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-00484450.asm",
+          "assembly_sha256": "90faf24c24039a41cf9cfc6bc643979d29b555d4511de5153f2ee1384797c312"
+        },
+        {
+          "start": "00422aa0",
+          "end": "00422b65",
+          "bytes_sha256": "2ada1af28b9bf6ae6a384f578af3b9604bd70ad5820e762264c4c34887792d85",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-00422aa0.asm",
+          "assembly_sha256": "ae1118c4dc5e99b92be067ffab3106bc05157d9f18c37114e0600c622a0aac83"
+        },
+        {
+          "start": "004844c0",
+          "end": "00484588",
+          "bytes_sha256": "1491ebb617eec761c4cf7926bec9729c1b6b9ab8e0b487cffdf0cc03e8139369",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-004844c0.asm",
+          "assembly_sha256": "b8ca4073b32103a378ab91b6b84f17df0991a315202a9728a81e026db9912d26"
+        },
+        {
+          "start": "004c5097",
+          "end": "004c50af",
+          "bytes_sha256": "14f807060102644e5b2c26ed2f0ad44b4c9a6b64e3a061793d76115de0d7f23c",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-004c5097.asm",
+          "assembly_sha256": "8ca65d9884cd9c94605ab08f276a497fa656756add858686e3b3f09d22af0dd7"
+        },
+        {
+          "start": "0048f7b0",
+          "end": "0048f81b",
+          "bytes_sha256": "894fe2e94ba38af61ef916786048941a281c43b9c2abfe612f162d88861a5a65",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-0048f7b0.asm",
+          "assembly_sha256": "5808f6d6941e1122ef9e11bcb0ca766e699a27b0557a2f09639ee10c40846085"
+        },
+        {
+          "start": "0048f970",
+          "end": "0048fa09",
+          "bytes_sha256": "f4c577590bc8c49ba5c4ea15d376f3870d4205e9436b154bc947858ec7074526",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-0048f970.asm",
+          "assembly_sha256": "a220f74e06ea85efb4e7db9333d4a3d61d3cae58f1f7fb1ee5b1baee8e69899f"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00484450",
+          "end": "004844c0",
+          "bytes_sha256": "3b9f9f403e9dc5bb591e5d85074e5741a179475175f096348a6618b5d3f27870",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-00484450.asm",
+          "assembly_sha256": "7aa4728e7ed6df1ed8791c7acddfd36ab714c29577e8c8e85b8d20ec58da6837"
+        },
+        {
+          "start": "00422aa0",
+          "end": "00422b65",
+          "bytes_sha256": "3bbd47951b5632287769d09c4acfc83d731cac70c3800618c8108e98f2333d44",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-00422aa0.asm",
+          "assembly_sha256": "fdd7688e54a2bc820320f873be3fd0b31b6596d891ec6ed75f1c8fcb7afbe880"
+        },
+        {
+          "start": "004844c0",
+          "end": "00484588",
+          "bytes_sha256": "1491ebb617eec761c4cf7926bec9729c1b6b9ab8e0b487cffdf0cc03e8139369",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-004844c0.asm",
+          "assembly_sha256": "8c2e11aa424933836889b6b7a0ce0a821de1393824886c43299445f9b864d47a"
+        },
+        {
+          "start": "004c5097",
+          "end": "004c50af",
+          "bytes_sha256": "14f807060102644e5b2c26ed2f0ad44b4c9a6b64e3a061793d76115de0d7f23c",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-004c5097.asm",
+          "assembly_sha256": "da00e19571667cb89be5c0391548bd0ee0af30e84361601846ec26a245b37404"
+        },
+        {
+          "start": "0048f7b0",
+          "end": "0048f81b",
+          "bytes_sha256": "894fe2e94ba38af61ef916786048941a281c43b9c2abfe612f162d88861a5a65",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-0048f7b0.asm",
+          "assembly_sha256": "e8e1885dc6669ca1724592683b887ccd7a14d2ffccc051ee4b90cd753f974e53"
+        },
+        {
+          "start": "0048f970",
+          "end": "0048fa09",
+          "bytes_sha256": "f4c577590bc8c49ba5c4ea15d376f3870d4205e9436b154bc947858ec7074526",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-0048f970.asm",
+          "assembly_sha256": "a47a507266ff314bad7250533db31b8d3b6d7609bcff864e618720cc61366c29"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No replay, input or target execution.",
+    "Full F7 binding translation and rendered mirror remain unverified."
+  ]
+}

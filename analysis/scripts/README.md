@@ -269,3 +269,7 @@ Run `python3 analysis/scripts/audit_projection_difference.py` (Python pefile, GN
 ## Original versus Modern language tables
 
 Run `python3 analysis/scripts/audit_language_table_difference.py` (Python pefile, GNU objdump). It captures load/lookup/release spans, six filename entries, original install.win selection, Modern INI selector/callers, exact marker and 27 embedded fallback strings. JSON text uses byte-preserving Latin-1 decoding; this does not establish an external language file's code page. Output: `analysis/evidence/audits/original-modern-language-table.json`; raw captures remain ignored. No asset/target execution. See [language findings](../original-modern-language-table.md).
+
+## Original versus Modern replay mirror admission
+
+Run `python3 analysis/scripts/audit_replay_mirror_difference.py` (Python pefile, GNU objdump). It retains paired toggle, eligibility, refresh-prefix and input witnesses in `analysis/evidence/audits/original-modern-replay-mirror.json`; raw captures remain ignored. No replay/input/target execution. See [mirror-admission findings](../original-modern-replay-mirror.md), including the incomplete F7 mapping boundary.
