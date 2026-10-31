@@ -56,6 +56,14 @@ def main():
         'pointer_lookup': '0049627a uses full EAX scaled by4',
         'invariant': 'Starting from file-backed zero, inspected iteration/store preserves0..3 absent other writers.',
         'limit': 'No exclusion of aliases, indirect/bulk writes, corrupted state or alternate initialization.'}
+    readme=ROOT/'analysis/captures/modern-differences/upstream/package/readme_en.txt'
+    text=readme.read_bytes();readme_sha=hashlib.sha256(text).hexdigest()
+    assert readme_sha=='02bf4684dce1073b4fe7c00c747f020b43508b0cf1407b5dc3f3b864ea46d81d'
+    claim=text.decode('latin1').splitlines()[314]
+    assert claim=="- If demo video files are removed, the game doesn't try to play them."
+    result['missing_movie_catalog_route']={'id':'MP140-031','readme_line':315,
+        'readme_sha256':readme_sha,'source_claim':claim,'support':'partial static',
+        'limit':'Cached availability filtering verified; original wrapper already checked existence. Live file changes, all paths, decoder results and introduction unverified.'}
     result['limits']=['No movies, window interaction or target execution.','No historical intermediate release inspected.','Window activation producer reused from the linked window-handling investigation.','No universal timer-unit or invalid selector-state contract inferred.']
     (ROOT/'analysis/evidence/audits/original-modern-idle-movie.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired idle controller, NoMovies mask producer, attribute API and retained timer/input helpers')

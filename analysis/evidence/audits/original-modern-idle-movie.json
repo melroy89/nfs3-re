@@ -289,6 +289,14 @@
     "invariant": "Starting from file-backed zero, inspected iteration/store preserves0..3 absent other writers.",
     "limit": "No exclusion of aliases, indirect/bulk writes, corrupted state or alternate initialization."
   },
+  "missing_movie_catalog_route": {
+    "id": "MP140-031",
+    "readme_line": 315,
+    "readme_sha256": "02bf4684dce1073b4fe7c00c747f020b43508b0cf1407b5dc3f3b864ea46d81d",
+    "source_claim": "- If demo video files are removed, the game doesn't try to play them.",
+    "support": "partial static",
+    "limit": "Cached availability filtering verified; original wrapper already checked existence. Live file changes, all paths, decoder results and introduction unverified."
+  },
   "limits": [
     "No movies, window interaction or target execution.",
     "No historical intermediate release inspected.",

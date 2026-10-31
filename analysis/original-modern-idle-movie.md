@@ -41,6 +41,7 @@ Both paths then request menu music through `004104f0` with operation22, configur
 
 - **MP140-029:** partial static support. NoMovies bit11 forces availability mask0, and the idle controller requires demo availability. Local startup ordering is verified below; live option changes and all application paths remain unverified.
 - **MP140-030:** partial static support. An inactive application resets the idle timer; the Windows activation producer is independently documented. Minimize/restore behavior under particular drivers and runtime timing remain untested.
+- **MP140-031:** partial static support for startup-scanned availability filtering and idle selection. Original already checks existence inside the playback wrapper; live file changes, all request paths and introduction remain unverified.
 - Additional verified differences: file-existence filtering, switch-to-filename table conversion and increment-before-selection.
 
 The follow-up below retains startup ordering, intro admission and the playback wrapper. The complete purpose and producers of gate global `007a1fdc`, live mask rebuilding and decoder success remain separate follow-ups.
@@ -105,3 +106,11 @@ This is a saved-function coverage gap, not evidence that the controller is data 
 Selector DWORD **`0055e54c`** has file-backed initial bytes`00000000` in both EXEs; the audit records its section and file offset. This is explicit initialized data, not an assumed loader-zeroed allocation. Modern instructions`00496268..0049626c` update only AL (`INC AL; AND AL,3`), while BT at`0049626c` and filename lookup at`0049627a` use the **full EAX** index.
 
 From initial zero, the inspected iteration and DWORD store preserve the0..3 domain, provided no other writer changes the selector. With that domain and admitted availability bits1..3, the loop finds a set bit within at most four candidate tests. This is a conditional static invariant, not proof excluding aliases, bulk writes or alternate initialization. If upper24 bits are nonzero, the low-byte mask does not normalize them: memory BT can address beyond the mask DWORD and the scaled pointer lookup can address beyond the four-entry table. Reachability, fault behaviour and resulting runtime effects remain untested. A C reconstruction must preserve this machine distinction or document a separately validated input-domain restriction; it must not silently replace the update with full-width`(selector+1)&3`.
+
+## Missing-file claim MP140-031: distinguish selection from the retained wrapper guard
+
+The audit now binds the exact README line315 and its hash to **MP140-031**. Modern startup builds the title/demo mask from file attributes, and the idle loop skips indices whose cached availability bit is clear. This supplies a concrete paired-code mechanism for avoiding requests for files absent at that scan. For ordinary selector0..3 and a stable mask with admitted demo bits, selection terminates within four tests as established above.
+
+Both versions’ playback wrapper`004960e0` already checks existence before preparing playback. The Modern difference must therefore be described as an additional **selection/admission policy**, not invention of all missing-file checking. A file removed after the startup scan can leave a stale availability bit; the retained wrapper guard is then separate from mask filtering. A file added later can remain unselected until an independently established rebuild. Current evidence does not enumerate every mask rebuild or movie request path, nor prove decoder/render success.
+
+The catalog label is now Partial. Final-pair code supports this bounded mechanism but does not date it to v1.4.0 or verify every interpretation of “doesn’t try to play.” No files were deleted, movies played, or instruction probes run.
