@@ -32,6 +32,29 @@
         "00462d20",
         "00462fa0",
         "004633d0"
+      ],
+      "layout_and_hit_test_spans": [
+        {
+          "start": "00462d20",
+          "end": "00462f84",
+          "bytes_sha256": "f19ceade124d8214ee1c56423682f30bd2cb4247c961b63b9bc5d04091c18d04",
+          "assembly": "analysis/captures/modern-differences/replay-list-cursor/original-00462d20.asm",
+          "assembly_sha256": "e74f33e86869232912ad9aca8d0ce11d1c4c7ebf3e5a9b89e417cfad25de7aad"
+        },
+        {
+          "start": "004633d0",
+          "end": "004634c8",
+          "bytes_sha256": "a49be7ab38fbf8512e5ec8bd86bc89691af45df65e11464a6238b2e1d19542e7",
+          "assembly": "analysis/captures/modern-differences/replay-list-cursor/original-004633d0.asm",
+          "assembly_sha256": "62cb7d1b415809779900c390039d43a229ed7171dcf6115a42c391b763220cd2"
+        },
+        {
+          "start": "0049c1c0",
+          "end": "0049c1e5",
+          "bytes_sha256": "58350ebd73d01e1c14b98b1cc62771865649834a6a32939df3df55d055be15c0",
+          "assembly": "analysis/captures/modern-differences/replay-list-cursor/original-0049c1c0.asm",
+          "assembly_sha256": "a7a74f5c4624fa3560388f8a7232391077dc348d5a5f7d6a941d332f2765cabf"
+        }
       ]
     },
     "official_modern": {
@@ -64,10 +87,48 @@
         "00462d20",
         "00462fa0",
         "004633d0"
+      ],
+      "layout_and_hit_test_spans": [
+        {
+          "start": "00462d20",
+          "end": "00462f84",
+          "bytes_sha256": "f19ceade124d8214ee1c56423682f30bd2cb4247c961b63b9bc5d04091c18d04",
+          "assembly": "analysis/captures/modern-differences/replay-list-cursor/official_modern-00462d20.asm",
+          "assembly_sha256": "dd0ab120eb8a633b114fdf69f12f0ec818aabb1f61c8456153f92dda77fde5d2"
+        },
+        {
+          "start": "004633d0",
+          "end": "004634c8",
+          "bytes_sha256": "a49be7ab38fbf8512e5ec8bd86bc89691af45df65e11464a6238b2e1d19542e7",
+          "assembly": "analysis/captures/modern-differences/replay-list-cursor/official_modern-004633d0.asm",
+          "assembly_sha256": "a84c2c32d49d3541630f7dc6686f16bda612ac6edcb1d21f4efc3e076249ec4e"
+        },
+        {
+          "start": "0049c1c0",
+          "end": "0049c1e5",
+          "bytes_sha256": "58350ebd73d01e1c14b98b1cc62771865649834a6a32939df3df55d055be15c0",
+          "assembly": "analysis/captures/modern-differences/replay-list-cursor/official_modern-0049c1c0.asm",
+          "assembly_sha256": "41163978c919071323d256381689216d15f0a715cf0648e0bbf49c3543224e3c"
+        }
       ]
     }
   },
   "identical_ranges": [
+    {
+      "start": "00462d20",
+      "end": "00462f84",
+      "sha256": "f19ceade124d8214ee1c56423682f30bd2cb4247c961b63b9bc5d04091c18d04"
+    },
+    {
+      "start": "004633d0",
+      "end": "004634c8",
+      "sha256": "a49be7ab38fbf8512e5ec8bd86bc89691af45df65e11464a6238b2e1d19542e7"
+    },
+    {
+      "start": "0049c1c0",
+      "end": "0049c1e5",
+      "sha256": "58350ebd73d01e1c14b98b1cc62771865649834a6a32939df3df55d055be15c0"
+    },
     {
       "start": "00462fa0",
       "end": "0046326f",

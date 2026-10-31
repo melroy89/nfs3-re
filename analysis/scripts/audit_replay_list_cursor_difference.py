@@ -17,9 +17,14 @@ def main():
         path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
         name,template,tag=struct.unpack('<3I',pe.get_data(0x157ad0,12));assert pe.get_data(name-0x400000,32).split(b'\0')[0]==b'selectlist'
         words=struct.unpack('<14I',pe.get_data(template-0x400000,56));assert words[12]==0x462fa0
-        result['binaries'][label]={'path':relative,'sha256':expected,'span':{'start':f'{start:08x}','end':f'{end:08x}','bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()},'widget_row_00557ad0':[f'{v:08x}' for v in (name,template,tag)],'template_words':[f'{v:08x}' for v in words]}
+        witnesses=[]
+        for first,last in [(0x462d20,0x462f84),(0x4633d0,0x4634c8),(0x49c1c0,0x49c1e5)]:
+            output=capture/f'{label}-{first:08x}.asm'
+            output.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={first}',f'--stop-address={last}',relative],cwd=ROOT))
+            witnesses.append({'start':f'{first:08x}','end':f'{last:08x}','bytes_sha256':hashlib.sha256(pe.get_data(first-0x400000,last-first)).hexdigest(),'assembly':str(output.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(output.read_bytes()).hexdigest()})
+        result['binaries'][label]={'path':relative,'sha256':expected,'span':{'start':f'{start:08x}','end':f'{end:08x}','bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()},'widget_row_00557ad0':[f'{v:08x}' for v in (name,template,tag)],'template_words':[f'{v:08x}' for v in words],'layout_and_hit_test_spans':witnesses}
     result['identical_ranges']=[]
-    for start,end in [(0x462fa0,0x46326f),(0x463274,0x463370),(0x4633a7,0x4633cd)]:
+    for start,end in [(0x462d20,0x462f84),(0x4633d0,0x4634c8),(0x49c1c0,0x49c1e5),(0x462fa0,0x46326f),(0x463274,0x463370),(0x4633a7,0x4633cd)]:
         raw=images['original'].get_data(start-0x400000,end-start);assert raw==images['official_modern'].get_data(start-0x400000,end-start)
         result['identical_ranges'].append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(raw).hexdigest()})
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z';assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
