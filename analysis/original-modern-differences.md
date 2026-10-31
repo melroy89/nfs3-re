@@ -230,3 +230,16 @@ The saved main Ghidra database remained SHA-256 `7d15851180f215eb14609d4a87148b1
 Next priority is the original setting-by-setting registry correspondence for `004b5580` and its Modern INI counterpart, reusing the existing settings audit. External driver behavior and runtime comparisons remain separate follow-ups. This bounded next step does not require resolving the unrelated dispatcher investigation.
 
 The subsequent [registry audit](original-modern-registry.md) completes the bounded renderer preference mapping and narrows the remaining work to generic key producers, selector overrides/callers and driver-specific preference handling.
+
+### Current static-audit checkpoint — 2026-10-31
+
+After the registry, vehicle-dispatch, numeric-scale and Race Now follow-ups, all **27** `audit_*_difference.py` scripts exit zero. All **37** existing audit JSON files reproduce without byte changes. This supersedes the earlier 23-script/33-file coverage count, not its historical result. The saved Ghidra database still matches SHA-256 `7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f`. No target instructions, new runtime probes or game sessions were executed.
+
+| Recent cluster | Evidence now established | Next unresolved evidence |
+|---|---|---|
+| Registry/renderer selection | Original preferences, fixed flag priority, setup-to-initializer chain, retained registry helpers | Generic key producers, external driver preference mapping, higher callers |
+| Vehicle dispatch | Paired loops, changed tick gate/order, retained render/RNG bodies, selected default producers | UI/context meanings, cross-subsystem RNG order and effects, visual behavior |
+| Numeric HUD scale | Moved counterpart, three caller setup regions, labels, revalidated 47-profile installed-data bound | Full caller state admission, actual profile/language selection, visual comparison |
+| Race Now policy | Modern helper, original setup body, eleven direct caller witnesses, flag consumers, five state writers | Complete original/alternate policy mapping, lifecycle meanings and caller validity, language ABI/text |
+
+This is reproducible static coverage, not a count of fully explained vendor changes or a whole-game completion percentage. Remaining changed-function regions, external components/assets and historical release claims still require the broader comparison described above. Prioritize the remaining high-change `0041d620` preset application and `004228e0` viewport-pose wrapper next, while retaining the bounded follow-ups in this table.

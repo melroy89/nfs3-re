@@ -1,4 +1,4 @@
-"""Retain moved race-now-entry counterpart and caller witnesses; no target execution."""
+"""Retain Race Now helper, original setup and dependency witnesses; no target execution."""
 import hashlib
 import json
 import subprocess

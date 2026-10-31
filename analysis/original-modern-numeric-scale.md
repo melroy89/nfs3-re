@@ -32,7 +32,7 @@ Modern PUSHAD/POPAD restores all general registers, including EAX; original save
 
 **Verified:** moved counterpart, three caller retargetings, formulas, text-helper changes, fallback branch and machine-rounding operations. **Inferred:** a layout change intended to account for label widths. **Unresolved:** exact screen/option identity for every caller, localized assets and length admission, helper return/anchoring contracts beyond existing research, invalid counts, rendered appearance and release introduction. No catalog claim is promoted solely from a similar UI description.
 
-Next: inspect the three caller argument producers and packaged localized labels; compare render output only in a later authorized runtime phase. Executables, raw reference exports, reconstruction sources and Ghidra are unchanged.
+The follow-ups below inspect three caller setup regions, installed labels and profile counts. Next: complete upstream branch/state admission and compare render output in a later authorized runtime phase. Executables, raw reference exports, reconstruction sources and Ghidra are unchanged.
 
 ## Caller follow-up: retained HUD inputs
 

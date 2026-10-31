@@ -50,7 +50,7 @@ Original's final `MOV EAX,[007d3684]` leaves that value in EAX while restoring E
 
 **Verified:** paired loop correspondence, conditional helper admission, identical helper bytes, tick/parity writes and general-register difference. **Inferred:** these changes alter render-state scheduling rather than physical integration; no physics-equivalence claim follows. **Unresolved:** mode/global meanings, all callees and callers, visual effects, original bug intent, exact historical release attribution and runtime behavior. No release-note row is promoted to verified based solely on a similar description of wheels or detail settings.
 
-Next: connect the admission globals to their actual configuration/mode producers and trace remaining tick-sensitive callers. The downstream dispatcher/randomizer comparison is now documented below. Preserve raw exports, executable bytes and saved Ghidra state.
+The follow-ups below map selected admission-global producers and shared RNG ownership. Next: complete UI/mode meanings and remaining tick-sensitive callers. The downstream dispatcher/randomizer comparison is now documented below. Preserve raw exports, executable bytes and saved Ghidra state.
 
 ## 5. Downstream comparison: global gate becomes per-object gate
 
@@ -77,7 +77,7 @@ This clarifies the caller change in section 3. Original tests a shared snapshot,
 
 This is still not proof of exactly one random sample per object per tick. The helper never updates the gate field itself; the two calls inside a render body can both pass before the enclosing dispatcher writes it. Calls outside that enclosing path, objects skipped by its gates, tick changes and replay resets require separate tracing. Likewise this code-level difference can change RNG consumption when the two gates disagree, but does not establish that the RNG state affects physics, that network positions diverge, or that a particular release-note claim about wheel rotation is explained completely.
 
-**Closed for this bounded follow-up:** downstream dispatch correspondence, two retained render bodies/tables, exact randomizer operand delta and its relationship to caller write ordering. **Still pending:** remaining callers, admission-global meanings, RNG-state sharing, visual validation and historical attribution.
+**Closed for this bounded follow-up:** downstream dispatch correspondence, two retained render bodies/tables, exact randomizer operand delta and its relationship to caller write ordering. **Still pending:** remaining callers, complete admission-global meanings, cross-subsystem RNG scheduling/effects, visual validation and historical attribution. Shared RNG ownership is verified in section 7.
 
 ## 6. Admission-global producers: defaults are not immutable settings
 

@@ -28,9 +28,9 @@ The helper's text-pointer write depends on ECX retaining the found entry across 
 
 Original `00437600` first stores 1 to `00559c68`, looks up `credits` with `00442a40`, and ORs low flags byte+4 with 1 only when the entry exists and signed `006fd3b0 > 1` (`00437611..00437628`). Modern retains that signed mode test and byte-mask effect, but places it within the `007a276c != 0` branch of the extracted helper. Modern's initial return gate and preceding `2btt` policy also affect whether that branch is reached.
 
-The original routine continues with coordinate writes for other tokens beyond the captured span. Absence of Modern's whole helper at the same address does not prove that all its other behaviors were absent everywhere in the original. Likewise the token bytes are identical in both files, which establishes names rather than complete UI behavior.
+The complete original setup capture includes coordinate writes for nine other tokens, detailed below. Absence of Modern's whole helper at the same address does not prove that all its other behaviors were absent everywhere in the original. Likewise the token bytes are identical in both files, which establishes names rather than complete UI behavior.
 
-**Verified:** complete Modern branch map, exact token identities, original credits gate and invalidity of same-VA function pairing. **Pending:** map all original counterparts, determine globals/flag meanings from producers and consumers, trace helper call sites and null lookup behavior, identify actual localized `f1h/f2h` text, and validate menus at runtime. Historical release attribution is unresolved; no catalog row is promoted solely from these token names.
+**Verified:** complete Modern branch map, exact token identities, original credits gate and invalidity of same-VA function pairing. **Pending:** map all original counterparts and alternate layout paths, establish full caller preconditions and lifecycle-state meanings, verify language-lookup preservation, identify actual localized `f1h/f2h` text, and validate menus at runtime. The follow-ups below close the direct caller census, lookup-null behavior, selected flag consumers and direct branch-selector writes. Historical release attribution is unresolved; no catalog row is promoted solely from these token names.
 
 ## Lookup and result-predicate follow-up
 
@@ -44,7 +44,7 @@ Predicate `004cf090` does not consume the entry pointer as a parameter in the in
 
 For flags, the [menu-input comparison](original-modern-menu-input.md) establishes that the fallback token scanner requires entry bit 0 clear before selecting it and invoking its callback. Consequently OR bit 0 in this helper has a demonstrated **navigation exclusion** consumer; this does not establish that every selected-entry dispatch is blocked, since those paths differ. The separate bit `1000h` has a callback-suppression consumer verified in the follow-up below. The text-pointer write also crosses language lookup `004d1850`, whose ECX contract must be kept distinct from the predicate preservation just verified.
 
-Closed: lookup null behavior, record stride/start-index source, retained helper correspondence and predicate ECX preservation. Pending: all caller preconditions, bit `1000h` consumers, language-lookup preservation and complete original policy correspondence.
+Closed: lookup null behavior, record stride/start-index source, retained helper correspondence and predicate ECX preservation. Pending: all caller preconditions, language-lookup preservation and complete original policy correspondence. The bit `1000h` consumer is verified below.
 
 ## Direct caller input witnesses
 
