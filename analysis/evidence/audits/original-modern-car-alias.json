@@ -7,6 +7,20 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "00452100",
+          "end": "0045210a",
+          "sha256": "41e1a85cde84bfdaaeaf72fb70a1a6485bdcaf65b57a1b442305e5722ad75495",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00452100.asm",
+          "assembly_sha256": "195d32abf19b2ba9852804d2d20ba120ce510beb39ed54eea536d61b4262713b"
+        },
+        {
+          "start": "004d1430",
+          "end": "004d1471",
+          "sha256": "3907be81670e262003e49777a183e545ab6325436d30db3683d8f469d1da2ca8",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004d1430.asm",
+          "assembly_sha256": "492639f77a115de2908d16b13741ac9e18aca495a623d85eaa7c55c055786dae"
+        },
+        {
           "start": "00461a70",
           "end": "00461a96",
           "sha256": "51393b62735afa5c3cdd900a3bbd12c6158a97f70d84ca9f82f39782019a416d",
@@ -88,6 +102,20 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "00452100",
+          "end": "0045210a",
+          "sha256": "41e1a85cde84bfdaaeaf72fb70a1a6485bdcaf65b57a1b442305e5722ad75495",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00452100.asm",
+          "assembly_sha256": "3641375738cb1787cd40b6803d64065b493b0140c500843f0cdc2fe30b2896cf"
+        },
+        {
+          "start": "004d1430",
+          "end": "004d1450",
+          "sha256": "c21d44d6db548e6c8529c1c7967c46e5a09208afaacc508cc64b9f9aad9eee58",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004d1430.asm",
+          "assembly_sha256": "12b3ea86332f14a5fe96cf7168a5851b880291a8dc135818652919adb7e503b5"
+        },
         {
           "start": "00461a70",
           "end": "00461a96",
@@ -407,8 +435,25 @@
       "length": 108,
       "sha256": "4fc6e05a738aad7c6613a3c30a82457a0fc767d1518ab3418496d90564963fd6",
       "byte_identical": true
+    },
+    {
+      "start": "00452100",
+      "end_exclusive": "0045210a",
+      "length": 10,
+      "sha256": "41e1a85cde84bfdaaeaf72fb70a1a6485bdcaf65b57a1b442305e5722ad75495",
+      "byte_identical": true
     }
   ],
+  "x87_measurement_wrapper": {
+    "entry": "004d1430",
+    "original_end_exclusive": "004d1471",
+    "modern_end_exclusive": "004d1450",
+    "shared_callee": "004d1000",
+    "original_conversion": "call004dfd56; FISTP signed DWORD; FILD signed DWORD",
+    "modern_conversion": "No local x87 conversion; return callee state",
+    "shared_global": "00561b3c",
+    "scope": "Static local instructions; callee and runtime values unresolved."
+  },
   "additional_track_policy_callers": {
     "004628d0": {
       "name_offset": "0x60",

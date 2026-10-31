@@ -8,7 +8,7 @@
     },
     {
       "path": "analysis/original-modern-car-alias.md",
-      "sha256": "915828f9ae7b1f9834bd2fcbaded7e129d927942fac983dfe1e29b2c199d7455",
+      "sha256": "2c2911e40b6c35a6d5c1c54e42b04d631c000acb6d0a398bee6ae30c50f3c8cf",
       "relative_links": 3
     },
     {
@@ -68,8 +68,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "19c9e601d8027ac6fed058889593e7b4ec8453796e66b588301feb0bea0d7b72",
-      "relative_links": 97
+      "sha256": "6e239fb07d2cd733d8f7f771ac57d0f91050ca2a44bfdcee3e9e0a8cf82b57f8",
+      "relative_links": 98
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -398,7 +398,7 @@
     }
   ],
   "file_count": 79,
-  "relative_link_count": 583,
+  "relative_link_count": 584,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -380,6 +380,8 @@ The [complete expanded-list layout comparison](original-modern-common-menu-butto
 
 The [additional track-policy caller comparison](original-modern-car-alias.md#other-consumers-start-from-different-original-policies) distinguishes two further transitions: one original caller already accepts both track-list names and gains a mode gate; another gains a name gate. A common Modern helper therefore replaces different original policies, rather than introducing the same alias change everywhere.
 
+The [measurement-wrapper comparison](original-modern-car-alias.md#width-dependency-removes-an-intermediate-integer-conversion) identifies an additional x87 conversion-boundary change: original integerizes the `004d1000` result inside `004d1430`; Modern returns it directly. Its shared-global policy also changes from forcing1 to increment/decrement. This is a local menu-width dependency, not proof of a whole-game precision policy.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
