@@ -36,7 +36,7 @@ Matched lookup-path witness `00442c80..00442cdc` scans20-byte rows from `005563e
 
 The Modern cascade input witness `004624a0..004624df` reads item+60h, calls that lookup with output local−10h, and obtains count/eligibility through the existing helpers. The cascade template input pointer at `00556ed8` is `004624a0`. On the accepted path `00462633..00462663`, hit/eligibility checks lead to extraction of the signed selected ordinal from the high WORD of item+50h and **`MOV DWORD PTR [EDX],EAX` at `00462661`**. The selector store is32 bits; the fact that the ordinal came from a WORD does not make the write16 bits.
 
-This corrects the width wording in the earlier [lap cascade follow-up](lap-choice-gameplay-domain.md#reviewed-list-and-generic-ordinal-writer-follow-up), which uses the same generic callback. The stored normal small ordinal is unchanged by that documentation correction, but layout and alias analysis depend on the full write width. No saved Ghidra metadata or executable bytes were changed.
+This corrects the width wording in the earlier [lap cascade follow-up](lap-choice-gameplay-domain.md#reviewed-list-and-actual-cascade-dispatch), which uses the same generic callback. The stored normal small ordinal is unchanged by that documentation correction, but layout and alias analysis depend on the full write width. No saved Ghidra metadata or executable bytes were changed.
 
 These are partial-function instruction witnesses and the previously recovered template/parser linkage, not an exhaustive test of closed/open, mouse, keyboard or eligibility behaviour. Actual list creation and selected file/resource at runtime remain unobserved.
 

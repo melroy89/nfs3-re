@@ -304,7 +304,7 @@ Against revision `f26a71d`, all **39** `analysis/scripts/audit_*_difference.py` 
 
 The main saved Ghidra database still hashes to `7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f`. No target instructions, runtime sessions, compilation, executable edits or Ghidra writes were used. A file-target check across the 53 `original-modern-*.md` reports plus the detailed catalog found **367 relative file links, zero missing targets**. That check does not verify anchor fragments, external URLs or rendered Markdown.
 
-The 290-entry catalog now distinguishes **37 bounded-static**, **35 partial**, **5 unresolved/historical** and **213 vendor-only** entries. The 77 entries beyond vendor-only include unresolved findings and bundled claims, so neither77/290 nor any static count is a whole-game completion percentage. Uncatalogued code differences, same-address pairing uncertainty, external DLLs/assets, intermediate-release provenance and original/Modern runtime compatibility remain part of the active investigation.
+At that historical checkpoint, the 290-entry catalog distinguished **37 bounded-static**, **35 partial**, **5 unresolved/historical** and **213 vendor-only** entries. Current labels are generated with the complete release-note list below. The 77 entries beyond vendor-only include unresolved findings and bundled claims, so neither77/290 nor any static count is a whole-game completion percentage. Uncatalogued code differences, same-address pairing uncertainty, external DLLs/assets, intermediate-release provenance and original/Modern runtime compatibility remain part of the active investigation.
 
 This supersedes the earlier numerical checkpoint counts while preserving their historical results. Next priorities are the remaining ordinary menu policy claims (including postgame controls), then further high-change regions selected from the retained function-difference inventory. Reuse the completed menu callback/loader evidence rather than repeatedly treating those bounded comparisons as untouched work.
 
@@ -340,8 +340,12 @@ The [movie screenshot comparison](original-modern-movie-screenshots.md) separate
 
 The [official DX7 mode-admission follow-up](original-modern-dx7-mode-admission.md) locates minimum640×480 checks in a packaged driver, with original-driver and exact-size depth-policy limits stated.
 
+The [current comparison-document link audit](evidence/validation/comparison-document-links.json) records file hashes and checks relative file targets and plain ATX heading anchors. Its parser limitations are explicit; external URLs and rendered Markdown are not validated. Reproduce with `python3 analysis/scripts/audit_comparison_document_links.py`.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
+
+Current catalog labels: **200 Claimed, 37 Static, 50 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 

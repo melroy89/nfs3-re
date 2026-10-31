@@ -1,0 +1,339 @@
+{
+  "kind": "comparison-document-relative-link-audit",
+  "files": [
+    {
+      "path": "analysis/original-modern-border-geometry.md",
+      "sha256": "38dd4ce2a52f5ee6190981b44cd610b76cbb14e5b68a760e8b20f725ad63b446",
+      "relative_links": 2
+    },
+    {
+      "path": "analysis/original-modern-car-download.md",
+      "sha256": "d09526eea83f41e2703cfe6e92aecc6a8e3ae3552d8cb7bdc0efe708e19bef56",
+      "relative_links": 3
+    },
+    {
+      "path": "analysis/original-modern-clock-source.md",
+      "sha256": "2b712fb851510ad069ba0cdd38d35d188cd34e0fc9fba499e1681c6c8b7bc424",
+      "relative_links": 3
+    },
+    {
+      "path": "analysis/original-modern-command-line.md",
+      "sha256": "2bfedccc185c380818e37c96c1d48e82dfc9cbcb2bccf720b880752c51ec8df1",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-common-menu-buttons.md",
+      "sha256": "024bcd71d77dfcdda7f46dc5c2c6348e7c6909c32393615d55012cdb68074a11",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-config-loading.md",
+      "sha256": "78e58061d8754fd337c8ed56a3bfcee721d50cd505733fc0674b04264f61825f",
+      "relative_links": 6
+    },
+    {
+      "path": "analysis/original-modern-configuration.md",
+      "sha256": "1dcb9af7b334f865dfa0bf366990e45c05dcb566e2bf13c03eb37ccaf901ba79",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-cpu-tier.md",
+      "sha256": "d52a392ec0e0ff8c0193ce88330867fd733f16f9a6a48ebe1364264880387664",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-credits-panorama.md",
+      "sha256": "e1ccd79ea33ea9724042441e9fe2aee8f4b3c9a751a0b133df3fe9c7443511cf",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-differences.md",
+      "sha256": "edfd4f1f55b67f2d255477d969ada5f06e767b2a58e55238f03fadb013a8d725",
+      "relative_links": 79
+    },
+    {
+      "path": "analysis/original-modern-display-modes.md",
+      "sha256": "f5691cca3d95fadd3d72cdf67e2bac3cdd9fecd91ba226be283c4b2a6fea1a2d",
+      "relative_links": 8
+    },
+    {
+      "path": "analysis/original-modern-dx7-mode-admission.md",
+      "sha256": "7a740550d220487c1b39a922e7bdd572db070c77702a1160ce75f67856419a79",
+      "relative_links": 3
+    },
+    {
+      "path": "analysis/original-modern-frame-resize.md",
+      "sha256": "4da81fef010b704c25f414460e37ab7e1f45eac7605c0cd2631b3ade25ecdb29",
+      "relative_links": 8
+    },
+    {
+      "path": "analysis/original-modern-frame-setting.md",
+      "sha256": "a7d02eee390fe22e88e5deb0bcf40ca3ecda65796df08b80384a26553f3df9ba",
+      "relative_links": 8
+    },
+    {
+      "path": "analysis/original-modern-frontend-page.md",
+      "sha256": "289ebd95ccb0b7f7d2a7321609ad4963621f06175e4fb0d13c4212225c8cb486",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-frontend-sound.md",
+      "sha256": "5768c249b27c388074d63b3aec5e0bbcbf4e1bc2aaaa821e2e4a0f3695ba4cf1",
+      "relative_links": 2
+    },
+    {
+      "path": "analysis/original-modern-ghost-loading.md",
+      "sha256": "9404cbec45a77b6a9f150225e70dd7bc0373e016b887fe1a36a7e6d8d7736b47",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-graphics-menu-transition.md",
+      "sha256": "202351112202de8c49f6ba6c4dc45d3f17012c38723ebef02570dc3465e33908",
+      "relative_links": 9
+    },
+    {
+      "path": "analysis/original-modern-heap-initialization.md",
+      "sha256": "3f0e5df1fa7e373e36adc00be1bf339c4a0253e5f1ebec99866ace9a391ba469",
+      "relative_links": 1
+    },
+    {
+      "path": "analysis/original-modern-hud-layout.md",
+      "sha256": "d853df9a596e1487bdfdabe4c14e6f4d5748b50893d3e035b341dc52ccab76e3",
+      "relative_links": 3
+    },
+    {
+      "path": "analysis/original-modern-idle-movie.md",
+      "sha256": "d1d5aa2dfe0669be6d654857f870b54b45779c000b4acc1a05eeb492ff651175",
+      "relative_links": 9
+    },
+    {
+      "path": "analysis/original-modern-language-table.md",
+      "sha256": "915e19ba43d017ddcc1593d6b0daa2dc8d86aad795af358574acad22581b512a",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-loading-artwork.md",
+      "sha256": "4913d2fd44b8dca5ee2c221e7f819c950961b560dcc59d9270a974df3ff9df2e",
+      "relative_links": 3
+    },
+    {
+      "path": "analysis/original-modern-loading-timing.md",
+      "sha256": "4cd3f7db1ced80356e1b2a283f11d8c59333ef33595a0c2bcd011b40dd325e1e",
+      "relative_links": 2
+    },
+    {
+      "path": "analysis/original-modern-menu-callback-table.md",
+      "sha256": "063f1623be0b9db266831b2833f469f46e54674a7254fc94cf898a4447b178e8",
+      "relative_links": 9
+    },
+    {
+      "path": "analysis/original-modern-menu-input.md",
+      "sha256": "4e339a3b766576a3fbeb6f9e18aab6c7a2eed36774107a4d88a2b808b10dd3a8",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-menu-loader.md",
+      "sha256": "82d1848e05e660ead82da576feb892f8e7b5610a9be93c383372677505bcf2d4",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-menu-text-fields.md",
+      "sha256": "046b386c376ae85bd9077d2528776b26bc05a4d37225c915e5e41d47a48e36c0",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-mode-selection.md",
+      "sha256": "445e55db81b5a4761ac6903bd39eecd517fd5cf8aae2bf801ed3e00ff836a6c1",
+      "relative_links": 6
+    },
+    {
+      "path": "analysis/original-modern-movie-screenshots.md",
+      "sha256": "4fd9d4938c4bd5ef0432a87068e477b6f358881a310418cae9ef73bedd34d07e",
+      "relative_links": 6
+    },
+    {
+      "path": "analysis/original-modern-movie-volume.md",
+      "sha256": "c7d4caedcc8e397c5631b032d3b89ebdc6ea84d68557c421c4b8892c21ef70e7",
+      "relative_links": 3
+    },
+    {
+      "path": "analysis/original-modern-music-selection.md",
+      "sha256": "69475492c6c4e349777a825ff74f73332c6a6a3a77556129f42241e0157a2a63",
+      "relative_links": 7
+    },
+    {
+      "path": "analysis/original-modern-music-start.md",
+      "sha256": "229079bbffefe8cf986eef356cd4973b4f302b9594f8269207c5eec7339600f7",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-network-endpoints.md",
+      "sha256": "3b0e73068dc7894643646a163d5bae28f41007e5bc297c50b70e04ce3202988d",
+      "relative_links": 6
+    },
+    {
+      "path": "analysis/original-modern-network-port-menu.md",
+      "sha256": "ee3e679c9485edaedc03a8e72bd7a93f4fbc3de0debe789df35cc3a3cb117364",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-numeric-scale.md",
+      "sha256": "f1d93a0f3d8b5d08213688695dbfd499bbfffd77e5727509d58c9606f291986e",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-options-postgame.md",
+      "sha256": "0ce2d2a073ee681a6ba2b4f60328c0442cae237473a9b5f941206e586ed90e04",
+      "relative_links": 9
+    },
+    {
+      "path": "analysis/original-modern-parameter-preset.md",
+      "sha256": "5e89340235cb980bc3a36a32bb2b82f6db6838439a13b345634e2dedfd38789c",
+      "relative_links": 2
+    },
+    {
+      "path": "analysis/original-modern-pause-title.md",
+      "sha256": "6d6533e8524ae12d62d11f3c3b3b5abdfd51da9b55c842a25aac812606517c71",
+      "relative_links": 2
+    },
+    {
+      "path": "analysis/original-modern-pending-overlay.md",
+      "sha256": "e6f6d4603e757737cb0906134e7f984c8b643fa8319d3e01f61ca83fcdcc6f06",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-projection.md",
+      "sha256": "d58115042ab77b58bf6c8674a9df92426f9683688704c44795f1d4c1ec0ab2c3",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-race-now.md",
+      "sha256": "62763b363a56d5c54937608480bafa29660fe73bc319eb6354553f6324ac0c1a",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-registry.md",
+      "sha256": "bb47ccdf76e38d805e10e3f7cf3fb8b2a94e9f01e8c02138a2d0397b9bb37211",
+      "relative_links": 6
+    },
+    {
+      "path": "analysis/original-modern-renderer-initialization.md",
+      "sha256": "0e9e2cac9efd1cb9e6e7e64aaee0e0ff37dbb89fc6d18cfcdd6a318dcad4143a",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-renderer-lifecycle.md",
+      "sha256": "66bef2235a26abb6ebbad308798678022c262dd1b6ed60fa985bfaea642889fe",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-renderer-loading.md",
+      "sha256": "c9bceb1c90a006051662760a7e97067c4f54b8a738ea1967011652c133788633",
+      "relative_links": 7
+    },
+    {
+      "path": "analysis/original-modern-replay-mirror.md",
+      "sha256": "b25b2f906b558784bbcf8304079b4e969d1850041e04e5c4847282cee337b16b",
+      "relative_links": 2
+    },
+    {
+      "path": "analysis/original-modern-resolution-defaults.md",
+      "sha256": "10dd675d78fb94216381d618a4c60ef87e867345b7abbb2d5bd1b9d0cc753868",
+      "relative_links": 12
+    },
+    {
+      "path": "analysis/original-modern-screenshot-feedback.md",
+      "sha256": "d4a1dc182bfbef66928140cf96a31cbcb51834dfe5371fb773f489d47bafcef4",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-screenshot-pixels.md",
+      "sha256": "8a67f48144fe8bf9d628b3a1016668e0ed25bd1824e14250bd6ff5b8e523eb7e",
+      "relative_links": 3
+    },
+    {
+      "path": "analysis/original-modern-screenshots.md",
+      "sha256": "d64194a4edfce90602faac9c0cfaf8e788617a23f70e0ef424a0ad37f5d79205",
+      "relative_links": 7
+    },
+    {
+      "path": "analysis/original-modern-setup-website.md",
+      "sha256": "b43a25aaad19032db27a767a5218a88aaa23b46f888a4e065c6df47e9eeb33de",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/original-modern-slider-percentage.md",
+      "sha256": "f871e04973f9bcc44d1b49ef6fbed5cba889d637be3be7aaca666c67fa2a2665",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-slideshow-navigation.md",
+      "sha256": "afda0c2aaa892753f4d9e7d5738eff915b24fcc5e748e3a58718f91219b140da",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-startup-paths.md",
+      "sha256": "003b9d50f765544a76d82211e79902e3bffdbe6a54bc6081ea3fda19e2d931bb",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-startup-policy.md",
+      "sha256": "7698cb70f6364c5d91364ac78d99ea127fc452ddc437038bcdc3ed07694bf082",
+      "relative_links": 6
+    },
+    {
+      "path": "analysis/original-modern-texture-limits.md",
+      "sha256": "51b5026a83f209b8258b14bdab340186b95c8c07164f48c276a52c04df7c3657",
+      "relative_links": 2
+    },
+    {
+      "path": "analysis/original-modern-vehicle-dispatch.md",
+      "sha256": "48507d6a1f7f5a3453fabbcb63b5f35ece2066f458f90770e23ed55817d9209a",
+      "relative_links": 6
+    },
+    {
+      "path": "analysis/original-modern-view-offset.md",
+      "sha256": "4e93db58b82ef84444f5f2aa3761a0725dbbb4108931e660e0f6067fc4947716",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-view-overlay.md",
+      "sha256": "f032a34e8de0967a8f29338fed908da3f0fb5a89e7dab58b3a92f38680868c7b",
+      "relative_links": 7
+    },
+    {
+      "path": "analysis/original-modern-viewport-geometry.md",
+      "sha256": "e43ecc0e67e3b263a65c77dfe91251d1ecbafb455237ba25b0b54be82443253c",
+      "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-viewport-pose.md",
+      "sha256": "82706f9263d7026e43f82582e8bfef4ec37d40a23dcb6958beac0fa6f0374c14",
+      "relative_links": 2
+    },
+    {
+      "path": "analysis/original-modern-window-geometry.md",
+      "sha256": "5be2fd89e5b402e4a051c71e69dd2092cfbd49bf5afda621b5cead5a6149050c",
+      "relative_links": 3
+    },
+    {
+      "path": "analysis/original-modern-window-handling.md",
+      "sha256": "baf9464c8f2d0403718c5ce841b52e2ad97469e1d5f08c2df471dcba16790d86",
+      "relative_links": 4
+    },
+    {
+      "path": "analysis/modern-patch-change-catalog.md",
+      "sha256": "1b57948677943d178e542b152e490adc8eb24122eadf3a56b1bad0e52aa3a567",
+      "relative_links": 94
+    }
+  ],
+  "file_count": 65,
+  "relative_link_count": 477,
+  "errors": [],
+  "limits": [
+    "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
+    "Heading anchors use plain ATX heading text with lowercase and punctuation removal; not a full GFM renderer.",
+    "Does not validate external URLs, reference-style links, HTML anchors, rendered layout or evidence truth.",
+    "Scope is original-modern-*.md reports plus the detailed change catalog, not every repository document."
+  ]
+}

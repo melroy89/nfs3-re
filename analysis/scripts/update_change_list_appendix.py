@@ -53,6 +53,7 @@ def main():
             next_row = rows[row_index + 1]
             if next_row[1] != version:
                 out.append('')
+    out[3:3] = [f"Current catalog labels: **{counts['Claimed']} Claimed, {counts['Static']} Static, {counts['Partial']} Partial, {counts['Unresolved']} Unresolved**. These are evidence labels, not a completion percentage.", '']
     out += ['', END]
     report = ROOT / 'analysis/original-modern-differences.md'
     text = report.read_text()
