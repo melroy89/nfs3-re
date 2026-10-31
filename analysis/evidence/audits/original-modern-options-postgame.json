@@ -1,0 +1,204 @@
+{
+  "kind": "static-options-postgame-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0044a960",
+          "end": "0044a9db",
+          "bytes_sha256": "46f85ce6b5928baeaa8629fda741ba1f0ddbed503c89222e4fcf622c78fc055f",
+          "assembly": "analysis/captures/modern-differences/options-postgame/original-0044a960.asm",
+          "assembly_sha256": "10d944206fd5654ac17805848d06ffc963a19a958e6daa9e2d06b376054fce6e"
+        },
+        {
+          "start": "0044b24e",
+          "end": "0044b271",
+          "bytes_sha256": "15b4f8f9af8f3384c19a6122f3a1de36d4cff7c23f2efc7abc2eba4fdd98dc5f",
+          "assembly": "analysis/captures/modern-differences/options-postgame/original-0044b24e.asm",
+          "assembly_sha256": "bd8b0ff55bd09c5d4b65bd417a582f5ecd7017c70270a4457e2424a970769276"
+        },
+        {
+          "start": "00449240",
+          "end": "004492e9",
+          "bytes_sha256": "c2186d12b9c51b0e4af8114cb4ecf662f80489887abeee21910cb46442dc1e8b",
+          "assembly": "analysis/captures/modern-differences/options-postgame/original-00449240.asm",
+          "assembly_sha256": "f9a65a14c805dcc6c5e312e812b99d55aab3a423718a663eb23cbbb3bcabffd4"
+        }
+      ],
+      "button_template_00556e40_hex": "0500000000080000000000000000000000000000000000000000000000000000000000000019460000000000c007460070124600e0134600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000a023460000000000001d4600a0244600d028460020234600000000000000000000000000000000000000000000000000",
+      "field_rows_00557c60_00557c70_hex": "010000009084530001000000f44e6000010000009c84530001000000f64e6000",
+      "context_name_00539048": "postgame"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0044a960",
+          "end": "0044a9db",
+          "bytes_sha256": "46f85ce6b5928baeaa8629fda741ba1f0ddbed503c89222e4fcf622c78fc055f",
+          "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-0044a960.asm",
+          "assembly_sha256": "eb7211d9d674569857c57c3585e856778c38e97f3891b95307775987fd20c1e1"
+        },
+        {
+          "start": "0044b24e",
+          "end": "0044b271",
+          "bytes_sha256": "15b4f8f9af8f3384c19a6122f3a1de36d4cff7c23f2efc7abc2eba4fdd98dc5f",
+          "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-0044b24e.asm",
+          "assembly_sha256": "6e1433ffc7bc1f0e3dd6dd088411b002d2065112955d5759203237aee7740a6e"
+        },
+        {
+          "start": "00449240",
+          "end": "004492e9",
+          "bytes_sha256": "c2186d12b9c51b0e4af8114cb4ecf662f80489887abeee21910cb46442dc1e8b",
+          "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-00449240.asm",
+          "assembly_sha256": "3d819bf761e1172901b0c3461f868f64be5fd3eb44b753c7d6003b05cc9a6f50"
+        }
+      ],
+      "button_template_00556e40_hex": "0500000000080000000000000000000000000000000000000000000000000000000000000019460000000000c007460070124600e0134600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000a023460000000000001d4600a0244600d028460020234600000000000000000000000000000000000000000000000000",
+      "field_rows_00557c60_00557c70_hex": "010000009084530001000000f44e6000010000009c84530001000000f64e6000",
+      "context_name_00539048": "postgame"
+    }
+  },
+  "assets": {
+    "official": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/options.mnu",
+      "sha256": "e69522bb14917ec2a31c316dde05f778fe08d2c3586ff0a777749a59c00755be",
+      "controls": [
+        {
+          "section": "[button]",
+          "line": 74,
+          "fields": {
+            "x": "0",
+            "y": "0",
+            "priority": "0",
+            "codelink": "racenow",
+            "text": "kMenuOPTIONSRACE001",
+            "buttontype": "LR1of3",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "0",
+            "align": "0"
+          }
+        },
+        {
+          "section": "[button]",
+          "line": 86,
+          "fields": {
+            "x": "0",
+            "y": "0",
+            "priority": "0",
+            "codelink": "credits",
+            "text": "kMenuOPTIONSCredits001",
+            "nextmenu": "credits",
+            "buttontype": "LR2of3",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "0",
+            "align": "0"
+          }
+        },
+        {
+          "section": "[button]",
+          "line": 99,
+          "fields": {
+            "x": "0",
+            "y": "0",
+            "priority": "0",
+            "codelink": "exitprogram",
+            "text": "kMenuOPTIONSExitGame001",
+            "buttontype": "LR3of3",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "0",
+            "align": "0"
+          }
+        }
+      ]
+    },
+    "local_uppercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/OPTIONS.MNU",
+      "sha256": "93cc8d0eecc94e62e84005efcca100f0a48616f70ebb36de1d85bc8f9ca4037c",
+      "controls": [
+        {
+          "section": "[button]",
+          "line": 149,
+          "fields": {
+            "x": "0",
+            "y": "0",
+            "priority": "0",
+            "codelink": "racenow",
+            "postonly": "0",
+            "mainonly": "1",
+            "EnableForDemo": "1",
+            "EnableForE3Demo": "1",
+            "text": "kMenuOPTIONSRACE001",
+            "buttontype": "LR1of3",
+            "value": "0",
+            "listpos": "0",
+            "listoff": "0",
+            "listx": "0",
+            "listy": "0",
+            "ypos": "0",
+            "align": "0"
+          }
+        },
+        {
+          "section": "[button]",
+          "line": 170,
+          "fields": {
+            "x": "0",
+            "y": "0",
+            "priority": "0",
+            "postonly": "0",
+            "mainonly": "1",
+            "EnableForDemo": "0",
+            "EnableForE3Demo": "0",
+            "codelink": "credits",
+            "text": "kMenuOPTIONSCredits001",
+            "nextmenu": "credits",
+            "buttontype": "LR2of3",
+            "value": "0",
+            "listpos": "0",
+            "listoff": "0",
+            "listx": "0",
+            "listy": "0",
+            "ypos": "0",
+            "align": "0"
+          }
+        },
+        {
+          "section": "[button]",
+          "line": 191,
+          "fields": {
+            "x": "0",
+            "y": "0",
+            "priority": "0",
+            "codelink": "exitprogram",
+            "postonly": "0",
+            "mainonly": "1",
+            "EnableForDemo": "1",
+            "EnableForE3Demo": "1",
+            "text": "kMenuOPTIONSExitGame001",
+            "buttontype": "LR3of3",
+            "value": "0",
+            "listpos": "0",
+            "listoff": "0",
+            "listx": "0",
+            "listy": "0",
+            "ypos": "0",
+            "align": "0"
+          }
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No runtime menu selection, visibility or rendering tested.",
+    "Backup assets are not authenticated retail provenance.",
+    "Later flags/field overrides and every postgame entry path remain unenumerated."
+  ]
+}

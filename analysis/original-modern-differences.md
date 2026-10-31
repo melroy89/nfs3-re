@@ -308,6 +308,10 @@ The 290-entry catalog now distinguishes **37 bounded-static**, **35 partial**, *
 
 This supersedes the earlier numerical checkpoint counts while preserving their historical results. Next priorities are the remaining ordinary menu policy claims (including postgame controls), then further high-change regions selected from the retained function-difference inventory. Reuse the completed menu callback/loader evidence rather than repeatedly treating those bounded comparisons as untouched work.
 
+## Options controls in postgame context
+
+[The postgame Options comparison](original-modern-options-postgame.md) connects removal of three asset `mainonly` fields to unchanged template defaults, parser destinations, context producer and suppression consumer. This partially supports MP140-019; actual nested-menu admission, later flag writes and runtime visibility remain unresolved.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -463,7 +467,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-016 | 3D view of a car interior can be stopped using Space key. Arrow keys change rotating speed more smoothly now. | Claimed |
 | MP140-017 | Options button is placed near Exit button on the first menu screen (Game Setup). | Partial |
 | MP140-018 | “Connect Players”, “Connect IPX” and “View Car Interior” menu screens also have standard set of buttons (Exit and Options). | Partial |
-| MP140-019 | This set of buttons don't disappear in the Options when they are opened directy from the race results screen. | Claimed |
+| MP140-019 | This set of buttons don't disappear in the Options when they are opened directy from the race results screen. | Partial |
 | MP140-020 | This set of buttons is smart: when user opens Options from the first screen without choosing game mode, the Race button are hidden. | Claimed |
 | MP140-021 | Drop down list of cars displays the class of the current car not only for the 1st player, but also for the 2nd player. | Claimed |
 | MP140-022 | You can use Left and Right keys to switch slides in the car slideshow and in the credits (inclusive 3D panoramas of the developers). | Partial |
