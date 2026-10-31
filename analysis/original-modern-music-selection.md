@@ -68,7 +68,7 @@ These are observable call and state rules. The full meanings of the backend oper
 - **MP153-004:** subset masks, cycling and Fast/Slow list labels are statically supported; musical tempo and actual playback remain unverified.
 - **MP153-005:** stored race progression is supported for modes 13..15, track-default modes use the selected circuit; update placement and seeding are verified below, while exactly one advance per race and complete advertised playlist behavior remain partial.
 - **MP153-003:** the race list names three Random modes and matches the helper’s style rules; asset coverage and actual playback remain unverified.
-- Volume fixes (**MP153-001**) and double-fade prevention (**MP153-006**) are not established by this selection analysis. They require backend/caller comparisons rather than assuming all audio claims follow from changed policy bytes.
+- Volume fixes (**MP153-001**) and double-fade prevention (**MP153-006**) have separate partial static support in the [start/volume and audio-exit comparison](original-modern-music-start.md): removal of circuit-dependent level subtraction and Race/Exit suppression of an extra menu restart. These findings do not follow from selection bytes alone, and audible results remain untested.
 
 The [start/volume comparison](original-modern-music-start.md) now traces original menu randomization removal and verifies retained stop/start/level/fade bodies; this narrows the unresolved volume claims. Further work: track assets/names, setting serialization/labels, progression producers, all call cadence and volume/fade helper semantics. Original `0040fefc` is inside unrelated code, so it must not be treated as the old version of Modern's new helper merely because addresses coincide.
 

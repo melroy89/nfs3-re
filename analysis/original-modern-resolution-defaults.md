@@ -45,3 +45,20 @@ Modern also contains helper `004f9140..004f915d`: EAX points to two output DWORD
 **MP100-011** says the first run tries a gameplay resolution nearest the Windows default. The final binary contains a nearest-area helper, but the directly traced default path supplies fixed/large sentinel requests instead of values from the metric helper. The historical claim therefore remains **unresolved/partial**, not confirmed and not universally disproven. Establishing the precise first-run path requires tracing the caller's saved-setting validity branch and all relevant indirect/configuration producers; dating behavior additionally needs the earlier release binary.
 
 The [config-load comparison](original-modern-config-loading.md) now traces exact size/version-byte decisions at `00472aac..00472aea` before default setup (`00472ad7 -> 00472d10`). It remains a reset/default path rather than an unconditional first-run route; complete serialization and saved-setting validity remain unresolved.
+
+## Menu startup depth: fixed original request versus optional Modern 32-bit
+
+The expanded [renderer-selection manifest](evidence/audits/original-modern-renderer-selection.json), reproduced by `python3 analysis/scripts/audit_renderer_selection_difference.py`, retains complete original subsystem setup **`004b6020..004b6246`** and Modern **`004b5c00..004b5d83`**. The original setup’s connection through wrapper `004a3390` is independently documented in the [registry/selector call chain](original-modern-registry.md#original-selector-precedence-and-call-chain). These routines have corresponding subsystem roles; they are not paired by address.
+
+Original **`004b6027..004b6052`** stores width640 at `00564384`, height480 at `00564388`, depth16 at `0056438c`, and state1 at `00564390`, without a conditional depth choice in that initialization block. Modern **`004b5c27..004b5c50`** stores the same width/height, then chooses the depth:
+
+| `007a2794` setting value | Modern stored request depth |
+|---|---:|
+| Zero | 16 |
+| Any nonzero 32-bit value | 32 |
+
+The [settings-loader analysis](original-modern-startup-policy.md#3-current-settings-exact-defaults-and-immediate-effects) verifies key **`Use32bitModeInMenu`**, fallback0, and its write to `007a2794`. The test is nonzero, not equality with1. Modern’s state write at `00564390` separately derives zero/nonzero from `0067900c`; do not fold that unrelated flag into the depth choice.
+
+The [renderer lifecycle comparison](original-modern-renderer-lifecycle.md#parameters-and-mode-selection-change) verifies the later mode path at `00517620`: call driver initialization, refresh its descriptor, push depth/height/width from these three globals and call `004bedcc` at `00517682`, then request the selected mode through `_THRASH_setvideomode@12`. The [selection report](original-modern-mode-selection.md#modern-descriptor-lookup) establishes fallback and depth-mismatch behavior, so this is a **requested depth**, not a guarantee of an accepted 32-bit mode or successful rendering. Full initialization ordering, driver failures and actual movie rendering in that mode remain separate evidence.
+
+This gives **MP150-043** partial static support: Modern introduces the configuration-controlled16/32-bit menu request where the reviewed original setup requests16. It does not establish **MP120-019**’s stronger statement that640×480 is always reported as16-bit. A requested mode, a driver’s advertised record depth and a movie’s supported pixel formats are three distinct contracts. The [DX7 admission follow-up](original-modern-dx7-mode-admission.md) retains both16/32-bit candidate admission and the remaining exact-size reporting unknown. No additional driver, UI, movie or instruction execution was used.

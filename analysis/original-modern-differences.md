@@ -469,7 +469,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-040 | nfs3.exe sorts resolutions that it gets from the renderer. Refactoring of the graphics initialization and resolution choosing code. | Static |
 | MP150-041 | If ini file with the same name as a executable file name (e.g. nfs3test.ini for nfs3test.exe) is not found, nfs3.ini will be used. | Static |
 | MP150-042 | Hide16bitModes ini setting which hides 16 bit resolutions if similar 32 bit resolutions are available. | Static |
-| MP150-043 | Use32bitModeInMenu ini setting which enables 32-bit video mode for the menu. However movies can't be played in 32-bit video modes. | Claimed |
+| MP150-043 | Use32bitModeInMenu ini setting which enables 32-bit video mode for the menu. However movies can't be played in 32-bit video modes. | Partial |
 | MP150-044 | All renderers can use any DLL wrappers from the own subdirectories on the Windows XP SP1+. | Claimed |
 | MP150-045 | DDRAW.DLL is removed from imports of the nfs3.exe and voodoo2a.dll. | Claimed |
 
