@@ -18,7 +18,7 @@ def main():
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
         spans = [(0x489b30, 0x489c40)] if label == 'original' else [(0x489ab0, 0x489bd9), (0x4f939c, 0x4f93c5), (0x4d1430, 0x4d1450)]
-        spans += [(0x45ae27, 0x45ae2c), (0x45af5e, 0x45af63), (0x483a62, 0x483a67)]
+        spans += [(0x45adba, 0x45ae2c), (0x45aef0, 0x45af63), (0x4839eb, 0x483a67)]
         rows = []
         for start, end in spans:
             path = capture/f'{label}-{start:08x}.asm'
@@ -34,6 +34,14 @@ def main():
             assert data[0] == 0xe8
             assert site+5+int.from_bytes(data[1:], 'little', signed=True) == target
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows}
+    images = [pefile.PE(str(ROOT/SPECS[k][0])) for k in ('original', 'official_modern')]
+    result['caller_setup_only_retargets'] = []
+    for start, end, call in ((0x45adba, 0x45ae2c, 0x45ae27), (0x45aef0, 0x45af63, 0x45af5e), (0x4839eb, 0x483a67, 0x483a62)):
+        bodies = [p.get_data(start-0x400000, end-start) for p in images]
+        changes = [start+i for i, (a, b) in enumerate(zip(*bodies)) if a != b]
+        assert all(call+1 <= a < call+5 for a in changes)
+        result['caller_setup_only_retargets'].append({'start': f'{start:08x}', 'end': f'{end:08x}',
+                                                     'changed_addresses': [f'{a:08x}' for a in changes]})
     (ROOT/'analysis/evidence/audits/original-modern-numeric-scale.json').write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: baselines, moved counterpart spans and three redirected callers')
 

@@ -33,3 +33,18 @@ Modern PUSHAD/POPAD restores all general registers, including EAX; original save
 **Verified:** moved counterpart, three caller retargetings, formulas, text-helper changes, fallback branch and machine-rounding operations. **Inferred:** a layout change intended to account for label widths. **Unresolved:** exact screen/option identity for every caller, localized assets and length admission, helper return/anchoring contracts beyond existing research, invalid counts, rendered appearance and release introduction. No catalog claim is promoted solely from a similar UI description.
 
 Next: inspect the three caller argument producers and packaged localized labels; compare render output only in a later authorized runtime phase. Executables, raw reference exports, reconstruction sources and Ghidra are unchanged.
+
+## Caller follow-up: retained HUD inputs
+
+The manifest now retains paired setup regions `0045adba..0045ae2c`, `0045aef0..0045af63` and `004839eb..00483a67` and asserts that **every differing byte is inside the corresponding CALL displacement**. This is stronger than the earlier target-only check: argument instructions in these inspected regions remain identical. It is not a whole-caller equality claim; incoming registers, earlier branches and producers can still differ outside the captured spans.
+
+The first two calls belong to existing `RenderHudElementForView` research (`0045ab30`); the third belongs to `RenderRaceHUD` (`00482b00`). Thus this scale is used in HUD rendering, rather than established as a frontend options widget. Direct input observations are:
+
+- EAX count comes from DWORD `[[vehicle + 0x528] + 8] - 2` in all three regions. Existing AI gear/controller research identifies profile `+8` as a gear count, but this does not prove every admissible profile count or array extent.
+- EDX selection is zero-extended byte `[vehicle + 0x50b]`. Existing drive-state/gear research links this to the current selected drive state. Exact enumeration and exceptional values remain separate from that association.
+- First and second inspected calls explicitly clear EBX, disabling the secondary selected-index match on the ordinary positive interior loop. The third region does not establish its incoming EBX, so it is not assigned the same value by analogy.
+- All three push scale DWORD `00791b54`. Caller branches supply either fixed color values `ff707070` / `ffa0a0a0` and zero, or colors carried in registers; endpoints and vertical anchors come from per-view geometry and, on some branches, x87-to-integer coordinate conversion.
+
+This supports a **gear/drive-state HUD scale** interpretation while preserving the raw field contracts. It does not authenticate localized endpoint text: IDs `15ah/15bh` still require actual language-table payload inspection. No rendered label or endpoint was observed in this phase.
+
+The changed routine can therefore alter label spacing for the same retained argument-building instructions. Whether a particular race invokes one branch with the same arguments in both versions still depends on upstream state, assets, initialization and floating-point behavior. Those conditions are not supplied by a static CALL retargeting alone.
