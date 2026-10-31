@@ -31,3 +31,17 @@ The retained Modern caller witness **`00473152..00473160`** checks `0055b03c != 
 Modern’s helper no longer contains original’s `006fbb54` draw suppression; it gates all its work on the configured duration instead. The [movie startup comparison](original-modern-idle-movie.md) separately handles title-movie availability. **A title-splash wait and movie admission are distinct policies**: zero delay here does not by itself prove the title movie is disabled.
 
 **MP150-032:** partial static support for the configuration producer,0..10 consumer clamp, zero-skip behavior and millisecond elapsed loop. Actual display duration, title visibility, callback timing, input behavior and historical introduction remain unverified. No timing or instruction probes were run.
+
+## Original clock follow-up: shared counter and requested rate
+
+The expanded audit retains original reader **`004f0630..004f0636`**, reset **`004f0670..004f068a`**, worker **`0048eb90..0048ec3d`**, timer-initialization prefix **`0048eff0..0048f109`**, and startup witness **`004b6155..004b6165`**. These are original-only producer witnesses, not claims of whole timer-subsystem equivalence with Modern.
+
+`004f0630` is simply **`MOV EAX,[0079c1a4]; RET`**. Reset clears that shared counter and copies its value to delta-history/deadline globals `005651dc/d8`. The title delta helper therefore measures changes in the same counter used by the [idle movie controller](original-modern-idle-movie.md), rather than directly reading a millisecond API on each call.
+
+At `004b6155`, original subsystem startup supplies **EAX=128** to `0048eff0` at `004b6160`. The initializer accepts signed positive inputs1..10000, otherwise substitutes100; computes **`(1000<<16)/rate`** into `0079c170`; clears the shared counter; and begins timer/worker setup. This establishes a requested rate and a fixed-point period calculation. The retained prefix includes multiple failure branches that clear active/rate state, so a supplied128 must not be described as unconditional successful128-Hz operation.
+
+Worker `0048eb90` creates/stores an event-like wait object through `004dfb00`, waits through `004dfb70`, then—while state `0079c19c` remains nonzero—increments **`0079c1a4` once** at `0048ebd8`. It also updates another counter, samples GetTickCount and services up to eight registered callbacks before waiting again. When the state clears it closes/releases its wait object through a separate helper and returns. This is a logical worker-step counter; elapsed milliseconds are sampled separately.
+
+**Inference, explicitly conditional:** if the requested128 rate is realized as128 counter increments per second,384 ticks correspond nominally to3 seconds, and5120 ticks to40 seconds. This is not an established wall-clock guarantee: complete event production/coalescing, failure handling, reinitialization (including renderer-side calls), scheduler delays, resets and all counter writers remain to be qualified. The earlier decision not to label the original threshold as a measured three-second wait therefore stands.
+
+For reconstruction, keep this logical counter distinct from Modern’s direct millisecond duration. Substituting the same integer384 into a millisecond timeout would not preserve the demonstrated clock contract. No timer, event, sleep, game or instruction probe was executed.

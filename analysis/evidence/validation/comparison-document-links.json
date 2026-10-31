@@ -303,8 +303,8 @@
     },
     {
       "path": "analysis/original-modern-title-delay.md",
-      "sha256": "63f480737d9a3274d50b108d1c3b40eee670966817173c340079a1741d3fa797",
-      "relative_links": 5
+      "sha256": "c9b091b9f2510eb27bcc4c8c1234fd82e922b332a8b1dc59d086cb1e851e660c",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-vehicle-dispatch.md",
@@ -348,7 +348,7 @@
     }
   ],
   "file_count": 69,
-  "relative_link_count": 505,
+  "relative_link_count": 506,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

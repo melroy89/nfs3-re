@@ -35,11 +35,46 @@
           "assembly_sha256": "1ad7bd8e0c0fec9b07abe73bd845078fae442f3a789074000bbdd68ca5e080d6"
         },
         {
+          "start": "004f0630",
+          "end": "004f0636",
+          "bytes_sha256": "d1058b602f75b54a23af32144441301a4e9931a33530b1a624c829e3ea976ee4",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-004f0630.asm",
+          "assembly_sha256": "a8dd290f971187818888cc97f4729128b13581e84c01e86fbefcfd7a78955fc1"
+        },
+        {
           "start": "004f0650",
           "end": "004f0665",
           "bytes_sha256": "8b6079e38482eb8c45dcd64468e5e13d26e20de216e8c3fdbd7dfe1fb22c5479",
           "assembly": "analysis/captures/modern-differences/title-delay/original-004f0650.asm",
           "assembly_sha256": "f25e7d687170f1e7e334d7ae58fa0df8b9e7aa7838295435eb276227ec448c50"
+        },
+        {
+          "start": "004f0670",
+          "end": "004f068a",
+          "bytes_sha256": "5c363a0968f58a5dec56f6bfd23232d69a38e581b4cdafc65e8a134560bbc8fe",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-004f0670.asm",
+          "assembly_sha256": "8a95df4c8e4b79470c8dba0ae7b6005ee80d011bffd865506aed89e1e8030a90"
+        },
+        {
+          "start": "0048eb90",
+          "end": "0048ec3d",
+          "bytes_sha256": "6427bd9f458905998e392c5346c2a2f7d8e041ad2f5b6424f6deeeab40d0c34f",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-0048eb90.asm",
+          "assembly_sha256": "3665e4a8aed7ea57f691d48b3c8af1e8ba6d896bd9f3c6022a501ce02f1e415e"
+        },
+        {
+          "start": "0048eff0",
+          "end": "0048f109",
+          "bytes_sha256": "be88c0647b27dce1d6d0597648dfd5bb1783b83356a73eaf1c51d98378cadcd2",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-0048eff0.asm",
+          "assembly_sha256": "30a55c97f8dd9d31f42b74abfa107c5b23b3e72c52b9015b47b814cb0d52b05d"
+        },
+        {
+          "start": "004b6155",
+          "end": "004b6165",
+          "bytes_sha256": "6e8e3ff46b5c978f4fafcd73795abdc6d925fdf0bb06b80ee21eb39a8efe39b0",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-004b6155.asm",
+          "assembly_sha256": "fe6047270772116017e742e2e67e8b0b8be20168e0bb5560eccc290c03992ebc"
         },
         {
           "start": "00473181",

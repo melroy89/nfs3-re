@@ -13,7 +13,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
-        spans=common+([(0x472fc0,0x47300d),(0x4f0650,0x4f0665),(0x473181,0x473186),(0x4b61a6,0x4b61ab)] if label=='original' else [(0x472fc0,0x473016),(0x473152,0x473160),(0x4f2790,0x4f279b)])
+        spans=common+([(0x472fc0,0x47300d),(0x4f0630,0x4f0636),(0x4f0650,0x4f0665),(0x4f0670,0x4f068a),(0x48eb90,0x48ec3d),(0x48eff0,0x48f109),(0x4b6155,0x4b6165),(0x473181,0x473186),(0x4b61a6,0x4b61ab)] if label=='original' else [(0x472fc0,0x473016),(0x473152,0x473160),(0x4f2790,0x4f279b)])
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end':f'{end:08x}','bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
