@@ -168,7 +168,7 @@
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
-      "sha256": "944f03e99c497e4a349dede02288b4bb696e1af1e23c0710541e6387d93921cc",
+      "sha256": "1d48e9f7784b859ba6623ce1a2490f2626de0812e775ff39704301726a66d246",
       "relative_links": 3
     },
     {
@@ -178,7 +178,7 @@
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
-      "sha256": "f208729157879a611d6f4539c5743779b81976b2e9df0cbbc9d1e3ce471be1c6",
+      "sha256": "a756beec8c61a7ed9e59f85dbe232449ed0036c0f8d892901ec799c1539fd61a",
       "relative_links": 5
     },
     {
@@ -523,8 +523,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "7da97a72c8ba41b28790731694041d2549747d43a2ef08c8b89226a6bdcde1f5",
-      "relative_links": 114
+      "sha256": "dbf44957381bf85314cf8249e67779d352b592c286e7a8cf3119be753d55602a",
+      "relative_links": 115
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -533,7 +533,7 @@
     }
   ],
   "file_count": 106,
-  "relative_link_count": 1435,
+  "relative_link_count": 1436,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

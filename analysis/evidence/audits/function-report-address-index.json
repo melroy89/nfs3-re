@@ -141,7 +141,7 @@
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
-      "sha256": "944f03e99c497e4a349dede02288b4bb696e1af1e23c0710541e6387d93921cc"
+      "sha256": "1d48e9f7784b859ba6623ce1a2490f2626de0812e775ff39704301726a66d246"
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
@@ -149,7 +149,7 @@
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
-      "sha256": "f208729157879a611d6f4539c5743779b81976b2e9df0cbbc9d1e3ce471be1c6"
+      "sha256": "a756beec8c61a7ed9e59f85dbe232449ed0036c0f8d892901ec799c1539fd61a"
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
