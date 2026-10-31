@@ -1,0 +1,57 @@
+{
+  "kind": "wheel-spin-timing-source",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004b9140",
+          "end_exclusive": "004b9280",
+          "sha256": "ebfa8284d2bce006c78cc25f432f65cabd3d8c5dd826ece3afb988b3ee6ef577",
+          "assembly": "analysis/captures/modern-differences/wheel-timing/original-004b9140.asm"
+        },
+        {
+          "start": "004b9280",
+          "end_exclusive": "004b93bf",
+          "sha256": "963f55dd22dff10a883949e184304d2759bf8f072684c5db0060a239b713ff9f",
+          "assembly": "analysis/captures/modern-differences/wheel-timing/original-004b9280.asm"
+        }
+      ],
+      "constant_span": {
+        "start": "0054004c",
+        "end_exclusive": "005400c0",
+        "bytes_hex": "8988083d9a9999999999b93f000000000000e0bf0000003f00000000000000000000d03f000000000000f0bf000000000000f03e8988083d000000009a9999999999b93f000000000000e0bf0000003f000000009a9999999999a9bfcdcc4c3d00000000000000000000d03f000000000000f0bf",
+        "sha256": "3962bbfbbc71f33488d0d41525c04a3f71b91e1bb87782ad8123a00888187b6a"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004b9140",
+          "end_exclusive": "004b9280",
+          "sha256": "c6fe081e2759985cae69224ca8d039b0232ab8d508e6cb9d622b3946645dbad0",
+          "assembly": "analysis/captures/modern-differences/wheel-timing/official_modern-004b9140.asm"
+        },
+        {
+          "start": "004b9280",
+          "end_exclusive": "004b93bf",
+          "sha256": "43da1471629f66cb880985c9da311578baac6e13c5724c6aac99b3460145503f",
+          "assembly": "analysis/captures/modern-differences/wheel-timing/official_modern-004b9280.asm"
+        }
+      ],
+      "constant_span": {
+        "start": "0054004c",
+        "end_exclusive": "005400c0",
+        "bytes_hex": "8988083d9a9999999999b93f000000000000e0bf0000003f00000000000000000000d03f000000000000f0bf000000000000f03e8988083d000000009a9999999999b93f000000000000e0bf0000003f000000009a9999999999a9bfcdcc4c3d00000000000000000000d03f000000000000f0bf",
+        "sha256": "3962bbfbbc71f33488d0d41525c04a3f71b91e1bb87782ad8123a00888187b6a"
+      }
+    }
+  },
+  "limits": [
+    "Static evidence only; no animation, replay or multiplayer validation.",
+    "Object tick lifecycle and caller coverage remain as bounded in the vehicle-dispatch report."
+  ]
+}

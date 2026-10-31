@@ -325,7 +325,7 @@
     },
     {
       "path": "analysis/original-modern-vehicle-dispatch.md",
-      "sha256": "48507d6a1f7f5a3453fabbcb63b5f35ece2066f458f90770e23ed55817d9209a"
+      "sha256": "a51d87ca1a2cd8ef0b2f9aa77a9a7f6013ef5a6430f9feb37b17c89d93d6e90d"
     },
     {
       "path": "analysis/original-modern-view-offset.md",
@@ -362,8 +362,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 278,
-    "without_address_mentions": 83
+    "with_address_mentions": 280,
+    "without_address_mentions": 81
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -7701,7 +7701,16 @@
       "changed_bytes": 4,
       "original_sha256": "ebfa8284d2bce006c78cc25f432f65cabd3d8c5dd826ece3afb988b3ee6ef577",
       "modern_sha256": "c6fe081e2759985cae69224ca8d039b0232ab8d508e6cb9d622b3946645dbad0",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-vehicle-dispatch.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004b9140",
+            "004b9157"
+          ]
+        }
+      ]
     },
     {
       "entry": "004b9280",
@@ -7719,7 +7728,16 @@
       "changed_bytes": 4,
       "original_sha256": "963f55dd22dff10a883949e184304d2759bf8f072684c5db0060a239b713ff9f",
       "modern_sha256": "43da1471629f66cb880985c9da311578baac6e13c5724c6aac99b3460145503f",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-vehicle-dispatch.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004b9280",
+            "004b9296"
+          ]
+        }
+      ]
     },
     {
       "entry": "004ba350",

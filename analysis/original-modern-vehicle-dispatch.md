@@ -121,3 +121,20 @@ These groups are **bytes in file order**, not printed numeric DWORD values. They
 The render randomizer contains no private seed, snapshot or restore. Each admitted call reaches this shared generator once, so a difference in the gate can alter the next shared state even though the generator algorithm and initial file bytes are unchanged. Existing [music-selection comparison](original-modern-music-selection.md) establishes another consumer of `004e0d88`; the sky-grid/shared-RNG sections of [detailed notes](detailed-analysis-notes.md) establish additional use and seed-order limitations. The exact cross-subsystem call order, intervening reseeding, threading and dependency on simulation outcomes are not established here.
 
 **Result:** shared-state ownership is confirmed; render-gate differences can change shared RNG consumption under inputs where the gates disagree. **Not established:** a particular replay divergence, multiplayer desynchronization, physical trajectory change or historical patch regression. Those claims require traced state consumers and controlled runtime comparisons, not just a changed random call count.
+
+## Wheel-spin accumulation also uses the object's saved tick
+
+The two complete helpers `004b9140..004b9280` (320 bytes) and `004b9280..004b93bf` (319 bytes), exclusive ends, each differ in exactly four bytes. [The wheel-timing audit](scripts/audit_wheel_timing_difference.py) verifies both executable hashes, full bodies and the unchanged 116-byte numeric constant span `0054004c..005400c0`; the [manifest](evidence/audits/wheel-timing-difference.json) records hashes and constant bytes.
+
+| Helper | Original load | Modern load |
+|---|---|---|
+| `004b9140` BuildWheelSpinMatrixWithOptionalSteering | `004b9157`: ESI = DWORD `[0055fe28]` | ESI = DWORD `[incoming EAX+8c0]` |
+| `004b9280` BuildHandbrakeLimitedWheelSpinMatrix | `004b9296`: EBX = DWORD `[0055fe28]` | EBX = DWORD `[incoming EAX+8c0]` |
+
+Incoming EAX is the object pointer, also retained in ECX. Both then load current tick `007d3684`, subtract the chosen saved tick with 32-bit x86 wrapping, and use the result as signed elapsed input. The first helper conditionally accumulates object binary32 field `+938`; the second conditionally accumulates `+934`. Both require a nonzero computed rate, positive signed elapsed value and a clear object flag bit at `+59c` (bit 0 for the first, bit 1 for the second). Their rate calculations, clamps, wrap loops, x87 instructions and downstream call operands are unchanged. This is a source-of-elapsed-time change, not a new floating-point formula in either body.
+
+Neither helper writes the selected tick field. Consequently the enclosing dispatcher's before/after-call `+8c0` ordering, discussed above, matters to these calculations as well as to the randomizer. The two versions can accumulate different amounts when the shared snapshot and object snapshot disagree; equal instruction tails do not establish equal inputs or equal animation output. Full reachability of each helper from every dispatcher branch remains separate from this verified operand dependency.
+
+For C reconstruction, preserve wrapped DWORD subtraction followed by signed interpretation and the signed `>0` admission test; plain signed C subtraction can overflow and introduce undefined behavior. Preserve the original x87 operations and binary32 stores at the selected version's precision contract. Do not silently replace the per-object tick with a global frame delta.
+
+**Bounded work status: done; confidence: verified static bodies and file-backed constants.** Remaining scope is the complete object-tick lifecycle, all callers, visual wheel behaviour and controlled replay/network comparison. These local timing changes do not prove a physics change, replay incompatibility or multiplayer desynchronization.
