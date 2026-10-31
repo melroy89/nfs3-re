@@ -7562,5 +7562,43 @@
       }
     ],
     "limit": "All overlapping entry locators have research routes; not every byte/callee/runtime effect is explained."
+  },
+  "idle_interval_partition": {
+    "interval": "004961ef..004962c2",
+    "parts": [
+      {
+        "start": "004961ef",
+        "end_exclusive": "004961f0",
+        "bytes": 1,
+        "role": "Leading Modern NOP",
+        "original_hex": "90",
+        "modern_hex": "90",
+        "original_sha256": "9e076ceaf246b6003d9c2680a2b4cf0bffd069805902b0b5edeebf49039fe4bd",
+        "modern_sha256": "9e076ceaf246b6003d9c2680a2b4cf0bffd069805902b0b5edeebf49039fe4bd"
+      },
+      {
+        "start": "004961f0",
+        "end_exclusive": "00496200",
+        "bytes": 16,
+        "role": "Modern filename pointers; original switch code targets",
+        "original_hex": "a3624900aa624900b1624900b8624900",
+        "modern_hex": "acbe5300b8be5300c4be5300d0be5300",
+        "original_sha256": "b957c19a6923b0c424aa9d989656d67ac21f8217f7360275d3f6e6e9a9151860",
+        "modern_sha256": "fadacb5228cbb407c167bd3620001b7c7a2006d8873e8f720c441c6e63c29438"
+      },
+      {
+        "start": "00496200",
+        "end_exclusive": "004962c2",
+        "bytes": 194,
+        "role": "Modern idle controller; prefix of longer original controller",
+        "original_hex": "535152565589e5833ddc1f7a0000740731c0e9e0000000833d54bb6f0000740831c05d5e5a595bc3e883d6faff84c07405e8aaffffff8b1de4e555003b1d50e55500750e8b35e8e555003b3554e555007421a1e4e55500a350e55500a1e8e55500a354e55500e875ffffff31c05d5e5a595bc3a1a4c179002b0548e555003d001400007d0831c05d5e5a595bc3e83ea7f7ffa14ce5550083f8037726ff2485f0614900b8acbe5300eb13b8b8be5300eb0cb8c4be5300eb05b8d0be5300e81efeffff",
+        "modern_hex": "5351525589e5f60568277a000e0f84a8000000833d54bb6f00000f859b000000a1e4e555003b0550e555007575a1e8e555003b0554e555007568833d4c3d9f00007473e868d6faff84c0756aa1a4c179002b0548e555003d001400007c5de86da7f7ffa14ce55500fec024030fa30568277a0073f3a34ce555008b0485f0614900e85afeffffb8160000008b15e8bb6f0031dbe858a2f7ffe843ffffff31c040eb1ba1e4e55500a350e55500a1e8e55500a354e55500e825ffffff31c05d5a595bc3",
+        "original_sha256": "edbd5e142a12fc7a7298ad14ed62ccc8860678c652394f7001b34730e01e77e4",
+        "modern_sha256": "baf8ac5f93293eaafe9d9df3cff20647b4b0378a4dec518a325c6fefde751f11"
+      }
+    ],
+    "report": "analysis/original-modern-idle-movie.md",
+    "report_sha256": "4a471bab8f094ee9d00623c83ea154c620dc28d3aa8bfb0c53d1ede052917564",
+    "limit": "Partition and existing semantic route verified; no runtime playback or new function creation."
   }
 }

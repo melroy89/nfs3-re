@@ -35,7 +35,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0041c670` | ApplyNightVehicleLightingToTrackBlockQuads | 884 | 71 | [night-lighting](original-modern-night-lighting.md) |
 | `0041cdc0` | BuildVisibleTrackBlockRenderChains | 1012 | 56 | [night-lighting](original-modern-night-lighting.md), [track-detail](original-modern-track-detail.md) |
 | `0041d620` | ApplySelectedParameterPreset | 196 | 193 | [parameter-preset](original-modern-parameter-preset.md) |
-| `0041d7e4` | RunRaceInputCollectionWorker | 47 | 47 | [input-worker](original-modern-input-worker.md) |
+| `0041d7e4` | RunRaceInputCollectionWorker | 47 | 47 | [audit-status](original-modern-audit-status.md), [input-worker](original-modern-input-worker.md) |
 | `0041db10` | BuildIndexedShapeTexturesWithLoadingProgress | 164 | 49 | [texture-limits](original-modern-texture-limits.md), [texture-progress](original-modern-texture-progress.md) |
 | `004213b0` | FinalizeViewportContextStage | 103 | 33 | [projection](original-modern-projection.md) |
 | `004215c0` | BindViewportSceneDescriptorsToRaceVehicle | 368 | 23 | [viewport-pose](original-modern-viewport-pose.md) |

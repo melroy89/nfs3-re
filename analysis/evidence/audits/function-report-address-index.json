@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "9d1ee5e0b3b639506f7e4878c1daeb707d56336aa51db5d7be4d134dbeae095b"
+      "sha256": "56307355429e7d83195c64ec16dcbcb2599c4a7a625d054b5635a39af8196e9f"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -165,7 +165,7 @@
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
-      "sha256": "84c0c238fdf7c8a24072780d9b0c06b5ebd0ef30c3adc4a6d721f2f6150e282e"
+      "sha256": "4a471bab8f094ee9d00623c83ea154c620dc28d3aa8bfb0c53d1ede052917564"
     },
     {
       "path": "analysis/original-modern-input-worker.md",
@@ -1290,6 +1290,13 @@
       "original_sha256": "a93017a7930d6d4c82e17657af9a28c1678bd7702994bf3d63adad4e3f351aec",
       "modern_sha256": "e47e4ae84ca3c9c46bf851bff8b1b0c194fb33cd9d27897de0922e1b90c7dbb2",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-audit-status.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0041d7e4"
+          ]
+        },
         {
           "path": "analysis/original-modern-input-worker.md",
           "entry_mentioned": true,

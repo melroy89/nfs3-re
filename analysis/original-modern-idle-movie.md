@@ -93,3 +93,9 @@ The surface path also reads this same selector at `004def55` and `004df0c7`, cho
 **Result:** the changed original-frequency/Modern-score policy selects a display-conversion mode through an otherwise byte-identical downstream chain. This narrows MP100-019’s mechanism, while original rating accuracy, actual raster-filter quality, driver behavior and measured visual improvement remain unresolved. No decoder quality, cadence or pixel-equivalence claim follows solely from the tier numbers.
 
 The [retained network-prefix follow-up](original-modern-command-line.md#retained-network-prefix-parser-the-movie-gate-is-a-port-value) now identifies `-PORT=` as a producer of `007a1fdc`, independently of NoMovies. Both playback wrappers retain its nonzero rejection; all producers and complete network-launch semantics remain unverified.
+
+## Outside-body interval partition
+
+The [outside-function inventory](original-modern-outside-function-index.md) interval **`004961ef..004962c2`** spans211 bytes and195 differing byte positions. It is mixed content: one Modern NOP at`004961ef`, the16-byte filename-pointer table`004961f0..00496200`, then the complete194-byte Modern controller`00496200..004962c2`. The interval ends before the separate playback-parameter wrapper. The inventory generator now asserts this partition and retains both versions’ raw bytes and hashes per part.
+
+This is a saved-function coverage gap, not evidence that the controller is data or padding. Conversely, decoding the table as instructions would invent code: its original entries are switch targets and its Modern entries are the four filename pointers established above. The original controller continues beyond this interval to`004962fd`; the partition is not its full function boundary. Existing paired controller evidence remains authoritative for behaviour, and no function was created or changed in Ghidra.
