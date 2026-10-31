@@ -79,3 +79,5 @@ Use Markdown for small, reviewable findings. Follow [the sharing workflow](../do
 - [Original versus Modern resource-backed frontend page](original-modern-frontend-page.md): one-byte dispatch extension, out-of-line resource arm and text-to-resource record change.
 
 - [Original versus Modern pending overlay](original-modern-pending-overlay.md): changed format and coordinated floating-to-integer coordinate storage.
+
+- [Original versus Modern slider percentages](original-modern-slider-percentage.md): retained slider prefix, expanded type admission and changed conversion/rounding tail.

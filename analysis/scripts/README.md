@@ -317,3 +317,7 @@ Run `python3 analysis/scripts/audit_pending_overlay_difference.py`. Captures com
 ## Installed loading-abort overlay labels
 
 Run `python3 analysis/scripts/inventory_overlay_labels.py --game-dir "<installed game directory>"`. Records hashes, offset/NUL bounds and byte-preserving labels for ID235 across 18 installed/local backup files in `analysis/evidence/inventories/installed-overlay-labels.json`. No game execution; provenance/runtime-selection limits apply. See [overlay context](../original-modern-pending-overlay.md#loading-abort-context-and-installed-message-identity).
+
+## Original versus Modern slider percentages
+
+Run `python3 analysis/scripts/audit_slider_percentage_difference.py`. Retains complete paired bodies and asserts a 3755-byte identical prefix in `analysis/evidence/audits/original-modern-slider-percentage.json`. No target execution. See [slider findings](../original-modern-slider-percentage.md).

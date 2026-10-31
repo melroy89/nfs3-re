@@ -1,0 +1,47 @@
+{
+  "kind": "static-slider-percentage-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "00469680",
+      "end": "0046a5ea",
+      "bytes_sha256": "f0b9ea87922f1997ef8702b39346326b610ff0a14c716156fd2c6531a7d76ca5",
+      "assembly": "analysis/captures/modern-differences/slider-percentage/original-00469680.asm",
+      "assembly_sha256": "5fbdfa61e77107d7fbb386ee0b342627e23b51888b3c98410bbc8decf168839a",
+      "unchanged_prefix_sha256": "b6f275726b548490a16dc478dd0fc38211c97dcd32fcd543c8580e555503a81c",
+      "format": "%d%c",
+      "constants_hex": {
+        "0053ae70": "0000003f",
+        "0053ae74": "00000040",
+        "0053ae78": "0000c842",
+        "0053ae7c": "0ad7a3bb",
+        "0053ae80": "0ad7a33b"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "00469680",
+      "end": "0046a5af",
+      "bytes_sha256": "28ce0541822c1b2b73a17d38f771b2a85c22b4c64fec0d8c501c8c5e780feffb",
+      "assembly": "analysis/captures/modern-differences/slider-percentage/official_modern-00469680.asm",
+      "assembly_sha256": "ec525abf343592d9c1843002296eed4d8d7837d2c3c8984eeb29d633a81c180e",
+      "unchanged_prefix_sha256": "b6f275726b548490a16dc478dd0fc38211c97dcd32fcd543c8580e555503a81c",
+      "format": "%d%c",
+      "constants_hex": {
+        "0053ae70": "0000003f",
+        "0053ae74": "00000040",
+        "0053ae78": "0000c842",
+        "0053ae7c": "00000000",
+        "0053ae80": "00000000"
+      }
+    }
+  },
+  "limits": [
+    "No UI execution or numeric input probes.",
+    "Slider type meanings require producer evidence."
+  ],
+  "identical_prefix_bytes": 3755
+}
