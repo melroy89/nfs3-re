@@ -200,7 +200,7 @@ The [preset comparison](original-modern-parameter-preset.md) traces the original
 
 ## 31. Viewport camera selection
 
-The [viewport-pose comparison](original-modern-viewport-pose.md) traces Modern’s new fixed-descriptor branch, retained temporary primary-camera restoration and identical pose finalizer. Full extraction/blend helpers, descriptor producers and runtime output remain pending.
+The [viewport-pose comparison](original-modern-viewport-pose.md) traces Modern’s new fixed-descriptor branch, retained temporary primary-camera restoration and identical pose finalizer. Extraction/blend/finalizer bodies are identical; snapshot and partial-update producers are mapped. Source initialization, call order and runtime output remain pending.
 
 ## 32. Prioritized semantic work remaining
 

@@ -34,4 +34,23 @@ After finalization, original tests the reloaded control mode in EBX; Modern test
 
 The finalizer uses x87 and binary32 stores. Byte identity does not establish equal output under different x87 control words or different selected descriptors. Both wrappers preserve ECX/ESI/EDI/EBP, while EAX/EDX/EBX are not presented as preserved scalar outputs. Valid destination and descriptor storage are preconditions; no full pose schema or orthonormal rotation invariant is proved here.
 
-**Verified:** paired wrapper correspondence, equivalent slot/cache arithmetic, new fixed-descriptor admission, retained temporary restoration and identical finalizer. **Unresolved:** fixed-descriptor producers and meaning, full camera-index admission, extraction/blend helper differences, all callers, actual view output and historical release attribution. Next: compare `00422520` / `004223c0` and trace the fixed-descriptor producer chain; no runtime conclusion is claimed.
+**Verified:** paired wrapper correspondence, equivalent slot/cache arithmetic, new fixed-descriptor admission, retained temporary restoration and identical finalizer. **Unresolved:** fixed-descriptor producers and meaning, full camera-index admission, extraction/blend helper differences, all callers, actual view output and historical release attribution. The follow-up below verifies `00422520` / `004223c0` and selected fixed-descriptor producers. Next: trace source initialization and call order; no runtime conclusion is claimed.
+
+## Extraction/blend identity and fixed-descriptor producers
+
+The manifest now retains and asserts byte identity of both complete direct callees:
+
+| Entry | Exclusive end | Existing analysis name |
+|---|---|---|
+| `004223c0` | `00422512` | `BlendViewportPoseWithStoredCameraTransform` |
+| `00422520` | `00422604` | `ExtractScenePoseWithPositionConstraints` |
+
+Along with the identical finalizer, this localizes the inspected change to wrapper selection/control flow rather than edits inside these three bodies. It does not prove their complete transitive call graphs, data inputs or floating-point state are identical. The extractor copies descriptor position at +14h and selects its rotation source using the supplied control mode, with additional descriptor-controlled calls; a different descriptor can therefore change output through retained instructions.
+
+Modern producer `0042649c..004264be` returns immediately in session 1; otherwise it copies **71 DWORDs = 284 bytes (11ch)** from scene descriptor `005e0dd8` to fixed descriptor `00661220`. It preserves ECX/ESI/EDI. This is a concrete snapshot origin for the fixed descriptor, not proof of the source's full schema, initialization or every caller's ordering.
+
+A second helper `004264c0..004264ec` also skips session 1. Its mixed CMPSD/MOVSD sequence deliberately advances across some fields without writing them. Assuming the forward string direction used by these routines, it copies source DWORD indices **1, 2, 5, 6, 7 and 11..19**, corresponding to offsets **4, 8, 14h, 18h, 1ch and 2ch..4ch**. Other traversed fields remain unchanged in this helper. CMPSD updates flags, but there is no conditional branch consuming those comparison results in this body; replacing it with a whole-descriptor memcpy would change storage effects.
+
+The admission global `006fd1cc` is initialized to 1 by `00472298` at store `004722a6`, after XOR EAX,EAX and MOV AL,1. Another inspected producer at `0045da2d..0045da37` restores it from DWORD `0066468c`. These witnesses establish a nonzero default and a later restore path, not a permanent value or a particular user-facing option. Configuration loading/bulk writes and complete menu binding remain separate.
+
+**Closed:** extraction/blend body comparison, fixed descriptor's full snapshot origin, selected partial-update fields and two admission-global producers. **Still pending:** source descriptor initialization, snapshot call order/lifetime, full global binding and alternate writes, transitive helper changes, actual camera selection and rendered pose. No historical release attribution or runtime equivalence is inferred.

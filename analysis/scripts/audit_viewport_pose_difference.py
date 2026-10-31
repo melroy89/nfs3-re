@@ -15,6 +15,10 @@ def main():
         raw = (ROOT/relative).read_bytes(); assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
         spans = [(0x4228e0, 0x4229bb if label == 'original' else 0x4229b9), (0x422850, 0x4228df)]
+        spans += [(0x4223c0, 0x422512), (0x422520, 0x422604)]
+        if label == 'official_modern':
+            spans += [(0x42649c, 0x4264be), (0x4264c0, 0x4264ec),
+                      (0x472298, 0x4722ab), (0x45da2d, 0x45da37)]
         rows = []
         for start, end in spans:
             path = capture/f'{label}-{start:08x}.asm'
@@ -26,6 +30,11 @@ def main():
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows}
     assert result['binaries']['original']['spans'][1]['bytes_sha256'] == result['binaries']['official_modern']['spans'][1]['bytes_sha256']
     result['pose_finalizer_identical'] = True
+    result['identical_pose_callees'] = []
+    for index in (2, 3):
+        pair = [result['binaries'][k]['spans'][index] for k in ('original', 'official_modern')]
+        assert pair[0]['bytes_sha256'] == pair[1]['bytes_sha256']
+        result['identical_pose_callees'].append(pair[0]['start'])
     (ROOT/'analysis/evidence/audits/original-modern-viewport-pose.json').write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: baselines, complete wrapper bodies and identical pose finalizer')
 

@@ -19,6 +19,20 @@
           "bytes_sha256": "fd3a73e69cd08a9c0ce980a21d884a43b31a6a6a58b9907ca7d504aa4924c6a1",
           "assembly": "analysis/captures/modern-differences/viewport-pose/original-00422850.asm",
           "assembly_sha256": "d1f7e1014d81538c298e8af1469e022a12fb1052c3e00254564184a166e48464"
+        },
+        {
+          "start": "004223c0",
+          "end": "00422512",
+          "bytes_sha256": "84400181f0fce0033d5437e4c37c6692d418af3971be49a659a75ed8b3f0ac97",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/original-004223c0.asm",
+          "assembly_sha256": "7fdfb924b3995e624aedb4a0d93e3adfab5331028a5cf34ca02ba3cada0353ea"
+        },
+        {
+          "start": "00422520",
+          "end": "00422604",
+          "bytes_sha256": "c1cc2a4b2c1e959180f08d03eb038101bd1423a7156a51cfbfbe578b5dad1ceb",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/original-00422520.asm",
+          "assembly_sha256": "1d54b606d4684be92021fbe8dd37556ad8eb818b09840054be215c502cc51bf1"
         }
       ]
     },
@@ -39,6 +53,48 @@
           "bytes_sha256": "fd3a73e69cd08a9c0ce980a21d884a43b31a6a6a58b9907ca7d504aa4924c6a1",
           "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-00422850.asm",
           "assembly_sha256": "ef74b36d8eed2d573c5b6a2d7e778cd2567d3ea2e282c71579f6db2cd7805fbb"
+        },
+        {
+          "start": "004223c0",
+          "end": "00422512",
+          "bytes_sha256": "84400181f0fce0033d5437e4c37c6692d418af3971be49a659a75ed8b3f0ac97",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-004223c0.asm",
+          "assembly_sha256": "949af188fe93f5ab799f34879478fd27eda2dca1ea62b36458a60dee10aac46c"
+        },
+        {
+          "start": "00422520",
+          "end": "00422604",
+          "bytes_sha256": "c1cc2a4b2c1e959180f08d03eb038101bd1423a7156a51cfbfbe578b5dad1ceb",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-00422520.asm",
+          "assembly_sha256": "13cd93733fadac4939e66ceb1783f32f8492b5bc47ff3da70d0ff26268547a42"
+        },
+        {
+          "start": "0042649c",
+          "end": "004264be",
+          "bytes_sha256": "08c81c0096b782c110b9de8fc93761b1962be99f966dabe6ea36ecd350882bd8",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-0042649c.asm",
+          "assembly_sha256": "30b4c9ae8f1c373bfaa70fe85ce3b8aaee62f12dd27128c7ccc6780d5d4de0a7"
+        },
+        {
+          "start": "004264c0",
+          "end": "004264ec",
+          "bytes_sha256": "ac66ee9db5f0899d6b59920c10ce4c7b8bcc07d6f584889592299fd71ef526a1",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-004264c0.asm",
+          "assembly_sha256": "6f6acfa492b59b6e351b7b7955933681203af18dd74b45be7463ffb83f68f526"
+        },
+        {
+          "start": "00472298",
+          "end": "004722ab",
+          "bytes_sha256": "a91fc9930c3ca6c27d68d7527998d01c79ec6fcfdf7aab7048411634ffbd9514",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-00472298.asm",
+          "assembly_sha256": "86f77d534a2b9aa5bd00f648784892ece1126667c946814fdf664e2c0021a0c8"
+        },
+        {
+          "start": "0045da2d",
+          "end": "0045da37",
+          "bytes_sha256": "ae83fb1a4d11687f7cf50124b000f185988aa6db5e6762d3c7793ce08658b947",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-0045da2d.asm",
+          "assembly_sha256": "9242182e14b3eb65c8a7ad8a2fe2609ac0b36364843b52a4de9f1fe6f6b81175"
         }
       ]
     }
@@ -47,5 +103,9 @@
     "No camera/game execution.",
     "Normal-return restoration only; no synchronization proved."
   ],
-  "pose_finalizer_identical": true
+  "pose_finalizer_identical": true,
+  "identical_pose_callees": [
+    "004223c0",
+    "00422520"
+  ]
 }
