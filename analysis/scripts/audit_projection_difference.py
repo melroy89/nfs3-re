@@ -6,7 +6,7 @@ import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
-LEGACY=[(0x4fd280,0x4fd2a8),(0x4fd2b0,0x4fd3eb),(0x4fd3f0,0x4fd420)]
+LEGACY=[(0x4fd280,0x4fd2a8),(0x4fd2b0,0x4fd3eb),(0x4fd3f0,0x4fd420),(0x4fd420,0x4fd482)]
 
 SPANS={'original':LEGACY+[(0x4dbcc0,0x4dbd97),(0x4becd0,0x4bed69),(0x4bf260,0x4bf370)],
        'official_modern':[(0x4dbc48,0x4dbd35),(0x4becd0,0x4bed69),
@@ -31,6 +31,22 @@ def main():
                 'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
         item={'path':relative,'sha256':expected,'spans':rows}
+        centre_refs=[]
+        for address in (0x564434,0x564438):
+            needle=struct.pack('<I',address);offset=0;hits=[]
+            while True:
+                offset=raw.find(needle,offset)
+                if offset<0:break
+                hits.append({'file_offset':offset,'mapped_operand_va':f'{pe.get_rva_from_offset(offset)+0x400000:08x}'})
+                offset+=1
+            expected_hits=({'00564434':['0042141c','004fd28f','004fd2cd','004fd440'],
+                            '00564438':['0042142c','004fd2a2','004fd2e7','004fd460']}[f'{address:08x}']
+                           if label=='original' else [])
+            assert [h['mapped_operand_va'] for h in hits]==expected_hits
+            centre_refs.append({'address':f'{address:08x}','matches':hits})
+        item['absolute_centre_address_inventory']={'method':'Overlapping four-byte little-endian literal search over complete executable file; matches are operand locations, not instruction entries.',
+            'addresses':centre_refs,'limits':['Does not detect computed addresses, aliases, encoded pointers, external modules or runtime-generated code.']}
+
         if label=='official_modern':
             item['float_constants']={f'{va:08x}':{'hex':pe.get_data(va-0x400000,4).hex(),
                 'value':struct.unpack('<f',pe.get_data(va-0x400000,4))[0]}

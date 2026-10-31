@@ -28,6 +28,13 @@
           "assembly_sha256": "00407e83f417d18f4e9e72ee60fd8b4702453069ac7f080a3691ba5cc109955a"
         },
         {
+          "start": "004fd420",
+          "end": "004fd482",
+          "bytes_sha256": "90a34675ad7cbf20701609021c0f0267ecd2e0b3a3f95c87b98ec887e059553b",
+          "assembly": "analysis/captures/modern-differences/projection/original-004fd420.asm",
+          "assembly_sha256": "e70c7ee5d0f4c9250892de5c65def70a2a89cb43354d2487ce2d0622bc316b15"
+        },
+        {
           "start": "004dbcc0",
           "end": "004dbd97",
           "bytes_sha256": "78aabdb7d4f01a1d0e558221bb1776caaaf6abca96cd7697add5d7682ebfad98",
@@ -55,7 +62,57 @@
           "assembly": "analysis/captures/modern-differences/projection/original-004213b0.asm",
           "assembly_sha256": "a0c1d136bcf04241ed6e2a2b8525dce54564a5207d2b92bf3b1bdedf6f18f89a"
         }
-      ]
+      ],
+      "absolute_centre_address_inventory": {
+        "method": "Overlapping four-byte little-endian literal search over complete executable file; matches are operand locations, not instruction entries.",
+        "addresses": [
+          {
+            "address": "00564434",
+            "matches": [
+              {
+                "file_offset": 133148,
+                "mapped_operand_va": "0042141c"
+              },
+              {
+                "file_offset": 1033871,
+                "mapped_operand_va": "004fd28f"
+              },
+              {
+                "file_offset": 1033933,
+                "mapped_operand_va": "004fd2cd"
+              },
+              {
+                "file_offset": 1034304,
+                "mapped_operand_va": "004fd440"
+              }
+            ]
+          },
+          {
+            "address": "00564438",
+            "matches": [
+              {
+                "file_offset": 133164,
+                "mapped_operand_va": "0042142c"
+              },
+              {
+                "file_offset": 1033890,
+                "mapped_operand_va": "004fd2a2"
+              },
+              {
+                "file_offset": 1033959,
+                "mapped_operand_va": "004fd2e7"
+              },
+              {
+                "file_offset": 1034336,
+                "mapped_operand_va": "004fd460"
+              }
+            ]
+          }
+        ],
+        "limits": [
+          "Does not detect computed addresses, aliases, encoded pointers, external modules or runtime-generated code."
+        ]
+      }
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -97,6 +154,22 @@
           "assembly_sha256": "61bfa6b11ff5279926dfb669b60fc1943527f90c84357ffa4021deba265faa21"
         }
       ],
+      "absolute_centre_address_inventory": {
+        "method": "Overlapping four-byte little-endian literal search over complete executable file; matches are operand locations, not instruction entries.",
+        "addresses": [
+          {
+            "address": "00564434",
+            "matches": []
+          },
+          {
+            "address": "00564438",
+            "matches": []
+          }
+        ],
+        "limits": [
+          "Does not detect computed addresses, aliases, encoded pointers, external modules or runtime-generated code."
+        ]
+      },
       "float_constants": {
         "005401c0": {
           "hex": "0000003f",
@@ -145,6 +218,12 @@
           "end": "004fd420",
           "all_nop": true,
           "sha256": "eb29cd0ccc8f69f2b5c4439058e65511466058453cead550ea3bd627901e9d92"
+        },
+        {
+          "start": "004fd420",
+          "end": "004fd482",
+          "all_nop": true,
+          "sha256": "ce72ef4454168f4a7f6b960ecf687eb3993ab2fc933b1af1cab8f2cfc3cc6e60"
         }
       ]
     }

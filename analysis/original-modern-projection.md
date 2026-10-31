@@ -63,6 +63,16 @@ The shared float builder itself computes centre coordinates from rectangle origi
 
 **MP160-003**, horizon/camera shift: the removed integer-state setup is traced above, but it is not a verified explanation of the entire advertised fix. Remaining origin/camera/renderer consumers must be compared first. **MP140-033**'s setting rename likewise needs UI/string mapping.
 
+## Legacy centre references and removed integer point projector
+
+The extended projection audit inventories every overlapping four-byte little-endian occurrence of `00564434` and `00564438` in each complete pinned executable. Original has four occurrences per address: viewport-finalizer stores, origin-helper stores, angle/extent-helper stores, and loads in `004fd420`. Modern has **zero occurrences** of either literal. The manifest records file offsets and mapped operand addresses, not fabricated instruction entries. This rules out retained direct absolute references using those literal encodings in the final EXE; computed addresses, aliases, external modules and generated code remain outside that search.
+
+The audit additionally captures complete original **`004fd420..004fd482`**,98 bytes, and verifies every byte of that span is NOP in Modern. Original takes ESI pointing to three signed DWORD components and EDI to two output DWORDs. For component2 greater than0, it computes each output as a signed division of the wrapped32-bit product of component0/1 and scale `0056443c/40`, then adds centre `00564434/38` with32-bit wrapping. The product is truncated to32 bits before sign extension and IDIV; it is not a64-bit product divided before truncation. EBX/ECX/EBP are preserved locally; EAX/EDX are working state.
+
+For component2 less/equal0, it writes `80000000h` to both outputs and ORs bit0 into byte `00564444`. A successful projection does not clear that byte here. This is an integer point-projection/status contract with unchecked input/output pointers, not an established universal camera or renderer ABI. Its complete caller reachability is not newly proven.
+
+These results narrow the horizon investigation: following the old centre literals through retained Modern direct instructions is no longer a useful next step. Follow Modern's float rectangle-origin/centre producers and their renderer consumers instead. Removal of this legacy projector and its direct address literals does not by itself explain the advertised horizon position or prove every alternate projection path disappeared. No projection, renderer or game code was executed.
+
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
 
 ## Viewport finalizer drops legacy projection updates
