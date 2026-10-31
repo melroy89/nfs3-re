@@ -412,6 +412,8 @@ The [mouse-cursor callback comparison](original-modern-mouse-cursor.md) distingu
 
 The [sound-bank language comparison](original-modern-sound-bank-language.md) accounts for five cached-selector reads and the removed language-indexed path switch across three loading functions.
 
+The [grouped effect-renderer comparison](original-modern-effect-renderer-masks.md) verifies eleven one-byte `40h`→`50h` mask expansions, with complete unchanged surrounding function envelopes.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

@@ -84,6 +84,10 @@
       "sha256": "7a740550d220487c1b39a922e7bdd572db070c77702a1160ce75f67856419a79"
     },
     {
+      "path": "analysis/original-modern-effect-renderer-masks.md",
+      "sha256": "9adeec4f3b171118d93678e0eed8af5e58da0a2b817f2594c57b89b1749842e8"
+    },
+    {
       "path": "analysis/original-modern-frame-resize.md",
       "sha256": "4da81fef010b704c25f414460e37ab7e1f45eac7605c0cd2631b3ade25ecdb29"
     },
@@ -362,8 +366,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 282,
-    "without_address_mentions": 79
+    "with_address_mentions": 293,
+    "without_address_mentions": 68
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -982,7 +986,16 @@
       "changed_bytes": 1,
       "original_sha256": "f4e417647fa1cdf4bf9f05808acec3869a96c36978b1621638d2f43a2061e631",
       "modern_sha256": "b2115e3d3625ca33f59e06805fe88159ed11e950a5d6c504f96ee3d02d828a1b",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0041a120",
+            "0041a1c8"
+          ]
+        }
+      ]
     },
     {
       "entry": "0041aa60",
@@ -5813,7 +5826,16 @@
       "changed_bytes": 1,
       "original_sha256": "c807c7f61f820d62ccf68b4f26bc5d2d6dccca44cac8d061cbd34ef77f421e93",
       "modern_sha256": "9891d2d70953ac5ebfbfaf69c838741bc2f6a9e68d487232e743c0d2729feb63",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00491190",
+            "00491225"
+          ]
+        }
+      ]
     },
     {
       "entry": "00491bc0",
@@ -5831,7 +5853,16 @@
       "changed_bytes": 1,
       "original_sha256": "d28a34d58c431d52ab33891866203d23f51e566dbfb9107e2f25e37d6a67386c",
       "modern_sha256": "0618bd15a4f9de56c9e796832f426a22709f0a3eb9fb0a17ca59db8327ef35d4",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00491bc0",
+            "00492208"
+          ]
+        }
+      ]
     },
     {
       "entry": "00492370",
@@ -5849,7 +5880,16 @@
       "changed_bytes": 1,
       "original_sha256": "c15a0cefdede25790ab48f70fea9384eb8869351aada31b7c5c7709ef1ec117e",
       "modern_sha256": "ff8d5535b79a644f657c4cd94b3fad4dcf0482d420101e0ada5f8e97e7c49905",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00492370",
+            "004925a2"
+          ]
+        }
+      ]
     },
     {
       "entry": "00492980",
@@ -5867,7 +5907,16 @@
       "changed_bytes": 1,
       "original_sha256": "0ee29d276a015fac5a1fccdc2780a68e2699682b184f8cee3bf35e012ee43683",
       "modern_sha256": "4360dad388d2c4cf3b00a749519496feaeac2b2e7236358815bc3ded8a09dd38",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00492980",
+            "00492c15"
+          ]
+        }
+      ]
     },
     {
       "entry": "00494bd0",
@@ -6355,7 +6404,17 @@
       "changed_bytes": 1,
       "original_sha256": "f3bad17f0b1fc9d530ef4efcf81692fb2f00b42fee740f779bf9e88d6e5d7230",
       "modern_sha256": "dc249639f2345025baa525cca6de63b5ffcff80915ecf187562ccd4879b4797d",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0049d800",
+            "0049d814",
+            "0049d8d7"
+          ]
+        }
+      ]
     },
     {
       "entry": "0049e5f0",
@@ -8859,7 +8918,16 @@
       "changed_bytes": 1,
       "original_sha256": "4e7426fff4793a3a5e03570d179cadb8563b4e5395339098876f2d9ca45cee68",
       "modern_sha256": "7fe0eb0fc7e500c7ab9b91c9fc7b315004444cf49ef47daefe9fa67546b8debc",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004cb750",
+            "004cb870"
+          ]
+        }
+      ]
     },
     {
       "entry": "004cbc90",
@@ -8877,7 +8945,16 @@
       "changed_bytes": 1,
       "original_sha256": "fba91cbd87470b59dbd8b1f7a3b010ec0bdff501841c88bc898f8ce937a6d50a",
       "modern_sha256": "34f14392b3450fa5547f89c20e914e39c36dee81f7f87b8eaa6d8e05f026274d",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004cbc90",
+            "004cbf31"
+          ]
+        }
+      ]
     },
     {
       "entry": "004ccaa0",
@@ -9881,7 +9958,16 @@
       "changed_bytes": 1,
       "original_sha256": "a01aadad1c68f829435eb38250092cb4297601dc31db4da04a99b50bd5659576",
       "modern_sha256": "205d4bbc7b40458f87c95e845556a9badf8aa6fb96cb1cc6d8569825622d30a7",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004ddb40",
+            "004ddd59"
+          ]
+        }
+      ]
     },
     {
       "entry": "004de070",
@@ -9899,7 +9985,16 @@
       "changed_bytes": 1,
       "original_sha256": "5dcaee8d550badf5756942d91783d7a94aae3e5f319e48b7a43929785b7a2f21",
       "modern_sha256": "f2e6b5f72f1a98c45ab0e8bd0b1d337c5574d74395da65f2c1ed02cfaa4e6537",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004de070",
+            "004de0be"
+          ]
+        }
+      ]
     },
     {
       "entry": "004de700",
@@ -9917,7 +10012,16 @@
       "changed_bytes": 1,
       "original_sha256": "56fbcba272beb55cd9aae57578acab960f626c904bcc17e1bc860ff6c0466bf0",
       "modern_sha256": "58eafe5ce251e0ddae6b89f92d5622213f9e65ed577436b5ac18b9d6038a6bdd",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-effect-renderer-masks.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004de700",
+            "004de770"
+          ]
+        }
+      ]
     },
     {
       "entry": "004dfd56",

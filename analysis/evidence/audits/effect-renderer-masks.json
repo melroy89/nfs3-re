@@ -1,0 +1,276 @@
+{
+  "kind": "effect-renderer-mask-expansion",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0041a120",
+          "end_exclusive": "0041a354",
+          "sha256": "f4e417647fa1cdf4bf9f05808acec3869a96c36978b1621638d2f43a2061e631",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-0041a120.asm"
+        },
+        {
+          "start": "00491190",
+          "end_exclusive": "00491bb8",
+          "sha256": "c807c7f61f820d62ccf68b4f26bc5d2d6dccca44cac8d061cbd34ef77f421e93",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-00491190.asm"
+        },
+        {
+          "start": "00491bc0",
+          "end_exclusive": "00492362",
+          "sha256": "d28a34d58c431d52ab33891866203d23f51e566dbfb9107e2f25e37d6a67386c",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-00491bc0.asm"
+        },
+        {
+          "start": "00492370",
+          "end_exclusive": "00492973",
+          "sha256": "c15a0cefdede25790ab48f70fea9384eb8869351aada31b7c5c7709ef1ec117e",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-00492370.asm"
+        },
+        {
+          "start": "00492980",
+          "end_exclusive": "00493361",
+          "sha256": "0ee29d276a015fac5a1fccdc2780a68e2699682b184f8cee3bf35e012ee43683",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-00492980.asm"
+        },
+        {
+          "start": "0049d800",
+          "end_exclusive": "0049d8eb",
+          "sha256": "f3bad17f0b1fc9d530ef4efcf81692fb2f00b42fee740f779bf9e88d6e5d7230",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-0049d800.asm"
+        },
+        {
+          "start": "004cb750",
+          "end_exclusive": "004cbc84",
+          "sha256": "4e7426fff4793a3a5e03570d179cadb8563b4e5395339098876f2d9ca45cee68",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-004cb750.asm"
+        },
+        {
+          "start": "004cbc90",
+          "end_exclusive": "004cc539",
+          "sha256": "fba91cbd87470b59dbd8b1f7a3b010ec0bdff501841c88bc898f8ce937a6d50a",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-004cbc90.asm"
+        },
+        {
+          "start": "004ddb40",
+          "end_exclusive": "004de064",
+          "sha256": "a01aadad1c68f829435eb38250092cb4297601dc31db4da04a99b50bd5659576",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-004ddb40.asm"
+        },
+        {
+          "start": "004de070",
+          "end_exclusive": "004de6f9",
+          "sha256": "5dcaee8d550badf5756942d91783d7a94aae3e5f319e48b7a43929785b7a2f21",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-004de070.asm"
+        },
+        {
+          "start": "004de700",
+          "end_exclusive": "004decd1",
+          "sha256": "56fbcba272beb55cd9aae57578acab960f626c904bcc17e1bc860ff6c0466bf0",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/original-004de700.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0041a120",
+          "end_exclusive": "0041a354",
+          "sha256": "b2115e3d3625ca33f59e06805fe88159ed11e950a5d6c504f96ee3d02d828a1b",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-0041a120.asm"
+        },
+        {
+          "start": "00491190",
+          "end_exclusive": "00491bb8",
+          "sha256": "9891d2d70953ac5ebfbfaf69c838741bc2f6a9e68d487232e743c0d2729feb63",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-00491190.asm"
+        },
+        {
+          "start": "00491bc0",
+          "end_exclusive": "00492362",
+          "sha256": "0618bd15a4f9de56c9e796832f426a22709f0a3eb9fb0a17ca59db8327ef35d4",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-00491bc0.asm"
+        },
+        {
+          "start": "00492370",
+          "end_exclusive": "00492973",
+          "sha256": "ff8d5535b79a644f657c4cd94b3fad4dcf0482d420101e0ada5f8e97e7c49905",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-00492370.asm"
+        },
+        {
+          "start": "00492980",
+          "end_exclusive": "00493361",
+          "sha256": "4360dad388d2c4cf3b00a749519496feaeac2b2e7236358815bc3ded8a09dd38",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-00492980.asm"
+        },
+        {
+          "start": "0049d800",
+          "end_exclusive": "0049d8eb",
+          "sha256": "dc249639f2345025baa525cca6de63b5ffcff80915ecf187562ccd4879b4797d",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-0049d800.asm"
+        },
+        {
+          "start": "004cb750",
+          "end_exclusive": "004cbc84",
+          "sha256": "7fe0eb0fc7e500c7ab9b91c9fc7b315004444cf49ef47daefe9fa67546b8debc",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-004cb750.asm"
+        },
+        {
+          "start": "004cbc90",
+          "end_exclusive": "004cc539",
+          "sha256": "34f14392b3450fa5547f89c20e914e39c36dee81f7f87b8eaa6d8e05f026274d",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-004cbc90.asm"
+        },
+        {
+          "start": "004ddb40",
+          "end_exclusive": "004de064",
+          "sha256": "205d4bbc7b40458f87c95e845556a9badf8aa6fb96cb1cc6d8569825622d30a7",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-004ddb40.asm"
+        },
+        {
+          "start": "004de070",
+          "end_exclusive": "004de6f9",
+          "sha256": "f2e6b5f72f1a98c45ab0e8bd0b1d337c5574d74395da65f2c1ed02cfaa4e6537",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-004de070.asm"
+        },
+        {
+          "start": "004de700",
+          "end_exclusive": "004decd1",
+          "sha256": "58eafe5ce251e0ddae6b89f92d5622213f9e65ed577436b5ac18b9d6038a6bdd",
+          "assembly": "analysis/captures/modern-differences/effect-renderer-masks/official_modern-004de700.asm"
+        }
+      ]
+    }
+  },
+  "functions": [
+    {
+      "entry": "0041a120",
+      "bytes": 564,
+      "changed_byte": "0041a1c8"
+    },
+    {
+      "entry": "00491190",
+      "bytes": 2600,
+      "changed_byte": "00491225"
+    },
+    {
+      "entry": "00491bc0",
+      "bytes": 1954,
+      "changed_byte": "00492208"
+    },
+    {
+      "entry": "00492370",
+      "bytes": 1539,
+      "changed_byte": "004925a2"
+    },
+    {
+      "entry": "00492980",
+      "bytes": 2529,
+      "changed_byte": "00492c15"
+    },
+    {
+      "entry": "0049d800",
+      "bytes": 235,
+      "changed_byte": "0049d814"
+    },
+    {
+      "entry": "004cb750",
+      "bytes": 1332,
+      "changed_byte": "004cb870"
+    },
+    {
+      "entry": "004cbc90",
+      "bytes": 2217,
+      "changed_byte": "004cbf31"
+    },
+    {
+      "entry": "004ddb40",
+      "bytes": 1316,
+      "changed_byte": "004ddd59"
+    },
+    {
+      "entry": "004de070",
+      "bytes": 1673,
+      "changed_byte": "004de0be"
+    },
+    {
+      "entry": "004de700",
+      "bytes": 1489,
+      "changed_byte": "004de770"
+    }
+  ],
+  "predicate_changed_byte_inputs": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191
+  ],
+  "limits": [
+    "Static code and exhaustive Boolean mask comparison only; no rendered observations.",
+    "Equal code tails do not prove equal data, x87 state or full machine-state equivalence."
+  ]
+}
