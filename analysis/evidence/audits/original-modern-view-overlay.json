@@ -12,6 +12,13 @@
           "bytes_sha256": "a06384203b8cc8f624b58bc5a8c9451f20f40db4037e345b50c5244bd1f8e819",
           "assembly": "analysis/captures/modern-differences/view-overlay/original-00489240.asm",
           "assembly_sha256": "e73ae3b5d16ff476fc5b8e997f27c19794a6c781387f3966bbbc664ebc404418"
+        },
+        {
+          "start": "00488c6e",
+          "end": "00488d41",
+          "bytes_sha256": "e458b2068ef75698f4114025e4d916f43be0e1cd31d44134ccc9105b00794434",
+          "assembly": "analysis/captures/modern-differences/view-overlay/original-00488c6e.asm",
+          "assembly_sha256": "eb382cb4424bdcf987526f467fbde020556ca5c6d752f0900809456d0f86f047"
         }
       ],
       "constants_0053b76c_to_0053b78c_hex": "00000000000070409a9999999999593f111111111111613fcdcccc3a8988083b"
@@ -26,6 +33,13 @@
           "bytes_sha256": "e3e8f5b78a1328815ef3501819414e2ba5eb19bbfc017609639613359f51dde3",
           "assembly": "analysis/captures/modern-differences/view-overlay/official_modern-00489240.asm",
           "assembly_sha256": "98aa5bb8de88581b9f8450296f5f5d14d14681cc333104089e5b37e53e6e9f3c"
+        },
+        {
+          "start": "00488c6e",
+          "end": "00488d41",
+          "bytes_sha256": "e458b2068ef75698f4114025e4d916f43be0e1cd31d44134ccc9105b00794434",
+          "assembly": "analysis/captures/modern-differences/view-overlay/official_modern-00488c6e.asm",
+          "assembly_sha256": "a83e6a604ca05184e0557acb11b8845f1bba253dfbf74eaa7222afca88802ca6"
         },
         {
           "start": "004900c8",
@@ -51,6 +65,63 @@
       ],
       "constants_0053b76c_to_0053b78c_hex": "00000000000070409a9999999999593f111111111111613fcdcccc3a8988083b"
     }
+  },
+  "optional_overlay_shape_bindings": {
+    "paired_setup": "00488c6e..00488d41",
+    "bytes_identical": true,
+    "sha256": "e458b2068ef75698f4114025e4d916f43be0e1cd31d44134ccc9105b00794434",
+    "bindings": [
+      {
+        "index": 0,
+        "destination": "00791c10",
+        "shape_name": "geaR",
+        "name_address": "0053b70c"
+      },
+      {
+        "index": 1,
+        "destination": "00791c3c",
+        "shape_name": "geaN",
+        "name_address": "0053b714"
+      },
+      {
+        "index": 2,
+        "destination": "00791c68",
+        "shape_name": "gea1",
+        "name_address": "0053b71c"
+      },
+      {
+        "index": 3,
+        "destination": "00791c94",
+        "shape_name": "gea2",
+        "name_address": "0053b724"
+      },
+      {
+        "index": 4,
+        "destination": "00791cc0",
+        "shape_name": "gea3",
+        "name_address": "0053b72c"
+      },
+      {
+        "index": 5,
+        "destination": "00791cec",
+        "shape_name": "gea4",
+        "name_address": "0053b734"
+      },
+      {
+        "index": 6,
+        "destination": "00791d18",
+        "shape_name": "gea5",
+        "name_address": "0053b73c"
+      },
+      {
+        "index": 7,
+        "destination": "00791d44",
+        "shape_name": "gea6",
+        "name_address": "0053b744"
+      }
+    ],
+    "consumer": "0048954f/004895a2 index the same44-byte records using vehicle byte+50b.",
+    "limits": "Gear association inferred from shape labels and R/N/1..6 ordering; actual image identity and accepted vehicle index domain not validated."
   },
   "envelope_changed_byte_addresses": [
     "0048928c",
