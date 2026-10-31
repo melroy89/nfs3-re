@@ -48,6 +48,14 @@ def main():
                              'assembly_sha256': hashlib.sha256(output.read_bytes()).hexdigest()})
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'ranges': captures}
         if label == 'official_modern':
+            assert pe.get_data(0xf84fa,19).hex()=='b814854f00e81cf7ffffeb07e80900000031db'
+            assert pe.get_data(0xf851d,4).hex()=='85c07418'
+            result['cleanup_registration_boundary']={
+                'registration':'004f84fa supplies004f8514;004f84ff calls004f7c20; result ignored before success return.',
+                'full_registry':'Registrar failure does not change loader success on this path; runtime saturation not established.',
+                'cleanup_zero_handle':'004f851d/1f skips both FreeLibrary and slot-clear loop when exchanged old handle0.',
+                'register_contract':'004f8514 PUSHAD/POPAD preserves EDX on ordinary callback return.',
+                'limits':'Shared registrar/dispatcher evidence is in small-wrapper audit; no complete process-lifetime cleanup guarantee.'}
             assert pe.get_data(0xb5a58,20).hex() == '60e8e6fdffff85c0750ab8a4d15300e8a0fcffff'
             assert pe.get_string_at_rva(0x13d1a4) == b'The thrash driver is not found.'
             assert pe.get_string_at_rva(0x13d1c4) == b'Cannot load the thrash driver.'

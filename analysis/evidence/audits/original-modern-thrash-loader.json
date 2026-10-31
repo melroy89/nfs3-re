@@ -192,6 +192,13 @@
       "slot_va": "009ef914"
     }
   ],
+  "cleanup_registration_boundary": {
+    "registration": "004f84fa supplies004f8514;004f84ff calls004f7c20; result ignored before success return.",
+    "full_registry": "Registrar failure does not change loader success on this path; runtime saturation not established.",
+    "cleanup_zero_handle": "004f851d/1f skips both FreeLibrary and slot-clear loop when exchanged old handle0.",
+    "register_contract": "004f8514 PUSHAD/POPAD preserves EDX on ordinary callback return.",
+    "limits": "Shared registrar/dispatcher evidence is in small-wrapper audit; no complete process-lifetime cleanup guarantee."
+  },
   "missing_driver_diagnostic": {
     "sequence": "004b5a58..004b5a6c",
     "gate": "004b5844 returns0 -> message0053d1a4 ->004b570c at004b5a67",
