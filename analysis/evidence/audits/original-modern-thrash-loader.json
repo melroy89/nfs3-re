@@ -428,6 +428,25 @@
       "slot_va": "009ef914"
     }
   ],
+  "descriptor_cache_lifetime_boundary": {
+    "cell": "007a3a5c",
+    "complete_file_literal_operands": [
+      "00488a90",
+      "0049c5c7",
+      "004b5bd8",
+      "004be583",
+      "004bed9a",
+      "004bedde",
+      "004beec1",
+      "004d37c0",
+      "004f84f6",
+      "004f8543"
+    ],
+    "direct_writes": "004f84f5 loader publication;004f8542 about-refresh publication.",
+    "cleanup": "No literal cache operand in004f8514..004f853b; cache is not among34 table-cleared export slots.",
+    "refresh": "004f853c calls009ef980 and stores returnedEAX without local null check.",
+    "limits": "Computed/alias writers and external mutations not excluded. No post-unload consumer reachability, descriptor ownership or actual stale-pointer use established."
+  },
   "modern_type_and_capability_contract": {
     "ascii_lower_helper": {
       "start": "004f0ae0",

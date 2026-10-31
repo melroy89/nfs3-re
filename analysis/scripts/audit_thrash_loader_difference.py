@@ -86,6 +86,21 @@ def main():
                               'name_va': f'{name:08x}', 'slot_va': f'{slot:08x}'})
             assert pe.get_data(0x4f84a0-base, 4) == b'\0'*4
             result['modern_export_table'] = table
+            assert all(row['slot_va']!='007a3a5c' for row in table)
+            assert pe.get_data(0xf853c,12).hex()=='ff1580f99e00a35c3a7a00c3'
+            assert struct.pack('<I',0x7a3a5c) not in pe.get_data(0xf8514,0x27)
+            hits=[];offset=0
+            while True:
+                offset=raw.find(struct.pack('<I',0x7a3a5c),offset)
+                if offset<0:break
+                hits.append(f'{base+pe.get_rva_from_offset(offset):08x}');offset+=1
+            assert hits==['00488a90','0049c5c7','004b5bd8','004be583','004bed9a','004bedde','004beec1','004d37c0','004f84f6','004f8543']
+            result['descriptor_cache_lifetime_boundary']={
+                'cell':'007a3a5c','complete_file_literal_operands':hits,
+                'direct_writes':'004f84f5 loader publication;004f8542 about-refresh publication.',
+                'cleanup':'No literal cache operand in004f8514..004f853b; cache is not among34 table-cleared export slots.',
+                'refresh':'004f853c calls009ef980 and stores returnedEAX without local null check.',
+                'limits':'Computed/alias writers and external mutations not excluded. No post-unload consumer reachability, descriptor ownership or actual stale-pointer use established.'}
             literals = {}
             for va, expected_text in ((0x53f61c,'ThrashDriver'),(0x53f70c,'THRASH'),
                                       (0x53f71c,'Type'),(0x53f724,'FogSupport')):

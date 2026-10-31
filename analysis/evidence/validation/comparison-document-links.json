@@ -393,8 +393,8 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "895052248bf793bab8ef270be60ab10ee87b60df52857d143bfa860479bf3304",
-      "relative_links": 17
+      "sha256": "9f36e852484de425a189642923d57498ca49fba2c868822f618c66c7de7d6655",
+      "relative_links": 19
     },
     {
       "path": "analysis/original-modern-replay-list-cursor.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1790,
+  "relative_link_count": 1792,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
