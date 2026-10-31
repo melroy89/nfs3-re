@@ -1,0 +1,163 @@
+{
+  "kind": "static-input-worker-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0042dc20",
+          "end": "0042dc40",
+          "sha256": "851e017dc85d312bb6193fe75a409364861f9bec2b9e235e96a57ad701bbbf42",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-0042dc20.asm",
+          "assembly_sha256": "2e6ec5626cb77e77c17d0a6faddabdc1fcbfd116fd80a274b28b3f580e9d3e40"
+        },
+        {
+          "start": "004b61f9",
+          "end": "004b620a",
+          "sha256": "29c8ac7f4b292a3afff17423912165ed027381bc992f0a9b058c087c16805e9b",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004b61f9.asm",
+          "assembly_sha256": "9b22b4afb68ed181a0224b1b0da006201f0dca4ea46c6bec0dfe32fd0ae814ed"
+        },
+        {
+          "start": "004b626f",
+          "end": "004b6279",
+          "sha256": "14a3e912c60fc052d23d3b099fa8bdb28b4cecc38d33ae8ec85fdd93472b72af",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004b626f.asm",
+          "assembly_sha256": "e1ded7a68f6edb6b3e33c7c98877a5a5bff2359fca7333bd1059d3be1e83cd75"
+        },
+        {
+          "start": "004df870",
+          "end": "004df894",
+          "sha256": "22d7a18a1b8bdb5784ac65b72d96e6204c91a92e583b966b053cbf1a8020a119",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004df870.asm",
+          "assembly_sha256": "893e64ea7893138f6406c236ce767fe96c8e02e70a035161abe0d4ea5ab65b04"
+        },
+        {
+          "start": "0042dc40",
+          "end": "0042dc57",
+          "sha256": "6ab3e26cd9b974f52ad0897821cbcc3299edf47150c9e9e7cca44775cf4ad656",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-0042dc40.asm",
+          "assembly_sha256": "018b32bc88c278afae89850443903b1640739e46285357d0007090efbd4cd574"
+        },
+        {
+          "start": "004dfb00",
+          "end": "004dfb14",
+          "sha256": "c00fd14efdeb72d257a2133d40d0c1541b2064dbd0b1d5c0f05b09d94069d9ba",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004dfb00.asm",
+          "assembly_sha256": "87fcc343d9afb1af0088050cfa54263227fe67517a77aee2626ad7b4883a0cf8"
+        },
+        {
+          "start": "004dfb20",
+          "end": "004dfb3d",
+          "sha256": "7c1c0cbb816c6d07be55b2c056f698923a59720f0d4870e683918d234d3f73b3",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004dfb20.asm",
+          "assembly_sha256": "4f4ddc6a9b569413bf5d075b5cb24413d1db098572a8290d375b8394896558c7"
+        },
+        {
+          "start": "004dfb70",
+          "end": "004dfb8f",
+          "sha256": "67db29f9f6cbb2eb72ce57b29bebba6b78023e6a396dc0213626cfc0fa48ca44",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004dfb70.asm",
+          "assembly_sha256": "2fe4357d3eb97a6996e7fea1029e3d24b079ac2ef73df1ae25687a2350b59102"
+        },
+        {
+          "start": "004dfc00",
+          "end": "004dfc0d",
+          "sha256": "3bd1ca1ed7c59cfd7e93698d73b7aee6c36c033094542da314adbc85bbf84cbb",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004dfc00.asm",
+          "assembly_sha256": "ff6a8886a81987432557b6dbbb05ac21679619c8dda05f1a61c91d7502f567c2"
+        }
+      ],
+      "imports": {
+        "00534488": "CloseHandle",
+        "00534494": "CreateEventA",
+        "005345e8": "SetEvent",
+        "00534608": "TerminateThread",
+        "00534630": "WaitForMultipleObjectsEx"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0041d7e4",
+          "end": "0041d813",
+          "sha256": "e47e4ae84ca3c9c46bf851bff8b1b0c194fb33cd9d27897de0922e1b90c7dbb2",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-0041d7e4.asm",
+          "assembly_sha256": "0b21d06023e87527923c202824a3ac13b174a0b7a19f2326c0c31770062eadf3"
+        },
+        {
+          "start": "0042dc20",
+          "end": "0042dc3c",
+          "sha256": "b351f3a3e27130539139a778d1908c4a5587245304ecaaba71ba5b45988ffc4a",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-0042dc20.asm",
+          "assembly_sha256": "394daf017e5320a9fa3adcc37ee170e22946ea8d55160859cabb4d665ad21fd9"
+        },
+        {
+          "start": "004b5d44",
+          "end": "004b5d5f",
+          "sha256": "50c8f5f7b8d0973486af14326e665b0e2368423774bfe2d7528677cd34ae08fd",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004b5d44.asm",
+          "assembly_sha256": "d1704a540e2961b023744c7f4f17e2f01b1d24603014d4fdfe529415bba1a94c"
+        },
+        {
+          "start": "004b5d84",
+          "end": "004b5db1",
+          "sha256": "09480c939b0fb8591e1c3ec2392671a3076c05affbaffb35a8b1fea4fd2e707f",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004b5d84.asm",
+          "assembly_sha256": "568396df096d27b395a8383c5bdd4cd40c545882fde355cae0088916e76321ae"
+        },
+        {
+          "start": "0042dc40",
+          "end": "0042dc57",
+          "sha256": "6ab3e26cd9b974f52ad0897821cbcc3299edf47150c9e9e7cca44775cf4ad656",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-0042dc40.asm",
+          "assembly_sha256": "f31b2933e0fc335a3d994873709f55547513f6fab4ce75ea5d26d5d06c579edf"
+        },
+        {
+          "start": "004dfb00",
+          "end": "004dfb14",
+          "sha256": "c00fd14efdeb72d257a2133d40d0c1541b2064dbd0b1d5c0f05b09d94069d9ba",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004dfb00.asm",
+          "assembly_sha256": "6d2b5acf5ad735d81d4a0fda5e9ef6e5ce1105a227b17586912fedb9b3db9896"
+        },
+        {
+          "start": "004dfb20",
+          "end": "004dfb3d",
+          "sha256": "7c1c0cbb816c6d07be55b2c056f698923a59720f0d4870e683918d234d3f73b3",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004dfb20.asm",
+          "assembly_sha256": "20cf8ef92c138b38bdcda6438ee94afbe90837a2438e24af15b999812f45dbfc"
+        },
+        {
+          "start": "004dfb70",
+          "end": "004dfb8f",
+          "sha256": "67db29f9f6cbb2eb72ce57b29bebba6b78023e6a396dc0213626cfc0fa48ca44",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004dfb70.asm",
+          "assembly_sha256": "954d9cce57b24174fbdb70f7410f91210ec86aba8cdbe43cfae828bb559c9fae"
+        },
+        {
+          "start": "004dfc00",
+          "end": "004dfc0d",
+          "sha256": "3bd1ca1ed7c59cfd7e93698d73b7aee6c36c033094542da314adbc85bbf84cbb",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004dfc00.asm",
+          "assembly_sha256": "7e9b8207b41ac837ab370e6085148fbd8a098fc653a1d63ddfdb79aca5d5d03c"
+        }
+      ],
+      "imports": {
+        "00534488": "CloseHandle",
+        "00534494": "CreateEventA",
+        "005345e8": "SetEvent",
+        "00534608": "TerminateThread",
+        "00534630": "WaitForMultipleObjectsEx"
+      }
+    }
+  },
+  "limits": [
+    "No worker scheduling, shutdown race or compatibility test.",
+    "Modern shutdown closes thread handle and signals event; no join established in that body.",
+    "Same address 0042dc20 denotes different roles across versions."
+  ]
+}

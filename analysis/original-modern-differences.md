@@ -358,6 +358,8 @@ See also [track-chain detail selection](original-modern-track-detail.md): mirror
 
 See also [indexed-texture loading progress](original-modern-texture-progress.md): changed stage progress budget and retained cancellation limits.
 
+See also [input-worker lifecycle](original-modern-input-worker.md): relocated callback, sentinel-controlled exit and changed shutdown synchronization.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
