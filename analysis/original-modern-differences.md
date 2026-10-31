@@ -41,6 +41,8 @@ The [initialized-data address index](original-modern-initialized-data-index.md) 
 
 The [bounded ASCII string index](original-modern-string-index.md) lists112 Modern-only and186 original-only initialized-data text values with addresses;4027 values are shared. It excludes short/non-ASCII/control-containing text and other sections. Text candidates do not independently prove a feature or loaded dependency.
 
+The [PE relocation comparison](original-modern-relocation-index.md) records2205 removed,1178 added and44193 shared HIGHLOW sites, including325 shared sites with changed file operands. It explains the relocation directory/section size change separately from code/data semantics.
+
 Original and official Modern share a 1,257,472-byte code span at VA `00401000`, raw offset `400`. Within that span **41,441 bytes differ**. Section renaming from `AUTO` to `.code`, and `DGROUP` to `.data`, is not itself an algorithm change.
 
 | Original / Modern region | Comparison |
