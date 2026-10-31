@@ -447,7 +447,7 @@ The [HUD-settings policy comparison](original-modern-hud-settings-policy.md) ver
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **181 Claimed, 37 Static, 69 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **180 Claimed, 37 Static, 70 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -524,7 +524,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | ID | Reported change | Review |
 |---|---|---|
 | MP151-001 | “Rear View Camera” setting which allows to lock the rear view camera in the car. It greatly increases visibility and reduces the blind spot when the current main camera is not “In Car”. | Claimed |
-| MP151-002 | Fixed a bug which had allowed to save duplicated cameras when the user presses "Race", "Credits", or "Exit game" buttons instead of the "Done" button. | Claimed |
+| MP151-002 | Fixed a bug which had allowed to save duplicated cameras when the user presses "Race", "Credits", or "Exit game" buttons instead of the "Done" button. | Partial |
 | MP151-003 | Experimental ini setting AllowHugeTextures which enables huge texture (512×512, 1024×1024, and 2048×2048) support for track elements and cars during gameplay. Useful for the game modding. | Static |
 | MP151-004 | Fixed a small bug in the DX5, DX6, and SoftTri renderers in the thrash_lockwindow function. | Claimed |
 | MP151-005 | Fixed mistakes in new strings in German, Spanish and French languages. Thanks Gonzalo's and Kirill Diduk for hints. | Claimed |

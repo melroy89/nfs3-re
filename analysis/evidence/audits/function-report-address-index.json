@@ -28,6 +28,10 @@
       "sha256": "38dd4ce2a52f5ee6190981b44cd610b76cbb14e5b68a760e8b20f725ad63b446"
     },
     {
+      "path": "analysis/original-modern-camera-duplicates.md",
+      "sha256": "7280634be621709b559bf8826c03deb35953dd66f4cf93a078834e9e93a0c1b6"
+    },
+    {
       "path": "analysis/original-modern-car-alias.md",
       "sha256": "dce51930ef80ee38c8315bbd603d7e711c3a150ea44b73c57201d6a496325a41"
     },
@@ -337,7 +341,7 @@
     },
     {
       "path": "analysis/original-modern-small-entry-followup.md",
-      "sha256": "d98ba68fba771d1de1f556ba24cf01758c92cedc5a4317028f0658d5aff6eed3"
+      "sha256": "49d1e0cb2317561e0d70402cf37ae3231a9032eeafe6fede743dcecab4e59298"
     },
     {
       "path": "analysis/original-modern-sound-bank-language.md",
@@ -4230,6 +4234,15 @@
       "original_sha256": "7e3a1c95c56735e18957f53cfc979018e84e12f7d759ee3fcfad7bd7b22ed277",
       "modern_sha256": "b9af4161d932125bc63143eabbd697657e16e43144504314f08f6c8e0c630c55",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-camera-duplicates.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0045d7ad",
+            "0045d7ae",
+            "0045d832"
+          ]
+        },
         {
           "path": "analysis/original-modern-small-entry-followup.md",
           "entry_mentioned": true,

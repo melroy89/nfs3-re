@@ -1,0 +1,129 @@
+{
+  "kind": "camera-duplicate-cleanup-caller-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0045d770",
+          "end_exclusive": "0045d83d",
+          "sha256": "d904db73aa90917c735b02e3e0813e1c14855f38b01be38e3ce538b5918a6ae4",
+          "assembly": "analysis/captures/modern-differences/camera-duplicates/original-0045d770.asm"
+        },
+        {
+          "start": "0045d7ad",
+          "end_exclusive": "0045d837",
+          "sha256": "9a31c5ca8d5db05ac8f0d35b9585a30344868aec7ce22bc27b1c5efab245ffb2",
+          "assembly": "analysis/captures/modern-differences/camera-duplicates/original-0045d7ad.asm"
+        },
+        {
+          "start": "0045d920",
+          "end_exclusive": "0045d9a0",
+          "sha256": "cdfecbbe2e096e894ae520d5dd03e7d0616daae2b4bd17538674722782a6bcc1",
+          "assembly": "analysis/captures/modern-differences/camera-duplicates/original-0045d920.asm"
+        },
+        {
+          "start": "0045d9e0",
+          "end_exclusive": "0045daa4",
+          "sha256": "d313507a00297e0c34ae4a4c2fe859f23001220ff88858d50bf744c8be40db39",
+          "assembly": "analysis/captures/modern-differences/camera-duplicates/original-0045d9e0.asm"
+        }
+      ],
+      "registrations": {
+        "pscamera": {
+          "address": "00555d50",
+          "words": [
+            "00537c78",
+            "00000000",
+            "00000000",
+            "0045d920",
+            "0045d9e0",
+            "0045d9a0"
+          ]
+        },
+        "camera": {
+          "address": "00556008",
+          "words": [
+            "00537d84",
+            "00000000",
+            "00000000",
+            "0045d920",
+            "0045d9e0",
+            "0045d9a0"
+          ]
+        }
+      },
+      "cancel_token": "CANCEL_CAMERA_OPTIONS"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0045d770",
+          "end_exclusive": "0045d7a4",
+          "sha256": "f954b87f8ff707bfa9a25392f6f0b229df625dc4c698908b8bd0754da727f6cf",
+          "assembly": "analysis/captures/modern-differences/camera-duplicates/official_modern-0045d770.asm"
+        },
+        {
+          "start": "0045d7ad",
+          "end_exclusive": "0045d837",
+          "sha256": "dc9aad4db62aa8c9558afe9353f59de95d173dceb241c31c7e5f876e786c2554",
+          "assembly": "analysis/captures/modern-differences/camera-duplicates/official_modern-0045d7ad.asm"
+        },
+        {
+          "start": "0045d920",
+          "end_exclusive": "0045d9a0",
+          "sha256": "e2231d9c6d80afd5eb26572327919c9666913da192ec7082c7c4d6334e636be5",
+          "assembly": "analysis/captures/modern-differences/camera-duplicates/official_modern-0045d920.asm"
+        },
+        {
+          "start": "0045d9e0",
+          "end_exclusive": "0045daa4",
+          "sha256": "84dc37e9814e2212dfd947d54d148eccb1e5ee17da447590305200ab86d643b6",
+          "assembly": "analysis/captures/modern-differences/camera-duplicates/official_modern-0045d9e0.asm"
+        }
+      ],
+      "registrations": {
+        "pscamera": {
+          "address": "00555d50",
+          "words": [
+            "00537c78",
+            "00000000",
+            "00000000",
+            "0045d920",
+            "0045d9e0",
+            "0045d9a0"
+          ]
+        },
+        "camera": {
+          "address": "00556008",
+          "words": [
+            "00537d84",
+            "00000000",
+            "00000000",
+            "0045d920",
+            "0045d9e0",
+            "0045d9a0"
+          ]
+        }
+      },
+      "cancel_token": "CANCEL_CAMERA_OPTIONS"
+    }
+  },
+  "verified_modern_calls": [
+    "0045d798",
+    "0045da44"
+  ],
+  "retained_post_cleanup_tail": {
+    "start": "0045da49",
+    "end_exclusive": "0045daa4",
+    "sha256": "66776965280b366bacd83f2efd857ba5373d9b1f175e328698114efcb7ca17cf"
+  },
+  "limits": [
+    "Non-Cancel callback branch verified; exact Race/Credits/Exit lifecycle coverage and runtime saving remain unverified.",
+    "Clear-to-zero policy does not guarantee all four raw values are distinct; zeros can repeat.",
+    "No target execution, Ghidra edits or executable changes."
+  ]
+}

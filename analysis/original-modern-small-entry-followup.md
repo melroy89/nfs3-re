@@ -23,7 +23,7 @@ Every other body byte, including vehicle-record setup and second-pass calls, is 
 
 Modern `0045d7ad..0045d834` is a 135-byte helper: PUSHAD, six ordered pair checks, POPAD, RET. It compares globals `006fbba8`, `006fbbac`, `006fbbb0`, `006fbbb4` and clears later matching entries to zero, in this sequence: second against first; third against first; fourth against first; third against the possibly updated second; fourth against that second; fourth against the possibly updated third. Zero is not exempted from comparisons. Clearing to zero does not establish that all resulting values are distinct.
 
-Original `0045d7ad` is a RET. The next 132 bytes, `0045d7ae..0045d832`, are byte-identical to Modern's comparison body, but original continues with `MOV EAX,3` at `0045d832`; Modern substitutes POPAD/RET. Consequently, the original comparison instructions already exist and must not be described as newly invented checks. Original entry paths into that block and Modern callers remain unresolved. The verified change is the new callable boundary preserving general registers; PUSHAD/POPAD do not preserve arithmetic flags. The saved camera-choice label still requires caller/context evidence before inferring a user-visible policy change.
+Original `0045d7ad` is a RET. The next 132 bytes, `0045d7ae..0045d832`, are byte-identical to Modern's comparison body, but original continues with `MOV EAX,3` at `0045d832`; Modern substitutes POPAD/RET. Consequently, the original comparison instructions already exist and must not be described as newly invented checks. The [caller follow-up](original-modern-camera-duplicates.md) now verifies the original action-handler path into that block and two Modern calls, including the registered camera transition’s non-Cancel path. The verified change is the new callable boundary preserving general registers; PUSHAD/POPAD do not preserve arithmetic flags. Named camera registrations now support the local camera-choice interpretation; full named-button routing and user-visible behavior remain unverified.
 
 ## Modern wrappers and seed setter
 
@@ -45,7 +45,7 @@ The complete same-address wrapper `00524290..005242ed` is 93 bytes in both versi
 
 | Remaining question | Status / confidence | Required evidence |
 |---|---|---|
-| Original paths into duplicate-choice block and Modern caller policy | Pending / unresolved | Boundary-correct direct and indirect caller tracing in both versions. |
+| Duplicate-choice named-button save coverage | Local original/Modern paths done / verified; full lifecycle pending / unresolved | Follow the [camera transition evidence](original-modern-camera-duplicates.md) through Race/Credits/Exit dispatch and persistence before claiming the complete fix. |
 | Original functional counterparts of three Modern wrappers | Pending / unresolved | Trace corresponding callers/imports and original RNG ownership, rather than pairing same-address bytes. |
 | Diagnostic trigger and error handling | Pending / unresolved | Trace callers and complete `004b570c` contract. |
 | Progress constant reachability and actual presentation | Direct absolute reference search done / verified; computed aliases and visual behavior unresolved | Trace computed aliases if evidence warrants it; runtime comparison only if subsequently authorized. |

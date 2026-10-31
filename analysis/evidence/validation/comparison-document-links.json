@@ -17,6 +17,11 @@
       "relative_links": 2
     },
     {
+      "path": "analysis/original-modern-camera-duplicates.md",
+      "sha256": "7280634be621709b559bf8826c03deb35953dd66f4cf93a078834e9e93a0c1b6",
+      "relative_links": 4
+    },
+    {
       "path": "analysis/original-modern-car-alias.md",
       "sha256": "dce51930ef80ee38c8315bbd603d7e711c3a150ea44b73c57201d6a496325a41",
       "relative_links": 5
@@ -93,7 +98,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "d5a62c86e7b4235f147eb786ec55938fc39fdeb67ed3089667bfc62bfd7f003a",
+      "sha256": "efd4ca540ae16bc95eceed187000f38a5b74ddd0f19c9872c5fae5f36560cf17",
       "relative_links": 131
     },
     {
@@ -148,8 +153,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "0b87c3553a55a6fa0d7b0a13cdd4c42628a8194ae6aef0f6d576812b64d3ef9d",
-      "relative_links": 599
+      "sha256": "23abcc6afc34e2f28ee9400b1ca7d3415b801e71138f7112c7eca6ffe030c2e1",
+      "relative_links": 600
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -423,8 +428,8 @@
     },
     {
       "path": "analysis/original-modern-small-entry-followup.md",
-      "sha256": "d98ba68fba771d1de1f556ba24cf01758c92cedc5a4317028f0658d5aff6eed3",
-      "relative_links": 6
+      "sha256": "49d1e0cb2317561e0d70402cf37ae3231a9032eeafe6fede743dcecab4e59298",
+      "relative_links": 8
     },
     {
       "path": "analysis/original-modern-sound-bank-language.md",
@@ -523,8 +528,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "145505a0b5fc6d6c458023469f2d98e76a18511d338af46ff7f27e6654a97b4c",
-      "relative_links": 116
+      "sha256": "c3f341a3b8553046e97236bbf8c6dcd6594354a3c11ff90f799f8c21639ea0e8",
+      "relative_links": 117
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -532,8 +537,8 @@
       "relative_links": 9
     }
   ],
-  "file_count": 106,
-  "relative_link_count": 1439,
+  "file_count": 107,
+  "relative_link_count": 1447,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

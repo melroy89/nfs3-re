@@ -127,7 +127,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00457030` | HandleFrontendCarColorSelectorInput | 417 | 2 | [colour-control](original-modern-colour-control.md) |
 | `004571e0` | UpdateFrontendColorSelectorLayout | 110 | 2 | [colour-control](original-modern-colour-control.md) |
 | `0045ab30` | RenderHudElementForView | 3598 | 5 | [numeric-scale](original-modern-numeric-scale.md) |
-| `0045d7ad` | ClearDuplicateCameraMenuChoicesInPriorityOrder | 135 | 3 | [small-entry-followup](original-modern-small-entry-followup.md) |
+| `0045d7ad` | ClearDuplicateCameraMenuChoicesInPriorityOrder | 135 | 3 | [camera-duplicates](original-modern-camera-duplicates.md), [small-entry-followup](original-modern-small-entry-followup.md) |
 | `004607c0` | RenderFrontendButtonAndUpdateAvailability | 2728 | 8 | [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004628d0` | ConfigureFrontendDropdownBoundsFromLabels | 219 | 28 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md) |
 | `00463ff0` | HandleFrontendDropDownInput | 1317 | 82 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md), [dropdown-input](original-modern-dropdown-input.md) |
