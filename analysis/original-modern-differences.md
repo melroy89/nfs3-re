@@ -102,6 +102,8 @@ The [renderer-loading comparison](original-modern-renderer-loading.md) establish
 
 The [configuration comparison](original-modern-configuration.md) traces the Modern caller and INI/environment readers: explicit INI values precede environment defaults, then caller defaults. Original registry imports and the new profile API calls support a migration, but each original setting/key still needs mapping. The configured filename is passed as direct buffer address `007a263c`; its executable-basename selection and fallback are now traced in the startup-path chapter; later writes remain outside that bounded audit.
 
+The [renderer lifecycle comparison](original-modern-renderer-lifecycle.md) maps original callback installation and `00517610` to Modern’s direct `00517620`, including mode-call return checking, a byte-identical setup tail and original hard-coded environment values. This is static control-flow evidence; driver success/failure recovery remains untested.
+
 ## 8. Window initialization and callback lifecycle
 
 The [window comparison](original-modern-window-handling.md) records all 26/27 initializer registrations, the shift from focus callbacks to application activation, hook install/teardown changes, and an ABI/result anomaly in the added power handler. The 120-byte window dispatcher is unchanged. Actual window style/size and every focus-restoration path remain to be compared; no suspend behavior was tested.
@@ -154,7 +156,7 @@ The full JSON inventory gives every current Modern local function name, entry/ra
 | `004b5844` LoadThrashDriverSettings | 486 / 504 | Modern INI/driver path traced in renderer report; original environment/name wrapper traced; remaining selector branches pending |
 | `00494cb0` RenderTiledLoadingArtworkAndInitializeProgressBounds | 480 / 748 | Tile/reference/rounding deltas traced; full progress/UI contract and output remain |
 | `004e3078` ScreenshotEncodingThread | 451 / 464 | Original synchronous counterpart mapped in screenshot report; GDI+ success, resources and runtime lifetime remain |
-| `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; numeric/type dispatch and compatibility calls traced; selector producers and DLL semantics remain |
+| `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; numeric/type dispatch, callback-to-direct mode initialization and compatibility calls traced; selector producers and DLL semantics remain |
 | `004b5580` LoadGameIniSettings | 374 / 393 | Modern defaults/API effects traced; original setting-by-setting registry mapping remains |
 | `0044a2d0` DispatchFrontendMenuKeyToSelectedEntry | 332 / 358 | Dispatcher/named keys/chat guard traced; all assets, entry callbacks and sound paths remain |
 | `00485880` InitializeDefaultHudLayoutProfileSettings | 332 / 375 | File versus embedded preset source and header stores traced; asset/consumer/reset mapping remains |

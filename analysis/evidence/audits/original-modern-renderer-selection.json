@@ -33,6 +33,34 @@
           "bytes_sha256": "042cb51d73675b7844ba57e85c778c1dcc078a502b6d0ee8be4273996bd846f4",
           "assembly": "analysis/captures/modern-differences/renderer-selection/original-004f8b50.asm",
           "assembly_sha256": "256c09bbde0474f862700f06d4a2d2eeaafea8b0c83c6a3334720289500d6699"
+        },
+        {
+          "start": "004f8830",
+          "end": "004f88b4",
+          "bytes_sha256": "26142fafbc340fa08936a2fdda53966e1226f1b961de886fedd3683e35c51def",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/original-004f8830.asm",
+          "assembly_sha256": "f9d68c502252338bb05bf90151b4c0355d93b23eaddfef82dacada5858e86028"
+        },
+        {
+          "start": "004f8930",
+          "end": "004f8b4b",
+          "bytes_sha256": "ad90f0f1bfeec2525630e8c754b4b1cd608b6a9a73439f8fb66c7bfad3868c95",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/original-004f8930.asm",
+          "assembly_sha256": "1e93a4cd7def99d7ae2e82caf9947cf6e342bd1e7b6405ae960ea2b0997380bf"
+        },
+        {
+          "start": "005089d0",
+          "end": "00508a3e",
+          "bytes_sha256": "75a8de04369b31e6d815c53fc4cfe8575c37a4a91478a42d8365dfb67ece24e5",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/original-005089d0.asm",
+          "assembly_sha256": "3b09de3b47445cdfaa78d2127573e5ef07702ee93f0b72368f2c2037e6db0a9c"
+        },
+        {
+          "start": "00517610",
+          "end": "0051788d",
+          "bytes_sha256": "3d0032952d268d72bea311fb9bb58aa4eb08faecf82ccd58e0e96a74b889ba8d",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/original-00517610.asm",
+          "assembly_sha256": "fc4f7d1ee85f496fc7b14ff66f54477d3892f2b3257e092eb87b86c21f0748bd"
         }
       ],
       "selector_targets": [
@@ -49,6 +77,24 @@
         "004b5e0a"
       ],
       "environment_key": "THRASH_DRIVERNAME",
+      "renderer_environment_strings": {
+        "0054d7ac": "",
+        "0054d7b0": "SST_VIDEO_24BPP",
+        "0054d7c0": "FX_GLIDE_SHAMELESS_PLUG",
+        "0054d7d8": "1",
+        "0054d7dc": "FX_GLIDE_NO_SPLASH",
+        "0054d7f0": "1.0",
+        "0054d7f4": "SST_RGAMMA",
+        "0054d800": "SST_GGAMMA",
+        "0054d80c": "SST_BGAMMA",
+        "0054d818": "SST_GAMMA",
+        "0054d824": "SST_DUALHEAD",
+        "0054d834": "SSTV2_RGAMMA",
+        "0054d844": "SSTV2_GGAMMA",
+        "0054d854": "SSTV2_BGAMMA",
+        "0054d864": "SSTV2_GAMMA",
+        "0054d870": "SSTV2_DUALHEAD"
+      },
       "legacy_environment_strings": {
         "0053fd34": "0",
         "0053fd38": "SST_SLIDETECT",
@@ -155,6 +201,20 @@
           "bytes_sha256": "647540c9850c655c79197e517d88f56cb90b65ea2d7b811481b5f9dbf868ff11",
           "assembly": "analysis/captures/modern-differences/renderer-selection/official_modern-004b5a58.asm",
           "assembly_sha256": "2fa53dff04776d5c4fd223de2bf17ff4ee5cbbf463fd496f497fb08f970ad9dc"
+        },
+        {
+          "start": "00517620",
+          "end": "00517783",
+          "bytes_sha256": "f66783e77ba776c55353d452a1cd8bb8f52e544db8dc7aaaeda512c6ba42afa1",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/official_modern-00517620.asm",
+          "assembly_sha256": "31fed621956b8e0a256576252bef20be709580a0c83eca264ed2ccce20775b9f"
+        },
+        {
+          "start": "004f853c",
+          "end": "004f85c0",
+          "bytes_sha256": "ee064eaf5dbfd7d19c89bb4d9aae0f5d6aed92d0549c632e7a5076a7795c2c69",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/official_modern-004f853c.asm",
+          "assembly_sha256": "dd884b51b94054223cda6a3f2b8c36ab86127300a713af71a09da5f4b4ae0ef2"
         }
       ],
       "type_bit_targets": [
@@ -188,5 +248,11 @@
     "No DLL/API or target execution.",
     "Original table entries are candidates, not proof of successful loading.",
     "Compatibility option effects and historical introduction remain unverified."
-  ]
+  ],
+  "retained_setup_tail": {
+    "start": "005176aa",
+    "end": "0051776c",
+    "identical": true,
+    "sha256": "48bdce23c01ae35c06a77d3c99c1d05640e7f69c127ded1409a025e689e1238f"
+  }
 }
