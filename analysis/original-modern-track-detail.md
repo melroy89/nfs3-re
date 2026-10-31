@@ -25,7 +25,7 @@ For ordinary classifier outputs0/1/2, Medium therefore maps to0/0/1 and Low to0/
 
 The [night-lighting analysis](original-modern-night-lighting.md) binds this global to **Rear View Detail:0 High,1 Medium,2 Low**, and traces tag1 to the optional mirror-setting-gated render pass. Both changes therefore share a verified setting and context route.
 
-The paired file-backed table at **`00552e20`** contains three12-byte rows: **`{1,0,150}`, `{2,2,100}`, `{3,4,50}`**. Selection indexes a row. Its first DWORD selects a track-block count at block+`0x5c+4*value`; its second DWORD becomes the selector passed to geometry submission `0041b300`, followed by that selector+1. The third DWORD’s role and later table writes are not established here. Do not turn these rows into invented structure or LOD names solely from their values.
+The paired file-backed table at **`00552e20`** contains three12-byte rows: **`{1,0,150}`, `{2,2,100}`, `{3,4,50}`**. Selection indexes a row. Its first DWORD selects a track-block count at block+`0x5c+4*value`; its second DWORD becomes the selector passed to geometry submission `0041b300`, followed by that selector+1. The third DWORD controls the batching threshold described below; later writes mean its file-backed value is not a permanent runtime constant. Do not turn these rows into invented structure or LOD names solely from their values.
 
 ## Removed next-block classification and diagnostic tail
 
@@ -37,4 +37,14 @@ Original’s extra tail calls `00431c20` twice with EDX1/2 and locals−`0x34`/�
 
 ## Remaining scope
 
-Confirmed static changes: removed classifier context input, three-level mirror selection policy, removed discarded next-block classification, and omitted empty-helper tail. Required follow-up: selected-record/table initialization and valid selector ranges, full submission-helper behavior, x87 state requirements and visual comparison at each detail setting. Historical release attribution remains unresolved; this final-pair evidence does not by itself verify every version’s rear-view-detail release-note claim.
+Confirmed static changes: removed classifier context input, three-level mirror selection policy, removed discarded next-block classification, and omitted empty-helper tail. Required follow-up: complete selected-record/table initialization and valid selector ranges, full submission-helper behavior, x87 state requirements and visual comparison at each detail setting. Historical release attribution remains unresolved; this final-pair evidence does not by itself verify every version’s rear-view-detail release-note claim.
+
+## Table threshold and conditional initialization writes
+
+The third DWORD is consumed at **`0041d14c..0041d175`**, within the paired identical downstream body. The builder compares its accumulated submission-helper return values (local−4) against selected row+8 using **signed `JLE`**. Only when the accumulator is greater **and `007a3a60 != 0`** does it call `0041c1a0`, then reset the accumulator to0. Existing [render-chain research](detailed-analysis-notes.md) identifies that helper as a six-chain drain; this bounded consumer establishes a batching threshold, not a triangle count or a memory-capacity bound. Signed arithmetic and the helper return units must remain explicit during reconstruction.
+
+Paired complete helper **`0041d900..0041d953`** is byte-identical. If WORD `007a3a58` has either bit in mask`0x0180` set, it writes **`0xffffffff`** to all three threshold cells **`00552e28`, `00552e34`, `00552e40`**, replacing150/100/50. It then clears DWORD block+`0x18` for signed indices0 through `005dd83c-1`, using block base `00571370` and stride`0x5c0`. No mask-bit meaning or block-field identity is inferred from those writes. If neither bit is set, this helper leaves both thresholds and those block fields unchanged; it does not restore the file defaults.
+
+A paired call witness **`0041da24..0041da33`** loads selected circuit `006fd4ac`, calls `00470b90`, then calls this writer at `0041da2e`. This is an observed initialization route, not proof that every startup/reload path reaches it or that no other writer exists.
+
+With threshold−1, an ordinary nonnegative accumulator passes the signed greater-than test on every visited block; the separate `007a3a60` gate still applies. Thus calling this value an unsigned “unlimited threshold” would invert the observed policy. Both versions retain this mechanism. The newly selectable mirror rows can use it, but no new Modern threshold initialization is identified in these paired spans.

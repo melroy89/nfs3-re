@@ -318,8 +318,8 @@
     },
     {
       "path": "analysis/original-modern-track-detail.md",
-      "sha256": "e18b6d476c983c641281466f542e36d59b3e751840d2f2719655c97bc010d372",
-      "relative_links": 3
+      "sha256": "1335879b50ee1d77ae170144c659e63e10668f3a0ca68374cdca72df4bbceca4",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-vehicle-dispatch.md",
@@ -363,7 +363,7 @@
     }
   ],
   "file_count": 72,
-  "relative_link_count": 521,
+  "relative_link_count": 522,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -18,7 +18,7 @@ def main():
         pe = pefile.PE(data=raw)
         images[label] = pe
         spans = []
-        for start, end in [(0x41cdc0, 0x41d210 if label == 'original' else 0x41d1f6), (0x41aa60, 0x41aaab if label == 'original' else 0x41aa97), (0x431c20, 0x431c25)]:
+        for start, end in [(0x41cdc0, 0x41d210 if label == 'original' else 0x41d1f6), (0x41aa60, 0x41aaab if label == 'original' else 0x41aa97), (0x431c20, 0x431c25), (0x41d900, 0x41d953), (0x41da24, 0x41da33)]:
             data = pe.get_data(start - 0x400000, end - start)
             path = capture / f'{label}-{start:08x}.asm'
             path.write_bytes(subprocess.check_output(['objdump', '-d', '-Mintel', f'--start-address={start}', f'--stop-address={end}', relative], cwd=ROOT))
@@ -28,7 +28,7 @@ def main():
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': spans, 'file_backed_table_00552e20': [list(table[i:i+3]) for i in range(0, 9, 3)]}
     old, new = [images[k] for k in ('original', 'official_modern')]
     result['identical_ranges'] = []
-    for start, end in [(0x41cdc0, 0x41ce96), (0x41cf0a, 0x41d1ef)]:
+    for start, end in [(0x41cdc0, 0x41ce96), (0x41cf0a, 0x41d1ef), (0x41d900, 0x41d953), (0x41da24, 0x41da33)]:
         a, b = [p.get_data(start - 0x400000, end - start) for p in (old, new)]
         assert a == b
         result['identical_ranges'].append({'start': f'{start:08x}', 'end': f'{end:08x}', 'sha256': hashlib.sha256(a).hexdigest()})

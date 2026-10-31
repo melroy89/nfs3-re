@@ -26,6 +26,20 @@
           "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
           "assembly": "analysis/captures/modern-differences/track-detail/original-00431c20.asm",
           "assembly_sha256": "3906c27acf27344a5ad7fff0a352f155fa1945d818bb322b82b941d1007b377a"
+        },
+        {
+          "start": "0041d900",
+          "end": "0041d953",
+          "sha256": "007e9c4047d2afbff10aa220d257517ca11c14e46a3481a3b7320c0ab1ca25cb",
+          "assembly": "analysis/captures/modern-differences/track-detail/original-0041d900.asm",
+          "assembly_sha256": "65f96cae8f5da2fe8429c2a5ceee39e45ed44001900aa6dd27f6d540651406be"
+        },
+        {
+          "start": "0041da24",
+          "end": "0041da33",
+          "sha256": "8ef266b8f472f703801760e65aee1eece68db2bac398af3a4d3b0dff955efe1f",
+          "assembly": "analysis/captures/modern-differences/track-detail/original-0041da24.asm",
+          "assembly_sha256": "dbe5d7fb435295450b7216c4951462aa7b6f3ebbf062ed553a2829fe5d2e63b4"
         }
       ],
       "file_backed_table_00552e20": [
@@ -70,6 +84,20 @@
           "sha256": "d386cd89d59e4a10243ee7eb5c815a7c00556114e58f15b39e26f740f03b2b5c",
           "assembly": "analysis/captures/modern-differences/track-detail/official_modern-00431c20.asm",
           "assembly_sha256": "8b3c47e5002e0d714db4b3743ee686fc2e1ef7bbbd235f1e673581927e69387c"
+        },
+        {
+          "start": "0041d900",
+          "end": "0041d953",
+          "sha256": "007e9c4047d2afbff10aa220d257517ca11c14e46a3481a3b7320c0ab1ca25cb",
+          "assembly": "analysis/captures/modern-differences/track-detail/official_modern-0041d900.asm",
+          "assembly_sha256": "7e99d7d252f4c92990cc816e72e8bfbcf74a70a6b22d45f883d402bb372f781b"
+        },
+        {
+          "start": "0041da24",
+          "end": "0041da33",
+          "sha256": "8ef266b8f472f703801760e65aee1eece68db2bac398af3a4d3b0dff955efe1f",
+          "assembly": "analysis/captures/modern-differences/track-detail/official_modern-0041da24.asm",
+          "assembly_sha256": "84354573adef16d1668141cd440523b5a4aa7e4096dd280a387e57918493342d"
         }
       ],
       "file_backed_table_00552e20": [
@@ -101,6 +129,16 @@
       "start": "0041cf0a",
       "end": "0041d1ef",
       "sha256": "119ad82b30eaac9f161968b58200208a63eaead61471088f4c2f59e5eb301191"
+    },
+    {
+      "start": "0041d900",
+      "end": "0041d953",
+      "sha256": "007e9c4047d2afbff10aa220d257517ca11c14e46a3481a3b7320c0ab1ca25cb"
+    },
+    {
+      "start": "0041da24",
+      "end": "0041da33",
+      "sha256": "8ef266b8f472f703801760e65aee1eece68db2bac398af3a4d3b0dff955efe1f"
     }
   ],
   "changed_byte_count": 115,
