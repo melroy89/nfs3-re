@@ -77,11 +77,18 @@
           "assembly_sha256": "63e2092705ff098386b5f8cad3e7a3963b8c96d0bc1e9d4119acf09edb5d5c69"
         },
         {
-          "start": "00423845",
+          "start": "00422da2",
+          "end": "00422de5",
+          "bytes_sha256": "cf55de5c9bd7bd4719c40cd24c31ef27aeb8df3839b9308c607f8eb401f3b187",
+          "assembly": "analysis/captures/modern-differences/projection/original-00422da2.asm",
+          "assembly_sha256": "6de945baa90f7d6b1f820ea228ab99c1b7c0c160fa034cb6ca118f90688b5b14"
+        },
+        {
+          "start": "0042383f",
           "end": "0042386b",
-          "bytes_sha256": "3c3733c6547b4b76dda176724e8998807d9492d1ce5cdccf662e75eb816bc60a",
-          "assembly": "analysis/captures/modern-differences/projection/original-00423845.asm",
-          "assembly_sha256": "48ceb057a0176f8d784109c7e188ab81d52c4b98cf4261460752b4e1e549163b"
+          "bytes_sha256": "4f7208274049845359787a90209309d664fbd359a4747ba785de471f7aa12f71",
+          "assembly": "analysis/captures/modern-differences/projection/original-0042383f.asm",
+          "assembly_sha256": "92b2cc608979f6c2bac969d63ac17bfafc933930bcfc858375e1c89ecf517dc9"
         }
       ],
       "view_angle_setting": {
@@ -270,11 +277,18 @@
           "assembly_sha256": "afc1aa38fa5379b7228425ccc372df5c8f227470e0c3a94cdf2c433eb3806514"
         },
         {
-          "start": "00423845",
+          "start": "00422da2",
+          "end": "00422de5",
+          "bytes_sha256": "cf55de5c9bd7bd4719c40cd24c31ef27aeb8df3839b9308c607f8eb401f3b187",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-00422da2.asm",
+          "assembly_sha256": "6a9ff391c3ec97177cd62a5ccc25adc05278b9b204b9deea0a006922406e15c5"
+        },
+        {
+          "start": "0042383f",
           "end": "0042386b",
-          "bytes_sha256": "3c3733c6547b4b76dda176724e8998807d9492d1ce5cdccf662e75eb816bc60a",
-          "assembly": "analysis/captures/modern-differences/projection/official_modern-00423845.asm",
-          "assembly_sha256": "42cef69dd005e5cc05ce1a354fff71c4d4858629740b19e34214bda53ee319bd"
+          "bytes_sha256": "4f7208274049845359787a90209309d664fbd359a4747ba785de471f7aa12f71",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-0042383f.asm",
+          "assembly_sha256": "da3c120091bbd0c857369832d60e539bad570cf1e3771897c233c35e41c8a765"
         }
       ],
       "view_angle_setting": {
@@ -589,9 +603,14 @@
         "sha256": "b6468d093e0201a0d083672e7bf0a51703ceae676440287f4724e7c8cc598f14"
       },
       {
-        "start": "00423845",
+        "start": "00422da2",
+        "end_exclusive": "00422de5",
+        "sha256": "cf55de5c9bd7bd4719c40cd24c31ef27aeb8df3839b9308c607f8eb401f3b187"
+      },
+      {
+        "start": "0042383f",
         "end_exclusive": "0042386b",
-        "sha256": "3c3733c6547b4b76dda176724e8998807d9492d1ce5cdccf662e75eb816bc60a"
+        "sha256": "4f7208274049845359787a90209309d664fbd359a4747ba785de471f7aa12f71"
       }
     ],
     "ordinary_index_domain": "EBX starts0; local upper bound1 for session006fd3b0==1, otherwise0; loop increments at00423865.",
@@ -601,6 +620,12 @@
       "Intervening callees must preserve loop state; no whole-program index/alias invariant claimed.",
       "Other indexed writers and actual type8 source producer remain unresolved."
     ]
+  },
+  "type8_descriptor_availability": {
+    "table_row": "00552f08=00552ec8+8*8:005de578,005de6ac; same file-backed pointers in both baselines.",
+    "initializer": "Normal mode loop visits1..24; common00422dd8 stores mode number at descriptor+0. Slot loop initializes0 or0/1 according to session.",
+    "meaning": "Type8 is not excluded by a null mode-table row or missing ordinary initialization.",
+    "limits": "This does not prove actual selection/publication into005e10b0, finalizer reachability, valid vehicle state or missing projection source production."
   },
   "indexed_source_candidate": {
     "span": "00423a60..00423aab",

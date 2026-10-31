@@ -23,7 +23,7 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
         for start,end in SPANS[label]+[(0x4213b0,0x421441),(0x41bc90,0x41bf26),
-                                      (0x422cf0,0x422d9b),(0x423845,0x42386b)]:
+                                      (0x422cf0,0x422d9b),(0x422da2,0x422de5),(0x42383f,0x42386b)]:
             out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -108,7 +108,7 @@ def main():
         'limits':['Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.','Half-width reload and live extended half-height have distinct spill schedules.']}
     modern = images[1]
     init_spans=[]
-    for start,end in ((0x422cf0,0x422d9b),(0x423845,0x42386b)):
+    for start,end in ((0x422cf0,0x422d9b),(0x422da2,0x422de5),(0x42383f,0x42386b)):
         blob=images[0].get_data(start-0x400000,end-start)
         assert blob==images[1].get_data(start-0x400000,end-start)
         init_spans.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}','sha256':hashlib.sha256(blob).hexdigest()})
@@ -118,6 +118,13 @@ def main():
         'exclusion':'These local stores do not initialize source005e1020/2c/30/38 under that domain.',
         'limits':['Intervening callees must preserve loop state; no whole-program index/alias invariant claimed.',
                   'Other indexed writers and actual type8 source producer remain unresolved.']}
+    for image in images:
+        assert struct.unpack('<2I',image.get_data(0x152f08,8))==(0x5de578,0x5de6ac)
+    result['type8_descriptor_availability']={
+        'table_row':'00552f08=00552ec8+8*8:005de578,005de6ac; same file-backed pointers in both baselines.',
+        'initializer':'Normal mode loop visits1..24; common00422dd8 stores mode number at descriptor+0. Slot loop initializes0 or0/1 according to session.',
+        'meaning':'Type8 is not excluded by a null mode-table row or missing ordinary initialization.',
+        'limits':'This does not prove actual selection/publication into005e10b0, finalizer reachability, valid vehicle state or missing projection source production.'}
     initializer = images[0].get_data(0x23a60,0x4b)
     iterator = images[0].get_data(0x23a20,0x3e)
     assert iterator == images[1].get_data(0x23a20,0x3e)
