@@ -36,6 +36,10 @@
       "sha256": "d09526eea83f41e2703cfe6e92aecc6a8e3ae3552d8cb7bdc0efe708e19bef56"
     },
     {
+      "path": "analysis/original-modern-car-profile.md",
+      "sha256": "d427fe3ab2fedb37cb2b8848f4507b1b2400b94908a599ee6c2c89aeef7b7069"
+    },
+    {
       "path": "analysis/original-modern-clock-source.md",
       "sha256": "2b712fb851510ad069ba0cdd38d35d188cd34e0fc9fba499e1681c6c8b7bc424"
     },
@@ -374,8 +378,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 299,
-    "without_address_mentions": 62
+    "with_address_mentions": 301,
+    "without_address_mentions": 60
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -4506,6 +4510,13 @@
           "entry_mentioned": true,
           "addresses": [
             "00472924"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-car-profile.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00472940"
           ]
         },
         {
@@ -10001,7 +10012,17 @@
       "changed_bytes": 3,
       "original_sha256": "5f05130968ccb16de31699b3dfb83bc08abdb240f4271eec4a93dd6094581edc",
       "modern_sha256": "40bfaddc57e09ec37e77683aee68c666e186c66a2fcc5a82051a3940e41dbb55",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-car-profile.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dc800",
+            "004dc835",
+            "004dc85c"
+          ]
+        }
+      ]
     },
     {
       "entry": "004dc940",
@@ -10023,7 +10044,19 @@
       "changed_bytes": 6,
       "original_sha256": "f91e051d8b294beef6c1f4db6d26d1af1cc445d51527d640833dfdf4421d777c",
       "modern_sha256": "1796ba5aaa56431f4d3f3f3232138aa933f9f3624e626b88f9345dd34b76ccff",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-car-profile.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dc940",
+            "004dc9b9",
+            "004dc9c7",
+            "004dc9eb",
+            "004dca37"
+          ]
+        }
+      ]
     },
     {
       "entry": "004ddb40",

@@ -1,0 +1,57 @@
+{
+  "kind": "car-profile-path-and-time-gate",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004dc800",
+          "end_exclusive": "004dc8af",
+          "sha256": "0cea06da74b29810ec79b5452a8394494e123b2914a8ea07a92209c26b860430",
+          "assembly": "analysis/captures/modern-differences/car-profile/original-004dc800.asm"
+        },
+        {
+          "start": "004dc940",
+          "end_exclusive": "004dca4e",
+          "sha256": "d0510eeb69cdb20f5107b530f7febc1ebd8e6cd6e6bd54ed3df6b91dab910e53",
+          "assembly": "analysis/captures/modern-differences/car-profile/original-004dc940.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004dc800",
+          "end_exclusive": "004dc8af",
+          "sha256": "a8bf1e05b9ff0adf6197e5b572e06ce097004815d74fd44477d0aefcf4f767ee",
+          "assembly": "analysis/captures/modern-differences/car-profile/official_modern-004dc800.asm"
+        },
+        {
+          "start": "004dc940",
+          "end_exclusive": "004dca4e",
+          "sha256": "81d7d12407613dbb536070ca786d56a1417100ced456d1394f96744444cefdee",
+          "assembly": "analysis/captures/modern-differences/car-profile/official_modern-004dc940.asm"
+        }
+      ]
+    }
+  },
+  "changes": [
+    {
+      "entry": "004dc800",
+      "envelope_bytes": 175,
+      "changed_bytes": 40
+    },
+    {
+      "entry": "004dc940",
+      "envelope_bytes": 270,
+      "changed_bytes": 36
+    }
+  ],
+  "limits": [
+    "No profile files read, written or deleted; no target execution.",
+    "Directory initialization, resource-loader failure semantics and complete profile format remain unqualified."
+  ]
+}

@@ -418,6 +418,8 @@ The [texture-loading follow-up](original-modern-texture-loading-followup.md) ver
 
 The [async-read wait comparison](original-modern-async-wait.md) verifies an added shared flag/event notification before the retained alertable polling loop.
 
+The [car-profile comparison](original-modern-car-profile.md) records the changed base-path source, removed literal directory append and removed file-time rejection branch.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
