@@ -1,0 +1,69 @@
+{
+  "kind": "environment-grid-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00479500",
+          "end_exclusive": "00479671",
+          "sha256": "636b5c66917ec9cad6a1be5ad83cbf3a94bed60f6cfb6b4c47e1f292c0b577d8",
+          "assembly": "analysis/captures/modern-differences/environment-grid/original-00479500.asm"
+        },
+        {
+          "start": "0047a190",
+          "end_exclusive": "0047a1e8",
+          "sha256": "2c7e53a2d4116c1384b8e6d8ccb488d6eecb07dd033a470a35ece70b3ee28a58",
+          "assembly": "analysis/captures/modern-differences/environment-grid/original-0047a190.asm"
+        },
+        {
+          "start": "0047b850",
+          "end_exclusive": "0047ba68",
+          "sha256": "fc724009e80685ed987da44529a3332dd813d3c2984604e58e23a1104a1754db",
+          "assembly": "analysis/captures/modern-differences/environment-grid/original-0047b850.asm"
+        },
+        {
+          "start": "0047b380",
+          "end_exclusive": "0047b39f",
+          "sha256": "7ab30073f9cc967c3a2b2fe327b4b401fdb2906697fbb89d69ff4ac03a48af01",
+          "assembly": "analysis/captures/modern-differences/environment-grid/original-0047b380.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00479500",
+          "end_exclusive": "00479671",
+          "sha256": "ac0bd4b558fb3e5b102190152441314e2255037ed253c5c1f6538ccd0dbaf356",
+          "assembly": "analysis/captures/modern-differences/environment-grid/official_modern-00479500.asm"
+        },
+        {
+          "start": "0047a190",
+          "end_exclusive": "0047a1e8",
+          "sha256": "71a43fcab418f10a4393fee2563199b42ddcef5a490bf42a18124cc4ef851dcc",
+          "assembly": "analysis/captures/modern-differences/environment-grid/official_modern-0047a190.asm"
+        },
+        {
+          "start": "0047b850",
+          "end_exclusive": "0047ba68",
+          "sha256": "f0ed8d5fd869341eb5f0376e87f4d64ed2236ec38e39fc7431da1176d9262018",
+          "assembly": "analysis/captures/modern-differences/environment-grid/official_modern-0047b850.asm"
+        },
+        {
+          "start": "0047b380",
+          "end_exclusive": "0047b39f",
+          "sha256": "824d3b1d389a0a4d945038a6416ee1f91a3f49130df19090990841aae0d0a725",
+          "assembly": "analysis/captures/modern-differences/environment-grid/official_modern-0047b380.asm"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static code/argument comparison only; no environment rendering executed.",
+    "Context tag meanings, full flag producers, vector parameter units and visual effects remain partially qualified."
+  ]
+}

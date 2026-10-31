@@ -104,6 +104,10 @@
       "sha256": "9adeec4f3b171118d93678e0eed8af5e58da0a2b817f2594c57b89b1749842e8"
     },
     {
+      "path": "analysis/original-modern-environment-grid.md",
+      "sha256": "2fd1e7c2b1451281484937d9cde64360cc550e144199df959716d1fd0fa23c64"
+    },
+    {
       "path": "analysis/original-modern-frame-resize.md",
       "sha256": "df51add5e8f7d777566a3fb372aa769bb06488d3252f1cb515fa8fa298e0e889"
     },
@@ -390,8 +394,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 325,
-    "without_address_mentions": 36
+    "with_address_mentions": 328,
+    "without_address_mentions": 33
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -4968,7 +4972,17 @@
       "changed_bytes": 1,
       "original_sha256": "636b5c66917ec9cad6a1be5ad83cbf3a94bed60f6cfb6b4c47e1f292c0b577d8",
       "modern_sha256": "ac0bd4b558fb3e5b102190152441314e2255037ed253c5c1f6538ccd0dbaf356",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-environment-grid.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00479500",
+            "0047954c",
+            "00479559"
+          ]
+        }
+      ]
     },
     {
       "entry": "0047a190",
@@ -4990,7 +5004,17 @@
       "changed_bytes": 12,
       "original_sha256": "71e03167cd72af567de8a6b12bb8a60852f553f88508c019b3e9c707241b47c8",
       "modern_sha256": "ca5ae18d03d7bb396dcc15b9bc5d5236d34aa048140ab41a282f792f3d4e1887",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-environment-grid.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0047a190",
+            "0047a1a4",
+            "0047a1b2"
+          ]
+        }
+      ]
     },
     {
       "entry": "0047b380",
@@ -5009,6 +5033,13 @@
       "original_sha256": "7ab30073f9cc967c3a2b2fe327b4b401fdb2906697fbb89d69ff4ac03a48af01",
       "modern_sha256": "824d3b1d389a0a4d945038a6416ee1f91a3f49130df19090990841aae0d0a725",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-environment-grid.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0047b380"
+          ]
+        },
         {
           "path": "analysis/original-modern-race-initialization.md",
           "entry_mentioned": false,
@@ -5035,7 +5066,17 @@
       "changed_bytes": 1,
       "original_sha256": "fc724009e80685ed987da44529a3332dd813d3c2984604e58e23a1104a1754db",
       "modern_sha256": "f0ed8d5fd869341eb5f0376e87f4d64ed2236ec38e39fc7431da1176d9262018",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-environment-grid.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0047b850",
+            "0047b8f4",
+            "0047b91b"
+          ]
+        }
+      ]
     },
     {
       "entry": "0047f650",

@@ -426,6 +426,8 @@ The [dead-zone slider comparison](original-modern-deadzone-sliders.md) verifies 
 
 The [car-registry comparison](original-modern-car-registry-flags.md) verifies removal of Ferrari/Mercedes flag assignment and a changed copy-source getter; the Hot Pursuit claim has partial static support.
 
+The [environment-grid comparison](original-modern-environment-grid.md) accounts for the revised context/detail admission, expanded renderer mask and changed vector argument.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
