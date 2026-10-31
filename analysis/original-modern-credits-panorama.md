@@ -68,3 +68,9 @@ For ordinary admitted input:
 This closes the **static conditional route** from authored `keyleft previous` / `keyright next` to the panorama callbacks. It requires successfully loaded/initialized entries, the named button being enabled, ordinary template state and the earlier/current-entry handlers declining the arrow. No keyboard event, current selection or rendered transition was observed.
 
 The expanded manifest also checks the official `credits.mnu` and `slides.mnu` directly against the pinned archive. They contain `keyleft previous` / `keyright next`, and `keyleft prevslide` / `keyright nextslide`, respectively. These are relevant authored routes for MP140-022; their complete callback implementations and context-specific admission remain separate from the panorama chain verified here. Thus the catalog entry remains partial rather than promoting a three-context runtime claim from one conditional chain.
+
+## Outside-body interval localization
+
+The complete3124-byte outside-function interval **`004543ec..00455020`** has458 changed byte positions, all inside **`00454d40..00454f10`**, a464-byte region containing the already documented relocated/replaced panorama callbacks and alignment. The2388 leading bytes and272 trailing bytes match. The [outside-body manifest](evidence/audits/outside-function-differences.json) now retains per-part hashes and asserts these counts.
+
+This is byte-delta localization, not a464-byte function definition. Original’s removed no-op entries and relocated restore/init routines occupy addresses that have different Modern roles; registration establishes their pairings. Modern’s distant shared exit at`0045d77e` remains part of the documented control-flow evidence without absorbing every intervening byte into this interval. Generic input/language helpers, actual rendering and historical introduction remain unverified on their stated boundaries.

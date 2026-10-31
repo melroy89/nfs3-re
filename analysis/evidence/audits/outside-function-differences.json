@@ -7914,5 +7914,40 @@
     "report": "analysis/original-modern-force-menu-layout.md",
     "report_sha256": "756b44aca847ac5907e75fc79c89f91b1f1bbe5b2e56dea379c2131241dd3f54",
     "limit": "All differing bytes confined to documented initializer; full device/menu/driver runtime behavior not established."
+  },
+  "credits_interval_partition": {
+    "interval": "004543ec..00455020",
+    "parts": [
+      {
+        "start": "004543ec",
+        "end_exclusive": "00454d40",
+        "role": "Unchanged leading bytes",
+        "bytes": 2388,
+        "changed_bytes": 0,
+        "original_sha256": "892e289e346f16c8e28dbd72b95ab8ee916467d22ece3c7d235b09fec47fc0c7",
+        "modern_sha256": "892e289e346f16c8e28dbd72b95ab8ee916467d22ece3c7d235b09fec47fc0c7"
+      },
+      {
+        "start": "00454d40",
+        "end_exclusive": "00454f10",
+        "role": "Replaced/relocated credits panorama callbacks and alignment",
+        "bytes": 464,
+        "changed_bytes": 458,
+        "original_sha256": "598bdc754da34af3bb4b251cf49d3826adeb6a2a64f4efe354228d78ad5eed42",
+        "modern_sha256": "3b782b81062194e2a37cf44f4d9264569127ffc6e594cf6125f5a08d4c8873dd"
+      },
+      {
+        "start": "00454f10",
+        "end_exclusive": "00455020",
+        "role": "Unchanged trailing bytes",
+        "bytes": 272,
+        "changed_bytes": 0,
+        "original_sha256": "6fa5189238e0a6cb9a2110aeae2940920ec20b45ed48963415bd0a8c9ab9aaf8",
+        "modern_sha256": "6fa5189238e0a6cb9a2110aeae2940920ec20b45ed48963415bd0a8c9ab9aaf8"
+      }
+    ],
+    "report": "analysis/original-modern-credits-panorama.md",
+    "report_sha256": "98cd4df7f63a5e3d97c5d287c1df8c00c0ff9c2901348537fea4c2cba56644d3",
+    "limit": "All differences routed to callback replacement/relocation research; distant shared exit and called language/input helpers remain separately bounded."
   }
 }
