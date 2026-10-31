@@ -73,7 +73,7 @@
     },
     {
       "path": "analysis/original-modern-control-component-keys.md",
-      "sha256": "c085d8babf4a9cad8df44d2742b20a259f85feef61307a7a4e473b3137713fd7"
+      "sha256": "9180940b44125682ea1971b54069c3c29c5cfd38b11b1f7f3578515389e64da3"
     },
     {
       "path": "analysis/original-modern-cpu-tier.md",
@@ -10981,6 +10981,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-car-alias.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dfd56"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-control-component-keys.md",
           "entry_mentioned": true,
           "addresses": [
             "004dfd56"

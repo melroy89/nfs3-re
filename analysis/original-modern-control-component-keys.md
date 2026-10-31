@@ -1,4 +1,4 @@
-# Original versus Modern: front-end component key callback
+# Original versus Modern: InteriorBx key-control callback
 
 ## Evidence and function boundary
 
@@ -10,7 +10,7 @@ Neither captured original nor local-Modern saved function inventory contains an 
 
 The entry calls identical29-byte gate `0044a660..0044a67d`, which returns0 when global `00559234` is nonzero and entry byte+5 mask08h is clear, otherwise1. The gate does not change ECX, so the callback's preceding XOR ECX,ECX reliably initializes its two local binary32 deltas to0. It returns0 early if the gate rejects or global `00678950` is zero.
 
-Admitted processing compares **BX**, not the full EBX, with three raw tokens. Component cells `00678954` and `00678958` have binary32 consumers/producers; the [existing component-setter research](detailed-analysis-notes.md) establishes the raw setter at `004654c0`. Physical axes, the visible control identity and the event dispatcher's interpretation of return codes are not assigned here.
+Admitted processing compares **BX**, not the full EBX, with three raw tokens. Component cells `00678954` and `00678958` have binary32 consumers/producers; the [existing component-setter research](detailed-analysis-notes.md) establishes the raw setter at `004654c0`. The follow-up below establishes the InteriorBx widget/menu binding. Physical axes and the event dispatcher's interpretation of return codes remain unresolved.
 
 ## Changed steps, cancellation and return code
 
@@ -30,4 +30,14 @@ All bytes in **`00465271..004652ed`** are identical. They add the local deltas t
 
 Finite cancellation is not an arbitrary-input reset guarantee: infinities, NaNs, unmasked exceptions, pending state and signed zeros need their machine contracts. This callback contains no local precision-control reset. Removing the original sign comparison also changes local x87 status behavior; equality of the remaining tail is not full machine-state equivalence. ECX/EBP are explicitly restored on normal returns, while EAX is the raw callback code; broader ABI/flags/state and callers remain separate.
 
-The removed original status-reader candidate `0046524c` is now explained by this replacement of the `0020h` branch. The meaningful code-level finding is **smaller step deltas plus finite component cancellation and a changed return code**, not a guessed menu name, a proven bug fix, or a historical release attribution. No key event, game, instruction probe, C compilation/export or Ghidra modification was performed.
+The removed original status-reader candidate `0046524c` is now explained by this replacement of the `0020h` branch. The meaningful code-level finding is **smaller step deltas plus finite component cancellation and a changed return code**, not proof of rendered behavior, a tested bug fix, or a historical release attribution. No key event, game, instruction probe, C compilation/export or Ghidra modification was performed.
+
+## InteriorBx registry, packaged menus and shared update consumer
+
+The expanded audit now establishes the widget context rather than relying on the component names. In **both EXEs**, registry row `00557bec` contains type33 (`21h`), token pointer `00538454` to **`InteriorBx`**, and template pointer `00557a04`. Template offset30h is the already verified key callback `004651e0`; offset2ch is updater `00464fd0`. These exact pointer/ID/string bytes link the changed callback to the named widget without guessing a physical axis.
+
+The pinned official archive supplies matching **`[InteriorBx]`** sections in `fedata/menus/interior.mnu` and `fedata/menus/credits1.mnu`. The manifest retains member hashes and authored section properties. This proves packaged menu binding, not that either page was loaded or rendered during this audit. Other installed/user assets and earlier releases remain separate baselines.
+
+Identical update prefix **`0046501a..0046505f`**,69 bytes, loads signed state DWORDs `0055a43c/0055a440` with FILD, adds component floats `00678954/00678958`, calls `004dfd56` twice, then writes integers back with FISTP. Thus the component pair supplies increments to the viewer's per-update state. Modern token0020h cancels the finite component pair, removing those explicit increments; the two step-token deltas are half their original magnitude. Actual scheduling, angle units/axes, input dispatch, conversion/exception edge cases and resulting frames remain untested.
+
+This gives **MP140-016 partial static support**: the source bullet explicitly describes stopping the car-interior view with Space and finer arrow-key speed changes, and the named InteriorBx callback/menu/dataflow now supplies the corresponding mechanism. Actual token-to-device event delivery, return0 propagation, rendered stop/smoothness and introduction in v1.4.0 remain unverified. It does not establish a racing-controller or simulation change. No target code, asset renderer, key event or new instruction probe was run.

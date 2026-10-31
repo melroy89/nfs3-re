@@ -73,7 +73,7 @@
     },
     {
       "path": "analysis/original-modern-control-component-keys.md",
-      "sha256": "c085d8babf4a9cad8df44d2742b20a259f85feef61307a7a4e473b3137713fd7",
+      "sha256": "9180940b44125682ea1971b54069c3c29c5cfd38b11b1f7f3578515389e64da3",
       "relative_links": 4
     },
     {
@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "71c6a84535397a2459a27868270f82222b368815e6135f7679b99770bdfbdf8b",
+      "sha256": "bc4eac105e5ff214decd22a90c2959531395de0de4905b1b905897c992e6ee61",
       "relative_links": 137
     },
     {
@@ -163,8 +163,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "53522784fdb87f3d303cbb92b519d81780807e123d6ef8f9352a89fd231a92f9",
-      "relative_links": 620
+      "sha256": "b5d05d672c70b69b4088ec476049cfa9276201871de75ec89ab0031cdd4418c1",
+      "relative_links": 621
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -308,7 +308,7 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "52b76b976cb1a9347b6094064087decb0cab38cfc8910c195fa57965d308cbd4",
+      "sha256": "0372b74ccb861f0d3fad1960361e5ec6d7deee28f4dd61a7ecf3ea5775017395",
       "relative_links": 32
     },
     {
@@ -563,8 +563,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "54703a5efeaa93ab1b2e8ea5db52411adf685bfa5ce0b77111f49ff487f26634",
-      "relative_links": 130
+      "sha256": "8826fef98e20218061edf32c8d44ec3e2f968d158acb0241b4eb15afdf95c5be",
+      "relative_links": 131
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -573,7 +573,7 @@
     }
   ],
   "file_count": 114,
-  "relative_link_count": 1587,
+  "relative_link_count": 1589,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

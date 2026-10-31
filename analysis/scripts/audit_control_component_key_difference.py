@@ -62,6 +62,41 @@ def main():
     out['outside_function_interval'] = {'start': f'{interval_start:08x}', 'end_exclusive': f'{interval_end:08x}',
         'bytes': interval_end-interval_start, 'changed_bytes': len(changed), 'identities': interval_rows,
         'scope': 'All52 changed bytes in this1270-byte uncovered interval are in the paired key handler.'}
+    bindings = {}
+    for label,pe in images.items():
+        ident,name,template = struct.unpack('<3I',pe.get_data(0x157bec,12))
+        assert (ident,template) == (33,0x557a04)
+        assert pe.get_string_at_rva(name-0x400000) == b'InteriorBx'
+        assert pe.get_data(template-0x400000+0x30,4) == struct.pack('<I',0x4651e0)
+        assert pe.get_data(template-0x400000+0x2c,4) == struct.pack('<I',0x464fd0)
+        update = pe.get_data(0x6501a,0x45)
+        bindings[label] = {'registry_row': '00557bec', 'type_id': ident, 'token': 'InteriorBx',
+            'token_va': f'{name:08x}', 'template': f'{template:08x}', 'key_callback_offset': '30h',
+            'update_callback_offset': '2ch', 'update_callback': '00464fd0',
+            'update_prefix': {'start': '0046501a', 'end_exclusive': '0046505f',
+                'sha256': hashlib.sha256(update).hexdigest(), 'hex': update.hex(),
+                'scope': 'FILD signed state0055a43c/0055a440, add component pair, call004dfd56 twice, FISTP back.'}}
+    assert bindings['original']['update_prefix']['hex'] == bindings['official_modern']['update_prefix']['hex']
+    archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    archive_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
+    assert archive_sha == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    members = []
+    for member,wanted in [('fedata/menus/interior.mnu','376be73730fd40f53e43fbc4ce14e95747d4675b72ef9437cb1f4cf7f58125dd'),
+                          ('fedata/menus/credits1.mnu','4441df58ec7b8a88fc9aa04f6b2537ac49f5df2d9d095acf89577329195cb0c7')]:
+        raw = subprocess.check_output(['7z','x','-so',str(archive),member])
+        assert hashlib.sha256(raw).hexdigest() == wanted
+        lines = raw.decode('latin1').splitlines()
+        index = next(i for i,line in enumerate(lines) if line.lower() == '[interiorbx]')
+        block = []
+        for line in lines[index+1:]:
+            if line.startswith('['):
+                break
+            if line.strip():
+                block.append(line)
+        members.append({'member': member, 'sha256': wanted, 'tag': lines[index], 'properties': block})
+    out['interior_widget_binding'] = {'exe_bindings': bindings, 'archive_sha256': archive_sha,
+        'selected_menu_members': members,
+        'limit': 'Named widget and shared per-update dataflow verified; rendered rotation and actual key-event delivery untested.'}
     inventories = {}
     for name in ('original','modern'):
         path = ROOT/f'analysis/captures/modern-differences/functions-{name}.json'

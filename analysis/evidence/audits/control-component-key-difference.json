@@ -114,6 +114,68 @@
     ],
     "scope": "All52 changed bytes in this1270-byte uncovered interval are in the paired key handler."
   },
+  "interior_widget_binding": {
+    "exe_bindings": {
+      "original": {
+        "registry_row": "00557bec",
+        "type_id": 33,
+        "token": "InteriorBx",
+        "token_va": "00538454",
+        "template": "00557a04",
+        "key_callback_offset": "30h",
+        "update_callback_offset": "2ch",
+        "update_callback": "00464fd0",
+        "update_prefix": {
+          "start": "0046501a",
+          "end_exclusive": "0046505f",
+          "sha256": "53c4f301c44f2e1e1282348c333e5ee951fdb9bfc5a32904b8d98e3f6c762ed1",
+          "hex": "db053ca45500db0540a45500bb400000ffd9c0d9c2d80554896700d9c9d80558896700d9c9dddbddd9d9c9e80cad0700d9c9e805ad0700d9c9db1d3ca45500db1d40a45500",
+          "scope": "FILD signed state0055a43c/0055a440, add component pair, call004dfd56 twice, FISTP back."
+        }
+      },
+      "official_modern": {
+        "registry_row": "00557bec",
+        "type_id": 33,
+        "token": "InteriorBx",
+        "token_va": "00538454",
+        "template": "00557a04",
+        "key_callback_offset": "30h",
+        "update_callback_offset": "2ch",
+        "update_callback": "00464fd0",
+        "update_prefix": {
+          "start": "0046501a",
+          "end_exclusive": "0046505f",
+          "sha256": "53c4f301c44f2e1e1282348c333e5ee951fdb9bfc5a32904b8d98e3f6c762ed1",
+          "hex": "db053ca45500db0540a45500bb400000ffd9c0d9c2d80554896700d9c9d80558896700d9c9dddbddd9d9c9e80cad0700d9c9e805ad0700d9c9db1d3ca45500db1d40a45500",
+          "scope": "FILD signed state0055a43c/0055a440, add component pair, call004dfd56 twice, FISTP back."
+        }
+      }
+    },
+    "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+    "selected_menu_members": [
+      {
+        "member": "fedata/menus/interior.mnu",
+        "sha256": "376be73730fd40f53e43fbc4ce14e95747d4675b72ef9437cb1f4cf7f58125dd",
+        "tag": "[InteriorBx]",
+        "properties": [
+          "x=177",
+          "y=147",
+          "priority=7"
+        ]
+      },
+      {
+        "member": "fedata/menus/credits1.mnu",
+        "sha256": "4441df58ec7b8a88fc9aa04f6b2537ac49f5df2d9d095acf89577329195cb0c7",
+        "tag": "[InteriorBx]",
+        "properties": [
+          "x=156",
+          "y=122",
+          "priority=7"
+        ]
+      }
+    ],
+    "limit": "Named widget and shared per-update dataflow verified; rendered rotation and actual key-event delivery untested."
+  },
   "saved_inventory_boundary": {
     "original": {
       "path": "analysis/captures/modern-differences/functions-original.json",

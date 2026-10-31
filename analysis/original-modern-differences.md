@@ -452,12 +452,12 @@ The [local DLL candidate inventory](original-modern-dll-candidates.md) pins dist
 
 The [x87 status-observer inventory](original-modern-x87-observers.md) adds a complete linear-decoding candidate index and bounded special-case analysis, separately from arithmetic precision and storage sizes. It identifies reader-address differences without treating them as independently established features or proof of runtime compatibility.
 
-The [unlisted control-component callback](original-modern-control-component-keys.md) explains all52 differing bytes in uncovered interval `00464fca..004654c0`: halved step deltas, finite component cancellation for token0020h, and a raw return-code change2→0. Visible control identity and release attribution remain unresolved.
+The [unlisted control-component callback](original-modern-control-component-keys.md) explains all52 differing bytes in uncovered interval `00464fca..004654c0`: halved step deltas, finite component cancellation for token0020h, and a raw return-code change2→0. The InteriorBx registry/menu binding is established; rendered behavior, return-code propagation and release attribution remain unverified.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **169 Claimed, 39 Static, 79 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **168 Claimed, 39 Static, 80 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -608,7 +608,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-013 | A car color dropdown list uses consistent (with other controls) sounds and has a normal padding. | Partial |
 | MP140-014 | List of replays works correctly using keyboard (fixed an invalid positioning of the mouse cursor). Also it uses consistent sounds (like others). | Partial |
 | MP140-015 | Fixed errors of element switching order (when keyboard is used). | Claimed |
-| MP140-016 | 3D view of a car interior can be stopped using Space key. Arrow keys change rotating speed more smoothly now. | Claimed |
+| MP140-016 | 3D view of a car interior can be stopped using Space key. Arrow keys change rotating speed more smoothly now. | Partial |
 | MP140-017 | Options button is placed near Exit button on the first menu screen (Game Setup). | Partial |
 | MP140-018 | “Connect Players”, “Connect IPX” and “View Car Interior” menu screens also have standard set of buttons (Exit and Options). | Partial |
 | MP140-019 | This set of buttons don't disappear in the Options when they are opened directy from the race results screen. | Partial |
