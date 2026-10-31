@@ -290,6 +290,10 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 [The panorama comparison](original-modern-credits-panorama.md) maps the two redirected registrations, moved-identical state restore, new Next/Previous controls, direct subtitle lookup and a distant missing-button exit. Official assets partially support MP140-022/024; keyboard dispatch, rendering and historical introduction remain separate.
 
+## Ordinary Credits navigation and initial selection
+
+[The Credits page follow-up](original-modern-frontend-page.md#ordinary-credits-nextprevious-removed-conditional-text-page-skip) verifies removal of the original conditional text-page skip and page0-to-last-page initialization change. The official More button is repositioned while retaining `credits1` routing; visual effect and runtime selection remain untested.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -449,7 +453,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-020 | This set of buttons is smart: when user opens Options from the first screen without choosing game mode, the Race button are hidden. | Claimed |
 | MP140-021 | Drop down list of cars displays the class of the current car not only for the 1st player, but also for the 2nd player. | Claimed |
 | MP140-022 | You can use Left and Right keys to switch slides in the car slideshow and in the credits (inclusive 3D panoramas of the developers). | Partial |
-| MP140-023 | Noticeable “More...” button in the credits (opens the 3D panoramas of the developers). | Claimed |
+| MP140-023 | Noticeable “More...” button in the credits (opens the 3D panoramas of the developers). | Partial |
 | MP140-024 | Credits page with the 3D panoramas of the developers has same controls, as general credits (with Back and Next buttons). | Partial |
 | MP140-025 | Increased quantity of visible elements in some long drop down lists (resolution list, car lists). | Claimed |
 | MP140-026 | Fixed unaligned paddings of the all drop down lists. | Claimed |

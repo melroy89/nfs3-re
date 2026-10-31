@@ -18,7 +18,11 @@ def main():
         spans = [(0x441cb0, 0x44236c), (0x437820, 0x4378b6)]
         if label == 'official_modern':
             spans += [(0x4f1f58, 0x4f1f88), (0x4f26a0, 0x4f270e), (0x4f2710, 0x4f2736)]
-        spans += [(0x44240c, 0x442448)]
+        spans += [(0x44240c, 0x442448), (0x442370, 0x4423d3),
+                  (0x4423e0, 0x442448 if label == 'original' else 0x44240c),
+                  (0x442850, 0x442908)]
+        if label == 'original':
+            spans += [(0x439ce0, 0x439d12)]
         spans += [(0x4ef1e0, 0x4ef26f), (0x4f2620, 0x4f269f), (0x4f2560, 0x4f261b),
                   (0x5102a4, 0x5102ef), (0x5102f0, 0x5103ff), (0x510400, 0x510416)]
         rows = []
@@ -72,6 +76,27 @@ def main():
     result['main_body_changed_addresses'] = [f'{a:08x}' for a in changes]
     assert result['binaries']['original']['switch_table_first_five'] == result['binaries']['official_modern']['switch_table_first_five']
     assert result['binaries']['official_modern']['sixth_switch_target'] == '00437820'
+    assert images[1].get_data(0x423a0, 35) == bytes.fromhex('eb21') + bytes([0x90])*33
+    result['modern_next_skip_replacement'] = {'start': '004423a0', 'end': '004423c3', 'hex': images[1].get_data(0x423a0, 35).hex()}
+    result['credits_more_controls'] = {}
+    archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest() == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    for label, relative in (
+        ('official_modern', 'analysis/captures/modern-differences/upstream/package/fedata/menus/credits.mnu'),
+        ('local_uppercase_backup', 'nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CREDITS.MNU')):
+        data = (ROOT/relative).read_bytes()
+        if label == 'official_modern':
+            assert data == subprocess.check_output(['7z', 'x', '-so', str(archive), 'fedata/menus/credits.mnu'])
+        sections = []; current = None
+        for number, line in enumerate(data.decode('latin1').splitlines(), 1):
+            if line.startswith('['):
+                current = {'line': number, 'section': line, 'fields': {}}
+                sections.append(current)
+            elif current is not None and '=' in line and not line.startswith(';'):
+                key, value = line.split('=', 1); current['fields'][key] = value
+        selected = [row for row in sections if row['fields'].get('codelink') == 'More']
+        assert len(selected) == 1
+        result['credits_more_controls'][label] = {'path': relative, 'sha256': hashlib.sha256(data).hexdigest(), 'more_button': selected[0]}
     (ROOT/'analysis/evidence/audits/original-modern-frontend-page.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: baselines, one-byte main-body delta, retained five targets, new resource record')
 

@@ -28,6 +28,34 @@
           "assembly_sha256": "07b0201988a91000811b5374dd9d2d6618fc421f2130e40f8fe52cc3860e9c26"
         },
         {
+          "start": "00442370",
+          "end": "004423d3",
+          "bytes_sha256": "84a31cfdf393338c74486d59dbcfbceafa6101d016853f8481ecd560c97593da",
+          "assembly": "analysis/captures/modern-differences/frontend-page/original-00442370.asm",
+          "assembly_sha256": "5ed8f774e006be0f965ba802cec7347c053460e428f53879157f08626892c1b1"
+        },
+        {
+          "start": "004423e0",
+          "end": "00442448",
+          "bytes_sha256": "19734c8576604c374ac9c4ce87dc7176883096ee3683c20069ecc38c50772b3f",
+          "assembly": "analysis/captures/modern-differences/frontend-page/original-004423e0.asm",
+          "assembly_sha256": "c866d017066a4acfc6f7e03fd9e82b57eef07d43f0f775f9da8f49b68fe452a5"
+        },
+        {
+          "start": "00442850",
+          "end": "00442908",
+          "bytes_sha256": "1c029d2e3f7311f3e175f0985ebd6d1ae77f782282e5baaa0a2fb41694f15a17",
+          "assembly": "analysis/captures/modern-differences/frontend-page/original-00442850.asm",
+          "assembly_sha256": "cb19803198895a2b60b3f6496eb833cf08fd18edddb7d76903289c2827781149"
+        },
+        {
+          "start": "00439ce0",
+          "end": "00439d12",
+          "bytes_sha256": "196337c17fefc00f472133585f1d32f1776726d02afc688f88d42f10af87ab2f",
+          "assembly": "analysis/captures/modern-differences/frontend-page/original-00439ce0.asm",
+          "assembly_sha256": "fe632fa3ccce579b60e954f63ff070f45f5d993db06d1bc138c670742ed5cf88"
+        },
+        {
           "start": "004ef1e0",
           "end": "004ef26f",
           "bytes_sha256": "11a98a1a61026986b8ca983917babbe7186f13ca3204e295635cc5c390e75414",
@@ -151,6 +179,27 @@
           "bytes_sha256": "0b0b9541f2a1563d3c2d3b4565441d1ca19f96cd86f279cc124fd777886a0797",
           "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-0044240c.asm",
           "assembly_sha256": "d4534a0246eb465921615416110b8f26d29106e5300e94fc065950a97a760b23"
+        },
+        {
+          "start": "00442370",
+          "end": "004423d3",
+          "bytes_sha256": "609999ff8a3cb4f4dddedcfa795880729b36c276e442117a03366213d91db414",
+          "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-00442370.asm",
+          "assembly_sha256": "87a009433b112da8f059753a1d72c17ae595fe56160e81f65d2744e04dbb5f70"
+        },
+        {
+          "start": "004423e0",
+          "end": "0044240c",
+          "bytes_sha256": "2f71d661299d3321cc85c58f27ab12f74a27165f37d58eb9460849ff6c6a8908",
+          "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-004423e0.asm",
+          "assembly_sha256": "14264f7b218a12fa50023bcdadc53da680bc98d58f45586ad7ec9daf516528b7"
+        },
+        {
+          "start": "00442850",
+          "end": "00442908",
+          "bytes_sha256": "0ef5388e8b767cfc81b6f8c340022878362dd1abd5a9581c695074d8ed519166",
+          "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-00442850.asm",
+          "assembly_sha256": "fe175e77d73b7fbcbf1b75e372d14087ec2bbd4d35a4cf943f081a0b4819812e"
         },
         {
           "start": "004ef1e0",
@@ -284,5 +333,59 @@
   ],
   "main_body_changed_addresses": [
     "00441d03"
-  ]
+  ],
+  "modern_next_skip_replacement": {
+    "start": "004423a0",
+    "end": "004423c3",
+    "hex": "eb21909090909090909090909090909090909090909090909090909090909090909090"
+  },
+  "credits_more_controls": {
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/credits.mnu",
+      "sha256": "5272486659a41e2dc9543fd5a25b7842f3e4e731d9444427e9160b7f49e55da9",
+      "more_button": {
+        "line": 78,
+        "section": "[button]",
+        "fields": {
+          "x": "510",
+          "y": "456",
+          "priority": "6",
+          "nextmenu": "credits1",
+          "ypos": "-1",
+          "text": "kTextMore",
+          "buttontype": "simple",
+          "listpos": "0",
+          "listoff": "0",
+          "align": "0",
+          "codelink": "More"
+        }
+      }
+    },
+    "local_uppercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CREDITS.MNU",
+      "sha256": "dc00b9c7c5fadb6e998df55ebbc931fdfe679c3750d6f10fe26c99a02a9713df",
+      "more_button": {
+        "line": 125,
+        "section": "[button]",
+        "fields": {
+          "x": "483",
+          "y": "411",
+          "priority": "6",
+          "nextmenu": "credits1",
+          "postonly": "0",
+          "mainonly": "0",
+          "ypos": "-1",
+          "text": "kTextMore",
+          "buttontype": "simple",
+          "value": "0",
+          "listpos": "0",
+          "listoff": "0",
+          "listx": "0",
+          "listy": "0",
+          "align": "0",
+          "codelink": "More"
+        }
+      }
+    }
+  }
 }

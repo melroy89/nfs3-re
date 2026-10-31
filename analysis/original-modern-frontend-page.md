@@ -87,3 +87,36 @@ The paired main-body identity already covers the type-3 loop at `004422d0..00442
 These positions follow from retained instructions and the changed record values. They establish a blank separator and regrouping for the inspected labels, not font metrics, clipping acceptance, actual glyph submissions or visible page appearance. Whether every text row contains other formatting/resource dependencies remains outside this length/hash inventory.
 
 Reproduce with `python3 analysis/scripts/inventory_credits_text_range.py --game-dir '<installed game directory>'`. The script does not copy complete credit strings into the report, alter assets or execute target code. This closes the newly included ID1135-content question within the installed scope; About payload decoding and runtime page selection remain pending.
+
+## Ordinary Credits Next/Previous: removed conditional text-page skip
+
+The expanded audit retains complete original/Modern Next bodies `00442370..004423d3`, original Previous `004423e0..00442448`, Modern Previous `004423e0..0044240c`, and both initializer prefixes `00442850..00442908`. These counterpart relationships are established by the retained `next`/`previous` item callback assignments at `004428ea` and `00442901`, not by address proximity alone. The [conditional named-arrow dispatch](original-modern-credits-panorama.md#conditional-leftright-to-panorama-callback-chain) can reach these same ordinary buttons when its admission conditions hold.
+
+Both versions only change page selection when state `005f40c0 == 4`; each callback returns zero even when that gate rejects input. Next increments selected index `00555c28`, wraps to zero when the candidate record's +4 field is zero, and sets state2. Previous decrements nonzero indices or wraps zero to the last sentinel-scanned page, then sets state3.
+
+Original adds a special filter after Next's ordinary increment/wrap: call predicate `00439ce0`, and if it returns zero and the selected record's +4 DWORD equals **`046ah`**, increment the index again. Previous has the corresponding filter after decrementing a **nonzero** index: on the same predicate/field condition, decrement again. Its zero-to-last-page wrap branch does not apply that filter. These instructions concern record+4, not a generic test of a page type or every localized string.
+
+Modern Next replaces the original filter at `004423a0..004423c3` with `JMP 004423c3` plus 33 NOP bytes, asserted by the script. Modern Previous is rewritten without that predicate/skip. Therefore final Modern navigation no longer uses this local conditional exclusion of record74, whose +4 field is `046ah`. This complements the established text consolidation: Modern record74 covers `046ah..0475h`, and record75 is the About resource.
+
+The original predicate body `00439ce0..00439d12` is retained too: it obtains a value using selector `25h` through `00438ad0`, passes the stack object to `00439990`, and returns zero for result `ffffffffh`, one otherwise. Its resource/installation meaning is not assigned here; those callees and actual runtime result remain dependencies. Removing its calls from these navigation callbacks is proven without inventing that meaning.
+
+## Initial selection differs as well
+
+Original initializer `00442850` explicitly writes page index `00555c28=0` and cached page `00555c34=0`, clears state and stores speed63. Modern's corresponding prefix calls reset `00442428`, which scans to and selects last index75 with the inspected table. The following `next`/`previous` callback assignments remain at the same locations. Thus, with unchanged table data and ordinary admitted initialization, the initial selected record changes from page0 to Modern's About record75. This is a selection producer; later mutations, animation state, resource loading and actual displayed pixels remain unobserved.
+
+## More button: retained route, changed authored position
+
+The expanded manifest also hash-checks official `credits.mnu` against its pinned archive and records the selected uppercase backup's More button:
+
+| Field | Local uppercase backup | Official final asset |
+|---|---|---|
+| `codelink` | `More` | `More` |
+| `nextmenu` | `credits1` | `credits1` |
+| `text` | `kTextMore` | `kTextMore` |
+| `buttontype` | `simple` | `simple` |
+| `x`, `y` | 483, 411 | 510, 456 |
+| `priority` | 6 | 6 |
+
+This supplies **partial static support for MP140-023**: a concrete repositioning of the existing More control while retaining its authored panorama destination. “Noticeable” is a visual claim requiring rendering/interaction evidence; a coordinate delta alone does not prove readability, visibility or successful activation. The selected backup is not authenticated retail provenance, and introduction in v1.4.0 remains unverified.
+
+For C reconstruction, preserve selected-index/state gating and version-specific skip/reset rules separately from renderer and asset changes. Testing only the resource renderer would miss changed page ordering and initial selection. Future comparisons should cover state4 versus other states, indices0/73/74/75, predicate0/1 in original, missing controls and table/resource failure; this audit executes none of them.
