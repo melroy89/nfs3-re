@@ -8,7 +8,7 @@ Run `python3 analysis/scripts/audit_race_now_difference.py`. The [manifest](evid
 
 ## Modern helper's exact branches
 
-The helper takes an EAX context, returning immediately if EAX is nonzero **and** `00559234` is nonzero. Otherwise PUSHAD/POPAD preserves general registers while calling lookup `00442a40` with the context and token strings. Null context is passed through rather than rejected; the lookup's null-context resolution must be established separately.
+The helper takes an EAX context, returning immediately if EAX is nonzero **and** `00559234` is nonzero. Otherwise PUSHAD/POPAD preserves general registers while calling lookup `00442a40` with the context and token strings. Null context is passed through rather than rejected; the follow-up below establishes that lookup has no null-context fallback.
 
 | Condition / operation | Instruction-level effect |
 |---|---|
@@ -31,3 +31,17 @@ Original `00437600` first stores 1 to `00559c68`, looks up `credits` with `00442
 The original routine continues with coordinate writes for other tokens beyond the captured span. Absence of Modern's whole helper at the same address does not prove that all its other behaviors were absent everywhere in the original. Likewise the token bytes are identical in both files, which establishes names rather than complete UI behavior.
 
 **Verified:** complete Modern branch map, exact token identities, original credits gate and invalidity of same-VA function pairing. **Pending:** map all original counterparts, determine globals/flag meanings from producers and consumers, trace helper call sites and null lookup behavior, identify actual localized `f1h/f2h` text, and validate menus at runtime. Historical release attribution is unresolved; no catalog row is promoted solely from these token names.
+
+## Lookup and result-predicate follow-up
+
+The manifest now retains complete lookup `00442a40..00442a95` and result predicate `004cf090..004cf11e` and asserts both bodies are byte-identical between original and Modern. Their local behavior therefore supplies retained dependencies for the new helper, not two additional rewritten routines.
+
+The lookup immediately reads an unaligned DWORD at context+16h and arithmetic-shifts by 16 to obtain a signed WORD start index from context+18h. It walks 0bch-byte entries rooted at `00604ee0`, stopping at a zero type DWORD. For entries with non-null token metadata at +10h, it calls `004429c0` and returns the first matching entry. It preserves EBX/ECX/ESI/EDI/EBP and does not establish EDX preservation. No local context-null or index/capacity guard precedes the walk.
+
+Thus the Modern outer helper's EAX-zero branch is **not** evidence of supported “current menu” lookup. If EAX is zero, its first lookup attempts the context+16h read unless an external interception or other unestablished environment behavior intervenes. No such invocation or fault was observed. Treat a valid context as an input precondition until callers prove otherwise; the outer helper's partial guard alone is insufficient validation.
+
+Predicate `004cf090` does not consume the entry pointer as a parameter in the inspected body. It reads global mode/result state, invokes `004cf000` / `004cef80` on relevant branches, and returns normalized EAX from its local EDX accumulator. Its prologue saves ECX and epilogue restores it at `004cf11b`; this supports retention of the caller's entry pointer across this predicate. Its existing result-state interpretation is documented in the [series menu contract](series-terminal-menu-contract.md), including limits on terminal-track and human/result filters. No successful race continuation follows merely from the predicate returning one.
+
+For flags, the [menu-input comparison](original-modern-menu-input.md) establishes that the fallback token scanner requires entry bit 0 clear before selecting it and invoking its callback. Consequently OR bit 0 in this helper has a demonstrated **navigation exclusion** consumer; this does not establish that every selected-entry dispatch is blocked, since those paths differ. The separate bit `1000h` remains unnamed here. The text-pointer write also crosses language lookup `004d1850`, whose ECX contract must be kept distinct from the predicate preservation just verified.
+
+Closed: lookup null behavior, record stride/start-index source, retained helper correspondence and predicate ECX preservation. Pending: all caller preconditions, bit `1000h` consumers, language-lookup preservation and complete original policy correspondence.

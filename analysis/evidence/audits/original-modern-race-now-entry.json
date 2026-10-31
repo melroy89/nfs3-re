@@ -12,6 +12,20 @@
           "bytes_sha256": "713068de11632b52becd710b533ca50a3459e0a8bce4a1505ca0ab8d4e2719ef",
           "assembly": "analysis/captures/modern-differences/race-now-entry/original-00437600.asm",
           "assembly_sha256": "9edce69ac6c266dc41278ee8cb7fd151990a93739bf487380966f6aa56a37077"
+        },
+        {
+          "start": "00442a40",
+          "end": "00442a95",
+          "bytes_sha256": "530a40e49d7fc33f0e99423114292b6e67a6c842aa135572a8a36c9aa0ba4730",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/original-00442a40.asm",
+          "assembly_sha256": "604200fe8d991562d20b28e3ca14cab6a81d104bf70297884ccf146cfa44db5f"
+        },
+        {
+          "start": "004cf090",
+          "end": "004cf11e",
+          "bytes_sha256": "d2dcb7f96f7187d5afe6041a3ad0fd7de3c5b9e7abc17c1e7392c20c656bc1ff",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/original-004cf090.asm",
+          "assembly_sha256": "23567f41a9c3ab6978bf20ff68060f1421564fecd66ff3f1b9ecc103e041b256"
         }
       ],
       "tokens": {
@@ -31,6 +45,20 @@
           "bytes_sha256": "57d3b5eedc9cfd1e99793d153e1d17a01f436d191f75423302913dd7a92de059",
           "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00437614.asm",
           "assembly_sha256": "59244d88f94a022d8ec73a7d2faa4f98cb8763bfaff9ea5c1ba40e881ee21ee7"
+        },
+        {
+          "start": "00442a40",
+          "end": "00442a95",
+          "bytes_sha256": "530a40e49d7fc33f0e99423114292b6e67a6c842aa135572a8a36c9aa0ba4730",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00442a40.asm",
+          "assembly_sha256": "37180d7ae1a09f0eea6a49741b2ac6227faa3df9ce879648f7b8b322720903ce"
+        },
+        {
+          "start": "004cf090",
+          "end": "004cf11e",
+          "bytes_sha256": "d2dcb7f96f7187d5afe6041a3ad0fd7de3c5b9e7abc17c1e7392c20c656bc1ff",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-004cf090.asm",
+          "assembly_sha256": "19a3f667d01f2de9a1d4f5f05adc1638195855d26290ca5118650f277ab90708"
         }
       ],
       "tokens": {
@@ -45,5 +73,9 @@
     "Modern helper is not a same-address original counterpart.",
     "Original capture is a partial credits gate inside a larger routine.",
     "No menu or target execution."
+  ],
+  "identical_helpers": [
+    "00442a40",
+    "004cf090"
   ]
 }
