@@ -420,6 +420,8 @@ The [async-read wait comparison](original-modern-async-wait.md) verifies an adde
 
 The [car-profile comparison](original-modern-car-profile.md) records the changed base-path source, removed literal directory append and removed file-time rejection branch.
 
+The [music-worker cleanup comparison](original-modern-music-worker-cleanup.md) verifies replacement of forced termination plus close with direct handle closure at one shutdown tail.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

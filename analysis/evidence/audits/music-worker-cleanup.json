@@ -1,0 +1,80 @@
+{
+  "kind": "music-worker-cleanup-call-replacement",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004e4a30",
+          "end_exclusive": "004e4b41",
+          "sha256": "d9c7be670900fc5c12bbd3ff3ab2f2541a0e85c5532887012d3f7f3d4a434a6b",
+          "assembly": "analysis/captures/modern-differences/music-worker-cleanup/original-004e4a30.asm"
+        },
+        {
+          "start": "004df870",
+          "end_exclusive": "004df894",
+          "sha256": "22d7a18a1b8bdb5784ac65b72d96e6204c91a92e583b966b053cbf1a8020a119",
+          "assembly": "analysis/captures/modern-differences/music-worker-cleanup/original-004df870.asm"
+        },
+        {
+          "start": "004dfc00",
+          "end_exclusive": "004dfc0d",
+          "sha256": "3bd1ca1ed7c59cfd7e93698d73b7aee6c36c033094542da314adbc85bbf84cbb",
+          "assembly": "analysis/captures/modern-differences/music-worker-cleanup/original-004dfc00.asm"
+        },
+        {
+          "start": "004dfb20",
+          "end_exclusive": "004dfb3d",
+          "sha256": "7c1c0cbb816c6d07be55b2c056f698923a59720f0d4870e683918d234d3f73b3",
+          "assembly": "analysis/captures/modern-differences/music-worker-cleanup/original-004dfb20.asm"
+        }
+      ],
+      "imports": {
+        "00534608": "TerminateThread",
+        "00534488": "CloseHandle",
+        "005345e8": "SetEvent"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004e4a30",
+          "end_exclusive": "004e4b41",
+          "sha256": "8af107d502b18c1b20eae44eceabe7620ade56f88329c90a8cd342d96f01ad09",
+          "assembly": "analysis/captures/modern-differences/music-worker-cleanup/official_modern-004e4a30.asm"
+        },
+        {
+          "start": "004df870",
+          "end_exclusive": "004df894",
+          "sha256": "22d7a18a1b8bdb5784ac65b72d96e6204c91a92e583b966b053cbf1a8020a119",
+          "assembly": "analysis/captures/modern-differences/music-worker-cleanup/official_modern-004df870.asm"
+        },
+        {
+          "start": "004dfc00",
+          "end_exclusive": "004dfc0d",
+          "sha256": "3bd1ca1ed7c59cfd7e93698d73b7aee6c36c033094542da314adbc85bbf84cbb",
+          "assembly": "analysis/captures/modern-differences/music-worker-cleanup/official_modern-004dfc00.asm"
+        },
+        {
+          "start": "004dfb20",
+          "end_exclusive": "004dfb3d",
+          "sha256": "7c1c0cbb816c6d07be55b2c056f698923a59720f0d4870e683918d234d3f73b3",
+          "assembly": "analysis/captures/modern-differences/music-worker-cleanup/official_modern-004dfb20.asm"
+        }
+      ],
+      "imports": {
+        "00534608": "TerminateThread",
+        "00534488": "CloseHandle",
+        "005345e8": "SetEvent"
+      }
+    }
+  },
+  "changed_bytes": 8,
+  "limits": [
+    "No audio/thread execution, scheduling observation or shutdown race test.",
+    "Worker identity, prior wait-helper contract and record lifetime remain separate investigations."
+  ]
+}

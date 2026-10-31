@@ -192,6 +192,10 @@
       "sha256": "229079bbffefe8cf986eef356cd4973b4f302b9594f8269207c5eec7339600f7"
     },
     {
+      "path": "analysis/original-modern-music-worker-cleanup.md",
+      "sha256": "aea6747653cdb625c06c09dcd14aa7a60cde549c1af82bc2cda1bc4290931c2e"
+    },
+    {
       "path": "analysis/original-modern-network-endpoints.md",
       "sha256": "fa7753d884f4f55556b34b94e0ee00e8d2e9c276cce0d719d91a6f13f96ff85c"
     },
@@ -378,8 +382,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 301,
-    "without_address_mentions": 60
+    "with_address_mentions": 302,
+    "without_address_mentions": 59
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -10381,7 +10385,17 @@
       "changed_bytes": 8,
       "original_sha256": "d9c7be670900fc5c12bbd3ff3ab2f2541a0e85c5532887012d3f7f3d4a434a6b",
       "modern_sha256": "8af107d502b18c1b20eae44eceabe7620ade56f88329c90a8cd342d96f01ad09",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-music-worker-cleanup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004e4a30",
+            "004e4b28",
+            "004e4b35"
+          ]
+        }
+      ]
     },
     {
       "entry": "004ed0f0",

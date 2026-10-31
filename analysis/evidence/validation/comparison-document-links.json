@@ -83,8 +83,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "7aacbf3f7445679f764302a58a518e827827d6ec97adbcdce59019617b8caecf",
-      "relative_links": 119
+      "sha256": "56e0835b62b119c972208e2e4fc3b9414633ccb1deab364786f78ee69e51859c",
+      "relative_links": 120
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -128,8 +128,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "1251b69c14759856cd28f5123e326d90251022b39f0c6b0e7260f25c0e446375",
-      "relative_links": 515
+      "sha256": "106c3919cceb4ea3c9eaa6dd4ddc9166a36906a523b47d7d13f27477385dfb2e",
+      "relative_links": 516
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -230,6 +230,11 @@
       "path": "analysis/original-modern-music-start.md",
       "sha256": "229079bbffefe8cf986eef356cd4973b4f302b9594f8269207c5eec7339600f7",
       "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-music-worker-cleanup.md",
+      "sha256": "aea6747653cdb625c06c09dcd14aa7a60cde549c1af82bc2cda1bc4290931c2e",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-network-endpoints.md",
@@ -472,8 +477,8 @@
       "relative_links": 7
     }
   ],
-  "file_count": 94,
-  "relative_link_count": 1201,
+  "file_count": 95,
+  "relative_link_count": 1207,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
