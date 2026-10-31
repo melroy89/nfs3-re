@@ -41,10 +41,24 @@ Complete **`004bf260..004bf36f`**, 272 bytes, is byte-identical in both executab
 
 Equal body bytes do not imply equal results: the angle producers, argument representation, control word and source dimensions differ. Conversely, the changed wrapper is not evidence that this complete builder was rewritten.
 
+## Removed integer projection-state implementation
+
+The two calls absent from Modern's wrapper have concrete side effects in original:
+
+- **`004fd280..004fd2a7`**, 40 bytes: EAX/EDX become origin DWORDs `0056442c/30`. Adding existing half-extents `00564424/28` produces centre values `00564434/38`. ECX is explicitly preserved; EAX/EDX are modified.
+- **`004fd3f0..004fd41f`**, 48 bytes: converts EAX and EDX from degree-like units to low-32-bit `value*1024/360`, with signed division, then calls `004fd2b0`.
+- **`004fd2b0..004fd3ea`**, 315 bytes: stores those angle inputs at `00564448/4c`, arithmetic-shifts EBX/ECX right by one into `00564424/28`, updates centre values from the stored origin, then derives scales at `0056443c/40` using signed arithmetic and lookup table `005672ac`. Its zero-second-angle path uses `00564450` and helper `004e8f28`. Complete lookup-table interpretation remains outside this chapter.
+
+The evidence script verifies that **every byte of all three ranges is NOP (`90`) in Modern**, rather than treating them as still-callable retained functions. This establishes removal of these implementations at those addresses and their calls from the matched wrapper. It does not exclude reimplemented behavior elsewhere.
+
+Original's wrapper supplies integer half-angles to these helpers before calling the separate float builder. Modern omits those integer-state updates and uses the float route. A port must not preserve obsolete address-based calls simply because original used them, or silently assume the old global block still has active projection semantics.
+
+The shared float builder itself computes centre coordinates from rectangle origin plus half width/height in both binaries. That retained formula does not locate every horizon/camera shift: all origin producers, downstream consumers and renderer behavior still matter. This narrows **MP160-003** without claiming its complete explanation or a visual test.
+
 ## Reconstruction and catalog limits
 
 **MP160-001**, automatic FOV/H+ mode: the dimension-based producer, clamp, cached selection and changed projection route provide static support for the mechanism. Exact v1.6.0 introduction requires prior-release binaries; UI labels and rendered horizontal coverage remain untested.
 
-**MP160-003**, horizon/camera shift: removal of the wrapper's two old setup calls is a relevant lead, not a verified explanation of the entire advertised fix. Their contracts and all camera consumers must be compared first. **MP140-033**'s setting rename likewise needs UI/string mapping.
+**MP160-003**, horizon/camera shift: the removed integer-state setup is traced above, but it is not a verified explanation of the entire advertised fix. Remaining origin/camera/renderer consumers must be compared first. **MP140-033**'s setting rename likewise needs UI/string mapping.
 
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.

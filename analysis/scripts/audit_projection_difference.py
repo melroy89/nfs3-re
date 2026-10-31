@@ -6,7 +6,9 @@ import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
-SPANS={'original':[(0x4dbcc0,0x4dbd97),(0x4becd0,0x4bed69),(0x4bf260,0x4bf370)],
+LEGACY=[(0x4fd280,0x4fd2a8),(0x4fd2b0,0x4fd3eb),(0x4fd3f0,0x4fd420)]
+
+SPANS={'original':LEGACY+[(0x4dbcc0,0x4dbd97),(0x4becd0,0x4bed69),(0x4bf260,0x4bf370)],
        'official_modern':[(0x4dbc48,0x4dbd35),(0x4becd0,0x4bed69),
                           (0x4bf260,0x4bf370),(0x4be748,0x4be74d)]}
 
@@ -33,6 +35,13 @@ def main():
             item['float_constants']={f'{va:08x}':{'hex':pe.get_data(va-0x400000,4).hex(),
                 'value':struct.unpack('<f',pe.get_data(va-0x400000,4))[0]}
                 for va in [0x5401c0,0x5401c4,0x5401c8,0x53f420,0x5401cc,0x5401d0,0x5401d4]}
+        if label=='official_modern':
+            item['removed_legacy_ranges']=[]
+            for start,end in LEGACY:
+                blob=pe.get_data(start-0x400000,end-start)
+                assert blob==b'\x90'*(end-start)
+                item['removed_legacy_ranges'].append({'start':f'{start:08x}',
+                    'end':f'{end:08x}','all_nop':True,'sha256':hashlib.sha256(blob).hexdigest()})
         result['binaries'][label]=item
         bodies[label]=pe.get_data(0x4bf260-0x400000,0x110)
     assert bodies['original']==bodies['official_modern']
