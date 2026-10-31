@@ -7797,5 +7797,87 @@
     "report": "analysis/original-modern-graphics-menu-transition.md",
     "report_sha256": "79ed15a94528657bb34da2eb0bb8f4cdbf5ab2782af114c2aa132aea4c3d3d14",
     "limit": "Byte localization and bounded research routes; not complete enclosing-function/callee/runtime equivalence."
+  },
+  "audio_interval_partition": {
+    "interval": "004378d9..00438340",
+    "parts": [
+      {
+        "start": "004378d9",
+        "end_exclusive": "00437990",
+        "role": "Removed original Hard Keys tail / Modern NOP region",
+        "bytes": 183,
+        "changed_bytes": 183,
+        "original_sha256": "03ea98e2b306693276f8e451c44096faef03cd7c34f8ec1c999f170b012e1dbd",
+        "modern_sha256": "241507719f3204ecb36a278b003c715a9df2f5114f5014d7e09ba3df0dfe88b4"
+      },
+      {
+        "start": "00437990",
+        "end_exclusive": "00437a90",
+        "role": "Five slider callbacks: seven removed truncation calls",
+        "bytes": 256,
+        "changed_bytes": 35,
+        "original_sha256": "6cc90985a7515c02f63f98f824b175d7f18ba0a5d38bae97a07132fc972712a5",
+        "modern_sha256": "e4305eab97b2512d6824fd57d8e5f31d5e71aba7233aaa628f775cd7d46d2707"
+      },
+      {
+        "start": "00437a90",
+        "end_exclusive": "00437e42",
+        "role": "Unchanged intervening bytes",
+        "bytes": 946,
+        "changed_bytes": 0,
+        "original_sha256": "6ae8a3ad6fbde3a6c2f0c9884d1011658883ec8a00fac83892ac29d62c4b66cd",
+        "modern_sha256": "6ae8a3ad6fbde3a6c2f0c9884d1011658883ec8a00fac83892ac29d62c4b66cd"
+      },
+      {
+        "start": "00437e42",
+        "end_exclusive": "00437e5f",
+        "role": "Race Now policy call-site rewrite",
+        "bytes": 29,
+        "changed_bytes": 29,
+        "original_sha256": "1f09d7d5d6f273d33bbb784d61868407b23475d8f3992a9790319ccb0593f33e",
+        "modern_sha256": "5a74e7fb7ff62dd915260794ef6c4a8945018dbd8f7252f1b3f5a5f3b7885592"
+      },
+      {
+        "start": "00437e5f",
+        "end_exclusive": "00438070",
+        "role": "Unchanged intervening bytes",
+        "bytes": 529,
+        "changed_bytes": 0,
+        "original_sha256": "e40234c3065ab4f11242062f4bc6886d693678b7ff54d6744b41f095a4a71cad",
+        "modern_sha256": "e40234c3065ab4f11242062f4bc6886d693678b7ff54d6744b41f095a4a71cad"
+      },
+      {
+        "start": "00438070",
+        "end_exclusive": "0043825c",
+        "role": "Audio exit / pending music policy",
+        "bytes": 492,
+        "changed_bytes": 138,
+        "original_sha256": "bdb1b952222db2b029b9692b03808dff6d01204317f1f18c06c7e423a48cd12e",
+        "modern_sha256": "48ae7421e09566dbaffc7746c08814a427c67ae0b63c7485419a9d07bf5058c1"
+      },
+      {
+        "start": "0043825c",
+        "end_exclusive": "00438260",
+        "role": "Unchanged alignment",
+        "bytes": 4,
+        "changed_bytes": 0,
+        "original_sha256": "e2ab18c8f7979aa848e113eb5a96e5ec8ec9e263d1b03734acca72d5afb3cc46",
+        "modern_sha256": "e2ab18c8f7979aa848e113eb5a96e5ec8ec9e263d1b03734acca72d5afb3cc46"
+      },
+      {
+        "start": "00438260",
+        "end_exclusive": "00438340",
+        "role": "Setting-change pending publication and end alignment",
+        "bytes": 224,
+        "changed_bytes": 78,
+        "original_sha256": "6a2ecfea3b80a2e46ea0fe0fb7af3d8119194f9b34b9f993a50f4074b0633524",
+        "modern_sha256": "f00016dfca34f1e811a7ecf1578a4aa34eff72a45dae848436e99d0bd3482f34"
+      }
+    ],
+    "reports": [
+      "analysis/original-modern-race-now.md",
+      "analysis/original-modern-music-start.md"
+    ],
+    "limit": "All differing positions assigned bounded research routes; no whole callback/backend or audible equivalence claim."
   }
 }
