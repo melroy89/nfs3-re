@@ -43,6 +43,23 @@ def main():
         'modern':'PUSHAD/POPAD also preserves EAX; arithmetic flags and x87 state not saved by that pair',
         'epilogue_start':'004a46e1',
         'limit':'No EAX liveness or complete caller/callee machine-state equivalence claim.'}
+    assert old.get_data(0xa40c0,11) == bytes.fromhex('53515256575589e583ec08')
+    assert new.get_data(0xa40c0,6) == bytes.fromhex('6089e583ec08')
+    assert old.get_data(0xa437d,9) == bytes.fromhex('89ec5d5f5e5a595bc3')
+    assert new.get_data(0xa436d,4) == bytes.fromhex('89ec61c3')
+    for va,encoded in [(0x4a4473,'e848fcffff'),(0x4a44be,'e8fdfbffff'),
+                       (0x4a44c3,'8b04b55ce95500'),(0x4a4697,'8d04b500000000')]:
+        for image in (old,new):
+            assert image.get_data(va-0x400000,len(bytes.fromhex(encoded))).hex() == encoded
+    assert old.get_data(0xa4478,0x4b) == new.get_data(0xa4478,0x4b)
+    result['producer_register_boundary'] = {
+        'entry': '004a40c0', 'original_epilogue': '004a437d..004a4386',
+        'modern_epilogue': '004a436d..004a4371',
+        'difference': 'Modern PUSHAD/POPAD additionally restores incoming EAX.',
+        'inspected_calls': ['004a4473','004a44be'],
+        'initialization_continuation': 'Tests ESI; EAX overwritten by next slot setup, random-position setup or LEA at004a4697 before use.',
+        'regeneration_continuation': '004a44c3 immediately reloads EAX from per-slot position cell.',
+        'limit': 'Bounded EAX liveness at two callers only; flags, x87 and memory-output equivalence not implied.'}
     result['identical_animation_update_tail']={'start':'004a45c7','end':'004a46e1','sha256':hashlib.sha256(old.get_data(0xa45c7,0x11a)).hexdigest()}
     result['animation_scale_constant']={}
     for label,pe in images.items():
@@ -121,7 +138,7 @@ def main():
         result['logo_table_boundaries'].append({'ltbl_offset':table['decoded_offset'],'records_end':end,'decoded_bytes_remaining':len(decoded)-end,'metadata_size':metadata_size})
     assert result['logo_table_boundaries'][-1]['decoded_bytes_remaining']==0
     result['official_logo_asset']={'member':'fedata/art/logos.qfs','packed_sha256':hashlib.sha256(packed).hexdigest(),'decoded_sha256':hashlib.sha256(decoded).hexdigest(),'decoded_size':len(decoded),'ltbl_magic_scan':tables}
-    result['limits']=['No resource lookup or target instruction execution.','Selectors 0x25/0x26 are raw values; human-readable identities and list initialization remain unresolved.']
+    result['limits']=['No resource lookup or target instruction execution.','Atlas identities and initial state are documented; live model registry contents, reload ownership and rendered output remain unresolved.']
     (ROOT/'analysis/evidence/audits/original-modern-model-presence.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired presence policy, shared caller and identical key construction/search bodies')
 

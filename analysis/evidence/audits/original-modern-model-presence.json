@@ -257,6 +257,19 @@
     "epilogue_start": "004a46e1",
     "limit": "No EAX liveness or complete caller/callee machine-state equivalence claim."
   },
+  "producer_register_boundary": {
+    "entry": "004a40c0",
+    "original_epilogue": "004a437d..004a4386",
+    "modern_epilogue": "004a436d..004a4371",
+    "difference": "Modern PUSHAD/POPAD additionally restores incoming EAX.",
+    "inspected_calls": [
+      "004a4473",
+      "004a44be"
+    ],
+    "initialization_continuation": "Tests ESI; EAX overwritten by next slot setup, random-position setup or LEA at004a4697 before use.",
+    "regeneration_continuation": "004a44c3 immediately reloads EAX from per-slot position cell.",
+    "limit": "Bounded EAX liveness at two callers only; flags, x87 and memory-output equivalence not implied."
+  },
   "identical_animation_update_tail": {
     "start": "004a45c7",
     "end": "004a46e1",
@@ -566,6 +579,6 @@
   },
   "limits": [
     "No resource lookup or target instruction execution.",
-    "Selectors 0x25/0x26 are raw values; human-readable identities and list initialization remain unresolved."
+    "Atlas identities and initial state are documented; live model registry contents, reload ownership and rendered output remain unresolved."
   ]
 }

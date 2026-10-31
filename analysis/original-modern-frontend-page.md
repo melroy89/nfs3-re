@@ -285,3 +285,16 @@ Thus Modern additionally restores incoming **EAX** on ordinary exit through this
 The 13 changed bytes at `004a46e3..004a46f0`, outside the saved Modern body union used by the [outside-function inventory](original-modern-outside-function-index.md), belong to this epilogue replacement and padding. They do not establish a separate removed feature. The larger interval `004a40a4..004a4ba0` also contains the previously described selector, moved logo loader, fade/draw changes and unchanged animation segments; its maximal uncovered extent is not one function boundary.
 
 **Bounded status: done; confidence: verified static caller target and paired frame/return sequences.** EAX liveness at other callers, full register contracts of transitive calls and rendered animation remain outside this finding. Executable bytes, Ghidra and reconstructed C are unchanged.
+
+## Logo-state producer preserves EAX; two callers discard its working value
+
+The model/logo audit now asserts the producer's own complete frame boundaries, separately from the animation consumer discussed above. Original `004a40c0` saves EBX/ECX/EDX/ESI/EDI/EBP and returns through `004a437d..004a4386`. Modern saves all general registers with PUSHAD and exits through `004a436d..004a4371` using POPAD/RET. Consequently Modern restores incoming **EAX=slot index** on an ordinary return, whereas original exposes the body's working EAX. This is an additional interface delta, not a new image-format or fade-policy change.
+
+The two captured direct calls in the paired animation envelope are identical at `004a4473` and `004a44be`; both receive EAX copied from ESI, the slot index. Their local EAX liveness is now checked:
+
+- After initialization call `004a4473`, execution tests ESI, not EAX. For slots below9 it assigns EAX150 before the random-position helper. At the loop boundary the next producer invocation assigns EAX=ESI; when initialization ends, `004a4697` assigns EAX=`4*ESI` before using it to address state. These paths discard the producer's returned working EAX.
+- After regeneration call `004a44be`, the next instruction `004a44c3` reloads EAX from `0055e95c + 4*ESI`, overwriting the return value immediately.
+
+Thus **neither inspected call site depends on the original working EAX**. A maintained helper for these callers need not invent a meaningful scalar return value from the original decompilation. This does not authorize ignoring EAX at unknown indirect callers or establish whole-function equivalence: memory writes, changed constants/counts, flags and x87 state remain material. PUSHAD/POPAD preserve neither flags nor floating-point state, and the producer still has the previously documented count/precondition limits.
+
+Exact prologue/epilogue bytes, both calls, immediate overwrite witnesses and equality of the initialization continuation are retained in the [manifest](evidence/audits/original-modern-model-presence.json). The executable and Ghidra remain unchanged; no animation or instruction probe was run.
