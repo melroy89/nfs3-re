@@ -103,6 +103,14 @@ Consequently, with outer byte `009f3d2d != 0`, the recurring foreground route is
 
 Modern replaces that entire tail with a direct jump at `004cd655` back to `004cd582`, moves the epilogue and fills `004cd663..004cd6b7` with NOPs. The local IsIconic test, conditional foreground request and ShowCursor(0) request are removed together. The complete producers of these predicate inputs and `009f3d2d` are not reconstructed here, so this should not be simplified to “every lost-focus event always forces restoration” in the original.
 
+### Original mode-state producers: a bounded link
+
+The extended focus audit also retains original producer witnesses. At `0050818a`, raster setup tests **bit0 of `00564390`** and writes a normalized byte to `009f3d2d`: bit set loads AL=1; bit clear branches to `00508265`, clears AL and jumps back to the common store at `0050819f`. This operation is downstream of a `005644fc` check; its missing-state diagnostic route is not asserted to be nonreturning. This is an exact bit-to-state link, not a complete enumeration of renderer flags.
+
+At the original window-initializer call `0050844e`, BL is loaded from that state byte, with width/height from `009f38e4/e8` supplied in EAX/EDX. A separate original call at `005246ef` supplies EBX=1 explicitly. The initializer's publication at `004cd946` stores BL back to `009f3d2d`. Thus the retry gate has concrete setup producers, including an explicit-on route, rather than being an unexplained constant or file-backed default.
+
+Do not infer a permanent invariant that `009f3d2d == (00564390 & 1)`: the separate installer caller can supply 1, and all intervening writes/lifetimes are not proven. Likewise, calling the byte universally “fullscreen” would exceed this evidence. The [geometry chapter](original-modern-window-geometry.md) documents the related context-byte style behavior independently; complete field/global aliasing and cross-thread transition ordering still require inspection. These original-only witnesses explain the removed mechanism's conditions, not equal setup semantics in Modern.
+
 This adds a direct mechanism to **MP100-040** beyond the activation-hook refactor. It remains partial evidence for the whole release-note claim: initial foreground/active requests at `004cd55d` and `004cd571` survive in the identical prefix, and the existing [mode-publication path](original-modern-mode-selection.md) also retains a foreground request. Removal of this loop tail does not establish absence of every possible focus-restoration route. Runtime behavior and historical release introduction remain unverified.
 
 ## Release-note mapping and next evidence

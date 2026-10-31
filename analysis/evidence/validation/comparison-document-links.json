@@ -553,8 +553,8 @@
     },
     {
       "path": "analysis/original-modern-window-handling.md",
-      "sha256": "af5575331601a2fad65cac567b61af16f0a71e4504c9ad96799cf3db139db000",
-      "relative_links": 9
+      "sha256": "bd9dd3768ff46caa7add2f02774bc7c7fd1b8f6e74fcc629b35cedd457c39b2c",
+      "relative_links": 10
     },
     {
       "path": "analysis/original-modern-window-key-translation.md",
@@ -583,7 +583,7 @@
     }
   ],
   "file_count": 116,
-  "relative_link_count": 1681,
+  "relative_link_count": 1682,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

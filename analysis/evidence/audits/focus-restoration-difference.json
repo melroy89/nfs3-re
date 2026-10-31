@@ -14,6 +14,36 @@
           "exclusive_end": "004f9140",
           "bytes": "833d4c3d9f00000f845bffffff833d243d9f00000f844effffffb801000000c3",
           "sha256": "f1f03ac4c712104f3917c9e9f5e4e09bf19f26e9ab3d18f47aa88e195e9e889d"
+        },
+        {
+          "start": "00508174",
+          "exclusive_end": "005081a4",
+          "bytes": "31d28b0dfc4456008a152d3d9f0085c90f84a4000000f60590435600010f84ce000000b0018a1d90435600a22d3d9f00",
+          "sha256": "b157d2e1734b698e6482747403d6c6f353f52e7b79e5881ccf988b4578f692a6"
+        },
+        {
+          "start": "00508265",
+          "exclusive_end": "0050826c",
+          "bytes": "30c0e92dffffff",
+          "sha256": "697173ee5bdf16d8e871482e109acb0e80c6e841808386de39c86a69e6416f14"
+        },
+        {
+          "start": "0050843a",
+          "exclusive_end": "00508453",
+          "bytes": "8a1d2d3d9f0083c40c8b15e8389f00a1e4389f00e86d52fcff",
+          "sha256": "8e7e5489ebcd97e70551200e965a19317abafd94eda94dffdeeeafa175631bb1"
+        },
+        {
+          "start": "005246e8",
+          "exclusive_end": "005246f4",
+          "bytes": "bb0100000089c8e8cc8ffaff",
+          "sha256": "446fe57a2ee10818a3a11d038c226fd65dde7b11de907014407d15ede70e277a"
+        },
+        {
+          "start": "004cd939",
+          "exclusive_end": "004cd94c",
+          "bytes": "ba010000008b45fcb9ffffffff881d2d3d9f00",
+          "sha256": "10b99a510b5feecd9a10b441170a9fe2b567fc85431af5cdf36483558cbe76c2"
         }
       ],
       "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",

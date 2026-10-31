@@ -22,7 +22,10 @@ def main():
         body = pe.get_data(0x4cd4e0-0x400000, end-0x4cd4e0)
         helper_spans = []
         if label == 'original':
-            for start, stop in [(0x4f9070,0x4f908b),(0x4f9120,0x4f9140)]:
+            for start, stop in [(0x4f9070,0x4f908b),(0x4f9120,0x4f9140),
+                                (0x508174,0x5081a4),(0x508265,0x50826c),
+                                (0x50843a,0x508453),(0x5246e8,0x5246f4),
+                                (0x4cd939,0x4cd94c)]:
                 value = pe.get_data(start-0x400000,stop-start)
                 helper_spans.append({'start':f'{start:08x}', 'exclusive_end':f'{stop:08x}',
                     'bytes':value.hex(), 'sha256':hashlib.sha256(value).hexdigest()})
@@ -46,6 +49,10 @@ def main():
         '833d0c3d9f00007509833d80715600007406b801000000c331c0c3')
     assert get(old,0x4f9120,32) == bytes.fromhex(
         '833d4c3d9f00000f845bffffff833d243d9f00000f844effffffb801000000c3')
+    assert get(old,0x50818a,26) == bytes.fromhex(
+        'f60590435600010f84ce000000b0018a1d90435600a22d3d9f00')
+    assert get(old,0x508265,7) == bytes.fromhex('30c0e92dffffff')
+    assert get(old,0x5246e8,12) == bytes.fromhex('bb0100000089c8e8cc8ffaff')
     result = {'kind': 'static-window-loop-restoration-difference', 'binaries': rows,
               'shared_prefix_differing_addresses': [f'{a:08x}' for a in differences],
               'limits': ['No target execution or OS focus behavior observed.',
