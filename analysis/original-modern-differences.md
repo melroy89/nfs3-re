@@ -344,6 +344,8 @@ The [current comparison-document link audit](evidence/validation/comparison-docu
 
 The [colour-control dispatch comparison](original-modern-colour-control.md) retains complete counterpart bodies and separates removed release-action sound requests from the still-unverified padding claim.
 
+The [cursor-position comparison](original-modern-cursor-position.md) identifies new Boolean return contracts, narrower field reads and adopted sound wrappers in space freed by the HSV handler. Replay-specific attribution remains open.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

@@ -1,0 +1,128 @@
+{
+  "kind": "static-cursor-position-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00444570",
+          "end": "004445ce",
+          "bytes_sha256": "11f25ad91030e466702ac7e1468147dd38664c6ee73a2210884ec3dac9c97ed2",
+          "assembly": "analysis/captures/modern-differences/cursor-position/original-00444570.asm",
+          "assembly_sha256": "f7f4b44acab819ad554ee4e5b0216d4b879530a61a8be5d9513bf23bfcf11978"
+        },
+        {
+          "start": "00445160",
+          "end": "004451c2",
+          "bytes_sha256": "dcd34ceaf8af6c1c5c13f18f3776b877c4203437b2d5d21c4b74acff07a60969",
+          "assembly": "analysis/captures/modern-differences/cursor-position/original-00445160.asm",
+          "assembly_sha256": "134459a64f0cc7a9e3a31d88f44f4e8c90e6df905b4395bb4fd47502263fb883"
+        },
+        {
+          "start": "0049bfc0",
+          "end": "0049bff7",
+          "bytes_sha256": "5900f9747e9d63afc45e78dda5381ee1ce31b35ba59963e187a2eec4c1f1de81",
+          "assembly": "analysis/captures/modern-differences/cursor-position/original-0049bfc0.asm",
+          "assembly_sha256": "9256d54955824bc459c1999078a69f6e1142aad7f3e4b995f3436c2dbf799f24"
+        }
+      ],
+      "navigation_call_witnesses": [
+        {
+          "address": "004455a1",
+          "target": "00445160",
+          "bytes": "e8bafbffff"
+        },
+        {
+          "address": "004455cb",
+          "target": "00444570",
+          "bytes": "e8a0efffff"
+        },
+        {
+          "address": "004455fd",
+          "target": "00445160",
+          "bytes": "e85efbffff"
+        },
+        {
+          "address": "00445627",
+          "target": "00444570",
+          "bytes": "e844efffff"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00444570",
+          "end": "004445ce",
+          "bytes_sha256": "a110a7768b81bf302ae6f646c759d26a7b1366a43a8ca0fc50c719a20d6c604b",
+          "assembly": "analysis/captures/modern-differences/cursor-position/official_modern-00444570.asm",
+          "assembly_sha256": "c44eba30f2c58fc0a6a960d7df00fe54d9d6769fcf26366d0c42f412508cb71a"
+        },
+        {
+          "start": "00445160",
+          "end": "004451c1",
+          "bytes_sha256": "90ab019ee82f5b4a3d836f13796c7ce8247e0bba395885598606769c15c9c804",
+          "assembly": "analysis/captures/modern-differences/cursor-position/official_modern-00445160.asm",
+          "assembly_sha256": "3bcdfc4a492acc3d813e2b042b3a86bea0ca027aaeb9c51e2d268325100cba30"
+        },
+        {
+          "start": "0049bfc0",
+          "end": "0049bff7",
+          "bytes_sha256": "5900f9747e9d63afc45e78dda5381ee1ce31b35ba59963e187a2eec4c1f1de81",
+          "assembly": "analysis/captures/modern-differences/cursor-position/official_modern-0049bfc0.asm",
+          "assembly_sha256": "d90ee4746185fc0e5139069bb59f1781bfb2eedddae2bbd365c99b22b4bd3366"
+        },
+        {
+          "start": "0043eb88",
+          "end": "0043eb9d",
+          "bytes_sha256": "0982d1c6161baaa7ebbadefa9311b443d11f1f54ccc82126cdd6df9cac9ac0ae",
+          "assembly": "analysis/captures/modern-differences/cursor-position/official_modern-0043eb88.asm",
+          "assembly_sha256": "f516d387c45e49ff1e80bda3d01ff1bf2a5c6a978c9e8fc4ca36e3844952d7fc"
+        },
+        {
+          "start": "0043eba0",
+          "end": "0043ebb5",
+          "bytes_sha256": "feafd8e7ea9b032e43d65dd2c9cd262f9145c29729bb0e342b0a680e9d19f359",
+          "assembly": "analysis/captures/modern-differences/cursor-position/official_modern-0043eba0.asm",
+          "assembly_sha256": "581c698f69b381f40c07d6b900e28e15f7a12aa584b3a66c43f0f0f5ac6f0486"
+        }
+      ],
+      "navigation_call_witnesses": [
+        {
+          "address": "004455a1",
+          "target": "0043eba0",
+          "bytes": "e8fa95ffff"
+        },
+        {
+          "address": "004455cb",
+          "target": "0043eb88",
+          "bytes": "e8b895ffff"
+        },
+        {
+          "address": "004455fd",
+          "target": "0043eba0",
+          "bytes": "e89e95ffff"
+        },
+        {
+          "address": "00445627",
+          "target": "0043eb88",
+          "bytes": "e85c95ffff"
+        }
+      ]
+    }
+  },
+  "identical_cursor_bridge": {
+    "start": "0049bfc0",
+    "end": "0049bff7",
+    "sha256": "5900f9747e9d63afc45e78dda5381ee1ce31b35ba59963e187a2eec4c1f1de81"
+  },
+  "limits": [
+    "No cursor, sound, input or target execution.",
+    "Call witnesses are five-byte direct calls, not complete outer navigation routines.",
+    "No catalog-specific replay keyboard fix or uniform original return inferred."
+  ]
+}

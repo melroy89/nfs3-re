@@ -52,9 +52,14 @@
       "relative_links": 5
     },
     {
+      "path": "analysis/original-modern-cursor-position.md",
+      "sha256": "1536dcfea13064f3598a22e318b3da331b08c0c252654eda1e683f5a99bbb08c",
+      "relative_links": 3
+    },
+    {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "cecbc4e0ac0b2d0373db92a72bac82063624832900ccf1f6646b806168fb7008",
-      "relative_links": 80
+      "sha256": "ad08ee0e2002b2a52b185ecabf6e7dc0711a83677db49d4c27d2417c5aec66ab",
+      "relative_links": 81
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -332,8 +337,8 @@
       "relative_links": 95
     }
   ],
-  "file_count": 66,
-  "relative_link_count": 487,
+  "file_count": 67,
+  "relative_link_count": 491,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
