@@ -316,6 +316,10 @@
       "sha256": "f04a88bc56f99ba41931f12385cad51ee2e506f291240b9f987789d14a67dc39"
     },
     {
+      "path": "analysis/original-modern-small-conversion-helpers.md",
+      "sha256": "95c89e490afef88c9de3a8e7e7536ec0e5d29308002347a1992f743073cc897b"
+    },
+    {
       "path": "analysis/original-modern-sound-bank-language.md",
       "sha256": "182b118f352dffde470fd085cdbb6870a20831cd368c09e1fb0973a0000d6cca"
     },
@@ -394,8 +398,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 334,
-    "without_address_mentions": 27
+    "with_address_mentions": 339,
+    "without_address_mentions": 22
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -10577,6 +10581,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-small-conversion-helpers.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dfd56"
+          ]
+        },
+        {
           "path": "analysis/original-modern-viewport-geometry.md",
           "entry_mentioned": true,
           "addresses": [
@@ -10661,7 +10672,15 @@
       "changed_bytes": 19,
       "original_sha256": "54497ab844d4deca3993d99168ba49a8e20637bd887063f3ea4efc87a28edab3",
       "modern_sha256": "ae485a522b80208e6e575d27dda2f3c323c9dc2f08568061aa4bbf90ce135d82",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-conversion-helpers.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004e3000"
+          ]
+        }
+      ]
     },
     {
       "entry": "004e3014",
@@ -11668,7 +11687,15 @@
       "changed_bytes": 9,
       "original_sha256": "3015beffb619e1cba38b2483c9ddc5a5fe016c9fed4ff53839ba97bc3d85b56f",
       "modern_sha256": "bb402bf712c252dd892e452a0bf902cb558fed20b8e7dd1d299c1a2b66eba294",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-conversion-helpers.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f939c"
+          ]
+        }
+      ]
     },
     {
       "entry": "004f93a8",
@@ -11752,7 +11779,15 @@
       "changed_bytes": 18,
       "original_sha256": "82b79f4626e2cb2e4b0343cb3aaf843af78e613ffa41d9bab524296bce09a4bb",
       "modern_sha256": "072b64b0019abd895ec36938a02bf1ee2826bed65b02c2f0d52e64d58701cb8f",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-conversion-helpers.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f93c8"
+          ]
+        }
+      ]
     },
     {
       "entry": "004f93dc",
@@ -11822,7 +11857,15 @@
       "changed_bytes": 23,
       "original_sha256": "5f63c30ea67c3c8e0cd2ef549de09045a9203092cb4d30f7ae2cdc97ed484daf",
       "modern_sha256": "a241b2a97dfa18f7a39ad73c4a72ace62ffccded1938dc8884b729f250368bbb",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-conversion-helpers.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f9400"
+          ]
+        }
+      ]
     },
     {
       "entry": "004f9418",
@@ -11866,7 +11909,15 @@
       "changed_bytes": 22,
       "original_sha256": "58404195c7542be6e68828db703a26ea915c447539ae3cc413364927147a8161",
       "modern_sha256": "f38cc4fd2b46624f353d984f61071e9e21418eb2bd25274930f7c556d4ba26a5",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-conversion-helpers.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f9424"
+          ]
+        }
+      ]
     },
     {
       "entry": "004f943c",

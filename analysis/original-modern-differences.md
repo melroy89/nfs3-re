@@ -428,6 +428,8 @@ The [car-registry comparison](original-modern-car-registry-flags.md) verifies re
 
 The [environment-grid comparison](original-modern-environment-grid.md) accounts for the revised context/detail admission, expanded renderer mask and changed vector argument.
 
+The [small conversion-helper contracts](original-modern-small-conversion-helpers.md) document ASCII copy pointer/count outputs, the wide-character API wrapper and current-rounding-mode float conversion; original functional counterparts remain unresolved.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

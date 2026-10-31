@@ -1,0 +1,107 @@
+{
+  "kind": "modern-small-conversion-helper-contracts",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004f93c8",
+          "end_exclusive": "004f93da",
+          "sha256": "82b79f4626e2cb2e4b0343cb3aaf843af78e613ffa41d9bab524296bce09a4bb",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/original-004f93c8.asm"
+        },
+        {
+          "start": "004f9400",
+          "end_exclusive": "004f9417",
+          "sha256": "5f63c30ea67c3c8e0cd2ef549de09045a9203092cb4d30f7ae2cdc97ed484daf",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/original-004f9400.asm"
+        },
+        {
+          "start": "004f9424",
+          "end_exclusive": "004f943b",
+          "sha256": "58404195c7542be6e68828db703a26ea915c447539ae3cc413364927147a8161",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/original-004f9424.asm"
+        },
+        {
+          "start": "004e3000",
+          "end_exclusive": "004e3013",
+          "sha256": "54497ab844d4deca3993d99168ba49a8e20637bd887063f3ea4efc87a28edab3",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/original-004e3000.asm"
+        },
+        {
+          "start": "004f939c",
+          "end_exclusive": "004f93a5",
+          "sha256": "3015beffb619e1cba38b2483c9ddc5a5fe016c9fed4ff53839ba97bc3d85b56f",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/original-004f939c.asm"
+        },
+        {
+          "start": "004f0ae0",
+          "end_exclusive": "004f0aee",
+          "sha256": "12faceab764ccdbbbeeaffb3213def7775e07263b5d2a97f620a888f07514172",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/original-004f0ae0.asm"
+        },
+        {
+          "start": "004eede0",
+          "end_exclusive": "004eedee",
+          "sha256": "b4d460be978b80eba17160f338372e375c48b5d328c230be2f6ad16f320b5e40",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/original-004eede0.asm"
+        }
+      ],
+      "import_00534598": "MultiByteToWideChar"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004f93c8",
+          "end_exclusive": "004f93da",
+          "sha256": "072b64b0019abd895ec36938a02bf1ee2826bed65b02c2f0d52e64d58701cb8f",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/official_modern-004f93c8.asm"
+        },
+        {
+          "start": "004f9400",
+          "end_exclusive": "004f9417",
+          "sha256": "a241b2a97dfa18f7a39ad73c4a72ace62ffccded1938dc8884b729f250368bbb",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/official_modern-004f9400.asm"
+        },
+        {
+          "start": "004f9424",
+          "end_exclusive": "004f943b",
+          "sha256": "f38cc4fd2b46624f353d984f61071e9e21418eb2bd25274930f7c556d4ba26a5",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/official_modern-004f9424.asm"
+        },
+        {
+          "start": "004e3000",
+          "end_exclusive": "004e3013",
+          "sha256": "ae485a522b80208e6e575d27dda2f3c323c9dc2f08568061aa4bbf90ce135d82",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/official_modern-004e3000.asm"
+        },
+        {
+          "start": "004f939c",
+          "end_exclusive": "004f93a5",
+          "sha256": "bb402bf712c252dd892e452a0bf902cb558fed20b8e7dd1d299c1a2b66eba294",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/official_modern-004f939c.asm"
+        },
+        {
+          "start": "004f0ae0",
+          "end_exclusive": "004f0aee",
+          "sha256": "12faceab764ccdbbbeeaffb3213def7775e07263b5d2a97f620a888f07514172",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/official_modern-004f0ae0.asm"
+        },
+        {
+          "start": "004eede0",
+          "end_exclusive": "004eedee",
+          "sha256": "b4d460be978b80eba17160f338372e375c48b5d328c230be2f6ad16f320b5e40",
+          "assembly": "analysis/captures/modern-differences/small-conversion-helpers/official_modern-004eede0.asm"
+        }
+      ],
+      "import_00534598": "MultiByteToWideChar"
+    }
+  },
+  "limits": [
+    "Original same-address utility regions are not established functional counterparts.",
+    "No target/API execution, malformed-string probes or x87 equivalence test."
+  ]
+}
