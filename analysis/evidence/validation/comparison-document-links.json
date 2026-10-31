@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
-      "sha256": "3c1eaeb527a2b080bcb2ed767e20b4ce8d585b8b95c44780728e8b2c407714a5",
-      "relative_links": 4
+      "sha256": "9193a328bfbfafaec40e0a601e294ab3ee52be470600035505b49287c501b5eb",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
@@ -563,7 +563,7 @@
     }
   ],
   "file_count": 112,
-  "relative_link_count": 1485,
+  "relative_link_count": 1488,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

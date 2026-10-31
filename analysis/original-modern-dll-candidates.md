@@ -33,6 +33,28 @@ These are dependency-table facts, not execution observations. In particular, dis
 
 The inspected local `eacsnd.dll` exactly matches the official packaged member. It therefore supplies no distinct older sound baseline for a version-difference claim. This is bounded to the selected files; other installation media or backups were not searched, and no universal statement about all original sound libraries follows.
 
-A useful next DLL investigation can now choose one candidate pair by exact hash and a specific THRASH export, first establishing descriptor/API-version compatibility and functional counterparts. Original-retail attribution still needs independent media/provenance evidence. The [packaged control-word findings](original-modern-packaged-x87.md) remain current-package analysis until a distinct, justified original counterpart is compared.
+The bounded Voodoo about follow-up below begins a function-level comparison for one pinned pair; complete descriptor compatibility and functional counterparts still require additional evidence. Original-retail attribution still needs independent media/provenance evidence. The [packaged control-word findings](original-modern-packaged-x87.md) remain current-package analysis until a distinct, justified original counterpart is compared.
 
 **Inventory status: done for selected identities, surfaces and static imports; confidence: verified bytes/PE metadata, unresolved historical pairing.** No function-level difference, rendering success, sound change or compatibility fix is claimed from this inventory. Executables, Ghidra, raw C exports and maintained reconstruction sources remain unchanged.
+
+## Voodoo about descriptor setup
+
+A bounded follow-up now compares the actual `_THRASH_about@0` entry prefixes, rather than assuming correspondence from export names. Run [the setup audit](scripts/audit_voodoo_about_setup.py); its [evidence manifest](evidence/audits/voodoo-about-setup.json) retains both pinned file hashes, prefix bytes/hashes, disassembly and twelve exact instruction assertions.
+
+| Observation | Local legacy Voodoo candidate | Official-matching Modern Voodoo wrapper |
+|---|---|---|
+| Export entry | `60001a60` | `60001bb0` |
+| Static descriptor base | `6000fd54` | `6000fd10` |
+| Nonzero first DWORD | Returns descriptor immediately at `60001a73..60001a79` | Returns descriptor immediately at `60001bc6..60001bcf` |
+| ECX setup immediate, subsequently stored at descriptor `+0` | `33444658h` | `33444632h` |
+| ESI setup immediate, subsequently stored at descriptor `+8` | `68h` | `68h` |
+| Later ESI immediate, then store at descriptor `+3ch` | `10h`, store at `60001af4` | `0`, store at `60001c4a` |
+| EDI immediate, then store at descriptor `+40h` | `6000fe18`, store at `60001afa` | `60013000`, store at `60001c50` |
+
+Both entries test descriptor DWORD `+0` as their lazy-cache guard. A nonzero value bypasses setup and returns its address in EAX while restoring EBX, ESI, EDI and EBP; the Modern entry also removes its four-byte local stack slot. These are static path/register observations, not proof that the cache is initialized at a particular runtime moment or safe under concurrent first calls.
+
+The initialization prefixes pass descriptor base in EAX and `80h` in EBX to helpers `600048b0` / `60004940`. Those helpers save and restore ECX around their subordinate calls, so the changed ECX literal is not merely a different temporary discarded before the `+0` store. Both also copy a NUL-terminated source string into descriptor `+4ch` with matching inline byte-copy control flow. Neither observation establishes the complete structure layout or string capacity.
+
+The unchanged `+8=68h` agrees with the literal accepted by the [executable loader](original-modern-renderer-loading.md). It must **not** be called a structure size or API version without separate layout evidence. Likewise, `+3ch` and `+40h` are deliberately recorded as offsets, not yet named a mode count/table. Changed pointer addresses alone do not prove changed pointed-to content.
+
+**Stopping boundary and remaining work:** the retained prefixes end at `60001b5e` / `60001cb4`, before the subsequent hardware-dependent paths. Later code calls helpers and indirect targets before returning; it can modify the descriptor. Consequently the table describes setup writes, not guaranteed final returned fields. Follow descriptor-mutating callees and consumer offsets before claiming complete interface compatibility, interpreting the changed fields, or connecting this DLL edit to a particular release-note feature. Retail provenance remains unresolved. No DLL/game execution or Ghidra changes were performed.

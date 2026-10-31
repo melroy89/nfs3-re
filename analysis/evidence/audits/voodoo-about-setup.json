@@ -1,0 +1,109 @@
+{
+  "scope": "THRASH_about lazy-cache path and setup prefix only",
+  "files": {
+    "legacy_candidate": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/VOODOO2A.DLL",
+      "sha256": "f65f00e6fa6a5a67e11ff38d661b3d493474d0e075c9183a7b244b1143cea88e",
+      "export_va": "60001a60",
+      "descriptor_va": "6000fd54",
+      "prefix_end_exclusive": "60001b5e",
+      "prefix_bytes": 254,
+      "prefix_sha256": "306af025ba1fe3d5dbf801f30fc397f4c5015a5ab836cf8dbf1d6fb8c1c47fda",
+      "prefix_hex": "535657558b1554fd0060bd54fd006085d2740789e85d5f5e5bc3bb80000000b958464433be6800000089e8bf01000000e81b2e0000bb80000000b800010000890d54fd006089355cfd0060893d64fd0060893d6cfd0060893d70fd0060893d78fd0060893d7cfd0060b904000000be10000000bf18fe0060891d58fd0060a368fd0060bb000100008a2560fd0060890d88fd0060893590fd0060893d94fd0060bed4f4006080cc0e891d74fd00608d7d4cbb00fe0060882560fd006088e2b80900000080e2fe891d8cfd0060881560fd0060bad4fd0060a380fd0060891584fd0060578a0688073c0074108a460183c60288470183c7023c0075e85f31c0",
+      "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/nfs3_decomp.rep/Electronic Arts/Need For Speed III/VOODOO2A.DLL:     file format pei-i386\n\n\nDisassembly of section AUTO:\n\n60001a60 <AUTO+0xa60>:\n60001a60:\t53                   \tpush   ebx\n60001a61:\t56                   \tpush   esi\n60001a62:\t57                   \tpush   edi\n60001a63:\t55                   \tpush   ebp\n60001a64:\t8b 15 54 fd 00 60    \tmov    edx,DWORD PTR ds:0x6000fd54\n60001a6a:\tbd 54 fd 00 60       \tmov    ebp,0x6000fd54\n60001a6f:\t85 d2                \ttest   edx,edx\n60001a71:\t74 07                \tje     0x60001a7a\n60001a73:\t89 e8                \tmov    eax,ebp\n60001a75:\t5d                   \tpop    ebp\n60001a76:\t5f                   \tpop    edi\n60001a77:\t5e                   \tpop    esi\n60001a78:\t5b                   \tpop    ebx\n60001a79:\tc3                   \tret\n60001a7a:\tbb 80 00 00 00       \tmov    ebx,0x80\n60001a7f:\tb9 58 46 44 33       \tmov    ecx,0x33444658\n60001a84:\tbe 68 00 00 00       \tmov    esi,0x68\n60001a89:\t89 e8                \tmov    eax,ebp\n60001a8b:\tbf 01 00 00 00       \tmov    edi,0x1\n60001a90:\te8 1b 2e 00 00       \tcall   0x600048b0\n60001a95:\tbb 80 00 00 00       \tmov    ebx,0x80\n60001a9a:\tb8 00 01 00 00       \tmov    eax,0x100\n60001a9f:\t89 0d 54 fd 00 60    \tmov    DWORD PTR ds:0x6000fd54,ecx\n60001aa5:\t89 35 5c fd 00 60    \tmov    DWORD PTR ds:0x6000fd5c,esi\n60001aab:\t89 3d 64 fd 00 60    \tmov    DWORD PTR ds:0x6000fd64,edi\n60001ab1:\t89 3d 6c fd 00 60    \tmov    DWORD PTR ds:0x6000fd6c,edi\n60001ab7:\t89 3d 70 fd 00 60    \tmov    DWORD PTR ds:0x6000fd70,edi\n60001abd:\t89 3d 78 fd 00 60    \tmov    DWORD PTR ds:0x6000fd78,edi\n60001ac3:\t89 3d 7c fd 00 60    \tmov    DWORD PTR ds:0x6000fd7c,edi\n60001ac9:\tb9 04 00 00 00       \tmov    ecx,0x4\n60001ace:\tbe 10 00 00 00       \tmov    esi,0x10\n60001ad3:\tbf 18 fe 00 60       \tmov    edi,0x6000fe18\n60001ad8:\t89 1d 58 fd 00 60    \tmov    DWORD PTR ds:0x6000fd58,ebx\n60001ade:\ta3 68 fd 00 60       \tmov    ds:0x6000fd68,eax\n60001ae3:\tbb 00 01 00 00       \tmov    ebx,0x100\n60001ae8:\t8a 25 60 fd 00 60    \tmov    ah,BYTE PTR ds:0x6000fd60\n60001aee:\t89 0d 88 fd 00 60    \tmov    DWORD PTR ds:0x6000fd88,ecx\n60001af4:\t89 35 90 fd 00 60    \tmov    DWORD PTR ds:0x6000fd90,esi\n60001afa:\t89 3d 94 fd 00 60    \tmov    DWORD PTR ds:0x6000fd94,edi\n60001b00:\tbe d4 f4 00 60       \tmov    esi,0x6000f4d4\n60001b05:\t80 cc 0e             \tor     ah,0xe\n60001b08:\t89 1d 74 fd 00 60    \tmov    DWORD PTR ds:0x6000fd74,ebx\n60001b0e:\t8d 7d 4c             \tlea    edi,[ebp+0x4c]\n60001b11:\tbb 00 fe 00 60       \tmov    ebx,0x6000fe00\n60001b16:\t88 25 60 fd 00 60    \tmov    BYTE PTR ds:0x6000fd60,ah\n60001b1c:\t88 e2                \tmov    dl,ah\n60001b1e:\tb8 09 00 00 00       \tmov    eax,0x9\n60001b23:\t80 e2 fe             \tand    dl,0xfe\n60001b26:\t89 1d 8c fd 00 60    \tmov    DWORD PTR ds:0x6000fd8c,ebx\n60001b2c:\t88 15 60 fd 00 60    \tmov    BYTE PTR ds:0x6000fd60,dl\n60001b32:\tba d4 fd 00 60       \tmov    edx,0x6000fdd4\n60001b37:\ta3 80 fd 00 60       \tmov    ds:0x6000fd80,eax\n60001b3c:\t89 15 84 fd 00 60    \tmov    DWORD PTR ds:0x6000fd84,edx\n60001b42:\t57                   \tpush   edi\n60001b43:\t8a 06                \tmov    al,BYTE PTR [esi]\n60001b45:\t88 07                \tmov    BYTE PTR [edi],al\n60001b47:\t3c 00                \tcmp    al,0x0\n60001b49:\t74 10                \tje     0x60001b5b\n60001b4b:\t8a 46 01             \tmov    al,BYTE PTR [esi+0x1]\n60001b4e:\t83 c6 02             \tadd    esi,0x2\n60001b51:\t88 47 01             \tmov    BYTE PTR [edi+0x1],al\n60001b54:\t83 c7 02             \tadd    edi,0x2\n60001b57:\t3c 00                \tcmp    al,0x0\n60001b59:\t75 e8                \tjne    0x60001b43\n60001b5b:\t5f                   \tpop    edi\n60001b5c:\t31 c0                \txor    eax,eax\n",
+      "checked_instructions": [
+        {
+          "va": "60001a7f",
+          "bytes": "b958464433",
+          "role": "ECX immediate",
+          "value": "33444658"
+        },
+        {
+          "va": "60001a84",
+          "bytes": "be68000000",
+          "role": "ESI immediate",
+          "value": "00000068"
+        },
+        {
+          "va": "60001ace",
+          "bytes": "be10000000",
+          "role": "ESI immediate",
+          "value": "00000010"
+        },
+        {
+          "va": "60001ad3",
+          "bytes": "bf18fe0060",
+          "role": "EDI immediate",
+          "value": "6000fe18"
+        },
+        {
+          "va": "60001af4",
+          "bytes": "893590fd0060",
+          "role": "ESI store destination",
+          "value": "6000fd90"
+        },
+        {
+          "va": "60001afa",
+          "bytes": "893d94fd0060",
+          "role": "EDI store destination",
+          "value": "6000fd94"
+        }
+      ]
+    },
+    "official_matching_wrapper": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/drivers/glide3x/voodoo2a.dll",
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "export_va": "60001bb0",
+      "descriptor_va": "6000fd10",
+      "prefix_end_exclusive": "60001cb4",
+      "prefix_bytes": 260,
+      "prefix_sha256": "2ec316641607c1cd2e6d6485c8d1e9135bbc147ecb4ef3bd97cde6b0fc606a8b",
+      "prefix_hex": "5356575583ec048b1510fd0060bd10fd006085d2740a89e883c4045d5f5e5bc3bb80000000b932464433be6800000089e8bf01000000e8552d0000bb80000000b800010000890d10fd0060893518fd0060893d20fd0060893d28fd0060893d2cfd0060893d34fd0060893d38fd0060b904000000be00000000bf00300160891d14fd0060a324fd0060bb000100008a251cfd0060890d44fd006089354cfd0060893d50fd0060be84f4006080cc0e891d30fd00608d7d4cbbbcfd006088251cfd006088e2b80900000080e2fe891d48fd006088151cfd0060ba90fd0060a33cfd0060891540fd0060578a0688073c0074108a460183c60288470183c7023c0075e85f31c0",
+      "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/nfs3_decomp.rep/Electronic Arts/Need For Speed III/drivers/glide3x/voodoo2a.dll:     file format pei-i386\n\n\nDisassembly of section .code:\n\n60001bb0 <.code+0xbb0>:\n60001bb0:\t53                   \tpush   ebx\n60001bb1:\t56                   \tpush   esi\n60001bb2:\t57                   \tpush   edi\n60001bb3:\t55                   \tpush   ebp\n60001bb4:\t83 ec 04             \tsub    esp,0x4\n60001bb7:\t8b 15 10 fd 00 60    \tmov    edx,DWORD PTR ds:0x6000fd10\n60001bbd:\tbd 10 fd 00 60       \tmov    ebp,0x6000fd10\n60001bc2:\t85 d2                \ttest   edx,edx\n60001bc4:\t74 0a                \tje     0x60001bd0\n60001bc6:\t89 e8                \tmov    eax,ebp\n60001bc8:\t83 c4 04             \tadd    esp,0x4\n60001bcb:\t5d                   \tpop    ebp\n60001bcc:\t5f                   \tpop    edi\n60001bcd:\t5e                   \tpop    esi\n60001bce:\t5b                   \tpop    ebx\n60001bcf:\tc3                   \tret\n60001bd0:\tbb 80 00 00 00       \tmov    ebx,0x80\n60001bd5:\tb9 32 46 44 33       \tmov    ecx,0x33444632\n60001bda:\tbe 68 00 00 00       \tmov    esi,0x68\n60001bdf:\t89 e8                \tmov    eax,ebp\n60001be1:\tbf 01 00 00 00       \tmov    edi,0x1\n60001be6:\te8 55 2d 00 00       \tcall   0x60004940\n60001beb:\tbb 80 00 00 00       \tmov    ebx,0x80\n60001bf0:\tb8 00 01 00 00       \tmov    eax,0x100\n60001bf5:\t89 0d 10 fd 00 60    \tmov    DWORD PTR ds:0x6000fd10,ecx\n60001bfb:\t89 35 18 fd 00 60    \tmov    DWORD PTR ds:0x6000fd18,esi\n60001c01:\t89 3d 20 fd 00 60    \tmov    DWORD PTR ds:0x6000fd20,edi\n60001c07:\t89 3d 28 fd 00 60    \tmov    DWORD PTR ds:0x6000fd28,edi\n60001c0d:\t89 3d 2c fd 00 60    \tmov    DWORD PTR ds:0x6000fd2c,edi\n60001c13:\t89 3d 34 fd 00 60    \tmov    DWORD PTR ds:0x6000fd34,edi\n60001c19:\t89 3d 38 fd 00 60    \tmov    DWORD PTR ds:0x6000fd38,edi\n60001c1f:\tb9 04 00 00 00       \tmov    ecx,0x4\n60001c24:\tbe 00 00 00 00       \tmov    esi,0x0\n60001c29:\tbf 00 30 01 60       \tmov    edi,0x60013000\n60001c2e:\t89 1d 14 fd 00 60    \tmov    DWORD PTR ds:0x6000fd14,ebx\n60001c34:\ta3 24 fd 00 60       \tmov    ds:0x6000fd24,eax\n60001c39:\tbb 00 01 00 00       \tmov    ebx,0x100\n60001c3e:\t8a 25 1c fd 00 60    \tmov    ah,BYTE PTR ds:0x6000fd1c\n60001c44:\t89 0d 44 fd 00 60    \tmov    DWORD PTR ds:0x6000fd44,ecx\n60001c4a:\t89 35 4c fd 00 60    \tmov    DWORD PTR ds:0x6000fd4c,esi\n60001c50:\t89 3d 50 fd 00 60    \tmov    DWORD PTR ds:0x6000fd50,edi\n60001c56:\tbe 84 f4 00 60       \tmov    esi,0x6000f484\n60001c5b:\t80 cc 0e             \tor     ah,0xe\n60001c5e:\t89 1d 30 fd 00 60    \tmov    DWORD PTR ds:0x6000fd30,ebx\n60001c64:\t8d 7d 4c             \tlea    edi,[ebp+0x4c]\n60001c67:\tbb bc fd 00 60       \tmov    ebx,0x6000fdbc\n60001c6c:\t88 25 1c fd 00 60    \tmov    BYTE PTR ds:0x6000fd1c,ah\n60001c72:\t88 e2                \tmov    dl,ah\n60001c74:\tb8 09 00 00 00       \tmov    eax,0x9\n60001c79:\t80 e2 fe             \tand    dl,0xfe\n60001c7c:\t89 1d 48 fd 00 60    \tmov    DWORD PTR ds:0x6000fd48,ebx\n60001c82:\t88 15 1c fd 00 60    \tmov    BYTE PTR ds:0x6000fd1c,dl\n60001c88:\tba 90 fd 00 60       \tmov    edx,0x6000fd90\n60001c8d:\ta3 3c fd 00 60       \tmov    ds:0x6000fd3c,eax\n60001c92:\t89 15 40 fd 00 60    \tmov    DWORD PTR ds:0x6000fd40,edx\n60001c98:\t57                   \tpush   edi\n60001c99:\t8a 06                \tmov    al,BYTE PTR [esi]\n60001c9b:\t88 07                \tmov    BYTE PTR [edi],al\n60001c9d:\t3c 00                \tcmp    al,0x0\n60001c9f:\t74 10                \tje     0x60001cb1\n60001ca1:\t8a 46 01             \tmov    al,BYTE PTR [esi+0x1]\n60001ca4:\t83 c6 02             \tadd    esi,0x2\n60001ca7:\t88 47 01             \tmov    BYTE PTR [edi+0x1],al\n60001caa:\t83 c7 02             \tadd    edi,0x2\n60001cad:\t3c 00                \tcmp    al,0x0\n60001caf:\t75 e8                \tjne    0x60001c99\n60001cb1:\t5f                   \tpop    edi\n60001cb2:\t31 c0                \txor    eax,eax\n",
+      "checked_instructions": [
+        {
+          "va": "60001bd5",
+          "bytes": "b932464433",
+          "role": "ECX immediate",
+          "value": "33444632"
+        },
+        {
+          "va": "60001bda",
+          "bytes": "be68000000",
+          "role": "ESI immediate",
+          "value": "00000068"
+        },
+        {
+          "va": "60001c24",
+          "bytes": "be00000000",
+          "role": "ESI immediate",
+          "value": "00000000"
+        },
+        {
+          "va": "60001c29",
+          "bytes": "bf00300160",
+          "role": "EDI immediate",
+          "value": "60013000"
+        },
+        {
+          "va": "60001c4a",
+          "bytes": "89354cfd0060",
+          "role": "ESI store destination",
+          "value": "6000fd4c"
+        },
+        {
+          "va": "60001c50",
+          "bytes": "893d50fd0060",
+          "role": "EDI store destination",
+          "value": "6000fd50"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Setup writes are not final descriptor values after later hardware-dependent calls.",
+    "Local legacy candidate is not independently authenticated retail or paired with nfs3_org.exe.",
+    "No API-size/version names assigned to literal +8=0x68; no mode-count interpretation assigned to +0x3c.",
+    "No DLL execution, compatibility test, Ghidra mutation or executable modification."
+  ]
+}
