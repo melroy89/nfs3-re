@@ -40,7 +40,33 @@
         "formula": "wrap32(N * signed_factor); N=440,60,92 for mode1, otherwise500,110,150",
         "derivation": "All constants=N<<16; signed64 product low16=0, so SHR carry bit15=0; joined high/low halves equal low32(product arithmetic-shift16).",
         "scope": "Mathematical consequence of asserted instructions; not original-instruction execution."
-      }
+      },
+      "caller_and_selector_witnesses": [
+        {
+          "start": "0041d610",
+          "exclusive_end": "0041d61a",
+          "bytes": "5589e5a328bc6f005dc3",
+          "sha256": "742e1f07e850a31d6dd90c19c06a740739ea32c380b8e75cd7d74fbb3f13d160"
+        },
+        {
+          "start": "0041d870",
+          "exclusive_end": "0041d89d",
+          "bytes": "51525589e58b1528bc6f0042b904000000891528bc6f0089d0c1fa1ff7f9891528bc6f00e887fdffff5d5a59c3",
+          "sha256": "f68b7f83e72c09171e985707509eda114e050d9915208320ab68a1edee1a10c1"
+        },
+        {
+          "start": "0041aaf0",
+          "exclusive_end": "0041ab02",
+          "bytes": "515589e589c1e8252b000089d0e80e280000",
+          "sha256": "0a4bf59505fe28ac9bc63552ffa2d22d9cd718dbdaededc83f15422d510fb91e"
+        },
+        {
+          "start": "0041d9fa",
+          "exclusive_end": "0041da0b",
+          "bytes": "31c0e80ff9ffffe81afcffffe855c1ffff",
+          "sha256": "701836804222f17b63e5add007e5f1325e1e167f6a401912cd5f846f03acfcc7"
+        }
+      ]
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -225,7 +251,33 @@
             ]
           ]
         ]
-      }
+      },
+      "caller_and_selector_witnesses": [
+        {
+          "start": "0041d610",
+          "exclusive_end": "0041d61a",
+          "bytes": "5589e5a328bc6f005dc3",
+          "sha256": "742e1f07e850a31d6dd90c19c06a740739ea32c380b8e75cd7d74fbb3f13d160"
+        },
+        {
+          "start": "0041d870",
+          "exclusive_end": "0041d89d",
+          "bytes": "51525589e58b1528bc6f0042b904000000891528bc6f0089d0c1fa1ff7f9891528bc6f00e887fdffff5d5a59c3",
+          "sha256": "f68b7f83e72c09171e985707509eda114e050d9915208320ab68a1edee1a10c1"
+        },
+        {
+          "start": "0041aaf0",
+          "exclusive_end": "0041ab02",
+          "bytes": "515589e589c1e8252b000089d0e80e280000",
+          "sha256": "0a4bf59505fe28ac9bc63552ffa2d22d9cd718dbdaededc83f15422d510fb91e"
+        },
+        {
+          "start": "0041d9fa",
+          "exclusive_end": "0041da0b",
+          "bytes": "31c0e80ff9ffffe81afcffffe855c1ffff",
+          "sha256": "701836804222f17b63e5add007e5f1325e1e167f6a401912cd5f846f03acfcc7"
+        }
+      ]
     }
   },
   "limits": [
