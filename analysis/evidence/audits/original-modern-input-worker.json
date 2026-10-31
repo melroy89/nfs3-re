@@ -75,6 +75,69 @@
           "sha256": "3bd1ca1ed7c59cfd7e93698d73b7aee6c36c033094542da314adbc85bbf84cbb",
           "assembly": "analysis/captures/modern-differences/input-worker/original-004dfc00.asm",
           "assembly_sha256": "ff6a8886a81987432557b6dbbb05ac21679619c8dda05f1a61c91d7502f567c2"
+        },
+        {
+          "start": "004315a0",
+          "end": "00431686",
+          "sha256": "27ff2c960d583062a005d1d030aadc10516360ea06db8a700c42825493c231ca",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004315a0.asm",
+          "assembly_sha256": "92e51a002e7c4f56c385d2428b0c82d86bd90cd564abe9e95cab988d33c7475b"
+        },
+        {
+          "start": "004316c0",
+          "end": "004316f0",
+          "sha256": "030142ad0de3e6cb9c5c7065616af6d2caeb84e0abf87459bd454d9cc9e56dd6",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004316c0.asm",
+          "assembly_sha256": "96b1708338f08f4769b879e40b5e30aed404103f291633a18ad0391b180dc4fc"
+        },
+        {
+          "start": "004316f0",
+          "end": "00431732",
+          "sha256": "66da30d23bb106a575b6e9906d3b3313b3139deae48c512744cfef3a34993828",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004316f0.asm",
+          "assembly_sha256": "a00ff6a14a01436c65cd539e9042fd90e17502cf3216edb1be442bb4f43e443f"
+        },
+        {
+          "start": "00431740",
+          "end": "004317c3",
+          "sha256": "0389944321b1dafef04a719001d60ff527e6f9f58b04ab0325fefe99352a991d",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-00431740.asm",
+          "assembly_sha256": "2e3a08029d03d3f791a5aa16e076bcfc89a8bc6e80e401a345e4ca65b85a6d6f"
+        },
+        {
+          "start": "004317d0",
+          "end": "004317fd",
+          "sha256": "abe2c20f9d3d991fb302d214b36f58f050a5698c62c3e942a9e38191487e1086",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004317d0.asm",
+          "assembly_sha256": "b0c770daaf634b696b170e582a5b690e866fc9ca96793e0faf5f17cbd1e0b143"
+        },
+        {
+          "start": "00431800",
+          "end": "00431885",
+          "sha256": "58a6ec2de17f7df4b8a8e6645c03782468ab43578201acf72d2e5d165221e1e4",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-00431800.asm",
+          "assembly_sha256": "8c7fd5d19164ea7252a44a76bc27a8eb7bf336b95002be5d610fb8c46fa2aa16"
+        },
+        {
+          "start": "0043188d",
+          "end": "004318b0",
+          "sha256": "1de53c78af45e9c0d68d9b25695c2a764a1c6751258ec06bad12e1caa5c53ba9",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-0043188d.asm",
+          "assembly_sha256": "0e004badd904217d44f4651284be69116bcf41d6ff712cb96b4a7e108cf0b840"
+        },
+        {
+          "start": "004318b0",
+          "end": "004318b7",
+          "sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-004318b0.asm",
+          "assembly_sha256": "995c368f094d717ff15b775918e05eb778662e6883d50fd7d26268e58961dbac"
+        },
+        {
+          "start": "0048fa10",
+          "end": "0048fa97",
+          "sha256": "02bda1dac00884dd1657420da3d4330fad2ecac80dd636b11df263676e3f6f85",
+          "assembly": "analysis/captures/modern-differences/input-worker/original-0048fa10.asm",
+          "assembly_sha256": "0feb25aceb5803d1f7cc8be61c38ded247bbf64032ed58ce91ce00cfbd830916"
         }
       ],
       "imports": {
@@ -158,6 +221,69 @@
           "sha256": "3bd1ca1ed7c59cfd7e93698d73b7aee6c36c033094542da314adbc85bbf84cbb",
           "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004dfc00.asm",
           "assembly_sha256": "7e9b8207b41ac837ab370e6085148fbd8a098fc653a1d63ddfdb79aca5d5d03c"
+        },
+        {
+          "start": "004315a0",
+          "end": "00431686",
+          "sha256": "27ff2c960d583062a005d1d030aadc10516360ea06db8a700c42825493c231ca",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004315a0.asm",
+          "assembly_sha256": "213145462a0c6974223281aca95b812aac6f0779fa2c8e9e42ce9b51159a0cbc"
+        },
+        {
+          "start": "004316c0",
+          "end": "004316f0",
+          "sha256": "030142ad0de3e6cb9c5c7065616af6d2caeb84e0abf87459bd454d9cc9e56dd6",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004316c0.asm",
+          "assembly_sha256": "61c674e26dc2f322cf4b928e0aad97a761bcbfcf1090dc3bd514a6bc2342d8c7"
+        },
+        {
+          "start": "004316f0",
+          "end": "00431732",
+          "sha256": "66da30d23bb106a575b6e9906d3b3313b3139deae48c512744cfef3a34993828",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004316f0.asm",
+          "assembly_sha256": "93d5772ab36f0dee7f98ec99c24c8ebb57f3825aed09651ebaaee38cca589837"
+        },
+        {
+          "start": "00431740",
+          "end": "004317c3",
+          "sha256": "0389944321b1dafef04a719001d60ff527e6f9f58b04ab0325fefe99352a991d",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-00431740.asm",
+          "assembly_sha256": "0e9f15e0b91e514e8591d3627cb0cdbc7ee5e8ef29a72e9d2df8858a48fcb60a"
+        },
+        {
+          "start": "004317d0",
+          "end": "004317fd",
+          "sha256": "abe2c20f9d3d991fb302d214b36f58f050a5698c62c3e942a9e38191487e1086",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004317d0.asm",
+          "assembly_sha256": "fd4fe18944811de6fd2203220900ce8c9686e5d38da8e1bec24ba2d1a9283db7"
+        },
+        {
+          "start": "00431800",
+          "end": "00431885",
+          "sha256": "58a6ec2de17f7df4b8a8e6645c03782468ab43578201acf72d2e5d165221e1e4",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-00431800.asm",
+          "assembly_sha256": "46ce2f8a1edb4a1976da435a4ece978775ffaa320b619b787fa882fe25e0d8ac"
+        },
+        {
+          "start": "0043188d",
+          "end": "004318b0",
+          "sha256": "1de53c78af45e9c0d68d9b25695c2a764a1c6751258ec06bad12e1caa5c53ba9",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-0043188d.asm",
+          "assembly_sha256": "5d99a0e65836c62188f567418b028ff12cb42d2026e5f7b1c20670c2c761e0b0"
+        },
+        {
+          "start": "004318b0",
+          "end": "004318b7",
+          "sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-004318b0.asm",
+          "assembly_sha256": "79869db810362bad0dee77e77394d2420618e9310879a8087466967e4f6bd81b"
+        },
+        {
+          "start": "0048fa10",
+          "end": "0048fa97",
+          "sha256": "02bda1dac00884dd1657420da3d4330fad2ecac80dd636b11df263676e3f6f85",
+          "assembly": "analysis/captures/modern-differences/input-worker/official_modern-0048fa10.asm",
+          "assembly_sha256": "064e522c63e5f1d475141ba7a6bc79069fdd89706ae418c3d5e50b683669966b"
         }
       ],
       "imports": {
@@ -169,6 +295,71 @@
       }
     }
   },
+  "retained_input_ranges": [
+    {
+      "name": "RefreshJoystickSamplesAndSyntheticKeyMask",
+      "start": "004315a0",
+      "end": "00431686",
+      "size": 230,
+      "sha256": "27ff2c960d583062a005d1d030aadc10516360ea06db8a700c42825493c231ca"
+    },
+    {
+      "name": "EvaluateJoystickRawButtonBinding",
+      "start": "004316c0",
+      "end": "004316f0",
+      "size": 48,
+      "sha256": "030142ad0de3e6cb9c5c7065616af6d2caeb84e0abf87459bd454d9cc9e56dd6"
+    },
+    {
+      "name": "EvaluateJoystickPovDirectionBinding",
+      "start": "004316f0",
+      "end": "00431732",
+      "size": 66,
+      "sha256": "66da30d23bb106a575b6e9906d3b3313b3139deae48c512744cfef3a34993828"
+    },
+    {
+      "name": "EvaluateJoystickAxisRangeBinding",
+      "start": "00431740",
+      "end": "004317c3",
+      "size": 131,
+      "sha256": "0389944321b1dafef04a719001d60ff527e6f9f58b04ab0325fefe99352a991d"
+    },
+    {
+      "name": "EvaluateKeyboardBindingAndClearAuxiliaryKey",
+      "start": "004317d0",
+      "end": "004317fd",
+      "size": 45,
+      "sha256": "abe2c20f9d3d991fb302d214b36f58f050a5698c62c3e942a9e38191487e1086"
+    },
+    {
+      "name": "EvaluateDigitalPackedControlBinding main range",
+      "start": "00431800",
+      "end": "00431885",
+      "size": 133,
+      "sha256": "58a6ec2de17f7df4b8a8e6645c03782468ab43578201acf72d2e5d165221e1e4"
+    },
+    {
+      "name": "EvaluateDigitalPackedControlBinding secondary range",
+      "start": "0043188d",
+      "end": "004318b0",
+      "size": 35,
+      "sha256": "1de53c78af45e9c0d68d9b25695c2a764a1c6751258ec06bad12e1caa5c53ba9"
+    },
+    {
+      "name": "EvaluateUnassignedBindingAsZero",
+      "start": "004318b0",
+      "end": "004318b7",
+      "size": 7,
+      "sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269"
+    },
+    {
+      "name": "DispatchCollectedPlayerInputs",
+      "start": "0048fa10",
+      "end": "0048fa97",
+      "size": 135,
+      "sha256": "02bda1dac00884dd1657420da3d4330fad2ecac80dd636b11df263676e3f6f85"
+    }
+  ],
   "identical_collector": {
     "start": "0048f550",
     "end": "0048f69a",

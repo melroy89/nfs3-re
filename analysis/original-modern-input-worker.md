@@ -44,3 +44,24 @@ The expanded audit compares complete **`0048f550..0048f69a`**,330 bytes, and fin
 The retained collector invokes indirect callbacks selected by sign-extending the low byte of each binding DWORD, while passing the complete binding in EAX. No local bound check establishes that arbitrary low-byte values index those six entries safely. It writes packed per-player input bytes starting at **`0079c338`**; session value `006fd3b0==1` takes a two-player loop, while the other local route collects one. It also assembles32 action bits, increments DWORD **`0079c4ac`**, stores the mask in **`0079c2b8 + 4*(counter & 31)`**, then calls **`0048fa10`**. The raw shift/subtract and byte truncation operations are retained; they must not be replaced by assumptions about signed-C overflow or saturation.
 
 Thus no collector-body rewrite is identified in this pair. This does not establish equivalent device results: called helpers, callback bodies, bindings, globals, concurrent updates and sampling time can differ. The lifecycle delta remains independently meaningful, and neither unchanged local instructions nor the initial callback table proves replay/network determinism. Follow-up should compare callback bodies and their device/backend dependencies before claiming unchanged input semantics.
+
+## Initial callback implementations and immediate dispatch
+
+The expanded audit verifies byte equality for these saved function ranges in both executables (ends exclusive):
+
+| Entry / ranges | Existing analysis name |
+|---|---|
+| `004315a0..00431686` | RefreshJoystickSamplesAndSyntheticKeyMask |
+| `004316c0..004316f0` | EvaluateJoystickRawButtonBinding |
+| `004316f0..00431732` | EvaluateJoystickPovDirectionBinding |
+| `00431740..004317c3` | EvaluateJoystickAxisRangeBinding |
+| `004317d0..004317fd` | EvaluateKeyboardBindingAndClearAuxiliaryKey |
+| `00431800..00431885`, `0043188d..004318b0` | EvaluateDigitalPackedControlBinding |
+| `004318b0..004318b7` | EvaluateUnassignedBindingAsZero |
+| `0048fa10..0048fa97` | DispatchCollectedPlayerInputs |
+
+These names are existing research labels, not additional proof of device semantics. The two digital-binding ranges are recorded separately; bytes in the intervening gap are excluded, rather than silently counted as that function’s instructions. Each range has its own paired hash and disassembly capture in the manifest.
+
+The immediate dispatcher’s retained branches are also concrete. Signed `006fd3a0 > 1` tests `007d36a0` and `007d36a8`, then increments `00560104` only when both are zero. On the other route, nonzero `00560108` returns immediately. Otherwise session `006fd3b0==1` submits player0’s four-byte buffer at `0079c338` to `004c6530` and submits player1’s buffer at `0079c33c` only if the first call returns nonzero. Session0 submits the first buffer using index `006fd4f4`; other session values pass it to `004c60c0`. Queue routines, state meanings and delivery timing are not established by these branches alone.
+
+This resolves the earlier specific unknown about equality of the initial callback instruction ranges: no changes were found there. Remaining input questions are transitive device/backend implementations, later pointer-table writes, binding/global initialization, queue consumers, timing and concurrency. It would be incorrect to relabel all input behavior as unchanged or infer original/Modern multiplayer compatibility from these retained ranges.
