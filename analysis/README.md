@@ -73,3 +73,5 @@ Use Markdown for small, reviewable findings. Follow [the sharing workflow](../do
 - [Original versus Modern Race Now helper](original-modern-race-now.md): Modern entry-flag branches, original setup coordinate writes and retained callback gates.
 
 - [Original versus Modern parameter presets](original-modern-parameter-preset.md): table rewrite, record writes and conversion-loop boundary.
+
+- [Original versus Modern viewport pose](original-modern-viewport-pose.md): fixed descriptor admission, temporary camera restoration and identical finalizer.

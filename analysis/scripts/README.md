@@ -297,3 +297,7 @@ Run `python3 analysis/scripts/audit_race_now_difference.py`. Retains the complet
 ## Original versus Modern parameter presets
 
 Run `python3 analysis/scripts/audit_parameter_preset_difference.py`. Retains complete paired bodies, exact Modern WORD table, original scale bytes and conversion constant in `analysis/evidence/audits/original-modern-parameter-preset.json`. No target execution. See [preset comparison](../original-modern-parameter-preset.md).
+
+## Original versus Modern viewport pose
+
+Run `python3 analysis/scripts/audit_viewport_pose_difference.py`. Captures paired complete wrappers and asserts identical finalizer bytes in `analysis/evidence/audits/original-modern-viewport-pose.json`. No target execution. See [pose comparison](../original-modern-viewport-pose.md).

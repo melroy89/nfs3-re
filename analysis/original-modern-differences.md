@@ -198,7 +198,11 @@ The [Race Now comparison](original-modern-race-now.md) maps Modern’s complete 
 
 The [preset comparison](original-modern-parameter-preset.md) traces the original scaled-constant path versus Modern’s WORD table, two-record writes and changed conversion-count boundary. Semantic fields, full input invariants and runtime effects remain unresolved.
 
-## 31. Prioritized semantic work remaining
+## 31. Viewport camera selection
+
+The [viewport-pose comparison](original-modern-viewport-pose.md) traces Modern’s new fixed-descriptor branch, retained temporary primary-camera restoration and identical pose finalizer. Full extraction/blend helpers, descriptor producers and runtime output remain pending.
+
+## 32. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

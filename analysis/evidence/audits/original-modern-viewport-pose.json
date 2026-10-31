@@ -1,0 +1,51 @@
+{
+  "kind": "static-viewport-pose-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004228e0",
+          "end": "004229bb",
+          "bytes_sha256": "aed038eec27ded646a978abb686b9e4bded31c5930618cf8248666ff9ffb3f16",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/original-004228e0.asm",
+          "assembly_sha256": "dd5850dc807dd2c0ee84d007437128a7117c15fa1f414560c593356383a9f910"
+        },
+        {
+          "start": "00422850",
+          "end": "004228df",
+          "bytes_sha256": "fd3a73e69cd08a9c0ce980a21d884a43b31a6a6a58b9907ca7d504aa4924c6a1",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/original-00422850.asm",
+          "assembly_sha256": "d1f7e1014d81538c298e8af1469e022a12fb1052c3e00254564184a166e48464"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004228e0",
+          "end": "004229b9",
+          "bytes_sha256": "dfb3dddec32d53199b6463dbf7dd859592b6d5dc96b1094c1db5b0dc8a4f5ae7",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-004228e0.asm",
+          "assembly_sha256": "3fdd966ff319c518768e6153657fc8744b0f6be420ea61b93b47ea7fe081e5e0"
+        },
+        {
+          "start": "00422850",
+          "end": "004228df",
+          "bytes_sha256": "fd3a73e69cd08a9c0ce980a21d884a43b31a6a6a58b9907ca7d504aa4924c6a1",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-00422850.asm",
+          "assembly_sha256": "ef74b36d8eed2d573c5b6a2d7e778cd2567d3ea2e282c71579f6db2cd7805fbb"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No camera/game execution.",
+    "Normal-return restoration only; no synchronization proved."
+  ],
+  "pose_finalizer_identical": true
+}
