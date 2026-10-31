@@ -80,6 +80,14 @@ def main():
         'comparison':'Integer bit equality, not float numeric equality or approximate completion.',
         'original':'Tail004955c9..004955f0 resets/loads x87 control state; no corresponding local SETE return normalization.',
         'limits':'Caller dependence and transitive x87 behavior remain unqualified; full body captures do not alone establish equivalence.'}
+    assert images['official_modern'].get_data(0xa3522,9).hex()=='e8091dffff85c074e9'
+    assert images['original'].get_data(0xa35bd,7).hex()=='e86e1cffff31c0'
+    assert images['official_modern'].get_data(0x90143,8).hex()=='81fb0000c8427410'
+    result['terminal_progress_caller']={
+        'original':'004a35b8 pushes100.0;004a35bd calls progress once;004a35c2 discards return withXOR EAX,EAX.',
+        'modern':'004a3514 checks abort;004a351d pushes100.0;004a3522 calls progress; zero return at004a3527/29 repeats from abort check.',
+        'special_case':'00490143 exact100.0 bits bypass50ms admission, but remaining-target/smoothing calculation still runs.',
+        'limits':'Local retry has no explicit sleep or retry limit; callees and evolving state govern termination. No hang, frame rate or wall-clock duration observed.'}
     for image in images.values():
         assert image.get_data(0xf0240,10).hex()=='e82bc7fdff85c075f7c3'
     assert images['original'].get_data(0xa3481,5).hex()=='e8bacd0400'

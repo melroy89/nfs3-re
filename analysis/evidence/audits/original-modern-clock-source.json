@@ -556,6 +556,12 @@
     "original": "Tail004955c9..004955f0 resets/loads x87 control state; no corresponding local SETE return normalization.",
     "limits": "Caller dependence and transitive x87 behavior remain unqualified; full body captures do not alone establish equivalence."
   },
+  "terminal_progress_caller": {
+    "original": "004a35b8 pushes100.0;004a35bd calls progress once;004a35c2 discards return withXOR EAX,EAX.",
+    "modern": "004a3514 checks abort;004a351d pushes100.0;004a3522 calls progress; zero return at004a3527/29 repeats from abort check.",
+    "special_case": "00490143 exact100.0 bits bypass50ms admission, but remaining-target/smoothing calculation still runs.",
+    "limits": "Local retry has no explicit sleep or retry limit; callees and evolving state govern termination. No hang, frame rate or wall-clock duration observed."
+  },
   "original_loading_input_drain": {
     "call": "004a3481 ->004f0240",
     "retained_helper": "004f0240..004f024a identical in both baselines",
