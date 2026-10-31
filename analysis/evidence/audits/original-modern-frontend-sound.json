@@ -1,0 +1,76 @@
+{
+  "kind": "static-frontend-sound-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004181d0",
+          "end": "00418280",
+          "bytes_sha256": "8fc43b899ec0430ed01370922b08b92c1d18791e77c25f7986172b66401c0f52",
+          "assembly": "analysis/captures/modern-differences/frontend-sound/original-004181d0.asm",
+          "assembly_sha256": "7f5f5bfd0191d5552489188be5b5aeba4cbf4e982d438be1eb9d3e67a571dfef"
+        },
+        {
+          "start": "004e9b20",
+          "end": "004e9b5d",
+          "bytes_sha256": "577f354878194229f91774148ae5ce27d41013c22cc9ec45d65191864e979b36",
+          "assembly": "analysis/captures/modern-differences/frontend-sound/original-004e9b20.asm",
+          "assembly_sha256": "01d47a59fc2cde700291875bdcd45d6324d6a52c2516390aed3c893c7fa2d9a6"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004181d0",
+          "end": "00418262",
+          "bytes_sha256": "08d65de7714fb3005379da5df7d5cc507e8b996b0a6177fc12c75d014abb2ab9",
+          "assembly": "analysis/captures/modern-differences/frontend-sound/official_modern-004181d0.asm",
+          "assembly_sha256": "c148d1361801be41be0f28780a61c70472af6f0c1da0a41c491277684229e1ae"
+        },
+        {
+          "start": "004e9b20",
+          "end": "004e9b5d",
+          "bytes_sha256": "577f354878194229f91774148ae5ce27d41013c22cc9ec45d65191864e979b36",
+          "assembly": "analysis/captures/modern-differences/frontend-sound/official_modern-004e9b20.asm",
+          "assembly_sha256": "9e3a184a77d703612692aef5dcc69d92e737ecab0360bb507423bebd950d48ec"
+        },
+        {
+          "start": "004376fc",
+          "end": "0043778c",
+          "bytes_sha256": "4ddbce3aaa04fe14656b2b2391ffb4919379a1002260bf1a2df5554395290627",
+          "assembly": "analysis/captures/modern-differences/frontend-sound/official_modern-004376fc.asm",
+          "assembly_sha256": "08eca381cf2d6f432e83ef373e24a89df542d107e2e5c5b57eb6bfb4324e3ac9"
+        },
+        {
+          "start": "00472248",
+          "end": "00472277",
+          "bytes_sha256": "0e4e8d0716d432ec6e34fa75633726009bdcb65a00213b8257774a7c5220f6bc",
+          "assembly": "analysis/captures/modern-differences/frontend-sound/official_modern-00472248.asm",
+          "assembly_sha256": "29e463354bebec414da11930a0c8b48bbd0a93d5fb1bbe74b662508e24c156f2"
+        },
+        {
+          "start": "004381a9",
+          "end": "004381c5",
+          "bytes_sha256": "0a90fef8ca8f5844b529b49d3fb44a9e63c07f903b62144cb501dc9ec2c62002",
+          "assembly": "analysis/captures/modern-differences/frontend-sound/official_modern-004381a9.asm",
+          "assembly_sha256": "d06c81f3c16012f09bfb7e7af8210b1239163a95016e4766410a2d6811ddd59f"
+        }
+      ],
+      "slider_double_constants": {
+        "00537600": 0.007874015748031496,
+        "00537598": 127.0
+      }
+    }
+  },
+  "limits": [
+    "No sound/game/instruction execution.",
+    "Counter unit and backend audible behavior unverified."
+  ],
+  "sound_record_initializer_identical": true
+}

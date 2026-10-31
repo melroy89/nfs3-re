@@ -1,0 +1,45 @@
+# Original versus Modern: frontend sound volume and request throttling
+
+## Evidence boundary
+
+Static comparison of the supplied original/backup and official Modern v1.6.1, with exact hashes in the [baseline](original-modern-differences.md). Reproduce with `python3 analysis/scripts/audit_frontend_sound_difference.py`. The [manifest](evidence/audits/original-modern-frontend-sound.json) retains paired sound routines, the unchanged record initializer and Modern slider/restore witnesses. No game, audio or instruction probes were executed.
+
+## Changed caller contract at 004181d0
+
+Original `004181d0..0041827f` consumes EAX as the sound identifier and EDX as a caller-supplied volume multiplier. It preserves that multiplier in EBX, checks globals `00559234` (must be zero) and `0055290c` (must be nonzero), then builds a 16-byte request record. There is no local ID-range or per-ID elapsed-counter gate in this routine.
+
+For record byte `+8`, original computes the low-32-bit product of **55 × `[006fbbf4]` × caller multiplier**, arithmetic-shifts it right by **14**, and stores its low byte (`00418204..0041822e`). The intermediate multiplications wrap at machine width; this is not unrestricted real-number multiplication. Different caller multipliers can therefore produce different requested levels even with the same shared setting.
+
+Modern `004181d0..00418261` keeps the two global admission checks, but also rejects unsigned EAX IDs **≥8**. It no longer reads EDX as a multiplier. It sets byte `+8` from the low byte of separate DWORD **`006fd1d0`**, masked with **0x7f** (`0041821c..00418223`). This is a bit mask, not saturating clamping: arbitrary invalid values need not map to the nearest endpoint.
+
+Modern uses PUSHAD/POPAD on its admitted path. Its EDX input is unused and restored rather than supplying volume; neither branch establishes a meaningful playback-result return. Register/flag contracts must be reconstructed per version, not copied from the old pseudocode.
+
+## Per-ID timing gate
+
+Modern uses one timestamp DWORD per ID at `00664750 + 4*ID`. It subtracts that entry from shared counter `[0079c1a4]`, and returns when the unsigned low-32-bit difference is **less than 5**. An admitted request stores the current counter **before** constructing/submitting the sound record (`004181f2..00418207`).
+
+This gates repeated requests for the same ID independently. It does not prove backend playback succeeded, establish elapsed milliseconds, or prevent all concurrent access: no atomic read/update sequence appears here. The counter's producer/unit and timestamp initialization are not established in this chapter. Original's inspected routine has no corresponding local gate.
+
+The sound-slider preview callback adds a stricter outer check: with nonzero action/context input it tries ID 1 only when unsigned counter difference from ID 1's timestamp is **at least 0x30 (48)** (`00437758..0043777b`). It then delegates slider handling to `0046cae0`. The outer check and inner five-unit gate are distinct; do not collapse them into a guessed repeat duration.
+
+## Record fields and retained initialization
+
+Both call record initializer `004e9b20`; its normal-path **61 bytes** are identical, asserted by the evidence script. It initializes a 16-byte record with sentinel/default fields. Both callers then supply the ID at `+0`, byte `[00571124]` at `+4`, requested level at `+8`, and literal 0x40 at `+9`.
+
+Both versions choose the same observed branch policy: if `[006fbc00]==2` or `[005525a4]!=0`, set byte `+11=1` and WORD `+12=0`; otherwise set byte `+7=0x40` and byte `+11=0`. They call `004e9ba0` and increment `00552928`. That counter is incremented without establishing successful audible output; do not label it a count of successfully played sounds.
+
+Other field/backend semantics remain opaque. Equal initializer bytes do not prove all submission/provider behavior is unchanged.
+
+## Separate slider and restore path
+
+Modern `004376fc` reads integer `006fd1d0`, converts it to floating point and multiplies by a retained double approximating **1/127** before initializing a slider through `0046c950`. It installs update callback `00437740` and preview/action callback `00437758`.
+
+Update callback `00437740` obtains the slider value through `0046c9b0`, multiplies by exact double **127**, and FISTP-stores to `006fd1d0`. The conversion therefore depends on current x87 rounding; it is not a proven truncating integer cast. The helper's allowed slider range and all setting-load validation remain separate.
+
+Defaults path `00472270` writes AL=`0x53` before storing full EAX to `006fd1d0`; that instruction alone does not prove all upper bytes are zero on every caller state. A cancel/restore neighborhood copies `[00664680]` back to this field at `004381b7`, providing a concrete restore path but not a complete settings transaction audit.
+
+These producer/consumer links statically support **MP150-009**'s separate menu-sound setting. The removed per-call multiplier supports the mechanism relevant to **MP140-010**'s consistent-volume claim; sample loudness, backend mixing and audible equality are not established.
+
+## Remaining work
+
+Pending: counter unit/initialization, all ID callers and removed-multiplier meanings, backend sample assets/mixing, complete saved-setting serialization/range checks and runtime slider/cancel behavior. Historical introduction dates require earlier patch releases. This chapter does not establish music-volume fixes, all dialog sound choices or race-effect behavior.

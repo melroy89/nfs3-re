@@ -241,3 +241,7 @@ The window initialization audit additionally captures original/Modern creation b
 ## Original versus Modern CPU tier
 
 Run `python3 analysis/scripts/audit_cpu_tier_difference.py` (Python pefile, GNU objdump). It hash-checks both baselines and captures the original estimate, Modern feature-score producer/CPUID wrapper, matched consumers and exact default byte tables. Curated output: `analysis/evidence/audits/original-modern-cpu-tier.json`; raw captures remain ignored. No CPUID/benchmark/target execution. See [CPU findings](../original-modern-cpu-tier.md).
+
+## Original versus Modern frontend sound
+
+Run `python3 analysis/scripts/audit_frontend_sound_difference.py` (Python pefile, GNU objdump). It retains paired request bodies and Modern volume-slider/restore witnesses, records floating constants and asserts the normal record initializer is identical. Output: `analysis/evidence/audits/original-modern-frontend-sound.json`; raw captures remain ignored. No audio/target execution. See [frontend sound findings](../original-modern-frontend-sound.md).

@@ -148,7 +148,11 @@ The [clock comparison](original-modern-clock-source.md) verifies 16 direct GetTi
 
 The [CPU comparison](original-modern-cpu-tier.md) traces original’s million-scaled estimate versus Modern’s family/feature score at the same global, with coordinated changes in two consumer neighborhoods. This is not a measured CPU benchmark or evidence of SIMD racing physics. Full calibration/vendor paths and runtime default choices remain pending.
 
-## 19. Prioritized semantic work remaining
+## 19. Frontend sound requests and separate volume
+
+The [frontend sound comparison](original-modern-frontend-sound.md) traces the removed caller volume multiplier, separate menu-volume field and slider, new ID bounds and per-ID timing gates. The normal record initializer is byte-identical. Counter units, sample/backend behavior, all callers and audible equality remain pending.
+
+## 20. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 
