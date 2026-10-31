@@ -103,8 +103,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "2ac09493df698be0655de2bc38b371c5deeb22024a14b7fd0c56a3bddd25a099",
-      "relative_links": 139
+      "sha256": "28027d30c9693c1582632af63deb611cf491dc7c989dfed8397a9fbfb949a504",
+      "relative_links": 140
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -163,8 +163,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "bcac8b8929491199f6fc021df66d358426d8bcb76d9f4e204c3ba65c47dc6ff6",
-      "relative_links": 630
+      "sha256": "86f696f9765f701aebb8eaf903b8f4cfa4a0e2d632f1fad55a7bcd81ea72777c",
+      "relative_links": 632
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -517,6 +517,11 @@
       "relative_links": 4
     },
     {
+      "path": "analysis/original-modern-track-length-text.md",
+      "sha256": "8bb0b66f17baa8f2675180c167508f90da44128aed2e1145e449581f4ec5d468",
+      "relative_links": 3
+    },
+    {
       "path": "analysis/original-modern-vehicle-dispatch.md",
       "sha256": "2c3f51ec3ad7f7f75fb4e769d97bf2e63f2f69305d5e328d725761b0bd04fdf7",
       "relative_links": 11
@@ -572,8 +577,8 @@
       "relative_links": 12
     }
   ],
-  "file_count": 114,
-  "relative_link_count": 1633,
+  "file_count": 115,
+  "relative_link_count": 1639,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

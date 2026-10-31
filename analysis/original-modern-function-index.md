@@ -177,7 +177,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00487210` | StoreAndInsetIndexedFloatRectangle | 300 | 12 | [hud-layout](original-modern-hud-layout.md) |
 | `004880b0` | RenderVehicleDrivenRotatedQuads | 960 | 15 | [hud-layout](original-modern-hud-layout.md) |
 | `00488470` | RenderRotatedTileQuadsForVehicle | 1551 | 12 | [hud-layout](original-modern-hud-layout.md), [view-overlay](original-modern-view-overlay.md) |
-| `00488a80` | LoadLocalCarArchiveShapeMetrics | 1979 | 5 | [texture-loading-followup](original-modern-texture-loading-followup.md) |
+| `00488a80` | LoadLocalCarArchiveShapeMetrics | 1979 | 5 | [texture-loading-followup](original-modern-texture-loading-followup.md), [track-length-text](original-modern-track-length-text.md) |
 | `00489240` | RenderViewportTilesAndVehicleOverlayQuads | 1000 | 138 | [view-overlay](original-modern-view-overlay.md) |
 | `004897f0` | RenderScaledColoredTextWithAlignment | 180 | 1 | [numeric-scale](original-modern-numeric-scale.md) |
 | `00489ab0` | RenderLocalizedSteppedNumericScale | 297 | 289 | [numeric-scale](original-modern-numeric-scale.md) |
@@ -296,7 +296,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004d1450` | SetBitmapTextColor | 6 | 6 | [car-alias](original-modern-car-alias.md), [numeric-scale](original-modern-numeric-scale.md) |
 | `004d1750` | LoadSelectedLocalizedTextTable | 95 | 92 | [language-table](original-modern-language-table.md) |
 | `004d17b0` | LookupDynamicText | 153 | 5 | [language-table](original-modern-language-table.md) |
-| `004d1850` | LookupLocalizedText | 63 | 63 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md), [credits-panorama](original-modern-credits-panorama.md), [dialog-input](original-modern-dialog-input.md), [language-table](original-modern-language-table.md), [loading-artwork](original-modern-loading-artwork.md), [menu-text-fields](original-modern-menu-text-fields.md), [race-now](original-modern-race-now.md) |
+| `004d1850` | LookupLocalizedText | 63 | 63 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md), [credits-panorama](original-modern-credits-panorama.md), [dialog-input](original-modern-dialog-input.md), [language-table](original-modern-language-table.md), [loading-artwork](original-modern-loading-artwork.md), [menu-text-fields](original-modern-menu-text-fields.md), [race-now](original-modern-race-now.md), [track-length-text](original-modern-track-length-text.md) |
 | `004d1890` | ReleaseLocalizedTextOffsetTable | 18 | 17 | [language-table](original-modern-language-table.md) |
 | `004d37a0` | ConvertShapeForRenderer | 1926 | 32 | [shape-conversion](original-modern-shape-conversion.md), [texture-loading-followup](original-modern-texture-loading-followup.md) |
 | `004d3f50` | CreateTextureFromShape | 287 | 2 | [texture-loading-followup](original-modern-texture-loading-followup.md) |

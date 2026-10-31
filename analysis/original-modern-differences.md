@@ -458,6 +458,8 @@ The [music-setting request comparison](original-modern-music-start.md#setting-ch
 
 The [audio-slider rounding comparison](original-modern-music-start.md#five-audio-slider-callbacks-remove-explicit-truncation) verifies five complete callbacks with seven removed truncation calls. Scale127.0 and integer destinations remain, but Modern’s final FISTP follows ambient rounding; integer equality and audible effects are not assumed.
 
+The [track-length formatting comparison](original-modern-track-length-text.md) identifies a selector/global rewrite and localized-unit consolidation at004565d6: two numeric string tables remain, a third is zeroed, and the hard-coded km paths are replaced by language lookup. Exact selector/unit semantics and rendered output remain unresolved.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
