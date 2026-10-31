@@ -278,8 +278,8 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "54d72d3c4b0c5a73265c17438b1977b9ad4a502d9c1e9532c0dbd8f53ef2a6b6",
-      "relative_links": 11
+      "sha256": "1c6f121aa44655cec482d1a0c0a0803ea3f767609e087ee9435080cf49293b96",
+      "relative_links": 19
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",
@@ -513,7 +513,7 @@
     }
   ],
   "file_count": 102,
-  "relative_link_count": 1374,
+  "relative_link_count": 1382,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

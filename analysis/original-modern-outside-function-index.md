@@ -63,4 +63,20 @@ The [CPU calibration follow-up](original-modern-cpu-tier.md#removed-calibration-
 
 The [DDE browser-code follow-up](original-modern-removed-dde.md) identifies original URL-command construction and its callback beneath the 621-byte NOP run `004901c3..00490430`. The run begins inside an original branch operand; lack of autoanalysis entries is not evidence of padding. Original caller reachability remains unresolved, and Modern still retains all seven DDE imports.
 
+## Mechanism triage from existing comparisons
+
+These links reconcile selected outside-body spans with already inspected mechanisms. They are not declarations that every instruction, caller or output in a row has been validated. In particular, the Modern saved-body boundary can split an original instruction or function.
+
+| Outside span / NOP run | Existing explanation | Remaining boundary |
+|---|---|---|
+| `0040fffb..00410330` | [Music selection](original-modern-music-selection.md) captures original selector `0040ffd0` and loader `00410030..00410329`; Modern uses its separately mapped selection/loading policy. | NOP interval starts inside the original selector; distribution, historical attribution and actual playback remain separate questions. |
+| `0047f9bd..0047fbe0` | [Border geometry](original-modern-border-geometry.md) retains the complete longer original builder from `0047f650`; Modern uses a shorter builder plus inset wrapper and thickness updater. | Repeated coordinate/thickness work is replaced, but every quad/UV assignment and rendered result is not validated. |
+| `0048575b..0048582c` | [HUD layout](original-modern-hud-layout.md) maps the original file/token parser and profile copying to Modern embedded presets and scaling. | This interval begins in the old parser; the unchanged shared-frame continuation at `0048582c` must not receive an invented standalone ABI. |
+| `004901c3..00490430` | [DDE code](original-modern-removed-dde.md) maps URL command construction and callback under the NOP run; Modern uses the earlier addresses for unrelated overlay/progress helpers. | No original direct callers identified; dormancy remains inferred and imports remain present. |
+| `004befcd..004bf110` | [Display modes](original-modern-display-modes.md) and [mode selection](original-modern-mode-selection.md) compare original apply routine `004bef50` with shorter Modern `004beeb0` and factored preparation helper. | Both versions have a mode-call failure test. Removed tail bytes do not prove that failure handling was newly introduced. |
+| `004ccdb4..004cce90` | [Window handling](original-modern-window-handling.md) maps the old focus-handler tail, focus-loss, close, pending-latch and no-op destroy callbacks to revised registrations and Modern callbacks. | Some behavior moves rather than disappears; the new power callback has a separately documented ABI/result anomaly. Runtime focus/power behavior is untested. |
+| `004fd280..004fd490` | [Projection](original-modern-projection.md) identifies the old origin/centre setter, angle/scale builder and conversion wrapper; Modern removes their calls from the compared wrapper. | Lookup-table interpretation, other caller coverage and runtime projection equivalence remain unresolved. |
+
+Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
+
 This inventory closes the missing address/ranking map for the outside-body bytes. Their semantic classification remains pending. No binary, Ghidra database or runtime state was modified.
