@@ -1,0 +1,67 @@
+{
+  "kind": "car-registry-manufacturer-flags",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00439d90",
+          "end_exclusive": "0043a4c2",
+          "sha256": "8c2c82fc76693a6c62be6defb367916dbbcb544fb79ac2be678bf1c1ede4afb0",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/original-00439d90.asm"
+        },
+        {
+          "start": "0043ba20",
+          "end_exclusive": "0043ba2a",
+          "sha256": "183c1d12f38a196f1220c6918de7eee96fe864571e0aa69a566a703987d16e14",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/original-0043ba20.asm"
+        },
+        {
+          "start": "00439af0",
+          "end_exclusive": "00439b14",
+          "sha256": "34219448e68c316ac837f3f16a22403c503f93017f6eb03270b774766323f176",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/original-00439af0.asm"
+        }
+      ],
+      "strings": {
+        "005376f0": "Ferrari",
+        "005376f8": "Mercedes",
+        "00537720": ".\\fedata\\plac\\car.viv"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00439d90",
+          "end_exclusive": "0043a4c2",
+          "sha256": "78c7727fabe8ac16282680641e44e7545b0cb881da02c21d8f4da74cece854b9",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/official_modern-00439d90.asm"
+        },
+        {
+          "start": "0043ba20",
+          "end_exclusive": "0043ba2a",
+          "sha256": "a09d52bb349d09ddc0048a2976b8af6b9e9cc5e3241ea0fbd7fb171c2557de1d",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/official_modern-0043ba20.asm"
+        },
+        {
+          "start": "00439af0",
+          "end_exclusive": "00439b14",
+          "sha256": "34219448e68c316ac837f3f16a22403c503f93017f6eb03270b774766323f176",
+          "assembly": "analysis/captures/modern-differences/car-registry-flags/official_modern-00439af0.asm"
+        }
+      ],
+      "strings": {
+        "005376f0": "",
+        "005376f8": "",
+        "00537720": "mirrorlevel"
+      }
+    }
+  },
+  "limits": [
+    "Static manufacturer flag assignment and getter only; no car selection or pursuit execution.",
+    "Flag consumers, path-buffer initialization and manufacturer metadata admission remain partially qualified."
+  ]
+}

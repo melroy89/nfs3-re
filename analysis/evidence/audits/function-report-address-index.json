@@ -40,6 +40,10 @@
       "sha256": "d427fe3ab2fedb37cb2b8848f4507b1b2400b94908a599ee6c2c89aeef7b7069"
     },
     {
+      "path": "analysis/original-modern-car-registry-flags.md",
+      "sha256": "47e526a8a6463b2b4b6055cd0f65c394ef8cf6022196577c1b64c00224d4fbdd"
+    },
+    {
       "path": "analysis/original-modern-clock-source.md",
       "sha256": "2b712fb851510ad069ba0cdd38d35d188cd34e0fc9fba499e1681c6c8b7bc424"
     },
@@ -386,8 +390,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 309,
-    "without_address_mentions": 52
+    "with_address_mentions": 311,
+    "without_address_mentions": 50
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -1982,7 +1986,17 @@
       "changed_bytes": 2,
       "original_sha256": "74ae1dc284e891ece4e33c969af471f6d90852935e523372e4ab8fa4cc41be42",
       "modern_sha256": "0ae6fc74b01e0b713cec01b015ab717cc6adcd38985589cdf53e73038f709c0f",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-car-registry-flags.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00439d90",
+            "0043a20e",
+            "0043a25c"
+          ]
+        }
+      ]
     },
     {
       "entry": "0043ba20",
@@ -2000,7 +2014,15 @@
       "changed_bytes": 3,
       "original_sha256": "183c1d12f38a196f1220c6918de7eee96fe864571e0aa69a566a703987d16e14",
       "modern_sha256": "a09d52bb349d09ddc0048a2976b8af6b9e9cc5e3241ea0fbd7fb171c2557de1d",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-car-registry-flags.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0043ba20"
+          ]
+        }
+      ]
     },
     {
       "entry": "0043dfb0",

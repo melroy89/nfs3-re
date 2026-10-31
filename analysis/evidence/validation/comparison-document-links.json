@@ -32,6 +32,11 @@
       "relative_links": 3
     },
     {
+      "path": "analysis/original-modern-car-registry-flags.md",
+      "sha256": "47e526a8a6463b2b4b6055cd0f65c394ef8cf6022196577c1b64c00224d4fbdd",
+      "relative_links": 3
+    },
+    {
       "path": "analysis/original-modern-clock-source.md",
       "sha256": "2b712fb851510ad069ba0cdd38d35d188cd34e0fc9fba499e1681c6c8b7bc424",
       "relative_links": 3
@@ -88,8 +93,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "1a8a47b03b9f3d2a8610c79993fb4ea4556b4ba6d6cde163c6e0e5c5435815c0",
-      "relative_links": 121
+      "sha256": "0b76fa513df0bcc971b24c24e4da03c7675752ea3fbf1f8060aacaee0f949207",
+      "relative_links": 122
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -133,8 +138,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "47cb2eb924b57afae6963a08485eb8f5dfef4bd81596aa3e6ea1a10cf9692b46",
-      "relative_links": 525
+      "sha256": "cac380063f71c9847449cb961ea4bcc63308cfc462373521301c99b6b7aa8df8",
+      "relative_links": 527
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -473,8 +478,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "ea658671d8e3215c6451d3a0b04601b4a5546005f0c775fd03adc1411dcc4afa",
-      "relative_links": 112
+      "sha256": "6aece7238a3ddc56e20a5d430f7e935c8ca66bd531e9f07dda4d6879d4e805e3",
+      "relative_links": 113
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -482,8 +487,8 @@
       "relative_links": 7
     }
   ],
-  "file_count": 96,
-  "relative_link_count": 1229,
+  "file_count": 97,
+  "relative_link_count": 1236,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
