@@ -1,0 +1,92 @@
+{
+  "kind": "static-graphics-menu-transition-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00448440",
+          "end": "004484d7",
+          "bytes_sha256": "a760a5be5ec6ebb464f5c463d4411238f5082110c0e4a36570b4ebd7bae02e12",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/original-00448440.asm",
+          "assembly_sha256": "96f86463ed10e1bfc82196213d6fa9859ddc1ef13e2591dc5304f612a35713fb"
+        },
+        {
+          "start": "004484e0",
+          "end": "00448561",
+          "bytes_sha256": "10bf71bd05e7ad58bb46dd66fdd256e8e3343764c4f804f73ba15384db6b091e",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/original-004484e0.asm",
+          "assembly_sha256": "dceb89039408989e31ee742445cb75aceb21ca159dfa2205228d5a363d349571"
+        }
+      ],
+      "graphics_registration_row_00556068_hex": "ac7d5300000000000000000040844400e084440030844400",
+      "cancel_token_00538d84": "CANCEL_GRAPHICS_OPTIONS",
+      "string_at_00538d7c": "credits"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00448440",
+          "end": "004484ba",
+          "bytes_sha256": "f53a71cea70495d8866e0bade3c9a4bbb6e7e9212e9321fa216fdd73b058586c",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-00448440.asm",
+          "assembly_sha256": "b49f6d361bdc2e2f67a19160bc855eb82a2367df1f873114bcbfa05f3904e84f"
+        },
+        {
+          "start": "004484bc",
+          "end": "00448553",
+          "bytes_sha256": "1fe9b9bdd01d6fceff515e26e082b28877ae9600fd270d4bfc1b3014ce2c6750",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-004484bc.asm",
+          "assembly_sha256": "964f6206f0780108b0ce3b81aae47bbe4af5cc487e0860dff99da1be61f65722"
+        },
+        {
+          "start": "0043778c",
+          "end": "004377c1",
+          "bytes_sha256": "32bf26d7187337f95d8da4faccf391bf684cbbe407fb7f63b0dde1b207fb8837",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-0043778c.asm",
+          "assembly_sha256": "02b9f1fb258d7176f510cbea0fd29e2c31736d3ca51196de903f78f3a071e7a3"
+        },
+        {
+          "start": "00448348",
+          "end": "00448368",
+          "bytes_sha256": "364a2a17ec7f68eac62fc1ce0d1327b4f4236f254ea5bd2490a115998a3715d7",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-00448348.asm",
+          "assembly_sha256": "7193decc4896bc054ad19755480e43424e0e01cb44b78829b2e1162e84d8c1e2"
+        },
+        {
+          "start": "0044837c",
+          "end": "00448392",
+          "bytes_sha256": "0594d4b4e55e5529d607afa614435c2c02e12a1b5ec1877d112f125aabcb0050",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-0044837c.asm",
+          "assembly_sha256": "982f983e71005ff0bbf9cd8acd43dbb068b555e1e24b8b06ee83551569c25bdc"
+        },
+        {
+          "start": "00448394",
+          "end": "004483fd",
+          "bytes_sha256": "ff79c1aec1fc52bb3ead370d48caef509cc4ed548a75a236fbe201bb2d34290d",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-00448394.asm",
+          "assembly_sha256": "01cafcdb60a52dbe41585c48685e6b80f9ef477815b4128a4bf9559fb8413d34"
+        },
+        {
+          "start": "00448400",
+          "end": "00448425",
+          "bytes_sha256": "3caf95d6a4ea5765544827e167af5adb5b9eb657d860115944f0a39217b71b4a",
+          "assembly": "analysis/captures/modern-differences/graphics-menu-transition/official_modern-00448400.asm",
+          "assembly_sha256": "88f27e2e03ce2ff2063f1897da19abf82c423158ab6e67a98e7568e52458675f"
+        }
+      ],
+      "graphics_registration_row_00556068_hex": "ac7d5300000000000000000040844400bc84440000000000",
+      "cancel_token_00538d84": "CANCEL_GRAPHICS_OPTIONS",
+      "string_at_00538d7c": "%s %s"
+    }
+  },
+  "limits": [
+    "No display or callback execution.",
+    "Mode-list nonempty and valid descriptor/item/backup prerequisites are not proved.",
+    "Changed field meanings and helper dependencies prevent inferring whole-menu equivalence."
+  ]
+}

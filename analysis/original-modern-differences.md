@@ -282,6 +282,10 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 [The complete 57-row callback comparison](original-modern-menu-callback-table.md) identifies every changed field: nine rows, 12 pointers, including eight null registrations and four redirects. Static-table and runtime-descriptor offsets are mapped explicitly. All eight nulled original targets are now verified seven-byte return-zero stubs; redirected-body semantics and caller-level null-versus-zero behaviour remain separate.
 
+## Graphics menu transition counterpart
+
+[Original versus Modern graphics transition](original-modern-graphics-menu-transition.md) maps the redirected callback: snapshot/Cancel restore, Modern reselection, extra global outputs and final-row/depth request encoding. The report links existing display-mode evidence and keeps runtime display/persistence validation separate.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
