@@ -56,3 +56,15 @@ The [pixel comparison](original-modern-screenshot-pixels.md) traces original dep
 No executable, runtime configuration or Ghidra project was changed. No game, test, or runtime probe was run.
 
 The [movie-stop input comparison](original-modern-movie-screenshots.md) now traces the screenshot consumer through movie polling and bounds the claim that screenshots no longer stop intro playback.
+
+## Directory contents and numbering initialization
+
+Modern helper **`004f9184..004f91e9`** is a Boolean non-dot-entry test, not a count of screenshot files. The [directory audit manifest](evidence/audits/modern-screenshot-directory.json), reproduced by `python3 analysis/scripts/audit_screenshot_directory.py`, retains its complete body, preparation caller and copy helper against the official Modern executable hash. This extends the Modern mechanism above; original code at the same address is unrelated and is not a semantic counterpart.
+
+It copies incoming EAX’s NUL-terminated path to a stack buffer through **`004f93b8`**, replaces the terminal NUL with `*` followed by NUL, and enumerates using `FindFirstFileA`/`FindNextFileA`. Exact names `.` and `..` are skipped. Any other entry returns1, including a subdirectory or an unrelated file; there is no local extension, attribute or `nfs3_` filename filter. It closes a successfully obtained search handle through `FindClose`, ignores that result, and restores general registers through PUSHAD/POPAD except for the saved EAX result slot. Flags are not preserved by that mechanism.
+
+`FindFirstFileA` failure returns0, as does enumeration ending after only dot entries. A failed `FindNextFileA` is likewise treated as the end of enumeration without examining an error code. Thus zero does not prove the directory is empty or readable. The copy helper has no explicit capacity argument or bound; the enumeration helper reserves a260-byte path area followed by its find-data area. Its known caller supplies the short constant **`.\\screenshots\\`** at `0053f7f4`, so the generic unbounded interface is not proof of an overflow on that normal call.
+
+Preparation **`004c44e8..004c452c`** first uses cached state `007a277c` and a directory-existence check. Its slower path calls `004f9214` to ensure the directory, then performs the non-dot test. If directory preparation succeeds and the test returns0, it clears screenshot numbering state **`006fd1e0`** and sets cached state to1. A nonempty directory leaves the numbering cell unchanged; it does not discover the largest existing screenshot suffix in this path. Preparation failure stores0 in the cache. Subsequent file-name generation and write success remain separate from this initialization policy.
+
+No directory or screenshot operation was executed. Remaining questions include concurrent captures, filename collision handling, later numbering writes and error propagation. The static evidence explains why arbitrary directory contents and enumeration errors can influence numbering initialization; it does not establish an observed overwrite or data-loss event.

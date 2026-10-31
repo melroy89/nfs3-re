@@ -278,8 +278,8 @@
     },
     {
       "path": "analysis/original-modern-screenshots.md",
-      "sha256": "d64194a4edfce90602faac9c0cfaf8e788617a23f70e0ef424a0ad37f5d79205",
-      "relative_links": 7
+      "sha256": "3f54f826363774e44b51f0b113ca63e53406f18b95c93f7c4093aa52406e0585",
+      "relative_links": 8
     },
     {
       "path": "analysis/original-modern-setup-website.md",
@@ -373,7 +373,7 @@
     }
   ],
   "file_count": 74,
-  "relative_link_count": 531,
+  "relative_link_count": 532,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

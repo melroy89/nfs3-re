@@ -1,0 +1,40 @@
+{
+  "kind": "static-modern-screenshot-directory",
+  "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+  "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+  "range_end": "exclusive",
+  "spans": [
+    {
+      "start": "004c44e8",
+      "end": "004c452c",
+      "sha256": "a89d34e55d84dc5617c830e6bc41c76c2811527b123ac4a0cd5b8bbbedac74e0",
+      "assembly": "analysis/captures/modern-differences/screenshot-directory/004c44e8.asm",
+      "assembly_sha256": "f7d2715ca881da1cac3a1087e0be6884aba61301496e59d34f6f115f233b9ba8"
+    },
+    {
+      "start": "004f9184",
+      "end": "004f91e9",
+      "sha256": "a86907c82acd9c9aaa2a6334dcfdc1786d7674a146b159592f6721d414318340",
+      "assembly": "analysis/captures/modern-differences/screenshot-directory/004f9184.asm",
+      "assembly_sha256": "81b4ef378fd7886990a355b8b3a498a4c7d79532706f231c0d666197821fbf48"
+    },
+    {
+      "start": "004f93b8",
+      "end": "004f93c5",
+      "sha256": "ea84a3ce61d7d782a7352258ee7021d37f05fd767b05a41524b80ecfd18894fe",
+      "assembly": "analysis/captures/modern-differences/screenshot-directory/004f93b8.asm",
+      "assembly_sha256": "62ef023d19f5b4aea7113d594a981c59ee7e31fac2f7e7ac039c2493923445b2"
+    }
+  ],
+  "imports": {
+    "005344c8": "FindClose",
+    "005344cc": "FindFirstFileA",
+    "005344d0": "FindNextFileA"
+  },
+  "directory_prefix": ".\\screenshots\\",
+  "limits": [
+    "Modern mechanism only; original screenshot path is documented separately.",
+    "Zero return conflates no non-dot entry and enumeration failure.",
+    "No file enumeration or screenshot capture executed."
+  ]
+}
