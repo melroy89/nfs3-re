@@ -31,6 +31,13 @@
           "bytes_sha256": "e5b2a333f6160060bed2b4c4db9df404b3559fdefeff8bf179e32468da2b3d57",
           "assembly": "analysis/captures/modern-differences/thrash-loader/official_modern-004b5844.asm",
           "assembly_sha256": "ce8d36eb5c7449c32a8fea4fae3bfb90d34c0421e1bec742a8c00498179fde2e"
+        },
+        {
+          "start": "004f1ed4",
+          "exclusive_end": "004f1ef3",
+          "bytes_sha256": "c47d52449d471aeed00fcba9f225e27a762316bf566d771384f04683248c58c3",
+          "assembly": "analysis/captures/modern-differences/thrash-loader/official_modern-004f1ed4.asm",
+          "assembly_sha256": "1426d09331d0c44bc6882e576ebeaa35005e105721d86edbd6f7653dc0049bed"
         }
       ]
     }
@@ -178,6 +185,22 @@
       "slot_va": "009ef914"
     }
   ],
+  "modern_dll_directory_contract": {
+    "entry": "004f1ed4",
+    "directory_argument": "EAX, supplied as007a3930 at004b58b5",
+    "module": "KERNEL32.DLL",
+    "export": "SetDllDirectoryA",
+    "preserved_registers": [
+      "EBX",
+      "ECX",
+      "EDX"
+    ],
+    "return": "zero if unresolved; otherwise raw export EAX; caller ignores it",
+    "limits": [
+      "No OS-version acceptance or wrapper DLL execution.",
+      "All renderer-specific dependency lookup outcomes remain unverified."
+    ]
+  },
   "modern_export_table": [
     {
       "table_va": "004f8390",

@@ -18,7 +18,7 @@ SPECS = {
                  [(0x4f8390, 0x4f8793)]),
     'official_modern': ('analysis/captures/modern-differences/upstream/package/nfs3.exe',
                         '240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6',
-                        [(0x4f84a8, 0x4f853b), (0x4b5844, 0x4b5a3c)]),
+                        [(0x4f84a8, 0x4f853b), (0x4b5844, 0x4b5a3c), (0x4f1ed4, 0x4f1ef3)]),
 }
 
 
@@ -48,6 +48,18 @@ def main():
                              'assembly_sha256': hashlib.sha256(output.read_bytes()).hexdigest()})
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'ranges': captures}
         if label == 'official_modern':
+            assert pe.get_string_at_rva(0x53f78c-base) == b'KERNEL32.DLL'
+            assert pe.get_string_at_rva(0x53f7b4-base) == b'SetDllDirectoryA'
+            assert pe.get_data(0x4f1ed4-base,31) == bytes.fromhex(
+                '53515289c3b88cf75300bab4f75300e8d4ffffff85c0740353ffd05a595bc3')
+            assert pe.get_data(0x4b58b5-base,10) == bytes.fromhex('b830397a00e815c60300')
+            result['modern_dll_directory_contract'] = {
+                'entry': '004f1ed4', 'directory_argument': 'EAX, supplied as007a3930 at004b58b5',
+                'module': 'KERNEL32.DLL', 'export': 'SetDllDirectoryA',
+                'preserved_registers': ['EBX','ECX','EDX'],
+                'return': 'zero if unresolved; otherwise raw export EAX; caller ignores it',
+                'limits': ['No OS-version acceptance or wrapper DLL execution.',
+                           'All renderer-specific dependency lookup outcomes remain unverified.']}
             table = []
             for va in range(0x4f8390, 0x4f84a0, 8):
                 name, slot = struct.unpack('<II', pe.get_data(va-base, 8))

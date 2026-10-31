@@ -467,7 +467,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **164 Claimed, 39 Static, 84 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **163 Claimed, 39 Static, 85 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -596,7 +596,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-041 | If ini file with the same name as a executable file name (e.g. nfs3test.ini for nfs3test.exe) is not found, nfs3.ini will be used. | Static |
 | MP150-042 | Hide16bitModes ini setting which hides 16 bit resolutions if similar 32 bit resolutions are available. | Static |
 | MP150-043 | Use32bitModeInMenu ini setting which enables 32-bit video mode for the menu. However movies can't be played in 32-bit video modes. | Partial |
-| MP150-044 | All renderers can use any DLL wrappers from the own subdirectories on the Windows XP SP1+. | Claimed |
+| MP150-044 | All renderers can use any DLL wrappers from the own subdirectories on the Windows XP SP1+. | Partial |
 | MP150-045 | DDRAW.DLL is removed from imports of the nfs3.exe and voodoo2a.dll. | Claimed |
 
 ### Version 1.4.0 (2016-02-16)
