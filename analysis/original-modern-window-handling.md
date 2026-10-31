@@ -60,6 +60,12 @@ The original initializer calls GetModuleHandleA(NULL) at `004cd6f1` and stores i
 
 Both still build class style `0x0b`, procedure `004cd2d0`, zero extra bytes, icon/cursor/name fields and call RegisterClassA. On class-registration failure, original gets the last error, calls its diagnostic routine and returns zero (`004cd787..004cd79e`); Modern calls the fatal-error wrapper `004b570c` with a message (`004cd74b..004cd750`). The wrapper's known fatal-error behavior is existing research, not newly executed here. The [geometry comparison](original-modern-window-geometry.md) now verifies retained creation policy through CreateWindowExA, shortened post-creation setup and three identical sizing helpers; context producers and all windowed/fullscreen effects remain unresolved.
 
+## PreventMinimize: final mechanism versus historical claim
+
+The [startup settings audit](original-modern-startup-policy.md#3-current-settings-exact-defaults-and-immediate-effects) establishes the final Modern parser-to-storage link: `PreventMinimize`, default 0, is stored as an unnormalized integer at `00561284`. The hook installation helper above consumes it together with `ScreenshoterEnabled` at `00561288` (default 1). Consequently, an installed hook alone does **not** establish that PreventMinimize is enabled: screenshot support can also request installation. The two settings share infrastructure; they are not interchangeable feature switches.
+
+This gives **partial static support for MP140-068**: the final setting exists and reaches a changed hook lifecycle, including a type `0x0d` attempt followed by the type 2 fallback. It does not establish the historical replacement of `KeyboardHook` between particular Modern releases, or successful prevention of minimization on Windows NT. The comparison has only original and final Modern baselines; MP120-011's intermediate setting and Windows-version claims remain vendor-only. Follow-up requires the relevant intermediate package for the rename and callback/OS behavior evidence for effectiveness. No such behavior was executed for this finding.
+
 ## Release-note mapping and next evidence
 
 The lifecycle changes are relevant to **MP100-040**, the claim that the game no longer repeatedly restores lost focus. They are not sufficient to verify that entire claim: hook callback bodies, activation consumers and any focus-restoration API paths still need tracing. No release-introduction date can be proven from only original and final Modern binaries.
