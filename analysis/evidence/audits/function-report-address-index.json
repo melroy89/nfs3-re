@@ -248,6 +248,10 @@
       "sha256": "6d6533e8524ae12d62d11f3c3b3b5abdfd51da9b55c842a25aac812606517c71"
     },
     {
+      "path": "analysis/original-modern-pe-resources.md",
+      "sha256": "f2eb694fc242e925f4b9c30582d8b35823d81593e79fa15cc1531997da50c7d1"
+    },
+    {
       "path": "analysis/original-modern-pending-overlay.md",
       "sha256": "6306a8f0c8eb2a32741a5ee405b8afc86c2dd1254d0e56c33bdc5911ada9a78b"
     },

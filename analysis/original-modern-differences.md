@@ -98,7 +98,7 @@ Both executables have 207 import entries, but the symbol sets differ. Counts alo
 
 These are verified dependency-table changes, not yet complete proofs of behavior at every use. Removed static DirectDraw imports do not prove DirectDraw support was removed: dynamic loading and renderer interfaces must be traced. Added INI/heap/resource imports provide concrete anchors for the corresponding code chapters rather than establishing all of their semantics on their own.
 
-Original PE resources contain icon `3/1/0`, group `14/32512/0`, version `16/1/0`. Official Modern includes icon payloads `3/100..105/0` and `3/200/0`, groups `14/MAIN.ICO/0` and `14/ORIG.ICO/0`, RCDATA `10/ABOUT.QFS/0` and `10/SNAP.WAV/0`, version `16/1/0`, and manifest `24/1/0`. The exact RVAs, sizes and payload hashes are retained in the JSON inventory. Resource presence is not a call-path proof; screenshot/About integration still needs use-site tracing. The local variant changes the version resource and adds the redirected About text.
+Original PE resources contain icon `3/1/0`, group `14/32512/0`, version `16/1/0`. Official Modern includes icon payloads `3/100..105/0` and `3/200/0`, groups `14/MAIN.ICO/0` and `14/ORIG.ICO/0`, RCDATA `10/ABOUT.QFS/0` and `10/SNAP.WAV/0`, version `16/1/0`, and manifest `24/1/0`. The exact RVAs, sizes and payload hashes are retained in the JSON inventory. The [resource payload comparison](original-modern-pe-resources.md) verifies icon-group references, retained original icon bytes, new image dimensions and manifest declarations. Existing screenshot/About chapters trace selected uses; runtime success remains separate. The local variant changes version and manifest payloads and adds the separately redirected About text.
 
 ## 5. Confirmed menu-routing difference
 
@@ -451,7 +451,7 @@ The [reconstruction-baseline sample comparison](original-modern-reconstruction-b
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **178 Claimed, 37 Static, 72 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **176 Claimed, 39 Static, 72 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -661,7 +661,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-072 | Reset HUD just after installation of this patch over the original version of NFS3. | Partial |
 | MP140-073 | Zoom of cop's minimap will be the same as zoom of racer's minimap (by default, can be changed). | Partial |
 | MP140-074 | i586 and newer are recommended. The game displays a warning for older systems. | Claimed |
-| MP140-075 | nfs3.exe has an application manifest now. | Claimed |
+| MP140-075 | nfs3.exe has an application manifest now. | Static |
 
 ### Version 1.3.1 (2015-07-14)
 
@@ -775,7 +775,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-032 | Mini map has 1x scaling for cops and 3x for racers by default. | Claimed |
 | MP100-033 | Opponent list is displayed by default in splitscreen mode (instead of opponent name which looked a little confusing). | Claimed |
 | MP100-034 | “Romulus 3” is used by default for menu soundtrack (but you can change it in audio settings). | Claimed |
-| MP100-035 | New icon in variants from 16×16 to 256×256 pixels. Old icon also available and you can set it for your shortcut in properties. | Claimed |
+| MP100-035 | New icon in variants from 16×16 to 256×256 pixels. Old icon also available and you can set it for your shortcut in properties. | Static |
 | MP100-036 | Smooth loading indication. Original game does almost nothing between 58% and 100%. | Claimed |
 | MP100-037 | Original game makes a copy of music file when loading gameplay, maybe to solve problem with slow CD-ROMs in 90's. Now game plays gameplay music directly from source file. It saves a little time and 10 MiB of resource of your SSD on every gameplay start. | Claimed |
 | MP100-038 | Num Lock, Caps Lock и Scroll Lock aren't turned off automatically on every game start. | Claimed |

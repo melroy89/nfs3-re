@@ -98,8 +98,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "c4998f82b78feaaa422340d52029a748730655dd8db051ef1ac763c5670d2c6c",
-      "relative_links": 133
+      "sha256": "2ebc358d38cc4cb753f356f0da496409c32ae3488346ae4077c855aa855c1461",
+      "relative_links": 134
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -310,6 +310,11 @@
       "path": "analysis/original-modern-pause-title.md",
       "sha256": "6d6533e8524ae12d62d11f3c3b3b5abdfd51da9b55c842a25aac812606517c71",
       "relative_links": 2
+    },
+    {
+      "path": "analysis/original-modern-pe-resources.md",
+      "sha256": "f2eb694fc242e925f4b9c30582d8b35823d81593e79fa15cc1531997da50c7d1",
+      "relative_links": 5
     },
     {
       "path": "analysis/original-modern-pending-overlay.md",
@@ -538,8 +543,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "7834dfc315b6438ec9da8a4efe12abd72447fc6f723eafe9c18d92064bf9f7d0",
-      "relative_links": 119
+      "sha256": "3a31ec60de511cbcb1483a229e14072b9b09eb3536124d63eba79bbfda228063",
+      "relative_links": 121
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -547,8 +552,8 @@
       "relative_links": 9
     }
   ],
-  "file_count": 109,
-  "relative_link_count": 1463,
+  "file_count": 110,
+  "relative_link_count": 1471,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

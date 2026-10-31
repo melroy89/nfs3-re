@@ -1,0 +1,591 @@
+{
+  "kind": "three-baseline-pe-resource-payload-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "resources": {
+        "3/1/0": {
+          "rva": "006310e8",
+          "size": 744,
+          "file_offset": "001838e8",
+          "sha256": "d571a0094014104eb8e7c4c80558f4836c9137c59506c46fa6f1a8ef3340d207"
+        },
+        "14/32512/0": {
+          "rva": "006313d0",
+          "size": 20,
+          "file_offset": "00183bd0",
+          "sha256": "a0c9d012e2bf6b2fe05c2d97cb5594d97cf2f539e97935c12abd7a3562f4d9bf"
+        },
+        "16/1/0": {
+          "rva": "006313e4",
+          "size": 784,
+          "file_offset": "00183be4",
+          "sha256": "5a5f112e0307402ad7db77e178fda33709de53a764c02f04b4258414c808ac5d"
+        }
+      },
+      "resource_count": 3,
+      "payload_byte_sum": 1548,
+      "section_raw_bytes": 2048,
+      "icon_groups": {
+        "14/32512/0": [
+          {
+            "width_byte": 32,
+            "height_byte": 32,
+            "color_count": 16,
+            "planes": 1,
+            "bit_count": 4,
+            "payload_bytes": 744,
+            "icon_id": 1,
+            "target_resource": "3/1/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 32,
+              "stored_height_with_masks": 64,
+              "bit_count": 4
+            }
+          }
+        ]
+      },
+      "manifests": {}
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "resources": {
+        "3/100/0": {
+          "rva": "006372b8",
+          "size": 1128,
+          "file_offset": "001834b8",
+          "sha256": "bea92879b519f9d966c92806ddf3d242372cf347d99eac64a11fb739e4b3f57f"
+        },
+        "3/101/0": {
+          "rva": "00637730",
+          "size": 2440,
+          "file_offset": "00183930",
+          "sha256": "fb9abfee6b8f627338680a20c7a4b0e541d4c140ddc0f5f7a773560b4d0574d1"
+        },
+        "3/102/0": {
+          "rva": "006380c8",
+          "size": 4264,
+          "file_offset": "001842c8",
+          "sha256": "5b9cabd725a97d0661db2bedb16c230b8d414e8d8763f8d53362b21c8495e96a"
+        },
+        "3/103/0": {
+          "rva": "00639180",
+          "size": 9640,
+          "file_offset": "00185380",
+          "sha256": "0c6103c332adee80171ebcdff10c688eb8a05e25b6a42e30689b6ee78f8b6614"
+        },
+        "3/104/0": {
+          "rva": "0063b738",
+          "size": 16936,
+          "file_offset": "00187938",
+          "sha256": "44eaa43859dafa132c01025a94f56cdfd00839f14b174d3388b21af8e9019bd1"
+        },
+        "3/105/0": {
+          "rva": "0063f970",
+          "size": 24070,
+          "file_offset": "0018bb70",
+          "sha256": "0a29c5d18efce13001e5541d492d3f5b09ee1de56bfbc0119d9f88b11d02bc82"
+        },
+        "3/200/0": {
+          "rva": "006457c0",
+          "size": 744,
+          "file_offset": "001919c0",
+          "sha256": "d571a0094014104eb8e7c4c80558f4836c9137c59506c46fa6f1a8ef3340d207"
+        },
+        "10/ABOUT.QFS/0": {
+          "rva": "00645ad0",
+          "size": 47372,
+          "file_offset": "00191cd0",
+          "sha256": "d78bddc8bbce4fa2db72035ec87c87729911ea08508f02669ea93662c6cd3d8a"
+        },
+        "10/SNAP.WAV/0": {
+          "rva": "00651400",
+          "size": 3240,
+          "file_offset": "0019d600",
+          "sha256": "b218fa30693f4ccfb6f633b62c285007106541a753ae271df910d348eac7951e"
+        },
+        "14/MAIN.ICO/0": {
+          "rva": "0063724c",
+          "size": 90,
+          "file_offset": "0018344c",
+          "sha256": "a627cc96c251d9c5e832b8b7ab1756146cc3c945fc297c9805a361564915fecd"
+        },
+        "14/ORIG.ICO/0": {
+          "rva": "0064579c",
+          "size": 20,
+          "file_offset": "0019199c",
+          "sha256": "d98ef8e3d061de56f7d71cdcdecc720ec1484f6fa56cc2b1d163b600e940856c"
+        },
+        "16/1/0": {
+          "rva": "006520b8",
+          "size": 980,
+          "file_offset": "0019e2b8",
+          "sha256": "911950c081c6b6d7c51077940c74e99e513097206e39f786c345e763ab43375f"
+        },
+        "24/1/0": {
+          "rva": "0065249c",
+          "size": 603,
+          "file_offset": "0019e69c",
+          "sha256": "9dab66dde3ecb916b9ba533b478e5059ea0f190b2dd65948fa3edc65c307c45c"
+        }
+      },
+      "resource_count": 13,
+      "payload_byte_sum": 111527,
+      "section_raw_bytes": 112640,
+      "icon_groups": {
+        "14/MAIN.ICO/0": [
+          {
+            "width_byte": 16,
+            "height_byte": 16,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 1128,
+            "icon_id": 100,
+            "target_resource": "3/100/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 16,
+              "stored_height_with_masks": 32,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 24,
+            "height_byte": 24,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 2440,
+            "icon_id": 101,
+            "target_resource": "3/101/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 24,
+              "stored_height_with_masks": 48,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 32,
+            "height_byte": 32,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 4264,
+            "icon_id": 102,
+            "target_resource": "3/102/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 32,
+              "stored_height_with_masks": 64,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 48,
+            "height_byte": 48,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 9640,
+            "icon_id": 103,
+            "target_resource": "3/103/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 48,
+              "stored_height_with_masks": 96,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 64,
+            "height_byte": 64,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 16936,
+            "icon_id": 104,
+            "target_resource": "3/104/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 64,
+              "stored_height_with_masks": 128,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 0,
+            "height_byte": 0,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 24070,
+            "icon_id": 105,
+            "target_resource": "3/105/0",
+            "payload_header": {
+              "format": "PNG",
+              "width": 256,
+              "height": 256
+            }
+          }
+        ],
+        "14/ORIG.ICO/0": [
+          {
+            "width_byte": 32,
+            "height_byte": 32,
+            "color_count": 16,
+            "planes": 1,
+            "bit_count": 4,
+            "payload_bytes": 744,
+            "icon_id": 200,
+            "target_resource": "3/200/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 32,
+              "stored_height_with_masks": 64,
+              "bit_count": 4
+            }
+          }
+        ]
+      },
+      "manifests": {
+        "24/1/0": {
+          "root": "{urn:schemas-microsoft-com:asm.v1}assembly",
+          "root_attributes": {
+            "manifestVersion": "1.0"
+          },
+          "elements": [
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v1}assemblyIdentity",
+              "attributes": {
+                "type": "win32",
+                "name": "nfs3",
+                "version": "1.6.1.0",
+                "processorArchitecture": "x86"
+              }
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v3}trustInfo",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v3}security",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v3}requestedPrivileges",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v3}requestedExecutionLevel",
+              "attributes": {
+                "level": "asInvoker",
+                "uiAccess": "false"
+              }
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v1}dependency",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v1}dependentAssembly",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v1}assemblyIdentity",
+              "attributes": {
+                "type": "win32",
+                "name": "Microsoft.Windows.Common-Controls",
+                "version": "6.0.0.0",
+                "publicKeyToken": "6595b64144ccf1df",
+                "processorArchitecture": "x86",
+                "language": "*"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "local_analysis": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "resources": {
+        "3/100/0": {
+          "rva": "006372b8",
+          "size": 1128,
+          "file_offset": "001834b8",
+          "sha256": "bea92879b519f9d966c92806ddf3d242372cf347d99eac64a11fb739e4b3f57f"
+        },
+        "3/101/0": {
+          "rva": "00637730",
+          "size": 2440,
+          "file_offset": "00183930",
+          "sha256": "fb9abfee6b8f627338680a20c7a4b0e541d4c140ddc0f5f7a773560b4d0574d1"
+        },
+        "3/102/0": {
+          "rva": "006380c8",
+          "size": 4264,
+          "file_offset": "001842c8",
+          "sha256": "5b9cabd725a97d0661db2bedb16c230b8d414e8d8763f8d53362b21c8495e96a"
+        },
+        "3/103/0": {
+          "rva": "00639180",
+          "size": 9640,
+          "file_offset": "00185380",
+          "sha256": "0c6103c332adee80171ebcdff10c688eb8a05e25b6a42e30689b6ee78f8b6614"
+        },
+        "3/104/0": {
+          "rva": "0063b738",
+          "size": 16936,
+          "file_offset": "00187938",
+          "sha256": "44eaa43859dafa132c01025a94f56cdfd00839f14b174d3388b21af8e9019bd1"
+        },
+        "3/105/0": {
+          "rva": "0063f970",
+          "size": 24070,
+          "file_offset": "0018bb70",
+          "sha256": "0a29c5d18efce13001e5541d492d3f5b09ee1de56bfbc0119d9f88b11d02bc82"
+        },
+        "3/200/0": {
+          "rva": "006457c0",
+          "size": 744,
+          "file_offset": "001919c0",
+          "sha256": "d571a0094014104eb8e7c4c80558f4836c9137c59506c46fa6f1a8ef3340d207"
+        },
+        "10/ABOUT.QFS/0": {
+          "rva": "00645ad0",
+          "size": 47372,
+          "file_offset": "00191cd0",
+          "sha256": "d78bddc8bbce4fa2db72035ec87c87729911ea08508f02669ea93662c6cd3d8a"
+        },
+        "10/SNAP.WAV/0": {
+          "rva": "00651400",
+          "size": 3240,
+          "file_offset": "0019d600",
+          "sha256": "b218fa30693f4ccfb6f633b62c285007106541a753ae271df910d348eac7951e"
+        },
+        "14/MAIN.ICO/0": {
+          "rva": "0063724c",
+          "size": 90,
+          "file_offset": "0018344c",
+          "sha256": "a627cc96c251d9c5e832b8b7ab1756146cc3c945fc297c9805a361564915fecd"
+        },
+        "14/ORIG.ICO/0": {
+          "rva": "0064579c",
+          "size": 20,
+          "file_offset": "0019199c",
+          "sha256": "d98ef8e3d061de56f7d71cdcdecc720ec1484f6fa56cc2b1d163b600e940856c"
+        },
+        "16/1/0": {
+          "rva": "00652800",
+          "size": 1008,
+          "file_offset": "0019ea00",
+          "sha256": "5459d59195cc401eaa3e9736f7777cabbdbd83153d824dc401b2a6005e7c5206"
+        },
+        "24/1/0": {
+          "rva": "0065249c",
+          "size": 603,
+          "file_offset": "0019e69c",
+          "sha256": "519e5bbf613e9f51b017d1d921db8ecd61c55fea466f19fa30ce7b2fa29256e4"
+        }
+      },
+      "resource_count": 13,
+      "payload_byte_sum": 111555,
+      "section_raw_bytes": 114176,
+      "icon_groups": {
+        "14/MAIN.ICO/0": [
+          {
+            "width_byte": 16,
+            "height_byte": 16,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 1128,
+            "icon_id": 100,
+            "target_resource": "3/100/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 16,
+              "stored_height_with_masks": 32,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 24,
+            "height_byte": 24,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 2440,
+            "icon_id": 101,
+            "target_resource": "3/101/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 24,
+              "stored_height_with_masks": 48,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 32,
+            "height_byte": 32,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 4264,
+            "icon_id": 102,
+            "target_resource": "3/102/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 32,
+              "stored_height_with_masks": 64,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 48,
+            "height_byte": 48,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 9640,
+            "icon_id": 103,
+            "target_resource": "3/103/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 48,
+              "stored_height_with_masks": 96,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 64,
+            "height_byte": 64,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 16936,
+            "icon_id": 104,
+            "target_resource": "3/104/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 64,
+              "stored_height_with_masks": 128,
+              "bit_count": 32
+            }
+          },
+          {
+            "width_byte": 0,
+            "height_byte": 0,
+            "color_count": 0,
+            "planes": 1,
+            "bit_count": 32,
+            "payload_bytes": 24070,
+            "icon_id": 105,
+            "target_resource": "3/105/0",
+            "payload_header": {
+              "format": "PNG",
+              "width": 256,
+              "height": 256
+            }
+          }
+        ],
+        "14/ORIG.ICO/0": [
+          {
+            "width_byte": 32,
+            "height_byte": 32,
+            "color_count": 16,
+            "planes": 1,
+            "bit_count": 4,
+            "payload_bytes": 744,
+            "icon_id": 200,
+            "target_resource": "3/200/0",
+            "payload_header": {
+              "format": "BITMAPINFOHEADER",
+              "width": 32,
+              "stored_height_with_masks": 64,
+              "bit_count": 4
+            }
+          }
+        ]
+      },
+      "manifests": {
+        "24/1/0": {
+          "root": "{urn:schemas-microsoft-com:asm.v1}assembly",
+          "root_attributes": {
+            "manifestVersion": "1.0"
+          },
+          "elements": [
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v1}assemblyIdentity",
+              "attributes": {
+                "type": "win32",
+                "name": "nfs3",
+                "version": "1.6.2.0",
+                "processorArchitecture": "x86"
+              }
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v3}trustInfo",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v3}security",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v3}requestedPrivileges",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v3}requestedExecutionLevel",
+              "attributes": {
+                "level": "asInvoker",
+                "uiAccess": "false"
+              }
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v1}dependency",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v1}dependentAssembly",
+              "attributes": {}
+            },
+            {
+              "tag": "{urn:schemas-microsoft-com:asm.v1}assemblyIdentity",
+              "attributes": {
+                "type": "win32",
+                "name": "Microsoft.Windows.Common-Controls",
+                "version": "6.0.0.0",
+                "publicKeyToken": "6595b64144ccf1df",
+                "processorArchitecture": "x86",
+                "language": "*"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "local_manifest_difference": "Only assemblyIdentity version changes from1.6.1.0 to1.6.2.0; other bytes identical.",
+  "retained_original_icon": {
+    "original": "3/1/0",
+    "modern": "3/200/0",
+    "sha256": "d571a0094014104eb8e7c4c80558f4836c9137c59506c46fa6f1a8ef3340d207",
+    "group_difference": "Original group payload retained except final icon ID1 changes to200."
+  },
+  "official_to_local_changed_resource_keys": [
+    "16/1/0",
+    "24/1/0"
+  ],
+  "limits": [
+    "Payload/group/XML identity only; no resource API, icon rendering, loader or application execution.",
+    "Manifest declarations are not proof of OS/Wine enforcement or actual runtime privileges/theme.",
+    "Resource counts, payload sums and section bytes include different kinds of data; not feature counts."
+  ]
+}
