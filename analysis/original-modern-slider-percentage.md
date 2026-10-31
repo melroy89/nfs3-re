@@ -151,3 +151,19 @@ The exact registry item at **`00557b44`** is `{0fh, 005383e4, 00557718}`; the mi
 This establishes installation of the template's +2ch render dispatcher and +30h step-event dispatcher into corresponding entry fields. The prior 80-byte callback capture was a **prefix**, not proof of row extent; the bch-byte copy determines the installed template extent used here. Copying raw pointers is not equivalent to invoking them, and does not validate the lifecycle of the destination entry.
 
 The callback-registration gap is closed for a type0fh install through this helper. Remaining links for the5% question are the text parser's numeric stores/default overrides into the template/instance, later field mutation, and actual event delivery. The helper itself does not introduce a Modern-only snap/step override: its body and complete slider template are retained unchanged.
+
+## Descriptor numeric writes reach instance fields
+
+The audit now retains complete descriptor writer `00449240..004493aa` and float parser `004491b0..00449215` for both baselines. Their captured hashes describe each body independently; they are not asserted wholly identical merely because the relevant numeric branch is shared in the inspected code.
+
+The writer takes an entry index in EBX and descriptor index in EDX. It forms the destination as:
+
+`00604ee0 + wrap32(entryIndex * bch) + (descriptor.destination - 00604ee0)`.
+
+Descriptor rows are16 bytes, indexed relative to the table fields at `00557c18/1c`: the numeric type and destination pointer respectively. Type6 dispatches through table `00449218` to **`00449383`**, calls `004491b0`, stores its ST0 result as binary32, then copies **four bytes** to the computed destination at `00449393..004493a2`.
+
+Together with the retained `snap`/`r0_step` descriptors, this establishes direct entry-field destinations +44h/+48h on that descriptor route. It is not a store into a separate global template followed by an unexplained copy. The earlier template installer initializes entries; this writer addresses the selected instance using the same bch stride.
+
+The float parser calls the runtime formatted scanner with the retained format at `00538f70`, then performs its own character checks and returns a binary32 value through ST0. Malformed-input/scan-failure behavior and every scanner contract remain outside this ordinary-decimal input review. The inspected menu spellings `0.010000` / `0.050000` match the expected decimal-value path; no parser instruction was executed.
+
+**Closed:** numeric descriptor write width and instance-address calculation. **Still pending:** key-to-descriptor selection and overall file parse order, subsequent initialization/callback overrides, event delivery and actual step values. Thus the conditional1%-versus5% observation remains a bounded static result rather than a measured contradiction of the release claim.

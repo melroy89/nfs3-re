@@ -16,7 +16,7 @@ def main():
         pe=pefile.PE(data=raw);end=0x46a5ea if label=='original' else 0x46a5af
         path=capture/f'{label}-00469680.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel','--start-address=0x469680',f'--stop-address={end}',relative],cwd=ROOT))
         helper_spans=[]
-        for start, stop in ((0x46a860,0x46a97c),(0x4693c0,0x469479),(0x4dfd56,0x4dfd73 if label=='original' else 0x4dfd6d),(0x449060,0x4490d8)):
+        for start, stop in ((0x46a860,0x46a97c),(0x4693c0,0x469479),(0x4dfd56,0x4dfd73 if label=='original' else 0x4dfd6d),(0x449060,0x4490d8),(0x449240,0x4493aa),(0x4491b0,0x449215)):
             helper_path=capture/f'{label}-{start:08x}.asm'
             helper_path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={stop}',relative],cwd=ROOT))
             helper_spans.append({'start':f'{start:08x}','end':f'{stop:08x}',
@@ -45,6 +45,8 @@ def main():
             'slider_type_registry_00557b44_hex':pe.get_data(0x157b44,12).hex(),
             'slider_template_00557718_hex':pe.get_data(0x157718,0xbc).hex(),
             'slider_callback_row_00557718_hex':pe.get_data(0x157718,80).hex(),
+            'float_parse_format_00538f70':pe.get_data(0x138f70,12).split(b'\0')[0].decode('ascii'),
+            'numeric_writer_type6_target':pe.get_data(0x49218+6*4,4).hex(),
             'step_descriptors_hex':{f'{a:08x}':pe.get_data(a-0x400000,16).hex() for a in (0x558324,0x558334)},
             'percenttype_descriptor':{'address':'00558224','words_hex':pe.get_data(0x158224,16).hex(),
                 'keyword':pe.get_data(0x1386b4,30).split(b'\0')[0].decode('ascii')},
