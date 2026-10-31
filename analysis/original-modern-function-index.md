@@ -6,7 +6,7 @@ All **361 changed saved Modern function entries** are listed: **254** have an ad
 
 A linked chapter may only mention a caller, unknown or partial span. Read its scope and evidence before deciding what is established. An unlinked row may still have research using another address format, a moved counterpart or notes outside these chapters.
 
-Original/official executable hashes and saved Modern function-inventory hash are checked when regenerating. Names/ranges remain Modern analysis metadata; same-address byte differences do not establish original function correspondence. The main summary, release-note catalog and generated index are excluded as reference sources.
+Original/official executable hashes and saved Modern function-inventory hash are checked when regenerating. Names/ranges remain Modern analysis metadata; same-address byte differences do not establish original function correspondence. The main summary, release-note catalog and generated function/outside-body indexes are excluded as reference sources.
 
 The original code comparison also records **21,926 changed code bytes outside the saved Modern function ranges**. This table does not classify those bytes, enumerate all patch changes or cover data, assets, DLLs, imports and resources. See the [main comparison](original-modern-differences.md).
 
