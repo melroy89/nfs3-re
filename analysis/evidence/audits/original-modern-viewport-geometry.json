@@ -140,6 +140,27 @@
           "assembly_sha256": "3b2f23d3240de519853e91f40e1d84e4242b11e5257a7dcf1953e1f2c2375b25"
         },
         {
+          "start": "004be85c",
+          "end": "004be89b",
+          "bytes_sha256": "6adc1d82e3f858f20cb89b0d580f3b6019db5248c4487ad4d86e643d15a76a80",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004be85c.asm",
+          "assembly_sha256": "9dd01f6aa5a66f329c45219f23a528bf9b0382d1d2482ff32072f2144d6d9e1f"
+        },
+        {
+          "start": "004be84c",
+          "end": "004be85a",
+          "bytes_sha256": "6cad6d8ff32286f55cd1de5e7c967e171ac48dacbd0b86b65f6d06406f16de20",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004be84c.asm",
+          "assembly_sha256": "36afce9289080fcb54c2ae064db111343ca8e0a6f61239d73abd8c95e2f8f92a"
+        },
+        {
+          "start": "004bea13",
+          "end": "004bea2f",
+          "bytes_sha256": "6b28326cbd39d5e0958f90c2705b01df7669bb7a53ba75a32fbd86018bf90154",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004bea13.asm",
+          "assembly_sha256": "58f9d2d87128baab57518df8e314b70365b5113eab7c8a40486181748bd5d029"
+        },
+        {
           "start": "0048106d",
           "end": "00481072",
           "bytes_sha256": "7ef3c35ba9866d6260f1ca71b6370dd0e2d3f0e7eab6b7e7b6e380427072e0b2",

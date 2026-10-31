@@ -69,3 +69,34 @@ After writing the reference rectangle, Modern calls `0047f9a4` at `004be74d`. Th
 - **MP160-006:** border scaling source is linked to the new reference rectangle; map-point sizing remains a separate trace.
 
 Next: follow the three aspect-factor consumers, map all profile flags/viewport group consumers, compare remaining camera and map-point calculations, and use controlled image comparisons if visual correctness must be established. Do not silently normalize rounding, inclusive extents or suspected original behavior during reconstruction.
+
+## Overlay rectangle at 007a2750: separate derived extent correction
+
+The [overlay consumer comparison](original-modern-view-overlay.md) found its rectangle sources move from `007cdb98..007cdba4` to **`007a2750..007a275c`**. The expanded geometry audit now retains the complete Modern producer **`004be85c..004be89b`** and its two checked direct calls at `004be851` and `004bea2a`.
+
+This output starts16 bytes after the centred 4:3 rectangle at `007a2740`. They are separate four-DWORD groups. Applying the earlier centred-rectangle formula to `007a2750` without inspecting its producer would be incorrect.
+
+The producer saves general registers with PUSHAD and reads:
+
+| Register / source symbol used below | Source DWORD |
+|---|---|
+| EAX / X | `007cdb88` |
+| EBX / Y | `007cdb8c` |
+| ECX / W | `007cdb90` |
+| EDX / H | `007cdb94` |
+
+It forms `ESI=wrap32(W-X)`, clears EDI, and repeatedly subtracts640 from ESI. After each subtraction, signed `JLE` ends the loop; otherwise it increments EDI and repeats. The branch uses the subtraction flags, including overflow, rather than a separately recomputed sign test. Let N denote that increment count. It then adds N to ECX, computes `logical_shift_right(wrap32(3*N),2)` and adds that value to EDX. Setter `004be89c` writes the resulting tuple to `007a2750`, preserving X/Y and changing the extents.
+
+For ordinary nonoverflowing positive `D=W-X`, the count is `N=floor((D-1)/640)`. For ordinary `D<=0` the first subtraction exits with N=0, provided it does not overflow. Thus the normal tuple is `{X,Y,W+N,H+floor(3*N/4)}`; the actual implementation uses wrapped 32-bit arithmetic, signed branch flags and a logical shift. Do not replace it with an unrestricted real-number formula or silently alter its use of `W-X`.
+
+Examples derived from those instructions, **not game execution**, with X=Y=0:
+
+| Source W×H | N | Output extent |
+|---|---:|---|
+| 640×480 | 0 | 640×480 |
+| 1280×720 | 1 | 1281×720 |
+| 1920×1080 | 2 | 1922×1081 |
+
+The main viewport initializer calls it at `004be851` after `004be3d0`. Another viewport-update path calls it at `004bea2a`, after its own `004be3d0` call and conditional state write. The captured latter region is a caller witness, not a complete analysis of that enclosing function. These two producers do not prove freshness at every overlay call; further writes/aliases and lifecycle ordering remain dependencies.
+
+This narrows the overlay change to use of a **derived, slightly expanded rectangle** rather than simple address relocation. The source-group producer/profile meaning, intended seam/coverage effect and actual visible result remain unresolved. No release-note bug is assigned from the correction alone. Preserve the literal operation order, overflow and extent semantics during original/Modern C reconstruction until a deliberate policy change is separately validated. No target instructions were executed.

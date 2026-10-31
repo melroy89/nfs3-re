@@ -10,7 +10,8 @@ SPANS = {
     'original': [(0x4be570,0x4be5d1),(0x4be5e0,0x4be8d2),
         (0x4beb00,0x4beb15),(0x4beb40,0x4beb56),(0x47f650,0x47fbdc)],
     'official_modern': [(0x4be570,0x4be5d1),(0x4be5e0,0x4be85a),
-        (0x4be89c,0x4be8b5),(0x47f650,0x47f9bd)],
+        (0x4be89c,0x4be8b5),(0x47f650,0x47f9bd),
+        (0x4be85c,0x4be89b),(0x4be84c,0x4be85a),(0x4bea13,0x4bea2f)],
 }
 
 
@@ -35,6 +36,10 @@ def main():
                 'bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),
                 'assembly':str(output.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(output.read_bytes()).hexdigest()})
+        if label == 'official_modern':
+            for site in (0x4be851, 0x4bea2a):
+                call = pe.get_data(site-0x400000, 5)
+                assert call[0] == 0xe8 and site+5+int.from_bytes(call[1:], 'little', signed=True) == 0x4be85c
         floats={}
         for va in (0x538ad8,0x53a9d4,0x53a9e0,0x53b4f8,0x53b4fc):
             raw=pe.get_data(va-0x400000,4)
