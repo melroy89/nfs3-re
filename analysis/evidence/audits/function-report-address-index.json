@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "db02707a9c7e87fc927a67fcf753c1c5513b574ca6ac79b7d83e4d62b67781b7"
+      "sha256": "23decae2d212159d60668688e39fdd11f65c1941a44c4dc29566176067ca6cd4"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -65,7 +65,7 @@
     },
     {
       "path": "analysis/original-modern-config-loading.md",
-      "sha256": "78e58061d8754fd337c8ed56a3bfcee721d50cd505733fc0674b04264f61825f"
+      "sha256": "078da1e4c7bbf2ad4519a0d122712cd735a3b04113d88058a586320a77d01d74"
     },
     {
       "path": "analysis/original-modern-configuration.md",
@@ -133,7 +133,7 @@
     },
     {
       "path": "analysis/original-modern-frontend-page.md",
-      "sha256": "fd4c0f10d07e00a8673ca2a3a9cc7840c5f631629413b5c48acc3590c791fc1d"
+      "sha256": "ebf6c8a0c8633283e67cd7aa6def1201b8249058d014c9c75f5359c036b247a8"
     },
     {
       "path": "analysis/original-modern-frontend-sound.md",
@@ -157,7 +157,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "e455788935010fe0685dda69273b1f2ae0174e42f0716ef823af35b333df8036"
+      "sha256": "130312b311268ce1bfffef09f24346d4f1f9abcbdea75d2578c6a8c831bea59e"
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -185,7 +185,7 @@
     },
     {
       "path": "analysis/original-modern-map-marker-scaling.md",
-      "sha256": "9acd6e870ebf09caf7d37146a7bfd5bb84195ac708f1e075b25b726cd49cfe4a"
+      "sha256": "03f8e9add8bd2d053fb07787b0509895021e0151dbbda1bc68c4507730cbc8c6"
     },
     {
       "path": "analysis/original-modern-menu-callback-table.md",
@@ -273,7 +273,7 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "79c1a0544427193edef0d3647142e5a778aebce9ff64385a6ee98252271762f5"
+      "sha256": "751d41b301c1b942e664db2f086e37cb6ac5e63eb1da2b85cbf2dbb6eeeff265"
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
@@ -309,7 +309,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "2bfd4bfa5d5dcd6e26ecaf36ee97919665e4425d2e205e014315a42744898cba"
+      "sha256": "3f00a671870f09cfb674cb00b269eac0c35cbbecc7096ba5bc966bbfa535061d"
     },
     {
       "path": "analysis/original-modern-replay-list-cursor.md",
@@ -373,7 +373,7 @@
     },
     {
       "path": "analysis/original-modern-startup-paths.md",
-      "sha256": "003b9d50f765544a76d82211e79902e3bffdbe6a54bc6081ea3fda19e2d931bb"
+      "sha256": "788801a03b2a19ed519819bbe9be193c765c4fb54213e7cd71f675ea0b89c6ca"
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
@@ -393,7 +393,7 @@
     },
     {
       "path": "analysis/original-modern-texture-loading-followup.md",
-      "sha256": "e9d0770a303b72decf5edd83b194a46c8e768b7c915e1a8fd259fc1f34978eb9"
+      "sha256": "2704f5573fa86b464385610d15d9d7afc9aea41225df42f1e9aa846b1350cd25"
     },
     {
       "path": "analysis/original-modern-texture-progress.md",
@@ -421,11 +421,11 @@
     },
     {
       "path": "analysis/original-modern-view-overlay.md",
-      "sha256": "f032a34e8de0967a8f29338fed908da3f0fb5a89e7dab58b3a92f38680868c7b"
+      "sha256": "27968e266ddd6e921b6745528a6c33d5d1bc1566bf5167dedff8bef0309e6c42"
     },
     {
       "path": "analysis/original-modern-viewport-geometry.md",
-      "sha256": "b67346a37cf0e30f3fee4e1ec17a26c7f565087d91053205c4736a0b9a2a1189"
+      "sha256": "4e287a00ef32b1e2f3a9398ad24c07e13d7cfec52bcf87ba2f7cff9beb4f3ef2"
     },
     {
       "path": "analysis/original-modern-viewport-pose.md",
@@ -4911,7 +4911,9 @@
           "path": "analysis/original-modern-config-loading.md",
           "entry_mentioned": true,
           "addresses": [
-            "00472404"
+            "00472404",
+            "0047242a",
+            "0047242c"
           ]
         },
         {
@@ -4947,6 +4949,16 @@
       "original_sha256": "d8caab668726c13df6e906a2153a2c49cf17cfcb9b36e44e993e5eeb931fe835",
       "modern_sha256": "611cb7076935a767bea148ee9f7bcc04b642464d68af5cec43194c4bcf1c9024",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-config-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00472820",
+            "0047282e",
+            "0047283b",
+            "004728ca"
+          ]
+        },
         {
           "path": "analysis/original-modern-ghost-loading.md",
           "entry_mentioned": true,
@@ -5131,7 +5143,8 @@
           "path": "analysis/original-modern-config-loading.md",
           "entry_mentioned": true,
           "addresses": [
-            "00472d10"
+            "00472d10",
+            "00472d9a"
           ]
         },
         {
@@ -5141,6 +5154,16 @@
             "00472d11",
             "00472d89",
             "00472de3"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00472d10",
+            "00472d92",
+            "00472d9a",
+            "00472e1c"
           ]
         },
         {
@@ -6353,6 +6376,8 @@
           "entry_mentioned": true,
           "addresses": [
             "0048d110",
+            "0048d169",
+            "0048d24c",
             "0048d40a"
           ]
         }
@@ -7800,7 +7825,10 @@
           "entry_mentioned": false,
           "addresses": [
             "004a3e24",
+            "004a3e29",
             "004a3e2a",
+            "004a3e30",
+            "004a3e35",
             "004a3e3f",
             "004a3e6b",
             "004a3e74",
@@ -8222,6 +8250,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-startup-paths.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004b570c"
+          ]
+        },
+        {
           "path": "analysis/original-modern-startup-requirements.md",
           "entry_mentioned": true,
           "addresses": [
@@ -8514,10 +8549,14 @@
         },
         {
           "path": "analysis/original-modern-renderer-loading.md",
-          "entry_mentioned": false,
+          "entry_mentioned": true,
           "addresses": [
+            "004b5a58",
+            "004b5a67",
             "004b5a6c",
-            "004b5a7f"
+            "004b5a7f",
+            "004b5a88",
+            "004b5a8d"
           ]
         },
         {

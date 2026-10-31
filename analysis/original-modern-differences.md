@@ -178,6 +178,10 @@ The [ghost comparison](original-modern-ghost-loading.md) traces the changed snap
 
 The [config-load comparison](original-modern-config-loading.md) traces removal of the old file-time gate, retained exact file-size check, Modern size/version-byte reset decisions and header template. The version-only reset is not necessarily a full reset. Complete serialization, failure paths and cross-release file compatibility remain pending.
 
+Its [save-policy comparison](original-modern-config-loading.md#save-entry-policy-removed-flag-gate-added-header-refresh) now covers the complete179-byte save entry: Modern replaces original's `-msdemo` bit gate with a header-refresh call; the other166 bytes are identical. Header stamping occurs before remaining checks, including on paths that subsequently skip writing. The same bit still gates the inspected load prefix despite removal of the named switch. This is a bounded policy change, not unconditional saving or a full serialization-compatibility result.
+
+The [View Angle linkage](original-modern-projection.md#view-angle-option-list-and-release-note-correspondence) ties labels and option-list IDs to actual chooser storage: original0 selects90°, Modern0 selects Automatic, and Modern adds explicit105°. Modern graphics defaults explicitly write0. Accepted config headers bypass that reset, whereas the original initializer's ordinary version-zero prefix would fail Modern's version admission if retained intact. Later writes, real saved-file provenance and complete migration remain unverified; copying an ordinal alone does not preserve its meaning.
+
 ## 23. Automatic FOV and projection angles
 
 The [projection comparison](original-modern-projection.md) traces dimension-derived automatic FOV clamped to 90–107 degrees, fixed alternatives, moved-wrapper correspondence and the integer-to-float angle interface. The complete projection builder remains identical. All camera/horizon consumers and rendered output remain pending.
