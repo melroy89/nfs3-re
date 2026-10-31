@@ -18,7 +18,7 @@ def main():
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
         spans = [(0x489b30, 0x489c40)] if label == 'original' else [(0x489ab0, 0x489bd9), (0x4f939c, 0x4f93c5), (0x4d1430, 0x4d1450)]
-        spans += [(0x4d10e0,0x4d1116 if label=='original' else 0x4d1114),(0x45adba, 0x45ae2c), (0x45aef0, 0x45af63), (0x4839eb, 0x483a67)]
+        spans += [(0x4897f0,0x4898a4),(0x4d10e0,0x4d1116 if label=='original' else 0x4d1114),(0x45adba, 0x45ae2c), (0x45aef0, 0x45af63), (0x4839eb, 0x483a67)]
         rows = []
         for start, end in spans:
             path = capture/f'{label}-{start:08x}.asm'
@@ -42,6 +42,20 @@ def main():
     assert old.get_data(0xd1115,1)==b'\xc3'
     assert new.get_data(0xd1113,1)==b'\xc3'
     result['right_anchor_return_contract']={'entry':'004d10e0','original_end_exclusive':'004d1116','modern_end_exclusive':'004d1114','shared_prefix_end_exclusive':'004d110f','original':'FSTP ST(0) discards draw return before RET','modern':'Leaves draw x87 return; numeric-scale caller pops it at00489bd1','limits':['Static local stack effect; not a complete ABI audit of all callers.','Identical CALL targets do not establish identical helper implementations.']}
+    a,b=[pe.get_data(0x897f0,0xb4) for pe in images]
+    changes=[0x4897f0+i for i,(x,y) in enumerate(zip(a,b)) if x!=y]
+    assert changes==[0x48986b]
+    assert old.get_data(0x8986a,2)==bytes.fromhex('eb2e')
+    assert new.get_data(0x8986a,2)==bytes.fromhex('eb2c')
+    assert old.get_data(0x89898,2)==new.get_data(0x89898,2)==bytes.fromhex('ddd8')
+    result['shared_text_wrapper']={'start':'004897f0','end_exclusive':'004898a4','length':0xb4,'changed_addresses':[f'{v:08x}' for v in changes],'original_branch':'0048986a ->0048989a skips pop','modern_branch':'0048986a ->00489898 executes pop'}
+    result['right_anchor_direct_call_candidates']={}
+    for label,pe in zip(('original','official_modern'),images):
+        section=pe.sections[0];base=pe.OPTIONAL_HEADER.ImageBase+section.VirtualAddress
+        code=pe.get_data(section.VirtualAddress,section.SizeOfRawData)
+        sites=[base+i for i in range(len(code)-4) if code[i]==0xe8 and base+i+5+int.from_bytes(code[i+1:i+5],'little',signed=True)==0x4d10e0]
+        assert sites==([0x489865] if label=='original' else [0x489865,0x489bcc])
+        result['right_anchor_direct_call_candidates'][label]={'section':section.Name.decode().rstrip('\0'),'start':f'{base:08x}','length':len(code),'sites':[f'{v:08x}' for v in sites],'method':'Every-byte E8/rel32 target scan; candidates corroborated in retained instruction spans. Excludes indirect calls, JMPs and other sections.'}
     result['caller_setup_only_retargets'] = []
     for start, end, call in ((0x45adba, 0x45ae2c, 0x45ae27), (0x45aef0, 0x45af63, 0x45af5e), (0x4839eb, 0x483a67, 0x483a62)):
         bodies = [p.get_data(start-0x400000, end-start) for p in images]

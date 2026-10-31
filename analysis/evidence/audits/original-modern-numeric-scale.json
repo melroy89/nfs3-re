@@ -18,6 +18,13 @@
           "assembly_sha256": "d4311c1c124e26e4960bf7aed9a5ed144fa55812d9b0cf70f854a1fe3406e2e2"
         },
         {
+          "start": "004897f0",
+          "end": "004898a4",
+          "bytes_sha256": "de53fe59e1314a7d27380d7f0b5acf96471eb42e8ad92cc3ae2bef92f653964a",
+          "assembly": "analysis/captures/modern-differences/numeric-scale/original-004897f0.asm",
+          "assembly_sha256": "539d3de0518a1831e368c50a3eb954513bca5ca8acb0dff86da1a4e1535bd5f0"
+        },
+        {
           "start": "004d10e0",
           "end": "004d1116",
           "bytes_sha256": "6fcd8f7b5dc5f72e531e2d0b2add90ffee882306965eeeddcde369c0aa4222bf",
@@ -73,6 +80,13 @@
           "assembly_sha256": "12b3ea86332f14a5fe96cf7168a5851b880291a8dc135818652919adb7e503b5"
         },
         {
+          "start": "004897f0",
+          "end": "004898a4",
+          "bytes_sha256": "d1fb768ac832d79768f454dfc4592cbb6654ee1173c694c12962b039fe489a31",
+          "assembly": "analysis/captures/modern-differences/numeric-scale/official_modern-004897f0.asm",
+          "assembly_sha256": "2b92d08fad46f874469beeab34a25923f34c96c3996092716e55748de490076a"
+        },
+        {
           "start": "004d10e0",
           "end": "004d1114",
           "bytes_sha256": "5e12886786f33a5ddceb773286abb5d5dd48c1a7574bd953a63e2563d8d33974",
@@ -118,6 +132,37 @@
       "Static local stack effect; not a complete ABI audit of all callers.",
       "Identical CALL targets do not establish identical helper implementations."
     ]
+  },
+  "shared_text_wrapper": {
+    "start": "004897f0",
+    "end_exclusive": "004898a4",
+    "length": 180,
+    "changed_addresses": [
+      "0048986b"
+    ],
+    "original_branch": "0048986a ->0048989a skips pop",
+    "modern_branch": "0048986a ->00489898 executes pop"
+  },
+  "right_anchor_direct_call_candidates": {
+    "original": {
+      "section": "AUTO",
+      "start": "00401000",
+      "length": 1257472,
+      "sites": [
+        "00489865"
+      ],
+      "method": "Every-byte E8/rel32 target scan; candidates corroborated in retained instruction spans. Excludes indirect calls, JMPs and other sections."
+    },
+    "official_modern": {
+      "section": ".code",
+      "start": "00401000",
+      "length": 1257472,
+      "sites": [
+        "00489865",
+        "00489bcc"
+      ],
+      "method": "Every-byte E8/rel32 target scan; candidates corroborated in retained instruction spans. Excludes indirect calls, JMPs and other sections."
+    }
   },
   "caller_setup_only_retargets": [
     {
