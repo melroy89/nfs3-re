@@ -190,7 +190,11 @@ The [vehicle-dispatch comparison](original-modern-vehicle-dispatch.md) traces re
 
 The [numeric-scale comparison](original-modern-numeric-scale.md) maps original `00489b30` to Modern `00489ab0` using three redirected callers, then traces measured-label spacing, fallback scale and text-helper changes. Invalid inputs, asset lengths and visible output remain unresolved.
 
-## 29. Prioritized semantic work remaining
+## 29. Frontend Race Now entry policy
+
+The [Race Now comparison](original-modern-race-now.md) maps Modern’s complete helper and the related original credits gate. Full original counterparts and entry-flag/global meanings remain unresolved; the same address is not a valid function pairing.
+
+## 30. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

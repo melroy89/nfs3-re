@@ -289,3 +289,7 @@ Run `python3 analysis/scripts/audit_numeric_scale_difference.py`. Retains comple
 ## Installed numeric-scale endpoint labels
 
 Run `python3 analysis/scripts/inventory_numeric_scale_labels.py --game-dir "<installed game directory>"`. Reads the six installed and twelve case-distinct backup language files, records hashes/selected string bounds, derives positive-count concatenation sizes, and recomputes the retained 47-profile inventory before reporting installed count bounds. Output: `analysis/evidence/inventories/installed-numeric-scale-labels.json`. This does not authenticate backup provenance or execute the game. See [label findings](../original-modern-numeric-scale.md#installed-label-inventory-and-bounded-scratch-overlap).
+
+## Original versus Modern Race Now helper
+
+Run `python3 analysis/scripts/audit_race_now_difference.py`. Retains the complete Modern helper and partial original credits gate, with exact tokens, in `analysis/evidence/audits/original-modern-race-now-entry.json`. No target execution or same-VA counterpart assumption. See [findings](../original-modern-race-now.md).

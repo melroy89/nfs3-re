@@ -1,0 +1,49 @@
+{
+  "kind": "static-race-now-entry-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00437600",
+          "end": "0043762c",
+          "bytes_sha256": "713068de11632b52becd710b533ca50a3459e0a8bce4a1505ca0ab8d4e2719ef",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/original-00437600.asm",
+          "assembly_sha256": "9edce69ac6c266dc41278ee8cb7fd151990a93739bf487380966f6aa56a37077"
+        }
+      ],
+      "tokens": {
+        "0053a998": "2btt",
+        "0053a990": "3btt",
+        "0053714c": "racenow",
+        "00537494": "credits"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00437614",
+          "end": "004376fb",
+          "bytes_sha256": "57d3b5eedc9cfd1e99793d153e1d17a01f436d191f75423302913dd7a92de059",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00437614.asm",
+          "assembly_sha256": "59244d88f94a022d8ec73a7d2faa4f98cb8763bfaff9ea5c1ba40e881ee21ee7"
+        }
+      ],
+      "tokens": {
+        "0053a998": "2btt",
+        "0053a990": "3btt",
+        "0053714c": "racenow",
+        "00537494": "credits"
+      }
+    }
+  },
+  "limits": [
+    "Modern helper is not a same-address original counterpart.",
+    "Original capture is a partial credits gate inside a larger routine.",
+    "No menu or target execution."
+  ]
+}
