@@ -16,10 +16,25 @@ The [reproducible audit](scripts/audit_setup_website_difference.py) checks both 
 
 The executable assignment is conditional on asset lookup succeeding. Consequently, retained callback code is consistent with a removed button and does not prove that the old button is still reachable in Modern.
 
+## Final package uses Options, not an explicit Credits button
+
+The audit now records all six `[button]` sections in file order. Their first four entries and sixth Exit entry have identical selected routing/label/type fields in the official file and local backup. Only the fifth button differs in those fields:
+
+| Field | Local uppercase backup | Official v1.6.1 package |
+|---|---|---|
+| `buttontype` | `LR1of2` | `LR1of2` |
+| `codelink` | `SETUP_NfsWebSite` | Absent |
+| `text` | `kMenuSETUPNFSWebsi001` | `kMenuMAINOptions001` |
+| `nextmenu` | Absent | `options` |
+
+The README's **MP140-017** (v1.4.0, source line 301) says an Options button is placed near Exit on the first Game Setup screen. This later claim matches the final asset's Options/Exit pair. The earlier **MP100-052** reports Credits in v1.0.0. These are release-history claims, not two simultaneous descriptions of the final first-screen layout. The final asset supplies an explicit Options route; there is no reason to assume this particular final button must activate Credits.
+
+**Confidence:** verified asset fields and unchanged selected executable ranges; inferred chronology linking the later note to the final layout. Actual screen/resource selection, translated label appearance and execution remain untested. Neither the v1.0.0 Credits implementation nor the v1.4.0 introduction date is verified without intermediate packages.
+
 ## Reconstruction implications and remaining work
 
 For reconstruction, preserve the distinction between asset-defined controls, callback installation and shared Credits page rendering. The [page renderer investigation](original-modern-frontend-page.md) establishes a separate changed Credits/About rendering path; it does not establish this first-screen button's activation route.
 
-To finish MP100-052, trace the actual first-screen loader and any injected/generated controls, resolve the Credits activation callback and label, and verify the selected resource or external menu at runtime when a suitable session is available. Historical introduction in v1.0.0 requires that release, rather than inference from the final v1.6.1 package. The local backup comparison is bounded evidence, not a universal original-asset baseline.
+To finish the historical MP100-052 claim, obtain v1.0.0 and inspect its first-screen asset and activation route. For final-package behaviour, trace the first-screen loader and generic `nextmenu=options` handling, then verify the selected resource or external menu at runtime when a suitable session is available. Do not make recovery of a superseded Credits button a prerequisite for explaining final Options routing. Historical introduction in v1.0.0 requires that release, rather than inference from the final v1.6.1 package. The local backup comparison is bounded evidence, not a universal original-asset baseline.
 
 Reproduce: `python3 analysis/scripts/audit_setup_website_difference.py`. This uses read-only PE parsing and disassembly. No executable bytes, Ghidra database, reference exports or reconstruction sources were changed; no target instructions were executed.

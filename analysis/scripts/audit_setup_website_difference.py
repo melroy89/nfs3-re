@@ -35,10 +35,30 @@ def main():
         raw = path.read_bytes()
         lines = raw.decode('latin1').splitlines()
         selected = [{'line': i, 'text': line} for i, line in enumerate(lines, 1) if any(word in line.lower() for word in ('website', 'credits'))]
-        result['assets'][label] = {'path': str(path.relative_to(ROOT)), 'sha256': hashlib.sha256(raw).hexdigest(), 'size': len(raw), 'website_or_credits_lines': selected}
+        buttons = []
+        current = None
+        for line in lines:
+            if line.startswith('['):
+                if current is not None:
+                    buttons.append(current)
+                current = {} if line == '[button]' else None
+            elif current is not None and '=' in line:
+                key, value = line.split('=', 1)
+                if key in ('text', 'codelink', 'nextmenu', 'buttontype'):
+                    current[key] = value
+        if current is not None:
+            buttons.append(current)
+        result['assets'][label] = {'buttons_in_file_order': buttons, 'path': str(path.relative_to(ROOT)), 'sha256': hashlib.sha256(raw).hexdigest(), 'size': len(raw), 'website_or_credits_lines': selected}
     assert not result['assets']['official_modern']['website_or_credits_lines']
     assert any('SETUP_NfsWebSite' in row['text'] for row in result['assets']['local_uppercase_backup']['website_or_credits_lines'])
-    result['limits'] = ['No runtime menu selection or callback execution.', 'Uppercase local backup is not authenticated retail provenance.', 'Removal is supported; replacement Credits route and historical v1.0.0 introduction remain unresolved.']
+    modern_buttons = result['assets']['official_modern']['buttons_in_file_order']
+    backup_buttons = result['assets']['local_uppercase_backup']['buttons_in_file_order']
+    assert len(modern_buttons) == len(backup_buttons) == 6
+    assert modern_buttons[:4] == backup_buttons[:4]
+    assert modern_buttons[5] == backup_buttons[5]
+    assert modern_buttons[4] == {'text': 'kMenuMAINOptions001', 'nextmenu': 'options', 'buttontype': 'LR1of2'}
+    assert backup_buttons[4] == {'codelink': 'SETUP_NfsWebSite', 'text': 'kMenuSETUPNFSWebsi001', 'buttontype': 'LR1of2'}
+    result['limits'] = ['No runtime menu selection or callback execution.', 'Uppercase local backup is not authenticated retail provenance.', 'Removal is supported; historical v1.0.0 Credits route and v1.4.0 Options introduction remain unresolved; final asset selects Options.']
     (ROOT / 'analysis/evidence/audits/original-modern-setup-website.json').write_text(json.dumps(result, indent=2) + '\n')
     print('PASS: pinned binaries, identical callback/binding, asset removal witness')
 

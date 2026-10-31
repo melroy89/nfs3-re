@@ -47,12 +47,84 @@
   },
   "assets": {
     "official_modern": {
+      "buttons_in_file_order": [
+        {
+          "codelink": "SETUP_ONEPLAYERBUTTON",
+          "text": "kMenuSETUPOnePlaye001",
+          "nextmenu": "main",
+          "buttontype": "tab"
+        },
+        {
+          "codelink": "SETUP_TWOPLAYERBUTTON",
+          "text": "kMenuSETUPTwoPlaye001",
+          "nextmenu": "mainsplt",
+          "buttontype": "tab"
+        },
+        {
+          "codelink": "SETUP_CONNECTPLAYERS",
+          "text": "kMenuSETUPConnectP001",
+          "nextmenu": "connect",
+          "buttontype": "tab"
+        },
+        {
+          "codelink": "SETUP_LOADBUTTON",
+          "text": "kMenuSETUPLoad001",
+          "nextmenu": "loadsave",
+          "buttontype": "tab"
+        },
+        {
+          "text": "kMenuMAINOptions001",
+          "nextmenu": "options",
+          "buttontype": "LR1of2"
+        },
+        {
+          "codelink": "exitprogram escape",
+          "text": "kMenuSETUPExitGame001",
+          "buttontype": "LR2of2"
+        }
+      ],
       "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/setup.mnu",
       "sha256": "ed91cd1678470e3574003c9918288b9dc1ed196e18c8dae92c23a23dc2ff5438",
       "size": 1684,
       "website_or_credits_lines": []
     },
     "local_uppercase_backup": {
+      "buttons_in_file_order": [
+        {
+          "codelink": "SETUP_ONEPLAYERBUTTON",
+          "text": "kMenuSETUPOnePlaye001",
+          "nextmenu": "main",
+          "buttontype": "tab"
+        },
+        {
+          "codelink": "SETUP_TWOPLAYERBUTTON",
+          "text": "kMenuSETUPTwoPlaye001",
+          "nextmenu": "mainsplt",
+          "buttontype": "tab"
+        },
+        {
+          "codelink": "SETUP_CONNECTPLAYERS",
+          "text": "kMenuSETUPConnectP001",
+          "nextmenu": "connect",
+          "buttontype": "tab"
+        },
+        {
+          "codelink": "SETUP_LOADBUTTON",
+          "text": "kMenuSETUPLoad001",
+          "nextmenu": "loadsave",
+          "buttontype": "tab"
+        },
+        {
+          "codelink": "SETUP_NfsWebSite",
+          "text": "kMenuSETUPNFSWebsi001",
+          "buttontype": "LR1of2"
+        },
+        {
+          "codelink": "exitprogram escape",
+          "text": "kMenuSETUPExitGame001",
+          "buttontype": "LR2of2"
+        }
+      ],
       "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/SETUP.MNU",
       "sha256": "200c58df3d42baa35e1df94440437c9ade66a4ceda28a587be500a052c8b0cb3",
       "size": 2847,
@@ -67,6 +139,6 @@
   "limits": [
     "No runtime menu selection or callback execution.",
     "Uppercase local backup is not authenticated retail provenance.",
-    "Removal is supported; replacement Credits route and historical v1.0.0 introduction remain unresolved."
+    "Removal is supported; historical v1.0.0 Credits route and v1.4.0 Options introduction remain unresolved; final asset selects Options."
   ]
 }
