@@ -316,6 +316,10 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 [MP100-053](original-modern-car-download.md) is narrowed to removal of the authored control from the official car-menu asset. The complete car initializer and conditional binding to the retained website/download handler remain byte-identical; service removal, repair or runtime reachability is not inferred.
 
+## Scene-view offset interface and policy
+
+[The view-offset comparison](original-modern-view-offset.md) identifies a new Modern EDX mode, changed fallback offsets and a gated fixed-view update. Its complete function delta is confined to branch policy, while the later x87 transform and two helpers retain identical bytes; numeric/runtime equivalence remains unproven.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
