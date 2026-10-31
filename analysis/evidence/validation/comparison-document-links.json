@@ -17,6 +17,11 @@
       "relative_links": 3
     },
     {
+      "path": "analysis/original-modern-colour-control.md",
+      "sha256": "2732c6b1c11e6ddce7a92a1e6f4666b71cd12180967444592720242c2ba51789",
+      "relative_links": 3
+    },
+    {
       "path": "analysis/original-modern-command-line.md",
       "sha256": "89d38767a3020b19d509bfc815c92fe7a0e0e107c34fa936db6ff73eb3303412",
       "relative_links": 6
@@ -48,8 +53,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "edfd4f1f55b67f2d255477d969ada5f06e767b2a58e55238f03fadb013a8d725",
-      "relative_links": 79
+      "sha256": "cecbc4e0ac0b2d0373db92a72bac82063624832900ccf1f6646b806168fb7008",
+      "relative_links": 80
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -323,12 +328,12 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "1b57948677943d178e542b152e490adc8eb24122eadf3a56b1bad0e52aa3a567",
-      "relative_links": 94
+      "sha256": "c370fffce70a04bb947839deacd0b67a3862779254c43f126d3ce2b82d10c75c",
+      "relative_links": 95
     }
   ],
-  "file_count": 65,
-  "relative_link_count": 481,
+  "file_count": 66,
+  "relative_link_count": 486,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

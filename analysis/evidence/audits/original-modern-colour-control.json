@@ -1,0 +1,139 @@
+{
+  "kind": "static-colour-control-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0043ead0",
+          "end": "0043ebb8",
+          "bytes_sha256": "7f85165740f0cedefed2f0b072116878c4959e25f67d1b5543ef7236ea28a1c0",
+          "assembly": "analysis/captures/modern-differences/colour-control/original-0043ead0.asm",
+          "assembly_sha256": "c7b67d18042df5a149b1c0249b43416aa7549e07e0f697f6e03cf0a34eac734e"
+        },
+        {
+          "start": "0043e8e0",
+          "end": "0043eacb",
+          "bytes_sha256": "3e40cd7a53b29a7ad53a5424ddb17210c32404f22df2ca1e3bde24f2a5707894",
+          "assembly": "analysis/captures/modern-differences/colour-control/original-0043e8e0.asm",
+          "assembly_sha256": "423d56a64458b6e2c0a01c2afac92f47ab5f0cef4d05ebfba6c209bc028b0e73"
+        },
+        {
+          "start": "0043e7a0",
+          "end": "0043e8df",
+          "bytes_sha256": "6802bdcb405921e27b80c6dd16e07c568a46a032663535b2fbbae4346ee7f09c",
+          "assembly": "analysis/captures/modern-differences/colour-control/original-0043e7a0.asm",
+          "assembly_sha256": "7af2192389fb3f98521fbc69fe3ece0402eacc6be25653a296b37ebda4d26605"
+        },
+        {
+          "start": "0043dd90",
+          "end": "0043ddc1",
+          "bytes_sha256": "da6165624980e654ef1baac3bd29cf100b5964355f15285517d4b2495d81f937",
+          "assembly": "analysis/captures/modern-differences/colour-control/original-0043dd90.asm",
+          "assembly_sha256": "5e5236ed8eed0f0c7c11f40c6de6b6cdb894477a20a0cddc790437aa50a98c3c"
+        },
+        {
+          "start": "0043dc90",
+          "end": "0043dd50",
+          "bytes_sha256": "d2b8e351034ddb85e3125ac9ff37ecf819c74d00b8a8e640149d26dd895f35a3",
+          "assembly": "analysis/captures/modern-differences/colour-control/original-0043dc90.asm",
+          "assembly_sha256": "d96a33d0cf2a5d8e31abf7e788327c9e2834fd9d5528caba3355f3eeacb393b8"
+        },
+        {
+          "start": "0043ddd0",
+          "end": "0043de19",
+          "bytes_sha256": "6d449efe17f411209485ace228e63a12bc6ef7fea49b1751dee0fac5a276cd07",
+          "assembly": "analysis/captures/modern-differences/colour-control/original-0043ddd0.asm",
+          "assembly_sha256": "17a2fc56ebe55708ffb653bd2d5c12f83442d9a22a82f78c1ba9233b265e136f"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0043ead0",
+          "end": "0043eb85",
+          "bytes_sha256": "85522fe1b7d43faca207ff5e2df69f01a8c3a188b43b9a33bb6a05faa94fa43c",
+          "assembly": "analysis/captures/modern-differences/colour-control/official_modern-0043ead0.asm",
+          "assembly_sha256": "cf7f3a645cfb5461660085cbdfe69832fbae07f2ab53fc79c190cfe31d5e20c5"
+        },
+        {
+          "start": "0043e8e0",
+          "end": "0043eacb",
+          "bytes_sha256": "3e40cd7a53b29a7ad53a5424ddb17210c32404f22df2ca1e3bde24f2a5707894",
+          "assembly": "analysis/captures/modern-differences/colour-control/official_modern-0043e8e0.asm",
+          "assembly_sha256": "d9b24089560fc5b2180f92c31849724559fffd5d4ccacc2179882d259be650c8"
+        },
+        {
+          "start": "0043e7a0",
+          "end": "0043e8df",
+          "bytes_sha256": "6802bdcb405921e27b80c6dd16e07c568a46a032663535b2fbbae4346ee7f09c",
+          "assembly": "analysis/captures/modern-differences/colour-control/official_modern-0043e7a0.asm",
+          "assembly_sha256": "6dd8cf7df076c537bc001957ef319f6269723b7672c7fc35cca01aaebd68b52a"
+        },
+        {
+          "start": "0043dd90",
+          "end": "0043ddc1",
+          "bytes_sha256": "da6165624980e654ef1baac3bd29cf100b5964355f15285517d4b2495d81f937",
+          "assembly": "analysis/captures/modern-differences/colour-control/official_modern-0043dd90.asm",
+          "assembly_sha256": "4b3dc10b140bcb4328c782d478c44a2beaed0045e15e232bd9fb823cbaff2c56"
+        },
+        {
+          "start": "0043dc90",
+          "end": "0043dd50",
+          "bytes_sha256": "d2b8e351034ddb85e3125ac9ff37ecf819c74d00b8a8e640149d26dd895f35a3",
+          "assembly": "analysis/captures/modern-differences/colour-control/official_modern-0043dc90.asm",
+          "assembly_sha256": "390bd0763c1da7b32c49ece68c28b066c4d3b9575be664c2e2e8731eeead4cad"
+        },
+        {
+          "start": "0043ddd0",
+          "end": "0043de19",
+          "bytes_sha256": "6d449efe17f411209485ace228e63a12bc6ef7fea49b1751dee0fac5a276cd07",
+          "assembly": "analysis/captures/modern-differences/colour-control/official_modern-0043ddd0.asm",
+          "assembly_sha256": "46c77c39af082421d6c64fbb4722b0aa947b67badfc07748008fc94054b65ade"
+        }
+      ]
+    }
+  },
+  "identical_ranges": [
+    {
+      "start": "0043e8e0",
+      "end": "0043eacb",
+      "sha256": "3e40cd7a53b29a7ad53a5424ddb17210c32404f22df2ca1e3bde24f2a5707894"
+    },
+    {
+      "start": "0043e7a0",
+      "end": "0043e8df",
+      "sha256": "6802bdcb405921e27b80c6dd16e07c568a46a032663535b2fbbae4346ee7f09c"
+    },
+    {
+      "start": "0043dd90",
+      "end": "0043ddc1",
+      "sha256": "da6165624980e654ef1baac3bd29cf100b5964355f15285517d4b2495d81f937"
+    },
+    {
+      "start": "0043dc90",
+      "end": "0043dd50",
+      "sha256": "d2b8e351034ddb85e3125ac9ff37ecf819c74d00b8a8e640149d26dd895f35a3"
+    },
+    {
+      "start": "0043ddd0",
+      "end": "0043de19",
+      "sha256": "6d449efe17f411209485ace228e63a12bc6ef7fea49b1751dee0fac5a276cd07"
+    },
+    {
+      "start": "0043ead0",
+      "end": "0043eb1c",
+      "sha256": "99cb06d3a4e0936a900def322a52cba44885cd64dd56cf8b0719860c8c54a633"
+    }
+  ],
+  "limits": [
+    "No UI, audio or instruction execution.",
+    "No padding or universal sound-consistency conclusion from this handler.",
+    "Original full body extends beyond Modern function range; same-VA changed-byte count is not a whole-function semantic comparison."
+  ]
+}

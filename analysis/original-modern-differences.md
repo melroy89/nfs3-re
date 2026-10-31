@@ -342,10 +342,12 @@ The [official DX7 mode-admission follow-up](original-modern-dx7-mode-admission.m
 
 The [current comparison-document link audit](evidence/validation/comparison-document-links.json) records file hashes and checks relative file targets and plain ATX heading anchors. Its parser limitations are explicit; external URLs and rendered Markdown are not validated. Reproduce with `python3 analysis/scripts/audit_comparison_document_links.py`.
 
+The [colour-control dispatch comparison](original-modern-colour-control.md) retains complete counterpart bodies and separates removed release-action sound requests from the still-unverified padding claim.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **200 Claimed, 37 Static, 50 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **199 Claimed, 37 Static, 51 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -493,7 +495,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-010 | All menu sounds have same volume. | Partial |
 | MP140-011 | Consistent sounds for the mini dialogs when using the keyboard. | Claimed |
 | MP140-012 | Consistent sounds for the top dropdown lists when using the keyboard (the same as for general dropdown lists). | Claimed |
-| MP140-013 | A car color dropdown list uses consistent (with other controls) sounds and has a normal padding. | Claimed |
+| MP140-013 | A car color dropdown list uses consistent (with other controls) sounds and has a normal padding. | Partial |
 | MP140-014 | List of replays works correctly using keyboard (fixed an invalid positioning of the mouse cursor). Also it uses consistent sounds (like others). | Claimed |
 | MP140-015 | Fixed errors of element switching order (when keyboard is used). | Claimed |
 | MP140-016 | 3D view of a car interior can be stopped using Space key. Arrow keys change rotating speed more smoothly now. | Claimed |
