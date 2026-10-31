@@ -1,0 +1,112 @@
+{
+  "kind": "screenshot-gdiplus-lifecycle",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004e2eb0",
+          "end_exclusive": "004e2fac",
+          "sha256": "8bc3354b6c2b87550617c6482beda17fab14d706ec30b131fb0f4c7d40e9464a",
+          "assembly": "analysis/captures/modern-differences/screenshot-gdiplus/original-004e2eb0.asm"
+        },
+        {
+          "start": "004e2fac",
+          "end_exclusive": "004e2fec",
+          "sha256": "1a5563872a0c53d973bfe3926cef6a7d01ed31a1a1157de5ab3e6c23e6284f7a",
+          "assembly": "analysis/captures/modern-differences/screenshot-gdiplus/original-004e2fac.asm"
+        }
+      ],
+      "pairing": "Modern implementation locations; original same-address bytes are not claimed counterparts."
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004e2eb0",
+          "end_exclusive": "004e2fac",
+          "sha256": "a877b32eea79f877bb5370d4c95f241a52cd637be71cd5bbabaf3de207a36bfe",
+          "assembly": "analysis/captures/modern-differences/screenshot-gdiplus/official_modern-004e2eb0.asm"
+        },
+        {
+          "start": "004e2fac",
+          "end_exclusive": "004e2fec",
+          "sha256": "e30b577ba9a2503c252959e9420e3c82abab9170e61dede9756ed40a8c8d77b2",
+          "assembly": "analysis/captures/modern-differences/screenshot-gdiplus/official_modern-004e2fac.asm"
+        }
+      ],
+      "pairing": "Modern implementation locations; original same-address bytes are not claimed counterparts.",
+      "exports": [
+        {
+          "name": "GdiplusStartup",
+          "name_pointer": "0054d688",
+          "function_slot": "0054d754",
+          "initial_value": 0
+        },
+        {
+          "name": "GdipGetImageEncodersSize",
+          "name_pointer": "0054d698",
+          "function_slot": "0054d75c",
+          "initial_value": 0
+        },
+        {
+          "name": "GdipGetImageEncoders",
+          "name_pointer": "0054d6b4",
+          "function_slot": "0054d764",
+          "initial_value": 0
+        },
+        {
+          "name": "GdipCreateBitmapFromGdiDib",
+          "name_pointer": "0054d6cc",
+          "function_slot": "0054d76c",
+          "initial_value": 0
+        },
+        {
+          "name": "GdipSaveImageToFile",
+          "name_pointer": "0054d6e8",
+          "function_slot": "0054d774",
+          "initial_value": 0
+        },
+        {
+          "name": "GdipDisposeImage",
+          "name_pointer": "0054d6fc",
+          "function_slot": "0054d77c",
+          "initial_value": 0
+        },
+        {
+          "name": "GdiplusShutdown",
+          "name_pointer": "0054d710",
+          "function_slot": "0054d784",
+          "initial_value": 0
+        }
+      ],
+      "library": "GDIPLUS.DLL",
+      "startup_input_dwords": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "mime_names": {
+        "0054d720": "image/png",
+        "0054d734": "image/jpeg"
+      },
+      "initial_encoder_guids": {
+        "0054d7a0": "557cf406-1a04-11d3-9a73-0000f81ef32e",
+        "0054d7b0": "557cf401-1a04-11d3-9a73-0000f81ef32e"
+      },
+      "imports": {
+        "005344dc": "FreeLibrary",
+        "00534558": "GetProcAddress",
+        "0053458c": "LoadLibraryA"
+      }
+    }
+  },
+  "limits": [
+    "No DLL loading, GDI+ calls, screenshots or target instruction execution.",
+    "Complete Modern initializer/shutdown bodies; original screenshot counterpart is documented separately.",
+    "Encoder data validity, concurrency and actual save outcomes untested."
+  ]
+}

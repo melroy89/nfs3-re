@@ -248,12 +248,16 @@
       "sha256": "d4a1dc182bfbef66928140cf96a31cbcb51834dfe5371fb773f489d47bafcef4"
     },
     {
+      "path": "analysis/original-modern-screenshot-gdiplus.md",
+      "sha256": "3315ade34100d470c590c42064003524784572f01e58482d6fa67bb0085dfcfa"
+    },
+    {
       "path": "analysis/original-modern-screenshot-pixels.md",
       "sha256": "8a67f48144fe8bf9d628b3a1016668e0ed25bd1824e14250bd6ff5b8e523eb7e"
     },
     {
       "path": "analysis/original-modern-screenshots.md",
-      "sha256": "f8f2d0a11f5930d9c28b7055f54e1de869dfacb5a5aca563112dfb52cd8877b6"
+      "sha256": "37ca264cef21bb7164ee3a3430ab3af08e285f0ebecaa23c7bda2d1ffd85809b"
     },
     {
       "path": "analysis/original-modern-setup-website.md",
@@ -338,8 +342,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 257,
-    "without_address_mentions": 104
+    "with_address_mentions": 259,
+    "without_address_mentions": 102
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -9787,7 +9791,15 @@
       "changed_bytes": 242,
       "original_sha256": "8bc3354b6c2b87550617c6482beda17fab14d706ec30b131fb0f4c7d40e9464a",
       "modern_sha256": "a877b32eea79f877bb5370d4c95f241a52cd637be71cd5bbabaf3de207a36bfe",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-screenshot-gdiplus.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004e2eb0"
+          ]
+        }
+      ]
     },
     {
       "entry": "004e2fac",
@@ -9805,7 +9817,15 @@
       "changed_bytes": 62,
       "original_sha256": "1a5563872a0c53d973bfe3926cef6a7d01ed31a1a1157de5ab3e6c23e6284f7a",
       "modern_sha256": "e30b577ba9a2503c252959e9420e3c82abab9170e61dede9756ed40a8c8d77b2",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-screenshot-gdiplus.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004e2fac"
+          ]
+        }
+      ]
     },
     {
       "entry": "004e3000",
