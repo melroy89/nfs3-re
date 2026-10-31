@@ -11,10 +11,11 @@ def main():
     capture = ROOT/'analysis/captures/modern-differences/options-postgame'
     capture.mkdir(parents=True, exist_ok=True)
     all_data = []
-    spans = ((0x44a960, 0x44a9db), (0x44b24e, 0x44b271), (0x449240, 0x4492e9))
+    images = []
+    spans = ((0x44a960, 0x44a9db), (0x44b24e, 0x44b271), (0x449240, 0x4492e9), (0x44b271, 0x44b28a))
     for label, (relative, expected, _) in SPECS.items():
         raw = (ROOT/relative).read_bytes(); assert hashlib.sha256(raw).hexdigest() == expected
-        pe = pefile.PE(data=raw); rows = []; bodies = []
+        pe = pefile.PE(data=raw); images.append(pe); rows = []; bodies = []
         for start, end in spans:
             body = pe.get_data(start-0x400000, end-start); bodies.append(body)
             path = capture/f'{label}-{start:08x}.asm'
@@ -28,6 +29,23 @@ def main():
         all_data.append(bodies+[template, fields])
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows, 'button_template_00556e40_hex': template.hex(), 'field_rows_00557c60_00557c70_hex': fields.hex(), 'context_name_00539048': pe.get_data(0x139048, 32).split(b'\0')[0].decode()}
     assert all_data[0] == all_data[1]
+    result['setup_initializer_comparison'] = {}
+    setup_bodies = []
+    for (label, (relative, _, _)), pe in zip(SPECS.items(), images):
+        end = 0x4530bb if label == 'original' else 0x4530c0
+        body = pe.get_data(0x52f80, end-0x452f80); setup_bodies.append(body)
+        path = capture/f'{label}-00452f80.asm'
+        path.write_bytes(subprocess.check_output(['objdump', '-d', '-Mintel', '--start-address=0x452f80', f'--stop-address={end}', relative], cwd=ROOT))
+        result['setup_initializer_comparison'][label] = {'start': '00452f80', 'end': f'{end:08x}', 'bytes_sha256': hashlib.sha256(body).hexdigest(), 'assembly': str(path.relative_to(ROOT)), 'assembly_sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'setup_row_00555f60_hex': pe.get_data(0x155f60, 24).hex(), 'options_row_00555c48_hex': pe.get_data(0x155c48, 24).hex()}
+        opt_end = 0x442b04 if label == 'original' else 0x442aee
+        opt_path = capture/f'{label}-00442aa0.asm'
+        opt_path.write_bytes(subprocess.check_output(['objdump', '-d', '-Mintel', '--start-address=0x442aa0', f'--stop-address={opt_end}', relative], cwd=ROOT))
+        result['setup_initializer_comparison'][label]['options_initializer'] = {'start': '00442aa0', 'end': f'{opt_end:08x}', 'bytes_sha256': hashlib.sha256(pe.get_data(0x42aa0, opt_end-0x442aa0)).hexdigest(), 'assembly': str(opt_path.relative_to(ROOT)), 'assembly_sha256': hashlib.sha256(opt_path.read_bytes()).hexdigest()}
+    offset = 0x4530b4-0x452f80
+    assert setup_bodies[0][:offset] == setup_bodies[1][:offset]
+    assert setup_bodies[0][offset:] == setup_bodies[1][offset+5:]
+    assert setup_bodies[1][offset:offset+5] == bytes.fromhex('a36c277a00')
+    result['setup_initializer_comparison']['inserted_modern_store'] = {'address': '004530b4', 'hex': 'a36c277a00', 'effect': 'store EAX (zero from preceding XOR) to 007a276c'}
     archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest() == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
     for label, relative in (('official', 'analysis/captures/modern-differences/upstream/package/fedata/menus/options.mnu'), ('local_uppercase_backup', 'nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/OPTIONS.MNU')):

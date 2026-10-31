@@ -100,7 +100,7 @@ This supplies concrete producers for the helper's branch selector. It is mutable
 
 The observed direct writers use only zero/one, but no universal boolean invariant is claimed: bulk initialization, indirect aliases, external state and the complete menu call graph have not been enumerated. The current function inventory resolves the connect-players initializer; other enclosing procedures are not assigned speculative menu names merely from adjacent token strings. Exact meanings of the two lifecycle states and why they select `2btt` versus normal `racenow` policy remain pending.
 
-For next comparison work, trace the two clear-path callers and their menu resource definitions before naming this global or attributing the extracted policy to a particular release. The address/value producer gap is closed for the five captured direct stores; runtime state admission is separate.
+The [setup-to-Options follow-up](original-modern-options-postgame.md#first-screen-options-policy-a-new-setup-state-producer) now identifies the setup clear path through its registered complete initializer and authored Options route. The Connect clear path and complete lifecycle still need qualification before assigning a universal semantic name or release date. The address/value producer gap is closed for the five captured direct stores; runtime state admission is separate.
 
 ## Hard Keys initializer redirection and original duplication
 

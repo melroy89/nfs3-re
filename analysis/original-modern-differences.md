@@ -310,7 +310,7 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 ## Options controls in postgame context
 
-[The postgame Options comparison](original-modern-options-postgame.md) connects removal of three asset `mainonly` fields to unchanged template defaults, parser destinations, context producer and suppression consumer. This partially supports MP140-019; actual nested-menu admission, later flag writes and runtime visibility remain unresolved.
+[The postgame Options comparison](original-modern-options-postgame.md) connects removal of three asset `mainonly` fields to unchanged template defaults, parser destinations, context producer and suppression consumer. This partially supports MP140-019. The first-screen follow-up also verifies the five-byte setup-state store inserted by Modern and connects it to conditional Options Race suppression (MP140-020). Actual nested-menu admission, later flag writes and runtime visibility remain unresolved.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
@@ -468,7 +468,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-017 | Options button is placed near Exit button on the first menu screen (Game Setup). | Partial |
 | MP140-018 | “Connect Players”, “Connect IPX” and “View Car Interior” menu screens also have standard set of buttons (Exit and Options). | Partial |
 | MP140-019 | This set of buttons don't disappear in the Options when they are opened directy from the race results screen. | Partial |
-| MP140-020 | This set of buttons is smart: when user opens Options from the first screen without choosing game mode, the Race button are hidden. | Claimed |
+| MP140-020 | This set of buttons is smart: when user opens Options from the first screen without choosing game mode, the Race button are hidden. | Partial |
 | MP140-021 | Drop down list of cars displays the class of the current car not only for the 1st player, but also for the 2nd player. | Claimed |
 | MP140-022 | You can use Left and Right keys to switch slides in the car slideshow and in the credits (inclusive 3D panoramas of the developers). | Partial |
 | MP140-023 | Noticeable “More...” button in the credits (opens the 3D panoramas of the developers). | Partial |

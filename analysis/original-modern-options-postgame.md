@@ -45,3 +45,29 @@ Modern Options initializer `00442aa0` calls shared policy helper `00437614`, rep
 For C reconstruction, preserve the outer-context flag, zero template defaults, WORD field layout, creation-callback ordering and OR-only suppression semantics. A port that uses the current nested menu name alone to decide postgame state, or restores `mainonly=1` while adopting Modern assets, can change control behaviour even with an otherwise faithful button renderer.
 
 Next: trace postgame-to-Options admission/return paths and all later flag writers, compare actual selected assets in a suitable runtime session, and obtain intermediate packages if historical attribution is required. Do not silently turn this bounded mechanism into whole-postgame UI equivalence. Executables, saved Ghidra state, raw exports and maintained C remain preserved.
+
+## First-screen Options policy: a new setup-state producer
+
+**MP140-020 now has partial static support from the setup-to-Options chain**, in addition to the already mapped policy helper. The expanded audit captures the complete setup initializer in both images:
+
+| Original | Modern |
+|---|---|
+| `00452f80..004530bb` | `00452f80..004530c0` |
+
+The Modern body is exactly the original body with **five bytes inserted at `004530b4`**, `a3 6c 27 7a 00` (`MOV [007a276c],EAX`). The preceding `XOR EAX,EAX` is retained, so this new store clears the global. The audit asserts byte-identical prefixes and byte-identical shifted epilogues. This is a complete counterpart comparison, not only an isolated store witness.
+
+Static registration row `00555f60` identifies this as `setup`'s initializer. The official [setup asset](original-modern-setup-website.md) supplies `nextmenu=options`, and the [generic transition trace](original-modern-setup-website.md#generic-options-transition-retained-code-changed-asset-route) resolves such a target to the loaded Options descriptor under its stated admission conditions. The unchanged Options row `00555c48` supplies init callback `00442aa0`.
+
+Modern Options initializer now calls **`00437614`** at `00442ae3`, replacing the original local Credits-only gate. Its earlier two local entry checks remain. The [complete policy helper](original-modern-race-now.md#modern-helpers-exact-branches) proves that when `007a276c == 0` and an entry named `2btt` exists, it:
+
+- ORs `1001h` into found `racenow` and `3btt` entry flags.
+- Clears those same bits on the found `2btt` entry.
+- Returns without the nonzero-state Credits/postgame Race branch.
+
+The official Options asset has both `3btt` and `2btt` image entries alongside `racenow`, so the authored target set exists. The corresponding flag consumers suppress the inspected draw callback and exclude ordinary navigation candidates. These are entry effects, not proof of the final pixels or complete input rejection.
+
+The helper also has an early return when its non-null context is paired with `00559234 != 0`. The outer frontend loop's retained prefix `0044b271..0044b28a` explicitly clears this latter global during ordinary initialization; later writes and pause/modal admission remain separate. Similarly, the setup initializer's clear of `007a276c` establishes a state producer, not an immutable invariant through arbitrary nested menu events. Known mode-menu writers can set the state to1; the [producer census](original-modern-race-now.md#branch-selector-producer-witnesses) remains relevant.
+
+This supports the release claim for an ordinary sequence that initializes setup, takes its authored Options transition, and reaches the policy without intervening state overrides. It does not establish every user-visible first-screen route or the v1.4.0 introduction date. Original does not have this inserted state store or call the shared Modern policy from Options; its final visible result still depends on original assets, generic flags and rendering.
+
+For C reconstruction, retain the new setup write as well as the policy consumer. Translating only the shared helper while leaving lifecycle producers at their original behaviour would miss the mechanism. Keep this mutable state separate from the postgame context flag `00662968` and pause/context flag `00559234`; they control different branches.
