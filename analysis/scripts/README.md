@@ -253,3 +253,7 @@ Run `python3 analysis/scripts/audit_music_selection_difference.py` (Python pefil
 ## Original versus Modern command line
 
 Run `python3 analysis/scripts/audit_command_line_difference.py` (Python pefile, GNU objdump). It captures both complete parser spans, all 33 switch slots, five help aliases and Modern ASCII-copy helpers, and asserts the final table's two nonempty entries. Output: `analysis/evidence/audits/original-modern-command-line.json`; raw captures remain ignored. No argument/target execution. See [command-line findings](../original-modern-command-line.md).
+
+## Original versus Modern ghost restoration
+
+Run `python3 analysis/scripts/audit_ghost_loading_difference.py` (Python pefile, GNU objdump). It captures paired outer wrappers/save-header helpers and asserts identical ghost-reader/model-resolver bodies. Output: `analysis/evidence/audits/original-modern-ghost-loading.json`; raw captures remain ignored. No ghost/game/target execution. See [ghost findings](../original-modern-ghost-loading.md).

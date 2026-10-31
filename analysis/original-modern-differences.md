@@ -158,7 +158,11 @@ The [music comparison](original-modern-music-selection.md) traces menu subset cy
 
 The [command-line comparison](original-modern-command-line.md) traces 33 retained slots reduced to two nonempty names, universal driver-prefix handling, INI bypass linkage and empty-row help suppression. It also records ASCII-copy and machine-shift contracts. Full legacy option semantics, argument edge cases and runtime acceptance remain pending.
 
-## 21. Prioritized semantic work remaining
+## 21. Ghost loading and preserved current settings
+
+The [ghost comparison](original-modern-ghost-loading.md) traces the changed snapshot/save order, refreshed header restoration and three additional identity-field copies. The reader/model-resolver bodies are byte-identical. These support settings/name preservation mechanisms; full file/version validation and trajectory compatibility remain separate.
+
+## 22. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

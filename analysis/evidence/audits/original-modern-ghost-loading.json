@@ -1,0 +1,104 @@
+{
+  "kind": "static-ghost-wrapper-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00477b50",
+          "end": "00477bf8",
+          "bytes_sha256": "e6d77879380aba96dbc3e85975c8fc497088d7f93e132dd9ffbbe6cd92bb9735",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/original-00477b50.asm",
+          "assembly_sha256": "a02e184f2441aa22820208ffbdcb20edd75f96e72ca63ebeb72509050c1445a0"
+        },
+        {
+          "start": "00478100",
+          "end": "004781a9",
+          "bytes_sha256": "52a837ae9800640448d0d7457ce2818e97134fd1ed6ea09e29489e53115c7f92",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/original-00478100.asm",
+          "assembly_sha256": "a413f50cb560829678a9a67a8b8bcfb7eaf1bbb600960cecb11a62e66d8dbe02"
+        },
+        {
+          "start": "00472820",
+          "end": "004728d3",
+          "bytes_sha256": "d8caab668726c13df6e906a2153a2c49cf17cfcb9b36e44e993e5eeb931fe835",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/original-00472820.asm",
+          "assembly_sha256": "c42c3626e1a37659d9b395aca08df924e46554afde5088cc012b5bc192088a39"
+        },
+        {
+          "start": "004723f0",
+          "end": "00472402",
+          "bytes_sha256": "da1d646584e1dc31779536d80caee0d886fbe233f4231d491fe75bb6fc0693ea",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/original-004723f0.asm",
+          "assembly_sha256": "1fd2433adb9b39aa9c337c58e3bd129aafc3e2e1495b9ab63c7606203c8387f1"
+        },
+        {
+          "start": "004466a0",
+          "end": "00446734",
+          "bytes_sha256": "ab7f176402bbfb06214fc4291b5f75808a47659f1cbf41e2889da6b2856e8429",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/original-004466a0.asm",
+          "assembly_sha256": "1b950ee3417891a84bdb2199bde8ef78b83cb7033601808913469d4231de8570"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00477b50",
+          "end": "00477bf8",
+          "bytes_sha256": "e6d77879380aba96dbc3e85975c8fc497088d7f93e132dd9ffbbe6cd92bb9735",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/official_modern-00477b50.asm",
+          "assembly_sha256": "47b9be5cf38899db4d84a25d21f6f7e8ccc9c6974ffd099309322598b186063a"
+        },
+        {
+          "start": "00478100",
+          "end": "004781a9",
+          "bytes_sha256": "52a837ae9800640448d0d7457ce2818e97134fd1ed6ea09e29489e53115c7f92",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/official_modern-00478100.asm",
+          "assembly_sha256": "c84e4999ca216adb5ab025986c193b8abebc56498d6ef9f8b37a4f8c8f71c949"
+        },
+        {
+          "start": "00472820",
+          "end": "004728d3",
+          "bytes_sha256": "611cb7076935a767bea148ee9f7bcc04b642464d68af5cec43194c4bcf1c9024",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/official_modern-00472820.asm",
+          "assembly_sha256": "ef78f3f73b8e416ceb4960bf4c5c51932d999d76382eba6c5d1d2c92621d96ff"
+        },
+        {
+          "start": "004723f0",
+          "end": "00472402",
+          "bytes_sha256": "8eed85fc7ad86a0526d5352998eb2bd118bcdac140cdd08f82d8070ab3f8b8b9",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/official_modern-004723f0.asm",
+          "assembly_sha256": "5d53ca9b360b981ffe81419b39d7c432f0fa8c68e291d5742caf7fc12feff95e"
+        },
+        {
+          "start": "004466a0",
+          "end": "0044673d",
+          "bytes_sha256": "9b6bb3dc97c9edf2fb7a0b34d43a2c69a47714d471fad15ddac894ad8b99083b",
+          "assembly": "analysis/captures/modern-differences/ghost-loading/official_modern-004466a0.asm",
+          "assembly_sha256": "c155bdfd0b2a30b270c4ca6e4ebb93d986432efc4f927c9b52cb998d617865de"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No ghost, game or instruction execution.",
+    "Restored bytes do not prove cross-version format or trajectory compatibility."
+  ],
+  "identical_reader_ranges": [
+    {
+      "start": "00477b50",
+      "end": "00477bf8",
+      "sha256": "e6d77879380aba96dbc3e85975c8fc497088d7f93e132dd9ffbbe6cd92bb9735"
+    },
+    {
+      "start": "00478100",
+      "end": "004781a9",
+      "sha256": "52a837ae9800640448d0d7457ce2818e97134fd1ed6ea09e29489e53115c7f92"
+    }
+  ]
+}
