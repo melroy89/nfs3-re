@@ -334,6 +334,8 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 Movie sound parameter initialization is compared in [movie playback level](original-modern-movie-volume.md): the original default127 is replaced with the menu music level masked to seven bits, with forwarding and runtime limits recorded.
 
+The [idle movie controller comparison](original-modern-idle-movie.md) traces NoMovies through the availability mask, application activation through timer reset, and the changed movie-selection order and table type.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -499,8 +501,8 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-026 | Fixed unaligned paddings of the all drop down lists. | Claimed |
 | MP140-027 | “Reset To Defaults” button in the Controllers menu was shifted one position down. | Claimed |
 | MP140-028 | “Predefined Keys”, “View Car Interior”, “Load”, and “IPX connection” are aligned well. | Claimed |
-| MP140-029 | NoMovie ini setting also disables demo movies on menu idle. | Claimed |
-| MP140-030 | Demo movies aren't starting when the game is minimized in the menu mode (useful for the nGlide driver). | Claimed |
+| MP140-029 | NoMovie ini setting also disables demo movies on menu idle. | Partial |
+| MP140-030 | Demo movies aren't starting when the game is minimized in the menu mode (useful for the nGlide driver). | Partial |
 | MP140-031 | If demo video files are removed, the game doesn't try to play them. | Claimed |
 | MP140-032 | Length of a track in the track info is displayed in units, which is choosed in the HUD of the 1st player. | Claimed |
 | MP140-033 | “Wide Screen” setting was renamed to “2:1 Field of View”, just to avoid ambiguity. | Claimed |

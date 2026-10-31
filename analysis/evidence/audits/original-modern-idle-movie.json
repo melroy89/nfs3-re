@@ -1,0 +1,135 @@
+{
+  "kind": "static-idle-movie-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00496200",
+          "end": "004962fd",
+          "bytes_sha256": "759a77dc10a9a67ad5609af8c2f43fc6cee338bae5d8faa59b3aaa01b2df4826",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-00496200.asm",
+          "assembly_sha256": "dac7182fb1c31acd126b276a8d994109dbcabd8e635d14e68551960ecfc28b60"
+        },
+        {
+          "start": "004961e0",
+          "end": "004961ef",
+          "bytes_sha256": "4f22df2a0e91dfc56c36f3d1c77d7f653ccfb44b7084df72dd7595db8c935af4",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-004961e0.asm",
+          "assembly_sha256": "fc7491465c7cb05369d0b0deedc5a654b5347b071fb94a13ad908473ff2fed42"
+        },
+        {
+          "start": "004438b0",
+          "end": "004438ba",
+          "bytes_sha256": "5301a1ab38114c93259d6998656bbf4080065c6533c0b86621f99448738680f7",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-004438b0.asm",
+          "assembly_sha256": "6d45349ebe4c43aa8f162fca4b021789441089584679a95ceb8e7b4ae77b3903"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00496200",
+          "end": "004962c2",
+          "bytes_sha256": "baf8ac5f93293eaafe9d9df3cff20647b4b0378a4dec518a325c6fefde751f11",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-00496200.asm",
+          "assembly_sha256": "035316d9d3e94ca2dc1985bf17a3c7fae43540f5f83516deefcccbe3643f272f"
+        },
+        {
+          "start": "004a2f90",
+          "end": "004a2ffc",
+          "bytes_sha256": "1cb7098fbb7a5b5015f9dfce28bc542476037fbb3ca0ebabf5d640719e0a94e1",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004a2f90.asm",
+          "assembly_sha256": "32f7a3bb23af490d7820f2710caa4e0c857735830e6710ab5db775b1ab187055"
+        },
+        {
+          "start": "004a3e66",
+          "end": "004a3e6b",
+          "bytes_sha256": "96caa7091da8382622587ddad6c255eea3466b73264d325c6e0f75cd24e4119f",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004a3e66.asm",
+          "assembly_sha256": "43b572f3b986bd3437629e6e78282c04d9c8ae6e8ec3493ee87a265b7ea14b71"
+        },
+        {
+          "start": "004f915e",
+          "end": "004f9184",
+          "bytes_sha256": "6fc9264c3f9efb5aac5af60ac9bfb894fe5b1e3fcc9483793f022ae0778249ab",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004f915e.asm",
+          "assembly_sha256": "facc0f5414b07ac8a8d1bac8ac6f66269235b765ad9a864e94bb2fb14092b385"
+        },
+        {
+          "start": "004f91ec",
+          "end": "004f9204",
+          "bytes_sha256": "978abe9b5ba21529c75be7bdb6c9a1ddd1a91997e24223e62de2f385974059d5",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004f91ec.asm",
+          "assembly_sha256": "419872e5a6c3cd4344feeaa4c4b475782e02c7e2fd6983e7c761946dfeed2995"
+        },
+        {
+          "start": "004961e0",
+          "end": "004961ef",
+          "bytes_sha256": "4f22df2a0e91dfc56c36f3d1c77d7f653ccfb44b7084df72dd7595db8c935af4",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004961e0.asm",
+          "assembly_sha256": "a864f93fc8445adcc89919a993c437f2627fb466e3871c2b102395150c1cb11d"
+        },
+        {
+          "start": "004438b0",
+          "end": "004438ba",
+          "bytes_sha256": "5301a1ab38114c93259d6998656bbf4080065c6533c0b86621f99448738680f7",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004438b0.asm",
+          "assembly_sha256": "6ec87cc5f418d8df8b5c855e6b39fb4a5c93d40d16aea9bbbe1b453cb16eeb5b"
+        }
+      ],
+      "movie_name_table_004961f0": [
+        {
+          "index": 0,
+          "pointer": "0053beac",
+          "name": "titleav.mad"
+        },
+        {
+          "index": 1,
+          "pointer": "0053beb8",
+          "name": "demoav1.mad"
+        },
+        {
+          "index": 2,
+          "pointer": "0053bec4",
+          "name": "demoav2.mad"
+        },
+        {
+          "index": 3,
+          "pointer": "0053bed0",
+          "name": "demoav3.mad"
+        }
+      ],
+      "file_attribute_import": [
+        {
+          "dll": "KERNEL32.dll",
+          "name": "GetFileAttributesA",
+          "iat": "00534520"
+        }
+      ]
+    }
+  },
+  "identical_ranges": [
+    {
+      "start": "004961e0",
+      "end": "004961ef",
+      "sha256": "4f22df2a0e91dfc56c36f3d1c77d7f653ccfb44b7084df72dd7595db8c935af4"
+    },
+    {
+      "start": "004438b0",
+      "end": "004438ba",
+      "sha256": "5301a1ab38114c93259d6998656bbf4080065c6533c0b86621f99448738680f7"
+    }
+  ],
+  "limits": [
+    "No movies, window interaction or target execution.",
+    "No historical intermediate release inspected.",
+    "Window activation producer reused from the linked window-handling investigation.",
+    "No universal timer-unit or invalid selector-state contract inferred."
+  ]
+}
