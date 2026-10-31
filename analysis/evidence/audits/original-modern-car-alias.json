@@ -1,0 +1,69 @@
+{
+  "kind": "static-car-list-alias-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00463b74",
+          "end": "00463bc5",
+          "sha256": "e64d722a3d90dc3be6850adb57775d186ce03f4c3304be2101653ed773066548",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00463b74.asm",
+          "assembly_sha256": "d9e9a95f1a725e2faf2c61462b4ffb972a50db0529f8c4408dbcb24eb3b6fd18"
+        },
+        {
+          "start": "004e9ec0",
+          "end": "004e9efb",
+          "sha256": "8db571e9631ace3c893f0962871bf70a2ec21dbd15a4e69f0b575ab01e8ff7e3",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004e9ec0.asm",
+          "assembly_sha256": "94795515d1fe29e6b277949f262905bfe16b3f03369dc3c4c9cf24dcf98f1c84"
+        }
+      ],
+      "strings": {
+        "0053aa34": "cars",
+        "00537e80": "cars",
+        "00537c34": "car2",
+        "00537e88": "carShowcase"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00463b74",
+          "end": "00463bc5",
+          "sha256": "19d4a32f30ff02193e9897b40626a5c0ea8cfdac7cc6281302910aae3f6059aa",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00463b74.asm",
+          "assembly_sha256": "7fb0846a56b49f46770c7bb0a465d5557644f8e97f9c3b3c949e1c4e6be1f551"
+        },
+        {
+          "start": "004e9ec0",
+          "end": "004e9efb",
+          "sha256": "8db571e9631ace3c893f0962871bf70a2ec21dbd15a4e69f0b575ab01e8ff7e3",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004e9ec0.asm",
+          "assembly_sha256": "528d23c233c382213ab7e32b21aeee45d3e6c84372d5b2007d921731903cfdc5"
+        },
+        {
+          "start": "004728f4",
+          "end": "00472923",
+          "sha256": "68ca1495a293fb406cc95a93d37f33e935499502ca84d749339e1b75e8ff643d",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004728f4.asm",
+          "assembly_sha256": "56e4fd3c82e334457b72d876ba47c6f5f8d0624c113c90b27c64063623e13d04"
+        }
+      ],
+      "strings": {
+        "0053aa34": "cars",
+        "00537e80": "cars",
+        "00537c34": "car2",
+        "00537e88": "carShowcase"
+      }
+    }
+  },
+  "limits": [
+    "Static alias and caller policy only; full renderer and asset bindings not audited.",
+    "No UI display or language-dependent output observed."
+  ]
+}

@@ -362,6 +362,8 @@ See also [input-worker lifecycle](original-modern-input-worker.md): relocated ca
 
 See also [window-key translation](original-modern-window-key.md): table-driven mappings, Num Lock gate and keypad-separator handling.
 
+See also [car-list rendering aliases](original-modern-car-alias.md): expanded name matching at two list-renderer call sites.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

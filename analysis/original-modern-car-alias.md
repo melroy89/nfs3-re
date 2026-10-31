@@ -1,0 +1,19 @@
+# Original versus Modern: car-list aliases in rendering
+
+## Evidence boundary
+
+Modern helper **`004728f4..00472923`** and paired caller span **`00463b74..00463bc5`**. Original code at the helper’s new address is unrelated; correspondence is established through the two retargeted calls, not equal addresses. Reproduce with `python3 analysis/scripts/audit_car_alias_difference.py`; the [manifest](evidence/audits/original-modern-car-alias.json) binds both executables, strings, call targets and comparator bodies. See the [baseline](original-modern-differences.md). Static only; no game/UI or Ghidra writes.
+
+## Matching expands from one name to three
+
+Original calls comparator **`004e9ec0`** at **`00463b7c`** and **`00463baf`**, with the widget/list name from `[ESI+0x64]` in EAX and literal **`cars`** from `0053aa34` in EDX. Modern retargets both calls to the new helper while retaining the surrounding branches.
+
+The helper saves the input pointer in EBX and compares it, in order, with **`cars`** (`00537e80`), **`car2`** (`00537c34`) and **`carShowcase`** (`00537e88`). It returns as soon as a comparison equals0; otherwise it returns the third comparator result. This is a zero-on-match contract, not a normalized Boolean or a stable ordering among all three names. Incoming EDX is ignored by the wrapper. It preserves EBX and uses plain RET with no stack arguments.
+
+The complete comparator **`004e9ec0..004e9efb`** is byte-identical. It folds ASCII `A..Z` to lowercase on both sides, compares until mismatch or NUL, and returns the unsigned-byte difference in EAX. This is ASCII case-insensitive equality, not locale-aware Unicode matching. It modifies EDX; the alias wrapper’s callers must retain their actual register contracts rather than use an invented standard C ABI.
+
+## Two affected consumer decisions
+
+At the first call, return0 branches directly to **`00463ba2`**, admitting the shared car-list rendering path. Nonmatches continue through another name test and an item-count comparison. At the second call, the caller loads a count into ECX; nonmatch subtracts4, whereas any accepted alias retains that count before the shared call to `00439730` with EBX=4. The helper and comparator leave ECX untouched in the inspected local bodies.
+
+Modern therefore extends the existing `cars` treatment to two additional names in this renderer. Full count meaning, asset bindings, output text/geometry, surrounding renderer changes and a unique release-note attribution remain unresolved. The finding does not establish a selection-model or gameplay change merely because the aliases contain car names.
