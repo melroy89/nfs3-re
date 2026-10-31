@@ -44,12 +44,27 @@ def main():
             rows.append({'address':f'{address:08x}','words':[f'{word:08x}' for word in words],'sha256':hashlib.sha256(data).hexdigest()})
         spans=[]
         capture=ROOT/'analysis/captures/modern-differences/menu-visible-counts';capture.mkdir(parents=True,exist_ok=True)
-        for start,end in [(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x464024,0x464052)]:
+        for start,end in [(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052)]:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             spans.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT))})
         assert struct.unpack('<I',pe.get_data(0x4921c,4))[0]==0x4492aa
+        # Pin the overlapping-load witness; this is static byte inspection,
+        # not execution of the original instructions.
+        assert pe.get_data(0x464032-0x400000,3)==bytes.fromhex('8945fc')
+        assert pe.get_data(0x464038-0x400000,6)==bytes.fromhex('8b55fac1fa10')
         result.setdefault('field_writer_spans',{})[label]=spans
         result['binary_field_descriptors'][label]={'path':relative,'sha256':expected,'rows':rows}
+    # A little-endian DWORD at -6 overlaps the upper two bytes of local -8
+    # and the lower two bytes of local -4. SAR16 selects the latter.
+    witnesses=[]
+    for lookup,count in [(0x12345678,3),(0x87654321,9),(0,16),(0x12345678,32768),(0xffffffff,65535)]:
+        stack=struct.pack('<II',lookup,count)
+        loaded=struct.unpack('<i',stack[2:6])[0]
+        extracted=loaded>>16
+        expected=struct.unpack('<h',struct.pack('<H',count & 0xffff))[0]
+        assert extracted==expected
+        witnesses.append({'lookup_value':lookup,'count':count,'extracted_signed_count_word':extracted})
+    result['overlapping_load']={'interpretation':'signed low WORD of local -4 count; independent of local -8 descriptor value','host_byte_layout_witnesses':witnesses,'scope':'Host byte-layout arithmetic only; no target instructions executed.'}
     result['limits']=['Authored values only; runtime widget counts not measured.','Backup provenance unauthenticated; missing/ambiguous pairs reported.']
     (ROOT/'analysis/evidence/audits/menu-visible-counts.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({'menus':len(members),'changed':result['changed'],'unpaired_count':len(result['unpaired']),'backup_only':result['backup_only']},indent=2))

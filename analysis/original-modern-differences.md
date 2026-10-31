@@ -374,6 +374,8 @@ See also [dialog input dispatch](original-modern-dialog-input.md): Shift/Tab nor
 
 See also [dropdown input shared sound tail](original-modern-dropdown-input.md): selection-route feedback and consolidated close/update ordering.
 
+The [cascade count follow-up](original-modern-common-menu-buttons.md#cascade-effective-count-signed-word-minimum) corrects the overlapping stack-read interpretation: the handler compares the signed low WORD of the actual list count with the authored limit. Within0..32767 this is a minimum, shared by both executable baselines. The nine authored cap increases therefore have a concrete handler consumer; populated lists, construction copying and rendered row counts remain unverified.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

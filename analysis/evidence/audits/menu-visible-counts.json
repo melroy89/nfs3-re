@@ -567,10 +567,10 @@
         "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00442c50.asm"
       },
       {
-        "start": "00464024",
+        "start": "00463ff0",
         "end": "00464052",
-        "sha256": "ad86f2ce51071be136dd0def5546cbd77165631ecd972fceee57f7b28ebfc9d2",
-        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00464024.asm"
+        "sha256": "c298571e8471a502f68fec60752e55fc3740e2a590d813a6b4d83368f5108f83",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00463ff0.asm"
       }
     ],
     "official_modern": [
@@ -599,12 +599,43 @@
         "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00442c50.asm"
       },
       {
-        "start": "00464024",
+        "start": "00463ff0",
         "end": "00464052",
-        "sha256": "ad86f2ce51071be136dd0def5546cbd77165631ecd972fceee57f7b28ebfc9d2",
-        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00464024.asm"
+        "sha256": "4a8eb000759da472fd9485b98aaf9bc0bd71203f660a274c128471ddf9694ff5",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00463ff0.asm"
       }
     ]
+  },
+  "overlapping_load": {
+    "interpretation": "signed low WORD of local -4 count; independent of local -8 descriptor value",
+    "host_byte_layout_witnesses": [
+      {
+        "lookup_value": 305419896,
+        "count": 3,
+        "extracted_signed_count_word": 3
+      },
+      {
+        "lookup_value": 2271560481,
+        "count": 9,
+        "extracted_signed_count_word": 9
+      },
+      {
+        "lookup_value": 0,
+        "count": 16,
+        "extracted_signed_count_word": 16
+      },
+      {
+        "lookup_value": 305419896,
+        "count": 32768,
+        "extracted_signed_count_word": -32768
+      },
+      {
+        "lookup_value": 4294967295,
+        "count": 65535,
+        "extracted_signed_count_word": -1
+      }
+    ],
+    "scope": "Host byte-layout arithmetic only; no target instructions executed."
   },
   "limits": [
     "Authored values only; runtime widget counts not measured.",
