@@ -441,7 +441,7 @@ The [force-feedback menu comparison](original-modern-force-menu-layout.md) verif
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **184 Claimed, 37 Static, 66 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **183 Claimed, 37 Static, 67 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -463,7 +463,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP161-008 | DirectDrawLagFix was renamed to DisableMaxWindowedMode in the thrash.ini files. It is disabled by default now. | Partial |
 | MP161-009 | A new DirectDraw compatibility flag NoDwmOffForPrimaryLock was added to the thrash.ini files. | Partial |
 | MP161-010 | The game asks a renderer if it supports the fog effect. DX5 and SoftTri always report that they do not support the fog effect. | Partial |
-| MP161-011 | Refactoring of the video mode init code. Video mode restore function will not be called twice at exit. | Claimed |
+| MP161-011 | Refactoring of the video mode init code. Video mode restore function will not be called twice at exit. | Partial |
 
 ### Version 1.6.0 (2016-09-22)
 

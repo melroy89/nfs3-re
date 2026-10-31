@@ -21,6 +21,20 @@ The latest checkpoint adds the [small-entry follow-up](original-modern-small-ent
 
 No additional game execution, instruction probes, toolchain work, C reconstruction or Ghidra changes are part of this closeout. Executable bytes and existing reconstruction/raw exports are preserved.
 
+## Acceptance checklist at the latest documentation checkpoint
+
+- [x] Exact supplied-original, official Modern and locally edited target identities are distinguished in the main report.
+- [x] All290 documented release-history bullets have stable IDs, full-text reference entries and qualified evidence labels.
+- [x] All361 changed saved Modern function entries have address-based chapter references; this remains navigation coverage only.
+- [x] All337 outside-body intervals with changed bytes have addresses, hashes, changed runs and byte classes; selected mechanisms are linked to prior reports.
+- [x] Detailed static reports include original/Modern counterparts, register/control/data changes and explicit unknowns. Recent additions cover [legacy DDE removal](original-modern-removed-dde.md), [force-feedback menu field writes](original-modern-force-menu-layout.md), [default tables and fog selection](original-modern-resolution-defaults.md#tier-tables-occupy-former-original-code-final-loadstore-mismatch) and [animation register preservation](original-modern-frontend-page.md#animation-function-boundaries-also-change-register-preservation).
+- [x] Executables, established Ghidra state, raw reference exports and maintained reconstruction sources are preserved by these documentation/static-audit changes.
+- [ ] Every changed instruction/data/asset/DLL mechanism independently explained: still incomplete.
+- [ ] Historical introduction claims established from intermediate release pairs: still incomplete.
+- [ ] Original/Modern runtime, replay, multiplayer and visual equivalence established: not run by this static audit.
+
+The catalog now links MP161-011 to the verified video-mode refactoring as **partial** support. The final pair cannot date that mechanism to v1.6.1, and both versions already test mode-call failure; neither an introduction date nor newly added failure handling is implied. The documentation handoff is usable now, while the persistent broader investigation remains incomplete. Do not turn the checked inventory items into a whole-game completion claim.
+
 ## Prioritized remaining work
 
 1. **Review substantive gaps, rather than searching for unreferenced entries.** The address-reference queue is now empty. Use each chapter’s limitations to select missing original counterparts or unresolved mechanisms, and check existing research before expanding. A chapter mention can still cover only a caller or partial span; it does not certify a whole function.
