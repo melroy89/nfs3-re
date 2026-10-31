@@ -75,3 +75,16 @@ Both EXEs have registry row **`00557a9c`** `(type4, token00538360="image", templ
 The complete393-byte wrapper **`00456670..004567f9`** is identical in both files. Before direct call`004566a5 → 00456590`, it rejects nonzero`00559c60` by returning0 and checks selected circuit`006fd4ac` against cached/current value`00677d8c`; mismatch returns9 without formatting. Matching indices reach the length helper and subsequent drawing/update work. Equality with the cached value is not a nine-entry range check.
 
 The audit retains registry values, token witnesses, updater prefix and full wrapper bytes/hashes. This resolves static component ownership through `image`/`glow`, superseding the earlier general registration unknown. Actual menu-instance loading, runtime scheduling, all generic dispatcher paths, interpretation of return9 and source-table bounds remain unverified. No component callback or renderer was executed.
+
+## Official Track Info menu binding and bounded acceptance
+
+Two official archive members now complete the authored route. `fedata/menus/location.mnu` contains a button with`nextmenu=trkinfo`, text token`kMenuLOCATIONTrackInf001`, x27/y383 and ypos7. `fedata/menus/trkinfo.mnu` contains an **`[image]`** with **`codelink=glow`**, x0/y0, priority8 and fadelevel0. The audit reads both inert archive members, checks their retained local copies byte-for-byte, and records hashes plus selected sections.
+
+This connects official Track Info assets to the registered image/glow updater, admitted wrapper and changed length helper. It does not prove that these files were loaded, that the user navigated through this button, or that the renderer displayed the expected string.
+
+- **Complete, verified static:** original/Modern helper pairing and full local bodies; shared caller and image/glow registration; authored Location→Track Info binding.
+- **Complete, verified static:** selector branch rewrite, first-profile/default linkage, retained pointer tables, comma-to-dot payload changes, zeroed third table, and six official unit-label entries.
+- **Complete, documented:** MP140-032 partial support and exact source claim; all152 interval differences localized.
+- **Later evidence:** runtime profile bank/file selection and rendered text; selector bounds and malformed/exception paths; full generic dispatcher and text-helper machine contracts; original asset provenance and historical introduction.
+
+No remaining unknown above prevents using this report as a bounded code-level reference. None of the checked static items establishes whole-game reconstruction readiness or runtime compatibility.

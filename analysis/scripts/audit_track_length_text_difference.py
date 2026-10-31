@@ -115,6 +115,24 @@ def main():
     result['image_glow_route']={'baselines':routes,
         'gate':'00559c60 must be0 and006fd4ac must equal00677d8c before call00456590',
         'limit':'Static registry/codelink/wrapper chain; actual menu instance loading and runtime invocation untested.'}
+    menu_routes=[]
+    for member in ('fedata/menus/location.mnu','fedata/menus/trkinfo.mnu'):
+        data=subprocess.check_output(['7z','x','-so',str(archive),member])
+        local=ROOT/'analysis/captures/modern-differences/upstream/package'/member
+        assert local.read_bytes()==data
+        sections=[];current=None
+        for line in data.decode('latin1').splitlines():
+            if line.startswith('['):
+                current={'section':line.strip('[]'),'fields':{}};sections.append(current)
+            elif current is not None and '=' in line and not line.startswith(';'):
+                key,value=line.split('=',1);current['fields'][key]=value
+        selected=[row for row in sections if row['fields'].get('nextmenu')=='trkinfo' or row['fields'].get('codelink')=='glow']
+        assert len(selected)==1
+        assert selected[0]['section']==('button' if member.endswith('location.mnu') else 'image')
+        menu_routes.append({'member':member,'sha256':hashlib.sha256(data).hexdigest(),
+            'selected_sections':selected,'matches_retained_local_copy':True})
+    result['official_track_info_menu_route']={'members':menu_routes,
+        'limit':'Authored menu route and image binding; parser/runtime selection, navigation and rendering untested.'}
     result['limits']=['No drawing, language lookup or instruction execution.','Raw selector enum names, valid track indices and runtime localization choice not established; selected official unit strings verified.','Third original table zeroed in Modern; all other readers not excluded.']
     (ROOT/'analysis/evidence/audits/track-length-text-difference.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired formatting tails, retained pointer tables, comma-to-dot payloads, zeroed third and152 localized interval differences')

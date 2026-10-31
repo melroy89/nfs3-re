@@ -494,6 +494,50 @@
     "gate": "00559c60 must be0 and006fd4ac must equal00677d8c before call00456590",
     "limit": "Static registry/codelink/wrapper chain; actual menu instance loading and runtime invocation untested."
   },
+  "official_track_info_menu_route": {
+    "members": [
+      {
+        "member": "fedata/menus/location.mnu",
+        "sha256": "d1830e7d3f82e5d88b06fbec79720d85924392f2d3f88a1b8d69fb6de44faa3f",
+        "selected_sections": [
+          {
+            "section": "button",
+            "fields": {
+              "x": "27",
+              "y": "383",
+              "priority": "10",
+              "text": "kMenuLOCATIONTrackInf001",
+              "nextmenu": "trkinfo",
+              "buttontype": "tab",
+              "listpos": "0",
+              "listoff": "0",
+              "ypos": "7",
+              "align": "0"
+            }
+          }
+        ],
+        "matches_retained_local_copy": true
+      },
+      {
+        "member": "fedata/menus/trkinfo.mnu",
+        "sha256": "f530859f87b8f22e623444d31e569dbd276ab6e8238cc4c5bb5c663b3d08475c",
+        "selected_sections": [
+          {
+            "section": "image",
+            "fields": {
+              "x": "0",
+              "y": "0",
+              "priority": "8",
+              "codelink": "glow",
+              "fadelevel": "0"
+            }
+          }
+        ],
+        "matches_retained_local_copy": true
+      }
+    ],
+    "limit": "Authored menu route and image binding; parser/runtime selection, navigation and rendering untested."
+  },
   "limits": [
     "No drawing, language lookup or instruction execution.",
     "Raw selector enum names, valid track indices and runtime localization choice not established; selected official unit strings verified.",
