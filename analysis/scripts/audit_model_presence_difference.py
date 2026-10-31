@@ -94,6 +94,14 @@ def main():
         crops.append({'key':record[0],'visual_label':label,'rectangle':words,'path':str(path.relative_to(ROOT)),'png_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
     result['visual_logo_identification']={'interpretation':'256x256 BGRA32 pixels after 16-byte image header; visual labels inspected, not OCR assertions','atlas_path':str(atlas_path.relative_to(ROOT)),'atlas_png_sha256':hashlib.sha256(atlas_path.read_bytes()).hexdigest(),'crops':crops}
     result['logo_metadata_links']=links
+    result['logo_table_boundaries']=[]
+    for table,link in zip(tables,links):
+        end=table['decoded_offset']+8+12*table['count']
+        metadata_size=struct.unpack_from('<I',decoded,link['metadata_offset']+4)[0]
+        assert link['metadata_offset']+metadata_size==end
+        assert end<=len(decoded)
+        result['logo_table_boundaries'].append({'ltbl_offset':table['decoded_offset'],'records_end':end,'decoded_bytes_remaining':len(decoded)-end,'metadata_size':metadata_size})
+    assert result['logo_table_boundaries'][-1]['decoded_bytes_remaining']==0
     result['official_logo_asset']={'member':'fedata/art/logos.qfs','packed_sha256':hashlib.sha256(packed).hexdigest(),'decoded_sha256':hashlib.sha256(decoded).hexdigest(),'decoded_size':len(decoded),'ltbl_magic_scan':tables}
     result['limits']=['No resource lookup or target instruction execution.','Selectors 0x25/0x26 are raw values; human-readable identities and list initialization remain unresolved.']
     (ROOT/'analysis/evidence/audits/original-modern-model-presence.json').write_text(json.dumps(result,indent=2)+'\n')
