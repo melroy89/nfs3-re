@@ -22,13 +22,46 @@
         },
         {
           "start": "004b59c0",
-          "end": "004b5a28",
-          "bytes_sha256": "7e37198c7fab9f21fc2a487cd8441e01d33b0430f16a9ddef74e376deda79515",
+          "end": "004b5e4a",
+          "bytes_sha256": "fef2677ae696c8685d845025a936eaf6e6fc56525bdbe05ecd572bd4c51d888b",
           "assembly": "analysis/captures/modern-differences/renderer-selection/original-004b59c0.asm",
-          "assembly_sha256": "34beafb719a6a85eab0172c0c6659f161e06cd877c40fdfb25253c60b85ccda3"
+          "assembly_sha256": "544ced0a216b3b6c82a33ae909d0747b24e9173ab2e3d43ff95f25f8e0c36908"
+        },
+        {
+          "start": "004f8b50",
+          "end": "004f8ce8",
+          "bytes_sha256": "042cb51d73675b7844ba57e85c778c1dcc078a502b6d0ee8be4273996bd846f4",
+          "assembly": "analysis/captures/modern-differences/renderer-selection/original-004f8b50.asm",
+          "assembly_sha256": "256c09bbde0474f862700f06d4a2d2eeaafea8b0c83c6a3334720289500d6699"
         }
       ],
+      "selector_targets": [
+        "004b59ef",
+        "004b5a28",
+        "004b5a28",
+        "004b5ab8",
+        "004b5ab8",
+        "004b5bef",
+        "004b5c76",
+        "004b5d65",
+        "004b5d65",
+        "004b5e0a",
+        "004b5e0a"
+      ],
       "environment_key": "THRASH_DRIVERNAME",
+      "legacy_environment_strings": {
+        "0053fd34": "0",
+        "0053fd38": "SST_SLIDETECT",
+        "0053ec28": "",
+        "0053fd48": "SST_RGAMMA",
+        "0053fd54": "SST_GGAMMA",
+        "0053fd60": "SST_BGAMMA",
+        "0053fd6c": "SST_GAMMA",
+        "0053fd78": "SSTV2_RGAMMA",
+        "0053fd88": "SSTV2_GGAMMA",
+        "0053fd98": "SSTV2_BGAMMA",
+        "0053fda8": "SSTV2_GAMMA"
+      },
       "driver_name_table": [
         {
           "index": 0,
@@ -118,11 +151,32 @@
         },
         {
           "start": "004b5a58",
-          "end": "004b5acd",
-          "bytes_sha256": "63fca74c6bd6ee17a31dc0b67544f9ee86a72eebdb2b521724712ae5e4fdbb69",
+          "end": "004b5bfd",
+          "bytes_sha256": "647540c9850c655c79197e517d88f56cb90b65ea2d7b811481b5f9dbf868ff11",
           "assembly": "analysis/captures/modern-differences/renderer-selection/official_modern-004b5a58.asm",
-          "assembly_sha256": "346f9abc0c26477dd7a1f45dc573d7b51f5a5df298cb453c9edbe5ba48fa29bd"
+          "assembly_sha256": "2fa53dff04776d5c4fd223de2bf17ff4ee5cbbf463fd496f497fb08f970ad9dc"
         }
+      ],
+      "type_bit_targets": [
+        "004b5bfb",
+        "004b5acd",
+        "004b5acd",
+        "004b5b78",
+        "004b5b78",
+        "004b5bfb",
+        "004b5b0f"
+      ],
+      "initial_state_pairs": [
+        13,
+        1,
+        13,
+        0,
+        4,
+        2,
+        206,
+        1,
+        104,
+        1
       ],
       "optional_interface": {
         "dll": "DDRAW.DLL",

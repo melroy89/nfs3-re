@@ -230,4 +230,4 @@ Run `python3 analysis/scripts/audit_clock_source_difference.py` (Python `pefile`
 
 ## Renderer selection and DirectDraw compatibility
 
-Run `python3 analysis/scripts/audit_renderer_selection_difference.py` (Python `pefile`, GNU `objdump`). It hash-checks both baselines and captures the original environment/name-selection path and Modern optional compatibility dispatch, including exact file-backed names. Output: `analysis/evidence/audits/original-modern-renderer-selection.json`. Raw captures remain ignored; no target/DLL execution. See [renderer findings](../original-modern-renderer-loading.md).
+Run `python3 analysis/scripts/audit_renderer_selection_difference.py` (Python `pefile`, GNU `objdump`). It hash-checks both baselines and captures the complete original selector body/environment writer and Modern type/optional compatibility dispatch, including exact file-backed names. Output: `analysis/evidence/audits/original-modern-renderer-selection.json`. Raw captures remain ignored; no target/DLL execution. See [renderer findings](../original-modern-renderer-loading.md) and [initialization dispatch](../original-modern-renderer-initialization.md).

@@ -154,7 +154,7 @@ The full JSON inventory gives every current Modern local function name, entry/ra
 | `004b5844` LoadThrashDriverSettings | 486 / 504 | Modern INI/driver path traced in renderer report; original environment/name wrapper traced; remaining selector branches pending |
 | `00494cb0` RenderTiledLoadingArtworkAndInitializeProgressBounds | 480 / 748 | Tile/reference/rounding deltas traced; full progress/UI contract and output remain |
 | `004e3078` ScreenshotEncodingThread | 451 / 464 | Original synchronous counterpart mapped in screenshot report; GDI+ success, resources and runtime lifetime remain |
-| `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; initialization selectors/compatibility consumers still pending |
+| `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; numeric/type dispatch and compatibility calls traced; selector producers and DLL semantics remain |
 | `004b5580` LoadGameIniSettings | 374 / 393 | Modern defaults/API effects traced; original setting-by-setting registry mapping remains |
 | `0044a2d0` DispatchFrontendMenuKeyToSelectedEntry | 332 / 358 | Dispatcher/named keys/chat guard traced; all assets, entry callbacks and sound paths remain |
 | `00485880` InitializeDefaultHudLayoutProfileSettings | 332 / 375 | File versus embedded preset source and header stores traced; asset/consumer/reset mapping remains |
