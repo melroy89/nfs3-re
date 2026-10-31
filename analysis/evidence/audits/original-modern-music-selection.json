@@ -56,6 +56,13 @@
           "assembly_sha256": "1b0826ac5f9340144484b0c1f07f45535a741d676fbfeac1ebd944dc0699f2e8"
         },
         {
+          "start": "00438070",
+          "end": "0043825c",
+          "bytes_sha256": "bdb1b952222db2b029b9692b03808dff6d01204317f1f18c06c7e423a48cd12e",
+          "assembly": "analysis/captures/modern-differences/music-selection/original-00438070.asm",
+          "assembly_sha256": "310a6d88439893beb543f34b3d37deae90189526b32605a0a2c03f4c4d4cd17d"
+        },
+        {
           "start": "004e8b60",
           "end": "004e8bce",
           "bytes_sha256": "1ef7423e639bc5868cac601791a2cc2fa65866b0dc7e86c565f19b4cb0ee3c31",
@@ -140,6 +147,24 @@
         171,
         172
       ],
+      "audio_callback_table_rows": {
+        "00555d20": [
+          "00537c64",
+          "00000000",
+          "00000000",
+          "00437e00",
+          "00438070",
+          "00000000"
+        ],
+        "00556128": [
+          "00537df8",
+          "00000000",
+          "00000000",
+          "00437e00",
+          "00438070",
+          "00438260"
+        ]
+      },
       "tracks_descriptor_005563fc": [
         "00537e34",
         "0055636e",
@@ -338,6 +363,20 @@
           "assembly_sha256": "ced5845c8463f321818f2b458f324becd09edf40b8ba8cb412996f7fd082ff02"
         },
         {
+          "start": "004378b8",
+          "end": "004378d9",
+          "bytes_sha256": "36322b3c9ed681fbe8443b2617d0dc8f699e18f4112fc1e1f45d638f05b8a456",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-004378b8.asm",
+          "assembly_sha256": "2e827c47ac7384266ab8a2cd06b594423938611f4e94ad00d25d3d8be9efbdd2"
+        },
+        {
+          "start": "00438070",
+          "end": "0043825c",
+          "bytes_sha256": "48ae7421e09566dbaffc7746c08814a427c67ae0b63c7485419a9d07bf5058c1",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-00438070.asm",
+          "assembly_sha256": "016846da5c6001ae24508257e8c0263bfd448279704735b95b711d3c7a498082"
+        },
+        {
           "start": "004e8b60",
           "end": "004e8bce",
           "bytes_sha256": "1ef7423e639bc5868cac601791a2cc2fa65866b0dc7e86c565f19b4cb0ee3c31",
@@ -424,6 +463,29 @@
         1941,
         1942
       ],
+      "audio_callback_table_rows": {
+        "00555d20": [
+          "00537c64",
+          "00000000",
+          "00000000",
+          "00437e00",
+          "00438070",
+          "00000000"
+        ],
+        "00556128": [
+          "00537df8",
+          "00000000",
+          "00000000",
+          "00437e00",
+          "00438070",
+          "00438260"
+        ]
+      },
+      "audio_exit_tokens": {
+        "0053714c": "racenow",
+        "00537154": "exitprogram",
+        "00537608": "CANCEL_AUDIO_OPTIONS"
+      },
       "tracks_descriptor_005563fc": [
         "00537e34",
         "0055636e",
@@ -487,6 +549,14 @@
     "Audible track identity, RNG distribution and complete playback-route coverage unverified.",
     "Original list IDs decoded with official Modern English; original retail language provenance unverified."
   ],
+  "official_audio_menu": {
+    "member": "fedata/menus/audio.mnu",
+    "sha256": "3ddb34cbf68446bf41d1823f4fdbe35eae710231f371b887ca7c9fe16d35df40",
+    "race_fields": [
+      "codelink=racenow",
+      "text=kMenuAUDIORACE001"
+    ]
+  },
   "official_english": {
     "member": "fedata/text/text.eng",
     "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",

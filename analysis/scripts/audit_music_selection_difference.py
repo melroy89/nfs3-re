@@ -6,7 +6,7 @@ import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
-COMMON = [(0x4e8b60,0x4e8bce),(0x4e0dee,0x4e0e2b),(0x4104f0,0x4107b2),(0x4109d0,0x410a3c),
+COMMON = [(0x438070,0x43825c),(0x4e8b60,0x4e8bce),(0x4e0dee,0x4e0e2b),(0x4104f0,0x4107b2),(0x4109d0,0x410a3c),
           (0x4e6f0c,0x4e705c),(0x4e73d0,0x4e7466),(0x4e7470,0x4e74e1)]
 RETAINED = [(0x4e8b60,0x4e8bce),(0x4e0dee,0x4e0e2b),(0x4104f0,0x41057f),(0x4106b8,0x4107b2),
             (0x4109d0,0x410a3c),(0x4e6f0c,0x4e705c),
@@ -21,7 +21,7 @@ SPANS = {'original': [(0x40ffd0,0x410027),(0x410030,0x410329),(0x4103a0,0x41045d
         (0x40fed0,0x40fefa),(0x51778c,0x5177de),
         (0x4a3690,0x4a38bc),(0x4a35d0,0x4a3681),
         (0x4107c0,0x41099b),(0x418620,0x418644),
-        (0x4187e0,0x41880c),(0x438100,0x43812f)]}
+        (0x4187e0,0x41880c),(0x438100,0x43812f),(0x4378b8,0x4378d9)]}
 
 
 def main():
@@ -58,6 +58,12 @@ def main():
         assert ids==expected_ids
         item['race_choice_descriptor_00556be0']=[f'{v:08x}' for v in descriptor]
         item['race_choice_label_ids']=ids
+        audio_rows={f'{a:08x}':[f'{v:08x}' for v in struct.unpack('<6I',pe.get_data(a-0x400000,24))] for a in (0x555d20,0x556128)}
+        assert all(row[4]=='00438070' for row in audio_rows.values())
+        item['audio_callback_table_rows']=audio_rows
+        if label=='official_modern':
+            item['audio_exit_tokens']={f'{a:08x}':pe.get_data(a-0x400000,40).split(b'\0')[0].decode() for a in (0x53714c,0x537154,0x537608)}
+            assert list(item['audio_exit_tokens'].values())==['racenow','exitprogram','CANCEL_AUDIO_OPTIONS']
         tracks_descriptor=struct.unpack('<5I',pe.get_data(0x1563fc,20))
         assert tracks_descriptor[4]==0x6fd4ac
         assert pe.get_data(tracks_descriptor[0]-0x400000,16).split(b'\0')[0]==b'tracks'
@@ -91,6 +97,10 @@ def main():
     for ident in ids:
         offset=struct.unpack_from('<I',english,4*ident)[0]
         labels[str(ident)]=english[offset:english.index(b'\0',offset)].decode('latin1')
+    menu=subprocess.check_output(['7z','x','-so',str(archive),'fedata/menus/audio.mnu'])
+    assert b'codelink=racenow' in menu
+    result['official_audio_menu']={'member':'fedata/menus/audio.mnu','sha256':hashlib.sha256(menu).hexdigest(),
+        'race_fields':[line for line in menu.decode('latin1').splitlines() if line in ('codelink=racenow','text=kMenuAUDIORACE001')]}
     result['official_english']={'member':'fedata/text/text.eng','sha256':hashlib.sha256(english).hexdigest(),'labels':labels}
     result['limits'].append('Original list IDs decoded with official Modern English; original retail language provenance unverified.')
     original=images['original'].get_data(0xa3690,0x22c)

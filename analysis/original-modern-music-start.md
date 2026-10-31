@@ -54,7 +54,7 @@ This establishes EAX as the supplied level. The incoming EDX preserved on the st
 
 **MP153-001**, different race music volume each race: the follow-up below now establishes removal of a track-dependent level adjustment in a second stream-start routine and two level-control paths. The unchanged common-start backend alone was insufficient to locate this policy change. The claim has bounded static support and remains partial until complete call coverage and audible results are established.
 
-**MP153-006**, double fading when pressing Race: the selection report establishes restart/continuation gate changes, but a complete audio-settings action-to-Race caller trace is still required. Do not promote a plausible connection to a verified fix.
+**MP153-006**, double fading when pressing Race: the follow-up below now connects the audio exit callback to a new Race/Exit token check and suppression of an extra restart request. This is partial static support; runtime fade timing remains untested.
 
 Next evidence: trace every relevant volume producer/caller, backend dependencies and track/map assets, then compare observed levels only if a runtime phase is authorized. No audio was played and no suspected original behavior was silently corrected.
 
@@ -84,4 +84,24 @@ For ordinary configured level80 and initial table values, the old adjusted backe
 
 Backend `004e8b60` is byte-identical in both executables: it checks audio-ready byte `00a09af4`, accepts signed EAX0..127, stores AL at target byte `00564702`, forwards stream handle `00564690` and level to `004e95fc`, then returns0 on the ordinary path. It saves/restores incoming ECX/EDX. The already-retained `004e7470` likewise validates EDX0..127, stores DL to the same target byte and forwards the request to `004e9420`; its EAX input is passed onward separately. Exact temporal/backend semantics remain outside this bounded conclusion.
 
-A direct Modern caller at **`0043812a`** supplies configured race level `006fbbf0` as EDX, selected circuit as EAX and EBX=1 for settings>2, otherwise0. The previously retained outer race envelope has another direct call at `004a37c1`. The new evidence therefore identifies a plausible code-level mechanism for **MP153-001**, without establishing every control path, historical introduction version or audible loudness. **MP153-006** still needs the audio-settings-to-Race transition trace; it is not solved by finding a separate level adjustment.
+A direct Modern caller at **`0043812a`** supplies configured race level `006fbbf0` as EDX, selected circuit as EAX and EBX=1 for settings>2, otherwise0. The previously retained outer race envelope has another direct call at `004a37c1`. The new evidence therefore identifies a plausible code-level mechanism for **MP153-001**, without establishing every control path, historical introduction version or audible loudness. **MP153-006** is treated separately below; the level adjustment alone does not establish the double-fade fix.
+
+## Follow-up: Race/Exit suppress an extra audio-exit restart
+
+Both callback-table rows **`00555d20`** (`psaudio`) and **`00556128`** (`audio`) retain exit callback **`00438070`** at row+10h. The audit captures its complete address envelope **`00438070..0043825c`** for both baselines; no saved Ghidra function-boundary correction is claimed. The official `audio.mnu` resource has `codelink=racenow` and text symbol `kMenuAUDIORACE001`, retained with its member hash in the manifest.
+
+On entry, both callbacks receive context in EAX and retain it in ECX. When `00559234 == 0`, both issue an initial **`004e7470(EAX=10, EDX=[006fbbe8])`** at `0043808e`. Modern does **not** remove this first request. The callback then clears preview bookkeeping, handles in-race audio state and derives the selected item from signed WORD fields context+18h and+1ah and item stride **0xbc** at base **`00604ee0`**.
+
+Modern adds this action-sensitive branch at **`0043814d..00438166`**, before its Cancel-specific path:
+
+1. Pass selected item+10h to new helper **`004378b8..004378d9`**.
+2. That helper calls `004429c0` against **`racenow`** at `0053714c`; if no match, test **`exitprogram`** at `00537154`.
+3. A nonzero match clears pending music-change flag **`00554f34=0`** and writes **byte `00552591=1`**.
+
+The original goes directly into its item-type5 and `CANCEL_AUDIO_OPTIONS` checks without this action classification. Modern’s added helper tests the two tokens regardless of the later Cancel item-type gate; do not rewrite it as an assumed type5-only condition.
+
+On the ordinary non-Cancel exit path **`00438208..0043825c`**, both versions stop the preview request through `004e9420`, clear preview handle `00554f38`, then inspect `00559234`. With that global zero, a nonzero pending flag requests menu music through **`004103a0` at `0043824e`**. Modern’s matched Race/Exit action has already cleared that flag, so it returns without this extra request. In the original, an already-set pending flag can still take that call. With `00559234` nonzero, this particular menu restart is skipped in either version.
+
+The [contextual selector](original-modern-music-selection.md#contextual-policy-now-checks-whether-playback-can-continue) establishes that original `004103a0` with EDX=1 invokes stop/release `004109d0` and common start `004104f0`. The retained stop routine, subject to its active/admission gates, calls `004e7470` with EAX=100 at `004109f7`. Thus there is a concrete extra fade/restart request that the new audio action check can avoid, in addition to the callback’s retained first fade request. Modern’s separate continuation gates can also suppress restart downstream; those are distinct changes rather than evidence that the callback’s initial fade disappeared.
+
+**Bounded conclusion for MP153-006:** official Race control → selected-item token classification → pending flag cleared → extra menu restart suppressed is statically supported for the shown callback path. This does not count audible fades or prove timing under every settings/preview state. Remaining coverage includes generic callback invocation/selection state at the actual transition, all producers of the pending flag, deeper backend timing and any separately authorized runtime test. The Exit token shares the suppression even though the release-note bullet mentions only Race.

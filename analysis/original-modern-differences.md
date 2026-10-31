@@ -385,7 +385,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP153-003 | Added two additional random race music modes: Random (Rock) and Random (Techno). | Partial |
 | MP153-004 | Added two additional random menu music modes: Random (Fast) and Random (Slow). Fast: Romulus 3, Triton, Pi. Slow: Minotaur, Whipped, Whacked. | Static |
 | MP153-005 | Random race music actually works as a playlist (each race a new track). It prevents from repeating same music tracks frequently. | Partial |
-| MP153-006 | Prevented double music fading in the audio settings when user presses Race button. | Unresolved |
+| MP153-006 | Prevented double music fading in the audio settings when user presses Race button. | Partial |
 | MP153-007 | Fixed a regression of the v1.5.2 which was a cause of problems with windowed mode of the nGlide. | Claimed |
 | MP153-008 | Fixed a regression of the v1.5.1 in the fallback code for the unupdated language files. | Unresolved |
 | MP153-009 | Menu music volume will be used for the movies. | Claimed |
