@@ -1,0 +1,299 @@
+{
+  "kind": "static-comparison-audit-reproduction",
+  "checked_revision": "f26a71dbb1b7b79bed022d2a127026c5e9e561b9",
+  "script_count": 39,
+  "audit_json_count_before": 49,
+  "audit_json_count_after": 49,
+  "changed_audit_json_files": [],
+  "scripts": [
+    {
+      "script": "analysis/scripts/audit_clock_source_difference.py",
+      "exit_code": 0,
+      "output": "PASS: 16 clock callsites, 3 timer functions after operand normalization, loading spans",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_command_line_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baselines, 33 paired switch slots, help aliases and parser spans",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_config_loading_difference.py",
+      "exit_code": 0,
+      "output": "PASS: config baselines, header bytes, import identities and load spans",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_cpu_tier_difference.py",
+      "exit_code": 0,
+      "output": "PASS: CPU tier baseline identities, producer/consumer spans and tables",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_credits_panorama_difference.py",
+      "exit_code": 0,
+      "output": "PASS: callback counterparts, moved-identical restore, shared exit and official menu fields",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_display_mode_difference.py",
+      "exit_code": 0,
+      "output": "PASS: original/Modern identity and enumerator/menu instruction captures",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_frontend_page_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baselines, one-byte main-body delta, retained five targets, new resource record",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_frontend_sound_difference.py",
+      "exit_code": 0,
+      "output": "PASS: sound baselines, contract/slider spans, identical record initializer",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_ghost_loading_difference.py",
+      "exit_code": 0,
+      "output": "PASS: ghost wrapper baselines/spans and identical reader/model resolver",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_graphics_menu_transition_difference.py",
+      "exit_code": 0,
+      "output": "PASS: pinned graphics registration, counterpart bodies and Modern helper witnesses",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_hud_layout_difference.py",
+      "exit_code": 0,
+      "output": "PASS: fingerprints, HUD initialization/default spans and preset provenance",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_language_table_difference.py",
+      "exit_code": 0,
+      "output": "PASS: language baselines, lookup/load spans, marker and 27 fallback entries",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_loading_artwork_difference.py",
+      "exit_code": 0,
+      "output": "PASS: fingerprints, loading/helper captures and unchanged floor/ceil bodies",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_menu_callback_table_difference.py",
+      "exit_code": 0,
+      "output": "PASS: 57 matching names; nine changed rows, 12 fields (eight return-zero stubs nulled, four redirected)",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_menu_input_difference.py",
+      "exit_code": 0,
+      "output": "PASS: fingerprints, unchanged lobby/send/navigation bodies and changed dispatch/chat captures",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_menu_loader_difference.py",
+      "exit_code": 0,
+      "output": "PASS: complete loader differs only in three path-source operand bytes",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_menu_text_field_difference.py",
+      "exit_code": 0,
+      "output": "PASS: writer delta localized; five retained helpers; 10 official numeric text uses",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_music_selection_difference.py",
+      "exit_code": 0,
+      "output": "PASS: music baselines, selection spans and menu cycle tables",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_network_port_difference.py",
+      "exit_code": 0,
+      "output": "PASS: input hashes, captures and unchanged provider-dispatch wrapper",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_numeric_scale_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baselines, moved counterpart spans and three redirected callers",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_parameter_preset_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baselines, complete preset bodies, table bytes and retained conversion scale",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_pending_overlay_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baseline hashes, complete overlay bodies, producer witnesses and formats",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_projection_difference.py",
+      "exit_code": 0,
+      "output": "PASS: projection baselines, FOV/constants/callers and identical builder",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_race_now_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baselines, Modern helper, original credits gate and exact tokens",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_registry_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baseline hashes, 15/6 direct-call candidates, imports, three retained bodies",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_renderer_selection_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baseline hashes, renderer selection/compatibility spans and strings",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_replay_mirror_difference.py",
+      "exit_code": 0,
+      "output": "PASS: replay toggle, eligibility, refresh and input witnesses for both baselines",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_screenshot_difference.py",
+      "exit_code": 0,
+      "output": "PASS: both input hashes and original/Modern screenshot instruction captures",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_setup_website_difference.py",
+      "exit_code": 0,
+      "output": "PASS: pinned binaries, identical callback/binding, asset removal witness",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_slider_percentage_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baselines, complete slider bodies and identical 3755-byte prefix",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_slideshow_navigation_difference.py",
+      "exit_code": 0,
+      "output": "PASS: explicit callback counterparts, retained previous core, deferred-refresh witnesses",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_startup_paths_difference.py",
+      "exit_code": 0,
+      "output": "PASS: identities, startup/API spans, 22 initialized path slots and 13/4 directory tables",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_startup_policy_difference.py",
+      "exit_code": 0,
+      "output": "PASS: input hashes, removed original call span, Modern options/import witnesses",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_texture_extent_difference.py",
+      "exit_code": 0,
+      "output": "PASS: input identities, retained limit helpers/callsites and texture instruction spans",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_thrash_loader_difference.py",
+      "exit_code": 0,
+      "output": "PASS: input hashes, 34 identical name/slot bindings, instruction captures",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_vehicle_dispatch_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baselines, complete dispatcher spans, identical selection helper",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_viewport_geometry_difference.py",
+      "exit_code": 0,
+      "output": "PASS: both fingerprints, viewport/border instruction captures and file-backed floats",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_viewport_pose_difference.py",
+      "exit_code": 0,
+      "output": "PASS: baselines, complete wrapper bodies and identical pose finalizer",
+      "stderr": ""
+    },
+    {
+      "script": "analysis/scripts/audit_window_initialization_difference.py",
+      "exit_code": 0,
+      "output": "{\n  \"counts\": {\n    \"original\": 26,\n    \"official_modern\": 27\n  },\n  \"removed\": [\n    \"0007\",\n    \"0008\"\n  ],\n  \"added\": [\n    \"0001\",\n    \"001c\",\n    \"0218\"\n  ],\n  \"changed_handler_address\": [\n    {\n      \"message\": \"0002\",\n      \"original\": \"004cce80\",\n      \"modern\": \"004ccce4\"\n    },\n    {\n      \"message\": \"0010\",\n      \"original\": \"004cce40\",\n      \"modern\": \"004ccd5c\"\n    },\n    {\n      \"message\": \"0466\",\n      \"original\": \"004cce60\",\n      \"modern\": \"004ccd98\"\n    }\n  ]\n}",
+      "stderr": ""
+    }
+  ],
+  "limits": [
+    "Successful reruns establish reproducibility, not independent correctness or runtime equivalence.",
+    "Only audit_*_difference.py scripts and audit JSON were included; other inventories/probes are outside this run."
+  ],
+  "script_hashes": {
+    "analysis/scripts/audit_clock_source_difference.py": "5d3e88d11f39a7be35b6615a6232244264e8402b5d690f84e013635ac71142c0",
+    "analysis/scripts/audit_command_line_difference.py": "8c884bf2add2d94749b1d3ba1f226d1a1768e56bc462b09e08d8d72cd68674b6",
+    "analysis/scripts/audit_config_loading_difference.py": "229c754436e1fa2645a9e6677642e286287dbd579be7fe6a6791d781a0ab74ec",
+    "analysis/scripts/audit_cpu_tier_difference.py": "a3ed9b25261befcaa6a728804355803ca1cec6384f2aa22307302cd7e30e8a2b",
+    "analysis/scripts/audit_credits_panorama_difference.py": "d9de9f81890488b97a5eb423cff63bcc87aedddebcff5c56aff0e89abf08e2ed",
+    "analysis/scripts/audit_display_mode_difference.py": "4de083d7c3e5bfcfba5a9f1b73cf18a2aef29e437b8844ef667f92636300addb",
+    "analysis/scripts/audit_frontend_page_difference.py": "f4ecd2bf095c5f73fbb69e4b7b0d94f609c5c31d0e6979dc5cc1574e27e56927",
+    "analysis/scripts/audit_frontend_sound_difference.py": "7b7cf601ed5064d0afb405f44d3b955635eb7df63a5480bc500456ffd52b2300",
+    "analysis/scripts/audit_ghost_loading_difference.py": "651f24bf979f73df2c2c9216bfdd39161fdb58c486df96906267ec2dc5d28037",
+    "analysis/scripts/audit_graphics_menu_transition_difference.py": "015d45009f79e5c85b65f549be784282a3b3fb5b42b7edce944af37c33ff0d7a",
+    "analysis/scripts/audit_hud_layout_difference.py": "b16b97492654c37e89f7b298e82248a6aa94035cd8bf20891d1035b58c7a8710",
+    "analysis/scripts/audit_language_table_difference.py": "3fb998e9b2fbd864e55e0ccb3430b6a710252f54cc549797af124c05a1cfffc0",
+    "analysis/scripts/audit_loading_artwork_difference.py": "b7d3b6f1ffa25dab299cad33e281278537743b2a86224e2dfc2424022b44f1df",
+    "analysis/scripts/audit_menu_callback_table_difference.py": "88cbaed8afb9e8d633e0e9ec1eb207a35eecc2d33343f24eb613901869aa7c78",
+    "analysis/scripts/audit_menu_input_difference.py": "1e2b4581ac68a15055918eda585eeb0dbb15dfbcb68cb5276277226f1e959b36",
+    "analysis/scripts/audit_menu_loader_difference.py": "8f25aa45c2e0991b824bf29a1f5ac0df26300cae0d11afec483f6bc9846555ca",
+    "analysis/scripts/audit_menu_text_field_difference.py": "49c6b9a37c64a4deab39edbe914e4280ff9eb49e3eab534cc34f235892c0e245",
+    "analysis/scripts/audit_music_selection_difference.py": "17f31b0d91f716f73d99b968a9667f8e2a32c97f0e4cce623fb632485bc7c362",
+    "analysis/scripts/audit_network_port_difference.py": "9b86e755f9ec527b8bdeb62750d8d1232900447895ae0cce30e25c7eb864a72e",
+    "analysis/scripts/audit_numeric_scale_difference.py": "1a007a48e59878b69a66626ab793e9887628475030a78c23eff2d9ddc0e58965",
+    "analysis/scripts/audit_parameter_preset_difference.py": "8a3779a919b042bcd0f019f2b3902bb49fb1b487358bc2ff56c24acac46b666b",
+    "analysis/scripts/audit_pending_overlay_difference.py": "2dac2764bc8bd951d084e6c16e8776f83c755c84197e76a4047ec7506807044c",
+    "analysis/scripts/audit_projection_difference.py": "7ba0b9b489d00f3a07beaa8e4f8c6f254ae45825344ab8f8d1fa856502be25c3",
+    "analysis/scripts/audit_race_now_difference.py": "1db419fa8ff3bec212a3c7737bb7f45bdd007148e99970fc65c079acd523b6d1",
+    "analysis/scripts/audit_registry_difference.py": "ba501cb979e7fed753585351d625f0abc63913d80c5cd361a5639c6f5f487aab",
+    "analysis/scripts/audit_renderer_selection_difference.py": "29e1e46096325e3d35624901e978449a8f601d67f69af20c8d7435e05b51b423",
+    "analysis/scripts/audit_replay_mirror_difference.py": "e3871ff5314828a5f195bfac36fcb8ab60eb57891a16d0e6b1a766a89f146ec7",
+    "analysis/scripts/audit_screenshot_difference.py": "e097deee48b6486c73c8ef282f4f69c88a74f8ca873937cadcfdf706522c0b9c",
+    "analysis/scripts/audit_setup_website_difference.py": "85cc3940da06708469aad9ff96622576cc645184f4cf78114676edb906329033",
+    "analysis/scripts/audit_slider_percentage_difference.py": "b57956e7bd9543baf0c56ef470c3b6dc5c751db1739d5608f23348434dfab16a",
+    "analysis/scripts/audit_slideshow_navigation_difference.py": "32784445d9b1667826db082a2dae1f271d0199fdcd77b35f434d7a16c324acf7",
+    "analysis/scripts/audit_startup_paths_difference.py": "f80e6184866955371db1d3285840754f3f86cfb54d66c7d98795d1d4fa784239",
+    "analysis/scripts/audit_startup_policy_difference.py": "8d4872d8daa19ad09c7c3f14c7b541dce318c8975b98a6594b843ac6d3aae1d5",
+    "analysis/scripts/audit_texture_extent_difference.py": "3c9c26ed39c44f6d56ad944cc72ae6e3713fde16c5fe6bf329c22f5f83280b11",
+    "analysis/scripts/audit_thrash_loader_difference.py": "2c375ffa0d89f7b9c9dda8f8de9e68551478ae7fa4e37a62e9ef29ae83de2a4f",
+    "analysis/scripts/audit_vehicle_dispatch_difference.py": "285a11dbbad4c3809e6e6efc0337dfa8792e6ec197535432beeaa08745cadafd",
+    "analysis/scripts/audit_viewport_geometry_difference.py": "37b6a8ad4eb364f0973ad046f0a083863fbc345405f75a9240fce8ac991a2615",
+    "analysis/scripts/audit_viewport_pose_difference.py": "b6768810ac71f2738bcf6f2c4103acb263c128fa1a85aa882d1d758c03631106",
+    "analysis/scripts/audit_window_initialization_difference.py": "d18024a4c16f593806a1303a950fff233d6271b554fb196de5aa7c604bce727e"
+  },
+  "saved_ghidra_database": {
+    "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+    "sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+  },
+  "relative_file_link_check": {
+    "markdown_files": 54,
+    "relative_file_links": 367,
+    "missing": [],
+    "limit": "File existence only; fragments, rendering and external URLs not verified."
+  }
+}

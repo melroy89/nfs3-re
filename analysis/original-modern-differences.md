@@ -260,7 +260,7 @@ After the registry, vehicle-dispatch, numeric-scale and Race Now follow-ups, all
 | Numeric HUD scale | Moved counterpart, three caller setup regions, labels, revalidated 47-profile installed-data bound | Full caller state admission, actual profile/language selection, visual comparison |
 | Race Now policy | Modern helper, original setup body, eleven direct caller witnesses, flag consumers, five state writers | Complete original/alternate policy mapping, lifecycle meanings and caller validity, language ABI/text |
 
-This is reproducible static coverage, not a count of fully explained vendor changes or a whole-game completion percentage. Remaining changed-function regions, external components/assets and historical release claims still require the broader comparison described above. Prioritize the remaining high-change `0041d620` preset application and `004228e0` viewport-pose wrapper next, while retaining the bounded follow-ups in this table.
+This is reproducible static coverage, not a count of fully explained vendor changes or a whole-game completion percentage. Remaining changed-function regions, external components/assets and historical release claims still require the broader comparison described above. At that checkpoint the next targets were `0041d620` and `004228e0`; subsequent [preset](original-modern-parameter-preset.md) and [viewport-pose](original-modern-viewport-pose.md) reports now cover their bounded static comparisons. Their remaining limitations and the follow-ups in this historical table still apply.
 
 ## Setup website button follow-up
 
@@ -297,6 +297,16 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 ## Car slideshow navigation and deferred refresh
 
 [The slideshow comparison](original-modern-slideshow-navigation.md) maps changed callback returns, a retained Previous core and the Modern shared-counter/periodic-refresh protocol. It supplies the remaining slideshow binding in MP140-022. The original action9 follow-up traces conditional entry cleanup and descriptor reinitialization, contrasting that broader path with Modern periodic refresh; actual input, rendering and historical release attribution remain untested.
+
+## Reproduced static-audit checkpoint after menu follow-ups
+
+Against revision `f26a71d`, all **39** `analysis/scripts/audit_*_difference.py` scripts exited0. SHA-256 comparisons before/after found **no changes to the 49 existing audit JSON files**, and no new audit JSON appeared. The script set, hashes, individual results and scope are retained in the [checkpoint manifest](evidence/validation/original-modern-static-checkpoint.json). Some audit JSON originates from other producers; unchanged files outside these scripts' output sets are preservation evidence, not freshly reproduced analysis.
+
+The main saved Ghidra database still hashes to `7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f`. No target instructions, runtime sessions, compilation, executable edits or Ghidra writes were used. A file-target check across the 53 `original-modern-*.md` reports plus the detailed catalog found **367 relative file links, zero missing targets**. That check does not verify anchor fragments, external URLs or rendered Markdown.
+
+The 290-entry catalog now distinguishes **37 bounded-static**, **35 partial**, **5 unresolved/historical** and **213 vendor-only** entries. The 77 entries beyond vendor-only include unresolved findings and bundled claims, so neither77/290 nor any static count is a whole-game completion percentage. Uncatalogued code differences, same-address pairing uncertainty, external DLLs/assets, intermediate-release provenance and original/Modern runtime compatibility remain part of the active investigation.
+
+This supersedes the earlier numerical checkpoint counts while preserving their historical results. Next priorities are the remaining ordinary menu policy claims (including postgame controls), then further high-change regions selected from the retained function-difference inventory. Reuse the completed menu callback/loader evidence rather than repeatedly treating those bounded comparisons as untouched work.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
