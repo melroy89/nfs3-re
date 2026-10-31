@@ -105,3 +105,18 @@ On the ordinary non-Cancel exit path **`00438208..0043825c`**, both versions sto
 The [contextual selector](original-modern-music-selection.md#contextual-policy-now-checks-whether-playback-can-continue) establishes that original `004103a0` with EDX=1 invokes stop/release `004109d0` and common start `004104f0`. The retained stop routine, subject to its active/admission gates, calls `004e7470` with EAX=100 at `004109f7`. Thus there is a concrete extra fade/restart request that the new audio action check can avoid, in addition to the callback’s retained first fade request. Modern’s separate continuation gates can also suppress restart downstream; those are distinct changes rather than evidence that the callback’s initial fade disappeared.
 
 **Bounded conclusion for MP153-006:** official Race control → selected-item token classification → pending flag cleared → extra menu restart suppressed is statically supported for the shown callback path. This does not count audible fades or prove timing under every settings/preview state. Remaining coverage includes generic callback invocation/selection state at the actual transition, all producers of the pending flag, deeper backend timing and any separately authorized runtime test. The Exit token shares the suppression even though the release-note bullet mentions only Race.
+
+## Setting-change requests publish the pending flag earlier and on both branches
+
+A separate [static audit](scripts/audit_music_setting_change_difference.py) retains complete paired bodies at **`00438260`**: original through exclusive`0043833d` (221 bytes), Modern through exclusive`0043833e` (222). The [manifest](evidence/audits/music-setting-change-difference.json) includes exact baselines, body bytes/hashes and aligned disassembly. The first140 bytes through exclusive`004382ec` match; they handle another setting comparison and dependent calls, whose complete semantics are outside this finding.
+
+The changed tail compares two live settings with cached DWORDs and calls request helper`004103a0` only when a pair differs:
+
+| Setting pair | Request registers | Original pending-flag write | Modern pending-flag write |
+|---|---|---|---|
+| `006fbbe4` versus`005f3968` | EAX=live setting, EDX0 | Store1 to`00554f34` **after** the request returns | Store1 **before** updating cache and issuing request |
+| `006fbbec` versus`005f3964` | EAX=live setting, EDX1 | No local flag write on this branch | Store1 **before** updating cache and issuing request |
+
+Both versions update the corresponding cache before calling the helper. Thus Modern adds pending publication for the second changed-setting branch and moves the first branch’s publication ahead of the request. The caller’s visible return tail still forwards ECX into EAX and restores its saved registers; this is not a new success Boolean.
+
+This connects to the pending flag consumed by the audio exit path above, but does not prove a particular audible fix or final flag value. The request helper can change state; callback/reentrancy, concurrency, intervening writes and actual menu ordering require their own evidence. For example, “Modern always leaves the flag set” does not follow from a pre-call store. No target, audio, new instruction probe or Ghidra edit was performed. Historical release attribution remains unresolved.

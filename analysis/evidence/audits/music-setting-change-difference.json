@@ -1,0 +1,47 @@
+{
+  "kind": "static-music-setting-change-comparison",
+  "baselines": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "00438260",
+      "end_exclusive": "0043833d",
+      "bytes": 221,
+      "hex": "53515256575589e5a170395f008b1500bc6f0031c939d07473b8e6010000891570395f00e857c90000e872dc0000e88d0e0a00e8182c0100e853220100e80eb6000084c07405e8a5dc0000e8900e0a00e81b87fdffe8e687fdffe86188fdffe8ec7bfdffa100bc6f00ba01000000e81d7afdffe808b4fdffe85380fdffa1ecbb6f00e8b980fdffe824dc00008b1de4bb6f003b1d68395f00741abe0100000089d831d2891d68395f00e89280fdff8935344f55008b3decbb6f003b3d64395f007412ba0100000089f8893d64395f00e86c80fdff89c85d5f5e5a595bc3",
+      "body_sha256": "540558cb4673c97f42218e2e153404970c2619587a76022d9e51968e34545e6f",
+      "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe:     file format pei-i386\n\n\nDisassembly of section AUTO:\n\n00438260 <AUTO+0x37260>:\n  438260:\t53                   \tpush   ebx\n  438261:\t51                   \tpush   ecx\n  438262:\t52                   \tpush   edx\n  438263:\t56                   \tpush   esi\n  438264:\t57                   \tpush   edi\n  438265:\t55                   \tpush   ebp\n  438266:\t89 e5                \tmov    ebp,esp\n  438268:\ta1 70 39 5f 00       \tmov    eax,ds:0x5f3970\n  43826d:\t8b 15 00 bc 6f 00    \tmov    edx,DWORD PTR ds:0x6fbc00\n  438273:\t31 c9                \txor    ecx,ecx\n  438275:\t39 d0                \tcmp    eax,edx\n  438277:\t74 73                \tje     0x4382ec\n  438279:\tb8 e6 01 00 00       \tmov    eax,0x1e6\n  43827e:\t89 15 70 39 5f 00    \tmov    DWORD PTR ds:0x5f3970,edx\n  438284:\te8 57 c9 00 00       \tcall   0x444be0\n  438289:\te8 72 dc 00 00       \tcall   0x445f00\n  43828e:\te8 8d 0e 0a 00       \tcall   0x4d9120\n  438293:\te8 18 2c 01 00       \tcall   0x44aeb0\n  438298:\te8 53 22 01 00       \tcall   0x44a4f0\n  43829d:\te8 0e b6 00 00       \tcall   0x4438b0\n  4382a2:\t84 c0                \ttest   al,al\n  4382a4:\t74 05                \tje     0x4382ab\n  4382a6:\te8 a5 dc 00 00       \tcall   0x445f50\n  4382ab:\te8 90 0e 0a 00       \tcall   0x4d9140\n  4382b0:\te8 1b 87 fd ff       \tcall   0x4109d0\n  4382b5:\te8 e6 87 fd ff       \tcall   0x410aa0\n  4382ba:\te8 61 88 fd ff       \tcall   0x410b20\n  4382bf:\te8 ec 7b fd ff       \tcall   0x40feb0\n  4382c4:\ta1 00 bc 6f 00       \tmov    eax,ds:0x6fbc00\n  4382c9:\tba 01 00 00 00       \tmov    edx,0x1\n  4382ce:\te8 1d 7a fd ff       \tcall   0x40fcf0\n  4382d3:\te8 08 b4 fd ff       \tcall   0x4136e0\n  4382d8:\te8 53 80 fd ff       \tcall   0x410330\n  4382dd:\ta1 ec bb 6f 00       \tmov    eax,ds:0x6fbbec\n  4382e2:\te8 b9 80 fd ff       \tcall   0x4103a0\n  4382e7:\te8 24 dc 00 00       \tcall   0x445f10\n  4382ec:\t8b 1d e4 bb 6f 00    \tmov    ebx,DWORD PTR ds:0x6fbbe4\n  4382f2:\t3b 1d 68 39 5f 00    \tcmp    ebx,DWORD PTR ds:0x5f3968\n  4382f8:\t74 1a                \tje     0x438314\n  4382fa:\tbe 01 00 00 00       \tmov    esi,0x1\n  4382ff:\t89 d8                \tmov    eax,ebx\n  438301:\t31 d2                \txor    edx,edx\n  438303:\t89 1d 68 39 5f 00    \tmov    DWORD PTR ds:0x5f3968,ebx\n  438309:\te8 92 80 fd ff       \tcall   0x4103a0\n  43830e:\t89 35 34 4f 55 00    \tmov    DWORD PTR ds:0x554f34,esi\n  438314:\t8b 3d ec bb 6f 00    \tmov    edi,DWORD PTR ds:0x6fbbec\n  43831a:\t3b 3d 64 39 5f 00    \tcmp    edi,DWORD PTR ds:0x5f3964\n  438320:\t74 12                \tje     0x438334\n  438322:\tba 01 00 00 00       \tmov    edx,0x1\n  438327:\t89 f8                \tmov    eax,edi\n  438329:\t89 3d 64 39 5f 00    \tmov    DWORD PTR ds:0x5f3964,edi\n  43832f:\te8 6c 80 fd ff       \tcall   0x4103a0\n  438334:\t89 c8                \tmov    eax,ecx\n  438336:\t5d                   \tpop    ebp\n  438337:\t5f                   \tpop    edi\n  438338:\t5e                   \tpop    esi\n  438339:\t5a                   \tpop    edx\n  43833a:\t59                   \tpop    ecx\n  43833b:\t5b                   \tpop    ebx\n  43833c:\tc3                   \tret\n"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "00438260",
+      "end_exclusive": "0043833e",
+      "bytes": 222,
+      "hex": "53515256575589e5a170395f008b1500bc6f0031c939d07473b8e6010000891570395f00e857c90000e872dc0000e88d0e0a00e8182c0100e853220100e80eb6000084c07405e8a5dc0000e8900e0a00e81b87fdffe8e687fdffe86188fdffe8ec7bfdffa100bc6f00ba01000000e81d7afdffe808b4fdffe85380fdffa1ecbb6f00e8b980fdffe824dc0000a1e4bb6f003b0568395f007416c705344f550001000000a368395f0031d2e89180fdffa1ecbb6f003b0564395f007419c705344f550001000000a364395f00ba01000000e86b80fdff89c85d5f5e5a595bc3",
+      "body_sha256": "3c2b48dbdc8e5173c2af43b20ded9df8c68662a851e4ccba60810c975ddd56a8",
+      "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/analysis/captures/modern-differences/upstream/package/nfs3.exe:     file format pei-i386\n\n\nDisassembly of section .code:\n\n00438260 <.code+0x37260>:\n  438260:\t53                   \tpush   ebx\n  438261:\t51                   \tpush   ecx\n  438262:\t52                   \tpush   edx\n  438263:\t56                   \tpush   esi\n  438264:\t57                   \tpush   edi\n  438265:\t55                   \tpush   ebp\n  438266:\t89 e5                \tmov    ebp,esp\n  438268:\ta1 70 39 5f 00       \tmov    eax,ds:0x5f3970\n  43826d:\t8b 15 00 bc 6f 00    \tmov    edx,DWORD PTR ds:0x6fbc00\n  438273:\t31 c9                \txor    ecx,ecx\n  438275:\t39 d0                \tcmp    eax,edx\n  438277:\t74 73                \tje     0x4382ec\n  438279:\tb8 e6 01 00 00       \tmov    eax,0x1e6\n  43827e:\t89 15 70 39 5f 00    \tmov    DWORD PTR ds:0x5f3970,edx\n  438284:\te8 57 c9 00 00       \tcall   0x444be0\n  438289:\te8 72 dc 00 00       \tcall   0x445f00\n  43828e:\te8 8d 0e 0a 00       \tcall   0x4d9120\n  438293:\te8 18 2c 01 00       \tcall   0x44aeb0\n  438298:\te8 53 22 01 00       \tcall   0x44a4f0\n  43829d:\te8 0e b6 00 00       \tcall   0x4438b0\n  4382a2:\t84 c0                \ttest   al,al\n  4382a4:\t74 05                \tje     0x4382ab\n  4382a6:\te8 a5 dc 00 00       \tcall   0x445f50\n  4382ab:\te8 90 0e 0a 00       \tcall   0x4d9140\n  4382b0:\te8 1b 87 fd ff       \tcall   0x4109d0\n  4382b5:\te8 e6 87 fd ff       \tcall   0x410aa0\n  4382ba:\te8 61 88 fd ff       \tcall   0x410b20\n  4382bf:\te8 ec 7b fd ff       \tcall   0x40feb0\n  4382c4:\ta1 00 bc 6f 00       \tmov    eax,ds:0x6fbc00\n  4382c9:\tba 01 00 00 00       \tmov    edx,0x1\n  4382ce:\te8 1d 7a fd ff       \tcall   0x40fcf0\n  4382d3:\te8 08 b4 fd ff       \tcall   0x4136e0\n  4382d8:\te8 53 80 fd ff       \tcall   0x410330\n  4382dd:\ta1 ec bb 6f 00       \tmov    eax,ds:0x6fbbec\n  4382e2:\te8 b9 80 fd ff       \tcall   0x4103a0\n  4382e7:\te8 24 dc 00 00       \tcall   0x445f10\n  4382ec:\ta1 e4 bb 6f 00       \tmov    eax,ds:0x6fbbe4\n  4382f1:\t3b 05 68 39 5f 00    \tcmp    eax,DWORD PTR ds:0x5f3968\n  4382f7:\t74 16                \tje     0x43830f\n  4382f9:\tc7 05 34 4f 55 00 01 \tmov    DWORD PTR ds:0x554f34,0x1\n  438300:\t00 00 00 \n  438303:\ta3 68 39 5f 00       \tmov    ds:0x5f3968,eax\n  438308:\t31 d2                \txor    edx,edx\n  43830a:\te8 91 80 fd ff       \tcall   0x4103a0\n  43830f:\ta1 ec bb 6f 00       \tmov    eax,ds:0x6fbbec\n  438314:\t3b 05 64 39 5f 00    \tcmp    eax,DWORD PTR ds:0x5f3964\n  43831a:\t74 19                \tje     0x438335\n  43831c:\tc7 05 34 4f 55 00 01 \tmov    DWORD PTR ds:0x554f34,0x1\n  438323:\t00 00 00 \n  438326:\ta3 64 39 5f 00       \tmov    ds:0x5f3964,eax\n  43832b:\tba 01 00 00 00       \tmov    edx,0x1\n  438330:\te8 6b 80 fd ff       \tcall   0x4103a0\n  438335:\t89 c8                \tmov    eax,ecx\n  438337:\t5d                   \tpop    ebp\n  438338:\t5f                   \tpop    edi\n  438339:\t5e                   \tpop    esi\n  43833a:\t5a                   \tpop    edx\n  43833b:\t59                   \tpop    ecx\n  43833c:\t5b                   \tpop    ebx\n  43833d:\tc3                   \tret\n"
+    }
+  },
+  "observed_change": {
+    "setting0": {
+      "live": "006fbbe4",
+      "cached": "005f3968",
+      "request_edx": 0
+    },
+    "setting1": {
+      "live": "006fbbec",
+      "cached": "005f3964",
+      "request_edx": 1
+    },
+    "pending_flag": "00554f34",
+    "request_target": "004103a0",
+    "original": "First changed branch writes flag1 after request; second changed branch has no local flag write.",
+    "modern": "Each changed branch writes flag1 before cache update/request.",
+    "limits": [
+      "No audio or instruction execution.",
+      "Request-helper side effects, callbacks, concurrency and audible outcome not established.",
+      "Local write ordering is not proof of final flag value after called helpers.",
+      "Equal prefix does not establish unchanged callees or whole-function machine equivalence."
+    ]
+  }
+}

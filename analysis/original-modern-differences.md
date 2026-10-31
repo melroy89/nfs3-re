@@ -454,6 +454,8 @@ The [x87 status-observer inventory](original-modern-x87-observers.md) adds a com
 
 The [unlisted control-component callback](original-modern-control-component-keys.md) explains all52 differing bytes in uncovered interval `00464fca..004654c0`: halved step deltas, finite component cancellation for token0020h, and a raw return-code change2→0. The InteriorBx registry/menu binding and selected-entry dispatcher normalization are established: both raw0020h paths expose0 through that dispatcher. Rendered behavior, other indirect callers and release attribution remain unverified.
 
+The [music-setting request comparison](original-modern-music-start.md#setting-change-requests-publish-the-pending-flag-earlier-and-on-both-branches) identifies an additional pending-flag change at00438260: Modern publishes before both changed-setting requests, while original publishes after only the first. This is verified local ordering; audible outcome and final helper-modified state remain untested.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
