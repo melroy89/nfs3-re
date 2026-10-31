@@ -1,0 +1,78 @@
+{
+  "kind": "async-read-wait-notification",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004f0cd0",
+          "end_exclusive": "004f0d1c",
+          "sha256": "8be6a74fdf9af826ff612cbbd8df6baba2de0b3ba06307baab4c814725b959d3",
+          "assembly": "analysis/captures/modern-differences/async-wait/original-004f0cd0.asm"
+        },
+        {
+          "start": "004dfb20",
+          "end_exclusive": "004dfb3d",
+          "sha256": "7c1c0cbb816c6d07be55b2c056f698923a59720f0d4870e683918d234d3f73b3",
+          "assembly": "analysis/captures/modern-differences/async-wait/original-004dfb20.asm"
+        },
+        {
+          "start": "004ff780",
+          "end_exclusive": "004ff7a3",
+          "sha256": "73036b009fae753082b116451ffd33c5650d76af9e54340d85b92007e2f74a8a",
+          "assembly": "analysis/captures/modern-differences/async-wait/original-004ff780.asm"
+        },
+        {
+          "start": "004df8e0",
+          "end_exclusive": "004df8ef",
+          "sha256": "c01e752961afb05e7dc93f0c0034f061cbe726369184a55ae287579d993536b7",
+          "assembly": "analysis/captures/modern-differences/async-wait/original-004df8e0.asm"
+        }
+      ],
+      "imports": {
+        "005345e8": "SetEvent",
+        "00534604": "SleepEx"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004f0cd0",
+          "end_exclusive": "004f0d1c",
+          "sha256": "c54538388afdfb5d41f2328bc616e5bf34335635ea37484de13cb75411f782c3",
+          "assembly": "analysis/captures/modern-differences/async-wait/official_modern-004f0cd0.asm"
+        },
+        {
+          "start": "004dfb20",
+          "end_exclusive": "004dfb3d",
+          "sha256": "7c1c0cbb816c6d07be55b2c056f698923a59720f0d4870e683918d234d3f73b3",
+          "assembly": "analysis/captures/modern-differences/async-wait/official_modern-004dfb20.asm"
+        },
+        {
+          "start": "004ff780",
+          "end_exclusive": "004ff7a3",
+          "sha256": "73036b009fae753082b116451ffd33c5650d76af9e54340d85b92007e2f74a8a",
+          "assembly": "analysis/captures/modern-differences/async-wait/official_modern-004ff780.asm"
+        },
+        {
+          "start": "004df8e0",
+          "end_exclusive": "004df8ef",
+          "sha256": "c01e752961afb05e7dc93f0c0034f061cbe726369184a55ae287579d993536b7",
+          "assembly": "analysis/captures/modern-differences/async-wait/official_modern-004df8e0.asm"
+        }
+      ],
+      "imports": {
+        "005345e8": "SetEvent",
+        "00534604": "SleepEx"
+      }
+    }
+  },
+  "changed_bytes": 10,
+  "limits": [
+    "No event/thread execution or race test.",
+    "Event handle lifetime, flag consumers, all state writers and scheduling remain unverified."
+  ]
+}

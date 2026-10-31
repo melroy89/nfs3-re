@@ -16,6 +16,10 @@
   },
   "source_documents": [
     {
+      "path": "analysis/original-modern-async-wait.md",
+      "sha256": "39be7fa4d9ae6ef1c155b42c2cf2a8526984c978a242f740be80355ca08bd9f0"
+    },
+    {
       "path": "analysis/original-modern-audit-status.md",
       "sha256": "29b8862b1c09c645a49d89f4ee8df8ed0000f93d1e2c2c40a6f73797743a5dd7"
     },
@@ -370,8 +374,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 296,
-    "without_address_mentions": 65
+    "with_address_mentions": 297,
+    "without_address_mentions": 64
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -10419,7 +10423,17 @@
       "changed_bytes": 10,
       "original_sha256": "8be6a74fdf9af826ff612cbbd8df6baba2de0b3ba06307baab4c814725b959d3",
       "modern_sha256": "c54538388afdfb5d41f2328bc616e5bf34335635ea37484de13cb75411f782c3",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-async-wait.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f0cd0",
+            "004f0cf0",
+            "004f0cfc"
+          ]
+        }
+      ]
     },
     {
       "entry": "004f1c70",

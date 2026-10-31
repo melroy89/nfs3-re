@@ -416,6 +416,8 @@ The [grouped effect-renderer comparison](original-modern-effect-renderer-masks.m
 
 The [texture-loading follow-up](original-modern-texture-loading-followup.md) verifies cached/removed descriptor queries and four redistributed progress milestones in three complete function envelopes.
 
+The [async-read wait comparison](original-modern-async-wait.md) verifies an added shared flag/event notification before the retained alertable polling loop.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

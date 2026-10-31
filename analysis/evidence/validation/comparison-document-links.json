@@ -2,6 +2,11 @@
   "kind": "comparison-document-relative-link-audit",
   "files": [
     {
+      "path": "analysis/original-modern-async-wait.md",
+      "sha256": "39be7fa4d9ae6ef1c155b42c2cf2a8526984c978a242f740be80355ca08bd9f0",
+      "relative_links": 2
+    },
+    {
       "path": "analysis/original-modern-audit-status.md",
       "sha256": "29b8862b1c09c645a49d89f4ee8df8ed0000f93d1e2c2c40a6f73797743a5dd7",
       "relative_links": 5
@@ -73,8 +78,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "55ab1fa46f0e7d7e22334ee3530469dcec5bd45fb6eee8df75d354d0977b2229",
-      "relative_links": 117
+      "sha256": "66f2d03c1a9e065ae121b93db98579850ca5b90353e55db73dfae2fec6397846",
+      "relative_links": 118
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -118,8 +123,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "d20165737590d202d2c2b66bce9c72c770bb7625efab7bd11132b405629f9f0b",
-      "relative_links": 509
+      "sha256": "d47df0c074d887910891071f14571b994898f54300cad700cd7e7e5b6ca43a2b",
+      "relative_links": 510
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -462,8 +467,8 @@
       "relative_links": 7
     }
   ],
-  "file_count": 92,
-  "relative_link_count": 1186,
+  "file_count": 93,
+  "relative_link_count": 1190,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
