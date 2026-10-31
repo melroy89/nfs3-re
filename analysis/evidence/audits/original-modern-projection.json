@@ -691,6 +691,182 @@
       "Other indexed writers and actual type8 source producer remain unresolved."
     ]
   },
+  "scene_descriptor_pointer_layout": {
+    "table": "00552ec8 modes1..24, twoDWORD pointers each; all paired values identical.",
+    "rows": [
+      {
+        "mode": 1,
+        "slot0": "005e0dd8",
+        "slot1": "005e0ef4",
+        "pair_spacing": 284,
+        "inferred_pair_end": "005e1010"
+      },
+      {
+        "mode": 2,
+        "slot0": "005de100",
+        "slot1": "005de21c",
+        "pair_spacing": 284,
+        "inferred_pair_end": "005de338"
+      },
+      {
+        "mode": 3,
+        "slot0": "005e0968",
+        "slot1": "005e0a8c",
+        "pair_spacing": 292,
+        "inferred_pair_end": "005e0bb0"
+      },
+      {
+        "mode": 4,
+        "slot0": "005e02a0",
+        "slot1": "005e03c4",
+        "pair_spacing": 292,
+        "inferred_pair_end": "005e04e8"
+      },
+      {
+        "mode": 5,
+        "slot0": "005dea28",
+        "slot1": "005deb4c",
+        "pair_spacing": 292,
+        "inferred_pair_end": "005dec70"
+      },
+      {
+        "mode": 6,
+        "slot0": "005dda10",
+        "slot1": "005ddb34",
+        "pair_spacing": 292,
+        "inferred_pair_end": "005ddc58"
+      },
+      {
+        "mode": 7,
+        "slot0": "005ddc58",
+        "slot1": "005ddd84",
+        "pair_spacing": 300,
+        "inferred_pair_end": "005ddeb0"
+      },
+      {
+        "mode": 8,
+        "slot0": "005de578",
+        "slot1": "005de6ac",
+        "pair_spacing": 308,
+        "inferred_pair_end": "005de7e0"
+      },
+      {
+        "mode": 9,
+        "slot0": "005dec70",
+        "slot1": "005ded80",
+        "pair_spacing": 272,
+        "inferred_pair_end": "005dee90"
+      },
+      {
+        "mode": 10,
+        "slot0": "005df0b0",
+        "slot1": "005df1d0",
+        "pair_spacing": 288,
+        "inferred_pair_end": "005df2f0"
+      },
+      {
+        "mode": 11,
+        "slot0": "005df750",
+        "slot1": "005df870",
+        "pair_spacing": 288,
+        "inferred_pair_end": "005df990"
+      },
+      {
+        "mode": 12,
+        "slot0": "005dfc08",
+        "slot1": "005dfd28",
+        "pair_spacing": 288,
+        "inferred_pair_end": "005dfe48"
+      },
+      {
+        "mode": 13,
+        "slot0": "005df510",
+        "slot1": "005df630",
+        "pair_spacing": 288,
+        "inferred_pair_end": "005df750"
+      },
+      {
+        "mode": 14,
+        "slot0": "005e0728",
+        "slot1": "005e0848",
+        "pair_spacing": 288,
+        "inferred_pair_end": "005e0968"
+      },
+      {
+        "mode": 15,
+        "slot0": "005e0080",
+        "slot1": "005e0190",
+        "pair_spacing": 272,
+        "inferred_pair_end": "005e02a0"
+      },
+      {
+        "mode": 16,
+        "slot0": "005e04e8",
+        "slot1": "005e0608",
+        "pair_spacing": 288,
+        "inferred_pair_end": "005e0728"
+      },
+      {
+        "mode": 17,
+        "slot0": "005de338",
+        "slot1": "005de458",
+        "pair_spacing": 288,
+        "inferred_pair_end": "005de578"
+      },
+      {
+        "mode": 18,
+        "slot0": "005e0bb0",
+        "slot1": "005e0cc4",
+        "pair_spacing": 276,
+        "inferred_pair_end": "005e0dd8"
+      },
+      {
+        "mode": 19,
+        "slot0": "005df990",
+        "slot1": "005dfacc",
+        "pair_spacing": 316,
+        "inferred_pair_end": "005dfc08"
+      },
+      {
+        "mode": 20,
+        "slot0": "005df2f0",
+        "slot1": "005df400",
+        "pair_spacing": 272,
+        "inferred_pair_end": "005df510"
+      },
+      {
+        "mode": 21,
+        "slot0": "005dee90",
+        "slot1": "005defa0",
+        "pair_spacing": 272,
+        "inferred_pair_end": "005df0b0"
+      },
+      {
+        "mode": 22,
+        "slot0": "005dfe48",
+        "slot1": "005dff64",
+        "pair_spacing": 284,
+        "inferred_pair_end": "005e0080"
+      },
+      {
+        "mode": 23,
+        "slot0": "005ddeb0",
+        "slot1": "005ddfd8",
+        "pair_spacing": 296,
+        "inferred_pair_end": "005de100"
+      },
+      {
+        "mode": 24,
+        "slot0": "005de7e0",
+        "slot1": "005de904",
+        "pair_spacing": 292,
+        "inferred_pair_end": "005dea28"
+      }
+    ],
+    "inferred_packing": "Using within-pair spacing as per-record extent yields contiguous005dda10..005e1010 with no gaps/overlaps.",
+    "confidence": "Pointer values/spacing/adjacency verified; treating spacing as complete structure size is inferred, not proved.",
+    "limits": "Does not bound arbitrary field writes or establish all types, packing, pointer lifetimes or projection-source producer. Heterogeneous spacing forbids assuming one universal scene-record size."
+  },
   "type8_descriptor_availability": {
     "table_row": "00552f08=00552ec8+8*8:005de578,005de6ac; same file-backed pointers in both baselines.",
     "initializer": "Normal mode loop visits1..24; common00422dd8 stores mode number at descriptor+0. Slot loop initializes0 or0/1 according to session.",

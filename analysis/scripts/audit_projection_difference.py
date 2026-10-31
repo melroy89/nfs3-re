@@ -122,6 +122,20 @@ def main():
                   'Other indexed writers and actual type8 source producer remain unresolved.']}
     for image in images:
         assert struct.unpack('<2I',image.get_data(0x152f08,8))==(0x5de578,0x5de6ac)
+    camera_rows=[]
+    for mode in range(1,25):
+        pair=struct.unpack('<2I',images[0].get_data(0x152ec8+mode*8,8))
+        assert pair==struct.unpack('<2I',images[1].get_data(0x152ec8+mode*8,8))
+        spacing=pair[1]-pair[0]
+        camera_rows.append({'mode':mode,'slot0':f'{pair[0]:08x}','slot1':f'{pair[1]:08x}',
+                            'pair_spacing':spacing,'inferred_pair_end':f'{pair[0]+2*spacing:08x}'})
+    ordered=sorted(camera_rows,key=lambda row:row['slot0'])
+    assert all(a['inferred_pair_end']==b['slot0'] for a,b in zip(ordered,ordered[1:]))
+    assert ordered[0]['slot0']=='005dda10' and ordered[-1]['inferred_pair_end']=='005e1010'
+    result['scene_descriptor_pointer_layout']={'table':'00552ec8 modes1..24, twoDWORD pointers each; all paired values identical.',
+        'rows':camera_rows,'inferred_packing':'Using within-pair spacing as per-record extent yields contiguous005dda10..005e1010 with no gaps/overlaps.',
+        'confidence':'Pointer values/spacing/adjacency verified; treating spacing as complete structure size is inferred, not proved.',
+        'limits':'Does not bound arbitrary field writes or establish all types, packing, pointer lifetimes or projection-source producer. Heterogeneous spacing forbids assuming one universal scene-record size.'}
     result['type8_descriptor_availability']={
         'table_row':'00552f08=00552ec8+8*8:005de578,005de6ac; same file-backed pointers in both baselines.',
         'initializer':'Normal mode loop visits1..24; common00422dd8 stores mode number at descriptor+0. Slot loop initializes0 or0/1 according to session.',
