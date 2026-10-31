@@ -209,7 +209,7 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "d58115042ab77b58bf6c8674a9df92426f9683688704c44795f1d4c1ec0ab2c3"
+      "sha256": "951d5ea2610e38e1ac16a80e38b04e6c08759d2ffc0a7109be81edf9bfe116e1"
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
@@ -346,8 +346,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 266,
-    "without_address_mentions": 95
+    "with_address_mentions": 268,
+    "without_address_mentions": 93
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -1153,7 +1153,17 @@
       "changed_bytes": 33,
       "original_sha256": "0118c582e5a4c6c8b8e3d6758f1c76f4cc3ab355c89ad0a76e303c798dfdba02",
       "modern_sha256": "16b6b2678dc873d565861d404e1c8f94a6c93cb1b26adc1b6e8f85034343c0fc",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004213b0",
+            "004213d4",
+            "00421430"
+          ]
+        }
+      ]
     },
     {
       "entry": "004215c0",
@@ -9646,7 +9656,15 @@
       "changed_bytes": 3,
       "original_sha256": "eac2ca8b415a377ac79d97f8f7b397f6b7117b292fb0c600fa5dd3454df4ca11",
       "modern_sha256": "6c1c2cc3cfb319adb0c47dcac5521826065f722a48a4d47e634a45257491a244",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dbde0"
+          ]
+        }
+      ]
     },
     {
       "entry": "004dc800",

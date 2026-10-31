@@ -113,8 +113,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "9261386b5fc0a1c0284117b94db54cf16c57ef6210143c0487704d74f0b00129",
-      "relative_links": 474
+      "sha256": "bb7a67771ace7e4cba4ffbc263fe5f81340d9c10719363e8a7fae5e0363b4a7d",
+      "relative_links": 476
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -258,7 +258,7 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "d58115042ab77b58bf6c8674a9df92426f9683688704c44795f1d4c1ec0ab2c3",
+      "sha256": "951d5ea2610e38e1ac16a80e38b04e6c08759d2ffc0a7109be81edf9bfe116e1",
       "relative_links": 4
     },
     {
@@ -433,7 +433,7 @@
     }
   ],
   "file_count": 86,
-  "relative_link_count": 1114,
+  "relative_link_count": 1116,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

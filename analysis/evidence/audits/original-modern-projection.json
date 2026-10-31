@@ -47,6 +47,13 @@
           "bytes_sha256": "1ff5e4abfbd5a56da45c7d262b027b41f06c0ecf2126c4f9123c9a4699965d4f",
           "assembly": "analysis/captures/modern-differences/projection/original-004bf260.asm",
           "assembly_sha256": "a8036359cd2d7b4b609a9e75c5b60e3d250af49b3e031560e09c089a01a0af73"
+        },
+        {
+          "start": "004213b0",
+          "end": "00421441",
+          "bytes_sha256": "8198408c4a6791a789a7ba8150b927998936c842a96476c5a105dbed9495cb91",
+          "assembly": "analysis/captures/modern-differences/projection/original-004213b0.asm",
+          "assembly_sha256": "a0c1d136bcf04241ed6e2a2b8525dce54564a5207d2b92bf3b1bdedf6f18f89a"
         }
       ]
     },
@@ -81,6 +88,13 @@
           "bytes_sha256": "33f3df3c480b7148e5a9ffbd98f0e10deb20c8022de41a2cfd2c50e7e38eba8f",
           "assembly": "analysis/captures/modern-differences/projection/official_modern-004be748.asm",
           "assembly_sha256": "c0d943f0803ed3b23fe1468eeb243d46f34cc0aead11e77a157ac6e2c4d5de4e"
+        },
+        {
+          "start": "004213b0",
+          "end": "00421441",
+          "bytes_sha256": "a9c12136acad5a5de762416311dd8c7028819f933b5b57d2e76eabf2d017f4e1",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-004213b0.asm",
+          "assembly_sha256": "61bfa6b11ff5279926dfb669b60fc1943527f90c84357ffa4021deba265faa21"
         }
       ],
       "float_constants": {
@@ -139,5 +153,129 @@
     "No render/game/instruction execution.",
     "Formula summaries do not claim bit-exact libm/x87 equivalence."
   ],
+  "viewport_finalizer": {
+    "start": "004213b0",
+    "end_exclusive": "00421441",
+    "envelope_bytes": 145,
+    "changed_addresses": [
+      "004213db",
+      "004213dc",
+      "004213dd",
+      "004213de",
+      "004213e7",
+      "004213e8",
+      "004213e9",
+      "004213ea",
+      "004213ec",
+      "004213ed",
+      "004213ee",
+      "004213ef",
+      "004213f0",
+      "004213f1",
+      "004213f2",
+      "004213f3",
+      "004213f4",
+      "004213f5",
+      "004213f6",
+      "004213f7",
+      "004213f8",
+      "004213f9",
+      "004213fa",
+      "004213fb",
+      "004213fc",
+      "004213fe",
+      "004213ff",
+      "00421400",
+      "00421401",
+      "00421402",
+      "00421403",
+      "00421404",
+      "00421405",
+      "00421406",
+      "00421407",
+      "00421408",
+      "00421409",
+      "0042140a",
+      "0042140b",
+      "0042140c",
+      "0042140d",
+      "0042140e",
+      "0042140f",
+      "00421410",
+      "00421411",
+      "00421412",
+      "00421413",
+      "00421414",
+      "00421415",
+      "00421416",
+      "00421417",
+      "00421418",
+      "00421419",
+      "0042141a",
+      "0042141b",
+      "0042141c",
+      "0042141d",
+      "0042141e",
+      "0042141f",
+      "00421420",
+      "00421421",
+      "00421422",
+      "00421423",
+      "00421424",
+      "00421425",
+      "00421426",
+      "00421427",
+      "00421428",
+      "00421429",
+      "0042142a",
+      "0042142b",
+      "0042142c",
+      "0042142d",
+      "0042142e",
+      "0042142f"
+    ],
+    "changed_region": [
+      "004213d4",
+      "00421430"
+    ],
+    "condition": "Nonzero context-index table pointer whose DWORD0 equals8",
+    "retained_float_pairs": [
+      [
+        "005e1020",
+        "0056009c"
+      ],
+      [
+        "005e102c",
+        "005600a4"
+      ],
+      [
+        "005e1030",
+        "005600a8"
+      ],
+      [
+        "005e1038",
+        "005600a0"
+      ]
+    ],
+    "removed_dword_pairs": [
+      [
+        "005e10a0",
+        "0056443c"
+      ],
+      [
+        "005e1034",
+        "00564440"
+      ],
+      [
+        "005e1024",
+        "00564434"
+      ],
+      [
+        "005e1028",
+        "00564438"
+      ]
+    ],
+    "limits": "Conditional local stores only; no complete visual or x87 state equivalence."
+  },
   "projection_builder_272_bytes_identical": true
 }

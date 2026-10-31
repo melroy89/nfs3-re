@@ -22,7 +22,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
-        for start,end in SPANS[label]:
+        for start,end in SPANS[label]+[(0x4213b0,0x421441)]:
             out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -44,6 +44,14 @@ def main():
                     'end':f'{end:08x}','all_nop':True,'sha256':hashlib.sha256(blob).hexdigest()})
         result['binaries'][label]=item
         bodies[label]=pe.get_data(0x4bf260-0x400000,0x110)
+    images=[pefile.PE(str(ROOT/SPECS[label][0])) for label in ('original','official_modern')]
+    old,new=[pe.get_data(0x213b0,0x91) for pe in images]
+    changed=[0x4213b0+i for i,(a,b) in enumerate(zip(old,new)) if a!=b]
+    assert all(0x4213d4<=v<0x421430 for v in changed)
+    for address in (0x56443c,0x564440,0x564434,0x564438):
+        assert b'\xa3'+struct.pack('<I',address) in old
+        assert struct.pack('<I',address) not in new
+    result['viewport_finalizer']={'start':'004213b0','end_exclusive':'00421441','envelope_bytes':145,'changed_addresses':[f'{v:08x}' for v in changed],'changed_region':['004213d4','00421430'],'condition':'Nonzero context-index table pointer whose DWORD0 equals8','retained_float_pairs':[['005e1020','0056009c'],['005e102c','005600a4'],['005e1030','005600a8'],['005e1038','005600a0']],'removed_dword_pairs':[['005e10a0','0056443c'],['005e1034','00564440'],['005e1024','00564434'],['005e1028','00564438']],'limits':'Conditional local stores only; no complete visual or x87 state equivalence.'}
     assert bodies['original']==bodies['official_modern']
     result['projection_builder_272_bytes_identical']=True
     (ROOT/'analysis/evidence/audits/original-modern-projection.json').write_text(json.dumps(result,indent=2)+'\n')

@@ -62,3 +62,22 @@ The shared float builder itself computes centre coordinates from rectangle origi
 **MP160-003**, horizon/camera shift: the removed integer-state setup is traced above, but it is not a verified explanation of the entire advertised fix. Remaining origin/camera/renderer consumers must be compared first. **MP140-033**'s setting rename likewise needs UI/string mapping.
 
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
+
+## Viewport finalizer drops legacy projection updates
+
+The audit now retains complete paired envelope **`004213b0..00421441` (145 bytes)**, exclusive end. All changes lie in **`004213d4..00421430`**. Modern’s saved body union excludes the42-byte NOP gap`00421406..00421430`, so its103-byte saved-function size is not the complete paired envelope size. The unchanged prefix calls`004dbde0`, indexes the pointer table`005e10b0` using context DWORD+4, and enters the changed block only when the pointer is nonzero and its first DWORD equals8. The shared suffix clears the corresponding DWORD in table`00552ff4` and returns. Index bounds and the initial callee’s contract remain dependencies.
+
+Both versions retain these binary32 FLD/FSTP mappings:
+
+| Source | Destination |
+|---|---|
+| `005e1020` | `0056009c` |
+| `005e102c` | `005600a4` |
+| `005e1030` | `005600a8` |
+| `005e1038` | `005600a0` |
+
+Original additionally performs direct DWORD copies **`005e10a0→0056443c`**, **`005e1034→00564440`**, **`005e1024→00564434`**, **`005e1028→00564438`**. Modern removes all four on this path. The earlier legacy projection analysis identifies these destinations as scale/centre cells used by the old helper family; their other writers/users and live values are not fully inventoried here. This is a concrete removal of updates, not proof that the cells never change elsewhere.
+
+Original loads all four floats before storing, with FXCH-based ordering and temporary x87 depth4. Modern pairs each load/store at depth1, stores in a different order, then jumps over NOPs to the shared suffix. For ordinary accessible finite inputs the destination mapping matches; x87 overflow, signaling NaNs, unmasked exceptions, interrupted/shared data and status bits can distinguish the sequences. Do not replace them with an assumed full machine-state-equivalent memory copy or treat this as a new80-bit storage format.
+
+The bounded difference is removal of legacy projection-cell updates plus changed x87 sequencing under the type8 condition. Full viewport type meaning, renderer visual effect and historical release attribution remain unresolved. No viewport or floating-point instructions were executed.
