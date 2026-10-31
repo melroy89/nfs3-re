@@ -281,7 +281,7 @@
     },
     {
       "path": "analysis/original-modern-raster-session.md",
-      "sha256": "dcd3efe328b12cb2a20d8a3732596d80f423b698f9661f755f27efca4c78dd54"
+      "sha256": "cb850f5ae44bf43025da063ff1f7845785125a28d305cd9c25f27dbf181f5365"
     },
     {
       "path": "analysis/original-modern-reconstruction-baselines.md",
@@ -486,6 +486,13 @@
         },
         {
           "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00401010"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-raster-session.md",
           "entry_mentioned": true,
           "addresses": [
             "00401010"

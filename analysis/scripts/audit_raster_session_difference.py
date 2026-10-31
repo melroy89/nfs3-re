@@ -4,7 +4,7 @@ import pefile
 from audit_thrash_loader_difference import ROOT,SPECS
 
 SPANS=[(0x524650,0x524693),(0x5246a0,0x5247ab),(0x524620,0x524635),
-       (0x524640,0x524650),(0x5247ab,0x5247b1),(0x5247c0,0x524814)]
+       (0x524640,0x524650),(0x5247ab,0x5247b1),(0x5247c0,0x524814),(0x509940,0x5099fd)]
 
 
 def main():
@@ -39,6 +39,20 @@ def main():
                    '005643a4 width minus0056439c, wrap32','005643a8 height minus005643a0, wrap32'],
         'conditional_tail_target':'00509940 when00564364 is0',
         'limit':'Local original machine contract; tail target, all callers and Modern replacement ownership not fully qualified.'}
+    assert old[6]==new[6]
+    result['retained_row_table_tail_target']={'start':'00509940','end_exclusive':'005099fd',
+        'bytes':189,'hex':old[6].hex(),'sha256':hashlib.sha256(old[6]).hexdigest(),
+        'count_cell':'0056837c','buffer_cell':'00568380','end_pointer_cell':'00a0a810',
+        'ordinary_header_writes':['[buffer]=count-2','[buffer+4]=0','00a0a810=buffer+4*count'],
+        'allocation_target':'004e1620','minimum_count_diagnostic':204,
+        'limit':'Identical local row-table setup; count/storage/allocator prerequisites, diagnostic nonreturn and concurrency not established.'}
+    row_strings={}
+    for label,(relative,expected,_) in SPECS.items():
+        image=pefile.PE(str(ROOT/relative))
+        row_strings[label]={f'{va:08x}':image.get_string_at_rva(va-0x400000).decode('latin1')
+            for va in (0x54f718,0x54f724,0x54f72c,0x54f770)}
+    assert row_strings['original']==row_strings['official_modern']
+    result['retained_row_table_tail_target']['strings']=row_strings
     result['limits']=['Static branch/registration witnesses only; no renderer or process-exit execution.',
         'Cleanup registration helper semantics, replacement ownership and callback lifetime remain unverified.']
     (ROOT/'analysis/evidence/audits/raster-session-difference.json').write_text(json.dumps(result,indent=2)+'\n')

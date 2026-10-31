@@ -40,6 +40,12 @@
           "end_exclusive": "00524814",
           "sha256": "b32575c3c3d7bcc4ef290eeff7406dce44b0fc572807cf68a5cf618f0232b8db",
           "assembly": "analysis/captures/modern-differences/raster-session/original-005247c0.asm"
+        },
+        {
+          "start": "00509940",
+          "end_exclusive": "005099fd",
+          "sha256": "1d7df90aac3ea87fce38758bde358e37586806466828ddd70b2d27fde9b2ba5b",
+          "assembly": "analysis/captures/modern-differences/raster-session/original-00509940.asm"
         }
       ]
     },
@@ -82,6 +88,12 @@
           "end_exclusive": "00524814",
           "sha256": "6a017f7307a1715ec4ea4b75512af81703bf2914989b85ebf6297c18a14bedf5",
           "assembly": "analysis/captures/modern-differences/raster-session/official_modern-005247c0.asm"
+        },
+        {
+          "start": "00509940",
+          "end_exclusive": "005099fd",
+          "sha256": "1d7df90aac3ea87fce38758bde358e37586806466828ddd70b2d27fde9b2ba5b",
+          "assembly": "analysis/captures/modern-differences/raster-session/official_modern-00509940.asm"
         }
       ]
     }
@@ -111,6 +123,38 @@
     ],
     "conditional_tail_target": "00509940 when00564364 is0",
     "limit": "Local original machine contract; tail target, all callers and Modern replacement ownership not fully qualified."
+  },
+  "retained_row_table_tail_target": {
+    "start": "00509940",
+    "end_exclusive": "005099fd",
+    "bytes": 189,
+    "hex": "5351528b157c83560081facc0000007c36833d808356000074608b157c835600a180835600c1e2028d1c108b157c835600c740040000000083ea02891d10a8a00089105a595bc356b918f7540052bb24f75400be14000000682cf75400890d90215500891d94215500893598215500e85c76efff83c4085eeb97b818f75400ba24f75400b9150000008b1df4435600a3902155008915942155008b157c835600b870f75400c1e202890d98215500e82d7cfdffa380835600e95dffffff",
+    "sha256": "1d7df90aac3ea87fce38758bde358e37586806466828ddd70b2d27fde9b2ba5b",
+    "count_cell": "0056837c",
+    "buffer_cell": "00568380",
+    "end_pointer_cell": "00a0a810",
+    "ordinary_header_writes": [
+      "[buffer]=count-2",
+      "[buffer+4]=0",
+      "00a0a810=buffer+4*count"
+    ],
+    "allocation_target": "004e1620",
+    "minimum_count_diagnostic": 204,
+    "limit": "Identical local row-table setup; count/storage/allocator prerequisites, diagnostic nonreturn and concurrency not established.",
+    "strings": {
+      "original": {
+        "0054f718": "cmn\\row.c",
+        "0054f724": "initrow",
+        "0054f72c": "initrow - INSUFFICIENT ROW TABLE SPACE (%d)\nMUST BE AT LEAST 204.\n",
+        "0054f770": "rowtbl"
+      },
+      "official_modern": {
+        "0054f718": "cmn\\row.c",
+        "0054f724": "initrow",
+        "0054f72c": "initrow - INSUFFICIENT ROW TABLE SPACE (%d)\nMUST BE AT LEAST 204.\n",
+        "0054f770": "rowtbl"
+      }
+    }
   },
   "limits": [
     "Static branch/registration witnesses only; no renderer or process-exit execution.",
