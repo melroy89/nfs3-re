@@ -380,6 +380,32 @@
       ]
     }
   ],
+  "profile_cross_check": {
+    "source": "analysis/evidence/inventories/controller-profile-inventory.json",
+    "source_sha256": "5f35a3de11b0546f8240e321c0ae27bbfc131826685fef119367bbbf88b2adc8",
+    "recomputed_inventory_matches": true,
+    "profiles": 47,
+    "gear_count_frequencies": {
+      "manual": {
+        "6": 8,
+        "7": 22,
+        "8": 17
+      },
+      "automatic": {
+        "5": 1,
+        "6": 19,
+        "7": 16,
+        "8": 11
+      }
+    },
+    "derived_hud_counts": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "maximum_concat_bytes_including_nul": 9
+  },
   "limits": [
     "Installed and locally named backup files; no authenticated retail provenance.",
     "No claim these files were selected at runtime or supplied by the official patch archive.",

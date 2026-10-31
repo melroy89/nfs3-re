@@ -4,6 +4,8 @@ import hashlib
 import json
 from pathlib import Path
 import struct
+from collections import Counter
+from inventory_car_physics import inventory as inventory_car_physics
 
 
 def main():
@@ -30,7 +32,21 @@ def main():
                          'sha256': hashlib.sha256(raw).hexdigest(), 'labels': labels})
     assert len(rows) == 18
     assert all([v['byte_length'] for v in r['labels']] == [1, 1] for r in rows)
+    retained_path = Path(__file__).resolve().parents[1]/'evidence/inventories/controller-profile-inventory.json'
+    retained_bytes = retained_path.read_bytes()
+    retained = json.loads(retained_bytes)
+    live = inventory_car_physics(root)
+    assert live == retained, 'Installed profiles differ from retained inventory; review before narrowing bounds'
+    counts = {kind: dict(sorted(Counter(p['gear_counts'][kind] for p in live['profiles']).items()))
+              for kind in ('manual', 'automatic')}
+    derived = sorted({p['gear_counts'][kind]-2 for p in live['profiles'] for kind in counts})
+    assert derived == [3, 4, 5, 6]
     result = {'kind': 'installed-numeric-scale-label-inventory', 'files': rows,
+              'profile_cross_check': {'source': 'analysis/evidence/inventories/controller-profile-inventory.json',
+                  'source_sha256': hashlib.sha256(retained_bytes).hexdigest(),
+                  'recomputed_inventory_matches': True, 'profiles': len(live['profiles']),
+                  'gear_count_frequencies': counts, 'derived_hud_counts': derived,
+                  'maximum_concat_bytes_including_nul': 3+sum(len(str(i)) for i in range(1, max(derived)+1))},
               'limits': ['Installed and locally named backup files; no authenticated retail provenance.',
                          'No claim these files were selected at runtime or supplied by the official patch archive.',
                          'Selected offsets/NUL bounds only, not complete language-format validation.'],

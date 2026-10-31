@@ -64,4 +64,21 @@ For these one-byte endpoint labels and an ordinary positive count `n`, the conca
 
 Modern's destination begins at EBP-34h. Stored pointer local EBP-24h (the second endpoint pointer used later) begins **16 bytes** after that destination. Consequently counts 1..11 with these inspected labels fit before that neighboring local, whereas count 12 would overwrite its first two bytes through the unbounded append loop. This is a conditional storage-overlap calculation, **not a demonstrated reachable defect**: count comes from profile count minus two, and no installed profile admission of count 12 has been established here. It also does not prove the rest of the function safe for every count 1..11, arbitrary assets or external state.
 
-Reproduce with `python3 analysis/scripts/inventory_numeric_scale_labels.py --game-dir '<installed game directory>'`. The script reads only the two named folders, records selected string offsets/lengths and full-file hashes, and performs no game/probe execution. Remaining work: profile-count inventory, actual language selection and visual validation.
+Reproduce with `python3 analysis/scripts/inventory_numeric_scale_labels.py --game-dir '<installed game directory>'`. The script reads only the two named folders, records selected string offsets/lengths and full-file hashes, and performs no game/probe execution. The profile-count follow-up below now bounds this installed data set; actual language selection and visual validation remain pending.
+
+## Installed profile follow-up: conditional count-12 case is outside this inventory
+
+The label inventory script now reuses `inventory_car_physics.py` to reread all installed `GAMEDATA/CARMODEL/*.viv` resources recursively and requires the recomputed result to equal the retained [47-profile inventory](evidence/inventories/controller-profile-inventory.json). It records that inventory's SHA-256 and derived counts in its own evidence. This validates the current assets rather than relying only on an older summary. The source scope excludes `gamedata_org`; installed files are not assumed to be pristine retail or official-patch assets.
+
+| Profile gear count | Manual profiles | Automatic profiles | Derived HUD count (minus 2) | Concatenated bytes, inspected labels |
+|---:|---:|---:|---:|---:|
+| 5 | 0 | 1 | 3 | 6 |
+| 6 | 8 | 19 | 4 | 7 |
+| 7 | 22 | 16 | 5 | 8 |
+| 8 | 17 | 11 | 6 | 9 |
+
+Counts come from CARP fields 3 and 75, respectively, as parsed by the existing inventory. Their use as the active profile count follows the existing gear/profile research; the caller itself directly establishes only the read from profile DWORD+8. No runtime loading or mode-selection proof is added by this resource inventory.
+
+Under the bounded combination of these profile counts, the inspected one-byte language endpoints, normal decimal formatting and unchanged profile data, maximum measurement concatenation is **9 bytes including NUL**. Therefore this data set does not supply the earlier count-12 local-overlap case. This closes the installed-data question for these two named inventories, not arbitrary modified assets, dynamically changed profile counts, different localized strings, denominator failures elsewhere or the complete function's safety.
+
+**Next evidence:** remaining caller register/branch inputs, active profile/language selection and visible layout comparison. The conditional assembly overlap remains documented for larger inputs; it is not promoted to an observed defect.
