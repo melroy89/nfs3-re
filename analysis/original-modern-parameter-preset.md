@@ -106,3 +106,21 @@ These are established producer values under the explicit sequential premise that
 With that initialization premise, the original mode!=1 second record remains `{150,100,40,80} << 16` after apply, while original first-record +24h stays `500 << 16`. Mode1 leaves +24h=`400 << 16` in both records and applies its three scaled values. Modern can either restate or change these known values depending on the selected table/source advance. For example, selector1, flag0, mode!=1, auxiliary0 retains the same first-record four fields but replaces the second record with `{500,333,133,266} << 16`; selector0 in mode1 changes both +24h values from400 to500.
 
 Thus “Modern adds a write” is not itself proof that the live value changes. The new initialization-qualified formula evaluations distinguish matching stores from changed values without claiming the setup premise or every evaluated input was observed at runtime. Physical meanings, all alternate lifecycles and floating output remain separate.
+
+## Confirmed downstream meaning: track-chain distance selection
+
+The [track-chain detail comparison](original-modern-track-detail.md) supplies the downstream link for three preset fields. Its independently reproducible audit, `python3 analysis/scripts/audit_track_detail_difference.py`, pins complete paired builders/classifiers and their lookup table. The present preset audit supplies the upstream record writes and conversion mapping. Reusing those two sources establishes this chain without treating the numeric differences as an unidentified physics change:
+
+| Preset fixed field | Converted binary32 field | Confirmed track-chain use |
+|---|---|---|
+| +28h | +34h | Builder at `0041ce55..0041ce6a` squares it and compares with X/Z squared displacement; below/unordered threshold result takes the rejection branch |
+| +38h | +40h | Classifier's second threshold square separates return1 from return2 after the outer threshold passed |
+| +3ch | +44h | Classifier's first threshold square separates return0 from the inner comparison |
+
+Selected-record helper `0041d310` publishes `005dd0e0 + wrap32(index*84)` through `005dd830`; the [existing pointer contract](detailed-analysis-notes.md#indexed-84-byte-record-selection-0041d310) documents this mapping. The track-chain consumer reads exactly that selected pointer. Original/Modern classifier entry `0041aa60` differs: original first rejects context DWORD0==1; Modern moves mirror-quality handling to the caller. Do not model the same thresholds as identical whole-classifier behavior across versions.
+
+For ordered finite values, the classifier compares `(+44h)^2` to its stack value, returning0 when below it; if that threshold passes, `(+40h)^2` below the input returns1, otherwise2. Equality passes each gate. Those selections index the track-detail table used for block-count and geometry-submission selectors. The compared builder derives the input from X/Z squared displacement. This supports describing these fields as **track-chain distance thresholds**; world-coordinate units, complete geometry submission and visible quality remain unverified. It does not establish a complete physical distance model for every record consumer.
+
+The auxiliary `006fd1d8` used in Modern's second-record source advance is independently bound to **Rear View Detail** in the [track-chain/mirror policy](original-modern-track-detail.md#mirror-quality-moves-into-the-caller). Thus the table's extra source advance and the caller's classification adjustment share a verified setting. The consequences of both mechanisms together still depend on the active record, tag, current setting and floating-point state; one mechanism must not be substituted for the other.
+
+Remaining field-semantic work is now narrower: +20h/+24h and their float destinations, other consumers, full selector/lifetime invariants and rendered effects. No replay/multiplayer desynchronization or vehicle-dynamics change follows merely from these rendering-consumer links. No new runtime or instruction probe was used.

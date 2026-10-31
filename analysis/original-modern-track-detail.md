@@ -48,3 +48,9 @@ Paired complete helper **`0041d900..0041d953`** is byte-identical. If WORD `007a
 A paired call witness **`0041da24..0041da33`** loads selected circuit `006fd4ac`, calls `00470b90`, then calls this writer at `0041da2e`. This is an observed initialization route, not proof that every startup/reload path reaches it or that no other writer exists.
 
 With threshold−1, an ordinary nonnegative accumulator passes the signed greater-than test on every visited block; the separate `007a3a60` gate still applies. Thus calling this value an unsigned “unlimited threshold” would invert the observed policy. Both versions retain this mechanism. The newly selectable mirror rows can use it, but no new Modern threshold initialization is identified in these paired spans.
+
+## Threshold producers now paired with the preset rewrite
+
+The [preset application comparison](original-modern-parameter-preset.md#confirmed-downstream-meaning-track-chain-distance-selection) now establishes original arithmetic, Modern table construction, record initialization and the conversion map feeding this builder's `+34h` distance gate and classifier `+40h/+44h` thresholds. These were previously qualified as separate writer work above. The finite selector0..3 examples demonstrate actual integer threshold-source changes, with untouched original fields kept distinct from initialization-qualified values. They are mathematical derivations, not observed geometry or instruction-probe results.
+
+The local producer/consumer chain is therefore established for these fields. Remaining bounds concern active record selection, alternate writers/lifetimes, coordinate units, x87 control state and full submission/visual effects. Modern's Rear View Detail value participates both in second-record table selection and in tag1 classification adjustment; both dependencies must be retained when reconstructing that path.
