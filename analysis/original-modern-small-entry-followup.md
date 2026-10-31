@@ -17,7 +17,7 @@ For each admitted first-loop iteration, the unchanged sequence at `0042c74e..004
 
 Actual x87 intermediate precision/rounding depends on incoming control state; the binary32 stores remain in both versions. The zero/nonpositive count path skips the loop and its division. The code compares the count as signed and reloads it inside the loop; the usual N-iteration interpretation assumes callees do not change that count or disrupt loop state. Under that assumption and ignoring repeated rounding, endpoints are 90 and 99.8. These are nominal progress inputs, not measured displayed percentages or durations. See [loading timing](original-modern-loading-timing.md) for the changed downstream implementation.
 
-Every other body byte, including vehicle-record setup and second-pass calls, is identical. Those retained callees can contain independent differences; this does not prove vehicle initialization equivalence. Other consumers of shared `00537340` and the reason for the exact 3.8 value require separate tracing.
+Every other body byte, including vehicle-record setup and second-pass calls, is identical. Those retained callees can contain independent differences; this does not prove vehicle initialization equivalence. A complete executable-file search for the little-endian absolute address bytes `40 73 53 00` finds exactly one occurrence in each version: operand `0042c756` of this FDIVR instruction (file offset `0002bb56`). The manifest retains this bounded search. No additional direct absolute references were found; computed addresses, aliases and external references remain outside that result. The reason for the exact 3.8 value remains unresolved.
 
 ## Duplicate-choice code receives a callable register-preserving boundary
 
@@ -48,5 +48,5 @@ The complete same-address wrapper `00524290..005242ed` is 93 bytes in both versi
 | Original paths into duplicate-choice block and Modern caller policy | Pending / unresolved | Boundary-correct direct and indirect caller tracing in both versions. |
 | Original functional counterparts of three Modern wrappers | Pending / unresolved | Trace corresponding callers/imports and original RNG ownership, rather than pairing same-address bytes. |
 | Diagnostic trigger and error handling | Pending / unresolved | Trace callers and complete `004b570c` contract. |
-| Shared progress constant consumers and actual presentation | Pending / unresolved | Inspect remaining `00537340` references; runtime comparison only if subsequently authorized. |
+| Progress constant reachability and actual presentation | Direct absolute reference search done / verified; computed aliases and visual behavior unresolved | Trace computed aliases if evidence warrants it; runtime comparison only if subsequently authorized. |
 | Whole-game behavior and external component effects | Pending / unresolved | Broader existing audit backlog; these seven entries cannot establish it. |

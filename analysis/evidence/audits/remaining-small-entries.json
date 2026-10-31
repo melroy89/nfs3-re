@@ -60,7 +60,17 @@
           "sha256": "950b4cbf64175991383c55306a9f2f1ff88eb265e5bf3762f380a7da00088927",
           "hex": "0000000000002e40"
         }
-      ]
+      ],
+      "absolute_00537340_encoding_search": {
+        "scope": "all executable file bytes; exact little-endian 40735300",
+        "hits": [
+          {
+            "file_offset": "0002bb56",
+            "operand_va": "0042c756"
+          }
+        ],
+        "limit": "Does not exclude computed addresses, aliases or external references."
+      }
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -121,7 +131,17 @@
           "sha256": "f135a9bfccc5fb910cd547f7959be6a7e7d2ed7f45909279cfcc7e2f241c6743",
           "hex": "6666666666660e40"
         }
-      ]
+      ],
+      "absolute_00537340_encoding_search": {
+        "scope": "all executable file bytes; exact little-endian 40735300",
+        "hits": [
+          {
+            "file_offset": "0002bb56",
+            "operand_va": "0042c756"
+          }
+        ],
+        "limit": "Does not exclude computed addresses, aliases or external references."
+      }
     }
   },
   "modern_import_00534520": "GetFileAttributesA",

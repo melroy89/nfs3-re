@@ -8,7 +8,7 @@
 |---|---|
 | Version-bound original/official/local identities | Recorded with executable hashes and three-way distinctions in the main comparison |
 | Documented release-history list | All290 entries across12 releases indexed with stable IDs; vendor claims remain labelled |
-| Address navigation | All361 changed saved-function entries listed; address mentions are search aids, not semantic completion |
+| Address navigation | All361 changed saved-function entries listed and linked to chapter address mentions; those mentions are search aids, not semantic completion |
 | Detailed code differences | Numerous bounded static chapters, with original/Modern addresses, evidence manifests and unresolved limits |
 | Exhaustive explanation of changed code/data/assets/DLLs | Incomplete; the code inventory includes21,926 changed bytes outside saved Modern function ranges |
 | Runtime original/Modern compatibility or complete visual equivalence | Not established by this static audit |
@@ -17,13 +17,13 @@ Use the [main comparison](original-modern-differences.md), [release-note catalog
 
 ## Finish this pass
 
-The current pass ends with the geometry admission report's [explicitly partial context trace](original-modern-geometry-color-admission.md#current-context-trace-and-stopping-point). Preserve its verified gate, inferred context chain and unresolved visual meaning as separate conclusions. The recent menu/text/slideshow chapters are reusable evidence; they do not require every transitive unknown to be closed before moving on.
+The latest checkpoint adds the [small-entry follow-up](original-modern-small-entry-followup.md), including vehicle-loading progress data and seven previously unreferenced entries, and [quad-set draw arguments](original-modern-viewport-geometry.md#quad-set-draw-arguments-six-changed-constants). All361 changed saved-function entries now have chapter address references. This closes the missing-reference queue, not the semantic investigation. Earlier [partial geometry context tracing](original-modern-geometry-color-admission.md#current-context-trace-and-stopping-point) remains unresolved on its stated terms.
 
 No additional game execution, instruction probes, toolchain work, C reconstruction or Ghidra changes are part of this closeout. Executable bytes and existing reconstruction/raw exports are preserved.
 
 ## Prioritized remaining work
 
-1. **Triage uncovered changes before further deep dives.** Use the changed-function index to select a substantial unreferenced change, check existing research under alternate addresses/names, and establish original counterpart and byte boundary. Classify a whole bounded change, then stop. Do not confuse an address link with completion.
+1. **Review substantive gaps, rather than searching for unreferenced entries.** The address-reference queue is now empty. Use each chapter’s limitations to select missing original counterparts or unresolved mechanisms, and check existing research before expanding. A chapter mention can still cover only a caller or partial span; it does not certify a whole function.
 2. **Classify the outside-function changed code spans.** The [337-interval address/ranking inventory](original-modern-outside-function-index.md) is now available; its byte classes are complete for the pinned saved-body union, but semantic explanations remain pending. Separate removed instructions, intentional NOP filling, embedded data and missing function boundaries. This addresses a whole-audit gap that additional detail on already-understood menu helpers cannot close.
 3. **Reconcile code findings with catalog claims.** Add links only when the mechanism supports the actual claim. Historical versions, bundled claims and undocumented changes may remain separate. Avoid forcing every code change into a release-note bullet.
 4. **Complete targeted asset/DLL dependency comparisons where necessary.** Reuse pinned package inventories; establish data formats/lifetimes only for the selected feature. Supplied backups remain unauthenticated retail provenance.

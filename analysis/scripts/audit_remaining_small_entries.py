@@ -36,7 +36,22 @@ def main():
                 row['assembly']=str(path.relative_to(ROOT))
             rows.append(row)
         blobs[label]=spans
-        result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows}
+        # All file bytes, not just a linear disassembly: direct absolute address
+        # encodings only. Computed/relative aliases are outside this search.
+        needle=struct.pack('<I',0x537340)
+        hits=[]
+        position=0
+        while True:
+            offset=raw.find(needle,position)
+            if offset<0:break
+            hits.append({'file_offset':f'{offset:08x}',
+                         'operand_va':f'{pe.OPTIONAL_HEADER.ImageBase+pe.get_rva_from_offset(offset):08x}'})
+            position=offset+1
+        assert hits==[{'file_offset':'0002bb56','operand_va':'0042c756'}]
+        result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,
+            'absolute_00537340_encoding_search':{
+                'scope':'all executable file bytes; exact little-endian 40735300',
+                'hits':hits,'limit':'Does not exclude computed addresses, aliases or external references.'}}
         if label=='official_modern':
             imports=[i.name.decode() for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports
                      if i.address==0x534520]
