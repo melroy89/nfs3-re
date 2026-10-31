@@ -261,3 +261,7 @@ Run `python3 analysis/scripts/audit_ghost_loading_difference.py` (Python pefile,
 ## Original versus Modern config loading
 
 Run `python3 analysis/scripts/audit_config_loading_difference.py` (Python pefile, GNU objdump). It retains paired load bodies, original file-time helpers, Modern reset/header helpers, API identities and exact header-template bytes. Output: `analysis/evidence/audits/original-modern-config-loading.json`; raw captures remain ignored. No config/API/target execution. See [config-load findings](../original-modern-config-loading.md).
+
+## Original versus Modern projection
+
+Run `python3 analysis/scripts/audit_projection_difference.py` (Python pefile, GNU objdump). It captures automatic FOV/choice/wrapper paths, paired callers and float constants, and asserts the complete 272-byte projection builder is identical. Output: `analysis/evidence/audits/original-modern-projection.json`; raw captures remain ignored. No rendering/target execution. See [projection findings](../original-modern-projection.md).

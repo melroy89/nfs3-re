@@ -1,0 +1,102 @@
+{
+  "kind": "static-projection-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004dbcc0",
+          "end": "004dbd97",
+          "bytes_sha256": "78aabdb7d4f01a1d0e558221bb1776caaaf6abca96cd7697add5d7682ebfad98",
+          "assembly": "analysis/captures/modern-differences/projection/original-004dbcc0.asm",
+          "assembly_sha256": "c6a4529052f8b84071c06554f530d1d97abb808ba1cd38c816651ac9afc82807"
+        },
+        {
+          "start": "004becd0",
+          "end": "004bed69",
+          "bytes_sha256": "ff5300e28b9789883b2d058c8b210da6de224e68fef1187b09b8d04a331ef0be",
+          "assembly": "analysis/captures/modern-differences/projection/original-004becd0.asm",
+          "assembly_sha256": "6d83075629793e833dd565ccb0d11eedc9cca2e9d2fe58c599790f4849730d64"
+        },
+        {
+          "start": "004bf260",
+          "end": "004bf370",
+          "bytes_sha256": "1ff5e4abfbd5a56da45c7d262b027b41f06c0ecf2126c4f9123c9a4699965d4f",
+          "assembly": "analysis/captures/modern-differences/projection/original-004bf260.asm",
+          "assembly_sha256": "a8036359cd2d7b4b609a9e75c5b60e3d250af49b3e031560e09c089a01a0af73"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004dbc48",
+          "end": "004dbd35",
+          "bytes_sha256": "e297dcb07c44e1b1a004f9e8a3389592473f60c3b50619439999cfb7badf34e5",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-004dbc48.asm",
+          "assembly_sha256": "eeb0f7883e185d25f994c2b5f355d46b358347646e4c4260d819c80e84c07562"
+        },
+        {
+          "start": "004becd0",
+          "end": "004bed69",
+          "bytes_sha256": "8d98dad5377a333982744bacda6022c9ce7304358ff42f61ac0a3594bc377f3e",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-004becd0.asm",
+          "assembly_sha256": "a0c58512074babad3cf4314f209ad13faa3b3dced73c4e8d436a75d7c7a85c82"
+        },
+        {
+          "start": "004bf260",
+          "end": "004bf370",
+          "bytes_sha256": "1ff5e4abfbd5a56da45c7d262b027b41f06c0ecf2126c4f9123c9a4699965d4f",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-004bf260.asm",
+          "assembly_sha256": "b576e71cc1a352b5733c23ab9a2dad0e598dd87f3674f79ea9ff01b4c91fe072"
+        },
+        {
+          "start": "004be748",
+          "end": "004be74d",
+          "bytes_sha256": "33f3df3c480b7148e5a9ffbd98f0e10deb20c8022de41a2cfd2c50e7e38eba8f",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-004be748.asm",
+          "assembly_sha256": "c0d943f0803ed3b23fe1468eeb243d46f34cc0aead11e77a157ac6e2c4d5de4e"
+        }
+      ],
+      "float_constants": {
+        "005401c0": {
+          "hex": "0000003f",
+          "value": 0.5
+        },
+        "005401c4": {
+          "hex": "2efa8e3c",
+          "value": 0.017453279346227646
+        },
+        "005401c8": {
+          "hex": "e12e6542",
+          "value": 57.295780181884766
+        },
+        "0053f420": {
+          "hex": "0000403f",
+          "value": 0.75
+        },
+        "005401cc": {
+          "hex": "0000403f",
+          "value": 0.75
+        },
+        "005401d0": {
+          "hex": "0000b442",
+          "value": 90.0
+        },
+        "005401d4": {
+          "hex": "0000d642",
+          "value": 107.0
+        }
+      }
+    }
+  },
+  "limits": [
+    "No render/game/instruction execution.",
+    "Formula summaries do not claim bit-exact libm/x87 equivalence."
+  ],
+  "projection_builder_272_bytes_identical": true
+}

@@ -166,7 +166,11 @@ The [ghost comparison](original-modern-ghost-loading.md) traces the changed snap
 
 The [config-load comparison](original-modern-config-loading.md) traces removal of the old file-time gate, retained exact file-size check, Modern size/version-byte reset decisions and header template. The version-only reset is not necessarily a full reset. Complete serialization, failure paths and cross-release file compatibility remain pending.
 
-## 23. Prioritized semantic work remaining
+## 23. Automatic FOV and projection angles
+
+The [projection comparison](original-modern-projection.md) traces dimension-derived automatic FOV clamped to 90–107 degrees, fixed alternatives, moved-wrapper correspondence and the integer-to-float angle interface. The complete projection builder remains identical. All camera/horizon consumers and rendered output remain pending.
+
+## 24. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 
