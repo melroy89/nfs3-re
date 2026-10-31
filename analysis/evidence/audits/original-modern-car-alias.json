@@ -7,6 +7,13 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "00461d00",
+          "end": "00462314",
+          "sha256": "edf475dd7c92c0d5ec86b91da4eb7d876a5f76b5327e7183d6fd6a3fd7a890d8",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00461d00.asm",
+          "assembly_sha256": "602dbbff6b64340055cc3cdd518f4c4e23aa7d003a9e73624a5f458b184bb348"
+        },
+        {
           "start": "004d0d50",
           "end": "004d0ff9",
           "sha256": "ba30a11390b5ab50b54a2b4a18dc8e57e96dc136b56b9b9652eb0b89a89f3ac1",
@@ -179,6 +186,13 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "00461d00",
+          "end": "00462314",
+          "sha256": "5959655d743b22d3c806fd8bdf892ab3e54ecedab51f5e142bf5cf9124f794fd",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00461d00.asm",
+          "assembly_sha256": "98982263318e5ef7856f80466d45ba7f0bf48c947da6fb323dab90552121b404"
+        },
         {
           "start": "004d0d50",
           "end": "004d0ff9",
@@ -857,6 +871,75 @@
       ]
     ],
     "boundary": "Observed entry to final RET; not imported from an assumed original Ghidra function boundary."
+  },
+  "complete_cascade_renderer": {
+    "start": "00461d00",
+    "end_exclusive": "00462314",
+    "length": 1556,
+    "changed_addresses": [
+      "00461d30",
+      "00461d31",
+      "00461d32",
+      "00461d37",
+      "00461d38",
+      "00461d39",
+      "00461d3a",
+      "00461d3b",
+      "00461d3c",
+      "00461d3e",
+      "00461d3f",
+      "00461d40",
+      "00461d4a",
+      "00461d4b",
+      "00461d4c",
+      "00461d4d",
+      "00461d4e",
+      "00461d4f",
+      "00461d50",
+      "0046217b",
+      "0046217c",
+      "0046217d",
+      "0046217e",
+      "00462180",
+      "00462181",
+      "00462182",
+      "00462183",
+      "00462184",
+      "00462185",
+      "00462186",
+      "00462187",
+      "00462188",
+      "00462189",
+      "0046218a",
+      "0046218b",
+      "0046218c",
+      "0046218d",
+      "0046218e",
+      "0046218f",
+      "00462190",
+      "00462191",
+      "00462192",
+      "00462193",
+      "00462194",
+      "00462195",
+      "00462196",
+      "00462197",
+      "00462198",
+      "00462199",
+      "0046219a",
+      "0046219b"
+    ],
+    "covering_regions": [
+      [
+        "00461d25",
+        "00461d51"
+      ],
+      [
+        "0046217b",
+        "0046219c"
+      ]
+    ],
+    "text_argument_change": "At one draw path, original EBX=EDI; Modern EBX=EDI-1 modulo32 bits."
   },
   "additional_track_policy_callers": {
     "004628d0": {

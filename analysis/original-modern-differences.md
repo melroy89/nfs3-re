@@ -396,6 +396,8 @@ The [menu dispatcher follow-up](original-modern-common-menu-buttons.md#dispatche
 
 The [complete slideshow refresh comparison](original-modern-slideshow-navigation.md#complete-refresh-envelope-and-persistent-resource-slots) identifies three creator calls routed through persistent WORD slots, alongside the deferred-update protocol. The wrapper and reset are traced; full resource lifetime, index admission and allocation savings remain unverified.
 
+The [complete cascade-renderer comparison](original-modern-car-alias.md#complete-cascade-renderer-and-one-unit-text-argument-change) accounts for its1,556-byte body and identifies an additional one-unit text coordinate argument change on one path, alongside the track-policy selector. Physical-pixel placement and historical attribution remain unverified.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
