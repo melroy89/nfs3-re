@@ -301,7 +301,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "74219fabec7180680420a3c3ca664d4734ba84cf6b99f2e323c5e2bb0a981810"
+      "sha256": "8f951bb70b16b5ad792b04047fd974d997d62953663b7320f6fb3fd33bbcf85d"
     },
     {
       "path": "analysis/original-modern-replay-list-cursor.md",
@@ -474,6 +474,13 @@
         },
         {
           "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00401010"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
           "entry_mentioned": true,
           "addresses": [
             "00401010"
@@ -7982,6 +7989,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004b570c"
+          ]
+        },
+        {
           "path": "analysis/original-modern-small-entry-followup.md",
           "entry_mentioned": true,
           "addresses": [
@@ -8197,6 +8211,8 @@
             "004b58bf",
             "004b592b",
             "004b5931",
+            "004b593e",
+            "004b5965",
             "004b5978",
             "004b597b",
             "004b5999",

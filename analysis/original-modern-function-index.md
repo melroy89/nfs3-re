@@ -12,7 +12,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 
 | Modern entry | Saved analysis label | Body bytes | Changed bytes | Chapters mentioning an address in the saved body |
 |---|---|---:|---:|---|
-| `00401010` | HandleGameAbort | 520 | 2 | [frontend-page](original-modern-frontend-page.md), [heap-initialization](original-modern-heap-initialization.md), [texture-loading-followup](original-modern-texture-loading-followup.md) |
+| `00401010` | HandleGameAbort | 520 | 2 | [frontend-page](original-modern-frontend-page.md), [heap-initialization](original-modern-heap-initialization.md), [renderer-loading](original-modern-renderer-loading.md), [texture-loading-followup](original-modern-texture-loading-followup.md) |
 | `0040a010` | InitializeRacerIdentificationSpeechBanks | 796 | 3 | [sound-bank-language](original-modern-sound-bank-language.md) |
 | `0040fed0` | InitializeRandomMusicTrackAndStyle | 42 | 40 | [music-selection](original-modern-music-selection.md) |
 | `0040fefc` | ApplyConfiguredMusicTrackAndStyle | 132 | 130 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md) |
@@ -230,7 +230,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004a6ec4` | InitializeGameDataPaths | 106 | 102 | [idle-movie](original-modern-idle-movie.md), [sound-bank-language](original-modern-sound-bank-language.md), [startup-paths](original-modern-startup-paths.md) |
 | `004a75e0` | DrawViewportQuadSet | 726 | 12 | [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004b5580` | LoadGameIniSettings | 393 | 374 | [clock-source](original-modern-clock-source.md), [configuration](original-modern-configuration.md), [heap-initialization](original-modern-heap-initialization.md), [idle-movie](original-modern-idle-movie.md), [loading-timing](original-modern-loading-timing.md), [screenshots](original-modern-screenshots.md), [startup-policy](original-modern-startup-policy.md), [startup-requirements](original-modern-startup-requirements.md), [texture-limits](original-modern-texture-limits.md) |
-| `004b570c` | ShowFatalErrorAndShutdown | 25 | 25 | [registry](original-modern-registry.md), [renderer-initialization](original-modern-renderer-initialization.md), [small-entry-followup](original-modern-small-entry-followup.md), [startup-requirements](original-modern-startup-requirements.md), [window-handling](original-modern-window-handling.md) |
+| `004b570c` | ShowFatalErrorAndShutdown | 25 | 25 | [registry](original-modern-registry.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md), [small-entry-followup](original-modern-small-entry-followup.md), [startup-requirements](original-modern-startup-requirements.md), [window-handling](original-modern-window-handling.md) |
 | `004b5728` | ShowStartupWarningAndExitOnCancel | 30 | 29 | [registry](original-modern-registry.md), [startup-requirements](original-modern-startup-requirements.md) |
 | `004b5748` | CheckStartupResourceAndDisplayRequirements | 121 | 118 | [startup-requirements](original-modern-startup-requirements.md) |
 | `004b57c4` | ApplyDirectDrawCompatibilityBitIndices | 47 | 45 | [renderer-loading](original-modern-renderer-loading.md) |

@@ -57,6 +57,26 @@ def main():
                               'name_va': f'{name:08x}', 'slot_va': f'{slot:08x}'})
             assert pe.get_data(0x4f84a0-base, 4) == b'\0'*4
             result['modern_export_table'] = table
+            literals = {}
+            for va, expected_text in ((0x53f61c,'ThrashDriver'),(0x53f70c,'THRASH'),
+                                      (0x53f71c,'Type'),(0x53f724,'FogSupport')):
+                value = pe.get_string_at_rva(va-base).decode('ascii')
+                assert value == expected_text
+                literals[f'{va:08x}'] = value
+            for va, encoded in ((0x4b593e,'6a00'), (0x4b594a,'ff1574465300'),
+                                (0x4b5965,'b001eb0a'), (0x4b598c,'ff1570465300')):
+                assert pe.get_data(va-base,len(bytes.fromhex(encoded))).hex() == encoded
+            lower_bytes = bytes.fromhex('83f8417c0883f85a7f0383c020c3')
+            assert pe.get_data(0x4f0ae0-base,len(lower_bytes)) == lower_bytes
+            result['modern_type_and_capability_contract'] = {
+                'ascii_lower_helper': {'start': '004f0ae0', 'end_exclusive': '004f0aee', 'hex': lower_bytes.hex()},
+                'literals': literals, 'type_default_argument': 0,
+                'type_first_byte_mapping': {'d': 64, 'v': 16, 's': 2, 'other_including_zero': 1},
+                'fog_default': 0, 'fog_normalization': 'nonzero result becomes1',
+                'limits': ['Empty returned Type follows generic mask1; no complete string enum/mandatory Type validation shown.',
+                           'Final key is ThrashDriver; historical release wording VideoDriver is not the final parser literal.',
+                           'LightBeams and complete driver lifetime not established by this parser witness.']}
+
         else:
             # Track each explicit name PUSH to its following GetProcAddress,
             # then the EAX store. Reject incomplete/duplicate recovered bindings.

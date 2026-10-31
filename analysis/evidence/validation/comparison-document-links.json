@@ -98,7 +98,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "37f5a6890687201fc665ad059cce38130c3545b64e2c5efbf7ce708dd40a4e79",
+      "sha256": "998f3f5a0de12a8ae30f393ad39428a8fc81202b7edf16e9559beeafc1fe524c",
       "relative_links": 135
     },
     {
@@ -158,8 +158,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "551c03933e0f5036bf3911ca9d1ec27b09220baa1cc16b8b904a624287fcd749",
-      "relative_links": 609
+      "sha256": "b3106df3e307d37c505da3069dfcc4ef740d7c8fe17a06bcde33c0bb2132c6e2",
+      "relative_links": 611
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -383,8 +383,8 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "74219fabec7180680420a3c3ca664d4734ba84cf6b99f2e323c5e2bb0a981810",
-      "relative_links": 8
+      "sha256": "8f951bb70b16b5ad792b04047fd974d997d62953663b7320f6fb3fd33bbcf85d",
+      "relative_links": 9
     },
     {
       "path": "analysis/original-modern-replay-list-cursor.md",
@@ -553,8 +553,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "91dae09f50b2dffad2ae0962bba2cdae91d6fff9cd0fd4255f8e9354e668fda7",
-      "relative_links": 127
+      "sha256": "54703a5efeaa93ab1b2e8ea5db52411adf685bfa5ce0b77111f49ff487f26634",
+      "relative_links": 130
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -563,7 +563,7 @@
     }
   ],
   "file_count": 112,
-  "relative_link_count": 1538,
+  "relative_link_count": 1544,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

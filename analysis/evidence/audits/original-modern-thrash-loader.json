@@ -384,5 +384,32 @@
       "slot_va": "009ef914"
     }
   ],
+  "modern_type_and_capability_contract": {
+    "ascii_lower_helper": {
+      "start": "004f0ae0",
+      "end_exclusive": "004f0aee",
+      "hex": "83f8417c0883f85a7f0383c020c3"
+    },
+    "literals": {
+      "0053f61c": "ThrashDriver",
+      "0053f70c": "THRASH",
+      "0053f71c": "Type",
+      "0053f724": "FogSupport"
+    },
+    "type_default_argument": 0,
+    "type_first_byte_mapping": {
+      "d": 64,
+      "v": 16,
+      "s": 2,
+      "other_including_zero": 1
+    },
+    "fog_default": 0,
+    "fog_normalization": "nonzero result becomes1",
+    "limits": [
+      "Empty returned Type follows generic mask1; no complete string enum/mandatory Type validation shown.",
+      "Final key is ThrashDriver; historical release wording VideoDriver is not the final parser literal.",
+      "LightBeams and complete driver lifetime not established by this parser witness."
+    ]
+  },
   "all_34_export_names_and_slots_match": true
 }
