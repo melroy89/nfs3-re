@@ -19,6 +19,13 @@
           "bytes_sha256": "5b4361adda408abd2596dd865f41c146a6fc50eb821d1967ce58a4dcd73d0e5d",
           "assembly": "analysis/captures/modern-differences/pending-overlay/original-00494f42.asm",
           "assembly_sha256": "1664cb530ccbce689f01ff4b11d190ba875cdf646831ba1a69a1fe412a07cd76"
+        },
+        {
+          "start": "004df8e0",
+          "end": "004df8ef",
+          "bytes_sha256": "c01e752961afb05e7dc93f0c0034f061cbe726369184a55ae287579d993536b7",
+          "assembly": "analysis/captures/modern-differences/pending-overlay/original-004df8e0.asm",
+          "assembly_sha256": "62e63b6b1f2a4d9018fd23e1ee4a90f4dc50b0a24d493d7d695d4bb13149185b"
         }
       ],
       "format_0053bdc8": " ... %s"
@@ -54,6 +61,13 @@
           "bytes_sha256": "b472ee8302cdd5f4fc0ac370ce15a90194ffc150c212e9038b69972241c59b2d",
           "assembly": "analysis/captures/modern-differences/pending-overlay/official_modern-004a3500.asm",
           "assembly_sha256": "f6575d6b3b76c86d45891c2d799464304dd191bfe6a663fc6bff32eb7193deec"
+        },
+        {
+          "start": "004df8e0",
+          "end": "004df8ef",
+          "bytes_sha256": "c01e752961afb05e7dc93f0c0034f061cbe726369184a55ae287579d993536b7",
+          "assembly": "analysis/captures/modern-differences/pending-overlay/official_modern-004df8e0.asm",
+          "assembly_sha256": "b563ba9758428e759a5c178728431c55ec442f31a0cbdd74cccbb839c355fe0d"
         }
       ],
       "format_0053bdc8": " %s"
@@ -62,5 +76,27 @@
   "limits": [
     "Producer spans are selected witnesses, not complete containing functions.",
     "No rendering or target execution."
-  ]
+  ],
+  "wait_adapter": {
+    "original": {
+      "start": "004df8e0",
+      "end_exclusive": "004df8ef",
+      "hex": "51526a01502eff15044653005a59c3",
+      "iat": "00534604",
+      "dll": "KERNEL32.dll",
+      "function": "SleepEx",
+      "arguments": "incoming EAX, alertable TRUE (1)",
+      "limits": "No local elapsed-time retry; actual delay and APC/completion activity unobserved."
+    },
+    "official_modern": {
+      "start": "004df8e0",
+      "end_exclusive": "004df8ef",
+      "hex": "51526a01502eff15044653005a59c3",
+      "iat": "00534604",
+      "dll": "KERNEL32.dll",
+      "function": "SleepEx",
+      "arguments": "incoming EAX, alertable TRUE (1)",
+      "limits": "No local elapsed-time retry; actual delay and APC/completion activity unobserved."
+    }
+  }
 }

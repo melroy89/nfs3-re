@@ -447,7 +447,7 @@ The [HUD-settings policy comparison](original-modern-hud-settings-policy.md) ver
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **179 Claimed, 37 Static, 71 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **178 Claimed, 37 Static, 72 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -485,7 +485,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP160-008 | Cabin image in “In Car” view now rendered 0-3 pixels wider (depending on the resolution) for get rid of chinks on the edges of screen. | Claimed |
 | MP160-009 | Ferrari, Lister and Spectre logos were added to the flying logos animation in the menu. | Partial |
 | MP160-010 | Ford, HSV, Lister and Spectre logos will not be used in the animation if these addon cars aren't installed. | Partial |
-| MP160-011 | When gameplay loading is aborted using Esc key, "Aborted" string will be displayed for 200ms (it was just a frame before). | Claimed |
+| MP160-011 | When gameplay loading is aborted using Esc key, "Aborted" string will be displayed for 200ms (it was just a frame before). | Partial |
 | MP160-012 | FPU always uses extended precision for all calculations. | Static |
 | MP160-013 | The game checks if proper version of language files is used. | Static |
 | MP160-014 | dgVoodoo v2.5.3 (Napalm). | Claimed |

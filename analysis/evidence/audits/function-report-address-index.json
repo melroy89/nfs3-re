@@ -249,7 +249,7 @@
     },
     {
       "path": "analysis/original-modern-pending-overlay.md",
-      "sha256": "e6f6d4603e757737cb0906134e7f984c8b643fa8319d3e01f61ca83fcdcc6f06"
+      "sha256": "6306a8f0c8eb2a32741a5ee405b8afc86c2dd1254d0e56c33bdc5911ada9a78b"
     },
     {
       "path": "analysis/original-modern-projection.md",
@@ -7300,6 +7300,8 @@
           "addresses": [
             "004a3500",
             "004a3532",
+            "004a3537",
+            "004a353c",
             "004a3544"
           ]
         }

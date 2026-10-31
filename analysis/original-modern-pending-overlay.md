@@ -32,7 +32,7 @@ The retained driver calls are pointers, not proof of successful display, frame p
 
 ## Loading-abort context and installed message identity
 
-The Modern caller witness `004a3500..004a3544` connects this overlay to the loading-presentation loop. When `0055e88c` is zero, it repeats progress helper `00495230` until that helper returns nonzero, then calls `004c62a0`. When `0055e88c` is nonzero at the loop gate, it instead calls `00494bd0` at `004a3532`, calls `004df8e0` with EAX=200 and sets EAX=1 on that path. The latter helper's complete timing semantics are not established here; literal 200 is not independently labeled milliseconds by this witness.
+The Modern caller witness `004a3500..004a3544` connects this overlay to the loading-presentation loop. When `0055e88c` is zero, it repeats progress helper `00495230` until that helper returns nonzero, then calls `004c62a0`. When `0055e88c` is nonzero at the loop gate, it instead calls `00494bd0` at `004a3532`, calls `004df8e0` with EAX=200 and sets EAX=1 on that path. The wait-adapter follow-up below resolves this to an alertable200 ms request, while actual presentation duration remains unmeasured.
 
 Artwork initializer `00494cb0` sets pending global `0079f288=1` at `00494cec` (EDX was loaded with 1 at `00494cde`). Thus the overlay's clear-and-draw gate is armed as part of loading artwork setup. See the existing [loading artwork](original-modern-loading-artwork.md) and [loading timing/cancellation](original-modern-loading-timing.md) comparisons for the broader input-poll path. This is a static chain, not a captured abort interaction or a universal explanation of every write to `0055e88c`.
 
@@ -41,3 +41,13 @@ The [installed overlay label inventory](evidence/inventories/installed-overlay-l
 Combining that label with the paired format constants gives original English `" ... Aborted"` versus Modern `" Aborted"` for these payloads. This supports identification of the path as a loading-abort overlay while preserving the separate questions of rendering success, active language and precise trigger cause. No game was aborted for this investigation.
 
 Reproduce the label evidence with `python3 analysis/scripts/inventory_overlay_labels.py --game-dir '<installed game directory>'`. The static audit script retains the arming and caller spans alongside the renderer evidence. Remaining work: full flag-writer provenance, complete coordinate-producer correspondence, message-expansion bounds and actual rendered output.
+
+## Abort presentation requests an alertable 200 ms wait
+
+The expanded overlay audit verifies complete helper `004df8e0..004df8ef` (15 bytes) is identical in original and Modern and resolves IAT `00534604` to `SleepEx`. It preserves ECX/EDX, pushes literal1 followed by incoming EAX, calls the API and returns its result. This reuses the same adapter already identified in the [asynchronous-wait comparison](original-modern-async-wait.md).
+
+Modern's abort-presentation branch loads EAX=200 at `004a3537` and calls that helper at `004a353c`, immediately after calling the overlay routine at `004a3532`. It then returns1 through the caller's existing unwind. The overlay itself is conditional on its pending flag, so a wait request does not prove that a new message was drawn on every visit.
+
+Microsoft's [SleepEx contract](https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-sleepex) defines the first argument in milliseconds and the second as alertability. Accordingly, this is a verified **200 ms alertable wait request**. An I/O completion/APC can end an alertable wait early, and scheduling can delay resumption after timeout. Neither the wrapper nor this abort branch measures elapsed time and retries the remainder. Thus the instructions do not prove a display duration of exactly200 ms.
+
+**MP160-011 has partial static support:** final Modern adds the explicit wait on this inspected abort path. Its wording about an `Aborted` message and an original duration around500 ms still requires a complete original presentation/timing trace and actual language/render evidence. The already captured original session-loading path does not supply that proof. No500→200 runtime measurement, universal abort coverage or historical introduction is claimed. No game or instruction probe was executed.
