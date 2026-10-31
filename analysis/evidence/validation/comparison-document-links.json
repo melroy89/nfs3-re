@@ -63,7 +63,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "c151ba1a1b22c0d8b5d56246b6ac7ddc0ded388a94b42fa2207172a51338134b",
+      "sha256": "692bb32fc7c061a6e447dacc52f2cdad351506f56cd70d5bdc44626f25590b5c",
       "relative_links": 90
     },
     {
@@ -378,12 +378,12 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "736dddd4d77fda181277097bbbe2a4beeaeb934bcde5432556e1c7aa88e5b958",
-      "relative_links": 97
+      "sha256": "2ac249e90f8157c75fb8ed7c2a253e5c679417e08f8020c3e5271884c1b2c3ec",
+      "relative_links": 104
     }
   ],
   "file_count": 76,
-  "relative_link_count": 539,
+  "relative_link_count": 546,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

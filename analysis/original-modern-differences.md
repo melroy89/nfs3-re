@@ -364,10 +364,12 @@ See also [window-key translation](original-modern-window-key.md): table-driven m
 
 See also [car-list rendering aliases](original-modern-car-alias.md): expanded name matching at two list-renderer call sites.
 
+Recent catalog reconciliation links the mirror admission/track-selector and Num Lock findings to their release-note claims as **Partial**. The car-class display claim and version-specific v1.5.2 rear-view improvement retain vendor-claimed status: related final-pair mechanisms do not prove rendered class text or intermediate-release changes. Input-worker lifecycle, discarded next-block classification, progress budgets and screenshot file policies remain separately documented code findings; they are not forced into unrelated release-note bullets.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **197 Claimed, 37 Static, 53 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **193 Claimed, 37 Static, 57 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -454,9 +456,9 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | ID | Reported change | Review |
 |---|---|---|
 | MP150-001 | No more non-rotating wheels in the rear view mirror and in the split screen mode (when Car Detail is High). | Claimed |
-| MP150-002 | Rear View Mirror can display clouds, lightnings, and light from the headlights of cars and from the flashers of cops. | Claimed |
-| MP150-003 | Rear View Mirror can use better 3D models of the track, so the problem with the holes in the objects (displayed in the mirror) is solved now. | Claimed |
-| MP150-004 | “Rear View Mirror” detail setting. Low is equivalent to the original; Medium is for better track 3D model and view distance; High is for the best track 3D model, clouds, lightnings, and light from the car headlights and cop flashers rendering. | Claimed |
+| MP150-002 | Rear View Mirror can display clouds, lightnings, and light from the headlights of cars and from the flashers of cops. | Partial |
+| MP150-003 | Rear View Mirror can use better 3D models of the track, so the problem with the holes in the objects (displayed in the mirror) is solved now. | Partial |
+| MP150-004 | “Rear View Mirror” detail setting. Low is equivalent to the original; Medium is for better track 3D model and view distance; High is for the best track 3D model, clouds, lightnings, and light from the car headlights and cop flashers rendering. | Partial |
 | MP150-005 | Better proportions of the objects in the rear view mirror. | Claimed |
 | MP150-006 | Fixed direction of the camera of the rear view mirror. The horizon is on the middle of the mirror now (for a better view). | Claimed |
 | MP150-007 | Fixed a small horizon glitch at the edge of a screen when the wide view angle is enabled. | Claimed |
@@ -470,7 +472,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-015 | Gear numbers are right-aligned now, like the digital speedometer. | Claimed |
 | MP150-016 | Gear numbers use smaller font if there is not enough space for them. | Claimed |
 | MP150-017 | Opponents List and Speeds List have standard bevel when SoftTri is used (as it was for other renderers). | Claimed |
-| MP150-018 | An ability to enter digits from the Num Pad when Num Lock is on. | Claimed |
+| MP150-018 | An ability to enter digits from the Num Pad when Num Lock is on. | Partial |
 | MP150-019 | Commas are treated as dots when parsing an IP address. | Claimed |
 | MP150-020 | HUD preview in the settings now arranged well. | Claimed |
 | MP150-021 | Volume and Alpha sliders display own value (in percents). | Partial |
