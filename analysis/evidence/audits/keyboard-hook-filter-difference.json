@@ -11,6 +11,18 @@
           "end": "004ccd5a",
           "sha256": "df972424ec63ace33e85a2a9d00d30b9891a13d436505272b748c5571499a7e6",
           "bytes": "5356575589e583ec048b5d188b551431f685d20f85a7000000833d4c3d9f00000f849a000000a18412560085c07434f6451f20742ec745fc3800000083fb097514b901000000890d48945500bf0f00000089ceeb5183fb1b754cbf0100000089feeb436a112eff15384753006685c07d15c745fc1d00000083fb1b7529bf0100000089feeb2083fb5b740f83fb5c740a83fb5d740583fb2c750cbe0100000031d289df8955fc85f67416833d8812560000740d8b45fc89faff158812560089c685f67407b801000000eb168b751c56538b7d1457a17c125600502eff15f446530089ec5d5f5e5bc20c00"
+        },
+        {
+          "start": "004cdc90",
+          "end": "004cdccc",
+          "sha256": "9439f94b826fe04cc1d887cf49c065cb1d0309f882f5a1f8d7fe97e78fb7c321",
+          "bytes": "515589e58915881256008b157c125600a38412560085d2752052526870cc4c006a022eff1590475300b901000000a37c125600890d801256005d59c3"
+        },
+        {
+          "start": "004b6165",
+          "end": "004b617d",
+          "sha256": "4550e3e89699b24a30504581a18506491275d2f40139718141149e3b403498a0",
+          "bytes": "b88000000031d2a3d8435600b80100000031dbe8137b0100"
         }
       ]
     },
@@ -41,6 +53,6 @@
   },
   "limits": [
     "Static inspection only; no OS hook behavior observed.",
-    "Original indirect filter callback and intermediate Modern releases not resolved here."
+    "Original startup supplies a null callback; all possible indirect/alias writes and intermediate releases remain unqualified."
   ]
 }
