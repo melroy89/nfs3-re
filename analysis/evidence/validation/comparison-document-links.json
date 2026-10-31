@@ -308,8 +308,8 @@
     },
     {
       "path": "analysis/original-modern-slideshow-navigation.md",
-      "sha256": "eec902d6a1049eff185cc6e299f82840b258f6d310dcf7cbd58eaae11b92dfe9",
-      "relative_links": 5
+      "sha256": "7f687481293ce21cd091e57b01c23f94bef3d071abd088c1223d098dcd42db72",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-startup-paths.md",
@@ -403,7 +403,7 @@
     }
   ],
   "file_count": 80,
-  "relative_link_count": 604,
+  "relative_link_count": 605,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

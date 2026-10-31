@@ -42,6 +42,13 @@
           "assembly_sha256": "24e7452eaa407180f76d289600727d8574d9adfca7371da0200eb58eceaede63"
         },
         {
+          "start": "004d6390",
+          "end": "004d66ea",
+          "bytes_sha256": "3e56c7c5bacc23c241366cc111801e14ce1f3ee7760dcd0da448a4242524c3c7",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-004d6390.asm",
+          "assembly_sha256": "807b6d0859394cdafcef31226584d3dac6551904081c68705301f08fcac81206"
+        },
+        {
           "start": "0044aa30",
           "end": "0044aac9",
           "bytes_sha256": "dba39f70bf73f8b2223328a1c86db97603ff0dae16a35a3cb8130656ea8af57e",
@@ -129,6 +136,13 @@
           "bytes_sha256": "a735ada3ed4cc4118e2f6d94a9123218fa21cde6184ebbc93a117411dd16ae5b",
           "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00453ef0.asm",
           "assembly_sha256": "a865b596e98683f226f8cdf24664528050d1ae5975ac5c1c5b27a09e1e49edea"
+        },
+        {
+          "start": "004d6390",
+          "end": "004d66ea",
+          "bytes_sha256": "3e56c7c5bacc23c241366cc111801e14ce1f3ee7760dcd0da448a4242524c3c7",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-004d6390.asm",
+          "assembly_sha256": "fd233489308f134b4308588fa105fb783f2374e70d0da267c61c38cb95b9323b"
         },
         {
           "start": "0044aa30",
@@ -351,6 +365,31 @@
     },
     "reset": "00451830 clears12 bytes",
     "limits": "Complete creator/resource lifetime and all shared-slot users unresolved."
+  },
+  "retained_resource_creator": {
+    "start": "004d6390",
+    "end_exclusive": "004d66ea",
+    "length": 858,
+    "sha256": "3e56c7c5bacc23c241366cc111801e14ce1f3ee7760dcd0da448a4242524c3c7",
+    "conditional_allocation_call": "004d6601 -> slot009ef968",
+    "shared_update_call": "004d6654 -> slot009ef964",
+    "condition": "Saved prior-index EDX argument is nonzero: skip allocation branch."
+  },
+  "slot_helper_direct_call_scan": {
+    "00451810": {
+      "sites": [
+        "00453e66",
+        "00453e93",
+        "00453ec1"
+      ],
+      "scope": "Every-byte E8/rel32 scan of official code section; excludes indirect references and other sections."
+    },
+    "00451830": {
+      "sites": [
+        "004daff2"
+      ],
+      "scope": "Every-byte E8/rel32 scan of official code section; excludes indirect references and other sections."
+    }
   },
   "retained_previous_core": {
     "start": "0045386d",

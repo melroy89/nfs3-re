@@ -16,7 +16,7 @@ def main():
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw); images.append(pe)
         spans = [(0x453840, 0x453859), (0x453860, 0x45393e), (0x453c00, 0x453eee), (0x453ed7, 0x453eec), (0x453ef0, 0x453f48)] if label == 'original' else [(0x453850, 0x453863), (0x453864, 0x45393d), (0x453c00, 0x453eee), (0x453ed7, 0x453eee), (0x453ef0, 0x453f58)]
-        spans += [(0x44aa30, 0x44aac9), (0x44a9e0, 0x44aa21), (0x44ab40, 0x44ac7c),
+        spans += [(0x4d6390,0x4d66ea),(0x44aa30, 0x44aac9), (0x44a9e0, 0x44aa21), (0x44ab40, 0x44ac7c),
                   (0x44b6c8, 0x44b707), (0x44b7a7, 0x44b7ec), (0x44b30b, 0x44b382)]
         if label=='official_modern':spans += [(0x451810,0x45182d),(0x451830,0x45183d),(0x4d6459,0x4d64a5),(0x4dafe6,0x4daffc)]
         rows = []
@@ -45,6 +45,14 @@ def main():
     out['refresh_resource_slots']={'wrapper':'00451810','base':'00664770','index':'zero-extended DL','slideshow_slots':{'00453e66':1,'00453e93':2,'00453ec1':0},'reset':'00451830 clears12 bytes','limits':'Complete creator/resource lifetime and all shared-slot users unresolved.'}
     common = [p.get_data(0x5386d, 0x453931-0x45386d) for p in images]
     assert common[0] == common[1]
+    creator=[pe.get_data(0xd6390,0x35a) for pe in images];assert creator[0]==creator[1]
+    out['retained_resource_creator']={'start':'004d6390','end_exclusive':'004d66ea','length':0x35a,'sha256':hashlib.sha256(creator[0]).hexdigest(),'conditional_allocation_call':'004d6601 -> slot009ef968','shared_update_call':'004d6654 -> slot009ef964','condition':'Saved prior-index EDX argument is nonzero: skip allocation branch.'}
+    pe=images[1];section=pe.sections[0];base=pe.OPTIONAL_HEADER.ImageBase+section.VirtualAddress;code=pe.get_data(section.VirtualAddress,section.SizeOfRawData)
+    out['slot_helper_direct_call_scan']={}
+    for target,expected_sites in [(0x451810,[0x453e66,0x453e93,0x453ec1]),(0x451830,[0x4daff2])]:
+        sites=[base+i for i in range(len(code)-4) if code[i]==0xe8 and base+i+5+int.from_bytes(code[i+1:i+5],'little',signed=True)==target]
+        assert sites==expected_sites
+        out['slot_helper_direct_call_scan'][f'{target:08x}']={'sites':[f'{v:08x}' for v in sites],'scope':'Every-byte E8/rel32 scan of official code section; excludes indirect references and other sections.'}
     out['retained_previous_core'] = {'start': '0045386d', 'end': '00453931', 'sha256': hashlib.sha256(common[0]).hexdigest()}
     out['retained_action9_path_ranges'] = []
     for start, end in ((0x44aa30, 0x44aac9), (0x44a9e0, 0x44aa21), (0x44ab40, 0x44ac7c), (0x44b6c8, 0x44b707), (0x44b7a7, 0x44b7ec)):
