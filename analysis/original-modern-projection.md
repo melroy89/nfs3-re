@@ -83,6 +83,21 @@ Within the consumer, **`0041be02..0041be39`** uses float scales `0056009c/a0`, a
 
 This establishes that the new analysis should focus on changed rectangle/camera inputs and other centre writers, rather than attributing the horizon claim to a changed centre-addition or this unchanged downstream projection body. The existing viewport-finalizer path is another writer of these float globals, so the builder is not a proven sole owner. Data/state, x87 precision, output ordering and actual camera/horizon remain unverified across runs; **MP160-003 stays unresolved**.
 
+## Frame Size covering rectangle reaches the projection centre
+
+Three existing audits close a specific Modern input chain: [Frame Size labels/storage](original-modern-frame-setting.md), [covering-rectangle construction](original-modern-viewport-geometry.md#source-groups-covering-frame-versus-physicalfitted-rectangles), and [wide-angle caller](scripts/audit_projection_callers_followup.py). In the non-two-player branch, `004dbda0` supplies rectangle `007cdb88` to `004bed20` at `004dbdd6`. That helper passes the first four DWORDs as EAX/EDX/EBX/ECX to projection wrapper `004dbcc0` at `004bed34`; their FILD-to-float conversion reaches the retained centre builder above. The later +10h rectangle group is passed to a separate helper and must not be substituted for these projection inputs.
+
+For ordinary nonoverflowing positive dimensions with Frame Size bit1 clear, constructor height is `S=(3*W)>>2` and base origin is `D=(H-S)>>1`. Full/Centered uses Y=D; Full/Shifted (bit0 set) uses Y=D+(D>>1). Session1 overrides the constructor flags to0 and the wide-angle wrapper chooses a different per-view rectangle, so this derivation deliberately excludes that branch.
+
+For **1920x1080**, the resulting static input/centre examples are:
+
+| Frame Size | Rectangle Y / height | Derived centreY stored at `005600a8` |
+|---|---|---:|
+| Full, Centered | -180 /1440 | 540 |
+| Full, Shifted | -270 /1440 | 450 |
+
+These are exact arithmetic illustrations for this initialization route, not captured frames or a proof that this wide-angle caller is the active path in every camera. Odd dimensions retain arithmetic-shift rounding; later resize/finalizer writes can change the inputs/state. The path establishes how the labelled setting can change the projection centre independently of changing the centre-addition formula. It supports the existing partial MP160-004 mechanism, while camera orientation, final horizon location and MP160-003's universal visible claim remain unresolved. No game or instruction probe was executed.
+
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
 
 ## Viewport finalizer drops legacy projection updates
