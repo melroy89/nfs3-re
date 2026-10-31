@@ -62,6 +62,116 @@
       }
     }
   },
+  "official_menu_scan": {
+    "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+    "menu_count": 52,
+    "matching_members": [
+      {
+        "member": "fedata/menus/car1.mnu",
+        "sha256": "e85a7450867907a0705eeec5247b43e9729a19a394fd2605afafaa66d95731a8",
+        "matches": [
+          {
+            "line": 12,
+            "section": "[droplist]",
+            "field": "listname=cars"
+          }
+        ]
+      },
+      {
+        "member": "fedata/menus/car2.mnu",
+        "sha256": "4a5b1c79aa6323c8593cafd489422a60b2f71f90b07203c9214c929577a866ba",
+        "matches": [
+          {
+            "line": 12,
+            "section": "[droplist]",
+            "field": "listname=car2"
+          }
+        ]
+      },
+      {
+        "member": "fedata/menus/cedbasic.mnu",
+        "sha256": "3e78623958fe48c62e192b6c80ef1af702c279ce625d7109c103c9916bbd584a",
+        "matches": [
+          {
+            "line": 18,
+            "section": "[droplist]",
+            "field": "listname=cars"
+          }
+        ]
+      },
+      {
+        "member": "fedata/menus/history.mnu",
+        "sha256": "24a1c8d5a61225a98e03e08b255d4a17c6687bbcd95e9cbbd4eecef40c23eba7",
+        "matches": [
+          {
+            "line": 12,
+            "section": "[droplist]",
+            "field": "listname=carShowcase"
+          }
+        ]
+      },
+      {
+        "member": "fedata/menus/interior.mnu",
+        "sha256": "376be73730fd40f53e43fbc4ce14e95747d4675b72ef9437cb1f4cf7f58125dd",
+        "matches": [
+          {
+            "line": 7,
+            "section": "[droplist]",
+            "field": "listname=carShowcase"
+          }
+        ]
+      },
+      {
+        "member": "fedata/menus/main.mnu",
+        "sha256": "9bdd70113881cff5b6161cb7dd9400b43d38a4ab062042e8c1946b80ea042ed9",
+        "matches": [
+          {
+            "line": 49,
+            "section": "[cascade]",
+            "field": "listname=cars"
+          }
+        ]
+      },
+      {
+        "member": "fedata/menus/mainmult.mnu",
+        "sha256": "ffa0146a548083c5242a2d369d8f57981d38f609ce2d9b1b28d37fd60cccea50",
+        "matches": [
+          {
+            "line": 59,
+            "section": "[cascade]",
+            "field": "listname=cars"
+          }
+        ]
+      },
+      {
+        "member": "fedata/menus/mainsplt.mnu",
+        "sha256": "5121cf995388e06656a57068a9b4f916a902f2cb084c8e1c2d2ebb7b364d5509",
+        "matches": [
+          {
+            "line": 49,
+            "section": "[cascade]",
+            "field": "listname=cars"
+          },
+          {
+            "line": 71,
+            "section": "[cascade]",
+            "field": "listname=car2"
+          }
+        ]
+      },
+      {
+        "member": "fedata/menus/showcase.mnu",
+        "sha256": "46925ae29e977a02b16a059106408d5a2f06a5871bf90302e33d073e117d2578",
+        "matches": [
+          {
+            "line": 54,
+            "section": "[droplist]",
+            "field": "listname=carShowcase"
+          }
+        ]
+      }
+    ]
+  },
   "limits": [
     "Static alias and caller policy only; full renderer and asset bindings not audited.",
     "No UI display or language-dependent output observed."

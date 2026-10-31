@@ -26,6 +26,22 @@ def main():
         for pe,target in ((old,0x4e9ec0),(new,0x4728f4)):
             data=pe.get_data(address-0x400000,5);assert data[0]==0xe8
             assert address+5+int.from_bytes(data[1:],'little',signed=True)==target
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    members=subprocess.check_output(['7z','l','-slt',str(archive)]).decode().splitlines()
+    menus=[line[7:] for line in members if line.startswith('Path = fedata/menus/') and line.lower().endswith('.mnu')]
+    assert len(menus)==52
+    matches=[]
+    for member in menus:
+        data=subprocess.check_output(['7z','x','-so',str(archive),member])
+        section='';fields=[]
+        for number,line in enumerate(data.decode('latin1').splitlines(),1):
+            if line.startswith('['):section=line
+            if line.lower() in ('listname=cars','listname=car2','listname=carshowcase'):
+                fields.append({'line':number,'section':section,'field':line})
+        if fields:matches.append({'member':member,'sha256':hashlib.sha256(data).hexdigest(),'matches':fields})
+    assert sum(len(row['matches']) for row in matches)==10
+    result['official_menu_scan']={'archive_sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'menu_count':len(menus),'matching_members':matches}
     result['limits']=['Static alias and caller policy only; full renderer and asset bindings not audited.','No UI display or language-dependent output observed.']
     (ROOT/'analysis/evidence/audits/original-modern-car-alias.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired call retargeting, aliases and identical ASCII comparator')

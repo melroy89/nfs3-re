@@ -17,3 +17,19 @@ The complete comparator **`004e9ec0..004e9efb`** is byte-identical. It folds ASC
 At the first call, return0 branches directly to **`00463ba2`**, admitting the shared car-list rendering path. Nonmatches continue through another name test and an item-count comparison. At the second call, the caller loads a count into ECX; nonmatch subtracts4, whereas any accepted alias retains that count before the shared call to `00439730` with EBX=4. The helper and comparator leave ECX untouched in the inspected local bodies.
 
 Modern therefore extends the existing `cars` treatment to two additional names in this renderer. Full count meaning, asset bindings, output text/geometry, surrounding renderer changes and a unique release-note attribution remain unresolved. The finding does not establish a selection-model or gameplay change merely because the aliases contain car names.
+
+## Official package bindings
+
+The audit now scans all **52 `.mnu` members** directly from the hash-pinned official Modern archive, recording matching section types, exact fields/line numbers and member hashes. It finds ten bindings in nine members:
+
+| List name | `[droplist]` members | `[cascade]` members |
+|---|---|---|
+| `cars` | `car1.mnu`, `cedbasic.mnu` | `main.mnu`, `mainmult.mnu`, `mainsplt.mnu` |
+| `car2` | `car2.mnu` | `mainsplt.mnu` |
+| `carShowcase` | `showcase.mnu`, `history.mnu`, `interior.mnu` | None in this bounded scan |
+
+The six droplist bindings identify concrete packaged controls associated with these names. For example, `car2.mnu` binds a droplist at x101/y69 with `maxvisitem=10`; `showcase.mnu` uses the same position/count with `codelink=CAR_SELECT_P1` and `listname=carShowcase`. These fields support a menu-control association. They do not independently prove every loader callback, currently active screen or visible output.
+
+The four cascade bindings are deliberately separate: the same list name can feed a different widget type, so their presence alone does not extend the audited droplist-renderer conclusion to cascades. Complete descriptor/loader-to-widget callback linkage remains follow-up work.
+
+The local `fedata_org/menus` backup contains mixed uppercase/lowercase copies of several names. Its provenance is not authenticated as a clean original distribution. This scan therefore makes no original-versus-Modern asset-addition claim and does not count duplicate backup files as additional historical controls. The executable call-target comparison above remains the evidence for the code change.
