@@ -1,0 +1,191 @@
+{
+  "kind": "static-window-key-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004ccaa0",
+          "end": "004ccc67",
+          "sha256": "4f63690260266ab788ca1655e4550c2b9d092b6c3b6d29f123dbba4569f91845",
+          "assembly": "analysis/captures/modern-differences/window-key/original-004ccaa0.asm",
+          "assembly_sha256": "281b3345ecf59c205142459f3bf7e1f0e64f389b3f813e2998cb01a9c425e9c7"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004ccaa0",
+          "end": "004ccaf6",
+          "sha256": "72e4428a16349fe8ea48552cfa37d0756c0811f1b6528764e7c06ff6f749fea3",
+          "assembly": "analysis/captures/modern-differences/window-key/official_modern-004ccaa0.asm",
+          "assembly_sha256": "04610d5003ca2532bf740c40bea46f419be2bbf1ce0826eb8c8772d1baebc994"
+        }
+      ]
+    }
+  },
+  "modern_tables": {
+    "004ccaf8": {
+      "pairs": [
+        [
+          37,
+          19200
+        ],
+        [
+          39,
+          19712
+        ],
+        [
+          38,
+          18432
+        ],
+        [
+          40,
+          20480
+        ],
+        [
+          46,
+          21248
+        ],
+        [
+          33,
+          18688
+        ],
+        [
+          34,
+          20736
+        ],
+        [
+          36,
+          18176
+        ],
+        [
+          35,
+          20224
+        ],
+        [
+          45,
+          20992
+        ],
+        [
+          112,
+          15104
+        ],
+        [
+          113,
+          15360
+        ],
+        [
+          114,
+          15616
+        ],
+        [
+          115,
+          15872
+        ],
+        [
+          116,
+          16128
+        ],
+        [
+          117,
+          16384
+        ],
+        [
+          118,
+          16640
+        ],
+        [
+          119,
+          16896
+        ],
+        [
+          120,
+          17152
+        ],
+        [
+          121,
+          17408
+        ],
+        [
+          122,
+          34560
+        ],
+        [
+          123,
+          34816
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "sha256": "87b2f29a14fca11616a7c18d2e5430ccfb6b18645b5cd3218c98e44aa3db7146"
+    },
+    "004ccb54": {
+      "pairs": [
+        [
+          96,
+          20992
+        ],
+        [
+          97,
+          20224
+        ],
+        [
+          98,
+          20480
+        ],
+        [
+          99,
+          20736
+        ],
+        [
+          100,
+          19200
+        ],
+        [
+          101,
+          19456
+        ],
+        [
+          102,
+          19712
+        ],
+        [
+          103,
+          18176
+        ],
+        [
+          104,
+          18432
+        ],
+        [
+          105,
+          18688
+        ],
+        [
+          108,
+          21248
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "sha256": "ff540f87f8a9a9c2cab538a2e1dc60f6cc23d834875acdee47f3c879415494d6"
+    }
+  },
+  "modern_import": {
+    "00534744": "GetKeyState"
+  },
+  "limits": [
+    "Static only; no keyboard events or UI behavior tested.",
+    "Original mappings inspected from branch tree; no exhaustive executable equivalence test."
+  ]
+}

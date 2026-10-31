@@ -58,8 +58,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "dc90983f628da2e4de50e774f83fb648e9cf2f4693c06fdb23127ee7a0f04b4d",
-      "relative_links": 88
+      "sha256": "603939df6a0897a564336749c7bdef2a5de8f851c6b68ebd323d0f92b06168f9",
+      "relative_links": 89
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -367,13 +367,18 @@
       "relative_links": 4
     },
     {
+      "path": "analysis/original-modern-window-key.md",
+      "sha256": "8438bec3d414a44c99122cd89ae7bf92f35ba61581a41e20e36f9dc51a5a2bf0",
+      "relative_links": 2
+    },
+    {
       "path": "analysis/modern-patch-change-catalog.md",
       "sha256": "736dddd4d77fda181277097bbbe2a4beeaeb934bcde5432556e1c7aa88e5b958",
       "relative_links": 97
     }
   ],
-  "file_count": 74,
-  "relative_link_count": 533,
+  "file_count": 75,
+  "relative_link_count": 536,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

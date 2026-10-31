@@ -360,6 +360,8 @@ See also [indexed-texture loading progress](original-modern-texture-progress.md)
 
 See also [input-worker lifecycle](original-modern-input-worker.md): relocated callback, sentinel-controlled exit and changed shutdown synchronization.
 
+See also [window-key translation](original-modern-window-key.md): table-driven mappings, Num Lock gate and keypad-separator handling.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
