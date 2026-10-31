@@ -126,7 +126,7 @@ The 5% claim's remaining static gap is therefore upstream field instantiation/mu
 
 ## File-backed slider callback row
 
-The manifest now retains and asserts byte identity of the 80-byte row at **`00557718`**. Its first DWORD is **0fh**, second DWORD **800h**, and the callback-shaped slots are:
+The manifest now retains and asserts byte identity of the 80-byte prefix capture at **`00557718`** (the full template is established below). Its first DWORD is **0fh**, second DWORD **800h**, and the callback-shaped slots are:
 
 | Row offset | Function pointer |
 |---:|---|
@@ -136,8 +136,18 @@ The manifest now retains and asserts byte identity of the 80-byte row at **`0055
 | +30h | `0046cb80` — step-event dispatcher inspected above |
 | +34h | `0046cbe0` |
 
-Remaining row DWORDs in this captured span are zero. This is a concrete static callback-registration candidate, shared between original and Modern, rather than treating the lack of direct CALLs as evidence the dispatcher is unused. The +2ch/+30h positions correspond to the entry callback fields examined elsewhere in frontend rendering/input analysis, but the row-to-entry copy/installation code must still be traced before asserting that exact runtime relationship for every slider.
+Remaining DWORDs in this captured prefix are zero; that prefix length did not establish the full template size. This is a concrete static callback-registration candidate, shared between original and Modern, rather than treating the lack of direct CALLs as evidence the dispatcher is unused. The +2ch/+30h positions correspond to the entry callback fields examined elsewhere in frontend rendering/input analysis, but the row-to-entry copy/installation code must still be traced before asserting that exact runtime relationship for every slider.
 
 The row contains no new Modern-only step override: its bytes are identical and point to the same retained step dispatcher. This further localizes the5% ambiguity to instance construction/mutation, other input paths or historical releases. Pointer presence does not prove execution, valid widget lifetime or user input delivery. No callback was invoked during this audit.
 
 Next: locate the table walker/template installer and establish how row ID0fh and the parsed slider record are combined. The documented conditional snap-field preference remains conditional until those links or live values establish the actual input state.
+
+## Verified template-to-entry installation
+
+Complete installer `00449060..004490d8` is now captured and byte-identical between original and Modern. Incoming EAX is the destination entry index; EDX is the requested type. It scans a sentinel-terminated registry at `00557a84` with **12-byte stride**, matching type DWORD0 and loading the template pointer at +8. A missing type returns without the copy.
+
+The exact registry item at **`00557b44`** is `{0fh, 005383e4, 00557718}`; the middle pointer names literal **`slider`**. For this type, the installer therefore copies **bch (188) bytes** from `00557718` into `00604ee0 + wrap32(index * bch)`. The manifest now retains the complete source template and registry item and asserts both identical across baselines. There is no local destination-index capacity check.
+
+This establishes installation of the template's +2ch render dispatcher and +30h step-event dispatcher into corresponding entry fields. The prior 80-byte callback capture was a **prefix**, not proof of row extent; the bch-byte copy determines the installed template extent used here. Copying raw pointers is not equivalent to invoking them, and does not validate the lifecycle of the destination entry.
+
+The callback-registration gap is closed for a type0fh install through this helper. Remaining links for the5% question are the text parser's numeric stores/default overrides into the template/instance, later field mutation, and actual event delivery. The helper itself does not introduce a Modern-only snap/step override: its body and complete slider template are retained unchanged.
