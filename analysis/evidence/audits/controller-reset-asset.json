@@ -1,0 +1,54 @@
+{
+  "kind": "controller-reset-authored-position",
+  "inputs": {
+    "backup": {
+      "path_or_member": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CONTROL1.MNU",
+      "sha256": "ebc3cf97ff8e1cc4ba22548fc340c7f2c5de33e4d726b743e60505a77e462cf1",
+      "reset_section": {
+        "section": "[button]",
+        "fields": {
+          "x": "0",
+          "y": "0",
+          "priority": "11",
+          "codelink": "reset",
+          "postonly": "0",
+          "mainonly": "0",
+          "EnableForDemo": "0",
+          "EnableForE3Demo": "0",
+          "text": "kMenuCONTROL1ResetToD001",
+          "buttontype": "tab",
+          "value": "0",
+          "listpos": "0",
+          "listoff": "0",
+          "listx": "0",
+          "listy": "0",
+          "ypos": "7",
+          "align": "0"
+        }
+      }
+    },
+    "official_modern": {
+      "path_or_member": "fedata/menus/control1.mnu",
+      "sha256": "fdf3b33cf915a51b83705208a94d35cd4df102813c56269d7d084a60c2dcd6d5",
+      "reset_section": {
+        "section": "[button]",
+        "fields": {
+          "x": "0",
+          "y": "0",
+          "priority": "11",
+          "codelink": "reset",
+          "text": "kMenuCONTROL1ResetToD001",
+          "buttontype": "tab",
+          "listpos": "0",
+          "listoff": "0",
+          "ypos": "8",
+          "align": "0"
+        }
+      }
+    }
+  },
+  "limits": [
+    "Local backup provenance is not authenticated retail.",
+    "Authored ypos 7 to8; runtime placement and parser semantics not tested."
+  ]
+}

@@ -377,7 +377,7 @@ See also [dropdown input shared sound tail](original-modern-dropdown-input.md): 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **187 Claimed, 37 Static, 63 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **186 Claimed, 37 Static, 64 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -539,7 +539,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-024 | Credits page with the 3D panoramas of the developers has same controls, as general credits (with Back and Next buttons). | Partial |
 | MP140-025 | Increased quantity of visible elements in some long drop down lists (resolution list, car lists). | Claimed |
 | MP140-026 | Fixed unaligned paddings of the all drop down lists. | Claimed |
-| MP140-027 | “Reset To Defaults” button in the Controllers menu was shifted one position down. | Claimed |
+| MP140-027 | “Reset To Defaults” button in the Controllers menu was shifted one position down. | Partial |
 | MP140-028 | “Predefined Keys”, “View Car Interior”, “Load”, and “IPX connection” are aligned well. | Claimed |
 | MP140-029 | NoMovie ini setting also disables demo movies on menu idle. | Partial |
 | MP140-030 | Demo movies aren't starting when the game is minimized in the menu mode (useful for the nGlide driver). | Partial |
