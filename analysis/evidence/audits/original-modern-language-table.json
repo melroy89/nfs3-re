@@ -1,0 +1,191 @@
+{
+  "kind": "static-language-table-comparison",
+  "range_end": "exclusive",
+  "string_decoding": "latin-1 byte-preserving",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004d1750",
+          "end": "004d18a2",
+          "bytes_sha256": "78de7c2d628b84e59b50477cf3f076aca4a874505858dfb19320d549aa591c0e",
+          "assembly": "analysis/captures/modern-differences/language-table/original-004d1750.asm",
+          "assembly_sha256": "8baa77d7ee7ce456a3e6c96fb58db92d9d5401c16b2a570c3db73db182de6c4c"
+        }
+      ],
+      "language_names": [
+        "text.eng",
+        "text.ger",
+        "text.fre",
+        "text.spa",
+        "text.ita",
+        "text.swe"
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004d1750",
+          "end": "004d18a2",
+          "bytes_sha256": "5e1037938d9a5a85bd0a84fbb3a3d097803c915cea5be5f0a7c1d30688e64899",
+          "assembly": "analysis/captures/modern-differences/language-table/official_modern-004d1750.asm",
+          "assembly_sha256": "b58b2ef0dbe42bc6e5a8e95e0ade33d0d27d34240581986719c0a57f75ce1eb8"
+        }
+      ],
+      "language_names": [
+        "text.eng",
+        "text.ger",
+        "text.fre",
+        "text.spa",
+        "text.ita",
+        "text.swe"
+      ],
+      "required_marker": "v1.6.0",
+      "fallback_entries": [
+        {
+          "id": 1928,
+          "offset": 108,
+          "text": ""
+        },
+        {
+          "id": 1929,
+          "offset": 109,
+          "text": "v1.6.0"
+        },
+        {
+          "id": 1930,
+          "offset": 116,
+          "text": "km"
+        },
+        {
+          "id": 1931,
+          "offset": 119,
+          "text": "Port"
+        },
+        {
+          "id": 1932,
+          "offset": 124,
+          "text": "1030 is legacy, 9803 is modern."
+        },
+        {
+          "id": 1933,
+          "offset": 156,
+          "text": "The port is already occupied"
+        },
+        {
+          "id": 1934,
+          "offset": 185,
+          "text": "Menu Sounds"
+        },
+        {
+          "id": 1935,
+          "offset": 197,
+          "text": "Fog"
+        },
+        {
+          "id": 1936,
+          "offset": 201,
+          "text": ""
+        },
+        {
+          "id": 1937,
+          "offset": 202,
+          "text": "Rear View Detail"
+        },
+        {
+          "id": 1938,
+          "offset": 219,
+          "text": "Rear View From"
+        },
+        {
+          "id": 1939,
+          "offset": 234,
+          "text": "Active Camera"
+        },
+        {
+          "id": 1940,
+          "offset": 248,
+          "text": "In Car Camera"
+        },
+        {
+          "id": 1941,
+          "offset": 262,
+          "text": "Random (Rock)"
+        },
+        {
+          "id": 1942,
+          "offset": 276,
+          "text": "Random (Techno)"
+        },
+        {
+          "id": 1943,
+          "offset": 292,
+          "text": "Random (Rock or Techno)"
+        },
+        {
+          "id": 1944,
+          "offset": 316,
+          "text": "Random (Fast)"
+        },
+        {
+          "id": 1945,
+          "offset": 330,
+          "text": "Random (Slow)"
+        },
+        {
+          "id": 1946,
+          "offset": 344,
+          "text": "Random (All)"
+        },
+        {
+          "id": 1947,
+          "offset": 357,
+          "text": "Automatic"
+        },
+        {
+          "id": 1948,
+          "offset": 367,
+          "text": "Narrow (75\u00b0)"
+        },
+        {
+          "id": 1949,
+          "offset": 380,
+          "text": "Normal (90\u00b0)"
+        },
+        {
+          "id": 1950,
+          "offset": 393,
+          "text": "Wide (105\u00b0)"
+        },
+        {
+          "id": 1951,
+          "offset": 405,
+          "text": "Full, Centered"
+        },
+        {
+          "id": 1952,
+          "offset": 420,
+          "text": "Full, Shifted"
+        },
+        {
+          "id": 1953,
+          "offset": 434,
+          "text": "2:1, Centered"
+        },
+        {
+          "id": 1954,
+          "offset": 448,
+          "text": "2:1, Shifted"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No language asset/game/instruction execution.",
+    "Marker check is not full offset/payload validation."
+  ]
+}

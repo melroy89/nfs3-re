@@ -23,6 +23,7 @@ This directory contains reviewed research notes, retained evidence and reproduci
 - [Original versus Modern window creation and retained sizing](original-modern-window-geometry.md)
 - [Original versus Modern window initialization and callbacks](original-modern-window-handling.md)
 - [Original versus Modern configuration lookup and defaults](original-modern-configuration.md)
+- [Original versus Modern language markers and fallback strings](original-modern-language-table.md)
 - [Original versus Modern automatic FOV and projection interface](original-modern-projection.md)
 - [Original versus Modern config.dat acceptance and reset paths](original-modern-config-loading.md)
 - [Original versus Modern ghost loading and configuration restoration](original-modern-ghost-loading.md)
