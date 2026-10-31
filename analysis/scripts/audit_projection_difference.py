@@ -76,6 +76,21 @@ def main():
                       'Literal search does not recover bulk-copy, computed or alias writers; source production remains unresolved.']}
         item['absolute_centre_address_inventory']={'method':'Overlapping four-byte little-endian literal search over complete executable file; matches are operand locations, not instruction entries.',
             'addresses':centre_refs,'limits':['Does not detect computed addresses, aliases, encoded pointers, external modules or runtime-generated code.']}
+        neighborhood=[]
+        for address in range(0x5e1000,0x5e1040,4):
+            matches=[];offset=0
+            while True:
+                offset=raw.find(struct.pack('<I',address),offset)
+                if offset<0:break
+                va=pe.get_rva_from_offset(offset)+0x400000
+                assert 0x401000<=va<0x536000
+                matches.append({'file_offset':offset,'mapped_literal_va':f'{va:08x}'})
+                offset+=1
+            neighborhood.append({'address':f'{address:08x}','matches':matches})
+        item['source_neighborhood_literal_search']={
+            'domain':'Sixteen DWORD-aligned address values005e1000..005e103c, searched as overlapping little-endian literals over complete file.',
+            'addresses':neighborhood,'all_matches_in_code_section_address_range':True,
+            'limits':'No data-held literal of these exact values found; arbitrary byte-offset bases, arithmetic derivation, relocations to other bases and external writers remain unexcluded.'}
 
         if label=='official_modern':
             item['float_constants']={f'{va:08x}':{'hex':pe.get_data(va-0x400000,4).hex(),

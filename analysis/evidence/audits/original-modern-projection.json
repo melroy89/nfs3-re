@@ -256,6 +256,179 @@
         "limits": [
           "Does not detect computed addresses, aliases, encoded pointers, external modules or runtime-generated code."
         ]
+      },
+      "source_neighborhood_literal_search": {
+        "domain": "Sixteen DWORD-aligned address values005e1000..005e103c, searched as overlapping little-endian literals over complete file.",
+        "addresses": [
+          {
+            "address": "005e1000",
+            "matches": []
+          },
+          {
+            "address": "005e1004",
+            "matches": []
+          },
+          {
+            "address": "005e1008",
+            "matches": []
+          },
+          {
+            "address": "005e100c",
+            "matches": []
+          },
+          {
+            "address": "005e1010",
+            "matches": [
+              {
+                "file_offset": 139643,
+                "mapped_literal_va": "00422d7b"
+              },
+              {
+                "file_offset": 142635,
+                "mapped_literal_va": "0042392b"
+              },
+              {
+                "file_offset": 142651,
+                "mapped_literal_va": "0042393b"
+              },
+              {
+                "file_offset": 142826,
+                "mapped_literal_va": "004239ea"
+              },
+              {
+                "file_offset": 142842,
+                "mapped_literal_va": "004239fa"
+              },
+              {
+                "file_offset": 145935,
+                "mapped_literal_va": "0042460f"
+              },
+              {
+                "file_offset": 147149,
+                "mapped_literal_va": "00424acd"
+              }
+            ]
+          },
+          {
+            "address": "005e1014",
+            "matches": [
+              {
+                "file_offset": 139657,
+                "mapped_literal_va": "00422d89"
+              },
+              {
+                "file_offset": 146354,
+                "mapped_literal_va": "004247b2"
+              },
+              {
+                "file_offset": 153538,
+                "mapped_literal_va": "004263c2"
+              },
+              {
+                "file_offset": 153549,
+                "mapped_literal_va": "004263cd"
+              }
+            ]
+          },
+          {
+            "address": "005e1018",
+            "matches": []
+          },
+          {
+            "address": "005e101c",
+            "matches": []
+          },
+          {
+            "address": "005e1020",
+            "matches": [
+              {
+                "file_offset": 133078,
+                "mapped_literal_va": "004213d6"
+              }
+            ]
+          },
+          {
+            "address": "005e1024",
+            "matches": [
+              {
+                "file_offset": 133137,
+                "mapped_literal_va": "00421411"
+              }
+            ]
+          },
+          {
+            "address": "005e1028",
+            "matches": [
+              {
+                "file_offset": 133153,
+                "mapped_literal_va": "00421421"
+              }
+            ]
+          },
+          {
+            "address": "005e102c",
+            "matches": [
+              {
+                "file_offset": 133090,
+                "mapped_literal_va": "004213e2"
+              }
+            ]
+          },
+          {
+            "address": "005e1030",
+            "matches": [
+              {
+                "file_offset": 133096,
+                "mapped_literal_va": "004213e8"
+              }
+            ]
+          },
+          {
+            "address": "005e1034",
+            "matches": [
+              {
+                "file_offset": 133119,
+                "mapped_literal_va": "004213ff"
+              }
+            ]
+          },
+          {
+            "address": "005e1038",
+            "matches": [
+              {
+                "file_offset": 133084,
+                "mapped_literal_va": "004213dc"
+              },
+              {
+                "file_offset": 142975,
+                "mapped_literal_va": "00423a7f"
+              },
+              {
+                "file_offset": 142988,
+                "mapped_literal_va": "00423a8c"
+              }
+            ]
+          },
+          {
+            "address": "005e103c",
+            "matches": [
+              {
+                "file_offset": 143008,
+                "mapped_literal_va": "00423aa0"
+              },
+              {
+                "file_offset": 143045,
+                "mapped_literal_va": "00423ac5"
+              },
+              {
+                "file_offset": 143485,
+                "mapped_literal_va": "00423c7d"
+              }
+            ]
+          }
+        ],
+        "all_matches_in_code_section_address_range": true,
+        "limits": "No data-held literal of these exact values found; arbitrary byte-offset bases, arithmetic derivation, relocations to other bases and external writers remain unexcluded."
       }
     },
     "official_modern": {
@@ -459,6 +632,164 @@
         "limits": [
           "Does not detect computed addresses, aliases, encoded pointers, external modules or runtime-generated code."
         ]
+      },
+      "source_neighborhood_literal_search": {
+        "domain": "Sixteen DWORD-aligned address values005e1000..005e103c, searched as overlapping little-endian literals over complete file.",
+        "addresses": [
+          {
+            "address": "005e1000",
+            "matches": []
+          },
+          {
+            "address": "005e1004",
+            "matches": []
+          },
+          {
+            "address": "005e1008",
+            "matches": []
+          },
+          {
+            "address": "005e100c",
+            "matches": []
+          },
+          {
+            "address": "005e1010",
+            "matches": [
+              {
+                "file_offset": 139643,
+                "mapped_literal_va": "00422d7b"
+              },
+              {
+                "file_offset": 142635,
+                "mapped_literal_va": "0042392b"
+              },
+              {
+                "file_offset": 142651,
+                "mapped_literal_va": "0042393b"
+              },
+              {
+                "file_offset": 142826,
+                "mapped_literal_va": "004239ea"
+              },
+              {
+                "file_offset": 142842,
+                "mapped_literal_va": "004239fa"
+              },
+              {
+                "file_offset": 145935,
+                "mapped_literal_va": "0042460f"
+              },
+              {
+                "file_offset": 147149,
+                "mapped_literal_va": "00424acd"
+              }
+            ]
+          },
+          {
+            "address": "005e1014",
+            "matches": [
+              {
+                "file_offset": 139657,
+                "mapped_literal_va": "00422d89"
+              },
+              {
+                "file_offset": 146354,
+                "mapped_literal_va": "004247b2"
+              },
+              {
+                "file_offset": 153538,
+                "mapped_literal_va": "004263c2"
+              },
+              {
+                "file_offset": 153549,
+                "mapped_literal_va": "004263cd"
+              }
+            ]
+          },
+          {
+            "address": "005e1018",
+            "matches": []
+          },
+          {
+            "address": "005e101c",
+            "matches": []
+          },
+          {
+            "address": "005e1020",
+            "matches": [
+              {
+                "file_offset": 133078,
+                "mapped_literal_va": "004213d6"
+              }
+            ]
+          },
+          {
+            "address": "005e1024",
+            "matches": []
+          },
+          {
+            "address": "005e1028",
+            "matches": []
+          },
+          {
+            "address": "005e102c",
+            "matches": [
+              {
+                "file_offset": 133090,
+                "mapped_literal_va": "004213e2"
+              }
+            ]
+          },
+          {
+            "address": "005e1030",
+            "matches": [
+              {
+                "file_offset": 133102,
+                "mapped_literal_va": "004213ee"
+              }
+            ]
+          },
+          {
+            "address": "005e1034",
+            "matches": []
+          },
+          {
+            "address": "005e1038",
+            "matches": [
+              {
+                "file_offset": 133114,
+                "mapped_literal_va": "004213fa"
+              },
+              {
+                "file_offset": 142975,
+                "mapped_literal_va": "00423a7f"
+              },
+              {
+                "file_offset": 142988,
+                "mapped_literal_va": "00423a8c"
+              }
+            ]
+          },
+          {
+            "address": "005e103c",
+            "matches": [
+              {
+                "file_offset": 143008,
+                "mapped_literal_va": "00423aa0"
+              },
+              {
+                "file_offset": 143045,
+                "mapped_literal_va": "00423ac5"
+              },
+              {
+                "file_offset": 143485,
+                "mapped_literal_va": "00423c7d"
+              }
+            ]
+          }
+        ],
+        "all_matches_in_code_section_address_range": true,
+        "limits": "No data-held literal of these exact values found; arbitrary byte-offset bases, arithmetic derivation, relocations to other bases and external writers remain unexcluded."
       },
       "float_constants": {
         "005401c0": {
