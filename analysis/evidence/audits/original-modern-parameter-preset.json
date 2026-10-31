@@ -11,7 +11,36 @@
       "assembly": "analysis/captures/modern-differences/parameter-preset/original-0041d620.asm",
       "assembly_sha256": "c94a694e92605a55751d4427df323ce9fc75ff7fe1781759f68d13c515371ac0",
       "conversion_scale_hex": "000000000000f03e",
-      "original_scale_tables_hex": "00c00000f5680000cc4c000000000100cc8c000066660000"
+      "original_scale_tables_hex": "00c00000f5680000cc4c000000000100cc8c000066660000",
+      "original_exact_integer_arithmetic": {
+        "multiply_sequence_sites": [
+          "0041d66b",
+          "0041d688",
+          "0041d6a5",
+          "0041d6bf",
+          "0041d6d7",
+          "0041d6ef",
+          "0041d722",
+          "0041d73f",
+          "0041d75c",
+          "0041d776",
+          "0041d78e",
+          "0041d7a6"
+        ],
+        "factors_nonzero_006fd4c8": [
+          49152,
+          26869,
+          19660
+        ],
+        "factors_zero_006fd4c8": [
+          65536,
+          36044,
+          26214
+        ],
+        "formula": "wrap32(N * signed_factor); N=440,60,92 for mode1, otherwise500,110,150",
+        "derivation": "All constants=N<<16; signed64 product low16=0, so SHR carry bit15=0; joined high/low halves equal low32(product arithmetic-shift16).",
+        "scope": "Mathematical consequence of asserted instructions; not original-instruction execution."
+      }
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",

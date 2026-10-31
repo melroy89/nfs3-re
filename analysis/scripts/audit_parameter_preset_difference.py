@@ -31,6 +31,27 @@ def main():
                                                       for j in range(4)] for i in range(4)]}
         else:
             row['original_scale_tables_hex'] = pe.get_data(0x1a8b0, 24).hex()
+            factors = struct.unpack('<6i', pe.get_data(0x1a8b0,24))
+            assert factors == (49152,26869,19660,65536,36044,26214)
+            pattern = bytes.fromhex('f7eac1e210c1e81011d0')
+            body = pe.get_data(0x1d620,end-0x41d620)
+            sites = [0x41d620+i for i in range(len(body)) if body.startswith(pattern,i)]
+            assert sites == [0x41d66b,0x41d688,0x41d6a5,0x41d6bf,0x41d6d7,0x41d6ef,
+                             0x41d722,0x41d73f,0x41d75c,0x41d776,0x41d78e,0x41d7a6]
+            constants = [(0x41d662,440),(0x41d683,60),(0x41d6a0,92),
+                         (0x41d6b6,500),(0x41d6d2,110),(0x41d6ea,150),
+                         (0x41d719,440),(0x41d73a,60),(0x41d757,92),
+                         (0x41d76d,500),(0x41d789,110),(0x41d7a1,150)]
+            for va,n in constants:
+                assert pe.get_data(va-0x400000,5) == b'\xb8'+struct.pack('<I',n<<16)
+            row['original_exact_integer_arithmetic'] = {
+                'multiply_sequence_sites': [f'{x:08x}' for x in sites],
+                'factors_nonzero_006fd4c8': list(factors[:3]),
+                'factors_zero_006fd4c8': list(factors[3:]),
+                'formula': 'wrap32(N * signed_factor); N=440,60,92 for mode1, otherwise500,110,150',
+                'derivation': 'All constants=N<<16; signed64 product low16=0, so SHR carry bit15=0; joined high/low halves equal low32(product arithmetic-shift16).',
+                'scope': 'Mathematical consequence of asserted instructions; not original-instruction execution.'}
+
         result['binaries'][label] = row
     assert result['binaries']['original']['conversion_scale_hex'] == result['binaries']['official_modern']['conversion_scale_hex']
     (ROOT/'analysis/evidence/audits/original-modern-parameter-preset.json').write_text(json.dumps(result, indent=2)+'\n')
