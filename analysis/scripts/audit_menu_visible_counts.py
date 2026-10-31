@@ -54,7 +54,7 @@ def main():
         result.setdefault('widget_type_bindings',{})[label]=bindings
         spans=[]
         capture=ROOT/'analysis/captures/modern-differences/menu-visible-counts';capture.mkdir(parents=True,exist_ok=True)
-        for start,end in [(0x44a2d0,0x44a439 if label=='original' else 0x44a436),(0x4623a0,0x46249b),(0x4624a0,0x4628c8),(0x449060,0x4490d8),(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
+        for start,end in [(0x44a2d0,0x44a439 if label=='original' else 0x44a436),(0x4623a0,0x46249b),(0x4624a0,0x4628c8),(0x449130,0x449166),(0x4f0430,0x4f0487),(0x449060,0x4490d8),(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             spans.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT))})
         assert struct.unpack('<I',pe.get_data(0x4921c,4))[0]==0x4492aa
@@ -68,6 +68,11 @@ def main():
         if label=='official_modern':
             assert pe.get_data(0x44a2d0-0x400000,1)==b'\x60'
             assert pe.get_data(0x44a42f-0x400000,7)==bytes.fromhex('895d1c89ec61c3')
+        classification=pe.get_data(0x164ef0,256)
+        accepted=[value for value in range(1,256) if classification[(value+1)&255]&0x20]
+        assert accepted==list(range(ord('0'),ord('9')+1))
+        assert pe.get_data(0x4f0483-0x400000,1)==b'\x5a'
+        result.setdefault('integer_field_parser',{})[label]={'wrapper':'00449130','converter':'004f0430','classification_address':'00564ef0','classification_sha256':hashlib.sha256(classification).hexdigest(),'accepted_nonzero_input_bytes':accepted,'validation':'Wrapper scans original input; converter restores EDX, so no end-pointer output is used.','arithmetic':'Decimal IMUL/ADD/SUB wrap32 bits; field writer truncates low16.'}
         expected_padding = 5 if label == 'original' else 15
         expected_extent_add = 5 if label == 'original' else 2
         assert pe.get_data(0x4645ea-0x400000,5)==b'\x05'+struct.pack('<I',expected_padding)
@@ -88,6 +93,9 @@ def main():
     result['cascade_input_difference_coverage']={'start':'004624a0','end_exclusive':'004628c8','original_last_ret':'004628c0','modern_last_jump':'004628c3','changed_addresses':[f'{v:08x}' for v in cascade_changes],'covering_regions':[[f'{lo:08x}',f'{hi:08x}'] for lo,hi in cascade_regions],'scope':'Envelope includes internal/reused tails and original alignment bytes after its last RET; no runtime claim.'}
     initializer_hashes=[next(row['sha256'] for row in result['field_writer_spans'][label] if row['start']=='004623a0') for label in ('original','official_modern')]
     assert initializer_hashes[0]==initializer_hashes[1]
+    for start in ('00449130','004f0430'):
+        hashes=[next(row['sha256'] for row in result['field_writer_spans'][label] if row['start']==start) for label in ('original','official_modern')]
+        assert hashes[0]==hashes[1]
     changed=[0x464560+i for i,(a,b) in enumerate(zip(layout_bodies['original'],layout_bodies['official_modern'])) if a!=b]
     regions=[(0x46456b,0x464587),(0x4645eb,0x4645ec),(0x4645f9,0x4645fa)]
     assert all(any(start<=address<end for start,end in regions) for address in changed)

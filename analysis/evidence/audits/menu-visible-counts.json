@@ -598,6 +598,48 @@
       }
     ]
   },
+  "integer_field_parser": {
+    "original": {
+      "wrapper": "00449130",
+      "converter": "004f0430",
+      "classification_address": "00564ef0",
+      "classification_sha256": "ba040829641230469743cddec88fc2f3010e8a1ab51fc40e71d1164976855dbd",
+      "accepted_nonzero_input_bytes": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "validation": "Wrapper scans original input; converter restores EDX, so no end-pointer output is used.",
+      "arithmetic": "Decimal IMUL/ADD/SUB wrap32 bits; field writer truncates low16."
+    },
+    "official_modern": {
+      "wrapper": "00449130",
+      "converter": "004f0430",
+      "classification_address": "00564ef0",
+      "classification_sha256": "ba040829641230469743cddec88fc2f3010e8a1ab51fc40e71d1164976855dbd",
+      "accepted_nonzero_input_bytes": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "validation": "Wrapper scans original input; converter restores EDX, so no end-pointer output is used.",
+      "arithmetic": "Decimal IMUL/ADD/SUB wrap32 bits; field writer truncates low16."
+    }
+  },
   "field_writer_spans": {
     "original": [
       {
@@ -617,6 +659,18 @@
         "end": "004628c8",
         "sha256": "34a8e9bfc2b8727f464ba1c45b18862321629d2d801cbc527fc45c5cc33939e8",
         "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-004624a0.asm"
+      },
+      {
+        "start": "00449130",
+        "end": "00449166",
+        "sha256": "62037f4c2751e7a04be6421e0750871d8bdda606ab0bf85720a9c49fe5f2cf32",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00449130.asm"
+      },
+      {
+        "start": "004f0430",
+        "end": "004f0487",
+        "sha256": "eb8cbd00f9fdc39c9a88efcb1e127159d389990b10c3f466b1882f142b8aad3c",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-004f0430.asm"
       },
       {
         "start": "00449060",
@@ -685,6 +739,18 @@
         "end": "004628c8",
         "sha256": "4fcf14e4b5993513f39917e5bfda671f93df0e032f22588bb1c90d45baa44455",
         "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-004624a0.asm"
+      },
+      {
+        "start": "00449130",
+        "end": "00449166",
+        "sha256": "62037f4c2751e7a04be6421e0750871d8bdda606ab0bf85720a9c49fe5f2cf32",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00449130.asm"
+      },
+      {
+        "start": "004f0430",
+        "end": "004f0487",
+        "sha256": "eb8cbd00f9fdc39c9a88efcb1e127159d389990b10c3f466b1882f142b8aad3c",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-004f0430.asm"
       },
       {
         "start": "00449060",
