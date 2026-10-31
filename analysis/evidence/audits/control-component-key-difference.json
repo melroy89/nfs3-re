@@ -114,6 +114,25 @@
     ],
     "scope": "All52 changed bytes in this1270-byte uncovered interval are in the paired key handler."
   },
+  "adjacent_templates": {
+    "baselines": {
+      "original": {
+        "interior_template_hex": "2100000000000000000000000000000000000000000000000000000000000000000000007053460060534600d04f4600e051460020534600f052460000000000",
+        "compass_registry_row": "00557bf8",
+        "compass_template": "00557a44",
+        "compass_template_hex": "220000000000000000000000000000000000000000000000000000000000000000000000807645007076450060744500a0754500307645002076450000000000",
+        "compass_offset_04": 0
+      },
+      "official_modern": {
+        "interior_template_hex": "2100000000000000000000000000000000000000000000000000000000000000000000007053460060534600d04f4600e051460020534600f052460000000000",
+        "compass_registry_row": "00557bf8",
+        "compass_template": "00557a44",
+        "compass_template_hex": "220000000002000000000000000000000000000000000000000000000000000000000000807645007076450060744500a0754500307645002076450000000000",
+        "compass_offset_04": 512
+      }
+    },
+    "limit": "The changed DWORD at00557a48 belongs to Compass, not InteriorBx. Meaning of mask0200h and downstream consumers unresolved."
+  },
   "interior_widget_binding": {
     "exe_bindings": {
       "original": {

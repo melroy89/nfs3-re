@@ -77,6 +77,24 @@ def main():
                 'sha256': hashlib.sha256(update).hexdigest(), 'hex': update.hex(),
                 'scope': 'FILD signed state0055a43c/0055a440, add component pair, call004dfd56 twice, FISTP back.'}}
     assert bindings['original']['update_prefix']['hex'] == bindings['official_modern']['update_prefix']['hex']
+    templates = {}
+    for label,pe in images.items():
+        interior = pe.get_data(0x157a04,64)
+        compass = pe.get_data(0x157a44,64)
+        row = struct.unpack('<3I',pe.get_data(0x157bf8,12))
+        assert row == (34,0x538460,0x557a44)
+        assert pe.get_string_at_rva(0x138460) == b'Compass'
+        assert struct.unpack_from('<I',compass,4)[0] == (0 if label == 'original' else 0x200)
+        templates[label] = {'interior_template_hex': interior.hex(),
+            'compass_registry_row': '00557bf8', 'compass_template': '00557a44',
+            'compass_template_hex': compass.hex(),
+            'compass_offset_04': struct.unpack_from('<I',compass,4)[0]}
+    assert templates['original']['interior_template_hex'] == templates['official_modern']['interior_template_hex']
+    compass_old = bytes.fromhex(templates['original']['compass_template_hex'])
+    compass_new = bytes.fromhex(templates['official_modern']['compass_template_hex'])
+    assert [i for i,(a,b) in enumerate(zip(compass_old,compass_new)) if a != b] == [5]
+    out['adjacent_templates'] = {'baselines': templates,
+        'limit': 'The changed DWORD at00557a48 belongs to Compass, not InteriorBx. Meaning of mask0200h and downstream consumers unresolved.'}
     archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     archive_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     assert archive_sha == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
