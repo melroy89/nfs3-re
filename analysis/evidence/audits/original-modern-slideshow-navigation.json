@@ -42,6 +42,20 @@
           "assembly_sha256": "24e7452eaa407180f76d289600727d8574d9adfca7371da0200eb58eceaede63"
         },
         {
+          "start": "004daf80",
+          "end": "004daff7",
+          "bytes_sha256": "4d5224bfd4ab883fe1f037f2d8a2f317edbbe0dccea189a9112248e04e60bee2",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-004daf80.asm",
+          "assembly_sha256": "7a68d32b0429cfc37b1f28848a651d89ed9f1cf812b2af19fb62f0e331b5b88c"
+        },
+        {
+          "start": "004d5c40",
+          "end": "004d5c8b",
+          "bytes_sha256": "752b405195e2021f3f52d554acc307b096cae89189bcc0d9c704368166f4bd84",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-004d5c40.asm",
+          "assembly_sha256": "13a08bffaac9fe2f1545fb7ca79dd0115351af6c42a8e7be77b395b47944738c"
+        },
+        {
           "start": "004d6390",
           "end": "004d66ea",
           "bytes_sha256": "3e56c7c5bacc23c241366cc111801e14ce1f3ee7760dcd0da448a4242524c3c7",
@@ -136,6 +150,20 @@
           "bytes_sha256": "a735ada3ed4cc4118e2f6d94a9123218fa21cde6184ebbc93a117411dd16ae5b",
           "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00453ef0.asm",
           "assembly_sha256": "a865b596e98683f226f8cdf24664528050d1ae5975ac5c1c5b27a09e1e49edea"
+        },
+        {
+          "start": "004daf80",
+          "end": "004daffc",
+          "bytes_sha256": "202e69fc4ff46ad9cae19137324efba2ecc8495bf74da4ef3e55c0cc02dd73e7",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-004daf80.asm",
+          "assembly_sha256": "9fe9b4f528df284a8875e7c69786d0943c851fe5dd305778e03f8e0a6d4eec58"
+        },
+        {
+          "start": "004d5c40",
+          "end": "004d5c8b",
+          "bytes_sha256": "752b405195e2021f3f52d554acc307b096cae89189bcc0d9c704368166f4bd84",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-004d5c40.asm",
+          "assembly_sha256": "fd53e9a0495f76e64a3923c2a702ff95a1d40281748381654a3e8c9979536961"
         },
         {
           "start": "004d6390",
@@ -411,6 +439,18 @@
     "scan_scope": "Literal address bytes in official code section; known instructions corroborated. Excludes computed aliases.",
     "periodic_gate": "JLE00453f41 reaches counter test even when timing interval is not exceeded.",
     "reset": "00451830 clears slots only, excludes counter."
+  },
+  "resource_reset_chain": {
+    "entry": "004daf80",
+    "original_end_exclusive": "004daff7",
+    "modern_end_exclusive": "004daffc",
+    "identical_prefix_end_exclusive": "004daff2",
+    "added_call": "004daff2 ->00451830",
+    "driver_reset_entry": "004d5c40",
+    "driver_call": "004d5c48 ->slot009ef918",
+    "driver_body_sha256": "752b405195e2021f3f52d554acc307b096cae89189bcc0d9c704368166f4bd84",
+    "generic_menu_caller": "0044ab71, gated by00559234==0",
+    "scope": "Static call ordering and local resets; driver success and all entry callers unresolved."
   },
   "retained_previous_core": {
     "start": "0045386d",

@@ -16,7 +16,7 @@ def main():
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw); images.append(pe)
         spans = [(0x453840, 0x453859), (0x453860, 0x45393e), (0x453c00, 0x453eee), (0x453ed7, 0x453eec), (0x453ef0, 0x453f48)] if label == 'original' else [(0x453850, 0x453863), (0x453864, 0x45393d), (0x453c00, 0x453eee), (0x453ed7, 0x453eee), (0x453ef0, 0x453f58)]
-        spans += [(0x4d6390,0x4d66ea),(0x44aa30, 0x44aac9), (0x44a9e0, 0x44aa21), (0x44ab40, 0x44ac7c),
+        spans += [(0x4daf80,0x4daff7 if label=='original' else 0x4daffc),(0x4d5c40,0x4d5c8b),(0x4d6390,0x4d66ea),(0x44aa30, 0x44aac9), (0x44a9e0, 0x44aa21), (0x44ab40, 0x44ac7c),
                   (0x44b6c8, 0x44b707), (0x44b7a7, 0x44b7ec), (0x44b30b, 0x44b382)]
         if label=='official_modern':spans += [(0x451810,0x45182d),(0x451830,0x45183d),(0x4d6459,0x4d64a5),(0x4dafe6,0x4daffc)]
         rows = []
@@ -61,6 +61,12 @@ def main():
     assert section.PointerToRawData==0 and section.IMAGE_SCN_CNT_UNINITIALIZED_DATA
     assert section.VirtualAddress<=0x26477c<section.VirtualAddress+section.SizeOfRawData
     out['counter_storage_and_references']={'slots_half_open':['00664770','0066477c'],'counter_half_open':['0066477c','00664780'],'section':'.bss','raw_pointer':section.PointerToRawData,'absolute_address_operand_candidates':[f'{v:08x}' for v in counter_refs],'scan_scope':'Literal address bytes in official code section; known instructions corroborated. Excludes computed aliases.','periodic_gate':'JLE00453f41 reaches counter test even when timing interval is not exceeded.','reset':'00451830 clears slots only, excludes counter.'}
+    reset_prefix=[p.get_data(0xdaf80,0x72) for p in images];assert reset_prefix[0]==reset_prefix[1]
+    assert images[0].get_data(0xdaff2,5)==bytes.fromhex('5d5a595bc3')
+    assert images[1].get_data(0xdaff7,5)==bytes.fromhex('5d5a595bc3')
+    reset_driver=[p.get_data(0xd5c40,0x4b) for p in images];assert reset_driver[0]==reset_driver[1]
+    assert images[1].get_data(0xd5c48,6)==bytes.fromhex('ff1518f99e00')
+    out['resource_reset_chain']={'entry':'004daf80','original_end_exclusive':'004daff7','modern_end_exclusive':'004daffc','identical_prefix_end_exclusive':'004daff2','added_call':'004daff2 ->00451830','driver_reset_entry':'004d5c40','driver_call':'004d5c48 ->slot009ef918','driver_body_sha256':hashlib.sha256(reset_driver[0]).hexdigest(),'generic_menu_caller':'0044ab71, gated by00559234==0','scope':'Static call ordering and local resets; driver success and all entry callers unresolved.'}
     out['retained_previous_core'] = {'start': '0045386d', 'end': '00453931', 'sha256': hashlib.sha256(common[0]).hexdigest()}
     out['retained_action9_path_ranges'] = []
     for start, end in ((0x44aa30, 0x44aac9), (0x44a9e0, 0x44aa21), (0x44ab40, 0x44ac7c), (0x44b6c8, 0x44b707), (0x44b7a7, 0x44b7ec)):
