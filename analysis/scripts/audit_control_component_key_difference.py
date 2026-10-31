@@ -50,7 +50,7 @@ def main():
         'token_0020_return': {'original': 2, 'modern': 0},
         'shared_continuation': '00465271..004652ed', 'gate_body_sha256': hashlib.sha256(gate).hexdigest(),
         'gate_body_hex': gate.hex(),
-        'limit': 'Finite/nontrapping cancellation argument only; actual UI/axis identity and runtime input not established.'}
+        'limit': 'Finite/nontrapping cancellation argument only; InteriorBx binding established; physical axes and runtime input not established.'}
     interval_start,interval_end = 0x464fca,0x4654c0
     interval_rows = []
     interval_changes = []
@@ -109,7 +109,8 @@ def main():
             'executable_sha256': inventory['executable_sha256'], 'covering_entries': covering}
     out['saved_inventory_boundary'] = inventories
     out['limits'] = ['Missing saved function object does not make the instructions padding.',
-        'Shared binding/envelope supports callback correspondence; table schema and visible control identity remain incomplete.',
+        'InteriorBx registry/template/menu binding established; full table schema, event propagation and rendered behavior remain incomplete.',
+        'Identical updater prefix calls changed helper004dfd56; see original-modern-slider-percentage.md for rounding/exception differences.',
         'No game, key event, instruction probe, C export/compilation or Ghidra mutation.']
     (ROOT/'analysis/evidence/audits/control-component-key-difference.json').write_text(json.dumps(out,indent=2)+'\n')
     print('PASS: shared callback, paired269-byte envelopes,52 changed bytes, step/reset witnesses and inventory gap')

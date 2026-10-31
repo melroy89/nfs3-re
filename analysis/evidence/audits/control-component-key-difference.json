@@ -95,7 +95,7 @@
     "shared_continuation": "00465271..004652ed",
     "gate_body_sha256": "2cf2a37868119d4a0d8810f96ec12fc59348ffa9d5f0f3587a7c09c2f29fe7a7",
     "gate_body_hex": "5589e5833d3492550000740af6400508750431c05dc3b8010000005dc3",
-    "limit": "Finite/nontrapping cancellation argument only; actual UI/axis identity and runtime input not established."
+    "limit": "Finite/nontrapping cancellation argument only; InteriorBx binding established; physical axes and runtime input not established."
   },
   "outside_function_interval": {
     "start": "00464fca",
@@ -192,7 +192,8 @@
   },
   "limits": [
     "Missing saved function object does not make the instructions padding.",
-    "Shared binding/envelope supports callback correspondence; table schema and visible control identity remain incomplete.",
+    "InteriorBx registry/template/menu binding established; full table schema, event propagation and rendered behavior remain incomplete.",
+    "Identical updater prefix calls changed helper004dfd56; see original-modern-slider-percentage.md for rounding/exception differences.",
     "No game, key event, instruction probe, C export/compilation or Ghidra mutation."
   ]
 }
