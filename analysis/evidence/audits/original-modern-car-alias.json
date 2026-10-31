@@ -7,6 +7,20 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "004d06f0",
+          "end": "004d0a0f",
+          "sha256": "f288066bbac46960798c53301f1e4e094d961b5bdd850e9ccefdca4d5a265e40",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004d06f0.asm",
+          "assembly_sha256": "84cb36bffc4bc66dddd764393389360379cb82858eaa4722f0fab4a0d99e24a0"
+        },
+        {
+          "start": "004d1480",
+          "end": "004d14ee",
+          "sha256": "fc4c783094b76556a96a9fed1cebf7e5a6242f95eb1f8416adcdebb0c0c433ba",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004d1480.asm",
+          "assembly_sha256": "bbcb450076b4b9a8e2b09e9c16ffb0c1d6c0be3d8f48ee98c9e1a23cacafbe4c"
+        },
+        {
           "start": "004d1000",
           "end": "004d10d8",
           "sha256": "7c05633fbd2c6171ab8e1f0834ae7e1d67b61ee9b7176280c8514bbbcefb1f4b",
@@ -130,6 +144,20 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "004d06f0",
+          "end": "004d0a0f",
+          "sha256": "f288066bbac46960798c53301f1e4e094d961b5bdd850e9ccefdca4d5a265e40",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004d06f0.asm",
+          "assembly_sha256": "69b84eafb81751a9454f4c25e1140671d10287aedd22661c69f89d9896225183"
+        },
+        {
+          "start": "004d1480",
+          "end": "004d14ee",
+          "sha256": "fc4c783094b76556a96a9fed1cebf7e5a6242f95eb1f8416adcdebb0c0c433ba",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004d1480.asm",
+          "assembly_sha256": "53e46292feeeca2afa337e87a6154491ddc16113028d5e1ef7d6fa4b1ab8399c"
+        },
         {
           "start": "004d1000",
           "end": "004d10d8",
@@ -519,6 +547,20 @@
       "length": 29,
       "sha256": "93d5fbbb2e8214071e4e391883751a3996e868434dbace49dca869e02af852ff",
       "byte_identical": true
+    },
+    {
+      "start": "004d06f0",
+      "end_exclusive": "004d0a0f",
+      "length": 799,
+      "sha256": "f288066bbac46960798c53301f1e4e094d961b5bdd850e9ccefdca4d5a265e40",
+      "byte_identical": true
+    },
+    {
+      "start": "004d1480",
+      "end_exclusive": "004d14ee",
+      "length": 110,
+      "sha256": "fc4c783094b76556a96a9fed1cebf7e5a6242f95eb1f8416adcdebb0c0c433ba",
+      "byte_identical": true
     }
   ],
   "x87_measurement_wrapper": {
@@ -530,6 +572,46 @@
     "modern_conversion": "No local x87 conversion; return callee state",
     "shared_global": "00561b3c",
     "scope": "Static local instructions; callee and runtime values unresolved."
+  },
+  "glyph_storage_sections": {
+    "original": {
+      "section": ".bss",
+      "start": "0056e000",
+      "extent_from_section_header": "004aa400",
+      "virtual_size": 0,
+      "raw_size_field": 4891648,
+      "raw_pointer": 0,
+      "characteristics": "c0000080",
+      "addresses": [
+        "0083f4e0",
+        "0083f700",
+        "0083f8c0",
+        "0083fc40",
+        "0083fe00",
+        "00840184",
+        "0084018c"
+      ],
+      "interpretation": "Uninitialized storage; no file-backed glyph metrics inferred."
+    },
+    "official_modern": {
+      "section": ".bss",
+      "start": "0056e000",
+      "extent_from_section_header": "004b1000",
+      "virtual_size": 0,
+      "raw_size_field": 4919296,
+      "raw_pointer": 0,
+      "characteristics": "c0000080",
+      "addresses": [
+        "0083f4e0",
+        "0083f700",
+        "0083f8c0",
+        "0083fc40",
+        "0083fe00",
+        "00840184",
+        "0084018c"
+      ],
+      "interpretation": "Uninitialized storage; no file-backed glyph metrics inferred."
+    }
   },
   "additional_track_policy_callers": {
     "004628d0": {
