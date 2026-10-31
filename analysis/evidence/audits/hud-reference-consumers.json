@@ -52,6 +52,12 @@
           "end_exclusive": "0048ae69",
           "sha256": "732f109253e8f0c55e8d9bf3ce6222bf1e76fc434b0125e26e91c73de1888fe9",
           "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-0048aa40.asm"
+        },
+        {
+          "start": "0048e790",
+          "end_exclusive": "0048e91b",
+          "sha256": "25c58224f36e6ffa5aff2ded08e9840fc10fb16cf727439c893ec3fb4facd6ae",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-0048e790.asm"
         }
       ]
     },
@@ -106,6 +112,12 @@
           "end_exclusive": "0048ae69",
           "sha256": "6881d2549a57dee14c0abce945e32904bd41930f582abb3302045ceab8229ae4",
           "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-0048aa40.asm"
+        },
+        {
+          "start": "0048e790",
+          "end_exclusive": "0048e91b",
+          "sha256": "92196724fd905deb5dbec47e6aac4fe410c3cfe30969573f50300d490aef7a9e",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-0048e790.asm"
         }
       ]
     }
@@ -224,8 +236,15 @@
       }
     ]
   },
+  "hud_variant_constant": {
+    "instruction": "0048e8da",
+    "original_bits": "40800000",
+    "modern_bits": "40400000",
+    "field": "selected 1a4-byte profile +10h",
+    "limits": "Field meaning and rendered transition remain unverified."
+  },
   "limits": [
-    "Static dimension-source, FLD/FILD and quad constant changes only; no HUD pixel comparison.",
+    "Static dimension-source, FLD/FILD and quad/header constant changes only; no HUD pixel comparison.",
     "Other globals, callers, aliasing and x87 state remain separate contracts."
   ]
 }

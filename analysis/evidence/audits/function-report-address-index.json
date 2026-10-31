@@ -141,7 +141,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "830ee97353496d50a3d1eb4c8fcf1f126f6e5a622500aed110ba017b653e0ed7"
+      "sha256": "1c9562ff2eb45ab7b1e864d3d5002e5fb824afe5ef831ba2e72f65d351bc93fd"
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
@@ -398,8 +398,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 339,
-    "without_address_mentions": 22
+    "with_address_mentions": 340,
+    "without_address_mentions": 21
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -5479,6 +5479,13 @@
       "modern_sha256": "6b2fe1e94cddf5b341ff779614a215d33461a0641e7783ff2bc2e7e502276f57",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004844c0"
+          ]
+        },
+        {
           "path": "analysis/original-modern-replay-mirror.md",
           "entry_mentioned": true,
           "addresses": [
@@ -5974,7 +5981,17 @@
       "changed_bytes": 1,
       "original_sha256": "25c58224f36e6ffa5aff2ded08e9840fc10fb16cf727439c893ec3fb4facd6ae",
       "modern_sha256": "92196724fd905deb5dbec47e6aac4fe410c3cfe30969573f50300d490aef7a9e",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0048e790",
+            "0048e8da",
+            "0048e8e3"
+          ]
+        }
+      ]
     },
     {
       "entry": "0048eb90",

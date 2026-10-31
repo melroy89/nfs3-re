@@ -8,7 +8,7 @@ from audit_thrash_loader_difference import ROOT,SPECS
 
 SPANS=[(0x484b70,0x484c10),(0x48ae70,0x48b29f),(0x48d110,0x48d4b3),
        (0x4800a0,0x4808af),(0x487210,0x48733c),(0x4880b0,0x488470),
-       (0x48a660,0x48aa3e),(0x48aa40,0x48ae69)]
+       (0x48a660,0x48aa3e),(0x48aa40,0x48ae69),(0x48e790,0x48e91b)]
 
 
 def main():
@@ -60,10 +60,16 @@ def main():
     result['additional_reads']={f'{SPANS[i][0]:08x}':[
         {'instruction':f'{a:08x}','old_opcode':f'{op:02x}','old_source':f'{src:08x}',
          'modern_source':f'{dst:08x}'} for a,op,src,dst in rows] for i,rows in additional_reads.items()}
-    result['limits']=['Static dimension-source, FLD/FILD and quad constant changes only; no HUD pixel comparison.',
+    assert [i for i,(a,b) in enumerate(zip(old[8],new[8])) if a!=b]==[0x153]
+    assert old[8][0x14a:0x155]==bytes.fromhex('c7841a60bc6f0000008040')
+    assert new[8][0x14a:0x155]==bytes.fromhex('c7841a60bc6f0000004040')
+    result['hud_variant_constant']={'instruction':'0048e8da','original_bits':'40800000',
+        'modern_bits':'40400000','field':'selected 1a4-byte profile +10h',
+        'limits':'Field meaning and rendered transition remain unverified.'}
+    result['limits']=['Static dimension-source, FLD/FILD and quad/header constant changes only; no HUD pixel comparison.',
         'Other globals, callers, aliasing and x87 state remain separate contracts.']
     (ROOT/'analysis/evidence/audits/hud-reference-consumers.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: eight complete bodies; dimension read replacements and one quad-field constant account for every difference')
+    print('PASS: nine complete bodies; dimension reads, quad-field constant and variant-header constant account for every difference')
 
 
 if __name__=='__main__':main()
