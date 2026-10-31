@@ -1,0 +1,84 @@
+{
+  "kind": "static-frontend-page-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00441cb0",
+          "end": "0044236c",
+          "bytes_sha256": "a004d0d966fbd0036d4b45397decfbb5c7d6fd4753c3511cd77ff7bf55bf75b1",
+          "assembly": "analysis/captures/modern-differences/frontend-page/original-00441cb0.asm",
+          "assembly_sha256": "b217aca8f1f829af083924f6c55c972f299fbb05214bd08040a2db47daae9b67"
+        },
+        {
+          "start": "00437820",
+          "end": "004378b6",
+          "bytes_sha256": "3ccbc455ae7449c0de0d1266143581ac7579258599651044ce51d3393915fe45",
+          "assembly": "analysis/captures/modern-differences/frontend-page/original-00437820.asm",
+          "assembly_sha256": "764aaf5a8236a982a46c094c135d146196f1d3d7201648196ef5dffa5a86a506"
+        }
+      ],
+      "switch_table_first_five": [
+        "00441d11",
+        "00441d11",
+        "004421e0",
+        "004422d0",
+        "00442114"
+      ],
+      "record_75_words": [
+        "00000003",
+        "00000470",
+        "00000475",
+        "00000000"
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00441cb0",
+          "end": "0044236c",
+          "bytes_sha256": "5a94adacb9ce8f000fb513736625655f9b5678cf2e89ba749bc5b1f4ad22c1c9",
+          "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-00441cb0.asm",
+          "assembly_sha256": "90b0ea6442cd2c137cc11e9a3f8a97d9d04a0f0c472e46029146d0fef82785b7"
+        },
+        {
+          "start": "00437820",
+          "end": "004378b6",
+          "bytes_sha256": "a81a2971435ac8a14ac302ade258f998feb72c8e2dc312ccbd68bed1ae5907bc",
+          "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-00437820.asm",
+          "assembly_sha256": "dba15b1d0a92bc8dce835b016be39609f106bcdfe9bada0fa3d33e67f1648f6b"
+        }
+      ],
+      "switch_table_first_five": [
+        "00441d11",
+        "00441d11",
+        "004421e0",
+        "004422d0",
+        "00442114"
+      ],
+      "record_75_words": [
+        "00000005",
+        "0053f7d4",
+        "0053f7e0",
+        "00000000"
+      ],
+      "sixth_switch_target": "00437820",
+      "strings": {
+        "0053f7d4": "ABOUT.QFS",
+        "0053f7e0": "cred"
+      }
+    }
+  },
+  "limits": [
+    "No rendering, decompression or target execution.",
+    "Record 75 selection at runtime not proven."
+  ],
+  "main_body_changed_addresses": [
+    "00441d03"
+  ]
+}

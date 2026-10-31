@@ -301,3 +301,7 @@ Run `python3 analysis/scripts/audit_parameter_preset_difference.py`. Retains com
 ## Original versus Modern viewport pose
 
 Run `python3 analysis/scripts/audit_viewport_pose_difference.py`. Captures paired complete wrappers and asserts identical finalizer bytes in `analysis/evidence/audits/original-modern-viewport-pose.json`. No target execution. See [pose comparison](../original-modern-viewport-pose.md).
+
+## Original versus Modern frontend page
+
+Run `python3 analysis/scripts/audit_frontend_page_difference.py`. Verifies the one-byte main-body delta, five retained switch targets and new resource-backed record in `analysis/evidence/audits/original-modern-frontend-page.json`. No decompression/render execution. See [page comparison](../original-modern-frontend-page.md).

@@ -75,3 +75,5 @@ Use Markdown for small, reviewable findings. Follow [the sharing workflow](../do
 - [Original versus Modern parameter presets](original-modern-parameter-preset.md): table rewrite, record writes and conversion-loop boundary.
 
 - [Original versus Modern viewport pose](original-modern-viewport-pose.md): fixed descriptor admission, temporary camera restoration and identical finalizer.
+
+- [Original versus Modern resource-backed frontend page](original-modern-frontend-page.md): one-byte dispatch extension, out-of-line resource arm and text-to-resource record change.
