@@ -932,6 +932,60 @@
     ],
     "limit": "Language-global validity and saved incoming language argument require lifecycle/caller preconditions; aliases and indirect calls excluded."
   },
+  "removed_existing_window_warning": {
+    "gate_start": "004a38c0",
+    "gate_end_exclusive": "004a38e2",
+    "gate_hex": "51525589e56a008b15a0125600522eff153447530085c07405b8010000005d5a59c3",
+    "gate_sha256": "cb4f59f17f874c0d59ed63c52ad6c728a28739ac24102801f6fcfad7fcd3af19",
+    "caller_start": "004a3a26",
+    "caller_end_exclusive": "004a3a56",
+    "caller_hex": "e895feffff85c07427b9060000008d7dc8be50304a006a30f3a56854ce53008b75c856532eff1564475300e916050000",
+    "imports": {
+      "00534734": "FindWindowA",
+      "00534764": "MessageBoxA"
+    },
+    "class_pointer_cell": "005612a0",
+    "table_va": "004a3050",
+    "table_hex": "fcc8530020c9530040c9530060c95300e8c9530084ca5300",
+    "entries": [
+      {
+        "pointer": "0053c8fc",
+        "text_latin1": "Need For Speed is already running."
+      },
+      {
+        "pointer": "0053c920",
+        "text_latin1": "Need For Speed l\u00e4uft bereits."
+      },
+      {
+        "pointer": "0053c940",
+        "text_latin1": "Need For Speed est d\u00e9j\u00e0 ouvert."
+      },
+      {
+        "pointer": "0053c960",
+        "text_latin1": "Spanish: DirectX 5.0 debe ser instalado para que funcione Need for Speed III. Por favor consulta el manual o la tarjeta de referencia"
+      },
+      {
+        "pointer": "0053c9e8",
+        "text_latin1": "Italian: Spiacente, le DirectX 5.0 devono essere installate per permettere a  Need For Speed III di avviarsi.  Leggi il manuale per ottenere informazioni."
+      },
+      {
+        "pointer": "0053ca84",
+        "text_latin1": "French: Tyv\u00e4rr, DirectX 5.0 m\u00e5ste vara installerat f\u00f6r att Need For Speed III ska fungera.  L\u00e4s i manualen eller i referensh\u00e4ftet."
+      }
+    ],
+    "caption_latin1": "Need For Speed III",
+    "selected_entry": 0,
+    "message_flags": 48,
+    "interval_partition": {
+      "start": "004a2ffc",
+      "end_exclusive": "004a3070",
+      "old_zero_prefix_bytes": 84,
+      "old_table_bytes": 24,
+      "old_alignment_bytes": 8,
+      "modern_nop_bytes": 116
+    },
+    "limit": "Specific original FindWindow warning branch removed; other instance checks, class-pointer lifetime and real window detection not established."
+  },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",
     "Memory fields described by exact offsets; no complete API structure/type reconstruction.",

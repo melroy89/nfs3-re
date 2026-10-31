@@ -177,6 +177,27 @@ def main():
         'decoded_instruction_lines': matches,
         'source_witnesses': [{'va': f'{va:08x}', 'hex': encoded} for va,encoded in source_witnesses],
         'limit': 'Language-global validity and saved incoming language argument require lifecycle/caller preconditions; aliases and indirect calls excluded.'}
+    original=images['original'];modern=images['official_modern']
+    gate=original.get_data(0xa38c0,34)
+    caller=original.get_data(0xa3a26,48)
+    table=original.get_data(0xa3050,24)
+    pointers=struct.unpack('<6I',table)
+    assert original.get_data(0xa2ffc,84)==b'\0'*84
+    assert modern.get_data(0xa2ffc,116)==b'\x90'*116
+    assert modern.get_data(0xa3a26,48)==b'\x90'*48
+    imports={i.address:i.name.decode() for d in original.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
+    assert imports[0x534734]=='FindWindowA' and imports[0x534764]=='MessageBoxA'
+    assert original.get_data(0xa3a45,3)==bytes.fromhex('8b75c8')
+    result['removed_existing_window_warning']={'gate_start':'004a38c0','gate_end_exclusive':'004a38e2',
+        'gate_hex':gate.hex(),'gate_sha256':hashlib.sha256(gate).hexdigest(),
+        'caller_start':'004a3a26','caller_end_exclusive':'004a3a56','caller_hex':caller.hex(),
+        'imports':{'00534734':'FindWindowA','00534764':'MessageBoxA'},
+        'class_pointer_cell':'005612a0','table_va':'004a3050','table_hex':table.hex(),
+        'entries':[{'pointer':f'{va:08x}','text_latin1':original.get_string_at_rva(va-0x400000).decode('latin1')} for va in pointers],
+        'caption_latin1':original.get_string_at_rva(0x13ce54).decode('latin1'),
+        'selected_entry':0,'message_flags':48,
+        'interval_partition':{'start':'004a2ffc','end_exclusive':'004a3070','old_zero_prefix_bytes':84,'old_table_bytes':24,'old_alignment_bytes':8,'modern_nop_bytes':116},
+        'limit':'Specific original FindWindow warning branch removed; other instance checks, class-pointer lifetime and real window detection not established.'}
     result['limits']=['No memory, disk, desktop, dialog or target API execution.','Memory fields described by exact offsets; no complete API structure/type reconstruction.','Current-directory helper, API failures and diagnostic termination internals are not fully audited here.','No release-note attribution inferred solely from a changed startup routine.']
     (ROOT/'analysis/evidence/audits/original-modern-startup-requirements.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: startup requirement counterparts, caller witnesses, imports and messages')
