@@ -268,7 +268,7 @@ Combined with the loader’s key predicate, this establishes the intended final-
 
 ## Trailing rejection is at decoded EOF
 
-The audit now verifies both type`0x6f` metadata lengths against the table records, not merely the `LTBL` magic. First metadata size **`0x50`** ends at decoded offset **`0x40088`**. Second metadata size **`0x44`** ends at **`0x800e4`**, which is exactly the declared and decoded `SHPI` size **524516 bytes**. Its final record is Spectre-associated key27; no trailing record or padding bytes exist inside that decoded asset.
+The audit now verifies both type`0x6f` metadata lengths against the table records, not merely the `LTBL` magic. The first stored length **`0x50`**, measured from the `LTBL` payload after the8-byte metadata header, ends at decoded offset **`0x40088`**. The second stored length **`0x44`**, with the same origin, ends at **`0x800e4`**, which is exactly the declared and decoded `SHPI` size **524516 bytes**. Its final record is Spectre-associated key27; no trailing record or padding bytes exist inside that decoded asset.
 
 Under the earlier conditional path (this table loaded and final key rejected), ESI advances to **decoded base+`0x800e4`** before `004a4417`. The two `MOVSD` instructions at `004a441b`/`004a441c` would then read eight bytes beginning at decoded EOF and append them as payload fields, unless an earlier failure prevents reaching this point. The later output-count stop check occurs after those reads; it does not guard this particular source boundary.
 

@@ -98,7 +98,7 @@ def main():
     for table,link in zip(tables,links):
         end=table['decoded_offset']+8+12*table['count']
         metadata_size=struct.unpack_from('<I',decoded,link['metadata_offset']+4)[0]
-        assert link['metadata_offset']+metadata_size==end
+        assert link['metadata_offset']+8+metadata_size==end
         assert end<=len(decoded)
         result['logo_table_boundaries'].append({'ltbl_offset':table['decoded_offset'],'records_end':end,'decoded_bytes_remaining':len(decoded)-end,'metadata_size':metadata_size})
     assert result['logo_table_boundaries'][-1]['decoded_bytes_remaining']==0

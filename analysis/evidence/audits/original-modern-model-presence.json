@@ -354,6 +354,20 @@
       "returned_ltbl_offset": 524448
     }
   ],
+  "logo_table_boundaries": [
+    {
+      "ltbl_offset": 262200,
+      "records_end": 262280,
+      "decoded_bytes_remaining": 262236,
+      "metadata_size": 80
+    },
+    {
+      "ltbl_offset": 524448,
+      "records_end": 524516,
+      "decoded_bytes_remaining": 0,
+      "metadata_size": 68
+    }
+  ],
   "official_logo_asset": {
     "member": "fedata/art/logos.qfs",
     "packed_sha256": "af45f1f6fff4fc6a9e2681c96c87fdcde2629fb490b2f511725ea97e7cad1a30",
