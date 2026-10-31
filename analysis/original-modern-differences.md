@@ -286,6 +286,10 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 [Original versus Modern graphics transition](original-modern-graphics-menu-transition.md) maps the redirected callback: snapshot/Cancel restore, Modern reselection, extra global outputs and final-row/depth request encoding. The report links existing display-mode evidence and keeps runtime display/persistence validation separate. Its fog-gate follow-up maps both shadow-copy directions, three checked call sites and differing snapshot order; Modern fog-support state is distinguished from the original selector at the reused address.
 
+## Credits panorama callback counterparts
+
+[The panorama comparison](original-modern-credits-panorama.md) maps the two redirected registrations, moved-identical state restore, new Next/Previous controls, direct subtitle lookup and a distant missing-button exit. Official assets partially support MP140-022/024; keyboard dispatch, rendering and historical introduction remain separate.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -444,9 +448,9 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-019 | This set of buttons don't disappear in the Options when they are opened directy from the race results screen. | Claimed |
 | MP140-020 | This set of buttons is smart: when user opens Options from the first screen without choosing game mode, the Race button are hidden. | Claimed |
 | MP140-021 | Drop down list of cars displays the class of the current car not only for the 1st player, but also for the 2nd player. | Claimed |
-| MP140-022 | You can use Left and Right keys to switch slides in the car slideshow and in the credits (inclusive 3D panoramas of the developers). | Claimed |
+| MP140-022 | You can use Left and Right keys to switch slides in the car slideshow and in the credits (inclusive 3D panoramas of the developers). | Partial |
 | MP140-023 | Noticeable “More...” button in the credits (opens the 3D panoramas of the developers). | Claimed |
-| MP140-024 | Credits page with the 3D panoramas of the developers has same controls, as general credits (with Back and Next buttons). | Claimed |
+| MP140-024 | Credits page with the 3D panoramas of the developers has same controls, as general credits (with Back and Next buttons). | Partial |
 | MP140-025 | Increased quantity of visible elements in some long drop down lists (resolution list, car lists). | Claimed |
 | MP140-026 | Fixed unaligned paddings of the all drop down lists. | Claimed |
 | MP140-027 | “Reset To Defaults” button in the Controllers menu was shifted one position down. | Claimed |

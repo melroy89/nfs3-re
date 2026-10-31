@@ -1,0 +1,215 @@
+{
+  "kind": "static-credits-panorama-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00454d60",
+          "end": "00454e3d",
+          "bytes_sha256": "92a94bbdbc1802a2f81bdd08fbe082d63d1c1373149c3569e57623ad1b272815",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/original-00454d60.asm",
+          "assembly_sha256": "54a390de8c206b2c6a30454ddd5b290d7afb7efb599a0e19d86ed537719823d6"
+        },
+        {
+          "start": "00454e40",
+          "end": "00454e79",
+          "bytes_sha256": "429530e70ccf127a3101a7632a159f82561dd101de27d890b9e1f0391c56a60f",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/original-00454e40.asm",
+          "assembly_sha256": "38ce7f5d436ccd000aaa1318b9a6163b6971926127661655b67e3882ff71b7d6"
+        },
+        {
+          "start": "00454e80",
+          "end": "00454e9d",
+          "bytes_sha256": "cfcafcb844e5bb4468058e5b133d52695e79072957f4e0f1bbfd176ca7e4ab15",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/original-00454e80.asm",
+          "assembly_sha256": "c267d5d50010acc4a9cc271f260695337cd25add6dd6804632b4fa50bba58579"
+        },
+        {
+          "start": "00454ea0",
+          "end": "00454f02",
+          "bytes_sha256": "1865b1483516b5a59ec06ea2be67c4938fbc79e6f6f0896fc95839166b820a59",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/original-00454ea0.asm",
+          "assembly_sha256": "9c6b95ab946f0ae798e1f587c25ab219519a485040ef1645491a93cc9c9a2245"
+        }
+      ],
+      "label_id_words_005563dc_hex": "e101e201e501e501",
+      "tokens": {
+        "00537bbc": "next",
+        "00537bc4": "previous",
+        "005398d4": "ZoomSlider",
+        "005398e0": "GlamSub",
+        "005398e8": "%s",
+        "005398ec": "%s...",
+        "005398f4": "GlamNext"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00454d40",
+          "end": "00454d6f",
+          "bytes_sha256": "1230ebeccf5d7909c518da43910c33fb8fb4dbf68748222aba3a33bc73dc70a6",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-00454d40.asm",
+          "assembly_sha256": "318a2b671b5ec3d3c394a4109012fae17ab352c7d97a4e5eaeeee9a41809b0cc"
+        },
+        {
+          "start": "00454d70",
+          "end": "00454d8a",
+          "bytes_sha256": "a4b37240343142805364e1bb7dbb31a069e9dcbf260c2fb361bda32afe5ec1e4",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-00454d70.asm",
+          "assembly_sha256": "ab4e5048a91aa2679ca896d35ee24ab2714d2f5269612094a8aa1e8bbc705aa4"
+        },
+        {
+          "start": "00454d8c",
+          "end": "00454da6",
+          "bytes_sha256": "e3aa581d7d4d958e8319ed7f675584917096e1426f468c3884dd0d22bae354bb",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-00454d8c.asm",
+          "assembly_sha256": "d60703a463d088a33d211d9231c17c42c2693879de70247a827e23ffca73fc73"
+        },
+        {
+          "start": "00454da8",
+          "end": "00454dc5",
+          "bytes_sha256": "cfcafcb844e5bb4468058e5b133d52695e79072957f4e0f1bbfd176ca7e4ab15",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-00454da8.asm",
+          "assembly_sha256": "aa4cec6117fe6973bd6977de6b08ef79af4ce640727336007bef2e6e50a840b0"
+        },
+        {
+          "start": "00454dc8",
+          "end": "00454e43",
+          "bytes_sha256": "99227facbd1c5a50c3336d562ff808d4c17d09537a4279c2bc927c042097167b",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-00454dc8.asm",
+          "assembly_sha256": "a8ee0726a835f8882b6aa4c67a5477d957dfc27a2eb5dae886348292b39717c3"
+        },
+        {
+          "start": "0045d77e",
+          "end": "0045d798",
+          "bytes_sha256": "f718e5cce225c9253008ae89fc17ad48e7c9a8bbecd0e047b58dfafd4395d56d",
+          "assembly": "analysis/captures/modern-differences/credits-panorama/official_modern-0045d77e.asm",
+          "assembly_sha256": "439d68f0941625447b34f8f6d6c219558b225b975fe209a70e6f6e27941456a5"
+        }
+      ],
+      "label_id_words_005563dc_hex": "e101e201e501e501",
+      "tokens": {
+        "00537bbc": "next",
+        "00537bc4": "previous",
+        "005398d4": "ZoomSlider",
+        "005398e0": "subtitle",
+        "005398e8": "",
+        "005398ec": "",
+        "005398f4": ""
+      }
+    }
+  },
+  "assets": {
+    "official": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/credits1.mnu",
+      "sha256": "4441df58ec7b8a88fc9aa04f6b2537ac49f5df2d9d095acf89577329195cb0c7",
+      "selected_fields": [
+        {
+          "line": 18,
+          "field": "codelink=ZoomSlider"
+        },
+        {
+          "line": 42,
+          "field": "text=kTextZoom"
+        },
+        {
+          "line": 52,
+          "field": "text=kMenuCREDITSCREDITS001"
+        },
+        {
+          "line": 71,
+          "field": "codelink=keyright next"
+        },
+        {
+          "line": 72,
+          "field": "text=kMenuCREDITSNext001"
+        },
+        {
+          "line": 73,
+          "field": "buttontype=LL1of3"
+        },
+        {
+          "line": 83,
+          "field": "codelink=keyleft previous"
+        },
+        {
+          "line": 84,
+          "field": "text=kMenuCREDITSPrevious001"
+        },
+        {
+          "line": 85,
+          "field": "buttontype=LL2of3"
+        },
+        {
+          "line": 95,
+          "field": "codelink=escape"
+        },
+        {
+          "line": 96,
+          "field": "text=kTextBack"
+        },
+        {
+          "line": 97,
+          "field": "buttontype=LL3of3"
+        },
+        {
+          "line": 113,
+          "field": "codelink=subtitle"
+        }
+      ]
+    },
+    "local_uppercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CREDITS1.MNU",
+      "sha256": "6d759e8f42a709b844ff25f1f9c5b1bfa954151903ec93e0e6be44fbc53dbd9b",
+      "selected_fields": [
+        {
+          "line": 31,
+          "field": "codelink=ZoomSlider"
+        },
+        {
+          "line": 59,
+          "field": "text=kTextZoom"
+        },
+        {
+          "line": 76,
+          "field": "text=kMenuCREDITSCREDITS001"
+        },
+        {
+          "line": 102,
+          "field": "codelink=GlamNext"
+        },
+        {
+          "line": 105,
+          "field": "buttontype=LL1of2"
+        },
+        {
+          "line": 119,
+          "field": "codelink=escape"
+        },
+        {
+          "line": 122,
+          "field": "text=kTextBackDots"
+        },
+        {
+          "line": 123,
+          "field": "buttontype=LL2of2"
+        },
+        {
+          "line": 145,
+          "field": "codelink=GlamSub"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No rendering, keyboard or callback execution.",
+    "The distant missing-Next exit is retained; unrelated entry paths to its shared code are not analyzed.",
+    "Backup assets are not authenticated retail provenance; release introduction remains unverified."
+  ]
+}
