@@ -20,6 +20,7 @@ This directory contains reviewed research notes, retained evidence and reproduci
 - [Original versus Modern screenshot pixel representation](original-modern-screenshot-pixels.md)
 - [Original versus Modern screenshot repeat, numbering and sound](original-modern-screenshot-feedback.md)
 - [Original versus Modern screenshot input, format and worker paths](original-modern-screenshots.md)
+- [Original versus Modern window creation and retained sizing](original-modern-window-geometry.md)
 - [Original versus Modern window initialization and callbacks](original-modern-window-handling.md)
 - [Original versus Modern configuration lookup and defaults](original-modern-configuration.md)
 - [Original versus Modern requested resolution defaults](original-modern-resolution-defaults.md)

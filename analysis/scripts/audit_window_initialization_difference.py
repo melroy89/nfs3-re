@@ -10,7 +10,11 @@ import subprocess
 import pefile
 from audit_thrash_loader_difference import SPECS, ROOT
 
-COMMON_SPANS = [(0x4cd6c0, 0x4cdaa0), (0x4cd2d0, 0x4cd348)]
+COMMON_SPANS = [(0x4cd6c0, 0x4cdaa0), (0x4cd2d0, 0x4cd348),
+                (0x4cdb10, 0x4cdbcd), (0x4cdbd0, 0x4cdc14),
+                (0x4cdc20, 0x4cdc4c)]
+IDENTICAL_SPANS = [(0x4cd350, 0x4cd475), (0x4cdb10, 0x4cdbcd),
+                   (0x4cdbd0, 0x4cdc14), (0x4cdc20, 0x4cdc4c)]
 
 
 def main():
@@ -20,14 +24,17 @@ def main():
               'binaries': {}, 'limits': ['No window/game execution.',
                   'Callback address equality is not proof of identical callback behavior.',
                   'Registration extraction covers only direct immediate PUSH arguments to CALL sequences in the pinned initializer span.']}
+    images = {}
     for label, (relative, expected, _) in SPECS.items():
         data = (ROOT/relative).read_bytes()
         assert hashlib.sha256(data).hexdigest() == expected
         pe = pefile.PE(data=data)
+        images[label] = pe
         rows = []
         registrations = []
         hook_start = 0x4ccc70 if label == 'original' else 0x4ccb84
-        for start, end in COMMON_SPANS + [(hook_start, 0x4cce90)]:
+        for start, end in COMMON_SPANS + [(hook_start, 0x4cce90),
+                (0x4cd350, 0x4cd4d1 if label == 'original' else 0x4cd488)]:
             text = subprocess.check_output(['objdump', '-d', '-Mintel',
                 f'--start-address={start}', f'--stop-address={end}', relative], cwd=ROOT, text=True)
             out = capture/f'{label}-{start:08x}.asm'
@@ -68,6 +75,12 @@ def main():
         for k in sorted(old.keys() & new.keys()) if old[k] != new[k]]
     assert result['removed_messages'] == ['0007', '0008']
     assert result['added_messages'] == ['0001', '001c', '0218']
+    result['identical_geometry_ranges'] = []
+    for start, end in IDENTICAL_SPANS:
+        old_bytes = images['original'].get_data(start-0x400000, end-start)
+        assert old_bytes == images['official_modern'].get_data(start-0x400000, end-start)
+        result['identical_geometry_ranges'].append({'start': f'{start:08x}',
+            'end': f'{end:08x}', 'sha256': hashlib.sha256(old_bytes).hexdigest()})
     output = ROOT/'analysis/evidence/audits/original-modern-window-initialization.json'
     output.write_text(json.dumps(result, indent=2)+'\n')
     print(json.dumps({'counts': {k: len(v['registrations']) for k,v in result['binaries'].items()},

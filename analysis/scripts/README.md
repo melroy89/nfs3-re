@@ -235,3 +235,5 @@ Run `python3 analysis/scripts/audit_renderer_selection_difference.py` (Python `p
 The screenshot audit additionally retains the resource-loading/playback wrappers and hashed `RCDATA/SNAP.WAV` payload metadata; it does not play the resource. See [repeat, numbering and sound](../original-modern-screenshot-feedback.md).
 
 The screenshot audit also captures the original TGA builder and depth-16 conversion helper for the [pixel representation comparison](../original-modern-screenshot-pixels.md). Header/bit-copy findings are static, not encoded-image tests.
+
+The window initialization audit additionally captures original/Modern creation bodies and asserts equality of the pre-tail creation range and three complete sizing helpers. See [window geometry](../original-modern-window-geometry.md); equality of these instructions does not establish identical inputs or runtime results.
