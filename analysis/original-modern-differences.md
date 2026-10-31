@@ -266,6 +266,10 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 [MP100-052: website versus Credits](original-modern-setup-website.md) records removal of the website entry in the official menu asset, alongside byte-identical original/Modern callback and conditional binding. The final official asset instead routes that slot to Options, consistent with later entry MP140-017; the historical v1.0.0 Credits implementation remains unresolved. The follow-up also verifies retained button-handler, action-5 dispatch and descriptor-lookup bytes, connecting the asset route to generic engine behaviour within a stated conditional scope.
 
+## Standard menu controls and official asset inventory
+
+[MP140-018 and the menu inventory](original-modern-common-menu-buttons.md) records Options/Exit additions in three official menu files versus local uppercase backups. A reproducible 52-file inventory retains routing fields and hashes, checking each official file directly against its archive member. Runtime visibility and related postgame/Race Now lifecycle claims remain separate.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -420,7 +424,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-015 | Fixed errors of element switching order (when keyboard is used). | Claimed |
 | MP140-016 | 3D view of a car interior can be stopped using Space key. Arrow keys change rotating speed more smoothly now. | Claimed |
 | MP140-017 | Options button is placed near Exit button on the first menu screen (Game Setup). | Partial |
-| MP140-018 | “Connect Players”, “Connect IPX” and “View Car Interior” menu screens also have standard set of buttons (Exit and Options). | Claimed |
+| MP140-018 | “Connect Players”, “Connect IPX” and “View Car Interior” menu screens also have standard set of buttons (Exit and Options). | Partial |
 | MP140-019 | This set of buttons don't disappear in the Options when they are opened directy from the race results screen. | Claimed |
 | MP140-020 | This set of buttons is smart: when user opens Options from the first screen without choosing game mode, the Race button are hidden. | Claimed |
 | MP140-021 | Drop down list of cars displays the class of the current car not only for the 1st player, but also for the 2nd player. | Claimed |
