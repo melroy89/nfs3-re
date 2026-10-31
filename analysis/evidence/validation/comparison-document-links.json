@@ -93,8 +93,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "8d247cc3fbb37a4ada1186bef4838c3373751cfff84cea8df8fb30516fc5481d",
-      "relative_links": 125
+      "sha256": "bd98156f3834db43c197c12827448ca12587441ad7ceda35d650f43dc9cca138",
+      "relative_links": 126
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -143,8 +143,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "a352ce193d893da22256ac308d834eb6c1778e2edf66314981e4a2732b791a56",
-      "relative_links": 576
+      "sha256": "35eadf0d369b24c4bd4b4c290ed6dd05a7880c242ceaaad8becdb90e79278578",
+      "relative_links": 586
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -402,6 +402,11 @@
       "relative_links": 4
     },
     {
+      "path": "analysis/original-modern-small-entry-followup.md",
+      "sha256": "fcc2bfe26ca626e6c2caeae8bf48b41271a01ac7875740ea7ed9b9c43253bf09",
+      "relative_links": 6
+    },
+    {
       "path": "analysis/original-modern-sound-bank-language.md",
       "sha256": "182b118f352dffde470fd085cdbb6870a20831cd368c09e1fb0973a0000d6cca",
       "relative_links": 5
@@ -502,8 +507,8 @@
       "relative_links": 9
     }
   ],
-  "file_count": 100,
-  "relative_link_count": 1344,
+  "file_count": 101,
+  "relative_link_count": 1361,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -1,0 +1,134 @@
+{
+  "kind": "small-entry-boundary-and-argument-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00426290",
+          "end_exclusive": "00426295",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "hex": "5589e55dc3",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/original-00426290.asm"
+        },
+        {
+          "start": "0042c700",
+          "end_exclusive": "0042c7e6",
+          "sha256": "d488aa54e6899efd6464fc14343410647097aefa83dd83ec4b1addc5621d4c63",
+          "hex": "53515256575589e583ec0ce870f4ffffe86bffffffe8b6ffffffba00009642be20115e008955fc89f0bac09a0000bfe0ab5e00e8d43f0b00bac04a000089f831c9e8c63f0b003b0d10d56f007d71db0510d56f00dc3d40735300d845fcd95dfcff75fce8c88a0600e8636c07008d048d0000000029c8c1e00289c2c1e00301d0ba2cd56f0001c289d0e8c201000069c1ac09000001f089902002000069d1ac040000e859bfffff8b048dc8fa5e0089cb01fae899fbffffe8c402000041eb8731d23b1510d56f007d14e8026c07008b0495c8fa5e00e826fcffff42ebe489ec5d5f5e5a595bc3",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/original-0042c700.asm"
+        },
+        {
+          "start": "0045d7ad",
+          "end_exclusive": "0045d837",
+          "sha256": "9a31c5ca8d5db05ac8f0d35b9585a30344868aec7ce22bc27b1c5efab245ffb2",
+          "hex": "c38b15acbb6f003b15a8bb6f00750831c9890dacbb6f008b1db0bb6f003b1da8bb6f00750831f68935b0bb6f008b3db4bb6f00a1a8bb6f0039f8750731f8a3b4bb6f008b15b0bb6f003b15acbb6f00750831c9890db0bb6f008b1db4bb6f003b1dacbb6f00750831f68935b4bb6f008b3db4bb6f00a1b0bb6f0039f8750731f8a3b4bb6f00b803000000",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/original-0045d7ad.asm"
+        },
+        {
+          "start": "004f915e",
+          "end_exclusive": "004f916a",
+          "sha256": "b10f7ee80b7b99e8f41f3b3f371fe4f4494d4aea3ac97a0014dfb90b5c478d75",
+          "hex": "00008943045a595bc38d8000",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/original-004f915e.asm"
+        },
+        {
+          "start": "00517784",
+          "end_exclusive": "0051778a",
+          "sha256": "34e7a837dc7b05eb0b78902a802f13aba2e45f40ca99ba57c3ecb7d7a18cf05a",
+          "hex": "5e59c3bfb005",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/original-00517784.asm"
+        },
+        {
+          "start": "00524290",
+          "end_exclusive": "005242ed",
+          "sha256": "86c2e33de5127b3744fdf758315d8f15417477a054ce6804ebf08f5f1d250099",
+          "hex": "525589e58b152078560083c20380e2fce81b03fdff39c2731652e86103fdffa12078560083c00324fc29c489e0eb0231c08b152078560001d0a324785600e86d7300008b151482a100a11082a100e80df7f7ffe81cbafbff89ec5d5ac3",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/original-00524290.asm"
+        },
+        {
+          "start": "00533e86",
+          "end_exclusive": "00533e93",
+          "sha256": "ce8295d21dad006a4c4d87324d6dabac6de4405d98bf61d480f161ca368bbbcf",
+          "hex": "ff2568465300ff257c465300ff",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/original-00533e86.asm"
+        },
+        {
+          "start": "00537340",
+          "end_exclusive": "00537348",
+          "sha256": "950b4cbf64175991383c55306a9f2f1ff88eb265e5bf3762f380a7da00088927",
+          "hex": "0000000000002e40"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00426290",
+          "end_exclusive": "00426295",
+          "sha256": "7cd002ce5b3ba444c0563bc31968281120f2ed50cd812c573552f3d72ddd1c74",
+          "hex": "c390909090",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/official_modern-00426290.asm"
+        },
+        {
+          "start": "0042c700",
+          "end_exclusive": "0042c7e6",
+          "sha256": "af773c49a121deb5c22afb427ac4047f33262304832a72838a34378caa9a4bcd",
+          "hex": "53515256575589e583ec0ce870f4ffffe86bffffffe8b6ffffffba0000c042be20115e008955fc89f0bac09a0000bfe0ab5e00e8d43f0b00bac04a000089f831c9e8c63f0b003b0d10d56f007d71db0510d56f00dc3d40735300d845fcd95dfcff75fce8c88a0600e8636c07008d048d0000000029c8c1e00289c2c1e00301d0ba2cd56f0001c289d0e8c201000069c1ac09000001f089902002000069d1ac040000e859bfffff8b048dc8fa5e0089cb01fae899fbffffe8c402000041eb8731d23b1510d56f007d14e8026c07008b0495c8fa5e00e826fcffff42ebe489ec5d5f5e5a595bc3",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/official_modern-0042c700.asm"
+        },
+        {
+          "start": "0045d7ad",
+          "end_exclusive": "0045d837",
+          "sha256": "dc9aad4db62aa8c9558afe9353f59de95d173dceb241c31c7e5f876e786c2554",
+          "hex": "608b15acbb6f003b15a8bb6f00750831c9890dacbb6f008b1db0bb6f003b1da8bb6f00750831f68935b0bb6f008b3db4bb6f00a1a8bb6f0039f8750731f8a3b4bb6f008b15b0bb6f003b15acbb6f00750831c9890db0bb6f008b1db4bb6f003b1dacbb6f00750831f68935b4bb6f008b3db4bb6f00a1b0bb6f0039f8750731f8a3b4bb6f0061c3909090",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/official_modern-0045d7ad.asm"
+        },
+        {
+          "start": "004f915e",
+          "end_exclusive": "004f916a",
+          "sha256": "c6bc2bbba02a625ee1bcad086c5527f2ab4f7c2cbfd264d9e1172ce900e4c2b3",
+          "hex": "515250ff15204553005a59c3",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/official_modern-004f915e.asm"
+        },
+        {
+          "start": "00517784",
+          "end_exclusive": "0051778a",
+          "sha256": "478fca284df26e62029b4df550f35c1587c8e02552f9d783d403ca07e8b48b26",
+          "hex": "a3b4327a00c3",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/official_modern-00517784.asm"
+        },
+        {
+          "start": "00524290",
+          "end_exclusive": "005242ed",
+          "sha256": "21046f65b29845e06c03934e647ba04d032e53e25e813f8c551def94e36e542a",
+          "hex": "525589e58b152078560083c20380e2fce81b03fdff39c2731652e86103fdffa12078560083c00324fc29c489e0eb0231c08b152078560001d0a324785600e86d7300008b151482a100a11082a100e8cdfaf7ffe81cbafbff89ec5d5ac3",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/official_modern-00524290.asm"
+        },
+        {
+          "start": "00533e86",
+          "end_exclusive": "00533e93",
+          "sha256": "51fb87dab1329f1a9627bc17bc09e869512e33f16bd2e9b5ef055edf36784427",
+          "hex": "b8f2d25300e87c18f8ffc20c00",
+          "assembly": "analysis/captures/modern-differences/remaining-small-entries/official_modern-00533e86.asm"
+        },
+        {
+          "start": "00537340",
+          "end_exclusive": "00537348",
+          "sha256": "f135a9bfccc5fb910cd547f7959be6a7e7d2ed7f45909279cfcc7e2f241c6743",
+          "hex": "6666666666660e40"
+        }
+      ]
+    }
+  },
+  "modern_import_00534520": "GetFileAttributesA",
+  "modern_message_0053d2f2": "DDRAW.DLL is not imported.",
+  "limits": [
+    "No target execution or Ghidra changes.",
+    "Modern metadata does not establish original function counterparts.",
+    "Caller coverage, full callee semantics and runtime effects remain unverified."
+  ]
+}

@@ -432,6 +432,8 @@ The [small conversion-helper contracts](original-modern-small-conversion-helpers
 
 The [raster-session comparison](original-modern-raster-session.md) accounts for removed cleanup publication/callbacks and the shortened inactive shutdown branch, including its original remote tail.
 
+The [small-entry follow-up](original-modern-small-entry-followup.md) accounts for a shortened no-op, vehicle-loading progress inputs (including changed referenced data), duplicate-choice helper boundaries, three Modern wrappers and the application-wrapper call retarget. Original counterparts and runtime effects remain explicit unknowns.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

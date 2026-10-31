@@ -324,6 +324,10 @@
       "sha256": "95c89e490afef88c9de3a8e7e7536ec0e5d29308002347a1992f743073cc897b"
     },
     {
+      "path": "analysis/original-modern-small-entry-followup.md",
+      "sha256": "fcc2bfe26ca626e6c2caeae8bf48b41271a01ac7875740ea7ed9b9c43253bf09"
+    },
+    {
       "path": "analysis/original-modern-sound-bank-language.md",
       "sha256": "182b118f352dffde470fd085cdbb6870a20831cd368c09e1fb0973a0000d6cca"
     },
@@ -402,8 +406,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 354,
-    "without_address_mentions": 7
+    "with_address_mentions": 361,
+    "without_address_mentions": 0
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -1466,7 +1470,15 @@
       "changed_bytes": 1,
       "original_sha256": "a25513c7e0f6eaa80a3337ee18081b9e2ed09e00af8531c8f7bb2542764027e7",
       "modern_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00426290"
+          ]
+        }
+      ]
     },
     {
       "entry": "00426450",
@@ -1598,7 +1610,18 @@
       "changed_bytes": 1,
       "original_sha256": "d488aa54e6899efd6464fc14343410647097aefa83dd83ec4b1addc5621d4c63",
       "modern_sha256": "af773c49a121deb5c22afb427ac4047f33262304832a72838a34378caa9a4bcd",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0042c700",
+            "0042c71a",
+            "0042c74e",
+            "0042c763"
+          ]
+        }
+      ]
     },
     {
       "entry": "0042dc20",
@@ -4138,7 +4161,17 @@
       "changed_bytes": 3,
       "original_sha256": "7e3a1c95c56735e18957f53cfc979018e84e12f7d759ee3fcfad7bd7b22ed277",
       "modern_sha256": "b9af4161d932125bc63143eabbd697657e16e43144504314f08f6c8e0c630c55",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0045d7ad",
+            "0045d7ae",
+            "0045d832"
+          ]
+        }
+      ]
     },
     {
       "entry": "004607c0",
@@ -6595,6 +6628,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00495230"
+          ]
+        },
+        {
           "path": "analysis/original-modern-texture-loading-followup.md",
           "entry_mentioned": true,
           "addresses": [
@@ -7404,6 +7444,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004a3db0"
+          ]
+        },
+        {
           "path": "analysis/original-modern-startup-paths.md",
           "entry_mentioned": false,
           "addresses": [
@@ -7780,6 +7827,13 @@
         },
         {
           "path": "analysis/original-modern-renderer-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004b570c"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-small-entry-followup.md",
           "entry_mentioned": true,
           "addresses": [
             "004b570c"
@@ -11591,7 +11645,15 @@
       "changed_bytes": 12,
       "original_sha256": "b10f7ee80b7b99e8f41f3b3f371fe4f4494d4aea3ac97a0014dfb90b5c478d75",
       "modern_sha256": "c6bc2bbba02a625ee1bcad086c5527f2ab4f7c2cbfd264d9e1172ce900e4c2b3",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f915e"
+          ]
+        }
+      ]
     },
     {
       "entry": "004f916c",
@@ -12307,7 +12369,15 @@
       "changed_bytes": 6,
       "original_sha256": "34e7a837dc7b05eb0b78902a802f13aba2e45f40ca99ba57c3ecb7d7a18cf05a",
       "modern_sha256": "478fca284df26e62029b4df550f35c1587c8e02552f9d783d403ca07e8b48b26",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00517784"
+          ]
+        }
+      ]
     },
     {
       "entry": "0051778c",
@@ -12403,7 +12473,16 @@
       "changed_bytes": 2,
       "original_sha256": "86c2e33de5127b3744fdf758315d8f15417477a054ce6804ebf08f5f1d250099",
       "modern_sha256": "21046f65b29845e06c03934e647ba04d032e53e25e813f8c551def94e36e542a",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00524290",
+            "005242de"
+          ]
+        }
+      ]
     },
     {
       "entry": "00524650",
@@ -12483,7 +12562,15 @@
       "changed_bytes": 13,
       "original_sha256": "ce8295d21dad006a4c4d87324d6dabac6de4405d98bf61d480f161ca368bbbcf",
       "modern_sha256": "51fb87dab1329f1a9627bc17bc09e869512e33f16bd2e9b5ef055edf36784427",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00533e86"
+          ]
+        }
+      ]
     }
   ]
 }
