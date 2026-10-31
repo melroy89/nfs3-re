@@ -1,0 +1,96 @@
+{
+  "kind": "static-movie-volume-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00495bc0",
+          "end": "004960e0",
+          "bytes_sha256": "328af108907c8645445e30622896cdffba5e4c3b984c1ad1e0fa2ccbba4f2d8d",
+          "assembly": "analysis/captures/modern-differences/movie-volume/original-00495bc0.asm",
+          "assembly_sha256": "f8509454892e8c2ffb3e46a43c2ff887f850f10204f5f7b33782f5c260feb552"
+        },
+        {
+          "start": "004e9b20",
+          "end": "004e9b93",
+          "bytes_sha256": "80b81aa516490eee6d5abf3c418f254d8f3e66fb49c03fa178adf21c69ed17c4",
+          "assembly": "analysis/captures/modern-differences/movie-volume/original-004e9b20.asm",
+          "assembly_sha256": "70aa3250e5f3a3ae5481ae1e5247e223e5fdc93d4b649d3693d3015ae87133cc"
+        },
+        {
+          "start": "004f3a60",
+          "end": "004f3a7e",
+          "bytes_sha256": "56355acdb1e1dff56af7892a1d04f54f4c6d8afb48ed7195f17402971e5f6032",
+          "assembly": "analysis/captures/modern-differences/movie-volume/original-004f3a60.asm",
+          "assembly_sha256": "6ced20aed31220f34b3af2d9d3637653ae31c08a6ede00966637c30ebeb66a5a"
+        }
+      ],
+      "call_00495e01_target": "004e9b20"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00495bc0",
+          "end": "004960e0",
+          "bytes_sha256": "f1c0b9256f4d4426704bd7f6a875a358aa812fb36112b68c2e7bb44c6bbd64cb",
+          "assembly": "analysis/captures/modern-differences/movie-volume/official_modern-00495bc0.asm",
+          "assembly_sha256": "b9b4135678d9e4af41bc19509f1276465ca90489d78c6039a9f3e25ddedbd00f"
+        },
+        {
+          "start": "004e9b20",
+          "end": "004e9b93",
+          "bytes_sha256": "80b81aa516490eee6d5abf3c418f254d8f3e66fb49c03fa178adf21c69ed17c4",
+          "assembly": "analysis/captures/modern-differences/movie-volume/official_modern-004e9b20.asm",
+          "assembly_sha256": "7f2b82429c76eb31f9807f730a2160fc54606901369365c301a9b5fb007646e9"
+        },
+        {
+          "start": "004f3a60",
+          "end": "004f3a7e",
+          "bytes_sha256": "56355acdb1e1dff56af7892a1d04f54f4c6d8afb48ed7195f17402971e5f6032",
+          "assembly": "analysis/captures/modern-differences/movie-volume/official_modern-004f3a60.asm",
+          "assembly_sha256": "ae766c403fca27c53803c3cc5bcc44fb6aaab0d9010f4e08acb5387835e1cfeb"
+        },
+        {
+          "start": "004962c2",
+          "end": "004962d6",
+          "bytes_sha256": "d3bc85a36fa47b46ab9c4e055300d7b9bc7fcb62efef40a40cb4f04c8589f503",
+          "assembly": "analysis/captures/modern-differences/movie-volume/official_modern-004962c2.asm",
+          "assembly_sha256": "9ba3796a45bf6fa0dfc56edb318185073fa6eea466511c4fd4851517c8c8ae71"
+        }
+      ],
+      "call_00495e01_target": "004962c2"
+    }
+  },
+  "identical_ranges": [
+    {
+      "start": "00495df9",
+      "end": "00495e01",
+      "sha256": "efc3e1881e5b7844867f33cf01158a0e8a10d57eb508fbd16fcbdabf078a4e0a"
+    },
+    {
+      "start": "00495e06",
+      "end": "00495e3e",
+      "sha256": "cefa8624f1a1ac122487af41f5f42ed801653888d6a6fa17555b00135a51edfc"
+    },
+    {
+      "start": "004e9b20",
+      "end": "004e9b93",
+      "sha256": "80b81aa516490eee6d5abf3c418f254d8f3e66fb49c03fa178adf21c69ed17c4"
+    },
+    {
+      "start": "004f3a60",
+      "end": "004f3a7e",
+      "sha256": "56355acdb1e1dff56af7892a1d04f54f4c6d8afb48ed7195f17402971e5f6032"
+    }
+  ],
+  "limits": [
+    "No target, movie, audio or instruction execution.",
+    "Movie body retained as an address envelope, not asserted wholly identical.",
+    "Parameter byte correspondence verified; complete decoder/provider semantics and audible response unverified."
+  ]
+}

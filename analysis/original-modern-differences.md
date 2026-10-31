@@ -332,6 +332,8 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 [The pause-title asset comparison](original-modern-pause-title.md) verifies a five-unit authored upward move with shared X/alignment, while recording omitted legacy fields separately. This partially supports MP100-050; screen pixels, improved alignment and historical introduction remain unverified.
 
+Movie sound parameter initialization is compared in [movie playback level](original-modern-movie-volume.md): the original default127 is replaced with the menu music level masked to seven bits, with forwarding and runtime limits recorded.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -388,7 +390,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP153-006 | Prevented double music fading in the audio settings when user presses Race button. | Partial |
 | MP153-007 | Fixed a regression of the v1.5.2 which was a cause of problems with windowed mode of the nGlide. | Claimed |
 | MP153-008 | Fixed a regression of the v1.5.1 in the fallback code for the unupdated language files. | Unresolved |
-| MP153-009 | Menu music volume will be used for the movies. | Claimed |
+| MP153-009 | Menu music volume will be used for the movies. | Partial |
 | MP153-010 | Proper handling of the case when EAX was presented in the system and choosed by user, but for some reason had become unavailable. | Claimed |
 | MP153-011 | Sound Volume and Dead Zone slider values are rounded correctly. | Partial |
 | MP153-012 | More accurate time measure function is used (timeGetTime instead of GetTickCount). | Static |
