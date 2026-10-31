@@ -61,3 +61,21 @@ The [CPU-tier audit](evidence/audits/original-modern-cpu-tier.json) now captures
 The helper at`004f20b0` conditionally executes RDTSC at`004f20de` and`004f20fc` around calls to`004f06e0`, computes a difference, and repeats sample-selection logic. The helper at`004f2170` counts iterations of a fixed integer DIV workload while polling timestamp`0079c1a4` until a signed elapsed/count comparison ends the loop. The surrounding`004f21c0` invokes that workload repeatedly and combines sample values with CPU-related state. These instructions support classification as **legacy CPU/timing calibration code**, rather than unidentified gameplay code. Exact calibration accuracy, timestamp updates and all exceptional cases remain unresolved.
 
 Modern’s feature-derived CPU tier is documented above. NOP replacement of this old span does not imply removal of CPU identification or all timing facilities, nor that a measured clock speed can be recovered by reading the repurposed tier global. This pass adds byte/role classification to the outside-body index; it does not rerun a benchmark or claim performance effects.
+
+## Original scaled-difference helper has an asymmetric negative branch
+
+The expanded CPU-tier audit captures complete original **`004f1ea0..004f1eea`** (74 bytes), asserts its comparison/branch/multiply instructions and exact binary64 constant **`0054c9b0=-8.0`**, and checks seven direct CALL operands in the already captured estimator. This explains original-only status-reader candidate **`004f1ec4`**. Modern reuses this address region for optional module/export resolution; that is not a corresponding implementation of the old arithmetic helper.
+
+Inputs are EAX and EDX DWORDs plus one binary32 stack scale. It subtracts EDX from EAX modulo2^32, interprets that low DWORD as signed for FILD, and multiplies by the scale using ambient x87 state. The product is first stored to binary32 **without popping**, then stored to binary64 while popping. The local comparison is **0 versus the binary64 copy**, not a comparison against the original extended product or the first binary32 result.
+
+| Non-trapping comparison result | Returned ST0 |
+|---|---|
+| Ordered product below0 | Reload binary64 copy, multiply by−8, store/reload binary32 |
+| Ordered product>=0, including equal zero | Reload the initial binary32 copy |
+| Unordered comparison | JA is not taken; reload the initial binary32 copy |
+
+Thus the helper is neither a plain scaled subtraction nor an absolute value: negative products receive an8× magnitude multiplier, while nonnegative products do not. Retaining both spill formats matters for instruction-faithful reconstruction. Do not implement the initial subtraction as unchecked signed C subtraction or discard the binary64/binary32 boundaries because the inputs usually look small.
+
+The verified calls at `004f1fed`, `004f1fff`, `004f2011`, `004f2025`, `004f2037`, `004f2052` and `004f2064` lie in original estimator `004f1ef0`. They pass scale bits for1.0, approximately1.1 and approximately1.2 and feed later sample-selection comparisons. This grounds the helper's calibration context; exact estimator units, rationale for−8, accuracy and real measurements remain unresolved. It is not identified as racing physics, replay arithmetic or a change in Modern's simulation precision.
+
+The helper uses RET4 and returns a binary32-derived value on ST0. EAX contains subtraction/status residue rather than a useful scalar result; EDX and other non-frame general registers are not locally written. EBP is saved/restored, and the temporary x87 stack reaches two additional entries before leaving one result. No local control-word reset establishes all caller modes, exception behavior or arbitrary input safety. The evidence is static only; no calibration helper, CPUID, benchmark or instruction probe was executed.

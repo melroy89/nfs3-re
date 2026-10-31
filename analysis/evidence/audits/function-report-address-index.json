@@ -77,7 +77,7 @@
     },
     {
       "path": "analysis/original-modern-cpu-tier.md",
-      "sha256": "84151a4b4e0b5652e2316579fbb0c8eeb085201208fcd7a62a1e9f1fcb9a08b6"
+      "sha256": "7dd5163c955d3d38384b6f1d415f02f71e11bef6d5ae0af66c85ff6eb2e58340"
     },
     {
       "path": "analysis/original-modern-credits-panorama.md",
@@ -437,7 +437,7 @@
     },
     {
       "path": "analysis/original-modern-x87-observers.md",
-      "sha256": "b1a6699162ad9d2a8bbce341bace7a3095b5a903f76c9659e8acecf7ccf80688"
+      "sha256": "26ad80b82cc6e3320520013dac9eb9c84fe0885f1b65d1dfd55dafe014313dae"
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -11408,6 +11408,13 @@
       "modern_sha256": "331b46c13f7492ad9a03aada4b16fdb67b2005dbf9c25c2d56d53e71cdb05bc2",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-cpu-tier.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f1ea0"
+          ]
+        },
+        {
           "path": "analysis/original-modern-renderer-loading.md",
           "entry_mentioned": true,
           "addresses": [
@@ -11441,6 +11448,13 @@
       "original_sha256": "19ac6b0963d787ace716ab5fad06d4c7f6f3c2fa8382a475b412b7e85a6318da",
       "modern_sha256": "2c2897cea8e8d8a7b2ad0cdd91ac8459c60420c7808d06e1ef6537bc0bb46131",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-cpu-tier.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004f1ec4"
+          ]
+        },
         {
           "path": "analysis/original-modern-renderer-loading.md",
           "entry_mentioned": true,
@@ -11485,6 +11499,7 @@
           "path": "analysis/original-modern-cpu-tier.md",
           "entry_mentioned": false,
           "addresses": [
+            "004f1eea",
             "004f1ef0"
           ]
         },
@@ -11684,6 +11699,13 @@
       "original_sha256": "54da0f93301722d543f85ea1c338f6c34069fd3aa848f6986e022eabc8021a9d",
       "modern_sha256": "ed48606efa77a6bd06debeb1a2ee0cb00dd4ebc39b105cd515712843189639d7",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-cpu-tier.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004f1fed"
+          ]
+        },
         {
           "path": "analysis/original-modern-menu-input.md",
           "entry_mentioned": true,

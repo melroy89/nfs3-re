@@ -78,7 +78,7 @@
     },
     {
       "path": "analysis/original-modern-cpu-tier.md",
-      "sha256": "84151a4b4e0b5652e2316579fbb0c8eeb085201208fcd7a62a1e9f1fcb9a08b6",
+      "sha256": "7dd5163c955d3d38384b6f1d415f02f71e11bef6d5ae0af66c85ff6eb2e58340",
       "relative_links": 5
     },
     {
@@ -163,8 +163,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "ccd4f1e0e1ce7a05e4397a6a472127d62032caf89ca01de3da751c57d0584e19",
-      "relative_links": 617
+      "sha256": "53522784fdb87f3d303cbb92b519d81780807e123d6ef8f9352a89fd231a92f9",
+      "relative_links": 620
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -558,8 +558,8 @@
     },
     {
       "path": "analysis/original-modern-x87-observers.md",
-      "sha256": "b1a6699162ad9d2a8bbce341bace7a3095b5a903f76c9659e8acecf7ccf80688",
-      "relative_links": 9
+      "sha256": "26ad80b82cc6e3320520013dac9eb9c84fe0885f1b65d1dfd55dafe014313dae",
+      "relative_links": 15
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
@@ -573,7 +573,7 @@
     }
   ],
   "file_count": 114,
-  "relative_link_count": 1577,
+  "relative_link_count": 1586,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

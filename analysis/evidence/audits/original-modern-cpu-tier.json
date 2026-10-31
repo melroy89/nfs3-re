@@ -7,6 +7,13 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "004f1ea0",
+          "end": "004f1eea",
+          "bytes_sha256": "393b4d15a747e8632732cb1e229d8a6289afa5a108c796610a9a7fdab2126603",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/original-004f1ea0.asm",
+          "assembly_sha256": "6e6a68d929616da5b0a1c5c2315a4ea970ae8abc74b6625bfd48d9ce382eeaef"
+        },
+        {
           "start": "004f1ef0",
           "end": "004f209d",
           "bytes_sha256": "cbe3f89e0da59f6d89f2e8c6411c593c47b436d9e483dbc5c1740d63ef30f7d3",
@@ -55,7 +62,27 @@
           "assembly": "analysis/captures/modern-differences/cpu-tier/original-004f21c0.asm",
           "assembly_sha256": "64c09100288bd00f371d5bae321feb14d93681ac24ea8ebbaa0da943193c0918"
         }
-      ]
+      ],
+      "scaled_difference_helper": {
+        "start": "004f1ea0",
+        "end_exclusive": "004f1eea",
+        "bytes": 74,
+        "callers_in_estimator": [
+          "004f1fed",
+          "004f1fff",
+          "004f2011",
+          "004f2025",
+          "004f2037",
+          "004f2052",
+          "004f2064"
+        ],
+        "inputs": "EAX,EDX DWORDs; one binary32 stack scale; RET4",
+        "delta": "Low32 EAX-EDX interpreted signed for FILD",
+        "rounding": "Product stored to binary32 then binary64 before comparing0 to binary64 copy.",
+        "negative_ordered_product": "Reload binary64 product, multiply by-8, store/reload binary32 for ST0 return.",
+        "other_product": "Reload initial binary32 product for ST0 return; includes unordered compare on nontrapping path.",
+        "limit": "Static arithmetic/caller contract; benchmark accuracy, units and runtime CW/inputs unverified."
+      }
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",

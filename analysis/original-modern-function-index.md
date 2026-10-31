@@ -325,8 +325,8 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004ed330` | RelockDisplaySurfaceAndCheckPointer | 261 | 4 | [clock-source](original-modern-clock-source.md) |
 | `004f0cd0` | ClearActiveAsyncReadStatusAndWaitForChange | 76 | 10 | [async-wait](original-modern-async-wait.md) |
 | `004f1c70` | InitializeLegacyCpuIdentificationAndFeatureFlags | 511 | 128 | [cpu-tier](original-modern-cpu-tier.md) |
-| `004f1ea0` | GetExistingModuleOrLoadLibrary | 27 | 27 | [renderer-loading](original-modern-renderer-loading.md), [startup-policy](original-modern-startup-policy.md) |
-| `004f1ebc` | ResolveExportFromExistingOrLoadedModule | 22 | 22 | [renderer-loading](original-modern-renderer-loading.md), [startup-policy](original-modern-startup-policy.md), [x87-observers](original-modern-x87-observers.md) |
+| `004f1ea0` | GetExistingModuleOrLoadLibrary | 27 | 27 | [cpu-tier](original-modern-cpu-tier.md), [renderer-loading](original-modern-renderer-loading.md), [startup-policy](original-modern-startup-policy.md) |
+| `004f1ebc` | ResolveExportFromExistingOrLoadedModule | 22 | 22 | [cpu-tier](original-modern-cpu-tier.md), [renderer-loading](original-modern-renderer-loading.md), [startup-policy](original-modern-startup-policy.md), [x87-observers](original-modern-x87-observers.md) |
 | `004f1ed4` | TrySetDllDirectoryViaDynamicExport | 31 | 31 | [cpu-tier](original-modern-cpu-tier.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f1efc` | AllocateGameProcessHeapBytes | 20 | 20 | [heap-initialization](original-modern-heap-initialization.md) |
 | `004f1f30` | FreeGameProcessHeapBlock | 20 | 20 | [heap-initialization](original-modern-heap-initialization.md) |
@@ -334,7 +334,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f1fb0` | PlaySoundFromGameRawDataResource | 25 | 25 | [screenshot-feedback](original-modern-screenshot-feedback.md) |
 | `004f1fcc` | IsShiftKeyCurrentlyDown | 4 | 4 | [dialog-input](original-modern-dialog-input.md), [menu-input](original-modern-menu-input.md) |
 | `004f1fd0` | IsControlKeyCurrentlyDown | 4 | 4 | [menu-input](original-modern-menu-input.md) |
-| `004f1fd4` | IsAltKeyCurrentlyDown | 28 | 28 | [menu-input](original-modern-menu-input.md) |
+| `004f1fd4` | IsAltKeyCurrentlyDown | 28 | 28 | [cpu-tier](original-modern-cpu-tier.md), [menu-input](original-modern-menu-input.md) |
 | `004f2790` | ReadMultimediaTickCount | 11 | 9 | [clock-source](original-modern-clock-source.md), [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [title-delay](original-modern-title-delay.md) |
 | `004f6c50` | InitializeSocketConnectionState | 980 | 4 | [clock-source](original-modern-clock-source.md) |
 | `004f84a8` | LoadThrashDriverLibrary | 107 | 106 | [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md) |

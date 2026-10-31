@@ -26,6 +26,19 @@ There are1652 shared reader addresses, eight original-only addresses and six Mod
 
 The [CPU calibration chapter](original-modern-cpu-tier.md) already explains removed estimator/helper regions around original `004f2040/004f206d`; the [loading-timing chapter](original-modern-loading-timing.md) covers Modern progress estimation around `00490180/004901a3`. Reuse those mechanisms before treating these locators as new investigations. The [automatic-FOV clamp follow-up](original-modern-projection.md#automatic-fov-unordered-clamp-and-machine-outputs) explains Modern `004dbc70/004dbc81`, including unordered branch selection. The [control-component callback](original-modern-control-component-keys.md) explains removal of original `0046524c`, including step/cancellation/return-code changes outside the saved function bodies. Other candidate correspondence and incoming-branch ownership remain unestablished by this inventory.
 
+## Research routes for all nonshared candidate addresses
+
+These routes account for all14 address-set differences above. A route is an existing bounded code investigation, not evidence that every incoming branch or full machine contract has been verified.
+
+| Original/Modern candidate group | Existing mechanism/evidence route |
+|---|---|
+| Original `0041aa7e/0041aa92`; Modern `0041aa72/0041aa83` | [Track-detail classifier interface change](original-modern-track-detail.md); moved comparison sites within the paired classifier. |
+| Original `0046524c` | [Unlisted control-component callback](original-modern-control-component-keys.md); token0020h branch replaced. |
+| Original `0046a58c` | [Slider percentage tail](original-modern-slider-percentage.md); sign/bias/store/truncation path replaced by direct FISTP. |
+| Original `00495273`; Modern `00490180/004901a3` | [Loading timing](original-modern-loading-timing.md); revised progress-estimation/throttle paths, not automatically three independent features. |
+| Original `004f1ec4/004f2040/004f206d` | [CPU calibration](original-modern-cpu-tier.md); asymmetric scaled-difference helper and estimator sample comparisons. |
+| Modern `004dbc70/004dbc81` | [Automatic FOV clamp](original-modern-projection.md#automatic-fov-unordered-clamp-and-machine-outputs); lower/upper comparison contract. |
+
 ## Nonadjacent and saved-state contexts
 
 | Modern site(s) | Bounded interpretation |
