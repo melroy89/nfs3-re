@@ -1,0 +1,57 @@
+{
+  "kind": "hud-reference-dimension-consumers",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00484b70",
+          "end_exclusive": "00484c10",
+          "sha256": "9045a86d1d468b8caa891173b043bdddc80dd32f4bbeb26c83b6b8d48fdd3585",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-00484b70.asm"
+        },
+        {
+          "start": "0048ae70",
+          "end_exclusive": "0048b29f",
+          "sha256": "30dbba41959f70d01d3cb82d3ec4dbad987f14b170dd773ce286930522a5b2ae",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-0048ae70.asm"
+        },
+        {
+          "start": "0048d110",
+          "end_exclusive": "0048d4b3",
+          "sha256": "e83f7e7f1b16393dda1581bf780cb75f7243d22eb8d3233e638dfa3a6d76021d",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-0048d110.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00484b70",
+          "end_exclusive": "00484c10",
+          "sha256": "3620c18726db32aba8b11237bb2fb4e855ca937e1ff4ee228bea61af2cc9338f",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-00484b70.asm"
+        },
+        {
+          "start": "0048ae70",
+          "end_exclusive": "0048b29f",
+          "sha256": "b7977217e6f2ef19f639f2e482d8439872ab11a207430f6ec8f065a85cb2d563",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-0048ae70.asm"
+        },
+        {
+          "start": "0048d110",
+          "end_exclusive": "0048d4b3",
+          "sha256": "8ac962baab76a91bf26807c3fcd67ee0ce19c350aa65d8bcb2a638685d79e67f",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-0048d110.asm"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static dimension-source and FLD/FILD changes only; no HUD pixel comparison.",
+    "Other globals, callers, aliasing and x87 state remain separate contracts."
+  ]
+}

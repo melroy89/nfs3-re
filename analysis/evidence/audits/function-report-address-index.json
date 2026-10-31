@@ -129,7 +129,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "d853df9a596e1487bdfdabe4c14e6f4d5748b50893d3e035b341dc52ccab76e3"
+      "sha256": "fb257ab78b856e6e02f4d4ac08833699731bbcdc6fe3444f938c85df29268e06"
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
@@ -382,8 +382,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 302,
-    "without_address_mentions": 59
+    "with_address_mentions": 305,
+    "without_address_mentions": 56
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -5252,7 +5252,16 @@
       "changed_bytes": 3,
       "original_sha256": "9045a86d1d468b8caa891173b043bdddc80dd32f4bbeb26c83b6b8d48fdd3585",
       "modern_sha256": "3620c18726db32aba8b11237bb2fb4e855ca937e1ff4ee228bea61af2cc9338f",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00484b70",
+            "00484b7a"
+          ]
+        }
+      ]
     },
     {
       "entry": "00485680",
@@ -5603,7 +5612,18 @@
       "changed_bytes": 10,
       "original_sha256": "30dbba41959f70d01d3cb82d3ec4dbad987f14b170dd773ce286930522a5b2ae",
       "modern_sha256": "b7977217e6f2ef19f639f2e482d8439872ab11a207430f6ec8f065a85cb2d563",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0048ae70",
+            "0048ae87",
+            "0048aea0",
+            "0048aecb"
+          ]
+        }
+      ]
     },
     {
       "entry": "0048d110",
@@ -5621,7 +5641,16 @@
       "changed_bytes": 3,
       "original_sha256": "e83f7e7f1b16393dda1581bf780cb75f7243d22eb8d3233e638dfa3a6d76021d",
       "modern_sha256": "8ac962baab76a91bf26807c3fcd67ee0ce19c350aa65d8bcb2a638685d79e67f",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0048d110",
+            "0048d40a"
+          ]
+        }
+      ]
     },
     {
       "entry": "0048e790",
