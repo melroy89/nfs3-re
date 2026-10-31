@@ -24,7 +24,13 @@ def main():
             path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}',
                 'sha256':hashlib.sha256(data).hexdigest(),'assembly':str(path.relative_to(ROOT))})
-        result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows}
+        scale_constants=pe.get_data(0x13b620,16)
+        assert scale_constants==struct.pack('<4f',0.0015625 if label=='original' else 0.0017,0.8,0.6,0.5)
+        result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,
+            'hud_scale_constants':{'address':'0053b620','bytes':scale_constants.hex(),
+                'binary32_values':list(struct.unpack('<4f',scale_constants)),
+                'gear_default_destination':'00791b54','fallback_destination':'00791b4c',
+                'limits':'Caller/default-state evidence only; no rendered font-size measurement.'}}
     old,new=blobs['original'],blobs['official_modern']
     expected=[(0x484b70,[0xb,0xc,0xd]),(0x48ae70,[0x19,0x1a,0x1b,0x32,0x33,0x34,0x5b,0x5d,0x5e,0x5f]),(0x48d110,[0x2fc,0x2fd,0x2fe])]
     for i,(start,changes) in enumerate(expected):

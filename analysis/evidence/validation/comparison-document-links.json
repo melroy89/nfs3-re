@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "30abfcfb4464734a38d0e6c5fe44c072d0d60f1319e2e10a84f413555d59bad5",
+      "sha256": "616cdeb1ae8adedebd2f5d4c5ecddc8acb627142e436cfdfd7de6965575dda2d",
       "relative_links": 143
     },
     {
@@ -188,8 +188,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "47b7b13b206982e87fb65b0cb97ebd4ed29a17e04b6e4d8d22a6cbc72f668362",
-      "relative_links": 18
+      "sha256": "e455788935010fe0685dda69273b1f2ae0174e42f0716ef823af35b333df8036",
+      "relative_links": 19
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -298,8 +298,8 @@
     },
     {
       "path": "analysis/original-modern-numeric-scale.md",
-      "sha256": "c0a3d3e19d57ffc167d5304d5fcf03218d64c5e8b853684113380934cab07dcd",
-      "relative_links": 5
+      "sha256": "a24ecc557dd6061c7872d15a5e96ed77531f0f93a45a6eeca52b38c88028e89d",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-options-postgame.md",
@@ -573,8 +573,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "bdcee955aa0f7087a94f253ca62a2d863c5ed5a03ce62e4cf13872a78b4f19f4",
-      "relative_links": 139
+      "sha256": "63a933438331dcc2578f0eeebf29aff994d72c6e713054373cae83230fc8d7ab",
+      "relative_links": 141
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -583,7 +583,7 @@
     }
   ],
   "file_count": 116,
-  "relative_link_count": 1727,
+  "relative_link_count": 1732,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

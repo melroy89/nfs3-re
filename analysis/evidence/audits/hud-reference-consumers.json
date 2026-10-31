@@ -59,7 +59,20 @@
           "sha256": "25c58224f36e6ffa5aff2ded08e9840fc10fb16cf727439c893ec3fb4facd6ae",
           "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-0048e790.asm"
         }
-      ]
+      ],
+      "hud_scale_constants": {
+        "address": "0053b620",
+        "bytes": "cdcccc3acdcc4c3f9a99193f0000003f",
+        "binary32_values": [
+          0.0015625000232830644,
+          0.800000011920929,
+          0.6000000238418579,
+          0.5
+        ],
+        "gear_default_destination": "00791b54",
+        "fallback_destination": "00791b4c",
+        "limits": "Caller/default-state evidence only; no rendered font-size measurement."
+      }
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -119,7 +132,20 @@
           "sha256": "92196724fd905deb5dbec47e6aac4fe410c3cfe30969573f50300d490aef7a9e",
           "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-0048e790.asm"
         }
-      ]
+      ],
+      "hud_scale_constants": {
+        "address": "0053b620",
+        "bytes": "89d2de3acdcc4c3f9a99193f0000003f",
+        "binary32_values": [
+          0.0017000000225380063,
+          0.800000011920929,
+          0.6000000238418579,
+          0.5
+        ],
+        "gear_default_destination": "00791b54",
+        "fallback_destination": "00791b4c",
+        "limits": "Caller/default-state evidence only; no rendered font-size measurement."
+      }
     }
   },
   "additional_reads": {

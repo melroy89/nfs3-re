@@ -79,6 +79,12 @@ The [viewport geometry comparison](original-modern-viewport-geometry.md#2-new-ce
 
 The scale initializer retains its signed comparison against 640 and the two existing branches. Below the threshold it writes the fixed binary32 scale values through `00791b3c`, `00791b54`, `00791b4c`, `00791b50`; at/above it computes scales using the chosen width and existing instructions. Changing the width source can change both branch admission and arithmetic inputs without changing that code.
 
+### Scale initializer also reads a changed base coefficient
+
+The extended reference-consumer audit records16 bytes at `0053b620`. Original's first binary32 is **0.0015625000232830644** (the binary32 approximation to1/640); Modern's is **0.0017000000225380063**. The following three values, approximately0.8, approximately0.6 and exactly0.5, are unchanged. The width-at-least640 branch of `00484b70` uses the changed coefficient, so the code's retained arithmetic has both a changed width source and a changed file-backed constant as dependencies.
+
+For equal ordinary input width, this coefficient alone raises the unrounded base by approximately8.8 percent. That is an arithmetic comparison, not an observed font-size change: Modern's reference width can differ from original's source width, individual binary32 stores round, and later state can override the initialized scales. The below640 branch instead uses its fixed constants. The [gear-label analysis](original-modern-numeric-scale.md#gear-label-release-claims-bounded-alignment-and-smaller-scale-evidence) connects primary/fallback scale destinations to a concrete consumer.
+
 The standings prefix retains two signed-integer width conversions and its integer spacing conversions via FISTP. Its later dimension read is a **type/interface change**, not only a relocated global: original FLD interprets `0055d6bc` as binary32; Modern FILD interprets `007a274c` as signed 32-bit integer. A reconstructed global type or load helper copied from the original would misread Modern's height bits. The rest of this standings body remains byte-identical, including the call to font-scale helper `004d1390`; equal code does not establish equal font state, line spacing or pixel output.
 
 The layout updater likewise retains the arithmetic following its one changed FILD. This audit verifies complete code differences, not every constant/data producer consumed by unchanged arithmetic. Existing width-source and reference-record research should be reused rather than assigning an unverified semantic name to every original global.

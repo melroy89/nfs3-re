@@ -480,7 +480,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **160 Claimed, 39 Static, 88 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **158 Claimed, 39 Static, 90 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -580,8 +580,8 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-012 | The limit of texture size for track elements was expanded from 128×128 to 256×256 pixels in this release. | Partial |
 | MP150-013 | Support of the big 512×512 and 1024×1024 textures for cars and track elements still available only in beta versions of the patch. | Claimed |
 | MP150-014 | Smooth edges of the cop/player points on the map. | Claimed |
-| MP150-015 | Gear numbers are right-aligned now, like the digital speedometer. | Claimed |
-| MP150-016 | Gear numbers use smaller font if there is not enough space for them. | Claimed |
+| MP150-015 | Gear numbers are right-aligned now, like the digital speedometer. | Partial |
+| MP150-016 | Gear numbers use smaller font if there is not enough space for them. | Partial |
 | MP150-017 | Opponents List and Speeds List have standard bevel when SoftTri is used (as it was for other renderers). | Claimed |
 | MP150-018 | An ability to enter digits from the Num Pad when Num Lock is on. | Partial |
 | MP150-019 | Commas are treated as dots when parsing an IP address. | Claimed |
