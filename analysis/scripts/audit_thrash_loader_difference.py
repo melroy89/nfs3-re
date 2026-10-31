@@ -18,7 +18,7 @@ SPECS = {
                  [(0x4f8390, 0x4f8793)]),
     'official_modern': ('analysis/captures/modern-differences/upstream/package/nfs3.exe',
                         '240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6',
-                        [(0x4f84a8, 0x4f853b), (0x4b5844, 0x4b5a3c), (0x4f1ed4, 0x4f1ef3)]),
+                        [(0x4f84a8, 0x4f853b), (0x4b5844, 0x4b5a3c), (0x4f1ed4, 0x4f1ef3), (0x4b5a58, 0x4b5a92)]),
 }
 
 
@@ -48,6 +48,15 @@ def main():
                              'assembly_sha256': hashlib.sha256(output.read_bytes()).hexdigest()})
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'ranges': captures}
         if label == 'official_modern':
+            assert pe.get_data(0xb5a58,20).hex() == '60e8e6fdffff85c0750ab8a4d15300e8a0fcffff'
+            assert pe.get_string_at_rva(0x13d1a4) == b'The thrash driver is not found.'
+            assert pe.get_string_at_rva(0x13d1c4) == b'Cannot load the thrash driver.'
+            result['missing_driver_diagnostic'] = {
+                'sequence':'004b5a58..004b5a6c',
+                'gate':'004b5844 returns0 -> message0053d1a4 ->004b570c at004b5a67',
+                'message':'The thrash driver is not found.',
+                'distinct_load_failure_message':'0053d1c4: Cannot load the thrash driver.',
+                'limits':'Configuration/file admission failures share missing-driver wording; no actual dialog or filesystem/API execution.'}
             assert pe.get_string_at_rva(0x53f78c-base) == b'KERNEL32.DLL'
             assert pe.get_string_at_rva(0x53f7b4-base) == b'SetDllDirectoryA'
             assert pe.get_data(0x4f1ed4-base,31) == bytes.fromhex(

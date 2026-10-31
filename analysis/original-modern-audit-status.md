@@ -144,3 +144,7 @@ A fresh five-envelope texture audit passed. MP161-005 now links [removed queries
 ## Root-path diagnostic claim reconciliation
 
 MP161-007 now has a [branch-to-message mapping](original-modern-startup-paths.md#release-note-correspondence-root-path-diagnostic): the unsigned210-byte prefix gate, exact error text and diagnostic call are asserted against the official executable. Extraction failures share the same branch. The missing-driver subclaim, historical introduction and actual dialogs remain unqualified; no path/API/game execution was performed.
+
+## Missing-driver diagnostic follow-up
+
+The [renderer-loader follow-up](original-modern-renderer-loading.md#missing-driver-diagnostic-correspondence) now maps the second MP161-007 subclaim: configuration constructor failure selects the missing-driver message; low-level load failure uses a distinct cannot-load message. Both named final-build diagnostic mechanisms are mapped, with retained branch captures and exact message assertions. Historical introduction, original-wide absence and runtime dialogs remain unverified; the catalog remains partial.

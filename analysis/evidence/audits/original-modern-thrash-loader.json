@@ -38,6 +38,13 @@
           "bytes_sha256": "c47d52449d471aeed00fcba9f225e27a762316bf566d771384f04683248c58c3",
           "assembly": "analysis/captures/modern-differences/thrash-loader/official_modern-004f1ed4.asm",
           "assembly_sha256": "1426d09331d0c44bc6882e576ebeaa35005e105721d86edbd6f7653dc0049bed"
+        },
+        {
+          "start": "004b5a58",
+          "exclusive_end": "004b5a92",
+          "bytes_sha256": "c026ae580920e3b54e283fefde9e6b94435dcf491ccbe62f9adb04008ecf90b0",
+          "assembly": "analysis/captures/modern-differences/thrash-loader/official_modern-004b5a58.asm",
+          "assembly_sha256": "bec71f1e7307a3926ed173ba660aea339d78efeb25256a02194e47d384062822"
         }
       ]
     }
@@ -185,6 +192,13 @@
       "slot_va": "009ef914"
     }
   ],
+  "missing_driver_diagnostic": {
+    "sequence": "004b5a58..004b5a6c",
+    "gate": "004b5844 returns0 -> message0053d1a4 ->004b570c at004b5a67",
+    "message": "The thrash driver is not found.",
+    "distinct_load_failure_message": "0053d1c4: Cannot load the thrash driver.",
+    "limits": "Configuration/file admission failures share missing-driver wording; no actual dialog or filesystem/API execution."
+  },
   "modern_dll_directory_contract": {
     "entry": "004f1ed4",
     "directory_argument": "EAX, supplied as007a3930 at004b58b5",
