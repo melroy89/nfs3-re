@@ -16,7 +16,7 @@ The complete original tier computation and `004bee80` contract remain outside th
 
 ## Modern default path
 
-Modern `00472d10..00472e1c` loads `[005652a4]` into ECX, caps it to unsigned 5, and halves it when `[007a3a58] & 6` is nonzero. This ECX value indexes byte tables for several graphics settings. Its producer and full interpretation are not assumed merely from the current label.
+Modern `00472d10..00472e1c` loads `[005652a4]` into ECX, caps it to unsigned 5, and halves it when `[007a3a58] & 6` is nonzero. This ECX value indexes byte tables for several graphics settings. The [CPU tier comparison](original-modern-cpu-tier.md) now traces its feature/family score producer, distinct from original’s million-scaled estimate. Vendor/legacy branches and runtime interpretation remain bounded.
 
 The requested size is then chosen as follows (`00472dbb..00472dce`):
 

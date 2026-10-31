@@ -144,7 +144,11 @@ The [startup-path comparison](original-modern-startup-paths.md) traces Modern’
 
 The [clock comparison](original-modern-clock-source.md) verifies 16 direct GetTickCount-to-timeGetTime replacements, while three timer functions retain every other body instruction. This supports the API-change claim, not measured accuracy or frame pacing. The [loading-timing comparison](original-modern-loading-timing.md) traces seconds-to-milliseconds conversion, low-32-bit arithmetic, signed 0–10,000 ms clamp, progress throttling and input cancellation. Exact visible duration, all synchronization consumers and cross-version behavior remain untested.
 
-## 18. Prioritized semantic work remaining
+## 18. CPU rating and defaults tier
+
+The [CPU comparison](original-modern-cpu-tier.md) traces original’s million-scaled estimate versus Modern’s family/feature score at the same global, with coordinated changes in two consumer neighborhoods. This is not a measured CPU benchmark or evidence of SIMD racing physics. Full calibration/vendor paths and runtime default choices remain pending.
+
+## 19. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

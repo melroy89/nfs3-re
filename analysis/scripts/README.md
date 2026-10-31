@@ -237,3 +237,7 @@ The screenshot audit additionally retains the resource-loading/playback wrappers
 The screenshot audit also captures the original TGA builder and depth-16 conversion helper for the [pixel representation comparison](../original-modern-screenshot-pixels.md). Header/bit-copy findings are static, not encoded-image tests.
 
 The window initialization audit additionally captures original/Modern creation bodies and asserts equality of the pre-tail creation range and three complete sizing helpers. See [window geometry](../original-modern-window-geometry.md); equality of these instructions does not establish identical inputs or runtime results.
+
+## Original versus Modern CPU tier
+
+Run `python3 analysis/scripts/audit_cpu_tier_difference.py` (Python pefile, GNU objdump). It hash-checks both baselines and captures the original estimate, Modern feature-score producer/CPUID wrapper, matched consumers and exact default byte tables. Curated output: `analysis/evidence/audits/original-modern-cpu-tier.json`; raw captures remain ignored. No CPUID/benchmark/target execution. See [CPU findings](../original-modern-cpu-tier.md).

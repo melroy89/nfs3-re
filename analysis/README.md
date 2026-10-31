@@ -23,6 +23,7 @@ This directory contains reviewed research notes, retained evidence and reproduci
 - [Original versus Modern window creation and retained sizing](original-modern-window-geometry.md)
 - [Original versus Modern window initialization and callbacks](original-modern-window-handling.md)
 - [Original versus Modern configuration lookup and defaults](original-modern-configuration.md)
+- [Original versus Modern CPU rating and defaults tier](original-modern-cpu-tier.md)
 - [Original versus Modern requested resolution defaults](original-modern-resolution-defaults.md)
 - [Original versus Modern video-mode selection and publication](original-modern-mode-selection.md)
 - [Original versus Modern renderer callback and video-mode lifecycle](original-modern-renderer-lifecycle.md)

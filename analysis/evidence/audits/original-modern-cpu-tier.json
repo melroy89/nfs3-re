@@ -1,0 +1,154 @@
+{
+  "kind": "static-cpu-tier-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004f1ef0",
+          "end": "004f209d",
+          "bytes_sha256": "cbe3f89e0da59f6d89f2e8c6411c593c47b436d9e483dbc5c1740d63ef30f7d3",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/original-004f1ef0.asm",
+          "assembly_sha256": "4c951ccca721f23900e76165b3b658510cf11fab56f8b62e1ec3c1b5dfeb5d4e"
+        },
+        {
+          "start": "00472d89",
+          "end": "00472dfa",
+          "bytes_sha256": "16869299cf362be59cb87ec6759aa0a7b29dda7f660170b527837f6db9f8111d",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/original-00472d89.asm",
+          "assembly_sha256": "0fb179799786fd685720886b51a7bf7f58c2a40464820c66175ca1fb73ee4170"
+        },
+        {
+          "start": "0049616c",
+          "end": "004961ab",
+          "bytes_sha256": "bf83dd03caf6e742a7f050b658840288dde7418c7e593262ee66e0a44be0d393",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/original-0049616c.asm",
+          "assembly_sha256": "be485319873c241b893b51fa102b56e48eb379a4178525eff441d0ef6306c630"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004f1c70",
+          "end": "004f1e9e",
+          "bytes_sha256": "8d55c51a1a556bae6da1123d3bb1b6f39c6802599e468bd91175a9e311a3f50f",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-004f1c70.asm",
+          "assembly_sha256": "438b4154b3dbe69054d3f2f893dde42dea718bf3ebfb36b4da4cc810ef7d2d40"
+        },
+        {
+          "start": "0050ea85",
+          "end": "0050eaa7",
+          "bytes_sha256": "e6c80763077520a551281d258f8cf533ad5b0ac39a36b26b8408160c89a62c50",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-0050ea85.asm",
+          "assembly_sha256": "580635454a3c64f6d0c69df82d5e0db0458e6a7be6dc030c04815f304f9cd7f0"
+        },
+        {
+          "start": "00472d10",
+          "end": "00472e1d",
+          "bytes_sha256": "39803c6749cdd42cd291dd75c764511c85f7e461bc781ed31b83d0b90f65d1f8",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-00472d10.asm",
+          "assembly_sha256": "b2e3f27d8a9aaba51ac7e2bd033e9c31283f191c6c3853490d29a69979b7e3ee"
+        },
+        {
+          "start": "0049616f",
+          "end": "004961ab",
+          "bytes_sha256": "0a6774d9bd2835d9daa18f93e488c4ebb6244591ea42be7aa2697d93a74f41c4",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-0049616f.asm",
+          "assembly_sha256": "8267763e977feecec914e3c7bb0d69f645a4e28fd87ec8f0875ebeeee09ac563"
+        },
+        {
+          "start": "004a3e07",
+          "end": "004a3e0c",
+          "bytes_sha256": "a84ecd0619b008fcd6df2a1962f31d283073b6dd5803ec2a9f448b0fb306ba79",
+          "assembly": "analysis/captures/modern-differences/cpu-tier/official_modern-004a3e07.asm",
+          "assembly_sha256": "5a2f8bafe86ac0033d973a5eae2cc416121697428cba71d535821a60457195d4"
+        }
+      ],
+      "six_byte_default_tables": {
+        "00472e20": [
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "00472e26": [
+          2,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "00472e2c": [
+          2,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "00472e32": [
+          2,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "00472e38": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "00472e3e": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "00472e44": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "00472e4a": [
+          2,
+          2,
+          2,
+          2,
+          1,
+          0
+        ],
+        "00472e50": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "family_warning": "Your CPU is too old. i586 and newer are recommended to operate properly."
+    }
+  },
+  "limits": [
+    "No CPUID, benchmark, game or target instruction execution.",
+    "Same-address global changes meaning; not a measured host CPU rating.",
+    "Legacy/extended CPUID paths and complete tier consumers remain bounded."
+  ]
+}
