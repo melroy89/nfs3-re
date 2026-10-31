@@ -12,10 +12,11 @@ SPANS = {
     'original': [(0x451810, 0x451836), (0x452410, 0x452420),
         (0x4c4490, 0x4c45c7), (0x4b6520, 0x4b6588), (0x4eb160, 0x4eb1c0)],
     'official_modern': [(0x4ccb84, 0x4ccc40), (0x4cdc50, 0x4cdcbb),
-        (0x4c4480, 0x4c45cb), (0x4e3078, 0x4e3248), (0x4b5680, 0x4b5696)],
+        (0x4c4480, 0x4c45cb), (0x4e3078, 0x4e3248), (0x4b5680, 0x4b5696),
+        (0x4f1f58, 0x4f1f88), (0x4f1fb0, 0x4f1fc9)],
 }
 STRINGS = {'original': [0x5401d8, 0x53feb0, 0x53fef4],
-           'official_modern': [0x53f7f4, 0x53f804, 0x53f6cc]}
+           'official_modern': [0x53f7f4, 0x53f804, 0x53f6cc, 0x53f7e8]}
 
 
 def main():
@@ -43,6 +44,23 @@ def main():
                    for va in STRINGS[label]}
         result['binaries'][label] = {'path': relative, 'sha256': expected,
             'spans': rows, 'strings': strings}
+        if label == 'official_modern':
+            resources = []
+            for kind in pe.DIRECTORY_ENTRY_RESOURCE.entries:
+                for name in kind.directory.entries:
+                    if name.name and str(name.name) == 'SNAP.WAV':
+                        for language in name.directory.entries:
+                            entry = language.data.struct
+                            blob = pe.get_data(entry.OffsetToData, entry.Size)
+                            assert kind.id == 10 and blob[:4] == b'RIFF' and blob[8:12] == b'WAVE'
+                            resources.append({'type': kind.id, 'name': str(name.name),
+                                'language': language.id, 'rva': f'{entry.OffsetToData:08x}',
+                                'size': entry.Size, 'sha256': hashlib.sha256(blob).hexdigest()})
+            assert len(resources) == 1
+            result['binaries'][label]['sound_resource'] = resources
+            result['binaries'][label]['sound_imports'] = {f'{i.address:08x}': i.name.decode()
+                for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports
+                if i.name and i.address in [0x53453c,0x534540,0x534570,0x534668]}
     output = ROOT/'analysis/evidence/audits/original-modern-screenshots.json'
     output.write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: both input hashes and original/Modern screenshot instruction captures')

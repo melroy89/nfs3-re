@@ -41,6 +41,8 @@ Run `python3 analysis/scripts/audit_screenshot_difference.py` from the repositor
 
 For the inspected original, Alt+P drives a direct call that captures and writes a numbered TGA file into the Desktop directory. In the official Modern build, Print Screen drives a pending request; the capture is handed to a worker thread and is written beneath the relative screenshots directory. The Modern default format constant is PNG, subject to the configured format and fallback logic. This is a binary-supported output and scheduling change, not merely a README comparison.
 
+The [repeat/numbering/sound comparison](original-modern-screenshot-feedback.md) follows the 1,000 ms request gate, atomic filename counter and embedded shutter sound, with runtime and cross-launch persistence limits.
+
 ## Limits
 
 - Conclusions are tied to these two fingerprints. The original artifact's exact retail provenance is not authenticated by this review.

@@ -86,12 +86,43 @@
           "bytes_sha256": "66ecef60ef71c51669787c0da5162436fd1c1378c62efa5d7ce7e0bd57007752",
           "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004b5680.asm",
           "assembly_sha256": "8e97c3c6024b363e786e46334c909fd4647455c41f6fd8114947bbb57f2a830e"
+        },
+        {
+          "start": "004f1f58",
+          "end": "004f1f88",
+          "bytes_sha256": "5cbc7314ba5bccd0b50de883c5d98267abfa577ea418cdcaa4c5b93f26786018",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004f1f58.asm",
+          "assembly_sha256": "5531caa4c821b49fddefeae525178df1f2fcb7e8ff3621fec077c4ff6fd6493c"
+        },
+        {
+          "start": "004f1fb0",
+          "end": "004f1fc9",
+          "bytes_sha256": "aa8f8a343eb2a3446a3d286cae7f4a765b6a8eb951d1969c7d206cab8738bf84",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004f1fb0.asm",
+          "assembly_sha256": "14d2ef6259169b4f4a472c9a62fb4f94ba1601c2a7c67d2aa89fbb1a4af496d7"
         }
       ],
       "strings": {
         "0053f7f4": ".\\screenshots\\",
         "0053f804": "nfs3_%04d.%s",
-        "0053f6cc": "png"
+        "0053f6cc": "png",
+        "0053f7e8": "SNAP.WAV"
+      },
+      "sound_resource": [
+        {
+          "type": 10,
+          "name": "SNAP.WAV",
+          "language": 0,
+          "rva": "00651400",
+          "size": 3240,
+          "sha256": "b218fa30693f4ccfb6f633b62c285007106541a753ae271df910d348eac7951e"
+        }
+      ],
+      "sound_imports": {
+        "0053453c": "FindResourceA",
+        "00534540": "LoadResource",
+        "00534570": "LockResource",
+        "00534668": "PlaySoundA"
       }
     }
   },

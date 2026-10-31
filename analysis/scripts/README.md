@@ -231,3 +231,5 @@ Run `python3 analysis/scripts/audit_clock_source_difference.py` (Python `pefile`
 ## Renderer selection and DirectDraw compatibility
 
 Run `python3 analysis/scripts/audit_renderer_selection_difference.py` (Python `pefile`, GNU `objdump`). It hash-checks both baselines and captures the complete original selector body/environment writer and Modern type/optional compatibility dispatch, including exact file-backed names. It also captures callback installation, original/Modern video initialization and environment setup, and asserts the shared `005176aa..0051776b` tail is identical. Output: `analysis/evidence/audits/original-modern-renderer-selection.json`. Raw captures remain ignored; no target/DLL execution. See [renderer findings](../original-modern-renderer-loading.md) and [initialization dispatch](../original-modern-renderer-initialization.md).
+
+The screenshot audit additionally retains the resource-loading/playback wrappers and hashed `RCDATA/SNAP.WAV` payload metadata; it does not play the resource. See [repeat, numbering and sound](../original-modern-screenshot-feedback.md).
