@@ -49,6 +49,14 @@
           "assembly_sha256": "c42c3626e1a37659d9b395aca08df924e46554afde5088cc012b5bc192088a39"
         }
       ],
+      "flag_bit21_switch": {
+        "slot_address": "0055eb88",
+        "pointer": "0053d0fc",
+        "text": "-msdemo",
+        "consumer_byte": "0055eb2e",
+        "mask": "20",
+        "binding": "Parser index21 corresponds to DWORD0055eb2c bit21; parser proof retained in command-line audit."
+      },
       "file_backed_header_hex": "000000000000000000000000",
       "format_string": "%sconfig.dat",
       "relevant_imports": {
@@ -92,6 +100,14 @@
           "assembly_sha256": "ef78f3f73b8e416ceb4960bf4c5c51932d999d76382eba6c5d1d2c92621d96ff"
         }
       ],
+      "flag_bit21_switch": {
+        "slot_address": "0055eb88",
+        "pointer": "0055fd81",
+        "text": "",
+        "consumer_byte": "0055eb2e",
+        "mask": "20",
+        "binding": "Parser index21 corresponds to DWORD0055eb2c bit21; parser proof retained in command-line audit."
+      },
       "file_backed_header_hex": "f02000000600000000000000",
       "format_string": "%sconfig.dat",
       "relevant_imports": {

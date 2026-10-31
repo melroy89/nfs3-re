@@ -1,6 +1,7 @@
 """Static config load/header comparison; no target/file API execution."""
 import hashlib
 import json
+import struct
 import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
@@ -20,6 +21,9 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
+        switch_pointer=struct.unpack('<I',pe.get_data(0x15eb34+21*4,4))[0]
+        switch_name=pe.get_string_at_rva(switch_pointer-0x400000).decode('ascii')
+        assert switch_name==('-msdemo' if label=='original' else '')
         if label=='original':
             assert pe.get_data(0x15e8b8,8)==bytes(8)
             assert pe.get_data(0x7241f,13).hex()=='891540bb6f00ba01000000a5a5'
@@ -48,6 +52,9 @@ def main():
                 'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,
+            'flag_bit21_switch':{'slot_address':'0055eb88','pointer':f'{switch_pointer:08x}',
+                'text':switch_name,'consumer_byte':'0055eb2e','mask':'20',
+                'binding':'Parser index21 corresponds to DWORD0055eb2c bit21; parser proof retained in command-line audit.'},
             'file_backed_header_hex':pe.get_data(0x55e8a0-0x400000,12).hex(),
             'format_string':pe.get_data(0x53b00c-0x400000,30).split(b'\0')[0].decode('ascii'),
             'relevant_imports':{f'{i.address:08x}':i.name.decode()
