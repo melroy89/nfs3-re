@@ -1,5 +1,5 @@
 """Static packaged-DLL x87-control candidates; no loading/unpacking/execution."""
-import hashlib,json,re,subprocess
+import hashlib,json,re,subprocess,struct
 from collections import defaultdict
 import pefile
 from audit_thrash_loader_difference import ROOT
@@ -44,6 +44,40 @@ def main():
         'contract':'First helper saves incoming CW, loads CW OR0c00h; second reloads saved CW. Precision bits0300h unaffected by OR mask.',
         'register_effects':'O=(incoming ECX & ffff0000h)|CW. Save helper returns EAX=O, ECX=O|0c00h; restore helper returns EAX=ECX=saved DWORD. Neither promises incoming ECX preservation.',
         'limits':'Callers, balanced pairing, concurrent ownership and runtime control state not validated.'}
+    caller_start,caller_end=0x6000c281,0x6000c352
+    caller=pe.get_data(caller_start-base,caller_end-caller_start)
+    assert pe.get_data(0x6000c2bd-base,5)==bytes.fromhex('e86ff3ffff')
+    assert pe.get_data(0x6000c347-base,5)==bytes.fromhex('e808f3ffff')
+    assert pe.get_data(0x6000c29e-base,5)==bytes.fromhex('e9ac000000')
+    caller_capture=root/'dx8-rounding-caller.asm'
+    caller_capture.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
+        f'--start-address={caller_start}',f'--stop-address={caller_end}',str(dx8)]))
+    all_asm=subprocess.check_output(['objdump','-d','-Mintel',str(dx8)],text=True)
+    sites={}
+    for target in (0x6000b631,0x6000b654,0x6000c281):
+        found=[]
+        for match in re.finditer(r'^\s*([0-9a-f]+):[^\n]*\bcall\s+0x'+f'{target:x}'+r'\b',all_asm,re.M):
+            address=int(match[1],16);instruction=pe.get_data(address-base,5)
+            assert instruction[0]==0xe8 and address+5+struct.unpack('<i',instruction[1:])[0]==target
+            found.append(f'{address:08x}')
+        sites[f'{target:08x}']=found
+    assert sites['6000b631']==['6000c2bd'] and sites['6000b654']==['6000c347']
+    assert sites['6000c281']==['6000c3b2','6000c3ce','6000c701','6000c71d','6000c739']
+    imports={i.address:(d.dll.decode(),i.name.decode()) for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
+    thunk=pe.get_data(0x6001124a-base,6);assert thunk[:2]==b'\xff\x25'
+    iat=struct.unpack('<I',thunk[2:])[0];assert imports[iat]==('MSVCRT.dll','floor')
+    allocation=pe.get_data(0x60011256-base,6);assert allocation[:2]==b'\xff\x25'
+    allocation_iat=struct.unpack('<I',allocation[2:])[0]
+    assert imports[allocation_iat]==('MSVCRT.dll','??2@YAPAXI@Z')
+    out['verified_dx8_rounding_caller']={
+        'start':f'{caller_start:08x}','end_exclusive':f'{caller_end:08x}',
+        'bytes':len(caller),'sha256':hashlib.sha256(caller).hexdigest(),
+        'assembly':str(caller_capture.relative_to(ROOT)),'decoded_direct_calls':sites,
+        'allocation_failure_branch':'6000c29e jumps to return unwind6000c34f before CW entry6000c2bd',
+        'normal_loop_join':'6000c347 invokes restore; local zero-iteration path joins it too',
+        'allocation_thunk':'60011256','allocation_import':{'iat':f'{allocation_iat:08x}','dll':'MSVCRT.dll','name':'??2@YAPAXI@Z'},
+        'floor_thunk':'6001124a','floor_import':{'iat':f'{iat:08x}','dll':'MSVCRT.dll','name':'floor'},
+        'limits':'Normal local control flow only; imported callee FPU contracts, indirect entries, exceptional exits, higher rendering role and concurrency unverified.'}
     out['limits']=['Linear executable-section decode only; embedded data, packing and alternate instruction boundaries can produce false or missing candidates.',
         'MPRESS-named sections are not unpacked; their candidate counts are not validated code.',
         'Not an original-versus-Modern DLL comparison or proof any candidate is reached by the game.',
