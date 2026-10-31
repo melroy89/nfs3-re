@@ -553,8 +553,8 @@
     },
     {
       "path": "analysis/original-modern-window-handling.md",
-      "sha256": "da74981d2a3ce86e73ba9bf83a83e6abcc44d807a9b6fd3941adbae15dcfdb82",
-      "relative_links": 7
+      "sha256": "63aac8b6fdada977659095bf29334a213bf1207bb400481f4e6200d41d5dcde3",
+      "relative_links": 9
     },
     {
       "path": "analysis/original-modern-window-key-translation.md",
@@ -573,7 +573,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "ed002f4d52e572cd17f647c89e7360071dfa8957c752f164cf55b261fd576974",
+      "sha256": "2b092f88169c9268cf3370e9e7a33a63ac69c8abf142e2f404a14e73189e1b82",
       "relative_links": 134
     },
     {
@@ -583,7 +583,7 @@
     }
   ],
   "file_count": 116,
-  "relative_link_count": 1674,
+  "relative_link_count": 1676,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

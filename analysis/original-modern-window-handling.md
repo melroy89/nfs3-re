@@ -91,6 +91,16 @@ One reconstruction edge case follows from the raw setting values: the installer 
 
 These mechanisms explain the final filtering changes but do not prove Windows/Wine hook acceptance, modifier timing, system minimization behavior or the vendor's Windows NT compatibility claim.
 
+## Removed recurring foreground-restoration tail
+
+Run `python3 analysis/scripts/audit_focus_restoration_difference.py`; the [retained comparison](evidence/audits/focus-restoration-difference.json) pins complete window-thread bodies, original `004cd4e0..004cd6b7` and Modern `004cd4e0..004cd663`. The prefix through `004cd655` is byte-identical except for the exit branch displacement at `004cd588`, retargeted from old epilogue `004cd6ae` to Modern `004cd65a`. The nine-byte epilogue is retained at that new location.
+
+The original recurring loop tail at `004cd655` checks byte `009f3d2d`. If zero it returns to loop head `004cd582`. Otherwise it calls predicate `004f9120`: a nonzero result selects a second predicate `004f9070`, and if that returns zero it calls ShowCursor(0), then loops. The zero-result branch from the first predicate checks IsIconic on game HWND `009f3d24`; when that API returns zero, it calls SetForegroundWindow on that HWND before looping. This is a concrete **repeated foreground request route**, conditional on the shown state/predicate results, not evidence that Windows necessarily grants focus.
+
+Modern replaces that entire tail with a direct jump at `004cd655` back to `004cd582`, moves the epilogue and fills `004cd663..004cd6b7` with NOPs. The local IsIconic test, conditional foreground request and ShowCursor(0) request are removed together. The predicate meanings and complete producers of `009f3d2d` are not reconstructed here, so this should not be simplified to “every lost-focus event always forces restoration” in the original.
+
+This adds a direct mechanism to **MP100-040** beyond the activation-hook refactor. It remains partial evidence for the whole release-note claim: initial foreground/active requests at `004cd55d` and `004cd571` survive in the identical prefix, and the existing [mode-publication path](original-modern-mode-selection.md) also retains a foreground request. Removal of this loop tail does not establish absence of every possible focus-restoration route. Runtime behavior and historical release introduction remain unverified.
+
 ## Release-note mapping and next evidence
 
 The lifecycle changes are relevant to **MP100-040**, the claim that the game no longer repeatedly restores lost focus. They are not sufficient to verify that entire claim: activation consumers and any focus-restoration API paths still need tracing. No release-introduction date can be proven from only original and final Modern binaries.
