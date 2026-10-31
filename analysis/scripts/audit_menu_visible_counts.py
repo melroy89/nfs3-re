@@ -48,6 +48,10 @@ def main():
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             spans.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT))})
         assert struct.unpack('<I',pe.get_data(0x4921c,4))[0]==0x4492aa
+        expected_padding = 5 if label == 'original' else 15
+        expected_extent_add = 5 if label == 'original' else 2
+        assert pe.get_data(0x4645ea-0x400000,5)==b'\x05'+struct.pack('<I',expected_padding)
+        assert pe.get_data(0x4645f8-0x400000,5)==b'\x05'+struct.pack('<I',expected_extent_add)
         # Pin the overlapping-load witness; this is static byte inspection,
         # not execution of the original instructions.
         assert pe.get_data(0x464032-0x400000,3)==bytes.fromhex('8945fc')
