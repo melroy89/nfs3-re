@@ -12,7 +12,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
-        spans=[(0x4d1390,0x4d13f3),(0x4d0dfb,0x4d0e35),(0x4d1400,0x4d140f),(0x4d1410,0x4d1422),(0x4d06f0,0x4d0a0f),(0x4d1480,0x4d14ee),(0x4d1000,0x4d10d8),(0x4d06f0,0x4d071b),(0x4d09f2,0x4d0a0f),(0x4dfd56,0x4dfd73 if label=='original' else 0x4dfd6d),(0x452100,0x45210a),(0x4d1430,0x4d1471 if label=='original' else 0x4d1450),(0x461a70,0x461a96),(0x452020,0x45208c),(0x4628d0,0x4629bf),(0x4634d0,0x463501),(0x463841,0x463859),(0x463875,0x463894),(0x4638a7,0x4638f4),(0x461d25,0x461d51),(0x463b74,0x463bc5),(0x4e9ec0,0x4e9efb)]
+        spans=[(0x4d0d50,0x4d0ff9),(0x4d1390,0x4d13f3),(0x4d0dfb,0x4d0e35),(0x4d1400,0x4d140f),(0x4d1410,0x4d1422),(0x4d06f0,0x4d0a0f),(0x4d1480,0x4d14ee),(0x4d1000,0x4d10d8),(0x4d06f0,0x4d071b),(0x4d09f2,0x4d0a0f),(0x4dfd56,0x4dfd73 if label=='original' else 0x4dfd6d),(0x452100,0x45210a),(0x4d1430,0x4d1471 if label=='original' else 0x4d1450),(0x461a70,0x461a96),(0x452020,0x45208c),(0x4628d0,0x4629bf),(0x4634d0,0x463501),(0x463841,0x463859),(0x463875,0x463894),(0x4638a7,0x4638f4),(0x461d25,0x461d51),(0x463b74,0x463bc5),(0x4e9ec0,0x4e9efb)]
         if label=='official_modern':spans.extend([(0x4728f4,0x472923),(0x472924,0x472959),(0x4628ec,0x46291a),(0x4634e7,0x463501),(0x46456d,0x464587),(0x4645e3,0x464609)])
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -41,6 +41,14 @@ def main():
                 fields.append({'line':number,'section':section,'field':line})
         if fields:matches.append({'member':member,'sha256':hashlib.sha256(data).hexdigest(),'matches':fields})
     assert sum(len(row['matches']) for row in matches)==10
+    result['font_filename_formats']={label:{f'{address:08x}':pe.get_data(address-0x400000,24).split(b'\0')[0].decode('ascii') for address in (0x540b94,0x540ba4,0x540bb0)} for label,pe in images.items()}
+    assert all(list(row.values())==['%sCP16BI.ffn','%sCP1BI.ffn','%ssmall6.ffn'] for row in result['font_filename_formats'].values())
+    result['font_asset_inventory']={'official_archive_ffn_members':[line[7:] for line in members if line.startswith('Path = ') and line.lower().endswith('.ffn')],'local_pairs':[]}
+    for name in ('CP16BI.FFN','CP1BI.FFN','SMALL6.FFN'):
+        base=ROOT/'nfs3_decomp.rep/Electronic Arts/Need For Speed III'
+        paths=[base/'gamedata_org/DashHud'/name,base/'GAMEDATA/DASHHUD'/name]
+        values=[path.read_bytes() for path in paths]
+        result['font_asset_inventory']['local_pairs'].append({'name':name,'files':[{'path':str(path.relative_to(ROOT)),'length':len(data),'sha256':hashlib.sha256(data).hexdigest()} for path,data in zip(paths,values)],'byte_identical':values[0]==values[1],'provenance':'Local backup and installed copies; not authenticated retail or packaged Modern replacements.'})
     result['official_menu_scan']={'archive_sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'menu_count':len(menus),'matching_members':matches}
     for start,end in [(0x463841,0x463859),(0x463875,0x463894),(0x4638a7,0x4638f4)]:
         assert old.get_data(start-0x400000,end-start)==new.get_data(start-0x400000,end-start)
@@ -57,7 +65,7 @@ def main():
     assert new.get_data(0x6297f,5)==bytes.fromhex('0502000000')
     result['complete_004628d0']={'end_exclusive':f'{end:08x}','length':end-start,'changed_addresses':[f'{address:08x}' for address in changes],'covering_regions':[[f'{lo:08x}',f'{hi:08x}'] for lo,hi in regions],'scope':'Entry through both observed RETs; excludes alignment and next function.'}
     result['retained_layout_dependencies']=[]
-    for start,end in [(0x461a70,0x461a96),(0x452020,0x45208c),(0x452100,0x45210a),(0x4d1000,0x4d10d8),(0x4d06f0,0x4d071b),(0x4d09f2,0x4d0a0f),(0x4d06f0,0x4d0a0f),(0x4d1480,0x4d14ee),(0x4d1390,0x4d13f3),(0x4d0dfb,0x4d0e35),(0x4d1400,0x4d140f),(0x4d1410,0x4d1422)]:
+    for start,end in [(0x461a70,0x461a96),(0x452020,0x45208c),(0x452100,0x45210a),(0x4d1000,0x4d10d8),(0x4d06f0,0x4d071b),(0x4d09f2,0x4d0a0f),(0x4d06f0,0x4d0a0f),(0x4d1480,0x4d14ee),(0x4d1390,0x4d13f3),(0x4d0dfb,0x4d0e35),(0x4d1400,0x4d140f),(0x4d1410,0x4d1422),(0x4d0d50,0x4d0ff9)]:
         a,b=[pe.get_data(start-0x400000,end-start) for pe in (old,new)]
         assert a==b
         result['retained_layout_dependencies'].append({'start':f'{start:08x}','end_exclusive':f'{end:08x}','length':end-start,'sha256':hashlib.sha256(a).hexdigest(),'byte_identical':True})

@@ -149,3 +149,21 @@ The constant is file-backed in both baselines, with identical bytes **`cd cc 4c 
 The save helper copies requested bits`00840190` to shared scratch`00561b40`; restore pushes that scratch into the setter and discards its old-value x87 return. This is a single shared saved slot, with no per-thread stack or local nesting protection. Interleaved saves can overwrite it; reachability of nested/concurrent use remains unverified.
 
 No scale-policy difference was found in these paired bodies and span. The removed integerization in`004d1430` remains a distinct verified change; it should not be expanded into a claim that this scale setter or its file-backed constant changed. Runtime requested values, initialization order and font-resource selection are still required to establish actual output. No game or setter code was executed.
+
+## Complete font loader and retained asset candidates
+
+The complete **681-byte** loader **`004d0d50..004d0ff9`** is byte-identical. It compares signed DWORD`007cdac8` with640: at least640 formats **`%sCP16BI.ffn`** and clears the secondary filename; below640 formats **`%sCP1BI.ffn`** and **`%ssmall6.ffn`**. Both baselines retain the same three NUL-terminated format strings, now recorded in the manifest. The `%s` argument comes from`007a29b4`; its initialized contents and actual path resolution are not established here.
+
+After its file-admission checks, the shared loader initializes font index/scale, visits224 candidate glyph codes starting at32 through`004efa70`, and writes the metric arrays used by the glyph body. Null lookup results skip writes for that candidate, rather than supplying a verified fallback metric. The optional second file produces a second metric set and selects index1 during loading. Complete FFN parser semantics, first-load versus reload behaviour and all error paths remain dependencies; byte identity of this loader does not establish those callees.
+
+A bounded asset inventory finds **zero `.ffn` members** in the hash-pinned official patch archive. The three local installed candidates match their corresponding `gamedata_org/DashHud` backups byte-for-byte:
+
+| File | Size | Local installed/backup result |
+|---|---:|---|
+| `CP16BI.FFN` | 39,340 | Identical |
+| `CP1BI.FFN` | 13,664 | Identical |
+| `SMALL6.FFN` | 10,672 | Identical |
+
+The manifest retains both paths and full hashes for each pair. This is evidence of local copy identity and package omission, **not authentication of original retail assets**, proof of runtime-selected paths, or a historical claim that no release ever changed a font. Replacement files from another distribution or loader/resource state can still affect output.
+
+For reconstruction, the current evidence therefore favors preserving the shared loader/asset interface and isolating the verified `004d1430` integerization change as a deliberate original-versus-Modern choice. Reconstructing that choice does not require inventing a changed font asset. Parsing/layout validation and real text-width comparisons remain later work; no file parser or target instructions were executed.

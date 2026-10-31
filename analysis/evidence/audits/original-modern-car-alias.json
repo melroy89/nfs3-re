@@ -7,6 +7,13 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "004d0d50",
+          "end": "004d0ff9",
+          "sha256": "ba30a11390b5ab50b54a2b4a18dc8e57e96dc136b56b9b9652eb0b89a89f3ac1",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004d0d50.asm",
+          "assembly_sha256": "a275231933aeff9d0db828eab0d783a5ca2ded50a1794c27cd55eb2a1323552f"
+        },
+        {
           "start": "004d1390",
           "end": "004d13f3",
           "sha256": "52579ee4b1c0bdaf163eb9182ba7541b252fc99dd3dfabffc9a96f32382e1e67",
@@ -172,6 +179,13 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "004d0d50",
+          "end": "004d0ff9",
+          "sha256": "ba30a11390b5ab50b54a2b4a18dc8e57e96dc136b56b9b9652eb0b89a89f3ac1",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004d0d50.asm",
+          "assembly_sha256": "a0f8cd54eee621cfcc2bb43e10c247cdd646c2a7057eefc5fba75ac829fb5458"
+        },
         {
           "start": "004d1390",
           "end": "004d13f3",
@@ -376,6 +390,74 @@
         "00537e88": "carShowcase"
       }
     }
+  },
+  "font_filename_formats": {
+    "original": {
+      "00540b94": "%sCP16BI.ffn",
+      "00540ba4": "%sCP1BI.ffn",
+      "00540bb0": "%ssmall6.ffn"
+    },
+    "official_modern": {
+      "00540b94": "%sCP16BI.ffn",
+      "00540ba4": "%sCP1BI.ffn",
+      "00540bb0": "%ssmall6.ffn"
+    }
+  },
+  "font_asset_inventory": {
+    "official_archive_ffn_members": [],
+    "local_pairs": [
+      {
+        "name": "CP16BI.FFN",
+        "files": [
+          {
+            "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/gamedata_org/DashHud/CP16BI.FFN",
+            "length": 39340,
+            "sha256": "cb542d9f246d735ed2db1a62d9e135d8e46e18fad1f718d9506b507bd9e8e22c"
+          },
+          {
+            "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/GAMEDATA/DASHHUD/CP16BI.FFN",
+            "length": 39340,
+            "sha256": "cb542d9f246d735ed2db1a62d9e135d8e46e18fad1f718d9506b507bd9e8e22c"
+          }
+        ],
+        "byte_identical": true,
+        "provenance": "Local backup and installed copies; not authenticated retail or packaged Modern replacements."
+      },
+      {
+        "name": "CP1BI.FFN",
+        "files": [
+          {
+            "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/gamedata_org/DashHud/CP1BI.FFN",
+            "length": 13664,
+            "sha256": "eebf9e91f0815127220ac08839a942742e0263149922c5af7051f421814b4be2"
+          },
+          {
+            "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/GAMEDATA/DASHHUD/CP1BI.FFN",
+            "length": 13664,
+            "sha256": "eebf9e91f0815127220ac08839a942742e0263149922c5af7051f421814b4be2"
+          }
+        ],
+        "byte_identical": true,
+        "provenance": "Local backup and installed copies; not authenticated retail or packaged Modern replacements."
+      },
+      {
+        "name": "SMALL6.FFN",
+        "files": [
+          {
+            "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/gamedata_org/DashHud/SMALL6.FFN",
+            "length": 10672,
+            "sha256": "ce1e47c76148332207a52d5f07fab2a121136d09c2ec388876ae4635588f9ca8"
+          },
+          {
+            "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/GAMEDATA/DASHHUD/SMALL6.FFN",
+            "length": 10672,
+            "sha256": "ce1e47c76148332207a52d5f07fab2a121136d09c2ec388876ae4635588f9ca8"
+          }
+        ],
+        "byte_identical": true,
+        "provenance": "Local backup and installed copies; not authenticated retail or packaged Modern replacements."
+      }
+    ]
   },
   "official_menu_scan": {
     "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
@@ -644,6 +726,13 @@
       "end_exclusive": "004d1422",
       "length": 18,
       "sha256": "c7f88e9c763468af796653ad84bdc4cc3e0fd180de9171dfc057d565df3ee8e6",
+      "byte_identical": true
+    },
+    {
+      "start": "004d0d50",
+      "end_exclusive": "004d0ff9",
+      "length": 681,
+      "sha256": "ba30a11390b5ab50b54a2b4a18dc8e57e96dc136b56b9b9652eb0b89a89f3ac1",
       "byte_identical": true
     }
   ],
