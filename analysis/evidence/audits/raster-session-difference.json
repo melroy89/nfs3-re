@@ -34,6 +34,12 @@
           "end_exclusive": "005247b1",
           "sha256": "b7c7bf9c56c3019d7daa517323b05d8d1d458f185663400be52b7842cb77a681",
           "assembly": "analysis/captures/modern-differences/raster-session/original-005247ab.asm"
+        },
+        {
+          "start": "005247c0",
+          "end_exclusive": "00524814",
+          "sha256": "b32575c3c3d7bcc4ef290eeff7406dce44b0fc572807cf68a5cf618f0232b8db",
+          "assembly": "analysis/captures/modern-differences/raster-session/original-005247c0.asm"
         }
       ]
     },
@@ -70,9 +76,41 @@
           "end_exclusive": "005247b1",
           "sha256": "ff35ffe14925642da6f3a258b35811e08101c03f8b5db346e5afcca448677564",
           "assembly": "analysis/captures/modern-differences/raster-session/official_modern-005247ab.asm"
+        },
+        {
+          "start": "005247c0",
+          "end_exclusive": "00524814",
+          "sha256": "6a017f7307a1715ec4ea4b75512af81703bf2914989b85ebf6297c18a14bedf5",
+          "assembly": "analysis/captures/modern-differences/raster-session/official_modern-005247c0.asm"
         }
       ]
     }
+  },
+  "removed_dimension_publisher": {
+    "original_entry": "005247c0",
+    "end_exclusive": "00524814",
+    "bytes": 84,
+    "hex": "85c07505b88002000085d27505bae001000085db7505bb10000000891d8c4356008b1d9c435600a38443560029d8a3a4435600a1a043560089158843560029c28915a8435600833d64435600000f842d51feffc3",
+    "sha256": "b32575c3c3d7bcc4ef290eeff7406dce44b0fc572807cf68a5cf618f0232b8db",
+    "inputs": {
+      "EAX": "width",
+      "EDX": "height",
+      "EBX": "depth"
+    },
+    "zero_defaults": {
+      "width": 640,
+      "height": 480,
+      "depth": 16
+    },
+    "outputs": [
+      "00564384 width",
+      "00564388 height",
+      "0056438c depth",
+      "005643a4 width minus0056439c, wrap32",
+      "005643a8 height minus005643a0, wrap32"
+    ],
+    "conditional_tail_target": "00509940 when00564364 is0",
+    "limit": "Local original machine contract; tail target, all callers and Modern replacement ownership not fully qualified."
   },
   "limits": [
     "Static branch/registration witnesses only; no renderer or process-exit execution.",

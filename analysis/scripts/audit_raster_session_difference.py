@@ -4,7 +4,7 @@ import pefile
 from audit_thrash_loader_difference import ROOT,SPECS
 
 SPANS=[(0x524650,0x524693),(0x5246a0,0x5247ab),(0x524620,0x524635),
-       (0x524640,0x524650),(0x5247ab,0x5247b1)]
+       (0x524640,0x524650),(0x5247ab,0x5247b1),(0x5247c0,0x524814)]
 
 
 def main():
@@ -30,6 +30,15 @@ def main():
     assert new[1][0xad:0xbb]==bytes.fromhex('31c0b001a2f0af56005e5a595bc3')
     assert new[1][0xbb:0xe7]==b'\x90'*44
     for i in (2,3):assert new[i]==b'\x90'*len(new[i])
+    assert new[5]==b'\x90'*84
+    result['removed_dimension_publisher']={'original_entry':'005247c0','end_exclusive':'00524814',
+        'bytes':84,'hex':old[5].hex(),'sha256':hashlib.sha256(old[5]).hexdigest(),
+        'inputs':{'EAX':'width','EDX':'height','EBX':'depth'},
+        'zero_defaults':{'width':640,'height':480,'depth':16},
+        'outputs':['00564384 width','00564388 height','0056438c depth',
+                   '005643a4 width minus0056439c, wrap32','005643a8 height minus005643a0, wrap32'],
+        'conditional_tail_target':'00509940 when00564364 is0',
+        'limit':'Local original machine contract; tail target, all callers and Modern replacement ownership not fully qualified.'}
     result['limits']=['Static branch/registration witnesses only; no renderer or process-exit execution.',
         'Cleanup registration helper semantics, replacement ownership and callback lifetime remain unverified.']
     (ROOT/'analysis/evidence/audits/raster-session-difference.json').write_text(json.dumps(result,indent=2)+'\n')

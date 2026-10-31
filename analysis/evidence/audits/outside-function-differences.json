@@ -8054,5 +8054,14 @@
     "report": "analysis/original-modern-mode-selection.md",
     "report_sha256": "f81f580eea83cbf9b6142de3437e46f7e1bb269214739b3ca3cdc92cb9256393",
     "limit": "Original video-mode callback tail; no correspondence with new RNG helpers at overlapping addresses."
+  },
+  "raster_removed_helpers": {
+    "interval": "005247ab..005248f0",
+    "changed_range": "005247ab..00524820",
+    "changed_bytes": 117,
+    "unchanged_range": "00524820..005248f0",
+    "unchanged_bytes": 208,
+    "report": "analysis/original-modern-raster-session.md",
+    "limit": "Remote shutdown tail and dimension publisher replaced by NOPs; subsequent raster setup retained."
   }
 }

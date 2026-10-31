@@ -44,3 +44,11 @@ When active is nonzero, the shutdown body remains byte-identical: optional callb
 **Bounded code-difference status: done; confidence: verified static instructions and callback effects.** Keep startup's removed publication distinct from retained secondary setup; preserve original callback fall-through and shared-tail control flow when selecting original behavior. Avoid reconstructing the saved body union alone, which omits the original remote shutdown branch and removed startup bytes.
 
 **Pending:** the registration helper's full contract, all writers/readers of `00564418`, replacement cleanup ownership, runtime init/failure/exit ordering and driver implementations. These affect linking/startup reconstruction and runtime validation. Executable bytes, Ghidra state and maintained C remain unchanged.
+
+## Removed dimension publisher beside the shared shutdown tail
+
+The expanded audit captures original **`005247c0..00524814`**,84 bytes, and asserts all84 bytes are NOPs in Modern. This original helper receives EAX width, EDX height and EBX depth. Zero inputs become640/480/16 respectively; negative or other nonzero inputs are retained by these local tests. It publishes width/height/depth to`00564384/88/8c`, and stores wrapped32-bit differences `width−[0056439c]` and `height−[005643a0]` at`005643a4/a8`. It overwrites working EAX/EDX/EBX; no scalar success result or preservation of those registers should be invented.
+
+When`00564364` is zero it tail-jumps to`00509940`; otherwise it returns directly. That tail target’s full contract remains unqualified here. The [registered original video-mode callback](original-modern-renderer-lifecycle.md) supplies a known caller, but this does not enumerate every caller or establish complete Modern replacement ownership.
+
+In complete outside-body interval **`005247ab..005248f0`**, all117 differences are confined to`005247ab..00524820`: the previously described remote shutdown tail, intervening alignment, this dimension publisher and following alignment. Modern NOP-fills those117 bytes; `00524820..005248f0` matches and retains subsequent raster setup code. The interval is therefore neither one deleted function nor removal of all raster setup. No renderer, tail target or instruction probe was executed.
