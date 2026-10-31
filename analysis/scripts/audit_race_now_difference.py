@@ -17,6 +17,11 @@ def main():
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
         spans = [(0x437600, 0x43762c)] if label == 'original' else [(0x437614, 0x4376fb)]
+        if label == 'official_modern':
+            spans += [(0x4374d5, 0x4374dc), (0x437600, 0x437611), (0x437e39, 0x437e49),
+                      (0x43d5dc, 0x43d5e3), (0x442ae1, 0x442ae8), (0x4432e9, 0x4432f0),
+                      (0x447e07, 0x447e0e), (0x44844f, 0x448456), (0x448639, 0x448640),
+                      (0x45d920, 0x45d928), (0x45e990, 0x45e998)]
         spans += [(0x442a40, 0x442a95), (0x4cf090, 0x4cf11e)]
         rows = []
         for start, end in spans:
@@ -31,6 +36,13 @@ def main():
             'tokens': {f'{a:08x}': pe.get_data(a-0x400000, 40).split(b'\0')[0].decode('ascii')
                        for a in (0x53a998, 0x53a990, 0x53714c, 0x537494)}}
     images = [pefile.PE(str(ROOT/SPECS[k][0])) for k in ('original', 'official_modern')]
+    result['inspected_direct_callers'] = []
+    modern = images[1]
+    for site in (0x4374d7, 0x43760a, 0x437e44, 0x43d5de, 0x442ae3, 0x4432eb, 0x447e09,
+                 0x448451, 0x44863b, 0x45d923, 0x45e993):
+        data = modern.get_data(site-0x400000, 5)
+        assert data[0] == 0xe8 and site+5+int.from_bytes(data[1:], 'little', signed=True) == 0x437614
+        result['inspected_direct_callers'].append(f'{site:08x}')
     result['identical_helpers'] = []
     for start, end in ((0x442a40, 0x442a95), (0x4cf090, 0x4cf11e)):
         bodies = [p.get_data(start-0x400000, end-start) for p in images]

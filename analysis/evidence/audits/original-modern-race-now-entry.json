@@ -47,6 +47,83 @@
           "assembly_sha256": "59244d88f94a022d8ec73a7d2faa4f98cb8763bfaff9ea5c1ba40e881ee21ee7"
         },
         {
+          "start": "004374d5",
+          "end": "004374dc",
+          "bytes_sha256": "a644b92fde6a3dfecb6c1b350184fcf6e0315b611bc3ccf2a06fec53f38d2e75",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-004374d5.asm",
+          "assembly_sha256": "cceaabaa4d4a751aec97b90bada86bcf9c1d66764aeca578c9d82ada9b007a77"
+        },
+        {
+          "start": "00437600",
+          "end": "00437611",
+          "bytes_sha256": "ed79264b2d25b0fd2b4dc9eb4be70372e21cfc6b9a809e1f895a6683368738b4",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00437600.asm",
+          "assembly_sha256": "d6cd763508c0dd4c2d365c5e99670e29d2e02348806318ae5a5889ed35ad9eb6"
+        },
+        {
+          "start": "00437e39",
+          "end": "00437e49",
+          "bytes_sha256": "c4093b5baa1486f7d8a28b2f9e645f88b035f4571e4636b694aa4edda33de6d4",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00437e39.asm",
+          "assembly_sha256": "ad9e672c52095a273ba6e904c8f139f0b6a8c957325ac7a4b6dd77ce810645f5"
+        },
+        {
+          "start": "0043d5dc",
+          "end": "0043d5e3",
+          "bytes_sha256": "18d7e0158d0301f606de2870785fbf61526e60b66c47b20297831b19fc42c8b4",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-0043d5dc.asm",
+          "assembly_sha256": "fa39d60714116da0eff3bcaaac801364f5255959b0a405b74196a3b69633b7cc"
+        },
+        {
+          "start": "00442ae1",
+          "end": "00442ae8",
+          "bytes_sha256": "30ea38250bcd86a32157b7e5cb3811ee65f8a1b584f05672d656fe4c956ac23e",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00442ae1.asm",
+          "assembly_sha256": "5fc1460af475894c32338607b3bb5718142aa4877809dc01d03a3e52aa8a7b38"
+        },
+        {
+          "start": "004432e9",
+          "end": "004432f0",
+          "bytes_sha256": "118a81cf2e88207f8e02fa31b88dd25919e37f516d490b08d096e336213e045d",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-004432e9.asm",
+          "assembly_sha256": "990ba1932c4bf30de12aee3134be7aa8497c78615b725e91cca1af900f292b19"
+        },
+        {
+          "start": "00447e07",
+          "end": "00447e0e",
+          "bytes_sha256": "1a6504f3cd6053fa4d412782c5c4139bd18375b98027cabd6ba7b1a974a139da",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00447e07.asm",
+          "assembly_sha256": "5806808f897e5e031aa4ac5f10445fcdda278ae88b52eae8eff07b408a929595"
+        },
+        {
+          "start": "0044844f",
+          "end": "00448456",
+          "bytes_sha256": "3d878f9dc516bf3a99b5e91e196be2c6ee63ffb2a59f814358a413e12e616187",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-0044844f.asm",
+          "assembly_sha256": "21ec3c35d6eb6975d8d14d36834fe433c367a849b5516923ecbf066e89c22213"
+        },
+        {
+          "start": "00448639",
+          "end": "00448640",
+          "bytes_sha256": "f53cffe88c93926fd10483219f3aa1dfb021fe8aaede2cae149b336f5788d365",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00448639.asm",
+          "assembly_sha256": "b49c9de3754ddc6585283d80abfc573cdbc9b4b67cb065ee95b2b9c9d52ddada"
+        },
+        {
+          "start": "0045d920",
+          "end": "0045d928",
+          "bytes_sha256": "5ce4f5c10ee50ac40e73486a0d7da89595bf08699afd29892f7c27765339d242",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-0045d920.asm",
+          "assembly_sha256": "f53a460cd97ccfceb1527f8653c2a9daa953b92f8d4ea386eb0661d1375a0fa5"
+        },
+        {
+          "start": "0045e990",
+          "end": "0045e998",
+          "bytes_sha256": "ead0442430c7e3910abc09b8602ccb2287458fbdf812587d7fd1de6482574b18",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-0045e990.asm",
+          "assembly_sha256": "6efc5acbe4c9565404c00d68db7b6874555c26b65e228c6b1c5cb921d5755dd8"
+        },
+        {
           "start": "00442a40",
           "end": "00442a95",
           "bytes_sha256": "530a40e49d7fc33f0e99423114292b6e67a6c842aa135572a8a36c9aa0ba4730",
@@ -73,6 +150,19 @@
     "Modern helper is not a same-address original counterpart.",
     "Original capture is a partial credits gate inside a larger routine.",
     "No menu or target execution."
+  ],
+  "inspected_direct_callers": [
+    "004374d7",
+    "0043760a",
+    "00437e44",
+    "0043d5de",
+    "00442ae3",
+    "004432eb",
+    "00447e09",
+    "00448451",
+    "0044863b",
+    "0045d923",
+    "0045e993"
   ],
   "identical_helpers": [
     "00442a40",

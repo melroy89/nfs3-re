@@ -45,3 +45,25 @@ Predicate `004cf090` does not consume the entry pointer as a parameter in the in
 For flags, the [menu-input comparison](original-modern-menu-input.md) establishes that the fallback token scanner requires entry bit 0 clear before selecting it and invoking its callback. Consequently OR bit 0 in this helper has a demonstrated **navigation exclusion** consumer; this does not establish that every selected-entry dispatch is blocked, since those paths differ. The separate bit `1000h` remains unnamed here. The text-pointer write also crosses language lookup `004d1850`, whose ECX contract must be kept distinct from the predicate preservation just verified.
 
 Closed: lookup null behavior, record stride/start-index source, retained helper correspondence and predicate ECX preservation. Pending: all caller preconditions, bit `1000h` consumers, language-lookup preservation and complete original policy correspondence.
+
+## Direct caller input witnesses
+
+The manifest now captures and validates eleven Modern direct CALL sites found in the retained disassembly. Each instruction's relative target is asserted against the hash-pinned official executable. This is a census of the inspected direct calls, not proof that no indirect callbacks or embedded references can invoke the helper.
+
+| Call site | Immediate EAX input producer / local condition |
+|---|---|
+| `004374d7` | Copy ECX to EAX. |
+| `0043760a` | Inherit incoming EAX in wrapper `00437600`; preceding store only sets `00559c68=1`. |
+| `00437e44` | Copy ECX to EAX; skip this call when `00559234 != 0`. |
+| `0043d5de` | Copy ECX to EAX. |
+| `00442ae3` | Copy ECX to EAX. |
+| `004432eb` | Copy ECX to EAX. |
+| `00447e09` | Copy ECX to EAX. |
+| `00448451` | Copy EBX to EAX. |
+| `0044863b` | Copy EBX to EAX. |
+| `0045d923` | Keep incoming EAX; immediately before the call, PUSHAD and copy EAX to ECX. |
+| `0045e993` | Load EAX from caller local `[EBP-4]`. |
+
+None of these immediate producer instructions forces a null input. Conversely, register copying and inheriting a callback parameter do **not** prove non-null values, valid record extents or correct menu lifetime. Full producer chains remain pending. The earlier lookup-null issue is therefore a conditional precondition question, not a demonstrated reachable null call or runtime fault.
+
+Wrapper `00437600` now consists of its initial `00559c68=1` write, the helper call and EAX-zero return. The original routine at `00437600` contains the credits gate plus additional coordinate work. This gives a concrete extraction/delegation witness while leaving the fate of the remaining original coordinate work unresolved. Calls from several other contexts show that the extracted policy is refreshed beyond this one wrapper; they do not establish that every call is admitted by the helper's own `00559234` guard.
