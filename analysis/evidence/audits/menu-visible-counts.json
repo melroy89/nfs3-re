@@ -577,6 +577,12 @@
         "end": "00464601",
         "sha256": "fd4670a2fb9d128d5f9aaacdaa42d52b44b490fbe05e895935d912964576934c",
         "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-004645e3.asm"
+      },
+      {
+        "start": "00464560",
+        "end": "004646db",
+        "sha256": "193659d0d2a6f909f659d8bb0a4036c4e23c6ea691e28c34e0bba6ad5c423db1",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-00464560.asm"
       }
     ],
     "official_modern": [
@@ -615,8 +621,64 @@
         "end": "00464601",
         "sha256": "9f53164ccad5657fc33f3d6474dc26562ee2bc812e817f16b6145cbcb00dcad8",
         "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-004645e3.asm"
+      },
+      {
+        "start": "00464560",
+        "end": "004646db",
+        "sha256": "d775da102b15bdcaf9ae53e7478e9e35d9c91e0d4d00fde28121f3c1d3e99e19",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-00464560.asm"
       }
     ]
+  },
+  "complete_layout_helper": {
+    "start": "00464560",
+    "end_exclusive": "004646db",
+    "length": 379,
+    "changed_addresses": [
+      "0046456b",
+      "0046456c",
+      "0046456d",
+      "0046456e",
+      "0046456f",
+      "00464570",
+      "00464571",
+      "00464572",
+      "00464573",
+      "00464574",
+      "00464575",
+      "00464576",
+      "00464577",
+      "00464578",
+      "00464579",
+      "0046457c",
+      "0046457d",
+      "0046457e",
+      "0046457f",
+      "00464580",
+      "00464581",
+      "00464582",
+      "00464583",
+      "00464584",
+      "00464585",
+      "00464586",
+      "004645eb",
+      "004645f9"
+    ],
+    "covering_regions": [
+      [
+        "0046456b",
+        "00464587"
+      ],
+      [
+        "004645eb",
+        "004645ec"
+      ],
+      [
+        "004645f9",
+        "004645fa"
+      ]
+    ],
+    "boundary": "Entry through both observed RET paths; excludes following alignment/data."
   },
   "overlapping_load": {
     "interpretation": "signed low WORD of local -4 count; independent of local -8 descriptor value",

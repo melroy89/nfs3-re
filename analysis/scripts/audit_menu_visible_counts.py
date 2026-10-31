@@ -35,6 +35,7 @@ def main():
                 result['unpaired'].append({'member':member,'section':key[0],'listname':key[1],'modern':values,'backup':a.get(key,[])});continue
             if a[key]!=values:result['changed'].append({'member':member,'section':key[0],'listname':key[1],'backup':a[key][0],'modern':values[0]})
     result['binary_field_descriptors']={}
+    layout_bodies={}
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
@@ -44,10 +45,11 @@ def main():
             rows.append({'address':f'{address:08x}','words':[f'{word:08x}' for word in words],'sha256':hashlib.sha256(data).hexdigest()})
         spans=[]
         capture=ROOT/'analysis/captures/modern-differences/menu-visible-counts';capture.mkdir(parents=True,exist_ok=True)
-        for start,end in [(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601)]:
+        for start,end in [(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             spans.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT))})
         assert struct.unpack('<I',pe.get_data(0x4921c,4))[0]==0x4492aa
+        layout_bodies[label]=pe.get_data(0x464560-0x400000,0x17b)
         expected_padding = 5 if label == 'original' else 15
         expected_extent_add = 5 if label == 'original' else 2
         assert pe.get_data(0x4645ea-0x400000,5)==b'\x05'+struct.pack('<I',expected_padding)
@@ -58,6 +60,11 @@ def main():
         assert pe.get_data(0x464038-0x400000,6)==bytes.fromhex('8b55fac1fa10')
         result.setdefault('field_writer_spans',{})[label]=spans
         result['binary_field_descriptors'][label]={'path':relative,'sha256':expected,'rows':rows}
+    changed=[0x464560+i for i,(a,b) in enumerate(zip(layout_bodies['original'],layout_bodies['official_modern'])) if a!=b]
+    regions=[(0x46456b,0x464587),(0x4645eb,0x4645ec),(0x4645f9,0x4645fa)]
+    assert all(any(start<=address<end for start,end in regions) for address in changed)
+    assert all(any(start<=address<end for address in changed) for start,end in regions)
+    result['complete_layout_helper']={'start':'00464560','end_exclusive':'004646db','length':0x17b,'changed_addresses':[f'{address:08x}' for address in changed],'covering_regions':[[f'{start:08x}',f'{end:08x}'] for start,end in regions],'boundary':'Entry through both observed RET paths; excludes following alignment/data.'}
     # A little-endian DWORD at -6 overlaps the upper two bytes of local -8
     # and the lower two bytes of local -4. SAR16 selects the latter.
     witnesses=[]

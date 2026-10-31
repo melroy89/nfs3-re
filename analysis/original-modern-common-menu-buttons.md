@@ -121,3 +121,19 @@ Paired span **`004645e3..00464601`**, now retained by the visible-count audit, c
 Within the normal small positive range, cap-limited original→Modern counts5→9 produce this extent85→146,7→9 gives117→146,4→9 gives69→146, and10→16 gives165→258, in internal layout units. These are conditional arithmetic consequences of the authored changes, not measured screen pixels or evidence that every populated list reaches its cap. The surrounding helper takes this path only when the widget is expanded (WORD+`0x40` nonzero) and list lookup returns a nonzero pointer. Width calculation and alignment have separate inputs; the cap does not by itself establish the final rectangle.
 
 This closes a local effective-count-to-extent consumer. The attempted construction follow-up has not yet established the complete pointer/copy chain from parser instance to active widget, so that linkage remains open. Do not replace that missing evidence with the matching offset alone. The extent span was inspected statically; no layout helper or list scan was executed.
+
+## Complete layout-helper difference coverage
+
+The audit now compares the complete **379-byte** body **`00464560..004646db`** (end exclusive), including both RET paths. Every changed byte falls within three half-open regions: **`0046456b..00464587`** (selector rewrite), **`004645eb..004645ec`** (width-add immediate), and **`004645f9..004645fa`** (count-extent immediate). The manifest enumerates exact changed addresses; the audit asserts that there are no differences outside these regions in this body. This is bounded body coverage, not whole-menu or whole-callee equivalence.
+
+Original selects local padding35 whenever global `006fd3b8==3`, otherwise15, without checking the list name. Modern calls the [track-policy helper](original-modern-car-alias.md#separate-adjacent-helper-track-list-policy-alias) using widget+`0x64` and selects35 only for mode3 with ASCII-case-insensitive `tracks` or `rectrk`; otherwise15. Including the separate original+5/Modern+15 addition gives:
+
+| Condition | Original padding contribution | Modern contribution | Difference |
+|---|---:|---:|---:|
+| Mode not3 | 20 | 30 | +10 |
+| Mode3, `tracks` or `rectrk` | 40 | 50 | +10 |
+| Mode3, another list name | 40 | 30 | −10 |
+
+These contributions are added to the width WORD with the final store truncated modulo65536. They describe the arithmetic for equal incoming measured widths, not guaranteed complete width differences under changed assets or callees. The mode’s semantic name remains unresolved. Modern does not universally enlarge this helper’s width.
+
+All local instructions after the selector through the list scan, except the two immediate bytes above, are retained. The scan starts width WORD+`0x1e` at40, traverses WORD IDs to a zero sentinel, calls `004d1850` with EDX18 then `00452020`, and updates width when the returned signed width exceeds the current signed WORD. The expansion tests, alignment arithmetic and collapsed-layout path are locally unchanged. Callee bytes/semantics, live strings, callback admission and constructed widget identity require their own evidence; unchanged CALL operands alone do not establish them. No target instructions were executed.

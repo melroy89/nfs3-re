@@ -376,6 +376,8 @@ See also [dropdown input shared sound tail](original-modern-dropdown-input.md): 
 
 The [cascade count follow-up](original-modern-common-menu-buttons.md#cascade-effective-count-signed-word-minimum) corrects the overlapping stack-read interpretation: the handler compares the signed low WORD of the actual list count with the authored limit. Within0..32767 this is a minimum, shared by both executable baselines. The nine authored cap increases therefore have a concrete handler consumer; populated lists, construction copying and rendered row counts remain unverified.
 
+The [complete expanded-list layout comparison](original-modern-common-menu-buttons.md#complete-layout-helper-difference-coverage) accounts for every changed byte in the379-byte helper: a narrower mode3/name selector, width padding5→15, and count extent5→2. The resulting width contribution can increase or decrease, depending on the list name; no universal wider-menu claim follows.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
