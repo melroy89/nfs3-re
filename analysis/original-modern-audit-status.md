@@ -156,3 +156,11 @@ The projection audit now pins both option-list descriptors, the shared selector 
 ## Audio-mode fallback linkage
 
 MP153-010 now links verified audiomode choice IDs and the [D3D/EAX-to-Stereo normalization](original-modern-config-loading.md#sound-mode-identity-d3deax-falls-back-to-stereo). The complete underlying capability helper is retained between baselines. Actual device transitions/provider behavior, audible output and release-specific introduction remain open.
+
+## Configuration, loading and audio checkpoint
+
+The [checkpoint manifest](evidence/validation/configuration-loading-audio-checkpoint.json) records seven fresh successful static audits, their exact commands/script hashes and outputs, and four preserved identities: original, official Modern, local analysis EXE and saved Ghidra database. This increment has no new independent review; earlier reviews remain scoped to their pinned revisions.
+
+Concrete added findings are indexed in the main report: original save flag versus Modern header refresh; original zero-version prefix and conditional configuration reset; View Angle label/storage/default linkage; Modern loading admission, exact-bit return and two distinct retry levels; and D3D/EAX-to-Stereo fallback using retained driver capability dispatch. The catalog has152 vendor-only,39 bounded static,96 partial and3 unresolved entries; labels are evidence classifications, not completion percentages.
+
+Remaining questions include full original default/save lifecycle, callback result/register contracts, real save migration, timing/audio/rendered outcomes and historical introduction. These findings do not resolve unrelated projection type8 sources, renderer-DLL history or every vendor claim. The broad comparison remains active and incomplete. Continue with another concrete unqualified changed mechanism rather than repeatedly restating this completed static increment.

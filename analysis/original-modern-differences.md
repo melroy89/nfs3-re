@@ -156,6 +156,8 @@ The [startup-path comparison](original-modern-startup-paths.md) traces Modern’
 
 The [clock comparison](original-modern-clock-source.md) verifies 16 direct GetTickCount-to-timeGetTime replacements, while three timer functions retain every other body instruction. This supports the API-change claim, not measured accuracy or frame pacing. The [loading-timing comparison](original-modern-loading-timing.md) traces seconds-to-milliseconds conversion, low-32-bit arithmetic, signed 0–10,000 ms clamp, progress throttling and input cancellation. Exact visible duration, all synchronization consumers and cross-version behavior remain untested.
 
+The expanded loading comparison also establishes Modern's early update admission, exact-bit completion Boolean, final caller retry and separate100% resubmission tail. Original makes a one-shot final update and discards its return. Its removed input-drain call is not a fixed sleep. These mechanisms explain control-flow changes without establishing the vendor's broad faster-loading claim or a guaranteed splash duration.
+
 ## 18. CPU rating and defaults tier
 
 The [CPU comparison](original-modern-cpu-tier.md) traces original’s million-scaled estimate versus Modern’s family/feature score at the same global, with coordinated changes in two consumer neighborhoods. This is not a measured CPU benchmark or evidence of SIMD racing physics. Full calibration/vendor paths and runtime default choices remain pending.
@@ -163,6 +165,8 @@ The [CPU comparison](original-modern-cpu-tier.md) traces original’s million-sc
 ## 19. Frontend sound requests and separate volume
 
 The [frontend sound comparison](original-modern-frontend-sound.md) traces the removed caller volume multiplier, separate menu-volume field and slider, new ID bounds and per-ID timing gates. The normal record initializer is byte-identical. Counter units, sample/backend behavior, all callers and audible equality remain pending.
+
+The [audio-mode fallback](original-modern-config-loading.md#sound-mode-identity-d3deax-falls-back-to-stereo) now binds D3D/EAX ordinal3 and Stereo ordinal0 to the normalization path. The retained capability query dispatches to a driver callback rather than returning a cached capability flag. Provider result domains, actual availability transitions and audible output remain unverified.
 
 The [music comparison](original-modern-music-selection.md) traces menu subset cycles, race-state progression and contextual restart/continuation gates. Asset labels, other progression producers, once-per-race cadence and volume/fade claims remain separate.
 

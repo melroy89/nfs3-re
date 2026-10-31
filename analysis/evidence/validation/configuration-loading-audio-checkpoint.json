@@ -1,0 +1,104 @@
+{
+  "kind": "bounded-configuration-loading-audio-checkpoint",
+  "reviewed_head": "7b1ea4d4d75aa1c9df2964b1fb2d00346c183b49",
+  "root_static_checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_config_loading_difference.py"
+      ],
+      "script_sha256": "cddc04717973a5fae62f2b465a56320f65560a08292625471c5c186a489ab49a",
+      "exit_code": 0,
+      "stdout": "PASS: config baselines, header bytes, import identities and load spans\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_projection_difference.py"
+      ],
+      "script_sha256": "050db17d44c6636ec5e95111eac92a8a79447006c6d2a19637bd0a6f7c6fa6c8",
+      "exit_code": 0,
+      "stdout": "PASS: projection baselines, FOV/constants/callers and identical builder\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_clock_source_difference.py"
+      ],
+      "script_sha256": "d9dc9143a0e18557ffd90113f5739f84fff2a598c971a36a178f4ed147fefa2c",
+      "exit_code": 0,
+      "stdout": "PASS: 16 clock callsites, 3 timer functions after operand normalization, loading spans\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_command_line_difference.py"
+      ],
+      "script_sha256": "72152cf51b57c92e62b1c20aaeaf0a45931f77523838975f45fc2d9f3162eca2",
+      "exit_code": 0,
+      "stdout": "PASS: baselines, 33 paired switch slots, help aliases and parser spans\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_thrash_loader_difference.py"
+      ],
+      "script_sha256": "db671385c46521245c4634037d8403d23423f5d5159be9988d7fc4e9230a5fee",
+      "exit_code": 0,
+      "stdout": "PASS: input hashes, 34 identical name/slot bindings, instruction captures\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_startup_paths_difference.py"
+      ],
+      "script_sha256": "82635825040e119ef76d7d8e456c5a28f82f624e4b8bfaa3edd1fca32f2b4c57",
+      "exit_code": 0,
+      "stdout": "PASS: identities, startup/API spans, 22 initialized path slots and 13/4 directory tables\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_texture_loading_followup.py"
+      ],
+      "script_sha256": "d19ec9fcc13ba0bd51533dc135c75459284c1358ffd85dc2a6699c153f9d811e",
+      "exit_code": 0,
+      "stdout": "PASS: five complete envelopes; descriptor query changes, four progress immediates and removed background x87 reset\n",
+      "stderr": ""
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "matches_prior_identity": true
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "matches_prior_identity": true
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "matches_prior_identity": true
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "matches_prior_identity": true
+    }
+  ],
+  "independent_review": "Not performed for this increment. Earlier reviewer conclusions apply only to their pinned revisions.",
+  "limits": [
+    "Static reproduction of selected code/data contracts, not full semantic qualification.",
+    "No runtime audio/rendering, historical introduction or real save-file migration validation.",
+    "No executable/database writes, new instruction probes, C exports or compilation."
+  ]
+}

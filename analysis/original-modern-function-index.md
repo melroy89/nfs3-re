@@ -266,7 +266,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004beea4` | GetDisplayModePixelAreaLow32 | 12 | 12 | [mode-selection](original-modern-mode-selection.md) |
 | `004beeb0` | ApplyDriverDisplayMode | 237 | 226 | [mode-selection](original-modern-mode-selection.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md) |
 | `004bef9d` | ResetDriverModeSurfaceSequence | 48 | 45 | [mode-selection](original-modern-mode-selection.md) |
-| `004c4480` | ProcessPendingScreenshotRequest | 56 | 52 | [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
+| `004c4480` | ProcessPendingScreenshotRequest | 56 | 52 | [loading-timing](original-modern-loading-timing.md), [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
 | `004c44b8` | NormalizeScreenshotOutputFormat | 48 | 47 | [registry](original-modern-registry.md) |
 | `004c44e8` | EnsureScreenshotDirectoryAndInitializeIndex | 68 | 67 | [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
 | `004c452c` | CaptureDisplayPixelsAndLaunchScreenshotWorker | 159 | 157 | [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |

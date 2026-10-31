@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "23decae2d212159d60668688e39fdd11f65c1941a44c4dc29566176067ca6cd4"
+      "sha256": "46a38acf81a4b24157690a44bb7d0485a3c19dac529afb360889a462cf983515"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -65,7 +65,7 @@
     },
     {
       "path": "analysis/original-modern-config-loading.md",
-      "sha256": "078da1e4c7bbf2ad4519a0d122712cd735a3b04113d88058a586320a77d01d74"
+      "sha256": "0bf4b54b1ecc06a2d4ae6a2cef4bb3701a0238453f0f6162e2f6de563c73f222"
     },
     {
       "path": "analysis/original-modern-configuration.md",
@@ -181,7 +181,7 @@
     },
     {
       "path": "analysis/original-modern-loading-timing.md",
-      "sha256": "4cd3f7db1ced80356e1b2a283f11d8c59333ef33595a0c2bcd011b40dd325e1e"
+      "sha256": "b62b3b1d2d3b59f1276206c8ac2222290038e603ac3d899c4ffbcacfcd363c6b"
     },
     {
       "path": "analysis/original-modern-map-marker-scaling.md",
@@ -6955,7 +6955,16 @@
           "entry_mentioned": true,
           "addresses": [
             "00495230",
-            "00495242"
+            "00495242",
+            "00495268",
+            "0049526f",
+            "00495279",
+            "0049527f",
+            "0049551d",
+            "0049556f",
+            "00495587",
+            "00495589",
+            "00495594"
           ]
         },
         {
@@ -7523,7 +7532,12 @@
             "004a3481",
             "004a3484",
             "004a349b",
-            "004a34a3"
+            "004a34a3",
+            "004a3514",
+            "004a351d",
+            "004a3522",
+            "004a3527",
+            "004a3529"
           ]
         },
         {
@@ -9657,6 +9671,13 @@
       "original_sha256": "2477b8de27c7cd0bc54bb4245528f98a4ce0d77161dccf2976b95b86380ce44e",
       "modern_sha256": "754498916c32735efb3b2a2e4e38cfb27355a5c74b25fb2215cccba2f6018335",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-loading-timing.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004c4480"
+          ]
+        },
         {
           "path": "analysis/original-modern-movie-screenshots.md",
           "entry_mentioned": true,
