@@ -167,3 +167,22 @@ The audit asserts both binaries' IAT `005344c0` resolves to **ExitProcess**, and
 This does not prove every invocation reaches the API promptly. Mutable cleanup hooks may block, terminate earlier or transfer control, and complete hook ownership/reentrancy is not validated here. The final argument is the value in EBX at the API call; preserving intended zero-status semantics through arbitrary modified callbacks requires their register/state contracts. Those limits concern pre-exit execution and status provenance, **not an unidentified final termination target**.
 
 The seven-byte thunk range deliberately stops after its call. Existing research records that saved analysis extends the function through padding and copy-kernel jump-table data; those bytes must not be treated as executable continuation or a returning ABI. No Ghidra boundary was changed in this pass. The retained chain is shared, so the original/Modern diagnostic differences concern their admission/reporting/call sites rather than a newly introduced ExitProcess import or rewritten final exit primitive. No finalizer, callback, dialog or process-exit API was executed.
+
+## Corruption-diagnostic callers supply zero or a language value
+
+The audit now searches decoded direct-call instructions in the pinned original, checks all eight located targets against their raw relative CALL bytes, and asserts nine input-source instruction witnesses. This is a bounded decoded direct-call inventory, not proof that indirect calls or alternate instruction entry points do not exist.
+
+| Callsite to `004b5e50` | Diagnostic EAX index on the inspected route |
+|---|---|
+| `004a3a69`, `004a3aa3` | 0: reached by TEST EAX / JNE fall-through |
+| `004a3d62` | Explicit XOR EAX,EAX |
+| `004a6f42` | Explicit0 after language-search exhaustion |
+| `004b577c` | Explicit0 after renderer-name-search exhaustion |
+| `004b5e38` | Saved incoming EDX (copied to EBX at renderer-initializer entry), then MOV EAX,EBX |
+| `004b61be`, `004b61d1` | DWORD language global `007a3a50` |
+
+Therefore the exhausted language index6 and renderer-search index11 are **not** passed directly into the six-entry diagnostic tables. Those failure routes explicitly choose0. The earlier local unchecked-index finding still matters for the three language-dependent routes, but it must not be presented as an inevitable out-of-range access just because the caller's search failed.
+
+The [original language selector](original-modern-language-table.md#upstream-language-selection-installwin-becomes-ini-setting) compares six candidates and writes its successful index0..5 into the language global. Its exhausted route calls the verified exit chain with diagnostic index0 before the later apparent store. Under the established ordinary nonreturning exit contract, it does not proceed normally to publish6. Open failure and other writes to the global remain separate; this bounded producer does not prove the global always stays in range over the entire process.
+
+Similarly, the original registry selector's exhausted search requests exit with index0 before the apparent store of its search result. Do not model either exit request as a normally returning diagnostic and then infer an invalid subsequent store as ordinary behavior. Pre-exit nonlocal callback behavior, all global aliases and indirect callers remain unverified. No caller or termination path was executed.

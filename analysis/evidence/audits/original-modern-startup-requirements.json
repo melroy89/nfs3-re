@@ -846,6 +846,92 @@
     "ordinary_api_contract": "nonreturning",
     "limit": "Pre-exit callbacks may block, terminate or transfer control; their complete ownership/state is not validated."
   },
+  "corruption_diagnostic_direct_callers": {
+    "discovery": "Linear objdump direct-call targets; no indirect-call completeness claim",
+    "sites": [
+      {
+        "callsite": "004a3a69",
+        "eax_source": "EAX0 on TEST EAX / JNE fall-through"
+      },
+      {
+        "callsite": "004a3aa3",
+        "eax_source": "EAX0 on TEST EAX / JNE fall-through"
+      },
+      {
+        "callsite": "004a3d62",
+        "eax_source": "Explicit XOR EAX,EAX"
+      },
+      {
+        "callsite": "004a6f42",
+        "eax_source": "Explicit XOR EAX,EAX after six-language search exhaustion"
+      },
+      {
+        "callsite": "004b577c",
+        "eax_source": "Explicit XOR EAX,EAX after eleven-driver search exhaustion"
+      },
+      {
+        "callsite": "004b5e38",
+        "eax_source": "Saved incoming EDX from renderer initializer, moved EBX to EAX"
+      },
+      {
+        "callsite": "004b61be",
+        "eax_source": "Language global007a3a50"
+      },
+      {
+        "callsite": "004b61d1",
+        "eax_source": "Language global007a3a50"
+      }
+    ],
+    "decoded_instruction_lines": [
+      "  4a3a69:\te8 e2 23 01 00       \tcall   0x4b5e50",
+      "  4a3aa3:\te8 a8 23 01 00       \tcall   0x4b5e50",
+      "  4a3d62:\te8 e9 20 01 00       \tcall   0x4b5e50",
+      "  4a6f42:\te8 09 ef 00 00       \tcall   0x4b5e50",
+      "  4b577c:\te8 cf 06 00 00       \tcall   0x4b5e50",
+      "  4b5e38:\te8 13 00 00 00       \tcall   0x4b5e50",
+      "  4b61be:\te8 8d fc ff ff       \tcall   0x4b5e50",
+      "  4b61d1:\te8 7a fc ff ff       \tcall   0x4b5e50"
+    ],
+    "source_witnesses": [
+      {
+        "va": "004a3a65",
+        "hex": "85c07516"
+      },
+      {
+        "va": "004a3a9f",
+        "hex": "85c07516"
+      },
+      {
+        "va": "004a3d60",
+        "hex": "31c0"
+      },
+      {
+        "va": "004a6f40",
+        "hex": "31c0"
+      },
+      {
+        "va": "004b577a",
+        "hex": "31c0"
+      },
+      {
+        "va": "004b5e36",
+        "hex": "89d8"
+      },
+      {
+        "va": "004b61b9",
+        "hex": "a1503a7a00"
+      },
+      {
+        "va": "004b61cc",
+        "hex": "a1503a7a00"
+      },
+      {
+        "va": "004b59ca",
+        "hex": "89d3"
+      }
+    ],
+    "limit": "Language-global validity and saved incoming language argument require lifecycle/caller preconditions; aliases and indirect calls excluded."
+  },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",
     "Memory fields described by exact offsets; no complete API structure/type reconstruction.",

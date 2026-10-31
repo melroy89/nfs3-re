@@ -4,6 +4,7 @@ import json
 import subprocess
 import struct
 import uuid
+import re
 import pefile
 from audit_thrash_loader_difference import ROOT,SPECS
 
@@ -146,6 +147,36 @@ def main():
         'final_call': '004ff3c7', 'iat': '005344c0', 'import': 'ExitProcess',
         'argument': 'pushed EBX', 'ordinary_api_contract': 'nonreturning',
         'limit': 'Pre-exit callbacks may block, terminate or transfer control; their complete ownership/state is not validated.'}
+    call_sources = {
+        0x4a3a69: 'EAX0 on TEST EAX / JNE fall-through',
+        0x4a3aa3: 'EAX0 on TEST EAX / JNE fall-through',
+        0x4a3d62: 'Explicit XOR EAX,EAX',
+        0x4a6f42: 'Explicit XOR EAX,EAX after six-language search exhaustion',
+        0x4b577c: 'Explicit XOR EAX,EAX after eleven-driver search exhaustion',
+        0x4b5e38: 'Saved incoming EDX from renderer initializer, moved EBX to EAX',
+        0x4b61be: 'Language global007a3a50',
+        0x4b61d1: 'Language global007a3a50',
+    }
+    original_path = ROOT/result['binaries']['original']['path']
+    decoded = subprocess.check_output(['objdump','-d','-Mintel',str(original_path)],text=True)
+    matches = [line for line in decoded.splitlines() if re.search(r'\bcall\s+0x4b5e50\s*$',line)]
+    call_addresses = {int(line.split(':',1)[0].strip(),16) for line in matches}
+    assert call_addresses == set(call_sources)
+    for va in call_sources:
+        instruction = original.get_data(va-0x400000,5)
+        assert instruction[0] == 0xe8 and va+5+int.from_bytes(instruction[1:],'little',signed=True) == 0x4b5e50
+    source_witnesses = [(0x4a3a65,'85c07516'),(0x4a3a9f,'85c07516'),
+        (0x4a3d60,'31c0'),(0x4a6f40,'31c0'),(0x4b577a,'31c0'),
+        (0x4b5e36,'89d8'),(0x4b61b9,'a1503a7a00'),(0x4b61cc,'a1503a7a00'),
+        (0x4b59ca,'89d3')]
+    for va,encoded in source_witnesses:
+        assert original.get_data(va-0x400000,len(bytes.fromhex(encoded))).hex() == encoded
+    result['corruption_diagnostic_direct_callers'] = {
+        'discovery': 'Linear objdump direct-call targets; no indirect-call completeness claim',
+        'sites': [{'callsite': f'{va:08x}', 'eax_source': source} for va,source in call_sources.items()],
+        'decoded_instruction_lines': matches,
+        'source_witnesses': [{'va': f'{va:08x}', 'hex': encoded} for va,encoded in source_witnesses],
+        'limit': 'Language-global validity and saved incoming language argument require lifecycle/caller preconditions; aliases and indirect calls excluded.'}
     result['limits']=['No memory, disk, desktop, dialog or target API execution.','Memory fields described by exact offsets; no complete API structure/type reconstruction.','Current-directory helper, API failures and diagnostic termination internals are not fully audited here.','No release-note attribution inferred solely from a changed startup routine.']
     (ROOT/'analysis/evidence/audits/original-modern-startup-requirements.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: startup requirement counterparts, caller witnesses, imports and messages')

@@ -169,7 +169,7 @@
     },
     {
       "path": "analysis/original-modern-language-table.md",
-      "sha256": "915e19ba43d017ddcc1593d6b0daa2dc8d86aad795af358574acad22581b512a"
+      "sha256": "8c9a26a620b8b3d3ef4e4831b714ca76b1fd8d47c737e85dddb0eaacff740401"
     },
     {
       "path": "analysis/original-modern-loading-artwork.md",
@@ -373,7 +373,7 @@
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
-      "sha256": "cad2b4d4ed1d13a29355d741ff917e558e9db30a9009432e1678ff6861facb29"
+      "sha256": "2cc422a7e892b086671de72002d79081a857dd0a1f16884e4a981f299c046724"
     },
     {
       "path": "analysis/original-modern-state14.md",
@@ -8073,7 +8073,8 @@
           "path": "analysis/original-modern-startup-requirements.md",
           "entry_mentioned": true,
           "addresses": [
-            "004b5748"
+            "004b5748",
+            "004b577c"
           ]
         }
       ]
