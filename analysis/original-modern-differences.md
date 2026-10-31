@@ -152,6 +152,8 @@ The [CPU comparison](original-modern-cpu-tier.md) traces original’s million-sc
 
 The [frontend sound comparison](original-modern-frontend-sound.md) traces the removed caller volume multiplier, separate menu-volume field and slider, new ID bounds and per-ID timing gates. The normal record initializer is byte-identical. Counter units, sample/backend behavior, all callers and audible equality remain pending.
 
+The [music comparison](original-modern-music-selection.md) traces menu subset cycles, race-state progression and contextual restart/continuation gates. Asset labels, other progression producers, once-per-race cadence and volume/fade claims remain separate.
+
 ## 20. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:

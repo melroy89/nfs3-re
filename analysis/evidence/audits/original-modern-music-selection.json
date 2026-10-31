@@ -1,0 +1,120 @@
+{
+  "kind": "static-music-selection-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0040ffd0",
+          "end": "00410027",
+          "bytes_sha256": "3d515647e1f044ab870a290035c2c8826b4246895aa44ac42489f58b8b8226ad",
+          "assembly": "analysis/captures/modern-differences/music-selection/original-0040ffd0.asm",
+          "assembly_sha256": "e14456ff58da7b370674c4bd1ae16736731e74ac2921ed4f2f3ef5227bf9afe2"
+        },
+        {
+          "start": "004103a0",
+          "end": "0041045d",
+          "bytes_sha256": "7c1cb3b26c32286c56584389a843158af11748766cd908cf6f2af5fcec887849",
+          "assembly": "analysis/captures/modern-differences/music-selection/original-004103a0.asm",
+          "assembly_sha256": "163b63773efd4eee447dc0579a77aafb446ccba058adde4549983f18742d8390"
+        }
+      ],
+      "fixed_race_targets": [
+        "0040ffe9",
+        "0040ffe9",
+        "0040ffef",
+        "0040ffef",
+        "0040fff8",
+        "0040fff8",
+        "00410001",
+        "00410001",
+        "0041000a",
+        "0041000a"
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0040fefc",
+          "end": "0040ff80",
+          "bytes_sha256": "fef6808aca35cfdcbf700f5c3a3c9c439a60a90a2c4c90ea5693e1a32128ee0f",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-0040fefc.asm",
+          "assembly_sha256": "fcb4809c66ba8e5565b3128695c113119cbcb5f076e281836f19c08dc9779140"
+        },
+        {
+          "start": "0040ff9c",
+          "end": "0040fffb",
+          "bytes_sha256": "f6564fdd9c680612edbc4e4cda75de3f1ef016d01ed811a03046c399240c3e9c",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-0040ff9c.asm",
+          "assembly_sha256": "d207fd14f0a224dd3b12d186e5141c6172badba79991a9a229d1f1318b4c6bec"
+        },
+        {
+          "start": "004103a0",
+          "end": "00410446",
+          "bytes_sha256": "8fbc0c802b99645bc276694ae89daf4040c52f8ead158081a693b000442f4ac2",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-004103a0.asm",
+          "assembly_sha256": "628a6afb74eef01e51058740ac5c8ac6f95818b9c8b360970327d15e321950ed"
+        },
+        {
+          "start": "00410606",
+          "end": "00410615",
+          "bytes_sha256": "eb47eae461f0d877f797e65ece3092d35a487a3c31f6e7d46304f01fa978ad72",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-00410606.asm",
+          "assembly_sha256": "18f7feb3cd3cd8869fa0b29e9508740ad677219ab63dfdeb20e3e193d06879e2"
+        },
+        {
+          "start": "004b5d30",
+          "end": "004b5d35",
+          "bytes_sha256": "a50da9a77ccf4bf7b2828ced0ae116b5205c30ac39241cb6c02873c61613c4a2",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-004b5d30.asm",
+          "assembly_sha256": "c6eae300be9cbe360060b8431d75ed7623d00b7f76d17fe76768f0bbf5f82fc3"
+        },
+        {
+          "start": "004a3489",
+          "end": "004a348e",
+          "bytes_sha256": "ce93fc62d51e33f4dbaec8e0c0975a32982d8257bd62003dc2bc233155a82dc0",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-004a3489.asm",
+          "assembly_sha256": "3a3e4725c22a79286aa51a11a53f98f72898478b81496db9d03028f518e997fa"
+        }
+      ],
+      "menu_cycle_ids": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        5
+      ],
+      "menu_seed_map": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        4
+      ]
+    }
+  },
+  "limits": [
+    "No sound/game/instruction execution.",
+    "Track asset names, RNG distribution and audible behavior unverified."
+  ]
+}

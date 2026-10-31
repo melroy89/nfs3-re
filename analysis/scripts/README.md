@@ -245,3 +245,7 @@ Run `python3 analysis/scripts/audit_cpu_tier_difference.py` (Python pefile, GNU 
 ## Original versus Modern frontend sound
 
 Run `python3 analysis/scripts/audit_frontend_sound_difference.py` (Python pefile, GNU objdump). It retains paired request bodies and Modern volume-slider/restore witnesses, records floating constants and asserts the normal record initializer is identical. Output: `analysis/evidence/audits/original-modern-frontend-sound.json`; raw captures remain ignored. No audio/target execution. See [frontend sound findings](../original-modern-frontend-sound.md).
+
+## Original versus Modern music selection
+
+Run `python3 analysis/scripts/audit_music_selection_difference.py` (Python pefile, GNU objdump). It captures paired contextual policy, original race selection and Modern race/menu helpers, caller witnesses and exact selection tables. Output: `analysis/evidence/audits/original-modern-music-selection.json`; raw captures remain ignored. No audio/RNG/target execution. See [music findings](../original-modern-music-selection.md).
