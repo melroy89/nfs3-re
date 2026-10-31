@@ -1,0 +1,65 @@
+{
+  "kind": "small-wrapper-static-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00410460",
+          "end_exclusive": "004104a1",
+          "sha256": "de0610f9ef16cda4ad99c41b4dcf38bed2cb523159e05431f2ca6364d6cec5c7",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/original-00410460.asm"
+        },
+        {
+          "start": "004104b0",
+          "end_exclusive": "004104ee",
+          "sha256": "bf35a66ed927644913a741f34bb454e98fba1a3681e966ad6d83ec4106d8bc66",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/original-004104b0.asm"
+        },
+        {
+          "start": "00418cc0",
+          "end_exclusive": "00418ceb",
+          "sha256": "52278518d7be9640fe2da603d96e92c8d682e249aed0e80a66cf7a50148b33cb",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/original-00418cc0.asm"
+        }
+      ],
+      "imports": {
+        "00534480": "ShellExecuteA",
+        "0053454c": "GetModuleHandleA"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00410460",
+          "end_exclusive": "004104a1",
+          "sha256": "7ba4f1acd3254b278dbe4ecc1c0374e3e8a0ad319d97b7cf60b77fde1eb74913",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/official_modern-00410460.asm"
+        },
+        {
+          "start": "004104b0",
+          "end_exclusive": "004104ee",
+          "sha256": "f1e76bb0027fa396e3e210c2dc2ccce5252784c04f82563031ae14e9bd6f6635",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/official_modern-004104b0.asm"
+        },
+        {
+          "start": "00418cc0",
+          "end_exclusive": "00418ceb",
+          "sha256": "504358b3d865832ef5338db516675e12df7bfd7035a85f7da0d67fa335039f38",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/official_modern-00418cc0.asm"
+        }
+      ],
+      "imports": {
+        "00534480": "ShellExecuteA",
+        "0053454c": "GetModuleHandleA"
+      }
+    }
+  },
+  "limits": [
+    "Static inspection only; no shell invocation or audio playback.",
+    "Original language-resource provenance and all caller effects remain outside this audit."
+  ]
+}

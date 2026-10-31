@@ -406,6 +406,8 @@ The [geometry-color admission comparison](original-modern-geometry-color-admissi
 
 The [shape-conversion comparison](original-modern-shape-conversion.md) accounts for the cached renderer descriptor, removed null fallback and unchanged conversion suffix at `004d37a0`.
 
+The [shell-open wrapper comparison](original-modern-shell-open.md) records the removed module-handle query and null owner argument; the [music-selection report](original-modern-music-selection.md#override-wrappers-follow-the-shifted-fixed-choice-index) records both retained override wrappers’ setting-index adjustment.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

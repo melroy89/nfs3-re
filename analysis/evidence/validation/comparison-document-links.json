@@ -73,8 +73,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "5050518a90e4c9615d1ba4812321f7cafd9d33a3a8663ed2b7a41d45d01966fe",
-      "relative_links": 111
+      "sha256": "d47f71d28b7ed4b8b245db9a8df3954c090f7a9be37e68123ed4e157340e7ee7",
+      "relative_links": 113
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -113,8 +113,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "5c43d46f52c49dd48105cd522ddc085bc7fc3ba858421eaf2ddf26832f26c04d",
-      "relative_links": 477
+      "sha256": "52951494e678a5f4865fb7b6fa64b29cf3f86ede17b2f249bbeddfb796c317f1",
+      "relative_links": 480
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -203,8 +203,8 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "69475492c6c4e349777a825ff74f73332c6a6a3a77556129f42241e0157a2a63",
-      "relative_links": 7
+      "sha256": "52c8151cc8e8c37502b1ed3b77a2efada25986e9e8e0b5191a0e5c2633487b0f",
+      "relative_links": 9
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -337,6 +337,11 @@
       "relative_links": 4
     },
     {
+      "path": "analysis/original-modern-shell-open.md",
+      "sha256": "68ded85d0b980fd32ed2f958c560f1a8ac4289d7c94172efcde1a98325f328a4",
+      "relative_links": 2
+    },
+    {
       "path": "analysis/original-modern-slider-percentage.md",
       "sha256": "6504685e74f8360ce902391eac8c55d439cfff780d2b79ad656ace00b66d505a",
       "relative_links": 5
@@ -437,8 +442,8 @@
       "relative_links": 7
     }
   ],
-  "file_count": 87,
-  "relative_link_count": 1122,
+  "file_count": 88,
+  "relative_link_count": 1131,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -169,7 +169,7 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "69475492c6c4e349777a825ff74f73332c6a6a3a77556129f42241e0157a2a63"
+      "sha256": "52c8151cc8e8c37502b1ed3b77a2efada25986e9e8e0b5191a0e5c2633487b0f"
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -272,6 +272,10 @@
       "sha256": "ca1ee7e5ab307932313f0fd42bf1c0ce5bbc8b09f3b8e0667744a7f277052177"
     },
     {
+      "path": "analysis/original-modern-shell-open.md",
+      "sha256": "68ded85d0b980fd32ed2f958c560f1a8ac4289d7c94172efcde1a98325f328a4"
+    },
+    {
       "path": "analysis/original-modern-slider-percentage.md",
       "sha256": "6504685e74f8360ce902391eac8c55d439cfff780d2b79ad656ace00b66d505a"
     },
@@ -350,8 +354,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 269,
-    "without_address_mentions": 92
+    "with_address_mentions": 272,
+    "without_address_mentions": 89
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -573,7 +577,17 @@
       "changed_bytes": 1,
       "original_sha256": "de0610f9ef16cda4ad99c41b4dcf38bed2cb523159e05431f2ca6364d6cec5c7",
       "modern_sha256": "7ba4f1acd3254b278dbe4ecc1c0374e3e8a0ad319d97b7cf60b77fde1eb74913",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-music-selection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00410460",
+            "00410479",
+            "0041047c"
+          ]
+        }
+      ]
     },
     {
       "entry": "004104b0",
@@ -591,7 +605,16 @@
       "changed_bytes": 1,
       "original_sha256": "bf35a66ed927644913a741f34bb454e98fba1a3681e966ad6d83ec4106d8bc66",
       "modern_sha256": "f1e76bb0027fa396e3e210c2dc2ccce5252784c04f82563031ae14e9bd6f6635",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-music-selection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004104b0",
+            "004104cf"
+          ]
+        }
+      ]
     },
     {
       "entry": "004104f0",
@@ -890,7 +913,18 @@
       "changed_bytes": 26,
       "original_sha256": "033b588319501487d82de9727ac35274e3e14307097fd79d8b6127584506f2dd",
       "modern_sha256": "b3003bd9d76038037e395d0f0af9c0bf58a9cabeac541bb9a819c1a9e1c274d0",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-shell-open.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00418cc0",
+            "00418cd0",
+            "00418cd3",
+            "00418cdb"
+          ]
+        }
+      ]
     },
     {
       "entry": "0041a120",
