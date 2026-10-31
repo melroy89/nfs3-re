@@ -134,3 +134,22 @@ At `0041af7a..0041af93`, the first path loads selected pointer `005dd830`, loads
 This establishes **a direct per-component geometry cutoff**, distinct from the squared-distance gates using +28h/+34h and +38h/+40h/+3ch/+44h. No squaring or unit conversion occurs in these local comparisons. Complete transformation/coordinate semantics are not newly proven here, so a physical view-depth or world-distance label remains qualified. Unlike the earlier squared-distance rejection, unordered values take the JBE continuation here; preserve the actual comparison policy in C.
 
 The [track-chain builder](original-modern-track-detail.md#mirror-quality-moves-into-the-caller) submits through `0041b300`, establishing a surrounding render route. All four fields explicitly written by Modern's preset application now have confirmed rendering consumers. +20h/+2ch remains a pre-existing converted field with its wider role unresolved. Visible output, complete clipping, all caller domains and vehicle-physics effects remain unverified.
+
+## User-facing binding: View Distance and the Full preset
+
+The preset audit now retains the identical20-byte descriptor at **`00556730`** in both executables: name `viewlevel` at `00537fc8`, WORD-list pointer `00556252`, two zero fields and destination `006fbc28`. Its list is **184,183,182,181,0**. The hash-pinned official English member resolves those IDs to **Full, Far, Medium, Close**. Official `graphics.mnu` and `psgraph.mnu` bind controls to `listname=viewlevel`; the graphics title token is `kMenuADVGRPHViewDist001`. Archive/member hashes and matching lines are retained in the manifest.
+
+Using the established [generic ordinal-list mechanism](original-modern-frame-setting.md), this maps the shared selector to **0=Full,1=Far,2=Medium,3=Close**. The executable descriptor is unchanged; it is the application mechanism and table values that change. The official menu evidence does not authenticate original retail asset files or prove active runtime language/menu selection.
+
+For **Full (selector0)**, the original override makes the first record's +28h/+38h/+3ch equal. Their values after the exact1/65536 scale are:
+
+| `006fd4c8` | `006fd3b0 == 1` | Original three thresholds | Modern three thresholds |
+|---|---|---:|---:|
+| Zero | No | 500 | 500 |
+| Nonzero | No | 375 | 500 |
+| Zero | Yes | 440 | 500 |
+| Nonzero | Yes | 330 | 500 |
+
+These particular integer thresholds are exactly representable as binary32. The table states the preset source/conversion values, not a runtime capture or proof of equal later squared arithmetic under different x87 precision. The previously established geometry/distance consumers give these changes a concrete render-selection role.
+
+This provides **partial static support for MP100-013**, the improved Full view-distance claim. The adjective “better” and actual farther visible rendering require output validation. **MP100-014** additionally names splitscreen and night-driving modes; mapping these raw branch globals to those complete scenarios is not newly established by this finding, so that stronger scenario claim remains vendor-only. Historical introduction is not dated by the original/final pair. No game, menu, asset code or instruction probe was executed.

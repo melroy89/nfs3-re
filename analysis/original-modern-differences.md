@@ -467,7 +467,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **162 Claimed, 39 Static, 86 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **161 Claimed, 39 Static, 87 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -769,7 +769,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-010 | The games uses the best possible graphics settings by default when it detects that the game is runned on the modern computer. | Claimed |
 | MP100-011 | On first run game tries to choose gameplay resolution nearest to current Windows default resolution. | Partial |
 | MP100-012 | New “High” car detail level. New quality of graphics for cars other than 1st player. There is no non-rotating wheels and disappearing side-view mirrors! Also the game uses twice better textures for all cars. Even traffic cars looks twice better. Also it fixes unfairness when 2nd player's car has worse graphics. Old “High” car detail is “Medium” now, old “Medium” is “Low” now, old “Low” was removed. Warning! You have to restart the game when you've changed car detail level to see full effect because the game loads textures only once when loading gameplay. | Claimed |
-| MP100-013 | Much better “Full” view distance level. Now it also affects rear view mirror (in “Far” and “Full” levels). | Claimed |
+| MP100-013 | Much better “Full” view distance level. Now it also affects rear view mirror (in “Far” and “Full” levels). | Partial |
 | MP100-014 | View distance in “Full” level renders farther in splitscreen and night driving modes, the same as in singleplayer day driving mode. | Claimed |
 | MP100-015 | “Alpha Intensity” setting works for Voodoo2 mode now. Cars look too shining without it. | Claimed |
 | MP100-016 | A little better rendering of an image when loading gameplay. An attempt to improve quality of scaling of this image. | Claimed |

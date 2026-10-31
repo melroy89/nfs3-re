@@ -52,6 +52,12 @@ def main():
                 'derivation': 'All constants=N<<16; signed64 product low16=0, so SHR carry bit15=0; joined high/low halves equal low32(product arithmetic-shift16).',
                 'scope': 'Mathematical consequence of asserted instructions; not original-instruction execution.'}
 
+        descriptor=struct.unpack('<5I',pe.get_data(0x156730,20))
+        assert descriptor==(0x537fc8,0x556252,0,0,0x6fbc28)
+        assert pe.get_string_at_rva(0x137fc8)==b'viewlevel'
+        assert struct.unpack('<5H',pe.get_data(0x156252,10))==(184,183,182,181,0)
+        row['viewlevel_descriptor']={'address':'00556730','words':[f'{x:08x}' for x in descriptor],
+                                     'name':'viewlevel','choice_ids':[184,183,182,181]}
         row['caller_and_selector_witnesses'] = []
         for a,b in [(0x41d610,0x41d61a),(0x41d870,0x41d89d),
                     (0x41aaf0,0x41ab02),(0x41d9fa,0x41da0b),
@@ -120,6 +126,29 @@ def main():
         'cases':comparisons,
         'cases_with_known_field_differences':sum(x['known_field_differences']>0 for x in comparisons)}
 
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+    assert archive_sha=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    member='fedata/text/text.eng'
+    data=subprocess.check_output(['7z','x','-so',str(archive),member])
+    extent=struct.unpack_from('<I',data)[0]; assert extent%4==0 and extent<=len(data)
+    labels=[]
+    for ident,expected in [(184,b'Full'),(183,b'Far'),(182,b'Medium'),(181,b'Close')]:
+        assert ident*4<extent
+        offset=struct.unpack_from('<I',data,ident*4)[0];assert extent<=offset<len(data)
+        value=data[offset:data.index(b'\0',offset)];assert value==expected
+        labels.append({'id':ident,'offset':offset,'text':value.decode()})
+    assets=[]
+    for name in ['fedata/menus/graphics.mnu','fedata/menus/psgraph.mnu']:
+        raw=subprocess.check_output(['7z','x','-so',str(archive),name])
+        fields=[{'line':i,'text':line} for i,line in enumerate(raw.decode('latin1').splitlines(),1)
+                if line=='listname=viewlevel']
+        assert fields
+        assets.append({'member':name,'sha256':hashlib.sha256(raw).hexdigest(),'viewlevel_fields':fields})
+    result['view_distance_binding']={'archive_sha256':archive_sha,
+        'english_member':member,'english_sha256':hashlib.sha256(data).hexdigest(),
+        'labels':labels,'menu_assets':assets,
+        'limits':['Official asset bindings and identical executable descriptors; runtime menu/language selection not observed.']}
     assert len(comparisons)==64
     assert result['derived_integer_comparisons']['cases_with_known_field_differences']==48
     (ROOT/'analysis/evidence/audits/original-modern-parameter-preset.json').write_text(json.dumps(result, indent=2)+'\n')

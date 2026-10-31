@@ -41,6 +41,23 @@
         "derivation": "All constants=N<<16; signed64 product low16=0, so SHR carry bit15=0; joined high/low halves equal low32(product arithmetic-shift16).",
         "scope": "Mathematical consequence of asserted instructions; not original-instruction execution."
       },
+      "viewlevel_descriptor": {
+        "address": "00556730",
+        "words": [
+          "00537fc8",
+          "00556252",
+          "00000000",
+          "00000000",
+          "006fbc28"
+        ],
+        "name": "viewlevel",
+        "choice_ids": [
+          184,
+          183,
+          182,
+          181
+        ]
+      },
       "caller_and_selector_witnesses": [
         {
           "start": "0041d610",
@@ -292,6 +309,23 @@
               28
             ]
           ]
+        ]
+      },
+      "viewlevel_descriptor": {
+        "address": "00556730",
+        "words": [
+          "00537fc8",
+          "00556252",
+          "00000000",
+          "00000000",
+          "006fbc28"
+        ],
+        "name": "viewlevel",
+        "choice_ids": [
+          184,
+          183,
+          182,
+          181
         ]
       },
       "caller_and_selector_witnesses": [
@@ -3575,5 +3609,61 @@
       }
     ],
     "cases_with_known_field_differences": 48
+  },
+  "view_distance_binding": {
+    "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+    "english_member": "fedata/text/text.eng",
+    "english_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "labels": [
+      {
+        "id": 184,
+        "offset": 9742,
+        "text": "Full"
+      },
+      {
+        "id": 183,
+        "offset": 9738,
+        "text": "Far"
+      },
+      {
+        "id": 182,
+        "offset": 9731,
+        "text": "Medium"
+      },
+      {
+        "id": 181,
+        "offset": 9725,
+        "text": "Close"
+      }
+    ],
+    "menu_assets": [
+      {
+        "member": "fedata/menus/graphics.mnu",
+        "sha256": "ac088b28fd3905369a728972c6be7638c692df98ebb57ea65981083835f71247",
+        "viewlevel_fields": [
+          {
+            "line": 114,
+            "text": "listname=viewlevel"
+          },
+          {
+            "line": 122,
+            "text": "listname=viewlevel"
+          }
+        ]
+      },
+      {
+        "member": "fedata/menus/psgraph.mnu",
+        "sha256": "e4f00933cd61145d0fb14d2396091d7b22d5246b39d9c1e35de9edb032d226a7",
+        "viewlevel_fields": [
+          {
+            "line": 74,
+            "text": "listname=viewlevel"
+          }
+        ]
+      }
+    ],
+    "limits": [
+      "Official asset bindings and identical executable descriptors; runtime menu/language selection not observed."
+    ]
   }
 }
