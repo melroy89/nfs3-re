@@ -44,6 +44,26 @@ def main():
                            if label=='original' else [])
             assert [h['mapped_operand_va'] for h in hits]==expected_hits
             centre_refs.append({'address':f'{address:08x}','matches':hits})
+        bss=next(section for section in pe.sections if section.Name.startswith(b'.bss'))
+        assert bss.PointerToRawData==0 and bss.Characteristics==0xc0000080 and bss.Misc_VirtualSize==0
+        source_rows=[]
+        for address,expected_count in [(0x5e1020,1),(0x5e102c,1),(0x5e1030,1),(0x5e1038,3)]:
+            assert bss.VirtualAddress<=address-0x400000<bss.VirtualAddress+bss.SizeOfRawData
+            off=0;matches=[]
+            while True:
+                off=raw.find(struct.pack('<I',address),off)
+                if off<0:break
+                matches.append({'operand_va':f'{pe.get_rva_from_offset(off)+0x400000:08x}',
+                    'file_offset':off,'preceding_bytes_hex':raw[max(0,off-4):off].hex()})
+                off+=1
+            assert len(matches)==expected_count
+            source_rows.append({'source_address':f'{address:08x}','literal_matches':matches})
+        item['conditional_projection_source_storage']={'section':'.bss','virtual_size':bss.Misc_VirtualSize,
+            'declared_size':bss.SizeOfRawData,'raw_offset':0,'characteristics':'c0000080',
+            'file_backed_initial_values':'not established; do not interpret file offset0 as these values',
+            'expected_loader_zero_fill_confidence':'inferred, not measured', 'sources':source_rows,
+            'limits':['Noncanonical PE size fields; expected uninitialized storage contract, not a live loader observation.',
+                      'Literal search does not recover bulk-copy, computed or alias writers; source production remains unresolved.']}
         item['absolute_centre_address_inventory']={'method':'Overlapping four-byte little-endian literal search over complete executable file; matches are operand locations, not instruction entries.',
             'addresses':centre_refs,'limits':['Does not detect computed addresses, aliases, encoded pointers, external modules or runtime-generated code.']}
 

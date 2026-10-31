@@ -158,6 +158,14 @@ Both writer contracts are already paired above: the builder computes origin plus
 
 The horizon investigation can now stop searching for an unidentified direct absolute centre store in these EXEs. Remaining ownership questions concern which of these two writers executes last, cached-value producers, computed aliases/external code and camera orientation. The catalogue's unresolved horizon claim is retained; this audit provides no rendering or runtime-order proof.
 
+## Conditional finalizer sources: storage known, producers unresolved
+
+The projection audit now records the storage boundary and complete literal occurrences for `005e1020`, `005e102c`, `005e1030` and `005e1038`, copied by the type8 finalizer path. All lie within the declared `.bss` extent in both executables. Its header has uninitialized-data attributes `c0000080`, raw offset0 and noncanonical size fields (VirtualSize0 with the declared extent in SizeOfRawData). There are no established file-backed initial values for these cells. As already qualified in the [readiness audit](recompilation-readiness.md), loader zero-fill is an **inferred expected contract**, not a measured Windows/Wine initialization result; file offset0 must not be read as these floats.
+
+For `005e1020`, `005e102c` and `005e1030`, each full executable contains only the one literal address operand in that finalizer. The literal search therefore reveals no direct absolute producer for those three source cells. `005e1038` additionally occurs in two indexed stores at instructions `00423a7c` and `00423a89`; their effective destination depends on EAX, so these do not establish unconditional initialization of this exact cell. That fourth source feeds the vertical scale, not the centre pair. Bulk copies, computed addresses and aliases remain possible and have not been excluded.
+
+Accordingly, earlier references to these values as “cached” describe their conditional restoration role only; a capture/cache writer has **not** been recovered. The precise follow-up is to find a bulk/alias producer, or establish that the type8 path is inactive in the relevant camera configuration, then qualify its ordering against the ordinary builder. Do not assume zero source centres, successful capture or permanent ownership from the section attributes alone. This is a genuine bounded unknown, not a reason to defer unrelated executable comparisons. No loader, camera or game code was run.
+
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
 
 ## Viewport finalizer drops legacy projection updates

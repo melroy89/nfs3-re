@@ -70,6 +70,71 @@
           "assembly_sha256": "97668716a556b58581604a4ffadfa45754d5be562ae2f1f5f225e3887c9ed8bd"
         }
       ],
+      "conditional_projection_source_storage": {
+        "section": ".bss",
+        "virtual_size": 0,
+        "declared_size": 4891648,
+        "raw_offset": 0,
+        "characteristics": "c0000080",
+        "file_backed_initial_values": "not established; do not interpret file offset0 as these values",
+        "expected_loader_zero_fill_confidence": "inferred, not measured",
+        "sources": [
+          {
+            "source_address": "005e1020",
+            "literal_matches": [
+              {
+                "operand_va": "004213d6",
+                "file_offset": 133078,
+                "preceding_bytes_hex": "755cd905"
+              }
+            ]
+          },
+          {
+            "source_address": "005e102c",
+            "literal_matches": [
+              {
+                "operand_va": "004213e2",
+                "file_offset": 133090,
+                "preceding_bytes_hex": "5e00d905"
+              }
+            ]
+          },
+          {
+            "source_address": "005e1030",
+            "literal_matches": [
+              {
+                "operand_va": "004213e8",
+                "file_offset": 133096,
+                "preceding_bytes_hex": "5e00d905"
+              }
+            ]
+          },
+          {
+            "source_address": "005e1038",
+            "literal_matches": [
+              {
+                "operand_va": "004213dc",
+                "file_offset": 133084,
+                "preceding_bytes_hex": "5e00d905"
+              },
+              {
+                "operand_va": "00423a7f",
+                "file_offset": 142975,
+                "preceding_bytes_hex": "40891485"
+              },
+              {
+                "operand_va": "00423a8c",
+                "file_offset": 142988,
+                "preceding_bytes_hex": "40891485"
+              }
+            ]
+          }
+        ],
+        "limits": [
+          "Noncanonical PE size fields; expected uninitialized storage contract, not a live loader observation.",
+          "Literal search does not recover bulk-copy, computed or alias writers; source production remains unresolved."
+        ]
+      },
       "absolute_centre_address_inventory": {
         "method": "Overlapping four-byte little-endian literal search over complete executable file; matches are operand locations, not instruction entries.",
         "addresses": [
@@ -168,6 +233,71 @@
           "assembly_sha256": "e98b3166bb06195d44623f02d9dd09c8f53940df77173aa85e83769ffbd122ea"
         }
       ],
+      "conditional_projection_source_storage": {
+        "section": ".bss",
+        "virtual_size": 0,
+        "declared_size": 4919296,
+        "raw_offset": 0,
+        "characteristics": "c0000080",
+        "file_backed_initial_values": "not established; do not interpret file offset0 as these values",
+        "expected_loader_zero_fill_confidence": "inferred, not measured",
+        "sources": [
+          {
+            "source_address": "005e1020",
+            "literal_matches": [
+              {
+                "operand_va": "004213d6",
+                "file_offset": 133078,
+                "preceding_bytes_hex": "755cd905"
+              }
+            ]
+          },
+          {
+            "source_address": "005e102c",
+            "literal_matches": [
+              {
+                "operand_va": "004213e2",
+                "file_offset": 133090,
+                "preceding_bytes_hex": "5600d905"
+              }
+            ]
+          },
+          {
+            "source_address": "005e1030",
+            "literal_matches": [
+              {
+                "operand_va": "004213ee",
+                "file_offset": 133102,
+                "preceding_bytes_hex": "5600d905"
+              }
+            ]
+          },
+          {
+            "source_address": "005e1038",
+            "literal_matches": [
+              {
+                "operand_va": "004213fa",
+                "file_offset": 133114,
+                "preceding_bytes_hex": "5600d905"
+              },
+              {
+                "operand_va": "00423a7f",
+                "file_offset": 142975,
+                "preceding_bytes_hex": "40891485"
+              },
+              {
+                "operand_va": "00423a8c",
+                "file_offset": 142988,
+                "preceding_bytes_hex": "40891485"
+              }
+            ]
+          }
+        ],
+        "limits": [
+          "Noncanonical PE size fields; expected uninitialized storage contract, not a live loader observation.",
+          "Literal search does not recover bulk-copy, computed or alias writers; source production remains unresolved."
+        ]
+      },
       "absolute_centre_address_inventory": {
         "method": "Overlapping four-byte little-endian literal search over complete executable file; matches are operand locations, not instruction entries.",
         "addresses": [
