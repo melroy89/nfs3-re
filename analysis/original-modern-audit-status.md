@@ -112,7 +112,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels157 entries vendor-only,39 bounded static,91 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels156 entries vendor-only,39 bounded static,92 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -132,3 +132,7 @@ The [checkpoint record](evidence/validation/projection-map-review-checkpoint.jso
 - **Still unresolved:** conditional type8 source producer/admission and ordering, computed aliases, camera orientation/final horizon, active map/profile state, all marker styles and actual rendered output. Historical claims need the appropriate intermediate pairs; runtime compatibility remains separate.
 
 The map-point mechanism gap in MP160-006 and field/consumer gap in MP140-073 are closed at the documented static boundary. The whole vendor claims are still partial. MP160-003 remains unresolved. The broader original/Modern investigation is not marked complete, and this checkpoint does not authorize or imply a rebuilt game.
+
+## Logo-claim reconciliation
+
+MP153-013 now links the existing paired presence-policy audit and official atlas identification in the [frontend report](original-modern-frontend-page.md#release-note-correspondence-model-dependent-logos). A fresh audit rerun passed. Modern per-record Ford/HSV model filtering has partial static evidence; the legacy LOGO2-to-logos asset relationship, historical introduction and full runtime behavior remain unverified. The documented rejected-final-record fall-through is retained as a limitation. This reconciles existing evidence rather than claiming a newly discovered code change.

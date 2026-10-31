@@ -266,6 +266,12 @@ The audit retains the generated atlas/crop paths under ignored captures, their P
 
 Combined with the loader’s key predicate, this establishes the intended final-package association: Ferrari’s record bypasses model checking; Ford/HSV/Lister/Spectre records depend on their respective keys. The shared two-key presence wrapper tests Ford/HSV-associated keys37/38. The trailing conditional record implicated by the fall-through is Spectre-associated key27. Actual model registry contents and runtime manifestations remain unresolved; the visual evidence identifies the records without proving installed car availability or historic introduction dates.
 
+## Release-note correspondence: model-dependent logos
+
+The preceding paired executable and official-asset evidence gives **partial static support for MP153-013**. Modern's parameterized presence lookup gates ordinary logo admission by each record's model key; the decoded atlas identifies keys37/38 as Ford/HSV. This is a code-and-data mechanism, not an inference from manufacturer strings alone. The shared presence wrapper also strengthens original's single-key test into a two-key test, but that wrapper selects a background resource and must not be mistaken for the per-record logo loader.
+
+The release note names `LOGO2.QFS`, whereas the inspected final Modern loader uses `logos.qfs`; the historical asset relationship and release-specific introduction are not established by this pair. The rejected-final-record fall-through documented above also prevents a blanket claim that all missing-model inputs are safely handled. Actual registry contents, complete archive admission/lifetime and rendered animation remain unverified. The catalog therefore records partial evidence rather than treating the vendor claim as either wholly confirmed or wholly unsupported.
+
 ## Trailing rejection is at decoded EOF
 
 The audit now verifies both type`0x6f` metadata lengths against the table records, not merely the `LTBL` magic. The first stored length **`0x50`**, measured from the `LTBL` payload after the8-byte metadata header, ends at decoded offset **`0x40088`**. The second stored length **`0x44`**, with the same origin, ends at **`0x800e4`**, which is exactly the declared and decoded `SHPI` size **524516 bytes**. Its final record is Spectre-associated key27; no trailing record or padding bytes exist inside that decoded asset.

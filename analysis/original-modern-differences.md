@@ -480,7 +480,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **157 Claimed, 39 Static, 91 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **156 Claimed, 39 Static, 92 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -539,7 +539,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP153-010 | Proper handling of the case when EAX was presented in the system and choosed by user, but for some reason had become unavailable. | Claimed |
 | MP153-011 | Sound Volume and Dead Zone slider values are rounded correctly. | Partial |
 | MP153-012 | More accurate time measure function is used (timeGetTime instead of GetTickCount). | Static |
-| MP153-013 | HSV and Ford logos from the LOGO2.QFS aren't used in the menu animation if there is no cars from the Australian Edition. | Claimed |
+| MP153-013 | HSV and Ford logos from the LOGO2.QFS aren't used in the menu animation if there is no cars from the Australian Edition. | Partial |
 | MP153-014 | Fixed a problem which was a cause of the inability to start the game on some systems. | Claimed |
 
 ### Version 1.5.2 (2016-04-10)
