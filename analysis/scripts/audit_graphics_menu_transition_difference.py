@@ -49,6 +49,18 @@ def main():
     out['sfx_intensity_admission']={'baselines':intensity,'token':'SFX_INTENSITY',
         'token_va':'00538e3c','state_byte':'007a3a58',
         'limit':'Local control setup admission only; renderer bit identities, final enabled state, input and visual effect untested.'}
+    sfx_dependencies=[]
+    for start,end,role in [(0x46cac0,0x46cac8,'Store EDX callback at item+78h'),
+                           (0x448570,0x448598,'Admitted slider callback stores getter result to006fbc38'),
+                           (0x46c9b0,0x46c9f3,'Slider getter dispatch and binary32 spill/reload')]:
+        paired={label:pefile.PE(str(ROOT/spec[0])).get_data(start-0x400000,end-start)
+                for label,spec in SPECS.items()}
+        assert paired['original']==paired['official_modern']
+        data=paired['original']
+        sfx_dependencies.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}',
+            'role':role,'hex':data.hex(),'sha256':hashlib.sha256(data).hexdigest()})
+    out['sfx_retained_dependencies']={'bodies':sfx_dependencies,
+        'limit':'Callback registration and writeback verified; getter leaf semantics, callback invocation/lifetime, final enabled state and rendering remain unqualified.'}
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
     def parse(data):

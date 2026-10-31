@@ -143,6 +143,32 @@
     "state_byte": "007a3a58",
     "limit": "Local control setup admission only; renderer bit identities, final enabled state, input and visual effect untested."
   },
+  "sfx_retained_dependencies": {
+    "bodies": [
+      {
+        "start": "0046cac0",
+        "end_exclusive": "0046cac8",
+        "role": "Store EDX callback at item+78h",
+        "hex": "5589e58950785dc3",
+        "sha256": "167abe3f93b8d6766f311f2420ca8d9b792b2dbbed29e2259324bbeb5b00a2c9"
+      },
+      {
+        "start": "00448570",
+        "end_exclusive": "00448598",
+        "role": "Admitted slider callback stores getter result to006fbc38",
+        "hex": "51525589e589c1ba0f000000e8df20000085c0740f89c831d2e822440200d91d38bc6f005d5a59c3",
+        "sha256": "60b2acd7f737f9123acf00c74428b78f7696d79865c5b05acbd886c4ff93ac24"
+      },
+      {
+        "start": "0046c9b0",
+        "end_exclusive": "0046c9f3",
+        "role": "Slider getter dispatch and binary32 spill/reload",
+        "hex": "53515589e583ec0489c131db668b4842895dfc6683f905771781e1ffff0000ff248d90c94600e8f5e5ffffd95dfceb0a31d2e839cbffffd95dfcd945fc89ec5d595bc3",
+        "sha256": "6a2297196f6ac54ff52e6a7a5195d212e6e65562efb539dccce07def13581493"
+      }
+    ],
+    "limit": "Callback registration and writeback verified; getter leaf semantics, callback invocation/lifetime, final enabled state and rendering remain unqualified."
+  },
   "fog_menu_assets": {
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/advgrph.mnu",

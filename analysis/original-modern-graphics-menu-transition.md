@@ -96,3 +96,11 @@ The complete paired local tail **`00448728..00448765`**,61 bytes, differs at exa
 If no tested bit is set, the retained branch ORs item byte+4 with1. Otherwise it loads binary32 global`006fbc38`, stores that value to item+54h, passes callback`00448570` in EDX and calls`0046cac0`. The remaining instructions and return tail match byte-for-byte. For equal state with bit10h set and bit40h clear, Modern therefore takes the setup branch where original takes the OR-mask01h branch. States with bit40h already set, or neither bit set, select the same local branch.
 
 This establishes an additional control-admission case, not a proven renderer identity or visible improvement. The admitted branch does not locally clear item byte+4 bit0, so final enabled state also depends on prior item state and the called setup helper. The expanded audit retains both61-byte tails, exact changed offset, token and masks. Actual menu input, helper effects, renderer output and historical attribution remain unverified.
+
+### SFX setup helper and writeback contract
+
+The paired helper **`0046cac0..0046cac8`** is an identical8-byte leaf: it writes EDX to item DWORD+78h and returns. It has no calls, flag clear or scalar-result transformation. Thus the newly admitted setup path installs callback`00448570`; this helper does **not** establish that a previously disabled control becomes enabled. Normal valid-pointer storage and EBP/stack requirements apply.
+
+That callback’s complete40-byte body **`00448570..00448598`** also matches. It gates through`0044a660` with type0fh; on admission it passes the item to getter`0046c9b0` with EDX0 and FSTP-stores the returned x87 value as binary32 global **`006fbc38`**. The complete67-byte getter matches as well: it dispatches according to item WORD+42h, spills its selected leaf result to binary32 and reloads it into ST0. Leaf interpretation, input scaling and exception behaviour are not fully qualified here.
+
+The audit retains all three bodies and hashes. Together they establish a concrete setting round trip: setup seeds item+54h from006fbc38 and registers a writeback callback; when that callback is actually invoked and admitted, its getter result updates the same global. Invocation timing, ownership/reentrancy, initial disable state and resulting renderer output remain untested.
