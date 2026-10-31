@@ -93,7 +93,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "acac4efc95b98965c35e7c2c78f0560ea6ad1cc962148d80f5f991bb21f6270e",
+      "sha256": "d5a62c86e7b4235f147eb786ec55938fc39fdeb67ed3089667bfc62bfd7f003a",
       "relative_links": 131
     },
     {
@@ -163,8 +163,8 @@
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
-      "sha256": "202351112202de8c49f6ba6c4dc45d3f17012c38723ebef02570dc3465e33908",
-      "relative_links": 9
+      "sha256": "27858972ff3c5f84aa98083fad5b1075c71298f9fe245678c2df607bb2be95bb",
+      "relative_links": 10
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
@@ -523,8 +523,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "0a1a67fb4c02160e7e3e52b7ea939e024618c4f73a767e43015e3913acfdd7b7",
-      "relative_links": 115
+      "sha256": "145505a0b5fc6d6c458023469f2d98e76a18511d338af46ff7f27e6654a97b4c",
+      "relative_links": 116
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -533,7 +533,7 @@
     }
   ],
   "file_count": 106,
-  "relative_link_count": 1437,
+  "relative_link_count": 1439,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

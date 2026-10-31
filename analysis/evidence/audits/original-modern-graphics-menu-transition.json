@@ -121,6 +121,75 @@
       ]
     }
   },
+  "fog_menu_assets": {
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/advgrph.mnu",
+      "sha256": "e74f9ff968ddf92d9499ffb91c6f7abd4cd1017ef5ad72188f49ab15031f3832",
+      "fog_items": [
+        {
+          "section": "button",
+          "fields": {
+            "buttontype": "arrowtab",
+            "ypos": "1",
+            "priority": "9",
+            "codelink": "GRAPH_FOG",
+            "text": "str_1935",
+            "listname": "fog"
+          }
+        },
+        {
+          "section": "cascade",
+          "fields": {
+            "ypos": "1",
+            "priority": "0",
+            "notitle": "0",
+            "codelink": "GRAPH_FOG_CASCADE",
+            "text": "str_1164",
+            "maxvisitem": "5",
+            "listname": "fog"
+          }
+        }
+      ],
+      "provenance": "Pinned official archive member"
+    },
+    "uppercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/ADVGRPH.MNU",
+      "sha256": "5900f10ec59b68b9fed049ae08cc4bb112d90322bcc91826c3313d5f7f278f4d",
+      "fog_items": [],
+      "provenance": "Local backup; not authenticated as retail or paired with supplied original EXE"
+    },
+    "official_graphics_route": {
+      "member": "fedata/menus/graphics.mnu",
+      "sha256": "ac088b28fd3905369a728972c6be7638c692df98ebb57ea65981083835f71247",
+      "entry": {
+        "section": "button",
+        "fields": {
+          "buttontype": "tab",
+          "ypos": "8",
+          "priority": "9",
+          "text": "kMenuGRAPHICSAdvanced001",
+          "nextmenu": "advgrph"
+        }
+      }
+    }
+  },
+  "modern_fog_list_binding": {
+    "descriptor": "00556924",
+    "words": [
+      "0053a87c",
+      "005561be",
+      "00000000",
+      "00000000",
+      "006fd1d4"
+    ],
+    "name": "fog",
+    "selection_cell": "006fd1d4",
+    "list_words": [
+      229,
+      228,
+      0
+    ]
+  },
   "limits": [
     "No display or callback execution.",
     "Mode-list nonempty and valid descriptor/item/backup prerequisites are not proved.",

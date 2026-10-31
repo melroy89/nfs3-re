@@ -2,6 +2,7 @@
 import hashlib
 import json
 import subprocess
+import struct
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
@@ -34,6 +35,40 @@ def main():
                 data = pe.get_data(site-0x400000, 5)
                 assert data[0] == 0xe8 and site+5+int.from_bytes(data[1:], 'little', signed=True) == 0x4377c4
             out['binaries'][label]['inspected_fog_gate_direct_calls'] = [f'{site:08x}' for site in sites]
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    def parse(data):
+        sections=[];current=None
+        for line in data.decode('latin1').splitlines():
+            if line.startswith('['):
+                current={'section':line.strip('[]'),'fields':{}};sections.append(current)
+            elif current is not None and '=' in line and not line.startswith(';'):
+                key,value=line.split('=',1);current['fields'][key]=value
+        return sections
+    assets={}
+    for label,relative in [
+        ('official_modern','analysis/captures/modern-differences/upstream/package/fedata/menus/advgrph.mnu'),
+        ('uppercase_backup','nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/ADVGRPH.MNU')]:
+        data=(ROOT/relative).read_bytes()
+        if label=='official_modern':
+            assert data==subprocess.check_output(['7z','x','-so',str(archive),'fedata/menus/advgrph.mnu'])
+        selected=[s for s in parse(data) if s['fields'].get('listname')=='fog']
+        assert len(selected)==(2 if label=='official_modern' else 0)
+        assets[label]={'path':relative,'sha256':hashlib.sha256(data).hexdigest(),
+            'fog_items':selected,'provenance':'Pinned official archive member' if label=='official_modern' else 'Local backup; not authenticated as retail or paired with supplied original EXE'}
+    graphics=subprocess.check_output(['7z','x','-so',str(archive),'fedata/menus/graphics.mnu'])
+    routes=[s for s in parse(graphics) if s['fields'].get('nextmenu')=='advgrph']
+    assert len(routes)==1
+    assets['official_graphics_route']={'member':'fedata/menus/graphics.mnu',
+        'sha256':hashlib.sha256(graphics).hexdigest(),'entry':routes[0]}
+    pe=pefile.PE(str(ROOT/SPECS['official_modern'][0]))
+    descriptor=struct.unpack('<5I',pe.get_data(0x556924-0x400000,20))
+    assert descriptor==(0x53a87c,0x5561be,0,0,0x6fd1d4)
+    assert pe.get_data(0x53a87c-0x400000,4)==b'fog\0'
+    words=struct.unpack('<3H',pe.get_data(0x5561be-0x400000,6));assert words==(229,228,0)
+    out['fog_menu_assets']=assets
+    out['modern_fog_list_binding']={'descriptor':'00556924','words':[f'{x:08x}' for x in descriptor],
+        'name':'fog','selection_cell':'006fd1d4','list_words':list(words)}
     out['limits'] = ['No display or callback execution.', 'Mode-list nonempty and valid descriptor/item/backup prerequisites are not proved.', 'Changed field meanings and helper dependencies prevent inferring whole-menu equivalence.']
     (ROOT / 'analysis/evidence/audits/original-modern-graphics-menu-transition.json').write_text(json.dumps(out, indent=2) + '\n')
     print('PASS: pinned graphics registration, counterpart bodies and Modern helper witnesses')

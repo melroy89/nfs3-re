@@ -71,3 +71,20 @@ Together with restore helper `0043778c`, the new evidence closes the ordinary sh
 Three direct calls to `004377c4` are now independently checked at `00448458`, `00448642` and `0044d2c0`. The latter two witnesses show a related init context and another settings snapshot context; they do not by themselves identify every enclosing menu or prove lifecycle ordering. The first graphics init applies the gate **before** the 64-byte snapshot. The `00448620..00448647` witness takes that snapshot **before** applying the gate. Those orders are observably different and should not be merged into one generic sequence without verifying caller contracts.
 
 The saved pair and the 64-byte snapshot are separate shared storage. All writers, nested menu admission and reentrancy remain unenumerated. A bounded direct-call census from retained disassembly is not proof that indirect callers do not exist. No new target execution or Ghidra edits were made.
+
+## Authored fog controls bind the verified selector
+
+The expanded graphics audit verifies `fedata/menus/graphics.mnu` and `advgrph.mnu` against the pinned official archive. Graphics contains an authored `nextmenu=advgrph` route. Advanced Graphics contains these two controls:
+
+| Section | `codelink` | `listname` | Other relevant authored fields |
+|---|---|---|---|
+| button | `GRAPH_FOG` | `fog` | `buttontype=arrowtab`, ypos1, priority9 |
+| cascade | `GRAPH_FOG_CASCADE` | `fog` | ypos1, priority0, maxvisitem5 |
+
+The two codelinks are exactly the entries processed by the support-gate helper documented above. The descriptor at `00556924` binds name `fog`, list pointer `005561be`, and selector DWORD `006fd1d4`; its list WORDs are `00e5,00e4,0000`. These are two nonzero list entries followed by zero, not five selectable values merely because the authored visible cap is5. Localized labels and input-to-ordinal writes remain separate contracts; no Off/On wording is invented from the numeric IDs here.
+
+The [scene-admission comparison](original-modern-state14.md#modern-scene-entry-recomputes-fog-admission) establishes that `006fd1d4` participates in the bitwise admission computation `007a3a54 & 006fd1d4 & 00559234`. Thus this asset/descriptor/consumer chain connects the fog controls to the setting used by the inspected render path, beyond finding a label in strings. The support gate can disable the controls and clear the selector as already described; scene context and renderer behavior still matter.
+
+For the comparison, local uppercase backup `fedata_org/menus/ADVGRPH.MNU` contains no item with `listname=fog`, while official Modern contains the two above. Both file hashes and selected fields are retained. This backup is **not authenticated as retail or paired to the supplied original executable**; its absence is bounded asset evidence, not proof that no original menu/configuration/command route could affect fog.
+
+**MP150-008 now has partial static support:** a concrete menu route and bound fog-control mechanism are verified in final Modern, with a qualified backup contrast. Complete input dispatch, actual ordinal changes, renderer output and historical introduction remain unverified. No menu, driver, game or new instruction probe was executed, and the established Ghidra project is unchanged.
