@@ -11,7 +11,8 @@ def main():
     capture=ROOT/'analysis/captures/modern-differences/idle-movie';capture.mkdir(parents=True,exist_ok=True)
     result={'kind':'static-idle-movie-comparison','range_end':'exclusive','binaries':{}}
     images={}
-    common=[(0x4960e0,0x4961db),(0x4961e0,0x4961ef),(0x4438b0,0x4438ba)]
+    conversion=[(0x4957a0,0x495852),(0x4df1f0,0x4df2af),(0x4df2b0,0x4df306),(0x4fdc90,0x4fe1c9),(0x4dee80,0x4df1e5)]
+    common=conversion+[(0x4960e0,0x4961db),(0x4961e0,0x4961ef),(0x4438b0,0x4438ba)]
     spans={'original':[(0x496200,0x4962fd),(0x4730d0,0x473169)],'official_modern':[(0x496200,0x4962c2),(0x4a2f90,0x4a2ffc),(0x4a3e3f,0x4a3e6b),(0x4730d0,0x47314d),(0x4f915e,0x4f9184),(0x4f91ec,0x4f9204)]}
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
@@ -32,7 +33,7 @@ def main():
             assert item['file_attribute_import'][0]['name']=='GetFileAttributesA'
         result['binaries'][label]=item
     result['identical_ranges']=[]
-    for start,end in [(0x4960e0,0x496104),(0x496109,0x49616c),(0x4961ab,0x4961db),(0x4961e0,0x4961ef),(0x4438b0,0x4438ba)]:
+    for start,end in conversion+[(0x4960e0,0x496104),(0x496109,0x49616c),(0x4961ab,0x4961db),(0x4961e0,0x4961ef),(0x4438b0,0x4438ba)]:
         raw=images['original'].get_data(start-0x400000,end-start);assert raw==images['official_modern'].get_data(start-0x400000,end-start)
         result['identical_ranges'].append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(raw).hexdigest()})
     result['limits']=['No movies, window interaction or target execution.','No historical intermediate release inspected.','Window activation producer reused from the linked window-handling investigation.','No universal timer-unit or invalid selector-state contract inferred.']

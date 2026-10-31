@@ -52,4 +52,4 @@ Verified: the global's changed units, the directly inspected score arithmetic, d
 
 This score does not prove the game uses SSE instructions for racing physics, measure actual execution speed, change x87 precision policy or establish replay/multiplayer compatibility. Those are separate investigations. No historical release-note entry is marked fully verified merely because this mechanism exists in the final binary.
 
-The [movie admission follow-up](original-modern-idle-movie.md#follow-up-playback-wrapper-relocated-path-and-cpu-tier-input) now identifies the `0049616c` consumer as the wrapper preparing `00495bc0` movie playback. ECX1..3 is passed to playback; its precise decoder/visual-quality meaning remains unverified.
+The [movie admission follow-up](original-modern-idle-movie.md#follow-up-playback-wrapper-relocated-path-and-cpu-tier-input) now identifies the `0049616c` consumer as the wrapper preparing `00495bc0` movie playback. ECX1..3 is passed through frame-buffer setup to display-conversion selector `008ca2cc`; its distinct raster paths are now traced there. Precise filtering and visual-quality acceptance remain unverified.

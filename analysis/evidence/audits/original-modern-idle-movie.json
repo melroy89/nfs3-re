@@ -21,6 +21,41 @@
           "assembly_sha256": "fbc4f1c14a7011f704ada3fea00f49717b7e8de8e09c1fc9be077a8eabef1129"
         },
         {
+          "start": "004957a0",
+          "end": "00495852",
+          "bytes_sha256": "cbd6b1414f4e9d9832b907d0cbae7943fd2ba15f7c811acbc85f47e3147163d9",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-004957a0.asm",
+          "assembly_sha256": "32ec06c59c8bd7a472a9c7549684edc3da3a265a06121e94b027d3ae71a9f007"
+        },
+        {
+          "start": "004df1f0",
+          "end": "004df2af",
+          "bytes_sha256": "064fb4b31d994ee086adc5585d7a250ed4859bce700dce3b4055e67198a29c94",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-004df1f0.asm",
+          "assembly_sha256": "bc1da4a175ab8be4478de57ed6ff4ae8d94e13b664e8a031ef700dd1c94f08a6"
+        },
+        {
+          "start": "004df2b0",
+          "end": "004df306",
+          "bytes_sha256": "f2bdfc6694bf5c690662ad4d18d92a88bf9efc49ecb6cb72c1182baf98632107",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-004df2b0.asm",
+          "assembly_sha256": "c73ecef07b9001bd3d1a175a43da9da17b194b018848898de5ebf1c02614439c"
+        },
+        {
+          "start": "004fdc90",
+          "end": "004fe1c9",
+          "bytes_sha256": "929dc25c7b9eae8fa539d68cfd0ea2355c9e52c3989f989fbcbec568b7b64dea",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-004fdc90.asm",
+          "assembly_sha256": "db798e703b9dac422dba9275c2d0d53fd1d5fd2cbc11a1b543afff888bcf9b2e"
+        },
+        {
+          "start": "004dee80",
+          "end": "004df1e5",
+          "bytes_sha256": "988a352be4bc7191763835957950cdb0cd654bf06c7baf747465f5236b5cfcea",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-004dee80.asm",
+          "assembly_sha256": "071a16ed07628ef916dd98e396fc193ff258a64955855e68e071f84b5a08f4ea"
+        },
+        {
           "start": "004960e0",
           "end": "004961db",
           "bytes_sha256": "55da6162d2ed7df82294acffe040906b08c0dc600615c46fac90bcea9957050e",
@@ -91,6 +126,41 @@
           "assembly_sha256": "419872e5a6c3cd4344feeaa4c4b475782e02c7e2fd6983e7c761946dfeed2995"
         },
         {
+          "start": "004957a0",
+          "end": "00495852",
+          "bytes_sha256": "cbd6b1414f4e9d9832b907d0cbae7943fd2ba15f7c811acbc85f47e3147163d9",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004957a0.asm",
+          "assembly_sha256": "2c437ee36afdd7e7b6f92f843265ace6da354ae414da5b6315bd5524bc7580b2"
+        },
+        {
+          "start": "004df1f0",
+          "end": "004df2af",
+          "bytes_sha256": "064fb4b31d994ee086adc5585d7a250ed4859bce700dce3b4055e67198a29c94",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004df1f0.asm",
+          "assembly_sha256": "8315ab063431fb023a4a0bac1f19f756adefd68f9ab3098f3c173d39bc794aa6"
+        },
+        {
+          "start": "004df2b0",
+          "end": "004df306",
+          "bytes_sha256": "f2bdfc6694bf5c690662ad4d18d92a88bf9efc49ecb6cb72c1182baf98632107",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004df2b0.asm",
+          "assembly_sha256": "cfd95678a970f4fd3d0e1491bfcac5628921b9d25d189d368903c481faa22756"
+        },
+        {
+          "start": "004fdc90",
+          "end": "004fe1c9",
+          "bytes_sha256": "929dc25c7b9eae8fa539d68cfd0ea2355c9e52c3989f989fbcbec568b7b64dea",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004fdc90.asm",
+          "assembly_sha256": "1390441633bf1c83147bffce8fbc10523471a207f9d25bd104cfbd59666a613d"
+        },
+        {
+          "start": "004dee80",
+          "end": "004df1e5",
+          "bytes_sha256": "988a352be4bc7191763835957950cdb0cd654bf06c7baf747465f5236b5cfcea",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004dee80.asm",
+          "assembly_sha256": "15049834a5bbea925a3d7f5fd12763561ee2056c928ba563d13dd857ddd2bb3e"
+        },
+        {
           "start": "004960e0",
           "end": "004961db",
           "bytes_sha256": "a03311270cc23622c0dffad0307e3a3262a8c46ff66d95058acdeb910fa153ae",
@@ -145,6 +215,31 @@
     }
   },
   "identical_ranges": [
+    {
+      "start": "004957a0",
+      "end": "00495852",
+      "sha256": "cbd6b1414f4e9d9832b907d0cbae7943fd2ba15f7c811acbc85f47e3147163d9"
+    },
+    {
+      "start": "004df1f0",
+      "end": "004df2af",
+      "sha256": "064fb4b31d994ee086adc5585d7a250ed4859bce700dce3b4055e67198a29c94"
+    },
+    {
+      "start": "004df2b0",
+      "end": "004df306",
+      "sha256": "f2bdfc6694bf5c690662ad4d18d92a88bf9efc49ecb6cb72c1182baf98632107"
+    },
+    {
+      "start": "004fdc90",
+      "end": "004fe1c9",
+      "sha256": "929dc25c7b9eae8fa539d68cfd0ea2355c9e52c3989f989fbcbec568b7b64dea"
+    },
+    {
+      "start": "004dee80",
+      "end": "004df1e5",
+      "sha256": "988a352be4bc7191763835957950cdb0cd654bf06c7baf747465f5236b5cfcea"
+    },
     {
       "start": "004960e0",
       "end": "00496104",

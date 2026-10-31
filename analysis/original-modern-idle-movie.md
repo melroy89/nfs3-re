@@ -64,6 +64,30 @@ The paired **`004960e0..004961db`** wrapper envelope is now retained. Both versi
 
 The directory source operand at **`00496104`** changes from original **`007a32b4`** to Modern **`007a2cb4`**. Aside from that operand byte, the prefix through `0049616c` is byte-identical; the suffix `004961ab..004961db` is also identical. Modern later uses the old address `007a32b4` as its RNG state, documented in the [playlist report](original-modern-music-selection.md#modern-playlist-seeding-and-race-load-update-placement). This is a concrete global-storage reuse, not evidence of a shared path/RNG union in either single version. The buffer contents and all initialization writes are not reconstructed by this operand comparison alone.
 
-The middle block changes its interpretation of **`005652a4`**. Original compares it with133,000,000 and200,000,000 to choose ECX1,2,3; below the first threshold it also forces local field+7eh to1. Modern computes the signed value minus1, clamps ECX to1..3 and forces that local field when the unclamped result is at most1. The existing [CPU-tier analysis](original-modern-cpu-tier.md) verifies the producer changing from a frequency-like estimate to a small feature/family score. This identifies the formerly unnamed second consumer as the movie wrapper’s ECX playback input; actual visual-quality/decoder interpretation of that parameter remains unverified. It offers partial static support for **MP100-019** without claiming a measured improvement or historical introduction proof.
+The middle block changes its interpretation of **`005652a4`**. Original compares it with133,000,000 and200,000,000 to choose ECX1,2,3; below the first threshold it also forces local field+7eh to1. Modern computes the signed value minus1, clamps ECX to1..3 and forces that local field when the unclamped result is at most1. The existing [CPU-tier analysis](original-modern-cpu-tier.md) verifies the producer changing from a frequency-like estimate to a small feature/family score. This identifies the formerly unnamed second consumer as the movie wrapper’s ECX playback input; its downstream display-conversion use is traced below, while visual-quality acceptance remains unverified. It offers partial static support for **MP100-019** without claiming a measured improvement or historical introduction proof.
 
 Remaining work: precise original rating accuracy, decoder consumption of ECX/local field, producers and complete semantics of `007a1fdc`, and runtime movie acceptance. No new game, decoder or instruction probes were run.
+
+## Follow-up: CPU tier reaches display conversion, with unchanged consumers
+
+The audit now retains and verifies byte equality for five complete downstream bodies:
+
+| Body | Role established by the inspected instructions |
+|---|---|
+| `004957a0..00495852` | Store dimensions/placement, allocate frame-buffer slots and forward display setup arguments |
+| `004df1f0..004df2af` | Store display inputs and conversion selector; choose presentation backend mode |
+| `004df2b0..004df306` | Dispatch presentation, including raster conversion fallback |
+| `004dee80..004df1e5` | Surface presentation and destination-rectangle construction |
+| `004fdc90..004fe1c9` | Clipped raster conversion with selector-specific branches |
+
+In the movie body, the incoming tier ECX is saved at `[EBP−30h]`. At **`00495cf5..00495cf8`** it is pushed as the third stack argument to `004957a0`; the immediately preceding first argument is literal6, the number of frame-buffer slots. Distinguishing these stack positions avoids misidentifying tier1..3 as the slot count. With that callee’s three-register prologue, the tier is at **`[EBP+18h]`**, while the literal6 is at `[EBP+10h]`.
+
+`004957a0` forwards tier as the first stack argument to `004df1f0`. There it is loaded from **`[EBP+10h]`** at `004df202` and stored to **`008ca2cc`** at `004df233`. The second stack argument controls a separate backend-capability check. The tier is therefore a stored display-conversion input; it is not consumed by this setup chain as a frame-duration or frame-skip interval.
+
+On raster fallback, `004df2b0` reads `008ca2cc` at `004df2d6`, pushes it, then pushes the stored height and calls `004fdc90` at `004df2f5`. The converter’s large local frame places the selector at **`[ESP+0xa5c]`**. It accepts0,1,2,3, selecting scale factor1 for0 and2 for1..3; unsupported values return−1. The 15/16-bit destination-format gate is separate and can return−2.
+
+After clipping, nonzero selector3 takes a distinct row-processing branch at `004fdee9`, while selectors1/2 share the branch at `004fe06e`; selector2 additionally enters the pass gated at `004fe0d0`. Mode3 calls `004fd892` and `004fd61c` on its shown row path; the shared1/2 branch calls `004fd6ef`. The mathematical filtering performed by those leaf routines is not reconstructed here, so these modes are not given guessed labels such as nearest-neighbor or bilinear.
+
+The surface path also reads this same selector at `004def55` and `004df0c7`, choosing multiplier1 forzero and2 fornonzero when building destination extents. Ordinary movie tiers1..3 therefore share that size multiplier even though their raster processing branches differ. Surface-driver acceptance and the exact choice between backend paths remain outside this static mode mapping.
+
+**Result:** the changed original-frequency/Modern-score policy selects a display-conversion mode through an otherwise byte-identical downstream chain. This narrows MP100-019’s mechanism, while original rating accuracy, actual raster-filter quality, driver behavior and measured visual improvement remain unresolved. No decoder quality, cadence or pixel-equivalence claim follows solely from the tier numbers.
