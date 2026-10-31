@@ -115,6 +115,17 @@ def main():
         'runtime_base': '00604ee0', 'runtime_stride': 188,
         'compass_runtime_bit_address': '00604ee0 + 188*entry_index + 4',
         'limit': 'Copies188 bytes from selected registry template;64-byte adjacent-prefix witnesses do not establish complete source object sizes or later field overwrites.'}
+    copied_sources = []
+    for start in (0x557a04,0x557a44):
+        paired = {label: pe.get_data(start-0x400000,188) for label,pe in images.items()}
+        offsets = [i for i,(a,b) in enumerate(zip(paired['original'],paired['official_modern'])) if a != b]
+        assert offsets == [0x557a49-start]
+        copied_sources.append({'source': f'{start:08x}', 'bytes': 188,
+            'baselines': {label: {'hex': data.hex(), 'sha256': hashlib.sha256(data).hexdigest()}
+                          for label,data in paired.items()},
+            'changed_offsets': offsets, 'changed_source_va': '00557a49'})
+    out['overlapping_copy_sources'] = {'sources': copied_sources,
+        'limit': 'Changed source byte enters InteriorBx runtime offset45h and Compass offset05h on this copy path; later overwrites/consumers and intended source schema unresolved.'}
     archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     archive_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     assert archive_sha == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
