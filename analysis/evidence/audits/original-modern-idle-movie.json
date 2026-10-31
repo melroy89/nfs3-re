@@ -14,6 +14,20 @@
           "assembly_sha256": "dac7182fb1c31acd126b276a8d994109dbcabd8e635d14e68551960ecfc28b60"
         },
         {
+          "start": "004730d0",
+          "end": "00473169",
+          "bytes_sha256": "53e0f704b8e80fa7d6806c72836edfa2d60cc3ba147b96ffc2bc79ed19d407e9",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-004730d0.asm",
+          "assembly_sha256": "fbc4f1c14a7011f704ada3fea00f49717b7e8de8e09c1fc9be077a8eabef1129"
+        },
+        {
+          "start": "004960e0",
+          "end": "004961db",
+          "bytes_sha256": "55da6162d2ed7df82294acffe040906b08c0dc600615c46fac90bcea9957050e",
+          "assembly": "analysis/captures/modern-differences/idle-movie/original-004960e0.asm",
+          "assembly_sha256": "6cd3077a237e9e120f3c87e9864d661de87cc55620719cd0a39f8a96660782eb"
+        },
+        {
           "start": "004961e0",
           "end": "004961ef",
           "bytes_sha256": "4f22df2a0e91dfc56c36f3d1c77d7f653ccfb44b7084df72dd7595db8c935af4",
@@ -27,7 +41,8 @@
           "assembly": "analysis/captures/modern-differences/idle-movie/original-004438b0.asm",
           "assembly_sha256": "6d45349ebe4c43aa8f162fca4b021789441089584679a95ceb8e7b4ae77b3903"
         }
-      ]
+      ],
+      "movie_directory_buffer": "007a32b4"
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -48,11 +63,18 @@
           "assembly_sha256": "32f7a3bb23af490d7820f2710caa4e0c857735830e6710ab5db775b1ab187055"
         },
         {
-          "start": "004a3e66",
+          "start": "004a3e3f",
           "end": "004a3e6b",
-          "bytes_sha256": "96caa7091da8382622587ddad6c255eea3466b73264d325c6e0f75cd24e4119f",
-          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004a3e66.asm",
-          "assembly_sha256": "43b572f3b986bd3437629e6e78282c04d9c8ae6e8ec3493ee87a265b7ea14b71"
+          "bytes_sha256": "86d41655d2e942eab821a865a5f5a878299eac1d04180766117a7670e8a5faaf",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004a3e3f.asm",
+          "assembly_sha256": "652c8a2291924710484444a5227f44924c027dcb86223f5b09fc7bb5991fa4fa"
+        },
+        {
+          "start": "004730d0",
+          "end": "0047314d",
+          "bytes_sha256": "6a8b814d99d507a37601b0f63a9309e3e5340389ee3cc37d6f43054aff544233",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004730d0.asm",
+          "assembly_sha256": "533a20edad0d9e5522a2a129bdcf9d3fe8c270404dc73a93afcbc5c60fe9de18"
         },
         {
           "start": "004f915e",
@@ -69,6 +91,13 @@
           "assembly_sha256": "419872e5a6c3cd4344feeaa4c4b475782e02c7e2fd6983e7c761946dfeed2995"
         },
         {
+          "start": "004960e0",
+          "end": "004961db",
+          "bytes_sha256": "a03311270cc23622c0dffad0307e3a3262a8c46ff66d95058acdeb910fa153ae",
+          "assembly": "analysis/captures/modern-differences/idle-movie/official_modern-004960e0.asm",
+          "assembly_sha256": "a0db62bd1e04df52df33040668e8c2e2c6ad16556cc971c6046f0cb3c8b7b4d5"
+        },
+        {
           "start": "004961e0",
           "end": "004961ef",
           "bytes_sha256": "4f22df2a0e91dfc56c36f3d1c77d7f653ccfb44b7084df72dd7595db8c935af4",
@@ -83,6 +112,7 @@
           "assembly_sha256": "6ec87cc5f418d8df8b5c855e6b39fb4a5c93d40d16aea9bbbe1b453cb16eeb5b"
         }
       ],
+      "movie_directory_buffer": "007a2cb4",
       "movie_name_table_004961f0": [
         {
           "index": 0,
@@ -115,6 +145,21 @@
     }
   },
   "identical_ranges": [
+    {
+      "start": "004960e0",
+      "end": "00496104",
+      "sha256": "000fadb8235497cc187fd1d97e82417d8c213b735d3e596008ece34cef7ac8df"
+    },
+    {
+      "start": "00496109",
+      "end": "0049616c",
+      "sha256": "1b789fd9d0276ffd2cd4bf68ea97cdfe638540787ae58112c61dd83623bb7fd2"
+    },
+    {
+      "start": "004961ab",
+      "end": "004961db",
+      "sha256": "d91769e9d804eac58f9cb2535109db4f59f6a3b4c99f6cd461e1bcfe4f78679e"
+    },
     {
       "start": "004961e0",
       "end": "004961ef",
