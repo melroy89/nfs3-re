@@ -390,6 +390,8 @@ The [widget registration correction](original-modern-common-menu-buttons.md#type
 
 The [cascade-specific follow-up](original-modern-common-menu-buttons.md#cascade-cap-reaches-its-own-effective-count-and-layout-fields) now traces type11h callbacks and the correct cap0x54→effective0x56→layout-extent chain. The nine authored increases have a registered local consumer; list population, active assets and visible row counts remain unverified. This evidence is separate from the droplist chain corrected above.
 
+The [cascade input comparison](original-modern-common-menu-buttons.md#cascade-input-changes-beyond-the-cap-calculation) covers changed bytes across the handler envelope, including reordered opening sound, merged close paths and navigation sound/action-code changes. The higher dispatcher meaning and audible result remain unresolved.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

@@ -173,3 +173,16 @@ The [complete cascade layout helper](original-modern-car-alias.md#complete-00462
 | 10→16 | 165→258 |
 
 These are internal WORD arithmetic results, not measured physical pixels. Shorter lists can produce different effective counts; cap defaults, callback timing and expanded state also matter. Active file selection, parser section admission, actual list population and callback invocation remain unobserved. This closes the **registered local field/consumer chain**, not the rendered outcome or historical release attribution. No game instructions were executed.
+
+## Cascade input changes beyond the cap calculation
+
+The paired audit now covers input envelope **`004624a0..004628c8`**. Original’s last RET is`004628c0`; Modern extends the final navigation path with a JMP at`004628c3` to a reused return/sound tail. The manifest enumerates every differing byte and asserts coverage by five half-open regions: `004624d2..004624d7`, `00462509..00462525`, `004625b6..004625c0`, `00462658..004626bf`, `004628b7..004628c8`. The envelope includes original alignment bytes after its last RET; it is not a claim that those bytes were executable original handler instructions.
+
+The local changes are broader than sound-call relocation:
+
+- **Closed input admission:** both test Enter`0dh` and right-arrow code`4d00h`. Original’s other-key path jumps directly to the ordinary return tail`004628b7`; Modern routes it to`004626af`. These local no-action paths return the saved local result without entering opening logic.
+- **Opening:** original requests sound selector1 through`004181d0` before setting expanded WORD+`0x42` and performing layout/cursor work. Modern removes that early request, retains opening work, then jumps from`004625b6` to the shared sound1 tail`004626a5`. The request therefore moves after layout/cursor work. Audible output and helper failure effects are not measured.
+- **Commit/close:** original has duplicated sound1/close/layout/return sequences. Modern writes the selected index through the lookup-provided output pointer, then joins the common close path`00462691`: clear expanded WORD+`0x42`, call layout`004628d0`, store result local2, request sound1, return that local. The descriptor/selection admission tests preceding this region remain separate from assuming every key commits.
+- **Expanded navigation tail:** after cursor helper`0049bfc0`, original returns the existing local result. Modern explicitly stores result2, loads EAX0 and jumps to the shared sound-call instruction`004626aa`. This adds a local sound0 request and changes how the returned action code is assigned. The meaning of result2 in the higher dispatcher remains unresolved.
+
+Original sound sites explicitly prepare EDX127; Modern’s shared requests do not reproduce that preparation locally. The sound helper’s actual register contract and configuration-dependent output must be read from its own research before treating selector equality as full call-state equality. The cap minimum and most navigation arithmetic are unchanged in this envelope, but callback return codes and side-effect ordering are reconstruction-relevant differences. No key, sound or layout code was executed.

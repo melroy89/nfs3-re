@@ -54,7 +54,7 @@ def main():
         result.setdefault('widget_type_bindings',{})[label]=bindings
         spans=[]
         capture=ROOT/'analysis/captures/modern-differences/menu-visible-counts';capture.mkdir(parents=True,exist_ok=True)
-        for start,end in [(0x4623a0,0x46249b),(0x4624a0,0x4624fa),(0x449060,0x4490d8),(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
+        for start,end in [(0x4623a0,0x46249b),(0x4624a0,0x4628c8),(0x449060,0x4490d8),(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             spans.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT))})
         assert struct.unpack('<I',pe.get_data(0x4921c,4))[0]==0x4492aa
@@ -72,6 +72,14 @@ def main():
         assert pe.get_data(0x464038-0x400000,6)==bytes.fromhex('8b55fac1fa10')
         result.setdefault('field_writer_spans',{})[label]=spans
         result['binary_field_descriptors'][label]={'path':relative,'sha256':expected,'rows':rows}
+    cascade_images=[]
+    for label in ('original','official_modern'):
+        relative=SPECS[label][0];pe=pefile.PE(data=(ROOT/relative).read_bytes())
+        cascade_images.append(pe.get_data(0x624a0,0x428))
+    cascade_changes=[0x4624a0+i for i,(a,b) in enumerate(zip(*cascade_images)) if a!=b]
+    cascade_regions=[(0x4624d2,0x4624d7),(0x462509,0x462525),(0x4625b6,0x4625c0),(0x462658,0x4626bf),(0x4628b7,0x4628c8)]
+    assert all(any(lo<=address<hi for lo,hi in cascade_regions) for address in cascade_changes)
+    result['cascade_input_difference_coverage']={'start':'004624a0','end_exclusive':'004628c8','original_last_ret':'004628c0','modern_last_jump':'004628c3','changed_addresses':[f'{v:08x}' for v in cascade_changes],'covering_regions':[[f'{lo:08x}',f'{hi:08x}'] for lo,hi in cascade_regions],'scope':'Envelope includes internal/reused tails and original alignment bytes after its last RET; no runtime claim.'}
     initializer_hashes=[next(row['sha256'] for row in result['field_writer_spans'][label] if row['start']=='004623a0') for label in ('original','official_modern')]
     assert initializer_hashes[0]==initializer_hashes[1]
     changed=[0x464560+i for i,(a,b) in enumerate(zip(layout_bodies['original'],layout_bodies['official_modern'])) if a!=b]
