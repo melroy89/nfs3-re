@@ -18,6 +18,7 @@ def main():
         spans = [(0x441cb0, 0x44236c), (0x437820, 0x4378b6)]
         if label == 'official_modern':
             spans += [(0x4f1f58, 0x4f1f88), (0x4f26a0, 0x4f270e), (0x4f2710, 0x4f2736)]
+        spans += [(0x44240c, 0x442448)]
         spans += [(0x4ef1e0, 0x4ef26f), (0x4f2620, 0x4f269f), (0x4f2560, 0x4f261b),
                   (0x5102a4, 0x5102ef), (0x5102f0, 0x5103ff), (0x510400, 0x510416)]
         rows = []
@@ -31,6 +32,12 @@ def main():
         row = {'path': relative, 'sha256': expected, 'spans': rows,
                'switch_table_first_five': [f'{a:08x}' for a in struct.unpack('<5I', pe.get_data(0x41c90,20))],
                'record_75_words': [f'{a:08x}' for a in struct.unpack('<4I',pe.get_data(0x155c08,16))]}
+        records = [struct.unpack('<4I',pe.get_data(0x155758+16*i,16)) for i in range(77)]
+        sentinel = next(i for i, words in enumerate(records) if words[1] == 0)
+        assert sentinel == 76
+        row['first_zero_offset4_sentinel_index'] = sentinel
+        row['last_text_page_and_sentinel'] = {str(i): [f'{x:08x}' for x in records[i]] for i in (74,75,76)}
+        row['page_table_0_through_sentinel_sha256'] = hashlib.sha256(pe.get_data(0x155758,77*16)).hexdigest()
         if label == 'official_modern':
             row['resource_loader_imports'] = {f'{i.address:08x}': i.name.decode()
                 for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports

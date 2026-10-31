@@ -61,3 +61,19 @@ For inspected payload prefix `10 fb`, the format dispatcher accepts byte1=fb and
 Shape lookup `004ef1e0` reads a directory count from object+8, compares the requested four-byte tag against eight-byte entries beginning at object+10h, and on a match returns `object + relativeOffset` from the matched entry+4. Missing-tag handling can invoke diagnostics under `0056440c`, then returns zero on a normal returning failure path. The caller reads shape dimensions without a local zero-result guard. Directory count/offset bounds are trusted in this helper; it is not a length-checked container parser.
 
 Thus Modern's new resource-page route reuses retained unpack/shape machinery for an added payload and record representation. This narrows the code delta but does not establish allocation bounds across the decoder, actual expanded bytes, presence of `cred`, visible output or equivalent behavior under every failure policy. Remaining next evidence is offline payload validation and runtime selection/rendering within the stated scope; neither was performed here.
+
+## Page-table scheduling and text consolidation
+
+The paired manifest now records the last two page records, sentinel and full table-span hash. In **both** binaries, the first record whose +4 field is zero is index **76**; indices 0..75 therefore form the observed sentinel-scanned page set. This is a file-backed table observation, not an invariant against runtime mutation.
+
+| Record | Original | Modern |
+|---:|---|---|
+| 74 | Type 3, localized inclusive range `46ah..46eh` (1130..1134) | Type 3, range `46ah..475h` (1130..1141) |
+| 75 | Type 3, localized inclusive range `470h..475h` (1136..1141) | Type 5, `ABOUT.QFS` / `cred` |
+| 76 | Zero sentinel | Zero sentinel |
+
+Modern thus extends the preceding text page and repurposes the last page slot; it does **not** simply append a 77th page. The new inclusive record-74 range also includes ID `46fh` (1135), which was between the two original ranges. Its actual text must be inspected before describing the visual effect of that consolidation.
+
+Helper `0044240c` scans the +4 sentinel field from index zero and returns the last nonzero-field index. Reset `00442428` calls it, stores the result into both `00555c34` and selected index `00555c28`, clears state `005f40c0`, stores literal 63 to `00555c30` and returns. With the inspected table unchanged, this computes **75** and selects Modern's resource record. This connects data layout to a selection producer; the reset caller, subsequent state machine and displayed pixels are not exercised here.
+
+Catalog **MP100-047**, “About slide was added to Credits,” is now **partially supported by static evidence**: the named resource, new type-5 rendering arm, repurposed last slot and reset selection are traced. The original/final pair cannot establish introduction in v1.0.0, navigation behavior, successful decoding or the displayed content. Those limits remain explicit rather than treating the catalog entry as wholly verified.

@@ -21,6 +21,13 @@
           "assembly_sha256": "764aaf5a8236a982a46c094c135d146196f1d3d7201648196ef5dffa5a86a506"
         },
         {
+          "start": "0044240c",
+          "end": "00442448",
+          "bytes_sha256": "b758224fd2ea72f4f00801a35639973ad151ed6ed32964353e9d58c0a7898d98",
+          "assembly": "analysis/captures/modern-differences/frontend-page/original-0044240c.asm",
+          "assembly_sha256": "07b0201988a91000811b5374dd9d2d6618fc421f2130e40f8fe52cc3860e9c26"
+        },
+        {
           "start": "004ef1e0",
           "end": "004ef26f",
           "bytes_sha256": "11a98a1a61026986b8ca983917babbe7186f13ca3204e295635cc5c390e75414",
@@ -75,7 +82,29 @@
         "00000470",
         "00000475",
         "00000000"
-      ]
+      ],
+      "first_zero_offset4_sentinel_index": 76,
+      "last_text_page_and_sentinel": {
+        "74": [
+          "00000003",
+          "0000046a",
+          "0000046e",
+          "00000000"
+        ],
+        "75": [
+          "00000003",
+          "00000470",
+          "00000475",
+          "00000000"
+        ],
+        "76": [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00000000"
+        ]
+      },
+      "page_table_0_through_sentinel_sha256": "f643100af3e6c5d2515c8aa970b7a3f10aad734b2c765e0d4bd2487878e42b9a"
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -115,6 +144,13 @@
           "bytes_sha256": "e7245d4799a1ebfcb47f4969a7887e9ea14c6de1e301d85082c74ebcf54437aa",
           "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-004f2710.asm",
           "assembly_sha256": "2eb4e70e91f40f6834c93319e0be4ea8b99d4bd971358e7acadd57ed4d163145"
+        },
+        {
+          "start": "0044240c",
+          "end": "00442448",
+          "bytes_sha256": "0b0b9541f2a1563d3c2d3b4565441d1ca19f96cd86f279cc124fd777886a0797",
+          "assembly": "analysis/captures/modern-differences/frontend-page/official_modern-0044240c.asm",
+          "assembly_sha256": "d4534a0246eb465921615416110b8f26d29106e5300e94fc065950a97a760b23"
         },
         {
           "start": "004ef1e0",
@@ -172,6 +208,28 @@
         "0053f7e0",
         "00000000"
       ],
+      "first_zero_offset4_sentinel_index": 76,
+      "last_text_page_and_sentinel": {
+        "74": [
+          "00000003",
+          "0000046a",
+          "00000475",
+          "00000000"
+        ],
+        "75": [
+          "00000005",
+          "0053f7d4",
+          "0053f7e0",
+          "00000000"
+        ],
+        "76": [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00000000"
+        ]
+      },
+      "page_table_0_through_sentinel_sha256": "5cada50f2824578d53a3dbb33aec581cd3eebac219f583335c943e08feaedf71",
       "resource_loader_imports": {
         "0053453c": "FindResourceA",
         "00534540": "LoadResource",
