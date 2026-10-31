@@ -33,13 +33,26 @@ No additional game execution, instruction probes, toolchain work, C reconstructi
 - [x] [Relocation differences](original-modern-relocation-index.md) account for added/removed sites, changed shared operands and exact directory-size changes; loader behavior remains untested.
 - [x] [Resource payload comparison](original-modern-pe-resources.md) covers all three executable baselines, retained/added icons, media resources and manifests; shell selection and displayed results remain untested.
 - [x] [Packaged x87 inventory](original-modern-packaged-x87.md) pins all11 DLL members and distinguishes linear-decoding candidates from the verified DX8 rounding helpers and bounded caller. It is not an original/Modern DLL comparison.
-- [x] [Selected local DLL inventory](original-modern-dll-candidates.md) pins legacy-style candidates and official matching wrappers, export names and static imports; retail provenance and function-level correspondence remain unresolved.
+- [x] [Selected local DLL inventory](original-modern-dll-candidates.md) pins legacy-style candidates and official matching wrappers, export names and static imports; retail provenance remains unresolved; bounded Voodoo descriptor/mode-producer comparisons are now documented, while full functional correspondence and rendering remain unverified.
 - [x] All12 original entries overlapping the largest removed startup NOP span have an [entry-by-entry research handoff](original-modern-outside-function-index.md#largest-removed-startup-span-entry-by-entry-handoff), with checked report addresses and explicit remaining boundaries. This is classification/navigation, not complete semantic coverage.
 - [ ] Every changed instruction/data/asset/DLL mechanism independently explained: still incomplete.
 - [ ] Historical introduction claims established from intermediate release pairs: still incomplete.
 - [ ] Original/Modern runtime, replay, multiplayer and visual equivalence established: not run by this static audit.
 
 The catalog now links MP161-011 to the verified video-mode refactoring as **partial** support. The final pair cannot date that mechanism to v1.6.1, and both versions already test mode-call failure; neither an introduction date nor newly added failure handling is implied. The documentation handoff is usable now, while the persistent broader investigation remains incomplete. Do not turn the checked inventory items into a whole-game completion claim.
+
+## Latest bounded findings and review
+
+The recent static audits were rerun successfully after the following findings were committed:
+
+| Evidence route | Added finding | Remaining boundary |
+|---|---|---|
+| [Startup requirements](original-modern-startup-requirements.md) | Removed corruption diagnostic, texture-resource log, DirectDraw capability probe and installation/media admission helpers; exact bodies/tables and caller branches retained. | Complete termination, path/resource helpers, provider behavior and historical attribution remain incomplete. |
+| [Worker/shutdown](original-modern-input-worker.md#complete-shutdown-envelope-around-the-worker-change) | Complete original/Modern shutdown call order, local x87-reset removal, original no-op and hook-cleanup behavior. | All teardown ownership and actual completion/synchronization unverified. |
+| [Voodoo candidate pair](original-modern-dll-candidates.md) | Descriptor setup, dynamic sorted mode producer, extra published slot and resolver-backed Glide dependencies. | Legacy provenance, final slot ownership, provider contracts and rendering unverified. |
+| [Logo producer](original-modern-frontend-page.md#logo-state-producer-preserves-eax-two-callers-discard-its-working-value) | Additional EAX preservation; both inspected producer callers overwrite the working result before use. | Other callers, memory outputs, flags and x87 equivalence not established. |
+
+Reproduction commands are `python3 analysis/scripts/audit_startup_requirement_difference.py`, `audit_input_worker_difference.py`, `audit_voodoo_about_setup.py` and `audit_model_presence_difference.py` (all scripts under `analysis/scripts/`). Each pins its target identity and retains exact static witnesses. Successful execution means those assertions/captures reproduce; it is not target execution or independent whole-game equivalence. No evidence label is upgraded from runtime-unverified to verified runtime by this review.
 
 ## Prioritized remaining work
 
