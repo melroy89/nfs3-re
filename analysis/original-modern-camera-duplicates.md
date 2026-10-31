@@ -16,7 +16,7 @@ The 132 comparison bytes `0045d7ae..0045d832` are byte-identical between version
 
 ## New cleanup on the registered transition path
 
-Both transition callbacks derive a menu entry from the incoming context and inspect entry type5 plus token match against `CANCEL_CAMERA_OPTIONS`. The matching Cancel branch restores saved state and bypasses the normal continuation. Their restore implementations differ: original explicitly copies saved cells to camera globals, while Modern uses four MOVSD instructions and also restores `006fd1cc`. Complete snapshot-source meaning and lifetime are not established as equivalent here.
+Both transition callbacks derive a menu entry from the incoming context and inspect entry type5 plus token match against `CANCEL_CAMERA_OPTIONS`. The matching Cancel branch restores saved state and bypasses the normal continuation. Their restore implementations differ: original explicitly copies saved cells to camera globals, while Modern uses four MOVSD instructions and also restores `006fd1cc`. The follow-up below resolves exact snapshot pairings; complete semantic meaning, lifetime and caller register expectations remain unqualified.
 
 On the other branch, original proceeds directly to retained call `00472300` at `0045da49`. Modern instead reaches newly inserted `CALL 0045d7ad` at `0045da44`, then falls through to that same call. The branch displacements at `0045da0c` and `0045da1d` are retargeted to include the new cleanup. The full tail `0045da49..0045daa4` (91 bytes) is byte-identical, including the existing update calls and return sequence.
 
@@ -27,3 +27,23 @@ This closes the missing local mechanism behind the bypass claim: normalization i
 The helper checks the four DWORDs `006fbba8/ac/b0/b4` in priority order and clears later matching entries to zero. It does not exclude zero from comparisons and does not guarantee four distinct raw values. Its relevant established effect is removal of later repeated **nonzero** choices under the ordered comparisons; zeros may remain or be introduced repeatedly. Intended meaning of zero and every choice's localized label are separate data contracts.
 
 **MP151-002: partial static support.** The original completion-path checks, extracted register-preserving helper and added non-Cancel transition call are verified. Universal duplicate-free saving, exact named-button reachability, runtime behavior and introduction in v1.5.1 are unverified. No camera selection was changed, and no executable, Ghidra, raw export or maintained C was modified.
+
+## Complete initializer and paired Cancel snapshot layout
+
+The expanded audit now records complete initializer counterparts **original`0045d920..0045d995`** (117 bytes), **Modern`0045d920..0045d965`** (69), exclusive ends, in addition to the already retained transition callback. Their live-to-shadow maps are:
+
+| Live DWORD | Original shadow | Modern shadow |
+|---|---|---|
+| `006fbba8` | `006788fc` | `006788f0` |
+| `006fbbac` | `006788f4` | `006788f4` |
+| `006fbbb0` | `006788f8` | `006788f8` |
+| `006fbbb4` | `006788f0` | `006788fc` |
+| `006fd1cc` | No local snapshot here | `0066468c` |
+
+Original Cancel restores each of its four values through explicit loads/stores. Modern initializes the contiguous four-DWORD shadow with MOVSD and Cancel copies that shadow back with four MOVSD instructions, then restores006fd1cc from0066468c. Under the expected clear direction flag, both versions’ own save/restore pairs preserve the four choice values; the changed shadow layout cannot be mixed across versions. Modern additionally rolls back006fd1cc on the matched Cancel path. No atomicity, reentrancy, saved-state lifetime or exclusion of intervening writers is proved by these local copies.
+
+Modern initializer adds the Race Now policy call, retains the same binary32 argument bits3f19999ah (approximately0.6) to`00451530` and binds the same action callback`0045d840` to token`escape`, whose string location changes. It removes original’s separate`assists` lookup and language-ID196h text-pointer store in this initializer. This is a local setup change, not proof that every assists control disappears.
+
+The Cancel MOVSD path has an additional register contract: it explicitly writes ESI/EDI and advances them to **ESI00678900 / EDI006fbbb8** after four forward copies. The transition callback saves only EBX/EDX/EBP, and its shared epilogue`0045da9e..0045daa4` clears EAX then restores those three registers; it does **not** restore ESI/EDI. The initializer’s PUSHAD/POPAD does restore its own general registers, so these two routines must not be assigned one generic preservation rule. Actual caller reliance on the Cancel outputs remains unresolved; no ABI defect or runtime failure is asserted.
+
+This narrows the earlier snapshot-layout unknown and records a required reconstruction contract. Complete choice labels, generic lifecycle, remaining aliases and runtime Cancel/persistence behaviour remain unverified. No setting, callback or target instruction was executed.

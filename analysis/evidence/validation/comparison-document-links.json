@@ -18,7 +18,7 @@
     },
     {
       "path": "analysis/original-modern-camera-duplicates.md",
-      "sha256": "7280634be621709b559bf8826c03deb35953dd66f4cf93a078834e9e93a0c1b6",
+      "sha256": "42a4f21b75a3feea91242b1bff05b528990cbfddd74e4c50f6db0570cf11d8b1",
       "relative_links": 4
     },
     {
@@ -308,8 +308,8 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "3b64e8bdcab31f1d4be039bc6363c4cb56c5c0e7262cb1e05b9c193a6459300c",
-      "relative_links": 53
+      "sha256": "a76bda907550237b024e8a5f85344cea6b4df6d386e16500d8fa4a3d4badf686",
+      "relative_links": 54
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
@@ -583,7 +583,7 @@
     }
   ],
   "file_count": 116,
-  "relative_link_count": 1669,
+  "relative_link_count": 1670,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -121,6 +121,69 @@
     "end_exclusive": "0045daa4",
     "sha256": "66776965280b366bacd83f2efd857ba5373d9b1f175e328698114efcb7ca17cf"
   },
+  "camera_snapshot_layout": {
+    "original_pairs": [
+      [
+        "006fbba8",
+        "006788fc"
+      ],
+      [
+        "006fbbac",
+        "006788f4"
+      ],
+      [
+        "006fbbb0",
+        "006788f8"
+      ],
+      [
+        "006fbbb4",
+        "006788f0"
+      ]
+    ],
+    "modern_pairs": [
+      [
+        "006fbba8",
+        "006788f0"
+      ],
+      [
+        "006fbbac",
+        "006788f4"
+      ],
+      [
+        "006fbbb0",
+        "006788f8"
+      ],
+      [
+        "006fbbb4",
+        "006788fc"
+      ]
+    ],
+    "modern_extra_pair": [
+      "006fd1cc",
+      "0066468c"
+    ],
+    "complete_initializers": {
+      "original": {
+        "entry": "0045d920",
+        "end_exclusive": "0045d995",
+        "hex": "51525589e589c1689a99193fe8ff3bffffa1a8bb6f00a3fc886700a1acbb6f00a3f4886700a1b0bb6f00a3f8886700a1b4bb6f00baeca75300a3f088670089c8e8db50feff85c07407c7406440d84500baf4a7530089c8e8c450feff89c185c0740db896010000e8c43e070089413c31c05d5a59c3",
+        "sha256": "07654fe32bfb7962f4c1a3cda12ee4efd822df43051b4f397a016650f68c0883"
+      },
+      "official_modern": {
+        "entry": "0045d920",
+        "end_exclusive": "0045d965",
+        "hex": "6089c1e8ec9cfdff689a99193fe8fe3bffffbabc8f530089c8e80251feff85c07407c7406440d84500bea8bb6f00bff0886700a5a5a5a5a1ccd16f00a38c4666006131c0c3",
+        "sha256": "f3427190894c7443b32143d8f4b137f6910c24e1fec750b106e5ee8741554ffa"
+      }
+    },
+    "modern_cancel_restoration_hex": "bef0886700bfa8bb6f00a5a5a5a5a18c466600a3ccd16f00eb65",
+    "modern_cancel_epilogue_hex": "31c05d5a5bc3",
+    "forward_cancel_final_registers": {
+      "ESI": "00678900",
+      "EDI": "006fbbb8"
+    },
+    "limit": "Forward string direction required; snapshot lifetime/aliases and whether callers rely on ESI/EDI remain unresolved."
+  },
   "limits": [
     "Non-Cancel callback branch verified; exact Race/Credits/Exit lifecycle coverage and runtime saving remain unverified.",
     "Clear-to-zero policy does not guarantee all four raw values are distinct; zeros can repeat.",

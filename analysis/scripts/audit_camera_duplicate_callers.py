@@ -41,6 +41,22 @@ def main():
     result['verified_modern_calls']=['0045d798','0045da44']
     result['retained_post_cleanup_tail']={'start':'0045da49','end_exclusive':'0045daa4',
         'sha256':hashlib.sha256(old.get_data(0x45da49-0x400000,91)).hexdigest()}
+    assert new.get_data(0x5d949,14)==bytes.fromhex('bea8bb6f00bff0886700a5a5a5a5')
+    assert new.get_data(0x5da1f,14)==bytes.fromhex('bef0886700bfa8bb6f00a5a5a5a5')
+    assert new.get_data(0x5da9e,6)==bytes.fromhex('31c05d5a5bc3')
+    result['camera_snapshot_layout']={
+        'original_pairs':[['006fbba8','006788fc'],['006fbbac','006788f4'],['006fbbb0','006788f8'],['006fbbb4','006788f0']],
+        'modern_pairs':[[f'{0x6fbba8+i*4:08x}',f'{0x6788f0+i*4:08x}'] for i in range(4)],
+        'modern_extra_pair':['006fd1cc','0066468c'],
+        'complete_initializers':{},
+        'modern_cancel_restoration_hex':new.get_data(0x5da1f,26).hex(),
+        'modern_cancel_epilogue_hex':new.get_data(0x5da9e,6).hex(),
+        'forward_cancel_final_registers':{'ESI':'00678900','EDI':'006fbbb8'},
+        'limit':'Forward string direction required; snapshot lifetime/aliases and whether callers rely on ESI/EDI remain unresolved.'}
+    for label,pe,end in [('original',old,0x45d995),('official_modern',new,0x45d965)]:
+        data=pe.get_data(0x5d920,end-0x45d920)
+        result['camera_snapshot_layout']['complete_initializers'][label]={'entry':'0045d920',
+            'end_exclusive':f'{end:08x}','hex':data.hex(),'sha256':hashlib.sha256(data).hexdigest()}
     result['limits']=['Non-Cancel callback branch verified; exact Race/Credits/Exit lifecycle coverage and runtime saving remain unverified.',
         'Clear-to-zero policy does not guarantee all four raw values are distinct; zeros can repeat.',
         'No target execution, Ghidra edits or executable changes.']
