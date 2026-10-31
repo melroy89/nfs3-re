@@ -126,6 +126,13 @@ def main():
             'changed_offsets': offsets, 'changed_source_va': '00557a49'})
     out['overlapping_copy_sources'] = {'sources': copied_sources,
         'limit': 'Changed source byte enters InteriorBx runtime offset45h and Compass offset05h on this copy path; later overwrites/consumers and intended source schema unresolved.'}
+    initializers = {label: pe.get_data(0x65370,324) for label,pe in images.items()}
+    assert initializers['original'] == initializers['official_modern']
+    assert initializers['original'][14:19] == bytes.fromhex('a198476600')
+    out['interior_initializer'] = {'entry': '00465370', 'end_exclusive': '004654b4',
+        'bytes': 324, 'sha256': hashlib.sha256(initializers['original']).hexdigest(),
+        'hex': initializers['original'].hex(),
+        'limit': 'Identical initializer overwrites incoming EAX with global00664798 before using it; no direct runtime-entry+45h overwrite established. Called helpers/global aliases not fully traced.'}
     archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     archive_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     assert archive_sha == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'

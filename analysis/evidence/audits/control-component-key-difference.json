@@ -227,6 +227,14 @@
     ],
     "limit": "Changed source byte enters InteriorBx runtime offset45h and Compass offset05h on this copy path; later overwrites/consumers and intended source schema unresolved."
   },
+  "interior_initializer": {
+    "entry": "00465370",
+    "end_exclusive": "004654b4",
+    "bytes": 324,
+    "sha256": "88f81296cbb316f5109e5701045783e79b3f0e078f1fce24a60582ec2c50cdac",
+    "hex": "53515256575589e581ec58020000a198476600e8283ffdff89c1a198476600a340896700e8f73efdff50683cab53008d85a8fdffff50e8e5a2070083c40cba48ab5300e8485afeffe8538f080085c075408b1598476600526854ab53008d85a8fdffff50e8b7a2070083c40cbe34327a008dbdd4feffff578a0688073c0074108a460183c60288470183c7023c0075e85fa198476600e8b541fdff85c0741c5168b4287a006860ab53008d85d4feffff50e86aa2070083c410eb25be34327a008dbdd4feffff578a0688073c0074108a460183c60288470183c7023c0075e85f8d95d4feffff8d85a8fdffffb90000803fe89af2ffff31dba198476600890d38a45500891d40a45500e84268fdff5068140200006878ab5300689cab53006a026a5aa33ca45500e87480fcff83c418891d58896700890d5489670089ec5d5f5e5a595bc3",
+    "limit": "Identical initializer overwrites incoming EAX with global00664798 before using it; no direct runtime-entry+45h overwrite established. Called helpers/global aliases not fully traced."
+  },
   "interior_widget_binding": {
     "exe_bindings": {
       "original": {
