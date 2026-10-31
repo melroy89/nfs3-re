@@ -21,6 +21,27 @@
       "assembly_sha256": "772273ad0a5bb4a8813d671501f59c29e84f02483bf5e4bd29f7117258eeef24"
     },
     {
+      "start": "60002060",
+      "end": "600020a0",
+      "bytes_sha256": "96196170892f4bc426b7cc8c4e06eaf4007e48b3610bf40c27f8cd9c2ecc874e",
+      "assembly": "analysis/captures/modern-differences/dx7-mode-admission/60002060.asm",
+      "assembly_sha256": "a727fb38c4f2da43872b5bff37c6cdfb423f2165df047753ddd5c59f66394f19"
+    },
+    {
+      "start": "60009250",
+      "end": "600092bd",
+      "bytes_sha256": "67d3003e3ed9f7cc2259ea7f5793994171cddbafc482771b9f4afc1e4012a18c",
+      "assembly": "analysis/captures/modern-differences/dx7-mode-admission/60009250.asm",
+      "assembly_sha256": "284096a8ab1935f6a6663201dbb25bd91a2c72f19558a71b7077efb81d7061e1"
+    },
+    {
+      "start": "600092c0",
+      "end": "60009300",
+      "bytes_sha256": "39db79554ee471071449d036ca23a129f17e0e394dc51cca800bf68ca681c943",
+      "assembly": "analysis/captures/modern-differences/dx7-mode-admission/600092c0.asm",
+      "assembly_sha256": "543614746fe337315d61eefb37019ecc5c1ffb973f2a24274288e2c157695431"
+    },
+    {
       "start": "60002578",
       "end": "600025ec",
       "bytes_sha256": "af99616d00f2ca7b444574dd89dda95a6e2e7a5520dd743ec2166167238ce186",
@@ -60,5 +81,23 @@
       "characteristics": "c0000040"
     },
     "limits": "Preferred addresses subject to PE relocation; module-owned pointer lifetime depends on mapping, not solely on function return. Callee side effects/concurrent queries and actual unload admission untested."
+  },
+  "about_environment_effects": {
+    "resolved_imports": {
+      "60015058": "getenv",
+      "6001506c": "sprintf",
+      "60015070": "atoi"
+    },
+    "strings": {
+      "600150b0": "DX7",
+      "600151ac": "THRASH_DISPLAY",
+      "60015500": "THRASH_%s",
+      "6001550c": "%s_%s",
+      "60015660": "signature",
+      "60015658": "version"
+    },
+    "reader": "60009250..600092bd: getenv(prefix_key), then getenv(THRASH_key) only if first pointer null; atoi present value, else default argument.",
+    "about_prefix": "600092c0..60009300 publishes environment-derived signature at descriptor+0 and version at+8; rest of override routine not fully captured here.",
+    "limits": "No environment or DLL execution. Later fields/full override helper, atoi edge behavior and temporal environment mutation remain unqualified."
   }
 }

@@ -123,8 +123,8 @@
     },
     {
       "path": "analysis/original-modern-dx7-mode-admission.md",
-      "sha256": "95aeb99f68569676926ff301216bd073dd1b892621d1cdd6f2afcc471a09fab5",
-      "relative_links": 4
+      "sha256": "9f896abf6ff6ba04c208f4693c84b8b3ad7f066ce4737e82c174aeae1e7e7272",
+      "relative_links": 5
     },
     {
       "path": "analysis/original-modern-effect-renderer-masks.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1793,
+  "relative_link_count": 1794,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
