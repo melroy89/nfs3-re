@@ -5,7 +5,8 @@ import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
-SPANS={'original':[(0x472980,0x472b60),(0x4728e0,0x47297d)],
+SPANS={'original':[(0x472980,0x472b60),(0x4728e0,0x47297d),
+                   (0x4723f0,0x47242c),(0x4e0640,0x4e0658),(0x4ff4c0,0x4ff563)],
        'official_modern':[(0x472980,0x472b48),(0x472230,0x472248),
                           (0x4723f0,0x472402)]}
 
@@ -18,6 +19,16 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
+        if label=='original':
+            assert pe.get_data(0x15e8b8,8)==bytes(8)
+            assert pe.get_data(0x7241f,13).hex()=='891540bb6f00ba01000000a5a5'
+            result['original_default_header_prefix']={
+                'producer':'004723f0..0047242c prefix; remaining defaults not qualified here',
+                'size_store':'0047241f stores20f0 at006fbb40',
+                'template':'0055e8b8: eight file-backed zero bytes copied to006fbb44/+48 by MOVSD pair0047242a/2b',
+                'modern_consequence':'Ordinary zero version takes grouped reset, not accepted-header bypass.',
+                'limits':['Template must remain unchanged and DF must be clear; captures retain fill adapters for ESI/EDI preservation inspection.',
+                          'Later original header writes, complete defaults, saving and real-file provenance remain unqualified.']}
         if label=='official_modern':
             assert pe.get_data(0x72aac,33).hex() == '813d40bb6f00f0200000751566a144bb6f0084e475103c06720ce865f7ffffeb1e'
             assert pe.get_data(0x72ad7,5).hex()=='e834020000'

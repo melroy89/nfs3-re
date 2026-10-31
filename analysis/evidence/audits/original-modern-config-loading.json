@@ -19,6 +19,27 @@
           "bytes_sha256": "8878a43a44198fcff04e9f0dc02c9235404e38cc4be422dd54508c5c52e8e843",
           "assembly": "analysis/captures/modern-differences/config-loading/original-004728e0.asm",
           "assembly_sha256": "631c7276b21e8bcc9d88a010dbd6c8213cdce8347af457adae6688471dce2c24"
+        },
+        {
+          "start": "004723f0",
+          "end": "0047242c",
+          "bytes_sha256": "2a7a1ef51a3139e39111742f63cf255cc2852cef39bebcb62d6df675e7c9138f",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004723f0.asm",
+          "assembly_sha256": "d421ab6abad637441e9ca609aa866fa8d51f28025284e84e6bca5b9d9b11408c"
+        },
+        {
+          "start": "004e0640",
+          "end": "004e0658",
+          "bytes_sha256": "d42b553b387f32af3a4ff9a8712b910d3d8c3a69a83c5fb7a3e92047e1a33d0d",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004e0640.asm",
+          "assembly_sha256": "fe61573001f900487599d8eac2fa840a5e9999adf54b3c210b3f784f3c1c30a8"
+        },
+        {
+          "start": "004ff4c0",
+          "end": "004ff563",
+          "bytes_sha256": "0d817cb2566a6e1c69d28ad408e2c64dbe30f5718e5c9e2a0126d2bc4d8ebc03",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004ff4c0.asm",
+          "assembly_sha256": "7b76a62317d4d0e0dfc0d4e19c9d040176fd559cb76871ff3cdd552d024893bc"
         }
       ],
       "file_backed_header_hex": "000000000000000000000000",
@@ -68,6 +89,16 @@
     "No config, game or instruction execution.",
     "Header acceptance is not complete serialized-field validation."
   ],
+  "original_default_header_prefix": {
+    "producer": "004723f0..0047242c prefix; remaining defaults not qualified here",
+    "size_store": "0047241f stores20f0 at006fbb40",
+    "template": "0055e8b8: eight file-backed zero bytes copied to006fbb44/+48 by MOVSD pair0047242a/2b",
+    "modern_consequence": "Ordinary zero version takes grouped reset, not accepted-header bypass.",
+    "limits": [
+      "Template must remain unchanged and DF must be clear; captures retain fill adapters for ESI/EDI preservation inspection.",
+      "Later original header writes, complete defaults, saving and real-file provenance remain unqualified."
+    ]
+  },
   "view_angle_header_route": {
     "storage": "006fbc40",
     "offset_from_loaded_block_006fbb40": "00000100",
