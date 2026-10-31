@@ -116,6 +116,13 @@
         "00534544": "GetModuleFileNameA",
         "005345d4": "SetCurrentDirectoryA"
       },
+      "root_directory_length_diagnostic": {
+        "comparison": "004a3e29: unsigned EAX<=210 proceeds to004a3e3f",
+        "message_address": "0053d049",
+        "message": "The path to the game root directory is too long. It has to be no longer than 210 characters.",
+        "diagnostic_call": "004a3e35 ->004b570c",
+        "limits": "Extraction failure returnsffffffff and takes same diagnostic; not a full path-capacity or successful CWD-change guarantee."
+      },
       "default_path_slots": [
         {
           "slot": 0,

@@ -112,7 +112,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels155 entries vendor-only,39 bounded static,93 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels154 entries vendor-only,39 bounded static,94 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -140,3 +140,7 @@ MP153-013 now links the existing paired presence-policy audit and official atlas
 ## Texture-query claim reconciliation
 
 A fresh five-envelope texture audit passed. MP161-005 now links [removed queries/cache substitutions](original-modern-texture-loading-followup.md#release-note-correspondence-redundant-about-queries), matching the source bullet's explicit thrash_about wording. This closes a catalog omission using existing paired evidence. Renderer side effects/cache lifetime, actual performance and release-specific introduction remain open; progress-bar changes are not performance measurements.
+
+## Root-path diagnostic claim reconciliation
+
+MP161-007 now has a [branch-to-message mapping](original-modern-startup-paths.md#release-note-correspondence-root-path-diagnostic): the unsigned210-byte prefix gate, exact error text and diagnostic call are asserted against the official executable. Extraction failures share the same branch. The missing-driver subclaim, historical introduction and actual dialogs remain unqualified; no path/API/game execution was performed.

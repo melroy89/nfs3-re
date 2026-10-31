@@ -86,3 +86,9 @@ Paths are relative unless a preceding initialization/configuration path changes 
 - **HUD:** original [preset loading](original-modern-hud-layout.md) uses prefix slot `007a29b4`, whose Modern default path is `.\gamedata\dashhud\`. This default does not independently authenticate the original asset set or original runtime prefix contents.
 
 Next: original complete installation/path discovery, live file/API edge cases if needed, and later CWD/path-buffer writers. Preserve ignored return values and fallback behavior during reconstruction rather than silently substituting filesystem “improvements.”
+
+## Release-note correspondence: root-path diagnostic
+
+MP161-007 bundles two diagnostics. The root-directory part has a verified branch and message: unsigned EAX greater than210 at `004a3e29` takes `004a3e30`, supplies string `0053d049` and calls fatal diagnostic helper `004b570c` at `004a3e35`. The exact string says the game root path must be no longer than210 characters. The audit now asserts both the22-byte branch/diagnostic sequence and the full message against the official hash-pinned EXE. The return value includes the retained directory separator; it is a byte-count path-prefix contract of this ANSI helper, not a Unicode character-count guarantee.
+
+As established above, extraction failure (`ffffffff`) reaches the same message, so the wording alone does not prove the actual cause was an overlong path. Successful CWD change, full suffix capacity, displayed dialog behavior and release-specific introduction remain unverified. The original comparison documents a different startup-path policy; it does not establish absence of every analogous diagnostic elsewhere. The bundled missing-driver message requires its own branch-to-message mapping before the whole release-note item can be accepted. This is partial static support, with no long-path/API/game execution.

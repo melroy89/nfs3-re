@@ -36,6 +36,13 @@ def main():
             for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports
             if i.address in (0x534544,0x5345d4,0x534520,0x534490)}
         if label=='official_modern':
+            assert pe.get_data(0xa3e29,22).hex() == '3dd2000000760fb849d05300e8d2180100e92d010000'
+            message=pe.get_data(0x13d049,200).split(b'\0')[0].decode('ascii')
+            assert message == 'The path to the game root directory is too long. It has to be no longer than 210 characters.'
+            row['root_directory_length_diagnostic']={'comparison':'004a3e29: unsigned EAX<=210 proceeds to004a3e3f',
+                'message_address':'0053d049','message':message,
+                'diagnostic_call':'004a3e35 ->004b570c',
+                'limits':'Extraction failure returnsffffffff and takes same diagnostic; not a full path-capacity or successful CWD-change guarantee.'}
             strings=pe.get_data(0x13f42c,1024).split(b'\0')[:22]
             assert len(strings)==22 and all(strings)
             row['default_path_slots']=[{'slot':i,'destination_va':f'{0x7a27b4+128*i:08x}',

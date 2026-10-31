@@ -480,7 +480,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **155 Claimed, 39 Static, 93 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **154 Claimed, 39 Static, 94 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -498,7 +498,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP161-004 | DX7 doesn't output 640×480×16 if this mode isn't supported. Also it returns sorted list of resolutions now. | Claimed |
 | MP161-005 | A small optimization of texture loading. The thrash_about isn't called when it is not really needed. | Partial |
 | MP161-006 | More strict checking of validity of a thrash driver (a renderer). | Static |
-| MP161-007 | New error messages for some problematic situations: too long path to the root directory (it has not to be longer than 210 characters); thrash driver not found. | Claimed |
+| MP161-007 | New error messages for some problematic situations: too long path to the root directory (it has not to be longer than 210 characters); thrash driver not found. | Partial |
 | MP161-008 | DirectDrawLagFix was renamed to DisableMaxWindowedMode in the thrash.ini files. It is disabled by default now. | Partial |
 | MP161-009 | A new DirectDraw compatibility flag NoDwmOffForPrimaryLock was added to the thrash.ini files. | Partial |
 | MP161-010 | The game asks a renderer if it supports the fog effect. DX5 and SoftTri always report that they do not support the fog effect. | Partial |
