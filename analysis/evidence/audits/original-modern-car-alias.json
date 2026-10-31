@@ -8,10 +8,10 @@
       "spans": [
         {
           "start": "004628d0",
-          "end": "0046291a",
-          "sha256": "ddc5101e923282425cc69d63f978c88c5d6c6c1f8716bfbbbeaf3c0063e439b9",
+          "end": "004629bf",
+          "sha256": "930c687484c746016e8540c257bfe1c29cd6006ed16e3e6e0fa9376d8d64b9d3",
           "assembly": "analysis/captures/modern-differences/car-alias/original-004628d0.asm",
-          "assembly_sha256": "138d3fbd459fb408b3c5a4bdc3fe150a24c218a2420cb9dd14855fff8a052338"
+          "assembly_sha256": "8306c06fb49ee5dd13589b8bbc238137644f27c8938183e455092f5e6613b100"
         },
         {
           "start": "004634d0",
@@ -76,10 +76,10 @@
       "spans": [
         {
           "start": "004628d0",
-          "end": "0046291a",
-          "sha256": "2a559f0df6216d288baf3110b4018d343819de4276cf6fb39af53c576e95e2d5",
+          "end": "004629bf",
+          "sha256": "cc27cfe9b09f318e08809cbaf2c7a66a3b0340e40bb56d5dc2d5a0a0add151bf",
           "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004628d0.asm",
-          "assembly_sha256": "0202e422a94cc1cf5e8e1c5ca007572d8ad5583b44b9c9866f79612174176ae1"
+          "assembly_sha256": "0e76a8387455215901948f01f769c3dbaf17cd84ee00b6ceeb8a40ee5d55dc1b"
         },
         {
           "start": "004634d0",
@@ -296,6 +296,75 @@
     "005382ec": "rectrk",
     "0053aa3c": "tracks"
   },
+  "complete_004628d0": {
+    "end_exclusive": "004629bf",
+    "length": 239,
+    "changed_addresses": [
+      "004628ea",
+      "004628eb",
+      "004628ec",
+      "004628ed",
+      "004628ee",
+      "004628ef",
+      "004628f0",
+      "004628f1",
+      "004628f2",
+      "004628f3",
+      "004628f4",
+      "004628f5",
+      "004628f7",
+      "004628f8",
+      "004628f9",
+      "004628fa",
+      "004628fb",
+      "004628fc",
+      "004628fd",
+      "004628fe",
+      "004628ff",
+      "00462900",
+      "00462902",
+      "00462903",
+      "00462904",
+      "00462905",
+      "00462906",
+      "00462907",
+      "00462908",
+      "00462909",
+      "0046290a",
+      "0046290b",
+      "0046290c",
+      "0046290d",
+      "0046290e",
+      "0046290f",
+      "00462910",
+      "00462911",
+      "00462912",
+      "00462913",
+      "00462914",
+      "00462915",
+      "00462916",
+      "00462917",
+      "00462918",
+      "00462919",
+      "00462972",
+      "00462980"
+    ],
+    "covering_regions": [
+      [
+        "004628ea",
+        "0046291a"
+      ],
+      [
+        "00462972",
+        "00462973"
+      ],
+      [
+        "00462980",
+        "00462981"
+      ]
+    ],
+    "scope": "Entry through both observed RETs; excludes alignment and next function."
+  },
   "additional_track_policy_callers": {
     "004628d0": {
       "name_offset": "0x60",
@@ -307,7 +376,7 @@
       "original": "35 for every mode3 name; otherwise15",
       "modern": "35 only for mode3 and tracks/rectrk; otherwise15"
     },
-    "scope": "Paired entry prefixes only; no complete-body or runtime claim."
+    "scope": "Complete 004628d0 body and 004634d0 entry prefix; no runtime claim."
   },
   "limits": [
     "Static alias and caller policy only; full renderer and asset bindings not audited.",

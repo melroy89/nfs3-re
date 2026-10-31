@@ -66,3 +66,19 @@ All other cases select15 in the inspected prefixes. The first consumer already r
 In `004628d0`, both versions preserve the WORD-list pointer from lookup`00442c80` in ESI before making the policy decision. Modern relocates that assignment by five bytes as part of the rewritten prefix. In `004634d0`, Modern retains the two zero-local initializations but moves them earlier to replace the original mode load; this is not evidence of removed initialization. These observations are local data-flow checks, not a complete register-liveness audit.
 
 Together with the previously inspected `00461d25` caller and complete `00464560` helper, this establishes four caller-specific policy transitions: adding a second name, adding a mode gate, or adding a name gate depending on the site. The common final helper does not mean the original policies were uniform. Full remaining renderer/layout bodies, mode semantics and visible results remain pending. No runtime or target instruction probes were used.
+
+## Complete `004628d0` layout helper
+
+The paired audit now extends this consumer through both RETs at **`004629ae`** and **`004629be`**: body`004628d0..004629bf`, end exclusive, **239 bytes**. All differences fit the selector rewrite`004628ea..0046291a` and two immediate bytes at`00462972` and`00462980`. The manifest enumerates changed addresses; assertions reject changes elsewhere in the body. This supersedes the prefix-only boundary for this consumer, while `004634d0` remains a prefix comparison.
+
+The expanded path requires WORD widget+`0x42` nonzero and a nonzero list pointer. It scans WORD IDs to a zero sentinel, starts width at40, and calls the text/width helpers`004d1850` and`00452020`. After that shared scan, original adds **selected15/35 +5** to width; Modern adds **selected15/35 +15**. With the previously established predicate change, equal incoming measured widths give these local padding contributions:
+
+| Name and mode | Original | Modern | Change |
+|---|---:|---:|---:|
+| `tracks`/`rectrk`, mode3 | 40 | 50 | +10 |
+| `tracks`/`rectrk`, another mode | 40 | 30 | −10 |
+| Other name, any mode | 20 | 30 | +10 |
+
+The same path computes WORD widget+`0x20` from **WORD+`0x56`**, rather than the other helper’s WORD+`0x5a`. Original stores`16 * value +5`; Modern stores`16 * value +2`, modulo65536. The shared placement then stores widget+`0x1c` from WORD+6 plus28 and widget+`0x1a` from WORD+8 plus16. The fallback path calls`00461a70` in both baselines. Its unchanged CALL operand does not prove that callee or fallback output is unchanged.
+
+This second complete body confirms the repeated5→15 width and5→2 extent changes while preserving its distinct widget offsets and original selection predicate. It does not prove the producer/meaning of WORD+`0x56`, live list contents, text metrics, rendered dimensions or historical introduction. Preserve the WORD truncation and each widget type’s field layout in reconstruction instead of merging these helpers by superficial similarity. No game code was executed.
