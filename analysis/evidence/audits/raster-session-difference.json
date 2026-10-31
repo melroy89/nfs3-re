@@ -1,0 +1,81 @@
+{
+  "kind": "raster-session-cleanup-registration",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00524650",
+          "end_exclusive": "00524693",
+          "sha256": "3bdb5f588b0da5fd739678d3a0f65506b57fb2dcc7302d433d4453d6e5542c74",
+          "assembly": "analysis/captures/modern-differences/raster-session/original-00524650.asm"
+        },
+        {
+          "start": "005246a0",
+          "end_exclusive": "005247ab",
+          "sha256": "1a33161a20f9d850c76f847531e0c01542a9e050b5b149e6a83f1224b6996c5e",
+          "assembly": "analysis/captures/modern-differences/raster-session/original-005246a0.asm"
+        },
+        {
+          "start": "00524620",
+          "end_exclusive": "00524635",
+          "sha256": "4d2a63561ca873645f039696297edd72f2dafe865f09e72d2189dd1530ec4135",
+          "assembly": "analysis/captures/modern-differences/raster-session/original-00524620.asm"
+        },
+        {
+          "start": "00524640",
+          "end_exclusive": "00524650",
+          "sha256": "465e492f93f3bda2dca6a4c3153230113596f34cada44192336f7396173da1d9",
+          "assembly": "analysis/captures/modern-differences/raster-session/original-00524640.asm"
+        },
+        {
+          "start": "005247ab",
+          "end_exclusive": "005247b1",
+          "sha256": "b7c7bf9c56c3019d7daa517323b05d8d1d458f185663400be52b7842cb77a681",
+          "assembly": "analysis/captures/modern-differences/raster-session/original-005247ab.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00524650",
+          "end_exclusive": "00524693",
+          "sha256": "f4754542fe273b2d6a2e13ecad888709ff60fc403a9bc1ed2d2e6deb0ea02e4f",
+          "assembly": "analysis/captures/modern-differences/raster-session/official_modern-00524650.asm"
+        },
+        {
+          "start": "005246a0",
+          "end_exclusive": "005247ab",
+          "sha256": "930318f2c682eddfc481c91d1cf9560ee1f26c44f93ce0800f491257503e4382",
+          "assembly": "analysis/captures/modern-differences/raster-session/official_modern-005246a0.asm"
+        },
+        {
+          "start": "00524620",
+          "end_exclusive": "00524635",
+          "sha256": "088007cd7e47e85b541cd31786615bb77691377b6f406d77afbba6929bd98e65",
+          "assembly": "analysis/captures/modern-differences/raster-session/official_modern-00524620.asm"
+        },
+        {
+          "start": "00524640",
+          "end_exclusive": "00524650",
+          "sha256": "87e36ce5c70a77d0b4bafbe2d6d1f53167344236134dab16808ae0cdd505c54d",
+          "assembly": "analysis/captures/modern-differences/raster-session/official_modern-00524640.asm"
+        },
+        {
+          "start": "005247ab",
+          "end_exclusive": "005247b1",
+          "sha256": "ff35ffe14925642da6f3a258b35811e08101c03f8b5db346e5afcca448677564",
+          "assembly": "analysis/captures/modern-differences/raster-session/official_modern-005247ab.asm"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static branch/registration witnesses only; no renderer or process-exit execution.",
+    "Cleanup registration helper semantics, replacement ownership and callback lifetime remain unverified."
+  ]
+}

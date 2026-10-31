@@ -93,8 +93,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "da238b600b3980d4d211b38489af5433316759e5c15d3cf7ce3baf2c63507d5c",
-      "relative_links": 124
+      "sha256": "8d247cc3fbb37a4ada1186bef4838c3373751cfff84cea8df8fb30516fc5481d",
+      "relative_links": 125
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -143,8 +143,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "3bfa7aca86c744813757ae3a621f5edca747713b6501df5f1153a8d18967f68a",
-      "relative_links": 568
+      "sha256": "dde395f7e44f612e380d693e79e4e90cb5760494f8164f971f799bc6d6a964fb",
+      "relative_links": 570
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -310,6 +310,11 @@
       "path": "analysis/original-modern-race-now.md",
       "sha256": "62763b363a56d5c54937608480bafa29660fe73bc319eb6354553f6324ac0c1a",
       "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-raster-session.md",
+      "sha256": "21c212d6cc4247f104c331c9b0a95f36edf7201ebdcde3a652a549786b9c514e",
+      "relative_links": 2
     },
     {
       "path": "analysis/original-modern-registry.md",
@@ -497,8 +502,8 @@
       "relative_links": 9
     }
   ],
-  "file_count": 99,
-  "relative_link_count": 1323,
+  "file_count": 100,
+  "relative_link_count": 1328,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

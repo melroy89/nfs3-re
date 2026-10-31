@@ -252,6 +252,10 @@
       "sha256": "62763b363a56d5c54937608480bafa29660fe73bc319eb6354553f6324ac0c1a"
     },
     {
+      "path": "analysis/original-modern-raster-session.md",
+      "sha256": "21c212d6cc4247f104c331c9b0a95f36edf7201ebdcde3a652a549786b9c514e"
+    },
+    {
       "path": "analysis/original-modern-registry.md",
       "sha256": "bb47ccdf76e38d805e10e3f7cf3fb8b2a94e9f01e8c02138a2d0397b9bb37211"
     },
@@ -398,8 +402,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 346,
-    "without_address_mentions": 15
+    "with_address_mentions": 348,
+    "without_address_mentions": 13
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -12354,7 +12358,17 @@
       "changed_bytes": 6,
       "original_sha256": "3bdb5f588b0da5fd739678d3a0f65506b57fb2dcc7302d433d4453d6e5542c74",
       "modern_sha256": "f4754542fe273b2d6a2e13ecad888709ff60fc403a9bc1ed2d2e6deb0ea02e4f",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-raster-session.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00524650",
+            "0052465b",
+            "0052468f"
+          ]
+        }
+      ]
     },
     {
       "entry": "005246a0",
@@ -12376,7 +12390,19 @@
       "changed_bytes": 14,
       "original_sha256": "7b7e031d66e9b67c3fe1dbe3c7761e129148af290bc5b6d07a4e6ad46953dda8",
       "modern_sha256": "89929357f63acde63a326966321a8e06b79067b0df3b3bb3f294ae3c6ebfe122",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-raster-session.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "005246a0",
+            "00524740",
+            "00524744",
+            "0052474d",
+            "00524787"
+          ]
+        }
+      ]
     },
     {
       "entry": "00533e86",

@@ -430,6 +430,8 @@ The [environment-grid comparison](original-modern-environment-grid.md) accounts 
 
 The [small conversion-helper contracts](original-modern-small-conversion-helpers.md) document ASCII copy pointer/count outputs, the wide-character API wrapper and current-rounding-mode float conversion; original functional counterparts remain unresolved.
 
+The [raster-session comparison](original-modern-raster-session.md) accounts for removed cleanup publication/callbacks and the shortened inactive shutdown branch, including its original remote tail.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
