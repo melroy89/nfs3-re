@@ -66,3 +66,29 @@ The dropdown’s render/update counterpart **`00456ce0..00456e98`** differs at e
 The dropdown input counterpart **`00457030..004571d1`** differs at exactly two bytes, **`00457107`** and **`00457142`**. These change **`MOV EAX,1` to `MOV EAX,0`** before direct sound helper calls `004181d0` at `0045710b` and `00457146`. The adjacent branches decrement/increment and constrain the selected entry before refreshing it through `00456f10`. All other bytes in that input envelope match; this is a changed sound-request ID, not removal of the call or proof of a different audio sample heard.
 
 **Updated MP140-013 conclusion:** the named dropdown has a direct verified code change to a15→5 inset and two1→0 sound operands, alongside the separately verified authored position shift. Padding intent now has stronger instruction-level support; “consistent sounds,” exact rendering, driver behavior and historical introduction still lack runtime/intermediate-release evidence. The HSV-wheel changes remain independently documented. No input, render, sound or instruction probes were executed; no saved Ghidra metadata changed.
+
+## Additional frame/title and metadata-layout changes
+
+Three complete same-address original/Modern functions contain only four changed immediate bytes. [The focused audit](scripts/audit_colour_layout_followup.py) verifies pinned executable identities and all surrounding bytes; [its manifest](evidence/audits/colour-layout-followup.json) records complete hashes and disassembly locations. No colour widget, text or instruction probes were executed.
+
+| Saved Modern entry / label | Complete envelope, exclusive end | Verified change |
+|---|---|---|
+| `0043dfb0` DrawFrontendHsvControlFrameAndTitle | `0043dfb0..0043e033` (131 bytes) | `0043e017`: LEA EDX from signed WORD widget `+6` plus 12→plus 8 |
+| `004569a0` CalculateColorSelectorMetadataTextExtent | `004569a0..00456a1f` (127 bytes) | `00456a12`: final WORD `+1e` padding 45→38 |
+| `004571e0` UpdateFrontendColorSelectorLayout | `004571e0..0045724e` (110 bytes) | `0045720a`: count-based extent padding 5→8; `00457217`: origin offset 48→28 |
+
+The title path still supplies the text pointer from widget `+9c`, EDX as the adjusted coordinate argument, EBX as signed WORD widget `+8` minus 1, ECX=18, and retained stack arguments to text call `00452190` at `0043e027`. Its preceding frame/image calls remain byte-identical. This establishes a −4 coordinate-argument adjustment, not an observed physical-pixel shift under every scale.
+
+The extent helper retains its localized label lookup, formatting, text measurement and per-entry measurement loop. Only its final WORD padding decreases by 7, modulo 65536. The text-width helper itself reaches separately changed font-measurement behavior described in the [car-alias/text-width report](original-modern-car-alias.md); unchanged measurement call instructions do not establish identical measured widths.
+
+When the layout helper's admission call `0044a660` succeeds and widget WORD `+58` is nonzero, it calls the extent helper and writes:
+
+| Destination WORD | Original formula | Modern formula |
+|---|---|---|
+| `+20` | `16 * low16(widget[+4c]) + 5` | `16 * low16(widget[+4c]) + 8` |
+| `+1c` | `low16(widget[+6]) + 48` | `low16(widget[+6]) + 28` |
+| `+1a` | `low16(widget[+8]) + 17` | Retained |
+
+Each stored result is its low 16 bits. The machine sometimes loads only AX before DWORD shifts/adds, leaving inherited high bits; the low-WORD formulas above remain valid, but full EAX/flags must not be assumed equivalent to a freshly zero-extended C expression. When WORD `+58` is zero, the collapsed branch's fixed dimensions and `+6−10` origin remain byte-identical.
+
+**Bounded work status: done; confidence: verified static field/argument changes.** Full field semantics, caller aliasing, font state, rendered geometry and interaction bounds remain unverified. Do not silently repair suspected original layout arithmetic or claim a visual fix from these offsets alone. Executable bytes, Ghidra state and maintained C remain unchanged.

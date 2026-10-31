@@ -49,7 +49,7 @@
     },
     {
       "path": "analysis/original-modern-colour-control.md",
-      "sha256": "29721e99c0c678da256f1b5a036308af880b2de3c92614e0ef2992a47b80d7bf"
+      "sha256": "1a051355d6d04a82782a67ec4951b67ec81b366a1d9228abcd32f22d91b920f7"
     },
     {
       "path": "analysis/original-modern-command-line.md",
@@ -390,8 +390,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 317,
-    "without_address_mentions": 44
+    "with_address_mentions": 320,
+    "without_address_mentions": 41
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -2040,7 +2040,17 @@
       "changed_bytes": 1,
       "original_sha256": "729a3969ca84211664e91d6516b679511937a771c470fe4ca96601ee69fbb41c",
       "modern_sha256": "99624a19cfcd506ee5bec58c3abeec70d244bbd6ddd8931ed2f763fcf8d8a251",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-colour-control.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0043dfb0",
+            "0043e017",
+            "0043e027"
+          ]
+        }
+      ]
     },
     {
       "entry": "0043ead0",
@@ -3880,7 +3890,16 @@
       "changed_bytes": 1,
       "original_sha256": "04d6833559eb70282d93dcccdb2fce412a420cb1f672bc0cbce1b17524343d75",
       "modern_sha256": "a99d888626faaafda1f5fcfb8caf70cb1796c6e4163fb09354f2fa194f1ad9c0",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-colour-control.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004569a0",
+            "00456a12"
+          ]
+        }
+      ]
     },
     {
       "entry": "00456ce0",
@@ -3960,7 +3979,17 @@
       "changed_bytes": 2,
       "original_sha256": "9fca1659a90c90a60a39d99e600e2f53c126c224df8f3cbcc84934383b6f5e08",
       "modern_sha256": "09ce08eebe95c5f714ba3f06ebff0e182cf234a283e1af4ffab31c5dc8bc5704",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-colour-control.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004571e0",
+            "0045720a",
+            "00457217"
+          ]
+        }
+      ]
     },
     {
       "entry": "0045ab30",

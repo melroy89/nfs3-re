@@ -1,0 +1,57 @@
+{
+  "kind": "colour-control-layout-immediates",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0043dfb0",
+          "end_exclusive": "0043e033",
+          "sha256": "729a3969ca84211664e91d6516b679511937a771c470fe4ca96601ee69fbb41c",
+          "assembly": "analysis/captures/modern-differences/colour-layout/original-0043dfb0.asm"
+        },
+        {
+          "start": "004569a0",
+          "end_exclusive": "00456a1f",
+          "sha256": "04d6833559eb70282d93dcccdb2fce412a420cb1f672bc0cbce1b17524343d75",
+          "assembly": "analysis/captures/modern-differences/colour-layout/original-004569a0.asm"
+        },
+        {
+          "start": "004571e0",
+          "end_exclusive": "0045724e",
+          "sha256": "9fca1659a90c90a60a39d99e600e2f53c126c224df8f3cbcc84934383b6f5e08",
+          "assembly": "analysis/captures/modern-differences/colour-layout/original-004571e0.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0043dfb0",
+          "end_exclusive": "0043e033",
+          "sha256": "99624a19cfcd506ee5bec58c3abeec70d244bbd6ddd8931ed2f763fcf8d8a251",
+          "assembly": "analysis/captures/modern-differences/colour-layout/official_modern-0043dfb0.asm"
+        },
+        {
+          "start": "004569a0",
+          "end_exclusive": "00456a1f",
+          "sha256": "a99d888626faaafda1f5fcfb8caf70cb1796c6e4163fb09354f2fa194f1ad9c0",
+          "assembly": "analysis/captures/modern-differences/colour-layout/official_modern-004569a0.asm"
+        },
+        {
+          "start": "004571e0",
+          "end_exclusive": "0045724e",
+          "sha256": "09ce08eebe95c5f714ba3f06ebff0e182cf234a283e1af4ffab31c5dc8bc5704",
+          "assembly": "analysis/captures/modern-differences/colour-layout/official_modern-004571e0.asm"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static field/argument offsets only; no visual rendering or interaction test.",
+    "Text metrics, aliasing and device/display scaling remain separate contracts."
+  ]
+}
