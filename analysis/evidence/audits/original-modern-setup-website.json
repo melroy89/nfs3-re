@@ -20,6 +20,56 @@
           "bytes_sha256": "45e5eb2455bd46567aeaf274dbfe69207158cc62a55a2abb57feed07d341bf3e",
           "assembly": "analysis/captures/modern-differences/setup-website/original-00452e60.asm",
           "assembly_sha256": "b8fa04e7c9b38680f56af58808249c7abedb2b55a1125784f47d46bbc2018846"
+        },
+        {
+          "start": "00461270",
+          "end": "004613db",
+          "bytes_sha256": "05535ada2c4ddee94fef7333c037a248dea3d6acca35928f23ea6837ffd55d26",
+          "assembly": "analysis/captures/modern-differences/setup-website/original-00461270.asm",
+          "assembly_sha256": "95269b1ee514225ce8cb0e56eedbde39d0dd58481c63a21e778729682e365850"
+        },
+        {
+          "start": "0044b6c8",
+          "end": "0044b6de",
+          "bytes_sha256": "88a75c0b550e9cff2675e0e17352017df6a5822d4dc7068d8cb008ec9b9fe20d",
+          "assembly": "analysis/captures/modern-differences/setup-website/original-0044b6c8.asm",
+          "assembly_sha256": "37dc3ff12d30f80a30bcf710e5e8bc04fda2af4dc5d8b453c9e697ebca11ecdf"
+        },
+        {
+          "start": "0044b7ec",
+          "end": "0044b8ad",
+          "bytes_sha256": "39c9a9ee010156c77a58406e93cd7f20eec1fa72689058fbc9e9fa6140bca91c",
+          "assembly": "analysis/captures/modern-differences/setup-website/original-0044b7ec.asm",
+          "assembly_sha256": "9418e195f85c939b6718fb1fcfc7897e7afc42ee7476f8148fb8cd71a5614e28"
+        },
+        {
+          "start": "00449762",
+          "end": "004497c9",
+          "bytes_sha256": "850206aa9cfd0fa5c5c8d73c7309a42d57e656d61be5065b26b4f57a33d90b7a",
+          "assembly": "analysis/captures/modern-differences/setup-website/original-00449762.asm",
+          "assembly_sha256": "afed84da5c2a79ef1436bb61e09ad1a6393dc53bdff9805d14d2888d0239c24b"
+        }
+      ],
+      "retained_data": [
+        {
+          "address": "00557e10",
+          "size": 16,
+          "hex": "050000005085530004000000204f6000"
+        },
+        {
+          "address": "00556e40",
+          "size": 188,
+          "hex": "0500000000080000000000000000000000000000000000000000000000000000000000000019460000000000c007460070124600e0134600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000a023460000000000001d4600a0244600d028460020234600000000000000000000000000000000000000000000000000"
+        },
+        {
+          "address": "00555c48",
+          "size": 24,
+          "hex": "107c53000000000000000000a02a44000000000000000000"
+        },
+        {
+          "address": "0044b20c",
+          "size": 4,
+          "hex": "ecb74400"
         }
       ]
     },
@@ -41,6 +91,56 @@
           "bytes_sha256": "45e5eb2455bd46567aeaf274dbfe69207158cc62a55a2abb57feed07d341bf3e",
           "assembly": "analysis/captures/modern-differences/setup-website/official_modern-00452e60.asm",
           "assembly_sha256": "469ab5eccdb8aac753d0412d07ea12a7c20a0ba97b2243ce2bdaf23780301b15"
+        },
+        {
+          "start": "00461270",
+          "end": "004613db",
+          "bytes_sha256": "05535ada2c4ddee94fef7333c037a248dea3d6acca35928f23ea6837ffd55d26",
+          "assembly": "analysis/captures/modern-differences/setup-website/official_modern-00461270.asm",
+          "assembly_sha256": "fadb52a98ea9dfb78d152dcc8cd245e5bdb304eef9bc35bcce9d41047d7b0a4f"
+        },
+        {
+          "start": "0044b6c8",
+          "end": "0044b6de",
+          "bytes_sha256": "88a75c0b550e9cff2675e0e17352017df6a5822d4dc7068d8cb008ec9b9fe20d",
+          "assembly": "analysis/captures/modern-differences/setup-website/official_modern-0044b6c8.asm",
+          "assembly_sha256": "d666a1d9aa66339a087e70da8640f1cb7a9b90fdba935621628b0e4f44a32980"
+        },
+        {
+          "start": "0044b7ec",
+          "end": "0044b8ad",
+          "bytes_sha256": "39c9a9ee010156c77a58406e93cd7f20eec1fa72689058fbc9e9fa6140bca91c",
+          "assembly": "analysis/captures/modern-differences/setup-website/official_modern-0044b7ec.asm",
+          "assembly_sha256": "2a792a427c1ee9b3d0e60888343539c8015c3f96d3e61626dbbe976f368fd6a6"
+        },
+        {
+          "start": "00449762",
+          "end": "004497c9",
+          "bytes_sha256": "850206aa9cfd0fa5c5c8d73c7309a42d57e656d61be5065b26b4f57a33d90b7a",
+          "assembly": "analysis/captures/modern-differences/setup-website/official_modern-00449762.asm",
+          "assembly_sha256": "ea035f3ff20919fdf0239a6dee8c37e4c1f2b414e8dfa654f465b77d3524024e"
+        }
+      ],
+      "retained_data": [
+        {
+          "address": "00557e10",
+          "size": 16,
+          "hex": "050000005085530004000000204f6000"
+        },
+        {
+          "address": "00556e40",
+          "size": 188,
+          "hex": "0500000000080000000000000000000000000000000000000000000000000000000000000019460000000000c007460070124600e0134600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000a023460000000000001d4600a0244600d028460020234600000000000000000000000000000000000000000000000000"
+        },
+        {
+          "address": "00555c48",
+          "size": 24,
+          "hex": "107c53000000000000000000a02a44000000000000000000"
+        },
+        {
+          "address": "0044b20c",
+          "size": 4,
+          "hex": "ecb74400"
         }
       ]
     }

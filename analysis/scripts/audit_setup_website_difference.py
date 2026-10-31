@@ -8,7 +8,9 @@ from audit_thrash_loader_difference import ROOT, SPECS
 
 def main():
     result = {'kind': 'static-setup-website-comparison', 'range_end': 'exclusive', 'binaries': {}, 'assets': {}}
-    spans = ((0x453051, 0x453068), (0x452e60, 0x452f16))
+    spans = ((0x453051, 0x453068), (0x452e60, 0x452f16),
+             (0x461270, 0x4613db), (0x44b6c8, 0x44b6de),
+             (0x44b7ec, 0x44b8ad), (0x449762, 0x4497c9))
     capture = ROOT / 'analysis/captures/modern-differences/setup-website'
     capture.mkdir(parents=True, exist_ok=True)
     pairs = []
@@ -17,7 +19,11 @@ def main():
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
         code = [pe.get_data(a - 0x400000, b - a) for a, b in spans]
-        pairs.append(code)
+        data_spans = [(0x557e10, 16), (0x556e40, 0xbc), (0x555c48, 24), (0x44b20c, 4)]
+        data_rows = [{'address': f'{a:08x}', 'size': size, 'hex': pe.get_data(a-0x400000, size).hex()} for a, size in data_spans]
+        assert pe.get_data(0x4b20c, 4) == (0x44b7ec).to_bytes(4, 'little')
+        assert pe.get_data(0x156e70, 4) == (0x461270).to_bytes(4, 'little')
+        pairs.append(code + [bytes.fromhex(row['hex']) for row in data_rows])
         token = pe.get_data(0x13965c, 64).split(b'\0')[0].decode('ascii')
         assert token == 'SETUP_NfsWebSite'
         rows = []
@@ -25,7 +31,7 @@ def main():
             path = capture / f'{label}-{start:08x}.asm'
             path.write_bytes(subprocess.check_output(['objdump', '-d', '-Mintel', f'--start-address={start}', f'--stop-address={end}', relative], cwd=ROOT))
             rows.append({'start': f'{start:08x}', 'end': f'{end:08x}', 'bytes_sha256': hashlib.sha256(data).hexdigest(), 'assembly': str(path.relative_to(ROOT)), 'assembly_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
-        result['binaries'][label] = {'path': relative, 'sha256': expected, 'token_at_0053965c': token, 'spans': rows}
+        result['binaries'][label] = {'path': relative, 'sha256': expected, 'token_at_0053965c': token, 'spans': rows, 'retained_data': data_rows}
     assert pairs[0] == pairs[1]
     assets = {
         'official_modern': ROOT / 'analysis/captures/modern-differences/upstream/package/fedata/menus/setup.mnu',

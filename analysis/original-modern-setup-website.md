@@ -38,3 +38,23 @@ For reconstruction, preserve the distinction between asset-defined controls, cal
 To finish the historical MP100-052 claim, obtain v1.0.0 and inspect its first-screen asset and activation route. For final-package behaviour, trace the first-screen loader and generic `nextmenu=options` handling, then verify the selected resource or external menu at runtime when a suitable session is available. Do not make recovery of a superseded Credits button a prerequisite for explaining final Options routing. Historical introduction in v1.0.0 requires that release, rather than inference from the final v1.6.1 package. The local backup comparison is bounded evidence, not a universal original-asset baseline.
 
 Reproduce: `python3 analysis/scripts/audit_setup_website_difference.py`. This uses read-only PE parsing and disassembly. No executable bytes, Ghidra database, reference exports or reconstruction sources were changed; no target instructions were executed.
+
+## Generic Options transition: retained code, changed asset route
+
+Existing [menu dispatch research](connect-menu-dispatch-crosswalk.md) established `nextmenu` at item offset `40h`. This follow-up compares the relevant bytes against both pinned executables instead of transferring an active-build observation without checking the original.
+
+The expanded audit verifies byte identity of these bounded code and data ranges:
+
+| Location | Role and verified scope |
+|---|---|
+| `00557e10`, 16 bytes | Field-definition row `{5,00538550,4,00604f20}`: button `nextmenu`, arena-string field type 4, destination entry-base `00604ee0 + 40h`. |
+| `00556e40`, `bch` bytes | Button template, type 5, input handler `00461270` at `+30h`; file-backed `+58h` and `+64h` zero. Later writes are not excluded. |
+| `00461270..004613db` | Complete generic button handler. On Enter (`DI=13`), with `+58h=0`, no specialized callback at `+64h`, and neither special codelink command matching, non-null `+40h` returns action 5. A registered callback takes precedence. |
+| `0044b6c8..0044b6de`, table slot `0044b20c` | Subtract 4, unsigned range-check 0..7, then dispatch through table. Action 5 selects `0044b7ec`. |
+| `0044b7ec..0044b8ad` | Compute current entry from signed high-word descriptor indices and `bch` stride. If it is the helper-selected default entry, use action 3; otherwise for type 5 take its `+40h` pointer, search descriptor names using `004ee310`, and on a match assign active descriptor `00559230 = 006040d0 + index*24h`. Missing/null targets take other branches; successful transition is conditional. |
+| `00449762..004497c9` | Loader dependency scan reads current entry `+40h`, skips empty target names and searches existing `24h`-stride descriptors. This captures only the lookup region, not the complete loader or queue-creation branch. |
+| `00555c48`, 24 bytes | Static registration row names `options` at `00537c10`, with callback `00442aa0` at `+0ch`; other words zero in both inspected images. This static row is distinct from the runtime `24h`-stride descriptor array. |
+
+For the final asset's ordinary Options button, these witnesses explain a conditional path from the new `nextmenu=options` string to generic transition lookup. They do not establish the actual loaded descriptor list, later item overrides, successful external file loading, current selection or pixels. The full loader differs between binaries and is **not** declared unchanged because its selected dependency-scan region is identical.
+
+For maintained C, keep template defaults, string-field parsing, specialized callback precedence, action codes and descriptor lookup as separate responsibilities. Replacing the old website callback body is not required merely to represent this final asset's Options route. Preserve normal missing-target/default-entry behaviour until separately validated; do not silently turn the conditional path into an unconditional transition.

@@ -264,7 +264,7 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 ## Setup website button follow-up
 
-[MP100-052: website versus Credits](original-modern-setup-website.md) records removal of the website entry in the official menu asset, alongside byte-identical original/Modern callback and conditional binding. The final official asset instead routes that slot to Options, consistent with later entry MP140-017; the historical v1.0.0 Credits implementation remains unresolved.
+[MP100-052: website versus Credits](original-modern-setup-website.md) records removal of the website entry in the official menu asset, alongside byte-identical original/Modern callback and conditional binding. The final official asset instead routes that slot to Options, consistent with later entry MP140-017; the historical v1.0.0 Credits implementation remains unresolved. The follow-up also verifies retained button-handler, action-5 dispatch and descriptor-lookup bytes, connecting the asset route to generic engine behaviour within a stated conditional scope.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
