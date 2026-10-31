@@ -1,0 +1,68 @@
+{
+  "kind": "pause-title-asset-comparison",
+  "files": {
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/pause.mnu",
+      "sha256": "b5b4849991901037b89c3f92db9f5a14f0259542ca7cb6318fa0e89673cade66",
+      "title": {
+        "section": "[text]",
+        "line": 1,
+        "fields": {
+          "x": "320",
+          "y": "9",
+          "priority": "0",
+          "codelink": "pstitle",
+          "text": "kTextPause",
+          "texttype": "1",
+          "color": "0",
+          "italic": "0",
+          "scale": "0.000000",
+          "ypos": "0",
+          "align": "2"
+        }
+      }
+    },
+    "local_uppercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PAUSE.MNU",
+      "sha256": "691f2dbcfdb8004d216eaa58a21bfc93cc1ef47f617157985eb8ea5b0a743c8a",
+      "title": {
+        "section": "[text]",
+        "line": 1,
+        "fields": {
+          "x": "320",
+          "y": "14",
+          "priority": "0",
+          "codelink": "pstitle",
+          "postonly": "0",
+          "mainonly": "0",
+          "EnableForDemo": "1",
+          "EnableForE3Demo": "1",
+          "text": "kTextPause",
+          "texttype": "1",
+          "color": "0",
+          "italic": "0",
+          "scale": "0.000000",
+          "ypos": "0",
+          "align": "2"
+        }
+      }
+    }
+  },
+  "changed_common_fields": {
+    "y": {
+      "backup": "14",
+      "official": "9"
+    }
+  },
+  "backup_fields_absent_from_official": {
+    "EnableForDemo": "1",
+    "EnableForE3Demo": "1",
+    "mainonly": "0",
+    "postonly": "0"
+  },
+  "limits": [
+    "No code, render, input or target execution.",
+    "Unauthenticated backup provenance; official final asset does not verify release introduction.",
+    "Omitted legacy fields and other menu records are not qualified by a title-coordinate comparison."
+  ]
+}

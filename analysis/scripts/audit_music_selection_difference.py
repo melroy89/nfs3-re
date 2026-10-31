@@ -40,6 +40,10 @@ def main():
             item['menu_cycle_ids']=list(pe.get_data(0x40ff80-0x400000,6))
             item['menu_seed_map']=list(pe.get_data(0x40ff88-0x400000,20))
         else:
+            pointers=struct.unpack('<10I',pe.get_data(0x1525a8,40))
+            item['original_track_stems_005525a8']=[{'index':i,'pointer':f'{pointer:08x}','stem':pe.get_data(pointer-0x400000,32).split(b'\0')[0].decode()} for i,pointer in enumerate(pointers)]
+            assert [row['stem'] for row in item['original_track_stems_005525a8']]==['home','lost','atla','alpi','home','lost','atla','alpi','empr','chuck']
+            item['style_tokens']={f'{a:08x}':pe.get_data(a-0x400000,16).split(b'\0')[0].decode() for a in (0x5368d8,0x5368e0)}
             item['fixed_race_targets']=[f'{v:08x}' for v in struct.unpack('<10I',pe.get_data(0x40ffa4-0x400000,40))]
         result['binaries'][label]=item
     result['identical_music_ranges']=[]

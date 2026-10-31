@@ -59,3 +59,21 @@ These are observable call and state rules. The full meanings of the backend oper
 - Volume fixes (**MP153-001**) and double-fade prevention (**MP153-006**) are not established by this selection analysis. They require backend/caller comparisons rather than assuming all audio claims follow from changed policy bytes.
 
 The [start/volume comparison](original-modern-music-start.md) now traces original menu randomization removal and verifies retained stop/start/level/fade bodies; this narrows the unresolved volume claims. Further work: track assets/names, setting serialization/labels, progression producers, all call cadence and volume/fade helper semantics. Original `0040fefc` is inside unrelated code, so it must not be treated as the old version of Modern's new helper merely because addresses coincide.
+
+## Original random range versus ten stem entries: genre claim still unresolved
+
+A separate Luna 6 read-only review identified a useful follow-up to **MP153-002**. The parent verified the original selector, downstream builder instructions and table bytes directly; the expanded audit now retains the original ten-entry stem table at **`005525a8`** and both style-token strings.
+
+| Raw table indexes | Stem strings |
+|---|---|
+| 0..3 | `home`, `lost`, `atla`, `alpi` |
+| 4..7 | `home`, `lost`, `atla`, `alpi` again |
+| 8..9 | `empr`, `chuck` |
+
+As established above, the original `0040ffd0` RNG branch returns only0..4, whereas its fixed-setting branch can return8. A raw RNG return cannot directly name table slots5..9, including the distinct final stems. But duplicate stems and the separately selected style mean a table slot cannot be equated with a genre or unique song from this observation alone.
+
+The retained builder at `0041065a` compares its current operation/selection value signed against10. Its table-index source then depends on setting `006fbbe4`: either stored `005525f8` or the saved incoming EAX value at local+286h. Later `004106b8..004106cd` selects `tech` (`005368e0`) only when `00552854 == 1` and earlier restriction flags permit it; otherwise it uses `rock` (`005368d8`). Thus genre/style is a distinct control decision, not established as indexes0..4 versus5..9.
+
+The selector's return range is proven; **a complete random-mode-to-table/style path and the vendor's specific “last Rock and all Techno” explanation are not**. In particular, the existence of a ten-entry table and a modulo-five helper does not by itself prove a defect, its reachability or the advertised fix. The catalog claim is left vendor-claimed with this related evidence linked rather than promoted on that inference.
+
+Next: follow the two original direct selector callers (`00410132`, `0041042f`), map the race-music list's ordinary settings to their labels, establish all style-state producers and resulting filenames, and compare the corresponding Modern paths. Then inspect actual assets before assigning individual stems to song/genre names. No new audio, RNG or instruction probes were executed; no Ghidra changes were made.

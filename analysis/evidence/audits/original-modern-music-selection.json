@@ -56,6 +56,62 @@
           "assembly_sha256": "32c7854a8928948f251203b48c7e566578750b4f0b87047412c1e3f564662e01"
         }
       ],
+      "original_track_stems_005525a8": [
+        {
+          "index": 0,
+          "pointer": "0053681c",
+          "stem": "home"
+        },
+        {
+          "index": 1,
+          "pointer": "00536824",
+          "stem": "lost"
+        },
+        {
+          "index": 2,
+          "pointer": "0053682c",
+          "stem": "atla"
+        },
+        {
+          "index": 3,
+          "pointer": "00536834",
+          "stem": "alpi"
+        },
+        {
+          "index": 4,
+          "pointer": "0053681c",
+          "stem": "home"
+        },
+        {
+          "index": 5,
+          "pointer": "00536824",
+          "stem": "lost"
+        },
+        {
+          "index": 6,
+          "pointer": "0053682c",
+          "stem": "atla"
+        },
+        {
+          "index": 7,
+          "pointer": "00536834",
+          "stem": "alpi"
+        },
+        {
+          "index": 8,
+          "pointer": "0053683c",
+          "stem": "empr"
+        },
+        {
+          "index": 9,
+          "pointer": "00536844",
+          "stem": "chuck"
+        }
+      ],
+      "style_tokens": {
+        "005368d8": "rock",
+        "005368e0": "tech"
+      },
       "fixed_race_targets": [
         "0040ffe9",
         "0040ffe9",

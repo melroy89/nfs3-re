@@ -328,6 +328,10 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 [The paired resize comparison](original-modern-frame-resize.md) traces held-action +1/−1 callers, the narrower Modern bit gate and its added refresh-on-skip path. The complete adjustment helper is retained unchanged. The [Frame Size list/selector follow-up](original-modern-frame-setting.md) now closes the setting association and two-to-four-choice expansion, making MP160-004 partial; its advertised camera-shift effect and introduction date remain unverified.
 
+## Pause-title coordinate adjustment
+
+[The pause-title asset comparison](original-modern-pause-title.md) verifies a five-unit authored upward move with shared X/alignment, while recording omitted legacy fields separately. This partially supports MP100-050; screen pixels, improved alignment and historical introduction remain unverified.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -668,7 +672,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-047 | “About” slide was added to Credits. | Partial |
 | MP100-048 | Cone Stats and Tuturial Icon widgets are hidden in HUD editor for cops because these widgets can't be used in this mode. | Claimed |
 | MP100-049 | Buggy background animation in graphics settings and opponents choosing screens were fixed. | Claimed |
-| MP100-050 | Title in pause menu is more aligned now. In original version of the game it was a little misplaced. | Claimed |
+| MP100-050 | Title in pause menu is more aligned now. In original version of the game it was a little misplaced. | Partial |
 | MP100-051 | Flying brands effect added to all slides without large amount of text for consistency. For example, in original version this effect is present on main singleplayer game screen, but it is absent on main splitscreen game screen. | Claimed |
 | MP100-052 | On the first menu screen irrelevant link to Need For Speed website was replaced to “Credits...” button. Really, you can't find any mention about NFS3 on this website for 10 years or even more. | Partial |
 | MP100-053 | In choose car menu “Download car...” button is hidden because it doesn't work properly anymore. | Partial |
