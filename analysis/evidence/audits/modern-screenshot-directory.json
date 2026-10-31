@@ -24,12 +24,35 @@
       "sha256": "ea84a3ce61d7d782a7352258ee7021d37f05fd767b05a41524b80ecfd18894fe",
       "assembly": "analysis/captures/modern-differences/screenshot-directory/004f93b8.asm",
       "assembly_sha256": "62ef023d19f5b4aea7113d594a981c59ee7e31fac2f7e7ac039c2493923445b2"
+    },
+    {
+      "start": "004e31b8",
+      "end": "004e3248",
+      "sha256": "e6cf3a8bbdfbe8be2da82447609e3329b4df1e2ed6cb9a45f56c539b9cb6572d",
+      "assembly": "analysis/captures/modern-differences/screenshot-directory/004e31b8.asm",
+      "assembly_sha256": "03e610921f622aac8ddb6ebb318d2aa6b1cd9c8501aaf597ec708f12099c8805"
+    },
+    {
+      "start": "004f91ec",
+      "end": "004f9204",
+      "sha256": "978abe9b5ba21529c75be7bdb6c9a1ddd1a91997e24223e62de2f385974059d5",
+      "assembly": "analysis/captures/modern-differences/screenshot-directory/004f91ec.asm",
+      "assembly_sha256": "419872e5a6c3cd4344feeaa4c4b475782e02c7e2fd6983e7c761946dfeed2995"
+    },
+    {
+      "start": "004f915e",
+      "end": "004f916c",
+      "sha256": "947fc71fe7c64226733ca53679192cfa8818694e0147d637bf9f852231ae6fdb",
+      "assembly": "analysis/captures/modern-differences/screenshot-directory/004f915e.asm",
+      "assembly_sha256": "5ec4beb567167b18cd94e6fc4f1486215aa2c14880f1774ede27b3ed169792da"
     }
   ],
+  "filename_format": "nfs3_%04d.%s",
   "imports": {
     "005344c8": "FindClose",
     "005344cc": "FindFirstFileA",
-    "005344d0": "FindNextFileA"
+    "005344d0": "FindNextFileA",
+    "00534520": "GetFileAttributesA"
   },
   "directory_prefix": ".\\screenshots\\",
   "limits": [
