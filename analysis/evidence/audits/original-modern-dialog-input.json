@@ -1,0 +1,58 @@
+{
+  "kind": "static-dialog-input-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00445e60",
+          "end": "00445efa",
+          "sha256": "6388b67d7c3c0d771598e4492b63b9155751ed4ee0361eb38940dd123174ff89",
+          "assembly": "analysis/captures/modern-differences/dialog-input/original-00445e60.asm",
+          "assembly_sha256": "7357b35bd8bc619fed42a6c9bd719e4f420602c2fff2a2d555f12e66d6616c7d"
+        }
+      ],
+      "dispatch_table": [
+        "00445ea1",
+        "00445eab",
+        "00445eb5",
+        "00445ebf"
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00445e60",
+          "end": "00445efa",
+          "sha256": "88ec581c1d2e4b7fc4c5abd3f9429403fd64dae10851540f3c3aabc24f894351",
+          "assembly": "analysis/captures/modern-differences/dialog-input/official_modern-00445e60.asm",
+          "assembly_sha256": "4ef0bde91f132e40650d37ade776a9516c1627d15e35e1a01944ba6b05273118"
+        },
+        {
+          "start": "004f1fcc",
+          "end": "004f1ff0",
+          "sha256": "68b6c146c2f01c248a7472b7372697bbe35ff95b695b4606ca429a2578f4cd67",
+          "assembly": "analysis/captures/modern-differences/dialog-input/official_modern-004f1fcc.asm",
+          "assembly_sha256": "c635ce2ed556e426827744488a260b4e9251eef05534b2a1b160471babab3d5d"
+        }
+      ],
+      "dispatch_table": [
+        "00444910",
+        "00444b20",
+        "00444f50",
+        "00445520"
+      ]
+    }
+  },
+  "modern_key_import": {
+    "00534738": "GetAsyncKeyState"
+  },
+  "limits": [
+    "Static only; no dialog, key event or audio execution.",
+    "Handler return3 semantic identity and complete handler behavior remain unresolved."
+  ]
+}

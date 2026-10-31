@@ -370,6 +370,8 @@ The [logo loader and animation investigation](original-modern-frontend-page.md#o
 
 See also [renderer state14 setter policy](original-modern-state14.md): changed zero-input handling and conditional disabled-state cleanup.
 
+See also [dialog input dispatch](original-modern-dialog-input.md): Shift/Tab normalization, direct handler table and result3 sound request.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
