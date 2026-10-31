@@ -336,6 +336,8 @@ Movie sound parameter initialization is compared in [movie playback level](origi
 
 The [idle movie controller comparison](original-modern-idle-movie.md) traces NoMovies through the availability mask, application activation through timer reset, and the changed movie-selection order and table type.
 
+The [movie screenshot comparison](original-modern-movie-screenshots.md) separates unchanged movie-stop logic from the changed screenshot consumer and handled Print Screen hook path.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -531,7 +533,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-056 | Makes shutter sound while screenshoting. | Static |
 | MP140-057 | Saving a screenshot file was moved to a separate thread, so the game have to freeze for less time while the screenshot is taking. | Static |
 | MP140-058 | Ability of making screenshots of the gameplay loading screen. | Claimed |
-| MP140-059 | Screenshoting doesn't stop intro movie. | Claimed |
+| MP140-059 | Screenshoting doesn't stop intro movie. | Partial |
 | MP140-060 | Super quick gameplay loading on modern systems (thanks Zeus for a hint). | Claimed |
 | MP140-061 | LoadingSplashTime ini setting for slowing down gameplay loading, set desired time in seconds or 0 to disable this feature (and get maximum possible speed). | Static |
 | MP140-062 | If this “splash” is enabled, it can be skipped just by pressing any key (but Esc aborts loading). | Static |

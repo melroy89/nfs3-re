@@ -7,6 +7,20 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "00495b10",
+          "end": "00495b2d",
+          "bytes_sha256": "ac431f143389bd8edd1ba305772b0800721a92b0e560e0fe7b58589913e96ab7",
+          "assembly": "analysis/captures/modern-differences/movie-volume/original-00495b10.asm",
+          "assembly_sha256": "913b3b8f9d5dd0c32acf42981f6db6b6dab6e2507d2217cb87f8fc804f4fff59"
+        },
+        {
+          "start": "00451960",
+          "end": "00451b1b",
+          "bytes_sha256": "7d7ded6c3eaf01e971c06609a1502d91b826829d67e5f226d64dc259fae7285a",
+          "assembly": "analysis/captures/modern-differences/movie-volume/original-00451960.asm",
+          "assembly_sha256": "d3fbcd62faa0881eeca66286e77765d49419c7e2e75b21007e99a590db006962"
+        },
+        {
           "start": "00495bc0",
           "end": "004960e0",
           "bytes_sha256": "328af108907c8645445e30622896cdffba5e4c3b984c1ad1e0fa2ccbba4f2d8d",
@@ -34,6 +48,20 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "00495b10",
+          "end": "00495b2d",
+          "bytes_sha256": "ac431f143389bd8edd1ba305772b0800721a92b0e560e0fe7b58589913e96ab7",
+          "assembly": "analysis/captures/modern-differences/movie-volume/official_modern-00495b10.asm",
+          "assembly_sha256": "c960321671016bc64d3ba8f59a1906b336e92065d28ac51f11b016014e344b38"
+        },
+        {
+          "start": "00451960",
+          "end": "00451b1b",
+          "bytes_sha256": "1ff4628ce55c12c13ef3db7fc5c0473e11974c5ace33bee4a9fb41079c51ccee",
+          "assembly": "analysis/captures/modern-differences/movie-volume/official_modern-00451960.asm",
+          "assembly_sha256": "a879b339899a7c9c7cbe605386f296aaa5f6e6c833d04435e94a3e5b821b8517"
+        },
         {
           "start": "00495bc0",
           "end": "004960e0",
@@ -68,6 +96,21 @@
   },
   "identical_ranges": [
     {
+      "start": "00495b10",
+      "end": "00495b2d",
+      "sha256": "ac431f143389bd8edd1ba305772b0800721a92b0e560e0fe7b58589913e96ab7"
+    },
+    {
+      "start": "00451960",
+      "end": "00451969",
+      "sha256": "31af8d712b8ebd625c2adf89ed2c6d00d1b614ffd6a0b3df4cb96f2c94489c93"
+    },
+    {
+      "start": "0045196e",
+      "end": "00451b1b",
+      "sha256": "b22bd7b6201453ff083ad86d723de9a49beef62c429ecf84ef734f2f268d9fa4"
+    },
+    {
       "start": "00495df9",
       "end": "00495e01",
       "sha256": "efc3e1881e5b7844867f33cf01158a0e8a10d57eb508fbd16fcbdabf078a4e0a"
@@ -88,9 +131,18 @@
       "sha256": "56355acdb1e1dff56af7892a1d04f54f4c6d8afb48ed7195f17402971e5f6032"
     }
   ],
+  "input_poller_changed_byte_range": [
+    "0045196a",
+    "0045196e"
+  ],
+  "movie_envelope_changed_bytes": [
+    "00495e02",
+    "00495e03",
+    "00495e04"
+  ],
   "limits": [
     "No target, movie, audio or instruction execution.",
-    "Movie body retained as an address envelope, not asserted wholly identical.",
+    "Movie address envelope differs only in three initializer-call displacement bytes; callees and input providers differ.",
     "Parameter byte correspondence verified; complete decoder/provider semantics and audible response unverified."
   ]
 }

@@ -54,3 +54,5 @@ The [pixel comparison](original-modern-screenshot-pixels.md) traces original dep
 - The original registry query establishes the configured Desktop path lookup, not every possible Windows shell-folder redirect or write permission outcome.
 
 No executable, runtime configuration or Ghidra project was changed. No game, test, or runtime probe was run.
+
+The [movie-stop input comparison](original-modern-movie-screenshots.md) now traces the screenshot consumer through movie polling and bounds the claim that screenshots no longer stop intro playback.
