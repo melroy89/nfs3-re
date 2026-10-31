@@ -293,3 +293,7 @@ Run `python3 analysis/scripts/inventory_numeric_scale_labels.py --game-dir "<ins
 ## Original versus Modern Race Now helper
 
 Run `python3 analysis/scripts/audit_race_now_difference.py`. Retains the complete Modern helper, original setup body and retained lookup/result/callback gates, with exact tokens, in `analysis/evidence/audits/original-modern-race-now-entry.json`. No target execution or same-VA counterpart assumption. See [findings](../original-modern-race-now.md).
+
+## Original versus Modern parameter presets
+
+Run `python3 analysis/scripts/audit_parameter_preset_difference.py`. Retains complete paired bodies, exact Modern WORD table, original scale bytes and conversion constant in `analysis/evidence/audits/original-modern-parameter-preset.json`. No target execution. See [preset comparison](../original-modern-parameter-preset.md).

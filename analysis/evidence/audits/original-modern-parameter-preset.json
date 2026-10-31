@@ -1,0 +1,206 @@
+{
+  "kind": "static-parameter-preset-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "0041d620",
+      "end": "0041d863",
+      "bytes_sha256": "4cf55c3546f5cac27fc82464daacfb427e7f72322ce188251f34e7188968c428",
+      "assembly": "analysis/captures/modern-differences/parameter-preset/original-0041d620.asm",
+      "assembly_sha256": "c94a694e92605a55751d4427df323ce9fc75ff7fe1781759f68d13c515371ac0",
+      "conversion_scale_hex": "000000000000f03e",
+      "original_scale_tables_hex": "00c00000f5680000cc4c000000000100cc8c000066660000"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "0041d620",
+      "end": "0041d6e4",
+      "bytes_sha256": "8de86147efcbca1bb489c3e8a410bba265d257005711d48b2b2a200796dd45bd",
+      "assembly": "analysis/captures/modern-differences/parameter-preset/official_modern-0041d620.asm",
+      "assembly_sha256": "0d633889d7a1bec082ecdfd7f53c0f5399e4246b8e95916cd69f2fec3d9392d6",
+      "conversion_scale_hex": "000000000000f03e",
+      "preset_table": {
+        "address": "0041d6e4",
+        "size": 256,
+        "sha256": "ea9fba78c204613874515b7f5861cf361d90bda5b7e8aad03822249e2713c2a9",
+        "words_by_preset_and_16_byte_block": [
+          [
+            [
+              500,
+              500,
+              500,
+              500,
+              500,
+              500,
+              500,
+              500
+            ],
+            [
+              500,
+              500,
+              500,
+              500,
+              500,
+              500,
+              500,
+              500
+            ],
+            [
+              500,
+              500,
+              500,
+              500,
+              500,
+              500,
+              500,
+              500
+            ],
+            [
+              500,
+              500,
+              500,
+              500,
+              500,
+              500,
+              500,
+              500
+            ]
+          ],
+          [
+            [
+              500,
+              500,
+              110,
+              150,
+              500,
+              333,
+              133,
+              266
+            ],
+            [
+              400,
+              440,
+              60,
+              92,
+              400,
+              440,
+              60,
+              92
+            ],
+            [
+              500,
+              375,
+              83,
+              113,
+              375,
+              250,
+              100,
+              200
+            ],
+            [
+              400,
+              330,
+              45,
+              69,
+              400,
+              330,
+              45,
+              69
+            ]
+          ],
+          [
+            [
+              500,
+              275,
+              61,
+              83,
+              150,
+              100,
+              40,
+              80
+            ],
+            [
+              400,
+              242,
+              33,
+              51,
+              400,
+              242,
+              33,
+              51
+            ],
+            [
+              500,
+              205,
+              46,
+              62,
+              150,
+              100,
+              40,
+              80
+            ],
+            [
+              400,
+              181,
+              25,
+              38,
+              400,
+              181,
+              25,
+              38
+            ]
+          ],
+          [
+            [
+              500,
+              200,
+              44,
+              60,
+              150,
+              100,
+              40,
+              80
+            ],
+            [
+              400,
+              176,
+              24,
+              37,
+              400,
+              176,
+              24,
+              37
+            ],
+            [
+              500,
+              150,
+              33,
+              45,
+              150,
+              100,
+              40,
+              80
+            ],
+            [
+              400,
+              132,
+              18,
+              28,
+              400,
+              132,
+              18,
+              28
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  "limits": [
+    "No preset/game execution.",
+    "Record field meanings and selector admission remain bounded."
+  ]
+}

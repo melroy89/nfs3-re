@@ -194,7 +194,11 @@ The [numeric-scale comparison](original-modern-numeric-scale.md) maps original `
 
 The [Race Now comparison](original-modern-race-now.md) maps Modern’s complete helper and the related original credits gate. Full original counterparts and entry-flag/global meanings remain unresolved; the same address is not a valid function pairing.
 
-## 30. Prioritized semantic work remaining
+## 30. Parameter preset application
+
+The [preset comparison](original-modern-parameter-preset.md) traces the original scaled-constant path versus Modern’s WORD table, two-record writes and changed conversion-count boundary. Semantic fields, full input invariants and runtime effects remain unresolved.
+
+## 31. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

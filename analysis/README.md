@@ -71,3 +71,5 @@ Use Markdown for small, reviewable findings. Follow [the sharing workflow](../do
 - [Original versus Modern numeric scale](original-modern-numeric-scale.md): moved counterpart, measured label spacing and scale fallback.
 
 - [Original versus Modern Race Now helper](original-modern-race-now.md): Modern entry-flag branches, original setup coordinate writes and retained callback gates.
+
+- [Original versus Modern parameter presets](original-modern-parameter-preset.md): table rewrite, record writes and conversion-loop boundary.
