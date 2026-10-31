@@ -83,3 +83,21 @@ Values come from the `00559c6c..00559cb4` data neighborhood, with offsets added 
 Modern `00437600..00437612` instead sets `00559c68=1`, delegates to `00437614`, clears EAX and returns. It contains none of those coordinate writes or token lookups. The full new helper also has none. Thus their removal **from this setup/delegation path** is verified. Searching or validating alternate layout producers and packaged menu definitions is still required before claiming removal of the visible text or universal removal of its positioning.
 
 The initial report's unknown bit-1000h consumer and partial-original-body boundary are superseded by these captures. Remaining limitations include alternate callback consumers, complete menu resource correspondence, calling-state admission and rendered behavior. No menu was opened or modified for this check.
+
+## Branch selector producer witnesses
+
+Modern direct writers to `007a276c` in the inspected disassembly are now captured and asserted against the baseline bytes:
+
+| Store address | Value established by instructions | Context boundary |
+|---|---:|---|
+| `004405a7` | 1 | Literal DWORD store after entry-position setup. |
+| `00440725` | 0 | XOR EAX,EAX followed by store, in existing `InitializeConnectPlayersMenuCallbacks` (`004405c0`) analysis. |
+| `004530b4` | 0 | XOR EAX,EAX followed by store, after entry-flag work and call `004961e0`. |
+| `0045d2dc` | 1 | Literal DWORD store after optional `00444be0` / `004a65e0` path. |
+| `0045d60f` | 1 | Literal DWORD store after conditional entry flags/text update. |
+
+This supplies concrete producers for the helper's branch selector. It is mutable menu lifecycle state in these paths, not established as a static INI option, renderer capability or network transport identifier. It can change without the Race Now helper being called immediately afterward; the separate caller witnesses establish refresh points, not a universal ordering guarantee.
+
+The observed direct writers use only zero/one, but no universal boolean invariant is claimed: bulk initialization, indirect aliases, external state and the complete menu call graph have not been enumerated. The current function inventory resolves the connect-players initializer; other enclosing procedures are not assigned speculative menu names merely from adjacent token strings. Exact meanings of the two lifecycle states and why they select `2btt` versus normal `racenow` policy remain pending.
+
+For next comparison work, trace the two clear-path callers and their menu resource definitions before naming this global or attributing the extracted policy to a particular release. The address/value producer gap is closed for the five captured direct stores; runtime state admission is separate.

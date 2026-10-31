@@ -147,6 +147,41 @@
           "assembly_sha256": "6efc5acbe4c9565404c00d68db7b6874555c26b65e228c6b1c5cb921d5755dd8"
         },
         {
+          "start": "004405a7",
+          "end": "004405b1",
+          "bytes_sha256": "7cda7e3bccab7c946f14b43c07b4c6902e65485bc19763de26426bfa821650ac",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-004405a7.asm",
+          "assembly_sha256": "5ae8a5c3c09f0c9391a8c54dc25834144bd5286d5eb88801e47049890635536d"
+        },
+        {
+          "start": "00440723",
+          "end": "0044072a",
+          "bytes_sha256": "d6f965fbaaa192be1ed926af24bb29b95c14e386965341cb8e6ee63ceb699c00",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00440723.asm",
+          "assembly_sha256": "98291f217305d07a1727d446c434e0200c11b15eccdcc63d0c3e9471abfe065e"
+        },
+        {
+          "start": "004530b2",
+          "end": "004530b9",
+          "bytes_sha256": "d6f965fbaaa192be1ed926af24bb29b95c14e386965341cb8e6ee63ceb699c00",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-004530b2.asm",
+          "assembly_sha256": "7d4142352a31163cee78b97b7d2cbee7e323368e28049dbc0ac72808e5f66cb2"
+        },
+        {
+          "start": "0045d2dc",
+          "end": "0045d2e6",
+          "bytes_sha256": "7cda7e3bccab7c946f14b43c07b4c6902e65485bc19763de26426bfa821650ac",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-0045d2dc.asm",
+          "assembly_sha256": "b60e862043f476f484dacd040013e23e81f08d927264bb80bde828c4d6d773e0"
+        },
+        {
+          "start": "0045d60f",
+          "end": "0045d619",
+          "bytes_sha256": "7cda7e3bccab7c946f14b43c07b4c6902e65485bc19763de26426bfa821650ac",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-0045d60f.asm",
+          "assembly_sha256": "f534fc48fc36f16062125289ca15a7e6d8861c49caefcb4235aea7490be27bb0"
+        },
+        {
           "start": "00442a40",
           "end": "00442a95",
           "bytes_sha256": "530a40e49d7fc33f0e99423114292b6e67a6c842aa135572a8a36c9aa0ba4730",
@@ -202,6 +237,28 @@
     "0044863b",
     "0045d923",
     "0045e993"
+  ],
+  "menu_state_direct_writes": [
+    {
+      "address": "004405a7",
+      "value": 1
+    },
+    {
+      "address": "0045d2dc",
+      "value": 1
+    },
+    {
+      "address": "0045d60f",
+      "value": 1
+    },
+    {
+      "address": "00440725",
+      "value": 0
+    },
+    {
+      "address": "004530b4",
+      "value": 0
+    }
   ],
   "identical_helpers": [
     "00442a40",

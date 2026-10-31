@@ -21,7 +21,9 @@ def main():
             spans += [(0x4374d5, 0x4374dc), (0x437600, 0x437611), (0x437e39, 0x437e49),
                       (0x43d5dc, 0x43d5e3), (0x442ae1, 0x442ae8), (0x4432e9, 0x4432f0),
                       (0x447e07, 0x447e0e), (0x44844f, 0x448456), (0x448639, 0x448640),
-                      (0x45d920, 0x45d928), (0x45e990, 0x45e998)]
+                      (0x45d920, 0x45d928), (0x45e990, 0x45e998),
+                      (0x4405a7, 0x4405b1), (0x440723, 0x44072a), (0x4530b2, 0x4530b9),
+                      (0x45d2dc, 0x45d2e6), (0x45d60f, 0x45d619)]
         spans += [(0x442a40, 0x442a95), (0x4cf090, 0x4cf11e), (0x44a5cb, 0x44a5e5)]
         rows = []
         for start, end in spans:
@@ -43,6 +45,13 @@ def main():
         data = modern.get_data(site-0x400000, 5)
         assert data[0] == 0xe8 and site+5+int.from_bytes(data[1:], 'little', signed=True) == 0x437614
         result['inspected_direct_callers'].append(f'{site:08x}')
+    result['menu_state_direct_writes'] = []
+    for site in (0x4405a7, 0x45d2dc, 0x45d60f):
+        assert modern.get_data(site-0x400000, 10) == bytes.fromhex('c7056c277a0001000000')
+        result['menu_state_direct_writes'].append({'address': f'{site:08x}', 'value': 1})
+    for site in (0x440725, 0x4530b4):
+        assert modern.get_data(site-2-0x400000, 7) == bytes.fromhex('31c0a36c277a00')
+        result['menu_state_direct_writes'].append({'address': f'{site:08x}', 'value': 0})
     result['identical_helpers'] = []
     for start, end in ((0x442a40, 0x442a95), (0x4cf090, 0x4cf11e), (0x44a5cb, 0x44a5e5)):
         bodies = [p.get_data(start-0x400000, end-start) for p in images]
