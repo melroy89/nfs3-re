@@ -81,3 +81,24 @@ Original additionally performs direct DWORD copies **`005e10a0→0056443c`**, **
 Original loads all four floats before storing, with FXCH-based ordering and temporary x87 depth4. Modern pairs each load/store at depth1, stores in a different order, then jumps over NOPs to the shared suffix. For ordinary accessible finite inputs the destination mapping matches; x87 overflow, signaling NaNs, unmasked exceptions, interrupted/shared data and status bits can distinguish the sequences. Do not replace them with an assumed full machine-state-equivalent memory copy or treat this as a new80-bit storage format.
 
 The bounded difference is removal of legacy projection-cell updates plus changed x87 sequencing under the type8 condition. Full viewport type meaning, renderer visual effect and historical release attribution remain unresolved. No viewport or floating-point instructions were executed.
+
+## Fixed wide-angle caller follows the new angle representation
+
+The complete same-address wrapper `004dbda0..004dbddf` (63 bytes, exclusive end), saved as `ApplyWideAngleViewGeometry`, differs in only six bytes. The two immediate EDX assignments at `004dbdb1` and `004dbdc6` change from DWORD `00000078` (integer 120) to `42f00000` (binary32 120.0). The selected branch still depends on `006fd3b0 == 1`, selects either `007cda80 + 32 * incoming_object[+4]` or fixed record `007cdb88`, loads EBX from `006fd4c4`, then calls `004bed20` at `004dbdd6`.
+
+As established above, `004bed20` pushes EDX as an angle stack argument before calling original `004dbce0` or Modern `004dbcc0`. This wrapper's changed immediate is therefore an interface adaptation, **not a change from 120 degrees to a different numeric angle**. The changed downstream half-angle calculation can still change projection output. Reconstructing Modern's immediate as integer 120 would supply the wrong floating-point bit pattern.
+
+## Four-point scaling constants move without changing their values
+
+The full `00495190..00495223` helper (147 bytes), saved as `ScaleFourFloat2PointsByViewportFactors`, differs in only four bytes, all in two FMUL address operands:
+
+| Instruction | Original constant address | Modern constant address | Identical little-endian bytes | Binary32 value |
+|---|---|---|---|---:|
+| `004951c2` | `0053be28` | `0053bdd4` | `cdcccc3a` | 0.0015625000232830644 |
+| `004951d5` | `0053be2c` | `0053bdd8` | `8988083b` | 0.0020833334419876337 |
+
+These are binary32 approximations to 1/640 and 1/480. The source signed DWORDs are obtained through retained call `004beb20` on record `007cdac0`, converted with FILD and multiplied by the respective constants. The helper scales four incoming float pairs supplied through EAX/EDX/EBX/ECX, using the retained x87 sequence and binary32 output stores. It does not establish that every caller supplies disjoint writable pairs or that the selected viewport record is identical at runtime.
+
+The byte comparison proves that this helper's changed operands are constant relocation with **no changed numeric constant**. It does not prove all x87 machine state or rendered results are identical under different inputs/control words. Aliased destination pairs can also make operation order significant, so a reconstruction should preserve access order until caller aliasing is qualified.
+
+Both follow-ups are reproduced by [the projection-caller audit](scripts/audit_projection_callers_followup.py), with full body hashes, retained disassembly locations and exact constant bytes in [its manifest](evidence/audits/projection-callers-followup.json). **Bounded work status: done; confidence: verified static evidence.** No rendering, instruction probes or Ghidra writes were performed. All broader projection and runtime limitations above remain applicable.

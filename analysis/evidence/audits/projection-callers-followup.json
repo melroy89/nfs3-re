@@ -1,0 +1,69 @@
+{
+  "kind": "projection-caller-followup",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00495190",
+          "end_exclusive": "00495223",
+          "sha256": "07df9863f61554b6d1dc463395dede4b00bb2bee9fc53a0eb31b85b9b91a523a",
+          "assembly": "analysis/captures/modern-differences/projection-callers/original-00495190.asm"
+        },
+        {
+          "start": "004dbda0",
+          "end_exclusive": "004dbddf",
+          "sha256": "dbef7a2b2ff606f05f37fbf36cfe55f6de4a9fb18050e2119c8052f38c60e4d8",
+          "assembly": "analysis/captures/modern-differences/projection-callers/original-004dbda0.asm"
+        }
+      ],
+      "scaling_constants": [
+        {
+          "address": "0053be28",
+          "bytes_hex": "cdcccc3a",
+          "binary32_value": 0.0015625000232830644
+        },
+        {
+          "address": "0053be2c",
+          "bytes_hex": "8988083b",
+          "binary32_value": 0.0020833334419876337
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00495190",
+          "end_exclusive": "00495223",
+          "sha256": "231a742397d6d8f9bf1538a3a24ff9dcfdd9787995446ddfccfd743818dd3701",
+          "assembly": "analysis/captures/modern-differences/projection-callers/official_modern-00495190.asm"
+        },
+        {
+          "start": "004dbda0",
+          "end_exclusive": "004dbddf",
+          "sha256": "2c4e1f23409399c1eb6fdf585fbe0dff896034be8d97b57ded9303eff8f1f195",
+          "assembly": "analysis/captures/modern-differences/projection-callers/official_modern-004dbda0.asm"
+        }
+      ],
+      "scaling_constants": [
+        {
+          "address": "0053bdd4",
+          "bytes_hex": "cdcccc3a",
+          "binary32_value": 0.0015625000232830644
+        },
+        {
+          "address": "0053bdd8",
+          "bytes_hex": "8988083b",
+          "binary32_value": 0.0020833334419876337
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static bytes only; no rendered output or x87 state equivalence.",
+    "Callee interface correspondence relies on the linked projection comparison."
+  ]
+}

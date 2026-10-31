@@ -213,7 +213,7 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "951d5ea2610e38e1ac16a80e38b04e6c08759d2ffc0a7109be81edf9bfe116e1"
+      "sha256": "44b98327a348734c3009f82976813b89f086cbe2b00eef52d5fe5890acd8d03f"
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
@@ -362,8 +362,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 280,
-    "without_address_mentions": 81
+    "with_address_mentions": 282,
+    "without_address_mentions": 79
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -6032,7 +6032,17 @@
       "changed_bytes": 4,
       "original_sha256": "07df9863f61554b6d1dc463395dede4b00bb2bee9fc53a0eb31b85b9b91a523a",
       "modern_sha256": "231a742397d6d8f9bf1538a3a24ff9dcfdd9787995446ddfccfd743818dd3701",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00495190",
+            "004951c2",
+            "004951d5"
+          ]
+        }
+      ]
     },
     {
       "entry": "00495230",
@@ -8261,8 +8271,9 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-projection.md",
-          "entry_mentioned": false,
+          "entry_mentioned": true,
           "addresses": [
+            "004bed20",
             "004bed34"
           ]
         }
@@ -9771,7 +9782,18 @@
       "changed_bytes": 6,
       "original_sha256": "dbef7a2b2ff606f05f37fbf36cfe55f6de4a9fb18050e2119c8052f38c60e4d8",
       "modern_sha256": "2c4e1f23409399c1eb6fdf585fbe0dff896034be8d97b57ded9303eff8f1f195",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dbda0",
+            "004dbdb1",
+            "004dbdc6",
+            "004dbdd6"
+          ]
+        }
+      ]
     },
     {
       "entry": "004dbde0",
