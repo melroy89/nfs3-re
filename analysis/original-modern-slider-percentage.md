@@ -65,3 +65,19 @@ This supplies concrete audio/effect-intensity and car-editing candidates for the
 The executable evidence now retains the 16-byte descriptor at `00558224`: keyword pointer to literal **`percenttype`** at `005386b4`, a default/value word, destination pointer **`00604f1c`**, and a type/dispatch word. `00604f1c - 00604ee0 = 3ch`, matching the renderer's field offset in the frontend entry template. This is an exact descriptor/offset link; parsing dispatch, write width, template instantiation and all default overrides still need direct code tracing before declaring the full asset-to-live-instance contract verified.
 
 Reproduce the asset side with `python3 analysis/scripts/inventory_slider_percent_types.py --game-dir '<installed game directory>'`; the executable audit records descriptor bytes for both baselines. Installed/backup naming does not authenticate retail or official-package provenance. No slider was moved, setting changed or numeric output measured.
+
+## Coordinated definition changes and duplicate backup boundary
+
+The selected inventory now matches blocks by exact codelink between installed files and case-distinct uppercase backups, without treating their directory names as authenticated provenance:
+
+| Codelink group | Uppercase local backup percenttype | Installed percenttype | Paired renderer implication |
+|---|---:|---:|---|
+| Five shared audio controls | 0 | 1 | Original tail skips type0; Modern type1 admits direct `v*100`. |
+| `SFX_INTENSITY` | 0 | 1 | Same transition from no percentage tail to direct percentage mapping. |
+| Seven shared `CE_*` car-editing controls | 1 | 2 | Original type1 and Modern type2 both select the bipolar `(v-0.5)*2*100` mapping, with different rounding sequences already documented. |
+
+Installed `audio.mnu` additionally contains `ASLD_MENUSOUND`, absent from the selected uppercase `AUDIO.MNU`. Its separate volume consumer is traced in the [frontend sound comparison](original-modern-frontend-sound.md). This is a matching-codelink/data comparison, not proof that the two file sets were paired with the executables historically or selected at runtime.
+
+For all three selected filenames, lowercase `fedata_org/menus/*.mnu` copies are **byte-identical** to installed `FEDATA/MENUS/*.mnu`; the inventory records this explicitly. They are not independent original evidence merely because they sit in a backup folder. Uppercase files have different hashes and preserve the older declaration pattern in this bounded set; retail/package provenance remains unverified.
+
+This explains the cooperation between a changed binary type gate and changed menu declarations: applying only one side would not reproduce the observed mappings for these files. It strengthens the mechanism behind the volume/alpha percentage catalog claim while leaving complete parser binding, historical introduction, dead-zone behavior and actual formatted outputs pending. No setting or asset was changed.

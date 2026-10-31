@@ -342,5 +342,104 @@
         }
       ]
     }
+  ],
+  "selected_comparisons": [
+    {
+      "installed": "FEDATA/MENUS/advgrph.mnu",
+      "uppercase_backup": "fedata_org/menus/ADVGRPH.MNU",
+      "lowercase_backup": "fedata_org/menus/advgrph.mnu",
+      "lowercase_backup_identical_to_installed": true,
+      "matching_codelinks": [
+        {
+          "codelink": "SFX_INTENSITY",
+          "backup_percenttype": "0",
+          "installed_percenttype": "1"
+        }
+      ],
+      "installed_only_codelinks": [],
+      "backup_only_codelinks": []
+    },
+    {
+      "installed": "FEDATA/MENUS/audio.mnu",
+      "uppercase_backup": "fedata_org/menus/AUDIO.MNU",
+      "lowercase_backup": "fedata_org/menus/audio.mnu",
+      "lowercase_backup_identical_to_installed": true,
+      "matching_codelinks": [
+        {
+          "codelink": "ASLD_ENGINEVOLUME",
+          "backup_percenttype": "0",
+          "installed_percenttype": "1"
+        },
+        {
+          "codelink": "ASLD_MENUMUSIC",
+          "backup_percenttype": "0",
+          "installed_percenttype": "1"
+        },
+        {
+          "codelink": "ASLD_RACEMUSIC",
+          "backup_percenttype": "0",
+          "installed_percenttype": "1"
+        },
+        {
+          "codelink": "ASLD_SOUNDFX",
+          "backup_percenttype": "0",
+          "installed_percenttype": "1"
+        },
+        {
+          "codelink": "ASLD_SPEECHVOLUME",
+          "backup_percenttype": "0",
+          "installed_percenttype": "1"
+        }
+      ],
+      "installed_only_codelinks": [
+        "ASLD_MENUSOUND"
+      ],
+      "backup_only_codelinks": []
+    },
+    {
+      "installed": "FEDATA/MENUS/cedbasic.mnu",
+      "uppercase_backup": "fedata_org/menus/CEDBASIC.MNU",
+      "lowercase_backup": "fedata_org/menus/cedbasic.mnu",
+      "lowercase_backup_identical_to_installed": true,
+      "matching_codelinks": [
+        {
+          "codelink": "CE_AERODYN",
+          "backup_percenttype": "1",
+          "installed_percenttype": "2"
+        },
+        {
+          "codelink": "CE_BGRRATS",
+          "backup_percenttype": "1",
+          "installed_percenttype": "2"
+        },
+        {
+          "codelink": "CE_BRAKEBAL",
+          "backup_percenttype": "1",
+          "installed_percenttype": "2"
+        },
+        {
+          "codelink": "CE_ENGINETUNE",
+          "backup_percenttype": "1",
+          "installed_percenttype": "2"
+        },
+        {
+          "codelink": "CE_STEERINGSPD",
+          "backup_percenttype": "1",
+          "installed_percenttype": "2"
+        },
+        {
+          "codelink": "CE_SUSPENSION",
+          "backup_percenttype": "1",
+          "installed_percenttype": "2"
+        },
+        {
+          "codelink": "CE_TIRES",
+          "backup_percenttype": "1",
+          "installed_percenttype": "2"
+        }
+      ],
+      "installed_only_codelinks": [],
+      "backup_only_codelinks": []
+    }
   ]
 }
