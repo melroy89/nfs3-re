@@ -73,3 +73,5 @@ The [menu comparison](original-modern-network-port-menu.md) traces a two-value 9
 - **MP140-006:** selecting/passing 1030 only aligns a transport parameter. It does **not** prove original/Modern race synchronization, replay compatibility or full protocol equivalence. The [precision comparison](og-modern-x87-precision.md) is an independent numerical difference.
 
 Earlier [host/VM observations](normal-tcp-race-validation.md) concern two Modern-derived peers, not an original-versus-Modern comparison. They must not be reused as cross-version acceptance evidence. No executable/Ghidra changes or new game/probe execution were made here.
+
+The [network launch consumer comparison](original-modern-command-line.md#retained-launch-consumer-versus-changed-peer-endpoint-policy) now verifies two retained bodies and separates that Port handoff/literal6666 route from the changed1030→9803 peer endpoint policy documented here.

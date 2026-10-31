@@ -7,6 +7,20 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "0049e080",
+          "end": "0049e212",
+          "bytes_sha256": "74905b8d8525859ada709d936fd5eaead9f596ee74f8f688f88eac16498451f9",
+          "assembly": "analysis/captures/modern-differences/command-line/original-0049e080.asm",
+          "assembly_sha256": "2c669bfcca9465b5a126274598da7e44cac2ceaf372e2bb591c02202c013ef57"
+        },
+        {
+          "start": "004a5b00",
+          "end": "004a5d10",
+          "bytes_sha256": "85b3df8bc7adfcd316c2464b3d5380e84dd6663e735f137475da386a4f71454b",
+          "assembly": "analysis/captures/modern-differences/command-line/original-004a5b00.asm",
+          "assembly_sha256": "a9ed90f9817d90f847e4629ac3407442aaf4346a2e394e6d314c37f31911b9c7"
+        },
+        {
           "start": "004a5080",
           "end": "004a54e4",
           "bytes_sha256": "c5b3385d57d9be5fc948591d172c9e121ea264120ad78ba53ab95d4961a94c46",
@@ -264,6 +278,20 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "0049e080",
+          "end": "0049e212",
+          "bytes_sha256": "74905b8d8525859ada709d936fd5eaead9f596ee74f8f688f88eac16498451f9",
+          "assembly": "analysis/captures/modern-differences/command-line/official_modern-0049e080.asm",
+          "assembly_sha256": "89f31115c934b395bada7ba279081769ed7e1e62b3ae325303b4fff6a69711a1"
+        },
+        {
+          "start": "004a5b00",
+          "end": "004a5d10",
+          "bytes_sha256": "85b3df8bc7adfcd316c2464b3d5380e84dd6663e735f137475da386a4f71454b",
+          "assembly": "analysis/captures/modern-differences/command-line/official_modern-004a5b00.asm",
+          "assembly_sha256": "9227c196bca7a937b4da200017e5aa9ceff767f4c53281c80e4851c9b350dcb8"
+        },
         {
           "start": "004a5080",
           "end": "004a54e4",
@@ -560,6 +588,16 @@
     "No universal claim that legacy options have no other parser path."
   ],
   "identical_network_parser_ranges": [
+    {
+      "start": "0049e080",
+      "end": "0049e212",
+      "sha256": "74905b8d8525859ada709d936fd5eaead9f596ee74f8f688f88eac16498451f9"
+    },
+    {
+      "start": "004a5b00",
+      "end": "004a5d10",
+      "sha256": "85b3df8bc7adfcd316c2464b3d5380e84dd6663e735f137475da386a4f71454b"
+    },
     {
       "start": "004a520b",
       "end": "004a5334",

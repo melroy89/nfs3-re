@@ -112,3 +112,24 @@ The common numeric branch computes **`007a1fec + 4*prefix_index`**, passes the s
 For Name, the caller deliberately returns to the **original argv pointer plus matched-prefix length**, rather than copying the transformed scratch suffix. Helper `004e0e30` preserves ECX/ESI, returns the original destination in EAX, advances EDX while copying and returns EDX=0. It pads only the remainder of its supplied11-byte count. For a source at least11 bytes long, this helper does not append an additional terminator or write byte12. Preexisting destination bytes and later consumers remain separate concerns; a reconstruction must not silently change the retained bounded-copy behavior.
 
 The final launch checks require the IP and Name buffers to be nonempty and `007a1ff8` nonzero when Port is nonzero. They do **not** individually test `007a1ffc` there, despite the error text mentioning Player ID. This is the exact local check sequence, not evidence that player ID is optional throughout the remaining network stack. No command-line or network probe was executed.
+
+## Retained launch consumer versus changed peer endpoint policy
+
+Complete launch consumer **`0049e080..0049e212`** and connection wrapper **`004a5b00..004a5d10`** now have paired byte-equality assertions in the same manifest. This establishes unchanged local instructions and register handoff, not identical external services or transitive callees.
+
+The launch consumer branches on whether IP buffer `007a1fa0` is nonempty. On the configured-address branch it copies the launch Name to `006fd2fc`, then applies these raw fields:
+
+| Launch storage | Consumer output |
+|---|---|
+| Race `007a2000` | DWORD `006fd3b8` |
+| Track `007a2004` | DWORD `006fd4ac`, with no local domain check |
+| Laps `007a200c` | DWORD `006fd4b4`; also derive `006fd4b0`:8→2,4→1,otherwise0 |
+| Level `007a2010` | DWORD `006fd470` |
+| Class `007a2014` | DWORD `006fd4d4` |
+| Car `007a2008` | EAX to `00439a10` with EDX=0 |
+
+At **`0049e1c6..0049e1d8`**, it passes Name pointer in EAX, IP pointer in EBX, Port DWORD in ECX and the low WORD of Player ID (`007a1ffc`) in DX to `004a5b00`. Only DX is loaded at that site; EDX’s upper16 bits are not established by that instruction alone. The callee explicitly zero-extends the saved low WORD at `004a5b65..004a5b6e`, so reconstructing Player ID as an unconstrained full-width input would misstate the consumed value. This does not establish the valid application-level ID domain.
+
+With an empty configured IP, the caller instead supplies a fixed address-string pointer, literal ECX **6666 (`1a0ah`)** and EDX=0 to the same wrapper. The complete purpose/availability of that default address and provider behavior remain outside this local comparison.
+
+The separate [peer endpoint comparison](original-modern-network-endpoints.md) traces Modern’s configurable getter and default9803 replacing original1030. Those changes occur in another endpoint route. They must not be applied indiscriminately to the retained network-launch Port field, literal6666 fallback, or NPS connection wrapper merely because all concern networking. Port byte order, provider libraries, actual connection success and full launch settings validation require their own evidence. No network traffic or target instructions were executed.

@@ -18,8 +18,8 @@
     },
     {
       "path": "analysis/original-modern-command-line.md",
-      "sha256": "fb9c29d305e425a32df1e97862d9000f2b4dfcb2037754698ce4103974ac125e",
-      "relative_links": 5
+      "sha256": "89d38767a3020b19d509bfc815c92fe7a0e0e107c34fa936db6ff73eb3303412",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
@@ -168,8 +168,8 @@
     },
     {
       "path": "analysis/original-modern-network-endpoints.md",
-      "sha256": "3b0e73068dc7894643646a163d5bae28f41007e5bc297c50b70e04ce3202988d",
-      "relative_links": 6
+      "sha256": "fa7753d884f4f55556b34b94e0ee00e8d2e9c276cce0d719d91a6f13f96ff85c",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-network-port-menu.md",
@@ -328,7 +328,7 @@
     }
   ],
   "file_count": 65,
-  "relative_link_count": 479,
+  "relative_link_count": 481,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -18,7 +18,7 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe
         def string(va):return pe.get_data(va-0x400000,512).split(b'\0')[0].decode('ascii')
-        spans=[(0x4a5080,0x4a54e4),(0x4e0e30,0x4e0e59)]
+        spans=[(0x49e080,0x49e212),(0x4a5b00,0x4a5d10),(0x4a5080,0x4a54e4),(0x4e0e30,0x4e0e59)]
         if label=='official_modern':spans += [(0x4b57f4,0x4b5841),(0x4b5844,0x4b5877),(0x4f9400,0x4f9448),(0x4f0ae0,0x4f0aee),(0x4eede0,0x4eedee)]
         rows=[]
         for start,end in spans:
@@ -41,7 +41,7 @@ def main():
             'port_scan_format':string(0x53d68c),'network_argument_error':string(0x53d764)}
     assert result['binaries']['original']['network_prefixes']==result['binaries']['official_modern']['network_prefixes']
     result['identical_network_parser_ranges']=[]
-    for start,end in [(0x4a520b,0x4a5334),(0x4a5480,0x4a54e3),(0x4e0e30,0x4e0e59)]:
+    for start,end in [(0x49e080,0x49e212),(0x4a5b00,0x4a5d10),(0x4a520b,0x4a5334),(0x4a5480,0x4a54e3),(0x4e0e30,0x4e0e59)]:
         data=images['original'].get_data(start-0x400000,end-start)
         assert data==images['official_modern'].get_data(start-0x400000,end-start)
         result['identical_network_parser_ranges'].append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(data).hexdigest()})
