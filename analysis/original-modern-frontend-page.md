@@ -225,3 +225,17 @@ At their corresponding final scale step, both load binary32 **`007a1b60 + 4*slot
 Slot9 retains initial scale bits **`0x3fcccccd`** (binary32 approximately1.6), but changes the DWORD written to **`007a1ac0 + 4*slot`** from **60 to0**, and the DWORD written to **`0055e95c + 4*slot`** from **410 (`0x19a`) to390 (`0x186`)**. Its other inspected state writes remain0 at `007a1ae8 + 4*slot` and3 at `007a1b10 + 4*slot`. These cells participate in animation/update state, but no physical time units or visible smoothing effect are assigned here.
 
 This provides bounded evidence of changed slot state alongside retained final scaling. It does not yet verify the release-note claim about smoother logo disappearance: the draw/update consumer and time-to-state conversion must be compared before making that attribution.
+
+## Position-dependent logo fade replaces hard admission cutoffs
+
+Paired retained consumer span **`004a44c3..004a45c7`** establishes a direct display-policy change. Both compute a base intensity in ECX (initially150; slot9’s first pass uses255). After centring the first pass horizontally, original admits the draw only for signed **`150 < x < 640`** and **`0 < y < 450`**. Those tests simply skip the draw outside the interval; they do not locally reduce its colour intensity near those bounds.
+
+Modern replaces that admission sequence with four conditional negative additions. For ordinary non-overflowing integers, the inspected arithmetic is:
+
+`adjusted = base + min(x-200,0) + min(440-x,0) + min(y-100,0) + min(380-y,0)`
+
+It skips drawing when the resulting signed value is negative. Zero still reaches draw preparation. The subsequent shift by24 packs its low byte into the high byte of the colour DWORD, with low24 bits white. This establishes a position-dependent opacity/intensity reduction in the caller; complete renderer interpretation of that byte and visible smoothness remain separate evidence. This is not an arbitrary-input C formula: the actual x86 SUB/ADD operations wrap32 bits and use sign-bit branches, so signed-overflow-free integer invariants must be established before translating it literally.
+
+The first-pass centring expression also changes. Original halves a signed DWORD extent with truncation-toward-zero correction, applies scale through x87, then calls **`004dfd56`** to round toward zero before integer storage. That helper temporarily loads control WORD`0x0c3f`, executes `FRNDINT`, then restores the previous control word. Modern zero-extends the selected record’s WORD extent, halves it with SAR1, computes the adjusted position using `FISUBR`, and directly executes `FISTP`. Its final conversion therefore follows the active x87 rounding mode, rather than explicitly forcing truncation. Exceptional values and status flags are not proved equivalent.
+
+This gives bounded static support for **MP150-023**, the smoother-disappearance claim, while also identifying a numeric conversion difference relevant to C reconstruction. No logo frame or timing sequence was rendered; the complete animation update cadence and physical coordinate scaling remain unresolved.

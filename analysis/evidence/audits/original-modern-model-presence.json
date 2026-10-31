@@ -7,6 +7,20 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "004a44c3",
+          "end": "004a45c7",
+          "sha256": "2aa2715febb63709c533c90c8ad85b005b74214c4ffdf1021ae2cb80afeadfb6",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-004a44c3.asm",
+          "assembly_sha256": "7373d2d5056e126d9c52a858530b15d7138565692a497c7a9ec480570b3742f8"
+        },
+        {
+          "start": "004dfd56",
+          "end": "004dfd6d",
+          "sha256": "fb108e4e34dbe6d87acc4410b0cc8ac5603adf87a3d466a3386ba91c96b1b33e",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-004dfd56.asm",
+          "assembly_sha256": "e7cf3ada9404fdefd2bfdf9801dbec6373dab41b3ba2c4c22b4b4c7cac4b0380"
+        },
+        {
           "start": "00438ad0",
           "end": "00438aed",
           "sha256": "3cf0fc54e52432a4572a8eaabc4f8444523a7ba3f9e442f71d5e3a7af33e77f9",
@@ -62,6 +76,20 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "004a44c3",
+          "end": "004a45c7",
+          "sha256": "481ca2ef770c0e5d38e0bd886fea1518c9c7598b04318189369506691f12c13f",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a44c3.asm",
+          "assembly_sha256": "02a22be5d41b744a3e957a5521592a75a27ad33f5e38e1b9cd3906d64a0b72d3"
+        },
+        {
+          "start": "004dfd56",
+          "end": "004dfd6d",
+          "sha256": "d58ea03c32163153a67e58218927072255791905188317db76d506811b595d59",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004dfd56.asm",
+          "assembly_sha256": "d2af1429e2842cc79905b2a18b8f08f4c7404be3d3fe192a1c384216e0425842"
+        },
         {
           "start": "00438ad0",
           "end": "00438aed",
