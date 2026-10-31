@@ -1614,6 +1614,80 @@
       "official_modern": "00454da8"
     }
   ],
+  "nulled_original_callback_bodies": [
+    {
+      "menu": "main",
+      "start": "0045d2f0",
+      "end": "0045d2f7",
+      "hex": "5589e531c05dc3",
+      "bytes_sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+      "assembly": "analysis/captures/modern-differences/menu-callback-table/original-0045d2f0.asm",
+      "assembly_sha256": "ce5cdb73e002aaac780587fb7e7522a34a485568b2d0b83b13431a7c8572e63d"
+    },
+    {
+      "menu": "mainmult",
+      "start": "004405b0",
+      "end": "004405b7",
+      "hex": "5589e531c05dc3",
+      "bytes_sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+      "assembly": "analysis/captures/modern-differences/menu-callback-table/original-004405b0.asm",
+      "assembly_sha256": "139eedd68dfa163300d802ee0fac5c537b2673dfa0f6de2e03d43b9c47151010"
+    },
+    {
+      "menu": "mainsplt",
+      "start": "0045d620",
+      "end": "0045d627",
+      "hex": "5589e531c05dc3",
+      "bytes_sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+      "assembly": "analysis/captures/modern-differences/menu-callback-table/original-0045d620.asm",
+      "assembly_sha256": "fbab48f4db9e951e850d938485f68685be0d6e3bc0a8276034fd60c512484743"
+    },
+    {
+      "menu": "slides",
+      "start": "00453f50",
+      "end": "00453f57",
+      "hex": "5589e531c05dc3",
+      "bytes_sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+      "assembly": "analysis/captures/modern-differences/menu-callback-table/original-00453f50.asm",
+      "assembly_sha256": "39e3e6ca38d7a84906b997c2dd87406eef9faee564a6c5672a48e1fda326cc58"
+    },
+    {
+      "menu": "interior",
+      "start": "00454d50",
+      "end": "00454d57",
+      "hex": "5589e531c05dc3",
+      "bytes_sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+      "assembly": "analysis/captures/modern-differences/menu-callback-table/original-00454d50.asm",
+      "assembly_sha256": "2eaa4b0074b86cb6fe467b3a84436f26613a048948b10c212d19ff186069e426"
+    },
+    {
+      "menu": "interior",
+      "start": "00454d40",
+      "end": "00454d47",
+      "hex": "5589e531c05dc3",
+      "bytes_sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+      "assembly": "analysis/captures/modern-differences/menu-callback-table/original-00454d40.asm",
+      "assembly_sha256": "8b7fa25bf0207268d9846ea353b3c435392f8f4ccbce5bac6196cf56e6d4b133"
+    },
+    {
+      "menu": "graphics",
+      "start": "00448430",
+      "end": "00448437",
+      "hex": "5589e531c05dc3",
+      "bytes_sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+      "assembly": "analysis/captures/modern-differences/menu-callback-table/original-00448430.asm",
+      "assembly_sha256": "0e1917de64ff9e3bc233b412104994bf7cb801244331b9b4d8d2336250ec897e"
+    },
+    {
+      "menu": "funkeys",
+      "start": "004377c0",
+      "end": "004377c7",
+      "hex": "5589e531c05dc3",
+      "bytes_sha256": "8e5d3dbf325d3e2411d089523cd59ffb878b910565cc4e82f00f63f1c775e269",
+      "assembly": "analysis/captures/modern-differences/menu-callback-table/original-004377c0.asm",
+      "assembly_sha256": "2b9c1b8809e933a03f1b9dd20500706c72ee010b80936328c17736d27fdaa5b5"
+    }
+  ],
   "limits": [
     "No callback execution or universal lifecycle interpretation.",
     "Same pointer does not prove same target bytes; relocated pointer does not prove different semantics.",

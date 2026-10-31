@@ -43,10 +43,26 @@ This table exhausts changed DWORD fields in the inspected 57 rows. It does not e
 
 `options`, `connect`, `ipx` and `credits` keep the same row words. This is compatible with the [asset-defined new controls](original-modern-common-menu-buttons.md) and changed helper bodies elsewhere: unchanged registration is not unchanged frontend behaviour.
 
+## All eight nulled targets are original return-zero stubs
+
+The expanded audit now reads and disassembles all eight complete original bodies. Each is exactly seven bytes, `55 89 e5 31 c0 5d c3`:
+
+```asm
+push ebp
+mov  ebp, esp
+xor  eax, eax
+pop  ebp
+ret
+```
+
+This covers the original targets `0045d2f0`, `004405b0`, `0045d620`, `00453f50`, `00454d50`, `00454d40`, `00448430`, and `004377c0`, corresponding exactly to the eight null fields above. They return EAX=0, modify arithmetic flags through XOR, balance the stack frame, and have no helper calls or explicit application-memory writes. Their stack writes, return value and flags are machine effects, so skipping the invocation is not full machine-state equivalence.
+
+For this set, the delta is therefore removal of **placeholder return-zero registrations**, not evidence that eight substantive menu behaviours were removed. Whether each caller treats a null callback exactly like a zero return requires its invocation-site contract; that is not established simply by these stubs. Some original target addresses are repurposed by Modern code, so reconstructing a callback from the Modern bytes at the old address would be incorrect even though its original implementation was trivial.
+
 ## Reconstruction use and follow-up
 
-Preserve original and Modern callback maps separately while deciding which behaviour to reconstruct. A shared C binder needs the selected map as data; silently reusing the Modern map for an original-mode reconstruction would omit eight registered callbacks and redirect four others before any body translation is considered.
+Preserve original and Modern callback maps separately while deciding which behaviour to reconstruct. A shared C binder needs the selected map as data; silently reusing the Modern map for an original-mode reconstruction would omit eight return-zero placeholder callbacks and redirect four others before any body translation is considered. The omitted placeholders have no observed application-state logic; their caller-level null-versus-zero semantics still need qualification.
 
-Next, compare each affected callback's complete original/Modern counterpart and its descriptor invocation sites. Prioritize graphics and Interior for the new standard-control policy, and `credits1` for the reported common Credits navigation. Reuse existing function and menu research rather than pairing moved functions solely by address. Qualify actual lifecycle ordering and state mutation before translating callbacks or claiming the null registrations fix a named release-note bug.
+Next, compare the four redirected fields' original/Modern callback counterparts and the invocation sites of all affected descriptor slots. The eight nulled original bodies are now fully inspected as stubs; do not repeatedly investigate them as missing substantive implementations. Prioritize graphics and Interior for the new standard-control policy, and `credits1` for the reported common Credits navigation. Reuse existing function and menu research rather than pairing moved functions solely by address. Qualify actual lifecycle ordering and state mutation before translating callbacks or claiming the null registrations fix a named release-note bug.
 
 This investigation assigns no historical release date or tested visual effect to the pointer deltas. It does not alter executable bytes, saved Ghidra state, exports or maintained C, and uses no target instruction probes.

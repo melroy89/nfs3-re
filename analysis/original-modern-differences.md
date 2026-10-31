@@ -280,7 +280,7 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 ## Static menu callback registration map
 
-[The complete 57-row callback comparison](original-modern-menu-callback-table.md) identifies every changed field: nine rows, 12 pointers, including eight null registrations and four redirects. Static-table and runtime-descriptor offsets are mapped explicitly; body semantics and runtime reachability remain separate.
+[The complete 57-row callback comparison](original-modern-menu-callback-table.md) identifies every changed field: nine rows, 12 pointers, including eight null registrations and four redirects. Static-table and runtime-descriptor offsets are mapped explicitly. All eight nulled original targets are now verified seven-byte return-zero stubs; redirected-body semantics and caller-level null-versus-zero behaviour remain separate.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list

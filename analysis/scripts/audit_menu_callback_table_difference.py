@@ -2,6 +2,7 @@
 import hashlib
 import json
 import struct
+import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
@@ -43,9 +44,24 @@ def main():
     assert len(deltas) == 12 and len({d['row_index'] for d in deltas}) == 9
     assert sum(d['official_modern'] == '00000000' for d in deltas) == 8
     result['changed_fields'] = deltas
+    original = pefile.PE(str(ROOT / SPECS['original'][0]))
+    capture = ROOT / 'analysis/captures/modern-differences/menu-callback-table'
+    capture.mkdir(parents=True, exist_ok=True)
+    stubs = []
+    for delta in deltas:
+        if delta['official_modern'] != '00000000':
+            continue
+        address = int(delta['original'], 16)
+        code = original.get_data(address-0x400000, 7)
+        assert code == bytes.fromhex('5589e531c05dc3')
+        path = capture / f'original-{address:08x}.asm'
+        path.write_bytes(subprocess.check_output(['objdump', '-d', '-Mintel', f'--start-address={address}', f'--stop-address={address+7}', SPECS['original'][0]], cwd=ROOT))
+        stubs.append({'menu': delta['name'], 'start': f'{address:08x}', 'end': f'{address+7:08x}', 'hex': code.hex(), 'bytes_sha256': hashlib.sha256(code).hexdigest(), 'assembly': str(path.relative_to(ROOT)), 'assembly_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
+    assert len(stubs) == 8
+    result['nulled_original_callback_bodies'] = stubs
     result['limits'] = ['No callback execution or universal lifecycle interpretation.', 'Same pointer does not prove same target bytes; relocated pointer does not prove different semantics.', 'Only the binder-selected sentinel-scanned table is covered; duplicated PE bytes are not silently treated as alternate live tables.']
     (ROOT / 'analysis/evidence/audits/original-modern-menu-callback-table.json').write_text(json.dumps(result, indent=2) + '\n')
-    print('PASS: 57 matching names; nine changed rows, 12 fields (eight null, four redirected)')
+    print('PASS: 57 matching names; nine changed rows, 12 fields (eight return-zero stubs nulled, four redirected)')
 
 
 if __name__ == '__main__':
