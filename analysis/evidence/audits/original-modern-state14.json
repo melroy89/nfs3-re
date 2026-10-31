@@ -88,6 +88,37 @@
       "sha256": "37993537bc576246c3696a0c7dc62dbf5b4b97781c5a64dd480243151e9bc496"
     }
   ],
+  "official_dx7": {
+    "member": "drivers/dx7/dx7a.dll",
+    "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+    "setstate_export": "60003ca0",
+    "selector14_case": "60004df4",
+    "dispatch_index": 14,
+    "spans": [
+      {
+        "start": "60003ca0",
+        "end": "60003d64",
+        "sha256": "cabb96d70bcdff21d8db51ae49147d7c6b8ab7d260a2aa3524858f1f7fb0b17e",
+        "assembly": "analysis/captures/modern-differences/state14/dx7-60003ca0.asm",
+        "assembly_sha256": "c42816fad9e3d3ebc5711a61749ce76b32c508137a6f5e896dbfa88026a6b495"
+      },
+      {
+        "start": "60004df4",
+        "end": "60004e59",
+        "sha256": "97962bd2d51c987c7e0e19cc9e12d5cde8bcd4b556054775b7ee54fa73ece8fd",
+        "assembly": "analysis/captures/modern-differences/state14/dx7-60004df4.asm",
+        "assembly_sha256": "0ad5449ccbdb61235caa229bf6461d3d2cecffb494a1f3f0fd18e226e7bca641"
+      },
+      {
+        "start": "60008a10",
+        "end": "60008a47",
+        "sha256": "010ce1dcb8060dd0a43c647f57b550f39fc00353a87c2a2001ae929a82e10d59",
+        "assembly": "analysis/captures/modern-differences/state14/dx7-60008a10.asm",
+        "assembly_sha256": "f47bf3179e63f468f8006d9753e66dc079ed82928dcc362567349fd3b6c87b79"
+      }
+    ],
+    "reciprocal_constant": 1.0
+  },
   "limits": [
     "Static only; no driver invocation or visual result.",
     "State14 semantics and complete enable-global lifecycle unresolved."

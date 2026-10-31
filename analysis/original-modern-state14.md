@@ -38,3 +38,16 @@ After the state14 callback, it saves that result in EBX and reads **`00554e5c`**
 Consequently the earlier0-versus500 difference is a **requested state-value** difference. Whether a driver call occurs also depends on prior cached state. The cache update is not rolled back on a failing callback in this local body; a later equal request can take the return1 fast path without retrying. No actual renderer failure is asserted, and the callback’s complete status conventions remain unresolved.
 
 Disabled-state cleanup likewise requests state14 value0 through this cache, so it need not invoke the driver when0 is already cached. Separate local cells `00678b40/44` are still reset by `00470b90`. This distinction matters for reconstruction: local cached-input cleanup, state-cache equality and renderer acceptance are three different events.
+
+## Official DX7 interpretation: small integers become reciprocals
+
+The audit extracts **`drivers/dx7/dx7a.dll`** from the hash-pinned official archive, verifies it equals the retained package member and records its hash. Export **`_THRASH_setstate@8`** is **`60003ca0`**. Its selector dispatch uses WORD selector14, byte table `60006aec[14]` and jump table `60006a34`, reaching **`60004df4`**. The retained dispatch prefix establishes this route; it is not an assertion that every renderer uses the same translation.
+
+The case handles the second stack argument as follows:
+
+- Values **1..4095**: convert the signed DWORD to x87, compute **binary32 `1/value`** using constant `60015448=1.0`, store at **`600170e8`**, then pass its bit pattern with downstream selector **38 (`0x26`)** to `60008a10`.
+- Zero, or any value with bits in mask **`0xfffff000`** set: store and forward the input DWORD unchanged with selector38. This permits raw floating-point bit patterns as well as the zero case; negative integer interpretation is not uniformly appropriate.
+
+The helper **`60008a10..60008a47`** performs setup/flush checks and dispatches `(object,selector,value)` through vtable offset`0x50`. Exact interface identity and the semantic name of downstream state38 remain outside this bounded audit. The state14 case itself sets its local result to1 without testing this helper’s return, so case admission is not proof of backend success.
+
+For this driver, the game’s changed zero-input policy therefore changes the translated payload from **zero bits** to the binary32 reciprocal of500, approximately **0.002**. This is a driver-specific numerical consequence, not merely an integer-cache difference. It does not establish a visible fog/lighting effect, runtime driver selection, original-driver behavior or equal behavior across DX6/DX8/OpenGL backends. Ambient x87 rounding and exceptions apply to the reciprocal conversion; no driver was loaded or invoked.
