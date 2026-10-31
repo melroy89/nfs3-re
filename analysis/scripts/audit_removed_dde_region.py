@@ -31,6 +31,38 @@ def main():
         dde=sorted(name for name in imports.values() if name.startswith('Dde'))
         assert len(dde)==7
         row={'path':relative,'sha256':expected,'spans':spans,'dde_imports':dde}
+        references={}
+        for target in (0x4900b0,0x490110,0x490140,0x4902f0):
+            relative_hits=[]
+            for section in pe.sections:
+                if not section.Characteristics & 0x20000000:continue
+                data=section.get_data()
+                base=pe.OPTIONAL_HEADER.ImageBase+section.VirtualAddress
+                for offset in range(len(data)-4):
+                    opcode=data[offset]
+                    if opcode not in (0xe8,0xe9):continue
+                    dest=(base+offset+5+struct.unpack_from('<i',data,offset+1)[0]) & 0xffffffff
+                    if dest==target:
+                        relative_hits.append({'va':f'{base+offset:08x}',
+                                              'opcode':f'{opcode:02x}'})
+            absolute_hits=[]
+            position=0
+            while True:
+                offset=raw.find(struct.pack('<I',target),position)
+                if offset<0:break
+                absolute_hits.append(f'{pe.OPTIONAL_HEADER.ImageBase+pe.get_rva_from_offset(offset):08x}')
+                position=offset+1
+            expected_relative=([{'va':'004900f4','opcode':'e8'},
+                                {'va':'0049012b','opcode':'e8'}]
+                               if label=='official_modern' and target==0x4900b0 else [])
+            expected_absolute=['004900cb'] if label=='original' and target==0x4902f0 else []
+            assert relative_hits==expected_relative and absolute_hits==expected_absolute
+            references[f'{target:08x}']={'rel32_byte_candidates':relative_hits,
+                                       'absolute_address_encodings':absolute_hits}
+        row['entry_reference_search']={
+            'scope':'E8/E9 rel32 byte candidates across executable sections; absolute DWORD encodings across all file bytes',
+            'results':references,
+            'limits':'Not an instruction-boundary or reachability proof. Excludes computed/relative-table aliases, interior entries, external callers and runtime-generated pointers.'}
         if label=='original':
             expected_thunks={0x533eb6:'DdeQueryStringA',0x533ebc:'DdeClientTransaction',
                 0x533ec2:'DdeGetLastError',0x533ec8:'DdeConnect',

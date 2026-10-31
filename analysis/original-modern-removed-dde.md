@@ -27,4 +27,12 @@ Both executables still statically import the same seven DDE functions: `DdeClien
 
 The separate [ShellExecute wrapper](original-modern-shell-open.md) exists in both executables with its documented owner-argument change. Thus “browser launching removed” would exceed the evidence. Original callers, callback registration reachability from actual startup, and whether this path was already inactive in the supplied original remain unresolved. No connection to multiplayer protocol, race simulation or replay precision is established.
 
+## Bounded caller and pointer search
+
+The audit additionally scans every executable section for E8/E9 rel32 byte candidates targeting the four original entries (`004900b0`, `00490110`, `00490140`, `004902f0`), and every file byte for their absolute little-endian DWORD encodings. In the original it finds **no rel32 candidate for any of the four**, and only one absolute encoding: callback operand `004900cb`, in the initializer's `PUSH 004902f0` at `004900ca`. No absolute encoding of the initializer, cleanup or URL routine entry was found.
+
+Modern has two rel32 candidates to reused address `004900b0`, at `004900f4` and `0049012b`; those belong to the separately documented overlay code. It has no candidate to the other three addresses and none of the four absolute encodings. The manifest retains the search scope and exact results.
+
+This makes **retained legacy code with no identified direct caller** a supported description of the supplied original. Dormancy is an inference, not proven unreachability: these byte searches exclude interior entry points, computed/table-relative aliases, external callers and runtime-generated addresses. They also do not establish instruction boundaries for positive candidates. Therefore removing this block is not evidence of a user-visible browser regression or improvement. Further caller work should require a concrete pointer/control-flow lead rather than assuming that an original code body must have been active.
+
 **Bounded status: done; confidence: verified static bodies, NOP replacement, named imports and strings.** Remaining work is original caller/registration tracing and any specifically authorized runtime validation. No executable, Ghidra database, raw reference export or maintained reconstruction source was modified.

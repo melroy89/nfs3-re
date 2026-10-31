@@ -45,6 +45,30 @@
         "DdeQueryStringA",
         "DdeUninitialize"
       ],
+      "entry_reference_search": {
+        "scope": "E8/E9 rel32 byte candidates across executable sections; absolute DWORD encodings across all file bytes",
+        "results": {
+          "004900b0": {
+            "rel32_byte_candidates": [],
+            "absolute_address_encodings": []
+          },
+          "00490110": {
+            "rel32_byte_candidates": [],
+            "absolute_address_encodings": []
+          },
+          "00490140": {
+            "rel32_byte_candidates": [],
+            "absolute_address_encodings": []
+          },
+          "004902f0": {
+            "rel32_byte_candidates": [],
+            "absolute_address_encodings": [
+              "004900cb"
+            ]
+          }
+        },
+        "limits": "Not an instruction-boundary or reachability proof. Excludes computed/relative-table aliases, interior entries, external callers and runtime-generated pointers."
+      },
       "import_thunks": {
         "00533eb6": {
           "iat": "0053471c",
@@ -127,7 +151,38 @@
         "DdeInitializeA",
         "DdeQueryStringA",
         "DdeUninitialize"
-      ]
+      ],
+      "entry_reference_search": {
+        "scope": "E8/E9 rel32 byte candidates across executable sections; absolute DWORD encodings across all file bytes",
+        "results": {
+          "004900b0": {
+            "rel32_byte_candidates": [
+              {
+                "va": "004900f4",
+                "opcode": "e8"
+              },
+              {
+                "va": "0049012b",
+                "opcode": "e8"
+              }
+            ],
+            "absolute_address_encodings": []
+          },
+          "00490110": {
+            "rel32_byte_candidates": [],
+            "absolute_address_encodings": []
+          },
+          "00490140": {
+            "rel32_byte_candidates": [],
+            "absolute_address_encodings": []
+          },
+          "004902f0": {
+            "rel32_byte_candidates": [],
+            "absolute_address_encodings": []
+          }
+        },
+        "limits": "Not an instruction-boundary or reachability proof. Excludes computed/relative-table aliases, interior entries, external callers and runtime-generated pointers."
+      }
     }
   },
   "limits": [
