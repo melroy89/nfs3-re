@@ -62,3 +62,18 @@ For `OwnHeapLimitMb`, negative inputs compare as signed values and clamp to 16; 
 - Reading/writing a configuration global is not proof of every behavior named by the key. Time units, all movie paths, texture admission and full window creation need consumer traces.
 - No API, process affinity, error mode, INI file or running game was changed. The maintained Ghidra project and executable bytes are unchanged.
 - Next: allocator callback targets/lifetimes, earlier startup argument/config initialization, and consumer comparisons for the remaining settings. Preserve observed return-value handling and suspected original defects in any future reconstruction.
+
+## Outside-body startup span ends in an application jump table
+
+The [outside-body inventory](original-modern-outside-function-index.md) now classifies complete1002-byte interval **`004a39c6..004a3db0`** as **974 Modern NOP bytes** through`004a3d94`, then a **28-byte jump table** through`004a3db0`. The first part contains973 changed positions; the table contains27, totaling1000. The manifest asserts the NOP run and exact seven target DWORDs. Original bytes occupy longer startup/application control flow; this same-address split is not an original function definition.
+
+Modern dispatcher`004a3eb7` subtracts6 from EAX, compares the result unsigned with6 and branches back to`004a3ea0` when above range; otherwise`004a3ebf` jumps through the table. Its mapping is:
+
+| Raw state | Target |
+|---:|---|
+| 6,7 | `004a3ee8` |
+| 8,9,10 | `004a3ea0` |
+| 11 | `004a3ec6` |
+| 12 | `004a3ed7` |
+
+An earlier loop check at`004a3ea4` handles state10 before ordinary dispatch, so the presence of a table slot is not proof that every slot is reached. The [existing next-round handoff](network-series-next-round-state.md) already traces surviving frontend actions6/7 to`004a3ee8` and race preparation`004a3ef4`; it supplies the relevant semantic context without inventing a new function at the table. Complete original startup removal, all state producers/overrides and runtime progression remain unresolved on their existing boundaries. No application or new instruction probe was executed.

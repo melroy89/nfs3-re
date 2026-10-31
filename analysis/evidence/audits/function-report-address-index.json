@@ -373,7 +373,7 @@
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
-      "sha256": "7698cb70f6364c5d91364ac78d99ea127fc452ddc437038bcdc3ed07694bf082"
+      "sha256": "512782d746a819d1106b221333b7260659b8c970146d832876e8e13e906ab046"
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
@@ -7697,9 +7697,18 @@
         },
         {
           "path": "analysis/original-modern-startup-policy.md",
-          "entry_mentioned": false,
+          "entry_mentioned": true,
           "addresses": [
-            "004a3e4e"
+            "004a3db0",
+            "004a3e4e",
+            "004a3ea0",
+            "004a3ea4",
+            "004a3eb7",
+            "004a3ebf",
+            "004a3ec6",
+            "004a3ed7",
+            "004a3ee8",
+            "004a3ef4"
           ]
         },
         {

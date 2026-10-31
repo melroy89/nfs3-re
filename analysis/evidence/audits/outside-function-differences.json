@@ -8002,5 +8002,32 @@
     "report": "analysis/original-modern-frontend-page.md",
     "report_sha256": "fd4c0f10d07e00a8673ca2a3a9cc7840c5f631629413b5c48acc3590c791fc1d",
     "limit": "Same-address partitions overlap different old/new function roles; counterpart calls/registration and report evidence govern semantics, not these partitions."
+  },
+  "startup_interval_partition": {
+    "interval": "004a39c6..004a3db0",
+    "nop_range": {
+      "start": "004a39c6",
+      "end_exclusive": "004a3d94",
+      "bytes": 974,
+      "changed_bytes": 973
+    },
+    "table": {
+      "start": "004a3d94",
+      "end_exclusive": "004a3db0",
+      "hex": "e83e4a00e83e4a00a03e4a00a03e4a00a03e4a00c63e4a00d73e4a00",
+      "sha256": "3a82998866d65d632d9b1c599d1d2f2cbccdcea02ee6dc1d8c4b27b6ce364941",
+      "changed_bytes": 27,
+      "state_targets": {
+        "6": "004a3ee8",
+        "7": "004a3ee8",
+        "8": "004a3ea0",
+        "9": "004a3ea0",
+        "10": "004a3ea0",
+        "11": "004a3ec6",
+        "12": "004a3ed7"
+      }
+    },
+    "dispatch_guard": "SUB EAX,6; CMP EAX,6; JA004a3ea0; JMP[004a3d94+4*EAX]",
+    "limit": "Modern data/control-flow classification verified; removed original startup mechanisms only partially explained in linked reports."
   }
 }
