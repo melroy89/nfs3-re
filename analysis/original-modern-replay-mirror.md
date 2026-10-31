@@ -4,7 +4,7 @@
 
 Static supplied-original/official-Modern comparison, with exact identities in the [baseline](original-modern-differences.md). Reproduce with `python3 analysis/scripts/audit_replay_mirror_difference.py`. The [manifest](evidence/audits/original-modern-replay-mirror.json) retains toggle, eligibility, refresh-gate and input witnesses. No replay, keyboard or target instruction was executed.
 
-The current saved analysis names `00484450` as the primary-view variant toggle. Its shared eligibility and HUD paths are relevant to **MP140-064**'s replay-mirror claim, but full input translation and rendered output remain outside the established scope.
+The current saved analysis names `00484450` as the primary-view variant toggle. Its shared eligibility and HUD paths are relevant to **MP140-064**'s replay-mirror claim, and its default F7 input chain is now traced below; rendered output remains untested.
 
 ## Original broad rejection becomes a stateful enable path
 
@@ -33,14 +33,24 @@ Its normal epilogue explicitly preserves EDX, which explains how the caller's la
 
 Modern `004844c0`'s inspected prefix tests `00791b1c` before its state-2 early-out: when enabled, it proceeds to layout-building calls including `00480fc0` and `004812e0`; when disabled and state 2, it skips that route. This is a third coordinated gate, not just a changed hotkey branch. The complete refresh body and render consumers remain separate work.
 
-## Input witness and remaining F7 question
+## Default F7 binding to action 11: complete static chain
 
-Race-loop callsite **`004c5097..004c50ae`** requests action **11** with EDX=1 through `0048f7b0`, then calls `00484450` on success. That action reader compares current and prior ring-buffer bitmasks, establishing an edge-triggered request at this caller.
+Fixed-binding initializer `0048f970` writes encoded value **0x4104** to **`0079c3cc`**. The evidence script asserts that exact immediate instruction in both executables. The mask builder **`0048f550..0048f699`** is also byte-identical, asserted by the script.
 
-Fixed-binding initializer `0048f970` writes encoded value **0x4104** to `0079c3cc`. The vendor identifies the mirror shortcut as F7. However, this chapter has not completed the encoded-binding-to-action-11 translation chain; the binding value alone is not promoted to an independently verified F7 mapping. Remapping/provider input and actual key presses were not tested.
+The builder starts at binding base `0079c340`. Each participant uses twelve DWORD slots (0x30 bytes): four axis-like entries followed by eight button entries. For one-participant mode it skips a further 0x30 bytes; for two-participant mode it consumes a second twelve-slot block. Both ordinary routes therefore reach **`0079c3a0`** before the shared 32-action loop (`0048f645`).
+
+`0079c3cc = 0079c3a0 + 4*11`, so this binding feeds shared **action 11**. The loop examines the signed low byte of each encoded DWORD and calls `00431800` for a nonzero type. For `0x4104`, that helper recognizes type **4**, extracts `(encoded << 8) >> 16 = 0x41`, and reads keyboard state byte **`00564818 + 0x41`**. A nonzero byte returns 255. Other fallback branches apply when the byte is zero; those do not change the direct default binding's index.
+
+The builder shifts the accumulating mask right once per shared entry and sets bit 31 on active input. After all 32 entries, the value contributed at index 11 occupies bit 11. It stores that mask in ring `0079c2b8`, indexed by an incremented counter masked with 31. The action reader `0048f7b0` uses the consumer-selected current/prior ring positions; it does not itself advance the producer.
+
+Race-loop callsite **`004c5097..004c50ae`** requests action 11 with EDX=1. `0048f7b0` then tests `current & ~previous & (1<<11)` and calls `00484450` on success. This supplies the previously missing binding → key state → mask bit → edge → toggle linkage.
+
+Microsoft's Scan 1 table maps scan index **0x41** to **F7**. This is a scan-code interpretation, not virtual-key `0x41` (A). [Keyboard Input Overview](https://learn.microsoft.com/en-us/windows/win32/inputdev/about-keyboard-input)
+
+The static default chain is therefore established. Actual OS/Wine keyboard delivery, remapping, ring scheduling and pressing F7 during replay remain untested. Unchanged binding/mask code also shows that this default key was not newly invented by the replay-admission change.
 
 ## Conclusion and further work
 
-Static evidence supports coordinated replay-state admission changes in the toggle, eligibility predicate and refresh path. **MP140-064 remains partial** until the full shortcut chain and mirror-render consumer mapping are established. The removal of renderer-mask admission is an additional observed delta, not proof that all those renderers now support the feature.
+Static evidence supports coordinated replay-state admission changes in the toggle, eligibility predicate and refresh path. The default F7 shortcut chain is now established; **MP140-064 remains partial** because complete mirror-render consumer mapping and runtime output are not established. The removal of renderer-mask admission is an additional observed delta, not proof that all those renderers now support the feature.
 
-Pending: all enable-global initialization/reset paths, layout-field role across profiles, complete camera eligibility, input mapping and rendered replay mirror behavior. This does not alter or validate replay trajectory/file compatibility; the audited changes concern presentation admission.
+Pending: all enable-global initialization/reset paths, layout-field role across profiles, complete camera eligibility, nondefault input/remapping and rendered replay mirror behavior. This does not alter or validate replay trajectory/file compatibility; the audited changes concern presentation admission.

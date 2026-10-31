@@ -47,6 +47,20 @@
           "bytes_sha256": "f4c577590bc8c49ba5c4ea15d376f3870d4205e9436b154bc947858ec7074526",
           "assembly": "analysis/captures/modern-differences/replay-mirror/original-0048f970.asm",
           "assembly_sha256": "a220f74e06ea85efb4e7db9333d4a3d61d3cae58f1f7fb1ee5b1baee8e69899f"
+        },
+        {
+          "start": "0048f550",
+          "end": "0048f69a",
+          "bytes_sha256": "b008ac4a4b20f2b403063952ae1417421c263190c6675ed036f9db8a5e472f72",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-0048f550.asm",
+          "assembly_sha256": "9f9e888fef99560a5419c5f14d4b59478ccee9f96d56086f5705992bdfdc839c"
+        },
+        {
+          "start": "00431800",
+          "end": "0043182d",
+          "bytes_sha256": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-00431800.asm",
+          "assembly_sha256": "76ddcf7ccb35ee542f52842a0e263305e80656439d3b0b827448c583638b2e54"
         }
       ]
     },
@@ -95,12 +109,34 @@
           "bytes_sha256": "f4c577590bc8c49ba5c4ea15d376f3870d4205e9436b154bc947858ec7074526",
           "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-0048f970.asm",
           "assembly_sha256": "a47a507266ff314bad7250533db31b8d3b6d7609bcff864e618720cc61366c29"
+        },
+        {
+          "start": "0048f550",
+          "end": "0048f69a",
+          "bytes_sha256": "b008ac4a4b20f2b403063952ae1417421c263190c6675ed036f9db8a5e472f72",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-0048f550.asm",
+          "assembly_sha256": "9e07b451e1c20489c97bbf19074502d6f84072dcb01adc34294046bc06b421ed"
+        },
+        {
+          "start": "00431800",
+          "end": "0043182d",
+          "bytes_sha256": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-00431800.asm",
+          "assembly_sha256": "cd3d6e99d64c219f90fcd547bcdec5ca9ed351270b3365be5c1fb1e9ca7185ae"
         }
       ]
     }
   },
   "limits": [
     "No replay, input or target execution.",
-    "Full F7 binding translation and rendered mirror remain unverified."
-  ]
+    "Default F7-to-action chain is static; actual keyboard delivery/rendered mirror unverified."
+  ],
+  "binding_chain": {
+    "encoded": "00004104",
+    "slot": "0079c3cc",
+    "shared_action_base": "0079c3a0",
+    "action_index": 11,
+    "scan_index": "0041",
+    "action_builder_identical": true
+  }
 }
