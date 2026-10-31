@@ -54,7 +54,7 @@ def main():
         result.setdefault('widget_type_bindings',{})[label]=bindings
         spans=[]
         capture=ROOT/'analysis/captures/modern-differences/menu-visible-counts';capture.mkdir(parents=True,exist_ok=True)
-        for start,end in [(0x4623a0,0x46249b),(0x4624a0,0x4628c8),(0x449060,0x4490d8),(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
+        for start,end in [(0x44a2d0,0x44a439 if label=='original' else 0x44a436),(0x4623a0,0x46249b),(0x4624a0,0x4628c8),(0x449060,0x4490d8),(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             spans.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT))})
         assert struct.unpack('<I',pe.get_data(0x4921c,4))[0]==0x4492aa
@@ -62,6 +62,12 @@ def main():
         assert pe.get_data(0x4623d8-0x400000,6)==bytes.fromhex('66c74054d007')
         assert pe.get_data(0x4624e8-0x400000,3)==bytes.fromhex('0fbff8')
         assert pe.get_data(0x4624f2-0x400000,8)==bytes.fromhex('668b515466895356')
+        assert pe.get_data(0x44a428-0x400000,7)==bytes.fromhex('83fb02750231db')
+        callback_site=0x44a36a if label=='original' else 0x44a35d
+        assert pe.get_data(callback_site-0x400000,3)==bytes.fromhex('ff5730')
+        if label=='official_modern':
+            assert pe.get_data(0x44a2d0-0x400000,1)==b'\x60'
+            assert pe.get_data(0x44a42f-0x400000,7)==bytes.fromhex('895d1c89ec61c3')
         expected_padding = 5 if label == 'original' else 15
         expected_extent_add = 5 if label == 'original' else 2
         assert pe.get_data(0x4645ea-0x400000,5)==b'\x05'+struct.pack('<I',expected_padding)

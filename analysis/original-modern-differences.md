@@ -392,6 +392,8 @@ The [cascade-specific follow-up](original-modern-common-menu-buttons.md#cascade-
 
 The [cascade input comparison](original-modern-common-menu-buttons.md#cascade-input-changes-beyond-the-cap-calculation) covers changed bytes across the handler envelope, including reordered opening sound, merged close paths and navigation sound/action-code changes. The higher dispatcher meaning and audible result remain unresolved.
 
+The [menu dispatcher follow-up](original-modern-common-menu-buttons.md#dispatcher-consumes-result2-and-normalizes-it-to0) connects registered input slots directly to construction records and verifies result2 as “skip generic navigation, then return0”. It also identifies Modern’s PUSHAD/POPAD return-slot convention. Other changed branches and upstream admission remain open.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

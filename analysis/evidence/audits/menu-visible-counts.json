@@ -601,6 +601,12 @@
   "field_writer_spans": {
     "original": [
       {
+        "start": "0044a2d0",
+        "end": "0044a439",
+        "sha256": "3a747dd0bd559ca53d6f4b4dce6672bbc2529b0778199a574904f5eba97b08af",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-0044a2d0.asm"
+      },
+      {
         "start": "004623a0",
         "end": "0046249b",
         "sha256": "19831daaa7b227841234e6dd761ecab34c1e594cd396b7c0b04fb9452ccf8f4b",
@@ -662,6 +668,12 @@
       }
     ],
     "official_modern": [
+      {
+        "start": "0044a2d0",
+        "end": "0044a436",
+        "sha256": "4f16dec19f4b0d9c2f36f7ebbc9977b643a32ead5db134fb442b44bd53745bc9",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-0044a2d0.asm"
+      },
       {
         "start": "004623a0",
         "end": "0046249b",
