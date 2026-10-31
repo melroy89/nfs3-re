@@ -185,3 +185,17 @@ When widget byte+`0x3d` is nonzero, original obtains the signed WORD at+`0x40` v
 For indices whose high bit is set, original negative indexing and Modern positive indexing differ; no local range guard is added here. This is a signedness/operand-width change, not proof that either arbitrary-input path is safe. When the byte flag is0, both skip the changed block.
 
 The retained tail calls`0046a980`, passes DWORD+`0x48` through`00469530` and DWORD+`0x54` through`00469480`, saves WORD+`0x0a` to+`0xb2`, and performs renderer-state-gated geometry updates. Its calls/globals remain dependencies; identical tail bytes alone do not establish identical initialized values or outputs. No slider, key input or initializer was executed, and no historical alignment claim is promoted from these offsets.
+
+## Indexed slider initializer uses unsigned row and shifts X by three
+
+The same-address `0046c820..0046c8ad` initializer (141 bytes, exclusive end), saved as `InitializeIndexedSliderGeometryAndValues`, is another consumer of the row tables above. [The focused audit](scripts/audit_indexed_slider_geometry.py) verifies pinned executable identities, complete bytes and the changed index/add instructions; [its manifest](evidence/audits/indexed-slider-geometry.json) retains span hashes and disassembly locations.
+
+Both check widget byte `+3d` and skip optional geometry setup when it is zero. Original reads DWORD `+3e`, shifts it arithmetically by 16 and uses that signed result as the four-byte-stride table index. Modern uses MOVZX WORD `+40`, so the row is unsigned 16-bit. For row values 0..32767 these produce equal indices; high-bit rows select negative original versus nonnegative Modern offsets. No local table-bound check is added.
+
+Original writes widget WORD `+6` from WORD table `00559c6c + 4*row` plus 148; Modern adds 151 using a WORD add. The stored low 16 bits therefore gain 3 modulo 65536 for equal table inputs. Original's DWORD add can also consume inherited upper EBX bits, but its low-WORD store has the stated ordinary relation; do not infer full register/flag equivalence.
+
+Both write widget WORD `+8` directly from `00559c94 + 4*row`. **There is no −1 Y adjustment here**, unlike the earlier `0046ab10` helper. Similar code should not be given an identical reconstructed coordinate formula without checking this distinction.
+
+The complete 84-byte suffix `0046c859..0046c8ad` is byte-identical: call `0046c640`, then three calls to `0046afe0` with member DWORDs `+48/+4c/+50` and indices 0/1/2, then three calls to `0046add0` with member DWORDs `+54/+58/+5c` and the same indices, followed by the retained epilogue. Modern inserts a jump over seven NOP bytes before that suffix. Saved body union 134 bytes excludes those NOPs; the complete comparison includes them.
+
+**Bounded work status: done; confidence: verified static instructions.** Required follow-up is caller row-domain/table bounds, aliasing and rendered coordinate behavior; no visual or device-compatibility test follows from this geometry change. The [dead-zone comparison](original-modern-deadzone-sliders.md) separately documents its one-based row producer and local layout changes; full call-graph linkage between every slider producer and this initializer is not asserted here. Executables, Ghidra state and maintained C remain unchanged.

@@ -1,0 +1,26 @@
+{
+  "kind": "indexed-slider-geometry-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "0046c820",
+      "end_exclusive": "0046c8ad",
+      "span_sha256": "3286cc9f4e6faa1d14cd86ebac2936b8e4fdfb082cdabcd6a73f8345e17e3829",
+      "assembly": "analysis/captures/modern-differences/indexed-slider-geometry/original-0046c820.asm"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "0046c820",
+      "end_exclusive": "0046c8ad",
+      "span_sha256": "966b063191e41cdae501193550379b74b8096a3a890a8d571c36161a0cb009e1",
+      "assembly": "analysis/captures/modern-differences/indexed-slider-geometry/official_modern-0046c820.asm"
+    }
+  },
+  "changed_bytes": 42,
+  "limits": [
+    "Static code only; no layout rendering, malformed-index test or target execution.",
+    "Table bounds, caller row domain and widget field meanings remain partially qualified."
+  ]
+}
