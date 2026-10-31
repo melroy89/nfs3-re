@@ -1,0 +1,87 @@
+{
+  "kind": "static-model-presence-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00438ad0",
+          "end": "00438aed",
+          "sha256": "3cf0fc54e52432a4572a8eaabc4f8444523a7ba3f9e442f71d5e3a7af33e77f9",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-00438ad0.asm",
+          "assembly_sha256": "e486a6653acdf0c255a3c516c338b44598999d366a78c446ffce8cac85110c5c"
+        },
+        {
+          "start": "00439990",
+          "end": "004399e4",
+          "sha256": "6ed31dc35915444693f7889e77f365fdd0042a1a625ea7022472ceeb6d04d3e1",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-00439990.asm",
+          "assembly_sha256": "c98cd7ba709b23ba09d606ed83e7d90c3457a248f387d4d57e41688cd6f237f1"
+        },
+        {
+          "start": "00427142",
+          "end": "00427147",
+          "sha256": "79ba7a86331e3f5f7780d874bc95a0e6c19e2ecac43426a6785d9969a4742d1e",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-00427142.asm",
+          "assembly_sha256": "10194a4b48ab7e191157a2e4d662a91b0c69e8e449df2e1ff32a8c79e6592885"
+        },
+        {
+          "start": "00439ce0",
+          "end": "00439d12",
+          "sha256": "196337c17fefc00f472133585f1d32f1776726d02afc688f88d42f10af87ab2f",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-00439ce0.asm",
+          "assembly_sha256": "fe632fa3ccce579b60e954f63ff070f45f5d993db06d1bc138c670742ed5cf88"
+        }
+      ],
+      "paired_caller_target": "00439ce0"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00438ad0",
+          "end": "00438aed",
+          "sha256": "3cf0fc54e52432a4572a8eaabc4f8444523a7ba3f9e442f71d5e3a7af33e77f9",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-00438ad0.asm",
+          "assembly_sha256": "08151f2ae027866a234cb86f5b0c921b955a22d311163a8f7c34378e87ede025"
+        },
+        {
+          "start": "00439990",
+          "end": "004399e4",
+          "sha256": "6ed31dc35915444693f7889e77f365fdd0042a1a625ea7022472ceeb6d04d3e1",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-00439990.asm",
+          "assembly_sha256": "a3f6c23f728c866c0af35f17c079495d53387bd42d44963f37675e035952891d"
+        },
+        {
+          "start": "00427142",
+          "end": "00427147",
+          "sha256": "1671515c697b862ff234352f5c1a1ded41cd2d8aa449ad710dd0601de478eb92",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-00427142.asm",
+          "assembly_sha256": "5fb679b785c8a3a0d4bd969ed1636979df0ad5868569eb82a7fcd0c1a5a97db9"
+        },
+        {
+          "start": "00439cd4",
+          "end": "00439cfd",
+          "sha256": "5c0606a52d9329b182890ee18549991ff4e9076f82b188174aaeb170fb144860",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-00439cd4.asm",
+          "assembly_sha256": "0320b457868b732e51f096a088a960382e6e4ded71de1b2720004bef01360353"
+        },
+        {
+          "start": "00439d00",
+          "end": "00439d19",
+          "sha256": "0ee26567da54b9c59ace1e1db8f6a31e98d7386778397bb40e626b3948627b3f",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-00439d00.asm",
+          "assembly_sha256": "017a14e71a1c7f373f7d4c275c0469c91d8f6498596ff8fff0a164010eb3bc7c"
+        }
+      ],
+      "paired_caller_target": "00439d00"
+    }
+  },
+  "limits": [
+    "No resource lookup or target instruction execution.",
+    "Selectors 0x25/0x26 are raw values; human-readable identities and list initialization remain unresolved."
+  ]
+}
