@@ -9,20 +9,20 @@ from audit_thrash_loader_difference import ROOT, SPECS
 def main():
     result = {'kind': 'static-race-now-entry-comparison', 'range_end': 'exclusive',
               'binaries': {}, 'limits': ['Modern helper is not a same-address original counterpart.',
-              'Original capture is a partial credits gate inside a larger routine.', 'No menu or target execution.']}
+              'Original setup body includes credits gating and coordinate writes; not a one-to-one helper match.', 'No menu or target execution.']}
     capture = ROOT/'analysis/captures/modern-differences/race-now-entry'
     capture.mkdir(parents=True, exist_ok=True)
     for label, (relative, expected, _) in SPECS.items():
         raw = (ROOT/relative).read_bytes()
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
-        spans = [(0x437600, 0x43762c)] if label == 'original' else [(0x437614, 0x4376fb)]
+        spans = [(0x437600, 0x4377be)] if label == 'original' else [(0x437614, 0x4376fb), (0x437600, 0x437612)]
         if label == 'official_modern':
             spans += [(0x4374d5, 0x4374dc), (0x437600, 0x437611), (0x437e39, 0x437e49),
                       (0x43d5dc, 0x43d5e3), (0x442ae1, 0x442ae8), (0x4432e9, 0x4432f0),
                       (0x447e07, 0x447e0e), (0x44844f, 0x448456), (0x448639, 0x448640),
                       (0x45d920, 0x45d928), (0x45e990, 0x45e998)]
-        spans += [(0x442a40, 0x442a95), (0x4cf090, 0x4cf11e)]
+        spans += [(0x442a40, 0x442a95), (0x4cf090, 0x4cf11e), (0x44a5cb, 0x44a5e5)]
         rows = []
         for start, end in spans:
             path = capture/f'{label}-{start:08x}.asm'
@@ -34,7 +34,7 @@ def main():
                          'assembly_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows,
             'tokens': {f'{a:08x}': pe.get_data(a-0x400000, 40).split(b'\0')[0].decode('ascii')
-                       for a in (0x53a998, 0x53a990, 0x53714c, 0x537494)}}
+                       for a in (0x53a998, 0x53a990, 0x53714c, 0x537494, 0x53750c, 0x537518, 0x537524, 0x537530, 0x53753c, 0x537548, 0x537554, 0x537560, 0x53756c)}}
     images = [pefile.PE(str(ROOT/SPECS[k][0])) for k in ('original', 'official_modern')]
     result['inspected_direct_callers'] = []
     modern = images[1]
@@ -44,7 +44,7 @@ def main():
         assert data[0] == 0xe8 and site+5+int.from_bytes(data[1:], 'little', signed=True) == 0x437614
         result['inspected_direct_callers'].append(f'{site:08x}')
     result['identical_helpers'] = []
-    for start, end in ((0x442a40, 0x442a95), (0x4cf090, 0x4cf11e)):
+    for start, end in ((0x442a40, 0x442a95), (0x4cf090, 0x4cf11e), (0x44a5cb, 0x44a5e5)):
         bodies = [p.get_data(start-0x400000, end-start) for p in images]
         assert bodies[0] == bodies[1]
         result['identical_helpers'].append(f'{start:08x}')

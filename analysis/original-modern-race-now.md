@@ -4,7 +4,7 @@
 
 Modern `00437614..004376fb` is a complete helper, previously named `UpdateFrontendRaceNowEntryFlags`. Its entry is inside an original instruction; it must not be treated as a rewritten original function at the same VA. Original `00437600` is a larger frontend routine containing a related credits gate. This chapter compares that explicit shared rule and documents the Modern helper; complete extraction/caller correspondence remains unresolved.
 
-Run `python3 analysis/scripts/audit_race_now_difference.py`. The [manifest](evidence/audits/original-modern-race-now-entry.json) retains both baseline fingerprints, Modern's full body, original partial span `00437600..0043762c`, exact token bytes and disassembly hashes. Ends are exclusive. No menu, instruction or game execution; no executable/Ghidra edits.
+Run `python3 analysis/scripts/audit_race_now_difference.py`. The [manifest](evidence/audits/original-modern-race-now-entry.json) retains both baseline fingerprints, Modern's full body, original setup span `00437600..004377be` (expanded in the follow-up below), exact token bytes and disassembly hashes. Ends are exclusive. No menu, instruction or game execution; no executable/Ghidra edits.
 
 ## Modern helper's exact branches
 
@@ -42,7 +42,7 @@ Thus the Modern outer helper's EAX-zero branch is **not** evidence of supported 
 
 Predicate `004cf090` does not consume the entry pointer as a parameter in the inspected body. It reads global mode/result state, invokes `004cf000` / `004cef80` on relevant branches, and returns normalized EAX from its local EDX accumulator. Its prologue saves ECX and epilogue restores it at `004cf11b`; this supports retention of the caller's entry pointer across this predicate. Its existing result-state interpretation is documented in the [series menu contract](series-terminal-menu-contract.md), including limits on terminal-track and human/result filters. No successful race continuation follows merely from the predicate returning one.
 
-For flags, the [menu-input comparison](original-modern-menu-input.md) establishes that the fallback token scanner requires entry bit 0 clear before selecting it and invoking its callback. Consequently OR bit 0 in this helper has a demonstrated **navigation exclusion** consumer; this does not establish that every selected-entry dispatch is blocked, since those paths differ. The separate bit `1000h` remains unnamed here. The text-pointer write also crosses language lookup `004d1850`, whose ECX contract must be kept distinct from the predicate preservation just verified.
+For flags, the [menu-input comparison](original-modern-menu-input.md) establishes that the fallback token scanner requires entry bit 0 clear before selecting it and invoking its callback. Consequently OR bit 0 in this helper has a demonstrated **navigation exclusion** consumer; this does not establish that every selected-entry dispatch is blocked, since those paths differ. The separate bit `1000h` has a callback-suppression consumer verified in the follow-up below. The text-pointer write also crosses language lookup `004d1850`, whose ECX contract must be kept distinct from the predicate preservation just verified.
 
 Closed: lookup null behavior, record stride/start-index source, retained helper correspondence and predicate ECX preservation. Pending: all caller preconditions, bit `1000h` consumers, language-lookup preservation and complete original policy correspondence.
 
@@ -67,3 +67,19 @@ The manifest now captures and validates eleven Modern direct CALL sites found in
 None of these immediate producer instructions forces a null input. Conversely, register copying and inheriting a callback parameter do **not** prove non-null values, valid record extents or correct menu lifetime. Full producer chains remain pending. The earlier lookup-null issue is therefore a conditional precondition question, not a demonstrated reachable null call or runtime fault.
 
 Wrapper `00437600` now consists of its initial `00559c68=1` write, the helper call and EAX-zero return. The original routine at `00437600` contains the credits gate plus additional coordinate work. This gives a concrete extraction/delegation witness while leaving the fate of the remaining original coordinate work unresolved. Calls from several other contexts show that the extracted policy is refreshed beyond this one wrapper; they do not establish that every call is admitted by the helper's own `00559234` guard.
+
+## Bit 1000h consumer and original coordinate writes
+
+The script now retains the callback gate `0044a5cb..0044a5e5` in both executables and asserts byte identity. It checks that entry DWORD+2ch is non-null, then tests byte entry+5 mask 10h (equivalent to WORD entry+4 mask **1000h**). A set bit skips the callback. Otherwise it supplies the entry in EAX and a sign-extended AX-derived value in EDX, calls `[entry+2ch]`, and retains a nonzero callback result in EDI.
+
+This establishes **suppression of this entry callback**, without assuming that the callback is universally the sole draw path or that the bit alone makes the entire entry invisible. Combined mask `1001h` therefore has two separately evidenced consumers: bit 0 excludes entries in the inspected fallback navigation scanner; bit 1000h suppresses the inspected +2ch callback dispatch. Clearing both on `2btt` permits those two gates but does not guarantee invocation, which also requires the surrounding state and non-null callback.
+
+The original capture is now expanded to the complete `00437600..004377be` routine. After its credits gate, it finds nine entries and conditionally writes their coordinate WORDs at +6/+8:
+
+`FUNTXT_1`, `FUNTXT_2`, `FUNTXT_3`, `FUNTXT_4`, `FUNTXT_56`, `FUNTXT_7`, `FUNTXT_8`, `FUNTXT_9`, `FUNTXT_10`.
+
+Values come from the `00559c6c..00559cb4` data neighborhood, with offsets added to one coordinate: 156 for `FUNTXT_1`, 150 for the other inspected entries. The stores retain only the low WORD of the computed value. These are entry-token and field observations, not authenticated screen labels or a complete coordinate system.
+
+Modern `00437600..00437612` instead sets `00559c68=1`, delegates to `00437614`, clears EAX and returns. It contains none of those coordinate writes or token lookups. The full new helper also has none. Thus their removal **from this setup/delegation path** is verified. Searching or validating alternate layout producers and packaged menu definitions is still required before claiming removal of the visible text or universal removal of its positioning.
+
+The initial report's unknown bit-1000h consumer and partial-original-body boundary are superseded by these captures. Remaining limitations include alternate callback consumers, complete menu resource correspondence, calling-state admission and rendered behavior. No menu was opened or modified for this check.

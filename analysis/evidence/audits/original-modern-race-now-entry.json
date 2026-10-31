@@ -8,10 +8,10 @@
       "spans": [
         {
           "start": "00437600",
-          "end": "0043762c",
-          "bytes_sha256": "713068de11632b52becd710b533ca50a3459e0a8bce4a1505ca0ab8d4e2719ef",
+          "end": "004377be",
+          "bytes_sha256": "e009552190a2764fdb77ea3c5a676d261e15cfbb3452a12a36c0088eb15b3dbb",
           "assembly": "analysis/captures/modern-differences/race-now-entry/original-00437600.asm",
-          "assembly_sha256": "9edce69ac6c266dc41278ee8cb7fd151990a93739bf487380966f6aa56a37077"
+          "assembly_sha256": "9c57b954e2dc9cd042e8d6f99112662b327a50ad2b0b606e3479a26f1cd4c945"
         },
         {
           "start": "00442a40",
@@ -26,13 +26,29 @@
           "bytes_sha256": "d2dcb7f96f7187d5afe6041a3ad0fd7de3c5b9e7abc17c1e7392c20c656bc1ff",
           "assembly": "analysis/captures/modern-differences/race-now-entry/original-004cf090.asm",
           "assembly_sha256": "23567f41a9c3ab6978bf20ff68060f1421564fecd66ff3f1b9ecc103e041b256"
+        },
+        {
+          "start": "0044a5cb",
+          "end": "0044a5e5",
+          "bytes_sha256": "e4a68b5768bd387025399638f8d03dd3c912a72b56ae6923656e43ff242224a5",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/original-0044a5cb.asm",
+          "assembly_sha256": "99e24d61dfaafe6dbbb9e0adce9154e7aca7da653cb6f609d38192e4ad139da5"
         }
       ],
       "tokens": {
         "0053a998": "2btt",
         "0053a990": "3btt",
         "0053714c": "racenow",
-        "00537494": "credits"
+        "00537494": "credits",
+        "0053750c": "FUNTXT_1",
+        "00537518": "FUNTXT_2",
+        "00537524": "FUNTXT_3",
+        "00537530": "FUNTXT_4",
+        "0053753c": "FUNTXT_56",
+        "00537548": "FUNTXT_7",
+        "00537554": "FUNTXT_8",
+        "00537560": "FUNTXT_9",
+        "0053756c": "FUNTXT_10"
       }
     },
     "official_modern": {
@@ -45,6 +61,13 @@
           "bytes_sha256": "57d3b5eedc9cfd1e99793d153e1d17a01f436d191f75423302913dd7a92de059",
           "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00437614.asm",
           "assembly_sha256": "59244d88f94a022d8ec73a7d2faa4f98cb8763bfaff9ea5c1ba40e881ee21ee7"
+        },
+        {
+          "start": "00437600",
+          "end": "00437612",
+          "bytes_sha256": "55b5278bbc3711d36b8aedbc634a26cab1f2ae89c65bf8fba045d36309ddec14",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-00437600.asm",
+          "assembly_sha256": "d38f4772b620ce5e37291aebc837b0d1dd1698921ad701bdf494063a1462a86b"
         },
         {
           "start": "004374d5",
@@ -136,19 +159,35 @@
           "bytes_sha256": "d2dcb7f96f7187d5afe6041a3ad0fd7de3c5b9e7abc17c1e7392c20c656bc1ff",
           "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-004cf090.asm",
           "assembly_sha256": "19a3f667d01f2de9a1d4f5f05adc1638195855d26290ca5118650f277ab90708"
+        },
+        {
+          "start": "0044a5cb",
+          "end": "0044a5e5",
+          "bytes_sha256": "e4a68b5768bd387025399638f8d03dd3c912a72b56ae6923656e43ff242224a5",
+          "assembly": "analysis/captures/modern-differences/race-now-entry/official_modern-0044a5cb.asm",
+          "assembly_sha256": "d594c973c32c7615d8156cb2f266790f073164c03250ed5c7561329b57e9dac2"
         }
       ],
       "tokens": {
         "0053a998": "2btt",
         "0053a990": "3btt",
         "0053714c": "racenow",
-        "00537494": "credits"
+        "00537494": "credits",
+        "0053750c": "",
+        "00537518": "",
+        "00537524": "",
+        "00537530": "",
+        "0053753c": "",
+        "00537548": "",
+        "00537554": "",
+        "00537560": "",
+        "0053756c": ""
       }
     }
   },
   "limits": [
     "Modern helper is not a same-address original counterpart.",
-    "Original capture is a partial credits gate inside a larger routine.",
+    "Original setup body includes credits gating and coordinate writes; not a one-to-one helper match.",
     "No menu or target execution."
   ],
   "inspected_direct_callers": [
@@ -166,6 +205,7 @@
   ],
   "identical_helpers": [
     "00442a40",
-    "004cf090"
+    "004cf090",
+    "0044a5cb"
   ]
 }
