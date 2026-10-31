@@ -30,3 +30,11 @@ The exported **`_THRASH_about@0` at `60001000`** writes the mode-table pointer `
 Next: inspect the descriptor refresh and actual menu/intro mode request path, then compare other renderer implementations only where they address a specific catalog claim. Keep movie decoder format limitations separate from enumeration policy and observed display behavior. Executable bytes and the saved Ghidra database remain unchanged.
 
 The [menu-startup depth comparison](original-modern-resolution-defaults.md#menu-startup-depth-fixed-original-request-versus-optional-modern-32-bit) now distinguishes original’s fixed16-bit request from Modern’s optional32-bit request. This does not resolve the separate “always reported” depth claim.
+
+## About descriptor ownership and EXE cache lifetime
+
+The same archive-pinned audit now establishes a concrete ownership case for the [EXE's cached descriptor](original-modern-renderer-loading.md#cached-descriptor-is-separate-from-cleared-export-slots). Complete export `60001000..60001191` writes descriptor fields and returns immediate preferred address `600fc7c0` at `60001188`. That RVA`fc7c0` lies in the DLL's writable `.data` virtual tail beyond its raw-backed bytes. The result therefore points into module-owned storage, rather than a newly allocated return buffer or a stack local. PE relocation can change its runtime absolute address; the recorded addresses are preferred-image coordinates.
+
+The body also calls `60002060` and `600092c0` before returning, and rewrites fields on each invocation. It must not be assumed pure solely because the returned pointer is stable. Replacing repeated queries with a cached pointer preserves the address in this implementation while potentially changing when setup/helper effects occur; those callees require their own contracts.
+
+For this specific packaged DX7 driver, consumers require the owning module mapping to remain valid. EXE export-slot clearing does not establish continued validity of the cached descriptor after unloading. Conversely, the static pointer alone does not prove a use-after-unload path: load reference counts, actual unmapping and post-cleanup consumer admission remain unverified. This is final-package component analysis, not an authenticated original-DLL comparison or a runtime fault finding. No DLL was loaded or executed.

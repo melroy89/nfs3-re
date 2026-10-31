@@ -47,5 +47,18 @@
     "No DLL load, graphics API interaction, display enumeration or instruction execution.",
     "Callback registration via vtable offset retained; complete interface identity not independently qualified here.",
     "No universal all-driver or exact 640x480 depth-forcing conclusion."
-  ]
+  ],
+  "about_descriptor_ownership": {
+    "preferred_address": "600fc7c0",
+    "rva": "000fc7c0",
+    "storage": "Writable module.data virtual tail beyond raw-backed bytes; not a locally allocated return buffer.",
+    "return": "60001188 returns immediate descriptor address after calls60002060/600092c0.",
+    "section": {
+      "rva": "00017000",
+      "virtual_size": 942080,
+      "raw_size": 4096,
+      "characteristics": "c0000040"
+    },
+    "limits": "Preferred addresses subject to PE relocation; module-owned pointer lifetime depends on mapping, not solely on function return. Callee side effects/concurrent queries and actual unload admission untested."
+  }
 }
