@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "56307355429e7d83195c64ec16dcbcb2599c4a7a625d054b5635a39af8196e9f"
+      "sha256": "958fe72c21b0b28813f266e09f158d703cc4b6346fe46a66c8c2b476bff991e5"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -145,7 +145,7 @@
     },
     {
       "path": "analysis/original-modern-ghost-loading.md",
-      "sha256": "9404cbec45a77b6a9f150225e70dd7bc0373e016b887fe1a36a7e6d8d7736b47"
+      "sha256": "28aeba21f434d266ad3afe3bb89947c2216d2e41a43f58666aa1c768b4ca414d"
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
@@ -4863,6 +4863,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-ghost-loading.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00472774"
+          ]
+        },
+        {
           "path": "analysis/original-modern-vehicle-dispatch.md",
           "entry_mentioned": false,
           "addresses": [
@@ -5906,6 +5913,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-config-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00485880"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-ghost-loading.md",
           "entry_mentioned": true,
           "addresses": [
             "00485880"

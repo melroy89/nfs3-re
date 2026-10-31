@@ -141,7 +141,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00472248` | InitializeSoundCapabilityDefaults | 77 | 75 | [config-loading](original-modern-config-loading.md), [frontend-sound](original-modern-frontend-sound.md) |
 | `00472298` | InitializeIndexedSettingDefaults | 47 | 42 | [config-loading](original-modern-config-loading.md), [viewport-pose](original-modern-viewport-pose.md) |
 | `004723f0` | RefreshPreparationHeaderPrefix | 18 | 16 | [config-loading](original-modern-config-loading.md), [ghost-loading](original-modern-ghost-loading.md) |
-| `00472404` | InitializeDefaultGameConfiguration | 663 | 123 | [config-loading](original-modern-config-loading.md), [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
+| `00472404` | InitializeDefaultGameConfiguration | 663 | 123 | [config-loading](original-modern-config-loading.md), [ghost-loading](original-modern-ghost-loading.md), [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `00472820` | SaveConfigDatSnapshotIfAllowed | 179 | 13 | [ghost-loading](original-modern-ghost-loading.md) |
 | `004728f4` | CompareNameAgainstCarSelectionAliases | 47 | 47 | [car-alias](original-modern-car-alias.md) |
 | `00472924` | CheckHotPursuitTrackDropdownName | 53 | 52 | [car-alias](original-modern-car-alias.md), [car-profile](original-modern-car-profile.md), [config-loading](original-modern-config-loading.md) |
@@ -173,7 +173,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00485680` | RestoreAndScaleDefaultHudLayoutCoordinates | 152 | 126 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [hud-layout](original-modern-hud-layout.md) |
 | `00485718` | AdjustHudHorizontalBoundsFromX87Scale | 35 | 34 | [hud-layout](original-modern-hud-layout.md) |
 | `0048573b` | AdjustHudVerticalBoundsFromX87Scale | 32 | 31 | [hud-layout](original-modern-hud-layout.md) |
-| `00485880` | InitializeDefaultHudLayoutProfileSettings | 375 | 332 | [config-loading](original-modern-config-loading.md), [hud-layout](original-modern-hud-layout.md) |
+| `00485880` | InitializeDefaultHudLayoutProfileSettings | 375 | 332 | [config-loading](original-modern-config-loading.md), [ghost-loading](original-modern-ghost-loading.md), [hud-layout](original-modern-hud-layout.md) |
 | `00487210` | StoreAndInsetIndexedFloatRectangle | 300 | 12 | [hud-layout](original-modern-hud-layout.md) |
 | `004880b0` | RenderVehicleDrivenRotatedQuads | 960 | 15 | [hud-layout](original-modern-hud-layout.md) |
 | `00488470` | RenderRotatedTileQuadsForVehicle | 1551 | 12 | [hud-layout](original-modern-hud-layout.md), [view-overlay](original-modern-view-overlay.md) |

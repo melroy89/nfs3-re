@@ -61,3 +61,17 @@ The [config-load comparison](original-modern-config-loading.md) now explains siz
 ## Remaining work
 
 Verified: changed snapshot order, refreshed/restored header coverage, three additional identity copies and retained reader/resolver instructions. Pending: complete version/header format, all model/asset dependencies, name-field consumers, read/save failures and runtime ghost playback. Physics/x87 and trajectory compatibility remain separate from settings restoration. Historical release introduction requires older patch binaries; no compatible-replay claim follows from this chapter.
+
+## Removed original defaults tail: ordered flag policy
+
+The original defaults initializer’s saved entry locator is`004723f0`; its body extends through RET at`00472812`. The outside-body interval **`00472778..00472820`** is168 NOP bytes in Modern, containing167 differing positions. Its original start splits the immediate of MOV EDI at`00472774`, so the expanded audit captures aligned original tail **`00472774..00472813`**,159 bytes, rather than inventing an entry at the gap.
+
+After call`004904f0`, the original tail loads flag byte`0055eb2e` into DH, performs several DWORD writes from EBX/EDI and clears`006fd1fc` explicitly. It then applies ordered policy: mask20h first, mask10h only when20h is clear.
+
+| Original condition | Locally established writes / calls |
+|---|---|
+| mask20h set | Clear`006fd470` and`006fd4e8`; set`006fd4b4=1`, `006fd3b8=3`, `006fd4ac=3`; derive additional values through`004cf160` and signed AX extension |
+| mask20h clear, mask10h set | Clear`006fd470` and`006fd3b8`; set`006fd4ac=3` |
+| neither | Skip those conditional writes |
+
+All paths shown join call`00485880` before restoring registers and returning. EBX/EDI values after the earlier call and the meaning of every affected field are not assumed here. Modern’s NOP interval removes these particular instructions; its short`004723f0` prefix-copy helper and other startup/default producers are different evidence, so this is not proof that all corresponding policies or features vanished. Callers, alternative initialization and full defaults reconstruction remain open. No configuration, ghost, game or instruction probe was executed.

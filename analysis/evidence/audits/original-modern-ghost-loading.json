@@ -100,5 +100,20 @@
       "end": "004781a9",
       "sha256": "52a837ae9800640448d0d7457ce2818e97134fd1ed6ea09e29489e53115c7f92"
     }
-  ]
+  ],
+  "removed_original_defaults_tail": {
+    "entry_locator": "004723f0",
+    "aligned_capture_start": "00472774",
+    "end_exclusive": "00472813",
+    "hex": "bf32000000e872dd01008a352eeb5500891df0d16f00891df4d16f00893df8d16f0031c0891d00d26f00a3fcd16f00f6c6207445a370d46f00a3e8d46f00b801000000b903000000a3b4d46f00ba02000000a1b2d46f00890db8d36f00c1f810890dacd46f00e881c90500988915d4d46f00a3b0d46f00eb1af6c6107415bb03000000a370d46f00a3b8d36f00891dacd46f00e8743001005d5f5e5a595bc3",
+    "sha256": "52f3c8b71cbfc4999290a19e7fd4509fb9b1c5314faa9a08ff7c64a9649378ea",
+    "modern_nop_interval": "00472778..00472820",
+    "modern_nop_bytes": 168,
+    "original_flag_byte": "0055eb2e",
+    "ordered_masks": [
+      "20h",
+      "10h"
+    ],
+    "limit": "Original function tail only;00472778 lies inside original MOV EDI immediate. Full default-policy replacement and called helpers not qualified."
+  }
 }

@@ -32,6 +32,17 @@ def main():
         assert blob==images['official_modern'].get_data(start-0x400000,end-start)
         result['identical_reader_ranges'].append({'start':f'{start:08x}','end':f'{end:08x}',
             'sha256':hashlib.sha256(blob).hexdigest()})
+    old_tail=images['original'].get_data(0x72774,0x9f)
+    modern_tail=images['official_modern'].get_data(0x72778,0xa8)
+    assert modern_tail==b'\x90'*168
+    assert images['original'].get_data(0x727a3,3)==bytes.fromhex('f6c620')
+    assert images['original'].get_data(0x727ed,3)==bytes.fromhex('f6c610')
+    result['removed_original_defaults_tail']={'entry_locator':'004723f0',
+        'aligned_capture_start':'00472774','end_exclusive':'00472813',
+        'hex':old_tail.hex(),'sha256':hashlib.sha256(old_tail).hexdigest(),
+        'modern_nop_interval':'00472778..00472820','modern_nop_bytes':168,
+        'original_flag_byte':'0055eb2e','ordered_masks':['20h','10h'],
+        'limit':'Original function tail only;00472778 lies inside original MOV EDI immediate. Full default-policy replacement and called helpers not qualified.'}
     (ROOT/'analysis/evidence/audits/original-modern-ghost-loading.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: ghost wrapper baselines/spans and identical reader/model resolver')
 
