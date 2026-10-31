@@ -15,6 +15,7 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
         spans=[(0x4a45c7,0x4a46e1),(0x4a44c3,0x4a45c7),(0x4dfd56,0x4dfd6d),(0x438ad0,0x438aed),(0x439990,0x4399e4),(0x4a40c0,0x4a4386 if label=='original' else 0x4a4371),(0x4270c0,0x427182),(0x460478,0x46048e)]
+        spans += [(0x4a4410 if label=='original' else 0x4a444c,0x4a46f0),(0x4601c4,0x4601c9)]
         spans += [(0x439ce0,0x439d12),(0x4a4390,0x4a440d)] if label=='original' else [(0x439cd4,0x439cfd),(0x439d00,0x439d19),(0x4a4374,0x4a443f),(0x4a444c,0x4a44c3),(0x4a457b,0x4a45bf),(0x4d7d90,0x4d7dc7),(0x4d6070,0x4d6109),(0x4f24e0,0x4f255e),(0x4ea658,0x4ea665)]
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -25,6 +26,23 @@ def main():
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,'paired_caller_target':f'{target:08x}'}
     old,new=[images[k] for k in ('original','official_modern')]
     assert old.get_data(0xa45c7,0x11a)==new.get_data(0xa45c7,0x11a)
+    assert old.get_data(0xa4410,11)==bytes.fromhex('53515256575589e583ec18')
+    assert new.get_data(0xa444c,6)==bytes.fromhex('6089e583ec18')
+    assert old.get_data(0xa46e1,9)==bytes.fromhex('89ec5d5f5e5a595bc3')
+    assert new.get_data(0xa46e1,15)==bytes.fromhex('89ec61c3')+b'\x90'*11
+    animation_calls={}
+    for label,pe in images.items():
+        data=pe.get_data(0x4601c4-0x400000,5)
+        assert data[0]==0xe8
+        target=0x4601c9+int.from_bytes(data[1:],'little',signed=True)
+        assert target==(0x4a4410 if label=='original' else 0x4a444c)
+        animation_calls[label]={'callsite':'004601c4','target':f'{target:08x}'}
+    result['animation_register_boundary']={
+        'caller':animation_calls,
+        'original_saved_registers':['EBX','ECX','EDX','ESI','EDI','EBP'],
+        'modern':'PUSHAD/POPAD also preserves EAX; arithmetic flags and x87 state not saved by that pair',
+        'epilogue_start':'004a46e1',
+        'limit':'No EAX liveness or complete caller/callee machine-state equivalence claim.'}
     result['identical_animation_update_tail']={'start':'004a45c7','end':'004a46e1','sha256':hashlib.sha256(old.get_data(0xa45c7,0x11a)).hexdigest()}
     result['animation_scale_constant']={}
     for label,pe in images.items():

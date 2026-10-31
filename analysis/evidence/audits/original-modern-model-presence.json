@@ -63,6 +63,20 @@
           "assembly_sha256": "e78cedd1127a187a471e8ab911598791a282a277bae51fe31f4af07f02bbffc5"
         },
         {
+          "start": "004a4410",
+          "end": "004a46f0",
+          "sha256": "4280b8f44308bb880c4dccb64a22a87563fa8912b2d5cb562766e72f13f56d72",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-004a4410.asm",
+          "assembly_sha256": "9ba05601e343a13ef53a040aface3a91d029cac15ee2cfd3ef31fccf3339b6d0"
+        },
+        {
+          "start": "004601c4",
+          "end": "004601c9",
+          "sha256": "839960063c9119b66531b4858ac7d023f5b2e2816ba44f717ac6c327dd9d0e29",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-004601c4.asm",
+          "assembly_sha256": "3f8bf30c27bfe2c1cf1d612707bc588eeaf9d851ec6e6c97317d64bc108a65a5"
+        },
+        {
           "start": "00439ce0",
           "end": "00439d12",
           "sha256": "196337c17fefc00f472133585f1d32f1776726d02afc688f88d42f10af87ab2f",
@@ -140,6 +154,20 @@
           "assembly_sha256": "e46dfd61571b790369d3ae550f2aec416c020c916bb20ff6d9ecdf0a636f991a"
         },
         {
+          "start": "004a444c",
+          "end": "004a46f0",
+          "sha256": "c32027dd617bdf92f9c7a5d1404718d74a06474138d6230aace76c47265bc8a2",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a444c.asm",
+          "assembly_sha256": "c24511ebc6bd5a262b5291b46ba12c78d2f56a5acf2491530fe57b8d1f5f6a62"
+        },
+        {
+          "start": "004601c4",
+          "end": "004601c9",
+          "sha256": "04b9fdba1f10744456879f68be98be16ffc179a4a9cfb61a572356756a9f2518",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004601c4.asm",
+          "assembly_sha256": "1dfc9bc727e08e41109dd589633c20a1ff76eedcab6e93f7f0b8582055d315e2"
+        },
+        {
           "start": "00439cd4",
           "end": "00439cfd",
           "sha256": "5c0606a52d9329b182890ee18549991ff4e9076f82b188174aaeb170fb144860",
@@ -205,6 +233,29 @@
       ],
       "paired_caller_target": "00439d00"
     }
+  },
+  "animation_register_boundary": {
+    "caller": {
+      "original": {
+        "callsite": "004601c4",
+        "target": "004a4410"
+      },
+      "official_modern": {
+        "callsite": "004601c4",
+        "target": "004a444c"
+      }
+    },
+    "original_saved_registers": [
+      "EBX",
+      "ECX",
+      "EDX",
+      "ESI",
+      "EDI",
+      "EBP"
+    ],
+    "modern": "PUSHAD/POPAD also preserves EAX; arithmetic flags and x87 state not saved by that pair",
+    "epilogue_start": "004a46e1",
+    "limit": "No EAX liveness or complete caller/callee machine-state equivalence claim."
   },
   "identical_animation_update_tail": {
     "start": "004a45c7",
