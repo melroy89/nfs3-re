@@ -25,7 +25,7 @@ These are raw hexadecimal values. Codes`60..69` are numeric-keypad keys, and`6c`
 
 Modern saves/restores ESI, which it uses as the table cursor. Original uses an EBP frame. Both have plain RET and no local stack-argument consumption. Modern still compares the incoming EDX after the `GetKeyState` call; this helper contains no explicit save/restore around that API. A full ABI review must therefore account for register state across that call rather than assume the queried-key value is protected by a generic C signature. No runtime clobber or resulting defect is asserted.
 
-The audit retains both bodies and the tables, but does not implement an executable emulator or exhaustively test every32-bit input. Remaining work: caller fallback for return0, producer/key-layout behavior, the API/register boundary, and runtime checks with Num Lock on/off. No unique historical release attribution or whole input-subsystem equivalence is claimed.
+The audit retains both bodies and the tables, but does not implement an executable emulator or exhaustively test every32-bit input. Caller fallback for return0 is resolved below. Producer/key-layout behavior, the API/register boundary and runtime checks with Num Lock on/off remain open. No unique historical release attribution or whole input-subsystem equivalence is claimed.
 
 ## Caller handling of zero and nonzero results
 
@@ -36,3 +36,17 @@ At **`004cd5b0`**, nonzero mode flag `007f7488` bypasses translation entirely. O
 At the other caller, **`004cd0a9`**, return0 branches straight to the caller epilogue and remains its return value. Nonzero is saved in ESI and passed to **`004cc8e0`** in a repetition loop, with another field derived from bit24 of EDI and a code loaded from `007f748c`; that route ultimately returns1. The helper’s complete queue semantics and preservation of the loop state remain separate work. This is an observed local admission distinction, not proof that zero discards every possible input action.
 
 The caller comparison therefore resolves where the translator’s result is consumed. Remaining uncertainty is layout-specific message production, downstream queue behavior, the API/register contract inside the translator and actual Num Lock on/off runtime behavior.
+
+## Retained message callers connect conversion to queued input
+
+The [supplementary static audit](scripts/audit_window_key_translation_difference.py), with its [manifest](evidence/audits/window-key-translation-difference.json), now verifies complete **`004cd020..004cd0dd`**,189-byte key-down callback, is byte-identical across both EXEs. Existing [window registration research](original-modern-window-handling.md) establishes its message route. On its translated-input branch it supplies message in EAX and raw key in EDX, calls`004ccaa0` at`004cd0a9`, saves a nonzero result in ESI, and enqueues that encoded value through **`004cc8e0`** at`004cd0ca`. A zero conversion skips that repeat-enqueue path. A separate mode selected by`007f7488` bypasses this translator and queues zero-word records with scan/index data instead, as recorded in the [key-down contract](detailed-analysis-notes.md#recovered-key-down-callback-boundary).
+
+The callback computes its repeat count in **ECX** before conversion and decrements ECX afterwards without restoring it around`004ccaa0`. Original’s branch-tree translator does not locally modify ECX; Modern’s primary-table matches also avoid a native API call and leave ECX alone locally. Modern’s primary miss reaches GetKeyState without saving ECX, introducing a provider-preservation dependency for the repeat loop in addition to the translator’s EDX key dependency. This is a machine-contract limitation, not an observed Wine/input failure or a guarantee about actual OS register values.
+
+Identical message-loop span **`004cd5b9..004cd5d3`**,26 bytes, supplies saved key/message values to the same translator at`004cd5bf`; it branches on zero result before its subsequent OS message processing. The two direct callsites are independently checked in both binaries. This establishes a static message/queue effect route, while real physical events, all queue consumers, exact repeat count on the API path and provider behaviour remain untested.
+
+## Outside-body table partition
+
+The supplementary audit checks complete outside-function interval **`004ccaf6..004ccb84`**:142 bytes with116 differing positions. Modern contains two NOPs, then the92-byte primary table (22 mappings plus terminator) and48-byte keypad table (11 mappings plus terminator). These are WORD/WORD data records replacing original branch-tree instructions. The original function continues through`004ccc67`; this inventory boundary does not define a paired function.
+
+This chapter is the canonical keyboard comparison. The earlier audit retains baseline translator/table/import and TranslateMessage/DispatchMessage evidence; the supplementary audit adds the complete189-byte key-down callback, repeat-register lifetime and interval partition. Their static scopes overlap deliberately as retained evidence, while this prose provides one consolidated conclusion. No new input/OS test or whole-subsystem equivalence claim follows.

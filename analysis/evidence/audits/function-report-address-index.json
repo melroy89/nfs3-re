@@ -437,11 +437,11 @@
     },
     {
       "path": "analysis/original-modern-window-key-translation.md",
-      "sha256": "427291d267b68a5728a24f513b0d7efc04cf2e878e6eac824c8ae84b426a3665"
+      "sha256": "3883f462a56b279cfc06216692c21644bd054080bedb3114b3e77070214a2b83"
     },
     {
       "path": "analysis/original-modern-window-key.md",
-      "sha256": "9a44eaadee4472b7f01ced776a7c8d07cd028b9efac7d77e76792e101ca0111a"
+      "sha256": "3a398313e41e3c3dba2bed602afd24267895a7bfef1ef28212b48a9d6dabf948"
     },
     {
       "path": "analysis/original-modern-x87-observers.md",
@@ -9954,15 +9954,6 @@
       "modern_sha256": "72e4428a16349fe8ea48552cfa37d0756c0811f1b6528764e7c06ff6f749fea3",
       "report_address_references": [
         {
-          "path": "analysis/original-modern-window-key-translation.md",
-          "entry_mentioned": true,
-          "addresses": [
-            "004ccaa0",
-            "004ccab5",
-            "004ccac4"
-          ]
-        },
-        {
           "path": "analysis/original-modern-window-key.md",
           "entry_mentioned": true,
           "addresses": [
@@ -10019,7 +10010,7 @@
           ]
         },
         {
-          "path": "analysis/original-modern-window-key-translation.md",
+          "path": "analysis/original-modern-window-key.md",
           "entry_mentioned": true,
           "addresses": [
             "004ccb84"
@@ -10058,13 +10049,6 @@
             "004ccc40",
             "004ccc70",
             "004ccca3"
-          ]
-        },
-        {
-          "path": "analysis/original-modern-window-key-translation.md",
-          "entry_mentioned": false,
-          "addresses": [
-            "004ccc67"
           ]
         },
         {
@@ -10283,19 +10267,13 @@
       "modern_sha256": "b5167d6f333b3ab1922238f2302381083952c72a009e449f7ff4fd4301d3090e",
       "report_address_references": [
         {
-          "path": "analysis/original-modern-window-key-translation.md",
-          "entry_mentioned": false,
-          "addresses": [
-            "004cd5b9",
-            "004cd5bf",
-            "004cd5d3"
-          ]
-        },
-        {
           "path": "analysis/original-modern-window-key.md",
           "entry_mentioned": false,
           "addresses": [
             "004cd5b0",
+            "004cd5b9",
+            "004cd5bf",
+            "004cd5d3",
             "004cd5de"
           ]
         }

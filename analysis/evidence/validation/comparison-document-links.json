@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "0c970e2cefb5b0850e41656ab2203b647b4c6510b3f15999129612d321d12be1",
+      "sha256": "fcfd726ac730a830e4326e73e6565a45570e947eba66fdc9662daa70c17af754",
       "relative_links": 142
     },
     {
@@ -163,8 +163,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "f66b94900cf2e499c9c74f8f1829fad42e3a605e9bfe5ca94cc3845c8cdcae02",
-      "relative_links": 641
+      "sha256": "ff48c7b1229976163ef1c59a62919da27a6fec30d7f08dc96cf8cb656bde4f62",
+      "relative_links": 638
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -308,7 +308,7 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "4399e8dad08ac9771924f9cd405e30db8df936ef3744d3ef08979b83e1e49470",
+      "sha256": "3b64e8bdcab31f1d4be039bc6363c4cb56c5c0e7262cb1e05b9c193a6459300c",
       "relative_links": 53
     },
     {
@@ -558,13 +558,13 @@
     },
     {
       "path": "analysis/original-modern-window-key-translation.md",
-      "sha256": "427291d267b68a5728a24f513b0d7efc04cf2e878e6eac824c8ae84b426a3665",
-      "relative_links": 4
+      "sha256": "3883f462a56b279cfc06216692c21644bd054080bedb3114b3e77070214a2b83",
+      "relative_links": 1
     },
     {
       "path": "analysis/original-modern-window-key.md",
-      "sha256": "9a44eaadee4472b7f01ced776a7c8d07cd028b9efac7d77e76792e101ca0111a",
-      "relative_links": 2
+      "sha256": "3a398313e41e3c3dba2bed602afd24267895a7bfef1ef28212b48a9d6dabf948",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-x87-observers.md",
@@ -583,7 +583,7 @@
     }
   ],
   "file_count": 116,
-  "relative_link_count": 1671,
+  "relative_link_count": 1669,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

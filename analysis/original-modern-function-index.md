@@ -278,9 +278,9 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004c9890` | LoadPoliceRadioVoiceBank | 212 | 6 | [sound-bank-language](original-modern-sound-bank-language.md) |
 | `004cb750` | AppendViewportOverlayEffectQuadCommands | 1332 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
 | `004cbc90` | BuildWorldTransientEffectCommandPair | 2217 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
-| `004ccaa0` | TranslateWindowKeyDownCode | 86 | 84 | [window-key-translation](original-modern-window-key-translation.md), [window-key](original-modern-window-key.md) |
-| `004ccb84` | FilterConfiguredGameKeyboardHook | 187 | 175 | [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md), [window-handling](original-modern-window-handling.md), [window-key-translation](original-modern-window-key-translation.md) |
-| `004ccc40` | InstallConfiguredKeyboardHookIfAbsent | 100 | 94 | [screenshots](original-modern-screenshots.md), [window-handling](original-modern-window-handling.md), [window-key-translation](original-modern-window-key-translation.md), [window-key](original-modern-window-key.md) |
+| `004ccaa0` | TranslateWindowKeyDownCode | 86 | 84 | [window-key](original-modern-window-key.md) |
+| `004ccb84` | FilterConfiguredGameKeyboardHook | 187 | 175 | [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md), [window-handling](original-modern-window-handling.md), [window-key](original-modern-window-key.md) |
+| `004ccc40` | InstallConfiguredKeyboardHookIfAbsent | 100 | 94 | [screenshots](original-modern-screenshots.md), [window-handling](original-modern-window-handling.md), [window-key](original-modern-window-key.md) |
 | `004ccca4` | UnhookStoredKeyboardHookAndClearHandle | 29 | 26 | [window-handling](original-modern-window-handling.md) |
 | `004cccc4` | HandleWindowCreateHookSetup | 30 | 29 | [window-handling](original-modern-window-handling.md) |
 | `004ccce4` | HandleWindowDestroyHookCleanup | 30 | 30 | [window-handling](original-modern-window-handling.md) |
@@ -288,7 +288,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004ccd5c` | HandleWindowCloseByPostingQuit | 26 | 25 | [window-handling](original-modern-window-handling.md) |
 | `004ccd98` | HandleWindowRequest0x466Flag | 28 | 27 | [window-handling](original-modern-window-handling.md) |
 | `004cd350` | CreateGameWindowFromContext | 312 | 18 | [window-geometry](original-modern-window-geometry.md) |
-| `004cd4e0` | RunGameWindowMessageLoop | 387 | 16 | [window-key-translation](original-modern-window-key-translation.md), [window-key](original-modern-window-key.md) |
+| `004cd4e0` | RunGameWindowMessageLoop | 387 | 16 | [window-key](original-modern-window-key.md) |
 | `004cd6c0` | InitializeGameWindow | 918 | 514 | [window-handling](original-modern-window-handling.md) |
 | `004cdc50` | UpdateScreenshotRequestRepeatState | 107 | 100 | [input-worker](original-modern-input-worker.md), [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
 | `004d10e0` | RenderBitmapTextAtRightAnchor | 52 | 5 | [numeric-scale](original-modern-numeric-scale.md), [og-modern-x87-precision](og-modern-x87-precision.md) |

@@ -462,7 +462,7 @@ The [track-length formatting comparison](original-modern-track-length-text.md) i
 
 The [existing-window startup warning comparison](original-modern-startup-requirements.md#removed-existing-window-warning-and-embedded-table) pairs the retained FindWindowA detector with Modern’s relocated caller and common fatal warning helper: text, flags and exit routing change. The old116-byte zero/data/table region becomes NOPs; that replacement does not remove instance detection.
 
-The [window-key translator comparison](original-modern-window-key-translation.md) identifies a branch-tree-to-table rewrite, toggle-gated keypad mappings and an added raw6ch mapping. Complete bodies and data tables are retained; EDX reuse across GetKeyState is an explicit provider dependency, and runtime key delivery remains untested.
+The [window-key translator comparison](original-modern-window-key.md) identifies a branch-tree-to-table rewrite, toggle-gated keypad mappings and an added raw6ch mapping. Complete bodies and data tables are retained; EDX reuse across GetKeyState is an explicit provider dependency, and runtime key delivery remains untested.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
