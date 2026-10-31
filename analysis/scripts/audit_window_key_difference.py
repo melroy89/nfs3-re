@@ -18,11 +18,21 @@ def main():
         pe = pefile.PE(data=raw)
         images[label] = pe
         rows = []
-        for start, end in [(0x4ccaa0, 0x4ccc67 if label == 'original' else 0x4ccaf6)]:
+        for start, end in [(0x4ccaa0, 0x4ccc67 if label == 'original' else 0x4ccaf6),(0x4cd0a7,0x4cd0dd),(0x4cd5b0,0x4cd5de)]:
             path = capture / f'{label}-{start:08x}.asm'
             path.write_bytes(subprocess.check_output(['objdump', '-d', '-Mintel', f'--start-address={start}', f'--stop-address={end}', relative], cwd=ROOT))
             rows.append({'start': f'{start:08x}', 'end': f'{end:08x}', 'sha256': hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(), 'assembly': str(path.relative_to(ROOT)), 'assembly_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         result['binaries'][label] = {'path':relative,'sha256':expected,'spans':rows}
+    result['identical_caller_ranges']=[]
+    for start,end in [(0x4cd0a7,0x4cd0dd),(0x4cd5b0,0x4cd5de)]:
+        a,b=[p.get_data(start-0x400000,end-start) for p in images.values()]
+        assert a==b
+        result['identical_caller_ranges'].append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(a).hexdigest()})
+    result['caller_imports']={}
+    for label,p in images.items():
+        found={f'{i.address:08x}':i.name.decode() for d in p.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x5347a4,0x53472c)}
+        assert found=={'005347a4':'TranslateMessage','0053472c':'DispatchMessageA'}
+        result['caller_imports'][label]=found
     pe=images['official_modern']
     result['modern_tables']={}
     for address,count in [(0x4ccaf8,23),(0x4ccb54,12)]:

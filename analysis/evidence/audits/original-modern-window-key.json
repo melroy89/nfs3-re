@@ -12,6 +12,20 @@
           "sha256": "4f63690260266ab788ca1655e4550c2b9d092b6c3b6d29f123dbba4569f91845",
           "assembly": "analysis/captures/modern-differences/window-key/original-004ccaa0.asm",
           "assembly_sha256": "281b3345ecf59c205142459f3bf7e1f0e64f389b3f813e2998cb01a9c425e9c7"
+        },
+        {
+          "start": "004cd0a7",
+          "end": "004cd0dd",
+          "sha256": "af153b91f8763ed0b395ec25d7a66a346e67e36e2ad49abb5bde1653fdaf265c",
+          "assembly": "analysis/captures/modern-differences/window-key/original-004cd0a7.asm",
+          "assembly_sha256": "4b60bd3ce307e1ce98237973be4105bcbe7e5a9b1181e99e8d7454cde708ac50"
+        },
+        {
+          "start": "004cd5b0",
+          "end": "004cd5de",
+          "sha256": "6f75b04c0efc0cafa621c6c0c43b488ea200117ffd7f8a111569a9d496ed0ce9",
+          "assembly": "analysis/captures/modern-differences/window-key/original-004cd5b0.asm",
+          "assembly_sha256": "db7689245af4e193a97a12b4ef37e2c65465cbe7f4fc0444cfd7534f99dc5ed7"
         }
       ]
     },
@@ -25,8 +39,44 @@
           "sha256": "72e4428a16349fe8ea48552cfa37d0756c0811f1b6528764e7c06ff6f749fea3",
           "assembly": "analysis/captures/modern-differences/window-key/official_modern-004ccaa0.asm",
           "assembly_sha256": "04610d5003ca2532bf740c40bea46f419be2bbf1ce0826eb8c8772d1baebc994"
+        },
+        {
+          "start": "004cd0a7",
+          "end": "004cd0dd",
+          "sha256": "af153b91f8763ed0b395ec25d7a66a346e67e36e2ad49abb5bde1653fdaf265c",
+          "assembly": "analysis/captures/modern-differences/window-key/official_modern-004cd0a7.asm",
+          "assembly_sha256": "7cfc82e2f5f01b384335a21a0f5bb2802702d0e40cc4d51539e7c1ece09dba48"
+        },
+        {
+          "start": "004cd5b0",
+          "end": "004cd5de",
+          "sha256": "6f75b04c0efc0cafa621c6c0c43b488ea200117ffd7f8a111569a9d496ed0ce9",
+          "assembly": "analysis/captures/modern-differences/window-key/official_modern-004cd5b0.asm",
+          "assembly_sha256": "51395b9c98b82f04cb697d0eef942e471ae2ff3f16f5e090d34451d6efbd5672"
         }
       ]
+    }
+  },
+  "identical_caller_ranges": [
+    {
+      "start": "004cd0a7",
+      "end": "004cd0dd",
+      "sha256": "af153b91f8763ed0b395ec25d7a66a346e67e36e2ad49abb5bde1653fdaf265c"
+    },
+    {
+      "start": "004cd5b0",
+      "end": "004cd5de",
+      "sha256": "6f75b04c0efc0cafa621c6c0c43b488ea200117ffd7f8a111569a9d496ed0ce9"
+    }
+  ],
+  "caller_imports": {
+    "original": {
+      "0053472c": "DispatchMessageA",
+      "005347a4": "TranslateMessage"
+    },
+    "official_modern": {
+      "0053472c": "DispatchMessageA",
+      "005347a4": "TranslateMessage"
     }
   },
   "modern_tables": {
