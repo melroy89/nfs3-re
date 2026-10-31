@@ -9,7 +9,9 @@ import pefile
 SPANS = [(0x4a5780, 0x4a587c), (0x4a5880, 0x4a59ba),
          (0x4b6400, 0x4b64b5), (0x4b64c0, 0x4b6513),
          (0x4b6520, 0x4b6588), (0x4bbcc0, 0x4bbd70),
-         (0x522250, 0x5222e8), (0x4b5720, 0x4b584e)]
+         (0x522250, 0x5222e8), (0x4b5720, 0x4b5856),
+         (0x4b6020, 0x4b60db), (0x4a3390, 0x4a339f),
+         (0x4eb390, 0x4eb3bf)]
 STRINGS = [0x53da94, 0x53daa8, 0x53dab8, 0x53dabc, 0x53dac0,
            0x53dac4, 0x53dac8, 0x53dacc, 0x53fe50, 0x53fe7c,
            0x53fe8c, 0x53fe98, 0x53feb0, 0x53fef4, 0x551928, 0x55193c]
@@ -65,6 +67,11 @@ def main():
                'direct_call_candidates': sorted(calls, key=lambda c: c['address']), 'spans': rows}
         if label == 'original':
             row['strings'] = {f'{a:08x}': pe.get_data(a-base, 200).split(b'\0')[0].decode('ascii') for a in STRINGS}
+            row['renderer_selector_names'] = []
+            for i in range(11):
+                a = struct.unpack('<I', pe.get_data(0x55fd68-base+4*i, 4))[0]
+                row['renderer_selector_names'].append({'index': i, 'address': f'{a:08x}',
+                    'text': pe.get_data(a-base, 100).split(b'\0')[0].decode('ascii')})
             row['online_name_table'] = []
             for i in range(4):
                 a = struct.unpack('<I', pe.get_data(0x55eca0-base+4*i, 4))[0]

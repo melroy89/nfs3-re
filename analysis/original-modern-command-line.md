@@ -46,3 +46,5 @@ Argument iteration decrements the saved count before loading an argument (`004a5
 ## Remaining work
 
 Pending: every original parameterized option, downstream semantics for each retained flag, malformed/empty/overlong arguments, duplicate driver options and actual help/driver selection on the OS/Wine. The report establishes this table and prefix mechanism, not complete command-line behavioral equivalence or runtime robustness.
+
+The [original selector follow-up](original-modern-registry.md#original-selector-precedence-and-call-chain) now establishes fixed priority among the ten ordinary original renderer flags, including their downstream selector writes and initializer caller. Modern duplicate `-driver=` handling remains a separate unresolved question.

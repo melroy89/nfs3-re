@@ -191,7 +191,7 @@ The full JSON inventory gives every current Modern local function name, entry/ra
 | `0047f650` BuildNineTexturedRectangleBorderQuads | 800 / 828 | Matched builder/inset and six callers traced; full quad/UV rewrite and visual output remain |
 | `004be5e0` InitializeViewportGeometryForProfile | 608 / 634 | Reference/aspect/profile-rectangle deltas traced; all projection consumers and visual comparison remain |
 | `004cd6c0` InitializeGameWindow | 514 / 918 | Initializer/callback lifecycle traced; creation style/size instructions and helpers compared; context producers and remaining hook semantics remain |
-| `004b5844` LoadThrashDriverSettings | 486 / 504 | Modern INI/driver path traced in renderer report; original environment/name wrapper and selector branch targets traced; selector producers/callers and external driver behavior remain |
+| `004b5844` LoadThrashDriverSettings | 486 / 504 | Modern INI/driver path traced in renderer report; original environment/name wrapper and selector branch targets traced; direct original selector/override/setup chain traced; higher-level callers, alternate writes and external driver behavior remain |
 | `00494cb0` RenderTiledLoadingArtworkAndInitializeProgressBounds | 480 / 748 | Tile/reference/rounding deltas traced; full progress/UI contract and output remain |
 | `004e3078` ScreenshotEncodingThread | 451 / 464 | Original synchronous counterpart mapped in screenshot report; GDI+ success, resources and runtime lifetime remain |
 | `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; numeric/type dispatch, callback-to-direct mode initialization and compatibility calls traced; selector producers and DLL semantics remain |

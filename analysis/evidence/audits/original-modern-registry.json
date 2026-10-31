@@ -130,10 +130,31 @@
         },
         {
           "start": "004b5720",
-          "end": "004b584e",
-          "bytes_sha256": "292671942b6d1501c053f14ece637aa115496ed3b91746b457ec90c3eba17705",
+          "end": "004b5856",
+          "bytes_sha256": "72af7857e7943618ad739a0a5bfddbc6201ccb016957200e30af4051b7d99199",
           "assembly": "analysis/captures/modern-differences/registry/original-004b5720.asm",
-          "assembly_sha256": "783671deb8ee447aaf098a569e2be9246b0bfcb53c6a4a2e8121643b71cc9751"
+          "assembly_sha256": "2b1ad348cb31c2c082b5223545ceaf147fcb3e9ed0527edf583f19fd3e79513e"
+        },
+        {
+          "start": "004b6020",
+          "end": "004b60db",
+          "bytes_sha256": "422e9510c940e1a78382eaa18324869d9ea64c75330c7b1e1b782479f239976e",
+          "assembly": "analysis/captures/modern-differences/registry/original-004b6020.asm",
+          "assembly_sha256": "365de1bd08b22fa7abf50e5eee38102747996d0edee6a2accf84e5b945babd9b"
+        },
+        {
+          "start": "004a3390",
+          "end": "004a339f",
+          "bytes_sha256": "08acd6e807697249ef21dffb418a373b2dd748110c41443f49511102b550c613",
+          "assembly": "analysis/captures/modern-differences/registry/original-004a3390.asm",
+          "assembly_sha256": "6942c2d5dcc42dcb093047d20b1593d80e2b78c899dc132a05ce184bebdcb504"
+        },
+        {
+          "start": "004eb390",
+          "end": "004eb3bf",
+          "bytes_sha256": "21508773a3004a4ede2a653dd1c90a80ff79772cf9e51020039ff7682a12053a",
+          "assembly": "analysis/captures/modern-differences/registry/original-004eb390.asm",
+          "assembly_sha256": "7b6727b0e76274ab039232ba5739a3647f136a3c00d61b1c5def62aa3abe239b"
         }
       ],
       "strings": {
@@ -154,6 +175,63 @@
         "00551928": "PerfStats\\StatData",
         "0055193c": "VMM\\cpgLocked"
       },
+      "renderer_selector_names": [
+        {
+          "index": 0,
+          "address": "0053ebb8",
+          "text": "nulla.dll"
+        },
+        {
+          "index": 1,
+          "address": "0053ebc4",
+          "text": "softtria.dll"
+        },
+        {
+          "index": 2,
+          "address": "0053ebd4",
+          "text": "softlina.dll"
+        },
+        {
+          "index": 3,
+          "address": "0053ebe4",
+          "text": "voodooa.dll"
+        },
+        {
+          "index": 4,
+          "address": "0053ebf0",
+          "text": "voodoo2a.dll"
+        },
+        {
+          "index": 5,
+          "address": "0053ec00",
+          "text": "ragea.dll"
+        },
+        {
+          "index": 6,
+          "address": "0053ec0c",
+          "text": "d3da.dll"
+        },
+        {
+          "index": 7,
+          "address": "0053ec18",
+          "text": "powervra.dll"
+        },
+        {
+          "index": 8,
+          "address": "0053ec18",
+          "text": "powervra.dll"
+        },
+        {
+          "index": 9,
+          "address": "0053ec28",
+          "text": ""
+        },
+        {
+          "index": 10,
+          "address": "0053ec28",
+          "text": ""
+        }
+      ],
       "online_name_table": [
         {
           "address": "0053d7d8",
@@ -260,10 +338,31 @@
         },
         {
           "start": "004b5720",
-          "end": "004b584e",
-          "bytes_sha256": "4f5131dd9c4fcdc4b88197b33b17f1ba95b232477543ea38ba9cb8289b539bd0",
+          "end": "004b5856",
+          "bytes_sha256": "6dbff77efc2e0c0a22f31db9a12f132359dcdceedf0c575ae6afa64536306216",
           "assembly": "analysis/captures/modern-differences/registry/official_modern-004b5720.asm",
-          "assembly_sha256": "ed2d8fda44e8be7ee78d5a51bb2d894828d82ea5ff9ea14965e20364878b4daf"
+          "assembly_sha256": "1229e252ae0d7d36076bd4fd245d60e44eb4202464ccd91e1148275bd159b7f6"
+        },
+        {
+          "start": "004b6020",
+          "end": "004b60db",
+          "bytes_sha256": "b1d50b54ae441002008e21f8d64d9c2b62b6f0bcc7d4b2a92e85eb6e36041034",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004b6020.asm",
+          "assembly_sha256": "8954ebb70c34c9646a7de81ba5bd0be22fa3d3894b7f80c15b9dab28d36cba72"
+        },
+        {
+          "start": "004a3390",
+          "end": "004a339f",
+          "bytes_sha256": "40f0d021fa824f3b40dc646f67479997734d273d9121690b6f042c512df3a838",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004a3390.asm",
+          "assembly_sha256": "e2c06438b58fa6462675197cee2a0d8addf7d82acb63b964513e521bdcfc8ad8"
+        },
+        {
+          "start": "004eb390",
+          "end": "004eb3bf",
+          "bytes_sha256": "21508773a3004a4ede2a653dd1c90a80ff79772cf9e51020039ff7682a12053a",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004eb390.asm",
+          "assembly_sha256": "2fdcd6ca900c41a7d5543c0641f1a530083fc5b3c2f37dc28ff11e3b61bc8f6d"
         }
       ]
     }

@@ -22,6 +22,35 @@ Modern replaces this with `004b5844`: unless command-line bit 0 of `0055eb2c` is
 
 The complete original registry helper ranges `004b6400..004b64b5` and `004b64c0..004b6513` (exclusive ends) are all NOPs in Modern; the script asserts this. No claim is made that a Modern key directly replaces each old D3D value: driver-specific configuration and DLL implementation must be inspected for that correspondence. These original helpers contain no local `RegCloseKey` call, including their success paths; preserve that observation rather than silently repairing it in a reconstruction.
 
+### Original selector precedence and call chain
+
+The selector body is now retained through its actual return at `004b5855` (exclusive end `004b5856`), including all override branches. The switch names/bit indices below are cross-checked against the [command-line table evidence](evidence/audits/original-modern-command-line.json). After the registry-name lookup and initial selector write, it tests flags in this fixed order; the first set flag writes its selector and returns:
+
+| Priority | Flag bit in `0055eb2c` | Original switch | Selector |
+|---:|---:|---|---:|
+| 1 | 2 | `-voodoo` | 3 |
+| 2 | 3 | `-voodoo2` | 4 |
+| 3 | 4 | `-ragepro` | 5 |
+| 4 | 5 | `-d3d` | 6 |
+| 5 | 6 | `-pvr` | 7 |
+| 6 | 7 | `-pvr2` | 8 |
+| 7 | 8 | `-verite` | 9 |
+| 8 | 9 | `-verite2` | 10 |
+| 9 | 0 | `-softtri` | 1 |
+| 10 | 1 | `-softlin` | 2 |
+
+For example, when both ordinary recognized flags `-softtri` and `-d3d` are present, this selector chooses 6, independently of their argument order. This follows from the explicit flag tests, not an executed command-line test. The registry lookup runs first, including its possible diagnostic call; these flags do not bypass that earlier lookup/error path. Flag production outside the ordinary parser and whole-process behavior remain separate.
+
+The retained original selector-name table has entries `nulla.dll`, `softtria.dll`, `softlina.dll`, `voodooa.dll`, `voodoo2a.dll`, `ragea.dll`, `d3da.dll`, `powervra.dll`, `powervra.dll`, empty, empty. The byte comparator `004eb390` explicitly returns zero when EBX length is zero (`004eb391..004eb398`). The comparison length is the returned registry string's length, not the candidate length; matches select the first table entry. Consequently a matching PowerVR registry prefix chooses 7 before the duplicate entry 8; `-pvr2` can override to 8. An empty returned string supplies length zero, so this comparison path can match entry 0. Registry failures use a copy from `softtria.dll` with requested length `strlen - 5` through `004e0e30`; that copy helper's complete termination contract is not established here. Do not assume the fallback is a full DLL filename merely because that source string is present.
+
+The caller chain is explicit:
+
+1. Original wrapper `004a3390` calls subsystem setup `004b6020` at `004a3393`.
+2. Setup passes address `007a3a54` to selector `004b5720` at `004b6074`, then loads its result and stores `1 << selector` at `007a3a58` (`004b6079..004b6086`). This is an x86 masked-count shift; do not translate arbitrary selector values into unchecked C shifts.
+3. Setup reloads selector `007a3a54` into EAX and language/state global `007a3a50` into EDX before `004b5860` at `004b60c6`, then reloads both before renderer initialization `004b59c0` at `004b60d6`.
+
+This establishes the original registry/flags-to-selector-to-initializer data path. It does not prove the diagnostic helper returns, authenticate every table name as a supported renderer, or validate the DLLs. Modern uses the different configured-name/parser/type-dispatch path already documented; original selector 6 and Modern type mask 64 must not be conflated just because both select the d-type neighborhood.
+
 ## 2. Online DLL registry lookup remains byte-identical
 
 Original and Modern complete bodies `004a5780..004a587c` and `004a5880..004a59ba` are byte-identical, including these four open/query call sites:
@@ -49,7 +78,7 @@ The auditable partition is **4 online + 5 renderer + 2 Desktop + 2 generic + 2 m
 
 ## Remaining work
 
-- **Pending, static:** establish the original generic wrapper's incoming key/value producers or explicitly unreachable status; map remaining original selector command-line overrides and its startup callers.
+- **Pending, static:** establish the original generic wrapper's incoming key/value producers or explicitly unreachable status; trace the higher-level callers of wrapper `004a3390` and any alternate writes to selector state. The direct selector/override/setup-to-initializer path is now mapped.
 - **Pending, static/external:** determine where old D3D device preferences move in the packaged driver/configuration files; do not assume a one-to-one INI rename.
 - **Pending, historical:** intermediate releases are needed to verify the Desktop access-rights release claim and date individual changes.
 - **Pending, runtime:** actual INI/registry precedence outcomes, permissions, renderer behavior and online functionality. No such tests were run.
