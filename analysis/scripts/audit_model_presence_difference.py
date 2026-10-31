@@ -14,8 +14,8 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
-        spans=[(0x438ad0,0x438aed),(0x439990,0x4399e4),(0x4270c0,0x427182),(0x460478,0x46048e)]
-        spans += [(0x439ce0,0x439d12),(0x4a4390,0x4a440d)] if label=='original' else [(0x439cd4,0x439cfd),(0x439d00,0x439d19),(0x4a4374,0x4a443f),(0x4a40c0,0x4a413b),(0x4a4337,0x4a4371),(0x4a444c,0x4a44c3),(0x4a457b,0x4a45bf),(0x4d7d90,0x4d7dc7),(0x4d6070,0x4d6109),(0x4f24e0,0x4f255e),(0x4ea658,0x4ea665)]
+        spans=[(0x438ad0,0x438aed),(0x439990,0x4399e4),(0x4a40c0,0x4a4386 if label=='original' else 0x4a4371),(0x4270c0,0x427182),(0x460478,0x46048e)]
+        spans += [(0x439ce0,0x439d12),(0x4a4390,0x4a440d)] if label=='original' else [(0x439cd4,0x439cfd),(0x439d00,0x439d19),(0x4a4374,0x4a443f),(0x4a444c,0x4a44c3),(0x4a457b,0x4a45bf),(0x4d7d90,0x4d7dc7),(0x4d6070,0x4d6109),(0x4f24e0,0x4f255e),(0x4ea658,0x4ea665)]
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
@@ -23,6 +23,10 @@ def main():
         target=0x427147+int.from_bytes(data[1:],'little',signed=True)
         assert target==(0x439ce0 if label=='original' else 0x439d00)
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,'paired_caller_target':f'{target:08x}'}
+    result['animation_scale_constant']={}
+    for label,pe in images.items():
+        raw=pe.get_data(0x13cf04,8);assert struct.unpack('<d',raw)[0]==0.8
+        result['animation_scale_constant'][label]={'address':'0053cf04','bytes':raw.hex(),'binary64':0.8}
     result['file_backed_animation_initial_state']={}
     for label,pe in images.items():
         rows=[]

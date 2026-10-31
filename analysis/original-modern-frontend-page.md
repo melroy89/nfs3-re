@@ -215,3 +215,13 @@ The audit verifies **file-backed** initial values, including PE file offsets, in
 With a stable positive loaded count and that initial counter, slot9 publishes index0 on its first producer call, then calculates the next sequence value modulo the count. This resolves the initial seed for that bounded case. It does not establish that the initial bytes remain unchanged until first use, that initialization runs exactly once, or that reloading a shorter list resets the sequence.
 
 The decoded direct-reference search locates a load at `004a40dc` and store at `004a4114` for `0055e984`; this is a locator result, not proof that no indirect/bulk write exists. The retained logo loader clears output count but contains no explicit reset of that sequence cell. A prior index valid for a longer list can therefore require additional reset/order guarantees after list shrinkage; the preceding modulo constrains the next value only. No reload failure or out-of-range draw was observed.
+
+## Animation producer: retained scaling, changed slot9 state constants
+
+The audit now retains complete producer bodies: original **`004a40c0..004a4386`**, Modern **`004a40c0..004a4371`**. This avoids treating a Modern-shortened body as the original boundary. Other branches exist in these complete captures; the findings below concern the inspected slot9 and final-scale paths only.
+
+At their corresponding final scale step, both load binary32 **`007a1b60 + 4*slot`**, multiply by the same file-backed binary64 constant **`0053cf04=0.8`**, and store binary32 to that same cell. Original additionally duplicates ST0 with `FLD ST(0)` and uses `FSTP ST(1)` before the final store; Modern performs the multiply/store directly. For ordinary finite values under equal x87 state, this retains the local arithmetic expression and final binary32 rounding. It does not establish matching status bits, exceptional behavior, full-stack preconditions or whole-animation equivalence.
+
+Slot9 retains initial scale bits **`0x3fcccccd`** (binary32 approximately1.6), but changes the DWORD written to **`007a1ac0 + 4*slot`** from **60 to0**, and the DWORD written to **`0055e95c + 4*slot`** from **410 (`0x19a`) to390 (`0x186`)**. Its other inspected state writes remain0 at `007a1ae8 + 4*slot` and3 at `007a1b10 + 4*slot`. These cells participate in animation/update state, but no physical time units or visible smoothing effect are assigned here.
+
+This provides bounded evidence of changed slot state alongside retained final scaling. It does not yet verify the release-note claim about smoother logo disappearance: the draw/update consumer and time-to-state conversion must be compared before making that attribution.

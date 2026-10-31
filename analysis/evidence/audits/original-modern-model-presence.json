@@ -21,6 +21,13 @@
           "assembly_sha256": "c98cd7ba709b23ba09d606ed83e7d90c3457a248f387d4d57e41688cd6f237f1"
         },
         {
+          "start": "004a40c0",
+          "end": "004a4386",
+          "sha256": "d691d802c2480a468bc701e70b2ff402dced9d5db044528a314db2ea79d31105",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-004a40c0.asm",
+          "assembly_sha256": "670752afd4ebb29d50ab7b242ffa8ad5dc91c908249213e886fc168184eb26f8"
+        },
+        {
           "start": "004270c0",
           "end": "00427182",
           "sha256": "a164011d57155dbe0b33f993ce04015805a3327d2ed32168899e79422b2c9600",
@@ -70,6 +77,13 @@
           "assembly_sha256": "a3f6c23f728c866c0af35f17c079495d53387bd42d44963f37675e035952891d"
         },
         {
+          "start": "004a40c0",
+          "end": "004a4371",
+          "sha256": "e047fef931e6fbf8c65cc4c97ce0c821fe4fbda4d22a8dfff90ea0854ef16089",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a40c0.asm",
+          "assembly_sha256": "dce92c9faad79086e9cc5a2a021fc052ad152e38dbd81dd385eab9563838d595"
+        },
+        {
           "start": "004270c0",
           "end": "00427182",
           "sha256": "1a003cdd4a7af15031c13bf5798af3200555d64eb2030fa45f2f61b1cc842564",
@@ -103,20 +117,6 @@
           "sha256": "76fa7f8a7f6bbb1645ae716a6d4a72aeda8d0adb46aa63e518bf4f824b76106b",
           "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a4374.asm",
           "assembly_sha256": "431e4602267109cf583ddc42c8ed60bc69b1b1dfa4226311251191b4b5f7e463"
-        },
-        {
-          "start": "004a40c0",
-          "end": "004a413b",
-          "sha256": "46f3ccdba0ff5dd5a9faa57056a8971be0b471f3e428d13851425dacbf5e1711",
-          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a40c0.asm",
-          "assembly_sha256": "7f4c46cdbefb41f9d0c85772cfeff606a311da9e93b19d31570152c3d93905ec"
-        },
-        {
-          "start": "004a4337",
-          "end": "004a4371",
-          "sha256": "b251eefa1ba932a9cd8b49558a65a37cfcf23cca1c9c04e434aa8416e744de90",
-          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a4337.asm",
-          "assembly_sha256": "029f5da18f13e0b02cefaf3b50dbe5d5e184f8363f85dac4e6385bbe112ee2e9"
         },
         {
           "start": "004a444c",
@@ -162,6 +162,18 @@
         }
       ],
       "paired_caller_target": "00439d00"
+    }
+  },
+  "animation_scale_constant": {
+    "original": {
+      "address": "0053cf04",
+      "bytes": "9a9999999999e93f",
+      "binary64": 0.8
+    },
+    "official_modern": {
+      "address": "0053cf04",
+      "bytes": "9a9999999999e93f",
+      "binary64": 0.8
     }
   },
   "file_backed_animation_initial_state": {
