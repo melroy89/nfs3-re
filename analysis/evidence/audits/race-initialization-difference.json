@@ -270,6 +270,44 @@
           ]
         },
         {
+          "start": "0047b390",
+          "end_exclusive": "0047b39a",
+          "sha256": "d240410b555fb354a608c07f25a4fc86e56096024500d6274155b10c99097c38",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-0047b390.asm",
+          "direct_calls": [
+            {
+              "site": "0047b393",
+              "target": "0047b350"
+            }
+          ]
+        },
+        {
+          "start": "004dcd10",
+          "end_exclusive": "004dcd1a",
+          "sha256": "8d3679a463ebebc994598941a1c2d59e14ec7591e60c073466bfce3bba6465de",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004dcd10.asm",
+          "direct_calls": [
+            {
+              "site": "004dcd13",
+              "target": "004dcdf0"
+            }
+          ]
+        },
+        {
+          "start": "00434ae0",
+          "end_exclusive": "00434ae5",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00434ae0.asm",
+          "direct_calls": []
+        },
+        {
+          "start": "00421480",
+          "end_exclusive": "00421485",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-00421480.asm",
+          "direct_calls": []
+        },
+        {
           "start": "004c7130",
           "end_exclusive": "004c7149",
           "sha256": "21d56f03c98dc5b708a1000a1f18cf8b3871d062f27e4c0b8c50a64b1110a9c6",
@@ -890,6 +928,40 @@
     "shared_final_body_bytes": 41,
     "shared_final_body_sha256": "413c645b1c58f12e67b44de640fa3189d28caf5763610589fbfdf74b4d7917d2",
     "interpretation": "Three calls are hoisted unchanged; environment/weather targets differ; two original wrapper-prefix calls are bypassed on this route."
+  },
+  "flattened_reset_comparison": {
+    "substantive_direct_target_sequence": [
+      "004ea4f0",
+      "004371d0",
+      "004b7c20",
+      "0042c530",
+      "0040e0f0",
+      "0040cb20",
+      "004012c0",
+      "00404c50",
+      "00403970",
+      "00493e50",
+      "004c9db0",
+      "004c7130",
+      "004dbbc0",
+      "004cb6f0",
+      "0047b350",
+      "004dcdf0",
+      "004bc530",
+      "004cdd00",
+      "00471000"
+    ],
+    "same_after_original_stub_removal_and_wrapper_expansion": true,
+    "non_call_displacement_bytes_identical": true,
+    "wrapper_bypasses": {
+      "0047b390": "0047b350",
+      "004dcd10": "004dcdf0"
+    },
+    "additional_original_noop_leaves": [
+      "00434ae0",
+      "00421480"
+    ],
+    "limits": "Local logical call-tree comparison; not transitive game-state, stack-memory, timing or runtime equivalence."
   },
   "removed_stub_entries": [
     "00401220",

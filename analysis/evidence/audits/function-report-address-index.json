@@ -213,7 +213,7 @@
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
-      "sha256": "74ba65482da764743ef34ffcd4ca06c2762c538d81e3dd570bb508d6a6cef65f"
+      "sha256": "add82362b2a46d125160b2cbf134b0d200aec4e62d6b5439d228f664aacd8ef5"
     },
     {
       "path": "analysis/original-modern-race-now.md",
@@ -4697,7 +4697,8 @@
           "path": "analysis/original-modern-race-initialization.md",
           "entry_mentioned": false,
           "addresses": [
-            "0047b390"
+            "0047b390",
+            "0047b39a"
           ]
         }
       ]

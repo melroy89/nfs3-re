@@ -12,7 +12,7 @@ After filtering those five targets from the original sequence, the complete dire
 
 Modern removes original no-op calls to **`00401230`**, **`0040c140`**, **`00408ae0`**, **`00404650`**, **`00405fb0`**. It adds calls to **`004c7130`**, **`004dbbc0`**, **`004cb6f0`**, **`0047b350`**, **`004dcdf0`**, and changes the later target **`004bc8b0`→`004bc530`**. The exact retained-call order is checked after accounting for those edits.
 
-Unlike the removed original stubs, the five new targets have substantive bodies; they must not be dismissed as equivalent placeholders or treated as proven new physics features from these addresses alone. Their complete effects, initialization ordering dependencies and the changed final target's correspondence remain explicit follow-up work. The paired wrapper bodies establish where those calls enter the race setup sequence, not whether every callee is new, relocated or changed from another original route.
+Unlike the removed original stubs, the five new targets have substantive bodies; they must not be dismissed as equivalent placeholders or treated as proven new physics features from these addresses alone. The follow-ups below resolve retained bodies and wrapper-expanded order; transitive state effects remain outside this comparison. The paired wrapper bodies establish where those calls enter the race setup sequence, not whether every callee is new, relocated or changed from another original route.
 
 This closes the wrapper-level comparison and prevents its36 changed bytes in each saved function from being misread as a physics formula rewrite. For reconstruction, preserve version-specific call ordering until the named callee effects are established. Runtime race startup, simulation equivalence and multiplayer/replay compatibility remain unverified.
 
@@ -30,7 +30,7 @@ The audit now captures all five target bodies and asserts byte identity across t
 
 Ends are exclusive. The zero-fill entry clears EBX then invokes shared fill code; its entry witness is retained. Function labels for spatial/effect/weather roles come from existing analysis and do not establish full layout or every semantic effect. The `00494360` register contract and other transitive callees remain dependencies rather than being assumed harmless.
 
-The direct difference is therefore **reset sequencing of retained state-management routines**. These bytes do not show a new physics formula. Equally, unchanged callee code does not make the new invocation irrelevant: timing/order, globals and initialized data can change subsequent behaviour. Their other original callers have not been inventoried here. The later changed target`004bc8b0`→`004bc530` still needs its own counterpart check. No reset or zero-fill code was executed.
+The direct difference is therefore **reset sequencing of retained state-management routines**. These bytes do not show a new physics formula. Equally, unchanged callee code does not make the new invocation irrelevant: timing/order, globals and initialized data can change subsequent behaviour. Their other original callers have not been inventoried here. The later changed target`004bc8b0`→`004bc530` is resolved in the follow-ups below. No reset or zero-fill code was executed.
 
 ## Final-target resolution: bypassed wrapper and hoisted calls
 
@@ -45,8 +45,16 @@ A one-level comparison of this route therefore establishes:
 | Original nested route | Modern direct route | Interpretation |
 |---|---|---|
 | `004c7130`, `004dbbc0`, `004cb6f0` inside wrapper | Same targets now called by race reset | Hoisted retained calls, not three extra implementations |
-| `0047b390`, `004dcd10` | `0047b350`, `004dcdf0` | Changed environment/weather-related targets; full counterpart semantics pending |
-| Wrapper-prefix `00434ae0`, `00421480` | No corresponding direct calls on this compared route | Locally bypassed; absence from all other routes is not established |
+| `0047b390`, `004dcd10` | `0047b350`, `004dcdf0` | One-call environment/weather wrapper bypass, verified below |
+| Wrapper-prefix `00434ae0`, `00421480` | No corresponding direct calls on this compared route | Locally bypassed original no-op leaves, verified below |
 | Wrapper ends by calling`004bc530` | Race reset directly calls`004bc530` | Unchanged final callee reached without the wrapper |
 
-This refines the earlier direct-call inventory: “five added calls” described the outer wrapper’s instruction list, **not five net additional operations after expanding original nested calls**. Three are relocation of invocation level; two use different targets. Preserve this distinction in any reconstruction plan or patch summary. The original wrapper’s admission/timing, skipped-prefix effects and changed target bodies require separate evidence before claiming equivalent complete reset behaviour. No initializer or target instructions were executed.
+This refines the earlier direct-call inventory: “five added calls” described the outer wrapper’s instruction list, **not five net additional operations after expanding original nested calls**. Three are relocation of invocation level; two use different targets. Preserve this distinction in any reconstruction plan or patch summary. The final follow-up resolves skipped-prefix bodies and target wrappers; timing and transitive effects still prevent a complete runtime-equivalence claim. No initializer or target instructions were executed.
+
+## Wrapper expansion closes the remaining target questions
+
+The final two old targets are now fully inspected: **`0047b390..0047b39a`** simply calls`0047b350` between EBP save/restore; **`004dcd10..004dcd1a`** likewise calls`004dcdf0`. Original wrapper-prefix entries **`00434ae0..00434ae5`** and **`00421480..00421485`** are five-byte no-op leaves. The audit retains these complete original bodies and verifies their call targets.
+
+After removing original no-op leaves and expanding those original one-call wrappers plus`004bc8b0`, the **entire substantive direct-target sequence equals Modern’s**. Additionally, masking CALL displacements makes the full221-byte reset-wrapper bodies byte-identical: no additional non-CALL operand/arithmetic/global-store change remains in that wrapper. The earlier outer-level “added calls” and two “changed environment/weather targets” are therefore resolved as **invocation hoisting and wrapper bypass**, not net added reset operations.
+
+This closes the bounded local call-tree comparison for these two initialization/reset wrappers. It does not establish transitive behaviour equality: retained callees may encounter different inputs, global initialization, resources or floating-point state. Removing stack frames changes transient stack memory and timing even where substantive target order is retained. Preserve original register/flag assumptions and choose explicitly whether reconstruction models logical effects or exact machine state. No initializer was run and no whole-simulation equivalence is claimed.
