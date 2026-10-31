@@ -13,7 +13,22 @@
           "bytes_sha256": "78de7c2d628b84e59b50477cf3f076aca4a874505858dfb19320d549aa591c0e",
           "assembly": "analysis/captures/modern-differences/language-table/original-004d1750.asm",
           "assembly_sha256": "8baa77d7ee7ce456a3e6c96fb58db92d9d5401c16b2a570c3db73db182de6c4c"
+        },
+        {
+          "start": "004a6e10",
+          "end": "004a6f61",
+          "bytes_sha256": "dae1a966dcc7f63de893771c636afbe185dd3b6fc5e2a52b905c37637712a34d",
+          "assembly": "analysis/captures/modern-differences/language-table/original-004a6e10.asm",
+          "assembly_sha256": "d00effdc82c5e1ad3d59e2f99a63463d7cebe107e11eb82adc00a3d34f981481"
         }
+      ],
+      "selector_names": [
+        "english",
+        "german",
+        "french",
+        "spanish",
+        "italian",
+        "swedish"
       ],
       "language_names": [
         "text.eng",
@@ -22,7 +37,11 @@
         "text.spa",
         "text.ita",
         "text.swe"
-      ]
+      ],
+      "source_strings": {
+        "0053dc3c": "rt",
+        "0053dc40": "install.win"
+      }
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -34,7 +53,50 @@
           "bytes_sha256": "5e1037938d9a5a85bd0a84fbb3a3d097803c915cea5be5f0a7c1d30688e64899",
           "assembly": "analysis/captures/modern-differences/language-table/official_modern-004d1750.asm",
           "assembly_sha256": "b58b2ef0dbe42bc6e5a8e95e0ade33d0d27d34240581986719c0a57f75ce1eb8"
+        },
+        {
+          "start": "004a6e68",
+          "end": "004a6ec1",
+          "bytes_sha256": "6f0aa0ffd464a49d772be178f4a4b3beab68ec76318c62473a57a87dbc3cea16",
+          "assembly": "analysis/captures/modern-differences/language-table/official_modern-004a6e68.asm",
+          "assembly_sha256": "8453945285bcf09b4995d1024fb6b5172fb165e7faf8c12846344305f1e9ac9e"
+        },
+        {
+          "start": "004f93c8",
+          "end": "004f93ea",
+          "bytes_sha256": "2592f44c61220dbbfe55db12c0acacc5427ab34cd740bbc93441bc350393a598",
+          "assembly": "analysis/captures/modern-differences/language-table/official_modern-004f93c8.asm",
+          "assembly_sha256": "bac719afd2452abb487e7a28bc2f397556de32c015e2b0a01dac163683e9800b"
+        },
+        {
+          "start": "0044b271",
+          "end": "0044b28f",
+          "bytes_sha256": "b89a4637382281748744fb617c586d2092c0612a2bfec25bbc996dbd2be850eb",
+          "assembly": "analysis/captures/modern-differences/language-table/official_modern-0044b271.asm",
+          "assembly_sha256": "35dfc27bba7dcae0e9304c16095b3f999d4c2dedcffb25dc9d5ea1112af061fd"
+        },
+        {
+          "start": "0044b950",
+          "end": "0044b97b",
+          "bytes_sha256": "bf2a7d735e27806862364bc6398ff847bbb9c2b8e0b9b63d27ee6137dad489f7",
+          "assembly": "analysis/captures/modern-differences/language-table/official_modern-0044b950.asm",
+          "assembly_sha256": "eddbf65bacef181f65680c6bb045daf99a763851c73344f32a419a90977ffb7f"
+        },
+        {
+          "start": "00472aff",
+          "end": "00472b09",
+          "bytes_sha256": "1c99830da50d0ff415016d8ddc8ed68683ded38eb289a0d9ce13f7c0b1bc8148",
+          "assembly": "analysis/captures/modern-differences/language-table/official_modern-00472aff.asm",
+          "assembly_sha256": "1bc53c3283dda6233323a516e4c62f0721b4343196fc5b304ad643f6d9501f56"
         }
+      ],
+      "selector_names": [
+        "english",
+        "german",
+        "french",
+        "spanish",
+        "italian",
+        "swedish"
       ],
       "language_names": [
         "text.eng",
@@ -44,6 +106,11 @@
         "text.ita",
         "text.swe"
       ],
+      "setting_strings": {
+        "0053f5e0": "NFS3",
+        "0053f5e8": "Language",
+        "0053eaf0": "english"
+      },
       "required_marker": "v1.6.0",
       "fallback_entries": [
         {

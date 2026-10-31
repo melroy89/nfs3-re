@@ -42,10 +42,22 @@ In `004d17b0`, the display-mode label range changes from original **`0x7a8..0x7b
 
 Original release helper begins at `004d1880`; Modern begins at `004d1890`. Modern exchanges the shared pointer with zero before conditionally freeing it; original frees first, then clears the pointer. This establishes ordering, not thread-safe language reload or successful ownership under every alias.
 
+## Upstream language selection: install.win becomes INI setting
+
+Original selector **`004a6e10..004a6f60`** opens embedded filename `install.win` with mode `rt`, reads/parses lines and compares the resulting buffer at `007a2634` against six strings from `0055fd24`. Its final comparison uses each candidate name's length through `004eb390`, so it is a prefix comparison on the inspected path, not an independently verified exact-token check. If none match it calls `004b5e50` before storing the resulting index; that helper's complete error/return behavior is not assumed here. Open failure returns zero before that final selection route.
+
+Modern selector **`004a6e68..004a6ec0`** instead calls configuration string reader `004fb714` with section **NFS3**, key **Language**, fallback **english**, destination **`007a2634`** and count **8**. The [configuration comparison](original-modern-configuration.md) documents the reader's INI/environment/caller-default precedence. It then lowercases ASCII in place through `004f93dc`, and compares against the six complete names:
+
+`english, german, french, spanish, italian, swedish`
+
+A match stores its index **0..5** at `007a3a50`. No match copies `english` to the buffer and stores zero. This guarantees a six-entry index from the ordinary selector return path, without relying on the resource loader's removed local guard. String truncation follows the reader's count argument; no overlong-setting test was run.
+
+Modern config initialization later copies `007a3a50` into active field **`006fbb4c`** (`00472aff..00472b08`). Both inspected loader callers read EAX from that active field before calling `004d1750` at **`0044b28a`** and **`0044b976`**. This provides a producer-to-consumer route for normal startup; it does not exclude later writes, saved-state restoration or indirect callers changing the active field. The INI selector index is not a global proof for arbitrary loader inputs.
+
 ## Catalog conclusions and limits
 
 **MP160-013**, checking language-file version: the marker test, compatibility flag and lookup fallback are statically supported. This routine does not visibly reject the entire file solely because the marker differs; it changes selected lookup behavior.
 
 **MP153-008**, corrected fallback regression: final fallback logic is documented, but a regression/fix between v1.5.1 and v1.5.3 requires those binaries. Original versus final cannot establish that history.
 
-Pending: upstream language selection, actual localized asset contents, all IDs/consumers, null/malformed input paths and rendered translations. Historical release attribution and complete format compatibility remain separate from this marker mechanism.
+Pending: all later active-index writes, actual localized asset contents, all IDs/consumers, null/malformed input paths and rendered translations. Historical release attribution and complete format compatibility remain separate from this marker mechanism.
