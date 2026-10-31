@@ -30,7 +30,7 @@ SPECS = [
 
 def main():
     candidates = json.loads((ROOT/'analysis/evidence/audits/legacy-dll-candidates.json').read_text())
-    out = {'scope': 'THRASH_about lazy-cache path and setup prefix only', 'files': {}}
+    out = {'scope': 'THRASH_about setup prefixes and selected mode-producing helper bodies', 'files': {}}
     for label, relative, wanted, start, end, descriptor, checks in SPECS:
         path = ROOT/GAME/relative
         raw = path.read_bytes()
@@ -51,13 +51,35 @@ def main():
             'prefix_end_exclusive': f'{end:08x}', 'prefix_bytes': len(prefix),
             'prefix_sha256': hashlib.sha256(prefix).hexdigest(),
             'prefix_hex': prefix.hex(), 'disassembly': asm, 'checked_instructions': rows}
+    helper_specs = {
+        'legacy_candidate': [(0x600018c0, 0x60001a53)],
+        'official_matching_wrapper': [(0x600018d8, 0x60001b79), (0x600012e8, 0x600013e9)],
+    }
+    for label, spans in helper_specs.items():
+        row = out['files'][label]
+        path = ROOT/row['path']
+        pe = pefile.PE(str(path))
+        base = pe.OPTIONAL_HEADER.ImageBase
+        row['mode_helper_spans'] = []
+        for start, end in spans:
+            raw = pe.get_data(start-base, end-start)
+            row['mode_helper_spans'].append({
+                'start': f'{start:08x}', 'end_exclusive': f'{end:08x}',
+                'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(), 'hex': raw.hex(),
+                'disassembly': subprocess.check_output(['objdump', '-d', '-Mintel',
+                    f'--start-address={start}', f'--stop-address={end}', str(path)], text=True)})
+    modern = pefile.PE(str(ROOT/out['files']['official_matching_wrapper']['path']))
+    for va, encoded in [(0x60001327, '83fb64'), (0x60001330, 'ff054cfd0060'),
+                        (0x60001304, '6bf828'), (0x60001b67, 'ff054cfd0060'),
+                        (0x60001b70, 'a3d4270160')]:
+        assert modern.get_data(va-modern.OPTIONAL_HEADER.ImageBase, len(bytes.fromhex(encoded))).hex() == encoded
     assert out['files']['official_matching_wrapper']['sha256'] == candidates['files']['modern_voodoo']['sha256']
     out['limits'] = ['Setup writes are not final descriptor values after later hardware-dependent calls.',
         'Local legacy candidate is not independently authenticated retail or paired with nfs3_org.exe.',
-        'No API-size/version names assigned to literal +8=0x68; no mode-count interpretation assigned to +0x3c.',
+        'No API-size/version names assigned to literal +8=0x68; +0x3c/+0x40 mode roles use the separate executable consumer audit.',
         'No DLL execution, compatibility test, Ghidra mutation or executable modification.']
     (ROOT/'analysis/evidence/audits/voodoo-about-setup.json').write_text(json.dumps(out, indent=2)+'\n')
-    print('PASS: pinned DLLs, exported entry addresses and twelve setup instruction checks')
+    print('PASS: pinned DLLs, exported entry addresses and seventeen setup/mode instruction checks')
 
 
 if __name__ == '__main__':
