@@ -368,6 +368,8 @@ Recent catalog reconciliation links the mirror admission/track-selector and Num 
 
 The [logo loader and animation investigation](original-modern-frontend-page.md#original-loader-counterpart-one-named-image-becomes-metadata-driven-output) now pairs original `logo.qfs` loading with Modern `logos.qfs`, decodes official tables, and traces model filtering, metadata access, draw fields and index initialization. Its conditional last-record fall-through and reload-state boundaries remain static findings requiring further validation.
 
+See also [renderer state14 setter policy](original-modern-state14.md): changed zero-input handling and conditional disabled-state cleanup.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

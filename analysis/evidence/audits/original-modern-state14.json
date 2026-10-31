@@ -1,0 +1,76 @@
+{
+  "kind": "static-render-state14-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00470ad0",
+          "end": "00470b1e",
+          "sha256": "7b95b61422818cd1a4490d8a190548475d8d7b7cd4fd5166c13f1ce45274abee",
+          "assembly": "analysis/captures/modern-differences/state14/original-00470ad0.asm",
+          "assembly_sha256": "78169577a025aec16d5c8f62acf4c96a2f2cc52f5da63c6225e5b2557c271feb"
+        },
+        {
+          "start": "00470b20",
+          "end": "00470b6a",
+          "sha256": "7d69004a252b8dd695cdf336e4a1f4b085cdf5878ef508dd57ae063e5cacfa4e",
+          "assembly": "analysis/captures/modern-differences/state14/original-00470b20.asm",
+          "assembly_sha256": "0205a21b014b4054d9d703f00acb28a32e4575580083c05f2bcb9171f78e0fa9"
+        },
+        {
+          "start": "00470b90",
+          "end": "00470bb8",
+          "sha256": "37993537bc576246c3696a0c7dc62dbf5b4b97781c5a64dd480243151e9bc496",
+          "assembly": "analysis/captures/modern-differences/state14/original-00470b90.asm",
+          "assembly_sha256": "cec080db8d720d7b25712b52d439138cc635ba99f5658dc71d2873f4b673fa07"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00470ad0",
+          "end": "00470afa",
+          "sha256": "3febce68ee89d95ab857c6b4da93473d6e083b232d6ff6cbbcfbe0144728b9ab",
+          "assembly": "analysis/captures/modern-differences/state14/official_modern-00470ad0.asm",
+          "assembly_sha256": "92b28891f9dbd4b990ddc12201576c8a1f53ac0b7a00e7d5286d5042a37aa7e1"
+        },
+        {
+          "start": "00470b20",
+          "end": "00470b6a",
+          "sha256": "7d69004a252b8dd695cdf336e4a1f4b085cdf5878ef508dd57ae063e5cacfa4e",
+          "assembly": "analysis/captures/modern-differences/state14/official_modern-00470b20.asm",
+          "assembly_sha256": "2bea70e3281388eed4febb3b03724436874ce690f4d93def20e36faa44f84a1c"
+        },
+        {
+          "start": "00470b90",
+          "end": "00470bb8",
+          "sha256": "37993537bc576246c3696a0c7dc62dbf5b4b97781c5a64dd480243151e9bc496",
+          "assembly": "analysis/captures/modern-differences/state14/official_modern-00470b90.asm",
+          "assembly_sha256": "69aafd18fb677bb4d41e9805beae38fc8dcfcf8050aa536477cde25c8da18ca1"
+        }
+      ]
+    }
+  },
+  "identical_ranges": [
+    {
+      "start": "00470b20",
+      "end": "00470b6a",
+      "sha256": "7d69004a252b8dd695cdf336e4a1f4b085cdf5878ef508dd57ae063e5cacfa4e"
+    },
+    {
+      "start": "00470b90",
+      "end": "00470bb8",
+      "sha256": "37993537bc576246c3696a0c7dc62dbf5b4b97781c5a64dd480243151e9bc496"
+    }
+  ],
+  "limits": [
+    "Static only; no driver invocation or visual result.",
+    "State14 semantics and complete enable-global lifecycle unresolved."
+  ]
+}
