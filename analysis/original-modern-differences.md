@@ -404,6 +404,8 @@ The [complete cascade-renderer comparison](original-modern-car-alias.md#complete
 
 The [geometry-color admission comparison](original-modern-geometry-color-admission.md) identifies an additional context1 gate admitted at Rear View Detail High only, distinct from the High/Medium lighting gate. All envelope differences are confined to admission/prologue/early-return code; context producers and the rendered effect remain unresolved.
 
+The [shape-conversion comparison](original-modern-shape-conversion.md) accounts for the cached renderer descriptor, removed null fallback and unchanged conversion suffix at `004d37a0`.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

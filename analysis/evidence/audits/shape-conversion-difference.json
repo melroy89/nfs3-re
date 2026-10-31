@@ -1,0 +1,41 @@
+{
+  "kind": "shape-conversion-descriptor-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "004d37a0",
+      "end_exclusive": "004d3f42",
+      "span_sha256": "6f864840a51d4ce290bcb26ff4f9ce67a22679f84dc1598d142f408e2a32f1d2",
+      "assembly": "analysis/captures/modern-differences/shape-conversion/original-004d37a0.asm"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "004d37a0",
+      "end_exclusive": "004d3f42",
+      "span_sha256": "db79a0abc42f5f323f2fafc2e92d99cab5f9addaa4c80f76e0d6447ebca5a56f",
+      "assembly": "analysis/captures/modern-differences/shape-conversion/official_modern-004d37a0.asm"
+    }
+  },
+  "changed_runs": [
+    {
+      "start": "004d37be",
+      "end_exclusive": "004d37c3"
+    },
+    {
+      "start": "004d37f0",
+      "end_exclusive": "004d3827"
+    }
+  ],
+  "changed_bytes": 60,
+  "identical_suffix": {
+    "start": "004d3827",
+    "end_exclusive": "004d3f42",
+    "bytes": 1819
+  },
+  "limits": [
+    "Static comparison only; no renderer execution or pixel comparison.",
+    "Descriptor validity and all caller contracts are not established by this bounded audit."
+  ]
+}
