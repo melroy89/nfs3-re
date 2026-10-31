@@ -12,12 +12,13 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);spans=[];blobs[label]=[]
-        for a,b in [(0x48384a,0x48395a),(0x489d70,0x489df7)]:
+        for a,b in [(0x48384a,0x48395a),(0x489d70,0x489df7),(0x48a220,0x48a317)]:
             v=pe.get_data(a-0x400000,b-a);blobs[label].append(v)
             spans.append({'start':f'{a:08x}','exclusive_end':f'{b:08x}',
                           'sha256':hashlib.sha256(v).hexdigest(),'bytes':v.hex()})
         constants=[]
-        for a in [0x53b83c,0x53b840]:
+        for a in [0x53b83c,0x53b840,0x53b87c,0x53b880,
+                  0x53b884,0x53b888,0x53b88c]:
             v=pe.get_data(a-0x400000,4)
             constants.append({'address':f'{a:08x}','hex':v.hex(),'binary32_value':struct.unpack('<f',v)[0]})
         rows[label]={'path':relative,'sha256':expected,'spans':spans,'constants':constants}
