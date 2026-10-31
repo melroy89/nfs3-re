@@ -22,6 +22,12 @@
           "exclusive_end": "0048e76d",
           "sha256": "a6877ce0fb2d644689112d37f438f435f88122fb5eb1d9699db29b4731786c40",
           "assembly": "analysis/captures/modern-differences/map-marker-scale/original-0048d4c0.asm"
+        },
+        {
+          "start": "0048cdb0",
+          "exclusive_end": "0048d105",
+          "sha256": "2af5c5e759752405e52758b631b9914c80c92faaa612c14d79fd2fb11302333a",
+          "assembly": "analysis/captures/modern-differences/map-marker-scale/original-0048cdb0.asm"
         }
       ],
       "constants": [
@@ -78,6 +84,12 @@
           "exclusive_end": "0048e76d",
           "sha256": "a6877ce0fb2d644689112d37f438f435f88122fb5eb1d9699db29b4731786c40",
           "assembly": "analysis/captures/modern-differences/map-marker-scale/official_modern-0048d4c0.asm"
+        },
+        {
+          "start": "0048cdb0",
+          "exclusive_end": "0048d105",
+          "sha256": "2af5c5e759752405e52758b631b9914c80c92faaa612c14d79fd2fb11302333a",
+          "assembly": "analysis/captures/modern-differences/map-marker-scale/official_modern-0048cdb0.asm"
         }
       ],
       "constants": [
@@ -118,6 +130,14 @@
     "Static producer/consumer evidence, not rendered size or runtime initialization.",
     "Reference width follows aspect-dependent construction; not universally physical width or height."
   ],
+  "profile_map_scale_link": {
+    "field": "006fbc50 + profile*1a4h +10h",
+    "role_selector": "vehicle byte+200h bit20h selects profile variant",
+    "layout_load": "0048d169 -> local EBP-34h",
+    "scale_multiply": "0048d24c multiplies by EBP-34h before store00792878",
+    "initializer": "0048cdb0 clamps raw positive-float encodings to1..4; identical body in both binaries",
+    "limits": "Default stores separately audited in audit_hud_layout_difference.py; runtime role selection and all writers not established."
+  },
   "extent_fields": {
     "007930e4": "9*width*k",
     "007930f8": "22*width*k",

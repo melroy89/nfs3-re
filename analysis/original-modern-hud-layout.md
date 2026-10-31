@@ -59,6 +59,8 @@ Original also sets `006fbbb8/006fbbbc` to 1 in this body; Modern has no correspo
 
 These defaults can later be replaced by saved settings or user edits. The table is not a claim that all six profiles are always active, or that raw header offsets correspond to a named minimap/unit/widget field without consumer evidence. In particular, a modern value of 3.0 alone does not verify the vendor's complete minimap-zoom claim.
 
+The later [map-scale consumer comparison](original-modern-map-marker-scaling.md#profile-scale-defaults-reach-map-zoom-independently-of-marker-extents) now establishes the +10h field's map-zoom use and cop/racer variant linkage. It narrows that earlier field-identity limitation without proving persisted-state or rendered coverage.
+
 ## Catalog traceability and remaining work
 
 This chapter supplies concrete evidence relevant to **MP140-071/072/073** and **MP100-030/032/033**, whose notes discuss HUD positions, reset behavior, map zoom and units. It does not fully verify them: remaining consumer-to-field mappings, actual original preset assets, first-install/reset admission and persistence overrides still need inspection. Those entries remain vendor-claimed or only partially supported as appropriate.

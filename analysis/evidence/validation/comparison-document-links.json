@@ -188,8 +188,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "e455788935010fe0685dda69273b1f2ae0174e42f0716ef823af35b333df8036",
-      "relative_links": 19
+      "sha256": "130312b311268ce1bfffef09f24346d4f1f9abcbdea75d2578c6a8c831bea59e",
+      "relative_links": 20
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -228,8 +228,8 @@
     },
     {
       "path": "analysis/original-modern-map-marker-scaling.md",
-      "sha256": "9acd6e870ebf09caf7d37146a7bfd5bb84195ac708f1e075b25b726cd49cfe4a",
-      "relative_links": 4
+      "sha256": "03f8e9add8bd2d053fb07787b0509895021e0151dbbda1bc68c4507730cbc8c6",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-menu-callback-table.md",
@@ -578,7 +578,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "75b8289f78f7d92ca0a58d9af2b29668e00aaf49e39cf4add9a3358fc2731ca4",
+      "sha256": "a9adc07a943d435957d257056ed6ec2f96eb84d9eb4174a65374c8c32bc8bad7",
       "relative_links": 143
     },
     {
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1754,
+  "relative_link_count": 1757,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

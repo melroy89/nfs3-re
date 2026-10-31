@@ -16,7 +16,7 @@ def main():
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[];blobs[label]=[]
-        for a,b in [(0x48d110,0x48d4b3),(0x48cc60,0x48cce8),(0x48d4c0,0x48e76d)]:
+        for a,b in [(0x48d110,0x48d4b3),(0x48cc60,0x48cce8),(0x48d4c0,0x48e76d),(0x48cdb0,0x48d105)]:
             v=pe.get_data(a-0x400000,b-a);blobs[label].append(v)
             path=capture/f'{label}-{a:08x}.asm'
             path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={a}',f'--stop-address={b}',relative],cwd=ROOT))
@@ -32,6 +32,12 @@ def main():
     assert [0x48d110+i for i,(a,b) in enumerate(zip(old[0],new[0])) if a!=b]==[0x48d40c,0x48d40d,0x48d40e]
     assert old[0][0x2fa:0x300]==bytes.fromhex('db05c8da7c00')
     assert new[0][0x2fa:0x300]==bytes.fromhex('db0548277a00')
+    result['profile_map_scale_link']={'field':'006fbc50 + profile*1a4h +10h',
+        'role_selector':'vehicle byte+200h bit20h selects profile variant',
+        'layout_load':'0048d169 -> local EBP-34h',
+        'scale_multiply':'0048d24c multiplies by EBP-34h before store00792878',
+        'initializer':'0048cdb0 clamps raw positive-float encodings to1..4; identical body in both binaries',
+        'limits':'Default stores separately audited in audit_hud_layout_difference.py; runtime role selection and all writers not established.'}
     result['extent_fields']={'007930e4':'9*width*k','007930f8':'22*width*k','00793104':'14*width*k','007930ec':'10*width*k','k':'binary32 approximation to1/640 at0053b9d0'}
     result['confirmed_square_marker_call']={'site':'0048e188','width':'007930f8','height':'007930f0, copied from007930f8','consumer':'0048cc60','geometry':'centre plus/minus half extents; no claim of final rendered pixels'}
     (ROOT/'analysis/evidence/audits/map-marker-scaling-difference.json').write_text(json.dumps(result,indent=2)+'\n')

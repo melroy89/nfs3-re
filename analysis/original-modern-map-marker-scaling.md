@@ -30,3 +30,15 @@ The [viewport producer](original-modern-viewport-geometry.md#source-groups-cover
 For ordinary1920x1080 initialization, reference width is1440; using a hypothetical original width1920 at the same point would yield a0.75 extent ratio before rounding. This is an input/formula illustration, not observed marker shrinkage: actual source values, profile state, initialization order and later writers remain prerequisites.
 
 This closes the previously unreviewed **map-point mechanism in MP160-006**, alongside the [border mechanism](original-modern-border-geometry.md). The catalog remains partial because actual rendered sizes, all marker styles, every display shape and historical introduction are unverified. Equal consumer bytes do not establish equal floating-point state or final images. Executables and saved Ghidra state remain unchanged.
+
+## Profile scale defaults reach map zoom, independently of marker extents
+
+The extended map audit also retains complete `0048cdb0..0048d105`; it is byte-identical across the executables. It chooses profile variant using vehicle byte+200h bit20h and accesses header+10h at `006fbc50 + variant*1a4h`. The existing [cop/racer variant linkage](original-modern-night-lighting.md#context-producer-optional-mirror-setting-gated-pass) independently associates this bit with the `mirror`/`mirrorcop` profile pair. This supports the role-variant interpretation; the global's role in every object layout is not inferred.
+
+Initializer `0048cdb0` clamps those scale fields to the positive-float encodings of1.0..4.0 using **signed integer comparisons of raw bits**, not x87 comparisons. Do not translate this as a generic floating min/max without checking NaN/sign-bit behavior. The valid initialized values discussed below already lie in range.
+
+In HUD layout setup, `0048d169` loads the selected profile+10h into local EBP-34h. At `0048d24c`, that local multiplies the map's fitted scale before the result is stored in per-view `00792878`. The unchanged map renderer subsequently uses this per-view scale in its screen-coordinate transforms. This establishes a map-zoom consumer for the header field; it is distinct from the marker-size extents documented above.
+
+The [paired default-header audit](original-modern-hud-layout.md#3-header-default-changes-preserve-offsets-not-guessed-widget-names) establishes original header+10h values **4.0,1.0,4.0,1.0,4.0,1.0** across six profiles, versus **3.0 in all six** in Modern. Thus the default cop/racer profile pairs now supply the same map-zoom factor, rather than only having equal unidentified floats. The default change is racer4→3 and cop1→3 under this variant mapping; it is not preservation of one role's old default.
+
+This strengthens **MP140-073** to a confirmed local default-to-consumer mechanism, while the catalog remains partial: saved preferences, later edits, active role/view selection, map fitting/recentering, final images and historical introduction remain unverified. Equal profile multipliers alone do not establish identical visible map coverage for different vehicles or contexts. No map or game code was executed.
