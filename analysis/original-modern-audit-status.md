@@ -34,6 +34,7 @@ No additional game execution, instruction probes, toolchain work, C reconstructi
 - [x] [Resource payload comparison](original-modern-pe-resources.md) covers all three executable baselines, retained/added icons, media resources and manifests; shell selection and displayed results remain untested.
 - [x] [Packaged x87 inventory](original-modern-packaged-x87.md) pins all11 DLL members and distinguishes linear-decoding candidates from the verified DX8 rounding helpers and bounded caller. It is not an original/Modern DLL comparison.
 - [x] [Selected local DLL inventory](original-modern-dll-candidates.md) pins legacy-style candidates and official matching wrappers, export names and static imports; retail provenance and function-level correspondence remain unresolved.
+- [x] All12 original entries overlapping the largest removed startup NOP span have an [entry-by-entry research handoff](original-modern-outside-function-index.md#largest-removed-startup-span-entry-by-entry-handoff), with checked report addresses and explicit remaining boundaries. This is classification/navigation, not complete semantic coverage.
 - [ ] Every changed instruction/data/asset/DLL mechanism independently explained: still incomplete.
 - [ ] Historical introduction claims established from intermediate release pairs: still incomplete.
 - [ ] Original/Modern runtime, replay, multiplayer and visual equivalence established: not run by this static audit.

@@ -7459,5 +7459,108 @@
       }
     ],
     "limits": "NOP runs clipped to uncovered intervals; original autoanalysis entries are overlap locators, not proven semantic counterparts."
+  },
+  "largest_run_research_routes": {
+    "start": "004b5db1",
+    "end_exclusive": "004b67b0",
+    "entries": [
+      {
+        "original_entry": "004b59c0",
+        "role": "Renderer initializer tail",
+        "report": "analysis/original-modern-renderer-initialization.md",
+        "report_sha256": "0e9e2cac9efd1cb9e6e7e64aaee0e0ff37dbb89fc6d18cfcdd6a318dcad4143a",
+        "remaining": "Mapped Modern counterpart; complete driver/callee behavior remains partial.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b5e50",
+        "role": "Corruption diagnostic",
+        "report": "analysis/original-modern-startup-requirements.md",
+        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "remaining": "Body and tables checked; complete nonreturn/caller preconditions unresolved.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b5ea0",
+        "role": "Texture-resource log",
+        "report": "analysis/original-modern-startup-requirements.md",
+        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "remaining": "Threshold and formatted output checked; descriptor units and output destination unresolved.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b5f10",
+        "role": "Resource admission checks",
+        "report": "analysis/original-modern-startup-requirements.md",
+        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "remaining": "Mapped Modern counterpart; API failures and directory selection remain partial.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b6020",
+        "role": "Subsystem setup",
+        "report": "analysis/original-modern-resolution-defaults.md",
+        "report_sha256": "4e1583204815e0489f247b042db51e999a36617cb79ebdadc0c17314a62282c1",
+        "remaining": "Mapped Modern counterpart; all downstream initialization effects not qualified.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b6250",
+        "role": "Shutdown envelope",
+        "report": "analysis/original-modern-input-worker.md",
+        "report_sha256": "79dbb1ae7e1bdf552554f7f0de71cde0d3e76e912a60859f353cce831b3b517e",
+        "remaining": "Mapped Modern counterpart; no join/runtime shutdown proof.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b62a0",
+        "role": "Six-byte remote prefix test",
+        "report": "analysis/original-modern-startup-requirements.md",
+        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "remaining": "Body and compare semantics checked; global-source ownership and other callers pending.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b6320",
+        "role": "Installation/media admission",
+        "report": "analysis/original-modern-startup-requirements.md",
+        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "remaining": "Branches and messages checked; path/resource helper contracts incomplete.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b6400",
+        "role": "Renderer registry values",
+        "report": "analysis/original-modern-registry.md",
+        "report_sha256": "996c7b7f87ee79ea6dd4d2afaad36df91bb0e354b21c48d2897977293f99e496",
+        "remaining": "Original removed helper checked; Modern driver-specific replacement mapping incomplete.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b64c0",
+        "role": "Renderer description registry value",
+        "report": "analysis/original-modern-registry.md",
+        "report_sha256": "996c7b7f87ee79ea6dd4d2afaad36df91bb0e354b21c48d2897977293f99e496",
+        "remaining": "Original removed helper checked; error/fallback and external registry behavior untested.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b6520",
+        "role": "Desktop registry path",
+        "report": "analysis/original-modern-registry.md",
+        "report_sha256": "996c7b7f87ee79ea6dd4d2afaad36df91bb0e354b21c48d2897977293f99e496",
+        "remaining": "Original screenshot dependency checked; query failure and lifecycle remain partial.",
+        "status": "entry classified; semantic validation partial"
+      },
+      {
+        "original_entry": "004b6590",
+        "role": "DirectDraw capability probe",
+        "report": "analysis/original-modern-startup-requirements.md",
+        "report_sha256": "f782798190adb7c2f0f3482de8175c184245f6dd5b3c1cfdd40734f89bd2f899",
+        "remaining": "Return paths and caller gate checked; provider interfaces/runtime untested.",
+        "status": "entry classified; semantic validation partial"
+      }
+    ],
+    "limit": "All overlapping entry locators have research routes; not every byte/callee/runtime effect is explained."
   }
 }

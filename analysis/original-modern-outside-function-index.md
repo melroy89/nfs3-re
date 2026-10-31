@@ -79,4 +79,25 @@ These links reconcile selected outside-body spans with already inspected mechani
 
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
+## Largest removed startup span: entry-by-entry handoff
+
+All12 original autoanalysis entry locators overlapping `004b5db1..004b67b0` now have explicit research routes below. The script checks exact entry-set equality and report/address presence, retaining report hashes in JSON. This is reviewed classification/navigation, not a claim that every byte, callee, alternate path or runtime effect is understood. The first row is only the overlapping tail of a longer initializer; entries alone do not partition every byte of the NOP run.
+
+| Original entry | Inspected role | Evidence route | Remaining boundary |
+|---|---|---|---|
+| `004b59c0` | Renderer initializer tail | [Report](original-modern-renderer-initialization.md) | Mapped Modern counterpart; complete driver/callee behavior remains partial. |
+| `004b5e50` | Corruption diagnostic | [Report](original-modern-startup-requirements.md) | Body and tables checked; complete nonreturn/caller preconditions unresolved. |
+| `004b5ea0` | Texture-resource log | [Report](original-modern-startup-requirements.md) | Threshold and formatted output checked; descriptor units and output destination unresolved. |
+| `004b5f10` | Resource admission checks | [Report](original-modern-startup-requirements.md) | Mapped Modern counterpart; API failures and directory selection remain partial. |
+| `004b6020` | Subsystem setup | [Report](original-modern-resolution-defaults.md) | Mapped Modern counterpart; all downstream initialization effects not qualified. |
+| `004b6250` | Shutdown envelope | [Report](original-modern-input-worker.md) | Mapped Modern counterpart; no join/runtime shutdown proof. |
+| `004b62a0` | Six-byte remote prefix test | [Report](original-modern-startup-requirements.md) | Body and compare semantics checked; global-source ownership and other callers pending. |
+| `004b6320` | Installation/media admission | [Report](original-modern-startup-requirements.md) | Branches and messages checked; path/resource helper contracts incomplete. |
+| `004b6400` | Renderer registry values | [Report](original-modern-registry.md) | Original removed helper checked; Modern driver-specific replacement mapping incomplete. |
+| `004b64c0` | Renderer description registry value | [Report](original-modern-registry.md) | Original removed helper checked; error/fallback and external registry behavior untested. |
+| `004b6520` | Desktop registry path | [Report](original-modern-registry.md) | Original screenshot dependency checked; query failure and lifecycle remain partial. |
+| `004b6590` | DirectDraw capability probe | [Report](original-modern-startup-requirements.md) | Return paths and caller gate checked; provider interfaces/runtime untested. |
+
+Do not reopen these entries solely because they lie outside saved Modern bodies. Select a specific remaining boundary from the linked reports. Work elsewhere in the337-interval inventory remains independent; no whole-audit percentage is derived from this twelve-entry handoff.
+
 This inventory closes the missing address/ranking map for the outside-body bytes. Their semantic classification remains pending. No binary, Ghidra database or runtime state was modified.
