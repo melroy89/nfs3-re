@@ -166,7 +166,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004812e0` | BuildHudLayoutInsetGeometryForView | 556 | 24 | [border-geometry](original-modern-border-geometry.md), [replay-mirror](original-modern-replay-mirror.md) |
 | `00481aa0` | BuildVariantInsetHudBorderAndQuadForView | 426 | 24 | [border-geometry](original-modern-border-geometry.md) |
 | `00481c50` | UpdateHUDStandingsPanelLayout | 831 | 31 | [border-geometry](original-modern-border-geometry.md) |
-| `00482b00` | RenderRaceHUD | 5411 | 1 | [numeric-scale](original-modern-numeric-scale.md) |
+| `00482b00` | RenderRaceHUD | 5411 | 1 | [hud-layout](original-modern-hud-layout.md), [numeric-scale](original-modern-numeric-scale.md) |
 | `00484450` | TogglePrimaryViewVariantFlagAndRefresh | 109 | 106 | [replay-mirror](original-modern-replay-mirror.md) |
 | `004844c0` | UpdateHudLayoutAttachmentsForView | 1700 | 2 | [hud-layout](original-modern-hud-layout.md), [replay-mirror](original-modern-replay-mirror.md) |
 | `00484b70` | InitializeHudScaleFactors | 160 | 3 | [hud-layout](original-modern-hud-layout.md) |
@@ -288,9 +288,9 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004ccd5c` | HandleWindowCloseByPostingQuit | 26 | 25 | [window-handling](original-modern-window-handling.md) |
 | `004ccd98` | HandleWindowRequest0x466Flag | 28 | 27 | [window-handling](original-modern-window-handling.md) |
 | `004cd350` | CreateGameWindowFromContext | 312 | 18 | [window-geometry](original-modern-window-geometry.md) |
-| `004cd4e0` | RunGameWindowMessageLoop | 387 | 16 | [window-key](original-modern-window-key.md) |
+| `004cd4e0` | RunGameWindowMessageLoop | 387 | 16 | [window-handling](original-modern-window-handling.md), [window-key](original-modern-window-key.md) |
 | `004cd6c0` | InitializeGameWindow | 918 | 514 | [window-handling](original-modern-window-handling.md) |
-| `004cdc50` | UpdateScreenshotRequestRepeatState | 107 | 100 | [input-worker](original-modern-input-worker.md), [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
+| `004cdc50` | UpdateScreenshotRequestRepeatState | 107 | 100 | [input-worker](original-modern-input-worker.md), [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md), [window-handling](original-modern-window-handling.md) |
 | `004d10e0` | RenderBitmapTextAtRightAnchor | 52 | 5 | [numeric-scale](original-modern-numeric-scale.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004d1430` | MeasureTextAdvance | 32 | 31 | [car-alias](original-modern-car-alias.md), [numeric-scale](original-modern-numeric-scale.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004d1450` | SetBitmapTextColor | 6 | 6 | [car-alias](original-modern-car-alias.md), [numeric-scale](original-modern-numeric-scale.md) |
@@ -330,11 +330,11 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f1ed4` | TrySetDllDirectoryViaDynamicExport | 31 | 31 | [cpu-tier](original-modern-cpu-tier.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f1efc` | AllocateGameProcessHeapBytes | 20 | 20 | [heap-initialization](original-modern-heap-initialization.md) |
 | `004f1f30` | FreeGameProcessHeapBlock | 20 | 20 | [heap-initialization](original-modern-heap-initialization.md) |
-| `004f1f58` | LoadAndLockGameRawDataResource | 48 | 48 | [frontend-page](original-modern-frontend-page.md), [screenshot-feedback](original-modern-screenshot-feedback.md) |
+| `004f1f58` | LoadAndLockGameRawDataResource | 48 | 48 | [frontend-page](original-modern-frontend-page.md), [heap-initialization](original-modern-heap-initialization.md), [screenshot-feedback](original-modern-screenshot-feedback.md) |
 | `004f1fb0` | PlaySoundFromGameRawDataResource | 25 | 25 | [screenshot-feedback](original-modern-screenshot-feedback.md) |
 | `004f1fcc` | IsShiftKeyCurrentlyDown | 4 | 4 | [dialog-input](original-modern-dialog-input.md), [menu-input](original-modern-menu-input.md) |
-| `004f1fd0` | IsControlKeyCurrentlyDown | 4 | 4 | [menu-input](original-modern-menu-input.md) |
-| `004f1fd4` | IsAltKeyCurrentlyDown | 28 | 28 | [cpu-tier](original-modern-cpu-tier.md), [menu-input](original-modern-menu-input.md) |
+| `004f1fd0` | IsControlKeyCurrentlyDown | 4 | 4 | [menu-input](original-modern-menu-input.md), [window-handling](original-modern-window-handling.md) |
+| `004f1fd4` | IsAltKeyCurrentlyDown | 28 | 28 | [cpu-tier](original-modern-cpu-tier.md), [menu-input](original-modern-menu-input.md), [window-handling](original-modern-window-handling.md) |
 | `004f2790` | ReadMultimediaTickCount | 11 | 9 | [clock-source](original-modern-clock-source.md), [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [title-delay](original-modern-title-delay.md) |
 | `004f6c50` | InitializeSocketConnectionState | 980 | 4 | [clock-source](original-modern-clock-source.md) |
 | `004f84a8` | LoadThrashDriverLibrary | 107 | 106 | [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md) |
@@ -343,7 +343,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f8548` | InitializeGraphicsInputAndResourceServices | 120 | 110 | [renderer-lifecycle](original-modern-renderer-lifecycle.md) |
 | `004f915e` | GetPathAttributesPreservingScratchRegisters | 12 | 12 | [small-entry-followup](original-modern-small-entry-followup.md) |
 | `004f916c` | CheckPathDirectoryAttribute | 24 | 24 | [sound-bank-language](original-modern-sound-bank-language.md) |
-| `004f9184` | DirectoryContainsNonDotEntry | 101 | 95 | [screenshots](original-modern-screenshots.md) |
+| `004f9184` | DirectoryContainsNonDotEntry | 101 | 95 | [screenshots](original-modern-screenshots.md), [startup-requirements](original-modern-startup-requirements.md) |
 | `004f91ec` | IsExistingNonDirectoryPath | 24 | 24 | [screenshots](original-modern-screenshots.md), [startup-paths](original-modern-startup-paths.md) |
 | `004f9204` | CreateDirectoryWithoutSecurityAttributes | 14 | 14 | [startup-paths](original-modern-startup-paths.md) |
 | `004f9214` | EnsureDirectoryPathExists | 21 | 19 | [screenshots](original-modern-screenshots.md), [startup-paths](original-modern-startup-paths.md) |
@@ -371,5 +371,5 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `005177cc` | GetRuntimeRandomModulo | 18 | 16 | [music-selection](original-modern-music-selection.md) |
 | `00524290` | RunGameWithOptionalStackWorkspace | 93 | 2 | [small-entry-followup](original-modern-small-entry-followup.md) |
 | `00524650` | ShutdownRasterBackendSession | 67 | 6 | [raster-session](original-modern-raster-session.md) |
-| `005246a0` | InitializeRasterBackendSession | 223 | 14 | [raster-session](original-modern-raster-session.md) |
+| `005246a0` | InitializeRasterBackendSession | 223 | 14 | [raster-session](original-modern-raster-session.md), [window-handling](original-modern-window-handling.md) |
 | `00533e86` | ReportMissingDdrawImport | 13 | 13 | [small-entry-followup](original-modern-small-entry-followup.md) |

@@ -1,0 +1,106 @@
+{
+  "kind": "window-heap-speed-static-checkpoint",
+  "reviewed_head": "b6938167007ce35cc2e0cc85ab10ec78cf497e84",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_window_initialization_difference.py"
+      ],
+      "script_sha256": "d18024a4c16f593806a1303a950fff233d6271b554fb196de5aa7c604bce727e",
+      "exit_code": 0,
+      "stdout": "{\n  \"counts\": {\n    \"original\": 26,\n    \"official_modern\": 27\n  },\n  \"removed\": [\n    \"0007\",\n    \"0008\"\n  ],\n  \"added\": [\n    \"0001\",\n    \"001c\",\n    \"0218\"\n  ],\n  \"changed_handler_address\": [\n    {\n      \"message\": \"0002\",\n      \"original\": \"004cce80\",\n      \"modern\": \"004ccce4\"\n    },\n    {\n      \"message\": \"0010\",\n      \"original\": \"004cce40\",\n      \"modern\": \"004ccd5c\"\n    },\n    {\n      \"message\": \"0466\",\n      \"original\": \"004cce60\",\n      \"modern\": \"004ccd98\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_startup_policy_difference.py"
+      ],
+      "script_sha256": "8d4872d8daa19ad09c7c3f14c7b541dce318c8975b98a6594b843ac6d3aae1d5",
+      "exit_code": 0,
+      "stdout": "PASS: input hashes, removed original call span, Modern options/import witnesses\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_keyboard_hook_filter_difference.py"
+      ],
+      "script_sha256": "0ceb335afbe8bd2430b94a06262190858bd4b710057408e40c0cc9f8aa7b6155",
+      "exit_code": 0,
+      "stdout": "PASS: baseline identities, complete filter spans, callback/handling and raw-sum witnesses\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_focus_restoration_difference.py"
+      ],
+      "script_sha256": "fcfef8faa1fb76dc30f12469aa3121b6a5e684e443b66449672536853b05a4e0",
+      "exit_code": 0,
+      "stdout": "PASS: pinned loop bodies, sole prefix displacement, removed retry and retained epilogue\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_mouse_cursor_callback.py"
+      ],
+      "script_sha256": "2c421ac9b69720c7c9b6fe085015887537f34f6252ecb14a40a925d462b2946f",
+      "exit_code": 0,
+      "stdout": "PASS: callback changes; identical forwarding prefix, registration witness and 120-byte dispatcher\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_instance_recovery_difference.py"
+      ],
+      "script_sha256": "ef1f24e67cf78bb9f498e8ffdc5ae5d7b4fc6fe4a367a00ca628f33eb7ea364a",
+      "exit_code": 0,
+      "stdout": "PASS: original mutex/title recovery, Modern heap slot producer, baseline identities\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_thrash_loader_difference.py"
+      ],
+      "script_sha256": "10693142c9c1789a26803bcc31d52f2b0f133f8970d4bb039a16ff2846dc8be2",
+      "exit_code": 0,
+      "stdout": "PASS: input hashes, 34 identical name/slot bindings, instruction captures\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_hud_layout_difference.py"
+      ],
+      "script_sha256": "044726da7a51f558fef4628e58177fdba20473be41df96f71e8753f99194a8dc",
+      "exit_code": 0,
+      "stdout": "PASS: fingerprints, HUD initialization/default spans and preset provenance\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_speed_unit_default_difference.py"
+      ],
+      "script_sha256": "f3f8e3313c1e3d1982164dbf80d382c940857524302cdaa30a2b6da741c90cad",
+      "exit_code": 0,
+      "stdout": "PASS: identical paired speed consumer/formatter, constants and pinned English MPH/KPH labels\n",
+      "stderr": ""
+    }
+  ],
+  "limits": [
+    "Reproduces the named bounded static audits only, not an independent whole-repository semantic review.",
+    "No game, OS API, new instruction probe, compiler, C export or Ghidra mutation.",
+    "Historical introduction, full caller lifetime and original-versus-Modern runtime equivalence remain unverified."
+  ],
+  "saved_database": {
+    "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+    "sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+    "matches_prior_baseline": true
+  }
+}

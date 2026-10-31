@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "958fe72c21b0b28813f266e09f158d703cc4b6346fe46a66c8c2b476bff991e5"
+      "sha256": "18fae74b4d03619528ae7c8ccd62417156852e0955ce501724eadf5df56009a2"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -153,11 +153,11 @@
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
-      "sha256": "651703396d843cb570cc574997fd17a63157086863e03a09ee04698b10b409f5"
+      "sha256": "13145eeed813d9a575cef8e2b126767ac6400c3c295a90c8bf1ca032f0c687f2"
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "68e5de40cd27cb8b9df203822c0b3cee1327f54d1f9b8c1be986fe259ef56ea2"
+      "sha256": "47b7b13b206982e87fb65b0cb97ebd4ed29a17e04b6e4d8d22a6cbc72f668362"
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -205,7 +205,7 @@
     },
     {
       "path": "analysis/original-modern-mouse-cursor.md",
-      "sha256": "5d894e06a890ebeab1f6ae378108443df1023cb84a5842e85bb1af3ad6aa57e3"
+      "sha256": "7a3f64cb81bab8ed9025e0f362725bac64ba4b25cf85d475f824cda4d3d64ff4"
     },
     {
       "path": "analysis/original-modern-movie-screenshots.md",
@@ -305,7 +305,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "e852b428cdf03913e8b94cdc84f89501061a261e687508fc03b3c1802713dadb"
+      "sha256": "2bfd4bfa5d5dcd6e26ecaf36ee97919665e4425d2e205e014315a42744898cba"
     },
     {
       "path": "analysis/original-modern-replay-list-cursor.md",
@@ -377,7 +377,7 @@
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
-      "sha256": "7c1f0779eabe8fd86745fd0b4d203d335763f2738a8b26aafd72c200c1bad600"
+      "sha256": "cf23aceb4845935120483f5daf0dfc25abed0378305366038046a78d05bb5808"
     },
     {
       "path": "analysis/original-modern-state14.md",
@@ -433,7 +433,7 @@
     },
     {
       "path": "analysis/original-modern-window-handling.md",
-      "sha256": "baf9464c8f2d0403718c5ce841b52e2ad97469e1d5f08c2df471dcba16790d86"
+      "sha256": "2e3868f0c5fba7e9787c85c1fa02daec5682cd85d8471df7351cbc4619e6df03"
     },
     {
       "path": "analysis/original-modern-window-key-translation.md",
@@ -5731,6 +5731,15 @@
       "modern_sha256": "61d69f6d2c29a59c3e5502090242ea8d814d3dce5cbf3a126c7deb0e8943f9d5",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0048384a",
+            "00483895",
+            "0048395a"
+          ]
+        },
+        {
           "path": "analysis/original-modern-numeric-scale.md",
           "entry_mentioned": true,
           "addresses": [
@@ -7767,6 +7776,9 @@
           "path": "analysis/original-modern-startup-requirements.md",
           "entry_mentioned": false,
           "addresses": [
+            "004a3df2",
+            "004a3df8",
+            "004a3dfd",
             "004a3e0c",
             "004a3f6c"
           ]
@@ -8363,6 +8375,7 @@
             "004b5845",
             "004b5874",
             "004b5877",
+            "004b58b5",
             "004b58ba",
             "004b58bf",
             "004b592b",
@@ -10006,7 +10019,8 @@
           "path": "analysis/original-modern-window-handling.md",
           "entry_mentioned": true,
           "addresses": [
-            "004ccb84"
+            "004ccb84",
+            "004ccc31"
           ]
         },
         {
@@ -10161,6 +10175,7 @@
           "entry_mentioned": true,
           "addresses": [
             "004ccd04",
+            "004ccd5a",
             "004ccd5b"
           ]
         }
@@ -10267,6 +10282,19 @@
       "modern_sha256": "b5167d6f333b3ab1922238f2302381083952c72a009e449f7ff4fd4301d3090e",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-window-handling.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004cd4e0",
+            "004cd55d",
+            "004cd571",
+            "004cd582",
+            "004cd588",
+            "004cd655",
+            "004cd65a"
+          ]
+        },
+        {
           "path": "analysis/original-modern-window-key.md",
           "entry_mentioned": false,
           "addresses": [
@@ -10312,7 +10340,8 @@
             "004cd74b",
             "004cd750",
             "004cd787",
-            "004cd79e"
+            "004cd79e",
+            "004cd946"
           ]
         }
       ]
@@ -10364,6 +10393,14 @@
           "entry_mentioned": true,
           "addresses": [
             "004cdc50"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-window-handling.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004cdc50",
+            "004cdc90"
           ]
         }
       ]
@@ -11679,7 +11716,8 @@
           "path": "analysis/original-modern-heap-initialization.md",
           "entry_mentioned": true,
           "addresses": [
-            "004f1efc"
+            "004f1efc",
+            "004f1f01"
           ]
         }
       ]
@@ -11729,6 +11767,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-frontend-page.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f1f58"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-heap-initialization.md",
           "entry_mentioned": true,
           "addresses": [
             "004f1f58"
@@ -11825,6 +11870,13 @@
           "addresses": [
             "004f1fd0"
           ]
+        },
+        {
+          "path": "analysis/original-modern-window-handling.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f1fd0"
+          ]
         }
       ]
     },
@@ -11858,6 +11910,13 @@
           "addresses": [
             "004f1fd4",
             "004f1fd6"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-window-handling.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f1fd4"
           ]
         }
       ]
@@ -12147,6 +12206,13 @@
           "entry_mentioned": true,
           "addresses": [
             "004f9184"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-startup-requirements.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004f91d0"
           ]
         }
       ]
@@ -13021,6 +13087,13 @@
             "00524744",
             "0052474d",
             "00524787"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-window-handling.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "005246ef"
           ]
         }
       ]
