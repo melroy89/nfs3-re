@@ -113,7 +113,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0044a240` | FindEnabledFrontendEscapeAction | 11 | 11 | [menu-input](original-modern-menu-input.md) |
 | `0044a24c` | FindEnabledFrontendNamedKeyAction | 118 | 118 | [credits-panorama](original-modern-credits-panorama.md), [menu-input](original-modern-menu-input.md) |
 | `0044a2d0` | DispatchFrontendMenuKeyToSelectedEntry | 358 | 332 | [common-menu-buttons](original-modern-common-menu-buttons.md), [credits-panorama](original-modern-credits-panorama.md), [menu-input](original-modern-menu-input.md) |
-| `0044a4f0` | InvokeFrontendEntryCallbacksByDescendingOrder | 358 | 32 | [race-now](original-modern-race-now.md) |
+| `0044a4f0` | InvokeFrontendEntryCallbacksByDescendingOrder | 358 | 32 | [hud-settings-policy](original-modern-hud-settings-policy.md), [race-now](original-modern-race-now.md) |
 | `0044a6b0` | FindHoveredMenuEntryOrRetainSelection | 432 | 1 | [frontend-sound](original-modern-frontend-sound.md) |
 | `0044b1a0` | ServiceFrontendPendingDisplayRecovery | 102 | 2 | [mode-selection](original-modern-mode-selection.md) |
 | `0044b230` | RunFrontendMenuLoop | 1809 | 7 | [language-table](original-modern-language-table.md), [options-postgame](original-modern-options-postgame.md), [setup-website](original-modern-setup-website.md), [slideshow-navigation](original-modern-slideshow-navigation.md), [state14](original-modern-state14.md) |

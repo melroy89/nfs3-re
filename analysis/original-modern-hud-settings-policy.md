@@ -44,6 +44,23 @@ Modern always writes a list pointer on these two paths and then sets EDX=0 befor
 
 The first two arrays are retained; the third original array is zeroed and is no longer directly selected by the inspected Modern block. These are verified list WORDs, not independently identified localized labels. Zeroing does not prove no other code references that storage.
 
-The [common-menu control inventory](original-modern-common-menu-buttons.md#long-list-authored-visible-counts) separately records official `hud.mnu` droplist codelinks `hudtypesingle` and `hudtypesplit` using decimal type15. The new `forsingle`/`forsplit` lookup tokens and those codelinks are distinct identifiers; their similar names alone do not establish a one-to-one item binding or flag semantics. Asset parsing and the widget's `+5` bit consumer are the next evidence needed for a visible-menu claim.
+The [common-menu control inventory](original-modern-common-menu-buttons.md#long-list-authored-visible-counts) separately records official `hud.mnu` droplist codelinks `hudtypesingle` and `hudtypesplit` using decimal type15. The new `forsingle`/`forsplit` lookup tokens and those codelinks are distinct identifiers; their similar names alone do not establish a one-to-one item binding or flag semantics. The follow-up below verifies the asset grouping and one callback-suppression consumer; complete rendered visibility remains untested.
 
-**Bounded status: done for complete initializer delta and selected data arrays. Confidence: verified static.** Remaining scope is the exact flag consumer, full menu grouping, lifecycle/initial value of `006788b8`, localization and runtime selection. The unchanged later code may still contain its own session/mode logic. No executable bytes, Ghidra state, raw exports or maintained C were changed.
+**Bounded status: done for complete initializer delta and selected data arrays. Confidence: verified static.** The follow-up below resolves the direct asset grouping and selected flag consumer. Remaining scope includes alternate dispatch/visibility paths, lifecycle/initial value of `006788b8`, localization and runtime selection. The unchanged later code may still contain its own session/mode logic. No executable bytes, Ghidra state, raw exports or maintained C were changed.
+
+## Asset and flag follow-up: the two list groups are now directly bound
+
+The expanded audit verifies official `fedata/menus/hud.mnu` byte-for-byte against its member in the hash-pinned Modern archive. It parses the authored droplist sections and follows their exact names into executable data:
+
+| Official item `codelink` | `listname` | List descriptor | Descriptor's list pointer | Shared selection cell |
+|---|---|---|---|---|
+| `forsingle` | `hudtypesingle` | `005567bc` | `005562c2` | `00678900` |
+| `forsplit` | `hudtypesplit` | `00556938` | `005562c8` | `00678900` |
+
+Both authored items use x101, y69, priority0 and maxvisitem15. The identical authored position is consistent with mutually gated alternatives, but the asset alone does not prove exclusive rendering. The two descriptor records are verified five-DWORD values, so the list bindings are now established beyond similarly named strings.
+
+For provenance comparison, the local uppercase backup `fedata_org/menus/HUD.MNU` contains three droplists: `singlePlayerDefaults → buyERTS`, `splitScreenDefaults → buyERTS_at75`, and `hotSplitScreenDefaults → buyERTS_at100`. Their codelinks agree with the original executable's inspected lookups. This is corroboration from a **local unauthenticated backup**, not proof that this file shipped with the supplied original executable. The adjacent lowercase `hud.mnu` backup is byte-identical to the official Modern asset; its directory name must not cause it to be labelled original. Hashes and parsed fields for all three files are retained in the manifest.
+
+The paired executable consumer `0044a5cb..0044a5e5` is byte-identical in both versions. It first requires nonnull entry DWORD `+0x2c`, then tests BYTE `+5` mask `10h`; a set bit skips that callback dispatch. Otherwise it calls `[entry+0x2c]` with entry in EAX and sign-extended AX-derived value in EDX. This establishes the bit's effect on this callback route. It does not prove the callback is the entry's only draw path, nor that this bit independently excludes every input route; navigation bit0 is a separate consumer contract.
+
+**Follow-up status: done for official asset grouping, descriptor/list binding and this flag consumer; confidence: verified static.** Runtime lifecycle, complete input/render dispatch and localized list content remain explicit unknowns. No menu or target code was executed, and no backup file was changed.

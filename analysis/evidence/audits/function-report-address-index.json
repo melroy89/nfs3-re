@@ -149,7 +149,7 @@
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
-      "sha256": "c0a62e92348fbb11032962c3e12fa05891cfabc20ebddce1e188ccb9faeab1e2"
+      "sha256": "f208729157879a611d6f4539c5743779b81976b2e9df0cbbc9d1e3ce471be1c6"
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
@@ -3758,6 +3758,14 @@
       "original_sha256": "ddb25ca0e5db2eded06192723f2ac2380ea0529de98e694019df075dd839f951",
       "modern_sha256": "76193a766f742253d61c113a57644f2f342b4961038600eb21c7137da3f34b92",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-settings-policy.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0044a5cb",
+            "0044a5e5"
+          ]
+        },
         {
           "path": "analysis/original-modern-race-now.md",
           "entry_mentioned": false,

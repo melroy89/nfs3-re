@@ -33,6 +33,43 @@ def main():
     changed=[0x45e960+i for i,(a,b) in enumerate(zip(old,new)) if a!=b]
     assert len(changed)==242 and all(0x45e980<=a<0x45ea74 for a in changed)
     assert old[:0x20]==new[:0x20] and old[0x114:]==new[0x114:]
+    consumer=[]
+    for label,(relative,_,_) in SPECS.items():
+        pe=pefile.PE(str(ROOT/relative))
+        data=pe.get_data(0x44a5cb-0x400000,26);consumer.append(data)
+    assert consumer[0]==consumer[1]==bytes.fromhex('837b2c007414f6430510750e9889c289d8ff532c85c0740289c7')
+    result['flag_consumer']={'start':'0044a5cb','end_exclusive':'0044a5e5',
+        'identical_hex':consumer[0].hex(),'effect':'Entry byte +5 bit 10h skips this +2ch callback dispatch.'}
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    official=subprocess.check_output(['7z','x','-so',str(archive),'fedata/menus/hud.mnu'])
+    result['hud_assets']={}
+    for name,relative in [
+        ('official_modern','analysis/captures/modern-differences/upstream/package/fedata/menus/hud.mnu'),
+        ('uppercase_backup','nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/HUD.MNU'),
+        ('lowercase_backup','nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/hud.mnu')]:
+        data=(ROOT/relative).read_bytes()
+        if name=='official_modern':assert data==official
+        sections=[];current=None
+        for line in data.decode('latin1').splitlines():
+            if line.startswith('['):
+                current={'type':line.strip('[]'),'fields':{}};sections.append(current)
+            elif current is not None and '=' in line and not line.startswith(';'):
+                key,value=line.split('=',1);current['fields'][key]=value
+        selected=[s for s in sections if s['type']=='droplist']
+        result['hud_assets'][name]={'path':relative,'sha256':hashlib.sha256(data).hexdigest(),
+            'equals_official':data==official,'droplists':selected,
+            'provenance':'Archive member verified' if name=='official_modern' else 'Local backup, not authenticated as retail or paired to supplied original executable'}
+    assert [s['fields']['codelink'] for s in result['hud_assets']['official_modern']['droplists']]==['forsingle','forsplit']
+    assert [s['fields']['codelink'] for s in result['hud_assets']['uppercase_backup']['droplists']]==['singlePlayerDefaults','splitScreenDefaults','hotSplitScreenDefaults']
+    assert result['hud_assets']['lowercase_backup']['equals_official']
+    pe=pefile.PE(str(ROOT/SPECS['official_modern'][0]))
+    result['modern_list_descriptors']={}
+    for va,token,table in [(0x5567bc,0x53a85c,0x5562c2),(0x556938,0x53a86c,0x5562c8)]:
+        words=struct.unpack('<5I',pe.get_data(va-0x400000,20))
+        assert words==(token,table,0,0,0x678900)
+        result['modern_list_descriptors'][f'{va:08x}']={'words':[f'{x:08x}' for x in words],
+            'name':pe.get_data(token-0x400000,20).split(b'\0')[0].decode('ascii')}
     result['changed_bytes']=len(changed)
     result['limits']=['Initializer code beyond selected policy is byte-identical, not full transitive behavior equivalence.',
         'Numeric session/mode meanings, widget flag consumers, pointer lifetimes and actual menu behavior require linked evidence.',

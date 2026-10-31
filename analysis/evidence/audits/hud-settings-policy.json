@@ -70,6 +70,163 @@
       }
     }
   },
+  "flag_consumer": {
+    "start": "0044a5cb",
+    "end_exclusive": "0044a5e5",
+    "identical_hex": "837b2c007414f6430510750e9889c289d8ff532c85c0740289c7",
+    "effect": "Entry byte +5 bit 10h skips this +2ch callback dispatch."
+  },
+  "hud_assets": {
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/hud.mnu",
+      "sha256": "284ea3b9949b53bde177d9edb32eb0473481c32e5dac13d48f8aa24af25984b3",
+      "equals_official": true,
+      "droplists": [
+        {
+          "type": "droplist",
+          "fields": {
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "forsingle",
+            "maxvisitem": "15",
+            "listname": "hudtypesingle",
+            "invert": "0",
+            "flip": "0"
+          }
+        },
+        {
+          "type": "droplist",
+          "fields": {
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "forsplit",
+            "maxvisitem": "15",
+            "listname": "hudtypesplit",
+            "invert": "0",
+            "flip": "0"
+          }
+        }
+      ],
+      "provenance": "Archive member verified"
+    },
+    "uppercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/HUD.MNU",
+      "sha256": "1186648c5352fadfd94632cf2b43cc716e23d9c078863b563fa1602f3b14d60c",
+      "equals_official": false,
+      "droplists": [
+        {
+          "type": "droplist",
+          "fields": {
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "singlePlayerDefaults",
+            "postonly": "0",
+            "mainonly": "0",
+            "EnableForDemo": "1",
+            "EnableForE3Demo": "1",
+            "maxvisitem": "15",
+            "listname": "buyERTS",
+            "invert": "0",
+            "flip": "0"
+          }
+        },
+        {
+          "type": "droplist",
+          "fields": {
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "splitScreenDefaults",
+            "postonly": "0",
+            "mainonly": "0",
+            "EnableForDemo": "1",
+            "EnableForE3Demo": "1",
+            "maxvisitem": "15",
+            "listname": "buyERTS_at75",
+            "invert": "0",
+            "flip": "0"
+          }
+        },
+        {
+          "type": "droplist",
+          "fields": {
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "hotSplitScreenDefaults",
+            "postonly": "0",
+            "mainonly": "0",
+            "EnableForDemo": "1",
+            "EnableForE3Demo": "1",
+            "maxvisitem": "15",
+            "listname": "buyERTS_at100",
+            "invert": "0",
+            "flip": "0"
+          }
+        }
+      ],
+      "provenance": "Local backup, not authenticated as retail or paired to supplied original executable"
+    },
+    "lowercase_backup": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/hud.mnu",
+      "sha256": "284ea3b9949b53bde177d9edb32eb0473481c32e5dac13d48f8aa24af25984b3",
+      "equals_official": true,
+      "droplists": [
+        {
+          "type": "droplist",
+          "fields": {
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "forsingle",
+            "maxvisitem": "15",
+            "listname": "hudtypesingle",
+            "invert": "0",
+            "flip": "0"
+          }
+        },
+        {
+          "type": "droplist",
+          "fields": {
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "forsplit",
+            "maxvisitem": "15",
+            "listname": "hudtypesplit",
+            "invert": "0",
+            "flip": "0"
+          }
+        }
+      ],
+      "provenance": "Local backup, not authenticated as retail or paired to supplied original executable"
+    }
+  },
+  "modern_list_descriptors": {
+    "005567bc": {
+      "words": [
+        "0053a85c",
+        "005562c2",
+        "00000000",
+        "00000000",
+        "00678900"
+      ],
+      "name": "hudtypesingle"
+    },
+    "00556938": {
+      "words": [
+        "0053a86c",
+        "005562c8",
+        "00000000",
+        "00000000",
+        "00678900"
+      ],
+      "name": "hudtypesplit"
+    }
+  },
   "changed_bytes": 242,
   "limits": [
     "Initializer code beyond selected policy is byte-identical, not full transitive behavior equivalence.",
