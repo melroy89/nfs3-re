@@ -119,3 +119,24 @@ The loader audit now asserts the final parser literals and exact instructions be
 **MP120-006 remains unverified as a whole-lifetime claim.** The final low-level loader `004f84a8` starts with a LoadLibraryA request; it has no initial nonzero-handle guard that by itself proves one load for the entire process. Cached descriptor use in enumeration and removal of the original snapshot-bank paths do not establish how often all higher-level initialization/recovery callers run. Establish caller lifetime and unload/reload ownership before upgrading that claim. The separate Voodoo wrapper's cached `glide3x.dll` handle is a different module/dependency and must not be substituted for the EXE's THRASH-driver lifetime.
 
 The [catalog](modern-patch-change-catalog.md) therefore labels the three supported claims partial and retains the lifetime claim as vendor-only. The evidence manifest records final key/type/fog contracts; earlier original callback-installation captures remain linked through the selection/lifecycle reports. No configuration API, driver or game was executed.
+
+## Final package capability-key inventory
+
+Run [the packaged configuration inventory](scripts/inventory_packaged_driver_configuration.py). Its [manifest](evidence/audits/packaged-driver-configuration.json) pins the official archive, all22 selected EXE/DLL/INI members (two EXEs,11 DLLs, nine INIs), the parsed settings and exact literal file offsets. It reads archive members without loading code or replacing installed configuration.
+
+| Packaged driver directory | THRASH/File | THRASH/Type | THRASH/FogSupport |
+|---|---|---|---|
+| `dgvoodoo` | `voodoo2a.dll` | `voodoo` | 1 |
+| `dx5` | `dx5a.dll` | `d3d` | Absent |
+| `dx6` | `dx6a.dll` | `d3d` | 1 |
+| `dx7` | `dx7a.dll` | `d3d` | 1 |
+| `dx8` | `dx8a.dll` | `d3d` | 1 |
+| `glide3x` | `voodoo2a.dll` | `voodoo` | 1 |
+| `nglide` | `voodoo2a.dll` | `voodoo` | 1 |
+| `softtri` | `softtria.dll` | `software` | Absent |
+
+These are **packaged defaults**, not effective settings on this machine. Six of the eight driver INIs explicitly supply FogSupport; the inspected EXE parser supplies fallback0 when it gets no configured value. The packaged game INI uses `ThrashDriver=nglide`. That does not override user-edited INIs, command-line selection or earlier initialization state in this analysis.
+
+A case-insensitive byte search finds **no `LightBeams` or `VideoDriver` literal** in the22 selected members, under either ASCII or UTF-16LE encoding. The same pinned README contains `LightBeams` at line403 in the v1.2.0 capability-settings bullet. This is a historical/final-package mismatch in available evidence, not proof that the old feature never existed or all beam rendering was removed. Raw searches omit compressed/encoded or dynamically constructed strings, external components and other encodings; packed provider contents are not unpacked here. The result does not qualify game or provider behavior.
+
+For **MP120-005**, the FogSupport parser/configuration portion is supported; the LightBeams setting still requires an intermediate-release binary/configuration pair or a verified alternate reader. For **MP120-004**, the final ThrashDriver spelling is independently confirmed by both EXE literal and packaged INI. Keep those distinctions when choosing a reconstruction interface: a historical README spelling must not silently become a final-binary option name. No historical introduction date or runtime rendering success is inferred.

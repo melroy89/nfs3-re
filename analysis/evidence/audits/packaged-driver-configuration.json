@@ -1,0 +1,641 @@
+{
+  "kind": "final-package-driver-config-and-literal-inventory",
+  "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+  "members": [
+    {
+      "member": "drivers/dgvoodoo/dgvoodooconf.exe",
+      "bytes": 101376,
+      "sha256": "e0aaadabd31519e4454dc274db36e374588e31aee1dc5e6b41a8a2106f4b5aa9",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/dgvoodoo/glide3x.dll",
+      "bytes": 89600,
+      "sha256": "9b06129d8afcf934f51676f1b8ce3a240fbb5ee0723eaf5de27735516e051d54",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/dgvoodoo/thrash.ini",
+      "bytes": 54,
+      "sha256": "6c8f0ef987c2ae0c0090e1df476ded0a699498574789a2537f2d618d8af863e0",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [
+            42
+          ],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      },
+      "ini_sections": {
+        "THRASH": {
+          "File": "voodoo2a.dll",
+          "Type": "voodoo",
+          "FogSupport": "1"
+        }
+      }
+    },
+    {
+      "member": "drivers/dgvoodoo/voodoo2a.dll",
+      "bytes": 69120,
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/dx5/dx5a.dll",
+      "bytes": 72704,
+      "sha256": "6bd5865b05a7a9918da37ad09f643908d9decdcfdb341a23dd60a8cf70c08b42",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/dx5/thrash.ini",
+      "bytes": 94,
+      "sha256": "58d464bb6da1ef67175c4f7313d64652ebe60d796c07030041605bd3deb3865f",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      },
+      "ini_sections": {
+        "THRASH": {
+          "File": "dx5a.dll",
+          "Type": "d3d"
+        },
+        "DDRAW": {
+          "DisableMaxWindowedMode": "0",
+          "NoDwmOffForPrimaryLock": "0"
+        }
+      }
+    },
+    {
+      "member": "drivers/dx6/dx6a.dll",
+      "bytes": 94208,
+      "sha256": "bc01ac47bdc6590bb787fbc4b953a1915a386191cfbcf66f3a6636e8e660aca6",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/dx6/thrash.ini",
+      "bytes": 108,
+      "sha256": "1d093ff251126a6fc16d7a7a30d2cde9b8f081e1bce85d4c07a95477216a4656",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [
+            35
+          ],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      },
+      "ini_sections": {
+        "THRASH": {
+          "File": "dx6a.dll",
+          "Type": "d3d",
+          "FogSupport": "1"
+        },
+        "DDRAW": {
+          "DisableMaxWindowedMode": "0",
+          "NoDwmOffForPrimaryLock": "0"
+        }
+      }
+    },
+    {
+      "member": "drivers/dx7/dx7a.dll",
+      "bytes": 110592,
+      "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/dx7/thrash.ini",
+      "bytes": 108,
+      "sha256": "f6c34fd207053031f63819ceac4b5dd48724768679a816cfcca074b6090e2bfe",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [
+            35
+          ],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      },
+      "ini_sections": {
+        "THRASH": {
+          "File": "dx7a.dll",
+          "Type": "d3d",
+          "FogSupport": "1"
+        },
+        "DDRAW": {
+          "DisableMaxWindowedMode": "0",
+          "NoDwmOffForPrimaryLock": "0"
+        }
+      }
+    },
+    {
+      "member": "drivers/dx8/dx8a.dll",
+      "bytes": 135168,
+      "sha256": "ddb8a55514bc650384e349cf3830946c149f71234e90a41327f69aca793e81b8",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/dx8/thrash.ini",
+      "bytes": 47,
+      "sha256": "382ef47639dc8e2062af50be69cc12a4b06aa415662d21733a83c6a068e6331d",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [
+            35
+          ],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      },
+      "ini_sections": {
+        "THRASH": {
+          "File": "dx8a.dll",
+          "Type": "d3d",
+          "FogSupport": "1"
+        }
+      }
+    },
+    {
+      "member": "drivers/glide3x/thrash.ini",
+      "bytes": 83,
+      "sha256": "5fa0b8ec91695dcfb70276ea41ba3a17179c4f5b7e332012365803e6bbf5814a",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [
+            42
+          ],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      },
+      "ini_sections": {
+        "THRASH": {
+          "File": "voodoo2a.dll",
+          "Type": "voodoo",
+          "FogSupport": "1"
+        },
+        "ENV": {
+          "FX_GLIDE_NO_SPLASH": "1"
+        }
+      }
+    },
+    {
+      "member": "drivers/glide3x/voodoo2a.dll",
+      "bytes": 69120,
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/nglide/glide3x.dll",
+      "bytes": 1425408,
+      "sha256": "87842a85d1bfda4217e691a9d4412915c74905eed818c5a727e2f2d6b814edb6",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/nglide/thrash.ini",
+      "bytes": 166,
+      "sha256": "e2c4e128a3c9dd7fb6cddf10a83e29613f70c392e8b938eac0577a66ff98022c",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [
+            42
+          ],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      },
+      "ini_sections": {
+        "THRASH": {
+          "File": "voodoo2a.dll",
+          "Type": "voodoo",
+          "FogSupport": "1"
+        },
+        "ENV": {
+          "NGLIDE_RESOLUTION": "0",
+          "NGLIDE_ASPECT": "0",
+          "NGLIDE_REFRESH": "0",
+          "NGLIDE_VSYNC": "1",
+          "NGLIDE_GAMMA": "5",
+          "NGLIDE_SPLASH": "0"
+        }
+      }
+    },
+    {
+      "member": "drivers/nglide/voodoo2a.dll",
+      "bytes": 69120,
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/softtri/softtria.dll",
+      "bytes": 277504,
+      "sha256": "9479203471f4dd615788769bac365043d903505af370c48df69e5d6a1e6f8732",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "drivers/softtri/thrash.ini",
+      "bytes": 103,
+      "sha256": "7ca47658cdef886406fd83144d76597c3322921f7ecb943ecd0fff0e7ac072eb",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      },
+      "ini_sections": {
+        "THRASH": {
+          "File": "softtria.dll",
+          "Type": "software"
+        },
+        "DDRAW": {
+          "DisableMaxWindowedMode": "0",
+          "NoDwmOffForPrimaryLock": "0"
+        }
+      }
+    },
+    {
+      "member": "eacsnd.dll",
+      "bytes": 44032,
+      "sha256": "63f3d1bff4e6526753524423be47146e82416d1b170cd7b2e0133699587b01b3",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "nfs3.exe",
+      "bytes": 1698304,
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [
+            1302820
+          ],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [
+            1302556
+          ],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      }
+    },
+    {
+      "member": "nfs3.ini",
+      "bytes": 285,
+      "sha256": "a700df1b45d789159978cb514f6580c5720ec1a9401f02a853e473f3493ca2f1",
+      "literal_file_offsets": {
+        "LightBeams": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "FogSupport": {
+          "ascii": [],
+          "utf-16le": []
+        },
+        "ThrashDriver": {
+          "ascii": [
+            38
+          ],
+          "utf-16le": []
+        },
+        "VideoDriver": {
+          "ascii": [],
+          "utf-16le": []
+        }
+      },
+      "ini_sections": {
+        "NFS3": {
+          "Language": "english",
+          "NoMovies": "0",
+          "ThrashDriver": "nglide",
+          "IntroSplashTime": "0",
+          "LoadingSplashTime": "5",
+          "Hide16bitModes": "0",
+          "Use32bitModeInMenu": "0",
+          "AllowHugeTextures": "0",
+          "OwnHeapLimitMb": "32",
+          "SingleProcAffinity": "0",
+          "PreventMinimize": "0",
+          "NoErrorReporting": "0",
+          "ScreenshoterEnabled": "1",
+          "ScreenshoterFormat": "png"
+        }
+      }
+    }
+  ],
+  "historical_readme_lightbeams_mentions": [
+    {
+      "line": 403,
+      "text": "- Some thrash driver capabilities could be set in thrash.ini: FogSupport and LightBeams. For example, it allows to override hardcoded values and allow to use fog for d3d thrash driver (if this driver supports it). It allows to use fog in the dx6 thrash driver from NFS4/3DSETUP."
+    }
+  ],
+  "limits": [
+    "Case-insensitive ASCII/UTF16LE byte searches only; encoded, compressed, constructed and external strings excluded.",
+    "INI bytes are final packaged defaults, not installed user files or effective runtime settings.",
+    "No literal hit is not proof a feature is absent; intermediate release implementation remains unverified.",
+    "No DLL/configuration API or target execution and no reference-file extraction."
+  ]
+}
