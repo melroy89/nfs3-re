@@ -1,0 +1,122 @@
+{
+  "kind": "static-slideshow-navigation-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00453840",
+          "end": "00453859",
+          "bytes_sha256": "30e37fe458f195da6611b26bd7f91e3ad41ced9673e911064b27186e999de610",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-00453840.asm",
+          "assembly_sha256": "0a42e9f3c4df0fef27538c35f0b742e958f65309d6995443281469e6b8a0b31a"
+        },
+        {
+          "start": "00453860",
+          "end": "0045393e",
+          "bytes_sha256": "3b6e4a392224d1085dd9e998bb11675f3c7c9a4718dbb0278c75cbeca2ca5541",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-00453860.asm",
+          "assembly_sha256": "3d0728f981899e1ce36f30a0d927348b88c2389ef488672a3235613261a0b0b3"
+        },
+        {
+          "start": "00453c00",
+          "end": "00453c4f",
+          "bytes_sha256": "5d2694636c784a3e7ba2f85d8fa94693e62585c8b0cd713fb4a25ac821d86e78",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-00453c00.asm",
+          "assembly_sha256": "6314b922bea14b70d9768963b97fec0e329b6a45c9ffd42bba668be67c5bdda0"
+        },
+        {
+          "start": "00453ed7",
+          "end": "00453eec",
+          "bytes_sha256": "b32367d3d9bd86525e8a7e630ecb5940973c6e1cce5995906c4d297c7f38a3f9",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-00453ed7.asm",
+          "assembly_sha256": "7d85e8926c354c93c7f86d5aebf2a952c3c69285976974d37472f49336f17d32"
+        },
+        {
+          "start": "00453ef0",
+          "end": "00453f48",
+          "bytes_sha256": "92141e1a030ea5dbdcdf6657312a6c6672dbd31aafc230f650c835167e7dfaeb",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-00453ef0.asm",
+          "assembly_sha256": "24e7452eaa407180f76d289600727d8574d9adfca7371da0200eb58eceaede63"
+        }
+      ],
+      "tokens": {
+        "005397a4": "nextslide",
+        "005397b0": "prevslide"
+      },
+      "slides_registration_row_00555f90_hex": "547d53000000000000000000003c4500503f4500f03e4500"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00453850",
+          "end": "00453863",
+          "bytes_sha256": "06a7936c2ae124e8d3b88e5bf678983b597e06a68a5bfda7e5f5181f77b2aa35",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00453850.asm",
+          "assembly_sha256": "a8f4852205472608a2c21587156cc4a8e762978db932ccb47b12d4561d1b3bb7"
+        },
+        {
+          "start": "00453864",
+          "end": "0045393d",
+          "bytes_sha256": "0731c7c0cb06b73b1ce233ce8c174686d89d62c7029f26f62289c6ac9bcc66ff",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00453864.asm",
+          "assembly_sha256": "6d988192580d67f99099f10ac4491d049923cffbea20136758fdca17a66b9572"
+        },
+        {
+          "start": "00453c00",
+          "end": "00453c4f",
+          "bytes_sha256": "b831a06f31a6e40532bb123c20e7411e7abac273e64e5ba479db63b2ed8916cd",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00453c00.asm",
+          "assembly_sha256": "b351498d8701f3ff97094c52f0bd92560b277c22aeae1bcee0e6a27b5a64b6fb"
+        },
+        {
+          "start": "00453ed7",
+          "end": "00453eee",
+          "bytes_sha256": "8778fadfb678c897043b44321dc145b06bef9dcd5e2699ab4449c9ceb583b650",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00453ed7.asm",
+          "assembly_sha256": "96b8eac5252b006a73a03d0915a92ca0e3e06fdfbf81f889c5ebbdb7bc11ac24"
+        },
+        {
+          "start": "00453ef0",
+          "end": "00453f58",
+          "bytes_sha256": "a735ada3ed4cc4118e2f6d94a9123218fa21cde6184ebbc93a117411dd16ae5b",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00453ef0.asm",
+          "assembly_sha256": "a865b596e98683f226f8cdf24664528050d1ae5975ac5c1c5b27a09e1e49edea"
+        }
+      ],
+      "tokens": {
+        "005397a4": "nextslide",
+        "005397b0": "prevslide"
+      },
+      "slides_registration_row_00555f90_hex": "547d53000000000000000000003c450000000000f03e4500"
+    }
+  },
+  "retained_previous_core": {
+    "start": "0045386d",
+    "end": "00453931",
+    "sha256": "0eb3531c23826b0d1b07aa0092f04fd79c1da5e8d38887a0e7c1f7c705c091fc"
+  },
+  "official_arrow_asset": {
+    "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/slides.mnu",
+    "sha256": "e6d63bcf70bd98ec11d121c9e9fbee88872c914f9fea82abefa08d897358e784",
+    "fields": [
+      {
+        "line": 39,
+        "field": "codelink=keyright nextslide"
+      },
+      {
+        "line": 51,
+        "field": "codelink=keyleft prevslide"
+      }
+    ]
+  },
+  "limits": [
+    "No input, filesystem, renderer or target execution.",
+    "Binding/refresh snippets are explicitly partial; complete refresh routine and resources not validated.",
+    "Action9 outer-loop contract, shared counter aliases and complete callback admission remain separate."
+  ]
+}

@@ -294,6 +294,10 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 [The Credits page follow-up](original-modern-frontend-page.md#ordinary-credits-nextprevious-removed-conditional-text-page-skip) verifies removal of the original conditional text-page skip and page0-to-last-page initialization change. The official More button is repositioned while retaining `credits1` routing; visual effect and runtime selection remain untested.
 
+## Car slideshow navigation and deferred refresh
+
+[The slideshow comparison](original-modern-slideshow-navigation.md) maps changed callback returns, a retained Previous core and the Modern shared-counter/periodic-refresh protocol. It supplies the remaining slideshow binding in MP140-022; actual input, rendering and historical release attribution remain untested.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
