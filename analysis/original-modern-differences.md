@@ -467,7 +467,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **163 Claimed, 39 Static, 85 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **162 Claimed, 39 Static, 86 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -786,7 +786,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-027 | Bugfix for situation when you are cancelled editing audio setting, Engine Volume wasn't restored and set to maximum value, and Sound Effects also sometimes wasn't restored to original value. | Claimed |
 | MP100-028 | Fixes for hardware detection function. Original game by mistake tries to simplify intro video graphics for modern computers because internal benchmark thinks that it is 166MHz processor (signed integer, result of benchmark too big and it is treated as negative). This benchmark was replaced to cpuid which sees processor family (i586/i686 or newer), support of MMX/SSE/SSE2, and in result calculates class of processor which is used by game for choosing default settings and deciding which level of video quality user will see. | Claimed |
 | MP100-029 | Bugfix for error when game says that on your HDD is less than 1 MiB is free which is not true. | Claimed |
-| MP100-030 | Use km/h for speedometers by default. | Claimed |
+| MP100-030 | Use km/h for speedometers by default. | Partial |
 | MP100-031 | Two camera views: Heli Cam and In Car (you can restore original set in camera settings). | Claimed |
 | MP100-032 | Mini map has 1x scaling for cops and 3x for racers by default. | Claimed |
 | MP100-033 | Opponent list is displayed by default in splitscreen mode (instead of opponent name which looked a little confusing). | Claimed |

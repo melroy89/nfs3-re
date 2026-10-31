@@ -61,7 +61,7 @@ These defaults can later be replaced by saved settings or user edits. The table 
 
 ## Catalog traceability and remaining work
 
-This chapter supplies concrete evidence relevant to **MP140-071/072/073** and **MP100-030/032/033**, whose notes discuss HUD positions, reset behavior, map zoom and units. It does not fully verify them: consumer-to-field mapping, actual original preset assets, first-install/reset admission and persistence overrides still need inspection. Those entries remain vendor-claimed or only partially supported as appropriate.
+This chapter supplies concrete evidence relevant to **MP140-071/072/073** and **MP100-030/032/033**, whose notes discuss HUD positions, reset behavior, map zoom and units. It does not fully verify them: remaining consumer-to-field mappings, actual original preset assets, first-install/reset admission and persistence overrides still need inspection. Those entries remain vendor-claimed or only partially supported as appropriate.
 
 Next: compare original `*def.pos` assets to the embedded table; map the nine header fields and rectangle slot consumers; trace migration/reset triggers before claiming that an existing player's HUD is automatically reset. Preserve the shared-frame and x87 contracts during future reconstruction.
 
@@ -140,3 +140,15 @@ Original's rectangle-copy path uses this table through the LEA operand at `00485
 Modern's replacement preset table `0053eb20..0053f420` instead overlaps storage used for original renderer names and diagnostic messages. As a concrete identity witness, original `0053ebb8` contains `nulla.dll`, while the same address lies inside the Modern numeric preset table whose producer/consumer was traced above. The old text and new numeric data are version-specific objects, not aliases of one reconstructed structure. Finding different values at these addresses must not be interpreted as a simple update to the same field.
 
 **Status: file-backed storage change and direct-base reference search done; confidence: verified static.** This addition explains data ownership at the two table locations, not derivation of every embedded coordinate from original `*def.pos` assets, complete runtime initialization, or visual equivalence. No game, probe, executable or Ghidra modification was performed.
+
+## Default speed units: header selector reaches the digital KPH path
+
+Run `python3 analysis/scripts/audit_speed_unit_default_difference.py` alongside the HUD initializer audit. The [speed-unit evidence](evidence/audits/speed-unit-default-difference.json) pins paired consumer `0048384a..0048395a` and complete formatter `00489d70..00489df7`; both spans are byte-identical between original and official Modern. This adds consumer evidence to header offset `+18`, rather than guessing its meaning from defaults alone.
+
+The consumer indexes `006fbc68` with `348h*bank + 1a4h*profile` (two profile strides per bank). Selector values2 or4 enter another display branch. Values1 or3 enter the inspected digital-formatting branch. There, the selected profile value1 or2 produces an argument1 to formatter `00489d70`; other values produce0. Consequently, admitted digital selector1 takes the nonzero formatter path, while admitted digital selector3 takes the zero path. Input bank/profile validity remains an external precondition.
+
+The nonzero formatter path obtains language ID`156h` and multiplies input speed by binary32 **2.2369000911712646** from `0053b83c`; the zero path obtains ID`157h` and multiplies by binary32 **3.5999999046325684** from `0053b840`. The pinned official English language member identifies those IDs as **MPH** and **KPH**, respectively. Both paths call `004dfd56` before FISTP; identical caller instructions do not establish equal rounding or floating-point state because that helper differs between versions, as covered by the [precision comparison](og-modern-x87-precision.md). No numeric output equivalence is implied.
+
+Combined with the independently audited defaults above, Modern's **all3** header initialization selects the digital **KPH** branch on this route. Original initializes all six headers to **1 when `006fbb4c == 0`, otherwise3**: its zero-selector default takes MPH, and its nonzero-selector default already takes KPH. Modern therefore removes that dependency at default initialization; this is not a newly implemented speed-conversion formula in the inspected formatter. Official English labels are evidence of the named branches, not proof which language member is loaded at runtime.
+
+**MP100-030: partial static support.** The default-to-digital-consumer chain is established. Saved settings, later edits, active profile selection, the alternative selector2/4 display branch, actual rendered output and historical introduction remain unverified. Do not generalize this bounded result to every speedometer or overwrite user preferences during reconstruction.

@@ -1,0 +1,87 @@
+{
+  "kind": "static-speed-unit-default-consumer",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0048384a",
+          "exclusive_end": "0048395a",
+          "sha256": "75ad727963231a1fd9471f19f06e0cfc92569e79fa79e41d91b24b8e24f33ff1",
+          "bytes": "6945f4480300006955fca401000001d08b9868bc6f0083fb04740583fb027535d9ee6affd89ff4040000dfe09e730b8b87f40400008945d4eb0bd987f4040000d9e0d95dd48b4604ff75d4e886690000e9bb00000083fb03740983fb010f85ad0000008b56048d04950000000029d0c1e00329d0c1e0048b905c977400528b8860977400518b5df853a1b0d36f00ff35501b790083f801740231c003460469d0480300006945fca401000083bc0268bc6f00017426a1b0d36f0083f801740231c003460469c0480300006955fca401000083bc0268bc6f00027507b801000000eb0231c0d9ee50d89ff4040000dfe09e730b8b87f40400008945d8eb0bd987f4040000d9e0d95dd8ff75d8e816640000"
+        },
+        {
+          "start": "00489d70",
+          "exclusive_end": "00489df7",
+          "sha256": "d5e27e953ecd5b7b32e17ee2b4f6b604aac44683761dac026ea0c0827015e284",
+          "bytes": "535256575589e583ec108b5528837d1c007422b856010000e8c37a0400d94518d80d3cb8530050e8ba5f0500db5dfc8b5dfc53eb20b857010000e8a17a0400d94518d80d40b8530050e8985f0500db5dfc8b75fc5668f4b753008d45f050e8bd58050083c4106a028b7d2c5752528b4524508d45f0ff7520e803faffff89ec5d5f5e5a5bc21800"
+        }
+      ],
+      "constants": [
+        {
+          "address": "0053b83c",
+          "hex": "5f290f40",
+          "binary32_value": 2.2369000911712646
+        },
+        {
+          "address": "0053b840",
+          "hex": "66666640",
+          "binary32_value": 3.5999999046325684
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0048384a",
+          "exclusive_end": "0048395a",
+          "sha256": "75ad727963231a1fd9471f19f06e0cfc92569e79fa79e41d91b24b8e24f33ff1",
+          "bytes": "6945f4480300006955fca401000001d08b9868bc6f0083fb04740583fb027535d9ee6affd89ff4040000dfe09e730b8b87f40400008945d4eb0bd987f4040000d9e0d95dd48b4604ff75d4e886690000e9bb00000083fb03740983fb010f85ad0000008b56048d04950000000029d0c1e00329d0c1e0048b905c977400528b8860977400518b5df853a1b0d36f00ff35501b790083f801740231c003460469d0480300006945fca401000083bc0268bc6f00017426a1b0d36f0083f801740231c003460469c0480300006955fca401000083bc0268bc6f00027507b801000000eb0231c0d9ee50d89ff4040000dfe09e730b8b87f40400008945d8eb0bd987f4040000d9e0d95dd8ff75d8e816640000"
+        },
+        {
+          "start": "00489d70",
+          "exclusive_end": "00489df7",
+          "sha256": "d5e27e953ecd5b7b32e17ee2b4f6b604aac44683761dac026ea0c0827015e284",
+          "bytes": "535256575589e583ec108b5528837d1c007422b856010000e8c37a0400d94518d80d3cb8530050e8ba5f0500db5dfc8b5dfc53eb20b857010000e8a17a0400d94518d80d40b8530050e8985f0500db5dfc8b75fc5668f4b753008d45f050e8bd58050083c4106a028b7d2c5752528b4524508d45f0ff7520e803faffff89ec5d5f5e5a5bc21800"
+        }
+      ],
+      "constants": [
+        {
+          "address": "0053b83c",
+          "hex": "5f290f40",
+          "binary32_value": 2.2369000911712646
+        },
+        {
+          "address": "0053b840",
+          "hex": "66666640",
+          "binary32_value": 3.5999999046325684
+        }
+      ]
+    }
+  },
+  "official_english": {
+    "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+    "member": "fedata/text/text.eng",
+    "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "labels": [
+      {
+        "id": 342,
+        "offset": 11421,
+        "text": "MPH"
+      },
+      {
+        "id": 343,
+        "offset": 11425,
+        "text": "KPH"
+      }
+    ]
+  },
+  "limits": [
+    "Header default stores are separately audited by audit_hud_layout_difference.py.",
+    "Identical caller bytes do not establish identical rounding helper behavior or FPU state.",
+    "No drawing, runtime localization selection, persistence override or all speedometer paths tested."
+  ]
+}
