@@ -7,6 +7,20 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "004628d0",
+          "end": "0046291a",
+          "sha256": "ddc5101e923282425cc69d63f978c88c5d6c6c1f8716bfbbbeaf3c0063e439b9",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004628d0.asm",
+          "assembly_sha256": "138d3fbd459fb408b3c5a4bdc3fe150a24c218a2420cb9dd14855fff8a052338"
+        },
+        {
+          "start": "004634d0",
+          "end": "00463501",
+          "sha256": "cfc5b5e2a4250eefe6e57f79fe086b947873ea50f7c59a51b2134b2efe8297dc",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-004634d0.asm",
+          "assembly_sha256": "1b6554fe0c87a1d5e797c4249a16eaf5e53b661b8a87fd78a31f8ac00daba060"
+        },
+        {
           "start": "00463841",
           "end": "00463859",
           "sha256": "34a5c6cf476237fda30e8b775e32160ba738ac9675e9d018ce946d92a5e1d3c0",
@@ -60,6 +74,20 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "004628d0",
+          "end": "0046291a",
+          "sha256": "2a559f0df6216d288baf3110b4018d343819de4276cf6fb39af53c576e95e2d5",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004628d0.asm",
+          "assembly_sha256": "0202e422a94cc1cf5e8e1c5ca007572d8ad5583b44b9c9866f79612174176ae1"
+        },
+        {
+          "start": "004634d0",
+          "end": "00463501",
+          "sha256": "e974e154aa725e93f8c774bd7a38974e0188afe7cfafe212dfec39c6409f6b5e",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004634d0.asm",
+          "assembly_sha256": "4dd853836b2f17fe0e6892b3c7298e579f53f1d8187826232702bc56a7b591b9"
+        },
         {
           "start": "00463841",
           "end": "00463859",
@@ -267,6 +295,19 @@
     "00537e34": "tracks",
     "005382ec": "rectrk",
     "0053aa3c": "tracks"
+  },
+  "additional_track_policy_callers": {
+    "004628d0": {
+      "name_offset": "0x60",
+      "original": "35 for tracks/rectrk in any mode; otherwise15",
+      "modern": "35 only for mode3 and tracks/rectrk; otherwise15"
+    },
+    "004634d0": {
+      "name_offset": "0x64",
+      "original": "35 for every mode3 name; otherwise15",
+      "modern": "35 only for mode3 and tracks/rectrk; otherwise15"
+    },
+    "scope": "Paired entry prefixes only; no complete-body or runtime claim."
   },
   "limits": [
     "Static alias and caller policy only; full renderer and asset bindings not audited.",

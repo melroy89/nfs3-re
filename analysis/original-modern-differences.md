@@ -378,6 +378,8 @@ The [cascade count follow-up](original-modern-common-menu-buttons.md#cascade-eff
 
 The [complete expanded-list layout comparison](original-modern-common-menu-buttons.md#complete-layout-helper-difference-coverage) accounts for every changed byte in the379-byte helper: a narrower mode3/name selector, width padding5→15, and count extent5→2. The resulting width contribution can increase or decrease, depending on the list name; no universal wider-menu claim follows.
 
+The [additional track-policy caller comparison](original-modern-car-alias.md#other-consumers-start-from-different-original-policies) distinguishes two further transitions: one original caller already accepts both track-list names and gains a mode gate; another gains a name gate. A common Modern helper therefore replaces different original policies, rather than introducing the same alias change everywhere.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

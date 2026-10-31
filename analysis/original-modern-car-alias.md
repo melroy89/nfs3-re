@@ -51,3 +51,18 @@ In the renderer, paired spans **`00463841..00463859`**, **`00463875..00463894`**
 For otherwise equal inputs on those paths, selecting35 instead of15 adds **20 layout units** to the offset and increases the stored extent by20 modulo the final WORD store. This is code-level support for additional horizontal room/offset for the accepted track-list alias. Full text measurement, the meaning of each indicator and coordinate-to-screen scaling are not established; “20 layout units” must not silently become a guaranteed20 physical pixels at every resolution. No menu was rendered during this comparison.
 
 The [complete paired layout-helper follow-up](original-modern-common-menu-buttons.md#complete-layout-helper-difference-coverage) now supersedes the earlier original-body coverage limitation specifically for `00464560`: original selects35 for every mode3 list, whereas Modern restricts that choice to `tracks`/`rectrk`. Together with the separate width-add change5→15, the net local contribution changes by+10 for accepted names and−10 for other mode3 names. The other three consumers retain their own stated coverage boundaries.
+
+## Other consumers start from different original policies
+
+The audit now retains paired entry prefixes **`004628d0..0046291a`** and **`004634d0..00463501`**, and pins both Modern CALL targets to `00472924`. They do not begin with the same original predicate:
+
+| Consumer | List name source | Original selects35 when | Modern selects35 when |
+|---|---|---|---|
+| `004628d0` | widget+`0x60` | name equals `tracks` or `rectrk`, without a mode check | mode3 and name equals `tracks` or `rectrk` |
+| `004634d0` | widget+`0x64` | mode3, without a name check | mode3 and name equals `tracks` or `rectrk` |
+
+All other cases select15 in the inspected prefixes. The first consumer already recognizes **both** names in original: literals`0053aa3c` and`0053aa9c` are `tracks`/`rectrk`, respectively. Calling that site a newly added `rectrk` alias would therefore be incorrect. Instead Modern adds the mode3 gate there, reducing the selected contribution35→15 for those names outside mode3. The second consumer gains a name gate, reducing35→15 for other names within mode3.
+
+In `004628d0`, both versions preserve the WORD-list pointer from lookup`00442c80` in ESI before making the policy decision. Modern relocates that assignment by five bytes as part of the rewritten prefix. In `004634d0`, Modern retains the two zero-local initializations but moves them earlier to replace the original mode load; this is not evidence of removed initialization. These observations are local data-flow checks, not a complete register-liveness audit.
+
+Together with the previously inspected `00461d25` caller and complete `00464560` helper, this establishes four caller-specific policy transitions: adding a second name, adding a mode gate, or adding a name gate depending on the site. The common final helper does not mean the original policies were uniform. Full remaining renderer/layout bodies, mode semantics and visible results remain pending. No runtime or target instruction probes were used.
