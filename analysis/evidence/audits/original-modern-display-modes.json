@@ -40,6 +40,20 @@
           "bytes_sha256": "dbbb9f7aa1eef637326b43f138fe201389d0ea3ff3840ff2f6b345d33f4bc45d",
           "assembly": "analysis/captures/modern-differences/display-modes/original-004483a0.asm",
           "assembly_sha256": "75b564c611cc93270d0b99036552bb911b2bd67ee4d22f5a552f79e0f811abb8"
+        },
+        {
+          "start": "004bef50",
+          "end": "004bf10f",
+          "bytes_sha256": "79c65010b5d10696515607cd701f323ca39b9bdd5a83d47b1661b1943de3f6b7",
+          "assembly": "analysis/captures/modern-differences/display-modes/original-004bef50.asm",
+          "assembly_sha256": "e00405760347b61aaa3085ab31966991ef1dd1cd52ede9117c7f65e6ffdf5689"
+        },
+        {
+          "start": "0044b1a0",
+          "end": "0044b206",
+          "bytes_sha256": "cf8272242267d5a284aad0db7802e1e178bd3ea412737013cdbbb15903b09da0",
+          "assembly": "analysis/captures/modern-differences/display-modes/original-0044b1a0.asm",
+          "assembly_sha256": "582af2de72359fea72192be287455643f7b84656bdd7f83ad8e24b36db7b288e"
         }
       ]
     },
@@ -95,6 +109,13 @@
           "bytes_sha256": "6498bbf17458e940a9df86089f17fb7a19e46aba258302e2bd48659fa328dd26",
           "assembly": "analysis/captures/modern-differences/display-modes/official_modern-004f9140.asm",
           "assembly_sha256": "1e1d1e9c08cbe069fc0e805046493e1e2db52de30bf1d11fbc5d0f5cbb718674"
+        },
+        {
+          "start": "0044b1a0",
+          "end": "0044b206",
+          "bytes_sha256": "116a822d28e1de0d2f1922b3fa87eb2064c03730f0eccd3961bb1c75dfe22d0f",
+          "assembly": "analysis/captures/modern-differences/display-modes/official_modern-0044b1a0.asm",
+          "assembly_sha256": "c523036b16012beb38ab5f22f4164114244f48671d39f365fb3f3ee8cb9ae8bf"
         }
       ]
     }
@@ -103,5 +124,12 @@
     "Driver-provided records were not executed or mutated.",
     "Menu count boundary is not a proved reachable storage fault.",
     "Driver DLL enumeration limits and actual UI behavior remain untested."
-  ]
+  ],
+  "recovery_call": {
+    "instruction": "0044b1e5",
+    "original_target": "004bef50",
+    "modern_target": "004beeb0",
+    "input_eax": 1,
+    "limits": "Caller does not check application return; no runtime recovery test."
+  }
 }

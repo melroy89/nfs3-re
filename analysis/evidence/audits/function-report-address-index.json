@@ -181,7 +181,7 @@
     },
     {
       "path": "analysis/original-modern-mode-selection.md",
-      "sha256": "445e55db81b5a4761ac6903bd39eecd517fd5cf8aae2bf801ed3e00ff836a6c1"
+      "sha256": "7f25090d5b8d538cece78bc410e0f1db1f7c70c705746b42f29b3959673f75f4"
     },
     {
       "path": "analysis/original-modern-mouse-cursor.md",
@@ -394,8 +394,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 333,
-    "without_address_mentions": 28
+    "with_address_mentions": 334,
+    "without_address_mentions": 27
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -3686,7 +3686,16 @@
       "changed_bytes": 2,
       "original_sha256": "cf8272242267d5a284aad0db7802e1e178bd3ea412737013cdbbb15903b09da0",
       "modern_sha256": "116a822d28e1de0d2f1922b3fa87eb2064c03730f0eccd3961bb1c75dfe22d0f",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-mode-selection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0044b1a0",
+            "0044b1e5"
+          ]
+        }
+      ]
     },
     {
       "entry": "0044b230",
@@ -8946,6 +8955,7 @@
             "004beeb0",
             "004bef24",
             "004bef47",
+            "004bef50",
             "004bef9c"
           ]
         },
