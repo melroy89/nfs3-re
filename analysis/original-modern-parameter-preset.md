@@ -50,3 +50,22 @@ The count loop changes materially. Original starts index zero, compares signed-l
 Both versions apply preset writes to the first/second record before the conversion-count gate, even if count is zero. Modern PUSHAD/POPAD preserves all general registers; original saves the six non-EAX general registers and does not establish the same EAX output. Neither routine claims a scalar C return.
 
 **Verified:** paired bodies, changed selector/table construction, two-record stores, conversion field map/constant, exact original integer-store branches and count-loop boundary difference. **Unresolved:** selector/auxiliary-state invariants, semantic record labels, every caller, runtime effects and release attribution. No whole-game precision, replay or multiplayer conclusion follows from these parameter writes.
+
+## Derived original-versus-Modern integer examples
+
+The same audit now records **64 static formula evaluations**: selectors0..3, both `006fd4c8` branches, both mode branches, and auxiliary representatives0..3. These are mathematical evaluations of retained code/table bytes, **not instruction probes or runtime tests**. Auxiliary values above3 give no further source-offset class for these selectors because the positive limit `3-selector` is at most3. Original fields without local writes are represented as unknown/untouched, never as zero.
+
+**48 of64 evaluations differ in at least one field written by both versions.** The other16 only match those compared fields; they do not establish whole-record, float-output or machine-state equivalence. The count includes repeated auxiliary cases where the mode ignores that input and is not a percentage of game changes.
+
+For `006fd4c8 == 0`, mode !=1, and auxiliary0, the first record gives the following raw DWORDs. Each tuple lists **+28h, +38h, +3ch**, before the x87 conversion loop:
+
+| Selector | Original raw DWORDs | Modern raw DWORDs |
+|---:|---|---|
+| 0 | 32768000, 32768000, 32768000 | Same three values |
+| 1 | 32768000, 7208960, 9830400 | Same three values |
+| 2 | 18022000, 3964840, 5406600 | 18022400, 3997696, 5439488 |
+| 3 | 13107000, 2883540, 3932100 | 13107200, 2883584, 3932160 |
+
+This demonstrates a substantive value change before floating-point precision enters the calculation: original fractional fixed-point factors can leave low16 bits in these values, whereas Modern constructs every selected table WORD as `word << 16`. Modern also supplies +24h and second-record fields the original leaves unchanged in this mode. Thus even matching first-record tuples for selectors0/1 do not establish equivalent record state.
+
+All formulas require valid accessible records, source reads and direction flag as documented above. The evaluated selectors are table-index examples, not a proof that every combination occurs in a race. Caller/global invariants and physical meanings remain the next evidence needed before attributing these differences to a specific gameplay effect.

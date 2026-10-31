@@ -54,6 +54,38 @@ def main():
 
         result['binaries'][label] = row
     assert result['binaries']['original']['conversion_scale_hex'] == result['binaries']['official_modern']['conversion_scale_hex']
+    old_factors = result['binaries']['original']['original_exact_integer_arithmetic']
+    table = result['binaries']['official_modern']['preset_table']['words_by_preset_and_16_byte_block']
+    table_bytes = b''.join(struct.pack('<8H',*block) for preset in table for block in preset)
+    comparisons=[]
+    for selector in range(4):
+        for alternate in (False,True):
+            factors = old_factors['factors_nonzero_006fd4c8' if alternate else 'factors_zero_006fd4c8']
+            factor=factors[max(0,selector-1)]
+            for mode1 in (False,True):
+                constants=(440,60,92) if mode1 else (500,110,150)
+                known=[(n*factor)&0xffffffff for n in constants]
+                if selector==0: known=[known[0]]*3
+                for aux in range(4):
+                    start=selector*64+(32 if alternate else 0)+(16 if mode1 else 0)
+                    advance=0 if mode1 else min(aux,max(0,3-selector))*64
+                    sources=[start,start+8+advance]
+                    new=[list(struct.unpack_from('<4H',table_bytes,x)) for x in sources]
+                    comparisons.append({'selector':selector,'nonzero_006fd4c8':alternate,
+                        'mode_equals1':mode1,'auxiliary_006fd1d8':aux,
+                        'original_known_fields_28_38_3c': [known,known if mode1 else None],
+                        'modern_source_offsets':sources,
+                        'modern_words_24_28_38_3c':new,
+                        'known_field_differences':sum(a != (b<<16) for i,record in enumerate(new)
+                            if i==0 or mode1 for a,b in zip(known,record[1:]))})
+    result['derived_integer_comparisons'] = {
+        'kind':'mathematical evaluation of asserted static formulas and table; no target execution',
+        'scope':'selectors0..3, both flag/mode branches, auxiliary representatives0..3; original untouched fields are null, not zero',
+        'cases':comparisons,
+        'cases_with_known_field_differences':sum(x['known_field_differences']>0 for x in comparisons)}
+
+    assert len(comparisons)==64
+    assert result['derived_integer_comparisons']['cases_with_known_field_differences']==48
     (ROOT/'analysis/evidence/audits/original-modern-parameter-preset.json').write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: baselines, complete preset bodies, table bytes and retained conversion scale')
 

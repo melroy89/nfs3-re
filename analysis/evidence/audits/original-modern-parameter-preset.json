@@ -231,5 +231,2252 @@
   "limits": [
     "No preset/game execution.",
     "Record field meanings and selector admission remain bounded."
-  ]
+  ],
+  "derived_integer_comparisons": {
+    "kind": "mathematical evaluation of asserted static formulas and table; no target execution",
+    "scope": "selectors0..3, both flag/mode branches, auxiliary representatives0..3; original untouched fields are null, not zero",
+    "cases": [
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            32768000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          0,
+          8
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            32768000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          0,
+          72
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            333,
+            133,
+            266
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            32768000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          0,
+          136
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            32768000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          0,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            28835840,
+            28835840,
+            28835840
+          ],
+          [
+            28835840,
+            28835840,
+            28835840
+          ]
+        ],
+        "modern_source_offsets": [
+          16,
+          24
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            28835840,
+            28835840,
+            28835840
+          ],
+          [
+            28835840,
+            28835840,
+            28835840
+          ]
+        ],
+        "modern_source_offsets": [
+          16,
+          24
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            28835840,
+            28835840,
+            28835840
+          ],
+          [
+            28835840,
+            28835840,
+            28835840
+          ]
+        ],
+        "modern_source_offsets": [
+          16,
+          24
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            28835840,
+            28835840,
+            28835840
+          ],
+          [
+            28835840,
+            28835840,
+            28835840
+          ]
+        ],
+        "modern_source_offsets": [
+          16,
+          24
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            24576000,
+            24576000,
+            24576000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          32,
+          40
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            24576000,
+            24576000,
+            24576000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          32,
+          104
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            375,
+            250,
+            100,
+            200
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            24576000,
+            24576000,
+            24576000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          32,
+          168
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            24576000,
+            24576000,
+            24576000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          32,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            21626880,
+            21626880,
+            21626880
+          ],
+          [
+            21626880,
+            21626880,
+            21626880
+          ]
+        ],
+        "modern_source_offsets": [
+          48,
+          56
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            21626880,
+            21626880,
+            21626880
+          ],
+          [
+            21626880,
+            21626880,
+            21626880
+          ]
+        ],
+        "modern_source_offsets": [
+          48,
+          56
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            21626880,
+            21626880,
+            21626880
+          ],
+          [
+            21626880,
+            21626880,
+            21626880
+          ]
+        ],
+        "modern_source_offsets": [
+          48,
+          56
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 0,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            21626880,
+            21626880,
+            21626880
+          ],
+          [
+            21626880,
+            21626880,
+            21626880
+          ]
+        ],
+        "modern_source_offsets": [
+          48,
+          56
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            500,
+            500
+          ],
+          [
+            500,
+            500,
+            500,
+            500
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            32768000,
+            7208960,
+            9830400
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          64,
+          72
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            110,
+            150
+          ],
+          [
+            500,
+            333,
+            133,
+            266
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            32768000,
+            7208960,
+            9830400
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          64,
+          136
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            110,
+            150
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            32768000,
+            7208960,
+            9830400
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          64,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            110,
+            150
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            32768000,
+            7208960,
+            9830400
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          64,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            500,
+            110,
+            150
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            28835840,
+            3932160,
+            6029312
+          ],
+          [
+            28835840,
+            3932160,
+            6029312
+          ]
+        ],
+        "modern_source_offsets": [
+          80,
+          88
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            440,
+            60,
+            92
+          ],
+          [
+            400,
+            440,
+            60,
+            92
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            28835840,
+            3932160,
+            6029312
+          ],
+          [
+            28835840,
+            3932160,
+            6029312
+          ]
+        ],
+        "modern_source_offsets": [
+          80,
+          88
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            440,
+            60,
+            92
+          ],
+          [
+            400,
+            440,
+            60,
+            92
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            28835840,
+            3932160,
+            6029312
+          ],
+          [
+            28835840,
+            3932160,
+            6029312
+          ]
+        ],
+        "modern_source_offsets": [
+          80,
+          88
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            440,
+            60,
+            92
+          ],
+          [
+            400,
+            440,
+            60,
+            92
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            28835840,
+            3932160,
+            6029312
+          ],
+          [
+            28835840,
+            3932160,
+            6029312
+          ]
+        ],
+        "modern_source_offsets": [
+          80,
+          88
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            440,
+            60,
+            92
+          ],
+          [
+            400,
+            440,
+            60,
+            92
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            24576000,
+            5406720,
+            7372800
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          96,
+          104
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            375,
+            83,
+            113
+          ],
+          [
+            375,
+            250,
+            100,
+            200
+          ]
+        ],
+        "known_field_differences": 2
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            24576000,
+            5406720,
+            7372800
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          96,
+          168
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            375,
+            83,
+            113
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 2
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            24576000,
+            5406720,
+            7372800
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          96,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            375,
+            83,
+            113
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 2
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            24576000,
+            5406720,
+            7372800
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          96,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            375,
+            83,
+            113
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 2
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            21626880,
+            2949120,
+            4521984
+          ],
+          [
+            21626880,
+            2949120,
+            4521984
+          ]
+        ],
+        "modern_source_offsets": [
+          112,
+          120
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            330,
+            45,
+            69
+          ],
+          [
+            400,
+            330,
+            45,
+            69
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            21626880,
+            2949120,
+            4521984
+          ],
+          [
+            21626880,
+            2949120,
+            4521984
+          ]
+        ],
+        "modern_source_offsets": [
+          112,
+          120
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            330,
+            45,
+            69
+          ],
+          [
+            400,
+            330,
+            45,
+            69
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            21626880,
+            2949120,
+            4521984
+          ],
+          [
+            21626880,
+            2949120,
+            4521984
+          ]
+        ],
+        "modern_source_offsets": [
+          112,
+          120
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            330,
+            45,
+            69
+          ],
+          [
+            400,
+            330,
+            45,
+            69
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 1,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            21626880,
+            2949120,
+            4521984
+          ],
+          [
+            21626880,
+            2949120,
+            4521984
+          ]
+        ],
+        "modern_source_offsets": [
+          112,
+          120
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            330,
+            45,
+            69
+          ],
+          [
+            400,
+            330,
+            45,
+            69
+          ]
+        ],
+        "known_field_differences": 0
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            18022000,
+            3964840,
+            5406600
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          128,
+          136
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            275,
+            61,
+            83
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            18022000,
+            3964840,
+            5406600
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          128,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            275,
+            61,
+            83
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            18022000,
+            3964840,
+            5406600
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          128,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            275,
+            61,
+            83
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            18022000,
+            3964840,
+            5406600
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          128,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            275,
+            61,
+            83
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            15859360,
+            2162640,
+            3316048
+          ],
+          [
+            15859360,
+            2162640,
+            3316048
+          ]
+        ],
+        "modern_source_offsets": [
+          144,
+          152
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            242,
+            33,
+            51
+          ],
+          [
+            400,
+            242,
+            33,
+            51
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            15859360,
+            2162640,
+            3316048
+          ],
+          [
+            15859360,
+            2162640,
+            3316048
+          ]
+        ],
+        "modern_source_offsets": [
+          144,
+          152
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            242,
+            33,
+            51
+          ],
+          [
+            400,
+            242,
+            33,
+            51
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            15859360,
+            2162640,
+            3316048
+          ],
+          [
+            15859360,
+            2162640,
+            3316048
+          ]
+        ],
+        "modern_source_offsets": [
+          144,
+          152
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            242,
+            33,
+            51
+          ],
+          [
+            400,
+            242,
+            33,
+            51
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            15859360,
+            2162640,
+            3316048
+          ],
+          [
+            15859360,
+            2162640,
+            3316048
+          ]
+        ],
+        "modern_source_offsets": [
+          144,
+          152
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            242,
+            33,
+            51
+          ],
+          [
+            400,
+            242,
+            33,
+            51
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            13434500,
+            2955590,
+            4030350
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          160,
+          168
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            205,
+            46,
+            62
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            13434500,
+            2955590,
+            4030350
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          160,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            205,
+            46,
+            62
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            13434500,
+            2955590,
+            4030350
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          160,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            205,
+            46,
+            62
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            13434500,
+            2955590,
+            4030350
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          160,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            205,
+            46,
+            62
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            11822360,
+            1612140,
+            2471948
+          ],
+          [
+            11822360,
+            1612140,
+            2471948
+          ]
+        ],
+        "modern_source_offsets": [
+          176,
+          184
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            181,
+            25,
+            38
+          ],
+          [
+            400,
+            181,
+            25,
+            38
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            11822360,
+            1612140,
+            2471948
+          ],
+          [
+            11822360,
+            1612140,
+            2471948
+          ]
+        ],
+        "modern_source_offsets": [
+          176,
+          184
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            181,
+            25,
+            38
+          ],
+          [
+            400,
+            181,
+            25,
+            38
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            11822360,
+            1612140,
+            2471948
+          ],
+          [
+            11822360,
+            1612140,
+            2471948
+          ]
+        ],
+        "modern_source_offsets": [
+          176,
+          184
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            181,
+            25,
+            38
+          ],
+          [
+            400,
+            181,
+            25,
+            38
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 2,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            11822360,
+            1612140,
+            2471948
+          ],
+          [
+            11822360,
+            1612140,
+            2471948
+          ]
+        ],
+        "modern_source_offsets": [
+          176,
+          184
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            181,
+            25,
+            38
+          ],
+          [
+            400,
+            181,
+            25,
+            38
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            13107000,
+            2883540,
+            3932100
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          192,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            200,
+            44,
+            60
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            13107000,
+            2883540,
+            3932100
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          192,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            200,
+            44,
+            60
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            13107000,
+            2883540,
+            3932100
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          192,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            200,
+            44,
+            60
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            13107000,
+            2883540,
+            3932100
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          192,
+          200
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            200,
+            44,
+            60
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            11534160,
+            1572840,
+            2411688
+          ],
+          [
+            11534160,
+            1572840,
+            2411688
+          ]
+        ],
+        "modern_source_offsets": [
+          208,
+          216
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            176,
+            24,
+            37
+          ],
+          [
+            400,
+            176,
+            24,
+            37
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            11534160,
+            1572840,
+            2411688
+          ],
+          [
+            11534160,
+            1572840,
+            2411688
+          ]
+        ],
+        "modern_source_offsets": [
+          208,
+          216
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            176,
+            24,
+            37
+          ],
+          [
+            400,
+            176,
+            24,
+            37
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            11534160,
+            1572840,
+            2411688
+          ],
+          [
+            11534160,
+            1572840,
+            2411688
+          ]
+        ],
+        "modern_source_offsets": [
+          208,
+          216
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            176,
+            24,
+            37
+          ],
+          [
+            400,
+            176,
+            24,
+            37
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": false,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            11534160,
+            1572840,
+            2411688
+          ],
+          [
+            11534160,
+            1572840,
+            2411688
+          ]
+        ],
+        "modern_source_offsets": [
+          208,
+          216
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            176,
+            24,
+            37
+          ],
+          [
+            400,
+            176,
+            24,
+            37
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            9830000,
+            2162600,
+            2949000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          224,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            150,
+            33,
+            45
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            9830000,
+            2162600,
+            2949000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          224,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            150,
+            33,
+            45
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            9830000,
+            2162600,
+            2949000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          224,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            150,
+            33,
+            45
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": false,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            9830000,
+            2162600,
+            2949000
+          ],
+          null
+        ],
+        "modern_source_offsets": [
+          224,
+          232
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            500,
+            150,
+            33,
+            45
+          ],
+          [
+            150,
+            100,
+            40,
+            80
+          ]
+        ],
+        "known_field_differences": 3
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 0,
+        "original_known_fields_28_38_3c": [
+          [
+            8650400,
+            1179600,
+            1808720
+          ],
+          [
+            8650400,
+            1179600,
+            1808720
+          ]
+        ],
+        "modern_source_offsets": [
+          240,
+          248
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            132,
+            18,
+            28
+          ],
+          [
+            400,
+            132,
+            18,
+            28
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 1,
+        "original_known_fields_28_38_3c": [
+          [
+            8650400,
+            1179600,
+            1808720
+          ],
+          [
+            8650400,
+            1179600,
+            1808720
+          ]
+        ],
+        "modern_source_offsets": [
+          240,
+          248
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            132,
+            18,
+            28
+          ],
+          [
+            400,
+            132,
+            18,
+            28
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 2,
+        "original_known_fields_28_38_3c": [
+          [
+            8650400,
+            1179600,
+            1808720
+          ],
+          [
+            8650400,
+            1179600,
+            1808720
+          ]
+        ],
+        "modern_source_offsets": [
+          240,
+          248
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            132,
+            18,
+            28
+          ],
+          [
+            400,
+            132,
+            18,
+            28
+          ]
+        ],
+        "known_field_differences": 6
+      },
+      {
+        "selector": 3,
+        "nonzero_006fd4c8": true,
+        "mode_equals1": true,
+        "auxiliary_006fd1d8": 3,
+        "original_known_fields_28_38_3c": [
+          [
+            8650400,
+            1179600,
+            1808720
+          ],
+          [
+            8650400,
+            1179600,
+            1808720
+          ]
+        ],
+        "modern_source_offsets": [
+          240,
+          248
+        ],
+        "modern_words_24_28_38_3c": [
+          [
+            400,
+            132,
+            18,
+            28
+          ],
+          [
+            400,
+            132,
+            18,
+            28
+          ]
+        ],
+        "known_field_differences": 6
+      }
+    ],
+    "cases_with_known_field_differences": 48
+  }
 }
