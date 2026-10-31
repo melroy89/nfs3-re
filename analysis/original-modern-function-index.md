@@ -223,7 +223,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004a3690` | RunRaceSession | 531 | 4 | [music-selection](original-modern-music-selection.md), [music-start](original-modern-music-start.md), [startup-paths](original-modern-startup-paths.md) |
 | `004a38f0` | SetCurrentDirectoryToExecutableDirectory | 72 | 69 | [startup-paths](original-modern-startup-paths.md) |
 | `004a3984` | ValidateRequiredGamePathsAndCreateDirectories | 66 | 64 | [startup-paths](original-modern-startup-paths.md) |
-| `004a3db0` | RunGameApplication | 497 | 316 | [cpu-tier](original-modern-cpu-tier.md), [heap-initialization](original-modern-heap-initialization.md), [idle-movie](original-modern-idle-movie.md), [small-entry-followup](original-modern-small-entry-followup.md), [startup-paths](original-modern-startup-paths.md), [startup-policy](original-modern-startup-policy.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
+| `004a3db0` | RunGameApplication | 497 | 316 | [cpu-tier](original-modern-cpu-tier.md), [heap-initialization](original-modern-heap-initialization.md), [idle-movie](original-modern-idle-movie.md), [music-selection](original-modern-music-selection.md), [small-entry-followup](original-modern-small-entry-followup.md), [startup-paths](original-modern-startup-paths.md), [startup-policy](original-modern-startup-policy.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004a5080` | ParseCommandLineAndShowUsage | 965 | 128 | [command-line](original-modern-command-line.md), [idle-movie](original-modern-idle-movie.md) |
 | `004a6e10` | InitializeGameIniPath | 85 | 82 | [idle-movie](original-modern-idle-movie.md), [language-table](original-modern-language-table.md), [startup-paths](original-modern-startup-paths.md) |
 | `004a6e68` | LoadAndValidateLanguageSetting | 89 | 86 | [idle-movie](original-modern-idle-movie.md), [language-table](original-modern-language-table.md) |
@@ -335,7 +335,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f1fcc` | IsShiftKeyCurrentlyDown | 4 | 4 | [dialog-input](original-modern-dialog-input.md), [menu-input](original-modern-menu-input.md) |
 | `004f1fd0` | IsControlKeyCurrentlyDown | 4 | 4 | [menu-input](original-modern-menu-input.md) |
 | `004f1fd4` | IsAltKeyCurrentlyDown | 28 | 28 | [menu-input](original-modern-menu-input.md) |
-| `004f2790` | ReadMultimediaTickCount | 11 | 9 | [clock-source](original-modern-clock-source.md), [loading-timing](original-modern-loading-timing.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [title-delay](original-modern-title-delay.md) |
+| `004f2790` | ReadMultimediaTickCount | 11 | 9 | [clock-source](original-modern-clock-source.md), [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [title-delay](original-modern-title-delay.md) |
 | `004f6c50` | InitializeSocketConnectionState | 980 | 4 | [clock-source](original-modern-clock-source.md) |
 | `004f84a8` | LoadThrashDriverLibrary | 107 | 106 | [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f8514` | UnloadThrashDriverLibrary | 39 | 38 | [renderer-loading](original-modern-renderer-loading.md) |
@@ -365,7 +365,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004fb714` | ReadGameIniString | 32 | 32 | [configuration](original-modern-configuration.md), [language-table](original-modern-language-table.md), [registry](original-modern-registry.md) |
 | `004fb734` | LookupIniEnvironmentOverride | 54 | 53 | [configuration](original-modern-configuration.md) |
 | `00517620` | InitializeRasterDisplayModeAndSurfaces | 351 | 146 | [mode-selection](original-modern-mode-selection.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md), [resolution-defaults](original-modern-resolution-defaults.md) |
-| `00517784` | SeedRuntimeLinearCongruentialGenerator | 6 | 6 | [small-entry-followup](original-modern-small-entry-followup.md) |
+| `00517784` | SeedRuntimeLinearCongruentialGenerator | 6 | 6 | [music-selection](original-modern-music-selection.md), [small-entry-followup](original-modern-small-entry-followup.md) |
 | `0051778c` | AdvanceRuntimeLinearCongruentialGenerator | 29 | 28 | [music-selection](original-modern-music-selection.md) |
 | `005177ac` | GetRuntimeRandomUpper16 | 9 | 7 | [music-selection](original-modern-music-selection.md) |
 | `005177cc` | GetRuntimeRandomModulo | 18 | 16 | [music-selection](original-modern-music-selection.md) |

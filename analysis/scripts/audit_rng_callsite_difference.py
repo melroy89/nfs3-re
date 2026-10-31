@@ -15,7 +15,7 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw)
         assembly=subprocess.check_output(['objdump','-d','-Mintel',relative],cwd=ROOT,text=True)
-        calls={f'{target:08x}':[] for target in (0x4e0d88,0x51778c,0x5177ac,0x5177cc)}
+        calls={f'{target:08x}':[] for target in (0x4e0d88,0x517784,0x51778c,0x5177ac,0x5177cc)}
         for match in re.finditer(r'^\s*([0-9a-f]+):[^\n]*\bcall\s+0x([0-9a-f]+)\b',assembly,re.M):
             va,target=(int(x,16) for x in match.groups())
             if f'{target:08x}' not in calls:continue
@@ -37,6 +37,26 @@ def main():
     assert old-new=={'0041001a','0041016f','0041058f'} and not new-old
     assert result['binaries']['official_modern']['decoded_direct_calls']['005177cc']==[
         '0040fed7','0040feed','0040ffa1']
+    modern_row=result['binaries']['official_modern']
+    assert modern_row['decoded_direct_calls']['00517784']==['004a3e02']
+    modern=pefile.PE(str(ROOT/modern_row['path']))
+    startup=modern.get_data(0x4a3dfd-0x400000,10)
+    assert startup==bytes.fromhex('e88ee90400e87d390700')
+    clock=modern.get_data(0x4f2790-0x400000,11)
+    assert clock==bytes.fromhex('5152ff15644653005a59c3')
+    imports={i.address:(d.dll.decode(),i.name.decode())
+             for d in modern.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
+    assert imports[0x534664][1]=='timeGetTime'
+    setter=modern.get_data(0x517784-0x400000,6)
+    assert setter==bytes.fromhex('a3b4327a00c3')
+    result['modern_music_lcg_startup_seed']={
+        'startup_calls_start':'004a3dfd','calls_hex':startup.hex(),
+        'clock_helper':'004f2790','clock_hex':clock.hex(),
+        'clock_iat':'00534664','import_dll':imports[0x534664][0],
+        'import_name':imports[0x534664][1],
+        'setter':'00517784','setter_hex':setter.hex(),'state':'007a32b4',
+        'flow':'Unmodified EAX clock return becomes stored 32-bit LCG seed.',
+        'limit':'Observed startup path only; no run count, actual seed, entropy quality or indirect reseeding claim.'}
     result['shared_generator_callsite_delta']={'original_only':sorted(old-new),
         'modern_only':sorted(new-old),'same_address_sites_in_both':len(old&new)}
     result['limits']=['Linear disassembly can decode embedded data or miss alternate instruction boundaries.',

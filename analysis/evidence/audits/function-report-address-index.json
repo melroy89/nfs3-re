@@ -201,7 +201,7 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "73f4bb65c6871a2eedbb5991cc5e604674a96da34ad69405bf013de167a17cf3"
+      "sha256": "e94451ad55bf42444842e7a9245a74d2e5f3c09d52defba9829f4dc0dedd1fa6"
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -7518,6 +7518,14 @@
           ]
         },
         {
+          "path": "analysis/original-modern-music-selection.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a3dfd",
+            "004a3e02"
+          ]
+        },
+        {
           "path": "analysis/original-modern-small-entry-followup.md",
           "entry_mentioned": true,
           "addresses": [
@@ -11533,6 +11541,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-music-selection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f2790"
+          ]
+        },
+        {
           "path": "analysis/original-modern-screenshot-feedback.md",
           "entry_mentioned": true,
           "addresses": [
@@ -12444,6 +12459,13 @@
       "original_sha256": "34e7a837dc7b05eb0b78902a802f13aba2e45f40ca99ba57c3ecb7d7a18cf05a",
       "modern_sha256": "478fca284df26e62029b4df550f35c1587c8e02552f9d783d403ca07e8b48b26",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-music-selection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00517784"
+          ]
+        },
         {
           "path": "analysis/original-modern-small-entry-followup.md",
           "entry_mentioned": true,

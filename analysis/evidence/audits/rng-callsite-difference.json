@@ -208,6 +208,7 @@
           "00501ccb",
           "005224ee"
         ],
+        "00517784": [],
         "0051778c": [],
         "005177ac": [],
         "005177cc": []
@@ -422,6 +423,9 @@
           "00501ccb",
           "005224ee"
         ],
+        "00517784": [
+          "004a3e02"
+        ],
         "0051778c": [
           "005177ac",
           "005177c1"
@@ -442,6 +446,20 @@
         "sha256": "24d6cd6cc71bf27c0feb8c68fa385454a052cec4a33f9b0d70b68e8b0ea9cb88"
       }
     }
+  },
+  "modern_music_lcg_startup_seed": {
+    "startup_calls_start": "004a3dfd",
+    "calls_hex": "e88ee90400e87d390700",
+    "clock_helper": "004f2790",
+    "clock_hex": "5152ff15644653005a59c3",
+    "clock_iat": "00534664",
+    "import_dll": "WINMM.dll",
+    "import_name": "timeGetTime",
+    "setter": "00517784",
+    "setter_hex": "a3b4327a00c3",
+    "state": "007a32b4",
+    "flow": "Unmodified EAX clock return becomes stored 32-bit LCG seed.",
+    "limit": "Observed startup path only; no run count, actual seed, entropy quality or indirect reseeding claim."
   },
   "shared_generator_callsite_delta": {
     "original_only": [
