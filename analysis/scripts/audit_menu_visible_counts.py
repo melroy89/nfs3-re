@@ -54,11 +54,14 @@ def main():
         result.setdefault('widget_type_bindings',{})[label]=bindings
         spans=[]
         capture=ROOT/'analysis/captures/modern-differences/menu-visible-counts';capture.mkdir(parents=True,exist_ok=True)
-        for start,end in [(0x449060,0x4490d8),(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
+        for start,end in [(0x4623a0,0x46249b),(0x4624a0,0x4624fa),(0x449060,0x4490d8),(0x449240,0x4492bf),(0x449393,0x4493a3),(0x442bf0,0x442c49),(0x442c50,0x442c74),(0x463ff0,0x464052),(0x4645e3,0x464601),(0x464560,0x4646db)]:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             spans.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT))})
         assert struct.unpack('<I',pe.get_data(0x4921c,4))[0]==0x4492aa
         layout_bodies[label]=pe.get_data(0x464560-0x400000,0x17b)
+        assert pe.get_data(0x4623d8-0x400000,6)==bytes.fromhex('66c74054d007')
+        assert pe.get_data(0x4624e8-0x400000,3)==bytes.fromhex('0fbff8')
+        assert pe.get_data(0x4624f2-0x400000,8)==bytes.fromhex('668b515466895356')
         expected_padding = 5 if label == 'original' else 15
         expected_extent_add = 5 if label == 'original' else 2
         assert pe.get_data(0x4645ea-0x400000,5)==b'\x05'+struct.pack('<I',expected_padding)
@@ -69,6 +72,8 @@ def main():
         assert pe.get_data(0x464038-0x400000,6)==bytes.fromhex('8b55fac1fa10')
         result.setdefault('field_writer_spans',{})[label]=spans
         result['binary_field_descriptors'][label]={'path':relative,'sha256':expected,'rows':rows}
+    initializer_hashes=[next(row['sha256'] for row in result['field_writer_spans'][label] if row['start']=='004623a0') for label in ('original','official_modern')]
+    assert initializer_hashes[0]==initializer_hashes[1]
     changed=[0x464560+i for i,(a,b) in enumerate(zip(layout_bodies['original'],layout_bodies['official_modern'])) if a!=b]
     regions=[(0x46456b,0x464587),(0x4645eb,0x4645ec),(0x4645f9,0x4645fa)]
     assert all(any(start<=address<end for start,end in regions) for address in changed)
@@ -84,6 +89,7 @@ def main():
         expected=struct.unpack('<h',struct.pack('<H',count & 0xffff))[0]
         assert extracted==expected
         witnesses.append({'lookup_value':lookup,'count':count,'extracted_signed_count_word':extracted})
+    result['cascade_count_contract']={'initializer':'004623a0','input_handler':'004624a0','layout_helper':'004628d0','cap_offset':'0x54','effective_count_offset':'0x56','zero_cap_initialization':2000,'selection':'Signed low WORD of count compared with signed cap WORD; ordinary0..32767 gives minimum.','limits':'Callback registration and local consumers verified; active asset selection and callback invocation not observed.'}
     result['overlapping_load']={'interpretation':'signed low WORD of local -4 count; independent of local -8 descriptor value','host_byte_layout_witnesses':witnesses,'scope':'Host byte-layout arithmetic only; no target instructions executed.'}
     result['limits']=['Authored values only; runtime widget counts not measured.','Backup provenance unauthenticated; missing/ambiguous pairs reported.']
     (ROOT/'analysis/evidence/audits/menu-visible-counts.json').write_text(json.dumps(result,indent=2)+'\n')

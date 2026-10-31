@@ -147,3 +147,29 @@ This resolves an earlier scope mistake: the signed-WORD minimum and expanded ext
 Template installer`00449060..004490d8`, now retained in both binaries, searches12-byte registration rows by type ID, loads the template pointer, and copies **`0xbc` bytes** into construction record`00604ee0 + 0xbc*instanceIndex`. This establishes the callback/default installation mechanism alongside the parser’s later instance-field writes. It does not yet prove every callback invocation or that every template’s source object has an independently verified0xbc-byte layout; the observed copy length is preserved as evidence.
 
 Next, inspect the cascade template’s own callback targets and offset`0x54` consumers to connect its nine authored changes. For droplist, trace active instance selection and callback invocation before declaring full construction-to-render linkage. No initializer, parser, callback or template copy was executed.
+
+## Cascade cap reaches its own effective-count and layout fields
+
+Following the registered **cascade** callbacks now supplies the missing widget-specific chain. Its type11h template records initializer **`004623a0`**, renderer **`00461d00`**, input handler **`004624a0`**, and layout **`004628d0`**. The type1dh droplist registration remains separate.
+
+The complete **251-byte** initializer`004623a0..0046249b` is byte-identical. It tests WORD widget+`0x54`; if zero, it writes **2000** there. Nonzero authored values survive this local defaulting step. It also clears expanded flag WORD+`0x42`, selection WORD+`0x52`, and WORD+`0x58`, while storing cap−1 at WORD+`0x5a`. Other asset/resource setup calls in this initializer remain external dependencies.
+
+The paired input span **`004624d7..004624fa`** is byte-identical and calculates:
+
+1. Obtain list count through`00442c50`, using list name at widget+`0x60`.
+2. Sign-extend authored cap WORD+`0x54` via DWORD+`0x52` shifted16.
+3. Sign-extend the low count WORD using MOVSX EDI,AX.
+4. If signed count is less than cap, keep count; otherwise select cap. Store chosen WORD at **widget+`0x56`**.
+
+Within count/cap range0..32767 this is `min(listCount,maxvisitem)`. Signed16 edge cases and truncation remain part of the contract. The preceding prefix checks for a nonzero list pointer before this path; it does not establish a complete list-length bound or the validity of every data pointer.
+
+The [complete cascade layout helper](original-modern-car-alias.md#complete-004628d0-layout-helper) reads exactly that WORD+`0x56`, then stores WORD extent+`0x20` as original`16*count+5`, Modern`16*count+2`. Thus the nine uniquely paired **cascade** cap increases now have a supported local consumer chain, distinct from the previously misattributed droplist path. When a selected list is long enough to reach both authored caps, their conditional original→Modern extents are:
+
+| Authored cap change | Conditional extent change |
+|---|---|
+| 4→9 | 69→146 |
+| 5→9 | 85→146 |
+| 7→9 | 117→146 |
+| 10→16 | 165→258 |
+
+These are internal WORD arithmetic results, not measured physical pixels. Shorter lists can produce different effective counts; cap defaults, callback timing and expanded state also matter. Active file selection, parser section admission, actual list population and callback invocation remain unobserved. This closes the **registered local field/consumer chain**, not the rendered outcome or historical release attribution. No game instructions were executed.

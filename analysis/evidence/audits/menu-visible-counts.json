@@ -601,6 +601,18 @@
   "field_writer_spans": {
     "original": [
       {
+        "start": "004623a0",
+        "end": "0046249b",
+        "sha256": "19831daaa7b227841234e6dd761ecab34c1e594cd396b7c0b04fb9452ccf8f4b",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-004623a0.asm"
+      },
+      {
+        "start": "004624a0",
+        "end": "004624fa",
+        "sha256": "5be61b743762e2cb5501f14624e33c8174ee4e9985ec4aa7a17dad88eee9c89f",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/original-004624a0.asm"
+      },
+      {
         "start": "00449060",
         "end": "004490d8",
         "sha256": "51ceec3d6dee39d285616e7ac95a0c12898903fd1fd32a075fbb9bcb5abdf3ce",
@@ -650,6 +662,18 @@
       }
     ],
     "official_modern": [
+      {
+        "start": "004623a0",
+        "end": "0046249b",
+        "sha256": "19831daaa7b227841234e6dd761ecab34c1e594cd396b7c0b04fb9452ccf8f4b",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-004623a0.asm"
+      },
+      {
+        "start": "004624a0",
+        "end": "004624fa",
+        "sha256": "2b62c364fa62f35b0af2f7785618959adae6794f74da1dd36bb9e8c7bfc81f21",
+        "assembly": "analysis/captures/modern-differences/menu-visible-counts/official_modern-004624a0.asm"
+      },
       {
         "start": "00449060",
         "end": "004490d8",
@@ -749,6 +773,16 @@
       ]
     ],
     "boundary": "Entry through both observed RET paths; excludes following alignment/data."
+  },
+  "cascade_count_contract": {
+    "initializer": "004623a0",
+    "input_handler": "004624a0",
+    "layout_helper": "004628d0",
+    "cap_offset": "0x54",
+    "effective_count_offset": "0x56",
+    "zero_cap_initialization": 2000,
+    "selection": "Signed low WORD of count compared with signed cap WORD; ordinary0..32767 gives minimum.",
+    "limits": "Callback registration and local consumers verified; active asset selection and callback invocation not observed."
   },
   "overlapping_load": {
     "interpretation": "signed low WORD of local -4 count; independent of local -8 descriptor value",

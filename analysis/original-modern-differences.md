@@ -388,6 +388,8 @@ The [complete list-renderer comparison](original-modern-car-alias.md#complete-re
 
 The [widget registration correction](original-modern-common-menu-buttons.md#type-registration-separates-cascade-and-droplist-consumers) identifies the inspected renderer/input/layout callbacks as droplist type1dh. The nine authored cap increases are cascades type11h, requiring separate callback tracing. Their apparent linkage through matching list names was insufficient and has been corrected.
 
+The [cascade-specific follow-up](original-modern-common-menu-buttons.md#cascade-cap-reaches-its-own-effective-count-and-layout-fields) now traces type11h callbacks and the correct cap0x54→effective0x56→layout-extent chain. The nine authored increases have a registered local consumer; list population, active assets and visible row counts remain unverified. This evidence is separate from the droplist chain corrected above.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
