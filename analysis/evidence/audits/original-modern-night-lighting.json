@@ -1,0 +1,87 @@
+{
+  "kind": "static-night-lighting-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "0041c670",
+          "end": "0041c9e4",
+          "bytes_sha256": "075a060632aaeaa32c570f1f4e45e19e9bc5990b3b48a49379555bc9ccfad064",
+          "assembly": "analysis/captures/modern-differences/night-lighting/original-0041c670.asm",
+          "assembly_sha256": "688aa6f4bc69d0b8fa91e989f99088e0a06187bb310c63b78f83c4b9391f1bc1"
+        },
+        {
+          "start": "004bbde0",
+          "end": "004bbe3a",
+          "bytes_sha256": "7cfd13c6f23aef10f899a101139f4528e5597b6f9a458015fd208881e305caa6",
+          "assembly": "analysis/captures/modern-differences/night-lighting/original-004bbde0.asm",
+          "assembly_sha256": "1224fe30a71b678e4b81661bd0a8130b7d6fec38ca2af2185561f738fb604b74"
+        },
+        {
+          "start": "0041d04e",
+          "end": "0041d06d",
+          "bytes_sha256": "93c333676394b217ddb1d72f67388dcb0db71f5b380cad768152be2b585a093d",
+          "assembly": "analysis/captures/modern-differences/night-lighting/original-0041d04e.asm",
+          "assembly_sha256": "9c69a6a586b33e6a141b1f1968703952ab6031cf4e2a538aa7de36b553a170e8"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "0041c670",
+          "end": "0041c9e4",
+          "bytes_sha256": "844d7b823fd3bbe205593bcbe61ce0cb034c011ef211d1533154691d8e8f845d",
+          "assembly": "analysis/captures/modern-differences/night-lighting/official_modern-0041c670.asm",
+          "assembly_sha256": "b8d1bf55891987fb7535b2ef75c4cbc07bf0d675613496b6ebc17b45a4a87670"
+        },
+        {
+          "start": "004bbde0",
+          "end": "004bbe3a",
+          "bytes_sha256": "7cfd13c6f23aef10f899a101139f4528e5597b6f9a458015fd208881e305caa6",
+          "assembly": "analysis/captures/modern-differences/night-lighting/official_modern-004bbde0.asm",
+          "assembly_sha256": "49c2cb315030e3c71abc7aaf92243573fa1b2415aad5c6fb330787c70cad2a8c"
+        },
+        {
+          "start": "0041d04e",
+          "end": "0041d06d",
+          "bytes_sha256": "93c333676394b217ddb1d72f67388dcb0db71f5b380cad768152be2b585a093d",
+          "assembly": "analysis/captures/modern-differences/night-lighting/official_modern-0041d04e.asm",
+          "assembly_sha256": "a4e6b8cfeb3c988d1129030f154969f45a5be3def58df8b25f09b61229b48cb8"
+        }
+      ]
+    }
+  },
+  "identical_ranges": [
+    {
+      "start": "0041c670",
+      "end": "0041c684",
+      "sha256": "705fcd8fae27988d5aeb4b48c1cd525f8c63521c3a4a253a7c8df85ed32097d0"
+    },
+    {
+      "start": "0041c6cc",
+      "end": "0041c9e4",
+      "sha256": "4869c2ac180fcb3dface0555933082a9c29d3e1f2d289227d737bea6169556b2"
+    },
+    {
+      "start": "004bbde0",
+      "end": "004bbe3a",
+      "sha256": "7cfd13c6f23aef10f899a101139f4528e5597b6f9a458015fd208881e305caa6"
+    },
+    {
+      "start": "0041d04e",
+      "end": "0041d06d",
+      "sha256": "93c333676394b217ddb1d72f67388dcb0db71f5b380cad768152be2b585a093d"
+    }
+  ],
+  "limits": [
+    "No graphics, night race or instruction execution.",
+    "Context type1 and option global not assigned mirror/quality names without producer evidence.",
+    "Identical body does not establish transitive numeric, allocation or rendered equivalence."
+  ]
+}

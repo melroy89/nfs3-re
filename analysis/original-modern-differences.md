@@ -352,6 +352,8 @@ The [title-delay comparison](original-modern-title-delay.md) maps IntroSplashTim
 
 The [startup requirements comparison](original-modern-startup-requirements.md) maps changed memory arithmetic, diagnostics and the added desktop-depth gate, including overflow and fractional-MiB limits.
 
+The [night-lighting comparison](original-modern-night-lighting.md) isolates an expanded context admission gate, unchanged lighting tail and retained scratch-allocation limitation; mirror attribution remains unresolved.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
