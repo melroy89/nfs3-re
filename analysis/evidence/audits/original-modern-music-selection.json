@@ -86,6 +86,13 @@
         171,
         172
       ],
+      "tracks_descriptor_005563fc": [
+        "00537e34",
+        "0055636e",
+        "00556382",
+        "00000000",
+        "006fd4ac"
+      ],
       "menu_choice_descriptor_00556bf4": [
         "005382b4",
         "0055633e",
@@ -207,18 +214,32 @@
           "assembly_sha256": "18f7feb3cd3cd8869fa0b29e9508740ad677219ab63dfdeb20e3e193d06879e2"
         },
         {
-          "start": "004b5d30",
-          "end": "004b5d35",
-          "bytes_sha256": "a50da9a77ccf4bf7b2828ced0ae116b5205c30ac39241cb6c02873c61613c4a2",
-          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-004b5d30.asm",
-          "assembly_sha256": "c6eae300be9cbe360060b8431d75ed7623d00b7f76d17fe76768f0bbf5f82fc3"
+          "start": "004b5d21",
+          "end": "004b5d3a",
+          "bytes_sha256": "a995c183817c7309072c8c504eb985a9f87abc84e51adefd46364d5122c10e53",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-004b5d21.asm",
+          "assembly_sha256": "1fe89ad5a54fb2e661cb05021df4381473649a562bdfe033aa308433950577d6"
         },
         {
-          "start": "004a3489",
-          "end": "004a348e",
-          "bytes_sha256": "ce93fc62d51e33f4dbaec8e0c0975a32982d8257bd62003dc2bc233155a82dc0",
-          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-004a3489.asm",
-          "assembly_sha256": "3a3e4725c22a79286aa51a11a53f98f72898478b81496db9d03028f518e997fa"
+          "start": "004a33f0",
+          "end": "004a354b",
+          "bytes_sha256": "95ce23b82b9197f91f7bf45428720a8420124a94a852d75b1e355b2b807d2dec",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-004a33f0.asm",
+          "assembly_sha256": "7c23ea4116a2d943243cb33354d5ae7e6616348e58fbddadd7b6953113b52ebe"
+        },
+        {
+          "start": "0040fed0",
+          "end": "0040fefa",
+          "bytes_sha256": "e8300e4c141b39b4a17d2f457f39e6438b43793bd87b032668afc2445a66c181",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-0040fed0.asm",
+          "assembly_sha256": "9d93ca01a0de606062c92b0114a33908e9e530599d4799ef0e2859d484237f26"
+        },
+        {
+          "start": "0051778c",
+          "end": "005177de",
+          "bytes_sha256": "431ab440fed84ae70c5be0795723e34cc04d4bc28c2ed5f574b8f629331d0248",
+          "assembly": "analysis/captures/modern-differences/music-selection/official_modern-0051778c.asm",
+          "assembly_sha256": "0fbce05dad4fe178747b2f51b8045dc7782a3e476a278af4d8e973e71a44cd3d"
         },
         {
           "start": "004104f0",
@@ -281,6 +302,13 @@
         1941,
         1942
       ],
+      "tracks_descriptor_005563fc": [
+        "00537e34",
+        "0055636e",
+        "00556382",
+        "00000000",
+        "006fd4ac"
+      ],
       "menu_choice_descriptor_00556bf4": [
         "005382b4",
         "00556336",
@@ -334,7 +362,7 @@
   },
   "limits": [
     "No sound/game/instruction execution.",
-    "Track asset names, RNG distribution and audible behavior unverified.",
+    "Audible track identity, RNG distribution and complete playback-route coverage unverified.",
     "Original list IDs decoded with official Modern English; original retail language provenance unverified."
   ],
   "official_english": {

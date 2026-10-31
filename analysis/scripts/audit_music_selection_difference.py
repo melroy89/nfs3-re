@@ -15,14 +15,15 @@ RETAINED = [(0x4104f0,0x41057f),(0x4106b8,0x4107b2),
 SPANS = {'original': [(0x40ffd0,0x410027),(0x410030,0x410329),(0x4103a0,0x41045d)],
     'official_modern': [(0x40fefc,0x40ff80),(0x40ff9c,0x40fffb),
         (0x4103a0,0x410446),(0x410606,0x410615),
-        (0x4b5d30,0x4b5d35),(0x4a3489,0x4a348e)]}
+        (0x4b5d21,0x4b5d3a),(0x4a33f0,0x4a354b),
+        (0x40fed0,0x40fefa),(0x51778c,0x5177de)]}
 
 
 def main():
     capture=ROOT/'analysis/captures/modern-differences/music-selection'
     capture.mkdir(parents=True,exist_ok=True)
     result={'kind':'static-music-selection-comparison','range_end':'exclusive','binaries':{},
-        'limits':['No sound/game/instruction execution.','Track asset names, RNG distribution and audible behavior unverified.']}
+        'limits':['No sound/game/instruction execution.','Audible track identity, RNG distribution and complete playback-route coverage unverified.']}
     images={}
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
@@ -49,6 +50,10 @@ def main():
         assert ids==expected_ids
         item['race_choice_descriptor_00556be0']=[f'{v:08x}' for v in descriptor]
         item['race_choice_label_ids']=ids
+        tracks_descriptor=struct.unpack('<5I',pe.get_data(0x1563fc,20))
+        assert tracks_descriptor[4]==0x6fd4ac
+        assert pe.get_data(tracks_descriptor[0]-0x400000,16).split(b'\0')[0]==b'tracks'
+        item['tracks_descriptor_005563fc']=[f'{v:08x}' for v in tracks_descriptor]
         menu_descriptor=struct.unpack('<5I',pe.get_data(0x156bf4,20))
         assert menu_descriptor[0]==0x5382b4 and menu_descriptor[4]==0x6fbbec
         assert pe.get_data(0x1382b4,16).split(b'\0')[0]==b'menutunes'

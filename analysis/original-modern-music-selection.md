@@ -20,9 +20,9 @@ Modern replaces that caller's selection work with helper **`0040fefc`**, which u
 | 14 | Same increment/remap | Set 0 |
 | 15 | Same increment/remap | Set 1 |
 
-The progression's normal track sequence is **0,1,2,3,8,0**, depending on its prior value. Invalid settings/states are not normalized by a general range check; the table above is deliberately scoped. Settings 0..2 copy another global rather than incrementing here, so this helper alone does not explain every advertised random race mode.
+The progression's normal track sequence is **0,1,2,3,8,0**, depending on its prior value. Invalid settings/states are not normalized by a general range check; the table above is deliberately scoped. Settings0..2 copy the selected circuit index rather than incrementing the playlist: these are the three track-default choices, not the Random modes13..15. The `tracks` descriptor at `005563fc` names selection storage `006fd4ac`; race initialization also passes this same value to track-scene loading.
 
-Direct calls are retained at **`00410426`** and race-loading call `004a3489`. The latter demonstrates a loading-sequence update, not proof of exactly one advance per completed race. Source/initialization of `006fd4ac` and all caller cadence remain pending.
+Direct calls are retained at **`00410426`** and race-loading call `004a3489`. The latter demonstrates a loading-sequence update, not proof of exactly one advance per completed race. The selected-circuit descriptor and the fuller initialization/seed evidence below resolve that source’s role; all application-level caller cadence remains pending.
 
 ## Modern menu subset cycles
 
@@ -37,7 +37,7 @@ New helper `0040ffb4` reads menu setting `006fbbec`:
 
 For modes 0..2, it reads cursor `005525fc`, resets unsigned cursor ≥6 to zero, reads ID from table **`[1,2,3,4,7,5]`**, increments the cursor and tests the selected mask. It repeats until an accepted ID is found, stores the next cursor and returns that ID. Each mask intersects the fixed table, so the shown normal masks have an accepted element. This is cyclic subset selection, not a fresh random draw on every call.
 
-Seed helper `0040ff9c` calls `005177cc` with EAX=20, indexes a 20-byte mapping at `0040ff88` and writes the resulting cursor to `005525fc`. Direct call `004b5d30` establishes a seed-initialization site; the RNG helper's full range/distribution contract is not reconstructed here. Main music routine calls the cycle helper at `0041060b` before storing its result at `0055258c`.
+Seed helper `0040ff9c` calls `005177cc` with EAX=20, indexes a 20-byte mapping at `0040ff88` and writes the resulting cursor to `005525fc`. Direct call `004b5d30` establishes a seed-initialization site. The RNG helper’s bounded return rule is now retained below; seed quality and distribution are not established. Main music routine calls the cycle helper at `0041060b` before storing its result at `0055258c`.
 
 The `menutunes` descriptor at **`00556bf4`** selects `006fbbec`. Original list pointer `0055633e` contains IDs466..473: Random followed by seven titles. Modern pointer `00556336` contains IDs1946,1944,1945 followed by467..473. Decoding the hash-pinned official English resource gives modes0 **Random (All)**,1 **Random (Fast)**,2 **Random (Slow)**. The names therefore come from resource/list correspondence, not an inference from mask bits. Original IDs are decoded with the Modern language resource; original language provenance remains unverified.
 
@@ -66,7 +66,7 @@ These are observable call and state rules. The full meanings of the backend oper
 ## Catalog conclusions and unknowns
 
 - **MP153-004:** subset masks, cycling and Fast/Slow list labels are statically supported; musical tempo and actual playback remain unverified.
-- **MP153-005:** stored race progression is supported for modes 13..15, but other modes use `006fd4ac`; exactly one new track per race and complete advertised playlist behavior remain partial.
+- **MP153-005:** stored race progression is supported for modes 13..15, track-default modes use the selected circuit; update placement and seeding are verified below, while exactly one advance per race and complete advertised playlist behavior remain partial.
 - **MP153-003:** the race list names three Random modes and matches the helper’s style rules; asset coverage and actual playback remain unverified.
 - Volume fixes (**MP153-001**) and double-fade prevention (**MP153-006**) are not established by this selection analysis. They require backend/caller comparisons rather than assuming all audio claims follow from changed policy bytes.
 
@@ -121,3 +121,19 @@ The fixed original switch pairs settings3/4 with stem0 (`home`),5/6 with1 (`lost
 | empr | Flimsy | Warped |
 
 This is a selector/list association, not identification by listening or embedded song metadata. Original setting11 has the exceptional randomized style branch documented above, so its loader route cannot simply be described as always selecting `EMPRROCK.MUS`. Modern's helper uses the ordinary parity rule for all fixed settings3..12. On the inspected original Random13 route, the missing distinct Rock stem is therefore the one associated with **Flimsy**, and all five available Techno filenames are excluded. Other callers, route reachability and actual playback still require qualification.
+
+## Modern playlist seeding and race-load update placement
+
+New helper **`0040fed0..0040fefa`** initializes `005525f8` from `005177cc(5)`, remapping result4 to8, then initializes style `00552854` from `005177cc(2)`. Direct caller **`004b5d35`** follows menu-cursor seeding at `004b5d30`; the retained caller witness starts at instruction `004b5d21`. This establishes the two calls' local order, not the number of times the entire application reaches initialization.
+
+The retained RNG chain **`0051778c..005177de`** establishes the bounded calls without executing them:
+
+- `0051778c`: update unsigned state `007a32b4 = (old * 0x343fd + 0x269ec3) mod 2^32`, return the updated 32-bit value.
+- `005177ac`: call that update, then return its upper16 bits by logical shift16.
+- `005177cc`: preserve incoming ECX/EDX, save incoming EAX as divisor, call `005177ac`, unsigned DIV by the saved divisor, and return the remainder in EAX.
+
+For positive divisors5,2,20 used here, return ranges are therefore0..4,0..1,0..19. Zero would fault rather than return a value. This is a range and state-transition contract; no claim of uniform independent samples or a particular startup seed follows. The game’s unsigned wrapping arithmetic must remain explicit in a C reconstruction.
+
+The full Modern **`InitializeRaceSession` envelope `004a33f0..004a354b`** now replaces the earlier five-byte call-only witness. After a first abort poll at `004a3470` returns zero, the routine calls `004a3558`, emits a progress update and calls the selector **once at `004a3489` on this shown straight-line path**. It then polls again at `004a348e`. A nonzero result branches to cleanup `004a3532`; a later nonzero track-scene loader result at `004a34c7` also branches there. The selected circuit is loaded from `006fd4ac` at `004a34bd` and passed to `004dbbe0` at `004a34c2`.
+
+Consequently, Random modes13..15 advance before successful scene loading is known; a later abort/failure does not roll back `005525f8` or `00552854` in this caller. Called cleanup helpers could have additional effects, which are not established here. A failed attempt that reaches the selector can therefore advance the state at that point; proving its persistent effect after cleanup requires those callees. Fixed choices3..12 can also reach the selector through contextual routine `004103a0`, where they assign deterministic values rather than increment. This distinction explains why direct-call counts alone cannot establish one playlist advance per completed race. Remaining work is outer loading/retry cadence, cleanup effects and all indirect calls, followed by any separately authorized playback validation.
