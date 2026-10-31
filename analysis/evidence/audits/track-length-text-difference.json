@@ -124,6 +124,7 @@
       }
     }
   },
+  "string_payload_change": "Second table pointers retained; original decimal commas replaced by dots. Original third-table dot strings match Modern second-table values.",
   "interval": {
     "start": "00456318",
     "end_exclusive": "00456800",

@@ -22,13 +22,13 @@ Both then call text helper`00452190` with the same two stack constants0 and`0048
 
 ## Retained and removed initialized data
 
-The first two nine-pointer tables are byte-identical across the pinned EXEs, and their pointed strings remain:
+The first two nine-pointer tables are byte-identical across the pinned EXEs. Their **pointed strings differ** in the second table: original uses decimal commas, Modern decimal dots. The first table’s strings match:
 
-| Table | Nine strings |
-|---|---|
-| `00559644` | 3.6, 5.4, 4.9, 5.5, 5.2, 6.3, 5.3, 6.4, 4.6 |
-| `00559668` | 5.8, 8.6, 7.8, 8.8, 8.3, 10.1, 8.5, 10.2, 7.4 |
+| Table | Original strings | Modern strings |
+|---|---|---|
+| `00559644` | `3.6; 5.4; 4.9; 5.5; 5.2; 6.3; 5.3; 6.4; 4.6` | Same |
+| `00559668` | `5,8; 8,6; 7,8; 8,8; 8,3; 10,1; 8,5; 10,2; 7,4` | `5.8; 8.6; 7.8; 8.8; 8.3; 10.1; 8.5; 10.2; 7.4` |
 
-The original third table at`0055968c` is zeroed in Modern; all original pointed strings are retained in the manifest. The old format addresses are empty in Modern, while old`00538d7c` contains`credits` rather than the Modern format. Same-address string interpretation must therefore remain version-bound. Zeroing the third table does not prove absence of other original readers or complete removal of every associated data path.
+The original third table at`0055968c` points to decimal-dot strings matching Modern’s second-table values; the third pointer table itself is zeroed in Modern. All original pointed strings are retained in the manifest. The old format addresses are empty in Modern, while old`00538d7c` contains`credits` rather than the Modern format. Same-address string interpretation must therefore remain version-bound. Zeroing the third table does not prove absence of other original readers or complete removal of every associated data path.
 
-**Verified static:** changed selector/global, branch mapping, language IDs, format consolidation, retained tables, zeroed third table and local drawing arguments. **Unresolved:** complete widget/function contract, selector producers, localized unit meanings, index bounds, final text/render output and historical release attribution. No precision, replay or multiplayer conclusion follows from this UI formatting rewrite.
+**Verified static:** changed selector/global, branch mapping, language IDs, format consolidation, retained pointer tables, comma-to-dot string changes, zeroed third table and local drawing arguments. **Unresolved:** complete widget/function contract, selector producers, localized unit meanings, index bounds, final text/render output and historical release attribution. No precision, replay or multiplayer conclusion follows from this UI formatting rewrite.

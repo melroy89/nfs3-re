@@ -28,7 +28,13 @@ def main():
     for va in (0x559644,0x559668):
         assert images['original'].get_data(va-0x400000,36)==images['official_modern'].get_data(va-0x400000,36)
     assert images['official_modern'].get_data(0x15968c,36)==b'\0'*36
-    assert [row['strings'] for row in result['baselines']['original']['tables'][:2]] == [row['strings'] for row in result['baselines']['official_modern']['tables'][:2]]
+    old_tables=result['baselines']['original']['tables']
+    new_tables=result['baselines']['official_modern']['tables']
+    assert old_tables[0]['strings']==new_tables[0]['strings']
+    assert [value.replace(',', '.') for value in old_tables[1]['strings']]==new_tables[1]['strings']
+    assert all(',' in value for value in old_tables[1]['strings'])
+    assert old_tables[2]['strings']==new_tables[1]['strings']
+    result['string_payload_change']='Second table pointers retained; original decimal commas replaced by dots. Original third-table dot strings match Modern second-table values.'
     a,b=[pe.get_data(0x56318,0x4e8) for pe in images.values()]
     changes=[0x456318+i for i,(x,y) in enumerate(zip(a,b)) if x!=y]
     assert len(changes)==152 and all(0x4565d6<=va<0x456670 for va in changes)
@@ -37,7 +43,7 @@ def main():
         'limit':'Tail comparison only; shared enclosing entry and full widget registration not established.'}
     result['limits']=['No drawing, language lookup or instruction execution.','Selector/unit semantics, valid track indices and complete localization not established.','Third original table zeroed in Modern; all other readers not excluded.']
     (ROOT/'analysis/evidence/audits/track-length-text-difference.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: paired formatting tails, retained two tables, zeroed third and152 localized interval differences')
+    print('PASS: paired formatting tails, retained pointer tables, comma-to-dot payloads, zeroed third and152 localized interval differences')
 
 
 if __name__=='__main__':main()
