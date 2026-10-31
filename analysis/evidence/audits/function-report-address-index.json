@@ -69,7 +69,7 @@
     },
     {
       "path": "analysis/original-modern-dialog-input.md",
-      "sha256": "33d74cce67b4f174f80a660685448136139980c8ca615827e5289adbdb09acc7"
+      "sha256": "e917eb10cde9b099dc20c0a8d16f263e2eb6976e2b7eb5e634b203122208b276"
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -338,8 +338,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 254,
-    "without_address_mentions": 107
+    "with_address_mentions": 256,
+    "without_address_mentions": 105
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -2186,7 +2186,15 @@
       "changed_bytes": 40,
       "original_sha256": "587d2194a57c01c9ac6b80e6277dfc4bd921c36238d6e2f4317c0162b89039dd",
       "modern_sha256": "9c50604fa546bb0d874c2081d871a2e17099e110c9f7995633f9cc79ae4014ea",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-dialog-input.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0043fda0"
+          ]
+        }
+      ]
     },
     {
       "entry": "0043fdd0",
@@ -2204,7 +2212,17 @@
       "changed_bytes": 4,
       "original_sha256": "0e819e2eaba4bab7c588f00f57fd7a95d07cd2232895444b08ec0cc83c32adeb",
       "modern_sha256": "20b0cb31f5881c42112335943597cb2e0e8eb970d91d8db3c420b2bf043571f3",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-dialog-input.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0043fdd0",
+            "0043fe09",
+            "0043fe0e"
+          ]
+        }
+      ]
     },
     {
       "entry": "0043fe50",
@@ -9269,6 +9287,13 @@
         },
         {
           "path": "analysis/original-modern-credits-panorama.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004d1850"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-dialog-input.md",
           "entry_mentioned": true,
           "addresses": [
             "004d1850"

@@ -1,0 +1,76 @@
+{
+  "kind": "localized-notice-wrapper-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00444a80",
+          "end_exclusive": "00444b1d",
+          "sha256": "4ef91c596194b1eb5e0b0781e5714befaedf16c24744a2a1cf194dedd4b7b08d",
+          "assembly": "analysis/captures/modern-differences/localized-notice/original-00444a80.asm"
+        },
+        {
+          "start": "0043fdd0",
+          "end_exclusive": "0043fe0e",
+          "sha256": "d438b321c02d39241bda865cbb934a312815100c16af272c46996e8f0b0e190f",
+          "assembly": "analysis/captures/modern-differences/localized-notice/original-0043fdd0.asm"
+        },
+        {
+          "start": "00444be0",
+          "end_exclusive": "00444c0d",
+          "sha256": "3e57f9c4a82832b625a3c6f1f59850e77d1de5d88721c94e6c6689be191d871f",
+          "assembly": "analysis/captures/modern-differences/localized-notice/original-00444be0.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00444a80",
+          "end_exclusive": "00444b1d",
+          "sha256": "4ef91c596194b1eb5e0b0781e5714befaedf16c24744a2a1cf194dedd4b7b08d",
+          "assembly": "analysis/captures/modern-differences/localized-notice/official_modern-00444a80.asm"
+        },
+        {
+          "start": "0043fdd0",
+          "end_exclusive": "0043fe0e",
+          "sha256": "8593dea5f7624f7f50c968026c4759e12983b1f2a669d320440e4654772859c2",
+          "assembly": "analysis/captures/modern-differences/localized-notice/official_modern-0043fdd0.asm"
+        },
+        {
+          "start": "0043fda0",
+          "end_exclusive": "0043fdcc",
+          "sha256": "9c50604fa546bb0d874c2081d871a2e17099e110c9f7995633f9cc79ae4014ea",
+          "assembly": "analysis/captures/modern-differences/localized-notice/official_modern-0043fda0.asm"
+        }
+      ]
+    }
+  },
+  "correspondence": {
+    "caller": "0043fe09",
+    "original": "00444be0",
+    "modern": "0043fda0",
+    "caller_changes": [
+      "0043fe0a",
+      "0043fe0b",
+      "0043fe0c",
+      "0043fe0d"
+    ],
+    "constructor": "00444a80, complete157-byte body identical",
+    "original_lines": 1,
+    "modern_lines": 2,
+    "original_EBX": 550,
+    "modern_EBX": 0,
+    "shared_pointer_array": "00661090",
+    "added_localized_id": 11
+  },
+  "limits": [
+    "No dialog, timing, localization or target execution.",
+    "Caller retarget establishes counterpart; same-address bytes do not.",
+    "Visible text and timeout/event-loop semantics not independently validated here."
+  ]
+}
