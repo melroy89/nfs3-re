@@ -1,0 +1,402 @@
+{
+  "kind": "installed-numeric-scale-label-inventory",
+  "files": [
+    {
+      "path": "FEDATA/TEXT/text.eng",
+      "size": 35896,
+      "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11459,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11461,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.fre",
+      "size": 37471,
+      "sha256": "68cce0ae29d9d91abac71e870931f530ea552065cdf85aec5b571ac42470502a",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11928,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11930,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.ger",
+      "size": 35150,
+      "sha256": "0e964d1966ded07f5430bf170efa8e91c3d36e97422f5a75b549271455f0f582",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 12069,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 12071,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.ita",
+      "size": 36309,
+      "sha256": "8bcef28ebdd96f0cb80a083a88d3832ab684d6efe2304ef186df42b25e18c29d",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 12003,
+          "bytes_hex": "46",
+          "byte_length": 1,
+          "text_ascii": "F"
+        },
+        {
+          "id": 347,
+          "offset": 12005,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.spa",
+      "size": 38216,
+      "sha256": "290519a9574e6e78c3b55af9c71b5e57b6e7fa40b287f5c8910f366c263d2a1d",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 12023,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 12025,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "FEDATA/TEXT/text.swe",
+      "size": 34207,
+      "sha256": "c64f1ac7be5bfe762c9b6a961415c994e132c66dc3660bd5763d54eeedfc9b9a",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11634,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11636,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.ENG",
+      "size": 35402,
+      "sha256": "fb27fe75c9f8f6ee3d65058db0b2732ed14e1dd7aef9f1c5e5481d4078a74bcc",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11326,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11328,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.FRE",
+      "size": 36919,
+      "sha256": "315c15bbeabf3dbde4389e3be85d0bf4b851d3ad7beb498e0c42f9464a51903d",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11795,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11797,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.GER",
+      "size": 34670,
+      "sha256": "0c5ffefd171b040cc70b299100eaae984b5c92f6fd5035407ac3358de5c05628",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11944,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11946,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.ITA",
+      "size": 35789,
+      "sha256": "3310fd467f5433718613c34997267ba03869527c8fd8f345c758287b5546582b",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11871,
+          "bytes_hex": "46",
+          "byte_length": 1,
+          "text_ascii": "F"
+        },
+        {
+          "id": 347,
+          "offset": 11873,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.SPA",
+      "size": 37665,
+      "sha256": "28d18d34453557b8bfca8465cb69d73b866c7d99f0236fe779bb96582fadd7a7",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11887,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11889,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/TEXT.SWE",
+      "size": 33692,
+      "sha256": "9ca6af7765a41bf56d2329368d57517df228724b5f26d0f8ad42ab7b9bddf5b1",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11502,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11504,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.eng",
+      "size": 35896,
+      "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11459,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11461,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.fre",
+      "size": 37471,
+      "sha256": "68cce0ae29d9d91abac71e870931f530ea552065cdf85aec5b571ac42470502a",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11928,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11930,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.ger",
+      "size": 35150,
+      "sha256": "0e964d1966ded07f5430bf170efa8e91c3d36e97422f5a75b549271455f0f582",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 12069,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 12071,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.ita",
+      "size": 36309,
+      "sha256": "8bcef28ebdd96f0cb80a083a88d3832ab684d6efe2304ef186df42b25e18c29d",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 12003,
+          "bytes_hex": "46",
+          "byte_length": 1,
+          "text_ascii": "F"
+        },
+        {
+          "id": 347,
+          "offset": 12005,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.spa",
+      "size": 38216,
+      "sha256": "290519a9574e6e78c3b55af9c71b5e57b6e7fa40b287f5c8910f366c263d2a1d",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 12023,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 12025,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    },
+    {
+      "path": "fedata_org/text/text.swe",
+      "size": 34207,
+      "sha256": "c64f1ac7be5bfe762c9b6a961415c994e132c66dc3660bd5763d54eeedfc9b9a",
+      "labels": [
+        {
+          "id": 346,
+          "offset": 11634,
+          "bytes_hex": "4e",
+          "byte_length": 1,
+          "text_ascii": "N"
+        },
+        {
+          "id": 347,
+          "offset": 11636,
+          "bytes_hex": "52",
+          "byte_length": 1,
+          "text_ascii": "R"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Installed and locally named backup files; no authenticated retail provenance.",
+    "No claim these files were selected at runtime or supplied by the official patch archive.",
+    "Selected offsets/NUL bounds only, not complete language-format validation."
+  ],
+  "positive_count_concat_bytes_including_nul": {
+    "1": 4,
+    "2": 5,
+    "3": 6,
+    "4": 7,
+    "5": 8,
+    "6": 9,
+    "7": 10,
+    "8": 11,
+    "9": 12,
+    "10": 14,
+    "11": 16,
+    "12": 18
+  }
+}

@@ -45,6 +45,23 @@ The first two calls belong to existing `RenderHudElementForView` research (`0045
 - First and second inspected calls explicitly clear EBX, disabling the secondary selected-index match on the ordinary positive interior loop. The third region does not establish its incoming EBX, so it is not assigned the same value by analogy.
 - All three push scale DWORD `00791b54`. Caller branches supply either fixed color values `ff707070` / `ffa0a0a0` and zero, or colors carried in registers; endpoints and vertical anchors come from per-view geometry and, on some branches, x87-to-integer coordinate conversion.
 
-This supports a **gear/drive-state HUD scale** interpretation while preserving the raw field contracts. It does not authenticate localized endpoint text: IDs `15ah/15bh` still require actual language-table payload inspection. No rendered label or endpoint was observed in this phase.
+This supports a **gear/drive-state HUD scale** interpretation while preserving the raw field contracts. It does not authenticate localized endpoint text: the installed language-table payload follow-up below now records IDs `15ah/15bh`, with provenance and runtime-selection limits. No rendered label or endpoint was observed in this phase.
 
 The changed routine can therefore alter label spacing for the same retained argument-building instructions. Whether a particular race invokes one branch with the same arguments in both versions still depends on upstream state, assets, initialization and floating-point behavior. Those conditions are not supplied by a static CALL retargeting alone.
+
+## Installed label inventory and bounded scratch overlap
+
+The [installed label inventory](evidence/inventories/installed-numeric-scale-labels.json) hash-identifies all 18 selected language files: six under `FEDATA/TEXT` and twelve case-distinct files under `fedata_org/text`. Each ID offset is within its file and reaches a NUL before EOF. These are installed/local backup artifacts, **not authenticated original retail files or independently attributed official-patch assets**; the backup directory name does not establish provenance. No file was selected through a running game.
+
+| Languages / IDs | `15ah` | `15bh` | Payload bytes each |
+|---|---|---|---:|
+| English, French, German, Spanish, Swedish | N | R | 1 |
+| Italian | F | R | 1 |
+
+The English neutral/reverse interpretation agrees with the gear/drive-state caller evidence. The table records actual bytes, without imposing that English expansion on Italian's `F`. The case-distinct backup files have differing full-file sizes/contents while retaining these labels; do not collapse them into one authenticated baseline.
+
+For these one-byte endpoint labels and an ordinary positive count `n`, the concatenated measurement text requires **`3 + sum(decimal_digit_count(i), i=1..n)` bytes including the final NUL**. There are no added separators. This requires 12 bytes at count 9, 14 at 10, 16 at 11 and 18 at 12.
+
+Modern's destination begins at EBP-34h. Stored pointer local EBP-24h (the second endpoint pointer used later) begins **16 bytes** after that destination. Consequently counts 1..11 with these inspected labels fit before that neighboring local, whereas count 12 would overwrite its first two bytes through the unbounded append loop. This is a conditional storage-overlap calculation, **not a demonstrated reachable defect**: count comes from profile count minus two, and no installed profile admission of count 12 has been established here. It also does not prove the rest of the function safe for every count 1..11, arbitrary assets or external state.
+
+Reproduce with `python3 analysis/scripts/inventory_numeric_scale_labels.py --game-dir '<installed game directory>'`. The script reads only the two named folders, records selected string offsets/lengths and full-file hashes, and performs no game/probe execution. Remaining work: profile-count inventory, actual language selection and visual validation.

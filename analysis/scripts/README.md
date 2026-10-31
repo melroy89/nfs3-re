@@ -285,3 +285,7 @@ Run `python3 analysis/scripts/audit_vehicle_dispatch_difference.py` (Python pefi
 ## Original versus Modern numeric scale
 
 Run `python3 analysis/scripts/audit_numeric_scale_difference.py`. Retains complete moved counterpart bodies and asserts three retargeted calls; output `analysis/evidence/audits/original-modern-numeric-scale.json`. No target execution. See [numeric scale comparison](../original-modern-numeric-scale.md).
+
+## Installed numeric-scale endpoint labels
+
+Run `python3 analysis/scripts/inventory_numeric_scale_labels.py --game-dir "<installed game directory>"`. Reads the six installed and twelve case-distinct backup language files, records hashes/selected string bounds, and derives positive-count concatenation sizes. Output: `analysis/evidence/inventories/installed-numeric-scale-labels.json`. This does not authenticate backup provenance or execute the game. See [label findings](../original-modern-numeric-scale.md#installed-label-inventory-and-bounded-scratch-overlap).
