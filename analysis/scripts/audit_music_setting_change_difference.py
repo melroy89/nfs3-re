@@ -26,6 +26,14 @@ def main():
     for va in (0x4382f9, 0x43831c):
         assert images['official_modern'].get_data(va-0x400000, 10) == bytes.fromhex('c705344f550001000000')
     assert images['original'].get_data(0x3830e, 6) == bytes.fromhex('8935344f5500')
+    modern_request=images['official_modern'].get_data(0x103a0,166)
+    assert modern_request[:7]==bytes.fromhex('6089e585d27438')
+    assert bytes.fromhex('344f5500') not in modern_request
+    out['modern_request_helper']={'start':'004103a0','end_exclusive':'00410446',
+        'bytes':166,'hex':modern_request.hex(),
+        'sha256':hashlib.sha256(modern_request).hexdigest(),
+        'direct_pending_address_operand_occurrences':0,
+        'limit':'No direct absolute00554f34 operand in this complete helper; indirect aliases and called helpers not excluded.'}
     out['observed_change'] = {
         'setting0': {'live': '006fbbe4', 'cached': '005f3968', 'request_edx': 0},
         'setting1': {'live': '006fbbec', 'cached': '005f3964', 'request_edx': 1},
