@@ -398,6 +398,8 @@ The [complete slideshow refresh comparison](original-modern-slideshow-navigation
 
 The [complete cascade-renderer comparison](original-modern-car-alias.md#complete-cascade-renderer-and-one-unit-text-argument-change) accounts for its1,556-byte body and identifies an additional one-unit text coordinate argument change on one path, alongside the track-policy selector. Physical-pixel placement and historical attribution remain unverified.
 
+The [geometry-color admission comparison](original-modern-geometry-color-admission.md) identifies an additional context1 gate admitted at Rear View Detail High only, distinct from the High/Medium lighting gate. All envelope differences are confined to admission/prologue/early-return code; context producers and the rendered effect remain unresolved.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

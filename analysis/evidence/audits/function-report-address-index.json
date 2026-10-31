@@ -96,6 +96,10 @@
       "sha256": "5768c249b27c388074d63b3aec5e0bbcbf4e1bc2aaaa821e2e4a0f3695ba4cf1"
     },
     {
+      "path": "analysis/original-modern-geometry-color-admission.md",
+      "sha256": "f437fc45c7fb152d31e343219c4a4faf758a246d252b7467da9079b1234703ed"
+    },
+    {
       "path": "analysis/original-modern-ghost-loading.md",
       "sha256": "9404cbec45a77b6a9f150225e70dd7bc0373e016b887fe1a36a7e6d8d7736b47"
     },
@@ -330,8 +334,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 253,
-    "without_address_mentions": 108
+    "with_address_mentions": 254,
+    "without_address_mentions": 107
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -7576,7 +7580,17 @@
       "changed_bytes": 37,
       "original_sha256": "de7ee24457792eab678525be09d1e8742b9804d5debeda8e012b20d2cd0a1f95",
       "modern_sha256": "5252cb734b2a703ab6bffc28196c249f817334901db175e5f5ba055d19428a26",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-geometry-color-admission.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004ba350",
+            "004ba382",
+            "004ba3af"
+          ]
+        }
+      ]
     },
     {
       "entry": "004bbba0",

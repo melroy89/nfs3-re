@@ -1,0 +1,132 @@
+{
+  "kind": "geometry-color-admission-comparison",
+  "end_convention": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004ba350",
+          "end_exclusive": "004ba808",
+          "sha256": "fe37270e19b1b01c4e8a55077c1288304b56c9e6e4292707b6d004383cb67887",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/original-004ba350.asm"
+        },
+        {
+          "start": "004baaaa",
+          "end_exclusive": "004baab8",
+          "sha256": "b274f452f1bc0b8794a2999c172f2c2667f029fede50867647f952771e5f524d",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/original-004baaaa.asm"
+        },
+        {
+          "start": "004babd9",
+          "end_exclusive": "004babe7",
+          "sha256": "a844b6efb9996ff857a09747027f96e057804c7950172bc2a428365d71804102",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/original-004babd9.asm"
+        },
+        {
+          "start": "004bae7c",
+          "end_exclusive": "004bae8a",
+          "sha256": "ac3f3d5a4de19fac0e178420d237a2251843cd455772e87fce2d6d8e5ec861bd",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/original-004bae7c.asm"
+        },
+        {
+          "start": "004bb27a",
+          "end_exclusive": "004bb288",
+          "sha256": "847241b48fbf9373862c9034226fdea82bf4f2372e6ccd724cc533f768eb71e7",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/original-004bb27a.asm"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004ba350",
+          "end_exclusive": "004ba808",
+          "sha256": "9e4c3665cf4dd3b9137a9a6c31f03daef5fe0df50270fe8f8361880e7363487c",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004ba350.asm"
+        },
+        {
+          "start": "004baaaa",
+          "end_exclusive": "004baab8",
+          "sha256": "b274f452f1bc0b8794a2999c172f2c2667f029fede50867647f952771e5f524d",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004baaaa.asm"
+        },
+        {
+          "start": "004babd9",
+          "end_exclusive": "004babe7",
+          "sha256": "a844b6efb9996ff857a09747027f96e057804c7950172bc2a428365d71804102",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004babd9.asm"
+        },
+        {
+          "start": "004bae7c",
+          "end_exclusive": "004bae8a",
+          "sha256": "ac3f3d5a4de19fac0e178420d237a2251843cd455772e87fce2d6d8e5ec861bd",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bae7c.asm"
+        },
+        {
+          "start": "004bb27a",
+          "end_exclusive": "004bb288",
+          "sha256": "847241b48fbf9373862c9034226fdea82bf4f2372e6ccd724cc533f768eb71e7",
+          "assembly": "analysis/captures/modern-differences/geometry-color-admission/official_modern-004bb27a.asm"
+        }
+      ]
+    }
+  },
+  "changed_addresses": [
+    "004ba383",
+    "004ba384",
+    "004ba385",
+    "004ba386",
+    "004ba387",
+    "004ba388",
+    "004ba389",
+    "004ba38a",
+    "004ba38b",
+    "004ba38c",
+    "004ba38d",
+    "004ba38e",
+    "004ba38f",
+    "004ba390",
+    "004ba391",
+    "004ba392",
+    "004ba393",
+    "004ba394",
+    "004ba395",
+    "004ba396",
+    "004ba397",
+    "004ba398",
+    "004ba399",
+    "004ba39a",
+    "004ba39b",
+    "004ba39c",
+    "004ba39d",
+    "004ba39e",
+    "004ba39f",
+    "004ba3a0",
+    "004ba3a1",
+    "004ba3a4",
+    "004ba3a5",
+    "004ba3a6",
+    "004ba3a7",
+    "004ba3a8",
+    "004ba3aa",
+    "004ba3ab",
+    "004ba3ac",
+    "004ba3ad",
+    "004ba3ae"
+  ],
+  "identical_tail": {
+    "start": "004ba3af",
+    "end_exclusive": "004ba808",
+    "length": 1113,
+    "sha256": "18e9618fb03146ce21b3fe7b3fe8575ea52940fec644a03f8f264516b5bf32a7"
+  },
+  "limits": [
+    "Saved analysis label is not a complete data/algorithm contract.",
+    "Context first-DWORD producer and complete geometry/global meaning remain unresolved.",
+    "No rendering, game or instruction probes."
+  ]
+}
