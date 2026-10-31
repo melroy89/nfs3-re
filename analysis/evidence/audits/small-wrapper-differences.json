@@ -22,11 +22,21 @@
           "end_exclusive": "00418ceb",
           "sha256": "52278518d7be9640fe2da603d96e92c8d682e249aed0e80a66cf7a50148b33cb",
           "assembly": "analysis/captures/modern-differences/small-wrappers/original-00418cc0.asm"
+        },
+        {
+          "start": "004a4020",
+          "end_exclusive": "004a404f",
+          "sha256": "6378a3cf203a1006309f17ef857e0e53481a3a1a8d3bc81f79f5899445aad935",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/original-004a4020.asm"
         }
       ],
       "imports": {
         "00534480": "ShellExecuteA",
         "0053454c": "GetModuleHandleA"
+      },
+      "shell_caller_urls": {
+        "0053ce9c": "http://www.NeedForSpeed.com",
+        "0053ceb8": "http://www.NeedForSpeed.com/download.asp"
       }
     },
     "official_modern": {
@@ -50,13 +60,30 @@
           "end_exclusive": "00418ceb",
           "sha256": "504358b3d865832ef5338db516675e12df7bfd7035a85f7da0d67fa335039f38",
           "assembly": "analysis/captures/modern-differences/small-wrappers/official_modern-00418cc0.asm"
+        },
+        {
+          "start": "004a4020",
+          "end_exclusive": "004a404f",
+          "sha256": "6378a3cf203a1006309f17ef857e0e53481a3a1a8d3bc81f79f5899445aad935",
+          "assembly": "analysis/captures/modern-differences/small-wrappers/official_modern-004a4020.asm"
         }
       ],
       "imports": {
         "00534480": "ShellExecuteA",
         "0053454c": "GetModuleHandleA"
+      },
+      "shell_caller_urls": {
+        "0053ce9c": "http://www.NeedForSpeed.com",
+        "0053ceb8": "http://www.NeedForSpeed.com/download.asp"
       }
     }
+  },
+  "retained_shell_caller": {
+    "span": "004a4020..004a404f",
+    "bytes_identical": true,
+    "selector": "0055e894:1 chooses0053ce9c;2 chooses0053ceb8;other values return without shell call.",
+    "call": "004a4048 ->00418cc0; EAX result not tested before return.",
+    "limits": "No caller reachability, selector producer/lifetime or successful URL opening established."
   },
   "limits": [
     "Static inspection only; no shell invocation or audio playback.",

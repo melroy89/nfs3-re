@@ -17,3 +17,9 @@ The confirmed difference is therefore **module-handle value versus null owner**,
 Preserve the chosen version's owner value and constant-return contract when reconstructing this wrapper. Introducing success/failure propagation would change original behavior. The incoming path's lifetime, all caller intents and resulting external application behavior are outside this bounded comparison.
 
 **Work status: done for this wrapper. Evidence confidence: verified static bytes, imports and argument construction.** Runtime effects remain unverified.
+
+## Retained URL-selection caller bounds the practical difference
+
+The expanded wrapper audit now pins complete `004a4020..004a404f` (47 bytes), identical in original and official Modern. It reads selector `0055e894`: value1 supplies `0053ce9c`, value2 supplies `0053ceb8`, other values return without the shell request. The paired file-backed strings are unchanged: `http://www.NeedForSpeed.com` and `http://www.NeedForSpeed.com/download.asp`. These are inert reference strings; their current availability or ownership was not checked and no URL was opened.
+
+At `004a4048`, the caller invokes `00418cc0`, then returns without testing EAX. Thus the verified owner-argument simplification reaches an unchanged URL-selection path, not evidence of replacing those URLs with a Modern Patch website. This also distinguishes the path from the [removed original DDE routines](original-modern-removed-dde.md): both versions already have this ShellExecute caller, so DDE removal must not be presented as proof that ShellExecute was newly introduced. Selector producers, callback admission and actual user-visible launch timing remain unresolved. No browser, shell or target code was executed.

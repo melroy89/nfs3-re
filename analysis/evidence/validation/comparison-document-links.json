@@ -443,8 +443,8 @@
     },
     {
       "path": "analysis/original-modern-shell-open.md",
-      "sha256": "68ded85d0b980fd32ed2f958c560f1a8ac4289d7c94172efcde1a98325f328a4",
-      "relative_links": 2
+      "sha256": "c275784877aaa0d765c1de1cc07d5df61aecc40f3aa7e6a2ac61cc82bb92b3f2",
+      "relative_links": 3
     },
     {
       "path": "analysis/original-modern-slider-percentage.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1788,
+  "relative_link_count": 1789,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

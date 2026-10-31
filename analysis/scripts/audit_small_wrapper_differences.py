@@ -19,7 +19,7 @@ def main():
         assert imports[0x534480] == 'ShellExecuteA'
         assert imports[0x53454c] == 'GetModuleHandleA'
         assert pe.get_data(0x136c30, 5) == b'open\0'
-        spans = [(0x410460, 0x4104a1), (0x4104b0, 0x4104ee), (0x418cc0, 0x418ceb)]
+        spans = [(0x410460, 0x4104a1), (0x4104b0, 0x4104ee), (0x418cc0, 0x418ceb), (0x4a4020,0x4a404f)]
         rows = []
         blobs[label] = []
         for a, b in spans:
@@ -31,7 +31,10 @@ def main():
             rows.append({'start': f'{a:08x}', 'end_exclusive': f'{b:08x}',
                 'sha256': hashlib.sha256(data).hexdigest(), 'assembly': str(path.relative_to(ROOT))})
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows,
-            'imports': {'00534480': imports[0x534480], '0053454c': imports[0x53454c]}}
+            'imports': {'00534480': imports[0x534480], '0053454c': imports[0x53454c]},
+            'shell_caller_urls':{f'{address:08x}':pe.get_string_at_rva(address-0x400000).decode('ascii')
+                                 for address in (0x53ce9c,0x53ceb8)}}
+        assert result['binaries'][label]['shell_caller_urls']=={'0053ce9c':'http://www.NeedForSpeed.com','0053ceb8':'http://www.NeedForSpeed.com/download.asp'}
     for index, address in [(0, 0x410479), (1, 0x4104cf)]:
         a, b = blobs['original'][index], blobs['official_modern'][index]
         differences = [i for i, pair in enumerate(zip(a, b)) if pair[0] != pair[1]]
@@ -39,6 +42,11 @@ def main():
         assert differences == [address - start]
         assert a[address - start] == 6 and b[address - start] == 8
     old, new = blobs['original'][2], blobs['official_modern'][2]
+    assert blobs['original'][3]==blobs['official_modern'][3]
+    result['retained_shell_caller']={'span':'004a4020..004a404f','bytes_identical':True,
+        'selector':'0055e894:1 chooses0053ce9c;2 chooses0053ceb8;other values return without shell call.',
+        'call':'004a4048 ->00418cc0; EAX result not tested before return.',
+        'limits':'No caller reachability, selector producer/lifetime or successful URL opening established.'}
     assert old[0x13:0x22] == bytes.fromhex('2eff154c455300502eff1580445300')
     assert new[0x0e:0x1c] == bytes.fromhex('6a00ff158044530031c0405a59c3')
     result['limits'] = ['Static inspection only; no shell invocation or audio playback.',
