@@ -112,7 +112,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels156 entries vendor-only,39 bounded static,92 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels155 entries vendor-only,39 bounded static,93 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -136,3 +136,7 @@ The map-point mechanism gap in MP160-006 and field/consumer gap in MP140-073 are
 ## Logo-claim reconciliation
 
 MP153-013 now links the existing paired presence-policy audit and official atlas identification in the [frontend report](original-modern-frontend-page.md#release-note-correspondence-model-dependent-logos). A fresh audit rerun passed. Modern per-record Ford/HSV model filtering has partial static evidence; the legacy LOGO2-to-logos asset relationship, historical introduction and full runtime behavior remain unverified. The documented rejected-final-record fall-through is retained as a limitation. This reconciles existing evidence rather than claiming a newly discovered code change.
+
+## Texture-query claim reconciliation
+
+A fresh five-envelope texture audit passed. MP161-005 now links [removed queries/cache substitutions](original-modern-texture-loading-followup.md#release-note-correspondence-redundant-about-queries), matching the source bullet's explicit thrash_about wording. This closes a catalog omission using existing paired evidence. Renderer side effects/cache lifetime, actual performance and release-specific introduction remain open; progress-bar changes are not performance measurements.

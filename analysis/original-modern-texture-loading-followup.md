@@ -43,6 +43,10 @@ These four constants account for all eight changed bytes in the 819-byte loader.
 
 ## Reconstruction and limits
 
+### Release-note correspondence: redundant about queries
+
+MP161-005's full source bullet says that `thrash_about` is no longer called when unnecessary. The paired texture bodies above supply direct static support for that mechanism: original's query/TEST at `004d3f63` is bypassed, and the query at `0049c5c5` becomes a descriptor-cache read. The local-car archive consumer below provides another cache substitution. These changes reduce the inspected direct calls; they do not establish that every removed call was side-effect-free, that every renderer tolerates the same descriptor lifetime, or that loading is measurably faster. The altered progress values are a separate mechanism and cannot serve as a speed benchmark. Original-versus-final evidence also does not date the changes specifically to v1.6.1. The catalog therefore records partial support, with the exact executable mechanisms established and historical/performance consequences open.
+
 **Bounded work status: done; confidence: verified static comparisons.** Preserve the selected version's descriptor source, removed/retained external calls and float-bit arguments. Do not add a null fallback or treat removed queries as provably pure without qualifying the renderer interface.
 
 Still unverified are actual texture availability/allocation, descriptor lifetime across renderer resets, all DLL implementations, visible texture output and progress timing. Those affect runtime validation and external-interface reconstruction. No executable bytes, saved Ghidra state or maintained reconstruction sources were changed.
