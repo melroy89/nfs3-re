@@ -97,6 +97,24 @@ def main():
     assert images['original'].get_data(0x56590,70)==images['official_modern'].get_data(0x56590,70)
     result['complete_formatting_helpers']={'baselines':full_helpers,
         'shared_prefix_bytes':70,'limit':'Complete local helper envelopes and direct caller verified; broader owner registration, valid indices and drawing semantics remain separate.'}
+    routes={}
+    for label,pe in images.items():
+        assert struct.unpack('<3I',pe.get_data(0x157a9c,12))==(4,0x538360,0x556df0)
+        assert pe.get_string_at_rva(0x138360)==b'image'
+        assert pe.get_data(0x156e1c,4)==struct.pack('<I',0x460100)
+        assert pe.get_string_at_rva(0x13a954)==b'glow'
+        prefix=pe.get_data(0x60100,0x29)
+        wrapper=pe.get_data(0x56670,0x189)
+        routes[label]={'registry_row':'00557a9c','type':4,'name':'image','template':'00556df0',
+            'update_slot':'00556e1c','update_target':'00460100','codelink':'glow',
+            'dispatch_prefix_hex':prefix.hex(),'wrapper_entry':'00456670',
+            'wrapper_end_exclusive':'004567f9','wrapper_hex':wrapper.hex(),
+            'wrapper_sha256':hashlib.sha256(wrapper).hexdigest()}
+    assert routes['original']['dispatch_prefix_hex']==routes['official_modern']['dispatch_prefix_hex']
+    assert routes['original']['wrapper_hex']==routes['official_modern']['wrapper_hex']
+    result['image_glow_route']={'baselines':routes,
+        'gate':'00559c60 must be0 and006fd4ac must equal00677d8c before call00456590',
+        'limit':'Static registry/codelink/wrapper chain; actual menu instance loading and runtime invocation untested.'}
     result['limits']=['No drawing, language lookup or instruction execution.','Raw selector enum names, valid track indices and runtime localization choice not established; selected official unit strings verified.','Third original table zeroed in Modern; all other readers not excluded.']
     (ROOT/'analysis/evidence/audits/track-length-text-difference.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired formatting tails, retained pointer tables, comma-to-dot payloads, zeroed third and152 localized interval differences')

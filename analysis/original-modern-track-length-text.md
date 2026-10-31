@@ -2,7 +2,7 @@
 
 ## Evidence and boundary
 
-The [static audit](scripts/audit_track_length_text_difference.py) pins both executables and retains aligned tails from **`004565d6`** through original exclusive`00456664`, Modern exclusive`0045663a`, including their return sequences. The [manifest](evidence/audits/track-length-text-difference.json) records disassembly, bytes, tables, strings and all changed addresses. The follow-up below now establishes complete helper entry00456590 and a shared direct caller; broader widget registration remains unresolved.
+The [static audit](scripts/audit_track_length_text_difference.py) pins both executables and retains aligned tails from **`004565d6`** through original exclusive`00456664`, Modern exclusive`0045663a`, including their return sequences. The [manifest](evidence/audits/track-length-text-difference.json) records disassembly, bytes, tables, strings and all changed addresses. The follow-up below now establishes complete helper entry00456590 and a shared direct caller; the registered image/glow route is established in the final follow-up, while live menu invocation remains unresolved.
 
 Within outside-function interval`00456318..00456800` (1256 bytes), all152 changed positions lie in`004565d6..00456670`. Modern’s shorter tail is followed by NOPs through`00456670`; the preceding coordinate-selection code and remaining interval bytes match. No game, renderer, language lookup, instruction probe or Ghidra mutation was performed.
 
@@ -31,7 +31,7 @@ The first two nine-pointer tables are byte-identical across the pinned EXEs. The
 
 The original third table at`0055968c` points to decimal-dot strings matching Modern’s second-table values; the third pointer table itself is zeroed in Modern. All original pointed strings are retained in the manifest. The old format addresses are empty in Modern, while old`00538d7c` contains`credits` rather than the Modern format. Same-address string interpretation must therefore remain version-bound. Zeroing the third table does not prove absence of other original readers or complete removal of every associated data path.
 
-**Verified static:** changed selector/global, branch mapping, language IDs, format consolidation, retained pointer tables, comma-to-dot string changes, zeroed third table and local drawing arguments. **Unresolved:** complete widget ownership and machine contract, selector producers, runtime language selection, raw selector enum names, index bounds, final text/render output and historical release attribution. No precision, replay or multiplayer conclusion follows from this UI formatting rewrite.
+**Verified static:** changed selector/global, branch mapping, language IDs, format consolidation, retained pointer tables, comma-to-dot string changes, zeroed third table and local drawing arguments. **Unresolved:** complete machine contract, live widget invocation, selector producers, runtime language selection, raw selector enum names, index bounds, final text/render output and historical release attribution. No precision, replay or multiplayer conclusion follows from this UI formatting rewrite.
 
 ## HUD-profile producer and default branch
 
@@ -66,4 +66,12 @@ The expanded audit now captures complete helpers **original`00456590..00456664`*
 
 Both files contain identical direct CALL`004566a5 → 00456590`, verified from its displacement. This establishes pairing independently of equal addresses and strengthens the earlier tail-only evidence. The shared prefix chooses coordinate inputs from the selected circuit: index4 uses EBX430/EDX200; indices0/7/8 use410/250; other indices use390/465. These are raw caller arguments to the later text helper, not independently verified physical pixels. No input-dependent path in this prefix bounds the subsequent table index.
 
-The preceding routine at`00456320` returns at`00456583` and must not be merged into this helper merely because the saved-function inventory leaves the whole area uncovered. Full widget registration, caller scheduling, invalid indices and drawing/helper state remain unresolved; no Ghidra function object was created.
+The preceding routine at`00456320` returns at`00456583` and must not be merged into this helper merely because the saved-function inventory leaves the whole area uncovered. The static image/glow registration is established below; caller scheduling, invalid indices and drawing/helper state remain unresolved; no Ghidra function object was created.
+
+## Registered image/glow update route and admission gates
+
+Both EXEs have registry row **`00557a9c`** `(type4, token00538360="image", template00556df0)`. Template+2ch at`00556e1c` points to **`00460100`**. Its identical41-byte entry prefix compares item+10h with token **`glow`** at`0053a954`; a match calls`00456670` at`0046011f`. This establishes a static registered-component route, not just a raw direct caller.
+
+The complete393-byte wrapper **`00456670..004567f9`** is identical in both files. Before direct call`004566a5 → 00456590`, it rejects nonzero`00559c60` by returning0 and checks selected circuit`006fd4ac` against cached/current value`00677d8c`; mismatch returns9 without formatting. Matching indices reach the length helper and subsequent drawing/update work. Equality with the cached value is not a nine-entry range check.
+
+The audit retains registry values, token witnesses, updater prefix and full wrapper bytes/hashes. This resolves static component ownership through `image`/`glow`, superseding the earlier general registration unknown. Actual menu-instance loading, runtime scheduling, all generic dispatcher paths, interpretation of return9 and source-table bounds remain unverified. No component callback or renderer was executed.

@@ -460,6 +460,40 @@
     "shared_prefix_bytes": 70,
     "limit": "Complete local helper envelopes and direct caller verified; broader owner registration, valid indices and drawing semantics remain separate."
   },
+  "image_glow_route": {
+    "baselines": {
+      "original": {
+        "registry_row": "00557a9c",
+        "type": 4,
+        "name": "image",
+        "template": "00556df0",
+        "update_slot": "00556e1c",
+        "update_target": "00460100",
+        "codelink": "glow",
+        "dispatch_prefix_hex": "535156575589e583ec0889c1ba54a9530089c68b4010e8a528feff85c0740ae84c65ffffe9d6020000",
+        "wrapper_entry": "00456670",
+        "wrapper_end_exclusive": "004567f9",
+        "wrapper_hex": "53515256575589e58b15609c550031f685d2740731c0e9670100008b0dacd46f003b0d8c7d6700740cb8090000005d5f5e5a595bc3e8e6feffff680000803f8b1d24985500a1acd46f0031c983c3048b1445ae965500891d2498550053c1fa108b1c45c0965500a1907d6700c1fb10c1f810e8490008008b151c98550083c210b90002000089d0c1fa1ff7f989151c98550081fa000100007d0489d1eb07b9ff01000029d1e8c62e070085c07467833d2098550000745e8b3d1898550047893d1898550083ff057d16a18e7d67008d57ffc1f810e8b700000066a3907d670031d2a1acd46f0089157c7d67008915787d67008b3c85f49755008b151898550039fa7f128b1d4cbb6f0089d0ba33000000e86b2e0700a1acd46f008b1518985500c1e1188b1c85f497550081c1ffffff0039da7f4285d27e3e8d04126683b86e7d67000074208b98547d67008b904c7d6700c1fb108b806c7d6700c1fa10c1f810e88b090800e8062e0700e841fbffffa320985500eb0ac705209855000100000089f05d5f5e5a595bc3",
+        "wrapper_sha256": "7a6c01dc63207c25905c40d8386d240c10d0796e1ee0cd0234353f249aec46d9"
+      },
+      "official_modern": {
+        "registry_row": "00557a9c",
+        "type": 4,
+        "name": "image",
+        "template": "00556df0",
+        "update_slot": "00556e1c",
+        "update_target": "00460100",
+        "codelink": "glow",
+        "dispatch_prefix_hex": "535156575589e583ec0889c1ba54a9530089c68b4010e8a528feff85c0740ae84c65ffffe9d6020000",
+        "wrapper_entry": "00456670",
+        "wrapper_end_exclusive": "004567f9",
+        "wrapper_hex": "53515256575589e58b15609c550031f685d2740731c0e9670100008b0dacd46f003b0d8c7d6700740cb8090000005d5f5e5a595bc3e8e6feffff680000803f8b1d24985500a1acd46f0031c983c3048b1445ae965500891d2498550053c1fa108b1c45c0965500a1907d6700c1fb10c1f810e8490008008b151c98550083c210b90002000089d0c1fa1ff7f989151c98550081fa000100007d0489d1eb07b9ff01000029d1e8c62e070085c07467833d2098550000745e8b3d1898550047893d1898550083ff057d16a18e7d67008d57ffc1f810e8b700000066a3907d670031d2a1acd46f0089157c7d67008915787d67008b3c85f49755008b151898550039fa7f128b1d4cbb6f0089d0ba33000000e86b2e0700a1acd46f008b1518985500c1e1188b1c85f497550081c1ffffff0039da7f4285d27e3e8d04126683b86e7d67000074208b98547d67008b904c7d6700c1fb108b806c7d6700c1fa10c1f810e88b090800e8062e0700e841fbffffa320985500eb0ac705209855000100000089f05d5f5e5a595bc3",
+        "wrapper_sha256": "7a6c01dc63207c25905c40d8386d240c10d0796e1ee0cd0234353f249aec46d9"
+      }
+    },
+    "gate": "00559c60 must be0 and006fd4ac must equal00677d8c before call00456590",
+    "limit": "Static registry/codelink/wrapper chain; actual menu instance loading and runtime invocation untested."
+  },
   "limits": [
     "No drawing, language lookup or instruction execution.",
     "Raw selector enum names, valid track indices and runtime localization choice not established; selected official unit strings verified.",
