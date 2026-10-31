@@ -40,13 +40,56 @@
           "bytes_sha256": "92141e1a030ea5dbdcdf6657312a6c6672dbd31aafc230f650c835167e7dfaeb",
           "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-00453ef0.asm",
           "assembly_sha256": "24e7452eaa407180f76d289600727d8574d9adfca7371da0200eb58eceaede63"
+        },
+        {
+          "start": "0044aa30",
+          "end": "0044aac9",
+          "bytes_sha256": "dba39f70bf73f8b2223328a1c86db97603ff0dae16a35a3cb8130656ea8af57e",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-0044aa30.asm",
+          "assembly_sha256": "7c2e67993bdc91039e166422aae497cf19def2000012095e2da3e918c8a20f2f"
+        },
+        {
+          "start": "0044a9e0",
+          "end": "0044aa21",
+          "bytes_sha256": "364c8534e0d15771b9e5212de4b0f260fb1117e5ed08c1056ab15e4f709e0690",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-0044a9e0.asm",
+          "assembly_sha256": "f18f2db3f67356c48b8ff350c156ba3bc8b49877163a47f7aa733591316e89cc"
+        },
+        {
+          "start": "0044ab40",
+          "end": "0044ac7c",
+          "bytes_sha256": "e793b3e4b49ea6feacf539d158c65221ccec0d0f8570e3cadf7b364b5ea4017e",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-0044ab40.asm",
+          "assembly_sha256": "12b04182cd4903d74a8c34df32cb474a01701dc8ccaae844e17a6ad11ea4e26d"
+        },
+        {
+          "start": "0044b6c8",
+          "end": "0044b707",
+          "bytes_sha256": "5d4afd66c6e6ad5aa7f939eb53ffb54ebd21b4f5831c49ea64cf94f2d09e78c0",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-0044b6c8.asm",
+          "assembly_sha256": "571530d3b9300b3b248f754a2d50eb43042f5a03d29da80498551251d02f71eb"
+        },
+        {
+          "start": "0044b7a7",
+          "end": "0044b7ec",
+          "bytes_sha256": "f9708373310088b187ff197e1827516c29ed40b361983920e0add04a2e9a9294",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-0044b7a7.asm",
+          "assembly_sha256": "920cdbf51f7e3346cb6738ffe9ff424c229d6801a19583eef43b7d9e3fd1b7b7"
+        },
+        {
+          "start": "0044b30b",
+          "end": "0044b382",
+          "bytes_sha256": "cbfcc523f8a53cf1983e230f4a517555ed0d3c9f0ace55c0868af891d7c3f5b8",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/original-0044b30b.asm",
+          "assembly_sha256": "64af895a8701c4245dd754e347b815b06dbba6e0a3834d4c48bc963831c81acf"
         }
       ],
       "tokens": {
         "005397a4": "nextslide",
         "005397b0": "prevslide"
       },
-      "slides_registration_row_00555f90_hex": "547d53000000000000000000003c4500503f4500f03e4500"
+      "slides_registration_row_00555f90_hex": "547d53000000000000000000003c4500503f4500f03e4500",
+      "action_switch_0044b208_hex": "d3b84400ecb7440047b7440047b74400f6b64400a7b74400deb644002bb74400"
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -86,13 +129,56 @@
           "bytes_sha256": "a735ada3ed4cc4118e2f6d94a9123218fa21cde6184ebbc93a117411dd16ae5b",
           "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-00453ef0.asm",
           "assembly_sha256": "a865b596e98683f226f8cdf24664528050d1ae5975ac5c1c5b27a09e1e49edea"
+        },
+        {
+          "start": "0044aa30",
+          "end": "0044aac9",
+          "bytes_sha256": "dba39f70bf73f8b2223328a1c86db97603ff0dae16a35a3cb8130656ea8af57e",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-0044aa30.asm",
+          "assembly_sha256": "3794e250f17d422a69b7dd71561311b9034d12c77550ee4506d38c8538d6478b"
+        },
+        {
+          "start": "0044a9e0",
+          "end": "0044aa21",
+          "bytes_sha256": "364c8534e0d15771b9e5212de4b0f260fb1117e5ed08c1056ab15e4f709e0690",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-0044a9e0.asm",
+          "assembly_sha256": "8185bde3e20b9df2d1c43e36f4db7c8d5b487bc2e72377cee92e2a1f9892ba18"
+        },
+        {
+          "start": "0044ab40",
+          "end": "0044ac7c",
+          "bytes_sha256": "e793b3e4b49ea6feacf539d158c65221ccec0d0f8570e3cadf7b364b5ea4017e",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-0044ab40.asm",
+          "assembly_sha256": "dc869bcd50df01f4ef32939a14f7999f9b3394ea3d4757bbfb9502ff4d324c63"
+        },
+        {
+          "start": "0044b6c8",
+          "end": "0044b707",
+          "bytes_sha256": "5d4afd66c6e6ad5aa7f939eb53ffb54ebd21b4f5831c49ea64cf94f2d09e78c0",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-0044b6c8.asm",
+          "assembly_sha256": "bcd2b6e148ed88550805d06561a3e6333a3dd04a5a4cf904ca2dea8852f1066a"
+        },
+        {
+          "start": "0044b7a7",
+          "end": "0044b7ec",
+          "bytes_sha256": "f9708373310088b187ff197e1827516c29ed40b361983920e0add04a2e9a9294",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-0044b7a7.asm",
+          "assembly_sha256": "ee32df172bea783a58916039804fd060d3d78a35c59eb8a0fe25429d7877e70b"
+        },
+        {
+          "start": "0044b30b",
+          "end": "0044b382",
+          "bytes_sha256": "97d8107462c4f7db81400872345e42d7edc2a07a10c8b782c49fdf9f5bbf6cba",
+          "assembly": "analysis/captures/modern-differences/slideshow-navigation/official_modern-0044b30b.asm",
+          "assembly_sha256": "6df2bbd7828cd195ea8e691d606053fdf6ab30606d35b3171af956b46d10b7a3"
         }
       ],
       "tokens": {
         "005397a4": "nextslide",
         "005397b0": "prevslide"
       },
-      "slides_registration_row_00555f90_hex": "547d53000000000000000000003c450000000000f03e4500"
+      "slides_registration_row_00555f90_hex": "547d53000000000000000000003c450000000000f03e4500",
+      "action_switch_0044b208_hex": "d3b84400ecb7440047b7440047b74400f6b64400a7b74400deb644002bb74400"
     }
   },
   "retained_previous_core": {
@@ -100,6 +186,33 @@
     "end": "00453931",
     "sha256": "0eb3531c23826b0d1b07aa0092f04fd79c1da5e8d38887a0e7c1f7c705c091fc"
   },
+  "retained_action9_path_ranges": [
+    {
+      "start": "0044aa30",
+      "end": "0044aac9",
+      "sha256": "dba39f70bf73f8b2223328a1c86db97603ff0dae16a35a3cb8130656ea8af57e"
+    },
+    {
+      "start": "0044a9e0",
+      "end": "0044aa21",
+      "sha256": "364c8534e0d15771b9e5212de4b0f260fb1117e5ed08c1056ab15e4f709e0690"
+    },
+    {
+      "start": "0044ab40",
+      "end": "0044ac7c",
+      "sha256": "e793b3e4b49ea6feacf539d158c65221ccec0d0f8570e3cadf7b364b5ea4017e"
+    },
+    {
+      "start": "0044b6c8",
+      "end": "0044b707",
+      "sha256": "5d4afd66c6e6ad5aa7f939eb53ffb54ebd21b4f5831c49ea64cf94f2d09e78c0"
+    },
+    {
+      "start": "0044b7a7",
+      "end": "0044b7ec",
+      "sha256": "f9708373310088b187ff197e1827516c29ed40b361983920e0add04a2e9a9294"
+    }
+  ],
   "official_arrow_asset": {
     "path": "analysis/captures/modern-differences/upstream/package/fedata/menus/slides.mnu",
     "sha256": "e6d63bcf70bd98ec11d121c9e9fbee88872c914f9fea82abefa08d897358e784",
@@ -117,6 +230,6 @@
   "limits": [
     "No input, filesystem, renderer or target execution.",
     "Binding/refresh snippets are explicitly partial; complete refresh routine and resources not validated.",
-    "Action9 outer-loop contract, shared counter aliases and complete callback admission remain separate."
+    "Action9 path is traced conditionally; shared counter aliases, pending-menu overrides and complete callback admission remain separate."
   ]
 }

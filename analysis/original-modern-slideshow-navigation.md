@@ -17,7 +17,7 @@ Original Next increments slide index `00559588`, preserves EDX/EBP and returns *
 
 Original and Modern Previous share **byte-identical core `0045386d..00453931`**. For signed index greater than1, it decrements the index. Otherwise it stores20, then repeatedly decrements and probes a constructed candidate path, starting with index19. The path depends on selected car/resource helpers and the source directories. The loop repeats while `004e0e60` returns zero; this captured core has no explicit lower-index/iteration bound. Successful probe and asset availability must not be assumed for malformed or incomplete installations.
 
-Their wrappers and exits differ. Original Previous returns9; Modern increments `0066477c`, restores its saved register frame and returns0. Thus the change is not merely adding arrow names to unchanged callback return contracts. The full outer-loop meaning of original action9 remains a separate dependency; this report does not assume it means immediate successful redraw.
+Their wrappers and exits differ. Original Previous returns9; Modern increments `0066477c`, restores its saved register frame and returns0. Thus the change is not merely adding arrow names to unchanged callback return contracts. The conditional outer-loop action9 path is traced in the follow-up below; successful redraw is not implied by its completion.
 
 ## Modern binding wrapper and periodic refresh
 
@@ -45,6 +45,24 @@ Together with the ordinary Credits and panorama reports, this gives conditional 
 
 ## Reconstruction follow-up
 
-Keep version-specific callback returns and the Modern counter/periodic-refresh protocol explicit. For later comparison, include Next/Previous at indices1/2/19, missing trailing slides, no matching candidate asset, multiple inputs before periodic refresh, zero/nonzero counter and null resource state. Complete refresh/resource ownership, original action9 handling and shared global initialization must be mapped before integration or equivalence claims.
+Keep version-specific callback returns and the Modern counter/periodic-refresh protocol explicit. For later comparison, include Next/Previous at indices1/2/19, missing trailing slides, no matching candidate asset, multiple inputs before periodic refresh, zero/nonzero counter and null resource state. Complete refresh/resource ownership, pending-menu overrides and shared global initialization must be mapped before integration or equivalence claims.
 
 Executables, saved Ghidra state, raw exports and maintained C remain unchanged. This report documents a control-flow difference without running instruction probes or a game session.
+
+## Original action9: descriptor transition and reinitialization path
+
+The expanded audit retains the action table and five byte-identical original/Modern code ranges covering dispatch, transition/cleanup and reinitialization. Reused generic engine code is not itself new Modern functionality; the slideshow callback return changes whether this path is taken.
+
+- The action switch at `0044b6c8..0044b6de` subtracts4 and indexes `0044b208`. Action9 selects table slot `0044b21c`, target **`0044b7a7`**, in both images.
+- That arm passes the active descriptor and action9 to `0044aa30`. It then conditionally handles pending descriptor name `00559224`; if it resolves, active descriptor `00559230` changes and the pending pointer is cleared. It finally sets the loop-local initialization flag to1.
+- At `0044b6f6`, action9 differs from continuation cases1/3, so the ordinary path returns to `0044b30b`. With the initialization flag set, that path calls **`0044ab40`** for the active descriptor. Pending-name overrides can therefore change which descriptor is initialized; “same-menu restart” is conditional on no such override.
+
+Complete transition helper **`0044aa30..0044aac9`** first invokes descriptor+0ch if nonnull. For the original slideshow this is the verified return-zero stub `00453f50`, which preserves the EDX action value. In the nonzero `00559234` branch it then goes directly to cleanup. Otherwise, EDX=9 skips the ordinary sound/fade block, clears `00559c68` and proceeds to cleanup. This branch interpretation depends on the action surviving the descriptor callback; it is established for this original stub, not every arbitrary callback.
+
+Cleanup **`0044a9e0..0044aa21`** scans the descriptor's entries from its signed start index to the type-zero sentinel, invoking each non-null entry callback at **+28h**. It is a callback traversal; actual allocations/resources released depend on the templates and callees. No claim that all memory is freed or every callback succeeds follows from the traversal.
+
+Complete initializer **`0044ab40..0044ac7c`** performs generic setup, resets selection fields, calls entry-flag setup through `0044aad0`, and then invokes non-null descriptor callback **+8** at `0044ac5a`. The `slides` registration maps +8 to `00453c00` in both binaries. It subsequently calls `0044a960`, `0044a860` and `004f0650` before returning the saved initializer result. The full semantic effects of these generic callees are not revalidated here.
+
+Thus the original slideshow's action9 normally requests a **descriptor transition/entry-cleanup/reinitialization sequence**, reaching its binding/render initialization again. Modern Next/Previous returning0 bypasses this particular action-driven sequence and instead lets periodic callback+10h inspect `0066477c` and call the separate refresh entry. Other events can still transition or reinitialize the Modern menu; this is not proof that it never rebuilds.
+
+For C reconstruction, merging the versions under one “refresh slide” return code would hide differences in entry cleanup, selection reset, callback ordering and pending-menu overrides. Compare these effects explicitly before deciding which protocol to preserve. No runtime menu or instruction tests were added.

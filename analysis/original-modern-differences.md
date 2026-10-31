@@ -296,7 +296,7 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 ## Car slideshow navigation and deferred refresh
 
-[The slideshow comparison](original-modern-slideshow-navigation.md) maps changed callback returns, a retained Previous core and the Modern shared-counter/periodic-refresh protocol. It supplies the remaining slideshow binding in MP140-022; actual input, rendering and historical release attribution remain untested.
+[The slideshow comparison](original-modern-slideshow-navigation.md) maps changed callback returns, a retained Previous core and the Modern shared-counter/periodic-refresh protocol. It supplies the remaining slideshow binding in MP140-022. The original action9 follow-up traces conditional entry cleanup and descriptor reinitialization, contrasting that broader path with Modern periodic refresh; actual input, rendering and historical release attribution remain untested.
 
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
