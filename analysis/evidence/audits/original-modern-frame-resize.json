@@ -1,0 +1,92 @@
+{
+  "kind": "static-viewport-resize-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004be970",
+          "end": "004bea31",
+          "bytes_sha256": "db9d294c1a2b5ee97a543e895c23cefdfe10174a14a4151251f1b23b7f29afa7",
+          "assembly": "analysis/captures/modern-differences/frame-resize/original-004be970.asm",
+          "assembly_sha256": "b281f843eb1f8e9f744fc7539a198ccba34f168f86381f42bc53dc1b8cfd6cfe"
+        },
+        {
+          "start": "004bea40",
+          "end": "004beaf7",
+          "bytes_sha256": "04d5dbd2e797a9dfabf9c945f8450380aa725cefa0d978df6ef3c88cd12f1ab7",
+          "assembly": "analysis/captures/modern-differences/frame-resize/original-004bea40.asm",
+          "assembly_sha256": "fdfab8bbe1acd371c0b54ee3cb663624678f14550fa6334f6b888575ef145c56"
+        },
+        {
+          "start": "004c4fbe",
+          "end": "004c4ff2",
+          "bytes_sha256": "55c0292bde308086776baba7e7c784e38edd7414a3417daeae10538f11618c99",
+          "assembly": "analysis/captures/modern-differences/frame-resize/original-004c4fbe.asm",
+          "assembly_sha256": "218d8657cd1e40759f7f54bccff79c3d3e191d50c7ab6c7694a6075242231d5d"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004be970",
+          "end": "004bea36",
+          "bytes_sha256": "eb2850795440b2c92b4bd5f63c1b7c2dbfbcbf35f838fa04b6a066e782621818",
+          "assembly": "analysis/captures/modern-differences/frame-resize/official_modern-004be970.asm",
+          "assembly_sha256": "672b548d08d00ed7480b35bda2635d809dc2022423d9fff916c89fc8ccc0455b"
+        },
+        {
+          "start": "004bea40",
+          "end": "004beaf7",
+          "bytes_sha256": "04d5dbd2e797a9dfabf9c945f8450380aa725cefa0d978df6ef3c88cd12f1ab7",
+          "assembly": "analysis/captures/modern-differences/frame-resize/official_modern-004bea40.asm",
+          "assembly_sha256": "269b1282ec896d333c200eb316e238b644fc09ca54c96e89a30929cb3a9caeca"
+        },
+        {
+          "start": "004c4fbe",
+          "end": "004c4ff2",
+          "bytes_sha256": "55c0292bde308086776baba7e7c784e38edd7414a3417daeae10538f11618c99",
+          "assembly": "analysis/captures/modern-differences/frame-resize/official_modern-004c4fbe.asm",
+          "assembly_sha256": "bba95d2a6100f7849de446c0439487b8004a5448c80b95601a13af9aea4f6ef9"
+        }
+      ]
+    }
+  },
+  "retained_ranges": [
+    {
+      "start": "004bea40",
+      "end": "004beaf7",
+      "sha256": "04d5dbd2e797a9dfabf9c945f8450380aa725cefa0d978df6ef3c88cd12f1ab7"
+    },
+    {
+      "start": "004c4fbe",
+      "end": "004c4ff2",
+      "sha256": "55c0292bde308086776baba7e7c784e38edd7414a3417daeae10538f11618c99"
+    },
+    {
+      "start": "004be970",
+      "end": "004be9a3",
+      "sha256": "e03af0965a1071ba6e3d8080d77c879115230d7e1743f51da14eb581b8a0da8a"
+    },
+    {
+      "start": "004be9aa",
+      "end": "004bea2a",
+      "sha256": "a38cd61b062a0adc2385fe5489f30cdd94c33233c5a6db8a4c20380c60f7f873"
+    }
+  ],
+  "changed_gate": {
+    "start": "004be9a3",
+    "original_hex": "833d4cbc6f0000",
+    "modern_hex": "f6054cbc6f0002"
+  },
+  "limits": [
+    "No input, resizing or target execution.",
+    "Held action indexes are observed; human key labels and release-introduction dates remain separate.",
+    "Visual horizon/camera-shift effect and runtime state admission not validated."
+  ]
+}

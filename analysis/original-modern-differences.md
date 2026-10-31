@@ -324,6 +324,10 @@ This supersedes the earlier numerical checkpoint counts while preserving their h
 
 [The viewport overlay comparison](original-modern-view-overlay.md) maps the narrower bit gate, moved rectangle operands and added fixed-colour shapes. The rectangle producer is now traced to a distinct extent-correction helper and two update calls. Its source initialization distinguishes a width-based covering frame from physical and fitted rectangles, with explicit zero-flag examples. The comparison also retains the complete 143-byte delta envelope: the Modern-range count of138 excludes five bytes belonging to an original CALL operand, so it is not a complete original-instruction diff.
 
+## Viewport resize input and admission
+
+[The paired resize comparison](original-modern-frame-resize.md) traces held-action +1/−1 callers, the narrower Modern bit gate and its added refresh-on-skip path. The complete adjustment helper is retained unchanged. MP160-004 remains vendor-claimed because the advertised camera-shift effect and full setting association are unresolved.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
