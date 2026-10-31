@@ -90,3 +90,19 @@ Reset writes count0 at `0041dec3` before its loop's external calls. It also publ
 Insertion reads the current count, forms the next destination as `005dd0e0 + wrap32(84*count)`, writes the record, then stores `wrap32(count+1)` at `0041e05f`. It has **no local count-capacity check** before accessing the destination. Its unsigned selector check against3 controls which record template branch is used, not whether count is within the array. Unsupported template selectors can still reach the conversion/increment tail with some fields left as prior storage. Record-pointer validity and template admission remain required preconditions.
 
 Under a separately established sequential reset followed by a bounded number of insertions without alternate writers, the count stays nonnegative. These routines alone do not prove that lifecycle, a maximum live count, or negative-count reachability. Accordingly, Modern's negative-count LOOP behavior remains a **conditional contract difference**, not an observed failure: original's apply conversion skips negative counts; Modern treats every nonzero count as a decrementing32-bit loop. The unchanged count producers do not justify silently adding a clamp or declaring the problematic domain reachable. No record insertion/reset or target code was executed.
+
+## Initialization-qualified values of previously untouched fields
+
+The audit additionally verifies the four-target insertion jump table at `0041defc` and the initializer neighborhood `0041d9a3..0041da06`, all byte-identical across versions. That neighborhood resets records, then inserts **types1 and2 when mode==1**, or **types0 and3 otherwise**, before selecting record0 and applying presets. The table maps types1/2 to the same template. The four fixed-point template values at +24h/+28h/+38h/+3ch are:
+
+| Template type | Values before shifting left16 |
+|---|---|
+| 0 | 500,500,110,150 |
+| 1 or2 | 400,440,60,92 |
+| 3 | 150,100,40,80 |
+
+These are established producer values under the explicit sequential premise that reset establishes count0, the two insertions occupy records0/1, mode remains stable and no alias changes the compared fields before apply. They do **not** replace the earlier arbitrary-entry contract: original's apply still leaves those fields untouched locally. The manifest retains both views instead of assigning unconditional defaults to all calls.
+
+With that initialization premise, the original mode!=1 second record remains `{150,100,40,80} << 16` after apply, while original first-record +24h stays `500 << 16`. Mode1 leaves +24h=`400 << 16` in both records and applies its three scaled values. Modern can either restate or change these known values depending on the selected table/source advance. For example, selector1, flag0, mode!=1, auxiliary0 retains the same first-record four fields but replaces the second record with `{500,333,133,266} << 16`; selector0 in mode1 changes both +24h values from400 to500.
+
+Thus “Modern adds a write” is not itself proof that the live value changes. The new initialization-qualified formula evaluations distinguish matching stores from changed values without claiming the setup premise or every evaluated input was observed at runtime. Physical meanings, all alternate lifecycles and floating output remain separate.

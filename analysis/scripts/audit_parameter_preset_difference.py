@@ -55,13 +55,19 @@ def main():
         row['caller_and_selector_witnesses'] = []
         for a,b in [(0x41d610,0x41d61a),(0x41d870,0x41d89d),
                     (0x41aaf0,0x41ab02),(0x41d9fa,0x41da0b),
-                    (0x41deb0,0x41def9),(0x41df10,0x41e069)]:
+                    (0x41deb0,0x41def9),(0x41df10,0x41e069),
+                    (0x41d9a3,0x41da06),(0x41defc,0x41df0c)]:
             value=pe.get_data(a-0x400000,b-a)
             row['caller_and_selector_witnesses'].append({'start':f'{a:08x}',
                 'exclusive_end':f'{b:08x}','bytes':value.hex(),
                 'sha256':hashlib.sha256(value).hexdigest()})
         for call in (0x41aaf6,0x41d894,0x41da01):
             assert pe.get_data(call-0x400000,5)==b'\xe8'+struct.pack('<i',0x41d620-call-5)
+        for start,values in [(0x41df6d,(500,500,110,150)),
+                             (0x41df99,(400,440,60,92)),(0x41dfe0,(150,100,40,80))]:
+            for i,(offset,n) in enumerate(zip((0x24,0x28,0x38,0x3c),values)):
+                assert pe.get_data(start+i*7-0x400000,7)==bytes((0xc7,0x40,offset))+struct.pack('<I',n<<16)
+        assert struct.unpack('<4I',pe.get_data(0x41defc-0x400000,16)) == (0x41df6d,0x41df99,0x41df99,0x41dfe0)
         assert pe.get_data(0x41debb-0x400000,14)==bytes.fromhex('31c98915d8d05d00890ddcd05d00')
         assert pe.get_data(0x41e057-0x400000,14)==bytes.fromhex('a1dcd05d008d50018915dcd05d00')
         assert pe.get_data(0x41d610-0x400000,10)==bytes.fromhex('5589e5a328bc6f005dc3')
@@ -94,9 +100,17 @@ def main():
                         'modern_words_24_28_38_3c':new,
                         'known_field_differences':sum(a != (b<<16) for i,record in enumerate(new)
                             if i==0 or mode1 for a,b in zip(known,record[1:]))})
+    for case in comparisons:
+        mode1=case['mode_equals1']
+        old24=400 if mode1 else 500
+        first=[old24<<16]+case['original_known_fields_28_38_3c'][0]
+        second=([400<<16]+case['original_known_fields_28_38_3c'][1]) if mode1 else [n<<16 for n in (150,100,40,80)]
+        case['original_after_inspected_initialization_24_28_38_3c']=[first,second]
+        case['initialization_qualified_field_differences']=sum(a!=(b<<16) for x,y in zip([first,second],case['modern_words_24_28_38_3c']) for a,b in zip(x,y))
     result['derived_integer_comparisons'] = {
         'kind':'mathematical evaluation of asserted static formulas and table; no target execution',
         'scope':'selectors0..3, both flag/mode branches, auxiliary representatives0..3; original untouched fields are null, not zero',
+        'initialization_comparison_precondition':'reset establishes count0; mode remains stable; two shown insertions occupy records0/1; no intervening alias mutation of compared fields',
         'cases':comparisons,
         'cases_with_known_field_differences':sum(x['known_field_differences']>0 for x in comparisons)}
 

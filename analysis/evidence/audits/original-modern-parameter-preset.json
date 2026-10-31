@@ -77,6 +77,18 @@
           "exclusive_end": "0041e069",
           "bytes": "51565589e589c189d68b15dcd05d008d04950000000001d0c1e00201d0c1e00205e0d05d00c74014ffffffffc74018ffffffffc7404800000000c7400801000000c7400400000000893089581c83f9030f87bf000000ff248dfcde4100c740240000f401c740280000f401c7403800006e00c7403c00009600c74048d0070000c7404c2a000000eb71c7402400009001c740280000b801c7403800003c00c7403c00005c00c74048bc020000c7404c180000008b501cc740200000fbffc7421c800300008b501cc7422001000000eb45c7402400009600c7402800006400c7403800002800c7403c00005000c74048fa000000c7404c060000008b501cc740200000fbffc7421c000000008b501cc7422000000000dd056c6d5300db4020d8c9db4024d8cadb4028d8cbdb403cd8ccdb4038decdd9cad95830d95834d95844d9c9d95840d9582ca1dcd05d008d50018915dcd05d005d5e59c3",
           "sha256": "2b0f46f97ecc7d688c90962eb6fd3e2fcd01e13a961f0da4ecb773c2c30ff937"
+        },
+        {
+          "start": "0041d9a3",
+          "exclusive_end": "0041da06",
+          "bytes": "e8080500008b35b0d36f0083fe017522bb90d05d00ba1000000089f0e84c050000bbb4d05d00ba20000000b802000000eb20bb90d05d00ba1000000031c0e82a050000bbb4d05d00ba10000000b803000000e81605000031c0e80ff9ffffe81afcffff",
+          "sha256": "e70fe237224c6143ca434e8eff25dc7ae740fe6ffac7581a146af4283f904b0d"
+        },
+        {
+          "start": "0041defc",
+          "exclusive_end": "0041df0c",
+          "bytes": "6ddf410099df410099df4100e0df4100",
+          "sha256": "fe2870e87ff0c9bfb0674e12b9333e5b32b2c76c7a2fc3a5c18a7fb395a06b93"
         }
       ]
     },
@@ -300,6 +312,18 @@
           "exclusive_end": "0041e069",
           "bytes": "51565589e589c189d68b15dcd05d008d04950000000001d0c1e00201d0c1e00205e0d05d00c74014ffffffffc74018ffffffffc7404800000000c7400801000000c7400400000000893089581c83f9030f87bf000000ff248dfcde4100c740240000f401c740280000f401c7403800006e00c7403c00009600c74048d0070000c7404c2a000000eb71c7402400009001c740280000b801c7403800003c00c7403c00005c00c74048bc020000c7404c180000008b501cc740200000fbffc7421c800300008b501cc7422001000000eb45c7402400009600c7402800006400c7403800002800c7403c00005000c74048fa000000c7404c060000008b501cc740200000fbffc7421c000000008b501cc7422000000000dd056c6d5300db4020d8c9db4024d8cadb4028d8cbdb403cd8ccdb4038decdd9cad95830d95834d95844d9c9d95840d9582ca1dcd05d008d50018915dcd05d005d5e59c3",
           "sha256": "2b0f46f97ecc7d688c90962eb6fd3e2fcd01e13a961f0da4ecb773c2c30ff937"
+        },
+        {
+          "start": "0041d9a3",
+          "exclusive_end": "0041da06",
+          "bytes": "e8080500008b35b0d36f0083fe017522bb90d05d00ba1000000089f0e84c050000bbb4d05d00ba20000000b802000000eb20bb90d05d00ba1000000031c0e82a050000bbb4d05d00ba10000000b803000000e81605000031c0e80ff9ffffe81afcffff",
+          "sha256": "e70fe237224c6143ca434e8eff25dc7ae740fe6ffac7581a146af4283f904b0d"
+        },
+        {
+          "start": "0041defc",
+          "exclusive_end": "0041df0c",
+          "bytes": "6ddf410099df410099df4100e0df4100",
+          "sha256": "fe2870e87ff0c9bfb0674e12b9333e5b32b2c76c7a2fc3a5c18a7fb395a06b93"
         }
       ]
     }
@@ -311,6 +335,7 @@
   "derived_integer_comparisons": {
     "kind": "mathematical evaluation of asserted static formulas and table; no target execution",
     "scope": "selectors0..3, both flag/mode branches, auxiliary representatives0..3; original untouched fields are null, not zero",
+    "initialization_comparison_precondition": "reset establishes count0; mode remains stable; two shown insertions occupy records0/1; no intervening alias mutation of compared fields",
     "cases": [
       {
         "selector": 0,
@@ -343,7 +368,22 @@
             500
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            32768000,
+            32768000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 4
       },
       {
         "selector": 0,
@@ -376,7 +416,22 @@
             266
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            32768000,
+            32768000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 4
       },
       {
         "selector": 0,
@@ -409,7 +464,22 @@
             80
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            32768000,
+            32768000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 0,
@@ -442,7 +512,22 @@
             80
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            32768000,
+            32768000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 0,
@@ -479,7 +564,22 @@
             500
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            28835840,
+            28835840,
+            28835840
+          ],
+          [
+            26214400,
+            28835840,
+            28835840,
+            28835840
+          ]
+        ],
+        "initialization_qualified_field_differences": 8
       },
       {
         "selector": 0,
@@ -516,7 +616,22 @@
             500
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            28835840,
+            28835840,
+            28835840
+          ],
+          [
+            26214400,
+            28835840,
+            28835840,
+            28835840
+          ]
+        ],
+        "initialization_qualified_field_differences": 8
       },
       {
         "selector": 0,
@@ -553,7 +668,22 @@
             500
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            28835840,
+            28835840,
+            28835840
+          ],
+          [
+            26214400,
+            28835840,
+            28835840,
+            28835840
+          ]
+        ],
+        "initialization_qualified_field_differences": 8
       },
       {
         "selector": 0,
@@ -590,7 +720,22 @@
             500
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            28835840,
+            28835840,
+            28835840
+          ],
+          [
+            26214400,
+            28835840,
+            28835840,
+            28835840
+          ]
+        ],
+        "initialization_qualified_field_differences": 8
       },
       {
         "selector": 0,
@@ -623,7 +768,22 @@
             500
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            24576000,
+            24576000,
+            24576000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 7
       },
       {
         "selector": 0,
@@ -656,7 +816,22 @@
             200
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            24576000,
+            24576000,
+            24576000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 7
       },
       {
         "selector": 0,
@@ -689,7 +864,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            24576000,
+            24576000,
+            24576000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 0,
@@ -722,7 +912,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            24576000,
+            24576000,
+            24576000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 0,
@@ -759,7 +964,22 @@
             500
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            21626880,
+            21626880,
+            21626880
+          ],
+          [
+            26214400,
+            21626880,
+            21626880,
+            21626880
+          ]
+        ],
+        "initialization_qualified_field_differences": 8
       },
       {
         "selector": 0,
@@ -796,7 +1016,22 @@
             500
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            21626880,
+            21626880,
+            21626880
+          ],
+          [
+            26214400,
+            21626880,
+            21626880,
+            21626880
+          ]
+        ],
+        "initialization_qualified_field_differences": 8
       },
       {
         "selector": 0,
@@ -833,7 +1068,22 @@
             500
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            21626880,
+            21626880,
+            21626880
+          ],
+          [
+            26214400,
+            21626880,
+            21626880,
+            21626880
+          ]
+        ],
+        "initialization_qualified_field_differences": 8
       },
       {
         "selector": 0,
@@ -870,7 +1120,22 @@
             500
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            21626880,
+            21626880,
+            21626880
+          ],
+          [
+            26214400,
+            21626880,
+            21626880,
+            21626880
+          ]
+        ],
+        "initialization_qualified_field_differences": 8
       },
       {
         "selector": 1,
@@ -903,7 +1168,22 @@
             266
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            7208960,
+            9830400
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 4
       },
       {
         "selector": 1,
@@ -936,7 +1216,22 @@
             80
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            7208960,
+            9830400
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -969,7 +1264,22 @@
             80
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            7208960,
+            9830400
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -1002,7 +1312,22 @@
             80
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            32768000,
+            7208960,
+            9830400
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -1039,7 +1364,22 @@
             92
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            28835840,
+            3932160,
+            6029312
+          ],
+          [
+            26214400,
+            28835840,
+            3932160,
+            6029312
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -1076,7 +1416,22 @@
             92
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            28835840,
+            3932160,
+            6029312
+          ],
+          [
+            26214400,
+            28835840,
+            3932160,
+            6029312
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -1113,7 +1468,22 @@
             92
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            28835840,
+            3932160,
+            6029312
+          ],
+          [
+            26214400,
+            28835840,
+            3932160,
+            6029312
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -1150,7 +1520,22 @@
             92
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            28835840,
+            3932160,
+            6029312
+          ],
+          [
+            26214400,
+            28835840,
+            3932160,
+            6029312
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -1183,7 +1568,22 @@
             200
           ]
         ],
-        "known_field_differences": 2
+        "known_field_differences": 2,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            24576000,
+            5406720,
+            7372800
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 1,
@@ -1216,7 +1616,22 @@
             80
           ]
         ],
-        "known_field_differences": 2
+        "known_field_differences": 2,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            24576000,
+            5406720,
+            7372800
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 2
       },
       {
         "selector": 1,
@@ -1249,7 +1664,22 @@
             80
           ]
         ],
-        "known_field_differences": 2
+        "known_field_differences": 2,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            24576000,
+            5406720,
+            7372800
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 2
       },
       {
         "selector": 1,
@@ -1282,7 +1712,22 @@
             80
           ]
         ],
-        "known_field_differences": 2
+        "known_field_differences": 2,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            24576000,
+            5406720,
+            7372800
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 2
       },
       {
         "selector": 1,
@@ -1319,7 +1764,22 @@
             69
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            21626880,
+            2949120,
+            4521984
+          ],
+          [
+            26214400,
+            21626880,
+            2949120,
+            4521984
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -1356,7 +1816,22 @@
             69
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            21626880,
+            2949120,
+            4521984
+          ],
+          [
+            26214400,
+            21626880,
+            2949120,
+            4521984
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -1393,7 +1868,22 @@
             69
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            21626880,
+            2949120,
+            4521984
+          ],
+          [
+            26214400,
+            21626880,
+            2949120,
+            4521984
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 1,
@@ -1430,7 +1920,22 @@
             69
           ]
         ],
-        "known_field_differences": 0
+        "known_field_differences": 0,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            21626880,
+            2949120,
+            4521984
+          ],
+          [
+            26214400,
+            21626880,
+            2949120,
+            4521984
+          ]
+        ],
+        "initialization_qualified_field_differences": 0
       },
       {
         "selector": 2,
@@ -1463,7 +1968,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            18022000,
+            3964840,
+            5406600
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 2,
@@ -1496,7 +2016,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            18022000,
+            3964840,
+            5406600
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 2,
@@ -1529,7 +2064,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            18022000,
+            3964840,
+            5406600
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 2,
@@ -1562,7 +2112,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            18022000,
+            3964840,
+            5406600
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 2,
@@ -1599,7 +2164,22 @@
             51
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            15859360,
+            2162640,
+            3316048
+          ],
+          [
+            26214400,
+            15859360,
+            2162640,
+            3316048
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 2,
@@ -1636,7 +2216,22 @@
             51
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            15859360,
+            2162640,
+            3316048
+          ],
+          [
+            26214400,
+            15859360,
+            2162640,
+            3316048
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 2,
@@ -1673,7 +2268,22 @@
             51
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            15859360,
+            2162640,
+            3316048
+          ],
+          [
+            26214400,
+            15859360,
+            2162640,
+            3316048
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 2,
@@ -1710,7 +2320,22 @@
             51
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            15859360,
+            2162640,
+            3316048
+          ],
+          [
+            26214400,
+            15859360,
+            2162640,
+            3316048
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 2,
@@ -1743,7 +2368,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            13434500,
+            2955590,
+            4030350
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 2,
@@ -1776,7 +2416,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            13434500,
+            2955590,
+            4030350
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 2,
@@ -1809,7 +2464,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            13434500,
+            2955590,
+            4030350
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 2,
@@ -1842,7 +2512,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            13434500,
+            2955590,
+            4030350
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 2,
@@ -1879,7 +2564,22 @@
             38
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            11822360,
+            1612140,
+            2471948
+          ],
+          [
+            26214400,
+            11822360,
+            1612140,
+            2471948
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 2,
@@ -1916,7 +2616,22 @@
             38
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            11822360,
+            1612140,
+            2471948
+          ],
+          [
+            26214400,
+            11822360,
+            1612140,
+            2471948
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 2,
@@ -1953,7 +2668,22 @@
             38
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            11822360,
+            1612140,
+            2471948
+          ],
+          [
+            26214400,
+            11822360,
+            1612140,
+            2471948
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 2,
@@ -1990,7 +2720,22 @@
             38
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            11822360,
+            1612140,
+            2471948
+          ],
+          [
+            26214400,
+            11822360,
+            1612140,
+            2471948
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 3,
@@ -2023,7 +2768,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            13107000,
+            2883540,
+            3932100
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 3,
@@ -2056,7 +2816,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            13107000,
+            2883540,
+            3932100
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 3,
@@ -2089,7 +2864,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            13107000,
+            2883540,
+            3932100
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 3,
@@ -2122,7 +2912,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            13107000,
+            2883540,
+            3932100
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 3,
@@ -2159,7 +2964,22 @@
             37
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            11534160,
+            1572840,
+            2411688
+          ],
+          [
+            26214400,
+            11534160,
+            1572840,
+            2411688
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 3,
@@ -2196,7 +3016,22 @@
             37
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            11534160,
+            1572840,
+            2411688
+          ],
+          [
+            26214400,
+            11534160,
+            1572840,
+            2411688
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 3,
@@ -2233,7 +3068,22 @@
             37
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            11534160,
+            1572840,
+            2411688
+          ],
+          [
+            26214400,
+            11534160,
+            1572840,
+            2411688
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 3,
@@ -2270,7 +3120,22 @@
             37
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            11534160,
+            1572840,
+            2411688
+          ],
+          [
+            26214400,
+            11534160,
+            1572840,
+            2411688
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 3,
@@ -2303,7 +3168,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            9830000,
+            2162600,
+            2949000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 3,
@@ -2336,7 +3216,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            9830000,
+            2162600,
+            2949000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 3,
@@ -2369,7 +3264,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            9830000,
+            2162600,
+            2949000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 3,
@@ -2402,7 +3312,22 @@
             80
           ]
         ],
-        "known_field_differences": 3
+        "known_field_differences": 3,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            32768000,
+            9830000,
+            2162600,
+            2949000
+          ],
+          [
+            9830400,
+            6553600,
+            2621440,
+            5242880
+          ]
+        ],
+        "initialization_qualified_field_differences": 3
       },
       {
         "selector": 3,
@@ -2439,7 +3364,22 @@
             28
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            8650400,
+            1179600,
+            1808720
+          ],
+          [
+            26214400,
+            8650400,
+            1179600,
+            1808720
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 3,
@@ -2476,7 +3416,22 @@
             28
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            8650400,
+            1179600,
+            1808720
+          ],
+          [
+            26214400,
+            8650400,
+            1179600,
+            1808720
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 3,
@@ -2513,7 +3468,22 @@
             28
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            8650400,
+            1179600,
+            1808720
+          ],
+          [
+            26214400,
+            8650400,
+            1179600,
+            1808720
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       },
       {
         "selector": 3,
@@ -2550,7 +3520,22 @@
             28
           ]
         ],
-        "known_field_differences": 6
+        "known_field_differences": 6,
+        "original_after_inspected_initialization_24_28_38_3c": [
+          [
+            26214400,
+            8650400,
+            1179600,
+            1808720
+          ],
+          [
+            26214400,
+            8650400,
+            1179600,
+            1808720
+          ]
+        ],
+        "initialization_qualified_field_differences": 6
       }
     ],
     "cases_with_known_field_differences": 48
