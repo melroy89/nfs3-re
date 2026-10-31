@@ -1,0 +1,281 @@
+{
+  "kind": "static-registry-comparison",
+  "range_end": "exclusive",
+  "limits": [
+    "Direct CALL encodings in executable sections only; not a reachability proof.",
+    "Indirect aliases, dynamically resolved calls and DLL behavior not covered.",
+    "Retained function bytes do not prove the same callers or runtime inputs."
+  ],
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "registry_imports": {
+        "00534464": "RegCloseKey",
+        "00534468": "RegFlushKey",
+        "0053446c": "RegOpenKeyExA",
+        "00534470": "RegQueryValueExA"
+      },
+      "direct_call_candidates": [
+        {
+          "address": "004a579e",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "004a57ca",
+          "import": "RegQueryValueExA"
+        },
+        {
+          "address": "004a58ab",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "004a595b",
+          "import": "RegQueryValueExA"
+        },
+        {
+          "address": "004b6432",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "004b644f",
+          "import": "RegQueryValueExA"
+        },
+        {
+          "address": "004b6479",
+          "import": "RegQueryValueExA"
+        },
+        {
+          "address": "004b64e8",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "004b6505",
+          "import": "RegQueryValueExA"
+        },
+        {
+          "address": "004b6554",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "004b6575",
+          "import": "RegQueryValueExA"
+        },
+        {
+          "address": "004bbd13",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "004bbd50",
+          "import": "RegQueryValueExA"
+        },
+        {
+          "address": "00522287",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "005222c4",
+          "import": "RegQueryValueExA"
+        }
+      ],
+      "spans": [
+        {
+          "start": "004a5780",
+          "end": "004a587c",
+          "bytes_sha256": "8f9ef583bdf4841c26ee052ad0cf2a9d4a0fef90666d861fd602474673bc51a6",
+          "assembly": "analysis/captures/modern-differences/registry/original-004a5780.asm",
+          "assembly_sha256": "640f6143b5114c874831e3abfee7f5de027088e2ff1f9bc5f9704d5604d941db"
+        },
+        {
+          "start": "004a5880",
+          "end": "004a59ba",
+          "bytes_sha256": "a2c351bc6a5c7e274c2d78788e9b47768007de888707ee2051e9b7a292bfe6cf",
+          "assembly": "analysis/captures/modern-differences/registry/original-004a5880.asm",
+          "assembly_sha256": "8566532c49a6b48e5317bfbea53a079c1e943c71d5a2ab40750b9347f441b0e1"
+        },
+        {
+          "start": "004b6400",
+          "end": "004b64b5",
+          "bytes_sha256": "4b01c6c58b3395833a4f7be1fd5c0ed92c69723fa17dbfd817e77e109e51883a",
+          "assembly": "analysis/captures/modern-differences/registry/original-004b6400.asm",
+          "assembly_sha256": "6e322fe84d61fd6967d5726a2969881a2afa22b5b1dcdfe8de72123c7c71638e"
+        },
+        {
+          "start": "004b64c0",
+          "end": "004b6513",
+          "bytes_sha256": "6142d9e19d6895485b00861bb99fb0440e6f88768c66515d03dc47a700708375",
+          "assembly": "analysis/captures/modern-differences/registry/original-004b64c0.asm",
+          "assembly_sha256": "f5fc96002b65eb269a3a5eba8ccc3483a29e5b521f3bceb080786ed0e242205e"
+        },
+        {
+          "start": "004b6520",
+          "end": "004b6588",
+          "bytes_sha256": "bc9e24f2c6be3bb94abec72013ea59ae863884740d29a50c06773baa5f097528",
+          "assembly": "analysis/captures/modern-differences/registry/original-004b6520.asm",
+          "assembly_sha256": "3b875f019236cacd66ab4a3ca08bdf104d374434738d2cd9b0aa75b6711cfc9e"
+        },
+        {
+          "start": "004bbcc0",
+          "end": "004bbd70",
+          "bytes_sha256": "0b18a257a35bb979f950991a82936141f87d12c9345be9ebdd29d6ca8780dbf9",
+          "assembly": "analysis/captures/modern-differences/registry/original-004bbcc0.asm",
+          "assembly_sha256": "284bff722b2faa5946676c93a53916628adb19e06132ffd256bc5ef2bd2dbc62"
+        },
+        {
+          "start": "00522250",
+          "end": "005222e8",
+          "bytes_sha256": "5ee455f5520c058b227ac877f9f9339de4dfe34e9693b099769a991a000ac9d3",
+          "assembly": "analysis/captures/modern-differences/registry/original-00522250.asm",
+          "assembly_sha256": "0ae2a6bf90676c877c019ba94da5ad570ae67ff4119ca52f9e02ea9ae9e029b3"
+        },
+        {
+          "start": "004b5720",
+          "end": "004b584e",
+          "bytes_sha256": "292671942b6d1501c053f14ece637aa115496ed3b91746b457ec90c3eba17705",
+          "assembly": "analysis/captures/modern-differences/registry/original-004b5720.asm",
+          "assembly_sha256": "783671deb8ee447aaf098a569e2be9246b0bfcb53c6a4a2e8121643b71cc9751"
+        }
+      ],
+      "strings": {
+        "0053da94": "SOFTWARE\\EA-NPS\\DLL",
+        "0053daa8": "DEVELOP MODE",
+        "0053dab8": "ON",
+        "0053dabc": "1",
+        "0053dac0": "on",
+        "0053dac4": "yes",
+        "0053dac8": "YES",
+        "0053dacc": "_DEVELOP",
+        "0053fe50": "SOFTWARE\\Electronic Arts\\Need For Speed III",
+        "0053fe7c": "Thrash Driver",
+        "0053fe8c": "D3D Device",
+        "0053fe98": "3D Device Description",
+        "0053feb0": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders",
+        "0053fef4": "Desktop",
+        "00551928": "PerfStats\\StatData",
+        "0055193c": "VMM\\cpgLocked"
+      },
+      "online_name_table": [
+        {
+          "address": "0053d7d8",
+          "text": "NPSDLL"
+        },
+        {
+          "address": "0053d7e0",
+          "text": "LoginClient"
+        },
+        {
+          "address": "0053d7ec",
+          "text": "AnalyzeAPI"
+        },
+        {
+          "address": "0053d7f8",
+          "text": "NPSClientDLL"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "registry_imports": {
+        "00534464": "RegCloseKey",
+        "00534468": "RegFlushKey",
+        "0053446c": "RegOpenKeyExA",
+        "00534470": "RegQueryValueExA"
+      },
+      "direct_call_candidates": [
+        {
+          "address": "004a579e",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "004a57ca",
+          "import": "RegQueryValueExA"
+        },
+        {
+          "address": "004a58ab",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "004a595b",
+          "import": "RegQueryValueExA"
+        },
+        {
+          "address": "00522287",
+          "import": "RegOpenKeyExA"
+        },
+        {
+          "address": "005222c4",
+          "import": "RegQueryValueExA"
+        }
+      ],
+      "spans": [
+        {
+          "start": "004a5780",
+          "end": "004a587c",
+          "bytes_sha256": "8f9ef583bdf4841c26ee052ad0cf2a9d4a0fef90666d861fd602474673bc51a6",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004a5780.asm",
+          "assembly_sha256": "67261d76b36ddfded1c3546b36f1fb8885b70a10a599b7abe3bd1bfb81201a8f"
+        },
+        {
+          "start": "004a5880",
+          "end": "004a59ba",
+          "bytes_sha256": "a2c351bc6a5c7e274c2d78788e9b47768007de888707ee2051e9b7a292bfe6cf",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004a5880.asm",
+          "assembly_sha256": "0b792900dab8fc33dc6ab6b119d9240b4bbfc0b368f1c2aabc6bb10a858d65e2"
+        },
+        {
+          "start": "004b6400",
+          "end": "004b64b5",
+          "bytes_sha256": "89fb4195f15888c607a8c18f889100940f648f16cfa5335de3539232797548ea",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004b6400.asm",
+          "assembly_sha256": "63fc9569750cc928e7f00dad367d4d27e34bb0e216bacb99ec10174cdf7510ce"
+        },
+        {
+          "start": "004b64c0",
+          "end": "004b6513",
+          "bytes_sha256": "69751d6ee924a24d5dfd8a7c58ea29ee18daa54bac93ac77574dc14e7647f344",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004b64c0.asm",
+          "assembly_sha256": "a6836c1c09106f9f1cc2b38cd7d1b6da789fbc95bdaa4a8589206b126b6b3ab5"
+        },
+        {
+          "start": "004b6520",
+          "end": "004b6588",
+          "bytes_sha256": "1fb85c7ce5255d3e765203376a87d26ad42cc104a8bc7f66fa774f2a70f237b5",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004b6520.asm",
+          "assembly_sha256": "386213c3ed6356e384697ec6370b1f3ef70c30c763198d3aa70e872a63700f2c"
+        },
+        {
+          "start": "004bbcc0",
+          "end": "004bbd70",
+          "bytes_sha256": "7cba7eb683b0c7bafb5a48571ae67053e443d86df617d5eb741a655c908c8ea7",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004bbcc0.asm",
+          "assembly_sha256": "4a74165ca10bd8c570b230ef06dc54f45a8e634b84b664fe65f4f1410e950ba6"
+        },
+        {
+          "start": "00522250",
+          "end": "005222e8",
+          "bytes_sha256": "5ee455f5520c058b227ac877f9f9339de4dfe34e9693b099769a991a000ac9d3",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-00522250.asm",
+          "assembly_sha256": "ddff2908ca89682cbc4ea3e9ea524f766a8a0d55c0997765700f0fa870350292"
+        },
+        {
+          "start": "004b5720",
+          "end": "004b584e",
+          "bytes_sha256": "4f5131dd9c4fcdc4b88197b33b17f1ba95b232477543ea38ba9cb8289b539bd0",
+          "assembly": "analysis/captures/modern-differences/registry/official_modern-004b5720.asm",
+          "assembly_sha256": "ed2d8fda44e8be7ee78d5a51bb2d894828d82ea5ff9ea14965e20364878b4daf"
+        }
+      ]
+    }
+  },
+  "modern_nop_filled_original_helpers": [
+    "004b6400",
+    "004b64c0",
+    "004b6520"
+  ],
+  "identical_complete_spans": [
+    "004a5780",
+    "004a5880",
+    "00522250"
+  ]
+}

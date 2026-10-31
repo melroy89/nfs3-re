@@ -100,7 +100,7 @@ The [renderer-loading comparison](original-modern-renderer-loading.md) establish
 
 ## 7. Game configuration lookup
 
-The [configuration comparison](original-modern-configuration.md) traces the Modern caller and INI/environment readers: explicit INI values precede environment defaults, then caller defaults. Original registry imports and the new profile API calls support a migration, but each original setting/key still needs mapping. The configured filename is passed as direct buffer address `007a263c`; its executable-basename selection and fallback are now traced in the startup-path chapter; later writes remain outside that bounded audit.
+The [configuration comparison](original-modern-configuration.md) traces the Modern caller and INI/environment readers: explicit INI values precede environment defaults, then caller defaults. Original registry imports and the new profile API calls support a migration. The [registry follow-up](original-modern-registry.md) maps original renderer values and retained online/memory queries; generic key producers and complete migration coverage remain pending. The configured filename is passed as direct buffer address `007a263c`; its executable-basename selection and fallback are now traced in the startup-path chapter; later writes remain outside that bounded audit.
 
 The [renderer lifecycle comparison](original-modern-renderer-lifecycle.md) maps original callback installation and `00517610` to Modern’s direct `00517620`, including mode-call return checking, a byte-identical setup tail and original hard-coded environment values. This is static control-flow evidence; driver success/failure recovery remains untested.
 
@@ -178,7 +178,11 @@ The [language comparison](original-modern-language-table.md) traces the v1.6.0 m
 
 The [replay presentation comparison](original-modern-replay-mirror.md) traces coordinated toggle, eligibility and refresh gates around state 2 and an enable global. The default F7 binding-to-action-11 chain is now traced through the unchanged mask builder and edge reader. Full mirror consumers, reset paths and rendered behavior remain pending; replay trajectory compatibility is separate.
 
-## 26. Prioritized semantic work remaining
+## 26. Retained and replaced registry paths
+
+The [registry comparison](original-modern-registry.md) inventories 15 original versus 6 Modern direct open/query call sites, traces renderer preferences into the original selector, and verifies unchanged online-DLL and memory-query bodies. Modern retains registry use; a one-for-one migration of every INI option is not established.
+
+## 27. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 
@@ -191,7 +195,7 @@ The full JSON inventory gives every current Modern local function name, entry/ra
 | `00494cb0` RenderTiledLoadingArtworkAndInitializeProgressBounds | 480 / 748 | Tile/reference/rounding deltas traced; full progress/UI contract and output remain |
 | `004e3078` ScreenshotEncodingThread | 451 / 464 | Original synchronous counterpart mapped in screenshot report; GDI+ success, resources and runtime lifetime remain |
 | `004b5a58` InitializeThrashRenderer | 407 / 421 | Loader/export checks traced in renderer report; numeric/type dispatch, callback-to-direct mode initialization and compatibility calls traced; selector producers and DLL semantics remain |
-| `004b5580` LoadGameIniSettings | 374 / 393 | Modern defaults/API effects traced; original setting-by-setting registry mapping remains |
+| `004b5580` LoadGameIniSettings | 374 / 393 | Modern defaults/API effects traced; original renderer registry preferences now mapped; generic key producers and other option counterparts remain unresolved |
 | `0044a2d0` DispatchFrontendMenuKeyToSelectedEntry | 332 / 358 | Dispatcher/named keys/chat guard traced; all assets, entry callbacks and sound paths remain |
 | `00485880` InitializeDefaultHudLayoutProfileSettings | 332 / 375 | File versus embedded preset source and header stores traced; asset/consumer/reset mapping remains |
 
@@ -212,3 +216,5 @@ All 23 `analysis/scripts/audit_*_difference.py` scripts were rerun with Python 3
 The saved main Ghidra database remained SHA-256 `7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f`. No Ghidra edits, executable edits, reconstruction edits or runtime probes were made for this checkpoint.
 
 Next priority is the original setting-by-setting registry correspondence for `004b5580` and its Modern INI counterpart, reusing the existing settings audit. External driver behavior and runtime comparisons remain separate follow-ups. This bounded next step does not require resolving the unrelated dispatcher investigation.
+
+The subsequent [registry audit](original-modern-registry.md) completes the bounded renderer preference mapping and narrows the remaining work to generic key producers, selector overrides/callers and driver-specific preference handling.

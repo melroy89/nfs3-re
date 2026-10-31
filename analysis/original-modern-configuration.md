@@ -24,7 +24,7 @@ The string reader at `004fb714` has the corresponding sequence: call the environ
 
 ## Original-to-Modern differences and retained bytes
 
-The supplied original imports `RegOpenKeyExA` and `RegQueryValueExA`, and does not import `GetPrivateProfileIntA` or `GetPrivateProfileStringA`. The official executable imports the two profile APIs and implements the INI/environment fallback above. This is consistent with the README's statement that system settings moved from the registry to INI. The import-table change is binary evidence for the configuration architecture; this bounded review did not trace every original registry query back to each individual setting.
+The supplied original imports `RegOpenKeyExA` and `RegQueryValueExA`, and does not import `GetPrivateProfileIntA` or `GetPrivateProfileStringA`. The official executable imports the two profile APIs and implements the INI/environment fallback above. This is consistent with the README's statement that system settings moved from the registry to INI. The import-table change is binary evidence for the configuration architecture; the [registry follow-up](original-modern-registry.md) maps selected original queries and shows why not every Modern option should be assumed to have an original registry counterpart.
 
 At the named official caller address `004b5580`, the original bytes are a data/pointer area, not the corresponding `LoadGameIniSettings` routine. The original-versus-Modern function audit records `004b5580` as `different_same_VA_bytes` and `original_entry_identified_by_autoanalysis: false`. Therefore the official caller must not be treated as a byte-for-byte edit to an original function at that virtual address; the old and new settings paths are laid out differently.
 
@@ -39,7 +39,7 @@ The [configuration evidence manifest](evidence/audits/original-modern-configurat
 - This is a static comparison of these exact supplied-original and official-package executables. It is not a claim about every retail revision or later Modern Patch build.
 - The environment helper's construction and lookup behavior are statically visible. No process environment was changed or queried at runtime.
 - `007a263c` is pushed as an immediate buffer address (not loaded indirectly from a pointer slot) for the filename argument passed to the INI APIs. The later [startup-path comparison](original-modern-startup-paths.md) traces its ordinary producer and basename/fallback selection; every alias/initialization path and disk-level loading remain outside this chapter.
-- Original registry imports, new INI calls and the README support the system-setting migration, without proving elimination of registry use. Specific original registry key/value mappings have not been reconstructed here.
+- Original registry imports, new INI calls and the README support the system-setting migration, without proving elimination of registry use. The [registry comparison](original-modern-registry.md) now maps the original renderer preference values and distinguishes retained online-DLL/memory queries, removed Desktop lookup and an unresolved generic wrapper. This is not a one-to-one original counterpart for every Modern option.
 - The separate renderer configuration (`thrash.ini`) is out of scope; its parsing and environment-variable setup should not be conflated with game-setting fallback.
 - The locally installed `nfs3.exe` has a different fingerprint from this official-package executable and is not used for this comparison.
 

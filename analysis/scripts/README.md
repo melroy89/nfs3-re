@@ -273,3 +273,7 @@ Run `python3 analysis/scripts/audit_language_table_difference.py` (Python pefile
 ## Original versus Modern replay mirror admission
 
 Run `python3 analysis/scripts/audit_replay_mirror_difference.py` (Python pefile, GNU objdump). It retains paired toggle, eligibility, refresh-prefix and input witnesses in `analysis/evidence/audits/original-modern-replay-mirror.json`; raw captures remain ignored. No replay/input/target execution. See [mirror-admission findings](../original-modern-replay-mirror.md), including the statically traced F7 chain and remaining runtime boundary. The script asserts the default encoded binding and identical mask-builder bodies.
+
+## Original versus Modern registry paths
+
+Run `python3 analysis/scripts/audit_registry_difference.py` (Python pefile, GNU objdump). It hash-checks both baselines, inventories direct open/query encodings, retains paired instruction spans/strings, asserts three identical complete bodies and three NOP-filled old helpers. Output: `analysis/evidence/audits/original-modern-registry.json`. No target or registry execution. See [registry comparison](../original-modern-registry.md).
