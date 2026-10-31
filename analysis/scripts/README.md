@@ -280,4 +280,4 @@ Run `python3 analysis/scripts/audit_registry_difference.py` (Python pefile, GNU 
 
 ## Original versus Modern vehicle dispatch
 
-Run `python3 analysis/scripts/audit_vehicle_dispatch_difference.py` (Python pefile, GNU objdump). Retains complete paired dispatchers, the identical selection helper and mirror threshold witnesses in `analysis/evidence/audits/original-modern-vehicle-dispatch.json`. No target execution. See [dispatch comparison](../original-modern-vehicle-dispatch.md).
+Run `python3 analysis/scripts/audit_vehicle_dispatch_difference.py` (Python pefile, GNU objdump). Retains complete paired dispatchers, the identical selection helper, three identical render bodies/tables, exact randomizer operand delta and mirror threshold witnesses in `analysis/evidence/audits/original-modern-vehicle-dispatch.json`. No target execution. See [dispatch comparison](../original-modern-vehicle-dispatch.md).

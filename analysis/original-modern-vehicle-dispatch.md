@@ -50,4 +50,31 @@ Original's final `MOV EAX,[007d3684]` leaves that value in EAX while restoring E
 
 **Verified:** paired loop correspondence, conditional helper admission, identical helper bytes, tick/parity writes and general-register difference. **Inferred:** these changes alter render-state scheduling rather than physical integration; no physics-equivalence claim follows. **Unresolved:** mode/global meanings, all callees and callers, visual effects, original bug intent, exact historical release attribution and runtime behavior. No release-note row is promoted to verified based solely on a similar description of wheels or detail settings.
 
-Next: trace `004bb4c0` and its tick-sensitive callees against the original, then connect the admission globals to their actual configuration/mode producers. Preserve raw exports, executable bytes and saved Ghidra state.
+Next: connect the admission globals to their actual configuration/mode producers and trace remaining tick-sensitive callers. The downstream dispatcher/randomizer comparison is now documented below. Preserve raw exports, executable bytes and saved Ghidra state.
+
+## 5. Downstream comparison: global gate becomes per-object gate
+
+The evidence script now retains and asserts byte identity of three complete bodies:
+
+| Entry | Exclusive end | Existing research name |
+|---|---|---|
+| `004bb4c0` | `004bb5ce` | `DispatchVehicleFceRenderVariant` |
+| `004bae00` | `004bb10f` | `RenderVehicleBodyAndUnmaskedWheelParts` |
+| `004bb200` | `004bb495` | `ProcessVehicleFcePartsZeroThroughFour` |
+
+The two four-entry jump tables at `004bb498..004bb4b8` are also identical. Existing [detailed notes](detailed-analysis-notes.md#vehicle-fce-render-variant-dispatch-004bb4c0) describe model-count downgrades and selector targets; the current comparison verifies that this dispatch code and table mapping remain, rather than attributing a same-address byte difference elsewhere to a changed dispatch algorithm.
+
+Both render bodies call `004b90e0` twice: `004baf59` / `004bb01f` and `004bb330` / `004bb3c9`. Existing call-site research establishes zero/nonzero EDX choosing the two object float fields `+0x93c` / `+0x940`. The complete helper `004b90e0..004b913f` differs in **only four bytes**, `004b90e8..004b90eb`, changing the operand encoding of its first load:
+
+| Version | Instruction at `004b90e7` | Equality gate at `004b90ed..004b90f3` |
+|---|---|---|
+| Original | `MOV EBX,[0055fe28]` | Global snapshot equals current `007d3684`: skip random generation and output write. |
+| Modern | `MOV EBX,[EAX+000008c0]` | This object's saved tick equals current `007d3684`: skip random generation and output write. |
+
+The rest of the helper is byte-identical. On an admitted call, it calls `004eb230`, multiplies the returned ST0 by binary32 object field `+0x930`, subtracts `object[+0x930] * 0.5`, and stores binary32 into the EDX-selected destination. It does not write `+0x8c0` or `0055fe28`. The numerical sequence and RNG call target are retained; identical instructions do not establish identical results under different x87 control state or RNG history. See the separate precision audit linked from the main index.
+
+This clarifies the caller change in section 3. Original tests a shared snapshot, independent of the particular object's `+0x8c0`. Modern's object field is written **after** `004bb4c0` returns, allowing the render calls to see its earlier value. In the old ordering, that field was written before dispatch for nonzero `+0x174`; carrying that old ordering into a Modern reconstruction would alter the new helper's equality gate.
+
+This is still not proof of exactly one random sample per object per tick. The helper never updates the gate field itself; the two calls inside a render body can both pass before the enclosing dispatcher writes it. Calls outside that enclosing path, objects skipped by its gates, tick changes and replay resets require separate tracing. Likewise this code-level difference can change RNG consumption when the two gates disagree, but does not establish that the RNG state affects physics, that network positions diverge, or that a particular release-note claim about wheel rotation is explained completely.
+
+**Closed for this bounded follow-up:** downstream dispatch correspondence, two retained render bodies/tables, exact randomizer operand delta and its relationship to caller write ordering. **Still pending:** remaining callers, admission-global meanings, RNG-state sharing, visual validation and historical attribution.

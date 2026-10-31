@@ -26,6 +26,34 @@
           "bytes_sha256": "59f0bde6c8a02fcc57224099aa04c6efeeefa24ee95d2edea2dd926e539b499a",
           "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-00422aa0.asm",
           "assembly_sha256": "8cbfb5d096117734a027461e44bd693a164a93b39d2641c72d074a704d970504"
+        },
+        {
+          "start": "004bb4c0",
+          "end": "004bb5ce",
+          "bytes_sha256": "80612984bb9972da0ec884b237bbe7cc3ea9690309269c42a38cb63d8823cc55",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004bb4c0.asm",
+          "assembly_sha256": "c73fc6fe65c2fd7bf12a667bb6bc27878a1cb0c5cccf8c6640e4276f7e54e534"
+        },
+        {
+          "start": "004b90e0",
+          "end": "004b913f",
+          "bytes_sha256": "bb09fb5846e23f4e1a8df01576b24c2e753586002170353e550b56f45bd3fe58",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004b90e0.asm",
+          "assembly_sha256": "74a8b7cdfb37a5f0d30ab1fec49c43a386a71772bf5f975828716a10742a341c"
+        },
+        {
+          "start": "004bae00",
+          "end": "004bb10f",
+          "bytes_sha256": "6b8e1cfb03e72f5de28e23ee1d932f6d273ac415e42c45985c77d9f6265d189b",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004bae00.asm",
+          "assembly_sha256": "85a91b8d6a2ddaa42ed5960b65ea7dc9d3b3f9ad38b4a6564fae81650d3f9a44"
+        },
+        {
+          "start": "004bb200",
+          "end": "004bb495",
+          "bytes_sha256": "c942db4bb4cce93869fc73c577d3066c0a9bd0ffb33039cf1621f6e9737d6f41",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/original-004bb200.asm",
+          "assembly_sha256": "011a97390efa15b43fc7bcdeb146690051112f15bd0968e6741b7d31a901a47b"
         }
       ]
     },
@@ -53,6 +81,34 @@
           "bytes_sha256": "59f0bde6c8a02fcc57224099aa04c6efeeefa24ee95d2edea2dd926e539b499a",
           "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-00422aa0.asm",
           "assembly_sha256": "66953675e0a9104518350f5f2c666de2d2a0f45ebce70a0e4405640afe168b27"
+        },
+        {
+          "start": "004bb4c0",
+          "end": "004bb5ce",
+          "bytes_sha256": "80612984bb9972da0ec884b237bbe7cc3ea9690309269c42a38cb63d8823cc55",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004bb4c0.asm",
+          "assembly_sha256": "940a02030156fe81023dd1de076bf0828eaa52024d12bcd4a8f4d8d83cf05853"
+        },
+        {
+          "start": "004b90e0",
+          "end": "004b913f",
+          "bytes_sha256": "363920ba29f7d9c2995152cc44f32a44d578760a90d76447f76fe309db90a285",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004b90e0.asm",
+          "assembly_sha256": "64befbb10c6cda6d50fefa5e9ea147e9ccf816d35e4ff95cc92c71edfc204b20"
+        },
+        {
+          "start": "004bae00",
+          "end": "004bb10f",
+          "bytes_sha256": "6b8e1cfb03e72f5de28e23ee1d932f6d273ac415e42c45985c77d9f6265d189b",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004bae00.asm",
+          "assembly_sha256": "f9cf72064f1b438ea6a2ba6b6e22ae2ca7f735aca799aa4f5ccf475f74b1f648"
+        },
+        {
+          "start": "004bb200",
+          "end": "004bb495",
+          "bytes_sha256": "c942db4bb4cce93869fc73c577d3066c0a9bd0ffb33039cf1621f6e9737d6f41",
+          "assembly": "analysis/captures/modern-differences/vehicle-dispatch/official_modern-004bb200.asm",
+          "assembly_sha256": "3cf661c9d603acd914c2ad4ee54e37662b99361633f047c5a87444a66bd4ab2b"
         }
       ]
     }
@@ -61,5 +117,33 @@
     "No rendering or target execution.",
     "Field labels are bounded by existing research; no complete vehicle structure claimed."
   ],
-  "helper_004bbad0_identical": true
+  "helper_004bbad0_identical": true,
+  "identical_render_bodies": [
+    "004bb4c0",
+    "004bae00",
+    "004bb200"
+  ],
+  "randomizer_changed_bytes": [
+    {
+      "address": "004b90e8",
+      "original": "1d",
+      "modern": "98"
+    },
+    {
+      "address": "004b90e9",
+      "original": "28",
+      "modern": "c0"
+    },
+    {
+      "address": "004b90ea",
+      "original": "fe",
+      "modern": "08"
+    },
+    {
+      "address": "004b90eb",
+      "original": "55",
+      "modern": "00"
+    }
+  ],
+  "identical_dispatch_tables_004bb498": "3eb54b0049b54b0054b54b005fb54b0076b54b0076b54b0076b54b0081b54b00"
 }
