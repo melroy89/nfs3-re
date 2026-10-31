@@ -68,7 +68,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "92c7d9e6ebbcdb2a6697aa2bea2fce89373ed7514a19e47da68edeedd54b3983",
+      "sha256": "fa77e97ef9fd9120fd39bf1c027f13b0293074db70d7e144a5dbe432e2e3fe0e",
       "relative_links": 94
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
-      "sha256": "51bbf68e057d4c6867c95a137d98efdc29ac017ec30a30739d6a80f3007939c1",
+      "sha256": "cb990d4cdfdf8781bdd59e511483ee188a50b856934a3e8e45a3f644fc212360",
       "relative_links": 4
     },
     {
@@ -393,12 +393,12 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "34fb1f527e7892eb118762bf38e1da9c0fe690af74d30d506a2bbe4d42ae16af",
-      "relative_links": 109
+      "sha256": "91036c5b1d95f326c7b7f2714e00f82b8d57819e529f1a7e721163236cc4d15a",
+      "relative_links": 110
     }
   ],
   "file_count": 79,
-  "relative_link_count": 572,
+  "relative_link_count": 573,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

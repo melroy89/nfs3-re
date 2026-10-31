@@ -19,3 +19,15 @@ Ordering therefore changes on these routes: Modern issues the common update befo
 Modern also retargets some earlier branches to the new shared return locations, avoiding returns embedded in old instruction regions. The retained envelope permits reviewing those control-flow changes without interpreting NOP gaps as additional functionality. No assertion is made that every changed byte in this larger handler is explained by these sound-tail findings.
 
 This supplies partial static support for consistent top-dropdown keyboard feedback. Remaining work includes full action/skip semantics, all other routes, caller result handling, callback effects and audible behavior. It is not proof that every keypress changes selection or emits exactly one sound.
+
+## Enter opening route and retained cursor arithmetic
+
+Closed-list Enter (`SI=0x0d`) enters **`0046417b`**. Paired bytes **`0046417b..00464209`** are identical: set WORD widget+`0x40` to1, copy the bound selected value into local widget fields, calculate the visible interval, call layout helper `00464560`, form cursor coordinates and call **`0049bfc0`** at `00464204`. The position arithmetic uses signed high-WORD components, truncation-corrected halving and a16-unit row step with8-unit offset. No new cursor offset is identified in this route.
+
+Original then returns EDI at `00464209`. Modern replaces that epilogue with a jump to **`004642db`**, so opening now also requests sound1 before returning the retained EDI2. The Modern NOP region that follows is not a hidden handler. The layout-helper call is locally unchanged, but that helper’s separate alias/layout changes can still affect its outputs.
+
+The audit now enumerates every differing byte in the complete containing envelope and checks that all fall within nine recorded region envelopes: earlier branch-target adjustments, the three replaced selection/opening epilogues, the consolidated close/sound tail, and the expanded-list navigation epilogue. This is byte-difference coverage, not proof of complete behavioral equivalence outside the changed bytes: helper behavior, globals and caller inputs can differ. The exact changed addresses remain in the manifest for future reconstruction review.
+
+Together the left/right selection and Enter-opening routes give additional support for the top-dropdown keyboard-sound claim. Up/down/page selection in the expanded list, callback policy and exact audible effects remain separate. No input route was executed.
+
+Expanded-list positioning ends with retained cursor call **`0046454e`**. Original’s tail at **`00464553`** returns EDI directly; Modern loads EAX0 and jumps to **`004642e0`**, reusing the same sound call while retaining sound identifier0 rather than the sound1 supplied by the other entry. EAX is then replaced by EDI in the common return sequence. This extra epilogue change is included in the ninth region; complete path admission and whether every movement changes the selected item remain unresolved.
