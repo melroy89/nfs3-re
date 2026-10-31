@@ -15,7 +15,10 @@ def main():
         raw = (ROOT/relative).read_bytes(); assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
         spans = [(0x4228e0, 0x4229bb if label == 'original' else 0x4229b9), (0x422850, 0x4228df)]
+        spans += [(0x42387c, 0x4238a5), (0x421708, 0x42172c)]
         spans += [(0x4223c0, 0x422512), (0x422520, 0x422604)]
+        if label == 'original':
+            spans += [(0x42649c, 0x4264be), (0x4264c0, 0x4264ec)]
         if label == 'official_modern':
             spans += [(0x42649c, 0x4264be), (0x4264c0, 0x4264ec),
                       (0x472298, 0x4722ab), (0x45da2d, 0x45da37)]
@@ -30,8 +33,14 @@ def main():
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows}
     assert result['binaries']['original']['spans'][1]['bytes_sha256'] == result['binaries']['official_modern']['spans'][1]['bytes_sha256']
     result['pose_finalizer_identical'] = True
+    modern = pefile.PE(str(ROOT/SPECS['official_modern'][0]))
+    result['snapshot_call_targets'] = {}
+    for site, target in ((0x42389a, 0x42649c), (0x421718, 0x4264c0)):
+        data = modern.get_data(site-0x400000, 5)
+        assert data[0] == 0xe8 and site+5+int.from_bytes(data[1:], 'little', signed=True) == target
+        result['snapshot_call_targets'][f'{site:08x}'] = f'{target:08x}'
     result['identical_pose_callees'] = []
-    for index in (2, 3):
+    for index in (4, 5):
         pair = [result['binaries'][k]['spans'][index] for k in ('original', 'official_modern')]
         assert pair[0]['bytes_sha256'] == pair[1]['bytes_sha256']
         result['identical_pose_callees'].append(pair[0]['start'])

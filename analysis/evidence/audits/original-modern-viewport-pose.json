@@ -21,6 +21,20 @@
           "assembly_sha256": "d1f7e1014d81538c298e8af1469e022a12fb1052c3e00254564184a166e48464"
         },
         {
+          "start": "0042387c",
+          "end": "004238a5",
+          "bytes_sha256": "0ec3efac834a49f96082aa62296e72302c4a900ef65773de939d93610e849e79",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/original-0042387c.asm",
+          "assembly_sha256": "27bd96089796579c5e4399ebeceafaef819c5cee6116ca02bf14b87ed7df2995"
+        },
+        {
+          "start": "00421708",
+          "end": "0042172c",
+          "bytes_sha256": "bab7d547527207b62bd298b2846a0d139fb8b219ea7e190558b7b4e4ec0ddd6e",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/original-00421708.asm",
+          "assembly_sha256": "4a6e165d0a9d10773cab5b0c69dc8182e58ebe4c4462613d4a2b599eddb88452"
+        },
+        {
           "start": "004223c0",
           "end": "00422512",
           "bytes_sha256": "84400181f0fce0033d5437e4c37c6692d418af3971be49a659a75ed8b3f0ac97",
@@ -33,6 +47,20 @@
           "bytes_sha256": "c1cc2a4b2c1e959180f08d03eb038101bd1423a7156a51cfbfbe578b5dad1ceb",
           "assembly": "analysis/captures/modern-differences/viewport-pose/original-00422520.asm",
           "assembly_sha256": "1d54b606d4684be92021fbe8dd37556ad8eb818b09840054be215c502cc51bf1"
+        },
+        {
+          "start": "0042649c",
+          "end": "004264be",
+          "bytes_sha256": "245f58128aba7f90d063776775668406befebac874e820af54b075b7fc6a0293",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/original-0042649c.asm",
+          "assembly_sha256": "6c49f8b72621fdb8bb69cf176dde0890c29bad047435cc181d295eb6af9ad755"
+        },
+        {
+          "start": "004264c0",
+          "end": "004264ec",
+          "bytes_sha256": "5e9a0e764aba7171f0916dfa8b3c416b13284e8ae791b856197311251dd3b728",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/original-004264c0.asm",
+          "assembly_sha256": "10ad9d33c3415dae8ef0a3b4dc2de910b168dcbb12c65d96d57ac57d20985da6"
         }
       ]
     },
@@ -53,6 +81,20 @@
           "bytes_sha256": "fd3a73e69cd08a9c0ce980a21d884a43b31a6a6a58b9907ca7d504aa4924c6a1",
           "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-00422850.asm",
           "assembly_sha256": "ef74b36d8eed2d573c5b6a2d7e778cd2567d3ea2e282c71579f6db2cd7805fbb"
+        },
+        {
+          "start": "0042387c",
+          "end": "004238a5",
+          "bytes_sha256": "1076383df09f811915d13372fea3b9296303e4e495c567f823edcb030b7652cb",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-0042387c.asm",
+          "assembly_sha256": "787418d019d7d172fcb5403213c6421c721ac4958627e3069ce44ccb9d6c1a93"
+        },
+        {
+          "start": "00421708",
+          "end": "0042172c",
+          "bytes_sha256": "1248d47212a947e95c8dbae04244cc377bc1dec53a290d60ce6d18a6fe24fafe",
+          "assembly": "analysis/captures/modern-differences/viewport-pose/official_modern-00421708.asm",
+          "assembly_sha256": "3c2b5477d699ac6d25bc351f14b49097ddb60e426480d7ec0d0fa01acd551e18"
         },
         {
           "start": "004223c0",
@@ -104,6 +146,10 @@
     "Normal-return restoration only; no synchronization proved."
   ],
   "pose_finalizer_identical": true,
+  "snapshot_call_targets": {
+    "0042389a": "0042649c",
+    "00421718": "004264c0"
+  },
   "identical_pose_callees": [
     "004223c0",
     "00422520"

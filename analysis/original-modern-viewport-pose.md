@@ -54,3 +54,20 @@ A second helper `004264c0..004264ec` also skips session 1. Its mixed CMPSD/MOVSD
 The admission global `006fd1cc` is initialized to 1 by `00472298` at store `004722a6`, after XOR EAX,EAX and MOV AL,1. Another inspected producer at `0045da2d..0045da37` restores it from DWORD `0066468c`. These witnesses establish a nonzero default and a later restore path, not a permanent value or a particular user-facing option. Configuration loading/bulk writes and complete menu binding remain separate.
 
 **Closed:** extraction/blend body comparison, fixed descriptor's full snapshot origin, selected partial-update fields and two admission-global producers. **Still pending:** source descriptor initialization, snapshot call order/lifetime, full global binding and alternate writes, transitive helper changes, actual camera selection and rendered pose. No historical release attribution or runtime equivalence is inferred.
+
+## Snapshot scheduling: added calls in matched setup paths
+
+Paired caller spans now establish two specific additions, with relative CALL targets asserted against the official executable:
+
+| Matched context | Original at the insertion point | Modern |
+|---|---|---|
+| `InitializeRaceViewportSceneRecords` (`00422cf0`), after stores through `00553018` | Epilogue starts at `0042389a`; returns without a snapshot call there. | `0042389a` calls full snapshot helper `0042649c`, then enters its epilogue. |
+| `BindViewportSceneDescriptorsToRaceVehicle` (`004215c0`), after its binding loop | `00421718` sets EDX=3, then EAX=EBX and calls `004238b0`. | `00421718` first calls partial snapshot updater `004264c0`, then sets EDX=3 through XOR/MOV DL and continues. |
+
+These two points connect the fixed descriptor to scene initialization and vehicle binding, respectively. The full snapshot helper copies the complete 11ch-byte source on non-session-1 paths; the partial updater refreshes only the documented fields. Thus Modern adds scheduling for retained state at `00661220`, rather than merely selecting an otherwise unexplained constant address in the pose wrapper.
+
+The corresponding original bytes at `0042649c..004264ec` contain parts of other mode-handler call/return sequences. They are retained as raw original-region witnesses, **not named as original counterparts of the two Modern snapshot helpers**. Recovering the complete displaced handler correspondence is separate work; their differing bytes alone do not prove removal of the original camera modes.
+
+This proves local call order at the two insertion points. It does not prove global ordering between scene initialization, every rebind, snapshot consumption, descriptor mutation and menu/config updates. Session 1 causes both snapshot helpers to return without copying, and the wrapper's new fixed-descriptor branch also excludes session 1; those local gates are consistent, but do not establish all runtime lifecycle invariants.
+
+**Next:** trace callers of the matched setup functions and remaining descriptor writes, then map the reused original mode-handler region if needed. Runtime camera behavior and release introduction remain unverified.
