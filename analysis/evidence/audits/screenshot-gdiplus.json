@@ -97,6 +97,13 @@
         "0054d7a0": "557cf406-1a04-11d3-9a73-0000f81ef32e",
         "0054d7b0": "557cf401-1a04-11d3-9a73-0000f81ef32e"
       },
+      "cleanup_registration_boundary": {
+        "registration": "004e2f8c supplies004e2fac;004e2f91 calls004f7c20;004e2f96 overwrites result with1.",
+        "failure": "Registrar full/sentinel failure is ignored; initializer still reports success on this path.",
+        "module_zero": "004e2fcc skips FreeLibrary,module reset and seven-slot clear loop when module already0; token handling occurs before this gate.",
+        "guid_cache": "Cached PNG/JPEG GUID cells not cleared by shutdown.",
+        "limits": "Shared registrar proof in small-wrapper audit. No registration saturation, concurrency failure or missing actual teardown observed."
+      },
       "imports": {
         "005344dc": "FreeLibrary",
         "00534558": "GetProcAddress",

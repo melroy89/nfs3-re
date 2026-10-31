@@ -418,8 +418,8 @@
     },
     {
       "path": "analysis/original-modern-screenshot-gdiplus.md",
-      "sha256": "3315ade34100d470c590c42064003524784572f01e58482d6fa67bb0085dfcfa",
-      "relative_links": 3
+      "sha256": "859b490257416bdda527057b19005bbbc2264772f376ff4c2d5bed6331a721ce",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-screenshot-pixels.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1811,
+  "relative_link_count": 1812,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

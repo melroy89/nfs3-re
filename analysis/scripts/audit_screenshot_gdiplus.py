@@ -32,6 +32,14 @@ def main():
             assert pe.get_data(0xe2eb0,7)==bytes.fromhex('833d84277a0000')
             assert pe.get_data(0xe2f84,3)==bytes.fromhex('83c44c')
             assert pe.get_data(0xe2f87,3)==bytes.fromhex('ff4df8')
+            assert pe.get_data(0xe2f8c,17).hex()=='b8ac2f4e00e88a4c0100b801000000eb07'
+            assert pe.get_data(0xe2fcc,2).hex()=='741c'
+            row['cleanup_registration_boundary']={
+                'registration':'004e2f8c supplies004e2fac;004e2f91 calls004f7c20;004e2f96 overwrites result with1.',
+                'failure':'Registrar full/sentinel failure is ignored; initializer still reports success on this path.',
+                'module_zero':'004e2fcc skips FreeLibrary,module reset and seven-slot clear loop when module already0; token handling occurs before this gate.',
+                'guid_cache':'Cached PNG/JPEG GUID cells not cleared by shutdown.',
+                'limits':'Shared registrar proof in small-wrapper audit. No registration saturation, concurrency failure or missing actual teardown observed.'}
             row['imports']={f'{i.address:08x}':i.name.decode() for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x53458c,0x534558,0x5344dc)}
         out['binaries'][label]=row
     out['limits']=['No DLL loading, GDI+ calls, screenshots or target instruction execution.','Complete Modern initializer/shutdown bodies; original screenshot counterpart is documented separately.','Encoder data validity, concurrency and actual save outcomes untested.']
