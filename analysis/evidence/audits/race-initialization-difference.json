@@ -218,6 +218,134 @@
           ]
         },
         {
+          "start": "004c7130",
+          "end_exclusive": "004c7149",
+          "sha256": "21d56f03c98dc5b708a1000a1f18cf8b3871d062f27e4c0b8c50a64b1110a9c6",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004c7130.asm",
+          "direct_calls": [
+            {
+              "site": "004c7133",
+              "target": "004c7150"
+            },
+            {
+              "site": "004c7138",
+              "target": "004c70f0"
+            }
+          ]
+        },
+        {
+          "start": "004dbbc0",
+          "end_exclusive": "004dbbd6",
+          "sha256": "c6e16fc889d9ce30652381fe4ce544d28ed35414216364b7fa878eb830e361dd",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004dbbc0.asm",
+          "direct_calls": [
+            {
+              "site": "004dbbce",
+              "target": "004e070c"
+            }
+          ]
+        },
+        {
+          "start": "004cb6f0",
+          "end_exclusive": "004cb723",
+          "sha256": "c5a8103a41aef7b0d2b041b80072f17dea4da55aa61202647cced3dba63cec33",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004cb6f0.asm",
+          "direct_calls": [
+            {
+              "site": "004cb6fe",
+              "target": "004e070c"
+            },
+            {
+              "site": "004cb70d",
+              "target": "004e070c"
+            }
+          ]
+        },
+        {
+          "start": "0047b350",
+          "end_exclusive": "0047b37a",
+          "sha256": "79914309a6abd948f9e601c951a3313106bd157686563376c2b96b0f552ac354",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-0047b350.asm",
+          "direct_calls": [
+            {
+              "site": "0047b360",
+              "target": "00494360"
+            }
+          ]
+        },
+        {
+          "start": "004dcdf0",
+          "end_exclusive": "004dd1ed",
+          "sha256": "353caad43dd44aa7fedafd94c77ea0f7ee6f315221fb45100f8057ad5ef54a54",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004dcdf0.asm",
+          "direct_calls": [
+            {
+              "site": "004dce05",
+              "target": "004e070c"
+            },
+            {
+              "site": "004dce14",
+              "target": "004e070c"
+            },
+            {
+              "site": "004dce23",
+              "target": "004e070c"
+            },
+            {
+              "site": "004dcf86",
+              "target": "004ea970"
+            },
+            {
+              "site": "004dcfa3",
+              "target": "004e0050"
+            },
+            {
+              "site": "004dd0a7",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004dd0bc",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd0e3",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd0fb",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd119",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd137",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd154",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd1b6",
+              "target": "004a33d0"
+            }
+          ]
+        },
+        {
+          "start": "004e070c",
+          "end_exclusive": "004e0716",
+          "sha256": "9a928e8498c96975ed52e357202dca892e0b239461f5ba0bad5a99fe4054921e",
+          "assembly": "analysis/captures/modern-differences/race-initialization/original-004e070c.asm",
+          "direct_calls": [
+            {
+              "site": "004e070f",
+              "target": "004e0721"
+            }
+          ]
+        },
+        {
           "start": "00401220",
           "end_exclusive": "00401225",
           "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
@@ -489,6 +617,134 @@
               "target": "00471000"
             }
           ]
+        },
+        {
+          "start": "004c7130",
+          "end_exclusive": "004c7149",
+          "sha256": "21d56f03c98dc5b708a1000a1f18cf8b3871d062f27e4c0b8c50a64b1110a9c6",
+          "assembly": "analysis/captures/modern-differences/race-initialization/official_modern-004c7130.asm",
+          "direct_calls": [
+            {
+              "site": "004c7133",
+              "target": "004c7150"
+            },
+            {
+              "site": "004c7138",
+              "target": "004c70f0"
+            }
+          ]
+        },
+        {
+          "start": "004dbbc0",
+          "end_exclusive": "004dbbd6",
+          "sha256": "c6e16fc889d9ce30652381fe4ce544d28ed35414216364b7fa878eb830e361dd",
+          "assembly": "analysis/captures/modern-differences/race-initialization/official_modern-004dbbc0.asm",
+          "direct_calls": [
+            {
+              "site": "004dbbce",
+              "target": "004e070c"
+            }
+          ]
+        },
+        {
+          "start": "004cb6f0",
+          "end_exclusive": "004cb723",
+          "sha256": "c5a8103a41aef7b0d2b041b80072f17dea4da55aa61202647cced3dba63cec33",
+          "assembly": "analysis/captures/modern-differences/race-initialization/official_modern-004cb6f0.asm",
+          "direct_calls": [
+            {
+              "site": "004cb6fe",
+              "target": "004e070c"
+            },
+            {
+              "site": "004cb70d",
+              "target": "004e070c"
+            }
+          ]
+        },
+        {
+          "start": "0047b350",
+          "end_exclusive": "0047b37a",
+          "sha256": "79914309a6abd948f9e601c951a3313106bd157686563376c2b96b0f552ac354",
+          "assembly": "analysis/captures/modern-differences/race-initialization/official_modern-0047b350.asm",
+          "direct_calls": [
+            {
+              "site": "0047b360",
+              "target": "00494360"
+            }
+          ]
+        },
+        {
+          "start": "004dcdf0",
+          "end_exclusive": "004dd1ed",
+          "sha256": "353caad43dd44aa7fedafd94c77ea0f7ee6f315221fb45100f8057ad5ef54a54",
+          "assembly": "analysis/captures/modern-differences/race-initialization/official_modern-004dcdf0.asm",
+          "direct_calls": [
+            {
+              "site": "004dce05",
+              "target": "004e070c"
+            },
+            {
+              "site": "004dce14",
+              "target": "004e070c"
+            },
+            {
+              "site": "004dce23",
+              "target": "004e070c"
+            },
+            {
+              "site": "004dcf86",
+              "target": "004ea970"
+            },
+            {
+              "site": "004dcfa3",
+              "target": "004e0050"
+            },
+            {
+              "site": "004dd0a7",
+              "target": "004a33d0"
+            },
+            {
+              "site": "004dd0bc",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd0e3",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd0fb",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd119",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd137",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd154",
+              "target": "004eb230"
+            },
+            {
+              "site": "004dd1b6",
+              "target": "004a33d0"
+            }
+          ]
+        },
+        {
+          "start": "004e070c",
+          "end_exclusive": "004e0716",
+          "sha256": "9a928e8498c96975ed52e357202dca892e0b239461f5ba0bad5a99fe4054921e",
+          "assembly": "analysis/captures/modern-differences/race-initialization/official_modern-004e070c.asm",
+          "direct_calls": [
+            {
+              "site": "004e070f",
+              "target": "004e0721"
+            }
+          ]
         }
       ]
     }
@@ -521,6 +777,38 @@
     ],
     "retained_call_order_verified": true
   },
+  "added_reset_calls_target_retained_original_bodies": [
+    {
+      "entry": "004c7130",
+      "end_exclusive": "004c7149",
+      "length": 25,
+      "sha256": "21d56f03c98dc5b708a1000a1f18cf8b3871d062f27e4c0b8c50a64b1110a9c6"
+    },
+    {
+      "entry": "004dbbc0",
+      "end_exclusive": "004dbbd6",
+      "length": 22,
+      "sha256": "c6e16fc889d9ce30652381fe4ce544d28ed35414216364b7fa878eb830e361dd"
+    },
+    {
+      "entry": "004cb6f0",
+      "end_exclusive": "004cb723",
+      "length": 51,
+      "sha256": "c5a8103a41aef7b0d2b041b80072f17dea4da55aa61202647cced3dba63cec33"
+    },
+    {
+      "entry": "0047b350",
+      "end_exclusive": "0047b37a",
+      "length": 42,
+      "sha256": "79914309a6abd948f9e601c951a3313106bd157686563376c2b96b0f552ac354"
+    },
+    {
+      "entry": "004dcdf0",
+      "end_exclusive": "004dd1ed",
+      "length": 1021,
+      "sha256": "353caad43dd44aa7fedafd94c77ea0f7ee6f315221fb45100f8057ad5ef54a54"
+    }
+  ],
   "removed_stub_entries": [
     "00401220",
     "0040c150",
