@@ -140,3 +140,78 @@ At **`00427126`**, both versions load the low byte of selector **`006fd4d4`**, a
 The same string pointer is then published into record+`0x40` at **`00427164`** and **`00427179`**, alongside retained WORD layout/resource fields. This establishes resource-name selection, not successful loading or what the images depict. For other selector values, low-byte addition can wrap and need not produce a decimal digit; no global range guarantee is inferred from this caller.
 
 For otherwise equal registry contents containing key`0x25` but missing`0x26`, original therefore selects `opp4.qfs` while Modern selects `opp3.qfs` on the selector3 path. If both keys exist, both select `opp4.qfs`; if key`0x25` is absent, both retain `opp3.qfs`. This conditional consequence follows statically from the paired bodies. Actual resource availability, visual differences and the keys’ identities remain untested/unresolved.
+
+## Additional Modern consumer: logo-table model filtering
+
+The same audit now retains complete Modern **`004a4374..004a443f`**, a separate consumer of parameterized predicate `00439cd4`. It clears output count **`007a1b90`**, returns early when BYTE `007a3a58` intersects mask6, and constructs a path from **`007a2db4`** plus literal **`logos.qfs`** at `0053cf0c`. Exact effective directory and archive loading success remain outside this local finding.
+
+For each admitted archive entry, it obtains data through `004f24e0`, checks DWORD magic **`0x4c42544c`** (bytes `LTBL`), prepares a resource identifier through `004d6070`, reads a DWORD record count, and walks records containing a model key followed by two DWORD payloads. A zero key bypasses the presence lookup. A nonzero key is passed to **`00439cd4`**; only a nonzero result takes the ordinary output-copy route. Output at **`0066133c`** consists of the prepared identifier and the two payload DWORDs; output count increments and an unsigned comparison against30 stops further ordinary output admission.
+
+A rejected-key route skips both payload DWORDs and executes `LOOP` at **`004a4415`**. When the decremented count remains nonzero it retries another key. **When that count becomes zero, execution falls through to `004a4417`**, the output-copy route, with the source already advanced past the rejected record. There is no intervening jump to the next archive entry. The subsequent `LOOP` at `004a442c` can then decrement zero to`0xffffffff` unless the output-count cap takes its exit. This is an observed conditional control-flow boundary, not a tested malformed-input case or an established actual asset defect. Asset record ordering, trailing storage and normal initialization must be checked before claiming a runtime failure.
+
+The code establishes model-dependent logo admission and a30-entry stop check on the ordinary copy path. It does not identify which key denotes Ford, HSV, Lister or Spectre, prove the archive schema beyond these consumed fields, or establish complete input bounds. The original executable’s legacy logo route and Modern’s rendered animation remain separate comparisons. No release-note item is promoted solely from the archive filename or nearby manufacturer claims.
+
+## Official logo asset: conditional trailing records exist
+
+The audit now extracts `fedata/art/logos.qfs` directly from the hash-pinned official archive and decodes its `10fb` RefPack stream with maintained `decode_logo_refpack.py`. It checks the declared output length, back-reference bounds and final size, retaining packed/decoded SHA-256 hashes. Decoded output is524516 bytes with an `SHPI` header. A bounded magic scan finds two `LTBL` blocks:
+
+| Decoded offset | Record count | Model-key sequence |
+|---|---:|---|
+| `0x40038` | 6 | `0,0,0,0,0,0` |
+| `0x800a0` | 5 | `0,37,38,26,27` decimal (`0,25h,26h,1ah,1bh`) |
+
+All record payload DWORDs are retained in the manifest. This is a decoded-asset scan, not a complete proof of how every archive-entry helper finds metadata; the consumer linkage through `004f24e0` still needs a separate field/layout audit. The two nonzero selectors used by the shared background predicate,37/38, also occur in the second block, but manufacturer identities remain unassigned.
+
+The second block ends with conditional key27 rather than an unconditional sentinel record. Therefore the previously documented final-record rejection case is relevant to this asset’s actual ordering **if** that block reaches the loader and key27 is absent from the runtime registry. This does not establish that either condition occurs in normal play, nor that a visible failure results. It narrows the next check to metadata extraction and registry population, rather than assuming all official tables end with unconditional admission. No game/resource code was executed; decoding ran only on inert asset bytes.
+
+## Logo metadata accessor linkage
+
+The expanded audit retains complete Modern **`004f24e0..004f255e`**, plus indexed-entry accessor `004ea658..004ea665`. The decoded `SHPI` directory has entries `0000` at offset`0x20` and `0001` at`0x40088`. Both begin with DWORD **`0x0400107d`**: low byte type`0x7d`, upper24-bit displacement`0x40010`. The official executable’s file-backed type-validity lookup at `00566d54+0x7d` is nonzero (`0x20`).
+
+For this positive displacement, the accessor’s `SAR8` and pointer addition lead to **`0x40030`** and **`0x80098`**, respectively. Each destination starts with type`0x6f`; that case returns destination+8, exactly **`0x40038`** / **`0x800a0`**, the two previously decoded `LTBL` locations. These exact offsets and headers are retained in the manifest. This resolves the prior uncertainty about the table locations’ correspondence to the inspected metadata accessor; they are not merely unrelated magic-string hits.
+
+The accessor’s more general chain traversal, signed displacements and diagnostic path are not converted into a complete validated archive parser here. These two known entries have positive in-range displacements; arbitrary files may differ. Nor does this structural linkage prove the runtime path loads this archive, that the preparation helper leaves all loop registers as expected, or which model keys are registered. Those remaining conditions still separate the observed final-record fall-through from a demonstrated game failure.
+
+## Logo preparation boundary: cursor restored, identifier not checked
+
+The audit retains complete Modern **`004d6070..004d6109`**, previously researched as `AllocateAndUploadConvertedShape`. Its prologue saves ESI/EDI/EBP, and the shared normal epilogue restores them. The logo loader’s ESI table cursor and EDI output cursor therefore survive this helper’s normal return, subject to its callees returning with valid stack state. ECX is not generally preserved, but the loader overwrites it with the table record count immediately afterward; its subsequent loop does not require the incoming zero to survive.
+
+The logo caller supplies a local output cell in EAX, image-entry pointer in EDX, EBX=`0x100`, ECX=0. The helper prepares a converted shape, invokes renderer slot **`009ef968`**, stores that slot’s EAX result into the supplied output cell at **`004d60e5`**, and calls slot **`009ef964`** only when the stored result is nonzero. It then frees the temporary converted buffer and returns local−`0x14` in EAX, rather than a locally normalized upload-success Boolean.
+
+The logo loader neither tests that returned EAX nor rejects a zero identifier in its output cell before walking/copying admitted records. This closes the normal-return cursor-preservation question, while exposing a separate unchecked renderer-result boundary. Complete conversion/allocation failure contracts, renderer callback ABI and actual identifier semantics remain unresolved. No upload or allocation was executed, and no actual failure is claimed.
+
+## Original loader counterpart: one named image becomes metadata-driven output
+
+Paired caller span **`00460478..0046048e`** compares a widget field with literal **`texteffects`** (`0053a970`) through `004429c0`. Its conditional call at **`00460489`** targets original **`004a4390`** versus Modern **`004a4374`**. This establishes the loader correspondence by a shared consumer, rather than by assuming equal entry addresses.
+
+Complete original loader **`004a4390..004a440d`** formats `%s%s` using base path **`007a2db4`** and original literal **`logo.qfs`** at `0053cf0c`, loads through `004956f0`, and obtains named entry **`logo`** (`0053cf20`) through `004ef1e0`. It invokes the shared conversion/upload helper `004d6070` with destination **`007a1b94`**, EBX256 and ECX3 when BYTE `007a3a58` bit1 is set, otherwise ECX0; then frees the loaded allocation. This body has no `LTBL` record scan or model-presence filter.
+
+Modern changes the source literal at the same data address to **`logos.qfs`**, clears a list count, gates mask6, and builds per-logo12-byte records as described above. The separate count6 assignment seen in original `004a40cd` belongs to animation/update code, not this loader’s initialization, and must not be conflated with an archive record count derived here.
+
+Thus the evidenced change is from one named uploaded image to a metadata-driven, model-filtered output list at the paired `texteffects` call site. Complete original draw selection, final Modern rendering, manufacturer identities and historical intermediate-release transitions remain unresolved. The retained strings and both complete loader bodies make this comparison reproducible without executing either game.
+
+## Logo output consumer: packed payload fields reach draw preparation
+
+Modern consumer span **`004a457b..004a45bf`** reads a selected index from **`007a1b38 + 4*slot`**, multiplies it by12 and adds output base **`0066133c`**. Record DWORD0 becomes EAX, the uploaded identifier. Record+4/+6/+8/+10 are each zero-extended WORDs: +4 enters ECX, while +6/+8/+10 are pushed as stack arguments. Scale comes from **`007a1b60 + 4*slot`**; a preceding integer expression forms a high-byte colour component combined with low24 bits`0xffffff`. Placement arrives through EDX/EBX before the call to **`004d7d90`** at `004a45b9`.
+
+The audit retains the draw helper prefix **`004d7d90..004d7dc7`**. With its saved-register frame, stack offsets+`0x14`/+`0x18` correspond to record WORDs+8/+10. It loads them with signed32-bit `FILD` after the caller’s unsigned-WORD extension, multiplies them by the passed binary32 scale and retains binary32 copies. Their use is therefore consistent with horizontal/vertical extents; the first two WORDs are separate drawing inputs, not additional model keys. The manifest now decodes all four payload WORDs alongside the raw DWORDs.
+
+This links the constructed12-byte list to draw preparation without claiming complete rendering. The selected-index producer, bounds, final texture-coordinate units, helper tail, renderer submission, scale/colour validity and actual visible manufacturers remain unresolved. Only the retained prefix is audited here; it is not presented as a complete function or a verified portable-C interface.
+
+## Logo index producer and empty-list admission
+
+Modern **`004a444c`** checks **`007a1b90==0`** at `004a4452` and jumps to its exit before the inspected slot initialization/update loops. Two direct calls to index producer `004a40c0` occur within those loops at **`004a4473`** and **`004a44be`**. This establishes an empty-list guard in that consumer; it does not prove the count cannot change concurrently or that no other indirect caller exists.
+
+The ordinary producer path **`004a4337..004a4359`** zero-extends the byte at `00552938 + BYTE(0057126b)`, sign-extends EAX with CDQ, divides by DWORD **`007a1b90`**, and stores the remainder into **`007a1b38 + 4*slot`**. It increments the byte cursor with8-bit wrap. For a stable positive count and an unsigned-byte numerator, the stored remainder is in `[0,count-1]`. The producer itself has no zero-divisor guard; its observed caller supplies that admission check. Original’s corresponding ordinary path also divides by `007a1b90`, but its producer writes count6 at `004a40cd`; Modern removes that fixed-count write and uses the loader-populated count.
+
+Slot9 follows a distinct sequence at **`004a40dc..004a40f7`**: it first stores the old DWORD **`0055e984`** directly as the selected index, then increments that value, uses signed IDIV by the count and stores the remainder back to `0055e984`. The modulo therefore constrains the **next** sequence value, not the index already published on this call. Valid initialization, prior nonnegative values and count changes matter; a universal selected-index bound is not established for that branch. Original uses fixed divisor6 there; Modern uses the current count.
+
+These findings explain how the new dynamic logo list affects index selection and why an empty loaded list does not automatically imply a divide-by-zero in the inspected draw consumer. The count lifecycle, first slot9 seed, indirect callers and concurrent reloads remain unresolved. No division, animation or renderer call was executed.
+
+## First animation state versus later reloads
+
+The audit verifies **file-backed** initial values, including PE file offsets, in both executable baselines: sequence **`0055e984=0`** and animation sentinel **`0055e95c=-1`**. These are actual initialized bytes, not values guessed from a zero-filled virtual section. The consumer’s sentinel test at `004a445f` selects its initialization loop when the first slot remains−1.
+
+With a stable positive loaded count and that initial counter, slot9 publishes index0 on its first producer call, then calculates the next sequence value modulo the count. This resolves the initial seed for that bounded case. It does not establish that the initial bytes remain unchanged until first use, that initialization runs exactly once, or that reloading a shorter list resets the sequence.
+
+The decoded direct-reference search locates a load at `004a40dc` and store at `004a4114` for `0055e984`; this is a locator result, not proof that no indirect/bulk write exists. The retained logo loader clears output count but contains no explicit reset of that sequence cell. A prior index valid for a longer list can therefore require additional reset/order guarantees after list shrinkage; the preceding modulo constrains the next value only. No reload failure or out-of-range draw was observed.

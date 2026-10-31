@@ -366,6 +366,8 @@ See also [car-list rendering aliases](original-modern-car-alias.md): expanded na
 
 Recent catalog reconciliation links the mirror admission/track-selector and Num Lock findings to their release-note claims as **Partial**. The car-class display claim and version-specific v1.5.2 rear-view improvement retain vendor-claimed status: related final-pair mechanisms do not prove rendered class text or intermediate-release changes. Input-worker lifecycle, discarded next-block classification, progress budgets and screenshot file policies remain separately documented code findings; they are not forced into unrelated release-note bullets.
 
+The [logo loader and animation investigation](original-modern-frontend-page.md#original-loader-counterpart-one-named-image-becomes-metadata-driven-output) now pairs original `logo.qfs` loading with Modern `logos.qfs`, decodes official tables, and traces model filtering, metadata access, draw fields and index initialization. Its conditional last-record fall-through and reload-state boundaries remain static findings requiring further validation.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

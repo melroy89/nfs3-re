@@ -28,11 +28,25 @@
           "assembly_sha256": "e8fba1a902d8a65ee58b2093e86dd47b1e7f0b3a29ed7c975d897a3b1c247bab"
         },
         {
+          "start": "00460478",
+          "end": "0046048e",
+          "sha256": "d6c84b1bf61b7753d9078481f238b8f1c2ccbec6cd5f8b17b2f42c79c727111a",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-00460478.asm",
+          "assembly_sha256": "e78cedd1127a187a471e8ab911598791a282a277bae51fe31f4af07f02bbffc5"
+        },
+        {
           "start": "00439ce0",
           "end": "00439d12",
           "sha256": "196337c17fefc00f472133585f1d32f1776726d02afc688f88d42f10af87ab2f",
           "assembly": "analysis/captures/modern-differences/model-presence/original-00439ce0.asm",
           "assembly_sha256": "fe632fa3ccce579b60e954f63ff070f45f5d993db06d1bc138c670742ed5cf88"
+        },
+        {
+          "start": "004a4390",
+          "end": "004a440d",
+          "sha256": "78e06334a46cb7062e4b24a62f401f82d98d8d6605ddf6bd6334375b734e5df4",
+          "assembly": "analysis/captures/modern-differences/model-presence/original-004a4390.asm",
+          "assembly_sha256": "44a943faa12a4f0fc529c7889466222d6f97894b11784d5870bf926bddc737a0"
         }
       ],
       "paired_caller_target": "00439ce0"
@@ -63,6 +77,13 @@
           "assembly_sha256": "c6702a64351e39007b396deeaa2265ddeb51bdb550a28d52787c106492598f8e"
         },
         {
+          "start": "00460478",
+          "end": "0046048e",
+          "sha256": "2341f2d910b7462e7fd12f2c47f92508571a08ac1ca7c895a433e1c1a9f271f5",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-00460478.asm",
+          "assembly_sha256": "e46dfd61571b790369d3ae550f2aec416c020c916bb20ff6d9ecdf0a636f991a"
+        },
+        {
           "start": "00439cd4",
           "end": "00439cfd",
           "sha256": "5c0606a52d9329b182890ee18549991ff4e9076f82b188174aaeb170fb144860",
@@ -75,9 +96,112 @@
           "sha256": "0ee26567da54b9c59ace1e1db8f6a31e98d7386778397bb40e626b3948627b3f",
           "assembly": "analysis/captures/modern-differences/model-presence/official_modern-00439d00.asm",
           "assembly_sha256": "017a14e71a1c7f373f7d4c275c0469c91d8f6498596ff8fff0a164010eb3bc7c"
+        },
+        {
+          "start": "004a4374",
+          "end": "004a443f",
+          "sha256": "76fa7f8a7f6bbb1645ae716a6d4a72aeda8d0adb46aa63e518bf4f824b76106b",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a4374.asm",
+          "assembly_sha256": "431e4602267109cf583ddc42c8ed60bc69b1b1dfa4226311251191b4b5f7e463"
+        },
+        {
+          "start": "004a40c0",
+          "end": "004a413b",
+          "sha256": "46f3ccdba0ff5dd5a9faa57056a8971be0b471f3e428d13851425dacbf5e1711",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a40c0.asm",
+          "assembly_sha256": "7f4c46cdbefb41f9d0c85772cfeff606a311da9e93b19d31570152c3d93905ec"
+        },
+        {
+          "start": "004a4337",
+          "end": "004a4371",
+          "sha256": "b251eefa1ba932a9cd8b49558a65a37cfcf23cca1c9c04e434aa8416e744de90",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a4337.asm",
+          "assembly_sha256": "029f5da18f13e0b02cefaf3b50dbe5d5e184f8363f85dac4e6385bbe112ee2e9"
+        },
+        {
+          "start": "004a444c",
+          "end": "004a44c3",
+          "sha256": "d3007761f73dd8f2c720c9a3f874210cf298013e4d92c0466bea00d0b3e01721",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a444c.asm",
+          "assembly_sha256": "4bb0e15140e8641b5bb2efcbdab0f19786f392eaa701f481195f70ffb4f376ed"
+        },
+        {
+          "start": "004a457b",
+          "end": "004a45bf",
+          "sha256": "9e86e84015a7fd4c0698fc216eb96aedffbe98126a86efcbb6bdf98178190c4a",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004a457b.asm",
+          "assembly_sha256": "00657e116b902d924d942898d1cc03db64bb9d06fbb22f9ab516917e931e4b76"
+        },
+        {
+          "start": "004d7d90",
+          "end": "004d7dc7",
+          "sha256": "7e642ad0f23e3c595f2bd38c8ccf4a689f476f777d56f73b018f529250238339",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004d7d90.asm",
+          "assembly_sha256": "6c1a8557644d67a4af21ce732790b7300d1119631a132614bc99b595f8db4851"
+        },
+        {
+          "start": "004d6070",
+          "end": "004d6109",
+          "sha256": "1c8419451e69e79509dde5352c80d66d4f2ac847b8d763b7cee80aafa47448f3",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004d6070.asm",
+          "assembly_sha256": "6e4149455359f85cc93dd345bc1ec1945173388f3c9701070b14ff01c0e9d35e"
+        },
+        {
+          "start": "004f24e0",
+          "end": "004f255e",
+          "sha256": "d6e3061c296540b99b3c4b0d0d465a81e952aac738840d464fb5c12e9bde2bf9",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004f24e0.asm",
+          "assembly_sha256": "9d5a84bc6b8276da0bb6b12abbdc5136951af5c579efc51d401a0e9163e49032"
+        },
+        {
+          "start": "004ea658",
+          "end": "004ea665",
+          "sha256": "949cb3ca6c4739e79fe6b5779271efecdd6e29315d815b7d0e17f48efe79827d",
+          "assembly": "analysis/captures/modern-differences/model-presence/official_modern-004ea658.asm",
+          "assembly_sha256": "a7bfc58f666688cb2c4b4f101a11cd20c26016c04646e5015e4e910fa6fec955"
         }
       ],
       "paired_caller_target": "00439d00"
+    }
+  },
+  "file_backed_animation_initial_state": {
+    "original": [
+      {
+        "address": "0055e984",
+        "signed_value": 0,
+        "file_offset": 1430404
+      },
+      {
+        "address": "0055e95c",
+        "signed_value": -1,
+        "file_offset": 1430364
+      }
+    ],
+    "official_modern": [
+      {
+        "address": "0055e984",
+        "signed_value": 0,
+        "file_offset": 1430404
+      },
+      {
+        "address": "0055e95c",
+        "signed_value": -1,
+        "file_offset": 1430364
+      }
+    ]
+  },
+  "logo_loader_source_strings": {
+    "original": {
+      "0053cf0c": "logo.qfs",
+      "0053cf18": "%s%s",
+      "0053cf20": "logo",
+      "0053a970": "texteffects"
+    },
+    "official_modern": {
+      "0053cf0c": "logos.qfs",
+      "0053cf18": "%s%s",
+      "0053cf20": "",
+      "0053a970": "texteffects"
     }
   },
   "background_resource_strings": {
@@ -87,6 +211,168 @@
   "background_caller_changed_addresses": [
     "00427143"
   ],
+  "modern_logo_archive_name": "logos.qfs",
+  "logo_metadata_links": [
+    {
+      "entry_name": "0000",
+      "entry_offset": 32,
+      "header": "0400107d",
+      "metadata_offset": 262192,
+      "returned_ltbl_offset": 262200
+    },
+    {
+      "entry_name": "0001",
+      "entry_offset": 262280,
+      "header": "0400107d",
+      "metadata_offset": 524440,
+      "returned_ltbl_offset": 524448
+    }
+  ],
+  "official_logo_asset": {
+    "member": "fedata/art/logos.qfs",
+    "packed_sha256": "af45f1f6fff4fc6a9e2681c96c87fdcde2629fb490b2f511725ea97e7cad1a30",
+    "decoded_sha256": "44acab92372e4ee66cda9a548eca5dc94c24c42ceda2878ef055ed1b90285310",
+    "decoded_size": 524516,
+    "ltbl_magic_scan": [
+      {
+        "decoded_offset": 262200,
+        "count": 6,
+        "records": [
+          [
+            0,
+            262144,
+            2031872
+          ],
+          [
+            0,
+            2490368,
+            3735808
+          ],
+          [
+            0,
+            6422528,
+            2031872
+          ],
+          [
+            0,
+            8585216,
+            2425088
+          ],
+          [
+            0,
+            11206656,
+            3080360
+          ],
+          [
+            0,
+            14417920,
+            2097408
+          ]
+        ],
+        "payload_words": [
+          [
+            0,
+            4,
+            256,
+            31
+          ],
+          [
+            0,
+            38,
+            256,
+            57
+          ],
+          [
+            0,
+            98,
+            256,
+            31
+          ],
+          [
+            0,
+            131,
+            256,
+            37
+          ],
+          [
+            0,
+            171,
+            168,
+            47
+          ],
+          [
+            0,
+            220,
+            256,
+            32
+          ]
+        ]
+      },
+      {
+        "decoded_offset": 524448,
+        "count": 5,
+        "records": [
+          [
+            0,
+            8060932,
+            3211454
+          ],
+          [
+            37,
+            262150,
+            3539074
+          ],
+          [
+            38,
+            3866628,
+            4128952
+          ],
+          [
+            26,
+            11337731,
+            1769723
+          ],
+          [
+            27,
+            13959171,
+            2425083
+          ]
+        ],
+        "payload_words": [
+          [
+            4,
+            123,
+            190,
+            49
+          ],
+          [
+            6,
+            4,
+            130,
+            54
+          ],
+          [
+            4,
+            59,
+            184,
+            63
+          ],
+          [
+            3,
+            173,
+            251,
+            27
+          ],
+          [
+            3,
+            213,
+            251,
+            37
+          ]
+        ]
+      }
+    ]
+  },
   "limits": [
     "No resource lookup or target instruction execution.",
     "Selectors 0x25/0x26 are raw values; human-readable identities and list initialization remain unresolved."
