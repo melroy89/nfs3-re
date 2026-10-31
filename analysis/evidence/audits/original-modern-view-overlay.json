@@ -80,6 +80,26 @@
       "constants_0053b76c_to_0053b78c_hex": "00000000000070409a9999999999593f111111111111613fcdcccc3a8988083b"
     }
   },
+  "primary_tile_coordinates": {
+    "retained_constants": {
+      "0053b76c": {
+        "binary64": 256.0,
+        "hex": "0000000000007040"
+      },
+      "0053b774": {
+        "binary64": 0.0015625,
+        "hex": "9a9999999999593f"
+      },
+      "0053b77c": {
+        "binary64": 0.0020833333333333333,
+        "hex": "111111111111613f"
+      }
+    },
+    "normal_math": "stepX=256*extentW/640; stepY=256*extentH/480, with actual x87 order/binary32 spills retained.",
+    "bounds": "Right/bottom candidates clamped against origin+extent before vertex submission004894af.",
+    "index": "Incremented once per innerY submission; same44-byte descriptor table, no local per-submit capacity comparison established.",
+    "limits": "Coordinate-space construction, not physical rasterized pixel coverage; malformed extents, nonfinite values, origin rounding and callback contracts unqualified."
+  },
   "primary_tile_resource_binding": {
     "paired_setup": "00488b8c..00488c33",
     "bytes_identical": true,

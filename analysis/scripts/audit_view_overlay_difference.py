@@ -23,6 +23,16 @@ def main():
             rows.append({'start': f'{start:08x}', 'end': f'{end:08x}', 'bytes_sha256': hashlib.sha256(pe.get_data(start-0x400000, end-start)).hexdigest(), 'assembly': str(path.relative_to(ROOT)), 'assembly_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         out['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows, 'constants_0053b76c_to_0053b78c_hex': pe.get_data(0x13b76c, 32).hex()}
     data = [p.get_data(0x89240, 0x3ed) for p in images]
+    tile_constants={}
+    for address,expected in ((0x53b76c,256.0),(0x53b774,1/640),(0x53b77c,1/480)):
+        pairs=[p.get_data(address-0x400000,8) for p in images]
+        assert pairs[0]==pairs[1] and struct.unpack('<d',pairs[0])[0]==expected
+        tile_constants[f'{address:08x}']={'binary64':expected,'hex':pairs[0].hex()}
+    out['primary_tile_coordinates']={'retained_constants':tile_constants,
+        'normal_math':'stepX=256*extentW/640; stepY=256*extentH/480, with actual x87 order/binary32 spills retained.',
+        'bounds':'Right/bottom candidates clamped against origin+extent before vertex submission004894af.',
+        'index':'Incremented once per innerY submission; same44-byte descriptor table, no local per-submit capacity comparison established.',
+        'limits':'Coordinate-space construction, not physical rasterized pixel coverage; malformed extents, nonfinite values, origin rounding and callback contracts unqualified.'}
     gear_setup=[p.get_data(0x88c6e,0xd3) for p in images]
     dash_setup=[p.get_data(0x88b8c,0xa7) for p in images]
     assert dash_setup[0]==dash_setup[1]
