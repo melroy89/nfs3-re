@@ -90,7 +90,7 @@ Source line points to the bullet in the installed `readme_en.txt`. Release ancho
 | MP150-027 | 1.5.0 (2016-03-20) | 256 | DX7 renderer is included into this patch | Graphics / drivers | Vendor-claimed; not independently verified against both executables |
 | MP150-028 | 1.5.0 (2016-03-20) | 257 | Based on the dx7z.dll from the Motor City Online | Graphics / drivers | Vendor-claimed; not independently verified against both executables |
 | MP150-029 | 1.5.0 (2016-03-20) | 258 | Dithering is disabled by default | Graphics / drivers | Vendor-claimed; not independently verified against both executables |
-| MP150-030 | 1.5.0 (2016-03-20) | 259 | Resolutions under 640×480 are hidden | Graphics / drivers | Vendor-claimed; not independently verified against both executables |
+| MP150-030 | 1.5.0 (2016-03-20) | 259 | Resolutions under 640×480 are hidden | Graphics / drivers | Partial; [official DX7 callback rejects width<640 or height<480](original-modern-dx7-mode-admission.md); other drivers, original counterpart and runtime unverified |
 | MP150-031 | 1.5.0 (2016-03-20) | 262 | Gameplay loading animation takes into account time of preliminary synchronization of a network game | Multiplayer / gameplay | Vendor-claimed; not independently verified against both executables |
 | MP150-032 | 1.5.0 (2016-03-20) | 263 | IntroSplashTime ini setting | Platform / config / reliability | Vendor-claimed; not independently verified against both executables |
 | MP150-033 | 1.5.0 (2016-03-20) | 264 | Corrects a problem with discolored light from the taillights in the menu when DX6 renderer is used… | Graphics / drivers | Vendor-claimed; not independently verified against both executables |

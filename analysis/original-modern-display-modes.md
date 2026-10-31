@@ -57,6 +57,8 @@ Therefore this callback alone does not prove a strict 100-entry maximum. Driver 
 - **MP150-040:** EXE-side sorted insertion is verified in the matched collector pair.
 - **MP150-042:** current `Hide16bitModes` grouping/higher-depth retention is verified; final code fallback zero is in [startup settings](original-modern-startup-policy.md).
 - **MP120-008/017/024:** notes about 100 modes can refer to different renderer components. This EXE's changed collector/boundary is documented, but individual DLL capacities and first-release dates are not thereby verified.
-- **MP150-030:** a below-640×480 exclusion is not present in this eligibility helper; locating it elsewhere remains pending.
+- **MP150-030:** the executable eligibility helper has no below-640×480 exclusion; the [DX7 driver follow-up](original-modern-dx7-mode-admission.md) locates unsigned minimum-size rejection in the official packaged DLL. Other renderers and runtime remain unverified.
 
 The [mode-selection comparison](original-modern-mode-selection.md) follows the original ID tree and Modern search/application consumers. Next: compare driver mode enumeration itself, all mode-list count resets/storage, old budget-field producer, and original/Modern projection/menu scaling. The [screenshot dimension audit](screenshot-worker-admission-audit.md) already explains why eligibility and selector fallback are not a general buffer-size proof; do not duplicate or overstate that research.
+
+The [DX7 driver follow-up](original-modern-dx7-mode-admission.md) separates its verified minimum-size checks from the still-unverified exact640×480 depth-forcing claim.

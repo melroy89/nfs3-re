@@ -1,0 +1,51 @@
+{
+  "kind": "static-official-dx7-mode-admission",
+  "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+  "member": "drivers/dx7/dx7a.dll",
+  "size": 110592,
+  "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+  "image_base": "60000000",
+  "exports": [
+    {
+      "name": "_THRASH_about@0",
+      "address": "60001000"
+    }
+  ],
+  "range_end": "exclusive",
+  "spans": [
+    {
+      "start": "60001000",
+      "end": "60001191",
+      "bytes_sha256": "2b404f0af15018256b3756b886c0b1c0bd79b28644de34ad52e1b7b0fc7d52cc",
+      "assembly": "analysis/captures/modern-differences/dx7-mode-admission/60001000.asm",
+      "assembly_sha256": "772273ad0a5bb4a8813d671501f59c29e84f02483bf5e4bd29f7117258eeef24"
+    },
+    {
+      "start": "60002578",
+      "end": "600025ec",
+      "bytes_sha256": "af99616d00f2ca7b444574dd89dda95a6e2e7a5520dd743ec2166167238ce186",
+      "assembly": "analysis/captures/modern-differences/dx7-mode-admission/60002578.asm",
+      "assembly_sha256": "743b6bc652d0e1097afb75985182a6d787b88fad03735a9efa78d4ff817714e9"
+    },
+    {
+      "start": "600025ec",
+      "end": "600026d2",
+      "bytes_sha256": "259b3c5248bfafa13cf6315862b4fda192b78f5a5a09333dba0ae04fbf918a50",
+      "assembly": "analysis/captures/modern-differences/dx7-mode-admission/600025ec.asm",
+      "assembly_sha256": "715f06e5c2b22f752ddf68464c589f41a37be8c540a1f95e9b65d7c0a22d2a7a"
+    },
+    {
+      "start": "600026d4",
+      "end": "6000276d",
+      "bytes_sha256": "9ebffa24ffc4236479ca32bffdde75c1079b3db6453f1ec22c1c3b3d57142e41",
+      "assembly": "analysis/captures/modern-differences/dx7-mode-admission/600026d4.asm",
+      "assembly_sha256": "bd5ec29675dbf675d0a101e3a600a8aade76e544ffd9d2c5fcde58d491076cbe"
+    }
+  ],
+  "limits": [
+    "Official final-package DX7 DLL only; no original or intermediate driver comparison.",
+    "No DLL load, graphics API interaction, display enumeration or instruction execution.",
+    "Callback registration via vtable offset retained; complete interface identity not independently qualified here.",
+    "No universal all-driver or exact 640x480 depth-forcing conclusion."
+  ]
+}

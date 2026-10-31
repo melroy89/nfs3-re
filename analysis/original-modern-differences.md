@@ -338,6 +338,8 @@ The [idle movie controller comparison](original-modern-idle-movie.md) traces NoM
 
 The [movie screenshot comparison](original-modern-movie-screenshots.md) separates unchanged movie-stop logic from the changed screenshot consumer and handled Print Screen hook path.
 
+The [official DX7 mode-admission follow-up](original-modern-dx7-mode-admission.md) locates minimum640×480 checks in a packaged driver, with original-driver and exact-size depth-policy limits stated.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
@@ -454,7 +456,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-027 | DX7 renderer is included into this patch. Just for a collection :) | Claimed |
 | MP150-028 | Based on the dx7z.dll from the Motor City Online. | Claimed |
 | MP150-029 | Dithering is disabled by default. | Claimed |
-| MP150-030 | Resolutions under 640×480 are hidden. | Claimed |
+| MP150-030 | Resolutions under 640×480 are hidden. | Partial |
 | MP150-031 | Gameplay loading animation takes into account time of preliminary synchronization of a network game. | Claimed |
 | MP150-032 | IntroSplashTime ini setting, which allows you to set duration of the intro splash image. | Claimed |
 | MP150-033 | Fixed a problem with discolored light from the taillights in the menu when DX6 renderer is used and fog support is enabled. | Claimed |
