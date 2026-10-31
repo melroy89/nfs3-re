@@ -450,6 +450,8 @@ The [reconstruction-baseline sample comparison](original-modern-reconstruction-b
 
 The [local DLL candidate inventory](original-modern-dll-candidates.md) pins distinct game-root/setup renderers, shared THRASH export surfaces and static-import differences against official candidates. Local sound matches the packaged member; original-retail pairing and function-level DLL changes remain unresolved.
 
+The [x87 status-observer inventory](original-modern-x87-observers.md) adds a complete linear-decoding candidate index and bounded special-case analysis, separately from arithmetic precision and storage sizes. It identifies reader-address differences without treating them as independently established features or proof of runtime compatibility.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

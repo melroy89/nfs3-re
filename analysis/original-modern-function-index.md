@@ -30,7 +30,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004187e0` | ToggleConfiguredStreamVolume | 44 | 30 | [music-start](original-modern-music-start.md) |
 | `00418cc0` | OpenPathWithShellExecute | 28 | 26 | [shell-open](original-modern-shell-open.md) |
 | `0041a120` | BuildThreePayloadRecordAndAdvanceCursor | 564 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
-| `0041aa60` | ClassifyValueAgainstSelectedRecordSquaredThresholds | 55 | 51 | [track-detail](original-modern-track-detail.md) |
+| `0041aa60` | ClassifyValueAgainstSelectedRecordSquaredThresholds | 55 | 51 | [track-detail](original-modern-track-detail.md), [x87-observers](original-modern-x87-observers.md) |
 | `0041b9b0` | BuildAndRouteTrackSceneRenderCommands | 401 | 1 | [night-lighting](original-modern-night-lighting.md) |
 | `0041c670` | ApplyNightVehicleLightingToTrackBlockQuads | 884 | 71 | [night-lighting](original-modern-night-lighting.md) |
 | `0041cdc0` | BuildVisibleTrackBlockRenderChains | 1012 | 56 | [night-lighting](original-modern-night-lighting.md), [track-detail](original-modern-track-detail.md) |
@@ -132,7 +132,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004628d0` | ConfigureFrontendDropdownBoundsFromLabels | 219 | 28 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md) |
 | `00463ff0` | HandleFrontendDropDownInput | 1317 | 82 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md), [dropdown-input](original-modern-dropdown-input.md) |
 | `00464560` | ConfigureFrontendDropDownBounds | 379 | 28 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md), [dropdown-input](original-modern-dropdown-input.md) |
-| `00469680` | RenderFrontendSingleSliderWidget | 3887 | 131 | [slider-percentage](original-modern-slider-percentage.md) |
+| `00469680` | RenderFrontendSingleSliderWidget | 3887 | 131 | [slider-percentage](original-modern-slider-percentage.md), [x87-observers](original-modern-x87-observers.md) |
 | `0046ab10` | InitializeSingleSliderGeometryAndValue | 151 | 37 | [slider-percentage](original-modern-slider-percentage.md) |
 | `0046b3a0` | RenderFrontendSliderWithPercentagePair | 3910 | 1 | [slider-percentage](original-modern-slider-percentage.md) |
 | `0046c820` | InitializeIndexedSliderGeometryAndValues | 134 | 35 | [slider-percentage](original-modern-slider-percentage.md) |
@@ -191,7 +191,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0048eff0` | InitializeMultimediaTimerService | 496 | 6 | [clock-source](original-modern-clock-source.md), [title-delay](original-modern-title-delay.md) |
 | `004900b0` | SubmitFixedColorAxisAlignedQuad | 21 | 21 | [removed-dde](original-modern-removed-dde.md), [view-overlay](original-modern-view-overlay.md) |
 | `004900c8` | SubmitTopAndBottomFixedColorQuads | 108 | 105 | [removed-dde](original-modern-removed-dde.md), [view-overlay](original-modern-view-overlay.md) |
-| `00490134` | UpdateThrottledLoadingProgressEstimate | 143 | 142 | [loading-timing](original-modern-loading-timing.md), [removed-dde](original-modern-removed-dde.md), [view-overlay](original-modern-view-overlay.md) |
+| `00490134` | UpdateThrottledLoadingProgressEstimate | 143 | 142 | [loading-timing](original-modern-loading-timing.md), [removed-dde](original-modern-removed-dde.md), [view-overlay](original-modern-view-overlay.md), [x87-observers](original-modern-x87-observers.md) |
 | `00491190` | QueueProjectedBlinkingPointEffectQuads | 2600 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
 | `00491bc0` | BuildWeatherMaterialProjectedQuadRecord | 1954 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
 | `00492370` | BuildAndQueueRotatedProjectedQuad | 1539 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
@@ -201,7 +201,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00494cb0` | RenderTiledLoadingArtworkAndInitializeProgressBounds | 748 | 480 | [loading-artwork](original-modern-loading-artwork.md), [pending-overlay](original-modern-pending-overlay.md) |
 | `00494fa0` | LoadAndRenderRaceLoadingArtwork | 445 | 16 | [loading-artwork](original-modern-loading-artwork.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `00495190` | ScaleFourFloat2PointsByViewportFactors | 147 | 4 | [projection](original-modern-projection.md) |
-| `00495230` | UpdateLoadingScreenProgress | 877 | 151 | [loading-timing](original-modern-loading-timing.md), [pending-overlay](original-modern-pending-overlay.md), [screenshots](original-modern-screenshots.md), [small-entry-followup](original-modern-small-entry-followup.md), [texture-loading-followup](original-modern-texture-loading-followup.md), [texture-progress](original-modern-texture-progress.md) |
+| `00495230` | UpdateLoadingScreenProgress | 877 | 151 | [loading-timing](original-modern-loading-timing.md), [pending-overlay](original-modern-pending-overlay.md), [screenshots](original-modern-screenshots.md), [small-entry-followup](original-modern-small-entry-followup.md), [texture-loading-followup](original-modern-texture-loading-followup.md), [texture-progress](original-modern-texture-progress.md), [x87-observers](original-modern-x87-observers.md) |
 | `004955a0` | PollLoadingInputAndAbortState | 36 | 34 | [loading-timing](original-modern-loading-timing.md) |
 | `00495600` | RenderLocalizedFrontendBackground | 216 | 2 | [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `00495bc0` | PlayMadMovieFromBufferedStream | 1312 | 3 | [cpu-tier](original-modern-cpu-tier.md), [idle-movie](original-modern-idle-movie.md), [movie-screenshots](original-modern-movie-screenshots.md), [movie-volume](original-modern-movie-volume.md) |
@@ -303,7 +303,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004d5370` | LoadSharedSfxTextureDescriptors | 819 | 8 | [texture-loading-followup](original-modern-texture-loading-followup.md) |
 | `004daf80` | InitializeFrontendRenderResourcesAndSlotState | 124 | 10 | [slideshow-navigation](original-modern-slideshow-navigation.md) |
 | `004dbbe0` | LoadTrackSceneWithAbortCheckpoints | 103 | 100 | [music-selection](original-modern-music-selection.md) |
-| `004dbc48` | CalculateClampedViewportFovFromAspect | 73 | 72 | [projection](original-modern-projection.md) |
+| `004dbc48` | CalculateClampedViewportFovFromAspect | 73 | 72 | [projection](original-modern-projection.md), [x87-observers](original-modern-x87-observers.md) |
 | `004dbc94` | GetViewportFovDegrees | 42 | 40 | [projection](original-modern-projection.md) |
 | `004dbcc0` | DeriveViewportProjectionAngles | 117 | 113 | [projection](original-modern-projection.md) |
 | `004dbda0` | ApplyWideAngleViewGeometry | 63 | 6 | [projection](original-modern-projection.md) |
@@ -326,7 +326,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f0cd0` | ClearActiveAsyncReadStatusAndWaitForChange | 76 | 10 | [async-wait](original-modern-async-wait.md) |
 | `004f1c70` | InitializeLegacyCpuIdentificationAndFeatureFlags | 511 | 128 | [cpu-tier](original-modern-cpu-tier.md) |
 | `004f1ea0` | GetExistingModuleOrLoadLibrary | 27 | 27 | [renderer-loading](original-modern-renderer-loading.md), [startup-policy](original-modern-startup-policy.md) |
-| `004f1ebc` | ResolveExportFromExistingOrLoadedModule | 22 | 22 | [renderer-loading](original-modern-renderer-loading.md), [startup-policy](original-modern-startup-policy.md) |
+| `004f1ebc` | ResolveExportFromExistingOrLoadedModule | 22 | 22 | [renderer-loading](original-modern-renderer-loading.md), [startup-policy](original-modern-startup-policy.md), [x87-observers](original-modern-x87-observers.md) |
 | `004f1ed4` | TrySetDllDirectoryViaDynamicExport | 31 | 31 | [cpu-tier](original-modern-cpu-tier.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f1efc` | AllocateGameProcessHeapBytes | 20 | 20 | [heap-initialization](original-modern-heap-initialization.md) |
 | `004f1f30` | FreeGameProcessHeapBlock | 20 | 20 | [heap-initialization](original-modern-heap-initialization.md) |

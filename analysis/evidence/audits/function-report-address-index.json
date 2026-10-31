@@ -432,8 +432,12 @@
       "sha256": "9a44eaadee4472b7f01ced776a7c8d07cd028b9efac7d77e76792e101ca0111a"
     },
     {
+      "path": "analysis/original-modern-x87-observers.md",
+      "sha256": "b3fc438062b7d9208de20990684dff86d68f37f18b5a6f944885868ade983806"
+    },
+    {
       "path": "analysis/og-modern-x87-precision.md",
-      "sha256": "e9f1d9778b1a3bdd08c1887898072b4346a2c7f5ff25cff585a1fc535171088a"
+      "sha256": "e7866904e2d2b6587aca86173e2944f903fe026392118f190b39da11cf8c1654"
     }
   ],
   "counts": {
@@ -1116,6 +1120,16 @@
           "addresses": [
             "0041aa60",
             "0041aa64"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-x87-observers.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0041aa72",
+            "0041aa7e",
+            "0041aa83",
+            "0041aa92"
           ]
         }
       ]
@@ -4502,6 +4516,13 @@
             "00469680",
             "0046a52b"
           ]
+        },
+        {
+          "path": "analysis/original-modern-x87-observers.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0046a58c"
+          ]
         }
       ]
     },
@@ -6434,6 +6455,14 @@
           "addresses": [
             "00490134"
           ]
+        },
+        {
+          "path": "analysis/original-modern-x87-observers.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00490180",
+            "004901a3"
+          ]
         }
       ]
     },
@@ -6782,6 +6811,13 @@
           "entry_mentioned": true,
           "addresses": [
             "00495230"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-x87-observers.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00495273"
           ]
         }
       ]
@@ -10650,6 +10686,14 @@
           "addresses": [
             "004dbc48"
           ]
+        },
+        {
+          "path": "analysis/original-modern-x87-observers.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004dbc70",
+            "004dbc81"
+          ]
         }
       ]
     },
@@ -11399,6 +11443,13 @@
           "entry_mentioned": true,
           "addresses": [
             "004f1ebc"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-x87-observers.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004f1ec4"
           ]
         }
       ]

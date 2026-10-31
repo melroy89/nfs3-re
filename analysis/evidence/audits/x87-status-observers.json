@@ -1,0 +1,1141 @@
+{
+  "scope": "Executable-section linear x87 status/environment reader inventory",
+  "baselines": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "candidates": 1660,
+      "mnemonic_counts": {
+        "fnstsw": 1653,
+        "fstsw": 6,
+        "fnsave": 1
+      },
+      "lexical_categories": {
+        "lexically-adjacent-compare": 1651,
+        "needs-context-review": 9
+      },
+      "review_contexts": [
+        {
+          "va": "004ff62c",
+          "mnemonic": "fnsave",
+          "operands": "[esp]",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "004ff62b",
+            "mnemonic": "ins",
+            "operands": "BYTE PTR es:[edi],dx"
+          },
+          "context": [
+            {
+              "va": "004ff626",
+              "mnemonic": "in",
+              "operands": "al,dx"
+            },
+            {
+              "va": "004ff627",
+              "mnemonic": "jbe",
+              "operands": "0x4ff604"
+            },
+            {
+              "va": "004ff629",
+              "mnemonic": "jl",
+              "operands": "0x4ff64f"
+            },
+            {
+              "va": "004ff62b",
+              "mnemonic": "ins",
+              "operands": "BYTE PTR es:[edi],dx"
+            },
+            {
+              "va": "004ff62c",
+              "mnemonic": "fnsave",
+              "operands": "[esp]"
+            },
+            {
+              "va": "004ff62f",
+              "mnemonic": "fld",
+              "operands": "TBYTE PTR [esp+0x1c]"
+            },
+            {
+              "va": "004ff633",
+              "mnemonic": "fld",
+              "operands": "TBYTE PTR [esp+0x6c]"
+            },
+            {
+              "va": "004ff637",
+              "mnemonic": "call",
+              "operands": "0x51f320"
+            },
+            {
+              "va": "004ff63c",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            }
+          ]
+        },
+        {
+          "va": "004ff63c",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "004ff637",
+            "mnemonic": "call",
+            "operands": "0x51f320"
+          },
+          "context": [
+            {
+              "va": "004ff62c",
+              "mnemonic": "fnsave",
+              "operands": "[esp]"
+            },
+            {
+              "va": "004ff62f",
+              "mnemonic": "fld",
+              "operands": "TBYTE PTR [esp+0x1c]"
+            },
+            {
+              "va": "004ff633",
+              "mnemonic": "fld",
+              "operands": "TBYTE PTR [esp+0x6c]"
+            },
+            {
+              "va": "004ff637",
+              "mnemonic": "call",
+              "operands": "0x51f320"
+            },
+            {
+              "va": "004ff63c",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "004ff63e",
+              "mnemonic": "fstp",
+              "operands": "TBYTE PTR [esp+0x1c]"
+            },
+            {
+              "va": "004ff642",
+              "mnemonic": "and",
+              "operands": "ax,0xff"
+            },
+            {
+              "va": "004ff646",
+              "mnemonic": "or",
+              "operands": "ax,WORD PTR [esp+0x4]"
+            },
+            {
+              "va": "004ff64b",
+              "mnemonic": "mov",
+              "operands": "WORD PTR [esp+0x4],ax"
+            }
+          ]
+        },
+        {
+          "va": "0051a1c2",
+          "mnemonic": "fstsw",
+          "operands": "WORD PTR [ebp-0x8]",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "0051a1bf",
+            "mnemonic": "sub",
+            "operands": "esp,0x10"
+          },
+          "context": [
+            {
+              "va": "0051a1ba",
+              "mnemonic": "push",
+              "operands": "ebp"
+            },
+            {
+              "va": "0051a1bb",
+              "mnemonic": "mov",
+              "operands": "ebp,esp"
+            },
+            {
+              "va": "0051a1bd",
+              "mnemonic": "ftst",
+              "operands": ""
+            },
+            {
+              "va": "0051a1bf",
+              "mnemonic": "sub",
+              "operands": "esp,0x10"
+            },
+            {
+              "va": "0051a1c2",
+              "mnemonic": "fstsw",
+              "operands": "WORD PTR [ebp-0x8]"
+            },
+            {
+              "va": "0051a1c6",
+              "mnemonic": "fwait",
+              "operands": ""
+            },
+            {
+              "va": "0051a1c7",
+              "mnemonic": "xchg",
+              "operands": "WORD PTR [ebp-0x8],ax"
+            },
+            {
+              "va": "0051a1cb",
+              "mnemonic": "sahf",
+              "operands": ""
+            },
+            {
+              "va": "0051a1cc",
+              "mnemonic": "jae",
+              "operands": "0x51a1e7"
+            }
+          ]
+        },
+        {
+          "va": "0051f3a7",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "0051f3a6",
+            "mnemonic": "push",
+            "operands": "eax"
+          },
+          "context": [
+            {
+              "va": "0051f39e",
+              "mnemonic": "fldcw",
+              "operands": "WORD PTR [esp+0x1c]"
+            },
+            {
+              "va": "0051f3a2",
+              "mnemonic": "xor",
+              "operands": "edx,edx"
+            },
+            {
+              "va": "0051f3a4",
+              "mnemonic": "fcom",
+              "operands": "st(1)"
+            },
+            {
+              "va": "0051f3a6",
+              "mnemonic": "push",
+              "operands": "eax"
+            },
+            {
+              "va": "0051f3a7",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "0051f3a9",
+              "mnemonic": "sahf",
+              "operands": ""
+            },
+            {
+              "va": "0051f3aa",
+              "mnemonic": "pop",
+              "operands": "eax"
+            },
+            {
+              "va": "0051f3ab",
+              "mnemonic": "jb",
+              "operands": "0x51f3b0"
+            },
+            {
+              "va": "0051f3ad",
+              "mnemonic": "fxch",
+              "operands": "st(1)"
+            }
+          ]
+        },
+        {
+          "va": "00523385",
+          "mnemonic": "fstsw",
+          "operands": "WORD PTR [ebp-0x4]",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "00523383",
+            "mnemonic": "fprem",
+            "operands": ""
+          },
+          "context": [
+            {
+              "va": "0052337a",
+              "mnemonic": "mov",
+              "operands": "WORD PTR [ebp-0x4],ax"
+            },
+            {
+              "va": "0052337e",
+              "mnemonic": "fild",
+              "operands": "WORD PTR [ebp-0x4]"
+            },
+            {
+              "va": "00523381",
+              "mnemonic": "fld",
+              "operands": "st(2)"
+            },
+            {
+              "va": "00523383",
+              "mnemonic": "fprem",
+              "operands": ""
+            },
+            {
+              "va": "00523385",
+              "mnemonic": "fstsw",
+              "operands": "WORD PTR [ebp-0x4]"
+            },
+            {
+              "va": "00523389",
+              "mnemonic": "fwait",
+              "operands": ""
+            },
+            {
+              "va": "0052338a",
+              "mnemonic": "mov",
+              "operands": "ah,BYTE PTR [ebp-0x3]"
+            },
+            {
+              "va": "0052338d",
+              "mnemonic": "sahf",
+              "operands": ""
+            },
+            {
+              "va": "0052338e",
+              "mnemonic": "mov",
+              "operands": "ah,0x0"
+            }
+          ]
+        },
+        {
+          "va": "00526fd1",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "00526fcf",
+            "mnemonic": "je",
+            "operands": "0x527004"
+          },
+          "context": [
+            {
+              "va": "00526fc1",
+              "mnemonic": "mov",
+              "operands": "eax,DWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "00526fc5",
+              "mnemonic": "and",
+              "operands": "eax,0x7f800000"
+            },
+            {
+              "va": "00526fca",
+              "mnemonic": "cmp",
+              "operands": "eax,0x7f800000"
+            },
+            {
+              "va": "00526fcf",
+              "mnemonic": "je",
+              "operands": "0x527004"
+            },
+            {
+              "va": "00526fd1",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "00526fd3",
+              "mnemonic": "and",
+              "operands": "eax,0x3800"
+            },
+            {
+              "va": "00526fd8",
+              "mnemonic": "je",
+              "operands": "0x526fe7"
+            },
+            {
+              "va": "00526fda",
+              "mnemonic": "fld",
+              "operands": "DWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "00526fde",
+              "mnemonic": "call",
+              "operands": "0x526f87"
+            }
+          ]
+        },
+        {
+          "va": "0052701d",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "0052701b",
+            "mnemonic": "je",
+            "operands": "0x527050"
+          },
+          "context": [
+            {
+              "va": "0052700d",
+              "mnemonic": "mov",
+              "operands": "eax,DWORD PTR [esp+0xc]"
+            },
+            {
+              "va": "00527011",
+              "mnemonic": "and",
+              "operands": "eax,0x7ff00000"
+            },
+            {
+              "va": "00527016",
+              "mnemonic": "cmp",
+              "operands": "eax,0x7ff00000"
+            },
+            {
+              "va": "0052701b",
+              "mnemonic": "je",
+              "operands": "0x527050"
+            },
+            {
+              "va": "0052701d",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "0052701f",
+              "mnemonic": "and",
+              "operands": "eax,0x3800"
+            },
+            {
+              "va": "00527024",
+              "mnemonic": "je",
+              "operands": "0x527033"
+            },
+            {
+              "va": "00527026",
+              "mnemonic": "fld",
+              "operands": "QWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "0052702a",
+              "mnemonic": "call",
+              "operands": "0x526f87"
+            }
+          ]
+        },
+        {
+          "va": "00527069",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "00527067",
+            "mnemonic": "je",
+            "operands": "0x52709c"
+          },
+          "context": [
+            {
+              "va": "00527059",
+              "mnemonic": "mov",
+              "operands": "eax,DWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "0052705d",
+              "mnemonic": "and",
+              "operands": "eax,0x7f800000"
+            },
+            {
+              "va": "00527062",
+              "mnemonic": "cmp",
+              "operands": "eax,0x7f800000"
+            },
+            {
+              "va": "00527067",
+              "mnemonic": "je",
+              "operands": "0x52709c"
+            },
+            {
+              "va": "00527069",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "0052706b",
+              "mnemonic": "and",
+              "operands": "eax,0x3800"
+            },
+            {
+              "va": "00527070",
+              "mnemonic": "je",
+              "operands": "0x52707f"
+            },
+            {
+              "va": "00527072",
+              "mnemonic": "fld",
+              "operands": "DWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "00527076",
+              "mnemonic": "call",
+              "operands": "0x526f9a"
+            }
+          ]
+        },
+        {
+          "va": "005270b5",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "005270b3",
+            "mnemonic": "je",
+            "operands": "0x5270e8"
+          },
+          "context": [
+            {
+              "va": "005270a5",
+              "mnemonic": "mov",
+              "operands": "eax,DWORD PTR [esp+0xc]"
+            },
+            {
+              "va": "005270a9",
+              "mnemonic": "and",
+              "operands": "eax,0x7ff00000"
+            },
+            {
+              "va": "005270ae",
+              "mnemonic": "cmp",
+              "operands": "eax,0x7ff00000"
+            },
+            {
+              "va": "005270b3",
+              "mnemonic": "je",
+              "operands": "0x5270e8"
+            },
+            {
+              "va": "005270b5",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "005270b7",
+              "mnemonic": "and",
+              "operands": "eax,0x3800"
+            },
+            {
+              "va": "005270bc",
+              "mnemonic": "je",
+              "operands": "0x5270cb"
+            },
+            {
+              "va": "005270be",
+              "mnemonic": "fld",
+              "operands": "QWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "005270c2",
+              "mnemonic": "call",
+              "operands": "0x526f9a"
+            }
+          ]
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "candidates": 1658,
+      "mnemonic_counts": {
+        "fnstsw": 1651,
+        "fstsw": 6,
+        "fnsave": 1
+      },
+      "lexical_categories": {
+        "lexically-adjacent-compare": 1649,
+        "needs-context-review": 9
+      },
+      "review_contexts": [
+        {
+          "va": "004ff62c",
+          "mnemonic": "fnsave",
+          "operands": "[esp]",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "004ff62b",
+            "mnemonic": "ins",
+            "operands": "BYTE PTR es:[edi],dx"
+          },
+          "context": [
+            {
+              "va": "004ff626",
+              "mnemonic": "in",
+              "operands": "al,dx"
+            },
+            {
+              "va": "004ff627",
+              "mnemonic": "jbe",
+              "operands": "0x4ff604"
+            },
+            {
+              "va": "004ff629",
+              "mnemonic": "jl",
+              "operands": "0x4ff64f"
+            },
+            {
+              "va": "004ff62b",
+              "mnemonic": "ins",
+              "operands": "BYTE PTR es:[edi],dx"
+            },
+            {
+              "va": "004ff62c",
+              "mnemonic": "fnsave",
+              "operands": "[esp]"
+            },
+            {
+              "va": "004ff62f",
+              "mnemonic": "fld",
+              "operands": "TBYTE PTR [esp+0x1c]"
+            },
+            {
+              "va": "004ff633",
+              "mnemonic": "fld",
+              "operands": "TBYTE PTR [esp+0x6c]"
+            },
+            {
+              "va": "004ff637",
+              "mnemonic": "call",
+              "operands": "0x51f320"
+            },
+            {
+              "va": "004ff63c",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            }
+          ]
+        },
+        {
+          "va": "004ff63c",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "004ff637",
+            "mnemonic": "call",
+            "operands": "0x51f320"
+          },
+          "context": [
+            {
+              "va": "004ff62c",
+              "mnemonic": "fnsave",
+              "operands": "[esp]"
+            },
+            {
+              "va": "004ff62f",
+              "mnemonic": "fld",
+              "operands": "TBYTE PTR [esp+0x1c]"
+            },
+            {
+              "va": "004ff633",
+              "mnemonic": "fld",
+              "operands": "TBYTE PTR [esp+0x6c]"
+            },
+            {
+              "va": "004ff637",
+              "mnemonic": "call",
+              "operands": "0x51f320"
+            },
+            {
+              "va": "004ff63c",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "004ff63e",
+              "mnemonic": "fstp",
+              "operands": "TBYTE PTR [esp+0x1c]"
+            },
+            {
+              "va": "004ff642",
+              "mnemonic": "and",
+              "operands": "ax,0xff"
+            },
+            {
+              "va": "004ff646",
+              "mnemonic": "or",
+              "operands": "ax,WORD PTR [esp+0x4]"
+            },
+            {
+              "va": "004ff64b",
+              "mnemonic": "mov",
+              "operands": "WORD PTR [esp+0x4],ax"
+            }
+          ]
+        },
+        {
+          "va": "0051a1c2",
+          "mnemonic": "fstsw",
+          "operands": "WORD PTR [ebp-0x8]",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "0051a1bf",
+            "mnemonic": "sub",
+            "operands": "esp,0x10"
+          },
+          "context": [
+            {
+              "va": "0051a1ba",
+              "mnemonic": "push",
+              "operands": "ebp"
+            },
+            {
+              "va": "0051a1bb",
+              "mnemonic": "mov",
+              "operands": "ebp,esp"
+            },
+            {
+              "va": "0051a1bd",
+              "mnemonic": "ftst",
+              "operands": ""
+            },
+            {
+              "va": "0051a1bf",
+              "mnemonic": "sub",
+              "operands": "esp,0x10"
+            },
+            {
+              "va": "0051a1c2",
+              "mnemonic": "fstsw",
+              "operands": "WORD PTR [ebp-0x8]"
+            },
+            {
+              "va": "0051a1c6",
+              "mnemonic": "fwait",
+              "operands": ""
+            },
+            {
+              "va": "0051a1c7",
+              "mnemonic": "xchg",
+              "operands": "WORD PTR [ebp-0x8],ax"
+            },
+            {
+              "va": "0051a1cb",
+              "mnemonic": "sahf",
+              "operands": ""
+            },
+            {
+              "va": "0051a1cc",
+              "mnemonic": "jae",
+              "operands": "0x51a1e7"
+            }
+          ]
+        },
+        {
+          "va": "0051f3a7",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "0051f3a6",
+            "mnemonic": "push",
+            "operands": "eax"
+          },
+          "context": [
+            {
+              "va": "0051f39e",
+              "mnemonic": "fldcw",
+              "operands": "WORD PTR [esp+0x1c]"
+            },
+            {
+              "va": "0051f3a2",
+              "mnemonic": "xor",
+              "operands": "edx,edx"
+            },
+            {
+              "va": "0051f3a4",
+              "mnemonic": "fcom",
+              "operands": "st(1)"
+            },
+            {
+              "va": "0051f3a6",
+              "mnemonic": "push",
+              "operands": "eax"
+            },
+            {
+              "va": "0051f3a7",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "0051f3a9",
+              "mnemonic": "sahf",
+              "operands": ""
+            },
+            {
+              "va": "0051f3aa",
+              "mnemonic": "pop",
+              "operands": "eax"
+            },
+            {
+              "va": "0051f3ab",
+              "mnemonic": "jb",
+              "operands": "0x51f3b0"
+            },
+            {
+              "va": "0051f3ad",
+              "mnemonic": "fxch",
+              "operands": "st(1)"
+            }
+          ]
+        },
+        {
+          "va": "00523385",
+          "mnemonic": "fstsw",
+          "operands": "WORD PTR [ebp-0x4]",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "00523383",
+            "mnemonic": "fprem",
+            "operands": ""
+          },
+          "context": [
+            {
+              "va": "0052337a",
+              "mnemonic": "mov",
+              "operands": "WORD PTR [ebp-0x4],ax"
+            },
+            {
+              "va": "0052337e",
+              "mnemonic": "fild",
+              "operands": "WORD PTR [ebp-0x4]"
+            },
+            {
+              "va": "00523381",
+              "mnemonic": "fld",
+              "operands": "st(2)"
+            },
+            {
+              "va": "00523383",
+              "mnemonic": "fprem",
+              "operands": ""
+            },
+            {
+              "va": "00523385",
+              "mnemonic": "fstsw",
+              "operands": "WORD PTR [ebp-0x4]"
+            },
+            {
+              "va": "00523389",
+              "mnemonic": "fwait",
+              "operands": ""
+            },
+            {
+              "va": "0052338a",
+              "mnemonic": "mov",
+              "operands": "ah,BYTE PTR [ebp-0x3]"
+            },
+            {
+              "va": "0052338d",
+              "mnemonic": "sahf",
+              "operands": ""
+            },
+            {
+              "va": "0052338e",
+              "mnemonic": "mov",
+              "operands": "ah,0x0"
+            }
+          ]
+        },
+        {
+          "va": "00526fd1",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "00526fcf",
+            "mnemonic": "je",
+            "operands": "0x527004"
+          },
+          "context": [
+            {
+              "va": "00526fc1",
+              "mnemonic": "mov",
+              "operands": "eax,DWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "00526fc5",
+              "mnemonic": "and",
+              "operands": "eax,0x7f800000"
+            },
+            {
+              "va": "00526fca",
+              "mnemonic": "cmp",
+              "operands": "eax,0x7f800000"
+            },
+            {
+              "va": "00526fcf",
+              "mnemonic": "je",
+              "operands": "0x527004"
+            },
+            {
+              "va": "00526fd1",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "00526fd3",
+              "mnemonic": "and",
+              "operands": "eax,0x3800"
+            },
+            {
+              "va": "00526fd8",
+              "mnemonic": "je",
+              "operands": "0x526fe7"
+            },
+            {
+              "va": "00526fda",
+              "mnemonic": "fld",
+              "operands": "DWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "00526fde",
+              "mnemonic": "call",
+              "operands": "0x526f87"
+            }
+          ]
+        },
+        {
+          "va": "0052701d",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "0052701b",
+            "mnemonic": "je",
+            "operands": "0x527050"
+          },
+          "context": [
+            {
+              "va": "0052700d",
+              "mnemonic": "mov",
+              "operands": "eax,DWORD PTR [esp+0xc]"
+            },
+            {
+              "va": "00527011",
+              "mnemonic": "and",
+              "operands": "eax,0x7ff00000"
+            },
+            {
+              "va": "00527016",
+              "mnemonic": "cmp",
+              "operands": "eax,0x7ff00000"
+            },
+            {
+              "va": "0052701b",
+              "mnemonic": "je",
+              "operands": "0x527050"
+            },
+            {
+              "va": "0052701d",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "0052701f",
+              "mnemonic": "and",
+              "operands": "eax,0x3800"
+            },
+            {
+              "va": "00527024",
+              "mnemonic": "je",
+              "operands": "0x527033"
+            },
+            {
+              "va": "00527026",
+              "mnemonic": "fld",
+              "operands": "QWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "0052702a",
+              "mnemonic": "call",
+              "operands": "0x526f87"
+            }
+          ]
+        },
+        {
+          "va": "00527069",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "00527067",
+            "mnemonic": "je",
+            "operands": "0x52709c"
+          },
+          "context": [
+            {
+              "va": "00527059",
+              "mnemonic": "mov",
+              "operands": "eax,DWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "0052705d",
+              "mnemonic": "and",
+              "operands": "eax,0x7f800000"
+            },
+            {
+              "va": "00527062",
+              "mnemonic": "cmp",
+              "operands": "eax,0x7f800000"
+            },
+            {
+              "va": "00527067",
+              "mnemonic": "je",
+              "operands": "0x52709c"
+            },
+            {
+              "va": "00527069",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "0052706b",
+              "mnemonic": "and",
+              "operands": "eax,0x3800"
+            },
+            {
+              "va": "00527070",
+              "mnemonic": "je",
+              "operands": "0x52707f"
+            },
+            {
+              "va": "00527072",
+              "mnemonic": "fld",
+              "operands": "DWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "00527076",
+              "mnemonic": "call",
+              "operands": "0x526f9a"
+            }
+          ]
+        },
+        {
+          "va": "005270b5",
+          "mnemonic": "fnstsw",
+          "operands": "ax",
+          "lexical_category": "needs-context-review",
+          "previous_nonwait": {
+            "va": "005270b3",
+            "mnemonic": "je",
+            "operands": "0x5270e8"
+          },
+          "context": [
+            {
+              "va": "005270a5",
+              "mnemonic": "mov",
+              "operands": "eax,DWORD PTR [esp+0xc]"
+            },
+            {
+              "va": "005270a9",
+              "mnemonic": "and",
+              "operands": "eax,0x7ff00000"
+            },
+            {
+              "va": "005270ae",
+              "mnemonic": "cmp",
+              "operands": "eax,0x7ff00000"
+            },
+            {
+              "va": "005270b3",
+              "mnemonic": "je",
+              "operands": "0x5270e8"
+            },
+            {
+              "va": "005270b5",
+              "mnemonic": "fnstsw",
+              "operands": "ax"
+            },
+            {
+              "va": "005270b7",
+              "mnemonic": "and",
+              "operands": "eax,0x3800"
+            },
+            {
+              "va": "005270bc",
+              "mnemonic": "je",
+              "operands": "0x5270cb"
+            },
+            {
+              "va": "005270be",
+              "mnemonic": "fld",
+              "operands": "QWORD PTR [esp+0x8]"
+            },
+            {
+              "va": "005270c2",
+              "mnemonic": "call",
+              "operands": "0x526f9a"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "address_set_comparison": {
+    "shared": 1652,
+    "original_only": [
+      "0041aa7e",
+      "0041aa92",
+      "0046524c",
+      "0046a58c",
+      "00495273",
+      "004f1ec4",
+      "004f2040",
+      "004f206d"
+    ],
+    "modern_only": [
+      "0041aa72",
+      "0041aa83",
+      "00490180",
+      "004901a3",
+      "004dbc70",
+      "004dbc81"
+    ],
+    "limit": "Same-address candidates are not semantic counterparts."
+  },
+  "bounded_special_cases": {
+    "top_only_readers": [
+      "00526fd1",
+      "0052701d",
+      "00527069",
+      "005270b5"
+    ],
+    "top_mask": "3800",
+    "tracked_cbit_mask": "4500",
+    "mask_intersection": "0000",
+    "retained_saved_image_wrapper": {
+      "start": "004ff624",
+      "end_exclusive": "004ff658",
+      "bytes": 52,
+      "sha256": "aeef191cf2dd79404db6a1cd52545bae16753df59933d3a827a5182ffd2f003b",
+      "scope": "FNSAVE/FRSTOR preserves saved image; merges helper low status byte, not a proven C-bit branch observer."
+    }
+  },
+  "limits": [
+    "Linear objdump decoding can include data/misaligned instructions and omit alternate boundaries; counts are candidates, not reachable-code coverage.",
+    "Lexical comparison adjacency is not CFG dominance; alternate or indirect entries remain unverified.",
+    "Environment saves can propagate complete state without making condition bits a semantic branch dependency.",
+    "No whole-game unobservability, machine equivalence, new probes, target execution or Ghidra changes."
+  ],
+  "reader_index": {
+    "path": "analysis/evidence/audits/x87-status-observer-sites.jsonl",
+    "sha256": "d295f70bd0de196b0be133441de7ae540f4e156d86984f2af9a036684630e716",
+    "rows": 3318,
+    "columns": [
+      "baseline",
+      "reader_va",
+      "mnemonic",
+      "operands",
+      "previous_nonwait_va",
+      "previous_nonwait_mnemonic",
+      "lexical_category"
+    ]
+  }
+}

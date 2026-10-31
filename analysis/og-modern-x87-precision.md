@@ -112,3 +112,7 @@ The [official DLL control-word follow-up](original-modern-packaged-x87.md) inven
 ## Retained batch helpers do not close condition-bit liveness
 
 The [line-boundary caller follow-up](line-boundary-x87-callers.md#batch-helper-follow-up-across-original-and-modern-baselines) verifies297 identical bytes across three batch helper bodies in original, official Modern and local analysis EXEs. Their local instructions are integer-only; one is call-free, while a conditional removal path reaches byte mover `004ea4f0`. They neither establish a new precision-policy delta nor prove the reconstructed helper's differing C0/C2/C3 bits are globally unobservable. A subsequent follow-up checks the byte-mover dispatcher and all three backends (1076 additional identical bytes), finding no explicit condition-bit reader there. Outer returns and other transform/render callees remain unresolved; x87/MMX side effects prevent a full-state transparency claim. This is additional static evidence, with no new probe or game run.
+
+## Status-reader inventory
+
+The [original/Modern observer inventory](original-modern-x87-observers.md) records all linear-decoded x87 status/environment-reader candidates, nonshared addresses and nine special contexts per baseline. It distinguishes four TOP-only masks from C0/C2/C3 consumers and verifies the shared saved-image atan wrapper. Lexical comparison adjacency is explicitly weaker than control-flow dominance, and the inventory does not establish whole-game condition-bit unobservability.
