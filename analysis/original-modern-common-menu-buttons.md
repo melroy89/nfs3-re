@@ -42,3 +42,23 @@ The focused [controller-reset asset audit](evidence/audits/controller-reset-asse
 The backup specifies **`ypos=7`**, official Modern **`ypos=8`**. Both retain x0/y0, priority11, listpos0/listoff0 and align0 for this control. The preceding Predefined control remains `ypos=6` and links `hardkeys` in the inspected files. The reset change is therefore authored tab-position metadata, not a change from literal screen y7 to y8 pixels.
 
 This gives partial asset evidence for **MP140-027**, the reported one-position downward shift. It does not authenticate the backup as original retail, prove which asset is selected at runtime, establish parser defaults for omitted legacy fields or verify the rendered result. The text token and reset binding remain associated; full reset callback semantics and layout interpretation are separate investigations. No settings were reset and no menu was opened.
+
+## Long-list authored visible counts
+
+The [visible-count audit](evidence/audits/menu-visible-counts.json), reproduced by `python3 analysis/scripts/audit_menu_visible_counts.py`, scans all52 official `.mnu` archive members and uppercase backup counterparts. It pairs sections only when `(section type,listname)` has exactly one `maxvisitem` field on each side. Nine unique pairs differ:
+
+| Official menu | Section/listname | Backup → Modern `maxvisitem` |
+|---|---|---:|
+| `graphics.mnu` | cascade / `winsize` | 10→16 |
+| `main.mnu` | cascade / `cars` | 7→9 |
+| `main.mnu` | cascade / `opcars` | 5→9 |
+| `mainmult.mnu` | cascade / `classLimiter` | 4→9 |
+| `mainmult.mnu` | cascade / `cars` | 7→9 |
+| `mainmult.mnu` | cascade / `opcars` | 5→9 |
+| `mainsplt.mnu` | cascade / `cars` | 7→9 |
+| `mainsplt.mnu` | cascade / `car2` | 7→9 |
+| `mainsplt.mnu` | cascade / `opcars` | 5→9 |
+
+Seven Modern fields lack a unique matching section/listname pair; the manifest retains them explicitly instead of treating them as unchanged or added. It also retains hashes of all52 official/backup member pairs. The comparison checks authored fields, not comments or whole-file similarity, and does not infer equivalent defaults from omitted fields.
+
+This gives partial support for **MP140-025**, increased visible elements in long lists. The actual count can still depend on list length, initialization and layout code. These changed sections are cascades; the separate droplist renderer/alias analysis must not be generalized to them solely because a list name overlaps. Backup retail provenance, runtime selected assets, actual rows displayed and historical introduction remain unverified. No UI or settings were changed.

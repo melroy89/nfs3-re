@@ -1,0 +1,451 @@
+{
+  "kind": "authored-menu-visible-count-comparison",
+  "members": [
+    {
+      "member": "fedata/menus/advgrph.mnu",
+      "modern_sha256": "e74f9ff968ddf92d9499ffb91c6f7abd4cd1017ef5ad72188f49ab15031f3832",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/ADVGRPH.MNU",
+      "backup_sha256": "5900f10ec59b68b9fed049ae08cc4bb112d90322bcc91826c3313d5f7f278f4d"
+    },
+    {
+      "member": "fedata/menus/audfeed.mnu",
+      "modern_sha256": "32dee42ca214e513e0ba9bb934708f1a0d7adeaaf2845641c43fe7821763d10a",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/AUDFEED.MNU",
+      "backup_sha256": "3c4f1ef57dfa2dcee24feb5ac6a56a7b0103b262beb0ca6eb25b83616495aa62"
+    },
+    {
+      "member": "fedata/menus/audio.mnu",
+      "modern_sha256": "3ddb34cbf68446bf41d1823f4fdbe35eae710231f371b887ca7c9fe16d35df40",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/AUDIO.MNU",
+      "backup_sha256": "cf4e17dfff394b5e21c7e1afbb6c3da2df7c7f5333a6f7b459370138b59af323"
+    },
+    {
+      "member": "fedata/menus/camera.mnu",
+      "modern_sha256": "045199397737299f864da5b5676413293a38ffba6cb5c3f787b4d2b6d1b37456",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CAMERA.MNU",
+      "backup_sha256": "bdeeb5b38abb48858e27467eb3bb37d0ba78821bd0c0e755ed3251df1b059b04"
+    },
+    {
+      "member": "fedata/menus/car1.mnu",
+      "modern_sha256": "e85a7450867907a0705eeec5247b43e9729a19a394fd2605afafaa66d95731a8",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CAR1.MNU",
+      "backup_sha256": "513614231e8001f788f8f4ce9ec8c2fb1e7001c2e0825e706d430c8dce622bcc"
+    },
+    {
+      "member": "fedata/menus/car2.mnu",
+      "modern_sha256": "4a5b1c79aa6323c8593cafd489422a60b2f71f90b07203c9214c929577a866ba",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CAR2.MNU",
+      "backup_sha256": "2e57992383dc188a8700511ba11276856e9b1fc70b9065e3162998e6c5d91c1c"
+    },
+    {
+      "member": "fedata/menus/cedbasic.mnu",
+      "modern_sha256": "3e78623958fe48c62e192b6c80ef1af702c279ce625d7109c103c9916bbd584a",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CEDBASIC.MNU",
+      "backup_sha256": "4f11c887f984597786af7ea723413320ccc580873f898e32b0457854644d58b6"
+    },
+    {
+      "member": "fedata/menus/compare.mnu",
+      "modern_sha256": "0e82b6ec9f5d9c5585b94a7aa1b75f165c22427bb203ba84ad289c43aeadc7ac",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/COMPARE.MNU",
+      "backup_sha256": "9e5f17aba1bd06cb86f55bf35e07bdf0278870093b2f30c4daa405704fcb72c3"
+    },
+    {
+      "member": "fedata/menus/compare2.mnu",
+      "modern_sha256": "36062982c8324ffc9e8c5f7aef1c6d8e13a90e9e202999f7c528d8cf5d165d7e",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/COMPARE2.MNU",
+      "backup_sha256": "ab8278b6dc0b1a312749dc113b52d59c42036f7e7ba48930ca2fa08fc702fa3f"
+    },
+    {
+      "member": "fedata/menus/connect.mnu",
+      "modern_sha256": "4ac809e2cce3e32bbf4a047371409025bd8b1b5a50790b5b3a7d91ab18d63c29",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CONNECT.MNU",
+      "backup_sha256": "9509f7742f1ea702a923cde3f0fea7b6102d8bcd3d6a0ec1014986a327c0a6e7"
+    },
+    {
+      "member": "fedata/menus/control1.mnu",
+      "modern_sha256": "fdf3b33cf915a51b83705208a94d35cd4df102813c56269d7d084a60c2dcd6d5",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CONTROL1.MNU",
+      "backup_sha256": "ebc3cf97ff8e1cc4ba22548fc340c7f2c5de33e4d726b743e60505a77e462cf1"
+    },
+    {
+      "member": "fedata/menus/credits.mnu",
+      "modern_sha256": "5272486659a41e2dc9543fd5a25b7842f3e4e731d9444427e9160b7f49e55da9",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CREDITS.MNU",
+      "backup_sha256": "dc00b9c7c5fadb6e998df55ebbc931fdfe679c3750d6f10fe26c99a02a9713df"
+    },
+    {
+      "member": "fedata/menus/credits1.mnu",
+      "modern_sha256": "4441df58ec7b8a88fc9aa04f6b2537ac49f5df2d9d095acf89577329195cb0c7",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/CREDITS1.MNU",
+      "backup_sha256": "6d759e8f42a709b844ff25f1f9c5b1bfa954151903ec93e0e6be44fbc53dbd9b"
+    },
+    {
+      "member": "fedata/menus/deadzone.mnu",
+      "modern_sha256": "25577d34536a67fa9d39078cedf6ceb1cfaa34a981ca9040cf5de5d778911445",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/DEADZONE.MNU",
+      "backup_sha256": "d7367dde380fecad3abf63fe175c84ce22b8af5c366edd166009d57352939392"
+    },
+    {
+      "member": "fedata/menus/force.mnu",
+      "modern_sha256": "434e596374273281e0ab2daef0fc5b5ec0448d39f9d4b6215e795e7c2062acb9",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/FORCE.MNU",
+      "backup_sha256": "eb799e9f1ca7343dee9b5dcd15c09ad50abb613d3729bc01cf1fa9fb11dd961b"
+    },
+    {
+      "member": "fedata/menus/funkeys.mnu",
+      "modern_sha256": "48875cb336d58d1b00eec77d4c71871eb5225a6f5db40528f72bc013e99d0167",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/FUNKEYS.MNU",
+      "backup_sha256": "6f37932042625d88a3bcbb3aa2cd1bdb693e7372da71481fa7afdda6c2637778"
+    },
+    {
+      "member": "fedata/menus/graphics.mnu",
+      "modern_sha256": "ac088b28fd3905369a728972c6be7638c692df98ebb57ea65981083835f71247",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/GRAPHICS.MNU",
+      "backup_sha256": "d8af15a148fff2ec865c9ce6337e095bb340bb7f863419cfba245fb2574c6722"
+    },
+    {
+      "member": "fedata/menus/hardkeys.mnu",
+      "modern_sha256": "fe56eb639260f0215b6a1f449c956638d3e7f87db9c3422222233a72c5d9ddf0",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/HARDKEYS.MNU",
+      "backup_sha256": "ef31a1f26dffc976c7f5d430af4d67495dcce77ad12eb67d085c05b5256b5efd"
+    },
+    {
+      "member": "fedata/menus/history.mnu",
+      "modern_sha256": "24a1c8d5a61225a98e03e08b255d4a17c6687bbcd95e9cbbd4eecef40c23eba7",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/HISTORY.MNU",
+      "backup_sha256": "93fb6ceb0ccd99dc76dda28678b0bf7683bb7b7d41c7fbebeddf373f7b60b1d9"
+    },
+    {
+      "member": "fedata/menus/hud.mnu",
+      "modern_sha256": "284ea3b9949b53bde177d9edb32eb0473481c32e5dac13d48f8aa24af25984b3",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/HUD.MNU",
+      "backup_sha256": "1186648c5352fadfd94632cf2b43cc716e23d9c078863b563fa1602f3b14d60c"
+    },
+    {
+      "member": "fedata/menus/interior.mnu",
+      "modern_sha256": "376be73730fd40f53e43fbc4ce14e95747d4675b72ef9437cb1f4cf7f58125dd",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/INTERIOR.MNU",
+      "backup_sha256": "ddc7fc68a6fa555ae4480b1e4fc7bb522440cfcc7dae809724bda3a849f7b841"
+    },
+    {
+      "member": "fedata/menus/ipx.mnu",
+      "modern_sha256": "b20122997af9d6e17bd8a4699aab653d9b0fe58acda86984f07e23c82594a218",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/IPX.MNU",
+      "backup_sha256": "ca4232e216be8a05ec5fe5a206c50cec1f82f20ef2838b4e16f3ac48bdaeae66"
+    },
+    {
+      "member": "fedata/menus/level.mnu",
+      "modern_sha256": "200c6892a890487cdf434bb01b58d1c0c6849e5c61f0f8bd6bac185c7f653653",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/LEVEL.MNU",
+      "backup_sha256": "658dd6515a81f6aac9e9b8571ab101375b43d73a3b6f002f52ddddb06fcea3e1"
+    },
+    {
+      "member": "fedata/menus/loadsave.mnu",
+      "modern_sha256": "ac14717b7a8a4bfe2c3cbf5267212ff2d164edf1da6ad75a315e576bf00cf329",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/LOADSAVE.MNU",
+      "backup_sha256": "6308194657d28f1205fca6fafb598c248fb6736e6bf4f827da778f9ce189b968"
+    },
+    {
+      "member": "fedata/menus/location.mnu",
+      "modern_sha256": "d1830e7d3f82e5d88b06fbec79720d85924392f2d3f88a1b8d69fb6de44faa3f",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/LOCATION.MNU",
+      "backup_sha256": "7de432d93e73ec6a2a78d16b8b67ea0f7d26d91c54532690ffbce2614663edd1"
+    },
+    {
+      "member": "fedata/menus/main.mnu",
+      "modern_sha256": "9bdd70113881cff5b6161cb7dd9400b43d38a4ab062042e8c1946b80ea042ed9",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/MAIN.MNU",
+      "backup_sha256": "b07f8eef6085502ceb576ec7bd40ea0074794531743cc99926db152403518fc0"
+    },
+    {
+      "member": "fedata/menus/mainmult.mnu",
+      "modern_sha256": "ffa0146a548083c5242a2d369d8f57981d38f609ce2d9b1b28d37fd60cccea50",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/MAINMULT.MNU",
+      "backup_sha256": "0b02fe0cea668be757c9596a1133e2986dcb913085d6369c5421fa72b762575d"
+    },
+    {
+      "member": "fedata/menus/mainsplt.mnu",
+      "modern_sha256": "5121cf995388e06656a57068a9b4f916a902f2cb084c8e1c2d2ebb7b364d5509",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/MAINSPLT.MNU",
+      "backup_sha256": "029025fbf74c4beea3b3e37983d23f761896f30a10a627eeb4b1e67e1f5decc2"
+    },
+    {
+      "member": "fedata/menus/opponent.mnu",
+      "modern_sha256": "83aad629e611f452f64067dde3834738a4a4bc0e615a6a5a754520c71b344626",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/OPPONENT.MNU",
+      "backup_sha256": "22ef49df34e7a117b0d8d5a56c2fffd1d13647c9de432f0df54f77a77930a900"
+    },
+    {
+      "member": "fedata/menus/options.mnu",
+      "modern_sha256": "e69522bb14917ec2a31c316dde05f778fe08d2c3586ff0a777749a59c00755be",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/OPTIONS.MNU",
+      "backup_sha256": "93cc8d0eecc94e62e84005efcca100f0a48616f70ebb36de1d85bc8f9ca4037c"
+    },
+    {
+      "member": "fedata/menus/pause.mnu",
+      "modern_sha256": "b5b4849991901037b89c3f92db9f5a14f0259542ca7cb6318fa0e89673cade66",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PAUSE.MNU",
+      "backup_sha256": "691f2dbcfdb8004d216eaa58a21bfc93cc1ef47f617157985eb8ea5b0a743c8a"
+    },
+    {
+      "member": "fedata/menus/postgame.mnu",
+      "modern_sha256": "02d75467d363830ab3fc531740fa51f5675b83c7412cc53adabaeea05344fbee",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/POSTGAME.MNU",
+      "backup_sha256": "f60752dc3da30c36c9c8903e6fe51ad2162048833646e95517250b2af33c11d8"
+    },
+    {
+      "member": "fedata/menus/ps1pcop.mnu",
+      "modern_sha256": "421d96672be978815676f838112e3c0819537a39d8d9b356df1c560734334548",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PS1PCOP.MNU",
+      "backup_sha256": "85cedcd7ca48078e924909cdcd46484f4c81e31b34ba3cffe00eadbb3f566142"
+    },
+    {
+      "member": "fedata/menus/ps1prace.mnu",
+      "modern_sha256": "44f2787262792787f3e588342423f9e0783d580343bfa66795210129fec76ef9",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PS1PRACE.MNU",
+      "backup_sha256": "7acecbcce74307179d6f3b0a43de4424cd2a80ac020ec5614df41d38f749d546"
+    },
+    {
+      "member": "fedata/menus/ps2p1c2r.mnu",
+      "modern_sha256": "e4d49278904aba3b106bccbc261a88b7f18f81f420e64b829842b406bb68e4cf",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PS2P1C2R.MNU",
+      "backup_sha256": "c30f9e5f0df50fa7e88b3c4678a0c198e780cf134e96bd17a441de0d1bda12a2"
+    },
+    {
+      "member": "fedata/menus/ps2p1r2c.mnu",
+      "modern_sha256": "000362d4138c6f9707f43a505a7bbfa9e4c0132c4672f403d4ee1e4d20a417ca",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PS2P1R2C.MNU",
+      "backup_sha256": "f917ec58b486791ab11e8b26fe21cd6282be2cb1d51045882ad131acec170c1d"
+    },
+    {
+      "member": "fedata/menus/ps2p2c.mnu",
+      "modern_sha256": "2ab60ae9196ed143db4c2b15602c9abb8f4391344caf13a0e8834a9edf68b108",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PS2P2C.MNU",
+      "backup_sha256": "ee6cbac4777bac4528f6b252b52be2baaa549e91f1fbd4d7cdda8e2e294f40ce"
+    },
+    {
+      "member": "fedata/menus/ps2p2r.mnu",
+      "modern_sha256": "e80dba530f8a149a8169dd5af9147344b85a575b62c5ddfde1f7d4fee682e3d4",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PS2P2R.MNU",
+      "backup_sha256": "9287b2dcc887742b666002f9e26809e661ea794505576721012801d1fd7cfc5b"
+    },
+    {
+      "member": "fedata/menus/psaudio.mnu",
+      "modern_sha256": "2668d0761bb2f957f4ba2e217dab46f8ad6bbeb28d12ec11d06608c5dff864d5",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PSAUDIO.MNU",
+      "backup_sha256": "c0838c3ec9b9ae65f1ac1b50bf337285d5b1cf9250e3baf5f4e4dc177f548104"
+    },
+    {
+      "member": "fedata/menus/pscamera.mnu",
+      "modern_sha256": "68610d1f766cb4499cf4a25d8968b93c9b52610520f6599a7859b5eb8d4becf7",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PSCAMERA.MNU",
+      "backup_sha256": "391f8d6f18f64a1d3ac3c8a5cbe8b14042406d913872b28f6fef16c46a26b75b"
+    },
+    {
+      "member": "fedata/menus/pscntl1.mnu",
+      "modern_sha256": "186721f3f52c18f228c9711d25ca2ec0cabd2323e924bc2533d92e45c6be7512",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PSCNTL1.MNU",
+      "backup_sha256": "3c3b7a68367afa2c0507981e382d8d87997e23f3a1e42570ddda9a68b835db2f"
+    },
+    {
+      "member": "fedata/menus/psdeadz.mnu",
+      "modern_sha256": "612720c6e20343d59117485235c1f63f475a310e1bb1d22a07ae3e6867603a45",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PSDEADZ.MNU",
+      "backup_sha256": "b69611f31db3957ca842e108559664d9decff56f921f5b5ccd4749555027c253"
+    },
+    {
+      "member": "fedata/menus/psforce.mnu",
+      "modern_sha256": "4274599d2df95c70020b7f6ae3752faa5d9209b756b15d4e6f78ae7628daada7",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PSFORCE.MNU",
+      "backup_sha256": "67ee5c13624ac0ee6e01082b3b7441fb08ff69f7c89e694f05a03713b1971d64"
+    },
+    {
+      "member": "fedata/menus/psgraph.mnu",
+      "modern_sha256": "e4f00933cd61145d0fb14d2396091d7b22d5246b39d9c1e35de9edb032d226a7",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PSGRAPH.MNU",
+      "backup_sha256": "c43f62f47d066b06c032b163d9103899e4b1d150cd2efe1a88b51fa2ce7929a3"
+    },
+    {
+      "member": "fedata/menus/pshud.mnu",
+      "modern_sha256": "018003570ce0d94cec5eb46c2128d557b2564d6f7c277dfe5603b289da7f1a90",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PSHUD.MNU",
+      "backup_sha256": "c559c9ffc419b7f09b116f5bce56499f1adb9de14ce431425d6cecc13c2f576c"
+    },
+    {
+      "member": "fedata/menus/pshud1p.mnu",
+      "modern_sha256": "6d3ad696ad072f6ff5535e355d654e59093ebd07e58c7175e909297093a2ef0a",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PSHUD1P.MNU",
+      "backup_sha256": "9ed12c782f0616e9ce860980c5d6c14bdbed5ca1eea0a14e0b9a58065b56f626"
+    },
+    {
+      "member": "fedata/menus/pshud2p.mnu",
+      "modern_sha256": "834000966fc4aec36f375da28ae5c2f6f965f16f222297a46e67ab1fb293a34a",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/PSHUD2P.MNU",
+      "backup_sha256": "2886d70b676624c5c931c7bd7415319045263e59ce4895d25697b7613dd77ada"
+    },
+    {
+      "member": "fedata/menus/records.mnu",
+      "modern_sha256": "87ef8fd6b4130a88d6dab52fa2fab0f0044ceaa599fa738302d6782899226ea4",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/RECORDS.MNU",
+      "backup_sha256": "1e10fcfb07e56254404cbea34ebce3f6c574895e23f27ad9e657c26ff5ea2ffe"
+    },
+    {
+      "member": "fedata/menus/setup.mnu",
+      "modern_sha256": "ed91cd1678470e3574003c9918288b9dc1ed196e18c8dae92c23a23dc2ff5438",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/SETUP.MNU",
+      "backup_sha256": "200c58df3d42baa35e1df94440437c9ade66a4ceda28a587be500a052c8b0cb3"
+    },
+    {
+      "member": "fedata/menus/showcase.mnu",
+      "modern_sha256": "46925ae29e977a02b16a059106408d5a2f06a5871bf90302e33d073e117d2578",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/SHOWCASE.MNU",
+      "backup_sha256": "486306226139f2c440918134c533dccca1a84405ef67065f12aba589c2dd254c"
+    },
+    {
+      "member": "fedata/menus/slides.mnu",
+      "modern_sha256": "e6d63bcf70bd98ec11d121c9e9fbee88872c914f9fea82abefa08d897358e784",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/SLIDES.MNU",
+      "backup_sha256": "6ae3c91020058356a0c5ae0500149a21105b1224a137e105bbc420e1ae91329a"
+    },
+    {
+      "member": "fedata/menus/trkinfo.mnu",
+      "modern_sha256": "f530859f87b8f22e623444d31e569dbd276ab6e8238cc4c5bb5c663b3d08475c",
+      "backup": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus/TRKINFO.MNU",
+      "backup_sha256": "48bcc98649bf159d0158a8fbf724e197f4ac443835e3a9b752a42d3e5fe01c95"
+    }
+  ],
+  "changed": [
+    {
+      "member": "fedata/menus/graphics.mnu",
+      "section": "[cascade]",
+      "listname": "winsize",
+      "backup": "10",
+      "modern": "16"
+    },
+    {
+      "member": "fedata/menus/main.mnu",
+      "section": "[cascade]",
+      "listname": "cars",
+      "backup": "7",
+      "modern": "9"
+    },
+    {
+      "member": "fedata/menus/main.mnu",
+      "section": "[cascade]",
+      "listname": "opcars",
+      "backup": "5",
+      "modern": "9"
+    },
+    {
+      "member": "fedata/menus/mainmult.mnu",
+      "section": "[cascade]",
+      "listname": "classLimiter",
+      "backup": "4",
+      "modern": "9"
+    },
+    {
+      "member": "fedata/menus/mainmult.mnu",
+      "section": "[cascade]",
+      "listname": "cars",
+      "backup": "7",
+      "modern": "9"
+    },
+    {
+      "member": "fedata/menus/mainmult.mnu",
+      "section": "[cascade]",
+      "listname": "opcars",
+      "backup": "5",
+      "modern": "9"
+    },
+    {
+      "member": "fedata/menus/mainsplt.mnu",
+      "section": "[cascade]",
+      "listname": "cars",
+      "backup": "7",
+      "modern": "9"
+    },
+    {
+      "member": "fedata/menus/mainsplt.mnu",
+      "section": "[cascade]",
+      "listname": "car2",
+      "backup": "7",
+      "modern": "9"
+    },
+    {
+      "member": "fedata/menus/mainsplt.mnu",
+      "section": "[cascade]",
+      "listname": "opcars",
+      "backup": "5",
+      "modern": "9"
+    }
+  ],
+  "unpaired": [
+    {
+      "member": "fedata/menus/advgrph.mnu",
+      "section": "[cascade]",
+      "listname": "fog",
+      "modern": [
+        "5"
+      ],
+      "backup": []
+    },
+    {
+      "member": "fedata/menus/advgrph.mnu",
+      "section": "[cascade]",
+      "listname": "widescreen",
+      "modern": [
+        "10"
+      ],
+      "backup": []
+    },
+    {
+      "member": "fedata/menus/camera.mnu",
+      "section": "[cascade]",
+      "listname": "rearcamera",
+      "modern": [
+        "5"
+      ],
+      "backup": []
+    },
+    {
+      "member": "fedata/menus/graphics.mnu",
+      "section": "[cascade]",
+      "listname": "mirrorlevel",
+      "modern": [
+        "5"
+      ],
+      "backup": []
+    },
+    {
+      "member": "fedata/menus/graphics.mnu",
+      "section": "[cascade]",
+      "listname": "viewlevel",
+      "modern": [
+        "5"
+      ],
+      "backup": []
+    },
+    {
+      "member": "fedata/menus/hud.mnu",
+      "section": "[droplist]",
+      "listname": "hudtypesingle",
+      "modern": [
+        "15"
+      ],
+      "backup": []
+    },
+    {
+      "member": "fedata/menus/hud.mnu",
+      "section": "[droplist]",
+      "listname": "hudtypesplit",
+      "modern": [
+        "15"
+      ],
+      "backup": []
+    }
+  ],
+  "limits": [
+    "Authored values only; runtime widget counts not measured.",
+    "Backup provenance unauthenticated; missing/ambiguous pairs reported."
+  ]
+}
