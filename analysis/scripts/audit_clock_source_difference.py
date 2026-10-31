@@ -27,9 +27,9 @@ def main():
         pe=pefile.PE(data=data);images[label]=pe
         spans=list(TIMER_SPANS)+[(0x4f0240,0x4f024a),(0x4f2790,0x4f279c if label=='original' else 0x4f279b),
                                  (0x533d18,0x533d1e)]
-        if label=='original':spans += [(0x4a3400,0x4a35cb)]
+        if label=='original':spans += [(0x4a3400,0x4a35cb),(0x495230,0x49527f)]
         else:spans += [(0x4a33d0,0x4a35a5),(0x490134,0x4901c3),
-                      (0x495230,0x495268),(0x4955a0,0x4955c4),(0x451960,0x4519b0),
+                      (0x495230,0x495279),(0x4955a0,0x4955c4),(0x451960,0x4519b0),
                       (0x4b5624,0x4b5634)]
         spans += [(a,a+7) for a in SITES if a!=0x4f2792]
         rows=[]
@@ -67,6 +67,13 @@ def main():
         normalized.append({'start':f'{start:08x}','end':f'{end:08x}',
                            'only_changes_are_clock_IAT_operands':True,'sites':replaced})
     result['normalized_timer_ranges']=normalized
+    assert images['original'].get_data(0x9524f,26).hex()=='6a00ff1548f99e006a02ff1538f99e009bdbe39bd92df4f37900'
+    assert images['official_modern'].get_data(0x95264,11).hex()=='85c0790731c0e925030000'
+    result['loading_progress_admission']={
+        'original_prefix':'00495230..0049527f: active flag then renderer-slot calls009ef948(0),009ef938(2), FINIT/FLDCW before float progress work.',
+        'modern_prefix':'00495230..00495279: active flag, input/abort handling, timing helper00490134; signed-negative result returns0 through00495594 before calls00434b20/004c4480.',
+        'limits':['Prefixes only, not complete rendering-body equivalence or complete callback effects.',
+                  'Concrete update admission change; no end-to-end loading benchmark or release attribution.']}
     for image in images.values():
         assert image.get_data(0xf0240,10).hex()=='e82bc7fdff85c075f7c3'
     assert images['original'].get_data(0xa3481,5).hex()=='e8bacd0400'

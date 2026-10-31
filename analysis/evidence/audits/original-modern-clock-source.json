@@ -63,6 +63,13 @@
           "assembly_sha256": "b37bc2c9d77913000c9fc6f25b1e4e9b4d9dc27d7f97c0c3eff6edb7593f464b"
         },
         {
+          "start": "00495230",
+          "end": "0049527f",
+          "bytes_sha256": "d6a0fd2c458fc874940dc04f0b276a5df98e784dddd3447d5d44e4832eb70845",
+          "assembly": "analysis/captures/modern-differences/clock-source/original-00495230.asm",
+          "assembly_sha256": "a1dfc6de87994a19a3fecf82bab3f831b07d3507ddb2a807caa84f49a4225d61"
+        },
+        {
           "start": "0048eb97",
           "end": "0048eb9e",
           "bytes_sha256": "1195ef61ff858983bc88fbb7c6f922761c04e728e6b25eb5ece367a02c9c5433",
@@ -256,10 +263,10 @@
         },
         {
           "start": "00495230",
-          "end": "00495268",
-          "bytes_sha256": "9fbb84b944796ce7929e554748702a902a095349de176b7cfc8a6e1f46677413",
+          "end": "00495279",
+          "bytes_sha256": "87075fd6c82fb3221b6b09af0458e003b375716e8729d5c3508b9b3b7020fb3d",
           "assembly": "analysis/captures/modern-differences/clock-source/official_modern-00495230.asm",
-          "assembly_sha256": "a8b51150f53dd1a53fda8072abf2c0d7d0205b8976e11ad9003e15669e653862"
+          "assembly_sha256": "c10af10e3ba69bc52e7f0738ae9bdd0c0be660bf0609ea8d40c2078d74605104"
         },
         {
           "start": "004955a0",
@@ -535,6 +542,14 @@
       ]
     }
   ],
+  "loading_progress_admission": {
+    "original_prefix": "00495230..0049527f: active flag then renderer-slot calls009ef948(0),009ef938(2), FINIT/FLDCW before float progress work.",
+    "modern_prefix": "00495230..00495279: active flag, input/abort handling, timing helper00490134; signed-negative result returns0 through00495594 before calls00434b20/004c4480.",
+    "limits": [
+      "Prefixes only, not complete rendering-body equivalence or complete callback effects.",
+      "Concrete update admission change; no end-to-end loading benchmark or release attribution."
+    ]
+  },
   "original_loading_input_drain": {
     "call": "004a3481 ->004f0240",
     "retained_helper": "004f0240..004f024a identical in both baselines",
