@@ -2,6 +2,20 @@
   "kind": "static-window-loop-restoration-difference",
   "binaries": {
     "original": {
+      "predicate_spans": [
+        {
+          "start": "004f9070",
+          "exclusive_end": "004f908b",
+          "bytes": "833d0c3d9f00007509833d80715600007406b801000000c331c0c3",
+          "sha256": "e886a755865abffb52e3dd8b96e666d1bd83fc21e0feeae8dd3539206fe24955"
+        },
+        {
+          "start": "004f9120",
+          "exclusive_end": "004f9140",
+          "bytes": "833d4c3d9f00000f845bffffff833d243d9f00000f844effffffb801000000c3",
+          "sha256": "f1f03ac4c712104f3917c9e9f5e4e09bf19f26e9ab3d18f47aa88e195e9e889d"
+        }
+      ],
       "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "start": "004cd4e0",
@@ -10,6 +24,7 @@
       "body_bytes": "53515256575589e583ec2cb8d0389f00e85bfeffff89c389c6e802260100a36c125600e868260100a16c12560031d2e8ec2601008a252d3d9f00891d243d9f0089157012560089156c12560084e4752a8d45f050532eff153c4753008d45f050532eff15004753008b45f0a3343d9f008b45f4a3383d9f00eb165331db2eff1588475300891d343d9f00891d383d9f00562eff157c475300c7054c3d9f00010000003b35243d9f000f85200100006a006a006a008d45d4502eff154c47530085c0744a8b0d9012560051ff15b8445300833d88747f0000751a8b55dc8b45d8e8dcf4ffff85c0750b8d45d4502eff15a44753008d45d4502eff152c4753008b3d9012560057ff1588455300eb25833d9c125600007408ff159c125600eb14bb0a000000ba01000000b870c84c00e80e9f0100833d7012560000743a31c98b1dd0389f00890d7012560085db7413833de0389f0000740ab8d0389f00e810f70100a1243d9f00502eff152847530031d28915243d9f00803d2d3d9f00000f8420ffffffe8b9ba020085c0741ae800ba020085c00f850affffff502eff1594475300e9fdfeffff8b0d243d9f00512eff155c47530085c00f85e7feffff8b1d243d9f00532eff1588475300e9d4feffff89ec5d5f5e5a595bc3"
     },
     "official_modern": {
+      "predicate_spans": [],
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "start": "004cd4e0",
@@ -25,6 +40,6 @@
   "limits": [
     "No target execution or OS focus behavior observed.",
     "Removed local retry is not proof all foreground requests were removed.",
-    "Original predicate callees and all dynamic API resolution are not covered."
+    "Predicate input producers and all dynamic API resolution are not fully covered."
   ]
 }
