@@ -33,8 +33,8 @@
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
-      "sha256": "8d48d28b29d56b7fbc9e759570e3bb0ac832eb73a0a0c855fc9b8b69e7af074e",
-      "relative_links": 9
+      "sha256": "5b0d73f7ec0bca9bdf36b3179f799a756aae240ab1992cea285b2777d4e06b5d",
+      "relative_links": 11
     },
     {
       "path": "analysis/original-modern-config-loading.md",
@@ -158,8 +158,8 @@
     },
     {
       "path": "analysis/original-modern-menu-input.md",
-      "sha256": "4e339a3b766576a3fbeb6f9e18aab6c7a2eed36774107a4d88a2b808b10dd3a8",
-      "relative_links": 5
+      "sha256": "02ee79d2021ac5d37d78a96641dcb33cb71e12a605428f2ff9c06dd8b6d5f79e",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-menu-loader.md",
@@ -403,7 +403,7 @@
     }
   ],
   "file_count": 80,
-  "relative_link_count": 600,
+  "relative_link_count": 603,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

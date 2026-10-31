@@ -4,6 +4,7 @@ import json
 import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
+from audit_controller_reset_asset import sections
 
 COMMON=[(0x441700,0x4417ef),(0x441b20,0x441c87),(0x42d810,0x42d856),
         (0x449f30,0x44a0b5),(0x44a0c0,0x44a23b)]
@@ -37,6 +38,23 @@ def main():
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,'strings':strings}
     for index in (0,2,3,4):
         assert result['binaries']['original']['spans'][index]['bytes_sha256']==result['binaries']['official_modern']['spans'][index]['bytes_sha256']
+    archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
+    assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    listing=subprocess.check_output(['7z','l','-slt',str(archive)],text=True).splitlines()
+    members=[line[7:] for line in listing if line.startswith('Path = fedata/menus/') and line.lower().endswith('.mnu')]
+    assert len(members)==52
+    inventory={'tokens':['keyup','keydown','keyleft','keyright'],'members':[],'matches':[],'scope':'All52 official menu members and uppercase local backup counterparts; exact whitespace-separated codelink tokens. Backup provenance unauthenticated.'}
+    for member in members:
+        official=subprocess.check_output(['7z','x','-so',str(archive),member])
+        backup=ROOT/'nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus'/member.split('/')[-1].upper()
+        old=backup.read_bytes()
+        inventory['members'].append({'member':member,'official_sha256':hashlib.sha256(official).hexdigest(),'backup':str(backup.relative_to(ROOT)),'backup_sha256':hashlib.sha256(old).hexdigest()})
+        for label,data in [('official_modern',official),('local_backup',old)]:
+            for ordinal,row in enumerate(sections(data)):
+                value=row['fields'].get('codelink','')
+                tokens=sorted(set(value.lower().split()) & set(inventory['tokens']))
+                if tokens:inventory['matches'].append({'member':member,'source':label,'section_ordinal':ordinal,'section':row['section'],'codelink':value,'tokens':tokens})
+    result['named_arrow_asset_inventory']=inventory
     output=ROOT/'analysis/evidence/audits/original-modern-menu-input.json'
     output.write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: fingerprints, unchanged lobby/send/navigation bodies and changed dispatch/chat captures')

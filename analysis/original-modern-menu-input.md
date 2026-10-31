@@ -62,3 +62,19 @@ Next: compare asset-defined navigation tokens and affected menu templates; trace
 ## Panorama named-arrow integration follow-up
 
 The [panorama callback comparison](original-modern-credits-panorama.md#conditional-leftright-to-panorama-callback-chain) now connects the named Left/Right scanner through the generic button template/input handler to the initialized panorama Previous/Next callbacks. It retains the required code/template witnesses and official tokens for all three related menu assets. This advances the earlier asset/callback follow-up within that bounded context; other slideshow callbacks, admission states and runtime input delivery remain unverified.
+
+## Complete packaged-menu named-arrow inventory
+
+The existing audit now scans **all52 official `.mnu` archive members** and all52 matching uppercase `fedata_org/menus` backups. It records every member hash and parses exact whitespace-separated `codelink` tokens for `keyup`, `keydown`, `keyleft`, `keyright`. Six official matches occur, all button sections:
+
+| Menu | Left binding | Right binding |
+|---|---|---|
+| `credits.mnu` | `keyleft previous` | `keyright next` |
+| `credits1.mnu` | `keyleft previous` | `keyright next` |
+| `slides.mnu` | `keyleft prevslide` | `keyright nextslide` |
+
+There are **no `keyup`/`keydown` bindings** in this official menu-file scan, and **none of these four named-arrow tokens in the52 uppercase backup counterparts**. The code nevertheless supports all four tokens; lack of packaged bindings does not make its Up/Down named-action mechanism absent or prove it unreachable through runtime construction, resources or modified menus.
+
+The backups retain ordinary `next`/`previous` bindings in Credits and `nextslide`/`prevslide` in Slides. Their `CREDITS1.MNU` instead has `GlamNext` and `escape`; it is not paired as a simple token-prefix edit or proof of equivalent callbacks. Original retail provenance is unauthenticated, and this inventory does not establish historical introduction.
+
+This broadens the [panorama-specific linkage](original-modern-credits-panorama.md#conditional-leftright-to-panorama-callback-chain) into a complete named-token inventory of the pinned official menu set, while reusing that chapter’s callback evidence. The matched fields identify concrete authored consumers of the dispatcher’s Left/Right lookup. Full callback semantics for Slides, selected files and disabled/focus states remain separate work. No UI, network input or target instructions were executed.
