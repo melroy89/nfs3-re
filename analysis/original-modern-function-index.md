@@ -43,7 +43,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00422aa0` | CheckViewportVehicleAndCameraRenderGate | 181 | 32 | [night-lighting](original-modern-night-lighting.md), [replay-mirror](original-modern-replay-mirror.md) |
 | `00422cf0` | InitializeRaceViewportSceneRecords | 3000 | 14 | [viewport-pose](original-modern-viewport-pose.md) |
 | `004240c0` | UpdateSceneViewTransformOffset | 402 | 102 | [view-offset](original-modern-view-offset.md) |
-| `00426290` | ReturnFromInactiveSceneMode | 1 | 1 | [small-entry-followup](original-modern-small-entry-followup.md) |
+| `00426290` | ReturnFromInactiveSceneMode | 1 | 1 | [small-entry-followup](original-modern-small-entry-followup.md), [view-offset](original-modern-view-offset.md) |
 | `00426450` | DispatchViewportSceneModeUpdate | 74 | 72 | [view-offset](original-modern-view-offset.md) |
 | `0042649c` | CopySceneRecordSnapshot | 34 | 32 | [viewport-pose](original-modern-viewport-pose.md) |
 | `004264c0` | CopySceneSnapshotSelectedFields | 44 | 43 | [viewport-pose](original-modern-viewport-pose.md) |

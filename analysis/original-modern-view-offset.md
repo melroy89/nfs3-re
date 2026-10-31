@@ -38,7 +38,7 @@ Identical arithmetic bytes do not prove equal results: the new branches can supp
 
 The paired dispatcher begins at `00426450`. Its first 24-entry table at `004263f0` changes representation:
 
-- Original selector1 table entry points to local arm `00426482`, which calls `004240c0` with the selected context in EAX. Original dispatch uses a jump to these local arms. The captured original prefix ends with that complete arm; other arms remain outside this comparison.
+- Original selector1 table entry points to local arm `00426482`, which calls `004240c0` with the selected context in EAX. Original dispatch uses a jump to these local arms. The follow-up below extends the capture through all original arms and resolves all24 selector targets.
 - Modern selector1 table entry points directly to `004240c0`. Before its indirect CALL at `00426472`, Modern sets EAX to the selected context and **EDX=0**. The unsigned selector-minus-one range must be at most23 to reach that call.
 - After the primary table call, Modern checks `006fd3b0 != 1` and `006fd1cc != 0`. If both hold, it sets **EAX=`00661220`, EDX=1**, and directly calls `004240c0` at `00426493`. This extra call occurs for every admitted table selector on that gated path, not just selector1.
 
@@ -51,3 +51,33 @@ The retained table contains all24 pointer values, but this report does not recov
 Use separate original and Modern interfaces, or an explicit adapter that supplies the Modern mode. Later tests should distinguish both EDX values, raw `G=0`/nonzero/negative-zero bits, `S=0/1/2/other`, mirrored index state and ordinary/exceptional float offsets. Validate the extra fixed-view update and caller/register contracts before replacing a game-facing component. Do not silently zero the original out-of-range `S` fallback when reconstructing original behaviour.
 
 This identifies a substantive code difference without assigning an unsupported release-note ID or date. Executables, saved Ghidra state, exports and maintained C are preserved; no instruction probes or game sessions were run.
+
+## Complete 24-selector dispatch mapping
+
+The audit now retains original dispatcher **`00426450..0042655a`** through its final epilogue, superseding the earlier prefix/first-arm boundary. All24 original table entries at`004263f0` resolve mechanically: ordinary local arms execute `MOV EAX,ECX; CALL callee; POP EBP/ESI/ECX/EBX; RET`; two entries instead target the shared epilogue directly. Modern’s table stores callee addresses, invoked through its already documented common CALL path.
+
+| Raw selector | Original resolved callee | Modern callee |
+|---|---|---|
+| 1 | `004240c0` | Same |
+| 2 | `00424260` | Same |
+| 3,5 | `00424740` | Same |
+| 4,6 | `004243a0` | Same |
+| 7 | `00424b50` | Same |
+| 8 | `00425060` | Same |
+| 9 | `00425d50` | Same |
+| 10 | `00425990` | Same |
+| 11,12,13 | `00425ab0` | Same |
+| 14 | `00425bf0` | Same |
+| 15,22 | No call; shared epilogue`00426555` | `00426290` (RET-only stub) |
+| 16 | `004253d0` | Same |
+| 17 | `00425640` | Same |
+| 18 | `004251f0` | Same |
+| 19 | `004262a0` | Same |
+| 20 | `00426290` | Same |
+| 21 | `00424690` | Same |
+| 23 | `00424ce0` | Same |
+| 24 | `00424e30` | Same |
+
+Thus22 selectors preserve their **target**, while15/22 gain a call to the RET-only stub. This is a routing statement, not proof of equal callee implementations or full machine state. Modern supplies EDX0 to its primary call and can then execute the additional gated`004240c0` call described above; original’s directly-returning local arms do not share that continuation. For15/22 the extra return address/stack traffic and caller register setup are real machine effects, even though the stub has no explicit application-memory write. Selector20 already called the original no-op at that address; original’s five-byte frame stub is shortened to a one-byte RET in Modern.
+
+The manifest retains every selector, resolved target and unique original arm bytes, with assertions checking all CALL displacements and epilogues. The outside-body NOP interval`004264ec..00426560` consequently overlaps the end of one arm, later arms, final epilogue and alignment; it does not prove those camera/scene modes were removed. Complete per-callee contracts, raw selector meanings, all producers and runtime camera results remain unresolved. No relation to the separate unresolved dispatcher around`004b4919` is implied or required.

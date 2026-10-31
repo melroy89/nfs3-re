@@ -29,10 +29,10 @@
         },
         {
           "start": "00426450",
-          "end": "0042648e",
-          "bytes_sha256": "2a37535f11ca04825f2a3647ae0394c4a4f1cb7d5ecb976eb536c2f8a531fd8e",
+          "end": "0042655a",
+          "bytes_sha256": "32b097fdf7bc4c3fdb10b8f14e05f9582e7125cececb1355ff0dc18a7c16d740",
           "assembly": "analysis/captures/modern-differences/view-offset/original-00426450.asm",
-          "assembly_sha256": "0ac1a28939fbf38355cbc3a4f3eff5bf81857f98ddb0af1011ee383d65818959"
+          "assembly_sha256": "333e451552a20597e3aa0fdf0b8acc5e0d431b1753b732f2863f9ae1c57467b3"
         }
       ],
       "scene_dispatch_table_004263f0": [
@@ -251,6 +251,206 @@
     "00424169",
     "0042416a"
   ],
+  "complete_scene_dispatch_mapping": {
+    "entries": [
+      {
+        "selector": 1,
+        "original_arm": "00426482",
+        "original_callee": "004240c0",
+        "modern_callee": "004240c0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 2,
+        "original_arm": "0042648e",
+        "original_callee": "00424260",
+        "modern_callee": "00424260",
+        "classification": "retained target"
+      },
+      {
+        "selector": 3,
+        "original_arm": "0042649a",
+        "original_callee": "00424740",
+        "modern_callee": "00424740",
+        "classification": "retained target"
+      },
+      {
+        "selector": 4,
+        "original_arm": "004264a6",
+        "original_callee": "004243a0",
+        "modern_callee": "004243a0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 5,
+        "original_arm": "0042649a",
+        "original_callee": "00424740",
+        "modern_callee": "00424740",
+        "classification": "retained target"
+      },
+      {
+        "selector": 6,
+        "original_arm": "004264a6",
+        "original_callee": "004243a0",
+        "modern_callee": "004243a0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 7,
+        "original_arm": "004264b2",
+        "original_callee": "00424b50",
+        "modern_callee": "00424b50",
+        "classification": "retained target"
+      },
+      {
+        "selector": 8,
+        "original_arm": "004264be",
+        "original_callee": "00425060",
+        "modern_callee": "00425060",
+        "classification": "retained target"
+      },
+      {
+        "selector": 9,
+        "original_arm": "004264ca",
+        "original_callee": "00425d50",
+        "modern_callee": "00425d50",
+        "classification": "retained target"
+      },
+      {
+        "selector": 10,
+        "original_arm": "004264d6",
+        "original_callee": "00425990",
+        "modern_callee": "00425990",
+        "classification": "retained target"
+      },
+      {
+        "selector": 11,
+        "original_arm": "004264e2",
+        "original_callee": "00425ab0",
+        "modern_callee": "00425ab0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 12,
+        "original_arm": "004264e2",
+        "original_callee": "00425ab0",
+        "modern_callee": "00425ab0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 13,
+        "original_arm": "004264e2",
+        "original_callee": "00425ab0",
+        "modern_callee": "00425ab0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 14,
+        "original_arm": "004264ee",
+        "original_callee": "00425bf0",
+        "modern_callee": "00425bf0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 15,
+        "original_arm": "00426555",
+        "original_callee": null,
+        "modern_callee": "00426290",
+        "classification": "epilogue to RET-only stub"
+      },
+      {
+        "selector": 16,
+        "original_arm": "004264fa",
+        "original_callee": "004253d0",
+        "modern_callee": "004253d0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 17,
+        "original_arm": "00426506",
+        "original_callee": "00425640",
+        "modern_callee": "00425640",
+        "classification": "retained target"
+      },
+      {
+        "selector": 18,
+        "original_arm": "00426512",
+        "original_callee": "004251f0",
+        "modern_callee": "004251f0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 19,
+        "original_arm": "0042651e",
+        "original_callee": "004262a0",
+        "modern_callee": "004262a0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 20,
+        "original_arm": "0042652a",
+        "original_callee": "00426290",
+        "modern_callee": "00426290",
+        "classification": "retained target"
+      },
+      {
+        "selector": 21,
+        "original_arm": "00426536",
+        "original_callee": "00424690",
+        "modern_callee": "00424690",
+        "classification": "retained target"
+      },
+      {
+        "selector": 22,
+        "original_arm": "00426555",
+        "original_callee": null,
+        "modern_callee": "00426290",
+        "classification": "epilogue to RET-only stub"
+      },
+      {
+        "selector": 23,
+        "original_arm": "00426542",
+        "original_callee": "00424ce0",
+        "modern_callee": "00424ce0",
+        "classification": "retained target"
+      },
+      {
+        "selector": 24,
+        "original_arm": "0042654e",
+        "original_callee": "00424e30",
+        "modern_callee": "00424e30",
+        "classification": "retained target"
+      }
+    ],
+    "unique_original_call_arms": {
+      "00426482": "89c8e837dcffff5d5e595bc3",
+      "0042648e": "89c8e8cbddffff5d5e595bc3",
+      "0042649a": "89c8e89fe2ffff5d5e595bc3",
+      "004264a6": "89c8e8f3deffff5d5e595bc3",
+      "004264b2": "89c8e897e6ffff5d5e595bc3",
+      "004264be": "89c8e89bebffff5d5e595bc3",
+      "004264ca": "89c8e87ff8ffff5d5e595bc3",
+      "004264d6": "89c8e8b3f4ffff5d5e595bc3",
+      "004264e2": "89c8e8c7f5ffff5d5e595bc3",
+      "004264ee": "89c8e8fbf6ffff5d5e595bc3",
+      "004264fa": "89c8e8cfeeffff5d5e595bc3",
+      "00426506": "89c8e833f1ffff5d5e595bc3",
+      "00426512": "89c8e8d7ecffff5d5e595bc3",
+      "0042651e": "89c8e87bfdffff5d5e595bc3",
+      "0042652a": "89c8e85ffdffff5d5e595bc3",
+      "00426536": "89c8e853e1ffff5d5e595bc3",
+      "00426542": "89c8e897e7ffff5d5e595bc3",
+      "0042654e": "89c8e8dbe8ffff5d5e595bc3"
+    },
+    "retained_target_selectors": 22,
+    "epilogue_to_stub_selectors": [
+      15,
+      22
+    ],
+    "original_stub_hex": "5589e55dc3",
+    "modern_stub_hex": "c3",
+    "limit": "Complete table/arm routing only; same target addresses do not establish unchanged callee bodies/ABI/FP state."
+  },
   "limits": [
     "No target instructions or view rendering executed.",
     "Same arithmetic bytes do not imply same ambient x87 control, inputs or outputs.",

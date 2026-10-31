@@ -413,7 +413,7 @@
     },
     {
       "path": "analysis/original-modern-view-offset.md",
-      "sha256": "4e93db58b82ef84444f5f2aa3761a0725dbbb4108931e660e0f6067fc4947716"
+      "sha256": "baa804c8f0347d6b30941f898b0bf46e3adc18afba5dd204e65d7061bb78ff0f"
     },
     {
       "path": "analysis/original-modern-view-overlay.md",
@@ -1558,6 +1558,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-small-entry-followup.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00426290"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-view-offset.md",
           "entry_mentioned": true,
           "addresses": [
             "00426290"
