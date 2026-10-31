@@ -164,3 +164,19 @@ The expanded audit resolves both raw branch inputs using retained descriptor/pro
 Together these identities and the Full table provide **partial static support for MP100-014**: original day/non-two-player supplies500; day/two-player440; night/non-two-player375; night/two-player330. Modern supplies500 in all four branches for the inspected first-record thresholds. This is the concrete source-value equalization mechanism across those named conditions; the rendering consumers are mapped above.
 
 Farther rendered scenery, second-view selection, all active state/lifetimes, historical introduction and runtime compatibility remain unverified. Equal source thresholds do not establish identical images or floating-point machine state.
+
+## Full/Far rear-view source values
+
+The [paired mirror-record selection](original-modern-track-detail.md#mirror-tag-selects-the-second-preset-record) now confirms tag1 selects record1 after applying presets. For the non-two-player mode branch, the Modern source formula yields the following record1 values, listed as **+24h,+28h,+38h,+3ch before shifting left16**:
+
+| Main View Distance | Rear View Detail | Day | Night |
+|---|---|---|---|
+| Full | High | 500,500,500,500 | Same |
+| Full | Medium | 500,333,133,266 | 375,250,100,200 |
+| Full | Low | 150,100,40,80 | Same |
+| Far | High | 500,333,133,266 | 375,250,100,200 |
+| Far | Medium or Low | 150,100,40,80 | Same |
+
+These are existing manifest formula cases, with confirmed option labels applied. Under the earlier initialization premise, original's non-two-player apply leaves record1 at template3 values **150,100,40,80**. Modern therefore changes mirror-route source thresholds for Full at High/Medium and Far at High, while retaining those values for Full at Low and Far at Medium/Low. This gives further partial static support to **MP100-013**, whose full source bullet explicitly mentions rear view in Far/Full.
+
+The table is not a statement of final visible distance: tag1 classification also applies the separate Rear View Detail adjustment, geometry cutoffs use other fields, and active record/lifetime, x87 state and rendering remain unobserved. In the two-player branch, the source advance is skipped and record1 has a different role-dependent context; the table deliberately states its non-two-player scope.

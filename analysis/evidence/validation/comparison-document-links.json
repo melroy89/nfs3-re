@@ -318,8 +318,8 @@
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",
-      "sha256": "08eced0e6594929690ca740c6aae9b4964ccc4b2bf2d3a252bb846471dbb94bc",
-      "relative_links": 11
+      "sha256": "7a75fc1292eb2258f60fd2d032dba8c503d9e3fe6255de65d5b7831dc367bfe4",
+      "relative_links": 12
     },
     {
       "path": "analysis/original-modern-pause-title.md",
@@ -513,8 +513,8 @@
     },
     {
       "path": "analysis/original-modern-track-detail.md",
-      "sha256": "6da2dc10b377dc78e5e2c5140e3544b9d4e5ba67812aac8e6e5c9dea545559ce",
-      "relative_links": 5
+      "sha256": "fc272fbf1aa7ba2011837c20b5df0d5910e43300ad1896651398579b67c973c9",
+      "relative_links": 8
     },
     {
       "path": "analysis/original-modern-track-length-text.md",
@@ -583,7 +583,7 @@
     }
   ],
   "file_count": 116,
-  "relative_link_count": 1721,
+  "relative_link_count": 1725,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
