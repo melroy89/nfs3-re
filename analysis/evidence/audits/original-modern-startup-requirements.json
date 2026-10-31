@@ -19,6 +19,20 @@
           "bytes_sha256": "08fb740d754862a54bf068c44b854d6940480e0abae5c02f89c9fce5d4b77f26",
           "assembly": "analysis/captures/modern-differences/startup-requirements/original-004b608b.asm",
           "assembly_sha256": "cefb8f2553a199a0038ae6531ddd43a589ae857e8eb61b902680c1c72b34084a"
+        },
+        {
+          "start": "004516a0",
+          "end": "004516fa",
+          "bytes_sha256": "9c1dbe308f9023abd31382d835986dd67e3c5b8eed70d85101beaa0ee35f098d",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004516a0.asm",
+          "assembly_sha256": "49c38b2c5a281590bf231a830d756b8d6b493b19daaeb3015f1eebc89d9f3685"
+        },
+        {
+          "start": "004f07d0",
+          "end": "004f083e",
+          "bytes_sha256": "029ab8c9a2022d5b92068e667da6ffb4633fa87ec3f742cdfb04be72c55f14dc",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004f07d0.asm",
+          "assembly_sha256": "d029848ee0edf127e5df619c69239abe4b726f4a095ed58f2cda1bb03d64742a"
         }
       ],
       "imports": [
@@ -26,6 +40,16 @@
           "iat": "00534458",
           "name": "GetDeviceCaps",
           "dll": "GDI32.dll"
+        },
+        {
+          "iat": "00534500",
+          "name": "GetCurrentDirectoryA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534514",
+          "name": "GetDiskFreeSpaceA",
+          "dll": "KERNEL32.dll"
         },
         {
           "iat": "00534580",
@@ -73,6 +97,20 @@
           "bytes_sha256": "6057a6f2ab7d4b03f3c028e272590b647c9454a30197fd6ac2ce426a595b97e2",
           "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b5c07.asm",
           "assembly_sha256": "bacdd2f18b1357ae239a62a0c72dd32bf09fb8f5b4c6369aa83cb5f051719671"
+        },
+        {
+          "start": "004516a0",
+          "end": "004516f4",
+          "bytes_sha256": "11a3aec02d8fca7c783036ff38d51793fde2b5ca4f69991a20bf0666e0e8e71e",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004516a0.asm",
+          "assembly_sha256": "bf13e8450c3d77cd3f9c4e92790f992422e7720c700f60b984d080aa5b5f9c0f"
+        },
+        {
+          "start": "004f07d0",
+          "end": "004f083e",
+          "bytes_sha256": "029ab8c9a2022d5b92068e667da6ffb4633fa87ec3f742cdfb04be72c55f14dc",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004f07d0.asm",
+          "assembly_sha256": "34e5ae27cb2afd4b4e49c4adb6563dece2cc51da76ae2e71d39da148fee4cbd0"
         }
       ],
       "imports": [
@@ -80,6 +118,16 @@
           "iat": "00534458",
           "name": "GetDeviceCaps",
           "dll": "GDI32.dll"
+        },
+        {
+          "iat": "00534500",
+          "name": "GetCurrentDirectoryA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534514",
+          "name": "GetDiskFreeSpaceA",
+          "dll": "KERNEL32.dll"
         },
         {
           "iat": "00534580",
@@ -109,10 +157,15 @@
       }
     }
   },
+  "identical_disk_geometry_wrapper": {
+    "start": "004f07d0",
+    "end": "004f083e",
+    "sha256": "029ab8c9a2022d5b92068e667da6ffb4633fa87ec3f742cdfb04be72c55f14dc"
+  },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",
     "Memory fields described by exact offsets; no complete API structure/type reconstruction.",
-    "Disk helper and diagnostic termination internals are not fully audited here.",
+    "Current-directory helper, API failures and diagnostic termination internals are not fully audited here.",
     "No release-note attribution inferred solely from a changed startup routine."
   ]
 }

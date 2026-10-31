@@ -21,7 +21,7 @@ The change also discards fractional MiB separately. Hypothetical8.75-MiB and7.5-
 
 ## Shared disk-check request and changed diagnostics
 
-Both pass **EAX=1 MiB** to helper `004516a0`, testing its result and entering a warning branch on zero. The Modern message explicitly says the hard drive has less than1MB free. This establishes the checked request and diagnostic association; complete filesystem selection, unit conventions, helper failure causes and actual free space remain outside this comparison.
+Both pass **EAX=1 MiB** to helper `004516a0`, testing its result and entering a warning branch on zero. The Modern message explicitly says the hard drive has less than1MB free. The follow-up below now traces the free-byte arithmetic and geometry wrapper. Directory selection/failure and actual free space remain untested.
 
 Original low-memory and disk warnings call MessageBoxA with flags31h and select text/caption pointers through the incoming index. Return2 leads to `004f2a7d`. Modern routes both through **`004b5728`**, which uses flags51031h and a shared caption, calls the same termination helper for return2, otherwise returns. The desktop-depth failure uses separate **`004b570c`**, flags51010h, followed by `004f2a7d` regardless of dialog result. Complete termination behavior/nonlocal exit guarantees are not established here.
 
@@ -35,4 +35,24 @@ This branch checks the returned capability directly; it does not multiply by a s
 
 Modern uses PUSHAD/POPAD, preserving the incoming general registers including EAX when its ordinary path returns. It does not provide an ordinary Boolean success result. Original saves EBX/ECX/EDX/ESI/EDI/EBP, consumes incoming EAX as its diagnostic table index and leaves an operation-dependent EAX result. The two should not receive one guessed C success-return signature.
 
-Verified changes include memory-sum order/units, warning selection and flags, removed local logging and the added desktop check. Historical attribution, full localization fallback, resource API failures, the disk helper, termination and observed startup acceptance remain unresolved. This is an independently documented code delta, not a claim that every system-requirement path in either executable has been compared.
+Verified changes include memory-sum order/units, warning selection and flags, removed local logging and the added desktop check. Historical attribution, full localization fallback, resource API failures, directory selection, termination and observed startup acceptance remain unresolved. This is an independently documented code delta, not a claim that every system-requirement path in either executable has been compared.
+
+## Disk-space follow-up: signed wrapping product becomes overflow-aware admission
+
+The expanded audit retains complete disk check **`004516a0`** (original end `004516fa`, Modern `004516f4`) and verifies equality of geometry wrapper **`004f07d0..004f083e`**. The earlier disk-helper unknown is now narrowed to these verified local operations and the remaining directory/API boundaries.
+
+The check keeps incoming EAX as its requested byte threshold in ECX. It calls current-directory helper `004f0730` with a stack buffer and limit250, reads the first buffer byte, subtracts64, and supplies the result as a drive number to `004f07d0`. That wrapper converts nonzero drive numbers into a three-character root such as `C:\`, otherwise passes a null root pointer, then calls imported **GetDiskFreeSpaceA** through IAT `00534514`. The related current-directory API is **GetCurrentDirectoryA**, IAT `00534500`; a full directory-helper contract is not claimed here.
+
+The wrapper outputs four DWORDs in this order: **total clusters, free clusters, sectors per cluster, bytes per sector**. The startup check multiplies **free clusters × bytes per sector × sectors per cluster**, testing the wrapper’s return first. Nonzero wrapper return produces check result0. This ties the1-MiB request to a free-byte calculation, rather than treating the warning text as proof of the calculation.
+
+| Case | Original | Modern |
+|---|---|---|
+| Product fits below2 GiB | Low32-bit IMUL product, signed threshold comparison | Unsigned MUL product, unsigned threshold comparison |
+| Nonoverflowing product has bit31 set | Negative signed interpretation can reject ordinary positive threshold | Compared as unsigned bytes |
+| Either multiplication exceeds32 bits | High product discarded; wrapped result compared signed | Carry/high-product indication immediately returns1 |
+
+For a normal positive geometry product of2 GiB and the startup1-MiB threshold, original’s signed comparison rejects while Modern accepts. At exactly4 GiB the old low32 bits are0; Modern detects multiplication overflow and accepts. These are derived arithmetic examples, not injected API responses or filesystem probes.
+
+The overflow shortcut is sound for the intended positive geometry factors and a32-bit byte threshold: a true product exceeding32 bits is larger than any such threshold. It is not a general malformed-input contract. In particular, an overflowing first product followed by a zero final factor would be accepted early by Modern; valid positive sector geometry is therefore a material assumption, not an opportunity to silently rewrite behavior.
+
+Both routines preserve ECX/EDX and return explicit EAX0/1. The first current-directory helper’s return is not locally checked before reading its buffer, so directory failure and non-drive-prefixed paths remain unresolved. The retained wrapper’s API error conversion is delegated to `00500ff4`; error-specific behavior, actual drive selection under Wine/Linux mappings and observed large-volume acceptance are untested. This is another verified arithmetic change independent of any uniquely matched release-note bullet.
