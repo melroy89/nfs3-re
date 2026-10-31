@@ -40,9 +40,12 @@ def main():
     assert exports['_THRASH_setstate@8']==0x60003ca0
     index=pe.get_data(0x6aec+14,1)[0]
     target=struct.unpack('<I',pe.get_data(0x6a34+4*index,4))[0];assert target==0x60004df4
+    index21=pe.get_data(0x6aec+21,1)[0]
+    assert struct.unpack('<I',pe.get_data(0x6a34+4*index21,4))[0]==0x60004c44
+    result['dx7_selector21']={'dispatch_index':index21,'case':'60004c44'}
     assert struct.unpack('<f',pe.get_data(0x15448,4))[0]==1.0
     rows=[]
-    for start,end in [(0x600096e5,0x600096ff),(0x60009f8a,0x60009fb0),(0x60009fd9,0x6000a0c9),(0x60003ca0,0x60003d64),(0x60004df4,0x60004e59),(0x60008a10,0x60008a47)]:
+    for start,end in [(0x600096e5,0x600096ff),(0x60009f8a,0x60009fb0),(0x60009fd9,0x6000a0c9),(0x60003ca0,0x60003d64),(0x60004c44,0x60004df4),(0x60004df4,0x60004e59),(0x60008a10,0x60008a47)]:
         path=capture/f'dx7-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
         rows.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-base,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
     guids={f'{a:08x}':str(uuid.UUID(bytes_le=pe.get_data(a-base,16))) for a in (0x60015bf8,0x60015bc8,0x60015b98)}

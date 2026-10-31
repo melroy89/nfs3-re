@@ -85,3 +85,21 @@ The other decoded direct call to Modern recomputation is **`0044b346`**, in the 
 Original’s same span has no recomputation call. At `0044b346` it instead loads ECX1, followed by EDX127 at `0044b34b`; Modern inserts the5-byte call at the first address and moves ECX1 into the second slot. Both then load sound identifier4 into EAX and call **`004181d0`** at `0044b35b`. The removed volume setup belongs to the separately changed [frontend-sound interface](original-modern-frontend-sound.md); it must not be treated as arbitrary dead-code removal or as a new caller-supplied EDX contract for Modern.
 
 This places recomputation after the inspected descriptor initialization/transition work, as well as at scene-render entry. The two observed routes can refresh the cached admission value at different points in the menu/race lifecycle. Complete transition coverage, indirect calls and every writer of the three source globals remain unresolved. No menu transition or sound was executed.
+
+## Coupled state21: fog mode and enable policy in DX7
+
+The audit now resolves selector21 through the same driver dispatch tables to **`60004c44`**, retaining its case through exclusive`60004df4`. This identifies the state reapplied by the game’s cached setter after state14 changes.
+
+| Game state21 value | Observed DX7 requests through `60008a10` |
+|---:|---|
+| 4 | State35=1, state140=0, then cached state34 colour and state38 density |
+| 8 | State35=2, state140=0, then cached state34 colour and state38 density |
+| 2 | State35=3, state140=0, cached colour/density, then state36/start and state37/end |
+| 0 | State28=0; clear local mode-enable bookkeeping |
+| 1 | Conditional state28=1; further capability/previous-mode tests apply |
+
+Microsoft’s legacy [render-state declarations](https://github.com/microsoft/win32metadata/blob/main/generation/WinSDK/RecompiledIdlHeaders/um/d3dtypes.h) identify35 as fog table mode,140 as vertex fog mode,34 as fog colour,38 as fog density and28 as fog enable. The mode-value4/8/2 branches also test capability cell **`6005ab0c`** before their listed requests; unsupported paths branch elsewhere. The value1 path has additional handling for previous mode`0x10`. The table is a scoped mapping, not a complete success matrix or proof that all input values are valid.
+
+The density cache reapplied here is exactly **`600170e8`**, the cell written by state14’s reciprocal/raw-bit route. Thus the game’s retained state21 reapplication has a concrete backend coupling to density and fog mode. Each case can mark its local result successful after issuing helper calls without validating every helper result; the game’s own cache also stores requests before dispatch. Accepted GPU state remains a separate question.
+
+This resolves the previously unnamed coupling for the official DX7 backend. It does not prove fog is enabled in any particular scene, establish equivalent original-driver behavior, or explain all game callers’ state21 choices. No fog mode was set at runtime.

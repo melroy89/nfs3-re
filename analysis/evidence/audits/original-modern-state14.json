@@ -148,6 +148,10 @@
       "sha256": "37993537bc576246c3696a0c7dc62dbf5b4b97781c5a64dd480243151e9bc496"
     }
   ],
+  "dx7_selector21": {
+    "dispatch_index": 19,
+    "case": "60004c44"
+  },
   "dx7_creation_guids": {
     "60015bf8": "f5049e77-4861-11d2-a407-00a0c90629a8",
     "60015bc8": "84e63de0-46aa-11cf-816f-0000c020156e",
@@ -187,6 +191,13 @@
         "sha256": "cabb96d70bcdff21d8db51ae49147d7c6b8ab7d260a2aa3524858f1f7fb0b17e",
         "assembly": "analysis/captures/modern-differences/state14/dx7-60003ca0.asm",
         "assembly_sha256": "c42816fad9e3d3ebc5711a61749ce76b32c508137a6f5e896dbfa88026a6b495"
+      },
+      {
+        "start": "60004c44",
+        "end": "60004df4",
+        "sha256": "42c87eb72392332723944a83ee7aca349e60863d1dd1cbf1e52b0000bf0c73f9",
+        "assembly": "analysis/captures/modern-differences/state14/dx7-60004c44.asm",
+        "assembly_sha256": "acee1fbde82563db237da9042288c9ac98bcc8f548419683e17fc9d428522bcb"
       },
       {
         "start": "60004df4",
