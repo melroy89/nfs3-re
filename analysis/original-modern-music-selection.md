@@ -164,3 +164,19 @@ This preserves the fixed-choice exception for track ID 6, Monster: the documente
 The begin wrapper sets `00552594=1` before its checks. It skips its stop/start sequence when the menu setting is the exceptional value (old 6, Modern 8), or when selected internal track `0055258c` is 6. Otherwise it calls `004109d0`, then `004104f0` with EAX=24, EDX=`006fbbe8`, EBX=0. The end wrapper acts only when `00552594` is nonzero, clears that flag, and skips its sequence for the exceptional menu setting. Otherwise it calls the same stop helper and start routine with EAX=22, the same level source and EBX=0.
 
 **Bounded work status: done; evidence: verified static instructions and list correspondence.** This is a setting-index adjustment, not evidence of a new audio backend or measured playback behavior. The saved names containing “ShowSix” must not be interpreted as meaning that the Modern menu index is still six. Original language-resource provenance retains the limitation stated above.
+
+## Race-setup reconciliation stops rewriting a tune-dependent global
+
+The complete same-address setup function `0044be60..0044c2ce` (1,134 bytes, exclusive end), saved as `ReconcileRaceSetupMenuConstraints`, differs only within `0044bea4..0044bec1`. [The focused audit](scripts/audit_race_setup_music_coupling.py) verifies both pinned executable hashes and exact original/Modern block bytes; [its manifest](evidence/audits/race-setup-music-coupling.json) records full hashes and disassembly locations.
+
+Original computes and stores the Boolean:
+
+`DWORD [006fbbd8] = (DWORD [006fbbe4] == 0 ? 1 : 0)`
+
+It also loads EDI from `006fbc00` before continuing at `0044bec1`. Modern retains that EDI load at the block's beginning, jumps directly to `0044bec1`, and NOP-fills 21 bytes. The assignment to `006fbbd8` is absent from this local route; every other byte of the complete function is identical.
+
+The race tune descriptor `tunenames` already establishes `006fbbe4` as its selector, as documented above. However, the full semantic role of destination `006fbbd8` is **not established by this assignment alone**. This finding should not be labelled “music mute removed” or “a specific option unlocked” without tracing that destination's readers and other writers. Nor does omission of this local store prove the destination retains its value through all later calls.
+
+The Modern saved body union contains 1,113 bytes and five changed in-body bytes; it excludes the 21-byte NOP gap. This audit includes the removed original decision/store instructions. A reconstruction should keep this version-specific state coupling separate from generic menu constraints and preserve the chosen global's initialization/lifetime contract. Incidental EAX/flags also differ on reaching the common continuation; full machine-state equivalence is not assumed.
+
+**Bounded work status: done for the complete function's byte differences; confidence: verified static assignment and existing source-selector evidence.** Required follow-up is destination-state semantics, all writer/consumer paths and actual menu/audio behavior. No game or instruction probes, Ghidra writes or maintained-C edits were performed.

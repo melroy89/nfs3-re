@@ -143,8 +143,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "dde395f7e44f612e380d693e79e4e90cb5760494f8164f971f799bc6d6a964fb",
-      "relative_links": 570
+      "sha256": "12a10ea48cd0afcbbb964a0f6aa81a4a28dab9925080f94dd798d4dbaf428ee2",
+      "relative_links": 571
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -238,8 +238,8 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "52c8151cc8e8c37502b1ed3b77a2efada25986e9e8e0b5191a0e5c2633487b0f",
-      "relative_links": 9
+      "sha256": "c5afa43fb01251a45a2dbad85018cfaf7fa7fe82e11f226c8addc891e2f6a885",
+      "relative_links": 11
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -503,7 +503,7 @@
     }
   ],
   "file_count": 100,
-  "relative_link_count": 1328,
+  "relative_link_count": 1331,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -197,7 +197,7 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "52c8151cc8e8c37502b1ed3b77a2efada25986e9e8e0b5191a0e5c2633487b0f"
+      "sha256": "c5afa43fb01251a45a2dbad85018cfaf7fa7fe82e11f226c8addc891e2f6a885"
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -402,8 +402,8 @@
   ],
   "counts": {
     "changed_saved_function_ranges": 361,
-    "with_address_mentions": 348,
-    "without_address_mentions": 13
+    "with_address_mentions": 349,
+    "without_address_mentions": 12
   },
   "limits": [
     "Address mentions only; not verified semantic analysis or completed coverage.",
@@ -3824,7 +3824,17 @@
       "changed_bytes": 5,
       "original_sha256": "a44d4e82e847e9a9d64e43b680a5ae1a2be31cbfdc80c39cdb063a19621d216f",
       "modern_sha256": "2e1aa9b5e2a5c7a84464636376fac0d9883e6aaddd174b15b6ecefd2fb0fa229",
-      "report_address_references": []
+      "report_address_references": [
+        {
+          "path": "analysis/original-modern-music-selection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0044be60",
+            "0044bea4",
+            "0044bec1"
+          ]
+        }
+      ]
     },
     {
       "entry": "004516a0",

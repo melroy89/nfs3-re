@@ -1,0 +1,26 @@
+{
+  "kind": "race-setup-tune-selector-coupling",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "0044be60",
+      "end_exclusive": "0044c2ce",
+      "span_sha256": "d85dfaa7c5718853b8b0383d08a1ed23f757eb3cf24b62be10dfd00c5aa16fec",
+      "assembly": "analysis/captures/modern-differences/race-setup-music-coupling/original-0044be60.asm"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "0044be60",
+      "end_exclusive": "0044c2ce",
+      "span_sha256": "2a4025183fb4a72854e473c85f0c78d845c077aa6d68acddb91b1a29485f07c5",
+      "assembly": "analysis/captures/modern-differences/race-setup-music-coupling/official_modern-0044be60.asm"
+    }
+  },
+  "changed_bytes": 26,
+  "limits": [
+    "Static assignment/control-flow comparison only; no music/menu execution.",
+    "Destination global meaning and complete writer/consumer lifetime remain unverified."
+  ]
+}
