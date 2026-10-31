@@ -21,6 +21,27 @@
           "assembly_sha256": "cefb8f2553a199a0038ae6531ddd43a589ae857e8eb61b902680c1c72b34084a"
         },
         {
+          "start": "004b5e50",
+          "end": "004b5e9a",
+          "bytes_sha256": "404536b91bd63b23132f78ace648bdcc7917a7cc812ef574d8e433884a8dfa8b",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004b5e50.asm",
+          "assembly_sha256": "107b845d4f3afffbf989299f35f56a43d060e46741a46cf9ac7fcfde21bb390f"
+        },
+        {
+          "start": "004f2a7d",
+          "end": "004f2a84",
+          "bytes_sha256": "b8a7edca2e15c5a6bef3eca229693675dd4e603136f5a5fa0dafe7770fe19e9e",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004f2a7d.asm",
+          "assembly_sha256": "f1751e65e2d353166053eaf72e43f687338022ed5d876b83453410e9388a1425"
+        },
+        {
+          "start": "004dfd04",
+          "end": "004dfd55",
+          "bytes_sha256": "4b6c80298ff1619d5a90ef06470b1de4a9149111aa779240af903e0bc5303d4f",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004dfd04.asm",
+          "assembly_sha256": "638133bf36d85b7e7f20767d4183b94ee89b1348ae61c2adb8be70dfab30c672"
+        },
+        {
           "start": "004516a0",
           "end": "004516fa",
           "bytes_sha256": "9c1dbe308f9023abd31382d835986dd67e3c5b8eed70d85101beaa0ee35f098d",
@@ -99,6 +120,27 @@
           "assembly_sha256": "bacdd2f18b1357ae239a62a0c72dd32bf09fb8f5b4c6369aa83cb5f051719671"
         },
         {
+          "start": "004b5e50",
+          "end": "004b5e9a",
+          "bytes_sha256": "499b9ac7a37d28e426de0201c81452634b362b2b41e2e4bdee9780e82a2fec78",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b5e50.asm",
+          "assembly_sha256": "72040e8afe77e3fb4d31552898edfe30b4dbb77efc8f17b2531ebe429287bf90"
+        },
+        {
+          "start": "004f2a7d",
+          "end": "004f2a84",
+          "bytes_sha256": "b8a7edca2e15c5a6bef3eca229693675dd4e603136f5a5fa0dafe7770fe19e9e",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004f2a7d.asm",
+          "assembly_sha256": "c44f3e3d964e41e48c1854ba7faaa078368fad97fefded10b054f0b23cc46687"
+        },
+        {
+          "start": "004dfd04",
+          "end": "004dfd55",
+          "bytes_sha256": "4b6c80298ff1619d5a90ef06470b1de4a9149111aa779240af903e0bc5303d4f",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004dfd04.asm",
+          "assembly_sha256": "f89485136b703160ac2efce99f2f2e70727b947e118e69619d284baaaeac7181"
+        },
+        {
           "start": "004516a0",
           "end": "004516f4",
           "bytes_sha256": "11a3aec02d8fca7c783036ff38d51793fde2b5ca4f69991a20bf0666e0e8e71e",
@@ -161,6 +203,81 @@
     "start": "004f07d0",
     "end": "004f083e",
     "sha256": "029ab8c9a2022d5b92068e667da6ffb4633fa87ec3f742cdfb04be72c55f14dc"
+  },
+  "removed_corruption_diagnostic": {
+    "entry": "004b5e50",
+    "end_exclusive": "004b5e9a",
+    "modern_same_address": "74 NOP bytes; not proof all diagnostic behavior disappeared",
+    "tables": {
+      "004b55c8": [
+        {
+          "index": 0,
+          "pointer": "0053f064",
+          "text_latin1": "Need For Speed 3 files are corrupted; please re-install."
+        },
+        {
+          "index": 1,
+          "pointer": "0053f0a0",
+          "text_latin1": "Dateien von Need For Speed 3 sind defekt. Bitte neu installieren."
+        },
+        {
+          "index": 2,
+          "pointer": "0053f0e4",
+          "text_latin1": "Les fichiers de Need For Speed III sont alt\u00e9r\u00e9s ; veuillez r\u00e9installer le jeu."
+        },
+        {
+          "index": 3,
+          "pointer": "0053f064",
+          "text_latin1": "Need For Speed 3 files are corrupted; please re-install."
+        },
+        {
+          "index": 4,
+          "pointer": "0053f064",
+          "text_latin1": "Need For Speed 3 files are corrupted; please re-install."
+        },
+        {
+          "index": 5,
+          "pointer": "0053f064",
+          "text_latin1": "Need For Speed 3 files are corrupted; please re-install."
+        }
+      ],
+      "004b55e0": [
+        {
+          "index": 0,
+          "pointer": "0053f134",
+          "text_latin1": "Warning"
+        },
+        {
+          "index": 1,
+          "pointer": "0053f13c",
+          "text_latin1": "Warnung"
+        },
+        {
+          "index": 2,
+          "pointer": "0053f144",
+          "text_latin1": "Avertissement"
+        },
+        {
+          "index": 3,
+          "pointer": "0053f154",
+          "text_latin1": "Advertencia"
+        },
+        {
+          "index": 4,
+          "pointer": "0053f160",
+          "text_latin1": "Attenzione"
+        },
+        {
+          "index": 5,
+          "pointer": "0053f16c",
+          "text_latin1": "Varning"
+        }
+      ]
+    },
+    "message_flags": "00000031",
+    "input": "EAX unchecked table index",
+    "post_dialog_call": "004f2a7d; clears EAX then calls004dfd04",
+    "limit": "Termination route includes indirect callbacks; complete nonreturn guarantee not established."
   },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",

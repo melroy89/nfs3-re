@@ -2,6 +2,7 @@
 import hashlib
 import json
 import subprocess
+import struct
 import pefile
 from audit_thrash_loader_difference import ROOT,SPECS
 
@@ -14,6 +15,7 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
         spans=([(0x4b5f10,0x4b5fee),(0x4b608b,0x4b6097)] if label=='original' else [(0x4b5748,0x4b57c1),(0x4b570c,0x4b5746),(0x4b5c07,0x4b5c11)])
+        spans += [(0x4b5e50,0x4b5e9a),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55)]
         spans += [(0x4516a0,0x4516fa if label=='original' else 0x4516f4),(0x4f07d0,0x4f083e)]
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -24,6 +26,21 @@ def main():
         result['binaries'][label]=item
     data=images['original'].get_data(0xf07d0,0x6e);assert data==images['official_modern'].get_data(0xf07d0,0x6e)
     result['identical_disk_geometry_wrapper']={'start':'004f07d0','end':'004f083e','sha256':hashlib.sha256(data).hexdigest()}
+    original = images['original']
+    assert images['official_modern'].get_data(0xb5e50,0x4a) == b'\x90'*0x4a
+    assert original.get_data(0xb5e86,7) == bytes.fromhex('2eff1564475300')
+    assert original.get_data(0xb5e8d,5) == bytes.fromhex('e8ebcb0300')
+    result['removed_corruption_diagnostic'] = {'entry': '004b5e50', 'end_exclusive': '004b5e9a',
+        'modern_same_address': '74 NOP bytes; not proof all diagnostic behavior disappeared',
+        'tables': {}, 'message_flags': '00000031', 'input': 'EAX unchecked table index',
+        'post_dialog_call': '004f2a7d; clears EAX then calls004dfd04',
+        'limit': 'Termination route includes indirect callbacks; complete nonreturn guarantee not established.'}
+    for va in (0x4b55c8,0x4b55e0):
+        pointers = struct.unpack('<6I', original.get_data(va-0x400000,24))
+        result['removed_corruption_diagnostic']['tables'][f'{va:08x}'] = [
+            {'index': i, 'pointer': f'{address:08x}',
+             'text_latin1': original.get_string_at_rva(address-0x400000).decode('latin1')}
+            for i,address in enumerate(pointers)]
     result['limits']=['No memory, disk, desktop, dialog or target API execution.','Memory fields described by exact offsets; no complete API structure/type reconstruction.','Current-directory helper, API failures and diagnostic termination internals are not fully audited here.','No release-note attribution inferred solely from a changed startup routine.']
     (ROOT/'analysis/evidence/audits/original-modern-startup-requirements.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: startup requirement counterparts, caller witnesses, imports and messages')

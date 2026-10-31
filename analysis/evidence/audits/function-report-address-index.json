@@ -285,7 +285,7 @@
     },
     {
       "path": "analysis/original-modern-registry.md",
-      "sha256": "bb47ccdf76e38d805e10e3f7cf3fb8b2a94e9f01e8c02138a2d0397b9bb37211"
+      "sha256": "996c7b7f87ee79ea6dd4d2afaad36df91bb0e354b21c48d2897977293f99e496"
     },
     {
       "path": "analysis/original-modern-removed-dde.md",
@@ -373,7 +373,7 @@
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
-      "sha256": "8954376d106845ee4283142a70fbd36263e6284ae45e88a5b8ec6de39c4d4b14"
+      "sha256": "6cfd9074744a815329d8fcf4e4238b0224d2842cc02347e469ee71adc437759f"
     },
     {
       "path": "analysis/original-modern-state14.md",
@@ -7928,6 +7928,14 @@
             "004b55c9",
             "004b55cc",
             "004b55cd"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-startup-requirements.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004b55c8",
+            "004b55e0"
           ]
         },
         {
