@@ -39,6 +39,8 @@ The [outside-function address map](original-modern-outside-function-index.md) no
 
 The [initialized-data address index](original-modern-initialized-data-index.md) separately records all11,576 differing `DGROUP`/`.data` bytes in605 contiguous runs, with original/Modern bytes and relocation-operand annotations. It covers file-backed data only; types, object correspondence and initialization lifetimes still require explicit tracing.
 
+The [bounded ASCII string index](original-modern-string-index.md) lists112 Modern-only and186 original-only initialized-data text values with addresses;4027 values are shared. It excludes short/non-ASCII/control-containing text and other sections. Text candidates do not independently prove a feature or loaded dependency.
+
 Original and official Modern share a 1,257,472-byte code span at VA `00401000`, raw offset `400`. Within that span **41,441 bytes differ**. Section renaming from `AUTO` to `.code`, and `DGROUP` to `.data`, is not itself an algorithm change.
 
 | Original / Modern region | Comparison |
