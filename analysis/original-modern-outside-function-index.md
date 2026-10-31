@@ -92,7 +92,7 @@ All12 original autoanalysis entry locators overlapping `004b5db1..004b67b0` now 
 | `004b6020` | Subsystem setup | [Report](original-modern-resolution-defaults.md) | Mapped Modern counterpart; all downstream initialization effects not qualified. |
 | `004b6250` | Shutdown envelope | [Report](original-modern-input-worker.md) | Mapped Modern counterpart; no join/runtime shutdown proof. |
 | `004b62a0` | Six-byte remote prefix test | [Report](original-modern-startup-requirements.md) | Body and compare semantics checked; global-source ownership and other callers pending. |
-| `004b6320` | Installation/media admission | [Report](original-modern-startup-requirements.md) | Branches and messages checked; path/resource helper contracts incomplete. |
+| `004b6320` | Installation/media admission | [Report](original-modern-startup-requirements.md) | Branches, CWD construction and shared enumeration checked; API failures/provider results untested. |
 | `004b6400` | Renderer registry values | [Report](original-modern-registry.md) | Original removed helper checked; Modern driver-specific replacement mapping incomplete. |
 | `004b64c0` | Renderer description registry value | [Report](original-modern-registry.md) | Original removed helper checked; error/fallback and external registry behavior untested. |
 | `004b6520` | Desktop registry path | [Report](original-modern-registry.md) | Original screenshot dependency checked; query failure and lifecycle remain partial. |

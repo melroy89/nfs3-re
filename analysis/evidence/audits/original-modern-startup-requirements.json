@@ -56,6 +56,20 @@
           "assembly_sha256": "d720e876d6d11dc52d81315ecd90d201ac8ea888bfac9b229dd52f655d9cdf37"
         },
         {
+          "start": "004f0330",
+          "end": "004f042b",
+          "bytes_sha256": "d7e15b9b08b77e1d92eb9f9ffbb899d9417b4286446b1103d77fa1266de77636",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004f0330.asm",
+          "assembly_sha256": "b7b588c431d380a73910c590141fa346ebf47fc7f7156851a35deebda09ba480"
+        },
+        {
+          "start": "004f0280",
+          "end": "004f032a",
+          "bytes_sha256": "6e1f91e186bd1ad253ad1b226f9b7be720b0434e03c8a31f51705257c00892e9",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004f0280.asm",
+          "assembly_sha256": "aac2ce43c1e88d9998d8539e8b5a1ab6ee91e55fe4ca6a97d16d694cfbd1cffb"
+        },
+        {
           "start": "004f9390",
           "end": "004f93f0",
           "bytes_sha256": "b24a43ab9d7d97ac2c4987c5af5c3cc18340886cfeb97964a980697f6c571b90",
@@ -133,6 +147,21 @@
           "dll": "GDI32.dll"
         },
         {
+          "iat": "005344c8",
+          "name": "FindClose",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "005344cc",
+          "name": "FindFirstFileA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "005344d0",
+          "name": "FindNextFileA",
+          "dll": "KERNEL32.dll"
+        },
+        {
           "iat": "005344dc",
           "name": "FreeLibrary",
           "dll": "KERNEL32.dll"
@@ -150,6 +179,11 @@
         {
           "iat": "00534518",
           "name": "GetDriveTypeA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534520",
+          "name": "GetFileAttributesA",
           "dll": "KERNEL32.dll"
         },
         {
@@ -250,6 +284,20 @@
           "assembly_sha256": "895997d149dcda2c66ab5ee4903812bb6b025fcf9edfea0b53d3f8a6c0fa2d88"
         },
         {
+          "start": "004f0330",
+          "end": "004f042b",
+          "bytes_sha256": "d7e15b9b08b77e1d92eb9f9ffbb899d9417b4286446b1103d77fa1266de77636",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004f0330.asm",
+          "assembly_sha256": "6c4eb31f3dcb8108103fff2d4f7b283c1cda5c15f2d46077a1498c93b8461085"
+        },
+        {
+          "start": "004f0280",
+          "end": "004f032a",
+          "bytes_sha256": "6e1f91e186bd1ad253ad1b226f9b7be720b0434e03c8a31f51705257c00892e9",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004f0280.asm",
+          "assembly_sha256": "ab65a72c2635a680990893687682989c15ab35848cd16e454cf2a563999bd9f2"
+        },
+        {
           "start": "004f9390",
           "end": "004f93f0",
           "bytes_sha256": "89093beb4ac79c7340dc1202577b1c591d4e8a81ce2813784a10a042302e2225",
@@ -327,6 +375,21 @@
           "dll": "GDI32.dll"
         },
         {
+          "iat": "005344c8",
+          "name": "FindClose",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "005344cc",
+          "name": "FindFirstFileA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "005344d0",
+          "name": "FindNextFileA",
+          "dll": "KERNEL32.dll"
+        },
+        {
           "iat": "005344dc",
           "name": "FreeLibrary",
           "dll": "KERNEL32.dll"
@@ -344,6 +407,11 @@
         {
           "iat": "00534518",
           "name": "HeapReAlloc",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534520",
+          "name": "GetFileAttributesA",
           "dll": "KERNEL32.dll"
         },
         {
@@ -682,7 +750,7 @@
       ]
     },
     "limits": [
-      "Path builder ordinary flow is now captured; directory failure/residue and resource helper004f0330 remain unresolved.",
+      "Path builder and retained enumeration bodies are captured; directory failure/residue and filesystem/provider results remain unresolved.",
       "The template is drive-relative, not a proven root-absolute executable path.",
       "No media, drive, file or game operation executed."
     ]
@@ -700,6 +768,31 @@
     "append": "Copies filename at current terminating NUL; no separator insertion.",
     "normal_append_admission": "unsigned cwd_length <= wrap32(capacity-filename_length-1)",
     "limit": "Caller limit applies after fixed-capacity directory write; no long-directory runtime test."
+  },
+  "retained_file_enumeration": {
+    "bodies": [
+      {
+        "start": "004f0330",
+        "end_exclusive": "004f042b",
+        "bytes": 251,
+        "identical_sha256": "d7e15b9b08b77e1d92eb9f9ffbb899d9417b4286446b1103d77fa1266de77636"
+      },
+      {
+        "start": "004f0280",
+        "end_exclusive": "004f032a",
+        "bytes": 170,
+        "identical_sha256": "6e1f91e186bd1ad253ad1b226f9b7be720b0434e03c8a31f51705257c00892e9"
+      }
+    ],
+    "handle_cell": "005651d4",
+    "file_backed_initial_handle": "ffffffff",
+    "pattern_buffer": "009f09c4",
+    "output_buffer": "009f0ac9",
+    "prefix_length_cell": "009f09c0",
+    "admission_call": "004b63ab",
+    "return": "zero or pointer to shared output buffer, not owned allocation",
+    "filter": "GetFileAttributesA != ffffffff and attribute bit10h clear",
+    "limit": "Matching instructions and IAT names do not establish identical filesystem/provider results or reentrant use."
   },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",

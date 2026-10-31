@@ -17,7 +17,7 @@ LARGEST_RUN_ROUTES = [
     ('004b6020', 'Subsystem setup', 'original-modern-resolution-defaults.md', 'Mapped Modern counterpart; all downstream initialization effects not qualified.'),
     ('004b6250', 'Shutdown envelope', 'original-modern-input-worker.md', 'Mapped Modern counterpart; no join/runtime shutdown proof.'),
     ('004b62a0', 'Six-byte remote prefix test', 'original-modern-startup-requirements.md', 'Body and compare semantics checked; global-source ownership and other callers pending.'),
-    ('004b6320', 'Installation/media admission', 'original-modern-startup-requirements.md', 'Branches and messages checked; path/resource helper contracts incomplete.'),
+    ('004b6320', 'Installation/media admission', 'original-modern-startup-requirements.md', 'Branches, CWD construction and shared enumeration checked; API failures/provider results untested.'),
     ('004b6400', 'Renderer registry values', 'original-modern-registry.md', 'Original removed helper checked; Modern driver-specific replacement mapping incomplete.'),
     ('004b64c0', 'Renderer description registry value', 'original-modern-registry.md', 'Original removed helper checked; error/fallback and external registry behavior untested.'),
     ('004b6520', 'Desktop registry path', 'original-modern-registry.md', 'Original screenshot dependency checked; query failure and lifecycle remain partial.'),
