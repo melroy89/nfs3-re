@@ -173,8 +173,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "1c9562ff2eb45ab7b1e864d3d5002e5fb824afe5ef831ba2e72f65d351bc93fd",
-      "relative_links": 14
+      "sha256": "68e5de40cd27cb8b9df203822c0b3cee1327f54d1f9b8c1be986fe259ef56ea2",
+      "relative_links": 15
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
@@ -523,7 +523,7 @@
     }
   ],
   "file_count": 104,
-  "relative_link_count": 1423,
+  "relative_link_count": 1424,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

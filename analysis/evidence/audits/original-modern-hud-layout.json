@@ -21,6 +21,23 @@
           "assembly_sha256": "40bffc3e0392b0e804f67703c42387833efc1dd134d2d9a3d1c4694b76dfaa0f"
         }
       ],
+      "original_extra_rectangle_table_storage": {
+        "start": "0055d454",
+        "end_exclusive": "0055d694",
+        "bytes": 576,
+        "sha256": "b3ed1fc5fad5d14c4d6f80d952baa0c2a2cd0afd837ebd6dbe7e5674dbbf2125",
+        "file_offset": 1424980,
+        "all_zero": false,
+        "exact_absolute_base_encodings": [
+          "00485810"
+        ],
+        "search_limit": "All file bytes; computed/interior references, startup writes and external access not excluded."
+      },
+      "future_modern_preset_area_original_sample": {
+        "address": "0053ebb8",
+        "value": "nulla.dll",
+        "relation": "Inside Modern embedded table 0053eb20..0053f420; not a shared semantic object."
+      },
       "strings": {
         "0053b660": "%s%cdef.pos",
         "0053b66c": ": -(,)",
@@ -62,6 +79,16 @@
           "assembly_sha256": "88f27e2e03ce2ff2063f1897da19abf82c423158ab6e67a98e7568e52458675f"
         }
       ],
+      "original_extra_rectangle_table_storage": {
+        "start": "0055d454",
+        "end_exclusive": "0055d694",
+        "bytes": 576,
+        "sha256": "1a0295f4bf5986c5f74eca9153a6a4cb10b073a01a76ba4a457fd862c78966a4",
+        "file_offset": 1424980,
+        "all_zero": true,
+        "exact_absolute_base_encodings": [],
+        "search_limit": "All file bytes; computed/interior references, startup writes and external access not excluded."
+      },
       "embedded_preset_table": {
         "va": "0053eb20",
         "bytes": 2304,

@@ -30,6 +30,29 @@ def main():
                 'assembly':str(output.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(output.read_bytes()).hexdigest()})
         row={'path':relative,'sha256':expected,'spans':rows}
+        old_slot=pe.get_data(0x55d454-0x400000,576)
+        section=pe.get_section_by_rva(0x55d454-0x400000)
+        assert section.PointerToRawData and len(old_slot)==576
+        if label=='official_modern':assert old_slot==b'\0'*576
+        base_references=[];position=0
+        while True:
+            offset=data.find(struct.pack('<I',0x55d454),position)
+            if offset<0:break
+            base_references.append(f'{pe.OPTIONAL_HEADER.ImageBase+pe.get_rva_from_offset(offset):08x}')
+            position=offset+1
+        assert base_references==(['00485810'] if label=='original' else [])
+        row['original_extra_rectangle_table_storage']={
+            'start':'0055d454','end_exclusive':'0055d694','bytes':576,
+            'sha256':hashlib.sha256(old_slot).hexdigest(),
+            'file_offset':pe.get_offset_from_rva(0x55d454-0x400000),
+            'all_zero':not any(old_slot),
+            'exact_absolute_base_encodings':base_references,
+            'search_limit':'All file bytes; computed/interior references, startup writes and external access not excluded.'}
+        if label=='original':
+            assert pe.get_data(0x53ebb8-0x400000,10)==b'nulla.dll\0'
+            row['future_modern_preset_area_original_sample']={
+                'address':'0053ebb8','value':'nulla.dll',
+                'relation':'Inside Modern embedded table 0053eb20..0053f420; not a shared semantic object.'}
         if label=='original':
             row['strings']={f'{a:08x}':pe.get_data(a-0x400000,64).split(b'\0')[0].decode('ascii')
                 for a in (0x53b660,0x53b66c,0x53b674,0x53b678)}
