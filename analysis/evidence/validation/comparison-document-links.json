@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "085272343fd4f7ac572fccbd2a7e996f3d9054fc6073be39f87576637e294c2f",
-      "relative_links": 11
+      "sha256": "1f335b11b70bb1cd36aeb3273b064cffe563b9abcc16c3f36d0862cbee82ff32",
+      "relative_links": 12
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -93,8 +93,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "a45df13a4a426c9ec2b9697cb15d264d3540f95d7a181333e5bc46ecdaaccc10",
-      "relative_links": 128
+      "sha256": "3a85caa88f46a3c59c54bf8cd23c299da053ad5c991d40842c058269a47da2c2",
+      "relative_links": 129
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -180,6 +180,11 @@
       "path": "analysis/original-modern-idle-movie.md",
       "sha256": "84c0c238fdf7c8a24072780d9b0c06b5ebd0ef30c3adc4a6d721f2f6150e282e",
       "relative_links": 10
+    },
+    {
+      "path": "analysis/original-modern-initialized-data-index.md",
+      "sha256": "db86a32f9e3aadbb8e5de43d1201893f0b05a99c235987273d06d960fa351c24",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-input-worker.md",
@@ -517,8 +522,8 @@
       "relative_links": 9
     }
   ],
-  "file_count": 103,
-  "relative_link_count": 1414,
+  "file_count": 104,
+  "relative_link_count": 1423,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

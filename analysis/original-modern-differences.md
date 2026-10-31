@@ -37,6 +37,8 @@ The precision blocks studied in the first chapter are the same between official 
 
 The [outside-function address map](original-modern-outside-function-index.md) now ranks all337 uncovered intervals containing changed bytes and retains their full changed-run/hash inventory. Its NOP/zero/other classes are byte observations, not semantic completion.
 
+The [initialized-data address index](original-modern-initialized-data-index.md) separately records all11,576 differing `DGROUP`/`.data` bytes in605 contiguous runs, with original/Modern bytes and relocation-operand annotations. It covers file-backed data only; types, object correspondence and initialization lifetimes still require explicit tracing.
+
 Original and official Modern share a 1,257,472-byte code span at VA `00401000`, raw offset `400`. Within that span **41,441 bytes differ**. Section renaming from `AUTO` to `.code`, and `DGROUP` to `.data`, is not itself an algorithm change.
 
 | Original / Modern region | Comparison |

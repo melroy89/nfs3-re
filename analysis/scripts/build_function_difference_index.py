@@ -17,7 +17,7 @@ def main():
         assert digest(ROOT/row['path'])==row['sha256']
     saved=inventory['function_inventory']
     assert digest(ROOT/saved['path'])==saved['sha256']
-    excluded={'original-modern-differences.md','original-modern-function-index.md','original-modern-outside-function-index.md'}
+    excluded={'original-modern-differences.md','original-modern-function-index.md','original-modern-outside-function-index.md','original-modern-initialized-data-index.md'}
     docs=sorted(p for p in (ROOT/'analysis').glob('original-modern-*.md') if p.name not in excluded)
     docs.append(ROOT/'analysis/og-modern-x87-precision.md')
     sources=[]

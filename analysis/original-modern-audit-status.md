@@ -27,6 +27,7 @@ No additional game execution, instruction probes, toolchain work, C reconstructi
 - [x] All290 documented release-history bullets have stable IDs, full-text reference entries and qualified evidence labels.
 - [x] All361 changed saved Modern function entries have address-based chapter references; this remains navigation coverage only.
 - [x] All337 outside-body intervals with changed bytes have addresses, hashes, changed runs and byte classes; selected mechanisms are linked to prior reports.
+- [x] All11,576 differing initialized-data bytes have a [605-run address/byte map](original-modern-initialized-data-index.md), with PE relocation annotations; semantic object correspondence remains incomplete.
 - [x] Detailed static reports include original/Modern counterparts, register/control/data changes and explicit unknowns. Recent additions cover [legacy DDE removal](original-modern-removed-dde.md), [force-feedback menu field writes](original-modern-force-menu-layout.md), [default tables and fog selection](original-modern-resolution-defaults.md#tier-tables-occupy-former-original-code-final-loadstore-mismatch) and [animation register preservation](original-modern-frontend-page.md#animation-function-boundaries-also-change-register-preservation).
 - [x] Executables, established Ghidra state, raw reference exports and maintained reconstruction sources are preserved by these documentation/static-audit changes.
 - [ ] Every changed instruction/data/asset/DLL mechanism independently explained: still incomplete.
