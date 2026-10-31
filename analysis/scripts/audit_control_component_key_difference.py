@@ -95,6 +95,17 @@ def main():
     assert [i for i,(a,b) in enumerate(zip(compass_old,compass_new)) if a != b] == [5]
     out['adjacent_templates'] = {'baselines': templates,
         'limit': 'The changed DWORD at00557a48 belongs to Compass, not InteriorBx. Meaning of mask0200h and downstream consumers unresolved.'}
+    compass_callbacks = []
+    for start,end in [(0x457460,0x4575a0),(0x4575a0,0x457616),
+                      (0x457620,0x45762a),(0x457630,0x45766d),(0x457670,0x457675)]:
+        paired = {label: pe.get_data(start-0x400000,end-start) for label,pe in images.items()}
+        assert paired['original'] == paired['official_modern']
+        compass_callbacks.append({'start': f'{start:08x}', 'end_exclusive': f'{end:08x}',
+            'bytes': end-start, 'sha256': hashlib.sha256(paired['original']).hexdigest(),
+            'hex': paired['original'].hex()})
+    out['compass_retained_callbacks'] = {'paired_bodies': compass_callbacks,
+        'total_bytes': sum(row['bytes'] for row in compass_callbacks),
+        'limit': 'Five complete callback envelopes match; initialization callback00457680 and generic dispatcher/constructor not qualified.'}
     archive = ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     archive_sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     assert archive_sha == 'c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'

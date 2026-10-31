@@ -133,6 +133,47 @@
     },
     "limit": "The changed DWORD at00557a48 belongs to Compass, not InteriorBx. Meaning of mask0200h and downstream consumers unresolved."
   },
+  "compass_retained_callbacks": {
+    "paired_bodies": [
+      {
+        "start": "00457460",
+        "end_exclusive": "004575a0",
+        "bytes": 320,
+        "sha256": "ddcfe330add522d4251fd36626079dc886c22e480a21d5e758714e389f2b4d47",
+        "hex": "535156575589e589c18915a07d6700ba22000000e8e731ffff85c00f8419010000e8eafdffff83f8ff0f848c0000008d34008b963c985500bb12010000c1fa1029d389da8b5906c1fb1029d38b962a985500bf26020000c1fa1029d78b5104c1fa1029fa8d3c85000000008b87a47d6700e8ba040800ba120100008b86609855008b5906c1f810c1fb1029c28b864e98550029d3ba26020000c1f81029c28b4104c1f81029d089c28b87c87d6700e87d04080031c05d5f5e595bc3e8b0fdffff85c07474ba12010000a14c9855008b5906c1f810c1fb1029c2a13a98550029d3ba26020000c1f81029c28b4104c1f81029d089c2a1c47d6700e832040800ba12010000a1709855008b5906c1f810c1fb1029c2a15e98550029d3ba26020000c1f81029c28b4104c1f81029d089c2a1e87d6700e8f803080031c05d5f5e595bc3"
+      },
+      {
+        "start": "004575a0",
+        "end_exclusive": "00457616",
+        "bytes": 118,
+        "sha256": "22af714b03cebb3fa237d1006823254d6ae0b2f56d2ec5c147f683f3585378bc",
+        "hex": "515589e5ba22000000e8b230ffff31c985c0745f833da07d670000750531c05d59c36681fb004b7505b9020000006681fb004d7505b9020000006683fb207505b9020000006683fb0d7526e880fcffff83f8ff740ae846fdffff89c85d59c3e8ccfcffff85c074096a006a00e8afde000089c85d59c3"
+      },
+      {
+        "start": "00457620",
+        "end_exclusive": "0045762a",
+        "bytes": 10,
+        "sha256": "c6dba9c4f4be98da4ad28e64c1f60df264521b3f2dc0c591817dcecb6b31630f",
+        "hex": "5589e5b8fdffffff5dc3"
+      },
+      {
+        "start": "00457630",
+        "end_exclusive": "0045766d",
+        "bytes": 61,
+        "sha256": "61d29881f70a6a57e7e0b1b4bf2cb09bb13ca2d27f2d6802bc46c09ab5895df0",
+        "hex": "51525589e589c1ba22000000e81f30ffff85c07424668b410666c7411e3d0083e8156689411c668b410866c741203d0083e8166689411a31c05d5a59c3"
+      },
+      {
+        "start": "00457670",
+        "end_exclusive": "00457675",
+        "bytes": 5,
+        "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+        "hex": "5589e55dc3"
+      }
+    ],
+    "total_bytes": 514,
+    "limit": "Five complete callback envelopes match; initialization callback00457680 and generic dispatcher/constructor not qualified."
+  },
   "interior_widget_binding": {
     "exe_bindings": {
       "original": {
