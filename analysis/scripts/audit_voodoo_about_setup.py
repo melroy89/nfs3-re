@@ -3,7 +3,7 @@ import hashlib
 import json
 import subprocess
 import pefile
-from audit_thrash_loader_difference import ROOT
+from audit_thrash_loader_difference import ROOT, SPECS as EXE_SPECS
 from inventory_legacy_dll_candidates import GAME
 
 SPECS = [
@@ -74,12 +74,37 @@ def main():
                         (0x60001b70, 'a3d4270160')]:
         assert modern.get_data(va-modern.OPTIONAL_HEADER.ImageBase, len(bytes.fromhex(encoded))).hex() == encoded
     assert out['files']['official_matching_wrapper']['sha256'] == candidates['files']['modern_voodoo']['sha256']
+    relative, wanted, _ = EXE_SPECS['official_modern']
+    exe_raw = (ROOT/relative).read_bytes()
+    assert hashlib.sha256(exe_raw).hexdigest() == wanted
+    exe = pefile.PE(data=exe_raw)
+    exe_checks = [(0x4bedad, '3b4df87f14'), (0x4bee67, '8a4610a801742f'),
+                  (0x4bee72, '837e14027c25'), (0x4bee7f, 'f77e04')]
+    for va, encoded in exe_checks:
+        assert exe.get_data(va-0x400000, len(bytes.fromhex(encoded))).hex() == encoded
+    section = next(s for s in modern.sections if s.Name.rstrip(b'\0') == b'.bss')
+    assert section.PointerToRawData == 0 and section.Characteristics & 0x80
+    section_start = modern.OPTIONAL_HEADER.ImageBase + section.VirtualAddress
+    described_end = section_start + max(section.Misc_VirtualSize, section.SizeOfRawData)
+    extra_start = 0x60013000 + 101*0x28
+    assert section_start <= extra_start and extra_start+0x28 <= described_end
+    out['published_boundary'] = {
+        'exe_path': relative, 'exe_sha256': wanted,
+        'exe_instruction_checks': [{'va': f'{va:08x}', 'hex': encoded} for va, encoded in exe_checks],
+        'insertion_limit': 100, 'extra_record_at_limit': f'{extra_start:08x}',
+        'extra_record_end_exclusive': f'{extra_start+0x28:08x}',
+        'section': {'name': '.bss', 'va': f'{section_start:08x}',
+            'virtual_size': section.Misc_VirtualSize, 'raw_size_field': section.SizeOfRawData,
+            'raw_pointer': section.PointerToRawData, 'characteristics': f'{section.Characteristics:08x}',
+            'described_end_exclusive': f'{described_end:08x}'},
+        'conditional_result': 'If the extra slot remains zero-filled, EXE rejects it on flags before division.',
+        'limit': 'No runtime mapping or exhaustive write/alias proof; section metadata is not live memory evidence.'}
     out['limits'] = ['Setup writes are not final descriptor values after later hardware-dependent calls.',
         'Local legacy candidate is not independently authenticated retail or paired with nfs3_org.exe.',
         'No API-size/version names assigned to literal +8=0x68; +0x3c/+0x40 mode roles use the separate executable consumer audit.',
         'No DLL execution, compatibility test, Ghidra mutation or executable modification.']
     (ROOT/'analysis/evidence/audits/voodoo-about-setup.json').write_text(json.dumps(out, indent=2)+'\n')
-    print('PASS: pinned DLLs, exported entry addresses and seventeen setup/mode instruction checks')
+    print('PASS: pinned DLLs, exported entry addresses and twenty-one setup/mode/consumer instruction checks')
 
 
 if __name__ == '__main__':

@@ -97,7 +97,7 @@
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
-      "sha256": "3e03bdc3cda1bf80cca477092b6a8f87f229598bd72c63ef872034e7180d7ff6"
+      "sha256": "6d702ff2c852a963c8d3c43e778a7dabefc57000cb5bb5b4f633ed8a5c2b8a10"
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
@@ -9118,6 +9118,13 @@
             "004bedbd",
             "004bedc1"
           ]
+        },
+        {
+          "path": "analysis/original-modern-dll-candidates.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004bedad"
+          ]
         }
       ]
     },
@@ -9210,6 +9217,15 @@
             "004bee8c",
             "004bee8e",
             "004bee99"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-dll-candidates.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004bee67",
+            "004bee6c",
+            "004bee7f"
           ]
         },
         {

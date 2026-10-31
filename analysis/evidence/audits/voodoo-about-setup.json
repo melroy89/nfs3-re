@@ -128,6 +128,42 @@
       ]
     }
   },
+  "published_boundary": {
+    "exe_path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+    "exe_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "exe_instruction_checks": [
+      {
+        "va": "004bedad",
+        "hex": "3b4df87f14"
+      },
+      {
+        "va": "004bee67",
+        "hex": "8a4610a801742f"
+      },
+      {
+        "va": "004bee72",
+        "hex": "837e14027c25"
+      },
+      {
+        "va": "004bee7f",
+        "hex": "f77e04"
+      }
+    ],
+    "insertion_limit": 100,
+    "extra_record_at_limit": "60013fc8",
+    "extra_record_end_exclusive": "60013ff0",
+    "section": {
+      "name": ".bss",
+      "va": "60011000",
+      "virtual_size": 0,
+      "raw_size_field": 12288,
+      "raw_pointer": 0,
+      "characteristics": "c0000080",
+      "described_end_exclusive": "60014000"
+    },
+    "conditional_result": "If the extra slot remains zero-filled, EXE rejects it on flags before division.",
+    "limit": "No runtime mapping or exhaustive write/alias proof; section metadata is not live memory evidence."
+  },
   "limits": [
     "Setup writes are not final descriptor values after later hardware-dependent calls.",
     "Local legacy candidate is not independently authenticated retail or paired with nfs3_org.exe.",
