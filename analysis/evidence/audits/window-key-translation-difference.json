@@ -1,0 +1,203 @@
+{
+  "kind": "static-window-key-translation-comparison",
+  "baselines": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "entry": "004ccaa0",
+      "end_exclusive": "004ccc67",
+      "bytes": 455,
+      "hex": "5589e53d04010000740b3d000100000f85ae01000083fa650f82930000000f864401000083fa73724a0f865501000083fa77722b0f866601000083fa790f82640100000f866501000083fa7a0f866301000083fa7b0f846101000031c05dc383fa750f82230100000f8624010000e92601000083fa6972230f86ab00000083fa71720b0f86ed000000e9ef00000083fa700f84d800000031c05dc383fa670f82a80000000f8694000000b8004800005dc383fa28724a0f869700000083fa61721a0f867000000083fa630f82830000000f865a000000e96a00000083fa2e72130f867b00000083fa600f846b00000031c05dc383fa2d0f845e00000031c05dc383fa247212763783fa267239769ceb3cb8004b00005dc383fa2272047612eb1783fa21740431c05dc3b8004900005dc3b8005100005dc3b8004f00005dc3b8004700005dc3b8004b00005dc3b8004d00005dc3b8005000005dc3b8005200005dc3b8005300005dc3b8004c00005dc3b8003b00005dc3b8003c00005dc3b8003d00005dc3b8003e00005dc3b8003f00005dc3b8004000005dc3b8004100005dc3b8004200005dc3b8004300005dc3b8004400005dc3b8008700005dc3b8008800005dc331c05dc3",
+      "body_sha256": "4f63690260266ab788ca1655e4550c2b9d092b6c3b6d29f123dbba4569f91845",
+      "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe:     file format pei-i386\n\n\nDisassembly of section AUTO:\n\n004ccaa0 <AUTO+0xcbaa0>:\n  4ccaa0:\t55                   \tpush   ebp\n  4ccaa1:\t89 e5                \tmov    ebp,esp\n  4ccaa3:\t3d 04 01 00 00       \tcmp    eax,0x104\n  4ccaa8:\t74 0b                \tje     0x4ccab5\n  4ccaaa:\t3d 00 01 00 00       \tcmp    eax,0x100\n  4ccaaf:\t0f 85 ae 01 00 00    \tjne    0x4ccc63\n  4ccab5:\t83 fa 65             \tcmp    edx,0x65\n  4ccab8:\t0f 82 93 00 00 00    \tjb     0x4ccb51\n  4ccabe:\t0f 86 44 01 00 00    \tjbe    0x4ccc08\n  4ccac4:\t83 fa 73             \tcmp    edx,0x73\n  4ccac7:\t72 4a                \tjb     0x4ccb13\n  4ccac9:\t0f 86 55 01 00 00    \tjbe    0x4ccc24\n  4ccacf:\t83 fa 77             \tcmp    edx,0x77\n  4ccad2:\t72 2b                \tjb     0x4ccaff\n  4ccad4:\t0f 86 66 01 00 00    \tjbe    0x4ccc40\n  4ccada:\t83 fa 79             \tcmp    edx,0x79\n  4ccadd:\t0f 82 64 01 00 00    \tjb     0x4ccc47\n  4ccae3:\t0f 86 65 01 00 00    \tjbe    0x4ccc4e\n  4ccae9:\t83 fa 7a             \tcmp    edx,0x7a\n  4ccaec:\t0f 86 63 01 00 00    \tjbe    0x4ccc55\n  4ccaf2:\t83 fa 7b             \tcmp    edx,0x7b\n  4ccaf5:\t0f 84 61 01 00 00    \tje     0x4ccc5c\n  4ccafb:\t31 c0                \txor    eax,eax\n  4ccafd:\t5d                   \tpop    ebp\n  4ccafe:\tc3                   \tret\n  4ccaff:\t83 fa 75             \tcmp    edx,0x75\n  4ccb02:\t0f 82 23 01 00 00    \tjb     0x4ccc2b\n  4ccb08:\t0f 86 24 01 00 00    \tjbe    0x4ccc32\n  4ccb0e:\te9 26 01 00 00       \tjmp    0x4ccc39\n  4ccb13:\t83 fa 69             \tcmp    edx,0x69\n  4ccb16:\t72 23                \tjb     0x4ccb3b\n  4ccb18:\t0f 86 ab 00 00 00    \tjbe    0x4ccbc9\n  4ccb1e:\t83 fa 71             \tcmp    edx,0x71\n  4ccb21:\t72 0b                \tjb     0x4ccb2e\n  4ccb23:\t0f 86 ed 00 00 00    \tjbe    0x4ccc16\n  4ccb29:\te9 ef 00 00 00       \tjmp    0x4ccc1d\n  4ccb2e:\t83 fa 70             \tcmp    edx,0x70\n  4ccb31:\t0f 84 d8 00 00 00    \tje     0x4ccc0f\n  4ccb37:\t31 c0                \txor    eax,eax\n  4ccb39:\t5d                   \tpop    ebp\n  4ccb3a:\tc3                   \tret\n  4ccb3b:\t83 fa 67             \tcmp    edx,0x67\n  4ccb3e:\t0f 82 a8 00 00 00    \tjb     0x4ccbec\n  4ccb44:\t0f 86 94 00 00 00    \tjbe    0x4ccbde\n  4ccb4a:\tb8 00 48 00 00       \tmov    eax,0x4800\n  4ccb4f:\t5d                   \tpop    ebp\n  4ccb50:\tc3                   \tret\n  4ccb51:\t83 fa 28             \tcmp    edx,0x28\n  4ccb54:\t72 4a                \tjb     0x4ccba0\n  4ccb56:\t0f 86 97 00 00 00    \tjbe    0x4ccbf3\n  4ccb5c:\t83 fa 61             \tcmp    edx,0x61\n  4ccb5f:\t72 1a                \tjb     0x4ccb7b\n  4ccb61:\t0f 86 70 00 00 00    \tjbe    0x4ccbd7\n  4ccb67:\t83 fa 63             \tcmp    edx,0x63\n  4ccb6a:\t0f 82 83 00 00 00    \tjb     0x4ccbf3\n  4ccb70:\t0f 86 5a 00 00 00    \tjbe    0x4ccbd0\n  4ccb76:\te9 6a 00 00 00       \tjmp    0x4ccbe5\n  4ccb7b:\t83 fa 2e             \tcmp    edx,0x2e\n  4ccb7e:\t72 13                \tjb     0x4ccb93\n  4ccb80:\t0f 86 7b 00 00 00    \tjbe    0x4ccc01\n  4ccb86:\t83 fa 60             \tcmp    edx,0x60\n  4ccb89:\t0f 84 6b 00 00 00    \tje     0x4ccbfa\n  4ccb8f:\t31 c0                \txor    eax,eax\n  4ccb91:\t5d                   \tpop    ebp\n  4ccb92:\tc3                   \tret\n  4ccb93:\t83 fa 2d             \tcmp    edx,0x2d\n  4ccb96:\t0f 84 5e 00 00 00    \tje     0x4ccbfa\n  4ccb9c:\t31 c0                \txor    eax,eax\n  4ccb9e:\t5d                   \tpop    ebp\n  4ccb9f:\tc3                   \tret\n  4ccba0:\t83 fa 24             \tcmp    edx,0x24\n  4ccba3:\t72 12                \tjb     0x4ccbb7\n  4ccba5:\t76 37                \tjbe    0x4ccbde\n  4ccba7:\t83 fa 26             \tcmp    edx,0x26\n  4ccbaa:\t72 39                \tjb     0x4ccbe5\n  4ccbac:\t76 9c                \tjbe    0x4ccb4a\n  4ccbae:\teb 3c                \tjmp    0x4ccbec\n  4ccbb0:\tb8 00 4b 00 00       \tmov    eax,0x4b00\n  4ccbb5:\t5d                   \tpop    ebp\n  4ccbb6:\tc3                   \tret\n  4ccbb7:\t83 fa 22             \tcmp    edx,0x22\n  4ccbba:\t72 04                \tjb     0x4ccbc0\n  4ccbbc:\t76 12                \tjbe    0x4ccbd0\n  4ccbbe:\teb 17                \tjmp    0x4ccbd7\n  4ccbc0:\t83 fa 21             \tcmp    edx,0x21\n  4ccbc3:\t74 04                \tje     0x4ccbc9\n  4ccbc5:\t31 c0                \txor    eax,eax\n  4ccbc7:\t5d                   \tpop    ebp\n  4ccbc8:\tc3                   \tret\n  4ccbc9:\tb8 00 49 00 00       \tmov    eax,0x4900\n  4ccbce:\t5d                   \tpop    ebp\n  4ccbcf:\tc3                   \tret\n  4ccbd0:\tb8 00 51 00 00       \tmov    eax,0x5100\n  4ccbd5:\t5d                   \tpop    ebp\n  4ccbd6:\tc3                   \tret\n  4ccbd7:\tb8 00 4f 00 00       \tmov    eax,0x4f00\n  4ccbdc:\t5d                   \tpop    ebp\n  4ccbdd:\tc3                   \tret\n  4ccbde:\tb8 00 47 00 00       \tmov    eax,0x4700\n  4ccbe3:\t5d                   \tpop    ebp\n  4ccbe4:\tc3                   \tret\n  4ccbe5:\tb8 00 4b 00 00       \tmov    eax,0x4b00\n  4ccbea:\t5d                   \tpop    ebp\n  4ccbeb:\tc3                   \tret\n  4ccbec:\tb8 00 4d 00 00       \tmov    eax,0x4d00\n  4ccbf1:\t5d                   \tpop    ebp\n  4ccbf2:\tc3                   \tret\n  4ccbf3:\tb8 00 50 00 00       \tmov    eax,0x5000\n  4ccbf8:\t5d                   \tpop    ebp\n  4ccbf9:\tc3                   \tret\n  4ccbfa:\tb8 00 52 00 00       \tmov    eax,0x5200\n  4ccbff:\t5d                   \tpop    ebp\n  4ccc00:\tc3                   \tret\n  4ccc01:\tb8 00 53 00 00       \tmov    eax,0x5300\n  4ccc06:\t5d                   \tpop    ebp\n  4ccc07:\tc3                   \tret\n  4ccc08:\tb8 00 4c 00 00       \tmov    eax,0x4c00\n  4ccc0d:\t5d                   \tpop    ebp\n  4ccc0e:\tc3                   \tret\n  4ccc0f:\tb8 00 3b 00 00       \tmov    eax,0x3b00\n  4ccc14:\t5d                   \tpop    ebp\n  4ccc15:\tc3                   \tret\n  4ccc16:\tb8 00 3c 00 00       \tmov    eax,0x3c00\n  4ccc1b:\t5d                   \tpop    ebp\n  4ccc1c:\tc3                   \tret\n  4ccc1d:\tb8 00 3d 00 00       \tmov    eax,0x3d00\n  4ccc22:\t5d                   \tpop    ebp\n  4ccc23:\tc3                   \tret\n  4ccc24:\tb8 00 3e 00 00       \tmov    eax,0x3e00\n  4ccc29:\t5d                   \tpop    ebp\n  4ccc2a:\tc3                   \tret\n  4ccc2b:\tb8 00 3f 00 00       \tmov    eax,0x3f00\n  4ccc30:\t5d                   \tpop    ebp\n  4ccc31:\tc3                   \tret\n  4ccc32:\tb8 00 40 00 00       \tmov    eax,0x4000\n  4ccc37:\t5d                   \tpop    ebp\n  4ccc38:\tc3                   \tret\n  4ccc39:\tb8 00 41 00 00       \tmov    eax,0x4100\n  4ccc3e:\t5d                   \tpop    ebp\n  4ccc3f:\tc3                   \tret\n  4ccc40:\tb8 00 42 00 00       \tmov    eax,0x4200\n  4ccc45:\t5d                   \tpop    ebp\n  4ccc46:\tc3                   \tret\n  4ccc47:\tb8 00 43 00 00       \tmov    eax,0x4300\n  4ccc4c:\t5d                   \tpop    ebp\n  4ccc4d:\tc3                   \tret\n  4ccc4e:\tb8 00 44 00 00       \tmov    eax,0x4400\n  4ccc53:\t5d                   \tpop    ebp\n  4ccc54:\tc3                   \tret\n  4ccc55:\tb8 00 87 00 00       \tmov    eax,0x8700\n  4ccc5a:\t5d                   \tpop    ebp\n  4ccc5b:\tc3                   \tret\n  4ccc5c:\tb8 00 88 00 00       \tmov    eax,0x8800\n  4ccc61:\t5d                   \tpop    ebp\n  4ccc62:\tc3                   \tret\n  4ccc63:\t31 c0                \txor    eax,eax\n  4ccc65:\t5d                   \tpop    ebp\n  4ccc66:\tc3                   \tret\n"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "entry": "004ccaa0",
+      "end_exclusive": "004ccaf6",
+      "bytes": 86,
+      "hex": "563d04010000740b3d00010000740431c0eb41bef8ca4c000fb70685c0740939d0742d83c604ebf06890000000ff1544475300a801740431c0eb19be54cb4c000fb70685c0740d39d0740583c604ebf00fb746025ec3",
+      "body_sha256": "72e4428a16349fe8ea48552cfa37d0756c0811f1b6528764e7c06ff6f749fea3",
+      "disassembly": "\n/home/melroy/Documents/projects/nfs3-re/analysis/captures/modern-differences/upstream/package/nfs3.exe:     file format pei-i386\n\n\nDisassembly of section .code:\n\n004ccaa0 <.code+0xcbaa0>:\n  4ccaa0:\t56                   \tpush   esi\n  4ccaa1:\t3d 04 01 00 00       \tcmp    eax,0x104\n  4ccaa6:\t74 0b                \tje     0x4ccab3\n  4ccaa8:\t3d 00 01 00 00       \tcmp    eax,0x100\n  4ccaad:\t74 04                \tje     0x4ccab3\n  4ccaaf:\t31 c0                \txor    eax,eax\n  4ccab1:\teb 41                \tjmp    0x4ccaf4\n  4ccab3:\tbe f8 ca 4c 00       \tmov    esi,0x4ccaf8\n  4ccab8:\t0f b7 06             \tmovzx  eax,WORD PTR [esi]\n  4ccabb:\t85 c0                \ttest   eax,eax\n  4ccabd:\t74 09                \tje     0x4ccac8\n  4ccabf:\t39 d0                \tcmp    eax,edx\n  4ccac1:\t74 2d                \tje     0x4ccaf0\n  4ccac3:\t83 c6 04             \tadd    esi,0x4\n  4ccac6:\teb f0                \tjmp    0x4ccab8\n  4ccac8:\t68 90 00 00 00       \tpush   0x90\n  4ccacd:\tff 15 44 47 53 00    \tcall   DWORD PTR ds:0x534744\n  4ccad3:\ta8 01                \ttest   al,0x1\n  4ccad5:\t74 04                \tje     0x4ccadb\n  4ccad7:\t31 c0                \txor    eax,eax\n  4ccad9:\teb 19                \tjmp    0x4ccaf4\n  4ccadb:\tbe 54 cb 4c 00       \tmov    esi,0x4ccb54\n  4ccae0:\t0f b7 06             \tmovzx  eax,WORD PTR [esi]\n  4ccae3:\t85 c0                \ttest   eax,eax\n  4ccae5:\t74 0d                \tje     0x4ccaf4\n  4ccae7:\t39 d0                \tcmp    eax,edx\n  4ccae9:\t74 05                \tje     0x4ccaf0\n  4ccaeb:\t83 c6 04             \tadd    esi,0x4\n  4ccaee:\teb f0                \tjmp    0x4ccae0\n  4ccaf0:\t0f b7 46 02          \tmovzx  eax,WORD PTR [esi+0x2]\n  4ccaf4:\t5e                   \tpop    esi\n  4ccaf5:\tc3                   \tret\n"
+    }
+  },
+  "modern_tables": [
+    {
+      "start": "004ccaf8",
+      "end_exclusive": "004ccb54",
+      "hex": "2500004b2700004d26000048280000502e0000532100004922000051240000472300004f2d0000527000003b7100003c7200003d7300003e7400003f75000040760000417700004278000043790000447a0000877b00008800000000",
+      "sha256": "87b2f29a14fca11616a7c18d2e5430ccfb6b18645b5cd3218c98e44aa3db7146",
+      "entries": [
+        {
+          "input": "0025",
+          "output": "4b00"
+        },
+        {
+          "input": "0027",
+          "output": "4d00"
+        },
+        {
+          "input": "0026",
+          "output": "4800"
+        },
+        {
+          "input": "0028",
+          "output": "5000"
+        },
+        {
+          "input": "002e",
+          "output": "5300"
+        },
+        {
+          "input": "0021",
+          "output": "4900"
+        },
+        {
+          "input": "0022",
+          "output": "5100"
+        },
+        {
+          "input": "0024",
+          "output": "4700"
+        },
+        {
+          "input": "0023",
+          "output": "4f00"
+        },
+        {
+          "input": "002d",
+          "output": "5200"
+        },
+        {
+          "input": "0070",
+          "output": "3b00"
+        },
+        {
+          "input": "0071",
+          "output": "3c00"
+        },
+        {
+          "input": "0072",
+          "output": "3d00"
+        },
+        {
+          "input": "0073",
+          "output": "3e00"
+        },
+        {
+          "input": "0074",
+          "output": "3f00"
+        },
+        {
+          "input": "0075",
+          "output": "4000"
+        },
+        {
+          "input": "0076",
+          "output": "4100"
+        },
+        {
+          "input": "0077",
+          "output": "4200"
+        },
+        {
+          "input": "0078",
+          "output": "4300"
+        },
+        {
+          "input": "0079",
+          "output": "4400"
+        },
+        {
+          "input": "007a",
+          "output": "8700"
+        },
+        {
+          "input": "007b",
+          "output": "8800"
+        }
+      ]
+    },
+    {
+      "start": "004ccb54",
+      "end_exclusive": "004ccb84",
+      "hex": "600000526100004f62000050630000516400004b6500004c6600004d6700004768000048690000496c00005300000000",
+      "sha256": "ff540f87f8a9a9c2cab538a2e1dc60f6cc23d834875acdee47f3c879415494d6",
+      "entries": [
+        {
+          "input": "0060",
+          "output": "5200"
+        },
+        {
+          "input": "0061",
+          "output": "4f00"
+        },
+        {
+          "input": "0062",
+          "output": "5000"
+        },
+        {
+          "input": "0063",
+          "output": "5100"
+        },
+        {
+          "input": "0064",
+          "output": "4b00"
+        },
+        {
+          "input": "0065",
+          "output": "4c00"
+        },
+        {
+          "input": "0066",
+          "output": "4d00"
+        },
+        {
+          "input": "0067",
+          "output": "4700"
+        },
+        {
+          "input": "0068",
+          "output": "4800"
+        },
+        {
+          "input": "0069",
+          "output": "4900"
+        },
+        {
+          "input": "006c",
+          "output": "5300"
+        }
+      ]
+    }
+  ],
+  "numlock_gate": {
+    "import_iat": "00534744",
+    "import": "GetKeyState",
+    "argument": 144,
+    "tested_mask": 1,
+    "behavior": "Primary table first; on miss, set toggle bit returns0; clear bit scans keypad table.",
+    "register_dependency": "EDX key reused after GetKeyState without local save; provider preservation not established."
+  },
+  "old_key_006c_path": [
+    "004ccab5",
+    "004ccac4",
+    "004ccb13",
+    "004ccb1e",
+    "004ccb2e",
+    "004ccb37 -> EAX0"
+  ],
+  "outside_interval": {
+    "start": "004ccaf6",
+    "end_exclusive": "004ccb84",
+    "bytes": 142,
+    "changed_bytes": 116,
+    "modern_partition": "2 NOP bytes +92-byte primary table +48-byte keypad table"
+  },
+  "limits": [
+    "Static mapping/branch evidence only; no keyboard, OS, game or instruction probes.",
+    "No exhaustive original/Modern input equivalence claim; actual message routing, Num Lock provider result and EDX preservation remain dependencies.",
+    "Table DWORDs are data, not instructions or function pointers."
+  ]
+}

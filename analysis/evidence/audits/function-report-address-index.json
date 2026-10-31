@@ -436,6 +436,10 @@
       "sha256": "baf9464c8f2d0403718c5ce841b52e2ad97469e1d5f08c2df471dcba16790d86"
     },
     {
+      "path": "analysis/original-modern-window-key-translation.md",
+      "sha256": "e810de554d4e24bad3fcccfe84c4bc4b55249abb35786c1b299304225a121ab8"
+    },
+    {
       "path": "analysis/original-modern-window-key.md",
       "sha256": "9a44eaadee4472b7f01ced776a7c8d07cd028b9efac7d77e76792e101ca0111a"
     },
@@ -9950,6 +9954,15 @@
       "modern_sha256": "72e4428a16349fe8ea48552cfa37d0756c0811f1b6528764e7c06ff6f749fea3",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-window-key-translation.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004ccaa0",
+            "004ccab5",
+            "004ccac4"
+          ]
+        },
+        {
           "path": "analysis/original-modern-window-key.md",
           "entry_mentioned": true,
           "addresses": [
@@ -10004,6 +10017,13 @@
           "addresses": [
             "004ccb84"
           ]
+        },
+        {
+          "path": "analysis/original-modern-window-key-translation.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004ccb84"
+          ]
         }
       ]
     },
@@ -10038,6 +10058,13 @@
             "004ccc40",
             "004ccc70",
             "004ccca3"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-window-key-translation.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004ccc67"
           ]
         },
         {
