@@ -111,6 +111,20 @@
           "assembly_sha256": "69aafd18fb677bb4d41e9805beae38fc8dcfcf8050aa536477cde25c8da18ca1"
         },
         {
+          "start": "004b597b",
+          "end": "004b599e",
+          "sha256": "287584094cd12563466e386e367161d93978039f8c6226a10f4950a21f92e782",
+          "assembly": "analysis/captures/modern-differences/state14/modern-004b597b.asm",
+          "assembly_sha256": "57a2606c81ee8b01ea6fd32ea7482bde60ed055c990c75678cb0bac8e5de6b7c"
+        },
+        {
+          "start": "004b5bb0",
+          "end": "004b5bd6",
+          "sha256": "c5b8ad3dd06907f2eb0fd55559b52ae5d2f491cb49f0b8481d01de3647c05cfa",
+          "assembly": "analysis/captures/modern-differences/state14/modern-004b5bb0.asm",
+          "assembly_sha256": "d41a04f39cc06a341fc07cc085c7189c09899e7b8b63f04819f30346d6589c49"
+        },
+        {
           "start": "00431c1c",
           "end": "00431c33",
           "sha256": "1747b2318043138b32ca1e63c0d03190867f10048eb68a42471db559164f0775",
@@ -148,6 +162,11 @@
       "sha256": "37993537bc576246c3696a0c7dc62dbf5b4b97781c5a64dd480243151e9bc496"
     }
   ],
+  "official_dx7_config": {
+    "member": "drivers/dx7/thrash.ini",
+    "sha256": "f6c34fd207053031f63819ceac4b5dd48724768679a816cfcca074b6090e2bfe",
+    "FogSupport": 1
+  },
   "dx7_selector21": {
     "dispatch_index": 19,
     "case": "60004c44"

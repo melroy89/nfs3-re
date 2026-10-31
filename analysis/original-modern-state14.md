@@ -103,3 +103,13 @@ Microsoft’s legacy [render-state declarations](https://github.com/microsoft/wi
 The density cache reapplied here is exactly **`600170e8`**, the cell written by state14’s reciprocal/raw-bit route. Thus the game’s retained state21 reapplication has a concrete backend coupling to density and fog mode. Each case can mark its local result successful after issuing helper calls without validating every helper result; the game’s own cache also stores requests before dispatch. Accepted GPU state remains a separate question.
 
 This resolves the previously unnamed coupling for the official DX7 backend. It does not prove fog is enabled in any particular scene, establish equivalent original-driver behavior, or explain all game callers’ state21 choices. No fog mode was set at runtime.
+
+## Support producer: configuration opt-in followed by mode trial
+
+Modern **`004b597b..004b599e`** reads `GetPrivateProfileIntA("THRASH","FogSupport",0,path)` with path pointer **`007a382c`**, normalizes any nonzero result to1 and stores **`007a3a54`**. The official DX7 `thrash.ini` contains **`FogSupport=1`**; the audit extracts that exact archive member and retains its SHA-256. A setting of0 bypasses the following trial, so this cell is not a pure hardware-capability result.
+
+The already compared [renderer-initialization route](original-modern-renderer-initialization.md) reaches **`004b5bb0..004b5bd6`** in its software/d/v common path. When the cell is nonzero, it directly invokes `_THRASH_setstate@8` with **`(21,4)`**. Return0 clears the cell; nonzero retains it. It then issues **`(21,0)`** regardless of the flag. The generic initializer route described in that report skips this common block, so no universal “all renderer paths query support” claim is made.
+
+The newly decoded DX7 case above identifies value4 as a fog-table-mode route and value0 as fog disable. The game therefore uses an opt-in plus a mode-setting trial and its return, rather than a separate dedicated capability API. Driver capability gates and its local return conventions qualify that result; later lower-level device-call failure is not necessarily reflected. Configuration path construction, all alternative initialization paths and actual hardware acceptance remain separate evidence.
+
+This gives partial static support for **MP161-010** (“asks a renderer if it supports the fog effect”). It does not date the behavior’s introduction, prove successful visual fog or turn the opt-in cell into a fully verified support Boolean for every backend. No INI value was changed and no renderer was invoked.

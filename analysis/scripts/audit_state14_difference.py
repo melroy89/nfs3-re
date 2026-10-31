@@ -18,6 +18,9 @@ def main():
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
         if label=='official_modern':
+            for start,end in [(0x4b597b,0x4b599e),(0x4b5bb0,0x4b5bd6)]:
+                path=capture/f'modern-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
+                rows.append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
             path=capture/'modern-00431c1c.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel','--start-address=0x431c1c','--stop-address=0x431c33',relative],cwd=ROOT))
             rows.append({'start':'00431c1c','end':'00431c33','sha256':hashlib.sha256(pe.get_data(0x31c1c,23)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows}
@@ -32,6 +35,9 @@ def main():
         result['identical_ranges'].append({'start':f'{start:08x}','end':f'{end:08x}','sha256':hashlib.sha256(a).hexdigest()})
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    ini=subprocess.check_output(['7z','x','-so',str(archive),'drivers/dx7/thrash.ini'])
+    assert b'FogSupport=1' in ini
+    result['official_dx7_config']={'member':'drivers/dx7/thrash.ini','sha256':hashlib.sha256(ini).hexdigest(),'FogSupport':1}
     member='drivers/dx7/dx7a.dll';raw=subprocess.check_output(['7z','x','-so',str(archive),member])
     relative='analysis/captures/modern-differences/upstream/package/'+member
     assert (ROOT/relative).read_bytes()==raw
