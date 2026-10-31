@@ -206,7 +206,11 @@ The [viewport-pose comparison](original-modern-viewport-pose.md) traces Modernâ€
 
 The [frontend-page comparison](original-modern-frontend-page.md) verifies a one-byte dispatch extension plus an out-of-line resource arm, and page record 75 changing from localized text to `ABOUT.QFS`/`cred`. Payload/render validation remains pending.
 
-## 33. Prioritized semantic work remaining
+## 33. Pending localized overlay
+
+The [overlay comparison](original-modern-pending-overlay.md) traces changed formatting and coordinated producer/consumer coordinate storage. Complete message identity, all writers and actual rendering remain pending.
+
+## 34. Prioritized semantic work remaining
 
 The full JSON inventory gives every current Modern local function name, entry/ranges, original/Modern hashes, changed-byte count, thunk marker and original-entry candidate flag. The following ten high-change clusters now have initial instruction-level comparisons linked above. Remaining column entries identify what is still needed for complete semantic/behavioral coverage; they are not ten untouched investigations:
 

@@ -1,0 +1,52 @@
+{
+  "kind": "static-pending-overlay-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00494bd0",
+          "end": "00494ca6",
+          "bytes_sha256": "7e42d957e706ce9dd3a75cefe451a7dc76a678b36e1aa64fb43d744476ee8d0f",
+          "assembly": "analysis/captures/modern-differences/pending-overlay/original-00494bd0.asm",
+          "assembly_sha256": "3a3635347d9014978ac4552cc8fc200df53f6601b96f35b8105aa53fd03d611f"
+        },
+        {
+          "start": "00494f42",
+          "end": "00494f79",
+          "bytes_sha256": "5b4361adda408abd2596dd865f41c146a6fc50eb821d1967ce58a4dcd73d0e5d",
+          "assembly": "analysis/captures/modern-differences/pending-overlay/original-00494f42.asm",
+          "assembly_sha256": "1664cb530ccbce689f01ff4b11d190ba875cdf646831ba1a69a1fe412a07cd76"
+        }
+      ],
+      "format_0053bdc8": " ... %s"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00494bd0",
+          "end": "00494c5a",
+          "bytes_sha256": "fd5b3768f386cad17888691767e16a89c02c25c500690cbb44bb35543dcc8eeb",
+          "assembly": "analysis/captures/modern-differences/pending-overlay/official_modern-00494bd0.asm",
+          "assembly_sha256": "eee4c11267b4e868eff86be64c2d1ea2e2d4a0d5a066760f18044db97260840e"
+        },
+        {
+          "start": "00494ec0",
+          "end": "00494f12",
+          "bytes_sha256": "8ab3d5e335ee1662ec2536434fa4176205d1ba233fec84f5970cd6f09eefa21d",
+          "assembly": "analysis/captures/modern-differences/pending-overlay/official_modern-00494ec0.asm",
+          "assembly_sha256": "b5ebfb9ae2a26fc458f4fe15ec7c590ff42bfa6bc4240933588e4476c1c3635b"
+        }
+      ],
+      "format_0053bdc8": " %s"
+    }
+  },
+  "limits": [
+    "Producer spans are selected witnesses, not complete containing functions.",
+    "No rendering or target execution."
+  ]
+}

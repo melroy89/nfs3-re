@@ -77,3 +77,5 @@ Use Markdown for small, reviewable findings. Follow [the sharing workflow](../do
 - [Original versus Modern viewport pose](original-modern-viewport-pose.md): fixed descriptor admission, temporary camera restoration and identical finalizer.
 
 - [Original versus Modern resource-backed frontend page](original-modern-frontend-page.md): one-byte dispatch extension, out-of-line resource arm and text-to-resource record change.
+
+- [Original versus Modern pending overlay](original-modern-pending-overlay.md): changed format and coordinated floating-to-integer coordinate storage.

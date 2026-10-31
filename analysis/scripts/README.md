@@ -309,3 +309,7 @@ Run `python3 analysis/scripts/audit_frontend_page_difference.py`. Verifies the o
 ## Installed credits text range
 
 Run `python3 analysis/scripts/inventory_credits_text_range.py --game-dir "<installed game directory>"`. Hashes 18 installed/local backup language files and records bounded offsets, lengths and content hashes for twelve credits IDs; asserts the separator is empty. Output: `analysis/evidence/inventories/installed-credits-text-range.json`. No game execution. See [credits layout findings](../original-modern-frontend-page.md#installed-text-range-blank-separator-and-row-positions).
+
+## Original versus Modern pending overlay
+
+Run `python3 analysis/scripts/audit_pending_overlay_difference.py`. Captures complete paired overlay bodies, selected coordinate producers and format strings in `analysis/evidence/audits/original-modern-pending-overlay.json`. No target execution. See [overlay comparison](../original-modern-pending-overlay.md).
