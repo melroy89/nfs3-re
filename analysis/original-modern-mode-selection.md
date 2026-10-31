@@ -73,3 +73,27 @@ Both versions subsequently invoke the optional callback at incoming context `+0c
 Original's application body also clamps a requested signed index below 1 to 1 and uses descriptor records of stride `28h`; it obtains the about descriptor through `009ef980`. This follow-up retains that complete original body for further comparison but does not claim that all its renderer calls, failure handling or publication paths are equivalent to Modern's previously analysed routine.
 
 **Bounded work status: done for the complete recovery callback and callsite correspondence. Confidence: verified static instructions and existing export evidence.** Required follow-up is the producers/clearing protocol of `00559444`, full original/Modern application failure-path comparison, callback lifetime and actual recovery observation. A C reconstruction must retain the pending-loop and return semantics until those contracts are qualified. No target execution, Ghidra writes or maintained-C edits were performed.
+
+## Original application failure gate and preparation sequence are now paired
+
+The expanded audit now directly checks original application's driver-result gate `004bf060` and Modern's `004bef2a`. **Both test EAX after `_THRASH_setvideomode@12` and skip current-index/live-record publication on zero.** Failure gating is therefore retained behavior, not a new check introduced by Modern. Original failure reaches its post-request surface sequence at `004bf0d7`; Modern reaches its preparation-helper call at `004bef94`.
+
+Original duplicates a 47-byte preparation sequence at `004bf022..004bf051` and `004bf0d7..004bf106`. Modern factors it into `004bef9d..004befcd` (48 bytes, including RET). The audit verifies equality of all 47 instruction bytes after normalizing the single direct CALL displacement. The sequence passes 2 through renderer slot `009ef938`, calls state wrapper `00431900` with EAX=3/EDX=`ff000000`, then calls renderer slots `009ef970`, `009ef940`, `009ef970`, `009ef940` in that order. Slot bindings remain those of the pinned renderer-loader evidence; this comparison does not execute the driver operations.
+
+Both different-index paths retain a flush/pageflip pair before that sequence and a second sequence after the mode request. Thus much of the apparent application-size reduction is factoring duplicated instructions, not removal of every preparation operation. Their transitive effects still depend on the renderer.
+
+A separate interface change precedes the request: original caps record DWORD `+14` using a **signed** comparison against 2; Modern uses an **unsigned** comparison. Ordinary nonnegative values 0..2 pass through and larger positive values cap to 2 in both. Values with the high bit set can differ: original treats them as signed negative and retains them, Modern caps them to 2. Both derive the subsequent Boolean from a signed comparison with record `+18`. The enumerator's ordinary record-admission evidence is not a universal proof that every application caller/driver supplies only those ordinary values.
+
+The timing of local setup/publication also differs:
+
+| Step | Original `004bef50` | Modern `004beeb0` |
+|---|---|---|
+| Initial descriptor source | Fresh about-export call | Cached descriptor |
+| Same-current-index route | Copies ten record DWORDs and updates/copies rectangle state | Joins descriptor-refresh/window/publication route |
+| Window resize/setup before driver request | No `004cdbd0` call in this complete body | Calls `004cdbd0` before requesting mode |
+| Successful request | Publishes current index/record and retained state/rectangle updates | Publishes index/state, then refreshes descriptor, resize/setup and foreground request before record/rectangle publication |
+| Zero driver result | Skips publication; still executes post sequence | Skips publication; still executes preparation helper |
+
+Modern therefore can have performed local resize/setup even when the later driver request fails; this local body supplies no explicit rollback of that earlier operation. Original's absence of that call in its complete body does not exclude equivalent work inside the driver or other callers. The retained recovery callback discussed above still does not turn either local result into a verified successful switch.
+
+**Follow-up status: done for failure-branch correspondence, exact preparation factoring and argument signedness. Confidence: verified static bodies.** Remaining scope is full `004cdbd0` side effects/rollback, descriptor stability, all caller/record invariants, driver implementations and observed recovery. Do not claim mode-application equivalence or a newly added failure check from this refactoring alone. No executable, Ghidra or runtime state was changed.

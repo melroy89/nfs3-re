@@ -123,6 +123,13 @@
           "bytes_sha256": "99379c643323055eacb33fa55f7e08a3c0655f95884f62eca220bb1d31863445",
           "assembly": "analysis/captures/modern-differences/display-modes/official_modern-00448348.asm",
           "assembly_sha256": "6226ac158f4a22cf35dfd92b51943d62fcd70413f2e37b6f7a40aedb5e0ac247"
+        },
+        {
+          "start": "004bef9d",
+          "end": "004befcd",
+          "bytes_sha256": "37f6889ab9658f1b7dd9b1cb2d75d2cc320216f52568a4c669297f7870bc9b43",
+          "assembly": "analysis/captures/modern-differences/display-modes/official_modern-004bef9d.asm",
+          "assembly_sha256": "cec559eeb782bd4805a117928617acff9922b382d7c26b67ffd86cbc716e9ad8"
         }
       ]
     }
@@ -132,6 +139,18 @@
     "Menu count boundary is not a proved reachable storage fault.",
     "Driver DLL enumeration limits and actual UI behavior remain untested."
   ],
+  "mode_application_followup": {
+    "original_failure_gate": "004bf060",
+    "modern_failure_gate": "004bef2a",
+    "preparation_original_regions": [
+      "004bf022..004bf051",
+      "004bf0d7..004bf106"
+    ],
+    "preparation_modern_helper": "004bef9d..004befcd",
+    "comparison": "47 preparation bytes identical after normalizing sole direct CALL displacement; Modern adds RET.",
+    "field14_cap": "original signed <=2; Modern unsigned <=2",
+    "limits": "No rollback or runtime mode-switch equivalence established."
+  },
   "selected_record_accessors": {
     "selector": "00448348",
     "field10_accessor": "00448368",

@@ -181,7 +181,7 @@
     },
     {
       "path": "analysis/original-modern-mode-selection.md",
-      "sha256": "7f25090d5b8d538cece78bc410e0f1db1f7c70c705746b42f29b3959673f75f4"
+      "sha256": "4f5bb7f9ddca498da480dbd9d1daa227e0557516f4c735d9b2e330794b1634dd"
     },
     {
       "path": "analysis/original-modern-mouse-cursor.md",
@@ -8998,8 +8998,10 @@
           "addresses": [
             "004beeb0",
             "004bef24",
+            "004bef2a",
             "004bef47",
             "004bef50",
+            "004bef94",
             "004bef9c"
           ]
         },

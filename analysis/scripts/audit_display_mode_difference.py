@@ -13,7 +13,7 @@ SPANS = {
                  (0x472d10, 0x472f19), (0x4483a0, 0x4483fe), (0x4bef50, 0x4bf10f), (0x44b1a0,0x44b206)],
     'official_modern': [(0x4bed90, 0x4beeb0), (0x448210, 0x448345), (0x4beeb0, 0x4bef9d),
                         (0x448394, 0x448425), (0x472d10, 0x472e1d),
-                        (0x472aac, 0x472aeb), (0x4f9140, 0x4f915e), (0x44b1a0,0x44b206), (0x448348,0x44837c)],
+                        (0x472aac, 0x472aeb), (0x4f9140, 0x4f915e), (0x44b1a0,0x44b206), (0x448348,0x44837c), (0x4bef9d,0x4befcd)],
 }
 
 
@@ -41,6 +41,23 @@ def main():
                 'assembly': str(output.relative_to(ROOT)),
                 'assembly_sha256': hashlib.sha256(output.read_bytes()).hexdigest()})
         result['binaries'][label] = {'path': relative, 'sha256': expected, 'spans': rows}
+    preparation=[images[0].get_data(0xbf022,47),images[0].get_data(0xbf0d7,47),images[1].get_data(0xbef9d,47)]
+    normalized=[]
+    for data in preparation:
+        assert data[18]==0xe8
+        normalized.append(data[:19]+b'\x00'*4+data[23:])
+    assert normalized[0]==normalized[1]==normalized[2]
+    assert images[1].get_data(0xbefcc,1)==b'\xc3'
+    assert images[0].get_data(0xbf060,4)==bytes.fromhex('85c07473')
+    assert images[1].get_data(0xbef2a,4)==bytes.fromhex('85c07466')
+    assert images[0].get_data(0xbefe3,5)==bytes.fromhex('83f9027e07')
+    assert images[1].get_data(0xbeefd,5)==bytes.fromhex('83fa027605')
+    result['mode_application_followup']={'original_failure_gate':'004bf060','modern_failure_gate':'004bef2a',
+        'preparation_original_regions':['004bf022..004bf051','004bf0d7..004bf106'],
+        'preparation_modern_helper':'004bef9d..004befcd',
+        'comparison':'47 preparation bytes identical after normalizing sole direct CALL displacement; Modern adds RET.',
+        'field14_cap':'original signed <=2; Modern unsigned <=2',
+        'limits':'No rollback or runtime mode-switch equivalence established.'}
     selected_accessors=images[1].get_data(0x48348,52)
     assert selected_accessors==bytes.fromhex('a15c82a1003b056082a100720731c0a35c82a10069c014010000053083a100c3e8dbffffff8b4010c3909090e8cfffffff8b00c3')
     result['selected_record_accessors']={'selector':'00448348','field10_accessor':'00448368',
