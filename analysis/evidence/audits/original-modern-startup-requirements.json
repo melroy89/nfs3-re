@@ -1,0 +1,118 @@
+{
+  "kind": "static-startup-requirement-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004b5f10",
+          "end": "004b5fee",
+          "bytes_sha256": "7260dfde6c9f919be064e8238e337e4a8497f4750def9da6e647738f416419e9",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004b5f10.asm",
+          "assembly_sha256": "12eb31504a6e736a8cb13334b78bfe8048dfb3a7fe8da827c53eb4024ee64d21"
+        },
+        {
+          "start": "004b608b",
+          "end": "004b6097",
+          "bytes_sha256": "08fb740d754862a54bf068c44b854d6940480e0abae5c02f89c9fce5d4b77f26",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004b608b.asm",
+          "assembly_sha256": "cefb8f2553a199a0038ae6531ddd43a589ae857e8eb61b902680c1c72b34084a"
+        }
+      ],
+      "imports": [
+        {
+          "iat": "00534458",
+          "name": "GetDeviceCaps",
+          "dll": "GDI32.dll"
+        },
+        {
+          "iat": "00534580",
+          "name": "GlobalMemoryStatus",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534740",
+          "name": "GetDesktopWindow",
+          "dll": "USER32.dll"
+        },
+        {
+          "iat": "00534754",
+          "name": "GetWindowDC",
+          "dll": "USER32.dll"
+        },
+        {
+          "iat": "00534764",
+          "name": "MessageBoxA",
+          "dll": "USER32.dll"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004b5748",
+          "end": "004b57c1",
+          "bytes_sha256": "c5668599b74d76b4a04dddb7cc389e23dae8797a8e960865490730cc728d4bbb",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b5748.asm",
+          "assembly_sha256": "fcc5e2092ad0a0a530d1bd1a28ec8550276f36678b7c0f340524837c91bc0146"
+        },
+        {
+          "start": "004b570c",
+          "end": "004b5746",
+          "bytes_sha256": "f7a435c7a6f9b3e34380738e85b7753c6a9af87ce2871e0f764e465a01128c2c",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b570c.asm",
+          "assembly_sha256": "2b5a35788dc866ed90fc7999f8ca08d91206122f52889c942f1601f7f94e726c"
+        },
+        {
+          "start": "004b5c07",
+          "end": "004b5c11",
+          "bytes_sha256": "6057a6f2ab7d4b03f3c028e272590b647c9454a30197fd6ac2ce426a595b97e2",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004b5c07.asm",
+          "assembly_sha256": "bacdd2f18b1357ae239a62a0c72dd32bf09fb8f5b4c6369aa83cb5f051719671"
+        }
+      ],
+      "imports": [
+        {
+          "iat": "00534458",
+          "name": "GetDeviceCaps",
+          "dll": "GDI32.dll"
+        },
+        {
+          "iat": "00534580",
+          "name": "GlobalMemoryStatus",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534740",
+          "name": "GetDesktopWindow",
+          "dll": "USER32.dll"
+        },
+        {
+          "iat": "00534754",
+          "name": "GetWindowDC",
+          "dll": "USER32.dll"
+        },
+        {
+          "iat": "00534764",
+          "name": "MessageBoxA",
+          "dll": "USER32.dll"
+        }
+      ],
+      "messages": {
+        "0053d27a": "Your RAM resources are too low.",
+        "0053d29a": "Your hard drive has less than 1MB free space.",
+        "0053d202": "Cannot run if desktop bitdepth is less than 8."
+      }
+    }
+  },
+  "limits": [
+    "No memory, disk, desktop, dialog or target API execution.",
+    "Memory fields described by exact offsets; no complete API structure/type reconstruction.",
+    "Disk helper and diagnostic termination internals are not fully audited here.",
+    "No release-note attribution inferred solely from a changed startup routine."
+  ]
+}

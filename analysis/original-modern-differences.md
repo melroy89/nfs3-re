@@ -350,6 +350,8 @@ The [replay-list cursor follow-up](original-modern-replay-list-cursor.md) ties t
 
 The [title-delay comparison](original-modern-title-delay.md) maps IntroSplashTime’s0..10-second consumer, zero-skip behavior and changed clock policy, separately from movie admission.
 
+The [startup requirements comparison](original-modern-startup-requirements.md) maps changed memory arithmetic, diagnostics and the added desktop-depth gate, including overflow and fractional-MiB limits.
+
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 

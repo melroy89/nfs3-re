@@ -58,8 +58,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "48820998bae64d1ddc60a15b94b63fa6a0ededb4c2b63321766c144b44ecfb3a",
-      "relative_links": 83
+      "sha256": "bfe117347e71194e4a7e3ef861e28e956d9d5f4bbf088949e62405a685bc692c",
+      "relative_links": 84
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -297,6 +297,11 @@
       "relative_links": 6
     },
     {
+      "path": "analysis/original-modern-startup-requirements.md",
+      "sha256": "a32821739ddf02aad12dde254713df1b5ce5d337fb1feff29c9621b23408399b",
+      "relative_links": 2
+    },
+    {
       "path": "analysis/original-modern-texture-limits.md",
       "sha256": "51b5026a83f209b8258b14bdab340186b95c8c07164f48c276a52c04df7c3657",
       "relative_links": 2
@@ -347,8 +352,8 @@
       "relative_links": 97
     }
   ],
-  "file_count": 69,
-  "relative_link_count": 506,
+  "file_count": 70,
+  "relative_link_count": 509,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
