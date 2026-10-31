@@ -46,6 +46,26 @@ def main():
             raw=pe.get_data(va-0x400000,4)
             floats[f'{va:08x}']={'little_endian_hex':raw.hex(),'binary32_value':struct.unpack('<f',raw)[0]}
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,'file_backed_floats':floats}
+    examples=[]
+    trunc_half=lambda x: (abs(x)//2)*(-1 if x<0 else 1)
+    for width,height in [(640,480),(1920,1080)]:
+        letterbox=trunc_half(height-trunc_half(width))
+        for flag in (0,1):
+            y=trunc_half(-letterbox) if flag else 0
+            examples.append({'version':'original','width':width,'height':height,'ordinal':flag,
+                'covering_y':y,'covering_height':height,'derived_centre_y':y+height/2})
+        synthetic=(3*width)>>2;delta=(height-synthetic)>>1
+        for ordinal in range(4):
+            y=delta
+            if ordinal&1:
+                y+=delta>>1
+                if ordinal&2:y-=((height-(width>>1))>>1)>>1
+            examples.append({'version':'official_modern','width':width,'height':height,'ordinal':ordinal,
+                'covering_y':y,'covering_height':synthetic,'derived_centre_y':y+synthetic/2})
+    result['derived_covering_centre_examples']={'method':'Mathematical evaluation of retained initializer/setter formulas; no target instructions executed.',
+        'scope':'Non-two-player, positive fitting dimensions, initial rectangle state; not later resize/camera state.',
+        'cases':examples}
+    assert [r['derived_centre_y'] for r in examples if r['width']==1920]==[540,510,540,450,540,420]
     output=ROOT/'analysis/evidence/audits/original-modern-viewport-geometry.json'
     output.write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: both fingerprints, viewport/border instruction captures and file-backed floats')

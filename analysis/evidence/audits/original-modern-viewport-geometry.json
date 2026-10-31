@@ -252,5 +252,119 @@
     "No rendering or target instructions executed.",
     "Profile flags and all downstream transforms are not fully mapped.",
     "x87 rounding/precision can affect stored integer/float results."
-  ]
+  ],
+  "derived_covering_centre_examples": {
+    "method": "Mathematical evaluation of retained initializer/setter formulas; no target instructions executed.",
+    "scope": "Non-two-player, positive fitting dimensions, initial rectangle state; not later resize/camera state.",
+    "cases": [
+      {
+        "version": "original",
+        "width": 640,
+        "height": 480,
+        "ordinal": 0,
+        "covering_y": 0,
+        "covering_height": 480,
+        "derived_centre_y": 240.0
+      },
+      {
+        "version": "original",
+        "width": 640,
+        "height": 480,
+        "ordinal": 1,
+        "covering_y": -40,
+        "covering_height": 480,
+        "derived_centre_y": 200.0
+      },
+      {
+        "version": "official_modern",
+        "width": 640,
+        "height": 480,
+        "ordinal": 0,
+        "covering_y": 0,
+        "covering_height": 480,
+        "derived_centre_y": 240.0
+      },
+      {
+        "version": "official_modern",
+        "width": 640,
+        "height": 480,
+        "ordinal": 1,
+        "covering_y": 0,
+        "covering_height": 480,
+        "derived_centre_y": 240.0
+      },
+      {
+        "version": "official_modern",
+        "width": 640,
+        "height": 480,
+        "ordinal": 2,
+        "covering_y": 0,
+        "covering_height": 480,
+        "derived_centre_y": 240.0
+      },
+      {
+        "version": "official_modern",
+        "width": 640,
+        "height": 480,
+        "ordinal": 3,
+        "covering_y": -40,
+        "covering_height": 480,
+        "derived_centre_y": 200.0
+      },
+      {
+        "version": "original",
+        "width": 1920,
+        "height": 1080,
+        "ordinal": 0,
+        "covering_y": 0,
+        "covering_height": 1080,
+        "derived_centre_y": 540.0
+      },
+      {
+        "version": "original",
+        "width": 1920,
+        "height": 1080,
+        "ordinal": 1,
+        "covering_y": -30,
+        "covering_height": 1080,
+        "derived_centre_y": 510.0
+      },
+      {
+        "version": "official_modern",
+        "width": 1920,
+        "height": 1080,
+        "ordinal": 0,
+        "covering_y": -180,
+        "covering_height": 1440,
+        "derived_centre_y": 540.0
+      },
+      {
+        "version": "official_modern",
+        "width": 1920,
+        "height": 1080,
+        "ordinal": 1,
+        "covering_y": -270,
+        "covering_height": 1440,
+        "derived_centre_y": 450.0
+      },
+      {
+        "version": "official_modern",
+        "width": 1920,
+        "height": 1080,
+        "ordinal": 2,
+        "covering_y": -180,
+        "covering_height": 1440,
+        "derived_centre_y": 540.0
+      },
+      {
+        "version": "official_modern",
+        "width": 1920,
+        "height": 1080,
+        "ordinal": 3,
+        "covering_y": -300,
+        "covering_height": 1440,
+        "derived_centre_y": 420.0
+      }
+    ]
+  }
 }

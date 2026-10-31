@@ -98,6 +98,25 @@ For **1920x1080**, the resulting static input/centre examples are:
 
 These are exact arithmetic illustrations for this initialization route, not captured frames or a proof that this wide-angle caller is the active path in every camera. Odd dimensions retain arithmetic-shift rounding; later resize/finalizer writes can change the inputs/state. The path establishes how the labelled setting can change the projection centre independently of changing the centre-addition formula. It supports the existing partial MP160-004 mechanism, while camera orientation, final horizon location and MP160-003's universal visible claim remain unresolved. No game or instruction probe was executed.
 
+## Original rectangle counterpart: numeric setting values are not interchangeable
+
+The viewport audit now retains explicit mathematical examples from both initializers/setters. In original's non-two-player branch, setting0 gives the first rectangle the physical height H and originY0. Nonzero setting instead computes letterbox offset `L=truncate((H-truncate(W/2))/2)` and uses first-group originY=`truncate(-L/2)` with height H; its second group uses originY=L and height `truncate(W/2)`. These signed truncations must not be replaced by Modern's arithmetic shifts for arbitrary negative intermediates.
+
+The verified setters `004beb00` and `004beb40` write the first and second groups respectively. Thus, for **1920x1080**, the initial covering-group centre values are:
+
+| Version / setting | OriginY / covering height | Derived centreY |
+|---|---|---:|
+| Original0 | 0 /1080 | 540 |
+| Original1 | -30 /1080 | 510 |
+| Modern0, Full Centered | -180 /1440 | 540 |
+| Modern1, Full Shifted | -270 /1440 | 450 |
+| Modern2, 2:1 Centered | -180 /1440 | 540 |
+| Modern3, 2:1 Shifted | -300 /1440 | 420 |
+
+The source dimensions, physical/fitted group and projection angles differ as well; matching centre540 is not matching projection. Reusing original ordinal1 as Modern ordinal1 also does not preserve its old framing. At640x480, original1 and Modern3 both derive centre200, but that equality is a scoped arithmetic example, not a general migration rule. The [Frame Size report](original-modern-frame-setting.md) retains the paired option IDs and official-label provenance limits.
+
+These before/after values narrow the camera-shift investigation without claiming a complete horizon explanation. The examples assume the inspected initial non-two-player route, ordinary fitting dimensions and no intervening rectangle writes. They were generated from static formulas in the viewport audit, not by running either game.
+
 A native translation must preserve the integer-versus-float ABI change, binary32 spills, x87 transcendental operations/control-word assumptions, wrapping integer intermediates and exceptional-input behavior. Ordinary C `double` plus libm is not proven bit-equivalent. No runtime FOV, replay or multiplayer claim is made here.
 
 ## Viewport finalizer drops legacy projection updates
