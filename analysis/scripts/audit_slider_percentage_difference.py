@@ -42,6 +42,7 @@ def main():
             'bytes_sha256':hashlib.sha256(pe.get_data(0x69680,end-0x469680)).hexdigest(),
             'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
             'unchanged_prefix_sha256':hashlib.sha256(prefix).hexdigest(),
+            'slider_callback_row_00557718_hex':pe.get_data(0x157718,80).hex(),
             'step_descriptors_hex':{f'{a:08x}':pe.get_data(a-0x400000,16).hex() for a in (0x558324,0x558334)},
             'percenttype_descriptor':{'address':'00558224','words_hex':pe.get_data(0x158224,16).hex(),
                 'keyword':pe.get_data(0x1386b4,30).split(b'\0')[0].decode('ascii')},
@@ -56,6 +57,8 @@ def main():
     for key in ('bytes_sha256','table_0046cb64_hex'):
         assert result['binaries']['original']['step_event_dispatch'][key]==result['binaries']['official_modern']['step_event_dispatch'][key]
     result['step_event_dispatch_identical']=True
+    assert result['binaries']['original']['slider_callback_row_00557718_hex']==result['binaries']['official_modern']['slider_callback_row_00557718_hex']
+    result['slider_callback_row_identical']=True
     images=[pefile.PE(str(ROOT/SPECS[k][0])) for k in ('original','official_modern')]
     pair_bodies=[p.get_data(0x6b3a0,0x46c2e6-0x46b3a0) for p in images]
     changes=[0x46b3a0+i for i,(a,b) in enumerate(zip(*pair_bodies)) if a!=b]

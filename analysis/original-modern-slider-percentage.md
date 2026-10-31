@@ -123,3 +123,21 @@ This selector is `slidertype`/widget behavior state, distinct from the percentag
 For the installed audio blocks declaring `slidertype=0`, this supplies the immediate dispatch route **if** their parsed instance field+42h has that value. It does not close the complete menu-parser/template contract or prove an actual event reached the dispatcher. No resolved direct CALL appeared in the retained disassembly search; callback/table-based invocation remains to trace rather than assuming inactivity.
 
 The 5% claim's remaining static gap is therefore upstream field instantiation/mutation and alternative event paths, not an uninspected override inside this immediate dispatcher. Runtime step behavior and historical attribution remain unverified. No game input was sent.
+
+## File-backed slider callback row
+
+The manifest now retains and asserts byte identity of the 80-byte row at **`00557718`**. Its first DWORD is **0fh**, second DWORD **800h**, and the callback-shaped slots are:
+
+| Row offset | Function pointer |
+|---:|---|
+| +24h | `0046cc50` |
+| +28h | `0046cc10` |
+| +2ch | `0046cae0` — known slider render/type dispatcher |
+| +30h | `0046cb80` — step-event dispatcher inspected above |
+| +34h | `0046cbe0` |
+
+Remaining row DWORDs in this captured span are zero. This is a concrete static callback-registration candidate, shared between original and Modern, rather than treating the lack of direct CALLs as evidence the dispatcher is unused. The +2ch/+30h positions correspond to the entry callback fields examined elsewhere in frontend rendering/input analysis, but the row-to-entry copy/installation code must still be traced before asserting that exact runtime relationship for every slider.
+
+The row contains no new Modern-only step override: its bytes are identical and point to the same retained step dispatcher. This further localizes the5% ambiguity to instance construction/mutation, other input paths or historical releases. Pointer presence does not prove execution, valid widget lifetime or user input delivery. No callback was invoked during this audit.
+
+Next: locate the table walker/template installer and establish how row ID0fh and the parsed slider record are combined. The documented conditional snap-field preference remains conditional until those links or live values establish the actual input state.
