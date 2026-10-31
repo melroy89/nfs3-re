@@ -1,0 +1,115 @@
+{
+  "kind": "static-title-delay-comparison",
+  "range_end": "exclusive",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00472f20",
+          "end": "00472fbb",
+          "bytes_sha256": "a6a240916bfd7b5ff25989acb2378fd87331c9990e27c2e66bb66e23f3b04708",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-00472f20.asm",
+          "assembly_sha256": "85fcd3cbc1edded9379d45d70298ebf9899d1c4b19c82a92bc50f04bdbabd367"
+        },
+        {
+          "start": "00451940",
+          "end": "00451953",
+          "bytes_sha256": "79216c5d06b12e3924c0fb73bdaa9b91193397c62fa9fc16c46bf57fda0a92be",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-00451940.asm",
+          "assembly_sha256": "49a6be6dd0cacc71579b81af73b94c870a25abc3722b3872ecea5d082b9de1fb"
+        },
+        {
+          "start": "004c9860",
+          "end": "004c9871",
+          "bytes_sha256": "452cdac7a15ac87c4c284a17b13ef134560b90a8202ff23ddc04624e39b722dc",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-004c9860.asm",
+          "assembly_sha256": "8a6f2974d51cc176db08161101e33ffe6eadd42169af5949283bc923a39886f1"
+        },
+        {
+          "start": "00472fc0",
+          "end": "0047300d",
+          "bytes_sha256": "f0a3e9bee213eb949bd55f0339f3b3717adc974cbd8c6a85378ea903b89a9ef4",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-00472fc0.asm",
+          "assembly_sha256": "1ad7bd8e0c0fec9b07abe73bd845078fae442f3a789074000bbdd68ca5e080d6"
+        },
+        {
+          "start": "004f0650",
+          "end": "004f0665",
+          "bytes_sha256": "8b6079e38482eb8c45dcd64468e5e13d26e20de216e8c3fdbd7dfe1fb22c5479",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-004f0650.asm",
+          "assembly_sha256": "f25e7d687170f1e7e334d7ae58fa0df8b9e7aa7838295435eb276227ec448c50"
+        },
+        {
+          "start": "00473181",
+          "end": "00473186",
+          "bytes_sha256": "51418c9d4af8a3ef8b29ee05e89bc331c86e48d8a96421e523f35ff1fb6face8",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-00473181.asm",
+          "assembly_sha256": "cfc070d940e82e83c8eb51ef28caed0fcd5162104be8d8df7f9acae0410351f3"
+        },
+        {
+          "start": "004b61a6",
+          "end": "004b61ab",
+          "bytes_sha256": "804c74801bfae0940c1291ea6362694d71f2aa9ae6bacf4998d73d1c5a1bd84b",
+          "assembly": "analysis/captures/modern-differences/title-delay/original-004b61a6.asm",
+          "assembly_sha256": "c3d7270101452b1ecf647f10b2a3497bcd20cc4368be1c335868ec69bf01c31d"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00472f20",
+          "end": "00472fbb",
+          "bytes_sha256": "a6a240916bfd7b5ff25989acb2378fd87331c9990e27c2e66bb66e23f3b04708",
+          "assembly": "analysis/captures/modern-differences/title-delay/official_modern-00472f20.asm",
+          "assembly_sha256": "8992ae5ec631946fddcf60a1b5cad50953c9d926549bf1470bbafccb585268c6"
+        },
+        {
+          "start": "00451940",
+          "end": "00451953",
+          "bytes_sha256": "79216c5d06b12e3924c0fb73bdaa9b91193397c62fa9fc16c46bf57fda0a92be",
+          "assembly": "analysis/captures/modern-differences/title-delay/official_modern-00451940.asm",
+          "assembly_sha256": "680e90a247d408bb5ead96e441bc9cb77a428de517da57505c8764748fa750ff"
+        },
+        {
+          "start": "004c9860",
+          "end": "004c9871",
+          "bytes_sha256": "452cdac7a15ac87c4c284a17b13ef134560b90a8202ff23ddc04624e39b722dc",
+          "assembly": "analysis/captures/modern-differences/title-delay/official_modern-004c9860.asm",
+          "assembly_sha256": "98e0a4451492b70cade84a9d5d840a376186c332ab7e7e163bdf035feef9156f"
+        },
+        {
+          "start": "00472fc0",
+          "end": "00473016",
+          "bytes_sha256": "f4553ac9f263f7b87bc14fdb18a898f966a525e1a5100e5e51619d58b3f9eb98",
+          "assembly": "analysis/captures/modern-differences/title-delay/official_modern-00472fc0.asm",
+          "assembly_sha256": "c54e0b5afa7902a0650c083c6d0dee407b65f2d58e1d40098c4329e6c27f0861"
+        },
+        {
+          "start": "00473152",
+          "end": "00473160",
+          "bytes_sha256": "0b0b39506bf93914c7b7408af2a4aa8c1064662dff519782eb07ed741f105ade",
+          "assembly": "analysis/captures/modern-differences/title-delay/official_modern-00473152.asm",
+          "assembly_sha256": "d7ddf037a85b4b84dec11c456837872a916ae71529fd9f0785612237f083f02f"
+        },
+        {
+          "start": "004f2790",
+          "end": "004f279b",
+          "bytes_sha256": "11b01af79e6e15a08d72636a0bd8e5bc69c0995b8e0796e0eff7e26192494c82",
+          "assembly": "analysis/captures/modern-differences/title-delay/official_modern-004f2790.asm",
+          "assembly_sha256": "2fa6f0bacd75d5c3ee68de1a51b6e4c294a61e2a635a9d3cdeadaffe70d01f17"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No title rendering, input, timing measurement or target execution.",
+    "Original library-clock units not converted to seconds.",
+    "Configuration producer and clock API identity reused from linked audits.",
+    "Callback scheduling, elapsed-time overshoot and complete outer startup behavior untested."
+  ]
+}

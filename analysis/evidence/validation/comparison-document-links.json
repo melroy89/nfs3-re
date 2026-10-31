@@ -58,8 +58,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "5ab3fc0f5b52a81a23100cfec1036c889860830ccc81fcfe483178725f4ba57e",
-      "relative_links": 82
+      "sha256": "48820998bae64d1ddc60a15b94b63fa6a0ededb4c2b63321766c144b44ecfb3a",
+      "relative_links": 83
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -302,6 +302,11 @@
       "relative_links": 2
     },
     {
+      "path": "analysis/original-modern-title-delay.md",
+      "sha256": "63f480737d9a3274d50b108d1c3b40eee670966817173c340079a1741d3fa797",
+      "relative_links": 5
+    },
+    {
       "path": "analysis/original-modern-vehicle-dispatch.md",
       "sha256": "48507d6a1f7f5a3453fabbcb63b5f35ece2066f458f90770e23ed55817d9209a",
       "relative_links": 6
@@ -338,12 +343,12 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "d7b92f0e3282e9cafb8a922854ae4bcfa4ad8622854063d79ca85789ee39fb57",
-      "relative_links": 96
+      "sha256": "736dddd4d77fda181277097bbbe2a4beeaeb934bcde5432556e1c7aa88e5b958",
+      "relative_links": 97
     }
   ],
-  "file_count": 68,
-  "relative_link_count": 498,
+  "file_count": 69,
+  "relative_link_count": 505,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
