@@ -11,7 +11,8 @@ def main():
     for label,(path,digest,_) in SPECS.items():
         raw=(ROOT/path).read_bytes();assert sha(raw)==digest
         p=pefile.PE(data=raw);images[label]=p
-        spans=[(0x4bc947,0x4bc9a0),(0x434af0,0x434b15),(0x4a3390,0x4a33af)]
+        spans=[(0x4bc947,0x4bc9a0),(0x434af0,0x434b15),(0x4a3390,0x4a33af),
+               (0x4d5730,0x4d573a),(0x4d56b0,0x4d56b5),(0x4dbbe0,0x4dbbe5),(0x4c7b20,0x4c7b25)]
         spans += [(0x4a3652,0x4a3665)] if label=='original' else [(0x4a3652,0x4a366b),(0x4b5d73,0x4b5d8e)]
         result['binaries'][label]={'path':path,'sha256':digest,'spans':[
             {'start':f'{a:08x}','end_exclusive':f'{b:08x}',
@@ -33,7 +34,14 @@ def main():
     assert new.get_data(0xbc950,80)==b'\x90'*80
     assert sum(a!=b for a,b in zip(old.get_data(0xbc947,89),new.get_data(0xbc947,89)))==79
     assert old.get_data(0xbc947,9)==new.get_data(0xbc947,9)
-    for a in (0x434af0,0x434b10):assert old.get_data(a-0x400000,5).hex()=='5589e55dc3'
+    for a in (0x434af0,0x434b10,0x4d56b0,0x4dbbe0,0x4c7b20):assert old.get_data(a-0x400000,5).hex()=='5589e55dc3'
+    assert old.get_data(0xd5730,10).hex()=='5589e5e878ffffff5dc3'
+    assert new.get_data(0xd5730,10)==b'\x90'*10
+    result['omitted_shutdown_targets']={
+        '00434af0':'5-byte frame/return no-op',
+        '004d5730':'10-byte frame/call004d56b0/return; nested target is5-byte frame/return no-op',
+        '004dbbe0':'5-byte frame/return no-op in original; reused by real track loader in Modern',
+        '004c7b20':'5-byte frame/return no-op'}
     original_shutdown_calls=[target(old,a) for a in range(0x4bc953,0x4bc976,5)]
     assert original_shutdown_calls==[0x434af0,0x4d5730,0x4c7150,0x4dbbe0,0x484220,0x4cb730,0x4c7b20]
     result['original_shutdown_sequence']=[f'{a:08x}' for a in original_shutdown_calls]

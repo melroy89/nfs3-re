@@ -89,6 +89,55 @@
           ]
         },
         {
+          "start": "004d5730",
+          "end_exclusive": "004d573a",
+          "sha256": "1d20b52479be516e634d5545ab4a9bf8ecee841c79c43a1e4fbcab94d7a8718b",
+          "bytes_hex": "5589e5e878ffffff5dc3",
+          "disassembly": [
+            "4d5730:\t55                   \tpush   ebp",
+            "4d5731:\t89 e5                \tmov    ebp,esp",
+            "4d5733:\te8 78 ff ff ff       \tcall   0x4d56b0",
+            "4d5738:\t5d                   \tpop    ebp",
+            "4d5739:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004d56b0",
+          "end_exclusive": "004d56b5",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "bytes_hex": "5589e55dc3",
+          "disassembly": [
+            "4d56b0:\t55                   \tpush   ebp",
+            "4d56b1:\t89 e5                \tmov    ebp,esp",
+            "4d56b3:\t5d                   \tpop    ebp",
+            "4d56b4:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004dbbe0",
+          "end_exclusive": "004dbbe5",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "bytes_hex": "5589e55dc3",
+          "disassembly": [
+            "4dbbe0:\t55                   \tpush   ebp",
+            "4dbbe1:\t89 e5                \tmov    ebp,esp",
+            "4dbbe3:\t5d                   \tpop    ebp",
+            "4dbbe4:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004c7b20",
+          "end_exclusive": "004c7b25",
+          "sha256": "451c9ce410c72d256a161642c2ae596b1214d7e6e62529c7e53ba1e2e6da21be",
+          "bytes_hex": "5589e55dc3",
+          "disassembly": [
+            "4c7b20:\t55                   \tpush   ebp",
+            "4c7b21:\t89 e5                \tmov    ebp,esp",
+            "4c7b23:\t5d                   \tpop    ebp",
+            "4c7b24:\tc3                   \tret"
+          ]
+        },
+        {
           "start": "004a3652",
           "end_exclusive": "004a3665",
           "sha256": "37084c90f9e77312804c3c9c12c55327b3b1b894b98fba7e76eb6cd5affa96e9",
@@ -282,6 +331,62 @@
           ]
         },
         {
+          "start": "004d5730",
+          "end_exclusive": "004d573a",
+          "sha256": "bde559b24d3a5302d82a4e56eb6f4b12d39057d100fd0ca81b337f5c1aa80cba",
+          "bytes_hex": "90909090909090909090",
+          "disassembly": [
+            "4d5730:\t90                   \tnop",
+            "4d5731:\t90                   \tnop",
+            "4d5732:\t90                   \tnop",
+            "4d5733:\t90                   \tnop",
+            "4d5734:\t90                   \tnop",
+            "4d5735:\t90                   \tnop",
+            "4d5736:\t90                   \tnop",
+            "4d5737:\t90                   \tnop",
+            "4d5738:\t90                   \tnop",
+            "4d5739:\t90                   \tnop"
+          ]
+        },
+        {
+          "start": "004d56b0",
+          "end_exclusive": "004d56b5",
+          "sha256": "18e800921eac4b6ea289ffc28abb7e2d58e7521d3568dcacd9e3aa55096f35de",
+          "bytes_hex": "9090909090",
+          "disassembly": [
+            "4d56b0:\t90                   \tnop",
+            "4d56b1:\t90                   \tnop",
+            "4d56b2:\t90                   \tnop",
+            "4d56b3:\t90                   \tnop",
+            "4d56b4:\t90                   \tnop"
+          ]
+        },
+        {
+          "start": "004dbbe0",
+          "end_exclusive": "004dbbe5",
+          "sha256": "629303b158efd9fac0c94af7f3e041415200c3e887dde0350d78b8698a0b42fb",
+          "bytes_hex": "5289c2e8d8",
+          "disassembly": [
+            "4dbbe0:\t52                   \tpush   edx",
+            "4dbbe1:\t89 c2                \tmov    edx,eax",
+            "4dbbe3:\te8                   \t.byte 0xe8",
+            "4dbbe4:\td8                   \t.byte 0xd8"
+          ]
+        },
+        {
+          "start": "004c7b20",
+          "end_exclusive": "004c7b25",
+          "sha256": "18e800921eac4b6ea289ffc28abb7e2d58e7521d3568dcacd9e3aa55096f35de",
+          "bytes_hex": "9090909090",
+          "disassembly": [
+            "4c7b20:\t90                   \tnop",
+            "4c7b21:\t90                   \tnop",
+            "4c7b22:\t90                   \tnop",
+            "4c7b23:\t90                   \tnop",
+            "4c7b24:\t90                   \tnop"
+          ]
+        },
+        {
           "start": "004a3652",
           "end_exclusive": "004a366b",
           "sha256": "58fea02dd2e5e598325df70da9f173dfd963aa43afabbb9c6485f0dd3735c883",
@@ -337,6 +442,12 @@
       "004a365c": "00484220",
       "004a3661": "004cb730"
     }
+  },
+  "omitted_shutdown_targets": {
+    "00434af0": "5-byte frame/return no-op",
+    "004d5730": "10-byte frame/call004d56b0/return; nested target is5-byte frame/return no-op",
+    "004dbbe0": "5-byte frame/return no-op in original; reused by real track loader in Modern",
+    "004c7b20": "5-byte frame/return no-op"
   },
   "original_shutdown_sequence": [
     "00434af0",

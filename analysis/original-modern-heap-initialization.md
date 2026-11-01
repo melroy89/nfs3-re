@@ -106,6 +106,38 @@ local replacement sequence, not proven absent from the entire game.
 
 **Status:** done for three wrapper bodies, outside-interval partition and the
 shown relocated call routes; verified static evidence. Complete lifecycle
-ordering, all caller/alias domains, effects of other omitted calls and actual
-allocation/teardown remain unverified. No game, heap API or instruction probe
+ordering, all caller/alias domains, actual
+allocation/teardown remain unverified. The omitted no-op paths are resolved below. No game, heap API or instruction probe
 was executed; executable and saved database bytes were preserved.
+
+### Omitted race-shutdown targets are original no-op paths
+
+The expanded [same evidence manifest](evidence/audits/removed-render-lifecycle-wrappers.json)
+now closes the four-target question above. Complete original bodies establish:
+
+| Omitted target | Verified original body |
+|---|---|
+| `00434af0..00434af5` | PUSH EBP; MOV EBP,ESP; POP EBP; RET |
+| `004d5730..004d573a` | Same frame envelope around one call to `004d56b0` |
+| `004d56b0..004d56b5` (nested) | Five-byte frame/return stub |
+| `004dbbe0..004dbbe5` | Five-byte frame/return stub |
+| `004c7b20..004c7b25` | Five-byte frame/return stub |
+
+Thus the original seven-call wrapper contains **three substantive delegated
+calls and four no-op call paths**, one with a nested no-op. Modern's local
+replacement retains those three substantive call targets in their original
+order. The omitted paths perform temporary stack/frame operations, but no
+resource release, global write, renderer request or arithmetic on incoming
+data. This is a stronger local conclusion than merely observing missing calls.
+
+Do not identify original `004dbbe0` from Modern's saved label
+`LoadTrackSceneWithAbortCheckpoints`: Modern reuses that address for the real
+loader whose original counterpart starts at `004dbbf0`. The five original
+stub bytes and Modern's first instructions differ in the capture. Numeric
+address equality does not establish corresponding function identity.
+
+**Status:** done for all four omitted paths under ordinary valid-stack return.
+This is not whole race-shutdown equivalence: caller register preservation,
+other envelope changes, stack-memory writes, exceptions/unwinding, interrupt
+observations and the transitive behaviour of the three retained callees remain
+outside this local result. No shutdown routine or instruction probe was run.
