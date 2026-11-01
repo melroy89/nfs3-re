@@ -62,6 +62,34 @@ The [renderer/assets checkpoint](evidence/validation/reference-renderer-assets-c
 
 These rows summarize documented increments. They are neither all EXE differences nor a percentage of whole-game reconstruction. Historical-driver findings must not be relabelled as original-retail DLL comparisons. No new target execution or database mutation was used by this checkpoint.
 
+### Further code-level findings and reproducibility checkpoint
+
+The [14-audit checkpoint](evidence/validation/recent-static-increments-checkpoint.json)
+reproduces the following recent investigations at its recorded repository head.
+All14 scripts passed, and the supplied original, official Modern, local Modern
+and saved Ghidra database hashes were identical before/after. This is a
+primary-agent static reproducibility check, not an independent review, runtime
+test, CI result or whole-comparison completion claim.
+
+| Area | Compared artifacts | Verified finding | Still unknown |
+|---|---|---|---|
+| [Audio defaults](original-modern-config-loading.md#changed-audio-defaults-have-named-slider-bindings) | Supplied original / official final | Menu/race music, SFX and engine defaults100→95; speech127→108; named sliders retain approximate1/127 scale | Actual loudness, mixing and effective saved settings |
+| [Installation/media classification](original-modern-language-table.md#original-installation-reader-also-produces-the-remote-prefix-source) | Supplied original / official final | Original second nonempty processed install.win string feeds remote-prefix classification and gate006fbb54; Modern local config producer writes0 | Full source/later-write lifecycle and runtime effects |
+| [Render lifecycle wrappers](original-modern-heap-initialization.md#removed-wrappers-relocate-arena-lifetime-and-shorten-race-shutdown) | Supplied original / official final | Arena calls move into subsystem setup/teardown; three substantive shutdown targets keep order; four omitted paths are original no-ops | Full lifetime and transitive cleanup equivalence |
+| [Replay description](original-modern-replay-description.md) | Supplied original / official final | Heading removed, detail rows start five units earlier; retained row loop and equivalent narrower signed-coordinate loads | Actual rendering; no replay-format or trajectory conclusion |
+| [Help construction](original-modern-command-line.md#help-banner-error-text-and-dialog-title-change) | Supplied original / official final | Embedded patch banner, revised newlines and fixed About title; only initial copy has a local count bound | Whole buffer/formatting contract and actual dialogs |
+| [Race-render frame](og-modern-x87-precision.md#complete-race-frame-partition-against-the-official-final-executable) | Supplied original / official final | Complete414-byte original envelope differs in three regions: x87 entry, same-target wrapper bypass and x87 exit/epilogue | Callback state, full numeric/render equivalence and replay/network outcomes |
+| [Mouse message routing](original-modern-window-handling.md#mouse-registrations-move-callback-bodies-stay-identical) | Supplied original / official final | All ten mouse registrations remain; two complete callbacks are identical; tail code was compacted | Downstream processing and OS/Wine/VM input behaviour |
+| [Viewport adapters](original-modern-viewport-geometry.md#new-record-to-setup-adapters-occupy-the-original-initializer-tail) | Supplied original / official final | Two new record-to-setup helpers reuse initializer space and call234-byte-identical setup | Outer helper reachability and complete state effects |
+| [Legacy DirectDraw enumeration](original-modern-renderer-loading.md#removed-legacy-directdraw-enumeration-wrapper-and-register-adapter) | Supplied original / official final | Enumeration wrapper/register adapter removed, including temporary zero-GUID substitution; adjacent636 bytes match | Original reachability and visible device enumeration effects |
+| [Compatibility configuration](original-modern-renderer-loading.md#historical-directdrawlagfix-configuration-relocation-130-to-131) | Historical1.3.0/1.3.1, then1.6.0/final | Setting moves to driver INI, supplied default1→0; later key/section become DDRAW/DisableMaxWindowedMode with changed bitmask dispatch | OS/performance effects and full reconfiguration lifetime |
+| [Historical capability keys](original-modern-renderer-loading.md#historical-lightbeams-reader-and-capability-defaults) | Historical1.2.0/1.3.1 and final context | Real LightBeams/FogSupport readers/INIs; defaults change; old LightBeams gates state14 rather than proving a beam-only role | Exact later key removal, full consumers and visible effects |
+
+All findings above are **verified within their stated static scope**. Their
+remaining-work status varies; the linked reports retain the precise unknowns.
+This table does not convert a verified local mechanism into a verified whole
+feature, or historical-package evidence into original-retail provenance.
+
 ## 1. Three-way provenance
 
 | Artifact | Bytes | SHA-256 |

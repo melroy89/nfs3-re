@@ -1,0 +1,193 @@
+{
+  "kind": "bounded-recent-static-audit-checkpoint",
+  "reviewed_head": "a4b5012ce44fb3d8d2224a8a3c70e031434348b9",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_directdraw_config_release_boundary.py"
+      ],
+      "script_sha256": "bc29733d72e5f7d48be34cefeb45d9223d22cf473bb95864ab4df0edcf75790c",
+      "exit_code": 0,
+      "stdout": "PASS: historical config filename/section/default relocation and identical optional API tail\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/directdraw-config-release-boundary.json",
+      "output_sha256": "a8c6f0fe5413c880c08e74b669c6dadba4ea82bce87ed4bf16c8a800fbbe7533"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_directdraw_rename_boundary.py"
+      ],
+      "script_sha256": "2ee20f82b841f5bfea6ef10e35c04fd84370a54a12f982ef2df3af85010e23d0",
+      "exit_code": 0,
+      "stdout": "PASS: pinned setting rename, old Boolean request12 and new accumulated bit12/bit1 dispatch\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/directdraw-rename-boundary.json",
+      "output_sha256": "0de3833d82d19b29795ac3434916e043253adb4a72efe850d0db82040bf5f3fd"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_lightbeams_history.py"
+      ],
+      "script_sha256": "11b7bba99cfd12de33d7d11fd35fe549c5eb209e109a7cb4458a2cb431fab098",
+      "exit_code": 0,
+      "stdout": "PASS: historical LightBeams/FogSupport readers, defaults, local gate and packaged configuration captured\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/lightbeams-history.json",
+      "output_sha256": "ce4b8779ef7f3debf64001f3d0038f77d48617ac9adda768fd5820ac17de6e18"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_removed_default_block.py"
+      ],
+      "script_sha256": "74fa74dbe5a4895fa68fd05ca26734ea591daedd3362055e6b5afcc959f980b7",
+      "exit_code": 0,
+      "stdout": "PASS:197-byte removed block, replacement jump, sound helper and retained normalized predicate\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/removed-default-block.json",
+      "output_sha256": "3131143b555c5dbb5fd835560ee91825d70e34270e5758d7531052c6d9a67437"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_removed_ddraw_enumerator.py"
+      ],
+      "script_sha256": "0b2639b665e2783f5b39176eceaa12c9eb206c1e2d3288041ecfad0dd8928b5c",
+      "exit_code": 0,
+      "stdout": "PASS: removed16-byte wrapper/55-byte adapter,64-byte NOP span and unchanged636-byte preceding interval\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/removed-ddraw-enumerator.json",
+      "output_sha256": "2cbfaa93c2abedf6e68d01df7f0eb783686c12e502e7a81c08c5b76fb3edc96c"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_removed_render_lifecycle_wrappers.py"
+      ],
+      "script_sha256": "62ac188771528f60b3dcbc238e7c1905d621f8eae8a0c42b59b3eb3097198642",
+      "exit_code": 0,
+      "stdout": "PASS:79 outside-body changes, three removed wrappers, relocated arena calls and three retained shutdown callees\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/removed-render-lifecycle-wrappers.json",
+      "output_sha256": "26b8fc375787f2d56d5cd3ec40a5bf8515cb9b6fca22d1150b906b0795052cd8"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_replay_description_layout.py"
+      ],
+      "script_sha256": "45c06853c87307fd40bd7276b4c3e8477d216bf965b280e44cc82d2b5af03642",
+      "exit_code": 0,
+      "stdout": "PASS: complete175-byte replay-description callback,90 differing bytes and retained75-byte row loop\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/replay-description-layout.json",
+      "output_sha256": "805136e1255daa6a13794fed75bd28b49ba5f0904eb825f16bdb334356eda5c2"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_command_line_difference.py"
+      ],
+      "script_sha256": "0de20825c8db170c137ae659078de3cd6ba6898fb44e05b874d56b1c310faeb3",
+      "exit_code": 0,
+      "stdout": "PASS: baselines, 33 paired switch slots, help aliases and parser spans\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/original-modern-command-line.json",
+      "output_sha256": "d8cf59e95e402a04a607b0edd1105c2b5b3cb4936fcd7679112ecfa970cc7a07"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_race_frame_partition.py"
+      ],
+      "script_sha256": "4d44cebf0b17bc05297c40e68872a4a1fbb1c9f2298176ea05c4dcb88e5daa47",
+      "exit_code": 0,
+      "stdout": "PASS: complete414-byte original frame; three changed regions, same-target wrapper bypass and76-byte outside tail\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/race-frame-partition.json",
+      "output_sha256": "110588dc328759f18ca57f13d61a3d73e6d77ff3c86c1987b5534ae5ce2ebec0"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_window_initialization_difference.py"
+      ],
+      "script_sha256": "09e62e3b12d11d39a595b01e3dce546d11760254e561d766816e461e8d824e99",
+      "exit_code": 0,
+      "stdout": "{\n  \"counts\": {\n    \"original\": 26,\n    \"official_modern\": 27\n  },\n  \"removed\": [\n    \"0007\",\n    \"0008\"\n  ],\n  \"added\": [\n    \"0001\",\n    \"001c\",\n    \"0218\"\n  ],\n  \"changed_handler_address\": [\n    {\n      \"message\": \"0002\",\n      \"original\": \"004cce80\",\n      \"modern\": \"004ccce4\"\n    },\n    {\n      \"message\": \"0010\",\n      \"original\": \"004cce40\",\n      \"modern\": \"004ccd5c\"\n    },\n    {\n      \"message\": \"0466\",\n      \"original\": \"004cce60\",\n      \"modern\": \"004ccd98\"\n    }\n  ]\n}\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/original-modern-window-initialization.json",
+      "output_sha256": "904fcb3b893c05e26d5868873eb7ba3acfb695411726369d3d6e6c857f0f7056"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_viewport_geometry_difference.py"
+      ],
+      "script_sha256": "1db26a69a759815de3cda91bfc6fc1959a343dc3cfdcca5361e24d12e2561ff2",
+      "exit_code": 0,
+      "stdout": "PASS: both fingerprints, viewport/border instruction captures and file-backed floats\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/original-modern-viewport-geometry.json",
+      "output_sha256": "e329a2c7f96e85d0f4f8159eef91a98a7580ce2792816e9e5fdae97e1345a461"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_music_selection_difference.py"
+      ],
+      "script_sha256": "7f5fbb86d8d35bfb5a740dc2e3bf781d38fa69f731ed6e8b5ea18e8eeaad958c",
+      "exit_code": 0,
+      "stdout": "PASS: music baselines, selection spans and menu cycle tables\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/original-modern-music-selection.json",
+      "output_sha256": "5bd6fd26a1256cc50b8d6a7dba00eed0b24cf328d3afe10d904f7ca170e7eaf9"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_config_loading_difference.py"
+      ],
+      "script_sha256": "e4b7ada72b28bfaa8385d8569a637ebceabd158bc051c9eddf831aba9352edf9",
+      "exit_code": 0,
+      "stdout": "PASS: config baselines, header bytes, import identities and load spans\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/original-modern-config-loading.json",
+      "output_sha256": "78c3bcabebed2c8deda6b42e450ea407f9026a81b7f49b3abc7e10b8ad18891b"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_language_table_difference.py"
+      ],
+      "script_sha256": "7a7ed1e938ed561f139d20026b7b10fbf31422315c52e79737cadb548b6db78f",
+      "exit_code": 0,
+      "stdout": "PASS: language baselines, lookup/load spans, marker and 27 fallback entries\n",
+      "stderr": "",
+      "output": "analysis/evidence/audits/original-modern-language-table.json",
+      "output_sha256": "f04eb03c98a3d1c41750f03d899c9bc7bfdb718b5542d74d4e84eed897270f24"
+    }
+  ],
+  "preserved_artifacts_before": {
+    "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+    "analysis/captures/modern-differences/upstream/package/nfs3.exe": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+    "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+  },
+  "preserved_artifacts_after": {
+    "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+    "analysis/captures/modern-differences/upstream/package/nfs3.exe": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+    "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+  },
+  "all_checks_passed": true,
+  "artifacts_unchanged": true,
+  "limits": [
+    "Primary-agent reproducibility check, not independent semantic review.",
+    "Covers only the14 listed static audits, not every repository script or every game difference.",
+    "No target/API execution, runtime/CI qualification, Ghidra readback or whole-game equivalence."
+  ]
+}
