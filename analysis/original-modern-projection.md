@@ -311,3 +311,23 @@ The resumed audit pins all399 bytes of handler `00425060..004251ef`, through RET
 Complete `004349a0..004349c1` (33 bytes) is now pinned and byte-identical in both EXEs. The viewport wrapper calls it at `004bc4ae`, between stage0 and the scene calls. It computes `(context DWORD0 == 1 ? 1 : 0) XOR raw DWORD[006fd4c4]`, stores that result at `00554e4c`, restores EDX/EBP and returns. This is a raw bitwise XOR, not a general Boolean normalization of arbitrary configuration values.
 
 The exact body contains no calls and only this one data store. It therefore cannot capture the missing projection-source values on its ordinary path. This eliminates one concrete intervening callee from the writer search; it does not exclude the larger scene callees or establish every use of the resulting flag. The helper's retained instructions also cannot alone explain a Modern-only mirror-orientation change: input producers and downstream consumers remain relevant. No function was executed.
+
+## Camera dispatch wrapper changes around the retained type8 handler
+
+Following another indexed state-setting route exposes a distinct paired mechanism, without recovering the missing projection-source writer. The [camera-dispatch audit](scripts/audit_camera_dispatch_wrapper.py), run with `python3 analysis/scripts/audit_camera_dispatch_wrapper.py`, pins both complete wrappers at `00426450`, resolves24 table routes and retains the preparer/type8 bodies in [its manifest](evidence/audits/camera-dispatch-wrapper.json). Original ends exclusively at `0042655a` (266 bytes), Modern at `0042649a` (74 bytes); table data at `004263f0..00426450` is separate from either body.
+
+Both take mode in EAX and slot in EDX, index descriptor table `00552ec8 + mode*8 + slot*4`, then call preparer `00426370`. The complete127-byte preparer is identical. Importantly, this lookup and preparer run **before** the unsigned `mode-1 <= 23` handler-range check. The later check therefore does not establish safe handling of arbitrary modes, slots or null descriptors.
+
+Original uses a jump table whose targets are local stubs: each supplies EAX=descriptor, calls its handler and returns through the wrapper epilogue. Modern's table holds handler addresses directly; it supplies EAX=descriptor and EDX0 and performs an indirect CALL. Resolving old stub CALL operands establishes22 routes lead to the same handler addresses in both binaries. Modes15/22 instead change from direct wrapper return to the one-byte RET stub `00426290`. This is a representation/control-flow change, not24 new camera features.
+
+| Selected mode | Original table target and handler | Modern target |
+|---|---|---|
+|8 | Stub `004264be`, CALL at `004264c0` to `00425060` | Direct `00425060` |
+|15 /22 | Return epilogue `00426555` | RET stub `00426290` |
+|20 | Stub `0042652a`, CALL to `00426290` | Direct `00426290` |
+
+The399-byte type8 body is identical, but its wrapper contracts differ. Original explicitly saves EBX/ECX/ESI/EBP and supplies EDX=mode−1 at handler entry; Modern uses PUSHAD/POPAD and supplies EDX0. Thus Modern restores entry EAX and all general registers on ordinary return, while the original does not provide the same preservation contract. Neither should be invented as a common scalar-returning C interface without checking caller liveness and each handler's inputs.
+
+After an admitted Modern handler returns, a new block tests `006fd3b0 != 1` and `006fd1cc != 0`. When both hold, it calls `004240c0` with EAX=`00661220` and EDX1 before restoring registers. That fixed descriptor is the same storage followed in the [viewport-pose report](original-modern-viewport-pose.md#extractionblend-identity-and-fixed-descriptor-producers). Original's stubs return without this post-handler block. The new block also follows the RET-stub modes; it does not run after an out-of-range mode takes the wrapper epilogue.
+
+This supplies a concrete changed caller around the retained type8 code and another use of the fixed descriptor. It does **not** establish that `004240c0` captures projection cells `005e1020/2c/30/38`, that the descriptor aliases those cells, or that the horizon moves correctly. The projection source capture/lifetime and visible result remain unresolved. Next work on this branch must trace the fixed-descriptor handler's actual fields/callees or establish a producer alias; repeating literal-cell searches or treating handler-byte equality as whole-wrapper equivalence would miss the observed difference. No game, instruction, callback or Ghidra execution was used.

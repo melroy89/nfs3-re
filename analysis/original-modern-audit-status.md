@@ -270,3 +270,7 @@ The [1.5.3/1.6.0 comparison](original-modern-pending-overlay.md#historical-v160-
 ## Two local evidence boundaries tightened
 
 The historical abort audit now verifies the supplied-original poll helper matches1.5.3 and contains no direct fixed wait; the claimed prior500ms duration remains a transitive/runtime question, with the required evidence recorded. Separately, complete original helper472fc0 saves/restores EDX, closing the register dependency for the conditional reset-flag clear. No broad runtime or whole-game completion claim follows; catalog labels/counts unchanged.
+
+## Camera dispatch wrapper follow-up
+
+The [paired wrapper audit](original-modern-projection.md#camera-dispatch-wrapper-changes-around-the-retained-type8-handler) resolves24 routes:22 preserve handler targets, while15/22 use a RET stub instead of direct return. Modern changes register preservation/EDX input and adds a conditional post-handler call on fixed descriptor661220. Type8 body equality therefore does not establish wrapper equivalence. Missing projection capture/lifetime and rendered horizon remain unresolved; MP160-003 status and counts unchanged.

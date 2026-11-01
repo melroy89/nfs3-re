@@ -1,0 +1,296 @@
+{
+  "kind": "static-camera-dispatch-wrapper",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00426450",
+          "end_exclusive": "0042655a",
+          "bytes_sha256": "32b097fdf7bc4c3fdb10b8f14e05f9582e7125cececb1355ff0dc18a7c16d740",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/original-00426450.asm",
+          "assembly_sha256": "333e451552a20597e3aa0fdf0b8acc5e0d431b1753b732f2863f9ae1c57467b3"
+        },
+        {
+          "start": "00426370",
+          "end_exclusive": "004263ef",
+          "bytes_sha256": "9ba93c0a4623e58ca4b8429483fe87e0201a9aec9e3144c99fdab0942f2864e9",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/original-00426370.asm",
+          "assembly_sha256": "8ddd040903e4dd87140e9e1554d5ac5a54c2a455f3958a9ebfd35c7e56b8b3e2"
+        },
+        {
+          "start": "00425060",
+          "end_exclusive": "004251ef",
+          "bytes_sha256": "87c257d62a2e3741a30ece41c13eeabda227dde4861f319a3331890356277d21",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/original-00425060.asm",
+          "assembly_sha256": "de945959ea58575beb4058a3ddb578804bfc8c1c2857fba88166bd4fd7694396"
+        }
+      ],
+      "table_sha256": "8e85b65400e9906cb2fcc46badd6c4d52c2a382251b6255d91e33a919bf265d5",
+      "raw_table": [
+        "00426482",
+        "0042648e",
+        "0042649a",
+        "004264a6",
+        "0042649a",
+        "004264a6",
+        "004264b2",
+        "004264be",
+        "004264ca",
+        "004264d6",
+        "004264e2",
+        "004264e2",
+        "004264e2",
+        "004264ee",
+        "00426555",
+        "004264fa",
+        "00426506",
+        "00426512",
+        "0042651e",
+        "0042652a",
+        "00426536",
+        "00426555",
+        "00426542",
+        "0042654e"
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00426450",
+          "end_exclusive": "0042649a",
+          "bytes_sha256": "a6628b564fe777dfcca33580c0bb0b9ad6fbc9a051994d8c32072f4278d5c604",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/official_modern-00426450.asm",
+          "assembly_sha256": "e80b2925d13641ce7f2b99fa594ba30aa071afe03696cff5657b3d8bb53ed101"
+        },
+        {
+          "start": "00426370",
+          "end_exclusive": "004263ef",
+          "bytes_sha256": "9ba93c0a4623e58ca4b8429483fe87e0201a9aec9e3144c99fdab0942f2864e9",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/official_modern-00426370.asm",
+          "assembly_sha256": "20bb7a198a051c8dbb177c0d616f4ce3c670941019e3bdd37fffefd338d34a9b"
+        },
+        {
+          "start": "00425060",
+          "end_exclusive": "004251ef",
+          "bytes_sha256": "87c257d62a2e3741a30ece41c13eeabda227dde4861f319a3331890356277d21",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/official_modern-00425060.asm",
+          "assembly_sha256": "b2248905e643e793f329b3669777d3c7a2ccb9da9deba36551403cb8655e164c"
+        }
+      ],
+      "table_sha256": "23b6da854796e9eea03ad684db65047c02020cadccb934923d183c03187ba5ef",
+      "raw_table": [
+        "004240c0",
+        "00424260",
+        "00424740",
+        "004243a0",
+        "00424740",
+        "004243a0",
+        "00424b50",
+        "00425060",
+        "00425d50",
+        "00425990",
+        "00425ab0",
+        "00425ab0",
+        "00425ab0",
+        "00425bf0",
+        "00426290",
+        "004253d0",
+        "00425640",
+        "004251f0",
+        "004262a0",
+        "00426290",
+        "00424690",
+        "00426290",
+        "00424ce0",
+        "00424e30"
+      ]
+    }
+  },
+  "mode_routes": [
+    {
+      "mode": 1,
+      "original_stub": "00426482",
+      "original_handler": "004240c0",
+      "modern_handler": "004240c0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 2,
+      "original_stub": "0042648e",
+      "original_handler": "00424260",
+      "modern_handler": "00424260",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 3,
+      "original_stub": "0042649a",
+      "original_handler": "00424740",
+      "modern_handler": "00424740",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 4,
+      "original_stub": "004264a6",
+      "original_handler": "004243a0",
+      "modern_handler": "004243a0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 5,
+      "original_stub": "0042649a",
+      "original_handler": "00424740",
+      "modern_handler": "00424740",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 6,
+      "original_stub": "004264a6",
+      "original_handler": "004243a0",
+      "modern_handler": "004243a0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 7,
+      "original_stub": "004264b2",
+      "original_handler": "00424b50",
+      "modern_handler": "00424b50",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 8,
+      "original_stub": "004264be",
+      "original_handler": "00425060",
+      "modern_handler": "00425060",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 9,
+      "original_stub": "004264ca",
+      "original_handler": "00425d50",
+      "modern_handler": "00425d50",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 10,
+      "original_stub": "004264d6",
+      "original_handler": "00425990",
+      "modern_handler": "00425990",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 11,
+      "original_stub": "004264e2",
+      "original_handler": "00425ab0",
+      "modern_handler": "00425ab0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 12,
+      "original_stub": "004264e2",
+      "original_handler": "00425ab0",
+      "modern_handler": "00425ab0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 13,
+      "original_stub": "004264e2",
+      "original_handler": "00425ab0",
+      "modern_handler": "00425ab0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 14,
+      "original_stub": "004264ee",
+      "original_handler": "00425bf0",
+      "modern_handler": "00425bf0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 15,
+      "original_stub": "00426555",
+      "original_handler": null,
+      "modern_handler": "00426290",
+      "relation": "old_return_vs_new_ret_stub"
+    },
+    {
+      "mode": 16,
+      "original_stub": "004264fa",
+      "original_handler": "004253d0",
+      "modern_handler": "004253d0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 17,
+      "original_stub": "00426506",
+      "original_handler": "00425640",
+      "modern_handler": "00425640",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 18,
+      "original_stub": "00426512",
+      "original_handler": "004251f0",
+      "modern_handler": "004251f0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 19,
+      "original_stub": "0042651e",
+      "original_handler": "004262a0",
+      "modern_handler": "004262a0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 20,
+      "original_stub": "0042652a",
+      "original_handler": "00426290",
+      "modern_handler": "00426290",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 21,
+      "original_stub": "00426536",
+      "original_handler": "00424690",
+      "modern_handler": "00424690",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 22,
+      "original_stub": "00426555",
+      "original_handler": null,
+      "modern_handler": "00426290",
+      "relation": "old_return_vs_new_ret_stub"
+    },
+    {
+      "mode": 23,
+      "original_stub": "00426542",
+      "original_handler": "00424ce0",
+      "modern_handler": "00424ce0",
+      "relation": "same_handler"
+    },
+    {
+      "mode": 24,
+      "original_stub": "0042654e",
+      "original_handler": "00424e30",
+      "modern_handler": "00424e30",
+      "relation": "same_handler"
+    }
+  ],
+  "limits": [
+    "No game, instruction, callback or Ghidra execution.",
+    "Paired wrappers and handler addresses, not equivalence of every handler or input domain.",
+    "No projection-cache capture writer or visible horizon result established."
+  ],
+  "contract_changes": {
+    "entry_inputs": "EAX=mode, EDX=slot; descriptor lookup precedes unsigned handler-range check in both.",
+    "original": "Saves EBX/ECX/ESI/EBP; tail-dispatch stubs call selected handler; EDX=mode-1 on admitted handler entry.",
+    "modern": "PUSHAD/POPAD; selected handler EAX=descriptor, EDX=0; optional fixed descriptor661220 update with EDX1 after handler.",
+    "post_condition": "Only admitted modes1..24 reach post block; requires006fd3b0!=1 and006fd1cc!=0.",
+    "retained": "Complete127-byte preparer and399-byte type8 handler identical.",
+    "limits": "Callee input/output liveness and all shared-state lifetimes remain separate; complete projection capture not recovered."
+  }
+}
