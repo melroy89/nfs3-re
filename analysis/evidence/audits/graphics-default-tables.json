@@ -248,6 +248,313 @@
       }
     }
   },
+  "named_modern_defaults": {
+    "english_member": "fedata/text/text.eng",
+    "english_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "bindings": [
+      {
+        "descriptor": "00556730",
+        "key": "viewlevel",
+        "destination": "006fbc28",
+        "words": [
+          "00537fc8",
+          "00556252",
+          "00000000",
+          "00000000",
+          "006fbc28"
+        ],
+        "ids": [
+          184,
+          183,
+          182,
+          181
+        ],
+        "labels": [
+          "Full",
+          "Far",
+          "Medium",
+          "Close"
+        ],
+        "table_labels_by_effective_tier": [
+          "Close",
+          "Medium",
+          "Far",
+          "Far",
+          "Full",
+          "Full"
+        ]
+      },
+      {
+        "descriptor": "0055671c",
+        "key": "hrzlevel",
+        "destination": "006fbc2c",
+        "words": [
+          "00537fbc",
+          "0055624a",
+          "00000000",
+          "00000000",
+          "006fbc2c"
+        ],
+        "ids": [
+          187,
+          185,
+          229
+        ],
+        "labels": [
+          "High",
+          "Low",
+          "Off"
+        ],
+        "table_labels_by_effective_tier": [
+          "Off",
+          "Low",
+          "Low",
+          "High",
+          "High",
+          "High"
+        ]
+      },
+      {
+        "descriptor": "005566f4",
+        "key": "cardetail",
+        "destination": "006fbc1c",
+        "words": [
+          "00537fa4",
+          "0055623a",
+          "00000000",
+          "00000000",
+          "006fbc1c"
+        ],
+        "ids": [
+          187,
+          186,
+          185
+        ],
+        "labels": [
+          "High",
+          "Medium",
+          "Low"
+        ],
+        "table_labels_by_effective_tier": [
+          "Low",
+          "Low",
+          "Medium",
+          "Medium",
+          "High",
+          "High"
+        ]
+      },
+      {
+        "descriptor": "00556708",
+        "key": "sfxlevel",
+        "destination": "006fbc30",
+        "words": [
+          "00537fb0",
+          "00556242",
+          "00000000",
+          "00000000",
+          "006fbc30"
+        ],
+        "ids": [
+          187,
+          185,
+          229
+        ],
+        "labels": [
+          "High",
+          "Low",
+          "Off"
+        ],
+        "table_labels_by_effective_tier": [
+          "Off",
+          "Low",
+          "Low",
+          "High",
+          "High",
+          "High"
+        ]
+      },
+      {
+        "descriptor": "005566e0",
+        "key": "carlight",
+        "destination": "006fbc20",
+        "words": [
+          "00537f98",
+          "005561be",
+          "00000000",
+          "00000000",
+          "006fbc20"
+        ],
+        "ids": [
+          229,
+          228
+        ],
+        "labels": [
+          "Off",
+          "On"
+        ],
+        "table_labels_by_effective_tier": [
+          "Off",
+          "On",
+          "On",
+          "On",
+          "On",
+          "On"
+        ]
+      },
+      {
+        "descriptor": "005566cc",
+        "key": "carchrome",
+        "destination": "006fbc24",
+        "words": [
+          "00537f8c",
+          "005561be",
+          "00000000",
+          "00000000",
+          "006fbc24"
+        ],
+        "ids": [
+          229,
+          228
+        ],
+        "labels": [
+          "Off",
+          "On"
+        ],
+        "table_labels_by_effective_tier": [
+          "Off",
+          "Off",
+          "On",
+          "On",
+          "On",
+          "On"
+        ]
+      },
+      {
+        "descriptor": "0055676c",
+        "key": "projtex",
+        "destination": "006fbc3c",
+        "words": [
+          "00537fe8",
+          "005561ee",
+          "00000000",
+          "00000000",
+          "006fbc3c"
+        ],
+        "ids": [
+          273,
+          272
+        ],
+        "labels": [
+          "Vertex",
+          "Projected"
+        ],
+        "table_labels_by_effective_tier": [
+          "Vertex",
+          "Vertex",
+          "Vertex",
+          "Projected",
+          "Projected",
+          "Projected"
+        ]
+      },
+      {
+        "descriptor": "00556564",
+        "key": "mirrorlevel",
+        "destination": "006fd1d8",
+        "words": [
+          "00537720",
+          "0055623a",
+          "00000000",
+          "00000000",
+          "006fd1d8"
+        ],
+        "ids": [
+          187,
+          186,
+          185
+        ],
+        "labels": [
+          "High",
+          "Medium",
+          "Low"
+        ],
+        "table_labels_by_effective_tier": [
+          "Low",
+          "Low",
+          "Low",
+          "Low",
+          "Medium",
+          "High"
+        ]
+      },
+      {
+        "descriptor": "00556924",
+        "key": "fog",
+        "destination": "006fd1d4",
+        "words": [
+          "0053a87c",
+          "005561be",
+          "00000000",
+          "00000000",
+          "006fd1d4"
+        ],
+        "ids": [
+          229,
+          228
+        ],
+        "labels": [
+          "Off",
+          "On"
+        ]
+      }
+    ],
+    "effective_tier": "min(unsigned CPU score,5), then logical shift right1 if renderer mask&6",
+    "normal_return_ecx_contract": {
+      "selector": "00448394..004483fd PUSHAD/POPAD",
+      "selector_hex": "60e886ffffff31c0b020833d98277a0000750c0fba2514bc6f00007202b010500fb7051abc6f00500fb70518bc6f0050e8036a070089c731c9be3083a1003b0d6082a1007d0d3b3e74104181c614010000ebeb31c9be3083a100890d5c82a10089f0e80500000061c3",
+      "record_selector_and_field10_getter": "00448348..00448371 writes no ECX",
+      "accessor_hex": "a15c82a1003b056082a100720731c0a35c82a10069c014010000053083a100c3e8dbffffff8b4010c3"
+    },
+    "conditional_cases": [
+      {
+        "score": 5,
+        "renderer_mask6_nonzero": false,
+        "effective_tier": 5,
+        "table_labels_before_mode_overrides": {
+          "viewlevel": "Full",
+          "hrzlevel": "High",
+          "cardetail": "High",
+          "sfxlevel": "High",
+          "carlight": "On",
+          "carchrome": "On",
+          "projtex": "Projected",
+          "mirrorlevel": "High"
+        }
+      },
+      {
+        "score": 5,
+        "renderer_mask6_nonzero": true,
+        "effective_tier": 2,
+        "table_labels_before_mode_overrides": {
+          "viewlevel": "Far",
+          "hrzlevel": "Low",
+          "cardetail": "Medium",
+          "sfxlevel": "Low",
+          "carlight": "On",
+          "carchrome": "On",
+          "projtex": "Vertex",
+          "mirrorlevel": "Low"
+        }
+      }
+    ],
+    "mode_override": "Selected field10 zero forces projtex0 and Z-buffer selector0; nonzero writes Z-buffer selector1. Fog gets raw field10 EAX, not ninth table.",
+    "limits": [
+      "Derived table labels, not observed settings on this CPU or renderer.",
+      "Requires returning callees with valid stacks, no alias mutation and a valid selected record.",
+      "Other writers/configuration persistence and actual visual quality are outside this mapping."
+    ]
+  },
   "dx5_mode_field_to_fog_selector": {
     "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
     "member": "drivers/dx5/dx5a.dll",
@@ -311,7 +618,7 @@
   },
   "limits": [
     "Table indexing is version-specific; equal ordinal is not equal CPU capability.",
-    "Callee register preservation, other writers and visible setting meanings require linked research.",
+    "Named options and normal-return ECX preservation are verified; other writers, complete callee lifetimes and visual results remain unqualified.",
     "No target execution, executable changes or Ghidra writes."
   ]
 }

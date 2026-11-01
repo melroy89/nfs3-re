@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **121 vendor-only,50 bounded-static,117 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **120 vendor-only,50 bounded-static,118 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -609,3 +609,7 @@ The [capacity history](original-modern-display-modes.md#historical-exe-capacity-
 ## Historical optional LOGO2 producer and draw consumer
 
 The [two-image follow-up](original-modern-frontend-page.md#historical-logo2-loading-and-two-image-draw-selection) verifies1.4.0→1.5.0 adds an optional logo2.qfs attempt after primary success, publishes0/6/8, and selects the second uploaded identifier through the retained records’ fourth DWORD. Primary failure prevents the second attempt. Count/identifier address roles change; final uses the separately audited logos.qfs metadata path. MP150-022 advances vendor-only→bounded-static; counts121/50/117/2. Historical image contents, actual uploads/animation and later consolidation remain unverified; no target execution or database mutation.
+
+## Named default graphics policy
+
+The [default-policy follow-up](original-modern-resolution-defaults.md#named-graphics-defaults-and-the-limits-of-automatic-high-settings) binds eight tier-table destinations through descriptor labels, verifies effective-tier ECX preservation across mode calls and records score5’s renderer-dependent choices. Maximum-score High/Full defaults remain conditional on renderer bits and selected-mode overrides; fog receives record EAX rather than the ninth table. MP100-010 advances vendor-only→partial; counts120/50/118/2. Actual settings, full initialization lifetime, visual quality and1.0.0 introduction remain unverified; no target execution or database mutation.

@@ -68,6 +68,52 @@ def main():
     assert suffixes[0]==suffixes[1]
     archive=ROOT/'analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z'
     assert hashlib.sha256(archive.read_bytes()).hexdigest()=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    modern=pefile.PE(str(ROOT/SPECS['official_modern'][0]))
+    english=subprocess.check_output(['7z','x','-so',str(archive),'fedata/text/text.eng'])
+    bindings=[(0x556730,'viewlevel',0x6fbc28),(0x55671c,'hrzlevel',0x6fbc2c),
+              (0x5566f4,'cardetail',0x6fbc1c),(0x556708,'sfxlevel',0x6fbc30),
+              (0x5566e0,'carlight',0x6fbc20),(0x5566cc,'carchrome',0x6fbc24),
+              (0x55676c,'projtex',0x6fbc3c),(0x556564,'mirrorlevel',0x6fd1d8),
+              (0x556924,'fog',0x6fd1d4)]
+    named=[]
+    new_tables={target:list(modern.get_data(table-0x400000,6)) for table,target in NEW}
+    for address,key,target in bindings:
+        words=struct.unpack('<5I',modern.get_data(address-0x400000,20))
+        assert words[2:]==(0,0,target)
+        assert modern.get_string_at_rva(words[0]-0x400000).decode('ascii')==key
+        ids=[];labels=[]
+        for offset in range(8):
+            ident=struct.unpack('<H',modern.get_data(words[1]-0x400000+2*offset,2))[0]
+            if ident==0:break
+            text_offset=struct.unpack_from('<I',english,ident*4)[0]
+            ids.append(ident)
+            labels.append(english[text_offset:english.index(b'\0',text_offset)].decode('latin1'))
+        else:raise AssertionError('unterminated option list')
+        row={'descriptor':f'{address:08x}','key':key,'destination':f'{target:08x}',
+             'words':[f'{v:08x}' for v in words],'ids':ids,'labels':labels}
+        if target in new_tables:
+            values=new_tables[target]
+            assert all(v<len(labels) for v in values)
+            row['table_labels_by_effective_tier']=[labels[v] for v in values]
+        named.append(row)
+    assert modern.get_data(0x72d11,27).hex()=='8b0da452560083f9057605b905000000f605583a7a00067402d1e9'
+    selector=modern.get_data(0x48394,105)
+    accessor=modern.get_data(0x48348,41)
+    assert selector[:1]==b'\x60' and selector[-2:]==b'\x61\xc3'
+    assert accessor.hex()=='a15c82a1003b056082a100720731c0a35c82a10069c014010000053083a100c3e8dbffffff8b4010c3'
+    result['named_modern_defaults']={'english_member':'fedata/text/text.eng',
+        'english_sha256':hashlib.sha256(english).hexdigest(),'bindings':named,
+        'effective_tier':'min(unsigned CPU score,5), then logical shift right1 if renderer mask&6',
+        'normal_return_ecx_contract':{'selector':'00448394..004483fd PUSHAD/POPAD',
+            'selector_hex':selector.hex(),'record_selector_and_field10_getter':'00448348..00448371 writes no ECX',
+            'accessor_hex':accessor.hex()},
+        'conditional_cases':[{'score':5,'renderer_mask6_nonzero':masked,'effective_tier':2 if masked else 5,
+            'table_labels_before_mode_overrides':{r['key']:r['table_labels_by_effective_tier'][2 if masked else 5]
+                for r in named if 'table_labels_by_effective_tier' in r}} for masked in (False,True)],
+        'mode_override':'Selected field10 zero forces projtex0 and Z-buffer selector0; nonzero writes Z-buffer selector1. Fog gets raw field10 EAX, not ninth table.',
+        'limits':['Derived table labels, not observed settings on this CPU or renderer.',
+                  'Requires returning callees with valid stacks, no alias mutation and a valid selected record.',
+                  'Other writers/configuration persistence and actual visual quality are outside this mapping.']}
     member='drivers/dx5/dx5a.dll'
     dll_raw=subprocess.check_output(['7z','x','-so',str(archive),member])
     assert hashlib.sha256(dll_raw).hexdigest()=='6bd5865b05a7a9918da37ad09f643908d9decdcfdb341a23dd60a8cf70c08b42'
@@ -95,7 +141,7 @@ def main():
                   'Source60010eb4 ownership and successful buffer allocation are not established.',
                   'DX5 fog-support trial rejects state21 separately; selector1 is not visible fog support.']}
     result['limits']=['Table indexing is version-specific; equal ordinal is not equal CPU capability.',
-        'Callee register preservation, other writers and visible setting meanings require linked research.',
+        'Named options and normal-return ECX preservation are verified; other writers, complete callee lifetimes and visual results remain unqualified.',
         'No target execution, executable changes or Ghidra writes.']
     (ROOT/'analysis/evidence/audits/graphics-default-tables.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: original signed-WORD and Modern byte tables; final EDX load/EAX store verified')

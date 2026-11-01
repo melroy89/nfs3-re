@@ -95,7 +95,7 @@ The original tables contain five signed WORDs each; Modern uses six unsigned byt
 | `00791b28` | `0047217c`: 0,0,1,1,1 | No write to this destination in the compared Modern initializer |
 | `006fd1d8` | No write in this original initializer | `00472e4a`: 2,2,2,2,1,0 |
 
-These are local table-derived writes, not unconditional final configuration values. Later branches in these bodies can override `006fbc3c`, and other initialization/configuration paths may write the same destinations. The [vehicle-dispatch comparison](original-modern-vehicle-dispatch.md) already maps consumers of `006fbc1c` and `006fd1d8`; remaining semantic setting names are not inferred from their positions in the table.
+These are local table-derived writes, not unconditional final configuration values. Later branches in these bodies can override `006fbc3c`, and other initialization/configuration paths may write the same destinations. The [vehicle-dispatch comparison](original-modern-vehicle-dispatch.md) already maps consumers of `006fbc1c` and `006fd1d8`; the named-option follow-up below now binds the remaining table destinations through their actual descriptors and English label lists.
 
 The ninth Modern table, `00472e50`, contains **0,0,0,1,1,1**, but the final sequence is:
 
@@ -168,3 +168,40 @@ old-table extent. The examples are arithmetic derivations, not target probes.
 Full source lifetime, mode/record selection, other drivers and visible fog
 remain unverified. No DLL, EXE, graphics API or instruction probe was executed;
 executable and database bytes were preserved.
+
+## Named graphics defaults and the limits of automatic High settings
+
+**Confidence: verified static descriptor/label bindings and local default policy. Work status: done for this mapping, partial for MP100-010’s broad claim.** The expanded [table audit](scripts/audit_graphics_default_tables.py) pins the official package’s English resource, reads nine20-byte descriptors and their terminated WORD label lists, and connects the eight used byte tables to those options. The [manifest](evidence/audits/graphics-default-tables.json) retains addresses, raw descriptor DWORDs, label IDs, per-tier labels and two conditional examples. These are derived defaults, not observed settings on this machine.
+
+The [CPU-tier investigation](original-modern-cpu-tier.md) establishes the ordinary standard-leaf feature/family score with maximum5. The default initializer interprets it as unsigned, caps it at5, then shifts right by1 when renderer mask`007a3a58 &6` is nonzero. It does not measure actual rendering speed. For incoming score5, the table writes are:
+
+| Named option key | Selector DWORD | Mask6 clear: effective tier5 | Mask6 nonzero: effective tier2 |
+|---|---|---|---|
+|`viewlevel` |`006fbc28` |Full |Far |
+|`hrzlevel` |`006fbc2c` |High |Low |
+|`cardetail` |`006fbc1c` |High |Medium |
+|`sfxlevel` |`006fbc30` |High |Low |
+|`carlight` |`006fbc20` |On |On |
+|`carchrome` |`006fbc24` |On |On |
+|`projtex` |`006fbc3c` |Projected |Vertex |
+|`mirrorlevel` |`006fd1d8` |High |Low |
+
+These labels come from the descriptor-linked official English entries, not assumptions that larger numeric values mean better quality. In particular High/Full are ordinal0 for the corresponding lists; carlight/carchrome On and projtex Projected are ordinal1. The actual rendering meaning and effectiveness of each setting remain its consumer’s separate contract.
+
+### ECX tier survives the two intervening mode calls
+
+The later mirror byte read at`00472e02` occurs after calls to mode selector`00448394` and field10 accessor`00448368`. The expanded audit retains their exact bytes: the selector uses balanced PUSHAD/POPAD on its normal return; the accessor and its leaf`00448348` write EAX and the selected-index global, but not ECX. Thus the original effective tier survives these two calls under ordinary valid-stack/no-alias-mutation conditions. This closes the earlier specific callee-register question for the later table lookup, without certifying every mode helper or failure path.
+
+### Mode-dependent overrides prevent an unconditional best-settings claim
+
+The table is not the final authority for every destination. After selection, field10 of the selected menu record is read into EAX:
+
+- Zero replaces`projtex` with0 (Vertex) and Z-buffer selector`006fbc34` with0.
+- Nonzero sets the Z-buffer selector to1 while retaining the tier’s projtex choice.
+- Fog selector`006fd1d4` receives that raw EAX value, despite the separate load of the ninth table into EDX. The previously documented load/store mismatch is preserved; do not describe fog as a ninth CPU-table-selected default.
+
+For ordinary records from the audited collector, field10 is normalized0/1 from the provider-record threshold. Empty or invalid records, source lifetime and other writers retain the preceding caveats. Selector1 also does not prove actual fog support; the independent support trial still applies.
+
+The initializer also requests either640×480 or the packed large-area sentinel according to tier/renderer conditions already documented above. That request is filtered through the actual mode list; it is not a promise that a desktop-sized or highest-quality display mode exists or succeeds.
+
+**MP100-010 conclusion:** Modern changes CPU rating and its table consumers so a maximum ordinary feature score on the non-reduced renderer path requests the table’s High/Full choices. The renderer-reduced path and selected-mode overrides can choose lower labels. Persisted settings/default-reset admission are separate from this routine: the [configuration investigation](original-modern-config-loading.md) traces grouped defaults after a rejected version header, but this finding does not establish that every startup overwrites saved user choices. Exact1.0.0 introduction, every legacy CPU branch, active settings on particular PCs/VMs and visual quality remain unverified. No CPU detection, display API, instruction probe or game was run.
