@@ -7468,7 +7468,7 @@
         "original_entry": "004b59c0",
         "role": "Renderer initializer tail",
         "report": "analysis/original-modern-renderer-initialization.md",
-        "report_sha256": "a751ad6bede13a0656896e3e9dbadce2a8578ae23af342122e39e898debf8d9a",
+        "report_sha256": "91874487ec1c3d7b5d402921b6b06322e546f88c3e3a0e47b5625799ad32c33d",
         "remaining": "Mapped Modern counterpart; complete driver/callee behavior remains partial.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7532,7 +7532,7 @@
         "original_entry": "004b6400",
         "role": "Renderer registry values",
         "report": "analysis/original-modern-registry.md",
-        "report_sha256": "996c7b7f87ee79ea6dd4d2afaad36df91bb0e354b21c48d2897977293f99e496",
+        "report_sha256": "c5091832d89f93e35cbaf1755a9d1b0efb1e39ca6d870bf9165dd8ba5e396f5c",
         "remaining": "Original removed helper checked; Modern driver-specific replacement mapping incomplete.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7540,7 +7540,7 @@
         "original_entry": "004b64c0",
         "role": "Renderer description registry value",
         "report": "analysis/original-modern-registry.md",
-        "report_sha256": "996c7b7f87ee79ea6dd4d2afaad36df91bb0e354b21c48d2897977293f99e496",
+        "report_sha256": "c5091832d89f93e35cbaf1755a9d1b0efb1e39ca6d870bf9165dd8ba5e396f5c",
         "remaining": "Original removed helper checked; error/fallback and external registry behavior untested.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7548,7 +7548,7 @@
         "original_entry": "004b6520",
         "role": "Desktop registry path",
         "report": "analysis/original-modern-registry.md",
-        "report_sha256": "996c7b7f87ee79ea6dd4d2afaad36df91bb0e354b21c48d2897977293f99e496",
+        "report_sha256": "c5091832d89f93e35cbaf1755a9d1b0efb1e39ca6d870bf9165dd8ba5e396f5c",
         "remaining": "Original screenshot dependency checked; query failure and lifecycle remain partial.",
         "status": "entry classified; semantic validation partial"
       },
@@ -7795,7 +7795,7 @@
       }
     ],
     "report": "analysis/original-modern-graphics-menu-transition.md",
-    "report_sha256": "79ed15a94528657bb34da2eb0bb8f4cdbf5ab2782af114c2aa132aea4c3d3d14",
+    "report_sha256": "7e4f38e14b12006aa8cd877b0c741a67f420535f010a5dee0646c7afa526e493",
     "limit": "Byte localization and bounded research routes; not complete enclosing-function/callee/runtime equivalence."
   },
   "audio_interval_partition": {
@@ -8000,7 +8000,7 @@
       }
     ],
     "report": "analysis/original-modern-frontend-page.md",
-    "report_sha256": "fd4c0f10d07e00a8673ca2a3a9cc7840c5f631629413b5c48acc3590c791fc1d",
+    "report_sha256": "ebf6c8a0c8633283e67cd7aa6def1201b8249058d014c9c75f5359c036b247a8",
     "limit": "Same-address partitions overlap different old/new function roles; counterpart calls/registration and report evidence govern semantics, not these partitions."
   },
   "startup_interval_partition": {
@@ -8052,7 +8052,7 @@
     "final_jump_hex": "e917feffff",
     "original_trailing_zero_bytes": 3,
     "report": "analysis/original-modern-mode-selection.md",
-    "report_sha256": "f81f580eea83cbf9b6142de3437e46f7e1bb269214739b3ca3cdc92cb9256393",
+    "report_sha256": "59f0fee3ebc2d5588bf607ed53b6508e316fb3ee60e5027ee27a01b6f1ab3c4c",
     "limit": "Original video-mode callback tail; no correspondence with new RNG helpers at overlapping addresses."
   },
   "raster_removed_helpers": {

@@ -128,3 +128,48 @@ Modern's complete load body instead uses the size/version decisions documented a
 Modern also repurposes `0067900c` as the INI `WindowedMode` setting, independently traced in [startup policy](original-modern-startup-policy.md#3-current-settings-exact-defaults-and-immediate-effects). Carrying the original reset-flag name or semantics onto that address would be incorrect. Its final graphics settings can still change through header/version reset, default initialization, mode selection and other paths; this comparison does not promise universal persistence.
 
 MP100-046 gains **partial static support**: the specific original type-mismatch-to-startup-defaults route is removed. All renderer/device changes, later default callers, actual settings survival and v1.0.0 introduction remain unverified. No renderer was switched, no config was written and no target instructions were executed for this audit.
+
+## Removed inline defaults at 00472566: replacement initialization matters
+
+The [bounded default-block audit](scripts/audit_removed_default_block.py) pins
+[complete removed bytes and the Modern sound helper](evidence/audits/removed-default-block.json).
+It classifies the previously unrouted197-byte outside-function interval
+`00472566..0047262b`. Every Modern byte there is NOP. Immediately before it,
+original `00472561` calls `00472250`, whereas Modern jumps to `0047262b`.
+That call is removed too; it is not part of the197-byte NOP interval.
+
+| Original subrange | Inspected operation | Modern disposition |
+|---|---|---|
+| `00472566..004725be` | Conditional writes to six profile-header+18h cells, using EBX or literal1 according to `006fbb4c` | Old stores skipped; [HUD defaults](original-modern-hud-layout.md#3-header-default-changes-preserve-offsets-not-guessed-widget-names) separately initialize the headers |
+| `004725be..00472611` | Inline audio default constants/selectors | Grouped reset calls sound helper `00472248..00472295` |
+| `00472611..0047262b` | Calls `0040faf0`, stores sound mode3 on nonzero or0 otherwise | Modern sound helper retains this capability-dependent choice |
+
+The complete retained capability predicate returns normalized0/1. This matters
+because Modern subsequently writes small constants using MOV AL: here the
+upper EAX bytes are known zero, rather than implicitly assumed so.
+
+| Destination | Original inline default | Modern sound-helper default |
+|---|---:|---:|
+| `006fbbe8`, `006fbbf0`, `006fbbf4`, `006fbbf8` |100 |95 |
+| `006fbbfc` |127 |108 |
+| `006fbbe4` |2 |0 |
+| `006fbbe0` |1 |1 |
+| `006fbbec`, `006fbbdc` |0 |0 |
+| `006fbc00` (audio mode) | Capability ?3:0 | Capability ?3:0 |
+| `006fbbd8` |1 | No direct store in this helper |
+| `006fd1d0` | No direct store in this block |83 |
+
+These numbers are stored integers, not measured loudness or percentages.
+The [frontend-sound comparison](original-modern-frontend-sound.md) establishes
+`006fd1d0`'s new slider route; the [music policy](original-modern-music-start.md)
+qualifies selection consumers. Missing stores in one block do not prove missing
+initialization elsewhere. Modern's grouped reset route is documented above;
+this local comparison is not a proof that every caller initializes all fields
+or that saved settings are always reset.
+
+**Status:** done for this removed interval's instruction roles, replacement
+control transfer and compared sound defaults; verified static evidence.
+Complete original `00472250`, full initializer register/data provenance, all
+field identities, persistence and audible results remain separate follow-ups.
+No game, audio API or instruction probe was executed; executable and saved
+Ghidra bytes were preserved.
