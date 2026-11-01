@@ -307,6 +307,13 @@
           "assembly_sha256": "49d458a2a3f7cf57978a680441f3312d843a39816d2fd89e0afd86a37ef33a9e"
         },
         {
+          "start": "004f93ec",
+          "end": "004f93fe",
+          "bytes_sha256": "4b23c6bda049802b56195d4e00eeb000c4e600d433a6954741fc8c2e4de92721",
+          "assembly": "analysis/captures/modern-differences/command-line/official_modern-004f93ec.asm",
+          "assembly_sha256": "ee771df20cdd6975c7652541b90557d7ee3ec169b96ac117b03729b13ecf0e70"
+        },
+        {
           "start": "004b57f4",
           "end": "004b5841",
           "bytes_sha256": "6ba276529cbf7d2387301681332a1578186be91bc4e2502f46d3bda9cc3d87bb",
@@ -587,6 +594,34 @@
     "Table recognition is not full downstream option semantics.",
     "No universal claim that legacy options have no other parser path."
   ],
+  "help_construction": {
+    "original": {
+      "strings": {
+        "0053d690": "19:22:39",
+        "0053d69c": "Aug 27 1998",
+        "0053d6a8": "",
+        "0053d6ac": "\nNeed For Speed III\n Copyright (C) 1998 Electronic Arts Inc.\n Build: %s  %s  %s  E.A. Seattle\n",
+        "0053d70c": "Invalid argument: %s\n",
+        "0053d724": "\n",
+        "0053d734": "Invalid argument",
+        "0053d748": "Usage"
+      },
+      "dialog_import": "MessageBoxA",
+      "dialog_call": "004a546f",
+      "buffer": "007a1ba0"
+    },
+    "official_modern": {
+      "strings": {
+        "0053d690": "About",
+        "0053d698": "Need For Speed III: Hot Pursuit [1998/09/03]\n(C) 1998 Electronic Arts\nModern Patch v1.6.1 [2016/10/28]\n(C) 2016 VEG <me@veg.by>\n\n",
+        "0053d71a": "Invalid argument: %s\n\n",
+        "0053d731": "  %s%s\t%s\n"
+      },
+      "dialog_import": "MessageBoxA",
+      "dialog_call": "004a546f",
+      "buffer": "007a1ba0"
+    }
+  },
   "identical_network_parser_ranges": [
     {
       "start": "0049e080",

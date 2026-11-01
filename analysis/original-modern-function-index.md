@@ -355,7 +355,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f93b8` | CopyBytesThroughNullAndRetainTerminatorPointers | 13 | 11 | [numeric-scale](original-modern-numeric-scale.md), [renderer-loading](original-modern-renderer-loading.md), [screenshots](original-modern-screenshots.md), [sound-bank-language](original-modern-sound-bank-language.md) |
 | `004f93c8` | CopyAsciiStringToLowercase | 18 | 18 | [small-conversion-helpers](original-modern-small-conversion-helpers.md) |
 | `004f93dc` | LowercaseAsciiStringInPlace | 14 | 14 | [language-table](original-modern-language-table.md) |
-| `004f93ec` | AppendStringWithRemainingCapacity | 18 | 18 | [menu-input](original-modern-menu-input.md), [startup-requirements](original-modern-startup-requirements.md) |
+| `004f93ec` | AppendStringWithRemainingCapacity | 18 | 18 | [command-line](original-modern-command-line.md), [menu-input](original-modern-menu-input.md), [startup-requirements](original-modern-startup-requirements.md) |
 | `004f9400` | CopyAsciiToLowercaseBounded | 23 | 23 | [small-conversion-helpers](original-modern-small-conversion-helpers.md), [startup-requirements](original-modern-startup-requirements.md) |
 | `004f9418` | CopyLowercaseTextPreservingRegisters | 12 | 12 | [command-line](original-modern-command-line.md) |
 | `004f9424` | CopyAsciiToUppercaseBounded | 23 | 22 | [small-conversion-helpers](original-modern-small-conversion-helpers.md) |

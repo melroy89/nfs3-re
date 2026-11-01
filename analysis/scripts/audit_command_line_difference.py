@@ -19,7 +19,7 @@ def main():
         pe=pefile.PE(data=raw);images[label]=pe
         def string(va):return pe.get_data(va-0x400000,512).split(b'\0')[0].decode('ascii')
         spans=[(0x49e080,0x49e212),(0x4a5b00,0x4a5d10),(0x4a5080,0x4a54e4),(0x4e0e30,0x4e0e59)]
-        if label=='official_modern':spans += [(0x4b57f4,0x4b5841),(0x4b5844,0x4b5877),(0x4f9400,0x4f9448),(0x4f0ae0,0x4f0aee),(0x4eede0,0x4eedee)]
+        if label=='official_modern':spans += [(0x4f93ec,0x4f93fe),(0x4b57f4,0x4b5841),(0x4b5844,0x4b5877),(0x4f9400,0x4f9448),(0x4f0ae0,0x4f0aee),(0x4eede0,0x4eedee)]
         rows=[]
         for start,end in spans:
             out=capture/f'{label}-{start:08x}.asm'
@@ -29,6 +29,20 @@ def main():
                 'bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),
                 'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
+        help_addresses=([0x53d690,0x53d69c,0x53d6a8,0x53d6ac,0x53d70c,0x53d724,0x53d734,0x53d748]
+                        if label=='original' else [0x53d690,0x53d698,0x53d71a,0x53d731])
+        help_strings={f'{a:08x}':string(a) for a in help_addresses}
+        imports={e.address:e.name.decode() for lib in pe.DIRECTORY_ENTRY_IMPORT for e in lib.imports if e.name}
+        assert imports[0x534764]=='MessageBoxA'
+        result.setdefault('help_construction',{})[label]={'strings':help_strings,'dialog_import':'MessageBoxA',
+            'dialog_call':'004a546f','buffer':'007a1ba0'}
+        if label=='official_modern':
+            assert pe.get_data(0xa537c,72)==b'\x90'*72
+            assert pe.get_data(0xa5344,15).hex()=='b900040000bfa01b7a00be98d65300'
+            assert pe.get_data(0xa5452,9).hex()=='6a006890d65300eb0d'
+            assert help_strings['0053d690']=='About'
+        else:
+            assert help_strings['0053d734']=='Invalid argument' and help_strings['0053d748']=='Usage'
         switches=[]
         for i in range(33):
             ptr=struct.unpack('<I',pe.get_data(0x55eb34-0x400000+4*i,4))[0]

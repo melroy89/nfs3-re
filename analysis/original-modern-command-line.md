@@ -133,3 +133,47 @@ At **`0049e1c6..0049e1d8`**, it passes Name pointer in EAX, IP pointer in EBX, P
 With an empty configured IP, the caller instead supplies a fixed address-string pointer, literal ECX **6666 (`1a0ah`)** and EDX=0 to the same wrapper. The complete purpose/availability of that default address and provider behavior remain outside this local comparison.
 
 The separate [peer endpoint comparison](original-modern-network-endpoints.md) traces Modern’s configurable getter and default9803 replacing original1030. Those changes occur in another endpoint route. They must not be applied indiscriminately to the retained network-launch Port field, literal6666 fallback, or NPS connection wrapper merely because all concern networking. Port byte order, provider libraries, actual connection success and full launch settings validation require their own evidence. No network traffic or target instructions were executed.
+
+## Help banner, error text and dialog title change
+
+The expanded [same audit](scripts/audit_command_line_difference.py) now retains
+both sets of header/error/title strings, verifies the MessageBoxA binding and
+captures complete Modern copy helper `004f93ec..004f93fe`. The
+[manifest](evidence/audits/original-modern-command-line.json) already retains
+the complete parser. This explains72 NOP-replaced outside-body bytes
+`004a537c..004a53c4` as part of a larger help-building rewrite, not an
+independent removed function. That interval begins inside the original PUSH
+at `004a537a`; disassembly from the inventory boundary would be misleading.
+
+| Presentation contract | Original | Official final Modern |
+|---|---|---|
+| Initial banner | Format at `0053d6ac`, with build time `19:22:39`, date `Aug 27 1998` and an empty field | Copy embedded text at `0053d698`, identifying the1998 game and Modern Patch1.6.1/VEG |
+| Invalid-argument format | `Invalid argument: %s` plus one newline | Same wording plus two newlines |
+| Extra separator | Append an additional newline before switch rows | No separate separator append at the old location |
+| Dialog title | Branch selects `Invalid argument` or `Usage` | Always literal `About` |
+| Output API | MessageBoxA at `004a546f` | Same imported API/call site |
+
+Modern `004a5344` supplies count1024 to helper `004f93ec`, with EDI pointing
+to buffer `007a1ba0` and ESI to the embedded banner. For a normally terminated
+source shorter than the count, the helper copies the terminator and leaves
+ESI/EDI pointing at that terminator, so the following invalid-argument format
+can append using EDI. Exhausting the count does **not** append a new NUL.
+The selected pinned banner fits; arbitrary mutated input is not qualified.
+Later invalid-argument and switch-row formatting still calls `004df690`
+without a locally supplied remaining-capacity bound. Thus the initial copy
+limit is not a proof that the whole message construction is bounded, and no
+actual overflow or crash is claimed.
+
+The original append sequence rescans the existing buffer for NUL using
+REPNE SCASB before formatting at its end. Modern removes that work for the
+initial invalid-argument append and removes the separate newline append,
+then resumes the retained switch-row loop. That loop still rescans the
+buffer while adding rows. These are construction changes, separate from
+which switches the parser recognizes and the existing empty-entry filter.
+
+**Status:** done, verified static for the strings, helper contract, NOP-span
+classification and title branch replacement. Actual dialogs, invalid/long
+arguments, formatting-helper internals, complete buffer ownership and runtime
+failure behaviour remain unverified. This compares the official patch; the
+local executable's separate About-string modification remains excluded from
+VEG attribution as documented in the baseline. No game or API was executed.
