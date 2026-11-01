@@ -314,3 +314,7 @@ The [lock comparison](original-modern-dx5-reference-pair.md#lock-failure-now-not
 ## Reference menu/HUD inventory and coordinate comparison
 
 The [asset index](original-modern-reference-assets-index.md) accounts for86 reference and52 final menu/POS members:52 paired menus differ beyond line endings;28 menus and six POS files are reference-only in this archive scope. Each POS parses into138 matching-name/order records; comparing23 rectangles per profile against Modern embedded data finds91–95 changed rectangles per variant. This is numerical/packaging evidence, not pristine-retail authentication, file-deletion proof, target parser execution or rendered layout. Full paired hashes, line counts and changed HUD names are retained. Catalog counts unchanged.
+
+## Menu property inventory and prior-evidence reuse
+
+The [asset follow-up](original-modern-reference-assets-index.md#property-changes-and-reference-identity) verifies all80 local backup menu hashes match the author-reference bundle, and crosschecks52 paired identities in the existing visible-count manifest without rerunning its binary audit. All52 menu pairs still differ after blank/comment/whitespace normalization; repeated property occurrences are retained in per-file multiset deltas. Frequent omissions include998 each of postonly/mainonly and993 each of the demo keys. Omitted defaults, control identity/moves and actual effects are not inferred. Existing count/control research is linked rather than duplicated; pristine-retail authenticity remains open. Catalog counts unchanged.

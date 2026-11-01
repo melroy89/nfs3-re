@@ -43,6 +43,10 @@ The backup specifies **`ypos=7`**, official Modern **`ypos=8`**. Both retain x0/
 
 This gives partial asset evidence for **MP140-027**, the reported one-position downward shift. It does not authenticate the backup as original retail, prove which asset is selected at runtime, establish parser defaults for omitted legacy fields or verify the rendered result. The text token and reset binding remain associated; full reset callback semantics and layout interpretation are separate investigations. No settings were reset and no menu was opened.
 
+## Reference-source identity follow-up
+
+The [reference asset audit](original-modern-reference-assets-index.md#property-changes-and-reference-identity) now verifies all80 local uppercase backup menus against the author-hosted reference bundle, and crosschecks both hashes of all52 pairs in the retained visible-count manifest. The earlier authored-field findings therefore have an identified second source for their backup bytes. This is an identity/provenance improvement, not authentication of pristine retail, a rerun of the binary audit or runtime asset selection.
+
 ## Long-list authored visible counts
 
 The [visible-count audit](evidence/audits/menu-visible-counts.json), reproduced by `python3 analysis/scripts/audit_menu_visible_counts.py`, scans all52 official `.mnu` archive members and uppercase backup counterparts. It pairs sections only when `(section type,listname)` has exactly one `maxvisitem` field on each side. Nine unique pairs differ:

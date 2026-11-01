@@ -36,6 +36,25 @@ def identity(entry):
     return {'member': name, 'bytes': len(raw), 'sha256': sha(raw)}
 
 
+def properties(raw):
+    ordered = []
+    section = None
+    fields = collections.Counter()
+    for line in raw.decode('latin1').splitlines():
+        line = line.strip()
+        if not line or line.startswith(';'):
+            continue
+        if line.startswith('[') and line.endswith(']'):
+            section = line
+            ordered.append((section,))
+        else:
+            assert section is not None and '=' in line, line
+            key, value = (part.strip() for part in line.split('=', 1))
+            ordered.append((section, key, value))
+            fields[(section, key, value)] += 1
+    return ordered, fields
+
+
 def main():
     specs = {
         'reference': ('analysis/captures/modern-differences/upstream/history/nfs3_orig.7z',
@@ -49,6 +68,8 @@ def main():
               'archives': {role: {'path': path, 'sha256': digest} for role, (path, digest) in specs.items()},
               'assets': [], 'hud_literal_comparison': []}
     counts = collections.Counter()
+    removed_keys = collections.Counter()
+    added_keys = collections.Counter()
     for key in sorted(old.keys() | new.keys()):
         row = {'normalized_path': key}
         for role, members in bundles.items():
@@ -59,6 +80,19 @@ def main():
             row['status'] = 'identical' if a == b else 'changed'
             aa, bb = a.decode('latin1').splitlines(), b.decode('latin1').splitlines()
             row['line_endings_only'] = a != b and aa == bb
+            ao, af = properties(a)
+            bo, bf = properties(b)
+            removed, added = af-bf, bf-af
+            row['ordered_property_tokens_equal'] = ao == bo
+            row['property_multiset_difference'] = {
+                'removed': [{'section': section, 'key': key, 'value': value, 'count': n}
+                            for (section, key, value), n in sorted(removed.items())],
+                'added': [{'section': section, 'key': key, 'value': value, 'count': n}
+                          for (section, key, value), n in sorted(added.items())]}
+            for (_, field, _), n in removed.items():
+                removed_keys[field] += n
+            for (_, field, _), n in added.items():
+                added_keys[field] += n
             # Text-level evidence only: no invented section identity from positional alignment.
             edits = difflib.SequenceMatcher(a=aa, b=bb, autojunk=False).get_opcodes()
             row['text_line_counts'] = {'reference': len(aa), 'modern': len(bb),
@@ -71,6 +105,29 @@ def main():
     assert counts['modern-only'] == 0 and counts['reference-only'] == 34
     assert counts['changed'] == 52 and counts['identical'] == 0
     assert not any(row.get('line_endings_only') for row in result['assets'])
+    assert not any(row.get('ordered_property_tokens_equal') for row in result['assets'])
+    backup_dir = ROOT/'nfs3_decomp.rep/Electronic Arts/Need For Speed III/fedata_org/menus'
+    result['reference_backup_matches'] = []
+    for key in sorted(k for k in old if k.endswith('.mnu')):
+        path = backup_dir/old[key][0].split('/')[-1]
+        raw = path.read_bytes()
+        assert raw == old[key][1]
+        result['reference_backup_matches'].append({'member': old[key][0],
+            'backup': str(path.relative_to(ROOT)), 'sha256': sha(raw)})
+    assert len(result['reference_backup_matches']) == 80
+    previous = ROOT/'analysis/evidence/audits/menu-visible-counts.json'
+    evidence = json.loads(previous.read_text())
+    by_path = {r['normalized_path']: r for r in result['assets']}
+    for row in evidence['members']:
+        paired = by_path[row['member'].casefold()]
+        assert row['backup_sha256'] == paired['reference']['sha256']
+        assert row['modern_sha256'] == paired['modern']['sha256']
+    assert len(evidence['members']) == 52
+    result['visible_count_evidence_identity_crosscheck'] = {'path': str(previous.relative_to(ROOT)),
+        'sha256': sha(previous.read_bytes()), 'matched_pairs': 52,
+        'scope': 'Identity crosscheck only; previous binary/field-parser audits not rerun.'}
+    result['property_key_totals'] = {'removed': dict(sorted(removed_keys.items())),
+                                     'added': dict(sorted(added_keys.items()))}
     relative, expected, _ = SPECS['official_modern']
     exe = (ROOT/relative).read_bytes()
     assert sha(exe) == expected
@@ -115,6 +172,8 @@ def main():
         'Author-hosted reference bundle is not authenticated pristine retail.',
         'Casefold matching is deliberate Windows-style path pairing, not Linux installation validation.',
         'Reference-only means absent from final patch archive, not deleted or unreachable at runtime.',
+        'Menu property multisets preserve repeated fields but not widget identity/order; moving properties between same-type sections may cancel.',
+        'Omitted fields are not assumed equivalent to explicit defaults; target parser and template behavior require prior/separate evidence.',
         'Menu line-edit counts preserve text order; no widget identity or semantic equivalence inferred.',
         'HUD compares ordered coordinate literals as binary32 using host float parsing; not target parser or x87 execution.',
         'HUD compares23 text rectangles per profile with first23 embedded rectangles, excluding extra24th slot and later aspect transforms.',
@@ -132,7 +191,14 @@ def main():
         if 'reference' in row and 'modern' in row:
             c = row['text_line_counts']
             out.append(f'| `{row["normalized_path"].split("/")[-1]}` | {row["status"]} | {c["reference"]} / {c["modern"]} | {c["removed_or_replaced"]} / {c["added_or_replaced"]} |')
-    out += ['', '## Reference-only assets', '', '| Member | Interpretation |', '|---|---|']
+    out += ['', '## Property changes and reference identity', '',
+        'All52 pairs still differ after trimming property whitespace and ignoring blank lines and semicolon-comment lines. The multiset audit retains repeated `(section type,key,value)` occurrences, with additions and removals recorded per file. It does not infer control identity: moves between same-type sections can cancel, field order can matter, and removed keys are not assumed to take equivalent defaults.', '',
+        'The table below lists the ten most frequently removed authored keys. A changed value contributes a removal and an addition; these counts are property occurrences, not controls or verified effects.', '',
+        '| Removed key | Occurrences |', '|---|---:|']
+    for key, n in removed_keys.most_common(10):
+        out.append(f'| `{key}` | {n} |')
+    out += ['', 'All80 local uppercase backup menus are byte-identical to their author-reference counterparts. The52 paired identities also match the previously retained [visible-count evidence](evidence/audits/menu-visible-counts.json), connecting its nine unique count increases and unmatched fields to this reference source. This crosscheck does not rerun that audit or authenticate a pristine retail release. See [the existing control/count analysis](original-modern-common-menu-buttons.md#long-list-authored-visible-counts); do not repeat it from text differences alone.', '']
+    out += ['', '## Reference-only assets' , '', '| Member | Interpretation |', '|---|---|']
     for row in result['assets']:
         if row['status'] == 'reference-only':
             out.append(f'| `{row["reference"]["member"]}` | Not included in final patch archive |')

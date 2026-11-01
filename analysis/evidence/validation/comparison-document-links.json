@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "35fb09171ff7833ae895ef265478f2c33369543f455c8d3933645b3d0695430e",
-      "relative_links": 79
+      "sha256": "e766c19ecfed7e67721eb47d104113379c2d0bda09e8640de9ec3cb4967831cd",
+      "relative_links": 80
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -58,8 +58,8 @@
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
-      "sha256": "d08d00ff9d6bc56c7f02840eb2769200ffe8c662295b13e1d2edefca333571d6",
-      "relative_links": 12
+      "sha256": "6b5ffb8790d4ad5c17e7eab7e2579a4f662c08bcd2abc11ff226051b58d904d1",
+      "relative_links": 13
     },
     {
       "path": "analysis/original-modern-config-loading.md",
@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "0708854224fd5517ca82169f7a38ee475edb78e807c6685e05115abb61ad1398",
+      "sha256": "a3a335f697c6c0c5e82243f6f488f32e973a2b2ffe7936569313afddea9afe73",
       "relative_links": 164
     },
     {
@@ -378,8 +378,8 @@
     },
     {
       "path": "analysis/original-modern-reference-assets-index.md",
-      "sha256": "599c95c45d9627d36899a34d382f784953d899dc78ec1839791ee88c5843bdba",
-      "relative_links": 4
+      "sha256": "4303b2c04ee996692d34c30b652156ff6baa1fdd01b552de0b74571bac183d50",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-registry.md",
@@ -608,7 +608,7 @@
     }
   ],
   "file_count": 121,
-  "relative_link_count": 1930,
+  "relative_link_count": 1934,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -65,6 +65,28 @@ Of52 paired menu files, 52 differ and 0 are identical. Another28 reference menus
 | `slides.mnu` | changed | 131 / 70 | 64 / 3 |
 | `trkinfo.mnu` | changed | 217 / 119 | 107 / 9 |
 
+## Property changes and reference identity
+
+All52 pairs still differ after trimming property whitespace and ignoring blank lines and semicolon-comment lines. The multiset audit retains repeated `(section type,key,value)` occurrences, with additions and removals recorded per file. It does not infer control identity: moves between same-type sections can cancel, field order can matter, and removed keys are not assumed to take equivalent defaults.
+
+The table below lists the ten most frequently removed authored keys. A changed value contributes a removal and an addition; these counts are property occurrences, not controls or verified effects.
+
+| Removed key | Occurrences |
+|---|---:|
+| `postonly` | 998 |
+| `mainonly` | 998 |
+| `EnableForDemo` | 993 |
+| `EnableForE3Demo` | 993 |
+| `value` | 426 |
+| `listx` | 426 |
+| `listy` | 426 |
+| `borderColor` | 263 |
+| `y` | 143 |
+| `x` | 106 |
+
+All80 local uppercase backup menus are byte-identical to their author-reference counterparts. The52 paired identities also match the previously retained [visible-count evidence](evidence/audits/menu-visible-counts.json), connecting its nine unique count increases and unmatched fields to this reference source. This crosscheck does not rerun that audit or authenticate a pristine retail release. See [the existing control/count analysis](original-modern-common-menu-buttons.md#long-list-authored-visible-counts); do not repeat it from text differences alone.
+
+
 ## Reference-only assets
 
 | Member | Interpretation |
