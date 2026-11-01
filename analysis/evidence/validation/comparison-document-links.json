@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5fa97f773670fbdc7d64b57cd66911849e4493e771250f83a0f2f8b1cf687a8f",
-      "relative_links": 235
+      "sha256": "5d56573079dd0e7e1d0a3d1f0c69bd08756d46327eb3b951a289b6e1604be89f",
+      "relative_links": 236
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,13 +108,13 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "9660a4a54051dc0073d06bf93a5804d3ffab5bffa392a2bee8fa3a0a9a19f5af",
-      "relative_links": 271
+      "sha256": "00d2b464b92b3b66adad1b3a3155bc85e848cfc7654610c9adfdc560b8c76516",
+      "relative_links": 272
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "c3372844ee2beb6936be33cd1654374f1bcc84eb5d38437e0ef6343e25461e2a",
-      "relative_links": 22
+      "sha256": "ddb73c5b32f0a4fceee81d5f55bd4eb9d6dc6526b851d8648efb8a351f94f476",
+      "relative_links": 25
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -563,8 +563,8 @@
     },
     {
       "path": "analysis/original-modern-state14.md",
-      "sha256": "e666e9e291a3f0f23d0147e282ba73272dfcaa95faa474fdac779b31918d60ee",
-      "relative_links": 17
+      "sha256": "5aeaf04241c683da00e329274dbd473f6bdb0b491d6b8b8c2b53984e1b8cd7e6",
+      "relative_links": 18
     },
     {
       "path": "analysis/original-modern-string-index.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2684,
+  "relative_link_count": 2690,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

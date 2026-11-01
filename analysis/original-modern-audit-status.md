@@ -784,3 +784,7 @@ The [mode/enable follow-up](original-modern-renderer-loading.md#fog-formula-setu
 ## Menu fog context verified without over-attributing taillight repair
 
 The [historical context audit](original-modern-state14.md#menu-fog-admission-becomes-contextual-at150) verifies140→150 support/effective separation and selected writer/consumer linkage. DX6 has an independent eight-byte code-section edit; its counter meaning remains unresolved. MP150-033 stays vendor-only pending direct lighting/colour evidence. Catalog counts unchanged; no runtime or database changes.
+
+## DX6 counter structural purpose resolved
+
+The [mode-catalog audit](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) resolves the previously opaque6003bd3c cell as descriptor+3c public mode count.150 adds one for the leading public-table slot before the insertion arena. Retained callback/insertion/about bodies and loader-zero-fill boundaries are verified. Leading-slot state, all consumer bounds/device outcomes and visible modes remain untested; no taillight attribution or catalog label change.

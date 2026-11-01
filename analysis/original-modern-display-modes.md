@@ -220,3 +220,30 @@ In1.6.0 both complete consumers call slot`009ef980`: enumerator`004bed90..004bed
 The [loader](original-modern-renderer-loading.md) and [descriptor lifecycle](original-modern-renderer-lifecycle.md) explain cache acceptance/refresh separately. Eliminating a provider query changes the point at which descriptor state/side effects can be observed; byte-identical eligibility does not prove equivalent mode lists when that source can change. Neither query-result validity, cache lifetime under all callers nor actual initialization/recovery is established by the local substitutions.
 
 **Status: done for these selected release-boundary checks; confidence: verified static.** Budget removal, depth narrowing and descriptor caching must remain distinct changes in reconstruction planning. This does not date every texture-loading cache consumer, prove measured optimization, validate renderer callbacks, qualify arbitrary malformed records or complete the whole EXE comparison. No driver, game, new instruction probes, Ghidra or executable changes occurred.
+
+## DX6 public mode count gains its leading slot in150
+
+**Verified descriptor/callback/insertion linkage; complete consumer bounds and runtime mode visibility untested.** The [DX6 count audit](evidence/audits/dx6-mode-count-history.json), reproduced with `python3 analysis/scripts/audit_dx6_mode_count_history.py`, resolves the shared counter left opaque in the [historical DX6 code edit](original-modern-state14.md#dx6-has-a-separate-small-code-edit-at-the-same-boundary). It pins140/150 archives and exact driver hashes; the complete about, callback and insertion bodies are byte-identical across the pair.
+
+| Storage/contract | Address/value |
+|---|---|
+|Descriptor returned by `_THRASH_about@0` |`6003bd00` |
+|Count field |Descriptor+3c =`6003bd3c` |
+|Published table pointer |Descriptor+40 stores`6003f000` |
+|Inserted-record base |`6003f028` |
+|Record stride |40 bytes (28h) |
+|Explicit initialization clearing |4,000 bytes from`6003f028`, excluding the preceding40-byte slot |
+
+The two table bases differ by **one record**. Callback`60001cd0..60001d90` filters incoming records, builds a40-byte temporary record and calls insertion helper`6000e500` at`60001d7c`. The complete157-byte insertion helper searches using the first three DWORDs as an unsigned comparison key. An equal key overwrites the40-byte record without increasing the count. A new key increments the count if it was below100, shifts subsequent records with backward DWORD copying, clears the vacated space and copies the new record. The inserted record addresses use`6003f028 + index×40`, while external clients receive the earlier base`6003f000`.
+
+Initializer`60001c50` clears that insertion arena and the count, invokes the callback-bearing enumeration call, then returns in140. In150 its added INC increments the same public count after the call. For an ordinary fresh completed enumeration that inserted N distinct records, the reported count changes **N→N+1**, now accounting numerically for the leading public slot. Derived examples are0→1,3→4 and100→101. These are arithmetic consequences under the stated condition, not observed enumerations or a claim that the leading slot is a newly valid display mode.
+
+The descriptor and both table bases lie in the `.data` section's virtual tail beyond its raw file bytes. They are loader-zero-filled storage initially, **not file-backed zero records obtained by reading PE offset0**. The explicit initializer clears only the inserted arena; this audit does not establish all later writes or contents of the leading slot. The about body also invokes a device-selection helper before returning the descriptor; that helper's complete side effects remain outside this focused review.
+
+### Count convention and reconstruction limits
+
+The [EXE search comparison](original-modern-mode-selection.md#modern-descriptor-lookup) already establishes that its inspected helper skips index0 and scans1 through count **inclusive**. Therefore adding a public leading slot must not be casually described as “restoring the last mode” for every consumer: exclusive-count and inclusive-count loops observe different extents. At the insertion limit100 the new reported count is101, and all subsequent record accesses/admission must be qualified independently. No out-of-bounds runtime event or valid catalog at that limit is asserted here.
+
+The added INC is not guarded by a local enumeration-result check; the callback does not test insertion's return before continuing. Failures, provider callback ordering and complete external consumers remain unknown. The insertion helper uses ambient direction-flag assumptions for its forward comparisons/copy, uses STD for shifting and executes CLD before continuing; a C port must preserve the verified record movement and comparator rather than imitate those machine operations without their preconditions.
+
+**The counter's structural purpose is now resolved:** it is the exported mode count, not a lighting or fog value. The edit remains separate from MP150-033's unverified taillight repair. Complete driver semantics, leading-slot policy, mode-menu visibility, device acceptance and all bounds remain later work. No DLL, enumerator, API, game, instruction probe, compiler or Ghidra write occurred.

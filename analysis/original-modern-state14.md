@@ -192,6 +192,8 @@ Complete116-byte scene-state restore`00431b40..00431bb4` remains identical in140
 
 ### DX6 has a separate small code edit at the same boundary
 
+**Later follow-up:** the [descriptor/insertion comparison](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) now resolves this cell as the public mode count; the counter-meaning limitation below records the earlier checkpoint. Lighting attribution remains unverified.
+
 The paired `drivers/dx6/dx6a.dll` members are94,208 bytes with SHA-256`d32ee0f11361977ecaa01402b33a0a1ea4f4732b118355a5b98696768f8d25cb` (140) and`6c4a300fd55ed5e6c3c85983d43903717543d1b69146275856322da61a76b152` (150). Their complete equal-sized`.text` sections differ at exactly **eight bytes**, `60001c7f..60001c87`.
 
 At the end of initializer`60001c50`,150 inserts `INC DWORD[6003bd3c]` before POP EDI/RET, moving that epilogue six bytes later. The retained prefix zeroes the cell, supplies callback`60001cd0` and performs an indirect call through object`60014988` vtable+20. The added increment is unconditional after that call; it is not guarded by a local result test. It preserves EAX but changes arithmetic flags. The counter's exact purpose and full producer/consumer lifetime are not established here, so this edit is **not labelled a fog or lighting fix**.

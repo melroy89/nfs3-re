@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5fa97f773670fbdc7d64b57cd66911849e4493e771250f83a0f2f8b1cf687a8f"
+      "sha256": "5d56573079dd0e7e1d0a3d1f0c69bd08756d46327eb3b951a289b6e1604be89f"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -101,7 +101,7 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "c3372844ee2beb6936be33cd1654374f1bcc84eb5d38437e0ef6343e25461e2a"
+      "sha256": "ddb73c5b32f0a4fceee81d5f55bd4eb9d6dc6526b851d8648efb8a351f94f476"
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -445,7 +445,7 @@
     },
     {
       "path": "analysis/original-modern-state14.md",
-      "sha256": "e666e9e291a3f0f23d0147e282ba73272dfcaa95faa474fdac779b31918d60ee"
+      "sha256": "5aeaf04241c683da00e329274dbd473f6bdb0b491d6b8b8c2b53984e1b8cd7e6"
     },
     {
       "path": "analysis/original-modern-texture-limits.md",

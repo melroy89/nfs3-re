@@ -1160,3 +1160,7 @@ The [EXE/provider follow-up](original-modern-renderer-loading.md#fog-formula-set
 ## Historical menu fog context and distinct DX6 initializer edit
 
 The [140/150 comparison](original-modern-state14.md#menu-fog-admission-becomes-contextual-at150) verifies parsed support/effective separation, selected menu0 versus in-race1 context writers, new gate-refresh calls and retained selector15h consumption. It also localizes every DX6 code-section difference to an eight-byte initializer edit, without inventing the counter meaning. MP150-033 remains vendor-only because taillight-specific linkage and visible colour repair are unverified.
+
+## DX6 count increment is mode-catalog bookkeeping
+
+The [descriptor/callback follow-up](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) resolves the150 DX6 counter edit: about exposes the count at+3c and table base one40-byte record before insertion storage, explaining reportedN→N+1 after enumeration. Retained callback and sorted insertion bodies are captured. Leading-slot contents, inclusive/exclusive consumer bounds and actual mode visibility remain unverified; this is not a lighting/fog change.
