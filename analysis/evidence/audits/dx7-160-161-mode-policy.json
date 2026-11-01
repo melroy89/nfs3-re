@@ -1,0 +1,82 @@
+{
+  "kind": "static-dx7-160-161-mode-policy",
+  "range_end": "exclusive",
+  "versions": {
+    "1.6.0": {
+      "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
+      "member": "drivers/dx7/dx7a.dll",
+      "sha256": "8f3ed9676611d65f40b5dde537aab5813d2e2a854c08fdf3b08b7d19a7a25d5e",
+      "spans": [
+        {
+          "start": "60002544",
+          "end_exclusive": "600025a7",
+          "sha256": "683986d1a616a0095555ef52b8f1ca1776c85825dd5b816478688a15ab8d309f",
+          "assembly": "analysis/captures/modern-differences/dx7-history/1.6.0-60002544.asm",
+          "assembly_sha256": "591244caead5ce02b5be00d6638f5782148e98f63d36309243cebcee1fd0d39b"
+        },
+        {
+          "start": "60002710",
+          "end_exclusive": "600027d5",
+          "sha256": "5d0d620f7653fdacb9a2377b744565e6bca0e15f68226c1473359c29d299869c",
+          "assembly": "analysis/captures/modern-differences/dx7-history/1.6.0-60002710.asm",
+          "assembly_sha256": "9d0861603e1acf9e8e5ff5079f4f915321b30ea7480f9f0b5b8fe0730f2ba0ce"
+        },
+        {
+          "start": "60001161",
+          "end_exclusive": "6000116b",
+          "sha256": "514d23bbaf92e61171bc7d85b7c6173394c83af680218dbe5dfa5d8a6ebee0da",
+          "assembly": "analysis/captures/modern-differences/dx7-history/1.6.0-60001161.asm",
+          "assembly_sha256": "f05de83b818a178ff18a3637c65305128b06f73504995c6ee09a4cc23ec1297f"
+        }
+      ]
+    },
+    "1.6.1": {
+      "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+      "member": "drivers/dx7/dx7a.dll",
+      "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+      "spans": [
+        {
+          "start": "60002578",
+          "end_exclusive": "600025ec",
+          "sha256": "af99616d00f2ca7b444574dd89dda95a6e2e7a5520dd743ec2166167238ce186",
+          "assembly": "analysis/captures/modern-differences/dx7-history/1.6.1-60002578.asm",
+          "assembly_sha256": "87b0a0096802840ecd797da2ccf1ba17519fdec38aa1149491d4c04beec57a21"
+        },
+        {
+          "start": "600025ec",
+          "end_exclusive": "600026d2",
+          "sha256": "259b3c5248bfafa13cf6315862b4fda192b78f5a5a09333dba0ae04fbf918a50",
+          "assembly": "analysis/captures/modern-differences/dx7-history/1.6.1-600025ec.asm",
+          "assembly_sha256": "82b2ca274540bf916544e3dd7a97c2b468f7324e512771a81cf16f33f3a42593"
+        },
+        {
+          "start": "600026d4",
+          "end_exclusive": "6000276d",
+          "sha256": "9ebffa24ffc4236479ca32bffdde75c1079b3db6453f1ec22c1c3b3d57142e41",
+          "assembly": "analysis/captures/modern-differences/dx7-history/1.6.1-600026d4.asm",
+          "assembly_sha256": "429c1065ae658d07079bc6f0fb023563db360b271a3540a037638cb0b5b999d9"
+        },
+        {
+          "start": "60001150",
+          "end_exclusive": "6000115a",
+          "sha256": "514d23bbaf92e61171bc7d85b7c6173394c83af680218dbe5dfa5d8a6ebee0da",
+          "assembly": "analysis/captures/modern-differences/dx7-history/1.6.1-60001150.asm",
+          "assembly_sha256": "7e92307ac9614eb0a6c76edc61f5374809232168047636c4b9a8b159fbdbafec"
+        }
+      ]
+    }
+  },
+  "paired_mechanisms": {
+    "table_identity": "Both about exports publish60017250 through600fc800; candidate records use28h stride.",
+    "older_seed": "Writes640/480/16 at table+28/+2c/+30 before interface enumeration; count initialized2 including reserved index0.",
+    "newer_seed": "Zero table/count; only reviewed admitted callback candidates inserted, then reserved-index count increment.",
+    "older_order": "Callback scans existing records for exact width/height/input-depth match or first empty record; new records append in arrival order.",
+    "newer_order": "Binary unsigned lexicographic width/height/resulting-depth insertion with shifting; equal-key metadata replaced."
+  },
+  "limits": [
+    "Author-hosted1.6.0/1.6.1 DLL pair, not original retail EXE/DLL correspondence.",
+    "Older seed is a bounded setup witness; callbacks and newer insertion are complete captured bodies.",
+    "No full API support guarantee, later-writer exclusion, display enumeration or rendered outcome tested.",
+    "No DLL loading or executable/database mutation."
+  ]
+}

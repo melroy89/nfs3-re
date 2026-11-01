@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **150 vendor-only,39 bounded-static,98 partial and3 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **150 vendor-only,40 bounded-static,97 partial and3 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recently narrowed:** type8 descriptor availability/conditional publication, local prepare/render/finalize order, retained399-byte handler and an excluded33-byte viewport-flag helper. See the [projection report](original-modern-projection.md).
@@ -123,7 +123,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels150 entries vendor-only,39 bounded static,98 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels150 entries vendor-only,40 bounded static,97 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -197,3 +197,7 @@ The complete399-byte type8 handler `00425060..004251ef` is now asserted identica
 ## Historical renderer acquisition gap removed for v1.6.0/1.6.1
 
 A fresh official-directory lookup located the author-hosted versioned archives. The [baseline audit](evidence/audits/official-160-161-baseline.json) verified v1.6.0/v1.6.1 internal banners and pinned both EXEs plus DX6/DX7/DX8 members; all four member pairs differ. This removes the missing-artifact prerequisite for that release pair, not the remaining function-level comparison. No DLL or EXE was executed; current analysis targets and saved database were preserved. Other historical pairs remain separate acquisition/qualification work.
+
+## Historical DX7 mode-policy mechanisms verified
+
+The [paired audit](evidence/audits/dx7-160-161-mode-policy.json) now verifies the old fixed640×480×16 seed and arrival-order callback versus1.6.1 removal and sorted insertion. MP161-004 moves from partial to bounded-static support. This closes the two local code mechanisms, not actual display support or every later override. Current catalog labels are150 vendor-only,40 bounded static,97 partial and3 unresolved. The broad original/Modern goal remains incomplete.
