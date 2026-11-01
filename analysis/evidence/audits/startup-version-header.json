@@ -39,12 +39,46 @@
           "bytes_sha256": "b06db75d644932c26004c1fde363e11762eccf16ea5577e256bab42609f2acb8",
           "assembly": "analysis/captures/modern-differences/startup-version-header/original-0050d0f0.asm",
           "assembly_sha256": "e0124f8c5ec77c487fae03a5c391e73b9e320202818f9fb1cf4328596874e183"
+        },
+        {
+          "start": "004e0e30",
+          "end_exclusive": "004e0e59",
+          "bytes_sha256": "348244837cdf83566bcd50b45ce02f71b7fa9a0e15fc4af961629b29fab09f8e",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/original-004e0e30.asm",
+          "assembly_sha256": "d6ad8a1eb1d7d84559123467a39a7fdec6fff52154ed5325f0f876c7c39d88b6"
+        }
+      ],
+      "static_version_imports": [
+        {
+          "dll": "VERSION.dll",
+          "name": "GetFileVersionInfoA",
+          "iat": "00534674"
+        },
+        {
+          "dll": "VERSION.dll",
+          "name": "GetFileVersionInfoSizeA",
+          "iat": "00534678"
+        },
+        {
+          "dll": "VERSION.dll",
+          "name": "VerQueryValueA",
+          "iat": "0053467c"
         }
       ],
       "version_imports": {
         "00534674": "GetFileVersionInfoA",
         "00534678": "GetFileVersionInfoSizeA",
         "0053467c": "VerQueryValueA"
+      },
+      "reader_failure_and_copy": {
+        "failure_return": "0 for zero size after retry, allocationNULL, data/query failure or zero queriedlength",
+        "cleanup": "Allocated buffer reaches004f79f0 on data/query failure and success",
+        "success_flag": "Set1 at004a39ac before copy; no parse validation in reader",
+        "copy": "004e0e30 copies until sourceNUL or count exhausted, then zero-pads remainingcount; no extra terminator",
+        "count": "unsignedmin(queriedlength,31) at startup",
+        "termination_condition": "Byte0055e8b7 untouched by atmost31-byte copy, initiallyzero; valid terminator if not altered elsewhere",
+        "scanner_gate": "004a3a9f testszero only; nonzero includes partial counts1/2 and scanner EOFreturnffffffff",
+        "limits": "No API failure injection, source pointer validation, real malformed-resource run or full scanner error contract"
       },
       "scanner_contract": {
         "wrapper_chain": "004f0548 ->004f0520 ->0050c650",
@@ -116,8 +150,16 @@
           "bytes_sha256": "b06db75d644932c26004c1fde363e11762eccf16ea5577e256bab42609f2acb8",
           "assembly": "analysis/captures/modern-differences/startup-version-header/official_modern-0050d0f0.asm",
           "assembly_sha256": "21220cb71e6452a550069e8afed7d50023166998edcb4a20133f3bde515c327f"
+        },
+        {
+          "start": "004e0e30",
+          "end_exclusive": "004e0e59",
+          "bytes_sha256": "348244837cdf83566bcd50b45ce02f71b7fa9a0e15fc4af961629b29fab09f8e",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/official_modern-004e0e30.asm",
+          "assembly_sha256": "49d458a2a3f7cf57978a680441f3312d843a39816d2fd89e0afd86a37ef33a9e"
         }
       ],
+      "static_version_imports": [],
       "replacement": "Startup reader/scan callsite removed; file-backed string and size20f0/version6/zero template."
     }
   },

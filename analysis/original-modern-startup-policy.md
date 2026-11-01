@@ -82,3 +82,6 @@ An earlier loop check at`004a3ea4` handles state10 before ordinary dispatch, so 
 ## Removed version-resource startup producer
 
 The [configuration header producer audit](original-modern-config-loading.md#original-startup-populates-the-header-template-from-a-version-resource) identifies another removed startup operation: original `004a38f0` reads a FileVersion resource and startup `004a3a97` parses its string into the original header template. Final Modern removes this callsite and uses a file-backed version6 template elsewhere. The [scanner follow-up](original-modern-config-loading.md#scanner-width-and-conditional-version2-header) now verifies DWORD stores and a conditional version2 result; runtime source-file selection and later writes remain unresolved; the original zero-filled template must not be treated as a whole-lifetime version0 invariant.
+
+
+The [failure/copy follow-up](original-modern-config-loading.md#version-reader-failure-gates-and-string-copy-boundary) also records the original zero-only scan-result check, bounded copy/padding semantics and final removal of the static `VERSION.dll` import descriptor. These are local startup/interface differences; malformed-resource runtime behavior remains untested.

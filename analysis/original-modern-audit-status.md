@@ -445,3 +445,8 @@ The [resource/header comparison](original-modern-config-loading.md#original-star
 ## Original scanner width and version2 consequence
 
 The [scanner follow-up](original-modern-config-loading.md#scanner-width-and-conditional-version2-header) resolves plain `%d` to a DWORD store at `0050d500`. Successful parsing of the inspected `27, 2.0` resource leaves low header version2 despite destinations two bytes apart. Conditional on that header surviving initialization and saving, Modern rejects version2 and resets grouped defaults. Runtime file selection, partial parsing and later writes remain pending; this is not a real-file migration test. Catalog counts unchanged.
+
+
+## Version-reader failure/copy and static dependency closure
+
+The [follow-up](original-modern-config-loading.md#version-reader-failure-gates-and-string-copy-boundary) qualifies original reader failure/cleanup paths, copy count/padding and conditional termination, plus the caller's zero-only scanner gate. Final Modern lacks the original three version-query imports and `VERSION.dll` descriptor. This closes the inspected copy and static-dependency questions, not runtime resource provenance, all malformed scanner inputs or header lifetime. Catalog counts unchanged; no target execution.
