@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "441b70c4f92aa7847227b3920bc6d84cb3b9f034efb7a3a880d92f308477eb9b",
-      "relative_links": 143
+      "sha256": "c235e7312d58041dad02eb3a9177cc2bd720a22162c460ece6f308dc0410d97d",
+      "relative_links": 144
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -328,8 +328,8 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "69c6cb2075bb7270ef02563bcc76f093b34288ad377e97defdde06577084e29e",
-      "relative_links": 68
+      "sha256": "1cca863949b15fae6e5ec6f7ddb1410625fbc27f87c31db397909164bd785f69",
+      "relative_links": 69
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
@@ -443,8 +443,8 @@
     },
     {
       "path": "analysis/original-modern-resolution-defaults.md",
-      "sha256": "4e1583204815e0489f247b042db51e999a36617cb79ebdadc0c17314a62282c1",
-      "relative_links": 20
+      "sha256": "a6c4e3a6f781ab545573a14b3e80131245f4beb6960a1ea3b3e080549c7405ee",
+      "relative_links": 24
     },
     {
       "path": "analysis/original-modern-screenshot-feedback.md",
@@ -633,7 +633,7 @@
     }
   ],
   "file_count": 126,
-  "relative_link_count": 2223,
+  "relative_link_count": 2229,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

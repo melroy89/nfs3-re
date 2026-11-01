@@ -104,7 +104,8 @@
           ],
           "hex": "00000000010001000100"
         }
-      ]
+      ],
+      "old_table_extent": "00472155..004721b8:19 zero bytes plus80 bytes of eight signed-WORD arrays in original;99 NOP bytes in Modern"
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -218,6 +219,7 @@
           "hex": "020202020100"
         }
       ],
+      "old_table_extent": "00472155..004721b8:19 zero bytes plus80 bytes of eight signed-WORD arrays in original;99 NOP bytes in Modern",
       "fog_default_chain": {
         "record_producer": "004482e8",
         "producer_hex": "31c0837e18027c02b001894710",
@@ -245,6 +247,67 @@
         "actual_store_source": "EAX from preceding call 00448368, not EDX table load"
       }
     }
+  },
+  "dx5_mode_field_to_fog_selector": {
+    "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+    "member": "drivers/dx5/dx5a.dll",
+    "member_sha256": "6bd5865b05a7a9918da37ad09f643908d9decdcfdb341a23dd60a8cf70c08b42",
+    "producer_span": "60001837..60001871",
+    "producer_bytes_hex": "89cdc1ed0383f90f7705bd020000000fafe80fafeba1b40e016031d2f7f583f8037610c7471403000000c7471803000000eb0789471448894718",
+    "cap_branch_hex": "83f8037610c7471403000000c7471803000000eb0789471448894718",
+    "quotient": "unsigned60010eb4 / wrap32(width*height*bytes_per_pixel), nonzero denominator required",
+    "field18": "Q>3 ->3,otherwise wrap32(Q-1)",
+    "derived_selector": "For a valid selected record produced on this callback path,EXE signed field18>=2 iff unsignedQ>=3",
+    "instruction_derived_examples": [
+      {
+        "unsigned_quotient": 0,
+        "field18_hex": "ffffffff",
+        "signed_field18": -1,
+        "fog_selector": 0
+      },
+      {
+        "unsigned_quotient": 1,
+        "field18_hex": "00000000",
+        "signed_field18": 0,
+        "fog_selector": 0
+      },
+      {
+        "unsigned_quotient": 2,
+        "field18_hex": "00000001",
+        "signed_field18": 1,
+        "fog_selector": 0
+      },
+      {
+        "unsigned_quotient": 3,
+        "field18_hex": "00000002",
+        "signed_field18": 2,
+        "fog_selector": 1
+      },
+      {
+        "unsigned_quotient": 4,
+        "field18_hex": "00000003",
+        "signed_field18": 3,
+        "fog_selector": 1
+      },
+      {
+        "unsigned_quotient": 2147483647,
+        "field18_hex": "00000003",
+        "signed_field18": 3,
+        "fog_selector": 1
+      },
+      {
+        "unsigned_quotient": 4294967295,
+        "field18_hex": "00000003",
+        "signed_field18": 3,
+        "fog_selector": 1
+      }
+    ],
+    "limits": [
+      "Arithmetic model, not executed original instructions or renderer observations.",
+      "Does not cover seeded/other-driver records or prove all selected records came through the callback.",
+      "Source60010eb4 ownership and successful buffer allocation are not established.",
+      "DX5 fog-support trial rejects state21 separately; selector1 is not visible fog support."
+    ]
   },
   "limits": [
     "Table indexing is version-specific; equal ordinal is not equal CPU capability.",

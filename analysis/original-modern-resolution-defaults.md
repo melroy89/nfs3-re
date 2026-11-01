@@ -119,3 +119,53 @@ The expanded table audit verifies the immediate producer-to-consumer chain, rath
 3. File-backed descriptor `00556924` binds token `fog` to selector `006fd1d4`. The [state14 report](original-modern-state14.md#modern-scene-entry-recomputes-fog-admission) verifies helper `00431c1c`, which computes `007a3a54 & 006fd1d4 & 00559234` into admission DWORD `007a3a64`. The [graphics-menu transition report](original-modern-graphics-menu-transition.md) separately maps save/clear/restore writes to the selector.
 
 This establishes a concrete consequence of the load/store sequence: **the default fog selector follows the selected mode's normalized driver-field threshold, with no direct tier-table choice at that store**. It does not establish the driver's semantic name for `+0x18` or prove a visible fog error. The effective tier can still influence mode selection, and later menu/configuration writes can replace this value. Empty-list fallback returns a record address without proving it was populated, so the 0/1 guarantee is conditional on successful record creation/selection. The unused table and chosen register remain an intent question; observed behavior is now mapped through its actual setting and admission consumer.
+
+### DX5 producer qualifies the selected-mode fog default
+
+The expanded [table audit](scripts/audit_graphics_default_tables.py) now pins
+the official archive and DX5 member, captures producer `60001837..60001871`,
+and retains instruction-derived boundary examples in
+[its manifest](evidence/audits/graphics-default-tables.json). This connects the
+EXE's field threshold to the independently compared
+[DX5 mode callback](original-modern-dx5-reference-pair.md#mode-callback-and-selected-initialization-paths).
+It does not assign that backend-specific producer to every driver.
+
+For a candidate created by the captured final DX5 callback, let Q be the
+unsigned quotient `[60010eb4] / wrap32(width*height*bytes_per_pixel)`, with
+nonzero denominator. The callback writes record+18h as3 when Q>3; otherwise
+it writes `wrap32(Q-1)`. Combining that with the EXE's **signed** field>=2 test:
+
+| Q | Stored field+18h | EXE fog selector from that field |
+|---:|---|---:|
+|0 | `ffffffffh` (signed−1) |0 |
+|1 |0 |0 |
+|2 |1 |0 |
+|3 |2 |1 |
+| Greater than3 |3 |1 |
+
+Thus the inspected callback-produced record satisfies **selector1 iff unsigned
+Q>=3**. Q0's subtraction wraps to an unsigned all-ones bit pattern. Keep the quotient
+unsigned and the later signed field interpretation explicit in C. The quotient
+represents this producer's buffer-size arithmetic, not independently measured
+available VRAM or proof of successful surface allocation. The source cell's
+complete ownership remains unresolved.
+
+This conclusion requires a valid selected record populated by that callback.
+Fixed seed records, overwritten/aliased records, other driver implementations
+and failed enumeration remain separate. Most importantly, the
+[DX5 support trial](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector)
+rejects state21 and can clear the separate support flag. A default selector1
+therefore does not establish enabled or rendered fog.
+
+The same table audit also classifies outside-body interval
+`00472155..004721f0`: only `00472155..004721b8` changes. Original has19 zero
+bytes followed by80 bytes of eight signed-WORD default arrays; Modern replaces
+those99 bytes with NOPs. The following56 bytes are unchanged. This is removed
+embedded table storage, not an unrecognized99-byte original function. The
+replacement byte arrays and changed initializer are documented above.
+
+**Status:** done, verified static for the DX5-producer/EXE-threshold link and
+old-table extent. The examples are arithmetic derivations, not target probes.
+Full source lifetime, mode/record selection, other drivers and visible fog
+remain unverified. No DLL, EXE, graphics API or instruction probe was executed;
+executable and database bytes were preserved.
