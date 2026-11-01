@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5438e542898503a70bf55b237c4ecf0b3331027380a4050a915525395d470a07"
+      "sha256": "5632dee33c96bda3a8a10cd3ece48973c7bf77b606c8b0f48276546e8ec51d40"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -329,7 +329,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "72f9717cc98db2fc36796beae178d8c9413ac129ad80a5cbca8c29f0d0dacac0"
+      "sha256": "c2cc4c4c113826e6dd601a8309d8f62c692fb8ed23312bea74a69a0a6df86553"
     },
     {
       "path": "analysis/original-modern-renderer-texel-alignment.md",
@@ -8232,6 +8232,14 @@
             "004a6e68",
             "004a6ec0"
           ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a6e8d",
+            "004a6eaa"
+          ]
         }
       ]
     },
@@ -8372,6 +8380,20 @@
           "entry_mentioned": false,
           "addresses": [
             "004b5624"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004b55d8",
+            "004b55dc",
+            "004b55e0",
+            "004b55f2",
+            "004b5619",
+            "004b561c",
+            "004b562b",
+            "004b5668"
           ]
         },
         {
@@ -8537,6 +8559,16 @@
       "modern_sha256": "c5668599b74d76b4a04dddb7cc389e23dae8797a8e960865490730cc728d4bbb",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004b5748",
+            "004b5772",
+            "004b5775",
+            "004b57bd"
+          ]
+        },
+        {
           "path": "analysis/original-modern-startup-requirements.md",
           "entry_mentioned": true,
           "addresses": [
@@ -8681,6 +8713,8 @@
           "addresses": [
             "004b5844",
             "004b5845",
+            "004b5862",
+            "004b586c",
             "004b5874",
             "004b5877",
             "004b58b5",
@@ -12883,6 +12917,13 @@
           "addresses": [
             "004f93a8"
           ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f93a8"
+          ]
         }
       ]
     },
@@ -12908,6 +12949,13 @@
           "entry_mentioned": true,
           "addresses": [
             "004f93b8"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004f93ba"
           ]
         },
         {
@@ -13177,6 +13225,14 @@
           "entry_mentioned": true,
           "addresses": [
             "004fb6f0"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004fb6f0",
+            "004fb70a"
           ]
         },
         {

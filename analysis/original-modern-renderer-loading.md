@@ -188,3 +188,46 @@ Modern cleanup `004f8514..004f853b` has no literal operand for cached descriptor
 The refresh helper calls about slot `009ef980` and immediately stores returned EAX, without a local null check. The [renderer lifecycle comparison](original-modern-renderer-lifecycle.md) establishes a refresh call during mode application; the [texture comparison](original-modern-texture-loading-followup.md) establishes consumers replacing fresh queries with cached reads. These observations define a required ordering/ownership contract: those reads require a valid current descriptor, and clearing export slots alone does not establish that condition or invalidate every cached reference.
 
 This is not proof of a reachable stale-pointer fault. Descriptor storage could have other ownership, consumers may be gated away after unloading, or other code may reset the cache through aliases. Required follow-up is that lifecycle/admission contract and the driver's descriptor allocation lifetime, not an assumption that FreeLibrary necessarily leaves a dangling pointer. A deliberate reconstruction can strengthen invalidation only as an explicit behavior change; it must not silently attribute that stronger policy to this executable. No DLL or target code was run.
+
+## Historical DirectDrawLagFix configuration relocation: 1.3.0 to 1.3.1
+
+**Verified statically; work done for this configuration-source question.** The
+[reproducible audit](scripts/audit_directdraw_config_release_boundary.py) and
+[retained bytes, disassembly, imports and archive/member hashes](evidence/audits/directdraw-config-release-boundary.json)
+compare the adjacent author-hosted packages. This establishes MP131-001's
+mechanism, rather than inferring it from packaged INI contents.
+
+| Detail | 1.3.0 | 1.3.1 |
+|---|---|---|
+| Filename producer | `004a6e8d..004a6eaa`: GetModuleFileNameA into `007a263c`, replace final four bytes with `.ini` | `004b5775..004b57bd`: module directory, `drivers\`, selected driver name from `007a3a74`, then `\thrash.ini`, into `007a3930` |
+| Section/key | `[NFS3] DirectDrawLagFix` | `[THRASH] DirectDrawLagFix` |
+| Reader | Helper `004b55d8` calls integer reader `004fb6f0`; API call `004fb70a` uses filename `007a263c` | Direct GetPrivateProfileIntA call `004b5862` uses filename `007a3930` |
+| Default supplied | Caller supplies1; reader's existing override lookup can replace the fallback before the INI API | Literal0 |
+| Application | Zero skips optional compatibility call | Zero skips call to helper `004b55dc` at `004b586c` |
+
+Under the shipped executable basename, the old filename is `nfs3.ini`; it is
+actually derived from the module filename, so renaming the executable changes
+that name. The new driver name is obtained from `[NFS3] VideoDriver` on the
+ordinary configuration branch (`004b5748..004b5772`); its parser
+`004b561c..004b5668` normalizes slash characters and separates an optional `@`
+suffix. The nonzero preselected-driver branch reuses existing name storage.
+The string-copy helper `004f93a8..004f93ba` leaves EDI at the copied terminator,
+which explains how the successive path components are concatenated.
+
+The optional compatibility tail is **57 byte-identical bytes**:
+old `004b55f2..004b562b`, new `004b55e0..004b5619`. It tries
+GetModuleHandleA/LoadLibraryA for `DDRAW.DLL`, then GetProcAddress for
+`SetAppCompatData`; a successful lookup reaches `PUSH0; PUSH0ch; CALL EAX`.
+The INI guard was removed from inside the helper and placed in the selected
+driver configuration loader. Neither API availability nor its effects were
+observed. The later final-version bitmask dispatch documented above is a
+separate implementation; this historical evidence does not verify the 1.6.1
+key rename.
+
+**Limits and follow-up:** configuration routing and supplied-default changes
+are verified. Actual settings with overrides, driver selection, API effects,
+Windows performance and displayed results require controlled runtime evidence.
+Path interpretation assumes successful normal module-path retrieval, a
+backslash, sufficient capacity and DF0 for string operations; no robustness
+claim is made. No target/provider/API execution, executable edits or saved
+Ghidra changes were performed.
