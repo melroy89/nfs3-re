@@ -182,3 +182,29 @@ VEG attribution as documented in the baseline. No game or API was executed.
 ## Removed fpuerrors startup consumer
 
 The [x87 startup follow-up](og-modern-x87-precision.md#removed-optional-startup-exception-unmasking) now connects original slot25 `-fpuerrors` to bit25 and five conditional control-word updates. Modern empties the switch string and removes that startup sequence, while retaining the byte-identical runtime CW helper. This concerns exception masks, not arithmetic precision, and does not establish removal of every helper caller.
+
+
+## Removed demo startup writes and precedence
+
+**Verified static writes; field meanings unresolved.** The [audit script](scripts/audit_removed_demo_startup.py) and [manifest](evidence/audits/removed-demo-startup.json) retain both baseline identities, complete branch-region disassembly and selected store/gate assertions. Original slot21 `-msdemo` sets bit21 (byte `0055eb2e` mask`20`); slot20 `-e3demo` sets bit20 (same byte mask`10`). Final Modern has empty strings in both slots.
+
+Original startup tests `-msdemo` at **`004a3b3d`** and conditionally executes `004a3b4a..004a3c22`. It then independently tests `-e3demo` at **`004a3c22`** and conditionally executes `004a3c2f..004a3d05`. This is two ordered branches, not an exclusive choice. Both branches perform these raw writes:
+
+| Storage | Common write |
+|---|---|
+| `0055b041..0055b049` (exclusive end) | Eight bytes `32 33 34 38 3b 3f 40 38` |
+| `00554f50` | DWORD0 |
+| `00556382..00556394` (exclusive end) | Clear18 bytes through fill adapter `004e0640`, then write WORD1 at `00556388` |
+| WORD locations `005562b4`, `0055628a`, `00556224`, `00556208`, `00556262` | 1 |
+| WORD locations `005562b8`, `00556220`, `00556222`, `00556264`, `0055637c`, `0055620a`, `00556286`, `00556288` | 0 |
+
+Their differing stores are:
+
+| WORD location | `-msdemo` branch | `-e3demo` branch |
+|---|---:|---:|
+| `005562b6` | 1 | 0 |
+| `0055621e` | 0 | 1 |
+
+When both flagbits are set on entry to these checks, the later `-e3demo` branch overwrites those two locations. This ordering is independent of command-line argument order once both bits are set. The existing [fill-helper capture](original-modern-config-loading.md#original-header-initialization-narrows-the-migration-example) covers its preservation behaviour; the raw pointers and store values above do not by themselves establish named gameplay settings or keyboard actions.
+
+Final Modern replaces **`004a3b3d..004a3d05` with456 NOP bytes**, removing both local startup override bodies as well as emptying their switch names. This is a separate difference from [Modern's changed save gate](original-modern-config-loading.md#removed-save-gate-belongs-to-the-original--msdemo-flag): removing these startup writes does not imply every bit21 consumer was removed. Other writes, aliases, all flag producers and user-visible demo behaviour remain pending. No demo launch, target instruction or Ghidra write was performed.

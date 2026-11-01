@@ -90,3 +90,8 @@ The [failure/copy follow-up](original-modern-config-loading.md#version-reader-fa
 ## Removed optional floating-point error startup policy
 
 Original [fpuerrors initialization](og-modern-x87-precision.md#removed-optional-startup-exception-unmasking) at `004a3d05..004a3d4a` conditionally clears five x87 exception-mask bits through a retained guarded helper. Final replaces all69 bytes with NOPs and empties the named switch. Precision and rounding bits are unaffected by those five original updates; later control-word resets remain separate.
+
+
+## Removed demo startup overrides
+
+The [demo branch comparison](original-modern-command-line.md#removed-demo-startup-writes-and-precedence) captures original `-msdemo` then `-e3demo` startup writes, the two differing WORD values and later-branch precedence when both flags are set. Final replaces the complete456-byte region with NOPs. Storage meaning remains unresolved; this is not proof that every demo-related flag consumer disappeared.

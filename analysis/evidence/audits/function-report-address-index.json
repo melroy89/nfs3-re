@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "63d526d439876543ff711e08013a63d1de3f7903f6ec7668354cc06d2caa2d00"
+      "sha256": "7da70590badc5d6cf92f2fca535fa501b064f5fed796209e37dd16462726f596"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -57,7 +57,7 @@
     },
     {
       "path": "analysis/original-modern-command-line.md",
-      "sha256": "ac11d471381ed98933153b19cddbd501aa6e299a900fd37d1f7adc02a3371a72"
+      "sha256": "fb199d13774195a9546df4e5feee25fa9894f8a9679cd31ce33e79c607e055cb"
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
@@ -413,7 +413,7 @@
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
-      "sha256": "6c4107021cd3426c236e2323a3dd3c83232d21f4652675534aa207a3df16234a"
+      "sha256": "f06b419761ceb1d3373963eca607071196593dd3259bfc8cc56c699098466ec9"
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",

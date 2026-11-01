@@ -455,3 +455,8 @@ The [follow-up](original-modern-config-loading.md#version-reader-failure-gates-a
 ## Removed optional fpuerrors startup sequence
 
 The [x87 follow-up](og-modern-x87-precision.md#removed-optional-startup-exception-unmasking) verifies original slot25/bit25, all five zero-value mask updates, final69-byte NOP replacement and the byte-identical76-byte runtime helper. It distinguishes exception unmasking from precision selection and leaves guard lifetime, other callers and actual exception delivery open. Catalog counts unchanged; no target execution.
+
+
+## Removed demo startup override bodies
+
+The [ordered-branch audit](original-modern-command-line.md#removed-demo-startup-writes-and-precedence) records the raw common writes, two differing WORD stores and e3demo-after-msdemo precedence in original `004a3b3d..004a3d05`, versus456 Modern NOPs. Field meanings and visible demo effects remain pending. This extends the existing switch-table and save-gate findings without claiming all demo consumers are removed. Catalog counts unchanged; no target execution.
