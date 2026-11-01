@@ -11,6 +11,7 @@ def main():
         'limits':['No getenv/atoi, driver/API or target execution.','Black-polygon attribution, full callback/state lifecycle and visible results unresolved.']}
     capture=ROOT/'analysis/captures/modern-differences/dx7-display-environment';capture.mkdir(parents=True,exist_ok=True)
     consumers=[]
+    count_paths=[]
     for version in ('1.6.0','1.6.1'):
         package=baseline['packages'][version];archive=ROOT/package['archive_path']
         assert hashlib.sha256(archive.read_bytes()).hexdigest()==package['archive_sha256']
@@ -24,7 +25,8 @@ def main():
         end=0x600020b6 if version=='1.6.0' else 0x600020a0
         rows=[]
         for lo,hi in [(0x60002060,end),(0x600020c0,0x600021e7),
-                      (0x60001000,0x6000119a if version=='1.6.0' else 0x60001191),(0x60003783,0x600037ab)]:
+                      (0x60001000,0x6000119a if version=='1.6.0' else 0x60001191),(0x60003783,0x600037ab),(0x60001f40,0x60002054),
+                      (0x6000bb10,0x6000bbc6),(0x6000bbd0,0x6000bd56),(0x60009250,0x600092bd)]:
             code=pe.get_data(lo-0x60000000,hi-lo);out=capture/f'{version}-{lo:08x}.asm'
             out.write_text('\n'.join(disassemble(code,lo))+'\n')
             rows.append({'start':f'{lo:08x}','end_exclusive':f'{hi:08x}','bytes_sha256':hashlib.sha256(code).hexdigest(),
@@ -37,6 +39,13 @@ def main():
         assert callsites==([0x6000117d,0x60003799]if version=='1.6.0'else[0x60001171,0x60003799])
         assert struct.unpack('<I',pe.get_data(0x150e8,4))[0]==0x73617233
         if version=='1.6.0':assert pe.get_data(0x10ea,6).hex()=='8b0de8500160'
+        count_paths.append([pe.get_data(lo,hi-lo)for lo,hi in [(0x1f40,0x2054),(0xbb10,0xbbc6),(0xbbd0,0xbd56),(0x9250,0x92bd)]])
+        assert pe.get_data(0xbce8,5).hex()=='83fb107d58'
+        assert pe.get_string_at_rva(0x15b34)==b'displays'
+        assert pe.get_string_at_rva(0x1550c)==b'%s_%s'
+        assert pe.get_string_at_rva(0x15500)==b'THRASH_%s'
+        assert pe.get_string_at_rva(0x150b0)==b'DX7'
+        assert pe.get_data(0xbbb4,6).hex()=='50e896d6ffff'
         consumers.append(pe.get_data(0x20c0,0x127))
         if version=='1.6.0':
             assert pe.get_data(0x20aa,10).hex()=='8b44240050e80c000000'
@@ -47,6 +56,13 @@ def main():
             'decoded_direct_call_sites':[f'{x:08x}'for x in callsites],
             'descriptor_word_600150e8':{'file_backed_hex':pe.get_data(0x150e8,4).hex(),'value':0x73617233}}
     assert consumers[0]==consumers[1]
+    assert count_paths[0]==count_paths[1]
+    result['count_path']={'paired_spans_identical':True,
+        'callback_cap':'6000bce8 comparescountEBX with16 andskipsadmissionif>=16',
+        'post_override':'6000bbb5 calls60009250(defaultcount,DX7,displays);6000bbbf storesreturnedEAX asrawcount',
+        'override_precedence':'DX7_displays via getenv,otherwiseTHRASH_displays;presentvalueparsedbyatoi;absentbothusesdefault',
+        'filter_publish':'60001f7a storesrawcount;later60002043 publishesfilteredESI',
+        'limit':'No rangeclamp inoverridehelper; callbackcap alone doesnotprove finalglobalcount<=16 or buffer safety'}
     result['caller_qualification']={'old_about':'600010ea loadsECXfrom600150e8;nointerveningcallorECXwritebefore6000117d',
         'conditional_default':'If textwordunmodified and signedadaptercount<=0x73617233, oldaboutmissing-env indexfailsupperbound andfallsback0',
         'other_call':'60003799 appearsafteroptional6000b9e0 call;entryECXcontractunresolvedhere',

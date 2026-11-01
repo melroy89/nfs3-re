@@ -577,3 +577,8 @@ The [wrapper/consumer follow-up](original-modern-dx7-mode-admission.md#missing-d
 ## DX7 display wrapper caller qualification
 
 The [caller follow-up](original-modern-dx7-mode-admission.md#caller-qualification-narrows-the-old-saved-ecx-consequence) identifies two direct wrapper calls per driver and old about's staged ECX word73617233h. For an unchanged source and adapter count<=that value, the old missing-env path falls back0, narrowing the earlier possible-different-index example. The second init caller and count/source lifetime remain open. Counts unchanged; no target execution.
+
+
+## DX7 display count: callback cap is not a global invariant
+
+The [count-path follow-up](original-modern-dx7-mode-admission.md#adapter-count-callback-cap-is-followed-by-an-environment-override) verifies four retained paired-identical spans. A16-entry callback admission cap precedes unclamped DX7_displays/THRASH_displays overrides, then filtered-count publication. This prevents promoting the local cap into a universal global bound and preserves the conditional about-path conclusion. No new visual claim or runtime result; counts unchanged.

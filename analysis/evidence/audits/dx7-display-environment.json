@@ -33,6 +33,34 @@
           "bytes_sha256": "6c6e72139156b8145ab144de7747cd2a2631bd2bcd0e8c7509f7f402a65fbd0b",
           "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-60003783.asm",
           "assembly_sha256": "80712bfc508d7501aa3f6b7ad62c042f65787c04d5a41e824a3ed795640a8cc1"
+        },
+        {
+          "start": "60001f40",
+          "end_exclusive": "60002054",
+          "bytes_sha256": "f9aba40072446eab8f3c5f57dc8707082f2b4a9a4624c95581532979ac99831e",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-60001f40.asm",
+          "assembly_sha256": "ca8a21fd2e18ff831bf121cfcf2000d9fa0dc07db3e54f05fc6f363b2678589f"
+        },
+        {
+          "start": "6000bb10",
+          "end_exclusive": "6000bbc6",
+          "bytes_sha256": "e48e3f6ed3fa81e5b63e884df71bbb013c92d9b737998d44eedfeaedc10f5713",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-6000bb10.asm",
+          "assembly_sha256": "df6bc6d63af8f79cadb7d924e64dae4fe39cb82a736bd6c7a779f4694e4af78c"
+        },
+        {
+          "start": "6000bbd0",
+          "end_exclusive": "6000bd56",
+          "bytes_sha256": "9ebb927a462922080b20753f4154cdbf765515adedcebe7b2ac3a1aa7c9e0b53",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-6000bbd0.asm",
+          "assembly_sha256": "5e9cc564dd126299b2ee03ca6f34acb5ff76b57d28c0c4bf898fb22d02fa3d32"
+        },
+        {
+          "start": "60009250",
+          "end_exclusive": "600092bd",
+          "bytes_sha256": "67d3003e3ed9f7cc2259ea7f5793994171cddbafc482771b9f4afc1e4012a18c",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-60009250.asm",
+          "assembly_sha256": "e7d2c946511f66dcd6c5440b908093c39a6711222f3bafbce7bd955ff1b252ef"
         }
       ],
       "decoded_direct_call_sites": [
@@ -76,6 +104,34 @@
           "bytes_sha256": "6c6e72139156b8145ab144de7747cd2a2631bd2bcd0e8c7509f7f402a65fbd0b",
           "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-60003783.asm",
           "assembly_sha256": "80712bfc508d7501aa3f6b7ad62c042f65787c04d5a41e824a3ed795640a8cc1"
+        },
+        {
+          "start": "60001f40",
+          "end_exclusive": "60002054",
+          "bytes_sha256": "f9aba40072446eab8f3c5f57dc8707082f2b4a9a4624c95581532979ac99831e",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-60001f40.asm",
+          "assembly_sha256": "ca8a21fd2e18ff831bf121cfcf2000d9fa0dc07db3e54f05fc6f363b2678589f"
+        },
+        {
+          "start": "6000bb10",
+          "end_exclusive": "6000bbc6",
+          "bytes_sha256": "e48e3f6ed3fa81e5b63e884df71bbb013c92d9b737998d44eedfeaedc10f5713",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-6000bb10.asm",
+          "assembly_sha256": "df6bc6d63af8f79cadb7d924e64dae4fe39cb82a736bd6c7a779f4694e4af78c"
+        },
+        {
+          "start": "6000bbd0",
+          "end_exclusive": "6000bd56",
+          "bytes_sha256": "9ebb927a462922080b20753f4154cdbf765515adedcebe7b2ac3a1aa7c9e0b53",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-6000bbd0.asm",
+          "assembly_sha256": "5e9cc564dd126299b2ee03ca6f34acb5ff76b57d28c0c4bf898fb22d02fa3d32"
+        },
+        {
+          "start": "60009250",
+          "end_exclusive": "600092bd",
+          "bytes_sha256": "67d3003e3ed9f7cc2259ea7f5793994171cddbafc482771b9f4afc1e4012a18c",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-60009250.asm",
+          "assembly_sha256": "e7d2c946511f66dcd6c5440b908093c39a6711222f3bafbce7bd955ff1b252ef"
         }
       ],
       "decoded_direct_call_sites": [
@@ -92,6 +148,14 @@
     "No getenv/atoi, driver/API or target execution.",
     "Black-polygon attribution, full callback/state lifecycle and visible results unresolved."
   ],
+  "count_path": {
+    "paired_spans_identical": true,
+    "callback_cap": "6000bce8 comparescountEBX with16 andskipsadmissionif>=16",
+    "post_override": "6000bbb5 calls60009250(defaultcount,DX7,displays);6000bbbf storesreturnedEAX asrawcount",
+    "override_precedence": "DX7_displays via getenv,otherwiseTHRASH_displays;presentvalueparsedbyatoi;absentbothusesdefault",
+    "filter_publish": "60001f7a storesrawcount;later60002043 publishesfilteredESI",
+    "limit": "No rangeclamp inoverridehelper; callbackcap alone doesnotprove finalglobalcount<=16 or buffer safety"
+  },
   "caller_qualification": {
     "old_about": "600010ea loadsECXfrom600150e8;nointerveningcallorECXwritebefore6000117d",
     "conditional_default": "If textwordunmodified and signedadaptercount<=0x73617233, oldaboutmissing-env indexfailsupperbound andfallsback0",

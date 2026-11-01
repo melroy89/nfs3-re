@@ -108,3 +108,18 @@ Conditional consequence: with that source unchanged and signed adapter count`[60
 The second callsite`60003799` follows an optional call to`6000b9e0` at`60003791`; its ECX contract and complete enclosing initialization paths are not qualified by this caller witness. The earlier general example of a valid nonzero ECX selecting a different entry remains conditional and must not be presented as an observed consequence of the about export.
 
 **Resolved:** known about-caller source and a bounded fallback condition. **Pending:** the other caller's register contract, all source/count writers, indirect entries and runtime selection. No claim of a universal old-selection bug or black-polygon cause is made; no driver or instruction probe was executed.
+
+
+## Adapter-count callback cap is followed by an environment override
+
+The extended [display-env audit](evidence/audits/dx7-display-environment.json) captures four additional complete spans and asserts each is byte-identical in1.6.0/1.6.1: producer`60001f40..60002054`, enumeration wrapper`6000bb10..6000bbc6`, callback`6000bbd0..6000bd56`, and override helper`60009250..600092bd`. These are retained dependencies of the changed missing-environment wrapper, not four newly changed functions.
+
+The enumeration wrapper clears its raw counter`60059000`. In the callback, **`6000bce8` compares EBX with16 and signed JGE skips new admission**; successful admission increments/publishes the raw counter. Under ordinary serialized callbacks with no external mutation, this bounds that callback-collected set to16. It does not itself bound every later value read as the display count.
+
+Before returning, the enumeration wrapper calls **`60009250`** at`6000bbb5` with the collected/default count, prefix`DX7` and key`displays`. That helper formats and looks up **`DX7_displays`** first; only if absent does it try **`THRASH_displays`**. A present string is passed to imported atoi, and its result is returned without a local range clamp. If both variables are absent, the supplied default is returned. `6000bbbf` writes the result back to the raw counter.
+
+The producer at`60001f40` then stores the returned raw count at`600186e0`, iterates its candidate/filtering work and finally publishes filtered ESI to the same global at`60002043`. Thus the visible16-entry callback check is **not a verified whole-lifetime invariant that`600186e0<=16`**. Override inputs, filtering effects, called helpers and concurrent/aliased mutation must be qualified before making a stronger bound or memory-safety claim. This analysis does not supply or run an out-of-range environment value.
+
+For the old about-call fallback discussion, the explicit count condition therefore remains necessary. With no applicable overrides and an ordinary valid initialized set, the callback bound supports small counts; with arbitrary overrides/other writers, it is not a proof. Do not eliminate the old hidden-register path from a faithful reconstruction solely because a nearby enumeration cap exists, and do not silently add a clamp to repair suspected original behaviour.
+
+**Resolved:** selected count-producer/override chain and why the simple cap is insufficient. **Pending:** full filter/callback side effects, valid object/buffer extents and all writers, the second wrapper caller, and actual runtime selection. No environment, DLL, API or target instruction was executed or changed. Black-polygon attribution remains unresolved.
