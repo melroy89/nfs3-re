@@ -496,7 +496,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **148 Claimed, 41 Static, 98 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **148 Claimed, 42 Static, 98 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -550,7 +550,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP153-005 | Random race music actually works as a playlist (each race a new track). It prevents from repeating same music tracks frequently. | Partial |
 | MP153-006 | Prevented double music fading in the audio settings when user presses Race button. | Partial |
 | MP153-007 | Fixed a regression of the v1.5.2 which was a cause of problems with windowed mode of the nGlide. | Claimed |
-| MP153-008 | Fixed a regression of the v1.5.1 in the fallback code for the unupdated language files. | Unresolved |
+| MP153-008 | Fixed a regression of the v1.5.1 in the fallback code for the unupdated language files. | Static |
 | MP153-009 | Menu music volume will be used for the movies. | Partial |
 | MP153-010 | Proper handling of the case when EAX was presented in the system and choosed by user, but for some reason had become unavailable. | Partial |
 | MP153-011 | Sound Volume and Dead Zone slider values are rounded correctly. | Partial |

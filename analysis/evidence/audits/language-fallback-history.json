@@ -1,0 +1,418 @@
+{
+  "kind": "historical-language-fallback-static-comparison",
+  "packages": {
+    "1.5.0": {
+      "url": "https://veg.by/files/nfs3/nfs3_modern_patch_v1.5.0.7z",
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "executable_sha256": "d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae",
+      "executable_bytes": 1698816,
+      "readme_banner": "Need For Speed III Modern Patch v1.5.0 [20/03/2016]",
+      "readme_sha256": "55ba22e06466387a30f3f591a83d0f342449122016e01678408d71621848d3d5",
+      "lookup_upper_id": 1935,
+      "fallback_base": "0053d294",
+      "offset_table_bytes": 32,
+      "fallback_entries": [
+        {
+          "id": 1928,
+          "relative_offset": 32,
+          "text": ""
+        },
+        {
+          "id": 1929,
+          "relative_offset": 33,
+          "text": "The port is already occupied"
+        },
+        {
+          "id": 1930,
+          "relative_offset": 62,
+          "text": "Port"
+        },
+        {
+          "id": 1931,
+          "relative_offset": 67,
+          "text": "1030 is legacy, 9803 is modern."
+        },
+        {
+          "id": 1932,
+          "relative_offset": 99,
+          "text": "km"
+        },
+        {
+          "id": 1933,
+          "relative_offset": 102,
+          "text": "2:1"
+        },
+        {
+          "id": 1934,
+          "relative_offset": 106,
+          "text": "Menu Sounds"
+        },
+        {
+          "id": 1935,
+          "relative_offset": 118,
+          "text": "Fog"
+        }
+      ],
+      "conditional_fallback_overreads": [],
+      "spans": [
+        {
+          "start": "004d1750",
+          "end_exclusive": "004d17ae",
+          "bytes_sha256": "2c919421ad509018e22bae4435dbe08b19206dedea75af68ceb22f474b62742b",
+          "assembly": "analysis/captures/modern-differences/language-history/1.5.0-004d1750.asm",
+          "assembly_sha256": "400efa258c1feadc22e4ee54386f160668ebbc9692fc22ef7ba8d3aac9b9e742"
+        },
+        {
+          "start": "004d1850",
+          "end_exclusive": "004d187e",
+          "bytes_sha256": "4512cee6866a609b96aa0e32715328815b8d5626dc51e38293bbf4e35f8491e5",
+          "assembly": "analysis/captures/modern-differences/language-history/1.5.0-004d1850.asm",
+          "assembly_sha256": "9ef6ecadfbae965e756ccc9680c63a4c2b883a576fd45b1990de2afc0ac64663"
+        }
+      ]
+    },
+    "1.5.1": {
+      "url": "https://veg.by/files/nfs3/nfs3_modern_patch_v1.5.1.7z",
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.1.7z",
+      "archive_sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de",
+      "executable_sha256": "4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17",
+      "executable_bytes": 1698816,
+      "readme_banner": "Need For Speed III Modern Patch v1.5.1 [25/03/2016]",
+      "readme_sha256": "4862e5ced11ea05debc3a319257c0d06d00b3b48af2890c2b38bb5a876c88814",
+      "lookup_upper_id": 1940,
+      "fallback_base": "0053d294",
+      "offset_table_bytes": 36,
+      "fallback_entries": [
+        {
+          "id": 1928,
+          "relative_offset": 36,
+          "text": ""
+        },
+        {
+          "id": 1929,
+          "relative_offset": 37,
+          "text": "The port is already occupied"
+        },
+        {
+          "id": 1930,
+          "relative_offset": 66,
+          "text": "Port"
+        },
+        {
+          "id": 1931,
+          "relative_offset": 71,
+          "text": "1030 is legacy, 9803 is modern."
+        },
+        {
+          "id": 1932,
+          "relative_offset": 103,
+          "text": "Full"
+        },
+        {
+          "id": 1933,
+          "relative_offset": 108,
+          "text": "2:1"
+        },
+        {
+          "id": 1934,
+          "relative_offset": 112,
+          "text": "Menu Sounds"
+        },
+        {
+          "id": 1935,
+          "relative_offset": 124,
+          "text": "Fog"
+        },
+        {
+          "id": 1936,
+          "relative_offset": 128,
+          "text": "km"
+        }
+      ],
+      "conditional_fallback_overreads": [
+        {
+          "id": 1937,
+          "fallback_index": 9,
+          "word_read": "65685400",
+          "returned_pointer": "65bc2694",
+          "inside_any_pe_section": false
+        },
+        {
+          "id": 1938,
+          "fallback_index": 10,
+          "word_read": "726f7020",
+          "returned_pointer": "72c342b4",
+          "inside_any_pe_section": false
+        },
+        {
+          "id": 1939,
+          "fallback_index": 11,
+          "word_read": "73692074",
+          "returned_pointer": "73bcf308",
+          "inside_any_pe_section": false
+        },
+        {
+          "id": 1940,
+          "fallback_index": 12,
+          "word_read": "726c6120",
+          "returned_pointer": "72c033b4",
+          "inside_any_pe_section": false
+        }
+      ],
+      "spans": [
+        {
+          "start": "004d1750",
+          "end_exclusive": "004d17ae",
+          "bytes_sha256": "2c919421ad509018e22bae4435dbe08b19206dedea75af68ceb22f474b62742b",
+          "assembly": "analysis/captures/modern-differences/language-history/1.5.1-004d1750.asm",
+          "assembly_sha256": "702106cd7cb04de64fb85ee827c93a3eaf749b0acfa659378badcf1756bb859d"
+        },
+        {
+          "start": "004d1850",
+          "end_exclusive": "004d187e",
+          "bytes_sha256": "ce66b33ccd4ebd2df678335c95436a0906fb5de526e8106714b2b8930f8188c7",
+          "assembly": "analysis/captures/modern-differences/language-history/1.5.1-004d1850.asm",
+          "assembly_sha256": "3759e867f64c4296cd08b88c0b63642333bb9c7999a0af9b8d4003ebff0f79e8"
+        }
+      ]
+    },
+    "1.5.2": {
+      "url": "https://veg.by/files/nfs3/nfs3_modern_patch_v1.5.2.7z",
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.2.7z",
+      "archive_sha256": "23830061e5ed489900b03c98d81727d951c59e9247d7006803460d38ee9a34cd",
+      "executable_sha256": "d532b0252610d9de2e826efc399d4d733d84d4758e47b5fadc94bf5c1d4449bb",
+      "executable_bytes": 1698816,
+      "readme_banner": "Need For Speed III Modern Patch v1.5.2 [10/04/2016]",
+      "readme_sha256": "40f3c56c0a6c77cdd5cec4b68b61f6ec0084d41367519e0a4192733a2a1afe18",
+      "lookup_upper_id": 1940,
+      "fallback_base": "0053d294",
+      "offset_table_bytes": 36,
+      "fallback_entries": [
+        {
+          "id": 1928,
+          "relative_offset": 36,
+          "text": ""
+        },
+        {
+          "id": 1929,
+          "relative_offset": 37,
+          "text": "The port is already occupied"
+        },
+        {
+          "id": 1930,
+          "relative_offset": 66,
+          "text": "Port"
+        },
+        {
+          "id": 1931,
+          "relative_offset": 71,
+          "text": "1030 is legacy, 9803 is modern."
+        },
+        {
+          "id": 1932,
+          "relative_offset": 103,
+          "text": "Full"
+        },
+        {
+          "id": 1933,
+          "relative_offset": 108,
+          "text": "2:1"
+        },
+        {
+          "id": 1934,
+          "relative_offset": 112,
+          "text": "Menu Sounds"
+        },
+        {
+          "id": 1935,
+          "relative_offset": 124,
+          "text": "Fog"
+        },
+        {
+          "id": 1936,
+          "relative_offset": 128,
+          "text": "km"
+        }
+      ],
+      "conditional_fallback_overreads": [
+        {
+          "id": 1937,
+          "fallback_index": 9,
+          "word_read": "65685400",
+          "returned_pointer": "65bc2694",
+          "inside_any_pe_section": false
+        },
+        {
+          "id": 1938,
+          "fallback_index": 10,
+          "word_read": "726f7020",
+          "returned_pointer": "72c342b4",
+          "inside_any_pe_section": false
+        },
+        {
+          "id": 1939,
+          "fallback_index": 11,
+          "word_read": "73692074",
+          "returned_pointer": "73bcf308",
+          "inside_any_pe_section": false
+        },
+        {
+          "id": 1940,
+          "fallback_index": 12,
+          "word_read": "726c6120",
+          "returned_pointer": "72c033b4",
+          "inside_any_pe_section": false
+        }
+      ],
+      "spans": [
+        {
+          "start": "004d1750",
+          "end_exclusive": "004d17ae",
+          "bytes_sha256": "2c919421ad509018e22bae4435dbe08b19206dedea75af68ceb22f474b62742b",
+          "assembly": "analysis/captures/modern-differences/language-history/1.5.2-004d1750.asm",
+          "assembly_sha256": "599a1c2e82ff5224f205a3e99078fbc2efc3f2c0e1b1e0646ce1f51a9af791cb"
+        },
+        {
+          "start": "004d1850",
+          "end_exclusive": "004d187e",
+          "bytes_sha256": "ce66b33ccd4ebd2df678335c95436a0906fb5de526e8106714b2b8930f8188c7",
+          "assembly": "analysis/captures/modern-differences/language-history/1.5.2-004d1850.asm",
+          "assembly_sha256": "5b0ac52456775b9251c9052deda6ddd8fb6190e4b3dbb7c4000d062d76b85cc2"
+        }
+      ]
+    },
+    "1.5.3": {
+      "url": "https://veg.by/files/nfs3/nfs3_modern_patch_v1.5.3.7z",
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.3.7z",
+      "archive_sha256": "0f92afacbbc179500ede3d7e22107999f3d4ad9ff0a41feb8cd00ef65559ec64",
+      "executable_sha256": "07e987193ebeb4b30ac3912f90d8b98f2a34b37632dbad232ecfcea12fdb7c0a",
+      "executable_bytes": 1696768,
+      "readme_banner": "Need For Speed III Modern Patch v1.5.3 [2016/05/03]",
+      "readme_sha256": "1d2b4faa4585b50916edce7ff5dfa8546fd271d959ef1b8e3a8e3d4ea9fb8e70",
+      "lookup_upper_id": 1946,
+      "fallback_base": "0053d294",
+      "offset_table_bytes": 76,
+      "fallback_entries": [
+        {
+          "id": 1928,
+          "relative_offset": 76,
+          "text": ""
+        },
+        {
+          "id": 1929,
+          "relative_offset": 77,
+          "text": "The port is already occupied"
+        },
+        {
+          "id": 1930,
+          "relative_offset": 106,
+          "text": "Port"
+        },
+        {
+          "id": 1931,
+          "relative_offset": 111,
+          "text": "1030 is legacy, 9803 is modern."
+        },
+        {
+          "id": 1932,
+          "relative_offset": 143,
+          "text": "Full"
+        },
+        {
+          "id": 1933,
+          "relative_offset": 148,
+          "text": "2:1"
+        },
+        {
+          "id": 1934,
+          "relative_offset": 152,
+          "text": "Menu Sounds"
+        },
+        {
+          "id": 1935,
+          "relative_offset": 164,
+          "text": "Fog"
+        },
+        {
+          "id": 1936,
+          "relative_offset": 168,
+          "text": "km"
+        },
+        {
+          "id": 1937,
+          "relative_offset": 171,
+          "text": "Rear View Detail"
+        },
+        {
+          "id": 1938,
+          "relative_offset": 188,
+          "text": "Rear View From"
+        },
+        {
+          "id": 1939,
+          "relative_offset": 203,
+          "text": "Active Camera"
+        },
+        {
+          "id": 1940,
+          "relative_offset": 217,
+          "text": "In Car Camera"
+        },
+        {
+          "id": 1941,
+          "relative_offset": 231,
+          "text": "Random (Rock)"
+        },
+        {
+          "id": 1942,
+          "relative_offset": 245,
+          "text": "Random (Techno)"
+        },
+        {
+          "id": 1943,
+          "relative_offset": 261,
+          "text": "Random (Rock or Techno)"
+        },
+        {
+          "id": 1944,
+          "relative_offset": 285,
+          "text": "Random (Fast)"
+        },
+        {
+          "id": 1945,
+          "relative_offset": 299,
+          "text": "Random (Slow)"
+        },
+        {
+          "id": 1946,
+          "relative_offset": 313,
+          "text": "Random (All)"
+        }
+      ],
+      "conditional_fallback_overreads": [],
+      "spans": [
+        {
+          "start": "004d1750",
+          "end_exclusive": "004d17ae",
+          "bytes_sha256": "2c919421ad509018e22bae4435dbe08b19206dedea75af68ceb22f474b62742b",
+          "assembly": "analysis/captures/modern-differences/language-history/1.5.3-004d1750.asm",
+          "assembly_sha256": "4088b76e36c39e8dc6612889515ee7ff3be51a4417a42f3d9fc17deee9a8f215"
+        },
+        {
+          "start": "004d1850",
+          "end_exclusive": "004d187e",
+          "bytes_sha256": "dd7d6a6bb5b3065e84b4d803207b0e46782b7ab5724193b32610bb8a6865028f",
+          "assembly": "analysis/captures/modern-differences/language-history/1.5.3-004d1850.asm",
+          "assembly_sha256": "289b88ffc9794c66813bf7554c3f4d8d8eacecde3f4e664c3e6c624e4569ab1c"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Author-hosted identities/internal banners, not publisher signatures.",
+    "Conditional lookup derivation, no target instructions or language loading.",
+    "No observed crash, localization rendering or complete consumer coverage."
+  ],
+  "lookup_difference": "Only the upper-ID immediate changes in the complete 46-byte lookup body."
+}

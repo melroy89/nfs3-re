@@ -58,6 +58,25 @@ Modern config initialization later copies `007a3a50` into active field **`006fbb
 
 **MP160-013**, checking language-file version: the marker test, compatibility flag and lookup fallback are statically supported. This routine does not visibly reject the entire file solely because the marker differs; it changes selected lookup behavior.
 
-**MP153-008**, corrected fallback regression: final fallback logic is documented, but a regression/fix between v1.5.1 and v1.5.3 requires those binaries. Original versus final cannot establish that history.
+**MP153-008**, corrected fallback regression: the historical comparison below now verifies a mismatched admitted range and fallback table in1.5.1/1.5.2, bounded by a consistent predecessor and successor. Original versus final alone could not establish this history.
 
 Pending: all later active-index writes, actual localized asset contents, all IDs/consumers, null/malformed input paths and rendered translations. Historical release attribution and complete format compatibility remain separate from this marker mechanism.
+
+## Historical fallback regression: v1.5.0 through v1.5.3
+
+The author-hosted version archives are now retained for all four releases. [This audit](scripts/audit_language_fallback_history.py) checks archive/EXE/readme hashes and internal banners, retains disassembly, decodes embedded fallback entries and records conditional out-of-table reads in [its manifest](evidence/audits/language-fallback-history.json). Reproduce with `python3 analysis/scripts/audit_language_fallback_history.py`; acquire missing archives from each manifest URL into its specified ignored path first. These are author-hosted artifacts with internal version labels, not signature-authenticated publisher releases. No EXE or language file was executed or loaded.
+
+All four historical lookup bodies occupy `004d1850..004d187e` (46 bytes, exclusive end). Only their upper-ID immediate differs. IDs above that unsigned limit call dynamic lookup `004d17b0`. Otherwise the function computes `offset = ID*4`, reads table pointer `00563a80`, and returns the external relative-offset string when `[table] > offset`. On failed coverage it instead selects fallback base `0053d294`, indexes by `max_signed(offset-0x1e20,0)`, adds the DWORD found there to that base and returns the resulting pointer. This historical code has no1.6.0 marker test; do not import the final release's mismatch-flag behaviour into it.
+
+| Release | Highest ordinary ID | Embedded offset entries | IDs covered by embedded table | Result when external coverage fails |
+|---|---:|---:|---|---|
+|1.5.0 |1935 (`0x78f`) |8 |1928..1935 | Admitted fallback range fits |
+|1.5.1 |1940 (`0x794`) |9 |1928..1936 | IDs1937..1940 index beyond offsets |
+|1.5.2 |1940 (`0x794`) |9 |1928..1936 | Same four-entry mismatch |
+|1.5.3 |1946 (`0x79a`) |19 |1928..1946 | Admitted fallback range fits |
+
+The table sizes are corroborated by the first payload offset (0x20/0x24/0x24/0x4c), each decoded entry and the start of the string payload, rather than inferred from lookup limits. In1.5.1/1.5.2, index9 starts at fallback+0x24: those bytes are already string data. The four DWORDs read for IDs1937..1940 are `65685400`, `726f7020`, `73692074` and `726c6120`, fragments of the embedded text rather than offsets. Adding them to the fallback base yields pointers outside every mapped PE section in the inspected image. The lookup returns those pointers; it does not dereference their strings itself. A crash or corrupt display depends on subsequent consumers and process mappings and was not observed here.
+
+V1.5.3 supplies valid entries for those IDs: `Rear View Detail`, `Rear View From`, `Active Camera`, and `In Car Camera`, followed by six music-mode entries. This repairs the specific structural overrun while expanding the supported ID range. The predecessor/adjacent versions support the release note's introduction in1.5.1, persistence through1.5.2 and repair in1.5.3 for this mechanism. It is not evidence that every fallback failure, localized asset, malformed offset or caller was corrected.
+
+MP153-008 therefore moves from unresolved history to **bounded static support**. Whether a particular old language file reaches these IDs requires its coverage and caller inputs; full rendered localization remains a separate validation layer. The final1.6.x marker/fallback scheme described above is a later change with a different base and entry set.
