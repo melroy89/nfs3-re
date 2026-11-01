@@ -50,8 +50,8 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004270c0` | UpdateCarSelectionBackgroundResources | 194 | 1 | [frontend-page](original-modern-frontend-page.md) |
 | `0042c700` | InitializeRaceVehicles | 230 | 1 | [small-entry-followup](original-modern-small-entry-followup.md) |
 | `0042dc20` | RequestRaceSynchronizationWorkerStop | 28 | 28 | [input-worker](original-modern-input-worker.md) |
-| `00431c1c` | CalculateEffectiveThrashState21Mask | 23 | 23 | [dx5-reference-pair](original-modern-dx5-reference-pair.md), [resolution-defaults](original-modern-resolution-defaults.md), [state14](original-modern-state14.md), [track-detail](original-modern-track-detail.md) |
-| `00431c34` | SetRenderState15ToFourWhenFlagSet | 25 | 23 | [state14](original-modern-state14.md) |
+| `00431c1c` | CalculateEffectiveThrashState21Mask | 23 | 23 | [dx5-reference-pair](original-modern-dx5-reference-pair.md), [resolution-defaults](original-modern-resolution-defaults.md), [state14](original-modern-state14.md), [track-detail](original-modern-track-detail.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
+| `00431c34` | SetRenderState15ToFourWhenFlagSet | 25 | 23 | [state14](original-modern-state14.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `00436930` | HandleMouseSetCursorAndChainPreviousHandler | 79 | 31 | [mouse-cursor](original-modern-mouse-cursor.md) |
 | `00437614` | UpdateFrontendRaceNowEntryFlags | 231 | 222 | [force-menu-layout](original-modern-force-menu-layout.md), [graphics-menu-transition](original-modern-graphics-menu-transition.md), [hud-settings-policy](original-modern-hud-settings-policy.md), [menu-callback-table](original-modern-menu-callback-table.md), [options-postgame](original-modern-options-postgame.md), [race-now](original-modern-race-now.md) |
 | `004376fc` | InitializeFrontendMenuSoundSlider | 65 | 62 | [frontend-sound](original-modern-frontend-sound.md) |
@@ -248,7 +248,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004bbd80` | InitializeRenderTemporaryArena | 36 | 36 | [heap-initialization](original-modern-heap-initialization.md) |
 | `004bbda4` | ReleaseRenderTemporaryArena | 18 | 18 | [heap-initialization](original-modern-heap-initialization.md), [input-worker](original-modern-input-worker.md) |
 | `004bc160` | RenderRaceScene | 704 | 15 | [geometry-color-admission](original-modern-geometry-color-admission.md), [night-lighting](original-modern-night-lighting.md), [projection](original-modern-projection.md), [state14](original-modern-state14.md) |
-| `004bc650` | FinalizeRaceFrameViewportState | 20 | 7 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
+| `004bc650` | FinalizeRaceFrameViewportState | 20 | 7 | [vehicle-dispatch](original-modern-vehicle-dispatch.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004bc670` | ClearDialogAndRefreshRaceMouseState | 15 | 2 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004bc680` | RenderRaceFrame | 332 | 17 | [night-lighting](original-modern-night-lighting.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004be570` | GetDriverDisplayModeDimensions | 97 | 5 | [viewport-geometry](original-modern-viewport-geometry.md) |

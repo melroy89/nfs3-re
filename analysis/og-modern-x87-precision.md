@@ -137,3 +137,40 @@ The [original/Modern observer inventory](original-modern-x87-observers.md) recor
 ## Paired DLL control sites qualify whole-game precision claims
 
 The [four-pair DLL comparison](original-modern-paired-dll-x87.md) now verifies matching control-site candidates/encodings/short contexts in author-reference versus final DX5, software, sound and Glide components. It adds older-side correspondence beyond the earlier package-only scan. Identical component instructions do not negate this chapter’s changed EXE scopes: incoming CW, runtime operands, providers and environment restoration can still differ. No universal fixed policy or replay/network equivalence is established by the102 primary and six environment-state candidates.
+
+## Complete race-frame partition against the official final executable
+
+The [frame audit](scripts/audit_race_frame_partition.py) compares the supplied
+original with the **official final Modern** baseline, not the locally edited
+Modern target from this report's initial table. Its
+[manifest](evidence/audits/race-frame-partition.json) retains complete original
+`004bc680..004bc81e` (414 bytes), Modern through its earlier return at
+`004bc7e4` (356 bytes), the following tail and original no-op/helper bodies.
+Within the complete original frame envelope, exactly three changed regions exist:
+
+| Region | Verified change |
+|---|---|
+| `004bc687..004bc6a7` | Entry's conditional FINIT/saved-CW restore and EAX3/no-op call become unconditional FINIT/FWAIT, preserved ESI assignment and jump to retained frame work |
+| `004bc794..004bc797` | Call operand bypasses original wrapper `004bc660`; both routes reach `0044ba30` |
+| `004bc7de..004bc81e` | Exit's EAX3/no-op call and conditional FINIT/CW-save/single selection are replaced by an earlier saved-register epilogue/return and NOPs |
+
+Original state-call targets `00431c30` and `00431c40` are each exactly five-byte
+frame/return stubs. Their removal does not remove a renderer request hidden
+behind those particular calls. Original wrapper `004bc660..004bc66a` merely
+calls `0044ba30` within a frame; Modern reaches that same target directly at
+`004bc793`. These findings qualify incidental call removals separately from
+the substantive x87 policy change already described above.
+
+Outside-body interval `004bc7e4..004bc830` is76 NOP-replaced bytes, beginning
+inside the operand of original CALL `004bc7e3`. It contains the old conditional
+control-word tail, original epilogue, alignment and separate five-byte no-op
+at `004bc820`. It is not a standalone removed76-byte function. No original
+call into that no-op is inferred from proximity.
+
+**Done, verified static:** complete frame partition, same-target wrapper
+bypass, no-op target bodies and outside-tail classification. The earlier x87
+limits remain: intervening callbacks can change state, equal retained bytes
+can consume different data, no full-frame machine-state/render equivalence is
+established, and precision policy alone does not prove replay/network results.
+No frame, callback, API or instruction probe was executed; executables and
+saved Ghidra state were preserved.
