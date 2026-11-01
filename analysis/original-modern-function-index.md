@@ -136,7 +136,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0046ab10` | InitializeSingleSliderGeometryAndValue | 151 | 37 | [slider-percentage](original-modern-slider-percentage.md) |
 | `0046b3a0` | RenderFrontendSliderWithPercentagePair | 3910 | 1 | [slider-percentage](original-modern-slider-percentage.md) |
 | `0046c820` | InitializeIndexedSliderGeometryAndValues | 134 | 35 | [slider-percentage](original-modern-slider-percentage.md) |
-| `00470ad0` | SetThrashState14InputOrResetWhenDisabled | 42 | 42 | [state14](original-modern-state14.md) |
+| `00470ad0` | SetThrashState14InputOrResetWhenDisabled | 42 | 42 | [renderer-loading](original-modern-renderer-loading.md), [state14](original-modern-state14.md) |
 | `00472230` | ClearUnsupportedSoundModeThree | 24 | 24 | [config-loading](original-modern-config-loading.md) |
 | `00472248` | InitializeSoundCapabilityDefaults | 77 | 75 | [config-loading](original-modern-config-loading.md), [frontend-sound](original-modern-frontend-sound.md) |
 | `00472298` | InitializeIndexedSettingDefaults | 47 | 42 | [config-loading](original-modern-config-loading.md), [viewport-pose](original-modern-viewport-pose.md) |

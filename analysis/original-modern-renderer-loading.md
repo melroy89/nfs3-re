@@ -117,7 +117,7 @@ Modern's table-driven unload-and-slot-clear routine is documented earlier in thi
 The loader audit now asserts the final parser literals and exact instructions behind three additional catalog links. This is final-pair/static evidence, not proof of when each change first appeared.
 
 - **MP120-004, directory/configuration structure:** the executable-relative driver directory, per-driver `thrash.ini`, File checks and type dispatch are established above. The final game-setting key is literal **`ThrashDriver`**, not the historical source bullet's `VideoDriver`. Moreover Type is read with a null default argument at `004b593e`; only its returned first byte is lowercased and inspected. Returned `d/v/s` select64/16/2, while any other byte, including0, takes `MOV AL,1` at `004b5965`. An empty returned Type therefore selects the generic mask in this local code; it is not a locally rejected missing required field. The File/existence gates must not be conflated with Type validation. Provider/string-reader failure behavior remains untested.
-- **MP120-005, configurable capabilities:** `THRASH/FogSupport` and its default0/nonzero-to1 store are verified, and the initializer's state-query gate can clear it again. This supports the fog-override mechanism, not guaranteed visible fog or the entire bundled claim. The named `LightBeams` capability is not established by this inspected parser; its other implementations/history remain a separate investigation.
+- **MP120-005, configurable capabilities:** `THRASH/FogSupport` and its default0/nonzero-to1 store are verified, and the initializer's state-query gate can clear it again. This supports the fog-override mechanism, not guaranteed visible fog or the entire bundled claim. The final parser does not establish the named `LightBeams` capability; its [historical reader and packaged settings are now verified](#historical-lightbeams-reader-and-capability-defaults), with rendered effects unresolved.
 - **MP120-007, failure reporting:** the Modern initializer routes inspected configuration/load/init failures through the MessageBox-based diagnostic helper `004b570c`, documented in the startup requirements comparison. This supports explicit failure reporting in the final path. The original already has diagnostic paths: for example `004f8830` tests the about pointer and, when absent, supplies diagnostic metadata and calls `00401010` at `004f88a9`. Thus the source bullet's broad absence-of-original-reporting assertion is not established. The [shared terminal ExitProcess boundary](original-modern-startup-requirements.md#shared-termination-chain-reaches-exitprocess) is now verified for paths reaching the exit wrapper; other diagnostic sinks, pre-exit hooks, all failure paths and actual dialogs remain unverified.
 
 **MP120-006 remains unverified as a whole-lifetime claim.** The final low-level loader `004f84a8` starts with a LoadLibraryA request; it has no initial nonzero-handle guard that by itself proves one load for the entire process. Cached descriptor use in enumeration and removal of the original snapshot-bank paths do not establish how often all higher-level initialization/recovery callers run. Establish caller lifetime and unload/reload ownership before upgrading that claim. The separate Voodoo wrapper's cached `glide3x.dll` handle is a different module/dependency and must not be substituted for the EXE's THRASH-driver lifetime.
@@ -143,7 +143,7 @@ These are **packaged defaults**, not effective settings on this machine. Six of 
 
 A case-insensitive byte search finds **no `LightBeams` or `VideoDriver` literal** in the22 selected members, under either ASCII or UTF-16LE encoding. The same pinned README contains `LightBeams` at line403 in the v1.2.0 capability-settings bullet. This is a historical/final-package mismatch in available evidence, not proof that the old feature never existed or all beam rendering was removed. Raw searches omit compressed/encoded or dynamically constructed strings, external components and other encodings; packed provider contents are not unpacked here. The result does not qualify game or provider behavior.
 
-For **MP120-005**, the FogSupport parser/configuration portion is supported; the LightBeams setting still requires an intermediate-release binary/configuration pair or a verified alternate reader. For **MP120-004**, the final ThrashDriver spelling is independently confirmed by both EXE literal and packaged INI. Keep those distinctions when choosing a reconstruction interface: a historical README spelling must not silently become a final-binary option name. No historical introduction date or runtime rendering success is inferred.
+For **MP120-005**, the FogSupport parser/configuration portion is supported; the [LightBeams historical reader/configuration pair is now verified](#historical-lightbeams-reader-and-capability-defaults); final control mechanism and visible effects remain unresolved. For **MP120-004**, the final ThrashDriver spelling is independently confirmed by both EXE literal and packaged INI. Keep those distinctions when choosing a reconstruction interface: a historical README spelling must not silently become a final-binary option name. No historical introduction date or runtime rendering success is inferred.
 
 ## Compatibility mask persistence and adapter return contract
 
@@ -262,3 +262,45 @@ sections still apply. Historical key/section/default and local dispatch
 mechanisms are verified; Windows/Wine effects, timing, all initialization
 writers and reconfiguration outcomes require separate evidence. No executable,
 DLL, API or instruction probe was run, and no saved database was modified.
+
+## Historical LightBeams reader and capability defaults
+
+**Verified static historical reader; rendered effects unresolved.** The
+[audit](scripts/audit_lightbeams_history.py) retains
+[EXE identities, instruction bytes and all six1.2.0 driver INIs](evidence/audits/lightbeams-history.json).
+This closes the missing historical reader/configuration evidence for
+MP120-005. The final-package negative search above remains valid, but cannot
+be used to dismiss the historical setting.
+
+In1.2.0, `004b57e3..004b581a` derives defaults from the first lowercased Type
+character. `004b581d..004b5844` reads `[THRASH] LightBeams` using the selected
+driver configuration filename buffer `007a3930`; its fallback is the existing
+DWORD `007a392c`. Any nonzero API result becomes1, then stores to that DWORD.
+The separate instruction at `00470ad4` tests bit0 of the same global and
+branches to `00470b1b` when zero. This establishes a real local consumer gate,
+not complete beam rendering or physical capability.
+
+| Type prefix |1.2.0 LightBeams fallback |1.2.0 FogSupport fallback |
+|---|---:|---:|
+| d |1 |0 |
+| v |1 |1 |
+| s or other |0 |0 |
+
+The adjacent FogSupport reader `004b5844..004b586c` uses global `007a3a64`
+as its fallback and stores **0 or4**, not0 or1. Do not transfer the final
+version's different destination/normalization contract into this historical
+build. In1.3.1, `004b580a..004b5851` instead supplies literal0 to both reads,
+retaining the LightBeams0/1 and FogSupport0/4 normalizations and destinations.
+Thus the fallback change is distinct from the configured values.
+
+The pinned1.2.0 archive explicitly supplies both keys in all six driver INIs:
+LightBeams1 for dgvoodoo/nglide/dx5/dx6/dx8,0 for softtri; FogSupport1 for
+dgvoodoo/nglide/dx6 and0 for softtri/dx5/dx8. These are packaged defaults,
+not observed effective configuration or proof of successful fog/beam support.
+
+**Still unknown:** full downstream effects, compatibility with borrowed
+renderers, visible results and the exact key-removal boundary. The final
+pinned1.6.1 EXE lacks the case-insensitive ASCII literal; this does not prove
+beam rendering was removed, or exclude another control mechanism. No target,
+API, driver or instruction probe was executed; executable/database bytes
+were preserved.

@@ -1,0 +1,162 @@
+{
+  "kind": "static-historical-LightBeams-reader-and-defaults",
+  "releases": {
+    "1.2.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3-1.2.0.exe",
+      "sha256": "4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003",
+      "spans": [
+        {
+          "start": "004b57e3",
+          "end_exclusive": "004b586c",
+          "sha256": "978b4c0ef37122c8df099e7bb7efa9899cace16c1e2eea61390014301b37950f",
+          "bytes_hex": "31c031c931d2807d0064740e807d0076740d807d0073740deb0cb00641eb07b0044142eb0140a3543a7a00890d2c397a008915643a7a0083c4106830397a00ff352c397a0068bcee530068a4ee5300ff157446530085c0740331c040a32c397a006830397a00ff35643a7a0068c8ee530068a4ee5300ff157446530085c0740431c0b004a3643a7a00",
+          "disassembly": [
+            "4b57e3:\t31 c0                \txor    eax,eax",
+            "4b57e5:\t31 c9                \txor    ecx,ecx",
+            "4b57e7:\t31 d2                \txor    edx,edx",
+            "4b57e9:\t80 7d 00 64          \tcmp    BYTE PTR [ebp+0x0],0x64",
+            "4b57ed:\t74 0e                \tje     0x4b57fd",
+            "4b57ef:\t80 7d 00 76          \tcmp    BYTE PTR [ebp+0x0],0x76",
+            "4b57f3:\t74 0d                \tje     0x4b5802",
+            "4b57f5:\t80 7d 00 73          \tcmp    BYTE PTR [ebp+0x0],0x73",
+            "4b57f9:\t74 0d                \tje     0x4b5808",
+            "4b57fb:\teb 0c                \tjmp    0x4b5809",
+            "4b57fd:\tb0 06                \tmov    al,0x6",
+            "4b57ff:\t41                   \tinc    ecx",
+            "4b5800:\teb 07                \tjmp    0x4b5809",
+            "4b5802:\tb0 04                \tmov    al,0x4",
+            "4b5804:\t41                   \tinc    ecx",
+            "4b5805:\t42                   \tinc    edx",
+            "4b5806:\teb 01                \tjmp    0x4b5809",
+            "4b5808:\t40                   \tinc    eax",
+            "4b5809:\ta3 54 3a 7a 00       \tmov    ds:0x7a3a54,eax",
+            "4b580e:\t89 0d 2c 39 7a 00    \tmov    DWORD PTR ds:0x7a392c,ecx",
+            "4b5814:\t89 15 64 3a 7a 00    \tmov    DWORD PTR ds:0x7a3a64,edx",
+            "4b581a:\t83 c4 10             \tadd    esp,0x10",
+            "4b581d:\t68 30 39 7a 00       \tpush   0x7a3930",
+            "4b5822:\tff 35 2c 39 7a 00    \tpush   DWORD PTR ds:0x7a392c",
+            "4b5828:\t68 bc ee 53 00       \tpush   0x53eebc",
+            "4b582d:\t68 a4 ee 53 00       \tpush   0x53eea4",
+            "4b5832:\tff 15 74 46 53 00    \tcall   DWORD PTR ds:0x534674",
+            "4b5838:\t85 c0                \ttest   eax,eax",
+            "4b583a:\t74 03                \tje     0x4b583f",
+            "4b583c:\t31 c0                \txor    eax,eax",
+            "4b583e:\t40                   \tinc    eax",
+            "4b583f:\ta3 2c 39 7a 00       \tmov    ds:0x7a392c,eax",
+            "4b5844:\t68 30 39 7a 00       \tpush   0x7a3930",
+            "4b5849:\tff 35 64 3a 7a 00    \tpush   DWORD PTR ds:0x7a3a64",
+            "4b584f:\t68 c8 ee 53 00       \tpush   0x53eec8",
+            "4b5854:\t68 a4 ee 53 00       \tpush   0x53eea4",
+            "4b5859:\tff 15 74 46 53 00    \tcall   DWORD PTR ds:0x534674",
+            "4b585f:\t85 c0                \ttest   eax,eax",
+            "4b5861:\t74 04                \tje     0x4b5867",
+            "4b5863:\t31 c0                \txor    eax,eax",
+            "4b5865:\tb0 04                \tmov    al,0x4",
+            "4b5867:\ta3 64 3a 7a 00       \tmov    ds:0x7a3a64,eax"
+          ]
+        },
+        {
+          "start": "00470ad4",
+          "end_exclusive": "00470adb",
+          "sha256": "e86fa8bb896886aa89944fd0bae3708df2ad883b25985b7cc479929e2478cd63",
+          "bytes_hex": "f6052c397a0001",
+          "disassembly": [
+            "470ad4:\tf6 05 2c 39 7a 00 01 \ttest   BYTE PTR ds:0x7a392c,0x1"
+          ]
+        }
+      ]
+    },
+    "1.3.1": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3-1.3.1.exe",
+      "sha256": "199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664",
+      "spans": [
+        {
+          "start": "004b57e3",
+          "end_exclusive": "004b5851",
+          "sha256": "1755e801dcb4e671660e667cf19a3efe70bea5c36f638af505e91cec007c93bf",
+          "bytes_hex": "31c0807d0064740e807d0076740c807d0073740aeb09b006eb05b004eb0140a3543a7a0083c4106830397a006a0068a8ee53006890ee5300ff157446530085c0740331c040a32c397a006830397a006a0068b4ee53006890ee5300ff157446530085c0740431c0b004a3643a7a00",
+          "disassembly": [
+            "4b57e3:\t31 c0                \txor    eax,eax",
+            "4b57e5:\t80 7d 00 64          \tcmp    BYTE PTR [ebp+0x0],0x64",
+            "4b57e9:\t74 0e                \tje     0x4b57f9",
+            "4b57eb:\t80 7d 00 76          \tcmp    BYTE PTR [ebp+0x0],0x76",
+            "4b57ef:\t74 0c                \tje     0x4b57fd",
+            "4b57f1:\t80 7d 00 73          \tcmp    BYTE PTR [ebp+0x0],0x73",
+            "4b57f5:\t74 0a                \tje     0x4b5801",
+            "4b57f7:\teb 09                \tjmp    0x4b5802",
+            "4b57f9:\tb0 06                \tmov    al,0x6",
+            "4b57fb:\teb 05                \tjmp    0x4b5802",
+            "4b57fd:\tb0 04                \tmov    al,0x4",
+            "4b57ff:\teb 01                \tjmp    0x4b5802",
+            "4b5801:\t40                   \tinc    eax",
+            "4b5802:\ta3 54 3a 7a 00       \tmov    ds:0x7a3a54,eax",
+            "4b5807:\t83 c4 10             \tadd    esp,0x10",
+            "4b580a:\t68 30 39 7a 00       \tpush   0x7a3930",
+            "4b580f:\t6a 00                \tpush   0x0",
+            "4b5811:\t68 a8 ee 53 00       \tpush   0x53eea8",
+            "4b5816:\t68 90 ee 53 00       \tpush   0x53ee90",
+            "4b581b:\tff 15 74 46 53 00    \tcall   DWORD PTR ds:0x534674",
+            "4b5821:\t85 c0                \ttest   eax,eax",
+            "4b5823:\t74 03                \tje     0x4b5828",
+            "4b5825:\t31 c0                \txor    eax,eax",
+            "4b5827:\t40                   \tinc    eax",
+            "4b5828:\ta3 2c 39 7a 00       \tmov    ds:0x7a392c,eax",
+            "4b582d:\t68 30 39 7a 00       \tpush   0x7a3930",
+            "4b5832:\t6a 00                \tpush   0x0",
+            "4b5834:\t68 b4 ee 53 00       \tpush   0x53eeb4",
+            "4b5839:\t68 90 ee 53 00       \tpush   0x53ee90",
+            "4b583e:\tff 15 74 46 53 00    \tcall   DWORD PTR ds:0x534674",
+            "4b5844:\t85 c0                \ttest   eax,eax",
+            "4b5846:\t74 04                \tje     0x4b584c",
+            "4b5848:\t31 c0                \txor    eax,eax",
+            "4b584a:\tb0 04                \tmov    al,0x4",
+            "4b584c:\ta3 64 3a 7a 00       \tmov    ds:0x7a3a64,eax"
+          ]
+        }
+      ]
+    }
+  },
+  "v120_archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
+  "v120_packaged_configs": {
+    "drivers/dgvoodoo/thrash.ini": {
+      "sha256": "36c99d5e0f86dbc6a6c161f6a1fabb778a7ab362702b252afb5a76af1975293b",
+      "text": "[THRASH]\r\nFile=voodoo2.dll\r\nType=voodoo\r\nFogSupport=1\r\nLightBeams=1"
+    },
+    "drivers/softtri/thrash.ini": {
+      "sha256": "6595c8f4bd64995a82a336dfd2e2ffa5489a4c16e84408a9c5618a22c1ffa19a",
+      "text": "[THRASH]\r\nFile=softtri.dll\r\nType=software\r\nFogSupport=0\r\nLightBeams=0"
+    },
+    "drivers/dx5/thrash.ini": {
+      "sha256": "ccabe350c0b966872eca7786b382467965227b99eb0026e143ce8947492b26f0",
+      "text": "[THRASH]\r\nFile=dx5.dll\r\nType=d3d\r\nFogSupport=0\r\nLightBeams=1"
+    },
+    "drivers/dx8/thrash.ini": {
+      "sha256": "cef2214691424c2da4b56f40c806cb2f0d1ad8aac5b2fc03b1ad8b1092542395",
+      "text": "[THRASH]\r\nFile=dx8.dll\r\nType=d3d\r\nFogSupport=0\r\nLightBeams=1"
+    },
+    "drivers/dx6/thrash.ini": {
+      "sha256": "e1601d951d25334450a22ca1f7ac4d340d5443ee64ca39f11e2e595f14ed75e0",
+      "text": "[THRASH]\r\nFile=dx6.dll\r\nType=d3d\r\nFogSupport=1\r\nLightBeams=1"
+    },
+    "drivers/nglide/thrash.ini": {
+      "sha256": "df7c78608ed8c63b598fe3e373956a5435433c3138489855c146bb32e0833932",
+      "text": "[THRASH]\r\nFile=nglide.dll\r\nType=voodoo\r\nFogSupport=1\r\nLightBeams=1\r\n[NGLIDE]\r\nResolution=0\r\nAspect=0\r\nRefresh=0\r\nVsync=1\r\nGamma=5\r\nSplash=0"
+    }
+  },
+  "final_ascii_key_absent": {
+    "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "case_insensitive": true
+  },
+  "contracts": {
+    "v120_lightbeams_default": "1 for type d/v,0 for s/other; read normalized to0/1 at007a392c",
+    "v120_fog_default": "1 for type v,0 otherwise; read normalized to0/4 at007a3a64",
+    "v131_defaults": "Both literal0; same respective0/1 and0/4 normalization and destinations",
+    "v120_consumer": "00470ad4 TEST BYTE[007a392c],1; zero branches00470b1b"
+  },
+  "limits": [
+    "Static reads and a local consumer gate; no visible beam/fog support or API execution established.",
+    "Absence of final literal does not prove rendering removal, alternate key absence or full downstream equivalence.",
+    "1.3.1 extracted EXE hash matches prior pinned historical audits; only1.2.0 archive/member is re-extracted here.",
+    "No precise removal boundary between1.3.1 andfinal1.6.1 claimed."
+  ]
+}
