@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **109 vendor-only,51 bounded-static,128 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **108 vendor-only,51 bounded-static,129 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -653,3 +653,7 @@ The [three-release helper comparison](original-modern-view-overlay.md#historical
 ## Camera slot defaults and retained choices
 
 The [paired default audit](original-modern-viewport-pose.md#default-camera-slots-change-without-removing-the-choice-table) binds four descriptors and unchanged choice/mode tables to original In Car/Roof Cam/Heli Cam/None versus final Heli Cam/In Car/None/None. The complete85-byte converter is retained; original GetTickCount wrapper preservation and the ordinary Windows ABI assumption are explicit. MP100-031 advances to partial, counts109/51/128/2. Runtime cycling, UI restoration and saved-user settings remain unverified; no target execution or database writes.
+
+## Historical minimap role-default transition
+
+The [three-release store comparison](original-modern-map-marker-scaling.md#historical-role-specific-defaults-become-equal-in140) verifies early1.1.0/1.3.1 racer3/cop1, then1.4.0 all3, with the latter block retained at a relocated final address. Existing field/role/zoom-consumer evidence remains separate from fresh historical store evidence. MP100-032 advances to partial; MP140-073 gains direct release-boundary support. Counts108/51/129/2; saved preferences and rendered map coverage remain unverified. No target execution or database changes.

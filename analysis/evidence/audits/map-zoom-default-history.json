@@ -1,0 +1,136 @@
+{
+  "kind": "static-map-zoom-default-history",
+  "versions": {
+    "1.1.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+      "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+      "member": "nfs3.exe",
+      "sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "profile_plus10_values": [
+        3.0,
+        1.0,
+        3.0,
+        1.0,
+        3.0,
+        1.0
+      ],
+      "destinations": [
+        "006fbc60",
+        "006fbe04",
+        "006fbfa8",
+        "006fc14c",
+        "006fc2f0",
+        "006fc494"
+      ],
+      "capture": {
+        "start": "00485949",
+        "end_exclusive": "00485974",
+        "sha256": "ec06fc648399ee4f2c3141eeb8350d7fca18d2e6ab5e0126ed5aa23e987a7f14",
+        "hex": "b800004040bb0000803fa360bc6f00891d04be6f00a3a8bf6f00891d4cc16f00a3f0c26f00891d94c46f00",
+        "disassembly": [
+          "485949:\tb8 00 00 40 40       \tmov    eax,0x40400000",
+          "48594e:\tbb 00 00 80 3f       \tmov    ebx,0x3f800000",
+          "485953:\ta3 60 bc 6f 00       \tmov    ds:0x6fbc60,eax",
+          "485958:\t89 1d 04 be 6f 00    \tmov    DWORD PTR ds:0x6fbe04,ebx",
+          "48595e:\ta3 a8 bf 6f 00       \tmov    ds:0x6fbfa8,eax",
+          "485963:\t89 1d 4c c1 6f 00    \tmov    DWORD PTR ds:0x6fc14c,ebx",
+          "485969:\ta3 f0 c2 6f 00       \tmov    ds:0x6fc2f0,eax",
+          "48596e:\t89 1d 94 c4 6f 00    \tmov    DWORD PTR ds:0x6fc494,ebx"
+        ]
+      }
+    },
+    "1.3.1": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.1.7z",
+      "archive_sha256": "6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934",
+      "member": "nfs3.exe",
+      "sha256": "199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664",
+      "profile_plus10_values": [
+        3.0,
+        1.0,
+        3.0,
+        1.0,
+        3.0,
+        1.0
+      ],
+      "destinations": [
+        "006fbc60",
+        "006fbe04",
+        "006fbfa8",
+        "006fc14c",
+        "006fc2f0",
+        "006fc494"
+      ],
+      "capture": {
+        "start": "00485949",
+        "end_exclusive": "00485974",
+        "sha256": "ec06fc648399ee4f2c3141eeb8350d7fca18d2e6ab5e0126ed5aa23e987a7f14",
+        "hex": "b800004040bb0000803fa360bc6f00891d04be6f00a3a8bf6f00891d4cc16f00a3f0c26f00891d94c46f00",
+        "disassembly": [
+          "485949:\tb8 00 00 40 40       \tmov    eax,0x40400000",
+          "48594e:\tbb 00 00 80 3f       \tmov    ebx,0x3f800000",
+          "485953:\ta3 60 bc 6f 00       \tmov    ds:0x6fbc60,eax",
+          "485958:\t89 1d 04 be 6f 00    \tmov    DWORD PTR ds:0x6fbe04,ebx",
+          "48595e:\ta3 a8 bf 6f 00       \tmov    ds:0x6fbfa8,eax",
+          "485963:\t89 1d 4c c1 6f 00    \tmov    DWORD PTR ds:0x6fc14c,ebx",
+          "485969:\ta3 f0 c2 6f 00       \tmov    ds:0x6fc2f0,eax",
+          "48596e:\t89 1d 94 c4 6f 00    \tmov    DWORD PTR ds:0x6fc494,ebx"
+        ]
+      }
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "member": "nfs3.exe",
+      "sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "profile_plus10_values": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "destinations": [
+        "006fbc60",
+        "006fbe04",
+        "006fbfa8",
+        "006fc14c",
+        "006fc2f0",
+        "006fc494"
+      ],
+      "capture": {
+        "start": "00485943",
+        "end_exclusive": "0048596c",
+        "sha256": "1c83bd75e833194dee58ecd8c520dfe7e82a7ddd0f4744f8601f42b91bdf00c3",
+        "hex": "bb00004040891d60bc6f00891d04be6f00891da8bf6f00891d4cc16f00891df0c26f00891d94c46f00",
+        "disassembly": [
+          "485943:\tbb 00 00 40 40       \tmov    ebx,0x40400000",
+          "485948:\t89 1d 60 bc 6f 00    \tmov    DWORD PTR ds:0x6fbc60,ebx",
+          "48594e:\t89 1d 04 be 6f 00    \tmov    DWORD PTR ds:0x6fbe04,ebx",
+          "485954:\t89 1d a8 bf 6f 00    \tmov    DWORD PTR ds:0x6fbfa8,ebx",
+          "48595a:\t89 1d 4c c1 6f 00    \tmov    DWORD PTR ds:0x6fc14c,ebx",
+          "485960:\t89 1d f0 c2 6f 00    \tmov    DWORD PTR ds:0x6fc2f0,ebx",
+          "485966:\t89 1d 94 c4 6f 00    \tmov    DWORD PTR ds:0x6fc494,ebx"
+        ]
+      }
+    }
+  },
+  "final_retention": {
+    "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+    "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "start": "00485932",
+    "end_exclusive": "0048595b",
+    "default_store_block_identical_to140": true
+  },
+  "reused_evidence": [
+    "analysis/evidence/audits/map-marker-scaling-difference.json",
+    "analysis/evidence/audits/original-modern-hud-layout.json"
+  ],
+  "limits": [
+    "No game, map, API or extracted instructions executed.",
+    "This audit verifies default stores; role selection, clamping and map-zoom consumers use linked paired evidence, not fresh all-history consumer equivalence.",
+    "1.1.0 establishes early presence, not1.0.0 introduction.",
+    "Stored zoom multiplier is not a measured final map coverage or pixel-size ratio; fitted map/marker scaling is separate.",
+    "Saved preferences, later writers, active profiles and actual rendering remain unverified."
+  ]
+}

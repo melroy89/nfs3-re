@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "ee749d30fec3653cc53794c7195caf3a550e51d0a7ca10cc7dd2ec30ec5786fb",
-      "relative_links": 199
+      "sha256": "2b86c0680c7b7fce3e9cf72b102c202fcc937aba49de736e3567b5759232466d",
+      "relative_links": 200
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "a066526e3abf31b3fe5e3deadbefcb0f22cc123da32151521fc0e7f8676a2f55",
+      "sha256": "b67ca9c3ddc9945a62175c52ea690e5c5246de9d159445fea5b0382e0c44c848",
       "relative_links": 230
     },
     {
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "42cc4c1f3c3945d8f16252971dcd93d8fd2a6784e2969c59ddb7464b8fdab212",
-      "relative_links": 736
+      "sha256": "a38acf26059a3d4533461292861e079cd1dd0ac50bfed391adbb148a363f9366",
+      "relative_links": 737
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -258,8 +258,8 @@
     },
     {
       "path": "analysis/original-modern-map-marker-scaling.md",
-      "sha256": "03f8e9add8bd2d053fb07787b0509895021e0151dbbda1bc68c4507730cbc8c6",
-      "relative_links": 6
+      "sha256": "1b0b37525b6ccc43c6f4d876ab6e24a94812ab0dac37bc71a6e968aa2d457a41",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-menu-callback-table.md",
@@ -648,8 +648,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "9ae752ed6a8cb1bcf87bcad86f26d90e67872eecddce23e0d914f5d6488b3ed2",
-      "relative_links": 196
+      "sha256": "bf7e7d9b374fcad31080221d61439551b7603fa66620f56ca443feab2b09e975",
+      "relative_links": 198
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -658,7 +658,7 @@
     }
   ],
   "file_count": 131,
-  "relative_link_count": 2507,
+  "relative_link_count": 2512,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -41,4 +41,22 @@ In HUD layout setup, `0048d169` loads the selected profile+10h into local EBP-34
 
 The [paired default-header audit](original-modern-hud-layout.md#3-header-default-changes-preserve-offsets-not-guessed-widget-names) establishes original header+10h values **4.0,1.0,4.0,1.0,4.0,1.0** across six profiles, versus **3.0 in all six** in Modern. Thus the default cop/racer profile pairs now supply the same map-zoom factor, rather than only having equal unidentified floats. The default change is racer4→3 and cop1→3 under this variant mapping; it is not preservation of one role's old default.
 
-This strengthens **MP140-073** to a confirmed local default-to-consumer mechanism, while the catalog remains partial: saved preferences, later edits, active role/view selection, map fitting/recentering, final images and historical introduction remain unverified. Equal profile multipliers alone do not establish identical visible map coverage for different vehicles or contexts. No map or game code was executed.
+This strengthens **MP140-073** to a confirmed local default-to-consumer mechanism, while the catalog remains partial: saved preferences, later edits, active role/view selection, map fitting/recentering and final images remain unverified. The historical comparison below now establishes the1.3.1→1.4.0 default-equalization boundary. Equal profile multipliers alone do not establish identical visible map coverage for different vehicles or contexts. No map or game code was executed.
+
+## Historical role-specific defaults become equal in140
+
+**Verified historical default stores; no map execution.** The [zoom-default history audit](evidence/audits/map-zoom-default-history.json), reproduced with `python3 analysis/scripts/audit_map_zoom_default_history.py`, pins author-hosted1.1.0,1.3.1 and1.4.0 archives/EXEs and the official final EXE. It reuses the field/role/consumer evidence above; it does not claim every historical map consumer was independently compared.
+
+| Baseline | Header+10h, profiles P0..P5 | Role-pair interpretation from linked consumer evidence |
+|---|---|---|
+|Supplied original, previously audited |4,1,4,1,4,1 |Racer4 / cop1 |
+|Modern1.1.0 |3,1,3,1,3,1 |Racer3 / cop1 |
+|Modern1.3.1 |3,1,3,1,3,1 |Racer3 / cop1 |
+|Modern1.4.0 |3,3,3,3,3,3 |Both3 |
+|Official final1.6.1 |3,3,3,3,3,3 |Both3 |
+
+The complete43-byte store block `00485949..00485974` is identical in1.1.0/1.3.1: load EAX with binary32 bits40400000h (3.0), EBX with3f800000h (1.0), and alternate stores to `006fbc60`, `006fbe04`, `006fbfa8`, `006fc14c`, `006fc2f0`, `006fc494`. The complete1.4.0 replacement `00485943..0048596c`,41 bytes, loads EBX=40400000h and writes all six destinations from EBX. Final retains that block byte-for-byte at `00485932..0048595b`. These ranges end before the next unrelated default assignment, with no calls or branches inside the captured stores.
+
+This dates **MP140-073's equalization mechanism directly to1.3.1→1.4.0** and gives **MP100-032 partial historical support** from an early retained EXE. The old1×/3× bullet describes early Modern, not final Modern;1.0.0 introduction remains unverified. This also distinguishes two edits: racer4→3 between supplied original and early Modern, then cop1→3 between1.3.1 and1.4.0.
+
+The numbers are stored profile multipliers reaching the map-position scale under the linked selected-profile path. They are not physical pixel ratios, actual visible coverage or marker-size factors. Preferences can overwrite defaults; map fitting/recentering, active role/profile, later edits, source lifetime and rendering remain separate. Both catalog claims remain partial rather than runtime-verified. No executable, saved Ghidra database or maintained C changes were made.

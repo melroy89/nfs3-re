@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "ee749d30fec3653cc53794c7195caf3a550e51d0a7ca10cc7dd2ec30ec5786fb"
+      "sha256": "2b86c0680c7b7fce3e9cf72b102c202fcc937aba49de736e3567b5759232466d"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -209,7 +209,7 @@
     },
     {
       "path": "analysis/original-modern-map-marker-scaling.md",
-      "sha256": "03f8e9add8bd2d053fb07787b0509895021e0151dbbda1bc68c4507730cbc8c6"
+      "sha256": "1b0b37525b6ccc43c6f4d876ab6e24a94812ab0dac37bc71a6e968aa2d457a41"
     },
     {
       "path": "analysis/original-modern-menu-callback-table.md",
@@ -6341,6 +6341,18 @@
           "entry_mentioned": true,
           "addresses": [
             "00485880"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-map-marker-scaling.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00485932",
+            "00485943",
+            "00485949",
+            "0048595b",
+            "0048596c",
+            "00485974"
           ]
         },
         {
