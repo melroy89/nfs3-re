@@ -387,6 +387,32 @@ def main():
         'Power-of-two input exponent extraction is exact for these sizes; general inputs retain x87/rounding and domain dependencies.',
         'Complete allocator/upload-loop differences are table addresses only; larger size/stride values change provider requests and buffer stepping.',
         'No historical v1.5.0 boundary, complete texture producer inventory, provider acceptance, image quality or actual upload observed.']
+    result['context_close_restore'] = {'captures': [], 'context_close_binding': slots['60011020']}
+    assert slots['60011020'] == '_grSstWinClose@4'
+    for role, pe, close_end in [('hosted_reference', ref, 0x2089), ('official_final', final, 0x2079)]:
+        for start, end, label in [(0x2050, close_end, 'complete-context-close'),
+                                   (0x2090, 0x2106, 'complete-exported-restore'),
+                                   (0x2020, 0x2046, 'complete-linked-object-release')]:
+            body = pe.get_data(start, end-start)
+            result['context_close_restore']['captures'].append({'role': role, 'label': label,
+                'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+                'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    assert ref.get_data(0x2020, 0x26) == final.get_data(0x2020, 0x26)
+    changes = intervals(ref.get_data(0x2090, 0x76), final.get_data(0x2090, 0x76), 0x60002090)
+    assert len(changes) == 1 and changes[0]['start_va'] == '600020d6' and changes[0]['end_va_exclusive'] == '600020e3'
+    assert ref.get_data(0x2069, 6).hex() == 'ff1514100160'
+    assert final.get_data(0x2068, 17).hex() == '31c0a308fd00608025a4fc0060fd595ac3'
+    assert final.get_data(0x20d6, 7).hex() == 'e82df0ffff31d2'
+    result['context_close_restore']['restore_changes'] = changes
+    result['context_close_restore']['contract'] = {
+        'close_admission': 'BYTE6000fca4 bit1; if clear returns without close or state mutation.',
+        'reference_close': 'Call context-close slot then direct GlideShutdown; clear context and bit1.',
+        'final_close': 'Call context-close slot; clear context and bit1, with no direct GlideShutdown.',
+        'restore': 'If DWORD6000fca4 zero returns1 without cleanup; otherwise optional setvideomode(0,0,0)/linked-object release, event closure, provider cleanup and local state clears.',
+        'provider_cleanup_change': 'Reference direct GlideShutdown followed by release-handle helper1560; final latch helper1108.',
+        'limits': ['No provider result checked by the local close/restore paths; local return1 is not successful cleanup evidence.',
+                   'Active-context branch calls retained vtable+8 helper; interface lifetime and all callbacks remain unqualified.',
+                   'No whole-process provider release, permanent module lifetime, shutdown count or runtime synchronization proof.']}
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [
