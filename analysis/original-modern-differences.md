@@ -31,6 +31,18 @@ The [DX5 fog-admission linkage](original-modern-dx5-reference-pair.md#exe-fog-tr
 
 The [software-renderer comparison](original-modern-software-reference-pair.md) finds44 changed shared-code bytes in nine intervals. Its mode callback now rejects non16 raw-depth inputs, while the retained RGB555 path can still store depth15. All44 bytes are now assigned to four reviewed clusters, including state21 rejection and lock/page-flip failure notifications; callback contracts, non-code PE meaning and actual display acceptance remain unverified.
 
+## Recent historical mechanisms at a glance
+
+These are dated Modern Patch comparisons with explicit original/final links where verified; they are not silently attributed to every original-retail installation.
+
+| Area | Verified mechanism | Remaining boundary |
+|---|---|---|
+| [Lock-failure synchronization](original-modern-lockwindow-history.md) |1.5.0→1.5.1 DX5/DX6/SoftTri add callback0 on inspected failure paths; the corresponding EXE callback leaves a critical section. Selected callback/setup/registration bytes match supplied original and official final | Complete object/callback lifetime, all error paths and a real failure/deadlock reproduction |
+| [Localization and matched consumers](original-modern-localization-151.md) | All12 text assets partitioned; exact changed/appended entries; track length follows moved km, Frame Size adopts new Full label, rear-camera menu is added and mirror-detail label changes | Specific German correction, other consumers, mixed-version assets and runtime text/font selection |
+| [Frame Size expansion/reset](original-modern-frame-setting.md#direct153-to160-expansion-boundary) |1.5.3→1.6.0 expands two choices to four; constructor changes Boolean handling to size/shift bits. Config version5→6 takes grouped defaults with Frame Size0;1.6.0 constructor matches final | Actual saved-file provenance/upgrade, other historical consumers and visible camera effects |
+
+The [three-audit checkpoint](evidence/validation/historical-mechanisms-checkpoint.json) runs each selected audit twice: all six runs pass with identical repeat outputs. Three executable baselines and the saved database remain unchanged and match the prior checkpoint. Script/output hashes and scope limits are retained; this is primary-agent static reproducibility, not independent review, CI, runtime testing or whole-comparison completion.
+
 ## Recent findings at a glance
 
 The [Glide/border checkpoint](evidence/validation/glide-border-static-checkpoint.json) reproduces four selected static audits at `b272693`, fingerprints their scripts/results and confirms the same four preserved artifact hashes. It includes the corrected eight-quad border extent and withdrawal of earlier overlap claims. Saved Ghidra labels/comments remain stale; this checkpoint neither reopens nor changes the database. Runtime, independent semantic review and broader completion remain separate.

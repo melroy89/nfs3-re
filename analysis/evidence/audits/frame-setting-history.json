@@ -143,7 +143,7 @@
     }
   },
   "limits": [
-    "Selected descriptor and matching English asset only; not every frame consumer or localization.",
+    "Selected descriptor, constructor, header/default routes and matching English asset; not every frame consumer or localization.",
     "No game/menu/viewport execution or visible camera-shift test."
   ],
   "final_constructor_correspondence": {

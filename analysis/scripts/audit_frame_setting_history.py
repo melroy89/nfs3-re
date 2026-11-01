@@ -14,7 +14,7 @@ def main():
     specs={'1.5.3':(a['archive'],a['archive_sha256'],a['executable_sha256']),
            '1.6.0':(b['archive_path'],b['archive_sha256'],next(x['sha256'] for x in b['members']if x['member']=='nfs3.exe'))}
     result={'kind':'historical-frame-setting-expansion','versions':{},
-            'limits':['Selected descriptor and matching English asset only; not every frame consumer or localization.',
+            'limits':['Selected descriptor, constructor, header/default routes and matching English asset; not every frame consumer or localization.',
                       'No game/menu/viewport execution or visible camera-shift test.']}
     constructor_hashes={}
     header_routes=[]

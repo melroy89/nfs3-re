@@ -1,0 +1,114 @@
+{
+  "kind": "historical-driver-localization-frame-checkpoint",
+  "reviewed_head": "f2d22525b6dd7f5d37aff3a7f04c6633d1ae8ea3",
+  "script_hash_note": "Script hash is authoritative; frame audit limitation text updated in worktree before this checkpoint.",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_historical_lockwindow_failure.py"
+      ],
+      "script_sha256": "0dd124cf75880ea5a00124d488b8cc71c95c4a87a849908429e0ca41c865d626",
+      "output": "analysis/evidence/audits/historical-lockwindow-failure.json",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: two archive hashes, six DLL identities/exports, three changed failure paths and two callback adapters\n",
+          "stderr": "",
+          "output_sha256": "99b38758939209bb9d950d792ec3401968115300838d6f06d07e11670bd5ac7e"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: two archive hashes, six DLL identities/exports, three changed failure paths and two callback adapters\n",
+          "stderr": "",
+          "output_sha256": "99b38758939209bb9d950d792ec3401968115300838d6f06d07e11670bd5ac7e"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_historical_localization_151.py"
+      ],
+      "script_sha256": "318490bc36a7d32caf217661fd29f533b1287fb1ffdb974525eebd78216cf0dd",
+      "output": "analysis/evidence/audits/historical-localization-151.json",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: two archives, twelve complete text-table partitions, exact changed/additional entries\n",
+          "stderr": "",
+          "output_sha256": "65a776ca613e8a52162c6595d91b5d6db13d9fa54b10446d3c8b97b54e2b3d1c"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: two archives, twelve complete text-table partitions, exact changed/additional entries\n",
+          "stderr": "",
+          "output_sha256": "65a776ca613e8a52162c6595d91b5d6db13d9fa54b10446d3c8b97b54e2b3d1c"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_frame_setting_history.py"
+      ],
+      "script_sha256": "acee89b8934240a16dc7aa932976e0a34944f128299fef6937768033081a876b",
+      "output": "analysis/evidence/audits/frame-setting-history.json",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: pinned1.5.3/1.6.0 archives/EXEs; two-to-four descriptor labels with retained selector\n",
+          "stderr": "",
+          "output_sha256": "f7b4bef8523ea61e3a23c3dce3d92811423758888a65df7302a4a781c0ca89b5"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: pinned1.5.3/1.6.0 archives/EXEs; two-to-four descriptor labels with retained selector\n",
+          "stderr": "",
+          "output_sha256": "f7b4bef8523ea61e3a23c3dce3d92811423758888a65df7302a4a781c0ca89b5"
+        }
+      ],
+      "repeatable": true
+    }
+  ],
+  "prior_checkpoint": "analysis/evidence/validation/startup-static-checkpoint.json",
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "before_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "after_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "matches_prior": true
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "before_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "after_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "matches_prior": true
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "before_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "after_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "matches_prior": true
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "before_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "after_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "matches_prior": true
+    }
+  ],
+  "limits": [
+    "Primary-agent selected-static reproducibility, not independent review, CI or runtime validation.",
+    "Does not cover every repository audit, every game difference or whole-goal completion.",
+    "No target/API execution or Ghidra mutation/readback."
+  ]
+}

@@ -38,7 +38,7 @@ These establish the strings present in the package and their introduction in thi
 
 MP151-005 advertises corrections to new German, Spanish and French strings. The direct pair verifies a French wording change and the full addition/remapping above. It does **not** identify an independent German/Spanish wording correction among other shared entries: those remaining entries are equal. The vendor may refer to the new entries, a semantic index correction, or another reference distribution; intent is unresolved. Do not turn the absence of another changed shared entry into proof that no translation issue existed.
 
-The entry advances vendor-only→**partial**, with the exact observed change and mismatch in scope explicit. Required follow-up: bind the changed/new indices to menu consumers, inspect any relevant intermediate/distribution evidence, and qualify actual selected-font/translation behaviour if needed. No new runtime test, Ghidra mutation or executable change was performed.
+The entry advances vendor-only→**partial**, with the exact observed change and mismatch in scope explicit. Selected code/menu bindings are resolved in the follow-ups below. Remaining: the specific German correction, other lookup consumers, any relevant alternate-distribution evidence and actual selected-font/translation behaviour. No new runtime test, Ghidra mutation or executable change was performed.
 
 
 ## Track-length consumer follows the moved km entry
