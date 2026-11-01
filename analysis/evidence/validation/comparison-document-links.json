@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "8535fde6d52b5e7cf1e0cea6302c083e8c1a8129dfc01d6bb475e74c16cc85fe",
-      "relative_links": 60
+      "sha256": "3950a25d622cea74a2c869e10e878e212bc563a1634d4dd1cec8e372196998eb",
+      "relative_links": 61
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -583,17 +583,17 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "24e871d3d5dda5ee48e67d0a99c1497f068b6e18dc916087f3a576dc664b1635",
+      "sha256": "8ae1db7aea4407d60263417d06ee1df13133f98811b1a79590f4ac8d35b87db4",
       "relative_links": 156
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
-      "sha256": "e7866904e2d2b6587aca86173e2944f903fe026392118f190b39da11cf8c1654",
-      "relative_links": 12
+      "sha256": "3e9566abd5210b6dfd69f5a99ccec797d6b264f8d29d9a220256a15650fbf51b",
+      "relative_links": 16
     }
   ],
   "file_count": 118,
-  "relative_link_count": 1854,
+  "relative_link_count": 1859,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

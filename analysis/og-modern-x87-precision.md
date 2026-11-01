@@ -66,6 +66,23 @@ The [font-loader follow-up](original-modern-car-alias.md#complete-font-loader-an
 
 These findings show why a port needs **conversion boundaries, storage widths, control-word scope and x87 return ownership** in addition to a choice of `float` or `double`. They do not establish changes to every HUD component or simulation routine. The numeric-scale caller evidence places one affected use in race HUD rendering; it must not all be described as menu-only. No ARM64, replay, multiplayer or rendered-width comparison was executed in these follow-ups.
 
+## Historical release boundary: v1.5.3 to v1.6.0
+
+The [historical audit](scripts/audit_x87_precision_history.py) now pins this adjacent release pair using author-hosted archive/member identities already retained in the [language-history manifest](evidence/audits/language-fallback-history.json) and [1.6.0 baseline](evidence/audits/official-160-161-baseline.json). Run `python3 analysis/scripts/audit_x87_precision_history.py`; [its evidence](evidence/audits/x87-153-160-history.json) retains control helpers, caller candidates, mask scans and selected application/render boundaries. Nothing was executed from either game binary.
+
+V1.5.3 had already centralized the original repeated control sequences:
+
+| Historical v1.5.3 helper | Complete body and contract | Direct E8 candidates |
+|---|---|---:|
+| `004955c8..004955d2` | FINIT, then FLDCW from saved cell `0079f3f4`, then RET |7 |
+| `004955d4..004955f9` | FINIT, save CW at `0079f3ec`, copy to `0079f3f4`, AND with `fffff0ff`, store/reload `0079f3ec`, RET |6 |
+
+The second helper therefore saves the initialized037f control word and selects007f (24-bit significand, nearest rounding), under the documented FINIT semantics. The first restores whatever is in its saved cell; complete writer ownership is not established by its body alone. The sole executable-section occurrence of the exact `AND EAX,fffff0ff` encoding in this release is `004955e8`. Thus counting the original six inline masks as if they all persisted at the same addresses in every Modern version would be wrong.
+
+In1.6.0, both helper envelopes are NOP-filled, no direct E8 candidates to either target remain, and that exact AND encoding is absent from executable sections. The new application loop begins with FINIT at **`004a3b4a`**, with frontend calls at `004a3b74`/`004a3b85`; do not substitute final1.6.1's loop address `004a3ea0`. At the race-render entry,1.5.3 conditionally calls the saved-CW helper from `004bc692`;1.6.0 instead begins the inspected entry sequence with FINIT at `004bc687` and bypasses the old conditional restore area. The existing original/final analysis supplies the wider context, not an assumption of equal same-address bodies.
+
+This verifies a concrete x87 policy transition in the release pair named by MP160-012. It does not prove that every path, thread, external DLL or later control-word write uses extended precision. Binary32 memory stores and conversion rounding remain separate. Direct-call and exact-mask scans are bounded corroboration, not exhaustive semantic recovery. No additional replay, multiplayer or ARM64 compatibility conclusion follows from the historical attribution.
+
 ## Assessment of the other user's claims
 
 | Claim | Assessment |

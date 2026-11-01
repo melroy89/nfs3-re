@@ -1,0 +1,189 @@
+{
+  "kind": "historical-x87-control-policy",
+  "versions": {
+    "1.5.3": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.3.7z",
+      "archive_sha256": "0f92afacbbc179500ede3d7e22107999f3d4ad9ff0a41feb8cd00ef65559ec64",
+      "executable_reference": "analysis/captures/modern-differences/x87-history/nfs3-1.5.3.exe",
+      "executable_sha256": "07e987193ebeb4b30ac3912f90d8b98f2a34b37632dbad232ecfcea12fdb7c0a",
+      "restore_helper_call_candidates": [
+        "00494fc1",
+        "00495272",
+        "00495614",
+        "004a3e5a",
+        "004a3e9b",
+        "004b5d01",
+        "004bc692"
+      ],
+      "single_helper_call_candidates": [
+        "00495159",
+        "00495589",
+        "004a3e67",
+        "004a3ea8",
+        "004b5cef",
+        "004bc7e7"
+      ],
+      "mask_candidates": [
+        "004955e8"
+      ],
+      "spans": [
+        {
+          "start": "004955c8",
+          "end_exclusive": "004955f9",
+          "bytes_sha256": "5f997168c285aad8e2f5a739e64a67d1ddff82b81508276cb328b5d29a1b9563",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004955c8.asm",
+          "assembly_sha256": "a33df3c9fc931e1948265ea2a8fc042a73c7ce801533580bd8fed6cc58a4df1e"
+        },
+        {
+          "start": "004bc680",
+          "end_exclusive": "004bc6a7",
+          "bytes_sha256": "1184b6818b16f33ea18fd06453fb2367adad0c88c30f8d8c9c57a637bfd3bdfd",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004bc680.asm",
+          "assembly_sha256": "56e2a0753f7311109817105d227dccbce479d2158515193cc047d4decf2d8d93"
+        },
+        {
+          "start": "004a3e9b",
+          "end_exclusive": "004a3eb9",
+          "bytes_sha256": "5d0bbdeaecee75275bdf739d84bbbbb5768cb37fce53781996c547742ecc5480",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004a3e9b.asm",
+          "assembly_sha256": "e9686ef98f36868dcc128ef9c9ac23d2a7c937ab1de88dffb9de598457baf51e"
+        },
+        {
+          "start": "00494fc1",
+          "end_exclusive": "00494fc6",
+          "bytes_sha256": "e385b8364b5752d2f49eed272bf8e45833edcd0412eda3a919f9a67ad2c098a0",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-00494fc1.asm",
+          "assembly_sha256": "e8382935d2f37591c37aa96f783f1c68d518b6e1fe740cc94691cfc0a1fd67b3"
+        },
+        {
+          "start": "00495272",
+          "end_exclusive": "00495277",
+          "bytes_sha256": "8b4910108473232d0c9d1513d671a46ce825a217b2f4f04e491b7d166e722826",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-00495272.asm",
+          "assembly_sha256": "4095ac4abc12ea6a2d12c961210ef642f5332dc944da7214c8e0e91983133185"
+        },
+        {
+          "start": "00495614",
+          "end_exclusive": "00495619",
+          "bytes_sha256": "4ac000b024e1e7c5cacf897f2e17db8250fe638d1f8f2959d64f6354bde42919",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-00495614.asm",
+          "assembly_sha256": "ae90d91dd4722504d000f8dc6f0bc29b9383db6a8c00c69efb51a32333e47d03"
+        },
+        {
+          "start": "004a3e5a",
+          "end_exclusive": "004a3e5f",
+          "bytes_sha256": "6995481c6e603e95017bf18bc0bcd541bb50f6e196137710ae8c9477ccc583f9",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004a3e5a.asm",
+          "assembly_sha256": "90f3ef5f56c0e02834e4659e4136ada736e962b24be49cad2cc51f01b9f7183f"
+        },
+        {
+          "start": "004a3e9b",
+          "end_exclusive": "004a3ea0",
+          "bytes_sha256": "dbddde6612528ff2245ffa31c17271274930b066e917a45edd5954894fd46e48",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004a3e9b.asm",
+          "assembly_sha256": "476fdb469d54ef941f155a018f92de899a0edd3c549806c8eb49599f469142d5"
+        },
+        {
+          "start": "004b5d01",
+          "end_exclusive": "004b5d06",
+          "bytes_sha256": "0a5b46083dcee7ea56bc345e76b2f2d9113b8cef6ba587f01185ee9adc5bc247",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004b5d01.asm",
+          "assembly_sha256": "fb8616c00774175419c64ee598bef5136ff01ae1ff27ca742e673506b0f75cab"
+        },
+        {
+          "start": "004bc692",
+          "end_exclusive": "004bc697",
+          "bytes_sha256": "a0bcbca7d31e8698c7b456f88eb30f4c4b734bee6bc0892b42d2d98ef1a3718f",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004bc692.asm",
+          "assembly_sha256": "06b05611ba51a6d4b74fe8c147fcf5944cef1179b5aaa40b7dfc508744e66453"
+        },
+        {
+          "start": "00495159",
+          "end_exclusive": "0049515e",
+          "bytes_sha256": "24fa2abe9c520a5076eab6d570515575c75f5e1715586bbddde9f65c2772adc6",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-00495159.asm",
+          "assembly_sha256": "2021c90213441b00dd24cdaaadfcb6d2b063203bde80a0b7dc071c1db1face96"
+        },
+        {
+          "start": "00495589",
+          "end_exclusive": "0049558e",
+          "bytes_sha256": "9a18486b7fda7afeaac316138f61bc3fc60b0f459c3ef4e8ce44e364e3ddba63",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-00495589.asm",
+          "assembly_sha256": "0fec1265a89078b807a74b7f2f26c6069d818845df02b13dd7db09db65eff3af"
+        },
+        {
+          "start": "004a3e67",
+          "end_exclusive": "004a3e6c",
+          "bytes_sha256": "70cbf5281e16eb951e82f28f31ec3f87b745fff9a52271f659fb2b221a23b3dd",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004a3e67.asm",
+          "assembly_sha256": "2854bafcdad62a6134caaa4550b81edd4cc9f4b5b7bb27e07dec15b9c59c06e7"
+        },
+        {
+          "start": "004a3ea8",
+          "end_exclusive": "004a3ead",
+          "bytes_sha256": "ff5307e8f02a586f31064cfd11af9f239cec87fc1f06b53c630d47beada0a9bf",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004a3ea8.asm",
+          "assembly_sha256": "91a8c0ec004e1b5200487b5c083d2c7ef91c74257875d18bb102d8399ae9cbc8"
+        },
+        {
+          "start": "004b5cef",
+          "end_exclusive": "004b5cf4",
+          "bytes_sha256": "97f0ab220d5ffbe0de4b85618a32615fb7422e27c0b1c5321049547b926b44ca",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004b5cef.asm",
+          "assembly_sha256": "85219ff1b38911a46da73c17076916b273458d94b9583759f589bea8a74d303e"
+        },
+        {
+          "start": "004bc7e7",
+          "end_exclusive": "004bc7ec",
+          "bytes_sha256": "f456e84db732dc959fe205705b2f446e29da68da12b62b53a634d968766704c2",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.5.3-004bc7e7.asm",
+          "assembly_sha256": "fc852dc98e9ef4c4ed42e9e93bcb2d7b5b918077f6ac815b836bff9cfe6cd3b8"
+        }
+      ]
+    },
+    "1.6.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.6.0.7z",
+      "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
+      "executable_reference": "analysis/captures/modern-differences/x87-history/nfs3-1.6.0.exe",
+      "executable_sha256": "9fd80c4cdc9827f190698f28aa93f1182218d7c557898fb2653abfc4148c7a72",
+      "restore_helper_call_candidates": [],
+      "single_helper_call_candidates": [],
+      "mask_candidates": [],
+      "spans": [
+        {
+          "start": "004955c8",
+          "end_exclusive": "004955f9",
+          "bytes_sha256": "38f588998bf7905edf885c62f36908e8bf063b7112bff723e772ccbc20a32b6e",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.6.0-004955c8.asm",
+          "assembly_sha256": "e98ac69962cf81555d8527a9047c4302638db32d99f4b0eca02102a15a3f3c3b"
+        },
+        {
+          "start": "004bc680",
+          "end_exclusive": "004bc6a7",
+          "bytes_sha256": "85215bbb981e968d84ca7c5a120ae82ec073054382bcc744b4a33f9ef6cac6b1",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.6.0-004bc680.asm",
+          "assembly_sha256": "a9153a4d2e20c9c3dbfea228d9f5d5439dbd03a0ee09f96b59bd73948434e9a4"
+        },
+        {
+          "start": "004a3e9b",
+          "end_exclusive": "004a3eb9",
+          "bytes_sha256": "f6d5a165ce4049372d953f0ec9af6d35395876cc12cd850b72090ffae516918e",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.6.0-004a3e9b.asm",
+          "assembly_sha256": "643191e322ded079847028ad40a7f87d2d95d69a5a07f4b8ac206440de490017"
+        },
+        {
+          "start": "004a3b4a",
+          "end_exclusive": "004a3b8d",
+          "bytes_sha256": "a59e78417b7c545decd5f91870849e96d923af6c25045d6086a3aa7b2611be1a",
+          "assembly": "analysis/captures/modern-differences/x87-history/1.6.0-004a3b4a.asm",
+          "assembly_sha256": "7f8b86c85e269efb6b20b073937f1f3f8c1fcd9e087a39c0a741fc664aad44f1"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static EXE witnesses, no target execution or runtime control-word observations.",
+    "Direct E8/mask scans are candidates; indirect calls, external DLL controls and all paths not covered.",
+    "Control-word precision is not memory storage width or proof of replay/network incompatibility."
+  ]
+}

@@ -245,3 +245,7 @@ The [expanded config audit](original-modern-config-loading.md#executable-update-
 ## Config path reversal now version-bound
 
 The [1.1.0/1.2.0 prefix comparison](original-modern-startup-paths.md#config-path-history-root-relative-then-restored) confirms root-relative config defaults becoming FeData/Config with the same formatting consumers. It also ties the final player-spec prefix to the final22-slot layout, distinct from the early24-slot meanings. MP120-013 gains bounded static support; MP100-044 gains partial historical support, without asserting1.0.0 introduction or observed migration. Current counts:144 vendor-only,44 bounded static,100 partial,2 unresolved.
+
+## Historical x87 release attribution
+
+The [1.5.3/1.6.0 pair](og-modern-x87-precision.md#historical-release-boundary-v153-to-v160) verifies centralized single/saved-CW helpers in1.5.3, their removal and selected FINIT boundaries in1.6.0. The application loop is at4a3b4a in1.6.0, distinct from final1.6.1. MP160-012 gains historical support within its existing bounded static label; all-thread/DLL precision and runtime compatibility remain unverified. Catalog counts unchanged.
