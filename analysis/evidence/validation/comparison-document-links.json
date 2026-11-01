@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "db564517ecfffff088083ca1daaf1bc601ac3b9c5382b53410c2827e5933e290",
-      "relative_links": 120
+      "sha256": "5438e542898503a70bf55b237c4ecf0b3331027380a4050a915525395d470a07",
+      "relative_links": 121
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "1a0c5c85a533375cbe3128919acf0d692817ec655ed427e442052a0cf6bb69a7",
+      "sha256": "297032544435801ffeffc7d5f00ccc4111308d5fa7efb4def511b0f9f72b6795",
       "relative_links": 179
     },
     {
@@ -393,8 +393,8 @@
     },
     {
       "path": "analysis/original-modern-registry.md",
-      "sha256": "996c7b7f87ee79ea6dd4d2afaad36df91bb0e354b21c48d2897977293f99e496",
-      "relative_links": 7
+      "sha256": "c5091832d89f93e35cbaf1755a9d1b0efb1e39ca6d870bf9165dd8ba5e396f5c",
+      "relative_links": 8
     },
     {
       "path": "analysis/original-modern-relocation-index.md",
@@ -618,8 +618,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "836a428fba7155391e91d27200efc31c6c4bed74c92d24f6a61d8eefb1778bfa",
-      "relative_links": 166
+      "sha256": "59c0bb8e0026ca5e7fec2a33d6ff74b4cbe4b6428742dccae8aac2d1bc0ad48d",
+      "relative_links": 167
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -628,7 +628,7 @@
     }
   ],
   "file_count": 125,
-  "relative_link_count": 2091,
+  "relative_link_count": 2094,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

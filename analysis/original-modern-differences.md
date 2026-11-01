@@ -539,7 +539,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **133 Claimed, 45 Static, 110 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **132 Claimed, 46 Static, 110 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -759,7 +759,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP131-002 | A small optimization in the voodoo2.dll and nglide.dll: grGlideInit and grGlideShutdown functions aren't called when display mode is changing. | Partial |
 | MP131-003 | Windows 98/Me support was returned. | Claimed |
 | MP131-004 | If you choose the biggest available resolution, when resolutions list is changed (e.g. when you are using external display with notebook), the biggest resolution will be choosed automatically from the new list. | Partial |
-| MP131-005 | KEY_READ access right is used instead of KEY_ALL_ACCESS for reading path to desktop from the registry for saving a screenshot (Alt+P). | Claimed |
+| MP131-005 | KEY_READ access right is used instead of KEY_ALL_ACCESS for reading path to desktop from the registry for saving a screenshot (Alt+P). | Static |
 
 ### Version 1.3.0 (2015-06-22)
 

@@ -64,7 +64,17 @@ This establishes retained registry lookup machinery and names, not working onlin
 
 Original `004b6520..004b6588` first clears 256 bytes at `007a3ae0`, opens `HKEY_CURRENT_USER` (`80000001`) subkey `SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders` (`0053feb0`), and queries `Desktop` (`0053fef4`) with initial capacity 256. It returns the buffer address even on open/query failure; the API query result is not explicitly checked. This helper has no local close call. Its original caller is `004c44ba` in the screenshot path.
 
-Modern fills that whole helper range with NOPs. The replacement uses a relative screenshots directory, asynchronous launcher and worker, as traced in the [screenshot comparison](original-modern-screenshots.md). This is removal of this Desktop-registry mechanism, not an INI key replacing `Desktop`. The historical v1.3.1 claim about changing access rights cannot be verified from this original/final pair: the final helper is gone rather than a surviving open with changed rights.
+Modern fills that whole helper range with NOPs. The replacement uses a relative screenshots directory, asynchronous launcher and worker, as traced in the [screenshot comparison](original-modern-screenshots.md). This is removal of this Desktop-registry mechanism, not an INI key replacing `Desktop`. The historical v1.3.1 rights change is not answerable from that original/final pair alone; the adjacent historical comparison below now establishes it separately.
+
+### Historical1.3.0 to1.3.1 access-mask comparison
+
+Run `python3 analysis/scripts/audit_desktop_registry_release_boundary.py`. Its [manifest](evidence/audits/desktop-registry-release-boundary.json) pins author-hosted1.3.0/1.3.1 archives and EXE members, both complete104-byte helpers004b6520..004b6588, imported API identities, path/value strings and every changed byte.
+
+Only bytes **004b6544 and004b6546** differ. Both are inside the PUSH immediate at004b6543: **000f003fh →00020019h**. These are [Microsoft's documented KEY_ALL_ACCESS and KEY_READ values](https://learn.microsoft.com/en-us/windows/win32/sysinfo/registry-key-security-and-access-rights). The instruction supplies the requested mask before the same RegOpenKeyExA call004b6554 on HKCU's Shell Folders key; RegQueryValueExA004b6575 still queries `Desktop` into the same256-byte buffer.
+
+This verifies **MP131-005's requested-access change at the named1.3.0→1.3.1 release boundary**. It does not establish a successful open/query, a permissions fix on any particular account or OS, or a screenshot write. Every other helper byte matches, including the unchecked query/return-buffer behavior and absence of a local RegCloseKey. Do not silently change those contracts during reconstruction.
+
+The final1.6.1 helper is removed, so this historical mechanism must not be carried forward as evidence that final still reads the Desktop path. Archive labels/source do not authenticate every earlier beta or development revision. No registry, screenshot, API or target instruction was executed.
 
 ## 4. Runtime memory query also remains byte-identical
 
@@ -80,7 +90,7 @@ The auditable partition is **4 online + 5 renderer + 2 Desktop + 2 generic + 2 m
 
 - **Pending, static:** establish the original generic wrapper's incoming key/value producers or explicitly unreachable status; trace the higher-level callers of wrapper `004a3390` and any alternate writes to selector state. The direct selector/override/setup-to-initializer path is now mapped.
 - **Pending, static/external:** determine where old D3D device preferences move in the packaged driver/configuration files; do not assume a one-to-one INI rename.
-- **Pending, historical:** intermediate releases are needed to verify the Desktop access-rights release claim and date individual changes.
+- **Historical Desktop mask: done, verified static.** The adjacent1.3.0/1.3.1 comparison above establishes MP131-005. Dates/introductions of other individual registry changes remain separate questions.
 - **Pending, runtime:** actual INI/registry precedence outcomes, permissions, renderer behavior and online functionality. No such tests were run.
 
 The Modern setting table includes opt-in policies, new mechanisms and relocated settings. This investigation supplies a concrete renderer migration and retained counterexamples; it does not invent original registry counterparts for all Modern options.
