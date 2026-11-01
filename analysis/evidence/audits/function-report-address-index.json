@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "095bc7add5ddbdd520091263a3a1b318d7b8eb8f9eeeae860d7941d64348a9ce"
+      "sha256": "51c4e3650af88b15bb357bc059f0ae60adf8ae6df5353af955efc417e9b39972"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -193,7 +193,7 @@
     },
     {
       "path": "analysis/original-modern-loading-artwork.md",
-      "sha256": "4913d2fd44b8dca5ee2c221e7f819c950961b560dcc59d9270a974df3ff9df2e"
+      "sha256": "93b3e0fb5f3ad146e2ff87a382cf2f10d32f57a3000180fe85a7193feb14c738"
     },
     {
       "path": "analysis/original-modern-loading-timing.md",
@@ -7187,7 +7187,8 @@
           "path": "analysis/original-modern-loading-artwork.md",
           "entry_mentioned": true,
           "addresses": [
-            "00494c5c"
+            "00494c5c",
+            "00494c60"
           ]
         }
       ]
@@ -7217,17 +7218,24 @@
             "00494cec",
             "00494cf6",
             "00494d00",
+            "00494d11",
+            "00494d1a",
             "00494d1e",
+            "00494d23",
             "00494d37",
+            "00494d3e",
+            "00494d43",
             "00494d55",
             "00494d76",
             "00494dbb",
             "00494dc6",
             "00494ea8",
+            "00494ebc",
             "00494ec0",
             "00494ecc",
             "00494edb",
             "00494ef5",
+            "00494f0d",
             "00494f42",
             "00494f9b"
           ]

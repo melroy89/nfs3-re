@@ -46,3 +46,21 @@ Run `python3 analysis/scripts/audit_loading_artwork_difference.py` (Python `pefi
 The address spans above were checked in raw `objdump -d -Mintel` captures made from the two hash-pinned executables. The Modern-only prior notes at [detailed analysis](detailed-analysis-notes.md#tiled-loading-artwork-and-progress-bounds) report the same staging-raster size and Modern tile origins, but that earlier note describes a different installed Modern hash; the claims in this report are rechecked against the official archive binary named above.
 
 The callers in the existing Ghidra notes invoke this routine from `LoadAndRenderRaceLoadingArtwork` at `0049512d` and `0049513e`; this report does not re-identify or validate their runtime reachability. Tile object layout, whether the helper inputs represent texels or another unit, the loaded image dimensions, clipping, renderer behavior, allocation failures and final display are unresolved. No game, graphics backend, probe, or test was run; no executable or Ghidra project was modified.
+
+## Early Modern already has the six-tile loading-artwork path
+
+**Verified static historical correspondence; image quality untested.** The [early/final audit](evidence/audits/loading-tile-history.json), reproduced with `python3 analysis/scripts/audit_loading_tile_history.py`, pins author-hosted1.1.0 and official final EXEs. Both request square extent256 at`00494d23` and grid counts3/2 at`00494d3e/00494d43`. This dates presence of the six-iteration mechanism to an early retained release, without asserting1.0.0 introduction.
+
+The748-byte comparison window`00494cb0..00494f9c` differs at exactly nine bytes. This is an explicit envelope, potentially including padding, not a new assertion about RET/function boundaries:
+
+| Differing byte locations | Classification |
+|---|---|
+|`00494d11`, `00494d1a` |Two scale-read operands relocate; paired binary32 values match |
+|`00494ebc` |Relative-call displacement changes target`00494c60`→`00494c5c` |
+|`00494f0d/22/37/4c/61/70` |Six absolute progress-state store operands relocate |
+
+The latter stores and changed callee are not transitively proven equivalent by this check. Their relocation does not itself imply a new image algorithm. The original/final grid, origins, floor/ceiling conversion and staging-raster comparison above remains the evidence for300 small-tile versus6 larger-tile iterations, rather than an inferred performance measurement.
+
+**MP100-016 advances to partial support:** early Modern already contains the concrete loading-image tiling change retained in final. “Better rendering” remains a visual judgment requiring actual image/raster/provider evidence. No measured quality, successful uploads, speedup or universal loading path is claimed.
+
+**MP100-017 remains vendor-only.** This loading-artwork mechanism is not evidence that sprite-edge glitch lines are fixed. The separately checked [dashboard tile builder](original-modern-view-overlay.md#complete-dashboard-tile-builder-is-retained) is byte-identical in the original/final pair, and the [shape-conversion comparison](original-modern-shape-conversion.md) primarily changes descriptor acquisition/fallback. Neither establishes a newly introduced sprite UV inset or edge-padding mechanism. Asset/atlas dimensions, sampling state and specific sprite submission paths remain the required follow-up; unchanged code can still consume changed data. No game, raster, driver, new instruction probe or Ghidra write occurred.

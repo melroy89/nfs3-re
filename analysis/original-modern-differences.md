@@ -625,7 +625,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **103 Claimed, 51 Static, 134 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **102 Claimed, 51 Static, 135 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -930,7 +930,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-013 | Much better “Full” view distance level. Now it also affects rear view mirror (in “Far” and “Full” levels). | Partial |
 | MP100-014 | View distance in “Full” level renders farther in splitscreen and night driving modes, the same as in singleplayer day driving mode. | Partial |
 | MP100-015 | “Alpha Intensity” setting works for Voodoo2 mode now. Cars look too shining without it. | Partial |
-| MP100-016 | A little better rendering of an image when loading gameplay. An attempt to improve quality of scaling of this image. | Claimed |
+| MP100-016 | A little better rendering of an image when loading gameplay. An attempt to improve quality of scaling of this image. | Partial |
 | MP100-017 | An attempt to get rid of glitch lines near some sprites (e.g. in exit dialog near NFS logo). | Claimed |
 | MP100-018 | Cabin image in “In Car” view now rendered for a pixel bigger in every dimensions for get rid of chinks on the edges of screen. | Partial |
 | MP100-019 | Because of fixed hardware detection bug quality of the starting movie will be much better (in comparison to original version) on modern computers. | Partial |
