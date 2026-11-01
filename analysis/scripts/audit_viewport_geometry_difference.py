@@ -10,7 +10,7 @@ SPANS = {
     'original': [(0x4be570,0x4be5d1),(0x4be5e0,0x4be8d2),
         (0x4beb00,0x4beb15),(0x4beb40,0x4beb56),(0x47f650,0x47fbdc),
         (0x4bebb0,0x4bebd1),(0x4bebe0,0x4becca),(0x4bf0b1,0x4bf0d7)],
-    'official_modern': [(0x4be570,0x4be5d1),(0x4be5e0,0x4be85a),
+    'official_modern': [(0x4be8b5,0x4be8e0),(0x4bebe0,0x4becca),(0x4be570,0x4be5d1),(0x4be5e0,0x4be85a),
         (0x4be89c,0x4be8b5),(0x47f650,0x47f9bd),
         (0x4be85c,0x4be89b),(0x4be84c,0x4be85a),(0x4bea13,0x4bea2f),
         (0x4be970,0x4bea36),(0x4bea40,0x4beaf7),(0x4be3d0,0x4be570)],
@@ -24,10 +24,11 @@ def main():
         'binaries':{},'limits':['No rendering or target instructions executed.',
             'Profile flags and all downstream transforms are not fully mapped.',
             'x87 rounding/precision can affect stored integer/float results.']}
+    images={}
     for label,(relative,expected,_) in SPECS.items():
         data=(ROOT/relative).read_bytes()
         assert hashlib.sha256(data).hexdigest()==expected
-        pe=pefile.PE(data=data)
+        pe=pefile.PE(data=data);images[label]=pe
         rows=[]
         spans=list(SPANS[label])+[(a,a+5) for a in (0x48106d,0x4812cd,0x4813cb,0x481b6d,0x481eee,0x47fdc2)]
         for start,end in spans:
@@ -54,6 +55,30 @@ def main():
             raw=pe.get_data(va-0x400000,4)
             floats[f'{va:08x}']={'little_endian_hex':raw.hex(),'binary32_value':struct.unpack('<f',raw)[0]}
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows,'file_backed_floats':floats}
+    old,new=images['original'],images['official_modern']
+    assert old.get_data(0xbebe0,234)==new.get_data(0xbebe0,234)
+    assert new.get_data(0xbe8b8,23).hex()=='5351528b068b56048b5e088b4e0ce8150300005a595bc3'
+    assert new.get_data(0xbe8d0,13).hex()=='56be60da7c00e8ddffffff5ec3'
+    old_tail,new_tail=[pe.get_data(0xbe8b5,43) for pe in (old,new)]
+    assert sum(a!=b for a,b in zip(old_tail,new_tail))==42
+    direct={f'{t:08x}':[] for t in (0x4be8b8,0x4be8d0)}
+    for section in new.sections:
+        if not section.Characteristics&0x20000000:continue
+        code=section.get_data();base=new.OPTIONAL_HEADER.ImageBase+section.VirtualAddress
+        for offset in range(len(code)-4):
+            if code[offset]==0xe8:
+                target=(base+offset+5+struct.unpack_from('<i',code,offset+1)[0])&0xffffffff
+                if f'{target:08x}' in direct:direct[f'{target:08x}'].append(f'{base+offset:08x}')
+    assert direct=={'004be8b8':['004be8d6'],'004be8d0':[]}
+    assert all(bytes(new.__data__).count(t.to_bytes(4,'little'))==0 for t in (0x4be8b8,0x4be8d0))
+    result['record_apply_adapters']={'inner':'004be8b8..004be8cf,23 bytes',
+        'outer':'004be8d0..004be8dd,13 bytes',
+        'inner_input':'ESI=record; load EAX/EDX/EBX/ECX from+0/+4/+8/+0c;CALL004bebe0; restore EDX/ECX/EBX',
+        'outer_input':'Preserve ESI, select007cda60,callinner,restoreESI',
+        'retained_setup':'004bebe0..004becca,234 bytes identical',
+        'direct_e8_candidates':direct,'literal_pointer_occurrences':0,
+        'outside_partition':'004be8b5..004be8e0:43 bytes,42 changed; alignment3 + inner23 + alignment1 + outer13 + alignment3',
+        'limits':'Outer reachability unresolved; indirect/computed callers and full viewport state/output equivalence not established.'}
     examples=[]
     trunc_half=lambda x: (abs(x)//2)*(-1 if x<0 else 1)
     for width,height in [(640,480),(1920,1080)]:

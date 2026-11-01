@@ -256,7 +256,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004be85c` | ExportAdjustedViewportBounds | 63 | 60 | [frame-resize](original-modern-frame-resize.md), [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004be89c` | StoreViewportRecordFirstFourDwords | 12 | 12 | [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004be8a8` | StoreViewportRecordLastFourDwords | 13 | 13 | [viewport-geometry](original-modern-viewport-geometry.md) |
-| `004be8e0` | DrawViewportBorderGeometry | 136 | 3 | [frame-resize](original-modern-frame-resize.md) |
+| `004be8e0` | DrawViewportBorderGeometry | 136 | 3 | [frame-resize](original-modern-frame-resize.md), [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004be970` | AdjustActiveViewportGeometry | 198 | 15 | [frame-resize](original-modern-frame-resize.md), [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004bed20` | ConfigureAndClipViewportRecord | 46 | 1 | [projection](original-modern-projection.md) |
 | `004bed50` | ApplyProjectionGeometryRecord | 25 | 1 | [projection](original-modern-projection.md) |

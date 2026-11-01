@@ -141,3 +141,49 @@ Only six PUSH-immediate arguments differ:
 The pairs feed the retained calls to `004a7310` at `004a77f5`, `004a7850` and `004a78a8`, respectively. Every other byte in the function is identical, including the viewport-query call `004beb80`, integer layout arithmetic and five earlier calls to `004a7080`. Each changed value increases by approximately 0.001875. The audit masks only these six immediate operands before comparing the complete bodies; there are 12 differing bytes in total.
 
 **Bounded work status: done; confidence: verified static arguments and complete function delta.** The binary32 interpretation describes the bit patterns; exact parameter roles require the callee contract. Texture coordinates, depth and visible effects are not established by these pushes alone. Retained callees may themselves differ between versions. No runtime validation, executable modification or Ghidra write was performed.
+
+## New record-to-setup adapters occupy the original initializer tail
+
+The expanded [viewport audit](scripts/audit_viewport_geometry_difference.py)
+retains complete Modern adapters, the shared setup and bounded reference
+searches in [the manifest](evidence/audits/original-modern-viewport-geometry.json).
+This classifies all42 changed bytes in outside-body interval
+`004be8b5..004be8e0`, which contains **new instructions**, not just NOPs.
+The original interval begins inside MOV ECX at `004be8b1` and continues
+through initializer code/epilogue/alignment; it was not a standalone function.
+
+| Modern subrange | Role |
+|---|---|
+| `004be8b5..004be8b8` |3 alignment NOPs |
+| `004be8b8..004be8cf` |23-byte record-to-setup adapter |
+| `004be8cf..004be8d0` |1 alignment NOP |
+| `004be8d0..004be8dd` |13-byte fixed-record wrapper |
+| `004be8dd..004be8e0` |3 alignment NOPs |
+
+Inner adapter input is **ESI=record**. It saves EBX/ECX/EDX, loads record
+DWORDs+0/+4/+8/+0ch into EAX/EDX/EBX/ECX, calls `004bebe0`, restores those
+three saved registers and returns. The outer wrapper saves ESI, selects
+record `007cda60`, calls the inner adapter and restores ESI. Neither body
+assigns a normalized return value; do not infer a Boolean interface from
+whatever the shared setup leaves in EAX.
+
+Complete shared setup `004bebe0..004becca` is234 byte-identical bytes in
+original and final. The separately retained setter `004bebb0` writes the four
+incoming registers into `007cda60..007cda6f` before calling that setup. The
+new inner adapter instead reads a record and directly calls setup, without
+those four publication stores. This distinguishes its register/data contract
+from the setter; it does not prove equivalent global state for arbitrary
+record pointers, aliases or setup side effects.
+
+**Reachability remains unresolved.** The final executable code-section scan
+finds only relative-E8 candidate `004be8d6` targeting the inner adapter and
+none targeting the outer wrapper. Whole-file searches find no literal pointer
+to either entry. These bounded encoding searches do not exclude computed or
+indirect calls. The ordinary setter remains separately mapped; no replacement
+of every viewport publication route is asserted.
+
+**Status:** done, verified static for both complete adapters, unchanged shared
+setup,42-byte classification and bounded caller census. Caller registration,
+source-record lifetime, full shared-state effects and rendered results remain
+unverified. No viewport helper, renderer or instruction probe was executed;
+executable, database and maintained C bytes were preserved.

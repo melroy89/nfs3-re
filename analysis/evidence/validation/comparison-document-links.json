@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "4464efbfc6e4da9be6f8e10edd7527da8a2fd7f279b84675500096051e7d396c",
-      "relative_links": 135
+      "sha256": "eb6369285825b8aacc1942cee9d01ebc099aadeddd1c34b19c67d22c26b74b73",
+      "relative_links": 136
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -168,8 +168,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "6ac34c85922b5078a339cc9b6cd5adbb758b7577bb672d0fdd3141f436026e05",
-      "relative_links": 704
+      "sha256": "5b1952afaf6e28785d296ca0780ec9640fcd20075425202c1e34335ad5124953",
+      "relative_links": 705
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -328,8 +328,8 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "322742a577b0ec39a96838c51e108da13dd50cb11ae17a347c3aa328288f7312",
-      "relative_links": 61
+      "sha256": "5dc4ee285997051344812ed2d3fb98b376ce35d1049ad483d7a21b7481eedb25",
+      "relative_links": 62
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
@@ -588,8 +588,8 @@
     },
     {
       "path": "analysis/original-modern-viewport-geometry.md",
-      "sha256": "4e287a00ef32b1e2f3a9398ad24c07e13d7cfec52bcf87ba2f7cff9beb4f3ef2",
-      "relative_links": 8
+      "sha256": "714abc6d227eb73b5cc45c58f7670f4f8c0f34a0cb3a62f5e300364b0271f86e",
+      "relative_links": 10
     },
     {
       "path": "analysis/original-modern-viewport-pose.md",
@@ -633,7 +633,7 @@
     }
   ],
   "file_count": 126,
-  "relative_link_count": 2174,
+  "relative_link_count": 2179,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

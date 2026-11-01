@@ -133,6 +133,20 @@
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
         {
+          "start": "004be8b5",
+          "end": "004be8e0",
+          "bytes_sha256": "307de72a4b7b8d567f587b5d011cb2f5cec95bfdeb7de4c55cc107c30b663ebb",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004be8b5.asm",
+          "assembly_sha256": "b5d6edd44945b1cfd5d59e9b44d17835dbb0d13365ad9e85804696c93700b6f7"
+        },
+        {
+          "start": "004bebe0",
+          "end": "004becca",
+          "bytes_sha256": "75d7bdb0152241874bdf7b5bc685e052295a2fe011bdae6a08f63695f8d676c8",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/official_modern-004bebe0.asm",
+          "assembly_sha256": "4c7cc823a8195d954091868948c2bef02ed96069a3a45c9b6f4a953a0092a3af"
+        },
+        {
           "start": "004be570",
           "end": "004be5d1",
           "bytes_sha256": "6984e838709db38ff94856c46ada2bdb869b1e8ce7020c24bbfe7a08d5cce02b",
@@ -274,6 +288,22 @@
     "Profile flags and all downstream transforms are not fully mapped.",
     "x87 rounding/precision can affect stored integer/float results."
   ],
+  "record_apply_adapters": {
+    "inner": "004be8b8..004be8cf,23 bytes",
+    "outer": "004be8d0..004be8dd,13 bytes",
+    "inner_input": "ESI=record; load EAX/EDX/EBX/ECX from+0/+4/+8/+0c;CALL004bebe0; restore EDX/ECX/EBX",
+    "outer_input": "Preserve ESI, select007cda60,callinner,restoreESI",
+    "retained_setup": "004bebe0..004becca,234 bytes identical",
+    "direct_e8_candidates": {
+      "004be8b8": [
+        "004be8d6"
+      ],
+      "004be8d0": []
+    },
+    "literal_pointer_occurrences": 0,
+    "outside_partition": "004be8b5..004be8e0:43 bytes,42 changed; alignment3 + inner23 + alignment1 + outer13 + alignment3",
+    "limits": "Outer reachability unresolved; indirect/computed callers and full viewport state/output equivalence not established."
+  },
   "derived_covering_centre_examples": {
     "method": "Mathematical evaluation of retained initializer/setter formulas; no target instructions executed.",
     "scope": "Non-two-player, positive fitting dimensions, initial rectangle state; not later resize/camera state.",
