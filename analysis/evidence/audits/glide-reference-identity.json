@@ -9980,6 +9980,237 @@
       ]
     }
   },
+  "dynamic_directdraw": {
+    "captures": [
+      {
+        "role": "official_final",
+        "label": "complete-get-or-load-module",
+        "start_va": "600013ec",
+        "end_va_exclusive": "60001407",
+        "sha256": "8bffcf0a453d41d0c4529c49927a8d98eda5358efdaae21ca99fc80f4f2ed14e",
+        "disassembly": [
+          "600013ec:\t53                   \tpush   ebx",
+          "600013ed:\t51                   \tpush   ecx",
+          "600013ee:\t52                   \tpush   edx",
+          "600013ef:\t89 c3                \tmov    ebx,eax",
+          "600013f1:\t53                   \tpush   ebx",
+          "600013f2:\tff 15 f4 e1 00 60    \tcall   DWORD PTR ds:0x6000e1f4",
+          "600013f8:\t85 c0                \ttest   eax,eax",
+          "600013fa:\t75 07                \tjne    0x60001403",
+          "600013fc:\t53                   \tpush   ebx",
+          "600013fd:\tff 15 10 e2 00 60    \tcall   DWORD PTR ds:0x6000e210",
+          "60001403:\t5a                   \tpop    edx",
+          "60001404:\t59                   \tpop    ecx",
+          "60001405:\t5b                   \tpop    ebx",
+          "60001406:\tc3                   \tret"
+        ]
+      },
+      {
+        "role": "official_final",
+        "label": "complete-module-symbol-lookup",
+        "start_va": "60001408",
+        "end_va_exclusive": "6000141e",
+        "sha256": "d60331913fe3701ecce37b76e37ca95bbeeb95796c5f10bd66d867f5b2c29fa3",
+        "disassembly": [
+          "60001408:\t51                   \tpush   ecx",
+          "60001409:\t52                   \tpush   edx",
+          "6000140a:\te8 dd ff ff ff       \tcall   0x600013ec",
+          "6000140f:\t85 c0                \ttest   eax,eax",
+          "60001411:\t74 08                \tje     0x6000141b",
+          "60001413:\t52                   \tpush   edx",
+          "60001414:\t50                   \tpush   eax",
+          "60001415:\tff 15 fc e1 00 60    \tcall   DWORD PTR ds:0x6000e1fc",
+          "6000141b:\t5a                   \tpop    edx",
+          "6000141c:\t59                   \tpop    ecx",
+          "6000141d:\tc3                   \tret"
+        ]
+      },
+      {
+        "role": "official_final",
+        "label": "complete-DirectDrawCreate-tail-wrapper",
+        "start_va": "60001420",
+        "end_va_exclusive": "6000143d",
+        "sha256": "0a296d7211589c6c8d7f73f3dec8a663539e9e841a21304850c0505110bc6d1e",
+        "disassembly": [
+          "60001420:\tb8 00 0d 01 60       \tmov    eax,0x60010d00",
+          "60001425:\tba 0c 0d 01 60       \tmov    edx,0x60010d0c",
+          "6000142a:\te8 d9 ff ff ff       \tcall   0x60001408",
+          "6000142f:\t85 c0                \ttest   eax,eax",
+          "60001431:\t75 08                \tjne    0x6000143b",
+          "60001433:\tb8 ff ff ff ff       \tmov    eax,0xffffffff",
+          "60001438:\tc2 0c 00             \tret    0xc",
+          "6000143b:\tff e0                \tjmp    eax"
+        ]
+      },
+      {
+        "role": "hosted_reference",
+        "label": "static-DirectDrawCreate-import-thunk",
+        "start_va": "6000d894",
+        "end_va_exclusive": "6000d89a",
+        "sha256": "30089233096f3cba08786a6278391e893a83c008ad1abd581847cb520aa63307",
+        "disassembly": [
+          "6000d894:\tff 25 6c e2 00 60    \tjmp    DWORD PTR ds:0x6000e26c"
+        ]
+      },
+      {
+        "role": "hosted_reference",
+        "label": "complete-conditional-object-creation",
+        "start_va": "60001fa0",
+        "end_va_exclusive": "6000201e",
+        "sha256": "e41609b9399353117dfbe1a4eb2c1f7f68e9b755e4a9739808832de414f60c6e",
+        "disassembly": [
+          "60001fa0:\t53                   \tpush   ebx",
+          "60001fa1:\t57                   \tpush   edi",
+          "60001fa2:\t55                   \tpush   ebp",
+          "60001fa3:\t8b 15 00 fd 00 60    \tmov    edx,DWORD PTR ds:0x6000fd00",
+          "60001fa9:\t31 db                \txor    ebx,ebx",
+          "60001fab:\t85 d2                \ttest   edx,edx",
+          "60001fad:\t75 09                \tjne    0x60001fb8",
+          "60001faf:\t83 3d c0 fc 00 60 00 \tcmp    DWORD PTR ds:0x6000fcc0,0x0",
+          "60001fb6:\t75 06                \tjne    0x60001fbe",
+          "60001fb8:\t89 d8                \tmov    eax,ebx",
+          "60001fba:\t5d                   \tpop    ebp",
+          "60001fbb:\t5f                   \tpop    edi",
+          "60001fbc:\t5b                   \tpop    ebx",
+          "60001fbd:\tc3                   \tret",
+          "60001fbe:\t53                   \tpush   ebx",
+          "60001fbf:\t68 00 fd 00 60       \tpush   0x6000fd00",
+          "60001fc4:\t53                   \tpush   ebx",
+          "60001fc5:\te8 ca b8 00 00       \tcall   0x6000d894",
+          "60001fca:\t85 c0                \ttest   eax,eax",
+          "60001fcc:\t75 ea                \tjne    0x60001fb8",
+          "60001fce:\t83 3d fc fc 00 60 00 \tcmp    DWORD PTR ds:0x6000fcfc,0x0",
+          "60001fd5:\t74 27                \tje     0x60001ffe",
+          "60001fd7:\tba 10 00 00 00       \tmov    edx,0x10",
+          "60001fdc:\t52                   \tpush   edx",
+          "60001fdd:\t8b 3d b8 fc 00 60    \tmov    edi,DWORD PTR ds:0x6000fcb8",
+          "60001fe3:\ta1 00 fd 00 60       \tmov    eax,ds:0x6000fd00",
+          "60001fe8:\t57                   \tpush   edi",
+          "60001fe9:\t8b 08                \tmov    ecx,DWORD PTR [eax]",
+          "60001feb:\t50                   \tpush   eax",
+          "60001fec:\tff 51 50             \tcall   DWORD PTR [ecx+0x50]",
+          "60001fef:\t85 c0                \ttest   eax,eax",
+          "60001ff1:\t75 12                \tjne    0x60002005",
+          "60001ff3:\tbb 01 00 00 00       \tmov    ebx,0x1",
+          "60001ff8:\t89 d8                \tmov    eax,ebx",
+          "60001ffa:\t5d                   \tpop    ebp",
+          "60001ffb:\t5f                   \tpop    edi",
+          "60001ffc:\t5b                   \tpop    ebx",
+          "60001ffd:\tc3                   \tret",
+          "60001ffe:\tba 11 00 00 00       \tmov    edx,0x11",
+          "60002003:\teb d7                \tjmp    0x60001fdc",
+          "60002005:\ta1 00 fd 00 60       \tmov    eax,ds:0x6000fd00",
+          "6000200a:\t50                   \tpush   eax",
+          "6000200b:\t8b 10                \tmov    edx,DWORD PTR [eax]",
+          "6000200d:\t31 ed                \txor    ebp,ebp",
+          "6000200f:\tff 52 08             \tcall   DWORD PTR [edx+0x8]",
+          "60002012:\t89 2d 00 fd 00 60    \tmov    DWORD PTR ds:0x6000fd00,ebp",
+          "60002018:\t89 d8                \tmov    eax,ebx",
+          "6000201a:\t5d                   \tpop    ebp",
+          "6000201b:\t5f                   \tpop    edi",
+          "6000201c:\t5b                   \tpop    ebx",
+          "6000201d:\tc3                   \tret"
+        ]
+      },
+      {
+        "role": "official_final",
+        "label": "complete-conditional-object-creation",
+        "start_va": "60001fa0",
+        "end_va_exclusive": "6000201e",
+        "sha256": "2781916a040f24299f7841623e34502ff5be3c3ae740b4887a9392f3029ac9be",
+        "disassembly": [
+          "60001fa0:\t53                   \tpush   ebx",
+          "60001fa1:\t57                   \tpush   edi",
+          "60001fa2:\t55                   \tpush   ebp",
+          "60001fa3:\t8b 15 00 fd 00 60    \tmov    edx,DWORD PTR ds:0x6000fd00",
+          "60001fa9:\t31 db                \txor    ebx,ebx",
+          "60001fab:\t85 d2                \ttest   edx,edx",
+          "60001fad:\t75 09                \tjne    0x60001fb8",
+          "60001faf:\t83 3d c0 fc 00 60 00 \tcmp    DWORD PTR ds:0x6000fcc0,0x0",
+          "60001fb6:\t75 06                \tjne    0x60001fbe",
+          "60001fb8:\t89 d8                \tmov    eax,ebx",
+          "60001fba:\t5d                   \tpop    ebp",
+          "60001fbb:\t5f                   \tpop    edi",
+          "60001fbc:\t5b                   \tpop    ebx",
+          "60001fbd:\tc3                   \tret",
+          "60001fbe:\t53                   \tpush   ebx",
+          "60001fbf:\t68 00 fd 00 60       \tpush   0x6000fd00",
+          "60001fc4:\t53                   \tpush   ebx",
+          "60001fc5:\te8 56 f4 ff ff       \tcall   0x60001420",
+          "60001fca:\t85 c0                \ttest   eax,eax",
+          "60001fcc:\t75 ea                \tjne    0x60001fb8",
+          "60001fce:\t83 3d fc fc 00 60 00 \tcmp    DWORD PTR ds:0x6000fcfc,0x0",
+          "60001fd5:\t74 27                \tje     0x60001ffe",
+          "60001fd7:\tba 10 00 00 00       \tmov    edx,0x10",
+          "60001fdc:\t52                   \tpush   edx",
+          "60001fdd:\t8b 3d b8 fc 00 60    \tmov    edi,DWORD PTR ds:0x6000fcb8",
+          "60001fe3:\ta1 00 fd 00 60       \tmov    eax,ds:0x6000fd00",
+          "60001fe8:\t57                   \tpush   edi",
+          "60001fe9:\t8b 08                \tmov    ecx,DWORD PTR [eax]",
+          "60001feb:\t50                   \tpush   eax",
+          "60001fec:\tff 51 50             \tcall   DWORD PTR [ecx+0x50]",
+          "60001fef:\t85 c0                \ttest   eax,eax",
+          "60001ff1:\t75 12                \tjne    0x60002005",
+          "60001ff3:\tbb 01 00 00 00       \tmov    ebx,0x1",
+          "60001ff8:\t89 d8                \tmov    eax,ebx",
+          "60001ffa:\t5d                   \tpop    ebp",
+          "60001ffb:\t5f                   \tpop    edi",
+          "60001ffc:\t5b                   \tpop    ebx",
+          "60001ffd:\tc3                   \tret",
+          "60001ffe:\tba 11 00 00 00       \tmov    edx,0x11",
+          "60002003:\teb d7                \tjmp    0x60001fdc",
+          "60002005:\ta1 00 fd 00 60       \tmov    eax,ds:0x6000fd00",
+          "6000200a:\t50                   \tpush   eax",
+          "6000200b:\t8b 10                \tmov    edx,DWORD PTR [eax]",
+          "6000200d:\t31 ed                \txor    ebp,ebp",
+          "6000200f:\tff 52 08             \tcall   DWORD PTR [edx+0x8]",
+          "60002012:\t89 2d 00 fd 00 60    \tmov    DWORD PTR ds:0x6000fd00,ebp",
+          "60002018:\t89 d8                \tmov    eax,ebx",
+          "6000201a:\t5d                   \tpop    ebp",
+          "6000201b:\t5f                   \tpop    edi",
+          "6000201c:\t5b                   \tpop    ebx",
+          "6000201d:\tc3                   \tret"
+        ]
+      }
+    ],
+    "imports": {
+      "hosted_reference": {
+        "6000e1f4": "GetModuleHandleA",
+        "6000e1fc": "GetProcAddress",
+        "6000e210": "LoadLibraryA",
+        "6000e26c": "DirectDrawCreate"
+      },
+      "official_final": {
+        "6000e1f4": "GetModuleHandleA",
+        "6000e1fc": "GetProcAddress",
+        "6000e210": "LoadLibraryA"
+      }
+    },
+    "caller_changes": [
+      {
+        "start_va": "60001fc6",
+        "end_va_exclusive": "60001fca",
+        "reference_hex": "cab80000",
+        "modern_hex": "56f4ffff"
+      }
+    ],
+    "contract": {
+      "admission": "Existing object6000fd00 must be0 and policy DWORD6000fcc0 nonzero.",
+      "create_arguments": [
+        "0",
+        "address6000fd00",
+        "0"
+      ],
+      "missing_module_or_symbol": "Wrapper returnsffffffff and pops12 bytes; caller tests nonzero and returns0.",
+      "resolved_symbol": "Tail JMP preserves original stack arguments and return address for provider.",
+      "limits": [
+        "No output-pointer clearing is performed by the failure wrapper.",
+        "Resolver does not locally FreeLibrary; borrowed module handles and newly loaded references are different cases.",
+        "Actual library search order, DLL identity, symbol ABI, creation, object ownership and unload remain unobserved.",
+        "No claim that removing a static descriptor eliminates conditional DirectDraw dependency."
+      ]
+    }
+  },
   "export_comparison": {
     "reference_final_entries_equal": 34,
     "reference_local_names_equal": 34,

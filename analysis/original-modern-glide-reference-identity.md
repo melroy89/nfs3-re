@@ -290,6 +290,24 @@ Restore's unchanged admission matters: DWORD6000fca4==0 returns1 without any of 
 
 Together these callers connect centralized initialization/shutdown to mode switching and restore. **Verified local difference:** ordinary context close no longer directly shuts Glide down; restore routes shutdown through the latch helper instead of direct shutdown plus handle release. **Unresolved:** all admission/state lifetimes, callback failures, transitive object cleanup, exact runtime shutdown counts, unload completion and provider behavior. A return1 or cleared pointer is not proof that external cleanup succeeded. No DLL/API/target instructions were executed.
 
+## DirectDraw creation moves from a static import to conditional lookup
+
+The complete126-byte conditional creation helper **`60001fa0..6000201e`** differs only in the four-byte CALL displacement at60001fc6. Reference calls thunk6000d894, whose `JMP [6000e26c]` is verified against its DDRAW.dll import entry **DirectDrawCreate**. Final instead calls new wrapper60001420. Thus the absent final static DDRAW descriptor is not evidence that this renderer never uses DirectDraw.
+
+All three new helpers are retained in the manifest:
+
+| Range | Verified local operation |
+|---|---|
+|600013ec..60001407 | Takes module-name pointer in EAX; calls imported GetModuleHandleA, then LoadLibraryA only if the former returns0; preserves saved EBX/ECX/EDX |
+|60001408..6000141e | Takes module/symbol-name pointers in EAX/EDX; obtains handle, then calls imported GetProcAddress if handle!=0; returns0 if acquisition fails |
+|60001420..6000143d | Supplies literals `DDRAW.DLL`/`DirectDrawCreate`; nonzero symbol result is a tail JMP; failure returnsffffffffh with RET0ch |
+
+The caller requires object6000fd00==0 and policy DWORD6000fcc0!=0. It passes `(0,&object6000fd00,0)` and tests the result for zero; the wrapper's missing-library/symbol result is therefore rejected by the retained caller, which returns0. The wrapper itself does **not** clear the output pointer. Its tail JMP leaves the three original stack arguments and return address in place for the resolved function; actual provider ABI behavior is not observed.
+
+After successful creation, the retained caller invokes object vtable+50h with its stored window and flags10h or11h according to6000fcfc. Zero returns1; a nonzero result calls vtable+8, clears the object pointer and returns0. These instructions establish local result handling, not complete COM ownership, cooperative-mode success or compatibility on a particular OS.
+
+The resolver does not locally call FreeLibrary or cache a separate module handle. Its GetModuleHandle case borrows an existing handle; its LoadLibrary case acquires a reference. Do not infer one lifetime policy, a leak or permanent loading from both cases without tracing the remaining process state. Loaded DLL identity, OS search behavior, concurrent unload and all API failures remain unverified. **Verified difference:** conditional dynamic resolution replaces the static DirectDraw import at this call site, retaining the local failure gate. No DLL or API was executed.
+
 ## Next required comparison
 
 The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and other initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.

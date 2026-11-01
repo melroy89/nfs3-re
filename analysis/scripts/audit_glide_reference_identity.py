@@ -413,6 +413,43 @@ def main():
         'limits': ['No provider result checked by the local close/restore paths; local return1 is not successful cleanup evidence.',
                    'Active-context branch calls retained vtable+8 helper; interface lifetime and all callbacks remain unqualified.',
                    'No whole-process provider release, permanent module lifetime, shutdown count or runtime synchronization proof.']}
+    result['dynamic_directdraw'] = {'captures': [], 'imports': {}}
+    for role, pe in [('hosted_reference', ref), ('official_final', final)]:
+        by_va = {entry.address: entry.name.decode('ascii') for library in pe.DIRECTORY_ENTRY_IMPORT
+                 for entry in library.imports if entry.name}
+        if role == 'hosted_reference':
+            assert by_va[0x6000e26c] == 'DirectDrawCreate'
+        else:
+            assert [by_va[va] for va in (0x6000e1f4, 0x6000e210, 0x6000e1fc)] == [
+                'GetModuleHandleA', 'LoadLibraryA', 'GetProcAddress']
+        result['dynamic_directdraw']['imports'][role] = {f'{va:08x}': name for va, name in by_va.items()
+            if name in ('DirectDrawCreate', 'GetModuleHandleA', 'LoadLibraryA', 'GetProcAddress')}
+    for role, pe, start, end, label in [
+        ('official_final', final, 0x13ec, 0x1407, 'complete-get-or-load-module'),
+        ('official_final', final, 0x1408, 0x141e, 'complete-module-symbol-lookup'),
+        ('official_final', final, 0x1420, 0x143d, 'complete-DirectDrawCreate-tail-wrapper'),
+        ('hosted_reference', ref, 0xd894, 0xd89a, 'static-DirectDrawCreate-import-thunk'),
+        ('hosted_reference', ref, 0x1fa0, 0x201e, 'complete-conditional-object-creation'),
+        ('official_final', final, 0x1fa0, 0x201e, 'complete-conditional-object-creation')]:
+        body = pe.get_data(start, end-start)
+        result['dynamic_directdraw']['captures'].append({'role': role, 'label': label,
+            'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+            'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    assert final.get_string_at_rva(0x10d00) == b'DDRAW.DLL'
+    assert final.get_string_at_rva(0x10d0c) == b'DirectDrawCreate'
+    assert final.get_data(0x1433, 10).hex() == 'b8ffffffffc20c00ffe0'
+    changes = intervals(ref.get_data(0x1fa0, 0x7e), final.get_data(0x1fa0, 0x7e), 0x60001fa0)
+    assert len(changes) == 1 and changes[0]['start_va'] == '60001fc6' and changes[0]['end_va_exclusive'] == '60001fca'
+    result['dynamic_directdraw']['caller_changes'] = changes
+    result['dynamic_directdraw']['contract'] = {
+        'admission': 'Existing object6000fd00 must be0 and policy DWORD6000fcc0 nonzero.',
+        'create_arguments': ['0', 'address6000fd00', '0'],
+        'missing_module_or_symbol': 'Wrapper returnsffffffff and pops12 bytes; caller tests nonzero and returns0.',
+        'resolved_symbol': 'Tail JMP preserves original stack arguments and return address for provider.',
+        'limits': ['No output-pointer clearing is performed by the failure wrapper.',
+                   'Resolver does not locally FreeLibrary; borrowed module handles and newly loaded references are different cases.',
+                   'Actual library search order, DLL identity, symbol ABI, creation, object ownership and unload remain unobserved.',
+                   'No claim that removing a static descriptor eliminates conditional DirectDraw dependency.']}
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [
