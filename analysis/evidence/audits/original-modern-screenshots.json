@@ -7,6 +7,27 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "004c5243",
+          "end": "004c5281",
+          "bytes_sha256": "93d16e786ce69708007deaf3e98dcea67e942dc27647c0b59cdbe374d1e12ed1",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-004c5243.asm",
+          "assembly_sha256": "4473a028379c4d16e8bad7e6d88899671b12a63bc88be5a15779935c4ec17290"
+        },
+        {
+          "start": "004c546e",
+          "end": "004c548e",
+          "bytes_sha256": "6008193825d883adb6b3cba348ad99c5afbfb768d32d0c6ed4aa37d21fd3350c",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-004c546e.asm",
+          "assembly_sha256": "b4f7c2b41fb685f68f979ef085169bdfcc365c045293b41f31066b2ca5cb7806"
+        },
+        {
+          "start": "004eb1c0",
+          "end": "004eb1c8",
+          "bytes_sha256": "22db5a78ecd36aee3488da90ae657af39131f3ed3072f4c885835655a0603b90",
+          "assembly": "analysis/captures/modern-differences/screenshots/original-004eb1c0.asm",
+          "assembly_sha256": "4a9b9001bb0e36d407760e0e6612e8989aa4998597e3d60394b31024ef964ea3"
+        },
+        {
           "start": "00451810",
           "end": "00451836",
           "bytes_sha256": "dfd9a40fbe6c5a420b3126d6234ad9514847e9b5e2d634ebfc9c2752e11966ec",
@@ -66,6 +87,27 @@
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
       "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
       "spans": [
+        {
+          "start": "004c5243",
+          "end": "004c5281",
+          "bytes_sha256": "9457a1a769d86f6ee04f0f9e18501760c05684fd01ea1769a71cdd9881a39ab6",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004c5243.asm",
+          "assembly_sha256": "26bbfd313d16f8a9652216aa50fda6be6d04497ec97374d3e7cd8b44c6920c0a"
+        },
+        {
+          "start": "004c546e",
+          "end": "004c548e",
+          "bytes_sha256": "a9b5d7799ad01bba65bfdc62fa456ad8fc61b7f27961af04eda67ad4e03097a9",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004c546e.asm",
+          "assembly_sha256": "74309bc3468cb2918467d6af75a5c6b2f5397516b25470b6eee65990f80366dd"
+        },
+        {
+          "start": "004eb1c0",
+          "end": "004eb1c8",
+          "bytes_sha256": "22db5a78ecd36aee3488da90ae657af39131f3ed3072f4c885835655a0603b90",
+          "assembly": "analysis/captures/modern-differences/screenshots/official_modern-004eb1c0.asm",
+          "assembly_sha256": "442adcef2250ed0276a931c16b95f49cad235a9b470c9a17980fedcf2f81b17f"
+        },
         {
           "start": "004ccb84",
           "end": "004ccc40",
@@ -144,5 +186,18 @@
     "No screenshot or target instructions executed.",
     "Spans are instruction witnesses, not a complete interprocedural graph.",
     "Same-address regions do not imply function correspondence."
-  ]
+  ],
+  "race_loop_capture_branch": {
+    "removed_poll": "004c5243..004c5276",
+    "poll_admission": "signed006fd3b0<2 OR signed006fd3a0>1",
+    "key_bytes": [
+      "00564850(index38h)",
+      "00564831(index19h)"
+    ],
+    "latch": "Both nonzero -> EDI1; no local key-edge detection",
+    "original_draw_gate": "When007d3674==0,EDI nonzero ->004c4490 thenEDI0; else004bc680",
+    "modern_draw_gate": "When007d3674==0,call004bc680 then004c4480",
+    "outside_interval": "004c524e..004c5281,51 NOP-replaced bytes; begins inside originalCMP004c524c operand",
+    "limits": "No complete-loop cadence, physical key delivery, captured frame identity or successful write established."
+  }
 }

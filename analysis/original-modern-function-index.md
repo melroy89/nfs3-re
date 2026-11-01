@@ -250,7 +250,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004bc160` | RenderRaceScene | 704 | 15 | [geometry-color-admission](original-modern-geometry-color-admission.md), [night-lighting](original-modern-night-lighting.md), [projection](original-modern-projection.md), [state14](original-modern-state14.md) |
 | `004bc650` | FinalizeRaceFrameViewportState | 20 | 7 | [vehicle-dispatch](original-modern-vehicle-dispatch.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004bc670` | ClearDialogAndRefreshRaceMouseState | 15 | 2 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
-| `004bc680` | RenderRaceFrame | 332 | 17 | [night-lighting](original-modern-night-lighting.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
+| `004bc680` | RenderRaceFrame | 332 | 17 | [night-lighting](original-modern-night-lighting.md), [screenshots](original-modern-screenshots.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004be570` | GetDriverDisplayModeDimensions | 97 | 5 | [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004be5e0` | InitializeViewportGeometryForProfile | 634 | 608 | [border-geometry](original-modern-border-geometry.md), [projection](original-modern-projection.md), [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004be85c` | ExportAdjustedViewportBounds | 63 | 60 | [frame-resize](original-modern-frame-resize.md), [viewport-geometry](original-modern-viewport-geometry.md) |

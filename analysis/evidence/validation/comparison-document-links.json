@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "088b4fffddc92ecba1e958a8d65feeb7fecbe0474170fb6d89ef3079497e17fb",
-      "relative_links": 141
+      "sha256": "a97f3eb3665e73da9d481a17b98034e2c1cb4b73eedd106807698e4fd73c7cfe",
+      "relative_links": 142
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -168,8 +168,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "59ed9676fa735a587e366d928f85d32c7fbba278dbc9098ff0b7d1d4b1a5422e",
-      "relative_links": 706
+      "sha256": "b494bf16828f0a3f5c830554fb9b2553c164cce8abb7949e013ea3788bb639ba",
+      "relative_links": 707
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -328,8 +328,8 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "dbf92a35c449665ead8439ffc34d08d3e01a41fcadac6473d802708597d8e879",
-      "relative_links": 63
+      "sha256": "06b1f72f6407d6b1ecbdd3fea9d677140ae1e6485c11f0692b9f20a2696cd291",
+      "relative_links": 64
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
@@ -463,8 +463,8 @@
     },
     {
       "path": "analysis/original-modern-screenshots.md",
-      "sha256": "37ca264cef21bb7164ee3a3430ab3af08e285f0ebecaa23c7bda2d1ffd85809b",
-      "relative_links": 10
+      "sha256": "f1b96e78e5f322d6e598bdbc0cb095190a19130bb3e60c4f1bae100f97aa6103",
+      "relative_links": 12
     },
     {
       "path": "analysis/original-modern-setup-website.md",
@@ -633,7 +633,7 @@
     }
   ],
   "file_count": 126,
-  "relative_link_count": 2213,
+  "relative_link_count": 2218,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

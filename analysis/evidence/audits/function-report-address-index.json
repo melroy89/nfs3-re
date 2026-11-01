@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "088b4fffddc92ecba1e958a8d65feeb7fecbe0474170fb6d89ef3079497e17fb"
+      "sha256": "a97f3eb3665e73da9d481a17b98034e2c1cb4b73eedd106807698e4fd73c7cfe"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -365,7 +365,7 @@
     },
     {
       "path": "analysis/original-modern-screenshots.md",
-      "sha256": "37ca264cef21bb7164ee3a3430ab3af08e285f0ebecaa23c7bda2d1ffd85809b"
+      "sha256": "f1b96e78e5f322d6e598bdbc0cb095190a19130bb3e60c4f1bae100f97aa6103"
     },
     {
       "path": "analysis/original-modern-setup-website.md",
@@ -9501,6 +9501,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-screenshots.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004bc680"
+          ]
+        },
+        {
           "path": "analysis/og-modern-x87-precision.md",
           "entry_mentioned": true,
           "addresses": [
@@ -10320,6 +10327,11 @@
           "path": "analysis/original-modern-screenshots.md",
           "entry_mentioned": false,
           "addresses": [
+            "004c5243",
+            "004c5249",
+            "004c524c",
+            "004c5281",
+            "004c546e",
             "004c547b",
             "004c5481"
           ]

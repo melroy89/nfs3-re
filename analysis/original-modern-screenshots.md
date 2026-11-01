@@ -88,3 +88,46 @@ The opener maps those flag bits to **access`0x40000000`, share0, disposition2, a
 This resolves the BMP branch’s prior open-mode unknown. An intervening file creation or a candidate misclassified as absent can reach an overwrite-capable open attempt. It does not prove that any existing file was actually overwritten. The worker still ignores the save helper result, so normal thread return does not establish successful saving. PNG/JPEG use a distinct GDI+ route whose replacement behaviour remains outside this finding. No filesystem write or race test was performed.
 
 The [complete GDI+ lifecycle comparison](original-modern-screenshot-gdiplus.md) now resolves initialization/shutdown bodies, required exports, encoder GUID defaults and failure cleanup. Actual encoding success and concurrency remain separate from initializer return1.
+
+## Race-loop key latch becomes render-then-queued capture
+
+The expanded [screenshot audit](scripts/audit_screenshot_difference.py)
+retains both race-loop decision spans and complete shared key-byte getter
+`004eb1c0..004eb1c8` in [the manifest](evidence/audits/original-modern-screenshots.json).
+This closes the local race-loop producer-to-capture link previously represented
+only by its direct capture call.
+
+Original `004c5243..004c5276` admits the chord check when signed
+`006fd3b0 < 2` **or** signed `006fd3a0 > 1`. Otherwise it bypasses the check.
+On admission it reads key indices38h and19h through `004eb1c0`; the getter
+simply zero-extends a byte from `00564818 + index`. These are the same Alt/P
+indices established above. Both bytes nonzero set local EDI=1. The shown
+poll does not detect a key-down edge, clear the bytes or apply a time limit.
+Actual invocation rate and input refresh are separate.
+
+Later, the shared test at `004c546e` requires `007d3674==0` before the
+following paths:
+
+| Original | Final Modern |
+|---|---|
+| EDI nonzero: call synchronous capture `004c4490`, clear EDI, bypass the ordinary frame-render call on this arm | Call frame renderer `004bc680`, then queued-request processor `004c4480` |
+| EDI zero: call frame renderer `004bc680` | Same render-then-request sequence |
+
+If `007d3674` is nonzero, both paths skip this draw/capture block. The table
+states local call order, not the identity/freshness of pixels ultimately read:
+other draw/buffer activity and asynchronous worker state remain dependencies.
+Modern's request/time admission and worker are documented above; calling the
+processor does not guarantee a pending request or successful image file.
+
+Outside interval `004c524e..004c5281` contains51 Modern NOP bytes, all changed.
+It begins inside original CMP `004c524c`, includes the rest of the chord/latch
+block and the old loop-counter increment/back-edge. Modern retains that
+increment and back-edge earlier at `004c5243/004c5249`. Thus the patch removes
+the local chord polling, not the surrounding simulation iteration itself.
+
+**Status:** done, verified static for the signed admission predicates, key-byte
+getter, latch assignment, moved loop continuation and render/capture selection.
+Complete loop/callback register contracts, physical key delivery, input reset,
+frame identity, capture timing and actual screenshots remain unverified. No
+keyboard, game, screenshot API or instruction probe was executed, and no
+executable/database bytes were changed.
