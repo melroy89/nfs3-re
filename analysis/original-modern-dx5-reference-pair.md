@@ -90,7 +90,7 @@ The entry reads its selector from the first stack argument and value from the se
 
 Reference tails `6000341c..60003498`, containing the value4 and value0/1 routes, are entirely replaced by124 NOP bytes in Modern. Other parts of the state-handler body are byte-identical, including the distinct selector14h route's rejection. This is an export-level dispatch change, not just deletion of unused-looking bytes.
 
-The generator, expander and numeric state adapter remain byte-identical in their separately captured complete bodies. The generator uses x87 operations to emit64 byte values; the expander has a256-iteration output loop. This supports a table-related interpretation. A fog-related role is **inferred** from this mechanism and adjacent state handling; this increment does not establish API enumeration names or a visible effect merely from numeric constants. A precise mathematical reconstruction and floating-point edge-case audit of those helpers is outside this comparison.
+The generator, expander and numeric state adapter remain byte-identical in their separately captured complete bodies. The generator uses x87 operations to emit64 byte values; the expander has a256-iteration output loop. This supports a table-related interpretation. A fog-related role was initially inferred from this mechanism; the EXE FogSupport trial linkage below now establishes a game-facing fog-admission consumer. This does not establish API enumeration names or a visible effect merely from numeric constants. A precise mathematical reconstruction and floating-point edge-case audit of those helpers is outside this comparison.
 
 The adapter prepares an object if needed, optionally calls a pending-work helper, and invokes object `[60010f48]` vtable offset5ch with the numeric state/value. It returns1 only when that indirect call returns zero, otherwise0. The reference selector15h tails discard this result and return their own1. Therefore the original exported success return does not by itself prove device acceptance. The complete object/interface provenance and subordinate helper contracts remain open.
 
@@ -130,13 +130,30 @@ The script now asserts that every differing byte in the shared55,296-byte code-s
 
 There are zero unassigned differing bytes **within that code section**. This is localization coverage supported by bounded explanations above, not whole-DLL semantic equivalence, proof that every runtime consequence is understood, or completion of the EXE investigation. Changed PE headers, relocation/resource/export sections, appended material, runtime initialization and unchanged dependencies remain separate. The script retains the original25 maximal differing-byte intervals, so grouping has not discarded raw differences.
 
+## EXE fog trial connects to the rejected DX5 selector
+
+The extended audit now pins the official EXE and extracts `drivers/dx5/thrash.ini` from the same pinned final archive. The config names `File=dx5a.dll` and `Type=d3d`, and has **no FogSupport key**. The [EXE state analysis](original-modern-state14.md#support-producer-configuration-opt-in-followed-by-mode-trial) already establishes the opt-in/trial mechanism; these captures connect it to this particular DX5 handler instead of leaving the removed selector's game-facing role unnamed.
+
+| EXE location | Verified local operation | Consequence for the inspected DX5 path |
+|---|---|---|
+| `004b597b..004b599e` | `GetPrivateProfileIntA("THRASH","FogSupport",0,path)` via verified import slot00534670; normalize nonzero to1 and store007a3a54 | Reading the bundled config without an overriding key requests default0; this is conditional on the actual path/API result |
+| `004b5bb0..004b5bd6` | If007a3a54 is nonzero, invoke bound THRASH state slot009ef96c with `(21,4)`; return0 clears the flag; then issue `(21,0)` regardless | Modern DX5's selector15h rejection returns0 for both requests. On this trial route even a prior nonzero opt-in is cleared |
+| `00431c1c..00431c33` | Complete recomputation writes007a3a64 =007a3a54 AND006fd1d4 AND00559234 | If the support flag is zero when this function runs, admission becomes zero regardless of the other two inputs |
+
+**Decimal21 and hexadecimal15h are the same selector.** They are not decimal state15. The [export-binding analysis](original-modern-renderer-loading.md) identifies slot009ef96c as `_THRASH_setstate@8`; this DLL's export inventory and complete dispatcher comparison establish its rejecting target.
+
+The driver’s changed return therefore has a concrete game consumer: it feeds the support gate, not merely an ignored status in an isolated table helper. The name association is supported by the EXE's FogSupport key and trial, without requiring a guessed Direct3D enum name. This also explains why a disabled default and a rejecting probe can coexist: the default avoids the trial, while the trial rejects an explicit opt-in if that common route is used.
+
+This is a conditional static chain. It does not prove which INI/DLL was selected in a live session, that every initialization path performs the trial, that later writers preserve zero, or that every kind of visual fog is absent. The [initialization report](original-modern-renderer-initialization.md) distinguishes the common software/d/v route from the generic route that skips this trial. It is not a new claim of universal backend equivalence, a historical introduction date or successful rendering. Existing EXE and database bytes remain unchanged.
+
 ## Actionable follow-up and acceptance
 
 - **Done, verified:** artifact pairing, full export inventory, whole code-section byte map, import/data section equality, complete `about` comparison and retained selection span.
 - **Done, verified:** complete callback comparison, selected setup seeds/count requests, raw-key scan policy, dimension filter and local quotient cap.
 - **Done, verified:** selector15h now rejects requests; removed table/state tail blocks and unchanged helper bodies are documented.
 - **Done, verified:** lock failure gains callback0 notification; all710 differing code-section bytes are assigned to reviewed clusters.
-- **Pending, unresolved:** exhaustive initialization/consumers, actual32-bit operation, absolute640×480 reporting policy and selector15h callers/effects; qualify the consequences and remaining PE/non-code differences.
+- **Done, verified:** the EXE FogSupport trial consumes selector15h rejection on its common route; zero support forces zero on the captured admission recomputation.
+- **Pending, unresolved:** exhaustive initialization/consumers, actual32-bit operation, absolute640×480 reporting policy and remaining selector15h callers/effects; qualify runtime consequences and PE/non-code differences.
 - **Later evidence:** authenticated retail provenance, historical introduction, full relocations/resources, runtime display enumeration and rendering acceptance.
 
 No release-note item is promoted by this bounded pairing alone. The broader original/Modern investigation remains incomplete. Existing EXEs, saved Ghidra state, maintained C and raw exports were not edited; no target instructions, OS graphics calls or new probes were run.

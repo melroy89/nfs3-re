@@ -54,3 +54,7 @@ Original branches also write `0055fed0` with fixed values 4 MiB, 8 MiB or 2 MiB,
 ## Limits and remaining work
 
 The tables and instruction sequences are verified static evidence. Driver category names are interpretation from candidate names/configuration letters; state-selector meanings remain opaque unless independently established. The [lifecycle comparison](original-modern-renderer-lifecycle.md) now traces original callback installation, the actual original `00517610` counterpart and Modern’s direct `00517620` mode path. Complete error-helper and descriptor-consumer contracts remain pending. The [registry/selector follow-up](original-modern-registry.md#original-selector-precedence-and-call-chain) now traces registry names, fixed command-line priority and the direct setup-to-initializer chain. Higher-level callers, alternate selector writes, DLL implementations and actual renderer behavior still need comparison. Historical release introduction cannot be dated from original versus final alone.
+
+## DX5 common-route trial consequence
+
+The [DX5 cross-component comparison](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) now resolves the final DX5 handler used by the common `(21,4)` trial: selector15h returns0, so this route clears a nonzero FogSupport flag. Its bundled INI omits the opt-in key. This conditional result must not be transferred to the generic initialization path, other DLLs or unobserved later state. The existing DX7 mapping remains a separate backend case.

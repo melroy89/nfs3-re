@@ -726,7 +726,6 @@
       ],
       "disassembly": {
         "reference": [
-          "60001020 <.data>:",
           "60001020:\t53                   \tpush   ebx",
           "60001021:\t56                   \tpush   esi",
           "60001022:\t57                   \tpush   edi",
@@ -770,7 +769,6 @@
           "600010d3:\tc3                   \tret"
         ],
         "modern": [
-          "60001020 <.data>:",
           "60001020:\t53                   \tpush   ebx",
           "60001021:\t56                   \tpush   esi",
           "60001022:\t57                   \tpush   edi",
@@ -825,7 +823,6 @@
       "changed_intervals": [],
       "disassembly": {
         "reference": [
-          "60001618 <.data>:",
           "60001618:\t51                   \tpush   ecx",
           "60001619:\t52                   \tpush   edx",
           "6000161a:\t83 3d f4 0e 01 60 00 \tcmp    DWORD PTR ds:0x60010ef4,0x0",
@@ -912,7 +909,6 @@
           "60001731:\tc2 04 00             \tret    0x4"
         ],
         "modern": [
-          "60001618 <.data>:",
           "60001618:\t51                   \tpush   ecx",
           "60001619:\t52                   \tpush   edx",
           "6000161a:\t83 3d f4 0e 01 60 00 \tcmp    DWORD PTR ds:0x60010ef4,0x0",
@@ -1011,7 +1007,6 @@
         "sha256": "52e8e7750143a6b5243214a7fe586da3933de801cbcf63d3d9160f3d36e05c96",
         "hex": "5356575583ec2c8b7424408b7c24448d46488b5e54e81a0e000031c989c585c00f847a00000083fb0f0f8580000000ba020000008b460c0faf46080fafc28944242431d2a1b40e0160f77424248b560c8944242881fa800200007569817e08e0010000756083fb10755b8b0d5020016083c1288b460c89018b460889410483fd037505bb0f000000c741100100000089690c8b44242889590889411448894118b80100000083c42c5d5f5e5bc2080089da89d8c1fa1fc1e2031bc2c1f80389c2e96fffffff817e0c200300007519817e0858020000751083fb10750b8b0d5020016083c150eb8c85ed748889e0502eff1504f200608b1783fa1e731f8d0c95000000008d040a8b0d50200160c1e00301c18d42018907e958ffffff31c083c42c5d5f5e5bc20800",
         "disassembly": [
-          "600017bc <.data>:",
           "600017bc:\t53                   \tpush   ebx",
           "600017bd:\t56                   \tpush   esi",
           "600017be:\t57                   \tpush   edi",
@@ -1117,7 +1112,6 @@
         "sha256": "ab47edabb85608fb2eeb9d8ca0f8e1a7a194cca85f1578d91fe6a87ade6d29f9",
         "hex": "535556578b7424148d4648e8240e000085c00f849d00000089c58b460c8b5e088b4e543d800200000f828700000081fbe0010000727f8b3d5020016083c728833f00750d8b542418833a647368ff02eb0e390775e7395f0475e2394f0875dd8907895f0483fd037505b90f000000894f08896f0cc747100100000089cdc1ed0383f90f7705bd020000000fafe80fafeba1b40e016031d2f7f583f8037610c7471403000000c7471803000000eb0789471448894718b8010000005f5e5d5bc20800",
         "disassembly": [
-          "600017bc <.data>:",
           "600017bc:\t53                   \tpush   ebx",
           "600017bd:\t55                   \tpush   ebp",
           "600017be:\t56                   \tpush   esi",
@@ -1192,7 +1186,6 @@
         "sha256": "60be716f7ad50fe015cef64f46ee4498d3adafd6770f532f849525fb480d6876",
         "hex": "bbb0040000a15020016031d2e857370000a150200160c7402880020000c7402ce0010000c7403010000000c7403404000000c7403c03000000c7404002000000c7403801000000c7405020030000c7405458020000c7405810000000c7405c04000000c740640200000068bc170060c7406801000000684c200160c74060010000006a00ba03000000a1b80e01606a0089154c2001608b1050ff52205b5ee9e8fcffff",
         "disassembly": [
-          "60001b80 <.data>:",
           "60001b80:\tbb b0 04 00 00       \tmov    ebx,0x4b0",
           "60001b85:\ta1 50 20 01 60       \tmov    eax,ds:0x60012050",
           "60001b8a:\t31 d2                \txor    edx,edx",
@@ -1235,7 +1228,6 @@
         "sha256": "7a789f3a4e9fa41cb3ebda464f148679dd5e3ea07dc1adaf89b3b0a2f5f85992",
         "hex": "bba00f0000a15020016031d2e857370000a150200160c7402880020000c7402ce0010000c7403010000000c7403404000000c7403c03000000c7404002000000c7403801000000c7054c2001600200000068bc170060684c2001606a006a00a1b80e0160508b08ff51205b5ee91afdffff",
         "disassembly": [
-          "60001b80 <.data>:",
           "60001b80:\tbb a0 0f 00 00       \tmov    ebx,0xfa0",
           "60001b85:\ta1 50 20 01 60       \tmov    eax,ds:0x60012050",
           "60001b8a:\t31 d2                \txor    edx,edx",
@@ -1271,7 +1263,6 @@
         "sha256": "4c1ea94abd8d3dbfe4ff522aece14d250708b349d6e847f37eb611fd0f6468d2",
         "hex": "bbb0040000a15020016031d2e8fd300000a150200160c7402880020000c7402ce0010000c7403010000000c7403404000000c7403c01000000c7404001000000c7403801000000c7405020030000c7405458020000c7405810000000c7405c04000000c740640100000068bc170060c7406801000000684c200160c74060010000006a00a1b80e01606a00bf030000008b1050893d4c200160ff5220b80100000081c4e80200005d5f5e5a595bc3",
         "disassembly": [
-          "600021da <.data>:",
           "600021da:\tbb b0 04 00 00       \tmov    ebx,0x4b0",
           "600021df:\ta1 50 20 01 60       \tmov    eax,ds:0x60012050",
           "600021e4:\t31 d2                \txor    edx,edx",
@@ -1320,7 +1311,6 @@
         "sha256": "56ba6e3125c009d61777ae708893c8184564ab3164916193c759833de570f7c6",
         "hex": "bba00f0000a15020016031d2e8fd300000a150200160c7402880020000c7402ce0010000c7403010000000c7403404000000c7403c01000000c7404001000000c7403801000000c7054c2001600200000068bc170060684c2001606a006a00a1b80e0160508b08ff5120b80100000081c4e80200005d5f5e5a595bc3",
         "disassembly": [
-          "600021da <.data>:",
           "600021da:\tbb a0 0f 00 00       \tmov    ebx,0xfa0",
           "600021df:\ta1 50 20 01 60       \tmov    eax,ds:0x60012050",
           "600021e4:\t31 d2                \txor    edx,edx",
@@ -1362,7 +1352,6 @@
         "sha256": "c438be9c8d36eccf5101d72c6a0643f155985fd6b62f499920c79be3e80b9a06",
         "hex": "535152568b701c8b48108b50148b580c8b401883fb100f856900000081f9007c0000750d81fae0030000750583f81f744081f900f80000750d81fae0070000750583f81f743581f9000f00000f856800000081faf0000000756083f80f755b81fe00f000007553b8070000005e5a595bc3b8030000005e5a595bc3b8040000005e5a595bc381f90000ff00752d81fa00ff000075253dff000000751e83fb18740f83fb207514b8060000005e5a595bc3b8050000005e5a595bc331c05e5a595bc3",
         "disassembly": [
-          "600025f0 <.data>:",
           "600025f0:\t53                   \tpush   ebx",
           "600025f1:\t51                   \tpush   ecx",
           "600025f2:\t52                   \tpush   edx",
@@ -1450,7 +1439,6 @@
         "sha256": "c438be9c8d36eccf5101d72c6a0643f155985fd6b62f499920c79be3e80b9a06",
         "hex": "535152568b701c8b48108b50148b580c8b401883fb100f856900000081f9007c0000750d81fae0030000750583f81f744081f900f80000750d81fae0070000750583f81f743581f9000f00000f856800000081faf0000000756083f80f755b81fe00f000007553b8070000005e5a595bc3b8030000005e5a595bc3b8040000005e5a595bc381f90000ff00752d81fa00ff000075253dff000000751e83fb18740f83fb207514b8060000005e5a595bc3b8050000005e5a595bc331c05e5a595bc3",
         "disassembly": [
-          "600025f0 <.data>:",
           "600025f0:\t53                   \tpush   ebx",
           "600025f1:\t51                   \tpush   ecx",
           "600025f2:\t52                   \tpush   edx",
@@ -1615,7 +1603,6 @@
         "end_va_exclusive": "600034d1",
         "sha256": "3ba8fa36d7be98f3e29a3bc716a92ecf1809e0cf43e9551b0dee529afee22d61",
         "disassembly": [
-          "60002b58 <.data>:",
           "60002b58:\t53                   \tpush   ebx",
           "60002b59:\t56                   \tpush   esi",
           "60002b5a:\t57                   \tpush   edi",
@@ -2419,7 +2406,6 @@
         "end_va_exclusive": "60002a4d",
         "sha256": "26a93b6dc46cddb71dc720d9c0e602ce8d593cd0466c3c61f521afc73343689b",
         "disassembly": [
-          "60002994 <.data>:",
           "60002994:\t51                   \tpush   ecx",
           "60002995:\t52                   \tpush   edx",
           "60002996:\t56                   \tpush   esi",
@@ -2501,7 +2487,6 @@
         "end_va_exclusive": "60002af8",
         "sha256": "df174a09a172f940adc27d6141e4b98ec5ce01733ee10edc7e7389f964e4a7b4",
         "disassembly": [
-          "60002a50 <.data>:",
           "60002a50:\t53                   \tpush   ebx",
           "60002a51:\t51                   \tpush   ecx",
           "60002a52:\t56                   \tpush   esi",
@@ -2575,7 +2560,6 @@
         "end_va_exclusive": "60004fb2",
         "sha256": "82a6145e203dc7405bfefa7d76c11fb040302ca6ee5ea25f9324f527e203c3d0",
         "disassembly": [
-          "60004f64 <.data>:",
           "60004f64:\t53                   \tpush   ebx",
           "60004f65:\t51                   \tpush   ecx",
           "60004f66:\t56                   \tpush   esi",
@@ -2616,7 +2600,6 @@
         "end_va_exclusive": "600034d1",
         "sha256": "cf8f4bc88ab2c31d34187ce26a6e50fed7b97486c68e13e494561bff960cea46",
         "disassembly": [
-          "60002b58 <.data>:",
           "60002b58:\t53                   \tpush   ebx",
           "60002b59:\t56                   \tpush   esi",
           "60002b5a:\t57                   \tpush   edi",
@@ -3534,7 +3517,6 @@
         "end_va_exclusive": "60002a4d",
         "sha256": "26a93b6dc46cddb71dc720d9c0e602ce8d593cd0466c3c61f521afc73343689b",
         "disassembly": [
-          "60002994 <.data>:",
           "60002994:\t51                   \tpush   ecx",
           "60002995:\t52                   \tpush   edx",
           "60002996:\t56                   \tpush   esi",
@@ -3616,7 +3598,6 @@
         "end_va_exclusive": "60002af8",
         "sha256": "df174a09a172f940adc27d6141e4b98ec5ce01733ee10edc7e7389f964e4a7b4",
         "disassembly": [
-          "60002a50 <.data>:",
           "60002a50:\t53                   \tpush   ebx",
           "60002a51:\t51                   \tpush   ecx",
           "60002a52:\t56                   \tpush   esi",
@@ -3690,7 +3671,6 @@
         "end_va_exclusive": "60004fb2",
         "sha256": "82a6145e203dc7405bfefa7d76c11fb040302ca6ee5ea25f9324f527e203c3d0",
         "disassembly": [
-          "60004f64 <.data>:",
           "60004f64:\t53                   \tpush   ebx",
           "60004f65:\t51                   \tpush   ecx",
           "60004f66:\t56                   \tpush   esi",
@@ -3754,7 +3734,6 @@
         "end_va_exclusive": "60001366",
         "sha256": "37ec209055ece53cb10b2e29713a4d47564153924d7c39cc840b92534226bc95",
         "disassembly": [
-          "600011d4 <.data>:",
           "600011d4:\t53                   \tpush   ebx",
           "600011d5:\t56                   \tpush   esi",
           "600011d6:\t55                   \tpush   ebp",
@@ -3871,7 +3850,6 @@
         "end_va_exclusive": "600013d0",
         "sha256": "d4caddb3d770cd32e4d8a9296ce3ec446ce7e6b70dfc0d8a5beb68e10b06c5e8",
         "disassembly": [
-          "60001368 <.data>:",
           "60001368:\t53                   \tpush   ebx",
           "60001369:\t8b 4c 24 08          \tmov    ecx,DWORD PTR [esp+0x8]",
           "6000136d:\t83 3d 8c 0e 01 60 00 \tcmp    DWORD PTR ds:0x60010e8c,0x0",
@@ -3918,7 +3896,6 @@
         "end_va_exclusive": "60001366",
         "sha256": "d492e0e0e3096fbffa4d54f5ef94c8145de267388c16bf0c5dba3370ec385b1e",
         "disassembly": [
-          "600011d4 <.data>:",
           "600011d4:\t53                   \tpush   ebx",
           "600011d5:\t56                   \tpush   esi",
           "600011d6:\t55                   \tpush   ebp",
@@ -4038,7 +4015,6 @@
         "end_va_exclusive": "600013d0",
         "sha256": "d4caddb3d770cd32e4d8a9296ce3ec446ce7e6b70dfc0d8a5beb68e10b06c5e8",
         "disassembly": [
-          "60001368 <.data>:",
           "60001368:\t53                   \tpush   ebx",
           "60001369:\t8b 4c 24 08          \tmov    ecx,DWORD PTR [esp+0x8]",
           "6000136d:\t83 3d 8c 0e 01 60 00 \tcmp    DWORD PTR ds:0x60010e8c,0x0",
@@ -4084,7 +4060,6 @@
       "end_va_exclusive": "60001891",
       "sha256": "55981e54ebbcd73a4139fddc194dc96d55239cc4f12493521b29ae5b1122049e",
       "disassembly": [
-        "60001880 <.data>:",
         "60001880:\t53                   \tpush   ebx",
         "60001881:\t89 c3                \tmov    ebx,eax",
         "60001883:\ta1 9c 28 01 60       \tmov    eax,ds:0x6001289c",
@@ -4136,6 +4111,75 @@
     }
   ],
   "unassigned_code_section_differing_bytes": 0,
+  "exe_dx5_fog_admission": {
+    "exe": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+    "exe_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "config_member": "drivers/dx5/thrash.ini",
+    "config_sha256": "58d464bb6da1ef67175c4f7313d64652ebe60d796c07030041605bd3deb3865f",
+    "config_text": "[THRASH]\r\nFile=dx5a.dll\r\nType=d3d\r\n[DDRAW]\r\nDisableMaxWindowedMode=0\r\nNoDwmOffForPrimaryLock=0",
+    "FogSupport_key_present": false,
+    "GetPrivateProfileIntA_iat": "00534670",
+    "captures": [
+      {
+        "label": "INI-opt-in-default0-and-normalization",
+        "start_va": "004b597b",
+        "end_va_exclusive": "004b599e",
+        "sha256": "287584094cd12563466e386e367161d93978039f8c6226a10f4950a21f92e782",
+        "hex": "682c387a006a006824f75300680cf75300ff157046530085c0740331c040a3543a7a00",
+        "disassembly": [
+          "4b597b:\t68 2c 38 7a 00       \tpush   0x7a382c",
+          "4b5980:\t6a 00                \tpush   0x0",
+          "4b5982:\t68 24 f7 53 00       \tpush   0x53f724",
+          "4b5987:\t68 0c f7 53 00       \tpush   0x53f70c",
+          "4b598c:\tff 15 70 46 53 00    \tcall   DWORD PTR ds:0x534670",
+          "4b5992:\t85 c0                \ttest   eax,eax",
+          "4b5994:\t74 03                \tje     0x4b5999",
+          "4b5996:\t31 c0                \txor    eax,eax",
+          "4b5998:\t40                   \tinc    eax",
+          "4b5999:\ta3 54 3a 7a 00       \tmov    ds:0x7a3a54,eax"
+        ]
+      },
+      {
+        "label": "conditional-state21-value4-trial",
+        "start_va": "004b5bb0",
+        "end_va_exclusive": "004b5bd6",
+        "sha256": "c5b8ad3dd06907f2eb0fd55559b52ae5d2f491cb49f0b8481d01de3647c05cfa",
+        "hex": "833d543a7a000074136a046a15ff156cf99e0085c07505a3543a7a006a006a15ff156cf99e00",
+        "disassembly": [
+          "4b5bb0:\t83 3d 54 3a 7a 00 00 \tcmp    DWORD PTR ds:0x7a3a54,0x0",
+          "4b5bb7:\t74 13                \tje     0x4b5bcc",
+          "4b5bb9:\t6a 04                \tpush   0x4",
+          "4b5bbb:\t6a 15                \tpush   0x15",
+          "4b5bbd:\tff 15 6c f9 9e 00    \tcall   DWORD PTR ds:0x9ef96c",
+          "4b5bc3:\t85 c0                \ttest   eax,eax",
+          "4b5bc5:\t75 05                \tjne    0x4b5bcc",
+          "4b5bc7:\ta3 54 3a 7a 00       \tmov    ds:0x7a3a54,eax",
+          "4b5bcc:\t6a 00                \tpush   0x0",
+          "4b5bce:\t6a 15                \tpush   0x15",
+          "4b5bd0:\tff 15 6c f9 9e 00    \tcall   DWORD PTR ds:0x9ef96c"
+        ]
+      },
+      {
+        "label": "complete-fog-admission-recompute",
+        "start_va": "00431c1c",
+        "end_va_exclusive": "00431c33",
+        "sha256": "1747b2318043138b32ca1e63c0d03190867f10048eb68a42471db559164f0775",
+        "hex": "a1543a7a002305d4d16f00230534925500a3643a7a00c3",
+        "disassembly": [
+          "431c1c:\ta1 54 3a 7a 00       \tmov    eax,ds:0x7a3a54",
+          "431c21:\t23 05 d4 d1 6f 00    \tand    eax,DWORD PTR ds:0x6fd1d4",
+          "431c27:\t23 05 34 92 55 00    \tand    eax,DWORD PTR ds:0x559234",
+          "431c2d:\ta3 64 3a 7a 00       \tmov    ds:0x7a3a64,eax",
+          "431c32:\tc3                   \tret"
+        ]
+      }
+    ],
+    "limits": [
+      "Conditional on the configured path selecting this INI, the bound slot selecting this DX5 DLL, and the common trial route being reached.",
+      "No runtime INI API, renderer dispatch, fog output or complete later-write lifetime was observed.",
+      "Decimal21 equals hex15h; do not confuse this with decimal state15."
+    ]
+  },
   "limits": [
     "Reference is author-hosted and matches the previously inventoried local root D3DA hash; not authenticated pristine retail.",
     "Raw changed intervals are byte inventory, not function boundaries or complete semantic attribution.",

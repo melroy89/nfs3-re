@@ -322,3 +322,7 @@ The [asset follow-up](original-modern-reference-assets-index.md#property-changes
 ## Postgame Options admission/return linkage
 
 The [expanded Options audit](original-modern-options-postgame.md#postgame-to-options-transition-and-return-witnesses) verifies both author-reference/final Postgame button records and the retained action5 transition, complete descriptor initializer and history push/restore bodies. The initializer calls runtime descriptor+08h before the generic mainonly filter; nested selection returns to the descriptor loop without directly restarting the outer context-name prefix. This closes the authored-target/local-linkage gap, not callback-wide flag preservation, arbitrary history depth, all return inputs or runtime visibility. Existing MP140-019/020 remain partial; counts unchanged.
+
+## DX5 rejection linked to EXE fog-support admission
+
+The [cross-component audit](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) pins the final DX5 INI and EXE reader/trial/recompute spans. Decimal21 equals rejected selector15h: on the common trial route, final DX5 returns0 and clears a nonzero support flag; zero support forces zero admission in the captured recomputation. The bundled INI has no opt-in key. Actual INI/DLL selection, skipped initialization routes, later writes and visual output remain unverified. Catalog counts unchanged; no target execution.

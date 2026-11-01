@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "73b10180346100c5fe224074d9e3dbb5f629217ebb2b5b071b17f609178dbaa3",
-      "relative_links": 81
+      "sha256": "a0c052a5931a3e26870cba0fe1b3511fb12e85d294af3058cfceff5fef01eb98",
+      "relative_links": 82
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,8 +103,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "51bd0937014ddd00fee1673cd69d84e8c9775d28325477aefc70df6366f4472e",
-      "relative_links": 165
+      "sha256": "88cec9a77b0960c2c6ec6f322996a47d003ad1f802056ea79fe9b4ca995e5f6f",
+      "relative_links": 166
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -123,8 +123,8 @@
     },
     {
       "path": "analysis/original-modern-dx5-reference-pair.md",
-      "sha256": "b1372f197bce65e26c02b3b24fc90e658ecc480a531e2ec8192be04c75a79e69",
-      "relative_links": 4
+      "sha256": "8cc0f46d6742c3e71eeed689d92435bd396eab45d426266428d68e91ca75229a",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-dx7-mode-admission.md",
@@ -398,8 +398,8 @@
     },
     {
       "path": "analysis/original-modern-renderer-initialization.md",
-      "sha256": "a751ad6bede13a0656896e3e9dbadce2a8578ae23af342122e39e898debf8d9a",
-      "relative_links": 6
+      "sha256": "91874487ec1c3d7b5d402921b6b06322e546f88c3e3a0e47b5625799ad32c33d",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-renderer-lifecycle.md",
@@ -508,8 +508,8 @@
     },
     {
       "path": "analysis/original-modern-state14.md",
-      "sha256": "ec61d8c549efcc01b30adb454842a92e219567eaea5cd534c7e398100daad49b",
-      "relative_links": 11
+      "sha256": "171d8fc1708b632e320d63a7c7a98a12c386a5246f0d73a98041adb2a8a75ea7",
+      "relative_links": 12
     },
     {
       "path": "analysis/original-modern-string-index.md",
@@ -608,7 +608,7 @@
     }
   ],
   "file_count": 121,
-  "relative_link_count": 1938,
+  "relative_link_count": 1945,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

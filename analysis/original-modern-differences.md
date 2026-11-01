@@ -27,6 +27,8 @@ The [reference asset index](original-modern-reference-assets-index.md) pairs all
 
 The [Postgame Options follow-up](original-modern-options-postgame.md#postgame-to-options-transition-and-return-witnesses) connects the authored button in both reference/final assets to retained descriptor initialization and history-based return code. It supports the existing removed-mainonly mechanism while leaving callback state preservation and actual visibility unverified.
 
+The [DX5 fog-admission linkage](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) connects its removed selector15h to the EXE’s decimal21 support trial: on the common route, rejection clears support. The bundled DX5 INI omits the opt-in key; actual selected configuration and rendered output remain unverified.
+
 ## Recent findings at a glance
 
 The [static checkpoint](evidence/validation/historical-startup-checkpoint.json) re-runs11 selected audit scripts against reviewed commit `7c36f96` and verifies the recorded hashes of the supplied original, official Modern, local analysis EXE and saved Ghidra database. This is a reproducibility/self-check checkpoint, not independent semantic review or completion of the entire investigation.

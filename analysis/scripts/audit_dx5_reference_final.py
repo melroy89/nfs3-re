@@ -1,11 +1,12 @@
 """Static DX5 reference/final pairing; never loads either DLL."""
 import hashlib
 import json
+import re
 import subprocess
 import tempfile
 
 import pefile
-from audit_thrash_loader_difference import ROOT
+from audit_thrash_loader_difference import ROOT, SPECS
 
 
 def sha(raw):
@@ -33,7 +34,7 @@ def disassemble(raw, address):
         f.flush()
         output = subprocess.check_output(['objdump', '-D', '-b', 'binary', '-m', 'i386',
             '-Mintel', f'--adjust-vma={address}', f.name], text=True)
-        return [line.strip() for line in output.splitlines() if line.startswith('6000')]
+        return [line.strip() for line in output.splitlines() if re.match(r'^\s*[0-9a-f]+:', line)]
 
 
 def main():
@@ -190,6 +191,40 @@ def main():
     all_changed = {0x1000+i for i, (x, y) in enumerate(zip(a.sections[0].get_data(), b.sections[0].get_data())) if x != y}
     assert assigned == all_changed and len(assigned) == 710
     result['unassigned_code_section_differing_bytes'] = 0
+    # Cross-component binding: final DX5's rejected selector is the EXE fog trial.
+    exe_path, exe_sha, _ = SPECS['official_modern']
+    exe_raw = (ROOT/exe_path).read_bytes()
+    assert sha(exe_raw) == exe_sha
+    exe = pefile.PE(data=exe_raw)
+    assert exe.get_data(0x13f70c, 7) == b'THRASH\0'
+    assert exe.get_data(0x13f724, 11) == b'FogSupport\0'
+    imports = {entry.address: entry.name.decode('ascii') if entry.name else entry.ordinal
+               for library in exe.DIRECTORY_ENTRY_IMPORT for entry in library.imports}
+    assert imports[0x534670] == 'GetPrivateProfileIntA'
+    official_archive = ROOT/specs['modern'][0]
+    ini_member = 'drivers/dx5/thrash.ini'
+    ini = subprocess.check_output(['7z', 'x', '-so', str(official_archive), ini_member])
+    ini_lines = [line.strip() for line in ini.decode('ascii').splitlines() if line.strip()]
+    assert 'File=dx5a.dll' in ini_lines and 'Type=d3d' in ini_lines
+    assert not any(line.split('=', 1)[0].casefold() == 'fogsupport' for line in ini_lines)
+    result['exe_dx5_fog_admission'] = {'exe': exe_path, 'exe_sha256': exe_sha,
+        'config_member': ini_member, 'config_sha256': sha(ini), 'config_text': ini.decode('ascii'),
+        'FogSupport_key_present': False, 'GetPrivateProfileIntA_iat': '00534670', 'captures': []}
+    for start, end, label in [(0x4b597b, 0x4b599e, 'INI-opt-in-default0-and-normalization'),
+                               (0x4b5bb0, 0x4b5bd6, 'conditional-state21-value4-trial'),
+                               (0x431c1c, 0x431c33, 'complete-fog-admission-recompute')]:
+        raw = exe.get_data(start-0x400000, end-start)
+        result['exe_dx5_fog_admission']['captures'].append({'label': label,
+            'start_va': f'{start:08x}', 'end_va_exclusive': f'{end:08x}',
+            'sha256': sha(raw), 'hex': raw.hex(), 'disassembly': disassemble(raw, start)})
+    assert exe.get_data(0xb5980, 2).hex() == '6a00'
+    assert exe.get_data(0xb5bb9, 10).hex() == '6a046a15ff156cf99e00'
+    assert exe.get_data(0xb5bc3, 9).hex() == '85c07505a3543a7a00'
+    assert exe.get_data(0x31c1c, 23).hex() == 'a1543a7a002305d4d16f00230534925500a3643a7a00c3'
+    result['exe_dx5_fog_admission']['limits'] = [
+        'Conditional on the configured path selecting this INI, the bound slot selecting this DX5 DLL, and the common trial route being reached.',
+        'No runtime INI API, renderer dispatch, fog output or complete later-write lifetime was observed.',
+        'Decimal21 equals hex15h; do not confuse this with decimal state15.']
     result['limits'] = [
         'Reference is author-hosted and matches the previously inventoried local root D3DA hash; not authenticated pristine retail.',
         'Raw changed intervals are byte inventory, not function boundaries or complete semantic attribution.',

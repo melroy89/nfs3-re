@@ -127,3 +127,9 @@ Separately, Modern `00431c34..00431c4d` (25 bytes) checks DWORD `007a3a54`. If z
 The saved label `SetRenderState15ToFourWhenFlagSet` must be read with hexadecimal `15h`, not decimal state 15. The exact verified request is state **21**, value **4**. Its full contextual/driver meaning and all callers remain separate. Original byte `00431c34` is a RET at the end of another stub; numeric address equality does not establish a corresponding original state-helper body. This helper is **not asserted to replace** the no-op at `00431c20`, and the batch function's removed call does not reach it.
 
 **Bounded status: done for batch byte differences, no-op target and Modern helper contract; original helper counterpart mapping pending. Confidence: verified static code.** Follow up on register dependencies, full helper callers and driver effects before claiming a visual change. Executable bytes, Ghidra state and maintained C remain unchanged.
+
+## DX5 rejection provides a backend-specific trial result
+
+The [reference/final DX5 audit](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) now connects the same official EXE trial to the final DX5 export. Its bundled INI lacks FogSupport, so the captured reader requests default0. If a nonzero flag reaches the common trial route with that DLL bound, its selector15h/decimal21 rejection returns0 and clears the flag. The captured recomputation then writes zero admission while support remains zero.
+
+This is distinct from the DX7 accepted-mode/capability path above. It verifies a backend-specific negative result, not live API behaviour, all initialization routes or blanket absence of rendered fog. Later writers and actual selected INI/DLL remain unobserved. No new renderer or target instructions were executed.
