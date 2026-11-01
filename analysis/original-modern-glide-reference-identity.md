@@ -211,6 +211,26 @@ After a successful open, final chooses record `60013000+40*index`, stores querie
 
 **Verified:** changed resolution/extra-selector consumption, ordinary/extended call selection, special-resolution retry, dimension fallback and local depth-dependent state. **Unresolved:** provider constants/ABI semantics beyond the captured call shape, all index producers, subsequent state/render effects and historical introduction. The worker contains no local index bound or extension-null check; constructed-candidate admission is a dependency. A special retry is not universally bounded if a corrupt/exceptional sidecar itself retainsffh. Callback/event code equality does not prove synchronization, reentrancy or successful delivery. This is static evidence for a32-bit activation path, not universal32-bit rendering or Z-buffer support. No DLL/API/target instructions were executed.
 
+## Hardware-name classification explains the special-resolution gate
+
+The same audit now decodes final's five-row table **`600018b0..600018d8`**, captures its query/scan/byte-store prefix and compares the complete retained string helper **`600047c0..60004861`**. Slot600110c4 is verified `_grGetString@4`; both mode helpers pass selectorA1h. The comparison is exact case-sensitive string equality, not substring matching. The table's last null-name row supplies the unmatched-name default; this does not make a null returned string safe to compare.
+
+Final unpacks one DWORD payload into three separate **BYTE** stores: low byte to descriptor class6000fd7c, next byte to6000fca8, next byte to6000fcc0. Reference uses explicit string branches and DWORD stores. The resulting local classifications are:
+
+| Provider-returned name | Reference descriptor class | Final descriptor-class byte | Final6000fca8 byte | Final6000fcc0 byte |
+|---|---:|---:|---:|---:|
+| Voodoo Graphics |0 |0 |0 |1 |
+| Voodoo Rush |1 |1 |1 |0 |
+| Voodoo2 |2 |2 |0 |1 |
+| Voodoo Banshee |3 |3 |1 |0 |
+| Any other valid string |0 |4 |1 |0 |
+
+Reference sets6000fca8 to1 in its Rush/Banshee branches but does not explicitly clear it in every other branch. Final writes its low byte for every selected table row. This supplies explicit low-byte classification rather than proving universal state normalization: the actual mode-opening comparison reads a **DWORD**, not a BYTE. Both images' file-backed initial DWORD6000fca8 is0; cold-path examples assume its upper bytes remain zero. Other aliases/writers and all reinitialization sequences are not exhaustively qualified.
+
+Under that ordinary initialized-state premise and the shared6000fcfc!=0 condition, reference's `descriptor_class == 1` opens first with resolutionffh for **Rush**. Final's `6000fca8 != 0` admits **Rush, Banshee and unmatched names**. This directly explains the changed gate captured in the preceding section. It is a provider-name policy, not proof of a physical GPU, a particular wrapper being loaded, or successful special-resolution support. Final unmatched classification4 also differs from reference's fallback0; consumers of that classification beyond the inspected mode path remain a separate question.
+
+Preserve the packed table, byte-store widths and DWORD consumers in a reconstruction. Replacing them silently with three Boolean variables would erase both the fallback classification and upper-byte/lifetime dependencies. No name query, provider or target code was executed; historical introduction and rendered consequences remain unresolved.
+
 ## Next required comparison
 
 The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and other initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.

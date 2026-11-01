@@ -266,6 +266,38 @@ def main():
         'Complete worker bytes retained, but later state-setting callees, provider ABI semantics and visible output are not fully interpreted.',
         'Optional extension identity/lookup is linked to the existing final-side audit, not provider execution.',
         'No universal32-bit support, successful open, synchronization/reentrancy or release-introduction claim.']
+    result['hardware_classification'] = {'table': [], 'captures': []}
+    for index, (name_expected, payload_expected) in enumerate([
+        ('Voodoo Graphics', 0x10000), ('Voodoo Rush', 0x101),
+        ('Voodoo2', 0x10002), ('Voodoo Banshee', 0x103), (None, 0x104)]):
+        pointer, payload = struct.unpack('<2I', final.get_data(0x18b0+index*8, 8))
+        name = final.get_string_at_rva(pointer-0x60000000).decode('ascii') if pointer else None
+        assert (name, payload) == (name_expected, payload_expected)
+        result['hardware_classification']['table'].append({'address': f'{0x600018b0+index*8:08x}',
+            'name': name, 'packed_payload': f'{payload:08x}',
+            'descriptor_class_low_byte': payload & 255, 'special_gate_low_byte': (payload >> 8) & 255,
+            'other_state_low_byte': (payload >> 16) & 255})
+    assert ref.get_data(0x47c0, 0xa1) == final.get_data(0x47c0, 0xa1)
+    for role, pe, start, end, label in [
+        ('official_final', final, 0x18e8, 0x1928, 'name-query-table-scan-and-byte-stores'),
+        ('hosted_reference', ref, 0x1abd, 0x1b50, 'remaining-name-comparison-branches'),
+        ('official_final', final, 0x47c0, 0x4861, 'complete-retained-case-sensitive-string-comparison')]:
+        body = pe.get_data(start, end-start)
+        result['hardware_classification']['captures'].append({'role': role, 'label': label,
+            'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+            'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    assert slots['600110c4'] == '_grGetString@4'
+    for pe in (ref, final):
+        assert pe.get_data(0xfca8, 4) == bytes(4)
+        assert pe.get_data(0x1cba, 5).hex() == 'a37cfd0060'
+    assert final.get_data(0x1910, 24).hex() == '8b4604a27cfd0060c1e808a2a8fc0060c1e808a2c0fc0060'
+    result['hardware_classification']['query'] = {'slot': '600110c4', 'name': slots['600110c4'], 'selector': 'a1'}
+    result['hardware_classification']['stores'] = ['BYTE6000fd7c', 'BYTE6000fca8', 'BYTE6000fcc0']
+    result['hardware_classification']['limits'] = [
+        'Names classify the provider-returned string; no physical GPU or provider identity is observed.',
+        'Final writes bytes, while relevant consumers read DWORDs. File-backed initial6000fca8 is0, but arbitrary later upper-byte writes/aliases are not excluded.',
+        'Reference special-mode check compares descriptor class DWORD with1, whereas final checks6000fca8 DWORD nonzero; shared6000fcfc gate still applies.',
+        'No target execution, null provider-string handling, complete state mutation/lifetime or actual display-mode support proof.']
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [
