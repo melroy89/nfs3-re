@@ -450,6 +450,32 @@ def main():
                    'Resolver does not locally FreeLibrary; borrowed module handles and newly loaded references are different cases.',
                    'Actual library search order, DLL identity, symbol ABI, creation, object ownership and unload remain unobserved.',
                    'No claim that removing a static descriptor eliminates conditional DirectDraw dependency.']}
+    result['is_score_query'] = {'captures': []}
+    for role, pe, end in [('hosted_reference', ref, 0x1e5a), ('official_final', final, 0x1e54)]:
+        for start, stop, label in [(0x1d50, end, 'complete-THRASH-is'),
+                                    (0x4960, 0x49ba, 'complete-override-string-lookup'),
+                                    (0x49c0, 0x4a17, 'complete-signed-decimal-override-parser')]:
+            body = pe.get_data(start, stop-start)
+            result['is_score_query']['captures'].append({'role': role, 'label': label,
+                'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+stop:08x}',
+                'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+        assert pe.get_string_at_rva(0xf494) == b'VOODOO2_IS'
+        assert pe.get_string_at_rva(0xf4a0) == b'3.00'
+        classes = pe.get_data(0x10380, 256)
+        assert [value for value in range(256) if classes[(value+1)&255] & 0x20] == list(range(48, 58))
+    for start, size in [(0x1dc3, 0x54), (0x4960, 0x5a), (0x49c0, 0x57)]:
+        assert ref.get_data(start, size) == final.get_data(start, size)
+    result['is_score_query']['contract'] = {
+        'override_name': 'VOODOO2_IS', 'override': 'Nonzero lookup result takes retained signed-decimal parser route and bypasses provider path.',
+        'query': 'grGet selector0f, size4; result0 yields score0, otherwise use returned DWORD. Zero skips string scoring; signed-negative value bypasses scoring and is returned.',
+        'positive_query': 'grGetString selector a4; skip nondigits; case-sensitive lexicographic suffix comparison against3.00.',
+        'score': {'below': 0, 'equal': 100, 'above': 95},
+        'derived_examples_not_probes': {'3.0': 0, '3.00': 100, '3.01': 95, '3.10': 95, '10.0': 0},
+        'lifecycle': 'Reference checks selected slots, queries capability, then directly initializes for nonzero capability. Final loader performs initialization before capability query; local guards/direct init calls removed; final cleanup uses latch helper.',
+        'limits': ['Lexical examples are static derivations, not provider strings observed at runtime.',
+                   'Override environment-vector initialization, provider-string validity and actual returned capabilities are not established.',
+                   'Do not constrain all return values to0/95/100: override and signed-negative capability paths can return other integers.',
+                   'Same scoring instructions do not imply equivalent provider state, side effects, failures or timing.']}
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [

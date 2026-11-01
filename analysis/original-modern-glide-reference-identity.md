@@ -308,6 +308,25 @@ After successful creation, the retained caller invokes object vtable+50h with it
 
 The resolver does not locally call FreeLibrary or cache a separate module handle. Its GetModuleHandle case borrows an existing handle; its LoadLibrary case acquires a reference. Do not infer one lifetime policy, a leak or permanent loading from both cases without tracing the remaining process state. Loaded DLL identity, OS search behavior, concurrent unload and all API failures remain unverified. **Verified difference:** conditional dynamic resolution replaces the static DirectDraw import at this call site, retaining the local failure gate. No DLL or API was executed.
 
+## Suitability query retains lexical scoring but changes provider ordering
+
+Complete **`_THRASH_is@0` at60001d50** is captured through exclusive60001e5a in reference (266 bytes) and60001e54 in final (260 bytes). Its override lookup60004960..600049ba and signed-decimal parser600049c0..60004a17 are also captured and byte-identical. A nonnull lookup result for literal **`VOODOO2_IS`** follows that parser route, bypassing the provider path. The environment-vector producer and active override value are not established here.
+
+On the provider route, reference's loader is followed by local null checks for grGet/init slots, then grGet selector0fh with a four-byte output. A zero API result supplies score0; otherwise the output DWORD is used. A zero value skips scoring, while a signed-negative value bypasses the positive-value string path and is returned. Reference directly initializes Glide and registers its error callback after the nonzero query result. Final removes those guards/direct calls because its already traced loader resolves the required table and performs initialization **before** this capability query. This is a concrete call-order difference, even with identical later scoring instructions.
+
+For a positive capability result, both use grGetString selectorA4h and skip bytes until the first ASCII digit or terminating zero. The audit verifies all256 entries of the retained character-class test: bit20h selects exactly `'0'..'9'`. The complete suffix is then compared case-sensitively and **lexicographically** against literal **`3.00`**, yielding0 below,100 equal or95 above. This is not numeric version parsing. For example, the retained instructions imply:
+
+| String supplied to the comparison | Derived score |
+|---|---:|
+|3.0 |0 |
+|3.00 |100 |
+|3.01 or3.10 |95 |
+|10.0 |0 |
+
+These are static comparison derivations, not instruction probes or observed provider strings. The comparison/helper instructions are retained, but identical numeric output is not established under every provider state. Do not restrict all possible returns to0/95/100: the override and signed-negative capability paths can return other values.
+
+Reference's provider-path tails perform direct shutdown and/or release through60001560; final routes them through latch helper60001108. Its override path still bypasses that provider cleanup, as it bypasses acquisition. These changes reuse the lifecycle evidence above rather than proving matching load references, initialization counts, failure side effects or timing. Null/invalid provider strings, complete environment ownership and actual selection preference remain untested. **Verified:** retained score computation with changed initialization/guard/cleanup ordering. No provider or target instructions were executed.
+
 ## Next required comparison
 
 The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and other initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
