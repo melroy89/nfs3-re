@@ -99,10 +99,42 @@ def main():
             'reference_sha256': sha(x), 'modern_sha256': sha(y), 'changed_intervals': changes,
             'disassembly': {role: disassemble(raw, 0x60000000+start)
                             for role, raw in [('reference', x), ('modern', y)]}})
+    # Mode policy: complete callbacks and retained classifier, plus bounded setup witnesses.
+    result['mode_policy'] = {'captures': [], 'assertions': []}
+    spans = [('reference', a, 0x17bc, 0x18e3, 'complete-enumeration-callback'),
+             ('modern', b, 0x17bc, 0x187d, 'complete-enumeration-callback'),
+             ('reference', a, 0x1b80, 0x1c23, 'first-setup-tail'),
+             ('modern', b, 0x1b80, 0x1bf1, 'first-setup-tail'),
+             ('reference', a, 0x21da, 0x2288, 'second-setup-tail'),
+             ('modern', b, 0x21da, 0x2256, 'second-setup-tail'),
+             ('reference', a, 0x25f0, 0x26b1, 'complete-pixel-classifier'),
+             ('modern', b, 0x25f0, 0x26b1, 'complete-pixel-classifier')]
+    for role, pe, start, end, label in spans:
+        raw = pe.get_data(start, end-start)
+        result['mode_policy']['captures'].append({'role': role, 'label': label,
+            'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+            'sha256': sha(raw), 'hex': raw.hex(), 'disassembly': disassemble(raw, 0x60000000+start)})
+    assert a.get_data(0x25f0, 0xc1) == b.get_data(0x25f0, 0xc1)
+    checks = [('modern', b, 0x17df, '3d800200000f828700000081fbe0010000727f', 'unsigned width640/height480 admission'),
+              ('modern', b, 0x1804, '833a647368ff02', 'new-key count100 admission'),
+              ('modern', b, 0x1816, '394f0875dd', 'raw depth comparison before classifier conversion'),
+              ('modern', b, 0x1820, '83fd037505b90f000000', 'classifier3 stored depth15'),
+              ('modern', b, 0x1855, '83f8037610', 'unsigned quotient cap3 branch'),
+              ('reference', a, 0x1b80, 'bbb0040000', 'first clear request1200'),
+              ('modern', b, 0x1b80, 'bba00f0000', 'first clear request4000'),
+              ('reference', a, 0x21da, 'bbb0040000', 'second clear request1200'),
+              ('modern', b, 0x21da, 'bba00f0000', 'second clear request4000'),
+              ('modern', b, 0x1bc7, 'c7054c20016002000000', 'first count seed2'),
+              ('modern', b, 0x2221, 'c7054c20016002000000', 'second count seed2'),
+              ('modern', b, 0x2691, '83fb207514b806000000', 'classifier accepts32 with RGB mask predicates')]
+    for role, pe, rva, expected, label in checks:
+        assert pe.get_data(rva, len(bytes.fromhex(expected))).hex() == expected, label
+        result['mode_policy']['assertions'].append({'role': role, 'va': f'{0x60000000+rva:08x}',
+                                                    'hex': expected, 'meaning': label})
     result['limits'] = [
         'Reference is author-hosted and matches the previously inventoried local root D3DA hash; not authenticated pristine retail.',
         'Raw changed intervals are byte inventory, not function boundaries or complete semantic attribution.',
-        'Descriptor +40 pointer relocation is verified; pointed-to initialization and all consumers remain follow-up.',
+        'Descriptor +40 pointer relocation is verified; selected initialization/callback paths are captured below; exhaustive consumers remain follow-up.',
         'All section VirtualSize fields are zero. BSS raw pointer is zero; no file-backed BSS bytes were read.',
         'Relocations, resources, headers and export-section bytes are not semantically compared here.',
         'No target execution, reconstruction, compilation or saved database mutation.']

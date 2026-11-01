@@ -21,7 +21,7 @@ Read-only PE parsing, disassembly and Ghidra metadata inspection were used. The 
 
 The [historical renderer comparison](original-modern-renderer-texel-alignment.md) now traces half-unit X/Y corrections in DX6, DX7 and DX8 across author-hosted1.6.0/1.6.1 pairs. DX8 fog has separate state/table/channel evidence; actual rendered alignment and fog remain unverified.
 
-The [DX5 reference/final comparison](original-modern-dx5-reference-pair.md) adds an address-based map of710 differing code-section bytes in25 intervals, unchanged import/data sections and an exact descriptor-pointer publication change. It is separate from the historical DX6/DX7/DX8 findings and does not yet establish DX5 mode policy.
+The [DX5 reference/final comparison](original-modern-dx5-reference-pair.md) adds an address-based map of710 differing code-section bytes in25 intervals, unchanged import/data sections and an exact descriptor-pointer publication change. Its [callback follow-up](original-modern-dx5-reference-pair.md#mode-callback-and-selected-initialization-paths) verifies dimension filters, seeds and raw-key scanning; actual32-bit operation and the absolute640×480 depth claim remain unverified. These are separate from the historical DX6/DX7/DX8 findings.
 
 ## Recent findings at a glance
 
@@ -519,7 +519,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **140 Claimed, 45 Static, 103 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **137 Claimed, 45 Static, 106 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -870,9 +870,9 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-059 | nGlide 1.04.1 with support of extended API is included in this archive. | Claimed |
 | MP100-060 | If you would like to use other Glide wrapper with support of all resolutions, please write to author of this wrapper a suggestion to add support of extended resolutions Glide API. This extension is easy to implement and it should not take a long time. | Claimed |
 | MP100-061 | Based on the original d3da.dll from NFS3 (works on DirectX 5). Newer versions of this driver not fully compatible with NFS3 and may be a cause of graphical glitches like huge black polygon near Old Church in Hometown. | Claimed |
-| MP100-062 | The driver hides resolutions with height lower than 480 pixels now. It frees space in the list for modern resolutions. | Claimed |
-| MP100-063 | The driver works in 32-bit mode if it is available in the system. It improves quality of dust or splashes from wheels. | Claimed |
-| MP100-064 | 640×480 always reported as 16-bit. Original title movie doesn't works in 32-bit mode. | Claimed |
+| MP100-062 | The driver hides resolutions with height lower than 480 pixels now. It frees space in the list for modern resolutions. | Partial |
+| MP100-063 | The driver works in 32-bit mode if it is available in the system. It improves quality of dust or splashes from wheels. | Partial |
+| MP100-064 | 640×480 always reported as 16-bit. Original title movie doesn't works in 32-bit mode. | Partial |
 | MP100-065 | Light beams effect now works in D3D mode. In original version this effect available in Voodoo2 mode only. | Claimed |
 | MP100-066 | Based on the original softtria.dll from NFS3. Newer versions of this driver render worse image or crash. | Claimed |
 | MP100-067 | The driver reports only 16-bit resolutions now. Original version was reported that 32-bit resolutions are supported, but it isn't true. This driver can't work in 32-bit modes. | Claimed |

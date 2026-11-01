@@ -298,3 +298,7 @@ The [98-file inventory](original-modern-original-reference-bundle.md) pins an au
 ## DX5 reference/final correspondence and byte map
 
 The [DX5 comparison](original-modern-dx5-reference-pair.md) verifies34 identical export entries,710 differing code-section bytes in25 intervals, equal file-backed import/data sections, and the two-byte immediate change publishing descriptor+40h. The complete284-byte selection span is retained. BSS extent grows1000h under the nonzero raw-size-field interpretation; file-backed zeros and runtime mapping are not inferred. Table initialization/consumers and other intervals remain next actions; no catalog claim/count changes or target execution.
+
+## DX5 callback policy recovered at a bounded static scope
+
+The [callback comparison](original-modern-dx5-reference-pair.md#mode-callback-and-selected-initialization-paths) verifies the added unsigned640/480 dimension filter, larger table requests, changed fixed seeds, raw-key linear scan and quotient cap. Recognized32-bit inputs remain conditionally admissible, including at640×480; the fixed16-bit seed does not establish the release note’s absolute always claim. MP100-062/063/064 gain partial evidence; actual mode selection/rendering and historical introduction remain unverified. Catalog totals:137 vendor-only,45 bounded static,106 partial,2 unresolved. No DLL or target execution.
