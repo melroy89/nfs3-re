@@ -278,6 +278,19 @@ For admitted power-of-two dimensions, the retained integer-to-binary32/exponent 
 
 The [existing renderer capability investigation](installed-renderer-capability-inventory.md) and [EXE texture-limit comparison](original-modern-texture-limits.md) explain memory admission, producers and configured extent reduction; reuse their qualifications. This new paired evidence provides **partial support for MP150-011**: final Glide tables and their consumers cover512/1024/2048 where the reference tables end at256. It does not date the change to1.5.0 or establish actual larger-texture allocation, provider acceptance, every upload route, source layout or rendered quality. No DLL, texture or target instructions were executed.
 
+## Historical texture-table boundary:1.4.0 to1.5.0
+
+The later `python3 analysis/scripts/audit_glide_texture_release_boundary.py` compares exact member **`drivers/glide3x/voodoo2a.dll`** from author-hosted [1.4.0](https://veg.by/files/nfs3/nfs3_modern_patch_v1.4.0.7z) and [1.5.0](https://veg.by/files/nfs3/nfs3_modern_patch_v1.5.0.7z) archives. The [manifest](evidence/audits/glide-texture-release-boundary.json) retains full archive/member SHA-256s, complete allocation/upload bodies, table bytes/values and changed intervals. Archive labels/source are release correspondence, not publisher-signature authentication or development-history proof.
+
+| Named package | Archive SHA-256 prefix |Driver SHA-256 prefix |Table entries / maximum side |
+|---|---|---|---|
+|1.4.0 |8181722b8aadd9b7 |67764a56917fd93f |9 /256 |
+|1.5.0 |de6cbbbce4b77765 |bea4abc9ff9b3e54 |12 /2048 |
+
+All named export addresses match between this pair. The two complete functions still differ by only six bytes each, at the same table-address operands identified in the reference/final comparison.1.5.0's tables contain exponents0..11, square sizes4^exponent and sides2^exponent;1.4.0 ends at exponent8. Both1.5.0 function-body hashes equal the previously pinned final bodies, while the whole DLL hashes differ.
+
+This establishes the specific **shipped1.4.0→1.5.0 table/consumer change** for MP150-011, superseding the preceding original/final-only historical limitation. It does not establish earlier beta/branch history, other driver variants, provider support, successful huge-texture uploads or rendered quality. The release claim remains partial because actual operation is untested. No archive content was installed, loaded or executed.
+
 ## Context close no longer shuts down the provider directly
 
 Complete context-close helper **60002050** is now captured in both versions (reference57 bytes through60002089; final41 through60002079). Both return immediately when byte6000fca4 bit1 is clear. Otherwise they pass stored context6000fd08 to slot60011020, verified `_grSstWinClose@4`, then clear that context and bit1 without testing the provider result.
