@@ -99,8 +99,31 @@ Thus the reference already queries resolution-related capability data, but its a
 
 This establishes a substantive **fixed-record update versus list-construction** difference for the hosted/final pair. It does not establish all supported dimensions, successful rendering/Z-buffer use, a trusted Future Cop/NFS III lineage or historical introduction. The fact that query calls exist in both versions must not erase the changed use of their results.
 
+## Loader and cleanup lifecycle differ
+
+The audit now captures the complete hosted-reference loader `60001020..60001552`, module-release helper `60001560..6000158d`, final loader `60001020..60001107` and final shutdown gate `60001108..6000111e`. It verifies imported `LoadLibraryA`, `GetProcAddress` and `FreeLibrary` slots in both DLLs, plus final resolver-table bindings for Glide initialization/shutdown.
+
+| Boundary | Hosted reference | Final Modern |
+|---|---|---|
+| Library acquisition |Calls LoadLibraryA with bare `glide3x.dll`, stores handle at6000fd0c |Checks saved handle first; on empty handle tries an assembled module-directory path, then the bare name |
+| API binding |Unrolled GetProcAddress calls store individual slots; the captured successful-load path does not reject each zero lookup |Walks required name/slot table and rejects the first zero lookup |
+| Binding failure |Later callers have their own partial slot guards; complete provider admission not implied |Frees the newly acquired handle and returns0; earlier slot writes are not rolled back by this local failure block |
+| Initialization |About performs the previously listed initialization/callback operations around its helper |Loader centralizes resolved Glide init/error-callback calls behind cell600127d0 |
+| Successful loader return |Returns1 after the captured unrolled binding sequence |Writes0/1 into saved EAX's PUSHAD slot, restores other general registers and returns |
+| About cleanup |Module-release helper conditionally FreeLibrary(handle), then clears6000fd0c |Shutdown gate conditionally calls `_grGlideShutdown@0`, then decrements600127d0; it does not locally FreeLibrary or clear6000fd0c |
+
+Final slot60011010 is bound to `_grGlideInit@0`;60011014 to `_grGlideShutdown@0`. These are proven resolver relationships, not names guessed from adjacent strings. The hosted-reference loader's corresponding name pointers and stores are captured too; its old about path separately calls shutdown before invoking its module-release helper.
+
+This is **centralized API initialization/shutdown with retained module acquisition**, rather than an equivalent helper moved to a new address. It should not be called a general reference-counting implementation: when600127d0 is already nonzero, final loader skips initialization and returns1 **without incrementing it**. The increment runs only on the zero-to-initialized path. Cleanup decrements any nonzero value. Under zero initial state and ordinary serialized entry/cleanup pairs it behaves as a0/1 latch; arbitrary nesting, concurrent/reentrant calls and other state mutation are not validated.
+
+All four exact literal operands for600127d0 in the complete final file occur in these two helpers. This narrows direct ownership but does not exclude computed/external aliases or prove runtime initialization. The state lies in the expanded uninitialized-storage extent; do not invent a file-backed initial DWORD. No normalized scalar return is assigned to the shutdown helper: its EAX can depend on the incoming state and underlying shutdown call.
+
+The lifetime distinction also fits the static-import difference: the reference has a Glide3x import descriptor, whereas final uses dynamic resolution for the inspected interface. A reference FreeLibrary call does not by itself prove unloading/dangling function pointers, because other module references—including static dependencies—can retain the provider. Conversely, retaining the handle in this final helper is not proof of a leak, permanent lifetime or absence of another unload path. Windows/Wine reference behaviour and actual provider identity were not observed.
+
+The final pathname path, required-provider completeness, partial-bind failure slot contents, module-detach cleanup and every init/shutdown caller remain separate follow-ups. No initialization, callback, unload or other target code was executed.
+
 ## Next required comparison
 
-The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. Next qualify cleanup/resolver failure lifetimes and select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
+The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; next qualify partial-bind failure consumers, module-detach cleanup and other callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
 
-**Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Also verified:** complete about local differences and reference fixed-table/query contract. **Pending:** remaining hosted/final function/ABI/data comparisons, cleanup/failure lifetimes, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.
+**Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Also verified:** complete about local differences and reference fixed-table/query contract. **Pending:** remaining hosted/final function/ABI/data comparisons, transitive failure/detach lifetimes, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.

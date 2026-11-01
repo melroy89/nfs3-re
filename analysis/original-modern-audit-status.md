@@ -366,3 +366,7 @@ The [three-way Glide audit](original-modern-glide-reference-identity.md) verifie
 ## Hosted Glide reference mode construction compared
 
 The [paired about follow-up](original-modern-glide-reference-identity.md#hosted-referencefinal-about-and-mode-construction-comparison) captures both complete413-byte entries and their different helpers. Hosted reference initializes16 fixed mode records and already calls a statically bound query helper; final changes count/table pointer and uses the previously traced insertion-based builder. All six about differing-byte intervals are locally accounted for, including removed guards/calls and changed cleanup target. Query-API presence is not a Modern-only change; query-result use differs. Provider/failure/cleanup semantics, remaining functions and rendered support remain unverified; catalog counts unchanged.
+
+## Glide loader/shutdown lifecycle compared
+
+The [complete helper comparison](original-modern-glide-reference-identity.md#loader-and-cleanup-lifecycle-differ) resolves the changed cleanup target: hosted reference releases/clears its module handle, whereas final centralizes init/required binding and uses a shutdown/latch helper that retains the handle locally. Nonzero-state acquisition does not increment the latch; it is not a general refcount. All four exact init-cell literals are in the captured loader/shutdown helpers. Partial-bind consumers, detach/unload and runtime effects remain unverified; no leak/dangling-pointer claim is made. Catalog counts unchanged.

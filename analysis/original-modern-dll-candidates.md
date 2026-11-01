@@ -134,3 +134,7 @@ The [sound pair audit](original-modern-sound-reference-pair.md) now compares the
 ## Author-hosted Glide reference is a different build
 
 The [three-way Glide identity audit](original-modern-glide-reference-identity.md) verifies that the hosted reference differs from this chapter’s local legacy candidate at all34 export RVAs, while hosted/final export entries match. The hosted file already statically imports three Glide3x APIs absent from the local candidate. Earlier local-candidate mode/descriptor findings remain valid only for that pinned pair; they must not be transferred wholesale to the hosted reference. A new raw map localizes3307 code-section differing bytes for the hosted/final pair; semantic follow-up is pending.
+
+## Hosted/final loader lifecycle follow-up
+
+The [hosted/final lifecycle comparison](original-modern-glide-reference-identity.md#loader-and-cleanup-lifecycle-differ) now distinguishes reference about-time FreeLibrary/handle clear from final shutdown/latch decrement with the module handle retained locally. Final acquisition and required-name binding are centralized; repeated nonzero-state acquisition does not increment the latch, so it must not be described as general reference counting. Partial binding, detach and runtime provider lifetime remain unverified. This is a new comparison for the hosted reference, not a transfer from the different local candidate.

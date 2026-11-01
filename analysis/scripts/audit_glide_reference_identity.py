@@ -112,6 +112,47 @@ def main():
     result['about_mode_construction']['reference_query_binding'] = {'thunk_va': '6000d89a',
         'thunk_hex': thunk.hex(), 'iat_va': f'{iat:08x}', 'name': '_grQueryResolutions@8',
         'scope': 'Two direct helper calls through static import thunk; no provider invocation.'}
+    result['loader_lifetime'] = {'captures': [], 'imports': {}, 'resolved_names': {}}
+    for role, pe, start, end, label in [
+        ('hosted_reference', ref, 0x1020, 0x1552, 'complete-reference-loader'),
+        ('hosted_reference', ref, 0x1560, 0x158d, 'complete-reference-module-release'),
+        ('official_final', final, 0x1020, 0x1107, 'complete-final-loader'),
+        ('official_final', final, 0x1108, 0x111e, 'complete-final-shutdown-gate')]:
+        body = pe.get_data(start, end-start)
+        result['loader_lifetime']['captures'].append({'role': role, 'label': label,
+            'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+            'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    for role, pe in [('hosted_reference', ref), ('official_final', final)]:
+        by_va = {entry.address: entry.name.decode('ascii') if entry.name else entry.ordinal
+                 for library in pe.DIRECTORY_ENTRY_IMPORT for entry in library.imports}
+        assert by_va[0x6000e1b4] == 'FreeLibrary'
+        assert by_va[0x6000e1fc] == 'GetProcAddress'
+        assert by_va[0x6000e210] == 'LoadLibraryA'
+        result['loader_lifetime']['imports'][role] = {f'{v:08x}': by_va[v] for v in (0x6000e1b4, 0x6000e1fc, 0x6000e210)}
+        assert pe.get_string_at_rva(0xf010) == b'_grGlideInit@0'
+        assert pe.get_string_at_rva(0xf020) == b'_grGlideShutdown@0'
+    assert ref.get_data(0x1579, 8).hex() == '522eff15b4e10060'
+    assert ref.get_data(0x1581, 8).hex() == '31db891d0cfd0060'
+    assert final.get_data(0x1108, 22).hex() == 'a1d027016085c0740cff1514100160ff0dd0270160c3'
+    assert final.get_data(0x10de, 32).hex() == 'a1d027016085c07517ff15101001606880180060ff15d8100160ff05d0270160'
+    bindings = []
+    for index in range(128):
+        pointer, slot = struct.unpack('<2I', final.get_data(0x1120+8*index, 8))
+        if not pointer:
+            break
+        bindings.append({'name': final.get_string_at_rva(pointer-0x60000000).decode('ascii'), 'slot': f'{slot:08x}'})
+    else:
+        raise AssertionError('Missing binding terminator')
+    slots = {row['slot']: row['name'] for row in bindings}
+    assert slots['60011010'] == '_grGlideInit@0' and slots['60011014'] == '_grGlideShutdown@0'
+    result['loader_lifetime']['resolved_names'] = {'60011010': slots['60011010'], '60011014': slots['60011014']}
+    result['loader_lifetime']['final_required_binding_count'] = len(bindings)
+    raw = raws['official_final']
+    literal = struct.pack('<I', 0x600127d0)
+    offsets = [i for i in range(len(raw)-3) if raw[i:i+4] == literal]
+    locations = [final.get_rva_from_offset(i)+0x60000000 for i in offsets]
+    assert locations == [0x600010df, 0x600010fa, 0x60001109, 0x60001119]
+    result['loader_lifetime']['init_cell_exact_literal_operands'] = [f'{v:08x}' for v in locations]
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [
