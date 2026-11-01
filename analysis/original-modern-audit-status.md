@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **105 vendor-only,51 bounded-static,132 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **104 vendor-only,51 bounded-static,133 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -673,3 +673,7 @@ The [complete colour-helper audit](original-modern-effect-renderer-masks.md#alph
 ## Recent eight-mechanism reproducibility checkpoint
 
 The [checkpoint](evidence/validation/recent-static-mechanisms-checkpoint.json) pins reviewed revision`f92b1e7` and16/16 successful runs across nGlide configuration, menu music defaults, cabin extents, camera defaults, map zoom defaults, opponent HUD defaults, police-list spacing and intensity colour publication. All eight outputs match their pre-run evidence;12 protected files match the earlier checkpoint before/after, and12 raw exports match prior recorded hashes. The [compact findings table](original-modern-differences.md#recent-configuration-and-hud-mechanisms) lists mechanisms and separate remaining qualifications. This is primary-agent static reproducibility, not independent review, runtime, new exports, compilation or Ghidra reopening. Catalog classifications remain105 vendor-only/51 bounded-static/132 partial/2 unresolved; no whole-goal completion claim.
+
+## Original temporary music-copy route removed
+
+The [copy/start comparison](original-modern-music-selection.md#original-temporary-music-copy-is-removed-from-the-inspected-loading-route) verifies original761-byte copy routine replaced by NOPs and final source-suffix replacement instead of temporary-name construction. Original requests512KiB chunks; no fixed10MiB saving, motive, measured speedup or successful I/O is inferred. MP100-037 advances to partial, counts104/51/133/2. Actual playback, complete failure handling/caller coverage and1.0.0 introduction remain unverified; no target execution or database changes.

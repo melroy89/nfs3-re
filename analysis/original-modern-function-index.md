@@ -22,7 +22,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00410460` | BeginShowSixMusicOverride | 65 | 1 | [music-selection](original-modern-music-selection.md) |
 | `004104b0` | EndShowSixMusicOverride | 62 | 1 | [music-selection](original-modern-music-selection.md) |
 | `004104f0` | StartSelectedMusicStream | 590 | 42 | [idle-movie](original-modern-idle-movie.md), [music-selection](original-modern-music-selection.md), [music-start](original-modern-music-start.md) |
-| `004107c0` | LoadAndStartMusicStreamForTrack | 409 | 65 | [music-start](original-modern-music-start.md) |
+| `004107c0` | LoadAndStartMusicStreamForTrack | 409 | 65 | [music-selection](original-modern-music-selection.md), [music-start](original-modern-music-start.md) |
 | `00413750` | LoadRacerIdentificationSpeechBank | 393 | 3 | [sound-bank-language](original-modern-sound-bank-language.md) |
 | `00413bc0` | LoadRaceVehicleAmbientAndVoiceSoundBanks | 3085 | 18 | [sound-bank-language](original-modern-sound-bank-language.md) |
 | `004181d0` | PlayFrontendSoundEffect | 146 | 143 | [colour-control](original-modern-colour-control.md), [common-menu-buttons](original-modern-common-menu-buttons.md), [cursor-position](original-modern-cursor-position.md), [dialog-input](original-modern-dialog-input.md), [dropdown-input](original-modern-dropdown-input.md), [frontend-sound](original-modern-frontend-sound.md), [replay-list-cursor](original-modern-replay-list-cursor.md), [state14](original-modern-state14.md) |

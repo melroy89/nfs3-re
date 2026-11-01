@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "18e89e48741f075a0effb199289a47cff89708cc91cd5d598e53ee7ada2c068f"
+      "sha256": "cd8c45df3732a71273ad95dfc365c02593cac662b197ca9a6d1e2621020a29fd"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -245,7 +245,7 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "fad262f88deb5cbdc6087fd1296ed6cc0224ca9059ab914ca2c711966bb98b2e"
+      "sha256": "07bac8cf282f9b7be45092126499f7717b603710a7eb5a5fc1683f428a0ad699"
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -928,6 +928,17 @@
       "original_sha256": "7a44f2cc3a2a335968889db7aa49f51593ed0830a39e9f917a81da246ef9665b",
       "modern_sha256": "fc3360ce04e5ef96a049a51aee9abb5e4cda69cbb06f5010cd59b5926395f340",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-music-selection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004107c0",
+            "00410917",
+            "00410947",
+            "00410960",
+            "00410965"
+          ]
+        },
         {
           "path": "analysis/original-modern-music-start.md",
           "entry_mentioned": true,
