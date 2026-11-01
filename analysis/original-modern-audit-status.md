@@ -1,5 +1,16 @@
 # Original versus Modern audit: current stopping point
 
+## Current snapshot — 2026-11-01
+
+The [catalog](modern-patch-change-catalog.md) currently has **150 vendor-only,39 bounded-static,98 partial and3 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+
+- **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
+- **Recently narrowed:** type8 descriptor availability/conditional publication, local prepare/render/finalize order, retained399-byte handler and an excluded33-byte viewport-flag helper. See the [projection report](original-modern-projection.md).
+- **Still open:** the projection-source writer/capture lifetime and visible horizon outcome. The preset−5 field retains a verified layout/value with opaque physical meaning; a candidate offset match was a different record family. See the [preset report](original-modern-parameter-preset.md#shared-field-offset-is-not-a-consumer-identity).
+- **Separate broader backlog:** remaining vendor claims, historical driver/release comparisons and original/Modern runtime compatibility. There are more than two questions in the complete backlog.
+
+The checkpoint narratives below describe their pinned increments. Their older counts and “latest” wording are historical, not competing current totals. The broad objective remains incomplete; no new game execution or reconstruction is implied by this snapshot.
+
 ## Acceptance and limits
 
 **The broad reference inventory is complete. The exhaustive code-level investigation is not.** This status separates those deliverables; no percentage of whole-game understanding is justified by chapter, link or byte counts.
@@ -15,13 +26,13 @@
 
 Use the [main comparison](original-modern-differences.md), [release-note catalog](modern-patch-change-catalog.md) and [address index](original-modern-function-index.md). Existing host/VM observations must not be relabelled as original-versus-Modern tests.
 
-## Finish this pass
+## Historical reference-routing pass
 
-The latest checkpoint adds the [small-entry follow-up](original-modern-small-entry-followup.md), including vehicle-loading progress data and seven previously unreferenced entries, and [quad-set draw arguments](original-modern-viewport-geometry.md#quad-set-draw-arguments-six-changed-constants). All361 changed saved-function entries now have chapter address references. This closes the missing-reference queue, not the semantic investigation. Earlier [partial geometry context tracing](original-modern-geometry-color-admission.md#current-context-trace-and-stopping-point) remains unresolved on its stated terms.
+That reference-routing checkpoint added the [small-entry follow-up](original-modern-small-entry-followup.md), including vehicle-loading progress data and seven previously unreferenced entries, and [quad-set draw arguments](original-modern-viewport-geometry.md#quad-set-draw-arguments-six-changed-constants). All361 changed saved-function entries now have chapter address references. This closes the missing-reference queue, not the semantic investigation. Earlier [partial geometry context tracing](original-modern-geometry-color-admission.md#current-context-trace-and-stopping-point) remains unresolved on its stated terms.
 
 No additional game execution, instruction probes, toolchain work, C reconstruction or Ghidra changes are part of this closeout. Executable bytes and existing reconstruction/raw exports are preserved.
 
-## Acceptance checklist at the latest documentation checkpoint
+## Acceptance checklist at the reference-inventory checkpoint
 
 - [x] Exact supplied-original, official Modern and locally edited target identities are distinguished in the main report.
 - [x] All290 documented release-history bullets have stable IDs, full-text reference entries and qualified evidence labels.
@@ -161,7 +172,7 @@ MP153-010 now links verified audiomode choice IDs and the [D3D/EAX-to-Stereo nor
 
 The [checkpoint manifest](evidence/validation/configuration-loading-audio-checkpoint.json) records seven fresh successful static audits, their exact commands/script hashes and outputs, and four preserved identities: original, official Modern, local analysis EXE and saved Ghidra database. This increment has no new independent review; earlier reviews remain scoped to their pinned revisions.
 
-Concrete added findings are indexed in the main report: original save flag versus Modern header refresh; original zero-version prefix and conditional configuration reset; View Angle label/storage/default linkage; Modern loading admission, exact-bit return and two distinct retry levels; and D3D/EAX-to-Stereo fallback using retained driver capability dispatch. The catalog has152 vendor-only,39 bounded static,96 partial and3 unresolved entries; labels are evidence classifications, not completion percentages.
+Concrete added findings are indexed in the main report: original save flag versus Modern header refresh; original zero-version prefix and conditional configuration reset; View Angle label/storage/default linkage; Modern loading admission, exact-bit return and two distinct retry levels; and D3D/EAX-to-Stereo fallback using retained driver capability dispatch. At that checkpoint the catalog had152 vendor-only,39 bounded static,96 partial and3 unresolved entries; labels are evidence classifications, not completion percentages.
 
 Remaining questions include full original default/save lifecycle, callback result/register contracts, real save migration, timing/audio/rendered outcomes and historical introduction. These findings do not resolve unrelated projection type8 sources, renderer-DLL history or every vendor claim. The broad comparison remains active and incomplete. Continue with another concrete unqualified changed mechanism rather than repeatedly restating this completed static increment.
 
@@ -173,11 +184,11 @@ The [overlay follow-up](original-modern-view-overlay.md#primary-tile-binding-sup
 
 The [checkpoint record](evidence/validation/renderer-dashboard-checkpoint.json) records five fresh successful static audits, exact script hashes/commands and unchanged original, official Modern, local EXE and saved-database identities. It is primary-agent reproduction, not a new independent review. The main comparison now summarizes callback registration, cleanup/cache boundaries, official DX7 descriptor ownership/environment effects, gear-versus-dashboard resource bindings and retained tile construction.
 
-The bounded increment establishes those mechanisms and leaves actual cleanup failure/reachability, driver callback conformance, post-unload consumer admission, rasterized coverage and seam removal unverified. Final DX7 component inspection is not an authenticated older-DLL comparison. The catalog currently has151 vendor-only,39 bounded static,97 partial and3 unresolved labels; the whole audit remains incomplete. Historical release pairs and runtime behavior retain their separate evidence requirements.
+The bounded increment establishes those mechanisms and leaves actual cleanup failure/reachability, driver callback conformance, post-unload consumer admission, rasterized coverage and seam removal unverified. Final DX7 component inspection is not an authenticated older-DLL comparison. At that checkpoint the catalog had151 vendor-only,39 bounded static,97 partial and3 unresolved labels; the whole audit remains incomplete. Historical release pairs and runtime behavior retain their separate evidence requirements.
 
 ## DX7 sorted-list claim linkage
 
-MP161-004 now has partial evidence for its bundled sorted-list subclaim: unsigned width/height/depth binary insertion, full duplicate-record replacement and new-key capacity99. The [driver report](original-modern-dx7-mode-admission.md#sorted-list-subclaim-in-mp161-004) distinguishes this from the still-unverified unsupported640×480×16 policy and release-specific history. Current labels:150 vendor-only,39 bounded static,98 partial,3 unresolved.
+MP161-004 now has partial evidence for its bundled sorted-list subclaim: unsigned width/height/depth binary insertion, full duplicate-record replacement and new-key capacity99. The [driver report](original-modern-dx7-mode-admission.md#sorted-list-subclaim-in-mp161-004) distinguishes this from the still-unverified unsupported640×480×16 policy and release-specific history. Labels at that checkpoint:150 vendor-only,39 bounded static,98 partial,3 unresolved.
 
 ## Resumed projection boundary review
 
