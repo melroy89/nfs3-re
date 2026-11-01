@@ -62,3 +62,35 @@ As established by the complete callee comparison at the start of this chapter, *
 The four caller comparisons do not prove identical audio behavior: original's multiplier differs from Modern's configured source, and Modern's callee gating is different. Likewise the immediate edit does not establish that effects are audibly louder, that a sound is actually emitted, or that hover movement behaves identically with different surrounding state.
 
 **Bounded work status: done; confidence: verified static callers, interpreted using the separately verified callee.** Runtime volume, sound assets, admission timing and complete UI paths remain unverified. No audio, UI or instruction probes were run; executable bytes, Ghidra state and maintained reconstruction sources are unchanged.
+
+## Audio Cancel restores the block without the original cache overwrite
+
+**Confidence: verified paired snapshot and Cancel instructions; work status: done for the local state change, partial for MP100-027’s audible bug claim.** The [Cancel audit](scripts/audit_audio_cancel_difference.py) pins supplied-original and official-final hashes and retains complete audio initializer`00437e00..0043806b` and exit envelope`00438070..0043825c`. The [manifest](evidence/audits/audio-cancel-difference.json) records callback rows, snapshot bytes, exact post-copy changes and field-offset arithmetic. No input, audio or target instructions were executed.
+
+Both menu descriptors`00555d20` (`psaudio`) and`00556128` (`audio`) bind initializer`00437e00` and exit`00438070`. The exit’s Cancel path requires a selected item of type5 whose token matches`CANCEL_AUDIO_OPTIONS` (`00537608`); the separate Race/Exit music policy is already documented in the [music-start chapter](original-modern-music-start.md).
+
+### Two kinds of saved values must remain distinct
+
+Both versions’ identical snapshot sequence at`0043803c..00438061` copies16 DWORDs from`006fbbd0..006fbc10` into`005f3920..005f3960`, and separately saves two cache DWORDs. The existing [named audio controls](original-modern-config-loading.md#changed-audio-defaults-have-named-slider-bindings) identify the corresponding configured settings:
+
+| Control | Configured DWORD | Location in saved64-byte block | Separate cache | Separately saved cache |
+|---|---|---|---|---|
+|`ASLD_SOUNDFX` |`006fbbf4` |`005f3944` |`00552920` |`005f3960` |
+|`ASLD_ENGINEVOLUME` |`006fbbf8` |`005f3948` |`00552924` |`005f396c` |
+
+The initializer can use configured values or these separate cache values for slider display according to`00559234`. Their distinction is established by instructions, not a claim that each cache always equals the physical mixer state. The cache saves are outside the64-byte block, so the sources can hold different values.
+
+### Original can overwrite an already restored volume
+
+On admitted Cancel, both versions restore the separately saved cache values to`00552920/24` and copy the64-byte block back to`006fbbd0`. Original then performs another policy step:
+
+| Version | Instructions after the block copy |
+|---|---|
+| Original | Tests BYTE`00552909`, previously loaded into BL; if nonzero, writes`00552920` to`006fbbf4` and`00552924` to`006fbbf8` at`004381a7..004381bb` |
+| Official final | Has no corresponding extra sound-effects/engine stores; after the copy at`004381a7`, gates the separate menu-sound restore using`00559234` |
+
+Consequently, with stable saved storage and clear DF, let **S** be the configured Engine Volume saved in the block and **C** the separately saved engine cache. Original’s local result is **C** when`00552909!=0`, otherwise **S**. Modern’s local result remains **S**. Sound Effects has the same source-selection change. For example S=95/C=127/flag1 produces original127 versus Modern95 at this local boundary. This is a derived conditional example; no test established127 as the actual or universal saved cache value.
+
+Final also restores its added menu-sound setting`006fd1d0` from`00664680` only when`00559234==0`. This is separate from the two configured volume fields and does not reintroduce their cache overwrite. The subsequent music-preview stop/restart paths can have further effects; this finding does not assert unchanged backend calls or immediate audible state.
+
+**MP100-027 conclusion:** removal of the conditional cache-to-configured-volume overwrite gives concrete partial support for the advertised Cancel fix affecting Engine Volume and Sound Effects. The shared snapshot was not removed, and Modern does not simply stop restoring audio state. Still unverified: the flag/cache lifecycle for an actual affected session, all UI transition admission, later audio application, audible maximum-volume behavior and precise1.0.0 introduction. A faithful reconstruction must preserve the chosen version’s two saved-value sources and post-copy order rather than merging their globals or silently fixing the original path.

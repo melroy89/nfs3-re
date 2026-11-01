@@ -610,7 +610,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **120 Claimed, 50 Static, 118 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **119 Claimed, 50 Static, 119 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -926,7 +926,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-024 | You can disable all intro movies by NoMovie setting in ini file. | Claimed |
 | MP100-025 | Suppressing of displaying Windows Error Reporting dialog on fatal errors is disabled by default. So if something go wrong you will know about it. But you can enable suppressing of error reporting via NoErrorReporting setting in the ini file. | Static |
 | MP100-026 | Internal heap memory limit was extended from 16 to 32 MiB. It have to solve “Out of memory” problem on some rare cases. Also you can control it by OwnHeapLimitMb ini setting (it may be from 16 to 512). | Static |
-| MP100-027 | Bugfix for situation when you are cancelled editing audio setting, Engine Volume wasn't restored and set to maximum value, and Sound Effects also sometimes wasn't restored to original value. | Claimed |
+| MP100-027 | Bugfix for situation when you are cancelled editing audio setting, Engine Volume wasn't restored and set to maximum value, and Sound Effects also sometimes wasn't restored to original value. | Partial |
 | MP100-028 | Fixes for hardware detection function. Original game by mistake tries to simplify intro video graphics for modern computers because internal benchmark thinks that it is 166MHz processor (signed integer, result of benchmark too big and it is treated as negative). This benchmark was replaced to cpuid which sees processor family (i586/i686 or newer), support of MMX/SSE/SSE2, and in result calculates class of processor which is used by game for choosing default settings and deciding which level of video quality user will see. | Claimed |
 | MP100-029 | Bugfix for error when game says that on your HDD is less than 1 MiB is free which is not true. | Claimed |
 | MP100-030 | Use km/h for speedometers by default. | Partial |
@@ -1034,3 +1034,7 @@ The [two-image follow-up](original-modern-frontend-page.md#historical-logo2-load
 ## Named default graphics policy
 
 The [default-policy follow-up](original-modern-resolution-defaults.md#named-graphics-defaults-and-the-limits-of-automatic-high-settings) binds eight tier-table destinations through descriptor labels, verifies effective-tier ECX preservation across mode calls and records score5’s renderer-dependent choices. Maximum-score High/Full defaults remain conditional on renderer bits and selected-mode overrides; fog receives record EAX rather than the ninth table. MP100-010 advances vendor-only→partial; counts120/50/118/2. Actual settings, full initialization lifetime, visual quality and1.0.0 introduction remain unverified; no target execution or database mutation.
+
+## Audio Cancel volume-source correction
+
+The [paired Cancel follow-up](original-modern-frontend-sound.md#audio-cancel-restores-the-block-without-the-original-cache-overwrite) verifies identical64-byte snapshot instructions and matching audio callbacks, then isolates original’s conditional overwrite from separately saved caches after block restoration. Final retains the configured Engine Volume/Sound Effects block values locally. MP100-027 advances vendor-only→partial; counts119/50/119/2. Actual flag/cache values, audible maximum-volume behavior, later application and1.0.0 introduction remain unverified; no target execution or database mutation.

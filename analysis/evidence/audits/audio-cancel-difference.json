@@ -1,0 +1,142 @@
+{
+  "kind": "static-audio-cancel-snapshot-restoration",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "00437e00",
+          "end_exclusive": "0043806b",
+          "bytes": 619,
+          "sha256": "edde24c760779372500f4c7b38b4c76da055ef308897b4a49fee2dbb22866367",
+          "assembly": "analysis/captures/modern-differences/audio-cancel/original-00437e00.asm",
+          "assembly_sha256": "dbb2ebf320a8078bf2b2b290ba049188f1b43b4d1b4dcf28dfbb38031080b944"
+        },
+        {
+          "start": "00438070",
+          "end_exclusive": "0043825c",
+          "bytes": 492,
+          "sha256": "bdb1b952222db2b029b9692b03808dff6d01204317f1f18c06c7e423a48cd12e",
+          "assembly": "analysis/captures/modern-differences/audio-cancel/original-00438070.asm",
+          "assembly_sha256": "e69c91801a945a33840f64e90ff4412ebef2877019988a7328714df150b90352"
+        }
+      ],
+      "snapshot_hex": "b910000000a124295500bf20395f00bed0bb6f00a36c395f00a120295500f3a5a360395f00",
+      "callback_rows": {
+        "psaudio": [
+          "00537c64",
+          "00000000",
+          "00000000",
+          "00437e00",
+          "00438070"
+        ],
+        "audio": [
+          "00537df8",
+          "00000000",
+          "00000000",
+          "00437e00",
+          "00438070"
+        ]
+      },
+      "cancel": {
+        "copy": "0043819c",
+        "post_copy_override": "004381a3..004381bb",
+        "override_hex": "84db7414a120295500a3f4bb6f00a124295500a3f8bb6f00",
+        "condition": "00552909 BYTE nonzero",
+        "writes": "00552920 ->006fbbf4;00552924 ->006fbbf8"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "00437e00",
+          "end_exclusive": "0043806b",
+          "bytes": 619,
+          "sha256": "3da00ce4cbed2f4fbd8d534b128db7f47dab38e00e8044b148d78a986df9a048",
+          "assembly": "analysis/captures/modern-differences/audio-cancel/official_modern-00437e00.asm",
+          "assembly_sha256": "e61e80a8e48def4f680c103573bff4d761e2a751751af0e8a5ca6c3b6d0d6e3a"
+        },
+        {
+          "start": "00438070",
+          "end_exclusive": "0043825c",
+          "bytes": 492,
+          "sha256": "48ae7421e09566dbaffc7746c08814a427c67ae0b63c7485419a9d07bf5058c1",
+          "assembly": "analysis/captures/modern-differences/audio-cancel/official_modern-00438070.asm",
+          "assembly_sha256": "3c831a1f9cc1cfe078ba7d4f85571525febbcbb00da1bb5109ef826b2282d7a1"
+        }
+      ],
+      "snapshot_hex": "b910000000a124295500bf20395f00bed0bb6f00a36c395f00a120295500f3a5a360395f00",
+      "callback_rows": {
+        "psaudio": [
+          "00537c64",
+          "00000000",
+          "00000000",
+          "00437e00",
+          "00438070"
+        ],
+        "audio": [
+          "00537df8",
+          "00000000",
+          "00000000",
+          "00437e00",
+          "00438070"
+        ]
+      },
+      "cancel": {
+        "copy": "004381a7",
+        "post_copy_policy": "004381a9..004381c5",
+        "policy_hex": "833d34925500007531a180466600a3d0d16f00eb0790909090909090",
+        "writes": "No corresponding extra006fbbf4/006fbbf8 write; menu-sound006fd1d0 restored from00664680 only if00559234==0"
+      }
+    }
+  },
+  "limits": [
+    "No UI, sound, game or instruction execution.",
+    "Saved block/cache values, flag lifecycle, caller admission and later audio application remain conditional.",
+    "Does not establish all original failures choose maximum127 or precise1.0.0 introduction."
+  ],
+  "snapshot_contract": {
+    "live_block": [
+      "006fbbd0",
+      "006fbc10"
+    ],
+    "saved_block": [
+      "005f3920",
+      "005f3960"
+    ],
+    "bytes": 64,
+    "fields": [
+      {
+        "name": "sound_effects",
+        "configured_setting": "006fbbf4",
+        "field_in_64_byte_snapshot": "005f3944",
+        "separate_cache": "00552920",
+        "saved_separate_cache": "005f3960",
+        "original_cancel_if_flag_nonzero": "Saved separate-cache value overwrites restored configured block value.",
+        "modern_cancel": "Restored configured block value retained locally."
+      },
+      {
+        "name": "engine",
+        "configured_setting": "006fbbf8",
+        "field_in_64_byte_snapshot": "005f3948",
+        "separate_cache": "00552924",
+        "saved_separate_cache": "005f396c",
+        "original_cancel_if_flag_nonzero": "Saved separate-cache value overwrites restored configured block value.",
+        "modern_cancel": "Restored configured block value retained locally."
+      }
+    ],
+    "preconditions": "Clear DF, valid nonoverlapping memory, saved block/cache survives until Cancel; no concurrent alias mutation."
+  },
+  "example": {
+    "kind": "derived symbolic consequence, not executed test",
+    "saved_configured_engine": 95,
+    "saved_separate_engine_cache": 127,
+    "flag00552909": 1,
+    "original_engine_after_local_restore": 127,
+    "modern_engine_after_local_restore": 95,
+    "qualification": "127 is an illustrative saved input, not proven initial cache or universal failure result."
+  }
+}
