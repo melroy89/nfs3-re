@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "ef4e11105deeb75cf86adbd451acf3c543ebe3e438483d3f142796edb090034e"
+      "sha256": "7971c12cbe5a168116e741dcc0c24154fcfe89346f9ff7946faa73c90125db23"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -161,7 +161,7 @@
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
-      "sha256": "13145eeed813d9a575cef8e2b126767ac6400c3c295a90c8bf1ca032f0c687f2"
+      "sha256": "ed7b194271ab238d2b71f95dfa8092ee10f1616669e39a352b19f70e01a60159"
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
@@ -7866,6 +7866,16 @@
       "modern_sha256": "5e64f1ef3614ffece51a2500a7cd6f230a58395d6b5d4e34bbb61c9590267268",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a3657",
+            "004a365b",
+            "004a365c",
+            "004a3661"
+          ]
+        },
+        {
           "path": "analysis/original-modern-music-selection.md",
           "entry_mentioned": true,
           "addresses": [
@@ -8939,7 +8949,9 @@
           "entry_mentioned": false,
           "addresses": [
             "004b5c0c",
-            "004b5c11"
+            "004b5c11",
+            "004b5d73",
+            "004b5d78"
           ]
         },
         {
@@ -9014,6 +9026,13 @@
       "original_sha256": "07b370b9a89b41fca1832e51753bd2c23239b99bdfa84ee56db85bd3c30c6ed7",
       "modern_sha256": "09480c939b0fb8591e1c3ec2392671a3076c05affbaffb35a8b1fea4fd2e707f",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004b5d89"
+          ]
+        },
         {
           "path": "analysis/original-modern-input-worker.md",
           "entry_mentioned": true,
@@ -11285,6 +11304,13 @@
       "original_sha256": "4662fab0e7a2f96f5043223c7ce16b5be9912600a791b9c07345b05c73abadaa",
       "modern_sha256": "3feb92b5d4acfc983ef9faa4979f4790e97a9c934c20e1f533b8f4fd1da5951d",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dbbe0"
+          ]
+        },
         {
           "path": "analysis/original-modern-music-selection.md",
           "entry_mentioned": true,

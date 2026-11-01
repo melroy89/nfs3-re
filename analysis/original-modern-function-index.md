@@ -219,7 +219,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004a33f0` | InitializeRaceSession | 347 | 326 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [pending-overlay](original-modern-pending-overlay.md) |
 | `004a354c` | ResetLoadingProgressClock | 11 | 10 | [loading-timing](original-modern-loading-timing.md) |
 | `004a3558` | ResetLoadingProgressTimingState | 77 | 71 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [pending-overlay](original-modern-pending-overlay.md) |
-| `004a35d0` | ShutdownRaceSession | 177 | 61 | [music-selection](original-modern-music-selection.md) |
+| `004a35d0` | ShutdownRaceSession | 177 | 61 | [heap-initialization](original-modern-heap-initialization.md), [music-selection](original-modern-music-selection.md) |
 | `004a3690` | RunRaceSession | 531 | 4 | [music-selection](original-modern-music-selection.md), [music-start](original-modern-music-start.md), [startup-paths](original-modern-startup-paths.md) |
 | `004a38f0` | SetCurrentDirectoryToExecutableDirectory | 72 | 69 | [startup-paths](original-modern-startup-paths.md) |
 | `004a3984` | ValidateRequiredGamePathsAndCreateDirectories | 66 | 64 | [startup-paths](original-modern-startup-paths.md) |
@@ -238,7 +238,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004b5844` | LoadThrashDriverSettings | 504 | 486 | [command-line](original-modern-command-line.md), [dx5-reference-pair](original-modern-dx5-reference-pair.md), [registry](original-modern-registry.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md), [startup-requirements](original-modern-startup-requirements.md), [state14](original-modern-state14.md) |
 | `004b5a58` | InitializeThrashRenderer | 421 | 407 | [border-geometry](original-modern-border-geometry.md), [display-modes](original-modern-display-modes.md), [dx5-reference-pair](original-modern-dx5-reference-pair.md), [glide-reference-identity](original-modern-glide-reference-identity.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md), [renderer-loading](original-modern-renderer-loading.md), [state14](original-modern-state14.md), [texture-limits](original-modern-texture-limits.md) |
 | `004b5c00` | InitializeGameSubsystems | 387 | 369 | [border-geometry](original-modern-border-geometry.md), [display-modes](original-modern-display-modes.md), [heap-initialization](original-modern-heap-initialization.md), [input-worker](original-modern-input-worker.md), [music-selection](original-modern-music-selection.md), [renderer-initialization](original-modern-renderer-initialization.md), [resolution-defaults](original-modern-resolution-defaults.md), [startup-policy](original-modern-startup-policy.md), [startup-requirements](original-modern-startup-requirements.md) |
-| `004b5d84` | ShutdownGameSubsystems | 45 | 44 | [input-worker](original-modern-input-worker.md) |
+| `004b5d84` | ShutdownGameSubsystems | 45 | 44 | [heap-initialization](original-modern-heap-initialization.md), [input-worker](original-modern-input-worker.md) |
 | `004b7d30` | LoadVehicleModelWithTextureReuse | 372 | 56 | [texture-limits](original-modern-texture-limits.md) |
 | `004b90e0` | RandomizeSelectedVehicleOffsetUnlessTickMatches | 95 | 4 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004b9140` | BuildWheelSpinMatrixWithOptionalSteering | 320 | 4 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
@@ -302,7 +302,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004d3f50` | CreateTextureFromShape | 287 | 2 | [texture-loading-followup](original-modern-texture-loading-followup.md) |
 | `004d5370` | LoadSharedSfxTextureDescriptors | 819 | 8 | [texture-loading-followup](original-modern-texture-loading-followup.md) |
 | `004daf80` | InitializeFrontendRenderResourcesAndSlotState | 124 | 10 | [slideshow-navigation](original-modern-slideshow-navigation.md) |
-| `004dbbe0` | LoadTrackSceneWithAbortCheckpoints | 103 | 100 | [music-selection](original-modern-music-selection.md) |
+| `004dbbe0` | LoadTrackSceneWithAbortCheckpoints | 103 | 100 | [heap-initialization](original-modern-heap-initialization.md), [music-selection](original-modern-music-selection.md) |
 | `004dbc48` | CalculateClampedViewportFovFromAspect | 73 | 72 | [projection](original-modern-projection.md), [x87-observers](original-modern-x87-observers.md) |
 | `004dbc94` | GetViewportFovDegrees | 42 | 40 | [projection](original-modern-projection.md) |
 | `004dbcc0` | DeriveViewportProjectionAngles | 117 | 113 | [projection](original-modern-projection.md) |

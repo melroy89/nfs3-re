@@ -67,3 +67,45 @@ The [instance/handle audit](scripts/audit_instance_recovery_difference.py), repr
 All six push the heap handle from `009f3d40`, save/restore ECX and EDX, and return the API's EAX without local error handling or normalization. Allocation's two entries share tail `004f1f01`; reallocation's entries share tail `004f1f1e`. For reallocation, the extra pushed ECX is the size argument, distinct from the saved ECX later restored. The remaining four wrappers consume pointer/size arguments directly from the named registers. Sizes and pointers are 32-bit on these inspected paths. Flag values are stated literally; caller intent and every flag-dependent outcome are not independently tested here.
 
 Reconstruction must model a process-owned heap dependency established by startup, preserve raw failure returns, and avoid treating these routines as ordinary stack-argument C calls when invoking retained instructions. ECX/EDX preservation is explicit; no condition-code output contract is promised because the API supplies the intervening flags. The wrappers do not locally validate the heap handle or enforce allocation lifetime. The render-arena call chain above is a confirmed consumer; complete caller ownership, allocation-failure behavior and thread/lifetime qualification remain pending. This does not change the separate RAM-pool finding into a proven direct Windows-heap substitution.
+
+## Removed wrappers relocate arena lifetime and shorten race shutdown
+
+The [wrapper audit](scripts/audit_removed_render_lifecycle_wrappers.py) retains
+[paired bytes and asserted call targets](evidence/audits/removed-render-lifecycle-wrappers.json).
+It classifies all79 changed bytes in outside-body interval
+`004bc947..004bc9a0`. The first nine alignment bytes are unchanged; Modern
+NOP-fills `004bc950..004bc9a0` (80 bytes, one already NOP in original), covering
+three original wrappers and their alignment.
+
+| Original wrapper | Original sequence | Verified Modern route |
+|---|---|---|
+| `004bc980..004bc98f` | `00434b00`, then arena initializer `004bbd80` | Setup directly calls `00434870` at `004b5d73`, then `004bbd80` at `004b5d78` |
+| `004bc990..004bc99f` | Arena free `004bbdc0`, then `00434b10` | Teardown directly calls mapped free `004bbda4` at `004b5d89` |
+| `004bc950..004bc978` | Seven-call shutdown sequence | Three of those calls appear directly at the shown race-shutdown site |
+
+Original `00434b00` itself calls `004eb3c0` and `00434870`; only the latter
+link is asserted at the shown Modern setup tail. Original `00434af0` and
+`00434b10` are each exactly five-byte frame/no-op bodies. No full replacement
+claim is made for every transitive setup operation.
+
+The removed setup/free wrappers had direct callers `004a3398` and `004a33a3`
+inside original outer wrappers `004a3390..004a339f` and
+`004a33a0..004a33af`. Modern NOP-fills those outer bodies too. The independently
+mapped [subsystem setup](original-modern-resolution-defaults.md#modern-default-path)
+and [shutdown](original-modern-input-worker.md) comparisons establish their
+broader context; removing these old wrapper addresses does not establish
+removal of arena allocation/free or universal lifecycle equivalence.
+
+At original race shutdown call site `004a365b`, wrapper `004bc950` calls,
+in order: `00434af0`, `004d5730`, `004c7150`, `004dbbe0`, `00484220`,
+`004cb730`, `004c7b20`. Modern instead directly calls `004c7150`, `00484220`,
+`004cb730` at `004a3657`, `004a365c`, `004a3661`, retaining their order there.
+The surrounding [race envelope](original-modern-music-selection.md#outer-session-comparison-removed-style-toggle-and-excluded-rollback-state)
+has other differences. The remaining four old targets are absent from this
+local replacement sequence, not proven absent from the entire game.
+
+**Status:** done for three wrapper bodies, outside-interval partition and the
+shown relocated call routes; verified static evidence. Complete lifecycle
+ordering, all caller/alias domains, effects of other omitted calls and actual
+allocation/teardown remain unverified. No game, heap API or instruction probe
+was executed; executable and saved database bytes were preserved.
