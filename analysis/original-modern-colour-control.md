@@ -92,3 +92,74 @@ When the layout helper's admission call `0044a660` succeeds and widget WORD `+58
 Each stored result is its low 16 bits. The machine sometimes loads only AX before DWORD shifts/adds, leaving inherited high bits; the low-WORD formulas above remain valid, but full EAX/flags must not be assumed equivalent to a freshly zero-extended C expression. When WORD `+58` is zero, the collapsed branch's fixed dimensions and `+6−10` origin remain byte-identical.
 
 **Bounded work status: done; confidence: verified static field/argument changes.** Full field semantics, caller aliasing, font state, rendered geometry and interaction bounds remain unverified. Do not silently repair suspected original layout arithmetic or claim a visual fix from these offsets alone. Executable bytes, Ghidra state and maintained C remain unchanged.
+
+## Complete wheel keyboard callback: endpoint writes and feedback change
+
+The [keyboard audit](scripts/audit_colour_keyboard_difference.py) pins the
+same `colorwheel` widget/template binding and complete paired input callback
+`0043ec40..0043ef7f` (831 bytes) in
+[its manifest](evidence/audits/colour-keyboard-difference.json). It finds369
+changed bytes. The initial dispatch/admission prefix through `0043ece3` is
+identical; this is a changed implementation of the wheel's keyboard actions,
+separate from the dropdown and mouse-handler comparisons above.
+
+| Input token | Component DWORD | Ordinary adjustment |
+|---|---|---|
+| Up `4800h` |+48h |+10 |
+| Down `5000h` |+48h |−10 |
+| Left `4b00h` |+44h |+10 |
+| Right `4d00h` |+44h |−10 |
+| Page Up `4900h` |+40h |−10 |
+| Page Down `5100h` |+40h |+10 |
+
+For incoming component values0..255, both versions produce the same saturated
+adjusted value in0..255. Original always performs a component store, even when
+already at the endpoint, and returns through local handled-code2 exits without
+a direct sound call on these arms. Modern checks the existing endpoint first:
+positive adjustments skip when value>=255; negative adjustments skip when
+value<=0. Skipped arms stage handled code2 and return without storing or
+requesting sound. A successful change reaches shared `0043ef62`, requests
+sound ID0 through `004181d0`, then uses the common return. Sound implementation
+and its register contract are qualified by the [frontend-sound report](original-modern-frontend-sound.md).
+
+The simplified clamp is **not equivalent for arbitrary DWORD inputs**. For
+example, incrementing−20 ordinarily gives original0 versus Modern−10; at300,
+an increment gives original255 versus Modern no store/300. A decrement from−1
+gives original0 versus Modern no store/−1. These are instruction-derived
+examples, not executed probes. Machine-width wrap and signed comparisons
+remain required outside these fitting examples; no universal input invariant
+or bug fix is assumed.
+
+### Escape, Enter and Tab feedback ordering
+
+| Action | Original | Modern |
+|---|---|---|
+| Escape `001bh` | Sound ID0/EDX127, then `0043ddd0` | `0043ddd0` first, then common sound ID1 |
+| Enter `000dh`, region1 | Sound ID0/EDX127, then `0043dd90` | Action first, then common sound ID1 |
+| Enter, region2 | Sound ID0/EDX127, then `0043dc90` | Action first, then common sound ID1 |
+| Tab `0009h` | Sound ID1 before retained cursor-position call | Immediate ID changes to0; position calculation/order retained |
+
+The action paths now assign ECX2 after the action before sharing the sound/
+return tail. The callback ultimately returns EAX from ECX; full results across
+transitive helpers still depend on their verified register preservation.
+The Tab region toggle and cursor-coordinate arithmetic `0043ee24..0043eefe`
+are byte-identical. A changed request ID/order is not a measured sound sample,
+volume, timing result or guarantee that an action always returns normally.
+No hue/saturation/value identity is assigned to the three offsets solely from
+these keyboard operations.
+
+### Entire outside-function interval is partitioned
+
+The larger inventory interval `0043ebb5..0043f220` has380 changed bytes:
+11 bytes are the old mouse-handler's final3 bytes plus8 alignment bytes,
+replaced by NOPs;369 are in the keyboard callback above. Intermediate
+`0043ebc0..0043ec40` and trailing `0043ef7f..0043f220` are byte-identical.
+This reuses the existing complete mouse-handler comparison instead of
+mistaking the interval start for a new function entry.
+
+**Status:** done, verified static for full callback/binding, adjustment paths,
+feedback operands/order, retained dispatch/Tab geometry and380-byte partition.
+Upstream component-range guarantees, transitive action effects, sound/register
+contracts beyond linked evidence, rendered colour and real input/audio remain
+unverified. No target, UI, audio or instruction probe was executed; executable,
+Ghidra and maintained C bytes were preserved.
