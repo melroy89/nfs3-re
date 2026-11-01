@@ -50,6 +50,25 @@ Earlier notes incorrectly claimed nine quads, a480h-byte span and an80h-byte mis
 
 The saved Ghidra label `BuildNineTexturedRectangleBorderQuads` and related comments reflect the old error. This pass corrects Markdown and retains the evidence; it does not mutate the saved database. A later annotation pass should rename it to `BuildEightTexturedRectangleBorderQuads`, correct the dependent comments and save/read back those changes. Generated navigation may continue showing the saved historical label until that happens; it must not override this byte-grounded extent result.
 
+## All eight quads retain their UV bits
+
+The destination audit now resolves all64 UV DWORD writes in each builder. It propagates immediate/MOV copies and exact finite binary32 constants through FLD/FST copies; coordinate arithmetic remains unknown rather than being evaluated as target instructions. **Every paired UV DWORD is bit-identical.** Both functions balance their local abstract x87 stack in this straight-line accounting; this is not full status/control-word equivalence.
+
+For each quad the four UV pairs are `(u0,v0),(u1,v0),(u1,v1),(u0,v1)` in vertex order. The following values are exact numerators over512, a convenient representation of the binary32 constants—not proof that the runtime atlas is512 pixels wide/high:
+
+| Quad | Rectangle in Modern, before integer-to-float conversion |u0×512 |v0×512 |u1×512 |v1×512 |
+|---:|---|---:|---:|---:|---:|
+|0 |L−t,T−t to L,T |339 |373 |345 |379 |
+|1 |L,T−t to R,T |355 |381 |357 |387 |
+|2 |R,T−t to R+t,T |347 |373 |353 |379 |
+|3 |R,T to R+t,B |355 |373 |361 |375 |
+|4 |R,B to R+t,B+t |347 |381 |353 |387 |
+|5 |L,B to R,B+t |355 |381 |357 |387 |
+|6 |L−t,B to L,B+t |339 |381 |345 |387 |
+|7 |L−t,T to L,B |355 |373 |361 |375 |
+
+L/T/R/B denote the input bounds and t the stored Modern thickness. Integer additions/subtractions wrap32 before signed conversion; the table is not a promise of ordered/nondegenerate rectangles for arbitrary inputs. The Modern coordinate pattern is read from the captured instructions; this increment establishes UV correspondence, not every original coordinate expression or whole-function equivalence. Atlas resource identity, later vertex edits, texture binding/filtering and visible results remain unresolved. There is no ninth or centre quad to assign an extra atlas region to.
+
 ## Retained evidence
 
 Run `python3 analysis/scripts/audit_viewport_geometry_difference.py` (Python `pefile`, GNU `objdump`). The [manifest](evidence/audits/original-modern-viewport-geometry.json) retains complete builder spans, the new wrapper/updater, six caller instruction witnesses and exact float constants for both executables. Raw assembly remains ignored. This does not validate every rewritten quad/UV assignment.

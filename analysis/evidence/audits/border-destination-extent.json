@@ -1165,6 +1165,328 @@
         4,
         24,
         28
+      ],
+      "statically_resolved_UV_DWORDs": [
+        {
+          "offset": 24,
+          "bits": "3f298000",
+          "binary32": 0.662109375
+        },
+        {
+          "offset": 28,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 56,
+          "bits": "3f2c8000",
+          "binary32": 0.673828125
+        },
+        {
+          "offset": 60,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 88,
+          "bits": "3f2c8000",
+          "binary32": 0.673828125
+        },
+        {
+          "offset": 92,
+          "bits": "3f3d8000",
+          "binary32": 0.740234375
+        },
+        {
+          "offset": 120,
+          "bits": "3f298000",
+          "binary32": 0.662109375
+        },
+        {
+          "offset": 124,
+          "bits": "3f3d8000",
+          "binary32": 0.740234375
+        },
+        {
+          "offset": 152,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 156,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 184,
+          "bits": "3f328000",
+          "binary32": 0.697265625
+        },
+        {
+          "offset": 188,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 216,
+          "bits": "3f328000",
+          "binary32": 0.697265625
+        },
+        {
+          "offset": 220,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 248,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 252,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 280,
+          "bits": "3f2d8000",
+          "binary32": 0.677734375
+        },
+        {
+          "offset": 284,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 312,
+          "bits": "3f308000",
+          "binary32": 0.689453125
+        },
+        {
+          "offset": 316,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 344,
+          "bits": "3f308000",
+          "binary32": 0.689453125
+        },
+        {
+          "offset": 348,
+          "bits": "3f3d8000",
+          "binary32": 0.740234375
+        },
+        {
+          "offset": 376,
+          "bits": "3f2d8000",
+          "binary32": 0.677734375
+        },
+        {
+          "offset": 380,
+          "bits": "3f3d8000",
+          "binary32": 0.740234375
+        },
+        {
+          "offset": 408,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 412,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 440,
+          "bits": "3f348000",
+          "binary32": 0.705078125
+        },
+        {
+          "offset": 444,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 472,
+          "bits": "3f348000",
+          "binary32": 0.705078125
+        },
+        {
+          "offset": 476,
+          "bits": "3f3b8000",
+          "binary32": 0.732421875
+        },
+        {
+          "offset": 504,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 508,
+          "bits": "3f3b8000",
+          "binary32": 0.732421875
+        },
+        {
+          "offset": 536,
+          "bits": "3f2d8000",
+          "binary32": 0.677734375
+        },
+        {
+          "offset": 540,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 568,
+          "bits": "3f308000",
+          "binary32": 0.689453125
+        },
+        {
+          "offset": 572,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 600,
+          "bits": "3f308000",
+          "binary32": 0.689453125
+        },
+        {
+          "offset": 604,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 632,
+          "bits": "3f2d8000",
+          "binary32": 0.677734375
+        },
+        {
+          "offset": 636,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 664,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 668,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 696,
+          "bits": "3f328000",
+          "binary32": 0.697265625
+        },
+        {
+          "offset": 700,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 728,
+          "bits": "3f328000",
+          "binary32": 0.697265625
+        },
+        {
+          "offset": 732,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 760,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 764,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 792,
+          "bits": "3f298000",
+          "binary32": 0.662109375
+        },
+        {
+          "offset": 796,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 824,
+          "bits": "3f2c8000",
+          "binary32": 0.673828125
+        },
+        {
+          "offset": 828,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 856,
+          "bits": "3f2c8000",
+          "binary32": 0.673828125
+        },
+        {
+          "offset": 860,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 888,
+          "bits": "3f298000",
+          "binary32": 0.662109375
+        },
+        {
+          "offset": 892,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 920,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 924,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 952,
+          "bits": "3f348000",
+          "binary32": 0.705078125
+        },
+        {
+          "offset": 956,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 984,
+          "bits": "3f348000",
+          "binary32": 0.705078125
+        },
+        {
+          "offset": 988,
+          "bits": "3f3b8000",
+          "binary32": 0.732421875
+        },
+        {
+          "offset": 1016,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 1020,
+          "bits": "3f3b8000",
+          "binary32": 0.732421875
+        }
       ]
     },
     "official_modern": {
@@ -2223,8 +2545,336 @@
         4,
         24,
         28
+      ],
+      "statically_resolved_UV_DWORDs": [
+        {
+          "offset": 24,
+          "bits": "3f298000",
+          "binary32": 0.662109375
+        },
+        {
+          "offset": 28,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 56,
+          "bits": "3f2c8000",
+          "binary32": 0.673828125
+        },
+        {
+          "offset": 60,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 88,
+          "bits": "3f2c8000",
+          "binary32": 0.673828125
+        },
+        {
+          "offset": 92,
+          "bits": "3f3d8000",
+          "binary32": 0.740234375
+        },
+        {
+          "offset": 120,
+          "bits": "3f298000",
+          "binary32": 0.662109375
+        },
+        {
+          "offset": 124,
+          "bits": "3f3d8000",
+          "binary32": 0.740234375
+        },
+        {
+          "offset": 152,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 156,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 184,
+          "bits": "3f328000",
+          "binary32": 0.697265625
+        },
+        {
+          "offset": 188,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 216,
+          "bits": "3f328000",
+          "binary32": 0.697265625
+        },
+        {
+          "offset": 220,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 248,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 252,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 280,
+          "bits": "3f2d8000",
+          "binary32": 0.677734375
+        },
+        {
+          "offset": 284,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 312,
+          "bits": "3f308000",
+          "binary32": 0.689453125
+        },
+        {
+          "offset": 316,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 344,
+          "bits": "3f308000",
+          "binary32": 0.689453125
+        },
+        {
+          "offset": 348,
+          "bits": "3f3d8000",
+          "binary32": 0.740234375
+        },
+        {
+          "offset": 376,
+          "bits": "3f2d8000",
+          "binary32": 0.677734375
+        },
+        {
+          "offset": 380,
+          "bits": "3f3d8000",
+          "binary32": 0.740234375
+        },
+        {
+          "offset": 408,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 412,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 440,
+          "bits": "3f348000",
+          "binary32": 0.705078125
+        },
+        {
+          "offset": 444,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 472,
+          "bits": "3f348000",
+          "binary32": 0.705078125
+        },
+        {
+          "offset": 476,
+          "bits": "3f3b8000",
+          "binary32": 0.732421875
+        },
+        {
+          "offset": 504,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 508,
+          "bits": "3f3b8000",
+          "binary32": 0.732421875
+        },
+        {
+          "offset": 536,
+          "bits": "3f2d8000",
+          "binary32": 0.677734375
+        },
+        {
+          "offset": 540,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 568,
+          "bits": "3f308000",
+          "binary32": 0.689453125
+        },
+        {
+          "offset": 572,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 600,
+          "bits": "3f308000",
+          "binary32": 0.689453125
+        },
+        {
+          "offset": 604,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 632,
+          "bits": "3f2d8000",
+          "binary32": 0.677734375
+        },
+        {
+          "offset": 636,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 664,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 668,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 696,
+          "bits": "3f328000",
+          "binary32": 0.697265625
+        },
+        {
+          "offset": 700,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 728,
+          "bits": "3f328000",
+          "binary32": 0.697265625
+        },
+        {
+          "offset": 732,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 760,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 764,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 792,
+          "bits": "3f298000",
+          "binary32": 0.662109375
+        },
+        {
+          "offset": 796,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 824,
+          "bits": "3f2c8000",
+          "binary32": 0.673828125
+        },
+        {
+          "offset": 828,
+          "bits": "3f3e8000",
+          "binary32": 0.744140625
+        },
+        {
+          "offset": 856,
+          "bits": "3f2c8000",
+          "binary32": 0.673828125
+        },
+        {
+          "offset": 860,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 888,
+          "bits": "3f298000",
+          "binary32": 0.662109375
+        },
+        {
+          "offset": 892,
+          "bits": "3f418000",
+          "binary32": 0.755859375
+        },
+        {
+          "offset": 920,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 924,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 952,
+          "bits": "3f348000",
+          "binary32": 0.705078125
+        },
+        {
+          "offset": 956,
+          "bits": "3f3a8000",
+          "binary32": 0.728515625
+        },
+        {
+          "offset": 984,
+          "bits": "3f348000",
+          "binary32": 0.705078125
+        },
+        {
+          "offset": 988,
+          "bits": "3f3b8000",
+          "binary32": 0.732421875
+        },
+        {
+          "offset": 1016,
+          "bits": "3f318000",
+          "binary32": 0.693359375
+        },
+        {
+          "offset": 1020,
+          "bits": "3f3b8000",
+          "binary32": 0.732421875
+        }
       ]
     }
+  },
+  "UV_comparison": {
+    "paired_DWORDs": 64,
+    "all_bits_equal": true,
+    "method": "Static MOV and FLD/FST copy propagation at normalized destination offsets; x87 coordinate arithmetic is unknown, not numerically evaluated. Only exact finite binary32 UV constants are retained.",
+    "limits": "Equal UV bits do not identify the loaded atlas image, filtering, later edits, texture provider or rendered output."
   },
   "local_analysis_body_matches_official": true,
   "correction": "Both pinned builders write8 quads/32 vertices within0x400 bytes. Earlier9-quad/0x480 and derived slice-overlap claims are incorrect.",
