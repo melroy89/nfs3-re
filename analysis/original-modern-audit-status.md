@@ -721,3 +721,7 @@ The [three-baseline handler comparison](original-modern-startup-policy.md#early-
 ## Early driver filename/device parsing and live key rename
 
 The [three-release audit](original-modern-renderer-loading.md#early-filename-and-device-suffix-interface-then-driver-key-rename) verifies early151-byte filename/.dll/@device parser and1.3.1→1.4.0 VideoDriver→ThrashDriver read-key change. It distinguishes early path/type/device globals from final reused addresses. MP110-001/002 advance to partial, MP140-045 to bounded static; counts93/52/143/2.1.0.0 alias/separate-key predecessor, scan edge cases, provider/device success and rendering remain unverified; no target execution or database changes.
+
+## Eleven later investigations reproduced against committed evidence
+
+The [checkpoint](evidence/validation/later-static-mechanisms-checkpoint.json) records reviewed revision`1a5b591`,22/22 passing static runs and eleven outputs matching the committed pre-run evidence.12 protected artifacts and12 raw exports retain their prior hashes. The [compact table](original-modern-differences.md#later-startup-loading-and-mode-findings) consolidates the mechanisms and their remaining limits. The primary agent performed these checks; independent semantic review, game/API/instruction execution, new exports, compilation and Ghidra reopening were not performed. Catalog remains93 vendor-only/52 bounded-static/143 partial/2 unresolved; these are release-note classifications, not a game-completion percentage. The goal remains incomplete.

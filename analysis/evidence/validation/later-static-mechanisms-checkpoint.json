@@ -1,0 +1,489 @@
+{
+  "kind": "eleven-later-static-mechanisms-checkpoint",
+  "reviewed_head": "1a5b59131469cdd9a3ec80271ef0cd781b4552f4",
+  "runner_path": "analysis/scripts/check_later_static_mechanisms.py",
+  "runner_sha256": "34b1a59df5e7a4f75920e93a1c35bfc9506866fae69017093b28b6e3925e1edd",
+  "prior_checkpoint": "analysis/evidence/validation/five-static-mechanisms-checkpoint.json",
+  "prior_checkpoint_sha256": "f40b28797ba96fa20473c3413bdba73b0a0043a141a4d683927ebb0f1757ff9a",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_music_copy_removal.py"
+      ],
+      "script_sha256": "183b50a2e0cc08f81dd8f9278a678ec75aa6b3afbe5580b8323eb126d0fd509e",
+      "output": "analysis/evidence/audits/music-copy-removal.json",
+      "pre_run_output_sha256": "f88d58233012575236ea1a6025e75228f3559fae488eb6266878b65934fd81b5",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:761-byte copy removal,512KiB chunk request, paired path strings and direct-source suffix replacement\n",
+          "stderr": "",
+          "output_sha256": "f88d58233012575236ea1a6025e75228f3559fae488eb6266878b65934fd81b5"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:761-byte copy removal,512KiB chunk request, paired path strings and direct-source suffix replacement\n",
+          "stderr": "",
+          "output_sha256": "f88d58233012575236ea1a6025e75228f3559fae488eb6266878b65934fd81b5"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_loading_estimator_contract.py"
+      ],
+      "script_sha256": "5ce36353ba6723f240ee0b47b7a2063489de3903170a4b15f631bde32ca074e3",
+      "output": "analysis/evidence/audits/loading-estimator-contract.json",
+      "pre_run_output_sha256": "086cfabc90b9148b8b384451d6c973dff68a49663339b1e1b0bcae32d55b07a3",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:143-byte estimator, throttle/time/fallback branches and five exact ordinary derived examples\n",
+          "stderr": "",
+          "output_sha256": "086cfabc90b9148b8b384451d6c973dff68a49663339b1e1b0bcae32d55b07a3"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:143-byte estimator, throttle/time/fallback branches and five exact ordinary derived examples\n",
+          "stderr": "",
+          "output_sha256": "086cfabc90b9148b8b384451d6c973dff68a49663339b1e1b0bcae32d55b07a3"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_loading_tile_history.py"
+      ],
+      "script_sha256": "1cf4aa544805fcfe3698e0c13623fe81fb9f8c2320d84c92c224d180797ebe6f",
+      "output": "analysis/evidence/audits/loading-tile-history.json",
+      "pre_run_output_sha256": "47bd1cdbd45740ef79ad574986a422b789a3246f0ba365d4eada2217203090c9",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: early/final256 extent and3x2 grid; nine differing bytes classified with equal scale constants\n",
+          "stderr": "",
+          "output_sha256": "47bd1cdbd45740ef79ad574986a422b789a3246f0ba365d4eada2217203090c9"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: early/final256 extent and3x2 grid; nine differing bytes classified with equal scale constants\n",
+          "stderr": "",
+          "output_sha256": "47bd1cdbd45740ef79ad574986a422b789a3246f0ba365d4eada2217203090c9"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_race_dialog_preselection.py"
+      ],
+      "script_sha256": "84fcabea4d92c05848da7796cd962050a8921486dae1f4c1d542efed27bf9854",
+      "output": "analysis/evidence/audits/race-dialog-preselection.json",
+      "pre_run_output_sha256": "2d751d087e44ea87f82bb3ad533ea087de103b1b5df1348a4a093a2fe04c2e4c",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:four pinned builds, shared race descriptor/labels, early120 remap boundary and identical final19-byte helper\n",
+          "stderr": "",
+          "output_sha256": "2d751d087e44ea87f82bb3ad533ea087de103b1b5df1348a4a093a2fe04c2e4c"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:four pinned builds, shared race descriptor/labels, early120 remap boundary and identical final19-byte helper\n",
+          "stderr": "",
+          "output_sha256": "2d751d087e44ea87f82bb3ad533ea087de103b1b5df1348a4a093a2fe04c2e4c"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_border_thickness_history.py"
+      ],
+      "script_sha256": "287094101f26abf548c5f8217042c97f2cade6746bb7175fae4d736a2b3383c9",
+      "output": "analysis/evidence/audits/border-thickness-history.json",
+      "pre_run_output_sha256": "730d127f1b9bac9d3d2b0bb4d5b24caea67ffd5cc3113f8f70e75d7d088f8cd1",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: original/early/153 identical builders with4->2 coefficient;160 fitted-width cache rewrite retained in final\n",
+          "stderr": "",
+          "output_sha256": "730d127f1b9bac9d3d2b0bb4d5b24caea67ffd5cc3113f8f70e75d7d088f8cd1"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: original/early/153 identical builders with4->2 coefficient;160 fitted-width cache rewrite retained in final\n",
+          "stderr": "",
+          "output_sha256": "730d127f1b9bac9d3d2b0bb4d5b24caea67ffd5cc3113f8f70e75d7d088f8cd1"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_install_settings_history.py"
+      ],
+      "script_sha256": "192ea3a20be8d3c80be510ac930944d2b4b7e2c77a68ba009494a25714d6a035",
+      "output": "analysis/evidence/audits/install-settings-history.json",
+      "pre_run_output_sha256": "b5b17cf345748d6a16b72c31e08a98c49e9bf09041ca412b0a03c6ba4a58a093",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:original install records,early INI RemoteOnly/Language API bindings and final literal-zero gate\n",
+          "stderr": "",
+          "output_sha256": "b5b17cf345748d6a16b72c31e08a98c49e9bf09041ca412b0a03c6ba4a58a093"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:original install records,early INI RemoteOnly/Language API bindings and final literal-zero gate\n",
+          "stderr": "",
+          "output_sha256": "b5b17cf345748d6a16b72c31e08a98c49e9bf09041ca412b0a03c6ba4a58a093"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_install_directory_history.py"
+      ],
+      "script_sha256": "5254f469efd2fcb041acddcaee973f9073970d5c117e712dcde209a0bcc46ec8",
+      "output": "analysis/evidence/audits/install-directory-history.json",
+      "pre_run_output_sha256": "825628c8db769971fe1c42df0d76aa67b2f62e303518e60b4c6a7d5c2836c10d",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:early four named directory checks,final13/4 pointer tables and complete attribute/create helpers\n",
+          "stderr": "",
+          "output_sha256": "825628c8db769971fe1c42df0d76aa67b2f62e303518e60b4c6a7d5c2836c10d"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:early four named directory checks,final13/4 pointer tables and complete attribute/create helpers\n",
+          "stderr": "",
+          "output_sha256": "825628c8db769971fe1c42df0d76aa67b2f62e303518e60b4c6a7d5c2836c10d"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_mode_admission_history.py"
+      ],
+      "script_sha256": "168c63cb2c619666a03d8da1bb890d09352bcbcafec84ebed4e340b445f0410d",
+      "output": "analysis/evidence/audits/mode-admission-history.json",
+      "pre_run_output_sha256": "f49d847155ff564ae9722cb5337dfb28b95b55522f2a338a2bd16f3d757d8edb",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:early budget bypass and signeddepth>=16; three-version gates with four ordinary derived examples\n",
+          "stderr": "",
+          "output_sha256": "f49d847155ff564ae9722cb5337dfb28b95b55522f2a338a2bd16f3d757d8edb"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:early budget bypass and signeddepth>=16; three-version gates with four ordinary derived examples\n",
+          "stderr": "",
+          "output_sha256": "f49d847155ff564ae9722cb5337dfb28b95b55522f2a338a2bd16f3d757d8edb"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_mode_refactor_boundaries.py"
+      ],
+      "script_sha256": "3534284da4da9b183f275b1cbbc6192eda2dd512ae2ba9ccaad923035e2a564c",
+      "output": "analysis/evidence/audits/mode-refactor-boundaries.json",
+      "pre_run_output_sha256": "784639520686fca4eefa365a331b91e89e9030e7cc6df9c2106204199826aff6",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:140->150 depth narrowing;150/160 body equality;160->161 two descriptor-cache substitutions with retained eligibility\n",
+          "stderr": "",
+          "output_sha256": "784639520686fca4eefa365a331b91e89e9030e7cc6df9c2106204199826aff6"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:140->150 depth narrowing;150/160 body equality;160->161 two descriptor-cache substitutions with retained eligibility\n",
+          "stderr": "",
+          "output_sha256": "784639520686fca4eefa365a331b91e89e9030e7cc6df9c2106204199826aff6"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_diagnostic_dialog_history.py"
+      ],
+      "script_sha256": "722aa81945e04c3456b3ab86ff2c777971051fb4da7b87f23a570bd87520a4bc",
+      "output": "analysis/evidence/audits/diagnostic-dialog-history.json",
+      "pre_run_output_sha256": "9beb67df1f2c0ecca53cdaaee1eed67625fd464c7e1326289d3c25234030fa96",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:three pinned520-byte handlers,early/final equality,only two flag bytes changed and retained caption/API binding\n",
+          "stderr": "",
+          "output_sha256": "9beb67df1f2c0ecca53cdaaee1eed67625fd464c7e1326289d3c25234030fa96"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:three pinned520-byte handlers,early/final equality,only two flag bytes changed and retained caption/API binding\n",
+          "stderr": "",
+          "output_sha256": "9beb67df1f2c0ecca53cdaaee1eed67625fd464c7e1326289d3c25234030fa96"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_driver_option_history.py"
+      ],
+      "script_sha256": "f0e89523bd182e5141a4c3e266a0aacc3c33d49da5cc24d6236eaac80e0e9584",
+      "output": "analysis/evidence/audits/driver-option-history.json",
+      "pre_run_output_sha256": "3cdce5271de4f329d83470b46374e3709cfbea442385f4567c2db90a0be25258",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:early filename/@device parser,live INI key131->140 rename and three pinned setting branches\n",
+          "stderr": "",
+          "output_sha256": "3cdce5271de4f329d83470b46374e3709cfbea442385f4567c2db90a0be25258"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:early filename/@device parser,live INI key131->140 rename and three pinned setting branches\n",
+          "stderr": "",
+          "output_sha256": "3cdce5271de4f329d83470b46374e3709cfbea442385f4567c2db90a0be25258"
+        }
+      ],
+      "repeatable": true
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "before_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "matches_prior": true,
+      "after_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b"
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "before_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "matches_prior": true,
+      "after_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6"
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "before_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "matches_prior": true,
+      "after_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb"
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "before_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "matches_prior": true,
+      "after_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+    },
+    {
+      "path": "analysis/evidence/probes/line-boundary-helper-probe.json",
+      "before_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0",
+      "matches_prior": true,
+      "after_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0"
+    },
+    {
+      "path": "reconstruction/README.md",
+      "before_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca",
+      "matches_prior": true,
+      "after_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca"
+    },
+    {
+      "path": "reconstruction/line_boundary.c",
+      "before_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437",
+      "matches_prior": true,
+      "after_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437"
+    },
+    {
+      "path": "reconstruction/line_boundary.h",
+      "before_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad",
+      "matches_prior": true,
+      "after_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary.py",
+      "before_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f",
+      "matches_prior": true,
+      "after_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary_windows.py",
+      "before_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab",
+      "matches_prior": true,
+      "after_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab"
+    },
+    {
+      "path": "reconstruction/tests/windows_adapter.S",
+      "before_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f",
+      "matches_prior": true,
+      "after_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f"
+    },
+    {
+      "path": "reconstruction/tests/windows_harness.c",
+      "before_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd",
+      "matches_prior": true,
+      "after_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd"
+    }
+  ],
+  "raw_reference_exports": [
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    }
+  ],
+  "selected_shared_dependencies": [
+    {
+      "path": "analysis/scripts/audit_thrash_loader_difference.py",
+      "sha256": "5bd4d21780b17971061bddf14a3dfb67944ca5556f4bdafb740f5e08e237d73c"
+    },
+    {
+      "path": "analysis/scripts/audit_dx5_reference_final.py",
+      "sha256": "cd7f5e69e9aac66c6dc1bfa2c0f04fe2c3486cf00388b4344b495a46d4b38ab2"
+    },
+    {
+      "path": "analysis/scripts/audit_mode_capacity_history.py",
+      "sha256": "a1f4c5dfca60375a4260ec8c8a1f75aa2448864872078ddae102676696ad42c0"
+    },
+    {
+      "path": "analysis/scripts/audit_endpoint_comma_history.py",
+      "sha256": "723ba3cc9a5bf731bed4fca6237c9668bef0e1fc6710dd6cbf3a6965faf92869"
+    },
+    {
+      "path": "analysis/evidence/audits/language-fallback-history.json",
+      "sha256": "38a4882ee641dd4631b6977d575276a7facc602221acdb7390f07e176e359a20"
+    },
+    {
+      "path": "analysis/evidence/audits/mode-admission-history.json",
+      "sha256": "f49d847155ff564ae9722cb5337dfb28b95b55522f2a338a2bd16f3d757d8edb"
+    }
+  ],
+  "limits": [
+    "Primary-agent22 static reruns, not independent semantic review, runtime, CI or whole-repository qualification.",
+    "No target/API/instruction execution, new exports, compilation, reconstruction edits or Ghidra reopening/mutation.",
+    "Hashes prove these files match recorded identities, not live GUI state, saved annotation correctness or runtime behavior.",
+    "Raw exports compare prior checkpoint hashes, not newly generated exports or freshly parsed original manifests.",
+    "Repeatability cannot prove every interpretation or extend the scripts\u2019 stated path/input coverage.",
+    "Selected shared dependencies are recorded, not a complete environment/package dependency lock."
+  ]
+}

@@ -21,6 +21,24 @@ These are bounded static findings, not proof of every release-note claim or runt
 |[Police-list spacing](original-modern-hud-layout.md#police-list-row-and-panel-spacing-use-smaller-data-coefficients) |Two coefficients20→12.414 feed row advance and panel layout |Actual compactness and resemblance to standard standings |
 |[Alpha Intensity](original-modern-effect-renderer-masks.md#alpha-intensity-connects-menu-writeback-to-packed-colour-scaling) |Voodoo-type bit gains admission; inspected helper scales all packed bytes below intensity1, bypasses at1 |Provider output, car shine and full setting/state lifetime |
 
+## Later startup, loading and mode findings
+
+The [eleven-audit checkpoint](evidence/validation/later-static-mechanisms-checkpoint.json) pins reviewed revision`1a5b591`:22/22 static reruns passed, all eleven evidence files matched committed outputs, and12 protected files plus12 raw exports retained their prior hashes. Reproduce with`python3 analysis/scripts/check_later_static_mechanisms.py`; the runner records its current reviewed HEAD and its own hash. This is primary-agent repeatability, not independent semantic review, runtime testing, export regeneration, compilation or Ghidra reopening. The broader comparison remains incomplete.
+
+| Investigation | Verified local mechanism/history | Remaining limit |
+|---|---|---|
+|[Music file copying](original-modern-music-selection.md#original-temporary-music-copy-is-removed-from-the-inspected-loading-route) |761-byte original copy routine replaced by NOPs; final requests source`.mus` path |Successful playback, complete I/O handling and fixed10MiB/performance claims untested |
+|[Progress estimator](original-modern-loading-timing.md#smoothing-is-branch-specific-not-a-monotonic-five-point-invariant) |50ms admission and branch-specific five-point fallback; exact100 bypasses throttle |Visible smoothness and monotonic lifecycle not established |
+|[Loading artwork](original-modern-loading-artwork.md#early-modern-already-has-the-six-tile-loading-artwork-path) |Early1.1.0 already has the six-tile path retained in final |Better visual quality and separate sprite-edge fix remain unverified |
+|[Race-dialog preselection](original-modern-race-dialog.md) |1.1.0→1.2.0 introduces1↔3 remap; checked direct callers establish ordinary order and helper stores/clamps row index |Indirect/restricted admission and live menu interaction remain separate |
+|[Border history](original-modern-border-geometry.md#historical-coefficient-halving-precedes-the-fitted-width-cache-rewrite) |Early coefficient4→2;1.5.3→1.6.0 adds fitted-width/cached thickness |Integer/visible ratio and refresh lifetime untested |
+|[Installer settings](original-modern-language-table.md#installer-settings-move-to-early-ini-but-remoteonly-is-not-retained-in-final) |Original install records→early INI Language/RemoteOnly; final remote gate writes0 |Startup without file, complete access coverage and exact RemoteOnly removal date unknown |
+|[Installation directories](original-modern-startup-paths.md#early-four-directory-installation-check-versus-final-preparation-tables) |Early checks four directories; final requires thirteen plus four preparations |Directory attributes do not validate assets, permissions or startup success |
+|[Early mode restrictions](original-modern-display-modes.md#early-modern-already-bypasses-the-budget-gate-and-has-a-broader-depth-test) |Early bypasses budget gate and admits signed depth>=16 |Provider support, actual menu/display operation and1.0.0 introduction untested |
+|[Mode refactor dates](original-modern-display-modes.md#depth-narrowing-and-descriptor-caching-occur-in-different-releases) |Depth16/32 helper introduced140→150; descriptor cache use160→161 |Cache/provider side effects and machine-state equivalence remain separate |
+|[Diagnostic dialog](original-modern-startup-policy.md#early-release-already-contains-the-diagnostic-dialog-flag-change) |Early/final handler requests error icon and explicit topmost bit; original buttons/caption retained |Actual focus/appearance and all error boxes not verified |
+|[Driver options](original-modern-renderer-loading.md#early-filename-and-device-suffix-interface-then-driver-key-rename) |Early filename/.dll/@device parser; VideoDriver→ThrashDriver131→140 |1.0.0 aliases, malformed parser domains and successful driver/device selection unverified |
+
 ## Evidence and scope
 
 - [x87 precision comparison](og-modern-x87-precision.md): verified original single-precision switches removed by Modern Patch; frontend/render scopes and runtime limits explained.
