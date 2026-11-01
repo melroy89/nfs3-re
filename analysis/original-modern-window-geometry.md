@@ -47,3 +47,23 @@ Modern's renderer path calls this retained centring helper before a mode request
 ## Remaining comparison work
 
 Verified: retained style/size construction through CreateWindowExA, changed post-creation setup and exact sizing-helper equality. Pending: base-style/context producers, meaning and other users of `00564814`, replacement cursor/input setup, all foreground/focus paths, DPI/multiple-monitor behavior and actual windowed/fullscreen operation. No broad runtime improvement or historical release date follows from this static chapter alone.
+
+## Removed startup reset of keyboard toggles
+
+The [expanded window audit](scripts/audit_window_initialization_difference.py) now retains the complete original helper `004fb710..004fb78f` and its two adjacent Num Lock wrappers, in addition to the complete paired creation routines. The [manifest](evidence/audits/original-modern-window-initialization.json) identifies actual imports `GetKeyState` at `00534744` and `keybd_event` at `005347ac` in both binaries. No keyboard event was generated during inspection.
+
+The helper consumes EAX as an index and EDX as the desired toggle state. It reads GetKeyState's low bit, compares the resulting0/1 with the requested value, and does nothing when equal. Otherwise it calls keybd_event twice with extra-info0:
+
+| Index | Virtual key / scan byte | Down flags / up flags |
+|---:|---|---|
+|0 | Caps Lock:0x14 /0x3a |0 /2 |
+|1 | Num Lock:0x90 /0x45 |1 /3 |
+|2 | Scroll Lock:0x91 /0x46 |0 /2 |
+
+Other index values return without this pair. Flags1 and2 are EXTENDEDKEY and KEYUP respectively; the API describes synthesized key transitions and demonstrates Num Lock toggling. See [Microsoft keybd_event](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-keybd_event) and [GetKeyState](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getkeystate). These API contracts explain the call shape; they do not demonstrate Windows/Wine accepted events or changed physical LEDs.
+
+The original creation caller supplies desired EDX0 for indices0/1/2 at `004cd4a9`, `004cd4b5` and `004cd4c1`. It reaches these calls only after successful CreateWindowExA and when `00561298 == 0`. Thus the observed original policy is conditional clearing of toggle state at this creation boundary, not unconditional clearing on every conceivable startup path. Adjacent original wrappers at `004fb6f0`/`004fb700` request Num Lock1/0, but their own caller reachability is not established here.
+
+Modern returns directly after its shared-state store at `004cd475..004cd488`, omitting the original reset calls. The old helper's address range is reused by the [INI/environment implementation](original-modern-configuration.md), so same-address Modern bytes are not a corresponding keyboard helper. Both imports and the keybd_event thunk remain; their presence must not be reported as proof that startup still resets toggles, or as newly added functionality.
+
+MP100-038 has **bounded static support** for removal of this original startup operation. All alternate/indirect callers, device/OS effects, toggle state observed at launch and v1.0.0 introduction remain unverified. The separate [Num Lock keypad translation change](original-modern-window-key.md) concerns handling later input and must not be conflated with this removed reset.

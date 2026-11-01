@@ -54,6 +54,13 @@
           "bytes_sha256": "2fdb3d6f9ce07055edb26065e1e91d53dc45fac0730a4da6cd2158479f39a258",
           "assembly": "analysis/captures/modern-differences/window/original-004cd350.asm",
           "assembly_sha256": "d9d27d8f9701dd893a1461b177d8d6c6e46a05afd0237a090459865589b33c10"
+        },
+        {
+          "start": "004fb6f0",
+          "end": "004fb78f",
+          "bytes_sha256": "8469e2eef68d822d466d4d3a002fbfe8eb1721034df05316e86b58c7afa0ac3e",
+          "assembly": "analysis/captures/modern-differences/window/original-004fb6f0.asm",
+          "assembly_sha256": "04ee578350e302e4b7eabd9bf94ef5e4bb9b3ec5a642940b16a08852c368824c"
         }
       ],
       "registrations": [
@@ -434,5 +441,35 @@
       "end": "004cdc4c",
       "sha256": "76419444daa4894ba15cd928b7328d2851fd81f13a5ec62bf389ea07c7cdfae9"
     }
-  ]
+  ],
+  "removed_toggle_reset": {
+    "original_helper": "004fb710..004fb78f",
+    "original_creation_calls": [
+      "004cd4a9",
+      "004cd4b5",
+      "004cd4c1"
+    ],
+    "index_keys": {
+      "0": "Caps Lock, VK14h, scan3ah, flags0/2",
+      "1": "Num Lock, VK90h, scan45h, flags1/3",
+      "2": "Scroll Lock, VK91h, scan46h, flags0/2"
+    },
+    "contract": "EAX=index, EDX=desired toggle; GetKeyState low bit differs -> keybd_event down/up pair. Original creation supplies desired0.",
+    "retained_imports": {
+      "original": {
+        "GetKeyState": "00534744",
+        "keybd_event": "005347ac"
+      },
+      "official_modern": {
+        "GetKeyState": "00534744",
+        "keybd_event": "005347ac"
+      }
+    },
+    "modern": "Matched creation routine returns at004cd487; original three-call setup absent. Old helper addresses reused by INI readers.",
+    "limits": [
+      "Original route requires successful window creation and00561298==0.",
+      "Import retention is not evidence of current startup calls; all indirect/external routes and runtime LED/toggle state untested.",
+      "No simulated keyboard events executed; exact release introduction unverified."
+    ]
+  }
 }

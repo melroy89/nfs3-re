@@ -33,8 +33,9 @@ def main():
         rows = []
         registrations = []
         hook_start = 0x4ccc70 if label == 'original' else 0x4ccb84
+        extra = [(0x4fb6f0,0x4fb78f)] if label == 'original' else []
         for start, end in COMMON_SPANS + [(hook_start, 0x4cce90),
-                (0x4cd350, 0x4cd4d1 if label == 'original' else 0x4cd488)]:
+                (0x4cd350, 0x4cd4d1 if label == 'original' else 0x4cd488)] + extra:
             text = subprocess.check_output(['objdump', '-d', '-Mintel',
                 f'--start-address={start}', f'--stop-address={end}', relative], cwd=ROOT, text=True)
             out = capture/f'{label}-{start:08x}.asm'
@@ -76,6 +77,25 @@ def main():
     assert result['removed_messages'] == ['0007', '0008']
     assert result['added_messages'] == ['0001', '001c', '0218']
     result['identical_geometry_ranges'] = []
+    original,modern = images['original'],images['official_modern']
+    assert original.get_data(0xcd4a7,31).hex() == '31d2e862e20200b80100000031d2e856e20200b80200000031d2e84ae20200'
+    assert modern.get_data(0xcd475,19).hex() == 'c705144856000000000089ec5d5f5e5a595bc3'
+    imports={}
+    for label,pe in images.items():
+        row={i.name.decode():f'{i.address:08x}' for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports
+             if i.name in [b'GetKeyState',b'keybd_event']}
+        assert row=={'GetKeyState':'00534744','keybd_event':'005347ac'}
+        imports[label]=row
+    result['removed_toggle_reset']={
+        'original_helper':'004fb710..004fb78f','original_creation_calls':['004cd4a9','004cd4b5','004cd4c1'],
+        'index_keys':{'0':'Caps Lock, VK14h, scan3ah, flags0/2','1':'Num Lock, VK90h, scan45h, flags1/3',
+                      '2':'Scroll Lock, VK91h, scan46h, flags0/2'},
+        'contract':'EAX=index, EDX=desired toggle; GetKeyState low bit differs -> keybd_event down/up pair. Original creation supplies desired0.',
+        'retained_imports':imports,
+        'modern':'Matched creation routine returns at004cd487; original three-call setup absent. Old helper addresses reused by INI readers.',
+        'limits':['Original route requires successful window creation and00561298==0.',
+                  'Import retention is not evidence of current startup calls; all indirect/external routes and runtime LED/toggle state untested.',
+                  'No simulated keyboard events executed; exact release introduction unverified.']}
     for start, end in IDENTICAL_SPANS:
         old_bytes = images['original'].get_data(start-0x400000, end-start)
         assert old_bytes == images['official_modern'].get_data(start-0x400000, end-start)
