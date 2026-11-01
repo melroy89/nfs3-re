@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "8913c495dff7e3b6576f2deaf653c4a39adcbe3aff4e2619e9861919199c386f",
-      "relative_links": 211
+      "sha256": "537608ecf6c320207b82f4ec32d32b7fb0454a14704f3861fb27e722ac78b2c0",
+      "relative_links": 212
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "911fb4030371e188507e4af8cc6ca5ec22cca3c5741db8e13f5fbf54baeb15a3",
+      "sha256": "c554ed454399e319d1232c2395cb825dd038fc224a71ce5f27c9930c2208c95e",
       "relative_links": 239
     },
     {
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "c5ba7ef7ebfc0317cbd0c4e92131abad49d94ac849bd4db6020ac761bf3fa898",
-      "relative_links": 739
+      "sha256": "086a29e5d11a3374ac5e5fac189258841289f558c999a33970c0a9e20b1fdb58",
+      "relative_links": 741
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -233,8 +233,8 @@
     },
     {
       "path": "analysis/original-modern-language-table.md",
-      "sha256": "d26ee26165dd4cf64993c5af340b14ae59dfdb85dc0935e32c2bb25477379a63",
-      "relative_links": 13
+      "sha256": "caab74f440064eb835b1c1b56ef70399005294a7f839395d8701df74f9f8e0b1",
+      "relative_links": 15
     },
     {
       "path": "analysis/original-modern-loading-artwork.md",
@@ -653,8 +653,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "3c011292410422b2044c5f5cad1bdb8dc1dfb2ded78dcab73a94b1c42c51d033",
-      "relative_links": 207
+      "sha256": "fddb616f7091d6c9dd125f8369bf4456fc393ad4a4dd852276aacac875b4f7ce",
+      "relative_links": 208
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2555,
+  "relative_link_count": 2561,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

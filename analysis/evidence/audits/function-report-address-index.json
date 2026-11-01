@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "8913c495dff7e3b6576f2deaf653c4a39adcbe3aff4e2619e9861919199c386f"
+      "sha256": "537608ecf6c320207b82f4ec32d32b7fb0454a14704f3861fb27e722ac78b2c0"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -189,7 +189,7 @@
     },
     {
       "path": "analysis/original-modern-language-table.md",
-      "sha256": "d26ee26165dd4cf64993c5af340b14ae59dfdb85dc0935e32c2bb25477379a63"
+      "sha256": "caab74f440064eb835b1c1b56ef70399005294a7f839395d8701df74f9f8e0b1"
     },
     {
       "path": "analysis/original-modern-loading-artwork.md",
@@ -5369,7 +5369,11 @@
           "addresses": [
             "00472aff",
             "00472b08",
-            "00472b09"
+            "00472b09",
+            "00472b1d",
+            "00472b2b",
+            "00472b38",
+            "00472b43"
           ]
         },
         {
@@ -8527,6 +8531,7 @@
           "entry_mentioned": true,
           "addresses": [
             "004a6e68",
+            "004a6eb0",
             "004a6ec0"
           ]
         },
@@ -8562,6 +8567,13 @@
           "entry_mentioned": true,
           "addresses": [
             "004a6ec4"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-language-table.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a6f0a"
           ]
         },
         {
@@ -13724,6 +13736,14 @@
           "entry_mentioned": true,
           "addresses": [
             "004fb6f0"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-language-table.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004fb6f0",
+            "004fb704"
           ]
         },
         {

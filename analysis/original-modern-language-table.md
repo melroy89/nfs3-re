@@ -163,3 +163,23 @@ classifier/publication link. Actual file contents/provenance, all callers,
 read-helper failure/truncation, other record consumers, later writes and
 runtime media/audio effects remain unresolved. No installation file was
 opened through the target, and no game/API/instruction probe was executed.
+
+## Installer settings move to early INI, but RemoteOnly is not retained in final
+
+**Verified static local configuration paths; startup success untested.** The [installer-settings history audit](evidence/audits/install-settings-history.json), reproduced with `python3 analysis/scripts/audit_install_settings_history.py`, pins supplied original, author-hosted1.1.0 and official final EXEs. It reuses the original processed-record ownership and remote-prefix publication above, plus the [config-tail comparison](original-modern-config-loading.md#mediaaudio-gate-snapshots-the-original-remote-prefix-classification).
+
+| Settings stage | Language source | Remote/media gate source |
+|---|---|---|
+|Supplied original |First nonempty processed`install.win` record |Second record's six-byte`remote` prefix classification; published to`006fbb54` |
+|Modern1.1.0 |`[NFS3] Language`, default`english`, capacity8, profile-string API |`[NFS3] RemoteOnly`, integer default0, normalized nonzero→1; published to`006fbb54` |
+|Official final1.6.1 |INI language selector, already mapped above |Config-tail literal0 store; early RemoteOnly helper span replaced by NOPs |
+
+Early complete33-byte helper`004b62a0..004b62c1` sets EBP to section`NFS3`, EBX to key`RemoteOnly`, EDX0 and calls`004fb6f0`. That complete19-byte wrapper passes the filename buffer`007a263c` to imported GetPrivateProfileIntA. The result is tested:0 remains0, any nonzero becomes1. Config tail`00472b38` calls this helper and`00472b43` publishes EAX to`006fbb54`, retaining the original caller's destination while changing the source.
+
+Early language selector`004a6eb0..004a6f0a` supplies key`Language`, default`english`, destination`007a2634` and capacity8 to`004fb704`. That complete21-byte wrapper calls GetPrivateProfileStringA using the same filename buffer. The selector then normalizes/compares language names and publishes the selected index; full string/failure behavior remains governed by the linked language analysis. Filename-buffer initialization is a separate startup-path requirement; a static buffer address is not an observed valid filename.
+
+Final's checked config tail`00472b1d..00472b2b` clears ECX and writes zero to`006fbb54`. The former early33-byte RemoteOnly helper span is NOPs, and the final file contains no case-insensitive ASCII`RemoteOnly` literal. This is a local changed producer plus a bounded string census, **not proof that every later alias/bulk write or computed setting name is absent**. The exact intervening release removing RemoteOnly is not dated here.
+
+A literal-search qualification matters: early1.1.0 lacks the lowercase filename literal but retains **one case-insensitive INSTALL.WIN occurrence**, within`RENDITION not yet supported (INSTALL.WIN)`. This diagnostic is not itself a file-open call, nor is its presence evidence that the new INI path still depends on that file. Its complete caller/lifetime is not qualified by this audit. Final has no case-insensitive ASCII occurrence. Original file reading is established through the captured open/read/copy path, not merely its filename string.
+
+**MP100-022 advances to partial historical support:** the original installer-record settings path is replaced by early INI selectors, while the old bullet's “Language and RemoteOnly moved to INI” must not be presented as final Modern's configuration contract. Actual startup without the file, every file-access path, original file/read failures, later gate writers and1.0.0 introduction remain unverified. `RemoteOnly` is the observed key name; it is not independently equated to multiplayer or a particular external-media arrangement. No installer file, INI, game, API, instruction probe or Ghidra database was executed or changed.

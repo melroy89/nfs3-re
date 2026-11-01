@@ -625,7 +625,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **100 Claimed, 51 Static, 137 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **99 Claimed, 51 Static, 138 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -936,7 +936,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-019 | Because of fixed hardware detection bug quality of the starting movie will be much better (in comparison to original version) on modern computers. | Partial |
 | MP100-020 | The game reads system settings from ini file now. No more registry! Name of the ini file have to be exactly like the name of game's exe file, but with *.ini extension. For example, for nfs3.exe it have to be nfs3.ini. | Partial |
 | MP100-021 | The game automatically binds own process to one core for avoiding hang, so there is no more reasons to install any SDB compatibility files to run this game. This behaviour might be disabled, see SingleProcAffinity setting in ini file. | Unresolved |
-| MP100-022 | The game doesn't require file install.win which was created by NFS3 installation utility. All settings which were in this file were moved to ini file (Language and RemoteOnly options). | Claimed |
+| MP100-022 | The game doesn't require file install.win which was created by NFS3 installation utility. All settings which were in this file were moved to ini file (Language and RemoteOnly options). | Partial |
 | MP100-023 | You can choose thrash video driver from ini file, simply set VideoDriver setting to D3D, Voodoo2, or SoftTri. You can set device number in VideoDeviceId setting (but it affects only D3D mode, as in original version of NFS3). | Claimed |
 | MP100-024 | You can disable all intro movies by NoMovie setting in ini file. | Partial |
 | MP100-025 | Suppressing of displaying Windows Error Reporting dialog on fatal errors is disabled by default. So if something go wrong you will know about it. But you can enable suppressing of error reporting via NoErrorReporting setting in the ini file. | Static |

@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **100 vendor-only,51 bounded-static,137 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **99 vendor-only,51 bounded-static,138 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -697,3 +697,7 @@ The [five-baseline comparison](original-modern-border-geometry.md#historical-coe
 ## Race-dialog caller and initial-selection storage follow-up
 
 The [expanded caller audit](original-modern-race-dialog.md#checked-direct-callers-exclude-the-compacted-array-premise) verifies both decoded direct callers passEAX1 and explicitly clear the restriction flag before the builder, without intervening calls. The retained dialog helper stores/clamps the passed candidate into00558b3c. Compacted C1 rows remain a separate local case with no demonstrated direct-caller admission here; no runtime bug or universal fix is inferred. MP120-002 stays partial and catalog counts unchanged. Callback/live interaction and indirect callers remain unverified; no target execution or database changes.
+
+## Installer-record settings versus early/final INI behavior
+
+The [three-baseline history](original-modern-language-table.md#installer-settings-move-to-early-ini-but-remoteonly-is-not-retained-in-final) verifies early1.1.0 Language/RemoteOnly profile-API wrappers and normalized RemoteOnly publication, contrasting original install-record sources and final literal-zero gate. Early retains INSTALL.WIN only in the checked diagnostic literal census; string presence is not a file-read proof. MP100-022 advances to partial, counts99/51/138/2. Exact removal date, full file-access coverage, actual startup and1.0.0 introduction remain unverified; no target execution or database changes.
