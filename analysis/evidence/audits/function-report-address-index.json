@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "f850535bd6546f97c0c244739a1844d2adfb76b027854836528e30ab57f810aa"
+      "sha256": "db564517ecfffff088083ca1daaf1bc601ac3b9c5382b53410c2827e5933e290"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -213,7 +213,7 @@
     },
     {
       "path": "analysis/original-modern-mode-selection.md",
-      "sha256": "9a231c0505a5b9eea1656bb840201d8de3de8787bf32ab454195e418d82b5d66"
+      "sha256": "59f0fee3ebc2d5588bf607ed53b6508e316fb3ee60e5027ee27a01b6f1ab3c4c"
     },
     {
       "path": "analysis/original-modern-mouse-cursor.md",
@@ -9876,6 +9876,7 @@
             "004bef24",
             "004bef2a",
             "004bef47",
+            "004bef4b",
             "004bef50",
             "004bef94",
             "004bef9c"

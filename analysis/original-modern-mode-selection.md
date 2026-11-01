@@ -56,6 +56,23 @@ The final lexicographic row is1920×1080. With exactly these candidates, request
 
 Thus the sentinel can represent an area-preference request that differs from the row originally selected as the final menu entry. Do not reconstruct it as an unconditional “return last sorted row” shortcut or claim that it preserves an arbitrary selected resolution across reinitialization. Actual provider lists, user selection, settings lifetime and any visible change remain unverified. Original's numeric mode-selection policy is separately mapped above; this example concerns Modern's two linked policies.
 
+## Historical1.3.1 uses a different scalar sentinel
+
+`python3 analysis/scripts/audit_resolution_sentinel_release_boundary.py` compares the author-hosted1.3.0/1.3.1 EXEs, separately from retail-original/final correspondence. The [manifest](evidence/audits/resolution-sentinel-release-boundary.json) pins archive/member hashes, complete collectors/selector/update bodies, transition envelopes and startup calls. These versions must not inherit the final patch's packed WORD request format.
+
+Both historical builds score a mode as low32 bits of **width*height+depth**. In1.3.0, selected-row helper004483dc stores that concrete scalar to006fbc18. In1.3.1:
+
+1. List initializer004482c0 resets maximum-score cell007a27b0 to0 alongside count reset.
+2. Admitted menu rows update that maximum on a signed-greater comparison.
+3. Selected-row update004483dc compares its score with the tracked maximum. Equality stores **7fffffffh** to006fbc18; other rows store their scalar score.
+4. The separately entered active-dimension publisher004483f8 updates006fd1e4..006fd1ec. The driver-ID-to-menu selector now calls this entry directly, preserving the stored sentinel rather than rewriting the persistent request to the newly selected concrete score.
+
+The graphics transition envelope004484e0..00448558 is byte-identical across these two versions and still calls004483dc for an accepted selection. Complete score selector004bee80..004bef4b also matches: it filters driver records, minimizes signed absolute score distance, keeps earlier candidates on equal distance, and falls back to index1 when none is selected. Startup at00473279 loads006fbc18, calls that selector, then maps the resulting driver index through004483a0.
+
+For ordinary nonnegative fitting scores below7fffffffh, minimizing distance to that sentinel selects the largest eligible score in the newly queried set. This supplies **partial static support for MP131-004**, the release's biggest-resolution persistence claim. It is not a display hotplug observation, proof of complete settings serialization, or an all-input maximum algorithm: products/addition wrap32, signed absolute distance has its INT_MIN boundary, score includes depth, and menu/full-driver candidate sets may differ.
+
+The historical change also separates request storage from active dimension publication; the latter invokes00485680 on a width/height change rather than assuming every changed scalar denotes changed dimensions. Entire helper/caller lifetimes and actual output remain unverified. Final1.6.1 later uses **7fff7fffh packed dimensions** and its own area/depth policy as documented above; do not implement the1.3.1 mechanism by substituting those later semantics. No target instructions or provider/window events were executed.
+
 ## Modern application and live record
 
 `004beeb0` takes the requested index in EAX, clamps signed values below 1 to 1, and forms `record_base + index*0x28` using low-32-bit arithmetic. Its branches are materially different:
