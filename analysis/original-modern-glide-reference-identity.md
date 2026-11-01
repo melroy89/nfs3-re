@@ -391,3 +391,18 @@ The last envelope previously held four static import thunks: grVertexLayout, grC
 The paired code-section routing is complete above; do not repeat that inventory or substitute the different local-candidate baseline. Further driver work should target a concrete remaining data/import/lifetime or provider question, using the existing final insertion/extra-slot limits. The broader EXE comparison can proceed independently; unresolved projection capture/lifetime and original/Modern runtime compatibility retain separate evidence gates.
 
 **Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Also verified:** complete about local differences and reference fixed-table/query contract. **Pending:** remaining hosted/final function/ABI/data comparisons, transitive failure/registered-finalizer lifetimes, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.
+
+## DDRAW import removal is verified across140 to150 for both named binaries
+
+**Verified bounded PE-table change, including the claimed historical boundary.** The [DDRAW import audit](evidence/audits/ddraw-import-history.json), reproduced with `python3 analysis/scripts/audit_ddraw_import_history.py`, pins both author-hosted release archives and all four historical member hashes. It retains complete parsed normal/delay import inventories, IAT addresses and delay-directory metadata.
+
+| Package/member |1.4.0 |1.5.0 |Official final |
+|---|---|---|---|
+|`nfs3.exe` |`DDRAW.dll!DirectDrawCreate` static import |No DDRAW static descriptor |No DDRAW static descriptor |
+|`drivers/glide3x/voodoo2a.dll` |Same static import |No DDRAW static descriptor |No DDRAW static descriptor |
+
+Neither historical member has a nonzero PE delay-import directory, so the change is not a move into that directory in these selected files. The supplied original EXE independently has the static DDRAW import. The driver baseline here is specifically the named author-hosted1.4.0 member, not a newly authenticated retail driver or every packaged renderer variant.
+
+**MP150-045 advances to bounded-static support:** both named files remove the exact import at1.4.0→1.5.0. This is a PE-table claim and is directly answerable without running a game. It must not be expanded into “DirectDraw is no longer required or used.” The [driver creation-helper analysis](#directdraw-creation-moves-from-a-static-import-to-conditional-lookup) already proves conditional lookup of DirectDrawCreate; the EXE's [startup compatibility check](original-modern-startup-requirements.md) also dynamically loads/resolves DirectDrawCreate, and its [renderer compatibility path](original-modern-renderer-loading.md) resolves optional SetAppCompatData. Those selected consumers, failures and module-reference lifetime remain qualified in their respective reports.
+
+The inspected archives were only read/extracted in memory; no DLL, loader, API, game or instruction probe was executed. Import absence is not a transitive dependency inventory, successful startup proof or full binary equivalence. Exact identities and import rows permit later reconstruction to distinguish static link requirements from proven conditional runtime interfaces.
