@@ -213,3 +213,7 @@ The [historical DX6 audit](original-modern-renderer-texel-alignment.md) verifies
 ## DX8 fog representation checkpoint
 
 The [paired helper inspection](original-modern-renderer-texel-alignment.md#dx8-fog-related-vertex-policy-partial-historical-evidence) establishes the newer mode0x10 table-derived DWORD store at vertex+0x14, default inverse-byte table and local state writers. The older helper already has depth/table/colour-blending logic; absence of fog in v1.6.0 is not claimed. MP161-002 now has partial support, with API format/state contracts and visible fog explicitly outstanding. Current labels:148 vendor-only,41 bounded static,98 partial,3 unresolved.
+
+## DX8 API contract checkpoint
+
+The [API follow-up](original-modern-renderer-texel-alignment.md#dx8-api-and-vertex-format-follow-up) traces the imported factory, device-output slot, render-state wrapper and two FVF layouts to the new specular-alpha store. Header snapshots and instruction spans are pinned in the audit. The table setter is a transformation, not a direct copy. Full dispatch/table semantics and visible fog remain unverified; MP161-002 stays partial. No target execution or executable/database edits.

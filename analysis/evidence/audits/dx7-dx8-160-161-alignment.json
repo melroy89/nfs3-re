@@ -352,6 +352,55 @@
               "sha256": "05cf1917eb068db8248c1f785e354c1034cea4430a3fe40499054309c7dc8181",
               "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60006501.asm",
               "assembly_sha256": "aabad3d7cdcc8f4950f600a8ecde98cc7a76be09336bf4236eeaf3df01f8ef06"
+            },
+            {
+              "start": "60001b40",
+              "end_exclusive": "60001b68",
+              "sha256": "51fcbcb3faf546d5b6828de22cd7dc1c7002ea21c9cc51eab02f6765490df1ef",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60001b40.asm",
+              "assembly_sha256": "b6bbc22808153bba29ee9bbbd415655d27300fb22ae180c4f19c1118ee8875ea"
+            },
+            {
+              "start": "60001f20",
+              "end_exclusive": "60001fc2",
+              "sha256": "9ec953de59178a54515b54e098300acc36f31b32db2cb18f56322e113fb3b36c",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60001f20.asm",
+              "assembly_sha256": "592783827e985486dfc5ba846aae3a6fe031ff0320940cfd373864d7ebf8a422"
+            },
+            {
+              "start": "60003740",
+              "end_exclusive": "6000375a",
+              "sha256": "433defcc00ad8480ddffa3b6cfda2647235bac3c7b1df58c73a1a26d0b2d7c17",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60003740.asm",
+              "assembly_sha256": "6305a85cffe23f5972bab61b485c0184616afe514f6b95b1613036006efd37a4"
+            },
+            {
+              "start": "60003d2a",
+              "end_exclusive": "60003d51",
+              "sha256": "f0dc45c7a5250bc59c92be8da2c7a906019119b9179e4a8f0ec3051567b4ead7",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60003d2a.asm",
+              "assembly_sha256": "c873e1932cdfef0ae53242004225a828f813e5f47d08c482907c8716b11c2add"
+            },
+            {
+              "start": "600061ec",
+              "end_exclusive": "6000627e",
+              "sha256": "64df9dbf90cd718d4c788f4736e6fc181db84f9abb406f06d68a54d3c160ae17",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-600061ec.asm",
+              "assembly_sha256": "e6120d44305efe545ed7571a215a020150757a3c6f8173f0f8052dcc8b6467c5"
+            },
+            {
+              "start": "600076f0",
+              "end_exclusive": "600077c0",
+              "sha256": "053402e17d56d221c1a354718bda129066be32dc7e8b69298d96680b4a54d58d",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-600076f0.asm",
+              "assembly_sha256": "ba7f1401be3f8fc3fa0d0aa991667883ea544d398b1740544c595671b8fcc517"
+            },
+            {
+              "start": "60011244",
+              "end_exclusive": "6001124a",
+              "sha256": "e5a9ca13b654196d499af88c94d5995150dbb7826a1cad53d94292cd67f396c1",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60011244.asm",
+              "assembly_sha256": "7cb93d6bee50609f7679c01090b77b253336bb97d40043b2d0ee1b7349697b0d"
             }
           ]
         }
@@ -360,6 +409,27 @@
       "constant": 0.5,
       "contract": "Matched vertex helper has15 retained direct calls; new prefix subtracts0.5 from one supplied vertex X/Y before existing/reworked colour/fog policy. Other helper changes are not declared equivalent."
     }
+  },
+  "api_header_evidence": {
+    "headers": {
+      "d3d8.h": {
+        "snapshot": "analysis/captures/modern-differences/dx8-api-headers/d3d8.h",
+        "sha256": "e93563a03f30a83dae6afe20ad0061558f6a56fe7d101b3d883749b47d1edeef",
+        "url": "https://raw.githubusercontent.com/mingw-w64/mingw-w64/master/mingw-w64-headers/include/d3d8.h"
+      },
+      "d3d8types.h": {
+        "snapshot": "analysis/captures/modern-differences/dx8-api-headers/d3d8types.h",
+        "sha256": "6443383135f69c8199f4c9c1b81717b94ade16ae625f760f198d7c49d864353d",
+        "url": "https://raw.githubusercontent.com/mingw-w64/mingw-w64/master/mingw-w64-headers/include/d3d8types.h"
+      }
+    },
+    "device8_vtable_byte_offsets": {
+      "SetRenderState": 200,
+      "DrawPrimitive": 280,
+      "SetVertexShader": 304,
+      "SetStreamSource": 332
+    },
+    "limits": "Primary implementation header snapshots qualify ABI labels; no API execution or device acceptance."
   },
   "limits": [
     "Official historical renderer pairs, not original-retail DLL pairing.",
