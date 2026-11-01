@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "6197ff6a4f7553df72b06c76e5c8dc2f30c252daf3e77e706f957069e0f30014",
-      "relative_links": 72
+      "sha256": "9a225a1be53e783b34d3aab5939acd51834dc3a1615a653576341645d5f0eca5",
+      "relative_links": 73
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,8 +103,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "3b306dc288284e4952dedec1852e14fa6f8d432a63b85cb2bdd6140e05b0bda3",
-      "relative_links": 161
+      "sha256": "678fa78cf616b0a7ce3a04dc1b22cc337d8efcc2534c32f98894d0c0a524bcca",
+      "relative_links": 162
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -113,8 +113,8 @@
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
-      "sha256": "c40b8cae9ebb8b956014964a24d4cdf4c336bdb76ecbeaa0e204601bbbc6a12e",
-      "relative_links": 11
+      "sha256": "cdec4a70d800fe5fc8280ca7e94f8b6b1069003ff61c799c6ca5161ee07cabbb",
+      "relative_links": 12
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
@@ -310,6 +310,11 @@
       "path": "analysis/original-modern-options-postgame.md",
       "sha256": "0ce2d2a073ee681a6ba2b4f60328c0442cae237473a9b5f941206e586ed90e04",
       "relative_links": 9
+    },
+    {
+      "path": "analysis/original-modern-original-reference-bundle.md",
+      "sha256": "98867bc0d758cf767959c097ca5e5c7741d2eba1a9cf723abb429701232e8a95",
+      "relative_links": 2
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
@@ -592,8 +597,8 @@
       "relative_links": 16
     }
   ],
-  "file_count": 118,
-  "relative_link_count": 1899,
+  "file_count": 119,
+  "relative_link_count": 1904,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

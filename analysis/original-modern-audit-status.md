@@ -290,3 +290,7 @@ The [filter/copy audit](original-modern-dialog-input.md#retained-filter1-and-bou
 ## Car-class output identity established
 
 The [class-text chain](original-modern-car-alias.md#alias-expansion-reaches-localized-car-class-text) resolves the expanded car2/carShowcase renderer branch through model+388h, localized IDs190..192 and text submission. Ordinary class0..2 gives Class A/B/C in the pinned English asset. Registry pointer/index validity and actual UI output remain unverified. MP140-021 gains partial support. Current counts:140 vendor-only,45 bounded static,103 partial,2 unresolved.
+
+## Original-reference bundle acquired with explicit variant boundary
+
+The [98-file inventory](original-modern-original-reference-bundle.md) pins an author-hosted reference bundle:80 menus, six HUD-position files, six PE files and six others. Its EXE differs from the established supplied original by exactly one byte at4b639b; it was not substituted. Candidate original-side renderers are now available for explicit pairing, while pristine-retail provenance remains unverified. No semantic catalog claim is promoted from artifact identity alone; counts unchanged.

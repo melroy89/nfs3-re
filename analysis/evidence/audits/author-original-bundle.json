@@ -1,0 +1,861 @@
+{
+  "kind": "author-hosted-original-reference-bundle",
+  "url": "https://veg.by/files/nfs3/nfs3_orig.7z",
+  "archive": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+  "archive_bytes": 1087633,
+  "archive_sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127",
+  "members": [
+    {
+      "member": "fedata/MENUS/AD.MNU",
+      "bytes": 1262,
+      "sha256": "92f987bd626e97aff262c9479eaba739d4ed8462e31af3e3b2ae16c5c04cb733"
+    },
+    {
+      "member": "fedata/MENUS/ADVGRPH.MNU",
+      "bytes": 5651,
+      "sha256": "5900f10ec59b68b9fed049ae08cc4bb112d90322bcc91826c3313d5f7f278f4d"
+    },
+    {
+      "member": "fedata/MENUS/AITUNER.MNU",
+      "bytes": 3775,
+      "sha256": "01ae3ab56a1728f440183fdf198fc8ee6ea2d2e55983be6f0d5bba295244b4ad"
+    },
+    {
+      "member": "fedata/MENUS/AUDFEED.MNU",
+      "bytes": 3839,
+      "sha256": "3c4f1ef57dfa2dcee24feb5ac6a56a7b0103b262beb0ca6eb25b83616495aa62"
+    },
+    {
+      "member": "fedata/MENUS/AUDIO.MNU",
+      "bytes": 6752,
+      "sha256": "cf4e17dfff394b5e21c7e1afbb6c3da2df7c7f5333a6f7b459370138b59af323"
+    },
+    {
+      "member": "fedata/MENUS/CAMERA.MNU",
+      "bytes": 3266,
+      "sha256": "bdeeb5b38abb48858e27467eb3bb37d0ba78821bd0c0e755ed3251df1b059b04"
+    },
+    {
+      "member": "fedata/MENUS/CAR1.MNU",
+      "bytes": 5072,
+      "sha256": "513614231e8001f788f8f4ce9ec8c2fb1e7001c2e0825e706d430c8dce622bcc"
+    },
+    {
+      "member": "fedata/MENUS/CAR2.MNU",
+      "bytes": 4845,
+      "sha256": "2e57992383dc188a8700511ba11276856e9b1fc70b9065e3162998e6c5d91c1c"
+    },
+    {
+      "member": "fedata/MENUS/CED01DBG.MNU",
+      "bytes": 1797,
+      "sha256": "3573a8cd320e00eb7dedae064c21a958e0023cc456543a11c23c500a33b242a2"
+    },
+    {
+      "member": "fedata/MENUS/CED02DBG.MNU",
+      "bytes": 1474,
+      "sha256": "81b6746d37141b2ec1b48ef343c1af35af4896aa7d6cbacd04e55b4fba8832a8"
+    },
+    {
+      "member": "fedata/MENUS/CED03DBG.MNU",
+      "bytes": 1661,
+      "sha256": "0d9e9a0f08f1bfca51382c3b8ea8cfffc905440ca1236ede42f915f434d8f0be"
+    },
+    {
+      "member": "fedata/MENUS/CED04DBG.MNU",
+      "bytes": 2187,
+      "sha256": "2c9d7639f04dc1582be5196268f7cd0ccee910320161de00e73d001a8519919f"
+    },
+    {
+      "member": "fedata/MENUS/CED05DBG.MNU",
+      "bytes": 3951,
+      "sha256": "722ecb791a5982ab38ba90184e612fba55dbe843d73870cd9e85acfa7620a35c"
+    },
+    {
+      "member": "fedata/MENUS/CED06DBG.MNU",
+      "bytes": 1823,
+      "sha256": "1f658d4870d92f9983de4f83536e9e01186b989ef644ad1e7a26df8f1cb97059"
+    },
+    {
+      "member": "fedata/MENUS/CED07DBG.MNU",
+      "bytes": 1543,
+      "sha256": "a094dbaa2fa0cdfc00f1b75395f296e74aee477d37c59e8ae2c0f04e5234ef0a"
+    },
+    {
+      "member": "fedata/MENUS/CED2BDBG.MNU",
+      "bytes": 737,
+      "sha256": "92c647bd4fa86a6290862da717fdae36984f6960d8791ecef5dbe1a805e57286"
+    },
+    {
+      "member": "fedata/MENUS/CED2CDBG.MNU",
+      "bytes": 2145,
+      "sha256": "95855bd168ac11d7b4370295f4caad8de5e515d8b7e5b81d5b5545f028b4fcf4"
+    },
+    {
+      "member": "fedata/MENUS/CED2DDBG.MNU",
+      "bytes": 4291,
+      "sha256": "caa33d1bbb04b087a30a244011cbe67414e23109d1cf983cb7a8a3e624d49107"
+    },
+    {
+      "member": "fedata/MENUS/CED3BDBG.MNU",
+      "bytes": 9528,
+      "sha256": "51f463939f872f42900de1073f9709a8a2c24616ccaf45f8ddcec13727bcce1b"
+    },
+    {
+      "member": "fedata/MENUS/CED3CDBG.MNU",
+      "bytes": 2155,
+      "sha256": "e3fe7cdf6aa5fda2ecbbbb0577377650a7e8c4ba6aa94f5a4cb5890ef5a71890"
+    },
+    {
+      "member": "fedata/MENUS/CED3DDBG.MNU",
+      "bytes": 2155,
+      "sha256": "9ca7d3925fe70631b832c8dddeb9fda8834699c6e1e80edcf5b71cbdb62b09a7"
+    },
+    {
+      "member": "fedata/MENUS/CED4BDBG.MNU",
+      "bytes": 2379,
+      "sha256": "86a6a437a509eb9142229cbf6de33ac2e809eb32c8bea602b601dee3ececd5b4"
+    },
+    {
+      "member": "fedata/MENUS/CED4CDBG.MNU",
+      "bytes": 2379,
+      "sha256": "f1338a47dd45b6d2663b6ec322e7fd4e5f3e6a12a3a3e9dd8042c8929f1b88ba"
+    },
+    {
+      "member": "fedata/MENUS/CEDBASIC.MNU",
+      "bytes": 7908,
+      "sha256": "4f11c887f984597786af7ea723413320ccc580873f898e32b0457854644d58b6"
+    },
+    {
+      "member": "fedata/MENUS/CEDMAIN.MNU",
+      "bytes": 2128,
+      "sha256": "7888b2fc78ec1bbeb10b041c7536755b5d40d0ff1d97f0f85c50ee541c736e7d"
+    },
+    {
+      "member": "fedata/MENUS/COMPARE.MNU",
+      "bytes": 2466,
+      "sha256": "9e5f17aba1bd06cb86f55bf35e07bdf0278870093b2f30c4daa405704fcb72c3"
+    },
+    {
+      "member": "fedata/MENUS/COMPARE2.MNU",
+      "bytes": 2615,
+      "sha256": "ab8278b6dc0b1a312749dc113b52d59c42036f7e7ba48930ca2fa08fc702fa3f"
+    },
+    {
+      "member": "fedata/MENUS/CONNECT.MNU",
+      "bytes": 2390,
+      "sha256": "9509f7742f1ea702a923cde3f0fea7b6102d8bcd3d6a0ec1014986a327c0a6e7"
+    },
+    {
+      "member": "fedata/MENUS/CONTROL1.MNU",
+      "bytes": 2997,
+      "sha256": "ebc3cf97ff8e1cc4ba22548fc340c7f2c5de33e4d726b743e60505a77e462cf1"
+    },
+    {
+      "member": "fedata/MENUS/CREDITS.MNU",
+      "bytes": 1501,
+      "sha256": "dc00b9c7c5fadb6e998df55ebbc931fdfe679c3750d6f10fe26c99a02a9713df"
+    },
+    {
+      "member": "fedata/MENUS/CREDITS1.MNU",
+      "bytes": 1540,
+      "sha256": "6d759e8f42a709b844ff25f1f9c5b1bfa954151903ec93e0e6be44fbc53dbd9b"
+    },
+    {
+      "member": "fedata/MENUS/DEADZONE.MNU",
+      "bytes": 7348,
+      "sha256": "d7367dde380fecad3abf63fe175c84ce22b8af5c366edd166009d57352939392"
+    },
+    {
+      "member": "fedata/MENUS/FORCE.MNU",
+      "bytes": 5904,
+      "sha256": "eb799e9f1ca7343dee9b5dcd15c09ad50abb613d3729bc01cf1fa9fb11dd961b"
+    },
+    {
+      "member": "fedata/MENUS/FUNKEYS.MNU",
+      "bytes": 6855,
+      "sha256": "6f37932042625d88a3bcbb3aa2cd1bdb693e7372da71481fa7afdda6c2637778"
+    },
+    {
+      "member": "fedata/MENUS/GRAPHICS.MNU",
+      "bytes": 5882,
+      "sha256": "d8af15a148fff2ec865c9ce6337e095bb340bb7f863419cfba245fb2574c6722"
+    },
+    {
+      "member": "fedata/MENUS/HARDKEYS.MNU",
+      "bytes": 4745,
+      "sha256": "ef31a1f26dffc976c7f5d430af4d67495dcce77ad12eb67d085c05b5256b5efd"
+    },
+    {
+      "member": "fedata/MENUS/HISTORY.MNU",
+      "bytes": 2159,
+      "sha256": "93fb6ceb0ccd99dc76dda28678b0bf7683bb7b7d41c7fbebeddf373f7b60b1d9"
+    },
+    {
+      "member": "fedata/MENUS/HUD.MNU",
+      "bytes": 32642,
+      "sha256": "1186648c5352fadfd94632cf2b43cc716e23d9c078863b563fa1602f3b14d60c"
+    },
+    {
+      "member": "fedata/MENUS/INSTCAR.MNU",
+      "bytes": 4263,
+      "sha256": "5ed63f8b3825718871a2f7010dc5aabe84bab3e85c3fa7c48df15b631cb1a407"
+    },
+    {
+      "member": "fedata/MENUS/INTERIOR.MNU",
+      "bytes": 2065,
+      "sha256": "ddc7fc68a6fa555ae4480b1e4fc7bb522440cfcc7dae809724bda3a849f7b841"
+    },
+    {
+      "member": "fedata/MENUS/IPX.MNU",
+      "bytes": 1895,
+      "sha256": "ca4232e216be8a05ec5fe5a206c50cec1f82f20ef2838b4e16f3ac48bdaeae66"
+    },
+    {
+      "member": "fedata/MENUS/LEVEL.MNU",
+      "bytes": 5010,
+      "sha256": "658dd6515a81f6aac9e9b8571ab101375b43d73a3b6f002f52ddddb06fcea3e1"
+    },
+    {
+      "member": "fedata/MENUS/LOADSAVE.MNU",
+      "bytes": 3368,
+      "sha256": "6308194657d28f1205fca6fafb598c248fb6736e6bf4f827da778f9ce189b968"
+    },
+    {
+      "member": "fedata/MENUS/LOCATION.MNU",
+      "bytes": 5756,
+      "sha256": "7de432d93e73ec6a2a78d16b8b67ea0f7d26d91c54532690ffbce2614663edd1"
+    },
+    {
+      "member": "fedata/MENUS/MAIN.MNU",
+      "bytes": 5253,
+      "sha256": "b07f8eef6085502ceb576ec7bd40ea0074794531743cc99926db152403518fc0"
+    },
+    {
+      "member": "fedata/MENUS/MAINMULT.MNU",
+      "bytes": 5403,
+      "sha256": "0b02fe0cea668be757c9596a1133e2986dcb913085d6369c5421fa72b762575d"
+    },
+    {
+      "member": "fedata/MENUS/MAINSPLT.MNU",
+      "bytes": 6021,
+      "sha256": "029025fbf74c4beea3b3e37983d23f761896f30a10a627eeb4b1e67e1f5decc2"
+    },
+    {
+      "member": "fedata/MENUS/MAKECSV.MNU",
+      "bytes": 709,
+      "sha256": "39b96c4313c2717331fc75051053534553193edd7095c40e89e2191f9d240c79"
+    },
+    {
+      "member": "fedata/MENUS/MSPAUSE.MNU",
+      "bytes": 804,
+      "sha256": "53909a754edfe779149d7224f9f36b6f01850b10d1c8a848b456a75a459b4220"
+    },
+    {
+      "member": "fedata/MENUS/MSQUITTO.MNU",
+      "bytes": 119,
+      "sha256": "35e83ce17d3035d5d3f17b3338f433d706d3a72ed6b5c94bcfd80887c0809f03"
+    },
+    {
+      "member": "fedata/MENUS/OPPONENT.MNU",
+      "bytes": 4690,
+      "sha256": "22ef49df34e7a117b0d8d5a56c2fffd1d13647c9de432f0df54f77a77930a900"
+    },
+    {
+      "member": "fedata/MENUS/OPTIONS.MNU",
+      "bytes": 3448,
+      "sha256": "93cc8d0eecc94e62e84005efcca100f0a48616f70ebb36de1d85bc8f9ca4037c"
+    },
+    {
+      "member": "fedata/MENUS/PAUSE.MNU",
+      "bytes": 3135,
+      "sha256": "691f2dbcfdb8004d216eaa58a21bfc93cc1ef47f617157985eb8ea5b0a743c8a"
+    },
+    {
+      "member": "fedata/MENUS/PERDATA.MNU",
+      "bytes": 3335,
+      "sha256": "3593699b381427aa887522247f8e6e51f961d43999ffcb2c6776ffcddd209d1f"
+    },
+    {
+      "member": "fedata/MENUS/POSTGAME.MNU",
+      "bytes": 5294,
+      "sha256": "f60752dc3da30c36c9c8903e6fe51ad2162048833646e95517250b2af33c11d8"
+    },
+    {
+      "member": "fedata/MENUS/PS1PCOP.MNU",
+      "bytes": 1158,
+      "sha256": "85cedcd7ca48078e924909cdcd46484f4c81e31b34ba3cffe00eadbb3f566142"
+    },
+    {
+      "member": "fedata/MENUS/PS1PRACE.MNU",
+      "bytes": 1293,
+      "sha256": "7acecbcce74307179d6f3b0a43de4424cd2a80ac020ec5614df41d38f749d546"
+    },
+    {
+      "member": "fedata/MENUS/PS2P1C2R.MNU",
+      "bytes": 1672,
+      "sha256": "c30f9e5f0df50fa7e88b3c4678a0c198e780cf134e96bd17a441de0d1bda12a2"
+    },
+    {
+      "member": "fedata/MENUS/PS2P1R2C.MNU",
+      "bytes": 1672,
+      "sha256": "f917ec58b486791ab11e8b26fe21cd6282be2cb1d51045882ad131acec170c1d"
+    },
+    {
+      "member": "fedata/MENUS/PS2P2C.MNU",
+      "bytes": 1570,
+      "sha256": "ee6cbac4777bac4528f6b252b52be2baaa549e91f1fbd4d7cdda8e2e294f40ce"
+    },
+    {
+      "member": "fedata/MENUS/PS2P2R.MNU",
+      "bytes": 1766,
+      "sha256": "9287b2dcc887742b666002f9e26809e661ea794505576721012801d1fd7cfc5b"
+    },
+    {
+      "member": "fedata/MENUS/PSAUDIO.MNU",
+      "bytes": 2588,
+      "sha256": "c0838c3ec9b9ae65f1ac1b50bf337285d5b1cf9250e3baf5f4e4dc177f548104"
+    },
+    {
+      "member": "fedata/MENUS/PSCAMERA.MNU",
+      "bytes": 1648,
+      "sha256": "391f8d6f18f64a1d3ac3c8a5cbe8b14042406d913872b28f6fef16c46a26b75b"
+    },
+    {
+      "member": "fedata/MENUS/PSCNTL1.MNU",
+      "bytes": 1304,
+      "sha256": "3c3b7a68367afa2c0507981e382d8d87997e23f3a1e42570ddda9a68b835db2f"
+    },
+    {
+      "member": "fedata/MENUS/PSDEADZ.MNU",
+      "bytes": 4653,
+      "sha256": "b69611f31db3957ca842e108559664d9decff56f921f5b5ccd4749555027c253"
+    },
+    {
+      "member": "fedata/MENUS/PSFORCE.MNU",
+      "bytes": 3519,
+      "sha256": "67ee5c13624ac0ee6e01082b3b7441fb08ff69f7c89e694f05a03713b1971d64"
+    },
+    {
+      "member": "fedata/MENUS/PSGRAPH.MNU",
+      "bytes": 3901,
+      "sha256": "c43f62f47d066b06c032b163d9103899e4b1d150cd2efe1a88b51fa2ce7929a3"
+    },
+    {
+      "member": "fedata/MENUS/PSHUD.MNU",
+      "bytes": 6178,
+      "sha256": "c559c9ffc419b7f09b116f5bce56499f1adb9de14ce431425d6cecc13c2f576c"
+    },
+    {
+      "member": "fedata/MENUS/PSHUD1P.MNU",
+      "bytes": 5694,
+      "sha256": "9ed12c782f0616e9ce860980c5d6c14bdbed5ca1eea0a14e0b9a58065b56f626"
+    },
+    {
+      "member": "fedata/MENUS/PSHUD2P.MNU",
+      "bytes": 5694,
+      "sha256": "2886d70b676624c5c931c7bd7415319045263e59ce4895d25697b7613dd77ada"
+    },
+    {
+      "member": "fedata/MENUS/PSHUDPOS.MNU",
+      "bytes": 432,
+      "sha256": "330710a454a349d8dbb4816665dff2f3fa581dcaab7c3e1d93e9a0e7964164f3"
+    },
+    {
+      "member": "fedata/MENUS/PSOPTION.MNU",
+      "bytes": 1257,
+      "sha256": "77ed7fce0674f85b847a85b5a3cef4afdf73e13436832374115777c2b9630056"
+    },
+    {
+      "member": "fedata/MENUS/PSOPTN2.MNU",
+      "bytes": 1241,
+      "sha256": "c68160e63896d20306428d8df0be1ddfae20ffd5dc33c016c473a06d7bf9ac95"
+    },
+    {
+      "member": "fedata/MENUS/PSTATS.MNU",
+      "bytes": 5046,
+      "sha256": "25dcf3811bd3f6a94449b351d196e7e22567eb677971867f530532a38cb5fe97"
+    },
+    {
+      "member": "fedata/MENUS/QUITTO.MNU",
+      "bytes": 898,
+      "sha256": "ffaea1abc199f570acca2b75a7d899d6b41c9fea5c6f0a8a38851d9401ae238e"
+    },
+    {
+      "member": "fedata/MENUS/RECORDS.MNU",
+      "bytes": 3014,
+      "sha256": "1e10fcfb07e56254404cbea34ebce3f6c574895e23f27ad9e657c26ff5ea2ffe"
+    },
+    {
+      "member": "fedata/MENUS/SETUP.MNU",
+      "bytes": 2847,
+      "sha256": "200c58df3d42baa35e1df94440437c9ade66a4ceda28a587be500a052c8b0cb3"
+    },
+    {
+      "member": "fedata/MENUS/SHOWCASE.MNU",
+      "bytes": 3370,
+      "sha256": "486306226139f2c440918134c533dccca1a84405ef67065f12aba589c2dd254c"
+    },
+    {
+      "member": "fedata/MENUS/SLIDES.MNU",
+      "bytes": 1399,
+      "sha256": "6ae3c91020058356a0c5ae0500149a21105b1224a137e105bbc420e1ae91329a"
+    },
+    {
+      "member": "fedata/MENUS/TRKINFO.MNU",
+      "bytes": 2319,
+      "sha256": "48bcc98649bf159d0158a8fbf724e197f4ac443835e3a9b752a42d3e5fe01c95"
+    },
+    {
+      "member": "gamedata/DASHHUD/EDEF.POS",
+      "bytes": 8777,
+      "sha256": "f3f092fc587ea1d93a012217d125d9191ea87d79b473e4d8c89d61accb555107"
+    },
+    {
+      "member": "gamedata/DASHHUD/FDEF.POS",
+      "bytes": 8671,
+      "sha256": "5e0fc3b04b60207337e9eafad8e7b76cc68d4f005b0b643f7cdc37617517a46b"
+    },
+    {
+      "member": "gamedata/DASHHUD/GDEF.POS",
+      "bytes": 8482,
+      "sha256": "d36eb7531736d59ebce96053b68f758890e2fffa165e97b0bf9b39a4c0b10490"
+    },
+    {
+      "member": "gamedata/DASHHUD/IDEF.POS",
+      "bytes": 8817,
+      "sha256": "2e92219f57f5f16d6150cc700e72c19ef204eefbc97dac5968f5c3971e6762e3"
+    },
+    {
+      "member": "gamedata/DASHHUD/SDEF.POS",
+      "bytes": 8811,
+      "sha256": "9853be313e8e3e783a61b2a98f24195563399bdaa20b1f1dc21399606b43e24e"
+    },
+    {
+      "member": "gamedata/DASHHUD/WDEF.POS",
+      "bytes": 8814,
+      "sha256": "f3eced40a43c5462429c4b0e755e0d9b22f0388e62c94f6244ceacc11e21e84f"
+    },
+    {
+      "member": "install.win",
+      "bytes": 576,
+      "sha256": "0be555e1ae8688948ba21ade7802e31db36288b78c363461ad08f73f048d1efd"
+    },
+    {
+      "member": "nfs3.ico",
+      "bytes": 766,
+      "sha256": "e3a02b8f4dd39093a676353ed4a408b0e2fdbfa72ce88da30a5d10ec42b1832c"
+    },
+    {
+      "member": "nglide_patch/nfs3.reg",
+      "bytes": 582,
+      "sha256": "e8756476166e9e26fae7c94bd5f713465d262ddc8804e5bc9159b3e5fad38b97"
+    },
+    {
+      "member": "nglide_patch/nfs3.sdb",
+      "bytes": 660,
+      "sha256": "14735b65ea8ca4b53d1ea0f4ea2003a62f09d798ba7ab1d6fc0e75111588a015"
+    },
+    {
+      "member": "nglide_patch/PatchInstall.bat",
+      "bytes": 30,
+      "sha256": "7e5f98250e82fe6115617c0f517dfa1597f650b553976b41424944927c06d1bc"
+    },
+    {
+      "member": "nglide_patch/PatchUninstall.bat",
+      "bytes": 33,
+      "sha256": "7d71bbdec2681150615a048be92ce8f9a20902ff9a4cbc05bdf67fc9c65ba7f8"
+    },
+    {
+      "member": "d3da.dll",
+      "bytes": 98641,
+      "sha256": "ae676272438d93fd7a8da7a19250d6e8b664d8570824ab8042e2b20b38395a02",
+      "pe": {
+        "machine": "014c",
+        "image_base": "60000000",
+        "entry_rva": "000037b6",
+        "sections": [
+          "AUTO",
+          ".idata",
+          "DGROUP",
+          ".bss",
+          ".edata",
+          ".reloc",
+          ".rsrc"
+        ],
+        "named_exports": [
+          "_THRASH_about@0",
+          "_THRASH_clearwindow@0",
+          "_THRASH_clip@16",
+          "_THRASH_drawline@8",
+          "_THRASH_drawlinemesh@12",
+          "_THRASH_drawlinestrip@8",
+          "_THRASH_drawpoint@4",
+          "_THRASH_drawpointmesh@12",
+          "_THRASH_drawpointstrip@8",
+          "_THRASH_drawquad@16",
+          "_THRASH_drawquadmesh@12",
+          "_THRASH_drawtri@12",
+          "_THRASH_drawtrifan@8",
+          "_THRASH_drawtrimesh@12",
+          "_THRASH_drawtristrip@8",
+          "_THRASH_flushwindow@0",
+          "_THRASH_idle@0",
+          "_THRASH_init@0",
+          "_THRASH_is@0",
+          "_THRASH_lockwindow@0",
+          "_THRASH_pageflip@0",
+          "_THRASH_readrect@20",
+          "_THRASH_restore@0",
+          "_THRASH_selectdisplay@4",
+          "_THRASH_setstate@8",
+          "_THRASH_settexture@4",
+          "_THRASH_setvideomode@12",
+          "_THRASH_sync@4",
+          "_THRASH_talloc@20",
+          "_THRASH_treset@0",
+          "_THRASH_tupdate@12",
+          "_THRASH_unlockwindow@4",
+          "_THRASH_window@4",
+          "_THRASH_writerect@20"
+        ]
+      }
+    },
+    {
+      "member": "eacsnd.dll",
+      "bytes": 42496,
+      "sha256": "30288653eb2e0b59a3173530433a4adb8ea0dc66cdbc46aadf742dc53ab62b46",
+      "pe": {
+        "machine": "014c",
+        "image_base": "00400000",
+        "entry_rva": "00000000",
+        "sections": [
+          "AUTO",
+          ".idata",
+          "DGROUP",
+          ".bss",
+          ".edata",
+          ".reloc"
+        ],
+        "named_exports": [
+          "_iSNDdirectcaps@4",
+          "_iSNDdirectcreate3dbuf@28",
+          "_iSNDdirectplay3d@28",
+          "_iSNDdirectpos3d@12",
+          "_iSNDdirectrate@8",
+          "_iSNDdirectrecordpacket@4",
+          "_iSNDdirectrecordstart@16",
+          "_iSNDdirectrecordstop@0",
+          "_iSNDdirectremovebuf@4",
+          "_iSNDdirectserve@0",
+          "_iSNDdirectsetfunctions@32",
+          "_iSNDdirectstart@8",
+          "_iSNDdirectstop@0",
+          "_iSNDdirectstopbuf@4",
+          "_iSNDdirectvol@8",
+          "_iSNDdllversion@0"
+        ]
+      }
+    },
+    {
+      "member": "glide3x.dll",
+      "bytes": 1409024,
+      "sha256": "e4a815c565ffd61d18974ea4d139390ee84ba6918b106c1835f861bb61872e5c",
+      "pe": {
+        "machine": "014c",
+        "image_base": "10000000",
+        "entry_rva": "000bda18",
+        "sections": [
+          ".text",
+          ".rdata",
+          ".data",
+          ".idata",
+          ".rsrc",
+          ".reloc"
+        ],
+        "named_exports": [
+          "__pciFetchRegister@16",
+          "__pciUpdateRegister@20",
+          "_grAADrawTriangle@24",
+          "_grAlphaBlendFunction@16",
+          "_grAlphaCombine@20",
+          "_grAlphaControlsITRGBLighting@4",
+          "_grAlphaTestFunction@4",
+          "_grAlphaTestReferenceValue@4",
+          "_grBufferClear@12",
+          "_grBufferSwap@4",
+          "_grCheckForRoom@4",
+          "_grChromakeyMode@4",
+          "_grChromakeyValue@4",
+          "_grClipWindow@16",
+          "_grColorCombine@20",
+          "_grColorMask@8",
+          "_grConstantColorValue@4",
+          "_grCoordinateSpace@4",
+          "_grCullMode@4",
+          "_grDepthBiasLevel@4",
+          "_grDepthBufferFunction@4",
+          "_grDepthBufferMode@4",
+          "_grDepthMask@4",
+          "_grDepthRange@8",
+          "_grDisable@4",
+          "_grDisableAllEffects@0",
+          "_grDitherMode@4",
+          "_grDrawLine@8",
+          "_grDrawPoint@4",
+          "_grDrawTriangle@12",
+          "_grDrawVertexArray@12",
+          "_grDrawVertexArrayContiguous@16",
+          "_grEnable@4",
+          "_grErrorSetCallback@4",
+          "_grFinish@0",
+          "_grFlush@0",
+          "_grFogColorValue@4",
+          "_grFogMode@4",
+          "_grFogTable@4",
+          "_grGet@12",
+          "_grGetProcAddress@4",
+          "_grGetString@4",
+          "_grGlideGetState@4",
+          "_grGlideGetVertexLayout@4",
+          "_grGlideInit@0",
+          "_grGlideSetState@4",
+          "_grGlideSetVertexLayout@4",
+          "_grGlideShutdown@0",
+          "_grLfbConstantAlpha@4",
+          "_grLfbConstantDepth@4",
+          "_grLfbLock@24",
+          "_grLfbReadRegion@28",
+          "_grLfbUnlock@8",
+          "_grLfbWriteColorFormat@4",
+          "_grLfbWriteColorSwizzle@8",
+          "_grLfbWriteRegion@36",
+          "_grLoadGammaTable@16",
+          "_grQueryResolutions@8",
+          "_grRenderBuffer@4",
+          "_grReset@4",
+          "_grSelectContext@4",
+          "_grSetNumPendingBuffers@4",
+          "_grSplash@20",
+          "_grSstConfigPipeline@12",
+          "_grSstOrigin@4",
+          "_grSstSelect@4",
+          "_grSstVidMode@8",
+          "_grSstWinClose@4",
+          "_grSstWinOpen@28",
+          "_grStippleMode@4",
+          "_grStipplePattern@4",
+          "_grTexCalcMemRequired@16",
+          "_grTexClampMode@12",
+          "_grTexCombine@28",
+          "_grTexDetailControl@16",
+          "_grTexDownloadMipMap@16",
+          "_grTexDownloadMipMapLevel@32",
+          "_grTexDownloadMipMapLevelPartial@40",
+          "_grTexDownloadTable@8",
+          "_grTexDownloadTablePartial@16",
+          "_grTexFilterMode@12",
+          "_grTexLodBiasValue@8",
+          "_grTexMaxAddress@4",
+          "_grTexMinAddress@4",
+          "_grTexMipMapMode@12",
+          "_grTexMultibase@8",
+          "_grTexMultibaseAddress@20",
+          "_grTexNCCTable@4",
+          "_grTexSource@16",
+          "_grTexTextureMemRequired@8",
+          "_grVertexLayout@12",
+          "_grViewport@16",
+          "_gu3dfGetInfo@8",
+          "_gu3dfLoad@8",
+          "_guEncodeRLE16@16",
+          "_guFogGenerateExp2@8",
+          "_guFogGenerateExp@8",
+          "_guFogGenerateLinear@12",
+          "_guFogTableIndexToW@4",
+          "_guGammaCorrectionRGB@12",
+          "_pciClose@0",
+          "_pciDeviceExists@4",
+          "_pciFindCard@12",
+          "_pciFindCardMulti@16",
+          "_pciFindCardMultiFunc@20",
+          "_pciFindFreeMTRR@4",
+          "_pciFindMTRRMatch@16",
+          "_pciGetConfigData@20",
+          "_pciGetErrorCode@0",
+          "_pciGetErrorString@0",
+          "_pciLinearRangeSetPermission@12",
+          "_pciMapCard@20",
+          "_pciMapCardMulti@24",
+          "_pciMapPhysicalDeviceToLinear@16",
+          "_pciMapPhysicalToLinear@12",
+          "_pciOpen@0",
+          "_pciOpenEx@4",
+          "_pciOutputDebugString@4",
+          "_pciSetConfigData@20",
+          "_pciSetMTRR@16",
+          "_pciSetMTRRAmdK6@16",
+          "_pciSetPassThroughBase@8",
+          "_pciUnmapPhysical@8",
+          "_pioInByte@4",
+          "_pioInLong@4",
+          "_pioInWord@4",
+          "_pioOutByte@8",
+          "_pioOutLong@8",
+          "_pioOutWord@8"
+        ]
+      }
+    },
+    {
+      "member": "nfs3.exe",
+      "bytes": 1589248,
+      "sha256": "8ace9af9d197a938f0ddd6b013f552104d23b34580b900a52f052ed800938fe2",
+      "pe": {
+        "machine": "014c",
+        "image_base": "00400000",
+        "entry_rva": "000f7fa0",
+        "sections": [
+          "AUTO",
+          ".idata",
+          "DGROUP",
+          ".bss",
+          ".reloc",
+          ".rsrc"
+        ],
+        "named_exports": []
+      }
+    },
+    {
+      "member": "softtria.dll",
+      "bytes": 304482,
+      "sha256": "8ea15aac0a7095b7d750cd75bbc9095553b6f708d1b89ca807864294a1a12b02",
+      "pe": {
+        "machine": "014c",
+        "image_base": "60000000",
+        "entry_rva": "00035282",
+        "sections": [
+          "AUTO",
+          ".idata",
+          "DGROUP",
+          ".bss",
+          ".edata",
+          ".reloc"
+        ],
+        "named_exports": [
+          "_THRASH_about@0",
+          "_THRASH_clearwindow@0",
+          "_THRASH_clip@16",
+          "_THRASH_drawline@8",
+          "_THRASH_drawlinemesh@12",
+          "_THRASH_drawlinestrip@8",
+          "_THRASH_drawpoint@4",
+          "_THRASH_drawpointmesh@12",
+          "_THRASH_drawpointstrip@8",
+          "_THRASH_drawquad@16",
+          "_THRASH_drawquadmesh@12",
+          "_THRASH_drawtri@12",
+          "_THRASH_drawtrifan@8",
+          "_THRASH_drawtrimesh@12",
+          "_THRASH_drawtristrip@8",
+          "_THRASH_flushwindow@0",
+          "_THRASH_idle@0",
+          "_THRASH_init@0",
+          "_THRASH_is@0",
+          "_THRASH_lockwindow@0",
+          "_THRASH_pageflip@0",
+          "_THRASH_readrect@20",
+          "_THRASH_restore@0",
+          "_THRASH_selectdisplay@4",
+          "_THRASH_setstate@8",
+          "_THRASH_settexture@4",
+          "_THRASH_setvideomode@12",
+          "_THRASH_sync@4",
+          "_THRASH_talloc@20",
+          "_THRASH_treset@0",
+          "_THRASH_tupdate@12",
+          "_THRASH_unlockwindow@4",
+          "_THRASH_window@4",
+          "_THRASH_writerect@20"
+        ]
+      }
+    },
+    {
+      "member": "voodoo2a.dll",
+      "bytes": 92662,
+      "sha256": "99b978fd6b0e94cca7ef0b671b9be0d630f929ab3901ebddaafa5d121213503b",
+      "pe": {
+        "machine": "014c",
+        "image_base": "60000000",
+        "entry_rva": "00004342",
+        "sections": [
+          "AUTO",
+          ".idata",
+          "DGROUP",
+          ".bss",
+          ".edata",
+          ".reloc",
+          ".rsrc"
+        ],
+        "named_exports": [
+          "_THRASH_about@0",
+          "_THRASH_clearwindow@0",
+          "_THRASH_clip@16",
+          "_THRASH_drawline@8",
+          "_THRASH_drawlinemesh@12",
+          "_THRASH_drawlinestrip@8",
+          "_THRASH_drawpoint@4",
+          "_THRASH_drawpointmesh@12",
+          "_THRASH_drawpointstrip@8",
+          "_THRASH_drawquad@16",
+          "_THRASH_drawquadmesh@12",
+          "_THRASH_drawtri@12",
+          "_THRASH_drawtrifan@8",
+          "_THRASH_drawtrimesh@12",
+          "_THRASH_drawtristrip@8",
+          "_THRASH_flushwindow@0",
+          "_THRASH_idle@0",
+          "_THRASH_init@0",
+          "_THRASH_is@0",
+          "_THRASH_lockwindow@0",
+          "_THRASH_pageflip@0",
+          "_THRASH_readrect@20",
+          "_THRASH_restore@0",
+          "_THRASH_selectdisplay@4",
+          "_THRASH_setstate@8",
+          "_THRASH_settexture@4",
+          "_THRASH_setvideomode@12",
+          "_THRASH_sync@4",
+          "_THRASH_talloc@20",
+          "_THRASH_treset@0",
+          "_THRASH_tupdate@12",
+          "_THRASH_unlockwindow@4",
+          "_THRASH_window@4",
+          "_THRASH_writerect@20"
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Author-hosted bundle identity, not pristine retail provenance or publisher-signature verification.",
+    "Includes later nGlide patch files and a wrapper; timestamps are not authenticated build dates.",
+    "Member/PE metadata only; no DLL equivalence, installation, loading, execution or database mutation."
+  ],
+  "supplied_original_comparison": {
+    "supplied_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+    "hosted_sha256": "8ace9af9d197a938f0ddd6b013f552104d23b34580b900a52f052ed800938fe2",
+    "same_length": true,
+    "differing_bytes": 1,
+    "offset": "000b579b",
+    "va": "004b639b",
+    "supplied_byte": "75",
+    "hosted_byte": "eb",
+    "instruction_change": "JNE rel8 becomes JMP rel8 with unchanged displacement5a; intent/runtime consequence not established here."
+  },
+  "supplied_original_exe_matches_by_sha256": false,
+  "menu_count": 80,
+  "next_comparison_candidates": {
+    "d3da.dll": "final drivers/dx5 member, subject to explicit pairing",
+    "softtria.dll": "final drivers/softtri member, subject to explicit pairing",
+    "voodoo2a.dll": "final Glide driver, subject to explicit pairing",
+    "menus": "case-normalized paired member inventory, without assuming backups are pristine"
+  }
+}
