@@ -450,3 +450,8 @@ The [scanner follow-up](original-modern-config-loading.md#scanner-width-and-cond
 ## Version-reader failure/copy and static dependency closure
 
 The [follow-up](original-modern-config-loading.md#version-reader-failure-gates-and-string-copy-boundary) qualifies original reader failure/cleanup paths, copy count/padding and conditional termination, plus the caller's zero-only scanner gate. Final Modern lacks the original three version-query imports and `VERSION.dll` descriptor. This closes the inspected copy and static-dependency questions, not runtime resource provenance, all malformed scanner inputs or header lifetime. Catalog counts unchanged; no target execution.
+
+
+## Removed optional fpuerrors startup sequence
+
+The [x87 follow-up](og-modern-x87-precision.md#removed-optional-startup-exception-unmasking) verifies original slot25/bit25, all five zero-value mask updates, final69-byte NOP replacement and the byte-identical76-byte runtime helper. It distinguishes exception unmasking from precision selection and leaves guard lifetime, other callers and actual exception delivery open. Catalog counts unchanged; no target execution.

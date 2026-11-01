@@ -177,3 +177,8 @@ arguments, formatting-helper internals, complete buffer ownership and runtime
 failure behaviour remain unverified. This compares the official patch; the
 local executable's separate About-string modification remains excluded from
 VEG attribution as documented in the baseline. No game or API was executed.
+
+
+## Removed fpuerrors startup consumer
+
+The [x87 startup follow-up](og-modern-x87-precision.md#removed-optional-startup-exception-unmasking) now connects original slot25 `-fpuerrors` to bit25 and five conditional control-word updates. Modern empties the switch string and removes that startup sequence, while retaining the byte-identical runtime CW helper. This concerns exception masks, not arithmetic precision, and does not establish removal of every helper caller.

@@ -1,0 +1,90 @@
+{
+  "kind": "static-startup-fpuerrors-comparison",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "slot25": "-fpuerrors",
+      "spans": [
+        {
+          "start": "004a3d05",
+          "end_exclusive": "004a3d4a",
+          "bytes_sha256": "e1cfa02350c146497faa7782b9ef5e208307a3f3a0edfaf6300bc723fdb88dee",
+          "assembly": "analysis/captures/modern-differences/startup-fpuerrors/original-004a3d05.asm",
+          "assembly_sha256": "e8312024dd5d3aac44fef2cd4e05a839cc2491a394cca9cb3cfbf1cf364b1af2"
+        },
+        {
+          "start": "004f7c90",
+          "end_exclusive": "004f7cdc",
+          "bytes_sha256": "6b93e6ec34a6399ab720995dbc956be8d48b877d6416468a8ce96de2e13495b9",
+          "assembly": "analysis/captures/modern-differences/startup-fpuerrors/original-004f7c90.asm",
+          "assembly_sha256": "836f5f1a20fe30d4257632693b8938e891911a35a75c2a3711c394611dc61b90"
+        }
+      ],
+      "calls": [
+        {
+          "setup": "004a3d0e",
+          "value_eax": 0,
+          "mask_edx": 4,
+          "target": "004f7c90"
+        },
+        {
+          "setup": "004a3d1a",
+          "value_eax": 0,
+          "mask_edx": 2,
+          "target": "004f7c90"
+        },
+        {
+          "setup": "004a3d26",
+          "value_eax": 0,
+          "mask_edx": 1,
+          "target": "004f7c90"
+        },
+        {
+          "setup": "004a3d32",
+          "value_eax": 0,
+          "mask_edx": 8,
+          "target": "004f7c90"
+        },
+        {
+          "setup": "004a3d3e",
+          "value_eax": 0,
+          "mask_edx": 16,
+          "target": "004f7c90"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "slot25": "",
+      "spans": [
+        {
+          "start": "004a3d05",
+          "end_exclusive": "004a3d4a",
+          "bytes_sha256": "1198da012e1b673eccfbece8a54d9280bb707df1d6b8f9512df72f38b6dd2641",
+          "assembly": "analysis/captures/modern-differences/startup-fpuerrors/official_modern-004a3d05.asm",
+          "assembly_sha256": "4a6a5b2f443ff920389b6291f509ad28ba98d12a0386249aa3ac16aff6d0e50f"
+        },
+        {
+          "start": "004f7c90",
+          "end_exclusive": "004f7cdc",
+          "bytes_sha256": "6b93e6ec34a6399ab720995dbc956be8d48b877d6416468a8ce96de2e13495b9",
+          "assembly": "analysis/captures/modern-differences/startup-fpuerrors/official_modern-004f7c90.asm",
+          "assembly_sha256": "0c88da20fc23869564a5044b5e82649975b93625566818caf95409ee15b9751f"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No target instructions or floating-point exceptions executed.",
+    "Guard initialization, other helper callers and subsequent control-word writes not exhaustively traced."
+  ],
+  "helper": {
+    "bytes_identical": true,
+    "guard": "BYTE005644c0 nonzero",
+    "contract": "EAX newbits, EDX mask; CW=(oldCW & ~mask)|(newbits & mask); returns zero-extended rereadCW; guardfalse returns0",
+    "startup_effect": "Clear lowfive maskbits001f, in order4,2,1,8,10hex; preserve precision-maskbit0020, precision-control and rounding bits",
+    "limitation": "No claim about persistent exception policy after later FINIT/FLDCW paths"
+  }
+}

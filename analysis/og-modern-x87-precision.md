@@ -174,3 +174,16 @@ can consume different data, no full-frame machine-state/render equivalence is
 established, and precision policy alone does not prove replay/network results.
 No frame, callback, API or instruction probe was executed; executables and
 saved Ghidra state were preserved.
+
+
+## Removed optional startup exception unmasking
+
+**Verified static difference, separate from precision control.** The [startup audit](scripts/audit_startup_fpuerrors_difference.py) and [manifest](evidence/audits/startup-fpuerrors-difference.json) bind the original/official final hashes, exact five call setups, removed span and retained helper bytes. Original ordinary switch slot25 is **`-fpuerrors`**; final Modern keeps that slot but its string is empty. The [parser comparison](original-modern-command-line.md) establishes slot-to-flag mapping.
+
+Original `004a3d05` tests byte `0055eb2f` mask`02`, corresponding to bit25 of `0055eb2c`. If clear, it skips to `004a3d4a`. If set, five calls to **`004f7c90`** each supply EAX=0 and EDX masks **`0004`, `0002`, `0001`, `0008`, `0010`**, in that order. Their setup addresses are `004a3d0e`, `004a3d1a`, `004a3d26`, `004a3d32`, `004a3d3e`.
+
+Complete helper `004f7c90..004f7cdc` is **76 bytes, identical in both executables**. When byte `005644c0` is nonzero, it saves CW and, for a nonzero mask, computes `CW = (oldCW & ~mask) | (EAX_input & mask)`, loads it, then rereads it. It returns the resulting WORD zero-extended in EAX. With the guard clear it does not access CW and returns0. The five startup return values are unused.
+
+For the active-guard path, these calls clear mask bits`001f`: invalid operation, denormal operand, divide-by-zero, overflow and underflow become unmasked. They **leave precision/inexact maskbit`0020`, precision-control bits and rounding-control bits unchanged**. This does not select32-,64- or80-bit arithmetic. Existing later FINIT/FLDCW paths can replace this control word; the inspected startup block does not prove a persistent race/menu exception policy.
+
+Final Modern replaces **`004a3d05..004a3d4a` with69 NOP bytes**, removing this conditional startup sequence in addition to emptying the named switch. The helper itself remains. Thus neither removal of all floating-point error support nor a claim that every exception is always masked follows. Other callers, guard initialization, exception delivery and user-visible failures remain unqualified. No floating-point exception or target instruction was executed.

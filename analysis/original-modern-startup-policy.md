@@ -85,3 +85,8 @@ The [configuration header producer audit](original-modern-config-loading.md#orig
 
 
 The [failure/copy follow-up](original-modern-config-loading.md#version-reader-failure-gates-and-string-copy-boundary) also records the original zero-only scan-result check, bounded copy/padding semantics and final removal of the static `VERSION.dll` import descriptor. These are local startup/interface differences; malformed-resource runtime behavior remains untested.
+
+
+## Removed optional floating-point error startup policy
+
+Original [fpuerrors initialization](og-modern-x87-precision.md#removed-optional-startup-exception-unmasking) at `004a3d05..004a3d4a` conditionally clears five x87 exception-mask bits through a retained guarded helper. Final replaces all69 bytes with NOPs and empties the named switch. Precision and rounding bits are unaffected by those five original updates; later control-word resets remain separate.
