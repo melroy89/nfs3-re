@@ -38,6 +38,22 @@ def main():
     assert sha(raw)=='240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6'
     assert b'lightbeams' not in raw.lower()
     output['final_ascii_key_absent']={'sha256':sha(raw),'case_insensitive':True}
+    original_path=ROOT/'nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe'
+    original_raw=original_path.read_bytes()
+    assert sha(original_raw)=='b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b'
+    original=pefile.PE(data=original_raw)
+    historical=pefile.PE(str(ROOT/'analysis/captures/modern-differences/upstream/history/nfs3-1.2.0.exe'))
+    final_pe=pefile.PE(data=raw)
+    old_body=original.get_data(0x70ad0,78);historical_body=historical.get_data(0x70ad0,78)
+    assert old_body[:4]==historical_body[:4] and old_body[11:]==historical_body[11:]
+    assert old_body[4:11].hex()=='833d643a7a0000'
+    assert historical_body[4:11].hex()=='f6052c397a0001'
+    output['setter_evolution']={}
+    for label,image,end in [('original',original,0x470b1e),('1.2.0',historical,0x470b1e),('final',final_pe,0x470afa)]:
+        body=image.get_data(0x70ad0,end-0x470ad0)
+        output['setter_evolution'][label]={'start':'00470ad0','end_exclusive':f'{end:08x}',
+            'sha256':sha(body),'bytes_hex':body.hex(),'disassembly':disassemble(body,0x470ad0)}
+    output['setter_evolution']['verified_difference']='Original and1.2.0 complete78-byte bodies differ only in seven-byte admission instruction; historical LightBeams guards retained state14 setter, not proof of beam-render identity.'
     output['contracts']={'v120_lightbeams_default':'1 for type d/v,0 for s/other; read normalized to0/1 at007a392c',
         'v120_fog_default':'1 for type v,0 otherwise; read normalized to0/4 at007a3a64',
         'v131_defaults':'Both literal0; same respective0/1 and0/4 normalization and destinations',

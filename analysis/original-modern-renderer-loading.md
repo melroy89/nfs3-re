@@ -277,7 +277,7 @@ character. `004b581d..004b5844` reads `[THRASH] LightBeams` using the selected
 driver configuration filename buffer `007a3930`; its fallback is the existing
 DWORD `007a392c`. Any nonzero API result becomes1, then stores to that DWORD.
 The separate instruction at `00470ad4` tests bit0 of the same global and
-branches to `00470b1b` when zero. This establishes a real local consumer gate,
+branches to `00470b1b` when zero. The [three-version setter comparison](original-modern-state14.md#historical-lightbeams-key-controls-this-setters-admission) identifies this as the state14 setter: its historical name is not proof of beam-render identity. This establishes a real local consumer gate,
 not complete beam rendering or physical capability.
 
 | Type prefix |1.2.0 LightBeams fallback |1.2.0 FogSupport fallback |

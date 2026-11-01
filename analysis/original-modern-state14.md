@@ -133,3 +133,38 @@ The saved label `SetRenderState15ToFourWhenFlagSet` must be read with hexadecima
 The [reference/final DX5 audit](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) now connects the same official EXE trial to the final DX5 export. Its bundled INI lacks FogSupport, so the captured reader requests default0. If a nonzero flag reaches the common trial route with that DLL bound, its selector15h/decimal21 rejection returns0 and clears the flag. The captured recomputation then writes zero admission while support remains zero.
 
 This is distinct from the DX7 accepted-mode/capability path above. It verifies a backend-specific negative result, not live API behaviour, all initialization routes or blanket absence of rendered fog. Later writers and actual selected INI/DLL remain unobserved. No new renderer or target instructions were executed.
+
+## Historical LightBeams key controls this setter's admission
+
+The [historical capability audit](scripts/audit_lightbeams_history.py) now
+retains all three complete setter bodies in its
+[evidence manifest](evidence/audits/lightbeams-history.json#setter_evolution).
+This connects the [historical configuration reader](original-modern-renderer-loading.md#historical-lightbeams-reader-and-capability-defaults)
+to the original/final comparison, without treating an INI label as a proven
+rendering feature name.
+
+| Artifact | Admission at setter entry | Enabled body |
+|---|---|---|
+| Supplied original | `00470ad4 CMP DWORD[007a3a64],0` | Original zero exception and inline complement/clamp/scaling |
+| Modern1.2.0 | `00470ad4 TEST BYTE[007a392c],1` | Byte-identical remainder of original setter |
+| Final Modern1.6.1 | `00470ad0 CMP DWORD[007a3a64],0` | Delegates to scaled helper; disabled cache-reset branch |
+
+The original and1.2.0 complete78-byte bodies `00470ad0..00470b1e` differ
+only within the seven-byte gate instruction. The historical reader normalizes
+`[THRASH] LightBeams` to0/1 at `007a392c`, so its configured result controls
+whether this setter updates input cache `00678b40` and requests state14.
+A false gate returns without that cache update or request. Other callers can
+still reach the retained scaled/reset helpers independently; this is not a
+whole-feature disable proof.
+
+The final global at the same setter has the separately documented recomputed
+admission contract. Neither numeric-address reuse nor the old key establishes
+that it still means LightBeams. The final key's absence therefore does not
+establish removal of this setter: a changed implementation remains present.
+The DX7 state14 route documented above couples to fog density, which further
+warns against naming the setter's entire effect from the historical key.
+
+**Status:** done for the three pinned entry bodies and historical reader-to-gate
+link; verified static evidence. Complete historical downstream effects,
+intermediate removal date and rendered outcomes remain unresolved. No target,
+API or instruction probes were executed, and no database or executable changed.
