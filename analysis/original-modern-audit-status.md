@@ -552,3 +552,8 @@ The [component audit](original-modern-nglide-window-history.md) verifies1.5.2/1.
 ## Historical nGlide EXE-side mode-publication candidate
 
 The [historical follow-up](original-modern-nglide-window-history.md#exe-mode-publication-changes-to-selected-dimension-centring) captures complete239/223-byte mode bodies and verifies three identical sizing helpers.1.5.3 removes the flag-gated desktop-size call and uses selected-dimension centring at the publication point. This supplies a concrete candidate mechanism without proving nGlide/windowed admission, sole causality or runtime recovery. MP153-007 remains partial; counts unchanged.
+
+
+## Historical sizing flag has retained producer and toggle
+
+The [flag/order follow-up](original-modern-nglide-window-history.md#sizing-flag-producer-later-toggle-and-mode-request-order) verifies the retained inverse-WindowedMode producer, complete42-byte bit0 toggle and mode request/publication order. The1.5.3 local difference affects flag1; flag0 already centred requested dimensions. This narrows interpretation of the nGlide claim without inventing a provider-specific branch or fixed lifetime. Counts unchanged; no target execution.

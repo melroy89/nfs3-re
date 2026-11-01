@@ -30,7 +30,8 @@ def main():
         exe=pefile.PE(data=exe_raw);exe_images.append(exe)
         spans=[]
         end=0x4bef9f if version=='1.5.2' else 0x4bef8f
-        for lo,hi in [(0x4beeb0,end),(0x4cdb10,0x4cdbcd),(0x4cdbd0,0x4cdc14),(0x4cdc20,0x4cdc4c)]:
+        for lo,hi in [(0x4beeb0,end),(0x4cdb10,0x4cdbcd),(0x4cdbd0,0x4cdc14),(0x4cdc20,0x4cdc4c),
+                      (0x4b56e3,0x4b56f6),(0x4b5bd1,0x4b5be3),(0x517d70,0x517d9a)]:
             code=exe.get_data(lo-0x400000,hi-lo)
             out=capture/f'{version}-{lo:08x}.asm'
             out.write_text('\n'.join(disassemble(code,lo))+'\n')
@@ -41,15 +42,24 @@ def main():
             assert exe.get_data(0xbef3e,26).hex()=='f6059043560001750c8b068b5604e87fec0000eb05e8c8ec0000'
         else:
             assert exe.get_data(0xbef3e,10).hex()=='8b068b5604e888ec0000'
+        assert exe.get_string_at_rva(0x13edd8)==b'WindowedMode'
+        assert exe.get_data(0xb5bd1,18).hex()=='a10c90670085c00f94c00fb6c0a390435600'
+        assert exe.get_data(0x117d7e,3).hex()=='80f401'
+        assert exe.get_data(0xbef1b,6).hex()=='ff1558f99e00'
+        assert exe.get_data(0xbeed7,2).hex()=='7465'
         imports={i.address:i.name.decode()for d in exe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
         assert imports[0x534750]=='GetSystemMetrics'
         row['exe']={'member':'nfs3.exe','sha256':hashlib.sha256(exe_raw).hexdigest(),'spans':spans,
                     'GetSystemMetrics_iat':'00534750'}
         result['versions'][version]=row
-    for lo,hi in [(0x4cdb10,0x4cdbcd),(0x4cdbd0,0x4cdc14),(0x4cdc20,0x4cdc4c)]:
+    for lo,hi in [(0x4cdb10,0x4cdbcd),(0x4cdbd0,0x4cdc14),(0x4cdc20,0x4cdc4c),
+                  (0x4b56e3,0x4b56f6),(0x4b5bd1,0x4b5be3),(0x517d70,0x517d9a)]:
         assert exe_images[0].get_data(lo-0x400000,hi-lo)==exe_images[1].get_data(lo-0x400000,hi-lo)
     result['exe_mode_publication']={'old_gate':'004bef3e tests00564390 bit0;zero usesselectedmodewidth/height through004cdbd0;nonzero calls004cdc20',
         'new_route':'004bef3e loadsselectedmodewidth/height and alwayscalls004cdbd0 at004bef43',
+        'flag_producer':'Retained WindowedMode reader ->0067900c;004b5bd1..004b5be3 storesnormalizedlogicalinverse to00564390',
+        'later_toggle':'Complete42-byte00517d70..00517d9a togglesbit0, storesit, calls005089d0;identical across pair',
+        'order':'Samecurrentindex jumpsdirectlytopublication;differentindex mustpassdriverrequestreturntestfirst',
         'retained_helpers':'Three complete sizing-helper bodies identical; centering versus desktop-size differs by caller route',
         'limits':'No assertion of sole repair cause, selecteddriver success, validcatalogpointer or actual windowed result'}
     for member in MEMBERS[:2]:assert blobs['1.5.2',member]==blobs['1.5.3',member]

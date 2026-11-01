@@ -57,3 +57,18 @@ The GetSystemMetrics import is verified for both EXEs. The [existing sizing-help
 This is a concrete candidate mechanism for avoiding a desktop-sized request where a provider is operating in a window:1.5.3 always supplies selected-mode dimensions on this publication path. That interpretation is an **inference**, not proof that nGlide was selected, that its windowed setting was active, or that this call was the sole regression repair. The separate adapter-header changes remain recorded rather than assumed harmless.
 
 **Resolved:** the previously missing EXE-side difference in this selected mode-publication route. **Pending:** driver/window-mode admission, complete input-pointer/state invariants, header loader effects, actual window dimensions and a reproduced1.5.2 failure/1.5.3 recovery. MP153-007 remains partial. No window, driver, API or target instruction was executed.
+
+
+## Sizing flag producer, later toggle and mode-request order
+
+The extended audit captures and asserts equality for both historical versions' `WindowedMode` reader witness `004b56e3..004b56f6`, normalized producer **`004b5bd1..004b5be3`**, and complete42-byte toggle **`00517d70..00517d9a`**.
+
+The reader names key`WindowedMode` at`0053edd8` and stores its result at`0067900c`. The setup producer loads that value, TESTs it, SETEs AL and zero-extends AL before writing`00564390`: **WindowedMode0→flag1; nonzero→flag0**. This is a verified local value relationship, not proof that no config/load or later function overwrites it.
+
+At its original1.5.2 publication consumer, flag0 already selected the requested-dimension centring helper; flag1 selected desktop dimensions.1.5.3 unifies both cases to requested dimensions. Therefore the local behavioural difference affects the **flag1 branch**, not every invocation configured with nonzero WindowedMode. Explaining the advertised nGlide regression may require provider window configuration or other state distinct from this game's flag. There is no nGlide-name check in this changed block, so it must not be reconstructed as a provider-specific conditional solely from the release-note wording.
+
+The retained toggle reads the byte at`00564390`, XORs bit0, stores it, then calls`005089d0` with current width/height/depth globals. This establishes a later direct writer, without proving that the toggle is invoked or that its callee succeeds. Startup's normalized assignment is not a whole-lifetime invariant.
+
+Both captured mode-application bodies also retain their ordering distinction: equal current/selected index jumps directly from`004beed7` to the publication point; a different admitted index calls slot`009ef958` at`004bef1b` and tests its result before publication. Thus the changed centring call is **after** a successful new-mode request in this historical path, and also reachable without a new request on the same-index path. Final's separately researched mode-preparation refactoring must not be retroactively assigned to these historical bodies.
+
+This closes selected flag-producer and ordering questions. Full runtime driver/provider window settings, other flag writers, callback effects, selected-record lifetime, header metadata behaviour and regression reproduction remain unresolved. No setting, window, driver or target instruction was changed or executed.

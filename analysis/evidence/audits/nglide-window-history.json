@@ -52,6 +52,27 @@
             "bytes_sha256": "76419444daa4894ba15cd928b7328d2851fd81f13a5ec62bf389ea07c7cdfae9",
             "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.2-004cdc20.asm",
             "assembly_sha256": "a9b853966974cb6773ca48e8280a7d2bec73adf15beae1b4834daaa7edfd9de3"
+          },
+          {
+            "start": "004b56e3",
+            "end_exclusive": "004b56f6",
+            "bytes_sha256": "1bdff4ad2e73b73e55b189177eec3aa5d89307e6fd3868d8ca3b4dfd722e1de7",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.2-004b56e3.asm",
+            "assembly_sha256": "dc0b691c202f36bf7b2ebe5b0005f7f6bb6e27d7d11a7281218a6f35c7303207"
+          },
+          {
+            "start": "004b5bd1",
+            "end_exclusive": "004b5be3",
+            "bytes_sha256": "c3c4304cdb9ce5a248a29bdb236661bf5b3136471a96b6beb304ab4677df8830",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.2-004b5bd1.asm",
+            "assembly_sha256": "bbf29f1dae648ba635299471af56d4f463486e9de52573398ad76c819379b1a4"
+          },
+          {
+            "start": "00517d70",
+            "end_exclusive": "00517d9a",
+            "bytes_sha256": "31b46afc3464f5d267791deb44ae6a326657e732cfed3247f0d8b31f34f8c2a1",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.2-00517d70.asm",
+            "assembly_sha256": "8494a6f8775d1ad1499c4fa256cef7e150f08c26105b576f272122a7815afc64"
           }
         ],
         "GetSystemMetrics_iat": "00534750"
@@ -108,6 +129,27 @@
             "bytes_sha256": "76419444daa4894ba15cd928b7328d2851fd81f13a5ec62bf389ea07c7cdfae9",
             "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.3-004cdc20.asm",
             "assembly_sha256": "a9b853966974cb6773ca48e8280a7d2bec73adf15beae1b4834daaa7edfd9de3"
+          },
+          {
+            "start": "004b56e3",
+            "end_exclusive": "004b56f6",
+            "bytes_sha256": "1bdff4ad2e73b73e55b189177eec3aa5d89307e6fd3868d8ca3b4dfd722e1de7",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.3-004b56e3.asm",
+            "assembly_sha256": "dc0b691c202f36bf7b2ebe5b0005f7f6bb6e27d7d11a7281218a6f35c7303207"
+          },
+          {
+            "start": "004b5bd1",
+            "end_exclusive": "004b5be3",
+            "bytes_sha256": "c3c4304cdb9ce5a248a29bdb236661bf5b3136471a96b6beb304ab4677df8830",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.3-004b5bd1.asm",
+            "assembly_sha256": "bbf29f1dae648ba635299471af56d4f463486e9de52573398ad76c819379b1a4"
+          },
+          {
+            "start": "00517d70",
+            "end_exclusive": "00517d9a",
+            "bytes_sha256": "31b46afc3464f5d267791deb44ae6a326657e732cfed3247f0d8b31f34f8c2a1",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.3-00517d70.asm",
+            "assembly_sha256": "8494a6f8775d1ad1499c4fa256cef7e150f08c26105b576f272122a7815afc64"
           }
         ],
         "GetSystemMetrics_iat": "00534750"
@@ -121,6 +163,9 @@
   "exe_mode_publication": {
     "old_gate": "004bef3e tests00564390 bit0;zero usesselectedmodewidth/height through004cdbd0;nonzero calls004cdc20",
     "new_route": "004bef3e loadsselectedmodewidth/height and alwayscalls004cdbd0 at004bef43",
+    "flag_producer": "Retained WindowedMode reader ->0067900c;004b5bd1..004b5be3 storesnormalizedlogicalinverse to00564390",
+    "later_toggle": "Complete42-byte00517d70..00517d9a togglesbit0, storesit, calls005089d0;identical across pair",
+    "order": "Samecurrentindex jumpsdirectlytopublication;differentindex mustpassdriverrequestreturntestfirst",
     "retained_helpers": "Three complete sizing-helper bodies identical; centering versus desktop-size differs by caller route",
     "limits": "No assertion of sole repair cause, selecteddriver success, validcatalogpointer or actual windowed result"
   },
