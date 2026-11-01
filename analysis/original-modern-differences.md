@@ -596,7 +596,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **123 Claimed, 49 Static, 116 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **122 Claimed, 49 Static, 117 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -894,7 +894,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-006 | HUD borders was reduced twice to look better on modern huge resolutions. Without this change they look too fat. | Claimed |
 | MP100-007 | Compact cop's speeds table. Now it looks like the standard opponents list. | Claimed |
 | MP100-008 | As a whole positions of all HUD elements were adjusted a little to look better on all supported resolutions. | Partial |
-| MP100-009 | Resolutions list limit was extended from 20 to 50. | Claimed |
+| MP100-009 | Resolutions list limit was extended from 20 to 50. | Partial |
 | MP100-010 | The games uses the best possible graphics settings by default when it detects that the game is runned on the modern computer. | Claimed |
 | MP100-011 | On first run game tries to choose gameplay resolution nearest to current Windows default resolution. | Partial |
 | MP100-012 | New “High” car detail level. New quality of graphics for cars other than 1st player. There is no non-rotating wheels and disappearing side-view mirrors! Also the game uses twice better textures for all cars. Even traffic cars looks twice better. Also it fixes unfairness when 2nd player's car has worse graphics. Old “High” car detail is “Medium” now, old “Medium” is “Low” now, old “Low” was removed. Warning! You have to restart the game when you've changed car detail level to see full effect because the game loads textures only once when loading gameplay. | Partial |
@@ -1008,3 +1008,7 @@ The [endpoint follow-up](original-modern-network-endpoints.md#historical-comma-n
 ## Car Detail and historical wheel-related policy
 
 The [vehicle-detail follow-up](original-modern-vehicle-dispatch.md#car-detail-binding-and-historical-high-budget-bypass) binds Car Detail0/1/2 to High/Medium/Low, compares original/Modern threshold rows and dates the High-budget bypass plus two per-object wheel-tick reads to1.4.0→1.5.0. Final retains a mirror-detail exception to that bypass. Complete classifier, budget and selected render bodies remain equal across the four pinned EXEs. MP100-012 and MP150-001 advance vendor-only→partial; counts123/49/116/2. Actual wheel motion, texture quality and sole-cause attribution remain unverified; no target execution or database mutation.
+
+## Historical EXE mode-menu capacity and label consumers
+
+The [capacity history](original-modern-display-modes.md#historical-exe-capacity-expands-from51-to101-local-entries) verifies original20, early1.1.0 local51 and direct1.2.0 expansion to101, alongside matching cleared label banks, inclusive dynamic-label ranges, descriptor pointers and record-label accessors. Headlines50/100 are not exact local limits. MP100-009 advances vendor-only→partial; MP120-008’s historical mechanism boundary is now verified. Counts122/49/117/2;1.0.0 introduction, provider ceilings, complete storage/UI lifetime and actual displays remain unverified. No target execution or database changes.

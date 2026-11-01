@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "34c29a47ab04038517cf4ff8d9ddeb456f1cf80937eb4e7804a443384f97b1b3"
+      "sha256": "b536f97a084c21951227115cc253af9e2715886dcee76d6b72c8d1b1bdc0e067"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -101,7 +101,7 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "c7f0eae4d9d246fc755fea6c35588d8dd97c0f0dd32ff62f8311c279051db552"
+      "sha256": "1bbee5197937ceb8d0d7f3483e46fe4669a29275c54e8ebad5540797540f6fd9"
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -3538,12 +3538,14 @@
           "entry_mentioned": true,
           "addresses": [
             "00448210",
+            "00448235",
             "00448263",
             "0044826c",
             "004482b9",
             "004482c0",
             "004482db",
             "004482e1",
+            "004482e8",
             "004482f0",
             "004482f5",
             "0044831d"
@@ -3767,6 +3769,13 @@
       "original_sha256": "1f3fb3cdf096e4199a1d525b232aa51717c9155ca49d39b278dfe2159115d3d3",
       "modern_sha256": "3caf95d6a4ea5765544827e167af5adb5b9eb657d860115944f0a39217b71b4a",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-display-modes.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00448400"
+          ]
+        },
         {
           "path": "analysis/original-modern-graphics-menu-transition.md",
           "entry_mentioned": true,
@@ -11283,6 +11292,14 @@
       "original_sha256": "be7f1c44187bb54ea5ad06fbbb32987e6071ab33961c78c49616e25519aa986c",
       "modern_sha256": "15d6d3b6181b81ff2f0c9b639b6e2972656609cfb693b3c42630a9bded7e4e6e",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-display-modes.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004d17b0",
+            "004d17ca"
+          ]
+        },
         {
           "path": "analysis/original-modern-language-table.md",
           "entry_mentioned": true,

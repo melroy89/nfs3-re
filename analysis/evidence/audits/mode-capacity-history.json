@@ -1,0 +1,151 @@
+{
+  "kind": "historical-exe-mode-menu-capacity",
+  "versions": {
+    "1.1.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+      "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+      "member": "nfs3.exe",
+      "sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "spans": [
+        {
+          "start": "00448210",
+          "end_exclusive": "004482b9",
+          "bytes": 169,
+          "sha256": "3130710b453827a2c90b13bd7732f9755402cd4bdb60a2ea33ad27fabc77ca8f",
+          "hex": "56575589e589c789d68b151892550089d0c1e00401d0c1e00201d0ba0084a100c1e00201c2833d18925500337d7551893a53897204568b4510895a0868488d53008d7a14894a0c57894210e8307409008b4a1083c41485c97427be588d5300572bc949b000f2ae4f8a0688073c0074108a460183c60288470183c7023c0075e85f8b151892550066a1189255008d5a010566080000891d18925500668904559883a1005d5f5ec20400",
+          "assembly": "analysis/captures/modern-differences/mode-capacity-history/1.1.0-00448210.asm",
+          "assembly_sha256": "e039ceb4a8594f28ca31704902f9b4a381cd284efeccc3e3def0e8e5ef22e5c6"
+        },
+        {
+          "start": "004482c0",
+          "end_exclusive": "004482e8",
+          "bytes": 40,
+          "sha256": "408cb33de19388639b638982a7abad4c61a99c6e386ff453a0a24c114bcbeb5c",
+          "hex": "525589e531d2b89883a100891518925500ba68000000e831840900b810824400e8ab6a07005d5ac3",
+          "assembly": "analysis/captures/modern-differences/mode-capacity-history/1.1.0-004482c0.asm",
+          "assembly_sha256": "e7b069a923d4b6b3a4542580fe3300c9598fcc1858731b5b72d40a33e072e541"
+        },
+        {
+          "start": "004d17b0",
+          "end_exclusive": "004d17ca",
+          "bytes": 26,
+          "sha256": "ac3923ed78b2606bc34bd48b18bbf92c435c78d8303641fcfc960f9dfa408819",
+          "hex": "525589e53d660800007c0f3d980800007f08e8396cf7ff5d5ac3",
+          "assembly": "analysis/captures/modern-differences/mode-capacity-history/1.1.0-004d17b0.asm",
+          "assembly_sha256": "f86ee6fdbb91bf15fbfb600bbfebca21e4d726d6af2223866a86f42de731057a"
+        },
+        {
+          "start": "00448400",
+          "end_exclusive": "00448423",
+          "bytes": 35,
+          "sha256": "82d7e2ee97df7444d4ad162dfa46cb778c82fa346f066c8b3d3924fcf17d3af3",
+          "hex": "525589e52d6608000089c2c1e00401d0c1e00201d0c1e002050084a10083c0145d5ac3",
+          "assembly": "analysis/captures/modern-differences/mode-capacity-history/1.1.0-00448400.asm",
+          "assembly_sha256": "409e69c7ced92ef67c41c010147a9fab9de95fd2402c542558b16ad6b2001716"
+        }
+      ],
+      "count": "00559218",
+      "signed_reject_count_at_least": 51,
+      "record_base": "00a18400",
+      "record_stride": 276,
+      "label_base": "00a18398",
+      "label_clear_bytes": 104,
+      "cleared_WORD_slots": 52,
+      "inclusive_dynamic_label_ids": [
+        "0866",
+        "0898"
+      ],
+      "descriptor_005566b8": [
+        "00537f84",
+        "00a18398",
+        "00000000",
+        "00000000",
+        "006fbc14"
+      ],
+      "descriptor_key": "winsize"
+    },
+    "1.2.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z",
+      "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
+      "member": "nfs3.exe",
+      "sha256": "4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003",
+      "spans": [
+        {
+          "start": "00448210",
+          "end_exclusive": "004482b9",
+          "bytes": 169,
+          "sha256": "51ac5a6d283042b836628f6a5cd902f0c85e5e49161a9e8b9a524f7cd90f0373",
+          "hex": "56575589e589c789d68b151892550089d0c1e00401d0c1e00201d0ba2083a100c1e00201c2833d18925500657d7551893a53897204568b4510895a0868488d53008d7a14894a0c57894210e8307409008b4a1083c41485c97427be588d5300572bc949b000f2ae4f8a0688073c0074108a460183c60288470183c7023c0075e85f8b151892550066a1189255008d5a010566080000891d18925500668904555482a1005d5f5ec20400",
+          "assembly": "analysis/captures/modern-differences/mode-capacity-history/1.2.0-00448210.asm",
+          "assembly_sha256": "edc51515221c48a18fdf540d41548defd141b10b28047205de2cc783bffc0f4e"
+        },
+        {
+          "start": "004482c0",
+          "end_exclusive": "004482e8",
+          "bytes": 40,
+          "sha256": "8f2b8b97cf37fe8f65bb7e51c6b85f640dc2452824297a34f92cbd1202aeac42",
+          "hex": "525589e531d2b85482a100891518925500bacc000000e831840900b810824400e8ab6a07005d5ac3",
+          "assembly": "analysis/captures/modern-differences/mode-capacity-history/1.2.0-004482c0.asm",
+          "assembly_sha256": "e3db78ea0523a7d451a23e08f96b14e4202e1a32ad8de875423e6f5eb9de7c20"
+        },
+        {
+          "start": "004d17b0",
+          "end_exclusive": "004d17ca",
+          "bytes": 26,
+          "sha256": "12581131fd9e9f391b8680a7c488ce745318d7c3814a832c6da5ecc36292ca0e",
+          "hex": "525589e53d660800007c0f3dca0800007f08e8396cf7ff5d5ac3",
+          "assembly": "analysis/captures/modern-differences/mode-capacity-history/1.2.0-004d17b0.asm",
+          "assembly_sha256": "94f781fe7ec46c40bd5df519ce7eaf215044976dc15876c23d1aed1f27a3d4be"
+        },
+        {
+          "start": "00448400",
+          "end_exclusive": "00448423",
+          "bytes": 35,
+          "sha256": "00a5a982757f3abb111cffed1f71e1523a3c93896ee0a6e8b053095bb2516714",
+          "hex": "525589e52d6608000089c2c1e00401d0c1e00201d0c1e002052083a10083c0145d5ac3",
+          "assembly": "analysis/captures/modern-differences/mode-capacity-history/1.2.0-00448400.asm",
+          "assembly_sha256": "c9995f44006e2cfdbf94a45fa03a72e4c647dbdda6d8274949bbd53f93840a16"
+        }
+      ],
+      "count": "00559218",
+      "signed_reject_count_at_least": 101,
+      "record_base": "00a18320",
+      "record_stride": 276,
+      "label_base": "00a18254",
+      "label_clear_bytes": 204,
+      "cleared_WORD_slots": 102,
+      "inclusive_dynamic_label_ids": [
+        "0866",
+        "08ca"
+      ],
+      "descriptor_005566b8": [
+        "00537f84",
+        "00a18254",
+        "00000000",
+        "00000000",
+        "006fbc14"
+      ],
+      "descriptor_key": "winsize"
+    }
+  },
+  "limits": [
+    "No target instructions, display enumeration or UI execution.",
+    "1.0.0 artifact not inspected; 1.1.0 establishes an early retained mechanism, not its first introduction.",
+    "Local append capacity and inclusive label routing do not establish provider supply, actual list length or complete memory lifetime.",
+    "Counts, strides and products assume ordinary initialized nonnegative counts without intervening alias mutation."
+  ],
+  "original_guard": {
+    "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+    "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+    "start": "00448235",
+    "hex": "833d18925500147d75",
+    "signed_reject_count_at_least": 20,
+    "label_base": "005591ec"
+  },
+  "checks": {
+    "complete_historical_collector_equal_after_only_address_and_capacity_normalization": true,
+    "labels_consumer_matches_capacity": true,
+    "cleared_label_slots_include_one_extra_WORD": true,
+    "comparison": "Original local cap20; early1.1.0 cap51;1.2.0 cap101. Headlines50/100 are not exact local caps."
+  }
+}

@@ -143,3 +143,35 @@ Graphics setup looks up exact tokens **`Z_BUFFER`** and **`Z_BUFFER_TEXT`** at00
 Modern's deduplication is also relevant: an accepted equal/higher-depth candidate replaces the row's+10h indication with its own value. It does not aggregate an OR across merged depth candidates. Under Hide16bitModes grouping, capability therefore follows the retained candidate rather than “any mode at these dimensions supports it.” Which capabilities actual16/32-bit provider entries supply remains unverified.
 
 **Verified:** shared threshold/field/consumer linkage and removed original `(z)` append. **Pending:** every provider field contract, all list/caller lifetimes, UI flag effects, actual labels/depth rendering and historical attribution. This is static evidence only; no target instructions, menus or driver records were executed.
+
+## Historical EXE capacity expands from51 to101 local entries
+
+**Confidence: verified static instructions and paired1.1.0/1.2.0 boundary. Work status: done for this local EXE producer/consumer chain; partial for the advertised limits.** The [historical audit](scripts/audit_mode_capacity_history.py) pins both author-hosted archives and EXE hashes and rechecks the supplied original guard. Its [manifest](evidence/audits/mode-capacity-history.json) retains complete collectors/initializers, dynamic-label routing, record-label accessors, raw bytes and hashes. No enumeration, target instructions or UI was executed.
+
+| Property | Supplied original | Historical1.1.0 | Historical1.2.0 |
+|---|---|---|---|
+| Collector entry |`00448210` |`00448210` |`00448210` |
+| Signed reject condition at`00448235` |count>=20 |count>=51 (`33h`) |count>=101 (`65h`) |
+| Count storage |`00559218` |`00559218` |`00559218` |
+| Record bank,114h-byte stride |`00661220` |`00a18400` |`00a18320` |
+| Label WORD bank |`005591ec` |`00a18398` |`00a18254` |
+| Initializer’s label clear | Existing paired audit |104 bytes =52 WORDs |204 bytes =102 WORDs |
+| Dynamic mode-label IDs | Existing original evidence |`0866..0898` inclusive =51 |`0866..08ca` inclusive =101 |
+
+For initialized counts starting at0 and ordinary serialized calls, the historical appenders admit indexes0..50 and0..100 respectively. They reject before writing another record when count reaches51/101. Neither historical collector sorts or deduplicates locally; the entire169-byte pair differs only in the record-bank operand, label-bank operand and capacity immediate. The later final sorted collector uses another branch form (`JA count>100`) but also admits101 unique records locally, as documented above. These are distinct implementations with the same resulting ordinary local count bound at1.2.0/final, not identical bodies across all releases.
+
+The initializer `004482c0..004482e8` in both historical versions resets count to0, clears the label bank with an extra WORD beyond the admitted entries, and calls enumerator`004bed90` with callback`00448210`. This supports a terminating zero after a maximally appended list under the stated non-aliasing/lifetime assumptions; it does not imply that the record bank is file-backed or that runtime mapping was observed.
+
+### Menu consumer expands with the producer
+
+The historical20-byte descriptor at`005566b8` binds key`winsize`, the version’s label WORD bank and selected-index storage`006fbc14`. Each appended record publishes ID`0866+index` into that bank. The dynamic-string router at`004d17b0..004d17ca` admits that **inclusive** ID range and calls`00448400`. Its complete35-byte accessor subtracts`0866`, multiplies by114h, adds the matching record base and returns record+14h, the formatted label. It has no separate count check.
+
+Thus the51st/101st entries are not excluded by these specific label-routing bounds. This is a matched producer→descriptor→string-consumer chain, stronger than finding a larger immediate alone. It still does not prove every cascade/input consumer, provider record, real enumeration result or selected display works at maximum capacity.
+
+### Release-note conclusions and limits
+
+- **MP100-009**, advertised20→50: original20 is verified, and author-hosted1.1.0 already contains the expanded mechanism, but its exact local cap is51. A1.0.0 artifact was not inspected, so first introduction remains unresolved. Label it partial rather than claiming an exact50 cap or verified1.0.0 release boundary.
+- **MP120-008**, advertised100 EXE modes: the direct1.1.0→1.2.0 pair now verifies expansion51→101 and corresponding label/clear/accessor changes. The introducing historical boundary for this mechanism is established; the strict headline number is not the local bound.
+- **MP120-017/024** concern renderer components in the release-note context. This EXE comparison cannot independently establish either DLL’s capacity or provider behaviour; retain their separate evidence status.
+
+Provider ceilings can prevent the final admitted slot from ever being populated; no such ceiling is assumed here. Record-bank storage/protection, all reset paths and actual display support remain separate questions. Preserve the observed signed comparisons and inclusive label ranges in a version-faithful C reconstruction. Do not silently substitute advertised50/100 caps or infer a runtime fault merely from local admission arithmetic.

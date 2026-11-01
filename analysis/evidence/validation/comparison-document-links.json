@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "34c29a47ab04038517cf4ff8d9ddeb456f1cf80937eb4e7804a443384f97b1b3",
-      "relative_links": 184
+      "sha256": "b536f97a084c21951227115cc253af9e2715886dcee76d6b72c8d1b1bdc0e067",
+      "relative_links": 185
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,13 +108,13 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "499a3f0c0698606f3f41ec6fc5b97f17673b5320df3cdf5c600486c0feec86b4",
-      "relative_links": 215
+      "sha256": "973f8245a7bd4e469e1c9c58ed60cea33287a27a920ad34d7f0ae57a8398b9da",
+      "relative_links": 216
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "c7f0eae4d9d246fc755fea6c35588d8dd97c0f0dd32ff62f8311c279051db552",
-      "relative_links": 16
+      "sha256": "1bbee5197937ceb8d0d7f3483e46fe4669a29275c54e8ebad5540797540f6fd9",
+      "relative_links": 18
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "a6cc235cdf481cba70a6bb4d1adf81acd1409b1156ae62116c6030240ad3ca79",
-      "relative_links": 725
+      "sha256": "fd7b870f73670dd661a0859ff9a0a8be7451b16d0b4eac5200606102d8cfe58a",
+      "relative_links": 727
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -648,8 +648,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "23f852c10f81cacc309aba8e3d3b62c8c7e64c7cbd42e4ca5221eacc65ecdd86",
-      "relative_links": 180
+      "sha256": "672a9e9d4da756973b886d289cc9eed958329500d80a817563fdc31f60b70023",
+      "relative_links": 181
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -658,7 +658,7 @@
     }
   ],
   "file_count": 131,
-  "relative_link_count": 2413,
+  "relative_link_count": 2420,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
