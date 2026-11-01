@@ -270,7 +270,7 @@ Combined with the loader’s key predicate, this establishes the intended final-
 
 The preceding paired executable and official-asset evidence gives **partial static support for MP153-013**. Modern's parameterized presence lookup gates ordinary logo admission by each record's model key; the decoded atlas identifies keys37/38 as Ford/HSV. This is a code-and-data mechanism, not an inference from manufacturer strings alone. The shared presence wrapper also strengthens original's single-key test into a two-key test, but that wrapper selects a background resource and must not be mistaken for the per-record logo loader.
 
-The release note names `LOGO2.QFS`, whereas the inspected final Modern loader uses `logos.qfs`; the historical asset relationship and release-specific introduction are not established by this pair. The rejected-final-record fall-through documented above also prevents a blanket claim that all missing-model inputs are safely handled. Actual registry contents, complete archive admission/lifetime and rendered animation remain unverified. The catalog therefore records partial evidence rather than treating the vendor claim as either wholly confirmed or wholly unsupported.
+The release note names `LOGO2.QFS`, whereas the inspected final Modern loader uses `logos.qfs`; this final pair alone does not establish the historical asset relationship. The later historical LOGO2 follow-up below verifies1.5.0’s optional two-image implementation; the later consolidation into logos.qfs and1.5.3-specific filtering boundary remain separate. The rejected-final-record fall-through documented above also prevents a blanket claim that all missing-model inputs are safely handled. Actual registry contents, complete archive admission/lifetime and rendered animation remain unverified. The catalog therefore records partial evidence rather than treating the vendor claim as either wholly confirmed or wholly unsupported.
 
 ## Trailing rejection is at decoded EOF
 
@@ -310,3 +310,37 @@ Exact prologue/epilogue bytes, both calls, immediate overwrite witnesses and equ
 The full2812-byte interval **`004a40a4..004a4ba0`** is now partitioned in the [outside-body manifest](evidence/audits/outside-function-differences.json). All490 differing positions lie in the producer/alignment range`004a40c0..004a4390`, overlapping loader/animation range`004a4390..004a444c`, or animation/epilogue range`004a444c..004a46f0`. The28 leading bytes and1200 trailing bytes match. Exact per-part hashes/counts are retained and asserted.
 
 These are comparison partitions, not counterpart function definitions: original animation starts`004a4410`, while Modern’s expanded loader occupies part of that old animation prefix before its moved animation entry`004a444c`. Existing shared callsites and complete counterpart envelopes establish the semantic pairings. Producer/index invariants, the conditional decoded-source boundary, callback scheduling and actual frames remain limited as described above; accounting for byte positions does not close those questions.
+
+## Historical LOGO2 loading and two-image draw selection
+
+**Confidence: verified static1.4.0/1.5.0 producer/consumer change. Work status: done for the conditional second-image mechanism; runtime/asset contents remain unverified.** The [historical audit](scripts/audit_logo2_history.py) rechecks both author-hosted archives and EXE member hashes. Its [manifest](evidence/audits/logo2-history.json) retains complete loaders, slot-state producers and animation envelopes, shared caller witnesses, raw eight-record tables, file-check helper instructions and captures. No target, file API, upload or animation was executed.
+
+### Paired loader admits a second uploaded image
+
+Both historical versions reach loader`004a4390` through the same conditional `texteffects` call at`00460489`. The1.4.0 complete125-byte loader matches the legacy single-image role already compared with supplied original: build base path+`logo.qfs`, load named shape`logo`, upload to identifier cell`007a1b94`, free the loaded allocation. It has no local second-file load.
+
+The1.5.0 loader and helper occupy`004a4390..004a4424` (148 bytes, including the separate helper at`004a43ce`). The outer routine uses PUSHAD/POPAD and publishes state instead of returning a new scalar status:
+
+| Condition on normal returning path | Published count`007a1abc` | Identifier writes |
+|---|---:|---|
+| BYTE`007a3a58` intersects mask6 |0 | No new identifier |
+| Primary`logo.qfs` helper returns0 |0 | No new identifier; **does not attempt LOGO2** |
+| Primary returns nonzero, secondary`logo2.qfs` returns0 |6 | Primary result to`007a1b90` |
+| Both return nonzero |8 | Primary to`007a1b90`, secondary to`007a1b94` |
+
+The filename literals are at`0053cf28` and`0053cf34`. Helper`004a43ce` concatenates the common base path and supplied filename into local storage, calls`004f91ec`, and returns0 on that check’s zero result. The captured check delegates through`004f915e` to the actual imported **GetFileAttributesA** (`00534520`), rejects `ffffffffh` or directory bit10h and otherwise returns1. This establishes a file-attribute admission mechanism, not existence inferred merely from the filename.
+
+On admission, the helper loads through`004956f0`, finds shape`logo` via`004ef1e0`, uploads through`004d6070` with EBX256/ECX0, frees the loaded object and returns the stored identifier. The general load/lookup/upload failure policies remain those helpers’ dependencies; this caller does not validate every intermediate result. A nonzero returned identifier is the outer count gate, not observed rendering success. The helper saves/restores EBX, preserving the outer0/6/8 accumulator across its normal return.
+
+### Retained records become selectable through a changed count and handle contract
+
+The eight16-byte records at`0055e8dc..0055e95c` are **identical** in1.4.0 and1.5.0. The first six have fourth DWORD0; the last two have fourth DWORD1. This is not newly inserted rectangle data at this boundary. Their use changes:
+
+- 1.4.0 slot producer`004a40cd` writes literal6 to **old count`007a1b90`**. Its loader’s single uploaded identifier is`007a1b94`.
+- 1.5.0 jumps over that store, uses **new count`007a1abc`**, and repurposes`007a1b90/+4` as a two-element uploaded-identifier array. Both slot9’s sequential selection and the other-slot table-derived selection use signed IDIV by the new count; selected remainders are published into`007a1b38[slot]`.
+- The1.5.0 animation entry at`004a4424` exits when the new count is zero before ordinary slot initialization. This is a local gate; alternate producer callers or later count mutation are not excluded.
+- At`004a4592`, the selected record index is multiplied by16 and added to`0055e8dc`. At`004a45ab`, record+0ch becomes the identifier-array index; the chosen identifier reaches draw helper`004d7d90` at`004a45bd`. Thus selected records6/7 use the second uploaded image, while0..5 use the primary.
+
+This establishes the advertised **MP150-022 conditional LOGO2 animation mechanism** at its1.4.0→1.5.0 boundary. It does not establish the contents or manufacturer identities of an external historical LOGO2 file, exact selected-index distributions, successful uploads or visible animation. In particular, primary-file failure does not leave a standalone LOGO2-only mode in this inspected loader.
+
+Final1.6.1 uses the separately audited **logos.qfs → LTBL →12-byte records** mechanism. The final atlas and conditional model keys must not be substituted for these historical16-byte records/two handles. This pass resolves the existence of the historical optional two-image route; when/how the later consolidation occurred and its full asset correspondence remain follow-up work. For reconstruction, preserve version-specific count/identifier addresses: using1.4.0’s meaning of`007a1b90` in1.5.0 would overwrite its first uploaded identifier.

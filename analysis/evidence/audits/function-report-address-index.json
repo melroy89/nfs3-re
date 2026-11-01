@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "b536f97a084c21951227115cc253af9e2715886dcee76d6b72c8d1b1bdc0e067"
+      "sha256": "ee90e68bce61ab1c13f3be220650a979d78944dfccf74365cf0667fbdd4835dc"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -145,7 +145,7 @@
     },
     {
       "path": "analysis/original-modern-frontend-page.md",
-      "sha256": "ebf6c8a0c8633283e67cd7aa6def1201b8249058d014c9c75f5359c036b247a8"
+      "sha256": "fb06e7f2c1559ce78da4df5d6d1576dc46b2aedab1fe56fa9b06a4d7c313b493"
     },
     {
       "path": "analysis/original-modern-frontend-sound.md",
@@ -12960,6 +12960,13 @@
       "modern_sha256": "c6bc2bbba02a625ee1bcad086c5527f2ab4f7c2cbfd264d9e1172ce900e4c2b3",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-frontend-page.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f915e"
+          ]
+        },
+        {
           "path": "analysis/original-modern-small-entry-followup.md",
           "entry_mentioned": true,
           "addresses": [
@@ -13044,6 +13051,13 @@
       "original_sha256": "8119a844baaa06a9a5eee5ca05da88f7fb8d212881a52bd1941f964eb4897442",
       "modern_sha256": "978abe9b5ba21529c75be7bdb6c9a1ddd1a91997e24223e62de2f385974059d5",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-frontend-page.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f91ec"
+          ]
+        },
         {
           "path": "analysis/original-modern-screenshots.md",
           "entry_mentioned": true,

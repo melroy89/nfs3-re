@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **122 vendor-only,49 bounded-static,117 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **121 vendor-only,50 bounded-static,117 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -603,3 +603,7 @@ The [vehicle-detail follow-up](original-modern-vehicle-dispatch.md#car-detail-bi
 ## Historical EXE mode-menu capacity and label consumers
 
 The [capacity history](original-modern-display-modes.md#historical-exe-capacity-expands-from51-to101-local-entries) verifies original20, early1.1.0 local51 and direct1.2.0 expansion to101, alongside matching cleared label banks, inclusive dynamic-label ranges, descriptor pointers and record-label accessors. Headlines50/100 are not exact local limits. MP100-009 advances vendor-only→partial; MP120-008’s historical mechanism boundary is now verified. Counts122/49/117/2;1.0.0 introduction, provider ceilings, complete storage/UI lifetime and actual displays remain unverified. No target execution or database changes.
+
+## Historical optional LOGO2 producer and draw consumer
+
+The [two-image follow-up](original-modern-frontend-page.md#historical-logo2-loading-and-two-image-draw-selection) verifies1.4.0→1.5.0 adds an optional logo2.qfs attempt after primary success, publishes0/6/8, and selects the second uploaded identifier through the retained records’ fourth DWORD. Primary failure prevents the second attempt. Count/identifier address roles change; final uses the separately audited logos.qfs metadata path. MP150-022 advances vendor-only→bounded-static; counts121/50/117/2. Historical image contents, actual uploads/animation and later consolidation remain unverified; no target execution or database mutation.

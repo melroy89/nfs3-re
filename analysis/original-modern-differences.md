@@ -596,7 +596,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **122 Claimed, 49 Static, 117 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **121 Claimed, 50 Static, 117 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -703,7 +703,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-019 | Commas are treated as dots when parsing an IP address. | Static |
 | MP150-020 | HUD preview in the settings now arranged well. | Claimed |
 | MP150-021 | Volume and Alpha sliders display own value (in percents). | Partial |
-| MP150-022 | Logos from the LOGO2.QFS (if it exists) are used for animation in the menu (together with logos from the LOGO.QFS). Original version of the game have this file, but it is unused. | Claimed |
+| MP150-022 | Logos from the LOGO2.QFS (if it exists) are used for animation in the menu (together with logos from the LOGO.QFS). Original version of the game have this file, but it is unused. | Static |
 | MP150-023 | Animated logos of automobile manufacturers are disappearing more smoothly. | Partial |
 | MP150-024 | Fixed rendering piority errors for the top dropdown lists in the the “Location” and “Opponents” menus. | Claimed |
 | MP150-025 | “Car Showcase” subtitle and “Compare All Cars” subtitle are displayed using the same font as the “Race Results” subtitle. | Claimed |
@@ -1012,3 +1012,7 @@ The [vehicle-detail follow-up](original-modern-vehicle-dispatch.md#car-detail-bi
 ## Historical EXE mode-menu capacity and label consumers
 
 The [capacity history](original-modern-display-modes.md#historical-exe-capacity-expands-from51-to101-local-entries) verifies original20, early1.1.0 local51 and direct1.2.0 expansion to101, alongside matching cleared label banks, inclusive dynamic-label ranges, descriptor pointers and record-label accessors. Headlines50/100 are not exact local limits. MP100-009 advances vendor-only→partial; MP120-008’s historical mechanism boundary is now verified. Counts122/49/117/2;1.0.0 introduction, provider ceilings, complete storage/UI lifetime and actual displays remain unverified. No target execution or database changes.
+
+## Historical optional LOGO2 producer and draw consumer
+
+The [two-image follow-up](original-modern-frontend-page.md#historical-logo2-loading-and-two-image-draw-selection) verifies1.4.0→1.5.0 adds an optional logo2.qfs attempt after primary success, publishes0/6/8, and selects the second uploaded identifier through the retained records’ fourth DWORD. Primary failure prevents the second attempt. Count/identifier address roles change; final uses the separately audited logos.qfs metadata path. MP150-022 advances vendor-only→bounded-static; counts121/50/117/2. Historical image contents, actual uploads/animation and later consolidation remain unverified; no target execution or database mutation.
