@@ -1185,3 +1185,7 @@ The [descriptor/callback follow-up](original-modern-display-modes.md#dx6-public-
 ## Historical screenshot depth-local correction
 
 The [worker-width comparison](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) verifies140 stores only a WORD into a later DWORD stride input;150 initializes the complete depth local and uses full-width tests, retained final. Derived examples expose stale-upper-word stride amplification without executing target instructions. MP150-034 advances to partial support; actual crashes and XP-specific causation remain untested.
+
+## DX6 count consumers and zero-slot admission
+
+The [historical consumer comparison](original-modern-display-modes.md#dx6-extra-count-slot-reaches-inclusive-scans-but-can-fail-admission) verifies inclusive140/150 scans and150 flag-first rejection. Under an explicit fresh-clear/insertion-only premise, the extra slot is zero/rejected forN<100; atN100 that proof stops at the arena boundary. Nearest fallback1 and direct/same-current switching remain distinct contracts. No runtime safety or missing-last-mode claim is inferred.

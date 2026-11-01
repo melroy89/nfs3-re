@@ -798,3 +798,7 @@ The [three-build worker audit](original-modern-screenshot-pixels.md#historical15
 ## Eight renderer/screenshot investigations reproduced
 
 The [checkpoint](evidence/validation/renderer-screenshot-history-checkpoint.json) verifies eight selected script/output identities against reviewed HEAD, repeats each twice and checks protected artifacts before/after. It includes HUD preview, exit setup, loading budget, DX7 opt-in, fog mode/enable, menu context, DX6 count and screenshot depth-local evidence. Existing unresolved runtime/provider/bounds qualifications remain; the full comparison is incomplete. Follow the actual DX6 count consumers and direct lighting chain rather than redoing the resolved structural mapping.
+
+## Selected DX6 count consumers qualified
+
+The [consumer audit](original-modern-display-modes.md#dx6-extra-count-slot-reaches-inclusive-scans-but-can-fail-admission) verifies inclusive scans and150 eligibility ordering. The extra visited row is rejected under the documented N<100 zero-arena/insertion-only premises; N100, external writes and direct/same-current switching retain separate limits. Nearest fallback1 is not proof of an eligible record. This advances the count follow-up without a target run or catalog classification change.

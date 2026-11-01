@@ -247,3 +247,30 @@ The [EXE search comparison](original-modern-mode-selection.md#modern-descriptor-
 The added INC is not guarded by a local enumeration-result check; the callback does not test insertion's return before continuing. Failures, provider callback ordering and complete external consumers remain unknown. The insertion helper uses ambient direction-flag assumptions for its forward comparisons/copy, uses STD for shifting and executes CLD before continuing; a C port must preserve the verified record movement and comparator rather than imitate those machine operations without their preconditions.
 
 **The counter's structural purpose is now resolved:** it is the exported mode count, not a lighting or fog value. The edit remains separate from MP150-033's unverified taillight repair. Complete driver semantics, leading-slot policy, mode-menu visibility, device acceptance and all bounds remain later work. No DLL, enumerator, API, game, instruction probe, compiler or Ghidra write occurred.
+
+## DX6 extra count slot reaches inclusive scans but can fail admission
+
+**Verified selected consumer contracts; conditional zero-slot extent argument, not universal mode safety.** The [consumer audit](evidence/audits/dx6-count-consumers.json), reproduced with `python3 analysis/scripts/audit_dx6_count_consumers.py`, binds the preceding driver count/layout evidence to author-hosted140/150 EXE consumers.
+
+Both140 inline enumeration and150 factored enumeration begin with public index1 and exit only when signed index>descriptor count. Therefore they include index=count; they do not use a conventional exclusive count bound.150's59-byte enumerator`004bed90..004bedcb` and147-byte nearest search`004bedcc..004bee5f` call the same67-byte eligibility helper`004bee60..004beea3` before collecting/scoring a record. That helper first tests record+10 bit0; a clear bit exits rejected **before** the height division and before callback dispatch.
+
+Let N be the number of distinct inserted records after the checked fresh-clear/insertion-only driver lifecycle.150 reports N+1, and its last visited public row N+1 is at insertion-base`6003f028 + N×40`. The retained insertion helper writes only the occupied prefix; its ordinary sorted shifts and replacements do not populate the next unused record.
+
+| N |150 reported count / final visited index |Extra record address |Inside the4,000-byte explicit clear? |
+|---|---:|---|---|
+|0 |1 |`6003f028` |Yes |
+|3 |4 |`6003f0a0` |Yes |
+|99 |100 |`6003ffa0` |Yes, last cleared record |
+|100 |101 |`6003ffc8` |No |
+
+Thus for **0≤N<100**, if no other/aliased writes modify that next record, it remains zero from initialization and150's enumeration/nearest admission rejects it before callback/scoring. This narrows the earlier count-convention uncertainty: adding the leading-slot contribution need not add a visible resolution in these consumers. It is not proof that the complete140/150 menus are equivalent; depth gates, callback ABI, collector ordering and other changes remain separately documented.
+
+At N=100 the extra row lies beyond the explicit clearing extent. That does not prove it is outside mapped storage or contains nonzero data; it means this particular zero-row argument cannot establish its contents or admission. Initial loader zero-fill, later adjacent writes, other consumers and complete provider lifetime need separate evidence. No malformed catalog or fault was produced.
+
+### Search rejection is not a direct-switch guard
+
+150's nearest-search tail retains unconditional fallback index1 when no candidate wins (`004bee4e..004bee56`), without validating record1. In the N=0 derived case, rejecting the zero row therefore does not itself create a valid fallback mode.
+
+150 application`004bef50` clamps incoming indices below1 to1 and forms its record offset. The same-current-index route branches away before the changed-index count gate. The changed-index gate`004befc2..004befdb` admits signed indices1..count **inclusive**; it is not the eligibility helper used by enumeration/nearest search. Follow-up driver calls, failure handling and actual selection must not be replaced by an assumption that “it was in range, so it was eligible.” The [mode-application report](original-modern-mode-selection.md) retains the later final implementation's independently qualified behaviour.
+
+**Resolved:** selected inclusive visitation, zero-slot rejection ordering and a bounded N<100 clearing/insert-lifetime argument. **Remaining:** counter/record alias writes, capacity-edge contents, fallback/same-current/direct-switch outcomes, all external clients and device acceptance. These findings do not establish a universal missing-last-mode repair or a runtime bounds failure. No game, DLL, mode API, instruction probe, compiler or Ghidra write was used.
