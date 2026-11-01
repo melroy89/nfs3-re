@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "3c2c219c73f7cd393203da62ba540904f118785abd5153ed0360a2917f367bb3",
-      "relative_links": 92
+      "sha256": "68579240ef2a5b1240d9b38b4109132f67d84cbf7792a790d5ae60b87babe4c5",
+      "relative_links": 93
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -113,8 +113,8 @@
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
-      "sha256": "a357fb529b98fc30dcf96df2409423efa0f17fcf7fad30c6b8dc3e3aadaba911",
-      "relative_links": 16
+      "sha256": "97959a27054931bbde2d6bf843140b6ea4c903a15b6d1e1614d34ba867537a50",
+      "relative_links": 17
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
@@ -183,7 +183,7 @@
     },
     {
       "path": "analysis/original-modern-glide-reference-identity.md",
-      "sha256": "1676f85b5d612881b51f8864fbfb2b63d9080a96b587f7968f003478312e97b9",
+      "sha256": "5a639462151fce7d003e4c64ccffd88b0819a5984d8f9ce56e4a637c8a713b9d",
       "relative_links": 6
     },
     {
@@ -623,7 +623,7 @@
     }
   ],
   "file_count": 124,
-  "relative_link_count": 2008,
+  "relative_link_count": 2010,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

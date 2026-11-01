@@ -153,6 +153,32 @@ def main():
     locations = [final.get_rva_from_offset(i)+0x60000000 for i in offsets]
     assert locations == [0x600010df, 0x600010fa, 0x60001109, 0x60001119]
     result['loader_lifetime']['init_cell_exact_literal_operands'] = [f'{v:08x}' for v in locations]
+    result['entry_callback_lifecycle'] = {'captures': [], 'entry_rva': f'{ref.OPTIONAL_HEADER.AddressOfEntryPoint:08x}'}
+    assert ref.OPTIONAL_HEADER.AddressOfEntryPoint == final.OPTIONAL_HEADER.AddressOfEntryPoint == 0x4342
+    assert ref.get_data(0x4342, 5) == final.get_data(0x4342, 5) == bytes.fromhex('e969070000')
+    assert ref.get_data(0x4ab0, 0x199) == final.get_data(0x4ab0, 0x199)
+    reason_table = ref.get_data(0x4aa0, 16)
+    assert reason_table == final.get_data(0x4aa0, 16)
+    assert struct.unpack('<4I', reason_table) == (0x60004bf9, 0x60004af3, 0x60004ad1, 0x60004bdc)
+    result['entry_callback_lifecycle']['reason_targets'] = [f'{v:08x}' for v in struct.unpack('<4I', reason_table)]
+    for role, pe, start, end, label in [
+        ('hosted_reference', ref, 0x1010, 0x1018, 'complete-reference-user-entry'),
+        ('official_final', final, 0x1010, 0x101f, 'complete-final-user-entry'),
+        ('hosted_reference', ref, 0x4ab0, 0x4c49, 'complete-CRT-entry-wrapper'),
+        ('official_final', final, 0x4ab0, 0x4c49, 'complete-CRT-entry-wrapper')]:
+        body = pe.get_data(start, end-start)
+        result['entry_callback_lifecycle']['captures'].append({'role': role, 'label': label,
+            'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+            'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    assert ref.get_data(0x1010, 8).hex() == 'b801000000c20c00'
+    assert final.get_data(0x1010, 15).hex() == '8b442404a3cc27016031c040c20c00'
+    module_literal = struct.pack('<I', 0x600127cc)
+    module_offsets = [i for i in range(len(raws['official_final'])-3) if raws['official_final'][i:i+4] == module_literal]
+    assert [final.get_rva_from_offset(i)+0x60000000 for i in module_offsets] == [0x60001015, 0x60001054]
+    result['entry_callback_lifecycle']['module_instance_exact_literal_operands'] = ['60001015', '60001054']
+    assert {entry.address: entry.name for library in final.DIRECTORY_ENTRY_IMPORT for entry in library.imports}[0x6000e1ec] == b'GetModuleFileNameA'
+    result['entry_callback_lifecycle']['filename_api'] = {'iat': '6000e1ec', 'name': 'GetModuleFileNameA',
+        'module_argument': 'DWORD[600127cc]', 'producer': 'first argument of user entry callback60001010'}
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [

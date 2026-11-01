@@ -138,3 +138,7 @@ The [three-way Glide identity audit](original-modern-glide-reference-identity.md
 ## Hosted/final loader lifecycle follow-up
 
 The [hosted/final lifecycle comparison](original-modern-glide-reference-identity.md#loader-and-cleanup-lifecycle-differ) now distinguishes reference about-time FreeLibrary/handle clear from final shutdown/latch decrement with the module handle retained locally. Final acquisition and required-name binding are centralized; repeated nonzero-state acquisition does not increment the latch, so it must not be described as general reference counting. Partial binding, detach and runtime provider lifetime remain unverified. This is a new comparison for the hosted reference, not a transfer from the different local candidate.
+
+## Glide self-module filename producer verified
+
+The [entry-path follow-up](original-modern-glide-reference-identity.md#entry-callback-supplies-the-module-directory-handle) verifies the unchanged PE-entry/CRT wrapper and changed user callback: final stores its first DLL-entry argument into the exact cell passed to GetModuleFileNameA for the prefixed Glide load attempt. Reference callback only returns1. The changed callback itself has no detach release; indirect/registered finalizers and other callers remain separate. This strengthens the earlier own-module path description without asserting provider identity or universal cleanup.

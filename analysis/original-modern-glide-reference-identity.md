@@ -122,8 +122,31 @@ The lifetime distinction also fits the static-import difference: the reference h
 
 The final pathname path, required-provider completeness, partial-bind failure slot contents, module-detach cleanup and every init/shutdown caller remain separate follow-ups. No initialization, callback, unload or other target code was executed.
 
+## Entry callback supplies the module-directory handle
+
+The audit now follows the actual PE entry rather than assuming that the directory lookup uses this DLL's handle. Both PE headers specify entry RVA4342h, whose retained five-byte jump reaches `60004ab0`. The complete409-byte CRT wrapper `60004ab0..60004c49` and its four-entry reason table at60004aa0 are identical in the hosted reference and final driver.
+
+The wrapper reads the three incoming arguments into ESI/EDI/EBP and passes them in the same order to user callback `60001010`. Under the normal32-bit Windows DLL-entry convention these are module instance, notification reason and reserved argument. Its reason table is:
+
+| Reason value | CRT target |
+|---:|---|
+|0 |60004bf9 |
+|1 |60004af3 |
+|2 |60004ad1 |
+|3 |60004bdc |
+
+Each ordinary selected route reaches the user callback through its captured call site, subject to the wrapper's runtime-preparation/error gates. This is local linkage, not a claim that every callback runs after every possible CRT failure.
+
+The reference callback `60001010..60001018` simply returns1 with `RET 0ch`. Final callback `60001010..6000101f` loads its first stack argument, stores it at **600127cc**, then returns1 with the same cleanup. It does not inspect the notification reason. Thus the final module-instance producer is explicit; this is not an anonymous data-held pointer inferred from a filename string.
+
+The only two exact literal operands for600127cc in the complete final file are the callback store and loader's pushed API argument. The latter feeds verified import `GetModuleFileNameA` at6000e1ec. Together these establish the ordinary self-module filename input used to form the directory-prefixed Glide load attempt. They do not validate every API return/path length, prove the backward separator scan is safe on failed/truncated input, or observe the actual Windows/Wine provider selected by either attempt.
+
+For notification0, the CRT wrapper calls user callback at `60004bfc` and then continues its retained runtime-finalization path. The final callback itself only records the module instance; it does **not** invoke the Glide shutdown gate, FreeLibrary or module-handle clearing. This closes the question of direct cleanup in the changed callback, while leaving the wrapper's optional indirect callback at600105a4, registered CRT finalizers, other export callers and process-exit behaviour unqualified. No global absence of unload/cleanup follows.
+
+This is another concrete paired change: a previous always-success callback now also supplies the module-instance state needed by Modern's directory-relative dynamic loading. It is not a new whole-driver detach guarantee. Executable bytes and saved Ghidra state were preserved; no notification or loader API was invoked.
+
 ## Next required comparison
 
-The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; next qualify partial-bind failure consumers, module-detach cleanup and other callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
+The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; next qualify partial-bind failure consumers, indirect/registered detach finalizers and other callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
 
-**Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Also verified:** complete about local differences and reference fixed-table/query contract. **Pending:** remaining hosted/final function/ABI/data comparisons, transitive failure/detach lifetimes, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.
+**Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Also verified:** complete about local differences and reference fixed-table/query contract. **Pending:** remaining hosted/final function/ABI/data comparisons, transitive failure/registered-finalizer lifetimes, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.

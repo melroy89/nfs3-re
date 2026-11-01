@@ -370,3 +370,7 @@ The [paired about follow-up](original-modern-glide-reference-identity.md#hosted-
 ## Glide loader/shutdown lifecycle compared
 
 The [complete helper comparison](original-modern-glide-reference-identity.md#loader-and-cleanup-lifecycle-differ) resolves the changed cleanup target: hosted reference releases/clears its module handle, whereas final centralizes init/required binding and uses a shutdown/latch helper that retains the handle locally. Nonzero-state acquisition does not increment the latch; it is not a general refcount. All four exact init-cell literals are in the captured loader/shutdown helpers. Partial-bind consumers, detach/unload and runtime effects remain unverified; no leak/dangling-pointer claim is made. Catalog counts unchanged.
+
+## Glide module-instance producer and direct detach boundary
+
+The [entry audit](original-modern-glide-reference-identity.md#entry-callback-supplies-the-module-directory-handle) pins equal PE entry/CRT-wrapper/reason-table bytes and the changed user callback. Final captures its first entry argument into600127cc, which is passed to verified GetModuleFileNameA; reference callback only returns1. Direct callback cleanup is absent even on notification0, but optional/registered CRT finalizers and other unload paths remain unqualified. This resolves the directory-handle producer without claiming universal detach behaviour. Catalog counts unchanged; no DLL/API execution.
