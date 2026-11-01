@@ -440,3 +440,8 @@ The [four-pair audit](original-modern-paired-dll-x87.md) verifies both archives/
 ## Original startup version-template producer
 
 The [resource/header comparison](original-modern-config-loading.md#original-startup-populates-the-header-template-from-a-version-resource) now identifies the original startup writer into `0055e8b8/+2`, removing the assumption that file-backed zeros describe ordinary startup. The retained resource is `27, 2.0`; Modern removes this read/scan callsite and has a static version6 header. Exact scanner widths/overlap effects, runtime filename resolution and later writes remain pending. Catalog counts unchanged; no target execution or Ghidra changes.
+
+
+## Original scanner width and version2 consequence
+
+The [scanner follow-up](original-modern-config-loading.md#scanner-width-and-conditional-version2-header) resolves plain `%d` to a DWORD store at `0050d500`. Successful parsing of the inspected `27, 2.0` resource leaves low header version2 despite destinations two bytes apart. Conditional on that header surviving initialization and saving, Modern rejects version2 and resets grouped defaults. Runtime file selection, partial parsing and later writes remain pending; this is not a real-file migration test. Catalog counts unchanged.

@@ -18,12 +18,48 @@
           "bytes_sha256": "f1a7264892b7bc796b2e55c1d85173fb3ad92153cb9d1e4ec61e0d3ee32bd39e",
           "assembly": "analysis/captures/modern-differences/startup-version-header/original-004a3a56.asm",
           "assembly_sha256": "673ebe0c4b30b1eb650e723ca23890bd64570c56d845ede523a2f79b3ccf68ec"
+        },
+        {
+          "start": "004f04f0",
+          "end_exclusive": "004f0569",
+          "bytes_sha256": "5304cd70267eb23027597515d933ec62b5daafa4a6e80b7a3f8ea11412c94dad",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/original-004f04f0.asm",
+          "assembly_sha256": "1e6e5b994485ce44d12b5be64f5e20af68352a08a7cb2471c5580eb6e7525b11"
+        },
+        {
+          "start": "0050c640",
+          "end_exclusive": "0050ca08",
+          "bytes_sha256": "4845389fe1d9d28859de722e5ba223bb2ee45cb29bdb3ebd701bb53b63ea0fde",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/original-0050c640.asm",
+          "assembly_sha256": "aa059b877607d9979e78f358ce48db4d9aba75aa38101494e956296c4530ab95"
+        },
+        {
+          "start": "0050d0f0",
+          "end_exclusive": "0050d55e",
+          "bytes_sha256": "b06db75d644932c26004c1fde363e11762eccf16ea5577e256bab42609f2acb8",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/original-0050d0f0.asm",
+          "assembly_sha256": "e0124f8c5ec77c487fae03a5c391e73b9e320202818f9fb1cf4328596874e183"
         }
       ],
       "version_imports": {
         "00534674": "GetFileVersionInfoA",
         "00534678": "GetFileVersionInfoSizeA",
         "0053467c": "VerQueryValueA"
+      },
+      "scanner_contract": {
+        "wrapper_chain": "004f0548 ->004f0520 ->0050c650",
+        "format_flags": "0050c904 resets flags to low two bits; plain d has no h/l/L/I64 modifier",
+        "decimal_dispatch": "0050c7c4 selects signed base10 ->0050d0f0",
+        "accumulation": "0050d35f..0050d38e uses32-bit multiply/add",
+        "ordinary_store": "0050d4cd..0050d503 consumes next pointer and storesDWORD at0050d500; h selectsWORD separately",
+        "successful_conversion_values": [
+          27,
+          2,
+          0
+        ],
+        "conditional_template_hex": "0200000000000000",
+        "conditions": "All three conversions succeed for27,2.0; last two template bytes retain initialzero; no later writes",
+        "modern_header_consequence": "Low versionWORD2 fails minimum6 and takes grouped reset"
       },
       "producer": {
         "reader": "004a38f0..004a39d2",
@@ -59,6 +95,27 @@
           "bytes_sha256": "dada9a88a7a3b2ce75729140615e5d361e2adfcb4c9cd649aee6bf94bf85c9e6",
           "assembly": "analysis/captures/modern-differences/startup-version-header/official_modern-004a3a56.asm",
           "assembly_sha256": "42ed8445755588c7c12a4e25d3e1d9da360a4205c68bc015ad57971e3198acac"
+        },
+        {
+          "start": "004f04f0",
+          "end_exclusive": "004f0569",
+          "bytes_sha256": "5304cd70267eb23027597515d933ec62b5daafa4a6e80b7a3f8ea11412c94dad",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/official_modern-004f04f0.asm",
+          "assembly_sha256": "de8e49ed26f336d00fc467c599dd0c5f65b41bed51ca1090e41d00003b13a17b"
+        },
+        {
+          "start": "0050c640",
+          "end_exclusive": "0050ca08",
+          "bytes_sha256": "4845389fe1d9d28859de722e5ba223bb2ee45cb29bdb3ebd701bb53b63ea0fde",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/official_modern-0050c640.asm",
+          "assembly_sha256": "66a874217de4979485e1879a05ad5a9ad894ce15e0293ab8445a41e2a11a13f0"
+        },
+        {
+          "start": "0050d0f0",
+          "end_exclusive": "0050d55e",
+          "bytes_sha256": "b06db75d644932c26004c1fde363e11762eccf16ea5577e256bab42609f2acb8",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/official_modern-0050d0f0.asm",
+          "assembly_sha256": "21220cb71e6452a550069e8afed7d50023166998edcb4a20133f3bde515c327f"
         }
       ],
       "replacement": "Startup reader/scan callsite removed; file-backed string and size20f0/version6/zero template."
@@ -66,6 +123,6 @@
   },
   "limits": [
     "No target or Windows API execution.",
-    "Scanner conversion widths, overlapping writes, failures and later writers remain unqualified."
+    "Malformed/overflow inputs, runtime resource selection and later writers remain unqualified."
   ]
 }

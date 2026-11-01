@@ -9,7 +9,7 @@ from audit_thrash_loader_difference import ROOT, SPECS
 def main():
     result = {'kind': 'static-startup-version-header', 'binaries': {},
               'limits': ['No target or Windows API execution.',
-                         'Scanner conversion widths, overlapping writes, failures and later writers remain unqualified.']}
+                         'Malformed/overflow inputs, runtime resource selection and later writers remain unqualified.']}
     capture = ROOT/'analysis/captures/modern-differences/startup-version-header'
     capture.mkdir(parents=True, exist_ok=True)
     for label in ('original', 'official_modern'):
@@ -18,7 +18,8 @@ def main():
         assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw)
         row = {'path': relative, 'sha256': expected, 'spans': []}
-        for start, end in [(0x4a38f0, 0x4a39d2), (0x4a3a56, 0x4a3ab9)]:
+        for start, end in [(0x4a38f0, 0x4a39d2), (0x4a3a56, 0x4a3ab9), (0x4f04f0, 0x4f0569),
+                           (0x50c640, 0x50ca08), (0x50d0f0, 0x50d55e)]:
             output = capture/f'{label}-{start:08x}.asm'
             output.write_bytes(subprocess.check_output(['objdump', '-d', '-Mintel',
                 f'--start-address={start}', f'--stop-address={end}', relative], cwd=ROOT))
@@ -39,6 +40,20 @@ def main():
             imports = {i.address:i.name.decode() for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
             row['version_imports'] = {f'{a:08x}':imports[a] for a in (0x534674,0x534678,0x53467c)}
             assert list(row['version_imports'].values()) == ['GetFileVersionInfoA','GetFileVersionInfoSizeA','VerQueryValueA']
+            assert pe.get_data(0x10c7c4,16).hex() == 'b901000000bb0a0000008d54240489f0'
+            assert pe.get_data(0x10c91c,6).hex() == '80e603887710'
+            assert pe.get_data(0x10d4e2,5).hex() == 'f6c6107412'
+            assert pe.get_data(0x10d500,3).hex() == '268918'
+            row['scanner_contract'] = {
+                'wrapper_chain': '004f0548 ->004f0520 ->0050c650',
+                'format_flags': '0050c904 resets flags to low two bits; plain d has no h/l/L/I64 modifier',
+                'decimal_dispatch': '0050c7c4 selects signed base10 ->0050d0f0',
+                'accumulation': '0050d35f..0050d38e uses32-bit multiply/add',
+                'ordinary_store': '0050d4cd..0050d503 consumes next pointer and storesDWORD at0050d500; h selectsWORD separately',
+                'successful_conversion_values': [27, 2, 0],
+                'conditional_template_hex': '0200000000000000',
+                'conditions': 'All three conversions succeed for27,2.0; last two template bytes retain initialzero; no later writes',
+                'modern_header_consequence': 'Low versionWORD2 fails minimum6 and takes grouped reset'}
             row['producer'] = {'reader': '004a38f0..004a39d2',
                 'seed_filename': 'nfs3.exe; on initial size-query failure, retry current module filename',
                 'query': '\\StringFileInfo\\040904b0\\FileVersion',
