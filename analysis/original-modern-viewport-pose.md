@@ -94,3 +94,24 @@ Under the wrapper's previously verified conditions—nonzero control mode, sessi
 ## Historical camera-menu addition is now dated directly
 
 The [1.5.0→1.5.1 menu/translation pair](original-modern-localization-151.md#historical-menu-assets-bind-two-new-labels) verifies the exact15-line insertion adding the rear-camera button/cascade and `lang1938` label, with every old camera-menu line retained. This narrows the historical introduction gap for that authored control; it does not date every EXE camera mechanism or prove runtime availability/selection. The same comparison finds the separate mirrorlevel label replacement, which is not a new-control introduction.
+
+## Default camera slots change without removing the choice table
+
+**Verified static defaults and named bindings; runtime cycling untested.** The [camera-default audit](evidence/audits/camera-defaults-difference.json), reproduced with `python3 analysis/scripts/audit_camera_defaults_difference.py`, compares the hash-pinned supplied original and official final Modern EXEs. Four identical20-byte descriptors at `00556c1c/30/44/58` bind `camera1..camera4` to settings `006fbba8/ac/b0/b4`. Their shared label list `0055628e` is unchanged, as is its separate mode-ID table `0055629e`.
+
+| Slot | Original default ordinal / label / mode | Final Modern default ordinal / label / mode |
+|---|---|---|
+|Camera1 |1 / In Car /1 |3 / Heli Cam /3 |
+|Camera2 |2 / Roof Cam /4 |1 / In Car /1 |
+|Camera3 |3 / Heli Cam /3 |0 / None /0 |
+|Camera4 |0 / None /0 |0 / None /0 |
+
+Original's initializer sets EBX=3 at`0047241a`, EDX=1 at`00472425`, stores Camera1/3 at`00472454/0047245a`, then sets ESI=0/ECX=2 and stores Camera4/2 at`0047246c/00472475`. Between the first constants and stores it calls `004b56d0..004b56e0`, a complete16-byte GetTickCount wrapper that explicitly saves EDX/ECX/EBP. EBX retention assumes the normal32-bit Windows API callee-preserved contract; this is not an execution or arbitrary-hook proof.
+
+Modern instead uses complete47-byte default helper `00472298..004722c7`: zero Camera3/4, load AL=1 for Camera2 and rear-camera selector, then AL=3 for Camera1 and two other fields. EAX starts zero and there are no intervening calls before these stores, so the low-byte loads establish full DWORD constants. The helper then calls retained converter `00472300`.
+
+The complete85-byte converter `00472300..00472355` is byte-identical in the pair. It maps each ordinal through `0055629e`, publishing mode IDs at `006fbbc0/c4/c8/cc`. It uses overlapping DWORD reads at `0055629c + 2*ordinal`, then arithmetic-shifts16; reproducing only its selected WORD value does not establish identical memory-read footprint. No local ordinal bounds check exists in this converter; the table-derived interpretation above assumes the inspected valid defaults.
+
+The unchanged choices decode as None, In Car, Roof Cam, Heli Cam, Bumper Cam, High Cam and Low Cam using the hash-pinned official final English table. The packaged final `camera.mnu` still names all four lists. This supports configurable slots remaining available, rather than removal of the other camera implementations. Actual restoration of the original arrangement through the UI, input cycling, user-file overrides and every later writer remain untested. Original language provenance and1.0.0 introduction are also unverified.
+
+**MP100-031 advances to partial support:** final defaults have two non-None slots, Heli Cam and In Car, while original has three. “None” is the verified list label/mode0; its complete runtime admission semantics are not established by the default writes alone. The separate [dispatch-wrapper comparison](evidence/audits/camera-dispatch-wrapper.json) already maps retained handler targets and changed register/post-processing contracts; this default change does not establish camera geometry, projection equivalence or removal of handlers. No game, camera input, instruction probe or Ghidra write occurred.

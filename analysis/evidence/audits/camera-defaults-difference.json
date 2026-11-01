@@ -1,0 +1,333 @@
+{
+  "kind": "static-camera-slot-defaults",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "descriptors": [
+        {
+          "address": "00556c1c",
+          "token": "camera1",
+          "words": [
+            "005382cc",
+            "0055628e",
+            "00000000",
+            "00000000",
+            "006fbba8"
+          ]
+        },
+        {
+          "address": "00556c30",
+          "token": "camera2",
+          "words": [
+            "005382d4",
+            "0055628e",
+            "00000000",
+            "00000000",
+            "006fbbac"
+          ]
+        },
+        {
+          "address": "00556c44",
+          "token": "camera3",
+          "words": [
+            "005382dc",
+            "0055628e",
+            "00000000",
+            "00000000",
+            "006fbbb0"
+          ]
+        },
+        {
+          "address": "00556c58",
+          "token": "camera4",
+          "words": [
+            "005382e4",
+            "0055628e",
+            "00000000",
+            "00000000",
+            "006fbbb4"
+          ]
+        }
+      ],
+      "label_ids": [
+        193,
+        147,
+        150,
+        149,
+        148,
+        151,
+        152,
+        0
+      ],
+      "mode_ids": [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6
+      ],
+      "default_ordinals": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "derived_default_label_ids": [
+        147,
+        150,
+        149,
+        193
+      ],
+      "derived_default_mode_ids": [
+        1,
+        4,
+        3,
+        0
+      ],
+      "captures": [
+        {
+          "start": "00472413",
+          "end_exclusive": "0047247b",
+          "sha256": "63aa7d80a996898159ee9947d17142c7799b6328c3df8902cc89af50ae4d62c7",
+          "hex": "31c9baf0200000bb03000000891540bb6f00ba01000000a5a5e89f320400a3b4d36f00890dacd26f00890da8d26f00890da0d36f00890db0d36f00890db8d36f008915a8bb6f00891db0bb6f0031f6b902000000a1aad46f008935b4bb6f00c1f810890dacbb6f00",
+          "disassembly": [
+            "472413:\t31 c9                \txor    ecx,ecx",
+            "472415:\tba f0 20 00 00       \tmov    edx,0x20f0",
+            "47241a:\tbb 03 00 00 00       \tmov    ebx,0x3",
+            "47241f:\t89 15 40 bb 6f 00    \tmov    DWORD PTR ds:0x6fbb40,edx",
+            "472425:\tba 01 00 00 00       \tmov    edx,0x1",
+            "47242a:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+            "47242b:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+            "47242c:\te8 9f 32 04 00       \tcall   0x4b56d0",
+            "472431:\ta3 b4 d3 6f 00       \tmov    ds:0x6fd3b4,eax",
+            "472436:\t89 0d ac d2 6f 00    \tmov    DWORD PTR ds:0x6fd2ac,ecx",
+            "47243c:\t89 0d a8 d2 6f 00    \tmov    DWORD PTR ds:0x6fd2a8,ecx",
+            "472442:\t89 0d a0 d3 6f 00    \tmov    DWORD PTR ds:0x6fd3a0,ecx",
+            "472448:\t89 0d b0 d3 6f 00    \tmov    DWORD PTR ds:0x6fd3b0,ecx",
+            "47244e:\t89 0d b8 d3 6f 00    \tmov    DWORD PTR ds:0x6fd3b8,ecx",
+            "472454:\t89 15 a8 bb 6f 00    \tmov    DWORD PTR ds:0x6fbba8,edx",
+            "47245a:\t89 1d b0 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbb0,ebx",
+            "472460:\t31 f6                \txor    esi,esi",
+            "472462:\tb9 02 00 00 00       \tmov    ecx,0x2",
+            "472467:\ta1 aa d4 6f 00       \tmov    eax,ds:0x6fd4aa",
+            "47246c:\t89 35 b4 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbb4,esi",
+            "472472:\tc1 f8 10             \tsar    eax,0x10",
+            "472475:\t89 0d ac bb 6f 00    \tmov    DWORD PTR ds:0x6fbbac,ecx"
+          ]
+        },
+        {
+          "start": "004b56d0",
+          "end_exclusive": "004b56e0",
+          "sha256": "332cde3ad942a35b3024111fb995e8f6f685db31d074e1e335656581ebcd5129",
+          "hex": "51525589e52eff15684553005d5a59c3",
+          "disassembly": [
+            "4b56d0:\t51                   \tpush   ecx",
+            "4b56d1:\t52                   \tpush   edx",
+            "4b56d2:\t55                   \tpush   ebp",
+            "4b56d3:\t89 e5                \tmov    ebp,esp",
+            "4b56d5:\t2e ff 15 68 45 53 00 \tcall   DWORD PTR cs:0x534568",
+            "4b56dc:\t5d                   \tpop    ebp",
+            "4b56dd:\t5a                   \tpop    edx",
+            "4b56de:\t59                   \tpop    ecx",
+            "4b56df:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "00472300",
+          "end_exclusive": "00472355",
+          "sha256": "c7a544db6f89083a24d0f98c033ad5cc81dd8af65360d383fe4710a8af392411",
+          "hex": "5589e5a1a8bb6f008b04459c625500c1f810a3c0bb6f00a1acbb6f008b04459c625500c1f810a3c4bb6f00a1b0bb6f008b04459c625500c1f810a3c8bb6f00a1b4bb6f008b04459c625500c1f810a3ccbb6f005dc3",
+          "disassembly": [
+            "472300:\t55                   \tpush   ebp",
+            "472301:\t89 e5                \tmov    ebp,esp",
+            "472303:\ta1 a8 bb 6f 00       \tmov    eax,ds:0x6fbba8",
+            "472308:\t8b 04 45 9c 62 55 00 \tmov    eax,DWORD PTR [eax*2+0x55629c]",
+            "47230f:\tc1 f8 10             \tsar    eax,0x10",
+            "472312:\ta3 c0 bb 6f 00       \tmov    ds:0x6fbbc0,eax",
+            "472317:\ta1 ac bb 6f 00       \tmov    eax,ds:0x6fbbac",
+            "47231c:\t8b 04 45 9c 62 55 00 \tmov    eax,DWORD PTR [eax*2+0x55629c]",
+            "472323:\tc1 f8 10             \tsar    eax,0x10",
+            "472326:\ta3 c4 bb 6f 00       \tmov    ds:0x6fbbc4,eax",
+            "47232b:\ta1 b0 bb 6f 00       \tmov    eax,ds:0x6fbbb0",
+            "472330:\t8b 04 45 9c 62 55 00 \tmov    eax,DWORD PTR [eax*2+0x55629c]",
+            "472337:\tc1 f8 10             \tsar    eax,0x10",
+            "47233a:\ta3 c8 bb 6f 00       \tmov    ds:0x6fbbc8,eax",
+            "47233f:\ta1 b4 bb 6f 00       \tmov    eax,ds:0x6fbbb4",
+            "472344:\t8b 04 45 9c 62 55 00 \tmov    eax,DWORD PTR [eax*2+0x55629c]",
+            "47234b:\tc1 f8 10             \tsar    eax,0x10",
+            "47234e:\ta3 cc bb 6f 00       \tmov    ds:0x6fbbcc,eax",
+            "472353:\t5d                   \tpop    ebp",
+            "472354:\tc3                   \tret"
+          ]
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "descriptors": [
+        {
+          "address": "00556c1c",
+          "token": "camera1",
+          "words": [
+            "005382cc",
+            "0055628e",
+            "00000000",
+            "00000000",
+            "006fbba8"
+          ]
+        },
+        {
+          "address": "00556c30",
+          "token": "camera2",
+          "words": [
+            "005382d4",
+            "0055628e",
+            "00000000",
+            "00000000",
+            "006fbbac"
+          ]
+        },
+        {
+          "address": "00556c44",
+          "token": "camera3",
+          "words": [
+            "005382dc",
+            "0055628e",
+            "00000000",
+            "00000000",
+            "006fbbb0"
+          ]
+        },
+        {
+          "address": "00556c58",
+          "token": "camera4",
+          "words": [
+            "005382e4",
+            "0055628e",
+            "00000000",
+            "00000000",
+            "006fbbb4"
+          ]
+        }
+      ],
+      "label_ids": [
+        193,
+        147,
+        150,
+        149,
+        148,
+        151,
+        152,
+        0
+      ],
+      "mode_ids": [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6
+      ],
+      "default_ordinals": [
+        3,
+        1,
+        0,
+        0
+      ],
+      "derived_default_label_ids": [
+        149,
+        147,
+        193,
+        193
+      ],
+      "derived_default_mode_ids": [
+        3,
+        1,
+        0,
+        0
+      ],
+      "captures": [
+        {
+          "start": "00472298",
+          "end_exclusive": "004722c7",
+          "sha256": "f9e0d9521fc00b862790e16f0eebd1dbd8cb9170970a30c5871a57a2e89a4cf1",
+          "hex": "31c0a3b0bb6f00a3b4bb6f00b001a3ccd16f00a3acbb6f00b003a3a8bb6f00a3b8bb6f00a3bcbb6f00e83a000000c3",
+          "disassembly": [
+            "472298:\t31 c0                \txor    eax,eax",
+            "47229a:\ta3 b0 bb 6f 00       \tmov    ds:0x6fbbb0,eax",
+            "47229f:\ta3 b4 bb 6f 00       \tmov    ds:0x6fbbb4,eax",
+            "4722a4:\tb0 01                \tmov    al,0x1",
+            "4722a6:\ta3 cc d1 6f 00       \tmov    ds:0x6fd1cc,eax",
+            "4722ab:\ta3 ac bb 6f 00       \tmov    ds:0x6fbbac,eax",
+            "4722b0:\tb0 03                \tmov    al,0x3",
+            "4722b2:\ta3 a8 bb 6f 00       \tmov    ds:0x6fbba8,eax",
+            "4722b7:\ta3 b8 bb 6f 00       \tmov    ds:0x6fbbb8,eax",
+            "4722bc:\ta3 bc bb 6f 00       \tmov    ds:0x6fbbbc,eax",
+            "4722c1:\te8 3a 00 00 00       \tcall   0x472300",
+            "4722c6:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "00472300",
+          "end_exclusive": "00472355",
+          "sha256": "c7a544db6f89083a24d0f98c033ad5cc81dd8af65360d383fe4710a8af392411",
+          "hex": "5589e5a1a8bb6f008b04459c625500c1f810a3c0bb6f00a1acbb6f008b04459c625500c1f810a3c4bb6f00a1b0bb6f008b04459c625500c1f810a3c8bb6f00a1b4bb6f008b04459c625500c1f810a3ccbb6f005dc3",
+          "disassembly": [
+            "472300:\t55                   \tpush   ebp",
+            "472301:\t89 e5                \tmov    ebp,esp",
+            "472303:\ta1 a8 bb 6f 00       \tmov    eax,ds:0x6fbba8",
+            "472308:\t8b 04 45 9c 62 55 00 \tmov    eax,DWORD PTR [eax*2+0x55629c]",
+            "47230f:\tc1 f8 10             \tsar    eax,0x10",
+            "472312:\ta3 c0 bb 6f 00       \tmov    ds:0x6fbbc0,eax",
+            "472317:\ta1 ac bb 6f 00       \tmov    eax,ds:0x6fbbac",
+            "47231c:\t8b 04 45 9c 62 55 00 \tmov    eax,DWORD PTR [eax*2+0x55629c]",
+            "472323:\tc1 f8 10             \tsar    eax,0x10",
+            "472326:\ta3 c4 bb 6f 00       \tmov    ds:0x6fbbc4,eax",
+            "47232b:\ta1 b0 bb 6f 00       \tmov    eax,ds:0x6fbbb0",
+            "472330:\t8b 04 45 9c 62 55 00 \tmov    eax,DWORD PTR [eax*2+0x55629c]",
+            "472337:\tc1 f8 10             \tsar    eax,0x10",
+            "47233a:\ta3 c8 bb 6f 00       \tmov    ds:0x6fbbc8,eax",
+            "47233f:\ta1 b4 bb 6f 00       \tmov    eax,ds:0x6fbbb4",
+            "472344:\t8b 04 45 9c 62 55 00 \tmov    eax,DWORD PTR [eax*2+0x55629c]",
+            "47234b:\tc1 f8 10             \tsar    eax,0x10",
+            "47234e:\ta3 cc bb 6f 00       \tmov    ds:0x6fbbcc,eax",
+            "472353:\t5d                   \tpop    ebp",
+            "472354:\tc3                   \tret"
+          ]
+        }
+      ]
+    }
+  },
+  "assets": {
+    "english_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "labels": {
+      "193": "None",
+      "147": "In Car",
+      "150": "Roof Cam",
+      "149": "Heli Cam",
+      "148": "Bumper Cam",
+      "151": "High Cam",
+      "152": "Low Cam"
+    },
+    "camera_menu_sha256": "045199397737299f864da5b5676413293a38ffba6cb5c3f787b4d2b6d1b37456",
+    "camera_menu_lists": [
+      "camera1",
+      "camera2",
+      "camera3",
+      "camera4"
+    ]
+  },
+  "limits": [
+    "Static initial/default-writing paths, not actual saved-user settings or complete later writer coverage.",
+    "Original EDX is explicitly saved around GetTickCount; EBX retention assumes the normal32-bit Windows API callee-preserved ABI, not arbitrary hooked behavior.",
+    "Official final English labels decode shared numeric IDs; original retail language provenance remains unverified.",
+    "None is a list label/mapped mode0, not a new proof of camera-cycle admission or absence of other camera modes.",
+    "No camera/game/instruction execution or rendered acceptance;1.0.0 introduction and actual restoration through the UI untested.",
+    "Converter reads overlapping DWORDs then SAR16; a portable WORD implementation may match values but not the full read footprint."
+  ]
+}
