@@ -350,3 +350,7 @@ The [new bulk-boundary audit](original-modern-projection.md#type1-initializer-bu
 ## Projection indexed marker/counter contracts
 
 The [indexed-state audit](original-modern-projection.md#indexed-camera-markercounter-writers-retain-their-slot-index) accounts for11 exact-base references per EXE and compares retained selectors/preparer/track-test envelopes. Eight writers manipulate a marker/counter pair; the subordinate track test restores EDX in all five normal epilogues. Ordinary slot0/1 destinations exclude projection sources, while wrapped alias indices outside that domain are explicitly retained. This resolves an index-clobber hypothesis without recovering the actual capture writer or proving all caller domains; MP160-003/counts unchanged.
+
+## CCM positive-count admission qualification
+
+The [CCM gate audit](ccm-camera-contract.md#positive-file-counts-do-not-exclude-the-type8-fallback) revalidates all eight current loose CCM identities and eight retained selector/helper envelopes. Positive counts do not exclude distance/orientation rejection. The latter gate is now traced to a binary32 dot output and signed raw-bit threshold, with exceptional-bit branch derivations clearly separated from instruction probes. The type8 path cannot be dismissed from nonempty file counts alone; actual selection, source capture/lifetime and MP160-003 remain unresolved. Catalog counts unchanged.

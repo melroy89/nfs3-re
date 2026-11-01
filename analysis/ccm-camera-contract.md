@@ -123,3 +123,25 @@ byte review corrected a worker's one-element table shift. The
 four values feed successor construction00423a60. This resolves
 menu association/default mapping; accepted menu extent and later
 mutation remain open for Astra. Ghidra mapper comment saved.
+
+## Positive file counts do not exclude the type8 fallback
+
+The [admission audit](scripts/audit_ccm_fallback_admission.py), run with `python3 analysis/scripts/audit_ccm_fallback_admission.py`, revalidates all eight currently found loose installed CCM files against the existing inventory hashes/counts/extents. It also pins the original/final EXEs and compares eight complete/explicitly bounded selector/helper envelopes, all byte-identical. [Manifest](evidence/audits/ccm-fallback-admission.json). This is static inspection; no camera or helper instructions were executed.
+
+Positive counts4..25 close only the empty-file-count hypothesis for these loose assets. The selector starts its best distance at30, takes only a strictly smaller distance, and can still return−1 when every candidate misses that threshold. Even after choosing a nearest candidate, the orientation gate can replace its index with−1; it does not loop back to try another candidate. Loaded segment keys are recomputed from track geometry, so file count/extent alone does not prove geometric coverage. Packed/replacement assets, actual loaded files and live selection remain separate.
+
+### Orientation result and raw-bit decision
+
+The complete selector `00423d90..00423faa` and retained helpers now establish this local dataflow:
+
+1. Read the selected CCM position's three signed DWORDs, multiply by the exact double constant1/65536 at `00536e8c`, and spill binary32 components.
+2. `004e0000` with count1 subtracts the vehicle position from that camera vector into a local vector. `004e01c0` normalizes the local vector in place, using `004e06a0` for length. There is no local zero-length guard in the captured normalizer.
+3. Four signed WORD quaternion components are extracted with the observed overlapping DWORD loads/arithmetic shifts, multiplied by4 and the same scale, then spilled to four binary32 locals. `004b7590` forms a local3×3 matrix. `004b79c0` moves the third basis row into the second and writes the negated old second row into the third.
+4. `004e0210` receives count1, source EDX=`EBP−48h` (that transformed matrix's third row), direction EBX=`EBP−20h` (the normalized camera-minus-vehicle vector), and destination ECX=`EBP−14h`. It writes a binary32 dot result there.
+5. At `00423f91`, the selector compares that **DWORD as signed integer bits** with `3ecccccdh`, then uses signed JLE. A larger signed word replaces the candidate with−1; equality keeps it.
+
+The register flow is observed in the retained helpers: matrix conversion leaves EBX/ECX untouched, and the row transformer restores EDX while leaving EBX/ECX untouched. Do not infer this multi-output/register contract from the saved helper labels alone. The dot helper accumulates three x87 products and stores binary32 before the branch; intermediate precision, rounding, exceptional values and signed-zero behaviour are not proved equivalent to an optimized C/libm expression.
+
+For ordinary finite values, the bit threshold represents approximately0.4. It is not universally interchangeable with `dot > 0.4f`: a positive quiet-NaN bit pattern7fc00000h takes the raw signed rejection branch, whereas an IEEE floating comparison with NaN is unordered. A negative NaN bit pattern is signed-negative and passes this particular test. The manifest derives threshold, adjacent-bit, zero, infinity and NaN branch outcomes using integer arithmetic only; it does not establish that the dot routine produces those inputs in a game session.
+
+Consequently these installed assets cannot be used to declare the [conditional type8 restoration path](original-modern-projection.md#retained-ccm-fallback-can-publish-the-type8-descriptor) dormant. Nor does unchanged selector/helper code establish equal original/Modern decisions when ambient x87 control state or upstream inputs differ. Actual admission, the missing projection-source producer/lifetime and rendered horizon remain unresolved. This follow-up adds no new Modern-only instruction change and does not promote the horizon release claim.
