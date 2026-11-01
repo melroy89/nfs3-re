@@ -660,7 +660,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **85 Claimed, 53 Static, 150 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **84 Claimed, 53 Static, 151 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -727,7 +727,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | ID | Reported change | Review |
 |---|---|---|
 | MP152-001 | Better Rear View Detail setting. Light from the car headlights and cop flashers will be rendered even on Medium value of this setting. View Distance and Car Detail in the Rear View Mirror now depends on Rear View Detail also. So, if you have performance problems with High level of the Rear View Detail setting, just use Medium. It have to be much more usable now. | Partial |
-| MP152-002 | Better compatibility with the Thrash API v107 according to fog. So, the DX7 renderer can render fog in the NFS3 now. | Claimed |
+| MP152-002 | Better compatibility with the Thrash API v107 according to fog. So, the DX7 renderer can render fog in the NFS3 now. | Partial |
 | MP152-003 | Fixed a bug which was a cause of config reset after loading of ghost files from the other versions of the NFS3. | Static |
 | MP152-004 | Fixed a bug which was a cause of using player name from the loaded ghost file instead of the current player name. | Static |
 | MP152-005 | Step size for the Alpha Intensity and sound volume sliders is 5%. | Partial |
@@ -1148,3 +1148,7 @@ The [shutdown-route comparison](original-modern-renderer-lifecycle.md#gameplay-e
 ## Loading budget accounts for preceding setup from150
 
 The [historical timing comparison](original-modern-loading-timing.md#preliminary-setup-elapsed-time-enters-the-budget-in150) verifies140→150 captures an earlier baseline around artwork/input/network preparation and subtracts elapsed from the later progress budget. It also distinguishes clamp order and historical GetTickCount from final timeGetTime. MP150-031 advances to partial support; synchronization success and visible progress remain untested, and elapsed includes other preparation too.
+
+## Historical DX7 fog opt-in and unchanged driver
+
+The [151/152 package and reader comparison](original-modern-renderer-loading.md#dx7-fog-opt-in-changes-in152-while-its-driver-bytes-remain-identical) verifies FogSupport0→1 for DX7 with a byte-identical110,592-byte driver, unchanged other parsed INI values and retained selected EXE reader/state contracts. MP152-002 advances to partial configuration support only; the broader API107 adapter mechanism and visible fog remain unresolved.

@@ -403,3 +403,20 @@ For well-formed lowercase inputs, derived requests include`dx5`→`.\dx5.dll` wi
 Early basename first-byte classification writes d→6, v→4, s→1, other→0 at`007a3a54`. **That address is not a stable cross-version semantic field:** final uses`007a3a54` for FogSupport and type mask`007a3a58`, while its numeric suffix goes to`007a3a70`, not early`0055fdbc`. A port must map contracts by version/producer/consumer, not reuse a final Ghidra label at an early address.
 
 **MP110-001/002 advance to partial historical support:** the early retained EXE has a filename-based loader request and an integrated`@device` parser. The missing1.0.0 predecessor prevents independently verifying replacement of all advertised predefined aliases or removal of a separate VideoDeviceId option. **MP140-045 advances to bounded static support** for the adjacent live key rename only. DLL availability/export checks, actual selected hardware, full parser domains, user configurations and rendered results remain unverified. No DLL, parser, game, API, instruction probe or saved Ghidra database was executed or changed.
+
+## DX7 fog opt-in changes in152 while its driver bytes remain identical
+
+**Verified package configuration and selected historical reader/state boundaries; API107 compatibility mechanism remains unresolved.** The [DX7 opt-in audit](evidence/audits/dx7-fog-optin-history.json), reproduced with `python3 analysis/scripts/audit_dx7_fog_optin_history.py`, pins author-hosted1.5.1/1.5.2 archives and both EXEs. It extracts the named DX7 members without loading them.
+
+| Artifact/property |1.5.1 |1.5.2 |
+|---|---|---|
+|`drivers/dx7/dx7a.dll` |110,592 bytes; SHA-256`8f3ed9676611d65f40b5dde537aab5813d2e2a854c08fdf3b08b7d19a7a25d5e` |Whole file byte-identical |
+|`THRASH/FogSupport` in DX7`thrash.ini` |0 |1 |
+|Other parsed THRASH values |File=`dx7a.dll`, Type=`d3d`, DirectDrawLagFix=`1` |Same |
+|EXE FogSupport reader |`004b58e8..004b590b` |`004b58f8..004b591b` |
+
+Each35-byte reader span pushes filename buffer`007a3930`, fallback0, the version-specific `FogSupport`/`THRASH` string pointers, and calls IAT`0053466c`, independently bound to KERNEL32.GetPrivateProfileIntA. Both then normalize a nonzero return to1 and store support DWORD`007a3a54`. The literal pointer addresses move, but the checked read/default/normalization contract remains the same. This proves how the changed package default can publish support1 under normal successful configuration selection; it does not prove the active installed file or every later writer.
+
+The complete409-byte state-cache dispatcher`00431900..00431a99`,33-byte environment-state15 helper`00470aa0..00470ac1` and78-byte environment-state14 helper`00470ad0..00470b1e` are byte-identical across151/152. These negative boundaries rule out attributing the claimed historical fix to an edit in those particular bodies, just as whole-DLL equality rules out a new DX7 driver implementation in this pair. Equal code can still consume different state, configuration or callers. The effective state gate at`007a3a64` is distinct from parsed support`007a3a54`; this audit does not collapse them or prove their complete producer chain.
+
+**MP152-002 advances to partial configuration support:** the advertised151→152 boundary explicitly opts the unchanged DX7 driver into fog. The wider claim of improved Thrash API v107 compatibility, its adapter/version contract and actual visible DX7 fog remain unresolved. A whole-interface or rendered compatibility claim requires additional evidence; neither DLL equality nor the INI change settles it. Earlier original/final [capability configuration](#historical-lightbeams-reader-and-capability-defaults) and [support-trial linkage](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) remain separately qualified and must not be retroactively assigned to every historical version. No target, provider, profile API, instruction probe, compiler or Ghidra write was used.

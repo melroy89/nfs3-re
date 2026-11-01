@@ -13,7 +13,7 @@ The two recent HUD investigations now have concrete mechanisms. These bounded ch
 
 The earlier “unresolved” HUD checkpoint sections below preserve investigation history; they are superseded by these linked findings. The EXE bytes, saved Ghidra database, raw exports and maintained C were not changed by these investigations. No game or new instruction probe was run.
 
-The [catalog](modern-patch-change-catalog.md) currently has **85 vendor-only,53 bounded-static,150 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **84 vendor-only,53 bounded-static,151 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -772,3 +772,7 @@ The [four-build shutdown audit](original-modern-renderer-lifecycle.md#gameplay-e
 ## Loading setup time included in150 budget
 
 The [three-build timing audit](original-modern-loading-timing.md#preliminary-setup-elapsed-time-enters-the-budget-in150) supplies partial support for MP150-031: earlier baseline/elapsed subtraction replaces the full post-setup budget. Clamp ordering changes, and historical clocks are GetTickCount while final uses timeGetTime. A retained wrapper links admitted network setup inside the elapsed interval; actual protocol duration and animation remain unverified.
+
+## DX7 fog support defaults enabled in152
+
+The [historical DX7 review](original-modern-renderer-loading.md#dx7-fog-opt-in-changes-in152-while-its-driver-bytes-remain-identical) verifies package FogSupport0→1, identical driver bytes and paired read/normalization semantics. Selected dispatcher/environment bodies remain unchanged. MP152-002 has partial configuration support, with full API107 glue/version contract and actual fog rendering still unresolved; no runtime evidence was added.
