@@ -1,0 +1,125 @@
+{
+  "kind": "historical-lockwindow-failure-callback",
+  "archives": {
+    "1.5.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f"
+    },
+    "1.5.1": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.1.7z",
+      "sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de"
+    }
+  },
+  "drivers": {
+    "dx5/dx5a": {
+      "1.5.0": {
+        "member": "drivers/dx5/dx5a.dll",
+        "sha256": "785c2eaaec2490d80e3becc7efca5f78fb98645e3cbda45539192c186b73b864",
+        "spans": [
+          {
+            "start": "600011d4",
+            "end_exclusive": "60001366",
+            "bytes_sha256": "37ec209055ece53cb10b2e29713a4d47564153924d7c39cc840b92534226bc95",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.0-dx5-dx5a-000011d4.asm",
+            "assembly_sha256": "d69ae5799195cd66dbfc152b6399bfcc658f37fca8f1a10285f8501b13d5369a"
+          }
+        ],
+        "failure_branch_witness_hex": "85c00f85ec000000"
+      },
+      "1.5.1": {
+        "member": "drivers/dx5/dx5a.dll",
+        "sha256": "43b7ea56c923fed643f8956e40e777a5f8ea6e1bc11539cb7705b165bfbb9bfa",
+        "spans": [
+          {
+            "start": "600011d4",
+            "end_exclusive": "60001366",
+            "bytes_sha256": "d492e0e0e3096fbffa4d54f5ef94c8145de267388c16bf0c5dba3370ec385b1e",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx5-dx5a-000011d4.asm",
+            "assembly_sha256": "6a1b9a8349ee2c542a25a2e0ffccf74fc1e0b47de2e1a8ea132d7fcbb6c6ecfa"
+          },
+          {
+            "start": "60001880",
+            "end_exclusive": "60001891",
+            "bytes_sha256": "55981e54ebbcd73a4139fddc194dc96d55239cc4f12493521b29ae5b1122049e",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx5-dx5a-00001880.asm",
+            "assembly_sha256": "ad522be4bb1ca8d78e403b95fa9a2c5f8c986f200101836be5314c34faceab69"
+          }
+        ],
+        "failure_branch_witness_hex": "85c0740d31c0e84c060000e9ed00000090"
+      }
+    },
+    "dx6/dx6a": {
+      "1.5.0": {
+        "member": "drivers/dx6/dx6a.dll",
+        "sha256": "6c4a300fd55ed5e6c3c85983d43903717543d1b69146275856322da61a76b152",
+        "spans": [
+          {
+            "start": "60001240",
+            "end_exclusive": "600013dd",
+            "bytes_sha256": "7544e7a5803f0c46a7a353a39a035f4d362c9416159f59d0c6c6d91617594436",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.0-dx6-dx6a-00001240.asm",
+            "assembly_sha256": "eae12026b4a519e3529cea8b10db470a7b45d77c8bebb521e159fb6c4397150d"
+          }
+        ],
+        "failure_branch_witness_hex": "740933c081c494000000c3"
+      },
+      "1.5.1": {
+        "member": "drivers/dx6/dx6a.dll",
+        "sha256": "273ac3fae94cf42791f65fac0e961a1d9044e8601a3400cc16263a7578278155",
+        "spans": [
+          {
+            "start": "60001240",
+            "end_exclusive": "600013dd",
+            "bytes_sha256": "875f4d92debdfdc54061959fb6897ed17582a42c20d1c9580e17fa8900cc2732",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx6-dx6a-00001240.asm",
+            "assembly_sha256": "ab42adbb468cbfcd1f34082037526f471f80869442796923709b76a01a5211a1"
+          },
+          {
+            "start": "60001d90",
+            "end_exclusive": "60001da1",
+            "bytes_sha256": "3bfc853cb1487e14aa52137098c5330bea0d42c74938e1e238ab55e14cbaffe4",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx6-dx6a-00001d90.asm",
+            "assembly_sha256": "22cea9ed2e4e1215f6faec41f4ac820c3cd68bdb2c2d081649d7597f80f7dd6c"
+          }
+        ],
+        "failure_branch_witness_hex": "740e31c0e8bb0a000031c0e9fa000000"
+      }
+    },
+    "softtri/softtria": {
+      "1.5.0": {
+        "member": "drivers/softtri/softtria.dll",
+        "sha256": "2db30c5c38eb9686731d7f309e6f43b580afef73bf0f3e4c18df6a0e2cbaf25c",
+        "spans": [
+          {
+            "start": "60003530",
+            "end_exclusive": "600036d0",
+            "bytes_sha256": "09ca2b7fe8cd99e61ba76b2d3e9630c041f575e45d4e2eb68377cde172291316",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.0-softtri-softtria-00003530.asm",
+            "assembly_sha256": "868f60297a6264a69ebd96151404b4f0bc6feeb45b3242bdb09f5c37f2a22aab"
+          }
+        ],
+        "failure_branch_witness_hex": "0f851bffffff"
+      },
+      "1.5.1": {
+        "member": "drivers/softtri/softtria.dll",
+        "sha256": "e8d102394acf8d0d841a62ab35f3d3aac23033c71fc57709de99cf630d835536",
+        "spans": [
+          {
+            "start": "60003530",
+            "end_exclusive": "600036d0",
+            "bytes_sha256": "d2df2b66784f93ee893258e366153a6f63adf842a76013baa1e6e9a099a6cfc1",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-softtri-softtria-00003530.asm",
+            "assembly_sha256": "72bcc65e18dc299b8727850be1df247d503a497173355d34e85cd043c8224931"
+          }
+        ],
+        "failure_branch_witness_hex": "0f858c000000"
+      }
+    }
+  },
+  "limits": [
+    "Historical driver comparison, not original retail EXE correspondence.",
+    "No DLL, surface lock, callback or failure injection executed.",
+    "Callback identity, complete state lifetime and success/failure outcomes remain unqualified."
+  ],
+  "finding": "Each inspected nonzero surface-lock-result path adds callback0 before returning through its prior failure continuation; DX5/DX6 use null-guarded register-to-stack adapters."
+}

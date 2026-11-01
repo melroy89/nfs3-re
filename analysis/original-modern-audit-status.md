@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **131 vendor-only,47 bounded-static,110 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **130 vendor-only,47 bounded-static,111 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -481,3 +481,8 @@ The [producer/consumer follow-up](original-modern-startup-policy.md#replacement-
 ## Complete diagnostic body: two flag bytes, no changed call target
 
 The [handler comparison](original-modern-startup-policy.md#diagnostic-dialog-flags-are-the-only-local-handler-body-change) now accounts for all differences in the520-byte `00401010` body: two immediate bytes change MessageBoxA flags from11031h to51011h, requesting an error icon and explicit topmost flag. Both already specify SYSTEMMODAL; no new visible stacking fix is inferred. Unchanged code is not a transitive/runtime equivalence claim. Catalog counts unchanged; no target execution.
+
+
+## Historical lockwindow failure callback change
+
+The [three-driver comparison](original-modern-lockwindow-history.md) verifies retained1.5.0→1.5.1 DX5/DX6/SoftTri failure paths adding callback0 after a preceding callback1 request. DX5/DX6 gain null-guarded register-to-stack adapters; SoftTri adds a direct tail call. Callback meaning, full state lifetime and runtime bug effects remain unresolved. MP151-004 advances vendor-only→partial; current counts are130/47/111/2. This is historical DLL evidence, not retail-original EXE correspondence; no target execution.

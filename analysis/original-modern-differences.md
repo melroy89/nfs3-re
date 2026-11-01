@@ -584,7 +584,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **131 Claimed, 47 Static, 110 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **130 Claimed, 47 Static, 111 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -663,7 +663,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP151-001 | “Rear View Camera” setting which allows to lock the rear view camera in the car. It greatly increases visibility and reduces the blind spot when the current main camera is not “In Car”. | Partial |
 | MP151-002 | Fixed a bug which had allowed to save duplicated cameras when the user presses "Race", "Credits", or "Exit game" buttons instead of the "Done" button. | Partial |
 | MP151-003 | Experimental ini setting AllowHugeTextures which enables huge texture (512×512, 1024×1024, and 2048×2048) support for track elements and cars during gameplay. Useful for the game modding. | Static |
-| MP151-004 | Fixed a small bug in the DX5, DX6, and SoftTri renderers in the thrash_lockwindow function. | Claimed |
+| MP151-004 | Fixed a small bug in the DX5, DX6, and SoftTri renderers in the thrash_lockwindow function. | Partial |
 | MP151-005 | Fixed mistakes in new strings in German, Spanish and French languages. Thanks Gonzalo's and Kirill Diduk for hints. | Claimed |
 
 ### Version 1.5.0 (2016-03-20)
@@ -943,3 +943,8 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-067 | The driver reports only 16-bit resolutions now. Original version was reported that 32-bit resolutions are supported, but it isn't true. This driver can't work in 32-bit modes. | Partial |
 
 <!-- END GENERATED MODERN CHANGE LIST -->
+
+
+## Historical three-driver lockwindow failure handling
+
+The [1.5.0→1.5.1 comparison](original-modern-lockwindow-history.md) identifies a shared mechanism behind MP151-004: DX5, DX6 and SoftTri add a callback0 request on their inspected nonzero surface-lock-result paths. The preceding paths request callback1; DX5/DX6 introduce guarded adapters. Callback identity and actual bug/runtime effects remain unresolved, so this is partial support rather than a verified whole feature. These are historical Modern driver pairs, not new original/final EXE differences.
