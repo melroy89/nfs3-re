@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **106 vendor-only,51 bounded-static,131 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **105 vendor-only,51 bounded-static,132 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -665,3 +665,7 @@ The [descriptor/default/consumer audit](original-modern-hud-layout.md#opponent-n
 ## Police-list compact-spacing mechanism
 
 The [data/consumer audit](original-modern-hud-layout.md#police-list-row-and-panel-spacing-use-smaller-data-coefficients) verifies paired binary64 coefficients20→12.414 in row advance and panel-layout metrics, retained1/13 multipliers and unchanged font-metric bodies. Equal-metric unrounded ratio0.6207 is not a rendered-size measurement or proof of resemblance to standard standings. MP100-007 advances to partial, counts106/51/131/2. Font state, caller admission, visual layout and1.0.0 introduction remain unverified; no target execution or database changes.
+
+## Alpha Intensity colour-publication mechanism
+
+The [complete colour-helper audit](original-modern-effect-renderer-masks.md#alpha-intensity-connects-menu-writeback-to-packed-colour-scaling) links the official control and existing writeback/type audits to a235-byte helper with only the mask40h→50h change. Below1 it quantizes intensity and scales all four bytes of two published colours; at1 it bypasses scaling. Ordinary examples are derived, not probes. MP100-015 advances to partial, counts105/51/132/2; driver output, car shine, full lifecycle and1.0.0 introduction remain unverified. No target execution or database changes.
