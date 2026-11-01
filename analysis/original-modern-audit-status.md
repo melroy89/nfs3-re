@@ -5,7 +5,8 @@
 The [catalog](modern-patch-change-catalog.md) currently has **142 vendor-only,45 bounded-static,101 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
-- **Recently narrowed:** type8 descriptor availability/conditional publication, local prepare/render/finalize order, retained399-byte handler and an excluded33-byte viewport-flag helper. See the [projection report](original-modern-projection.md).
+- **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
+- **Projection narrowed but unresolved:** type8 descriptor availability/conditional publication, local prepare/render/finalize order, retained399-byte handler and excluded33-byte viewport-flag helper. See the [projection report](original-modern-projection.md).
 - **Still open:** the projection-source writer/capture lifetime and visible horizon outcome. The preset−5 field retains a verified layout/value with opaque physical meaning; a candidate offset match was a different record family. See the [preset report](original-modern-parameter-preset.md#shared-field-offset-is-not-a-consumer-identity).
 - **Separate broader backlog:** remaining vendor claims, historical driver/release comparisons and original/Modern runtime compatibility. There are more than two questions in the complete backlog.
 
@@ -257,3 +258,7 @@ The [loader-to-startup comparison](original-modern-config-loading.md#renderer-ty
 ## Keyboard-toggle startup operation identified
 
 The [window helper follow-up](original-modern-window-geometry.md#removed-startup-reset-of-keyboard-toggles) binds original creation indices0/1/2 to Caps/Num/Scroll Lock and a conditional keybd_event pair, then verifies the matched Modern creator omits the calls. Retained imports/thunk do not establish startup reachability. MP100-038 gains bounded static support; OS/Wine/device effects and alternate callers remain untested. Current counts:142 vendor-only,45 bounded static,101 partial,2 unresolved.
+
+## Historical/startup reproducibility checkpoint
+
+At reviewed head7c36f96,11 selected static audit scripts passed, and original/official/local EXE plus saved Ghidra database hashes matched their recorded identities. [The checkpoint](evidence/validation/historical-startup-checkpoint.json) records commands, outputs, identities and limits. Stale overview text about untraced DX7/DX8 alignment and vendor-only historical rear-view work was corrected. This self-check does not independently validate every semantic interpretation or qualify runtime behaviour. The full difference investigation remains active and incomplete.

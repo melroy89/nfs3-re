@@ -1,0 +1,83 @@
+{
+  "kind": "historical-and-startup-static-checkpoint",
+  "reviewed_commit": "7c36f963c3f6d8cb5d54516e618d952f78dabf1c",
+  "preserved_artifacts": [
+    {
+      "role": "original",
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b"
+    },
+    {
+      "role": "official_modern",
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6"
+    },
+    {
+      "role": "saved_ghidra_database",
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+    },
+    {
+      "role": "local_modern",
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 analysis/scripts/audit_official_160_history.py && python3 analysis/scripts/audit_language_fallback_history.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 analysis/scripts/audit_dx6_160_161_alignment.py",
+      "exit_code": 0,
+      "output": "PASS: pinned DX6 pair, eight PUSH-to-CALL patches and complete half-unit adjustment adapter"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_dx7_160_161_modes.py",
+      "exit_code": 0,
+      "output": "PASS: pinned historical DX7 pair, removed fixed mode seed and changed insertion policy"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_dx7_dx8_160_161_alignment.py",
+      "exit_code": 0,
+      "output": "PASS: historical DX7/DX8 pairs, new half-unit coordinate adjustments and3/15 direct-call witnesses"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_rear_view_history.py",
+      "exit_code": 0,
+      "output": "PASS: historical pair and retained table/consumer spans; 4/48 derived second-record tuples differ"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_config_path_history.py",
+      "exit_code": 0,
+      "output": "PASS: pinned1.1.0/1.2.0 path-slot initialization; config prefix changes from root-relative to FeData/Config"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_config_loading_difference.py",
+      "exit_code": 0,
+      "output": "PASS: config baselines, header bytes, import identities and load spans"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_startup_paths_difference.py",
+      "exit_code": 0,
+      "output": "PASS: identities, startup/API spans, 22 initialized path slots and 13/4 directory tables"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_window_initialization_difference.py",
+      "exit_code": 0,
+      "output": "{\n  \"counts\": {\n    \"original\": 26,\n    \"official_modern\": 27\n  },\n  \"removed\": [\n    \"0007\",\n    \"0008\"\n  ],\n  \"added\": [\n    \"0001\",\n    \"001c\",\n    \"0218\"\n  ],\n  \"changed_handler_address\": [\n    {\n      \"message\": \"0002\",\n      \"original\": \"004cce80\",\n      \"modern\": \"004ccce4\"\n    },\n    {\n      \"message\": \"0010\",\n      \"original\": \"004cce40\",\n      \"modern\": \"004ccd5c\"\n    },\n    {\n      \"message\": \"0466\",\n      \"original\": \"004cce60\",\n      \"modern\": \"004ccd98\"\n    }\n  ]\n}"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_x87_precision_history.py",
+      "exit_code": 0,
+      "output": "PASS: historical x87 helper/call removal and selected v1.6.0 FINIT boundaries"
+    }
+  ],
+  "limits": [
+    "Static assertions re-run, not independent semantic review or exhaustive difference coverage.",
+    "No target instructions, game/DLL execution, compilation or Ghidra mutation.",
+    "Historical archives are author-hosted identities with internal banners, not authenticated publisher signatures.",
+    "Runtime rendering, replay/network compatibility and all-path equivalence remain unverified."
+  ]
+}

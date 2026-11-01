@@ -19,7 +19,26 @@ For a shallow inventory, see the [complete release-note change list](#complete-r
 
 Read-only PE parsing, disassembly and Ghidra metadata inspection were used. The original was separately imported/analyzed under ignored `analysis/captures/modern-differences/ghidra-original/`; the established Modern Ghidra project, executable and maintained C were not modified. No new game, multiplayer, replay or instruction-probe execution was performed for this audit.
 
-The [historical renderer-alignment comparison](original-modern-renderer-texel-alignment.md) now establishes the DX6 half-unit vertex correction in an author-hosted1.6.0/1.6.1 pair; the bundled DX7/DX8 claims remain separate.
+The [historical renderer comparison](original-modern-renderer-texel-alignment.md) now traces half-unit X/Y corrections in DX6, DX7 and DX8 across author-hosted1.6.0/1.6.1 pairs. DX8 fog has separate state/table/channel evidence; actual rendered alignment and fog remain unverified.
+
+## Recent findings at a glance
+
+The [static checkpoint](evidence/validation/historical-startup-checkpoint.json) re-runs11 selected audit scripts against reviewed commit `7c36f96` and verifies the recorded hashes of the supplied original, official Modern, local analysis EXE and saved Ghidra database. This is a reproducibility/self-check checkpoint, not independent semantic review or completion of the entire investigation.
+
+| Topic | Builds actually compared | Verified finding | Still unverified |
+|---|---|---|---|
+| [Texel alignment](original-modern-renderer-texel-alignment.md) | Historical1.6.0/1.6.1 drivers | DX6/DX7/DX8 add half-unit X/Y corrections with distinct wrappers | Visible sharpness and all drawing paths |
+| [DX8 fog](original-modern-renderer-texel-alignment.md#guard-provenance-initial-storage-and-stopping-point) | Historical1.6.0/1.6.1 | Changed output channel/state routes; retained table expansion; capability guard traced | Complete lifecycle, CRT edge cases and visible fog |
+| [DX7 display modes](original-modern-dx7-mode-admission.md) | Historical1.6.0/1.6.1 | Fixed mode seed removed; sorted insertion policy added | Device enumeration/acceptance and complete mode coverage |
+| [Language fallback](original-modern-language-table.md#historical-fallback-regression-v150-through-v153) | Historical1.5.0/1.5.1/1.5.2/1.5.3 | Four-entry table/range mismatch in1.5.1/1.5.2, repaired in1.5.3 | Actual consumer crashes or localized rendering |
+| [Rear View Detail](original-modern-track-detail.md#historical-v152-improvement-second-record-source-selection) | Historical1.5.1/1.5.2 | Second-record source selection changes; four of48 finite derived tuples differ | Visual/performance benefit and inputs outside the model |
+| [Config path reversal](original-modern-startup-paths.md#config-path-history-root-relative-then-restored) | Historical1.1.0/1.2.0, final defaults | Root-relative config prefix becomes FeData/Config; final build retains latter default | Effective filesystem behaviour and1.0.0 introduction |
+| [x87 policy](og-modern-x87-precision.md#historical-release-boundary-v153-to-v160) | Historical1.5.3/1.6.0, earlier original/final context | Single/saved-CW helpers removed and selected FINIT boundaries verified | Every thread/DLL, all numeric results and replay/network compatibility |
+| [Update-triggered deletion](original-modern-config-loading.md#executable-update-deletion-config-and-both-player-specifications) | Supplied original / official final | Timestamp deletion gates bypassed for config and both player specs | Other reset/write routes, I/O success and introduction |
+| [Renderer-change reset](original-modern-config-loading.md#renderer-type-mismatch-no-longer-requests-the-original-startup-reset) | Supplied original / official final | Conditional type-mismatch-to-defaults route removed | Every driver/device change and actual settings persistence |
+| [Keyboard toggles](original-modern-window-geometry.md#removed-startup-reset-of-keyboard-toggles) | Supplied original / official final | Original conditional Caps/Num/Scroll Lock reset calls omitted by matched Modern creator | Alternate callers and actual OS/Wine/device effects |
+
+These rows summarize documented increments. They are neither all EXE differences nor a percentage of whole-game reconstruction. Historical-driver findings must not be relabelled as original-retail DLL comparisons. No new target execution or database mutation was used by this checkpoint.
 
 ## 1. Three-way provenance
 
@@ -403,7 +422,7 @@ See also [window-key translation](original-modern-window-key.md): table-driven m
 
 See also [car-list rendering aliases](original-modern-car-alias.md): expanded name matching at two list-renderer call sites.
 
-Recent catalog reconciliation links the mirror admission/track-selector and Num Lock findings to their release-note claims as **Partial**. The car-class display claim and version-specific v1.5.2 rear-view improvement retain vendor-claimed status: related final-pair mechanisms do not prove rendered class text or intermediate-release changes. Input-worker lifecycle, discarded next-block classification, progress budgets and screenshot file policies remain separately documented code findings; they are not forced into unrelated release-note bullets.
+Earlier catalog reconciliation linked mirror admission/track-selector and Num Lock translation findings as **Partial**. The car-class display claim remains vendor-only. The [subsequent historical1.5.1/1.5.2 comparison](original-modern-track-detail.md#historical-v152-improvement-second-record-source-selection) now supplies partial support for the specific rear-view improvement; rendered benefit remains unverified. Input-worker lifecycle, discarded next-block classification, progress budgets and screenshot file policies remain separately documented code findings; they are not forced into unrelated release-note bullets.
 
 The [logo loader and animation investigation](original-modern-frontend-page.md#original-loader-counterpart-one-named-image-becomes-metadata-driven-output) now pairs original `logo.qfs` loading with Modern `logos.qfs`, decodes official tables, and traces model filtering, metadata access, draw fields and index initialization. Its conditional last-record fall-through and reload-state boundaries remain static findings requiring further validation.
 
