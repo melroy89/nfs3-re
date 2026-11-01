@@ -643,7 +643,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **91 Claimed, 52 Static, 145 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **90 Claimed, 52 Static, 146 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -752,7 +752,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-021 | Volume and Alpha sliders display own value (in percents). | Partial |
 | MP150-022 | Logos from the LOGO2.QFS (if it exists) are used for animation in the menu (together with logos from the LOGO.QFS). Original version of the game have this file, but it is unused. | Static |
 | MP150-023 | Animated logos of automobile manufacturers are disappearing more smoothly. | Partial |
-| MP150-024 | Fixed rendering piority errors for the top dropdown lists in the the “Location” and “Opponents” menus. | Claimed |
+| MP150-024 | Fixed rendering piority errors for the top dropdown lists in the the “Location” and “Opponents” menus. | Partial |
 | MP150-025 | “Car Showcase” subtitle and “Compare All Cars” subtitle are displayed using the same font as the “Race Results” subtitle. | Claimed |
 | MP150-026 | Other insignificant improvements. | Claimed |
 | MP150-027 | DX7 renderer is included into this patch. Just for a collection :) | Claimed |
@@ -1103,3 +1103,7 @@ The [registered editor draw-chain review](original-modern-hud-settings-policy.md
 ## Police editor omission resolved in packaged menu records
 
 The [role-specific menu comparison](original-modern-hud-settings-policy.md#police-only-widget-omission-is-authored-in-the-role-specific-menus) verifies six paired files: Modern removes only the police view’s Tutorial Icon/Cone Stats HudItem IDs, preserving racer items in mixed split-screen menus. Named EXE page registrations and the shared initializer remain retained. MP100-048 advances to partial package/static support, superseding the preceding vendor-only checkpoint; retail-reference provenance, active asset loading and visible acceptance remain unverified.
+
+## Historical top dropdown priority correction
+
+The [Location/Opponents comparison](original-modern-common-menu-buttons.md#location-and-opponents-dropdown-priority-changes-in150) verifies1.4.0→1.5.0 authored top priorities1→0 and Location lower groups0..4→1..5. Named property storage and selected retained draw consumers establish descending priority traversal, putting group0 last. MP150-024 advances to partial support; actual overlap correction, rendering state and installed asset selection remain untested.

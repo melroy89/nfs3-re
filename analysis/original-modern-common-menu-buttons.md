@@ -224,3 +224,27 @@ A C reconstruction must model unsigned wrapping/truncation explicitly if preserv
 The outside-function interval`00461cf4..004628d0` spans3036 bytes with207 changed positions. The inventory now partitions it into12 unchanged leading bytes, the1556-byte cascade renderer`00461d00..00462314`,396 unchanged intervening bytes, the1064-byte input comparison envelope`004624a0..004628c8`, and eight final Modern NOPs. The last input instruction is an unconditional jump at`004628c3` to the reused return/sound tail, so these final NOPs have no fallthrough from that path. Original’s same locations are the tail of alignment LEAs after its RET. Alternate-entry exclusion is not established.
 
 The [outside-body manifest](evidence/audits/outside-function-differences.json) retains exact per-part changed-byte counts and hashes. The renderer and input mechanisms are already explained in their paired audits; unchanged intervening bytes include the retained initializer and must not be labelled all padding. This closes interval routing, not full UI or external-helper validation.
+
+## Location and Opponents dropdown priority changes in150
+
+**Verified authored priority boundary and selected code consumers; visible overlap fix untested.** The [priority-history audit](evidence/audits/dropdown-priority-history.json), reproduced with `python3 analysis/scripts/audit_dropdown_priority_history.py`, pins author-reference,1.4.0,1.5.0 and final archives and parses repeated droplist/cascade sections in`location.mnu` and`opponent.mnu`.
+
+| Control/listname | Reference and1.4.0 priority |1.5.0 and final priority |
+|---|---|---|
+|Location top dropdown `tracks` |1 |0 |
+|Location lower `laps`, `direction`, `mirrored`, `night`, `weather` |0,1,2,3,4 |1,2,3,4,5 |
+|Opponents top dropdown `opcars` |1 |0 |
+|Opponents lower `ai`, `oppnumber`, `traffic` |1,2,3 |1,2,3 |
+
+The selected top controls keep x101/y69 and authored maxvisitem15 (tracks) or10 (opcars) in all four snapshots. This is a priority change, not an increased visible-item capacity. Other properties are separate: opponent cascade`ypos` values also change1/2/3→2/3/4 in the historical pair; these are not literal pixel y positions and are not used here to infer keyboard behaviour.
+
+The original/final descriptor at`00557c30` is the common kind1 `priority` property with form1 and destination`00604eea`, entry base`00604ee0`+0a. The [existing property-writer evidence](original-modern-control-component-keys.md#common-property-stores-do-not-directly-overlap-either-byte) establishes form1's two-byte write. The new audit checks the paired descriptor directly and retains four identical draw-loop spans:
+
+- `0044a524..0044a536` updates the maximum signed priority using an arithmetic shift of the DWORD at entry+08, whose high WORD is priority+0a.
+- `0044a59c..0044a5a6` compares that signed priority with the current group and skips nonmatching entries.
+- `0044a5cb..0044a5e5` checks callback+2c, suppresses it when byte+05 bit10h is set, otherwise invokes it.
+- `0044a634..0044a63a` decrements the group and returns to the nonnegative-group loop test.
+
+Thus, within this ordinary group traversal, priority0 callbacks are visited after positive groups. Modern moves the two top dropdowns into that final group, separating them from the old priority1 ties and Location's old priority0 laps control. This supplies a concrete ordering mechanism consistent with MP150-024. Actual compositing still depends on callbacks, flags, render/depth state and providers; later callback order alone does not prove every popup appears correctly over other content.
+
+The state-preparation span`0044a5a6..0044a5cb` differs and is explicitly outside the retained comparisons. This is not complete loop equivalence or a claim that its changed instructions implement the asset priority fix. Historical EXE consumers were not separately qualified; the1.4.0→1.5.0 boundary is directly verified for the authored assets. The reference assets are author-hosted, not authenticated retail or proven paired to the supplied original EXE. MP150-024 advances to **partial package/static support**; active installed loading, visible overlap and full input behaviour remain unverified. No game, instruction probe, compiler or Ghidra write was used.

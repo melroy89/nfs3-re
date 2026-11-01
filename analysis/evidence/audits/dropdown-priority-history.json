@@ -1,0 +1,761 @@
+{
+  "kind": "static-dropdown-priority-history",
+  "archives": {
+    "reference": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+      "sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127"
+    },
+    "modern": {
+      "path": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3"
+    },
+    "1.4.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9"
+    },
+    "1.5.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f"
+    }
+  },
+  "assets": {
+    "reference": [
+      {
+        "path": "fedata/menus/location.mnu",
+        "member": "fedata/MENUS/LOCATION.MNU",
+        "sha256": "7de432d93e73ec6a2a78d16b8b67ea0f7d26d91c54532690ffbce2614663edd1",
+        "bytes": 5756,
+        "controls": [
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "0",
+            "codelink": "hostonly LOCATION_LAPS_CASCADE",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "1",
+            "enablefore3demo": "1",
+            "text": "kMenuLOCATIONselectla001",
+            "maxvisitem": "2000",
+            "listname": "laps",
+            "ypos": "1",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "128",
+            "y": "209",
+            "priority": "1",
+            "codelink": "hostonly LOCATION_DIR_CASCADE",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "0",
+            "enablefore3demo": "0",
+            "text": "kMenuLOCATIONselectdi001",
+            "maxvisitem": "2000",
+            "listname": "direction",
+            "ypos": "2",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "127",
+            "y": "244",
+            "priority": "2",
+            "codelink": "hostonly  LOCATION_MIR_CASCADE",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "0",
+            "enablefore3demo": "0",
+            "text": "kMenuLOCATIONsetmirro001",
+            "maxvisitem": "2000",
+            "listname": "mirrored",
+            "ypos": "3",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "130",
+            "y": "279",
+            "priority": "3",
+            "codelink": "hostonly LOCATION_NIGHT_CASCADE",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "1",
+            "enablefore3demo": "1",
+            "text": "kMenuLOCATIONsetnight001",
+            "maxvisitem": "2000",
+            "listname": "night",
+            "ypos": "4",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "135",
+            "y": "314",
+            "priority": "4",
+            "codelink": "hostonly LOCATION_WEATHER_CASCADE",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "1",
+            "enablefore3demo": "1",
+            "text": "kMenuLOCATIONsetweath001",
+            "maxvisitem": "2000",
+            "listname": "weather",
+            "ypos": "5",
+            "notitle": "0"
+          },
+          {
+            "section": "droplist",
+            "x": "101",
+            "y": "69",
+            "priority": "1",
+            "codelink": "hostonly LOCATION_TRACKS_LIST",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "1",
+            "enablefore3demo": "1",
+            "maxvisitem": "15",
+            "listname": "tracks",
+            "invert": "0",
+            "flip": "0"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/opponent.mnu",
+        "member": "fedata/MENUS/OPPONENT.MNU",
+        "sha256": "22ef49df34e7a117b0d8d5a56c2fffd1d13647c9de432f0df54f77a77930a900",
+        "bytes": 4690,
+        "controls": [
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "1",
+            "codelink": "hostonly",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "0",
+            "enablefore3demo": "0",
+            "text": "kMenuOPPONENTSkillLev002",
+            "maxvisitem": "2000",
+            "listname": "ai",
+            "ypos": "1",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "2",
+            "codelink": "hostonly OPPNUM_CASCADE",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "1",
+            "enablefore3demo": "1",
+            "text": "kMenuOPPONENTnumberof001",
+            "maxvisitem": "2000",
+            "listname": "oppnumber",
+            "ypos": "2",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "128",
+            "y": "209",
+            "priority": "3",
+            "codelink": "hostonly TRAFFIC_CASCADE",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "1",
+            "enablefore3demo": "1",
+            "text": "kMenuOPPONENTtraffici001",
+            "maxvisitem": "2000",
+            "listname": "traffic",
+            "ypos": "3",
+            "notitle": "0"
+          },
+          {
+            "section": "droplist",
+            "x": "101",
+            "y": "69",
+            "priority": "1",
+            "codelink": "hostonly",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "1",
+            "enablefore3demo": "1",
+            "maxvisitem": "10",
+            "listname": "opcars",
+            "invert": "0",
+            "flip": "0"
+          }
+        ]
+      }
+    ],
+    "modern": [
+      {
+        "path": "fedata/menus/location.mnu",
+        "member": "fedata/menus/location.mnu",
+        "sha256": "d1830e7d3f82e5d88b06fbec79720d85924392f2d3f88a1b8d69fb6de44faa3f",
+        "bytes": 3700,
+        "controls": [
+          {
+            "section": "droplist",
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "hostonly LOCATION_TRACKS_LIST",
+            "maxvisitem": "15",
+            "listname": "tracks",
+            "invert": "0",
+            "flip": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "1",
+            "codelink": "hostonly LOCATION_LAPS_CASCADE",
+            "text": "kMenuLOCATIONselectla001",
+            "maxvisitem": "2000",
+            "listname": "laps",
+            "ypos": "1",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "128",
+            "y": "209",
+            "priority": "2",
+            "codelink": "hostonly LOCATION_DIR_CASCADE",
+            "text": "kMenuLOCATIONselectdi001",
+            "maxvisitem": "2000",
+            "listname": "direction",
+            "ypos": "2",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "127",
+            "y": "244",
+            "priority": "3",
+            "codelink": "hostonly  LOCATION_MIR_CASCADE",
+            "text": "kMenuLOCATIONsetmirro001",
+            "maxvisitem": "2000",
+            "listname": "mirrored",
+            "ypos": "3",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "130",
+            "y": "279",
+            "priority": "4",
+            "codelink": "hostonly LOCATION_NIGHT_CASCADE",
+            "text": "kMenuLOCATIONsetnight001",
+            "maxvisitem": "2000",
+            "listname": "night",
+            "ypos": "4",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "135",
+            "y": "314",
+            "priority": "5",
+            "codelink": "hostonly LOCATION_WEATHER_CASCADE",
+            "text": "kMenuLOCATIONsetweath001",
+            "maxvisitem": "2000",
+            "listname": "weather",
+            "ypos": "5",
+            "notitle": "0"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/opponent.mnu",
+        "member": "fedata/menus/opponent.mnu",
+        "sha256": "83aad629e611f452f64067dde3834738a4a4bc0e615a6a5a754520c71b344626",
+        "bytes": 2935,
+        "controls": [
+          {
+            "section": "droplist",
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "hostonly",
+            "maxvisitem": "10",
+            "listname": "opcars",
+            "invert": "0",
+            "flip": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "1",
+            "codelink": "hostonly",
+            "text": "kMenuOPPONENTSkillLev002",
+            "maxvisitem": "2000",
+            "listname": "ai",
+            "ypos": "2",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "2",
+            "codelink": "hostonly OPPNUM_CASCADE",
+            "text": "kMenuOPPONENTnumberof001",
+            "maxvisitem": "2000",
+            "listname": "oppnumber",
+            "ypos": "3",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "128",
+            "y": "209",
+            "priority": "3",
+            "codelink": "hostonly TRAFFIC_CASCADE",
+            "text": "kMenuOPPONENTtraffici001",
+            "maxvisitem": "2000",
+            "listname": "traffic",
+            "ypos": "4",
+            "notitle": "0"
+          }
+        ]
+      }
+    ],
+    "1.4.0": [
+      {
+        "path": "fedata/menus/location.mnu",
+        "member": "fedata/menus/location.mnu",
+        "sha256": "5d560571ef7794eaccd294d3d0f1b3371f7674083ed65f4fdf35606a5c7cb274",
+        "bytes": 3701,
+        "controls": [
+          {
+            "section": "droplist",
+            "x": "101",
+            "y": "69",
+            "priority": "1",
+            "codelink": "hostonly LOCATION_TRACKS_LIST",
+            "maxvisitem": "15",
+            "listname": "tracks",
+            "invert": "0",
+            "flip": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "0",
+            "codelink": "hostonly LOCATION_LAPS_CASCADE",
+            "text": "kMenuLOCATIONselectla001",
+            "maxvisitem": "2000",
+            "listname": "laps",
+            "ypos": "1",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "128",
+            "y": "209",
+            "priority": "1",
+            "codelink": "hostonly LOCATION_DIR_CASCADE",
+            "text": "kMenuLOCATIONselectdi001",
+            "maxvisitem": "2000",
+            "listname": "direction",
+            "ypos": "2",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "127",
+            "y": "244",
+            "priority": "2",
+            "codelink": "hostonly  LOCATION_MIR_CASCADE",
+            "text": "kMenuLOCATIONsetmirro001",
+            "maxvisitem": "2000",
+            "listname": "mirrored",
+            "ypos": "3",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "130",
+            "y": "279",
+            "priority": "3",
+            "codelink": "hostonly LOCATION_NIGHT_CASCADE",
+            "text": "kMenuLOCATIONsetnight001",
+            "maxvisitem": "2000",
+            "listname": "night",
+            "ypos": "4",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "135",
+            "y": "314",
+            "priority": "4",
+            "codelink": "hostonly LOCATION_WEATHER_CASCADE",
+            "text": "kMenuLOCATIONsetweath001",
+            "maxvisitem": "2000",
+            "listname": "weather",
+            "ypos": "5",
+            "notitle": "0"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/opponent.mnu",
+        "member": "fedata/menus/opponent.mnu",
+        "sha256": "06185ba2a7c53e8828141615e865d7c400e25d21ea6a34061dd0ffaabf400e72",
+        "bytes": 2935,
+        "controls": [
+          {
+            "section": "droplist",
+            "x": "101",
+            "y": "69",
+            "priority": "1",
+            "codelink": "hostonly",
+            "maxvisitem": "10",
+            "listname": "opcars",
+            "invert": "0",
+            "flip": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "1",
+            "codelink": "hostonly",
+            "text": "kMenuOPPONENTSkillLev002",
+            "maxvisitem": "2000",
+            "listname": "ai",
+            "ypos": "1",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "2",
+            "codelink": "hostonly OPPNUM_CASCADE",
+            "text": "kMenuOPPONENTnumberof001",
+            "maxvisitem": "2000",
+            "listname": "oppnumber",
+            "ypos": "2",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "128",
+            "y": "209",
+            "priority": "3",
+            "codelink": "hostonly TRAFFIC_CASCADE",
+            "text": "kMenuOPPONENTtraffici001",
+            "maxvisitem": "2000",
+            "listname": "traffic",
+            "ypos": "3",
+            "notitle": "0"
+          }
+        ]
+      }
+    ],
+    "1.5.0": [
+      {
+        "path": "fedata/menus/location.mnu",
+        "member": "fedata/menus/location.mnu",
+        "sha256": "d1830e7d3f82e5d88b06fbec79720d85924392f2d3f88a1b8d69fb6de44faa3f",
+        "bytes": 3700,
+        "controls": [
+          {
+            "section": "droplist",
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "hostonly LOCATION_TRACKS_LIST",
+            "maxvisitem": "15",
+            "listname": "tracks",
+            "invert": "0",
+            "flip": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "1",
+            "codelink": "hostonly LOCATION_LAPS_CASCADE",
+            "text": "kMenuLOCATIONselectla001",
+            "maxvisitem": "2000",
+            "listname": "laps",
+            "ypos": "1",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "128",
+            "y": "209",
+            "priority": "2",
+            "codelink": "hostonly LOCATION_DIR_CASCADE",
+            "text": "kMenuLOCATIONselectdi001",
+            "maxvisitem": "2000",
+            "listname": "direction",
+            "ypos": "2",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "127",
+            "y": "244",
+            "priority": "3",
+            "codelink": "hostonly  LOCATION_MIR_CASCADE",
+            "text": "kMenuLOCATIONsetmirro001",
+            "maxvisitem": "2000",
+            "listname": "mirrored",
+            "ypos": "3",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "130",
+            "y": "279",
+            "priority": "4",
+            "codelink": "hostonly LOCATION_NIGHT_CASCADE",
+            "text": "kMenuLOCATIONsetnight001",
+            "maxvisitem": "2000",
+            "listname": "night",
+            "ypos": "4",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "135",
+            "y": "314",
+            "priority": "5",
+            "codelink": "hostonly LOCATION_WEATHER_CASCADE",
+            "text": "kMenuLOCATIONsetweath001",
+            "maxvisitem": "2000",
+            "listname": "weather",
+            "ypos": "5",
+            "notitle": "0"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/opponent.mnu",
+        "member": "fedata/menus/opponent.mnu",
+        "sha256": "83aad629e611f452f64067dde3834738a4a4bc0e615a6a5a754520c71b344626",
+        "bytes": 2935,
+        "controls": [
+          {
+            "section": "droplist",
+            "x": "101",
+            "y": "69",
+            "priority": "0",
+            "codelink": "hostonly",
+            "maxvisitem": "10",
+            "listname": "opcars",
+            "invert": "0",
+            "flip": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "1",
+            "codelink": "hostonly",
+            "text": "kMenuOPPONENTSkillLev002",
+            "maxvisitem": "2000",
+            "listname": "ai",
+            "ypos": "2",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "2",
+            "codelink": "hostonly OPPNUM_CASCADE",
+            "text": "kMenuOPPONENTnumberof001",
+            "maxvisitem": "2000",
+            "listname": "oppnumber",
+            "ypos": "3",
+            "notitle": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "128",
+            "y": "209",
+            "priority": "3",
+            "codelink": "hostonly TRAFFIC_CASCADE",
+            "text": "kMenuOPPONENTtraffici001",
+            "maxvisitem": "2000",
+            "listname": "traffic",
+            "ypos": "4",
+            "notitle": "0"
+          }
+        ]
+      }
+    ]
+  },
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "priority_descriptor": {
+        "address": "00557c30",
+        "hex": "010000007084530001000000ea4e6000",
+        "form": 1,
+        "destination": "00604eea"
+      },
+      "captures": [
+        {
+          "start": "0044a524",
+          "end_exclusive": "0044a536",
+          "hex": "8b80e84e6000c1f81039c87e0289c143ebcf",
+          "sha256": "c6e484bc493606f0bf7d39559665663858eba298bd218e856549fac735324692",
+          "disassembly": [
+            "44a524:\t8b 80 e8 4e 60 00    \tmov    eax,DWORD PTR [eax+0x604ee8]",
+            "44a52a:\tc1 f8 10             \tsar    eax,0x10",
+            "44a52d:\t39 c8                \tcmp    eax,ecx",
+            "44a52f:\t7e 02                \tjle    0x44a533",
+            "44a531:\t89 c1                \tmov    ecx,eax",
+            "44a533:\t43                   \tinc    ebx",
+            "44a534:\teb cf                \tjmp    0x44a505"
+          ]
+        },
+        {
+          "start": "0044a59c",
+          "end_exclusive": "0044a5a6",
+          "hex": "8b4308c1f81039c1753f",
+          "sha256": "05a91c15c726fa2a0e4c077267aaa9cd24e76f0a49a4b59e299c3d1f02284947",
+          "disassembly": [
+            "44a59c:\t8b 43 08             \tmov    eax,DWORD PTR [ebx+0x8]",
+            "44a59f:\tc1 f8 10             \tsar    eax,0x10",
+            "44a5a2:\t39 c1                \tcmp    ecx,eax",
+            "44a5a4:\t75 3f                \tjne    0x44a5e5"
+          ]
+        },
+        {
+          "start": "0044a5cb",
+          "end_exclusive": "0044a5e5",
+          "hex": "837b2c007414f6430510750e9889c289d8ff532c85c0740289c7",
+          "sha256": "e4a68b5768bd387025399638f8d03dd3c912a72b56ae6923656e43ff242224a5",
+          "disassembly": [
+            "44a5cb:\t83 7b 2c 00          \tcmp    DWORD PTR [ebx+0x2c],0x0",
+            "44a5cf:\t74 14                \tje     0x44a5e5",
+            "44a5d1:\tf6 43 05 10          \ttest   BYTE PTR [ebx+0x5],0x10",
+            "44a5d5:\t75 0e                \tjne    0x44a5e5",
+            "44a5d7:\t98                   \tcwde",
+            "44a5d8:\t89 c2                \tmov    edx,eax",
+            "44a5da:\t89 d8                \tmov    eax,ebx",
+            "44a5dc:\tff 53 2c             \tcall   DWORD PTR [ebx+0x2c]",
+            "44a5df:\t85 c0                \ttest   eax,eax",
+            "44a5e1:\t74 02                \tje     0x44a5e5",
+            "44a5e3:\t89 c7                \tmov    edi,eax"
+          ]
+        },
+        {
+          "start": "0044a634",
+          "end_exclusive": "0044a63a",
+          "hex": "49e9fcfeffff",
+          "sha256": "e8d2dd37c65b8ec79db63c39d7fbbc1bceb60145fbb1968b5373a8326e1bf6d3",
+          "disassembly": [
+            "44a634:\t49                   \tdec    ecx",
+            "44a635:\te9 fc fe ff ff       \tjmp    0x44a536"
+          ]
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "priority_descriptor": {
+        "address": "00557c30",
+        "hex": "010000007084530001000000ea4e6000",
+        "form": 1,
+        "destination": "00604eea"
+      },
+      "captures": [
+        {
+          "start": "0044a524",
+          "end_exclusive": "0044a536",
+          "hex": "8b80e84e6000c1f81039c87e0289c143ebcf",
+          "sha256": "c6e484bc493606f0bf7d39559665663858eba298bd218e856549fac735324692",
+          "disassembly": [
+            "44a524:\t8b 80 e8 4e 60 00    \tmov    eax,DWORD PTR [eax+0x604ee8]",
+            "44a52a:\tc1 f8 10             \tsar    eax,0x10",
+            "44a52d:\t39 c8                \tcmp    eax,ecx",
+            "44a52f:\t7e 02                \tjle    0x44a533",
+            "44a531:\t89 c1                \tmov    ecx,eax",
+            "44a533:\t43                   \tinc    ebx",
+            "44a534:\teb cf                \tjmp    0x44a505"
+          ]
+        },
+        {
+          "start": "0044a59c",
+          "end_exclusive": "0044a5a6",
+          "hex": "8b4308c1f81039c1753f",
+          "sha256": "05a91c15c726fa2a0e4c077267aaa9cd24e76f0a49a4b59e299c3d1f02284947",
+          "disassembly": [
+            "44a59c:\t8b 43 08             \tmov    eax,DWORD PTR [ebx+0x8]",
+            "44a59f:\tc1 f8 10             \tsar    eax,0x10",
+            "44a5a2:\t39 c1                \tcmp    ecx,eax",
+            "44a5a4:\t75 3f                \tjne    0x44a5e5"
+          ]
+        },
+        {
+          "start": "0044a5cb",
+          "end_exclusive": "0044a5e5",
+          "hex": "837b2c007414f6430510750e9889c289d8ff532c85c0740289c7",
+          "sha256": "e4a68b5768bd387025399638f8d03dd3c912a72b56ae6923656e43ff242224a5",
+          "disassembly": [
+            "44a5cb:\t83 7b 2c 00          \tcmp    DWORD PTR [ebx+0x2c],0x0",
+            "44a5cf:\t74 14                \tje     0x44a5e5",
+            "44a5d1:\tf6 43 05 10          \ttest   BYTE PTR [ebx+0x5],0x10",
+            "44a5d5:\t75 0e                \tjne    0x44a5e5",
+            "44a5d7:\t98                   \tcwde",
+            "44a5d8:\t89 c2                \tmov    edx,eax",
+            "44a5da:\t89 d8                \tmov    eax,ebx",
+            "44a5dc:\tff 53 2c             \tcall   DWORD PTR [ebx+0x2c]",
+            "44a5df:\t85 c0                \ttest   eax,eax",
+            "44a5e1:\t74 02                \tje     0x44a5e5",
+            "44a5e3:\t89 c7                \tmov    edi,eax"
+          ]
+        },
+        {
+          "start": "0044a634",
+          "end_exclusive": "0044a63a",
+          "hex": "49e9fcfeffff",
+          "sha256": "e8d2dd37c65b8ec79db63c39d7fbbc1bceb60145fbb1968b5373a8326e1bf6d3",
+          "disassembly": [
+            "44a634:\t49                   \tdec    ecx",
+            "44a635:\te9 fc fe ff ff       \tjmp    0x44a536"
+          ]
+        }
+      ]
+    }
+  },
+  "verified": [
+    "Selected top dropdown priority changes1->0 across1.4.0->1.5.0, retained final.",
+    "Location lower priorities shift0..4->1..5; opponent lower priorities remain1..3.",
+    "Shared priority descriptor uses form1/two-byte entry+0a store; named writer contract reuses control-component audit.",
+    "Retained draw loop finds max signed priority, selects matching group, calls eligible+2c callbacks and decrements group.",
+    "Priority0 is processed after positive groups; selected top x/y/maxvisitem remain unchanged."
+  ],
+  "limits": [
+    "No menus, target instructions, rendering, compilation or Ghidra writes.",
+    "Author-reference assets are not authenticated pristine retail or independently paired to supplied original EXE.",
+    "Callback eligibility, rendering state/depth and provider behaviour limit visual inference; no universal overlap-fix claim.",
+    "Other fields also differ, including opponent ypos; priority and keyboard-navigation metadata are distinct.",
+    "Historical EXE consumer spans not separately compared; historical boundary applies to pinned authored assets.",
+    "Selection-state preparation0044a5a6..0044a5cb differs and is deliberately excluded from retained group-test/callback spans; full loop equivalence is not claimed.",
+    "MP150-024 has partial static/package support; runtime acceptance remains pending."
+  ]
+}

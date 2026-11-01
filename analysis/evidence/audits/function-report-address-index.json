@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "c175e70b140b9f9b4b98dbdaae1a596f00268c46a43e40d0909a9c3bdfa8c3f6"
+      "sha256": "57878d73d56b95e69abb0a266cdf4cdecf9fdd508b405d27fb25b1baebcc12d4"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -61,7 +61,7 @@
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
-      "sha256": "6b5ffb8790d4ad5c17e7eab7e2579a4f662c08bcd2abc11ff226051b58d904d1"
+      "sha256": "a591d64eb59a00c6c35473d94217d35af4186ddfa582abd960340c49dc042f6a"
     },
     {
       "path": "analysis/original-modern-config-loading.md",
@@ -4120,6 +4120,20 @@
       "original_sha256": "ddb25ca0e5db2eded06192723f2ac2380ea0529de98e694019df075dd839f951",
       "modern_sha256": "76193a766f742253d61c113a57644f2f342b4961038600eb21c7137da3f34b92",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-common-menu-buttons.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0044a524",
+            "0044a536",
+            "0044a59c",
+            "0044a5a6",
+            "0044a5cb",
+            "0044a5e5",
+            "0044a634",
+            "0044a63a"
+          ]
+        },
         {
           "path": "analysis/original-modern-hud-settings-policy.md",
           "entry_mentioned": false,
