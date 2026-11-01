@@ -8,9 +8,11 @@ from audit_thrash_loader_difference import ROOT, SPECS
 
 SPANS={'original':[(0x472980,0x472b60),(0x4728e0,0x47297d),
                    (0x4723f0,0x47242c),(0x4e0640,0x4e0658),(0x4ff4c0,0x4ff563),
-                   (0x472820,0x4728d3),(0x40faf0,0x40fb0f),(0x4e21b0,0x4e2221)],
+                   (0x472820,0x4728d3),(0x40faf0,0x40fb0f),(0x4e21b0,0x4e2221),
+                   (0x4dc940,0x4dca4e),(0x4dc800,0x4dc8af),(0x4e28a0,0x4e28bb)],
        'official_modern':[(0x472980,0x472b48),(0x472230,0x472248),
-                          (0x4723f0,0x472402),(0x472820,0x4728d3),(0x40faf0,0x40fb0f),(0x4e21b0,0x4e2221)]}
+                          (0x4723f0,0x472402),(0x472820,0x4728d3),(0x40faf0,0x40fb0f),(0x4e21b0,0x4e2221),
+                          (0x4dc940,0x4dca4e),(0x4dc800,0x4dc8af),(0x4e28a0,0x4e28bb)]}
 
 
 def main():
@@ -65,6 +67,26 @@ def main():
                 for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports
                 if i.name and i.name in [b'CompareFileTime',b'GetFileTime',b'_lopen',b'_lclose',b'GetModuleFileNameA']}}
     images=[pefile.PE(str(ROOT/SPECS[label][0])) for label in ('original','official_modern')]
+    old_player,new_player=[p.get_data(0xdc940,0x10e) for p in images]
+    assert old_player[:0x87]==new_player[:0x87] and old_player[0xab:]==new_player[0xab:]
+    assert new_player[0x87:0xab]==bytes.fromhex('85c0746ceb1e')+b'\x90'*30
+    old_path,new_path=[p.get_data(0xdc800,0xaf) for p in images]
+    assert old_path[:11]==new_path[:11] and old_path[12:0x35]==new_path[12:0x35] and old_path[0x5c:]==new_path[0x5c:]
+    assert old_path[11]==0x2f and new_path[11]==0x30
+    assert new_path[0x35:0x5c]==bytes.fromhex('eb25')+b'\x90'*37
+    for pe in images:
+        assert [pe.get_string_at_rva(r) for r in [0x149770,0x14977c,0x149784,0x14978c]]==[b'carspecs\\',b'.spc',b'player1',b'player2']
+        assert any(i.name==b'DeleteFileA' and i.address==0x5344b0
+                   for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports)
+    result['player_spec_timestamp_removal']={
+        'complete_loader':'004dc940..004dca4e','changed_envelope':'004dc9c7..004dc9eb',
+        'paired_path_builder':'004dc800..004dc8af',
+        'original_path':'prefix007a2fb4 + carspecs\\ + player1/player2 + .spc; output shared00564188',
+        'modern_path':'prefix007a30b4 + player1/player2 + .spc; carspecs append bypassed, root-prefix producer unqualified',
+        'original':'Existing file ->00472940 timestamp comparison; nonzero ->004e28a0/DeleteFileA ->default/rewrite route.',
+        'modern':'Existing file branches directly to read path004dc9eb; timestamp/deletion block replaced with30 NOPs.',
+        'limits':['No file/API calls executed; remaining read/validation/default/rewrite routes preserved.',
+                  'Root prefix provenance, all callers, I/O success and exact v1.0 introduction not established.']}
     assert images[0].get_data(0xeaf0,31)==images[1].get_data(0xeaf0,31)
     assert images[0].get_data(0xe21b0,0x71)==images[1].get_data(0xe21b0,0x71)
     result['audio_capability_query']={

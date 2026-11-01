@@ -61,6 +61,27 @@
           "bytes_sha256": "1df8218f0a5cb7c4c03a9ce476fe0d679d00a7e963ca437a436de4112f36cf68",
           "assembly": "analysis/captures/modern-differences/config-loading/original-004e21b0.asm",
           "assembly_sha256": "cc8adeaf69d71a10ae15ac724864d33c504c5959ec95de5ad163989264bd343a"
+        },
+        {
+          "start": "004dc940",
+          "end": "004dca4e",
+          "bytes_sha256": "d0510eeb69cdb20f5107b530f7febc1ebd8e6cd6e6bd54ed3df6b91dab910e53",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004dc940.asm",
+          "assembly_sha256": "83df4f3b782bc46d682c1774beb97d90ce0f123b44e58c0a4eb80c3539084ad8"
+        },
+        {
+          "start": "004dc800",
+          "end": "004dc8af",
+          "bytes_sha256": "0cea06da74b29810ec79b5452a8394494e123b2914a8ea07a92209c26b860430",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004dc800.asm",
+          "assembly_sha256": "b9f6e89ee7bbb88c3e066da78f5d3cba3c5a26ed65fea61a9692858e9ea66829"
+        },
+        {
+          "start": "004e28a0",
+          "end": "004e28bb",
+          "bytes_sha256": "5c53b956f505dccc906083ba8f320df24aaf50a77b70ce83c5161f7f551fa5aa",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004e28a0.asm",
+          "assembly_sha256": "caf81b7fa698a54421e29dd04a70b4b5bfca1c25911db3103d4bcf1a053b4868"
         }
       ],
       "flag_bit21_switch": {
@@ -126,6 +147,27 @@
           "bytes_sha256": "1df8218f0a5cb7c4c03a9ce476fe0d679d00a7e963ca437a436de4112f36cf68",
           "assembly": "analysis/captures/modern-differences/config-loading/official_modern-004e21b0.asm",
           "assembly_sha256": "a9c31b38afdb515eeaaecd410f8fabd997b195677175559d63f0d43ba8982f9a"
+        },
+        {
+          "start": "004dc940",
+          "end": "004dca4e",
+          "bytes_sha256": "81d7d12407613dbb536070ca786d56a1417100ced456d1394f96744444cefdee",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-004dc940.asm",
+          "assembly_sha256": "324b3d6c4c277db7d0b2c29e8529f6e1b2530c9bcf13bd349e9c0f48a244547d"
+        },
+        {
+          "start": "004dc800",
+          "end": "004dc8af",
+          "bytes_sha256": "a8bf1e05b9ff0adf6197e5b572e06ce097004815d74fd44477d0aefcf4f767ee",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-004dc800.asm",
+          "assembly_sha256": "d23d9fd141e618e20f8e197f0e429f7174a6ac1da126b729f6f87bd647b831e9"
+        },
+        {
+          "start": "004e28a0",
+          "end": "004e28bb",
+          "bytes_sha256": "5c53b956f505dccc906083ba8f320df24aaf50a77b70ce83c5161f7f551fa5aa",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-004e28a0.asm",
+          "assembly_sha256": "0eec79d48d117603e0d262fe666b7c77577d981d00fe4720697517e005dea110"
         }
       ],
       "flag_bit21_switch": {
@@ -165,6 +207,19 @@
     "limits": [
       "No per-field View Angle remapping in the header decision sequence or narrow sound normalizer00472230.",
       "Successful block copy, full save layout and later writes are not established by the header branches alone."
+    ]
+  },
+  "player_spec_timestamp_removal": {
+    "complete_loader": "004dc940..004dca4e",
+    "changed_envelope": "004dc9c7..004dc9eb",
+    "paired_path_builder": "004dc800..004dc8af",
+    "original_path": "prefix007a2fb4 + carspecs\\ + player1/player2 + .spc; output shared00564188",
+    "modern_path": "prefix007a30b4 + player1/player2 + .spc; carspecs append bypassed, root-prefix producer unqualified",
+    "original": "Existing file ->00472940 timestamp comparison; nonzero ->004e28a0/DeleteFileA ->default/rewrite route.",
+    "modern": "Existing file branches directly to read path004dc9eb; timestamp/deletion block replaced with30 NOPs.",
+    "limits": [
+      "No file/API calls executed; remaining read/validation/default/rewrite routes preserved.",
+      "Root prefix provenance, all callers, I/O success and exact v1.0 introduction not established."
     ]
   },
   "audio_capability_query": {

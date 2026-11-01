@@ -94,3 +94,21 @@ The expanded audit compares complete `004e21b0..004e2221` (113 bytes), identical
 There is no cached capability-result return in this body: each normal invocation reaches the driver callback. That resolves the immediate cache question but does not prove the provider itself refreshes hardware state or that a device change is detected at a particular time. The service-pointer initialization and diagnostics also prevent treating this query as a proven pure function.
 
 The outer `0040faf0` tests bit`20000h` without separately rejecting negative results. Since the query forwards nonpositive values unchanged, a hypothetical negative callback value containing that bit would satisfy the capability predicate. This is a conditional bit-contract limitation, not evidence that the driver returns such an error or that EAX is misdetected. Required follow-up is the resolved callback's result domain/lifecycle; actual provider testing remains separate. Preserve the bit test rather than silently replacing it with a signed-positive-success test during reconstruction.
+
+## Executable-update deletion: config and both player specifications
+
+The expanded audit now retains complete paired loader `004dc940..004dca4e` (270 bytes), filename builder `004dc800..004dc8af` (175 bytes), and deletion adapter `004e28a0..004e28bb`. This supplies a second caller of the original timestamp helper `00472940`, alongside the config caller already described. No settings file was read, deleted or rewritten during this inspection.
+
+The player loader selects `player1` for input EAX0 and `player2` for EAX1 using file-backed strings `00549784`/`0054978c`; other values leave the local selection null and return. Other early checks remain before file handling. It builds the path, obtains the executable name with `GetModuleFileNameA`, and checks the target's existence through `004e0e60`.
+
+| Existing-file path | Supplied original | Official Modern |
+|---|---|---|
+| Timestamp admission | `004dc9d5` calls `00472940` with specification/executable paths | Replaced by branch directly to read path `004dc9eb` |
+| Timestamp helper returns nonzero | `004dc9e0` calls `004e28a0`, then enters default/rewrite route `004dca37` | This local deletion route is bypassed;30 NOP bytes occupy `004dc9cd..004dc9eb` |
+| Other load/default/validation work | Surrounding paths retained | Same bytes outside changed envelope `004dc9c7..004dc9eb` in the complete loader |
+
+The deletion adapter calls imported `KERNEL32.dll!DeleteFileA` through IAT `005344b0` in both binaries; this is API identity evidence rather than a guessed function name. Combined with the config load comparison, this gives bounded static support for MP100-045: the inspected timestamp-to-executable deletion gates are removed for config.dat and both selected player specifications. It does **not** promise files are never deleted or rewritten: missing-file handling, config size rejection, validation/default routes and I/O failures still exist. Actual update scenarios, file permissions, helper error contracts and precise first-release introduction remain untested.
+
+The player filename builder changes independently. Original copies prefix `007a2fb4`, appends literal `carspecs\`, the selected player name, then `.spc`, into shared buffer `00564188`. Modern copies prefix `007a30b4`, skips the `carspecs\` append with `JMP 004dc85c` and37 NOPs, then appends name/extension. The audit verifies all other builder bytes identical. These buffers and unbounded string-copy loops imply shared scratch/length dependencies; reentrancy and arbitrary path safety are not established.
+
+The final prefix producers are not traced here, so this builder change alone does not prove a root-directory location. Likewise, both config routines using `%sconfig.dat` with prefix `007a3034` does not establish what initializes that prefix. MP100-044's complete config relocation and MP100-046's driver-change reset policy therefore remain separate questions; neither is silently accepted from the timestamp finding.
