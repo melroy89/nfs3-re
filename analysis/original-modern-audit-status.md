@@ -310,3 +310,7 @@ The [state-handler comparison](original-modern-dx5-reference-pair.md#removed-num
 ## DX5 lock callback and complete changed-code localization
 
 The [lock comparison](original-modern-dx5-reference-pair.md#lock-failure-now-notifies-the-callback) verifies a new callback0 notification on nonzero surface-call status, while the success suffix and unlock body remain identical. The [accounting table](original-modern-dx5-reference-pair.md#changed-code-accounting-and-stopping-boundary) assigns all710 differing code-section bytes to six reviewed clusters with no omissions/overlap. This is bounded code localization, not complete DLL consequences or full EXE coverage. Non-code PE differences, callback targets and runtime acceptance remain open; catalog counts unchanged.
+
+## Reference menu/HUD inventory and coordinate comparison
+
+The [asset index](original-modern-reference-assets-index.md) accounts for86 reference and52 final menu/POS members:52 paired menus differ beyond line endings;28 menus and six POS files are reference-only in this archive scope. Each POS parses into138 matching-name/order records; comparing23 rectangles per profile against Modern embedded data finds91–95 changed rectangles per variant. This is numerical/packaging evidence, not pristine-retail authentication, file-deletion proof, target parser execution or rendered layout. Full paired hashes, line counts and changed HUD names are retained. Catalog counts unchanged.

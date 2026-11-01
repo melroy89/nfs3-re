@@ -1,0 +1,2281 @@
+{
+  "kind": "reference-final-asset-pair-inventory",
+  "archives": {
+    "reference": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+      "sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127"
+    },
+    "modern": {
+      "path": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3"
+    }
+  },
+  "assets": [
+    {
+      "normalized_path": "fedata/menus/ad.mnu",
+      "reference": {
+        "member": "fedata/MENUS/AD.MNU",
+        "bytes": 1262,
+        "sha256": "92f987bd626e97aff262c9479eaba739d4ed8462e31af3e3b2ae16c5c04cb733"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/advgrph.mnu",
+      "reference": {
+        "member": "fedata/MENUS/ADVGRPH.MNU",
+        "bytes": 5651,
+        "sha256": "5900f10ec59b68b9fed049ae08cc4bb112d90322bcc91826c3313d5f7f278f4d"
+      },
+      "modern": {
+        "member": "fedata/menus/advgrph.mnu",
+        "bytes": 3401,
+        "sha256": "e74f9ff968ddf92d9499ffb91c6f7abd4cd1017ef5ad72188f49ab15031f3832"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 495,
+        "modern": 258,
+        "removed_or_replaced": 311,
+        "added_or_replaced": 74
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/aituner.mnu",
+      "reference": {
+        "member": "fedata/MENUS/AITUNER.MNU",
+        "bytes": 3775,
+        "sha256": "01ae3ab56a1728f440183fdf198fc8ee6ea2d2e55983be6f0d5bba295244b4ad"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/audfeed.mnu",
+      "reference": {
+        "member": "fedata/MENUS/AUDFEED.MNU",
+        "bytes": 3839,
+        "sha256": "3c4f1ef57dfa2dcee24feb5ac6a56a7b0103b262beb0ca6eb25b83616495aa62"
+      },
+      "modern": {
+        "member": "fedata/menus/audfeed.mnu",
+        "bytes": 2330,
+        "sha256": "32dee42ca214e513e0ba9bb934708f1a0d7adeaaf2845641c43fe7821763d10a"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 341,
+        "modern": 197,
+        "removed_or_replaced": 158,
+        "added_or_replaced": 14
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/audio.mnu",
+      "reference": {
+        "member": "fedata/MENUS/AUDIO.MNU",
+        "bytes": 6752,
+        "sha256": "cf4e17dfff394b5e21c7e1afbb6c3da2df7c7f5333a6f7b459370138b59af323"
+      },
+      "modern": {
+        "member": "fedata/menus/audio.mnu",
+        "bytes": 5078,
+        "sha256": "3ddb34cbf68446bf41d1823f4fdbe35eae710231f371b887ca7c9fe16d35df40"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 605,
+        "modern": 445,
+        "removed_or_replaced": 260,
+        "added_or_replaced": 100
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/camera.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CAMERA.MNU",
+        "bytes": 3266,
+        "sha256": "bdeeb5b38abb48858e27467eb3bb37d0ba78821bd0c0e755ed3251df1b059b04"
+      },
+      "modern": {
+        "member": "fedata/menus/camera.mnu",
+        "bytes": 2697,
+        "sha256": "045199397737299f864da5b5676413293a38ffba6cb5c3f787b4d2b6d1b37456"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 296,
+        "modern": 236,
+        "removed_or_replaced": 132,
+        "added_or_replaced": 72
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/car1.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CAR1.MNU",
+        "bytes": 5072,
+        "sha256": "513614231e8001f788f8f4ce9ec8c2fb1e7001c2e0825e706d430c8dce622bcc"
+      },
+      "modern": {
+        "member": "fedata/menus/car1.mnu",
+        "bytes": 3003,
+        "sha256": "e85a7450867907a0705eeec5247b43e9729a19a394fd2605afafaa66d95731a8"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 456,
+        "modern": 259,
+        "removed_or_replaced": 212,
+        "added_or_replaced": 15
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/car2.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CAR2.MNU",
+        "bytes": 4845,
+        "sha256": "2e57992383dc188a8700511ba11276856e9b1fc70b9065e3162998e6c5d91c1c"
+      },
+      "modern": {
+        "member": "fedata/menus/car2.mnu",
+        "bytes": 2867,
+        "sha256": "4a5b1c79aa6323c8593cafd489422a60b2f71f90b07203c9214c929577a866ba"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 435,
+        "modern": 247,
+        "removed_or_replaced": 238,
+        "added_or_replaced": 50
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/ced01dbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED01DBG.MNU",
+        "bytes": 1797,
+        "sha256": "3573a8cd320e00eb7dedae064c21a958e0023cc456543a11c23c500a33b242a2"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced02dbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED02DBG.MNU",
+        "bytes": 1474,
+        "sha256": "81b6746d37141b2ec1b48ef343c1af35af4896aa7d6cbacd04e55b4fba8832a8"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced03dbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED03DBG.MNU",
+        "bytes": 1661,
+        "sha256": "0d9e9a0f08f1bfca51382c3b8ea8cfffc905440ca1236ede42f915f434d8f0be"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced04dbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED04DBG.MNU",
+        "bytes": 2187,
+        "sha256": "2c9d7639f04dc1582be5196268f7cd0ccee910320161de00e73d001a8519919f"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced05dbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED05DBG.MNU",
+        "bytes": 3951,
+        "sha256": "722ecb791a5982ab38ba90184e612fba55dbe843d73870cd9e85acfa7620a35c"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced06dbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED06DBG.MNU",
+        "bytes": 1823,
+        "sha256": "1f658d4870d92f9983de4f83536e9e01186b989ef644ad1e7a26df8f1cb97059"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced07dbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED07DBG.MNU",
+        "bytes": 1543,
+        "sha256": "a094dbaa2fa0cdfc00f1b75395f296e74aee477d37c59e8ae2c0f04e5234ef0a"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced2bdbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED2BDBG.MNU",
+        "bytes": 737,
+        "sha256": "92c647bd4fa86a6290862da717fdae36984f6960d8791ecef5dbe1a805e57286"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced2cdbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED2CDBG.MNU",
+        "bytes": 2145,
+        "sha256": "95855bd168ac11d7b4370295f4caad8de5e515d8b7e5b81d5b5545f028b4fcf4"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced2ddbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED2DDBG.MNU",
+        "bytes": 4291,
+        "sha256": "caa33d1bbb04b087a30a244011cbe67414e23109d1cf983cb7a8a3e624d49107"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced3bdbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED3BDBG.MNU",
+        "bytes": 9528,
+        "sha256": "51f463939f872f42900de1073f9709a8a2c24616ccaf45f8ddcec13727bcce1b"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced3cdbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED3CDBG.MNU",
+        "bytes": 2155,
+        "sha256": "e3fe7cdf6aa5fda2ecbbbb0577377650a7e8c4ba6aa94f5a4cb5890ef5a71890"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced3ddbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED3DDBG.MNU",
+        "bytes": 2155,
+        "sha256": "9ca7d3925fe70631b832c8dddeb9fda8834699c6e1e80edcf5b71cbdb62b09a7"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced4bdbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED4BDBG.MNU",
+        "bytes": 2379,
+        "sha256": "86a6a437a509eb9142229cbf6de33ac2e809eb32c8bea602b601dee3ececd5b4"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/ced4cdbg.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CED4CDBG.MNU",
+        "bytes": 2379,
+        "sha256": "f1338a47dd45b6d2663b6ec322e7fd4e5f3e6a12a3a3e9dd8042c8929f1b88ba"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/cedbasic.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CEDBASIC.MNU",
+        "bytes": 7908,
+        "sha256": "4f11c887f984597786af7ea723413320ccc580873f898e32b0457854644d58b6"
+      },
+      "modern": {
+        "member": "fedata/menus/cedbasic.mnu",
+        "bytes": 5467,
+        "sha256": "3e78623958fe48c62e192b6c80ef1af702c279ce625d7109c103c9916bbd584a"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 666,
+        "modern": 445,
+        "removed_or_replaced": 263,
+        "added_or_replaced": 42
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/cedmain.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CEDMAIN.MNU",
+        "bytes": 2128,
+        "sha256": "7888b2fc78ec1bbeb10b041c7536755b5d40d0ff1d97f0f85c50ee541c736e7d"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/compare.mnu",
+      "reference": {
+        "member": "fedata/MENUS/COMPARE.MNU",
+        "bytes": 2466,
+        "sha256": "9e5f17aba1bd06cb86f55bf35e07bdf0278870093b2f30c4daa405704fcb72c3"
+      },
+      "modern": {
+        "member": "fedata/menus/compare.mnu",
+        "bytes": 1383,
+        "sha256": "0e82b6ec9f5d9c5585b94a7aa1b75f165c22427bb203ba84ad289c43aeadc7ac"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 233,
+        "modern": 130,
+        "removed_or_replaced": 103,
+        "added_or_replaced": 0
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/compare2.mnu",
+      "reference": {
+        "member": "fedata/MENUS/COMPARE2.MNU",
+        "bytes": 2615,
+        "sha256": "ab8278b6dc0b1a312749dc113b52d59c42036f7e7ba48930ca2fa08fc702fa3f"
+      },
+      "modern": {
+        "member": "fedata/menus/compare2.mnu",
+        "bytes": 1651,
+        "sha256": "36062982c8324ffc9e8c5f7aef1c6d8e13a90e9e202999f7c528d8cf5d165d7e"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 242,
+        "modern": 149,
+        "removed_or_replaced": 118,
+        "added_or_replaced": 25
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/connect.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CONNECT.MNU",
+        "bytes": 2390,
+        "sha256": "9509f7742f1ea702a923cde3f0fea7b6102d8bcd3d6a0ec1014986a327c0a6e7"
+      },
+      "modern": {
+        "member": "fedata/menus/connect.mnu",
+        "bytes": 1620,
+        "sha256": "4ac809e2cce3e32bbf4a047371409025bd8b1b5a50790b5b3a7d91ab18d63c29"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 213,
+        "modern": 131,
+        "removed_or_replaced": 156,
+        "added_or_replaced": 74
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/control1.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CONTROL1.MNU",
+        "bytes": 2997,
+        "sha256": "ebc3cf97ff8e1cc4ba22548fc340c7f2c5de33e4d726b743e60505a77e462cf1"
+      },
+      "modern": {
+        "member": "fedata/menus/control1.mnu",
+        "bytes": 1746,
+        "sha256": "fdf3b33cf915a51b83705208a94d35cd4df102813c56269d7d084a60c2dcd6d5"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 272,
+        "modern": 153,
+        "removed_or_replaced": 120,
+        "added_or_replaced": 1
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/credits.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CREDITS.MNU",
+        "bytes": 1501,
+        "sha256": "dc00b9c7c5fadb6e998df55ebbc931fdfe679c3750d6f10fe26c99a02a9713df"
+      },
+      "modern": {
+        "member": "fedata/menus/credits.mnu",
+        "bytes": 953,
+        "sha256": "5272486659a41e2dc9543fd5a25b7842f3e4e731d9444427e9160b7f49e55da9"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 142,
+        "modern": 89,
+        "removed_or_replaced": 63,
+        "added_or_replaced": 10
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/credits1.mnu",
+      "reference": {
+        "member": "fedata/MENUS/CREDITS1.MNU",
+        "bytes": 1540,
+        "sha256": "6d759e8f42a709b844ff25f1f9c5b1bfa954151903ec93e0e6be44fbc53dbd9b"
+      },
+      "modern": {
+        "member": "fedata/menus/credits1.mnu",
+        "bytes": 1234,
+        "sha256": "4441df58ec7b8a88fc9aa04f6b2537ac49f5df2d9d095acf89577329195cb0c7"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 147,
+        "modern": 113,
+        "removed_or_replaced": 57,
+        "added_or_replaced": 23
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/deadzone.mnu",
+      "reference": {
+        "member": "fedata/MENUS/DEADZONE.MNU",
+        "bytes": 7348,
+        "sha256": "d7367dde380fecad3abf63fe175c84ce22b8af5c366edd166009d57352939392"
+      },
+      "modern": {
+        "member": "fedata/menus/deadzone.mnu",
+        "bytes": 4682,
+        "sha256": "25577d34536a67fa9d39078cedf6ceb1cfaa34a981ca9040cf5de5d778911445"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 645,
+        "modern": 407,
+        "removed_or_replaced": 285,
+        "added_or_replaced": 47
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/force.mnu",
+      "reference": {
+        "member": "fedata/MENUS/FORCE.MNU",
+        "bytes": 5904,
+        "sha256": "eb799e9f1ca7343dee9b5dcd15c09ad50abb613d3729bc01cf1fa9fb11dd961b"
+      },
+      "modern": {
+        "member": "fedata/menus/force.mnu",
+        "bytes": 4137,
+        "sha256": "434e596374273281e0ab2daef0fc5b5ec0448d39f9d4b6215e795e7c2062acb9"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 534,
+        "modern": 371,
+        "removed_or_replaced": 214,
+        "added_or_replaced": 51
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/funkeys.mnu",
+      "reference": {
+        "member": "fedata/MENUS/FUNKEYS.MNU",
+        "bytes": 6855,
+        "sha256": "6f37932042625d88a3bcbb3aa2cd1bdb693e7372da71481fa7afdda6c2637778"
+      },
+      "modern": {
+        "member": "fedata/menus/funkeys.mnu",
+        "bytes": 3944,
+        "sha256": "48875cb336d58d1b00eec77d4c71871eb5225a6f5db40528f72bc013e99d0167"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 648,
+        "modern": 385,
+        "removed_or_replaced": 353,
+        "added_or_replaced": 90
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/graphics.mnu",
+      "reference": {
+        "member": "fedata/MENUS/GRAPHICS.MNU",
+        "bytes": 5882,
+        "sha256": "d8af15a148fff2ec865c9ce6337e095bb340bb7f863419cfba245fb2574c6722"
+      },
+      "modern": {
+        "member": "fedata/menus/graphics.mnu",
+        "bytes": 3061,
+        "sha256": "ac088b28fd3905369a728972c6be7638c692df98ebb57ea65981083835f71247"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 523,
+        "modern": 233,
+        "removed_or_replaced": 366,
+        "added_or_replaced": 76
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/hardkeys.mnu",
+      "reference": {
+        "member": "fedata/MENUS/HARDKEYS.MNU",
+        "bytes": 4745,
+        "sha256": "ef31a1f26dffc976c7f5d430af4d67495dcce77ad12eb67d085c05b5256b5efd"
+      },
+      "modern": {
+        "member": "fedata/menus/hardkeys.mnu",
+        "bytes": 2731,
+        "sha256": "fe56eb639260f0215b6a1f449c956638d3e7f87db9c3422222233a72c5d9ddf0"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 444,
+        "modern": 261,
+        "removed_or_replaced": 248,
+        "added_or_replaced": 65
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/history.mnu",
+      "reference": {
+        "member": "fedata/MENUS/HISTORY.MNU",
+        "bytes": 2159,
+        "sha256": "93fb6ceb0ccd99dc76dda28678b0bf7683bb7b7d41c7fbebeddf373f7b60b1d9"
+      },
+      "modern": {
+        "member": "fedata/menus/history.mnu",
+        "bytes": 1204,
+        "sha256": "24a1c8d5a61225a98e03e08b255d4a17c6687bbcd95e9cbbd4eecef40c23eba7"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 202,
+        "modern": 111,
+        "removed_or_replaced": 91,
+        "added_or_replaced": 0
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/hud.mnu",
+      "reference": {
+        "member": "fedata/MENUS/HUD.MNU",
+        "bytes": 32642,
+        "sha256": "1186648c5352fadfd94632cf2b43cc716e23d9c078863b563fa1602f3b14d60c"
+      },
+      "modern": {
+        "member": "fedata/menus/hud.mnu",
+        "bytes": 21001,
+        "sha256": "284ea3b9949b53bde177d9edb32eb0473481c32e5dac13d48f8aa24af25984b3"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 2750,
+        "modern": 1655,
+        "removed_or_replaced": 1227,
+        "added_or_replaced": 132
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/instcar.mnu",
+      "reference": {
+        "member": "fedata/MENUS/INSTCAR.MNU",
+        "bytes": 4263,
+        "sha256": "5ed63f8b3825718871a2f7010dc5aabe84bab3e85c3fa7c48df15b631cb1a407"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/interior.mnu",
+      "reference": {
+        "member": "fedata/MENUS/INTERIOR.MNU",
+        "bytes": 2065,
+        "sha256": "ddc7fc68a6fa555ae4480b1e4fc7bb522440cfcc7dae809724bda3a849f7b841"
+      },
+      "modern": {
+        "member": "fedata/menus/interior.mnu",
+        "bytes": 1631,
+        "sha256": "376be73730fd40f53e43fbc4ce14e95747d4675b72ef9437cb1f4cf7f58125dd"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 187,
+        "modern": 150,
+        "removed_or_replaced": 81,
+        "added_or_replaced": 44
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/ipx.mnu",
+      "reference": {
+        "member": "fedata/MENUS/IPX.MNU",
+        "bytes": 1895,
+        "sha256": "ca4232e216be8a05ec5fe5a206c50cec1f82f20ef2838b4e16f3ac48bdaeae66"
+      },
+      "modern": {
+        "member": "fedata/menus/ipx.mnu",
+        "bytes": 1421,
+        "sha256": "b20122997af9d6e17bd8a4699aab653d9b0fe58acda86984f07e23c82594a218"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 177,
+        "modern": 130,
+        "removed_or_replaced": 96,
+        "added_or_replaced": 49
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/level.mnu",
+      "reference": {
+        "member": "fedata/MENUS/LEVEL.MNU",
+        "bytes": 5010,
+        "sha256": "658dd6515a81f6aac9e9b8571ab101375b43d73a3b6f002f52ddddb06fcea3e1"
+      },
+      "modern": {
+        "member": "fedata/menus/level.mnu",
+        "bytes": 3196,
+        "sha256": "200c6892a890487cdf434bb01b58d1c0c6849e5c61f0f8bd6bac185c7f653653"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 429,
+        "modern": 254,
+        "removed_or_replaced": 176,
+        "added_or_replaced": 1
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/loadsave.mnu",
+      "reference": {
+        "member": "fedata/MENUS/LOADSAVE.MNU",
+        "bytes": 3368,
+        "sha256": "6308194657d28f1205fca6fafb598c248fb6736e6bf4f827da778f9ce189b968"
+      },
+      "modern": {
+        "member": "fedata/menus/loadsave.mnu",
+        "bytes": 1948,
+        "sha256": "ac14717b7a8a4bfe2c3cbf5267212ff2d164edf1da6ad75a315e576bf00cf329"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 309,
+        "modern": 170,
+        "removed_or_replaced": 161,
+        "added_or_replaced": 22
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/location.mnu",
+      "reference": {
+        "member": "fedata/MENUS/LOCATION.MNU",
+        "bytes": 5756,
+        "sha256": "7de432d93e73ec6a2a78d16b8b67ea0f7d26d91c54532690ffbce2614663edd1"
+      },
+      "modern": {
+        "member": "fedata/menus/location.mnu",
+        "bytes": 3700,
+        "sha256": "d1830e7d3f82e5d88b06fbec79720d85924392f2d3f88a1b8d69fb6de44faa3f"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 481,
+        "modern": 284,
+        "removed_or_replaced": 212,
+        "added_or_replaced": 15
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/main.mnu",
+      "reference": {
+        "member": "fedata/MENUS/MAIN.MNU",
+        "bytes": 5253,
+        "sha256": "b07f8eef6085502ceb576ec7bd40ea0074794531743cc99926db152403518fc0"
+      },
+      "modern": {
+        "member": "fedata/menus/main.mnu",
+        "bytes": 3227,
+        "sha256": "9bdd70113881cff5b6161cb7dd9400b43d38a4ab062042e8c1946b80ea042ed9"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 473,
+        "modern": 280,
+        "removed_or_replaced": 228,
+        "added_or_replaced": 35
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/mainmult.mnu",
+      "reference": {
+        "member": "fedata/MENUS/MAINMULT.MNU",
+        "bytes": 5403,
+        "sha256": "0b02fe0cea668be757c9596a1133e2986dcb913085d6369c5421fa72b762575d"
+      },
+      "modern": {
+        "member": "fedata/menus/mainmult.mnu",
+        "bytes": 3482,
+        "sha256": "ffa0146a548083c5242a2d369d8f57981d38f609ce2d9b1b28d37fd60cccea50"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 471,
+        "modern": 290,
+        "removed_or_replaced": 191,
+        "added_or_replaced": 10
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/mainsplt.mnu",
+      "reference": {
+        "member": "fedata/MENUS/MAINSPLT.MNU",
+        "bytes": 6021,
+        "sha256": "029025fbf74c4beea3b3e37983d23f761896f30a10a627eeb4b1e67e1f5decc2"
+      },
+      "modern": {
+        "member": "fedata/menus/mainsplt.mnu",
+        "bytes": 3850,
+        "sha256": "5121cf995388e06656a57068a9b4f916a902f2cb084c8e1c2d2ebb7b364d5509"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 534,
+        "modern": 327,
+        "removed_or_replaced": 217,
+        "added_or_replaced": 10
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/makecsv.mnu",
+      "reference": {
+        "member": "fedata/MENUS/MAKECSV.MNU",
+        "bytes": 709,
+        "sha256": "39b96c4313c2717331fc75051053534553193edd7095c40e89e2191f9d240c79"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/mspause.mnu",
+      "reference": {
+        "member": "fedata/MENUS/MSPAUSE.MNU",
+        "bytes": 804,
+        "sha256": "53909a754edfe779149d7224f9f36b6f01850b10d1c8a848b456a75a459b4220"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/msquitto.mnu",
+      "reference": {
+        "member": "fedata/MENUS/MSQUITTO.MNU",
+        "bytes": 119,
+        "sha256": "35e83ce17d3035d5d3f17b3338f433d706d3a72ed6b5c94bcfd80887c0809f03"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/opponent.mnu",
+      "reference": {
+        "member": "fedata/MENUS/OPPONENT.MNU",
+        "bytes": 4690,
+        "sha256": "22ef49df34e7a117b0d8d5a56c2fffd1d13647c9de432f0df54f77a77930a900"
+      },
+      "modern": {
+        "member": "fedata/menus/opponent.mnu",
+        "bytes": 2935,
+        "sha256": "83aad629e611f452f64067dde3834738a4a4bc0e615a6a5a754520c71b344626"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 405,
+        "modern": 239,
+        "removed_or_replaced": 184,
+        "added_or_replaced": 18
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/options.mnu",
+      "reference": {
+        "member": "fedata/MENUS/OPTIONS.MNU",
+        "bytes": 3448,
+        "sha256": "93cc8d0eecc94e62e84005efcca100f0a48616f70ebb36de1d85bc8f9ca4037c"
+      },
+      "modern": {
+        "member": "fedata/menus/options.mnu",
+        "bytes": 1939,
+        "sha256": "e69522bb14917ec2a31c316dde05f778fe08d2c3586ff0a777749a59c00755be"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 317,
+        "modern": 175,
+        "removed_or_replaced": 165,
+        "added_or_replaced": 23
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/pause.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PAUSE.MNU",
+        "bytes": 3135,
+        "sha256": "691f2dbcfdb8004d216eaa58a21bfc93cc1ef47f617157985eb8ea5b0a743c8a"
+      },
+      "modern": {
+        "member": "fedata/menus/pause.mnu",
+        "bytes": 1597,
+        "sha256": "b5b4849991901037b89c3f92db9f5a14f0259542ca7cb6318fa0e89673cade66"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 287,
+        "modern": 139,
+        "removed_or_replaced": 158,
+        "added_or_replaced": 10
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/perdata.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PERDATA.MNU",
+        "bytes": 3335,
+        "sha256": "3593699b381427aa887522247f8e6e51f961d43999ffcb2c6776ffcddd209d1f"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/postgame.mnu",
+      "reference": {
+        "member": "fedata/MENUS/POSTGAME.MNU",
+        "bytes": 5294,
+        "sha256": "f60752dc3da30c36c9c8903e6fe51ad2162048833646e95517250b2af33c11d8"
+      },
+      "modern": {
+        "member": "fedata/menus/postgame.mnu",
+        "bytes": 3347,
+        "sha256": "02d75467d363830ab3fc531740fa51f5675b83c7412cc53adabaeea05344fbee"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 471,
+        "modern": 285,
+        "removed_or_replaced": 240,
+        "added_or_replaced": 54
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/ps1pcop.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS1PCOP.MNU",
+        "bytes": 1158,
+        "sha256": "85cedcd7ca48078e924909cdcd46484f4c81e31b34ba3cffe00eadbb3f566142"
+      },
+      "modern": {
+        "member": "fedata/menus/ps1pcop.mnu",
+        "bytes": 839,
+        "sha256": "421d96672be978815676f838112e3c0819537a39d8d9b356df1c560734334548"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 111,
+        "modern": 86,
+        "removed_or_replaced": 36,
+        "added_or_replaced": 11
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/ps1prace.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS1PRACE.MNU",
+        "bytes": 1293,
+        "sha256": "7acecbcce74307179d6f3b0a43de4424cd2a80ac020ec5614df41d38f749d546"
+      },
+      "modern": {
+        "member": "fedata/menus/ps1prace.mnu",
+        "bytes": 1010,
+        "sha256": "44f2787262792787f3e588342423f9e0783d580343bfa66795210129fec76ef9"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 138,
+        "modern": 106,
+        "removed_or_replaced": 32,
+        "added_or_replaced": 0
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/ps2p1c2r.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS2P1C2R.MNU",
+        "bytes": 1672,
+        "sha256": "c30f9e5f0df50fa7e88b3c4678a0c198e780cf134e96bd17a441de0d1bda12a2"
+      },
+      "modern": {
+        "member": "fedata/menus/ps2p1c2r.mnu",
+        "bytes": 1387,
+        "sha256": "e4d49278904aba3b106bccbc261a88b7f18f81f420e64b829842b406bb68e4cf"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 158,
+        "modern": 150,
+        "removed_or_replaced": 33,
+        "added_or_replaced": 25
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/ps2p1r2c.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS2P1R2C.MNU",
+        "bytes": 1672,
+        "sha256": "f917ec58b486791ab11e8b26fe21cd6282be2cb1d51045882ad131acec170c1d"
+      },
+      "modern": {
+        "member": "fedata/menus/ps2p1r2c.mnu",
+        "bytes": 1385,
+        "sha256": "000362d4138c6f9707f43a505a7bbfa9e4c0132c4672f403d4ee1e4d20a417ca"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 158,
+        "modern": 150,
+        "removed_or_replaced": 33,
+        "added_or_replaced": 25
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/ps2p2c.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS2P2C.MNU",
+        "bytes": 1570,
+        "sha256": "ee6cbac4777bac4528f6b252b52be2baaa549e91f1fbd4d7cdda8e2e294f40ce"
+      },
+      "modern": {
+        "member": "fedata/menus/ps2p2c.mnu",
+        "bytes": 1211,
+        "sha256": "2ab60ae9196ed143db4c2b15602c9abb8f4391344caf13a0e8834a9edf68b108"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 149,
+        "modern": 130,
+        "removed_or_replaced": 39,
+        "added_or_replaced": 20
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/ps2p2r.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS2P2R.MNU",
+        "bytes": 1766,
+        "sha256": "9287b2dcc887742b666002f9e26809e661ea794505576721012801d1fd7cfc5b"
+      },
+      "modern": {
+        "member": "fedata/menus/ps2p2r.mnu",
+        "bytes": 1549,
+        "sha256": "e80dba530f8a149a8169dd5af9147344b85a575b62c5ddfde1f7d4fee682e3d4"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 169,
+        "modern": 170,
+        "removed_or_replaced": 30,
+        "added_or_replaced": 31
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/psaudio.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSAUDIO.MNU",
+        "bytes": 2588,
+        "sha256": "c0838c3ec9b9ae65f1ac1b50bf337285d5b1cf9250e3baf5f4e4dc177f548104"
+      },
+      "modern": {
+        "member": "fedata/menus/psaudio.mnu",
+        "bytes": 2081,
+        "sha256": "2668d0761bb2f957f4ba2e217dab46f8ad6bbeb28d12ec11d06608c5dff864d5"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 222,
+        "modern": 172,
+        "removed_or_replaced": 59,
+        "added_or_replaced": 9
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/pscamera.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSCAMERA.MNU",
+        "bytes": 1648,
+        "sha256": "391f8d6f18f64a1d3ac3c8a5cbe8b14042406d913872b28f6fef16c46a26b75b"
+      },
+      "modern": {
+        "member": "fedata/menus/pscamera.mnu",
+        "bytes": 1165,
+        "sha256": "68610d1f766cb4499cf4a25d8968b93c9b52610520f6599a7859b5eb8d4becf7"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 146,
+        "modern": 96,
+        "removed_or_replaced": 62,
+        "added_or_replaced": 12
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/pscntl1.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSCNTL1.MNU",
+        "bytes": 1304,
+        "sha256": "3c3b7a68367afa2c0507981e382d8d87997e23f3a1e42570ddda9a68b835db2f"
+      },
+      "modern": {
+        "member": "fedata/menus/pscntl1.mnu",
+        "bytes": 807,
+        "sha256": "186721f3f52c18f228c9711d25ca2ec0cabd2323e924bc2533d92e45c6be7512"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 117,
+        "modern": 67,
+        "removed_or_replaced": 51,
+        "added_or_replaced": 1
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/psdeadz.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSDEADZ.MNU",
+        "bytes": 4653,
+        "sha256": "b69611f31db3957ca842e108559664d9decff56f921f5b5ccd4749555027c253"
+      },
+      "modern": {
+        "member": "fedata/menus/psdeadz.mnu",
+        "bytes": 3799,
+        "sha256": "612720c6e20343d59117485235c1f63f475a310e1bb1d22a07ae3e6867603a45"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 404,
+        "modern": 321,
+        "removed_or_replaced": 84,
+        "added_or_replaced": 1
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/psforce.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSFORCE.MNU",
+        "bytes": 3519,
+        "sha256": "67ee5c13624ac0ee6e01082b3b7441fb08ff69f7c89e694f05a03713b1971d64"
+      },
+      "modern": {
+        "member": "fedata/menus/psforce.mnu",
+        "bytes": 2884,
+        "sha256": "4274599d2df95c70020b7f6ae3752faa5d9209b756b15d4e6f78ae7628daada7"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 302,
+        "modern": 240,
+        "removed_or_replaced": 86,
+        "added_or_replaced": 24
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/psgraph.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSGRAPH.MNU",
+        "bytes": 3901,
+        "sha256": "c43f62f47d066b06c032b163d9103899e4b1d150cd2efe1a88b51fa2ce7929a3"
+      },
+      "modern": {
+        "member": "fedata/menus/psgraph.mnu",
+        "bytes": 2717,
+        "sha256": "e4f00933cd61145d0fb14d2396091d7b22d5246b39d9c1e35de9edb032d226a7"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 340,
+        "modern": 215,
+        "removed_or_replaced": 193,
+        "added_or_replaced": 68
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/pshud.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSHUD.MNU",
+        "bytes": 6178,
+        "sha256": "c559c9ffc419b7f09b116f5bce56499f1adb9de14ce431425d6cecc13c2f576c"
+      },
+      "modern": {
+        "member": "fedata/menus/pshud.mnu",
+        "bytes": 3986,
+        "sha256": "018003570ce0d94cec5eb46c2128d557b2564d6f7c277dfe5603b289da7f1a90"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 533,
+        "modern": 329,
+        "removed_or_replaced": 205,
+        "added_or_replaced": 1
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/pshud1p.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSHUD1P.MNU",
+        "bytes": 5694,
+        "sha256": "9ed12c782f0616e9ce860980c5d6c14bdbed5ca1eea0a14e0b9a58065b56f626"
+      },
+      "modern": {
+        "member": "fedata/menus/pshud1p.mnu",
+        "bytes": 3680,
+        "sha256": "6d3ad696ad072f6ff5535e355d654e59093ebd07e58c7175e909297093a2ef0a"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 490,
+        "modern": 302,
+        "removed_or_replaced": 189,
+        "added_or_replaced": 1
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/pshud2p.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSHUD2P.MNU",
+        "bytes": 5694,
+        "sha256": "2886d70b676624c5c931c7bd7415319045263e59ce4895d25697b7613dd77ada"
+      },
+      "modern": {
+        "member": "fedata/menus/pshud2p.mnu",
+        "bytes": 3680,
+        "sha256": "834000966fc4aec36f375da28ae5c2f6f965f16f222297a46e67ab1fb293a34a"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 490,
+        "modern": 302,
+        "removed_or_replaced": 189,
+        "added_or_replaced": 1
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/pshudpos.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSHUDPOS.MNU",
+        "bytes": 432,
+        "sha256": "330710a454a349d8dbb4816665dff2f3fa581dcaab7c3e1d93e9a0e7964164f3"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/psoption.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSOPTION.MNU",
+        "bytes": 1257,
+        "sha256": "77ed7fce0674f85b847a85b5a3cef4afdf73e13436832374115777c2b9630056"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/psoptn2.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSOPTN2.MNU",
+        "bytes": 1241,
+        "sha256": "c68160e63896d20306428d8df0be1ddfae20ffd5dc33c016c473a06d7bf9ac95"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/pstats.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PSTATS.MNU",
+        "bytes": 5046,
+        "sha256": "25dcf3811bd3f6a94449b351d196e7e22567eb677971867f530532a38cb5fe97"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/quitto.mnu",
+      "reference": {
+        "member": "fedata/MENUS/QUITTO.MNU",
+        "bytes": 898,
+        "sha256": "ffaea1abc199f570acca2b75a7d899d6b41c9fea5c6f0a8a38851d9401ae238e"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "fedata/menus/records.mnu",
+      "reference": {
+        "member": "fedata/MENUS/RECORDS.MNU",
+        "bytes": 3014,
+        "sha256": "1e10fcfb07e56254404cbea34ebce3f6c574895e23f27ad9e657c26ff5ea2ffe"
+      },
+      "modern": {
+        "member": "fedata/menus/records.mnu",
+        "bytes": 1749,
+        "sha256": "87ef8fd6b4130a88d6dab52fa2fab0f0044ceaa599fa738302d6782899226ea4"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 282,
+        "modern": 161,
+        "removed_or_replaced": 199,
+        "added_or_replaced": 78
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/setup.mnu",
+      "reference": {
+        "member": "fedata/MENUS/SETUP.MNU",
+        "bytes": 2847,
+        "sha256": "200c58df3d42baa35e1df94440437c9ade66a4ceda28a587be500a052c8b0cb3"
+      },
+      "modern": {
+        "member": "fedata/menus/setup.mnu",
+        "bytes": 1684,
+        "sha256": "ed91cd1678470e3574003c9918288b9dc1ed196e18c8dae92c23a23dc2ff5438"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 252,
+        "modern": 142,
+        "removed_or_replaced": 122,
+        "added_or_replaced": 12
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/showcase.mnu",
+      "reference": {
+        "member": "fedata/MENUS/SHOWCASE.MNU",
+        "bytes": 3370,
+        "sha256": "486306226139f2c440918134c533dccca1a84405ef67065f12aba589c2dd254c"
+      },
+      "modern": {
+        "member": "fedata/menus/showcase.mnu",
+        "bytes": 2139,
+        "sha256": "46925ae29e977a02b16a059106408d5a2f06a5871bf90302e33d073e117d2578"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 305,
+        "modern": 187,
+        "removed_or_replaced": 136,
+        "added_or_replaced": 18
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/slides.mnu",
+      "reference": {
+        "member": "fedata/MENUS/SLIDES.MNU",
+        "bytes": 1399,
+        "sha256": "6ae3c91020058356a0c5ae0500149a21105b1224a137e105bbc420e1ae91329a"
+      },
+      "modern": {
+        "member": "fedata/menus/slides.mnu",
+        "bytes": 750,
+        "sha256": "e6d63bcf70bd98ec11d121c9e9fbee88872c914f9fea82abefa08d897358e784"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 131,
+        "modern": 70,
+        "removed_or_replaced": 64,
+        "added_or_replaced": 3
+      }
+    },
+    {
+      "normalized_path": "fedata/menus/trkinfo.mnu",
+      "reference": {
+        "member": "fedata/MENUS/TRKINFO.MNU",
+        "bytes": 2319,
+        "sha256": "48bcc98649bf159d0158a8fbf724e197f4ac443835e3a9b752a42d3e5fe01c95"
+      },
+      "modern": {
+        "member": "fedata/menus/trkinfo.mnu",
+        "bytes": 1285,
+        "sha256": "f530859f87b8f22e623444d31e569dbd276ab6e8238cc4c5bb5c663b3d08475c"
+      },
+      "status": "changed",
+      "line_endings_only": false,
+      "text_line_counts": {
+        "reference": 217,
+        "modern": 119,
+        "removed_or_replaced": 107,
+        "added_or_replaced": 9
+      }
+    },
+    {
+      "normalized_path": "gamedata/dashhud/edef.pos",
+      "reference": {
+        "member": "gamedata/DASHHUD/EDEF.POS",
+        "bytes": 8777,
+        "sha256": "f3f092fc587ea1d93a012217d125d9191ea87d79b473e4d8c89d61accb555107"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "gamedata/dashhud/fdef.pos",
+      "reference": {
+        "member": "gamedata/DASHHUD/FDEF.POS",
+        "bytes": 8671,
+        "sha256": "5e0fc3b04b60207337e9eafad8e7b76cc68d4f005b0b643f7cdc37617517a46b"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "gamedata/dashhud/gdef.pos",
+      "reference": {
+        "member": "gamedata/DASHHUD/GDEF.POS",
+        "bytes": 8482,
+        "sha256": "d36eb7531736d59ebce96053b68f758890e2fffa165e97b0bf9b39a4c0b10490"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "gamedata/dashhud/idef.pos",
+      "reference": {
+        "member": "gamedata/DASHHUD/IDEF.POS",
+        "bytes": 8817,
+        "sha256": "2e92219f57f5f16d6150cc700e72c19ef204eefbc97dac5968f5c3971e6762e3"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "gamedata/dashhud/sdef.pos",
+      "reference": {
+        "member": "gamedata/DASHHUD/SDEF.POS",
+        "bytes": 8811,
+        "sha256": "9853be313e8e3e783a61b2a98f24195563399bdaa20b1f1dc21399606b43e24e"
+      },
+      "status": "reference-only"
+    },
+    {
+      "normalized_path": "gamedata/dashhud/wdef.pos",
+      "reference": {
+        "member": "gamedata/DASHHUD/WDEF.POS",
+        "bytes": 8814,
+        "sha256": "f3eced40a43c5462429c4b0e755e0d9b22f0388e62c94f6244ceacc11e21e84f"
+      },
+      "status": "reference-only"
+    }
+  ],
+  "hud_literal_comparison": [
+    {
+      "member": "gamedata/DASHHUD/EDEF.POS",
+      "sha256": "f3f092fc587ea1d93a012217d125d9191ea87d79b473e4d8c89d61accb555107",
+      "parsed_records": 138,
+      "profiles": [
+        {
+          "profile": 0,
+          "changed_rectangles_of_23": 18,
+          "differing_coordinate_fields_of_92": 67,
+          "changed_record_names": [
+            "RacerDigitalSpeedometer",
+            "RacerAnalogSpeedometer",
+            "RacerDigitalTachometer",
+            "RacerAnalogTachometer",
+            "RacerLapCounter",
+            "RacerTime",
+            "RacerTutorIcon",
+            "RacerConeStats",
+            "RacerReplayHUD",
+            "RacerRearView",
+            "RacerPosition",
+            "RacerSplitTime",
+            "RacerOpponentName",
+            "RacerOpponentList",
+            "RacerPlayerTickets",
+            "RacerWrongWayIndicator",
+            "RacerRadarDetector",
+            "RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 1,
+          "changed_rectangles_of_23": 15,
+          "differing_coordinate_fields_of_92": 57,
+          "changed_record_names": [
+            "CopDigitalSpeedometer",
+            "CopAnalogSpeedometer",
+            "CopDigitalTachometer",
+            "CopAnalogTachometer",
+            "CopLapCounter",
+            "CopTime",
+            "CopTutorIcon",
+            "CopConeStats",
+            "CopReplayHUD",
+            "CopRearView",
+            "CopRadar",
+            "CopCopTickets",
+            "CopRadarSpeeds",
+            "CopSpikeBeltIndicator",
+            "CopCopMap"
+          ]
+        },
+        {
+          "profile": 2,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player1RacerDigitalSpeedometer",
+            "Player1RacerAnalogSpeedometer",
+            "Player1RacerDigitalTachometer",
+            "Player1RacerAnalogTachometer",
+            "Player1RacerLapCounter",
+            "Player1RacerTime",
+            "Player1RacerTutorIcon",
+            "Player1RacerConeStats",
+            "Player1RacerPosition",
+            "Player1RacerSplitTime",
+            "Player1RacerOpponentName",
+            "Player1RacerOpponentList",
+            "Player1RacerPlayerTickets",
+            "Player1RacerWrongWayIndicator",
+            "Player1RacerRadarDetector",
+            "Player1RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 3,
+          "changed_rectangles_of_23": 13,
+          "differing_coordinate_fields_of_92": 51,
+          "changed_record_names": [
+            "Player1CopDigitalSpeedometer",
+            "Player1CopAnalogSpeedometer",
+            "Player1CopDigitalTachometer",
+            "Player1CopAnalogTachometer",
+            "Player1CopLapCounter",
+            "Player1CopTime",
+            "Player1CopTutorIcon",
+            "Player1CopConeStats",
+            "Player1CopRadar",
+            "Player1CopCopTickets",
+            "Player1CopRadarSpeeds",
+            "Player1CopSpikeBeltIndicator",
+            "Player1CopCopMap"
+          ]
+        },
+        {
+          "profile": 4,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player2RacerDigitalSpeedometer",
+            "Player2RacerAnalogSpeedometer",
+            "Player2RacerDigitalTachometer",
+            "Player2RacerAnalogTachometer",
+            "Player2RacerLapCounter",
+            "Player2RacerTime",
+            "Player2RacerTutorIcon",
+            "Player2RacerConeStats",
+            "Player2RacerPosition",
+            "Player2RacerSplitTime",
+            "Player2RacerOpponentName",
+            "Player2RacerOpponentList",
+            "Player2RacerPlayerTickets",
+            "Player2RacerWrongWayIndicator",
+            "Player2RacerRadarDetector",
+            "Player2RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 5,
+          "changed_rectangles_of_23": 13,
+          "differing_coordinate_fields_of_92": 51,
+          "changed_record_names": [
+            "Player2CopDigitalSpeedometer",
+            "Player2CopAnalogSpeedometer",
+            "Player2CopDigitalTachometer",
+            "Player2CopAnalogTachometer",
+            "Player2CopLapCounter",
+            "Player2CopTime",
+            "Player2CopTutorIcon",
+            "Player2CopConeStats",
+            "Player2CopRadar",
+            "Player2CopCopTickets",
+            "Player2CopRadarSpeeds",
+            "Player2CopSpikeBeltIndicator",
+            "Player2CopCopMap"
+          ]
+        }
+      ]
+    },
+    {
+      "member": "gamedata/DASHHUD/FDEF.POS",
+      "sha256": "5e0fc3b04b60207337e9eafad8e7b76cc68d4f005b0b643f7cdc37617517a46b",
+      "parsed_records": 138,
+      "profiles": [
+        {
+          "profile": 0,
+          "changed_rectangles_of_23": 18,
+          "differing_coordinate_fields_of_92": 67,
+          "changed_record_names": [
+            "RacerDigitalSpeedometer",
+            "RacerAnalogSpeedometer",
+            "RacerDigitalTachometer",
+            "RacerAnalogTachometer",
+            "RacerLapCounter",
+            "RacerTime",
+            "RacerTutorIcon",
+            "RacerConeStats",
+            "RacerReplayHUD",
+            "RacerRearView",
+            "RacerPosition",
+            "RacerSplitTime",
+            "RacerOpponentName",
+            "RacerOpponentList",
+            "RacerPlayerTickets",
+            "RacerWrongWayIndicator",
+            "RacerRadarDetector",
+            "RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 1,
+          "changed_rectangles_of_23": 15,
+          "differing_coordinate_fields_of_92": 57,
+          "changed_record_names": [
+            "CopDigitalSpeedometer",
+            "CopAnalogSpeedometer",
+            "CopDigitalTachometer",
+            "CopAnalogTachometer",
+            "CopLapCounter",
+            "CopTime",
+            "CopTutorIcon",
+            "CopConeStats",
+            "CopReplayHUD",
+            "CopRearView",
+            "CopRadar",
+            "CopCopTickets",
+            "CopRadarSpeeds",
+            "CopSpikeBeltIndicator",
+            "CopCopMap"
+          ]
+        },
+        {
+          "profile": 2,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player1RacerDigitalSpeedometer",
+            "Player1RacerAnalogSpeedometer",
+            "Player1RacerDigitalTachometer",
+            "Player1RacerAnalogTachometer",
+            "Player1RacerLapCounter",
+            "Player1RacerTime",
+            "Player1RacerTutorIcon",
+            "Player1RacerConeStats",
+            "Player1RacerPosition",
+            "Player1RacerSplitTime",
+            "Player1RacerOpponentName",
+            "Player1RacerOpponentList",
+            "Player1RacerPlayerTickets",
+            "Player1RacerWrongWayIndicator",
+            "Player1RacerRadarDetector",
+            "Player1RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 3,
+          "changed_rectangles_of_23": 13,
+          "differing_coordinate_fields_of_92": 51,
+          "changed_record_names": [
+            "Player1CopDigitalSpeedometer",
+            "Player1CopAnalogSpeedometer",
+            "Player1CopDigitalTachometer",
+            "Player1CopAnalogTachometer",
+            "Player1CopLapCounter",
+            "Player1CopTime",
+            "Player1CopTutorIcon",
+            "Player1CopConeStats",
+            "Player1CopRadar",
+            "Player1CopCopTickets",
+            "Player1CopRadarSpeeds",
+            "Player1CopSpikeBeltIndicator",
+            "Player1CopCopMap"
+          ]
+        },
+        {
+          "profile": 4,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player2RacerDigitalSpeedometer",
+            "Player2RacerAnalogSpeedometer",
+            "Player2RacerDigitalTachometer",
+            "Player2RacerAnalogTachometer",
+            "Player2RacerLapCounter",
+            "Player2RacerTime",
+            "Player2RacerTutorIcon",
+            "Player2RacerConeStats",
+            "Player2RacerPosition",
+            "Player2RacerSplitTime",
+            "Player2RacerOpponentName",
+            "Player2RacerOpponentList",
+            "Player2RacerPlayerTickets",
+            "Player2RacerWrongWayIndicator",
+            "Player2RacerRadarDetector",
+            "Player2RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 5,
+          "changed_rectangles_of_23": 13,
+          "differing_coordinate_fields_of_92": 51,
+          "changed_record_names": [
+            "Player2CopDigitalSpeedometer",
+            "Player2CopAnalogSpeedometer",
+            "Player2CopDigitalTachometer",
+            "Player2CopAnalogTachometer",
+            "Player2CopLapCounter",
+            "Player2CopTime",
+            "Player2CopTutorIcon",
+            "Player2CopConeStats",
+            "Player2CopRadar",
+            "Player2CopCopTickets",
+            "Player2CopRadarSpeeds",
+            "Player2CopSpikeBeltIndicator",
+            "Player2CopCopMap"
+          ]
+        }
+      ]
+    },
+    {
+      "member": "gamedata/DASHHUD/GDEF.POS",
+      "sha256": "d36eb7531736d59ebce96053b68f758890e2fffa165e97b0bf9b39a4c0b10490",
+      "parsed_records": 138,
+      "profiles": [
+        {
+          "profile": 0,
+          "changed_rectangles_of_23": 18,
+          "differing_coordinate_fields_of_92": 68,
+          "changed_record_names": [
+            "RacerDigitalSpeedometer",
+            "RacerAnalogSpeedometer",
+            "RacerDigitalTachometer",
+            "RacerAnalogTachometer",
+            "RacerLapCounter",
+            "RacerTime",
+            "RacerTutorIcon",
+            "RacerConeStats",
+            "RacerReplayHUD",
+            "RacerRearView",
+            "RacerPosition",
+            "RacerSplitTime",
+            "RacerOpponentName",
+            "RacerOpponentList",
+            "RacerPlayerTickets",
+            "RacerWrongWayIndicator",
+            "RacerRadarDetector",
+            "RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 1,
+          "changed_rectangles_of_23": 15,
+          "differing_coordinate_fields_of_92": 57,
+          "changed_record_names": [
+            "CopDigitalSpeedometer",
+            "CopAnalogSpeedometer",
+            "CopDigitalTachometer",
+            "CopAnalogTachometer",
+            "CopLapCounter",
+            "CopTime",
+            "CopTutorIcon",
+            "CopConeStats",
+            "CopReplayHUD",
+            "CopRearView",
+            "CopRadar",
+            "CopCopTickets",
+            "CopRadarSpeeds",
+            "CopSpikeBeltIndicator",
+            "CopCopMap"
+          ]
+        },
+        {
+          "profile": 2,
+          "changed_rectangles_of_23": 17,
+          "differing_coordinate_fields_of_92": 65,
+          "changed_record_names": [
+            "Player1RacerDigitalSpeedometer",
+            "Player1RacerAnalogSpeedometer",
+            "Player1RacerDigitalTachometer",
+            "Player1RacerAnalogTachometer",
+            "Player1RacerLapCounter",
+            "Player1RacerTime",
+            "Player1RacerTutorIcon",
+            "Player1RacerConeStats",
+            "Player1RacerRearView",
+            "Player1RacerPosition",
+            "Player1RacerSplitTime",
+            "Player1RacerOpponentName",
+            "Player1RacerOpponentList",
+            "Player1RacerPlayerTickets",
+            "Player1RacerWrongWayIndicator",
+            "Player1RacerRadarDetector",
+            "Player1RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 3,
+          "changed_rectangles_of_23": 14,
+          "differing_coordinate_fields_of_92": 55,
+          "changed_record_names": [
+            "Player1CopDigitalSpeedometer",
+            "Player1CopAnalogSpeedometer",
+            "Player1CopDigitalTachometer",
+            "Player1CopAnalogTachometer",
+            "Player1CopLapCounter",
+            "Player1CopTime",
+            "Player1CopTutorIcon",
+            "Player1CopConeStats",
+            "Player1CopRearView",
+            "Player1CopRadar",
+            "Player1CopCopTickets",
+            "Player1CopRadarSpeeds",
+            "Player1CopSpikeBeltIndicator",
+            "Player1CopCopMap"
+          ]
+        },
+        {
+          "profile": 4,
+          "changed_rectangles_of_23": 17,
+          "differing_coordinate_fields_of_92": 65,
+          "changed_record_names": [
+            "Player2RacerDigitalSpeedometer",
+            "Player2RacerAnalogSpeedometer",
+            "Player2RacerDigitalTachometer",
+            "Player2RacerAnalogTachometer",
+            "Player2RacerLapCounter",
+            "Player2RacerTime",
+            "Player2RacerTutorIcon",
+            "Player2RacerConeStats",
+            "Player2RacerRearView",
+            "Player2RacerPosition",
+            "Player2RacerSplitTime",
+            "Player2RacerOpponentName",
+            "Player2RacerOpponentList",
+            "Player2RacerPlayerTickets",
+            "Player2RacerWrongWayIndicator",
+            "Player2RacerRadarDetector",
+            "Player2RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 5,
+          "changed_rectangles_of_23": 14,
+          "differing_coordinate_fields_of_92": 55,
+          "changed_record_names": [
+            "Player2CopDigitalSpeedometer",
+            "Player2CopAnalogSpeedometer",
+            "Player2CopDigitalTachometer",
+            "Player2CopAnalogTachometer",
+            "Player2CopLapCounter",
+            "Player2CopTime",
+            "Player2CopTutorIcon",
+            "Player2CopConeStats",
+            "Player2CopRearView",
+            "Player2CopRadar",
+            "Player2CopCopTickets",
+            "Player2CopRadarSpeeds",
+            "Player2CopSpikeBeltIndicator",
+            "Player2CopCopMap"
+          ]
+        }
+      ]
+    },
+    {
+      "member": "gamedata/DASHHUD/IDEF.POS",
+      "sha256": "2e92219f57f5f16d6150cc700e72c19ef204eefbc97dac5968f5c3971e6762e3",
+      "parsed_records": 138,
+      "profiles": [
+        {
+          "profile": 0,
+          "changed_rectangles_of_23": 18,
+          "differing_coordinate_fields_of_92": 69,
+          "changed_record_names": [
+            "RacerDigitalSpeedometer",
+            "RacerAnalogSpeedometer",
+            "RacerDigitalTachometer",
+            "RacerAnalogTachometer",
+            "RacerLapCounter",
+            "RacerTime",
+            "RacerTutorIcon",
+            "RacerConeStats",
+            "RacerReplayHUD",
+            "RacerRearView",
+            "RacerPosition",
+            "RacerSplitTime",
+            "RacerOpponentName",
+            "RacerOpponentList",
+            "RacerPlayerTickets",
+            "RacerWrongWayIndicator",
+            "RacerRadarDetector",
+            "RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 1,
+          "changed_rectangles_of_23": 15,
+          "differing_coordinate_fields_of_92": 56,
+          "changed_record_names": [
+            "CopDigitalSpeedometer",
+            "CopAnalogSpeedometer",
+            "CopDigitalTachometer",
+            "CopAnalogTachometer",
+            "CopLapCounter",
+            "CopTime",
+            "CopTutorIcon",
+            "CopConeStats",
+            "CopReplayHUD",
+            "CopRearView",
+            "CopRadar",
+            "CopCopTickets",
+            "CopRadarSpeeds",
+            "CopSpikeBeltIndicator",
+            "CopCopMap"
+          ]
+        },
+        {
+          "profile": 2,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player1RacerDigitalSpeedometer",
+            "Player1RacerAnalogSpeedometer",
+            "Player1RacerDigitalTachometer",
+            "Player1RacerAnalogTachometer",
+            "Player1RacerLapCounter",
+            "Player1RacerTime",
+            "Player1RacerTutorIcon",
+            "Player1RacerConeStats",
+            "Player1RacerPosition",
+            "Player1RacerSplitTime",
+            "Player1RacerOpponentName",
+            "Player1RacerOpponentList",
+            "Player1RacerPlayerTickets",
+            "Player1RacerWrongWayIndicator",
+            "Player1RacerRadarDetector",
+            "Player1RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 3,
+          "changed_rectangles_of_23": 14,
+          "differing_coordinate_fields_of_92": 54,
+          "changed_record_names": [
+            "Player1CopDigitalSpeedometer",
+            "Player1CopAnalogSpeedometer",
+            "Player1CopDigitalTachometer",
+            "Player1CopAnalogTachometer",
+            "Player1CopLapCounter",
+            "Player1CopTime",
+            "Player1CopTutorIcon",
+            "Player1CopConeStats",
+            "Player1CopRearView",
+            "Player1CopRadar",
+            "Player1CopCopTickets",
+            "Player1CopRadarSpeeds",
+            "Player1CopSpikeBeltIndicator",
+            "Player1CopCopMap"
+          ]
+        },
+        {
+          "profile": 4,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player2RacerDigitalSpeedometer",
+            "Player2RacerAnalogSpeedometer",
+            "Player2RacerDigitalTachometer",
+            "Player2RacerAnalogTachometer",
+            "Player2RacerLapCounter",
+            "Player2RacerTime",
+            "Player2RacerTutorIcon",
+            "Player2RacerConeStats",
+            "Player2RacerPosition",
+            "Player2RacerSplitTime",
+            "Player2RacerOpponentName",
+            "Player2RacerOpponentList",
+            "Player2RacerPlayerTickets",
+            "Player2RacerWrongWayIndicator",
+            "Player2RacerRadarDetector",
+            "Player2RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 5,
+          "changed_rectangles_of_23": 14,
+          "differing_coordinate_fields_of_92": 54,
+          "changed_record_names": [
+            "Player2CopDigitalSpeedometer",
+            "Player2CopAnalogSpeedometer",
+            "Player2CopDigitalTachometer",
+            "Player2CopAnalogTachometer",
+            "Player2CopLapCounter",
+            "Player2CopTime",
+            "Player2CopTutorIcon",
+            "Player2CopConeStats",
+            "Player2CopRearView",
+            "Player2CopRadar",
+            "Player2CopCopTickets",
+            "Player2CopRadarSpeeds",
+            "Player2CopSpikeBeltIndicator",
+            "Player2CopCopMap"
+          ]
+        }
+      ]
+    },
+    {
+      "member": "gamedata/DASHHUD/SDEF.POS",
+      "sha256": "9853be313e8e3e783a61b2a98f24195563399bdaa20b1f1dc21399606b43e24e",
+      "parsed_records": 138,
+      "profiles": [
+        {
+          "profile": 0,
+          "changed_rectangles_of_23": 18,
+          "differing_coordinate_fields_of_92": 69,
+          "changed_record_names": [
+            "RacerDigitalSpeedometer",
+            "RacerAnalogSpeedometer",
+            "RacerDigitalTachometer",
+            "RacerAnalogTachometer",
+            "RacerLapCounter",
+            "RacerTime",
+            "RacerTutorIcon",
+            "RacerConeStats",
+            "RacerReplayHUD",
+            "RacerRearView",
+            "RacerPosition",
+            "RacerSplitTime",
+            "RacerOpponentName",
+            "RacerOpponentList",
+            "RacerPlayerTickets",
+            "RacerWrongWayIndicator",
+            "RacerRadarDetector",
+            "RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 1,
+          "changed_rectangles_of_23": 15,
+          "differing_coordinate_fields_of_92": 57,
+          "changed_record_names": [
+            "CopDigitalSpeedometer",
+            "CopAnalogSpeedometer",
+            "CopDigitalTachometer",
+            "CopAnalogTachometer",
+            "CopLapCounter",
+            "CopTime",
+            "CopTutorIcon",
+            "CopConeStats",
+            "CopReplayHUD",
+            "CopRearView",
+            "CopRadar",
+            "CopCopTickets",
+            "CopRadarSpeeds",
+            "CopSpikeBeltIndicator",
+            "CopCopMap"
+          ]
+        },
+        {
+          "profile": 2,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player1RacerDigitalSpeedometer",
+            "Player1RacerAnalogSpeedometer",
+            "Player1RacerDigitalTachometer",
+            "Player1RacerAnalogTachometer",
+            "Player1RacerLapCounter",
+            "Player1RacerTime",
+            "Player1RacerTutorIcon",
+            "Player1RacerConeStats",
+            "Player1RacerPosition",
+            "Player1RacerSplitTime",
+            "Player1RacerOpponentName",
+            "Player1RacerOpponentList",
+            "Player1RacerPlayerTickets",
+            "Player1RacerWrongWayIndicator",
+            "Player1RacerRadarDetector",
+            "Player1RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 3,
+          "changed_rectangles_of_23": 13,
+          "differing_coordinate_fields_of_92": 51,
+          "changed_record_names": [
+            "Player1CopDigitalSpeedometer",
+            "Player1CopAnalogSpeedometer",
+            "Player1CopDigitalTachometer",
+            "Player1CopAnalogTachometer",
+            "Player1CopLapCounter",
+            "Player1CopTime",
+            "Player1CopTutorIcon",
+            "Player1CopConeStats",
+            "Player1CopRadar",
+            "Player1CopCopTickets",
+            "Player1CopRadarSpeeds",
+            "Player1CopSpikeBeltIndicator",
+            "Player1CopCopMap"
+          ]
+        },
+        {
+          "profile": 4,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player2RacerDigitalSpeedometer",
+            "Player2RacerAnalogSpeedometer",
+            "Player2RacerDigitalTachometer",
+            "Player2RacerAnalogTachometer",
+            "Player2RacerLapCounter",
+            "Player2RacerTime",
+            "Player2RacerTutorIcon",
+            "Player2RacerConeStats",
+            "Player2RacerPosition",
+            "Player2RacerSplitTime",
+            "Player2RacerOpponentName",
+            "Player2RacerOpponentList",
+            "Player2RacerPlayerTickets",
+            "Player2RacerWrongWayIndicator",
+            "Player2RacerRadarDetector",
+            "Player2RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 5,
+          "changed_rectangles_of_23": 13,
+          "differing_coordinate_fields_of_92": 51,
+          "changed_record_names": [
+            "Player2CopDigitalSpeedometer",
+            "Player2CopAnalogSpeedometer",
+            "Player2CopDigitalTachometer",
+            "Player2CopAnalogTachometer",
+            "Player2CopLapCounter",
+            "Player2CopTime",
+            "Player2CopTutorIcon",
+            "Player2CopConeStats",
+            "Player2CopRadar",
+            "Player2CopCopTickets",
+            "Player2CopRadarSpeeds",
+            "Player2CopSpikeBeltIndicator",
+            "Player2CopCopMap"
+          ]
+        }
+      ]
+    },
+    {
+      "member": "gamedata/DASHHUD/WDEF.POS",
+      "sha256": "f3eced40a43c5462429c4b0e755e0d9b22f0388e62c94f6244ceacc11e21e84f",
+      "parsed_records": 138,
+      "profiles": [
+        {
+          "profile": 0,
+          "changed_rectangles_of_23": 18,
+          "differing_coordinate_fields_of_92": 67,
+          "changed_record_names": [
+            "RacerDigitalSpeedometer",
+            "RacerAnalogSpeedometer",
+            "RacerDigitalTachometer",
+            "RacerAnalogTachometer",
+            "RacerLapCounter",
+            "RacerTime",
+            "RacerTutorIcon",
+            "RacerConeStats",
+            "RacerReplayHUD",
+            "RacerRearView",
+            "RacerPosition",
+            "RacerSplitTime",
+            "RacerOpponentName",
+            "RacerOpponentList",
+            "RacerPlayerTickets",
+            "RacerWrongWayIndicator",
+            "RacerRadarDetector",
+            "RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 1,
+          "changed_rectangles_of_23": 15,
+          "differing_coordinate_fields_of_92": 57,
+          "changed_record_names": [
+            "CopDigitalSpeedometer",
+            "CopAnalogSpeedometer",
+            "CopDigitalTachometer",
+            "CopAnalogTachometer",
+            "CopLapCounter",
+            "CopTime",
+            "CopTutorIcon",
+            "CopConeStats",
+            "CopReplayHUD",
+            "CopRearView",
+            "CopRadar",
+            "CopCopTickets",
+            "CopRadarSpeeds",
+            "CopSpikeBeltIndicator",
+            "CopCopMap"
+          ]
+        },
+        {
+          "profile": 2,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player1RacerDigitalSpeedometer",
+            "Player1RacerAnalogSpeedometer",
+            "Player1RacerDigitalTachometer",
+            "Player1RacerAnalogTachometer",
+            "Player1RacerLapCounter",
+            "Player1RacerTime",
+            "Player1RacerTutorIcon",
+            "Player1RacerConeStats",
+            "Player1RacerPosition",
+            "Player1RacerSplitTime",
+            "Player1RacerOpponentName",
+            "Player1RacerOpponentList",
+            "Player1RacerPlayerTickets",
+            "Player1RacerWrongWayIndicator",
+            "Player1RacerRadarDetector",
+            "Player1RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 3,
+          "changed_rectangles_of_23": 13,
+          "differing_coordinate_fields_of_92": 51,
+          "changed_record_names": [
+            "Player1CopDigitalSpeedometer",
+            "Player1CopAnalogSpeedometer",
+            "Player1CopDigitalTachometer",
+            "Player1CopAnalogTachometer",
+            "Player1CopLapCounter",
+            "Player1CopTime",
+            "Player1CopTutorIcon",
+            "Player1CopConeStats",
+            "Player1CopRadar",
+            "Player1CopCopTickets",
+            "Player1CopRadarSpeeds",
+            "Player1CopSpikeBeltIndicator",
+            "Player1CopCopMap"
+          ]
+        },
+        {
+          "profile": 4,
+          "changed_rectangles_of_23": 16,
+          "differing_coordinate_fields_of_92": 63,
+          "changed_record_names": [
+            "Player2RacerDigitalSpeedometer",
+            "Player2RacerAnalogSpeedometer",
+            "Player2RacerDigitalTachometer",
+            "Player2RacerAnalogTachometer",
+            "Player2RacerLapCounter",
+            "Player2RacerTime",
+            "Player2RacerTutorIcon",
+            "Player2RacerConeStats",
+            "Player2RacerPosition",
+            "Player2RacerSplitTime",
+            "Player2RacerOpponentName",
+            "Player2RacerOpponentList",
+            "Player2RacerPlayerTickets",
+            "Player2RacerWrongWayIndicator",
+            "Player2RacerRadarDetector",
+            "Player2RacerRacerMap"
+          ]
+        },
+        {
+          "profile": 5,
+          "changed_rectangles_of_23": 13,
+          "differing_coordinate_fields_of_92": 51,
+          "changed_record_names": [
+            "Player2CopDigitalSpeedometer",
+            "Player2CopAnalogSpeedometer",
+            "Player2CopDigitalTachometer",
+            "Player2CopAnalogTachometer",
+            "Player2CopLapCounter",
+            "Player2CopTime",
+            "Player2CopTutorIcon",
+            "Player2CopConeStats",
+            "Player2CopRadar",
+            "Player2CopCopTickets",
+            "Player2CopRadarSpeeds",
+            "Player2CopSpikeBeltIndicator",
+            "Player2CopCopMap"
+          ]
+        }
+      ]
+    }
+  ],
+  "embedded_table": {
+    "exe": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+    "exe_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "va": "0053eb20",
+    "bytes": 2304,
+    "sha256": "00e3c6b1e4b5f42e345e837845343a99c2798cb41686c8d6136a6c835bb2abbc"
+  },
+  "counts": {
+    "reference-only": 34,
+    "changed": 52
+  },
+  "limits": [
+    "Author-hosted reference bundle is not authenticated pristine retail.",
+    "Casefold matching is deliberate Windows-style path pairing, not Linux installation validation.",
+    "Reference-only means absent from final patch archive, not deleted or unreachable at runtime.",
+    "Menu line-edit counts preserve text order; no widget identity or semantic equivalence inferred.",
+    "HUD compares ordered coordinate literals as binary32 using host float parsing; not target parser or x87 execution.",
+    "HUD compares23 text rectangles per profile with first23 embedded rectangles, excluding extra24th slot and later aspect transforms.",
+    "No asset installation, game execution, target instructions or database mutation."
+  ]
+}

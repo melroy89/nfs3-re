@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "edb280b39986b87234566fb696807bdbba1dabb1f1d73024512e5ee3b1dd27c1",
-      "relative_links": 78
+      "sha256": "35fb09171ff7833ae895ef265478f2c33369543f455c8d3933645b3d0695430e",
+      "relative_links": 79
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,8 +103,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "45a09a97d2233c39061a30acef7a9edd1da15b0f8a1c8bea8e84679eec104a98",
-      "relative_links": 163
+      "sha256": "0708854224fd5517ca82169f7a38ee475edb78e807c6685e05115abb61ad1398",
+      "relative_links": 164
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -193,8 +193,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "130312b311268ce1bfffef09f24346d4f1f9abcbdea75d2578c6a8c831bea59e",
-      "relative_links": 20
+      "sha256": "f479ee1ddfb3830ca0c68e62df841f4cda613f43cace024fc1fe33102a975acd",
+      "relative_links": 24
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -318,8 +318,8 @@
     },
     {
       "path": "analysis/original-modern-original-reference-bundle.md",
-      "sha256": "3df93eb77de628c3b2428ff66d8e40d0495bd7d6d5310b7d3e9e187b9d7eefac",
-      "relative_links": 3
+      "sha256": "6d600b744ff16b548f8a290160b64a714700c3e5163a29649f1f5c08b18f9d0e",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
@@ -375,6 +375,11 @@
       "path": "analysis/original-modern-reconstruction-baselines.md",
       "sha256": "f2d346f527b18d213e39dcd7f67cef24408986bf8711c5829578da958f2460f5",
       "relative_links": 7
+    },
+    {
+      "path": "analysis/original-modern-reference-assets-index.md",
+      "sha256": "599c95c45d9627d36899a34d382f784953d899dc78ec1839791ee88c5843bdba",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-registry.md",
@@ -602,8 +607,8 @@
       "relative_links": 16
     }
   ],
-  "file_count": 120,
-  "relative_link_count": 1919,
+  "file_count": 121,
+  "relative_link_count": 1930,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

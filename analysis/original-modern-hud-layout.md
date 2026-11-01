@@ -20,7 +20,7 @@ Original `00485680`:
 
 Modern replaces that file/token route with a **file-backed embedded table** at `0053eb20`, consuming **0x900 bytes**: six profiles × 48 pairs of DWORDs. It swaps the two members of each pair into destination `+4/+0`, advances 8 bytes, then skips the next profile's 0x24-byte header. Each destination is at `006fbc50 + profile*0x1a4`.
 
-The local layout established by these writes is therefore **0x24 bytes of header plus 24 × 16-byte rectangle storage = 0x1a4 bytes**, six records. This does not establish semantic names for every header field or rectangle slot. It also does not prove which installed original `*def.pos` contents the embedded table was derived from; an asset-to-table comparison remains pending.
+The local layout established by these writes is therefore **0x24 bytes of header plus 24 × 16-byte rectangle storage = 0x1a4 bytes**, six records. This does not establish semantic names for every header field or rectangle slot. It also does not prove which installed original `*def.pos` contents the embedded table was derived from. The [reference-asset comparison](original-modern-reference-assets-index.md#hud-coordinate-literal-comparison) now compares six author-hosted variants numerically; none matches the embedded table exactly. Authenticated installed-original provenance and runtime parser equivalence remain unverified.
 
 No original preset-file read remains in this Modern initializer. This is a concrete source/initialization change, not proof that the whole game no longer reads external HUD/layout resources elsewhere.
 
@@ -63,9 +63,9 @@ The later [map-scale consumer comparison](original-modern-map-marker-scaling.md#
 
 ## Catalog traceability and remaining work
 
-This chapter supplies concrete evidence relevant to **MP140-071/072/073** and **MP100-030/032/033**, whose notes discuss HUD positions, reset behavior, map zoom and units. It does not fully verify them: remaining consumer-to-field mappings, actual original preset assets, first-install/reset admission and persistence overrides still need inspection. Those entries remain vendor-claimed or only partially supported as appropriate.
+This chapter supplies concrete evidence relevant to **MP140-071/072/073** and **MP100-030/032/033**, whose notes discuss HUD positions, reset behavior, map zoom and units. It does not fully verify them: remaining consumer-to-field mappings, authenticated original preset provenance, first-install/reset admission and persistence overrides still need inspection. Those entries remain vendor-claimed or only partially supported as appropriate.
 
-Next: compare original `*def.pos` assets to the embedded table; map the nine header fields and rectangle slot consumers; trace migration/reset triggers before claiming that an existing player's HUD is automatically reset. Preserve the shared-frame and x87 contracts during future reconstruction.
+Next: reuse the [ordered reference-asset/table comparison](original-modern-reference-assets-index.md#hud-coordinate-literal-comparison), qualify target parser and extra-slot behavior, map the nine header fields and rectangle slot consumers, and trace migration/reset triggers before claiming that an existing player's HUD is automatically reset. Preserve the shared-frame and x87 contracts during future reconstruction.
 
 ## Reference-dimension consumers in scale, standings and layout updates
 
@@ -168,3 +168,9 @@ The extended speed-unit audit now compares complete geometry helper **`0048a220.
 The alternative helper does not receive the unit selector. It forms a binary32 angle from `value * float[0053b87c] + float[0053b880]`, then calls trig/geometry helpers and writes the indexed geometry. It does not call the localized MPH/KPH formatter or apply its `2.2369`/`3.6` conversions locally. The same input magnitude is used for selector2 and selector4 at this callsite. Therefore the numeric pointer geometry alone cannot distinguish their unit calibration; the separate dial texture/label setup and subsequent draw consumers must be established before naming a complete analog-unit enum. Identical helper bytes also do not prove unchanged indirect state, trig dependencies or FPU precision.
 
 This reuses the prior [indicator contract and bounded live sample](detailed-analysis-notes.md#per-view-hud-indicator-geometry-update), adding the missing original/official static comparison. That older sample concerned one existing analysis build and is **not** an original-versus-Modern equivalence test. It does not validate the claimed default behavior, complete dial calibration or high-speed rendering in both versions. No new runtime probe was performed.
+
+## Author-reference HUD assets compared numerically
+
+The [asset audit](scripts/audit_reference_asset_pairs.py) pins both archive hashes and the Modern EXE, parses all138 ordered records in each of six reference POS files and compares23 rectangles per profile against the embedded24-rectangle profile layout. Names/order agree across the six files. English has91 changed rectangles and352 differing binary32 coordinate fields; the other language variants have91–95 changed rectangles and352–365 differing fields. None supplies an exact numerical match.
+
+This narrows the earlier asset-acquisition gap without authenticating pristine retail or identifying the author’s source. Comparison uses ordered coordinate literals and host decimal-to-binary32 conversion; it does not execute the original tokenizer/parser or prove final destination state after pair swapping, extra-slot initialization and aspect adjustment. The extra24th rectangle, header settings, persistence and rendered effects are excluded. Full per-profile changed-name lists are retained in [the manifest](evidence/audits/reference-asset-pairs.json).

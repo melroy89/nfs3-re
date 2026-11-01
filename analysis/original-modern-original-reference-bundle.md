@@ -36,6 +36,6 @@ The bundle supplies separately identified candidates for previously missing orig
 | `d3da.dll` | Final DX5 renderer member | [Pairing and bounded correspondence verified](original-modern-dx5-reference-pair.md); pointed-to table semantics and remaining intervals pending |
 | `softtria.dll` | Final software renderer member | Same; packed/changed layouts must not be treated as address-equal functions |
 | `voodoo2a.dll` | Final Glide renderer member | Same; distinguish game renderer from wrapper DLL |
-|80 menus /6 HUD-position files | Corresponding Modern members | Case-normalized pairing, duplicate/absent entries and asset-format-aware field comparison |
+|80 menus /6 HUD-position files | Corresponding Modern members | [Complete suffix-scoped pairing and HUD literal comparison](original-modern-reference-assets-index.md); menu-control semantics and runtime layouts remain follow-up |
 
 No semantic driver change is accepted merely because files differ or appear under familiar names. These candidates remove an acquisition gap while leaving original-retail authenticity, complete feature attribution and runtime acceptance open. Local backup equality, if later checked, would corroborate file identity rather than authenticate a retail release. The broader original/Modern investigation remains incomplete.

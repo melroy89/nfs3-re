@@ -23,6 +23,8 @@ The [historical renderer comparison](original-modern-renderer-texel-alignment.md
 
 The [DX5 reference/final comparison](original-modern-dx5-reference-pair.md) assigns all710 differing code-section bytes to six reviewed clusters: descriptor publication, lock callback handling, mode enumeration/adapter, two setup tails and state-selector removal. Modern adds a failure notification, dimension filters and raw-key scanning, and rejects selector15h. Actual32-bit rendering, the absolute640×480 depth claim, other runtime consequences and non-code PE differences remain unverified. These findings are separate from the historical DX6/DX7/DX8 comparisons.
 
+The [reference asset index](original-modern-reference-assets-index.md) pairs all52 final menu files with the author-reference bundle and records differences beyond line endings. Another28 reference menus and six POS files are absent from the patch archive, which does not prove installed-file deletion. All six POS variants differ numerically from Modern’s embedded HUD table; parser/runtime equivalence remains unverified.
+
 ## Recent findings at a glance
 
 The [static checkpoint](evidence/validation/historical-startup-checkpoint.json) re-runs11 selected audit scripts against reviewed commit `7c36f96` and verifies the recorded hashes of the supplied original, official Modern, local analysis EXE and saved Ghidra database. This is a reproducibility/self-check checkpoint, not independent semantic review or completion of the entire investigation.
