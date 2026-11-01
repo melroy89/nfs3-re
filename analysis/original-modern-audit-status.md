@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **115 vendor-only,50 bounded-static,123 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **112 vendor-only,51 bounded-static,125 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -637,3 +637,7 @@ The [text-scale follow-up](original-modern-hud-layout.md#fitted-reference-scales
 ## Police HUD widget claim remains unverified
 
 The [bounded HUD-editor review](original-modern-hud-settings-policy.md#police-cone-stats-and-tutorial-icon-claim-remains-unresolved) binds Tutorial Icon/Cone Stats to preset slots6/7, records nonzero reference/final defaults, and verifies retained pshud initializer/HudItem rectangle-loader/template bytes. These checked routes do not identify the advertised police-only hiding mechanism. MP100-048 stays vendor-only; counts unchanged. Next is active item-list construction and slot/role draw/input admission, with archive omission kept separate from installed deletion. No menu or target execution.
+
+## Historical nGlide settings before provider loading
+
+The [paired adapter audit](original-modern-renderer-loading.md#historical-nglide-configuration-precedes-provider-loading) verifies1.2.0’s complete NGLIDE-specific helper, packaged six settings and pre-LoadLibrary order. Removing the section skips writes but leaves inherited/previous values untouched; global-settings outcome remains conditional and untested. MP120-025/027 advance to partial, MP120-026 to bounded static; counts112/51/125/2. Final EXE generic ENV remains a separate mechanism. No target execution or database changes.

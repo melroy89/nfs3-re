@@ -610,7 +610,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **115 Claimed, 50 Static, 123 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **112 Claimed, 51 Static, 125 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -872,9 +872,9 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP120-022 | If you would like to play NFS3 on the real 3dfx Voodoo or 3dfx Voodoo 2 hardware, create new subdirectory with name voodoo2 in the drivers directory, copy into this subdirectory thrash.ini and voodoo2.dll from the dgvoodoo subdirectory, set VideoDriver ini setting to voodoo2. | Claimed |
 | MP120-023 | glide3x.dll is loaded only once. | Partial |
 | MP120-024 | Resolutions count limit was extended up to 100. | Partial |
-| MP120-025 | It's a slightly changed version of voodoo2.dll with special code for the nGlide wrapper. It's created to prevent unwanted using global settings of nGlide. | Claimed |
-| MP120-026 | This is done by setting NGLIDE_* environment variables before glide3x.dll loading. Every setting is gotten from the [NGLIDE] section of according thrash.ini file. Each setting of this section is formatted like NGLIDE_SETTINGNAME and used as name of an environment variable. Names of settings and their formats can be found at the official nGlide forum: http://www.zeus-software.com/forum/viewtopic.php?f=9&t=796 | Claimed |
-| MP120-027 | If you would like to use global nGlide settings, just remove [NGLIDE] section in the ./drivers/nglide/thrash.ini file. | Claimed |
+| MP120-025 | It's a slightly changed version of voodoo2.dll with special code for the nGlide wrapper. It's created to prevent unwanted using global settings of nGlide. | Partial |
+| MP120-026 | This is done by setting NGLIDE_* environment variables before glide3x.dll loading. Every setting is gotten from the [NGLIDE] section of according thrash.ini file. Each setting of this section is formatted like NGLIDE_SETTINGNAME and used as name of an environment variable. Names of settings and their formats can be found at the official nGlide forum: http://www.zeus-software.com/forum/viewtopic.php?f=9&t=796 | Static |
+| MP120-027 | If you would like to use global nGlide settings, just remove [NGLIDE] section in the ./drivers/nglide/thrash.ini file. | Partial |
 | MP120-028 | Bundled with nGlide v1.04.2 (this version also fixes possible problems with projected headlights). | Claimed |
 
 ### Version 1.1.0 (2015-05-22)

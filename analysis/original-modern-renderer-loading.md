@@ -351,3 +351,33 @@ claiming a changed device list or startup behaviour.
 **Status:** done for these removed implementations and interval partition;
 verified static evidence. No DirectDraw API, DLL, game or instruction probe
 was run, and executable/saved database bytes were preserved.
+
+## Historical nGlide configuration precedes provider loading
+
+**Verified static mechanism; provider effects untested.** The [historical audit](evidence/audits/nglide-config-history.json), reproduced with `python3 analysis/scripts/audit_nglide_config_history.py`, pins the author-hosted1.2.0 archive and its `drivers/nglide/nglide.dll`, paired `drivers/dgvoodoo/voodoo2.dll` and nGlide `thrash.ini`. These are bundled adapter counterparts, not authenticated retail-original drivers. No archive member is executed.
+
+| Step | Historical nGlide address | Observed instructions |
+|---|---|---|
+| Cached handle gate | `60001028..60001035` | Nonzero provider handle skips configuration/loading and reaches success. |
+| Adapter-directory setup | `60001049..6000106b` | GetModuleFileNameA on the stored module handle; walk backward to the last backslash and leave destination immediately after it. |
+| Added configuration call | `6000106b` | Calls complete helper `6000d8a0..6000d916`; the paired dgVoodoo loader instead begins copying the provider filename here. |
+| Section read | `6000d8a8..6000d8ca` | Append `thrash.ini` using retained copy helper `600012c0..600012ca`; read `[NGLIDE]` into8192 bytes through GetPrivateProfileSectionA. |
+| Name/value loop | `6000d8d0..6000d90d` | Build `NGLIDE_` plus ASCII-uppercased key in a256-byte temporary buffer; split on the first `=` and pass the unchanged value to SetEnvironmentVariableA at`6000d900`. Skip entries without `=`. |
+| Provider request | `60001070..6000109c` | Overwrite the filename suffix with `glide3x.dll`; first attempt full adapter-relative path at`6000107f`, then bare name at`60001090` if loading fails. |
+
+The complete118-byte configuration helper and217/212-byte loader bodies are retained with hashes, bytes and disassembly. The uppercase helper `60009850..6000985e` changes only ASCII a–z. Packaged settings translate as follows; these are requested strings, not verified nGlide enum semantics:
+
+| Packaged key/value | Requested environment variable/value |
+|---|---|
+| Resolution=0 | NGLIDE_RESOLUTION=0 |
+| Aspect=0 | NGLIDE_ASPECT=0 |
+| Refresh=0 | NGLIDE_REFRESH=0 |
+| Vsync=1 | NGLIDE_VSYNC=1 |
+| Gamma=5 | NGLIDE_GAMMA=5 |
+| Splash=0 | NGLIDE_SPLASH=0 |
+
+**Release-note qualification:** MP120-025 has partial support for a concrete special adapter mechanism, without an exhaustive adapter difference map. MP120-026 has bounded static support: the writes precede both provider-load attempts on the cold-handle path. MP120-027 has partial support: an empty returned section exits without writes, but this helper does **not** clear inherited or earlier environment values. Removing the section therefore cannot by itself guarantee use of global nGlide settings; provider precedence, registry access and effective settings remain unverified. Reloading with an already cached provider also skips this helper.
+
+Profile-section return, environment-write results and filename API failure are unchecked locally. Name construction has no local256-byte bound check. Missing sections, truncation and malformed input are not runtime-tested; ordinary well-formed packaged entries are the established interpretation. The helper preserves ESI/EDI but consumes incoming EDI as the filename-suffix destination; it is not an ordinary parameterless portable C routine. Its stack scratch storage does not establish safety of shared filename/environment/provider state or concurrent calls.
+
+This is the historical special `[NGLIDE]` implementation in a DLL. The final EXE's generic `[ENV]` mechanism above is a separate, later configuration route. Neither static mechanism proves successful provider loading, visible rendering or original/Modern race compatibility.
