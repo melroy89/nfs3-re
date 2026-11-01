@@ -610,7 +610,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **107 Claimed, 51 Static, 130 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **106 Claimed, 51 Static, 131 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -906,7 +906,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-004 | Font size is choosed on the basis of screen height, not screen width. It prevents from choosing too big font for widescreen resolutions. | Partial |
 | MP100-005 | HUD will be completely recalculated with the purpose of different aspect ratio support when resolution is changed in settings. Besides the result looks more accurate than original one even on 4:3 resolutions. Files ./GameData/DashHud/*.POS are unnecessary now and can be removed. | Claimed |
 | MP100-006 | HUD borders was reduced twice to look better on modern huge resolutions. Without this change they look too fat. | Claimed |
-| MP100-007 | Compact cop's speeds table. Now it looks like the standard opponents list. | Claimed |
+| MP100-007 | Compact cop's speeds table. Now it looks like the standard opponents list. | Partial |
 | MP100-008 | As a whole positions of all HUD elements were adjusted a little to look better on all supported resolutions. | Partial |
 | MP100-009 | Resolutions list limit was extended from 20 to 50. | Partial |
 | MP100-010 | The games uses the best possible graphics settings by default when it detects that the game is runned on the modern computer. | Partial |

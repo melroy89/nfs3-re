@@ -229,3 +229,21 @@ These match the six-profile header table above. Original writes the racer Name f
 The complete bounded consumers `00482dcd..00482e6f` (162 bytes) and `00483614..004836c4` (176 bytes) are byte-identical between versions. They read selected header+08, skip their list branches when zero, and otherwise separate a nonzero role-local route to`0048a660` from a zero-role route that additionally requires signed`005efda0>1` before calling standings renderer`0048ae70`. This establishes an admission effect, not unconditional display. Full profile/session index production, all caller paths and other drawing gates remain separate. These are complete captured branch spans, not claims to complete parent-function boundaries.
 
 **MP100-033 advances to partial support:** the named racer profiles change from Name enabled/List disabled to Name disabled/List enabled, consistent with the split-screen-default claim. The cop profiles do not receive the same default swap. Suffix-to-live-view/session admission, saved preferences, actual rendered layout and1.0.0 introduction remain unverified. Do not expand the release note into every role/context or infer that either renderer was removed. The separate standings/font/reference-dimension changes above still affect output after admission. No game, HUD draw, instruction probe or Ghidra write was performed.
+
+## Police list row and panel spacing use smaller data coefficients
+
+**Verified static constants and direct consumers; rendered table untested.** The [police-spacing audit](evidence/audits/police-list-spacing.json), reproduced with `python3 analysis/scripts/audit_police_list_spacing.py`, pins supplied original/official final EXEs, both complete990-byte police-list renderer envelopes and selected layout/metric bodies. This extends the earlier width-source comparison with data changes that instruction-only diffing misses.
+
+| Binary64 address | Original | Final Modern | Consumer |
+|---|---:|---:|---|
+|`0053b598` |20.0 |12.414 |Panel-layout metric at`00481cbe` |
+|`0053b8cc` |20.0 |12.414 |Police-list row metric at`0048a70e` |
+|`0053b5a0`, `0053b8d4` |Stored1/13 approximation |Identical |Following metric multiplier |
+
+The panel route calls retained metric helpers `004d14f0` and `004d1540` with character code30h, adds their integer results, multiplies that sum by the first coefficient and1/13, then calls truncation helper`004dfd56` before FISTP. Its integer spacing is multiplied by the counted admitted entries at`00481cd5`; the later layout block consumes the resulting total. This is a panel-layout contribution, not a measured total panel height.
+
+The renderer computes the corresponding metric through the second coefficient, stores the truncated integer at local`EBP-20h`, and at`0048a8c2..0048a8cd` adds it to the row coordinate in EDI after a text draw. The full renderer has only the six previously mapped changed bytes, in its two width-source operands; the metric multiplier instructions themselves are retained. Complete panel-metric span`00481ca0..00481cd8` and the65/67-byte font-metric bodies are identical between versions. The font helpers still read loaded bank tables and effective scale`0084018c`, so their code equality does not establish equal numeric metrics.
+
+For equal ordinary positive input metrics, the **unrounded coefficient ratio is12.414/20 =0.6207**. This is not a guaranteed37.93% reduction in integer row spacing or displayed panel height: truncation, font bank/scale, actual entries, width-derived padding, clipping and x87 state remain dependencies. Integer count multiplication wraps at32 bits; translating it as overflowing signed C arithmetic would not preserve the machine contract.
+
+**MP100-007 advances to partial support:** there is a concrete mechanism for more compact police-list spacing in both row advance and panel layout. The advertised resemblance to the standard opponents list, actual speed fields/images, complete visual layout, every caller and1.0.0 introduction remain unverified. The default-selection change in the preceding section is separate from these spacing coefficients. No game, renderer, font load, instruction probe or Ghidra write occurred.
