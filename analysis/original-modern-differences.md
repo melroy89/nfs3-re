@@ -625,7 +625,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **102 Claimed, 51 Static, 135 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **101 Claimed, 51 Static, 136 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -864,7 +864,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | ID | Reported change | Review |
 |---|---|---|
 | MP120-001 | If ini file hasn't some setting, program tries to read environment variable with name like SECTION_SETTINGNAME, e.g. for setting NoMovie in the [NFS3] section environment variable name will be NFS3_NOMOVIE. If environment also isn't present default value will be used. | Static |
-| MP120-002 | Fixed a bug according to race type autoselection in the race selection dialog (Hot Pursuit and Tournament were mixed up). | Claimed |
+| MP120-002 | Fixed a bug according to race type autoselection in the race selection dialog (Hot Pursuit and Tournament were mixed up). | Partial |
 | MP120-003 | Mercedes and Ferrari cars aren't locked in the Hot Pursuit mode. It seems that it had been done because of licensing restrictions. Thanks to Manticore for a hint. | Partial |
 | MP120-004 | Structure of thrash video drivers was changed. All drivers stored in “drivers” directory. Every driver has own subdirectory with name which is used in VideoDriver ini setting. Inside this subdirectory have to be dll file of the driver and file thrash.ini with information about this driver (File and Type are required fields, type may be null, d3d, voodoo, or software). This change allows to save several different Glide API emulators to neighbour directories and use them when needed. | Partial |
 | MP120-005 | Some thrash driver capabilities could be set in thrash.ini: FogSupport and LightBeams. For example, it allows to override hardcoded values and allow to use fog for d3d thrash driver (if this driver supports it). It allows to use fog in the dx6 thrash driver from NFS4/3DSETUP. | Partial |

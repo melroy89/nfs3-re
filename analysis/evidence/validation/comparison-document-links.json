@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "51c4e3650af88b15bb357bc059f0ae60adf8ae6df5353af955efc417e9b39972",
-      "relative_links": 208
+      "sha256": "074651703fc43cbe132f76f92d04c4290c4dad05a1ef4bd8164a3496457e14a3",
+      "relative_links": 209
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "01834c58059f882017fc43178daf21df4aea57874c4a0d53fb3a6f9367d2cb25",
+      "sha256": "3dece9a0ebeb5aea90bcd7078b0e9654710f1ad33d727b8e671e9dc87ea3d581",
       "relative_links": 239
     },
     {
@@ -392,6 +392,11 @@
       "relative_links": 27
     },
     {
+      "path": "analysis/original-modern-race-dialog.md",
+      "sha256": "0d764b51fbbbd544cfdf6c330fd6bb24b84bce4f82c371f2d9cdf8bae582cba9",
+      "relative_links": 1
+    },
+    {
       "path": "analysis/original-modern-race-initialization.md",
       "sha256": "add82362b2a46d125160b2cbf134b0d200aec4e62d6b5439d228f664aacd8ef5",
       "relative_links": 1
@@ -648,8 +653,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "8dc02834185bd49a4489ec87970f7ff3b8b926d6e7f81d6d095a01a0b95e0736",
-      "relative_links": 205
+      "sha256": "38c6f1a4eb8281f42d765c7c792c34c8d904e801b274de4aa4677f6c4c04b811",
+      "relative_links": 206
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -657,8 +662,8 @@
       "relative_links": 22
     }
   ],
-  "file_count": 131,
-  "relative_link_count": 2548,
+  "file_count": 132,
+  "relative_link_count": 2551,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

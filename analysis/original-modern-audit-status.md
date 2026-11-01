@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **102 vendor-only,51 bounded-static,135 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **101 vendor-only,51 bounded-static,136 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -685,3 +685,7 @@ The [complete143-byte estimator audit](original-modern-loading-timing.md#smoothi
 ## Early loading-artwork grid distinguished from sprite-edge claim
 
 The [early/final comparison](original-modern-loading-artwork.md#early-modern-already-has-the-six-tile-loading-artwork-path) verifies1.1.0 already has256 extent/3x2 grid; only nine bytes differ in the748-byte final comparison envelope, classified as scale-read/store-address and call-target changes. Existing original/final evidence supplies300→6 iterations. MP100-016 advances to partial; MP100-017 remains vendor-only because this does not establish a sprite-edge mechanism. Counts102/51/135/2. Visual quality, sampling/atlas behavior and1.0.0 introduction remain unverified; no target execution or database changes.
+
+## Race-dialog Tournament/Hot Pursuit preselection remap
+
+The [four-baseline audit](original-modern-race-dialog.md) verifies1.1.0 raw stored-mode passing becomes a19-byte AL1↔3 remap in1.2.0, retained at a different final address. Unrestricted dialog rows and stored race-choice order differ at those two positions; only four bytes differ in the complete original/final354-byte builder. Wider inputs retain upper24 bits. MP120-002 advances to partial, counts101/51/136/2. Restricted states, live focus/input and full state lifetime remain unverified; no target execution or database changes.
