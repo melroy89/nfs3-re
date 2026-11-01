@@ -173,3 +173,37 @@ The [original language mapper `00472250`](original-modern-language-table.md#remo
 field identities, persistence and audible results remain separate follow-ups.
 No game, audio API or instruction probe was executed; executable and saved
 Ghidra bytes were preserved.
+
+## Changed audio defaults have named slider bindings
+
+The expanded [default-block evidence](evidence/audits/removed-default-block.json)
+retains complete paired audio-menu initializer `00437e00..0043806b` and its
+embedded tokens. The five binding regions below are byte-identical between
+original and final; the initializer's only changed29-byte region is
+`00437e42..00437e5f`, the separate [frontend-sound setup](original-modern-frontend-sound.md).
+Thus these names come from code-bound controls, rather than guessing from
+neighboring globals or preview sounds.
+
+| Control token | Setting address | Original default | Modern default | Approximate normalized slider position, old→new |
+|---|---|---:|---:|---|
+| `ASLD_MENUMUSIC` | `006fbbe8` |100 |95 |78.7%→74.8% |
+| `ASLD_RACEMUSIC` | `006fbbf0` |100 |95 |78.7%→74.8% |
+| `ASLD_SOUNDFX` | `006fbbf4` |100 |95 |78.7%→74.8% |
+| `ASLD_ENGINEVOLUME` | `006fbbf8` |100 |95 |78.7%→74.8% |
+| `ASLD_SPEECHVOLUME` | `006fbbfc` |127 |108 |100%→85.0% |
+
+The initializer obtains these controls by their tokens, loads their signed
+integer settings with FILD, multiplies by binary64 constant `00537600`
+(approximately1/127), and supplies the value to slider initialization.
+For the sound-effects/engine controls, `00559234` selects between configured
+values and separate live values `00552920/24`; the table describes the
+configured-default branch. Fractions are arithmetic illustrations rounded to
+one decimal, not rendered or executed slider observations. Existing
+[slider callback evidence](original-modern-music-start.md#five-audio-slider-callbacks-remove-explicit-truncation)
+separately establishes reverse conversion and changed rounding.
+
+The selector change `006fbbe4:2→0` belongs to the independently verified
+[`tunenames` race-music list](original-modern-music-selection.md#local-asset-availability-and-title-correspondence),
+not an audio-volume field. Keep selector meaning and volume scaling separate.
+No loudness, decibels, backend mixing law, successful audio output or universal
+configuration-reset behavior is inferred from these stored defaults.
