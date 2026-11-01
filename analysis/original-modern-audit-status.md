@@ -358,3 +358,7 @@ The [CCM gate audit](ccm-camera-contract.md#positive-file-counts-do-not-exclude-
 ## Sound DLL whole-file localization
 
 The [distinct sound-pair comparison](original-modern-sound-reference-pair.md) verifies every one of41,472 shared post-header bytes matches, including all existing code/data/import/export/relocation sections and16 exports. All file differences are confined to headers and an appended1536-byte version-resource section. ProductVersion1.5.3 is component metadata, not the containing final package version. This rules out changed implementation bytes for this named pair without claiming runtime/FPU equivalence or retail authentication. Catalog counts unchanged; no DLL or target instructions executed.
+
+## Glide author-reference baseline distinguished
+
+The [three-way Glide audit](original-modern-glide-reference-identity.md) verifies hosted/final export-entry equality and all34 local/reference RVA differences. Hosted reference already has three static Glide3x imports absent from the local candidate; final has neither DDRAW nor Glide3x static descriptors. Earlier local-candidate findings cannot be transferred without rechecking. The new paired code map records3307 differing bytes/141 intervals, plus import/data maps. This is baseline/localization progress, not completed semantic coverage or authenticated retail lineage. Catalog counts unchanged.

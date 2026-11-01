@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "864b15cc9f4c1b6fefa5a54477df9ac3270f7d5d40eec564a3240fe7a042eb45"
+      "sha256": "af9bbd6aaffe09ae0f92589399cca7191696af1623ca3ad6511868fde78e559e"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -101,7 +101,7 @@
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
-      "sha256": "b514ff6f3bd176185471a05b8521af2890380c09334227146e07098e7cf50d13"
+      "sha256": "c7cb7981daf48f539ff911fa992e698e39341306c2bb60ae6840321499638f84"
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
@@ -150,6 +150,10 @@
     {
       "path": "analysis/original-modern-ghost-loading.md",
       "sha256": "28aeba21f434d266ad3afe3bb89947c2216d2e41a43f58666aa1c768b4ca414d"
+    },
+    {
+      "path": "analysis/original-modern-glide-reference-identity.md",
+      "sha256": "50237bb72d1a771b433efd6006d0fd382c2801e0242a9d511a6445d5b5a29170"
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
@@ -257,7 +261,7 @@
     },
     {
       "path": "analysis/original-modern-original-reference-bundle.md",
-      "sha256": "2e8653be2a97284a313a7e961ad0242a2f0fb96b41c7572acd124ff0062d6195"
+      "sha256": "f7a2e4755f41b5bffea53cb73cb00fec4fe7a7fb25475d2ae22df5a42bdc4924"
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",

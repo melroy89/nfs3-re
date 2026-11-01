@@ -130,3 +130,7 @@ The [DX5 paired audit](original-modern-dx5-reference-pair.md) now verifies that 
 ## Distinct author-reference sound candidate compared
 
 The [sound pair audit](original-modern-sound-reference-pair.md) now compares the separately identified author-reference eacsnd.dll with final Modern. All41,472 shared post-header bytes are identical, including every existing code/data/import/export/relocation section; changes are confined to headers and an added version-resource section. The older local-only acquisition limit above remains accurate for those selected local files, but no longer prevents this named pair comparison. Runtime equivalence and pristine-retail attribution remain unverified.
+
+## Author-hosted Glide reference is a different build
+
+The [three-way Glide identity audit](original-modern-glide-reference-identity.md) verifies that the hosted reference differs from this chapter’s local legacy candidate at all34 export RVAs, while hosted/final export entries match. The hosted file already statically imports three Glide3x APIs absent from the local candidate. Earlier local-candidate mode/descriptor findings remain valid only for that pinned pair; they must not be transferred wholesale to the hosted reference. A new raw map localizes3307 code-section differing bytes for the hosted/final pair; semantic follow-up is pending.

@@ -36,7 +36,7 @@ The bundle supplies separately identified candidates for previously missing orig
 | `d3da.dll` | Final DX5 renderer member | [Pairing and bounded correspondence verified](original-modern-dx5-reference-pair.md); pointed-to table semantics and remaining intervals pending |
 | `eacsnd.dll` | Final sound DLL | [All preexisting raw-section bytes identical](original-modern-sound-reference-pair.md); headers/resources differ; runtime effects untested |
 | `softtria.dll` | Final software renderer member | [Pairing and raw-depth callback filter verified](original-modern-software-reference-pair.md); remaining code/PE consequences pending |
-| `voodoo2a.dll` | Final Glide renderer member | Same; distinguish game renderer from wrapper DLL |
+| `voodoo2a.dll` | Final Glide renderer member | [Three-way pairing and selected byte map verified](original-modern-glide-reference-identity.md); hosted build differs from prior local candidate; semantic follow-up pending |
 |80 menus /6 HUD-position files | Corresponding Modern members | [Complete suffix-scoped pairing and HUD literal comparison](original-modern-reference-assets-index.md); menu-control semantics and runtime layouts remain follow-up |
 
 No semantic driver change is accepted merely because files differ or appear under familiar names. These candidates remove an acquisition gap while leaving original-retail authenticity, complete feature attribution and runtime acceptance open. Local backup equality, if later checked, would corroborate file identity rather than authenticate a retail release. The broader original/Modern investigation remains incomplete.

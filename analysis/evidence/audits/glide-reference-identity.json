@@ -1,0 +1,3999 @@
+{
+  "kind": "three-way-glide-baseline-identity",
+  "baselines": {
+    "hosted_reference": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+      "archive_sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127",
+      "member": "voodoo2a.dll",
+      "bytes": 92662,
+      "sha256": "99b978fd6b0e94cca7ef0b671b9be0d630f929ab3901ebddaafa5d121213503b",
+      "exports": [
+        {
+          "name": "_THRASH_about@0",
+          "ordinal": 1,
+          "rva": "00001bb0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clearwindow@0",
+          "ordinal": 2,
+          "rva": "00002860",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clip@16",
+          "ordinal": 3,
+          "rva": "000029d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawline@8",
+          "ordinal": 4,
+          "rva": "00003f20",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinemesh@12",
+          "ordinal": 5,
+          "rva": "00003fd0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinestrip@8",
+          "ordinal": 6,
+          "rva": "000040b0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpoint@4",
+          "ordinal": 7,
+          "rva": "000041f0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointmesh@12",
+          "ordinal": 9,
+          "rva": "00004250",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointstrip@8",
+          "ordinal": 8,
+          "rva": "000042d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquad@16",
+          "ordinal": 10,
+          "rva": "00003480",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquadmesh@12",
+          "ordinal": 11,
+          "rva": "000035f0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtri@12",
+          "ordinal": 12,
+          "rva": "000037a0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrifan@8",
+          "ordinal": 13,
+          "rva": "00003d90",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrimesh@12",
+          "ordinal": 14,
+          "rva": "000038a0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtristrip@8",
+          "ordinal": 15,
+          "rva": "000039d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_flushwindow@0",
+          "ordinal": 16,
+          "rva": "00002880",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_idle@0",
+          "ordinal": 17,
+          "rva": "000028d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_init@0",
+          "ordinal": 18,
+          "rva": "00001eb0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_is@0",
+          "ordinal": 19,
+          "rva": "00001d50",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_lockwindow@0",
+          "ordinal": 20,
+          "rva": "00003270",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_pageflip@0",
+          "ordinal": 21,
+          "rva": "00002890",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_readrect@20",
+          "ordinal": 22,
+          "rva": "000033a0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_restore@0",
+          "ordinal": 23,
+          "rva": "00002090",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_selectdisplay@4",
+          "ordinal": 24,
+          "rva": "00001e60",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setstate@8",
+          "ordinal": 25,
+          "rva": "00002ab0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_settexture@4",
+          "ordinal": 26,
+          "rva": "00002780",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setvideomode@12",
+          "ordinal": 27,
+          "rva": "00002400",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_sync@4",
+          "ordinal": 28,
+          "rva": "000028f0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_talloc@20",
+          "ordinal": 29,
+          "rva": "000024e0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_treset@0",
+          "ordinal": 30,
+          "rva": "00002740",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_tupdate@12",
+          "ordinal": 31,
+          "rva": "000026e0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_unlockwindow@4",
+          "ordinal": 32,
+          "rva": "00003350",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_window@4",
+          "ordinal": 33,
+          "rva": "00002830",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_writerect@20",
+          "ordinal": 34,
+          "rva": "00003410",
+          "forwarder": null
+        }
+      ],
+      "imports": {
+        "user32.dll": [
+          "CharUpperBuffA",
+          "MessageBoxA",
+          "PostMessageA",
+          "SetForegroundWindow"
+        ],
+        "kernel32.dll": [
+          "CloseHandle",
+          "CreateEventA",
+          "CreateFileA",
+          "CreateThread",
+          "DeleteCriticalSection",
+          "DeleteFileA",
+          "EnterCriticalSection",
+          "ExitProcess",
+          "ExitThread",
+          "FlushFileBuffers",
+          "FreeEnvironmentStringsA",
+          "FreeLibrary",
+          "GetACP",
+          "GetCPInfo",
+          "GetCommandLineA",
+          "GetCommandLineW",
+          "GetCurrentDirectoryA",
+          "GetCurrentProcessId",
+          "GetCurrentThreadId",
+          "GetCurrentThread",
+          "GetEnvironmentStrings",
+          "GetFileAttributesA",
+          "GetFileType",
+          "GetFullPathNameA",
+          "GetLastError",
+          "GetModuleFileNameA",
+          "GetModuleFileNameW",
+          "GetModuleHandleA",
+          "GetOEMCP",
+          "GetProcAddress",
+          "GetStdHandle",
+          "GetVersion",
+          "InitializeCriticalSection",
+          "LeaveCriticalSection",
+          "LoadLibraryA",
+          "MoveFileA",
+          "MultiByteToWideChar",
+          "SetConsoleCtrlHandler",
+          "SetEnvironmentVariableA",
+          "SetEnvironmentVariableW",
+          "SetEvent",
+          "SetFilePointer",
+          "SetLastError",
+          "SetStdHandle",
+          "SetUnhandledExceptionFilter",
+          "TlsAlloc",
+          "TlsFree",
+          "TlsGetValue",
+          "TlsSetValue",
+          "UnhandledExceptionFilter",
+          "VirtualAlloc",
+          "VirtualFree",
+          "VirtualQuery",
+          "WaitForSingleObject",
+          "WideCharToMultiByte",
+          "WriteFile"
+        ],
+        "ddraw.dll": [
+          "DirectDrawCreate"
+        ],
+        "glide3x.dll": [
+          "_grCoordinateSpace@4",
+          "_grQueryResolutions@8",
+          "_grVertexLayout@12"
+        ]
+      },
+      "version_strings": [
+        {
+          "CompanyName": "Electronic Arts",
+          "FileDescription": "Voodoo2 3rash Module",
+          "FileVersion": "1998.09.11.0041",
+          "InternalName": "Voodoo2",
+          "LegalCopyright": "Copyright (C) 1998 Electronic Arts",
+          "OriginalFilename": "voodoo2a.dll",
+          "ProductName": "",
+          "ProductVersion": ""
+        }
+      ],
+      "sections": [
+        {
+          "name": "AUTO",
+          "rva": "00001000",
+          "virtual_size": 0,
+          "raw_size": 51712,
+          "raw_pointer": 1024
+        },
+        {
+          "name": ".idata",
+          "rva": "0000e000",
+          "virtual_size": 0,
+          "raw_size": 2048,
+          "raw_pointer": 52736
+        },
+        {
+          "name": "DGROUP",
+          "rva": "0000f000",
+          "virtual_size": 0,
+          "raw_size": 7680,
+          "raw_pointer": 54784
+        },
+        {
+          "name": ".bss",
+          "rva": "00011000",
+          "virtual_size": 0,
+          "raw_size": 6656,
+          "raw_pointer": 0
+        },
+        {
+          "name": ".edata",
+          "rva": "00013000",
+          "virtual_size": 0,
+          "raw_size": 1536,
+          "raw_pointer": 62464
+        },
+        {
+          "name": ".reloc",
+          "rva": "00014000",
+          "virtual_size": 0,
+          "raw_size": 3584,
+          "raw_pointer": 64000
+        },
+        {
+          "name": ".rsrc",
+          "rva": "00015000",
+          "virtual_size": 0,
+          "raw_size": 1024,
+          "raw_pointer": 67584
+        }
+      ]
+    },
+    "official_final": {
+      "archive": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+      "member": "drivers/glide3x/voodoo2a.dll",
+      "bytes": 69120,
+      "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+      "exports": [
+        {
+          "name": "_THRASH_about@0",
+          "ordinal": 1,
+          "rva": "00001bb0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clearwindow@0",
+          "ordinal": 2,
+          "rva": "00002860",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clip@16",
+          "ordinal": 3,
+          "rva": "000029d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawline@8",
+          "ordinal": 4,
+          "rva": "00003f20",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinemesh@12",
+          "ordinal": 5,
+          "rva": "00003fd0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinestrip@8",
+          "ordinal": 6,
+          "rva": "000040b0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpoint@4",
+          "ordinal": 7,
+          "rva": "000041f0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointmesh@12",
+          "ordinal": 9,
+          "rva": "00004250",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointstrip@8",
+          "ordinal": 8,
+          "rva": "000042d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquad@16",
+          "ordinal": 10,
+          "rva": "00003480",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquadmesh@12",
+          "ordinal": 11,
+          "rva": "000035f0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtri@12",
+          "ordinal": 12,
+          "rva": "000037a0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrifan@8",
+          "ordinal": 13,
+          "rva": "00003d90",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrimesh@12",
+          "ordinal": 14,
+          "rva": "000038a0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtristrip@8",
+          "ordinal": 15,
+          "rva": "000039d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_flushwindow@0",
+          "ordinal": 16,
+          "rva": "00002880",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_idle@0",
+          "ordinal": 17,
+          "rva": "000028d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_init@0",
+          "ordinal": 18,
+          "rva": "00001eb0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_is@0",
+          "ordinal": 19,
+          "rva": "00001d50",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_lockwindow@0",
+          "ordinal": 20,
+          "rva": "00003270",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_pageflip@0",
+          "ordinal": 21,
+          "rva": "00002890",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_readrect@20",
+          "ordinal": 22,
+          "rva": "000033a0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_restore@0",
+          "ordinal": 23,
+          "rva": "00002090",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_selectdisplay@4",
+          "ordinal": 24,
+          "rva": "00001e60",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setstate@8",
+          "ordinal": 25,
+          "rva": "00002ab0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_settexture@4",
+          "ordinal": 26,
+          "rva": "00002780",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setvideomode@12",
+          "ordinal": 27,
+          "rva": "00002400",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_sync@4",
+          "ordinal": 28,
+          "rva": "000028f0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_talloc@20",
+          "ordinal": 29,
+          "rva": "000024e0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_treset@0",
+          "ordinal": 30,
+          "rva": "00002740",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_tupdate@12",
+          "ordinal": 31,
+          "rva": "000026e0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_unlockwindow@4",
+          "ordinal": 32,
+          "rva": "00003350",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_window@4",
+          "ordinal": 33,
+          "rva": "00002830",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_writerect@20",
+          "ordinal": 34,
+          "rva": "00003410",
+          "forwarder": null
+        }
+      ],
+      "imports": {
+        "user32.dll": [
+          "CharUpperBuffA",
+          "MessageBoxA",
+          "PostMessageA",
+          "SetForegroundWindow"
+        ],
+        "kernel32.dll": [
+          "CloseHandle",
+          "CreateEventA",
+          "CreateFileA",
+          "CreateThread",
+          "DeleteCriticalSection",
+          "DeleteFileA",
+          "EnterCriticalSection",
+          "ExitProcess",
+          "ExitThread",
+          "FlushFileBuffers",
+          "FreeEnvironmentStringsA",
+          "FreeLibrary",
+          "GetACP",
+          "GetCPInfo",
+          "GetCommandLineA",
+          "GetCommandLineW",
+          "GetCurrentDirectoryA",
+          "GetCurrentProcessId",
+          "GetCurrentThreadId",
+          "GetCurrentThread",
+          "GetEnvironmentStrings",
+          "GetFileAttributesA",
+          "GetFileType",
+          "GetFullPathNameA",
+          "GetLastError",
+          "GetModuleFileNameA",
+          "GetModuleFileNameW",
+          "GetModuleHandleA",
+          "GetOEMCP",
+          "GetProcAddress",
+          "GetStdHandle",
+          "GetVersion",
+          "InitializeCriticalSection",
+          "LeaveCriticalSection",
+          "LoadLibraryA",
+          "MoveFileA",
+          "MultiByteToWideChar",
+          "SetConsoleCtrlHandler",
+          "SetEnvironmentVariableA",
+          "SetEnvironmentVariableW",
+          "SetEvent",
+          "SetFilePointer",
+          "SetLastError",
+          "SetStdHandle",
+          "SetUnhandledExceptionFilter",
+          "TlsAlloc",
+          "TlsFree",
+          "TlsGetValue",
+          "TlsSetValue",
+          "UnhandledExceptionFilter",
+          "VirtualAlloc",
+          "VirtualFree",
+          "VirtualQuery",
+          "WaitForSingleObject",
+          "WideCharToMultiByte",
+          "WriteFile"
+        ]
+      },
+      "version_strings": [
+        {
+          "CompanyName": "Electronic Arts",
+          "FileDescription": "Glide3x Thrash Driver (API v104)",
+          "FileVersion": "2016.10.03.0017",
+          "InternalName": "Voodoo2",
+          "LegalCopyright": "1998 Electronic Arts, 2016 VEG",
+          "OriginalFilename": "voodoo2a.dll",
+          "ProductName": "Glide3x Thrash Driver Modern Patch",
+          "ProductVersion": "1.3.0",
+          "Comments": "Based on the voodoo2a.dll from the Future Cop L.A.P.D. (Build Version: 6552.9.17.65/1998.09.11.0041)"
+        }
+      ],
+      "sections": [
+        {
+          "name": ".code",
+          "rva": "00001000",
+          "virtual_size": 0,
+          "raw_size": 51712,
+          "raw_pointer": 1024
+        },
+        {
+          "name": ".idata",
+          "rva": "0000e000",
+          "virtual_size": 0,
+          "raw_size": 2048,
+          "raw_pointer": 52736
+        },
+        {
+          "name": ".data",
+          "rva": "0000f000",
+          "virtual_size": 0,
+          "raw_size": 7680,
+          "raw_pointer": 54784
+        },
+        {
+          "name": ".bss",
+          "rva": "00011000",
+          "virtual_size": 0,
+          "raw_size": 12288,
+          "raw_pointer": 0
+        },
+        {
+          "name": ".edata",
+          "rva": "00014000",
+          "virtual_size": 0,
+          "raw_size": 1536,
+          "raw_pointer": 62464
+        },
+        {
+          "name": ".reloc",
+          "rva": "00015000",
+          "virtual_size": 0,
+          "raw_size": 3584,
+          "raw_pointer": 64000
+        },
+        {
+          "name": ".rsrc",
+          "rva": "00016000",
+          "virtual_size": 0,
+          "raw_size": 1536,
+          "raw_pointer": 67584
+        }
+      ]
+    },
+    "local_legacy_candidate": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/VOODOO2A.DLL",
+      "bytes": 93382,
+      "sha256": "f65f00e6fa6a5a67e11ff38d661b3d493474d0e075c9183a7b244b1143cea88e",
+      "exports": [
+        {
+          "name": "_THRASH_about@0",
+          "ordinal": 1,
+          "rva": "00001a60",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clearwindow@0",
+          "ordinal": 2,
+          "rva": "000025b0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clip@16",
+          "ordinal": 3,
+          "rva": "000026b0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawline@8",
+          "ordinal": 4,
+          "rva": "00004040",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinemesh@12",
+          "ordinal": 5,
+          "rva": "00004150",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinestrip@8",
+          "ordinal": 6,
+          "rva": "00004290",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpoint@4",
+          "ordinal": 7,
+          "rva": "00004450",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointmesh@12",
+          "ordinal": 9,
+          "rva": "000044e0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointstrip@8",
+          "ordinal": 8,
+          "rva": "00004590",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquad@16",
+          "ordinal": 10,
+          "rva": "00003100",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquadmesh@12",
+          "ordinal": 11,
+          "rva": "00003320",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtri@12",
+          "ordinal": 12,
+          "rva": "00003570",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrifan@8",
+          "ordinal": 13,
+          "rva": "00003e00",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrimesh@12",
+          "ordinal": 14,
+          "rva": "00003700",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtristrip@8",
+          "ordinal": 15,
+          "rva": "000038c0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_flushwindow@0",
+          "ordinal": 16,
+          "rva": "000025d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_idle@0",
+          "ordinal": 17,
+          "rva": "00002610",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_init@0",
+          "ordinal": 18,
+          "rva": "00001d50",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_is@0",
+          "ordinal": 19,
+          "rva": "00001bf0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_lockwindow@0",
+          "ordinal": 20,
+          "rva": "00002ef0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_pageflip@0",
+          "ordinal": 21,
+          "rva": "000025e0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_readrect@20",
+          "ordinal": 22,
+          "rva": "00003020",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_restore@0",
+          "ordinal": 23,
+          "rva": "00001f00",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_selectdisplay@4",
+          "ordinal": 24,
+          "rva": "00001d10",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setstate@8",
+          "ordinal": 25,
+          "rva": "00002790",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_settexture@4",
+          "ordinal": 26,
+          "rva": "000024d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setvideomode@12",
+          "ordinal": 27,
+          "rva": "000021d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_sync@4",
+          "ordinal": 28,
+          "rva": "00002630",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_talloc@20",
+          "ordinal": 29,
+          "rva": "000022b0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_treset@0",
+          "ordinal": 30,
+          "rva": "00002490",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_tupdate@12",
+          "ordinal": 31,
+          "rva": "00002430",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_unlockwindow@4",
+          "ordinal": 32,
+          "rva": "00002fd0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_window@4",
+          "ordinal": 33,
+          "rva": "00002580",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_writerect@20",
+          "ordinal": 34,
+          "rva": "00003090",
+          "forwarder": null
+        }
+      ],
+      "imports": {
+        "user32.dll": [
+          "CharUpperBuffA",
+          "MessageBoxA",
+          "PostMessageA",
+          "SetForegroundWindow"
+        ],
+        "kernel32.dll": [
+          "CloseHandle",
+          "CreateEventA",
+          "CreateFileA",
+          "CreateThread",
+          "DeleteCriticalSection",
+          "DeleteFileA",
+          "EnterCriticalSection",
+          "ExitProcess",
+          "ExitThread",
+          "FlushFileBuffers",
+          "FreeEnvironmentStringsA",
+          "FreeLibrary",
+          "GetACP",
+          "GetCPInfo",
+          "GetCommandLineA",
+          "GetCommandLineW",
+          "GetCurrentDirectoryA",
+          "GetCurrentProcessId",
+          "GetCurrentThreadId",
+          "GetCurrentThread",
+          "GetEnvironmentStrings",
+          "GetFileAttributesA",
+          "GetFileType",
+          "GetFullPathNameA",
+          "GetLastError",
+          "GetModuleFileNameA",
+          "GetModuleFileNameW",
+          "GetModuleHandleA",
+          "GetOEMCP",
+          "GetProcAddress",
+          "GetStdHandle",
+          "GetVersion",
+          "InitializeCriticalSection",
+          "LeaveCriticalSection",
+          "LoadLibraryA",
+          "MoveFileA",
+          "MultiByteToWideChar",
+          "SetConsoleCtrlHandler",
+          "SetEnvironmentVariableA",
+          "SetEnvironmentVariableW",
+          "SetEvent",
+          "SetFilePointer",
+          "SetLastError",
+          "SetStdHandle",
+          "SetUnhandledExceptionFilter",
+          "TlsAlloc",
+          "TlsFree",
+          "TlsGetValue",
+          "TlsSetValue",
+          "UnhandledExceptionFilter",
+          "VirtualAlloc",
+          "VirtualFree",
+          "VirtualQuery",
+          "WaitForSingleObject",
+          "WideCharToMultiByte",
+          "WriteFile"
+        ],
+        "ddraw.dll": [
+          "DirectDrawCreate"
+        ]
+      },
+      "version_strings": [
+        {
+          "CompanyName": "Electronic Arts",
+          "FileDescription": "Voodoo2 3rash Module",
+          "FileVersion": "1998.07.31.1005",
+          "InternalName": "Voodoo2",
+          "LegalCopyright": "Copyright (C) 1998",
+          "OriginalFilename": "voodoo2a.dll",
+          "ProductName": "",
+          "ProductVersion": ""
+        }
+      ],
+      "sections": [
+        {
+          "name": "AUTO",
+          "rva": "00001000",
+          "virtual_size": 0,
+          "raw_size": 52224,
+          "raw_pointer": 1024
+        },
+        {
+          "name": ".idata",
+          "rva": "0000e000",
+          "virtual_size": 0,
+          "raw_size": 2048,
+          "raw_pointer": 53248
+        },
+        {
+          "name": "DGROUP",
+          "rva": "0000f000",
+          "virtual_size": 0,
+          "raw_size": 7680,
+          "raw_pointer": 55296
+        },
+        {
+          "name": ".bss",
+          "rva": "00011000",
+          "virtual_size": 0,
+          "raw_size": 6656,
+          "raw_pointer": 0
+        },
+        {
+          "name": ".edata",
+          "rva": "00013000",
+          "virtual_size": 0,
+          "raw_size": 1536,
+          "raw_pointer": 62976
+        },
+        {
+          "name": ".reloc",
+          "rva": "00014000",
+          "virtual_size": 0,
+          "raw_size": 4096,
+          "raw_pointer": 64512
+        },
+        {
+          "name": ".rsrc",
+          "rva": "00015000",
+          "virtual_size": 0,
+          "raw_size": 1024,
+          "raw_pointer": 68608
+        }
+      ]
+    }
+  },
+  "paired_reference_final_regions": [
+    {
+      "label": "code-including-padding",
+      "bytes": 51712,
+      "reference_sha256": "29ac6008137d6b0588b7def43b24b44fa9fcbaca4c7929fb739ab638bd8272c6",
+      "final_sha256": "e582c7c4a5b369cbc27c611c8810d0f9b00b451e8bfd96047b65d252abbbc6b8",
+      "differing_bytes": 3307,
+      "changed_intervals": [
+        {
+          "start_va": "60001010",
+          "end_va_exclusive": "6000101e",
+          "reference_hex": "b801000000c20c00000000000000",
+          "modern_hex": "8b442404a3cc27016031c040c20c"
+        },
+        {
+          "start_va": "6000101f",
+          "end_va_exclusive": "60001080",
+          "reference_hex": "00535152558b15ecfc006031db85d2750ac705ecfc0060401800606804f000602eff1510e20060a30cfd006085c0750789d85d5a595bc357566810f00060502eff15fce100606820f000608b1d0cfd006053a3101001602eff15fce100606834f0",
+          "modern_hex": "9060a10cfd006085c00f85b00000008b15ecfc006085d2750ac705ecfc00604018006081ec0401000089e589ef680401000057ff35cc270160ff15ece1006001c7807fff5c74034febf7be04f00060e815c8000055ff1510e2006089c381c40401"
+        },
+        {
+          "start_va": "60001081",
+          "end_va_exclusive": "600010c3",
+          "reference_hex": "608b350cfd006056a3141001602eff15fce100606844f000608b3d0cfd006057a3181001602eff15fce100606858f000608b2d0cfd006055a31c1001602eff15fce1",
+          "modern_hex": "0085db75116804f00060ff1510e2006089c385db746abe20110060ad85c0741e5053ff15fce1006085c0740789c2ad8910ebe853ff15b4e1006031c0eb42891d0cfd"
+        },
+        {
+          "start_va": "600010c5",
+          "end_va_exclusive": "600010c9",
+          "reference_hex": "686cf000",
+          "modern_hex": "a1881001"
+        },
+        {
+          "start_va": "600010cb",
+          "end_va_exclusive": "600010cd",
+          "reference_hex": "2010",
+          "modern_hex": "f814"
+        },
+        {
+          "start_va": "600010cf",
+          "end_va_exclusive": "600010d3",
+          "reference_hex": "a10cfd00",
+          "modern_hex": "a3f41401"
+        },
+        {
+          "start_va": "600010d4",
+          "end_va_exclusive": "600010ea",
+          "reference_hex": "502eff15fce10060688cf000608b150cfd006052a324",
+          "modern_hex": "a18c100160a3e8140160a1d027016085c07517ff1510"
+        },
+        {
+          "start_va": "600010ed",
+          "end_va_exclusive": "60001116",
+          "reference_hex": "2eff15fce1006068a4f000608b0d0cfd006051a3281001602eff15fce1006068b8f000608b1d0cfd00",
+          "modern_hex": "6880180060ff15d8100160ff05d027016031c0408944241c61c390a1d027016085c0740cff15141001"
+        },
+        {
+          "start_va": "60001117",
+          "end_va_exclusive": "6000111b",
+          "reference_hex": "53a32c10",
+          "modern_hex": "ff0dd027"
+        },
+        {
+          "start_va": "6000111d",
+          "end_va_exclusive": "60001122",
+          "reference_hex": "2eff15fce1",
+          "modern_hex": "c3909010f0"
+        },
+        {
+          "start_va": "60001124",
+          "end_va_exclusive": "6000113a",
+          "reference_hex": "68ccf000608b350cfd006056a3301001602eff15fce1",
+          "modern_hex": "1010016020f000601410016034f000601810016044f0"
+        },
+        {
+          "start_va": "6000113c",
+          "end_va_exclusive": "60001152",
+          "reference_hex": "68dcf000608b3d0cfd006057a3341001602eff15fce1",
+          "modern_hex": "1c10016058f00060201001606cf00060241001608cf0"
+        },
+        {
+          "start_va": "60001154",
+          "end_va_exclusive": "6000116a",
+          "reference_hex": "68e8f000608b2d0cfd006055a3381001602eff15fce1",
+          "modern_hex": "28100160a4f000602c100160b8f0006030100160ccf0"
+        },
+        {
+          "start_va": "6000116c",
+          "end_va_exclusive": "60001184",
+          "reference_hex": "68fcf00060a33c100160a10cfd0060502eff15fce10060a3",
+          "modern_hex": "34100160dcf0006038100160e8f000603c100160fcf00060"
+        },
+        {
+          "start_va": "60001188",
+          "end_va_exclusive": "6000119f",
+          "reference_hex": "6810f100608b150cfd0060522eff15fce100606824f100",
+          "modern_hex": "10f100604410016024f100604810016040f100604c1001"
+        },
+        {
+          "start_va": "600011a0",
+          "end_va_exclusive": "600011ab",
+          "reference_hex": "8b0d0cfd006051a3441001",
+          "modern_hex": "50f100605010016064f100"
+        },
+        {
+          "start_va": "600011ac",
+          "end_va_exclusive": "600011b7",
+          "reference_hex": "2eff15fce100606840f100",
+          "modern_hex": "5410016074f10060581001"
+        },
+        {
+          "start_va": "600011b8",
+          "end_va_exclusive": "600011c3",
+          "reference_hex": "8b1d0cfd006053a3481001",
+          "modern_hex": "88f100605c100160a0f100"
+        },
+        {
+          "start_va": "600011c4",
+          "end_va_exclusive": "600011cf",
+          "reference_hex": "2eff15fce100606850f100",
+          "modern_hex": "60100160b8f10060641001"
+        },
+        {
+          "start_va": "600011d0",
+          "end_va_exclusive": "600011db",
+          "reference_hex": "8b350cfd006056a34c1001",
+          "modern_hex": "d4f1006068100160e4f100"
+        },
+        {
+          "start_va": "600011dc",
+          "end_va_exclusive": "600011e7",
+          "reference_hex": "2eff15fce100606864f100",
+          "modern_hex": "6c100160f8f10060701001"
+        },
+        {
+          "start_va": "600011e8",
+          "end_va_exclusive": "600011f3",
+          "reference_hex": "8b3d0cfd006057a3501001",
+          "modern_hex": "08f200607410016018f200"
+        },
+        {
+          "start_va": "600011f4",
+          "end_va_exclusive": "600011ff",
+          "reference_hex": "2eff15fce100606874f100",
+          "modern_hex": "7810016028f200607c1001"
+        },
+        {
+          "start_va": "60001200",
+          "end_va_exclusive": "6000120b",
+          "reference_hex": "8b2d0cfd006055a3541001",
+          "modern_hex": "38f200608010016050f200"
+        },
+        {
+          "start_va": "6000120c",
+          "end_va_exclusive": "60001214",
+          "reference_hex": "2eff15fce1006068",
+          "modern_hex": "8410016064f20060"
+        },
+        {
+          "start_va": "60001215",
+          "end_va_exclusive": "60001217",
+          "reference_hex": "f100",
+          "modern_hex": "1001"
+        },
+        {
+          "start_va": "60001218",
+          "end_va_exclusive": "6000124f",
+          "reference_hex": "a358100160a10cfd0060502eff15fce1006068a0f100608b150cfd006052a35c1001602eff15fce1006068b8f100608b0d0cfd006051a3",
+          "modern_hex": "78f200608c10016088f200609010016098f2006094100160b4f2006098100160c8f200609c100160dcf20060a0100160f0f20060a41001"
+        },
+        {
+          "start_va": "60001250",
+          "end_va_exclusive": "600012c3",
+          "reference_hex": "1001602eff15fce1006068d4f100608b1d0cfd006053a3641001602eff15fce1006068e4f100608b350cfd006056a3681001602eff15fce1006068f8f100608b3d0cfd006057a36c1001602eff15fce100606808f200608b2d0cfd006055a3701001602eff15fce10060a3741001606818f200",
+          "modern_hex": "0cf30060a810016024f30060ac10016038f30060b01001604cf30060b41001605cf30060b810016070f30060bc10016088f30060c010016094f30060c4100160a4f30060c8100160bcf30060cc100160d0f30060d0100160dcf30060d4100160ecf30060d810016004f40060dc100160c00c01"
+        },
+        {
+          "start_va": "600012c4",
+          "end_va_exclusive": "600012db",
+          "reference_hex": "a10cfd0060502eff15fce100606828f200608b150cfd00",
+          "modern_hex": "b8270160900c0160bc270160a80c0160c0270160d40c01"
+        },
+        {
+          "start_va": "600012dc",
+          "end_va_exclusive": "600012e7",
+          "reference_hex": "52a3781001602eff15fce1",
+          "modern_hex": "c427016000000000000000"
+        },
+        {
+          "start_va": "600012e9",
+          "end_va_exclusive": "600012ec",
+          "reference_hex": "6838f2",
+          "modern_hex": "89c5bb"
+        },
+        {
+          "start_va": "600012ed",
+          "end_va_exclusive": "6000132f",
+          "reference_hex": "608b0d0cfd006051a37c1001602eff15fce100606850f200608b1d0cfd006053a3801001602eff15fce100606864f200608b350cfd006056a3841001602eff15fce1",
+          "modern_hex": "0000008b154cfd006039d3732789d029d8d1e801d889ee6bf82881c728300160b903000000f3a7746a770489c2ebda89c343ebd58b1d4cfd006083fb640f83ac0000"
+        },
+        {
+          "start_va": "60001330",
+          "end_va_exclusive": "60001334",
+          "reference_hex": "606878f2",
+          "modern_hex": "ff054cfd"
+        },
+        {
+          "start_va": "60001336",
+          "end_va_exclusive": "60001376",
+          "reference_hex": "8b3d0cfd006057a3881001602eff15fce100606888f200608b2d0cfd006055a38c1001602eff15fce100606898f20060a390100160a10cfd0060502eff15fce1",
+          "modern_hex": "39d3744489d929d16bc90a6bf32881c62430016089f783c728fdf3a5b90a00000031c0f3abfc89d929d16bc9026bf30881c6d42c016089f783c708fdf3a5b902"
+        },
+        {
+          "start_va": "60001377",
+          "end_va_exclusive": "600013a6",
+          "reference_hex": "6068b4f200608b150cfd006052a3941001602eff15fce1006068c8f200608b0d0cfd006051a3981001602eff15fce1",
+          "modern_hex": "000031c0f3abfc89d089ee6bf82881c728300160a5a5a56bf80881c7d82c0160a5a56bf82881c728300160c7470c04"
+        },
+        {
+          "start_va": "600013a7",
+          "end_va_exclusive": "60001426",
+          "reference_hex": "6068dcf200608b1d0cfd006053a39c1001602eff15fce1006068f0f200608b350cfd006056a3a01001602eff15fce10060680cf300608b3d0cfd006057a3a41001602eff15fce10060a3a81001606824f300608b2d0cfd0060552eff15fce100606838f30060a3ac100160a10cfd0060502eff15fce10060684cf300608b15",
+          "modern_hex": "0000c7471001000000ad85c0ad75133b47147c03894714483b47187c1c894718eb173b47187c03894718403b47147c09894714eb0431c0eb0331c0408944241c61c390909053515289c353ff15f4e1006085c0750753ff1510e200605a595bc3905152e8ddffffff85c074085250ff15fce100605a59c39090b8000d0160ba"
+        },
+        {
+          "start_va": "60001427",
+          "end_va_exclusive": "60001429",
+          "reference_hex": "fd00",
+          "modern_hex": "0d01"
+        },
+        {
+          "start_va": "6000142a",
+          "end_va_exclusive": "6000143a",
+          "reference_hex": "52a3b01001602eff15fce10060685cf3",
+          "modern_hex": "e8d9ffffff85c07508b8ffffffffc20c"
+        },
+        {
+          "start_va": "6000143b",
+          "end_va_exclusive": "60001590",
+          "reference_hex": "608b0d0cfd006051a3b41001602eff15fce100606870f300608b1d0cfd006053a3b81001602eff15fce100606888f300608b350cfd006056a3bc1001602eff15fce100606894f300608b3d0cfd006057a3c01001602eff15fce1006068a4f300608b2d0cfd006055a3c41001602eff15fce1006068bcf30060a3c8100160a10cfd0060502eff15fce1006068d0f300608b150cfd006052a3cc1001602eff15fce1006068dcf300608b0d0cfd006051a3d01001602eff15fce1006068ecf300608b1d0cfd006053a3d41001602eff15fce100606804f400608b350cfd006056a3d81001602eff15fce10060a3dc100160a188100160a3f8140160a3f4140160a18c100160bb01000000a3e81401605e5f89d85d5a595bc38d80000000008d92000000008bc05351528b150cfd006085d2750c31db891d0cfd00605a595bc3522eff15b4e1006031db891d0cfd00605a595bc38d4000",
+          "modern_hex": "ffe0909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "600018b0",
+          "end_va_exclusive": "600018c3",
+          "reference_hex": "535156575583ec10b9ffffffff8b0485a40001",
+          "modern_hex": "44f400600000010054f400600101000060f400"
+        },
+        {
+          "start_va": "600018c4",
+          "end_va_exclusive": "60001999",
+          "reference_hex": "31db890424538d4424048954241050894c240c894c2410e8babf000089c589c785c0750b89d883c4105d5f5e595bc3e8c82c000089c685c074ea508d44240450e891bf000031c085ed76138d14068b6a0839eb7d0289eb83c01039f872ed89f0e8872d000089d883c4105d5f5e595bc38d80000000008d920000000053515256575583ec0889c6bbfcfd006031d268a10000008954240489542408ff15c4100160ba44f4006089c1e84f2e000085c00f8544010000bd0100000089466c892dc0fc006089e0506a046a11ff15c010016085c00f84b4",
+          "modern_hex": "0200010068f400600301000000000000040100006089e5a1d427016085c00f858d02000068a1000000ff15c410016089c3beb01800608b1685d2741089d8e8b92e000085c0740583c608ebea8b4604a27cfd0060c1e808a2a8fc0060c1e808a2c0fc006083ec0831d289142489542404546a046a11ff15c010016031ff85c07407833c24027c01478d442404506a046a0cff15c010016085c0740d89f9d3642404837c24040075138d442404506a046a0eff15c010016085c07507b801000000eb05b803000000a384fd006083c4086a00ff15b010"
+        },
+        {
+          "start_va": "6000199a",
+          "end_va_exclusive": "600019a3",
+          "reference_hex": "0000833c24020f8caa",
+          "modern_hex": "6089c36a00ff15ac10"
+        },
+        {
+          "start_va": "600019a4",
+          "end_va_exclusive": "600019d2",
+          "reference_hex": "0000bf010000008d442404506a046a0cff15c010016089c285c0740e85ff740a8b4c240401c9894c2404c7467401",
+          "modern_hex": "6029c329c385db7e0683c30f80e3f0891d80fd006068a0000000ff15c410016085c0744489c3ba78f40060e89c2e"
+        },
+        {
+          "start_va": "600019d4",
+          "end_va_exclusive": "600019dc",
+          "reference_hex": "0085d20f857a0100",
+          "modern_hex": "85c07414c705ccfd"
+        },
+        {
+          "start_va": "600019dd",
+          "end_va_exclusive": "600019f1",
+          "reference_hex": "8d442404506a046a0eff15c010016085c00f8573",
+          "modern_hex": "6001000000c705dcfc00600300000089d8baf80c"
+        },
+        {
+          "start_va": "600019f2",
+          "end_va_exclusive": "60001a39",
+          "reference_hex": "00008b6c2404b801000000c1e514890424896c240431ff8b4b040faf0b8b4308c1f8030fafc88b44240489c2c1fa1ff7f98b4b1089431439cf0f84420100008b042489fae875fe",
+          "modern_hex": "60e8782e000085c0741068e80c0160ff15c4270160a3c827016083ec04546a046a0aff15c010016058a324fd0060a330fd006083ec30c745d0ff7fff7fc745d4ff7fff7fc745d8"
+        },
+        {
+          "start_va": "60001a3b",
+          "end_va_exclusive": "60001a41",
+          "reference_hex": "894314ba0100",
+          "modern_hex": "ffffc745dc01"
+        },
+        {
+          "start_va": "60001a43",
+          "end_va_exclusive": "60001a5e",
+          "reference_hex": "8b0424e865feffff8943188b2c244583c328892c2483fd107eac6a",
+          "modern_hex": "00c745e000000000c745e480020000c745e8e0010000c745ec1000"
+        },
+        {
+          "start_va": "60001a5f",
+          "end_va_exclusive": "60001a66",
+          "reference_hex": "ff15b01001606a",
+          "modern_hex": "00c745f0070000"
+        },
+        {
+          "start_va": "60001a67",
+          "end_va_exclusive": "60001aa9",
+          "reference_hex": "89c3ff15ac1001606a0029c3ff15ac10016029c3895e7085db7e088d430f24f089467068a0000000bb05000000ff15c4100160b902000000891dccfd0060890ddcfc",
+          "modern_hex": "c745f400000000c745f800000000c745fc030000008d45e4e864f8ffff6a008d45d050ff15c027016085c0742129c4548d45d050ff15c027016085c074100fba65e0"
+        },
+        {
+          "start_va": "60001aaa",
+          "end_va_exclusive": "60001ab0",
+          "reference_hex": "6085c00f85cb",
+          "modern_hex": "7227813c24ff"
+        },
+        {
+          "start_va": "60001ab3",
+          "end_va_exclusive": "60001ac0",
+          "reference_hex": "83c4085d5f5e5a595bc3ba54f4",
+          "modern_hex": "771e8d65d00fba6de0000f82a4"
+        },
+        {
+          "start_va": "60001ac1",
+          "end_va_exclusive": "60001afd",
+          "reference_hex": "6089c8e8f72c000085c0751cb901000000a3c0fc0060c7466c01000000890da8fc0060e99efeffffba60f4006089c8e8cb2c000085c07517ba010000",
+          "modern_hex": "0000c745d0ffffffffc745d4ffffffffebb189c1c1e90431c031db8b142483fa17760b668b0424668b5c2402eb10668b0495d4fd0060668b1c95d6fd"
+        },
+        {
+          "start_va": "60001afe",
+          "end_va_exclusive": "60001b01",
+          "reference_hex": "c7466c",
+          "modern_hex": "603d80"
+        },
+        {
+          "start_va": "60001b04",
+          "end_va_exclusive": "60001b1a",
+          "reference_hex": "008915c0fc0060e977feffffba68f4006089c8e8a42c",
+          "modern_hex": "7c5481fbe00100007c4c8945e4895de8c745ec100000"
+        },
+        {
+          "start_va": "60001b1b",
+          "end_va_exclusive": "60001b22",
+          "reference_hex": "0085c0751cbd01",
+          "modern_hex": "8955f0c745f400"
+        },
+        {
+          "start_va": "60001b25",
+          "end_va_exclusive": "60001b3a",
+          "reference_hex": "a3c0fc0060c7466c03000000892da8fc0060e94bfe",
+          "modern_hex": "8b44240c8945f88b4424088945fc8d45e4e8adf7ff"
+        },
+        {
+          "start_va": "60001b3b",
+          "end_va_exclusive": "60001b41",
+          "reference_hex": "ff31ffc7466c",
+          "modern_hex": "833dc8270160"
+        },
+        {
+          "start_va": "60001b42",
+          "end_va_exclusive": "60001b49",
+          "reference_hex": "000000893dc0fc",
+          "modern_hex": "7416c745ec2000"
+        },
+        {
+          "start_va": "60001b4a",
+          "end_va_exclusive": "60001b61",
+          "reference_hex": "60e937feffff31ffe954feffff837c2404000f847bfeff",
+          "modern_hex": "00c745f4050000008d45e4e88ef7ffff83c410490f8574"
+        },
+        {
+          "start_va": "60001b62",
+          "end_va_exclusive": "60001b6b",
+          "reference_hex": "e98dfeffffc7467403",
+          "modern_hex": "ffff83c430ff054cfd"
+        },
+        {
+          "start_va": "60001b6c",
+          "end_va_exclusive": "60001bb0",
+          "reference_hex": "0000e981feffff894b14894b18e9d0feffffba78f40060e8e82c000085c00f8423ffffffbf01000000be03000000893dccfd00608935dcfc006083c4085d5f5e5a595bc3",
+          "modern_hex": "6031c040a3d427016089ec61c390909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "60001c25",
+          "end_va_exclusive": "60001c26",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60001c2a",
+          "end_va_exclusive": "60001c2d",
+          "reference_hex": "d4fd00",
+          "modern_hex": "003001"
+        },
+        {
+          "start_va": "60001cd5",
+          "end_va_exclusive": "60001ce7",
+          "reference_hex": "833d1010016000744f833dc0100160007446",
+          "modern_hex": "eb1090909090909090909090909090909090"
+        },
+        {
+          "start_va": "60001d07",
+          "end_va_exclusive": "60001d2d",
+          "reference_hex": "ff15101001606880180060ff15d81001606a04ff15d410016089e8e819fcffffff1514100160",
+          "modern_hex": "6a04ff15d410016089e8e8c2fbffffeb15909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "60001d2e",
+          "end_va_exclusive": "60001d30",
+          "reference_hex": "2ef8",
+          "modern_hex": "d6f3"
+        },
+        {
+          "start_va": "60001d3f",
+          "end_va_exclusive": "60001d40",
+          "reference_hex": "fd",
+          "modern_hex": "95"
+        },
+        {
+          "start_va": "60001d75",
+          "end_va_exclusive": "60001d8f",
+          "reference_hex": "833dc0100160000f849c000000833d10100160000f848f000000",
+          "modern_hex": "eb18909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "60001db2",
+          "end_va_exclusive": "60001dc3",
+          "reference_hex": "ff15101001606880180060ff15d8100160",
+          "modern_hex": "eb0f909090909090909090909090909090"
+        },
+        {
+          "start_va": "60001e17",
+          "end_va_exclusive": "60001e1e",
+          "reference_hex": "ff15141001605b",
+          "modern_hex": "5beb0490909090"
+        },
+        {
+          "start_va": "60001e1f",
+          "end_va_exclusive": "60001e21",
+          "reference_hex": "3df7",
+          "modern_hex": "e5f2"
+        },
+        {
+          "start_va": "60001e47",
+          "end_va_exclusive": "60001e60",
+          "reference_hex": "ff15141001605be80df7ffff89f083c4045ec38d8000000000",
+          "modern_hex": "5be8bbf2ffff89f083c4045ec3909090909090909090909090"
+        },
+        {
+          "start_va": "60001f22",
+          "end_va_exclusive": "60001f33",
+          "reference_hex": "ff15101001606880180060ff15d8100160",
+          "modern_hex": "eb0f909090909090909090909090909090"
+        },
+        {
+          "start_va": "60001f65",
+          "end_va_exclusive": "60001f66",
+          "reference_hex": "d7",
+          "modern_hex": "6f"
+        },
+        {
+          "start_va": "60001f82",
+          "end_va_exclusive": "60001fa0",
+          "reference_hex": "ff15141001605f89d883c4085d5e5bc38d80000000008d92000000008bc0",
+          "modern_hex": "5f89d883c4085d5e5bc39090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "60001fc6",
+          "end_va_exclusive": "60001fca",
+          "reference_hex": "cab80000",
+          "modern_hex": "56f4ffff"
+        },
+        {
+          "start_va": "6000205c",
+          "end_va_exclusive": "6000205e",
+          "reference_hex": "8b15",
+          "modern_hex": "ff35"
+        },
+        {
+          "start_va": "60002062",
+          "end_va_exclusive": "6000206e",
+          "reference_hex": "52ff1520100160ff15141001",
+          "modern_hex": "ff152010016031c0a308fd00"
+        },
+        {
+          "start_va": "6000206f",
+          "end_va_exclusive": "60002071",
+          "reference_hex": "8a15",
+          "modern_hex": "8025"
+        },
+        {
+          "start_va": "60002075",
+          "end_va_exclusive": "6000208f",
+          "reference_hex": "31c980e2fd890d08fd00608815a4fc0060595ac38d8000000000",
+          "modern_hex": "fd595ac390909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "600020d6",
+          "end_va_exclusive": "600020e3",
+          "reference_hex": "ff151410016031d2e87df4ffff",
+          "modern_hex": "e82df0ffff31d2eb0490909090"
+        },
+        {
+          "start_va": "60002117",
+          "end_va_exclusive": "60002132",
+          "reference_hex": "8b5c24288b74242ce82cffffff31ed85db0f84a2000000833d7cfd",
+          "modern_hex": "e834ffffff8b5c24288b74242c85db747e8b4c2424833da8fc0060"
+        },
+        {
+          "start_va": "60002133",
+          "end_va_exclusive": "60002139",
+          "reference_hex": "60010f85a100",
+          "modern_hex": "7410833dfcfc"
+        },
+        {
+          "start_va": "6000213a",
+          "end_va_exclusive": "60002141",
+          "reference_hex": "00833dfcfc0060",
+          "modern_hex": "60007407bfff00"
+        },
+        {
+          "start_va": "60002142",
+          "end_va_exclusive": "60002187",
+          "reference_hex": "0f8494000000bfff00000085f674188b5424248d04950000000001d03b1cc5ecfd00607e0231f6ff15101001606880180060ff15d810016056536a006a006a00578b0db8fc",
+          "modern_hex": "00eb078b3ccdd02c016085f6740d6bc1283b98183001607e0231f68b04cdd42c016085c0751756536a006a006a0057ff35b8fc0060ff151c100160eb165653506a006a006a"
+        },
+        {
+          "start_va": "60002188",
+          "end_va_exclusive": "60002194",
+          "reference_hex": "6051ff151c100160a308fd00",
+          "modern_hex": "57ff35b8fc0060ff15c82701"
+        },
+        {
+          "start_va": "60002195",
+          "end_va_exclusive": "600021b1",
+          "reference_hex": "85c0752e81ffff000000752656536a006a008b4424346a008b0485a4",
+          "modern_hex": "a308fd006085c0751481ffff000000749f31c083c4105d5f5e5bc20c"
+        },
+        {
+          "start_va": "600021b2",
+          "end_va_exclusive": "600021b9",
+          "reference_hex": "0160508b3db8fc",
+          "modern_hex": "6b6c24242881c5"
+        },
+        {
+          "start_va": "600021ba",
+          "end_va_exclusive": "600021bf",
+          "reference_hex": "6057ff151c",
+          "modern_hex": "300160546a"
+        },
+        {
+          "start_va": "600021c0",
+          "end_va_exclusive": "60002200",
+          "reference_hex": "0160a308fd0060833d08fd006000751c89e883c4105d5f5e5bc20c008b7c24248b3cbda4000160e961ffffff89e0506a106a26ff15c010016085c00f845a0100",
+          "modern_hex": "6a26ff15c010016085c0750e8b4500894424088b45048944240c8b442408a3c8fc00608b44240ca3ccfc00608b4508a3d827016083f8207416c705dc27016004"
+        },
+        {
+          "start_va": "60002201",
+          "end_va_exclusive": "60002216",
+          "reference_hex": "8b442408a3c8fc00608b44240ca3ccfc0060b810fd",
+          "modern_hex": "0000c705b0fc0060ffff0000eb14c705dc27016005"
+        },
+        {
+          "start_va": "60002217",
+          "end_va_exclusive": "60002227",
+          "reference_hex": "60e823f7ffffe81e0500006a006a006a",
+          "modern_hex": "0000c705b0fc0060ffffff00e8180500"
+        },
+        {
+          "start_va": "60002229",
+          "end_va_exclusive": "6000222a",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000222d",
+          "end_va_exclusive": "6000222e",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000222f",
+          "end_va_exclusive": "6000224a",
+          "reference_hex": "00ff15a01001606a02ff15d01001606a00e849b600006a016a006a",
+          "modern_hex": "016a006a016a00ff15a01001606a02ff15d01001606a00ff15bc27"
+        },
+        {
+          "start_va": "6000224b",
+          "end_va_exclusive": "6000224f",
+          "reference_hex": "e838b600",
+          "modern_hex": "606a016a"
+        },
+        {
+          "start_va": "60002252",
+          "end_va_exclusive": "60002266",
+          "reference_hex": "6a086a02e82db600006a016a0c6a04e822b60000",
+          "modern_hex": "ff15b82701606a016a086a02ff15b82701606a01"
+        },
+        {
+          "start_va": "60002267",
+          "end_va_exclusive": "60002268",
+          "reference_hex": "01",
+          "modern_hex": "0c"
+        },
+        {
+          "start_va": "60002269",
+          "end_va_exclusive": "6000227c",
+          "reference_hex": "106a30e817b600006a016a186a40e80cb60000",
+          "modern_hex": "04ff15b82701606a016a106a30ff15b8270160"
+        },
+        {
+          "start_va": "6000227d",
+          "end_va_exclusive": "6000227e",
+          "reference_hex": "00",
+          "modern_hex": "01"
+        },
+        {
+          "start_va": "6000227f",
+          "end_va_exclusive": "60002286",
+          "reference_hex": "01e82b0800006a",
+          "modern_hex": "186a40ff15b827"
+        },
+        {
+          "start_va": "60002287",
+          "end_va_exclusive": "600022bc",
+          "reference_hex": "6a02e8220800006a016a07e8190800006a016a06e8100800006a026a0ae8070800006a106a24e8fe0700006a016a0be8f50700006a",
+          "modern_hex": "606a006a01e81f0800006a016a02e8160800006a016a07e80d0800006a016a06e8040800006a026a0ae8fb0700006a106a24e8f207"
+        },
+        {
+          "start_va": "600022bd",
+          "end_va_exclusive": "600022c5",
+          "reference_hex": "6a03e8ec0700006a",
+          "modern_hex": "006a016a0be8e907"
+        },
+        {
+          "start_va": "600022c6",
+          "end_va_exclusive": "600022d7",
+          "reference_hex": "6a0ce8e30700006a016a05e8da0700006a",
+          "modern_hex": "006a006a03e8e00700006a006a0ce8d707"
+        },
+        {
+          "start_va": "600022d8",
+          "end_va_exclusive": "600022e9",
+          "reference_hex": "6a0ee8d10700006aff6a0fe8c80700006a",
+          "modern_hex": "006a016a05e8ce0700006a006a0ee8c507"
+        },
+        {
+          "start_va": "600022ea",
+          "end_va_exclusive": "600022f2",
+          "reference_hex": "6a68e8bf0700006a",
+          "modern_hex": "006aff6a0fe8bc07"
+        },
+        {
+          "start_va": "600022f3",
+          "end_va_exclusive": "600022fb",
+          "reference_hex": "6a0de8b6070000ba",
+          "modern_hex": "006a006a68e8b307"
+        },
+        {
+          "start_va": "600022fd",
+          "end_va_exclusive": "60002305",
+          "reference_hex": "803f526a65e8a907",
+          "modern_hex": "6a006a0de8aa0700"
+        },
+        {
+          "start_va": "60002306",
+          "end_va_exclusive": "60002308",
+          "reference_hex": "006a",
+          "modern_hex": "6800"
+        },
+        {
+          "start_va": "60002309",
+          "end_va_exclusive": "6000231c",
+          "reference_hex": "6a18e8a007000031d2526a0883eb02e8930700",
+          "modern_hex": "803f6a65e89e0700006a006a18e8950700006a"
+        },
+        {
+          "start_va": "6000231d",
+          "end_va_exclusive": "6000233f",
+          "reference_hex": "85db7c60536a6de88707000083fe017c57b802000000506a04e8750700008a25a4fc",
+          "modern_hex": "6a08e88c07000083eb0285db7d0231db536a6de87b07000031c083fe017c05b80200"
+        },
+        {
+          "start_va": "60002340",
+          "end_va_exclusive": "60002347",
+          "reference_hex": "6080cc02bd0100",
+          "modern_hex": "00506a04e86707"
+        },
+        {
+          "start_va": "60002349",
+          "end_va_exclusive": "6000234a",
+          "reference_hex": "88",
+          "modern_hex": "8a"
+        },
+        {
+          "start_va": "6000234f",
+          "end_va_exclusive": "6000235a",
+          "reference_hex": "89e883c4105d5f5e5bc20c",
+          "modern_hex": "80cc028825a4fc0060b801"
+        },
+        {
+          "start_va": "6000235b",
+          "end_va_exclusive": "6000238f",
+          "reference_hex": "8b5424248d04950000000001d08b14c5d4fd00608b04c5d8fd00608915c8fc0060e98dfeffff31dbeb9c31c0ebaa8d8000000000",
+          "modern_hex": "000083c4105d5f5e5bc20c0090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "60002526",
+          "end_va_exclusive": "60002529",
+          "reference_hex": "f40001",
+          "modern_hex": "34fe00"
+        },
+        {
+          "start_va": "60002536",
+          "end_va_exclusive": "60002539",
+          "reference_hex": "f40001",
+          "modern_hex": "34fe00"
+        },
+        {
+          "start_va": "60002688",
+          "end_va_exclusive": "6000268b",
+          "reference_hex": "340101",
+          "modern_hex": "70fe00"
+        },
+        {
+          "start_va": "600026c3",
+          "end_va_exclusive": "600026c6",
+          "reference_hex": "140101",
+          "modern_hex": "44fe00"
+        },
+        {
+          "start_va": "60002860",
+          "end_va_exclusive": "60002862",
+          "reference_hex": "8b15",
+          "modern_hex": "ff35"
+        },
+        {
+          "start_va": "60002866",
+          "end_va_exclusive": "60002880",
+          "reference_hex": "526a008b0dacfc006051ff15301001608d80000000008d542200",
+          "modern_hex": "6a00ff35acfc0060ff1530100160c39090909090909090909090"
+        },
+        {
+          "start_va": "60003068",
+          "end_va_exclusive": "6000306a",
+          "reference_hex": "b8ff",
+          "modern_hex": "6a01"
+        },
+        {
+          "start_va": "6000306b",
+          "end_va_exclusive": "6000306e",
+          "reference_hex": "00006a",
+          "modern_hex": "156810"
+        },
+        {
+          "start_va": "6000306f",
+          "end_va_exclusive": "60003072",
+          "reference_hex": "bb0100",
+          "modern_hex": "60b801"
+        },
+        {
+          "start_va": "60003074",
+          "end_va_exclusive": "6000308a",
+          "reference_hex": "a3b0fc0060ff156810016089d889ec5d5f5e5bc20800",
+          "modern_hex": "0089ec5d5f5e5bc20800909090909090909090909090"
+        },
+        {
+          "start_va": "600030b9",
+          "end_va_exclusive": "600030bb",
+          "reference_hex": "baff",
+          "modern_hex": "6a01"
+        },
+        {
+          "start_va": "600030bc",
+          "end_va_exclusive": "600030bf",
+          "reference_hex": "00006a",
+          "modern_hex": "156810"
+        },
+        {
+          "start_va": "600030c0",
+          "end_va_exclusive": "600030c3",
+          "reference_hex": "bb0100",
+          "modern_hex": "60b801"
+        },
+        {
+          "start_va": "600030c5",
+          "end_va_exclusive": "600030dc",
+          "reference_hex": "8915b0fc0060ff156810016089d889ec5d5f5e5bc20800",
+          "modern_hex": "0089ec5d5f5e5bc2080090909090909090909090909090"
+        },
+        {
+          "start_va": "600032ae",
+          "end_va_exclusive": "600032af",
+          "reference_hex": "3e",
+          "modern_hex": "3d"
+        },
+        {
+          "start_va": "600032ba",
+          "end_va_exclusive": "600032ed",
+          "reference_hex": "c289c385c0742c8b44240489028b442408c7420804000000894204a1c8fc006089420ca1ccfc0060894210a1b4fc0060894214",
+          "modern_hex": "c385c0742d8b44240489038b442408894304a1dc270160894308a1c8fc006089430ca1ccfc0060894310a1b4fc006089431490"
+        },
+        {
+          "start_va": "600033a4",
+          "end_va_exclusive": "600033d2",
+          "reference_hex": "833df0fc00600074086a01ff15f0fc00608b4c24248b5c241c5101db538b5c2428538b742428568b7c2428578b6c",
+          "modern_hex": "a1f0fc006083f80074046a01ffd0ff742424a1d8270160c1e8030faf44242050ff742428ff742428ff742428ff74"
+        },
+        {
+          "start_va": "600033d4",
+          "end_va_exclusive": "600033d6",
+          "reference_hex": "55a1",
+          "modern_hex": "ff35"
+        },
+        {
+          "start_va": "600033da",
+          "end_va_exclusive": "600033e3",
+          "reference_hex": "50ff15841001608b15",
+          "modern_hex": "ff158410016089c3a1"
+        },
+        {
+          "start_va": "600033e7",
+          "end_va_exclusive": "600033f7",
+          "reference_hex": "89c385d2750989d85d5f5e5bc214006a",
+          "modern_hex": "85c074046a00ffd089d85d5f5e5bc214"
+        },
+        {
+          "start_va": "600033f8",
+          "end_va_exclusive": "60003410",
+          "reference_hex": "ff15f0fc006089d85d5f5e5bc214008d80000000008d5200",
+          "modern_hex": "909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "60003414",
+          "end_va_exclusive": "6000346b",
+          "reference_hex": "833df0fc00600074086a01ff15f0fc00608b4c24248b5c241c5101db536a018b5c242c538b74242c566a008b7c2430578b6c243055a1b4fc006050ff15801001608b15f0fc006089c385d2750989d85d5f5e5bc214006a",
+          "modern_hex": "a1f0fc006083f80074046a01ffd0ff742424a1d8270160c1e8030faf442420506a01ff74242cff74242cb800000000833dd8270160207505b80500000050ff742430ff742430ff35b4fc0060ff158010016089c3a1f0fc"
+        },
+        {
+          "start_va": "6000346c",
+          "end_va_exclusive": "6000347d",
+          "reference_hex": "ff15f0fc006089d85d5f5e5bc214008d40",
+          "modern_hex": "6085c074046a00ffd089d85d5f5e5bc214"
+        },
+        {
+          "start_va": "6000347e",
+          "end_va_exclusive": "60003480",
+          "reference_hex": "8bc9",
+          "modern_hex": "9090"
+        },
+        {
+          "start_va": "6000d888",
+          "end_va_exclusive": "6000d8a0",
+          "reference_hex": "ff257ce20060ff2574e20060ff256ce20060ff2578e20060",
+          "modern_hex": "31c0acaa84c075fa4fc39090909090909090909090909090"
+        }
+      ]
+    },
+    {
+      "label": "imports",
+      "bytes": 2048,
+      "reference_sha256": "18d042027f818886a2849d7637f6978b684b1e7ac8488c6aac801d8834ef5946",
+      "final_sha256": "8b6c96e7b0c1c47791bfd0d9572bd4db76ab452a65c43002c4f4bd6fcf835116",
+      "differing_bytes": 1218,
+      "changed_intervals": [
+        {
+          "start_va": "6000e028",
+          "end_va_exclusive": "6000e02a",
+          "reference_hex": "5ce1",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e034",
+          "end_va_exclusive": "6000e036",
+          "reference_hex": "9ce2",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e038",
+          "end_va_exclusive": "6000e03a",
+          "reference_hex": "6ce2",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e03c",
+          "end_va_exclusive": "6000e03e",
+          "reference_hex": "64e1",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e048",
+          "end_va_exclusive": "6000e04a",
+          "reference_hex": "a6e2",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e04c",
+          "end_va_exclusive": "6000e04e",
+          "reference_hex": "74e2",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e064",
+          "end_va_exclusive": "6000e065",
+          "reference_hex": "b2",
+          "modern_hex": "9c"
+        },
+        {
+          "start_va": "6000e068",
+          "end_va_exclusive": "6000e069",
+          "reference_hex": "c4",
+          "modern_hex": "ae"
+        },
+        {
+          "start_va": "6000e06c",
+          "end_va_exclusive": "6000e06d",
+          "reference_hex": "d2",
+          "modern_hex": "bc"
+        },
+        {
+          "start_va": "6000e070",
+          "end_va_exclusive": "6000e071",
+          "reference_hex": "e2",
+          "modern_hex": "cc"
+        },
+        {
+          "start_va": "6000e078",
+          "end_va_exclusive": "6000e079",
+          "reference_hex": "f8",
+          "modern_hex": "e2"
+        },
+        {
+          "start_va": "6000e07c",
+          "end_va_exclusive": "6000e07e",
+          "reference_hex": "06e3",
+          "modern_hex": "f0e2"
+        },
+        {
+          "start_va": "6000e080",
+          "end_va_exclusive": "6000e081",
+          "reference_hex": "16",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000e084",
+          "end_va_exclusive": "6000e085",
+          "reference_hex": "24",
+          "modern_hex": "0e"
+        },
+        {
+          "start_va": "6000e088",
+          "end_va_exclusive": "6000e089",
+          "reference_hex": "34",
+          "modern_hex": "1e"
+        },
+        {
+          "start_va": "6000e08c",
+          "end_va_exclusive": "6000e08d",
+          "reference_hex": "4c",
+          "modern_hex": "36"
+        },
+        {
+          "start_va": "6000e090",
+          "end_va_exclusive": "6000e091",
+          "reference_hex": "5a",
+          "modern_hex": "44"
+        },
+        {
+          "start_va": "6000e094",
+          "end_va_exclusive": "6000e095",
+          "reference_hex": "72",
+          "modern_hex": "5c"
+        },
+        {
+          "start_va": "6000e098",
+          "end_va_exclusive": "6000e099",
+          "reference_hex": "80",
+          "modern_hex": "6a"
+        },
+        {
+          "start_va": "6000e09c",
+          "end_va_exclusive": "6000e09d",
+          "reference_hex": "8e",
+          "modern_hex": "78"
+        },
+        {
+          "start_va": "6000e0a0",
+          "end_va_exclusive": "6000e0a1",
+          "reference_hex": "a2",
+          "modern_hex": "8c"
+        },
+        {
+          "start_va": "6000e0a4",
+          "end_va_exclusive": "6000e0a5",
+          "reference_hex": "bc",
+          "modern_hex": "a6"
+        },
+        {
+          "start_va": "6000e0a8",
+          "end_va_exclusive": "6000e0a9",
+          "reference_hex": "ca",
+          "modern_hex": "b4"
+        },
+        {
+          "start_va": "6000e0ac",
+          "end_va_exclusive": "6000e0ad",
+          "reference_hex": "d4",
+          "modern_hex": "be"
+        },
+        {
+          "start_va": "6000e0b0",
+          "end_va_exclusive": "6000e0b1",
+          "reference_hex": "e0",
+          "modern_hex": "ca"
+        },
+        {
+          "start_va": "6000e0b4",
+          "end_va_exclusive": "6000e0b5",
+          "reference_hex": "f2",
+          "modern_hex": "dc"
+        },
+        {
+          "start_va": "6000e0b8",
+          "end_va_exclusive": "6000e0ba",
+          "reference_hex": "04e4",
+          "modern_hex": "eee3"
+        },
+        {
+          "start_va": "6000e0bc",
+          "end_va_exclusive": "6000e0bd",
+          "reference_hex": "1c",
+          "modern_hex": "06"
+        },
+        {
+          "start_va": "6000e0c0",
+          "end_va_exclusive": "6000e0c1",
+          "reference_hex": "32",
+          "modern_hex": "1c"
+        },
+        {
+          "start_va": "6000e0c4",
+          "end_va_exclusive": "6000e0c5",
+          "reference_hex": "48",
+          "modern_hex": "32"
+        },
+        {
+          "start_va": "6000e0c8",
+          "end_va_exclusive": "6000e0c9",
+          "reference_hex": "5c",
+          "modern_hex": "46"
+        },
+        {
+          "start_va": "6000e0cc",
+          "end_va_exclusive": "6000e0cd",
+          "reference_hex": "74",
+          "modern_hex": "5e"
+        },
+        {
+          "start_va": "6000e0d0",
+          "end_va_exclusive": "6000e0d1",
+          "reference_hex": "8a",
+          "modern_hex": "74"
+        },
+        {
+          "start_va": "6000e0d4",
+          "end_va_exclusive": "6000e0d5",
+          "reference_hex": "98",
+          "modern_hex": "82"
+        },
+        {
+          "start_va": "6000e0d8",
+          "end_va_exclusive": "6000e0d9",
+          "reference_hex": "ac",
+          "modern_hex": "96"
+        },
+        {
+          "start_va": "6000e0dc",
+          "end_va_exclusive": "6000e0dd",
+          "reference_hex": "bc",
+          "modern_hex": "a6"
+        },
+        {
+          "start_va": "6000e0e0",
+          "end_va_exclusive": "6000e0e1",
+          "reference_hex": "d2",
+          "modern_hex": "bc"
+        },
+        {
+          "start_va": "6000e0e4",
+          "end_va_exclusive": "6000e0e5",
+          "reference_hex": "e8",
+          "modern_hex": "d2"
+        },
+        {
+          "start_va": "6000e0e8",
+          "end_va_exclusive": "6000e0e9",
+          "reference_hex": "fc",
+          "modern_hex": "e6"
+        },
+        {
+          "start_va": "6000e0ec",
+          "end_va_exclusive": "6000e0ee",
+          "reference_hex": "08e5",
+          "modern_hex": "f2e4"
+        },
+        {
+          "start_va": "6000e0f0",
+          "end_va_exclusive": "6000e0f1",
+          "reference_hex": "1a",
+          "modern_hex": "04"
+        },
+        {
+          "start_va": "6000e0f4",
+          "end_va_exclusive": "6000e0f5",
+          "reference_hex": "2a",
+          "modern_hex": "14"
+        },
+        {
+          "start_va": "6000e0f8",
+          "end_va_exclusive": "6000e0f9",
+          "reference_hex": "38",
+          "modern_hex": "22"
+        },
+        {
+          "start_va": "6000e0fc",
+          "end_va_exclusive": "6000e0fd",
+          "reference_hex": "54",
+          "modern_hex": "3e"
+        },
+        {
+          "start_va": "6000e100",
+          "end_va_exclusive": "6000e101",
+          "reference_hex": "6c",
+          "modern_hex": "56"
+        },
+        {
+          "start_va": "6000e104",
+          "end_va_exclusive": "6000e105",
+          "reference_hex": "7c",
+          "modern_hex": "66"
+        },
+        {
+          "start_va": "6000e108",
+          "end_va_exclusive": "6000e109",
+          "reference_hex": "88",
+          "modern_hex": "72"
+        },
+        {
+          "start_va": "6000e10c",
+          "end_va_exclusive": "6000e10d",
+          "reference_hex": "9e",
+          "modern_hex": "88"
+        },
+        {
+          "start_va": "6000e110",
+          "end_va_exclusive": "6000e111",
+          "reference_hex": "b6",
+          "modern_hex": "a0"
+        },
+        {
+          "start_va": "6000e114",
+          "end_va_exclusive": "6000e115",
+          "reference_hex": "d0",
+          "modern_hex": "ba"
+        },
+        {
+          "start_va": "6000e118",
+          "end_va_exclusive": "6000e119",
+          "reference_hex": "ea",
+          "modern_hex": "d4"
+        },
+        {
+          "start_va": "6000e11c",
+          "end_va_exclusive": "6000e11d",
+          "reference_hex": "f6",
+          "modern_hex": "e0"
+        },
+        {
+          "start_va": "6000e120",
+          "end_va_exclusive": "6000e122",
+          "reference_hex": "08e6",
+          "modern_hex": "f2e5"
+        },
+        {
+          "start_va": "6000e124",
+          "end_va_exclusive": "6000e125",
+          "reference_hex": "18",
+          "modern_hex": "02"
+        },
+        {
+          "start_va": "6000e128",
+          "end_va_exclusive": "6000e129",
+          "reference_hex": "28",
+          "modern_hex": "12"
+        },
+        {
+          "start_va": "6000e12c",
+          "end_va_exclusive": "6000e12d",
+          "reference_hex": "46",
+          "modern_hex": "30"
+        },
+        {
+          "start_va": "6000e130",
+          "end_va_exclusive": "6000e131",
+          "reference_hex": "52",
+          "modern_hex": "3c"
+        },
+        {
+          "start_va": "6000e134",
+          "end_va_exclusive": "6000e135",
+          "reference_hex": "5c",
+          "modern_hex": "46"
+        },
+        {
+          "start_va": "6000e138",
+          "end_va_exclusive": "6000e139",
+          "reference_hex": "6a",
+          "modern_hex": "54"
+        },
+        {
+          "start_va": "6000e13c",
+          "end_va_exclusive": "6000e13d",
+          "reference_hex": "78",
+          "modern_hex": "62"
+        },
+        {
+          "start_va": "6000e140",
+          "end_va_exclusive": "6000e141",
+          "reference_hex": "94",
+          "modern_hex": "7e"
+        },
+        {
+          "start_va": "6000e144",
+          "end_va_exclusive": "6000e145",
+          "reference_hex": "a4",
+          "modern_hex": "8e"
+        },
+        {
+          "start_va": "6000e148",
+          "end_va_exclusive": "6000e149",
+          "reference_hex": "b2",
+          "modern_hex": "9c"
+        },
+        {
+          "start_va": "6000e14c",
+          "end_va_exclusive": "6000e14d",
+          "reference_hex": "c2",
+          "modern_hex": "ac"
+        },
+        {
+          "start_va": "6000e150",
+          "end_va_exclusive": "6000e151",
+          "reference_hex": "d8",
+          "modern_hex": "c2"
+        },
+        {
+          "start_va": "6000e154",
+          "end_va_exclusive": "6000e155",
+          "reference_hex": "ee",
+          "modern_hex": "d8"
+        },
+        {
+          "start_va": "6000e15c",
+          "end_va_exclusive": "6000e15e",
+          "reference_hex": "fae6",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e164",
+          "end_va_exclusive": "6000e166",
+          "reference_hex": "0ee7",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e168",
+          "end_va_exclusive": "6000e16a",
+          "reference_hex": "26e7",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e16c",
+          "end_va_exclusive": "6000e16e",
+          "reference_hex": "3ee7",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e174",
+          "end_va_exclusive": "6000e175",
+          "reference_hex": "b2",
+          "modern_hex": "9c"
+        },
+        {
+          "start_va": "6000e178",
+          "end_va_exclusive": "6000e179",
+          "reference_hex": "c4",
+          "modern_hex": "ae"
+        },
+        {
+          "start_va": "6000e17c",
+          "end_va_exclusive": "6000e17d",
+          "reference_hex": "d2",
+          "modern_hex": "bc"
+        },
+        {
+          "start_va": "6000e180",
+          "end_va_exclusive": "6000e181",
+          "reference_hex": "e2",
+          "modern_hex": "cc"
+        },
+        {
+          "start_va": "6000e188",
+          "end_va_exclusive": "6000e189",
+          "reference_hex": "f8",
+          "modern_hex": "e2"
+        },
+        {
+          "start_va": "6000e18c",
+          "end_va_exclusive": "6000e18e",
+          "reference_hex": "06e3",
+          "modern_hex": "f0e2"
+        },
+        {
+          "start_va": "6000e190",
+          "end_va_exclusive": "6000e191",
+          "reference_hex": "16",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000e194",
+          "end_va_exclusive": "6000e195",
+          "reference_hex": "24",
+          "modern_hex": "0e"
+        },
+        {
+          "start_va": "6000e198",
+          "end_va_exclusive": "6000e199",
+          "reference_hex": "34",
+          "modern_hex": "1e"
+        },
+        {
+          "start_va": "6000e19c",
+          "end_va_exclusive": "6000e19d",
+          "reference_hex": "4c",
+          "modern_hex": "36"
+        },
+        {
+          "start_va": "6000e1a0",
+          "end_va_exclusive": "6000e1a1",
+          "reference_hex": "5a",
+          "modern_hex": "44"
+        },
+        {
+          "start_va": "6000e1a4",
+          "end_va_exclusive": "6000e1a5",
+          "reference_hex": "72",
+          "modern_hex": "5c"
+        },
+        {
+          "start_va": "6000e1a8",
+          "end_va_exclusive": "6000e1a9",
+          "reference_hex": "80",
+          "modern_hex": "6a"
+        },
+        {
+          "start_va": "6000e1ac",
+          "end_va_exclusive": "6000e1ad",
+          "reference_hex": "8e",
+          "modern_hex": "78"
+        },
+        {
+          "start_va": "6000e1b0",
+          "end_va_exclusive": "6000e1b1",
+          "reference_hex": "a2",
+          "modern_hex": "8c"
+        },
+        {
+          "start_va": "6000e1b4",
+          "end_va_exclusive": "6000e1b5",
+          "reference_hex": "bc",
+          "modern_hex": "a6"
+        },
+        {
+          "start_va": "6000e1b8",
+          "end_va_exclusive": "6000e1b9",
+          "reference_hex": "ca",
+          "modern_hex": "b4"
+        },
+        {
+          "start_va": "6000e1bc",
+          "end_va_exclusive": "6000e1bd",
+          "reference_hex": "d4",
+          "modern_hex": "be"
+        },
+        {
+          "start_va": "6000e1c0",
+          "end_va_exclusive": "6000e1c1",
+          "reference_hex": "e0",
+          "modern_hex": "ca"
+        },
+        {
+          "start_va": "6000e1c4",
+          "end_va_exclusive": "6000e1c5",
+          "reference_hex": "f2",
+          "modern_hex": "dc"
+        },
+        {
+          "start_va": "6000e1c8",
+          "end_va_exclusive": "6000e1ca",
+          "reference_hex": "04e4",
+          "modern_hex": "eee3"
+        },
+        {
+          "start_va": "6000e1cc",
+          "end_va_exclusive": "6000e1cd",
+          "reference_hex": "1c",
+          "modern_hex": "06"
+        },
+        {
+          "start_va": "6000e1d0",
+          "end_va_exclusive": "6000e1d1",
+          "reference_hex": "32",
+          "modern_hex": "1c"
+        },
+        {
+          "start_va": "6000e1d4",
+          "end_va_exclusive": "6000e1d5",
+          "reference_hex": "48",
+          "modern_hex": "32"
+        },
+        {
+          "start_va": "6000e1d8",
+          "end_va_exclusive": "6000e1d9",
+          "reference_hex": "5c",
+          "modern_hex": "46"
+        },
+        {
+          "start_va": "6000e1dc",
+          "end_va_exclusive": "6000e1dd",
+          "reference_hex": "74",
+          "modern_hex": "5e"
+        },
+        {
+          "start_va": "6000e1e0",
+          "end_va_exclusive": "6000e1e1",
+          "reference_hex": "8a",
+          "modern_hex": "74"
+        },
+        {
+          "start_va": "6000e1e4",
+          "end_va_exclusive": "6000e1e5",
+          "reference_hex": "98",
+          "modern_hex": "82"
+        },
+        {
+          "start_va": "6000e1e8",
+          "end_va_exclusive": "6000e1e9",
+          "reference_hex": "ac",
+          "modern_hex": "96"
+        },
+        {
+          "start_va": "6000e1ec",
+          "end_va_exclusive": "6000e1ed",
+          "reference_hex": "bc",
+          "modern_hex": "a6"
+        },
+        {
+          "start_va": "6000e1f0",
+          "end_va_exclusive": "6000e1f1",
+          "reference_hex": "d2",
+          "modern_hex": "bc"
+        },
+        {
+          "start_va": "6000e1f4",
+          "end_va_exclusive": "6000e1f5",
+          "reference_hex": "e8",
+          "modern_hex": "d2"
+        },
+        {
+          "start_va": "6000e1f8",
+          "end_va_exclusive": "6000e1f9",
+          "reference_hex": "fc",
+          "modern_hex": "e6"
+        },
+        {
+          "start_va": "6000e1fc",
+          "end_va_exclusive": "6000e1fe",
+          "reference_hex": "08e5",
+          "modern_hex": "f2e4"
+        },
+        {
+          "start_va": "6000e200",
+          "end_va_exclusive": "6000e201",
+          "reference_hex": "1a",
+          "modern_hex": "04"
+        },
+        {
+          "start_va": "6000e204",
+          "end_va_exclusive": "6000e205",
+          "reference_hex": "2a",
+          "modern_hex": "14"
+        },
+        {
+          "start_va": "6000e208",
+          "end_va_exclusive": "6000e209",
+          "reference_hex": "38",
+          "modern_hex": "22"
+        },
+        {
+          "start_va": "6000e20c",
+          "end_va_exclusive": "6000e20d",
+          "reference_hex": "54",
+          "modern_hex": "3e"
+        },
+        {
+          "start_va": "6000e210",
+          "end_va_exclusive": "6000e211",
+          "reference_hex": "6c",
+          "modern_hex": "56"
+        },
+        {
+          "start_va": "6000e214",
+          "end_va_exclusive": "6000e215",
+          "reference_hex": "7c",
+          "modern_hex": "66"
+        },
+        {
+          "start_va": "6000e218",
+          "end_va_exclusive": "6000e219",
+          "reference_hex": "88",
+          "modern_hex": "72"
+        },
+        {
+          "start_va": "6000e21c",
+          "end_va_exclusive": "6000e21d",
+          "reference_hex": "9e",
+          "modern_hex": "88"
+        },
+        {
+          "start_va": "6000e220",
+          "end_va_exclusive": "6000e221",
+          "reference_hex": "b6",
+          "modern_hex": "a0"
+        },
+        {
+          "start_va": "6000e224",
+          "end_va_exclusive": "6000e225",
+          "reference_hex": "d0",
+          "modern_hex": "ba"
+        },
+        {
+          "start_va": "6000e228",
+          "end_va_exclusive": "6000e229",
+          "reference_hex": "ea",
+          "modern_hex": "d4"
+        },
+        {
+          "start_va": "6000e22c",
+          "end_va_exclusive": "6000e22d",
+          "reference_hex": "f6",
+          "modern_hex": "e0"
+        },
+        {
+          "start_va": "6000e230",
+          "end_va_exclusive": "6000e232",
+          "reference_hex": "08e6",
+          "modern_hex": "f2e5"
+        },
+        {
+          "start_va": "6000e234",
+          "end_va_exclusive": "6000e235",
+          "reference_hex": "18",
+          "modern_hex": "02"
+        },
+        {
+          "start_va": "6000e238",
+          "end_va_exclusive": "6000e239",
+          "reference_hex": "28",
+          "modern_hex": "12"
+        },
+        {
+          "start_va": "6000e23c",
+          "end_va_exclusive": "6000e23d",
+          "reference_hex": "46",
+          "modern_hex": "30"
+        },
+        {
+          "start_va": "6000e240",
+          "end_va_exclusive": "6000e241",
+          "reference_hex": "52",
+          "modern_hex": "3c"
+        },
+        {
+          "start_va": "6000e244",
+          "end_va_exclusive": "6000e245",
+          "reference_hex": "5c",
+          "modern_hex": "46"
+        },
+        {
+          "start_va": "6000e248",
+          "end_va_exclusive": "6000e249",
+          "reference_hex": "6a",
+          "modern_hex": "54"
+        },
+        {
+          "start_va": "6000e24c",
+          "end_va_exclusive": "6000e24d",
+          "reference_hex": "78",
+          "modern_hex": "62"
+        },
+        {
+          "start_va": "6000e250",
+          "end_va_exclusive": "6000e251",
+          "reference_hex": "94",
+          "modern_hex": "7e"
+        },
+        {
+          "start_va": "6000e254",
+          "end_va_exclusive": "6000e255",
+          "reference_hex": "a4",
+          "modern_hex": "8e"
+        },
+        {
+          "start_va": "6000e258",
+          "end_va_exclusive": "6000e259",
+          "reference_hex": "b2",
+          "modern_hex": "9c"
+        },
+        {
+          "start_va": "6000e25c",
+          "end_va_exclusive": "6000e25d",
+          "reference_hex": "c2",
+          "modern_hex": "ac"
+        },
+        {
+          "start_va": "6000e260",
+          "end_va_exclusive": "6000e261",
+          "reference_hex": "d8",
+          "modern_hex": "c2"
+        },
+        {
+          "start_va": "6000e264",
+          "end_va_exclusive": "6000e265",
+          "reference_hex": "ee",
+          "modern_hex": "d8"
+        },
+        {
+          "start_va": "6000e26c",
+          "end_va_exclusive": "6000e26e",
+          "reference_hex": "fae6",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e274",
+          "end_va_exclusive": "6000e276",
+          "reference_hex": "0ee7",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e278",
+          "end_va_exclusive": "6000e27a",
+          "reference_hex": "26e7",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e27c",
+          "end_va_exclusive": "6000e27e",
+          "reference_hex": "3ee7",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000e29c",
+          "end_va_exclusive": "6000e2e1",
+          "reference_hex": "44445241572e646c6c00676c69646533782e646c6c0001004368617255707065724275666641000002004d657373616765426f7841000300506f73744d6573736167654100",
+          "modern_hex": "01004368617255707065724275666641000002004d657373616765426f7841000300506f73744d6573736167654100000400536574466f726567726f756e6457696e646f77"
+        },
+        {
+          "start_va": "6000e2e2",
+          "end_va_exclusive": "6000e2e3",
+          "reference_hex": "04",
+          "modern_hex": "01"
+        },
+        {
+          "start_va": "6000e2e4",
+          "end_va_exclusive": "6000e304",
+          "reference_hex": "536574466f726567726f756e6457696e646f77000100436c6f736548616e646c",
+          "modern_hex": "436c6f736548616e646c650002004372656174654576656e7441000003004372"
+        },
+        {
+          "start_va": "6000e305",
+          "end_va_exclusive": "6000e321",
+          "reference_hex": "0002004372656174654576656e74410000030043726561746546696c",
+          "modern_hex": "61746546696c65410004004372656174655468726561640000050044"
+        },
+        {
+          "start_va": "6000e322",
+          "end_va_exclusive": "6000e326",
+          "reference_hex": "41000400",
+          "modern_hex": "6c657465"
+        },
+        {
+          "start_va": "6000e328",
+          "end_va_exclusive": "6000e32f",
+          "reference_hex": "65617465546872",
+          "modern_hex": "69746963616c53"
+        },
+        {
+          "start_va": "6000e330",
+          "end_va_exclusive": "6000e335",
+          "reference_hex": "6164000005",
+          "modern_hex": "6374696f6e"
+        },
+        {
+          "start_va": "6000e336",
+          "end_va_exclusive": "6000e339",
+          "reference_hex": "44656c",
+          "modern_hex": "060044"
+        },
+        {
+          "start_va": "6000e33a",
+          "end_va_exclusive": "6000e33b",
+          "reference_hex": "74",
+          "modern_hex": "6c"
+        },
+        {
+          "start_va": "6000e33c",
+          "end_va_exclusive": "6000e35b",
+          "reference_hex": "437269746963616c53656374696f6e00060044656c65746546696c65410007",
+          "modern_hex": "746546696c6541000700456e746572437269746963616c53656374696f6e00"
+        },
+        {
+          "start_va": "6000e35c",
+          "end_va_exclusive": "6000e37d",
+          "reference_hex": "456e746572437269746963616c53656374696f6e000008004578697450726f6365",
+          "modern_hex": "08004578697450726f636573730009004578697454687265616400000a00466c75"
+        },
+        {
+          "start_va": "6000e37e",
+          "end_va_exclusive": "6000e388",
+          "reference_hex": "73000900457869745468",
+          "modern_hex": "6846696c654275666665"
+        },
+        {
+          "start_va": "6000e389",
+          "end_va_exclusive": "6000e38d",
+          "reference_hex": "65616400",
+          "modern_hex": "7300000b"
+        },
+        {
+          "start_va": "6000e38e",
+          "end_va_exclusive": "6000e3bd",
+          "reference_hex": "0a00466c75736846696c654275666665727300000b0046726565456e7669726f6e6d656e74537472696e677341000c",
+          "modern_hex": "46726565456e7669726f6e6d656e74537472696e677341000c00467265654c696272617279000d0047657441435000"
+        },
+        {
+          "start_va": "6000e3be",
+          "end_va_exclusive": "6000e3c1",
+          "reference_hex": "467265",
+          "modern_hex": "0e0047"
+        },
+        {
+          "start_va": "6000e3c2",
+          "end_va_exclusive": "6000e3c9",
+          "reference_hex": "4c696272617279",
+          "modern_hex": "744350496e666f"
+        },
+        {
+          "start_va": "6000e3ca",
+          "end_va_exclusive": "6000e3cb",
+          "reference_hex": "0d",
+          "modern_hex": "0f"
+        },
+        {
+          "start_va": "6000e3cf",
+          "end_va_exclusive": "6000e3ea",
+          "reference_hex": "41435000000e004765744350496e666f000f00476574436f6d6d61",
+          "modern_hex": "436f6d6d616e644c696e6541001000476574436f6d6d616e644c69"
+        },
+        {
+          "start_va": "6000e3eb",
+          "end_va_exclusive": "6000e405",
+          "reference_hex": "644c696e6541001000476574436f6d6d616e644c696e65570011",
+          "modern_hex": "655700110047657443757272656e744469726563746f72794100"
+        },
+        {
+          "start_va": "6000e406",
+          "end_va_exclusive": "6000e41b",
+          "reference_hex": "47657443757272656e744469726563746f72794100",
+          "modern_hex": "120047657443757272656e7450726f636573734964"
+        },
+        {
+          "start_va": "6000e41c",
+          "end_va_exclusive": "6000e41d",
+          "reference_hex": "12",
+          "modern_hex": "13"
+        },
+        {
+          "start_va": "6000e428",
+          "end_va_exclusive": "6000e431",
+          "reference_hex": "50726f636573734964",
+          "modern_hex": "546872656164496400"
+        },
+        {
+          "start_va": "6000e432",
+          "end_va_exclusive": "6000e433",
+          "reference_hex": "13",
+          "modern_hex": "14"
+        },
+        {
+          "start_va": "6000e444",
+          "end_va_exclusive": "6000e447",
+          "reference_hex": "496400",
+          "modern_hex": "000015"
+        },
+        {
+          "start_va": "6000e448",
+          "end_va_exclusive": "6000e44f",
+          "reference_hex": "14004765744375",
+          "modern_hex": "476574456e7669"
+        },
+        {
+          "start_va": "6000e450",
+          "end_va_exclusive": "6000e45d",
+          "reference_hex": "72656e74546872656164000015",
+          "modern_hex": "6f6e6d656e74537472696e6773"
+        },
+        {
+          "start_va": "6000e45e",
+          "end_va_exclusive": "6000e464",
+          "reference_hex": "476574456e76",
+          "modern_hex": "160047657446"
+        },
+        {
+          "start_va": "6000e465",
+          "end_va_exclusive": "6000e473",
+          "reference_hex": "726f6e6d656e74537472696e6773",
+          "modern_hex": "6c65417474726962757465734100"
+        },
+        {
+          "start_va": "6000e474",
+          "end_va_exclusive": "6000e475",
+          "reference_hex": "16",
+          "modern_hex": "17"
+        },
+        {
+          "start_va": "6000e47d",
+          "end_va_exclusive": "6000e485",
+          "reference_hex": "4174747269627574",
+          "modern_hex": "5479706500180047"
+        },
+        {
+          "start_va": "6000e486",
+          "end_va_exclusive": "6000e492",
+          "reference_hex": "73410000170047657446696c",
+          "modern_hex": "7446756c6c506174684e616d"
+        },
+        {
+          "start_va": "6000e493",
+          "end_va_exclusive": "6000e497",
+          "reference_hex": "54797065",
+          "modern_hex": "41000019"
+        },
+        {
+          "start_va": "6000e498",
+          "end_va_exclusive": "6000e4ba",
+          "reference_hex": "180047657446756c6c506174684e616d6541000019004765744c6173744572726f72",
+          "modern_hex": "4765744c6173744572726f7200001a004765744d6f64756c6546696c654e616d6541"
+        },
+        {
+          "start_va": "6000e4bc",
+          "end_va_exclusive": "6000e4bd",
+          "reference_hex": "1a",
+          "modern_hex": "1b"
+        },
+        {
+          "start_va": "6000e4cf",
+          "end_va_exclusive": "6000e4d0",
+          "reference_hex": "41",
+          "modern_hex": "57"
+        },
+        {
+          "start_va": "6000e4d2",
+          "end_va_exclusive": "6000e4d3",
+          "reference_hex": "1b",
+          "modern_hex": "1c"
+        },
+        {
+          "start_va": "6000e4dd",
+          "end_va_exclusive": "6000e4e7",
+          "reference_hex": "46696c654e616d655700",
+          "modern_hex": "48616e646c654100001d"
+        },
+        {
+          "start_va": "6000e4e8",
+          "end_va_exclusive": "6000e4ed",
+          "reference_hex": "1c00476574",
+          "modern_hex": "4765744f45"
+        },
+        {
+          "start_va": "6000e4ee",
+          "end_va_exclusive": "6000e4ff",
+          "reference_hex": "6f64756c6548616e646c654100001d0047",
+          "modern_hex": "435000001e0047657450726f6341646472"
+        },
+        {
+          "start_va": "6000e500",
+          "end_va_exclusive": "6000e52d",
+          "reference_hex": "744f454d435000001e0047657450726f634164647265737300001f0047657453746448616e646c650000200047",
+          "modern_hex": "737300001f0047657453746448616e646c650000200047657456657273696f6e00002100496e697469616c697a"
+        },
+        {
+          "start_va": "6000e52e",
+          "end_va_exclusive": "6000e555",
+          "reference_hex": "7456657273696f6e00002100496e697469616c697a65437269746963616c53656374696f6e0022",
+          "modern_hex": "437269746963616c53656374696f6e0022004c65617665437269746963616c53656374696f6e00"
+        },
+        {
+          "start_va": "6000e556",
+          "end_va_exclusive": "6000e55d",
+          "reference_hex": "4c656176654372",
+          "modern_hex": "23004c6f61644c"
+        },
+        {
+          "start_va": "6000e55e",
+          "end_va_exclusive": "6000e587",
+          "reference_hex": "746963616c53656374696f6e000023004c6f61644c69627261727941000024004d6f766546696c6541",
+          "modern_hex": "627261727941000024004d6f766546696c65410025004d756c746942797465546f5769646543686172"
+        },
+        {
+          "start_va": "6000e588",
+          "end_va_exclusive": "6000e589",
+          "reference_hex": "25",
+          "modern_hex": "26"
+        },
+        {
+          "start_va": "6000e58a",
+          "end_va_exclusive": "6000e59f",
+          "reference_hex": "4d756c746942797465546f57696465436861720026",
+          "modern_hex": "536574436f6e736f6c654374726c48616e646c6572"
+        },
+        {
+          "start_va": "6000e5a0",
+          "end_va_exclusive": "6000e5fa",
+          "reference_hex": "536574436f6e736f6c654374726c48616e646c6572002700536574456e7669726f6e6d656e745661726961626c6541002800536574456e7669726f6e6d656e745661726961626c65570029005365744576656e7400002a005365",
+          "modern_hex": "2700536574456e7669726f6e6d656e745661726961626c6541002800536574456e7669726f6e6d656e745661726961626c65570029005365744576656e7400002a0053657446696c65506f696e74657200002b005365744c6173"
+        },
+        {
+          "start_va": "6000e5fb",
+          "end_va_exclusive": "6000e61f",
+          "reference_hex": "46696c65506f696e74657200002b005365744c6173744572726f7200002c005365745374",
+          "modern_hex": "4572726f7200002c0053657453746448616e646c6500002d00536574556e68616e646c65"
+        },
+        {
+          "start_va": "6000e620",
+          "end_va_exclusive": "6000e62c",
+          "reference_hex": "48616e646c6500002d005365",
+          "modern_hex": "457863657074696f6e46696c"
+        },
+        {
+          "start_va": "6000e62d",
+          "end_va_exclusive": "6000e633",
+          "reference_hex": "556e68616e64",
+          "modern_hex": "6572002e0054"
+        },
+        {
+          "start_va": "6000e634",
+          "end_va_exclusive": "6000e643",
+          "reference_hex": "6564457863657074696f6e46696c74",
+          "modern_hex": "73416c6c6f6300002f00546c734672"
+        },
+        {
+          "start_va": "6000e644",
+          "end_va_exclusive": "6000e645",
+          "reference_hex": "72",
+          "modern_hex": "65"
+        },
+        {
+          "start_va": "6000e646",
+          "end_va_exclusive": "6000e647",
+          "reference_hex": "2e",
+          "modern_hex": "30"
+        },
+        {
+          "start_va": "6000e64b",
+          "end_va_exclusive": "6000e653",
+          "reference_hex": "416c6c6f6300002f",
+          "modern_hex": "47657456616c7565"
+        },
+        {
+          "start_va": "6000e654",
+          "end_va_exclusive": "6000e65a",
+          "reference_hex": "546c73467265",
+          "modern_hex": "3100546c7353"
+        },
+        {
+          "start_va": "6000e65b",
+          "end_va_exclusive": "6000e670",
+          "reference_hex": "003000546c7347657456616c7565003100546c7353",
+          "modern_hex": "7456616c7565003200556e68616e646c6564457863"
+        },
+        {
+          "start_va": "6000e671",
+          "end_va_exclusive": "6000e68a",
+          "reference_hex": "7456616c7565003200556e68616e646c656445786365707469",
+          "modern_hex": "7074696f6e46696c746572000033005669727475616c416c6c"
+        },
+        {
+          "start_va": "6000e68b",
+          "end_va_exclusive": "6000e698",
+          "reference_hex": "6e46696c746572000033005669",
+          "modern_hex": "63000034005669727475616c46"
+        },
+        {
+          "start_va": "6000e699",
+          "end_va_exclusive": "6000e6a8",
+          "reference_hex": "7475616c416c6c6f63000034005669",
+          "modern_hex": "65650035005669727475616c517565"
+        },
+        {
+          "start_va": "6000e6a9",
+          "end_va_exclusive": "6000e6c1",
+          "reference_hex": "7475616c467265650035005669727475616c517565727900",
+          "modern_hex": "790000360057616974466f7253696e676c654f626a656374"
+        },
+        {
+          "start_va": "6000e6c2",
+          "end_va_exclusive": "6000e6c3",
+          "reference_hex": "36",
+          "modern_hex": "37"
+        },
+        {
+          "start_va": "6000e6c5",
+          "end_va_exclusive": "6000e6d7",
+          "reference_hex": "616974466f7253696e676c654f626a656374",
+          "modern_hex": "69646543686172546f4d756c746942797465"
+        },
+        {
+          "start_va": "6000e6d8",
+          "end_va_exclusive": "6000e6d9",
+          "reference_hex": "37",
+          "modern_hex": "38"
+        },
+        {
+          "start_va": "6000e6db",
+          "end_va_exclusive": "6000e6ed",
+          "reference_hex": "69646543686172546f4d756c746942797465",
+          "modern_hex": "7269746546696c6500000000000000000000"
+        },
+        {
+          "start_va": "6000e6ee",
+          "end_va_exclusive": "6000e6ef",
+          "reference_hex": "38",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000e6f0",
+          "end_va_exclusive": "6000e6f9",
+          "reference_hex": "577269746546696c65",
+          "modern_hex": "000000000000000000"
+        },
+        {
+          "start_va": "6000e6fa",
+          "end_va_exclusive": "6000e6fb",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000e6fc",
+          "end_va_exclusive": "6000e70c",
+          "reference_hex": "44697265637444726177437265617465",
+          "modern_hex": "00000000000000000000000000000000"
+        },
+        {
+          "start_va": "6000e70e",
+          "end_va_exclusive": "6000e70f",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000e710",
+          "end_va_exclusive": "6000e724",
+          "reference_hex": "5f6772436f6f7264696e61746553706163654034",
+          "modern_hex": "0000000000000000000000000000000000000000"
+        },
+        {
+          "start_va": "6000e726",
+          "end_va_exclusive": "6000e727",
+          "reference_hex": "02",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000e728",
+          "end_va_exclusive": "6000e73d",
+          "reference_hex": "5f677251756572795265736f6c7574696f6e734038",
+          "modern_hex": "000000000000000000000000000000000000000000"
+        },
+        {
+          "start_va": "6000e73e",
+          "end_va_exclusive": "6000e73f",
+          "reference_hex": "03",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000e740",
+          "end_va_exclusive": "6000e752",
+          "reference_hex": "5f67725665727465784c61796f7574403132",
+          "modern_hex": "000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "label": "initialized-data",
+      "bytes": 7680,
+      "reference_sha256": "6ffb0638771f1d92a93cd5ee0d83b64d5233ffce28689a3e927ce9613697d518",
+      "final_sha256": "84a092150ca35b7c65206f90d572e1d3d088afc6a6d3625f7482a53be99d1af8",
+      "differing_bytes": 363,
+      "changed_intervals": [
+        {
+          "start_va": "6000fdd4",
+          "end_va_exclusive": "6000fdd7",
+          "reference_hex": "000000",
+          "modern_hex": "4001c8"
+        },
+        {
+          "start_va": "6000fdd8",
+          "end_va_exclusive": "6000fddb",
+          "reference_hex": "000000",
+          "modern_hex": "4001f0"
+        },
+        {
+          "start_va": "6000fddc",
+          "end_va_exclusive": "6000fdde",
+          "reference_hex": "0000",
+          "modern_hex": "9001"
+        },
+        {
+          "start_va": "6000fddf",
+          "end_va_exclusive": "6000fde0",
+          "reference_hex": "00",
+          "modern_hex": "01"
+        },
+        {
+          "start_va": "6000fde1",
+          "end_va_exclusive": "6000fde7",
+          "reference_hex": "000000000000",
+          "modern_hex": "0280018002c8"
+        },
+        {
+          "start_va": "6000fde8",
+          "end_va_exclusive": "6000fe02",
+          "reference_hex": "000000000000000000000000000000000000000080020000e001",
+          "modern_hex": "80025e01800290018002e00120035802c003d0025803e0010002"
+        },
+        {
+          "start_va": "6000fe03",
+          "end_va_exclusive": "6000fe06",
+          "reference_hex": "001000",
+          "modern_hex": "010004"
+        },
+        {
+          "start_va": "6000fe07",
+          "end_va_exclusive": "6000fe0a",
+          "reference_hex": "000400",
+          "modern_hex": "030005"
+        },
+        {
+          "start_va": "6000fe0b",
+          "end_va_exclusive": "6000fe18",
+          "reference_hex": "00010000000300000002000000",
+          "modern_hex": "044006b00490012c0180046003"
+        },
+        {
+          "start_va": "6000fe19",
+          "end_va_exclusive": "6000fe1e",
+          "reference_hex": "0000000000",
+          "modern_hex": "05c0034006"
+        },
+        {
+          "start_va": "6000fe1f",
+          "end_va_exclusive": "6000fe20",
+          "reference_hex": "00",
+          "modern_hex": "04"
+        },
+        {
+          "start_va": "6000fe21",
+          "end_va_exclusive": "6000fe2e",
+          "reference_hex": "00000020030000580200001000",
+          "modern_hex": "074005400770058007a0050008"
+        },
+        {
+          "start_va": "6000fe2f",
+          "end_va_exclusive": "6000fe32",
+          "reference_hex": "000400",
+          "modern_hex": "060008"
+        },
+        {
+          "start_va": "6000fe33",
+          "end_va_exclusive": "6000fe41",
+          "reference_hex": "0001000000020000000100000000",
+          "modern_hex": "08000102030405060708090a0b01"
+        },
+        {
+          "start_va": "6000fe44",
+          "end_va_exclusive": "6000fe45",
+          "reference_hex": "00",
+          "modern_hex": "04"
+        },
+        {
+          "start_va": "6000fe48",
+          "end_va_exclusive": "6000fe49",
+          "reference_hex": "00",
+          "modern_hex": "10"
+        },
+        {
+          "start_va": "6000fe4d",
+          "end_va_exclusive": "6000fe4e",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fe50",
+          "end_va_exclusive": "6000fe52",
+          "reference_hex": "c800",
+          "modern_hex": "0001"
+        },
+        {
+          "start_va": "6000fe54",
+          "end_va_exclusive": "6000fe56",
+          "reference_hex": "1000",
+          "modern_hex": "0004"
+        },
+        {
+          "start_va": "6000fe58",
+          "end_va_exclusive": "6000fe5a",
+          "reference_hex": "0400",
+          "modern_hex": "0010"
+        },
+        {
+          "start_va": "6000fe5d",
+          "end_va_exclusive": "6000fe5e",
+          "reference_hex": "00",
+          "modern_hex": "40"
+        },
+        {
+          "start_va": "6000fe62",
+          "end_va_exclusive": "6000fe63",
+          "reference_hex": "00",
+          "modern_hex": "01"
+        },
+        {
+          "start_va": "6000fe66",
+          "end_va_exclusive": "6000fe67",
+          "reference_hex": "00",
+          "modern_hex": "04"
+        },
+        {
+          "start_va": "6000fe6a",
+          "end_va_exclusive": "6000fe6b",
+          "reference_hex": "00",
+          "modern_hex": "10"
+        },
+        {
+          "start_va": "6000fe6e",
+          "end_va_exclusive": "6000fe6f",
+          "reference_hex": "00",
+          "modern_hex": "40"
+        },
+        {
+          "start_va": "6000fe70",
+          "end_va_exclusive": "6000fe71",
+          "reference_hex": "00",
+          "modern_hex": "01"
+        },
+        {
+          "start_va": "6000fe74",
+          "end_va_exclusive": "6000fe76",
+          "reference_hex": "4001",
+          "modern_hex": "0200"
+        },
+        {
+          "start_va": "6000fe78",
+          "end_va_exclusive": "6000fe79",
+          "reference_hex": "f0",
+          "modern_hex": "04"
+        },
+        {
+          "start_va": "6000fe7c",
+          "end_va_exclusive": "6000fe7d",
+          "reference_hex": "10",
+          "modern_hex": "08"
+        },
+        {
+          "start_va": "6000fe80",
+          "end_va_exclusive": "6000fe81",
+          "reference_hex": "04",
+          "modern_hex": "10"
+        },
+        {
+          "start_va": "6000fe84",
+          "end_va_exclusive": "6000fe85",
+          "reference_hex": "00",
+          "modern_hex": "20"
+        },
+        {
+          "start_va": "6000fe88",
+          "end_va_exclusive": "6000fe89",
+          "reference_hex": "00",
+          "modern_hex": "40"
+        },
+        {
+          "start_va": "6000fe8c",
+          "end_va_exclusive": "6000fe8d",
+          "reference_hex": "00",
+          "modern_hex": "80"
+        },
+        {
+          "start_va": "6000fe91",
+          "end_va_exclusive": "6000fe92",
+          "reference_hex": "00",
+          "modern_hex": "01"
+        },
+        {
+          "start_va": "6000fe95",
+          "end_va_exclusive": "6000fe96",
+          "reference_hex": "00",
+          "modern_hex": "02"
+        },
+        {
+          "start_va": "6000fe99",
+          "end_va_exclusive": "6000fe9a",
+          "reference_hex": "00",
+          "modern_hex": "04"
+        },
+        {
+          "start_va": "6000fe9c",
+          "end_va_exclusive": "6000fe9e",
+          "reference_hex": "9001",
+          "modern_hex": "0008"
+        },
+        {
+          "start_va": "6000fea1",
+          "end_va_exclusive": "6000fea2",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fea4",
+          "end_va_exclusive": "6000fea5",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fea8",
+          "end_va_exclusive": "6000fea9",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fec5",
+          "end_va_exclusive": "6000fec6",
+          "reference_hex": "02",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fec8",
+          "end_va_exclusive": "6000feca",
+          "reference_hex": "8001",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000fecc",
+          "end_va_exclusive": "6000fecd",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fed0",
+          "end_va_exclusive": "6000fed1",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fed4",
+          "end_va_exclusive": "6000fed5",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fed8",
+          "end_va_exclusive": "6000fed9",
+          "reference_hex": "03",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fedc",
+          "end_va_exclusive": "6000fedd",
+          "reference_hex": "03",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000feec",
+          "end_va_exclusive": "6000feee",
+          "reference_hex": "8002",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000fef0",
+          "end_va_exclusive": "6000fef1",
+          "reference_hex": "c8",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fef4",
+          "end_va_exclusive": "6000fef5",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000fef8",
+          "end_va_exclusive": "6000fef9",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff14",
+          "end_va_exclusive": "6000ff16",
+          "reference_hex": "8002",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000ff18",
+          "end_va_exclusive": "6000ff1a",
+          "reference_hex": "5e01",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000ff1c",
+          "end_va_exclusive": "6000ff1d",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff20",
+          "end_va_exclusive": "6000ff21",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff3c",
+          "end_va_exclusive": "6000ff3e",
+          "reference_hex": "8002",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000ff40",
+          "end_va_exclusive": "6000ff42",
+          "reference_hex": "9001",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000ff44",
+          "end_va_exclusive": "6000ff45",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff48",
+          "end_va_exclusive": "6000ff49",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff4c",
+          "end_va_exclusive": "6000ff4d",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff50",
+          "end_va_exclusive": "6000ff51",
+          "reference_hex": "03",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff54",
+          "end_va_exclusive": "6000ff55",
+          "reference_hex": "03",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff64",
+          "end_va_exclusive": "6000ff66",
+          "reference_hex": "c003",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000ff68",
+          "end_va_exclusive": "6000ff6a",
+          "reference_hex": "d002",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000ff6c",
+          "end_va_exclusive": "6000ff6d",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff70",
+          "end_va_exclusive": "6000ff71",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff74",
+          "end_va_exclusive": "6000ff75",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff78",
+          "end_va_exclusive": "6000ff79",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff8c",
+          "end_va_exclusive": "6000ff8e",
+          "reference_hex": "5803",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000ff90",
+          "end_va_exclusive": "6000ff92",
+          "reference_hex": "e001",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6000ff94",
+          "end_va_exclusive": "6000ff95",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff98",
+          "end_va_exclusive": "6000ff99",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ff9c",
+          "end_va_exclusive": "6000ff9d",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffa0",
+          "end_va_exclusive": "6000ffa1",
+          "reference_hex": "02",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffa4",
+          "end_va_exclusive": "6000ffa5",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffb5",
+          "end_va_exclusive": "6000ffb6",
+          "reference_hex": "02",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffb9",
+          "end_va_exclusive": "6000ffba",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffbc",
+          "end_va_exclusive": "6000ffbd",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffc0",
+          "end_va_exclusive": "6000ffc1",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffdd",
+          "end_va_exclusive": "6000ffde",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffe1",
+          "end_va_exclusive": "6000ffe2",
+          "reference_hex": "03",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffe4",
+          "end_va_exclusive": "6000ffe5",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffe8",
+          "end_va_exclusive": "6000ffe9",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6000ffec",
+          "end_va_exclusive": "6000ffed",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010005",
+          "end_va_exclusive": "60010006",
+          "reference_hex": "05",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010008",
+          "end_va_exclusive": "6001000a",
+          "reference_hex": "b004",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6001000c",
+          "end_va_exclusive": "6001000d",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010010",
+          "end_va_exclusive": "60010011",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6001002c",
+          "end_va_exclusive": "6001002e",
+          "reference_hex": "4006",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "60010030",
+          "end_va_exclusive": "60010032",
+          "reference_hex": "b004",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "60010034",
+          "end_va_exclusive": "60010035",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010038",
+          "end_va_exclusive": "60010039",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010054",
+          "end_va_exclusive": "60010056",
+          "reference_hex": "9001",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "60010058",
+          "end_va_exclusive": "6001005a",
+          "reference_hex": "2c01",
+          "modern_hex": "0000"
+        },
+        {
+          "start_va": "6001005c",
+          "end_va_exclusive": "6001005d",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010060",
+          "end_va_exclusive": "60010061",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100a8",
+          "end_va_exclusive": "600100a9",
+          "reference_hex": "07",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100ac",
+          "end_va_exclusive": "600100ad",
+          "reference_hex": "08",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100b4",
+          "end_va_exclusive": "600100b5",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100b8",
+          "end_va_exclusive": "600100b9",
+          "reference_hex": "02",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100bc",
+          "end_va_exclusive": "600100bd",
+          "reference_hex": "03",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100c0",
+          "end_va_exclusive": "600100c1",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100c4",
+          "end_va_exclusive": "600100c5",
+          "reference_hex": "05",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100c8",
+          "end_va_exclusive": "600100c9",
+          "reference_hex": "06",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100cc",
+          "end_va_exclusive": "600100cd",
+          "reference_hex": "09",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100d0",
+          "end_va_exclusive": "600100d1",
+          "reference_hex": "0a",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100d4",
+          "end_va_exclusive": "600100d5",
+          "reference_hex": "0b",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100d8",
+          "end_va_exclusive": "600100d9",
+          "reference_hex": "0c",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100dc",
+          "end_va_exclusive": "600100dd",
+          "reference_hex": "0d",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100e0",
+          "end_va_exclusive": "600100e1",
+          "reference_hex": "0e",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100e4",
+          "end_va_exclusive": "600100e5",
+          "reference_hex": "0f",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "600100f5",
+          "end_va_exclusive": "600100fd",
+          "reference_hex": "0102030405060708",
+          "modern_hex": "0000000000000000"
+        },
+        {
+          "start_va": "60010110",
+          "end_va_exclusive": "60010111",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010114",
+          "end_va_exclusive": "60010115",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010118",
+          "end_va_exclusive": "60010119",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6001011c",
+          "end_va_exclusive": "6001011d",
+          "reference_hex": "40",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010121",
+          "end_va_exclusive": "60010122",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010125",
+          "end_va_exclusive": "60010126",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010129",
+          "end_va_exclusive": "6001012a",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6001012d",
+          "end_va_exclusive": "6001012e",
+          "reference_hex": "40",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010132",
+          "end_va_exclusive": "60010133",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010134",
+          "end_va_exclusive": "60010135",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010138",
+          "end_va_exclusive": "60010139",
+          "reference_hex": "02",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6001013c",
+          "end_va_exclusive": "6001013d",
+          "reference_hex": "04",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010140",
+          "end_va_exclusive": "60010141",
+          "reference_hex": "08",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010144",
+          "end_va_exclusive": "60010145",
+          "reference_hex": "10",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010148",
+          "end_va_exclusive": "60010149",
+          "reference_hex": "20",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "6001014c",
+          "end_va_exclusive": "6001014d",
+          "reference_hex": "40",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010150",
+          "end_va_exclusive": "60010151",
+          "reference_hex": "80",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010155",
+          "end_va_exclusive": "60010156",
+          "reference_hex": "01",
+          "modern_hex": "00"
+        },
+        {
+          "start_va": "60010c90",
+          "end_va_exclusive": "60010ca4",
+          "reference_hex": "0000000000000000000000000000000000000000",
+          "modern_hex": "5f6772436f6f7264696e61746553706163654034"
+        },
+        {
+          "start_va": "60010ca8",
+          "end_va_exclusive": "60010cbd",
+          "reference_hex": "000000000000000000000000000000000000000000",
+          "modern_hex": "5f677251756572795265736f6c7574696f6e734038"
+        },
+        {
+          "start_va": "60010cc0",
+          "end_va_exclusive": "60010cd2",
+          "reference_hex": "000000000000000000000000000000000000",
+          "modern_hex": "5f67725665727465784c61796f7574403132"
+        },
+        {
+          "start_va": "60010cd4",
+          "end_va_exclusive": "60010ce7",
+          "reference_hex": "00000000000000000000000000000000000000",
+          "modern_hex": "5f677247657450726f63416464726573734034"
+        },
+        {
+          "start_va": "60010ce8",
+          "end_va_exclusive": "60010cf7",
+          "reference_hex": "000000000000000000000000000000",
+          "modern_hex": "677253737457696e4f70656e457874"
+        },
+        {
+          "start_va": "60010cf8",
+          "end_va_exclusive": "60010cfe",
+          "reference_hex": "000000000000",
+          "modern_hex": "504958455854"
+        },
+        {
+          "start_va": "60010d00",
+          "end_va_exclusive": "60010d09",
+          "reference_hex": "000000000000000000",
+          "modern_hex": "44445241572e444c4c"
+        },
+        {
+          "start_va": "60010d0c",
+          "end_va_exclusive": "60010d1c",
+          "reference_hex": "00000000000000000000000000000000",
+          "modern_hex": "44697265637444726177437265617465"
+        }
+      ]
+    }
+  ],
+  "export_comparison": {
+    "reference_final_entries_equal": 34,
+    "reference_local_names_equal": 34,
+    "reference_local_changed_rvas": 34
+  },
+  "limits": [
+    "Author-reference bundle is mixed and not authenticated pristine retail; resource dates/attributions are claims.",
+    "Same export RVA is correspondence evidence, not complete function/ABI or runtime equivalence.",
+    "Previous local-candidate semantic results cannot be transferred to hosted-reference code without new comparison.",
+    "Absent static imports do not establish absence of dynamic library/API use.",
+    "Raw intervals include padding and are not function boundaries or independently explained features.",
+    "No DLL loading, target execution, reconstruction, compilation or saved Ghidra mutation."
+  ]
+}
