@@ -1,0 +1,119 @@
+{
+  "kind": "bounded-static-glide-border-checkpoint",
+  "reviewed_revision": "b2726937f07b90319c65bc95e95e586fe9519dac",
+  "review_type": "primary-agent reproduction and consistency review",
+  "commands": [
+    {
+      "command": "python3 analysis/scripts/audit_glide_reference_identity.py",
+      "exit_code": 0,
+      "output": "PASS:three pinned Glide identities;34 hosted/final export entries match; all34 local RVAs differ; new reference/final region map"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_renderer_budget_field.py",
+      "exit_code": 0,
+      "output": "PASS: five original budget producer witnesses and consumer; conditional arithmetic examples retained"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_viewport_geometry_difference.py",
+      "exit_code": 0,
+      "output": "PASS: both fingerprints, viewport/border instruction captures and file-backed floats"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_border_destination_extent.py",
+      "exit_code": 0,
+      "output": "PASS: both builders write exactly128 unique XY/UV DWORDs in8 quads, maximum byte3ff; local Modern body matches official"
+    }
+  ],
+  "claims": {
+    "glide": "All3307 differing code-section bytes routed to18 clusters; local mechanisms documented with transitive/runtime limits.",
+    "budget": "Five original fixed-budget producers linked to the removed mode gate; ordinary arithmetic examples are derivations.",
+    "border": "Both builders write8 quads within0x400 bytes;64 paired UV DWORDs equal; static x87 counts178/44.",
+    "correction": "Earlier9-quad/0x480 and derived overlap claims withdrawn. Saved Ghidra names/comments remain stale."
+  },
+  "not_run": [
+    "Target instructions, original-instruction probes, renderer/provider APIs and game execution",
+    "Independent semantic review, full repository audit and CI qualification",
+    "Ghidra reopen, annotation mutation or saved-comment readback"
+  ],
+  "limits": [
+    "Passing these scripts checks their assertions and retained captures, not every statement in every report.",
+    "Artifact hashes establish preservation of those exact files, not correctness of saved annotations.",
+    "No whole-game completion, provenance authentication, replay/multiplayer compatibility or rendered equivalence claim."
+  ],
+  "reproduced_artifacts": [
+    {
+      "script": {
+        "path": "analysis/scripts/audit_glide_reference_identity.py",
+        "sha256": "f1cf952279f77b69431610e053dbd030d44efd205290cdef528fa2649dcd817a",
+        "bytes": 41728
+      },
+      "output": {
+        "path": "analysis/evidence/audits/glide-reference-identity.json",
+        "sha256": "f6379061e60940645c43bd9ad71d611efe4ba959214161b891b349bb2ccdb50a",
+        "bytes": 510984
+      }
+    },
+    {
+      "script": {
+        "path": "analysis/scripts/audit_renderer_budget_field.py",
+        "sha256": "d23787a73eef402b7fa4475bfadbe7c29b6a9dd24683b3af3fe7dd578e781d26",
+        "bytes": 3236
+      },
+      "output": {
+        "path": "analysis/evidence/audits/renderer-budget-field.json",
+        "sha256": "ea28881153b1d09586e98c0a618fc8a2de97644b4bdddf4c64c17351c5711dde",
+        "bytes": 7292
+      }
+    },
+    {
+      "script": {
+        "path": "analysis/scripts/audit_viewport_geometry_difference.py",
+        "sha256": "2d012d02d1a362294160004ca4e4935948c03689f72e223237367777b62124a8",
+        "bytes": 5905
+      },
+      "output": {
+        "path": "analysis/evidence/audits/original-modern-viewport-geometry.json",
+        "sha256": "634a3ec8277b0646f9d2630c181085557129869f434e2675645ee398ff9d1f70",
+        "bytes": 17636
+      }
+    },
+    {
+      "script": {
+        "path": "analysis/scripts/audit_border_destination_extent.py",
+        "sha256": "8c118bb574423bd9efc8428ef520b18815bee113e12a21008aba631450d43e7c",
+        "bytes": 8618
+      },
+      "output": {
+        "path": "analysis/evidence/audits/border-destination-extent.json",
+        "sha256": "f6f43511857db2ad0483510c4836d42de3a181ad4bd7edd68d4f1c77c638544a",
+        "bytes": 110523
+      }
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "bytes": 1589248,
+      "matches_recorded_baseline": true
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "bytes": 1698304,
+      "matches_recorded_baseline": true
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "bytes": 1699840,
+      "matches_recorded_baseline": true
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "bytes": 42319872,
+      "matches_recorded_baseline": true
+    }
+  ]
+}
