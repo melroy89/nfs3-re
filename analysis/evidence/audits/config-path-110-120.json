@@ -1,0 +1,340 @@
+{
+  "kind": "historical-config-path-transition",
+  "versions": {
+    "1.1.0": {
+      "url": "https://veg.by/files/nfs3/nfs3_modern_patch_v1.1.0.7z",
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+      "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+      "executable_sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "readme_member": "readme-en.txt",
+      "readme_banner": "Need For Speed III Widescreen Patch v1.1.0 [22/05/2015]",
+      "readme_sha256": "89b5694cd41df16a3cc38a188684500a195145c5a69375335c818c4ed34c5915",
+      "path_source": "0053ec2c",
+      "slot_stride": 128,
+      "default_slots": [
+        {
+          "index": 0,
+          "destination": "007a27b4",
+          "value": ".\\GameData\\Tracks\\"
+        },
+        {
+          "index": 1,
+          "destination": "007a2834",
+          "value": ".\\GameData\\Tracks\\Tutor\\"
+        },
+        {
+          "index": 2,
+          "destination": "007a28b4",
+          "value": ".\\GameData\\CarModel\\"
+        },
+        {
+          "index": 3,
+          "destination": "007a2934",
+          "value": ".\\GameData\\Render\\PC\\"
+        },
+        {
+          "index": 4,
+          "destination": "007a29b4",
+          "value": ".\\GameData\\DashHud\\"
+        },
+        {
+          "index": 5,
+          "destination": "007a2a34",
+          "value": ".\\GameData\\Audio\\PC\\"
+        },
+        {
+          "index": 6,
+          "destination": "007a2ab4",
+          "value": ".\\GameData\\Audio\\SFX\\"
+        },
+        {
+          "index": 7,
+          "destination": "007a2b34",
+          "value": ".\\GameData\\Audio\\Speech\\English\\"
+        },
+        {
+          "index": 8,
+          "destination": "007a2bb4",
+          "value": ".\\GameData\\Audio\\Speech\\German\\"
+        },
+        {
+          "index": 9,
+          "destination": "007a2c34",
+          "value": ".\\GameData\\Audio\\Speech\\French\\"
+        },
+        {
+          "index": 10,
+          "destination": "007a2cb4",
+          "value": ".\\GameData\\Audio\\Speech\\Spanish\\"
+        },
+        {
+          "index": 11,
+          "destination": "007a2d34",
+          "value": ".\\GameData\\Audio\\Speech\\Italian\\"
+        },
+        {
+          "index": 12,
+          "destination": "007a2db4",
+          "value": ".\\FeData\\Art\\"
+        },
+        {
+          "index": 13,
+          "destination": "007a2e34",
+          "value": ".\\FeData\\Text\\"
+        },
+        {
+          "index": 14,
+          "destination": "007a2eb4",
+          "value": ".\\FeData\\Text\\"
+        },
+        {
+          "index": 15,
+          "destination": "007a2f34",
+          "value": ".\\FeData\\Save\\"
+        },
+        {
+          "index": 16,
+          "destination": "007a2fb4",
+          "value": ".\\FeData\\Stats\\"
+        },
+        {
+          "index": 17,
+          "destination": "007a3034",
+          "value": ".\\"
+        },
+        {
+          "index": 18,
+          "destination": "007a30b4",
+          "value": ".\\FeData\\Audio\\"
+        },
+        {
+          "index": 19,
+          "destination": "007a3134",
+          "value": ".\\FeData\\Art\\Slides\\"
+        },
+        {
+          "index": 20,
+          "destination": "007a31b4",
+          "value": ".\\FeData\\Art\\Track\\"
+        },
+        {
+          "index": 21,
+          "destination": "007a3234",
+          "value": ".\\FeData\\Art\\Showcase\\"
+        },
+        {
+          "index": 22,
+          "destination": "007a32b4",
+          "value": ".\\FeData\\Movies\\"
+        },
+        {
+          "index": 23,
+          "destination": "007a3334",
+          "value": ".\\FeData\\Stats\\PRH\\"
+        }
+      ],
+      "config_prefix": "007a3034",
+      "derived_default_config_path": ".\\config.dat",
+      "spans": [
+        {
+          "start": "004a6f0c",
+          "end_exclusive": "004a6f2d",
+          "bytes_sha256": "952c94ef2b469e10bd38d65283b7b6947de8051d60ea9b953e530a728422020d",
+          "assembly": "analysis/captures/modern-differences/config-path-history/1.1.0-004a6f0c.asm",
+          "assembly_sha256": "8a97c9294cab079de85199e0d74c771c58ca6c80820dab90e428653784e7d12a"
+        },
+        {
+          "start": "004a6e36",
+          "end_exclusive": "004a6e3b",
+          "bytes_sha256": "ca71cf454860a2d28289c097dcb0d1f132e3d3218b15ba39f6d30ad8a883470a",
+          "assembly": "analysis/captures/modern-differences/config-path-history/1.1.0-004a6e36.asm",
+          "assembly_sha256": "b54d31e5db7a52c80bba824c502c71de7c733a7f308f9fc7b2688ddb4bc76ca8"
+        },
+        {
+          "start": "00472820",
+          "end_exclusive": "004728d3",
+          "bytes_sha256": "d8caab668726c13df6e906a2153a2c49cf17cfcb9b36e44e993e5eeb931fe835",
+          "assembly": "analysis/captures/modern-differences/config-path-history/1.1.0-00472820.asm",
+          "assembly_sha256": "29dc0b3ce90fd875f7f64f3cbdb384a1a732f181d00c1e90abdf5d7416d91cc7"
+        },
+        {
+          "start": "004729aa",
+          "end_exclusive": "004729c3",
+          "bytes_sha256": "0726f2a49ab0f8daa6fe4f00a3b1fc333898ee82a8365ff14bc77c7565e14691",
+          "assembly": "analysis/captures/modern-differences/config-path-history/1.1.0-004729aa.asm",
+          "assembly_sha256": "ad170e528e8f7c37f152adc6eff3651b9bc6e3d6e18409a35e65ff04dfd64f98"
+        }
+      ]
+    },
+    "1.2.0": {
+      "url": "https://veg.by/files/nfs3/nfs3_modern_patch_v1.2.0.7z",
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z",
+      "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
+      "executable_sha256": "4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003",
+      "readme_member": "readme_en.txt",
+      "readme_banner": "Need For Speed III Modern Patch v1.2.0 [10/06/2015]",
+      "readme_sha256": "eda3e6614a05c135f38d540e9b21ddf4cb675e0f05e8f2a3d9ab5bb716fd9bca",
+      "path_source": "0053ec2c",
+      "slot_stride": 128,
+      "default_slots": [
+        {
+          "index": 0,
+          "destination": "007a27b4",
+          "value": ".\\GameData\\Tracks\\"
+        },
+        {
+          "index": 1,
+          "destination": "007a2834",
+          "value": ".\\GameData\\Tracks\\Tutor\\"
+        },
+        {
+          "index": 2,
+          "destination": "007a28b4",
+          "value": ".\\GameData\\CarModel\\"
+        },
+        {
+          "index": 3,
+          "destination": "007a2934",
+          "value": ".\\GameData\\Render\\PC\\"
+        },
+        {
+          "index": 4,
+          "destination": "007a29b4",
+          "value": ".\\GameData\\DashHud\\"
+        },
+        {
+          "index": 5,
+          "destination": "007a2a34",
+          "value": ".\\GameData\\Audio\\PC\\"
+        },
+        {
+          "index": 6,
+          "destination": "007a2ab4",
+          "value": ".\\GameData\\Audio\\SFX\\"
+        },
+        {
+          "index": 7,
+          "destination": "007a2b34",
+          "value": ".\\GameData\\Audio\\Speech\\"
+        },
+        {
+          "index": 8,
+          "destination": "007a2bb4",
+          "value": ".\\GameData\\Audio\\Speech\\"
+        },
+        {
+          "index": 9,
+          "destination": "007a2c34",
+          "value": ".\\FeData\\%s"
+        },
+        {
+          "index": 10,
+          "destination": "007a2cb4",
+          "value": ".\\FeData\\Plac\\car.viv"
+        },
+        {
+          "index": 11,
+          "destination": "007a2d34",
+          "value": ".\\FeData\\Menus\\"
+        },
+        {
+          "index": 12,
+          "destination": "007a2db4",
+          "value": ".\\FeData\\Art\\"
+        },
+        {
+          "index": 13,
+          "destination": "007a2e34",
+          "value": ".\\FeData\\Text\\"
+        },
+        {
+          "index": 14,
+          "destination": "007a2eb4",
+          "value": ".\\FeData\\Text\\"
+        },
+        {
+          "index": 15,
+          "destination": "007a2f34",
+          "value": ".\\FeData\\Save\\"
+        },
+        {
+          "index": 16,
+          "destination": "007a2fb4",
+          "value": ".\\FeData\\Stats\\"
+        },
+        {
+          "index": 17,
+          "destination": "007a3034",
+          "value": ".\\FeData\\Config\\"
+        },
+        {
+          "index": 18,
+          "destination": "007a30b4",
+          "value": ".\\FeData\\Audio\\"
+        },
+        {
+          "index": 19,
+          "destination": "007a3134",
+          "value": ".\\FeData\\Art\\Slides\\"
+        },
+        {
+          "index": 20,
+          "destination": "007a31b4",
+          "value": ".\\FeData\\Art\\Track\\"
+        },
+        {
+          "index": 21,
+          "destination": "007a3234",
+          "value": ".\\FeData\\Art\\Showcase\\"
+        },
+        {
+          "index": 22,
+          "destination": "007a32b4",
+          "value": ".\\FeData\\Movies\\"
+        },
+        {
+          "index": 23,
+          "destination": "007a3334",
+          "value": ".\\FeData\\Stats\\PRH\\"
+        }
+      ],
+      "config_prefix": "007a3034",
+      "derived_default_config_path": ".\\FeData\\Config\\config.dat",
+      "spans": [
+        {
+          "start": "004a6f04",
+          "end_exclusive": "004a6f6e",
+          "bytes_sha256": "3618c365f0b35da34446e0ba61ae5bc363f9bbc48b79df227516630c57edddbf",
+          "assembly": "analysis/captures/modern-differences/config-path-history/1.2.0-004a6f04.asm",
+          "assembly_sha256": "e45d1b1e5843a59bba4ebd4e703f0e11038f384562e28df76b02bc07907122bb"
+        },
+        {
+          "start": "004a6e36",
+          "end_exclusive": "004a6e3b",
+          "bytes_sha256": "58407080960e75220976636fd34a17f74fd4b5ecb17b5cd0f8d920e764fcea80",
+          "assembly": "analysis/captures/modern-differences/config-path-history/1.2.0-004a6e36.asm",
+          "assembly_sha256": "861828315a48cdf4ec3b9d9998509abe996f0cfb9223c57be1f823b615dbb0a4"
+        },
+        {
+          "start": "00472820",
+          "end_exclusive": "004728d3",
+          "bytes_sha256": "d8caab668726c13df6e906a2153a2c49cf17cfcb9b36e44e993e5eeb931fe835",
+          "assembly": "analysis/captures/modern-differences/config-path-history/1.2.0-00472820.asm",
+          "assembly_sha256": "160c6c6883dd70c33113e2f9d08c85badf836646e5651ded3fa06086cd810b39"
+        },
+        {
+          "start": "004729aa",
+          "end_exclusive": "004729c3",
+          "bytes_sha256": "0726f2a49ab0f8daa6fe4f00a3b1fc333898ee82a8365ff14bc77c7565e14691",
+          "assembly": "analysis/captures/modern-differences/config-path-history/1.2.0-004729aa.asm",
+          "assembly_sha256": "0cfb7b46372fcb3be72ec7a6d3caa4d3073affdccf9ef3763a71a8feecde9d7d"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Author-hosted artifacts and internal banners, not signature verification.",
+    "Default initialization and formatting dataflow only; later writers/CWD and actual I/O unobserved.",
+    "v1.0.0 introduction and supplied-original prefix producer not established."
+  ]
+}

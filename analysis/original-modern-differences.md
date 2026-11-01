@@ -496,7 +496,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **146 Claimed, 43 Static, 99 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **144 Claimed, 44 Static, 100 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -746,7 +746,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP120-010 | Added an ini setting DirectDrawLagFix which fixes performance problems of DirectX 5/6/7 in Windows 8+ via enabling “DXPrimaryEmulation -DisableMaxWindowedMode” compatibility mode (enabled by default). | Claimed |
 | MP120-011 | Added an ini setting KeyboardHook which allows to disable keyboard hook that has been used by the game for blocking Win key and keystrokes like Ctrl+Esc, but this code doesn't work in Windows 7+ so it is better to disable it (disabled by default). | Claimed |
 | MP120-012 | Slightly better multilanguage support. When language directory is absent in the ./GameData/Audio/Speech/ directory the game doesn't crash and uses sound files from the English subdirectory. Also Swedish language can use own speech sounds (original game uses English sounds for it) now. The name of the language directory have to be Swedish, and the one-letter code in file names is W. | Claimed |
-| MP120-013 | config.dat was moved to its original destination (./FeData/Config/) for preserving settings of original NFS3 when updating. However, graphics settings are reset to their defaults in this case (because format is changed a little). | Claimed |
+| MP120-013 | config.dat was moved to its original destination (./FeData/Config/) for preserving settings of original NFS3 when updating. However, graphics settings are reset to their defaults in this case (because format is changed a little). | Static |
 | MP120-014 | Based on the 3dsetup/d3da.dll from the NFS4, supports fog effect in the NFS3. | Claimed |
 | MP120-015 | Fixed a bug according to non-working fog effect on modern systems. (Thanks Dege for debugging this driver and much valuable information about Direct 3D.) | Claimed |
 | MP120-016 | Fixed a crash when system supports too many texture formats. (Also thanks Dege.) | Claimed |
@@ -829,7 +829,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-041 | Smart installation checking (it checks existance of some critical game data directories). | Claimed |
 | MP100-042 | Some error message boxes were fixed a little. All errors have “error” icon, all warnings have “warning” icon, all fatal errors are displayed with one button “Ok”, not “Ok” and “Cancel” where both buttons do same thing. | Claimed |
 | MP100-043 | Information about all unworked debug arguments were hidden in command line help dialog (you can run it with -h argument). | Static |
-| MP100-044 | Game's config was moved from ./fedata/config/config.dat to root directory (you can delete ./fedata/config/). | Claimed |
+| MP100-044 | Game's config was moved from ./fedata/config/config.dat to root directory (you can delete ./fedata/config/). | Partial |
 | MP100-045 | The game doesn't removes config.dat, player1.spc, and player2.spc files when exe file is updated. | Static |
 | MP100-046 | The game doesn't resets video settings when video driver is changed. | Claimed |
 | MP100-047 | “About” slide was added to Credits. | Partial |

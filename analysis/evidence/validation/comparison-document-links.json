@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "7eed75b98d8037790ebd7fee08523d4290f5adc50737dbf0d63eb563ce6d3963",
-      "relative_links": 59
+      "sha256": "8535fde6d52b5e7cf1e0cea6302c083e8c1a8129dfc01d6bb475e74c16cc85fe",
+      "relative_links": 60
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -63,8 +63,8 @@
     },
     {
       "path": "analysis/original-modern-config-loading.md",
-      "sha256": "ade3ba847eec247de4a3b3ddd2865dd578a47b8a84abe2e94d1da97ed6b9aa06",
-      "relative_links": 9
+      "sha256": "672ed01da67bc702b52f0e9218bdaf109128dd49368467d4417787551361612a",
+      "relative_links": 10
     },
     {
       "path": "analysis/original-modern-configuration.md",
@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "301512035ad95972c9ff8e2b22ee10ea1069cc78ba7d9d803bfd241e254c8e4d",
+      "sha256": "9fe55a7355a3619d1e2f9a01d0eb74a210fdb696b4d9cf52cf8cdfe3f82c598d",
       "relative_links": 148
     },
     {
@@ -478,8 +478,8 @@
     },
     {
       "path": "analysis/original-modern-startup-paths.md",
-      "sha256": "788801a03b2a19ed519819bbe9be193c765c4fb54213e7cd71f675ea0b89c6ca",
-      "relative_links": 5
+      "sha256": "1fdb057be947fad023c4fce480774c8f92614ad48fca3de9f42e7aefdcaff94e",
+      "relative_links": 8
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
@@ -583,8 +583,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "a3f469288e316bab6aed58abd1d00b26ef18223e75d72ba6e21d2ef72563cecd",
-      "relative_links": 154
+      "sha256": "24e871d3d5dda5ee48e67d0a99c1497f068b6e18dc916087f3a576dc664b1635",
+      "relative_links": 156
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -593,7 +593,7 @@
     }
   ],
   "file_count": 118,
-  "relative_link_count": 1847,
+  "relative_link_count": 1854,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
