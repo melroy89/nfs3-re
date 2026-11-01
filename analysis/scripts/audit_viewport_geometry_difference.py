@@ -8,7 +8,8 @@ from audit_thrash_loader_difference import ROOT, SPECS
 
 SPANS = {
     'original': [(0x4be570,0x4be5d1),(0x4be5e0,0x4be8d2),
-        (0x4beb00,0x4beb15),(0x4beb40,0x4beb56),(0x47f650,0x47fbdc)],
+        (0x4beb00,0x4beb15),(0x4beb40,0x4beb56),(0x47f650,0x47fbdc),
+        (0x4bebb0,0x4bebd1),(0x4bebe0,0x4becca),(0x4bf0b1,0x4bf0d7)],
     'official_modern': [(0x4be570,0x4be5d1),(0x4be5e0,0x4be85a),
         (0x4be89c,0x4be8b5),(0x47f650,0x47f9bd),
         (0x4be85c,0x4be89b),(0x4be84c,0x4be85a),(0x4bea13,0x4bea2f),
@@ -41,6 +42,13 @@ def main():
             for site in (0x4be851, 0x4bea2a):
                 call = pe.get_data(site-0x400000, 5)
                 assert call[0] == 0xe8 and site+5+int.from_bytes(call[1:], 'little', signed=True) == 0x4be85c
+        else:
+            assert pe.get_data(0xbebbe,6).hex() == '891d68da7c00'
+            assert pe.get_data(0xbebc4,6).hex() == '890d6cda7c00'
+            assert pe.get_data(0xbf0b1,12).hex() == '8b0de4da7c008b1de0da7c00'
+            assert pe.get_data(0xbf0bd,5).hex() == 'bfc0da7c00'
+            assert pe.get_data(0xbf0c6,5).hex() == 'be60da7c00'
+            assert pe.get_data(0xbf0d0,7).hex() == 'b908000000f3a5'
         floats={}
         for va in (0x538ad8,0x53a9d4,0x53a9e0,0x53b4f8,0x53b4fc):
             raw=pe.get_data(va-0x400000,4)
@@ -65,6 +73,17 @@ def main():
     result['derived_covering_centre_examples']={'method':'Mathematical evaluation of retained initializer/setter formulas; no target instructions executed.',
         'scope':'Non-two-player, positive fitting dimensions, initial rectangle state; not later resize/camera state.',
         'cases':examples}
+    result['border_dimension_source_linkage']={
+        'original_path':'Mode publication loads width/height from007cdae0/e4 intoEBX/ECX;004bebb0 stores them at007cda68/6c; caller copies8 DWORDs007cda60->007cdac0. Offsets8/c become width007cdac8 and height007cdacc.',
+        'dependency':'004bebe0 preserves ESI/EDI locally around its external calls; no intervening external/alias mutation of source dimensions is assumed.',
+        'original_thickness_input':'Signed width007cdac8 multiplied by4 and binary32 constant0053b4fc, then FISTP.',
+        'final_thickness_input':'Signed reference width007a2748 multiplied by2 and same constant, then FISTP to0055fed0.',
+        'unrounded_real_coefficient_ratio':'reference_width / (2*mode_width), before x87 intermediate rounding and FISTP',
+        'examples_not_probes':[{'width':w,'height':h,'reference_width':r,'unrounded_ratio':r/(2*w)}
+                              for w,h,r in [(640,480,640),(1280,720,960),(1920,1080,1440)]],
+        'limits':['Publication-path linkage, not exhaustive writer/lifetime coverage.',
+                  'Does not establish visible thickness ratio, rounding-mode equality, full quad/UV mapping or actual modes.',
+                  'Stored1/640 approximation is slightly above exact1/640; integer half-way cases must not use ideal-real arithmetic.']}
     assert [r['derived_centre_y'] for r in examples if r['width']==1920]==[540,510,540,450,540,420]
     output=ROOT/'analysis/evidence/audits/original-modern-viewport-geometry.json'
     output.write_text(json.dumps(result,indent=2)+'\n')

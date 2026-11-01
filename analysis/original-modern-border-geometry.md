@@ -26,6 +26,16 @@ Modern adds inset wrapper `0047f98c`: it reads `0055fed0`, adds it to left/top, 
 
 One visible caller changes its target: original `0047fdc2` calls `0047f650` directly, while Modern `0047fdc2` calls `0047f98c`. The other five listed caller sites still call `0047f650` directly in both builds. This proves a specific added pre-inset at that caller path, but not its final visual position, clipping outcome, or purpose.
 
+## Original dimension source is mode width on the publication path
+
+The expanded viewport audit now retains original publication `004bf0b1..004bf0d7`, rectangle setter `004bebb0..004bebd1` and complete subordinate setup `004bebe0..004becca`. The [mode-selection research](original-modern-mode-selection.md) already establishes width/height at snapshot007cdae0/e4. Publication loads those into EBX/ECX; the setter writes them to007cda68/6c. The subsequent eight-DWORD copy from007cda60 to007cdac0 places them at **007cdac8/cc**. Subordinate setup saves/restores ESI/EDI around its calls; the linkage assumes those external calls do not mutate the source dimensions through aliases.
+
+Thus the original border's FILD operand007cdac8 is **mode width on this traced path**, rather than an unidentified dimension. Modern uses the centred4:3 reference width007a2748, whose producer is mapped in the [viewport chapter](original-modern-viewport-geometry.md#2-new-centred-43-reference-rectangle). This is a source/lifecycle link, not an exhaustive inventory of dimension writers.
+
+Let W be mode width, R reference width and C the stored binary32 approximation to1/640. Original's preconversion expression uses4*W*C; Modern's uses2*R*C. Ignoring intermediate rounding, their coefficient ratio is **R/(2*W)**:0.5 at640×480 with R640, and0.375 at1280×720/R960 or1920×1080/R1440. These are arithmetic examples, not rendered-size measurements. The wrapper's extra inset, subsequent geometry and rounding still affect visible results.
+
+In particular C is slightly greater than exact1/640. FISTP uses the ambient rounding mode, and intermediate x87 precision matters near integer half-way cases. Neither the ratio nor replacing C with exact1/640 proves an integer thickness or pixel ratio. Preserve both version-specific source operands and their conversion schedules. No target instructions or new probes were executed.
+
 ## Do not transfer the Modern global name to the original
 
 Modern's direct references to `0055fed0` are reads in the builder and wrapper, the write in `0047f9a4`, and a separate read at `004be759`. In the original executable, the inspected border builder does not reference `0055fed0`; its stores at `004b5aa4`, `004b5bd5`, `004b5c68`, `004b5d57`, and `004b5df6` and read at `004bee1f` now have a [renderer-budget producer/consumer linkage](original-modern-display-modes.md#original-budget-is-a-renderer-selection-constant). Accordingly, `g_nTexturedRectangleBorderThickness` is a Modern-side descriptive name only; it is not used to characterize the original DWORD or infer that the original budget measured VRAM.
@@ -36,6 +46,6 @@ Run `python3 analysis/scripts/audit_viewport_geometry_difference.py` (Python `pe
 
 ## Limits
 
-- Static arithmetic and call-target changes are established from the two executable fingerprints above. Original source `007cdac8`, complete writer/lifetime coverage for original budget `0055fed0`, atlas consumers and live values remain unresolved here; the budget's selected producers/consumer are linked above, and Modern source `007a2748` is mapped in the viewport chapter.
+- Static arithmetic and call-target changes are established from the two executable fingerprints above. The original mode-width publication path is now mapped; exhaustive dimension and original-budget writer/lifetime coverage, atlas consumers and live values remain unresolved. The budget's selected producers/consumer are linked above, and Modern source `007a2748` is mapped in the viewport chapter.
 - This report does not infer a final border-size ratio, viewport policy, map-scale policy, or visible rendering change from the constants alone. It does not identify all changed UV mappings or texture assets.
 - No game, graphics backend, probe, or test was run; no executable or Ghidra project was modified.

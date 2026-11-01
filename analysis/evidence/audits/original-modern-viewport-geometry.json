@@ -42,6 +42,27 @@
           "assembly_sha256": "591c4b39c59b73c9164968075adbd6087e959f5654e21c23fea2528b88e7e69d"
         },
         {
+          "start": "004bebb0",
+          "end": "004bebd1",
+          "bytes_sha256": "e1aa906e0ae1f7855f5a8d33a5d41a9896075a8582801f9c5de945318212a179",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-004bebb0.asm",
+          "assembly_sha256": "4fd92fdd43ea1c624ccb349e520259556a72c66f73af6c116149fade79ab7266"
+        },
+        {
+          "start": "004bebe0",
+          "end": "004becca",
+          "bytes_sha256": "75d7bdb0152241874bdf7b5bc685e052295a2fe011bdae6a08f63695f8d676c8",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-004bebe0.asm",
+          "assembly_sha256": "2d0f350d5a99329d9023c592da9bafce98c704430939cbe87824311df273b5b0"
+        },
+        {
+          "start": "004bf0b1",
+          "end": "004bf0d7",
+          "bytes_sha256": "0fb8e63104b9ac07f4f429058dafeaf2c67ebf5870ddd1d01b623c6d69d4ab75",
+          "assembly": "analysis/captures/modern-differences/viewport-geometry/original-004bf0b1.asm",
+          "assembly_sha256": "19668c57542b7790f6ed2ee930bba5c63e816022ddd28aa1142ee0dfcc130053"
+        },
+        {
           "start": "0048106d",
           "end": "00481072",
           "bytes_sha256": "7ef3c35ba9866d6260f1ca71b6370dd0e2d3f0e7eab6b7e7b6e380427072e0b2",
@@ -365,6 +386,38 @@
         "covering_height": 1440,
         "derived_centre_y": 420.0
       }
+    ]
+  },
+  "border_dimension_source_linkage": {
+    "original_path": "Mode publication loads width/height from007cdae0/e4 intoEBX/ECX;004bebb0 stores them at007cda68/6c; caller copies8 DWORDs007cda60->007cdac0. Offsets8/c become width007cdac8 and height007cdacc.",
+    "dependency": "004bebe0 preserves ESI/EDI locally around its external calls; no intervening external/alias mutation of source dimensions is assumed.",
+    "original_thickness_input": "Signed width007cdac8 multiplied by4 and binary32 constant0053b4fc, then FISTP.",
+    "final_thickness_input": "Signed reference width007a2748 multiplied by2 and same constant, then FISTP to0055fed0.",
+    "unrounded_real_coefficient_ratio": "reference_width / (2*mode_width), before x87 intermediate rounding and FISTP",
+    "examples_not_probes": [
+      {
+        "width": 640,
+        "height": 480,
+        "reference_width": 640,
+        "unrounded_ratio": 0.5
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "reference_width": 960,
+        "unrounded_ratio": 0.375
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "reference_width": 1440,
+        "unrounded_ratio": 0.375
+      }
+    ],
+    "limits": [
+      "Publication-path linkage, not exhaustive writer/lifetime coverage.",
+      "Does not establish visible thickness ratio, rounding-mode equality, full quad/UV mapping or actual modes.",
+      "Stored1/640 approximation is slightly above exact1/640; integer half-way cases must not use ideal-real arithmetic."
     ]
   }
 }
