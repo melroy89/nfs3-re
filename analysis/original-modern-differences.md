@@ -643,7 +643,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **93 Claimed, 52 Static, 143 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **92 Claimed, 52 Static, 144 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -745,7 +745,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-014 | Smooth edges of the cop/player points on the map. | Claimed |
 | MP150-015 | Gear numbers are right-aligned now, like the digital speedometer. | Partial |
 | MP150-016 | Gear numbers use smaller font if there is not enough space for them. | Partial |
-| MP150-017 | Opponents List and Speeds List have standard bevel when SoftTri is used (as it was for other renderers). | Claimed |
+| MP150-017 | Opponents List and Speeds List have standard bevel when SoftTri is used (as it was for other renderers). | Partial |
 | MP150-018 | An ability to enter digits from the Num Pad when Num Lock is on. | Partial |
 | MP150-019 | Commas are treated as dots when parsing an IP address. | Static |
 | MP150-020 | HUD preview in the settings now arranged well. | Claimed |
@@ -1091,3 +1091,7 @@ The [text-scale follow-up](original-modern-hud-layout.md#fitted-reference-scales
 ## Police HUD widget claim remains unverified
 
 The [bounded HUD-editor review](original-modern-hud-settings-policy.md#police-cone-stats-and-tutorial-icon-claim-remains-unresolved) binds Tutorial Icon/Cone Stats to preset slots6/7, records nonzero reference/final defaults, and verifies retained pshud initializer/HudItem rectangle-loader/template bytes. These checked routes do not identify the advertised police-only hiding mechanism. MP100-048 stays vendor-only; counts unchanged. Next is active item-list construction and slot/role draw/input admission, with archive omission kept separate from installed deletion. No menu or target execution.
+
+## Historical software list-border admission
+
+The [list-bevel comparison](original-modern-hud-layout.md#historical-list-bevel-fix-retargets-the-software-branch) identifies the1.4.0→1.5.0 two-byte JNE retarget at004847bc: software now reaches the eight-quad border enqueue while continuing to skip the separate background quad. Allocation, layout, enqueue/removal and queue helpers bind the actual border bank. MP150-017 advances to partial static support; visible output, Speeds List identity and provider behaviour remain untested. This supersedes the earlier vendor-only assessment without invalidating its two unchanged nearby gates.

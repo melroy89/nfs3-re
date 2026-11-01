@@ -156,7 +156,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0047a190` | DispatchGatedEnvironmentGridWithAuxiliaryPass | 87 | 12 | [environment-grid](original-modern-environment-grid.md) |
 | `0047b380` | IsEnvironmentCommandAllowedByFlags | 31 | 30 | [environment-grid](original-modern-environment-grid.md), [race-initialization](original-modern-race-initialization.md) |
 | `0047b850` | BuildEnvironmentGridQuadCommandChain | 536 | 1 | [environment-grid](original-modern-environment-grid.md) |
-| `0047f650` | BuildNineTexturedRectangleBorderQuads | 828 | 800 | [border-geometry](original-modern-border-geometry.md) |
+| `0047f650` | BuildNineTexturedRectangleBorderQuads | 828 | 800 | [border-geometry](original-modern-border-geometry.md), [hud-layout](original-modern-hud-layout.md) |
 | `0047f98c` | BuildInsetTexturedRectangleBorderQuads | 22 | 22 | [border-geometry](original-modern-border-geometry.md) |
 | `0047f9a4` | UpdateTexturedRectangleBorderThickness | 25 | 25 | [border-geometry](original-modern-border-geometry.md), [viewport-geometry](original-modern-viewport-geometry.md) |
 | `0047fd80` | BuildAndClipGlobalHudBorder | 792 | 2 | [border-geometry](original-modern-border-geometry.md) |

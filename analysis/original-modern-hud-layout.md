@@ -262,3 +262,28 @@ Each whole captured span is byte-identical across all four inputs, including the
 The preceding audits separately establish width/reference substitutions, border coefficients, named Name/List defaults and compact police-row spacing. Those are real changes, but none alone identifies the advertised SoftTri-specific frame admission/drawing route. Similarly, equal branch bytes do not prove equal output: shared records, texture assets, other dispatch paths and provider code can differ.
 
 **MP150-017 remains vendor-only/unverified.** The next required evidence is the actual opponent/pursuit frame-resource and submission linkage, including the software driver's handling of that submission and its changed inputs, followed by rendered validation if necessary. This check rules out one simple local-gate explanation; it neither disproves the vendor claim nor establishes a replacement explanation. Do not repeat this same span comparison as unresolved work, or label these unassigned branches as the exact claimed bevel without further linkage. No HUD, driver, callback, new instruction probe, Ghidra or executable modification occurred.
+
+## Historical list bevel fix retargets the software branch
+
+**Verified historical branch and queue mechanism; visual result remains untested.** The [list-bevel audit](evidence/audits/hud-list-bevel-history.json), reproduced with `python3 analysis/scripts/audit_hud_list_bevel_history.py`, supplies the missing positive evidence after the preceding negative gate check. It pins original, author-hosted1.4.0/1.5.0 and official final EXEs. MP150-017 now has **partial static support**, superseding the earlier vendor-only assessment. The other two unchanged gates remain valid negative evidence.
+
+| Instruction | Original and1.4.0 |1.5.0 and final | Effect when renderer bit2 is set |
+|---|---|---|---|
+|`004847bc` JNE after TEST byte`007a3a58`,2 |Target`00484941` |Target`004847e5` |Now reaches border enqueue instead of skipping it |
+|`004847e0` CALL`0049bd30` |Retained |Retained |Separate background quad still bypassed |
+|`004847f2` CALL`0047fbe0` |Retained |Retained |Eight border quads now enqueued on this admitted software path |
+
+The captured admission span`0048479e..0048483e` is160 bytes. It differs by exactly two bytes, at`004847be/004847bf`, between original/1.4.0 and1.5.0/final. Before the renderer test it checks profile List storage at`006fbc58` plus computed offsets; the enabled-list route also requires signed participant count`005efda0>1` or nonzero role-local ECX. Disabled/non-admitted paths reach the retained removal route at`004847fc`. Thus the change does not force every list to appear. Final bit2's software association follows the existing [renderer parser evidence](original-modern-renderer-loading.md#5-driver-specific-configuration-before-loading); historical flag production has not independently been requalified in this audit.
+
+The frame resources are now distinguished by their actual allocation and consumption, rather than nearby global addresses:
+
+| Resource | Vertex pointer | Index-base storage | Batch | Allocation |
+|---|---|---|---|---|
+|Eight-quad border bank |`00791b18` |`00791ad8` |`00749a38` |64 vertices at`0047cbb6..0047cbf3` |
+|Separate background bank |`00791ad4` |`00791adc` |`00725748` |8 vertices at`0047cbf3..0047cc37` |
+
+Allocator`0049bd10` returns the current batch+08 vertex count through ECX's output pointer, returns batch+10 plus count×32 through EBX's output pointer, then adds EDX to that count. Layout at`00481ede..00481ef3` selects border pointer`00791b18 + view×1024` and calls the existing eight-quad builder`0047f650`. Admission selects index base`00791ad8 + view×32` and calls`0047fbe0`. Its eight decoded calls enqueue consecutive groups of four indices through`0049bd30` into batch`00749a38`. Background admission uses`00791adc + view×4` and the other batch. The allocation span, selected layout span, both198-byte eight-group helpers and466-byte queue-helper span are byte-identical across all four builds. Changed border geometry elsewhere remains a separate mechanism.
+
+Queue helper`0049bd30` appends four DWORD indices and increments batch+0c by four; when its signed first index is below batch+04 it first requests removal of the matching group. `0049bdc0` scans groups of four at batch+20010, removes the **first** exact match using overlap mover`004ea4f0`, and subtracts four from batch+0c. Consequently`0047fcb0`, which calls it eight times, is an eight-quad **removal** helper, not a draw or enqueue function. The nearby bank`00791ac8` removed at`00482dc8` is distinct from the border bank`00791ad8`; conflating them would misidentify the list-frame route. Flush`0049be40` passes count/4, vertices and indices to`004d5840` and`004c1e20`, then performs transient-group removal; those downstream consumers and provider behaviour have not been qualified here.
+
+**Remaining:** this establishes the advertised release boundary and a concrete software-path bevel admission mechanism. The exact visible “standard bevel”, the advertised Speeds List identity, every caller/profile, software-provider rendering and stale-queue behaviour across transitions remain separate follow-ups. MP150-017 is partial, not fully verified. Reconstruction must preserve the conditional background/border distinction and queue lifecycle rather than merely drawing an unconditional rectangle. No game, driver, instruction probe, compiler or Ghidra write was used.
