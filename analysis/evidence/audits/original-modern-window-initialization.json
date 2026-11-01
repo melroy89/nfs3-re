@@ -21,6 +21,20 @@
           "assembly_sha256": "563c60f1bdcdd620b2f92504763238b612e30e79daa223fe5a626afeec4af7ea"
         },
         {
+          "start": "004cd130",
+          "end": "004cd187",
+          "bytes_sha256": "d55dac7fa2381e55a810a1852e53f644402732b94244ff559beec2ad7837f5ea",
+          "assembly": "analysis/captures/modern-differences/window/original-004cd130.asm",
+          "assembly_sha256": "4358347e6517814c9e4a06aa123d84a9ca2dc691104448cb1639889754c3fc4f"
+        },
+        {
+          "start": "004cd190",
+          "end": "004cd1e4",
+          "bytes_sha256": "e78200b2ab284373b7a40cd072a0b6905a688208156229845955258d11f90ebf",
+          "assembly": "analysis/captures/modern-differences/window/original-004cd190.asm",
+          "assembly_sha256": "024d7ed7f7843994dc33ffe4df0e9b1efc93e68ce7e317ddab80178fc2310e56"
+        },
+        {
           "start": "004cdb10",
           "end": "004cdbcd",
           "bytes_sha256": "0b60bde4d59033a062c1d7ab5382d52d602e0509a9f4b62a747677d66b22d861",
@@ -213,6 +227,20 @@
           "bytes_sha256": "228975aac39547ab0e69a25a4278a63078e98b73d11471747e30cd5ea6c8f5a6",
           "assembly": "analysis/captures/modern-differences/window/official_modern-004cd2d0.asm",
           "assembly_sha256": "521b1350e43592ee4e582f19052bffc9027fde9011883ef59d268cec2f77cfce"
+        },
+        {
+          "start": "004cd130",
+          "end": "004cd187",
+          "bytes_sha256": "d55dac7fa2381e55a810a1852e53f644402732b94244ff559beec2ad7837f5ea",
+          "assembly": "analysis/captures/modern-differences/window/official_modern-004cd130.asm",
+          "assembly_sha256": "543cabb65432bed51a967c403ae021dc619d5af9c33e7896e95434ee5d904192"
+        },
+        {
+          "start": "004cd190",
+          "end": "004cd1e4",
+          "bytes_sha256": "e78200b2ab284373b7a40cd072a0b6905a688208156229845955258d11f90ebf",
+          "assembly": "analysis/captures/modern-differences/window/official_modern-004cd190.asm",
+          "assembly_sha256": "fc83124a547e9f88131af1dc41557739ef9eefa89eeef77b51f9a9c7ab97ce56"
         },
         {
           "start": "004cdb10",
@@ -420,6 +448,38 @@
       "modern": "004ccd98"
     }
   ],
+  "retained_mouse_callbacks": {
+    "registrations": {
+      "0200": "004cd190",
+      "0201": "004cd130",
+      "0202": "004cd190",
+      "0203": "004cd130",
+      "0204": "004cd130",
+      "0205": "004cd190",
+      "0206": "004cd130",
+      "0207": "004cd130",
+      "0208": "004cd190",
+      "0209": "004cd130"
+    },
+    "identical_bodies": [
+      {
+        "start": "004cd130",
+        "end_exclusive": "004cd187",
+        "sha256": "d55dac7fa2381e55a810a1852e53f644402732b94244ff559beec2ad7837f5ea"
+      },
+      {
+        "start": "004cd190",
+        "end_exclusive": "004cd1e4",
+        "sha256": "e78200b2ab284373b7a40cd072a0b6905a688208156229845955258d11f90ebf"
+      }
+    ],
+    "packed_coordinates": "EAX=zero_extended_low16(lParam), EDX=zero_extended_high16(lParam)",
+    "buttons": "wParam bits0,1,4 map to EBXbits0,1,2",
+    "event_parameter": "ECX1 for down/double-click,ECX0 for up/move, thenCALL004fb470",
+    "return": "EAX0,RET24; result_pointer untouched, so outer dispatcher continues DefWindowProcA",
+    "outside_tail": "004cd8f8..004cd939:65 NOP bytes,61 changed; registrations moved earlier, not removed",
+    "limits": "No full004fb470 dataflow/lifetime or runtime mouse behaviour claim."
+  },
   "identical_geometry_ranges": [
     {
       "start": "004cd350",

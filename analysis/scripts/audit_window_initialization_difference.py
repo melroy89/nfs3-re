@@ -11,6 +11,7 @@ import pefile
 from audit_thrash_loader_difference import SPECS, ROOT
 
 COMMON_SPANS = [(0x4cd6c0, 0x4cdaa0), (0x4cd2d0, 0x4cd348),
+                (0x4cd130,0x4cd187),(0x4cd190,0x4cd1e4),
                 (0x4cdb10, 0x4cdbcd), (0x4cdbd0, 0x4cdc14),
                 (0x4cdc20, 0x4cdc4c)]
 IDENTICAL_SPANS = [(0x4cd350, 0x4cd475), (0x4cdb10, 0x4cdbcd),
@@ -76,6 +77,24 @@ def main():
         for k in sorted(old.keys() & new.keys()) if old[k] != new[k]]
     assert result['removed_messages'] == ['0007', '0008']
     assert result['added_messages'] == ['0001', '001c', '0218']
+    mouse_map={f'{m:04x}':('004cd130' if m in [0x201,0x203,0x204,0x206,0x207,0x209] else '004cd190')
+               for m in range(0x200,0x20a)}
+    assert all(old[m]==new[m]==handler for m,handler in mouse_map.items())
+    mouse_bodies=[]
+    for start,end in [(0x4cd130,0x4cd187),(0x4cd190,0x4cd1e4)]:
+        bodies=[images[k].get_data(start-0x400000,end-start) for k in ('original','official_modern')]
+        assert bodies[0]==bodies[1]
+        mouse_bodies.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}',
+                             'sha256':hashlib.sha256(bodies[0]).hexdigest()})
+    old_tail,new_tail=[images[k].get_data(0xcd8f8,65) for k in ('original','official_modern')]
+    assert new_tail==b'\x90'*65 and sum(a!=b for a,b in zip(old_tail,new_tail))==61
+    result['retained_mouse_callbacks']={'registrations':mouse_map,'identical_bodies':mouse_bodies,
+        'packed_coordinates':'EAX=zero_extended_low16(lParam), EDX=zero_extended_high16(lParam)',
+        'buttons':'wParam bits0,1,4 map to EBXbits0,1,2',
+        'event_parameter':'ECX1 for down/double-click,ECX0 for up/move, thenCALL004fb470',
+        'return':'EAX0,RET24; result_pointer untouched, so outer dispatcher continues DefWindowProcA',
+        'outside_tail':'004cd8f8..004cd939:65 NOP bytes,61 changed; registrations moved earlier, not removed',
+        'limits':'No full004fb470 dataflow/lifetime or runtime mouse behaviour claim.'}
     result['identical_geometry_ranges'] = []
     original,modern = images['original'],images['official_modern']
     assert original.get_data(0xcd4a7,31).hex() == '31d2e862e20200b80100000031d2e856e20200b80200000031d2e84ae20200'

@@ -120,3 +120,39 @@ This adds a direct mechanism to **MP100-040** beyond the activation-hook refacto
 The lifecycle changes are relevant to **MP100-040**, the claim that the game no longer repeatedly restores lost focus. They are not sufficient to verify that entire claim: activation consumers and any focus-restoration API paths still need tracing. No release-introduction date can be proven from only original and final Modern binaries.
 
 Next: inspect any alternate callback/alias writers and all focus/foreground API use sites; trace the earlier module/class-name producers; trace style/context producers and replacement cursor/input setup; keep the power callback anomaly separate from confirmed runtime behavior. The original and maintained Modern Ghidra databases and both executables remain unchanged.
+
+## Mouse registrations move, callback bodies stay identical
+
+The expanded [window audit](scripts/audit_window_initialization_difference.py)
+asserts all ten message/handler pairs and complete callback-byte equality in
+[the existing manifest](evidence/audits/original-modern-window-initialization.json).
+It also classifies outside-body interval `004cd8f8..004cd939`: Modern fills65
+bytes with NOPs,61 of which differ. Original registrations in that tail were
+moved earlier in the rewritten initializer; they were not simply deleted.
+The interval starts at an original CALL instruction within the sequence.
+
+| Messages | Retained handler | Complete identical body |
+|---|---|---|
+| `0201,0203,0204,0206,0207,0209` (left/right/middle down and double-click) | `004cd130` |87 bytes, end exclusive`004cd187` |
+| `0200,0202,0205,0208` (move and left/right/middle up) | `004cd190` |84 bytes, end exclusive`004cd1e4` |
+
+Both callbacks first require nonzero context, using the six-argument callback
+layout already verified through the retained dispatcher. They map wParam
+bits0,1,4 to EBXbits0,1,2, extract packed lParam coordinates and call
+`004fb470` with EAX=X, EDX=Y and ECX1 (down/double-click) or ECX0 (up/move).
+Both return EAX0 with `RET18h`, leave the result-pointer value untouched and
+therefore permit the outer window procedure's DefWindowProcA route.
+
+Coordinate extraction is **zero extension** of both16-bit halves. For example,
+packed component`ffffh` becomes65535 at this callback-to-helper boundary, not
+−1. This behaviour is retained in both versions; the capture does not prove
+how the downstream helper ultimately interprets/clamps it or whether such
+coordinates reach it in an actual window. Do not silently replace extraction
+with signed16-bit conversion while claiming exact original behaviour.
+
+**Status:** done, verified static for ten retained registrations, both complete
+callback bodies, register forwarding and the61 changed-byte tail. Full
+`004fb470` state/clip/capture processing, external message delivery, mouse
+capture/focus interaction, Wine/VM behaviour and actual user input remain
+unverified. This is evidence against interpreting the NOP tail as removed
+mouse support, not proof of identical end-to-end mouse behaviour.
