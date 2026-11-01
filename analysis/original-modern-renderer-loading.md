@@ -304,3 +304,50 @@ pinned1.6.1 EXE lacks the case-insensitive ASCII literal; this does not prove
 beam rendering was removed, or exclude another control mechanism. No target,
 API, driver or instruction probe was executed; executable/database bytes
 were preserved.
+
+## Removed legacy DirectDraw enumeration wrapper and register adapter
+
+The [read-only audit](scripts/audit_removed_ddraw_enumerator.py) retains
+[complete bytes, imports, disassembly and bounded reference searches](evidence/audits/removed-ddraw-enumerator.json).
+It explains all64 changed bytes in outside-function interval
+`004ed904..004edbc0`: preceding636 bytes `004ed904..004edb80` are identical;
+only adapter `004edb80..004edbb7` (55 bytes) and nine alignment bytes are
+replaced by Modern NOPs. Adjacent COM helpers are not therefore classified as
+rewritten or removed.
+
+Original wrapper `004ebae0..004ebaf0` (16 bytes) saves ECX/EDX, pushes incoming
+EAX as the enumeration context, pushes callback `004edb80`, and calls thunk
+`00533e80`, which jumps through imported `DirectDrawEnumerateA` at `0053466c`.
+Modern NOP-fills the wrapper as well and lacks that named static import.
+
+The original adapter receives four stack arguments and forwards them to the
+context-supplied callback using the game's register convention:
+
+| Incoming callback argument | Forwarded register/behaviour |
+|---|---|
+| GUID pointer | EAX; if null, substitute a pointer to a local16-byte zero copy |
+| Description pointer | EDX |
+| Driver-name pointer | EBX |
+| Enumeration context | ECX, invoked with `CALL ECX` |
+
+The zero template is file-backed at `004eb420`. Four MOVSD instructions copy
+it to the stack, assuming DF0. The substituted pointer is temporary; a
+reconstruction must not expose it as permanently owned GUID storage. The
+adapter saves/restores EBX/ESI/EDI, discards the callback return, sets EAX1,
+and returns with `RET10h` (16 stack bytes). It does not locally promise
+ECX/EDX/flags preservation or validate the callback pointer. Under normal
+callback return, the adapter's return remains1 regardless of callback result.
+
+**Reachability unresolved:** both executable code-section scans have zero
+relative-E8 candidates targeting wrapper `004ebae0`, and whole-file searches
+have zero literal pointers to that wrapper. The adapter has one original
+literal pointer (the wrapper operand), none in Modern. These are bounded
+encoding searches, not proof that the original path was dead: computed or
+indirect entries and external callers remain possible. Static import removal
+also does not exclude another dynamically resolved enumeration mechanism.
+Required follow-up is a verified caller/registration or runtime trace before
+claiming a changed device list or startup behaviour.
+
+**Status:** done for these removed implementations and interval partition;
+verified static evidence. No DirectDraw API, DLL, game or instruction probe
+was run, and executable/saved database bytes were preserved.
