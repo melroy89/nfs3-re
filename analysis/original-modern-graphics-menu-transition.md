@@ -44,7 +44,7 @@ Otherwise it performs the new request-construction path:
 4. Otherwise compare selected and last row DWORD+0ch (depth in the established mode-record layout). If unequal, toggle bit 0 of `006fbc14`. Store low WORDs of selected row+4/+8 into `006fbc18`/+1ah (width/height request).
 5. Pass the selected row to `00448400`, which copies width/height/depth into `006fd1e4..006fd1ec` and calls `00485680` if width or height changed. General registers are restored and EAX is zero on return.
 
-The sentinel records the final-row choice in the persistent request while the selected actual row is still used for current dimensions. It is not a literal 32767×32767 render size. The nearest-area/default interpretation and arithmetic limits are covered by the existing [mode-selection](original-modern-mode-selection.md) and [requested-defaults](original-modern-resolution-defaults.md) reports.
+The sentinel records the final-row choice in the persistent request while the selected actual row is still used for current dimensions. It is not a literal 32767×32767 render size, and it does not universally preserve that row's identity: [lexicographic final-row order and later area-distance reselection can disagree](original-modern-mode-selection.md#final-menu-row-and-sentinel-reselection-use-different-orderings). The nearest-area/default interpretation and arithmetic limits are covered by the existing [mode-selection](original-modern-mode-selection.md) and [requested-defaults](original-modern-resolution-defaults.md) reports.
 
 ## Reconstruction implications and remaining evidence
 

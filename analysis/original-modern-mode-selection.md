@@ -41,6 +41,21 @@ Thus this is area-distance selection with special handling for equal dimensions 
 
 Machine limits matter: MUL discards the high product; SUB/NEG operate on 32 bits and comparisons are signed. NEG of `0x80000000` remains negative, so this is not a general mathematical absolute-distance function for arbitrary malformed/overflowing dimensions. No such input was executed. The no-candidate fallback must not be documented as a proven valid or safe mode.
 
+## Final menu row and sentinel reselection use different orderings
+
+The [graphics transition](original-modern-graphics-menu-transition.md#modern-transition) stores packed7fff7fffh when the selected menu pointer equals the last-row pointer. The [request reselector](original-modern-resolution-defaults.md) later zero-extends those WORDs into width/height32767 and calls004bedcc. This does not persist the original row's identity: menu rows are sorted lexicographically by width/height/depth, while the requested-mode search uses pixel-area distance.
+
+The expanded display audit retains a static arithmetic example with two hypothetical eligible32-bit entries. Both meet the existing integer aspect gate; independent flag/buffer gates are explicit premises, not observed provider results:
+
+| Candidate | Integer aspect100W/H |Pixel area |Distance from32767² |
+|---|---:|---:|---:|
+|1800×1440 |125 |2,592,000 |1,071,084,289 |
+|1920×1080 |177 |2,073,600 |1,071,602,689 |
+
+The final lexicographic row is1920×1080. With exactly these candidates, requested depth32, no exact sentinel-sized mode and ordinary fitting arithmetic, reselection chooses1800×1440 because its area is closer to32767²=1,073,676,289. There is no depth tie to resolve. This follows the already captured instructions; it is not a new probe or an installed mode list.
+
+Thus the sentinel can represent an area-preference request that differs from the row originally selected as the final menu entry. Do not reconstruct it as an unconditional “return last sorted row” shortcut or claim that it preserves an arbitrary selected resolution across reinitialization. Actual provider lists, user selection, settings lifetime and any visible change remain unverified. Original's numeric mode-selection policy is separately mapped above; this example concerns Modern's two linked policies.
+
 ## Modern application and live record
 
 `004beeb0` takes the requested index in EAX, clamps signed values below 1 to 1, and forms `record_base + index*0x28` using low-32-bit arithmetic. Its branches are materially different:

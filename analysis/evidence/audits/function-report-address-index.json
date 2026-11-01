@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "eb399c07ceaa26823299dd4ce827bda615aac22caf308289409794701d26c48b"
+      "sha256": "d793070dd1650a2c2e703b403fd4c5cba7e869a1d4c8defbe1e37c7c9e739d7e"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -157,7 +157,7 @@
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
-      "sha256": "79ed15a94528657bb34da2eb0bb8f4cdbf5ab2782af114c2aa132aea4c3d3d14"
+      "sha256": "64cec9864ba8f72e1b78f2f97751d3e1e794bbddba8d71ab3169bac91af0ba8a"
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
@@ -213,7 +213,7 @@
     },
     {
       "path": "analysis/original-modern-mode-selection.md",
-      "sha256": "f81f580eea83cbf9b6142de3437e46f7e1bb269214739b3ca3cdc92cb9256393"
+      "sha256": "9a231c0505a5b9eea1656bb840201d8de3de8787bf32ab454195e418d82b5d66"
     },
     {
       "path": "analysis/original-modern-mouse-cursor.md",

@@ -123,6 +123,28 @@ def main():
                   '101st unique admitted append is a conditional local path, not an observed provider list or execution.',
                   'Section-boundary crossing is arithmetic evidence, not an observed overwrite/fault or proof of OS mapping/protection/discard behavior.',
                   'Do not silently change JA to JAE in a reconstruction; expose the selected compatibility policy.']}
+    request_area=32767*32767
+    candidates=[{'width':1800,'height':1440,'depth':32}, {'width':1920,'height':1080,'depth':32}]
+    for row in candidates:
+        row['aspect_integer']=100*row['width']//row['height']
+        row['area']=row['width']*row['height']
+        row['sentinel_area_distance']=request_area-row['area']
+        assert 124<=row['aspect_integer']<=178
+        assert 0<row['area']<request_area<0x80000000
+    ordered=sorted(candidates,key=lambda row:(row['width'],row['height'],row['depth']))
+    nearest=min(candidates,key=lambda row:row['sentinel_area_distance'])
+    assert ordered[-1]['width']==1920 and nearest['width']==1800
+    result['derived_sentinel_reselection']={
+        'kind':'Static formula example, not an instruction probe or observed provider list.',
+        'request_words':[32767,32767],'request_area':request_area,'requested_depth':32,
+        'eligible_geometry_examples':candidates,'lexicographic_final_row':ordered[-1],
+        'area_distance_selection':nearest,
+        'premises':['Exactly these two candidates, both pass the independent flag/buffer/depth gates; no exact32767-square entry.',
+                    'Positive fitting dimensions/products and no intervening list/setting mutation.',
+                    'Existing verified transition stores7fff7fff for the final row; existing reselector uses area distance.'],
+        'conclusion':'Final-row sentinel does not persist that row identity for arbitrary eligible mode sets.',
+        'limits':['No claim these modes are advertised by an installed provider, that a user selected them, or that any runtime mismatch was observed.',
+                  'Generic invalid/wrapped dimensions remain outside this arithmetic example.']}
     output = ROOT/'analysis/evidence/audits/original-modern-display-modes.json'
     output.write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: original/Modern identity and enumerator/menu instruction captures')

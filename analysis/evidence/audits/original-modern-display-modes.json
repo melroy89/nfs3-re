@@ -260,5 +260,58 @@
       "Section-boundary crossing is arithmetic evidence, not an observed overwrite/fault or proof of OS mapping/protection/discard behavior.",
       "Do not silently change JA to JAE in a reconstruction; expose the selected compatibility policy."
     ]
+  },
+  "derived_sentinel_reselection": {
+    "kind": "Static formula example, not an instruction probe or observed provider list.",
+    "request_words": [
+      32767,
+      32767
+    ],
+    "request_area": 1073676289,
+    "requested_depth": 32,
+    "eligible_geometry_examples": [
+      {
+        "width": 1800,
+        "height": 1440,
+        "depth": 32,
+        "aspect_integer": 125,
+        "area": 2592000,
+        "sentinel_area_distance": 1071084289
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "depth": 32,
+        "aspect_integer": 177,
+        "area": 2073600,
+        "sentinel_area_distance": 1071602689
+      }
+    ],
+    "lexicographic_final_row": {
+      "width": 1920,
+      "height": 1080,
+      "depth": 32,
+      "aspect_integer": 177,
+      "area": 2073600,
+      "sentinel_area_distance": 1071602689
+    },
+    "area_distance_selection": {
+      "width": 1800,
+      "height": 1440,
+      "depth": 32,
+      "aspect_integer": 125,
+      "area": 2592000,
+      "sentinel_area_distance": 1071084289
+    },
+    "premises": [
+      "Exactly these two candidates, both pass the independent flag/buffer/depth gates; no exact32767-square entry.",
+      "Positive fitting dimensions/products and no intervening list/setting mutation.",
+      "Existing verified transition stores7fff7fff for the final row; existing reselector uses area distance."
+    ],
+    "conclusion": "Final-row sentinel does not persist that row identity for arbitrary eligible mode sets.",
+    "limits": [
+      "No claim these modes are advertised by an installed provider, that a user selected them, or that any runtime mismatch was observed.",
+      "Generic invalid/wrapped dimensions remain outside this arithmetic example."
+    ]
   }
 }
