@@ -114,3 +114,17 @@ The player filename builder changes independently. Original copies prefix `007a2
 The final prefix producers are not traced here, so this builder change alone does not prove a root-directory location. Likewise, both config routines using `%sconfig.dat` with prefix `007a3034` does not establish what initializes that prefix. MP100-044's complete config relocation and MP100-046's driver-change reset policy therefore remain separate questions; neither is silently accepted from the timestamp finding.
 
 The subsequent [versioned prefix audit](original-modern-startup-paths.md#config-path-history-root-relative-then-restored) now establishes final default prefixes and the1.1.0→1.2.0 config relocation reversal. This narrows the prefix limitation above for ordinary initialization; later mutation and actual I/O remain unverified.
+
+## Renderer-type mismatch no longer requests the original startup reset
+
+The audit now retains paired startup prefixes `004730d0..0047319a` and original saved-type producer `00472e70..00472e88`, alongside the complete config-load bodies. These tie an already observed loader comparison to a concrete graphics-defaults consumer.
+
+Original defaults copy current DWORD `007a3a58` to saved configuration field `006fbc10` at `00472e72`/`00472e83`. On config loading, `00472ad1..00472ae9` compares those DWORDs and writes1 to `0067900c` when they differ. This is a renderer-type mask comparison, not a string comparison of DLL filenames or a complete graphics-device identity check. Same-type DLL changes need not differ under this predicate.
+
+Later original startup performs this conditional chain at `0047316e..0047319a`: require `0055b03c != 0` and `0055e88c == 0`, call `00472fc0`, then test `0067900c`. A nonzero flag causes a store of the current EDX to that cell and a call to graphics defaults `00472d10`. The existing [default-initialization report](original-modern-resolution-defaults.md#original-default-path) documents resulting setting writes and resolution selection. The EDX store is recorded as implemented; its exact value depends on the preceding helper's register contract. Other config-failure paths also set the flag, so it is not exclusively a renderer-change indicator.
+
+Modern's complete load body instead uses the size/version decisions documented above, without that saved/current renderer-type comparison. Its startup path calls `00472fc0` at `0047315b` under its own outer gate, then unconditionally jumps from `00473160` to `0047319a`; `00473162..0047319a` contains56 NOP bytes. It bypasses the original flag test/default call. This is control-flow evidence in the relevant caller, not merely noticing old bytes were overwritten.
+
+Modern also repurposes `0067900c` as the INI `WindowedMode` setting, independently traced in [startup policy](original-modern-startup-policy.md#3-current-settings-exact-defaults-and-immediate-effects). Carrying the original reset-flag name or semantics onto that address would be incorrect. Its final graphics settings can still change through header/version reset, default initialization, mode selection and other paths; this comparison does not promise universal persistence.
+
+MP100-046 gains **partial static support**: the specific original type-mismatch-to-startup-defaults route is removed. All renderer/device changes, later default callers, actual settings survival and v1.0.0 introduction remain unverified. No renderer was switched, no config was written and no target instructions were executed for this audit.

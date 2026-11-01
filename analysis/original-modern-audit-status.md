@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **144 vendor-only,44 bounded-static,100 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **143 vendor-only,44 bounded-static,101 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recently narrowed:** type8 descriptor availability/conditional publication, local prepare/render/finalize order, retained399-byte handler and an excluded33-byte viewport-flag helper. See the [projection report](original-modern-projection.md).
@@ -123,7 +123,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels144 entries vendor-only,44 bounded static,100 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels143 entries vendor-only,44 bounded static,101 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -249,3 +249,7 @@ The [1.1.0/1.2.0 prefix comparison](original-modern-startup-paths.md#config-path
 ## Historical x87 release attribution
 
 The [1.5.3/1.6.0 pair](og-modern-x87-precision.md#historical-release-boundary-v153-to-v160) verifies centralized single/saved-CW helpers in1.5.3, their removal and selected FINIT boundaries in1.6.0. The application loop is at4a3b4a in1.6.0, distinct from final1.6.1. MP160-012 gains historical support within its existing bounded static label; all-thread/DLL precision and runtime compatibility remain unverified. Catalog counts unchanged.
+
+## Renderer-type reset route narrowed
+
+The [loader-to-startup comparison](original-modern-config-loading.md#renderer-type-mismatch-no-longer-requests-the-original-startup-reset) connects original saved/current type mismatch to a conditional graphics-default call and verifies Modern bypasses that route. The comparison is type-mask based, not all DLL/device identity changes; the original flag address is repurposed for WindowedMode in Modern. MP100-046 gains partial support. Current counts:143 vendor-only,44 bounded static,101 partial,2 unresolved; actual settings survival remains untested.

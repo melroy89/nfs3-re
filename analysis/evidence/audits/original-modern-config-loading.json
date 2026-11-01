@@ -82,6 +82,20 @@
           "bytes_sha256": "5c53b956f505dccc906083ba8f320df24aaf50a77b70ce83c5161f7f551fa5aa",
           "assembly": "analysis/captures/modern-differences/config-loading/original-004e28a0.asm",
           "assembly_sha256": "caf81b7fa698a54421e29dd04a70b4b5bfca1c25911db3103d4bcf1a053b4868"
+        },
+        {
+          "start": "004730d0",
+          "end": "0047319a",
+          "bytes_sha256": "644ff19b8fc2d06880c9c9239ea3ef9452309fa2ce18561ab245fcccafb339ad",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004730d0.asm",
+          "assembly_sha256": "aee04832cc5731c69a00ef1d7bbf3bb44468850adda9cd9b1ea4a8b5b3c15a25"
+        },
+        {
+          "start": "00472e70",
+          "end": "00472e88",
+          "bytes_sha256": "c88332284bf3ffdfa878cbc97be06d85916cdd92d849329030dda3f09ee62608",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-00472e70.asm",
+          "assembly_sha256": "1af9e3ea76929b64f6396ee7f50e2194261c8bde57019f4efcc2820b51ffdb0d"
         }
       ],
       "flag_bit21_switch": {
@@ -168,6 +182,13 @@
           "bytes_sha256": "5c53b956f505dccc906083ba8f320df24aaf50a77b70ce83c5161f7f551fa5aa",
           "assembly": "analysis/captures/modern-differences/config-loading/official_modern-004e28a0.asm",
           "assembly_sha256": "0eec79d48d117603e0d262fe666b7c77577d981d00fe4720697517e005dea110"
+        },
+        {
+          "start": "004730d0",
+          "end": "0047319a",
+          "bytes_sha256": "aa1a443629e51625fb361a51365c888be08530dcf8977ad4a30bbc0d1916b478",
+          "assembly": "analysis/captures/modern-differences/config-loading/official_modern-004730d0.asm",
+          "assembly_sha256": "bb4cad7ad3d7b08656cc23c301ec2bb194fcb242c9ec35e191213db97b465c39"
         }
       ],
       "flag_bit21_switch": {
@@ -220,6 +241,18 @@
     "limits": [
       "No file/API calls executed; remaining read/validation/default/rewrite routes preserved.",
       "Root prefix provenance, all callers, I/O success and exact v1.0 introduction not established."
+    ]
+  },
+  "renderer_type_reset_removal": {
+    "original_comparison": "00472ad1..00472ae9: current007a3a58 versus saved006fbc10; mismatch writes1 to0067900c.",
+    "original_saved_type_producer": "00472e72/00472e83 copies current type into saved field.",
+    "original_conditional_consumer": "0047316e..0047319a: outer gates,00472fc0, then flag test/store and CALL00472d10.",
+    "modern": "Complete config load uses header/version admission instead; startup00473160 jumps to0047319a over56 NOPs.",
+    "limits": [
+      "Renderer-type mask equality is not full DLL/device identity.",
+      "Original flag has other producers; reset is conditional, not every driver change.",
+      "Modern0067900c is WindowedMode per separate settings audit, not an equivalent reset flag.",
+      "Other default/version/size/selection paths and actual renderer-switch results remain untested."
     ]
   },
   "audio_capability_query": {

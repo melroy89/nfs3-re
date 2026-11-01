@@ -9,10 +9,12 @@ from audit_thrash_loader_difference import ROOT, SPECS
 SPANS={'original':[(0x472980,0x472b60),(0x4728e0,0x47297d),
                    (0x4723f0,0x47242c),(0x4e0640,0x4e0658),(0x4ff4c0,0x4ff563),
                    (0x472820,0x4728d3),(0x40faf0,0x40fb0f),(0x4e21b0,0x4e2221),
-                   (0x4dc940,0x4dca4e),(0x4dc800,0x4dc8af),(0x4e28a0,0x4e28bb)],
+                   (0x4dc940,0x4dca4e),(0x4dc800,0x4dc8af),(0x4e28a0,0x4e28bb),
+                   (0x4730d0,0x47319a),(0x472e70,0x472e88)],
        'official_modern':[(0x472980,0x472b48),(0x472230,0x472248),
                           (0x4723f0,0x472402),(0x472820,0x4728d3),(0x40faf0,0x40fb0f),(0x4e21b0,0x4e2221),
-                          (0x4dc940,0x4dca4e),(0x4dc800,0x4dc8af),(0x4e28a0,0x4e28bb)]}
+                          (0x4dc940,0x4dca4e),(0x4dc800,0x4dc8af),(0x4e28a0,0x4e28bb),
+                          (0x4730d0,0x47319a)]}
 
 
 def main():
@@ -87,6 +89,20 @@ def main():
         'modern':'Existing file branches directly to read path004dc9eb; timestamp/deletion block replaced with30 NOPs.',
         'limits':['No file/API calls executed; remaining read/validation/default/rewrite routes preserved.',
                   'Root prefix provenance, all callers, I/O success and exact v1.0 introduction not established.']}
+    assert images[0].get_data(0x72ad1,24).hex()=='8b35583a7a003b3510bc6f00740ac7050c90670001000000'
+    assert images[0].get_data(0x72e72,5).hex()=='a1583a7a00'
+    assert images[0].get_data(0x72e83,5).hex()=='a310bc6f00'
+    assert images[1].get_data(0x73162,0x38)==b'\x90'*0x38
+    assert images[1].get_data(0x73160,2)==bytes.fromhex('eb38')
+    result['renderer_type_reset_removal']={
+        'original_comparison':'00472ad1..00472ae9: current007a3a58 versus saved006fbc10; mismatch writes1 to0067900c.',
+        'original_saved_type_producer':'00472e72/00472e83 copies current type into saved field.',
+        'original_conditional_consumer':'0047316e..0047319a: outer gates,00472fc0, then flag test/store and CALL00472d10.',
+        'modern':'Complete config load uses header/version admission instead; startup00473160 jumps to0047319a over56 NOPs.',
+        'limits':['Renderer-type mask equality is not full DLL/device identity.',
+                  'Original flag has other producers; reset is conditional, not every driver change.',
+                  'Modern0067900c is WindowedMode per separate settings audit, not an equivalent reset flag.',
+                  'Other default/version/size/selection paths and actual renderer-switch results remain untested.']}
     assert images[0].get_data(0xeaf0,31)==images[1].get_data(0xeaf0,31)
     assert images[0].get_data(0xe21b0,0x71)==images[1].get_data(0xe21b0,0x71)
     result['audio_capability_query']={
