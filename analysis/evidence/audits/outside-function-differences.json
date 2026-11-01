@@ -7500,7 +7500,7 @@
         "original_entry": "004b6020",
         "role": "Subsystem setup",
         "report": "analysis/original-modern-resolution-defaults.md",
-        "report_sha256": "a6c4e3a6f781ab545573a14b3e80131245f4beb6960a1ea3b3e080549c7405ee",
+        "report_sha256": "611638b7e27b53a7729a7d4d5f1b44481e7f0c10777a95a779df709a07352320",
         "remaining": "Mapped Modern counterpart; all downstream initialization effects not qualified.",
         "status": "entry classified; semantic validation partial"
       },

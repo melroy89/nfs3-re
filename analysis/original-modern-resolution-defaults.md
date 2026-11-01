@@ -147,8 +147,7 @@ Thus the inspected callback-produced record satisfies **selector1 iff unsigned
 Q>=3**. Q0's subtraction wraps to an unsigned all-ones bit pattern. Keep the quotient
 unsigned and the later signed field interpretation explicit in C. The quotient
 represents this producer's buffer-size arithmetic, not independently measured
-available VRAM or proof of successful surface allocation. The source cell's
-complete ownership remains unresolved.
+available VRAM or proof of successful surface allocation. The [selected direct budget producer](original-modern-dx5-reference-pair.md#mode-budget-producer-retained-query-and-2-mib-fallback) is now identified as a query-derived sum or2 MiB fallback; all writers and lifetime paths remain unresolved.
 
 This conclusion requires a valid selected record populated by that callback.
 Fixed seed records, overwritten/aliased records, other driver implementations

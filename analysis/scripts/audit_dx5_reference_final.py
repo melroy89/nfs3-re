@@ -4,6 +4,7 @@ import json
 import re
 import subprocess
 import tempfile
+import uuid
 
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
@@ -225,6 +226,36 @@ def main():
         'Conditional on the configured path selecting this INI, the bound slot selecting this DX5 DLL, and the common trial route being reached.',
         'No runtime INI API, renderer dispatch, fog output or complete later-write lifetime was observed.',
         'Decimal21 equals hex15h; do not confuse this with decimal state15.']
+    budget_spans=[]
+    for lo,hi in [(0x1937,0x1aed),(0x1c35,0x1c4e)]:
+        left,right=[pe.get_data(lo,hi-lo) for pe in images]
+        assert left==right
+        budget_spans.append({'start':f'{0x60000000+lo:08x}','end_exclusive':f'{0x60000000+hi:08x}',
+            'sha256':sha(left),'bytes_hex':left.hex(),'disassembly':disassemble(left,0x60000000+lo)})
+    for pe in images:
+        assert pe.get_data(0x11970,16)==uuid.UUID('b3a6f3e0-2b43-11cf-a2de-00aa00b93356').bytes_le
+        assert pe.get_data(0x1937,5).hex()=='68b80e0160'
+        assert pe.get_data(0x1a93,5).hex()=='ff515c85c0'
+        assert pe.get_data(0x1a9e,10).hex()=='c705b40e016000002000'
+        assert pe.get_data(0x1c35,20).hex()=='89f00fafc38b94245003000001c28915b40e0160'
+        assert pe.get_data(0x10eb4,4)==bytes(4)
+    result['mode_budget_producer']={'identical_spans':budget_spans,
+        'interface_iid_address':'60011970','iid':'b3a6f3e0-2b43-11cf-a2de-00aa00b93356',
+        'interface_publication':'QueryInterface at60001952 writes60010eb8; HRESULT checked after release at6000197b',
+        'query':'vtable+5ch at60001a93,IDirectDraw2::GetAvailableVidMem',
+        'caps':'10004000h,local video-memory query',
+        'stack_outputs':'At steadyESP S,total=S+350h,free=S+34ch,caps=S+358h',
+        'success':'60001c35..60001c49 writes wrap32(total + wrap32(ESI*EBX)) to60010eb4',
+        'surface_values':'GetSurfaceDesc at60001a13 outputsS+2e0h; ESI=lPitch(+10h),EBX=height(+8h),after accounting for pushes',
+        'failure':'60001a9e writes00200000h,2MiB',
+        'initial_file_backed_value':'00000000',
+        'primary_header':'https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/ddraw.h',
+        'api_context':'https://learn.microsoft.com/en-us/windows/win32/api/ddraw/nf-ddraw-idirectdraw7-getavailablevidmem',
+        'limits':['Read-only static ABI/dataflow; no memory query or provider executed.',
+                  'The Learn page describes the laterIDirectDraw7 API; exactv2 IID/order/structure mapping comes from the header.',
+                  'GetSurfaceDesc return is not locally tested before dimensions/pitch use; success/valid fields assumed for their names.',
+                  'Returned total plus surface estimate is a driver heuristic,not physical VRAM capacity or proven allocation success.',
+                  'Only selected direct producers are established; aliases,later writes and full enumeration lifecycle remain separate.']}
     result['limits'] = [
         'Reference is author-hosted and matches the previously inventoried local root D3DA hash; not authenticated pristine retail.',
         'Raw changed intervals are byte inventory, not function boundaries or complete semantic attribution.',

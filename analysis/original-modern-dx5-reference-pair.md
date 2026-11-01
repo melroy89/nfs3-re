@@ -60,7 +60,7 @@ Both callbacks receive a descriptor pointer as their first stack argument and a 
 | Depth after classification | Classifier3 changes stored depth to15 | Same conversion, after raw-depth comparison |
 | Buffer-related fields | Quotient and quotient−1 at record `+14h/+18h` | If quotient<=3, same; if quotient>3, both fields become3 |
 
-The Modern quotient is unsigned `[60010eb4] / (width * height * bytes_per_pixel)` with 32-bit wrapping products. `bytes_per_pixel` is2 for stored depth<=15, otherwise depth shifted right3. The reference computes its denominator before the later classifier3-to-depth15 conversion. Ordinary supported dimensions/depths avoid a zero denominator; arbitrary wrapped products are not validated by this inspection. The cap is a code fact, not a proof of available surfaces or successful allocation. The identity of `[60010eb4]` requires its producer before calling this a complete memory-budget model.
+The Modern quotient is unsigned `[60010eb4] / (width * height * bytes_per_pixel)` with 32-bit wrapping products. `bytes_per_pixel` is2 for stored depth<=15, otherwise depth shifted right3. The reference computes its denominator before the later classifier3-to-depth15 conversion. Ordinary supported dimensions/depths avoid a zero denominator; arbitrary wrapped products are not validated by this inspection. The cap is a code fact, not a proof of available surfaces or successful allocation. The [selected producer is now traced](#mode-budget-producer-retained-query-and-2-mib-fallback); this still does not establish a complete live memory/allocation model.
 
 The scan compares **incoming raw depth before conversion**. Consequently repeated 16-bit input classified as555 can miss a previously stored depth15 record. Do not describe this as normalized-key deduplication or silently repair it in reconstruction. Actual enumeration inputs/order and resulting duplicates were not observed.
 
@@ -157,3 +157,53 @@ This is a conditional static chain. It does not prove which INI/DLL was selected
 - **Later evidence:** authenticated retail provenance, historical introduction, full relocations/resources, runtime display enumeration and rendering acceptance.
 
 No release-note item is promoted by this bounded pairing alone. The broader original/Modern investigation remains incomplete. Existing EXEs, saved Ghidra state, maintained C and raw exports were not edited; no target instructions, OS graphics calls or new probes were run.
+
+## Mode budget producer: retained query and 2 MiB fallback
+
+The expanded [DX5 audit](scripts/audit_dx5_reference_final.py) retains complete
+paired producer spans `60001937..60001aed` and `60001c35..60001c4e`, asserts
+byte equality and records IID/stack/dataflow evidence in
+[the manifest](evidence/audits/dx5-reference-final.json). This resolves the
+selected direct producer of `60010eb4`; the calculation is **retained between
+reference and final**, not an introduced Modern memory query.
+
+The query-interface call at `60001952` passes IID
+`b3a6f3e0-2b43-11cf-a2de-00aa00b93356` from `60011970` and output address
+`60010eb8`. Microsoft's [DirectDraw header](https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/ddraw.h)
+identifies IDirectDraw2 and places GetAvailableVidMem at32-bit vtable offset5ch.
+The driver calls that slot at `60001a93`, using caps`10004000h` (local video
+memory), a total-output pointer and a free-output pointer. This is an ABI
+identification from IID and call layout, not observation of a working COM object.
+
+| Query result at the inspected branch | Value stored in `60010eb4` |
+|---|---|
+| Nonzero/failure | `00200000h` =2 MiB, at `60001a9e` |
+| Zero/success | `wrap32(total_output + wrap32(surface_pitch * surface_height))`, at `60001c43` |
+
+For steady stack pointer S before argument pushes, total/free output slots are
+S+350h/S+34ch. GetSurfaceDesc at `60001a13` receives descriptor S+2e0h.
+Accounting for three later pushes, loads at `60001a42/60001a49` select its
+pitch at+10h and height at+8h into ESI/EBX. The success branch multiplies those
+registers and adds the **total** query output, not the free output. HRESULT
+from GetSurfaceDesc is not locally tested before these fields are consumed;
+the named field interpretation assumes a valid successful descriptor result.
+
+Microsoft's [later GetAvailableVidMem documentation](https://learn.microsoft.com/en-us/windows/win32/api/ddraw/nf-ddraw-idirectdraw7-getavailablevidmem)
+distinguishes total and free amounts and warns that reported availability is
+state-dependent. That page documents IDirectDraw7; the exactv2 layout above
+comes from the header. The driver's arithmetic is therefore a query-derived
+heuristic with fallback, not a direct measurement of physical VRAM or proof
+that the subsequently estimated buffers can be allocated.
+
+The [EXE fog-default connection](original-modern-resolution-defaults.md#dx5-producer-qualifies-the-selected-mode-fog-default)
+uses this budget divided by candidate pixel storage. Under the2 MiB fallback,
+ordinary640×480×16 gives Q3 and800×600×16 gives Q2; callback-produced records
+would yield selector1 and0 respectively. These are arithmetic illustrations,
+not observed enumeration/selection, and seed records need separate qualification.
+The separate DX5 fog-support rejection still applies.
+
+**Status:** done, verified static for selected interface/query identification,
+retained producer bytes, output choice, arithmetic and fallback. All other
+writers/aliases, API failure state, valid surface fields, runtime memory,
+selected-record provenance and actual allocation/render results remain
+unverified. No DLL, query, graphics API, game or instruction probe was executed.
