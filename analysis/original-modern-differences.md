@@ -643,7 +643,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **92 Claimed, 52 Static, 144 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **91 Claimed, 52 Static, 145 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -980,7 +980,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-045 | The game doesn't removes config.dat, player1.spc, and player2.spc files when exe file is updated. | Static |
 | MP100-046 | The game doesn't resets video settings when video driver is changed. | Partial |
 | MP100-047 | “About” slide was added to Credits. | Partial |
-| MP100-048 | Cone Stats and Tuturial Icon widgets are hidden in HUD editor for cops because these widgets can't be used in this mode. | Claimed |
+| MP100-048 | Cone Stats and Tuturial Icon widgets are hidden in HUD editor for cops because these widgets can't be used in this mode. | Partial |
 | MP100-049 | Buggy background animation in graphics settings and opponents choosing screens were fixed. | Claimed |
 | MP100-050 | Title in pause menu is more aligned now. In original version of the game it was a little misplaced. | Partial |
 | MP100-051 | Flying brands effect added to all slides without large amount of text for consistency. For example, in original version this effect is present on main singleplayer game screen, but it is absent on main splitscreen game screen. | Claimed |
@@ -1099,3 +1099,7 @@ The [list-bevel comparison](original-modern-hud-layout.md#historical-list-bevel-
 ## Police editor widget draw linkage remains retained
 
 The [registered editor draw-chain review](original-modern-hud-settings-policy.md#registered-editor-draw-chain-retains-both-widget-cases) binds the HudItem callback to the23-case renderer table and retained Tutorial Icon/Cone Stats arms. Selected role-policy helpers are also unchanged. This narrows MP100-048 to earlier instantiated-item/admission or active-asset evidence; it remains vendor-only, with no visible hiding result established. Reuse these checked boundaries rather than repeating the rectangle-loader or draw-case comparison.
+
+## Police editor omission resolved in packaged menu records
+
+The [role-specific menu comparison](original-modern-hud-settings-policy.md#police-only-widget-omission-is-authored-in-the-role-specific-menus) verifies six paired files: Modern removes only the police view’s Tutorial Icon/Cone Stats HudItem IDs, preserving racer items in mixed split-screen menus. Named EXE page registrations and the shared initializer remain retained. MP100-048 advances to partial package/static support, superseding the preceding vendor-only checkpoint; retail-reference provenance, active asset loading and visible acceptance remain unverified.

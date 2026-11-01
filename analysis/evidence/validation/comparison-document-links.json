@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "61a4fdf7cca4fb49ddb4ae2b83aa865827b2f782d3d049c22698b27f7743a0a7",
-      "relative_links": 253
+      "sha256": "7df38b7203ddb6fbe62bc695a86a70d9e291710fe5437169c80259e82dbac295",
+      "relative_links": 254
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -213,8 +213,8 @@
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
-      "sha256": "b0482f664b452de66f9f3f3075756fc1f5ff4bf4adaa9d105ee02c25170f1d79",
-      "relative_links": 10
+      "sha256": "fe74dbeab7b40737180bb5fcffb7fd2206f41677c5a5239830cabf24236bf45a",
+      "relative_links": 12
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
@@ -653,7 +653,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "8fb750f58401834b6b65eed97140a7bbce758ff9525c7eda3c4da7934aa16d7d",
+      "sha256": "93633b8fbae5fddcf019b162312d2b236d4ee872cee04c78a176c6226821439a",
       "relative_links": 215
     },
     {
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2609,
+  "relative_link_count": 2612,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

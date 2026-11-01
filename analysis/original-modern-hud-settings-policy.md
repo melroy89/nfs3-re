@@ -73,6 +73,8 @@ This closes localization of the interval’s byte differences to the researched 
 
 ## Police Cone Stats and Tutorial Icon: claim remains unresolved
 
+**Historical checkpoint:** the later [role-specific asset comparison](#police-only-widget-omission-is-authored-in-the-role-specific-menus) now establishes partial package/static support. The unresolved assessment below records the earlier code-only review.
+
 **Evidence confidence: verified checked boundaries and preset contents; unresolved hiding mechanism. Work status: pending for MP100-048.** The new [bounded role audit](scripts/audit_hud_editor_role_boundary.py) and [manifest](evidence/audits/hud-editor-role-boundary.json) record what the nearby code/assets do establish. This is not acceptance of the release claim, and no HUD editor or target code was executed.
 
 | Checked boundary | Result | What it does not establish |
@@ -112,3 +114,24 @@ The complete3,598-byte renderer envelope differs at just`0045ae28`, `0045ae29`, 
 A second checked route at`0044d8cd..0044d8e8` calls shared policy`0044c2d0`, then selects`0044c360` for nonzero role-local ECX or`0044c4e0` otherwise. These selected369/289-byte policy bodies are identical between EXEs. They perform named-entry lookups and flag writes; equal code does not establish equal authored item names, objects or earlier admission.
 
 **Next action:** trace the instantiated editor item list and its generic admission/dispatch, binding the actual loaded menu asset and role state. The registered draw routine cannot establish that a callback is ever dispatched. Keep the earlier archive-omission and nonzero-rectangle limitations: neither proves hiding or disproves the vendor claim. No new slot6/7 police-only predicate was identified in the checked callback, prefix, cases or policy helpers. Visible acceptance and historical introduction remain pending; no game, instruction probe, compiler or Ghidra write occurred.
+
+## Police-only widget omission is authored in the role-specific menus
+
+**Verified paired archive records and selected EXE bindings; partial support for MP100-048.** The [asset-admission audit](evidence/audits/police-editor-asset-admission.json), reproduced with `python3 analysis/scripts/audit_police_editor_asset_admission.py`, resolves the missing authored-item evidence. It reuses the existing complete asset inventory, verifies both archive hashes and each selected member hash, then parses repeated `[HudItem]` sections rather than treating arbitrary `item=` properties as widgets. This supersedes the preceding vendor-only assessment and its open authored-list question.
+
+| Menu | Author-reference→Modern widget count | Removed item IDs | Retained racer-side tutorial/cone items |
+|---|---|---|---|
+|`ps1pcop.mnu` |15→13 |6,7 |Not applicable |
+|`ps1prace.mnu` |18→18 |None |6,7 |
+|`ps2p1c2r.mnu` |31→29 |6,7 |29,30 |
+|`ps2p1r2c.mnu` |31→29 |29,30 |6,7 |
+|`ps2p2c.mnu` |28→24 |6,7,29,30 |Not applicable |
+|`ps2p2r.mnu` |34→34 |None |6,7,29,30 |
+
+No new HudItem IDs are added in these six paired files, and the retained IDs are not renumbered. Named POS slot6 is Tutorial Icon and slot7 is Cone Stats. The previously verified item mapping assigns29/30 to view1 slots6/7 after subtracting23;6/7 belong to view0. Consequently the mixed-role files omit precisely the police player's pair while preserving the racer's pair. This is stronger evidence than the generic, omitted `PSHUDPOS.MNU` asset inspected earlier: these are six actual same-path author-reference/final menu pairs with role-specific content.
+
+Both EXEs retain the six corresponding page callback records at`00555df8..00555e88`, with exact names`ps1prace`, `ps1pcop`, `ps2p2r`, `ps2p2c`, `ps2p1c2r`, `ps2p1r2c`. Each binds initializer`0044de80` and companion callback`0044dfd0`. The complete331-byte initializer`0044de80..0044dfcb` is byte-identical. It reads the two vehicle role bits, snapshots selected layout rectangles, binds two named entry callbacks and updates HUD geometry; this comparison identifies no new slot6/7 hide branch there. The retained HudItem registration/rectangle mapping and draw-case linkage from earlier audits explain why unchanged EXE drawing code can coexist with fewer authored editor items.
+
+**Interpretation:** Modern implements a concrete police-only editor omission in the packaged role-specific menu definitions. A reconstruction that recreates editor items directly must preserve that chosen asset policy; copying every nonzero POS rectangle into an editor would restore items Modern deliberately omits. The underlying layout records and drawing routines remain available for other contexts. Other menu property/layout edits are separate from these exact item-ID removals.
+
+**Remaining limitations:** the author-hosted reference archive is not authenticated pristine retail and is not proven paired to the supplied original EXE. Therefore these are verified reference-package→Modern-package differences, not proof that every retail installation had those original menu records. Actual installed asset selection, generic menu loading/dispatch, visible output and historical1.0.0 introduction remain untested. MP100-048 advances to **partial static/package support**, not runtime acceptance or a newly discovered EXE patch. Earlier negative findings remain valid within their checked code spans. No target, menu, instruction probe, compiler or Ghidra modification occurred.

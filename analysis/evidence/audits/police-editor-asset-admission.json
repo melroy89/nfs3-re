@@ -1,0 +1,549 @@
+{
+  "kind": "static-police-editor-authored-admission",
+  "inventory_sha256": "b58085cca18105000159e1e9d4f46f3ae5aa93bd50c3a12278556ef2d86e95ba",
+  "archives": {
+    "reference": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+      "sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127"
+    },
+    "modern": {
+      "path": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3"
+    }
+  },
+  "menus": [
+    {
+      "path": "fedata/menus/ps1pcop.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS1PCOP.MNU",
+        "sha256": "85cedcd7ca48078e924909cdcd46484f4c81e31b34ba3cffe00eadbb3f566142",
+        "bytes": 1158,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          18,
+          19,
+          20,
+          21,
+          22
+        ]
+      },
+      "modern": {
+        "member": "fedata/menus/ps1pcop.mnu",
+        "sha256": "421d96672be978815676f838112e3c0819537a39d8d9b356df1c560734334548",
+        "bytes": 839,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          9,
+          18,
+          19,
+          20,
+          21,
+          22
+        ]
+      },
+      "removed_HudItem_ids": [
+        6,
+        7
+      ],
+      "added_HudItem_ids": []
+    },
+    {
+      "path": "fedata/menus/ps1prace.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS1PRACE.MNU",
+        "sha256": "7acecbcce74307179d6f3b0a43de4424cd2a80ac020ec5614df41d38f749d546",
+        "bytes": 1293,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ]
+      },
+      "modern": {
+        "member": "fedata/menus/ps1prace.mnu",
+        "sha256": "44f2787262792787f3e588342423f9e0783d580343bfa66795210129fec76ef9",
+        "bytes": 1010,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ]
+      },
+      "removed_HudItem_ids": [],
+      "added_HudItem_ids": []
+    },
+    {
+      "path": "fedata/menus/ps2p1c2r.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS2P1C2R.MNU",
+        "sha256": "c30f9e5f0df50fa7e88b3c4678a0c198e780cf134e96bd17a441de0d1bda12a2",
+        "bytes": 1672,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      "modern": {
+        "member": "fedata/menus/ps2p1c2r.mnu",
+        "sha256": "e4d49278904aba3b106bccbc261a88b7f18f81f420e64b829842b406bb68e4cf",
+        "bytes": 1387,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      "removed_HudItem_ids": [
+        6,
+        7
+      ],
+      "added_HudItem_ids": []
+    },
+    {
+      "path": "fedata/menus/ps2p1r2c.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS2P1R2C.MNU",
+        "sha256": "f917ec58b486791ab11e8b26fe21cd6282be2cb1d51045882ad131acec170c1d",
+        "bytes": 1672,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          41,
+          42,
+          43,
+          44,
+          45
+        ]
+      },
+      "modern": {
+        "member": "fedata/menus/ps2p1r2c.mnu",
+        "sha256": "000362d4138c6f9707f43a505a7bbfa9e4c0132c4672f403d4ee1e4d20a417ca",
+        "bytes": 1385,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          31,
+          41,
+          42,
+          43,
+          44,
+          45
+        ]
+      },
+      "removed_HudItem_ids": [
+        29,
+        30
+      ],
+      "added_HudItem_ids": []
+    },
+    {
+      "path": "fedata/menus/ps2p2c.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS2P2C.MNU",
+        "sha256": "ee6cbac4777bac4528f6b252b52be2baaa549e91f1fbd4d7cdda8e2e294f40ce",
+        "bytes": 1570,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          41,
+          42,
+          43,
+          44,
+          45
+        ]
+      },
+      "modern": {
+        "member": "fedata/menus/ps2p2c.mnu",
+        "sha256": "2ab60ae9196ed143db4c2b15602c9abb8f4391344caf13a0e8834a9edf68b108",
+        "bytes": 1211,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          31,
+          41,
+          42,
+          43,
+          44,
+          45
+        ]
+      },
+      "removed_HudItem_ids": [
+        6,
+        7,
+        29,
+        30
+      ],
+      "added_HudItem_ids": []
+    },
+    {
+      "path": "fedata/menus/ps2p2r.mnu",
+      "reference": {
+        "member": "fedata/MENUS/PS2P2R.MNU",
+        "sha256": "9287b2dcc887742b666002f9e26809e661ea794505576721012801d1fd7cfc5b",
+        "bytes": 1766,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      "modern": {
+        "member": "fedata/menus/ps2p2r.mnu",
+        "sha256": "e80dba530f8a149a8169dd5af9147344b85a575b62c5ddfde1f7d4fee682e3d4",
+        "bytes": 1549,
+        "HudItem_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      "removed_HudItem_ids": [],
+      "added_HudItem_ids": []
+    }
+  ],
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "registered_pages": [
+        {
+          "address": "00555df8",
+          "name": "ps1prace",
+          "hex": "b47c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e10",
+          "name": "ps1pcop",
+          "hex": "c07c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e28",
+          "name": "ps2p2r",
+          "hex": "c87c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e40",
+          "name": "ps2p2c",
+          "hex": "d07c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e58",
+          "name": "ps2p1c2r",
+          "hex": "d87c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e70",
+          "name": "ps2p1r2c",
+          "hex": "e47c5300000000000000000080de4400d0df440000000000"
+        }
+      ],
+      "shared_initializer": {
+        "start": "0044de80",
+        "end_exclusive": "0044dfcb",
+        "bytes": 331,
+        "sha256": "98105d65e5a4f4bd262d0995137527bb1db1339cec1e243e08a3f8f11f210bc9",
+        "hex": "53515256575589e583ec0489c331c0e83c4dfdfff68000020000207407b801000000eb0231c089c6b801000000e81e4dfdfff68000020000207407b801000000eb0231c0689a99193fba010000008945fce85a36000031c989156492550031c0ba03000000890d0c446600e8705afdff8b3db0d36f0083ff01750cba0300000089f8e8595afdff69f6a4010000833db0d36f00017540b97001000081c698bf6f00bf9029660083c6248b55fc5789c8c1e902f2a58ac880e103f2a45f69c2a4010000b97001000005e0c26f00bf002b66008d7024eb13b97001000081c650bc6f00bf9029660083c6245789c8c1e902f2a58ac880e103f2a45fba8494530089d8e8bb4affff85c07407c7403000de4400ba8c94530089d8e8a44affff85c07407c7403020de440031c0e8f22003008b0db0d36f0083f901750789c8e8e020030031c089ec5d5f5e5a595bc3"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "registered_pages": [
+        {
+          "address": "00555df8",
+          "name": "ps1prace",
+          "hex": "b47c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e10",
+          "name": "ps1pcop",
+          "hex": "c07c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e28",
+          "name": "ps2p2r",
+          "hex": "c87c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e40",
+          "name": "ps2p2c",
+          "hex": "d07c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e58",
+          "name": "ps2p1c2r",
+          "hex": "d87c5300000000000000000080de4400d0df440000000000"
+        },
+        {
+          "address": "00555e70",
+          "name": "ps2p1r2c",
+          "hex": "e47c5300000000000000000080de4400d0df440000000000"
+        }
+      ],
+      "shared_initializer": {
+        "start": "0044de80",
+        "end_exclusive": "0044dfcb",
+        "bytes": 331,
+        "sha256": "98105d65e5a4f4bd262d0995137527bb1db1339cec1e243e08a3f8f11f210bc9",
+        "hex": "53515256575589e583ec0489c331c0e83c4dfdfff68000020000207407b801000000eb0231c089c6b801000000e81e4dfdfff68000020000207407b801000000eb0231c0689a99193fba010000008945fce85a36000031c989156492550031c0ba03000000890d0c446600e8705afdff8b3db0d36f0083ff01750cba0300000089f8e8595afdff69f6a4010000833db0d36f00017540b97001000081c698bf6f00bf9029660083c6248b55fc5789c8c1e902f2a58ac880e103f2a45f69c2a4010000b97001000005e0c26f00bf002b66008d7024eb13b97001000081c650bc6f00bf9029660083c6245789c8c1e902f2a58ac880e103f2a45fba8494530089d8e8bb4affff85c07407c7403000de4400ba8c94530089d8e8a44affff85c07407c7403020de440031c0e8f22003008b0db0d36f0083f901750789c8e8e020030031c089ec5d5f5e5a595bc3"
+      }
+    }
+  },
+  "verified": [
+    "Modern authored menus remove precisely slot6/7 for police views, including29/30=view1 slots6/7.",
+    "Racer single/split menus retain those item IDs; mixed-role menus retain the racer view items.",
+    "All six same-name page callback registrations and shared331-byte initializer are retained original/final.",
+    "Named slot association and item-to-view dispatch reuse the linked rectangle/draw audits; unchanged draw cases need not be deleted to omit authored items."
+  ],
+  "limits": [
+    "Static archive records and selected EXE linkage only; active installation, file loading and visible editor behaviour not executed.",
+    "Author-hosted reference assets are not authenticated pristine retail or proven paired to supplied original EXE.",
+    "Historical1.0.0 introduction and every generic parser/input route remain unverified.",
+    "Other menu property/layout differences are not classified as this widget omission.",
+    "MP100-048 has partial package/static support; no new executable police-role gate is asserted."
+  ]
+}
