@@ -169,7 +169,7 @@ or that saved settings are always reset.
 
 **Status:** done for this removed interval's instruction roles, replacement
 control transfer and compared sound defaults; verified static evidence.
-Complete original `00472250`, full initializer register/data provenance, all
+The [original language mapper `00472250`](original-modern-language-table.md#removed-defaults-time-language-mapper-00472250) is now fully captured and its local contract verified. Full initializer register/data provenance, all
 field identities, persistence and audible results remain separate follow-ups.
 No game, audio API or instruction probe was executed; executable and saved
 Ghidra bytes were preserved.

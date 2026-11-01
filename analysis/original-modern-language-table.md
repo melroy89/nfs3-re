@@ -80,3 +80,37 @@ The table sizes are corroborated by the first payload offset (0x20/0x24/0x24/0x4
 V1.5.3 supplies valid entries for those IDs: `Rear View Detail`, `Rear View From`, `Active Camera`, and `In Car Camera`, followed by six music-mode entries. This repairs the specific structural overrun while expanding the supported ID range. The predecessor/adjacent versions support the release note's introduction in1.5.1, persistence through1.5.2 and repair in1.5.3 for this mechanism. It is not evidence that every fallback failure, localized asset, malformed offset or caller was corrected.
 
 MP153-008 therefore moves from unresolved history to **bounded static support**. Whether a particular old language file reaches these IDs requires its coverage and caller inputs; full rendered localization remains a separate validation layer. The final1.6.x marker/fallback scheme described above is a later change with a different base and entry set.
+
+## Removed defaults-time language mapper: 00472250
+
+The [default-block audit](scripts/audit_removed_default_block.py) now captures
+complete original mapper `00472250..00472300`, its complete comparison helper
+`004ee310..004ee3b1`, and the Modern publication span in
+[the evidence manifest](evidence/audits/removed-default-block.json).
+Original default initialization calls the mapper at `00472561`; Modern
+replaces that call with a jump over the following profile/audio block.
+
+The mapper compares buffer `007a2634` against six literal lowercase names at
+`0053afd8 + i*8`: english, german, french, spanish, italian, swedish.
+A matching string writes ordinal0..5 to `006fbb4c`. These are six sequential
+exact case-sensitive comparisons, not the separate installation reader's
+prefix comparison. If none matches, this mapper makes no local destination
+write; it does not supply a fresh English fallback. Its comparator's DWORD
+reads also mean byte-level string equality is not an arbitrary-pointer safety
+contract; this analysis assumes normal valid storage.
+
+Modern's previously documented INI selector performs lowercase normalization,
+validates the same six names and explicitly falls back to English. At
+`00472aff..00472b09`, config initialization loads validated selector
+`007a3a50` and writes active index `006fbb4c`. Thus removal of the old mapper
+call is consistent with relocated language selection, not removal of language
+support. It also establishes the language identity of the branch operand in
+the immediately following original profile-default block. The separate
+[HUD/unit comparison](original-modern-hud-layout.md#default-speed-units-header-selector-reaches-the-digital-kph-path)
+qualifies the MPH/KPH consequence; no newly inferred unit conversion is needed.
+
+**Status:** done for the removed call target, six-name mapping, local no-match
+contract and Modern publication route; verified static evidence. Installation
+buffer provenance on every caller, later active-index writes, actual assets
+and runtime fallback outcomes remain separate. No target, language asset or
+instruction probe was executed; executable/database bytes were preserved.
