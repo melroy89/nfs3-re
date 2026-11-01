@@ -1,6 +1,7 @@
-"""Static1.5.2/1.5.3 nGlide package correspondence; no loader/driver execution."""
+"""Static1.5.1/1.5.2/1.5.3 nGlide package correspondence; no loader/driver execution."""
 import hashlib
 import json
+import re
 import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT
@@ -52,6 +53,35 @@ def main():
         row['exe']={'member':'nfs3.exe','sha256':hashlib.sha256(exe_raw).hexdigest(),'spans':spans,
                     'GetSystemMetrics_iat':'00534750'}
         result['versions'][version]=row
+    pre_relative='analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.1.7z'
+    pre_path=ROOT/pre_relative
+    pre_sha='c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de'
+    assert hashlib.sha256(pre_path.read_bytes()).hexdigest()==pre_sha
+    pre_exe=subprocess.check_output(['7z','x','-so',str(pre_path),'nfs3.exe'])
+    assert hashlib.sha256(pre_exe).hexdigest()=='4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17'
+    pre=pefile.PE(data=pre_exe)
+    code=pre.get_data(0xbef50,0x1bf)
+    assert code[-1:]==b'\xc3'
+    lines=disassemble(code,0x4bef50)
+    targets=[int(m.group(1),16)for line in lines if (m:=re.search(r'\bcall\s+0x([0-9a-f]+)',line))]
+    assert 0x4cdbd0 not in targets and 0x4cdc20 not in targets
+    pre_out=capture/'1.5.1-004bef50.asm'
+    pre_out.write_text('\n'.join(lines)+'\n')
+    components=[]
+    for member in MEMBERS:
+        raw=subprocess.check_output(['7z','x','-so',str(pre_path),member])
+        components.append({'member':member,'sha256':hashlib.sha256(raw).hexdigest(),
+            'identical_to_152':raw==blobs['1.5.2',member]})
+    assert components[2]['identical_to_152']
+    result['predecessor_151']={'archive':pre_relative,'archive_sha256':pre_sha,
+        'exe_sha256':hashlib.sha256(pre_exe).hexdigest(),'mode_application':{
+            'start':'004bef50','end_exclusive':'004bf10f','bytes':len(code),
+            'bytes_sha256':hashlib.sha256(code).hexdigest(),'assembly':str(pre_out.relative_to(ROOT)),
+            'assembly_sha256':hashlib.sha256(pre_out.read_bytes()).hexdigest(),
+            'direct_call_targets':[f'{x:08x}'for x in targets],
+            'sizing_helpers_directly_called':False,
+            'limit':'No direct calls in this selected body; does not exclude transitive/indirect resizing elsewhere'},
+        'components':components,'interpretation':'152 introduces inspected desktop-size branch in replacement body;153 removes it. Adapter metadata change is not rollback to151 because151adapter equals152.'}
     for lo,hi in [(0x4cdb10,0x4cdbcd),(0x4cdbd0,0x4cdc14),(0x4cdc20,0x4cdc4c),
                   (0x4b56e3,0x4b56f6),(0x4b5bd1,0x4b5be3),(0x517d70,0x517d9a)]:
         assert exe_images[0].get_data(lo-0x400000,hi-lo)==exe_images[1].get_data(lo-0x400000,hi-lo)
@@ -90,7 +120,7 @@ def main():
         'changed_runs':intervals(old,new,0),'sections':section_rows,'headers':headers,
         'whole_file_limit':'All seven changes confined to these header fields; no unclassified trailing byte changes'}
     (ROOT/'analysis/evidence/audits/nglide-window-history.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: two archives, identical nGlide/INI, seven adapter header bytes, equal section payloads and EXE mode-publication witnesses')
+    print('PASS: three archives, predecessor mode-body boundary, identical151/152 adapter and153 header/publication deltas')
 
 
 if __name__=='__main__':main()

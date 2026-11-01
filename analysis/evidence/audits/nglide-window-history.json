@@ -160,6 +160,46 @@
     "Selected package/header and EXE mode-publication comparison; regression cause and windowed behaviour unresolved.",
     "No Windows loader, nGlide, game or API execution."
   ],
+  "predecessor_151": {
+    "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.1.7z",
+    "archive_sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de",
+    "exe_sha256": "4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17",
+    "mode_application": {
+      "start": "004bef50",
+      "end_exclusive": "004bf10f",
+      "bytes": 447,
+      "bytes_sha256": "79c65010b5d10696515607cd701f323ca39b9bdd5a83d47b1661b1943de3f6b7",
+      "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.1-004bef50.asm",
+      "assembly_sha256": "c7461dca9a381cfd8375b14df1908a5108a6ef89f7efba83b78b31234b2c6489",
+      "direct_call_targets": [
+        "004bebb0",
+        "00431900",
+        "00431900",
+        "004bebb0",
+        "00431900"
+      ],
+      "sizing_helpers_directly_called": false,
+      "limit": "No direct calls in this selected body; does not exclude transitive/indirect resizing elsewhere"
+    },
+    "components": [
+      {
+        "member": "drivers/nglide/thrash.ini",
+        "sha256": "e2c4e128a3c9dd7fb6cddf10a83e29613f70c392e8b938eac0577a66ff98022c",
+        "identical_to_152": true
+      },
+      {
+        "member": "drivers/nglide/glide3x.dll",
+        "sha256": "87842a85d1bfda4217e691a9d4412915c74905eed818c5a727e2f2d6b814edb6",
+        "identical_to_152": true
+      },
+      {
+        "member": "drivers/nglide/voodoo2a.dll",
+        "sha256": "bea4abc9ff9b3e54ed304d2fd05d6be7005e1933b209e5a3975da4f897b67fab",
+        "identical_to_152": true
+      }
+    ],
+    "interpretation": "152 introduces inspected desktop-size branch in replacement body;153 removes it. Adapter metadata change is not rollback to151 because151adapter equals152."
+  },
   "exe_mode_publication": {
     "old_gate": "004bef3e tests00564390 bit0;zero usesselectedmodewidth/height through004cdbd0;nonzero calls004cdc20",
     "new_route": "004bef3e loadsselectedmodewidth/height and alwayscalls004cdbd0 at004bef43",

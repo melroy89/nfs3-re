@@ -72,3 +72,14 @@ The retained toggle reads the byte at`00564390`, XORs bit0, stores it, then call
 Both captured mode-application bodies also retain their ordering distinction: equal current/selected index jumps directly from`004beed7` to the publication point; a different admitted index calls slot`009ef958` at`004bef1b` and tests its result before publication. Thus the changed centring call is **after** a successful new-mode request in this historical path, and also reachable without a new request on the same-index path. Final's separately researched mode-preparation refactoring must not be retroactively assigned to these historical bodies.
 
 This closes selected flag-producer and ordering questions. Full runtime driver/provider window settings, other flag writers, callback effects, selected-record lifetime, header metadata behaviour and regression reproduction remain unresolved. No setting, window, driver or target instruction was changed or executed.
+
+
+## Predecessor1.5.1 separates refactor introduction from a simple revert
+
+The audit now verifies the preceding1.5.1 archive and extracted EXE hashes. It captures complete matched mode-application body **`004bef50..004bf10f`**,447 bytes. The1.5.2/1.5.3 bodies above are replacement implementations at`004beeb0`; assuming their same-address counterpart in1.5.1 would start in NOPs and misidentify boundaries.
+
+A decoded direct-call census of the complete1.5.1 body finds **no call to`004cdbd0` or`004cdc20`**. This is a bounded local absence, not proof that1.5.1 never resizes through callers, indirect slots or deeper callees. The later flag-gated sizing branch is therefore introduced by the inspected1.5.2 replacement body, and1.5.3 removes that branch in favour of selected dimensions. It is **not** established as a byte-for-byte reversion to1.5.1's mode path.
+
+The1.5.1 adapter `drivers/nglide/voodoo2a.dll` is **entirely identical to1.5.2's adapter**. Thus the1.5.3 import/IAT-header edits are new relative to both predecessors, rather than restoration of a distinct1.5.1 metadata layout. The manifest records provider/INI comparisons against1.5.1 as well. Identical predecessor adapter bytes do not rule out a changed EXE/loader context exposing their header layout differently.
+
+This supplies a three-release chronology consistent with an EXE-side regression candidate:1.5.1 different mode body;1.5.2 new flag-gated desktop-size request;1.5.3 selected-size request. Causality is still inferred. Complete surrounding window setup, selected provider state, header-loader behaviour and a real reproduction remain pending. MP153-007 stays partial; no package was installed or executed.

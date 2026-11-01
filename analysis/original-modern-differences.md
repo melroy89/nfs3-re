@@ -978,3 +978,6 @@ The [direct1.5.3→1.6.0 descriptor/asset comparison](original-modern-frame-sett
 ## Historical nGlide windowed-mode regression: bounded component evidence
 
 The [1.5.2→1.5.3 package comparison](original-modern-nglide-window-history.md) finds an identical nGlide provider and INI, while the adapter differs in seven PE-header bytes only. Import/IAT-directory metadata changes are documented rather than dismissed as padding. Their role in the advertised windowed-mode repair, and any EXE-side changes, remain unresolved. This is partial package evidence, not a reproduced fix.
+
+
+The [three-release predecessor check](original-modern-nglide-window-history.md#predecessor151-separates-refactor-introduction-from-a-simple-revert) further shows that1.5.2 introduces the inspected sizing branch in a replacement mode body;1.5.3 removes it. The1.5.1/1.5.2 adapter files match exactly, distinguishing the later header edits from a simple metadata revert. This remains a static regression candidate, not observed recovery.

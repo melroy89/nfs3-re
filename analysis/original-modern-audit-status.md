@@ -557,3 +557,8 @@ The [historical follow-up](original-modern-nglide-window-history.md#exe-mode-pub
 ## Historical sizing flag has retained producer and toggle
 
 The [flag/order follow-up](original-modern-nglide-window-history.md#sizing-flag-producer-later-toggle-and-mode-request-order) verifies the retained inverse-WindowedMode producer, complete42-byte bit0 toggle and mode request/publication order. The1.5.3 local difference affects flag1; flag0 already centred requested dimensions. This narrows interpretation of the nGlide claim without inventing a provider-specific branch or fixed lifetime. Counts unchanged; no target execution.
+
+
+## nGlide candidate now has a three-release boundary
+
+The [predecessor comparison](original-modern-nglide-window-history.md#predecessor151-separates-refactor-introduction-from-a-simple-revert) captures1.5.1's different447-byte mode body with no direct calls to the two sizing helpers, versus1.5.2's new desktop-size branch and1.5.3's selected-size route. The1.5.1 adapter equals1.5.2 exactly, so1.5.3 metadata is not a rollback to a distinct151 layout. Full causal/runtime evidence remains pending; counts unchanged.
