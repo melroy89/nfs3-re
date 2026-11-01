@@ -302,3 +302,7 @@ The [DX5 comparison](original-modern-dx5-reference-pair.md) verifies34 identical
 ## DX5 callback policy recovered at a bounded static scope
 
 The [callback comparison](original-modern-dx5-reference-pair.md#mode-callback-and-selected-initialization-paths) verifies the added unsigned640/480 dimension filter, larger table requests, changed fixed seeds, raw-key linear scan and quotient cap. Recognized32-bit inputs remain conditionally admissible, including at640×480; the fixed16-bit seed does not establish the release note’s absolute always claim. MP100-062/063/064 gain partial evidence; actual mode selection/rendering and historical introduction remain unverified. Catalog totals:137 vendor-only,45 bounded static,106 partial,2 unresolved. No DLL or target execution.
+
+## DX5 numeric state15h removal
+
+The [state-handler comparison](original-modern-dx5-reference-pair.md#removed-numeric-state-selector15h-route) checks the complete2425-byte export body: only two changed intervals remove selector15h table/control handling and replace it with EAX=0 rejection. Generator, expander and numeric-device-state adapter remain byte-identical. Reference success did not forward device acceptance. API naming, caller use and visual effects remain unverified; no blanket fog-removal or release-note completion claim. Catalog counts unchanged.

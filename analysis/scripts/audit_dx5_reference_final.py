@@ -131,6 +131,30 @@ def main():
         assert pe.get_data(rva, len(bytes.fromhex(expected))).hex() == expected, label
         result['mode_policy']['assertions'].append({'role': role, 'va': f'{0x60000000+rva:08x}',
                                                     'hex': expected, 'meaning': label})
+    result['state_selector_15'] = {'captures': []}
+    for role, pe in [('reference', a), ('modern', b)]:
+        for start, end, label in [(0x2b58, 0x34d1, 'complete-setstate-body'),
+                                   (0x2994, 0x2a4d, 'table-generator'),
+                                   (0x2a50, 0x2af8, 'table-expander'),
+                                   (0x4f64, 0x4fb2, 'numeric-device-state-adapter')]:
+            raw = pe.get_data(start, end-start)
+            result['state_selector_15']['captures'].append({'role': role, 'label': label,
+                'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+                'sha256': sha(raw), 'disassembly': disassemble(raw, 0x60000000+start)})
+    changes = intervals(a.get_data(0x2b58, 0x979), b.get_data(0x2b58, 0x979), 0x60002b58)
+    assert [(c['start_va'], c['end_va_exclusive']) for c in changes] == [
+        ('60002e47', '60002e78'), ('6000341c', '60003498')]
+    assert b.get_data(0x2e47, 5).hex() == 'e942fdffff'
+    assert b.get_data(0x2e4c, 0x2c) == b'\x90'*0x2c
+    assert b.get_data(0x341c, 0x7c) == b'\x90'*0x7c
+    assert a.get_data(0x2b8e, 12) == b.get_data(0x2b8e, 12)
+    for start, end in [(0x2994, 0x2a4d), (0x2a50, 0x2af8), (0x4f64, 0x4fb2)]:
+        assert a.get_data(start, end-start) == b.get_data(start, end-start)
+    result['state_selector_15']['changed_intervals'] = changes
+    result['state_selector_15']['limits'] = [
+        'Numeric selector15h removal from this export only; no claim of all fog removal.',
+        'Device object identity and API enumeration names are not established by numeric state calls alone.',
+        'Retained table helpers and other entry routes remain present; caller usage and rendered effects are untested.']
     result['limits'] = [
         'Reference is author-hosted and matches the previously inventoried local root D3DA hash; not authenticated pristine retail.',
         'Raw changed intervals are byte inventory, not function boundaries or complete semantic attribution.',

@@ -23,6 +23,8 @@ The [historical renderer comparison](original-modern-renderer-texel-alignment.md
 
 The [DX5 reference/final comparison](original-modern-dx5-reference-pair.md) adds an address-based map of710 differing code-section bytes in25 intervals, unchanged import/data sections and an exact descriptor-pointer publication change. Its [callback follow-up](original-modern-dx5-reference-pair.md#mode-callback-and-selected-initialization-paths) verifies dimension filters, seeds and raw-key scanning; actual32-bit operation and the absolute640×480 depth claim remain unverified. These are separate from the historical DX6/DX7/DX8 findings.
 
+The [DX5 state-handler comparison](original-modern-dx5-reference-pair.md#removed-numeric-state-selector15h-route) also verifies that Modern rejects selector15h where the reference generated a table, stored control values or submitted numeric device-state writes. The helpers themselves remain present and unchanged; visual effects and actual callers remain unverified.
+
 ## Recent findings at a glance
 
 The [static checkpoint](evidence/validation/historical-startup-checkpoint.json) re-runs11 selected audit scripts against reviewed commit `7c36f96` and verifies the recorded hashes of the supplied original, official Modern, local analysis EXE and saved Ghidra database. This is a reproducibility/self-check checkpoint, not independent semantic review or completion of the entire investigation.

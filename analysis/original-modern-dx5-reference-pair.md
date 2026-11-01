@@ -74,11 +74,34 @@ The two setup tails push callback `600017bc` and context address `6001204c` befo
 - **MP100-063:** partial support for retaining recognized32-bit entries in the larger callback table. The original classifier already accepts32-bit formats; actual mode selection/device/rendering paths are still required to establish the claimed change in operation.
 - **MP100-064:** the fixed640×480×16 seed is verified, but the absolute word “always” is not established by this callback. Distinct-depth entries remain locally admissible. Runtime enumeration and consumers must settle the full claim.
 
+## Removed numeric state-selector15h route
+
+The audit now compares the complete `THRASH_setstate` body `60002b58..600034d1` (2,425 bytes). Only two maximal differing-byte intervals occur in that body: `60002e47..60002e78` and `6000341c..60003498`. These are subsets of the existing whole-code map, not additional byte differences.
+
+The entry reads its selector from the first stack argument and value from the second, initializing EBX=1. The retained comparison tree sends selector15h to `60002e47`. In Modern, that address is an unconditional jump to `60002b8e`, which clears EBX and returns EAX=0 through the normal `RET 8` epilogue. The remaining44 bytes before the next retained block are NOPs. The reference instead checks selector15h and dispatches by value:
+
+| Value for selector15h | Reference local path | Modern local path |
+|---|---|---|
+|2 or8 | Stores value at `600129f0`, returns1 | Returns0; removed store |
+|4 | Calls retained generator `60002994` with destination `600129b0`, EDX=`600128b0` and a pushed DWORD from `60010f0c`; then calls expander `60002a50` with EAX=`600129b0`; returns1 | Returns0; this invocation route removed |
+|0 | Calls adapter `60004f64` for numeric device states `1ch=0`, then `23h=0`; returns1 | Returns0; calls removed |
+|1 | Calls the same adapter for `1ch=1`, then `23h=0`; returns1 | Returns0; calls removed |
+|Other values | Returns1 without these stores/calls | Returns0 |
+
+Reference tails `6000341c..60003498`, containing the value4 and value0/1 routes, are entirely replaced by124 NOP bytes in Modern. Other parts of the state-handler body are byte-identical, including the distinct selector14h route's rejection. This is an export-level dispatch change, not just deletion of unused-looking bytes.
+
+The generator, expander and numeric state adapter remain byte-identical in their separately captured complete bodies. The generator uses x87 operations to emit64 byte values; the expander has a256-iteration output loop. This supports a table-related interpretation. A fog-related role is **inferred** from this mechanism and adjacent state handling; this increment does not establish API enumeration names or a visible effect merely from numeric constants. A precise mathematical reconstruction and floating-point edge-case audit of those helpers is outside this comparison.
+
+The adapter prepares an object if needed, optionally calls a pending-work helper, and invokes object `[60010f48]` vtable offset5ch with the numeric state/value. It returns1 only when that indirect call returns zero, otherwise0. The reference selector15h tails discard this result and return their own1. Therefore the original exported success return does not by itself prove device acceptance. The complete object/interface provenance and subordinate helper contracts remain open.
+
+This removes **one caller route** to retained table helpers and state writes. It does not prove all such calls, table consumers, fog effects or other rendering paths disappeared. Caller use, side effects through aliases and actual rendering remain untested. No release-note claim is promoted solely from this numeric-selector finding.
+
 ## Actionable follow-up and acceptance
 
 - **Done, verified:** artifact pairing, full export inventory, whole code-section byte map, import/data section equality, complete `about` comparison and retained selection span.
 - **Done, verified:** complete callback comparison, selected setup seeds/count requests, raw-key scan policy, dimension filter and local quotient cap.
-- **Pending, unresolved:** exhaustive initialization/consumers, actual32-bit operation and absolute640×480 reporting policy; classify remaining code intervals into mechanisms.
+- **Done, verified:** selector15h now rejects requests; removed table/state tail blocks and unchanged helper bodies are documented.
+- **Pending, unresolved:** exhaustive initialization/consumers, actual32-bit operation, absolute640×480 reporting policy and selector15h callers/effects; classify remaining code intervals into mechanisms.
 - **Later evidence:** authenticated retail provenance, historical introduction, full relocations/resources, runtime display enumeration and rendering acceptance.
 
 No release-note item is promoted by this bounded pairing alone. The broader original/Modern investigation remains incomplete. Existing EXEs, saved Ghidra state, maintained C and raw exports were not edited; no target instructions, OS graphics calls or new probes were run.
