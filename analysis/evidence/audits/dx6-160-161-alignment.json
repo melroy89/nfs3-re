@@ -1,0 +1,203 @@
+{
+  "kind": "static-dx6-160-161-vertex-alignment",
+  "versions": {
+    "1.6.0": {
+      "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
+      "member": "drivers/dx6/dx6a.dll",
+      "sha256": "273ac3fae94cf42791f65fac0e961a1d9044e8601a3400cc16263a7578278155",
+      "spans": [
+        {
+          "start": "6000e514",
+          "end_exclusive": "6000e54b",
+          "sha256": "0630ce72aa629c24c78922de6bfd467bad530d1aefab6fdb79bf843ca6fedd98",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.0-6000e514.asm",
+          "assembly_sha256": "e7bdad4868142e9d6928e6690b26173f34731c79e64a6f3e7cda01c790415854"
+        },
+        {
+          "start": "60005712",
+          "end_exclusive": "60005721",
+          "sha256": "8d1d9c9bd8901d2e0f36518ec986b0c5d76a8a03923f394e7d8accef3efb68f2",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.0-60005712.asm",
+          "assembly_sha256": "33d8bb673b4d18f3946bb573df24ebd8cb30780a00c0d80cfe3587a4c293dccd"
+        },
+        {
+          "start": "60006329",
+          "end_exclusive": "60006338",
+          "sha256": "6c2f1fbcfe60c64708ff80ba5cd9c5edf8a2b81a79a1b7adabda20ee27470f1f",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.0-60006329.asm",
+          "assembly_sha256": "aaeb652325c64dfecf187084559dd3dff5081fdb0b909fa273203152b8fc0562"
+        },
+        {
+          "start": "600063ed",
+          "end_exclusive": "600063fc",
+          "sha256": "ab99d80ec4462196189c0dd2c6c8f4519b5eaf97348fa2e7ff31b1c4e8dcca79",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.0-600063ed.asm",
+          "assembly_sha256": "a803348a072c43c4d9fc5746ec8d0cd8d0ee2814496e2eb8a529014e68353d38"
+        },
+        {
+          "start": "600064d7",
+          "end_exclusive": "600064e6",
+          "sha256": "9833c3fa1296bddba0087a8f23eb3f07c6f9ba6579fb603dbb049ff7775a59b3",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.0-600064d7.asm",
+          "assembly_sha256": "49b1f54d6a57d65481fba7bbc812ccf433c4a201d483b18ed2b6ec85643e9fc0"
+        },
+        {
+          "start": "60006583",
+          "end_exclusive": "60006592",
+          "sha256": "1634cf3982ec996a6ac8023be2a48ecf6fccd6cb6bb8f9b93e80716af3543a51",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.0-60006583.asm",
+          "assembly_sha256": "2685ce1abbe7e32c66913850daa41043450095924e96563157651688d263dae7"
+        },
+        {
+          "start": "60006633",
+          "end_exclusive": "60006642",
+          "sha256": "56b28aa27285b7780f799a3aca80c06802b966cd3f1cc2e8dad3ff1371a267cc",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.0-60006633.asm",
+          "assembly_sha256": "d7e7f2c320e6e8a3c16336231ea932ac82f9bab6e44a0978deb19897fa968159"
+        },
+        {
+          "start": "6000670d",
+          "end_exclusive": "6000671c",
+          "sha256": "b83234b9a95945cef825a762eca28117072ca5fffdd52f4aceb8f2ba053408d9",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.0-6000670d.asm",
+          "assembly_sha256": "49372f7e232e2fd7bf9f41b4700380da0c20fa3537a7968d6761e0cece0362f2"
+        },
+        {
+          "start": "600067b3",
+          "end_exclusive": "600067c2",
+          "sha256": "750506ccfd292ca48526e4e79a6be4228a88c1548b0b64d9f0f18d6e5ba4deae",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.0-600067b3.asm",
+          "assembly_sha256": "f7d7edc874e01bf7742d24c3ed96156c50714c433482f6557395e62e7b201829"
+        }
+      ]
+    },
+    "1.6.1": {
+      "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+      "member": "drivers/dx6/dx6a.dll",
+      "sha256": "bc01ac47bdc6590bb787fbc4b953a1915a386191cfbcf66f3a6636e8e660aca6",
+      "spans": [
+        {
+          "start": "6000e514",
+          "end_exclusive": "6000e54b",
+          "sha256": "64e115471e7ef5631841cc9b64f2b1ed7b2fb5799175983a44cf59fda61070b6",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.1-6000e514.asm",
+          "assembly_sha256": "9f1312283891c14992226ce6b587c5b1117bd52498e6ed111fbdca5184956fe4"
+        },
+        {
+          "start": "60005712",
+          "end_exclusive": "60005721",
+          "sha256": "7a05faf0624897d5f2d86eff1c6b110171bc6291ff28b802bc71d9c7eb54d5f1",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.1-60005712.asm",
+          "assembly_sha256": "2d57828c3b024afea24e28e54fc6942453d5fedce9441c68fea07a9539858487"
+        },
+        {
+          "start": "60006329",
+          "end_exclusive": "60006338",
+          "sha256": "34f8d02c5ec165935d46d2556cda268ae701c5ffe8493b51c4a8c9f5b5ce2d9f",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.1-60006329.asm",
+          "assembly_sha256": "92b93c01951d4a061ee8e5a3627d0783e64070c6bcacbba50f4223f0bde9e906"
+        },
+        {
+          "start": "600063ed",
+          "end_exclusive": "600063fc",
+          "sha256": "94cdf89942a6eb29f0df61a2015295b99366181be6b458474d7baacf4dbd280f",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.1-600063ed.asm",
+          "assembly_sha256": "ce9990e0d63040c5d765e2c1b073103372cd51874392eec9397ccfce7bf9343f"
+        },
+        {
+          "start": "600064d7",
+          "end_exclusive": "600064e6",
+          "sha256": "51b7c742dfe19e80eda4c453e1b18b809804054f5a89f109778056ee7f5f27fa",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.1-600064d7.asm",
+          "assembly_sha256": "6fca9ca82f74be6172c6181d6712dadcefe55035a5e659777177ace001e8e05d"
+        },
+        {
+          "start": "60006583",
+          "end_exclusive": "60006592",
+          "sha256": "20227d090987b403a582c890dde3440e8192c7e4ecfa670367a5f16cf8788ab2",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.1-60006583.asm",
+          "assembly_sha256": "fdf56fa489eb20f8c68de70402e77c9bf96b9e74e5d15b87387445e3c8c62bd3"
+        },
+        {
+          "start": "60006633",
+          "end_exclusive": "60006642",
+          "sha256": "7d14c857ad53507b77a7371f5a2d4e5b32f36b5c5dbb1bf80eb2ad4692fafda8",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.1-60006633.asm",
+          "assembly_sha256": "ba93582332c46042f16e669a0616e91ab1b463214f9c016fd5aa0d81226f1f8b"
+        },
+        {
+          "start": "6000670d",
+          "end_exclusive": "6000671c",
+          "sha256": "1f322054cca1edc416bb9582f1ce543aa450cc7940885af137e4d3e86fe37e53",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.1-6000670d.asm",
+          "assembly_sha256": "0efc9f68ecb6d8cd1912e1aec427f19745bdc39c51c592ecfe7742b3a62758f7"
+        },
+        {
+          "start": "600067b3",
+          "end_exclusive": "600067c2",
+          "sha256": "edbcef8c762ebddb292591c8a528887b6242958ea419b2ead5af21f63ac941d0",
+          "assembly": "analysis/captures/modern-differences/dx6-alignment/1.6.1-600067b3.asm",
+          "assembly_sha256": "9229bbc035b05be87273f67214dfcef8d64c1870db3bc5736166783fb470eb85"
+        }
+      ]
+    }
+  },
+  "range_end": "exclusive",
+  "patches": [
+    {
+      "site": "60005712",
+      "old": "68c4010000",
+      "new": "e8fd8d0000"
+    },
+    {
+      "site": "60006329",
+      "old": "68c4010000",
+      "new": "e8e6810000"
+    },
+    {
+      "site": "600063ed",
+      "old": "68c4010000",
+      "new": "e822810000"
+    },
+    {
+      "site": "600064d7",
+      "old": "68c4010000",
+      "new": "e838800000"
+    },
+    {
+      "site": "60006583",
+      "old": "68c4010000",
+      "new": "e88c7f0000"
+    },
+    {
+      "site": "60006633",
+      "old": "68c4010000",
+      "new": "e8dc7e0000"
+    },
+    {
+      "site": "6000670d",
+      "old": "68c4010000",
+      "new": "e8027e0000"
+    },
+    {
+      "site": "600067b3",
+      "old": "68c4010000",
+      "new": "e85c7d0000"
+    }
+  ],
+  "contract": {
+    "helper": "6000e514..6000e54b,55 bytes",
+    "input": "Entry stack+4 vertex pointer,stack+8 DWORD count; ECX/EDI saved/restored.",
+    "writes": "For nonzero count, subtract binary32 constant0.5 from floats+0/+4 of each32-byte vertex; store each result binary32.",
+    "stack_adapter": "After restoring registers, duplicate return address, replace next stack DWORD with1c4h, RET; net caller-stack effect matches replaced PUSH1c4h.",
+    "limits": [
+      "Eight patched sites verified; not all exported draw reachability or every driver mode.",
+      "Mutates supplied vertices; repeated submission of same unreinitialized buffer can repeat correction.",
+      "Assumes valid pointer/count and ordinary x87 execution; count0 skips arithmetic. No C/ABI/runtime equivalence claim."
+    ]
+  },
+  "limits": [
+    "Author-hosted1.6.0/1.6.1 DX6 pair only; DX7/DX8 and original retail driver remain separate.",
+    "No rasterization, texture sampling, visual sharpness or graphics API execution tested."
+  ]
+}

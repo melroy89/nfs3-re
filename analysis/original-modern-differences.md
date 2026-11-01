@@ -19,6 +19,8 @@ For a shallow inventory, see the [complete release-note change list](#complete-r
 
 Read-only PE parsing, disassembly and Ghidra metadata inspection were used. The original was separately imported/analyzed under ignored `analysis/captures/modern-differences/ghidra-original/`; the established Modern Ghidra project, executable and maintained C were not modified. No new game, multiplayer, replay or instruction-probe execution was performed for this audit.
 
+The [historical renderer-alignment comparison](original-modern-renderer-texel-alignment.md) now establishes the DX6 half-unit vertex correction in an author-hosted1.6.0/1.6.1 pair; the bundled DX7/DX8 claims remain separate.
+
 ## 1. Three-way provenance
 
 | Artifact | Bytes | SHA-256 |
@@ -494,7 +496,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **150 Claimed, 40 Static, 97 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **149 Claimed, 40 Static, 98 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -506,7 +508,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 
 | ID | Reported change | Review |
 |---|---|---|
-| MP161-001 | Fixed the problem with Texel Alignment in the DX6, DX7 and DX8 renderers, so everything looks sharp, like when Glide3x is used. | Claimed |
+| MP161-001 | Fixed the problem with Texel Alignment in the DX6, DX7 and DX8 renderers, so everything looks sharp, like when Glide3x is used. | Partial |
 | MP161-002 | DX8 supports fog effect. Thanks to Verok for investigation. | Claimed |
 | MP161-003 | The DX7 graphical glitches like the black polygon near the Old Church were workarounded. | Claimed |
 | MP161-004 | DX7 doesn't output 640×480×16 if this mode isn't supported. Also it returns sorted list of resolutions now. | Static |
