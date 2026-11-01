@@ -69,11 +69,25 @@ def main():
             if version=='1.5.1':
                 copy={'dx5/dx5a':(0x2e26,0x2e45,0x60012888),
                       'dx6/dx6a':(0x36d1,0x36f8,0x6003bcc0),
-                      'softtri/softtria':(0x3228,0x3244,0x600400a0)}[driver]
+                      'softtri/softtria':(0x3228,0x3249,0x600400a0)}[driver]
                 spans.append(copy[:2])
                 assert b'\xbf'+struct.pack('<I',copy[2]) in pe.get_data(copy[0],copy[1]-copy[0])
+                if driver=='dx6/dx6a':
+                    assert exports['_THRASH_setstate@8']==0x3310
+                    target=struct.unpack('<I',pe.get_data(0x3f0c+19*4,4))[0]
+                    assert target==0x600036d1
+                    assert pe.get_data(0x333e,7).hex()=='ff24bd0c3f0060'
+                    assert pe.get_data(0x36d1,8).hex()=='3bdd0f84f1050000'
+                    spans.extend([(0x3310,0x3345),(0x3f0c+19*4,0x3f0c+20*4)])
+                    row['selector13_route']='Stack selectorEDI19 ->jump table60003f0c[19]=600036d1;EBX payloadpointer compared toEBP0;nonnull reaches32-byte copy'
+                elif driver=='softtri/softtria':
+                    assert exports['_THRASH_setstate@8']==0x30c0
+                    assert pe.get_data(0x3105,9).hex()=='83f8120f871a010000'
+                    assert pe.get_data(0x3228,9).hex()=='83f8130f854fffffff'
+                    spans.append((0x30c0,0x311e))
+                    row['selector13_route']='Stack selectorEAX19 follows ordered comparisons to60003228, equality admitscopyfromEDX;no local payloadNULL test'
                 row['callback_copy']={'destination':f'{copy[2]:08x}','bytes':32,
-                    'consumer_cell_offset':'14','qualification':'Direct bulk-copy writer; full selector dispatch/admission and alternate writes remain separate'}
+                    'consumer_cell_offset':'14','qualification':'Selected selector13 route recorded where qualified; alternate writers, invocation and lifetime remain separate'}
 
             for lo,hi in spans:
                 code=pe.get_data(lo,hi-lo)

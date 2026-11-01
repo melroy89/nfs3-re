@@ -501,3 +501,8 @@ The [setup follow-up](original-modern-lockwindow-history.md#critical-section-set
 ## Original/final EXE side of the historical lock fix corresponds
 
 The [four-EXE correspondence check](original-modern-lockwindow-history.md#correspondence-with-supplied-original-and-official-final-exes) verifies identical callback table,59-byte callback,83-byte producer,89-byte publisher and35-byte registration witness across supplied original, official final and both historical EXEs, with matching API bindings. The driver failure-path change uses retained EXE synchronization code. This is scoped byte/interface correspondence, not full startup/driver equivalence or retail provenance for all DLLs. Counts unchanged; no target execution.
+
+
+## DX6/SoftTri callback registration dispatch resolved locally
+
+The [selector13h follow-up](original-modern-lockwindow-history.md#dx6-and-softtri-selector13h-registration-routes) verifies1.5.1 DX6's jump-table entry19→nonnull eight-DWORD copy and SoftTri's ordered selector comparisons→copy without a local payload-null guard. This closes those selected dispatch edges, while preserving pointer/DF prerequisites and unresolved replacement/lifetime/runtime questions. MP151-004 remains partial; counts unchanged.

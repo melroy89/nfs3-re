@@ -41,7 +41,7 @@ The1.5.1 DLLs have direct eight-DWORD bulk-copy writers to these callback-bank d
 | DX6 | `6003bcc0` | `6003bcd4` | `14h` |
 | SoftTri | `600400a0` | `600400b4` | `14h` |
 
-The [existing DX5 registration analysis](original-modern-dx5-reference-pair.md#lock-failure-now-notifies-the-callback) already establishes its selector13h route. The newly retained copy witnesses corroborate the other bank layouts; full selector dispatch/admission and all alternate writers in DX6/SoftTri remain separate. Bulk-copy layout is not an observed registration session.
+The [existing DX5 registration analysis](original-modern-dx5-reference-pair.md#lock-failure-now-notifies-the-callback) already establishes its selector13h route. The copy witnesses corroborate the other bank layouts; the follow-up below resolves the1.5.1 DX6/SoftTri selector13h dispatch/admission. Alternate writers and lifetime remain separate. Bulk-copy layout is not an observed registration session.
 
 Complete callback **`00524550..0052458b`** is identical in both historical EXEs. It reads its stack argument. Nonzero passes pointer`[00564480]` to imported **EnterCriticalSection** (`005344b8`); zero passes that pointer to imported **LeaveCriticalSection** (`00534588`). After the API call, both branches publish the original raw argument at `00567180`, then execute **RET4**. This verifies the stack cleanup required by the driver calls; the nonzero branch also explicitly saves/restores EBX. It does not normalize arbitrary nonzero arguments or return a documented success Boolean.
 
@@ -84,3 +84,14 @@ All four use matching inspected Initialize/Enter/LeaveCriticalSection import bin
 The [existing hosted-reference/final DX5 comparison](original-modern-dx5-reference-pair.md#lock-failure-now-notifies-the-callback) independently identifies the same failure-notification mechanism and registration offset in that driver pair. Its reference archive is not authenticated as every retail installation, and DX6/SoftTri's new evidence remains the explicitly dated historical pair. Do not describe all three as original-retail driver comparisons.
 
 The combined interpretation is therefore a changed driver failure path using a **retained EXE critical-section callback**, with1.5.0→1.5.1 dating for the three selected drivers. EXE callback preservation is established; complete call admission, valid object lifetime and actual failure recovery remain pending. No executable/database bytes, driver state or critical-section objects were changed.
+
+
+## DX6 and SoftTri selector13h registration routes
+
+The extended audit now verifies the **1.5.1** registration dispatch, not just bank offsets. Its manifest retains the selected export-entry prefixes, DX6 table entry, copy blocks and instruction witnesses. These are static routes; successful invocation and callback lifetime remain conditional.
+
+**DX6:** exported `_THRASH_setstate@8` begins at`60003310`. Its stack loads put selector in EDI and payload in EBX, with EBP zeroed. Selector19 (`13h`) passes the upper-bound checks and reaches indirect jump`6000333e` through table`60003f0c`. Entry19 is **`600036d1`**. That block compares payload EBX against EBP0: null jumps away to`60003cca`, while nonnull sets ESI=EBX, ECX8, EDI=`6003bcc0` and copies eight DWORDs. Callback cell`6003bcd4` therefore receives payload+`14h` on that admitted path.
+
+**SoftTri:** exported `_THRASH_setstate@8` begins at`600030c0`, loading selector into EAX and payload into EDX. Ordered comparisons send19 past17, below104 and21, then above18 to`60003228`; equality against19 admits the eight-DWORD copy from EDX to`600400a0`. The branch returns1 with RET8 after restoring EDI/ESI. There is **no local null test of the payload pointer on this copy path**. Callback cell`600400b4` receives payload+`14h`, assuming accessible storage and ordinary clear DF for the REP MOVSD.
+
+This closes the selected DX6/SoftTri1.5.1 selector-to-bank edges behind the critical-section callback interpretation. It does not make null input safe, prove all export slots were resolved successfully, exclude callback replacement, or establish thread/teardown ordering. Full historical registration equivalence, remaining setters/aliases and live failure behaviour remain pending. MP151-004 remains partial; no API or target instruction was executed.

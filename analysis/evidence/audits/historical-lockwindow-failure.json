@@ -168,7 +168,7 @@
           "destination": "60012888",
           "bytes": 32,
           "consumer_cell_offset": "14",
-          "qualification": "Direct bulk-copy writer; full selector dispatch/admission and alternate writes remain separate"
+          "qualification": "Selected selector13 route recorded where qualified; alternate writers, invocation and lifetime remain separate"
         },
         "failure_branch_witness_hex": "85c0740d31c0e84c060000e9ed00000090"
       }
@@ -212,13 +212,28 @@
             "bytes_sha256": "f44e167f59003c643e973870029a145125e735443d71ef9364cc97b83fb426bf",
             "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx6-dx6a-000036d1.asm",
             "assembly_sha256": "d4231ff5b044bf38709af6e1e1c86de32b402cc25d2d1008a16eabe497066d61"
+          },
+          {
+            "start": "60003310",
+            "end_exclusive": "60003345",
+            "bytes_sha256": "d422e2d23533317449eae90667e138967f6f5160a9811cdba1ec3699d732e70a",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx6-dx6a-00003310.asm",
+            "assembly_sha256": "b3e3de351e7a87bc479e0c608fe70b509bbd0034378844668ee43c7602cf6c62"
+          },
+          {
+            "start": "60003f58",
+            "end_exclusive": "60003f5c",
+            "bytes_sha256": "66e94483e05c4710a49804fa7371a546888f5951776fbffa4e4097c37075463d",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx6-dx6a-00003f58.asm",
+            "assembly_sha256": "fcf25cf4527491e5c5ae2088fbbe392d878900e1382ffc57f13ba112e276539d"
           }
         ],
+        "selector13_route": "Stack selectorEDI19 ->jump table60003f0c[19]=600036d1;EBX payloadpointer compared toEBP0;nonnull reaches32-byte copy",
         "callback_copy": {
           "destination": "6003bcc0",
           "bytes": 32,
           "consumer_cell_offset": "14",
-          "qualification": "Direct bulk-copy writer; full selector dispatch/admission and alternate writes remain separate"
+          "qualification": "Selected selector13 route recorded where qualified; alternate writers, invocation and lifetime remain separate"
         },
         "failure_branch_witness_hex": "740e31c0e8bb0a000031c0e9fa000000"
       }
@@ -251,17 +266,25 @@
           },
           {
             "start": "60003228",
-            "end_exclusive": "60003244",
-            "bytes_sha256": "f431ca8f6ba3f987d3ba24f5aba50d66bc1cd938c0e544a42ef1a5b0b62980c8",
+            "end_exclusive": "60003249",
+            "bytes_sha256": "23ebd7b0038220f73f1b89351e1f8f175e34f488d97cfda3c7b3b6779863aefa",
             "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-softtri-softtria-00003228.asm",
-            "assembly_sha256": "b462141a18ed3430fabaf2c6c7b50a99cdb10631355146686187bf967b65997f"
+            "assembly_sha256": "321927bd949915c268a7bf9215dcde237dc4bd7133405607140e4df3a998762c"
+          },
+          {
+            "start": "600030c0",
+            "end_exclusive": "6000311e",
+            "bytes_sha256": "e6ea466786876e425438b9babf17c93089a52d7d14b9074f07b1c424c8901f7d",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-softtri-softtria-000030c0.asm",
+            "assembly_sha256": "26b7f077f77ee6eaefa8e69605de2cd4769e47cfecb176780bc57eb84483279a"
           }
         ],
+        "selector13_route": "Stack selectorEAX19 follows ordered comparisons to60003228, equality admitscopyfromEDX;no local payloadNULL test",
         "callback_copy": {
           "destination": "600400a0",
           "bytes": 32,
           "consumer_cell_offset": "14",
-          "qualification": "Direct bulk-copy writer; full selector dispatch/admission and alternate writes remain separate"
+          "qualification": "Selected selector13 route recorded where qualified; alternate writers, invocation and lifetime remain separate"
         },
         "failure_branch_witness_hex": "0f858c000000"
       }
