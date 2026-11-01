@@ -173,7 +173,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00485680` | RestoreAndScaleDefaultHudLayoutCoordinates | 152 | 126 | [graphics-menu-transition](original-modern-graphics-menu-transition.md), [hud-layout](original-modern-hud-layout.md) |
 | `00485718` | AdjustHudHorizontalBoundsFromX87Scale | 35 | 34 | [hud-layout](original-modern-hud-layout.md) |
 | `0048573b` | AdjustHudVerticalBoundsFromX87Scale | 32 | 31 | [hud-layout](original-modern-hud-layout.md) |
-| `00485880` | InitializeDefaultHudLayoutProfileSettings | 375 | 332 | [config-loading](original-modern-config-loading.md), [ghost-loading](original-modern-ghost-loading.md), [hud-layout](original-modern-hud-layout.md), [track-length-text](original-modern-track-length-text.md) |
+| `00485880` | InitializeDefaultHudLayoutProfileSettings | 375 | 332 | [config-loading](original-modern-config-loading.md), [ghost-loading](original-modern-ghost-loading.md), [hud-layout](original-modern-hud-layout.md), [map-marker-scaling](original-modern-map-marker-scaling.md), [track-length-text](original-modern-track-length-text.md) |
 | `00487210` | StoreAndInsetIndexedFloatRectangle | 300 | 12 | [hud-layout](original-modern-hud-layout.md) |
 | `004880b0` | RenderVehicleDrivenRotatedQuads | 960 | 15 | [hud-layout](original-modern-hud-layout.md) |
 | `00488470` | RenderRotatedTileQuadsForVehicle | 1551 | 12 | [hud-layout](original-modern-hud-layout.md), [view-overlay](original-modern-view-overlay.md) |
