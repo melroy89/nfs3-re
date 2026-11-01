@@ -8,7 +8,8 @@ from audit_thrash_loader_difference import ROOT,SPECS
 
 SPANS=[(0x484b70,0x484c10),(0x48ae70,0x48b29f),(0x48d110,0x48d4b3),
        (0x4800a0,0x4808af),(0x487210,0x48733c),(0x4880b0,0x488470),
-       (0x48a660,0x48aa3e),(0x48aa40,0x48ae69),(0x48e790,0x48e91b)]
+       (0x48a660,0x48aa3e),(0x48aa40,0x48ae69),(0x48e790,0x48e91b),
+       (0x451530,0x451585),(0x4d1390,0x4d13f3),(0x4d0d50,0x4d0ff9)]
 
 
 def main():
@@ -72,10 +73,45 @@ def main():
     result['hud_variant_constant']={'instruction':'0048e8da','original_bits':'40800000',
         'modern_bits':'40400000','field':'selected 1a4-byte profile +10h',
         'limits':'Field meaning and rendered transition remain unverified.'}
+    for index in (9,10,11):assert old[index]==new[index]
+    adapter=new[9]
+    assert adapter[6:15].hex()=='833d34925500007436'
+    assert adapter[0x21:0x26].hex()=='a1501b7900'
+    assert adapter[0x36:0x3b].hex()=='a1541b7900'
+    assert adapter[0x3d:0x42].hex()=='a14c1b7900'
+    assert adapter[0x48:0x4f].hex()=='e813fe0700ddd8'
+    images={label:pefile.PE(str(ROOT/SPECS[label][0])) for label in SPECS}
+    threshold_bytes=images['original'].get_data(0x1395e0,8)
+    assert threshold_bytes==images['official_modern'].get_data(0x1395e0,8)
+    assert struct.unpack('<d',threshold_bytes)[0]==0.6
+    for pe in images.values():
+        assert pe.get_data(0xd0d64,12).hex()=='813dc8da7c00800200007c28'
+        assert pe.get_data(0xd13ce,12).hex()=='db05c8da7c00d80dc80b5400'
+    examples=[]
+    old_k=struct.unpack('<f',images['original'].get_data(0x13b620,4))[0]
+    new_k=struct.unpack('<f',images['official_modern'].get_data(0x13b620,4))[0]
+    for width,height in ((1920,1080),(2560,1080),(1280,1024)):
+        synthetic=(3*width)>>2;offset=(height-synthetic)>>1
+        reference=width if offset>=0 else (4*height)//3
+        examples.append({'width':width,'height':height,'modern_reference_width':reference,
+            'original_unrounded_base':width*old_k,'modern_unrounded_base':reference*new_k})
+    result['font_scale_consumer_link']={
+        'identical_complete_bodies':[{'start':f'{SPANS[i][0]:08x}','end_exclusive':f'{SPANS[i][1]:08x}'} for i in (9,10,11)],
+        'adapter':'00451530 uses00559234 gate:0 forwards requested argument; nonzero chooses00791b50/54/4c then calls004d1390 and discards old-scale ST0.',
+        'ordered_request_selection':'request>=1 ->00791b50;0.6<=request<1 ->00791b54;request<0.6 ->00791b4c. Unordered first comparison follows the >=1 arm if nontrapping.',
+        'binary64_threshold':{'address':'005395e0','hex':threshold_bytes.hex(),'value':0.6},
+        'producer':'00484b70 writes the consumed scales; changed input actual width007cdac8 -> fitted reference width007a2748, plus changed base coefficient.',
+        'retained_bitmap_branch':'004d1390 flag00840188 nonzero uses actual width007cdac8 and retained1/320 coefficient; flag0 accepts supplied scale.',
+        'retained_bitmap_loader':'004d0d50 still chooses FFN files by signed width007cdac8>=640.',
+        'ordinary_reference_width_examples':examples,
+        'limits':['Derived unrounded base-scale arithmetic, not original-instruction probes or rendered font sizes.',
+            'Reference-width formulas reused from viewport-geometry evidence; ordinary positive fitting dimensions only.',
+            'Text-adapter/backend and font-state gates make this a scoped path, not a universal all-font height policy.',
+            'Shared font storage, callers, asset/font selection, x87 state and later overrides remain separate.']}
     result['limits']=['Static dimension-source, FLD/FILD and quad/header constant changes only; no HUD pixel comparison.',
         'Other globals, callers, aliasing and x87 state remain separate contracts.']
     (ROOT/'analysis/evidence/audits/hud-reference-consumers.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('PASS: nine complete bodies; dimension reads, quad-field constant and variant-header constant account for every difference')
+    print('PASS: twelve complete bodies; changed HUD inputs and retained text-scale/bitmap contracts verified')
 
 
 if __name__=='__main__':main()

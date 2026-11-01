@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5672833069e74d384225a6324c0c5660963e7e582f895cb0bddb46575bd4f9da",
-      "relative_links": 193
+      "sha256": "7787d184aabc1407a73398522eada320c648306a2914f3ad95f98818a6b4ce7e",
+      "relative_links": 194
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -23,8 +23,8 @@
     },
     {
       "path": "analysis/original-modern-car-alias.md",
-      "sha256": "56cca4aea1e197d18dd11cf4605c9b241c66bc621e6d65df655cee4c1799dcc7",
-      "relative_links": 6
+      "sha256": "4a7de4dc67e094abe706f5f8f61f0db51cbee7ae7ff4d79b704b90de85796f89",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-car-download.md",
@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "4efb58e90e4f74e934443a4f25d3e5dad5b3f8aeaf617dbb76e2ff0730649c8d",
-      "relative_links": 228
+      "sha256": "634c8ebe8936497216a3977b80e155fae24b546f32ccbdf3695e33838ed5f9ae",
+      "relative_links": 229
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -208,8 +208,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "f479ee1ddfb3830ca0c68e62df841f4cda613f43cace024fc1fe33102a975acd",
-      "relative_links": 24
+      "sha256": "6e6b46439830d3efd50781bb39e75a72f38b5b11a864b09369671c60dfc37b3d",
+      "relative_links": 28
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -648,8 +648,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "f5c61a4a55309bfa11996e599010f52b80e010c6f5f30058b8e6b62505128193",
-      "relative_links": 187
+      "sha256": "1159988aa94e8d3a485348ea5a88dd631207a2c0403a1579d75da2b529ee5f04",
+      "relative_links": 188
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -658,7 +658,7 @@
     }
   ],
   "file_count": 131,
-  "relative_link_count": 2470,
+  "relative_link_count": 2478,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

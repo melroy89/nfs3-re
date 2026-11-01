@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5672833069e74d384225a6324c0c5660963e7e582f895cb0bddb46575bd4f9da"
+      "sha256": "7787d184aabc1407a73398522eada320c648306a2914f3ad95f98818a6b4ce7e"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -33,7 +33,7 @@
     },
     {
       "path": "analysis/original-modern-car-alias.md",
-      "sha256": "56cca4aea1e197d18dd11cf4605c9b241c66bc621e6d65df655cee4c1799dcc7"
+      "sha256": "4a7de4dc67e094abe706f5f8f61f0db51cbee7ae7ff4d79b704b90de85796f89"
     },
     {
       "path": "analysis/original-modern-car-download.md",
@@ -173,7 +173,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "f479ee1ddfb3830ca0c68e62df841f4cda613f43cace024fc1fe33102a975acd"
+      "sha256": "6e6b46439830d3efd50781bb39e75a72f38b5b11a864b09369671c60dfc37b3d"
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",

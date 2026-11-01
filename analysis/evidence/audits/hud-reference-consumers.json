@@ -58,6 +58,24 @@
           "end_exclusive": "0048e91b",
           "sha256": "25c58224f36e6ffa5aff2ded08e9840fc10fb16cf727439c893ec3fb4facd6ae",
           "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-0048e790.asm"
+        },
+        {
+          "start": "00451530",
+          "end_exclusive": "00451585",
+          "sha256": "4bd1e161830652362b5b93fa396a5c2767bc2f4b285e2c6fa57c066ed4c89936",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-00451530.asm"
+        },
+        {
+          "start": "004d1390",
+          "end_exclusive": "004d13f3",
+          "sha256": "52579ee4b1c0bdaf163eb9182ba7541b252fc99dd3dfabffc9a96f32382e1e67",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-004d1390.asm"
+        },
+        {
+          "start": "004d0d50",
+          "end_exclusive": "004d0ff9",
+          "sha256": "ba30a11390b5ab50b54a2b4a18dc8e57e96dc136b56b9b9652eb0b89a89f3ac1",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/original-004d0d50.asm"
         }
       ],
       "hud_scale_constants": {
@@ -131,6 +149,24 @@
           "end_exclusive": "0048e91b",
           "sha256": "92196724fd905deb5dbec47e6aac4fe410c3cfe30969573f50300d490aef7a9e",
           "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-0048e790.asm"
+        },
+        {
+          "start": "00451530",
+          "end_exclusive": "00451585",
+          "sha256": "4bd1e161830652362b5b93fa396a5c2767bc2f4b285e2c6fa57c066ed4c89936",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-00451530.asm"
+        },
+        {
+          "start": "004d1390",
+          "end_exclusive": "004d13f3",
+          "sha256": "52579ee4b1c0bdaf163eb9182ba7541b252fc99dd3dfabffc9a96f32382e1e67",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-004d1390.asm"
+        },
+        {
+          "start": "004d0d50",
+          "end_exclusive": "004d0ff9",
+          "sha256": "ba30a11390b5ab50b54a2b4a18dc8e57e96dc136b56b9b9652eb0b89a89f3ac1",
+          "assembly": "analysis/captures/modern-differences/hud-reference-consumers/official_modern-004d0d50.asm"
         }
       ],
       "hud_scale_constants": {
@@ -268,6 +304,61 @@
     "modern_bits": "40400000",
     "field": "selected 1a4-byte profile +10h",
     "limits": "Field meaning and rendered transition remain unverified."
+  },
+  "font_scale_consumer_link": {
+    "identical_complete_bodies": [
+      {
+        "start": "00451530",
+        "end_exclusive": "00451585"
+      },
+      {
+        "start": "004d1390",
+        "end_exclusive": "004d13f3"
+      },
+      {
+        "start": "004d0d50",
+        "end_exclusive": "004d0ff9"
+      }
+    ],
+    "adapter": "00451530 uses00559234 gate:0 forwards requested argument; nonzero chooses00791b50/54/4c then calls004d1390 and discards old-scale ST0.",
+    "ordered_request_selection": "request>=1 ->00791b50;0.6<=request<1 ->00791b54;request<0.6 ->00791b4c. Unordered first comparison follows the >=1 arm if nontrapping.",
+    "binary64_threshold": {
+      "address": "005395e0",
+      "hex": "333333333333e33f",
+      "value": 0.6
+    },
+    "producer": "00484b70 writes the consumed scales; changed input actual width007cdac8 -> fitted reference width007a2748, plus changed base coefficient.",
+    "retained_bitmap_branch": "004d1390 flag00840188 nonzero uses actual width007cdac8 and retained1/320 coefficient; flag0 accepts supplied scale.",
+    "retained_bitmap_loader": "004d0d50 still chooses FFN files by signed width007cdac8>=640.",
+    "ordinary_reference_width_examples": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "modern_reference_width": 1440,
+        "original_unrounded_base": 3.0000000447034836,
+        "modern_unrounded_base": 2.448000032454729
+      },
+      {
+        "width": 2560,
+        "height": 1080,
+        "modern_reference_width": 1440,
+        "original_unrounded_base": 4.000000059604645,
+        "modern_unrounded_base": 2.448000032454729
+      },
+      {
+        "width": 1280,
+        "height": 1024,
+        "modern_reference_width": 1280,
+        "original_unrounded_base": 2.0000000298023224,
+        "modern_unrounded_base": 2.176000028848648
+      }
+    ],
+    "limits": [
+      "Derived unrounded base-scale arithmetic, not original-instruction probes or rendered font sizes.",
+      "Reference-width formulas reused from viewport-geometry evidence; ordinary positive fitting dimensions only.",
+      "Text-adapter/backend and font-state gates make this a scoped path, not a universal all-font height policy.",
+      "Shared font storage, callers, asset/font selection, x87 state and later overrides remain separate."
+    ]
   },
   "limits": [
     "Static dimension-source, FLD/FILD and quad/header constant changes only; no HUD pixel comparison.",

@@ -174,3 +174,38 @@ This reuses the prior [indicator contract and bounded live sample](detailed-anal
 The [asset audit](scripts/audit_reference_asset_pairs.py) pins both archive hashes and the Modern EXE, parses all138 ordered records in each of six reference POS files and compares23 rectangles per profile against the embedded24-rectangle profile layout. Names/order agree across the six files. English has91 changed rectangles and352 differing binary32 coordinate fields; the other language variants have91–95 changed rectangles and352–365 differing fields. None supplies an exact numerical match.
 
 This narrows the earlier asset-acquisition gap without authenticating pristine retail or identifying the author’s source. Comparison uses ordered coordinate literals and host decimal-to-binary32 conversion; it does not execute the original tokenizer/parser or prove final destination state after pair swapping, extra-slot initialization and aspect adjustment. The extra24th rectangle, header settings, persistence and rendered effects are excluded. Full per-profile changed-name lists are retained in [the manifest](evidence/audits/reference-asset-pairs.json).
+
+## Fitted reference scales reach a conditional text path
+
+**Confidence: verified static producer/consumer linkage; examples are derived. Work status: done for this bounded path, partial for MP100-004’s general font-size claim.** The expanded [reference-consumer audit](scripts/audit_hud_reference_consumers.py) now retains twelve complete paired bodies and verifies three more are identical: adapter`00451530..00451585` (85 bytes), bitmap scale setter`004d1390..004d13f3` (99), and bitmap font loader`004d0d50..004d0ff9` (681). The [manifest](evidence/audits/hud-reference-consumers.json) records exact gates, source addresses, threshold bits and ordinary reference-width examples. No fonts or target instructions were rendered/executed.
+
+The existing paired initializer`00484b70` changes its scale input from actual width`007cdac8` to fitted reference width`007a2748`; the independent coefficient change at`0053b620` also remains relevant. This pass closes a specific downstream use of those scales:
+
+| Adapter condition / ordinary ordered requested scale | Source forwarded to bitmap scale setter |
+|---|---|
+|`00559234==0` | Incoming scale argument unchanged |
+| Nonzero gate, request>=1 |`00791b50` |
+| Nonzero gate, request<1 but at least retained binary64 threshold0.6 |`00791b54` |
+| Nonzero gate, request below that threshold |`00791b4c` |
+
+These three globals are written by the audited scale initializer. The retained text adapter pushes the chosen scale, calls`004d1390` at`00451578`, and discards that setter’s old-value ST0 result. Thus the changed dimension/coefficient inputs can reach a concrete text-scale consumer; this is not merely a numeric change in unused data. The helper uses x87 comparisons and branches: on a nontrapping unordered first comparison it selects`00791b50`, not the ordinary below-threshold arm. Requested NaNs/exceptions and ambient precision remain distinct from the ordinary table above.
+
+### Why height matters on the wide branch
+
+The [reference-rectangle producer](original-modern-viewport-geometry.md#2-new-centred-43-reference-rectangle) gives the width source its meaning. For ordinary positive dimensions on the wide branch, reference width is`trunc(4*height/3)`. On the narrow/tall branch it remains actual width. It is therefore a **fitted4:3 reference policy**, not an unconditional replacement of every width read with height.
+
+For the width>=640 arithmetic branch, the initializer’s base scale is input width times its version’s binary32 coefficient. The unrounded examples are:
+
+| Display | Original input width | Modern reference width | Original unrounded base | Modern unrounded base, approximate |
+|---|---:|---:|---:|---:|
+|1920×1080 |1920 |1440 |3.0 |2.448 |
+|2560×1080 |2560 |1440 |4.0 |2.448 |
+|1280×1024 |1280 |1280 |2.0 |2.176 |
+
+The equal-height wide examples keep Modern’s input/base equal while original grows with width. The tall example also shows why this must not be described as universally smaller fonts: the retained width branch and changed coefficient can increase the base. Individual binary32 stores, selected multiplier, font state, caller scale, mode/reference freshness and rendering determine actual glyph size. These are arithmetic examples, not pixel measurements or instruction-equivalence tests.
+
+### Retained width-based bitmap behaviour limits the headline
+
+The separate [bitmap-font investigation](original-modern-car-alias.md#scale-initialization-and-setter-are-retained) remains valid: when font flag`00840188==0`, the setter accepts the supplied scale; when nonzero, it selects a font variant and computes scale from **actual width`007cdac8` times the retained approximately1/320 coefficient**, rather than the supplied scale itself. The complete loader also still chooses its FFN file set using signed actual width>=640. Both bodies are identical in original and final.
+
+Accordingly **MP100-004 receives partial static support for the fitted-reference→scale→conditional-text route**. This review does not establish a universal height-based rule for all menu, atlas, bitmap and HUD fonts, nor that every widescreen label avoids excessive size. Other font-selection paths, historical1.0.0 introduction and visible output remain follow-up requirements. Preserve the chosen version’s scale sources and both gates in reconstruction; globally replacing width with height would alter retained behaviour that this comparison has not shown the patch changed.

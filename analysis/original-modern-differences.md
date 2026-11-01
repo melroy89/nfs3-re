@@ -610,7 +610,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **116 Claimed, 50 Static, 122 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **115 Claimed, 50 Static, 123 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -903,7 +903,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-001 | All resolutions with aspect ratio from 5:4 to 16:9 (inclusive 4:3 and 16:10) are supported. | Partial |
 | MP100-002 | All objects will be properly scaled for every aspect ratio and you will see them in correct proportions. | Partial |
 | MP100-003 | There is no unreasonable limits for maximum resolution anymore (e.g. for D3D it was 800×600), you can use almost every resolution which is supported by your system (e.g. 1920×1200). | Claimed |
-| MP100-004 | Font size is choosed on the basis of screen height, not screen width. It prevents from choosing too big font for widescreen resolutions. | Claimed |
+| MP100-004 | Font size is choosed on the basis of screen height, not screen width. It prevents from choosing too big font for widescreen resolutions. | Partial |
 | MP100-005 | HUD will be completely recalculated with the purpose of different aspect ratio support when resolution is changed in settings. Besides the result looks more accurate than original one even on 4:3 resolutions. Files ./GameData/DashHud/*.POS are unnecessary now and can be removed. | Claimed |
 | MP100-006 | HUD borders was reduced twice to look better on modern huge resolutions. Without this change they look too fat. | Claimed |
 | MP100-007 | Compact cop's speeds table. Now it looks like the standard opponents list. | Claimed |
@@ -1050,3 +1050,7 @@ The [signed-wrap follow-up](original-modern-cpu-tier.md#original-signed-wrapping
 ## Free-space warning arithmetic and retained failures
 
 The [directory/error follow-up](original-modern-startup-requirements.md#directory-and-error-paths-qualify-the-false-free-space-warning-fix) verifies four retained helper bodies, used-buffer length/copy conditions and normal geometry-error return. It connects the previously verified unsigned overflow-aware arithmetic to MP100-029 without claiming the check was removed. Directory return remains unchecked by the caller; actual API outcomes and warnings remain unverified. Catalog advances that row vendor-only→partial, counts116/50/122/2. No disk, dialog or target execution.
+
+## Fitted reference dimensions reach text scaling
+
+The [text-scale follow-up](original-modern-hud-layout.md#fitted-reference-scales-reach-a-conditional-text-path) connects the changed width/coefficient producer to retained85-byte adapter00451530 and bitmap setter. Wide-branch fitted width is height-derived; backend/font flags and unchanged width-based bitmap paths prevent a universal all-font claim. MP100-004 advances vendor-only→partial; counts115/50/123/2. Actual glyph sizes, other font routes, reference lifetime and1.0.0 introduction remain unverified; no font rendering or target execution.

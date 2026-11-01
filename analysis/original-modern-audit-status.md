@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **116 vendor-only,50 bounded-static,122 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **115 vendor-only,50 bounded-static,123 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -629,3 +629,7 @@ The [signed-wrap follow-up](original-modern-cpu-tier.md#original-signed-wrapping
 ## Free-space warning arithmetic and retained failures
 
 The [directory/error follow-up](original-modern-startup-requirements.md#directory-and-error-paths-qualify-the-false-free-space-warning-fix) verifies four retained helper bodies, used-buffer length/copy conditions and normal geometry-error return. It connects the previously verified unsigned overflow-aware arithmetic to MP100-029 without claiming the check was removed. Directory return remains unchecked by the caller; actual API outcomes and warnings remain unverified. Catalog advances that row vendor-only→partial, counts116/50/122/2. No disk, dialog or target execution.
+
+## Fitted reference dimensions reach text scaling
+
+The [text-scale follow-up](original-modern-hud-layout.md#fitted-reference-scales-reach-a-conditional-text-path) connects the changed width/coefficient producer to retained85-byte adapter00451530 and bitmap setter. Wide-branch fitted width is height-derived; backend/font flags and unchanged width-based bitmap paths prevent a universal all-font claim. MP100-004 advances vendor-only→partial; counts115/50/123/2. Actual glyph sizes, other font routes, reference lifetime and1.0.0 introduction remain unverified; no font rendering or target execution.
