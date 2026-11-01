@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "8dbf91b2e2613062ad1bd05ca1214c3bd6d8b5d4dcc48692224fe9ff42c539d7"
+      "sha256": "64cd7b5ac89c05020b2f01435bb9757207789c178e33010fa962340b98012fad"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -90,6 +90,10 @@
     {
       "path": "analysis/original-modern-deadzone-sliders.md",
       "sha256": "1449a6289315323e4f7d90fce69b656e4e77658014a7cff7db02a9a9ee9a6830"
+    },
+    {
+      "path": "analysis/original-modern-dgvoodoo-version-history.md",
+      "sha256": "ddf7c40976f74238cdcca5843c7c38c724c7935df8426ff97ea0cab903d96ad4"
     },
     {
       "path": "analysis/original-modern-dialog-input.md",

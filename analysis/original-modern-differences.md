@@ -596,7 +596,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **128 Claimed, 47 Static, 113 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **127 Claimed, 48 Static, 113 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -637,7 +637,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP160-011 | When gameplay loading is aborted using Esc key, "Aborted" string will be displayed for 200ms (it was just a frame before). | Partial |
 | MP160-012 | FPU always uses extended precision for all calculations. | Static |
 | MP160-013 | The game checks if proper version of language files is used. | Static |
-| MP160-014 | dgVoodoo v2.5.3 (Napalm). | Claimed |
+| MP160-014 | dgVoodoo v2.5.3 (Napalm). | Static |
 
 ### Version 1.5.3 (2016-05-03)
 
@@ -981,3 +981,8 @@ The [1.5.2→1.5.3 package comparison](original-modern-nglide-window-history.md)
 
 
 The [three-release predecessor check](original-modern-nglide-window-history.md#predecessor151-separates-refactor-introduction-from-a-simple-revert) further shows that1.5.2 introduces the inspected sizing branch in a replacement mode body;1.5.3 removes it. The1.5.1/1.5.2 adapter files match exactly, distinguishing the later header edits from a simple metadata revert. This remains a static regression candidate, not observed recovery.
+
+
+## Historical dgVoodoo bundled-version update
+
+The [matched package identity comparison](original-modern-dgvoodoo-version-history.md) verifies the dgVoodoo wrapper/setup2.51→2.53 update between1.5.3 and1.6.0, while adapter/INI remain byte-identical and binary config changes. Product metadata supports the narrow bundled-version claim; it does not establish provider code semantics, upstream authentication or runtime compatibility.

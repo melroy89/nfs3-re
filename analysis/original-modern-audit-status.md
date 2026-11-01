@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **128 vendor-only,47 bounded-static,113 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **127 vendor-only,48 bounded-static,113 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -562,3 +562,8 @@ The [flag/order follow-up](original-modern-nglide-window-history.md#sizing-flag-
 ## nGlide candidate now has a three-release boundary
 
 The [predecessor comparison](original-modern-nglide-window-history.md#predecessor151-separates-refactor-introduction-from-a-simple-revert) captures1.5.1's different447-byte mode body with no direct calls to the two sizing helpers, versus1.5.2's new desktop-size branch and1.5.3's selected-size route. The1.5.1 adapter equals1.5.2 exactly, so1.5.3 metadata is not a rollback to a distinct151 layout. Full causal/runtime evidence remains pending; counts unchanged.
+
+
+## Historical dgVoodoo2.53 package identity
+
+The [five-component package audit](original-modern-dgvoodoo-version-history.md) verifies1.5.3/1.6.0 archive hashes, wrapper/setup ProductVersion2.51→2.53, identical adapter/INI and changed binary config. Wrapper FileVersion remains3.10 and must not be used as product version. MP160-014 advances to bounded static package-identity support; provider code/runtime and upstream authentication remain unverified. Current counts127/48/113/2. No target execution.
