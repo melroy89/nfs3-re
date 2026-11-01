@@ -25,6 +25,27 @@
           "bytes_sha256": "87c257d62a2e3741a30ece41c13eeabda227dde4861f319a3331890356277d21",
           "assembly": "analysis/captures/modern-differences/camera-dispatch/original-00425060.asm",
           "assembly_sha256": "de945959ea58575beb4058a3ddb578804bfc8c1c2857fba88166bd4fd7694396"
+        },
+        {
+          "start": "004240c0",
+          "end_exclusive": "00424252",
+          "bytes_sha256": "855d14879f8db2888e6514aea45a6e72fba72e67a51a3080bc303e3173c462bd",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/original-004240c0.asm",
+          "assembly_sha256": "ee0c6f7b76c08279f11e3d959a9f180100c016048f6f21c0a57e03a10f84d303"
+        },
+        {
+          "start": "004dffb0",
+          "end_exclusive": "004dfff3",
+          "bytes_sha256": "23974a1ae8d584c7fa7530f76cea0a6734b145147fb1ec052a2b209692986806",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/original-004dffb0.asm",
+          "assembly_sha256": "71ce1996cd38e3e8db22768dac72f2b573cc7a0182044a670c1e2ad08607d1fc"
+        },
+        {
+          "start": "00421570",
+          "end_exclusive": "004215b7",
+          "bytes_sha256": "97518fbca4538f36c774d0422a6b49a2572d05b5d2b31ec2464fa0b298cbbd28",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/original-00421570.asm",
+          "assembly_sha256": "2ef27a58f038b1c284b18dc9af4a55cb1d172794dc8e8ccb94957baeadf6afb4"
         }
       ],
       "table_sha256": "8e85b65400e9906cb2fcc46badd6c4d52c2a382251b6255d91e33a919bf265d5",
@@ -79,6 +100,27 @@
           "bytes_sha256": "87c257d62a2e3741a30ece41c13eeabda227dde4861f319a3331890356277d21",
           "assembly": "analysis/captures/modern-differences/camera-dispatch/official_modern-00425060.asm",
           "assembly_sha256": "b2248905e643e793f329b3669777d3c7a2ccb9da9deba36551403cb8655e164c"
+        },
+        {
+          "start": "004240c0",
+          "end_exclusive": "00424252",
+          "bytes_sha256": "b62d2ef22602e3318225f8d03d81a1ca075351fcbd000ce6431d31e307eda427",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/official_modern-004240c0.asm",
+          "assembly_sha256": "957d6446777426d39621ad9dde4411026bd671e2f2e829508e2a2026c39d6a2f"
+        },
+        {
+          "start": "004dffb0",
+          "end_exclusive": "004dfff3",
+          "bytes_sha256": "23974a1ae8d584c7fa7530f76cea0a6734b145147fb1ec052a2b209692986806",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/official_modern-004dffb0.asm",
+          "assembly_sha256": "99a155726ef1613da0b5ed71fca3d6d42fdac47fad9801dd76fb918895e1ed16"
+        },
+        {
+          "start": "00421570",
+          "end_exclusive": "004215b7",
+          "bytes_sha256": "97518fbca4538f36c774d0422a6b49a2572d05b5d2b31ec2464fa0b298cbbd28",
+          "assembly": "analysis/captures/modern-differences/camera-dispatch/official_modern-00421570.asm",
+          "assembly_sha256": "7ebf17078b7e40084ced14b0ddcce0e74e9edb1da551ce6714fb9fdaaf2130f2"
         }
       ],
       "table_sha256": "23b6da854796e9eea03ad684db65047c02020cadccb934923d183c03187ba5ef",
@@ -285,6 +327,25 @@
     "Paired wrappers and handler addresses, not equivalence of every handler or input domain.",
     "No projection-cache capture writer or visible horizon result established."
   ],
+  "fixed_descriptor_handler": {
+    "complete_span": "004240c0..00424252",
+    "bytes": 402,
+    "changed_envelope": "00424101..0042416b",
+    "unchanged_callees": [
+      "004dffb0..004dfff3",
+      "00421570..004215b7"
+    ],
+    "contract_change": "Original overwrites EDX with007922fc before testing it; Modern tests incomingEDX first and uses EAX for that global.",
+    "fixed_call_effect": "EDX1 selects descriptor+50=0 and first local offset component0; stores position+14..1c and matrix+2c..4c.",
+    "fixed_destinations": [
+      "00661270",
+      "00661234..00661240",
+      "0066124c..00661270"
+    ],
+    "destination_range_end": "exclusive",
+    "projection_exclusion": "For descriptor661220 and forward copies, direct stores and both callees target this descriptor/stack, not5e1020/2c/30/38.",
+    "limits": "Generic descriptor aliases, source-pointer validity, ambient x87/DF and visible camera behavior not verified."
+  },
   "contract_changes": {
     "entry_inputs": "EAX=mode, EDX=slot; descriptor lookup precedes unsigned handler-range check in both.",
     "original": "Saves EBX/ECX/ESI/EBP; tail-dispatch stubs call selected handler; EDX=mode-1 on admitted handler entry.",

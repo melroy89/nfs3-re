@@ -274,3 +274,7 @@ The historical abort audit now verifies the supplied-original poll helper matche
 ## Camera dispatch wrapper follow-up
 
 The [paired wrapper audit](original-modern-projection.md#camera-dispatch-wrapper-changes-around-the-retained-type8-handler) resolves24 routes:22 preserve handler targets, while15/22 use a RET stub instead of direct return. Modern changes register preservation/EDX input and adds a conditional post-handler call on fixed descriptor661220. Type8 body equality therefore does not establish wrapper equivalence. Missing projection capture/lifetime and rendered horizon remain unresolved; MP160-003 status and counts unchanged.
+
+## Fixed-descriptor handler resolved locally
+
+The [complete handler/callee comparison](original-modern-projection.md#fixed-descriptor-handler-changed-control-input-and-bounded-write-set) establishes a new EDX control input, exact descriptor position/orientation destinations and retained vector/orientation helpers. For the fixed661220 call, the write set is disjoint from the projection restore-source cells; this specific branch is excluded as their capture writer. Generic aliases, other handlers, actual capture lifetime and rendered horizon remain unresolved. No catalog status/count change or target execution.

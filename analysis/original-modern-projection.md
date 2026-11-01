@@ -331,3 +331,25 @@ The399-byte type8 body is identical, but its wrapper contracts differ. Original 
 After an admitted Modern handler returns, a new block tests `006fd3b0 != 1` and `006fd1cc != 0`. When both hold, it calls `004240c0` with EAX=`00661220` and EDX1 before restoring registers. That fixed descriptor is the same storage followed in the [viewport-pose report](original-modern-viewport-pose.md#extractionblend-identity-and-fixed-descriptor-producers). Original's stubs return without this post-handler block. The new block also follows the RET-stub modes; it does not run after an out-of-range mode takes the wrapper epilogue.
 
 This supplies a concrete changed caller around the retained type8 code and another use of the fixed descriptor. It does **not** establish that `004240c0` captures projection cells `005e1020/2c/30/38`, that the descriptor aliases those cells, or that the horizon moves correctly. The projection source capture/lifetime and visible result remain unresolved. Next work on this branch must trace the fixed-descriptor handler's actual fields/callees or establish a producer alias; repeating literal-cell searches or treating handler-byte equality as whole-wrapper equivalence would miss the observed difference. No game, instruction, callback or Ghidra execution was used.
+
+## Fixed-descriptor handler: changed control input and bounded write set
+
+The camera-dispatch audit now retains complete paired handler `004240c0..00424252` (402 bytes), complete vector-add helper `004dffb0..004dfff3` (67 bytes), and complete orientation helper `00421570..004215b7` (71 bytes). Both callees are identical between original and Modern. Handler changes are confined to `00424101..0042416b`; its prefix and suffix outside that envelope are identical. This resolves the specific next step above for the fixed661220 call.
+
+Original overwrites EDX with global `007922fc` at `00424101` before using it in the local branch. Modern first tests **incoming EDX** at `00424104` and later `0042413c`, and reads that global through EAX instead. Consequently the new dispatcher’s EDX1 is a meaningful added control input, not merely a redundant zero/nonzero convention inferred from the wrapper.
+
+The handler begins with a three-DWORD local offset from descriptor+110h and a base vector from `[descriptor+4]+98h..a0h`. In the ordinary EDX0 path, zero global `007922fc` selects descriptor+50h=`3ca3d70a` (approximately0.02), first local component0, and a scaled object+11ch value for the third local component. Other paths set descriptor+50h=0. Under Modern EDX1, the first local component is also forced0 and the old availability/state-dependent branch is bypassed. In the EDX0/nonzero-global path, object+9a8h states0/1 select raw binary32−0.4/+0.4, while other states select0 in Modern; original specifically zeroes state2 and otherwise can retain the copied component. State-domain invariants and physical meanings remain unverified; preserve the machine branches rather than assuming all inputs fall in0..2.
+
+The common suffix scales the second local component through `[descriptor+8]+10ch`, conditionally flips the third component's sign bit using the indexed flag at `0079c4a0`, transforms the vector with the object matrix at+0c0h, and adds it to the base vector via `004dffb0` with count1 and destination descriptor+14h. It then writes nine orientation DWORDs at descriptor+2ch, using either a forward36-byte copy or `00421570`. The latter negates binary32 elements0/1/2/6/7/8 with x87 FCHS and copies elements3/4/5 as DWORDs. Its floating stores are not a universal bit-preserving sign-XOR promise for exceptional values.
+
+For the actual new wrapper arguments EAX=`00661220`, EDX1, the ordinary write set is:
+
+| Destination | Mechanism |
+|---|---|
+| `00661270` | Descriptor+50h zero store |
+| `00661234..00661240` | Three position DWORDs via vector-add helper |
+| `0066124c..00661270` | Nine orientation DWORDs via copy/sign helper |
+
+Ranges in this table have exclusive ends. Remaining writes are to stack locals. With valid source pointers, the verified helper contracts and forward string direction, these destinations do not alias the unresolved projection source cells `005e1020/2c/30/38`. There are no additional indirect/callback calls inside this handler. Thus this **specific fixed-descriptor branch is excluded as their capture writer**; no such exclusion is claimed for arbitrary descriptor pointers or other handlers.
+
+The result still matters to the original/Modern comparison: an added caller uses a changed control input to update shared position/orientation data. It does not recover the projection-cache producer or establish a visible horizon correction. Those remain open, while this branch’s local effects no longer need to be guessed.
