@@ -207,3 +207,41 @@ The selector change `006fbbe4:2→0` belongs to the independently verified
 not an audio-volume field. Keep selector meaning and volume scaling separate.
 No loudness, decibels, backend mixing law, successful audio output or universal
 configuration-reset behavior is inferred from these stored defaults.
+
+## Media/audio gate snapshots the original remote-prefix classification
+
+The expanded [config audit](scripts/audit_config_loading_difference.py)
+retains the original classifier and asserts the producer instructions in
+[the manifest](evidence/audits/original-modern-config-loading.json). This
+resolves the immediate source of gate **`006fbb54`**, previously observed in
+music, movie, title and other admission checks.
+
+| Producer | Original | Final Modern |
+|---|---|---|
+| Config-load tail | `00472b38` calls `004b62a0`; `00472b43` stores returned EAX to `006fbb54` | `00472b1d` clears ECX; `00472b25` stores zero to `006fbb54` |
+| Stored contract |0/1 result of six-byte prefix comparison | Literal0 on this path |
+
+The independently documented [startup classifier](original-modern-startup-requirements.md)
+decodes six file-backed bytes `65 58 60 62 67 58` by adding13 modulo256,
+producing `remote`. It compares those six bytes case-sensitively against
+source buffer `007a26b4`, returning1 on prefix equality and0 otherwise.
+Therefore `remote` and `remoteSuffix` satisfy the same local prefix test;
+`Remote` does not. These are static comparison examples, not executed inputs.
+The gate is a **snapshot of the classifier result**, not a live repeated
+inspection of that source buffer at every consumer.
+
+This ties together existing findings without inferring a broader mode name:
+
+- [Removed music wrapper](original-modern-music-selection.md#removed-race-loading-music-wrapper-and-adjacent-shutdown-no-op) skips original loading/polling when the stored classification is nonzero.
+- [Idle movie admission](original-modern-idle-movie.md) retains a nonzero-gate rejection in both versions; the ordinary Modern config producer shown here writes zero.
+- [Title delay](original-modern-title-delay.md) removes the original gate from its local draw/wait path as part of a separate policy rewrite.
+- Other retained audio checks can still inspect this field. A zero producer does not by itself prove successful playback or explain every downstream condition.
+
+**Status:** done, verified static for original classifier-to-field publication
+and Modern zero publication. **Still unresolved:** complete provenance and
+lifetime of `007a26b4`, later direct/aliased/bulk writes to `006fbb54`, all
+config/ghost restoration paths and observed runtime outcomes. Do not rename
+this a multiplayer/remote-player or generic audio-disable Boolean from the
+literal alone. Nor does this evidence authenticate installation/media origin.
+No classifier, file API, game or instruction probe was executed; executables
+and saved Ghidra state were preserved.

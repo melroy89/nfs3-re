@@ -7,6 +7,13 @@
       "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
       "spans": [
         {
+          "start": "004b62a0",
+          "end": "004b6311",
+          "bytes_sha256": "3e1e8696882e585487b4a24301e24ba70fff05a6fd6e667f2379c729fcbeb441",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-004b62a0.asm",
+          "assembly_sha256": "a3af3ce211518a6c14aa54f308f90d93ef7f13fe4102038c9cedd13fbe79aab2"
+        },
+        {
           "start": "00472980",
           "end": "00472b60",
           "bytes_sha256": "722614087a7928ab09e90f2e651113020c20f2d224aca63685f57d1c65da6fb4",
@@ -217,6 +224,12 @@
     "No config, game or instruction execution.",
     "Header acceptance is not complete serialized-field validation."
   ],
+  "original_remote_gate_producer": {
+    "call": "00472b38 ->004b62a0",
+    "publication": "00472b43 stores returnedEAX at006fbb54",
+    "classification": "Case-sensitive six-byte prefix of007a26b4 equals decodedremote ->1,otherwise0",
+    "limits": "Source-buffer ownership, later aliases/bulk restores and runtime paths remain separate."
+  },
   "original_default_header_prefix": {
     "producer": "004723f0..0047242c prefix; remaining defaults not qualified here",
     "size_store": "0047241f stores20f0 at006fbb40",
@@ -226,6 +239,10 @@
       "Template must remain unchanged and DF must be clear; captures retain fill adapters for ESI/EDI preservation inspection.",
       "Later original header writes, complete defaults, saving and real-file provenance remain unqualified."
     ]
+  },
+  "modern_remote_gate_producer": {
+    "publication": "00472b1d clearsECX;00472b25 stores0 at006fbb54",
+    "limits": "This local producer clears the gate; no whole-process immutability or universal feature-enable claim."
   },
   "view_angle_header_route": {
     "storage": "006fbc40",

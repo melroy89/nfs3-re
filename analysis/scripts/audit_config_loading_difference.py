@@ -6,7 +6,7 @@ import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
-SPANS={'original':[(0x472980,0x472b60),(0x4728e0,0x47297d),
+SPANS={'original':[(0x4b62a0,0x4b6311),(0x472980,0x472b60),(0x4728e0,0x47297d),
                    (0x4723f0,0x47242c),(0x4e0640,0x4e0658),(0x4ff4c0,0x4ff563),
                    (0x472820,0x4728d3),(0x40faf0,0x40fb0f),(0x4e21b0,0x4e2221),
                    (0x4dc940,0x4dca4e),(0x4dc800,0x4dc8af),(0x4e28a0,0x4e28bb),
@@ -32,6 +32,19 @@ def main():
         switch_pointer=struct.unpack('<I',pe.get_data(0x15eb34+21*4,4))[0]
         switch_name=pe.get_string_at_rva(switch_pointer-0x400000).decode('ascii')
         assert switch_name==('-msdemo' if label=='original' else '')
+        if label=='original':
+            assert pe.get_data(0x72b38,5).hex()=='e863370400'
+            assert pe.get_data(0x72b43,5).hex()=='a354bb6f00'
+            assert pe.get_data(0x15fdc0,6)==bytes.fromhex('655860626758')
+            assert pe.get_data(0xb62f1,5).hex()=='b8b4267a00'
+            result['original_remote_gate_producer']={'call':'00472b38 ->004b62a0',
+                'publication':'00472b43 stores returnedEAX at006fbb54',
+                'classification':'Case-sensitive six-byte prefix of007a26b4 equals decodedremote ->1,otherwise0',
+                'limits':'Source-buffer ownership, later aliases/bulk restores and runtime paths remain separate.'}
+        else:
+            assert pe.get_data(0x72b1d,14).hex()=='31c9890d0cd56f00890d54bb6f00'
+            result['modern_remote_gate_producer']={'publication':'00472b1d clearsECX;00472b25 stores0 at006fbb54',
+                'limits':'This local producer clears the gate; no whole-process immutability or universal feature-enable claim.'}
         if label=='original':
             assert pe.get_data(0x15e8b8,8)==bytes(8)
             assert pe.get_data(0x7241f,13).hex()=='891540bb6f00ba01000000a5a5'

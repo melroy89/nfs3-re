@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "532bf6ee98757c82730922e26b22b1c8503ead41cb50ef9c3f6c7e14e9f57489",
-      "relative_links": 137
+      "sha256": "adb9f3846bf6a5d2a3a3eb9e3e57134a61c1ac1867271cec380a97b27323d7e2",
+      "relative_links": 138
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -63,8 +63,8 @@
     },
     {
       "path": "analysis/original-modern-config-loading.md",
-      "sha256": "c4ebe765d956d5f429ed4e11eb85cd0de8337661bf8e9302a23df02602a92cbd",
-      "relative_links": 22
+      "sha256": "90eacfb970bea371d7a0069190e9cc290f3f46190751b0e118d23fb76dc97b4a",
+      "relative_links": 28
     },
     {
       "path": "analysis/original-modern-configuration.md",
@@ -283,8 +283,8 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "1062e85439fb315721796c10902d53c78296d4f336c006798af9cfcd87f2e6c1",
-      "relative_links": 21
+      "sha256": "0e0932aac41a772bd4416b2820d242ff0592b9c40c172c00cc497252b7373842",
+      "relative_links": 22
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -633,7 +633,7 @@
     }
   ],
   "file_count": 126,
-  "relative_link_count": 2186,
+  "relative_link_count": 2194,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -248,7 +248,7 @@ itself remove a resource release or audio operation. Full register/stack
 state and the rest of shutdown remain separate contracts.
 
 **Status:** done, verified static for the wrapper, caller and64-byte interval
-partition. The high-level identity of gate `006fbb54`, full admission/abort
+partition. The [gate producer](original-modern-config-loading.md#mediaaudio-gate-snapshots-the-original-remote-prefix-classification) is now verified as an original remote-prefix classification snapshot versus Modern zero. Its complete source/lifetime, full admission/abort
 cadence, loaded-file identity, actual playback and user-visible outcomes remain
 unresolved. No game, audio API, loader or instruction probe was executed;
 executable/database bytes were preserved.
