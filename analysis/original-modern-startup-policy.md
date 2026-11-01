@@ -172,3 +172,19 @@ The extended [audit manifest](evidence/audits/startup-low-address-path.json) com
 Names/meanings follow Microsoft's [MessageBox documentation](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox). **MB_SYSTEMMODAL already specifies the topmost window style**; do not turn the extra MB_TOPMOST bit into a claim that original dialogs could not be topmost, that Modern fixed a reproduced stacking problem, or that this dialog freezes unrelated applications. The verified change is the requested error icon plus explicit topmost flag.
 
 This completes the local instruction-byte comparison for this body, not the full diagnostic contract. Its unchanged indirect callbacks, formatting helpers, incoming globals, subsequent return/termination behaviour and Windows/Wine implementation can still affect outcomes. No dialog was displayed. The earlier startup flag changes separately affect whether this same handler requests debug output or a break.
+
+
+## Startup reproducibility checkpoint and remaining boundaries
+
+The [five-audit checkpoint](evidence/validation/startup-static-checkpoint.json), pinned to its recorded reviewed HEAD, reruns version-header, fpuerrors, demo-branch, low-address/diagnostic and startup-policy audits **twice each**. All ten runs pass and reproduce the initially retained JSON hashes exactly. The three executable baselines and saved Ghidra database have identical hashes before/after and match the preceding14-audit checkpoint. Commands, script hashes, output hashes and artifact hashes are retained. This is reproducibility by the primary investigator, not independent semantic review, runtime validation, CI or a Ghidra reopen/readback check.
+
+| Boundary | Work status | Evidence confidence | Required follow-up |
+|---|---|---|---|
+| Removed974-byte region partition | Done for contiguous byte accounting | Verified | No claim of full semantics from partition alone |
+| Original version reader, scanner store width, final static template | Done for inspected local paths | Verified | Follow actual file selection, initialization order and later header writes before real-file compatibility claims |
+| fpuerrors startup calls and retained helper | Done for local updates/removal | Verified | Guard lifecycle, other callers and actual exception delivery |
+| Early/later demo raw writes and local control flow | Done for captured bodies | Verified | Resolve field consumers, staged-pointer preservation and complete race-preparation ABI |
+| Low-address/filter path and diagnostic consumer | Partial | Verified local instructions; intended detection purpose unresolved | Qualify exception runtime dispatch and other global writers |
+| Complete520-byte diagnostic-body difference | Done for instruction-byte comparison | Verified | Transitive callbacks, formatting/termination contracts and actual Windows/Wine UI behaviour |
+
+These follow-ups are ordinary pending investigations, not external blockers and not prerequisites for every other comparison. For the next broader pass, reuse this chapter rather than rescan its literals: prioritize a changed caller/consumer that supplies semantic meaning, or a separate catalog mechanism still supported only by vendor text. Keep static facts, inferred intent and actual runtime observations separate.

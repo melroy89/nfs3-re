@@ -103,6 +103,8 @@ These later investigations have their own reproducible static audits; the earlie
 
 The [complete diagnostic-handler comparison](original-modern-startup-policy.md#diagnostic-dialog-flags-are-the-only-local-handler-body-change) additionally accounts for its two changed bytes: warning icon→error icon and an explicit topmost flag; both already request system-modal/topmost styling. Runtime UI behaviour remains untested.
 
+The later [five-audit startup checkpoint](evidence/validation/startup-static-checkpoint.json) runs each selected audit twice: all ten runs pass with identical outputs, and all three executable baselines plus saved database remain unchanged and match the prior checkpoint. This verifies selected static reproducibility, not independent review or runtime behaviour.
+
 The [974-byte startup partition](original-modern-startup-policy.md#contiguous-accounting-of-the974-byte-nop-region) accounts for the whole NOP interval and links remaining gaps. Byte accounting is complete within that interval; semantic recovery is not.
 
 ## 1. Three-way provenance

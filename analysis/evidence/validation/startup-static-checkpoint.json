@@ -1,0 +1,169 @@
+{
+  "kind": "startup-static-reproducibility-checkpoint",
+  "reviewed_head": "5ea5d320eefa5ae915ab50193933eb318a518165",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_startup_version_header.py"
+      ],
+      "script_sha256": "5285014bc883b1b19e4ea418455be6888870759d5830f52b56e358adb3c387a0",
+      "output": "analysis/evidence/audits/startup-version-header.json",
+      "initial_output_sha256": "60d49793a0de31e55066ffe63fb606ee40ccf0c13cfc7c11fdf02166b3585c77",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: baseline identities, original resource/parse destinations, Modern removal/template\n",
+          "stderr": "",
+          "output_sha256": "60d49793a0de31e55066ffe63fb606ee40ccf0c13cfc7c11fdf02166b3585c77"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: baseline identities, original resource/parse destinations, Modern removal/template\n",
+          "stderr": "",
+          "output_sha256": "60d49793a0de31e55066ffe63fb606ee40ccf0c13cfc7c11fdf02166b3585c77"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_startup_fpuerrors_difference.py"
+      ],
+      "script_sha256": "dac0bbc2e1127a7c952e44c5284e124accc67d8a6d10f7ea743e2a3cb2b62bf1",
+      "output": "analysis/evidence/audits/startup-fpuerrors-difference.json",
+      "initial_output_sha256": "6b40931fd119c9a975a0dbc1b27232693870b4a01eb0d40fa6b67c77f57ebbe9",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: original switch/gate/five calls, Modern removal, retained helper equality\n",
+          "stderr": "",
+          "output_sha256": "6b40931fd119c9a975a0dbc1b27232693870b4a01eb0d40fa6b67c77f57ebbe9"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: original switch/gate/five calls, Modern removal, retained helper equality\n",
+          "stderr": "",
+          "output_sha256": "6b40931fd119c9a975a0dbc1b27232693870b4a01eb0d40fa6b67c77f57ebbe9"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_removed_demo_startup.py"
+      ],
+      "script_sha256": "ad168be4322d8720cef0bd65cf05c7899408f8a0a955fe3ee528879bf07e6a7c",
+      "output": "analysis/evidence/audits/removed-demo-startup.json",
+      "initial_output_sha256": "f52cfcdf1d1d32acf76ce6f1972d785f538235d178f818fa461c3657478556df",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: switch slots, independent ordered gates, selected differing stores and456-byte Modern NOP replacement\n",
+          "stderr": "",
+          "output_sha256": "f52cfcdf1d1d32acf76ce6f1972d785f538235d178f818fa461c3657478556df"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: switch slots, independent ordered gates, selected differing stores and456-byte Modern NOP replacement\n",
+          "stderr": "",
+          "output_sha256": "f52cfcdf1d1d32acf76ce6f1972d785f538235d178f818fa461c3657478556df"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_startup_low_address_path.py"
+      ],
+      "script_sha256": "bc955900d4600e505e268d9488d10b7d283fcf0519077dbf832630ef75800e9c",
+      "output": "analysis/evidence/audits/startup-low-address-path.json",
+      "initial_output_sha256": "df4e403e1d515105b35228bb400744fc2e5b5568ee5f32ab0870937183fd567d",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: baseline hashes, low-address read, filter/result publication and Modern removal\n",
+          "stderr": "",
+          "output_sha256": "df4e403e1d515105b35228bb400744fc2e5b5568ee5f32ab0870937183fd567d"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: baseline hashes, low-address read, filter/result publication and Modern removal\n",
+          "stderr": "",
+          "output_sha256": "df4e403e1d515105b35228bb400744fc2e5b5568ee5f32ab0870937183fd567d"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_startup_policy_difference.py"
+      ],
+      "script_sha256": "e57448086f0b673b3ad8b5ddc23c1087792169eb304ab7538a3b6cc8bd0c4454",
+      "output": "analysis/evidence/audits/original-modern-startup-policy.json",
+      "initial_output_sha256": "e16e3aee4b93b53268473754ef136edfb906f122129d13327f16787e15b9212e",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: input hashes, removed original call span, Modern options/import witnesses\n",
+          "stderr": "",
+          "output_sha256": "e16e3aee4b93b53268473754ef136edfb906f122129d13327f16787e15b9212e"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: input hashes, removed original call span, Modern options/import witnesses\n",
+          "stderr": "",
+          "output_sha256": "e16e3aee4b93b53268473754ef136edfb906f122129d13327f16787e15b9212e"
+        }
+      ],
+      "repeatable": true
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "before_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "after_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "unchanged": true
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "before_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "after_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "unchanged": true
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "before_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "after_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "unchanged": true
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "before_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "after_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "unchanged": true
+    }
+  ],
+  "limits": [
+    "Primary-agent reproducibility check, not independent semantic review.",
+    "No target execution, fault, Windows API or Ghidra mutation.",
+    "Five selected audits only; not all repository checks, CI, whole-program equivalence or goal completion."
+  ],
+  "preserved_artifacts_match_prior_checkpoint": true,
+  "prior_checkpoint": "analysis/evidence/validation/recent-static-increments-checkpoint.json"
+}
