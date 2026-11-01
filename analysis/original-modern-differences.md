@@ -496,7 +496,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **149 Claimed, 40 Static, 98 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **149 Claimed, 41 Static, 97 Partial, 3 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -508,7 +508,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 
 | ID | Reported change | Review |
 |---|---|---|
-| MP161-001 | Fixed the problem with Texel Alignment in the DX6, DX7 and DX8 renderers, so everything looks sharp, like when Glide3x is used. | Partial |
+| MP161-001 | Fixed the problem with Texel Alignment in the DX6, DX7 and DX8 renderers, so everything looks sharp, like when Glide3x is used. | Static |
 | MP161-002 | DX8 supports fog effect. Thanks to Verok for investigation. | Claimed |
 | MP161-003 | The DX7 graphical glitches like the black polygon near the Old Church were workarounded. | Claimed |
 | MP161-004 | DX7 doesn't output 640×480×16 if this mode isn't supported. Also it returns sorted list of resolutions now. | Static |

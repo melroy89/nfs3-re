@@ -1,0 +1,349 @@
+{
+  "kind": "static-dx7-dx8-160-161-alignment",
+  "range_end": "exclusive",
+  "drivers": {
+    "dx7": {
+      "versions": {
+        "1.6.0": {
+          "member": "drivers/dx7/dx7a.dll",
+          "sha256": "8f3ed9676611d65f40b5dde537aab5813d2e2a854c08fdf3b08b7d19a7a25d5e",
+          "direct_call_candidates": [],
+          "spans": [
+            {
+              "start": "6000d580",
+              "end_exclusive": "6000d5ac",
+              "sha256": "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx7-1.6.0-6000d580.asm",
+              "assembly_sha256": "2e68c2eb0ce0f7e312ef91ee0f6d5a94f220d9f22c4131b3b08623a203a34c16"
+            }
+          ]
+        },
+        "1.6.1": {
+          "member": "drivers/dx7/dx7a.dll",
+          "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+          "direct_call_candidates": [
+            "60006f5e",
+            "600082ca",
+            "600087ee"
+          ],
+          "spans": [
+            {
+              "start": "6000d580",
+              "end_exclusive": "6000d5ac",
+              "sha256": "893c106fcb998289d6b785941b8f810c08c7b43144c72424ea3b1d5529e17e64",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx7-1.6.1-6000d580.asm",
+              "assembly_sha256": "b32c3a3a0e44b3ed8fb935b8e121e2e6082c4a60e1ed141c54c4c384c3da69ff"
+            },
+            {
+              "start": "60006f5e",
+              "end_exclusive": "60006f63",
+              "sha256": "8f24dcf696c1366402338daae4c257e881d1aab0dfd62d4283cc0a63314e360e",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx7-1.6.1-60006f5e.asm",
+              "assembly_sha256": "a5ec5f0567909a8bef57fcf0561ec133f3e4398421962853792936c5247ef2b4"
+            },
+            {
+              "start": "600082ca",
+              "end_exclusive": "600082cf",
+              "sha256": "288100638a7f766f8f579bce95c80b453f96ce6f1d545d738ac4084f04d33ec3",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx7-1.6.1-600082ca.asm",
+              "assembly_sha256": "292c1f9fe626ac4c4235cf7427389c406215cd8cfd0e097f0787e833c494e3e7"
+            },
+            {
+              "start": "600087ee",
+              "end_exclusive": "600087f3",
+              "sha256": "aec2eaa4dc9069aeede104a460880f7eca99bfbf0c925ef301df8833864b2c40",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx7-1.6.1-600087ee.asm",
+              "assembly_sha256": "30bd5ca10926966ee0382bec668087d2175b337b18bb6cbac179c6d042c68940"
+            }
+          ]
+        }
+      },
+      "constant_rva": "0001544c",
+      "constant": 0.5,
+      "contract": "New44-byte helper: stack pointer/count inputs; subtract0.5 from X/Y at32-byte stride; zero count skips arithmetic; ECX/EDI restored; plainRET, no DX6-style pushed constant adapter."
+    },
+    "dx8": {
+      "versions": {
+        "1.6.0": {
+          "member": "drivers/dx8/dx8a.dll",
+          "sha256": "92e352738012fe1098d98e125bdafae089275ceb7d40a9c1aca9c5b31423a1f7",
+          "direct_call_candidates": [
+            "6000240a",
+            "6000241b",
+            "6000242e",
+            "600025fc",
+            "6000273c",
+            "600028c0",
+            "600028d1",
+            "600028e4",
+            "60002959",
+            "6000296c",
+            "60002980",
+            "60002b9d",
+            "60002bae",
+            "60002d77",
+            "60002e94"
+          ],
+          "spans": [
+            {
+              "start": "60001ff0",
+              "end_exclusive": "600021f7",
+              "sha256": "9ee81e9f229596b2a51ad2c21b8d10feb6f54421e27b4aba2b01e634b5845ee3",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60001ff0.asm",
+              "assembly_sha256": "31cd0a7030b451d0fe73253dc0c527a71fbdfab0de11065ccbc221e929903b71"
+            },
+            {
+              "start": "6000240a",
+              "end_exclusive": "6000240f",
+              "sha256": "8e3beb078e970782b37a90f0e64684ebc761aaa8930332ced41348d0e093a859",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-6000240a.asm",
+              "assembly_sha256": "13bb3eb86618da7604eadf45a4eb3b08567b727a367910385ab491b79fe3c6c5"
+            },
+            {
+              "start": "6000241b",
+              "end_exclusive": "60002420",
+              "sha256": "e8875b11bbd072a28243bdb803b2056f71c2dd7e6a981a11077dc4a8534d0bbb",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-6000241b.asm",
+              "assembly_sha256": "644276643e59ddec1ed1030462387cc23525020ea44b844d4bec7e6e8c7883d7"
+            },
+            {
+              "start": "6000242e",
+              "end_exclusive": "60002433",
+              "sha256": "1812305daccaf89153bd0820fb3fbde7b95f80187cce9a10cf8505549cb0adad",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-6000242e.asm",
+              "assembly_sha256": "e796993c71c84165febd9de577b7f22d3889df86c8d6997692791c207c6d2403"
+            },
+            {
+              "start": "600025fc",
+              "end_exclusive": "60002601",
+              "sha256": "fc1146636082e07d35748bda3a2b94ffc79f9e188bccd365ac841bbd3ec5cd1d",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-600025fc.asm",
+              "assembly_sha256": "4568902a662639d3abe3736b5594bcfffd881cb4c3025c8b971724093528b0ba"
+            },
+            {
+              "start": "6000273c",
+              "end_exclusive": "60002741",
+              "sha256": "bb836971437dd62d1e0220c2bd881e24615e2719a83ca26569fd2da17957531f",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-6000273c.asm",
+              "assembly_sha256": "9e8bad526b26ec846e980a3c851cf9de1e0837f21c7ca1bb7c73fef5740f0f0d"
+            },
+            {
+              "start": "600028c0",
+              "end_exclusive": "600028c5",
+              "sha256": "df6eb3331220d2992b2e7e814a3cea4980d93425c7023a1270efe3a8099299ef",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-600028c0.asm",
+              "assembly_sha256": "74abb700a364a1a7c1883c5a38906cf8fa288db69b298331962e2d643a86fbed"
+            },
+            {
+              "start": "600028d1",
+              "end_exclusive": "600028d6",
+              "sha256": "d6fefd86cf6975838beb0e88766a865f21eb951d01f4b19bfbb821af4e73dc2f",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-600028d1.asm",
+              "assembly_sha256": "9e3480d2bc5a74ccc6b4f18920b686f80b307df65adabe11dce6f87db527f811"
+            },
+            {
+              "start": "600028e4",
+              "end_exclusive": "600028e9",
+              "sha256": "d7b9e86b17a8f2e409570897e6654bb8b5fad32dd8191ad1232e41688780711e",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-600028e4.asm",
+              "assembly_sha256": "fb39aa48c77b92e649b00266d285e74c7e1c8ca49d66e5f64b0150af0e96d50c"
+            },
+            {
+              "start": "60002959",
+              "end_exclusive": "6000295e",
+              "sha256": "e0e71817555958130f4bb60a6d1eb013b11bb4aaa25dc44198e883513ad159b0",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60002959.asm",
+              "assembly_sha256": "adc8f0c6143108ac1a751d15c794a5ba01e3e9606af980a2665d5dcac0ecb654"
+            },
+            {
+              "start": "6000296c",
+              "end_exclusive": "60002971",
+              "sha256": "cb88bc9c30feee05fd2eee7282a4b9849635a13ca5a97b19d62f20e03d795b0f",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-6000296c.asm",
+              "assembly_sha256": "26290797cd1341f3be2b9db8526b38cc138f058a363914958fe4050c67eb5543"
+            },
+            {
+              "start": "60002980",
+              "end_exclusive": "60002985",
+              "sha256": "6e1d99fd2f8a46fdb45dcfa51cdde2529c23be81b11f357927bbd968827ffc63",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60002980.asm",
+              "assembly_sha256": "def37a2d3eaa71c3a0aa71231bf5e48ac3d8f2aeafe6f162c2f7dbfac3eea1af"
+            },
+            {
+              "start": "60002b9d",
+              "end_exclusive": "60002ba2",
+              "sha256": "3f2414742b6a8c7f3cb2cede05511e74f30561a0515ca203308dd026736a5d98",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60002b9d.asm",
+              "assembly_sha256": "a9d7f81f6105047817fdf6cfa97d566f205312ee0ad43ffc8d865a219a9a15d5"
+            },
+            {
+              "start": "60002bae",
+              "end_exclusive": "60002bb3",
+              "sha256": "ebad5115e0fd339f827a4f43c9f82360b53dce56d087a41466508a6293cbad83",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60002bae.asm",
+              "assembly_sha256": "0b4d45f2cb1a8a9b7e4b1f685ef8d7dd450da26ca5be76c367469b94902e28cb"
+            },
+            {
+              "start": "60002d77",
+              "end_exclusive": "60002d7c",
+              "sha256": "8d632e618e66bb5ee7b0d00da2517dbb44ead82433d3ec542624b40254fb8e12",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60002d77.asm",
+              "assembly_sha256": "d643a1411c61e510a9d033bb190f673cb54233a83065b1c43f80788606886f86"
+            },
+            {
+              "start": "60002e94",
+              "end_exclusive": "60002e99",
+              "sha256": "3e6bffccb263671a45da02170daf950fad4978f1c6eb2c115a449ba8fa31a245",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60002e94.asm",
+              "assembly_sha256": "0be4c0a569860618e1f9b55c90b00375319f1a67bdf8647c5591281b08f98d97"
+            }
+          ]
+        },
+        "1.6.1": {
+          "member": "drivers/dx8/dx8a.dll",
+          "sha256": "ddb8a55514bc650384e349cf3830946c149f71234e90a41327f69aca793e81b8",
+          "direct_call_candidates": [
+            "6000240a",
+            "6000241b",
+            "6000242e",
+            "600025fc",
+            "6000273c",
+            "600028c0",
+            "600028d1",
+            "600028e4",
+            "60002959",
+            "6000296c",
+            "60002980",
+            "60002b9d",
+            "60002bae",
+            "60002d77",
+            "60002e94"
+          ],
+          "spans": [
+            {
+              "start": "60001ff0",
+              "end_exclusive": "60002067",
+              "sha256": "f4d513545affe50358cc0ac3d5524ab2864301f50e1aaa98c11827a45da8afae",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60001ff0.asm",
+              "assembly_sha256": "278c9d1687625c6f265bf4823b8895dc223b8cb75f71653fbde3357694480339"
+            },
+            {
+              "start": "6000240a",
+              "end_exclusive": "6000240f",
+              "sha256": "8e3beb078e970782b37a90f0e64684ebc761aaa8930332ced41348d0e093a859",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-6000240a.asm",
+              "assembly_sha256": "e7c73a965f2233efa124b0e16604e69843029533082847e3751add1f31e8d928"
+            },
+            {
+              "start": "6000241b",
+              "end_exclusive": "60002420",
+              "sha256": "e8875b11bbd072a28243bdb803b2056f71c2dd7e6a981a11077dc4a8534d0bbb",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-6000241b.asm",
+              "assembly_sha256": "82c07c884dd1a253a847839e287dc92b84aa5c5a570bbdd572b40bc08e1e5820"
+            },
+            {
+              "start": "6000242e",
+              "end_exclusive": "60002433",
+              "sha256": "1812305daccaf89153bd0820fb3fbde7b95f80187cce9a10cf8505549cb0adad",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-6000242e.asm",
+              "assembly_sha256": "4d01dc110a64548e6553d7c66997baee3a6485947e5d1794fc173861ebf56536"
+            },
+            {
+              "start": "600025fc",
+              "end_exclusive": "60002601",
+              "sha256": "fc1146636082e07d35748bda3a2b94ffc79f9e188bccd365ac841bbd3ec5cd1d",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-600025fc.asm",
+              "assembly_sha256": "b27e2f38a09cd9283b1e36aa876296e38eac7a461e20763f47daab7c68c34e12"
+            },
+            {
+              "start": "6000273c",
+              "end_exclusive": "60002741",
+              "sha256": "bb836971437dd62d1e0220c2bd881e24615e2719a83ca26569fd2da17957531f",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-6000273c.asm",
+              "assembly_sha256": "2214352a26f3d4b6f6e0155a3ee0f879dd7f1b622a03543cb81a8a82a5d859d3"
+            },
+            {
+              "start": "600028c0",
+              "end_exclusive": "600028c5",
+              "sha256": "df6eb3331220d2992b2e7e814a3cea4980d93425c7023a1270efe3a8099299ef",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-600028c0.asm",
+              "assembly_sha256": "335bed956551f5d843dbd77b0855e2ea38d9f9d38f439e1a6e79c9cfb397d0b7"
+            },
+            {
+              "start": "600028d1",
+              "end_exclusive": "600028d6",
+              "sha256": "d6fefd86cf6975838beb0e88766a865f21eb951d01f4b19bfbb821af4e73dc2f",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-600028d1.asm",
+              "assembly_sha256": "3516064134c17c5aed62d41577a9ee9769acbfa2a870f621785ba09efa2fc972"
+            },
+            {
+              "start": "600028e4",
+              "end_exclusive": "600028e9",
+              "sha256": "d7b9e86b17a8f2e409570897e6654bb8b5fad32dd8191ad1232e41688780711e",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-600028e4.asm",
+              "assembly_sha256": "69c79d07d67a6be53092aa3074c393d2c8a30797230224634c61291f0f6ef76c"
+            },
+            {
+              "start": "60002959",
+              "end_exclusive": "6000295e",
+              "sha256": "e0e71817555958130f4bb60a6d1eb013b11bb4aaa25dc44198e883513ad159b0",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60002959.asm",
+              "assembly_sha256": "a2a55ff359b3efc8041f770bb5e1afbe2b1a117802a98c460a049aa8a04b8680"
+            },
+            {
+              "start": "6000296c",
+              "end_exclusive": "60002971",
+              "sha256": "cb88bc9c30feee05fd2eee7282a4b9849635a13ca5a97b19d62f20e03d795b0f",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-6000296c.asm",
+              "assembly_sha256": "fc02981b2271057798c942a168dd2b5738f4b5afb7e989765578f2cadabe02ba"
+            },
+            {
+              "start": "60002980",
+              "end_exclusive": "60002985",
+              "sha256": "6e1d99fd2f8a46fdb45dcfa51cdde2529c23be81b11f357927bbd968827ffc63",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60002980.asm",
+              "assembly_sha256": "f2ade7349fe843b0722ac211f1b14b3cba9f5b0f6bc232e43f3f9020309b995b"
+            },
+            {
+              "start": "60002b9d",
+              "end_exclusive": "60002ba2",
+              "sha256": "3f2414742b6a8c7f3cb2cede05511e74f30561a0515ca203308dd026736a5d98",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60002b9d.asm",
+              "assembly_sha256": "52ebfbef833889c6aee63628e41760bc16541920304dff6e3f069d01d09c727f"
+            },
+            {
+              "start": "60002bae",
+              "end_exclusive": "60002bb3",
+              "sha256": "ebad5115e0fd339f827a4f43c9f82360b53dce56d087a41466508a6293cbad83",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60002bae.asm",
+              "assembly_sha256": "fc6248c60e05e6b07d5cc95f00857cad6e79d4b218bf33abeeaabbfde982c618"
+            },
+            {
+              "start": "60002d77",
+              "end_exclusive": "60002d7c",
+              "sha256": "8d632e618e66bb5ee7b0d00da2517dbb44ead82433d3ec542624b40254fb8e12",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60002d77.asm",
+              "assembly_sha256": "c4c03715f8760893431c814b5298f07c418bfc40010a3ccb4ce08ae0cc006edb"
+            },
+            {
+              "start": "60002e94",
+              "end_exclusive": "60002e99",
+              "sha256": "3e6bffccb263671a45da02170daf950fad4978f1c6eb2c115a449ba8fa31a245",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60002e94.asm",
+              "assembly_sha256": "2481f3923a4f71e0c98594d2f26af77eac578ba966c791f03d241f2028acc4b3"
+            }
+          ]
+        }
+      },
+      "constant_rva": "00018220",
+      "constant": 0.5,
+      "contract": "Matched vertex helper has15 retained direct calls; new prefix subtracts0.5 from one supplied vertex X/Y before existing/reworked colour/fog policy. Other helper changes are not declared equivalent."
+    }
+  },
+  "limits": [
+    "Official historical renderer pairs, not original-retail DLL pairing.",
+    "Direct E8 scans are bounded call candidates; indirect calls and complete export reachability not established.",
+    "In-place coordinate changes, not direct U/V writes. No rendered sharpness/pixel coverage or callback execution.",
+    "Raw same-address older DX7 helper-region bytes are a location witness, not a semantic counterpart."
+  ]
+}

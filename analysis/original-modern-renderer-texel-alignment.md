@@ -1,4 +1,4 @@
-# Renderer texel alignment: historical DX6 vertex correction
+# Renderer texel alignment: historical DX6/DX7/DX8 coordinate correction
 
 ## Evidence and scope
 
@@ -32,4 +32,21 @@ The helper does not preserve arithmetic flags or x87 status. Its coordinate writ
 
 This supplies partial static support for MP161-001's DX6 portion: a real half-unit X/Y vertex-origin correction appears between author-hosted1.6.0 and1.6.1 at eight verified sites. It is not a direct modification of texture U/V fields. Interpreting its intended purpose as texel alignment is consistent with the release note and draw-call placement, while physical pixel coverage, texture sharpness and all driver modes require rendered evidence.
 
-The DX7 and DX8 portions still need their own paired instruction/data traces. Their differing DLL hashes alone do not prove the same algorithm was applied. This finding also does not establish that original NFS III's driver used this exact older DX6 implementation. Keep EXE query-cache changes separate: this is code inside the packaged renderer, not evidence inferred from the EXE's graphics strings.
+The following paired investigation establishes DX7/DX8 coordinate corrections independently. Their differing DLL hashes alone were not used as proof of a shared algorithm. This finding also does not establish that original NFS III's driver used this exact older DX6 implementation. Keep EXE query-cache changes separate: this is code inside the packaged renderer, not evidence inferred from the EXE's graphics strings.
+
+
+## DX7 and DX8 historical instruction traces
+
+The [second audit](scripts/audit_dx7_dx8_160_161_alignment.py), run with `python3 analysis/scripts/audit_dx7_dx8_160_161_alignment.py`, pins both release members for each driver, retains complete relevant helper envelopes and direct-call witnesses, and writes [its manifest](evidence/audits/dx7-dx8-160-161-alignment.json). The exact subtract/store sequence is present once in each newer DLL and absent in that byte form from its older pair; this pattern search corroborates inspected helpers, not an exhaustive semantic absence proof.
+
+| Driver | Verified newer mechanism | Caller boundary |
+|---|---|---|
+| DX6 |55-byte counted32-byte-stride helper at `6000e514`; subtract0.5 from X/Y and reproduce replaced PUSH1c4h stack effect | Eight exact PUSH-to-CALL patches |
+| DX7 |44-byte counted32-byte-stride helper at `6000d580`; same X/Y subtraction, ECX/EDI saved/restored, plain RET | Three direct CALL candidates `60006f5e`, `600082ca`, `600087ee`; no direct call to that target in the older DLL |
+| DX8 |New prefix at `60001ff0` subtracts0.5 from one supplied vertex's X/Y, then continues into reworked colour/fog handling | Fifteen identical direct CALL-site addresses target this helper in both releases |
+
+DX7 loads0.5 from `6001544c`; DX8 loads0.5 from `60018220`. DX7 has a count0 guard like DX6, while the DX8 correction prefix operates on its supplied pointer immediately. The DX8 old/new helper bodies are retained in full (`60001ff0..600021f7` versus `60001ff0..60002067`); this report does not declare the other colour/fog changes equivalent or fully explain them. Its15 retained direct calls corroborate helper correspondence more strongly than same-address equality alone.
+
+The DX7 adapter does **not** emulate the DX6 PUSH. Copying one driver's wrapper into another would change the stack contract. All three corrections mutate coordinates in place and perform binary32 stores, with ambient x87 rounding/status/exception behavior still relevant. Repeated buffer reuse, malformed pointer/count inputs, all exported drawing routes and actual screen-space pixel coverage remain outside this static finding.
+
+MP161-001 now has bounded static support for all three named components in an actual1.6.0/1.6.1 pair. The intended alignment explanation is supported by the coordinate adjustments and drawing-call context; no sharper image, universal sampling correctness or original-retail compatibility was observed. The DX8 fog changes are a separate investigation rather than automatically accepted because they share this helper.

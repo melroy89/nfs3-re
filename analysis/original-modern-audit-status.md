@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **149 vendor-only,40 bounded-static,98 partial and3 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **149 vendor-only,41 bounded-static,97 partial and3 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recently narrowed:** type8 descriptor availability/conditional publication, local prepare/render/finalize order, retained399-byte handler and an excluded33-byte viewport-flag helper. See the [projection report](original-modern-projection.md).
@@ -123,13 +123,13 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels149 entries vendor-only,40 bounded static,98 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels149 entries vendor-only,41 bounded static,97 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
 | 1 | MP160-003 horizon/camera shift | [Projection report](original-modern-projection.md) now establishes conditional CCM-to-type8 publication, preparation/render/finalizer ordering and bounded non-producer searches; recover computed/bulk source writes or capture lifetime, then qualify camera orientation/output | Executable inspection can advance this; visible horizon still needs rendering evidence |
 | 2 | MP160-006 remaining output coverage | [Map-marker extent-to-quad chain](original-modern-map-marker-scaling.md) now established; qualify other marker styles, lifecycle and actual rendered size separately | Static source/consumer gap closed; visual scope remains unverified |
-| 3 | MP161-001/002 renderer-specific texel alignment/fog | [Author-hosted v1.6.0 archive is now pinned](original-modern-dll-candidates.md#author-hosted-v160-baseline-now-retained); compare its DX6/DX7/DX8 exports/functions with v1.6.1 | EXE changes or DLL names alone cannot establish these DLL implementations/history |
+| 3 | MP161-002 DX8 fog; MP161-001 visual acceptance | [Historical DX6/DX7/DX8 coordinate corrections](original-modern-renderer-texel-alignment.md#dx7-and-dx8-historical-instruction-traces) are now traced; isolate DX8 colour/fog changes from the shared vertex helper, then follow relevant state and consumers | Alignment mechanisms are verified statically; fog semantics and rendered outcomes require separate evidence |
 | 4 | Historical regressions such as MP153-008 or the specific MP152-001 improvement | Obtain the named intermediate-release pairs; reuse [language fallback](original-modern-language-table.md) and [rear-view mechanisms](original-modern-track-detail.md) as final-state context | Original versus final cannot isolate an intermediate regression/fix |
 | 5 | Original/Modern rendered, replay and multiplayer consequences | Compare separately identified inputs/builds within an explicitly stated runtime scope | Existing single-build captures and static derivations are not cross-version equivalence evidence |
 
@@ -205,3 +205,7 @@ The [paired audit](evidence/audits/dx7-160-161-mode-policy.json) now verifies th
 ## DX6 texel-alignment mechanism identified
 
 The [historical DX6 audit](original-modern-renderer-texel-alignment.md) verifies eight PUSH1c4h-to-CALL patches and a complete55-byte adapter subtracting0.5 from vertex X/Y in place before restoring the original pushed-argument shape. MP161-001 now has partial support for DX6; DX7/DX8 and physical raster outcomes remain unverified. Current labels:149 vendor-only,40 bounded static,98 partial,3 unresolved. No driver execution or target modification.
+
+## Three-driver alignment mechanism closed at static scope
+
+[Historical DX7/DX8 traces](original-modern-renderer-texel-alignment.md#dx7-and-dx8-historical-instruction-traces) now supplement DX6: separate half-unit X/Y adjustment helpers and3/15 direct-call boundaries are pinned. MP161-001 moves to bounded-static support across all three named drivers. Rendered sharpness/all drawing routes remain untested; DX8 fog remains a separate claim. Current labels:149 vendor-only,41 bounded static,97 partial,3 unresolved.

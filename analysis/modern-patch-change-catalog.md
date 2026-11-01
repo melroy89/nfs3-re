@@ -12,7 +12,7 @@ Source line points to the bullet in the installed `readme_en.txt`. Release ancho
 
 | ID | Release | Source line | Condensed release-note item | Category | Verification status |
 |---|---|---:|---|---|---|
-| MP161-001 | 1.6.1 (2016-10-28) | 147 | Corrects Texel Alignment in the DX6, DX7 and DX8 renderers | Graphics / drivers | Partial: [DX6 historical pair adds half-unit X/Y vertex adjustment at eight sites](original-modern-renderer-texel-alignment.md); DX7/DX8 mechanisms and rendered sharpness unverified |
+| MP161-001 | 1.6.1 (2016-10-28) | 147 | Corrects Texel Alignment in the DX6, DX7 and DX8 renderers | Graphics / drivers | Static-supported: [historical DX6/DX7/DX8 pairs add half-unit X/Y coordinate correction](original-modern-renderer-texel-alignment.md#dx7-and-dx8-historical-instruction-traces); distinct adapters/call boundaries verified; rendered sharpness and all-mode coverage untested |
 | MP161-002 | 1.6.1 (2016-10-28) | 148 | DX8 supports fog effect | Graphics / drivers | Vendor-claimed; not independently verified against both executables |
 | MP161-003 | 1.6.1 (2016-10-28) | 149 | The DX7 graphical glitches like the black polygon near the Old Church were workarounded | Graphics / drivers | Vendor-claimed; not independently verified against both executables |
 | MP161-004 | 1.6.1 (2016-10-28) | 150 | DX7 doesn't output 640×480×16 if this mode isn't supported | Graphics / drivers | Static-supported: [author-hosted1.6.0→1.6.1 removes fixed640×480×16 seed and adds sorted insertion](original-modern-dx7-mode-admission.md#direct-v160-to-v161-comparison-closes-the-two-local-mode-mechanisms); actual display support, later overrides and rendering untested |
