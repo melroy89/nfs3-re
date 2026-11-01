@@ -80,7 +80,7 @@ def main():
                     (0x41d9a3,0x41da06),(0x41defc,0x41df0c),
                     (0x41d310,0x41d349),(0x41ae90,0x41b2f4),
                     (0x41b300,0x41b63c),(0x45d360,0x45d374),
-                    (0x555ee8,0x555ef8)]:
+                    (0x555ee8,0x555ef8),(0x41ab40,0x41ab6d)]:
             value=pe.get_data(a-0x400000,b-a)
             row['caller_and_selector_witnesses'].append({'start':f'{a:08x}',
                 'exclusive_end':f'{b:08x}','bytes':value.hex(),
@@ -169,6 +169,12 @@ def main():
         'limits':['Official asset bindings and identical executable descriptors; runtime menu/language selection not observed.']}
     assert len(comparisons)==64
     assert result['derived_integer_comparisons']['cases_with_known_field_differences']==48
+    result['offset_2c_candidate_disambiguation']={
+        'paired_witness':'0041ab40..0041ab6d, retained in both binaries.',
+        'address_formula':'0041ab6a reads DWORD at00571370+wrap32(EBX*1472)+wrap32(ECX*4)+2c.',
+        'boundary':'This is not a proven read of preset record+2c; sharing an offset is not sharing an object.',
+        'status':'Preset+20 fixed input /+2c float layout and initialized-5 value verified; physical consumer role remains unresolved/opaque.',
+        'limits':'No exhaustive whole-program read-absence claim; alias/copy consumers remain possible. Unknown role is not a prerequisite to unrelated change classification.'}
     (ROOT/'analysis/evidence/audits/original-modern-parameter-preset.json').write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: baselines, complete preset bodies, table bytes and retained conversion scale')
 

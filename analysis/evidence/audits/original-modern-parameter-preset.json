@@ -147,6 +147,12 @@
           "exclusive_end": "00555ef8",
           "bytes": "107d5300000000000000000060d34500",
           "sha256": "5c6cd8ad86174997e6cd505f7adacb98884d47fc68fc0c565362180a00484ce7"
+        },
+        {
+          "start": "0041ab40",
+          "exclusive_end": "0041ab6d",
+          "bytes": "56575589e583ec1489d88d149d0000000029dac1e20329dac1e2068d048d0000000081c27013570001d08b502c",
+          "sha256": "9e63821eb4a2c2ebd97c806531265f63e53e47cb4d0fb601a0102dbf579c968f"
         }
       ]
     },
@@ -440,6 +446,12 @@
           "exclusive_end": "00555ef8",
           "bytes": "107d5300000000000000000060d34500",
           "sha256": "5c6cd8ad86174997e6cd505f7adacb98884d47fc68fc0c565362180a00484ce7"
+        },
+        {
+          "start": "0041ab40",
+          "exclusive_end": "0041ab6d",
+          "bytes": "56575589e583ec1489d88d149d0000000029dac1e20329dac1e2068d048d0000000081c27013570001d08b502c",
+          "sha256": "9e63821eb4a2c2ebd97c806531265f63e53e47cb4d0fb601a0102dbf579c968f"
         }
       ]
     }
@@ -3753,5 +3765,12 @@
     "limits": [
       "Official asset bindings and identical executable descriptors; runtime menu/language selection not observed."
     ]
+  },
+  "offset_2c_candidate_disambiguation": {
+    "paired_witness": "0041ab40..0041ab6d, retained in both binaries.",
+    "address_formula": "0041ab6a reads DWORD at00571370+wrap32(EBX*1472)+wrap32(ECX*4)+2c.",
+    "boundary": "This is not a proven read of preset record+2c; sharing an offset is not sharing an object.",
+    "status": "Preset+20 fixed input /+2c float layout and initialized-5 value verified; physical consumer role remains unresolved/opaque.",
+    "limits": "No exhaustive whole-program read-absence claim; alias/copy consumers remain possible. Unknown role is not a prerequisite to unrelated change classification."
   }
 }

@@ -190,3 +190,9 @@ Neither version's apply preset-store portion replaces +20h. Its subsequent conve
 This narrows the data reconstruction requirement: retain the existing +20h input and its constructor initialization, instead of treating all five converted fields as supplied by Modern's table. Its complete physical/consumer role remains unresolved; the verified value alone does not justify naming it a clipping plane or applying a corrective normalization. No target instruction or runtime probe was executed.
 
 The selector also has a separate [retained world-effect scale consumer](original-modern-effect-renderer-masks.md#retained-view-distance-scale-in-the-world-effect-builder), with factors1.0/1.0/approximately0.85/0.7. The track-record rewrite must not be generalized to every use of View Distance; that other table and comparison remain unchanged.
+
+## Shared field offset is not a consumer identity
+
+A focused consumer check eliminates a plausible false match for the unresolved+2ch role. The audit now retains paired `0041ab40..0041ab6d`. Its read at `0041ab6a` uses base `00571370 + wrap32(EBX*1472) + wrap32(ECX*4)`, then offset2ch. That base is a different indexed record family, not a demonstrated alias of selected preset pointer `005dd830`. The common offset alone therefore does not identify a preset+2ch consumer or justify naming the initialized−5 value a clipping plane.
+
+The practical reconstruction boundary remains clear: +20h signed fixed input, +2ch binary32 output and the initialized−5 value are verified; the physical field meaning remains opaque. Preserve that layout/value without inventing a role. This check is not an exhaustive read-absence proof, and copied/aliased uses remain possible. Resolving the role is not a prerequisite for explaining unrelated Modern preset-table differences. No target instructions or new probes were executed.
