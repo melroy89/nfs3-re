@@ -3,11 +3,81 @@
   "archives": {
     "1.5.0": {
       "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
-      "sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f"
+      "sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "exe_callback": {
+        "member": "nfs3.exe",
+        "sha256": "d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae",
+        "table_0056afd0": [
+          "005244f0",
+          "004eba70",
+          "004cc6d0",
+          "004cc660",
+          "00524500",
+          "00524550",
+          "005245a0",
+          "005245f0"
+        ],
+        "slot_offset": "14",
+        "target": "00524550",
+        "argument_nonzero": "EnterCriticalSection([00564480])",
+        "argument_zero": "LeaveCriticalSection([00564480])",
+        "publication": "Then stores raw argument to00567180;RET4",
+        "spans": [
+          {
+            "start": "00524550",
+            "end_exclusive": "0052458b",
+            "bytes_sha256": "34328f13ecc163729af61736adfee102318cf9c41c199775ee7db4758574821a",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.0-exe-00524550.asm",
+            "assembly_sha256": "6564e3804dc8dac664482f04b2c0efa98cab1c940bdb3a54e7be50266641ffbe"
+          },
+          {
+            "start": "0052471d",
+            "end_exclusive": "00524740",
+            "bytes_sha256": "263563bef0ec2bf6f070f94fc2a58d7575ddb5dc3f69baf513954bfd0a0000f0",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.0-exe-0052471d.asm",
+            "assembly_sha256": "b0d24ccdfb8fecf1b7a35fefaa432f45803868887d523ac93fdd849b1b9bd38e"
+          }
+        ]
+      }
     },
     "1.5.1": {
       "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.1.7z",
-      "sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de"
+      "sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de",
+      "exe_callback": {
+        "member": "nfs3.exe",
+        "sha256": "4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17",
+        "table_0056afd0": [
+          "005244f0",
+          "004eba70",
+          "004cc6d0",
+          "004cc660",
+          "00524500",
+          "00524550",
+          "005245a0",
+          "005245f0"
+        ],
+        "slot_offset": "14",
+        "target": "00524550",
+        "argument_nonzero": "EnterCriticalSection([00564480])",
+        "argument_zero": "LeaveCriticalSection([00564480])",
+        "publication": "Then stores raw argument to00567180;RET4",
+        "spans": [
+          {
+            "start": "00524550",
+            "end_exclusive": "0052458b",
+            "bytes_sha256": "34328f13ecc163729af61736adfee102318cf9c41c199775ee7db4758574821a",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-exe-00524550.asm",
+            "assembly_sha256": "6564e3804dc8dac664482f04b2c0efa98cab1c940bdb3a54e7be50266641ffbe"
+          },
+          {
+            "start": "0052471d",
+            "end_exclusive": "00524740",
+            "bytes_sha256": "263563bef0ec2bf6f070f94fc2a58d7575ddb5dc3f69baf513954bfd0a0000f0",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-exe-0052471d.asm",
+            "assembly_sha256": "b0d24ccdfb8fecf1b7a35fefaa432f45803868887d523ac93fdd849b1b9bd38e"
+          }
+        ]
+      }
     }
   },
   "drivers": {
@@ -43,8 +113,21 @@
             "bytes_sha256": "55981e54ebbcd73a4139fddc194dc96d55239cc4f12493521b29ae5b1122049e",
             "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx5-dx5a-00001880.asm",
             "assembly_sha256": "ad522be4bb1ca8d78e403b95fa9a2c5f8c986f200101836be5314c34faceab69"
+          },
+          {
+            "start": "60002e26",
+            "end_exclusive": "60002e45",
+            "bytes_sha256": "70075947ca7bc826c481b60c009c86c29e3193853f8653c0079a66794c263996",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx5-dx5a-00002e26.asm",
+            "assembly_sha256": "e451784b356ae11bf1d61af91c18b4f2281acbf73e036121788497daaca2eaa9"
           }
         ],
+        "callback_copy": {
+          "destination": "60012888",
+          "bytes": 32,
+          "consumer_cell_offset": "14",
+          "qualification": "Direct bulk-copy writer; full selector dispatch/admission and alternate writes remain separate"
+        },
         "failure_branch_witness_hex": "85c0740d31c0e84c060000e9ed00000090"
       }
     },
@@ -80,8 +163,21 @@
             "bytes_sha256": "3bfc853cb1487e14aa52137098c5330bea0d42c74938e1e238ab55e14cbaffe4",
             "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx6-dx6a-00001d90.asm",
             "assembly_sha256": "22cea9ed2e4e1215f6faec41f4ac820c3cd68bdb2c2d081649d7597f80f7dd6c"
+          },
+          {
+            "start": "600036d1",
+            "end_exclusive": "600036f8",
+            "bytes_sha256": "f44e167f59003c643e973870029a145125e735443d71ef9364cc97b83fb426bf",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-dx6-dx6a-000036d1.asm",
+            "assembly_sha256": "d4231ff5b044bf38709af6e1e1c86de32b402cc25d2d1008a16eabe497066d61"
           }
         ],
+        "callback_copy": {
+          "destination": "6003bcc0",
+          "bytes": 32,
+          "consumer_cell_offset": "14",
+          "qualification": "Direct bulk-copy writer; full selector dispatch/admission and alternate writes remain separate"
+        },
         "failure_branch_witness_hex": "740e31c0e8bb0a000031c0e9fa000000"
       }
     },
@@ -110,8 +206,21 @@
             "bytes_sha256": "d2df2b66784f93ee893258e366153a6f63adf842a76013baa1e6e9a099a6cfc1",
             "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-softtri-softtria-00003530.asm",
             "assembly_sha256": "72bcc65e18dc299b8727850be1df247d503a497173355d34e85cd043c8224931"
+          },
+          {
+            "start": "60003228",
+            "end_exclusive": "60003244",
+            "bytes_sha256": "f431ca8f6ba3f987d3ba24f5aba50d66bc1cd938c0e544a42ef1a5b0b62980c8",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-softtri-softtria-00003228.asm",
+            "assembly_sha256": "b462141a18ed3430fabaf2c6c7b50a99cdb10631355146686187bf967b65997f"
           }
         ],
+        "callback_copy": {
+          "destination": "600400a0",
+          "bytes": 32,
+          "consumer_cell_offset": "14",
+          "qualification": "Direct bulk-copy writer; full selector dispatch/admission and alternate writes remain separate"
+        },
         "failure_branch_witness_hex": "0f858c000000"
       }
     }
@@ -119,7 +228,7 @@
   "limits": [
     "Historical driver comparison, not original retail EXE correspondence.",
     "No DLL, surface lock, callback or failure injection executed.",
-    "Callback identity, complete state lifetime and success/failure outcomes remain unqualified."
+    "Registration admission, complete state lifetime and actual success/failure outcomes remain unqualified."
   ],
   "finding": "Each inspected nonzero surface-lock-result path adds callback0 before returning through its prior failure continuation; DX5/DX6 use null-guarded register-to-stack adapters."
 }

@@ -371,5 +371,5 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `005177cc` | GetRuntimeRandomModulo | 18 | 16 | [music-selection](original-modern-music-selection.md) |
 | `00524290` | RunGameWithOptionalStackWorkspace | 93 | 2 | [small-entry-followup](original-modern-small-entry-followup.md) |
 | `00524650` | ShutdownRasterBackendSession | 67 | 6 | [raster-session](original-modern-raster-session.md) |
-| `005246a0` | InitializeRasterBackendSession | 223 | 14 | [glide-reference-identity](original-modern-glide-reference-identity.md), [raster-session](original-modern-raster-session.md), [window-handling](original-modern-window-handling.md) |
+| `005246a0` | InitializeRasterBackendSession | 223 | 14 | [glide-reference-identity](original-modern-glide-reference-identity.md), [lockwindow-history](original-modern-lockwindow-history.md), [raster-session](original-modern-raster-session.md), [window-handling](original-modern-window-handling.md) |
 | `00533e86` | ReportMissingDdrawImport | 13 | 13 | [small-entry-followup](original-modern-small-entry-followup.md) |

@@ -24,6 +24,27 @@ SoftTri instead retains the existing callback slot`600400b4` and adds a direct P
 
 ## Interpretation and limits
 
-The static mechanism is consistent with balancing a callback1 request with callback0 when locking fails. **The callback's identity and the meaning of1/0 remain unresolved here**; this report does not prove that it unlocks a mutex, re-enables rendering or fixes a reproduced freeze. Complete successful-lock/unlock lifetimes, reentrancy, callback mutation, surface-loss/retry handling and all other changed bytes in these DLLs are not qualified by the failure-path witnesses.
+The static mechanism is consistent with balancing a callback1 request with callback0 when locking fails. **The follow-up below identifies the corresponding EXE callback as critical-section enter/leave.** This report still does not prove that it fixes a reproduced freeze or restores every surrounding state. Complete successful-lock/unlock lifetimes, reentrancy, callback mutation, surface-loss/retry handling and all other changed bytes in these DLLs are not qualified by the failure-path witnesses.
 
-MP151-004 names DX5, DX6 and SoftTri lockwindow fixes. All three historical pairs now have concrete failure-path evidence, so the entry advances from vendor-only to **partial**. It is not fully verified until callback ownership/contracts and the claimed bug's actual effect are established. No reconstruction, compilation, target execution or Ghidra change was performed.
+MP151-004 names DX5, DX6 and SoftTri lockwindow fixes. All three historical pairs now have concrete failure-path evidence, so the entry advances from vendor-only to **partial**. It is not fully verified until registration/lifetime contracts and the claimed bug's actual effect are established. No reconstruction, compilation, target execution or Ghidra change was performed.
+
+
+## EXE callback table identifies critical-section enter and leave
+
+The extended audit extracts `nfs3.exe` from **each same pinned archive**, verifies its hash and captures the registration witness and complete59-byte callback. Both historical EXEs contain the same eight-pointer block at **`0056afd0`**. Its sixth DWORD, at offset`14h`, is **`00524550`**. At `0052472d..0052473a`, the raster initializer pushes that block pointer and selector`13h`, then calls renderer slot`009ef96c` before the following initialization call. Registration must actually reach the selected driver for this static linkage to describe its installed callback.
+
+The1.5.1 DLLs have direct eight-DWORD bulk-copy writers to these callback-bank destinations:
+
+| Driver | Copy destination | Lock callback cell | Cell offset |
+|---|---|---|---|
+| DX5 | `60012888` | `6001289c` | `14h` |
+| DX6 | `6003bcc0` | `6003bcd4` | `14h` |
+| SoftTri | `600400a0` | `600400b4` | `14h` |
+
+The [existing DX5 registration analysis](original-modern-dx5-reference-pair.md#lock-failure-now-notifies-the-callback) already establishes its selector13h route. The newly retained copy witnesses corroborate the other bank layouts; full selector dispatch/admission and all alternate writers in DX6/SoftTri remain separate. Bulk-copy layout is not an observed registration session.
+
+Complete callback **`00524550..0052458b`** is identical in both historical EXEs. It reads its stack argument. Nonzero passes pointer`[00564480]` to imported **EnterCriticalSection** (`005344b8`); zero passes that pointer to imported **LeaveCriticalSection** (`00534588`). After the API call, both branches publish the original raw argument at `00567180`, then execute **RET4**. This verifies the stack cleanup required by the driver calls; the nonzero branch also explicitly saves/restores EBX. It does not normalize arbitrary nonzero arguments or return a documented success Boolean.
+
+**Conditional mechanism:** with this block installed, a stable/valid critical-section pointer and ordinary callback return, the pre-lock callback1 enters the section. The new failure callback0 leaves it before the prior failure return. The old inspected failure paths omitted that release request; ordinary unlock callbacks were a different route. This is concrete synchronization evidence, not merely an unnamed notification. Do not describe it as a generic kernel-mutex unlock or claim every possible recursive acquisition is balanced.
+
+**Still pending:** creation/destruction and aliases of `[00564480]`, callback-bank mutation, complete registration dispatch and admission, other lock/unlock/error paths, reentrancy and a real failed-lock/deadlock reproduction. The release note remains **partial** despite the stronger mechanism evidence. No critical section, driver callback, API or game instruction was executed.

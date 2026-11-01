@@ -486,3 +486,8 @@ The [handler comparison](original-modern-startup-policy.md#diagnostic-dialog-fla
 ## Historical lockwindow failure callback change
 
 The [three-driver comparison](original-modern-lockwindow-history.md) verifies retained1.5.0→1.5.1 DX5/DX6/SoftTri failure paths adding callback0 after a preceding callback1 request. DX5/DX6 gain null-guarded register-to-stack adapters; SoftTri adds a direct tail call. Callback meaning, full state lifetime and runtime bug effects remain unresolved. MP151-004 advances vendor-only→partial; current counts are130/47/111/2. This is historical DLL evidence, not retail-original EXE correspondence; no target execution.
+
+
+## Historical failure callback identity: critical-section enter/leave
+
+The [EXE/table follow-up](original-modern-lockwindow-history.md#exe-callback-table-identifies-critical-section-enter-and-leave) verifies same-archive EXEs, eight-pointer callback blocks, the+14h target and complete59-byte RET4 callback. Nonzero calls EnterCriticalSection, zero LeaveCriticalSection, then publishes the raw argument. Under installed-block/valid-stable-pointer assumptions, the added driver failure callback0 supplies the missing release request. Full registration/lifetime and runtime failure effects remain pending; MP151-004 remains partial and counts unchanged.

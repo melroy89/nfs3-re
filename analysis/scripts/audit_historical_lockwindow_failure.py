@@ -2,6 +2,7 @@
 import hashlib
 import json
 import subprocess
+import struct
 import pefile
 from audit_thrash_loader_difference import ROOT
 from audit_dx5_reference_final import disassemble
@@ -17,7 +18,7 @@ def main():
     result = {'kind':'historical-lockwindow-failure-callback','archives':{},'drivers':{},
               'limits':['Historical driver comparison, not original retail EXE correspondence.',
                         'No DLL, surface lock, callback or failure injection executed.',
-                        'Callback identity, complete state lifetime and success/failure outcomes remain unqualified.']}
+                        'Registration admission, complete state lifetime and actual success/failure outcomes remain unqualified.']}
     capture = ROOT/'analysis/captures/modern-differences/lockwindow-history'
     capture.mkdir(parents=True,exist_ok=True)
     for version,expected in ARCHIVES.items():
@@ -25,6 +26,31 @@ def main():
         archive=ROOT/relative
         assert hashlib.sha256(archive.read_bytes()).hexdigest()==expected
         result['archives'][version]={'path':relative,'sha256':expected}
+        exe_raw=subprocess.check_output(['7z','x','-so',str(archive),'nfs3.exe'])
+        exe_expected={'1.5.0':'d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae',
+                      '1.5.1':'4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17'}[version]
+        assert hashlib.sha256(exe_raw).hexdigest()==exe_expected
+        exe=pefile.PE(data=exe_raw)
+        table=struct.unpack('<8I',exe.get_data(0x16afd0,32))
+        assert table[5]==0x524550
+        assert exe.get_data(0x12472d,13).hex()=='68d0af56006a13ff156cf99e00'
+        callback=exe.get_data(0x124550,0x3b)
+        assert callback.hex()=='837c240400741b538b1d8044560053ff15b84453005b8b442404a380715600c204008b0d8044560051ff15884553008b442404a380715600c20400'
+        imports={i.address:i.name for d in exe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
+        assert imports[0x5344b8]==b'EnterCriticalSection' and imports[0x534588]==b'LeaveCriticalSection'
+        exe_spans=[]
+        for lo,hi in [(0x524550,0x52458b),(0x52471d,0x524740)]:
+            block=exe.get_data(lo-0x400000,hi-lo)
+            out=capture/f'{version}-exe-{lo:08x}.asm'
+            out.write_text('\n'.join(disassemble(block,lo))+'\n')
+            exe_spans.append({'start':f'{lo:08x}','end_exclusive':f'{hi:08x}',
+                'bytes_sha256':hashlib.sha256(block).hexdigest(),'assembly':str(out.relative_to(ROOT)),
+                'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
+        result['archives'][version]['exe_callback']={'member':'nfs3.exe','sha256':exe_expected,
+            'table_0056afd0':[f'{v:08x}' for v in table],'slot_offset':'14','target':'00524550',
+            'argument_nonzero':'EnterCriticalSection([00564480])','argument_zero':'LeaveCriticalSection([00564480])',
+            'publication':'Then stores raw argument to00567180;RET4','spans':exe_spans}
+
         for driver,(start,end,helper,helper_end) in DRIVERS.items():
             member=f'drivers/{driver}.dll'
             raw=subprocess.check_output(['7z','x','-so',str(archive),member])
@@ -35,6 +61,15 @@ def main():
             row={'member':member,'sha256':hashlib.sha256(raw).hexdigest(),'spans':[]}
             spans=[(start,end)]
             if version=='1.5.1' and helper: spans.append((helper,helper_end))
+            if version=='1.5.1':
+                copy={'dx5/dx5a':(0x2e26,0x2e45,0x60012888),
+                      'dx6/dx6a':(0x36d1,0x36f8,0x6003bcc0),
+                      'softtri/softtria':(0x3228,0x3244,0x600400a0)}[driver]
+                spans.append(copy[:2])
+                assert b'\xbf'+struct.pack('<I',copy[2]) in pe.get_data(copy[0],copy[1]-copy[0])
+                row['callback_copy']={'destination':f'{copy[2]:08x}','bytes':32,
+                    'consumer_cell_offset':'14','qualification':'Direct bulk-copy writer; full selector dispatch/admission and alternate writes remain separate'}
+
             for lo,hi in spans:
                 code=pe.get_data(lo,hi-lo)
                 out=capture/f'{version}-{driver.replace("/","-")}-{lo:08x}.asm'
