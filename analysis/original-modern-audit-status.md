@@ -2,12 +2,13 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **140 vendor-only,45 bounded-static,103 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **136 vendor-only,45 bounded-static,107 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
 - **Projection narrowed but unresolved:** type8 descriptor availability/conditional publication, local prepare/render/finalize order, retained399-byte handler and excluded33-byte viewport-flag helper. See the [projection report](original-modern-projection.md).
 - **Still open:** the projection-source writer/capture lifetime and visible horizon outcome. The preset−5 field retains a verified layout/value with opaque physical meaning; a candidate offset match was a different record family. See the [preset report](original-modern-parameter-preset.md#shared-field-offset-is-not-a-consumer-identity).
+- **Preset consumer search boundary:** the [paired pointer inventory](original-modern-parameter-preset.md#selected-pointer-reference-inventory-and-stopping-boundary) accounts for15 decoded literal references per EXE (14 loads/one store). It does not identify a direct−5 consumer; aliases, copied values and computed record addresses remain the required follow-up rather than another literal search.
 - **Separate broader backlog:** remaining vendor claims, historical driver/release comparisons and original/Modern runtime compatibility. There are more than two questions in the complete backlog.
 
 The checkpoint narratives below describe their pinned increments. Their older counts and “latest” wording are historical, not competing current totals. The broad objective remains incomplete; no new game execution or reconstruction is implied by this snapshot.

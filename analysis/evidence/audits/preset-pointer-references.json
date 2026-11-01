@@ -1,0 +1,573 @@
+{
+  "kind": "static-selected-preset-pointer-reference-inventory",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "references": [
+        {
+          "address": "0041aa70",
+          "kind": "load",
+          "context_32_bytes_hex": "8b1530d85d00d94244d8c8d85d0cdfe09e730731c05d5ac20400d94240d8c8d8",
+          "context_sha256": "223ae795c53eab3e93da04fbe0442ea7f5be4a8fb2d6f9893599f6c9735f424f",
+          "linear_instruction_context": [
+            "  41aa70:\t8b 15 30 d8 5d 00    \tmov    edx,DWORD PTR ds:0x5dd830",
+            "  41aa76:\td9 42 44             \tfld    DWORD PTR [edx+0x44]",
+            "  41aa79:\td8 c8                \tfmul   st,st(0)",
+            "  41aa7b:\td8 5d 0c             \tfcomp  DWORD PTR [ebp+0xc]",
+            "  41aa7e:\tdf e0                \tfnstsw ax",
+            "  41aa80:\t9e                   \tsahf",
+            "  41aa81:\t73 07                \tjae    0x41aa8a",
+            "  41aa83:\t31 c0                \txor    eax,eax",
+            "  41aa85:\t5d                   \tpop    ebp",
+            "  41aa86:\t5a                   \tpop    edx"
+          ]
+        },
+        {
+          "address": "0041ab0c",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b480c895004c1fa0339ca741089500c8b5014c74014ffffffff89",
+          "context_sha256": "d6879f86992e259d469ff4e5eaceb33b337a2c2a76daa06b7c2f55e64c3609ae",
+          "linear_instruction_context": [
+            "  41ab0c:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41ab11:\t8b 48 0c             \tmov    ecx,DWORD PTR [eax+0xc]",
+            "  41ab14:\t89 50 04             \tmov    DWORD PTR [eax+0x4],edx",
+            "  41ab17:\tc1 fa 03             \tsar    edx,0x3",
+            "  41ab1a:\t39 ca                \tcmp    edx,ecx",
+            "  41ab1c:\t74 10                \tje     0x41ab2e",
+            "  41ab1e:\t89 50 0c             \tmov    DWORD PTR [eax+0xc],edx",
+            "  41ab21:\t8b 50 14             \tmov    edx,DWORD PTR [eax+0x14]",
+            "  41ab24:\tc7 40 14 ff ff ff ff \tmov    DWORD PTR [eax+0x14],0xffffffff",
+            "  41ab2b:\t89 50 18             \tmov    DWORD PTR [eax+0x18],edx"
+          ]
+        },
+        {
+          "address": "0041ab2e",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b5004c1fa038950105d59c39056575589e583ec1489d88d149d00",
+          "context_sha256": "39aecafc19fe50a191f58aefe8af559ed349a7134335535fad8be1a328377509",
+          "linear_instruction_context": [
+            "  41ab2e:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41ab33:\t8b 50 04             \tmov    edx,DWORD PTR [eax+0x4]",
+            "  41ab36:\tc1 fa 03             \tsar    edx,0x3",
+            "  41ab39:\t89 50 10             \tmov    DWORD PTR [eax+0x10],edx",
+            "  41ab3c:\t5d                   \tpop    ebp",
+            "  41ab3d:\t59                   \tpop    ecx",
+            "  41ab3e:\tc3                   \tret",
+            "  41ab3f:\t90                   \tnop",
+            "  41ab40:\t56                   \tpush   esi",
+            "  41ab41:\t57                   \tpush   edi"
+          ]
+        },
+        {
+          "address": "0041abe7",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d94708d85830dfe09e0f878002000031c08a47148945ec8b42088a",
+          "context_sha256": "6a445db735afd6b6c5b7d558151bf0262feee9dc0fbad4acf35ad0292f51bb16",
+          "linear_instruction_context": [
+            "  41abe7:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41abec:\td9 47 08             \tfld    DWORD PTR [edi+0x8]",
+            "  41abef:\td8 58 30             \tfcomp  DWORD PTR [eax+0x30]",
+            "  41abf2:\tdf e0                \tfnstsw ax",
+            "  41abf4:\t9e                   \tsahf",
+            "  41abf5:\t0f 87 80 02 00 00    \tja     0x41ae7b",
+            "  41abfb:\t31 c0                \txor    eax,eax",
+            "  41abfd:\t8a 47 14             \tmov    al,BYTE PTR [edi+0x14]",
+            "  41ac00:\t89 45 ec             \tmov    DWORD PTR [ebp-0x14],eax",
+            "  41ac03:\t8b 42 08             \tmov    eax,DWORD PTR [edx+0x8]"
+          ]
+        },
+        {
+          "address": "0041af7a",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d94108d85830dfe09e76098345f80ee9f902000031c08a41148945",
+          "context_sha256": "fc50fca79bca0d5fd845b7a7fc141065b73634a600a277bdbc27f89705b9db54",
+          "linear_instruction_context": [
+            "  41af7a:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41af7f:\td9 41 08             \tfld    DWORD PTR [ecx+0x8]",
+            "  41af82:\td8 58 30             \tfcomp  DWORD PTR [eax+0x30]",
+            "  41af85:\tdf e0                \tfnstsw ax",
+            "  41af87:\t9e                   \tsahf",
+            "  41af88:\t76 09                \tjbe    0x41af93",
+            "  41af8a:\t83 45 f8 0e          \tadd    DWORD PTR [ebp-0x8],0xe",
+            "  41af8e:\te9 f9 02 00 00       \tjmp    0x41b28c",
+            "  41af93:\t31 c0                \txor    eax,eax",
+            "  41af95:\t8a 41 14             \tmov    al,BYTE PTR [ecx+0x14]"
+          ]
+        },
+        {
+          "address": "0041b3bf",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d94608d85830dfe09e760883c10ee90e02000031c08a46148945d8",
+          "context_sha256": "2f0dcb2dece4cbe2da30550b17fe0b61b68a58832df489c01c0a813bacefa52f",
+          "linear_instruction_context": [
+            "  41b3bf:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41b3c4:\td9 46 08             \tfld    DWORD PTR [esi+0x8]",
+            "  41b3c7:\td8 58 30             \tfcomp  DWORD PTR [eax+0x30]",
+            "  41b3ca:\tdf e0                \tfnstsw ax",
+            "  41b3cc:\t9e                   \tsahf",
+            "  41b3cd:\t76 08                \tjbe    0x41b3d7",
+            "  41b3cf:\t83 c1 0e             \tadd    ecx,0xe",
+            "  41b3d2:\te9 0e 02 00 00       \tjmp    0x41b5e5",
+            "  41b3d7:\t31 c0                \txor    eax,eax",
+            "  41b3d9:\t8a 46 14             \tmov    al,BYTE PTR [esi+0x14]"
+          ]
+        },
+        {
+          "address": "0041b6e2",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d94708d85830dfe09e760b83c30eff45ece956fffffff645fc100f",
+          "context_sha256": "8a872d58adb50f8dc14bfe43778c161f5c71b80a6124e275a92c50957e03a3a3",
+          "linear_instruction_context": [
+            "  41b6e2:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41b6e7:\td9 47 08             \tfld    DWORD PTR [edi+0x8]",
+            "  41b6ea:\td8 58 30             \tfcomp  DWORD PTR [eax+0x30]",
+            "  41b6ed:\tdf e0                \tfnstsw ax",
+            "  41b6ef:\t9e                   \tsahf",
+            "  41b6f0:\t76 0b                \tjbe    0x41b6fd",
+            "  41b6f2:\t83 c3 0e             \tadd    ebx,0xe",
+            "  41b6f5:\tff 45 ec             \tinc    DWORD PTR [ebp-0x14]",
+            "  41b6f8:\te9 56 ff ff ff       \tjmp    0x41b653",
+            "  41b6fd:\tf6 45 fc 10          \ttest   BYTE PTR [ebp-0x4],0x10"
+          ]
+        },
+        {
+          "address": "0041ba94",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b50108d04950000000029d0c1e00329d0c1e00605701357008d90",
+          "context_sha256": "20ea8ebf9b3e433b608bd6f1a9f3d88de85393dd50389677995f33a2f8584420",
+          "linear_instruction_context": [
+            "  41ba94:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41ba99:\t8b 50 10             \tmov    edx,DWORD PTR [eax+0x10]",
+            "  41ba9c:\t8d 04 95 00 00 00 00 \tlea    eax,[edx*4+0x0]",
+            "  41baa3:\t29 d0                \tsub    eax,edx",
+            "  41baa5:\tc1 e0 03             \tshl    eax,0x3",
+            "  41baa8:\t29 d0                \tsub    eax,edx",
+            "  41baaa:\tc1 e0 06             \tshl    eax,0x6",
+            "  41baad:\t05 70 13 57 00       \tadd    eax,0x571370",
+            "  41bab2:\t8d 90 b4 00 00 00    \tlea    edx,[eax+0xb4]",
+            "  41bab8:\t8d 5d c8             \tlea    ebx,[ebp-0x38]"
+          ]
+        },
+        {
+          "address": "0041bb6e",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b50108d04950000000029d0c1e00329d0c1e006057013570031f6",
+          "context_sha256": "b0c7982726c699e9db8f2f7d70a191e28fdc6377809765698634677dc5085f02",
+          "linear_instruction_context": [
+            "  41bb6e:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41bb73:\t8b 50 10             \tmov    edx,DWORD PTR [eax+0x10]",
+            "  41bb76:\t8d 04 95 00 00 00 00 \tlea    eax,[edx*4+0x0]",
+            "  41bb7d:\t29 d0                \tsub    eax,edx",
+            "  41bb7f:\tc1 e0 03             \tshl    eax,0x3",
+            "  41bb82:\t29 d0                \tsub    eax,edx",
+            "  41bb84:\tc1 e0 06             \tshl    eax,0x6",
+            "  41bb87:\t05 70 13 57 00       \tadd    eax,0x571370",
+            "  41bb8c:\t31 f6                \txor    esi,esi",
+            "  41bb8e:\t05 b4 00 00 00       \tadd    eax,0xb4"
+          ]
+        },
+        {
+          "address": "0041ce4e",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d8c8d94034d9c9dec2d84834d9c9d95de0d85de0dfe09e0f820503",
+          "context_sha256": "0bcc4ef5332492eab67b77fa18168fa9d8dd45d912d030e6b8d5a30a7621971b",
+          "linear_instruction_context": [
+            "  41ce4e:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41ce53:\td8 c8                \tfmul   st,st(0)",
+            "  41ce55:\td9 40 34             \tfld    DWORD PTR [eax+0x34]",
+            "  41ce58:\td9 c9                \tfxch   st(1)",
+            "  41ce5a:\tde c2                \tfaddp  st(2),st",
+            "  41ce5c:\td8 48 34             \tfmul   DWORD PTR [eax+0x34]",
+            "  41ce5f:\td9 c9                \tfxch   st(1)",
+            "  41ce61:\td9 5d e0             \tfstp   DWORD PTR [ebp-0x20]",
+            "  41ce64:\td8 5d e0             \tfcomp  DWORD PTR [ebp-0x20]",
+            "  41ce67:\tdf e0                \tfnstsw ax"
+          ]
+        },
+        {
+          "address": "0041d194",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008d55b031c9ff703089f0e898f8ffff31d2eb138d75c0e8bcec0900",
+          "context_sha256": "6c0596d58ced46b83d3cc7249c518076655e574619799c2cba2b9c1ede8bd8d1",
+          "linear_instruction_context": [
+            "  41d194:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41d199:\t8d 55 b0             \tlea    edx,[ebp-0x50]",
+            "  41d19c:\t31 c9                \txor    ecx,ecx",
+            "  41d19e:\tff 70 30             \tpush   DWORD PTR [eax+0x30]",
+            "  41d1a1:\t89 f0                \tmov    eax,esi",
+            "  41d1a3:\te8 98 f8 ff ff       \tcall   0x41ca40",
+            "  41d1a8:\t31 d2                \txor    edx,edx",
+            "  41d1aa:\teb 13                \tjmp    0x41d1bf",
+            "  41d1ac:\t8d 75 c0             \tlea    esi,[ebp-0x40]",
+            "  41d1af:\te8 bc ec 09 00       \tcall   0x4bbe70"
+          ]
+        },
+        {
+          "address": "0041d29d",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b0083e81031d250668b510c53b90000010057b813000000bb4000",
+          "context_sha256": "c98ff6609c2666dcb89201db2d806f1443a74a9108f92d5df8b22dc6273d3f51",
+          "linear_instruction_context": [
+            "  41d29d:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41d2a2:\t8b 00                \tmov    eax,DWORD PTR [eax]",
+            "  41d2a4:\t83 e8 10             \tsub    eax,0x10",
+            "  41d2a7:\t31 d2                \txor    edx,edx",
+            "  41d2a9:\t50                   \tpush   eax",
+            "  41d2aa:\t66 8b 51 0c          \tmov    dx,WORD PTR [ecx+0xc]",
+            "  41d2ae:\t53                   \tpush   ebx",
+            "  41d2af:\tb9 00 00 01 00       \tmov    ecx,0x10000",
+            "  41d2b4:\t57                   \tpush   edi",
+            "  41d2b5:\tb8 13 00 00 00       \tmov    eax,0x13"
+          ]
+        },
+        {
+          "address": "0041d2d7",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b0083e8105089c25331c2bb40000000b81200000057668b510cb9",
+          "context_sha256": "c400cda91620c8d98e4cf1d12134547b1f32a34823d3d03f22b3ebe7db11e780",
+          "linear_instruction_context": [
+            "  41d2d7:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41d2dc:\t8b 00                \tmov    eax,DWORD PTR [eax]",
+            "  41d2de:\t83 e8 10             \tsub    eax,0x10",
+            "  41d2e1:\t50                   \tpush   eax",
+            "  41d2e2:\t89 c2                \tmov    edx,eax",
+            "  41d2e4:\t53                   \tpush   ebx",
+            "  41d2e5:\t31 c2                \txor    edx,eax",
+            "  41d2e7:\tbb 40 00 00 00       \tmov    ebx,0x40",
+            "  41d2ec:\tb8 12 00 00 00       \tmov    eax,0x12",
+            "  41d2f1:\t57                   \tpush   edi"
+          ]
+        },
+        {
+          "address": "0041d33f",
+          "kind": "publication",
+          "context_32_bytes_hex": "890d30d85d005d5a59c38d800000000090535156575589e583ec1489c189d783",
+          "context_sha256": "b0be5586c5bf79c5a95a006bb025a81da7e49a809552f337ce8bcadaaa4d49ea",
+          "linear_instruction_context": [
+            "  41d33f:\t89 0d 30 d8 5d 00    \tmov    DWORD PTR ds:0x5dd830,ecx",
+            "  41d345:\t5d                   \tpop    ebp",
+            "  41d346:\t5a                   \tpop    edx",
+            "  41d347:\t59                   \tpop    ecx",
+            "  41d348:\tc3                   \tret",
+            "  41d349:\t8d 80 00 00 00 00    \tlea    eax,[eax+0x0]",
+            "  41d34f:\t90                   \tnop",
+            "  41d350:\t53                   \tpush   ebx",
+            "  41d351:\t51                   \tpush   ecx",
+            "  41d352:\t56                   \tpush   esi"
+          ]
+        },
+        {
+          "address": "0041e0bf",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d8c8d94034d8c8d9c9dec2ded9dfe09e730a31c089ec5d5f5e595b",
+          "context_sha256": "a12d689b3242e0f07fb97508a390bb2e44802f0bf09dc82be9aff3874a9af2b0",
+          "linear_instruction_context": [
+            "  41e0bf:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41e0c4:\td8 c8                \tfmul   st,st(0)",
+            "  41e0c6:\td9 40 34             \tfld    DWORD PTR [eax+0x34]",
+            "  41e0c9:\td8 c8                \tfmul   st,st(0)",
+            "  41e0cb:\td9 c9                \tfxch   st(1)",
+            "  41e0cd:\tde c2                \tfaddp  st(2),st",
+            "  41e0cf:\tde d9                \tfcompp",
+            "  41e0d1:\tdf e0                \tfnstsw ax",
+            "  41e0d3:\t9e                   \tsahf",
+            "  41e0d4:\t73 0a                \tjae    0x41e0e0"
+          ]
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "references": [
+        {
+          "address": "0041aa64",
+          "kind": "load",
+          "context_32_bytes_hex": "8b1530d85d00d94244d8c8d85d0cdfe09e730431c0eb17d94240d8c8d85d0cdf",
+          "context_sha256": "0ed0d3babd9d9df549c3f85e180b4a9d794644bdab05c00590a056d01c68f34c",
+          "linear_instruction_context": [
+            "  41aa64:\t8b 15 30 d8 5d 00    \tmov    edx,DWORD PTR ds:0x5dd830",
+            "  41aa6a:\td9 42 44             \tfld    DWORD PTR [edx+0x44]",
+            "  41aa6d:\td8 c8                \tfmul   st,st(0)",
+            "  41aa6f:\td8 5d 0c             \tfcomp  DWORD PTR [ebp+0xc]",
+            "  41aa72:\tdf e0                \tfnstsw ax",
+            "  41aa74:\t9e                   \tsahf",
+            "  41aa75:\t73 04                \tjae    0x41aa7b",
+            "  41aa77:\t31 c0                \txor    eax,eax",
+            "  41aa79:\teb 17                \tjmp    0x41aa92",
+            "  41aa7b:\td9 42 40             \tfld    DWORD PTR [edx+0x40]"
+          ]
+        },
+        {
+          "address": "0041ab0c",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b480c895004c1fa0339ca741089500c8b5014c74014ffffffff89",
+          "context_sha256": "d6879f86992e259d469ff4e5eaceb33b337a2c2a76daa06b7c2f55e64c3609ae",
+          "linear_instruction_context": [
+            "  41ab0c:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41ab11:\t8b 48 0c             \tmov    ecx,DWORD PTR [eax+0xc]",
+            "  41ab14:\t89 50 04             \tmov    DWORD PTR [eax+0x4],edx",
+            "  41ab17:\tc1 fa 03             \tsar    edx,0x3",
+            "  41ab1a:\t39 ca                \tcmp    edx,ecx",
+            "  41ab1c:\t74 10                \tje     0x41ab2e",
+            "  41ab1e:\t89 50 0c             \tmov    DWORD PTR [eax+0xc],edx",
+            "  41ab21:\t8b 50 14             \tmov    edx,DWORD PTR [eax+0x14]",
+            "  41ab24:\tc7 40 14 ff ff ff ff \tmov    DWORD PTR [eax+0x14],0xffffffff",
+            "  41ab2b:\t89 50 18             \tmov    DWORD PTR [eax+0x18],edx"
+          ]
+        },
+        {
+          "address": "0041ab2e",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b5004c1fa038950105d59c39056575589e583ec1489d88d149d00",
+          "context_sha256": "39aecafc19fe50a191f58aefe8af559ed349a7134335535fad8be1a328377509",
+          "linear_instruction_context": [
+            "  41ab2e:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41ab33:\t8b 50 04             \tmov    edx,DWORD PTR [eax+0x4]",
+            "  41ab36:\tc1 fa 03             \tsar    edx,0x3",
+            "  41ab39:\t89 50 10             \tmov    DWORD PTR [eax+0x10],edx",
+            "  41ab3c:\t5d                   \tpop    ebp",
+            "  41ab3d:\t59                   \tpop    ecx",
+            "  41ab3e:\tc3                   \tret",
+            "  41ab3f:\t90                   \tnop",
+            "  41ab40:\t56                   \tpush   esi",
+            "  41ab41:\t57                   \tpush   edi"
+          ]
+        },
+        {
+          "address": "0041abe7",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d94708d85830dfe09e0f878002000031c08a47148945ec8b42088a",
+          "context_sha256": "6a445db735afd6b6c5b7d558151bf0262feee9dc0fbad4acf35ad0292f51bb16",
+          "linear_instruction_context": [
+            "  41abe7:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41abec:\td9 47 08             \tfld    DWORD PTR [edi+0x8]",
+            "  41abef:\td8 58 30             \tfcomp  DWORD PTR [eax+0x30]",
+            "  41abf2:\tdf e0                \tfnstsw ax",
+            "  41abf4:\t9e                   \tsahf",
+            "  41abf5:\t0f 87 80 02 00 00    \tja     0x41ae7b",
+            "  41abfb:\t31 c0                \txor    eax,eax",
+            "  41abfd:\t8a 47 14             \tmov    al,BYTE PTR [edi+0x14]",
+            "  41ac00:\t89 45 ec             \tmov    DWORD PTR [ebp-0x14],eax",
+            "  41ac03:\t8b 42 08             \tmov    eax,DWORD PTR [edx+0x8]"
+          ]
+        },
+        {
+          "address": "0041af7a",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d94108d85830dfe09e76098345f80ee9f902000031c08a41148945",
+          "context_sha256": "fc50fca79bca0d5fd845b7a7fc141065b73634a600a277bdbc27f89705b9db54",
+          "linear_instruction_context": [
+            "  41af7a:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41af7f:\td9 41 08             \tfld    DWORD PTR [ecx+0x8]",
+            "  41af82:\td8 58 30             \tfcomp  DWORD PTR [eax+0x30]",
+            "  41af85:\tdf e0                \tfnstsw ax",
+            "  41af87:\t9e                   \tsahf",
+            "  41af88:\t76 09                \tjbe    0x41af93",
+            "  41af8a:\t83 45 f8 0e          \tadd    DWORD PTR [ebp-0x8],0xe",
+            "  41af8e:\te9 f9 02 00 00       \tjmp    0x41b28c",
+            "  41af93:\t31 c0                \txor    eax,eax",
+            "  41af95:\t8a 41 14             \tmov    al,BYTE PTR [ecx+0x14]"
+          ]
+        },
+        {
+          "address": "0041b3bf",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d94608d85830dfe09e760883c10ee90e02000031c08a46148945d8",
+          "context_sha256": "2f0dcb2dece4cbe2da30550b17fe0b61b68a58832df489c01c0a813bacefa52f",
+          "linear_instruction_context": [
+            "  41b3bf:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41b3c4:\td9 46 08             \tfld    DWORD PTR [esi+0x8]",
+            "  41b3c7:\td8 58 30             \tfcomp  DWORD PTR [eax+0x30]",
+            "  41b3ca:\tdf e0                \tfnstsw ax",
+            "  41b3cc:\t9e                   \tsahf",
+            "  41b3cd:\t76 08                \tjbe    0x41b3d7",
+            "  41b3cf:\t83 c1 0e             \tadd    ecx,0xe",
+            "  41b3d2:\te9 0e 02 00 00       \tjmp    0x41b5e5",
+            "  41b3d7:\t31 c0                \txor    eax,eax",
+            "  41b3d9:\t8a 46 14             \tmov    al,BYTE PTR [esi+0x14]"
+          ]
+        },
+        {
+          "address": "0041b6e2",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d94708d85830dfe09e760b83c30eff45ece956fffffff645fc100f",
+          "context_sha256": "8a872d58adb50f8dc14bfe43778c161f5c71b80a6124e275a92c50957e03a3a3",
+          "linear_instruction_context": [
+            "  41b6e2:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41b6e7:\td9 47 08             \tfld    DWORD PTR [edi+0x8]",
+            "  41b6ea:\td8 58 30             \tfcomp  DWORD PTR [eax+0x30]",
+            "  41b6ed:\tdf e0                \tfnstsw ax",
+            "  41b6ef:\t9e                   \tsahf",
+            "  41b6f0:\t76 0b                \tjbe    0x41b6fd",
+            "  41b6f2:\t83 c3 0e             \tadd    ebx,0xe",
+            "  41b6f5:\tff 45 ec             \tinc    DWORD PTR [ebp-0x14]",
+            "  41b6f8:\te9 56 ff ff ff       \tjmp    0x41b653",
+            "  41b6fd:\tf6 45 fc 10          \ttest   BYTE PTR [ebp-0x4],0x10"
+          ]
+        },
+        {
+          "address": "0041ba94",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b50108d04950000000029d0c1e00329d0c1e00605701357008d90",
+          "context_sha256": "20ea8ebf9b3e433b608bd6f1a9f3d88de85393dd50389677995f33a2f8584420",
+          "linear_instruction_context": [
+            "  41ba94:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41ba99:\t8b 50 10             \tmov    edx,DWORD PTR [eax+0x10]",
+            "  41ba9c:\t8d 04 95 00 00 00 00 \tlea    eax,[edx*4+0x0]",
+            "  41baa3:\t29 d0                \tsub    eax,edx",
+            "  41baa5:\tc1 e0 03             \tshl    eax,0x3",
+            "  41baa8:\t29 d0                \tsub    eax,edx",
+            "  41baaa:\tc1 e0 06             \tshl    eax,0x6",
+            "  41baad:\t05 70 13 57 00       \tadd    eax,0x571370",
+            "  41bab2:\t8d 90 b4 00 00 00    \tlea    edx,[eax+0xb4]",
+            "  41bab8:\t8d 5d c8             \tlea    ebx,[ebp-0x38]"
+          ]
+        },
+        {
+          "address": "0041bb6e",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b50108d04950000000029d0c1e00329d0c1e006057013570031f6",
+          "context_sha256": "b0c7982726c699e9db8f2f7d70a191e28fdc6377809765698634677dc5085f02",
+          "linear_instruction_context": [
+            "  41bb6e:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41bb73:\t8b 50 10             \tmov    edx,DWORD PTR [eax+0x10]",
+            "  41bb76:\t8d 04 95 00 00 00 00 \tlea    eax,[edx*4+0x0]",
+            "  41bb7d:\t29 d0                \tsub    eax,edx",
+            "  41bb7f:\tc1 e0 03             \tshl    eax,0x3",
+            "  41bb82:\t29 d0                \tsub    eax,edx",
+            "  41bb84:\tc1 e0 06             \tshl    eax,0x6",
+            "  41bb87:\t05 70 13 57 00       \tadd    eax,0x571370",
+            "  41bb8c:\t31 f6                \txor    esi,esi",
+            "  41bb8e:\t05 b4 00 00 00       \tadd    eax,0xb4"
+          ]
+        },
+        {
+          "address": "0041ce4e",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d8c8d94034d9c9dec2d84834d9c9d95de0d85de0dfe09e0f820503",
+          "context_sha256": "0bcc4ef5332492eab67b77fa18168fa9d8dd45d912d030e6b8d5a30a7621971b",
+          "linear_instruction_context": [
+            "  41ce4e:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41ce53:\td8 c8                \tfmul   st,st(0)",
+            "  41ce55:\td9 40 34             \tfld    DWORD PTR [eax+0x34]",
+            "  41ce58:\td9 c9                \tfxch   st(1)",
+            "  41ce5a:\tde c2                \tfaddp  st(2),st",
+            "  41ce5c:\td8 48 34             \tfmul   DWORD PTR [eax+0x34]",
+            "  41ce5f:\td9 c9                \tfxch   st(1)",
+            "  41ce61:\td9 5d e0             \tfstp   DWORD PTR [ebp-0x20]",
+            "  41ce64:\td8 5d e0             \tfcomp  DWORD PTR [ebp-0x20]",
+            "  41ce67:\tdf e0                \tfnstsw ax"
+          ]
+        },
+        {
+          "address": "0041d194",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008d55b031c9ff703089f0e898f8ffff31d2eb138d75c0e8bcec0900",
+          "context_sha256": "6c0596d58ced46b83d3cc7249c518076655e574619799c2cba2b9c1ede8bd8d1",
+          "linear_instruction_context": [
+            "  41d194:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41d199:\t8d 55 b0             \tlea    edx,[ebp-0x50]",
+            "  41d19c:\t31 c9                \txor    ecx,ecx",
+            "  41d19e:\tff 70 30             \tpush   DWORD PTR [eax+0x30]",
+            "  41d1a1:\t89 f0                \tmov    eax,esi",
+            "  41d1a3:\te8 98 f8 ff ff       \tcall   0x41ca40",
+            "  41d1a8:\t31 d2                \txor    edx,edx",
+            "  41d1aa:\teb 13                \tjmp    0x41d1bf",
+            "  41d1ac:\t8d 75 c0             \tlea    esi,[ebp-0x40]",
+            "  41d1af:\te8 bc ec 09 00       \tcall   0x4bbe70"
+          ]
+        },
+        {
+          "address": "0041d29d",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b0083e81031d250668b510c53b90000010057b813000000bb4000",
+          "context_sha256": "c98ff6609c2666dcb89201db2d806f1443a74a9108f92d5df8b22dc6273d3f51",
+          "linear_instruction_context": [
+            "  41d29d:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41d2a2:\t8b 00                \tmov    eax,DWORD PTR [eax]",
+            "  41d2a4:\t83 e8 10             \tsub    eax,0x10",
+            "  41d2a7:\t31 d2                \txor    edx,edx",
+            "  41d2a9:\t50                   \tpush   eax",
+            "  41d2aa:\t66 8b 51 0c          \tmov    dx,WORD PTR [ecx+0xc]",
+            "  41d2ae:\t53                   \tpush   ebx",
+            "  41d2af:\tb9 00 00 01 00       \tmov    ecx,0x10000",
+            "  41d2b4:\t57                   \tpush   edi",
+            "  41d2b5:\tb8 13 00 00 00       \tmov    eax,0x13"
+          ]
+        },
+        {
+          "address": "0041d2d7",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d008b0083e8105089c25331c2bb40000000b81200000057668b510cb9",
+          "context_sha256": "c400cda91620c8d98e4cf1d12134547b1f32a34823d3d03f22b3ebe7db11e780",
+          "linear_instruction_context": [
+            "  41d2d7:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41d2dc:\t8b 00                \tmov    eax,DWORD PTR [eax]",
+            "  41d2de:\t83 e8 10             \tsub    eax,0x10",
+            "  41d2e1:\t50                   \tpush   eax",
+            "  41d2e2:\t89 c2                \tmov    edx,eax",
+            "  41d2e4:\t53                   \tpush   ebx",
+            "  41d2e5:\t31 c2                \txor    edx,eax",
+            "  41d2e7:\tbb 40 00 00 00       \tmov    ebx,0x40",
+            "  41d2ec:\tb8 12 00 00 00       \tmov    eax,0x12",
+            "  41d2f1:\t57                   \tpush   edi"
+          ]
+        },
+        {
+          "address": "0041d33f",
+          "kind": "publication",
+          "context_32_bytes_hex": "890d30d85d005d5a59c38d800000000090535156575589e583ec1489c189d783",
+          "context_sha256": "b0be5586c5bf79c5a95a006bb025a81da7e49a809552f337ce8bcadaaa4d49ea",
+          "linear_instruction_context": [
+            "  41d33f:\t89 0d 30 d8 5d 00    \tmov    DWORD PTR ds:0x5dd830,ecx",
+            "  41d345:\t5d                   \tpop    ebp",
+            "  41d346:\t5a                   \tpop    edx",
+            "  41d347:\t59                   \tpop    ecx",
+            "  41d348:\tc3                   \tret",
+            "  41d349:\t8d 80 00 00 00 00    \tlea    eax,[eax+0x0]",
+            "  41d34f:\t90                   \tnop",
+            "  41d350:\t53                   \tpush   ebx",
+            "  41d351:\t51                   \tpush   ecx",
+            "  41d352:\t56                   \tpush   esi"
+          ]
+        },
+        {
+          "address": "0041e0bf",
+          "kind": "load",
+          "context_32_bytes_hex": "a130d85d00d8c8d94034d8c8d9c9dec2ded9dfe09e730a31c089ec5d5f5e595b",
+          "context_sha256": "a12d689b3242e0f07fb97508a390bb2e44802f0bf09dc82be9aff3874a9af2b0",
+          "linear_instruction_context": [
+            "  41e0bf:\ta1 30 d8 5d 00       \tmov    eax,ds:0x5dd830",
+            "  41e0c4:\td8 c8                \tfmul   st,st(0)",
+            "  41e0c6:\td9 40 34             \tfld    DWORD PTR [eax+0x34]",
+            "  41e0c9:\td8 c8                \tfmul   st,st(0)",
+            "  41e0cb:\td9 c9                \tfxch   st(1)",
+            "  41e0cd:\tde c2                \tfaddp  st(2),st",
+            "  41e0cf:\tde d9                \tfcompp",
+            "  41e0d1:\tdf e0                \tfnstsw ax",
+            "  41e0d3:\t9e                   \tsahf",
+            "  41e0d4:\t73 0a                \tjae    0x41e0e0"
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "GNU objdump linear decoding is not a reachable-code proof.",
+    "Literal references do not enumerate aliases, copied pointers or computed addresses.",
+    "Following instructions are context, not a complete def-use or call analysis.",
+    "No target execution; no physical meaning assigned to record+2c."
+  ],
+  "comparison": {
+    "references_per_binary": 15,
+    "loads": 14,
+    "publication_stores": 1,
+    "equal_paired_32_byte_contexts": 14,
+    "differing_context": "Classifier has the previously documented changed return/control flow; its pointer load and first field read remain the same.",
+    "classifier_load_moves_from": "0041aa70",
+    "classifier_load_moves_to": "0041aa64",
+    "interpretation": "Pointer-reference forms correspond; fourteen local contexts are retained, while the classifier context differs. This is not whole-consumer equivalence."
+  }
+}

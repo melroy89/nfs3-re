@@ -31,7 +31,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00418cc0` | OpenPathWithShellExecute | 28 | 26 | [shell-open](original-modern-shell-open.md) |
 | `0041a120` | BuildThreePayloadRecordAndAdvanceCursor | 564 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
 | `0041aa60` | ClassifyValueAgainstSelectedRecordSquaredThresholds | 55 | 51 | [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md), [x87-observers](original-modern-x87-observers.md) |
-| `0041b9b0` | BuildAndRouteTrackSceneRenderCommands | 401 | 1 | [night-lighting](original-modern-night-lighting.md), [track-detail](original-modern-track-detail.md) |
+| `0041b9b0` | BuildAndRouteTrackSceneRenderCommands | 401 | 1 | [night-lighting](original-modern-night-lighting.md), [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md) |
 | `0041c670` | ApplyNightVehicleLightingToTrackBlockQuads | 884 | 71 | [night-lighting](original-modern-night-lighting.md) |
 | `0041cdc0` | BuildVisibleTrackBlockRenderChains | 1012 | 56 | [night-lighting](original-modern-night-lighting.md), [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md) |
 | `0041d620` | ApplySelectedParameterPreset | 196 | 193 | [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md) |

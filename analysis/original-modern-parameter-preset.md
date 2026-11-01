@@ -196,3 +196,21 @@ The selector also has a separate [retained world-effect scale consumer](original
 A focused consumer check eliminates a plausible false match for the unresolved+2ch role. The audit now retains paired `0041ab40..0041ab6d`. Its read at `0041ab6a` uses base `00571370 + wrap32(EBX*1472) + wrap32(ECX*4)`, then offset2ch. That base is a different indexed record family, not a demonstrated alias of selected preset pointer `005dd830`. The common offset alone therefore does not identify a preset+2ch consumer or justify naming the initialized−5 value a clipping plane.
 
 The practical reconstruction boundary remains clear: +20h signed fixed input, +2ch binary32 output and the initialized−5 value are verified; the physical field meaning remains opaque. Preserve that layout/value without inventing a role. This check is not an exhaustive read-absence proof, and copied/aliased uses remain possible. Resolving the role is not a prerequisite for explaining unrelated Modern preset-table differences. No target instructions or new probes were executed.
+
+## Selected-pointer reference inventory and stopping boundary
+
+Run `python3 analysis/scripts/audit_preset_pointer_references.py`; the [paired manifest](evidence/audits/preset-pointer-references.json) pins both executables and retains instruction text, bytes and hashes. GNU objdump's linear decoding identifies **15 literal references to `005dd830` per executable:14 loads and one publication store**. This inventories this particular absolute operand, not every access to an84-byte record.
+
+| Modern load address(es) | Immediate consumer context |
+|---|---|
+| `0041aa64` (original `0041aa70`) | Classifier reads +44h, then +40h; changed surrounding control flow is already documented above |
+| `0041ab0c`, `0041ab2e` | Track-position/index state at +04h/+0ch/+10h/+14h/+18h |
+| `0041abe7`, `0041af7a`, `0041b3bf`, `0041b6e2` | Component comparison with +30h |
+| `0041ba94`, `0041bb6e` | Read +10h for subsequent indexed addressing |
+| `0041ce4e`, `0041e0bf` | Squared-distance threshold +34h |
+| `0041d194` | Push +30h to `0041ca40` |
+| `0041d29d`, `0041d2d7` | Read first DWORD and subtract10h |
+
+The store is `0041d33f`. Fourteen paired32-byte contexts match exactly; the classifier's context differs, including its branch/return sequence. The inventory therefore does **not** assert all consumer bodies are identical. It also does not establish identical results when upstream preset values differ.
+
+No immediate consumer in this inventory identifies the initialized−5 field at +2ch. **Confidence: unresolved; work status: pending.** The next useful evidence would be a def-use trace of aliases/copies of the record or a caller-bounded observation of reads from +2ch. Repeating a literal-pointer search is insufficient. Computed record addresses, pointer propagation across calls and copied data remain outside this audit; even a complete absence of direct +2ch reads here would not prove that the field is unused. Preserve its layout and initialized value in reconstruction without a physical label. No binary, Ghidra state or target execution was changed.
