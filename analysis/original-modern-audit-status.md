@@ -471,3 +471,8 @@ The [startup comparison](original-modern-startup-policy.md#removed-low-address-r
 ## Later demo application-flow branches
 
 The [extended comparison](original-modern-command-line.md#later-demo-branches-also-change-application-flow) completes the local original fragment beyond the startup partition: bit21 adds raw WORD writes, language/default calls and pointer publication; bit20 adds other writes, EAX0 race preparation and a cleanup jump. Final's complete application body lacks those exact direct gate encodings. This is not a whole-process absence proof; field meanings, callback contract and runtime outcomes remain pending. Catalog counts unchanged.
+
+
+## Replacement startup flags have retained diagnostic consumers
+
+The [producer/consumer follow-up](original-modern-startup-policy.md#replacement-startup-values-control-retained-diagnostic-output-and-break) resolves direct uses of `005643fc`/`0055e8c0`: a byte-identical consumer gates OutputDebugStringA and then DebugBreak. Modern explicitly initializes them1/0, replacing the original filter-dependent break flag. Both retain an exception-report-side clear of the outer flag. Other writers and full handler/runtime behaviour remain open; catalog counts unchanged.

@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "0d415b428e3c541a6a4621c8815a26599379fb9b56c4c1335a9b0875f3e4f47c",
-      "relative_links": 155
+      "sha256": "e17ebbb8f8a743ba65c2ff5c36f02b672a1c82d4e95637c2d1057df2ab5d4ed4",
+      "relative_links": 156
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -168,8 +168,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "5911e536f03241e6cbed60bfd0402c12f74ab8dbac480311f72412dbd355f119",
-      "relative_links": 714
+      "sha256": "6f7509d111d7878b8271c54000e2c75e75fa4051673b1a01de38d837702f771b",
+      "relative_links": 715
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -523,8 +523,8 @@
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
-      "sha256": "d305019d2dac020ed7979a21e839f9a3fe1530941c8ac4f9d2018eea6c5edc72",
-      "relative_links": 28
+      "sha256": "770c975948ac7ed8f719fca5d9320fb782a07611d923ac4a3e2a91a91dad38bc",
+      "relative_links": 29
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
@@ -633,7 +633,7 @@
     }
   ],
   "file_count": 126,
-  "relative_link_count": 2298,
+  "relative_link_count": 2301,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -138,3 +138,20 @@ The first endpoint lies inside an original CALL operand, and the last cuts an or
 
 
 The [later demo flow comparison](original-modern-command-line.md#later-demo-branches-also-change-application-flow) follows the original fragment beyond the974-byte NOP interval: msdemo adds language/display initialization and callback publication, while e3demo calls race preparation then jumps to cleanup. Modern replaces that surrounding application code; it is not one continuous NOP deletion. Raw settings meanings, callback preservation/consumers and actual race behaviour remain unresolved.
+
+
+## Replacement startup values control retained diagnostic output and break
+
+The extended [low-address audit](evidence/audits/startup-low-address-path.json) now resolves a concrete consumer of both globals above. Original and final **`00401070..00401095` are byte-identical**, and both IAT bindings name the same APIs:
+
+1. If DWORD`005643fc` is0, skip both operations.
+2. Otherwise call **OutputDebugStringA** with buffer`0056e010`.
+3. Then, only when DWORD`0055e8c0` is nonzero, call **DebugBreak**.
+
+Thus these flags gate diagnostic debug output and an optional break in this handler. They are not, on this evidence, universal debugger-present/OS-version indicators. The complete surrounding `00401010` function is captured but not claimed byte-identical or fully qualified; callback, formatting and termination paths remain separate.
+
+Modern does **not** simply leave the flags uninitialized after removing the probe. At `004a3dcf..004a3de5`, replacement startup sets its local state byte0, clears `0055e8c0` and `00564408`, then writes1 to `005643fc`. Conditional on these values surviving and this diagnostic consumer being reached, output is enabled while its DebugBreak branch is skipped. This gives a concrete consequence for replacing the original filter-dependent publication with fixed0; it does not establish that no other breakpoint can occur.
+
+Both executables also retain `XOR EAX,EAX` at `004a3fdf` and the following store0 to `005643fc` at `004a3fe6`, before the exception-report call to `00401010` at `004a3feb`. That local clear skips both debug-output and break operations in the retained consumer, provided no intervening change supersedes it. It is not proof that every abort/reporting path takes this clear or that the handler necessarily returns.
+
+**Status:** these direct producer/consumer paths are verified statically. Remaining: other writers/aliases, the original low-address exception dispatch outcome, full diagnostic handler contract and actual debugger/API behaviour. No debug output, break, exception filter or target instruction was executed.

@@ -13,6 +13,7 @@ def main():
                         'Full exception dispatcher, global consumers and intended OS/debugger policy unresolved.']}
     capture = ROOT/'analysis/captures/modern-differences/startup-low-address'
     capture.mkdir(parents=True,exist_ok=True)
+    consumers = []
     for label in ('original','official_modern'):
         relative,expected,_ = SPECS[label]
         raw = (ROOT/relative).read_bytes()
@@ -21,7 +22,8 @@ def main():
         row = {'path':relative,'sha256':expected,'spans':[],
                'metadata_0055e8cd_hex':pe.get_data(0x15e8cd,12).hex()}
         for start,end in [(0x4a39f0,0x4a3a10),(0x4a3ad9,0x4a3b3d),
-                          (0x4f7af8,0x4f7b1a),(0x4f7b7d,0x4f7ba7)]:
+                          (0x4f7af8,0x4f7b1a),(0x4f7b7d,0x4f7ba7),
+                          (0x401010,0x401218),(0x4a3dcf,0x4a3de5),(0x4a3fda,0x4a3feb)]:
             out = capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -29,8 +31,14 @@ def main():
                 'bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),
                 'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
+        consumers.append(pe.get_data(0x1070,0x25))
+        assert any(i.address==0x53459c and i.name==b'OutputDebugStringA'
+                   for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports)
+        assert any(i.address==0x5344a8 and i.name==b'DebugBreak'
+                   for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports)
         assert pe.get_data(0x15e8c0,4) == bytes(4)
         assert pe.get_data(0x1643fc,4) == bytes(4)
+        assert pe.get_data(0xa3fdf,12).hex() == '31c06884ce5300a3fc435600'
         if label == 'original':
             assert pe.get_data(0xa3ae7,7).hex() == 'b8900100008a00'
             assert pe.get_data(0xa3afd,11).hex() == '8d45c0502eff151c465300'
@@ -48,9 +56,18 @@ def main():
         else:
             assert pe.get_data(0xa3ad9,0x64) == b'\x90'*0x64
             assert struct.unpack('<I',pe.get_data(0x15e8cf,4))[0] == 0x4a3f7d
+            assert pe.get_data(0xa3dcf,22).hex() == 'c645bc0031c0a3c0e85500a30844560040a3fc435600'
+            row['fixed_startup_values'] = {'0055e8c0':0,'00564408':0,'005643fc':1}
             row['facts'] = {'replacement':'004a3ad9..004a3b3d all100NOP bytes',
                             'metadata_first_target':'004a3f7d instead of004a3afd'}
         result['binaries'][label] = row
+    assert consumers[0] == consumers[1]
+    result['retained_diagnostic_consumer'] = {
+        'range':'00401070..00401095','bytes_identical':True,
+        'outer_gate':'005643fc!=0 ->OutputDebugStringA(0056e010)',
+        'inner_gate':'Then0055e8c0!=0 ->DebugBreak()',
+        'modern_consequence':'Fixed startup0 at0055e8c0 suppresses this DebugBreak branch absent later writes',
+        'limits':'Not debugger detection proof or global disablement of all breakpoints; other handler regions differ'}
     (ROOT/'analysis/evidence/audits/startup-low-address-path.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: baseline hashes, low-address read, filter/result publication and Modern removal')
 

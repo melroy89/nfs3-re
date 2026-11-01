@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "0d415b428e3c541a6a4621c8815a26599379fb9b56c4c1335a9b0875f3e4f47c"
+      "sha256": "e17ebbb8f8a743ba65c2ff5c36f02b672a1c82d4e95637c2d1057df2ab5d4ed4"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -413,7 +413,7 @@
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
-      "sha256": "d305019d2dac020ed7979a21e839f9a3fe1530941c8ac4f9d2018eea6c5edc72"
+      "sha256": "770c975948ac7ed8f719fca5d9320fb782a07611d923ac4a3e2a91a91dad38bc"
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
@@ -547,6 +547,15 @@
           "entry_mentioned": true,
           "addresses": [
             "00401010"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-startup-policy.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00401010",
+            "00401070",
+            "00401095"
           ]
         },
         {
@@ -8173,6 +8182,8 @@
           "entry_mentioned": true,
           "addresses": [
             "004a3db0",
+            "004a3dcf",
+            "004a3de5",
             "004a3e4e",
             "004a3ea0",
             "004a3ea4",

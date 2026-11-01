@@ -32,6 +32,27 @@
           "bytes_sha256": "e265fcd4c2d91aae2af9886c8050e9bf456a92f271af268f6a5759981b392ae1",
           "assembly": "analysis/captures/modern-differences/startup-low-address/original-004f7b7d.asm",
           "assembly_sha256": "ff7b2cd375e6497d77b71b616cf6a5364fe42f2afd18fee6f2c8dbb861cebe81"
+        },
+        {
+          "start": "00401010",
+          "end_exclusive": "00401218",
+          "bytes_sha256": "8711ab6b4adbbf82de13f682886ac23211b4b290d4163603417c1edb25893e2c",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/original-00401010.asm",
+          "assembly_sha256": "c833ce0bae6afe9c41b4bb5466acc6a1995789977309c9f705fa77217ef1de6d"
+        },
+        {
+          "start": "004a3dcf",
+          "end_exclusive": "004a3de5",
+          "bytes_sha256": "3956f750a421979d67473be403f6fa92caabb2ca1ba46f484816c2da5840c243",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/original-004a3dcf.asm",
+          "assembly_sha256": "2cec770d89cc3bad5f4f97d763b1c988fe637419ab073aeda14d301cf604c53c"
+        },
+        {
+          "start": "004a3fda",
+          "end_exclusive": "004a3feb",
+          "bytes_sha256": "16ac277b3d47775b8d5fc34e2eeb737c7ce835408fc899311d2a1d682250efd8",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/original-004a3fda.asm",
+          "assembly_sha256": "940b2a4dd0cfe8442051e3821c3388c24bf4bfa51104c7da7ab9217009322d38"
         }
       ],
       "metadata_0055e8cd_hex": "ff00fd3a4a00ff007d3f4a00",
@@ -75,9 +96,35 @@
           "bytes_sha256": "e265fcd4c2d91aae2af9886c8050e9bf456a92f271af268f6a5759981b392ae1",
           "assembly": "analysis/captures/modern-differences/startup-low-address/official_modern-004f7b7d.asm",
           "assembly_sha256": "2b3334b8f4a1dd8a41071dbf421eb333e48657e964e8250064d6f168ce9f35fa"
+        },
+        {
+          "start": "00401010",
+          "end_exclusive": "00401218",
+          "bytes_sha256": "cc31c7ce92649640c80fd9fefb97dbc9e5b05598e3808d857ad2df6b512668ba",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/official_modern-00401010.asm",
+          "assembly_sha256": "35e9a72b264e6a07e7f0dc390b842dfd72548d023fa669c6c46414eae2255281"
+        },
+        {
+          "start": "004a3dcf",
+          "end_exclusive": "004a3de5",
+          "bytes_sha256": "79f9623073be3087256b6c6ca1e158d429dc6539eb572dd0611ad03340a21aeb",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/official_modern-004a3dcf.asm",
+          "assembly_sha256": "72acad9a83bebfff547ead51a2ab1a3780c8b3e48ba92e269a5fb4e5f1457321"
+        },
+        {
+          "start": "004a3fda",
+          "end_exclusive": "004a3feb",
+          "bytes_sha256": "16ac277b3d47775b8d5fc34e2eeb737c7ce835408fc899311d2a1d682250efd8",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/official_modern-004a3fda.asm",
+          "assembly_sha256": "5963e7b1499fffe2753e0e78345afd9a12af0ac96539d33b0a66c4c5f2b9f526"
         }
       ],
       "metadata_0055e8cd_hex": "ff007d3f4a00ff007d3f4a00",
+      "fixed_startup_values": {
+        "0055e8c0": 0,
+        "00564408": 0,
+        "005643fc": 1
+      },
       "facts": {
         "replacement": "004a3ad9..004a3b3d all100NOP bytes",
         "metadata_first_target": "004a3f7d instead of004a3afd"
@@ -87,5 +134,13 @@
   "limits": [
     "No memory fault, exception filter or target instruction executed.",
     "Full exception dispatcher, global consumers and intended OS/debugger policy unresolved."
-  ]
+  ],
+  "retained_diagnostic_consumer": {
+    "range": "00401070..00401095",
+    "bytes_identical": true,
+    "outer_gate": "005643fc!=0 ->OutputDebugStringA(0056e010)",
+    "inner_gate": "Then0055e8c0!=0 ->DebugBreak()",
+    "modern_consequence": "Fixed startup0 at0055e8c0 suppresses this DebugBreak branch absent later writes",
+    "limits": "Not debugger detection proof or global disablement of all breakpoints; other handler regions differ"
+  }
 }
