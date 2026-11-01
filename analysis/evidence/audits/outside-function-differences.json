@@ -7517,7 +7517,7 @@
         "role": "Six-byte remote prefix test",
         "report": "analysis/original-modern-startup-requirements.md",
         "report_sha256": "cf23aceb4845935120483f5daf0dfc25abed0378305366038046a78d05bb5808",
-        "remaining": "Body and compare semantics checked; global-source ownership and other callers pending.",
+        "remaining": "Body/compare and selected install.win source writer checked; other writers/callers and runtime pending.",
         "status": "entry classified; semantic validation partial"
       },
       {
@@ -8116,5 +8116,218 @@
     "report": "analysis/original-modern-slideshow-navigation.md",
     "report_sha256": "a535dc0d4e1c6c64affdf893c75a7329dc3f3c261a24665284b643bb53c82144",
     "limit": "Local delta routing only; complete rendering/driver/refresh lifecycle and runtime outcomes remain separately bounded."
+  },
+  "additional_research_routes": {
+    "routes": [
+      {
+        "start": "004f8390",
+        "end_exclusive": "004f84a8",
+        "changed_bytes": 250,
+        "role": "Modern34 name/slot pairs plus zero terminator replace original loader instructions",
+        "report": "analysis/original-modern-renderer-loading.md",
+        "report_sha256": "a8151a1b2a2c5b24fb0a1551b180710070c0d866bcabf9591f19c93fdf7535c7",
+        "status": "Byte partition verified; semantic claims retain linked-report scope"
+      },
+      {
+        "start": "004264ec",
+        "end_exclusive": "00426560",
+        "changed_bytes": 116,
+        "role": "Original camera dispatcher stub/epilogue tail replaced byNOPs; Modern direct table dispatch separately mapped",
+        "report": "analysis/original-modern-projection.md",
+        "report_sha256": "c3bc0c48f0aac0dab05a1509e58348c2a42befda5021e3f0c734b86cbf533575",
+        "status": "Byte partition verified; semantic claims retain linked-report scope"
+      },
+      {
+        "start": "00472778",
+        "end_exclusive": "00472820",
+        "changed_bytes": 167,
+        "role": "Removed original defaults tail and ordered20h/10h flag policy",
+        "report": "analysis/original-modern-ghost-loading.md",
+        "report_sha256": "28aeba21f434d266ad3afe3bb89947c2216d2e41a43f58666aa1c768b4ca414d",
+        "status": "Byte partition verified; semantic claims retain linked-report scope"
+      },
+      {
+        "start": "004cd663",
+        "end_exclusive": "004cd6c0",
+        "changed_bytes": 93,
+        "role": "Removed window-thread restoration tail, moved epilogue and alignment",
+        "report": "analysis/original-modern-window-handling.md",
+        "report_sha256": "355546ea90823e874dfc4d6e95910e04c608a7f1663a967d2e9414be4230a443",
+        "status": "Byte partition verified; semantic claims retain linked-report scope"
+      }
+    ],
+    "modern_export_pairs": [
+      {
+        "name_pointer": "0054d3a4",
+        "name": "_THRASH_about@0",
+        "slot": "009ef980"
+      },
+      {
+        "name_pointer": "0054d3b4",
+        "name": "_THRASH_clearwindow@0",
+        "slot": "009ef970"
+      },
+      {
+        "name_pointer": "0054d3cc",
+        "name": "_THRASH_clip@16",
+        "slot": "009ef92c"
+      },
+      {
+        "name_pointer": "0054d3dc",
+        "name": "_THRASH_drawline@8",
+        "slot": "009ef928"
+      },
+      {
+        "name_pointer": "0054d3f0",
+        "name": "_THRASH_drawlinemesh@12",
+        "slot": "009ef90c"
+      },
+      {
+        "name_pointer": "0054d408",
+        "name": "_THRASH_drawlinestrip@8",
+        "slot": "009ef908"
+      },
+      {
+        "name_pointer": "0054d420",
+        "name": "_THRASH_drawpoint@4",
+        "slot": "009ef910"
+      },
+      {
+        "name_pointer": "0054d450",
+        "name": "_THRASH_drawpointmesh@12",
+        "slot": "009ef900"
+      },
+      {
+        "name_pointer": "0054d434",
+        "name": "_THRASH_drawpointstrip@8",
+        "slot": "009ef904"
+      },
+      {
+        "name_pointer": "0054d46c",
+        "name": "_THRASH_drawquad@16",
+        "slot": "009ef94c"
+      },
+      {
+        "name_pointer": "0054d480",
+        "name": "_THRASH_drawquadmesh@12",
+        "slot": "009ef930"
+      },
+      {
+        "name_pointer": "0054d498",
+        "name": "_THRASH_drawtri@12",
+        "slot": "009ef974"
+      },
+      {
+        "name_pointer": "0054d4ac",
+        "name": "_THRASH_drawtrifan@8",
+        "slot": "009ef960"
+      },
+      {
+        "name_pointer": "0054d4c4",
+        "name": "_THRASH_drawtrimesh@12",
+        "slot": "009ef924"
+      },
+      {
+        "name_pointer": "0054d4dc",
+        "name": "_THRASH_drawtristrip@8",
+        "slot": "009ef91c"
+      },
+      {
+        "name_pointer": "0054d4f4",
+        "name": "_THRASH_flushwindow@0",
+        "slot": "009ef950"
+      },
+      {
+        "name_pointer": "0054d50c",
+        "name": "_THRASH_idle@0",
+        "slot": "009ef93c"
+      },
+      {
+        "name_pointer": "0054d51c",
+        "name": "_THRASH_init@0",
+        "slot": "009ef978"
+      },
+      {
+        "name_pointer": "0054d52c",
+        "name": "_THRASH_is@0",
+        "slot": "009ef984"
+      },
+      {
+        "name_pointer": "0054d53c",
+        "name": "_THRASH_lockwindow@0",
+        "slot": "009ef954"
+      },
+      {
+        "name_pointer": "0054d554",
+        "name": "_THRASH_pageflip@0",
+        "slot": "009ef940"
+      },
+      {
+        "name_pointer": "0054d568",
+        "name": "_THRASH_readrect@20",
+        "slot": "009ef920"
+      },
+      {
+        "name_pointer": "0054d57c",
+        "name": "_THRASH_restore@0",
+        "slot": "009ef97c"
+      },
+      {
+        "name_pointer": "0054d590",
+        "name": "_THRASH_selectdisplay@4",
+        "slot": "009ef944"
+      },
+      {
+        "name_pointer": "0054d5a8",
+        "name": "_THRASH_setstate@8",
+        "slot": "009ef96c"
+      },
+      {
+        "name_pointer": "0054d5bc",
+        "name": "_THRASH_settexture@4",
+        "slot": "009ef934"
+      },
+      {
+        "name_pointer": "0054d5d4",
+        "name": "_THRASH_setvideomode@12",
+        "slot": "009ef958"
+      },
+      {
+        "name_pointer": "0054d5ec",
+        "name": "_THRASH_sync@4",
+        "slot": "009ef948"
+      },
+      {
+        "name_pointer": "0054d5fc",
+        "name": "_THRASH_talloc@20",
+        "slot": "009ef968"
+      },
+      {
+        "name_pointer": "0054d610",
+        "name": "_THRASH_treset@0",
+        "slot": "009ef918"
+      },
+      {
+        "name_pointer": "0054d624",
+        "name": "_THRASH_tupdate@12",
+        "slot": "009ef964"
+      },
+      {
+        "name_pointer": "0054d638",
+        "name": "_THRASH_unlockwindow@4",
+        "slot": "009ef95c"
+      },
+      {
+        "name_pointer": "0054d650",
+        "name": "_THRASH_window@4",
+        "slot": "009ef938"
+      },
+      {
+        "name_pointer": "0054d664",
+        "name": "_THRASH_writerect@20",
+        "slot": "009ef914"
+      }
+    ],
+    "limits": "Existing research routing and byte checks, not independent semantic review, caller coverage or runtime acceptance."
   }
 }
