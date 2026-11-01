@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **101 vendor-only,51 bounded-static,136 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **100 vendor-only,51 bounded-static,137 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -689,3 +689,7 @@ The [early/final comparison](original-modern-loading-artwork.md#early-modern-alr
 ## Race-dialog Tournament/Hot Pursuit preselection remap
 
 The [four-baseline audit](original-modern-race-dialog.md) verifies1.1.0 raw stored-mode passing becomes a19-byte AL1↔3 remap in1.2.0, retained at a different final address. Unrestricted dialog rows and stored race-choice order differ at those two positions; only four bytes differ in the complete original/final354-byte builder. Wider inputs retain upper24 bits. MP120-002 advances to partial, counts101/51/136/2. Restricted states, live focus/input and full state lifetime remain unverified; no target execution or database changes.
+
+## Early border coefficient change separated from160 source rewrite
+
+The [five-baseline comparison](original-modern-border-geometry.md#historical-coefficient-halving-precedes-the-fitted-width-cache-rewrite) verifies original/1.1.0/1.5.3 identical1420-byte builders with data coefficient4→2, then1.6.0’s fitted-width cached-thickness builder/updater retained in final. MP100-006 advances to partial; MP160-006 gains the border-specific direct release boundary. Counts100/51/137/2. Integer/visible ratios, refresh lifecycle, marker introduction and1.0.0 introduction remain qualified; no target execution or database changes.

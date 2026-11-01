@@ -8,13 +8,13 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "074651703fc43cbe132f76f92d04c4290c4dad05a1ef4bd8164a3496457e14a3",
-      "relative_links": 209
+      "sha256": "fc2f52aacf32f1662c0aa32170054c548bc60018988fa38e51f15f6e705bcecc",
+      "relative_links": 210
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
-      "sha256": "ba31022d4afa1a375a279d8b4aeb02b89f6b95e31df76c07ddbba26d7d4a960f",
-      "relative_links": 7
+      "sha256": "e4179bb73ad81ab36f266e46913ff1f5ef3112f3a8b43fc20e56578b6ac1048f",
+      "relative_links": 8
     },
     {
       "path": "analysis/original-modern-camera-duplicates.md",
@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "3dece9a0ebeb5aea90bcd7078b0e9654710f1ad33d727b8e671e9dc87ea3d581",
+      "sha256": "911fb4030371e188507e4af8cc6ca5ec22cca3c5741db8e13f5fbf54baeb15a3",
       "relative_links": 239
     },
     {
@@ -653,8 +653,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "38c6f1a4eb8281f42d765c7c792c34c8d904e801b274de4aa4677f6c4c04b811",
-      "relative_links": 206
+      "sha256": "3c011292410422b2044c5f5cad1bdb8dc1dfb2ded78dcab73a94b1c42c51d033",
+      "relative_links": 207
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2551,
+  "relative_link_count": 2554,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -99,3 +99,23 @@ Run `python3 analysis/scripts/audit_viewport_geometry_difference.py` (Python `pe
 - Static arithmetic and call-target changes are established from the two executable fingerprints above. The original mode-width publication path is now mapped; exhaustive dimension and original-budget writer/lifetime coverage, atlas consumers and live values remain unresolved. The budget's selected producers/consumer are linked above, and Modern source `007a2748` is mapped in the viewport chapter.
 - This report does not infer a final border-size ratio, viewport policy, map-scale policy, or visible rendering change from the constants alone. It does not identify all changed UV mappings or texture assets.
 - No game, graphics backend, probe, or test was run; no executable or Ghidra project was modified.
+
+## Historical coefficient halving precedes the fitted-width cache rewrite
+
+**Verified static historical separation; no border rendering.** The [five-baseline audit](evidence/audits/border-thickness-history.json), reproduced with `python3 analysis/scripts/audit_border_thickness_history.py`, pins supplied original, author-hosted1.1.0/1.5.3/1.6.0 and official final EXEs. It reuses the publication, corrected eight-quad extent and UV/schedule investigations above rather than treating these names as original source symbols.
+
+| Inspected baseline | Border calculation mechanism | Unrounded ordinary expression, C=stored binary32 approximately1/640 |
+|---|---|---|
+|Supplied original |Repeated calculations inside builder |4*mode_width*C |
+|Modern1.1.0 |Same builder instructions; multiplier data changed |2*mode_width*C |
+|Modern1.5.3 |Same early builder and coefficient |2*mode_width*C |
+|Modern1.6.0 |Rewritten builder reads cached thickness; separate updater reads fitted reference width |2*reference_width*C |
+|Official final1.6.1 |Builder/updater identical to1.6.0 |Same as1.6.0 |
+
+The complete1420-byte builder envelope`0047f650..0047fbdc` is **byte-identical in original,1.1.0 and1.5.3**. Its instructions still load mode-width operand`007cdac8` and multiply by data at`0053b4f8/0053b4fc`. The first value changes4.0→2.0 in early Modern; the second retains identical binary32 bits. This is a concrete data-only change affecting retained instructions, not an introduced fitted-width formula in1.1.0.
+
+The direct1.5.3→1.6.0 comparison establishes the later cache rewrite: the new builder`0047f650..0047f98c` reads`0055fed0`, and complete25-byte updater`0047f9a4..0047f9bd` computes it from`007a2748`. Both spans are byte-identical in1.6.0/final. The previously mapped reference producer and caller lifecycle remain the evidence for what that source represents and when it is refreshed.
+
+**MP100-006 advances to partial historical support:** an early retained Modern EXE implements coefficient halving with unchanged width source/schedule.1.0.0 introduction and visible half-thickness remain unverified. **MP160-006 remains partial**, now with the border-specific fitted-source/cache boundary dated; this check does not date every map-marker change bundled in that release note.
+
+For equal ordinary width and floating state, the early **preconversion** expression has half the original coefficient. Repeated x87 calculation/FISTP means its stored integer need not be exactly half the original integer. The final pair additionally changes source and computation timing: on the previously derived1920×1080 example R/W=0.75, its unrounded ratio is0.375 rather than0.5. Neither ratio proves final pixel coverage, atlas sampling, wrapper effects, incoming state equality or refresh frequency. No executable, saved Ghidra database, maintained C or raw reference-export bytes were changed.
