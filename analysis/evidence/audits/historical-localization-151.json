@@ -1,0 +1,484 @@
+{
+  "kind": "historical-localization-151",
+  "archives": {
+    "1.5.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f"
+    },
+    "1.5.1": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.1.7z",
+      "sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de"
+    }
+  },
+  "languages": {
+    "eng": {
+      "1.5.0": {
+        "member": "fedata/text/text.eng",
+        "sha256": "a459b030d364b1a257525a8656e5a499dc18f2661162f6186141e4bb09f510f3",
+        "bytes": 35566,
+        "entries": 1936,
+        "offset_table_bytes": 7744,
+        "complete_payload_partition": true
+      },
+      "1.5.1": {
+        "member": "fedata/text/text.eng",
+        "sha256": "815ebc8d971deecfc2bc64eb34ae4465d2347a6e5011a53134219751ca34d7b5",
+        "bytes": 35651,
+        "entries": 1941,
+        "offset_table_bytes": 7764,
+        "complete_payload_partition": true
+      },
+      "changed_existing": [
+        {
+          "index": 1932,
+          "old_offset": 35543,
+          "new_offset": 35563,
+          "old": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          },
+          "new": {
+            "hex": "46756c6c",
+            "latin1_display": "Full"
+          }
+        }
+      ],
+      "added": [
+        {
+          "index": 1936,
+          "offset": 35588,
+          "value": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          }
+        },
+        {
+          "index": 1937,
+          "offset": 35591,
+          "value": {
+            "hex": "5265617220566965772044657461696c",
+            "latin1_display": "Rear View Detail"
+          }
+        },
+        {
+          "index": 1938,
+          "offset": 35608,
+          "value": {
+            "hex": "5265617220566965772046726f6d",
+            "latin1_display": "Rear View From"
+          }
+        },
+        {
+          "index": 1939,
+          "offset": 35623,
+          "value": {
+            "hex": "4163746976652043616d657261",
+            "latin1_display": "Active Camera"
+          }
+        },
+        {
+          "index": 1940,
+          "offset": 35637,
+          "value": {
+            "hex": "496e204361722043616d657261",
+            "latin1_display": "In Car Camera"
+          }
+        }
+      ]
+    },
+    "ger": {
+      "1.5.0": {
+        "member": "fedata/text/text.ger",
+        "sha256": "bcb176706183887b0e7ddf4d53a849b2961cf1f11d79d0a15070b41d0bace9b7",
+        "bytes": 34792,
+        "entries": 1936,
+        "offset_table_bytes": 7744,
+        "complete_payload_partition": true
+      },
+      "1.5.1": {
+        "member": "fedata/text/text.ger",
+        "sha256": "7ab720426216762d9a672a7e10780c1e4ccdba5b07729b501ab10bdba474f471",
+        "bytes": 34880,
+        "entries": 1941,
+        "offset_table_bytes": 7764,
+        "complete_payload_partition": true
+      },
+      "changed_existing": [
+        {
+          "index": 1932,
+          "old_offset": 34769,
+          "new_offset": 34789,
+          "old": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          },
+          "new": {
+            "hex": "566f6c6c",
+            "latin1_display": "Voll"
+          }
+        }
+      ],
+      "added": [
+        {
+          "index": 1936,
+          "offset": 34814,
+          "value": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          }
+        },
+        {
+          "index": 1937,
+          "offset": 34817,
+          "value": {
+            "hex": "52fc636b7370696567656c2d44657461696c73",
+            "latin1_display": "Rückspiegel-Details"
+          }
+        },
+        {
+          "index": 1938,
+          "offset": 34837,
+          "value": {
+            "hex": "52fc636b616e736963687420417573",
+            "latin1_display": "Rückansicht Aus"
+          }
+        },
+        {
+          "index": 1939,
+          "offset": 34853,
+          "value": {
+            "hex": "416b74697665204b616d657261",
+            "latin1_display": "Aktive Kamera"
+          }
+        },
+        {
+          "index": 1940,
+          "offset": 34867,
+          "value": {
+            "hex": "496e6e656e2d4b616d657261",
+            "latin1_display": "Innen-Kamera"
+          }
+        }
+      ]
+    },
+    "fre": {
+      "1.5.0": {
+        "member": "fedata/text/text.fre",
+        "sha256": "e659802a3a169ccdf2e5e9d0fdf857b1c3b491a39aa8fb3380a4fe4f5df6455c",
+        "bytes": 37088,
+        "entries": 1936,
+        "offset_table_bytes": 7744,
+        "complete_payload_partition": true
+      },
+      "1.5.1": {
+        "member": "fedata/text/text.fre",
+        "sha256": "4ecb02d41a673e24189df47f3f8d8954e9a971cd2a71342c17d13d758b67db4c",
+        "bytes": 37189,
+        "entries": 1941,
+        "offset_table_bytes": 7764,
+        "complete_payload_partition": true
+      },
+      "changed_existing": [
+        {
+          "index": 1283,
+          "old_offset": 30898,
+          "new_offset": 30918,
+          "old": {
+            "hex": "4368616d7020646520766973696f6e",
+            "latin1_display": "Champ de vision"
+          },
+          "new": {
+            "hex": "4368616d7020646520767565",
+            "latin1_display": "Champ de vue"
+          }
+        },
+        {
+          "index": 1932,
+          "old_offset": 37055,
+          "new_offset": 37072,
+          "old": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          },
+          "new": {
+            "hex": "436f6d706ce97465",
+            "latin1_display": "Compléte"
+          }
+        }
+      ],
+      "added": [
+        {
+          "index": 1936,
+          "offset": 37111,
+          "value": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          }
+        },
+        {
+          "index": 1937,
+          "offset": 37114,
+          "value": {
+            "hex": "44e97461696c2064652072e974726f766973657572",
+            "latin1_display": "Détail de rétroviseur"
+          }
+        },
+        {
+          "index": 1938,
+          "offset": 37136,
+          "value": {
+            "hex": "5675652061727269e87265206465",
+            "latin1_display": "Vue arrière de"
+          }
+        },
+        {
+          "index": 1939,
+          "offset": 37151,
+          "value": {
+            "hex": "43616de9726120616374697665",
+            "latin1_display": "Caméra active"
+          }
+        },
+        {
+          "index": 1940,
+          "offset": 37165,
+          "value": {
+            "hex": "43616de97261207369e8676520636f6e64756374657572",
+            "latin1_display": "Caméra siège conducteur"
+          }
+        }
+      ]
+    },
+    "spa": {
+      "1.5.0": {
+        "member": "fedata/text/text.spa",
+        "sha256": "382e1176ae4af780c005975f6f695dc3342142d6163f4afbc818f8e8cdb572a8",
+        "bytes": 37832,
+        "entries": 1936,
+        "offset_table_bytes": 7744,
+        "complete_payload_partition": true
+      },
+      "1.5.1": {
+        "member": "fedata/text/text.spa",
+        "sha256": "52b955893a0f42c86d456114a811f129534c569d476c606dda889787861baba2",
+        "bytes": 37927,
+        "entries": 1941,
+        "offset_table_bytes": 7764,
+        "complete_payload_partition": true
+      },
+      "changed_existing": [
+        {
+          "index": 1932,
+          "old_offset": 37801,
+          "new_offset": 37821,
+          "old": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          },
+          "new": {
+            "hex": "4de178696d6f",
+            "latin1_display": "Máximo"
+          }
+        }
+      ],
+      "added": [
+        {
+          "index": 1936,
+          "offset": 37856,
+          "value": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          }
+        },
+        {
+          "index": 1937,
+          "offset": 37859,
+          "value": {
+            "hex": "446574616c6c6520726574726f7669736f72",
+            "latin1_display": "Detalle retrovisor"
+          }
+        },
+        {
+          "index": 1938,
+          "offset": 37878,
+          "value": {
+            "hex": "5265666c656a6f20726574726f7669736f72",
+            "latin1_display": "Reflejo retrovisor"
+          }
+        },
+        {
+          "index": 1939,
+          "offset": 37897,
+          "value": {
+            "hex": "43e16d61726120616374697661",
+            "latin1_display": "Cámara activa"
+          }
+        },
+        {
+          "index": 1940,
+          "offset": 37911,
+          "value": {
+            "hex": "43e16d61726120696e746572696f72",
+            "latin1_display": "Cámara interior"
+          }
+        }
+      ]
+    },
+    "ita": {
+      "1.5.0": {
+        "member": "fedata/text/text.ita",
+        "sha256": "80133988ee889383d937c5e01adc2ef700c74d8f24b6ad89ad36f5f8bb25441d",
+        "bytes": 35941,
+        "entries": 1936,
+        "offset_table_bytes": 7744,
+        "complete_payload_partition": true
+      },
+      "1.5.1": {
+        "member": "fedata/text/text.ita",
+        "sha256": "b02df00ce9bd28d2ce061680604ad21332fb85d08fc7530038e20b43abbff3ea",
+        "bytes": 36032,
+        "entries": 1941,
+        "offset_table_bytes": 7764,
+        "complete_payload_partition": true
+      },
+      "changed_existing": [
+        {
+          "index": 1932,
+          "old_offset": 35912,
+          "new_offset": 35932,
+          "old": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          },
+          "new": {
+            "hex": "5069656e61",
+            "latin1_display": "Piena"
+          }
+        }
+      ],
+      "added": [
+        {
+          "index": 1936,
+          "offset": 35964,
+          "value": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          }
+        },
+        {
+          "index": 1937,
+          "offset": 35967,
+          "value": {
+            "hex": "4465747461676c6920526574726f7669736f7265",
+            "latin1_display": "Dettagli Retrovisore"
+          }
+        },
+        {
+          "index": 1938,
+          "offset": 35988,
+          "value": {
+            "hex": "526574726f7669736f7265204461",
+            "latin1_display": "Retrovisore Da"
+          }
+        },
+        {
+          "index": 1939,
+          "offset": 36003,
+          "value": {
+            "hex": "4163746976652043616d657261",
+            "latin1_display": "Active Camera"
+          }
+        },
+        {
+          "index": 1940,
+          "offset": 36017,
+          "value": {
+            "hex": "496e7465726e612043616d657261",
+            "latin1_display": "Interna Camera"
+          }
+        }
+      ]
+    },
+    "swe": {
+      "1.5.0": {
+        "member": "fedata/text/text.swe",
+        "sha256": "b8cbf70053af6575df6687d7fc89697b6e34d98bbe5128cecd2c72b4593bce81",
+        "bytes": 33841,
+        "entries": 1936,
+        "offset_table_bytes": 7744,
+        "complete_payload_partition": true
+      },
+      "1.5.1": {
+        "member": "fedata/text/text.swe",
+        "sha256": "5249f834c35dd38da5c8f814cee99944e413a89416e7d0e96669c9d4142e6f4e",
+        "bytes": 33923,
+        "entries": 1941,
+        "offset_table_bytes": 7764,
+        "complete_payload_partition": true
+      },
+      "changed_existing": [
+        {
+          "index": 1932,
+          "old_offset": 33816,
+          "new_offset": 33836,
+          "old": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          },
+          "new": {
+            "hex": "4d6178",
+            "latin1_display": "Max"
+          }
+        }
+      ],
+      "added": [
+        {
+          "index": 1936,
+          "offset": 33862,
+          "value": {
+            "hex": "6b6d",
+            "latin1_display": "km"
+          }
+        },
+        {
+          "index": 1937,
+          "offset": 33865,
+          "value": {
+            "hex": "4261636b73706567656c20646574616c6a",
+            "latin1_display": "Backspegel detalj"
+          }
+        },
+        {
+          "index": 1938,
+          "offset": 33883,
+          "value": {
+            "hex": "4261636b73706567656c206672e56e",
+            "latin1_display": "Backspegel från"
+          }
+        },
+        {
+          "index": 1939,
+          "offset": 33899,
+          "value": {
+            "hex": "416b746976206b616d657261",
+            "latin1_display": "Aktiv kamera"
+          }
+        },
+        {
+          "index": 1940,
+          "offset": 33912,
+          "value": {
+            "hex": "4b7570e96b616d657261",
+            "latin1_display": "Kupékamera"
+          }
+        }
+      ]
+    }
+  },
+  "indexing": "zero-based positional entries, not independently named game string IDs",
+  "limits": [
+    "Static packaged assets only; no game loader/rendering or translation-quality review.",
+    "Latin1 is a reversible display convention, not proof of game font/encoding.",
+    "Five added records and changed existing indices do not independently verify every advertised correction."
+  ]
+}

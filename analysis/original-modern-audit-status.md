@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **130 vendor-only,47 bounded-static,111 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **129 vendor-only,47 bounded-static,112 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -506,3 +506,8 @@ The [four-EXE correspondence check](original-modern-lockwindow-history.md#corres
 ## DX6/SoftTri callback registration dispatch resolved locally
 
 The [selector13h follow-up](original-modern-lockwindow-history.md#dx6-and-softtri-selector13h-registration-routes) verifies1.5.1 DX6's jump-table entry19→nonnull eight-DWORD copy and SoftTri's ordered selector comparisons→copy without a local payload-null guard. This closes those selected dispatch edges, while preserving pointer/DF prerequisites and unresolved replacement/lifetime/runtime questions. MP151-004 remains partial; counts unchanged.
+
+
+## Historical1.5.1 localized text changes
+
+The [complete twelve-asset comparison](original-modern-localization-151.md) partitions every offset/string byte in six languages across1.5.0/1.5.1. Shared entries differ only at1932 in all languages and1283 in French; five entries are appended. French wording is verified, but a separate German/Spanish correction among other shared strings is not found. MP151-005 advances vendor-only→partial with that limitation; current counts129/47/112/2. No target execution.

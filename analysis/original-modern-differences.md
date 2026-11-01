@@ -584,7 +584,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **130 Claimed, 47 Static, 111 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **129 Claimed, 47 Static, 112 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -664,7 +664,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP151-002 | Fixed a bug which had allowed to save duplicated cameras when the user presses "Race", "Credits", or "Exit game" buttons instead of the "Done" button. | Partial |
 | MP151-003 | Experimental ini setting AllowHugeTextures which enables huge texture (512×512, 1024×1024, and 2048×2048) support for track elements and cars during gameplay. Useful for the game modding. | Static |
 | MP151-004 | Fixed a small bug in the DX5, DX6, and SoftTri renderers in the thrash_lockwindow function. | Partial |
-| MP151-005 | Fixed mistakes in new strings in German, Spanish and French languages. Thanks Gonzalo's and Kirill Diduk for hints. | Claimed |
+| MP151-005 | Fixed mistakes in new strings in German, Spanish and French languages. Thanks Gonzalo's and Kirill Diduk for hints. | Partial |
 
 ### Version 1.5.0 (2016-03-20)
 
@@ -951,3 +951,8 @@ The [1.5.0→1.5.1 comparison](original-modern-lockwindow-history.md) identifies
 
 
 The [four-EXE correspondence check](original-modern-lockwindow-history.md#correspondence-with-supplied-original-and-official-final-exes) now confirms that the selected callback table, registration witness and critical-section setup/callback bodies also match the supplied original and official final EXEs. The historical repair is in the driver failure path using retained EXE synchronization code; full lifetime/runtime qualification and DLL provenance limits remain explicit.
+
+
+## Historical1.5.1 localization changes
+
+The [complete six-language asset comparison](original-modern-localization-151.md) identifies all changed existing indices and five appended entries in each table. French changes `Champ de vision` to `Champ de vue`; all languages remap the old1932 `km` entry and add rear-view labels. Other shared German/Spanish wording is unchanged, so the advertised corrections are only partly explained. Exact bytes/indices and consumer/encoding limits are documented; this is packaged-asset evidence, not rendered UI or an EXE-code change.
