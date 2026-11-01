@@ -39,3 +39,14 @@ These establish the strings present in the package and their introduction in thi
 MP151-005 advertises corrections to new German, Spanish and French strings. The direct pair verifies a French wording change and the full addition/remapping above. It does **not** identify an independent German/Spanish wording correction among other shared entries: those remaining entries are equal. The vendor may refer to the new entries, a semantic index correction, or another reference distribution; intent is unresolved. Do not turn the absence of another changed shared entry into proof that no translation issue existed.
 
 The entry advances vendor-only→**partial**, with the exact observed change and mismatch in scope explicit. Required follow-up: bind the changed/new indices to menu consumers, inspect any relevant intermediate/distribution evidence, and qualify actual selected-font/translation behaviour if needed. No new runtime test, Ghidra mutation or executable change was performed.
+
+
+## Track-length consumer follows the moved km entry
+
+The extended audit also extracts and hashes `nfs3.exe` from each same archive. Complete historical track-length helper **`00456590..0045663a`** is170 bytes. Its **only differing byte is`004565f3`**, inside MOV EAX at`004565f2`: lookup index **1932 (`078ch`)→1936 (`0790h`)**. The captured branch selects that index for raw profile values3/4 at`006fbc68`, then calls language lookup`004d1850` at`00456605`. Other values retain index6 in this local helper.
+
+The complete lookup envelope `004d1850..004d187e` is captured for both versions. Its direct maximum index changes **1935→1940**, matching the five-entry growth. For a valid selected full package table, lookup multiplies the index by4, reads its offset and returns base+offset. The first table offset is larger than4*1932 in1.5.0 and4*1936 in1.5.1, so these selected indices pass the local loaded-table extent decision; fallback and invalid-pointer cases remain separate.
+
+Across all six package languages, old index1932 and new index1936 contain the identical bytes **`km`**. Thus this particular code/asset path preserves the unit token while allowing1932 to be reused. This is stronger than inferring meaning from changed table positions, but remains conditional on the matching table being loaded and the inspected branch being reached. It is not proof that arbitrary mixed-version assets work or that every UI consumer was updated.
+
+The [original/final track-length comparison](original-modern-track-length-text.md) covers a wider formatting rewrite and final index`078ah`; that final index must not be substituted for the historical indices here. Historical string numbering is version-bound. Remaining: bind the new Full/detail and rear-camera entries, all other lookup consumers, fallback compatibility and actual rendered language selection. No formatter or game instruction was executed.

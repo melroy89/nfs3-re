@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "90d2a0d87cb0987b2f8a8834670a3d9f5324b893f359ff5536454581f7af5f33",
-      "relative_links": 164
+      "sha256": "2a656e2a6316a5566eb3b59f4bb7ebf77ac2f1a0fc4efdd53a1787f8d49beee4",
+      "relative_links": 165
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -168,8 +168,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "1961a83f49210a0115756849336e8b9375a74b2451fb9feb676f8d73f13c9e10",
-      "relative_links": 717
+      "sha256": "8e095202fe66e3467cdf29cc9f2717a50b000c30acfc1f38124b2794c91b10a5",
+      "relative_links": 718
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -238,8 +238,8 @@
     },
     {
       "path": "analysis/original-modern-localization-151.md",
-      "sha256": "794c4c6c591aa88dd3a76ace3309892250baed778678ecba0734be5c79df4f88",
-      "relative_links": 4
+      "sha256": "686acf7cecd92eee875e0fb8a06c5a9047048506de33e2760d81d0836eae8818",
+      "relative_links": 5
     },
     {
       "path": "analysis/original-modern-lockwindow-history.md",
@@ -578,8 +578,8 @@
     },
     {
       "path": "analysis/original-modern-track-length-text.md",
-      "sha256": "514a6329ef6c918b0237c4b34618d80090bc9e20599c6578aa508ea0c0a6367d",
-      "relative_links": 6
+      "sha256": "2a1e17a99d22305af8e35db779aaea9e6c043ae6f62077ccd0ecfb199b0c27e6",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-vehicle-dispatch.md",
@@ -643,7 +643,7 @@
     }
   ],
   "file_count": 128,
-  "relative_link_count": 2331,
+  "relative_link_count": 2335,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

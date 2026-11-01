@@ -511,3 +511,8 @@ The [selector13h follow-up](original-modern-lockwindow-history.md#dx6-and-softtr
 ## Historical1.5.1 localized text changes
 
 The [complete twelve-asset comparison](original-modern-localization-151.md) partitions every offset/string byte in six languages across1.5.0/1.5.1. Shared entries differ only at1932 in all languages and1283 in French; five entries are appended. French wording is verified, but a separate German/Spanish correction among other shared strings is not found. MP151-005 advances vendor-only→partial with that limitation; current counts129/47/112/2. No target execution.
+
+
+## Historical km remapping has a matched EXE consumer
+
+The [consumer follow-up](original-modern-localization-151.md#track-length-consumer-follows-the-moved-km-entry) verifies the only byte change in the170-byte historical track-length helper:1932→1936, preserving `km` in all six matched asset tables. The lookup maximum also grows1935→1940. This resolves one code/asset remapping without claiming all IDs/consumers or mixed-version compatibility. Catalog counts unchanged; no target execution.

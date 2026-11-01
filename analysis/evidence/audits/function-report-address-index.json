@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "90d2a0d87cb0987b2f8a8834670a3d9f5324b893f359ff5536454581f7af5f33"
+      "sha256": "2a656e2a6316a5566eb3b59f4bb7ebf77ac2f1a0fc4efdd53a1787f8d49beee4"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -193,7 +193,7 @@
     },
     {
       "path": "analysis/original-modern-localization-151.md",
-      "sha256": "794c4c6c591aa88dd3a76ace3309892250baed778678ecba0734be5c79df4f88"
+      "sha256": "686acf7cecd92eee875e0fb8a06c5a9047048506de33e2760d81d0836eae8818"
     },
     {
       "path": "analysis/original-modern-lockwindow-history.md",
@@ -453,7 +453,7 @@
     },
     {
       "path": "analysis/original-modern-track-length-text.md",
-      "sha256": "514a6329ef6c918b0237c4b34618d80090bc9e20599c6578aa508ea0c0a6367d"
+      "sha256": "2a1e17a99d22305af8e35db779aaea9e6c043ae6f62077ccd0ecfb199b0c27e6"
     },
     {
       "path": "analysis/original-modern-vehicle-dispatch.md",
@@ -11257,6 +11257,14 @@
           "entry_mentioned": true,
           "addresses": [
             "004d1850"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-localization-151.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004d1850",
+            "004d187e"
           ]
         },
         {

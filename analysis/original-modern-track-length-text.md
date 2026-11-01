@@ -88,3 +88,8 @@ This connects official Track Info assets to the registered image/glow updater, a
 - **Later evidence:** runtime profile bank/file selection and rendered text; selector bounds and malformed/exception paths; full generic dispatcher and text-helper machine contracts; original asset provenance and historical introduction.
 
 No remaining unknown above prevents using this report as a bounded code-level reference. None of the checked static items establishes whole-game reconstruction readiness or runtime compatibility.
+
+
+## Historical km-entry relocation is a separate numbering boundary
+
+The [1.5.0→1.5.1 consumer/asset audit](original-modern-localization-151.md#track-length-consumer-follows-the-moved-km-entry) verifies a one-byte change in the complete170-byte historical helper:1932→1936, both resolving to `km` in all six matching package tables. The lookup maximum grows by five alongside the assets. Final Modern's078ah ID above belongs to a different numbering state; do not use fixed IDs interchangeably across releases. Runtime loading, arbitrary mixed packages and all other consumers remain unverified.

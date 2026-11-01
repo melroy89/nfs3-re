@@ -3,11 +3,55 @@
   "archives": {
     "1.5.0": {
       "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
-      "sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f"
+      "sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "exe_consumer": {
+        "sha256": "d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae",
+        "member": "nfs3.exe",
+        "track_length_unit_index": 1932,
+        "lookup_maximum_index": 1935,
+        "spans": [
+          {
+            "start": "00456590",
+            "end_exclusive": "0045663a",
+            "bytes_sha256": "30bea422f1971e1938fd584eac32581ec207498ccc68346fc959380b28c411e5",
+            "assembly": "analysis/captures/modern-differences/localization-151/1.5.0-00456590.asm",
+            "assembly_sha256": "82c8655a57d79561fc55ec94f9c926387b94789b24fe859c120ac788d2cf904b"
+          },
+          {
+            "start": "004d1850",
+            "end_exclusive": "004d187e",
+            "bytes_sha256": "4512cee6866a609b96aa0e32715328815b8d5626dc51e38293bbf4e35f8491e5",
+            "assembly": "analysis/captures/modern-differences/localization-151/1.5.0-004d1850.asm",
+            "assembly_sha256": "3e2d23b77b62582aec8d2b78acc823fb7dd2f5de63b7916cd75219d633db3235"
+          }
+        ]
+      }
     },
     "1.5.1": {
       "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.1.7z",
-      "sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de"
+      "sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de",
+      "exe_consumer": {
+        "sha256": "4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17",
+        "member": "nfs3.exe",
+        "track_length_unit_index": 1936,
+        "lookup_maximum_index": 1940,
+        "spans": [
+          {
+            "start": "00456590",
+            "end_exclusive": "0045663a",
+            "bytes_sha256": "421c4abb4daee61b32e7c9a9e55f81ebbefac4518a4df2eec3a45d36125d08eb",
+            "assembly": "analysis/captures/modern-differences/localization-151/1.5.1-00456590.asm",
+            "assembly_sha256": "7f9ff916ae406c1ee5e6200a0a99ff4de8faa6c8c4cc43732ae1cc0cd8c3cdf8"
+          },
+          {
+            "start": "004d1850",
+            "end_exclusive": "004d187e",
+            "bytes_sha256": "ce66b33ccd4ebd2df678335c95436a0906fb5de526e8106714b2b8930f8188c7",
+            "assembly": "analysis/captures/modern-differences/localization-151/1.5.1-004d1850.asm",
+            "assembly_sha256": "0d671b5d1195aa87afd6dd1a10b6582b7336f1b2f660225a41271d5802123f98"
+          }
+        ]
+      }
     }
   },
   "languages": {
@@ -28,6 +72,7 @@
         "offset_table_bytes": 7764,
         "complete_payload_partition": true
       },
+      "track_length_token_preserved": true,
       "changed_existing": [
         {
           "index": 1932,
@@ -103,6 +148,7 @@
         "offset_table_bytes": 7764,
         "complete_payload_partition": true
       },
+      "track_length_token_preserved": true,
       "changed_existing": [
         {
           "index": 1932,
@@ -178,6 +224,7 @@
         "offset_table_bytes": 7764,
         "complete_payload_partition": true
       },
+      "track_length_token_preserved": true,
       "changed_existing": [
         {
           "index": 1283,
@@ -266,6 +313,7 @@
         "offset_table_bytes": 7764,
         "complete_payload_partition": true
       },
+      "track_length_token_preserved": true,
       "changed_existing": [
         {
           "index": 1932,
@@ -341,6 +389,7 @@
         "offset_table_bytes": 7764,
         "complete_payload_partition": true
       },
+      "track_length_token_preserved": true,
       "changed_existing": [
         {
           "index": 1932,
@@ -416,6 +465,7 @@
         "offset_table_bytes": 7764,
         "complete_payload_partition": true
       },
+      "track_length_token_preserved": true,
       "changed_existing": [
         {
           "index": 1932,
