@@ -19,9 +19,9 @@ The [eight-investigation checkpoint](evidence/validation/hud-menu-import-checkpo
 |[DirectDraw imports](original-modern-glide-reference-identity.md#ddraw-import-removal-is-verified-across140-to150-for-both-named-binaries) |Both named140 binaries import DirectDrawCreate;150/final omit static DDRAW import |Conditional dynamic use remains; no no-dependency claim |
 |[Callback selection](original-modern-common-menu-buttons.md#callback-selection-gains-a-none-check-and-narrower-sum-in140) |131→140 none sentinel check and16-bit sum; complete37-byte delta explained |Producer/callback effects and overflow-state reachability |
 
-The checkpoint also reproduces the earlier negative renderer-gate and editor-draw checks. Their historical “unverified” conclusions are not the current status of the later positive branch/asset findings. A repeatable negative check cannot invalidate evidence from a different, now-bound route. Catalog labels remain88 vendor-only/53 bounded-static/147 partial/2 unresolved; these count release-note bullets, not distinct EXE changes or completion percentage.
+The checkpoint also reproduces the earlier negative renderer-gate and editor-draw checks. Their historical “unverified” conclusions are not the current status of the later positive branch/asset findings. A repeatable negative check cannot invalidate evidence from a different, now-bound route. At that checkpoint catalog labels were88 vendor-only/53 bounded-static/147 partial/2 unresolved; these count release-note bullets, not distinct EXE changes or completion percentage.
 
-Next static priorities are the claimed HUD-preview arrangement (MP150-020) and gameplay-exit resolution handling (MP150-035), reusing existing HUD layout/window lifecycle evidence. Broader changed-region semantics, external components and cross-version runtime compatibility remain part of the active comparison; this checkpoint does not close them.
+At that checkpoint the next static priorities were HUD-preview arrangement (MP150-020) and gameplay-exit resolution handling (MP150-035). The later preview comparison below now supplies partial support; gameplay-exit handling remains next, reusing existing window lifecycle evidence. Broader changed-region semantics, external components and cross-version runtime compatibility remain part of the active comparison; this checkpoint does not close them.
 
 ## Recent configuration and HUD mechanisms
 
@@ -660,7 +660,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **88 Claimed, 53 Static, 147 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **87 Claimed, 53 Static, 148 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -765,7 +765,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-017 | Opponents List and Speeds List have standard bevel when SoftTri is used (as it was for other renderers). | Partial |
 | MP150-018 | An ability to enter digits from the Num Pad when Num Lock is on. | Partial |
 | MP150-019 | Commas are treated as dots when parsing an IP address. | Static |
-| MP150-020 | HUD preview in the settings now arranged well. | Claimed |
+| MP150-020 | HUD preview in the settings now arranged well. | Partial |
 | MP150-021 | Volume and Alpha sliders display own value (in percents). | Partial |
 | MP150-022 | Logos from the LOGO2.QFS (if it exists) are used for animation in the menu (together with logos from the LOGO.QFS). Original version of the game have this file, but it is unused. | Static |
 | MP150-023 | Animated logos of automobile manufacturers are disappearing more smoothly. | Partial |
@@ -1136,3 +1136,7 @@ The [two-member import comparison](original-modern-glide-reference-identity.md#d
 ## Historical menu callback selection contract
 
 The [complete callback-loop comparison](original-modern-common-menu-buttons.md#callback-selection-gains-a-none-check-and-narrower-sum-in140) accounts for all37 differing bytes in its363-byte envelope.1.3.1→1.4.0 adds the100 none-selection check and changes sum width to16 bits before sign extension. The retained query already shares the sentinel policy but keeps32-bit summation. Derived boundary cases and runtime reachability limits are explicit; this independent EXE change is not forced into the later dropdown-priority release note.
+
+## Historical HUD preview coordinate arrangement
+
+The [HUD preview comparison](original-modern-hud-settings-policy.md#hud-preview-authored-coordinates-change-in150) measures13 linked-image coordinate changes in1.4.0→1.5.0, all retained final. Same38 historical linked controls and unchanged moved-image aliases distinguish arrangement from renaming; paired EXE property descriptors bind x/y stores. MP150-020 advances to partial support, with runtime geometry overrides, actual loading and visual quality explicitly unverified.

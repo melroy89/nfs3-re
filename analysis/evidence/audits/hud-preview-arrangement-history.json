@@ -1,0 +1,1987 @@
+{
+  "kind": "static-hud-preview-arrangement-history",
+  "archives": {
+    "reference": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+      "sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127"
+    },
+    "modern": {
+      "path": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3"
+    },
+    "1.4.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9"
+    },
+    "1.5.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f"
+    }
+  },
+  "snapshots": {
+    "reference": {
+      "member": "fedata/MENUS/HUD.MNU",
+      "sha256": "1186648c5352fadfd94632cf2b43cc716e23d9c078863b563fa1602f3b14d60c",
+      "bytes": 32642,
+      "linked_images": [
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "13",
+          "codelink": "maineffects bandeffects",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "bgn1",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "23",
+          "y": "9",
+          "priority": "2",
+          "codelink": "nfslogo",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "nbal",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "300",
+          "y": "157",
+          "priority": "11",
+          "codelink": "screen",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "scrn",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "rearImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "rear",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "oppnImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "oppn",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "posImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "posi",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "drpmImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "drpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "arpmImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "arpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "mrpmImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "mrpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "dmphImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "dmph",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "dkphImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "dkph",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "amphImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "akphImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "lapsImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "laps",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "timeImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "splitImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "opplImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "oppl",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "mapImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "mpr4",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "160",
+          "y": "128",
+          "priority": "10",
+          "codelink": "oppnImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "oppn",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "286",
+          "y": "132",
+          "priority": "10",
+          "codelink": "posImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "posi",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "219",
+          "y": "124",
+          "priority": "10",
+          "codelink": "drpmImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "drpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "219",
+          "y": "124",
+          "priority": "10",
+          "codelink": "arpmImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "arpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "219",
+          "y": "124",
+          "priority": "10",
+          "codelink": "mrpmImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "mrpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "125",
+          "priority": "10",
+          "codelink": "dmphImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "dmph",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "125",
+          "priority": "10",
+          "codelink": "dkphImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "dkph",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "124",
+          "priority": "10",
+          "codelink": "amphImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "124",
+          "priority": "10",
+          "codelink": "akphImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "2",
+          "y": "132",
+          "priority": "10",
+          "codelink": "lapsImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "laps",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "2",
+          "y": "121",
+          "priority": "10",
+          "codelink": "timeImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "286",
+          "y": "121",
+          "priority": "10",
+          "codelink": "splitImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "165",
+          "priority": "10",
+          "codelink": "opplImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "oppl",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "267",
+          "y": "151",
+          "priority": "10",
+          "codelink": "mapImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "mpr4",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "copRadarImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "copr",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "132",
+          "priority": "10",
+          "codelink": "copRadarImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "copr",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "oppcImage",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "oppc",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "165",
+          "priority": "10",
+          "codelink": "oppcImage2",
+          "postonly": "0",
+          "mainonly": "0",
+          "enablefordemo": "0",
+          "enablefore3demo": "0",
+          "image": "oppc",
+          "filename": "hud.fsh",
+          "fadelevel": "0",
+          "bordercolor": "0"
+        }
+      ]
+    },
+    "modern": {
+      "member": "fedata/menus/hud.mnu",
+      "sha256": "284ea3b9949b53bde177d9edb32eb0473481c32e5dac13d48f8aa24af25984b3",
+      "bytes": 21001,
+      "linked_images": [
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "13",
+          "codelink": "maineffects bandeffects",
+          "image": "bgn1",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "281",
+          "y": "434",
+          "priority": "1",
+          "codelink": "3btt",
+          "image": "3btt",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "421",
+          "y": "434",
+          "priority": "1",
+          "codelink": "2btt",
+          "image": "2btt",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "23",
+          "y": "9",
+          "priority": "2",
+          "codelink": "nfslogo",
+          "image": "nbal",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "270",
+          "y": "157",
+          "priority": "11",
+          "codelink": "screen",
+          "image": "scrn",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "rearImage",
+          "image": "rear",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "oppnImage",
+          "image": "oppn",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "posImage",
+          "image": "posi",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "drpmImage",
+          "image": "drpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "arpmImage",
+          "image": "arpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "mrpmImage",
+          "image": "mrpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "dmphImage",
+          "image": "dmph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "dkphImage",
+          "image": "dkph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "amphImage",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "akphImage",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "lapsImage",
+          "image": "laps",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "timeImage",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "splitImage",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "opplImage",
+          "image": "oppl",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "mapImage",
+          "image": "mpr4",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "148",
+          "y": "145",
+          "priority": "10",
+          "codelink": "oppnImage2",
+          "image": "oppn",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "286",
+          "y": "132",
+          "priority": "10",
+          "codelink": "posImage2",
+          "image": "posi",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "219",
+          "y": "125",
+          "priority": "10",
+          "codelink": "drpmImage2",
+          "image": "drpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "210",
+          "y": "120",
+          "priority": "10",
+          "codelink": "arpmImage2",
+          "image": "arpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "210",
+          "y": "120",
+          "priority": "10",
+          "codelink": "mrpmImage2",
+          "image": "mrpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "125",
+          "priority": "10",
+          "codelink": "dmphImage2",
+          "image": "dmph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "125",
+          "priority": "10",
+          "codelink": "dkphImage2",
+          "image": "dkph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "70",
+          "y": "120",
+          "priority": "10",
+          "codelink": "amphImage2",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "70",
+          "y": "120",
+          "priority": "10",
+          "codelink": "akphImage2",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "2",
+          "y": "132",
+          "priority": "10",
+          "codelink": "lapsImage2",
+          "image": "laps",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "2",
+          "y": "122",
+          "priority": "10",
+          "codelink": "timeImage2",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "283",
+          "y": "122",
+          "priority": "10",
+          "codelink": "splitImage2",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "177",
+          "priority": "10",
+          "codelink": "opplImage2",
+          "image": "oppl",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "261",
+          "y": "165",
+          "priority": "10",
+          "codelink": "mapImage2",
+          "image": "mpr4",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "copRadarImage",
+          "image": "copr",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "146",
+          "priority": "10",
+          "codelink": "copRadarImage2",
+          "image": "copr",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "oppcImage",
+          "image": "oppc",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "174",
+          "priority": "10",
+          "codelink": "oppcImage2",
+          "image": "oppc",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        }
+      ]
+    },
+    "1.4.0": {
+      "member": "fedata/menus/hud.mnu",
+      "sha256": "6af22847e6795a552c9993183234cbcfc538eb61d56e91b2f5fbfc0f4bbf83fa",
+      "bytes": 21021,
+      "linked_images": [
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "13",
+          "codelink": "maineffects bandeffects",
+          "image": "bgn1",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "281",
+          "y": "434",
+          "priority": "1",
+          "codelink": "3btt",
+          "image": "3btt",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "421",
+          "y": "434",
+          "priority": "1",
+          "codelink": "2btt",
+          "image": "2btt",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "23",
+          "y": "9",
+          "priority": "2",
+          "codelink": "nfslogo",
+          "image": "nbal",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "300",
+          "y": "157",
+          "priority": "11",
+          "codelink": "screen",
+          "image": "scrn",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "rearImage",
+          "image": "rear",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "oppnImage",
+          "image": "oppn",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "posImage",
+          "image": "posi",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "drpmImage",
+          "image": "drpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "arpmImage",
+          "image": "arpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "mrpmImage",
+          "image": "mrpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "dmphImage",
+          "image": "dmph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "dkphImage",
+          "image": "dkph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "amphImage",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "akphImage",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "lapsImage",
+          "image": "laps",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "timeImage",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "splitImage",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "opplImage",
+          "image": "oppl",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "mapImage",
+          "image": "mpr4",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "160",
+          "y": "128",
+          "priority": "10",
+          "codelink": "oppnImage2",
+          "image": "oppn",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "286",
+          "y": "132",
+          "priority": "10",
+          "codelink": "posImage2",
+          "image": "posi",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "219",
+          "y": "124",
+          "priority": "10",
+          "codelink": "drpmImage2",
+          "image": "drpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "219",
+          "y": "124",
+          "priority": "10",
+          "codelink": "arpmImage2",
+          "image": "arpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "219",
+          "y": "124",
+          "priority": "10",
+          "codelink": "mrpmImage2",
+          "image": "mrpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "125",
+          "priority": "10",
+          "codelink": "dmphImage2",
+          "image": "dmph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "125",
+          "priority": "10",
+          "codelink": "dkphImage2",
+          "image": "dkph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "124",
+          "priority": "10",
+          "codelink": "amphImage2",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "124",
+          "priority": "10",
+          "codelink": "akphImage2",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "2",
+          "y": "132",
+          "priority": "10",
+          "codelink": "lapsImage2",
+          "image": "laps",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "2",
+          "y": "121",
+          "priority": "10",
+          "codelink": "timeImage2",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "286",
+          "y": "121",
+          "priority": "10",
+          "codelink": "splitImage2",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "165",
+          "priority": "10",
+          "codelink": "opplImage2",
+          "image": "oppl",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "267",
+          "y": "151",
+          "priority": "10",
+          "codelink": "mapImage2",
+          "image": "mpr4",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "copRadarImage",
+          "image": "copr",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "132",
+          "priority": "10",
+          "codelink": "copRadarImage2",
+          "image": "copr",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "oppcImage",
+          "image": "oppc",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "165",
+          "priority": "10",
+          "codelink": "oppcImage2",
+          "image": "oppc",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        }
+      ]
+    },
+    "1.5.0": {
+      "member": "fedata/menus/hud.mnu",
+      "sha256": "284ea3b9949b53bde177d9edb32eb0473481c32e5dac13d48f8aa24af25984b3",
+      "bytes": 21001,
+      "linked_images": [
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "13",
+          "codelink": "maineffects bandeffects",
+          "image": "bgn1",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "281",
+          "y": "434",
+          "priority": "1",
+          "codelink": "3btt",
+          "image": "3btt",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "421",
+          "y": "434",
+          "priority": "1",
+          "codelink": "2btt",
+          "image": "2btt",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "23",
+          "y": "9",
+          "priority": "2",
+          "codelink": "nfslogo",
+          "image": "nbal",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "270",
+          "y": "157",
+          "priority": "11",
+          "codelink": "screen",
+          "image": "scrn",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "rearImage",
+          "image": "rear",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "oppnImage",
+          "image": "oppn",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "posImage",
+          "image": "posi",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "drpmImage",
+          "image": "drpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "arpmImage",
+          "image": "arpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "mrpmImage",
+          "image": "mrpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "dmphImage",
+          "image": "dmph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "dkphImage",
+          "image": "dkph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "amphImage",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "akphImage",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "lapsImage",
+          "image": "laps",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "timeImage",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "splitImage",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "opplImage",
+          "image": "oppl",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "mapImage",
+          "image": "mpr4",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "148",
+          "y": "145",
+          "priority": "10",
+          "codelink": "oppnImage2",
+          "image": "oppn",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "286",
+          "y": "132",
+          "priority": "10",
+          "codelink": "posImage2",
+          "image": "posi",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "219",
+          "y": "125",
+          "priority": "10",
+          "codelink": "drpmImage2",
+          "image": "drpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "210",
+          "y": "120",
+          "priority": "10",
+          "codelink": "arpmImage2",
+          "image": "arpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "210",
+          "y": "120",
+          "priority": "10",
+          "codelink": "mrpmImage2",
+          "image": "mrpm",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "125",
+          "priority": "10",
+          "codelink": "dmphImage2",
+          "image": "dmph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "65",
+          "y": "125",
+          "priority": "10",
+          "codelink": "dkphImage2",
+          "image": "dkph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "70",
+          "y": "120",
+          "priority": "10",
+          "codelink": "amphImage2",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "70",
+          "y": "120",
+          "priority": "10",
+          "codelink": "akphImage2",
+          "image": "amph",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "2",
+          "y": "132",
+          "priority": "10",
+          "codelink": "lapsImage2",
+          "image": "laps",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "2",
+          "y": "122",
+          "priority": "10",
+          "codelink": "timeImage2",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "283",
+          "y": "122",
+          "priority": "10",
+          "codelink": "splitImage2",
+          "image": "time",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "177",
+          "priority": "10",
+          "codelink": "opplImage2",
+          "image": "oppl",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "261",
+          "y": "165",
+          "priority": "10",
+          "codelink": "mapImage2",
+          "image": "mpr4",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "copRadarImage",
+          "image": "copr",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "146",
+          "priority": "10",
+          "codelink": "copRadarImage2",
+          "image": "copr",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "0",
+          "y": "0",
+          "priority": "10",
+          "codelink": "oppcImage",
+          "image": "oppc",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        },
+        {
+          "section": "image",
+          "x": "10",
+          "y": "174",
+          "priority": "10",
+          "codelink": "oppcImage2",
+          "image": "oppc",
+          "filename": "hud.fsh",
+          "fadelevel": "0"
+        }
+      ]
+    }
+  },
+  "property_bindings": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "descriptors": [
+        {
+          "address": "00557c10",
+          "name": "x",
+          "kind": 1,
+          "form": 1,
+          "destination": "00604ee6",
+          "hex": "010000006884530001000000e64e6000"
+        },
+        {
+          "address": "00557c20",
+          "name": "y",
+          "kind": 1,
+          "form": 1,
+          "destination": "00604ee8",
+          "hex": "010000006c84530001000000e84e6000"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "descriptors": [
+        {
+          "address": "00557c10",
+          "name": "x",
+          "kind": 1,
+          "form": 1,
+          "destination": "00604ee6",
+          "hex": "010000006884530001000000e64e6000"
+        },
+        {
+          "address": "00557c20",
+          "name": "y",
+          "kind": 1,
+          "form": 1,
+          "destination": "00604ee8",
+          "hex": "010000006c84530001000000e84e6000"
+        }
+      ]
+    }
+  },
+  "historical_coordinate_changes": [
+    {
+      "codelink": "screen",
+      "old_xy": [
+        300,
+        157
+      ],
+      "new_xy": [
+        270,
+        157
+      ],
+      "delta": [
+        -30,
+        0
+      ],
+      "retained_image_alias": "scrn"
+    },
+    {
+      "codelink": "oppnImage2",
+      "old_xy": [
+        160,
+        128
+      ],
+      "new_xy": [
+        148,
+        145
+      ],
+      "delta": [
+        -12,
+        17
+      ],
+      "retained_image_alias": "oppn"
+    },
+    {
+      "codelink": "drpmImage2",
+      "old_xy": [
+        219,
+        124
+      ],
+      "new_xy": [
+        219,
+        125
+      ],
+      "delta": [
+        0,
+        1
+      ],
+      "retained_image_alias": "drpm"
+    },
+    {
+      "codelink": "arpmImage2",
+      "old_xy": [
+        219,
+        124
+      ],
+      "new_xy": [
+        210,
+        120
+      ],
+      "delta": [
+        -9,
+        -4
+      ],
+      "retained_image_alias": "arpm"
+    },
+    {
+      "codelink": "mrpmImage2",
+      "old_xy": [
+        219,
+        124
+      ],
+      "new_xy": [
+        210,
+        120
+      ],
+      "delta": [
+        -9,
+        -4
+      ],
+      "retained_image_alias": "mrpm"
+    },
+    {
+      "codelink": "amphImage2",
+      "old_xy": [
+        65,
+        124
+      ],
+      "new_xy": [
+        70,
+        120
+      ],
+      "delta": [
+        5,
+        -4
+      ],
+      "retained_image_alias": "amph"
+    },
+    {
+      "codelink": "akphImage2",
+      "old_xy": [
+        65,
+        124
+      ],
+      "new_xy": [
+        70,
+        120
+      ],
+      "delta": [
+        5,
+        -4
+      ],
+      "retained_image_alias": "amph"
+    },
+    {
+      "codelink": "timeImage2",
+      "old_xy": [
+        2,
+        121
+      ],
+      "new_xy": [
+        2,
+        122
+      ],
+      "delta": [
+        0,
+        1
+      ],
+      "retained_image_alias": "time"
+    },
+    {
+      "codelink": "splitImage2",
+      "old_xy": [
+        286,
+        121
+      ],
+      "new_xy": [
+        283,
+        122
+      ],
+      "delta": [
+        -3,
+        1
+      ],
+      "retained_image_alias": "time"
+    },
+    {
+      "codelink": "opplImage2",
+      "old_xy": [
+        10,
+        165
+      ],
+      "new_xy": [
+        10,
+        177
+      ],
+      "delta": [
+        0,
+        12
+      ],
+      "retained_image_alias": "oppl"
+    },
+    {
+      "codelink": "mapImage2",
+      "old_xy": [
+        267,
+        151
+      ],
+      "new_xy": [
+        261,
+        165
+      ],
+      "delta": [
+        -6,
+        14
+      ],
+      "retained_image_alias": "mpr4"
+    },
+    {
+      "codelink": "copRadarImage2",
+      "old_xy": [
+        10,
+        132
+      ],
+      "new_xy": [
+        10,
+        146
+      ],
+      "delta": [
+        0,
+        14
+      ],
+      "retained_image_alias": "copr"
+    },
+    {
+      "codelink": "oppcImage2",
+      "old_xy": [
+        10,
+        165
+      ],
+      "new_xy": [
+        10,
+        174
+      ],
+      "delta": [
+        0,
+        9
+      ],
+      "retained_image_alias": "oppc"
+    }
+  ],
+  "verified": [
+    "Exactly13 linked-image coordinate pairs change140->150,with same38 linked controls and no ID renumbering.",
+    "All13 changed pairs are retained in final;their image aliases are unchanged.",
+    "Shared x/y property rows bind authored coordinates to form1 destinations entry+6/+8 in both EXEs.",
+    "Only authored coordinate changes are classified here;other HUD policy/navigation changes are separate."
+  ],
+  "limits": [
+    "No target, menu parser, instruction probes, compilation or Ghidra writes.",
+    "Final screen pixels, runtime overwrites, parent transforms, loaded image identity and visual quality remain unverified.",
+    "Codelink suffix2 is reported literally;not independently assigned to player2 or a role.",
+    "Unchanged image aliases do not prove unchanged asset payloads.",
+    "Author-reference assets not authenticated pristine retail or proven paired to supplied original EXE.",
+    "MP150-020 has partial package/static support;arranged well is not a quantitative acceptance result."
+  ]
+}

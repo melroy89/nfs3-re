@@ -140,3 +140,29 @@ Both EXEs retain the six corresponding page callback records at`00555df8..00555e
 ### Early package already uses the final widget-ID policy
 
 The expanded [asset-admission audit](evidence/audits/police-editor-asset-admission.json) also pins the author-hosted1.1.0 archive and parses the same six role-specific menu members. **All six ordered HudItem-ID sequences already match final Modern**, including police-only removals and preserved racer-side items. None of these six early files is byte-identical to its final counterpart; item-ID agreement does not establish equal layout, other properties or visible output. This bounds the authored omission to **present by1.1.0**, without authenticating retail assets or independently proving the claimed1.0.0 introduction. Exact early member hashes and sequences are retained; no historical menu was executed.
+
+## HUD preview authored coordinates change in150
+
+**Verified package-level coordinate change and paired x/y bindings; final screen layout untested.** The [preview-arrangement audit](evidence/audits/hud-preview-arrangement-history.json), reproduced with `python3 analysis/scripts/audit_hud_preview_arrangement_history.py`, pins author-reference,1.4.0,1.5.0 and final `hud.mnu` members. Exactly13 linked image controls change coordinate pairs at1.4.0→1.5.0; all13 new pairs remain in final.
+
+| Literal codelink |1.4.0 (x,y) |1.5.0/final (x,y) |
+|---|---|---|
+|`screen` |300,157 |270,157 |
+|`oppnImage2` |160,128 |148,145 |
+|`drpmImage2` |219,124 |219,125 |
+|`arpmImage2`, `mrpmImage2` |219,124 |210,120 |
+|`amphImage2`, `akphImage2` |65,124 |70,120 |
+|`timeImage2` |2,121 |2,122 |
+|`splitImage2` |286,121 |283,122 |
+|`opplImage2` |10,165 |10,177 |
+|`mapImage2` |267,151 |261,165 |
+|`copRadarImage2` |10,132 |10,146 |
+|`oppcImage2` |10,165 |10,174 |
+
+The two historical menus and final each contain38 uniquely codelink-bound image sections with the same names. The author-reference asset has36 such sections; it is recorded separately and is not falsely described as identical to1.4.0. The13 moved controls retain their image aliases across140/150/final. This distinguishes an arrangement change from changing those alias strings, but does not establish identical underlying image payloads. Literal suffix`2` is not independently assigned to a particular player/view by this asset comparison.
+
+Both supplied original/final EXEs retain named common descriptor`00557c10` for x and`00557c20` for y, kind1/form1 destinations`00604ee6/00604ee8` (entry+06/+08). Their exact rows are retained in the audit. The [existing writer review](original-modern-control-component-keys.md#common-property-stores-do-not-directly-overlap-either-byte) establishes two-byte form1 stores. Full initialization, later geometry writes and parent transforms remain separate: these are authored coordinates, not measured final pixels.
+
+The same historical HUD asset also changes list policy and`ypos` metadata. Those do not supply a substitute explanation for the13 explicit image-coordinate deltas; earlier sections separately map the policy and list bindings. Conversely this coordinate table does not establish every change in the menu or EXE.
+
+**MP150-020 advances to partial package/static support:** a directly measured preview rearrangement exists at the advertised boundary, with one screen control and twelve other linked image controls moved by differing amounts. The subjective claim “arranged well”, visible overlap/alignment, active installed asset loading, runtime overrides and image rendering remain unverified. Author-reference files are not authenticated retail or proven paired to the supplied original EXE. Reconstruction must preserve the chosen authored positions and any verified runtime transforms rather than assuming a single uniform offset. No menu, game, instruction probe, compiler or Ghidra write occurred.
