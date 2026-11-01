@@ -175,3 +175,29 @@ Thus the51st/101st entries are not excluded by these specific label-routing boun
 - **MP120-017/024** concern renderer components in the release-note context. This EXE comparison cannot independently establish either DLL’s capacity or provider behaviour; retain their separate evidence status.
 
 Provider ceilings can prevent the final admitted slot from ever being populated; no such ceiling is assumed here. Record-bank storage/protection, all reset paths and actual display support remain separate questions. Preserve the observed signed comparisons and inclusive label ranges in a version-faithful C reconstruction. Do not silently substitute advertised50/100 caps or infer a runtime fault merely from local admission arithmetic.
+
+## Early Modern already bypasses the budget gate and has a broader depth test
+
+**Verified static historical predicates; no display-mode execution.** The [admission-history audit](evidence/audits/mode-admission-history.json), reproduced with `python3 analysis/scripts/audit_mode_admission_history.py`, pins supplied original, author-hosted1.1.0 and official final EXEs. It retains complete original/early enumerator envelopes`004bed90..004bee72` and the complete67-byte final eligibility helper`004bee60..004beea3`.
+
+| Local eligibility property | Supplied original |Modern1.1.0 |Final1.6.1 |
+|---|---|---|---|
+|Geometry |Exact wrapped3W=4H |Ordinary truncated100W/H in124..178 |Same ordinary ratio interval |
+|Depth |15 or16 |**Signed depth>=16** |16 or32 |
+|Original budget/size gate |Present |Bypassed |Absent from new helper |
+|Descriptor source |Indirect about call |Retains indirect about call |Cached descriptor in enclosing enumerator |
+
+Early mode enumeration replaces the original size/budget block with`JMP004bee32` at`004bee10`, then32 NOPs at`004bee12..004bee32`. The aspect arithmetic is already changed to IMUL100/IDIV and bounds124/178. Its depth test is`CMP ECX,10h; JL reject` at`004bedfe..004bee03`: it does not yet implement final's equality tests. A hypothetical24-bit record can therefore pass this early local predicate while final rejects it. This is **not** evidence that a bundled driver can enumerate or render24-bit modes.
+
+For the following instruction-derived cases, assume ordinary positive fitting dimensions, flags bit0 set/bit1 clear, signed field+14h>=2, and the original8 MiB budget case. Each result covers only the local admission rules, not actual provider enumeration or mode selection:
+
+| Candidate W×H×depth | Original,8 MiB |Early1.1.0 |Final1.6.1 |
+|---|---|---|---|
+|1920×1440×16 |Reject: size/budget |Admit locally |Admit locally |
+|1024×768×24 |Reject: depth |Admit locally |Reject: depth |
+|1024×768×32 |Reject: depth |Admit locally |Admit locally |
+|320×240×16 |Admit locally |Admit locally |Admit locally |
+
+The last case reinforces the existing limit: these EXE predicates alone do not enforce a640×480 minimum. Conversely, bypassing the old budget gate does not make all resolutions valid. Final still has ratio/depth/flag restrictions, driver enumeration/storage limits and machine-width arithmetic; providers, mode callbacks and allocations can impose additional limits.
+
+**MP100-003 advances to partial historical support:** a concrete original size restriction is removed in early Modern, with useful larger local candidates admitted. “No unreasonable maximum limits” remains broader than this evidence.1.0.0 introduction, the exact later depth-narrowing date, actual mode menus and rendered operation remain unverified. This also separates at least three edits—budget removal, aspect/depth policy and later descriptor-cache refactor—rather than silently assigning final's entire helper to the first release. No driver, game, instruction probe, Ghidra write or executable mutation occurred.
