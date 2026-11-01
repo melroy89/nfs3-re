@@ -209,3 +209,23 @@ The equal-height wide examples keep Modern’s input/base equal while original g
 The separate [bitmap-font investigation](original-modern-car-alias.md#scale-initialization-and-setter-are-retained) remains valid: when font flag`00840188==0`, the setter accepts the supplied scale; when nonzero, it selects a font variant and computes scale from **actual width`007cdac8` times the retained approximately1/320 coefficient**, rather than the supplied scale itself. The complete loader also still chooses its FFN file set using signed actual width>=640. Both bodies are identical in original and final.
 
 Accordingly **MP100-004 receives partial static support for the fitted-reference→scale→conditional-text route**. This review does not establish a universal height-based rule for all menu, atlas, bitmap and HUD fonts, nor that every widescreen label avoids excessive size. Other font-selection paths, historical1.0.0 introduction and visible output remain follow-up requirements. Preserve the chosen version’s scale sources and both gates in reconstruction; globally replacing width with height would alter retained behaviour that this comparison has not shown the patch changed.
+
+## Opponent Name and List have distinct profile defaults
+
+**Verified named bindings, static defaults and selected conditional consumers; rendered visibility untested.** The [opponent-default audit](evidence/audits/opponent-hud-defaults.json), reproduced with `python3 analysis/scripts/audit_opponent_hud_defaults.py`, retains both complete default initializers and two paired consumer spans. It resolves previously offset-only fields+04/+08 by12 named20-byte descriptors, shared in both EXEs:
+
+- `opponentName`, `opponentNamecop`, `opponentName1`, `opponentNamecop1`, `opponentName2`, `opponentNamecop2` bind header+04.
+- The corresponding `opponentList*` descriptors bind header+08.
+- All use the same two-entry choice-ID list at`005561be`; Name and List are distinct settings, not alternative names for one storage cell.
+
+| Profile suffix | Original Name/List defaults | Final Modern Name/List defaults |
+|---|---|---|
+|`1` racer |1 /0 |0 /1 |
+|`2` racer |1 /0 |0 /1 |
+|`cop1`, `cop2` |0 /0 |0 /0 |
+
+These match the six-profile header table above. Original writes the racer Name fields at`004858c5/004858cb` from retained literal1 in EDX, then zeroes EDX at`004858e0` and writes their List fields at`004858fa/00485900`. Modern zeroes ECX/EDX and increments EDX at`00485886..0048588b`, writes Name fields from ECX at`004858bb/004858c7`, and List fields from EDX at`004858df/004858eb`. Original helper preservation supporting the literal1 is already established in the earlier default-header analysis.
+
+The complete bounded consumers `00482dcd..00482e6f` (162 bytes) and `00483614..004836c4` (176 bytes) are byte-identical between versions. They read selected header+08, skip their list branches when zero, and otherwise separate a nonzero role-local route to`0048a660` from a zero-role route that additionally requires signed`005efda0>1` before calling standings renderer`0048ae70`. This establishes an admission effect, not unconditional display. Full profile/session index production, all caller paths and other drawing gates remain separate. These are complete captured branch spans, not claims to complete parent-function boundaries.
+
+**MP100-033 advances to partial support:** the named racer profiles change from Name enabled/List disabled to Name disabled/List enabled, consistent with the split-screen-default claim. The cop profiles do not receive the same default swap. Suffix-to-live-view/session admission, saved preferences, actual rendered layout and1.0.0 introduction remain unverified. Do not expand the release note into every role/context or infer that either renderer was removed. The separate standings/font/reference-dimension changes above still affect output after admission. No game, HUD draw, instruction probe or Ghidra write was performed.
