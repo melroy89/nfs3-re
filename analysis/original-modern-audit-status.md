@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **111 vendor-only,51 bounded-static,126 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **110 vendor-only,51 bounded-static,127 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -645,3 +645,7 @@ The [paired adapter audit](original-modern-renderer-loading.md#historical-nglide
 ## Menu music default changes across Modern history
 
 The [three-baseline default audit](original-modern-music-selection.md#historical-romulus-default-is-not-the-final-modern-default) verifies original selector0, early1.1.0 selector2/Romulus 3 and final selector0/Random (All), with six changed bytes in the complete early audio-default block. This qualifies the old release-note claim rather than presenting it as final behavior. MP100-034 advances to partial historical support; counts111/51/126/2. Exact change dates, user-setting admission and playback remain unverified; no target execution or database changes.
+
+## Historical cabin extent correction dated
+
+The [three-release helper comparison](original-modern-view-overlay.md#historical-fixed-expansion-becomes-resolution-dependent-in160) verifies identical36-byte+1/+1 helpers in1.1.0/1.5.3, replaced by the63-byte resolution-dependent helper in1.6.0 and retained in final. Coordinate units, general-register preservation and physical pixel/seam claims remain distinct. MP100-018 advances to partial; MP160-008 gains its direct release boundary. Counts110/51/127/2; no target execution or database changes.

@@ -68,7 +68,7 @@ The paired setup `00488b8c..00488c33` (167 bytes), now pinned by the overlay aud
 
 Combined with the [expanded rectangle producer](original-modern-viewport-geometry.md#overlay-rectangle-at-007a2750-separate-derived-extent-correction), this provides partial static support for MP160-008. For X=0 and ordinary positive, nonoverflowing source width W, the width correction is `floor((W-1)/640)`:0 at640,1 at1280,2 at1920,3 at2560. These are instruction-derived extent deltas, not observed pixel measurements. It is **not** a global three-unit cap: at3840 the same expression yields5. The routine also changes height, and Modern's upstream covering rectangle can differ from original's physical/fitted source, so this local correction alone does not describe every displayed cabin boundary.
 
-The catalog records this as partial: named dashboard-resource linkage and the width-dependent mechanism are established, while exact screen-pixel coverage, seam removal, all flags/resolutions, historical introduction and final rendering remain unresolved. The earlier one-pixel claim MP100-018 cannot be dated or isolated from this final pair and remains separate. No image, game or renderer code was executed.
+The catalog records this as partial: named dashboard-resource linkage and the width-dependent mechanism are established, while exact screen-pixel coverage, seam removal, all flags/resolutions and final rendering remain unresolved. The historical comparison below now dates the replacement to1.5.3→1.6.0 and separately identifies the early fixed+1/+1 mechanism; the final pair alone could not establish these historical facts. No image, game or renderer code was executed.
 
 ## Rectangle units reach tiled vertex coordinates, not proven pixels
 
@@ -83,3 +83,28 @@ This closes a mechanical step for the dashboard claim: changed rectangle values 
 The audit now compares complete `004d4ae0..004d5030`,1360 bytes including RET8 at `004d502d`; all bytes match between original and official Modern. Existing [builder research](detailed-analysis-notes.md#shape-texture-tile-and-remainder-atlas-builder-named) establishes its256-step traversal,44-byte output records and separate remainder atlas. This rules out a newly changed local instruction sequence in that complete builder as the direct explanation for the final pair's cabin expansion.
 
 It does not establish equal textures or equal asset dimensions. The builder calls conversion/upload helpers whose implementations or inputs can differ; the [shape-conversion comparison](original-modern-shape-conversion.md) already documents changed conversion policy. Renderer descriptors, image content and caller arguments also remain dependencies. Nor does this final-pair equality isolate the historical MP100-018 one-pixel change. The supported final-pair mechanism remains the changed rectangle/source passed into retained tile-coordinate construction; upstream texture equivalence and physical raster coverage require separate evidence. No texture was built or uploaded.
+
+## Historical fixed expansion becomes resolution dependent in160
+
+**Verified static historical boundary; no rendered acceptance.** The [extent-history audit](evidence/audits/cabin-extent-history.json), reproduced with `python3 analysis/scripts/audit_cabin_extent_history.py`, pins author-hosted1.1.0,1.5.3 and1.6.0 archives/EXEs and compares the final official helper. It builds on the dash.qfs association and coordinate submission evidence above, without claiming historical asset/provider validation.
+
+| Version | Complete correction helper, exclusive end | Local extent policy |
+|---|---|---|
+|1.1.0 | `004be874..004be898`,36 bytes | `{X,Y,W+1,H+1}` with32-bit wrapping |
+|1.5.3 | `004be850..004be874`,36 bytes | Byte-identical to1.1.0 |
+|1.6.0 | `004be85c..004be89b`,63 bytes | `{X,Y,W+N,H+floor(3*N/4)}` under ordinary nonoverflowing conditions |
+|Final1.6.1 | Same63-byte helper as1.6.0 | Byte-identical to1.6.0 |
+
+All load source DWORDs `007cdb88/8c/90/94` and publish to `007a2750/54/58/5c` through paired byte-identical12-byte setters. The early complete helper increments ECX and EDX once, retaining X/Y. The later helper derives N through the repeated subtract640/signed-JLE loop already explained in the [geometry report](original-modern-viewport-geometry.md#overlay-rectangle-at-007a2750-separate-derived-extent-correction); its real input is `wrap32(W-X)`, not unconditionally W. For X=0 and positive fitting W, N=`floor((W-1)/640)`.
+
+| W, assuming X=0 | Early width/height increment |1.6.0/final width/height increment |
+|---:|---|---|
+|640 |1 /1 |0 /0 |
+|1280 |1 /1 |1 /0 |
+|1920 |1 /1 |2 /1 |
+|2560 |1 /1 |3 /2 |
+|3840 |1 /1 |5 /3 |
+
+These are coordinate-extent derivations, not measured pixel changes. This directly dates the replacement of the fixed policy to the1.5.3→1.6.0 pair and explains why the1.6.0 release note differs from the old one-pixel note. It also demonstrates that “0–3” is not a global upper bound. Original/final source-rectangle construction can differ, so the table is not a universal original-versus-final image-size comparison.
+
+**MP100-018 advances to partial historical support:** an early retained EXE has the advertised fixed+1/+1 mechanism, but1.0.0 introduction, actual pixels and gap elimination remain unverified. **MP160-008 remains partial**, now with its historical code boundary established. The old helper does not save its working EAX/EBX/ECX/EDX/EDI; the later helper adds PUSHAD/POPAD, preserving general registers but not flags. A C replacement must distinguish the rectangle results from the exposed register/flag contract. Raw direct-E8 candidates are retained as a bounded search, not an exhaustive decoded reachability proof. No runtime probes, Ghidra writes or executable changes were made.

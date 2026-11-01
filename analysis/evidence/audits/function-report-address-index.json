@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "338d7f853646cd2c26c3e6ebd8c42704cb13ef2b092b3556227faaa0d5bb1309"
+      "sha256": "8e8283e680c6210e95ee470c91cf45a3bbc316593dfb021a7b3df7dbbf6a0d13"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -477,7 +477,7 @@
     },
     {
       "path": "analysis/original-modern-view-overlay.md",
-      "sha256": "f4148cdbef32b5adb4e560d903b839f60a4eaa3a2f21ce00a7679880cf433389"
+      "sha256": "a4e6c313d7ca163ecd794d323e08e60b0614fb1be884d5376e2ef4c7f14ee8a8"
     },
     {
       "path": "analysis/original-modern-viewport-geometry.md",
@@ -9767,6 +9767,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-view-overlay.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004be850"
+          ]
+        },
+        {
           "path": "analysis/original-modern-viewport-geometry.md",
           "entry_mentioned": true,
           "addresses": [
@@ -9813,6 +9820,15 @@
           "entry_mentioned": true,
           "addresses": [
             "004be85c"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-view-overlay.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004be85c",
+            "004be874",
+            "004be898"
           ]
         },
         {

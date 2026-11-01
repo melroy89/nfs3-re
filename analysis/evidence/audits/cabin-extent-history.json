@@ -1,0 +1,198 @@
+{
+  "kind": "static-cabin-overlay-extent-history",
+  "versions": {
+    "1.1.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+      "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+      "member": "nfs3.exe",
+      "sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "captures": [
+        {
+          "start": "004be874",
+          "end_exclusive": "004be898",
+          "sha256": "a4db16ccaf42be7c2c5108310da420c6919a1bd048574972bef6251e30bd65b9",
+          "hex": "a188db7c008b1d8cdb7c008b0d90db7c008b1594db7c004142bf50277a00e801000000c3",
+          "disassembly": [
+            "4be874:\ta1 88 db 7c 00       \tmov    eax,ds:0x7cdb88",
+            "4be879:\t8b 1d 8c db 7c 00    \tmov    ebx,DWORD PTR ds:0x7cdb8c",
+            "4be87f:\t8b 0d 90 db 7c 00    \tmov    ecx,DWORD PTR ds:0x7cdb90",
+            "4be885:\t8b 15 94 db 7c 00    \tmov    edx,DWORD PTR ds:0x7cdb94",
+            "4be88b:\t41                   \tinc    ecx",
+            "4be88c:\t42                   \tinc    edx",
+            "4be88d:\tbf 50 27 7a 00       \tmov    edi,0x7a2750",
+            "4be892:\te8 01 00 00 00       \tcall   0x4be898",
+            "4be897:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004be898",
+          "end_exclusive": "004be8a4",
+          "sha256": "e2da1d6c783423f49c6c0f0ffb260ac8939caef60c4fb501054851f9a241121c",
+          "hex": "8907895f04894f0889570cc3",
+          "disassembly": [
+            "4be898:\t89 07                \tmov    DWORD PTR [edi],eax",
+            "4be89a:\t89 5f 04             \tmov    DWORD PTR [edi+0x4],ebx",
+            "4be89d:\t89 4f 08             \tmov    DWORD PTR [edi+0x8],ecx",
+            "4be8a0:\t89 57 0c             \tmov    DWORD PTR [edi+0xc],edx",
+            "4be8a3:\tc3                   \tret"
+          ]
+        }
+      ],
+      "direct_e8_candidates": [
+        "004be864",
+        "004bea2a"
+      ]
+    },
+    "1.5.3": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.3.7z",
+      "archive_sha256": "0f92afacbbc179500ede3d7e22107999f3d4ad9ff0a41feb8cd00ef65559ec64",
+      "member": "nfs3.exe",
+      "sha256": "07e987193ebeb4b30ac3912f90d8b98f2a34b37632dbad232ecfcea12fdb7c0a",
+      "captures": [
+        {
+          "start": "004be850",
+          "end_exclusive": "004be874",
+          "sha256": "a4db16ccaf42be7c2c5108310da420c6919a1bd048574972bef6251e30bd65b9",
+          "hex": "a188db7c008b1d8cdb7c008b0d90db7c008b1594db7c004142bf50277a00e801000000c3",
+          "disassembly": [
+            "4be850:\ta1 88 db 7c 00       \tmov    eax,ds:0x7cdb88",
+            "4be855:\t8b 1d 8c db 7c 00    \tmov    ebx,DWORD PTR ds:0x7cdb8c",
+            "4be85b:\t8b 0d 90 db 7c 00    \tmov    ecx,DWORD PTR ds:0x7cdb90",
+            "4be861:\t8b 15 94 db 7c 00    \tmov    edx,DWORD PTR ds:0x7cdb94",
+            "4be867:\t41                   \tinc    ecx",
+            "4be868:\t42                   \tinc    edx",
+            "4be869:\tbf 50 27 7a 00       \tmov    edi,0x7a2750",
+            "4be86e:\te8 01 00 00 00       \tcall   0x4be874",
+            "4be873:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004be874",
+          "end_exclusive": "004be880",
+          "sha256": "e2da1d6c783423f49c6c0f0ffb260ac8939caef60c4fb501054851f9a241121c",
+          "hex": "8907895f04894f0889570cc3",
+          "disassembly": [
+            "4be874:\t89 07                \tmov    DWORD PTR [edi],eax",
+            "4be876:\t89 5f 04             \tmov    DWORD PTR [edi+0x4],ebx",
+            "4be879:\t89 4f 08             \tmov    DWORD PTR [edi+0x8],ecx",
+            "4be87c:\t89 57 0c             \tmov    DWORD PTR [edi+0xc],edx",
+            "4be87f:\tc3                   \tret"
+          ]
+        }
+      ],
+      "direct_e8_candidates": [
+        "004be847",
+        "004bea2a"
+      ]
+    },
+    "1.6.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.6.0.7z",
+      "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
+      "member": "nfs3.exe",
+      "sha256": "9fd80c4cdc9827f190698f28aa93f1182218d7c557898fb2653abfc4148c7a72",
+      "captures": [
+        {
+          "start": "004be85c",
+          "end_exclusive": "004be89b",
+          "sha256": "6adc1d82e3f858f20cb89b0d580f3b6019db5248c4487ad4d86e643d15a76a80",
+          "hex": "60a188db7c008b1d8cdb7c008b0d90db7c008b1594db7c0089ce29c631ff81ee800200007e0347ebf501f96bff03c1ef0201fabf50277a00e80300000061c3",
+          "disassembly": [
+            "4be85c:\t60                   \tpusha",
+            "4be85d:\ta1 88 db 7c 00       \tmov    eax,ds:0x7cdb88",
+            "4be862:\t8b 1d 8c db 7c 00    \tmov    ebx,DWORD PTR ds:0x7cdb8c",
+            "4be868:\t8b 0d 90 db 7c 00    \tmov    ecx,DWORD PTR ds:0x7cdb90",
+            "4be86e:\t8b 15 94 db 7c 00    \tmov    edx,DWORD PTR ds:0x7cdb94",
+            "4be874:\t89 ce                \tmov    esi,ecx",
+            "4be876:\t29 c6                \tsub    esi,eax",
+            "4be878:\t31 ff                \txor    edi,edi",
+            "4be87a:\t81 ee 80 02 00 00    \tsub    esi,0x280",
+            "4be880:\t7e 03                \tjle    0x4be885",
+            "4be882:\t47                   \tinc    edi",
+            "4be883:\teb f5                \tjmp    0x4be87a",
+            "4be885:\t01 f9                \tadd    ecx,edi",
+            "4be887:\t6b ff 03             \timul   edi,edi,0x3",
+            "4be88a:\tc1 ef 02             \tshr    edi,0x2",
+            "4be88d:\t01 fa                \tadd    edx,edi",
+            "4be88f:\tbf 50 27 7a 00       \tmov    edi,0x7a2750",
+            "4be894:\te8 03 00 00 00       \tcall   0x4be89c",
+            "4be899:\t61                   \tpopa",
+            "4be89a:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004be89c",
+          "end_exclusive": "004be8a8",
+          "sha256": "e2da1d6c783423f49c6c0f0ffb260ac8939caef60c4fb501054851f9a241121c",
+          "hex": "8907895f04894f0889570cc3",
+          "disassembly": [
+            "4be89c:\t89 07                \tmov    DWORD PTR [edi],eax",
+            "4be89e:\t89 5f 04             \tmov    DWORD PTR [edi+0x4],ebx",
+            "4be8a1:\t89 4f 08             \tmov    DWORD PTR [edi+0x8],ecx",
+            "4be8a4:\t89 57 0c             \tmov    DWORD PTR [edi+0xc],edx",
+            "4be8a7:\tc3                   \tret"
+          ]
+        }
+      ],
+      "direct_e8_candidates": [
+        "004be851",
+        "004bea2a"
+      ]
+    }
+  },
+  "final_retention": {
+    "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+    "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "helper_004be85c_identical_to_160": true
+  },
+  "ordinary_derived_examples": [
+    {
+      "X": 0,
+      "W": 640,
+      "early_delta_width": 1,
+      "early_delta_height": 1,
+      "160_delta_width": 0,
+      "160_delta_height": 0
+    },
+    {
+      "X": 0,
+      "W": 1280,
+      "early_delta_width": 1,
+      "early_delta_height": 1,
+      "160_delta_width": 1,
+      "160_delta_height": 0
+    },
+    {
+      "X": 0,
+      "W": 1920,
+      "early_delta_width": 1,
+      "early_delta_height": 1,
+      "160_delta_width": 2,
+      "160_delta_height": 1
+    },
+    {
+      "X": 0,
+      "W": 2560,
+      "early_delta_width": 1,
+      "early_delta_height": 1,
+      "160_delta_width": 3,
+      "160_delta_height": 2
+    },
+    {
+      "X": 0,
+      "W": 3840,
+      "early_delta_width": 1,
+      "early_delta_height": 1,
+      "160_delta_width": 5,
+      "160_delta_height": 3
+    }
+  ],
+  "limits": [
+    "No game, render API or extracted instruction execution; examples are arithmetic derivations.",
+    "Existing paired dash.qfs loader/draw evidence supplies cabin association; historical assets/complete consumers not revalidated here.",
+    "Direct E8 encoding census is a candidate inventory, not complete decoded caller or reachability proof.",
+    "No1.0.0 artifact examined;1.1.0 proves early presence, not introduction date.",
+    "Later formula assumes ordinary positive nonoverflowing W-X; actual code uses wrapping32-bit arithmetic and signed branch flags.",
+    "Extent units do not establish physical pixel coverage, texture seams or provider success.",
+    "Fixed helper exposes working registers/flags;1.6.0 PUSHAD/POPAD preserves general registers but not flags."
+  ]
+}
