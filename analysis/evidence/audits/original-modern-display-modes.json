@@ -75,6 +75,13 @@
           "bytes_sha256": "f6654223796521a9adae35aa1b3f2568ff5e25c1a55a10a144fd8d70fb7ead96",
           "assembly": "analysis/captures/modern-differences/display-modes/original-004a3418.asm",
           "assembly_sha256": "c12bd2095c8be573f42588eb7bbf33785050e7295334bdb03d2398503bf89173"
+        },
+        {
+          "start": "004486d9",
+          "end": "00448728",
+          "bytes_sha256": "0bbd38c22f8cdc417d70f13f532037adf0e8410fc107d248f4e333fbeb48ae8f",
+          "assembly": "analysis/captures/modern-differences/display-modes/original-004486d9.asm",
+          "assembly_sha256": "0541e6acf3ae4cc472d5ff81b46f34492b9bab6f36a8ca87bb7c468e7b66a99f"
         }
       ]
     },
@@ -158,6 +165,13 @@
           "bytes_sha256": "514c60609fa98529390a6387bc0cdb44754674615adbf86c43866b79e55ff83c",
           "assembly": "analysis/captures/modern-differences/display-modes/official_modern-004a3408.asm",
           "assembly_sha256": "1591fa4ffb4666ec91605471dc39149da37ab4754217b4aa9ca879190b6591eb"
+        },
+        {
+          "start": "004486d9",
+          "end": "00448728",
+          "bytes_sha256": "55535ea9532744ca792930f6fc718ad16f208c378b404b40d047249712cbb624",
+          "assembly": "analysis/captures/modern-differences/display-modes/official_modern-004486d9.asm",
+          "assembly_sha256": "ed8f4a1c57a890524f4d2d373a1536dbb9fab50919495f6ebfcdaa68466ef80b"
         }
       ]
     }
@@ -259,6 +273,27 @@
       "101st unique admitted append is a conditional local path, not an observed provider list or execution.",
       "Section-boundary crossing is arithmetic evidence, not an observed overwrite/fault or proof of OS mapping/protection/discard behavior.",
       "Do not silently change JA to JAE in a reconstruction; expose the selected compatibility policy."
+    ]
+  },
+  "menu_depth_capability": {
+    "record_field": "menu record+10h = signed(driver record+18h)>=2, normalized0/1",
+    "original_producer": "Enumerator004bee4c..004bee5c pushes Boolean; collector00448246 loads it and00448258 stores+10.",
+    "modern_producer": "Collector004482e8..004482f5 computes/stores the same threshold directly.",
+    "labels": {
+      "format": "%d x %d x %d",
+      "original_suffix": " (z)",
+      "modern_suffix": "not appended"
+    },
+    "consumer_tokens": [
+      "Z_BUFFER",
+      "Z_BUFFER_TEXT"
+    ],
+    "consumer": "Both controls must exist; zero indication ORs item flags01/1001, nonzero clears those bits.",
+    "deduplication": "Modern accepted equal/higher-depth replacement overwrites capability from the incoming selected record; no OR across merged depth candidates.",
+    "limits": [
+      "Names/consumer identify the intended Z-buffer indication, not full numeric provider-field semantics or successful depth rendering.",
+      "Identical threshold/field offset does not establish identical source records or capability values.",
+      "Actual UI flag interpretation, resource selection and displayed labels remain unobserved."
     ]
   },
   "derived_sentinel_reselection": {

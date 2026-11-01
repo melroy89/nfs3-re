@@ -119,7 +119,7 @@ Original helper **`00448330..00448394`**,100 bytes, saves the incoming ESI desti
 
 Modern helpers **`00448348..00448371`**,41 bytes combined, use selector`00a1825c`, unsigned count`00a18260`, and record bank **`00a18330`** with the same276-byte stride. They reset the selector when unsigned`selector >= count`, obtain the record pointer and return DWORD+10h directly; the caller saves that result at`EBP-4`. The unsigned check catches negative bit patterns for ordinary small counts, unlike original’s signed check, but neither check proves a valid record exists when count is zero.
 
-Thus the local-test rewrite preserves the **field offset**, while replacing two276-byte copies with a direct field load through changed selector/storage policy. Equality of source records, complete record semantics and arbitrary-input equivalence are not established. The paired audit retains both helper envelopes; the older unresolved-offset wording is superseded by this verified dataflow.
+Thus the local-test rewrite preserves the **field offset**, while replacing two276-byte copies with a direct field load through changed selector/storage policy. The [producer/control linkage](original-modern-display-modes.md#field10-retains-the-z-buffer-indication-while-the-label-suffix-disappears) now verifies this field is the signed driver+18h>=2 indication consumed by named Z_BUFFER controls. Equality of source records, complete provider record semantics and arbitrary-input equivalence are not established. The paired audit retains both helper envelopes; the older unresolved-offset wording is superseded by this verified dataflow.
 
 ## Outside-body graphics interval partition
 

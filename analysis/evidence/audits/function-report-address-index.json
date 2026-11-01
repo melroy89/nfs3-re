@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "d793070dd1650a2c2e703b403fd4c5cba7e869a1d4c8defbe1e37c7c9e739d7e"
+      "sha256": "6ab25212c661f7bb955a847e5cc71d0b5cd59f7d3f29ebbd3b87da9afaf34dc7"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -97,7 +97,7 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "cd765385a294a7e21f5f139e794494832f08f662e13c565c1e26915b91a308f5"
+      "sha256": "c7f0eae4d9d246fc755fea6c35588d8dd97c0f0dd32ff62f8311c279051db552"
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -157,7 +157,7 @@
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
-      "sha256": "64cec9864ba8f72e1b78f2f97751d3e1e794bbddba8d71ab3169bac91af0ba8a"
+      "sha256": "7e4f38e14b12006aa8cd877b0c741a67f420535f010a5dee0646c7afa526e493"
     },
     {
       "path": "analysis/original-modern-heap-initialization.md",
@@ -3482,11 +3482,12 @@
             "00448210",
             "00448263",
             "0044826c",
-            "004482b8",
+            "004482b9",
             "004482c0",
             "004482db",
             "004482e1",
             "004482f0",
+            "004482f5",
             "0044831d"
           ]
         },
@@ -9732,7 +9733,8 @@
             "004bee06",
             "004bee15",
             "004bee30",
-            "004bee32"
+            "004bee32",
+            "004bee5c"
           ]
         },
         {

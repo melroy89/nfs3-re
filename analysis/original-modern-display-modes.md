@@ -52,7 +52,7 @@ Modern invokes callback EAX=index and EDX=record pointer at `004bedbd..004bedc1`
 
 ## 3. Menu list: append becomes sorted insertion/deduplication
 
-Original collector `00448210..004482b8` uses count `00559218`, fixed-stride **0x114** records at `00661220`, and dynamic-label IDs beginning at `0x7a8`. It appends in enumerated order, without a local duplicate search/sort, while signed count is below **20**. Its initializer `004482c0` resets the count and label table before enumerating.
+Original collector `00448210..004482b9` uses count `00559218`, fixed-stride **0x114** records at `00661220`, and dynamic-label IDs beginning at `0x7a8`. It appends in enumerated order, without a local duplicate search/sort, while signed count is below **20**. Its initializer `004482c0` resets the count and label table before enumerating.
 
 Modern collector `00448210..0044831d` uses count `00a18260`, records at `00a18330`, and IDs beginning at `0x866`. It binary-searches the existing list ordered lexicographically by unsigned DWORD keys, inserts by shifting records with STD/REP MOVSD, clears the new record and restores CLD before normal continuation. It still uses stride 0x114. This is EXE-side sorting; driver-side sorting claims are separate.
 
@@ -131,3 +131,15 @@ Consequently the original getter observes a newly rebuilt list on this path, whi
 For field10, the [existing graphics-menu dataflow](original-modern-graphics-menu-transition.md#mode-copy-field-correspondence-is-now-established) already maps original00448330's full276-byte record copy plus a caller+10h read to Modern00448368's direct field load. That helper is separately retained in this audit; it must not be confused with original004482f0 merely because nearby addresses overlap the new code.
 
 **Work status: both local accessor counterpart mappings done; evidence: verified static callers/field contracts.** Complete source-record equality, all initialization/invalidation paths, register expectations of every caller and runtime mode behavior remain unresolved. No executable, Ghidra or reconstruction-source changes were made.
+
+## Field10 retains the Z-buffer indication while the label suffix disappears
+
+The audit now links menu record+10h to its producer and named controls in both executables. Original enumerator004bee4c..004bee5c forms Boolean **signed driver-record+18h >=2** and pushes it to the callback. Original collector loads that stack value at00448246 and stores it at menu+10h through00448258. Modern computes the same normalized0/1 threshold directly at004482e8..004482f5. This closes the selected-field meaning gap without asserting that every provider's underlying+18h field has one fully reconstructed layout.
+
+Both collectors format dimensions/depth with retained literal **`%d x %d x %d`**. Original then tests menu+10h and appends literal **` (z)`** when nonzero; Modern does not append that suffix. Its old string location00538d58 is now empty. This is a concrete label-construction difference, not evidence that Z-buffer indication or depth rendering was removed.
+
+Graphics setup looks up exact tokens **`Z_BUFFER`** and **`Z_BUFFER_TEXT`** at00538e20/2c. If either item is missing, it skips the shown capability policy. Otherwise a zero field indication ORs item flags01h and1001h respectively; nonzero clears those bits usingFEh/EFFEh masks. Original reads the field from its copied local record, while Modern uses the [direct field accessor](#original-accessor-counterparts-and-the-race-init-handoff). The flag operations and token bindings identify the intended Z-buffer capability indication; actual menu rendering/interactions and successful provider depth-buffer operation are not tested.
+
+Modern's deduplication is also relevant: an accepted equal/higher-depth candidate replaces the row's+10h indication with its own value. It does not aggregate an OR across merged depth candidates. Under Hide16bitModes grouping, capability therefore follows the retained candidate rather than “any mode at these dimensions supports it.” Which capabilities actual16/32-bit provider entries supply remains unverified.
+
+**Verified:** shared threshold/field/consumer linkage and removed original `(z)` append. **Pending:** every provider field contract, all list/caller lifetimes, UI flag effects, actual labels/depth rendering and historical attribution. This is static evidence only; no target instructions, menus or driver records were executed.

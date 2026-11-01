@@ -11,11 +11,11 @@ from audit_thrash_loader_difference import ROOT, SPECS
 SPANS = {
     'original': [(0x4bed90, 0x4bee72), (0x448210, 0x4482e8), (0x517610, 0x51788d),
                  (0x472d10, 0x472f19), (0x4483a0, 0x4483fe), (0x4bef50, 0x4bf10f), (0x44b1a0,0x44b206),
-                 (0x4482f0,0x44832c),(0x448330,0x448394),(0x4a3418,0x4a3427)],
+                 (0x4482f0,0x44832c),(0x448330,0x448394),(0x4a3418,0x4a3427),(0x4486d9,0x448728)],
     'official_modern': [(0x4bed90, 0x4beeb0), (0x448210, 0x448345), (0x4beeb0, 0x4bef9d),
                         (0x448394, 0x448425), (0x472d10, 0x472e1d),
                         (0x472aac, 0x472aeb), (0x4f9140, 0x4f915e), (0x44b1a0,0x44b206), (0x448348,0x44837c), (0x4bef9d,0x4befcd),
-                        (0x4a3408,0x4a3417)],
+                        (0x4a3408,0x4a3417),(0x4486d9,0x448728)],
 }
 
 
@@ -123,6 +123,28 @@ def main():
                   '101st unique admitted append is a conditional local path, not an observed provider list or execution.',
                   'Section-boundary crossing is arithmetic evidence, not an observed overwrite/fault or proof of OS mapping/protection/discard behavior.',
                   'Do not silently change JA to JAE in a reconstruction; expose the selected compatibility policy.']}
+    for pe in images:
+        assert pe.get_string_at_rva(0x138d48)==b'%d x %d x %d'
+        assert pe.get_string_at_rva(0x138e20)==b'Z_BUFFER'
+        assert pe.get_string_at_rva(0x138e2c)==b'Z_BUFFER_TEXT'
+    assert images[0].get_string_at_rva(0x138d58)==b' (z)'
+    assert images[1].get_string_at_rva(0x138d58)==b''
+    assert images[0].get_data(0xbee4c,16).hex()=='837818027c07b801000000eb0231c050'
+    assert modern.get_data(0x482e8,13).hex()=='31c0837e18027c02b001894710'
+    assert images[0].get_data(0x48258,3).hex()=='894210'
+    assert modern.get_data(0x48712,22).hex()=='804e0401668148040110eb0a806604fe66816004feef'
+    assert images[0].get_data(0x48710,24)==modern.get_data(0x48710,24)
+    result['menu_depth_capability']={
+        'record_field':'menu record+10h = signed(driver record+18h)>=2, normalized0/1',
+        'original_producer':'Enumerator004bee4c..004bee5c pushes Boolean; collector00448246 loads it and00448258 stores+10.',
+        'modern_producer':'Collector004482e8..004482f5 computes/stores the same threshold directly.',
+        'labels':{'format':'%d x %d x %d','original_suffix':' (z)','modern_suffix':'not appended'},
+        'consumer_tokens':['Z_BUFFER','Z_BUFFER_TEXT'],
+        'consumer':'Both controls must exist; zero indication ORs item flags01/1001, nonzero clears those bits.',
+        'deduplication':'Modern accepted equal/higher-depth replacement overwrites capability from the incoming selected record; no OR across merged depth candidates.',
+        'limits':['Names/consumer identify the intended Z-buffer indication, not full numeric provider-field semantics or successful depth rendering.',
+                  'Identical threshold/field offset does not establish identical source records or capability values.',
+                  'Actual UI flag interpretation, resource selection and displayed labels remain unobserved.']}
     request_area=32767*32767
     candidates=[{'width':1800,'height':1440,'depth':32}, {'width':1920,'height':1080,'depth':32}]
     for row in candidates:
