@@ -81,6 +81,8 @@ This is still not proof of exactly one random sample per object per tick. The he
 
 ## 6. Admission-global producers: defaults are not immutable settings
 
+The later Car Detail follow-up below resolves`006fbc1c` as Car Detail and reuses the verified Rear View Detail binding for`006fd1d8`; the earlier semantic uncertainty in this section is superseded for those two settings. Producer/lifetime limits remain.
+
 Modern default initializer `00472d10` supplies both globals used by the new selection-helper admission gate. The [CPU-tier comparison](original-modern-cpu-tier.md) establishes its index: unsigned score `005652a4` is capped at 5, then halved if renderer mask `007a3a58 & 6` is nonzero. The initializer reads byte tables and zero-extends each element:
 
 | Effective tier index | `006fbc1c` from table `00472e2c` | `006fd1d8` from table `00472e4a` | Resulting admission to `004bbad0` under these values |
@@ -152,3 +154,48 @@ A separate 15-byte helper `004bc670..004bc67f` retains its later call `004bc530`
 Therefore this retarget preserves the direct dialog-clear operation while dropping this wrapper's reset of `00559234`. It is not only call flattening: one global write is absent from this local route. Later `004bc530` behavior is already bounded in the [race-initialization/reset comparison](original-modern-race-initialization.md). Any subsequent indirect effects must be traced separately before claiming that the global necessarily remains nonzero after the complete operation.
 
 **Bounded work status: done; confidence: verified static call edges and exact stores.** Required follow-up is finalizer caller cadence, the active meaning/other writers of `00559234`, and actual menu/race transition behavior. Preserve these version-specific writes and their order in reconstruction; do not silently restore the old wrapper reset to Modern. No executable bytes, Ghidra state or maintained C were changed.
+
+## Car Detail binding and historical High-budget bypass
+
+**Confidence: verified static contracts and1.4.0→1.5.0 mechanism; work status: done for this bounded comparison, partial for the visual claims.** The [historical audit](scripts/audit_vehicle_detail_history.py) pins the two historical archive/EXE pairs plus the supplied original and official final. The [manifest](evidence/audits/vehicle-detail-history.json) retains complete instruction-span hashes and disassembly paths, raw data tables and label evidence. No renderer or target instructions were executed.
+
+### Named setting and retained classifier
+
+All four EXEs have the same20-byte descriptor at`005566f4`: name pointer`00537fa4`→`cardetail`, list pointer`0055623a`, two zero fields, storage`006fbc1c`. The three label IDs187/186/185 decode in the hash-pinned official English resource to **High/Medium/Low**, establishing ordinals **0/1/2**. This closes the earlier uncertainty about the named setting behind`006fbc1c`; it does not identify all producers or guarantee the active value.
+
+The complete **1079-byte classifier `004bb5d0..004bba07` is identical in all four EXEs**. It indexes four binary32 thresholds by`16*cardetail`, applies context-dependent scales and compares its projected-depth result with those thresholds. The table itself changes between supplied original and Modern:
+
+| Detail ordinal | Supplied original row |1.4.0,1.5.0 and official final row |
+|---:|---|---|
+|0 High |30,60,120,300 |100,175,250,300 |
+|1 Medium |0,45,90,300 |30,60,120,300 |
+|2 Low |0,20,60,300 |0,45,90,300 |
+
+Thus the old High row becomes Modern Medium and old Medium becomes Modern Low; Modern introduces a different High row and omits old Low from this three-row table. This supports the **threshold-policy portion of MP100-012**, not a complete texture-quality/side-mirror claim or its precise1.0.0 introduction. Historical1.4.0/1.5.0 table equality proves the threshold expansion was already present before the separate1.5.0 fix. These values are classifier inputs, not metres or guaranteed visible model choices. Binary64 factors`00540130=0.75` and`00540138=0.6` are retained across all four.
+
+### Budget gate changes at the advertised1.5.0 boundary
+
+| Build | Call admission to retained budget helper`004bbad0` |
+|---|---|
+| Supplied original and1.4.0 | Unconditional call at`004bbbdf`; complete276-byte dispatcher bodies match |
+|1.5.0 | At`004bbbeb`, tests`006fbc1c`; zero skips to`004bbbfb`, nonzero calls at`004bbbf6` |
+| Official final | Uses the expanded predicate already documented above: `cardetail!=0 OR (context[0]==1 AND mirrorlevel!=0)` |
+
+In1.5.0, **High0 bypasses the whole budget helper**, whereas Medium1/Low2 still admit it. The helper’s complete196-byte body is identical across all four EXEs. It can downgrade selectors1→2 and0→1 under the weighted budget, and also has the distinct final`+9a4` override pass. Skipping it skips both mechanisms; describing this as merely changing a threshold inside the helper would be inaccurate.
+
+The final predicate also now has named settings: [Rear View Detail](original-modern-night-lighting.md#modern-option-binding-rear-view-detail-values02) binds`006fd1d8` to High0/Medium1/Low2, and the optional mirror render route supplies context tag1. Consequently final High Car Detail **can still enter the budget helper on that mirror route when Rear View Detail is nonzero**. The1.5.0 High bypass must not be generalized into an unconditional final-version guarantee. This pass does not date the later expanded predicate.
+
+### Wheel animation changes share the1.5.0 boundary
+
+Both wheel-matrix helpers retain original bytes in1.4.0 and final bytes in1.5.0 (ranges below have exclusive ends):
+
+| Helper | Historical delta |
+|---|---|
+| `004b9140..004b9280`,320 bytes | Four operand bytes at`004b9158..004b915c` change the tick load from global`0055fe28` to vehicle`+8c0` |
+| `004b9280..004b93bf`,319 bytes | Four operand bytes at`004b9297..004b929b` make the same source change |
+
+Their formulas and stores remain, as documented in the wheel-spin section above. The1.5.0 dispatcher also moves the vehicle tick publication after dispatch, supporting those per-object elapsed-time reads. This establishes historical introduction of the already verified timing mechanism, not a new claim that the physics integrator changes.
+
+The complete render-variant dispatcher, high-detail body/wheel renderer and alternate parts0..4 renderer are identical across all four builds, as are the two four-entry dispatch tables. The selected variant therefore matters: for a model with more than11 parts, selectors0/1/2/3 route to body-and-wheel/alternate-body/part10/part11 helpers respectively; the lower-count table and downgrade guards remain as documented in existing FCE research. Budget admission can change which retained path runs; it does not itself rewrite mesh vertices or guarantee rotating wheels for every distance/model.
+
+**MP150-001 conclusion:** the advertised1.5.0 boundary has concrete High-detail budget-admission and per-object wheel-timing changes. These are relevant partial support, not a reproduced mirror/split-screen fix or proof of its sole cause. Still required for full visual attribution: selected models and selector transitions on the affected viewport routes, successful draw submission and before/after wheel motion. Existing Modern-only captures do not supply this cross-version evidence. Preserve the version-specific policy, including final’s mirror exception, in reconstruction.

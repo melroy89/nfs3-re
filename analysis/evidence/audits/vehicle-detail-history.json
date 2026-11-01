@@ -1,0 +1,476 @@
+{
+  "kind": "static-vehicle-detail-release-boundary",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004bb5d0",
+          "end_exclusive": "004bba07",
+          "bytes": 1079,
+          "sha256": "ab06b11dbd269e3f84379e9ad727a6f5438c259ce8afb232e169aec3aad7306d",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/original-004bb5d0.asm",
+          "assembly_sha256": "9b01d26bc5f329375aeae3ab91d9c9ba93b004443a62bb6a3bf2898ae80f579e"
+        },
+        {
+          "start": "004bbad0",
+          "end_exclusive": "004bbb94",
+          "bytes": 196,
+          "sha256": "3ee352d4132df439ddba85649c2557e64aea1706d519d3e418f78f057d43b3ca",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/original-004bbad0.asm",
+          "assembly_sha256": "477c3bcdcb8c3c3d4754e13c878d593022280a6198fd8c692478c960d88e2aa9"
+        },
+        {
+          "start": "004bb4c0",
+          "end_exclusive": "004bb5ce",
+          "bytes": 270,
+          "sha256": "80612984bb9972da0ec884b237bbe7cc3ea9690309269c42a38cb63d8823cc55",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/original-004bb4c0.asm",
+          "assembly_sha256": "7edb2fa7df677d01d7b7cb6ff00d87b71a0ddd610901ad4a5a713b57f228648a"
+        },
+        {
+          "start": "004bae00",
+          "end_exclusive": "004bb10f",
+          "bytes": 783,
+          "sha256": "6b8e1cfb03e72f5de28e23ee1d932f6d273ac415e42c45985c77d9f6265d189b",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/original-004bae00.asm",
+          "assembly_sha256": "38d73d4e55441c8c59008e0d248faf6036f5b5b79c7cd629c8ceb6acb30d412d"
+        },
+        {
+          "start": "004bb200",
+          "end_exclusive": "004bb495",
+          "bytes": 661,
+          "sha256": "c942db4bb4cce93869fc73c577d3066c0a9bd0ffb33039cf1621f6e9737d6f41",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/original-004bb200.asm",
+          "assembly_sha256": "0ea1166a5e99694f0e632d39a870cb8c1d10589e050418a598c1aa56caa2ba2e"
+        },
+        {
+          "start": "004bbba0",
+          "end_exclusive": "004bbcb4",
+          "bytes": 276,
+          "sha256": "f041770cd10b8ac507558ea3d24b5d9d1321ecda4415ecf62426196796c19e6c",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/original-004bbba0.asm",
+          "assembly_sha256": "cb1d1a45c31d9a69bf33e283ab2a09cd9b68fd64f655a42391a239f7c7084e4f"
+        },
+        {
+          "start": "004b9140",
+          "end_exclusive": "004b9280",
+          "bytes": 320,
+          "sha256": "ebfa8284d2bce006c78cc25f432f65cabd3d8c5dd826ece3afb988b3ee6ef577",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/original-004b9140.asm",
+          "assembly_sha256": "c54db8d5bab111afb8bc78823ac36faef9754cfed95bb236315b224fe46093cd"
+        },
+        {
+          "start": "004b9280",
+          "end_exclusive": "004b93bf",
+          "bytes": 319,
+          "sha256": "963f55dd22dff10a883949e184304d2759bf8f072684c5db0060a239b713ff9f",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/original-004b9280.asm",
+          "assembly_sha256": "89f2a16714f0380b64ecbe19da69c5b064db921bb65650d8e90732ec3e80d391"
+        }
+      ],
+      "car_detail_descriptor": [
+        "00537fa4",
+        "0055623a",
+        "00000000",
+        "00000000",
+        "006fbc1c"
+      ],
+      "label_ids": [
+        187,
+        186,
+        185
+      ],
+      "dispatch_table_hex": "3eb54b0049b54b0054b54b005fb54b0076b54b0076b54b0076b54b0081b54b00",
+      "threshold_table_hex": "0000f041000070420000f0420000964300000000000034420000b44200009643000000000000a0410000704200009643",
+      "threshold_rows": [
+        [
+          30.0,
+          60.0,
+          120.0,
+          300.0
+        ],
+        [
+          0.0,
+          45.0,
+          90.0,
+          300.0
+        ],
+        [
+          0.0,
+          20.0,
+          60.0,
+          300.0
+        ]
+      ],
+      "context_scale_binary64": [
+        0.75,
+        0.6
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004bb5d0",
+          "end_exclusive": "004bba07",
+          "bytes": 1079,
+          "sha256": "ab06b11dbd269e3f84379e9ad727a6f5438c259ce8afb232e169aec3aad7306d",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/official_modern-004bb5d0.asm",
+          "assembly_sha256": "9b01d26bc5f329375aeae3ab91d9c9ba93b004443a62bb6a3bf2898ae80f579e"
+        },
+        {
+          "start": "004bbad0",
+          "end_exclusive": "004bbb94",
+          "bytes": 196,
+          "sha256": "3ee352d4132df439ddba85649c2557e64aea1706d519d3e418f78f057d43b3ca",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/official_modern-004bbad0.asm",
+          "assembly_sha256": "477c3bcdcb8c3c3d4754e13c878d593022280a6198fd8c692478c960d88e2aa9"
+        },
+        {
+          "start": "004bb4c0",
+          "end_exclusive": "004bb5ce",
+          "bytes": 270,
+          "sha256": "80612984bb9972da0ec884b237bbe7cc3ea9690309269c42a38cb63d8823cc55",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/official_modern-004bb4c0.asm",
+          "assembly_sha256": "7edb2fa7df677d01d7b7cb6ff00d87b71a0ddd610901ad4a5a713b57f228648a"
+        },
+        {
+          "start": "004bae00",
+          "end_exclusive": "004bb10f",
+          "bytes": 783,
+          "sha256": "6b8e1cfb03e72f5de28e23ee1d932f6d273ac415e42c45985c77d9f6265d189b",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/official_modern-004bae00.asm",
+          "assembly_sha256": "38d73d4e55441c8c59008e0d248faf6036f5b5b79c7cd629c8ceb6acb30d412d"
+        },
+        {
+          "start": "004bb200",
+          "end_exclusive": "004bb495",
+          "bytes": 661,
+          "sha256": "c942db4bb4cce93869fc73c577d3066c0a9bd0ffb33039cf1621f6e9737d6f41",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/official_modern-004bb200.asm",
+          "assembly_sha256": "0ea1166a5e99694f0e632d39a870cb8c1d10589e050418a598c1aa56caa2ba2e"
+        },
+        {
+          "start": "004bbba0",
+          "end_exclusive": "004bbce3",
+          "bytes": 323,
+          "sha256": "f1319e78d6e7ddd4fe40974b48bf7287e16bfc58bf9e2db8828d76840b8c5980",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/official_modern-004bbba0.asm",
+          "assembly_sha256": "426e5a57ab3f4d60cfbfa54a9b4bc27624ed6d1bbb166179fa15b3a729236e1b"
+        },
+        {
+          "start": "004b9140",
+          "end_exclusive": "004b9280",
+          "bytes": 320,
+          "sha256": "c6fe081e2759985cae69224ca8d039b0232ab8d508e6cb9d622b3946645dbad0",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/official_modern-004b9140.asm",
+          "assembly_sha256": "fd7f2c4e7aa2674a32b4d6f175367a2a8279d5e051a3c1f31d638e746711ebbc"
+        },
+        {
+          "start": "004b9280",
+          "end_exclusive": "004b93bf",
+          "bytes": 319,
+          "sha256": "43da1471629f66cb880985c9da311578baac6e13c5724c6aac99b3460145503f",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/official_modern-004b9280.asm",
+          "assembly_sha256": "602bc78c7a312c1acde0b079db63905dec5df0edd48ce81bfecd405a837bf92b"
+        }
+      ],
+      "car_detail_descriptor": [
+        "00537fa4",
+        "0055623a",
+        "00000000",
+        "00000000",
+        "006fbc1c"
+      ],
+      "label_ids": [
+        187,
+        186,
+        185
+      ],
+      "dispatch_table_hex": "3eb54b0049b54b0054b54b005fb54b0076b54b0076b54b0076b54b0081b54b00",
+      "threshold_table_hex": "0000c84200002f4300007a43000096430000f041000070420000f0420000964300000000000034420000b44200009643",
+      "threshold_rows": [
+        [
+          100.0,
+          175.0,
+          250.0,
+          300.0
+        ],
+        [
+          30.0,
+          60.0,
+          120.0,
+          300.0
+        ],
+        [
+          0.0,
+          45.0,
+          90.0,
+          300.0
+        ]
+      ],
+      "context_scale_binary64": [
+        0.75,
+        0.6
+      ]
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "member": "nfs3.exe",
+      "sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "spans": [
+        {
+          "start": "004bb5d0",
+          "end_exclusive": "004bba07",
+          "bytes": 1079,
+          "sha256": "ab06b11dbd269e3f84379e9ad727a6f5438c259ce8afb232e169aec3aad7306d",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.4.0-004bb5d0.asm",
+          "assembly_sha256": "9b01d26bc5f329375aeae3ab91d9c9ba93b004443a62bb6a3bf2898ae80f579e"
+        },
+        {
+          "start": "004bbad0",
+          "end_exclusive": "004bbb94",
+          "bytes": 196,
+          "sha256": "3ee352d4132df439ddba85649c2557e64aea1706d519d3e418f78f057d43b3ca",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.4.0-004bbad0.asm",
+          "assembly_sha256": "477c3bcdcb8c3c3d4754e13c878d593022280a6198fd8c692478c960d88e2aa9"
+        },
+        {
+          "start": "004bb4c0",
+          "end_exclusive": "004bb5ce",
+          "bytes": 270,
+          "sha256": "80612984bb9972da0ec884b237bbe7cc3ea9690309269c42a38cb63d8823cc55",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.4.0-004bb4c0.asm",
+          "assembly_sha256": "7edb2fa7df677d01d7b7cb6ff00d87b71a0ddd610901ad4a5a713b57f228648a"
+        },
+        {
+          "start": "004bae00",
+          "end_exclusive": "004bb10f",
+          "bytes": 783,
+          "sha256": "6b8e1cfb03e72f5de28e23ee1d932f6d273ac415e42c45985c77d9f6265d189b",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.4.0-004bae00.asm",
+          "assembly_sha256": "38d73d4e55441c8c59008e0d248faf6036f5b5b79c7cd629c8ceb6acb30d412d"
+        },
+        {
+          "start": "004bb200",
+          "end_exclusive": "004bb495",
+          "bytes": 661,
+          "sha256": "c942db4bb4cce93869fc73c577d3066c0a9bd0ffb33039cf1621f6e9737d6f41",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.4.0-004bb200.asm",
+          "assembly_sha256": "0ea1166a5e99694f0e632d39a870cb8c1d10589e050418a598c1aa56caa2ba2e"
+        },
+        {
+          "start": "004bbba0",
+          "end_exclusive": "004bbcb4",
+          "bytes": 276,
+          "sha256": "f041770cd10b8ac507558ea3d24b5d9d1321ecda4415ecf62426196796c19e6c",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.4.0-004bbba0.asm",
+          "assembly_sha256": "cb1d1a45c31d9a69bf33e283ab2a09cd9b68fd64f655a42391a239f7c7084e4f"
+        },
+        {
+          "start": "004b9140",
+          "end_exclusive": "004b9280",
+          "bytes": 320,
+          "sha256": "ebfa8284d2bce006c78cc25f432f65cabd3d8c5dd826ece3afb988b3ee6ef577",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.4.0-004b9140.asm",
+          "assembly_sha256": "c54db8d5bab111afb8bc78823ac36faef9754cfed95bb236315b224fe46093cd"
+        },
+        {
+          "start": "004b9280",
+          "end_exclusive": "004b93bf",
+          "bytes": 319,
+          "sha256": "963f55dd22dff10a883949e184304d2759bf8f072684c5db0060a239b713ff9f",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.4.0-004b9280.asm",
+          "assembly_sha256": "89f2a16714f0380b64ecbe19da69c5b064db921bb65650d8e90732ec3e80d391"
+        }
+      ],
+      "car_detail_descriptor": [
+        "00537fa4",
+        "0055623a",
+        "00000000",
+        "00000000",
+        "006fbc1c"
+      ],
+      "label_ids": [
+        187,
+        186,
+        185
+      ],
+      "dispatch_table_hex": "3eb54b0049b54b0054b54b005fb54b0076b54b0076b54b0076b54b0081b54b00",
+      "threshold_table_hex": "0000c84200002f4300007a43000096430000f041000070420000f0420000964300000000000034420000b44200009643",
+      "threshold_rows": [
+        [
+          100.0,
+          175.0,
+          250.0,
+          300.0
+        ],
+        [
+          30.0,
+          60.0,
+          120.0,
+          300.0
+        ],
+        [
+          0.0,
+          45.0,
+          90.0,
+          300.0
+        ]
+      ],
+      "context_scale_binary64": [
+        0.75,
+        0.6
+      ]
+    },
+    "1.5.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "member": "nfs3.exe",
+      "sha256": "d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae",
+      "spans": [
+        {
+          "start": "004bb5d0",
+          "end_exclusive": "004bba07",
+          "bytes": 1079,
+          "sha256": "ab06b11dbd269e3f84379e9ad727a6f5438c259ce8afb232e169aec3aad7306d",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.5.0-004bb5d0.asm",
+          "assembly_sha256": "9b01d26bc5f329375aeae3ab91d9c9ba93b004443a62bb6a3bf2898ae80f579e"
+        },
+        {
+          "start": "004bbad0",
+          "end_exclusive": "004bbb94",
+          "bytes": 196,
+          "sha256": "3ee352d4132df439ddba85649c2557e64aea1706d519d3e418f78f057d43b3ca",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.5.0-004bbad0.asm",
+          "assembly_sha256": "477c3bcdcb8c3c3d4754e13c878d593022280a6198fd8c692478c960d88e2aa9"
+        },
+        {
+          "start": "004bb4c0",
+          "end_exclusive": "004bb5ce",
+          "bytes": 270,
+          "sha256": "80612984bb9972da0ec884b237bbe7cc3ea9690309269c42a38cb63d8823cc55",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.5.0-004bb4c0.asm",
+          "assembly_sha256": "7edb2fa7df677d01d7b7cb6ff00d87b71a0ddd610901ad4a5a713b57f228648a"
+        },
+        {
+          "start": "004bae00",
+          "end_exclusive": "004bb10f",
+          "bytes": 783,
+          "sha256": "6b8e1cfb03e72f5de28e23ee1d932f6d273ac415e42c45985c77d9f6265d189b",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.5.0-004bae00.asm",
+          "assembly_sha256": "38d73d4e55441c8c59008e0d248faf6036f5b5b79c7cd629c8ceb6acb30d412d"
+        },
+        {
+          "start": "004bb200",
+          "end_exclusive": "004bb495",
+          "bytes": 661,
+          "sha256": "c942db4bb4cce93869fc73c577d3066c0a9bd0ffb33039cf1621f6e9737d6f41",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.5.0-004bb200.asm",
+          "assembly_sha256": "0ea1166a5e99694f0e632d39a870cb8c1d10589e050418a598c1aa56caa2ba2e"
+        },
+        {
+          "start": "004bbba0",
+          "end_exclusive": "004bbcd5",
+          "bytes": 309,
+          "sha256": "ace3f3fde45afed4d70a58b2931edc727afa2a121213728be3e395a2119f7ce7",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.5.0-004bbba0.asm",
+          "assembly_sha256": "aade5c0494b7f66018a44e82008723d8bb6a5429e132f3ec4718aa9800435d6d"
+        },
+        {
+          "start": "004b9140",
+          "end_exclusive": "004b9280",
+          "bytes": 320,
+          "sha256": "c6fe081e2759985cae69224ca8d039b0232ab8d508e6cb9d622b3946645dbad0",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.5.0-004b9140.asm",
+          "assembly_sha256": "fd7f2c4e7aa2674a32b4d6f175367a2a8279d5e051a3c1f31d638e746711ebbc"
+        },
+        {
+          "start": "004b9280",
+          "end_exclusive": "004b93bf",
+          "bytes": 319,
+          "sha256": "43da1471629f66cb880985c9da311578baac6e13c5724c6aac99b3460145503f",
+          "assembly": "analysis/captures/modern-differences/vehicle-detail-history/1.5.0-004b9280.asm",
+          "assembly_sha256": "602bc78c7a312c1acde0b079db63905dec5df0edd48ce81bfecd405a837bf92b"
+        }
+      ],
+      "car_detail_descriptor": [
+        "00537fa4",
+        "0055623a",
+        "00000000",
+        "00000000",
+        "006fbc1c"
+      ],
+      "label_ids": [
+        187,
+        186,
+        185
+      ],
+      "dispatch_table_hex": "3eb54b0049b54b0054b54b005fb54b0076b54b0076b54b0076b54b0081b54b00",
+      "threshold_table_hex": "0000c84200002f4300007a43000096430000f041000070420000f0420000964300000000000034420000b44200009643",
+      "threshold_rows": [
+        [
+          100.0,
+          175.0,
+          250.0,
+          300.0
+        ],
+        [
+          30.0,
+          60.0,
+          120.0,
+          300.0
+        ],
+        [
+          0.0,
+          45.0,
+          90.0,
+          300.0
+        ]
+      ],
+      "context_scale_binary64": [
+        0.75,
+        0.6
+      ]
+    }
+  },
+  "limits": [
+    "No rendering, instruction or game execution.",
+    "Local detail/tick mechanisms do not prove all wheels rotate in mirror or split-screen.",
+    "Model availability, classifier outputs, budget state, x87 state and complete object lifetime remain conditional."
+  ],
+  "label_evidence": {
+    "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+    "member": "fedata/text/text.eng",
+    "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "ids": [
+      187,
+      186,
+      185
+    ],
+    "labels": [
+      "High",
+      "Medium",
+      "Low"
+    ]
+  },
+  "checks": {
+    "common_complete_bodies_identical": [
+      "004bb5d0",
+      "004bbad0",
+      "004bb4c0",
+      "004bae00",
+      "004bb200"
+    ],
+    "original_dispatcher_identical_140": true,
+    "150_budget_gate_hex": "833d1cbc6f0000740789f0e8d5feffff",
+    "150_predicate": "006fbc1c != 0; High0 skips entire004bbad0, Medium1/Low2 admit",
+    "150_wheel_helpers_identical_final": true,
+    "wheel_tick_change": "0055fe28 global snapshot -> object+8c0 in both helpers",
+    "thresholds_140_150_final_identical": true
+  }
+}

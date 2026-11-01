@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "323a651d251d983ae1ddf754ca2ab4e4e99032f735b01b0ca109dce374f99a58",
-      "relative_links": 183
+      "sha256": "34c29a47ab04038517cf4ff8d9ddeb456f1cf80937eb4e7804a443384f97b1b3",
+      "relative_links": 184
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "b6252527ceeb02e886eeffeaf6c546f3698cc8337e062274034beb4eeb20bd75",
-      "relative_links": 214
+      "sha256": "499a3f0c0698606f3f41ec6fc5b97f17673b5320df3cdf5c600486c0feec86b4",
+      "relative_links": 215
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -598,8 +598,8 @@
     },
     {
       "path": "analysis/original-modern-vehicle-dispatch.md",
-      "sha256": "2c3f51ec3ad7f7f75fb4e769d97bf2e63f2f69305d5e328d725761b0bd04fdf7",
-      "relative_links": 11
+      "sha256": "455390e36ca24f290cab206fbea1abb45c1017d12ebeceaf11b49d23065659e5",
+      "relative_links": 14
     },
     {
       "path": "analysis/original-modern-view-offset.md",
@@ -648,8 +648,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "54a5034624468a7aaf7b18c9a7b0b1a9be408ed8e828cf1e017eceff1bfebcc3",
-      "relative_links": 178
+      "sha256": "23f852c10f81cacc309aba8e3d3b62c8c7e64c7cbd42e4ca5221eacc65ecdd86",
+      "relative_links": 180
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -658,7 +658,7 @@
     }
   ],
   "file_count": 131,
-  "relative_link_count": 2406,
+  "relative_link_count": 2413,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

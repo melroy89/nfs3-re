@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "323a651d251d983ae1ddf754ca2ab4e4e99032f735b01b0ca109dce374f99a58"
+      "sha256": "34c29a47ab04038517cf4ff8d9ddeb456f1cf80937eb4e7804a443384f97b1b3"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -469,7 +469,7 @@
     },
     {
       "path": "analysis/original-modern-vehicle-dispatch.md",
-      "sha256": "2c3f51ec3ad7f7f75fb4e769d97bf2e63f2f69305d5e328d725761b0bd04fdf7"
+      "sha256": "455390e36ca24f290cab206fbea1abb45c1017d12ebeceaf11b49d23065659e5"
     },
     {
       "path": "analysis/original-modern-view-offset.md",
@@ -9289,7 +9289,9 @@
           "entry_mentioned": true,
           "addresses": [
             "004b9140",
-            "004b9157"
+            "004b9157",
+            "004b9158",
+            "004b915c"
           ]
         }
       ]
@@ -9316,7 +9318,9 @@
           "entry_mentioned": true,
           "addresses": [
             "004b9280",
-            "004b9296"
+            "004b9296",
+            "004b9297",
+            "004b929b"
           ]
         }
       ]
@@ -9391,6 +9395,9 @@
           "addresses": [
             "004bbba0",
             "004bbbdf",
+            "004bbbeb",
+            "004bbbf6",
+            "004bbbfb",
             "004bbc04",
             "004bbc5a",
             "004bbc72",
