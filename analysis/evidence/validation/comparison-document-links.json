@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "c339664d32b82d21d5f34e571170e8cc118483a4690c791be20e1d4c2784296c",
-      "relative_links": 71
+      "sha256": "6197ff6a4f7553df72b06c76e5c8dc2f30c252daf3e77e706f957069e0f30014",
+      "relative_links": 72
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -23,8 +23,8 @@
     },
     {
       "path": "analysis/original-modern-car-alias.md",
-      "sha256": "dce51930ef80ee38c8315bbd603d7e711c3a150ea44b73c57201d6a496325a41",
-      "relative_links": 5
+      "sha256": "56cca4aea1e197d18dd11cf4605c9b241c66bc621e6d65df655cee4c1799dcc7",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-car-download.md",
@@ -103,8 +103,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "20b8446f915b2d008f68bab4901879f21c7c14d8e9d5c168ca8b0d8988c85204",
-      "relative_links": 160
+      "sha256": "3b306dc288284e4952dedec1852e14fa6f8d432a63b85cb2bdd6140e05b0bda3",
+      "relative_links": 161
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -583,7 +583,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "29be25baa076a5ba00233eacf0934170a9eb0063bb4b8de5d7b9dca7251d05cd",
+      "sha256": "e504601fbbd9b0ffa306d935a8773e5f095e2e2e465294e624adbef56bec46b3",
       "relative_links": 159
     },
     {
@@ -593,7 +593,7 @@
     }
   ],
   "file_count": 118,
-  "relative_link_count": 1896,
+  "relative_link_count": 1899,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

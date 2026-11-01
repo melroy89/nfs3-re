@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **141 vendor-only,45 bounded-static,102 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **140 vendor-only,45 bounded-static,103 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -124,7 +124,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels141 entries vendor-only,45 bounded static,102 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels140 entries vendor-only,45 bounded static,103 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -286,3 +286,7 @@ The [dialog follow-up](original-modern-dialog-input.md#replace-first-policy-boun
 ## Edit prefill and filter boundary narrowed
 
 The [filter/copy audit](original-modern-dialog-input.md#retained-filter1-and-bounded-prefill-contract) verifies retained helper bodies and all six file-backed language rows for filter1. It establishes byte20h..ffh admission, full-string validation before truncation, bounded-copy padding behaviour and termination from prior zero-fill/max255. Full-buffer behaviour differs through the existing replace flag, not a new append routine. MP140-035 remains partial; active-language/callback lifetimes, malformed input and live typing remain unverified. Counts unchanged.
+
+## Car-class output identity established
+
+The [class-text chain](original-modern-car-alias.md#alias-expansion-reaches-localized-car-class-text) resolves the expanded car2/carShowcase renderer branch through model+388h, localized IDs190..192 and text submission. Ordinary class0..2 gives Class A/B/C in the pinned English asset. Registry pointer/index validity and actual UI output remain unverified. MP140-021 gains partial support. Current counts:140 vendor-only,45 bounded static,103 partial,2 unresolved.

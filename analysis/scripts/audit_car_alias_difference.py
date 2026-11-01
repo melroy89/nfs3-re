@@ -1,6 +1,7 @@
 """Static list-render alias comparison; no UI or target execution."""
 import hashlib
 import json
+import struct
 import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT,SPECS
@@ -13,6 +14,7 @@ def main():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
         spans=[(0x461d00,0x462314),(0x4d0d50,0x4d0ff9),(0x4d1390,0x4d13f3),(0x4d0dfb,0x4d0e35),(0x4d1400,0x4d140f),(0x4d1410,0x4d1422),(0x4d06f0,0x4d0a0f),(0x4d1480,0x4d14ee),(0x4d1000,0x4d10d8),(0x4d06f0,0x4d071b),(0x4d09f2,0x4d0a0f),(0x4dfd56,0x4dfd73 if label=='original' else 0x4dfd6d),(0x452100,0x45210a),(0x4d1430,0x4d1471 if label=='original' else 0x4d1450),(0x461a70,0x461a96),(0x452020,0x45208c),(0x4628d0,0x4629bf),(0x4634d0,0x463ddc),(0x463841,0x463859),(0x463875,0x463894),(0x4638a7,0x4638f4),(0x461d25,0x461d51),(0x463b74,0x463bc5),(0x4e9ec0,0x4e9efb)]
+        spans.extend([(0x439730,0x439740),(0x439a50,0x439aa5),(0x452190,0x45221c),(0x451590,0x4515d3)])
         if label=='official_modern':spans.extend([(0x4728f4,0x472923),(0x472924,0x472959),(0x4628ec,0x46291a),(0x4634e7,0x463501),(0x46456d,0x464587),(0x4645e3,0x464609)])
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -121,7 +123,26 @@ def main():
     for address in (0x4628ef,0x4634ea):
         data=new.get_data(address-0x400000,5)
         assert data[0]==0xe8 and address+5+int.from_bytes(data[1:],'little',signed=True)==0x472924
-    result['limits']=['Static alias and caller policy only; full renderer and asset bindings not audited.','No UI display or language-dependent output observed.']
+    for start,end in [(0x439730,0x439740),(0x439a50,0x439aa5),(0x452190,0x45221c),(0x451590,0x4515d3)]:
+        assert old.get_data(start-0x400000,end-start)==new.get_data(start-0x400000,end-start)
+    assert new.get_data(0x63bc5,10).hex()=='e8665bfdff05be000000'
+    for pe in [old,new]:
+        assert pe.get_data(0x39738,6).hex()=='8b8088030000'
+        assert pe.get_string_at_rva(0x13a68c)==b'opcars'
+    english=subprocess.check_output(['7z','x','-so',str(archive),'fedata/text/text.eng'])
+    labels=[]
+    for ident in [190,191,192]:
+        offset=struct.unpack_from('<I',english,ident*4)[0]
+        labels.append(english[offset:english.index(b'\0',offset)].decode('latin1'))
+    assert labels==['Class A','Class B','Class C']
+    result['car_class_text_chain']={'class_getter':'00439730..00439740 ->00439a50 ->record DWORD+388h',
+        'renderer':'00463bc5 calls getter;00463bca adds190;00463bd2 calls localized lookup004d1850;00463bfd calls00452190.',
+        'english_sha256':hashlib.sha256(english).hexdigest(),'ids':[190,191,192],'labels':labels,
+        'draw_adapters':'00452190 ->00451590; latter chooses004d1000/004d1340 or004da4a0 via00559234.',
+        'limits':['Requires valid registry index/pointer and class0..2; getter has no local null check or class clamp.',
+                  'Resolver signed upper bound49 does not reject negative indices; cache/list lifecycle unqualified here.',
+                  'Packaged car2/showcase droplist bindings are verified; live widget, chosen car and rendered class unobserved.']}
+    result['limits']=['Static alias, selected renderer and class-text chain verified; complete active-widget and registry lifecycle not established.','No UI display or language-dependent output observed.']
     (ROOT/'analysis/evidence/audits/original-modern-car-alias.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: paired call retargeting, aliases and identical ASCII comparator')
 

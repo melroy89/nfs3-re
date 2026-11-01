@@ -422,7 +422,7 @@ See also [window-key translation](original-modern-window-key.md): table-driven m
 
 See also [car-list rendering aliases](original-modern-car-alias.md): expanded name matching at two list-renderer call sites.
 
-Earlier catalog reconciliation linked mirror admission/track-selector and Num Lock translation findings as **Partial**. The car-class display claim remains vendor-only. The [subsequent historical1.5.1/1.5.2 comparison](original-modern-track-detail.md#historical-v152-improvement-second-record-source-selection) now supplies partial support for the specific rear-view improvement; rendered benefit remains unverified. Input-worker lifecycle, discarded next-block classification, progress budgets and screenshot file policies remain separately documented code findings; they are not forced into unrelated release-note bullets.
+Earlier catalog reconciliation linked mirror admission/track-selector and Num Lock translation findings as **Partial**. The [car-class display chain](original-modern-car-alias.md#alias-expansion-reaches-localized-car-class-text) now has partial static support, including localized text identity; visible output remains unverified. The [subsequent historical1.5.1/1.5.2 comparison](original-modern-track-detail.md#historical-v152-improvement-second-record-source-selection) now supplies partial support for the specific rear-view improvement; rendered benefit remains unverified. Input-worker lifecycle, discarded next-block classification, progress budgets and screenshot file policies remain separately documented code findings; they are not forced into unrelated release-note bullets.
 
 The [logo loader and animation investigation](original-modern-frontend-page.md#original-loader-counterpart-one-named-image-becomes-metadata-driven-output) now pairs original `logo.qfs` loading with Modern `logos.qfs`, decodes official tables, and traces model filtering, metadata access, draw fields and index initialization. Its conditional last-record fall-through and reload-state boundaries remain static findings requiring further validation.
 
@@ -515,7 +515,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **141 Claimed, 45 Static, 102 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **140 Claimed, 45 Static, 103 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -671,7 +671,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-018 | “Connect Players”, “Connect IPX” and “View Car Interior” menu screens also have standard set of buttons (Exit and Options). | Partial |
 | MP140-019 | This set of buttons don't disappear in the Options when they are opened directy from the race results screen. | Partial |
 | MP140-020 | This set of buttons is smart: when user opens Options from the first screen without choosing game mode, the Race button are hidden. | Partial |
-| MP140-021 | Drop down list of cars displays the class of the current car not only for the 1st player, but also for the 2nd player. | Claimed |
+| MP140-021 | Drop down list of cars displays the class of the current car not only for the 1st player, but also for the 2nd player. | Partial |
 | MP140-022 | You can use Left and Right keys to switch slides in the car slideshow and in the credits (inclusive 3D panoramas of the developers). | Partial |
 | MP140-023 | Noticeable “More...” button in the credits (opens the 3D panoramas of the developers). | Partial |
 | MP140-024 | Credits page with the 3D panoramas of the developers has same controls, as general credits (with Back and Next buttons). | Partial |

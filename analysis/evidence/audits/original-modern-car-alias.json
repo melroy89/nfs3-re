@@ -173,6 +173,34 @@
           "sha256": "8db571e9631ace3c893f0962871bf70a2ec21dbd15a4e69f0b575ab01e8ff7e3",
           "assembly": "analysis/captures/modern-differences/car-alias/original-004e9ec0.asm",
           "assembly_sha256": "94795515d1fe29e6b277949f262905bfe16b3f03369dc3c4c9cf24dcf98f1c84"
+        },
+        {
+          "start": "00439730",
+          "end": "00439740",
+          "sha256": "ef9ddb08e5d85550124ffca20a96b31acb3f1cccb9cadd23e68b8ad21fd6bdba",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00439730.asm",
+          "assembly_sha256": "f75044c8b2fb3133d9b073c21a7e95378c44be7182c5527971336db47a9b560a"
+        },
+        {
+          "start": "00439a50",
+          "end": "00439aa5",
+          "sha256": "6551ce50c7b4dd9dda82113f0a1cbbe68e2db27725081c246c2f9664f8ee67bc",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00439a50.asm",
+          "assembly_sha256": "72dc3a5a0b06390b9dc9d12d16f8e1d3078d658d0941b86881e5430e276fa9b6"
+        },
+        {
+          "start": "00452190",
+          "end": "0045221c",
+          "sha256": "08f9146da0f999e3be8d4f8f42d248001b3ad6f254ad831ffba9debf9931ad66",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00452190.asm",
+          "assembly_sha256": "fe87c98a0968863caa2fa9a4a614b37898b4c76617d103209199501c98f38e12"
+        },
+        {
+          "start": "00451590",
+          "end": "004515d3",
+          "sha256": "b8ed4c93a225a865f0db6e33429ac7f488032e0349566dc57711287b728b519d",
+          "assembly": "analysis/captures/modern-differences/car-alias/original-00451590.asm",
+          "assembly_sha256": "aa73e2a28194805a5424a869ff2e715572789ce2fb29a108b6289d9f9b9892e1"
         }
       ],
       "strings": {
@@ -353,6 +381,34 @@
           "sha256": "8db571e9631ace3c893f0962871bf70a2ec21dbd15a4e69f0b575ab01e8ff7e3",
           "assembly": "analysis/captures/modern-differences/car-alias/official_modern-004e9ec0.asm",
           "assembly_sha256": "528d23c233c382213ab7e32b21aeee45d3e6c84372d5b2007d921731903cfdc5"
+        },
+        {
+          "start": "00439730",
+          "end": "00439740",
+          "sha256": "ef9ddb08e5d85550124ffca20a96b31acb3f1cccb9cadd23e68b8ad21fd6bdba",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00439730.asm",
+          "assembly_sha256": "7caf752984513469f325a5d6e05c7a6e11ec3f38a4ffa9fe1a563300d90ccea2"
+        },
+        {
+          "start": "00439a50",
+          "end": "00439aa5",
+          "sha256": "6551ce50c7b4dd9dda82113f0a1cbbe68e2db27725081c246c2f9664f8ee67bc",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00439a50.asm",
+          "assembly_sha256": "7c96576e1063ca4e538651a73319be4157e1ed757a746961ab317061de017f4a"
+        },
+        {
+          "start": "00452190",
+          "end": "0045221c",
+          "sha256": "08f9146da0f999e3be8d4f8f42d248001b3ad6f254ad831ffba9debf9931ad66",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00452190.asm",
+          "assembly_sha256": "60be9c48ddeaa336a893d102706f24c9baa8e914748e85a2ee8d765e81276ae1"
+        },
+        {
+          "start": "00451590",
+          "end": "004515d3",
+          "sha256": "b8ed4c93a225a865f0db6e33429ac7f488032e0349566dc57711287b728b519d",
+          "assembly": "analysis/captures/modern-differences/car-alias/official_modern-00451590.asm",
+          "assembly_sha256": "48cd5a5295efd19a12469b2509f5fa55231cd5e18af0b256dae2a7e11d99e52c"
         },
         {
           "start": "004728f4",
@@ -954,8 +1010,29 @@
     },
     "scope": "Complete 004628d0 and 004634d0 paired bodies; no runtime claim."
   },
+  "car_class_text_chain": {
+    "class_getter": "00439730..00439740 ->00439a50 ->record DWORD+388h",
+    "renderer": "00463bc5 calls getter;00463bca adds190;00463bd2 calls localized lookup004d1850;00463bfd calls00452190.",
+    "english_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "ids": [
+      190,
+      191,
+      192
+    ],
+    "labels": [
+      "Class A",
+      "Class B",
+      "Class C"
+    ],
+    "draw_adapters": "00452190 ->00451590; latter chooses004d1000/004d1340 or004da4a0 via00559234.",
+    "limits": [
+      "Requires valid registry index/pointer and class0..2; getter has no local null check or class clamp.",
+      "Resolver signed upper bound49 does not reject negative indices; cache/list lifecycle unqualified here.",
+      "Packaged car2/showcase droplist bindings are verified; live widget, chosen car and rendered class unobserved."
+    ]
+  },
   "limits": [
-    "Static alias and caller policy only; full renderer and asset bindings not audited.",
+    "Static alias, selected renderer and class-text chain verified; complete active-widget and registry lifecycle not established.",
     "No UI display or language-dependent output observed."
   ]
 }

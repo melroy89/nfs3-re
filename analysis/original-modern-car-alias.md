@@ -14,7 +14,7 @@ The complete comparator **`004e9ec0..004e9efb`** is byte-identical. It folds ASC
 
 ## Two affected consumer decisions
 
-At the first call, return0 branches directly to **`00463ba2`**, admitting the shared car-list rendering path. Nonmatches continue through another name test and an item-count comparison. At the second call, the caller loads a count into ECX; nonmatch subtracts4, whereas any accepted alias retains that count before the shared call to `00439730` with EBX=4. The helper and comparator leave ECX untouched in the inspected local bodies.
+At the first call, return0 branches directly to **`00463ba2`**, admitting the shared car-list rendering path. Nonmatches continue through another name test and an entry-value comparison. At the second call, the caller loads the current entry's first DWORD into ECX; nonmatch subtracts4, whereas any accepted alias retains that value before the shared call to `00439730` with EBX=4. The helper and comparator leave ECX untouched in the inspected local bodies.
 
 Modern therefore extends the existing `cars` treatment to two additional names in this renderer. Full count meaning, asset bindings, output text/geometry, surrounding renderer changes and a unique release-note attribution remain unresolved. The finding does not establish a selection-model or gameplay change merely because the aliases contain car names.
 
@@ -195,3 +195,25 @@ Original forms EDX by reading DWORD widget+`0x1a`, arithmetic-shifting16 and add
 Modern also shortens this path’s epilogue placement while retaining its return0 and saved-register restoration; original code after its RET is not treated as missing renderer blocks. Other paths and their local drawing instructions remain byte-identical within the captured body. Their callees, initialized resources and callback admission are not established by body equality.
 
 This adds a concrete coordinate-argument difference to the track-policy rewrite, without assigning an unsupported release-note alignment claim. Actual text placement, affected runtime screens and historical introduction remain unverified. No renderer or draw call was executed.
+
+## Alias expansion reaches localized car-class text
+
+The expanded car-alias audit now retains complete paired getter `00439730..00439740` (16 bytes), registry resolver `00439a50..00439aa5` (85 bytes), and text adapters `00452190..0045221c` (140 bytes) / `00451590..004515d3` (67 bytes). These four bodies are identical between original and official Modern. The full renderer was already captured above; the new evidence identifies its output rather than assuming what list-name matching means.
+
+The admitted branch at `00463ba2` loads the current entry's first DWORD, optionally subtracts4 for a non-car alias, and passes that value to `00439730`. The getter calls the registry resolver and reads DWORD record+388h. Existing [car-domain research](car-selector-gameplay-domain.md) identifies this as the model's category selector. The renderer then adds190 at `00463bca`, calls localized lookup `004d1850` at `00463bd2`, and passes the returned text pointer unchanged to adapter `00452190` at `00463bfd`.
+
+The audit pins the official English asset and verifies:
+
+| Model field+388h | Localized ID | Official English text |
+|---:|---:|---|
+|0 |190 |Class A |
+|1 |191 |Class B |
+|2 |192 |Class C |
+
+This establishes the class-text identity for that domain. The getter does not locally reject a null resolver result or clamp arbitrary class values. The resolver has a signed upper-index check49 and cache/list lookup, but no corresponding local negative-index guard. Valid selected indices/pointers, class0..2, cache lifecycle and readable language storage remain assumptions for the ordinary path. Other class bit patterns must not be silently forced into A/B/C in maintained C.
+
+Adapter `00452190` handles font/alignment parameters and calls `00451590`. The latter chooses the existing texture-font route (`004d1000`, then `004d1340`) or the alternative `004da4a0` route according to global `00559234`. This is a concrete text-submission chain, not proof that a device presented pixels or that the underlying version-different text routines are equivalent.
+
+The changed alias predicate lets `car2` and `carShowcase` enter the same class branch as `cars`; original only matches `cars` there. The separate original/Modern `opcars` test is retained and has its own entry-value>3 condition. The class branch also requires the two earlier local admission predicates to be nonzero. Consequently this is conditional class annotation in a specific renderer, not a promise that every list item/screen always shows a class.
+
+The verified official `[droplist]` bindings above include `car2.mnu` and showcase/history/interior controls. Together with the type1dh renderer registration, this connects the expanded names to packaged controls and localized class output. MP140-021 gains **partial static support** for the second-player/showcase expansion. Actual selected-car/UI rendering, every caller/registry invariant and1.4.0-specific introduction remain unverified. No renderer, network operation or game input was executed.
