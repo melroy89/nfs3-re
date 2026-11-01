@@ -122,3 +122,7 @@ For reproduction, retain the two archives at the manifest paths. The historical 
 ## Additional original-side reference candidates
 
 The [author-hosted original-reference bundle inventory](original-modern-original-reference-bundle.md) now pins d3da.dll, softtria.dll and voodoo2a.dll alongside two other DLLs,80 menus and six HUD-position files. The bundle is mixed and its EXE differs from the supplied baseline at one branch byte. This makes bounded original-side renderer pairing possible without upgrading any artifact to authenticated retail provenance. Function/feature comparison remains the next step; nothing was installed or executed.
+
+## DX5 author-reference pairing
+
+The [DX5 paired audit](original-modern-dx5-reference-pair.md) now verifies that the author-reference `d3da.dll` matches the local root candidate and has the same34 export entries as final DX5. It records all25 changed-byte intervals in the shared code-section extent, equal import/data sections and the exact `about` descriptor-pointer change. This is bounded correspondence and localization, not complete mode-policy recovery or authenticated retail provenance.

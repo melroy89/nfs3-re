@@ -21,6 +21,8 @@ Read-only PE parsing, disassembly and Ghidra metadata inspection were used. The 
 
 The [historical renderer comparison](original-modern-renderer-texel-alignment.md) now traces half-unit X/Y corrections in DX6, DX7 and DX8 across author-hosted1.6.0/1.6.1 pairs. DX8 fog has separate state/table/channel evidence; actual rendered alignment and fog remain unverified.
 
+The [DX5 reference/final comparison](original-modern-dx5-reference-pair.md) adds an address-based map of710 differing code-section bytes in25 intervals, unchanged import/data sections and an exact descriptor-pointer publication change. It is separate from the historical DX6/DX7/DX8 findings and does not yet establish DX5 mode policy.
+
 ## Recent findings at a glance
 
 The [static checkpoint](evidence/validation/historical-startup-checkpoint.json) re-runs11 selected audit scripts against reviewed commit `7c36f96` and verifies the recorded hashes of the supplied original, official Modern, local analysis EXE and saved Ghidra database. This is a reproducibility/self-check checkpoint, not independent semantic review or completion of the entire investigation.

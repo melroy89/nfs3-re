@@ -33,7 +33,7 @@ The bundle supplies separately identified candidates for previously missing orig
 
 | Hosted member | Proposed comparison | Required next evidence |
 |---|---|---|
-| `d3da.dll` | Final DX5 renderer member | Explicit member pairing, exports/layout and bounded function correspondence |
+| `d3da.dll` | Final DX5 renderer member | [Pairing and bounded correspondence verified](original-modern-dx5-reference-pair.md); pointed-to table semantics and remaining intervals pending |
 | `softtria.dll` | Final software renderer member | Same; packed/changed layouts must not be treated as address-equal functions |
 | `voodoo2a.dll` | Final Glide renderer member | Same; distinguish game renderer from wrapper DLL |
 |80 menus /6 HUD-position files | Corresponding Modern members | Case-normalized pairing, duplicate/absent entries and asset-format-aware field comparison |

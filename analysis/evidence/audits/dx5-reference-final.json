@@ -1,0 +1,1012 @@
+{
+  "kind": "static-dx5-reference-final-pair",
+  "baselines": {
+    "reference": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+      "archive_sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127",
+      "member": "d3da.dll",
+      "bytes": 98641,
+      "sha256": "ae676272438d93fd7a8da7a19250d6e8b664d8570824ab8042e2b20b38395a02",
+      "exports": [
+        {
+          "name": "_THRASH_about@0",
+          "ordinal": 1,
+          "rva": "00001020",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clearwindow@0",
+          "ordinal": 2,
+          "rva": "00001118",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clip@16",
+          "ordinal": 3,
+          "rva": "00001188",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawline@8",
+          "ordinal": 4,
+          "rva": "000014a0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinemesh@12",
+          "ordinal": 5,
+          "rva": "000014fc",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinestrip@8",
+          "ordinal": 6,
+          "rva": "00001538",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpoint@4",
+          "ordinal": 7,
+          "rva": "00001564",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointmesh@12",
+          "ordinal": 9,
+          "rva": "00001578",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointstrip@8",
+          "ordinal": 8,
+          "rva": "000015b0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquad@16",
+          "ordinal": 10,
+          "rva": "0000146c",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquadmesh@12",
+          "ordinal": 11,
+          "rva": "00001488",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtri@12",
+          "ordinal": 12,
+          "rva": "000013d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrifan@8",
+          "ordinal": 13,
+          "rva": "00001414",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrimesh@12",
+          "ordinal": 14,
+          "rva": "000013e8",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtristrip@8",
+          "ordinal": 15,
+          "rva": "00001400",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_flushwindow@0",
+          "ordinal": 16,
+          "rva": "0000113c",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_idle@0",
+          "ordinal": 17,
+          "rva": "00001138",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_init@0",
+          "ordinal": 18,
+          "rva": "00002498",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_is@0",
+          "ordinal": 19,
+          "rva": "00002774",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_lockwindow@0",
+          "ordinal": 20,
+          "rva": "000011d4",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_pageflip@0",
+          "ordinal": 21,
+          "rva": "00001144",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_readrect@20",
+          "ordinal": 22,
+          "rva": "00002814",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_restore@0",
+          "ordinal": 23,
+          "rva": "000024a4",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_selectdisplay@4",
+          "ordinal": 24,
+          "rva": "00001654",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setstate@8",
+          "ordinal": 25,
+          "rva": "00002b58",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_settexture@4",
+          "ordinal": 26,
+          "rva": "000034d4",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setvideomode@12",
+          "ordinal": 27,
+          "rva": "000024f0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_sync@4",
+          "ordinal": 28,
+          "rva": "00001180",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_talloc@20",
+          "ordinal": 29,
+          "rva": "00003534",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_treset@0",
+          "ordinal": 30,
+          "rva": "000036c8",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_tupdate@12",
+          "ordinal": 31,
+          "rva": "00003674",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_unlockwindow@4",
+          "ordinal": 32,
+          "rva": "00001368",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_window@4",
+          "ordinal": 33,
+          "rva": "000010e0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_writerect@20",
+          "ordinal": 34,
+          "rva": "000028b0",
+          "forwarder": null
+        }
+      ],
+      "sections": [
+        {
+          "name": "AUTO",
+          "rva": "00001000",
+          "virtual_size": 0,
+          "raw_size": 55296,
+          "raw_pointer": 1024
+        },
+        {
+          "name": ".idata",
+          "rva": "0000f000",
+          "virtual_size": 0,
+          "raw_size": 2048,
+          "raw_pointer": 56320
+        },
+        {
+          "name": "DGROUP",
+          "rva": "00010000",
+          "virtual_size": 0,
+          "raw_size": 7168,
+          "raw_pointer": 58368
+        },
+        {
+          "name": ".bss",
+          "rva": "00012000",
+          "virtual_size": 0,
+          "raw_size": 32256,
+          "raw_pointer": 0
+        },
+        {
+          "name": ".edata",
+          "rva": "0001a000",
+          "virtual_size": 0,
+          "raw_size": 1536,
+          "raw_pointer": 65536
+        },
+        {
+          "name": ".reloc",
+          "rva": "0001b000",
+          "virtual_size": 0,
+          "raw_size": 4096,
+          "raw_pointer": 67072
+        },
+        {
+          "name": ".rsrc",
+          "rva": "0001c000",
+          "virtual_size": 0,
+          "raw_size": 1024,
+          "raw_pointer": 71168
+        }
+      ]
+    },
+    "modern": {
+      "archive": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+      "member": "drivers/dx5/dx5a.dll",
+      "bytes": 72704,
+      "sha256": "6bd5865b05a7a9918da37ad09f643908d9decdcfdb341a23dd60a8cf70c08b42",
+      "exports": [
+        {
+          "name": "_THRASH_about@0",
+          "ordinal": 1,
+          "rva": "00001020",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clearwindow@0",
+          "ordinal": 2,
+          "rva": "00001118",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_clip@16",
+          "ordinal": 3,
+          "rva": "00001188",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawline@8",
+          "ordinal": 4,
+          "rva": "000014a0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinemesh@12",
+          "ordinal": 5,
+          "rva": "000014fc",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawlinestrip@8",
+          "ordinal": 6,
+          "rva": "00001538",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpoint@4",
+          "ordinal": 7,
+          "rva": "00001564",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointmesh@12",
+          "ordinal": 9,
+          "rva": "00001578",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawpointstrip@8",
+          "ordinal": 8,
+          "rva": "000015b0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquad@16",
+          "ordinal": 10,
+          "rva": "0000146c",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawquadmesh@12",
+          "ordinal": 11,
+          "rva": "00001488",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtri@12",
+          "ordinal": 12,
+          "rva": "000013d0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrifan@8",
+          "ordinal": 13,
+          "rva": "00001414",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtrimesh@12",
+          "ordinal": 14,
+          "rva": "000013e8",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_drawtristrip@8",
+          "ordinal": 15,
+          "rva": "00001400",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_flushwindow@0",
+          "ordinal": 16,
+          "rva": "0000113c",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_idle@0",
+          "ordinal": 17,
+          "rva": "00001138",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_init@0",
+          "ordinal": 18,
+          "rva": "00002498",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_is@0",
+          "ordinal": 19,
+          "rva": "00002774",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_lockwindow@0",
+          "ordinal": 20,
+          "rva": "000011d4",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_pageflip@0",
+          "ordinal": 21,
+          "rva": "00001144",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_readrect@20",
+          "ordinal": 22,
+          "rva": "00002814",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_restore@0",
+          "ordinal": 23,
+          "rva": "000024a4",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_selectdisplay@4",
+          "ordinal": 24,
+          "rva": "00001654",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setstate@8",
+          "ordinal": 25,
+          "rva": "00002b58",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_settexture@4",
+          "ordinal": 26,
+          "rva": "000034d4",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_setvideomode@12",
+          "ordinal": 27,
+          "rva": "000024f0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_sync@4",
+          "ordinal": 28,
+          "rva": "00001180",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_talloc@20",
+          "ordinal": 29,
+          "rva": "00003534",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_treset@0",
+          "ordinal": 30,
+          "rva": "000036c8",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_tupdate@12",
+          "ordinal": 31,
+          "rva": "00003674",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_unlockwindow@4",
+          "ordinal": 32,
+          "rva": "00001368",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_window@4",
+          "ordinal": 33,
+          "rva": "000010e0",
+          "forwarder": null
+        },
+        {
+          "name": "_THRASH_writerect@20",
+          "ordinal": 34,
+          "rva": "000028b0",
+          "forwarder": null
+        }
+      ],
+      "sections": [
+        {
+          "name": ".code",
+          "rva": "00001000",
+          "virtual_size": 0,
+          "raw_size": 55296,
+          "raw_pointer": 1024
+        },
+        {
+          "name": ".idata",
+          "rva": "0000f000",
+          "virtual_size": 0,
+          "raw_size": 2048,
+          "raw_pointer": 56320
+        },
+        {
+          "name": ".data",
+          "rva": "00010000",
+          "virtual_size": 0,
+          "raw_size": 7168,
+          "raw_pointer": 58368
+        },
+        {
+          "name": ".bss",
+          "rva": "00012000",
+          "virtual_size": 0,
+          "raw_size": 36352,
+          "raw_pointer": 0
+        },
+        {
+          "name": ".edata",
+          "rva": "0001b000",
+          "virtual_size": 0,
+          "raw_size": 1536,
+          "raw_pointer": 65536
+        },
+        {
+          "name": ".reloc",
+          "rva": "0001c000",
+          "virtual_size": 0,
+          "raw_size": 4096,
+          "raw_pointer": 67072
+        },
+        {
+          "name": ".rsrc",
+          "rva": "0001d000",
+          "virtual_size": 0,
+          "raw_size": 1536,
+          "raw_pointer": 71168
+        }
+      ]
+    }
+  },
+  "equal_export_name_ordinal_rva_forwarder_inventory": true,
+  "paired_file_backed_regions": [
+    {
+      "label": "code-section-including-padding",
+      "bytes": 55296,
+      "reference_sha256": "45d99e140459f88f0852cd2ac689cf3add8c88963e2990715c95e0028c340fd3",
+      "modern_sha256": "fe028d24c28957e8cf76ef16941da51ad2b5cb7a6eb7ccc853f1675d4bb1cec8",
+      "differing_bytes": 710,
+      "changed_intervals": [
+        {
+          "start_va": "60001091",
+          "end_va_exclusive": "60001093",
+          "reference_hex": "9020",
+          "modern_hex": "009e"
+        },
+        {
+          "start_va": "600011f8",
+          "end_va_exclusive": "600011fe",
+          "reference_hex": "833d9c280160",
+          "modern_hex": "31c040e88006"
+        },
+        {
+          "start_va": "600011ff",
+          "end_va_exclusive": "6000120a",
+          "reference_hex": "74086a01ff159c2801606a",
+          "modern_hex": "006a006a018d5c2408be6c"
+        },
+        {
+          "start_va": "6000120b",
+          "end_va_exclusive": "60001237",
+          "reference_hex": "6a018d5c2408be6c00000053a1e40e01608974240c6a008b1050a3900e0160ff5264a3a40e016085c00f85ec",
+          "modern_hex": "000053a1e40e01608974240c6a008b1050a3900e0160ff5264a3a40e016085c0740d31c0e84c060000e9ed00"
+        },
+        {
+          "start_va": "60001239",
+          "end_va_exclusive": "6000123a",
+          "reference_hex": "00",
+          "modern_hex": "90"
+        },
+        {
+          "start_va": "600017bd",
+          "end_va_exclusive": "600017e4",
+          "reference_hex": "56575583ec2c8b7424408b7c24448d46488b5e54e81a0e000031c989c585c00f847a00000083fb",
+          "modern_hex": "5556578b7424148d4648e8240e000085c00f849d00000089c58b460c8b5e088b4e543d80020000"
+        },
+        {
+          "start_va": "600017e5",
+          "end_va_exclusive": "600017e8",
+          "reference_hex": "0f8580",
+          "modern_hex": "828700"
+        },
+        {
+          "start_va": "600017ea",
+          "end_va_exclusive": "600017ee",
+          "reference_hex": "00ba0200",
+          "modern_hex": "81fbe001"
+        },
+        {
+          "start_va": "600017f0",
+          "end_va_exclusive": "60001833",
+          "reference_hex": "8b460c0faf46080fafc28944242431d2a1b40e0160f77424248b560c8944242881fa800200007569817e08e0010000756083fb10755b8b0d5020016083c1288b460c89",
+          "modern_hex": "727f8b3d5020016083c728833f00750d8b542418833a647368ff02eb0e390775e7395f0475e2394f0875dd8907895f0483fd037505b90f000000894f08896f0cc74710"
+        },
+        {
+          "start_va": "60001834",
+          "end_va_exclusive": "60001837",
+          "reference_hex": "8b4608",
+          "modern_hex": "000000"
+        },
+        {
+          "start_va": "60001838",
+          "end_va_exclusive": "60001843",
+          "reference_hex": "410483fd037505bb0f0000",
+          "modern_hex": "cdc1ed0383f90f7705bd02"
+        },
+        {
+          "start_va": "60001844",
+          "end_va_exclusive": "6000185e",
+          "reference_hex": "c741100100000089690c8b44242889590889411448894118b801",
+          "modern_hex": "00000fafe80fafeba1b40e016031d2f7f583f8037610c7471403"
+        },
+        {
+          "start_va": "60001861",
+          "end_va_exclusive": "600018e3",
+          "reference_hex": "83c42c5d5f5e5bc2080089da89d8c1fa1fc1e2031bc2c1f80389c2e96fffffff817e0c200300007519817e0858020000751083fb10750b8b0d5020016083c150eb8c85ed748889e0502eff1504f200608b1783fa1e731f8d0c95000000008d040a8b0d50200160c1e00301c18d42018907e958ffffff31c083c42c5d5f5e5bc20800",
+          "modern_hex": "c7471803000000eb0789471448894718b8010000005f5e5d5bc208009090905389c3a19c28016085c0740353ffd05bc390909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "60001b81",
+          "end_va_exclusive": "60001b83",
+          "reference_hex": "b004",
+          "modern_hex": "a00f"
+        },
+        {
+          "start_va": "60001bc8",
+          "end_va_exclusive": "60001bca",
+          "reference_hex": "4050",
+          "modern_hex": "054c"
+        },
+        {
+          "start_va": "60001bcb",
+          "end_va_exclusive": "60001bd4",
+          "reference_hex": "030000c74054580200",
+          "modern_hex": "01600200000068bc17"
+        },
+        {
+          "start_va": "60001bd5",
+          "end_va_exclusive": "60001c23",
+          "reference_hex": "c7405810000000c7405c04000000c740640200000068bc170060c7406801000000684c200160c74060010000006a00ba03000000a1b80e01606a0089154c2001608b1050ff52205b5ee9e8fcffff",
+          "modern_hex": "60684c2001606a006a00a1b80e0160508b08ff51205b5ee91afdffff9090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "600021db",
+          "end_va_exclusive": "600021dd",
+          "reference_hex": "b004",
+          "modern_hex": "a00f"
+        },
+        {
+          "start_va": "60002222",
+          "end_va_exclusive": "60002224",
+          "reference_hex": "4050",
+          "modern_hex": "054c"
+        },
+        {
+          "start_va": "60002225",
+          "end_va_exclusive": "6000222e",
+          "reference_hex": "030000c74054580200",
+          "modern_hex": "01600200000068bc17"
+        },
+        {
+          "start_va": "6000222f",
+          "end_va_exclusive": "60002247",
+          "reference_hex": "c7405810000000c7405c04000000c740640100000068bc17",
+          "modern_hex": "60684c2001606a006a00a1b80e0160508b08ff5120b80100"
+        },
+        {
+          "start_va": "60002248",
+          "end_va_exclusive": "6000224d",
+          "reference_hex": "60c7406801",
+          "modern_hex": "0081c4e802"
+        },
+        {
+          "start_va": "6000224f",
+          "end_va_exclusive": "60002288",
+          "reference_hex": "00684c200160c74060010000006a00a1b80e01606a00bf030000008b1050893d4c200160ff5220b80100000081c4e80200005d5f5e5a595bc3",
+          "modern_hex": "5d5f5e5a595bc39090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "60002e47",
+          "end_va_exclusive": "60002e78",
+          "reference_hex": "83f8150f853efdffff83fe040f84c305000083fe08740983fe020f85df0500008935f029016089d883c4205f5e5bc20800",
+          "modern_hex": "e942fdffff9090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "start_va": "6000341c",
+          "end_va_exclusive": "60003498",
+          "reference_hex": "ff350c0f0160b8b0290160bab0280160e863f5ffffb8b0290160e815f6ffff89d883c4205f5e5bc2080085f6742b39de0f853ef7ffffb81c00000089dae8061b0000b82300000031d2e8fa1a000089d883c4205f5e5bc20800b81c00000031d2e8e31a0000b82300000031d2e8d71a000089d883c4205f5e5bc20800",
+          "modern_hex": "90909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+        }
+      ]
+    },
+    {
+      "label": "import-section",
+      "bytes": 2048,
+      "reference_sha256": "33ba0128136bac804b5dc02111407d4eebfa786b2f84cb35361475730d5c8946",
+      "modern_sha256": "33ba0128136bac804b5dc02111407d4eebfa786b2f84cb35361475730d5c8946",
+      "differing_bytes": 0,
+      "changed_intervals": []
+    },
+    {
+      "label": "data-section",
+      "bytes": 7168,
+      "reference_sha256": "2730ba2fbcfae651475597a75c0389107015aaed1c471bdc800243f21e3260a5",
+      "modern_sha256": "2730ba2fbcfae651475597a75c0389107015aaed1c471bdc800243f21e3260a5",
+      "differing_bytes": 0,
+      "changed_intervals": []
+    }
+  ],
+  "bounded_bodies": [
+    {
+      "label": "THRASH_about",
+      "start_va": "60001020",
+      "end_va_exclusive": "600010d4",
+      "bytes": 180,
+      "reference_sha256": "abddd5f43ab5be325eb754f5e15be5af12256b487da0705946583e0a361bc5dc",
+      "modern_sha256": "4752fc35548a95a852c6b2ae9daac30ea76d0fa0e542f1ed78155f7deb40cdc2",
+      "changed_intervals": [
+        {
+          "start_va": "60001091",
+          "end_va_exclusive": "60001093",
+          "reference_hex": "9020",
+          "modern_hex": "009e"
+        }
+      ],
+      "disassembly": {
+        "reference": [
+          "60001020 <.data>:",
+          "60001020:\t53                   \tpush   ebx",
+          "60001021:\t56                   \tpush   esi",
+          "60001022:\t57                   \tpush   edi",
+          "60001023:\t55                   \tpush   ebp",
+          "60001024:\tba 35 44 33 44       \tmov    edx,0x44334435",
+          "60001029:\tb9 80 00 00 00       \tmov    ecx,0x80",
+          "6000102e:\tbb 68 00 00 00       \tmov    ebx,0x68",
+          "60001033:\tbe 08 00 00 00       \tmov    esi,0x8",
+          "60001038:\tbf 00 01 00 00       \tmov    edi,0x100",
+          "6000103d:\tbd 01 00 00 00       \tmov    ebp,0x1",
+          "60001042:\t8a 25 1c 20 01 60    \tmov    ah,BYTE PTR ds:0x6001201c",
+          "60001048:\t89 15 10 20 01 60    \tmov    DWORD PTR ds:0x60012010,edx",
+          "6000104e:\t89 0d 14 20 01 60    \tmov    DWORD PTR ds:0x60012014,ecx",
+          "60001054:\t89 1d 18 20 01 60    \tmov    DWORD PTR ds:0x60012018,ebx",
+          "6000105a:\t89 35 20 20 01 60    \tmov    DWORD PTR ds:0x60012020,esi",
+          "60001060:\t89 3d 24 20 01 60    \tmov    DWORD PTR ds:0x60012024,edi",
+          "60001066:\t89 2d 28 20 01 60    \tmov    DWORD PTR ds:0x60012028,ebp",
+          "6000106c:\t80 cc 0f             \tor     ah,0xf",
+          "6000106f:\t89 35 2c 20 01 60    \tmov    DWORD PTR ds:0x6001202c,esi",
+          "60001075:\t89 3d 30 20 01 60    \tmov    DWORD PTR ds:0x60012030,edi",
+          "6000107b:\t89 2d 34 20 01 60    \tmov    DWORD PTR ds:0x60012034,ebp",
+          "60001081:\tbe 09 00 00 00       \tmov    esi,0x9",
+          "60001086:\tbf 44 0e 01 60       \tmov    edi,0x60010e44",
+          "6000108b:\tbd 04 00 00 00       \tmov    ebp,0x4",
+          "60001090:\tba 90 20 01 60       \tmov    edx,0x60012090",
+          "60001095:\t88 25 1c 20 01 60    \tmov    BYTE PTR ds:0x6001201c,ah",
+          "6000109b:\t31 db                \txor    ebx,ebx",
+          "6000109d:\tb8 70 0e 01 60       \tmov    eax,0x60010e70",
+          "600010a2:\t89 1d 38 20 01 60    \tmov    DWORD PTR ds:0x60012038,ebx",
+          "600010a8:\t89 35 3c 20 01 60    \tmov    DWORD PTR ds:0x6001203c,esi",
+          "600010ae:\t89 3d 40 20 01 60    \tmov    DWORD PTR ds:0x60012040,edi",
+          "600010b4:\t89 2d 44 20 01 60    \tmov    DWORD PTR ds:0x60012044,ebp",
+          "600010ba:\t89 15 50 20 01 60    \tmov    DWORD PTR ds:0x60012050,edx",
+          "600010c0:\ta3 48 20 01 60       \tmov    ds:0x60012048,eax",
+          "600010c5:\te8 4e 05 00 00       \tcall   0x60001618",
+          "600010ca:\tb8 10 20 01 60       \tmov    eax,0x60012010",
+          "600010cf:\t5d                   \tpop    ebp",
+          "600010d0:\t5f                   \tpop    edi",
+          "600010d1:\t5e                   \tpop    esi",
+          "600010d2:\t5b                   \tpop    ebx",
+          "600010d3:\tc3                   \tret"
+        ],
+        "modern": [
+          "60001020 <.data>:",
+          "60001020:\t53                   \tpush   ebx",
+          "60001021:\t56                   \tpush   esi",
+          "60001022:\t57                   \tpush   edi",
+          "60001023:\t55                   \tpush   ebp",
+          "60001024:\tba 35 44 33 44       \tmov    edx,0x44334435",
+          "60001029:\tb9 80 00 00 00       \tmov    ecx,0x80",
+          "6000102e:\tbb 68 00 00 00       \tmov    ebx,0x68",
+          "60001033:\tbe 08 00 00 00       \tmov    esi,0x8",
+          "60001038:\tbf 00 01 00 00       \tmov    edi,0x100",
+          "6000103d:\tbd 01 00 00 00       \tmov    ebp,0x1",
+          "60001042:\t8a 25 1c 20 01 60    \tmov    ah,BYTE PTR ds:0x6001201c",
+          "60001048:\t89 15 10 20 01 60    \tmov    DWORD PTR ds:0x60012010,edx",
+          "6000104e:\t89 0d 14 20 01 60    \tmov    DWORD PTR ds:0x60012014,ecx",
+          "60001054:\t89 1d 18 20 01 60    \tmov    DWORD PTR ds:0x60012018,ebx",
+          "6000105a:\t89 35 20 20 01 60    \tmov    DWORD PTR ds:0x60012020,esi",
+          "60001060:\t89 3d 24 20 01 60    \tmov    DWORD PTR ds:0x60012024,edi",
+          "60001066:\t89 2d 28 20 01 60    \tmov    DWORD PTR ds:0x60012028,ebp",
+          "6000106c:\t80 cc 0f             \tor     ah,0xf",
+          "6000106f:\t89 35 2c 20 01 60    \tmov    DWORD PTR ds:0x6001202c,esi",
+          "60001075:\t89 3d 30 20 01 60    \tmov    DWORD PTR ds:0x60012030,edi",
+          "6000107b:\t89 2d 34 20 01 60    \tmov    DWORD PTR ds:0x60012034,ebp",
+          "60001081:\tbe 09 00 00 00       \tmov    esi,0x9",
+          "60001086:\tbf 44 0e 01 60       \tmov    edi,0x60010e44",
+          "6000108b:\tbd 04 00 00 00       \tmov    ebp,0x4",
+          "60001090:\tba 00 9e 01 60       \tmov    edx,0x60019e00",
+          "60001095:\t88 25 1c 20 01 60    \tmov    BYTE PTR ds:0x6001201c,ah",
+          "6000109b:\t31 db                \txor    ebx,ebx",
+          "6000109d:\tb8 70 0e 01 60       \tmov    eax,0x60010e70",
+          "600010a2:\t89 1d 38 20 01 60    \tmov    DWORD PTR ds:0x60012038,ebx",
+          "600010a8:\t89 35 3c 20 01 60    \tmov    DWORD PTR ds:0x6001203c,esi",
+          "600010ae:\t89 3d 40 20 01 60    \tmov    DWORD PTR ds:0x60012040,edi",
+          "600010b4:\t89 2d 44 20 01 60    \tmov    DWORD PTR ds:0x60012044,ebp",
+          "600010ba:\t89 15 50 20 01 60    \tmov    DWORD PTR ds:0x60012050,edx",
+          "600010c0:\ta3 48 20 01 60       \tmov    ds:0x60012048,eax",
+          "600010c5:\te8 4e 05 00 00       \tcall   0x60001618",
+          "600010ca:\tb8 10 20 01 60       \tmov    eax,0x60012010",
+          "600010cf:\t5d                   \tpop    ebp",
+          "600010d0:\t5f                   \tpop    edi",
+          "600010d1:\t5e                   \tpop    esi",
+          "600010d2:\t5b                   \tpop    ebx",
+          "600010d3:\tc3                   \tret"
+        ]
+      }
+    },
+    {
+      "label": "selection-helper-and-THRASH_selectdisplay",
+      "start_va": "60001618",
+      "end_va_exclusive": "60001734",
+      "bytes": 284,
+      "reference_sha256": "b3f4c6be2bf0bb814d446db6e47d7c478defe656252c12937f02c49d73d44165",
+      "modern_sha256": "b3f4c6be2bf0bb814d446db6e47d7c478defe656252c12937f02c49d73d44165",
+      "changed_intervals": [],
+      "disassembly": {
+        "reference": [
+          "60001618 <.data>:",
+          "60001618:\t51                   \tpush   ecx",
+          "60001619:\t52                   \tpush   edx",
+          "6000161a:\t83 3d f4 0e 01 60 00 \tcmp    DWORD PTR ds:0x60010ef4,0x0",
+          "60001621:\t7c 03                \tjl     0x60001626",
+          "60001623:\t5a                   \tpop    edx",
+          "60001624:\t59                   \tpop    ecx",
+          "60001625:\tc3                   \tret",
+          "60001626:\t83 3d 8c 28 01 60 00 \tcmp    DWORD PTR ds:0x6001288c,0x0",
+          "6000162d:\t75 09                \tjne    0x60001638",
+          "6000162f:\t83 3d a8 28 01 60 00 \tcmp    DWORD PTR ds:0x600128a8,0x0",
+          "60001636:\t74 eb                \tje     0x60001623",
+          "60001638:\tb8 4c 00 01 60       \tmov    eax,0x6001004c",
+          "6000163d:\te8 d0 3b 00 00       \tcall   0x60005212",
+          "60001642:\t85 c0                \ttest   eax,eax",
+          "60001644:\t74 05                \tje     0x6000164b",
+          "60001646:\te8 21 3c 00 00       \tcall   0x6000526c",
+          "6000164b:\t50                   \tpush   eax",
+          "6000164c:\te8 03 00 00 00       \tcall   0x60001654",
+          "60001651:\t5a                   \tpop    edx",
+          "60001652:\t59                   \tpop    ecx",
+          "60001653:\tc3                   \tret",
+          "60001654:\t56                   \tpush   esi",
+          "60001655:\t57                   \tpush   edi",
+          "60001656:\t8b 74 24 0c          \tmov    esi,DWORD PTR [esp+0xc]",
+          "6000165a:\t31 d2                \txor    edx,edx",
+          "6000165c:\t8b 0d b8 0e 01 60    \tmov    ecx,DWORD PTR ds:0x60010eb8",
+          "60001662:\t89 15 ec 0e 01 60    \tmov    DWORD PTR ds:0x60010eec,edx",
+          "60001668:\t85 c9                \ttest   ecx,ecx",
+          "6000166a:\t0f 85 85 00 00 00    \tjne    0x600016f5",
+          "60001670:\t85 f6                \ttest   esi,esi",
+          "60001672:\t0f 8c 87 00 00 00    \tjl     0x600016ff",
+          "60001678:\t3b 35 f0 0e 01 60    \tcmp    esi,DWORD PTR ds:0x60010ef0",
+          "6000167e:\t0f 8d 7b 00 00 00    \tjge    0x600016ff",
+          "60001684:\t89 35 f4 0e 01 60    \tmov    DWORD PTR ds:0x60010ef4,esi",
+          "6000168a:\t8b 04 b5 60 28 01 60 \tmov    eax,DWORD PTR [esi*4+0x60012860]",
+          "60001691:\tc1 e6 05             \tshl    esi,0x5",
+          "60001694:\tbf 5c 20 01 60       \tmov    edi,0x6001205c",
+          "60001699:\t81 c6 20 27 01 60    \tadd    esi,0x60012720",
+          "6000169f:\ta3 ec 0e 01 60       \tmov    ds:0x60010eec,eax",
+          "600016a4:\t57                   \tpush   edi",
+          "600016a5:\t8a 06                \tmov    al,BYTE PTR [esi]",
+          "600016a7:\t88 07                \tmov    BYTE PTR [edi],al",
+          "600016a9:\t3c 00                \tcmp    al,0x0",
+          "600016ab:\t74 10                \tje     0x600016bd",
+          "600016ad:\t8a 46 01             \tmov    al,BYTE PTR [esi+0x1]",
+          "600016b0:\t83 c6 02             \tadd    esi,0x2",
+          "600016b3:\t88 47 01             \tmov    BYTE PTR [edi+0x1],al",
+          "600016b6:\t83 c7 02             \tadd    edi,0x2",
+          "600016b9:\t3c 00                \tcmp    al,0x0",
+          "600016bb:\t75 e8                \tjne    0x600016a5",
+          "600016bd:\t5f                   \tpop    edi",
+          "600016be:\t83 3d 8c 28 01 60 00 \tcmp    DWORD PTR ds:0x6001288c,0x0",
+          "600016c5:\t74 51                \tje     0x60001718",
+          "600016c7:\te8 e4 0b 00 00       \tcall   0x600022b0",
+          "600016cc:\tb8 5c 00 01 60       \tmov    eax,0x6001005c",
+          "600016d1:\tba 03 00 00 00       \tmov    edx,0x3",
+          "600016d6:\te8 37 3b 00 00       \tcall   0x60005212",
+          "600016db:\t85 c0                \ttest   eax,eax",
+          "600016dd:\t74 07                \tje     0x600016e6",
+          "600016df:\te8 88 3b 00 00       \tcall   0x6000526c",
+          "600016e4:\t89 c2                \tmov    edx,eax",
+          "600016e6:\t83 fa 03             \tcmp    edx,0x3",
+          "600016e9:\t74 34                \tje     0x6000171f",
+          "600016eb:\tb8 01 00 00 00       \tmov    eax,0x1",
+          "600016f0:\t5f                   \tpop    edi",
+          "600016f1:\t5e                   \tpop    esi",
+          "600016f2:\tc2 04 00             \tret    0x4",
+          "600016f5:\te8 aa 0d 00 00       \tcall   0x600024a4",
+          "600016fa:\te9 71 ff ff ff       \tjmp    0x60001670",
+          "600016ff:\tbf 5c 20 01 60       \tmov    edi,0x6001205c",
+          "60001704:\t31 f6                \txor    esi,esi",
+          "60001706:\ta1 60 28 01 60       \tmov    eax,ds:0x60012860",
+          "6000170b:\t89 35 f4 0e 01 60    \tmov    DWORD PTR ds:0x60010ef4,esi",
+          "60001711:\tbe 20 27 01 60       \tmov    esi,0x60012720",
+          "60001716:\teb 87                \tjmp    0x6000169f",
+          "60001718:\te8 2b 09 00 00       \tcall   0x60002048",
+          "6000171d:\teb ad                \tjmp    0x600016cc",
+          "6000171f:\t52                   \tpush   edx",
+          "60001720:\t68 90 01 00 00       \tpush   0x190",
+          "60001725:\te8 2e 14 00 00       \tcall   0x60002b58",
+          "6000172a:\tb8 01 00 00 00       \tmov    eax,0x1",
+          "6000172f:\t5f                   \tpop    edi",
+          "60001730:\t5e                   \tpop    esi",
+          "60001731:\tc2 04 00             \tret    0x4"
+        ],
+        "modern": [
+          "60001618 <.data>:",
+          "60001618:\t51                   \tpush   ecx",
+          "60001619:\t52                   \tpush   edx",
+          "6000161a:\t83 3d f4 0e 01 60 00 \tcmp    DWORD PTR ds:0x60010ef4,0x0",
+          "60001621:\t7c 03                \tjl     0x60001626",
+          "60001623:\t5a                   \tpop    edx",
+          "60001624:\t59                   \tpop    ecx",
+          "60001625:\tc3                   \tret",
+          "60001626:\t83 3d 8c 28 01 60 00 \tcmp    DWORD PTR ds:0x6001288c,0x0",
+          "6000162d:\t75 09                \tjne    0x60001638",
+          "6000162f:\t83 3d a8 28 01 60 00 \tcmp    DWORD PTR ds:0x600128a8,0x0",
+          "60001636:\t74 eb                \tje     0x60001623",
+          "60001638:\tb8 4c 00 01 60       \tmov    eax,0x6001004c",
+          "6000163d:\te8 d0 3b 00 00       \tcall   0x60005212",
+          "60001642:\t85 c0                \ttest   eax,eax",
+          "60001644:\t74 05                \tje     0x6000164b",
+          "60001646:\te8 21 3c 00 00       \tcall   0x6000526c",
+          "6000164b:\t50                   \tpush   eax",
+          "6000164c:\te8 03 00 00 00       \tcall   0x60001654",
+          "60001651:\t5a                   \tpop    edx",
+          "60001652:\t59                   \tpop    ecx",
+          "60001653:\tc3                   \tret",
+          "60001654:\t56                   \tpush   esi",
+          "60001655:\t57                   \tpush   edi",
+          "60001656:\t8b 74 24 0c          \tmov    esi,DWORD PTR [esp+0xc]",
+          "6000165a:\t31 d2                \txor    edx,edx",
+          "6000165c:\t8b 0d b8 0e 01 60    \tmov    ecx,DWORD PTR ds:0x60010eb8",
+          "60001662:\t89 15 ec 0e 01 60    \tmov    DWORD PTR ds:0x60010eec,edx",
+          "60001668:\t85 c9                \ttest   ecx,ecx",
+          "6000166a:\t0f 85 85 00 00 00    \tjne    0x600016f5",
+          "60001670:\t85 f6                \ttest   esi,esi",
+          "60001672:\t0f 8c 87 00 00 00    \tjl     0x600016ff",
+          "60001678:\t3b 35 f0 0e 01 60    \tcmp    esi,DWORD PTR ds:0x60010ef0",
+          "6000167e:\t0f 8d 7b 00 00 00    \tjge    0x600016ff",
+          "60001684:\t89 35 f4 0e 01 60    \tmov    DWORD PTR ds:0x60010ef4,esi",
+          "6000168a:\t8b 04 b5 60 28 01 60 \tmov    eax,DWORD PTR [esi*4+0x60012860]",
+          "60001691:\tc1 e6 05             \tshl    esi,0x5",
+          "60001694:\tbf 5c 20 01 60       \tmov    edi,0x6001205c",
+          "60001699:\t81 c6 20 27 01 60    \tadd    esi,0x60012720",
+          "6000169f:\ta3 ec 0e 01 60       \tmov    ds:0x60010eec,eax",
+          "600016a4:\t57                   \tpush   edi",
+          "600016a5:\t8a 06                \tmov    al,BYTE PTR [esi]",
+          "600016a7:\t88 07                \tmov    BYTE PTR [edi],al",
+          "600016a9:\t3c 00                \tcmp    al,0x0",
+          "600016ab:\t74 10                \tje     0x600016bd",
+          "600016ad:\t8a 46 01             \tmov    al,BYTE PTR [esi+0x1]",
+          "600016b0:\t83 c6 02             \tadd    esi,0x2",
+          "600016b3:\t88 47 01             \tmov    BYTE PTR [edi+0x1],al",
+          "600016b6:\t83 c7 02             \tadd    edi,0x2",
+          "600016b9:\t3c 00                \tcmp    al,0x0",
+          "600016bb:\t75 e8                \tjne    0x600016a5",
+          "600016bd:\t5f                   \tpop    edi",
+          "600016be:\t83 3d 8c 28 01 60 00 \tcmp    DWORD PTR ds:0x6001288c,0x0",
+          "600016c5:\t74 51                \tje     0x60001718",
+          "600016c7:\te8 e4 0b 00 00       \tcall   0x600022b0",
+          "600016cc:\tb8 5c 00 01 60       \tmov    eax,0x6001005c",
+          "600016d1:\tba 03 00 00 00       \tmov    edx,0x3",
+          "600016d6:\te8 37 3b 00 00       \tcall   0x60005212",
+          "600016db:\t85 c0                \ttest   eax,eax",
+          "600016dd:\t74 07                \tje     0x600016e6",
+          "600016df:\te8 88 3b 00 00       \tcall   0x6000526c",
+          "600016e4:\t89 c2                \tmov    edx,eax",
+          "600016e6:\t83 fa 03             \tcmp    edx,0x3",
+          "600016e9:\t74 34                \tje     0x6000171f",
+          "600016eb:\tb8 01 00 00 00       \tmov    eax,0x1",
+          "600016f0:\t5f                   \tpop    edi",
+          "600016f1:\t5e                   \tpop    esi",
+          "600016f2:\tc2 04 00             \tret    0x4",
+          "600016f5:\te8 aa 0d 00 00       \tcall   0x600024a4",
+          "600016fa:\te9 71 ff ff ff       \tjmp    0x60001670",
+          "600016ff:\tbf 5c 20 01 60       \tmov    edi,0x6001205c",
+          "60001704:\t31 f6                \txor    esi,esi",
+          "60001706:\ta1 60 28 01 60       \tmov    eax,ds:0x60012860",
+          "6000170b:\t89 35 f4 0e 01 60    \tmov    DWORD PTR ds:0x60010ef4,esi",
+          "60001711:\tbe 20 27 01 60       \tmov    esi,0x60012720",
+          "60001716:\teb 87                \tjmp    0x6000169f",
+          "60001718:\te8 2b 09 00 00       \tcall   0x60002048",
+          "6000171d:\teb ad                \tjmp    0x600016cc",
+          "6000171f:\t52                   \tpush   edx",
+          "60001720:\t68 90 01 00 00       \tpush   0x190",
+          "60001725:\te8 2e 14 00 00       \tcall   0x60002b58",
+          "6000172a:\tb8 01 00 00 00       \tmov    eax,0x1",
+          "6000172f:\t5f                   \tpop    edi",
+          "60001730:\t5e                   \tpop    esi",
+          "60001731:\tc2 04 00             \tret    0x4"
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Reference is author-hosted and matches the previously inventoried local root D3DA hash; not authenticated pristine retail.",
+    "Raw changed intervals are byte inventory, not function boundaries or complete semantic attribution.",
+    "Descriptor +40 pointer relocation is verified; pointed-to initialization and all consumers remain follow-up.",
+    "All section VirtualSize fields are zero. BSS raw pointer is zero; no file-backed BSS bytes were read.",
+    "Relocations, resources, headers and export-section bytes are not semantically compared here.",
+    "No target execution, reconstruction, compilation or saved database mutation."
+  ]
+}

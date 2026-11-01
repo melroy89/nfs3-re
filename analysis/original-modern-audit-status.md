@@ -294,3 +294,7 @@ The [class-text chain](original-modern-car-alias.md#alias-expansion-reaches-loca
 ## Original-reference bundle acquired with explicit variant boundary
 
 The [98-file inventory](original-modern-original-reference-bundle.md) pins an author-hosted reference bundle:80 menus, six HUD-position files, six PE files and six others. Its EXE differs from the established supplied original by exactly one byte at4b639b; it was not substituted. Candidate original-side renderers are now available for explicit pairing, while pristine-retail provenance remains unverified. No semantic catalog claim is promoted from artifact identity alone; counts unchanged.
+
+## DX5 reference/final correspondence and byte map
+
+The [DX5 comparison](original-modern-dx5-reference-pair.md) verifies34 identical export entries,710 differing code-section bytes in25 intervals, equal file-backed import/data sections, and the two-byte immediate change publishing descriptor+40h. The complete284-byte selection span is retained. BSS extent grows1000h under the nonzero raw-size-field interpretation; file-backed zeros and runtime mapping are not inferred. Table initialization/consumers and other intervals remain next actions; no catalog claim/count changes or target execution.
