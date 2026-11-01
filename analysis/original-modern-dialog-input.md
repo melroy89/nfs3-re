@@ -91,3 +91,21 @@ The call is conditional on incoming action 1, a zero result from `004446c0`, and
 The [moved notice comparison](#localized-notice-wrapper-moved-counterpart-and-constructor-inputs) already verifies the wrapper difference: original supplies one localized string and fixed constructor arguments; Modern supplies the requested string plus localized ID 11, with revised constructor arguments. This callback is another concrete consumer of that change, rather than evidence of a rewritten network protocol.
 
 **Bounded status: done; confidence: verified static full callback and linked wrapper contract.** Actual notice text/timing, service availability and multiplayer behavior remain untested. The callback's retained calls can still reach other version differences, so whole network equivalence is not claimed. Executables, Ghidra and maintained C are unchanged.
+
+## Replace-first policy bound to IP and player-name dialogs
+
+The expanded choice-dialog audit now retains three paired constructor-call prefixes and verifies their bytes identical across the supplied original and official Modern. It pins the final package's English text asset and decodes the localized IDs used on those paths. These labels identify the intended dialogs; they are not a validation of original-retail translations or observed UI text.
+
+| Constructor CALL | Localized evidence from official English | Initial text pointer | Requested maximum length |
+|---|---|---|---:|
+| `0043f543` | ID10: `Enter IP address or domain name:` | `006fbb7e` |29 |
+| `0045cf53` | ID201: `Player One` | `006fd2fc` |10 |
+| `0045cfd3` | ID202: `Player Two` | `006fd368` |10 |
+
+All call `00444c20`. The initializer stores3 at `00558b14`, binding the existing central dispatch to edit handler `00444f50`. Stack argument2 (initializer `[EBP+14h]`) becomes initial-text pointer `00558c58`, while argument3 (`[EBP+18h]`) supplies the requested maximum. In retained `00444db5..00444e2c`, helper `00443860` validates the input pointer/content using the selected filter; on a true result, the initializer requests a bounded copy through `004e0e30` into edit buffer `00558b58` and computes current length `00558b50`. A false result selects zero length. Complete validation/copy-helper contracts and guaranteed NUL termination remain separate requirements.
+
+This connects the changed initial replace flag to the relevant ordinary prefilled path. Original initializes `00558b2c=1`: the first accepted append character clears the existing buffer and length before insertion. Modern initializes0 and skips that clear/reset block. The proof concerns **first accepted character insertion**, not literally every first key: Escape, Enter, navigation, invalid characters and full-buffer admission have separate branches. The raw maximums also differ between the IP and name constructors, so a single unconstrained-string test would not establish all behaviour.
+
+The [existing local-name/roster evidence](original-modern-ghost-loading.md#player-identity-fields-are-explicitly-restored) independently binds `006fd2fc` to local player identity; the localized Player One/Two paths and their text pointers provide the direct dialog correspondence. These caller prefixes are unchanged, so the observed difference comes from shared initialization/handler policy, not a newly added name/IP constructor.
+
+MP140-035 now has **partial static support** for the reported previous-text-loss repair, with constructor, prefill, flag and insertion links. Real typing, all character filters/buffer edge cases, later state changes and1.4.0-specific introduction remain unverified. No input event, game dialog or instruction probe was executed.

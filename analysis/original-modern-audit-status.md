@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **142 vendor-only,45 bounded-static,101 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **141 vendor-only,45 bounded-static,102 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -124,7 +124,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels142 entries vendor-only,45 bounded static,101 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels141 entries vendor-only,45 bounded static,102 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -278,3 +278,7 @@ The [paired wrapper audit](original-modern-projection.md#camera-dispatch-wrapper
 ## Fixed-descriptor handler resolved locally
 
 The [complete handler/callee comparison](original-modern-projection.md#fixed-descriptor-handler-changed-control-input-and-bounded-write-set) establishes a new EDX control input, exact descriptor position/orientation destinations and retained vector/orientation helpers. For the fixed661220 call, the write set is disjoint from the projection restore-source cells; this specific branch is excluded as their capture writer. Generic aliases, other handlers, actual capture lifetime and rendered horizon remain unresolved. No catalog status/count change or target execution.
+
+## Name/IP edit-state claim now bound to constructors
+
+The [dialog follow-up](original-modern-dialog-input.md#replace-first-policy-bound-to-ip-and-player-name-dialogs) verifies unchanged IP/Player One/Two constructor prefixes, their localized labels and initial-text pointers, then links them through shared prefill and replace-first state to insertion. MP140-035 gains partial support; actual typing, all filters/bounds and release introduction remain unverified. Current counts:141 vendor-only,45 bounded static,102 partial,2 unresolved. No target/input execution.

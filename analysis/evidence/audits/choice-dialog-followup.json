@@ -22,6 +22,24 @@
           "end_exclusive": "004450bd",
           "sha256": "9aa1607f5766f2ccdb882401d4b6c20208e0b663697b928f8eaffb0037d9b0d7",
           "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-00444f50.asm"
+        },
+        {
+          "start": "0043f4f5",
+          "end_exclusive": "0043f548",
+          "sha256": "03296c359288ed8aff73db3ba2edc341b16dc58862b36678b050c1af3e0721a8",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-0043f4f5.asm"
+        },
+        {
+          "start": "0045cef0",
+          "end_exclusive": "0045cf58",
+          "sha256": "dd0b686467e5cb72fd662aba92c97842e32df7ca6a29d935f98009e496833183",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-0045cef0.asm"
+        },
+        {
+          "start": "0045cf70",
+          "end_exclusive": "0045cfd8",
+          "sha256": "e6cbb8d7d94093620229f70824dc6de65baa58ae5fb89052f9b988cd86da829b",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-0045cf70.asm"
         }
       ]
     },
@@ -46,6 +64,24 @@
           "end_exclusive": "004450bd",
           "sha256": "94ee3aa50f07af5a46794e950e0b059f9b2d2974a32c6fbc90f6818ec5bb3e97",
           "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-00444f50.asm"
+        },
+        {
+          "start": "0043f4f5",
+          "end_exclusive": "0043f548",
+          "sha256": "03296c359288ed8aff73db3ba2edc341b16dc58862b36678b050c1af3e0721a8",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-0043f4f5.asm"
+        },
+        {
+          "start": "0045cef0",
+          "end_exclusive": "0045cf58",
+          "sha256": "dd0b686467e5cb72fd662aba92c97842e32df7ca6a29d935f98009e496833183",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-0045cef0.asm"
+        },
+        {
+          "start": "0045cf70",
+          "end_exclusive": "0045cfd8",
+          "sha256": "e6cbb8d7d94093620229f70824dc6de65baa58ae5fb89052f9b988cd86da829b",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-0045cf70.asm"
         }
       ]
     }
@@ -72,8 +108,39 @@
       "modern": 0.48554688692092896
     }
   ],
+  "edit_dialog_bindings": {
+    "english_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "labels": {
+      "10": "Enter IP address or domain name:",
+      "201": "Player One",
+      "202": "Player Two"
+    },
+    "callers": [
+      {
+        "call": "0043f543",
+        "localized_id": 10,
+        "initial_text": "006fbb7e",
+        "max_length": 29
+      },
+      {
+        "call": "0045cf53",
+        "localized_id": 201,
+        "initial_text": "006fd2fc",
+        "max_length": 10
+      },
+      {
+        "call": "0045cfd3",
+        "localized_id": 202,
+        "initial_text": "006fd368",
+        "max_length": 10
+      }
+    ],
+    "constructor": "Stack argument2 at[EBP+14h] becomes00558c58; stack argument3 at[EBP+18h] bounds requested length.00558b14=3 selects edit handler.",
+    "prefill": "00444db5..00444e2c validates initial string through00443860, conditionally copies to00558b58 through004e0e30 and computes00558b50 length.",
+    "limits": "Conditional prefilled path; complete validation/copy contracts, later mutations, all callers and actual input not exercised."
+  },
   "limits": [
     "Static initial state and handler consequences only; no text-entry or rendering execution.",
-    "Dialog type admission, initial buffer contents and textured-draw parameter semantics remain separate."
+    "Selected IP/name constructor binding is verified; all filter/copy contracts, actual prefill contents, other callers and textured-draw semantics remain separate."
   ]
 }
