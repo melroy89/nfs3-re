@@ -9,7 +9,7 @@ Static comparison of the matched routine at `0047f650` in the supplied original 
 
 ## Matched builder: old computed inset versus Modern stored inset
 
-Both files contain a routine at `0047f650` that emits nine `0x80`-byte quad records from rectangle coordinates and atlas UV constants. Several callers are retained at the same addresses (`0048106d`, `004812cd`, `004813cb`, `00481b6d`, `00481eee`). Their instruction bodies were checked in both executables; the large routine body itself is substantially rewritten, so equal entry address alone is not treated as proof of full semantic identity.
+Both files contain a routine at `0047f650` that emits eight `0x80`-byte quad records from rectangle coordinates and atlas UV constants (corrected extent below). Several callers are retained at the same addresses (`0048106d`, `004812cd`, `004813cb`, `00481b6d`, `00481eee`). Their instruction bodies were checked in both executables; the large routine body itself is substantially rewritten, so equal entry address alone is not treated as proof of full semantic identity.
 
 The paired inset arithmetic at the routine entry is concrete:
 
@@ -39,6 +39,16 @@ In particular C is slightly greater than exact1/640. FISTP uses the ambient roun
 ## Do not transfer the Modern global name to the original
 
 Modern's direct references to `0055fed0` are reads in the builder and wrapper, the write in `0047f9a4`, and a separate read at `004be759`. In the original executable, the inspected border builder does not reference `0055fed0`; its stores at `004b5aa4`, `004b5bd5`, `004b5c68`, `004b5d57`, and `004b5df6` and read at `004bee1f` now have a [renderer-budget producer/consumer linkage](original-modern-display-modes.md#original-budget-is-a-renderer-selection-constant). Accordingly, `g_nTexturedRectangleBorderThickness` is a Modern-side descriptive name only; it is not used to characterize the original DWORD or infer that the original budget measured VRAM.
+
+## Corrected output extent: eight quads, not nine
+
+`python3 analysis/scripts/audit_border_destination_extent.py` retains a [complete static destination-write inventory](evidence/audits/border-destination-extent.json) for both hash-pinned straight-line builders. It tracks their destination-register advances and signed memory displacements, without executing target instructions. Both write exactly128 unique DWORD locations: XY at vertex+0/+4 and UV at+18h/+1ch for32 vertices. The highest written byte is **destination+3ffh**; the enclosing span is **400h bytes**, comprising eight80h-byte quads. Other vertex fields are untouched by these builders.
+
+Modern has seven destination advances of80h. The original uses a different pointer schedule and negative/positive displacements, but normalization gives the same written offset set. The official and local analysis Modern builder bytes also match exactly. There is no centre/ninth quad in either body; the eight Modern rectangles form the surrounding ring described in the corrected [detailed notes](detailed-analysis-notes.md#eight-textured-rectangle-border-quads-corrected-extent).
+
+Earlier notes incorrectly claimed nine quads, a480h-byte span and an80h-byte mismatch against400h caller slices. **Those extent and derived overlap claims are withdrawn.** Matching the nominal slice size does not prove all caller indices, allocation lifetimes or rendered results, and equal destination offsets do not prove equal coordinate/UV values.
+
+The saved Ghidra label `BuildNineTexturedRectangleBorderQuads` and related comments reflect the old error. This pass corrects Markdown and retains the evidence; it does not mutate the saved database. A later annotation pass should rename it to `BuildEightTexturedRectangleBorderQuads`, correct the dependent comments and save/read back those changes. Generated navigation may continue showing the saved historical label until that happens; it must not override this byte-grounded extent result.
 
 ## Retained evidence
 

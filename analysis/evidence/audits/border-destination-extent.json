@@ -1,0 +1,2237 @@
+{
+  "kind": "static-border-destination-write-accounting",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start": "0047f650",
+      "end_exclusive": "0047fbdc",
+      "body_sha256": "5aaa096517721aaedc71a13d241bb340cb65ea009eab71dee258a26263e03749",
+      "disassembly": [
+        "47f650:\t56                   \tpush   esi",
+        "47f651:\t57                   \tpush   edi",
+        "47f652:\t55                   \tpush   ebp",
+        "47f653:\t89 e5                \tmov    ebp,esp",
+        "47f655:\t83 ec 18             \tsub    esp,0x18",
+        "47f658:\t89 c6                \tmov    esi,eax",
+        "47f65a:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f660:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f666:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f66c:\t83 ec 04             \tsub    esp,0x4",
+        "47f66f:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47f672:\t58                   \tpop    eax",
+        "47f673:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f679:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f67f:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f685:\t89 df                \tmov    edi,ebx",
+        "47f687:\tc7 46 78 00 80 29 3f \tmov    DWORD PTR [esi+0x78],0x3f298000",
+        "47f68e:\t29 c7                \tsub    edi,eax",
+        "47f690:\td9 46 78             \tfld    DWORD PTR [esi+0x78]",
+        "47f693:\t89 7d f8             \tmov    DWORD PTR [ebp-0x8],edi",
+        "47f696:\td9 5e 18             \tfstp   DWORD PTR [esi+0x18]",
+        "47f699:\tdb 45 f8             \tfild   DWORD PTR [ebp-0x8]",
+        "47f69c:\td9 56 60             \tfst    DWORD PTR [esi+0x60]",
+        "47f69f:\td9 1e                \tfstp   DWORD PTR [esi]",
+        "47f6a1:\t83 ec 04             \tsub    esp,0x4",
+        "47f6a4:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47f6a7:\t58                   \tpop    eax",
+        "47f6a8:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f6ae:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f6b4:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f6ba:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f6c0:\t89 5d fc             \tmov    DWORD PTR [ebp-0x4],ebx",
+        "47f6c3:\t89 55 f8             \tmov    DWORD PTR [ebp-0x8],edx",
+        "47f6c6:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f6cc:\t89 d7                \tmov    edi,edx",
+        "47f6ce:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f6d1:\tdb 45 f8             \tfild   DWORD PTR [ebp-0x8]",
+        "47f6d4:\tc7 86 3c ff ff ff 00 \tmov    DWORD PTR [esi-0xc4],0x3f3a8000",
+        "47f6db:\t80 3a 3f",
+        "47f6de:\td9 c9                \tfxch   st(1)",
+        "47f6e0:\td9 5d f4             \tfstp   DWORD PTR [ebp-0xc]",
+        "47f6e3:\tc7 86 58 ff ff ff 00 \tmov    DWORD PTR [esi-0xa8],0x3f2c8000",
+        "47f6ea:\t80 2c 3f",
+        "47f6ed:\td9 5d e8             \tfstp   DWORD PTR [ebp-0x18]",
+        "47f6f0:\tc7 86 7c ff ff ff 00 \tmov    DWORD PTR [esi-0x84],0x3f3d8000",
+        "47f6f7:\t80 3d 3f",
+        "47f6fa:\t29 c7                \tsub    edi,eax",
+        "47f6fc:\td9 86 3c ff ff ff    \tfld    DWORD PTR [esi-0xc4]",
+        "47f702:\td9 86 58 ff ff ff    \tfld    DWORD PTR [esi-0xa8]",
+        "47f708:\td9 86 7c ff ff ff    \tfld    DWORD PTR [esi-0x84]",
+        "47f70e:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47f711:\t89 7d f8             \tmov    DWORD PTR [ebp-0x8],edi",
+        "47f714:\td9 ca                \tfxch   st(2)",
+        "47f716:\td9 9e 1c ff ff ff    \tfstp   DWORD PTR [esi-0xe4]",
+        "47f71c:\td9 9e 38 ff ff ff    \tfstp   DWORD PTR [esi-0xc8]",
+        "47f722:\t89 86 40 ff ff ff    \tmov    DWORD PTR [esi-0xc0],eax",
+        "47f728:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47f72b:\td9 9e 5c ff ff ff    \tfstp   DWORD PTR [esi-0xa4]",
+        "47f731:\t89 86 64 ff ff ff    \tmov    DWORD PTR [esi-0x9c],eax",
+        "47f737:\tdb 45 f8             \tfild   DWORD PTR [ebp-0x8]",
+        "47f73a:\td9 96 24 ff ff ff    \tfst    DWORD PTR [esi-0xdc]",
+        "47f740:\td9 86 40 ff ff ff    \tfld    DWORD PTR [esi-0xc0]",
+        "47f746:\td9 c9                \tfxch   st(1)",
+        "47f748:\td9 9e 04 ff ff ff    \tfstp   DWORD PTR [esi-0xfc]",
+        "47f74e:\td9 9e 20 ff ff ff    \tfstp   DWORD PTR [esi-0xe0]",
+        "47f754:\td9 86 64 ff ff ff    \tfld    DWORD PTR [esi-0x9c]",
+        "47f75a:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47f75d:\td9 9e 44 ff ff ff    \tfstp   DWORD PTR [esi-0xbc]",
+        "47f763:\tc7 46 f8 00 80 31 3f \tmov    DWORD PTR [esi-0x8],0x3f318000",
+        "47f76a:\t89 46 e0             \tmov    DWORD PTR [esi-0x20],eax",
+        "47f76d:\td9 46 f8             \tfld    DWORD PTR [esi-0x8]",
+        "47f770:\t8b 46 e0             \tmov    eax,DWORD PTR [esi-0x20]",
+        "47f773:\t89 46 80             \tmov    DWORD PTR [esi-0x80],eax",
+        "47f776:\td9 5e 98             \tfstp   DWORD PTR [esi-0x68]",
+        "47f779:\t83 ec 04             \tsub    esp,0x4",
+        "47f77c:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47f77f:\t58                   \tpop    eax",
+        "47f780:\tc7 46 bc 00 80 3e 3f \tmov    DWORD PTR [esi-0x44],0x3f3e8000",
+        "47f787:\tc7 46 d8 00 80 32 3f \tmov    DWORD PTR [esi-0x28],0x3f328000",
+        "47f78e:\t89 d7                \tmov    edi,edx",
+        "47f790:\tc7 46 fc 00 80 41 3f \tmov    DWORD PTR [esi-0x4],0x3f418000",
+        "47f797:\t29 c7                \tsub    edi,eax",
+        "47f799:\td9 46 bc             \tfld    DWORD PTR [esi-0x44]",
+        "47f79c:\td9 46 d8             \tfld    DWORD PTR [esi-0x28]",
+        "47f79f:\td9 46 fc             \tfld    DWORD PTR [esi-0x4]",
+        "47f7a2:\t8b 45 10             \tmov    eax,DWORD PTR [ebp+0x10]",
+        "47f7a5:\t89 7d f8             \tmov    DWORD PTR [ebp-0x8],edi",
+        "47f7a8:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f7ab:\td9 ca                \tfxch   st(2)",
+        "47f7ad:\td9 5e 9c             \tfstp   DWORD PTR [esi-0x64]",
+        "47f7b0:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f7b3:\td9 5d f0             \tfstp   DWORD PTR [ebp-0x10]",
+        "47f7b6:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47f7b9:\td9 5e b8             \tfstp   DWORD PTR [esi-0x48]",
+        "47f7bc:\t89 46 c0             \tmov    DWORD PTR [esi-0x40],eax",
+        "47f7bf:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47f7c2:\td9 5e dc             \tfstp   DWORD PTR [esi-0x24]",
+        "47f7c5:\t89 46 e4             \tmov    DWORD PTR [esi-0x1c],eax",
+        "47f7c8:\tdb 45 f8             \tfild   DWORD PTR [ebp-0x8]",
+        "47f7cb:\td9 56 a4             \tfst    DWORD PTR [esi-0x5c]",
+        "47f7ce:\td9 5e 84             \tfstp   DWORD PTR [esi-0x7c]",
+        "47f7d1:\t8b 46 c0             \tmov    eax,DWORD PTR [esi-0x40]",
+        "47f7d4:\t89 46 a0             \tmov    DWORD PTR [esi-0x60],eax",
+        "47f7d7:\t8b 46 e4             \tmov    eax,DWORD PTR [esi-0x1c]",
+        "47f7da:\t89 46 c4             \tmov    DWORD PTR [esi-0x3c],eax",
+        "47f7dd:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f7e3:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47f7e6:\tc7 46 78 00 80 2d 3f \tmov    DWORD PTR [esi+0x78],0x3f2d8000",
+        "47f7ed:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f7f3:\t89 46 60             \tmov    DWORD PTR [esi+0x60],eax",
+        "47f7f6:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f7fc:\t8b 46 78             \tmov    eax,DWORD PTR [esi+0x78]",
+        "47f7ff:\t89 46 18             \tmov    DWORD PTR [esi+0x18],eax",
+        "47f802:\t8b 46 60             \tmov    eax,DWORD PTR [esi+0x60]",
+        "47f805:\t89 06                \tmov    DWORD PTR [esi],eax",
+        "47f807:\t83 ec 04             \tsub    esp,0x4",
+        "47f80a:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47f80d:\t58                   \tpop    eax",
+        "47f80e:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f814:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f81a:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f820:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f826:\tc7 46 bc 00 80 3a 3f \tmov    DWORD PTR [esi-0x44],0x3f3a8000",
+        "47f82d:\t29 c2                \tsub    edx,eax",
+        "47f82f:\td9 46 bc             \tfld    DWORD PTR [esi-0x44]",
+        "47f832:\t89 55 fc             \tmov    DWORD PTR [ebp-0x4],edx",
+        "47f835:\td9 5e 9c             \tfstp   DWORD PTR [esi-0x64]",
+        "47f838:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f83b:\td9 56 a4             \tfst    DWORD PTR [esi-0x5c]",
+        "47f83e:\td9 5e 84             \tfstp   DWORD PTR [esi-0x7c]",
+        "47f841:\t83 ec 04             \tsub    esp,0x4",
+        "47f844:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47f847:\t58                   \tpop    eax",
+        "47f848:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f84e:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f854:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f85a:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f860:\tc7 86 58 ff ff ff 00 \tmov    DWORD PTR [esi-0xa8],0x3f308000",
+        "47f867:\t80 30 3f",
+        "47f86a:\t8b 55 10             \tmov    edx,DWORD PTR [ebp+0x10]",
+        "47f86d:\tc7 86 7c ff ff ff 00 \tmov    DWORD PTR [esi-0x84],0x3f3d8000",
+        "47f874:\t80 3d 3f",
+        "47f877:\t01 d0                \tadd    eax,edx",
+        "47f879:\td9 86 58 ff ff ff    \tfld    DWORD PTR [esi-0xa8]",
+        "47f87f:\td9 86 7c ff ff ff    \tfld    DWORD PTR [esi-0x84]",
+        "47f885:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f888:\td9 c9                \tfxch   st(1)",
+        "47f88a:\td9 9e 38 ff ff ff    \tfstp   DWORD PTR [esi-0xc8]",
+        "47f890:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47f893:\td9 9e 5c ff ff ff    \tfstp   DWORD PTR [esi-0xa4]",
+        "47f899:\t89 86 64 ff ff ff    \tmov    DWORD PTR [esi-0x9c],eax",
+        "47f89f:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f8a2:\td9 96 40 ff ff ff    \tfst    DWORD PTR [esi-0xc0]",
+        "47f8a8:\td9 9e 20 ff ff ff    \tfstp   DWORD PTR [esi-0xe0]",
+        "47f8ae:\t8b 86 64 ff ff ff    \tmov    eax,DWORD PTR [esi-0x9c]",
+        "47f8b4:\t89 86 44 ff ff ff    \tmov    DWORD PTR [esi-0xbc],eax",
+        "47f8ba:\tc7 46 f8 00 80 31 3f \tmov    DWORD PTR [esi-0x8],0x3f318000",
+        "47f8c1:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47f8c4:\tc7 46 bc 00 80 3a 3f \tmov    DWORD PTR [esi-0x44],0x3f3a8000",
+        "47f8cb:\t89 46 e0             \tmov    DWORD PTR [esi-0x20],eax",
+        "47f8ce:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47f8d1:\t89 46 a4             \tmov    DWORD PTR [esi-0x5c],eax",
+        "47f8d4:\t89 4d fc             \tmov    DWORD PTR [ebp-0x4],ecx",
+        "47f8d7:\td9 46 e0             \tfld    DWORD PTR [esi-0x20]",
+        "47f8da:\td9 46 f8             \tfld    DWORD PTR [esi-0x8]",
+        "47f8dd:\td9 46 bc             \tfld    DWORD PTR [esi-0x44]",
+        "47f8e0:\td9 ca                \tfxch   st(2)",
+        "47f8e2:\td9 5e 80             \tfstp   DWORD PTR [esi-0x80]",
+        "47f8e5:\td9 5e 98             \tfstp   DWORD PTR [esi-0x68]",
+        "47f8e8:\td9 5e 9c             \tfstp   DWORD PTR [esi-0x64]",
+        "47f8eb:\t8b 46 a4             \tmov    eax,DWORD PTR [esi-0x5c]",
+        "47f8ee:\t89 46 84             \tmov    DWORD PTR [esi-0x7c],eax",
+        "47f8f1:\t83 ec 04             \tsub    esp,0x4",
+        "47f8f4:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47f8f7:\t58                   \tpop    eax",
+        "47f8f8:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f8fb:\tc7 46 d8 00 80 34 3f \tmov    DWORD PTR [esi-0x28],0x3f348000",
+        "47f902:\td9 5d ec             \tfstp   DWORD PTR [ebp-0x14]",
+        "47f905:\tc7 46 fc 00 80 3b 3f \tmov    DWORD PTR [esi-0x4],0x3f3b8000",
+        "47f90c:\t01 d0                \tadd    eax,edx",
+        "47f90e:\td9 46 d8             \tfld    DWORD PTR [esi-0x28]",
+        "47f911:\td9 46 fc             \tfld    DWORD PTR [esi-0x4]",
+        "47f914:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f917:\td9 c9                \tfxch   st(1)",
+        "47f919:\td9 5e b8             \tfstp   DWORD PTR [esi-0x48]",
+        "47f91c:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47f91f:\td9 5e dc             \tfstp   DWORD PTR [esi-0x24]",
+        "47f922:\t89 46 e4             \tmov    DWORD PTR [esi-0x1c],eax",
+        "47f925:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f928:\td9 56 c0             \tfst    DWORD PTR [esi-0x40]",
+        "47f92b:\td9 5e a0             \tfstp   DWORD PTR [esi-0x60]",
+        "47f92e:\t8b 46 e4             \tmov    eax,DWORD PTR [esi-0x1c]",
+        "47f931:\t89 46 c4             \tmov    DWORD PTR [esi-0x3c],eax",
+        "47f934:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f93a:\tc7 46 78 00 80 2d 3f \tmov    DWORD PTR [esi+0x78],0x3f2d8000",
+        "47f941:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47f944:\tc7 46 3c 00 80 3e 3f \tmov    DWORD PTR [esi+0x3c],0x3f3e8000",
+        "47f94b:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f951:\t89 46 60             \tmov    DWORD PTR [esi+0x60],eax",
+        "47f954:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47f957:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f95d:\t89 46 24             \tmov    DWORD PTR [esi+0x24],eax",
+        "47f960:\td9 46 3c             \tfld    DWORD PTR [esi+0x3c]",
+        "47f963:\t8b 46 78             \tmov    eax,DWORD PTR [esi+0x78]",
+        "47f966:\t89 46 18             \tmov    DWORD PTR [esi+0x18],eax",
+        "47f969:\td9 5e 1c             \tfstp   DWORD PTR [esi+0x1c]",
+        "47f96c:\t8b 46 60             \tmov    eax,DWORD PTR [esi+0x60]",
+        "47f96f:\t89 06                \tmov    DWORD PTR [esi],eax",
+        "47f971:\t8b 46 24             \tmov    eax,DWORD PTR [esi+0x24]",
+        "47f974:\t89 46 04             \tmov    DWORD PTR [esi+0x4],eax",
+        "47f977:\t83 ec 04             \tsub    esp,0x4",
+        "47f97a:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47f97d:\t58                   \tpop    eax",
+        "47f97e:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f984:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f98a:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f990:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f996:\tc7 46 d8 00 80 30 3f \tmov    DWORD PTR [esi-0x28],0x3f308000",
+        "47f99d:\t01 d0                \tadd    eax,edx",
+        "47f99f:\td9 46 d8             \tfld    DWORD PTR [esi-0x28]",
+        "47f9a2:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f9a5:\td9 5e b8             \tfstp   DWORD PTR [esi-0x48]",
+        "47f9a8:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f9ab:\td9 56 c0             \tfst    DWORD PTR [esi-0x40]",
+        "47f9ae:\td9 5e a0             \tfstp   DWORD PTR [esi-0x60]",
+        "47f9b1:\t83 ec 04             \tsub    esp,0x4",
+        "47f9b4:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47f9b7:\t58                   \tpop    eax",
+        "47f9b8:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f9be:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f9c4:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f9ca:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f9d0:\tc7 86 7c ff ff ff 00 \tmov    DWORD PTR [esi-0x84],0x3f418000",
+        "47f9d7:\t80 41 3f",
+        "47f9da:\t01 c8                \tadd    eax,ecx",
+        "47f9dc:\td9 86 7c ff ff ff    \tfld    DWORD PTR [esi-0x84]",
+        "47f9e2:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f9e5:\td9 9e 5c ff ff ff    \tfstp   DWORD PTR [esi-0xa4]",
+        "47f9eb:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f9ee:\td9 96 64 ff ff ff    \tfst    DWORD PTR [esi-0x9c]",
+        "47f9f4:\td9 9e 44 ff ff ff    \tfstp   DWORD PTR [esi-0xbc]",
+        "47f9fa:\tc7 46 f8 00 80 31 3f \tmov    DWORD PTR [esi-0x8],0x3f318000",
+        "47fa01:\tc7 46 bc 00 80 3e 3f \tmov    DWORD PTR [esi-0x44],0x3f3e8000",
+        "47fa08:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47fa0b:\tc7 46 d8 00 80 32 3f \tmov    DWORD PTR [esi-0x28],0x3f328000",
+        "47fa12:\t89 46 e0             \tmov    DWORD PTR [esi-0x20],eax",
+        "47fa15:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47fa18:\t89 46 a4             \tmov    DWORD PTR [esi-0x5c],eax",
+        "47fa1b:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47fa1e:\t89 46 c0             \tmov    DWORD PTR [esi-0x40],eax",
+        "47fa21:\td9 46 e0             \tfld    DWORD PTR [esi-0x20]",
+        "47fa24:\td9 46 f8             \tfld    DWORD PTR [esi-0x8]",
+        "47fa27:\td9 46 bc             \tfld    DWORD PTR [esi-0x44]",
+        "47fa2a:\td9 46 d8             \tfld    DWORD PTR [esi-0x28]",
+        "47fa2d:\td9 cb                \tfxch   st(3)",
+        "47fa2f:\td9 5e 80             \tfstp   DWORD PTR [esi-0x80]",
+        "47fa32:\td9 c9                \tfxch   st(1)",
+        "47fa34:\td9 5e 98             \tfstp   DWORD PTR [esi-0x68]",
+        "47fa37:\td9 5e 9c             \tfstp   DWORD PTR [esi-0x64]",
+        "47fa3a:\td9 5e b8             \tfstp   DWORD PTR [esi-0x48]",
+        "47fa3d:\t8b 46 a4             \tmov    eax,DWORD PTR [esi-0x5c]",
+        "47fa40:\t89 46 84             \tmov    DWORD PTR [esi-0x7c],eax",
+        "47fa43:\t8b 46 c0             \tmov    eax,DWORD PTR [esi-0x40]",
+        "47fa46:\t89 46 a0             \tmov    DWORD PTR [esi-0x60],eax",
+        "47fa49:\t83 ec 04             \tsub    esp,0x4",
+        "47fa4c:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47fa4f:\t58                   \tpop    eax",
+        "47fa50:\tc7 46 fc 00 80 41 3f \tmov    DWORD PTR [esi-0x4],0x3f418000",
+        "47fa57:\t01 c8                \tadd    eax,ecx",
+        "47fa59:\td9 46 fc             \tfld    DWORD PTR [esi-0x4]",
+        "47fa5c:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47fa5f:\td9 5e dc             \tfstp   DWORD PTR [esi-0x24]",
+        "47fa62:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47fa65:\td9 56 e4             \tfst    DWORD PTR [esi-0x1c]",
+        "47fa68:\td9 5e c4             \tfstp   DWORD PTR [esi-0x3c]",
+        "47fa6b:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47fa71:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47fa77:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47fa7d:\t83 ec 04             \tsub    esp,0x4",
+        "47fa80:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47fa83:\t58                   \tpop    eax",
+        "47fa84:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47fa8a:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47fa90:\tc7 46 78 00 80 29 3f \tmov    DWORD PTR [esi+0x78],0x3f298000",
+        "47fa97:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47fa9d:\tc7 46 3c 00 80 3e 3f \tmov    DWORD PTR [esi+0x3c],0x3f3e8000",
+        "47faa4:\t89 da                \tmov    edx,ebx",
+        "47faa6:\tc7 46 58 00 80 2c 3f \tmov    DWORD PTR [esi+0x58],0x3f2c8000",
+        "47faad:\t29 c2                \tsub    edx,eax",
+        "47faaf:\td9 46 78             \tfld    DWORD PTR [esi+0x78]",
+        "47fab2:\td9 46 3c             \tfld    DWORD PTR [esi+0x3c]",
+        "47fab5:\td9 46 58             \tfld    DWORD PTR [esi+0x58]",
+        "47fab8:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47fabb:\t89 55 fc             \tmov    DWORD PTR [ebp-0x4],edx",
+        "47fabe:\td9 ca                \tfxch   st(2)",
+        "47fac0:\td9 5e 18             \tfstp   DWORD PTR [esi+0x18]",
+        "47fac3:\td9 5e 1c             \tfstp   DWORD PTR [esi+0x1c]",
+        "47fac6:\t89 46 24             \tmov    DWORD PTR [esi+0x24],eax",
+        "47fac9:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47facc:\td9 5e 38             \tfstp   DWORD PTR [esi+0x38]",
+        "47facf:\t89 46 40             \tmov    DWORD PTR [esi+0x40],eax",
+        "47fad2:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47fad5:\td9 56 60             \tfst    DWORD PTR [esi+0x60]",
+        "47fad8:\td9 46 24             \tfld    DWORD PTR [esi+0x24]",
+        "47fadb:\td9 c9                \tfxch   st(1)",
+        "47fadd:\td9 1e                \tfstp   DWORD PTR [esi]",
+        "47fadf:\td9 5e 04             \tfstp   DWORD PTR [esi+0x4]",
+        "47fae2:\t8b 46 40             \tmov    eax,DWORD PTR [esi+0x40]",
+        "47fae5:\t89 46 20             \tmov    DWORD PTR [esi+0x20],eax",
+        "47fae8:\t83 ec 04             \tsub    esp,0x4",
+        "47faeb:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47faee:\t58                   \tpop    eax",
+        "47faef:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47faf5:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47fafb:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47fb01:\tc7 46 7c 00 80 41 3f \tmov    DWORD PTR [esi+0x7c],0x3f418000",
+        "47fb08:\t01 c8                \tadd    eax,ecx",
+        "47fb0a:\td9 46 7c             \tfld    DWORD PTR [esi+0x7c]",
+        "47fb0d:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47fb10:\td9 5e 5c             \tfstp   DWORD PTR [esi+0x5c]",
+        "47fb13:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47fb16:\td9 56 64             \tfst    DWORD PTR [esi+0x64]",
+        "47fb19:\td9 5e 44             \tfstp   DWORD PTR [esi+0x44]",
+        "47fb1c:\t83 ec 04             \tsub    esp,0x4",
+        "47fb1f:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "47fb22:\t58                   \tpop    eax",
+        "47fb23:\tc7 86 f8 00 00 00 00 \tmov    DWORD PTR [esi+0xf8],0x3f318000",
+        "47fb2a:\t80 31 3f",
+        "47fb2d:\tc7 86 bc 00 00 00 00 \tmov    DWORD PTR [esi+0xbc],0x3f3a8000",
+        "47fb34:\t80 3a 3f",
+        "47fb37:\tc7 86 d8 00 00 00 00 \tmov    DWORD PTR [esi+0xd8],0x3f348000",
+        "47fb3e:\t80 34 3f",
+        "47fb41:\tc7 86 fc 00 00 00 00 \tmov    DWORD PTR [esi+0xfc],0x3f3b8000",
+        "47fb48:\t80 3b 3f",
+        "47fb4b:\t29 c3                \tsub    ebx,eax",
+        "47fb4d:\td9 86 f8 00 00 00    \tfld    DWORD PTR [esi+0xf8]",
+        "47fb53:\td9 86 bc 00 00 00    \tfld    DWORD PTR [esi+0xbc]",
+        "47fb59:\td9 86 d8 00 00 00    \tfld    DWORD PTR [esi+0xd8]",
+        "47fb5f:\td9 86 fc 00 00 00    \tfld    DWORD PTR [esi+0xfc]",
+        "47fb65:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47fb68:\t89 5d fc             \tmov    DWORD PTR [ebp-0x4],ebx",
+        "47fb6b:\td9 cb                \tfxch   st(3)",
+        "47fb6d:\td9 9e 98 00 00 00    \tfstp   DWORD PTR [esi+0x98]",
+        "47fb73:\td9 c9                \tfxch   st(1)",
+        "47fb75:\td9 9e 9c 00 00 00    \tfstp   DWORD PTR [esi+0x9c]",
+        "47fb7b:\t89 86 a4 00 00 00    \tmov    DWORD PTR [esi+0xa4],eax",
+        "47fb81:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47fb84:\td9 9e b8 00 00 00    \tfstp   DWORD PTR [esi+0xb8]",
+        "47fb8a:\t89 86 c0 00 00 00    \tmov    DWORD PTR [esi+0xc0],eax",
+        "47fb90:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47fb93:\td9 9e dc 00 00 00    \tfstp   DWORD PTR [esi+0xdc]",
+        "47fb99:\t89 86 e4 00 00 00    \tmov    DWORD PTR [esi+0xe4],eax",
+        "47fb9f:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47fba2:\td9 96 e0 00 00 00    \tfst    DWORD PTR [esi+0xe0]",
+        "47fba8:\td9 86 a4 00 00 00    \tfld    DWORD PTR [esi+0xa4]",
+        "47fbae:\td9 c9                \tfxch   st(1)",
+        "47fbb0:\td9 9e 80 00 00 00    \tfstp   DWORD PTR [esi+0x80]",
+        "47fbb6:\td9 9e 84 00 00 00    \tfstp   DWORD PTR [esi+0x84]",
+        "47fbbc:\t8b 86 c0 00 00 00    \tmov    eax,DWORD PTR [esi+0xc0]",
+        "47fbc2:\t89 86 a0 00 00 00    \tmov    DWORD PTR [esi+0xa0],eax",
+        "47fbc8:\t8b 86 e4 00 00 00    \tmov    eax,DWORD PTR [esi+0xe4]",
+        "47fbce:\t89 86 c4 00 00 00    \tmov    DWORD PTR [esi+0xc4],eax",
+        "47fbd4:\t89 ec                \tmov    esp,ebp",
+        "47fbd6:\t5d                   \tpop    ebp",
+        "47fbd7:\t5f                   \tpop    edi",
+        "47fbd8:\t5e                   \tpop    esi",
+        "47fbd9:\tc2 04 00             \tret    0x4"
+      ],
+      "pointer_register": "esi",
+      "pointer_advances": [
+        "47f6ba:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f6c6:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f81a:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f854:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f98a:\t81 c6 80 00 00 00    \tadd    esi,0x80",
+        "47f9c4:\t81 c6 80 00 00 00    \tadd    esi,0x80"
+      ],
+      "writes": [
+        {
+          "instruction": "47f687:\tc7 46 78 00 80 29 3f \tmov    DWORD PTR [esi+0x78],0x3f298000",
+          "destination_offset": 120,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f696:\td9 5e 18             \tfstp   DWORD PTR [esi+0x18]",
+          "destination_offset": 24,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f69c:\td9 56 60             \tfst    DWORD PTR [esi+0x60]",
+          "destination_offset": 96,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f69f:\td9 1e                \tfstp   DWORD PTR [esi]",
+          "destination_offset": 0,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6d4:\tc7 86 3c ff ff ff 00 \tmov    DWORD PTR [esi-0xc4],0x3f3a8000",
+          "destination_offset": 60,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6e3:\tc7 86 58 ff ff ff 00 \tmov    DWORD PTR [esi-0xa8],0x3f2c8000",
+          "destination_offset": 88,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6f0:\tc7 86 7c ff ff ff 00 \tmov    DWORD PTR [esi-0x84],0x3f3d8000",
+          "destination_offset": 124,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f716:\td9 9e 1c ff ff ff    \tfstp   DWORD PTR [esi-0xe4]",
+          "destination_offset": 28,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f71c:\td9 9e 38 ff ff ff    \tfstp   DWORD PTR [esi-0xc8]",
+          "destination_offset": 56,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f722:\t89 86 40 ff ff ff    \tmov    DWORD PTR [esi-0xc0],eax",
+          "destination_offset": 64,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f72b:\td9 9e 5c ff ff ff    \tfstp   DWORD PTR [esi-0xa4]",
+          "destination_offset": 92,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f731:\t89 86 64 ff ff ff    \tmov    DWORD PTR [esi-0x9c],eax",
+          "destination_offset": 100,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f73a:\td9 96 24 ff ff ff    \tfst    DWORD PTR [esi-0xdc]",
+          "destination_offset": 36,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f748:\td9 9e 04 ff ff ff    \tfstp   DWORD PTR [esi-0xfc]",
+          "destination_offset": 4,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f74e:\td9 9e 20 ff ff ff    \tfstp   DWORD PTR [esi-0xe0]",
+          "destination_offset": 32,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f75d:\td9 9e 44 ff ff ff    \tfstp   DWORD PTR [esi-0xbc]",
+          "destination_offset": 68,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f763:\tc7 46 f8 00 80 31 3f \tmov    DWORD PTR [esi-0x8],0x3f318000",
+          "destination_offset": 248,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f76a:\t89 46 e0             \tmov    DWORD PTR [esi-0x20],eax",
+          "destination_offset": 224,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f773:\t89 46 80             \tmov    DWORD PTR [esi-0x80],eax",
+          "destination_offset": 128,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f776:\td9 5e 98             \tfstp   DWORD PTR [esi-0x68]",
+          "destination_offset": 152,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f780:\tc7 46 bc 00 80 3e 3f \tmov    DWORD PTR [esi-0x44],0x3f3e8000",
+          "destination_offset": 188,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f787:\tc7 46 d8 00 80 32 3f \tmov    DWORD PTR [esi-0x28],0x3f328000",
+          "destination_offset": 216,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f790:\tc7 46 fc 00 80 41 3f \tmov    DWORD PTR [esi-0x4],0x3f418000",
+          "destination_offset": 252,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7ad:\td9 5e 9c             \tfstp   DWORD PTR [esi-0x64]",
+          "destination_offset": 156,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7b9:\td9 5e b8             \tfstp   DWORD PTR [esi-0x48]",
+          "destination_offset": 184,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7bc:\t89 46 c0             \tmov    DWORD PTR [esi-0x40],eax",
+          "destination_offset": 192,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7c2:\td9 5e dc             \tfstp   DWORD PTR [esi-0x24]",
+          "destination_offset": 220,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7c5:\t89 46 e4             \tmov    DWORD PTR [esi-0x1c],eax",
+          "destination_offset": 228,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7cb:\td9 56 a4             \tfst    DWORD PTR [esi-0x5c]",
+          "destination_offset": 164,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7ce:\td9 5e 84             \tfstp   DWORD PTR [esi-0x7c]",
+          "destination_offset": 132,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7d4:\t89 46 a0             \tmov    DWORD PTR [esi-0x60],eax",
+          "destination_offset": 160,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7da:\t89 46 c4             \tmov    DWORD PTR [esi-0x3c],eax",
+          "destination_offset": 196,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7e6:\tc7 46 78 00 80 2d 3f \tmov    DWORD PTR [esi+0x78],0x3f2d8000",
+          "destination_offset": 376,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7f3:\t89 46 60             \tmov    DWORD PTR [esi+0x60],eax",
+          "destination_offset": 352,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7ff:\t89 46 18             \tmov    DWORD PTR [esi+0x18],eax",
+          "destination_offset": 280,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f805:\t89 06                \tmov    DWORD PTR [esi],eax",
+          "destination_offset": 256,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f826:\tc7 46 bc 00 80 3a 3f \tmov    DWORD PTR [esi-0x44],0x3f3a8000",
+          "destination_offset": 316,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f835:\td9 5e 9c             \tfstp   DWORD PTR [esi-0x64]",
+          "destination_offset": 284,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f83b:\td9 56 a4             \tfst    DWORD PTR [esi-0x5c]",
+          "destination_offset": 292,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f83e:\td9 5e 84             \tfstp   DWORD PTR [esi-0x7c]",
+          "destination_offset": 260,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f860:\tc7 86 58 ff ff ff 00 \tmov    DWORD PTR [esi-0xa8],0x3f308000",
+          "destination_offset": 344,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f86d:\tc7 86 7c ff ff ff 00 \tmov    DWORD PTR [esi-0x84],0x3f3d8000",
+          "destination_offset": 380,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f88a:\td9 9e 38 ff ff ff    \tfstp   DWORD PTR [esi-0xc8]",
+          "destination_offset": 312,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f893:\td9 9e 5c ff ff ff    \tfstp   DWORD PTR [esi-0xa4]",
+          "destination_offset": 348,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f899:\t89 86 64 ff ff ff    \tmov    DWORD PTR [esi-0x9c],eax",
+          "destination_offset": 356,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8a2:\td9 96 40 ff ff ff    \tfst    DWORD PTR [esi-0xc0]",
+          "destination_offset": 320,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8a8:\td9 9e 20 ff ff ff    \tfstp   DWORD PTR [esi-0xe0]",
+          "destination_offset": 288,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8b4:\t89 86 44 ff ff ff    \tmov    DWORD PTR [esi-0xbc],eax",
+          "destination_offset": 324,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8ba:\tc7 46 f8 00 80 31 3f \tmov    DWORD PTR [esi-0x8],0x3f318000",
+          "destination_offset": 504,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8c4:\tc7 46 bc 00 80 3a 3f \tmov    DWORD PTR [esi-0x44],0x3f3a8000",
+          "destination_offset": 444,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8cb:\t89 46 e0             \tmov    DWORD PTR [esi-0x20],eax",
+          "destination_offset": 480,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8d1:\t89 46 a4             \tmov    DWORD PTR [esi-0x5c],eax",
+          "destination_offset": 420,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8e2:\td9 5e 80             \tfstp   DWORD PTR [esi-0x80]",
+          "destination_offset": 384,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8e5:\td9 5e 98             \tfstp   DWORD PTR [esi-0x68]",
+          "destination_offset": 408,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8e8:\td9 5e 9c             \tfstp   DWORD PTR [esi-0x64]",
+          "destination_offset": 412,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8ee:\t89 46 84             \tmov    DWORD PTR [esi-0x7c],eax",
+          "destination_offset": 388,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8fb:\tc7 46 d8 00 80 34 3f \tmov    DWORD PTR [esi-0x28],0x3f348000",
+          "destination_offset": 472,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f905:\tc7 46 fc 00 80 3b 3f \tmov    DWORD PTR [esi-0x4],0x3f3b8000",
+          "destination_offset": 508,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f919:\td9 5e b8             \tfstp   DWORD PTR [esi-0x48]",
+          "destination_offset": 440,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f91f:\td9 5e dc             \tfstp   DWORD PTR [esi-0x24]",
+          "destination_offset": 476,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f922:\t89 46 e4             \tmov    DWORD PTR [esi-0x1c],eax",
+          "destination_offset": 484,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f928:\td9 56 c0             \tfst    DWORD PTR [esi-0x40]",
+          "destination_offset": 448,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f92b:\td9 5e a0             \tfstp   DWORD PTR [esi-0x60]",
+          "destination_offset": 416,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f931:\t89 46 c4             \tmov    DWORD PTR [esi-0x3c],eax",
+          "destination_offset": 452,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f93a:\tc7 46 78 00 80 2d 3f \tmov    DWORD PTR [esi+0x78],0x3f2d8000",
+          "destination_offset": 632,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f944:\tc7 46 3c 00 80 3e 3f \tmov    DWORD PTR [esi+0x3c],0x3f3e8000",
+          "destination_offset": 572,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f951:\t89 46 60             \tmov    DWORD PTR [esi+0x60],eax",
+          "destination_offset": 608,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f95d:\t89 46 24             \tmov    DWORD PTR [esi+0x24],eax",
+          "destination_offset": 548,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f966:\t89 46 18             \tmov    DWORD PTR [esi+0x18],eax",
+          "destination_offset": 536,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f969:\td9 5e 1c             \tfstp   DWORD PTR [esi+0x1c]",
+          "destination_offset": 540,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f96f:\t89 06                \tmov    DWORD PTR [esi],eax",
+          "destination_offset": 512,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f974:\t89 46 04             \tmov    DWORD PTR [esi+0x4],eax",
+          "destination_offset": 516,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f996:\tc7 46 d8 00 80 30 3f \tmov    DWORD PTR [esi-0x28],0x3f308000",
+          "destination_offset": 600,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f9a5:\td9 5e b8             \tfstp   DWORD PTR [esi-0x48]",
+          "destination_offset": 568,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f9ab:\td9 56 c0             \tfst    DWORD PTR [esi-0x40]",
+          "destination_offset": 576,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f9ae:\td9 5e a0             \tfstp   DWORD PTR [esi-0x60]",
+          "destination_offset": 544,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f9d0:\tc7 86 7c ff ff ff 00 \tmov    DWORD PTR [esi-0x84],0x3f418000",
+          "destination_offset": 636,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f9e5:\td9 9e 5c ff ff ff    \tfstp   DWORD PTR [esi-0xa4]",
+          "destination_offset": 604,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f9ee:\td9 96 64 ff ff ff    \tfst    DWORD PTR [esi-0x9c]",
+          "destination_offset": 612,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f9f4:\td9 9e 44 ff ff ff    \tfstp   DWORD PTR [esi-0xbc]",
+          "destination_offset": 580,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f9fa:\tc7 46 f8 00 80 31 3f \tmov    DWORD PTR [esi-0x8],0x3f318000",
+          "destination_offset": 760,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa01:\tc7 46 bc 00 80 3e 3f \tmov    DWORD PTR [esi-0x44],0x3f3e8000",
+          "destination_offset": 700,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa0b:\tc7 46 d8 00 80 32 3f \tmov    DWORD PTR [esi-0x28],0x3f328000",
+          "destination_offset": 728,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa12:\t89 46 e0             \tmov    DWORD PTR [esi-0x20],eax",
+          "destination_offset": 736,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa18:\t89 46 a4             \tmov    DWORD PTR [esi-0x5c],eax",
+          "destination_offset": 676,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa1e:\t89 46 c0             \tmov    DWORD PTR [esi-0x40],eax",
+          "destination_offset": 704,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa2f:\td9 5e 80             \tfstp   DWORD PTR [esi-0x80]",
+          "destination_offset": 640,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa34:\td9 5e 98             \tfstp   DWORD PTR [esi-0x68]",
+          "destination_offset": 664,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa37:\td9 5e 9c             \tfstp   DWORD PTR [esi-0x64]",
+          "destination_offset": 668,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa3a:\td9 5e b8             \tfstp   DWORD PTR [esi-0x48]",
+          "destination_offset": 696,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa40:\t89 46 84             \tmov    DWORD PTR [esi-0x7c],eax",
+          "destination_offset": 644,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa46:\t89 46 a0             \tmov    DWORD PTR [esi-0x60],eax",
+          "destination_offset": 672,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa50:\tc7 46 fc 00 80 41 3f \tmov    DWORD PTR [esi-0x4],0x3f418000",
+          "destination_offset": 764,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa5f:\td9 5e dc             \tfstp   DWORD PTR [esi-0x24]",
+          "destination_offset": 732,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa65:\td9 56 e4             \tfst    DWORD PTR [esi-0x1c]",
+          "destination_offset": 740,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa68:\td9 5e c4             \tfstp   DWORD PTR [esi-0x3c]",
+          "destination_offset": 708,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa90:\tc7 46 78 00 80 29 3f \tmov    DWORD PTR [esi+0x78],0x3f298000",
+          "destination_offset": 888,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fa9d:\tc7 46 3c 00 80 3e 3f \tmov    DWORD PTR [esi+0x3c],0x3f3e8000",
+          "destination_offset": 828,
+          "bytes": 4
+        },
+        {
+          "instruction": "47faa6:\tc7 46 58 00 80 2c 3f \tmov    DWORD PTR [esi+0x58],0x3f2c8000",
+          "destination_offset": 856,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fac0:\td9 5e 18             \tfstp   DWORD PTR [esi+0x18]",
+          "destination_offset": 792,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fac3:\td9 5e 1c             \tfstp   DWORD PTR [esi+0x1c]",
+          "destination_offset": 796,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fac6:\t89 46 24             \tmov    DWORD PTR [esi+0x24],eax",
+          "destination_offset": 804,
+          "bytes": 4
+        },
+        {
+          "instruction": "47facc:\td9 5e 38             \tfstp   DWORD PTR [esi+0x38]",
+          "destination_offset": 824,
+          "bytes": 4
+        },
+        {
+          "instruction": "47facf:\t89 46 40             \tmov    DWORD PTR [esi+0x40],eax",
+          "destination_offset": 832,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fad5:\td9 56 60             \tfst    DWORD PTR [esi+0x60]",
+          "destination_offset": 864,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fadd:\td9 1e                \tfstp   DWORD PTR [esi]",
+          "destination_offset": 768,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fadf:\td9 5e 04             \tfstp   DWORD PTR [esi+0x4]",
+          "destination_offset": 772,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fae5:\t89 46 20             \tmov    DWORD PTR [esi+0x20],eax",
+          "destination_offset": 800,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb01:\tc7 46 7c 00 80 41 3f \tmov    DWORD PTR [esi+0x7c],0x3f418000",
+          "destination_offset": 892,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb10:\td9 5e 5c             \tfstp   DWORD PTR [esi+0x5c]",
+          "destination_offset": 860,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb16:\td9 56 64             \tfst    DWORD PTR [esi+0x64]",
+          "destination_offset": 868,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb19:\td9 5e 44             \tfstp   DWORD PTR [esi+0x44]",
+          "destination_offset": 836,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb23:\tc7 86 f8 00 00 00 00 \tmov    DWORD PTR [esi+0xf8],0x3f318000",
+          "destination_offset": 1016,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb2d:\tc7 86 bc 00 00 00 00 \tmov    DWORD PTR [esi+0xbc],0x3f3a8000",
+          "destination_offset": 956,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb37:\tc7 86 d8 00 00 00 00 \tmov    DWORD PTR [esi+0xd8],0x3f348000",
+          "destination_offset": 984,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb41:\tc7 86 fc 00 00 00 00 \tmov    DWORD PTR [esi+0xfc],0x3f3b8000",
+          "destination_offset": 1020,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb6d:\td9 9e 98 00 00 00    \tfstp   DWORD PTR [esi+0x98]",
+          "destination_offset": 920,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb75:\td9 9e 9c 00 00 00    \tfstp   DWORD PTR [esi+0x9c]",
+          "destination_offset": 924,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb7b:\t89 86 a4 00 00 00    \tmov    DWORD PTR [esi+0xa4],eax",
+          "destination_offset": 932,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb84:\td9 9e b8 00 00 00    \tfstp   DWORD PTR [esi+0xb8]",
+          "destination_offset": 952,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb8a:\t89 86 c0 00 00 00    \tmov    DWORD PTR [esi+0xc0],eax",
+          "destination_offset": 960,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb93:\td9 9e dc 00 00 00    \tfstp   DWORD PTR [esi+0xdc]",
+          "destination_offset": 988,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fb99:\t89 86 e4 00 00 00    \tmov    DWORD PTR [esi+0xe4],eax",
+          "destination_offset": 996,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fba2:\td9 96 e0 00 00 00    \tfst    DWORD PTR [esi+0xe0]",
+          "destination_offset": 992,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fbb0:\td9 9e 80 00 00 00    \tfstp   DWORD PTR [esi+0x80]",
+          "destination_offset": 896,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fbb6:\td9 9e 84 00 00 00    \tfstp   DWORD PTR [esi+0x84]",
+          "destination_offset": 900,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fbc2:\t89 86 a0 00 00 00    \tmov    DWORD PTR [esi+0xa0],eax",
+          "destination_offset": 928,
+          "bytes": 4
+        },
+        {
+          "instruction": "47fbce:\t89 86 c4 00 00 00    \tmov    DWORD PTR [esi+0xc4],eax",
+          "destination_offset": 964,
+          "bytes": 4
+        }
+      ],
+      "unique_DWORD_offsets": [
+        0,
+        4,
+        24,
+        28,
+        32,
+        36,
+        56,
+        60,
+        64,
+        68,
+        88,
+        92,
+        96,
+        100,
+        120,
+        124,
+        128,
+        132,
+        152,
+        156,
+        160,
+        164,
+        184,
+        188,
+        192,
+        196,
+        216,
+        220,
+        224,
+        228,
+        248,
+        252,
+        256,
+        260,
+        280,
+        284,
+        288,
+        292,
+        312,
+        316,
+        320,
+        324,
+        344,
+        348,
+        352,
+        356,
+        376,
+        380,
+        384,
+        388,
+        408,
+        412,
+        416,
+        420,
+        440,
+        444,
+        448,
+        452,
+        472,
+        476,
+        480,
+        484,
+        504,
+        508,
+        512,
+        516,
+        536,
+        540,
+        544,
+        548,
+        568,
+        572,
+        576,
+        580,
+        600,
+        604,
+        608,
+        612,
+        632,
+        636,
+        640,
+        644,
+        664,
+        668,
+        672,
+        676,
+        696,
+        700,
+        704,
+        708,
+        728,
+        732,
+        736,
+        740,
+        760,
+        764,
+        768,
+        772,
+        792,
+        796,
+        800,
+        804,
+        824,
+        828,
+        832,
+        836,
+        856,
+        860,
+        864,
+        868,
+        888,
+        892,
+        896,
+        900,
+        920,
+        924,
+        928,
+        932,
+        952,
+        956,
+        960,
+        964,
+        984,
+        988,
+        992,
+        996,
+        1016,
+        1020
+      ],
+      "quad_blocks": 8,
+      "required_span_bytes": 1024,
+      "maximum_written_byte_offset": 1023,
+      "fields_per_vertex": [
+        0,
+        4,
+        24,
+        28
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start": "0047f650",
+      "end_exclusive": "0047f98c",
+      "body_sha256": "7fc22b9f2bee01e6114b2c7c8d5661782fb2573d7bcd2b8a2d97acf2a6aca713",
+      "disassembly": [
+        "47f650:\t56                   \tpush   esi",
+        "47f651:\t57                   \tpush   edi",
+        "47f652:\t55                   \tpush   ebp",
+        "47f653:\t89 e5                \tmov    ebp,esp",
+        "47f655:\t83 ec 18             \tsub    esp,0x18",
+        "47f658:\t89 c7                \tmov    edi,eax",
+        "47f65a:\t89 55 fc             \tmov    DWORD PTR [ebp-0x4],edx",
+        "47f65d:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f660:\td9 5d e8             \tfstp   DWORD PTR [ebp-0x18]",
+        "47f663:\t89 4d fc             \tmov    DWORD PTR [ebp-0x4],ecx",
+        "47f666:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f669:\td9 5d ec             \tfstp   DWORD PTR [ebp-0x14]",
+        "47f66c:\t89 5d fc             \tmov    DWORD PTR [ebp-0x4],ebx",
+        "47f66f:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f672:\td9 5d f0             \tfstp   DWORD PTR [ebp-0x10]",
+        "47f675:\tdb 45 10             \tfild   DWORD PTR [ebp+0x10]",
+        "47f678:\td9 5d f4             \tfstp   DWORD PTR [ebp-0xc]",
+        "47f67b:\ta1 d0 fe 55 00       \tmov    eax,ds:0x55fed0",
+        "47f680:\t89 45 f8             \tmov    DWORD PTR [ebp-0x8],eax",
+        "47f683:\tb8 00 80 29 3f       \tmov    eax,0x3f298000",
+        "47f688:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+        "47f68b:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+        "47f68e:\tb8 00 80 3a 3f       \tmov    eax,0x3f3a8000",
+        "47f693:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+        "47f696:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+        "47f699:\tb8 00 80 2c 3f       \tmov    eax,0x3f2c8000",
+        "47f69e:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+        "47f6a1:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+        "47f6a4:\tb8 00 80 3d 3f       \tmov    eax,0x3f3d8000",
+        "47f6a9:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+        "47f6ac:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+        "47f6af:\t89 d8                \tmov    eax,ebx",
+        "47f6b1:\t2b 45 f8             \tsub    eax,DWORD PTR [ebp-0x8]",
+        "47f6b4:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f6b7:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f6ba:\td9 57 60             \tfst    DWORD PTR [edi+0x60]",
+        "47f6bd:\td9 1f                \tfstp   DWORD PTR [edi]",
+        "47f6bf:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47f6c2:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+        "47f6c5:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+        "47f6c8:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47f6cb:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+        "47f6ce:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+        "47f6d1:\t89 d0                \tmov    eax,edx",
+        "47f6d3:\t2b 45 f8             \tsub    eax,DWORD PTR [ebp-0x8]",
+        "47f6d6:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f6d9:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f6dc:\td9 57 24             \tfst    DWORD PTR [edi+0x24]",
+        "47f6df:\td9 5f 04             \tfstp   DWORD PTR [edi+0x4]",
+        "47f6e2:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f6e8:\tb8 00 80 31 3f       \tmov    eax,0x3f318000",
+        "47f6ed:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+        "47f6f0:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+        "47f6f3:\tb8 00 80 3e 3f       \tmov    eax,0x3f3e8000",
+        "47f6f8:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+        "47f6fb:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+        "47f6fe:\tb8 00 80 32 3f       \tmov    eax,0x3f328000",
+        "47f703:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+        "47f706:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+        "47f709:\tb8 00 80 41 3f       \tmov    eax,0x3f418000",
+        "47f70e:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+        "47f711:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+        "47f714:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47f717:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+        "47f71a:\t89 07                \tmov    DWORD PTR [edi],eax",
+        "47f71c:\t89 d0                \tmov    eax,edx",
+        "47f71e:\t2b 45 f8             \tsub    eax,DWORD PTR [ebp-0x8]",
+        "47f721:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f724:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f727:\td9 57 24             \tfst    DWORD PTR [edi+0x24]",
+        "47f72a:\td9 5f 04             \tfstp   DWORD PTR [edi+0x4]",
+        "47f72d:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47f730:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+        "47f733:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+        "47f736:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47f739:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+        "47f73c:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+        "47f73f:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f745:\tb8 00 80 2d 3f       \tmov    eax,0x3f2d8000",
+        "47f74a:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+        "47f74d:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+        "47f750:\tb8 00 80 3a 3f       \tmov    eax,0x3f3a8000",
+        "47f755:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+        "47f758:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+        "47f75b:\tb8 00 80 30 3f       \tmov    eax,0x3f308000",
+        "47f760:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+        "47f763:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+        "47f766:\tb8 00 80 3d 3f       \tmov    eax,0x3f3d8000",
+        "47f76b:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+        "47f76e:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+        "47f771:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47f774:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+        "47f777:\t89 07                \tmov    DWORD PTR [edi],eax",
+        "47f779:\t2b 55 f8             \tsub    edx,DWORD PTR [ebp-0x8]",
+        "47f77c:\t89 55 fc             \tmov    DWORD PTR [ebp-0x4],edx",
+        "47f77f:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f782:\td9 57 24             \tfst    DWORD PTR [edi+0x24]",
+        "47f785:\td9 5f 04             \tfstp   DWORD PTR [edi+0x4]",
+        "47f788:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]",
+        "47f78b:\t8b 55 10             \tmov    edx,DWORD PTR [ebp+0x10]",
+        "47f78e:\t01 d0                \tadd    eax,edx",
+        "47f790:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f793:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f796:\td9 57 40             \tfst    DWORD PTR [edi+0x40]",
+        "47f799:\td9 5f 20             \tfstp   DWORD PTR [edi+0x20]",
+        "47f79c:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47f79f:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+        "47f7a2:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+        "47f7a5:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f7ab:\tb8 00 80 31 3f       \tmov    eax,0x3f318000",
+        "47f7b0:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+        "47f7b3:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+        "47f7b6:\tb8 00 80 3a 3f       \tmov    eax,0x3f3a8000",
+        "47f7bb:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+        "47f7be:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+        "47f7c1:\tb8 00 80 34 3f       \tmov    eax,0x3f348000",
+        "47f7c6:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+        "47f7c9:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+        "47f7cc:\tb8 00 80 3b 3f       \tmov    eax,0x3f3b8000",
+        "47f7d1:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+        "47f7d4:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+        "47f7d7:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47f7da:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+        "47f7dd:\t89 07                \tmov    DWORD PTR [edi],eax",
+        "47f7df:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47f7e2:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+        "47f7e5:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+        "47f7e8:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]",
+        "47f7eb:\t01 d0                \tadd    eax,edx",
+        "47f7ed:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f7f0:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f7f3:\td9 57 40             \tfst    DWORD PTR [edi+0x40]",
+        "47f7f6:\td9 5f 20             \tfstp   DWORD PTR [edi+0x20]",
+        "47f7f9:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47f7fc:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+        "47f7ff:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+        "47f802:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f808:\tb8 00 80 2d 3f       \tmov    eax,0x3f2d8000",
+        "47f80d:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+        "47f810:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+        "47f813:\tb8 00 80 3e 3f       \tmov    eax,0x3f3e8000",
+        "47f818:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+        "47f81b:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+        "47f81e:\tb8 00 80 30 3f       \tmov    eax,0x3f308000",
+        "47f823:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+        "47f826:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+        "47f829:\tb8 00 80 41 3f       \tmov    eax,0x3f418000",
+        "47f82e:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+        "47f831:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+        "47f834:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47f837:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+        "47f83a:\t89 07                \tmov    DWORD PTR [edi],eax",
+        "47f83c:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47f83f:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+        "47f842:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+        "47f845:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]",
+        "47f848:\t01 d0                \tadd    eax,edx",
+        "47f84a:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f84d:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f850:\td9 57 40             \tfst    DWORD PTR [edi+0x40]",
+        "47f853:\td9 5f 20             \tfstp   DWORD PTR [edi+0x20]",
+        "47f856:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]",
+        "47f859:\t01 c8                \tadd    eax,ecx",
+        "47f85b:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f85e:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f861:\td9 57 64             \tfst    DWORD PTR [edi+0x64]",
+        "47f864:\td9 5f 44             \tfstp   DWORD PTR [edi+0x44]",
+        "47f867:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f86d:\tb8 00 80 31 3f       \tmov    eax,0x3f318000",
+        "47f872:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+        "47f875:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+        "47f878:\tb8 00 80 3e 3f       \tmov    eax,0x3f3e8000",
+        "47f87d:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+        "47f880:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+        "47f883:\tb8 00 80 32 3f       \tmov    eax,0x3f328000",
+        "47f888:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+        "47f88b:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+        "47f88e:\tb8 00 80 41 3f       \tmov    eax,0x3f418000",
+        "47f893:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+        "47f896:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+        "47f899:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47f89c:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+        "47f89f:\t89 07                \tmov    DWORD PTR [edi],eax",
+        "47f8a1:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47f8a4:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+        "47f8a7:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+        "47f8aa:\t8b 45 f4             \tmov    eax,DWORD PTR [ebp-0xc]",
+        "47f8ad:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+        "47f8b0:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+        "47f8b3:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]",
+        "47f8b6:\t01 c8                \tadd    eax,ecx",
+        "47f8b8:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f8bb:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f8be:\td9 57 64             \tfst    DWORD PTR [edi+0x64]",
+        "47f8c1:\td9 5f 44             \tfstp   DWORD PTR [edi+0x44]",
+        "47f8c4:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f8ca:\tb8 00 80 29 3f       \tmov    eax,0x3f298000",
+        "47f8cf:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+        "47f8d2:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+        "47f8d5:\tb8 00 80 3e 3f       \tmov    eax,0x3f3e8000",
+        "47f8da:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+        "47f8dd:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+        "47f8e0:\tb8 00 80 2c 3f       \tmov    eax,0x3f2c8000",
+        "47f8e5:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+        "47f8e8:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+        "47f8eb:\tb8 00 80 41 3f       \tmov    eax,0x3f418000",
+        "47f8f0:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+        "47f8f3:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+        "47f8f6:\t89 da                \tmov    edx,ebx",
+        "47f8f8:\t2b 55 f8             \tsub    edx,DWORD PTR [ebp-0x8]",
+        "47f8fb:\t89 55 fc             \tmov    DWORD PTR [ebp-0x4],edx",
+        "47f8fe:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f901:\td9 57 60             \tfst    DWORD PTR [edi+0x60]",
+        "47f904:\td9 1f                \tfstp   DWORD PTR [edi]",
+        "47f906:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47f909:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+        "47f90c:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+        "47f90f:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47f912:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+        "47f915:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+        "47f918:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]",
+        "47f91b:\t01 c8                \tadd    eax,ecx",
+        "47f91d:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+        "47f920:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f923:\td9 57 64             \tfst    DWORD PTR [edi+0x64]",
+        "47f926:\td9 5f 44             \tfstp   DWORD PTR [edi+0x44]",
+        "47f929:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f92f:\tb8 00 80 31 3f       \tmov    eax,0x3f318000",
+        "47f934:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+        "47f937:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+        "47f93a:\tb8 00 80 3a 3f       \tmov    eax,0x3f3a8000",
+        "47f93f:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+        "47f942:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+        "47f945:\tb8 00 80 34 3f       \tmov    eax,0x3f348000",
+        "47f94a:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+        "47f94d:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+        "47f950:\tb8 00 80 3b 3f       \tmov    eax,0x3f3b8000",
+        "47f955:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+        "47f958:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+        "47f95b:\t2b 5d f8             \tsub    ebx,DWORD PTR [ebp-0x8]",
+        "47f95e:\t89 5d fc             \tmov    DWORD PTR [ebp-0x4],ebx",
+        "47f961:\tdb 45 fc             \tfild   DWORD PTR [ebp-0x4]",
+        "47f964:\td9 57 60             \tfst    DWORD PTR [edi+0x60]",
+        "47f967:\td9 1f                \tfstp   DWORD PTR [edi]",
+        "47f969:\t8b 45 e8             \tmov    eax,DWORD PTR [ebp-0x18]",
+        "47f96c:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+        "47f96f:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+        "47f972:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+        "47f975:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+        "47f978:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+        "47f97b:\t8b 45 ec             \tmov    eax,DWORD PTR [ebp-0x14]",
+        "47f97e:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+        "47f981:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+        "47f984:\t89 ec                \tmov    esp,ebp",
+        "47f986:\t5d                   \tpop    ebp",
+        "47f987:\t5f                   \tpop    edi",
+        "47f988:\t5e                   \tpop    esi",
+        "47f989:\tc2 04 00             \tret    0x4"
+      ],
+      "pointer_register": "edi",
+      "pointer_advances": [
+        "47f6e2:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f73f:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f7a5:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f802:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f867:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f8c4:\t81 c7 80 00 00 00    \tadd    edi,0x80",
+        "47f929:\t81 c7 80 00 00 00    \tadd    edi,0x80"
+      ],
+      "writes": [
+        {
+          "instruction": "47f688:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+          "destination_offset": 120,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f68b:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+          "destination_offset": 24,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f693:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+          "destination_offset": 60,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f696:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+          "destination_offset": 28,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f69e:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+          "destination_offset": 88,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6a1:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+          "destination_offset": 56,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6a9:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+          "destination_offset": 124,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6ac:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+          "destination_offset": 92,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6ba:\td9 57 60             \tfst    DWORD PTR [edi+0x60]",
+          "destination_offset": 96,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6bd:\td9 1f                \tfstp   DWORD PTR [edi]",
+          "destination_offset": 0,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6c2:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+          "destination_offset": 64,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6c5:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+          "destination_offset": 32,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6cb:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+          "destination_offset": 100,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6ce:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+          "destination_offset": 68,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6dc:\td9 57 24             \tfst    DWORD PTR [edi+0x24]",
+          "destination_offset": 36,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6df:\td9 5f 04             \tfstp   DWORD PTR [edi+0x4]",
+          "destination_offset": 4,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6ed:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+          "destination_offset": 248,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6f0:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+          "destination_offset": 152,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6f8:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+          "destination_offset": 188,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f6fb:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+          "destination_offset": 156,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f703:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+          "destination_offset": 216,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f706:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+          "destination_offset": 184,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f70e:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+          "destination_offset": 252,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f711:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+          "destination_offset": 220,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f717:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+          "destination_offset": 224,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f71a:\t89 07                \tmov    DWORD PTR [edi],eax",
+          "destination_offset": 128,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f727:\td9 57 24             \tfst    DWORD PTR [edi+0x24]",
+          "destination_offset": 164,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f72a:\td9 5f 04             \tfstp   DWORD PTR [edi+0x4]",
+          "destination_offset": 132,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f730:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+          "destination_offset": 192,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f733:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+          "destination_offset": 160,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f739:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+          "destination_offset": 228,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f73c:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+          "destination_offset": 196,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f74a:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+          "destination_offset": 376,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f74d:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+          "destination_offset": 280,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f755:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+          "destination_offset": 316,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f758:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+          "destination_offset": 284,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f760:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+          "destination_offset": 344,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f763:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+          "destination_offset": 312,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f76b:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+          "destination_offset": 380,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f76e:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+          "destination_offset": 348,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f774:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+          "destination_offset": 352,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f777:\t89 07                \tmov    DWORD PTR [edi],eax",
+          "destination_offset": 256,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f782:\td9 57 24             \tfst    DWORD PTR [edi+0x24]",
+          "destination_offset": 292,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f785:\td9 5f 04             \tfstp   DWORD PTR [edi+0x4]",
+          "destination_offset": 260,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f796:\td9 57 40             \tfst    DWORD PTR [edi+0x40]",
+          "destination_offset": 320,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f799:\td9 5f 20             \tfstp   DWORD PTR [edi+0x20]",
+          "destination_offset": 288,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f79f:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+          "destination_offset": 356,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7a2:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+          "destination_offset": 324,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7b0:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+          "destination_offset": 504,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7b3:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+          "destination_offset": 408,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7bb:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+          "destination_offset": 444,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7be:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+          "destination_offset": 412,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7c6:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+          "destination_offset": 472,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7c9:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+          "destination_offset": 440,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7d1:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+          "destination_offset": 508,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7d4:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+          "destination_offset": 476,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7da:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+          "destination_offset": 480,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7dd:\t89 07                \tmov    DWORD PTR [edi],eax",
+          "destination_offset": 384,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7e2:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+          "destination_offset": 420,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7e5:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+          "destination_offset": 388,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7f3:\td9 57 40             \tfst    DWORD PTR [edi+0x40]",
+          "destination_offset": 448,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7f6:\td9 5f 20             \tfstp   DWORD PTR [edi+0x20]",
+          "destination_offset": 416,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7fc:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+          "destination_offset": 484,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f7ff:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+          "destination_offset": 452,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f80d:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+          "destination_offset": 632,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f810:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+          "destination_offset": 536,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f818:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+          "destination_offset": 572,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f81b:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+          "destination_offset": 540,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f823:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+          "destination_offset": 600,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f826:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+          "destination_offset": 568,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f82e:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+          "destination_offset": 636,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f831:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+          "destination_offset": 604,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f837:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+          "destination_offset": 608,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f83a:\t89 07                \tmov    DWORD PTR [edi],eax",
+          "destination_offset": 512,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f83f:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+          "destination_offset": 548,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f842:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+          "destination_offset": 516,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f850:\td9 57 40             \tfst    DWORD PTR [edi+0x40]",
+          "destination_offset": 576,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f853:\td9 5f 20             \tfstp   DWORD PTR [edi+0x20]",
+          "destination_offset": 544,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f861:\td9 57 64             \tfst    DWORD PTR [edi+0x64]",
+          "destination_offset": 612,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f864:\td9 5f 44             \tfstp   DWORD PTR [edi+0x44]",
+          "destination_offset": 580,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f872:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+          "destination_offset": 760,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f875:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+          "destination_offset": 664,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f87d:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+          "destination_offset": 700,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f880:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+          "destination_offset": 668,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f888:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+          "destination_offset": 728,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f88b:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+          "destination_offset": 696,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f893:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+          "destination_offset": 764,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f896:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+          "destination_offset": 732,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f89c:\t89 47 60             \tmov    DWORD PTR [edi+0x60],eax",
+          "destination_offset": 736,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f89f:\t89 07                \tmov    DWORD PTR [edi],eax",
+          "destination_offset": 640,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8a4:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+          "destination_offset": 676,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8a7:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+          "destination_offset": 644,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8ad:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+          "destination_offset": 704,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8b0:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+          "destination_offset": 672,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8be:\td9 57 64             \tfst    DWORD PTR [edi+0x64]",
+          "destination_offset": 740,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8c1:\td9 5f 44             \tfstp   DWORD PTR [edi+0x44]",
+          "destination_offset": 708,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8cf:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+          "destination_offset": 888,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8d2:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+          "destination_offset": 792,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8da:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+          "destination_offset": 828,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8dd:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+          "destination_offset": 796,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8e5:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+          "destination_offset": 856,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8e8:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+          "destination_offset": 824,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8f0:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+          "destination_offset": 892,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f8f3:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+          "destination_offset": 860,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f901:\td9 57 60             \tfst    DWORD PTR [edi+0x60]",
+          "destination_offset": 864,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f904:\td9 1f                \tfstp   DWORD PTR [edi]",
+          "destination_offset": 768,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f909:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+          "destination_offset": 804,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f90c:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+          "destination_offset": 772,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f912:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+          "destination_offset": 832,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f915:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+          "destination_offset": 800,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f923:\td9 57 64             \tfst    DWORD PTR [edi+0x64]",
+          "destination_offset": 868,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f926:\td9 5f 44             \tfstp   DWORD PTR [edi+0x44]",
+          "destination_offset": 836,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f934:\t89 47 78             \tmov    DWORD PTR [edi+0x78],eax",
+          "destination_offset": 1016,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f937:\t89 47 18             \tmov    DWORD PTR [edi+0x18],eax",
+          "destination_offset": 920,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f93f:\t89 47 3c             \tmov    DWORD PTR [edi+0x3c],eax",
+          "destination_offset": 956,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f942:\t89 47 1c             \tmov    DWORD PTR [edi+0x1c],eax",
+          "destination_offset": 924,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f94a:\t89 47 58             \tmov    DWORD PTR [edi+0x58],eax",
+          "destination_offset": 984,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f94d:\t89 47 38             \tmov    DWORD PTR [edi+0x38],eax",
+          "destination_offset": 952,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f955:\t89 47 7c             \tmov    DWORD PTR [edi+0x7c],eax",
+          "destination_offset": 1020,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f958:\t89 47 5c             \tmov    DWORD PTR [edi+0x5c],eax",
+          "destination_offset": 988,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f964:\td9 57 60             \tfst    DWORD PTR [edi+0x60]",
+          "destination_offset": 992,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f967:\td9 1f                \tfstp   DWORD PTR [edi]",
+          "destination_offset": 896,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f96c:\t89 47 24             \tmov    DWORD PTR [edi+0x24],eax",
+          "destination_offset": 932,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f96f:\t89 47 04             \tmov    DWORD PTR [edi+0x4],eax",
+          "destination_offset": 900,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f975:\t89 47 40             \tmov    DWORD PTR [edi+0x40],eax",
+          "destination_offset": 960,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f978:\t89 47 20             \tmov    DWORD PTR [edi+0x20],eax",
+          "destination_offset": 928,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f97e:\t89 47 64             \tmov    DWORD PTR [edi+0x64],eax",
+          "destination_offset": 996,
+          "bytes": 4
+        },
+        {
+          "instruction": "47f981:\t89 47 44             \tmov    DWORD PTR [edi+0x44],eax",
+          "destination_offset": 964,
+          "bytes": 4
+        }
+      ],
+      "unique_DWORD_offsets": [
+        0,
+        4,
+        24,
+        28,
+        32,
+        36,
+        56,
+        60,
+        64,
+        68,
+        88,
+        92,
+        96,
+        100,
+        120,
+        124,
+        128,
+        132,
+        152,
+        156,
+        160,
+        164,
+        184,
+        188,
+        192,
+        196,
+        216,
+        220,
+        224,
+        228,
+        248,
+        252,
+        256,
+        260,
+        280,
+        284,
+        288,
+        292,
+        312,
+        316,
+        320,
+        324,
+        344,
+        348,
+        352,
+        356,
+        376,
+        380,
+        384,
+        388,
+        408,
+        412,
+        416,
+        420,
+        440,
+        444,
+        448,
+        452,
+        472,
+        476,
+        480,
+        484,
+        504,
+        508,
+        512,
+        516,
+        536,
+        540,
+        544,
+        548,
+        568,
+        572,
+        576,
+        580,
+        600,
+        604,
+        608,
+        612,
+        632,
+        636,
+        640,
+        644,
+        664,
+        668,
+        672,
+        676,
+        696,
+        700,
+        704,
+        708,
+        728,
+        732,
+        736,
+        740,
+        760,
+        764,
+        768,
+        772,
+        792,
+        796,
+        800,
+        804,
+        824,
+        828,
+        832,
+        836,
+        856,
+        860,
+        864,
+        868,
+        888,
+        892,
+        896,
+        900,
+        920,
+        924,
+        928,
+        932,
+        952,
+        956,
+        960,
+        964,
+        984,
+        988,
+        992,
+        996,
+        1016,
+        1020
+      ],
+      "quad_blocks": 8,
+      "required_span_bytes": 1024,
+      "maximum_written_byte_offset": 1023,
+      "fields_per_vertex": [
+        0,
+        4,
+        24,
+        28
+      ]
+    }
+  },
+  "local_analysis_body_matches_official": true,
+  "correction": "Both pinned builders write8 quads/32 vertices within0x400 bytes. Earlier9-quad/0x480 and derived slice-overlap claims are incorrect.",
+  "limits": [
+    "Static address accounting of these straight-line bodies, not target execution or a floating-point equivalence test.",
+    "Writes only XY/UV DWORDs; other vertex fields require existing initialization.",
+    "Does not prove caller allocations, all aliases, visual output or complete old/new coordinate equivalence.",
+    "Saved Ghidra BuildNineTexturedRectangleBorderQuads name/comments were not changed and remain stale."
+  ]
+}

@@ -7099,16 +7099,16 @@ The first is called from `RenderRaceFrame`, the second from frontend entry and o
 
 **Changes and limits:** saved name/comment, corrected copy-direction shorthand from initial worker review, retained unresolved metric/format identity. All six saved general registers are restored, no stack arguments or status contract. No runtime or executable changes.
 
-### Nine textured rectangle border quads
+### Eight textured rectangle border quads (corrected extent)
 
 **Evidence:** complete assembly of `0047f650`.
 
-- Named `BuildNineTexturedRectangleBorderQuads`. Inputs: EAX=destination, EBX=signed left, EDX=top, ECX=bottom, one stack DWORD=right. Thickness t is DWORD `0055fed0`; `RET 4` consumes the stack argument.
-- **Correction to earlier eight-block shorthand:** writes nine quad blocks at offsets `0,80,100,180,200,280,300,380,400` (hex). Each block contains four `0x20`-byte vertices; the final write reaches `destination+0x47f`, requiring a `0x480`-byte span. Some callers advance destinations by `0x400`; their allocation/overlap contract is not established by this helper.
-- Block rectangles are `(L-t,T-t,L,T)`, `(L,T-t,R,T)`, `(R,T-t,R+t,T)`, `(R,T,R+t,B)`, `(R,B,R+t,B+t)`, `(L,B,R,B+t)`, `(L-t,B,L,B+t)`, `(L-t,T,L,B)`, and a repeated left strip `(L-t,T,L,B)` using different atlas UVs. Writes position fields `+0/+4` and UV fields `+18/+1c`; other vertex fields remain untouched.
+- Saved name `BuildNineTexturedRectangleBorderQuads` is stale and incorrect; the binary emits eight quads. Inputs: EAX=destination, EBX=signed left, EDX=top, ECX=bottom, one stack DWORD=right. Thickness t is DWORD `0055fed0`; `RET 4` consumes the stack argument.
+- The [paired destination audit](original-modern-border-geometry.md#corrected-output-extent-eight-quads-not-nine) verifies eight blocks at offsets `0,80,100,180,200,280,300,380` (hex), 32 vertices and a `0x400`-byte span. Highest written byte is `destination+0x3ff`. The previous nine-block/0x480 statement was incorrect.
+- Block rectangles are `(L-t,T-t,L,T)`, `(L,T-t,R,T)`, `(R,T-t,R+t,T)`, `(R,T,R+t,B)`, `(R,B,R+t,B+t)`, `(L,B,R,B+t)`, `(L-t,B,L,B+t)`, and `(L-t,T,L,B)`. Writes position fields `+0/+4` and UV fields `+18/+1c`; other vertex fields remain untouched.
 - Offsets use 32-bit integer arithmetic before signed x87 conversion to float. No calls or local validation. ESI/EDI/EBP are preserved; ECX unchanged; EBX/EDX/EAX are not preserved and have no status meaning.
 
-**Limits:** the ninth block is a verified write, not proof of a reachable defect. Buffer ownership, repeated-strip purpose and caller overlap need separate static tracing; no runtime or prototype changes.
+**Limits:** full buffer ownership and visual output remain unverified. There is no ninth block in either pinned builder. Saved Ghidra name/comments were not modified in this correction pass and require a later saved/read-back annotation correction.
 
 ### Rectangle border thickness and inset wrapper
 
@@ -7116,17 +7116,17 @@ The first is called from `RenderRaceFrame`, the second from frontend entry and o
 
 - Named signed DWORD `0055fed0` `g_nTexturedRectangleBorderThickness`. It is shared with `InitializeViewportGeometryForProfile`, so the name does not claim HUD exclusivity.
 - `UpdateTexturedRectangleBorderThickness` (`0047f9a4`) computes signed `[007a2748]*FLOAT[0053b4f8]*FLOAT[0053b4fc]` through x87, then `FISTP` stores the thickness using current rounding mode. All general registers remain unchanged, x87 stack balances, and no range validation is present.
-- `BuildInsetTexturedRectangleBorderQuads` (`0047f98c`) adds thickness to EBX left and EDX top, subtracts it from ECX bottom and the stack right argument, then tail-jumps to the nine-quad builder. Restores incoming EAX destination; target `RET 4` consumes the modified right argument. Output remains nine blocks.
-- Corrected the older `BuildRaceHudVertexBlocksForView` Ghidra comment from eight blocks to nine and explicitly recorded its `0x400` caller stride against the `0x480` written span. Allocation/overlap implications remain unresolved.
+- `BuildInsetTexturedRectangleBorderQuads` (`0047f98c`) adds thickness to EBX left and EDX top, subtracts it from ECX bottom and the stack right argument, then tail-jumps to the eight-quad builder. Restores incoming EAX destination; target `RET 4` consumes the modified right argument. Output remains eight blocks.
+- The prior Ghidra comment change from eight blocks to nine was incorrect. Its derived `0x400`/`0x480` mismatch is withdrawn; the Markdown correction does not itself update the saved database.
 
 **Changes:** two function names, one signed global and three comments saved; no prototype or executable edits.
 
 ### Global HUD border build and clipping
 
-**Evidence:** full assembly `0047fd80` and verified inset/nine-quad builders.
+**Evidence:** full assembly `0047fd80` and corrected inset/eight-quad extent audit.
 
 - Named `BuildAndClipGlobalHudBorder`. Uses destination `[00791a90]`, base index `[00791a80]`, signed rectangle DWORDs `007497e8/ec/f0/f4` and dimensions `007cdac8/cc`.
-- Builds nine geometry blocks through the inset wrapper but appends **only eight quads** to batch `00700248`, using base indices `base+4*k..+3` for k=0..7. The ninth generated block is not submitted here. This distinguishes generated geometry count from draw submission count without resolving allocation size.
+- Builds eight geometry blocks through the inset wrapper and appends eight quads to batch `00700248`, using base indices `base+4*k..+3` for k=0..7. The earlier claimed unsubmitted ninth block does not exist.
 - For ordered finite comparisons, right clipping triggers at width<=X at destination `+120` (hex), clamps selected endpoints to width-1 and removes quads2/3/4. Left clipping X<0 clamps to0 and removes0/6/7. Top clipping Y<0 clamps to0 and removes0/1/2. Bottom clipping height<=Y at `+244` clamps to height-1 and removes4/5/6. Equality qualifies right/bottom clipping; x87 unordered cases are not generalized into ordinary comparisons.
 - Saves EBX/ECX/EDX/ESI/EDI/EBP; no arguments or status contract, no local pointer/index/dimension guards. Saved name and bounded clipping comment without speculative structure typing.
 
@@ -7134,11 +7134,11 @@ The first is called from `RenderRaceFrame`, the second from frontend entry and o
 
 **Evidence:** initializer assembly `0047c6b0–0047c751` within `0047bc40`, plus complete `ReserveFixedStrideRecordSlice` (`0049bd10`) assembly.
 
-- Global border pointer `00791a90` and base index `00791a80` are outputs of a reservation in batch `00700248` with EDX=`0x20`: 32 vertices at `0x20` bytes each, a `0x400`-byte slice. Nine-quad builder writes 36 vertices (`0x480` bytes). Thus generated writes extend four vertices (`0x80` bytes) past this reserved slice.
-- Per-view border pointer `00791ae4` and base index `00791ac8` reserve `0x40` vertices in batch `00749a38`: `0x800` bytes total. Calls using index*`0x400` divide this into two 32-vertex regions. A nine-block write extends past each nominal region; the first overlaps the next region, and the second reaches beyond the reservation into shared batch storage.
+- Global border pointer `00791a90` and base index `00791a80` are outputs of a reservation in batch `00700248` with EDX=`0x20`: 32 vertices at `0x20` bytes each, a `0x400`-byte slice. The corrected eight-quad written extent is also `0x400`; the earlier claimed extra four vertices are withdrawn.
+- Per-view border pointer `00791ae4` and base index `00791ac8` reserve `0x40` vertices in batch `00749a38`: `0x800` bytes total. Calls using index*`0x400` divide this into two 32-vertex regions. Each corrected eight-block extent fits that nominal stride; this does not establish all runtime index/ownership conditions.
 - The immediately following reservation uses output pointer `00791b34`, index `00791b30` and count `0x40` in the same batch. The slice helper advances descriptor cursor `+8` and returns `descriptor+0x10+oldCursor*0x20`; it does not allocate independent heap blocks or enforce capacity.
 
-**Limits:** verified slice mismatch and possible overwrite of adjacent reserved geometry are not proof of a heap overrun or observable defect. Overall batch capacity, call ordering and whether overwritten vertices are later rebuilt/submitted require separate static tracing. Added this distinction to the global border's Ghidra comment; no runtime testing or executable changes.
+**Correction:** the claimed slice mismatch/adjacent overwrite derived from nine blocks was incorrect and is withdrawn. Overall batch capacity, call ordering and all indices still need their own evidence. Prior Ghidra comments describing that mismatch remain stale pending a saved/read-back correction; no database, runtime or executable changes in this pass.
 
 ### Named HUD border slice outputs
 
@@ -7255,7 +7255,7 @@ There are no calls or stack arguments. ECX, EDX and EBP are saved; EBX, ESI and 
 
 `BuildVariantInsetHudBorderAndQuadForView` takes EAX=view index and obtains its vehicle through `00422bd0`. Vehicle byte `+0x200` bit `0x20` selects the signed L/T/R/B rectangle at `007498b8 + index*0x170` when set, otherwise `00749868 + index*0x170`. It repeatedly computes the inset using signed `007a2748`, float multipliers `0053b58c/0053b590`, and FISTP with the current x87 rounding mode.
 
-It passes inset bounds to `BuildNineTexturedRectangleBorderQuads`, destination `[00791b40] + index*0x400`. The callee's nine-quad span is `0x480`, larger than this view stride; allocation capacity and reachable overlap effects remain unresolved. This static relationship does not prove a heap overrun. The second destination, now named `g_pVariantInsetHudQuadVertices` at `00791b58` with partial type `void *`, uses `index*0x80`. Only the four vertices' float XY pairs are written; other fields remain unchanged. DWORDs `00700230/234/238/23c` are cleared.
+It passes inset bounds to the builder saved under stale name `BuildNineTexturedRectangleBorderQuads`, destination `[00791b40] + index*0x400`. The corrected eight-quad span is `0x400`, matching this view stride; the previous `0x480` mismatch claim is withdrawn. Allocation capacity and runtime index bounds remain separate questions. The second destination, now named `g_pVariantInsetHudQuadVertices` at `00791b58` with partial type `void *`, uses `index*0x80`. Only the four vertices' float XY pairs are written; other fields remain unchanged. DWORDs `00700230/234/238/23c` are cleared.
 
 The wrapper restores EBX, ECX, EDX, ESI, EDI and EBP, takes no stack arguments and uses plain RET. EAX is **zero on return**, established by `MOV EAX,ECX` followed by `XOR EAX,ECX` at `00481c34`; it is not preserved. Caller interpretation as a status is unproven. Pseudocode omits the border builder's register arguments, so its apparent single-argument call is incomplete. No local null/index checks or visible widget identity were inferred. Name, pointer symbol and comment were read back; project save succeeded.
 
