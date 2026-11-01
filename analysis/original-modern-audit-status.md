@@ -334,3 +334,11 @@ The [paired software audit](original-modern-software-reference-pair.md) verifies
 ## Software-renderer changed-code accounting completed
 
 The [software follow-up](original-modern-software-reference-pair.md#complete-shared-code-difference-accounting) assigns all44 shared-code differing bytes to four reviewed clusters: raw-depth filter8, state21 rejection6, lock failure notification18 and page-flip tail/order12. Unlock is unchanged. The page-flip diagnostic import is OutputDebugStringA, and its new failure route avoids success-only POPs before callback0. These are local control-flow/return-contract findings, not all runtime consequences, callback ABI proof or non-code PE interpretation. Catalog counts unchanged; no target execution.
+
+## Renderer/assets integration checkpoint
+
+The [checkpoint manifest](evidence/validation/reference-renderer-assets-checkpoint.json) pins reviewed revision `fcd71a4`, all five executed static commands, script/output hashes and the unchanged hashes of the supplied original, official Modern, local analysis EXE and saved Ghidra database. All five commands passed. This is primary-agent reproduction and bounded consistency review, not independent semantic review, a rerun of all repository audits or runtime acceptance.
+
+The main report now summarizes the reference branch variant, DX5/software code clusters, full suffix-scoped menu/HUD comparison and Postgame Options linkage in its existing table. The function-navigation index is regenerated from current chapter addresses; address mentions remain navigation rather than semantic coverage. Catalog labels remain136 vendor-only,45 bounded static,107 partial and2 unresolved.
+
+The full objective remains incomplete. Priority returns to a concrete EXE producer/consumer gap from the queue above, particularly the unresolved projection capture source/lifetime; reuse the existing negative searches before new inspection. Runtime consequences, historical attribution and authenticated retail provenance retain separate gates. Repeating renderer byte localization or counting catalog labels does not close those gaps.

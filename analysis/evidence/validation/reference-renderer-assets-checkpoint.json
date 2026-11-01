@@ -1,0 +1,105 @@
+{
+  "kind": "reference-renderer-assets-static-checkpoint",
+  "runs": [
+    {
+      "command": "python3 analysis/scripts/audit_author_original_bundle.py",
+      "script": "analysis/scripts/audit_author_original_bundle.py",
+      "status": "passed",
+      "exit_code": 0,
+      "stdout": "PASS:98 file identities, one-byte EXE variant, five DLLs and80 menu members; no execution",
+      "script_sha256": "25169b6faf6801543f6cdeebae57fa507ae69bd9153b88ef84a8c865d4f023dc"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_dx5_reference_final.py",
+      "script": "analysis/scripts/audit_dx5_reference_final.py",
+      "status": "passed",
+      "exit_code": 0,
+      "stdout": "PASS: 34 identical export entries; 710 code-section differing bytes; equal import/data sections; bounded descriptor pointer change",
+      "script_sha256": "ee843f909fae720be6582dbda26f593ca9cc0e9311f1ad0c5d0cee478b362de5"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_software_reference_final.py",
+      "script": "analysis/scripts/audit_software_reference_final.py",
+      "status": "passed",
+      "exit_code": 0,
+      "stdout": "PASS:34 matching exports;44 code-section differing bytes in9 intervals; raw16 callback admission; equal import/data sections",
+      "script_sha256": "da7eb0046ed4dfd565bb741060df60dd7332ca131a2fcf2ec2787e5e8f8c577f"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_reference_asset_pairs.py",
+      "script": "analysis/scripts/audit_reference_asset_pairs.py",
+      "status": "passed",
+      "exit_code": 0,
+      "stdout": "PASS:86 reference and52 final assets; {'reference-only': 34, 'changed': 52}; six138-record HUD literal comparisons",
+      "script_sha256": "fbd924ec755b24a077b31ef913f3e463b89937f17c4d0c60acc71f91aba34762"
+    },
+    {
+      "command": "python3 analysis/scripts/audit_options_postgame_difference.py",
+      "script": "analysis/scripts/audit_options_postgame_difference.py",
+      "status": "passed",
+      "exit_code": 0,
+      "stdout": "PASS: retained generic gate/template/fields; official Options removes three mainonly restrictions",
+      "script_sha256": "84cb6f8e49eb65c5ab5ca9b2763071e929c21772036eba3258f926aa4307d472"
+    }
+  ],
+  "limits": [
+    "Primary-agent reproduction and claim review, not independent semantic review.",
+    "Only the five named static audits were rerun; not the whole repository audit suite.",
+    "No target/API execution, instruction probes, compilation, reconstruction or saved Ghidra mutation.",
+    "Byte localization, conditional code interpretation, authored asset comparison and runtime acceptance remain separate evidence layers."
+  ],
+  "reviewed_head": "fcd71a4195f12c63211b9efe4e20bcd330c0a48a",
+  "python_version": "Python 3.12.3",
+  "audit_outputs": [
+    {
+      "path": "analysis/evidence/audits/author-original-bundle.json",
+      "sha256": "b521e31fe36704863eb0f529e3b452b88396fb37c102c1868c60837a6e72c108"
+    },
+    {
+      "path": "analysis/evidence/audits/dx5-reference-final.json",
+      "sha256": "c676e31bb9a56e6b0d6088c347fd196d29daf639aa60c539394f416c8d0e8fc7"
+    },
+    {
+      "path": "analysis/evidence/audits/software-reference-final.json",
+      "sha256": "a77aafe171538350e53f4e6a2d7d6e3e9ac72d08ef712c2c8706e3971b959b1b"
+    },
+    {
+      "path": "analysis/evidence/audits/reference-asset-pairs.json",
+      "sha256": "b58085cca18105000159e1e9d4f46f3ae5aa93bd50c3a12278556ef2d86e95ba"
+    },
+    {
+      "path": "analysis/evidence/audits/original-modern-options-postgame.json",
+      "sha256": "42018452cc02b77fae1997ce9a89ad979b73e52529410ca639f8177e841db5dc"
+    }
+  ],
+  "preserved_targets": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "status": "passed"
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "status": "passed"
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "status": "passed"
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "status": "passed"
+    }
+  ],
+  "acceptance_layers": {
+    "artifact_identity": "passed for pinned targets/archives in named audits",
+    "local_static_audits": "passed for five named commands",
+    "independent_semantic_review": "not run",
+    "target_runtime_comparison": "not run",
+    "complete_EXE_semantic_coverage": "pending",
+    "whole_game_equivalence": "not established"
+  }
+}

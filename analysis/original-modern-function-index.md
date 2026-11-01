@@ -34,23 +34,23 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0041b9b0` | BuildAndRouteTrackSceneRenderCommands | 401 | 1 | [night-lighting](original-modern-night-lighting.md), [track-detail](original-modern-track-detail.md) |
 | `0041c670` | ApplyNightVehicleLightingToTrackBlockQuads | 884 | 71 | [night-lighting](original-modern-night-lighting.md) |
 | `0041cdc0` | BuildVisibleTrackBlockRenderChains | 1012 | 56 | [night-lighting](original-modern-night-lighting.md), [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md) |
-| `0041d620` | ApplySelectedParameterPreset | 196 | 193 | [parameter-preset](original-modern-parameter-preset.md) |
+| `0041d620` | ApplySelectedParameterPreset | 196 | 193 | [parameter-preset](original-modern-parameter-preset.md), [track-detail](original-modern-track-detail.md) |
 | `0041d7e4` | RunRaceInputCollectionWorker | 47 | 47 | [audit-status](original-modern-audit-status.md), [input-worker](original-modern-input-worker.md) |
 | `0041db10` | BuildIndexedShapeTexturesWithLoadingProgress | 164 | 49 | [texture-limits](original-modern-texture-limits.md), [texture-progress](original-modern-texture-progress.md) |
 | `004213b0` | FinalizeViewportContextStage | 103 | 33 | [projection](original-modern-projection.md) |
 | `004215c0` | BindViewportSceneDescriptorsToRaceVehicle | 368 | 23 | [viewport-pose](original-modern-viewport-pose.md) |
-| `004228e0` | BuildViewportPoseWithTemporaryCameraSelection | 217 | 173 | [viewport-pose](original-modern-viewport-pose.md) |
+| `004228e0` | BuildViewportPoseWithTemporaryCameraSelection | 217 | 173 | [projection](original-modern-projection.md), [viewport-pose](original-modern-viewport-pose.md) |
 | `00422aa0` | CheckViewportVehicleAndCameraRenderGate | 181 | 32 | [night-lighting](original-modern-night-lighting.md), [replay-mirror](original-modern-replay-mirror.md) |
-| `00422cf0` | InitializeRaceViewportSceneRecords | 3000 | 14 | [viewport-pose](original-modern-viewport-pose.md) |
-| `004240c0` | UpdateSceneViewTransformOffset | 402 | 102 | [view-offset](original-modern-view-offset.md) |
-| `00426290` | ReturnFromInactiveSceneMode | 1 | 1 | [small-entry-followup](original-modern-small-entry-followup.md), [view-offset](original-modern-view-offset.md) |
-| `00426450` | DispatchViewportSceneModeUpdate | 74 | 72 | [view-offset](original-modern-view-offset.md) |
+| `00422cf0` | InitializeRaceViewportSceneRecords | 3000 | 14 | [projection](original-modern-projection.md), [viewport-pose](original-modern-viewport-pose.md) |
+| `004240c0` | UpdateSceneViewTransformOffset | 402 | 102 | [projection](original-modern-projection.md), [view-offset](original-modern-view-offset.md) |
+| `00426290` | ReturnFromInactiveSceneMode | 1 | 1 | [projection](original-modern-projection.md), [small-entry-followup](original-modern-small-entry-followup.md), [view-offset](original-modern-view-offset.md) |
+| `00426450` | DispatchViewportSceneModeUpdate | 74 | 72 | [projection](original-modern-projection.md), [view-offset](original-modern-view-offset.md) |
 | `0042649c` | CopySceneRecordSnapshot | 34 | 32 | [viewport-pose](original-modern-viewport-pose.md) |
-| `004264c0` | CopySceneSnapshotSelectedFields | 44 | 43 | [viewport-pose](original-modern-viewport-pose.md) |
+| `004264c0` | CopySceneSnapshotSelectedFields | 44 | 43 | [projection](original-modern-projection.md), [viewport-pose](original-modern-viewport-pose.md) |
 | `004270c0` | UpdateCarSelectionBackgroundResources | 194 | 1 | [frontend-page](original-modern-frontend-page.md) |
 | `0042c700` | InitializeRaceVehicles | 230 | 1 | [small-entry-followup](original-modern-small-entry-followup.md) |
 | `0042dc20` | RequestRaceSynchronizationWorkerStop | 28 | 28 | [input-worker](original-modern-input-worker.md) |
-| `00431c1c` | CalculateEffectiveThrashState21Mask | 23 | 23 | [resolution-defaults](original-modern-resolution-defaults.md), [state14](original-modern-state14.md), [track-detail](original-modern-track-detail.md) |
+| `00431c1c` | CalculateEffectiveThrashState21Mask | 23 | 23 | [dx5-reference-pair](original-modern-dx5-reference-pair.md), [resolution-defaults](original-modern-resolution-defaults.md), [state14](original-modern-state14.md), [track-detail](original-modern-track-detail.md) |
 | `00431c34` | SetRenderState15ToFourWhenFlagSet | 25 | 23 | [state14](original-modern-state14.md) |
 | `00436930` | HandleMouseSetCursorAndChainPreviousHandler | 79 | 31 | [mouse-cursor](original-modern-mouse-cursor.md) |
 | `00437614` | UpdateFrontendRaceNowEntryFlags | 231 | 222 | [force-menu-layout](original-modern-force-menu-layout.md), [graphics-menu-transition](original-modern-graphics-menu-transition.md), [hud-settings-policy](original-modern-hud-settings-policy.md), [menu-callback-table](original-modern-menu-callback-table.md), [options-postgame](original-modern-options-postgame.md), [race-now](original-modern-race-now.md) |
@@ -145,13 +145,13 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00472820` | SaveConfigDatSnapshotIfAllowed | 179 | 13 | [config-loading](original-modern-config-loading.md), [ghost-loading](original-modern-ghost-loading.md) |
 | `004728f4` | CompareNameAgainstCarSelectionAliases | 47 | 47 | [car-alias](original-modern-car-alias.md) |
 | `00472924` | CheckHotPursuitTrackDropdownName | 53 | 52 | [car-alias](original-modern-car-alias.md), [car-profile](original-modern-car-profile.md), [config-loading](original-modern-config-loading.md) |
-| `00472980` | LoadConfigDatAndInitializeSettings | 409 | 164 | [config-loading](original-modern-config-loading.md), [language-table](original-modern-language-table.md), [resolution-defaults](original-modern-resolution-defaults.md) |
+| `00472980` | LoadConfigDatAndInitializeSettings | 409 | 164 | [config-loading](original-modern-config-loading.md), [language-table](original-modern-language-table.md), [resolution-defaults](original-modern-resolution-defaults.md), [startup-paths](original-modern-startup-paths.md) |
 | `00472b60` | RefreshDirectInputDeviceCapabilityCache | 429 | 1 | [deadzone-sliders](original-modern-deadzone-sliders.md) |
 | `00472d10` | InitializeDisplaySettingsFromQualityPreset | 269 | 259 | [config-loading](original-modern-config-loading.md), [cpu-tier](original-modern-cpu-tier.md), [projection](original-modern-projection.md), [resolution-defaults](original-modern-resolution-defaults.md), [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
-| `00472fc0` | WaitForTitleDelayWithInputPolling | 86 | 83 | [title-delay](original-modern-title-delay.md) |
+| `00472fc0` | WaitForTitleDelayWithInputPolling | 86 | 83 | [config-loading](original-modern-config-loading.md), [title-delay](original-modern-title-delay.md) |
 | `00473020` | EnterFrontendMode | 75 | 2 | [resolution-defaults](original-modern-resolution-defaults.md) |
 | `00473080` | RestoreAfterFrontendMode | 62 | 1 | [resolution-defaults](original-modern-resolution-defaults.md) |
-| `004730d0` | RunFrontendSetup | 404 | 64 | [idle-movie](original-modern-idle-movie.md), [title-delay](original-modern-title-delay.md) |
+| `004730d0` | RunFrontendSetup | 404 | 64 | [config-loading](original-modern-config-loading.md), [idle-movie](original-modern-idle-movie.md), [title-delay](original-modern-title-delay.md) |
 | `00479500` | BuildPairedNineVectorStrips | 369 | 1 | [environment-grid](original-modern-environment-grid.md) |
 | `0047a190` | DispatchGatedEnvironmentGridWithAuxiliaryPass | 87 | 12 | [environment-grid](original-modern-environment-grid.md) |
 | `0047b380` | IsEnvironmentCommandAllowedByFlags | 31 | 30 | [environment-grid](original-modern-environment-grid.md), [race-initialization](original-modern-race-initialization.md) |
@@ -215,10 +215,10 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0049ea70` | BuildNetworkEndpointFromMutableAddress | 99 | 7 | [dialog-input](original-modern-dialog-input.md), [network-endpoints](original-modern-network-endpoints.md) |
 | `004a2f50` | NormalizeCommaSeparatorsAndParseColonSuffix | 61 | 57 | [network-endpoints](original-modern-network-endpoints.md), [network-port-menu](original-modern-network-port-menu.md) |
 | `004a2f90` | ScanAvailableTitleAndDemoMadFiles | 108 | 89 | [idle-movie](original-modern-idle-movie.md) |
-| `004a33d0` | PollLoadingAbortKeyState | 32 | 31 | [loading-timing](original-modern-loading-timing.md), [parameter-preset](original-modern-parameter-preset.md), [texture-progress](original-modern-texture-progress.md) |
+| `004a33d0` | PollLoadingAbortKeyState | 32 | 31 | [loading-timing](original-modern-loading-timing.md), [parameter-preset](original-modern-parameter-preset.md), [pending-overlay](original-modern-pending-overlay.md), [texture-progress](original-modern-texture-progress.md) |
 | `004a33f0` | InitializeRaceSession | 347 | 326 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [pending-overlay](original-modern-pending-overlay.md) |
 | `004a354c` | ResetLoadingProgressClock | 11 | 10 | [loading-timing](original-modern-loading-timing.md) |
-| `004a3558` | ResetLoadingProgressTimingState | 77 | 71 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md) |
+| `004a3558` | ResetLoadingProgressTimingState | 77 | 71 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [pending-overlay](original-modern-pending-overlay.md) |
 | `004a35d0` | ShutdownRaceSession | 177 | 61 | [music-selection](original-modern-music-selection.md) |
 | `004a3690` | RunRaceSession | 531 | 4 | [music-selection](original-modern-music-selection.md), [music-start](original-modern-music-start.md), [startup-paths](original-modern-startup-paths.md) |
 | `004a38f0` | SetCurrentDirectoryToExecutableDirectory | 72 | 69 | [startup-paths](original-modern-startup-paths.md) |
@@ -235,8 +235,8 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004b5748` | CheckStartupResourceAndDisplayRequirements | 121 | 118 | [startup-requirements](original-modern-startup-requirements.md) |
 | `004b57c4` | ApplyDirectDrawCompatibilityBitIndices | 47 | 45 | [renderer-loading](original-modern-renderer-loading.md) |
 | `004b57f4` | ParseThrashDriverPathAndNumericSuffix | 77 | 74 | [command-line](original-modern-command-line.md), [registry](original-modern-registry.md), [renderer-loading](original-modern-renderer-loading.md) |
-| `004b5844` | LoadThrashDriverSettings | 504 | 486 | [command-line](original-modern-command-line.md), [registry](original-modern-registry.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md), [startup-requirements](original-modern-startup-requirements.md), [state14](original-modern-state14.md) |
-| `004b5a58` | InitializeThrashRenderer | 421 | 407 | [border-geometry](original-modern-border-geometry.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md), [renderer-loading](original-modern-renderer-loading.md), [state14](original-modern-state14.md), [texture-limits](original-modern-texture-limits.md) |
+| `004b5844` | LoadThrashDriverSettings | 504 | 486 | [command-line](original-modern-command-line.md), [dx5-reference-pair](original-modern-dx5-reference-pair.md), [registry](original-modern-registry.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md), [startup-requirements](original-modern-startup-requirements.md), [state14](original-modern-state14.md) |
+| `004b5a58` | InitializeThrashRenderer | 421 | 407 | [border-geometry](original-modern-border-geometry.md), [dx5-reference-pair](original-modern-dx5-reference-pair.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md), [renderer-loading](original-modern-renderer-loading.md), [state14](original-modern-state14.md), [texture-limits](original-modern-texture-limits.md) |
 | `004b5c00` | InitializeGameSubsystems | 387 | 369 | [border-geometry](original-modern-border-geometry.md), [heap-initialization](original-modern-heap-initialization.md), [input-worker](original-modern-input-worker.md), [music-selection](original-modern-music-selection.md), [renderer-initialization](original-modern-renderer-initialization.md), [resolution-defaults](original-modern-resolution-defaults.md), [startup-policy](original-modern-startup-policy.md), [startup-requirements](original-modern-startup-requirements.md) |
 | `004b5d84` | ShutdownGameSubsystems | 45 | 44 | [input-worker](original-modern-input-worker.md) |
 | `004b7d30` | LoadVehicleModelWithTextureReuse | 372 | 56 | [texture-limits](original-modern-texture-limits.md) |
@@ -247,7 +247,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004bbba0` | UpdateAndDispatchRaceVehicleRenderStates | 323 | 305 | [geometry-color-admission](original-modern-geometry-color-admission.md), [registry](original-modern-registry.md), [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004bbd80` | InitializeRenderTemporaryArena | 36 | 36 | [heap-initialization](original-modern-heap-initialization.md) |
 | `004bbda4` | ReleaseRenderTemporaryArena | 18 | 18 | [heap-initialization](original-modern-heap-initialization.md), [input-worker](original-modern-input-worker.md) |
-| `004bc160` | RenderRaceScene | 704 | 15 | [geometry-color-admission](original-modern-geometry-color-admission.md), [night-lighting](original-modern-night-lighting.md), [state14](original-modern-state14.md) |
+| `004bc160` | RenderRaceScene | 704 | 15 | [geometry-color-admission](original-modern-geometry-color-admission.md), [night-lighting](original-modern-night-lighting.md), [projection](original-modern-projection.md), [state14](original-modern-state14.md) |
 | `004bc650` | FinalizeRaceFrameViewportState | 20 | 7 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004bc670` | ClearDialogAndRefreshRaceMouseState | 15 | 2 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004bc680` | RenderRaceFrame | 332 | 17 | [night-lighting](original-modern-night-lighting.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
@@ -308,8 +308,8 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004dbcc0` | DeriveViewportProjectionAngles | 117 | 113 | [projection](original-modern-projection.md) |
 | `004dbda0` | ApplyWideAngleViewGeometry | 63 | 6 | [projection](original-modern-projection.md) |
 | `004dbde0` | ConfigureProjectionForViewContext | 262 | 3 | [projection](original-modern-projection.md) |
-| `004dc800` | BuildPlayerCarProfilePath | 138 | 3 | [car-profile](original-modern-car-profile.md) |
-| `004dc940` | LoadPlayerCarProfile | 240 | 6 | [car-profile](original-modern-car-profile.md) |
+| `004dc800` | BuildPlayerCarProfilePath | 138 | 3 | [car-profile](original-modern-car-profile.md), [config-loading](original-modern-config-loading.md) |
+| `004dc940` | LoadPlayerCarProfile | 240 | 6 | [car-profile](original-modern-car-profile.md), [config-loading](original-modern-config-loading.md) |
 | `004ddb40` | BuildWeatherOverlayQuadCommands | 1316 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
 | `004de070` | BuildWeatherParticleQuadCommands | 1673 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |
 | `004de700` | BuildWeatherParticleHistoryTriangleCommands | 1489 | 1 | [effect-renderer-masks](original-modern-effect-renderer-masks.md) |

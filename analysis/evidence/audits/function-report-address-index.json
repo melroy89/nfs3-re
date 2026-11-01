@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "4648d350d6277025bd2078dcf3882bb79527859f26f319eaa508fdaf954d561c"
+      "sha256": "bc80c423c90362eb7953ec423565c9517a61aca205953f1105b3e4492dc5b5c7"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -33,7 +33,7 @@
     },
     {
       "path": "analysis/original-modern-car-alias.md",
-      "sha256": "dce51930ef80ee38c8315bbd603d7e711c3a150ea44b73c57201d6a496325a41"
+      "sha256": "56cca4aea1e197d18dd11cf4605c9b241c66bc621e6d65df655cee4c1799dcc7"
     },
     {
       "path": "analysis/original-modern-car-download.md",
@@ -61,11 +61,11 @@
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
-      "sha256": "d08d00ff9d6bc56c7f02840eb2769200ffe8c662295b13e1d2edefca333571d6"
+      "sha256": "6b5ffb8790d4ad5c17e7eab7e2579a4f662c08bcd2abc11ff226051b58d904d1"
     },
     {
       "path": "analysis/original-modern-config-loading.md",
-      "sha256": "0bf4b54b1ecc06a2d4ae6a2cef4bb3701a0238453f0f6162e2f6de563c73f222"
+      "sha256": "95a65ecdb322266dc2aee94eb84dc0948b29fac1155f13ede87d7241ceae92f6"
     },
     {
       "path": "analysis/original-modern-configuration.md",
@@ -93,7 +93,7 @@
     },
     {
       "path": "analysis/original-modern-dialog-input.md",
-      "sha256": "e348d389e4d789533dad144c1f856e37b55261f66181585935d8e35c91143f55"
+      "sha256": "2ea1b0132b6d988eaa5c72bfabfd63fcfe7b8045381cbc8b4f70b3c9361e1cf0"
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -101,15 +101,19 @@
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
-      "sha256": "fa9dda5c05db147e0491db5c9cdcf15b58995227f779e29a92cfeeb26181a0ec"
+      "sha256": "e20ee9bb084358a4994cf717d6e93f405b7de6bf2656011eb1ae3ad8ad66925b"
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
       "sha256": "cb990d4cdfdf8781bdd59e511483ee188a50b856934a3e8e45a3f644fc212360"
     },
     {
+      "path": "analysis/original-modern-dx5-reference-pair.md",
+      "sha256": "8cc0f46d6742c3e71eeed689d92435bd396eab45d426266428d68e91ca75229a"
+    },
+    {
       "path": "analysis/original-modern-dx7-mode-admission.md",
-      "sha256": "9f896abf6ff6ba04c208f4693c84b8b3ad7f066ce4737e82c174aeae1e7e7272"
+      "sha256": "b291847bd4e656f7a17e7c3fce822af694170db2859f7e2542ebbc928d863cff"
     },
     {
       "path": "analysis/original-modern-effect-renderer-masks.md",
@@ -157,7 +161,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "130312b311268ce1bfffef09f24346d4f1f9abcbdea75d2578c6a8c831bea59e"
+      "sha256": "f479ee1ddfb3830ca0c68e62df841f4cda613f43cace024fc1fe33102a975acd"
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -173,7 +177,7 @@
     },
     {
       "path": "analysis/original-modern-language-table.md",
-      "sha256": "8c9a26a620b8b3d3ef4e4831b714ca76b1fd8d47c737e85dddb0eaacff740401"
+      "sha256": "c88bad938dfd1140d51ab9b70b6f5719f4b610b1c1b1762a7d7911f480e6ba47"
     },
     {
       "path": "analysis/original-modern-loading-artwork.md",
@@ -249,7 +253,11 @@
     },
     {
       "path": "analysis/original-modern-options-postgame.md",
-      "sha256": "0ce2d2a073ee681a6ba2b4f60328c0442cae237473a9b5f941206e586ed90e04"
+      "sha256": "909c1ea7718fd42d7a8ec9ca7b54faf1fc352b85cbfd2e2d7f10f6306fb24059"
+    },
+    {
+      "path": "analysis/original-modern-original-reference-bundle.md",
+      "sha256": "309af5919af97e97c079ae675c0520c3924ac4da71cc2015319c1cc840bda8dd"
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
@@ -257,7 +265,7 @@
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",
-      "sha256": "2a43a9e3518e094a7a75e73570ccbe396e73c2884d876c3de68d4a4ac80971f2"
+      "sha256": "a330d756d1f8b1936328d5476e5feb5b7d4ac76127637bab2ef428526dd05215"
     },
     {
       "path": "analysis/original-modern-pause-title.md",
@@ -269,11 +277,11 @@
     },
     {
       "path": "analysis/original-modern-pending-overlay.md",
-      "sha256": "6306a8f0c8eb2a32741a5ee405b8afc86c2dd1254d0e56c33bdc5911ada9a78b"
+      "sha256": "b4214f27339a027eaa24afa50562be8d24da2e9d4974af68491cb2a831fc7872"
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "751d41b301c1b942e664db2f086e37cb6ac5e63eb1da2b85cbf2dbb6eeeff265"
+      "sha256": "3f048af531947f09e5c9b0fe94f24fb706c52a58655576dd412643df541c9bc8"
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
@@ -292,6 +300,10 @@
       "sha256": "f2d346f527b18d213e39dcd7f67cef24408986bf8711c5829578da958f2460f5"
     },
     {
+      "path": "analysis/original-modern-reference-assets-index.md",
+      "sha256": "4303b2c04ee996692d34c30b652156ff6baa1fdd01b552de0b74571bac183d50"
+    },
+    {
       "path": "analysis/original-modern-registry.md",
       "sha256": "996c7b7f87ee79ea6dd4d2afaad36df91bb0e354b21c48d2897977293f99e496"
     },
@@ -301,7 +313,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-initialization.md",
-      "sha256": "a751ad6bede13a0656896e3e9dbadce2a8578ae23af342122e39e898debf8d9a"
+      "sha256": "91874487ec1c3d7b5d402921b6b06322e546f88c3e3a0e47b5625799ad32c33d"
     },
     {
       "path": "analysis/original-modern-renderer-lifecycle.md",
@@ -310,6 +322,10 @@
     {
       "path": "analysis/original-modern-renderer-loading.md",
       "sha256": "9f36e852484de425a189642923d57498ca49fba2c868822f618c66c7de7d6655"
+    },
+    {
+      "path": "analysis/original-modern-renderer-texel-alignment.md",
+      "sha256": "629c3a064ae35de99dd3160ce6c875ee92b67c592992e7f820fe65d327e959d1"
     },
     {
       "path": "analysis/original-modern-replay-list-cursor.md",
@@ -329,7 +345,7 @@
     },
     {
       "path": "analysis/original-modern-screenshot-gdiplus.md",
-      "sha256": "3315ade34100d470c590c42064003524784572f01e58482d6fa67bb0085dfcfa"
+      "sha256": "859b490257416bdda527057b19005bbbc2264772f376ff4c2d5bed6331a721ce"
     },
     {
       "path": "analysis/original-modern-screenshot-pixels.md",
@@ -368,12 +384,16 @@
       "sha256": "49d1e0cb2317561e0d70402cf37ae3231a9032eeafe6fede743dcecab4e59298"
     },
     {
+      "path": "analysis/original-modern-software-reference-pair.md",
+      "sha256": "c9fb12fe7ce21c46c897e5d3f633a945de688e53c18eaa3b9e796c896115ff99"
+    },
+    {
       "path": "analysis/original-modern-sound-bank-language.md",
       "sha256": "182b118f352dffde470fd085cdbb6870a20831cd368c09e1fb0973a0000d6cca"
     },
     {
       "path": "analysis/original-modern-startup-paths.md",
-      "sha256": "788801a03b2a19ed519819bbe9be193c765c4fb54213e7cd71f675ea0b89c6ca"
+      "sha256": "1fdb057be947fad023c4fce480774c8f92614ad48fca3de9f42e7aefdcaff94e"
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
@@ -385,7 +405,7 @@
     },
     {
       "path": "analysis/original-modern-state14.md",
-      "sha256": "ec61d8c549efcc01b30adb454842a92e219567eaea5cd534c7e398100daad49b"
+      "sha256": "171d8fc1708b632e320d63a7c7a98a12c386a5246f0d73a98041adb2a8a75ea7"
     },
     {
       "path": "analysis/original-modern-texture-limits.md",
@@ -405,7 +425,7 @@
     },
     {
       "path": "analysis/original-modern-track-detail.md",
-      "sha256": "fc272fbf1aa7ba2011837c20b5df0d5910e43300ad1896651398579b67c973c9"
+      "sha256": "02d4f171640f4c065b7c52584ad787f7b6e90e0264d7dffd7ddaf07dd211efbe"
     },
     {
       "path": "analysis/original-modern-track-length-text.md",
@@ -433,7 +453,7 @@
     },
     {
       "path": "analysis/original-modern-window-geometry.md",
-      "sha256": "5be2fd89e5b402e4a051c71e69dd2092cfbd49bf5afda621b5cead5a6149050c"
+      "sha256": "b3dc6477ff8b8e2fb78dbf6a7e5030328575fee846a23778b111699a23800599"
     },
     {
       "path": "analysis/original-modern-window-handling.md",
@@ -453,7 +473,7 @@
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
-      "sha256": "e7866904e2d2b6587aca86173e2944f903fe026392118f190b39da11cf8c1654"
+      "sha256": "3e9566abd5210b6dfd69f5a99ccec797d6b264f8d29d9a220256a15650fbf51b"
     }
   ],
   "counts": {
@@ -1313,6 +1333,14 @@
           "addresses": [
             "0041d620"
           ]
+        },
+        {
+          "path": "analysis/original-modern-track-detail.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0041d620",
+            "0041d6d8"
+          ]
         }
       ]
     },
@@ -1467,6 +1495,13 @@
       "modern_sha256": "dfb3dddec32d53199b6463dbf7dd859592b6d5dc96b1094c1db5b0dc8a4f5ae7",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004228e0"
+          ]
+        },
+        {
           "path": "analysis/original-modern-viewport-pose.md",
           "entry_mentioned": true,
           "addresses": [
@@ -1534,6 +1569,21 @@
       "modern_sha256": "803ea08dc28dc58835ca6aa5f557393c16cc8dee608341ae570f60511bca102e",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00422cf0",
+            "00422d78",
+            "00422d86",
+            "00422d9b",
+            "00422dd8",
+            "0042383f",
+            "00423845",
+            "00423865",
+            "0042386b"
+          ]
+        },
+        {
           "path": "analysis/original-modern-viewport-pose.md",
           "entry_mentioned": true,
           "addresses": [
@@ -1560,6 +1610,17 @@
       "original_sha256": "855d14879f8db2888e6514aea45a6e72fba72e67a51a3080bc303e3173c462bd",
       "modern_sha256": "b62d2ef22602e3318225f8d03d81a1ca075351fcbd000ce6431d31e307eda427",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004240c0",
+            "00424101",
+            "00424104",
+            "0042413c",
+            "0042416b"
+          ]
+        },
         {
           "path": "analysis/original-modern-view-offset.md",
           "entry_mentioned": true,
@@ -1590,6 +1651,13 @@
       "original_sha256": "a25513c7e0f6eaa80a3337ee18081b9e2ed09e00af8531c8f7bb2542764027e7",
       "modern_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00426290"
+          ]
+        },
         {
           "path": "analysis/original-modern-small-entry-followup.md",
           "entry_mentioned": true,
@@ -1623,6 +1691,13 @@
       "original_sha256": "13d923b3dba2ea356a94b9b7c2512e0eb1bbfdb8dc1d6ede9d9b19b0fe2ed523",
       "modern_sha256": "a6628b564fe777dfcca33580c0bb0b9ad6fbc9a051994d8c32072f4278d5c604",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00426450"
+          ]
+        },
         {
           "path": "analysis/original-modern-view-offset.md",
           "entry_mentioned": true,
@@ -1678,6 +1753,13 @@
       "original_sha256": "5e9a0e764aba7171f0916dfa8b3c416b13284e8ae791b856197311251dd3b728",
       "modern_sha256": "ac66ee9db5f0899d6b59920c10ce4c7b8bcc07d6f584889592299fd71ef526a1",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004264c0"
+          ]
+        },
         {
           "path": "analysis/original-modern-viewport-pose.md",
           "entry_mentioned": true,
@@ -1793,6 +1875,13 @@
       "original_sha256": "23ad635403ac42735a6aeb6ad18094cacf5318d17aa7a3563c15a2b74937629a",
       "modern_sha256": "1747b2318043138b32ca1e63c0d03190867f10048eb68a42471db559164f0775",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-dx5-reference-pair.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00431c1c"
+          ]
+        },
         {
           "path": "analysis/original-modern-resolution-defaults.md",
           "entry_mentioned": true,
@@ -3117,7 +3206,9 @@
           "addresses": [
             "00444c20",
             "00444c90",
-            "00444ca6"
+            "00444ca6",
+            "00444db5",
+            "00444e2c"
           ]
         }
       ]
@@ -4010,7 +4101,14 @@
           "addresses": [
             "0044b24e",
             "0044b271",
-            "0044b28a"
+            "0044b28a",
+            "0044b30b",
+            "0044b326",
+            "0044b6f6",
+            "0044b7ec",
+            "0044b8d3",
+            "0044b8f7",
+            "0044b90b"
           ]
         },
         {
@@ -5071,6 +5169,8 @@
             "00472a22",
             "00472a24",
             "00472aac",
+            "00472ad1",
+            "00472ae9",
             "00472aea"
           ]
         },
@@ -5089,6 +5189,13 @@
             "00472aac",
             "00472ad7",
             "00472aea"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-startup-paths.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004729aa"
           ]
         }
       ]
@@ -5210,6 +5317,14 @@
       "modern_sha256": "f4553ac9f263f7b87bc14fdb18a898f966a525e1a5100e5e51619d58b3f9eb98",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-config-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00472fc0",
+            "0047300d"
+          ]
+        },
+        {
           "path": "analysis/original-modern-title-delay.md",
           "entry_mentioned": true,
           "addresses": [
@@ -5308,6 +5423,16 @@
       "original_sha256": "e64c56879b802d01bb499b0a75e68cb24e7881f3e08b66feb64bb6b203cd01f0",
       "modern_sha256": "a8d8db17e33ed8c1e586cb7d990e05806958ddfe8bcc359c6f62484b7cb5c078",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-config-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004730d0",
+            "0047315b",
+            "00473160",
+            "0047319a"
+          ]
+        },
         {
           "path": "analysis/original-modern-idle-movie.md",
           "entry_mentioned": true,
@@ -7511,6 +7636,14 @@
           ]
         },
         {
+          "path": "analysis/original-modern-pending-overlay.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004a33d0",
+            "004a33eb"
+          ]
+        },
+        {
           "path": "analysis/original-modern-texture-progress.md",
           "entry_mentioned": true,
           "addresses": [
@@ -7574,6 +7707,7 @@
           "path": "analysis/original-modern-pending-overlay.md",
           "entry_mentioned": false,
           "addresses": [
+            "004a33fb",
             "004a3500",
             "004a3532",
             "004a3537",
@@ -7638,6 +7772,13 @@
           "entry_mentioned": true,
           "addresses": [
             "004a3558"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-pending-overlay.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a3560"
           ]
         }
       ]
@@ -8020,6 +8161,7 @@
           "addresses": [
             "004a6e10",
             "004a6e1e",
+            "004a6e36",
             "004a6e3b",
             "004a6e4c",
             "004a6e63"
@@ -8097,7 +8239,10 @@
           "path": "analysis/original-modern-startup-paths.md",
           "entry_mentioned": true,
           "addresses": [
-            "004a6ec4"
+            "004a6ec4",
+            "004a6f04",
+            "004a6f0c",
+            "004a6f2d"
           ]
         }
       ]
@@ -8469,6 +8614,14 @@
           ]
         },
         {
+          "path": "analysis/original-modern-dx5-reference-pair.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004b597b",
+            "004b599e"
+          ]
+        },
+        {
           "path": "analysis/original-modern-registry.md",
           "entry_mentioned": true,
           "addresses": [
@@ -8558,6 +8711,14 @@
           "addresses": [
             "004b5aa4",
             "004b5bd5"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-dx5-reference-pair.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004b5bb0",
+            "004b5bd6"
           ]
         },
         {
@@ -9035,6 +9196,13 @@
             "004bc160",
             "004bc245",
             "004bc29d"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-projection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004bc160"
           ]
         },
         {
@@ -10753,6 +10921,7 @@
           "entry_mentioned": true,
           "addresses": [
             "004d1850",
+            "004d187e",
             "004d1880"
           ]
         },
@@ -11153,6 +11322,14 @@
             "004dc835",
             "004dc85c"
           ]
+        },
+        {
+          "path": "analysis/original-modern-config-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dc800",
+            "004dc85c"
+          ]
         }
       ]
     },
@@ -11183,6 +11360,16 @@
           "addresses": [
             "004dc940",
             "004dc9b9",
+            "004dc9c7",
+            "004dc9eb",
+            "004dca37"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-config-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004dc940",
             "004dc9c7",
             "004dc9eb",
             "004dca37"
@@ -11403,7 +11590,9 @@
           "path": "analysis/original-modern-screenshot-gdiplus.md",
           "entry_mentioned": true,
           "addresses": [
-            "004e2eb0"
+            "004e2eb0",
+            "004e2f8c",
+            "004e2f9d"
           ]
         }
       ]
@@ -11429,7 +11618,8 @@
           "path": "analysis/original-modern-screenshot-gdiplus.md",
           "entry_mentioned": true,
           "addresses": [
-            "004e2fac"
+            "004e2fac",
+            "004e2fcc"
           ]
         }
       ]
@@ -12911,8 +13101,10 @@
         },
         {
           "path": "analysis/original-modern-window-geometry.md",
-          "entry_mentioned": false,
+          "entry_mentioned": true,
           "addresses": [
+            "004fb6f0",
+            "004fb700",
             "004fb710"
           ]
         }
