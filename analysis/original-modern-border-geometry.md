@@ -28,7 +28,7 @@ One visible caller changes its target: original `0047fdc2` calls `0047f650` dire
 
 ## Do not transfer the Modern global name to the original
 
-Modern's direct references to `0055fed0` are reads in the builder and wrapper, the write in `0047f9a4`, and a separate read at `004be759`. In the original executable, the inspected border builder does not reference `0055fed0`; the disassembly instead contains other stores to that address at `004b5aa4`, `004b5bd5`, `004b5c68`, `004b5d57`, and `004b5df6`, plus a read at `004bee1f`. Those sites have not been traced here. Accordingly, `g_nTexturedRectangleBorderThickness` is a Modern-side descriptive name only; it is not used to characterize the original DWORD.
+Modern's direct references to `0055fed0` are reads in the builder and wrapper, the write in `0047f9a4`, and a separate read at `004be759`. In the original executable, the inspected border builder does not reference `0055fed0`; its stores at `004b5aa4`, `004b5bd5`, `004b5c68`, `004b5d57`, and `004b5df6` and read at `004bee1f` now have a [renderer-budget producer/consumer linkage](original-modern-display-modes.md#original-budget-is-a-renderer-selection-constant). Accordingly, `g_nTexturedRectangleBorderThickness` is a Modern-side descriptive name only; it is not used to characterize the original DWORD or infer that the original budget measured VRAM.
 
 ## Retained evidence
 
@@ -36,6 +36,6 @@ Run `python3 analysis/scripts/audit_viewport_geometry_difference.py` (Python `pe
 
 ## Limits
 
-- Static arithmetic and call-target changes are established from the two executable fingerprints above. Original source `007cdac8`, original uses of `0055fed0`, atlas consumers and live values remain unresolved here; Modern source `007a2748` is mapped in the viewport chapter.
+- Static arithmetic and call-target changes are established from the two executable fingerprints above. Original source `007cdac8`, complete writer/lifetime coverage for original budget `0055fed0`, atlas consumers and live values remain unresolved here; the budget's selected producers/consumer are linked above, and Modern source `007a2748` is mapped in the viewport chapter.
 - This report does not infer a final border-size ratio, viewport policy, map-scale policy, or visible rendering change from the constants alone. It does not identify all changed UV mappings or texture assets.
 - No game, graphics backend, probe, or test was run; no executable or Ghidra project was modified.

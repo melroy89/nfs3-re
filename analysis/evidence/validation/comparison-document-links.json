@@ -8,13 +8,13 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "9dab89a31ef559651c83f4421387f3804fc62eb51bccdb83092b969dbf404705",
-      "relative_links": 107
+      "sha256": "7e931261564de9d03929fee8bdc3b85a80d28001621d860ea25b8a7b58452b50",
+      "relative_links": 108
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
-      "sha256": "38dd4ce2a52f5ee6190981b44cd610b76cbb14e5b68a760e8b20f725ad63b446",
-      "relative_links": 2
+      "sha256": "a5041be096d8980dbec15f95dcadd456cd70085d153bdae569c884f8c68f3bc8",
+      "relative_links": 3
     },
     {
       "path": "analysis/original-modern-camera-duplicates.md",
@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "f8164fa83d46b76230f36fe09d8f1b607c02be125346357dce8dd2649e148346",
-      "relative_links": 10
+      "sha256": "59da5318328c16526e083aebe0bdcf1650e6b00bd9acea7e88406ab0ae5c990e",
+      "relative_links": 14
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -168,8 +168,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "12c3e7bc23edba5f46516f63398193e1502bac2108266cf001d425aceac7ffa4",
-      "relative_links": 684
+      "sha256": "8923ed6677ceee030110acbb845f2f097ff340318b180212867056ec793170e9",
+      "relative_links": 686
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -628,7 +628,7 @@
     }
   ],
   "file_count": 125,
-  "relative_link_count": 2052,
+  "relative_link_count": 2060,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

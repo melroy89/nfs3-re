@@ -22,9 +22,27 @@ Original `004bed90..004bee71` calls the driver's about slot `[009ef980]` on each
 
 For ordinary positive, nonoverflowing dimensions, Modern computes `trunc(100*width/height)` and accepts 124 through 178 inclusive. This is **not an exact rational 5:4..16:9 test**: 124 is below 125, and truncation can admit values above 178%. The vendor's stated aspect range describes intended/common modes; these instructions give the actual approximate admission. At valid normal sizes, 1280×1024, 1920×1080 and 1920×1200 meet the Modern ratio gate; all three fail the original exact-4:3 geometry test. These are arithmetic deductions, not actual advertised or selected driver modes.
 
-The old budget operand's full producer/meaning is not established here; do not silently rename it “available VRAM.” Removing this local gate does not prove the driver or later allocation accepts every larger mode. Neither helper alone establishes a 640×480 minimum; lower-resolution hiding may reside in drivers or other paths and is not verified by this comparison.
+The [producer linkage below](#original-budget-is-a-renderer-selection-constant) establishes renderer-selection constants for the old budget operand; it is not a demonstrated hardware-memory measurement. Removing this local gate does not prove the driver or later allocation accepts every larger mode. Neither helper alone establishes a 640×480 minimum; lower-resolution hiding may reside in drivers or other paths and is not verified by this comparison.
 
 Machine caveat: Modern uses low-32-bit IMUL, clears EDX, then signed IDIV by height, without a local zero/overflow guard. The simple mathematical formula above assumes positive normal dimensions and a fitting product. Arbitrary malformed records can depart from that model or fault. Original multiplications/comparisons also use machine-width results. No malformed record was supplied or runtime fault observed.
+
+## Original budget is a renderer-selection constant
+
+The [renderer dispatch investigation](original-modern-renderer-initialization.md) already identifies the original producer branches. The focused `python3 analysis/scripts/audit_renderer_budget_field.py` now retains hash-pinned literal loads/stores and consumer004bee15..004bee32 in a [linkage manifest](evidence/audits/renderer-budget-field.json), rather than repeating the whole dispatch investigation.
+
+| Original selector(s) | Store to0055fed0 | Local constant |
+|---|---|---:|
+|1,2 |004b5aa4 |4 MiB |
+|3,4 |004b5bd5 |8 MiB |
+|5 |004b5c68 |2 MiB |
+|6 |004b5d57 |2 MiB |
+|7,8 |004b5df6 |2 MiB |
+
+These constants cross calls in EBX/ESI/EDI; the interpretation assumes ordinary/documented callee preservation and no intervening alias mutation. Selector0, invalid selectors, failures and alternate writers are not assigned a value by this table. The candidate DLL names and environment override remain qualified in the dispatch chapter. The local constants do not establish actual installed VRAM or a provider-reported capacity.
+
+For positive dimensions with fitting products, the retained gate is equivalent to **budget >=4*width*height**. Thus2/4/8 MiB permit pixel products up to524,288/1,048,576/2,097,152 respectively. For example,1024×768 passes the4/8 MiB cases but fails2 MiB;1600×1200 passes8 MiB but fails2/4 MiB. These are derived outcomes of this one gate, not enumerated modes or instruction probes. Original's additional4:3/depth/flag/buffer-field gates still apply. Wrapped products, negative state and full provider admission retain the earlier machine caveats.
+
+Modern removes this particular fixed-budget test and uses the same address0055fed0 for a different [border-thickness value](original-modern-border-geometry.md). Preserve separate version-specific meanings. This closes the specific producer-linkage omission in the earlier report; it does not establish every field writer, driver allocation success or visible resolution support.
 
 ## 2. Callback interface changes
 
@@ -59,7 +77,7 @@ Therefore this callback alone does not prove a strict 100-entry maximum. Driver 
 - **MP120-008/017/024:** notes about 100 modes can refer to different renderer components. This EXE's changed collector/boundary is documented, but individual DLL capacities and first-release dates are not thereby verified.
 - **MP150-030:** the executable eligibility helper has no below-640×480 exclusion; the [DX7 driver follow-up](original-modern-dx7-mode-admission.md) locates unsigned minimum-size rejection in the official packaged DLL. Other renderers and runtime remain unverified.
 
-The [mode-selection comparison](original-modern-mode-selection.md) follows the original ID tree and Modern search/application consumers. Next: compare driver mode enumeration itself, all mode-list count resets/storage, old budget-field producer, and original/Modern projection/menu scaling. The [screenshot dimension audit](screenshot-worker-admission-audit.md) already explains why eligibility and selector fallback are not a general buffer-size proof; do not duplicate or overstate that research.
+The [mode-selection comparison](original-modern-mode-selection.md) follows the original ID tree and Modern search/application consumers. The fixed budget producers are now linked above. Remaining work includes all mode-list count resets/storage, complete driver admission and original/Modern projection/menu scaling. Reuse the existing paired driver reports rather than restarting enumeration inventories. The [screenshot dimension audit](screenshot-worker-admission-audit.md) already explains why eligibility and selector fallback are not a general buffer-size proof; do not duplicate or overstate that research.
 
 The [DX7 driver follow-up](original-modern-dx7-mode-admission.md) separates its verified minimum-size checks from the still-unverified exact640×480 depth-forcing claim.
 

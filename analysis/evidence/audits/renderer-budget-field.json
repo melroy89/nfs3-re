@@ -1,0 +1,198 @@
+{
+  "kind": "static-renderer-budget-field-linkage",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6"
+    }
+  },
+  "producers": [
+    {
+      "selectors": [
+        1,
+        2
+      ],
+      "load": "004b5a94",
+      "store": "004b5aa4",
+      "value": 4194304,
+      "bytes_hex": "bb00004000890d643a7a00e8acc1f7ff891dd0fe5500",
+      "sha256": "ef88e4f49955bfcc9188472fe1e5414754df27da9c97d6df01ab5318f898c504",
+      "disassembly": [
+        "4b5a94:\tbb 00 00 40 00       \tmov    ebx,0x400000",
+        "4b5a99:\t89 0d 64 3a 7a 00    \tmov    DWORD PTR ds:0x7a3a64,ecx",
+        "4b5a9f:\te8 ac c1 f7 ff       \tcall   0x431c50",
+        "4b5aa4:\t89 1d d0 fe 55 00    \tmov    DWORD PTR ds:0x55fed0,ebx"
+      ]
+    },
+    {
+      "selectors": [
+        3,
+        4
+      ],
+      "load": "004b5ba7",
+      "store": "004b5bd5",
+      "value": 8388608,
+      "bytes_hex": "bb00008000ff156cf99e006a00be01000000b8010000006a02a3683a7a00a3603a7a00ff156cf99e00b904000000891dd0fe5500",
+      "sha256": "e65735732ee4b76fdf083b97a3f783ecb1807a61a7a3040e122252c485aa4844",
+      "disassembly": [
+        "4b5ba7:\tbb 00 00 80 00       \tmov    ebx,0x800000",
+        "4b5bac:\tff 15 6c f9 9e 00    \tcall   DWORD PTR ds:0x9ef96c",
+        "4b5bb2:\t6a 00                \tpush   0x0",
+        "4b5bb4:\tbe 01 00 00 00       \tmov    esi,0x1",
+        "4b5bb9:\tb8 01 00 00 00       \tmov    eax,0x1",
+        "4b5bbe:\t6a 02                \tpush   0x2",
+        "4b5bc0:\ta3 68 3a 7a 00       \tmov    ds:0x7a3a68,eax",
+        "4b5bc5:\ta3 60 3a 7a 00       \tmov    ds:0x7a3a60,eax",
+        "4b5bca:\tff 15 6c f9 9e 00    \tcall   DWORD PTR ds:0x9ef96c",
+        "4b5bd0:\tb9 04 00 00 00       \tmov    ecx,0x4",
+        "4b5bd5:\t89 1d d0 fe 55 00    \tmov    DWORD PTR ds:0x55fed0,ebx"
+      ]
+    },
+    {
+      "selectors": [
+        5
+      ],
+      "load": "004b5c55",
+      "store": "004b5c68",
+      "value": 2097152,
+      "bytes_hex": "be0000200031dbff156cf99e00891d643a7a008935d0fe5500",
+      "sha256": "f59b6d7761371bf1543d1f373211b5700391694ddf74174212d1ec9d885176a1",
+      "disassembly": [
+        "4b5c55:\tbe 00 00 20 00       \tmov    esi,0x200000",
+        "4b5c5a:\t31 db                \txor    ebx,ebx",
+        "4b5c5c:\tff 15 6c f9 9e 00    \tcall   DWORD PTR ds:0x9ef96c",
+        "4b5c62:\t89 1d 64 3a 7a 00    \tmov    DWORD PTR ds:0x7a3a64,ebx",
+        "4b5c68:\t89 35 d0 fe 55 00    \tmov    DWORD PTR ds:0x55fed0,esi"
+      ]
+    },
+    {
+      "selectors": [
+        6
+      ],
+      "load": "004b5d44",
+      "store": "004b5d57",
+      "value": 2097152,
+      "bytes_hex": "bf0000200031f6ff156cf99e008935643a7a00893dd0fe5500",
+      "sha256": "200d30bd012b1d5c7feeed1e3f8ffb3bb1f9577de92e0d1eba2c1f7a66b27a5d",
+      "disassembly": [
+        "4b5d44:\tbf 00 00 20 00       \tmov    edi,0x200000",
+        "4b5d49:\t31 f6                \txor    esi,esi",
+        "4b5d4b:\tff 15 6c f9 9e 00    \tcall   DWORD PTR ds:0x9ef96c",
+        "4b5d51:\t89 35 64 3a 7a 00    \tmov    DWORD PTR ds:0x7a3a64,esi",
+        "4b5d57:\t89 3d d0 fe 55 00    \tmov    DWORD PTR ds:0x55fed0,edi"
+      ]
+    },
+    {
+      "selectors": [
+        7,
+        8
+      ],
+      "load": "004b5dd9",
+      "store": "004b5df6",
+      "value": 2097152,
+      "bytes_hex": "be0000200068c9000000bf0100000031dbff156cf99e00891d643a7a008935d0fe5500",
+      "sha256": "b53f5f0c3ef9d48a36e71e28a5f81fd3a76c22bf04e228f05d4b648ad371e0c1",
+      "disassembly": [
+        "4b5dd9:\tbe 00 00 20 00       \tmov    esi,0x200000",
+        "4b5dde:\t68 c9 00 00 00       \tpush   0xc9",
+        "4b5de3:\tbf 01 00 00 00       \tmov    edi,0x1",
+        "4b5de8:\t31 db                \txor    ebx,ebx",
+        "4b5dea:\tff 15 6c f9 9e 00    \tcall   DWORD PTR ds:0x9ef96c",
+        "4b5df0:\t89 1d 64 3a 7a 00    \tmov    DWORD PTR ds:0x7a3a64,ebx",
+        "4b5df6:\t89 35 d0 fe 55 00    \tmov    DWORD PTR ds:0x55fed0,esi"
+      ]
+    }
+  ],
+  "consumer": {
+    "start": "004bee15",
+    "end_exclusive": "004bee32",
+    "bytes_hex": "89f80fafc301c08945f0a1d0fe550089c2c1fa1f2bc2d1f83b45f07c31",
+    "sha256": "9944e17f152e749184ba0e50b9d77a5a4b2c3793d0a813867b6e0317b31efabc",
+    "disassembly": [
+      "4bee15:\t89 f8                \tmov    eax,edi",
+      "4bee17:\t0f af c3             \timul   eax,ebx",
+      "4bee1a:\t01 c0                \tadd    eax,eax",
+      "4bee1c:\t89 45 f0             \tmov    DWORD PTR [ebp-0x10],eax",
+      "4bee1f:\ta1 d0 fe 55 00       \tmov    eax,ds:0x55fed0",
+      "4bee24:\t89 c2                \tmov    edx,eax",
+      "4bee26:\tc1 fa 1f             \tsar    edx,0x1f",
+      "4bee29:\t2b c2                \tsub    eax,edx",
+      "4bee2b:\td1 f8                \tsar    eax,1",
+      "4bee2d:\t3b 45 f0             \tcmp    eax,DWORD PTR [ebp-0x10]",
+      "4bee30:\t7c 31                \tjl     0x4bee63"
+    ]
+  },
+  "ordinary_positive_arithmetic": {
+    "condition": "budget/2 >= 2*width*height, with fitting products",
+    "equivalent": "budget >= 4*width*height",
+    "maximum_pixel_products": {
+      "2097152": 524288,
+      "4194304": 1048576,
+      "8388608": 2097152
+    },
+    "examples_not_instruction_probes": [
+      {
+        "width": 640,
+        "height": 480,
+        "required_budget": 1228800,
+        "passes_by_budget_MiB": {
+          "2": true,
+          "4": true,
+          "8": true
+        }
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "required_budget": 1920000,
+        "passes_by_budget_MiB": {
+          "2": true,
+          "4": true,
+          "8": true
+        }
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "required_budget": 3145728,
+        "passes_by_budget_MiB": {
+          "2": false,
+          "4": true,
+          "8": true
+        }
+      },
+      {
+        "width": 1280,
+        "height": 960,
+        "required_budget": 4915200,
+        "passes_by_budget_MiB": {
+          "2": false,
+          "4": false,
+          "8": true
+        }
+      },
+      {
+        "width": 1600,
+        "height": 1200,
+        "required_budget": 7680000,
+        "passes_by_budget_MiB": {
+          "2": false,
+          "4": false,
+          "8": true
+        }
+      }
+    ]
+  },
+  "limits": [
+    "Producer selector mapping reuses the complete dispatch evidence in original-modern-renderer-initialization.md.",
+    "Constants cross calls in nonvolatile registers; fixed-value interpretation assumes their documented/ordinary callee preservation and no intervening alias writer.",
+    "No hardware-memory measurement inferred; selector0/invalid/failure/alternate producers are not normalized into these cases.",
+    "Gate examples isolate budget only; original also requires other flags/depth/aspect/driver fields.",
+    "Modern repurposes the same address for border thickness; do not merge the two objects across versions.",
+    "No target execution, instruction probes, driver calls or saved Ghidra mutation."
+  ]
+}
