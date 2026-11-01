@@ -248,3 +248,27 @@ The original/final descriptor at`00557c30` is the common kind1 `priority` proper
 Thus, within this ordinary group traversal, priority0 callbacks are visited after positive groups. Modern moves the two top dropdowns into that final group, separating them from the old priority1 ties and Location's old priority0 laps control. This supplies a concrete ordering mechanism consistent with MP150-024. Actual compositing still depends on callbacks, flags, render/depth state and providers; later callback order alone does not prove every popup appears correctly over other content.
 
 The state-preparation span`0044a5a6..0044a5cb` differs and is explicitly outside the retained comparisons. This is not complete loop equivalence or a claim that its changed instructions implement the asset priority fix. Historical EXE consumers were not separately qualified; the1.4.0→1.5.0 boundary is directly verified for the authored assets. The reference assets are author-hosted, not authenticated retail or proven paired to the supplied original EXE. MP150-024 advances to **partial package/static support**; active installed loading, visible overlap and full input behaviour remain unverified. No game, instruction probe, compiler or Ghidra write was used.
+
+## Showcase and Compare subtitles adopt the Race Results text style
+
+**Verified package boundary and named property bindings; actual font-bank/rendering identity untested.** The [subtitle-style audit](evidence/audits/subtitle-style-history.json), reproduced with `python3 analysis/scripts/audit_subtitle_style_history.py`, pins author-reference,1.4.0,1.5.0 and final archives. It compares selected controls in`showcase.mnu`, `compare2.mnu` and`postgame.mnu`.
+
+| Menu/list binding | Reference and1.4.0 |1.5.0 and final |
+|---|---|---|
+|Showcase `statsmode` |Cascade`notitle=0`; no list-bound text subtitle |Cascade`notitle=1`; added list-bound `[text]` subtitle |
+|Compare All Cars `compcat` |Same old pattern |Same replacement pattern |
+|Race Results `posttitle` |Existing `[text]` subtitle |Retained matching authored style |
+
+Both new subtitle records match the results subtitle in **nine explicit style/layout properties**: x163, y113, priority4, texttype1, color2, italic0, scale0.750000, ypos0, align0. This is not replacement of the main page headings at x101/y17. The new records use token`kMenuSHOWCASEStats001`; the results record uses`kMenuPOSTGAMEracesumm001`. List bindings remain purpose-specific (`statsmode`, `compcat`, `posttitle`), so matching style is not evidence of identical text content or selected values. Other button/cascade navigation metadata is separate.
+
+| Named property descriptor | Kind/form | Runtime entry offset | Paired EXE result |
+|---|---|---|---|
+|`00557cc0` texttype |3/1 |+40 |Identical |
+|`00557ce0` color |3/1 |+4a |Identical |
+|`00557cf0` italic |3/1 |+42 |Identical |
+|`00557d00` scale |3/6 |+4c |Identical |
+|`00557db0` cascade notitle |17/1 |+44 |Identical |
+
+These offsets use runtime entry base`00604ee0`; field descriptors retain concrete destination pointers and exact bytes in the audit. The [common writer review](original-modern-control-component-keys.md#common-property-stores-do-not-directly-overlap-either-byte) establishes form1's two-byte store. The current audit does not qualify the complete form6 conversion path, every scale override, cascade title-rendering consumer or actual font-bank selector. It verifies authored values and bindings, rather than claiming those runtime behaviours were exercised.
+
+MP150-025 advances to **partial package/static support**: at the claimed1.4.0→1.5.0 boundary, both pages replace the old cascade-title policy with explicitly authored subtitles that share the Race Results style. Full font-face/glyph-bank identity, localization, visible size/appearance and active installed asset loading remain unverified. The author-reference package is not authenticated retail or independently paired to the supplied original EXE. Reconstruction should preserve separate text records, their list bindings and the chosen cascade title policy; merely changing a global font would not reproduce the observed asset transformation. No target, menu, instruction probe, compiler or Ghidra write was used.

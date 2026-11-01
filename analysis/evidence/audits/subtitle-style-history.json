@@ -1,0 +1,650 @@
+{
+  "kind": "static-subtitle-style-history",
+  "archives": {
+    "reference": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+      "sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127"
+    },
+    "modern": {
+      "path": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3"
+    },
+    "1.4.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9"
+    },
+    "1.5.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f"
+    }
+  },
+  "shared_style": {
+    "x": "163",
+    "y": "113",
+    "priority": "4",
+    "texttype": "1",
+    "color": "2",
+    "italic": "0",
+    "scale": "0.750000",
+    "ypos": "0",
+    "align": "0"
+  },
+  "assets": {
+    "reference": [
+      {
+        "path": "fedata/menus/showcase.mnu",
+        "member": "fedata/MENUS/SHOWCASE.MNU",
+        "sha256": "486306226139f2c440918134c533dccca1a84405ef67065f12aba589c2dd254c",
+        "bytes": 3370,
+        "selected_listname": "statsmode",
+        "controls": [
+          {
+            "section": "button",
+            "x": "0",
+            "y": "0",
+            "priority": "11",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "0",
+            "enablefore3demo": "0",
+            "text": "kMenuSHOWCASEStats001",
+            "buttontype": "arrowtab",
+            "value": "0",
+            "listname": "statsmode",
+            "listpos": "0",
+            "listoff": "0",
+            "listx": "0",
+            "listy": "0",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "0",
+            "enablefore3demo": "0",
+            "codelink": "donthide",
+            "text": "kMenuSHOWCASESelectst001",
+            "maxvisitem": "2000",
+            "listname": "statsmode",
+            "ypos": "0",
+            "notitle": "0"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/compare2.mnu",
+        "member": "fedata/MENUS/COMPARE2.MNU",
+        "sha256": "ab8278b6dc0b1a312749dc113b52d59c42036f7e7ba48930ca2fa08fc702fa3f",
+        "bytes": 2615,
+        "selected_listname": "compcat",
+        "controls": [
+          {
+            "section": "button",
+            "x": "0",
+            "y": "0",
+            "priority": "13",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "0",
+            "enablefore3demo": "0",
+            "text": "kMenuCOMPARE2CompareC001",
+            "buttontype": "arrowtab",
+            "value": "0",
+            "listname": "compcat",
+            "listpos": "0",
+            "listoff": "0",
+            "listx": "0",
+            "listy": "0",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "0",
+            "enablefore3demo": "0",
+            "text": "kMenuCOMPARE2Compareb001",
+            "maxvisitem": "2000",
+            "listname": "compcat",
+            "ypos": "0",
+            "notitle": "0"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/postgame.mnu",
+        "member": "fedata/MENUS/POSTGAME.MNU",
+        "sha256": "f60752dc3da30c36c9c8903e6fe51ad2162048833646e95517250b2af33c11d8",
+        "bytes": 5294,
+        "selected_listname": "posttitle",
+        "controls": [
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "0",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "1",
+            "enablefore3demo": "1",
+            "text": "kMenuPOSTGAMEselect001",
+            "maxvisitem": "10",
+            "listname": "posttitle",
+            "ypos": "1",
+            "notitle": "1"
+          },
+          {
+            "section": "text",
+            "x": "163",
+            "y": "113",
+            "priority": "4",
+            "postonly": "0",
+            "mainonly": "0",
+            "enablefordemo": "0",
+            "enablefore3demo": "0",
+            "text": "kMenuPOSTGAMEracesumm001",
+            "texttype": "1",
+            "listname": "posttitle",
+            "color": "2",
+            "italic": "0",
+            "scale": "0.750000",
+            "ypos": "0",
+            "align": "0"
+          }
+        ]
+      }
+    ],
+    "modern": [
+      {
+        "path": "fedata/menus/showcase.mnu",
+        "member": "fedata/menus/showcase.mnu",
+        "sha256": "46925ae29e977a02b16a059106408d5a2f06a5871bf90302e33d073e117d2578",
+        "bytes": 2139,
+        "selected_listname": "statsmode",
+        "controls": [
+          {
+            "section": "text",
+            "x": "163",
+            "y": "113",
+            "priority": "4",
+            "text": "kMenuSHOWCASEStats001",
+            "texttype": "1",
+            "listname": "statsmode",
+            "color": "2",
+            "italic": "0",
+            "scale": "0.750000",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "button",
+            "x": "0",
+            "y": "0",
+            "priority": "11",
+            "text": "kMenuSHOWCASEStats001",
+            "buttontype": "arrowtab",
+            "listname": "statsmode",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "2",
+            "align": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "codelink": "donthide",
+            "text": "kMenuSHOWCASESelectst001",
+            "maxvisitem": "2000",
+            "listname": "statsmode",
+            "ypos": "2",
+            "notitle": "1"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/compare2.mnu",
+        "member": "fedata/menus/compare2.mnu",
+        "sha256": "36062982c8324ffc9e8c5f7aef1c6d8e13a90e9e202999f7c528d8cf5d165d7e",
+        "bytes": 1651,
+        "selected_listname": "compcat",
+        "controls": [
+          {
+            "section": "text",
+            "x": "163",
+            "y": "113",
+            "priority": "4",
+            "text": "kMenuSHOWCASEStats001",
+            "texttype": "1",
+            "listname": "compcat",
+            "color": "2",
+            "italic": "0",
+            "scale": "0.750000",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "button",
+            "x": "0",
+            "y": "0",
+            "priority": "13",
+            "text": "kMenuCOMPARE2CompareC001",
+            "buttontype": "arrowtab",
+            "listname": "compcat",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "text": "kMenuCOMPARE2Compareb001",
+            "maxvisitem": "2000",
+            "listname": "compcat",
+            "ypos": "0",
+            "notitle": "1"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/postgame.mnu",
+        "member": "fedata/menus/postgame.mnu",
+        "sha256": "02d75467d363830ab3fc531740fa51f5675b83c7412cc53adabaeea05344fbee",
+        "bytes": 3347,
+        "selected_listname": "posttitle",
+        "controls": [
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "0",
+            "text": "kMenuPOSTGAMEselect001",
+            "maxvisitem": "10",
+            "listname": "posttitle",
+            "ypos": "2",
+            "notitle": "1"
+          },
+          {
+            "section": "text",
+            "x": "163",
+            "y": "113",
+            "priority": "4",
+            "text": "kMenuPOSTGAMEracesumm001",
+            "texttype": "1",
+            "listname": "posttitle",
+            "color": "2",
+            "italic": "0",
+            "scale": "0.750000",
+            "ypos": "0",
+            "align": "0"
+          }
+        ]
+      }
+    ],
+    "1.4.0": [
+      {
+        "path": "fedata/menus/showcase.mnu",
+        "member": "fedata/menus/showcase.mnu",
+        "sha256": "0aa1c5f3ba4878ac4bc0b63ff3ed7ad006fe24f4682ab84d1846558e33ea6bcc",
+        "bytes": 1991,
+        "selected_listname": "statsmode",
+        "controls": [
+          {
+            "section": "button",
+            "x": "0",
+            "y": "0",
+            "priority": "11",
+            "text": "kMenuSHOWCASEStats001",
+            "buttontype": "arrowtab",
+            "listname": "statsmode",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "codelink": "donthide",
+            "text": "kMenuSHOWCASESelectst001",
+            "maxvisitem": "2000",
+            "listname": "statsmode",
+            "ypos": "0",
+            "notitle": "0"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/compare2.mnu",
+        "member": "fedata/menus/compare2.mnu",
+        "sha256": "8531f30c17f328d88a1980eaf452eb98a43d227d87bdab87da8b64e3aa663502",
+        "bytes": 1505,
+        "selected_listname": "compcat",
+        "controls": [
+          {
+            "section": "button",
+            "x": "0",
+            "y": "0",
+            "priority": "13",
+            "text": "kMenuCOMPARE2CompareC001",
+            "buttontype": "arrowtab",
+            "listname": "compcat",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "text": "kMenuCOMPARE2Compareb001",
+            "maxvisitem": "2000",
+            "listname": "compcat",
+            "ypos": "0",
+            "notitle": "0"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/postgame.mnu",
+        "member": "fedata/menus/postgame.mnu",
+        "sha256": "0893693acee67a4f2304e2d96e2738613ec1d54b8883a11a6b848df80477d481",
+        "bytes": 3347,
+        "selected_listname": "posttitle",
+        "controls": [
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "0",
+            "text": "kMenuPOSTGAMEselect001",
+            "maxvisitem": "10",
+            "listname": "posttitle",
+            "ypos": "1",
+            "notitle": "1"
+          },
+          {
+            "section": "text",
+            "x": "163",
+            "y": "113",
+            "priority": "4",
+            "text": "kMenuPOSTGAMEracesumm001",
+            "texttype": "1",
+            "listname": "posttitle",
+            "color": "2",
+            "italic": "0",
+            "scale": "0.750000",
+            "ypos": "0",
+            "align": "0"
+          }
+        ]
+      }
+    ],
+    "1.5.0": [
+      {
+        "path": "fedata/menus/showcase.mnu",
+        "member": "fedata/menus/showcase.mnu",
+        "sha256": "46925ae29e977a02b16a059106408d5a2f06a5871bf90302e33d073e117d2578",
+        "bytes": 2139,
+        "selected_listname": "statsmode",
+        "controls": [
+          {
+            "section": "text",
+            "x": "163",
+            "y": "113",
+            "priority": "4",
+            "text": "kMenuSHOWCASEStats001",
+            "texttype": "1",
+            "listname": "statsmode",
+            "color": "2",
+            "italic": "0",
+            "scale": "0.750000",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "button",
+            "x": "0",
+            "y": "0",
+            "priority": "11",
+            "text": "kMenuSHOWCASEStats001",
+            "buttontype": "arrowtab",
+            "listname": "statsmode",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "2",
+            "align": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "codelink": "donthide",
+            "text": "kMenuSHOWCASESelectst001",
+            "maxvisitem": "2000",
+            "listname": "statsmode",
+            "ypos": "2",
+            "notitle": "1"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/compare2.mnu",
+        "member": "fedata/menus/compare2.mnu",
+        "sha256": "36062982c8324ffc9e8c5f7aef1c6d8e13a90e9e202999f7c528d8cf5d165d7e",
+        "bytes": 1651,
+        "selected_listname": "compcat",
+        "controls": [
+          {
+            "section": "text",
+            "x": "163",
+            "y": "113",
+            "priority": "4",
+            "text": "kMenuSHOWCASEStats001",
+            "texttype": "1",
+            "listname": "compcat",
+            "color": "2",
+            "italic": "0",
+            "scale": "0.750000",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "button",
+            "x": "0",
+            "y": "0",
+            "priority": "13",
+            "text": "kMenuCOMPARE2CompareC001",
+            "buttontype": "arrowtab",
+            "listname": "compcat",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "0",
+            "align": "0"
+          },
+          {
+            "section": "cascade",
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "text": "kMenuCOMPARE2Compareb001",
+            "maxvisitem": "2000",
+            "listname": "compcat",
+            "ypos": "0",
+            "notitle": "1"
+          }
+        ]
+      },
+      {
+        "path": "fedata/menus/postgame.mnu",
+        "member": "fedata/menus/postgame.mnu",
+        "sha256": "02d75467d363830ab3fc531740fa51f5675b83c7412cc53adabaeea05344fbee",
+        "bytes": 3347,
+        "selected_listname": "posttitle",
+        "controls": [
+          {
+            "section": "cascade",
+            "x": "131",
+            "y": "174",
+            "priority": "0",
+            "text": "kMenuPOSTGAMEselect001",
+            "maxvisitem": "10",
+            "listname": "posttitle",
+            "ypos": "2",
+            "notitle": "1"
+          },
+          {
+            "section": "text",
+            "x": "163",
+            "y": "113",
+            "priority": "4",
+            "text": "kMenuPOSTGAMEracesumm001",
+            "texttype": "1",
+            "listname": "posttitle",
+            "color": "2",
+            "italic": "0",
+            "scale": "0.750000",
+            "ypos": "0",
+            "align": "0"
+          }
+        ]
+      }
+    ]
+  },
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "field_descriptors": [
+        {
+          "address": "00557cc0",
+          "name": "texttype",
+          "kind": 3,
+          "form": 1,
+          "destination": "00604f20",
+          "entry_offset": 64,
+          "hex": "03000000c884530001000000204f6000"
+        },
+        {
+          "address": "00557ce0",
+          "name": "color",
+          "kind": 3,
+          "form": 1,
+          "destination": "00604f2a",
+          "entry_offset": 74,
+          "hex": "03000000e0845300010000002a4f6000"
+        },
+        {
+          "address": "00557cf0",
+          "name": "italic",
+          "kind": 3,
+          "form": 1,
+          "destination": "00604f22",
+          "entry_offset": 66,
+          "hex": "03000000e884530001000000224f6000"
+        },
+        {
+          "address": "00557d00",
+          "name": "scale",
+          "kind": 3,
+          "form": 6,
+          "destination": "00604f2c",
+          "entry_offset": 76,
+          "hex": "03000000f0845300060000002c4f6000"
+        },
+        {
+          "address": "00557db0",
+          "name": "notitle",
+          "kind": 17,
+          "form": 1,
+          "destination": "00604f24",
+          "entry_offset": 68,
+          "hex": "110000003885530001000000244f6000"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "field_descriptors": [
+        {
+          "address": "00557cc0",
+          "name": "texttype",
+          "kind": 3,
+          "form": 1,
+          "destination": "00604f20",
+          "entry_offset": 64,
+          "hex": "03000000c884530001000000204f6000"
+        },
+        {
+          "address": "00557ce0",
+          "name": "color",
+          "kind": 3,
+          "form": 1,
+          "destination": "00604f2a",
+          "entry_offset": 74,
+          "hex": "03000000e0845300010000002a4f6000"
+        },
+        {
+          "address": "00557cf0",
+          "name": "italic",
+          "kind": 3,
+          "form": 1,
+          "destination": "00604f22",
+          "entry_offset": 66,
+          "hex": "03000000e884530001000000224f6000"
+        },
+        {
+          "address": "00557d00",
+          "name": "scale",
+          "kind": 3,
+          "form": 6,
+          "destination": "00604f2c",
+          "entry_offset": 76,
+          "hex": "03000000f0845300060000002c4f6000"
+        },
+        {
+          "address": "00557db0",
+          "name": "notitle",
+          "kind": 17,
+          "form": 1,
+          "destination": "00604f24",
+          "entry_offset": 68,
+          "hex": "110000003885530001000000244f6000"
+        }
+      ]
+    }
+  },
+  "verified": [
+    "1.4.0->1.5.0 introduces separate list-bound text subtitles and sets old cascades notitle0->1 in both selected menus.",
+    "New subtitle styling equals Race Results authored style in nine explicit fields; results style already exists in author-reference/1.4.0.",
+    "Text/list binding differs by purpose:statsmode,compcat,posttitle; labels/content are not claimed identical.",
+    "Paired EXE field descriptors bind authored texttype/color/italic/scale and cascade notitle to concrete runtime offsets."
+  ],
+  "limits": [
+    "No game, font/provider, menu parser or instruction execution; no Ghidra writes.",
+    "Author-reference assets not authenticated pristine retail or proven paired to supplied original EXE.",
+    "Matching style properties do not independently identify actual font bank/glyphs, localisation, rendered size or all override writes.",
+    "notitle property binding is verified; full cascade drawing consumer and complete list/label selection are not qualified here.",
+    "Historical boundary is package-level; no new EXE font-selector patch asserted.",
+    "MP150-025 has partial package/static support; visual acceptance remains pending."
+  ]
+}

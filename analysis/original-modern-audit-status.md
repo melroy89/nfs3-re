@@ -11,7 +11,7 @@ The two recent HUD investigations now have concrete mechanisms. These bounded ch
 
 The earlier “unresolved” HUD checkpoint sections below preserve investigation history; they are superseded by these linked findings. The EXE bytes, saved Ghidra database, raw exports and maintained C were not changed by these investigations. No game or new instruction probe was run.
 
-The [catalog](modern-patch-change-catalog.md) currently has **90 vendor-only,52 bounded-static,146 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **89 vendor-only,52 bounded-static,147 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -742,3 +742,7 @@ The [four-baseline boundary audit](original-modern-hud-layout.md#softtri-list-be
 ## Top dropdown ordering in the150 package boundary
 
 The [priority comparison](original-modern-common-menu-buttons.md#location-and-opponents-dropdown-priority-changes-in150) adds partial support for MP150-024: two top lists move to priority0 and Location lower controls shift upward, matched to selected descending-group consumers. The1.4.0→1.5.0 asset boundary is verified. Visible compositing, actual loading and full-loop equivalence remain untested; the changed intervening state preparation is explicitly excluded.
+
+## Subtitle style replacement in the150 package boundary
+
+The [Showcase/Compare subtitle audit](original-modern-common-menu-buttons.md#showcase-and-compare-subtitles-adopt-the-race-results-text-style) adds partial support for MP150-025: new text records match nine existing Race Results style fields, while old cascades change notitle0→1. Five named descriptor bindings match across supplied original/final EXEs. Actual font-bank selection, complete title consumers and rendered acceptance remain untested.
