@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "1c4e9cf965abf0f4b07b0584eb3c9cddd2e944dc4ec684dd9bec535908823460"
+      "sha256": "02e0332c6bf64683bd4449070eb60215e00c069f74f5e12e28003507c669dc00"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -353,7 +353,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "825fe5c365a6acfa1973fcfb29f4c259653c70bf92144c5cc8e21b088a0fdbfb"
+      "sha256": "5ad04feaaed41ff2662811c3e5cb73c56b264e16e6b836eb1db6553ab693d95e"
     },
     {
       "path": "analysis/original-modern-renderer-texel-alignment.md",
@@ -1970,6 +1970,14 @@
           ]
         },
         {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00431c1c",
+            "00431c20"
+          ]
+        },
+        {
           "path": "analysis/original-modern-resolution-defaults.md",
           "entry_mentioned": true,
           "addresses": [
@@ -2019,6 +2027,14 @@
       "original_sha256": "3aeb99a8d0eb7517686e1b79c753f206f263c714f23839d28cb7772981cb92a0",
       "modern_sha256": "34b8c495719d877fbf4761940f372510638188128f88994e4a590b2cb9ea2aaf",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00431c34",
+            "00431c40"
+          ]
+        },
         {
           "path": "analysis/original-modern-state14.md",
           "entry_mentioned": true,
@@ -10738,6 +10754,14 @@
           "addresses": [
             "004c4fbe",
             "004c4ff2"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004c4e64",
+            "004c4e75"
           ]
         },
         {

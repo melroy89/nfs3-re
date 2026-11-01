@@ -50,8 +50,8 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004270c0` | UpdateCarSelectionBackgroundResources | 194 | 1 | [frontend-page](original-modern-frontend-page.md) |
 | `0042c700` | InitializeRaceVehicles | 230 | 1 | [small-entry-followup](original-modern-small-entry-followup.md) |
 | `0042dc20` | RequestRaceSynchronizationWorkerStop | 28 | 28 | [input-worker](original-modern-input-worker.md) |
-| `00431c1c` | CalculateEffectiveThrashState21Mask | 23 | 23 | [dx5-reference-pair](original-modern-dx5-reference-pair.md), [resolution-defaults](original-modern-resolution-defaults.md), [state14](original-modern-state14.md), [track-detail](original-modern-track-detail.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
-| `00431c34` | SetRenderState15ToFourWhenFlagSet | 25 | 23 | [state14](original-modern-state14.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
+| `00431c1c` | CalculateEffectiveThrashState21Mask | 23 | 23 | [dx5-reference-pair](original-modern-dx5-reference-pair.md), [renderer-loading](original-modern-renderer-loading.md), [resolution-defaults](original-modern-resolution-defaults.md), [state14](original-modern-state14.md), [track-detail](original-modern-track-detail.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
+| `00431c34` | SetRenderState15ToFourWhenFlagSet | 25 | 23 | [renderer-loading](original-modern-renderer-loading.md), [state14](original-modern-state14.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `00436930` | HandleMouseSetCursorAndChainPreviousHandler | 79 | 31 | [mouse-cursor](original-modern-mouse-cursor.md) |
 | `00437614` | UpdateFrontendRaceNowEntryFlags | 231 | 222 | [force-menu-layout](original-modern-force-menu-layout.md), [graphics-menu-transition](original-modern-graphics-menu-transition.md), [hud-settings-policy](original-modern-hud-settings-policy.md), [menu-callback-table](original-modern-menu-callback-table.md), [options-postgame](original-modern-options-postgame.md), [race-now](original-modern-race-now.md) |
 | `004376fc` | InitializeFrontendMenuSoundSlider | 65 | 62 | [frontend-sound](original-modern-frontend-sound.md) |
@@ -272,7 +272,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004c452c` | CaptureDisplayPixelsAndLaunchScreenshotWorker | 159 | 157 | [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
 | `004c45f0` | InitializeRaceSimulationCallbacks | 298 | 36 | [race-initialization](original-modern-race-initialization.md) |
 | `004c4740` | ResetSimulationAndInitializeRaceSubsystems | 221 | 36 | [race-initialization](original-modern-race-initialization.md) |
-| `004c4e40` | RunRaceLoop | 1666 | 50 | [frame-resize](original-modern-frame-resize.md), [replay-mirror](original-modern-replay-mirror.md), [screenshots](original-modern-screenshots.md) |
+| `004c4e40` | RunRaceLoop | 1666 | 50 | [frame-resize](original-modern-frame-resize.md), [renderer-loading](original-modern-renderer-loading.md), [replay-mirror](original-modern-replay-mirror.md), [screenshots](original-modern-screenshots.md) |
 | `004c6f00` | ProjectAndQueueNearbySpatialQuadBatches | 481 | 2 | [state14](original-modern-state14.md) |
 | `004c94e0` | BuildIndexedSequenceBankPathAndTryLoad | 125 | 6 | [sound-bank-language](original-modern-sound-bank-language.md) |
 | `004c9890` | LoadPoliceRadioVoiceBank | 212 | 6 | [sound-bank-language](original-modern-sound-bank-language.md) |

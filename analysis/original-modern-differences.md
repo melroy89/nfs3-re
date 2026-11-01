@@ -1152,3 +1152,7 @@ The [historical timing comparison](original-modern-loading-timing.md#preliminary
 ## Historical DX7 fog opt-in and unchanged driver
 
 The [151/152 package and reader comparison](original-modern-renderer-loading.md#dx7-fog-opt-in-changes-in152-while-its-driver-bytes-remain-identical) verifies FogSupport0→1 for DX7 with a byte-identical110,592-byte driver, unchanged other parsed INI values and retained selected EXE reader/state contracts. MP152-002 advances to partial configuration support only; the broader API107 adapter mechanism and visible fog remain unresolved.
+
+## Fog mode and enable requests separate in152
+
+The [EXE/provider follow-up](original-modern-renderer-loading.md#fog-formula-setup-separates-from-ordinary-enable-state-in152) resolves the selected mechanism beyond the prior configuration checkpoint:151→152 stops forcing every nonzero effective intersection to4, adds supported-only mode4 setup, and retains scene restore to submit effective1/0. The unchanged DX7 dispatcher distinguishes those payloads. MP152-002 stays partial; full API107 interoperability and rendered fog remain unverified.

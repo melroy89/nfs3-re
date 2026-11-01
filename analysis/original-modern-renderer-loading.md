@@ -406,6 +406,8 @@ Early basename first-byte classification writes d→6, v→4, s→1, other→0 a
 
 ## DX7 fog opt-in changes in152 while its driver bytes remain identical
 
+**Follow-up:** the [mode/enable comparison below](#fog-formula-setup-separates-from-ordinary-enable-state-in152) now supplies the EXE-side mechanism left unresolved at this configuration checkpoint.
+
 **Verified package configuration and selected historical reader/state boundaries; API107 compatibility mechanism remains unresolved.** The [DX7 opt-in audit](evidence/audits/dx7-fog-optin-history.json), reproduced with `python3 analysis/scripts/audit_dx7_fog_optin_history.py`, pins author-hosted1.5.1/1.5.2 archives and both EXEs. It extracts the named DX7 members without loading them.
 
 | Artifact/property |1.5.1 |1.5.2 |
@@ -420,3 +422,39 @@ Each35-byte reader span pushes filename buffer`007a3930`, fallback0, the version
 The complete409-byte state-cache dispatcher`00431900..00431a99`,33-byte environment-state15 helper`00470aa0..00470ac1` and78-byte environment-state14 helper`00470ad0..00470b1e` are byte-identical across151/152. These negative boundaries rule out attributing the claimed historical fix to an edit in those particular bodies, just as whole-DLL equality rules out a new DX7 driver implementation in this pair. Equal code can still consume different state, configuration or callers. The effective state gate at`007a3a64` is distinct from parsed support`007a3a54`; this audit does not collapse them or prove their complete producer chain.
 
 **MP152-002 advances to partial configuration support:** the advertised151→152 boundary explicitly opts the unchanged DX7 driver into fog. The wider claim of improved Thrash API v107 compatibility, its adapter/version contract and actual visible DX7 fog remain unresolved. A whole-interface or rendered compatibility claim requires additional evidence; neither DLL equality nor the INI change settles it. Earlier original/final [capability configuration](#historical-lightbeams-reader-and-capability-defaults) and [support-trial linkage](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) remain separately qualified and must not be retroactively assigned to every historical version. No target, provider, profile API, instruction probe, compiler or Ghidra write was used.
+
+## Fog formula setup separates from ordinary enable state in152
+
+**Verified historical EXE change and selected DX7 provider branches; rendered fog and full API107 specification unverified.** The [mode/enable audit](evidence/audits/fog-mode-enable-history.json), reproduced with `python3 analysis/scripts/audit_fog_mode_enable_history.py`, follows the preceding opt-in review. It supplies the missing EXE-side mechanism, so the earlier “configuration only” assessment is superseded within this checked contract. The driver remains byte-identical; configuration and game-side state requests both change.
+
+### Effective mask stops forcing every nonzero result to4
+
+Version1.5.1 helper`00431c20..00431c40` computes the bitwise intersection of support`007a3a54`, option`006fd1d4` and context`00559234`, replaces a nonzero result with4, stores it at effective gate`007a3a64` and returns. Version1.5.2 moves the helper to`00431c1c..00431c33`, retains the same three input operations and store, but removes the TEST/conditional-MOV4 normalization. Its23-byte body matches final exactly.
+
+| Support, option, context | Raw intersection |151 effective gate |152/final effective gate |
+|---|---:|---:|---:|
+|1,1,1 |1 |4 |1 |
+|1,0,1 |0 |0 |0 |
+|1,1,0 |0 |0 |0 |
+|1,2,1 |0 |0 |0 |
+|4,4,4 |4 |4 |4 |
+
+These are derived bitwise values, not live settings or instruction probes. Support is normalized0/1 by the checked historical profile reader, but arbitrary inputs must not be treated as a logical AND:1 AND2 is0 even though both operands are nonzero. Producer/domain validation remains separate.
+
+### A new setup request selects4 independently
+
+Version1.5.2 adds helper`00431c34..00431c4d`: if support`007a3a54` is nonzero, it calls cached state setter`00431900` with selector EAX=`15h` and payload EDX=4; otherwise it returns without that request. At`004c4e64`, a former jump-over-NOP span becomes CALL to this helper followed by a jump to`004c4e75`, before the checked gameplay loop. The complete53-byte callsite prefix and25-byte helper match final exactly.
+
+Retained scene-state restore`00431b40..00431bb4` later supplies selector15h with effective gate`007a3a64` at`00431b89..00431b99`. Its116-byte body and the409-byte cached-state dispatcher match151/152/final. Thus ordinary intersecting1 inputs change the subsequent state payload **4→1**, while an earlier supported-only setup still requests4. Off/unsupported contexts can still yield0. The cache can suppress repeated provider calls; a source request is not proof that the driver is called on every invocation.
+
+### The unchanged DX7 dispatcher gives those payloads different meanings
+
+In the pinned identical DX7 DLL, export`_THRASH_setstate@8` enters`60003ca0`. Its low-selector dispatch maps15h through byte table`60006aec` index19 and DWORD table`60006a34` to`60004c44`. The retained raw provider branches distinguish:
+
+- **Payload4:** subject to capability guard`6005ab0c`, stores mode4 at`60018850`, clears`60018854`, and sends raw state/value pairs23h/1 and8ch/0 through helper`60008a10`, followed by configured colour/parameter requests.
+- **Payload0:** requests state1ch/0, clears`60018854` and reaches the success continuation.
+- **Payload1:** under its guard/mode conditions requests state1ch/1; subsequent handling depends on stored mode, including a separate mode10h route. This is not the payload4 setup branch.
+
+The audit retains the dispatcher prefix/table selection and these selected arms. Raw state IDs, conditional admission and branch destinations are direct evidence; complete device-call semantics, all mode branches, failures and rendered output are not established here. The nonzero mode-versus-enable distinction is visible in the binary contract without pretending that a version string supplies an authoritative Thrash API107 specification.
+
+**MP152-002 remains partial, now supported beyond configuration:**151→152 separates initial mode4 selection from ordinary effective enable1/disable0 requests, and the unchanged DX7 driver distinguishes those payloads. The paired INI change simultaneously opts DX7 into support. This is a concrete mechanism consistent with the advertised compatibility fix; it does not prove successful fog on every device, all driver variants or complete API107 interoperability. No target, DLL, API, instruction probe, compiler or Ghidra write occurred.

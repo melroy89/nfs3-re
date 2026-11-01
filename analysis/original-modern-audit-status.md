@@ -776,3 +776,7 @@ The [three-build timing audit](original-modern-loading-timing.md#preliminary-set
 ## DX7 fog support defaults enabled in152
 
 The [historical DX7 review](original-modern-renderer-loading.md#dx7-fog-opt-in-changes-in152-while-its-driver-bytes-remain-identical) verifies package FogSupport0→1, identical driver bytes and paired read/normalization semantics. Selected dispatcher/environment bodies remain unchanged. MP152-002 has partial configuration support, with full API107 glue/version contract and actual fog rendering still unresolved; no runtime evidence was added.
+
+## Selected API fog request mechanism now linked
+
+The [mode/enable follow-up](original-modern-renderer-loading.md#fog-formula-setup-separates-from-ordinary-enable-state-in152) supersedes the preceding configuration-only boundary:151→152 changes effective mask normalization and adds separate supported-only mode4 setup. Retained scene restore and cached setter connect it to distinct unchanged DX7 provider branches. MP152-002 remains partial, with no count change; complete API specification, provider success and rendering remain open.
