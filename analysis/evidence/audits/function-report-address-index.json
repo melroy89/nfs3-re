@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "534feae6c61304f8b3b0248f3763fa91d5db561217130616d158425183a90c49"
+      "sha256": "323a651d251d983ae1ddf754ca2ab4e4e99032f735b01b0ca109dce374f99a58"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -257,7 +257,7 @@
     },
     {
       "path": "analysis/original-modern-network-endpoints.md",
-      "sha256": "fa7753d884f4f55556b34b94e0ee00e8d2e9c276cce0d719d91a6f13f96ff85c"
+      "sha256": "e2c0c0b771f4d453e3851f4aa52277383d9792492f96a45dd85a9e1853ff88ed"
     },
     {
       "path": "analysis/original-modern-network-port-menu.md",
@@ -7719,6 +7719,9 @@
           "entry_mentioned": true,
           "addresses": [
             "004a2f50",
+            "004a2f61",
+            "004a2f6b",
+            "004a2f83",
             "004a2f8c"
           ]
         },

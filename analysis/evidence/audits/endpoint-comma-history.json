@@ -1,0 +1,248 @@
+{
+  "kind": "static-endpoint-comma-release-boundary",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004f0430",
+          "end_exclusive": "004f0487",
+          "bytes": 87,
+          "hex": "5351528a10fec281e2ff000000f682f04e560002740340ebea8a0880f92b740580f92d75014031d28a18fec381e3ff000000f683f04e560020740f6bd20a31db8a1801da4083ea30ebde80f92d7502f7da89d05a595bc3",
+          "sha256": "eb8cbd00f9fdc39c9a88efcb1e127159d389990b10c3f466b1882f142b8aad3c",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/original-decimal-converter.asm",
+          "assembly_sha256": "563612de166b204e29500d734983d53fb16882b7b4db6754bd86e5871a21032b"
+        },
+        {
+          "start": "0049ea70",
+          "end_exclusive": "0049ead3",
+          "bytes": 99,
+          "hex": "535156575589e589d7833d1ce7550002754985c07447b9ac037a00bb0604000089c2b890037a00e8b465050085c07421b914000000beac037a005789c8c1e902f2a58ac880e103f2a45fb801000000eb0cb8c2000000e81561faff31c05d5f5e595bc3",
+          "sha256": "585287e02fe3d322ca67388068d488b052d52427eea0e0cc8c79f64bc84547d7",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/original-endpoint-caller.asm",
+          "assembly_sha256": "3546ff0a8102c074d8b0a7f08f3529078e1787518285ea108ccb85bf40181fdf"
+        }
+      ],
+      "classification_table": {
+        "start": "00564ef0",
+        "bytes": 256,
+        "sha256": "ba040829641230469743cddec88fc2f3010e8a1ab51fc40e71d1164976855dbd",
+        "leading_space": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          32
+        ],
+        "digit": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ]
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004f0430",
+          "end_exclusive": "004f0487",
+          "bytes": 87,
+          "hex": "5351528a10fec281e2ff000000f682f04e560002740340ebea8a0880f92b740580f92d75014031d28a18fec381e3ff000000f683f04e560020740f6bd20a31db8a1801da4083ea30ebde80f92d7502f7da89d05a595bc3",
+          "sha256": "eb8cbd00f9fdc39c9a88efcb1e127159d389990b10c3f466b1882f142b8aad3c",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/official_modern-decimal-converter.asm",
+          "assembly_sha256": "563612de166b204e29500d734983d53fb16882b7b4db6754bd86e5871a21032b"
+        },
+        {
+          "start": "0049ea70",
+          "end_exclusive": "0049ead3",
+          "bytes": 99,
+          "hex": "535156575589e589d7833d1ce7550002754985c07447b9ac037a0089c2e8be440000b890037a00e8b465050085c07421b914000000beac037a005789c8c1e902f2a58ac880e103f2a45fb801000000eb0cb8c2000000e81561faff31c05d5f5e595bc3",
+          "sha256": "e58f1330d4f90071561a9b94470cf6646b99e5d02c9e7d1d700df3641f91c9d8",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/official_modern-endpoint-caller.asm",
+          "assembly_sha256": "c0ecb795f2fe6f93a465c5b6ed3d3f3aae34ea5205d6a7d5eda3ad6e25f98530"
+        },
+        {
+          "start": "004a2f50",
+          "end_exclusive": "004a2f8d",
+          "bytes": 61,
+          "hex": "5689c6e8b8cdf9ff89c331c0ac84c0742a3c2c7506c646ff2eebf13c3a75edc646ff0089f0e8b6d4040085c0740d3dffff0000760431c0eb0289c35ec3",
+          "sha256": "bb3a7cbdc4c57d0763e6b839c9140a77b32a49c43089a5aefe4c4f508c0fae13",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/official_modern-normalizer.asm",
+          "assembly_sha256": "7059cfb484c11741835eb7177ba3abb6c9e9df56525ee0ee0bd515732a105804"
+        }
+      ],
+      "classification_table": {
+        "start": "00564ef0",
+        "bytes": 256,
+        "sha256": "ba040829641230469743cddec88fc2f3010e8a1ab51fc40e71d1164976855dbd",
+        "leading_space": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          32
+        ],
+        "digit": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ]
+      }
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "member": "nfs3.exe",
+      "sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "spans": [
+        {
+          "start": "004f0430",
+          "end_exclusive": "004f0487",
+          "bytes": 87,
+          "hex": "5351528a10fec281e2ff000000f682f04e560002740340ebea8a0880f92b740580f92d75014031d28a18fec381e3ff000000f683f04e560020740f6bd20a31db8a1801da4083ea30ebde80f92d7502f7da89d05a595bc3",
+          "sha256": "eb8cbd00f9fdc39c9a88efcb1e127159d389990b10c3f466b1882f142b8aad3c",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/1.4.0-decimal-converter.asm",
+          "assembly_sha256": "563612de166b204e29500d734983d53fb16882b7b4db6754bd86e5871a21032b"
+        },
+        {
+          "start": "0049ea70",
+          "end_exclusive": "0049ead3",
+          "bytes": 99,
+          "hex": "535156575589e589d7833d1ce7550002754985c07447b9ac037a0089c2e8be440000b890037a00e8b465050085c07421b914000000beac037a005789c8c1e902f2a58ac880e103f2a45fb801000000eb0cb8c2000000e81561faff31c05d5f5e595bc3",
+          "sha256": "e58f1330d4f90071561a9b94470cf6646b99e5d02c9e7d1d700df3641f91c9d8",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/1.4.0-endpoint-caller.asm",
+          "assembly_sha256": "c0ecb795f2fe6f93a465c5b6ed3d3f3aae34ea5205d6a7d5eda3ad6e25f98530"
+        },
+        {
+          "start": "004a2f50",
+          "end_exclusive": "004a2f83",
+          "bytes": 51,
+          "hex": "5689c6e8b8cdf9ff89c331c0ac84c074203c3a75f7c646ff0089f0e8c0d4040085c0740d3dffff0000760431c0eb0289c35ec3",
+          "sha256": "4a7ceb98bc583b746369d84756189b3f61afb7467834aa164574cf999d16474f",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/1.4.0-normalizer.asm",
+          "assembly_sha256": "37b8267dbc8e3e880d1ae3ba51875128bdfd89f0b0f57d7bdb8157e758470a4c"
+        }
+      ],
+      "classification_table": {
+        "start": "00564ef0",
+        "bytes": 256,
+        "sha256": "ba040829641230469743cddec88fc2f3010e8a1ab51fc40e71d1164976855dbd",
+        "leading_space": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          32
+        ],
+        "digit": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ]
+      }
+    },
+    "1.5.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "member": "nfs3.exe",
+      "sha256": "d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae",
+      "spans": [
+        {
+          "start": "004f0430",
+          "end_exclusive": "004f0487",
+          "bytes": 87,
+          "hex": "5351528a10fec281e2ff000000f682f04e560002740340ebea8a0880f92b740580f92d75014031d28a18fec381e3ff000000f683f04e560020740f6bd20a31db8a1801da4083ea30ebde80f92d7502f7da89d05a595bc3",
+          "sha256": "eb8cbd00f9fdc39c9a88efcb1e127159d389990b10c3f466b1882f142b8aad3c",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/1.5.0-decimal-converter.asm",
+          "assembly_sha256": "563612de166b204e29500d734983d53fb16882b7b4db6754bd86e5871a21032b"
+        },
+        {
+          "start": "0049ea70",
+          "end_exclusive": "0049ead3",
+          "bytes": 99,
+          "hex": "535156575589e589d7833d1ce7550002754985c07447b9ac037a0089c2e8be440000b890037a00e8b465050085c07421b914000000beac037a005789c8c1e902f2a58ac880e103f2a45fb801000000eb0cb8c2000000e81561faff31c05d5f5e595bc3",
+          "sha256": "e58f1330d4f90071561a9b94470cf6646b99e5d02c9e7d1d700df3641f91c9d8",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/1.5.0-endpoint-caller.asm",
+          "assembly_sha256": "c0ecb795f2fe6f93a465c5b6ed3d3f3aae34ea5205d6a7d5eda3ad6e25f98530"
+        },
+        {
+          "start": "004a2f50",
+          "end_exclusive": "004a2f8d",
+          "bytes": 61,
+          "hex": "5689c6e8b8cdf9ff89c331c0ac84c0742a3c2c7506c646ff2eebf13c3a75edc646ff0089f0e8b6d4040085c0740d3dffff0000760431c0eb0289c35ec3",
+          "sha256": "bb3a7cbdc4c57d0763e6b839c9140a77b32a49c43089a5aefe4c4f508c0fae13",
+          "assembly": "analysis/captures/modern-differences/endpoint-comma-history/1.5.0-normalizer.asm",
+          "assembly_sha256": "7059cfb484c11741835eb7177ba3abb6c9e9df56525ee0ee0bd515732a105804"
+        }
+      ],
+      "classification_table": {
+        "start": "00564ef0",
+        "bytes": 256,
+        "sha256": "ba040829641230469743cddec88fc2f3010e8a1ab51fc40e71d1164976855dbd",
+        "leading_space": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          32
+        ],
+        "digit": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ]
+      }
+    }
+  },
+  "limits": [
+    "No target instructions, parser, provider, sockets or network executed.",
+    "Classification bytes are file-backed snapshots; later locale/table writes not excluded.",
+    "Forward LODSB traversal assumes direction flag clear and readable writable NUL-terminated input.",
+    "Adapter normalization is not provider acceptance or complete address validation."
+  ],
+  "checks": {
+    "converter_identical_all_inputs": true,
+    "classification_table_identical": true,
+    "150_normalizer_identical_official_final": true,
+    "historical_and_final_endpoint_caller_identical": true,
+    "140_normalizer_bytes": 51,
+    "150_normalizer_bytes": 61,
+    "new_comma_branch": "004a2f61..004a2f6b",
+    "arithmetic": "Each digit accumulates modulo2^32; optional negation also modulo2^32; final port gate accepts nonzero unsigned EAX<=65535."
+  }
+}

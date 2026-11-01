@@ -27,7 +27,7 @@ New helper `004a2f50..004a2f8c` accepts a **mutable** address pointer in EAX:
 1. Saves the pointer in ESI, calls the getter, and copies its result to EBX.
 2. Replaces each comma before the first colon/NUL with a period.
 3. At the first colon, overwrites the colon with NUL and parses the remaining suffix through signed-decimal helper `004f0430`.
-4. A nonzero parsed value accepted by unsigned `CMP EAX,0xffff` / `JBE` becomes EBX. Thus normal accepted results are **1..65535**; negative values are rejected by the unsigned comparison. Zero or out-of-range results retain the default in EBX.
+4. A nonzero parsed value accepted by unsigned `CMP EAX,0xffff` / `JBE` becomes EBX. Thus normal accepted results are **1..65535**; ordinary negative results are rejected by the unsigned comparison; the converter itself wraps, so oversized signed text needs the qualification below. Zero or out-of-range results retain the default in EBX.
 5. Returns with ESI restored. EBX is the port output. EAX is not a uniform success/port return: no-colon and rejected cases return zero, accepted cases retain the parsed value.
 
 The caller saves the address in EDX before invoking the helper. Existing decimal-parser preservation supports retaining EDX/ECX across this path, as documented in [earlier ABI research](detailed-analysis-notes.md#mutable-network-address-suffix-normalization).
@@ -43,7 +43,7 @@ Consequences derived from these instructions, not executed test cases:
 | `192.168.1.111:65536` | `192.168.1.111` | 9803 |
 | `192.168.1.111:-1` | `192.168.1.111` | 9803 |
 
-An invalid suffix still removes the colon/suffix from the address. No validation of the address itself occurs here. Multiple colons, overflowed decimal strings, whitespace/trailing characters and complete hostname/IPv6 support require the decimal parser and provider's own grammar; the table does not claim those cases.
+An invalid suffix still removes the colon/suffix from the address. No validation of the address itself occurs here. The follow-up below resolves the local decimal grammar, wrapping and first-colon boundary. Complete hostname/IPv6 support and eventual address acceptance still require the provider’s own grammar.
 
 ## 3. Retained endpoint and provider boundary
 
@@ -75,3 +75,37 @@ The [menu comparison](original-modern-network-port-menu.md) traces a two-value 9
 Earlier [host/VM observations](normal-tcp-race-validation.md) concern two Modern-derived peers, not an original-versus-Modern comparison. They must not be reused as cross-version acceptance evidence. No executable/Ghidra changes or new game/probe execution were made here.
 
 The [network launch consumer comparison](original-modern-command-line.md#retained-launch-consumer-versus-changed-peer-endpoint-policy) now verifies two retained bodies and separates that Port handoff/literal6666 route from the changed1030→9803 peer endpoint policy documented here.
+
+## Historical comma normalization and exact suffix grammar
+
+**Confidence: verified static instructions and historical boundary; work status: done for local adapter semantics.** The [historical audit](scripts/audit_endpoint_comma_history.py) pins author-hosted1.4.0 and1.5.0 archives and EXE members, alongside the supplied original and official final. Its [manifest](evidence/audits/endpoint-comma-history.json) retains complete bodies, instruction bytes, hashes and classification sets. It executes no target instructions.
+
+| Compared artifact | Verified result |
+|---|---|
+|1.4.0 normalizer `004a2f50..004a2f83`,51 bytes | Scans to first colon/NUL; has no comma replacement branch |
+|1.5.0 normalizer `004a2f50..004a2f8d`,61 bytes | Adds ten-byte comma comparison/store/back-edge at`004a2f61..004a2f6b`; rewrites comma to period before continuing |
+| Official1.6.1 normalizer | All61 bytes identical to1.5.0 |
+| Historical/final endpoint caller `0049ea70..0049ead3` | All99 bytes identical across1.4.0,1.5.0 and official1.6.1; existing provider handoff remains |
+| Decimal converter `004f0430..004f0487`,87 bytes | Identical in supplied original,1.4.0,1.5.0 and official final |
+| Classification table `00564ef0..00564ff0`,256 bytes | Identical file-backed bytes in all four; leading-space class is ASCII9..13 and32, digit class ASCII48..57 |
+
+This dates the **local comma-normalization mechanism** to the advertised1.5.0 boundary (MP150-019), rather than inferring introduction from final bytes alone. Original's matched endpoint path forwards the unmodified string with port1030, as established above; the normalizer's VA in original contains unrelated data and is not an original parser counterpart. Provider-side treatment of commas in any version is not established here.
+
+The decimal converter is already documented in the [shared numeric-field investigation](original-modern-common-menu-buttons.md#numeric-field-parsing-digit-only-validation-and-wrapping-conversion). The network adapter calls it **directly**, without that investigation's separate digit-only wrapper. Therefore the network suffix accepts leading classified whitespace, one optional sign and a decimal digit prefix, ignores the remainder, and has no overflow-error check. IMUL/ADD/SUB and optional NEG retain only32 bits. The adapter accepts the resulting nonzero unsigned value up to65535; it does not validate the mathematical value of the entire textual suffix.
+
+Examples below are **derived arithmetic/control-flow consequences**, not executed parser tests. Assume configured WORD zero, unchanged classification bytes, clear direction flag, and readable/writable NUL-terminated input:
+
+| Raw input | Address visible through original buffer pointer after normalization | Port output EBX | Reason |
+|---|---|---:|---|
+| `192,168,1,111: +1030junk` | `192.168.1.111` |1030 | Leading space/sign accepted; trailing text ignored |
+| `host:1030:9803` | `host` |1030 | First colon ends address; second ends decimal prefix |
+| `host:1,030` | `host` |1 | Commas after the colon are not normalized; conversion stops there |
+| `host:4294967297` | `host` |1 | Decimal accumulation wraps modulo2^32 |
+| `host:-4294967295` | `host` |1 | Wrapped accumulator`ffffffff` is negated to1 |
+| `host:4294967296` | `host` |9803 | Wrapped zero retains default |
+| `host:0x406` | `host` |9803 | Decimal prefix is0; no hexadecimal interpretation |
+| `host:` | `host` |9803 | No digits produces0 |
+
+The first colon is overwritten with NUL even for a rejected suffix; suffix bytes remain after that NUL in memory. No-colon input retains the default port. The loop uses LODSB and assumes DF clear; it contains no CLD or buffer-length bound. These are ABI/input prerequisites, not new claims of a reachable defect. Classification mutation and upstream input restrictions can narrow actual reachable cases. IPv6, hostname resolution, UI filtering and successful connections remain unverified.
+
+A faithful C reconstruction must preserve unsigned32-bit accumulation and explicit truncation before the final port gate, plus mutable-buffer and EBX-output contracts. Replacing this with strict whole-string validation or a saturating host `strtol` would change the observed arbitrary-input contract. This finding does not establish original/Modern multiplayer synchronization or replay compatibility.

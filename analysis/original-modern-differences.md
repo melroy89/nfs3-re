@@ -596,7 +596,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **126 Claimed, 48 Static, 114 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **125 Claimed, 49 Static, 114 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -700,7 +700,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-016 | Gear numbers use smaller font if there is not enough space for them. | Partial |
 | MP150-017 | Opponents List and Speeds List have standard bevel when SoftTri is used (as it was for other renderers). | Claimed |
 | MP150-018 | An ability to enter digits from the Num Pad when Num Lock is on. | Partial |
-| MP150-019 | Commas are treated as dots when parsing an IP address. | Claimed |
+| MP150-019 | Commas are treated as dots when parsing an IP address. | Static |
 | MP150-020 | HUD preview in the settings now arranged well. | Claimed |
 | MP150-021 | Volume and Alpha sliders display own value (in percents). | Partial |
 | MP150-022 | Logos from the LOGO2.QFS (if it exists) are used for animation in the menu (together with logos from the LOGO.QFS). Original version of the game have this file, but it is unused. | Claimed |
@@ -1000,3 +1000,7 @@ The [paired clip-export comparison](original-modern-dx7-viewport-depth.md) ident
 ## DX7 viewport device producer follow-up
 
 The [viewport-depth audit](original-modern-dx7-viewport-depth.md#device-producer-identifies-the-receiving-interface) now pins identical paired QueryInterface and CreateDevice witnesses. The exact IID identifies IDirect3D7; its factory output identifies IDirect3DDevice7 in`60058d9c` on a successful selected path, supporting SetViewport at+34h. Object lifetime, other writers, call admission and Old Church symptom attribution remain unverified. MP161-003 remains partial; catalog counts unchanged. No target execution or database changes.
+
+## Historical network comma parser boundary
+
+The [endpoint follow-up](original-modern-network-endpoints.md#historical-comma-normalization-and-exact-suffix-grammar) verifies1.4.0→1.5.0 adds the ten-byte comma-to-period branch and that final retains the complete61-byte body. Identical shared converters/classification tables resolve whitespace, prefix parsing and wrapping port acceptance; examples remain static derivations. MP150-019 advances vendor-only→bounded-static, giving125/49/114/2 catalog labels. Provider/UI acceptance and cross-version race compatibility remain untested; no target execution or database writes.

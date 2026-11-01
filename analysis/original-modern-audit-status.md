@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **126 vendor-only,48 bounded-static,114 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **125 vendor-only,49 bounded-static,114 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -591,3 +591,7 @@ The [complete150-byte clip comparison](original-modern-dx7-viewport-depth.md) ve
 ## DX7 viewport device producer follow-up
 
 The [viewport-depth audit](original-modern-dx7-viewport-depth.md#device-producer-identifies-the-receiving-interface) now pins identical paired QueryInterface and CreateDevice witnesses. The exact IID identifies IDirect3D7; its factory output identifies IDirect3DDevice7 in`60058d9c` on a successful selected path, supporting SetViewport at+34h. Object lifetime, other writers, call admission and Old Church symptom attribution remain unverified. MP161-003 remains partial; catalog counts unchanged. No target execution or database changes.
+
+## Historical network comma parser boundary
+
+The [endpoint follow-up](original-modern-network-endpoints.md#historical-comma-normalization-and-exact-suffix-grammar) verifies1.4.0→1.5.0 adds the ten-byte comma-to-period branch and that final retains the complete61-byte body. Identical shared converters/classification tables resolve whitespace, prefix parsing and wrapping port acceptance; examples remain static derivations. MP150-019 advances vendor-only→bounded-static, giving125/49/114/2 catalog labels. Provider/UI acceptance and cross-version race compatibility remain untested; no target execution or database writes.
