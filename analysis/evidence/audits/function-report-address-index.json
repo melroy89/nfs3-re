@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "68579240ef2a5b1240d9b38b4109132f67d84cbf7792a790d5ae60b87babe4c5"
+      "sha256": "0b6345c7a72c283d5cd4a40e641829679bd0ace69b8e5f39165b3b1b57a3801e"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -153,7 +153,7 @@
     },
     {
       "path": "analysis/original-modern-glide-reference-identity.md",
-      "sha256": "5a639462151fce7d003e4c64ccffd88b0819a5984d8f9ce56e4a637c8a713b9d"
+      "sha256": "1ee90e5cf7edb4cc1fd8fe54440be04d5244f3c5326bcd0bcd9b7a658d9e1fd8"
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
@@ -325,7 +325,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "9f36e852484de425a189642923d57498ca49fba2c868822f618c66c7de7d6655"
+      "sha256": "72f9717cc98db2fc36796beae178d8c9413ac129ad80a5cbca8c29f0d0dacac0"
     },
     {
       "path": "analysis/original-modern-renderer-texel-alignment.md",
@@ -9644,6 +9644,13 @@
           "addresses": [
             "004bedad"
           ]
+        },
+        {
+          "path": "analysis/original-modern-glide-reference-identity.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004bed90"
+          ]
         }
       ]
     },
@@ -12362,6 +12369,13 @@
       "original_sha256": "a98a58601ea3ef90f385054a444fa06aca107ea8796bd5d8d9c01a0c11bfc775",
       "modern_sha256": "c7e78d38c4fd1d34254cbda160785ef3aef3306bed435fa993c2caf10b7f8e18",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-glide-reference-identity.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004f84d9"
+          ]
+        },
         {
           "path": "analysis/original-modern-renderer-initialization.md",
           "entry_mentioned": true,

@@ -5868,6 +5868,71 @@
       "producer": "first argument of user entry callback60001010"
     }
   },
+  "about_failure_consumer": {
+    "exe": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+    "exe_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "captures": [
+      {
+        "label": "descriptor-validation-and-return-tail",
+        "start_va": "004f84d9",
+        "end_va_exclusive": "004f8513",
+        "sha256": "fd4611261af13dab29121b44665db7b0fa906df89fccc2337e30da2a985df608",
+        "disassembly": [
+          "4f84d9:\t6a 68                \tpush   0x68",
+          "4f84db:\t6a 1f                \tpush   0x1f",
+          "4f84dd:\tff 15 6c f9 9e 00    \tcall   DWORD PTR ds:0x9ef96c",
+          "4f84e3:\tff 15 80 f9 9e 00    \tcall   DWORD PTR ds:0x9ef980",
+          "4f84e9:\t85 c0                \ttest   eax,eax",
+          "4f84eb:\t74 19                \tje     0x4f8506",
+          "4f84ed:\t8b 50 08             \tmov    edx,DWORD PTR [eax+0x8]",
+          "4f84f0:\t83 fa 68             \tcmp    edx,0x68",
+          "4f84f3:\t75 11                \tjne    0x4f8506",
+          "4f84f5:\ta3 5c 3a 7a 00       \tmov    ds:0x7a3a5c,eax",
+          "4f84fa:\tb8 14 85 4f 00       \tmov    eax,0x4f8514",
+          "4f84ff:\te8 1c f7 ff ff       \tcall   0x4f7c20",
+          "4f8504:\teb 07                \tjmp    0x4f850d",
+          "4f8506:\te8 09 00 00 00       \tcall   0x4f8514",
+          "4f850b:\t31 db                \txor    ebx,ebx",
+          "4f850d:\t89 5c 24 1c          \tmov    DWORD PTR [esp+0x1c],ebx",
+          "4f8511:\t61                   \tpopa",
+          "4f8512:\tc3                   \tret"
+        ]
+      },
+      {
+        "label": "complete-mode-enumerator",
+        "start_va": "004bed90",
+        "end_va_exclusive": "004bedca",
+        "sha256": "4145998813c6d6590f3ebd72aa2ae5923e846e94447f49184dc5af92178586ef",
+        "disassembly": [
+          "4bed90:\t60                   \tpusha",
+          "4bed91:\t89 e5                \tmov    ebp,esp",
+          "4bed93:\t83 ec 08             \tsub    esp,0x8",
+          "4bed96:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+          "4bed99:\ta1 5c 3a 7a 00       \tmov    eax,ds:0x7a3a5c",
+          "4bed9e:\t8b 70 40             \tmov    esi,DWORD PTR [eax+0x40]",
+          "4beda1:\t8b 40 3c             \tmov    eax,DWORD PTR [eax+0x3c]",
+          "4beda4:\t89 45 f8             \tmov    DWORD PTR [ebp-0x8],eax",
+          "4beda7:\t31 c9                \txor    ecx,ecx",
+          "4beda9:\t41                   \tinc    ecx",
+          "4bedaa:\t83 c6 28             \tadd    esi,0x28",
+          "4bedad:\t3b 4d f8             \tcmp    ecx,DWORD PTR [ebp-0x8]",
+          "4bedb0:\t7f 14                \tjg     0x4bedc6",
+          "4bedb2:\t89 f0                \tmov    eax,esi",
+          "4bedb4:\te8 a7 00 00 00       \tcall   0x4bee60",
+          "4bedb9:\t85 c0                \ttest   eax,eax",
+          "4bedbb:\t74 ec                \tje     0x4beda9",
+          "4bedbd:\t89 c8                \tmov    eax,ecx",
+          "4bedbf:\t89 f2                \tmov    edx,esi",
+          "4bedc1:\tff 55 fc             \tcall   DWORD PTR [ebp-0x4]",
+          "4bedc4:\teb e3                \tjmp    0x4beda9",
+          "4bedc6:\t89 ec                \tmov    esp,ebp",
+          "4bedc8:\t61                   \tpopa",
+          "4bedc9:\tc3                   \tret"
+        ]
+      }
+    ],
+    "scope": "Cold-about setup followed by internal loader return0; later initialization/selection/recovery not established."
+  },
   "export_comparison": {
     "reference_final_entries_equal": 34,
     "reference_local_names_equal": 34,

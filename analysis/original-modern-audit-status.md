@@ -374,3 +374,7 @@ The [complete helper comparison](original-modern-glide-reference-identity.md#loa
 ## Glide module-instance producer and direct detach boundary
 
 The [entry audit](original-modern-glide-reference-identity.md#entry-callback-supplies-the-module-directory-handle) pins equal PE entry/CRT-wrapper/reason-table bytes and the changed user callback. Final captures its first entry argument into600127cc, which is passed to verified GetModuleFileNameA; reference callback only returns1. Direct callback cleanup is absent even on notification0, but optional/registered CRT finalizers and other unload paths remain unqualified. This resolves the directory-handle producer without claiming universal detach behaviour. Catalog counts unchanged; no DLL/API execution.
+
+## Glide internal-failure descriptor consumer
+
+The [cross-component failure trace](original-modern-glide-reference-identity.md#internal-provider-failure-is-not-a-null-about-result) captures final cold-about setup/return, EXE descriptor validation and complete mode enumeration. Internal provider return0 can yield a nonnull+8=68h descriptor with count0; it passes that local validation but enumerates no modes. Subsequent about calls take the descriptor cache guard absent intervening writes. Later init/recovery and actual provider failure remain untested, so no whole-load success/failure or irreversible-cache claim is made. Catalog counts unchanged.

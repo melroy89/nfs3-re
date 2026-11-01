@@ -44,6 +44,10 @@ Modern at `004f84e9..004f84f5`:
 
 The meaning of the signature flag and all downstream descriptor fields is outside this bounded comparison. `0x68` is the literal checked field/value; equating it with an entire structure size or API version needs independent layout evidence.
 
+### Glide internal failure is a separate layer
+
+The [paired Glide follow-up](original-modern-glide-reference-identity.md#internal-provider-failure-is-not-a-null-about-result) now traces a concrete cold-about branch: final driver internal provider-loader return0 still yields its prepared nonnull descriptor with+8=68h and zero mode count. That result passes this EXE's local descriptor gate; mode count is not checked here. The separate complete mode enumerator skips eligibility/callback calls when count is zero. This is conditional static control flow, not a successfully observed driver load or a proof of later initialization/fallback behaviour.
+
 ## 4. Failure cleanup, return and fallback
 
 Modern stores the module handle before export resolution. Missing export/null descriptor/mismatched `+8` all call `004f8514`. Cleanup exchanges `00564a6c` with zero (`004f8517`). A previous zero handle skips both FreeLibrary and the slot-clear loop. For a nonzero previous handle, it calls FreeLibrary (`004f8522`), then clears every destination slot through the same table (`004f8528..004f8537`). Loader clears EBX after failure, writes EBX to saved EAX at `[ESP+0x1c]`, and restores registers with POPAD (`004f850b..004f8512`): EAX returns zero or the loaded module handle. A successful load also attempts cleanup registration via `004f7c20` at `004f84ff`; the [shared callback registry](original-modern-shell-open.md#startup-registers-the-callback-it-does-not-directly-open-the-url) now establishes the registration facility, with the failure boundary below.

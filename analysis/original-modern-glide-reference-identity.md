@@ -145,8 +145,27 @@ For notification0, the CRT wrapper calls user callback at `60004bfc` and then co
 
 This is another concrete paired change: a previous always-success callback now also supplies the module-instance state needed by Modern's directory-relative dynamic loading. It is not a new whole-driver detach guarantee. Executable bytes and saved Ghidra state were preserved; no notification or loader API was invoked.
 
+## Internal provider failure is not a null about result
+
+The extended audit now pins the official EXE and captures its descriptor-validation tail `004f84d9..004f8513` and complete mode enumerator `004bed90..004bedca`. It connects the driver-local failure branch to existing [EXE loader contracts](original-modern-renderer-loading.md#3-descriptor-checks-differ), without running a missing-provider test.
+
+On the inspected final driver's **cold about path**, descriptor setup occurs before the internal Glide loader call. It writes the nonzero descriptor marker, checked field+8=`68h`, count+3ch=0 and table pointer+40h=`60013000`. If internal loader `60001020` returns0 normally, the test at `60001ccd` branches to the descriptor-return epilogue `60001bc6`: EAX becomes `6000fd10`, **not zero**. EBP remains the descriptor across that loader's PUSHAD/POPAD contract.
+
+| Layer | Local failure/result meaning |
+|---|---|
+| Internal Glide acquisition/binding helper |Returns0 on its inspected load/required-bind failure paths |
+| THRASH about export |On this cold failure branch returns the prepared nonnull descriptor with zero count |
+| EXE renderer loader |Rejects null descriptor or+8 mismatch; accepts this pointer/field combination without checking count here |
+| EXE mode enumerator |Reads+40h pointer and+3ch signed count, starts index1 and exits when index>count; zero count calls neither eligibility helper nor supplied mode callback |
+
+The descriptor therefore passes the **local descriptor-validation gate** even though internal provider setup failed. This is not proof that later renderer initialization succeeds, that a mode is selected, or that no higher-level driver fallback occurs. The earlier mandatory34-export binding requirement still applies before the EXE reaches this about call; it is a different layer from the driver's internal Glide binding table.
+
+The nonzero descriptor marker is also its fast-return guard on subsequent about calls. With no intervening state changes, another about call returns the same descriptor without retrying the internal loader or mode helper. Other exports, cleanup/initialization callers and external writers may alter the state; no irrecoverable-failure or universal retry claim is made. Existing partial binding-slot rollback limits remain relevant separately.
+
+This explains why “loader returned0,” “about returned null,” “EXE accepted a descriptor” and “usable display modes exist” cannot be collapsed into one success Boolean. Preserve these separate contracts in future reconstruction. No provider failure, loader API or target instructions were executed.
+
 ## Next required comparison
 
-The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; next qualify partial-bind failure consumers, indirect/registered detach finalizers and other callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
+The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
 
 **Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Also verified:** complete about local differences and reference fixed-table/query contract. **Pending:** remaining hosted/final function/ABI/data comparisons, transitive failure/registered-finalizer lifetimes, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.

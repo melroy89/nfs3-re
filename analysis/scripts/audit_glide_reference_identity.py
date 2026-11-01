@@ -4,7 +4,7 @@ import subprocess
 import struct
 import pefile
 from audit_dx5_reference_final import sha, intervals, disassemble
-from audit_thrash_loader_difference import ROOT
+from audit_thrash_loader_difference import ROOT, SPECS as EXE_SPECS
 
 
 def exports(pe):
@@ -179,6 +179,26 @@ def main():
     assert {entry.address: entry.name for library in final.DIRECTORY_ENTRY_IMPORT for entry in library.imports}[0x6000e1ec] == b'GetModuleFileNameA'
     result['entry_callback_lifecycle']['filename_api'] = {'iat': '6000e1ec', 'name': 'GetModuleFileNameA',
         'module_argument': 'DWORD[600127cc]', 'producer': 'first argument of user entry callback60001010'}
+    exe_path, exe_expected, _ = EXE_SPECS['official_modern']
+    exe_raw = (ROOT/exe_path).read_bytes()
+    assert sha(exe_raw) == exe_expected
+    exe = pefile.PE(data=exe_raw)
+    result['about_failure_consumer'] = {'exe': exe_path, 'exe_sha256': exe_expected, 'captures': []}
+    for start, end, label in [(0x4f84d9, 0x4f8513, 'descriptor-validation-and-return-tail'),
+                               (0x4bed90, 0x4bedca, 'complete-mode-enumerator')]:
+        body = exe.get_data(start-0x400000, end-start)
+        result['about_failure_consumer']['captures'].append({'label': label, 'start_va': f'{start:08x}',
+            'end_va_exclusive': f'{end:08x}', 'sha256': sha(body), 'disassembly': disassemble(body, start)})
+    assert final.get_data(0x1ccd, 8).hex() == '85c00f84f1feffff'
+    assert final.get_data(0x1bc6, 10).hex() == '89e883c4045d5f5e5bc3'
+    assert final.get_data(0x1bd5, 5).hex() == 'b932464433'
+    assert final.get_data(0x1bf5, 12).hex() == '890d10fd0060893518fd0060'
+    assert final.get_data(0x1bda, 5).hex() == 'be68000000'
+    assert final.get_data(0x1c24, 5).hex() == 'be00000000'
+    assert exe.get_data(0xf84e3, 6).hex() == 'ff1580f99e00'
+    assert exe.get_data(0xf84e9, 12).hex() == '85c074198b500883fa687511'
+    assert exe.get_data(0xbedad, 5).hex() == '3b4df87f14'
+    result['about_failure_consumer']['scope'] = 'Cold-about setup followed by internal loader return0; later initialization/selection/recovery not established.'
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [

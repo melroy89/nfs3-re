@@ -260,7 +260,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004be970` | AdjustActiveViewportGeometry | 198 | 15 | [frame-resize](original-modern-frame-resize.md), [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004bed20` | ConfigureAndClipViewportRecord | 46 | 1 | [projection](original-modern-projection.md) |
 | `004bed50` | ApplyProjectionGeometryRecord | 25 | 1 | [projection](original-modern-projection.md) |
-| `004bed90` | EnumerateEligibleDisplayModes | 58 | 55 | [display-modes](original-modern-display-modes.md), [dll-candidates](original-modern-dll-candidates.md) |
+| `004bed90` | EnumerateEligibleDisplayModes | 58 | 55 | [display-modes](original-modern-display-modes.md), [dll-candidates](original-modern-dll-candidates.md), [glide-reference-identity](original-modern-glide-reference-identity.md) |
 | `004bedcc` | FindClosestEligibleDisplayMode | 146 | 141 | [border-geometry](original-modern-border-geometry.md), [display-modes](original-modern-display-modes.md), [mode-selection](original-modern-mode-selection.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `004bee60` | CheckDisplayModeEligibility | 67 | 67 | [display-modes](original-modern-display-modes.md), [dll-candidates](original-modern-dll-candidates.md), [mode-selection](original-modern-mode-selection.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `004beea4` | GetDisplayModePixelAreaLow32 | 12 | 12 | [mode-selection](original-modern-mode-selection.md) |
@@ -337,7 +337,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f1fd4` | IsAltKeyCurrentlyDown | 28 | 28 | [cpu-tier](original-modern-cpu-tier.md), [menu-input](original-modern-menu-input.md), [window-handling](original-modern-window-handling.md) |
 | `004f2790` | ReadMultimediaTickCount | 11 | 9 | [clock-source](original-modern-clock-source.md), [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [title-delay](original-modern-title-delay.md) |
 | `004f6c50` | InitializeSocketConnectionState | 980 | 4 | [clock-source](original-modern-clock-source.md) |
-| `004f84a8` | LoadThrashDriverLibrary | 107 | 106 | [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md) |
+| `004f84a8` | LoadThrashDriverLibrary | 107 | 106 | [glide-reference-identity](original-modern-glide-reference-identity.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f8514` | UnloadThrashDriverLibrary | 39 | 38 | [renderer-loading](original-modern-renderer-loading.md) |
 | `004f853c` | RefreshThrashDriverDescriptor | 12 | 10 | [renderer-lifecycle](original-modern-renderer-lifecycle.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f8548` | InitializeGraphicsInputAndResourceServices | 120 | 110 | [renderer-lifecycle](original-modern-renderer-lifecycle.md), [renderer-loading](original-modern-renderer-loading.md) |
