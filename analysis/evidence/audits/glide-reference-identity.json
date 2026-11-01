@@ -10665,6 +10665,175 @@
       ]
     }
   },
+  "code_cluster_accounting": {
+    "clusters": [
+      {
+        "start_va": "60001010",
+        "end_va_exclusive": "60001020",
+        "label": "entry callback",
+        "changed_bytes": 15
+      },
+      {
+        "start_va": "60001020",
+        "end_va_exclusive": "60001590",
+        "label": "loader, binding table, insertion, dynamic lookup and padding",
+        "changed_bytes": 1340
+      },
+      {
+        "start_va": "600018b0",
+        "end_va_exclusive": "60001bb0",
+        "label": "hardware table, query and mode helpers",
+        "changed_bytes": 737
+      },
+      {
+        "start_va": "60001bb0",
+        "end_va_exclusive": "60001d50",
+        "label": "about and padding",
+        "changed_bytes": 63
+      },
+      {
+        "start_va": "60001d50",
+        "end_va_exclusive": "60001e60",
+        "label": "is and padding",
+        "changed_bytes": 77
+      },
+      {
+        "start_va": "60001eb0",
+        "end_va_exclusive": "60001fa0",
+        "label": "init and padding",
+        "changed_bytes": 48
+      },
+      {
+        "start_va": "60001fa0",
+        "end_va_exclusive": "60002020",
+        "label": "DirectDraw creation",
+        "changed_bytes": 4
+      },
+      {
+        "start_va": "60002050",
+        "end_va_exclusive": "60002090",
+        "label": "context close and padding",
+        "changed_bytes": 42
+      },
+      {
+        "start_va": "60002090",
+        "end_va_exclusive": "60002110",
+        "label": "restore",
+        "changed_bytes": 13
+      },
+      {
+        "start_va": "60002110",
+        "end_va_exclusive": "60002390",
+        "label": "mode worker and padding",
+        "changed_bytes": 588
+      },
+      {
+        "start_va": "600024e0",
+        "end_va_exclusive": "60002660",
+        "label": "texture allocation",
+        "changed_bytes": 6
+      },
+      {
+        "start_va": "60002660",
+        "end_va_exclusive": "600026e0",
+        "label": "texture upload",
+        "changed_bytes": 6
+      },
+      {
+        "start_va": "60002860",
+        "end_va_exclusive": "60002880",
+        "label": "clear and padding",
+        "changed_bytes": 28
+      },
+      {
+        "start_va": "60002ab0",
+        "end_va_exclusive": "60003270",
+        "label": "setstate",
+        "changed_bytes": 61
+      },
+      {
+        "start_va": "60003270",
+        "end_va_exclusive": "60003350",
+        "label": "lockwindow",
+        "changed_bytes": 52
+      },
+      {
+        "start_va": "600033a0",
+        "end_va_exclusive": "60003410",
+        "label": "readrect and padding",
+        "changed_bytes": 97
+      },
+      {
+        "start_va": "60003410",
+        "end_va_exclusive": "60003480",
+        "label": "writerect and padding",
+        "changed_bytes": 106
+      },
+      {
+        "start_va": "6000d888",
+        "end_va_exclusive": "6000d8a0",
+        "label": "old import thunks, new string copy and padding",
+        "changed_bytes": 24
+      }
+    ],
+    "total_changed_bytes": 3307,
+    "meaning": "Nonoverlapping address routing, not semantic/runtime completeness or function boundaries.",
+    "unassigned_changed_bytes": 0
+  },
+  "copy_helper_reuse": {
+    "captures": [
+      {
+        "role": "hosted_reference",
+        "start_va": "6000d888",
+        "end_va_exclusive": "6000d8a0",
+        "sha256": "1ffe04f6549211a8f9f0a78406765013f6738dc99a5ec6fdb1f27421add9e238",
+        "disassembly": [
+          "6000d888:\tff 25 7c e2 00 60    \tjmp    DWORD PTR ds:0x6000e27c",
+          "6000d88e:\tff 25 74 e2 00 60    \tjmp    DWORD PTR ds:0x6000e274",
+          "6000d894:\tff 25 6c e2 00 60    \tjmp    DWORD PTR ds:0x6000e26c",
+          "6000d89a:\tff 25 78 e2 00 60    \tjmp    DWORD PTR ds:0x6000e278"
+        ]
+      },
+      {
+        "role": "official_final",
+        "start_va": "6000d888",
+        "end_va_exclusive": "6000d8a0",
+        "sha256": "806cff7a94bd52efdf7925c8313a4f151652724f2c1e8154bae0c54ae57454dc",
+        "disassembly": [
+          "6000d888:\t31 c0                \txor    eax,eax",
+          "6000d88a:\tac                   \tlods   al,BYTE PTR ds:[esi]",
+          "6000d88b:\taa                   \tstos   BYTE PTR es:[edi],al",
+          "6000d88c:\t84 c0                \ttest   al,al",
+          "6000d88e:\t75 fa                \tjne    0x6000d88a",
+          "6000d890:\t4f                   \tdec    edi",
+          "6000d891:\tc3                   \tret",
+          "6000d892:\t90                   \tnop",
+          "6000d893:\t90                   \tnop",
+          "6000d894:\t90                   \tnop",
+          "6000d895:\t90                   \tnop",
+          "6000d896:\t90                   \tnop",
+          "6000d897:\t90                   \tnop",
+          "6000d898:\t90                   \tnop",
+          "6000d899:\t90                   \tnop",
+          "6000d89a:\t90                   \tnop",
+          "6000d89b:\t90                   \tnop",
+          "6000d89c:\t90                   \tnop",
+          "6000d89d:\t90                   \tnop",
+          "6000d89e:\t90                   \tnop",
+          "6000d89f:\t90                   \tnop"
+        ]
+      }
+    ],
+    "contract": {
+      "ordinary_DF0": "Copy ESI bytes including terminatingNUL to EDI, advance ESI pastNUL, leaveEDI pointing at copiedNUL, EAX0.",
+      "caller": "Final loader6000106e appends glide3x.dll to its constructed module-directory prefix.",
+      "limits": [
+        "No local length bound or CLD; source terminator, writable extent and clear direction flag are preconditions.",
+        "Caller filename-return/backward-scan failure domains remain unverified; no claim of observed memory failure.",
+        "Changed-byte clusters include code/data-in-code/padding and are not a count of independent features."
+      ]
+    }
+  },
   "export_comparison": {
     "reference_final_entries_equal": 34,
     "reference_local_names_equal": 34,

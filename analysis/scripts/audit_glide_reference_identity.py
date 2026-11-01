@@ -476,6 +476,44 @@ def main():
                    'Override environment-vector initialization, provider-string validity and actual returned capabilities are not established.',
                    'Do not constrain all return values to0/95/100: override and signed-negative capability paths can return other integers.',
                    'Same scoring instructions do not imply equivalent provider state, side effects, failures or timing.']}
+    result['code_cluster_accounting'] = {'clusters': [], 'total_changed_bytes': 3307,
+        'meaning': 'Nonoverlapping address routing, not semantic/runtime completeness or function boundaries.'}
+    clusters = [(0x1010,0x1020,'entry callback',15),
+        (0x1020,0x1590,'loader, binding table, insertion, dynamic lookup and padding',1340),
+        (0x18b0,0x1bb0,'hardware table, query and mode helpers',737),
+        (0x1bb0,0x1d50,'about and padding',63), (0x1d50,0x1e60,'is and padding',77),
+        (0x1eb0,0x1fa0,'init and padding',48), (0x1fa0,0x2020,'DirectDraw creation',4),
+        (0x2050,0x2090,'context close and padding',42), (0x2090,0x2110,'restore',13),
+        (0x2110,0x2390,'mode worker and padding',588), (0x24e0,0x2660,'texture allocation',6),
+        (0x2660,0x26e0,'texture upload',6), (0x2860,0x2880,'clear and padding',28),
+        (0x2ab0,0x3270,'setstate',61), (0x3270,0x3350,'lockwindow',52),
+        (0x33a0,0x3410,'readrect and padding',97), (0x3410,0x3480,'writerect and padding',106),
+        (0xd888,0xd8a0,'old import thunks, new string copy and padding',24)]
+    differing = set()
+    for row in result['paired_reference_final_regions'][0]['changed_intervals']:
+        differing.update(range(int(row['start_va'],16)-0x60000000, int(row['end_va_exclusive'],16)-0x60000000))
+    assigned = set()
+    for start, end, label, expected in clusters:
+        owned = differing.intersection(range(start,end))
+        assert len(owned) == expected and not assigned.intersection(owned)
+        assigned.update(owned)
+        result['code_cluster_accounting']['clusters'].append({'start_va':f'{0x60000000+start:08x}',
+            'end_va_exclusive':f'{0x60000000+end:08x}', 'label':label, 'changed_bytes':len(owned)})
+    assert assigned == differing and len(assigned) == 3307
+    result['code_cluster_accounting']['unassigned_changed_bytes'] = 0
+    result['copy_helper_reuse'] = {'captures': []}
+    for role, pe in [('hosted_reference',ref),('official_final',final)]:
+        body = pe.get_data(0xd888,24)
+        result['copy_helper_reuse']['captures'].append({'role':role,'start_va':'6000d888',
+            'end_va_exclusive':'6000d8a0','sha256':sha(body),'disassembly':disassemble(body,0x6000d888)})
+    assert final.get_data(0xd888,10).hex() == '31c0acaa84c075fa4fc3'
+    assert final.get_data(0x106e,5).hex() == 'e815c80000'
+    result['copy_helper_reuse']['contract'] = {
+        'ordinary_DF0': 'Copy ESI bytes including terminatingNUL to EDI, advance ESI pastNUL, leaveEDI pointing at copiedNUL, EAX0.',
+        'caller': 'Final loader6000106e appends glide3x.dll to its constructed module-directory prefix.',
+        'limits': ['No local length bound or CLD; source terminator, writable extent and clear direction flag are preconditions.',
+                   'Caller filename-return/backward-scan failure domains remain unverified; no claim of observed memory failure.',
+                   'Changed-byte clusters include code/data-in-code/padding and are not a count of independent features.']}
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [

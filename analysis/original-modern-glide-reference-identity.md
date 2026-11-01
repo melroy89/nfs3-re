@@ -327,8 +327,37 @@ These are static comparison derivations, not instruction probes or observed prov
 
 Reference's provider-path tails perform direct shutdown and/or release through60001560; final routes them through latch helper60001108. Its override path still bypasses that provider cleanup, as it bypasses acquisition. These changes reuse the lifecycle evidence above rather than proving matching load references, initialization counts, failure side effects or timing. Null/invalid provider strings, complete environment ownership and actual selection preference remain untested. **Verified:** retained score computation with changed initialization/guard/cleanup ordering. No provider or target instructions were executed.
 
+## Complete code-section cluster routing
+
+The audit now assigns **all3,307 differing bytes** in the51,712-byte paired code section to18 nonoverlapping envelopes, with zero unassigned bytes. These envelopes intentionally include alignment, removed code and embedded data; they are **not**18 independent features or semantic completeness certificates. Every byte is counted once, even where reference instructions become final table entries or padding.
+
+| Address envelope, end exclusive | Cluster | Changed bytes |
+|---|---|---:|
+|60001010..60001020 |Entry callback |15 |
+|60001020..60001590 |Loader, binding table, insertion, dynamic lookup and padding |1,340 |
+|600018b0..60001bb0 |Hardware table, query and mode helpers |737 |
+|60001bb0..60001d50 |About and padding |63 |
+|60001d50..60001e60 |Suitability query and padding |77 |
+|60001eb0..60001fa0 |Init and padding |48 |
+|60001fa0..60002020 |DirectDraw creation |4 |
+|60002050..60002090 |Context close and padding |42 |
+|60002090..60002110 |Restore |13 |
+|60002110..60002390 |Mode worker and padding |588 |
+|600024e0..60002660 |Texture allocation |6 |
+|60002660..600026e0 |Texture upload |6 |
+|60002860..60002880 |Clear and padding |28 |
+|60002ab0..60003270 |Setstate |61 |
+|60003270..60003350 |Lockwindow |52 |
+|600033a0..60003410 |Readrect and padding |97 |
+|60003410..60003480 |Writerect and padding |106 |
+|6000d888..6000d8a0 |Import-thunk space reused for copy helper/padding |24 |
+
+The last envelope previously held four static import thunks: grVertexLayout, grCoordinateSpace, DirectDrawCreate and grQueryResolutions. Final replaces them with ten-byte helper6000d888 and NOPs. With DF clear, it copies bytes from ESI to EDI through the terminating zero, leaves ESI past that zero and EDI at the copied zero, and returns EAX0. Final loader6000106e calls it to append `glide3x.dll` after its module-directory prefix. The helper has no local length bound or CLD; source termination, destination extent and ordinary direction-flag state are reconstruction preconditions. Filename API failures/backward-scan limits are not proved safe by this byte map, nor are failures observed here.
+
+**Complete:** code-section changed-byte routing for this exact named pair, with the local mechanisms and explicit limits described above. **Still incomplete:** full import/data/header/resource/overlay meaning, all transitive callees/global lifetimes and callers, authenticated retail provenance, historical introduction and actual rendering/provider behavior. The raw import/data interval maps at the beginning remain inventories rather than completed semantic audits. This closes a routing gap in one driver; it does not close the original-versus-Modern whole-game objective.
+
 ## Next required comparison
 
-The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and other initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
+The paired code-section routing is complete above; do not repeat that inventory or substitute the different local-candidate baseline. Further driver work should target a concrete remaining data/import/lifetime or provider question, using the existing final insertion/extra-slot limits. The broader EXE comparison can proceed independently; unresolved projection capture/lifetime and original/Modern runtime compatibility retain separate evidence gates.
 
 **Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Also verified:** complete about local differences and reference fixed-table/query contract. **Pending:** remaining hosted/final function/ABI/data comparisons, transitive failure/registered-finalizer lifetimes, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.
