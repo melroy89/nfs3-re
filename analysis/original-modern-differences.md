@@ -1115,3 +1115,7 @@ The [subtitle comparison](original-modern-common-menu-buttons.md#showcase-and-co
 ## Historical DDRAW import removal verified in both binaries
 
 The [two-member import comparison](original-modern-glide-reference-identity.md#ddraw-import-removal-is-verified-across140-to150-for-both-named-binaries) verifies static DDRAW!DirectDrawCreate removal in both nfs3.exe and the selected Glide voodoo2a.dll at1.4.0→1.5.0, with no migration into historical PE delay imports. Final snapshots corroborate; existing code analysis still proves conditional dynamic DirectDraw use. MP150-045 advances to bounded-static support without a runtime or no-dependency claim.
+
+## Historical menu callback selection contract
+
+The [complete callback-loop comparison](original-modern-common-menu-buttons.md#callback-selection-gains-a-none-check-and-narrower-sum-in140) accounts for all37 differing bytes in its363-byte envelope.1.3.1→1.4.0 adds the100 none-selection check and changes sum width to16 bits before sign extension. The retained query already shares the sentinel policy but keeps32-bit summation. Derived boundary cases and runtime reachability limits are explicit; this independent EXE change is not forced into the later dropdown-priority release note.

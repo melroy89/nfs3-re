@@ -750,3 +750,7 @@ The [Showcase/Compare subtitle audit](original-modern-common-menu-buttons.md#sho
 ## Two-member DDRAW import history
 
 The [paired historical PE inventories](original-modern-glide-reference-identity.md#ddraw-import-removal-is-verified-across140-to150-for-both-named-binaries) directly support MP150-045 at1.4.0→1.5.0 for nfs3.exe and drivers/glide3x/voodoo2a.dll. Conditional dynamic use remains proven separately. Catalog counts88/53/147/2; no game, API or instruction execution.
+
+## Callback selection preparation fully compared
+
+The [four-build code audit](original-modern-common-menu-buttons.md#callback-selection-gains-a-none-check-and-narrower-sum-in140) resolves the previously excluded37-byte block in the complete363-byte callback loop, including five NOP bytes outside saved ranges.1.3.1→1.4.0 adds selection100 suppression and16-bit wrapped summation. The query retains32-bit arithmetic; scalar examples are derived, not executed. Catalogue labels remain unchanged because no release-note identity is asserted. Runtime producers/consumers and reachability remain open.

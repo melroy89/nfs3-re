@@ -247,7 +247,7 @@ The original/final descriptor at`00557c30` is the common kind1 `priority` proper
 
 Thus, within this ordinary group traversal, priority0 callbacks are visited after positive groups. Modern moves the two top dropdowns into that final group, separating them from the old priority1 ties and Location's old priority0 laps control. This supplies a concrete ordering mechanism consistent with MP150-024. Actual compositing still depends on callbacks, flags, render/depth state and providers; later callback order alone does not prove every popup appears correctly over other content.
 
-The state-preparation span`0044a5a6..0044a5cb` differs and is explicitly outside the retained comparisons. This is not complete loop equivalence or a claim that its changed instructions implement the asset priority fix. Historical EXE consumers were not separately qualified; the1.4.0→1.5.0 boundary is directly verified for the authored assets. The reference assets are author-hosted, not authenticated retail or proven paired to the supplied original EXE. MP150-024 advances to **partial package/static support**; active installed loading, visible overlap and full input behaviour remain unverified. No game, instruction probe, compiler or Ghidra write was used.
+The state-preparation span`0044a5a6..0044a5cb` differs and is explicitly outside the retained comparisons; the later [selection-state audit](#callback-selection-gains-a-none-check-and-narrower-sum-in140) now explains that separate change. This is not complete loop equivalence or a claim that its changed instructions implement the asset priority fix. Historical EXE consumers were not separately qualified; the1.4.0→1.5.0 boundary is directly verified for the authored assets. The reference assets are author-hosted, not authenticated retail or proven paired to the supplied original EXE. MP150-024 advances to **partial package/static support**; active installed loading, visible overlap and full input behaviour remain unverified. No game, instruction probe, compiler or Ghidra write was used.
 
 ## Showcase and Compare subtitles adopt the Race Results text style
 
@@ -272,3 +272,31 @@ Both new subtitle records match the results subtitle in **nine explicit style/la
 These offsets use runtime entry base`00604ee0`; field descriptors retain concrete destination pointers and exact bytes in the audit. The [common writer review](original-modern-control-component-keys.md#common-property-stores-do-not-directly-overlap-either-byte) establishes form1's two-byte store. The current audit does not qualify the complete form6 conversion path, every scale override, cascade title-rendering consumer or actual font-bank selector. It verifies authored values and bindings, rather than claiming those runtime behaviours were exercised.
 
 MP150-025 advances to **partial package/static support**: at the claimed1.4.0→1.5.0 boundary, both pages replace the old cascade-title policy with explicitly authored subtitles that share the Race Results style. Full font-face/glyph-bank identity, localization, visible size/appearance and active installed asset loading remain unverified. The author-reference package is not authenticated retail or independently paired to the supplied original EXE. Reconstruction should preserve separate text records, their list bindings and the chosen cascade title policy; merely changing a global font would not reproduce the observed asset transformation. No target, menu, instruction probe, compiler or Ghidra write was used.
+
+## Callback selection gains a none check and narrower sum in140
+
+**Verified complete code-envelope comparison and historical boundary; live UI effect untested.** The [selection-history audit](evidence/audits/menu-callback-selection-history.json), reproduced with `python3 analysis/scripts/audit_menu_callback_selection_history.py`, compares supplied original, author-hosted1.3.1/1.4.0 and official final EXEs. It resolves the state-preparation difference explicitly excluded from the earlier priority-group comparison.
+
+Complete callback-loop envelope`0044a4f0..0044a65b` is363 bytes. Original equals1.3.1 throughout;1.4.0 equals final throughout. All37 original/final differing bytes lie at`0044a5a6..0044a5cb`. This includes five final NOPs at`0044a5c6..0044a5cb`, excluded from the saved split function ranges; the envelope comparison accounts for them rather than treating a function-range gap as missing semantics.
+
+Let **S** be signed WORD at menu+18, **R** signed WORD at menu+1a, and **I** the signed current entry index at this loop branch. These raw offsets avoid assuming every caller constructs valid menu state.
+
+| Original selection preparation | Modern selection preparation |
+|---|---|
+|Load DWORDs at+16/+18; SAR16 extracts S/R; add them in32 bits; flag=`I == S+R` |Load R into AX; if R=100 flag0; otherwise ADD AX,WORD+18, sign-extend resulting16-bit sum and compare with I |
+
+The operands are each signed16, so original's sum is within signed32 range. Modern wraps the sum modulo65536 before sign extension. It also explicitly suppresses the selected flag for R=100, regardless of the current index. The retained tail at`0044a5cb..0044a5df` requires nonnull entry+2c and clear byte+05 bit10h, then CWDE/MOV copies the computed0/1 into EDX, places the entry pointer in EAX and calls`[entry+2c]`. This is a callback argument contract, not a claim that every callback renders selection identically.
+
+| Derived scalar inputs (S,R,I) | Original flag | Modern flag | Meaning |
+|---|---:|---:|---|
+|5,2,7 |1 |1 |Ordinary selected entry |
+|5,2,8 |0 |0 |Ordinary other entry |
+|5,100,105 |1 |0 |Explicit none check changes result |
+|32760,10,−32766 |0 |1 |16-bit sum wrap changes comparison |
+|−32760,−10,32766 |0 |1 |Negative sum wrap changes comparison |
+
+These rows are **derived scalar arithmetic**, not original-instruction probes, live menu observations or evidence that extreme/negative indices identify valid records. The audit implements signed16 interpretation explicitly; a maintained C translation must preserve the selected baseline's width and sentinel policy instead of silently replacing it with unbounded addition or relying on implementation-defined narrowing.
+
+The complete41-byte selected-entry query`0044a440..0044a469` is identical across all four EXEs. It already checks R=100 and returns−1; otherwise it retains32-bit addition of sign-extended S/R. Modern therefore aligns the callback loop with that query's **none policy**, but not with its arithmetic under16-bit sum overflow. Whether overflow inputs are reachable remains unresolved. Neither the historical equality nor scalar cases establish whole flags/register/local-stack equivalence or complete event/render behaviour.
+
+This is an independently explained EXE change at1.3.1→1.4.0. It is not assigned to MP150-024's later authored dropdown-priority fix or forced into a vaguely worded vendor bullet. Callback consumers, producers of the100 sentinel, live selection and actual UI outcomes remain follow-ups. No target, instruction probe, menu, compiler or Ghidra write was used.
