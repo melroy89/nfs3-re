@@ -43,6 +43,20 @@ These are dated Modern Patch comparisons with explicit original/final links wher
 
 The [three-audit checkpoint](evidence/validation/historical-mechanisms-checkpoint.json) runs each selected audit twice: all six runs pass with identical repeat outputs. Three executable baselines and the saved database remain unchanged and match the prior checkpoint. Script/output hashes and scope limits are retained; this is primary-agent static reproducibility, not independent review, CI, runtime testing or whole-comparison completion.
 
+## Five further mechanisms and verification checkpoint
+
+The [five-audit checkpoint](evidence/validation/five-static-mechanisms-checkpoint.json) re-runs each selected audit twice against reviewed head`0da63d0`: **10/10 runs pass**, with all five result manifests matching their pre-run hashes. Twelve protected files remain byte-identical, including the three executable baselines, saved database, maintained reconstruction files and retained line-helper probe evidence. Twelve raw C/header exports match their original export manifests. This checks preservation and static reproducibility; it neither reopens Ghidra nor reruns reconstruction/instruction probes, and it is not independent semantic review, CI or whole-investigation completion.
+
+| Topic | Verified code/data change | Remaining qualification |
+|---|---|---|
+| [DX7 viewport depth](original-modern-dx7-viewport-depth.md) |1.6.0→1.6.1 changes maximum-depth bits from1−1/65536 to1; selected QueryInterface/CreateDevice chain identifies the SetViewport receiver | Actual device acceptance and Old Church black-polygon causality |
+| [Address commas and suffixes](original-modern-network-endpoints.md#historical-comma-normalization-and-exact-suffix-grammar) |1.4.0→1.5.0 adds comma conversion before first colon; final retains complete helper; shared decimal converter explains prefix parsing and32-bit wrapping | UI/provider acceptance, reachable input restrictions and cross-version synchronization |
+| [Car Detail and wheel timing](original-modern-vehicle-dispatch.md#car-detail-binding-and-historical-high-budget-bypass) | Original/Modern threshold rows remap detail levels;1.5.0 introduces High-budget bypass and per-object wheel tick sources; final has a mirror-detail exception | Complete visual-wheel fix, texture quality and sole-cause attribution |
+| [Video-mode capacity](original-modern-display-modes.md#historical-exe-capacity-expands-from51-to101-local-entries) | Original cap20;1.1.0 local51;1.2.0 local101, with matching initializer/descriptor/inclusive label consumers |1.0.0 introduction, actual provider lists, complete storage/UI lifetime and display acceptance |
+| [Optional LOGO2](original-modern-frontend-page.md#historical-logo2-loading-and-two-image-draw-selection) |1.5.0 adds secondary image after primary success, count0/6/8 and second-handle selection; final instead uses logos.qfs metadata | Historical image contents, actual upload/animation and later asset consolidation |
+
+These findings add code-level detail and correct headline interpretations. They are not an exhaustive list of original/Modern differences. Catalog entries still explicitly distinguish verified mechanisms, partial claims and vendor-only descriptions.
+
 ## Recent findings at a glance
 
 The [Glide/border checkpoint](evidence/validation/glide-border-static-checkpoint.json) reproduces four selected static audits at `b272693`, fingerprints their scripts/results and confirms the same four preserved artifact hashes. It includes the corrected eight-quad border extent and withdrawal of earlier overlap claims. Saved Ghidra labels/comments remain stale; this checkpoint neither reopens nor changes the database. Runtime, independent semantic review and broader completion remain separate.

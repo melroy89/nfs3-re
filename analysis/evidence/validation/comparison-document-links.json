@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "ee90e68bce61ab1c13f3be220650a979d78944dfccf74365cf0667fbdd4835dc",
-      "relative_links": 186
+      "sha256": "34fbbda45df356c3f9392527d1ec1ef0ce49bd6010ada25a1932e558c19c0c65",
+      "relative_links": 188
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "8b0669d2401340581f6916e93f6d78a2334e7c8e559c4f5426589821fd6fdd03",
-      "relative_links": 217
+      "sha256": "e186a964083d05af8f0497b888ea3482699fe73267c5c65047ae13897ab70531",
+      "relative_links": 223
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -658,7 +658,7 @@
     }
   ],
   "file_count": 131,
-  "relative_link_count": 2427,
+  "relative_link_count": 2435,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

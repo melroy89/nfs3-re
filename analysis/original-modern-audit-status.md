@@ -61,6 +61,8 @@ The [catalog](modern-patch-change-catalog.md) currently has **121 vendor-only,50
 - **Complete HSV-wheel keyboard comparison added:** [831-byte callback and binding](original-modern-colour-control.md#complete-wheel-keyboard-callback-endpoint-writes-and-feedback-change) explain369 differences plus11 adjacent old mouse-tail/alignment bytes. Modern skips endpoint stores, adds adjustment feedback and changes action sound ordering; ordinary0..255 values agree while out-of-range results differ. Actual UI/audio and component invariants remain unverified.
 - **Separate broader backlog:** remaining vendor claims, historical driver/release comparisons and original/Modern runtime compatibility. There are more than two questions in the complete backlog.
 
+The [five-mechanism checkpoint](evidence/validation/five-static-mechanisms-checkpoint.json) reproduces DX7 viewport, comma parser, vehicle detail, mode capacity and LOGO2 audits twice each (10/10 pass). All five output hashes match pre-run evidence;12 protected files remain unchanged and12 raw exports match retained manifests. The [compact table](original-modern-differences.md#five-further-mechanisms-and-verification-checkpoint) keeps those mechanisms and remaining qualifications together. This is selected primary-agent static verification, not independent review, runtime testing, Ghidra reopening or whole-goal completion.
+
 The checkpoint narratives below describe their pinned increments. Their older counts and “latest” wording are historical, not competing current totals. The broad objective remains incomplete; no new game execution or reconstruction is implied by this snapshot.
 
 ## Acceptance and limits
