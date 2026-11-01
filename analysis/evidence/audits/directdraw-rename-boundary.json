@@ -1,0 +1,140 @@
+{
+  "kind": "static-DirectDraw-setting-rename-and-dispatch-release-boundary",
+  "releases": {
+    "1.6.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3-1.6.0.exe",
+      "sha256": "9fd80c4cdc9827f190698f28aa93f1182218d7c557898fb2653abfc4148c7a72",
+      "strings": {
+        "0053f730": "DirectDrawLagFix",
+        "0053f70c": "THRASH",
+        "0053f748": "DDRAW.DLL",
+        "0053f754": "SetAppCompatData"
+      },
+      "spans": [
+        {
+          "start": "004b57bc",
+          "end_exclusive": "004b57da",
+          "bytes_hex": "5152b848f75300ba54f75300e8efc6030085c074066a006a0cffd05a59c3",
+          "sha256": "e2a1c92377b83e30b84c3aeae179b14affb8989839533b8697d78b7e3e333ad6",
+          "disassembly": [
+            "4b57bc:\t51                   \tpush   ecx",
+            "4b57bd:\t52                   \tpush   edx",
+            "4b57be:\tb8 48 f7 53 00       \tmov    eax,0x53f748",
+            "4b57c3:\tba 54 f7 53 00       \tmov    edx,0x53f754",
+            "4b57c8:\te8 ef c6 03 00       \tcall   0x4f1ebc",
+            "4b57cd:\t85 c0                \ttest   eax,eax",
+            "4b57cf:\t74 06                \tje     0x4b57d7",
+            "4b57d1:\t6a 00                \tpush   0x0",
+            "4b57d3:\t6a 0c                \tpush   0xc",
+            "4b57d5:\tff d0                \tcall   eax",
+            "4b57d7:\t5a                   \tpop    edx",
+            "4b57d8:\t59                   \tpop    ecx",
+            "4b57d9:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004b591b",
+          "end_exclusive": "004b5937",
+          "bytes_hex": "6830397a006a006830f75300680cf75300ff1570465300a390277a00",
+          "sha256": "87ec1d988191d0a2fb975cf4e3bcd5f42eddbc1974785040fc74d7e761edbcbf",
+          "disassembly": [
+            "4b591b:\t68 30 39 7a 00       \tpush   0x7a3930",
+            "4b5920:\t6a 00                \tpush   0x0",
+            "4b5922:\t68 30 f7 53 00       \tpush   0x53f730",
+            "4b5927:\t68 0c f7 53 00       \tpush   0x53f70c",
+            "4b592c:\tff 15 70 46 53 00    \tcall   DWORD PTR ds:0x534670",
+            "4b5932:\ta3 90 27 7a 00       \tmov    ds:0x7a2790,eax"
+          ]
+        },
+        {
+          "start": "004b5a02",
+          "end_exclusive": "004b5a10",
+          "bytes_hex": "833d90277a00007405e8acfdffff",
+          "sha256": "324f11064a01d345850b18d1adbe182905fc6d8384f3bbb5fc51dc4bc7bf8917",
+          "disassembly": [
+            "4b5a02:\t83 3d 90 27 7a 00 00 \tcmp    DWORD PTR ds:0x7a2790,0x0",
+            "4b5a09:\t74 05                \tje     0x4b5a10",
+            "4b5a0b:\te8 ac fd ff ff       \tcall   0x4b57bc"
+          ]
+        }
+      ]
+    },
+    "1.6.1": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "strings": {
+        "0053f738": "DisableMaxWindowedMode",
+        "0053f750": "NoDwmOffForPrimaryLock",
+        "0053f730": "DDRAW",
+        "0053f76c": "DDRAW.DLL",
+        "0053f778": "SetAppCompatData"
+      },
+      "spans": [
+        {
+          "start": "004b57c4",
+          "end_exclusive": "004b57f3",
+          "bytes_hex": "5152565789c6b86cf75300ba78f75300e8e3c6030085c0741189c70fbcce740a0fb3ce6a0051ffd7ebf15f5e5a59c3",
+          "sha256": "0f6c955b6c49049606d50a7fc7cf7c6ae05992981b22ea45d6dc6a51376a764e",
+          "disassembly": [
+            "4b57c4:\t51                   \tpush   ecx",
+            "4b57c5:\t52                   \tpush   edx",
+            "4b57c6:\t56                   \tpush   esi",
+            "4b57c7:\t57                   \tpush   edi",
+            "4b57c8:\t89 c6                \tmov    esi,eax",
+            "4b57ca:\tb8 6c f7 53 00       \tmov    eax,0x53f76c",
+            "4b57cf:\tba 78 f7 53 00       \tmov    edx,0x53f778",
+            "4b57d4:\te8 e3 c6 03 00       \tcall   0x4f1ebc",
+            "4b57d9:\t85 c0                \ttest   eax,eax",
+            "4b57db:\t74 11                \tje     0x4b57ee",
+            "4b57dd:\t89 c7                \tmov    edi,eax",
+            "4b57df:\t0f bc ce             \tbsf    ecx,esi",
+            "4b57e2:\t74 0a                \tje     0x4b57ee",
+            "4b57e4:\t0f b3 ce             \tbtr    esi,ecx",
+            "4b57e7:\t6a 00                \tpush   0x0",
+            "4b57e9:\t51                   \tpush   ecx",
+            "4b57ea:\tff d7                \tcall   edi",
+            "4b57ec:\teb f1                \tjmp    0x4b57df",
+            "4b57ee:\t5f                   \tpop    edi",
+            "4b57ef:\t5e                   \tpop    esi",
+            "4b57f0:\t5a                   \tpop    edx",
+            "4b57f1:\t59                   \tpop    ecx",
+            "4b57f2:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004b599e",
+          "end_exclusive": "004b59e4",
+          "bytes_hex": "682c387a006a006838f753006830f75300ff157046530085c074080fba2d90277a000c682c387a006a006850f753006830f75300ff157046530085c074080fba2d90277a0001",
+          "sha256": "874f3cb075ec313695317be6db85544c71c70efaedb128cd734606c199f6fa5c",
+          "disassembly": [
+            "4b599e:\t68 2c 38 7a 00       \tpush   0x7a382c",
+            "4b59a3:\t6a 00                \tpush   0x0",
+            "4b59a5:\t68 38 f7 53 00       \tpush   0x53f738",
+            "4b59aa:\t68 30 f7 53 00       \tpush   0x53f730",
+            "4b59af:\tff 15 70 46 53 00    \tcall   DWORD PTR ds:0x534670",
+            "4b59b5:\t85 c0                \ttest   eax,eax",
+            "4b59b7:\t74 08                \tje     0x4b59c1",
+            "4b59b9:\t0f ba 2d 90 27 7a 00 \tbts    DWORD PTR ds:0x7a2790,0xc",
+            "4b59c0:\t0c",
+            "4b59c1:\t68 2c 38 7a 00       \tpush   0x7a382c",
+            "4b59c6:\t6a 00                \tpush   0x0",
+            "4b59c8:\t68 50 f7 53 00       \tpush   0x53f750",
+            "4b59cd:\t68 30 f7 53 00       \tpush   0x53f730",
+            "4b59d2:\tff 15 70 46 53 00    \tcall   DWORD PTR ds:0x534670",
+            "4b59d8:\t85 c0                \ttest   eax,eax",
+            "4b59da:\t74 08                \tje     0x4b59e4",
+            "4b59dc:\t0f ba 2d 90 27 7a 00 \tbts    DWORD PTR ds:0x7a2790,0x1",
+            "4b59e3:\t01"
+          ]
+        }
+      ]
+    }
+  },
+  "conclusion": "Rename preserves selected request12, but state representation changes: old raw integer assignment/Boolean gate becomes accumulated bit12 plus new independent bit1 and bit-index dispatch.",
+  "limits": [
+    "Read-only static inspection; no target/API execution or performance measurement.",
+    "Old nonzero integers all select request12; new key nonzero setsbit12, not its raw integer value.",
+    "New zero settings do not clear existing mask bits in this local block; caller/state lifetime and external ABI remain separate.",
+    "Pinned historical/final artifacts do not prove every intermediate build or physical OS effect."
+  ]
+}

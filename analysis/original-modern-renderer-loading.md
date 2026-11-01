@@ -231,3 +231,34 @@ Path interpretation assumes successful normal module-path retrieval, a
 backslash, sufficient capacity and DF0 for string operations; no robustness
 claim is made. No target/provider/API execution, executable edits or saved
 Ghidra changes were performed.
+
+## Historical compatibility rename and section change: 1.6.0 to 1.6.1
+
+The [read-only release-boundary audit](scripts/audit_directdraw_rename_boundary.py)
+retains [pinned complete setting/adapter spans](evidence/audits/directdraw-rename-boundary.json).
+It verifies the historical portion of MP161-008 while leaving OS effects
+unverified. This is more than a string rename:
+
+| Contract | 1.6.0 | 1.6.1 |
+|---|---|---|
+| Section/key | `[THRASH] DirectDrawLagFix` | `[DDRAW] DisableMaxWindowedMode` |
+| Integer API/default | GetPrivateProfileIntA,0 | GetPrivateProfileIntA,0 |
+| Local state update | `004b5932` assigns the returned integer to `007a2790` | `004b59b9` sets bit12 only for nonzero input; zero skips the write |
+| Additional option | Neither named key present | `[DDRAW] NoDwmOffForPrimaryLock` independently sets bit1 at `004b59dc` |
+| Dispatch | `004b5a02..004b5a10` tests nonzero; helper `004b57bc..004b57da` requests index12 | Helper `004b57c4..004b57f3` scans set bits and requests each index |
+
+Both resolve `DDRAW.DLL!SetAppCompatData`. The old helper pushes0 and12;
+with only bit12 set, the new helper requests the same pair of stack arguments.
+Thus a nonzero old option corresponds locally to a nonzero new option's
+request12, **not** to interpreting the old integer itself as a bitmask. This
+does not establish whole-state equivalence: old settings overwrite the state,
+whereas new nonzero options accumulate bits and false options do not clear
+previous bits. Bit1 is an additional request with separate configuration.
+The new section literal at `0053f730` is **DDRAW**, not THRASH; copying the old
+section while merely renaming the key would not match this parser.
+
+The final dispatcher ABI, return-value and lifetime limits in the preceding
+sections still apply. Historical key/section/default and local dispatch
+mechanisms are verified; Windows/Wine effects, timing, all initialization
+writers and reconfiguration outcomes require separate evidence. No executable,
+DLL, API or instruction probe was run, and no saved database was modified.

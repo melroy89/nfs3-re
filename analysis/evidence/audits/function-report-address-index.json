@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5632dee33c96bda3a8a10cd3ece48973c7bf77b606c8b0f48276546e8ec51d40"
+      "sha256": "54fb414a5c4f7191ad0e3a858c77a74a0f1b8a6fd21eba1453a36a10f1672546"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -329,7 +329,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "c2cc4c4c113826e6dd601a8309d8f62c692fb8ed23312bea74a69a0a6df86553"
+      "sha256": "b86838820519b9184c35f5d1cf43bef82675da03f2f8e6921fa3262c761d6097"
     },
     {
       "path": "analysis/original-modern-renderer-texel-alignment.md",
@@ -8565,6 +8565,7 @@
             "004b5748",
             "004b5772",
             "004b5775",
+            "004b57bc",
             "004b57bd"
           ]
         },
@@ -8600,6 +8601,7 @@
           "entry_mentioned": true,
           "addresses": [
             "004b57c4",
+            "004b57da",
             "004b57df",
             "004b57ec"
           ]
@@ -8722,15 +8724,20 @@
             "004b58bf",
             "004b592b",
             "004b5931",
+            "004b5932",
             "004b593e",
             "004b5965",
             "004b5978",
             "004b597b",
             "004b5999",
             "004b599e",
+            "004b59b9",
             "004b59c0",
+            "004b59dc",
             "004b59e4",
             "004b59f9",
+            "004b5a02",
+            "004b5a10",
             "004b5a2d",
             "004b5a38"
           ]
