@@ -693,3 +693,7 @@ The [four-baseline audit](original-modern-race-dialog.md) verifies1.1.0 raw stor
 ## Early border coefficient change separated from160 source rewrite
 
 The [five-baseline comparison](original-modern-border-geometry.md#historical-coefficient-halving-precedes-the-fitted-width-cache-rewrite) verifies original/1.1.0/1.5.3 identical1420-byte builders with data coefficient4→2, then1.6.0’s fitted-width cached-thickness builder/updater retained in final. MP100-006 advances to partial; MP160-006 gains the border-specific direct release boundary. Counts100/51/137/2. Integer/visible ratios, refresh lifecycle, marker introduction and1.0.0 introduction remain qualified; no target execution or database changes.
+
+## Race-dialog caller and initial-selection storage follow-up
+
+The [expanded caller audit](original-modern-race-dialog.md#checked-direct-callers-exclude-the-compacted-array-premise) verifies both decoded direct callers passEAX1 and explicitly clear the restriction flag before the builder, without intervening calls. The retained dialog helper stores/clamps the passed candidate into00558b3c. Compacted C1 rows remain a separate local case with no demonstrated direct-caller admission here; no runtime bug or universal fix is inferred. MP120-002 stays partial and catalog counts unchanged. Callback/live interaction and indirect callers remain unverified; no target execution or database changes.
