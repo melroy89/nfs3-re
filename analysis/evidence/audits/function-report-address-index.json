@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "88ffdf703e1220412e7abdd7000923951b523caeade281c303092bfca3039db9"
+      "sha256": "0d415b428e3c541a6a4621c8815a26599379fb9b56c4c1335a9b0875f3e4f47c"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -57,7 +57,7 @@
     },
     {
       "path": "analysis/original-modern-command-line.md",
-      "sha256": "fb199d13774195a9546df4e5feee25fa9894f8a9679cd31ce33e79c607e055cb"
+      "sha256": "fab0fb35ffd4f7861057d94694a326fff7e8991c14edbfc30e8142a31b958ede"
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
@@ -413,7 +413,7 @@
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
-      "sha256": "3d62bbc06a3d2d6ce8c8e50894b452b801dd72e6f7bfb311d63a33ad1624dfdc"
+      "sha256": "d305019d2dac020ed7979a21e839f9a3fe1530941c8ac4f9d2018eea6c5edc72"
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
@@ -5334,6 +5334,13 @@
       "modern_sha256": "39803c6749cdd42cd291dd75c764511c85f7e461bc781ed31b83d0b90f65d1f8",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-command-line.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00472d10"
+          ]
+        },
+        {
           "path": "analysis/original-modern-config-loading.md",
           "entry_mentioned": true,
           "addresses": [
@@ -7936,6 +7943,13 @@
       "modern_sha256": "e4ab4ce8dab2a1bda313ad19bc56c3d7a20215fec732c4a96f6b2ee0c98f7fd7",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-command-line.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004a3690"
+          ]
+        },
+        {
           "path": "analysis/original-modern-music-selection.md",
           "entry_mentioned": true,
           "addresses": [
@@ -8076,6 +8090,20 @@
       "original_sha256": "6798dbc037a3c2f07309d4f8797c92bccdfe19d56a0fe77f5f14bc477bca1f95",
       "modern_sha256": "7feb77e74206e871eadf9b572b8dce6c13c371f69afe3bb09a7176b82cc0e0a3",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-command-line.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004a3db0",
+            "004a3dcf",
+            "004a3dd4",
+            "004a3dda",
+            "004a3ddf",
+            "004a3e2a",
+            "004a3e34",
+            "004a3f08"
+          ]
+        },
         {
           "path": "analysis/original-modern-cpu-tier.md",
           "entry_mentioned": false,
@@ -11096,6 +11124,13 @@
       "original_sha256": "aa0ed86668d57c388f26175f71bfaf26301a3e3d63481912308f6094ce69cf21",
       "modern_sha256": "8810246f41fc9cd6d1d5ba3d106ec5b9dca42703ecb22f3247de5e3b5950a9ce",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-command-line.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004d1750"
+          ]
+        },
         {
           "path": "analysis/original-modern-language-table.md",
           "entry_mentioned": true,

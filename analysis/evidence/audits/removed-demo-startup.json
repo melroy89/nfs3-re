@@ -14,6 +14,13 @@
         "bytes_sha256": "4450d95e3a4a62e7111921ae8286463e12bc92ad9844fd5ad75720cbd10d5bb8",
         "assembly": "analysis/captures/modern-differences/demo-startup/original-004a3b3d.asm",
         "assembly_sha256": "a885dc59c386ddfd9b4e514f9d83b1cded2464a71d670779a9465f28dd9556dc"
+      },
+      "later_application_span": {
+        "start": "004a3d71",
+        "end_exclusive": "004a3e34",
+        "bytes_sha256": "42332ededa5bbaedfbb9c90078ea9b7f28186fabf1aad86451a04fcebbaeda42",
+        "assembly": "analysis/captures/modern-differences/demo-startup/original-004a3d71.asm",
+        "assembly_sha256": "da57768a0c9188f48719948f09d491662f0665263788abf90521cf9f63b0aaaf"
       }
     },
     "official_modern": {
@@ -29,7 +36,15 @@
         "bytes_sha256": "99f6fa37f5b2513261d2059f258d71964f05acf1e9cac762c5d1861951a87b2f",
         "assembly": "analysis/captures/modern-differences/demo-startup/official_modern-004a3b3d.asm",
         "assembly_sha256": "582aaab6fcc86aad21129ce55fc91d504c45d8494b8aeea1076629424c22a403"
-      }
+      },
+      "later_application_span": {
+        "start": "004a3db0",
+        "end_exclusive": "004a3f7d",
+        "bytes_sha256": "adf559ef353d8786933790c70cdb759da9b137a13e13855930e5d4171325ce1b",
+        "assembly": "analysis/captures/modern-differences/demo-startup/official_modern-004a3db0.asm",
+        "assembly_sha256": "a38b1021a28cfc93f100acae0731d17d6edcef4c36762c9ff1aed7889556d1b2"
+      },
+      "negative_search_limit": "Only exact absolute TEST byte encodings in complete application body; not all aliases/callees or whole-process demo semantics."
     }
   },
   "limits": [

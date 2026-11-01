@@ -208,3 +208,21 @@ Their differing stores are:
 When both flagbits are set on entry to these checks, the later `-e3demo` branch overwrites those two locations. This ordering is independent of command-line argument order once both bits are set. The existing [fill-helper capture](original-modern-config-loading.md#original-header-initialization-narrows-the-migration-example) covers its preservation behaviour; the raw pointers and store values above do not by themselves establish named gameplay settings or keyboard actions.
 
 Final Modern replaces **`004a3b3d..004a3d05` with456 NOP bytes**, removing both local startup override bodies as well as emptying their switch names. This is a separate difference from [Modern's changed save gate](original-modern-config-loading.md#removed-save-gate-belongs-to-the-original--msdemo-flag): removing these startup writes does not imply every bit21 consumer was removed. Other writes, aliases, all flag producers and user-visible demo behaviour remain pending. No demo launch, target instruction or Ghidra write was performed.
+
+
+## Later demo branches also change application flow
+
+The extended [demo audit](evidence/audits/removed-demo-startup.json) captures **original `004a3d71..004a3e34`** and **final Modern's complete application envelope `004a3db0..004a3f7d`**. These later original branches are separate from the earlier456-byte override region. They occur after original installation/media/subsystem startup calls.
+
+Original bit21 (`-msdemo`) at `004a3d71` conditionally executes:
+
+- WORD0 to `00554fac`, `0055500e`, `0055513c`, `0055519c`, `0055519e`, `005551a0`.
+- WORD1 to `0055519a`, `005551a2`, `005551a4`.
+- Load active language DWORD`006fbb4c` into EAX and call language loader `004d1750` at`004a3dcf`; see the [language comparison](original-modern-language-table.md).
+- Stage pointer **`0049bfb0`** in ESI before the language-loader call, then store ESI at DWORD`0056446c` (`004a3dd4`) and call display-default routine **`00472d10`** (`004a3dda`). The stored value equals the staged pointer conditional on transitive ESI preservation across the loader. That preservation, callback contract and downstream consumers are not fully qualified here.
+
+Original bit20 (`-e3demo`) is then tested independently at `004a3ddf`. Its body writes WORD0 to `00554fae`, `00555010`, `0055513c`, `0055519c`, `005551a0`, `005551a2`, `0055519e`, and WORD1 to `0055519a`. It clears EAX, calls race-preparation entry **`004a3690`** at`004a3e2a`, then **jumps to cleanup `004a3f08`**, bypassing ordinary state dispatch. The local zeroing with no intervening calls establishes EAX0 and EDX0 at this call; the complete callee ABI remains a separate contract. Successful race startup or completion is not implied.
+
+If both bits are set, both later bodies execute in order; in particular, `005551a2` is written1 by the msdemo body and then0 by the e3demo body. Stores to different addresses, such as `00554fac` versus `00554fae`, do not overwrite each other. Do not conflate this with the two differing fields of the earlier branches or infer the UI meaning of adjacent WORDs.
+
+Final Modern's complete application body has neither of these exact absolute `TEST BYTE [0055eb2e],20/10` encodings. The earlier part of the original sequence overlaps Modern's new jump table/application entry, so describing the entire later branch as a NOP deletion would be incorrect. The supported comparison is removal of these inspected direct demo gates from the replacement application body, alongside the empty named-switch slots. Other flags, aliases, callbacks and transitive demo policies remain outside this bounded negative search. No game launch or race was executed.

@@ -466,3 +466,8 @@ The [ordered-branch audit](original-modern-command-line.md#removed-demo-startup-
 ## Removed low-address startup read and filter path
 
 The [startup comparison](original-modern-startup-policy.md#removed-low-address-read-and-exception-filter-handler) identifies original absolute byte read`0x190`, the metadata-associated UnhandledExceptionFilter path and conditional `0055e8c0` publication within Modern's100-byte NOP replacement. It records the nonordinary stack contract of runtime entry`004f7b7d` and changed metadata target. Intended OS/debugger policy, full dispatch and global consumers remain unresolved. Catalog counts unchanged; no fault or target execution.
+
+
+## Later demo application-flow branches
+
+The [extended comparison](original-modern-command-line.md#later-demo-branches-also-change-application-flow) completes the local original fragment beyond the startup partition: bit21 adds raw WORD writes, language/default calls and pointer publication; bit20 adds other writes, EAX0 race preparation and a cleanup jump. Final's complete application body lacks those exact direct gate encodings. This is not a whole-process absence proof; field meanings, callback contract and runtime outcomes remain pending. Catalog counts unchanged.
