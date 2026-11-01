@@ -660,7 +660,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **86 Claimed, 53 Static, 149 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **85 Claimed, 53 Static, 150 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -776,7 +776,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-028 | Based on the dx7z.dll from the Motor City Online. | Claimed |
 | MP150-029 | Dithering is disabled by default. | Claimed |
 | MP150-030 | Resolutions under 640×480 are hidden. | Partial |
-| MP150-031 | Gameplay loading animation takes into account time of preliminary synchronization of a network game. | Claimed |
+| MP150-031 | Gameplay loading animation takes into account time of preliminary synchronization of a network game. | Partial |
 | MP150-032 | IntroSplashTime ini setting, which allows you to set duration of the intro splash image. | Partial |
 | MP150-033 | Fixed a problem with discolored light from the taillights in the menu when DX6 renderer is used and fog support is enabled. | Claimed |
 | MP150-034 | Fixed a bug which cause a crash when using the screenshoter feature on Windows XP. | Claimed |
@@ -1144,3 +1144,7 @@ The [HUD preview comparison](original-modern-hud-settings-policy.md#hud-preview-
 ## Gameplay exit avoids the frontend mode-request block
 
 The [shutdown-route comparison](original-modern-renderer-lifecycle.md#gameplay-exit-skips-frontend-mode-setup-from150) verifies140→150 adds a zero-input gate around frontend mode/640×480 viewport setup, retaining cleanup. Selected accepted-action5→terminal-state1→shutdown-input0 linkage is retained, including ECX preservation through the intervening finalizer. MP150-035 advances to partial support; configured mode selection, actual OS resolution, network mediation and other exits remain qualified.
+
+## Loading budget accounts for preceding setup from150
+
+The [historical timing comparison](original-modern-loading-timing.md#preliminary-setup-elapsed-time-enters-the-budget-in150) verifies140→150 captures an earlier baseline around artwork/input/network preparation and subtracts elapsed from the later progress budget. It also distinguishes clamp order and historical GetTickCount from final timeGetTime. MP150-031 advances to partial support; synchronization success and visible progress remain untested, and elapsed includes other preparation too.

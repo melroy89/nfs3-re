@@ -13,7 +13,7 @@ The two recent HUD investigations now have concrete mechanisms. These bounded ch
 
 The earlier “unresolved” HUD checkpoint sections below preserve investigation history; they are superseded by these linked findings. The EXE bytes, saved Ghidra database, raw exports and maintained C were not changed by these investigations. No game or new instruction probe was run.
 
-The [catalog](modern-patch-change-catalog.md) currently has **86 vendor-only,53 bounded-static,149 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **85 vendor-only,53 bounded-static,150 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -768,3 +768,7 @@ The [four-snapshot asset audit](original-modern-hud-settings-policy.md#hud-previ
 ## Gameplay-exit mode request suppressed at150
 
 The [four-build shutdown audit](original-modern-renderer-lifecycle.md#gameplay-exit-skips-frontend-mode-setup-from150) supplies partial support for MP150-035:140→150 adds zero-input suppression of frontend mode/viewport setup, with retained selected action/state/input linkage and cleanup admission. Literal640×480 is a viewport request, not proof of the OS mode. Runtime display, network mediation and full cleanup remain unverified.
+
+## Loading setup time included in150 budget
+
+The [three-build timing audit](original-modern-loading-timing.md#preliminary-setup-elapsed-time-enters-the-budget-in150) supplies partial support for MP150-031: earlier baseline/elapsed subtraction replaces the full post-setup budget. Clamp ordering changes, and historical clocks are GetTickCount while final uses timeGetTime. A retained wrapper links admitted network setup inside the elapsed interval; actual protocol duration and animation remain unverified.

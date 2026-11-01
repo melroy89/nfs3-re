@@ -116,3 +116,30 @@ The first floating comparison is made before the candidate's binary32 store, wit
 These states illustrate the local interface, **not proof that all are reached by the real loading lifecycle**. The reset target's ordinary0..10000 bound ensures the E<T numerator fits signed32 before FILD; arbitrary corrupted/negative target state has different unsigned/signed interactions. Zero T skips division via the unsigned E>=T branch.
 
 **MP100-036 advances to partial support:** final Modern has a time-based estimator, admission throttle, branch-specific five-point fallback and caller-consumed completion result. This supplies a concrete smoothing mechanism without proving a fixed animation rate, universal monotonicity, visual smoothness, actual loading improvement or1.0.0 introduction. In particular, the existing outer100%-retry loop bypasses this helper's ordinary throttle; a blanket20-updates-per-second claim would be false for that local route. Renderer callbacks, active state, actual timestamps, scheduler/input and lifecycle reachability remain separate. No game, timer API, floating instructions, new probes or Ghidra writes were executed.
+
+## Preliminary setup elapsed time enters the budget in150
+
+**Verified historical timing placement and arithmetic; network duration/visible progress untested.** The [synchronization-budget audit](evidence/audits/loading-sync-budget-history.json), reproduced with `python3 analysis/scripts/audit_loading_sync_budget_history.py`, pins author-hosted1.4.0/1.5.0 and official final EXEs. It reuses the original/final loading comparison above rather than assigning the new helper addresses false original counterparts.
+
+| Stage |1.4.0 |1.5.0 |Final |
+|---|---|---|---|
+|Earlier baseline capture |No separate baseline in captured loading prefix |`004a345e→004a356c` |`004a3417→004a354c` |
+|Input/network setup call |`004a347c→00477f60` |`004a3481→00477f60` |`004a346b→00477f60` |
+|Progress-clock refresh |`004a3493→004a3568` |`004a3498→004a3578` |`004a347d→004a3558` |
+|Clock interface |GetTickCount |GetTickCount |timeGetTime |
+
+Version1.4.0 refresh calls its clock only after the setup wrapper, writes now to`007a27a0/007a27a4`, clears progress`007a27a8`, clamps the configured seconds`007a27b0` to0..10, multiplies by1000, and publishes the full result to`007a27ac`. Time already spent preparing the session is not subtracted in that helper.
+
+Version1.5.0 first records a clock baseline at`007a27a0`, before loading-artwork/other preparation and the setup wrapper. Its later refresh computes elapsed=now−baseline, resets the same timing/progress state, computes the low32 product seconds×1000, subtracts elapsed modulo2^32, interprets the result signed and clamps to0..10000 milliseconds. Thus time spent in admitted network preparation is included in elapsed, **along with other work in that interval**. This is not a network-only duration measurement. Final retains the same refresh suffix after its relocated clock call; its baseline is earlier in its repacked sequence and must not be described as an identical historical timing window.
+
+| Ordinary derived setting/elapsed |1.4.0 remaining budget |1.5.0/final formula |
+|---|---:|---:|
+|5 seconds;2,000 ms elapsed |5,000 ms |3,000 ms |
+|5 seconds;6,000 ms elapsed |5,000 ms |0 ms |
+|20 seconds;15,000 ms elapsed |10,000 ms |5,000 ms |
+
+These are non-wrapping scalar examples, not original-instruction probes or measured loading/network intervals. The20-second row exposes the changed clamp order: clamping seconds before multiplication is not equivalent to subtracting elapsed before a millisecond clamp. Arbitrary INI values and clock wrap additionally require the actual low32 IMUL/SUB and signed comparison contract. A wide-integer C formula may change the original behaviour.
+
+The complete98-byte wrapper`00477f60..00477fc2` is byte-identical across these three builds. The [existing setup lifecycle audit](multiplayer-setup-abort-lifecycle-audit.md) qualifies its session/playback/abort gates before network setup`004c5e80`. Equal wrapper bytes do not prove equal transitive protocol handling, successful synchronization or equal elapsed duration. The new audit independently resolves each historical clock IAT operand to **KERNEL32.GetTickCount** and final's operand to **WINMM.timeGetTime**; both APIs expose milliseconds, but their state/resolution/scheduling are not asserted equivalent.
+
+**MP150-031 advances to partial static support:** the claimed140→150 boundary moves timing capture before the checked setup interval and subtracts that interval from the later animation budget. This establishes a concrete accounting change, not a promise of smooth animation, synchronization completion, a fixed splash duration or full original/Modern compatibility. Original's fixed-argument route, estimator throttling and nonmonotonic/smoothing boundaries remain as documented above. No game, clock API, network, instruction probe, compiler or Ghidra write was used.
