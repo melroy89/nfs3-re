@@ -1,7 +1,7 @@
 """Static historical abort presentation routing, without target execution."""
 import hashlib,json,subprocess
 import pefile
-from audit_thrash_loader_difference import ROOT
+from audit_thrash_loader_difference import ROOT,SPECS
 from audit_x87_precision_history import calls
 
 
@@ -46,6 +46,18 @@ def main():
     result['retained_overlay_bytes']=138
     result['retained_wait_adapter_bytes']=15
     result['new_wait_request']={'milliseconds':200,'alertable':True,'call':'004a353c','api':'SleepEx'}
+    relative,expected,_=SPECS['original']
+    raw=(ROOT/relative).read_bytes();assert sha(raw)==expected
+    original=pefile.PE(data=raw)
+    poller=original.get_data(0xa33d0,43)
+    assert poller==a.get_data(0xa33d0,43)
+    output=capture/'original-004a33d0.asm'
+    output.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
+        '--start-address=0x4a33d0','--stop-address=0x4a33fb',relative],cwd=ROOT))
+    result['original_poller']={'executable':relative,'sha256':expected,'start':'004a33d0',
+        'end_exclusive':'004a33fb','bytes_sha256':sha(poller),'identical_to_153':True,
+        'assembly':str(output.relative_to(ROOT)),'assembly_sha256':sha(output.read_bytes()),
+        'timing_limit':'No direct fixed-delay call in this complete poller; transitive renderer/cleanup timing and claimed500ms remain unverified.'}
     (ROOT/'analysis/evidence/audits/abort-presentation-153-160.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: overlay unchanged; historical draw moves from poller to loading exit with200ms alertable wait')
 

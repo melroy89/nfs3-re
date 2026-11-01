@@ -67,3 +67,9 @@ The only executable-section direct E8 candidate to the overlay changes from the 
 The newer branch requests SleepEx(200,TRUE) through the retained adapter. Conditional overlay gating, asynchronous completion/APCs, scheduling, renderer calls and broader loading/cleanup order still prevent equating that request with exactly200 ms of visible text. No corresponding500 ms wait is established in these inspected older bodies. The vendor's earlier-duration statement remains unresolved, rather than inferred from unrelated500 ms waits elsewhere in the image.
 
 MP160-011 remains **partial**, now with verified1.5.3→1.6.0 presentation routing and wait-request introduction. Required follow-up for the full timing claim is a complete older presentation/cleanup timeline or a separately scoped observed display-duration comparison. No game abort, target execution or timing measurement was performed.
+
+### Older 500 ms claim: precise remaining boundary
+
+The expanded historical audit also pins the supplied-original43-byte poll helper `004a33d0..004a33fb` and verifies it is identical to1.5.3's body. It sets the abort flag, calls the overlay and returns; no direct fixed-delay request appears in that complete helper. The earlier original/final overlay comparison retains the full original overlay too, whose draw/present tail likewise does not establish a local500 ms hold. These bounded observations do not exclude delays inside renderer calls, cleanup or outer caller scheduling.
+
+Accordingly, “previously500 ms” remains vendor-reported timing rather than a verified immediate or measured duration. Closing it requires a transitive older render/cleanup timeline or observed message lifetime with identified builds and timing boundaries. An unrelated500 ms SleepEx call elsewhere in the EXE is insufficient evidence. Further searching this already-inspected poller would not advance that question.

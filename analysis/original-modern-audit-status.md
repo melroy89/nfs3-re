@@ -266,3 +266,7 @@ At reviewed head7c36f96,11 selected static audit scripts passed, and original/of
 ## Historical abort-presentation routing
 
 The [1.5.3/1.6.0 comparison](original-modern-pending-overlay.md#historical-v160-change-defer-presentation-until-loading-exit) verifies overlay drawing moves from the input poller to the terminal abort branch, alongside the explicit200ms alertable wait. Overlay and wait adapter bodies are retained. MP160-011 stays partial: neither the older500ms claim nor exact visible duration is established. Counts unchanged; no target/API/timing execution.
+
+## Two local evidence boundaries tightened
+
+The historical abort audit now verifies the supplied-original poll helper matches1.5.3 and contains no direct fixed wait; the claimed prior500ms duration remains a transitive/runtime question, with the required evidence recorded. Separately, complete original helper472fc0 saves/restores EDX, closing the register dependency for the conditional reset-flag clear. No broad runtime or whole-game completion claim follows; catalog labels/counts unchanged.

@@ -96,6 +96,13 @@
           "bytes_sha256": "c88332284bf3ffdfa878cbc97be06d85916cdd92d849329030dda3f09ee62608",
           "assembly": "analysis/captures/modern-differences/config-loading/original-00472e70.asm",
           "assembly_sha256": "1af9e3ea76929b64f6396ee7f50e2194261c8bde57019f4efcc2820b51ffdb0d"
+        },
+        {
+          "start": "00472fc0",
+          "end": "0047300d",
+          "bytes_sha256": "f0a3e9bee213eb949bd55f0339f3b3717adc974cbd8c6a85378ea903b89a9ef4",
+          "assembly": "analysis/captures/modern-differences/config-loading/original-00472fc0.asm",
+          "assembly_sha256": "1ad7bd8e0c0fec9b07abe73bd845078fae442f3a789074000bbdd68ca5e080d6"
         }
       ],
       "flag_bit21_switch": {
@@ -247,6 +254,7 @@
     "original_comparison": "00472ad1..00472ae9: current007a3a58 versus saved006fbc10; mismatch writes1 to0067900c.",
     "original_saved_type_producer": "00472e72/00472e83 copies current type into saved field.",
     "original_conditional_consumer": "0047316e..0047319a: outer gates,00472fc0, then flag test/store and CALL00472d10.",
+    "original_flag_clear_contract": "00472fc0..0047300d saves EDX on entry and restores it before RET; gated caller loaded EDX0 from0055e88c, so0047318f writes0 on ordinary return.",
     "modern": "Complete config load uses header/version admission instead; startup00473160 jumps to0047319a over56 NOPs.",
     "limits": [
       "Renderer-type mask equality is not full DLL/device identity.",
