@@ -52,3 +52,23 @@ For C reconstruction, separate original two-choice policy from Modern four-choic
 ## Historical1.5.0 to1.5.1 first-choice translation index
 
 The [historical descriptor/asset check](original-modern-localization-151.md#frame-size-first-choice-label-switches-to-the-new-full-entry) verifies the same key/selector descriptor but a two-choice WORD list changing184,1933→1932,1933. French/Spanish first-choice strings differ through that retargeting; German remains byte-identical. This dates a label-index change, not the final four-choice expansion or a framing arithmetic change. Exact historical words and six-language values are retained separately from final numbering.
+
+
+## Direct1.5.3 to1.6.0 expansion boundary
+
+The [historical audit](scripts/audit_frame_setting_history.py) verifies both retained archive hashes and their extracted EXE hashes against existing provenance manifests, then reads each matching packaged English text file. Its [evidence manifest](evidence/audits/frame-setting-history.json) records descriptor DWORDs, WORD lists, English labels and asset hashes. No archive member was installed or executed.
+
+| Descriptor field |1.5.3 |1.6.0 |
+|---|---|---|
+| Row address | `005567a8` | Same |
+| Key | `widescreen` at`00538008` | Same |
+| Label-list pointer | `005562d2` | `005591f6` |
+| WORD IDs before zero terminator |1932,1933 |1951,1952,1953,1954 |
+| Two optional fields |0,0 |Same |
+| Selection storage |`006fbc4c` |Same |
+
+Matching English labels are **Full /2:1** in1.5.3, versus **Full, Centered / Full, Shifted /2:1, Centered /2:1, Shifted** in1.6.0. This directly dates the selected two-to-four option-table expansion to the immediate retained release pair, rather than guessing from original/final alone. It corroborates MP160-004's expanded setting mechanism; the separate final bit-consumer analysis above explains final ordinal interpretation.
+
+**Boundary:** these historical descriptor/asset checks do not prove that every1.6.0 geometry consumer already matches final, that a camera visibly shifts correctly, that arbitrary old saved ordinals are migrated, or that every localized label is correct. The selector address staying equal is not proof that its ordinal semantics stay equal: historical ordinal1 is2:1, while final ordinal1 is Full, Shifted. Actual load/reset policies and consumer versioning remain separate.
+
+**Work status:** selected historical expansion mechanism done, confidence verified static. Full MP160-004 outcome remains partial because runtime/complete consumer coverage is not established. No viewport, UI or instruction probe was run.

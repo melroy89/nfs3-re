@@ -1,0 +1,63 @@
+{
+  "kind": "historical-frame-setting-expansion",
+  "versions": {
+    "1.5.3": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.3.7z",
+      "archive_sha256": "0f92afacbbc179500ede3d7e22107999f3d4ad9ff0a41feb8cd00ef65559ec64",
+      "exe_sha256": "07e987193ebeb4b30ac3912f90d8b98f2a34b37632dbad232ecfcea12fdb7c0a",
+      "descriptor_address": "005567a8",
+      "descriptor_dwords": [
+        "00538008",
+        "005562d2",
+        "00000000",
+        "00000000",
+        "006fbc4c"
+      ],
+      "label_list_address": "005562d2",
+      "word_ids": [
+        1932,
+        1933
+      ],
+      "labels": [
+        "Full",
+        "2:1"
+      ],
+      "text_member": "fedata/text/text.eng",
+      "text_sha256": "26b6415603a3bd20645ed905bbcc3f1ca8eb9dc2fa3488ed9ac9b95231bc4dd5",
+      "scope": "Descriptor bytes and referenced strings verified; runtime selection and geometry not observed"
+    },
+    "1.6.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.6.0.7z",
+      "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
+      "exe_sha256": "9fd80c4cdc9827f190698f28aa93f1182218d7c557898fb2653abfc4148c7a72",
+      "descriptor_address": "005567a8",
+      "descriptor_dwords": [
+        "00538008",
+        "005591f6",
+        "00000000",
+        "00000000",
+        "006fbc4c"
+      ],
+      "label_list_address": "005591f6",
+      "word_ids": [
+        1951,
+        1952,
+        1953,
+        1954
+      ],
+      "labels": [
+        "Full, Centered",
+        "Full, Shifted",
+        "2:1, Centered",
+        "2:1, Shifted"
+      ],
+      "text_member": "fedata/text/text.eng",
+      "text_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+      "scope": "Descriptor bytes and referenced strings verified; runtime selection and geometry not observed"
+    }
+  },
+  "limits": [
+    "Selected descriptor and matching English asset only; not every frame consumer or localization.",
+    "No game/menu/viewport execution or visible camera-shift test."
+  ]
+}

@@ -526,3 +526,8 @@ The [two-menu audit](original-modern-localization-151.md#historical-menu-assets-
 ## Historical Full entry has a Frame Size descriptor consumer
 
 The [WORD-table follow-up](original-modern-localization-151.md#frame-size-first-choice-label-switches-to-the-new-full-entry) verifies identical widescreen descriptor/selection storage but first label184→1932, preserving second1933. Matching assets change French/Spanish first-choice wording; German remainsVoll. This explains a semantic retargeting beyond changed shared strings, while keeping the claimed German correction and runtime rendering unresolved. MP151-005 remains partial; counts unchanged.
+
+
+## Frame Size expansion directly dated1.5.3 to1.6.0
+
+The [historical descriptor/English-asset audit](original-modern-frame-setting.md#direct153-to160-expansion-boundary) verifies immediate retained release hashes, two→four choices and retained selector storage. This resolves the table-expansion introduction gap for MP160-004, while full historical geometry consumers, saved-ordinal migration and visible shifts remain unverified. The catalog entry stays partial; counts unchanged. No target execution.

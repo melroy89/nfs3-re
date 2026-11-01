@@ -956,3 +956,8 @@ The [four-EXE correspondence check](original-modern-lockwindow-history.md#corres
 ## Historical1.5.1 localization changes
 
 The [complete six-language asset comparison](original-modern-localization-151.md) identifies all changed existing indices and five appended entries in each table. French changes `Champ de vision` to `Champ de vue`; all languages remap the old1932 `km` entry and add rear-view labels. Other shared German/Spanish wording is unchanged, so the advertised corrections are only partly explained. Exact bytes/indices and consumer/encoding limits are documented; this is packaged-asset evidence, not rendered UI or an EXE-code change.
+
+
+## Historical Frame Size expansion boundary
+
+The [direct1.5.3→1.6.0 descriptor/asset comparison](original-modern-frame-setting.md#direct153-to160-expansion-boundary) now dates the two-to-four Frame Size expansion with matched English labels and unchanged selector storage. This is distinct from1.5.1's earlier Full-label retargeting. Saved ordinal compatibility, complete historical geometry behaviour and rendered shifts remain unverified.
