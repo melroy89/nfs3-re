@@ -92,3 +92,27 @@ There is no explicit sleep, retry cap or independent timeout in this local loop.
 The audit now asserts Modern `0049556f..00495589` in full. When the estimated output bits equal100.0 and ESI is nonzero, this branch clears ESI, calls renderer slot `009ef948` with0, then jumps from `00495587` to `0049551d`. That target repeats the optional state changes, quad submission `004c12e0` and renderer-slot calls `009ef950/009ef940`. It does not repeat the timing estimator, input polling or preceding geometry construction. Original's tail has no corresponding backedge before its x87-control sequence.
 
 This is separate from the outer `004a3529 ->004a3514` completion retry, which invokes the whole progress routine again. Locally, clearing ESI makes the inner tail repeat at most once **provided the intervening callees preserve ESI**; callback conformance remains an explicit interface requirement, not a proven property of every supplied driver. The earlier geometry stage uses ESI as a nonzero record pointer, rather than declaring an independent C Boolean loop variable. Calling this a guaranteed double-buffer refresh or exactly two displayed frames would infer a renderer purpose that has not been established. Preserve the two loop levels and register contract separately in reconstruction. No draw callback was executed.
+
+## Smoothing is branch-specific, not a monotonic five-point invariant
+
+**Verified estimator control flow; examples are derived, not runtime observations.** The [estimator-contract audit](evidence/audits/loading-estimator-contract.json), reproduced with `python3 analysis/scripts/audit_loading_estimator_contract.py`, retains complete143-byte Modern helper`00490134..004901c3`. It complements the paired original/final progress bodies, clock/reset state and caller evidence above; original bytes at this new helper's address are not treated as a corresponding original implementation.
+
+For ordinary finite requested progress R and valid reset state, the ordered behavior is:
+
+1. Except for **exact bits100.0**, reject when unsigned wrapped`now-last_update<=50`, returning integer`ffffffffh` without the final progress/timestamp stores.
+2. Let E be unsigned wrapped`now-start` and T the remaining target. If E<T, form percentage P through low32`E*100`, signed FILD and signed FIDIV by T. When P<=R, return/store the binary32 percentage **without applying prior+5**.
+3. Otherwise use the other branch: compare prior+5 with R. For ordinary ordered values this selects the smaller, then stores its selected bits and the current timestamp.
+
+The first floating comparison is made before the candidate's binary32 store, with FNSTSW followed by FSTP and SAHF. The second has the same ordering. Extended intermediates, ambient precision/rounding, store exceptions and comparison flags are therefore part of the contract; the ordinary real-expression guide is not a portable C equivalence claim. Unordered values take their encoded branches and must not be silently normalized through a generic min function.
+
+| Hypothetical admitted state, all times ms | Instruction-derived result | What it demonstrates |
+|---|---|---|
+|R50, E1000, T4000, prior0;100 since last update |25 |Time branch can jump by more than5 |
+|R100, E1000, T4000, prior80;1 since last update |25 |Exact100 bypasses throttle; local code does not enforce monotonicity |
+|R10, E1000, T4000, prior30;100 since last update |10 |Fallback can select a lower request |
+|R50; exactly50 since last update |Integer−1; progress/timestamp not stored here |Boundary is unsigned`<=50`, not`<50` |
+|R100, T0, prior0;0 since last update |5 |Terminal request can advance fallback without waiting50ms |
+
+These states illustrate the local interface, **not proof that all are reached by the real loading lifecycle**. The reset target's ordinary0..10000 bound ensures the E<T numerator fits signed32 before FILD; arbitrary corrupted/negative target state has different unsigned/signed interactions. Zero T skips division via the unsigned E>=T branch.
+
+**MP100-036 advances to partial support:** final Modern has a time-based estimator, admission throttle, branch-specific five-point fallback and caller-consumed completion result. This supplies a concrete smoothing mechanism without proving a fixed animation rate, universal monotonicity, visual smoothness, actual loading improvement or1.0.0 introduction. In particular, the existing outer100%-retry loop bypasses this helper's ordinary throttle; a blanket20-updates-per-second claim would be false for that local route. Renderer callbacks, active state, actual timestamps, scheduler/input and lifecycle reachability remain separate. No game, timer API, floating instructions, new probes or Ghidra writes were executed.
