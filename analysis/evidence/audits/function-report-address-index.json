@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "d13c5b4610a11a9ea2b20a1988d492ccfb05093c78fc3ab4e08fd81e39bad9e8"
+      "sha256": "534feae6c61304f8b3b0248f3763fa91d5db561217130616d158425183a90c49"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -121,7 +121,7 @@
     },
     {
       "path": "analysis/original-modern-dx7-viewport-depth.md",
-      "sha256": "f154a9cfb3a627e0844b7bc0a069b54f47df522fac0c2134c7897dc7012f2bd3"
+      "sha256": "0057067a3003ee119cad8a1517fe9f57dd40e2f950a699fb5431b0c979038cab"
     },
     {
       "path": "analysis/original-modern-effect-renderer-masks.md",

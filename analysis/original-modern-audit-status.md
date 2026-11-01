@@ -587,3 +587,7 @@ The [count-path follow-up](original-modern-dx7-mode-admission.md#adapter-count-c
 ## DX7 clip-record depth candidate for the visual workaround
 
 The [complete150-byte clip comparison](original-modern-dx7-viewport-depth.md) verifies exactly two changed immediate bytes,1−1/65536→1.0 in a six-DWORD record sent through vtable+34h. SDK layout/slot matches D3DVIEWPORT7/SetViewport; complete object provenance, device acceptance and Old Church black-polygon attribution remain unverified. MP161-003 advances to partial candidate evidence, not confirmed workaround. Current counts126/48/114/2; no target execution.
+
+## DX7 viewport device producer follow-up
+
+The [viewport-depth audit](original-modern-dx7-viewport-depth.md#device-producer-identifies-the-receiving-interface) now pins identical paired QueryInterface and CreateDevice witnesses. The exact IID identifies IDirect3D7; its factory output identifies IDirect3DDevice7 in`60058d9c` on a successful selected path, supporting SetViewport at+34h. Object lifetime, other writers, call admission and Old Church symptom attribution remain unverified. MP161-003 remains partial; catalog counts unchanged. No target execution or database changes.

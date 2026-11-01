@@ -5,6 +5,25 @@
       "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
       "member": "drivers/dx7/dx7a.dll",
       "sha256": "8f3ed9676611d65f40b5dde537aab5813d2e2a854c08fdf3b08b7d19a7a25d5e",
+      "device_producers": {
+        "query-interface": {
+          "start": "600096e5",
+          "end_exclusive": "60009704",
+          "hex": "a1808d05608b0868988d056068f85b016050ff1133f63bc6bb345701607424",
+          "sha256": "7e7d3bffb18983cbd3f2b2abb60c3205dade37c31006c39b9c12b29ce588d826",
+          "assembly": "analysis/captures/modern-differences/dx7-viewport-depth/1.6.0-query-interface.asm",
+          "assembly_sha256": "3a732e5d88205273d7f0d5f35e45704dda5e13560b7259cce3f840e76e54a3eb"
+        },
+        "create-device": {
+          "start": "60009f8a",
+          "end_exclusive": "60009fb4",
+          "hex": "8b15888d0560a1988d05608b08689c8d056052c7056c8d05600100000068e85b016050ff51103bc67423",
+          "sha256": "69d8ff7cd125534a75abbf853110b50e112dfdf478fc199b7fcb1a93d9d703e1",
+          "assembly": "analysis/captures/modern-differences/dx7-viewport-depth/1.6.0-create-device.asm",
+          "assembly_sha256": "f5b3d982e15935151a987fa7d28fdddbd2e10d7d037be6e41e14d31f5806bfa5"
+        }
+      },
+      "parent_iid": "f5049e77-4861-11d2-a407-00a0c90629a8",
       "entry": "600013c0",
       "end_exclusive": "60001456",
       "bytes": 150,
@@ -18,6 +37,25 @@
       "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
       "member": "drivers/dx7/dx7a.dll",
       "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+      "device_producers": {
+        "query-interface": {
+          "start": "600096e5",
+          "end_exclusive": "60009704",
+          "hex": "a1808d05608b0868988d056068f85b016050ff1133f63bc6bb345701607424",
+          "sha256": "7e7d3bffb18983cbd3f2b2abb60c3205dade37c31006c39b9c12b29ce588d826",
+          "assembly": "analysis/captures/modern-differences/dx7-viewport-depth/1.6.1-query-interface.asm",
+          "assembly_sha256": "3a732e5d88205273d7f0d5f35e45704dda5e13560b7259cce3f840e76e54a3eb"
+        },
+        "create-device": {
+          "start": "60009f8a",
+          "end_exclusive": "60009fb4",
+          "hex": "8b15888d0560a1988d05608b08689c8d056052c7056c8d05600100000068e85b016050ff51103bc67423",
+          "sha256": "69d8ff7cd125534a75abbf853110b50e112dfdf478fc199b7fcb1a93d9d703e1",
+          "assembly": "analysis/captures/modern-differences/dx7-viewport-depth/1.6.1-create-device.asm",
+          "assembly_sha256": "f5b3d982e15935151a987fa7d28fdddbd2e10d7d037be6e41e14d31f5806bfa5"
+        }
+      },
+      "parent_iid": "f5049e77-4861-11d2-a407-00a0c90629a8",
       "entry": "600013c0",
       "end_exclusive": "60001456",
       "bytes": 150,
@@ -30,20 +68,21 @@
   },
   "limits": [
     "No renderer, viewport, API or instruction execution.",
-    "SetViewport identity supported by SDK layout/vtable; complete factory/object lifetime not qualified.",
+    "SetViewport identity supported by SDK layout/vtable; selected successful factory chain verified; complete object lifetime not qualified.",
     "No demonstrated link to Old Church black-polygon symptom or all rendering paths."
   ],
   "sdk_references": [
     "https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/d3dtypes.h",
     "https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/d3d.h"
   ],
+  "producer_witnesses_identical": true,
   "changed_addresses": [
     "60001421",
     "60001422"
   ],
   "interpretation": {
     "record": "SixDWORDs: x,y,wrap32(x2-x),wrap32(y2-y),float0,changedfloat",
-    "consumer": "Object60058d9c vtable+34h receivespointertorecord",
+    "consumer": "Selected successful QueryInterface IID_IDirect3D7 -> parent60058d98 CreateDevice vtable+10h -> IDirect3DDevice7 output60058d9c -> SetViewport vtable+34h",
     "sdk_correspondence": "D3DVIEWPORT7 hasfourDWORDcoordinates/extents thenfloatdvMinZ/dvMaxZ;IDirect3DDevice7 slot13=SetViewport",
     "limitation": "Matching other clipbody bytes do not prove unchanged flushhelper effects or successful API call;body returns1withouttestingAPIresult"
   }

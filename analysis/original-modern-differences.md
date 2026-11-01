@@ -996,3 +996,7 @@ The [DX7 wrapper comparison](original-modern-dx7-mode-admission.md#missing-displ
 ## Historical DX7 clip-record maximum-depth candidate
 
 The [paired clip-export comparison](original-modern-dx7-viewport-depth.md) identifies the only two differing bytes in its complete150-byte body: a binary32 bound changes1−1/65536→1.0. Record layout and vtable slot match the SDK viewport maximum-depth interface. This is a rendering-state candidate for the separately advertised black-polygon workaround, with object/device/symptom attribution still unverified; it is not an x87 precision-control change.
+
+## DX7 viewport device producer follow-up
+
+The [viewport-depth audit](original-modern-dx7-viewport-depth.md#device-producer-identifies-the-receiving-interface) now pins identical paired QueryInterface and CreateDevice witnesses. The exact IID identifies IDirect3D7; its factory output identifies IDirect3DDevice7 in`60058d9c` on a successful selected path, supporting SetViewport at+34h. Object lifetime, other writers, call admission and Old Church symptom attribution remain unverified. MP161-003 remains partial; catalog counts unchanged. No target execution or database changes.
