@@ -44,7 +44,7 @@ Modern Options initializer `00442aa0` calls shared policy helper `00437614`, rep
 
 For C reconstruction, preserve the outer-context flag, zero template defaults, WORD field layout, creation-callback ordering and OR-only suppression semantics. A port that uses the current nested menu name alone to decide postgame state, or restores `mainonly=1` while adopting Modern assets, can change control behaviour even with an otherwise faithful button renderer.
 
-Next: trace postgame-to-Options admission/return paths and all later flag writers, compare actual selected assets in a suitable runtime session, and obtain intermediate packages if historical attribution is required. Do not silently turn this bounded mechanism into whole-postgame UI equivalence. Executables, saved Ghidra state, raw exports and maintained C remain preserved.
+Next: reuse the conditional postgame-to-Options admission/return witnesses below, qualify later flag writers, compare actual selected assets in a suitable runtime session, and obtain intermediate packages if historical attribution is required. Do not silently turn this bounded mechanism into whole-postgame UI equivalence. Executables, saved Ghidra state, raw exports and maintained C remain preserved.
 
 ## First-screen Options policy: a new setup-state producer
 
@@ -71,3 +71,26 @@ The helper also has an early return when its non-null context is paired with `00
 This supports the release claim for an ordinary sequence that initializes setup, takes its authored Options transition, and reaches the policy without intervening state overrides. It does not establish every user-visible first-screen route or the v1.4.0 introduction date. Original does not have this inserted state store or call the shared Modern policy from Options; its final visible result still depends on original assets, generic flags and rendering.
 
 For C reconstruction, retain the new setup write as well as the policy consumer. Translating only the shared helper while leaving lifecycle producers at their original behaviour would miss the mechanism. Keep this mutable state separate from the postgame context flag `00662968` and pause/context flag `00559234`; they control different branches.
+
+## Postgame-to-Options transition and return witnesses
+
+The [expanded audit](scripts/audit_options_postgame_difference.py) now reads `POSTGAME.MNU` directly from both pinned archives. Each contains exactly one button labelled `kMenuPOSTGAMEOptions001`, with `nextmenu=options`, type `LR2of3` and no authored codelink. It also verifies that the author-reference `OPTIONS.MNU` hash matches the selected local backup used above. This improves source identity without authenticating pristine retail.
+
+The already compared [generic nextmenu route](original-modern-setup-website.md#generic-options-transition-retained-code-changed-asset-route) applies conditionally to this button as well: its ordinary button template has zero specialized-callback fields at+58h/+64h, the input handler can return action5, and descriptor-name lookup can find Options. Later field writers, loaded-descriptor presence and selection/default-entry checks remain admission conditions. An authored string alone is not a successfully observed transition.
+
+New complete or explicitly bounded original/Modern comparisons establish the rest of this local control flow; all listed bytes are identical across the supplied original and official final EXEs:
+
+| Range, exclusive end | Verified role |
+|---|---|
+| `0044b7ec..0044b8d3` | Action5 lookup: on a found target, calls history helper `0044af10`, processes the outgoing descriptor through `0044aa30`, publishes the new active descriptor at `00559230`, and branches through `0044b6f6` rather than restarting the outer context-name prefix |
+| `0044af10..0044af4a` | Complete history helper: shifts stored descriptor pointers and writes the current active descriptor to `00662800` |
+| `0044b30b..0044b326` | Loop entry calls `0044ab40` with the active descriptor and stores its returned action |
+| `0044ab40..0044ac7c` | Complete descriptor initializer: after conditional preparation, calls descriptor callback+08h if nonnull, then calls generic entry initialization `0044a960`, then `0044a860` |
+| `0044b8f7..0044b90b` | Existing return branch processes the outgoing descriptor, calls `0044aec0`, then resumes the descriptor loop at `0044b30b` |
+| `0044aec0..0044af05` | Complete restore helper: obtains the saved descriptor from `00662800`, shifts the history, substitutes base descriptor `006040d0` if saved pointer is null, and writes active descriptor `00559230` |
+
+Static registration callback offsets and runtime descriptor offsets are different layouts; do not copy the Options static registration's+0ch field blindly into runtime+0ch. The runtime initializer's observed callback is+08h. The loader's complete registration-to-runtime mapping is not newly proved by these spans.
+
+These witnesses explain a conditional nested Postgame→Options route and a separate history-based return route without requiring a new frontend invocation with context name `options`. They support the earlier mainonly mechanism: removing three authored restrictions can matter while the outer postgame flag is still set. **They do not prove the flag is preserved through every subordinate callback**, that the return branch is reached by every key/button, or that the history is valid at arbitrary depth. The outgoing callback, preparation helpers, actual loaded assets and later flag writers retain their separate obligations.
+
+The relevant difference remains the authored restrictions and Modern Options policy already described above. This follow-up establishes retained linkage; it does not invent a new changed algorithm, prove the1.4.0 introduction date or establish rendered visibility. Next work should reuse this route and qualify particular callbacks/state writers or runtime cases, rather than re-investigate whether the authored Postgame Options target exists.

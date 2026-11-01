@@ -12,7 +12,10 @@ def main():
     capture.mkdir(parents=True, exist_ok=True)
     all_data = []
     images = []
-    spans = ((0x44a960, 0x44a9db), (0x44b24e, 0x44b271), (0x449240, 0x4492e9), (0x44b271, 0x44b28a))
+    spans = ((0x44a960, 0x44a9db), (0x44b24e, 0x44b271), (0x449240, 0x4492e9), (0x44b271, 0x44b28a),
+             (0x44b7ec, 0x44b8d3), (0x44b30b, 0x44b326),
+             (0x44ab40, 0x44ac7c), (0x44af10, 0x44af4a),
+             (0x44aec0, 0x44af05), (0x44b8f7, 0x44b90b))
     for label, (relative, expected, _) in SPECS.items():
         raw = (ROOT/relative).read_bytes(); assert hashlib.sha256(raw).hexdigest() == expected
         pe = pefile.PE(data=raw); images.append(pe); rows = []; bodies = []
@@ -64,6 +67,32 @@ def main():
             if label == 'official': assert 'mainonly' not in row['fields'] and 'postonly' not in row['fields']
             else: assert row['fields']['mainonly'] == '1' and row['fields']['postonly'] == '0'
         result['assets'][label] = {'path': relative, 'sha256': hashlib.sha256(data).hexdigest(), 'controls': selected}
+    reference_archive = ROOT/'analysis/captures/modern-differences/upstream/history/nfs3_orig.7z'
+    assert hashlib.sha256(reference_archive.read_bytes()).hexdigest() == '374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127'
+    from audit_controller_reset_asset import sections as parse_sections
+    result['postgame_options_route'] = {'assets': {}}
+    for label, source, member in [('reference', reference_archive, 'fedata/MENUS/POSTGAME.MNU'),
+                                  ('official_modern', archive, 'fedata/menus/postgame.mnu')]:
+        raw = subprocess.check_output(['7z', 'x', '-so', str(source), member])
+        rows = [row for row in parse_sections(raw) if row['fields'].get('text') == 'kMenuPOSTGAMEOptions001']
+        assert len(rows) == 1
+        row = rows[0]
+        assert row['section'] == '[button]'
+        assert row['fields']['nextmenu'] == 'options' and row['fields']['buttontype'] == 'LR2of3'
+        assert 'codelink' not in row['fields']
+        result['postgame_options_route']['assets'][label] = {'member': member,
+            'archive_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
+            'sha256': hashlib.sha256(raw).hexdigest(), 'button': row}
+    old_options = subprocess.check_output(['7z', 'x', '-so', str(reference_archive), 'fedata/MENUS/OPTIONS.MNU'])
+    assert hashlib.sha256(old_options).hexdigest() == result['assets']['local_uppercase_backup']['sha256']
+    result['postgame_options_route']['reference_options_matches_prior_backup'] = True
+    for pe in images:
+        assert pe.get_data(0x556e40-0x400000+0x58, 4) == bytes(4)
+        assert pe.get_data(0x556e40-0x400000+0x64, 4) == bytes(4)
+        assert pe.get_data(0x44b8ce-0x400000, 5).hex() == 'e923feffff'
+        assert pe.get_data(0x44ac58-0x400000, 7).hex() == '89c8ff510889c2'
+        assert pe.get_data(0x44ac61-0x400000, 5).hex() == 'e8fafcffff'
+    result['postgame_options_route']['scope'] = 'Conditional nextmenu selection and descriptor initializer ordering; callbacks/loaded descriptors/later context writes remain unqualified.'
     result['limits'] = ['No runtime menu selection, visibility or rendering tested.', 'Backup assets are not authenticated retail provenance.', 'Later flags/field overrides and every postgame entry path remain unenumerated.']
     (ROOT/'analysis/evidence/audits/original-modern-options-postgame.json').write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: retained generic gate/template/fields; official Options removes three mainonly restrictions')

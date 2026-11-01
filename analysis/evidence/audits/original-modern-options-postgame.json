@@ -33,6 +33,48 @@
           "bytes_sha256": "7b9937ce3e7689550b142cf4f16ca05290d1d73b62287442634383fb93e391b2",
           "assembly": "analysis/captures/modern-differences/options-postgame/original-0044b271.asm",
           "assembly_sha256": "00489d02cf914c98fa51d55936185b96e4f1d4eef3610662d72596a6cecf4c3b"
+        },
+        {
+          "start": "0044b7ec",
+          "end": "0044b8d3",
+          "bytes_sha256": "73cb50e27ae2c055b7c99311f5cf1c4bb70d22f0e1cca32263ebead1825d508d",
+          "assembly": "analysis/captures/modern-differences/options-postgame/original-0044b7ec.asm",
+          "assembly_sha256": "9da4bdcf365f85daf9feff78b66559d7626a6d518359e72d696e85b94d3adf88"
+        },
+        {
+          "start": "0044b30b",
+          "end": "0044b326",
+          "bytes_sha256": "2e5615ebccd1c55fe11ee33c4c431d10aab5fd791ff2327d38e618c363fd0646",
+          "assembly": "analysis/captures/modern-differences/options-postgame/original-0044b30b.asm",
+          "assembly_sha256": "e01d8bc8d20d37ef89cecc7aaa3079785b254b5cc2d20c77c43022b827244895"
+        },
+        {
+          "start": "0044ab40",
+          "end": "0044ac7c",
+          "bytes_sha256": "e793b3e4b49ea6feacf539d158c65221ccec0d0f8570e3cadf7b364b5ea4017e",
+          "assembly": "analysis/captures/modern-differences/options-postgame/original-0044ab40.asm",
+          "assembly_sha256": "12b04182cd4903d74a8c34df32cb474a01701dc8ccaae844e17a6ad11ea4e26d"
+        },
+        {
+          "start": "0044af10",
+          "end": "0044af4a",
+          "bytes_sha256": "4ce9ffabd8e1f1bc6ade9b7b6e8e9ca14e21084e033eee9cf60c4f38703e66e9",
+          "assembly": "analysis/captures/modern-differences/options-postgame/original-0044af10.asm",
+          "assembly_sha256": "ad2543e85915f4e1196eb79b6a3e6514b57383e4dc19cdc5af8895d180d3eec4"
+        },
+        {
+          "start": "0044aec0",
+          "end": "0044af05",
+          "bytes_sha256": "1be245e2cdc11d688989c4cda1219fbb367a586a7c9cf67186ad6a8e3b5661e0",
+          "assembly": "analysis/captures/modern-differences/options-postgame/original-0044aec0.asm",
+          "assembly_sha256": "94eeba3ffc2bf2ff31e5d0162a6cc98eb843b9af6981e92c541301cfac540696"
+        },
+        {
+          "start": "0044b8f7",
+          "end": "0044b90b",
+          "bytes_sha256": "a9422d5b3af43aa17c75d72f3e36ea00ecf58560e3f427b8b262dadbdf68c08d",
+          "assembly": "analysis/captures/modern-differences/options-postgame/original-0044b8f7.asm",
+          "assembly_sha256": "4c9d070e9e057941a7de7e20e1654c6a6e03160291ea9dc5bf60c7d2b812b17a"
         }
       ],
       "button_template_00556e40_hex": "0500000000080000000000000000000000000000000000000000000000000000000000000019460000000000c007460070124600e0134600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000a023460000000000001d4600a0244600d028460020234600000000000000000000000000000000000000000000000000",
@@ -70,6 +112,48 @@
           "bytes_sha256": "7b9937ce3e7689550b142cf4f16ca05290d1d73b62287442634383fb93e391b2",
           "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-0044b271.asm",
           "assembly_sha256": "af2172b2bd510e2aaa9bdf8e7c290f6ea1c335f4a428c493b23e647c386b6e93"
+        },
+        {
+          "start": "0044b7ec",
+          "end": "0044b8d3",
+          "bytes_sha256": "73cb50e27ae2c055b7c99311f5cf1c4bb70d22f0e1cca32263ebead1825d508d",
+          "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-0044b7ec.asm",
+          "assembly_sha256": "21094f9e230106d245d1dca3eaa1767e6a578a1a0c89e751a8eaebdd2afcfc43"
+        },
+        {
+          "start": "0044b30b",
+          "end": "0044b326",
+          "bytes_sha256": "2e5615ebccd1c55fe11ee33c4c431d10aab5fd791ff2327d38e618c363fd0646",
+          "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-0044b30b.asm",
+          "assembly_sha256": "d5593621cb64f20a05e9e8bddddfd5129f2a181ce69866a571c94229009e809c"
+        },
+        {
+          "start": "0044ab40",
+          "end": "0044ac7c",
+          "bytes_sha256": "e793b3e4b49ea6feacf539d158c65221ccec0d0f8570e3cadf7b364b5ea4017e",
+          "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-0044ab40.asm",
+          "assembly_sha256": "dc869bcd50df01f4ef32939a14f7999f9b3394ea3d4757bbfb9502ff4d324c63"
+        },
+        {
+          "start": "0044af10",
+          "end": "0044af4a",
+          "bytes_sha256": "4ce9ffabd8e1f1bc6ade9b7b6e8e9ca14e21084e033eee9cf60c4f38703e66e9",
+          "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-0044af10.asm",
+          "assembly_sha256": "e2a53298fadfe50489e4d16773ee2f6b9c1b463ca0284e8e77905bd16ed131da"
+        },
+        {
+          "start": "0044aec0",
+          "end": "0044af05",
+          "bytes_sha256": "1be245e2cdc11d688989c4cda1219fbb367a586a7c9cf67186ad6a8e3b5661e0",
+          "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-0044aec0.asm",
+          "assembly_sha256": "954d12404c31227da69ed84fe48131ae972752de38700dd1d613a70b71310a45"
+        },
+        {
+          "start": "0044b8f7",
+          "end": "0044b90b",
+          "bytes_sha256": "a9422d5b3af43aa17c75d72f3e36ea00ecf58560e3f427b8b262dadbdf68c08d",
+          "assembly": "analysis/captures/modern-differences/options-postgame/official_modern-0044b8f7.asm",
+          "assembly_sha256": "301e7cc5baf6d9c47da7dda98bbeb0897725c4d1e619b279d0090c4db5af29c1"
         }
       ],
       "button_template_00556e40_hex": "0500000000080000000000000000000000000000000000000000000000000000000000000019460000000000c007460070124600e0134600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000a023460000000000001d4600a0244600d028460020234600000000000000000000000000000000000000000000000000",
@@ -248,6 +332,59 @@
       "hex": "a36c277a00",
       "effect": "store EAX (zero from preceding XOR) to 007a276c"
     }
+  },
+  "postgame_options_route": {
+    "assets": {
+      "reference": {
+        "member": "fedata/MENUS/POSTGAME.MNU",
+        "archive_sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127",
+        "sha256": "f60752dc3da30c36c9c8903e6fe51ad2162048833646e95517250b2af33c11d8",
+        "button": {
+          "section": "[button]",
+          "fields": {
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "postonly": "0",
+            "mainonly": "0",
+            "EnableForDemo": "1",
+            "EnableForE3Demo": "1",
+            "text": "kMenuPOSTGAMEOptions001",
+            "nextmenu": "options",
+            "buttontype": "LR2of3",
+            "value": "0",
+            "listpos": "0",
+            "listoff": "0",
+            "listx": "0",
+            "listy": "0",
+            "ypos": "0",
+            "align": "0"
+          }
+        }
+      },
+      "official_modern": {
+        "member": "fedata/menus/postgame.mnu",
+        "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+        "sha256": "02d75467d363830ab3fc531740fa51f5675b83c7412cc53adabaeea05344fbee",
+        "button": {
+          "section": "[button]",
+          "fields": {
+            "x": "0",
+            "y": "0",
+            "priority": "2",
+            "text": "kMenuPOSTGAMEOptions001",
+            "nextmenu": "options",
+            "buttontype": "LR2of3",
+            "listpos": "0",
+            "listoff": "0",
+            "ypos": "0",
+            "align": "0"
+          }
+        }
+      }
+    },
+    "reference_options_matches_prior_backup": true,
+    "scope": "Conditional nextmenu selection and descriptor initializer ordering; callbacks/loaded descriptors/later context writes remain unqualified."
   },
   "limits": [
     "No runtime menu selection, visibility or rendering tested.",

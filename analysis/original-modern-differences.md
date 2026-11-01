@@ -25,6 +25,8 @@ The [DX5 reference/final comparison](original-modern-dx5-reference-pair.md) assi
 
 The [reference asset index](original-modern-reference-assets-index.md) pairs all52 final menu files with the author-reference bundle and records differences beyond line endings. Another28 reference menus and six POS files are absent from the patch archive, which does not prove installed-file deletion. All six POS variants differ numerically from Modern’s embedded HUD table; parser/runtime equivalence remains unverified. The same audit now verifies all80 local backup menus match the reference bundle and records property-level additions/omissions, retaining duplicates and linking the prior visible-count evidence.
 
+The [Postgame Options follow-up](original-modern-options-postgame.md#postgame-to-options-transition-and-return-witnesses) connects the authored button in both reference/final assets to retained descriptor initialization and history-based return code. It supports the existing removed-mainonly mechanism while leaving callback state preservation and actual visibility unverified.
+
 ## Recent findings at a glance
 
 The [static checkpoint](evidence/validation/historical-startup-checkpoint.json) re-runs11 selected audit scripts against reviewed commit `7c36f96` and verifies the recorded hashes of the supplied original, official Modern, local analysis EXE and saved Ghidra database. This is a reproducibility/self-check checkpoint, not independent semantic review or completion of the entire investigation.
