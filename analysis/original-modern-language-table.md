@@ -114,3 +114,52 @@ contract and Modern publication route; verified static evidence. Installation
 buffer provenance on every caller, later active-index writes, actual assets
 and runtime fallback outcomes remain separate. No target, language asset or
 instruction probe was executed; executable/database bytes were preserved.
+
+## Original installation reader also produces the remote-prefix source
+
+The expanded [language audit](scripts/audit_language_table_difference.py)
+asserts the filename/mode, zero-fill setup and indexed-copy instructions in
+[its manifest](evidence/audits/original-modern-language-table.json), reusing
+the already captured complete original reader `004a6e10..004a6f61`.
+This closes the selected producer gap for buffer `007a26b4`.
+
+Original's reader clears5120 bytes from `007a2634`, opens literal
+`install.win` with mode `rt`, and repeatedly reads into its local buffer with
+count127. It removes LF and CR when found, skips a processed empty buffer,
+and copies each retained NUL-terminated result to:
+
+`007a2634 + (record_index << 7)`
+
+It increments the record index after each copy. Consequently:
+
+| Processed record | Destination | Verified consumer |
+|---:|---|---|
+|0, first nonempty result | `007a2634` | Existing language-name selection |
+|1, second nonempty result | `007a26b4` | Original six-byte `remote` prefix classifier `004b62a0` |
+| Later results | Base+128×index | Consumers not qualified here |
+
+The [config-load producer chain](original-modern-config-loading.md#mediaaudio-gate-snapshots-the-original-remote-prefix-classification)
+then stores that classifier's0/1 return at `006fbb54`. This identifies the
+source as installation-file record data; it does not establish that `remote`
+means multiplayer, a remote player, a network mount or any other precise
+external mode. Those meanings require separate evidence.
+
+The cleared extent accommodates40 slots of128 bytes, but the shown copy loop
+has **no local40-record bound**. Do not describe the zero-fill size as enforced
+input admission. The read helper's return is not checked before scanning the
+buffer; its exact failure and truncation contract is not established here.
+“Second nonempty result” therefore describes ordinary successful processing,
+not a guarantee about arbitrary long lines, failed reads or malformed files.
+Record/address arithmetic and byte copies also retain machine-width/access
+requirements in a faithful reconstruction.
+
+The Modern selector documented above reads only the language setting from
+INI instead of this installation-record path, and its config-load tail
+explicitly writes0 to `006fbb54`. No whole-program exclusion of other file
+readers, aliased/bulk field writes or later initialization is claimed.
+
+**Status:** done, verified static for this original source producer and its
+classifier/publication link. Actual file contents/provenance, all callers,
+read-helper failure/truncation, other record consumers, later writes and
+runtime media/audio effects remain unresolved. No installation file was
+opened through the target, and no game/API/instruction probe was executed.

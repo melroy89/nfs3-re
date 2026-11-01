@@ -39,6 +39,19 @@ def main():
                 for i,off in enumerate(struct.unpack('<27I',pe.get_data(0x53d310-0x400000,108)))]
             assert item['required_marker']=='v1.6.0'
         else:
+            assert string(0x53dc3c)=='rt' and string(0x53dc40)=='install.win'
+            assert pe.get_data(0xa6e24,17).hex()=='bb00140000b834267a0031d2e80b980300'
+            assert pe.get_data(0xa6ece,19).hex()=='8b457ebf34267a008d75fac1e0078b4d7e01c7'
+            assert pe.get_data(0xa6efc,8).hex()=='894d7ee953ffffff'
+            item['installation_record_writer']={'function':'004a6e10..004a6f61',
+                'file':'install.win','mode':'rt','clear_base':'007a2634','clear_bytes':5120,
+                'read_count':127,'line_buffer':'EBP-6 after adjusted frame',
+                'processing':'Remove LF and CR if found,skip empty processed buffer,copy NUL-terminated bytes,increment record index',
+                'destination':'007a2634 + (index<<7)','stride':128,
+                'slot0':'007a2634,language selector source','slot1':'007a26b4,remote-prefix classifier source',
+                'limits':['No local record-count bound before indexed copy;40 slots describes cleared extent, not enforced admission.',
+                          'Read return ignored before scans; helper failure/truncation and unusually long input remain unqualified.',
+                          'No source-file provenance, successful read or later immutability claim.']}
             item['source_strings']={f'{va:08x}':string(va) for va in [0x53dc3c,0x53dc40]}
         result['binaries'][label]=item
     (ROOT/'analysis/evidence/audits/original-modern-language-table.json').write_text(json.dumps(result,indent=2)+'\n')

@@ -238,10 +238,12 @@ This ties together existing findings without inferring a broader mode name:
 - Other retained audio checks can still inspect this field. A zero producer does not by itself prove successful playback or explain every downstream condition.
 
 **Status:** done, verified static for original classifier-to-field publication
-and Modern zero publication. **Still unresolved:** complete provenance and
-lifetime of `007a26b4`, later direct/aliased/bulk writes to `006fbb54`, all
+and Modern zero publication. **Still unresolved:** all producer/caller and
+lifetime paths for `007a26b4`, later direct/aliased/bulk writes to `006fbb54`, all
 config/ghost restoration paths and observed runtime outcomes. Do not rename
 this a multiplayer/remote-player or generic audio-disable Boolean from the
 literal alone. Nor does this evidence authenticate installation/media origin.
 No classifier, file API, game or instruction probe was executed; executables
 and saved Ghidra state were preserved.
+
+The selected source writer is now established: the [original installation reader](original-modern-language-table.md#original-installation-reader-also-produces-the-remote-prefix-source) copies its second nonempty processed `install.win` result into `007a26b4`. Actual source contents, failed/long reads and other writers remain unverified.

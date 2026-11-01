@@ -38,6 +38,25 @@
         "text.ita",
         "text.swe"
       ],
+      "installation_record_writer": {
+        "function": "004a6e10..004a6f61",
+        "file": "install.win",
+        "mode": "rt",
+        "clear_base": "007a2634",
+        "clear_bytes": 5120,
+        "read_count": 127,
+        "line_buffer": "EBP-6 after adjusted frame",
+        "processing": "Remove LF and CR if found,skip empty processed buffer,copy NUL-terminated bytes,increment record index",
+        "destination": "007a2634 + (index<<7)",
+        "stride": 128,
+        "slot0": "007a2634,language selector source",
+        "slot1": "007a26b4,remote-prefix classifier source",
+        "limits": [
+          "No local record-count bound before indexed copy;40 slots describes cleared extent, not enforced admission.",
+          "Read return ignored before scans; helper failure/truncation and unusually long input remain unqualified.",
+          "No source-file provenance, successful read or later immutability claim."
+        ]
+      },
       "source_strings": {
         "0053dc3c": "rt",
         "0053dc40": "install.win"
