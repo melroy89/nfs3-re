@@ -354,3 +354,7 @@ The [indexed-state audit](original-modern-projection.md#indexed-camera-markercou
 ## CCM positive-count admission qualification
 
 The [CCM gate audit](ccm-camera-contract.md#positive-file-counts-do-not-exclude-the-type8-fallback) revalidates all eight current loose CCM identities and eight retained selector/helper envelopes. Positive counts do not exclude distance/orientation rejection. The latter gate is now traced to a binary32 dot output and signed raw-bit threshold, with exceptional-bit branch derivations clearly separated from instruction probes. The type8 path cannot be dismissed from nonempty file counts alone; actual selection, source capture/lifetime and MP160-003 remain unresolved. Catalog counts unchanged.
+
+## Sound DLL whole-file localization
+
+The [distinct sound-pair comparison](original-modern-sound-reference-pair.md) verifies every one of41,472 shared post-header bytes matches, including all existing code/data/import/export/relocation sections and16 exports. All file differences are confined to headers and an appended1536-byte version-resource section. ProductVersion1.5.3 is component metadata, not the containing final package version. This rules out changed implementation bytes for this named pair without claiming runtime/FPU equivalence or retail authentication. Catalog counts unchanged; no DLL or target instructions executed.

@@ -60,3 +60,7 @@ The same decode finds five direct callers of this record builder, at `6000c3b2`,
 **Follow-up status: complete normal local caller pairing and import bindings verified statically.** This narrows the prior caller unknown without establishing a universal DLL or whole-game floating-point policy. No target execution or new instruction probe occurred.
 
 The [selected local DLL inventory](original-modern-dll-candidates.md) now records distinct legacy-style renderer candidates and their interface/import surfaces. The inspected local sound DLL matches the official member, so it is not a separate original sound baseline. No original-versus-Modern FPU implementation claim is added by those metadata matches.
+
+## Sound reference counterpart: unchanged implementation bytes
+
+The [author-reference/final sound comparison](original-modern-sound-reference-pair.md#complete-file-byte-accounting) now supplies a distinct hash-pinned candidate beyond the previously identical local installed file. Its entire existing code and initialized-data sections match final Modern, so this pair has no changed sound-DLL implementation bytes at the previously inventoried control-word locations. Headers and version resources do change. Equal instruction bytes do not establish equal ambient x87 state: the EXE policy, callers and runtime dependencies remain separate. This is bounded static correspondence, not a universal sound-thread precision or numerical-equivalence claim.

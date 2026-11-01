@@ -1,0 +1,556 @@
+{
+  "kind": "sound-reference-final-full-file-byte-accounting",
+  "baselines": {
+    "reference": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+      "archive_sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127",
+      "member": "eacsnd.dll",
+      "sha256": "30288653eb2e0b59a3173530433a4adb8ea0dc66cdbc46aadf742dc53ab62b46",
+      "bytes": 42496,
+      "entry_rva": "00000000",
+      "exports": [
+        {
+          "name": "_iSNDdirectcaps@4",
+          "ordinal": 3,
+          "rva": "00001428",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectcreate3dbuf@28",
+          "ordinal": 13,
+          "rva": "0000274c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectplay3d@28",
+          "ordinal": 15,
+          "rva": "00002814",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectpos3d@12",
+          "ordinal": 11,
+          "rva": "00002668",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectrate@8",
+          "ordinal": 12,
+          "rva": "0000270c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectrecordpacket@4",
+          "ordinal": 7,
+          "rva": "00002104",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectrecordstart@16",
+          "ordinal": 6,
+          "rva": "000020fc",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectrecordstop@0",
+          "ordinal": 8,
+          "rva": "0000210c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectremovebuf@4",
+          "ordinal": 14,
+          "rva": "000027c0",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectserve@0",
+          "ordinal": 9,
+          "rva": "00002324",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectsetfunctions@32",
+          "ordinal": 2,
+          "rva": "000013d8",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectstart@8",
+          "ordinal": 4,
+          "rva": "0000202c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectstop@0",
+          "ordinal": 5,
+          "rva": "0000207c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectstopbuf@4",
+          "ordinal": 16,
+          "rva": "000029b0",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectvol@8",
+          "ordinal": 10,
+          "rva": "00002618",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdllversion@0",
+          "ordinal": 1,
+          "rva": "000013c4",
+          "forwarder": null
+        }
+      ]
+    },
+    "modern": {
+      "archive": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+      "member": "eacsnd.dll",
+      "sha256": "63f3d1bff4e6526753524423be47146e82416d1b170cd7b2e0133699587b01b3",
+      "bytes": 44032,
+      "entry_rva": "00000000",
+      "exports": [
+        {
+          "name": "_iSNDdirectcaps@4",
+          "ordinal": 3,
+          "rva": "00001428",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectcreate3dbuf@28",
+          "ordinal": 13,
+          "rva": "0000274c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectplay3d@28",
+          "ordinal": 15,
+          "rva": "00002814",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectpos3d@12",
+          "ordinal": 11,
+          "rva": "00002668",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectrate@8",
+          "ordinal": 12,
+          "rva": "0000270c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectrecordpacket@4",
+          "ordinal": 7,
+          "rva": "00002104",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectrecordstart@16",
+          "ordinal": 6,
+          "rva": "000020fc",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectrecordstop@0",
+          "ordinal": 8,
+          "rva": "0000210c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectremovebuf@4",
+          "ordinal": 14,
+          "rva": "000027c0",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectserve@0",
+          "ordinal": 9,
+          "rva": "00002324",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectsetfunctions@32",
+          "ordinal": 2,
+          "rva": "000013d8",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectstart@8",
+          "ordinal": 4,
+          "rva": "0000202c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectstop@0",
+          "ordinal": 5,
+          "rva": "0000207c",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectstopbuf@4",
+          "ordinal": 16,
+          "rva": "000029b0",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdirectvol@8",
+          "ordinal": 10,
+          "rva": "00002618",
+          "forwarder": null
+        },
+        {
+          "name": "_iSNDdllversion@0",
+          "ordinal": 1,
+          "rva": "000013c4",
+          "forwarder": null
+        }
+      ]
+    }
+  },
+  "paired_sections": [
+    {
+      "reference_name": "AUTO",
+      "modern_name": ".code",
+      "rva": "00001000",
+      "virtual_size": 0,
+      "raw_size": 29696,
+      "raw_pointer": 1024,
+      "file_backed": true,
+      "sha256": "4409d32d183500b49691037224802e7f86a33219b9aa740bafa2bc6cd153066c"
+    },
+    {
+      "reference_name": ".idata",
+      "modern_name": ".idata",
+      "rva": "00009000",
+      "virtual_size": 0,
+      "raw_size": 1536,
+      "raw_pointer": 30720,
+      "file_backed": true,
+      "sha256": "6985bad04c53102e8d70dbf67c8b2781fcd4efc2946923f8a8f7e0adda9c4296"
+    },
+    {
+      "reference_name": "DGROUP",
+      "modern_name": ".data",
+      "rva": "0000a000",
+      "virtual_size": 0,
+      "raw_size": 6656,
+      "raw_pointer": 32256,
+      "file_backed": true,
+      "sha256": "50eadf13d4efc2c623c1476943961b22c160be7256ad7031fb54dca25bd1e226"
+    },
+    {
+      "reference_name": ".bss",
+      "modern_name": ".bss",
+      "rva": "0000c000",
+      "virtual_size": 0,
+      "raw_size": 2560,
+      "raw_pointer": 0,
+      "file_backed": false,
+      "contents": "Not read from file offset0; uninitialized storage metadata only."
+    },
+    {
+      "reference_name": ".edata",
+      "modern_name": ".edata",
+      "rva": "0000d000",
+      "virtual_size": 0,
+      "raw_size": 1024,
+      "raw_pointer": 38912,
+      "file_backed": true,
+      "sha256": "802dda74bab6c918468b6850282b2754391adc6dce7e288605234ea8877f6c5a"
+    },
+    {
+      "reference_name": ".reloc",
+      "modern_name": ".reloc",
+      "rva": "0000e000",
+      "virtual_size": 0,
+      "raw_size": 2560,
+      "raw_pointer": 39936,
+      "file_backed": true,
+      "sha256": "3b1040eb6bf04f575169f8792a14dad6dcdce8c09baa8f331f9c6d44cccedf25"
+    }
+  ],
+  "header_field_changes": {
+    "dos": {},
+    "coff": {
+      "NumberOfSections": {
+        "reference": 6,
+        "modern": 7
+      },
+      "TimeDateStamp": {
+        "reference": 902271786,
+        "modern": 1462207257
+      }
+    },
+    "optional": {
+      "MajorOperatingSystemVersion": {
+        "reference": 1,
+        "modern": 4
+      },
+      "MinorOperatingSystemVersion": {
+        "reference": 11,
+        "modern": 0
+      },
+      "MajorSubsystemVersion": {
+        "reference": 3,
+        "modern": 4
+      },
+      "MinorSubsystemVersion": {
+        "reference": 10,
+        "modern": 0
+      },
+      "SizeOfImage": {
+        "reference": 61440,
+        "modern": 65536
+      },
+      "CheckSum": {
+        "reference": 0,
+        "modern": 100601
+      },
+      "SizeOfStackReserve": {
+        "reference": 65536,
+        "modern": 1048576
+      },
+      "SizeOfHeapReserve": {
+        "reference": 8192,
+        "modern": 1048576
+      },
+      "SizeOfHeapCommit": {
+        "reference": 4096,
+        "modern": 65536
+      }
+    }
+  },
+  "header_file_offset_intervals": [
+    {
+      "start_va": "00000086",
+      "end_va_exclusive": "00000087",
+      "reference_hex": "06",
+      "modern_hex": "07"
+    },
+    {
+      "start_va": "00000088",
+      "end_va_exclusive": "0000008c",
+      "reference_hex": "2a93c735",
+      "modern_hex": "19832757"
+    },
+    {
+      "start_va": "000000c0",
+      "end_va_exclusive": "000000c1",
+      "reference_hex": "01",
+      "modern_hex": "04"
+    },
+    {
+      "start_va": "000000c2",
+      "end_va_exclusive": "000000c3",
+      "reference_hex": "0b",
+      "modern_hex": "00"
+    },
+    {
+      "start_va": "000000c8",
+      "end_va_exclusive": "000000c9",
+      "reference_hex": "03",
+      "modern_hex": "04"
+    },
+    {
+      "start_va": "000000ca",
+      "end_va_exclusive": "000000cb",
+      "reference_hex": "0a",
+      "modern_hex": "00"
+    },
+    {
+      "start_va": "000000d1",
+      "end_va_exclusive": "000000d3",
+      "reference_hex": "f000",
+      "modern_hex": "0001"
+    },
+    {
+      "start_va": "000000d8",
+      "end_va_exclusive": "000000db",
+      "reference_hex": "000000",
+      "modern_hex": "f98801"
+    },
+    {
+      "start_va": "000000e2",
+      "end_va_exclusive": "000000e3",
+      "reference_hex": "01",
+      "modern_hex": "10"
+    },
+    {
+      "start_va": "000000e9",
+      "end_va_exclusive": "000000eb",
+      "reference_hex": "2000",
+      "modern_hex": "0010"
+    },
+    {
+      "start_va": "000000ed",
+      "end_va_exclusive": "000000ef",
+      "reference_hex": "1000",
+      "modern_hex": "0001"
+    },
+    {
+      "start_va": "00000104",
+      "end_va_exclusive": "00000106",
+      "reference_hex": "7405",
+      "modern_hex": "5000"
+    },
+    {
+      "start_va": "00000109",
+      "end_va_exclusive": "0000010a",
+      "reference_hex": "00",
+      "modern_hex": "f0"
+    },
+    {
+      "start_va": "0000010d",
+      "end_va_exclusive": "0000010e",
+      "reference_hex": "00",
+      "modern_hex": "06"
+    },
+    {
+      "start_va": "00000158",
+      "end_va_exclusive": "0000015a",
+      "reference_hex": "0000",
+      "modern_hex": "1c91"
+    },
+    {
+      "start_va": "0000015c",
+      "end_va_exclusive": "0000015d",
+      "reference_hex": "00",
+      "modern_hex": "cc"
+    },
+    {
+      "start_va": "00000178",
+      "end_va_exclusive": "0000017d",
+      "reference_hex": "4155544f00",
+      "modern_hex": "2e636f6465"
+    },
+    {
+      "start_va": "000001c8",
+      "end_va_exclusive": "000001ce",
+      "reference_hex": "4447524f5550",
+      "modern_hex": "2e6461746100"
+    },
+    {
+      "start_va": "00000268",
+      "end_va_exclusive": "0000026d",
+      "reference_hex": "0000000000",
+      "modern_hex": "2e72737263"
+    },
+    {
+      "start_va": "00000275",
+      "end_va_exclusive": "00000276",
+      "reference_hex": "00",
+      "modern_hex": "f0"
+    },
+    {
+      "start_va": "00000279",
+      "end_va_exclusive": "0000027a",
+      "reference_hex": "00",
+      "modern_hex": "06"
+    },
+    {
+      "start_va": "0000027d",
+      "end_va_exclusive": "0000027e",
+      "reference_hex": "00",
+      "modern_hex": "a6"
+    },
+    {
+      "start_va": "0000028c",
+      "end_va_exclusive": "0000028d",
+      "reference_hex": "00",
+      "modern_hex": "40"
+    },
+    {
+      "start_va": "0000028f",
+      "end_va_exclusive": "00000290",
+      "reference_hex": "00",
+      "modern_hex": "40"
+    }
+  ],
+  "header_interval_address_kind": "file-offsets, not VAs",
+  "directory_changes": [
+    {
+      "index": 1,
+      "reference": [
+        36864,
+        1396
+      ],
+      "modern": [
+        36864,
+        80
+      ]
+    },
+    {
+      "index": 2,
+      "reference": [
+        0,
+        0
+      ],
+      "modern": [
+        61440,
+        1536
+      ]
+    },
+    {
+      "index": 12,
+      "reference": [
+        0,
+        0
+      ],
+      "modern": [
+        37148,
+        204
+      ]
+    }
+  ],
+  "added_resource_section": {
+    "rva": "0000f000",
+    "raw_pointer": 42496,
+    "raw_bytes": 1536,
+    "sha256": "9c4139c31f3137cf8f7bf6b446c7db795ff03c22f114ef8965eba9a92bbced28",
+    "resources": [
+      {
+        "type_id": 16,
+        "resource_id": 1,
+        "language_id": 0,
+        "rva": "0000f058",
+        "bytes": 972,
+        "sha256": "5e139fc739df7cc3815a4959231b6f99eb9ab2720c16a0cbe1c1c1858466dfb9"
+      }
+    ],
+    "version_strings": {
+      "040904b0": {
+        "CompanyName": "Electronic Arts",
+        "FileDescription": "EacSnd (API v100003)",
+        "FileVersion": "2016.05.02.0259",
+        "InternalName": "EACSND",
+        "LegalCopyright": "1998 Electronic Arts, 2016 VEG",
+        "OriginalFilename": "eacsnd.dll",
+        "ProductName": "Need For Speed III (Modern Patch)",
+        "ProductVersion": "1.5.3",
+        "Comments": "Based on the eacsnd.dll from the Need For Speed III (Build Date: 1998/08/04)"
+      }
+    }
+  },
+  "complete_file_byte_accounting": {
+    "shared_postheader_bytes": 41472,
+    "shared_postheader_equal": true,
+    "added_bytes": 1536,
+    "unclassified_differing_byte_locations": 0,
+    "meaning": "All differences localized to first1024 file bytes and appended resource section; not all metadata effects interpreted."
+  },
+  "limits": [
+    "Reference bundle is author-hosted, not authenticated pristine retail.",
+    "Equal section bytes establish no implementation-byte change in this pair, not full runtime equivalence.",
+    "Headers/resource/image-layout changes can affect loading/introspection; no loader/API behavior tested.",
+    "Version strings are metadata claims, not authenticated build dates or final package version.",
+    "BSS contents, dynamic imports/callbacks, calling context and ambient x87 state remain runtime dependencies.",
+    "No DLL loading, target instructions, reconstruction, compilation or Ghidra database writes."
+  ]
+}

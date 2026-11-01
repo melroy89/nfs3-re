@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "38c530e92ec1b07bfe50fc0113e707bf7f2a36af1b06f9907f87a575448c42a2",
-      "relative_links": 88
+      "sha256": "864b15cc9f4c1b6fefa5a54477df9ac3270f7d5d40eec564a3240fe7a042eb45",
+      "relative_links": 89
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,8 +103,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "a5555d3a16f35a2efe51620d059f2248e25534f5486f467634d9322db91f6d74",
-      "relative_links": 173
+      "sha256": "4d85153e482fb7aacdeab42034223a0ee1284ba64527f12f3d275b0a7fb6d993",
+      "relative_links": 174
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -113,8 +113,8 @@
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
-      "sha256": "e20ee9bb084358a4994cf717d6e93f405b7de6bf2656011eb1ae3ad8ad66925b",
-      "relative_links": 13
+      "sha256": "b514ff6f3bd176185471a05b8521af2890380c09334227146e07098e7cf50d13",
+      "relative_links": 14
     },
     {
       "path": "analysis/original-modern-dropdown-input.md",
@@ -318,8 +318,8 @@
     },
     {
       "path": "analysis/original-modern-original-reference-bundle.md",
-      "sha256": "309af5919af97e97c079ae675c0520c3924ac4da71cc2015319c1cc840bda8dd",
-      "relative_links": 5
+      "sha256": "2e8653be2a97284a313a7e961ad0242a2f0fb96b41c7572acd124ff0062d6195",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
@@ -328,8 +328,8 @@
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
-      "sha256": "0b127169aa3027090f37cb541530710f003d551a0aaf30e2a152aa0e087998af",
-      "relative_links": 4
+      "sha256": "0237b5e354d9950de7f5a77a092e2bf276da10bb7a78e0e6f68fac6159130d2e",
+      "relative_links": 5
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",
@@ -497,6 +497,11 @@
       "relative_links": 5
     },
     {
+      "path": "analysis/original-modern-sound-reference-pair.md",
+      "sha256": "e88b8c73f06c3c75a2cefa323709d3291d247a7ee9fff19b97fe5a1781a029f7",
+      "relative_links": 3
+    },
+    {
       "path": "analysis/original-modern-startup-paths.md",
       "sha256": "1fdb057be947fad023c4fce480774c8f92614ad48fca3de9f42e7aefdcaff94e",
       "relative_links": 8
@@ -612,8 +617,8 @@
       "relative_links": 16
     }
   ],
-  "file_count": 122,
-  "relative_link_count": 1987,
+  "file_count": 123,
+  "relative_link_count": 1995,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

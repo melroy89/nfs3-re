@@ -126,3 +126,7 @@ The [author-hosted original-reference bundle inventory](original-modern-original
 ## DX5 author-reference pairing
 
 The [DX5 paired audit](original-modern-dx5-reference-pair.md) now verifies that the author-reference `d3da.dll` matches the local root candidate and has the same34 export entries as final DX5. It records all25 changed-byte intervals in the shared code-section extent, equal import/data sections and the exact `about` descriptor-pointer change. This is bounded correspondence and localization, not complete mode-policy recovery or authenticated retail provenance.
+
+## Distinct author-reference sound candidate compared
+
+The [sound pair audit](original-modern-sound-reference-pair.md) now compares the separately identified author-reference eacsnd.dll with final Modern. All41,472 shared post-header bytes are identical, including every existing code/data/import/export/relocation section; changes are confined to headers and an added version-resource section. The older local-only acquisition limit above remains accurate for those selected local files, but no longer prevents this named pair comparison. Runtime equivalence and pristine-retail attribution remain unverified.
