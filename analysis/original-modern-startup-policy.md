@@ -77,3 +77,8 @@ Modern dispatcher`004a3eb7` subtracts6 from EAX, compares the result unsigned wi
 | 12 | `004a3ed7` |
 
 An earlier loop check at`004a3ea4` handles state10 before ordinary dispatch, so the presence of a table slot is not proof that every slot is reached. The [existing next-round handoff](network-series-next-round-state.md) already traces surviving frontend actions6/7 to`004a3ee8` and race preparation`004a3ef4`; it supplies the relevant semantic context without inventing a new function at the table. Complete original startup removal, all state producers/overrides and runtime progression remain unresolved on their existing boundaries. No application or new instruction probe was executed.
+
+
+## Removed version-resource startup producer
+
+The [configuration header producer audit](original-modern-config-loading.md#original-startup-populates-the-header-template-from-a-version-resource) identifies another removed startup operation: original `004a38f0` reads a FileVersion resource and startup `004a3a97` parses its string into the original header template. Final Modern removes this callsite and uses a file-backed version6 template elsewhere. Exact original scanner writes and runtime source-file selection remain unresolved; the original zero-filled template must not be treated as a whole-lifetime version0 invariant.

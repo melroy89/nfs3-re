@@ -1,0 +1,71 @@
+{
+  "kind": "static-startup-version-header",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004a38f0",
+          "end_exclusive": "004a39d2",
+          "bytes_sha256": "878936212e5ad5b3b190cfa7116fbe63d7ea5949028a98d28dd54ea68c937a3d",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/original-004a38f0.asm",
+          "assembly_sha256": "71853bf1da28bc38863d499177c4d482ef162ea2bc1de0ce49abf97a56659b33"
+        },
+        {
+          "start": "004a3a56",
+          "end_exclusive": "004a3ab9",
+          "bytes_sha256": "f1a7264892b7bc796b2e55c1d85173fb3ad92153cb9d1e4ec61e0d3ee32bd39e",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/original-004a3a56.asm",
+          "assembly_sha256": "673ebe0c4b30b1eb650e723ca23890bd64570c56d845ede523a2f79b3ccf68ec"
+        }
+      ],
+      "version_imports": {
+        "00534674": "GetFileVersionInfoA",
+        "00534678": "GetFileVersionInfoSizeA",
+        "0053467c": "VerQueryValueA"
+      },
+      "producer": {
+        "reader": "004a38f0..004a39d2",
+        "seed_filename": "nfs3.exe; on initial size-query failure, retry current module filename",
+        "query": "\\StringFileInfo\\040904b0\\FileVersion",
+        "resource_value": "27, 2.0",
+        "destination": "0055e898",
+        "copy_limit": 31,
+        "scanner_call": "004a3a97 ->004f0548",
+        "format": "%d, %d.%d",
+        "destinations_in_order": [
+          "local EBP-10h",
+          "0055e8b8",
+          "0055e8ba"
+        ],
+        "return_gate": "Rejects zero conversion result, not an explicit three-conversion check"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004a38f0",
+          "end_exclusive": "004a39d2",
+          "bytes_sha256": "8c913e4e2a73e79f4a520e165fa7ce1fca748f8d13a173a3b7641b2a73d20d22",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/official_modern-004a38f0.asm",
+          "assembly_sha256": "6c5bc744be9878e8513cbd8f45479bcca5e4b69b6bee5d082b822c23fc8965f5"
+        },
+        {
+          "start": "004a3a56",
+          "end_exclusive": "004a3ab9",
+          "bytes_sha256": "dada9a88a7a3b2ce75729140615e5d361e2adfcb4c9cd649aee6bf94bf85c9e6",
+          "assembly": "analysis/captures/modern-differences/startup-version-header/official_modern-004a3a56.asm",
+          "assembly_sha256": "42ed8445755588c7c12a4e25d3e1d9da360a4205c68bc015ad57971e3198acac"
+        }
+      ],
+      "replacement": "Startup reader/scan callsite removed; file-backed string and size20f0/version6/zero template."
+    }
+  },
+  "limits": [
+    "No target or Windows API execution.",
+    "Scanner conversion widths, overlapping writes, failures and later writers remain unqualified."
+  ]
+}

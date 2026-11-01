@@ -435,3 +435,8 @@ The [init comparison](original-modern-glide-reference-identity.md#thrash-init-re
 ## Paired DLL control-site correspondence
 
 The [four-pair audit](original-modern-paired-dll-x87.md) verifies both archives/eight members,102 primary x87 control candidates and six FSAVE/FRSTOR candidates. VAs, instruction encodings/operands and32-byte before/after contexts match in all four pairs. These remain linear-decoding candidates, not execution/numerical equivalence or all-component precision policy. This narrows older-DLL correspondence while preserving changed EXE/ambient-state and other-provider limits. Catalog counts unchanged; no target execution.
+
+
+## Original startup version-template producer
+
+The [resource/header comparison](original-modern-config-loading.md#original-startup-populates-the-header-template-from-a-version-resource) now identifies the original startup writer into `0055e8b8/+2`, removing the assumption that file-backed zeros describe ordinary startup. The retained resource is `27, 2.0`; Modern removes this read/scan callsite and has a static version6 header. Exact scanner widths/overlap effects, runtime filename resolution and later writes remain pending. Catalog counts unchanged; no target execution or Ghidra changes.
