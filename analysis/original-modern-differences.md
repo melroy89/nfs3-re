@@ -6,6 +6,21 @@ For a shallow inventory, see the [complete release-note change list](#complete-r
 
 **Audit in progress.** This document explains verified differences and indexes the remaining code-level investigation. It does not equate vendor release-note entries, differing bytes or Ghidra functions with independently explained gameplay changes. The original supplied executable, official Modern Patch release and local edited analysis target are kept distinct.
 
+## Recent configuration and HUD mechanisms
+
+These are bounded static findings, not proof of every release-note claim or runtime outcome. The [eight-audit checkpoint](evidence/validation/recent-static-mechanisms-checkpoint.json) pins reviewed revision`f92b1e7`,16 successful runs, eight unchanged evidence outputs,12 unchanged protected files and12 unchanged raw exports. Reproduce with`python3 analysis/scripts/check_recent_static_mechanisms.py`; each invocation records its current reviewed HEAD. This is primary-agent reproducibility, not independent semantic review, game testing, compilation, export regeneration or Ghidra reopening.
+
+| Investigation | What the evidence establishes | Still unverified |
+|---|---|---|
+|[Historical nGlide settings](original-modern-renderer-loading.md#historical-nglide-configuration-precedes-provider-loading) |1.2.0 adapter writes six packaged NGLIDE settings before provider-load attempts; empty section skips writes |Provider effects; removing section does not clear inherited environment |
+|[Menu music defaults](original-modern-music-selection.md#historical-romulus-default-is-not-the-final-modern-default) |Original Random; early Modern Romulus3; final Random (All) |Exact later change date, saved preferences and playback |
+|[Cabin extent correction](original-modern-view-overlay.md#historical-fixed-expansion-becomes-resolution-dependent-in160) |Early fixed+1/+1 policy becomes resolution-dependent in1.5.3→1.6.0; final retains it |Actual pixels and seam removal; correction is not globally capped at3 |
+|[Camera slots](original-modern-viewport-pose.md#default-camera-slots-change-without-removing-the-choice-table) |Original In Car/Roof/Heli/None defaults become Heli/In Car/None/None; choice tables remain |Runtime cycling, user overrides and UI restoration |
+|[Map zoom defaults](original-modern-map-marker-scaling.md#historical-role-specific-defaults-become-equal-in140) |Early racer3/cop1 becomes both3 in1.3.1→1.4.0 |Active profiles, map coverage and saved settings |
+|[Opponent HUD defaults](original-modern-hud-layout.md#opponent-name-and-list-have-distinct-profile-defaults) |Racer suffix1/2 profiles swap Name/List1/0→0/1; cop suffix profiles remain0/0; selected list gates retained |Complete session/view admission and displayed result |
+|[Police-list spacing](original-modern-hud-layout.md#police-list-row-and-panel-spacing-use-smaller-data-coefficients) |Two coefficients20→12.414 feed row advance and panel layout |Actual compactness and resemblance to standard standings |
+|[Alpha Intensity](original-modern-effect-renderer-masks.md#alpha-intensity-connects-menu-writeback-to-packed-colour-scaling) |Voodoo-type bit gains admission; inspected helper scales all packed bytes below intensity1, bypasses at1 |Provider output, car shine and full setting/state lifetime |
+
 ## Evidence and scope
 
 - [x87 precision comparison](og-modern-x87-precision.md): verified original single-precision switches removed by Modern Patch; frontend/render scopes and runtime limits explained.

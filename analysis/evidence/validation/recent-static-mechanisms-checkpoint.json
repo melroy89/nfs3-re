@@ -1,0 +1,393 @@
+{
+  "kind": "eight-recent-static-mechanisms-checkpoint",
+  "reviewed_head": "f92b1e7225b9c72947d11d55940680585714691d",
+  "prior_checkpoint": "analysis/evidence/validation/five-static-mechanisms-checkpoint.json",
+  "prior_checkpoint_sha256": "f40b28797ba96fa20473c3413bdba73b0a0043a141a4d683927ebb0f1757ff9a",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_nglide_config_history.py"
+      ],
+      "script_sha256": "488956125dfa6690b3baf30a169dda7d577fae0164d57a1dcf29a493b23cefeb",
+      "output": "analysis/evidence/audits/nglide-config-history.json",
+      "pre_run_output_sha256": "fadbcb8872f1708415ee090299661484efd40d7aa78688674c6ce9a48c810f92",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: pinned1.2.0 adapter pair, complete configuration helper, API bindings and pre-load order\n",
+          "stderr": "",
+          "output_sha256": "fadbcb8872f1708415ee090299661484efd40d7aa78688674c6ce9a48c810f92"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: pinned1.2.0 adapter pair, complete configuration helper, API bindings and pre-load order\n",
+          "stderr": "",
+          "output_sha256": "fadbcb8872f1708415ee090299661484efd40d7aa78688674c6ce9a48c810f92"
+        }
+      ],
+      "repeatable": true,
+      "matches_pre_run_output": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_menu_music_default_history.py"
+      ],
+      "script_sha256": "2e6049657033f8838a9dfbfc2f979872356c8799c364fbbec42dc9a22295717e",
+      "output": "analysis/evidence/audits/menu-music-default-history.json",
+      "pre_run_output_sha256": "879bcc7c288bb9181b1ff299432ccfae3e4d7e98c8d386c86950c179399bed1e",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: original0/early2/final0 defaults, six-byte early patch and versioned menu label bindings\n",
+          "stderr": "",
+          "output_sha256": "879bcc7c288bb9181b1ff299432ccfae3e4d7e98c8d386c86950c179399bed1e"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: original0/early2/final0 defaults, six-byte early patch and versioned menu label bindings\n",
+          "stderr": "",
+          "output_sha256": "879bcc7c288bb9181b1ff299432ccfae3e4d7e98c8d386c86950c179399bed1e"
+        }
+      ],
+      "repeatable": true,
+      "matches_pre_run_output": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_cabin_extent_history.py"
+      ],
+      "script_sha256": "900665c5dad10b89f9c3e35918687d35da74758b41848cd5ccb5ce9669229276",
+      "output": "analysis/evidence/audits/cabin-extent-history.json",
+      "pre_run_output_sha256": "b5bf5097f40e8704ac303b7bd89e72a37deca768a410c6b6da17c95c5740e130",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: early/153 complete fixed helpers identical;160 resolution-dependent helper retained in final\n",
+          "stderr": "",
+          "output_sha256": "b5bf5097f40e8704ac303b7bd89e72a37deca768a410c6b6da17c95c5740e130"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: early/153 complete fixed helpers identical;160 resolution-dependent helper retained in final\n",
+          "stderr": "",
+          "output_sha256": "b5bf5097f40e8704ac303b7bd89e72a37deca768a410c6b6da17c95c5740e130"
+        }
+      ],
+      "repeatable": true,
+      "matches_pre_run_output": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_camera_defaults_difference.py"
+      ],
+      "script_sha256": "a0415c3991d094b3f4eff07c8091853d62c46e26fad905f7419a717f43b02520",
+      "output": "analysis/evidence/audits/camera-defaults-difference.json",
+      "pre_run_output_sha256": "9ffcfa842bd7315810f32b209dc20d73bfa46248b87fd417f56390a1adae1561",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: four paired descriptors, original/Modern default writes, retained85-byte converter and named choice mappings\n",
+          "stderr": "",
+          "output_sha256": "9ffcfa842bd7315810f32b209dc20d73bfa46248b87fd417f56390a1adae1561"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: four paired descriptors, original/Modern default writes, retained85-byte converter and named choice mappings\n",
+          "stderr": "",
+          "output_sha256": "9ffcfa842bd7315810f32b209dc20d73bfa46248b87fd417f56390a1adae1561"
+        }
+      ],
+      "repeatable": true,
+      "matches_pre_run_output": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_map_zoom_default_history.py"
+      ],
+      "script_sha256": "01cbb903ce1c507f88254d93def7b4b436340fb5d0b012810c2c060d11482633",
+      "output": "analysis/evidence/audits/map-zoom-default-history.json",
+      "pre_run_output_sha256": "4035c6cd9e557cd0d8ab3f9e7002ef59dd5e58ef5c582358357fcd29257a924e",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: early131 alternating3/1 stores;140 all3 boundary and identical final store block\n",
+          "stderr": "",
+          "output_sha256": "4035c6cd9e557cd0d8ab3f9e7002ef59dd5e58ef5c582358357fcd29257a924e"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: early131 alternating3/1 stores;140 all3 boundary and identical final store block\n",
+          "stderr": "",
+          "output_sha256": "4035c6cd9e557cd0d8ab3f9e7002ef59dd5e58ef5c582358357fcd29257a924e"
+        }
+      ],
+      "repeatable": true,
+      "matches_pre_run_output": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_opponent_hud_defaults.py"
+      ],
+      "script_sha256": "da03e12d1065c308f8e5a6adb453c7e221a4f0918c17e7e1892627d8288ecdbf",
+      "output": "analysis/evidence/audits/opponent-hud-defaults.json",
+      "pre_run_output_sha256": "54ce6d7c2aed7445ac6f928043964c77a56c7745711388900b963621376a5487",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:12 named paired descriptors, racer suffix defaults, two byte-identical conditional consumer spans\n",
+          "stderr": "",
+          "output_sha256": "54ce6d7c2aed7445ac6f928043964c77a56c7745711388900b963621376a5487"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:12 named paired descriptors, racer suffix defaults, two byte-identical conditional consumer spans\n",
+          "stderr": "",
+          "output_sha256": "54ce6d7c2aed7445ac6f928043964c77a56c7745711388900b963621376a5487"
+        }
+      ],
+      "repeatable": true,
+      "matches_pre_run_output": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_police_list_spacing.py"
+      ],
+      "script_sha256": "81e3b58debaef0f99d85aaef953fb07e49bbb436f42566411d3889700aeb8e6c",
+      "output": "analysis/evidence/audits/police-list-spacing.json",
+      "pre_run_output_sha256": "8b2ddb98df7f7b2f517e6ab72f278c0529059cfb687690f9e242bc563386b32a",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: paired20->12.414 binary64 constants, retained metric/panel consumers and renderer row advance\n",
+          "stderr": "",
+          "output_sha256": "8b2ddb98df7f7b2f517e6ab72f278c0529059cfb687690f9e242bc563386b32a"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: paired20->12.414 binary64 constants, retained metric/panel consumers and renderer row advance\n",
+          "stderr": "",
+          "output_sha256": "8b2ddb98df7f7b2f517e6ab72f278c0529059cfb687690f9e242bc563386b32a"
+        }
+      ],
+      "repeatable": true,
+      "matches_pre_run_output": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_intensity_color_contract.py"
+      ],
+      "script_sha256": "07fca49a81bfa59f59a9de1ddec11de0fee2709963858106f04fcbeeca068e03",
+      "output": "analysis/evidence/audits/intensity-color-contract.json",
+      "pre_run_output_sha256": "6bff03ef6ec0dcd54839e2cdd76ab71433c3c7944d55c670873f0c58bc6bbd40",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: complete235-byte colour helper, one-byte mask delta, 65536 constant and official Alpha Intensity codelink\n",
+          "stderr": "",
+          "output_sha256": "6bff03ef6ec0dcd54839e2cdd76ab71433c3c7944d55c670873f0c58bc6bbd40"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: complete235-byte colour helper, one-byte mask delta, 65536 constant and official Alpha Intensity codelink\n",
+          "stderr": "",
+          "output_sha256": "6bff03ef6ec0dcd54839e2cdd76ab71433c3c7944d55c670873f0c58bc6bbd40"
+        }
+      ],
+      "repeatable": true,
+      "matches_pre_run_output": true
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "before_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "matches_prior": true,
+      "after_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b"
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "before_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "matches_prior": true,
+      "after_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6"
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "before_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "matches_prior": true,
+      "after_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb"
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "before_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "matches_prior": true,
+      "after_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+    },
+    {
+      "path": "analysis/evidence/probes/line-boundary-helper-probe.json",
+      "before_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0",
+      "matches_prior": true,
+      "after_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0"
+    },
+    {
+      "path": "reconstruction/README.md",
+      "before_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca",
+      "matches_prior": true,
+      "after_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca"
+    },
+    {
+      "path": "reconstruction/line_boundary.c",
+      "before_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437",
+      "matches_prior": true,
+      "after_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437"
+    },
+    {
+      "path": "reconstruction/line_boundary.h",
+      "before_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad",
+      "matches_prior": true,
+      "after_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary.py",
+      "before_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f",
+      "matches_prior": true,
+      "after_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary_windows.py",
+      "before_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab",
+      "matches_prior": true,
+      "after_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab"
+    },
+    {
+      "path": "reconstruction/tests/windows_adapter.S",
+      "before_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f",
+      "matches_prior": true,
+      "after_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f"
+    },
+    {
+      "path": "reconstruction/tests/windows_harness.c",
+      "before_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd",
+      "matches_prior": true,
+      "after_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd"
+    }
+  ],
+  "raw_reference_exports": [
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    }
+  ],
+  "shared_dependencies": [
+    {
+      "path": "analysis/scripts/audit_thrash_loader_difference.py",
+      "sha256": "5bd4d21780b17971061bddf14a3dfb67944ca5556f4bdafb740f5e08e237d73c"
+    },
+    {
+      "path": "analysis/scripts/audit_dx5_reference_final.py",
+      "sha256": "cd7f5e69e9aac66c6dc1bfa2c0f04fe2c3486cf00388b4344b495a46d4b38ab2"
+    },
+    {
+      "path": "analysis/evidence/audits/language-fallback-history.json",
+      "sha256": "38a4882ee641dd4631b6977d575276a7facc602221acdb7390f07e176e359a20"
+    }
+  ],
+  "limits": [
+    "Primary-agent reruns of eight selected static audits, not independent semantic review, runtime, CI or whole-repository validation.",
+    "No target/API/instruction execution, new exports, compilation, reconstruction edits or Ghidra database reopening/mutation.",
+    "Hashes establish file identity across this checkpoint and prior record, not live GUI state or correctness of every annotation.",
+    "Raw export identity is compared against prior checkpoint hashes; exports were not regenerated and original export manifests were not freshly parsed.",
+    "Repeatability does not prove every semantic interpretation or extend the selected input/path coverage."
+  ]
+}
