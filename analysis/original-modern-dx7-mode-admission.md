@@ -95,3 +95,16 @@ The retained consumer clears`600186d8`, conditionally releases an existing objec
 Conditional static consequence: if entry ECX is a valid nonzero index and the environment is absent,1.6.0 can select that entry where1.6.1 requests0. Invalid old ECX also falls back to0 through this consumer, subject to pointer/state prerequisites. No index, environment lookup or driver was executed.
 
 This comparison was inspected while triaging the claimed black-polygon workaround, but **no causal link to MP161-003 is established**. It is documented as an independent display-selection difference. The black-polygon location/rendering claim, full callbacks, selector lifecycle, source-string bounds and actual display acceptance remain unresolved; existing catalog status for that visual claim is unchanged.
+
+
+## Caller qualification narrows the old saved-ECX consequence
+
+The extended [display-env audit](evidence/audits/dx7-display-environment.json) retains both complete about exports and the second caller witness. A decoded direct-call census of executable sections finds wrapper calls at **1.6.0 `6000117d` and`60003799`**, versus **1.6.1 `60001171` and`60003799`**. This is a direct decoded-call boundary, not an exhaustive exclusion of indirect entry or runtime patching.
+
+In the old about export, **`600010ea` loads ECX from`600150e8`**. Its common descriptor-writing tail makes no intervening call or ECX assignment before calling the wrapper at`6000117d`. The source is a word inside descriptor text; its file-backed bytes are **`33 72 61 73`**, DWORD **`73617233h`** (1,935,766,067). Thus this caller supplies a concrete staging value, not arbitrary uninitialized stack memory. Earlier/later writes to that source remain unexcluded.
+
+Conditional consequence: with that source unchanged and signed adapter count`[600186e0]` no greater than`73617233h`, the old wrapper's missing-environment argument fails the consumer's upper-bound check and falls back to entry0. The newer explicit0 request therefore need not change the selected entry for this about path. This does not prove valid table entry0, successful initialization or equality of the omitted flag store/other side effects. No live adapter count was measured.
+
+The second callsite`60003799` follows an optional call to`6000b9e0` at`60003791`; its ECX contract and complete enclosing initialization paths are not qualified by this caller witness. The earlier general example of a valid nonzero ECX selecting a different entry remains conditional and must not be presented as an observed consequence of the about export.
+
+**Resolved:** known about-caller source and a bounded fallback condition. **Pending:** the other caller's register contract, all source/count writers, indirect entries and runtime selection. No claim of a universal old-selection bug or black-polygon cause is made; no driver or instruction probe was executed.

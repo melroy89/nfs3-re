@@ -1,5 +1,5 @@
 """Static DX7 display-env caller and selected consumer1.6.0/1.6.1."""
-import hashlib,json,subprocess
+import hashlib,json,subprocess,re,struct
 import pefile
 from audit_thrash_loader_difference import ROOT
 from audit_dx5_reference_final import disassemble
@@ -23,19 +23,34 @@ def main():
         assert imports[0x60015058]==b'getenv' and imports[0x60015070]==b'atoi'
         end=0x600020b6 if version=='1.6.0' else 0x600020a0
         rows=[]
-        for lo,hi in [(0x60002060,end),(0x600020c0,0x600021e7)]:
+        for lo,hi in [(0x60002060,end),(0x600020c0,0x600021e7),
+                      (0x60001000,0x6000119a if version=='1.6.0' else 0x60001191),(0x60003783,0x600037ab)]:
             code=pe.get_data(lo-0x60000000,hi-lo);out=capture/f'{version}-{lo:08x}.asm'
             out.write_text('\n'.join(disassemble(code,lo))+'\n')
             rows.append({'start':f'{lo:08x}','end_exclusive':f'{hi:08x}','bytes_sha256':hashlib.sha256(code).hexdigest(),
                 'assembly':str(out.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
+        callsites=[]
+        for section in pe.sections:
+            if section.Characteristics&0x20000000:
+                for line in disassemble(section.get_data(),0x60000000+section.VirtualAddress):
+                    if re.search(r'\bcall\s+0x60002060\b',line):callsites.append(int(line.split(':')[0],16))
+        assert callsites==([0x6000117d,0x60003799]if version=='1.6.0'else[0x60001171,0x60003799])
+        assert struct.unpack('<I',pe.get_data(0x150e8,4))[0]==0x73617233
+        if version=='1.6.0':assert pe.get_data(0x10ea,6).hex()=='8b0de8500160'
         consumers.append(pe.get_data(0x20c0,0x127))
         if version=='1.6.0':
             assert pe.get_data(0x20aa,10).hex()=='8b44240050e80c000000'
             assert pe.get_data(0x2071,10).hex()=='c70560ab056001000000'
         else:
             assert pe.get_data(0x208a,20).hex()=='85c0740a50ff157050016083c40450e822000000'
-        result['versions'][version]={'archive_sha256':package['archive_sha256'],'member':member,'sha256':expected,'spans':rows}
+        result['versions'][version]={'archive_sha256':package['archive_sha256'],'member':member,'sha256':expected,'spans':rows,
+            'decoded_direct_call_sites':[f'{x:08x}'for x in callsites],
+            'descriptor_word_600150e8':{'file_backed_hex':pe.get_data(0x150e8,4).hex(),'value':0x73617233}}
     assert consumers[0]==consumers[1]
+    result['caller_qualification']={'old_about':'600010ea loadsECXfrom600150e8;nointerveningcallorECXwritebefore6000117d',
+        'conditional_default':'If textwordunmodified and signedadaptercount<=0x73617233, oldaboutmissing-env indexfailsupperbound andfallsback0',
+        'other_call':'60003799 appearsafteroptional6000b9e0 call;entryECXcontractunresolvedhere',
+        'limits':'Decoded directcall census is not all indirect entries/callers or runtime state proof'}
     result['facts']={'common_admission':'Signed600170bc<0 and either6007b864 or6007b880 nonzero',
         'missing_environment':'160 passes entryECX savedbyPUSHECX;161 passes getenvNULL=0',
         'present_environment':'Both passatoi result',

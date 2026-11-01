@@ -19,8 +19,30 @@
           "bytes_sha256": "661e8990bf27890e99f6b2b240882ea4eae5d9ac5fddae9aa781f311f5d905f1",
           "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-600020c0.asm",
           "assembly_sha256": "ed655d25abebc3e0ee131093f019fa15c49b78d31f47fccbc40daa98ccd6b932"
+        },
+        {
+          "start": "60001000",
+          "end_exclusive": "6000119a",
+          "bytes_sha256": "a0a8ce058fa3567cf2244f82a8ddff1046582998d98d7acea77a293ab2a88ca9",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-60001000.asm",
+          "assembly_sha256": "f555772bfc405563f4feebb8241df744a31f9b0c0113feccba1246930002db9b"
+        },
+        {
+          "start": "60003783",
+          "end_exclusive": "600037ab",
+          "bytes_sha256": "6c6e72139156b8145ab144de7747cd2a2631bd2bcd0e8c7509f7f402a65fbd0b",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-60003783.asm",
+          "assembly_sha256": "80712bfc508d7501aa3f6b7ad62c042f65787c04d5a41e824a3ed795640a8cc1"
         }
-      ]
+      ],
+      "decoded_direct_call_sites": [
+        "6000117d",
+        "60003799"
+      ],
+      "descriptor_word_600150e8": {
+        "file_backed_hex": "33726173",
+        "value": 1935766067
+      }
     },
     "1.6.1": {
       "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
@@ -40,14 +62,42 @@
           "bytes_sha256": "661e8990bf27890e99f6b2b240882ea4eae5d9ac5fddae9aa781f311f5d905f1",
           "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-600020c0.asm",
           "assembly_sha256": "ed655d25abebc3e0ee131093f019fa15c49b78d31f47fccbc40daa98ccd6b932"
+        },
+        {
+          "start": "60001000",
+          "end_exclusive": "60001191",
+          "bytes_sha256": "2b404f0af15018256b3756b886c0b1c0bd79b28644de34ad52e1b7b0fc7d52cc",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-60001000.asm",
+          "assembly_sha256": "de0f1888f35a0dfc10d892c3f11a8abb5db5ea28616aa5a21e1d73b6c6f95041"
+        },
+        {
+          "start": "60003783",
+          "end_exclusive": "600037ab",
+          "bytes_sha256": "6c6e72139156b8145ab144de7747cd2a2631bd2bcd0e8c7509f7f402a65fbd0b",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-60003783.asm",
+          "assembly_sha256": "80712bfc508d7501aa3f6b7ad62c042f65787c04d5a41e824a3ed795640a8cc1"
         }
-      ]
+      ],
+      "decoded_direct_call_sites": [
+        "60001171",
+        "60003799"
+      ],
+      "descriptor_word_600150e8": {
+        "file_backed_hex": "33726173",
+        "value": 1935766067
+      }
     }
   },
   "limits": [
     "No getenv/atoi, driver/API or target execution.",
     "Black-polygon attribution, full callback/state lifecycle and visible results unresolved."
   ],
+  "caller_qualification": {
+    "old_about": "600010ea loadsECXfrom600150e8;nointerveningcallorECXwritebefore6000117d",
+    "conditional_default": "If textwordunmodified and signedadaptercount<=0x73617233, oldaboutmissing-env indexfailsupperbound andfallsback0",
+    "other_call": "60003799 appearsafteroptional6000b9e0 call;entryECXcontractunresolvedhere",
+    "limits": "Decoded directcall census is not all indirect entries/callers or runtime state proof"
+  },
   "facts": {
     "common_admission": "Signed600170bc<0 and either6007b864 or6007b880 nonzero",
     "missing_environment": "160 passes entryECX savedbyPUSHECX;161 passes getenvNULL=0",

@@ -572,3 +572,8 @@ The [five-component package audit](original-modern-dgvoodoo-version-history.md) 
 ## DX7 display-env wrapper has a hidden-register/default change
 
 The [wrapper/consumer follow-up](original-modern-dx7-mode-admission.md#missing-display-environment-stops-forwarding-saved-ecx) verifies old missing THRASH_DISPLAY→entryECX versus new→0, an omitted local flag store and a byte-identical295-byte selection consumer. This is a concrete independent display-selection difference; black-polygon attribution, caller ECX initialization and runtime effects remain unresolved. No visual catalog claim is promoted; counts unchanged.
+
+
+## DX7 display wrapper caller qualification
+
+The [caller follow-up](original-modern-dx7-mode-admission.md#caller-qualification-narrows-the-old-saved-ecx-consequence) identifies two direct wrapper calls per driver and old about's staged ECX word73617233h. For an unchanged source and adapter count<=that value, the old missing-env path falls back0, narrowing the earlier possible-different-index example. The second init caller and count/source lifetime remain open. Counts unchanged; no target execution.
