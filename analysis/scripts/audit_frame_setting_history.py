@@ -4,7 +4,8 @@ import json
 import struct
 import subprocess
 import pefile
-from audit_thrash_loader_difference import ROOT
+from audit_thrash_loader_difference import ROOT, SPECS
+from audit_dx5_reference_final import disassemble
 
 
 def main():
@@ -15,6 +16,9 @@ def main():
     result={'kind':'historical-frame-setting-expansion','versions':{},
             'limits':['Selected descriptor and matching English asset only; not every frame consumer or localization.',
                       'No game/menu/viewport execution or visible camera-shift test.']}
+    constructor_hashes={}
+    capture=ROOT/'analysis/captures/modern-differences/frame-setting-history'
+    capture.mkdir(parents=True,exist_ok=True)
     for version,(relative,archive_sha,exe_sha) in specs.items():
         archive=ROOT/relative
         assert hashlib.sha256(archive.read_bytes()).hexdigest()==archive_sha
@@ -40,11 +44,37 @@ def main():
             assert first<=offset<len(text)
             labels.append(text[offset:text.index(0,offset)].decode('ascii'))
         assert labels==(['Full','2:1'] if version=='1.5.3' else ['Full, Centered','Full, Shifted','2:1, Centered','2:1, Shifted'])
+        spans=[]
+        ranges=[(0x4be5e0,0x4be850),(0x4be874,0x4be88d)] if version=='1.5.3' else [(0x4be5e0,0x4be85a),(0x4be89c,0x4be8b5)]
+        for lo,hi in ranges:
+            code=pe.get_data(lo-0x400000,hi-lo)
+            out=capture/f'{version}-{lo:08x}.asm'
+            out.write_text('\n'.join(disassemble(code,lo))+'\n')
+            spans.append({'start':f'{lo:08x}','end_exclusive':f'{hi:08x}',
+                'bytes_sha256':hashlib.sha256(code).hexdigest(),'assembly':str(out.relative_to(ROOT)),
+                'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
+        if version=='1.5.3':
+            assert pe.get_data(0xbe622,19).hex()=='833d4cbc6f0000740a833db0d36f0001740146'
+            assert pe.get_data(0xbe65a,5).hex()=='d1fb035dd8'
+        else:
+            assert pe.get_data(0xbe622,15).hex()=='833db0d36f000174068b354cbc6f00'
+            assert pe.get_data(0xbe640,6).hex()=='f7c602000000'
+            assert pe.get_data(0xbe65a,6).hex()=='f7c601000000'
+        constructor_hashes[version]=spans[0]['bytes_sha256']
         result['versions'][version]={'archive':relative,'archive_sha256':archive_sha,'exe_sha256':exe_sha,
             'descriptor_address':'005567a8','descriptor_dwords':[f'{x:08x}'for x in descriptor],
             'label_list_address':f'{pointer:08x}','word_ids':ids,'labels':labels,
             'text_member':member,'text_sha256':hashlib.sha256(text).hexdigest(),
+            'constructor_spans':spans,
             'scope':'Descriptor bytes and referenced strings verified; runtime selection and geometry not observed'}
+    relative,expected,_=SPECS['official_modern']
+    final_raw=(ROOT/relative).read_bytes();assert hashlib.sha256(final_raw).hexdigest()==expected
+    final=pefile.PE(data=final_raw)
+    final_constructor=hashlib.sha256(final.get_data(0xbe5e0,0x27a)).hexdigest()
+    assert final_constructor==constructor_hashes['1.6.0']
+    result['final_constructor_correspondence']={'path':relative,'sha256':expected,
+        'range':'004be5e0..004be85a','bytes':634,'bytes_sha256':final_constructor,'identical_to_160':True,
+        'limits':'Local constructor bytes only; dimensions/helpers/state and rendered outcome can differ'}
     (ROOT/'analysis/evidence/audits/frame-setting-history.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: pinned1.5.3/1.6.0 archives/EXEs; two-to-four descriptor labels with retained selector')
 

@@ -24,6 +24,22 @@
       ],
       "text_member": "fedata/text/text.eng",
       "text_sha256": "26b6415603a3bd20645ed905bbcc3f1ca8eb9dc2fa3488ed9ac9b95231bc4dd5",
+      "constructor_spans": [
+        {
+          "start": "004be5e0",
+          "end_exclusive": "004be850",
+          "bytes_sha256": "096b1c003344a3bd840365acfe7c42e0e4581f7749fcb12a73524f6295aaaa3a",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.5.3-004be5e0.asm",
+          "assembly_sha256": "6979fe738faa4b110b36a47ef81466ffdf751da3d6c42b1eccba41ddc310a240"
+        },
+        {
+          "start": "004be874",
+          "end_exclusive": "004be88d",
+          "bytes_sha256": "9909e3b8bdf0ccc37d61d2e6405187e060086abc168c65fc6694828e86a225f6",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.5.3-004be874.asm",
+          "assembly_sha256": "2c92f62409d91b6c0cb1925b9a5af2fd892868fac47b7b858ee0d00402b75fc9"
+        }
+      ],
       "scope": "Descriptor bytes and referenced strings verified; runtime selection and geometry not observed"
     },
     "1.6.0": {
@@ -53,11 +69,36 @@
       ],
       "text_member": "fedata/text/text.eng",
       "text_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+      "constructor_spans": [
+        {
+          "start": "004be5e0",
+          "end_exclusive": "004be85a",
+          "bytes_sha256": "5d932910006d95313cdd60ddfde3c6ac614afdbb0960c6e30f9db9419a8f195f",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.6.0-004be5e0.asm",
+          "assembly_sha256": "3d977a96268388df14c032f6064498b4939c443fb4492aefcbdc9bbd2f0f75a2"
+        },
+        {
+          "start": "004be89c",
+          "end_exclusive": "004be8b5",
+          "bytes_sha256": "9909e3b8bdf0ccc37d61d2e6405187e060086abc168c65fc6694828e86a225f6",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.6.0-004be89c.asm",
+          "assembly_sha256": "c59436df748939c599e4213cd510e95ff37e14ad0f8e21e3a1ca81f425f1b07f"
+        }
+      ],
       "scope": "Descriptor bytes and referenced strings verified; runtime selection and geometry not observed"
     }
   },
   "limits": [
     "Selected descriptor and matching English asset only; not every frame consumer or localization.",
     "No game/menu/viewport execution or visible camera-shift test."
-  ]
+  ],
+  "final_constructor_correspondence": {
+    "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+    "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "range": "004be5e0..004be85a",
+    "bytes": 634,
+    "bytes_sha256": "5d932910006d95313cdd60ddfde3c6ac614afdbb0960c6e30f9db9419a8f195f",
+    "identical_to_160": true,
+    "limits": "Local constructor bytes only; dimensions/helpers/state and rendered outcome can differ"
+  }
 }

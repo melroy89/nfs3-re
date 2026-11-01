@@ -72,3 +72,23 @@ Matching English labels are **Full /2:1** in1.5.3, versus **Full, Centered / Ful
 **Boundary:** these historical descriptor/asset checks do not prove that every1.6.0 geometry consumer already matches final, that a camera visibly shifts correctly, that arbitrary old saved ordinals are migrated, or that every localized label is correct. The selector address staying equal is not proof that its ordinal semantics stay equal: historical ordinal1 is2:1, while final ordinal1 is Full, Shifted. Actual load/reset policies and consumer versioning remain separate.
 
 **Work status:** selected historical expansion mechanism done, confidence verified static. Full MP160-004 outcome remains partial because runtime/complete consumer coverage is not established. No viewport, UI or instruction probe was run.
+
+
+## Historical constructor changes Boolean policy to two independent bits
+
+The extended [historical audit](evidence/audits/frame-setting-history.json) captures complete constructors **1.5.3 `004be5e0..004be850`** (624 bytes) and **1.6.0 `004be5e0..004be85a`** (634 bytes), plus their paired record setters. The complete1.6.0 constructor is asserted byte-identical to official final's same634 bytes, with both artifact hashes verified. This narrows the earlier consumer-date limitation for this constructor only.
+
+In1.5.3, `004be620..004be635` sets ESI to normalized1 only when setting`006fbc4c` is nonzero and session`006fd3b0` is not1. Thus its rectangle choice treats all nonzero values alike. In1.6.0, `004be620..004be631` leaves ESI0 for session1; otherwise it reads the **raw DWORD setting** into ESI. The physical rectangle tests **bit1** at`004be640`, and covering-frame origin tests **bit0** at`004be65a`, with an additional bit1 adjustment inside the shifted branch.
+
+Using the existing source-group interpretation and ordinary nonoverflowing dimensions, define `S=(3*W) arithmetic_shift_right2` and `D=(H-S) arithmetic_shift_right1`. Both versions write covering-frame heightS.1.5.3 unconditionally starts covering Y at **`D+(D arithmetic_shift_right1)`**, then applies its nonzero-mode correction.1.6.0 starts atD and applies that extra shift only when bit0 is set. Its physical-height2:1 choice depends on bit1, independently of shifting. Preserve arithmetic shifts/wrapping semantics for exceptional integer inputs rather than translating negative shifts into ordinary C division.
+
+| Setting interpretation, excluding session1 |1.5.3 authored choice/policy |1.6.0 authored choice/policy |
+|---|---|---|
+| Ordinal0 | Full; covering-frame shifted formula | Full, Centered; no bit0 shift |
+| Ordinal1 |2:1; nonzero-mode rectangle and shifted formula | Full, Shifted; bit0 set, bit1 clear |
+| Ordinal2 | Not one of its two authored choices; normalizes nonzero |2:1, Centered |
+| Ordinal3 | Not one of its two authored choices; normalizes nonzero |2:1, Shifted |
+
+This demonstrates an actual local geometry-policy change alongside the expanded label table, not merely four renamed labels. Session1 still overrides the selector to0, but1.5.3's unconditional covering shift and1.6.0's bit-gated policy remain distinct. Do not extend the table into a claim about every camera or split-screen result.
+
+Remaining: migration/reset of stored ordinals, all other1.6.0 frame consumers and helper/state lifetimes, malformed settings, mode dimensions and visible camera effects. Identical1.6.0/final constructor instructions do not prove equal transitive helper behaviour or runtime state. MP160-004 remains partial; no geometry or floating-point instruction was executed.

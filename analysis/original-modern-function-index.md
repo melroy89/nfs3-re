@@ -252,7 +252,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004bc670` | ClearDialogAndRefreshRaceMouseState | 15 | 2 | [vehicle-dispatch](original-modern-vehicle-dispatch.md) |
 | `004bc680` | RenderRaceFrame | 332 | 17 | [night-lighting](original-modern-night-lighting.md), [screenshots](original-modern-screenshots.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004be570` | GetDriverDisplayModeDimensions | 97 | 5 | [viewport-geometry](original-modern-viewport-geometry.md) |
-| `004be5e0` | InitializeViewportGeometryForProfile | 634 | 608 | [border-geometry](original-modern-border-geometry.md), [projection](original-modern-projection.md), [viewport-geometry](original-modern-viewport-geometry.md) |
+| `004be5e0` | InitializeViewportGeometryForProfile | 634 | 608 | [border-geometry](original-modern-border-geometry.md), [frame-setting](original-modern-frame-setting.md), [projection](original-modern-projection.md), [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004be85c` | ExportAdjustedViewportBounds | 63 | 60 | [frame-resize](original-modern-frame-resize.md), [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004be89c` | StoreViewportRecordFirstFourDwords | 12 | 12 | [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004be8a8` | StoreViewportRecordLastFourDwords | 13 | 13 | [viewport-geometry](original-modern-viewport-geometry.md) |

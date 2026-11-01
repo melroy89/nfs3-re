@@ -531,3 +531,8 @@ The [WORD-table follow-up](original-modern-localization-151.md#frame-size-first-
 ## Frame Size expansion directly dated1.5.3 to1.6.0
 
 The [historical descriptor/English-asset audit](original-modern-frame-setting.md#direct153-to160-expansion-boundary) verifies immediate retained release hashes, two→four choices and retained selector storage. This resolves the table-expansion introduction gap for MP160-004, while full historical geometry consumers, saved-ordinal migration and visible shifts remain unverified. The catalog entry stays partial; counts unchanged. No target execution.
+
+
+## Historical Frame Size constructor bit policy
+
+The [constructor follow-up](original-modern-frame-setting.md#historical-constructor-changes-boolean-policy-to-two-independent-bits) captures complete624/634-byte1.5.3/1.6.0 constructors and verifies1.6.0/final body equality.1.5.3 normalizes the selector;1.6.0 uses bit1 for2:1 and bit0 for covering-frame shift, matching the expanded labels locally. Other consumers, saved ordinals and visible outcome remain pending. MP160-004 remains partial; counts unchanged.
