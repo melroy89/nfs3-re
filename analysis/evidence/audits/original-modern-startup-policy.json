@@ -129,5 +129,64 @@
     "Original callsite witnesses are not a complete original startup CFG.",
     "Current option defaults do not prove historical release defaults."
   ],
-  "allocator_004f7900_bytes_identical": true
+  "allocator_004f7900_bytes_identical": true,
+  "outside_startup_nop_partition": [
+    {
+      "start": "004a39c6",
+      "end_exclusive": "004a3a56",
+      "bytes": 144,
+      "description": "Original reader tail, embedded table and application entry/instance check",
+      "original_sha256": "525e961a880950cd0ceb295fe8c0469fb9aa063643f04ffb9b4d06b935e923c1",
+      "modern_sha256": "0ff69f5400685cebe55962d86d57c68777c5681d5ea3e83ac62fd6030d6e8a56"
+    },
+    {
+      "start": "004a3a56",
+      "end_exclusive": "004a3ab9",
+      "bytes": 99,
+      "description": "Version resource reader/scan callsite",
+      "original_sha256": "f1a7264892b7bc796b2e55c1d85173fb3ad92153cb9d1e4ec61e0d3ee32bd39e",
+      "modern_sha256": "dada9a88a7a3b2ce75729140615e5d361e2adfcb4c9cd649aee6bf94bf85c9e6"
+    },
+    {
+      "start": "004a3ab9",
+      "end_exclusive": "004a3ad9",
+      "bytes": 32,
+      "description": "Command-line call and conditional application return",
+      "original_sha256": "16f90b5150278799ee89928c10e061a753d35dc6fb754e7dba11dbe9c05fe405",
+      "modern_sha256": "b553c95f426d417a97b4988fea34a4bb24d612b6172d45ad77d5c3b852f0eeee"
+    },
+    {
+      "start": "004a3ad9",
+      "end_exclusive": "004a3b3d",
+      "bytes": 100,
+      "description": "Error mode, low-address read and filter path",
+      "original_sha256": "f0d434275fa26acdd62678b15552d0063a07c9040c0f718c99518a93ade822cb",
+      "modern_sha256": "60f9736b77660948794679f6afff9c99b22eded41459ffe26243dfe8737599fb"
+    },
+    {
+      "start": "004a3b3d",
+      "end_exclusive": "004a3d05",
+      "bytes": 456,
+      "description": "Two demo startup override branches",
+      "original_sha256": "4450d95e3a4a62e7111921ae8286463e12bc92ad9844fd5ad75720cbd10d5bb8",
+      "modern_sha256": "99f6fa37f5b2513261d2059f258d71964f05acf1e9cac762c5d1861951a87b2f"
+    },
+    {
+      "start": "004a3d05",
+      "end_exclusive": "004a3d4a",
+      "bytes": 69,
+      "description": "Optional fpuerrors mask updates",
+      "original_sha256": "e1cfa02350c146497faa7782b9ef5e208307a3f3a0edfaf6300bc723fdb88dee",
+      "modern_sha256": "1198da012e1b673eccfbece8a54d9280bb707df1d6b8f9512df72f38b6dd2641"
+    },
+    {
+      "start": "004a3d4a",
+      "end_exclusive": "004a3d94",
+      "bytes": 74,
+      "description": "Installation/media/subsystem calls and start of demo state setup",
+      "original_sha256": "b2d46ea28eab9c7ce7632c8ddabe7bf0652badfb7765bc72cad338c00744a9de",
+      "modern_sha256": "499b9ac7a37d28e426de0201c81452634b362b2b41e2e4bdee9780e82a2fec78"
+    }
+  ],
+  "partition_limit": "Contiguous byte accounting, not complete original CFG or semantic coverage; outer endpoints cut original instructions."
 }

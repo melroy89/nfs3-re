@@ -118,3 +118,20 @@ The filter publication belongs to the handler path; the ordinary read-success pa
 Runtime entry `004f7b7d` immediately pops EDX/EBX/EDI/EBP before interpreting EAX. Treating it as an ordinary returning C helper with only an integer argument would misrepresent the visible stack contract. Any reconstruction of this path needs the surrounding exception-runtime frame contract, or an explicitly justified platform-specific replacement.
 
 Final Modern replaces **`004a3ad9..004a3b3d` with100 NOP bytes**, including both SetErrorMode calls, the low-address read, this handler and these local publications. The corresponding first metadata target at`0055e8cf` is changed from`004a3afd` to`004a3f7d`. This proves local removal/retargeting; it does not establish removal of every exception handler, filter call or writer to these globals. Modern's separate error-reporting option is documented above. **Pending:** full original runtime dispatch, global consumers/other writers, intended policy and actual exception delivery. No low-address read or filter was executed.
+
+
+## Contiguous accounting of the974-byte NOP region
+
+The extended [startup policy audit](scripts/audit_startup_policy_difference.py) verifies this partition in [its manifest](evidence/audits/original-modern-startup-policy.json): endpoints are contiguous, lengths sum to974, every final byte is NOP, and original/final hashes are retained for each segment. These are evidence-navigation boundaries, not recovered function boundaries.
+
+| Original address range (end exclusive) | Bytes | Evidence / remaining qualification |
+|---|---:|---|
+| `004a39c6..004a3a56` | 144 | Version-reader tail, embedded old table, application entry and [instance check](original-modern-startup-requirements.md#removed-existing-window-warning-and-embedded-table); full exception-frame/application-entry contract remains pending |
+| `004a3a56..004a3ab9` | 99 | [Version read/parse producer](original-modern-config-loading.md#original-startup-populates-the-header-template-from-a-version-resource); runtime file selection/later writes pending |
+| `004a3ab9..004a3ad9` | 32 | Command-line parser call and conditional application return; [parser investigation](original-modern-command-line.md) covers retained/replaced interfaces, not every caller state |
+| `004a3ad9..004a3b3d` | 100 | SetErrorMode and [low-address/filter path](#removed-low-address-read-and-exception-filter-handler); full exception traversal/purpose pending |
+| `004a3b3d..004a3d05` | 456 | [Demo startup overrides](original-modern-command-line.md#removed-demo-startup-writes-and-precedence); raw stores known, field meanings pending |
+| `004a3d05..004a3d4a` | 69 | [fpuerrors updates](og-modern-x87-precision.md#removed-optional-startup-exception-unmasking); guard lifetime/actual exception delivery pending |
+| `004a3d4a..004a3d94` | 74 | [Installation reader](original-modern-language-table.md#original-installation-reader-also-produces-the-remote-prefix-source), [media admission](original-modern-startup-requirements.md) and [subsystem wrapper](original-modern-heap-initialization.md#removed-wrappers-relocate-arena-lifetime-and-shorten-race-shutdown), followed by start of demo state setup; complete final state writes/control flow pending |
+
+The first endpoint lies inside an original CALL operand, and the last cuts an original MOV instruction. The following Modern28-byte jump table remains a separate data interval, already mapped above. **Do not count this partition as seven newly discovered features or as complete original startup recovery.** It makes the known work and residual gaps explicit without repeating their investigations.

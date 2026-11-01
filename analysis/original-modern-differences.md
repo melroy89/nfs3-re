@@ -90,6 +90,19 @@ remaining-work status varies; the linked reports retain the precise unknowns.
 This table does not convert a verified local mechanism into a verified whole
 feature, or historical-package evidence into original-retail provenance.
 
+### Startup findings added after the14-audit checkpoint
+
+These later investigations have their own reproducible static audits; the earlier14-audit checkpoint does not cover them.
+
+| Difference | Verified evidence | Still unknown |
+|---|---|---|
+| [Version-header production](original-modern-config-loading.md#scanner-width-and-conditional-version2-header) | Original queries/parses a resource into overlapping DWORD destinations; successful parsing of inspected `27, 2.0` conditionally produces version2. Modern uses static version6 and removes the static VERSION.dll dependency | Actual queried file, later writes and real saved-file migration |
+| [Optional floating-point errors](og-modern-x87-precision.md#removed-optional-startup-exception-unmasking) | Original `-fpuerrors` startup clears five exception-mask bits; Modern removes69-byte sequence, retains identical helper | Guard lifetime, other callers and exception delivery; separate from precision control |
+| [Demo startup overrides](original-modern-command-line.md#removed-demo-startup-writes-and-precedence) | Two original branches differ at two WORD stores; e3demo executes second when both flags are set. Modern replaces456-byte region with NOPs | Meaning of raw storage and visible demo behaviour |
+| [Low-address/filter path](original-modern-startup-policy.md#removed-low-address-read-and-exception-filter-handler) | Original reads absolute`0x190`; associated filter path conditionally publishes a global. Modern removes local sequence and changes metadata target | Intended policy, full exception dispatch and global consumers |
+
+The [974-byte startup partition](original-modern-startup-policy.md#contiguous-accounting-of-the974-byte-nop-region) accounts for the whole NOP interval and links remaining gaps. Byte accounting is complete within that interval; semantic recovery is not.
+
 ## 1. Three-way provenance
 
 | Artifact | Bytes | SHA-256 |

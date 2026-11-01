@@ -50,6 +50,27 @@ def main():
     old, new = [result['binaries'][k]['spans'][1]['bytes_sha256'] for k in ('original','official_modern')]
     assert old == new
     result['allocator_004f7900_bytes_identical'] = True
+    partition = [
+        (0x4a39c6,0x4a3a56,'Original reader tail, embedded table and application entry/instance check'),
+        (0x4a3a56,0x4a3ab9,'Version resource reader/scan callsite'),
+        (0x4a3ab9,0x4a3ad9,'Command-line call and conditional application return'),
+        (0x4a3ad9,0x4a3b3d,'Error mode, low-address read and filter path'),
+        (0x4a3b3d,0x4a3d05,'Two demo startup override branches'),
+        (0x4a3d05,0x4a3d4a,'Optional fpuerrors mask updates'),
+        (0x4a3d4a,0x4a3d94,'Installation/media/subsystem calls and start of demo state setup')]
+    assert partition[0][0] == 0x4a39c6 and partition[-1][1] == 0x4a3d94
+    assert all(a[1] == b[0] for a,b in zip(partition,partition[1:]))
+    assert sum(end-start for start,end,_ in partition) == 974
+    images = {label:pefile.PE(str(ROOT/SPECS[label][0])) for label in ('original','official_modern')}
+    result['outside_startup_nop_partition'] = []
+    for start,end,description in partition:
+        blocks = {label:p.get_data(start-0x400000,end-start) for label,p in images.items()}
+        assert blocks['official_modern'] == b'\x90'*(end-start)
+        result['outside_startup_nop_partition'].append({'start':f'{start:08x}',
+            'end_exclusive':f'{end:08x}','bytes':end-start,'description':description,
+            'original_sha256':hashlib.sha256(blocks['original']).hexdigest(),
+            'modern_sha256':hashlib.sha256(blocks['official_modern']).hexdigest()})
+    result['partition_limit'] = 'Contiguous byte accounting, not complete original CFG or semantic coverage; outer endpoints cut original instructions.'
     output = ROOT/'analysis/evidence/audits/original-modern-startup-policy.json'
     output.write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: input hashes, removed original call span, Modern options/import witnesses')
