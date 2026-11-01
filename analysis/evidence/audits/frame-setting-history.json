@@ -38,8 +38,35 @@
           "bytes_sha256": "9909e3b8bdf0ccc37d61d2e6405187e060086abc168c65fc6694828e86a225f6",
           "assembly": "analysis/captures/modern-differences/frame-setting-history/1.5.3-004be874.asm",
           "assembly_sha256": "2c92f62409d91b6c0cb1925b9a5af2fd892868fac47b7b858ee0d00402b75fc9"
+        },
+        {
+          "start": "00472aac",
+          "end_exclusive": "00472aeb",
+          "bytes_sha256": "da62566a4a1a7d1127bc8602bad7513429c314399bbb88875a38d6a565422edd",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.5.3-00472aac.asm",
+          "assembly_sha256": "f0db1751a25f282d1c237d28fa957ba9c3baf362af87cf148522207769511df7"
+        },
+        {
+          "start": "004723f0",
+          "end_exclusive": "00472402",
+          "bytes_sha256": "8eed85fc7ad86a0526d5352998eb2bd118bcdac140cdd08f82d8070ab3f8b8b9",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.5.3-004723f0.asm",
+          "assembly_sha256": "d94bb820037f5a576743c681e3608ebcfd0a167af081bdd925a5c7b14b9f7e3a"
+        },
+        {
+          "start": "00472d10",
+          "end_exclusive": "00472e1d",
+          "bytes_sha256": "8712260b2f354ca35b095333c26b4933a9e557a4f0a1d60a35f66f5de99c3dbb",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.5.3-00472d10.asm",
+          "assembly_sha256": "0cbb6b64ce5ef59c12818deeaeb358f0c4953ec5f1b43b3b7331a2fce481c53e"
         }
       ],
+      "configuration_header": {
+        "file_backed_template_hex": "f02000000500000000000000",
+        "minimum_version_byte": 5,
+        "rejected_version": "00472ad2 header refresh then00472ad7 display defaults plusHUD/sound groups",
+        "frame_default": "00472d92 clearsEDX;00472d94 stores0 at006fbc4c"
+      },
       "scope": "Descriptor bytes and referenced strings verified; runtime selection and geometry not observed"
     },
     "1.6.0": {
@@ -83,8 +110,35 @@
           "bytes_sha256": "9909e3b8bdf0ccc37d61d2e6405187e060086abc168c65fc6694828e86a225f6",
           "assembly": "analysis/captures/modern-differences/frame-setting-history/1.6.0-004be89c.asm",
           "assembly_sha256": "c59436df748939c599e4213cd510e95ff37e14ad0f8e21e3a1ca81f425f1b07f"
+        },
+        {
+          "start": "00472aac",
+          "end_exclusive": "00472aeb",
+          "bytes_sha256": "06000305b9fe67e13a8432f882df25b9b8025e9d03ced7d77b4eedb60538742f",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.6.0-00472aac.asm",
+          "assembly_sha256": "c3f8cf9ea2e04ef6ed404ea9e8569ceda8f1f915f297e474ca6f1f0eee13b1a6"
+        },
+        {
+          "start": "004723f0",
+          "end_exclusive": "00472402",
+          "bytes_sha256": "8eed85fc7ad86a0526d5352998eb2bd118bcdac140cdd08f82d8070ab3f8b8b9",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.6.0-004723f0.asm",
+          "assembly_sha256": "d94bb820037f5a576743c681e3608ebcfd0a167af081bdd925a5c7b14b9f7e3a"
+        },
+        {
+          "start": "00472d10",
+          "end_exclusive": "00472e1d",
+          "bytes_sha256": "8712260b2f354ca35b095333c26b4933a9e557a4f0a1d60a35f66f5de99c3dbb",
+          "assembly": "analysis/captures/modern-differences/frame-setting-history/1.6.0-00472d10.asm",
+          "assembly_sha256": "0cbb6b64ce5ef59c12818deeaeb358f0c4953ec5f1b43b3b7331a2fce481c53e"
         }
       ],
+      "configuration_header": {
+        "file_backed_template_hex": "f02000000600000000000000",
+        "minimum_version_byte": 6,
+        "rejected_version": "00472ad2 header refresh then00472ad7 display defaults plusHUD/sound groups",
+        "frame_default": "00472d92 clearsEDX;00472d94 stores0 at006fbc4c"
+      },
       "scope": "Descriptor bytes and referenced strings verified; runtime selection and geometry not observed"
     }
   },

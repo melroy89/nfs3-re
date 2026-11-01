@@ -536,3 +536,8 @@ The [historical descriptor/English-asset audit](original-modern-frame-setting.md
 ## Historical Frame Size constructor bit policy
 
 The [constructor follow-up](original-modern-frame-setting.md#historical-constructor-changes-boolean-policy-to-two-independent-bits) captures complete624/634-byte1.5.3/1.6.0 constructors and verifies1.6.0/final body equality.1.5.3 normalizes the selector;1.6.0 uses bit1 for2:1 and bit0 for covering-frame shift, matching the expanded labels locally. Other consumers, saved ordinals and visible outcome remain pending. MP160-004 remains partial; counts unchanged.
+
+
+## Historical Frame Size version-reset gate
+
+The [config follow-up](original-modern-frame-setting.md#historical-config-version5-to6-selects-reset-rather-than-ordinal-conversion) verifies1.5.3/1.6.0 templates5→6, the sole threshold-byte change in the decision range, and Frame Size0 default. An admitted version5 header takes grouped reset in1.6.0, rather than unconditionally reinterpreting old ordinal1. Real files, writers/overrides and rendered behaviour remain pending; counts unchanged.

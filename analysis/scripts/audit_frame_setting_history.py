@@ -17,6 +17,7 @@ def main():
             'limits':['Selected descriptor and matching English asset only; not every frame consumer or localization.',
                       'No game/menu/viewport execution or visible camera-shift test.']}
     constructor_hashes={}
+    header_routes=[]
     capture=ROOT/'analysis/captures/modern-differences/frame-setting-history'
     capture.mkdir(parents=True,exist_ok=True)
     for version,(relative,archive_sha,exe_sha) in specs.items():
@@ -46,6 +47,7 @@ def main():
         assert labels==(['Full','2:1'] if version=='1.5.3' else ['Full, Centered','Full, Shifted','2:1, Centered','2:1, Shifted'])
         spans=[]
         ranges=[(0x4be5e0,0x4be850),(0x4be874,0x4be88d)] if version=='1.5.3' else [(0x4be5e0,0x4be85a),(0x4be89c,0x4be8b5)]
+        ranges.extend([(0x472aac,0x472aeb),(0x4723f0,0x472402),(0x472d10,0x472e1d)])
         for lo,hi in ranges:
             code=pe.get_data(lo-0x400000,hi-lo)
             out=capture/f'{version}-{lo:08x}.asm'
@@ -60,13 +62,24 @@ def main():
             assert pe.get_data(0xbe622,15).hex()=='833db0d36f000174068b354cbc6f00'
             assert pe.get_data(0xbe640,6).hex()=='f7c602000000'
             assert pe.get_data(0xbe65a,6).hex()=='f7c601000000'
+        header=pe.get_data(0x15e8a0,12)
+        expected_version=5 if version=='1.5.3' else 6
+        assert struct.unpack('<3I',header)==(0x20f0,expected_version,0)
+        assert pe.get_data(0x72ac2,2)==bytes([0x3c,expected_version])
+        assert pe.get_data(0x72ad7,5).hex()=='e834020000'
+        assert pe.get_data(0x72d92,8).hex()=='31d289154cbc6f00'
+        header_routes.append(pe.get_data(0x72aac,0x3f))
         constructor_hashes[version]=spans[0]['bytes_sha256']
         result['versions'][version]={'archive':relative,'archive_sha256':archive_sha,'exe_sha256':exe_sha,
             'descriptor_address':'005567a8','descriptor_dwords':[f'{x:08x}'for x in descriptor],
             'label_list_address':f'{pointer:08x}','word_ids':ids,'labels':labels,
             'text_member':member,'text_sha256':hashlib.sha256(text).hexdigest(),
             'constructor_spans':spans,
+            'configuration_header':{'file_backed_template_hex':header.hex(),'minimum_version_byte':expected_version,
+                'rejected_version':'00472ad2 header refresh then00472ad7 display defaults plusHUD/sound groups',
+                'frame_default':'00472d92 clearsEDX;00472d94 stores0 at006fbc4c'},
             'scope':'Descriptor bytes and referenced strings verified; runtime selection and geometry not observed'}
+    assert [0x472aac+i for i,(a,b) in enumerate(zip(*header_routes)) if a!=b]==[0x472ac3]
     relative,expected,_=SPECS['official_modern']
     final_raw=(ROOT/relative).read_bytes();assert hashlib.sha256(final_raw).hexdigest()==expected
     final=pefile.PE(data=final_raw)

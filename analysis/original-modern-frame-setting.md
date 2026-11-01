@@ -92,3 +92,16 @@ Using the existing source-group interpretation and ordinary nonoverflowing dimen
 This demonstrates an actual local geometry-policy change alongside the expanded label table, not merely four renamed labels. Session1 still overrides the selector to0, but1.5.3's unconditional covering shift and1.6.0's bit-gated policy remain distinct. Do not extend the table into a claim about every camera or split-screen result.
 
 Remaining: migration/reset of stored ordinals, all other1.6.0 frame consumers and helper/state lifetimes, malformed settings, mode dimensions and visible camera effects. Identical1.6.0/final constructor instructions do not prove equal transitive helper behaviour or runtime state. MP160-004 remains partial; no geometry or floating-point instruction was executed.
+
+
+## Historical config version5 to6 selects reset rather than ordinal conversion
+
+The extended [historical audit](evidence/audits/frame-setting-history.json) now captures both version-decision ranges, complete18-byte header-copy helpers and display-default envelopes. In1.5.3, file-backed template`0055e8a0` is DWORDs **`20f0,5,0`**. In1.6.0 it is **`20f0,6,0`**. These are configuration versions, not patch release numbers; earlier/later template writes and real saved-file provenance remain separate.
+
+The complete decision range **`00472aac..00472aeb`** differs only at **`00472ac3`**, the threshold immediate5→6. Both first require loaded size`20f0`, load version WORD`006fbb44`, reject nonzero high byte, then compare the low byte unsigned with the threshold. Matching version5 is accepted by1.5.3 but **rejected by1.6.0**, entering `00472ad2`: header refresh, display defaults at`00472ad7`, then HUD and other grouped default helpers. This is a reset route, not a per-value migration table.
+
+Within the captured1.6.0 display defaults, **`00472d92` clears EDX and`00472d94` stores0 at Frame Size`006fbc4c`**. The same local zero store is present in1.5.3. Consequently, if a version5 configuration reaches the1.6.0 header decision with the stated size, it does not simply preserve historical ordinal1 and reinterpret it as Full, Shifted: the inspected reset route explicitly writes ordinal0, corresponding to the new Full, Centered choice. Other grouped settings can also be reset; this is not an isolated Frame Size conversion or a promise that every loaded field is cleared.
+
+Accepted version6+ headers with zero high byte instead bypass these grouped defaults in this local decision; arbitrary future versions are not rejected solely for being above6. Their existing Frame Size fields can retain loaded values absent other writes. Do not infer that every old file has version5, that a patched/mixed header is genuine, or that later initialization cannot change the result.
+
+**Resolved locally:** version bump, changed acceptance threshold and direct Frame Size reset consumer. **Still pending:** actual save/read success and file provenance, all template/header writers, later settings overrides and visible camera behaviour. This supplies a concrete compatibility gate without claiming a tested upgrade migration. No config file was read by the game, saved, changed or executed during this analysis.
