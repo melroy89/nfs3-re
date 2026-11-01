@@ -2,6 +2,7 @@
 import json
 import re
 import struct
+from collections import Counter
 import pefile
 from audit_dx5_reference_final import sha, disassemble
 from audit_thrash_loader_difference import ROOT, SPECS
@@ -80,16 +81,38 @@ def main():
         assert all(offset in known for offset in uv_offsets), (role,[hex(offset) for offset in uv_offsets if offset not in known])
         uv = [{'offset':offset,'bits':f'{known[offset]:08x}',
                'binary32':struct.unpack('<f',struct.pack('<I',known[offset]))[0]} for offset in uv_offsets]
+        fp_counts = Counter(line.split('\t')[-1].strip().split()[0] for line in lines
+                            if line.split('\t')[-1].strip().startswith('f'))
+        expected_fp = ({'fstp':52,'fld':36,'fild':28,'fmul':24,'fxch':14,'fistp':12,'fst':12}
+                       if role == 'original' else {'fild':16,'fstp':16,'fst':12})
+        assert dict(fp_counts) == expected_fp
+        width_reads = [line for line in lines if re.search(r'fild\s+DWORD PTR ds:0x7cdac8$',line)]
+        assert len(width_reads) == (12 if role == 'original' else 0)
         result['binaries'][role] = {'path':path,'sha256':digest,'start':'0047f650',
             'end_exclusive':f'{end:08x}','body_sha256':sha(body),'disassembly':lines,
             'pointer_register':pointer,'pointer_advances':advances,'writes':writes,
             'unique_DWORD_offsets':sorted(offsets),'quad_blocks':8,'required_span_bytes':1024,
             'maximum_written_byte_offset':1023,'fields_per_vertex':[0,4,24,28],
-            'statically_resolved_UV_DWORDs':uv}
+            'statically_resolved_UV_DWORDs':uv,'x87_instruction_counts':dict(fp_counts),
+            'total_x87_instructions':sum(fp_counts.values()),'original_width_reads':width_reads}
     assert result['binaries']['original']['statically_resolved_UV_DWORDs'] == result['binaries']['official_modern']['statically_resolved_UV_DWORDs']
     result['UV_comparison'] = {'paired_DWORDs':64,'all_bits_equal':True,
         'method':'Static MOV and FLD/FST copy propagation at normalized destination offsets; x87 coordinate arithmetic is unknown, not numerically evaluated. Only exact finite binary32 UV constants are retained.',
         'limits':'Equal UV bits do not identify the loaded atlas image, filtering, later edits, texture provider or rendered output.'}
+    result['operation_schedule'] = {
+        'original':'12 FILD width reads,24 FMUL and12 FISTP thickness conversions inside the builder.',
+        'modern':'Builder has no FMUL/FISTP and reads cached thickness once; separate updater0047f9a4 has1 FILD,2 FMUL,1 FISTP.',
+        'semantic_boundary':'Original thickness uses builder-time width/FP state. Modern thickness reflects the earlier updater input/FP state until refreshed.',
+        'limits':['178 versus44 static x87 instructions is not a timing measurement or a whole-renderer performance ratio.',
+                  'Updater frequency, actual control words, exceptions/status and visible results were not observed.',
+                  'Fewer operations and equal UV bits do not establish whole machine-state or coordinate equivalence.']}
+    updater = pe.get_data(0x7f9a4,25)
+    updater_lines = disassemble(updater,0x47f9a4)
+    updater_counts = Counter(line.split('\t')[-1].strip().split()[0] for line in updater_lines
+                             if line.split('\t')[-1].strip().startswith('f'))
+    assert dict(updater_counts) == {'fild':1,'fmul':2,'fistp':1}
+    result['operation_schedule']['modern_updater'] = {'start':'0047f9a4','end_exclusive':'0047f9bd',
+        'sha256':sha(updater),'disassembly':updater_lines,'x87_instruction_counts':dict(updater_counts)}
     local = ROOT/'nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe'
     local_raw = local.read_bytes()
     assert sha(local_raw) == '2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb'

@@ -69,6 +69,27 @@ For each quad the four UV pairs are `(u0,v0),(u1,v0),(u1,v1),(u0,v1)` in vertex 
 
 L/T/R/B denote the input bounds and t the stored Modern thickness. Integer additions/subtractions wrap32 before signed conversion; the table is not a promise of ordered/nondegenerate rectangles for arbitrary inputs. The Modern coordinate pattern is read from the captured instructions; this increment establishes UV correspondence, not every original coordinate expression or whole-function equivalence. Atlas resource identity, later vertex edits, texture binding/filtering and visible results remain unresolved. There is no ninth or centre quad to assign an extra atlas region to.
 
+## Thickness calculation moves out of the builder
+
+The same destination audit now counts the complete builders' decoded x87 instruction schedules and captures the separate25-byte Modern updater. These are static counts, not executed samples:
+
+| Instruction | Original builder | Modern builder |
+|---|---:|---:|
+|FILD |28 |16 |
+|FMUL |24 |0 |
+|FISTP |12 |0 |
+|FLD |36 |0 |
+|FST |12 |12 |
+|FSTP |52 |16 |
+|FXCH |14 |0 |
+|Total |178 |44 |
+
+Twelve original FILDs read signed width007cdac8; their24 FMULs and12 FISTPs repeatedly calculate thickness within the builder. Modern reads stored thickness0055fed0 once and reuses it. Updater0047f9a4 has one FILD, two FMULs and one FISTP, outside the builder. It must not be counted as automatically executing once per border call; the existing viewport caller evidence gives a refresh route, not every runtime invocation frequency.
+
+This is also a timing-of-computation contract: original uses the width/FP state when those builder instructions execute; Modern uses the thickness previously produced from reference width under the updater's FP state. Width or control-word changes between update and drawing therefore must not be assumed to trigger an implicit refresh. No such change was observed here, and synchronization/complete writer lifetimes remain unresolved.
+
+The reduction explains a concrete computational rewrite but proves neither a measured speedup nor a universal cost ratio. Different x87 stores/conversions can affect status and exceptions even when finite UV bits match. Coordinate values, x87 machine state and visible borders still require their own equivalence scope. No target instructions or new probes were executed.
+
 ## Retained evidence
 
 Run `python3 analysis/scripts/audit_viewport_geometry_difference.py` (Python `pefile`, GNU `objdump`). The [manifest](evidence/audits/original-modern-viewport-geometry.json) retains complete builder spans, the new wrapper/updater, six caller instruction witnesses and exact float constants for both executables. Raw assembly remains ignored. This does not validate every rewritten quad/UV assignment.

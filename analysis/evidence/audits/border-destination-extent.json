@@ -1487,6 +1487,30 @@
           "bits": "3f3b8000",
           "binary32": 0.732421875
         }
+      ],
+      "x87_instruction_counts": {
+        "fild": 28,
+        "fmul": 24,
+        "fistp": 12,
+        "fld": 36,
+        "fstp": 52,
+        "fst": 12,
+        "fxch": 14
+      },
+      "total_x87_instructions": 178,
+      "original_width_reads": [
+        "47f65a:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f673:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f6a8:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f7dd:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f80e:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f848:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f934:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f97e:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47f9b8:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47fa6b:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47fa84:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8",
+        "47faef:\tdb 05 c8 da 7c 00    \tfild   DWORD PTR ds:0x7cdac8"
       ]
     },
     "official_modern": {
@@ -2867,7 +2891,14 @@
           "bits": "3f3b8000",
           "binary32": 0.732421875
         }
-      ]
+      ],
+      "x87_instruction_counts": {
+        "fild": 16,
+        "fstp": 16,
+        "fst": 12
+      },
+      "total_x87_instructions": 44,
+      "original_width_reads": []
     }
   },
   "UV_comparison": {
@@ -2875,6 +2906,33 @@
     "all_bits_equal": true,
     "method": "Static MOV and FLD/FST copy propagation at normalized destination offsets; x87 coordinate arithmetic is unknown, not numerically evaluated. Only exact finite binary32 UV constants are retained.",
     "limits": "Equal UV bits do not identify the loaded atlas image, filtering, later edits, texture provider or rendered output."
+  },
+  "operation_schedule": {
+    "original": "12 FILD width reads,24 FMUL and12 FISTP thickness conversions inside the builder.",
+    "modern": "Builder has no FMUL/FISTP and reads cached thickness once; separate updater0047f9a4 has1 FILD,2 FMUL,1 FISTP.",
+    "semantic_boundary": "Original thickness uses builder-time width/FP state. Modern thickness reflects the earlier updater input/FP state until refreshed.",
+    "limits": [
+      "178 versus44 static x87 instructions is not a timing measurement or a whole-renderer performance ratio.",
+      "Updater frequency, actual control words, exceptions/status and visible results were not observed.",
+      "Fewer operations and equal UV bits do not establish whole machine-state or coordinate equivalence."
+    ],
+    "modern_updater": {
+      "start": "0047f9a4",
+      "end_exclusive": "0047f9bd",
+      "sha256": "172f0ec1099edf74e75cfd7b3172b8c4635952a366c60a80075821bd798ddc74",
+      "disassembly": [
+        "47f9a4:\tdb 05 48 27 7a 00    \tfild   DWORD PTR ds:0x7a2748",
+        "47f9aa:\td8 0d f8 b4 53 00    \tfmul   DWORD PTR ds:0x53b4f8",
+        "47f9b0:\td8 0d fc b4 53 00    \tfmul   DWORD PTR ds:0x53b4fc",
+        "47f9b6:\tdb 1d d0 fe 55 00    \tfistp  DWORD PTR ds:0x55fed0",
+        "47f9bc:\tc3                   \tret"
+      ],
+      "x87_instruction_counts": {
+        "fild": 1,
+        "fmul": 2,
+        "fistp": 1
+      }
+    }
   },
   "local_analysis_body_matches_official": true,
   "correction": "Both pinned builders write8 quads/32 vertices within0x400 bytes. Earlier9-quad/0x480 and derived slice-overlap claims are incorrect.",
