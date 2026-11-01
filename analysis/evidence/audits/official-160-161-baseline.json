@@ -1,0 +1,1150 @@
+{
+  "kind": "official-160-161-artifact-baseline",
+  "packages": {
+    "1.6.0": {
+      "url": "https://veg.by/files/nfs3/nfs3_modern_patch_v1.6.0.7z",
+      "archive_path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.6.0.7z",
+      "archive_bytes": 1664139,
+      "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
+      "readme_sha256": "2c4e5c9741c5e52dc8d5db45d6f0f30353a561ab719e216628b668f73e2fbadc",
+      "readme_banner": "Need For Speed III Modern Patch v1.6.0 [2016/09/22]",
+      "members": [
+        {
+          "member": "nfs3.exe",
+          "bytes": 1697792,
+          "sha256": "9fd80c4cdc9827f190698f28aa93f1182218d7c557898fb2653abfc4148c7a72",
+          "image_base": "00400000",
+          "named_exports": []
+        },
+        {
+          "member": "drivers/dx6/dx6a.dll",
+          "bytes": 94208,
+          "sha256": "273ac3fae94cf42791f65fac0e961a1d9044e8601a3400cc16263a7578278155",
+          "image_base": "60000000",
+          "named_exports": [
+            {
+              "name": "_THRASH_about@0",
+              "rva": "00001000"
+            },
+            {
+              "name": "_THRASH_clearwindow@0",
+              "rva": "00001150"
+            },
+            {
+              "name": "_THRASH_clip@16",
+              "rva": "000011f0"
+            },
+            {
+              "name": "_THRASH_drawline@8",
+              "rva": "000015f0"
+            },
+            {
+              "name": "_THRASH_drawlinemesh@12",
+              "rva": "00001630"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@12",
+              "rva": "00001670"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@8",
+              "rva": "000017a0"
+            },
+            {
+              "name": "_THRASH_drawpoint@4",
+              "rva": "000016b0"
+            },
+            {
+              "name": "_THRASH_drawpointmesh@12",
+              "rva": "000016d0"
+            },
+            {
+              "name": "_THRASH_drawpointstrip@8",
+              "rva": "000017d0"
+            },
+            {
+              "name": "_THRASH_drawquad@16",
+              "rva": "00001570"
+            },
+            {
+              "name": "_THRASH_drawquadmesh@12",
+              "rva": "000015d0"
+            },
+            {
+              "name": "_THRASH_drawtri@12",
+              "rva": "00001480"
+            },
+            {
+              "name": "_THRASH_drawtrifan@12",
+              "rva": "00001510"
+            },
+            {
+              "name": "_THRASH_drawtrifan@8",
+              "rva": "00001760"
+            },
+            {
+              "name": "_THRASH_drawtrimesh@12",
+              "rva": "000014d0"
+            },
+            {
+              "name": "_THRASH_drawtristrip@12",
+              "rva": "000014f0"
+            },
+            {
+              "name": "_THRASH_drawtristrip@8",
+              "rva": "00001700"
+            },
+            {
+              "name": "_THRASH_flushwindow@0",
+              "rva": "00001180"
+            },
+            {
+              "name": "_THRASH_idle@0",
+              "rva": "000011d0"
+            },
+            {
+              "name": "_THRASH_init@0",
+              "rva": "00002740"
+            },
+            {
+              "name": "_THRASH_is@0",
+              "rva": "00002ea0"
+            },
+            {
+              "name": "_THRASH_lockwindow@0",
+              "rva": "00001240"
+            },
+            {
+              "name": "_THRASH_pageflip@0",
+              "rva": "00001190"
+            },
+            {
+              "name": "_THRASH_readrect@20",
+              "rva": "00002f60"
+            },
+            {
+              "name": "_THRASH_restore@0",
+              "rva": "00002750"
+            },
+            {
+              "name": "_THRASH_selectdisplay@4",
+              "rva": "00001880"
+            },
+            {
+              "name": "_THRASH_setstate@8",
+              "rva": "00003310"
+            },
+            {
+              "name": "_THRASH_settexture@4",
+              "rva": "000040f0"
+            },
+            {
+              "name": "_THRASH_setvideomode@12",
+              "rva": "000027a0"
+            },
+            {
+              "name": "_THRASH_sync@4",
+              "rva": "000011e0"
+            },
+            {
+              "name": "_THRASH_talloc@20",
+              "rva": "00004130"
+            },
+            {
+              "name": "_THRASH_treset@0",
+              "rva": "000042a0"
+            },
+            {
+              "name": "_THRASH_tupdate@12",
+              "rva": "00004270"
+            },
+            {
+              "name": "_THRASH_unlockwindow@4",
+              "rva": "000013e0"
+            },
+            {
+              "name": "_THRASH_window@4",
+              "rva": "00001100"
+            },
+            {
+              "name": "_THRASH_writerect@20",
+              "rva": "00003000"
+            }
+          ]
+        },
+        {
+          "member": "drivers/dx7/dx7a.dll",
+          "bytes": 110592,
+          "sha256": "8f3ed9676611d65f40b5dde537aab5813d2e2a854c08fdf3b08b7d19a7a25d5e",
+          "image_base": "60000000",
+          "named_exports": [
+            {
+              "name": "_THRASH_about@0",
+              "rva": "00001000"
+            },
+            {
+              "name": "_THRASH_clearwindow@0",
+              "rva": "000012e0"
+            },
+            {
+              "name": "_THRASH_clip@16",
+              "rva": "000013c0"
+            },
+            {
+              "name": "_THRASH_createwindow@16",
+              "rva": "00001880"
+            },
+            {
+              "name": "_THRASH_destroywindow@4",
+              "rva": "00001910"
+            },
+            {
+              "name": "_THRASH_drawline@8",
+              "rva": "00001b10"
+            },
+            {
+              "name": "_THRASH_drawlinemesh@12",
+              "rva": "00001b30"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@12",
+              "rva": "00001b50"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@8",
+              "rva": "00001d20"
+            },
+            {
+              "name": "_THRASH_drawpoint@4",
+              "rva": "00001b90"
+            },
+            {
+              "name": "_THRASH_drawpointmesh@12",
+              "rva": "00001bb0"
+            },
+            {
+              "name": "_THRASH_drawpointstrip@8",
+              "rva": "00001d50"
+            },
+            {
+              "name": "_THRASH_drawquad@16",
+              "rva": "00001a90"
+            },
+            {
+              "name": "_THRASH_drawquadmesh@12",
+              "rva": "00001af0"
+            },
+            {
+              "name": "_THRASH_drawsprite@8",
+              "rva": "00001bf0"
+            },
+            {
+              "name": "_THRASH_drawspritemesh@12",
+              "rva": "00001c50"
+            },
+            {
+              "name": "_THRASH_drawtri@12",
+              "rva": "000019d0"
+            },
+            {
+              "name": "_THRASH_drawtrifan@12",
+              "rva": "00001a70"
+            },
+            {
+              "name": "_THRASH_drawtrifan@8",
+              "rva": "00001cf0"
+            },
+            {
+              "name": "_THRASH_drawtrimesh@12",
+              "rva": "00001a30"
+            },
+            {
+              "name": "_THRASH_drawtristrip@12",
+              "rva": "00001a50"
+            },
+            {
+              "name": "_THRASH_drawtristrip@8",
+              "rva": "00001ca0"
+            },
+            {
+              "name": "_THRASH_flushwindow@0",
+              "rva": "00001320"
+            },
+            {
+              "name": "_THRASH_getstate@4",
+              "rva": "00001d80"
+            },
+            {
+              "name": "_THRASH_getwindowtexture@4",
+              "rva": "00001960"
+            },
+            {
+              "name": "_THRASH_idle@0",
+              "rva": "00001370"
+            },
+            {
+              "name": "_THRASH_init@0",
+              "rva": "00003670"
+            },
+            {
+              "name": "_THRASH_is@0",
+              "rva": "00003a50"
+            },
+            {
+              "name": "_THRASH_lockwindow@0",
+              "rva": "00001480"
+            },
+            {
+              "name": "_THRASH_pageflip@0",
+              "rva": "00001330"
+            },
+            {
+              "name": "_THRASH_readrect@20",
+              "rva": "00003b60"
+            },
+            {
+              "name": "_THRASH_restore@0",
+              "rva": "000036c0"
+            },
+            {
+              "name": "_THRASH_selectdisplay@4",
+              "rva": "000020c0"
+            },
+            {
+              "name": "_THRASH_setstate@8",
+              "rva": "00003ca0"
+            },
+            {
+              "name": "_THRASH_settexture@4",
+              "rva": "00008980"
+            },
+            {
+              "name": "_THRASH_setvideomode@12",
+              "rva": "00003750"
+            },
+            {
+              "name": "_THRASH_sync@4",
+              "rva": "00001380"
+            },
+            {
+              "name": "_THRASH_talloc@20",
+              "rva": "00008e70"
+            },
+            {
+              "name": "_THRASH_tfree@4",
+              "rva": "00008eb0"
+            },
+            {
+              "name": "_THRASH_treset@0",
+              "rva": "00008fc0"
+            },
+            {
+              "name": "_THRASH_tupdate@12",
+              "rva": "00008f20"
+            },
+            {
+              "name": "_THRASH_tupdaterect@36",
+              "rva": "00008f60"
+            },
+            {
+              "name": "_THRASH_unlockwindow@4",
+              "rva": "00001830"
+            },
+            {
+              "name": "_THRASH_window@4",
+              "rva": "000011a0"
+            },
+            {
+              "name": "_THRASH_writerect@20",
+              "rva": "00003c00"
+            }
+          ]
+        },
+        {
+          "member": "drivers/dx8/dx8a.dll",
+          "bytes": 135168,
+          "sha256": "92e352738012fe1098d98e125bdafae089275ceb7d40a9c1aca9c5b31423a1f7",
+          "image_base": "60000000",
+          "named_exports": [
+            {
+              "name": "_THRASH_about@0",
+              "rva": "00001000"
+            },
+            {
+              "name": "_THRASH_clearwindow@0",
+              "rva": "000012d0"
+            },
+            {
+              "name": "_THRASH_clip@16",
+              "rva": "000013f0"
+            },
+            {
+              "name": "_THRASH_createwindow@16",
+              "rva": "00001630"
+            },
+            {
+              "name": "_THRASH_destroywindow@4",
+              "rva": "00001840"
+            },
+            {
+              "name": "_THRASH_drawline@8",
+              "rva": "00002aa0"
+            },
+            {
+              "name": "_THRASH_drawlinemesh@12",
+              "rva": "00002be0"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@12",
+              "rva": "00002c70"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@8",
+              "rva": "00003000"
+            },
+            {
+              "name": "_THRASH_drawpoint@4",
+              "rva": "00002dc0"
+            },
+            {
+              "name": "_THRASH_drawpointmesh@12",
+              "rva": "00002ec0"
+            },
+            {
+              "name": "_THRASH_drawpointstrip@8",
+              "rva": "00003030"
+            },
+            {
+              "name": "_THRASH_drawquad@16",
+              "rva": "00002790"
+            },
+            {
+              "name": "_THRASH_drawquadmesh@12",
+              "rva": "000029b0"
+            },
+            {
+              "name": "_THRASH_drawsprite@8",
+              "rva": "00001960"
+            },
+            {
+              "name": "_THRASH_drawspritemesh@12",
+              "rva": "000019e0"
+            },
+            {
+              "name": "_THRASH_drawtri@12",
+              "rva": "00002290"
+            },
+            {
+              "name": "_THRASH_drawtrifan@12",
+              "rva": "00002650"
+            },
+            {
+              "name": "_THRASH_drawtrifan@8",
+              "rva": "00002fd0"
+            },
+            {
+              "name": "_THRASH_drawtrimesh@12",
+              "rva": "00002460"
+            },
+            {
+              "name": "_THRASH_drawtristrip@12",
+              "rva": "00002510"
+            },
+            {
+              "name": "_THRASH_drawtristrip@8",
+              "rva": "00002f80"
+            },
+            {
+              "name": "_THRASH_flushwindow@0",
+              "rva": "00001300"
+            },
+            {
+              "name": "_THRASH_getstate@4",
+              "rva": "000030d0"
+            },
+            {
+              "name": "_THRASH_getwindowtexture@4",
+              "rva": "00001800"
+            },
+            {
+              "name": "_THRASH_idle@0",
+              "rva": "00003060"
+            },
+            {
+              "name": "_THRASH_init@0",
+              "rva": "00003740"
+            },
+            {
+              "name": "_THRASH_is@0",
+              "rva": "00004f10"
+            },
+            {
+              "name": "_THRASH_lockwindow@0",
+              "rva": "000014c0"
+            },
+            {
+              "name": "_THRASH_pageflip@0",
+              "rva": "00001310"
+            },
+            {
+              "name": "_THRASH_readrect@20",
+              "rva": "00003070"
+            },
+            {
+              "name": "_THRASH_readrect@24",
+              "rva": "00004f20"
+            },
+            {
+              "name": "_THRASH_restore@0",
+              "rva": "00003a00"
+            },
+            {
+              "name": "_THRASH_selectdisplay@4",
+              "rva": "00003800"
+            },
+            {
+              "name": "_THRASH_setstate@8",
+              "rva": "00005490"
+            },
+            {
+              "name": "_THRASH_settexture@4",
+              "rva": "00001a50"
+            },
+            {
+              "name": "_THRASH_setvideomode@12",
+              "rva": "000038b0"
+            },
+            {
+              "name": "_THRASH_sync@4",
+              "rva": "00001380"
+            },
+            {
+              "name": "_THRASH_talloc@20",
+              "rva": "000077c0"
+            },
+            {
+              "name": "_THRASH_tfree@4",
+              "rva": "00007950"
+            },
+            {
+              "name": "_THRASH_treset@0",
+              "rva": "00007a80"
+            },
+            {
+              "name": "_THRASH_tupdate@12",
+              "rva": "000079e0"
+            },
+            {
+              "name": "_THRASH_tupdaterect@36",
+              "rva": "00007a20"
+            },
+            {
+              "name": "_THRASH_unlockwindow@4",
+              "rva": "000015c0"
+            },
+            {
+              "name": "_THRASH_window@4",
+              "rva": "00001160"
+            },
+            {
+              "name": "_THRASH_writerect@20",
+              "rva": "000030a0"
+            },
+            {
+              "name": "_THRASH_writerect@24",
+              "rva": "00004fd0"
+            }
+          ]
+        }
+      ]
+    },
+    "1.6.1": {
+      "url": "https://veg.by/files/nfs3/nfs3_modern_patch.7z",
+      "archive_path": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "archive_bytes": 1663896,
+      "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+      "readme_sha256": "02bf4684dce1073b4fe7c00c747f020b43508b0cf1407b5dc3f3b864ea46d81d",
+      "readme_banner": "Need For Speed III Modern Patch v1.6.1 [2016/10/28]",
+      "members": [
+        {
+          "member": "nfs3.exe",
+          "bytes": 1698304,
+          "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+          "image_base": "00400000",
+          "named_exports": []
+        },
+        {
+          "member": "drivers/dx6/dx6a.dll",
+          "bytes": 94208,
+          "sha256": "bc01ac47bdc6590bb787fbc4b953a1915a386191cfbcf66f3a6636e8e660aca6",
+          "image_base": "60000000",
+          "named_exports": [
+            {
+              "name": "_THRASH_about@0",
+              "rva": "00001000"
+            },
+            {
+              "name": "_THRASH_clearwindow@0",
+              "rva": "00001150"
+            },
+            {
+              "name": "_THRASH_clip@16",
+              "rva": "000011f0"
+            },
+            {
+              "name": "_THRASH_drawline@8",
+              "rva": "000015f0"
+            },
+            {
+              "name": "_THRASH_drawlinemesh@12",
+              "rva": "00001630"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@12",
+              "rva": "00001670"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@8",
+              "rva": "000017a0"
+            },
+            {
+              "name": "_THRASH_drawpoint@4",
+              "rva": "000016b0"
+            },
+            {
+              "name": "_THRASH_drawpointmesh@12",
+              "rva": "000016d0"
+            },
+            {
+              "name": "_THRASH_drawpointstrip@8",
+              "rva": "000017d0"
+            },
+            {
+              "name": "_THRASH_drawquad@16",
+              "rva": "00001570"
+            },
+            {
+              "name": "_THRASH_drawquadmesh@12",
+              "rva": "000015d0"
+            },
+            {
+              "name": "_THRASH_drawtri@12",
+              "rva": "00001480"
+            },
+            {
+              "name": "_THRASH_drawtrifan@12",
+              "rva": "00001510"
+            },
+            {
+              "name": "_THRASH_drawtrifan@8",
+              "rva": "00001760"
+            },
+            {
+              "name": "_THRASH_drawtrimesh@12",
+              "rva": "000014d0"
+            },
+            {
+              "name": "_THRASH_drawtristrip@12",
+              "rva": "000014f0"
+            },
+            {
+              "name": "_THRASH_drawtristrip@8",
+              "rva": "00001700"
+            },
+            {
+              "name": "_THRASH_flushwindow@0",
+              "rva": "00001180"
+            },
+            {
+              "name": "_THRASH_idle@0",
+              "rva": "000011d0"
+            },
+            {
+              "name": "_THRASH_init@0",
+              "rva": "00002740"
+            },
+            {
+              "name": "_THRASH_is@0",
+              "rva": "00002ea0"
+            },
+            {
+              "name": "_THRASH_lockwindow@0",
+              "rva": "00001240"
+            },
+            {
+              "name": "_THRASH_pageflip@0",
+              "rva": "00001190"
+            },
+            {
+              "name": "_THRASH_readrect@20",
+              "rva": "00002f60"
+            },
+            {
+              "name": "_THRASH_restore@0",
+              "rva": "00002750"
+            },
+            {
+              "name": "_THRASH_selectdisplay@4",
+              "rva": "00001880"
+            },
+            {
+              "name": "_THRASH_setstate@8",
+              "rva": "00003310"
+            },
+            {
+              "name": "_THRASH_settexture@4",
+              "rva": "000040f0"
+            },
+            {
+              "name": "_THRASH_setvideomode@12",
+              "rva": "000027a0"
+            },
+            {
+              "name": "_THRASH_sync@4",
+              "rva": "000011e0"
+            },
+            {
+              "name": "_THRASH_talloc@20",
+              "rva": "00004130"
+            },
+            {
+              "name": "_THRASH_treset@0",
+              "rva": "000042a0"
+            },
+            {
+              "name": "_THRASH_tupdate@12",
+              "rva": "00004270"
+            },
+            {
+              "name": "_THRASH_unlockwindow@4",
+              "rva": "000013e0"
+            },
+            {
+              "name": "_THRASH_window@4",
+              "rva": "00001100"
+            },
+            {
+              "name": "_THRASH_writerect@20",
+              "rva": "00003000"
+            }
+          ]
+        },
+        {
+          "member": "drivers/dx7/dx7a.dll",
+          "bytes": 110592,
+          "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+          "image_base": "60000000",
+          "named_exports": [
+            {
+              "name": "_THRASH_about@0",
+              "rva": "00001000"
+            },
+            {
+              "name": "_THRASH_clearwindow@0",
+              "rva": "000012e0"
+            },
+            {
+              "name": "_THRASH_clip@16",
+              "rva": "000013c0"
+            },
+            {
+              "name": "_THRASH_createwindow@16",
+              "rva": "00001880"
+            },
+            {
+              "name": "_THRASH_destroywindow@4",
+              "rva": "00001910"
+            },
+            {
+              "name": "_THRASH_drawline@8",
+              "rva": "00001b10"
+            },
+            {
+              "name": "_THRASH_drawlinemesh@12",
+              "rva": "00001b30"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@12",
+              "rva": "00001b50"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@8",
+              "rva": "00001d20"
+            },
+            {
+              "name": "_THRASH_drawpoint@4",
+              "rva": "00001b90"
+            },
+            {
+              "name": "_THRASH_drawpointmesh@12",
+              "rva": "00001bb0"
+            },
+            {
+              "name": "_THRASH_drawpointstrip@8",
+              "rva": "00001d50"
+            },
+            {
+              "name": "_THRASH_drawquad@16",
+              "rva": "00001a90"
+            },
+            {
+              "name": "_THRASH_drawquadmesh@12",
+              "rva": "00001af0"
+            },
+            {
+              "name": "_THRASH_drawsprite@8",
+              "rva": "00001bf0"
+            },
+            {
+              "name": "_THRASH_drawspritemesh@12",
+              "rva": "00001c50"
+            },
+            {
+              "name": "_THRASH_drawtri@12",
+              "rva": "000019d0"
+            },
+            {
+              "name": "_THRASH_drawtrifan@12",
+              "rva": "00001a70"
+            },
+            {
+              "name": "_THRASH_drawtrifan@8",
+              "rva": "00001cf0"
+            },
+            {
+              "name": "_THRASH_drawtrimesh@12",
+              "rva": "00001a30"
+            },
+            {
+              "name": "_THRASH_drawtristrip@12",
+              "rva": "00001a50"
+            },
+            {
+              "name": "_THRASH_drawtristrip@8",
+              "rva": "00001ca0"
+            },
+            {
+              "name": "_THRASH_flushwindow@0",
+              "rva": "00001320"
+            },
+            {
+              "name": "_THRASH_getstate@4",
+              "rva": "00001d80"
+            },
+            {
+              "name": "_THRASH_getwindowtexture@4",
+              "rva": "00001960"
+            },
+            {
+              "name": "_THRASH_idle@0",
+              "rva": "00001370"
+            },
+            {
+              "name": "_THRASH_init@0",
+              "rva": "00003670"
+            },
+            {
+              "name": "_THRASH_is@0",
+              "rva": "00003a50"
+            },
+            {
+              "name": "_THRASH_lockwindow@0",
+              "rva": "00001480"
+            },
+            {
+              "name": "_THRASH_pageflip@0",
+              "rva": "00001330"
+            },
+            {
+              "name": "_THRASH_readrect@20",
+              "rva": "00003b60"
+            },
+            {
+              "name": "_THRASH_restore@0",
+              "rva": "000036c0"
+            },
+            {
+              "name": "_THRASH_selectdisplay@4",
+              "rva": "000020c0"
+            },
+            {
+              "name": "_THRASH_setstate@8",
+              "rva": "00003ca0"
+            },
+            {
+              "name": "_THRASH_settexture@4",
+              "rva": "00008980"
+            },
+            {
+              "name": "_THRASH_setvideomode@12",
+              "rva": "00003750"
+            },
+            {
+              "name": "_THRASH_sync@4",
+              "rva": "00001380"
+            },
+            {
+              "name": "_THRASH_talloc@20",
+              "rva": "00008e70"
+            },
+            {
+              "name": "_THRASH_tfree@4",
+              "rva": "00008eb0"
+            },
+            {
+              "name": "_THRASH_treset@0",
+              "rva": "00008fc0"
+            },
+            {
+              "name": "_THRASH_tupdate@12",
+              "rva": "00008f20"
+            },
+            {
+              "name": "_THRASH_tupdaterect@36",
+              "rva": "00008f60"
+            },
+            {
+              "name": "_THRASH_unlockwindow@4",
+              "rva": "00001830"
+            },
+            {
+              "name": "_THRASH_window@4",
+              "rva": "000011a0"
+            },
+            {
+              "name": "_THRASH_writerect@20",
+              "rva": "00003c00"
+            }
+          ]
+        },
+        {
+          "member": "drivers/dx8/dx8a.dll",
+          "bytes": 135168,
+          "sha256": "ddb8a55514bc650384e349cf3830946c149f71234e90a41327f69aca793e81b8",
+          "image_base": "60000000",
+          "named_exports": [
+            {
+              "name": "_THRASH_about@0",
+              "rva": "00001000"
+            },
+            {
+              "name": "_THRASH_clearwindow@0",
+              "rva": "000012d0"
+            },
+            {
+              "name": "_THRASH_clip@16",
+              "rva": "000013f0"
+            },
+            {
+              "name": "_THRASH_createwindow@16",
+              "rva": "00001630"
+            },
+            {
+              "name": "_THRASH_destroywindow@4",
+              "rva": "00001840"
+            },
+            {
+              "name": "_THRASH_drawline@8",
+              "rva": "00002aa0"
+            },
+            {
+              "name": "_THRASH_drawlinemesh@12",
+              "rva": "00002be0"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@12",
+              "rva": "00002c70"
+            },
+            {
+              "name": "_THRASH_drawlinestrip@8",
+              "rva": "00003000"
+            },
+            {
+              "name": "_THRASH_drawpoint@4",
+              "rva": "00002dc0"
+            },
+            {
+              "name": "_THRASH_drawpointmesh@12",
+              "rva": "00002ec0"
+            },
+            {
+              "name": "_THRASH_drawpointstrip@8",
+              "rva": "00003030"
+            },
+            {
+              "name": "_THRASH_drawquad@16",
+              "rva": "00002790"
+            },
+            {
+              "name": "_THRASH_drawquadmesh@12",
+              "rva": "000029b0"
+            },
+            {
+              "name": "_THRASH_drawsprite@8",
+              "rva": "00001960"
+            },
+            {
+              "name": "_THRASH_drawspritemesh@12",
+              "rva": "000019e0"
+            },
+            {
+              "name": "_THRASH_drawtri@12",
+              "rva": "00002290"
+            },
+            {
+              "name": "_THRASH_drawtrifan@12",
+              "rva": "00002650"
+            },
+            {
+              "name": "_THRASH_drawtrifan@8",
+              "rva": "00002fd0"
+            },
+            {
+              "name": "_THRASH_drawtrimesh@12",
+              "rva": "00002460"
+            },
+            {
+              "name": "_THRASH_drawtristrip@12",
+              "rva": "00002510"
+            },
+            {
+              "name": "_THRASH_drawtristrip@8",
+              "rva": "00002f80"
+            },
+            {
+              "name": "_THRASH_flushwindow@0",
+              "rva": "00001300"
+            },
+            {
+              "name": "_THRASH_getstate@4",
+              "rva": "000030d0"
+            },
+            {
+              "name": "_THRASH_getwindowtexture@4",
+              "rva": "00001800"
+            },
+            {
+              "name": "_THRASH_idle@0",
+              "rva": "00003060"
+            },
+            {
+              "name": "_THRASH_init@0",
+              "rva": "00003740"
+            },
+            {
+              "name": "_THRASH_is@0",
+              "rva": "00004f10"
+            },
+            {
+              "name": "_THRASH_lockwindow@0",
+              "rva": "000014c0"
+            },
+            {
+              "name": "_THRASH_pageflip@0",
+              "rva": "00001310"
+            },
+            {
+              "name": "_THRASH_readrect@20",
+              "rva": "00003070"
+            },
+            {
+              "name": "_THRASH_readrect@24",
+              "rva": "00004f20"
+            },
+            {
+              "name": "_THRASH_restore@0",
+              "rva": "00003a00"
+            },
+            {
+              "name": "_THRASH_selectdisplay@4",
+              "rva": "00003800"
+            },
+            {
+              "name": "_THRASH_setstate@8",
+              "rva": "00005490"
+            },
+            {
+              "name": "_THRASH_settexture@4",
+              "rva": "00001a50"
+            },
+            {
+              "name": "_THRASH_setvideomode@12",
+              "rva": "000038b0"
+            },
+            {
+              "name": "_THRASH_sync@4",
+              "rva": "00001380"
+            },
+            {
+              "name": "_THRASH_talloc@20",
+              "rva": "000077c0"
+            },
+            {
+              "name": "_THRASH_tfree@4",
+              "rva": "00007950"
+            },
+            {
+              "name": "_THRASH_treset@0",
+              "rva": "00007a80"
+            },
+            {
+              "name": "_THRASH_tupdate@12",
+              "rva": "000079e0"
+            },
+            {
+              "name": "_THRASH_tupdaterect@36",
+              "rva": "00007a20"
+            },
+            {
+              "name": "_THRASH_unlockwindow@4",
+              "rva": "000015c0"
+            },
+            {
+              "name": "_THRASH_window@4",
+              "rva": "00001160"
+            },
+            {
+              "name": "_THRASH_writerect@20",
+              "rva": "000030a0"
+            },
+            {
+              "name": "_THRASH_writerect@24",
+              "rva": "00004fd0"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Author-hosted bytes and internal version banners, not publisher-signature verification.",
+    "Member identity/export metadata only; no function correspondence or historical feature qualification.",
+    "No DLL loading, installation, game execution, compilation or database mutation."
+  ],
+  "member_identity_comparison": [
+    {
+      "member": "nfs3.exe",
+      "identical_bytes_by_sha256": false,
+      "older_bytes": 1697792,
+      "newer_bytes": 1698304
+    },
+    {
+      "member": "drivers/dx6/dx6a.dll",
+      "identical_bytes_by_sha256": false,
+      "older_bytes": 94208,
+      "newer_bytes": 94208
+    },
+    {
+      "member": "drivers/dx7/dx7a.dll",
+      "identical_bytes_by_sha256": false,
+      "older_bytes": 110592,
+      "newer_bytes": 110592
+    },
+    {
+      "member": "drivers/dx8/dx8a.dll",
+      "identical_bytes_by_sha256": false,
+      "older_bytes": 135168,
+      "newer_bytes": 135168
+    }
+  ]
+}

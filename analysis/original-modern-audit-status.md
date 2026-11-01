@@ -129,7 +129,7 @@ The catalog currently labels150 entries vendor-only,39 bounded static,98 partial
 |---:|---|---|---|
 | 1 | MP160-003 horizon/camera shift | [Projection report](original-modern-projection.md) now establishes conditional CCM-to-type8 publication, preparation/render/finalizer ordering and bounded non-producer searches; recover computed/bulk source writes or capture lifetime, then qualify camera orientation/output | Executable inspection can advance this; visible horizon still needs rendering evidence |
 | 2 | MP160-006 remaining output coverage | [Map-marker extent-to-quad chain](original-modern-map-marker-scaling.md) now established; qualify other marker styles, lifecycle and actual rendered size separately | Static source/consumer gap closed; visual scope remains unverified |
-| 3 | MP161-001/002 renderer-specific texel alignment/fog | Use [packaged DLL inventory](original-modern-dll-candidates.md) and authenticated matching older DLLs for component comparisons | EXE changes or DLL names alone cannot establish these DLL implementations/history |
+| 3 | MP161-001/002 renderer-specific texel alignment/fog | [Author-hosted v1.6.0 archive is now pinned](original-modern-dll-candidates.md#author-hosted-v160-baseline-now-retained); compare its DX6/DX7/DX8 exports/functions with v1.6.1 | EXE changes or DLL names alone cannot establish these DLL implementations/history |
 | 4 | Historical regressions such as MP153-008 or the specific MP152-001 improvement | Obtain the named intermediate-release pairs; reuse [language fallback](original-modern-language-table.md) and [rear-view mechanisms](original-modern-track-detail.md) as final-state context | Original versus final cannot isolate an intermediate regression/fix |
 | 5 | Original/Modern rendered, replay and multiplayer consequences | Compare separately identified inputs/builds within an explicitly stated runtime scope | Existing single-build captures and static derivations are not cross-version equivalence evidence |
 
@@ -193,3 +193,7 @@ MP161-004 now has partial evidence for its bundled sorted-list subclaim: unsigne
 ## Resumed projection boundary review
 
 The complete399-byte type8 handler `00425060..004251ef` is now asserted identical across the pinned EXEs. This narrows local change attribution to the already documented finalizer and surrounding dependencies; unchanged handler instructions do not prove identical context, x87 state or callees. The priority queue has been corrected to reuse the conditional selection and local stage-order evidence rather than investigate those again. Projection source capture/lifetime remains unresolved; no runtime, export, compilation or Ghidra changes were made.
+
+## Historical renderer acquisition gap removed for v1.6.0/1.6.1
+
+A fresh official-directory lookup located the author-hosted versioned archives. The [baseline audit](evidence/audits/official-160-161-baseline.json) verified v1.6.0/v1.6.1 internal banners and pinned both EXEs plus DX6/DX7/DX8 members; all four member pairs differ. This removes the missing-artifact prerequisite for that release pair, not the remaining function-level comparison. No DLL or EXE was executed; current analysis targets and saved database were preserved. Other historical pairs remain separate acquisition/qualification work.

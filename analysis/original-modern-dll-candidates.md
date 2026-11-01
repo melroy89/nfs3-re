@@ -101,3 +101,20 @@ The full table is retained in the manifest; the table above selects dependencies
 The mode builder obtains selector160 text and tests it against literal `PIXEXT` via helper `60004870`. When that test returns nonzero, it requests `grSstWinOpenExt` through the resolved Glide procedure lookup at `60001a01` and stores the returned pointer at `600127c8`. The conditional32-bit candidate path tests this same cell at `60001b3b`. Thus the earlier anonymous cell is an **optional extension lookup result**, and the two-call query is statically bound to **grQueryResolutions**. The extension string test, successful lookup and subsequent branch do not establish32-bit rendering success or the loaded provider's precision behavior.
 
 This resolves the dynamic-target identity gap for the selected paths. Remaining scope includes exact provider-specific query structure/constants, all writes/aliases to the final extra mode slot, and original-retail provenance. No DLL was loaded and no runtime test or source reconstruction occurred.
+
+## Author-hosted v1.6.0 baseline now retained
+
+On2026-11-01, inspection of the author's [public file directory](https://veg.by/files/nfs3/) located explicitly versioned archives, including [v1.6.0](https://veg.by/files/nfs3/nfs3_modern_patch_v1.6.0.7z). The author also points readers to this directory for older renderer versions in a [project comment](https://veg.by/en/projects/nfs3/comment-page-12/). Earlier statements that an older matching package still had to be obtained are superseded for this particular pair; they remain valid for uninspected versions/components.
+
+The retained v1.6.0 archive SHA-256 is `9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8`. Its internal English banner identifies v1.6.0 dated2016/09/22. The already pinned final archive identifies v1.6.1. [The new baseline manifest](evidence/audits/official-160-161-baseline.json), reproduced by `python3 analysis/scripts/audit_official_160_history.py`, retains both archive URLs/hashes, readme hashes/banners, and full hashes/export metadata for each EXE and DX6/DX7/DX8 renderer.
+
+| Member | v1.6.0 bytes | v1.6.1 bytes | Identical file bytes? |
+|---|---:|---:|---|
+| `nfs3.exe` | 1,697,792 | 1,698,304 | No |
+| `drivers/dx6/dx6a.dll` | 94,208 | 94,208 | No |
+| `drivers/dx7/dx7a.dll` | 110,592 | 110,592 | No |
+| `drivers/dx8/dx8a.dll` | 135,168 | 135,168 | No |
+
+These are author-hosted artifact identities corroborated by internal banners, **not** publisher-signature verification or proof that each claimed feature first appeared in that release. Equal file sizes do not imply equal renderers. This step removes the acquisition blocker for focused v1.6.0-to-v1.6.1 texel-alignment/fog/mode-policy comparisons; actual export/function correspondence and changed behavior still need analysis. The archives remain ignored reference captures, and no component was installed or executed.
+
+For reproduction, retain the two archives at the manifest paths. The historical acquisition command is `curl -fsSL https://veg.by/files/nfs3/nfs3_modern_patch_v1.6.0.7z -o analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.6.0.7z` after creating that ignored directory. The audit rejects changed archive hashes before parsing members; a future different download must be treated as a new artifact rather than silently substituted.
