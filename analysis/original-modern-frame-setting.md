@@ -47,3 +47,8 @@ These are partial-function instruction witnesses and the previously recovered te
 The [covering-rectangle-to-centre chain](original-modern-projection.md#frame-size-covering-rectangle-reaches-the-projection-centre) now additionally traces one non-two-player wide-angle path into the actual projection centre stores, with concrete1920x1080 centered/shifted examples. It establishes data flow rather than merely adjacent code, while retaining the active-camera, resize and final rendered-output limits.
 
 For C reconstruction, separate original two-choice policy from Modern four-choice bit semantics, preserve32-bit selector storage and version-specific gates, and map language-resource/fallback lifetime. Next qualify ordinary selections0..3, out-of-range loaded values, session overrides and viewport/horizon output in later runtime work. No game, input or instruction probes were run; executables, saved Ghidra state, exports and maintained C are preserved.
+
+
+## Historical1.5.0 to1.5.1 first-choice translation index
+
+The [historical descriptor/asset check](original-modern-localization-151.md#frame-size-first-choice-label-switches-to-the-new-full-entry) verifies the same key/selector descriptor but a two-choice WORD list changing184,1933→1932,1933. French/Spanish first-choice strings differ through that retargeting; German remains byte-identical. This dates a label-index change, not the final four-choice expansion or a framing arithmetic change. Exact historical words and six-language values are retained separately from final numbering.

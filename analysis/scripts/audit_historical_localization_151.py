@@ -54,6 +54,11 @@ def main():
         unit_index=struct.unpack('<I',pe.get_data(0x565f3,4))[0]
         maximum=struct.unpack('<I',pe.get_data(0xd1851,4))[0]
         assert (unit_index,maximum)==((1932,1935) if version=='1.5.0' else (1936,1940))
+        descriptor=struct.unpack('<5I',pe.get_data(0x1567a8,20))
+        assert descriptor==(0x538008,0x5562d2,0,0,0x6fbc4c)
+        assert pe.get_string_at_rva(0x138008)==b'widescreen'
+        frame_ids=struct.unpack('<3H',pe.get_data(0x1562d2,6))
+        assert frame_ids==((184,1933,0) if version=='1.5.0' else (1932,1933,0))
         helper_images.append(pe.get_data(0x56590,0xaa))
         spans=[]
         for lo,hi in [(0x456590,0x45663a),(0x4d1850,0x4d187e)]:
@@ -64,7 +69,9 @@ def main():
                 'bytes_sha256':hashlib.sha256(code).hexdigest(),'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
         result['archives'][version]['exe_consumer']={'sha256':expected_exe,'member':'nfs3.exe',
-            'track_length_unit_index':unit_index,'lookup_maximum_index':maximum,'spans':spans}
+            'track_length_unit_index':unit_index,'lookup_maximum_index':maximum,'spans':spans,
+            'frame_descriptor_address':'005567a8','frame_descriptor_dwords':[f'{x:08x}' for x in descriptor],
+            'frame_label_list_address':'005562d2','frame_label_words':list(frame_ids)}
         for name in ('camera','graphics'):
             member=f'fedata/menus/{name}.mnu'
             raw=subprocess.check_output(['7z','x','-so',str(path),member])
@@ -103,6 +110,9 @@ def main():
         assert changed==([1283,1932] if lang=='fre' else [1932])
         assert old[1932]==new[1936]==b'km'
         row['track_length_token_preserved']=True
+        assert old[1933]==new[1933]==b'2:1'
+        row['frame_first_choice']={'old_index':184,'old':display(old[184]),'new_index':1932,'new':display(new[1932]),
+            'second_choice_unchanged':1933}
         row['changed_existing']=[{'index':i,'old_offset':old_offsets[i],'new_offset':new_offsets[i],
             'old':display(old[i]),'new':display(new[i])}for i in changed]
         row['added']=[{'index':i,'offset':new_offsets[i],'value':display(new[i])}for i in range(len(old),len(new))]

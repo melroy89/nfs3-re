@@ -24,6 +24,20 @@
             "assembly": "analysis/captures/modern-differences/localization-151/1.5.0-004d1850.asm",
             "assembly_sha256": "3e2d23b77b62582aec8d2b78acc823fb7dd2f5de63b7916cd75219d633db3235"
           }
+        ],
+        "frame_descriptor_address": "005567a8",
+        "frame_descriptor_dwords": [
+          "00538008",
+          "005562d2",
+          "00000000",
+          "00000000",
+          "006fbc4c"
+        ],
+        "frame_label_list_address": "005562d2",
+        "frame_label_words": [
+          184,
+          1933,
+          0
         ]
       }
     },
@@ -50,6 +64,20 @@
             "assembly": "analysis/captures/modern-differences/localization-151/1.5.1-004d1850.asm",
             "assembly_sha256": "0d671b5d1195aa87afd6dd1a10b6582b7336f1b2f660225a41271d5802123f98"
           }
+        ],
+        "frame_descriptor_address": "005567a8",
+        "frame_descriptor_dwords": [
+          "00538008",
+          "005562d2",
+          "00000000",
+          "00000000",
+          "006fbc4c"
+        ],
+        "frame_label_list_address": "005562d2",
+        "frame_label_words": [
+          1932,
+          1933,
+          0
         ]
       }
     }
@@ -73,6 +101,19 @@
         "complete_payload_partition": true
       },
       "track_length_token_preserved": true,
+      "frame_first_choice": {
+        "old_index": 184,
+        "old": {
+          "hex": "46756c6c",
+          "latin1_display": "Full"
+        },
+        "new_index": 1932,
+        "new": {
+          "hex": "46756c6c",
+          "latin1_display": "Full"
+        },
+        "second_choice_unchanged": 1933
+      },
       "changed_existing": [
         {
           "index": 1932,
@@ -149,6 +190,19 @@
         "complete_payload_partition": true
       },
       "track_length_token_preserved": true,
+      "frame_first_choice": {
+        "old_index": 184,
+        "old": {
+          "hex": "566f6c6c",
+          "latin1_display": "Voll"
+        },
+        "new_index": 1932,
+        "new": {
+          "hex": "566f6c6c",
+          "latin1_display": "Voll"
+        },
+        "second_choice_unchanged": 1933
+      },
       "changed_existing": [
         {
           "index": 1932,
@@ -225,6 +279,19 @@
         "complete_payload_partition": true
       },
       "track_length_token_preserved": true,
+      "frame_first_choice": {
+        "old_index": 184,
+        "old": {
+          "hex": "496e66696e6965",
+          "latin1_display": "Infinie"
+        },
+        "new_index": 1932,
+        "new": {
+          "hex": "436f6d706ce97465",
+          "latin1_display": "Compléte"
+        },
+        "second_choice_unchanged": 1933
+      },
       "changed_existing": [
         {
           "index": 1283,
@@ -314,6 +381,19 @@
         "complete_payload_partition": true
       },
       "track_length_token_preserved": true,
+      "frame_first_choice": {
+        "old_index": 184,
+        "old": {
+          "hex": "4de178696d61",
+          "latin1_display": "Máxima"
+        },
+        "new_index": 1932,
+        "new": {
+          "hex": "4de178696d6f",
+          "latin1_display": "Máximo"
+        },
+        "second_choice_unchanged": 1933
+      },
       "changed_existing": [
         {
           "index": 1932,
@@ -390,6 +470,19 @@
         "complete_payload_partition": true
       },
       "track_length_token_preserved": true,
+      "frame_first_choice": {
+        "old_index": 184,
+        "old": {
+          "hex": "5069656e61",
+          "latin1_display": "Piena"
+        },
+        "new_index": 1932,
+        "new": {
+          "hex": "5069656e61",
+          "latin1_display": "Piena"
+        },
+        "second_choice_unchanged": 1933
+      },
       "changed_existing": [
         {
           "index": 1932,
@@ -466,6 +559,19 @@
         "complete_payload_partition": true
       },
       "track_length_token_preserved": true,
+      "frame_first_choice": {
+        "old_index": 184,
+        "old": {
+          "hex": "4d6178",
+          "latin1_display": "Max"
+        },
+        "new_index": 1932,
+        "new": {
+          "hex": "4d6178",
+          "latin1_display": "Max"
+        },
+        "second_choice_unchanged": 1933
+      },
       "changed_existing": [
         {
           "index": 1932,

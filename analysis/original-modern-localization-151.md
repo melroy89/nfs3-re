@@ -49,7 +49,7 @@ The complete lookup envelope `004d1850..004d187e` is captured for both versions.
 
 Across all six package languages, old index1932 and new index1936 contain the identical bytes **`km`**. Thus this particular code/asset path preserves the unit token while allowing1932 to be reused. This is stronger than inferring meaning from changed table positions, but remains conditional on the matching table being loaded and the inspected branch being reached. It is not proof that arbitrary mixed-version assets work or that every UI consumer was updated.
 
-The [original/final track-length comparison](original-modern-track-length-text.md) covers a wider formatting rewrite and final index`078ah`; that final index must not be substituted for the historical indices here. Historical string numbering is version-bound. Remaining: bind the new Full/detail and rear-camera entries, all other lookup consumers, fallback compatibility and actual rendered language selection. No formatter or game instruction was executed.
+The [original/final track-length comparison](original-modern-track-length-text.md) covers a wider formatting rewrite and final index`078ah`; that final index must not be substituted for the historical indices here. Historical string numbering is version-bound. The later menu/Frame Size follow-ups bind the new labels. Remaining: all other lookup consumers, fallback compatibility and actual rendered language selection. No formatter or game instruction was executed.
 
 
 ## Historical menu assets bind two new labels
@@ -65,4 +65,24 @@ The1.5.0 file has no `rearcamera` assignment;1.5.1 has these two. English entry1
 
 **graphics.mnu:** the entire raw-file difference is the single replacement **`text=lang1537`→`text=lang1937`** on the button whose listname is **`mirrorlevel`**, ypos6, priority9. English entry1537 remains `Rear View Mirror` in both versions; new1937 is `Rear View Detail`. The selected control therefore changes its authored label while retaining these list/placement fields. This is not evidence that the mirror-detail control itself was first introduced in1.5.1; the existing control was relabelled.
 
-These bindings explain two of the newly added text references without conflating them with a translation-quality fix. The new entry1932 (`Full` and localized equivalents) still lacks a qualified consumer in this pass. Generic `langNNNN` parser resolution, runtime language selection, instantiated control state and rendered outcomes remain outside this asset comparison. No menu or game was run.
+These bindings explain two of the newly added text references without conflating them with a translation-quality fix. The new entry1932 (`Full` and localized equivalents) was pending at this checkpoint; its descriptor consumer is resolved below. Generic `langNNNN` parser resolution, runtime language selection, instantiated control state and rendered outcomes remain outside this asset comparison. No menu or game was run.
+
+
+## Frame Size first-choice label switches to the new Full entry
+
+The audit now verifies historical descriptor **`005567a8`** as five DWORDs: key`00538008` (`widescreen`), label-list pointer`005562d2`, two zero optional fields and selection pointer`006fbc4c`. These descriptor values are identical in1.5.0/1.5.1. Their WORD lists are **`184,1933,0`→`1932,1933,0`**. The consumer is a packed WORD-label table, explaining why a DWORD/immediate-only search did not identify it.
+
+The [existing Frame Size investigation](original-modern-frame-setting.md) establishes the key/UI association. This historical pair retains two choices and the same selector pointer; it must not be conflated with final Modern's separately documented four-choice layout. The inspected difference is its **first choice's language index**, not a new selection-storage address or proof of changed framing arithmetic.
+
+| Language | First choice via old entry184 | First choice via new entry1932 |
+|---|---|---|
+| English | `Full` | `Full` |
+| German | `Voll` | `Voll` |
+| French | `Infinie` | `Compléte` |
+| Spanish | `Máxima` | `Máximo` |
+| Italian | `Piena` | `Piena` |
+| Swedish | `Max` | `Max` |
+
+All six retain `2:1` at entry1933. The new descriptor target1932 is therefore a real choice-label consumer, while the historical track-length consumer moves away from1932 to preserve `km` at1936. Code and assets change together; listing the changed text entry alone would miss this distinction.
+
+This supplies concrete French/Spanish **choice-label changes** relevant to the advertised translation corrections, without an editorial judgement that the new wording is better. German uses a new index but the displayed bytes remain `Voll`; its claimed wording correction is still not independently identified in these shared-entry/selected-consumer comparisons. Other consumers of generic184, menu parsing, selected files, font rendering and runtime behaviour remain pending. No game or lookup helper was executed.

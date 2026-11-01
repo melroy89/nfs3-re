@@ -521,3 +521,8 @@ The [consumer follow-up](original-modern-localization-151.md#track-length-consum
 ## Historical rear-camera and mirror-detail label bindings
 
 The [two-menu audit](original-modern-localization-151.md#historical-menu-assets-bind-two-new-labels) verifies the1.5.1 camera-menu15-line insertion and graphics-menu's sole lang1537→lang1937 label replacement. This binds new language entries1938/1937 to authored controls and dates the selected rear-camera asset addition. Full/new1932 consumer and parser/runtime state remain unresolved. Counts unchanged; no target execution.
+
+
+## Historical Full entry has a Frame Size descriptor consumer
+
+The [WORD-table follow-up](original-modern-localization-151.md#frame-size-first-choice-label-switches-to-the-new-full-entry) verifies identical widescreen descriptor/selection storage but first label184→1932, preserving second1933. Matching assets change French/Spanish first-choice wording; German remainsVoll. This explains a semantic retargeting beyond changed shared strings, while keeping the claimed German correction and runtime rendering unresolved. MP151-005 remains partial; counts unchanged.
