@@ -56,9 +56,13 @@ def main():
     for start, end, label in [(0x2330, 0x2412, 'complete-about-body'),
                                (0x2480, 0x2580, 'complete-mode-callback'),
                                (0x2e80, 0x2f41, 'complete-pixel-classifier'),
-                               (0x26f6, 0x27ac, 'bounded-mode-table-allocation-seed-and-callback-registration')]:
+                               (0x26f6, 0x27ac, 'bounded-mode-table-allocation-seed-and-callback-registration'),
+                               (0x30c0, 0x33ef, 'complete-setstate-body'),
+                               (0x3530, 0x36d0, 'lockwindow-envelope-including-reused-padding'),
+                               (0x36d0, 0x374e, 'complete-unlockwindow-body'),
+                               (0x3750, 0x3890, 'complete-pageflip-envelope')]:
         x, y = a.get_data(start, end-start), b.get_data(start, end-start)
-        if start != 0x2480:
+        if start in (0x2330, 0x2e80, 0x26f6, 0x36d0):
             assert x == y
         for role, raw in [('reference', x), ('modern', y)]:
             result['bodies'].append({'role': role, 'label': label, 'start_va': f'{0x60000000+start:08x}',
@@ -69,9 +73,40 @@ def main():
     assert a.get_data(0x2537, 4).hex() == '85ed749b'
     assert b.get_data(0x2537, 4).hex() == '85ed74cb'
     assert a.get_data(0x24e1, 10) == b.get_data(0x24e1, 10) == bytes.fromhex('83fd037505be0f000000')
+    assert a.get_data(0x31ac, 6).hex() == '0f8639ffffff'
+    assert b.get_data(0x31ac, 6).hex() == '76d290909090'
+    assert a.get_data(0x362f, 6).hex() == '0f851bffffff'
+    assert b.get_data(0x362f, 6).hex() == '0f858c000000'
+    assert b.get_data(0x36c1, 13).hex() == '6a00ff15b4000460e982feffff'
+    assert a.get_data(0x37bb, 11).hex() == '6a00ff15b40004605b5e5f'
+    assert b.get_data(0x37bb, 11).hex() == '5b5e5f6a00ff15b4000460'
+    assert a.get_data(0x37dc, 2).hex() == 'ebe8'
+    assert b.get_data(0x37dc, 2).hex() == 'ebe0'
+    for pe in images:
+        imports = {entry.address: entry.name.decode('ascii') if entry.name else entry.ordinal
+                   for library in pe.DIRECTORY_ENTRY_IMPORT for entry in library.imports}
+        assert imports[0x6003d21c] == 'OutputDebugStringA'
+        assert imports[0x6003d254] == 'VirtualAlloc'
+    result['pageflip_error_import'] = {'iat': '6003d21c', 'name': 'OutputDebugStringA',
+        'message_va': '6003ee88', 'message': b.get_data(0x3ee88, 64).split(b'\0')[0].decode('ascii')}
+    clusters = [(0x2480, 0x2580, 'mode-callback', 8),
+                (0x30c0, 0x33ef, 'state21-rejection', 6),
+                (0x3530, 0x36d0, 'lock-failure-notification', 18),
+                (0x3750, 0x3890, 'pageflip-notification-tail', 12)]
+    result['code_byte_accounting'] = []
+    assigned = set()
+    for start, end, label, count in clusters:
+        changed = {i for i in range(start, end) if a.get_data(i, 1) != b.get_data(i, 1)}
+        assert len(changed) == count and not assigned.intersection(changed)
+        assigned.update(changed)
+        result['code_byte_accounting'].append({'label': label, 'differing_bytes': count,
+            'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}'})
+    all_changed = {0x1000+i for i, (x, y) in enumerate(zip(a.sections[0].get_data(), b.sections[0].get_data())) if x != y}
+    assert assigned == all_changed and len(assigned) == 44
+    result['unassigned_shared_code_differing_bytes'] = 0
     result['limits'] = [
         'Author-hosted reference bundle, not authenticated pristine retail.',
-        'Shared code-section byte inventory includes padding; not all nine intervals are semantically classified.',
+        'Shared code-section byte inventory includes padding; all nine intervals are assigned to four reviewed clusters; full runtime effects are not established.',
         'Only callback admission and retained classifier/about bodies interpreted here; selected setup seeds/registration are captured; exhaustive consumers remain follow-up.',
         'Raw16 admission can still publish depth15 for classifier3; not every stored depth equals16.',
         'Trailing overlay identity/size only; purpose and original authenticity unresolved.',

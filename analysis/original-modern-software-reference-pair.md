@@ -41,10 +41,53 @@ The bounded setup span `600026f6..600027ac` is identical across both DLLs. It pu
 
 The callback's special640/800 handling, table stride28h and capacity calculation remain in the captured body. Other producers/consumers, allocation success, callback order and later changes to records are not exhaustively established. Complete `THRASH_about` body `60002330..60002412` (226 bytes) is also identical; its equality does not imply identical initialized mode data.
 
+## State21 now rejects instead of returning no-op success
+
+The complete `THRASH_setstate` body `600030c0..600033ef` is815 bytes. Its sole changed interval is the six bytes at `600031ac..600031b2`. The retained comparison tree reaches this branch with selector>=15h and preserved flags from `CMP EAX,15h`; the JBE therefore selects equality only, decimal state21.
+
+Reference branches to `600030eb`, returning1 without applying this state. Modern branches to `60003180`, returning0. The remaining four bytes are NOPs. Higher selector handling is retained. This is an observable exported return-value change even though the old equality case performed no state write.
+
+The EXE's [fog-support trial](original-modern-state14.md#support-producer-configuration-opt-in-followed-by-mode-trial) calls state21/value4 and clears its support flag on return0. Thus, **if this software DLL is bound and the common trial route runs**, Modern's changed return can reject that opt-in rather than report no-op success. This is a conditional consumer consequence, not proof of actual driver/configuration selection or blanket absence of visual fog. Do not confuse decimal21 with decimal15: the machine comparison literal is15h.
+
+## Lock failure gains callback0 notification
+
+The paired lock envelope `60003530..600036d0` is416 bytes. Its reference body ends at `600036c1`; Modern reuses the following original alignment bytes for a new failure tail. The byte accounting explicitly includes this reused padding rather than inventing a larger original function body.
+
+In the inspected surface path, both versions invoke callback `[600400b4]` with stack argument1 at `600035fe..60003606`, perform the same indirect vtable+64h operation and store its status at `6003e04c`. For nonzero status:
+
+- Reference jumps directly to `60003550`, which clears EAX and returns.
+- Modern jumps to `600036c1`, invokes the same callback with argument0, then jumps back to that zero-return path.
+
+Other lock paths and the success suffix are retained. No null-pointer check is introduced around the callback. The callback must return with its one stack argument removed, as the preexisting call sites already require. The failure tail does not clear every remembered surface pointer or establish general resource recovery; actual callback effects, registration, reentrancy and surface failure behaviour remain unobserved.
+
+The complete unlock body `600036d0..6000374e` (126 bytes) is byte-identical. Its existing callback0 after successful unlock is not a new change.
+
+## Page-flip failure reaches a shared notification tail
+
+The complete page-flip envelope `60003750..60003890` is320 bytes, including the internal copy-loop path that jumps back to the earlier epilogue. Both versions send callback1 before their vtable+64h surface operation. On failure, both call the verified import `KERNEL32!OutputDebugStringA` at IAT `6003d21c` with `lock failed on writebuffer\n`. The diagnostic call is not a fatal-exit function.
+
+Reference failure then jumps directly to frame cleanup at `600037c6`, omitting callback0. Modern changes that jump to `600037be`, sending callback0 before frame cleanup. To share this tail safely with the success path, Modern moves POP EBX/ESI/EDI to `600037bb..600037be`, before callback0. Those three registers are pushed only after successful lock; the failure path therefore bypasses these POPs and enters at `600037be` directly. The local stack accounting remains distinct for the two paths.
+
+The callback now sees restored EBX/ESI/EDI on the successful path, whereas the reference callback was invoked before those POPs. Full machine-state equivalence is not claimed: callback register assumptions, incidental EAX/flags and transitive clobbers require their own contract. The successful drawing/copy instructions and subsequent frame cleanup remain byte-identical. No retry or guaranteed visible recovery is introduced by this local edit.
+
+## Complete shared-code difference accounting
+
+The script asserts that all44 differing bytes in the shared code-section extent belong to exactly one reviewed cluster, with no unassigned bytes or overlaps:
+
+| Cluster | Differing bytes |
+|---|---:|
+| Raw-depth filter and later callback branch |8 |
+| State21 return-value change |6 |
+| Lock-failure callback tail |18 |
+| Page-flip tail/order and failure jump |12 |
+| **Total** | **44** |
+
+This accounts for all nine maximal differing-byte intervals in the original map. It establishes localization and bounded local control-flow explanations, not every transitive/runtime consequence. Identical instructions can still operate on changed data, API results or caller state. PE resources, headers, relocation data and reference trailing material remain outside semantic coverage.
+
 ## Claim correspondence and remaining work
 
 **MP100-067 receives partial static support:** final software callback filters raw input depth to16 and selected retained seeds use16. The reference/final comparison does not date this to1.0.0, authenticate pristine retail, validate all table writers or establish actual enumerated/rendered results.
 
-The nine code intervals are retained in full. This increment interprets the mode-callback changes; the separate state-handler, lock/unlock/page-flip intervals still need their own control-flow comparison. Do not call the whole44-byte set semantically explained yet. Resource/overlay meaning, complete runtime state, ABI compatibility and actual display acceptance remain open.
+The nine code intervals are retained in full and assigned to the four reviewed clusters above. Local byte/control-flow accounting is complete for this shared code extent. Resource/overlay meaning, complete runtime consequences, callback/ABI contracts and actual display acceptance remain open. This does not complete the EXE comparison or authenticate a retail baseline.
 
 Two successive successful runs produced identical evidence manifests. Existing EXEs, saved Ghidra state, raw reference exports and maintained C were preserved; no toolchain, compilation, driver loading or new instruction probes were used.

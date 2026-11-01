@@ -29,7 +29,7 @@ The [Postgame Options follow-up](original-modern-options-postgame.md#postgame-to
 
 The [DX5 fog-admission linkage](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) connects its removed selector15h to the EXE’s decimal21 support trial: on the common route, rejection clears support. The bundled DX5 INI omits the opt-in key; actual selected configuration and rendered output remain unverified.
 
-The [software-renderer comparison](original-modern-software-reference-pair.md) finds44 changed shared-code bytes in nine intervals. Its mode callback now rejects non16 raw-depth inputs, while the retained RGB555 path can still store depth15. Other code intervals and actual display acceptance remain unverified.
+The [software-renderer comparison](original-modern-software-reference-pair.md) finds44 changed shared-code bytes in nine intervals. Its mode callback now rejects non16 raw-depth inputs, while the retained RGB555 path can still store depth15. All44 bytes are now assigned to four reviewed clusters, including state21 rejection and lock/page-flip failure notifications; callback contracts, non-code PE meaning and actual display acceptance remain unverified.
 
 ## Recent findings at a glance
 

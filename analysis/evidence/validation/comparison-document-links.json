@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "c325640a51538b0cf74c5c6ba08a7c4ab44a0c4a63adf1cbbfcb3bec24f8a0da",
-      "relative_links": 83
+      "sha256": "85b4b3e920ba5ee60325c891204ccd531c9bf40c4e5b7e932ab7ed3340c0d936",
+      "relative_links": 84
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "2b9fd8adc25a768b68bb1ea0b36371e10c005445bb5718df8b8cb049c00564f5",
+      "sha256": "951208964c0f2af4aae51caa72595a2ea19ecb987a48863f831fb60bfe19a951",
       "relative_links": 167
     },
     {
@@ -488,8 +488,8 @@
     },
     {
       "path": "analysis/original-modern-software-reference-pair.md",
-      "sha256": "9b7677f1558b1f6877238a2cb2c5859091244bdd4f8ba19588d0e7e112074042",
-      "relative_links": 3
+      "sha256": "c9fb12fe7ce21c46c897e5d3f633a945de688e53c18eaa3b9e796c896115ff99",
+      "relative_links": 4
     },
     {
       "path": "analysis/original-modern-sound-bank-language.md",
@@ -613,7 +613,7 @@
     }
   ],
   "file_count": 122,
-  "relative_link_count": 1952,
+  "relative_link_count": 1954,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

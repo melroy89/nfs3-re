@@ -330,3 +330,7 @@ The [cross-component audit](original-modern-dx5-reference-pair.md#exe-fog-trial-
 ## Software-renderer raw-depth admission
 
 The [paired software audit](original-modern-software-reference-pair.md) verifies34 matching exports,44 shared-code differing bytes in nine intervals and equal import/data sections. Complete callback comparison resolves the new raw-depth16 filter; retained RGB555 handling may still publish depth15. Selected seeds/registration are unchanged. MP100-067 gains partial support; historical introduction, other code intervals, overlay/resource meaning and actual rendering remain unverified. Current catalog labels:136 vendor-only,45 bounded static,107 partial,2 unresolved.
+
+## Software-renderer changed-code accounting completed
+
+The [software follow-up](original-modern-software-reference-pair.md#complete-shared-code-difference-accounting) assigns all44 shared-code differing bytes to four reviewed clusters: raw-depth filter8, state21 rejection6, lock failure notification18 and page-flip tail/order12. Unlock is unchanged. The page-flip diagnostic import is OutputDebugStringA, and its new failure route avoids success-only POPs before callback0. These are local control-flow/return-contract findings, not all runtime consequences, callback ABI proof or non-code PE interpretation. Catalog counts unchanged; no target execution.
