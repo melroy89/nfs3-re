@@ -346,3 +346,7 @@ The full objective remains incomplete. Priority returns to a concrete EXE produc
 ## Projection type1 bulk-initialization boundary
 
 The [new bulk-boundary audit](original-modern-projection.md#type1-initializer-bulk-copies-stop-before-the-projection-sources) verifies the highest-address pair is mode1 and resolves its retained initializer branch/table. Explicit30-DWORD and9-DWORD copies,25-byte clear and scalar/extension stores end no later than005e1010 for slot1, excluding source cells005e1020/2c/30/38 on that ordinary path. This eliminates a computed/bulk candidate without asserting a global absence of writers. Actual producer/lifetime and MP160-003 remain unresolved; catalog counts unchanged.
+
+## Projection indexed marker/counter contracts
+
+The [indexed-state audit](original-modern-projection.md#indexed-camera-markercounter-writers-retain-their-slot-index) accounts for11 exact-base references per EXE and compares retained selectors/preparer/track-test envelopes. Eight writers manipulate a marker/counter pair; the subordinate track test restores EDX in all five normal epilogues. Ordinary slot0/1 destinations exclude projection sources, while wrapped alias indices outside that domain are explicitly retained. This resolves an index-clobber hypothesis without recovering the actual capture writer or proving all caller domains; MP160-003/counts unchanged.
