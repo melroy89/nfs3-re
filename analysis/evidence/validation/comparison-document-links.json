@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "377e800511e51f65746c20c269cee918c845d46ce5355a60b0c6092eb66d8c0e",
-      "relative_links": 131
+      "sha256": "8395d9933824ea79f98d5ab3a58bac2cbc56eb1f8580d3eb2b0a36a8a29b532b",
+      "relative_links": 132
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -328,8 +328,8 @@
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
-      "sha256": "a012a87b8487470a7f6f553f8c06a8b406b3b212c38a0afa77b5c710d13377b3",
-      "relative_links": 57
+      "sha256": "222981a3cd689a34d0272ac013811fd0ac37687879b4399b7cb611419c205232",
+      "relative_links": 58
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
@@ -425,6 +425,11 @@
       "path": "analysis/original-modern-renderer-texel-alignment.md",
       "sha256": "629c3a064ae35de99dd3160ce6c875ee92b67c592992e7f820fe65d327e959d1",
       "relative_links": 5
+    },
+    {
+      "path": "analysis/original-modern-replay-description.md",
+      "sha256": "28a656234d13a38fdc59eb19cf34aa8fdaf903af572727c66866b8677ea007cc",
+      "relative_links": 2
     },
     {
       "path": "analysis/original-modern-replay-list-cursor.md",
@@ -627,8 +632,8 @@
       "relative_links": 17
     }
   ],
-  "file_count": 125,
-  "relative_link_count": 2154,
+  "file_count": 126,
+  "relative_link_count": 2158,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
