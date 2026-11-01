@@ -145,6 +145,34 @@
           "bytes_sha256": "029ab8c9a2022d5b92068e667da6ffb4633fa87ec3f742cdfb04be72c55f14dc",
           "assembly": "analysis/captures/modern-differences/startup-requirements/original-004f07d0.asm",
           "assembly_sha256": "d029848ee0edf127e5df619c69239abe4b726f4a095ed58f2cda1bb03d64742a"
+        },
+        {
+          "start": "004f0730",
+          "end": "004f07cc",
+          "bytes_sha256": "af86bd03d71b121a9a7a3e9d85768dc8f8640327d0b141cc8542e93e528364d8",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-004f0730.asm",
+          "assembly_sha256": "21f17cd516504147584fe5a4e566ed6a59bd767bd783228ef8fa20ac9f6c4376"
+        },
+        {
+          "start": "00500f8c",
+          "end": "00500ff1",
+          "bytes_sha256": "48b820feb643c1c61215e3406999248e541d7a2664cdc7a0861ad7718da587bb",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-00500f8c.asm",
+          "assembly_sha256": "2e4e21958a70ec72685213cfdac1ad8837563a193c29a405f6800e0e6c298261"
+        },
+        {
+          "start": "00500ff4",
+          "end": "00501005",
+          "bytes_sha256": "72e6911527537b30f7f30f5b2907ab09d191490b927b49ab88456f448187572e",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-00500ff4.asm",
+          "assembly_sha256": "4cc51c402740942fdc8978315de657c46ce212671f981f5168b4e34f4b94a069"
+        },
+        {
+          "start": "00502880",
+          "end": "0050288e",
+          "bytes_sha256": "ef0879a01ca71f2a6a6b3095c9ab00cb8d7838301a4c327faa48debcbaa1d5fd",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/original-00502880.asm",
+          "assembly_sha256": "f53470b5765abbbbd3ee485ab64e8836906afaf42afe1400b005e24895ccd386"
         }
       ],
       "imports": [
@@ -196,6 +224,11 @@
         {
           "iat": "00534520",
           "name": "GetFileAttributesA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534534",
+          "name": "GetLastError",
           "dll": "KERNEL32.dll"
         },
         {
@@ -385,6 +418,34 @@
           "bytes_sha256": "029ab8c9a2022d5b92068e667da6ffb4633fa87ec3f742cdfb04be72c55f14dc",
           "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004f07d0.asm",
           "assembly_sha256": "34e5ae27cb2afd4b4e49c4adb6563dece2cc51da76ae2e71d39da148fee4cbd0"
+        },
+        {
+          "start": "004f0730",
+          "end": "004f07cc",
+          "bytes_sha256": "af86bd03d71b121a9a7a3e9d85768dc8f8640327d0b141cc8542e93e528364d8",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-004f0730.asm",
+          "assembly_sha256": "18abe115ae6aeffb23bbdacb39c3dfe8446bf384266ce4468edd4968e373a9cf"
+        },
+        {
+          "start": "00500f8c",
+          "end": "00500ff1",
+          "bytes_sha256": "48b820feb643c1c61215e3406999248e541d7a2664cdc7a0861ad7718da587bb",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-00500f8c.asm",
+          "assembly_sha256": "c7385b654993cbdcca619031dcced793da75f3aa8e2732e0f5fa270cd0a22df4"
+        },
+        {
+          "start": "00500ff4",
+          "end": "00501005",
+          "bytes_sha256": "72e6911527537b30f7f30f5b2907ab09d191490b927b49ab88456f448187572e",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-00500ff4.asm",
+          "assembly_sha256": "5a2698d0e3d8c2abe3e9412c158430f9fef01c0ea25b7867e7c340dc41178d56"
+        },
+        {
+          "start": "00502880",
+          "end": "0050288e",
+          "bytes_sha256": "ef0879a01ca71f2a6a6b3095c9ab00cb8d7838301a4c327faa48debcbaa1d5fd",
+          "assembly": "analysis/captures/modern-differences/startup-requirements/official_modern-00502880.asm",
+          "assembly_sha256": "2bfcd87f9ae3b48217451ebb6db4bb7f024acef99122cb598fccf16dbc9b5b17"
         }
       ],
       "imports": [
@@ -436,6 +497,11 @@
         {
           "iat": "00534520",
           "name": "GetFileAttributesA",
+          "dll": "KERNEL32.dll"
+        },
+        {
+          "iat": "00534534",
+          "name": "GetLastError",
           "dll": "KERNEL32.dll"
         },
         {
@@ -999,10 +1065,58 @@
       "limit": "Existing-window gate retained; inline warning table replaced by common fatal path. Provider/window results and complete cleanup remain untested."
     }
   },
+  "disk_directory_and_error_followup": {
+    "identical_ranges": [
+      {
+        "start": "004f0730",
+        "end_exclusive": "004f07cc",
+        "bytes": 156,
+        "sha256": "af86bd03d71b121a9a7a3e9d85768dc8f8640327d0b141cc8542e93e528364d8"
+      },
+      {
+        "start": "00500f8c",
+        "end_exclusive": "00500ff1",
+        "bytes": 101,
+        "sha256": "48b820feb643c1c61215e3406999248e541d7a2664cdc7a0861ad7718da587bb"
+      },
+      {
+        "start": "00500ff4",
+        "end_exclusive": "00501005",
+        "bytes": 17,
+        "sha256": "72e6911527537b30f7f30f5b2907ab09d191490b927b49ab88456f448187572e"
+      },
+      {
+        "start": "00502880",
+        "end_exclusive": "0050288e",
+        "bytes": 14,
+        "sha256": "ef0879a01ca71f2a6a6b3095c9ab00cb8d7838301a4c327faa48debcbaa1d5fd"
+      }
+    ],
+    "used_branch": "EAX nonnull caller buffer; EDX250; API writes into a separate local260-byte buffer.",
+    "success": "API return nonzero and unsigned length<=250 copies length+1 bytes including terminator, returns caller pointer.",
+    "failure": "API return0 calls error mapper then returns0; length>250 calls runtime error setter with14 then returns0. Used branch performs no caller-buffer copy on either failure.",
+    "caller": "004516b8 calls directory helper;004516bd clears EAX and004516bf reads caller-buffer first byte without testing returned pointer.",
+    "layout": "Caller buffer begins EBP-10c; geometry output begins EBP-10. Ordinary admitted250-char path copies251 bytes, before geometry offset252.",
+    "drive_selection": "First buffer byte minus64 feeds geometry wrapper; wrapper recreates low-byte character followed by colon/backslash/NUL, with no full prefix/UNC validation.",
+    "geometry_api_failure": "GetDiskFreeSpaceA zero ->00500ff4 GetLastError/error mapper ->ffffffff on normal return; outer check returns0.",
+    "error_mapper": "00500f8c all captured ordinary return paths write EAXffffffff after runtime error-state request through00502880; callback ownership not fully qualified.",
+    "limits": [
+      "No actual directory or geometry API outcome observed; no Wine drive chosen or free-space measured.",
+      "Used nonnull-buffer branch is qualified; helper allocation branch and general overlong-input contract are not completed.",
+      "Error setter calls indirect runtime-state getter00567764; no universal nonlocal/stack-corruption exclusion.",
+      "False warning arithmetic change does not make every directory/API failure disappear."
+    ]
+  },
+  "disk_claim": {
+    "id": "MP100-029",
+    "source_line": 501,
+    "source_claim": "- Bugfix for error when game says that on your HDD is less than 1 MiB is free which is not true.",
+    "support": "Partial: signed/wrapping free-byte arithmetic corrected; directory/API boundaries retained and runtime not observed."
+  },
   "limits": [
     "No memory, disk, desktop, dialog or target API execution.",
     "Memory fields described by exact offsets; no complete API structure/type reconstruction.",
-    "Current-directory helper, API failures and diagnostic termination internals are not fully audited here.",
+    "Used directory-buffer/error-return branch is verified; general allocation path, actual API outcomes and diagnostic termination internals remain incomplete.",
     "No release-note attribution inferred solely from a changed startup routine."
   ]
 }

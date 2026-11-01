@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "dadc72df19ac81b4e06d21c6afe0b76be46cd6c54c145bc39e23f04cd1f23c5f"
+      "sha256": "5672833069e74d384225a6324c0c5660963e7e582f895cb0bddb46575bd4f9da"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -437,7 +437,7 @@
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
-      "sha256": "cf23aceb4845935120483f5daf0dfc25abed0378305366038046a78d05bb5808"
+      "sha256": "3233d47ac89b010a658ebeec6ef9f0bb2dd9d210e77a089025e5ebdec7a287bd"
     },
     {
       "path": "analysis/original-modern-state14.md",
@@ -4304,7 +4304,9 @@
           "path": "analysis/original-modern-startup-requirements.md",
           "entry_mentioned": true,
           "addresses": [
-            "004516a0"
+            "004516a0",
+            "004516bd",
+            "004516bf"
           ]
         }
       ]

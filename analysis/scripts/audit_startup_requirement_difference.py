@@ -18,11 +18,12 @@ def main():
         pe=pefile.PE(data=raw);images[label]=pe;rows=[]
         spans=([(0x4b5f10,0x4b5fee),(0x4b608b,0x4b6097)] if label=='original' else [(0x4b5748,0x4b57c1),(0x4b570c,0x4b5746),(0x4b5c07,0x4b5c11)])
         spans += [(0x4b5e50,0x4b5e9a),(0x4b5ea0,0x4b5f0b),(0x4b6590,0x4b67ac),(0x4b62a0,0x4b6311),(0x4b6320,0x4b6400),(0x4f0330,0x4f042b),(0x4f0280,0x4f032a),(0x4f9390,0x4f93f0),(0x4e33a0,0x4e3401),(0x4f93f0,0x4f9461),(0x4eb390,0x4eb3bf),(0x4b5860,0x4b58bb),(0x4f4b80,0x4f4ba1),(0x4f2a7d,0x4f2a84),(0x4dfd04,0x4dfd55),(0x4ff38c,0x4ff3ce)]
-        spans += [(0x4516a0,0x4516fa if label=='original' else 0x4516f4),(0x4f07d0,0x4f083e)]
+        spans += [(0x4516a0,0x4516fa if label=='original' else 0x4516f4),(0x4f07d0,0x4f083e),
+                  (0x4f0730,0x4f07cc),(0x500f8c,0x500ff1),(0x500ff4,0x501005),(0x502880,0x50288e)]
         for start,end in spans:
             path=capture/f'{label}-{start:08x}.asm';path.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
             rows.append({'start':f'{start:08x}','end':f'{end:08x}','bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),'assembly':str(path.relative_to(ROOT)),'assembly_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
-        imports=[{'iat':f'{i.address:08x}','name':i.name.decode(),'dll':d.dll.decode()} for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x534580,0x534740,0x534754,0x534458,0x534764,0x534500,0x534514,0x534570,0x53458c,0x5344dc,0x534518,0x5345f4,0x5344c8,0x5344cc,0x5344d0,0x534520,0x5344c0)]
+        imports=[{'iat':f'{i.address:08x}','name':i.name.decode(),'dll':d.dll.decode()} for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.address in (0x534580,0x534740,0x534754,0x534458,0x534764,0x534500,0x534514,0x534570,0x53458c,0x5344dc,0x534518,0x5345f4,0x5344c8,0x5344cc,0x5344d0,0x534520,0x5344c0,0x534534)]
         item={'path':relative,'sha256':expected,'spans':rows,'imports':imports}
         if label=='official_modern':item['messages']={f'{a:08x}':pe.get_data(a-0x400000,240).split(b'\0')[0].decode() for a in (0x53d27a,0x53d29a,0x53d202)}
         result['binaries'][label]=item
@@ -212,7 +213,40 @@ def main():
         'failure_helper_hex':failure_helper.hex(),'message_flags':0x51010,
         'terminal_target':'004f2a7d',
         'limit':'Existing-window gate retained; inline warning table replaced by common fatal path. Provider/window results and complete cleanup remain untested.'}
-    result['limits']=['No memory, disk, desktop, dialog or target API execution.','Memory fields described by exact offsets; no complete API structure/type reconstruction.','Current-directory helper, API failures and diagnostic termination internals are not fully audited here.','No release-note attribution inferred solely from a changed startup routine.']
+    result['disk_directory_and_error_followup']={'identical_ranges':[]}
+    for start,end in [(0x4f0730,0x4f07cc),(0x500f8c,0x500ff1),(0x500ff4,0x501005),(0x502880,0x50288e)]:
+        data=original.get_data(start-0x400000,end-start)
+        assert data==modern.get_data(start-0x400000,end-start)
+        result['disk_directory_and_error_followup']['identical_ranges'].append({
+            'start':f'{start:08x}','end_exclusive':f'{end:08x}','bytes':len(data),
+            'sha256':hashlib.sha256(data).hexdigest()})
+    assert modern.get_data(0xf0740,13).hex()=='5068040100002eff1500455300'
+    assert modern.get_data(0xf0789,27).hex()=='39f07617b80e000000e8e920010031c081c4040100005f5e595bc3'
+    assert modern.get_data(0xf07a4,5).hex()=='89e64189df'
+    assert modern.get_data(0x516ad,18).hex()=='bafa0000008d85f4feffffe873f0090031c0'
+    assert modern.get_data(0x100ff6,7).hex()=='2eff1534455300'
+    imports={e.address:e.name.decode()for d in modern.DIRECTORY_ENTRY_IMPORT for e in d.imports if e.name}
+    assert imports[0x534534]=='GetLastError'
+    result['disk_directory_and_error_followup'].update({
+        'used_branch':'EAX nonnull caller buffer; EDX250; API writes into a separate local260-byte buffer.',
+        'success':'API return nonzero and unsigned length<=250 copies length+1 bytes including terminator, returns caller pointer.',
+        'failure':'API return0 calls error mapper then returns0; length>250 calls runtime error setter with14 then returns0. Used branch performs no caller-buffer copy on either failure.',
+        'caller':'004516b8 calls directory helper;004516bd clears EAX and004516bf reads caller-buffer first byte without testing returned pointer.',
+        'layout':'Caller buffer begins EBP-10c; geometry output begins EBP-10. Ordinary admitted250-char path copies251 bytes, before geometry offset252.',
+        'drive_selection':'First buffer byte minus64 feeds geometry wrapper; wrapper recreates low-byte character followed by colon/backslash/NUL, with no full prefix/UNC validation.',
+        'geometry_api_failure':'GetDiskFreeSpaceA zero ->00500ff4 GetLastError/error mapper ->ffffffff on normal return; outer check returns0.',
+        'error_mapper':'00500f8c all captured ordinary return paths write EAXffffffff after runtime error-state request through00502880; callback ownership not fully qualified.',
+        'limits':['No actual directory or geometry API outcome observed; no Wine drive chosen or free-space measured.',
+                  'Used nonnull-buffer branch is qualified; helper allocation branch and general overlong-input contract are not completed.',
+                  'Error setter calls indirect runtime-state getter00567764; no universal nonlocal/stack-corruption exclusion.',
+                  'False warning arithmetic change does not make every directory/API failure disappear.']})
+    readme=(ROOT/'analysis/captures/modern-differences/upstream/package/readme_en.txt').read_bytes()
+    assert hashlib.sha256(readme).hexdigest()=='02bf4684dce1073b4fe7c00c747f020b43508b0cf1407b5dc3f3b864ea46d81d'
+    claim=readme.decode('utf-8-sig').splitlines()[500]
+    assert claim=="- Bugfix for error when game says that on your HDD is less than 1 MiB is free which is not true."
+    result['disk_claim']={'id':'MP100-029','source_line':501,'source_claim':claim,
+        'support':'Partial: signed/wrapping free-byte arithmetic corrected; directory/API boundaries retained and runtime not observed.'}
+    result['limits']=['No memory, disk, desktop, dialog or target API execution.','Memory fields described by exact offsets; no complete API structure/type reconstruction.','Used directory-buffer/error-return branch is verified; general allocation path, actual API outcomes and diagnostic termination internals remain incomplete.','No release-note attribution inferred solely from a changed startup routine.']
     (ROOT/'analysis/evidence/audits/original-modern-startup-requirements.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: startup requirement counterparts, caller witnesses, imports and messages')
 

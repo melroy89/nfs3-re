@@ -57,6 +57,37 @@ The overflow shortcut is sound for the intended positive geometry factors and a3
 
 Both routines preserve ECX/EDX and return explicit EAX0/1. The first current-directory helper’s return is not locally checked before reading its buffer, so directory failure and non-drive-prefixed paths remain unresolved. The retained wrapper’s API error conversion is delegated to `00500ff4`; error-specific behavior, actual drive selection under Wine/Linux mappings and observed large-volume acceptance are untested. This is another verified arithmetic change independent of any uniquely matched release-note bullet.
 
+## Directory and error paths qualify the false free-space warning fix
+
+**Confidence: verified static arithmetic, retained helper bodies and normal-return paths. Work status: done for this local linkage, partial for MP100-029’s observed bug-fix claim.** The expanded [startup audit](scripts/audit_startup_requirement_difference.py) and [manifest](evidence/audits/original-modern-startup-requirements.json) now retain four additional complete bodies and assert their original/final equality:
+
+| Retained body | Bytes | Role on the disk-check path |
+|---|---:|---|
+|`004f0730..004f07cc` |156 | Current-directory adapter |
+|`00500ff4..00501005` |17 | GetLastError plus runtime error conversion |
+|`00500f8c..00500ff1` |101 | Error conversion; ordinary returns EAX=`ffffffff` |
+|`00502880..0050288e` |14 | Store requested error value through an indirect runtime-state getter |
+
+The disk check calls the directory adapter with **nonnull destination EAX=`EBP−10ch` and EDX=250**. The adapter supplies a separate260-byte local buffer to imported GetCurrentDirectoryA, then follows this used branch:
+
+| Normal-return condition | Adapter result and caller-buffer effect |
+|---|---|
+| API returns0 | Calls error converter; explicitly returns0; no copy to caller buffer |
+| Nonzero unsigned returned length>250 | Requests runtime error value14; returns0; no copy to caller buffer |
+| Nonzero returned length<=250 | Copies length+1 bytes including terminator from local buffer; returns caller-buffer pointer |
+
+The helper also has an allocation path for a null input destination, but that branch is not used by this disk check and is not newly qualified here. With an ordinary admitted250-character path,251 bytes are copied. Caller geometry storage begins252 bytes after the destination start, so this local success bound does not overlap that record. These are frame-layout/instruction observations, not a general path-parser or allocation-safety claim.
+
+At`004516bd`, the disk caller clears EAX immediately after the directory call and reads the destination’s first byte at`004516bf`. **It does not test the returned pointer.** On either described failure path, the adapter has not copied a fresh directory into that destination. The code can therefore consume a prior/uninitialized byte unless another precondition supplies it; no actual failure or resulting drive query is observed here.
+
+The caller subtracts64 from that first byte to form a drive number. The retained geometry wrapper adds64 back to the low byte and forms a three-character root with colon/backslash. It does not locally validate a drive-letter prefix or recognize a complete UNC path. This is not proof that arbitrary Wine/Linux path mappings select the intended volume.
+
+When GetDiskFreeSpaceA returns zero, the geometry wrapper calls`00500ff4`, whose imported GetLastError result reaches`00500f8c`. All inspected ordinary converter exits request runtime error state and return`ffffffff`; the geometry wrapper propagates that nonzero result, and the outer check returns0. The runtime-state setter’s indirect callback and exceptional/nonlocal behaviour remain unqualified. Specific errno meanings and actual OS/Wine failures are not assigned from the numbers alone.
+
+**MP100-029 conclusion:** the directly verified change is the preceding free-byte arithmetic: signed low32-bit products/comparison become unsigned products with overflow-to-success and an unsigned threshold. This explains conditional false warnings for ordinary large positive geometry, including the2-GiB and4-GiB examples above. The directory, geometry and error helpers remain, so Modern does not simply remove the free-space check or guarantee success on every failed query. Actual warning occurrence, directory/API outcomes and precise1.0.0 introduction remain unverified. No disk query, dialog or target instructions were executed.
+
+For reconstruction, keep the chosen version’s arithmetic separate from the retained directory/error preconditions. Adding a checked directory result or silently replacing an API failure with guessed free space would be a deliberate behaviour change, not an observed part of this patch.
+
 ## Removed original corruption diagnostic in the large NOP span
 
 The expanded startup audit captures original `004b5e50..004b5e9a` and proves all74 same-address bytes are NOPs in Modern. This classifies one complete original helper within the [largest outside-function NOP replacement](original-modern-outside-function-index.md). It does not imply that all corruption detection or diagnostics disappeared.
