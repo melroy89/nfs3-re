@@ -341,10 +341,10 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f8514` | UnloadThrashDriverLibrary | 39 | 38 | [renderer-loading](original-modern-renderer-loading.md) |
 | `004f853c` | RefreshThrashDriverDescriptor | 12 | 10 | [renderer-lifecycle](original-modern-renderer-lifecycle.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f8548` | InitializeGraphicsInputAndResourceServices | 120 | 110 | [renderer-lifecycle](original-modern-renderer-lifecycle.md), [renderer-loading](original-modern-renderer-loading.md) |
-| `004f915e` | GetPathAttributesPreservingScratchRegisters | 12 | 12 | [small-entry-followup](original-modern-small-entry-followup.md) |
+| `004f915e` | GetPathAttributesPreservingScratchRegisters | 12 | 12 | [frontend-page](original-modern-frontend-page.md), [small-entry-followup](original-modern-small-entry-followup.md) |
 | `004f916c` | CheckPathDirectoryAttribute | 24 | 24 | [sound-bank-language](original-modern-sound-bank-language.md) |
 | `004f9184` | DirectoryContainsNonDotEntry | 101 | 95 | [screenshots](original-modern-screenshots.md), [startup-requirements](original-modern-startup-requirements.md) |
-| `004f91ec` | IsExistingNonDirectoryPath | 24 | 24 | [screenshots](original-modern-screenshots.md), [startup-paths](original-modern-startup-paths.md) |
+| `004f91ec` | IsExistingNonDirectoryPath | 24 | 24 | [frontend-page](original-modern-frontend-page.md), [screenshots](original-modern-screenshots.md), [startup-paths](original-modern-startup-paths.md) |
 | `004f9204` | CreateDirectoryWithoutSecurityAttributes | 14 | 14 | [startup-paths](original-modern-startup-paths.md) |
 | `004f9214` | EnsureDirectoryPathExists | 21 | 19 | [screenshots](original-modern-screenshots.md), [startup-paths](original-modern-startup-paths.md) |
 | `004f9270` | InitializeRamMemoryPoolWithCallback | 52 | 2 | [heap-initialization](original-modern-heap-initialization.md) |
