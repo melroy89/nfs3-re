@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "af9bbd6aaffe09ae0f92589399cca7191696af1623ca3ad6511868fde78e559e",
-      "relative_links": 90
+      "sha256": "544ef7a68c6c4f49db07b396ccfcd8e05fefb823001b97e91636df25dac2e2de",
+      "relative_links": 91
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,7 +103,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "47d3a8a36efb4c3a9be62f541d00dd43c4b8e1f8c74f8e00c983dad6b30e12cb",
+      "sha256": "69785b95142797e32a66c946aaeae3a63947b338eaf768d37bc0f6ca8b65bc5b",
       "relative_links": 175
     },
     {
@@ -183,8 +183,8 @@
     },
     {
       "path": "analysis/original-modern-glide-reference-identity.md",
-      "sha256": "50237bb72d1a771b433efd6006d0fd382c2801e0242a9d511a6445d5b5a29170",
-      "relative_links": 4
+      "sha256": "f9f13e630b127bb844814c178078ef251e6e8838ecc0e0f7ca43c82f1951249b",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
@@ -623,7 +623,7 @@
     }
   ],
   "file_count": 124,
-  "relative_link_count": 2003,
+  "relative_link_count": 2006,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

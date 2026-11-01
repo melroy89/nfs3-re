@@ -50,8 +50,57 @@ The first three file-backed regions have matching RVAs and raw sizes:
 
 All intervals contain both byte strings and preferred-image VAs in the manifest. These are localization aids, not function boundaries, counts of semantic changes or complete whole-file coverage. The final BSS extent and later section RVAs also differ; the header/resource/relocation/overlay consequences are not fully interpreted here. VirtualSize0 and raw-pointer0 BSS retain their metadata meanings rather than invented file-backed zero contents.
 
+## Hosted-reference/final about and mode-construction comparison
+
+The audit now captures both complete413-byte `THRASH_about` bodies `60001bb0..60001d4d`, the complete624-byte reference mode helper `60001940..60001bb0`, its132-byte query helper `600018b0..60001934`, and the already studied673-byte final helper `600018d8..60001b79`. Reference and final helper ranges overlap differently; they must not be paired by one shared start address.
+
+Both about entries use descriptor `6000fd10` and return early if its first DWORD is already nonzero. In the setup path:
+
+| Operation | Hosted reference | Final Modern |
+|---|---|---|
+| Initial descriptor+3ch count |16 |0 |
+| Descriptor+40h table pointer |6000fdd4 |60013000 |
+| Normal helper target |60001940 |600018d8 |
+| Alternate branch helper target |60001940 |600018d8 |
+| Null tests before normal query path |Checks slots60011010 and600110c0 |Replaces these tests with a direct jump to the query setup |
+| Normal path surrounding calls |Calls slots60011010,600110d8,600110d4, then mode helper, then60011014 |Keeps the argument4 call through600110d4, invokes new mode helper and jumps over the other old calls |
+| Later cleanup call target |60001560 |60001108 |
+
+The complete about body has six maximal differing-byte intervals in the existing map, covering these pointer/count, guard, call and cleanup changes. The unchanged descriptor cache guard must remain distinct from the final mode-builder's own once-only state. Setup values are not a claim that every subsequent failure/success path publishes a fully populated usable list. Import/resolver failure contracts and cleanup helper semantics remain separately qualified.
+
+### Fixed reference records already use a query helper
+
+The reference table at6000fdd4 contains17 file-backed40-byte records: zero record0, then16 fixed width/height/depth entries. The captured helper iterates indices1..16. Their dimensions are:
+
+| Index | Width×height | Stored depth before helper |
+|---:|---|---:|
+|1 |640×480 |16 |
+|2 |800×600 |16 |
+|3 |320×200 |16 |
+|4 |320×240 |16 |
+|5 |400×256 |16 |
+|6 |512×384 |16 |
+|7 |640×200 |16 |
+|8 |640×350 |16 |
+|9 |640×400 |16 |
+|10 |960×720 |16 |
+|11 |856×480 |16 |
+|12 |512×256 |16 |
+|13 |1024×768 |16 |
+|14 |1280×1200 |16 |
+|15 |1600×1200 |16 |
+|16 |400×300 |16 |
+
+Other initial fields differ between records; the manifest retains all ten DWORDs per record, including eligibility/buffer-related fields rather than assuming every entry is active. The helper queries capability/string slots, derives a memory-like quantity, and updates the existing records. This is not arbitrary insertion of provider-returned dimensions into a newly grown list.
+
+Its subordinate `600018b0` uses the record index to read an enum from600100a4, forms a four-DWORD query, and calls thunk6000d89a twice: first with a null output and then, on a nonzero-size/successful-allocation path, with allocated storage. The thunk is explicitly bound through its static IAT entry to `_grQueryResolutions@8`. The helper scans16-byte returned records and keeps the maximum signed result DWORD at+8, with zero returned on its inspected size/allocation failure paths. Full provider field meanings, malformed result sizes and allocator contracts are not inferred from the API name alone.
+
+Thus the reference already queries resolution-related capability data, but its about path begins with fixed dimensions and16 count. The final helper instead constructs the [query-driven sorted list](original-modern-dll-candidates.md#mode-producing-helpers-fixed-records-versus-inserted-records), using the separately verified dynamic query binding and insertion helper. Reuse that final-side mechanism and its [extra-slot boundary qualification](original-modern-dll-candidates.md#extra-slot-boundary-checked-against-the-executable); the hosted reference side is now independently checked rather than borrowed from the different local build.
+
+This establishes a substantive **fixed-record update versus list-construction** difference for the hosted/final pair. It does not establish all supported dimensions, successful rendering/Z-buffer use, a trusted Future Cop/NFS III lineage or historical introduction. The fact that query calls exist in both versions must not erase the changed use of their results.
+
 ## Next required comparison
 
-The first semantic follow-up is the same-address hosted/final `about` and mode-table construction: establish which fixed/query machinery was already present in this reference, then locate Modern's actual modifications. Reuse the earlier final-driver insertion and dynamic-binding evidence, while rechecking the reference side rather than importing the local candidate's assumptions.
+The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. Next qualify cleanup/resolver failure lifetimes and select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
 
-**Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Pending:** hosted/final function/ABI/data comparisons, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.
+**Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Also verified:** complete about local differences and reference fixed-table/query contract. **Pending:** remaining hosted/final function/ABI/data comparisons, cleanup/failure lifetimes, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.

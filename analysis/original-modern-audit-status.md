@@ -362,3 +362,7 @@ The [distinct sound-pair comparison](original-modern-sound-reference-pair.md) ve
 ## Glide author-reference baseline distinguished
 
 The [three-way Glide audit](original-modern-glide-reference-identity.md) verifies hosted/final export-entry equality and all34 local/reference RVA differences. Hosted reference already has three static Glide3x imports absent from the local candidate; final has neither DDRAW nor Glide3x static descriptors. Earlier local-candidate findings cannot be transferred without rechecking. The new paired code map records3307 differing bytes/141 intervals, plus import/data maps. This is baseline/localization progress, not completed semantic coverage or authenticated retail lineage. Catalog counts unchanged.
+
+## Hosted Glide reference mode construction compared
+
+The [paired about follow-up](original-modern-glide-reference-identity.md#hosted-referencefinal-about-and-mode-construction-comparison) captures both complete413-byte entries and their different helpers. Hosted reference initializes16 fixed mode records and already calls a statically bound query helper; final changes count/table pointer and uses the previously traced insertion-based builder. All six about differing-byte intervals are locally accounted for, including removed guards/calls and changed cleanup target. Query-API presence is not a Modern-only change; query-result use differs. Provider/failure/cleanup semantics, remaining functions and rendered support remain unverified; catalog counts unchanged.

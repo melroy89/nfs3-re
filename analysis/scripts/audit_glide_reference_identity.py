@@ -1,8 +1,9 @@
 """Keep three Glide renderer identities distinct; static PE and byte inventory."""
 import json
 import subprocess
+import struct
 import pefile
-from audit_dx5_reference_final import sha, intervals
+from audit_dx5_reference_final import sha, intervals, disassemble
 from audit_thrash_loader_difference import ROOT
 
 
@@ -70,6 +71,47 @@ def main():
         result['paired_reference_final_regions'].append({'label': label, 'bytes': len(a),
             'reference_sha256': sha(a), 'final_sha256': sha(b), 'differing_bytes': count,
             'changed_intervals': intervals(a, b, 0x60000000+x.VirtualAddress)})
+    result['about_mode_construction'] = {'captures': [], 'reference_fixed_records': []}
+    for role, pe, start, end, label in [
+        ('hosted_reference', ref, 0x1bb0, 0x1d4d, 'complete-about'),
+        ('official_final', final, 0x1bb0, 0x1d4d, 'complete-about'),
+        ('hosted_reference', ref, 0x1940, 0x1bb0, 'complete-reference-mode-helper'),
+        ('hosted_reference', ref, 0x18b0, 0x1934, 'complete-reference-query-helper'),
+        ('official_final', final, 0x18d8, 0x1b79, 'complete-final-mode-helper')]:
+        body = pe.get_data(start, end-start)
+        result['about_mode_construction']['captures'].append({'role': role, 'label': label,
+            'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+            'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    about_changes = intervals(ref.get_data(0x1bb0, 0x19d), final.get_data(0x1bb0, 0x19d), 0x60001bb0)
+    assert len(about_changes) == 6 and sum(len(row['reference_hex'])//2 for row in about_changes) == 63
+    result['about_mode_construction']['about_changed_intervals'] = about_changes
+    for pe, count, pointer in [(ref, 16, 0x6000fdd4), (final, 0, 0x60013000)]:
+        assert pe.get_data(0x1c24, 5) == b'\xbe'+struct.pack('<I', count)
+        assert pe.get_data(0x1c29, 5) == b'\xbf'+struct.pack('<I', pointer)
+    assert ref.get_data(0x1d22, 5).hex() == 'e819fcffff'
+    assert final.get_data(0x1d11, 5).hex() == 'e8c2fbffff'
+    assert ref.get_data(0x1d3e, 5).hex() == 'e8fdfbffff'
+    assert final.get_data(0x1d3e, 5).hex() == 'e895fbffff'
+    for index in range(17):
+        raw = ref.get_data(0xfdd4+index*40, 40)
+        values = struct.unpack('<10I', raw)
+        if index:
+            assert values[2] == 16
+        else:
+            assert raw == bytes(40)
+        result['about_mode_construction']['reference_fixed_records'].append({'index': index,
+            'va': f'{0x6000fdd4+index*40:08x}', 'words': list(values)})
+    assert ref.get_data(0x1a58, 5).hex() == '83fd107eac'
+    thunk = ref.get_data(0xd89a, 6)
+    assert thunk[:2] == bytes.fromhex('ff25')
+    iat = struct.unpack('<I', thunk[2:])[0]
+    imports_by_va = {entry.address: entry.name for library in ref.DIRECTORY_ENTRY_IMPORT for entry in library.imports}
+    assert imports_by_va[iat] == b'_grQueryResolutions@8'
+    assert ref.get_data(0x18db, 5).hex() == 'e8babf0000'
+    assert ref.get_data(0x1904, 5).hex() == 'e891bf0000'
+    result['about_mode_construction']['reference_query_binding'] = {'thunk_va': '6000d89a',
+        'thunk_hex': thunk.hex(), 'iat_va': f'{iat:08x}', 'name': '_grQueryResolutions@8',
+        'scope': 'Two direct helper calls through static import thunk; no provider invocation.'}
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [
