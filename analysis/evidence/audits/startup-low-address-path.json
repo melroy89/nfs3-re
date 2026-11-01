@@ -1,0 +1,91 @@
+{
+  "kind": "startup-low-address-path",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "spans": [
+        {
+          "start": "004a39f0",
+          "end_exclusive": "004a3a10",
+          "bytes_sha256": "e5890dd73e9faec785092b27181a2b0c67332c5c67836733a9afa92ed1e51f81",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/original-004a39f0.asm",
+          "assembly_sha256": "d0491a5e8d6c0c313aad7566a1ae96fbff15217d01fd2ed10e6924bb8c0b6c23"
+        },
+        {
+          "start": "004a3ad9",
+          "end_exclusive": "004a3b3d",
+          "bytes_sha256": "f0d434275fa26acdd62678b15552d0063a07c9040c0f718c99518a93ade822cb",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/original-004a3ad9.asm",
+          "assembly_sha256": "21222f112af57cb9dc08d0efebbc078aa514cf52bf46a455c7cd4a649b89ad52"
+        },
+        {
+          "start": "004f7af8",
+          "end_exclusive": "004f7b1a",
+          "bytes_sha256": "71812854ba5ecc1647b0b376a4ac8bc9490ce442bc623bcf1dd08a8251dc006d",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/original-004f7af8.asm",
+          "assembly_sha256": "8ce3e16450ec2fc6e2f91c66ebcf569d75656aba7d44d2387c946c5d4dd8eb84"
+        },
+        {
+          "start": "004f7b7d",
+          "end_exclusive": "004f7ba7",
+          "bytes_sha256": "e265fcd4c2d91aae2af9886c8050e9bf456a92f271af268f6a5759981b392ae1",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/original-004f7b7d.asm",
+          "assembly_sha256": "ff7b2cd375e6497d77b71b616cf6a5364fe42f2afd18fee6f2c8dbb861cebe81"
+        }
+      ],
+      "metadata_0055e8cd_hex": "ff00fd3a4a00ff007d3f4a00",
+      "facts": {
+        "read": "004a3ae7 MOV EAX,190;004a3aec MOV AL,[EAX]",
+        "handler": "004a3afd passes addressEBP-40h to importedUnhandledExceptionFilter",
+        "publication": "0055e8c0=1 if filter returns0,otherwise0",
+        "resume": "004a3b1a EAX1 ->runtime entry004f7b7d, which pops multiple registers before testing result",
+        "following_publication": "004a3b2d storesDWORD1 at005643fc",
+        "frame": "004a3a00/03/08 installs frame via004f7af8 with metadata0055e8cd; first recorded target004a3afd"
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "spans": [
+        {
+          "start": "004a39f0",
+          "end_exclusive": "004a3a10",
+          "bytes_sha256": "b553c95f426d417a97b4988fea34a4bb24d612b6172d45ad77d5c3b852f0eeee",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/official_modern-004a39f0.asm",
+          "assembly_sha256": "14b75eecea62de3d83cab860ebbf7bd11072ebc2f4b5683a09a40a0af8ecae8d"
+        },
+        {
+          "start": "004a3ad9",
+          "end_exclusive": "004a3b3d",
+          "bytes_sha256": "60f9736b77660948794679f6afff9c99b22eded41459ffe26243dfe8737599fb",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/official_modern-004a3ad9.asm",
+          "assembly_sha256": "91b05536340a1656d8cbe951b1e8ee6a8e0a6bf5af73d661c72c11c88aad7beb"
+        },
+        {
+          "start": "004f7af8",
+          "end_exclusive": "004f7b1a",
+          "bytes_sha256": "71812854ba5ecc1647b0b376a4ac8bc9490ce442bc623bcf1dd08a8251dc006d",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/official_modern-004f7af8.asm",
+          "assembly_sha256": "65f8cad299742a12b6c175ee896a91693ee67c68194fde38047585bee721fb57"
+        },
+        {
+          "start": "004f7b7d",
+          "end_exclusive": "004f7ba7",
+          "bytes_sha256": "e265fcd4c2d91aae2af9886c8050e9bf456a92f271af268f6a5759981b392ae1",
+          "assembly": "analysis/captures/modern-differences/startup-low-address/official_modern-004f7b7d.asm",
+          "assembly_sha256": "2b3334b8f4a1dd8a41071dbf421eb333e48657e964e8250064d6f168ce9f35fa"
+        }
+      ],
+      "metadata_0055e8cd_hex": "ff007d3f4a00ff007d3f4a00",
+      "facts": {
+        "replacement": "004a3ad9..004a3b3d all100NOP bytes",
+        "metadata_first_target": "004a3f7d instead of004a3afd"
+      }
+    }
+  },
+  "limits": [
+    "No memory fault, exception filter or target instruction executed.",
+    "Full exception dispatcher, global consumers and intended OS/debugger policy unresolved."
+  ]
+}

@@ -460,3 +460,8 @@ The [x87 follow-up](og-modern-x87-precision.md#removed-optional-startup-exceptio
 ## Removed demo startup override bodies
 
 The [ordered-branch audit](original-modern-command-line.md#removed-demo-startup-writes-and-precedence) records the raw common writes, two differing WORD stores and e3demo-after-msdemo precedence in original `004a3b3d..004a3d05`, versus456 Modern NOPs. Field meanings and visible demo effects remain pending. This extends the existing switch-table and save-gate findings without claiming all demo consumers are removed. Catalog counts unchanged; no target execution.
+
+
+## Removed low-address startup read and filter path
+
+The [startup comparison](original-modern-startup-policy.md#removed-low-address-read-and-exception-filter-handler) identifies original absolute byte read`0x190`, the metadata-associated UnhandledExceptionFilter path and conditional `0055e8c0` publication within Modern's100-byte NOP replacement. It records the nonordinary stack contract of runtime entry`004f7b7d` and changed metadata target. Intended OS/debugger policy, full dispatch and global consumers remain unresolved. Catalog counts unchanged; no fault or target execution.

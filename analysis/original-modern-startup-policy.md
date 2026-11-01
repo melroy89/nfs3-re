@@ -95,3 +95,26 @@ Original [fpuerrors initialization](og-modern-x87-precision.md#removed-optional-
 ## Removed demo startup overrides
 
 The [demo branch comparison](original-modern-command-line.md#removed-demo-startup-writes-and-precedence) captures original `-msdemo` then `-e3demo` startup writes, the two differing WORD values and later-branch precedence when both flags are set. Final replaces the complete456-byte region with NOPs. Storage meaning remains unresolved; this is not proof that every demo-related flag consumer disappeared.
+
+
+## Removed low-address read and exception-filter handler
+
+**Verified static instructions; intended detection policy unresolved.** The [audit script](scripts/audit_startup_low_address_path.py) and [manifest](evidence/audits/startup-low-address-path.json) retain baseline identities, disassembly hashes, import binding and metadata bytes. This explains another operation inside the previously documented removed SetErrorMode envelope.
+
+Original startup `004a3a00/03/08` builds a local frame through `004f7af8`, passing metadata `0055e8cd`. The runtime helper installs the frame at FS:0 and its handler pointer `004f7b2a`. The first metadata target is **`004a3afd`**. The inspected local sequence is:
+
+| Address | Observed operation |
+|---|---|
+| `004a3ae2..004a3ae7` | Clear a local state byte, then EAX=`00000190` |
+| `004a3aec` | Read BYTE `[EAX]`, therefore absolute address`0x190` |
+| `004a3aee..004a3afb` | Save/increment a local byte, update local state and jump to`004a3b24` |
+| `004a3afd..004a3b08` | Pass address`EBP-40h` to imported **UnhandledExceptionFilter** |
+| `004a3b08..004a3b1a` | Publish DWORD`0055e8c0`:1 if the filter result is0, otherwise0 |
+| `004a3b1a..004a3b24` | Supply EAX=1 to runtime entry`004f7b7d` |
+| `004a3b2d` | Following continuation stores DWORD1 at`005643fc` |
+
+The filter publication belongs to the handler path; the ordinary read-success path jumps past it. Both globals are initially zero in the inspected file. This is **not sufficient to name either global as an OS-version, debugger or compatibility Boolean**. Whether address`0x190` is readable depends on the process mapping, and full exception-dispatch traversal has not been qualified. The metadata target plus installed runtime frame supports an exception-associated path, not proof of its observed invocation.
+
+Runtime entry `004f7b7d` immediately pops EDX/EBX/EDI/EBP before interpreting EAX. Treating it as an ordinary returning C helper with only an integer argument would misrepresent the visible stack contract. Any reconstruction of this path needs the surrounding exception-runtime frame contract, or an explicitly justified platform-specific replacement.
+
+Final Modern replaces **`004a3ad9..004a3b3d` with100 NOP bytes**, including both SetErrorMode calls, the low-address read, this handler and these local publications. The corresponding first metadata target at`0055e8cf` is changed from`004a3afd` to`004a3f7d`. This proves local removal/retargeting; it does not establish removal of every exception handler, filter call or writer to these globals. Modern's separate error-reporting option is documented above. **Pending:** full original runtime dispatch, global consumers/other writers, intended policy and actual exception delivery. No low-address read or filter was executed.
