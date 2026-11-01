@@ -50,3 +50,30 @@ Original TGA construction rounds source depth upward to a multiple of eight for 
 ## Limits and follow-up
 
 Verified: original depth-16 mask/shift conversion, Modern masked RGB565 bitmap layout and word copy, Modern four-to-three-byte copy and padding. Unknown: actual driver channel order/content, full source row/pitch guarantees, end-to-end image fidelity and encoded file sizes. Existing allocation and malformed-dimension limitations remain as documented in the linked worker audit. Historical release dates require earlier patch binaries; no screenshot was taken in this phase.
+
+## Historical150 correction initializes the full depth local
+
+**Verified140→150 partial-write/full-read correction; XP-specific failure and live screenshots untested.** The [depth-local audit](evidence/audits/screenshot-depth-local-history.json), reproduced with `python3 analysis/scripts/audit_screenshot_depth_local_history.py`, pins author-hosted1.4.0/1.5.0 and official final EXEs. It retains complete worker bodies and every decoded access to local`EBP-8`, rather than treating same-VA changed bytes as equivalent instructions after repacking.
+
+| Operation |1.4.0 |1.5.0/final |
+|---|---|---|
+|Read source depth into local |`004e3105` MOV AX,WORD[ESI+8];`004e3109` MOV WORD[EBP-8],AX |`004e3104` MOV EAX,DWORD[ESI+8];`004e3107` MOV DWORD[EBP-8],EAX |
+|Calculate source-row stride |`004e3164` MOV EAX,DWORD[EBP-8] |`004e315e` same DWORD load |
+|Choose24/32-bit copy branches |Compare low WORD of local |Compare full DWORD |
+
+The worker entry saves registers, establishes EBP and reserves11ch bytes of stack without clearing the local. In140, only the low two bytes of`EBP-8` are written before the DWORD stride read; the upper two bytes retain prior stack contents on the checked ordinary path. Other recorded local stores do not initialize that upper half. This is a machine-level observation: a maintained C function must not silently model it as a defined uninitialized C integer.
+
+For valid ordinary depth D and prior upper WORD H, the old stride input is `(H<<16)|D`, while150's full store supplies D. The following are **derived scalar examples**, not observed stack values or instruction probes:
+
+| Width;depth;prior upper WORD |140 source bytes/row |150 source bytes/row |
+|---|---:|---:|
+|640;16;0 |1,280 |1,280 |
+|640;16;1 |5,244,160 |1,280 |
+|640;24;1 |5,244,800 |1,920 |
+|640;32;1 |5,245,440 |2,560 |
+
+The formula adds7 modulo2^32, shifts right3 and multiplies by width using low32 bits. The row loop derives source addresses from that stride and the decreasing row index, then adds capture-record base+12. In140 its subsequent low-WORD depth tests can still choose the normal16/24/32 copy branch while the source-row offset is wrong. Destination allocation earlier uses the source record's actual DWORD depth separately, so the later bad stride is not sanitized merely because allocation succeeded. Whether an incorrect address is mapped, faulting or readable remains runtime-dependent; no crash was reproduced.
+
+The150/full-final depth and row-loop core`004e3104..004e31b8` is byte-identical. Complete workers have separate sizes/hashes (140472 bytes;150/final464 bytes), with other literal/call relocation differences outside this focused explanation. The widening also makes header-depth and local copy-condition tests consistent with the DWORD record field; it is not a proof of valid arbitrary depth inputs or complete pixel-format equivalence.
+
+**MP150-034 advances to partial static support:** at the advertised140→150 boundary, the screenshot worker eliminates an uninitialized-upper-half dependency capable of corrupting source stride. This is consistent with a stack-content-dependent screenshot crash fix, but neither exclusive XP causation nor actual XP behaviour is established. Existing extent, allocation, driver-channel, GDI+, thread lifetime and concurrency limitations remain. Reconstruction should explicitly choose the Modern full-width contract, and document that choice as preserving a verified correction rather than quietly “fixing” the older patched machine behaviour. No screenshot, game, thread/API, instruction probe, compiler or Ghidra write was performed.

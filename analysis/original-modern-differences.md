@@ -660,7 +660,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **84 Claimed, 53 Static, 151 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **83 Claimed, 53 Static, 152 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -779,7 +779,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-031 | Gameplay loading animation takes into account time of preliminary synchronization of a network game. | Partial |
 | MP150-032 | IntroSplashTime ini setting, which allows you to set duration of the intro splash image. | Partial |
 | MP150-033 | Fixed a problem with discolored light from the taillights in the menu when DX6 renderer is used and fog support is enabled. | Claimed |
-| MP150-034 | Fixed a bug which cause a crash when using the screenshoter feature on Windows XP. | Claimed |
+| MP150-034 | Fixed a bug which cause a crash when using the screenshoter feature on Windows XP. | Partial |
 | MP150-035 | The game doesn't change resolution to 640×480 when “exit to system” is used during the gameplay, so closing the game is faster in this case. | Partial |
 | MP150-036 | Updated version of nGlide with fixes according to the NFS3 is included. | Claimed |
 | MP150-037 | dgVoodoo v2.5.1 (Napalm). | Claimed |
@@ -1164,3 +1164,7 @@ The [140/150 comparison](original-modern-state14.md#menu-fog-admission-becomes-c
 ## DX6 count increment is mode-catalog bookkeeping
 
 The [descriptor/callback follow-up](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) resolves the150 DX6 counter edit: about exposes the count at+3c and table base one40-byte record before insertion storage, explaining reportedN→N+1 after enumeration. Retained callback and sorted insertion bodies are captured. Leading-slot contents, inclusive/exclusive consumer bounds and actual mode visibility remain unverified; this is not a lighting/fog change.
+
+## Historical screenshot depth-local correction
+
+The [worker-width comparison](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) verifies140 stores only a WORD into a later DWORD stride input;150 initializes the complete depth local and uses full-width tests, retained final. Derived examples expose stale-upper-word stride amplification without executing target instructions. MP150-034 advances to partial support; actual crashes and XP-specific causation remain untested.

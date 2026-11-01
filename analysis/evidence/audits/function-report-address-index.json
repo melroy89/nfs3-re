@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5d56573079dd0e7e1d0a3d1f0c69bd08756d46327eb3b951a289b6e1604be89f"
+      "sha256": "c817e9952fc1fc3bec80dad5014f9dd97e580948374c494940431b06fff1c55b"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -385,7 +385,7 @@
     },
     {
       "path": "analysis/original-modern-screenshot-pixels.md",
-      "sha256": "8a67f48144fe8bf9d628b3a1016668e0ed25bd1824e14250bd6ff5b8e523eb7e"
+      "sha256": "98ec674e81e92792f2a758990b67572d53afa31013ce5946dad023ba4290fc1b"
     },
     {
       "path": "analysis/original-modern-screenshots.md",
@@ -12436,14 +12436,20 @@
             "004e3078",
             "004e30ae",
             "004e30bc",
+            "004e3104",
+            "004e3105",
+            "004e3107",
+            "004e3109",
             "004e311d",
             "004e3132",
             "004e3143",
             "004e315e",
+            "004e3164",
             "004e3188",
             "004e3197",
             "004e31a0",
             "004e31ad",
+            "004e31b8",
             "004e3247"
           ]
         },

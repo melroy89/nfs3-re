@@ -13,7 +13,7 @@ The two recent HUD investigations now have concrete mechanisms. These bounded ch
 
 The earlier “unresolved” HUD checkpoint sections below preserve investigation history; they are superseded by these linked findings. The EXE bytes, saved Ghidra database, raw exports and maintained C were not changed by these investigations. No game or new instruction probe was run.
 
-The [catalog](modern-patch-change-catalog.md) currently has **84 vendor-only,53 bounded-static,151 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **83 vendor-only,53 bounded-static,152 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -788,3 +788,7 @@ The [historical context audit](original-modern-state14.md#menu-fog-admission-bec
 ## DX6 counter structural purpose resolved
 
 The [mode-catalog audit](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) resolves the previously opaque6003bd3c cell as descriptor+3c public mode count.150 adds one for the leading public-table slot before the insertion arena. Retained callback/insertion/about bodies and loader-zero-fill boundaries are verified. Leading-slot state, all consumer bounds/device outcomes and visible modes remain untested; no taillight attribution or catalog label change.
+
+## Screenshot partial-depth-local correction identified
+
+The [three-build worker audit](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) verifies140→150 removes a WORD-write/DWORD-read mismatch in source-stride calculation.150/final core bytes match. MP150-034 is partial: scalar effects are derived, with no screenshot crash or XP-specific runtime result. Existing lifecycle/encoding limitations remain.
