@@ -214,3 +214,15 @@ Run `python3 analysis/scripts/audit_preset_pointer_references.py`; the [paired m
 The store is `0041d33f`. Fourteen paired32-byte contexts match exactly; the classifier's context differs, including its branch/return sequence. The inventory therefore does **not** assert all consumer bodies are identical. It also does not establish identical results when upstream preset values differ.
 
 No immediate consumer in this inventory identifies the initialized−5 field at +2ch. **Confidence: unresolved; work status: pending.** The next useful evidence would be a def-use trace of aliases/copies of the record or a caller-bounded observation of reads from +2ch. Repeating a literal-pointer search is insufficient. Computed record addresses, pointer propagation across calls and copied data remain outside this audit; even a complete absence of direct +2ch reads here would not prove that the field is unused. Preserve its layout and initialized value in reconstruction without a physical label. No binary, Ghidra state or target execution was changed.
+
+## Relocated record addresses and an adjacent unaligned read
+
+The same audit inventories every HIGHLOW relocation whose stored target lies in `[005dd0e0,005dd230)`, the four84-byte record region. Original has37 such entries; Modern has7. This is a relocation-operand count, not a count of objects, accesses or changed features. Modern's operands are at `0041d322`, `0041d338`, `0041d4b5`, `0041d649`, `0041d6a9`, `0041deee` and `0041df31`. Most belong to the already documented selection, preset, reset and insertion code. Relocations do not enumerate nonrelocated constants, runtime pointer formation or aliases.
+
+The apparent exception is the operand at **`0041d4b5`**, target **`005dd22d`**. Complete contact-effect helper `0041d350..0041d509` is byte-identical in both executables. At `0041d4a1` it zero-extends a WORD index from linked record+0eh, computes three times that index, then at `0041d4b3` loads a DWORD from `005dd22d+3*index`. `SAR EAX,24` at `0041d4be` keeps only that DWORD's signed high byte. In little-endian terms the resulting integer is exactly:
+
+`sign_extend8(byte[005dd230 + 3*index])`.
+
+That is the first byte of the adjacent three-byte effect-table entry, already described in the [effect-table notes](detailed-analysis-notes.md). At index0, the actual four-byte read spans `[005dd22d,005dd231)`: three bytes from the preceding record region are read but discarded. It neither reads nor explains record+2ch. Other index domains and memory validity remain caller-dependent.
+
+**Reconstruction consequence:** on ordinary accessible RAM a signed-byte load reproduces this integer result without expressing an unaligned DWORD read across C objects. It does not reproduce the original four-byte memory-access footprint or possible faults; use explicit byte/sign-extension semantics and retain that limitation. Casting the address to `int32_t *` would introduce alignment/aliasing/object-boundary concerns. This is a verified retained machine idiom, not a newly introduced Modern fix or evidence of an observed original bug. No instructions were executed.

@@ -275,7 +275,163 @@
             "  41e0d4:\t73 0a                \tjae    0x41e0e0"
           ]
         }
-      ]
+      ],
+      "highlow_relocations_targeting_four_record_region": [
+        {
+          "operand_address": "0041d322",
+          "target": "005dd0e0"
+        },
+        {
+          "operand_address": "0041d338",
+          "target": "005dd0e4"
+        },
+        {
+          "operand_address": "0041d4b5",
+          "target": "005dd22d"
+        },
+        {
+          "operand_address": "0041d676",
+          "target": "005dd15c"
+        },
+        {
+          "operand_address": "0041d67b",
+          "target": "005dd108"
+        },
+        {
+          "operand_address": "0041d693",
+          "target": "005dd16c"
+        },
+        {
+          "operand_address": "0041d698",
+          "target": "005dd118"
+        },
+        {
+          "operand_address": "0041d6b0",
+          "target": "005dd170"
+        },
+        {
+          "operand_address": "0041d6ca",
+          "target": "005dd108"
+        },
+        {
+          "operand_address": "0041d6e2",
+          "target": "005dd118"
+        },
+        {
+          "operand_address": "0041d6fa",
+          "target": "005dd11c"
+        },
+        {
+          "operand_address": "0041d72d",
+          "target": "005dd15c"
+        },
+        {
+          "operand_address": "0041d732",
+          "target": "005dd108"
+        },
+        {
+          "operand_address": "0041d74a",
+          "target": "005dd16c"
+        },
+        {
+          "operand_address": "0041d74f",
+          "target": "005dd118"
+        },
+        {
+          "operand_address": "0041d767",
+          "target": "005dd170"
+        },
+        {
+          "operand_address": "0041d781",
+          "target": "005dd108"
+        },
+        {
+          "operand_address": "0041d799",
+          "target": "005dd118"
+        },
+        {
+          "operand_address": "0041d7b1",
+          "target": "005dd11c"
+        },
+        {
+          "operand_address": "0041d7bf",
+          "target": "005dd108"
+        },
+        {
+          "operand_address": "0041d7c4",
+          "target": "005dd11c"
+        },
+        {
+          "operand_address": "0041d7c9",
+          "target": "005dd118"
+        },
+        {
+          "operand_address": "0041d7d7",
+          "target": "005dd15c"
+        },
+        {
+          "operand_address": "0041d7dc",
+          "target": "005dd170"
+        },
+        {
+          "operand_address": "0041d7e1",
+          "target": "005dd16c"
+        },
+        {
+          "operand_address": "0041d806",
+          "target": "005dd100"
+        },
+        {
+          "operand_address": "0041d80f",
+          "target": "005dd104"
+        },
+        {
+          "operand_address": "0041d818",
+          "target": "005dd108"
+        },
+        {
+          "operand_address": "0041d821",
+          "target": "005dd11c"
+        },
+        {
+          "operand_address": "0041d82a",
+          "target": "005dd118"
+        },
+        {
+          "operand_address": "0041d836",
+          "target": "005dd10c"
+        },
+        {
+          "operand_address": "0041d83f",
+          "target": "005dd110"
+        },
+        {
+          "operand_address": "0041d846",
+          "target": "005dd114"
+        },
+        {
+          "operand_address": "0041d84d",
+          "target": "005dd124"
+        },
+        {
+          "operand_address": "0041d854",
+          "target": "005dd120"
+        },
+        {
+          "operand_address": "0041deee",
+          "target": "005dd0e0"
+        },
+        {
+          "operand_address": "0041df31",
+          "target": "005dd0e0"
+        }
+      ],
+      "contact_helper": {
+        "start": "0041d350",
+        "end_exclusive": "0041d509",
+        "sha256": "cb1eeac59cb58d1f8e818402acdf78b7cbab37e0905b04a9e1debf6041cf1832",
+        "bytes_hex": "535156575589e583ec1489c189d783c00c8b008b80a40500008945ecf6810002000002740731d28955f4eb07c745f40b000000d9eed899a4000000dfe09e730b8b81a40000008945f8eb0bd981a4000000d9e0d95df8d9eed899ac000000dfe09e730b8b81ac0000008945fceb0bd981ac000000d9e0d95dfcd945f8d845fc83ec04db1c245889c38d04bd0000000001f88b55ecc1e00201c231c0668b420e8945f08b75f0c1e00229f0be30d25d0001c631c0807a13020f85dc000000803eff0f85eb0000003b5df40f8cbd00000083fb197d07b802000000eb05b803000000e87b1fffff8945f08d04bd0000000001f88b5decc1e00201c331d2668b530e8d04950000000029d08a55f0889030d25d00803e007c66d981ac000000dc0dcc6c530083ec04db1c2458d981a400000089c2dc0dcc6c5300c1fa0883ec04db1c2458c1f808e8d7d00c00c1f80831d2884601668b530e0fbec88d04950000000029d031db8b802dd25d00ba02000000c1f818e86a1fffffc6460200eb03c606feb8ffffffff89ec5d5f5e595bc3b80100000089ec5d5f5e595bc3807a1303750db80200000089ec5d5f5e595bc3b80100000089ec5d5f5e595bc3"
+      }
     },
     "official_modern": {
       "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
@@ -551,7 +707,43 @@
             "  41e0d4:\t73 0a                \tjae    0x41e0e0"
           ]
         }
-      ]
+      ],
+      "highlow_relocations_targeting_four_record_region": [
+        {
+          "operand_address": "0041d322",
+          "target": "005dd0e0"
+        },
+        {
+          "operand_address": "0041d338",
+          "target": "005dd0e4"
+        },
+        {
+          "operand_address": "0041d4b5",
+          "target": "005dd22d"
+        },
+        {
+          "operand_address": "0041d649",
+          "target": "005dd0e0"
+        },
+        {
+          "operand_address": "0041d6a9",
+          "target": "005dd0e0"
+        },
+        {
+          "operand_address": "0041deee",
+          "target": "005dd0e0"
+        },
+        {
+          "operand_address": "0041df31",
+          "target": "005dd0e0"
+        }
+      ],
+      "contact_helper": {
+        "start": "0041d350",
+        "end_exclusive": "0041d509",
+        "sha256": "cb1eeac59cb58d1f8e818402acdf78b7cbab37e0905b04a9e1debf6041cf1832",
+        "bytes_hex": "535156575589e583ec1489c189d783c00c8b008b80a40500008945ecf6810002000002740731d28955f4eb07c745f40b000000d9eed899a4000000dfe09e730b8b81a40000008945f8eb0bd981a4000000d9e0d95df8d9eed899ac000000dfe09e730b8b81ac0000008945fceb0bd981ac000000d9e0d95dfcd945f8d845fc83ec04db1c245889c38d04bd0000000001f88b55ecc1e00201c231c0668b420e8945f08b75f0c1e00229f0be30d25d0001c631c0807a13020f85dc000000803eff0f85eb0000003b5df40f8cbd00000083fb197d07b802000000eb05b803000000e87b1fffff8945f08d04bd0000000001f88b5decc1e00201c331d2668b530e8d04950000000029d08a55f0889030d25d00803e007c66d981ac000000dc0dcc6c530083ec04db1c2458d981a400000089c2dc0dcc6c5300c1fa0883ec04db1c2458c1f808e8d7d00c00c1f80831d2884601668b530e0fbec88d04950000000029d031db8b802dd25d00ba02000000c1f818e86a1fffffc6460200eb03c606feb8ffffffff89ec5d5f5e595bc3b80100000089ec5d5f5e595bc3807a1303750db80200000089ec5d5f5e595bc3b80100000089ec5d5f5e595bc3"
+      }
     }
   },
   "limits": [
@@ -560,6 +752,17 @@
     "Following instructions are context, not a complete def-use or call analysis.",
     "No target execution; no physical meaning assigned to record+2c."
   ],
+  "adjacent_table_read": {
+    "site": "0041d4b3",
+    "index_source": "zero-extended WORD at linked record+0e",
+    "read_address": "005dd22d + 3*index",
+    "read_width": 4,
+    "result": "SAR32(load_le32(005dd22d+3*index),24) = sign_extend8(byte[005dd230+3*index])",
+    "index_zero_read_range": "[005dd22d,005dd231)",
+    "boundary": "At index0 three bytes read belong to the preceding four-record region, but are discarded by SAR24. This is not a semantic read of preset+2c.",
+    "c_portability": "For result-only reproduction with ordinary accessible RAM, a signed-byte load avoids an unaligned cross-object DWORD access. It does not reproduce the original four-byte access footprint or possible faults.",
+    "limits": "Complete helper bytes retained/equal; no proof of all caller index domains, allocation bounds, runtime effects or memory fault equivalence."
+  },
   "comparison": {
     "references_per_binary": 15,
     "loads": 14,
