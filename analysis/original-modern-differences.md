@@ -6,6 +6,23 @@ For a shallow inventory, see the [complete release-note change list](#complete-r
 
 **Audit in progress.** This document explains verified differences and indexes the remaining code-level investigation. It does not equate vendor release-note entries, differing bytes or Ghidra functions with independently explained gameplay changes. The original supplied executable, official Modern Patch release and local edited analysis target are kept distinct.
 
+## Recent HUD, menu and import findings
+
+The [eight-investigation checkpoint](evidence/validation/hud-menu-import-checkpoint.json) pins reviewed revision`be46b2b`,16/16 passing static reruns and eight evidence outputs matching their committed pre-run bytes. It also verifies12 protected artifacts (three EXEs, saved Ghidra database, retained probe evidence and maintained reconstruction/harness files) and12 raw reference exports against prior hashes. Reproduce with`python3 analysis/scripts/check_hud_menu_import_mechanisms.py`. This is primary-agent reproducibility, not independent semantic review, new exports, compilation, instruction probes, game testing or live Ghidra verification.
+
+| Investigation | Verified scope | Remaining boundary |
+|---|---|---|
+|[Software list border](original-modern-hud-layout.md#historical-list-bevel-fix-retargets-the-software-branch) |140→150 branch retarget reaches eight-quad enqueue while skipping background |Visible bevel, Speeds List identity and provider handling |
+|[Police editor items](original-modern-hud-settings-policy.md#police-only-widget-omission-is-authored-in-the-role-specific-menus) |Police-only authored item omissions, including mixed views; present by110 |Retail-reference provenance, installed loading and visible acceptance |
+|[Top dropdown priorities](original-modern-common-menu-buttons.md#location-and-opponents-dropdown-priority-changes-in150) |140→150 top priority1→0; descending-group consumers retained |Compositing, state preparation and complete callback effects |
+|[Subtitle style](original-modern-common-menu-buttons.md#showcase-and-compare-subtitles-adopt-the-race-results-text-style) |140→150 adds text records matching nine Race Results style fields |Font bank, complete title consumers and visible output |
+|[DirectDraw imports](original-modern-glide-reference-identity.md#ddraw-import-removal-is-verified-across140-to150-for-both-named-binaries) |Both named140 binaries import DirectDrawCreate;150/final omit static DDRAW import |Conditional dynamic use remains; no no-dependency claim |
+|[Callback selection](original-modern-common-menu-buttons.md#callback-selection-gains-a-none-check-and-narrower-sum-in140) |131→140 none sentinel check and16-bit sum; complete37-byte delta explained |Producer/callback effects and overflow-state reachability |
+
+The checkpoint also reproduces the earlier negative renderer-gate and editor-draw checks. Their historical “unverified” conclusions are not the current status of the later positive branch/asset findings. A repeatable negative check cannot invalidate evidence from a different, now-bound route. Catalog labels remain88 vendor-only/53 bounded-static/147 partial/2 unresolved; these count release-note bullets, not distinct EXE changes or completion percentage.
+
+Next static priorities are the claimed HUD-preview arrangement (MP150-020) and gameplay-exit resolution handling (MP150-035), reusing existing HUD layout/window lifecycle evidence. Broader changed-region semantics, external components and cross-version runtime compatibility remain part of the active comparison; this checkpoint does not close them.
+
 ## Recent configuration and HUD mechanisms
 
 These are bounded static findings, not proof of every release-note claim or runtime outcome. The [eight-audit checkpoint](evidence/validation/recent-static-mechanisms-checkpoint.json) pins reviewed revision`f92b1e7`,16 successful runs, eight unchanged evidence outputs,12 unchanged protected files and12 unchanged raw exports. Reproduce with`python3 analysis/scripts/check_recent_static_mechanisms.py`; each invocation records its current reviewed HEAD. This is primary-agent reproducibility, not independent semantic review, game testing, compilation, export regeneration or Ghidra reopening.

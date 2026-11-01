@@ -2,6 +2,8 @@
 
 ## Current snapshot — 2026-11-01
 
+The [latest HUD/menu/import checkpoint](evidence/validation/hud-menu-import-checkpoint.json) reviews`be46b2b`:16/16 static runs reproduce eight committed evidence files;12 protected artifacts and12 raw exports match prior hashes. See the [compact current findings table](original-modern-differences.md#recent-hud-menu-and-import-findings). This verifies repeatability/preservation, not independent semantics, runtime compatibility or all remaining differences.
+
 The two recent HUD investigations now have concrete mechanisms. These bounded checks are complete at the stated static/package scope; runtime acceptance and the broader executable comparison remain open.
 
 | Item | Established mechanism | Historical boundary | Remaining |
@@ -754,3 +756,7 @@ The [paired historical PE inventories](original-modern-glide-reference-identity.
 ## Callback selection preparation fully compared
 
 The [four-build code audit](original-modern-common-menu-buttons.md#callback-selection-gains-a-none-check-and-narrower-sum-in140) resolves the previously excluded37-byte block in the complete363-byte callback loop, including five NOP bytes outside saved ranges.1.3.1→1.4.0 adds selection100 suppression and16-bit wrapped summation. The query retains32-bit arithmetic; scalar examples are derived, not executed. Catalogue labels remain unchanged because no release-note identity is asserted. Runtime producers/consumers and reachability remain open.
+
+## Eight recent investigations reproduced against committed evidence
+
+Run `python3 analysis/scripts/check_hud_menu_import_mechanisms.py` to reproduce the [checkpoint](evidence/validation/hud-menu-import-checkpoint.json). It pins each selected script/output to reviewed HEAD, records selected shared dependency hashes and verifies protected files before/after. Historical negative-gate/draw findings remain bounded; later positive branch/asset evidence supersedes their former vendor-only status. No target/API execution, new exports, compilation or Ghidra reopening was performed. Next static targets are MP150-020 HUD-preview arrangement and MP150-035 exit resolution, with existing evidence reused; the full audit remains incomplete.

@@ -1,0 +1,400 @@
+{
+  "kind": "eight-hud-menu-import-static-checkpoint",
+  "reviewed_head": "be46b2b8c865c884a488ed2a0ff8f36af40b8f28",
+  "runner_path": "analysis/scripts/check_hud_menu_import_mechanisms.py",
+  "runner_sha256": "8fdafaac989a5928b088d0ead31c0b8b8d32c4e63765a79f372fca66d97ce31a",
+  "prior_checkpoint": "analysis/evidence/validation/later-static-mechanisms-checkpoint.json",
+  "prior_checkpoint_sha256": "dcf7ad3cfaa50946be2c45d03d32095246ae04a01eb23d99f0bb6bad9c7b6353",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_hud_software_gate_boundary.py"
+      ],
+      "script_sha256": "19e7e4a9a527f596b2e260d50539a6f8109b0a6bb23158a533bfb81684a8015d",
+      "output": "analysis/evidence/audits/hud-software-gate-boundary.json",
+      "pre_run_output_sha256": "28a9053cf761d3846b73c2d2a93f113f9305840d639f9a4bb5d3cd82804c6128",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:two complete branch spans identical in four pinned builds;SoftTri-bevel attribution remains unverified\n",
+          "stderr": "",
+          "output_sha256": "28a9053cf761d3846b73c2d2a93f113f9305840d639f9a4bb5d3cd82804c6128"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:two complete branch spans identical in four pinned builds;SoftTri-bevel attribution remains unverified\n",
+          "stderr": "",
+          "output_sha256": "28a9053cf761d3846b73c2d2a93f113f9305840d639f9a4bb5d3cd82804c6128"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_hud_list_bevel_history.py"
+      ],
+      "script_sha256": "feb3b7840164ba1d4f58ba57de97b19a85db761c2d6759322719436ecdc4fc82",
+      "output": "analysis/evidence/audits/hud-list-bevel-history.json",
+      "pre_run_output_sha256": "8cc00031515800969b3aa0451c545d3eda1063ff336ea5b1d6947db6b564728f",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: four pinned builds; two-byte historical branch retarget admits eight border quads\n",
+          "stderr": "",
+          "output_sha256": "8cc00031515800969b3aa0451c545d3eda1063ff336ea5b1d6947db6b564728f"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: four pinned builds; two-byte historical branch retarget admits eight border quads\n",
+          "stderr": "",
+          "output_sha256": "8cc00031515800969b3aa0451c545d3eda1063ff336ea5b1d6947db6b564728f"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_hud_editor_draw_dispatch.py"
+      ],
+      "script_sha256": "264f19f552229846bd807e9d95cc77f3b847b23363c476f501b4a0da7b5231c9",
+      "output": "analysis/evidence/audits/hud-editor-draw-dispatch.json",
+      "pre_run_output_sha256": "d2a06d7811873b683a4e0ebfd063019add2198a9d9036154d9b489ae192311eb",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: registered draw chain,23-case table and eight retained spans; police hiding unresolved\n",
+          "stderr": "",
+          "output_sha256": "d2a06d7811873b683a4e0ebfd063019add2198a9d9036154d9b489ae192311eb"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: registered draw chain,23-case table and eight retained spans; police hiding unresolved\n",
+          "stderr": "",
+          "output_sha256": "d2a06d7811873b683a4e0ebfd063019add2198a9d9036154d9b489ae192311eb"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_police_editor_asset_admission.py"
+      ],
+      "script_sha256": "651bbf0dbc71843e0f3e2e0dcf88107be316a253311ddc3d5c43b9b3e52b1bc9",
+      "output": "analysis/evidence/audits/police-editor-asset-admission.json",
+      "pre_run_output_sha256": "d18dc1bc0235dfe4ef010ef0d4a15eb32cc9c1af7ab667743fcfca7e2555fce0",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS: six paired menus plus1.1.0 item-ID history, exact police-only removals and retained EXE bindings\n",
+          "stderr": "",
+          "output_sha256": "d18dc1bc0235dfe4ef010ef0d4a15eb32cc9c1af7ab667743fcfca7e2555fce0"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS: six paired menus plus1.1.0 item-ID history, exact police-only removals and retained EXE bindings\n",
+          "stderr": "",
+          "output_sha256": "d18dc1bc0235dfe4ef010ef0d4a15eb32cc9c1af7ab667743fcfca7e2555fce0"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_dropdown_priority_history.py"
+      ],
+      "script_sha256": "271ccb870c456fa9a55a248d5d552b5cc25ed9a37e2e9c91a4d3028c2e9932ea",
+      "output": "analysis/evidence/audits/dropdown-priority-history.json",
+      "pre_run_output_sha256": "ebfbcfada940903e30242149804b03d890caa9b49a63cf74bbd207b8afb3fc54",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:four package snapshots,exact dropdown priority boundary and paired retained draw-group consumers\n",
+          "stderr": "",
+          "output_sha256": "ebfbcfada940903e30242149804b03d890caa9b49a63cf74bbd207b8afb3fc54"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:four package snapshots,exact dropdown priority boundary and paired retained draw-group consumers\n",
+          "stderr": "",
+          "output_sha256": "ebfbcfada940903e30242149804b03d890caa9b49a63cf74bbd207b8afb3fc54"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_subtitle_style_history.py"
+      ],
+      "script_sha256": "9c254c1b394344717cf4bc57492044bfec1c84ea4547f3add8603192667be109",
+      "output": "analysis/evidence/audits/subtitle-style-history.json",
+      "pre_run_output_sha256": "0ea41887af5751ed470ae64330a5ae429050a31e90289a05eb8a5e73aa8fdf9c",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:four package snapshots,new text subtitles match nine Race Results style fields;five paired descriptors\n",
+          "stderr": "",
+          "output_sha256": "0ea41887af5751ed470ae64330a5ae429050a31e90289a05eb8a5e73aa8fdf9c"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:four package snapshots,new text subtitles match nine Race Results style fields;five paired descriptors\n",
+          "stderr": "",
+          "output_sha256": "0ea41887af5751ed470ae64330a5ae429050a31e90289a05eb8a5e73aa8fdf9c"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_ddraw_import_history.py"
+      ],
+      "script_sha256": "56957bc644077a7ac4ee3ade86f7eda8b47cf2b5c6f315b111d65cde6c5b932e",
+      "output": "analysis/evidence/audits/ddraw-import-history.json",
+      "pre_run_output_sha256": "f06a5235d67a6bf0477390afc3fb0422754fe52cd4b3decfc4bfc10a51e04bb7",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:both historical binaries remove DDRAW static imports140->150;final snapshots corroborate\n",
+          "stderr": "",
+          "output_sha256": "f06a5235d67a6bf0477390afc3fb0422754fe52cd4b3decfc4bfc10a51e04bb7"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:both historical binaries remove DDRAW static imports140->150;final snapshots corroborate\n",
+          "stderr": "",
+          "output_sha256": "f06a5235d67a6bf0477390afc3fb0422754fe52cd4b3decfc4bfc10a51e04bb7"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_menu_callback_selection_history.py"
+      ],
+      "script_sha256": "03510e9a57466f905261a6f7901fdf82097fa06e1749a942a8afaaa9f69ae4d6",
+      "output": "analysis/evidence/audits/menu-callback-selection-history.json",
+      "pre_run_output_sha256": "e753c0ff4e5cdc51b537a1780e1b3a53fad3c48d48a9fc41808f6d13e0d8521e",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:four pinned complete loops,131->140 sentinel/width change,retained query and derived scalar cases\n",
+          "stderr": "",
+          "output_sha256": "e753c0ff4e5cdc51b537a1780e1b3a53fad3c48d48a9fc41808f6d13e0d8521e"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:four pinned complete loops,131->140 sentinel/width change,retained query and derived scalar cases\n",
+          "stderr": "",
+          "output_sha256": "e753c0ff4e5cdc51b537a1780e1b3a53fad3c48d48a9fc41808f6d13e0d8521e"
+        }
+      ],
+      "repeatable": true
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "before_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "matches_prior": true,
+      "after_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b"
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "before_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "matches_prior": true,
+      "after_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6"
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "before_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "matches_prior": true,
+      "after_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb"
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "before_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "matches_prior": true,
+      "after_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+    },
+    {
+      "path": "analysis/evidence/probes/line-boundary-helper-probe.json",
+      "before_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0",
+      "matches_prior": true,
+      "after_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0"
+    },
+    {
+      "path": "reconstruction/README.md",
+      "before_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca",
+      "matches_prior": true,
+      "after_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca"
+    },
+    {
+      "path": "reconstruction/line_boundary.c",
+      "before_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437",
+      "matches_prior": true,
+      "after_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437"
+    },
+    {
+      "path": "reconstruction/line_boundary.h",
+      "before_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad",
+      "matches_prior": true,
+      "after_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary.py",
+      "before_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f",
+      "matches_prior": true,
+      "after_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary_windows.py",
+      "before_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab",
+      "matches_prior": true,
+      "after_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab"
+    },
+    {
+      "path": "reconstruction/tests/windows_adapter.S",
+      "before_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f",
+      "matches_prior": true,
+      "after_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f"
+    },
+    {
+      "path": "reconstruction/tests/windows_harness.c",
+      "before_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd",
+      "matches_prior": true,
+      "after_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd"
+    }
+  ],
+  "raw_reference_exports": [
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    }
+  ],
+  "selected_shared_dependencies": [
+    {
+      "path": "analysis/scripts/audit_thrash_loader_difference.py",
+      "sha256": "5bd4d21780b17971061bddf14a3dfb67944ca5556f4bdafb740f5e08e237d73c"
+    },
+    {
+      "path": "analysis/scripts/audit_dx5_reference_final.py",
+      "sha256": "cd7f5e69e9aac66c6dc1bfa2c0f04fe2c3486cf00388b4344b495a46d4b38ab2"
+    },
+    {
+      "path": "analysis/scripts/audit_endpoint_comma_history.py",
+      "sha256": "723ba3cc9a5bf731bed4fca6237c9668bef0e1fc6710dd6cbf3a6965faf92869"
+    },
+    {
+      "path": "analysis/evidence/audits/reference-asset-pairs.json",
+      "sha256": "b58085cca18105000159e1e9d4f46f3ae5aa93bd50c3a12278556ef2d86e95ba"
+    }
+  ],
+  "limits": [
+    "Primary-agent16 static reruns, not independent semantic review, runtime, CI or whole-repository qualification.",
+    "No target/API/instruction execution, new exports, compilation, reconstruction edits or Ghidra reopening/mutation.",
+    "Hashes prove these files match recorded identities, not live GUI state, saved annotation correctness or runtime behavior.",
+    "Raw exports compare prior checkpoint hashes, not newly generated exports or freshly parsed original manifests.",
+    "Repeatability cannot prove every interpretation or extend the scripts\u2019 stated path/input coverage.",
+    "Selected shared dependencies are recorded, not a complete environment/package dependency lock."
+  ]
+}
