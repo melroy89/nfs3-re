@@ -34,7 +34,7 @@ The bundle supplies separately identified candidates for previously missing orig
 | Hosted member | Proposed comparison | Required next evidence |
 |---|---|---|
 | `d3da.dll` | Final DX5 renderer member | [Pairing and bounded correspondence verified](original-modern-dx5-reference-pair.md); pointed-to table semantics and remaining intervals pending |
-| `softtria.dll` | Final software renderer member | Same; packed/changed layouts must not be treated as address-equal functions |
+| `softtria.dll` | Final software renderer member | [Pairing and raw-depth callback filter verified](original-modern-software-reference-pair.md); remaining code/PE consequences pending |
 | `voodoo2a.dll` | Final Glide renderer member | Same; distinguish game renderer from wrapper DLL |
 |80 menus /6 HUD-position files | Corresponding Modern members | [Complete suffix-scoped pairing and HUD literal comparison](original-modern-reference-assets-index.md); menu-control semantics and runtime layouts remain follow-up |
 

@@ -29,6 +29,8 @@ The [Postgame Options follow-up](original-modern-options-postgame.md#postgame-to
 
 The [DX5 fog-admission linkage](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) connects its removed selector15h to the EXE’s decimal21 support trial: on the common route, rejection clears support. The bundled DX5 INI omits the opt-in key; actual selected configuration and rendered output remain unverified.
 
+The [software-renderer comparison](original-modern-software-reference-pair.md) finds44 changed shared-code bytes in nine intervals. Its mode callback now rejects non16 raw-depth inputs, while the retained RGB555 path can still store depth15. Other code intervals and actual display acceptance remain unverified.
+
 ## Recent findings at a glance
 
 The [static checkpoint](evidence/validation/historical-startup-checkpoint.json) re-runs11 selected audit scripts against reviewed commit `7c36f96` and verifies the recorded hashes of the supplied original, official Modern, local analysis EXE and saved Ghidra database. This is a reproducibility/self-check checkpoint, not independent semantic review or completion of the entire investigation.
@@ -525,7 +527,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **137 Claimed, 45 Static, 106 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **136 Claimed, 45 Static, 107 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -881,6 +883,6 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-064 | 640×480 always reported as 16-bit. Original title movie doesn't works in 32-bit mode. | Partial |
 | MP100-065 | Light beams effect now works in D3D mode. In original version this effect available in Voodoo2 mode only. | Claimed |
 | MP100-066 | Based on the original softtria.dll from NFS3. Newer versions of this driver render worse image or crash. | Claimed |
-| MP100-067 | The driver reports only 16-bit resolutions now. Original version was reported that 32-bit resolutions are supported, but it isn't true. This driver can't work in 32-bit modes. | Claimed |
+| MP100-067 | The driver reports only 16-bit resolutions now. Original version was reported that 32-bit resolutions are supported, but it isn't true. This driver can't work in 32-bit modes. | Partial |
 
 <!-- END GENERATED MODERN CHANGE LIST -->

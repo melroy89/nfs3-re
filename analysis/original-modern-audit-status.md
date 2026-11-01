@@ -124,7 +124,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels140 entries vendor-only,45 bounded static,103 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels136 entries vendor-only,45 bounded static,107 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -326,3 +326,7 @@ The [expanded Options audit](original-modern-options-postgame.md#postgame-to-opt
 ## DX5 rejection linked to EXE fog-support admission
 
 The [cross-component audit](original-modern-dx5-reference-pair.md#exe-fog-trial-connects-to-the-rejected-dx5-selector) pins the final DX5 INI and EXE reader/trial/recompute spans. Decimal21 equals rejected selector15h: on the common trial route, final DX5 returns0 and clears a nonzero support flag; zero support forces zero admission in the captured recomputation. The bundled INI has no opt-in key. Actual INI/DLL selection, skipped initialization routes, later writes and visual output remain unverified. Catalog counts unchanged; no target execution.
+
+## Software-renderer raw-depth admission
+
+The [paired software audit](original-modern-software-reference-pair.md) verifies34 matching exports,44 shared-code differing bytes in nine intervals and equal import/data sections. Complete callback comparison resolves the new raw-depth16 filter; retained RGB555 handling may still publish depth15. Selected seeds/registration are unchanged. MP100-067 gains partial support; historical introduction, other code intervals, overlay/resource meaning and actual rendering remain unverified. Current catalog labels:136 vendor-only,45 bounded static,107 partial,2 unresolved.

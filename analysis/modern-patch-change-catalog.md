@@ -301,7 +301,7 @@ Source line points to the bullet in the installed `readme_en.txt`. Release ancho
 | MP100-064 | 1.0.0 (2015-05-17) | 546 | 640×480 always reported as 16-bit | Graphics / drivers | Partial: [fixed640×480×16 seed verified](original-modern-dx5-reference-pair.md#release-note-correspondence); callback admits other recognized depths conditionally, so always remains unestablished |
 | MP100-065 | 1.0.0 (2015-05-17) | 547 | Light beams effect now works in D3D mode | Graphics / drivers | Vendor-claimed; not independently verified against both executables |
 | MP100-066 | 1.0.0 (2015-05-17) | 550 | Based on the original softtria.dll from NFS3 | Graphics / drivers | Vendor-claimed; not independently verified against both executables |
-| MP100-067 | 1.0.0 (2015-05-17) | 551 | The driver reports only 16-bit resolutions now | Graphics / drivers | Vendor-claimed; not independently verified against both executables |
+| MP100-067 | 1.0.0 (2015-05-17) | 551 | The driver reports only 16-bit resolutions now | Graphics / drivers | Partial: [final software callback filters raw depth to16](original-modern-software-reference-pair.md#claim-correspondence-and-remaining-work); stored555 depth can be15; full table/runtime and introduction unverified |
 
 ## Code findings without an assigned release-note ID
 

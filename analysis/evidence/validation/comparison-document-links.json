@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "a0c052a5931a3e26870cba0fe1b3511fb12e85d294af3058cfceff5fef01eb98",
-      "relative_links": 82
+      "sha256": "c325640a51538b0cf74c5c6ba08a7c4ab44a0c4a63adf1cbbfcb3bec24f8a0da",
+      "relative_links": 83
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -103,8 +103,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "88cec9a77b0960c2c6ec6f322996a47d003ad1f802056ea79fe9b4ca995e5f6f",
-      "relative_links": 166
+      "sha256": "2b9fd8adc25a768b68bb1ea0b36371e10c005445bb5718df8b8cb049c00564f5",
+      "relative_links": 167
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -318,8 +318,8 @@
     },
     {
       "path": "analysis/original-modern-original-reference-bundle.md",
-      "sha256": "6d600b744ff16b548f8a290160b64a714700c3e5163a29649f1f5c08b18f9d0e",
-      "relative_links": 4
+      "sha256": "309af5919af97e97c079ae675c0520c3924ac4da71cc2015319c1cc840bda8dd",
+      "relative_links": 5
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
@@ -487,6 +487,11 @@
       "relative_links": 8
     },
     {
+      "path": "analysis/original-modern-software-reference-pair.md",
+      "sha256": "9b7677f1558b1f6877238a2cb2c5859091244bdd4f8ba19588d0e7e112074042",
+      "relative_links": 3
+    },
+    {
       "path": "analysis/original-modern-sound-bank-language.md",
       "sha256": "182b118f352dffde470fd085cdbb6870a20831cd368c09e1fb0973a0000d6cca",
       "relative_links": 5
@@ -598,8 +603,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "b709d026c58daefbe439d9bf9340d8758f67fda8d57281c61048866aadd6eab5",
-      "relative_links": 162
+      "sha256": "13db9ede83cadb19ce55faf646f5452affd0a65c75040e3ef0371f9d77d7808d",
+      "relative_links": 163
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -607,8 +612,8 @@
       "relative_links": 16
     }
   ],
-  "file_count": 121,
-  "relative_link_count": 1945,
+  "file_count": 122,
+  "relative_link_count": 1952,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
