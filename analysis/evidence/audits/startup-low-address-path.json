@@ -56,6 +56,13 @@
         }
       ],
       "metadata_0055e8cd_hex": "ff00fd3a4a00ff007d3f4a00",
+      "diagnostic_dialog": {
+        "flags": "00011031",
+        "caption": "Abort message:",
+        "call": "004011a6 ->MessageBoxA",
+        "owner_hwnd": 0,
+        "text_buffer": "0056e010"
+      },
       "facts": {
         "read": "004a3ae7 MOV EAX,190;004a3aec MOV AL,[EAX]",
         "handler": "004a3afd passes addressEBP-40h to importedUnhandledExceptionFilter",
@@ -120,6 +127,13 @@
         }
       ],
       "metadata_0055e8cd_hex": "ff007d3f4a00ff007d3f4a00",
+      "diagnostic_dialog": {
+        "flags": "00051011",
+        "caption": "Abort message:",
+        "call": "004011a6 ->MessageBoxA",
+        "owner_hwnd": 0,
+        "text_buffer": "0056e010"
+      },
       "fixed_startup_values": {
         "0055e8c0": 0,
         "00564408": 0,
@@ -135,6 +149,25 @@
     "No memory fault, exception filter or target instruction executed.",
     "Full exception dispatcher, global consumers and intended OS/debugger policy unresolved."
   ],
+  "complete_diagnostic_body_difference": {
+    "range": "00401010..00401218",
+    "bytes": 520,
+    "changed_addresses": [
+      "00401196",
+      "00401198"
+    ],
+    "only_change": "MessageBoxA flags immediate00011031 ->00051011",
+    "retained_flags": [
+      "MB_OKCANCEL",
+      "MB_SYSTEMMODAL",
+      "MB_SETFOREGROUND"
+    ],
+    "changed_icon": "MB_ICONWARNING ->MB_ICONERROR",
+    "added_flag": "MB_TOPMOST",
+    "caveat": "SYSTEMMODAL already specifies topmost style; extraTOPMOST does not establish a visible stacking difference",
+    "api_reference": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox",
+    "limit": "Identical other instructions do not establish transitive callee/state or runtime dialog equivalence"
+  },
   "retained_diagnostic_consumer": {
     "range": "00401070..00401095",
     "bytes_identical": true,

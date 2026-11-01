@@ -476,3 +476,8 @@ The [extended comparison](original-modern-command-line.md#later-demo-branches-al
 ## Replacement startup flags have retained diagnostic consumers
 
 The [producer/consumer follow-up](original-modern-startup-policy.md#replacement-startup-values-control-retained-diagnostic-output-and-break) resolves direct uses of `005643fc`/`0055e8c0`: a byte-identical consumer gates OutputDebugStringA and then DebugBreak. Modern explicitly initializes them1/0, replacing the original filter-dependent break flag. Both retain an exception-report-side clear of the outer flag. Other writers and full handler/runtime behaviour remain open; catalog counts unchanged.
+
+
+## Complete diagnostic body: two flag bytes, no changed call target
+
+The [handler comparison](original-modern-startup-policy.md#diagnostic-dialog-flags-are-the-only-local-handler-body-change) now accounts for all differences in the520-byte `00401010` body: two immediate bytes change MessageBoxA flags from11031h to51011h, requesting an error icon and explicit topmost flag. Both already specify SYSTEMMODAL; no new visible stacking fix is inferred. Unchanged code is not a transitive/runtime equivalence claim. Catalog counts unchanged; no target execution.

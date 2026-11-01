@@ -155,3 +155,20 @@ Modern does **not** simply leave the flags uninitialized after removing the prob
 Both executables also retain `XOR EAX,EAX` at `004a3fdf` and the following store0 to `005643fc` at `004a3fe6`, before the exception-report call to `00401010` at `004a3feb`. That local clear skips both debug-output and break operations in the retained consumer, provided no intervening change supersedes it. It is not proof that every abort/reporting path takes this clear or that the handler necessarily returns.
 
 **Status:** these direct producer/consumer paths are verified statically. Remaining: other writers/aliases, the original low-address exception dispatch outcome, full diagnostic handler contract and actual debugger/API behaviour. No debug output, break, exception filter or target instruction was executed.
+
+
+## Diagnostic dialog flags are the only local handler-body change
+
+The extended [audit manifest](evidence/audits/startup-low-address-path.json) compares the complete **520-byte `00401010..00401218`** body and asserts exactly two differing byte addresses: **`00401196` and `00401198`**. Both are inside the immediate operand of PUSH at`00401195`; they are not changed instructions or a changed callee address. The operand supplied as MessageBoxA's flags changes **`00011031` → `00051011`**. The call at`004011a6`, null owner, text buffer`0056e010`, caption pointer`00536030` and remaining local instructions are retained.
+
+| Flag component | Original | Final Modern |
+|---|---|---|
+| Buttons | `MB_OKCANCEL` (`0001`) | Same |
+| Icon | `MB_ICONWARNING` (`0030`) | `MB_ICONERROR` (`0010`) |
+| Modality | `MB_SYSTEMMODAL` (`1000`) | Same |
+| Foreground request | `MB_SETFOREGROUND` (`10000`) | Same |
+| Explicit topmost request | Absent | `MB_TOPMOST` (`40000`) |
+
+Names/meanings follow Microsoft's [MessageBox documentation](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox). **MB_SYSTEMMODAL already specifies the topmost window style**; do not turn the extra MB_TOPMOST bit into a claim that original dialogs could not be topmost, that Modern fixed a reproduced stacking problem, or that this dialog freezes unrelated applications. The verified change is the requested error icon plus explicit topmost flag.
+
+This completes the local instruction-byte comparison for this body, not the full diagnostic contract. Its unchanged indirect callbacks, formatting helpers, incoming globals, subsequent return/termination behaviour and Windows/Wine implementation can still affect outcomes. No dialog was displayed. The earlier startup flag changes separately affect whether this same handler requests debug output or a break.

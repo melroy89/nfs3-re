@@ -14,6 +14,7 @@ def main():
     capture = ROOT/'analysis/captures/modern-differences/startup-low-address'
     capture.mkdir(parents=True,exist_ok=True)
     consumers = []
+    diagnostic_bodies = []
     for label in ('original','official_modern'):
         relative,expected,_ = SPECS[label]
         raw = (ROOT/relative).read_bytes()
@@ -31,6 +32,15 @@ def main():
                 'bytes_sha256':hashlib.sha256(pe.get_data(start-0x400000,end-start)).hexdigest(),
                 'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
+        diagnostic_bodies.append(pe.get_data(0x1010,0x208))
+        assert pe.get_data(0x1195,1) == b'\x68'
+        flags = struct.unpack('<I',pe.get_data(0x1196,4))[0]
+        assert flags == (0x11031 if label == 'original' else 0x51011)
+        assert any(i.address==0x534764 and i.name==b'MessageBoxA'
+                   for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports)
+        row['diagnostic_dialog'] = {'flags':f'{flags:08x}',
+            'caption':pe.get_string_at_rva(0x136030).decode('ascii'),
+            'call':'004011a6 ->MessageBoxA','owner_hwnd':0,'text_buffer':'0056e010'}
         consumers.append(pe.get_data(0x1070,0x25))
         assert any(i.address==0x53459c and i.name==b'OutputDebugStringA'
                    for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports)
@@ -61,6 +71,16 @@ def main():
             row['facts'] = {'replacement':'004a3ad9..004a3b3d all100NOP bytes',
                             'metadata_first_target':'004a3f7d instead of004a3afd'}
         result['binaries'][label] = row
+    differences = [0x401010+i for i,(a,b) in enumerate(zip(*diagnostic_bodies)) if a!=b]
+    assert differences == [0x401196,0x401198]
+    result['complete_diagnostic_body_difference'] = {
+        'range':'00401010..00401218','bytes':520,'changed_addresses':[f'{a:08x}' for a in differences],
+        'only_change':'MessageBoxA flags immediate00011031 ->00051011',
+        'retained_flags':['MB_OKCANCEL','MB_SYSTEMMODAL','MB_SETFOREGROUND'],
+        'changed_icon':'MB_ICONWARNING ->MB_ICONERROR','added_flag':'MB_TOPMOST',
+        'caveat':'SYSTEMMODAL already specifies topmost style; extraTOPMOST does not establish a visible stacking difference',
+        'api_reference':'https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox',
+        'limit':'Identical other instructions do not establish transitive callee/state or runtime dialog equivalence'}
     assert consumers[0] == consumers[1]
     result['retained_diagnostic_consumer'] = {
         'range':'00401070..00401095','bytes_identical':True,

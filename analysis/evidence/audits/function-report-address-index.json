@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "e17ebbb8f8a743ba65c2ff5c36f02b672a1c82d4e95637c2d1057df2ab5d4ed4"
+      "sha256": "f2f911216772459889362526574aeba68025ddedb1dc105195d05010ed433f06"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -413,7 +413,7 @@
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
-      "sha256": "770c975948ac7ed8f719fca5d9320fb782a07611d923ac4a3e2a91a91dad38bc"
+      "sha256": "f68f582e5d276e8a3998d4199aef730e81f59fe78320fdcbda4d082d5ff7787b"
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
@@ -522,6 +522,13 @@
       "modern_sha256": "cc31c7ce92649640c80fd9fefb97dbc9e5b05598e3808d857ad2df6b512668ba",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-audit-status.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00401010"
+          ]
+        },
+        {
           "path": "analysis/original-modern-frontend-page.md",
           "entry_mentioned": true,
           "addresses": [
@@ -555,7 +562,11 @@
           "addresses": [
             "00401010",
             "00401070",
-            "00401095"
+            "00401095",
+            "00401195",
+            "00401196",
+            "00401198",
+            "004011a6"
           ]
         },
         {

@@ -101,6 +101,8 @@ These later investigations have their own reproducible static audits; the earlie
 | [Demo startup overrides](original-modern-command-line.md#removed-demo-startup-writes-and-precedence) | Two original branches differ at two WORD stores; e3demo executes second when both flags are set. Modern replaces456-byte region with NOPs | Meaning of raw storage and visible demo behaviour |
 | [Low-address/filter path](original-modern-startup-policy.md#removed-low-address-read-and-exception-filter-handler) | Original reads absolute`0x190`; associated filter path conditionally publishes a global. Modern removes local sequence and changes metadata target | Intended policy, full exception dispatch and global consumers |
 
+The [complete diagnostic-handler comparison](original-modern-startup-policy.md#diagnostic-dialog-flags-are-the-only-local-handler-body-change) additionally accounts for its two changed bytes: warning icon→error icon and an explicit topmost flag; both already request system-modal/topmost styling. Runtime UI behaviour remains untested.
+
 The [974-byte startup partition](original-modern-startup-policy.md#contiguous-accounting-of-the974-byte-nop-region) accounts for the whole NOP interval and links remaining gaps. Byte accounting is complete within that interval; semantic recovery is not.
 
 ## 1. Three-way provenance
