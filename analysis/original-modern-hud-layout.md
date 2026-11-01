@@ -247,3 +247,18 @@ The renderer computes the corresponding metric through the second coefficient, s
 For equal ordinary positive input metrics, the **unrounded coefficient ratio is12.414/20 =0.6207**. This is not a guaranteed37.93% reduction in integer row spacing or displayed panel height: truncation, font bank/scale, actual entries, width-derived padding, clipping and x87 state remain dependencies. Integer count multiplication wraps at32 bits; translating it as overflowing signed C arithmetic would not preserve the machine contract.
 
 **MP100-007 advances to partial support:** there is a concrete mechanism for more compact police-list spacing in both row advance and panel layout. The advertised resemblance to the standard opponents list, actual speed fields/images, complete visual layout, every caller and1.0.0 introduction remain unverified. The default-selection change in the preceding section is separate from these spacing coefficients. No game, renderer, font load, instruction probe or Ghidra write occurred.
+
+## SoftTri list-bevel claim: checked renderer gates are retained
+
+**Bounded negative evidence; advertised fix unresolved.** The [software-gate audit](evidence/audits/hud-software-gate-boundary.json), reproduced with `python3 analysis/scripts/audit_hud_software_gate_boundary.py`, pins supplied original, author-hosted1.4.0/1.5.0 and official final EXEs. This follows the opponent/police list research above without assuming a nearby changed field owns the bevel feature.
+
+| Selected branch/fall-through span | Retained test | Retained skip target |
+|---|---|---|
+|`00482051..004820ac`,91 bytes |TEST byte`007a3a58`,2; JNE |`004820ac` |
+|`0048213e..00482173`,53 bytes |Same TEST/JNE predicate |`00482173` |
+
+Each whole captured span is byte-identical across all four inputs, including the1.4.0→1.5.0 release boundary. They therefore do not supply a newly removed software-renderer gate for MP150-017. These are bounded branch spans, not claims to complete enclosing-function boundaries or all software/rendering routes. Final's [type parser](original-modern-renderer-loading.md#5-driver-specific-configuration-before-loading) independently maps s-type to bit2; no universal flag meaning in every historical producer is inferred here.
+
+The preceding audits separately establish width/reference substitutions, border coefficients, named Name/List defaults and compact police-row spacing. Those are real changes, but none alone identifies the advertised SoftTri-specific frame admission/drawing route. Similarly, equal branch bytes do not prove equal output: shared records, texture assets, other dispatch paths and provider code can differ.
+
+**MP150-017 remains vendor-only/unverified.** The next required evidence is the actual opponent/pursuit frame-resource and submission linkage, including the software driver's handling of that submission and its changed inputs, followed by rendered validation if necessary. This check rules out one simple local-gate explanation; it neither disproves the vendor claim nor establishes a replacement explanation. Do not repeat this same span comparison as unresolved work, or label these unassigned branches as the exact claimed bevel without further linkage. No HUD, driver, callback, new instruction probe, Ghidra or executable modification occurred.

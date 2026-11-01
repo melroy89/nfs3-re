@@ -1,0 +1,279 @@
+{
+  "kind": "static-hud-software-gate-boundary",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "captures": [
+        {
+          "start": "00482051",
+          "end_exclusive": "004820ac",
+          "sha256": "f5e710513804bcde850086fe5c318b26c712235160f0b863631755767e5ba156",
+          "hex": "f605583a7a0002755289f28d04950000000029d0c1e00201d08b15841a7900c1e00201c28b8338d3550040c1e0028d3c028d4203508d4a02b8389a74008d5a01e82a9d01008d47038d4f02508d5f01b8389a740089fae8149d0100",
+          "disassembly": [
+            "482051:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "482058:\t75 52                \tjne    0x4820ac",
+            "48205a:\t89 f2                \tmov    edx,esi",
+            "48205c:\t8d 04 95 00 00 00 00 \tlea    eax,[edx*4+0x0]",
+            "482063:\t29 d0                \tsub    eax,edx",
+            "482065:\tc1 e0 02             \tshl    eax,0x2",
+            "482068:\t01 d0                \tadd    eax,edx",
+            "48206a:\t8b 15 84 1a 79 00    \tmov    edx,DWORD PTR ds:0x791a84",
+            "482070:\tc1 e0 02             \tshl    eax,0x2",
+            "482073:\t01 c2                \tadd    edx,eax",
+            "482075:\t8b 83 38 d3 55 00    \tmov    eax,DWORD PTR [ebx+0x55d338]",
+            "48207b:\t40                   \tinc    eax",
+            "48207c:\tc1 e0 02             \tshl    eax,0x2",
+            "48207f:\t8d 3c 02             \tlea    edi,[edx+eax*1]",
+            "482082:\t8d 42 03             \tlea    eax,[edx+0x3]",
+            "482085:\t50                   \tpush   eax",
+            "482086:\t8d 4a 02             \tlea    ecx,[edx+0x2]",
+            "482089:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "48208e:\t8d 5a 01             \tlea    ebx,[edx+0x1]",
+            "482091:\te8 2a 9d 01 00       \tcall   0x49bdc0",
+            "482096:\t8d 47 03             \tlea    eax,[edi+0x3]",
+            "482099:\t8d 4f 02             \tlea    ecx,[edi+0x2]",
+            "48209c:\t50                   \tpush   eax",
+            "48209d:\t8d 5f 01             \tlea    ebx,[edi+0x1]",
+            "4820a0:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "4820a5:\t89 fa                \tmov    edx,edi",
+            "4820a7:\te8 14 9d 01 00       \tcall   0x49bdc0"
+          ]
+        },
+        {
+          "start": "0048213e",
+          "end_exclusive": "00482173",
+          "sha256": "eb17c8638d4ae462a71efbe998543e25151a33e2aea80ccba7d925ee59932d6f",
+          "hex": "f605583a7a0002752c8d47038d4f02508d5f01b8389a740089fae8d39b01008d46038d4e02508d5e01b8389a740089f2e8bd9b0100",
+          "disassembly": [
+            "48213e:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "482145:\t75 2c                \tjne    0x482173",
+            "482147:\t8d 47 03             \tlea    eax,[edi+0x3]",
+            "48214a:\t8d 4f 02             \tlea    ecx,[edi+0x2]",
+            "48214d:\t50                   \tpush   eax",
+            "48214e:\t8d 5f 01             \tlea    ebx,[edi+0x1]",
+            "482151:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "482156:\t89 fa                \tmov    edx,edi",
+            "482158:\te8 d3 9b 01 00       \tcall   0x49bd30",
+            "48215d:\t8d 46 03             \tlea    eax,[esi+0x3]",
+            "482160:\t8d 4e 02             \tlea    ecx,[esi+0x2]",
+            "482163:\t50                   \tpush   eax",
+            "482164:\t8d 5e 01             \tlea    ebx,[esi+0x1]",
+            "482167:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "48216c:\t89 f2                \tmov    edx,esi",
+            "48216e:\te8 bd 9b 01 00       \tcall   0x49bd30"
+          ]
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "captures": [
+        {
+          "start": "00482051",
+          "end_exclusive": "004820ac",
+          "sha256": "f5e710513804bcde850086fe5c318b26c712235160f0b863631755767e5ba156",
+          "hex": "f605583a7a0002755289f28d04950000000029d0c1e00201d08b15841a7900c1e00201c28b8338d3550040c1e0028d3c028d4203508d4a02b8389a74008d5a01e82a9d01008d47038d4f02508d5f01b8389a740089fae8149d0100",
+          "disassembly": [
+            "482051:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "482058:\t75 52                \tjne    0x4820ac",
+            "48205a:\t89 f2                \tmov    edx,esi",
+            "48205c:\t8d 04 95 00 00 00 00 \tlea    eax,[edx*4+0x0]",
+            "482063:\t29 d0                \tsub    eax,edx",
+            "482065:\tc1 e0 02             \tshl    eax,0x2",
+            "482068:\t01 d0                \tadd    eax,edx",
+            "48206a:\t8b 15 84 1a 79 00    \tmov    edx,DWORD PTR ds:0x791a84",
+            "482070:\tc1 e0 02             \tshl    eax,0x2",
+            "482073:\t01 c2                \tadd    edx,eax",
+            "482075:\t8b 83 38 d3 55 00    \tmov    eax,DWORD PTR [ebx+0x55d338]",
+            "48207b:\t40                   \tinc    eax",
+            "48207c:\tc1 e0 02             \tshl    eax,0x2",
+            "48207f:\t8d 3c 02             \tlea    edi,[edx+eax*1]",
+            "482082:\t8d 42 03             \tlea    eax,[edx+0x3]",
+            "482085:\t50                   \tpush   eax",
+            "482086:\t8d 4a 02             \tlea    ecx,[edx+0x2]",
+            "482089:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "48208e:\t8d 5a 01             \tlea    ebx,[edx+0x1]",
+            "482091:\te8 2a 9d 01 00       \tcall   0x49bdc0",
+            "482096:\t8d 47 03             \tlea    eax,[edi+0x3]",
+            "482099:\t8d 4f 02             \tlea    ecx,[edi+0x2]",
+            "48209c:\t50                   \tpush   eax",
+            "48209d:\t8d 5f 01             \tlea    ebx,[edi+0x1]",
+            "4820a0:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "4820a5:\t89 fa                \tmov    edx,edi",
+            "4820a7:\te8 14 9d 01 00       \tcall   0x49bdc0"
+          ]
+        },
+        {
+          "start": "0048213e",
+          "end_exclusive": "00482173",
+          "sha256": "eb17c8638d4ae462a71efbe998543e25151a33e2aea80ccba7d925ee59932d6f",
+          "hex": "f605583a7a0002752c8d47038d4f02508d5f01b8389a740089fae8d39b01008d46038d4e02508d5e01b8389a740089f2e8bd9b0100",
+          "disassembly": [
+            "48213e:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "482145:\t75 2c                \tjne    0x482173",
+            "482147:\t8d 47 03             \tlea    eax,[edi+0x3]",
+            "48214a:\t8d 4f 02             \tlea    ecx,[edi+0x2]",
+            "48214d:\t50                   \tpush   eax",
+            "48214e:\t8d 5f 01             \tlea    ebx,[edi+0x1]",
+            "482151:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "482156:\t89 fa                \tmov    edx,edi",
+            "482158:\te8 d3 9b 01 00       \tcall   0x49bd30",
+            "48215d:\t8d 46 03             \tlea    eax,[esi+0x3]",
+            "482160:\t8d 4e 02             \tlea    ecx,[esi+0x2]",
+            "482163:\t50                   \tpush   eax",
+            "482164:\t8d 5e 01             \tlea    ebx,[esi+0x1]",
+            "482167:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "48216c:\t89 f2                \tmov    edx,esi",
+            "48216e:\te8 bd 9b 01 00       \tcall   0x49bd30"
+          ]
+        }
+      ]
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "captures": [
+        {
+          "start": "00482051",
+          "end_exclusive": "004820ac",
+          "sha256": "f5e710513804bcde850086fe5c318b26c712235160f0b863631755767e5ba156",
+          "hex": "f605583a7a0002755289f28d04950000000029d0c1e00201d08b15841a7900c1e00201c28b8338d3550040c1e0028d3c028d4203508d4a02b8389a74008d5a01e82a9d01008d47038d4f02508d5f01b8389a740089fae8149d0100",
+          "disassembly": [
+            "482051:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "482058:\t75 52                \tjne    0x4820ac",
+            "48205a:\t89 f2                \tmov    edx,esi",
+            "48205c:\t8d 04 95 00 00 00 00 \tlea    eax,[edx*4+0x0]",
+            "482063:\t29 d0                \tsub    eax,edx",
+            "482065:\tc1 e0 02             \tshl    eax,0x2",
+            "482068:\t01 d0                \tadd    eax,edx",
+            "48206a:\t8b 15 84 1a 79 00    \tmov    edx,DWORD PTR ds:0x791a84",
+            "482070:\tc1 e0 02             \tshl    eax,0x2",
+            "482073:\t01 c2                \tadd    edx,eax",
+            "482075:\t8b 83 38 d3 55 00    \tmov    eax,DWORD PTR [ebx+0x55d338]",
+            "48207b:\t40                   \tinc    eax",
+            "48207c:\tc1 e0 02             \tshl    eax,0x2",
+            "48207f:\t8d 3c 02             \tlea    edi,[edx+eax*1]",
+            "482082:\t8d 42 03             \tlea    eax,[edx+0x3]",
+            "482085:\t50                   \tpush   eax",
+            "482086:\t8d 4a 02             \tlea    ecx,[edx+0x2]",
+            "482089:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "48208e:\t8d 5a 01             \tlea    ebx,[edx+0x1]",
+            "482091:\te8 2a 9d 01 00       \tcall   0x49bdc0",
+            "482096:\t8d 47 03             \tlea    eax,[edi+0x3]",
+            "482099:\t8d 4f 02             \tlea    ecx,[edi+0x2]",
+            "48209c:\t50                   \tpush   eax",
+            "48209d:\t8d 5f 01             \tlea    ebx,[edi+0x1]",
+            "4820a0:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "4820a5:\t89 fa                \tmov    edx,edi",
+            "4820a7:\te8 14 9d 01 00       \tcall   0x49bdc0"
+          ]
+        },
+        {
+          "start": "0048213e",
+          "end_exclusive": "00482173",
+          "sha256": "eb17c8638d4ae462a71efbe998543e25151a33e2aea80ccba7d925ee59932d6f",
+          "hex": "f605583a7a0002752c8d47038d4f02508d5f01b8389a740089fae8d39b01008d46038d4e02508d5e01b8389a740089f2e8bd9b0100",
+          "disassembly": [
+            "48213e:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "482145:\t75 2c                \tjne    0x482173",
+            "482147:\t8d 47 03             \tlea    eax,[edi+0x3]",
+            "48214a:\t8d 4f 02             \tlea    ecx,[edi+0x2]",
+            "48214d:\t50                   \tpush   eax",
+            "48214e:\t8d 5f 01             \tlea    ebx,[edi+0x1]",
+            "482151:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "482156:\t89 fa                \tmov    edx,edi",
+            "482158:\te8 d3 9b 01 00       \tcall   0x49bd30",
+            "48215d:\t8d 46 03             \tlea    eax,[esi+0x3]",
+            "482160:\t8d 4e 02             \tlea    ecx,[esi+0x2]",
+            "482163:\t50                   \tpush   eax",
+            "482164:\t8d 5e 01             \tlea    ebx,[esi+0x1]",
+            "482167:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "48216c:\t89 f2                \tmov    edx,esi",
+            "48216e:\te8 bd 9b 01 00       \tcall   0x49bd30"
+          ]
+        }
+      ]
+    },
+    "1.5.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "sha256": "d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae",
+      "captures": [
+        {
+          "start": "00482051",
+          "end_exclusive": "004820ac",
+          "sha256": "f5e710513804bcde850086fe5c318b26c712235160f0b863631755767e5ba156",
+          "hex": "f605583a7a0002755289f28d04950000000029d0c1e00201d08b15841a7900c1e00201c28b8338d3550040c1e0028d3c028d4203508d4a02b8389a74008d5a01e82a9d01008d47038d4f02508d5f01b8389a740089fae8149d0100",
+          "disassembly": [
+            "482051:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "482058:\t75 52                \tjne    0x4820ac",
+            "48205a:\t89 f2                \tmov    edx,esi",
+            "48205c:\t8d 04 95 00 00 00 00 \tlea    eax,[edx*4+0x0]",
+            "482063:\t29 d0                \tsub    eax,edx",
+            "482065:\tc1 e0 02             \tshl    eax,0x2",
+            "482068:\t01 d0                \tadd    eax,edx",
+            "48206a:\t8b 15 84 1a 79 00    \tmov    edx,DWORD PTR ds:0x791a84",
+            "482070:\tc1 e0 02             \tshl    eax,0x2",
+            "482073:\t01 c2                \tadd    edx,eax",
+            "482075:\t8b 83 38 d3 55 00    \tmov    eax,DWORD PTR [ebx+0x55d338]",
+            "48207b:\t40                   \tinc    eax",
+            "48207c:\tc1 e0 02             \tshl    eax,0x2",
+            "48207f:\t8d 3c 02             \tlea    edi,[edx+eax*1]",
+            "482082:\t8d 42 03             \tlea    eax,[edx+0x3]",
+            "482085:\t50                   \tpush   eax",
+            "482086:\t8d 4a 02             \tlea    ecx,[edx+0x2]",
+            "482089:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "48208e:\t8d 5a 01             \tlea    ebx,[edx+0x1]",
+            "482091:\te8 2a 9d 01 00       \tcall   0x49bdc0",
+            "482096:\t8d 47 03             \tlea    eax,[edi+0x3]",
+            "482099:\t8d 4f 02             \tlea    ecx,[edi+0x2]",
+            "48209c:\t50                   \tpush   eax",
+            "48209d:\t8d 5f 01             \tlea    ebx,[edi+0x1]",
+            "4820a0:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "4820a5:\t89 fa                \tmov    edx,edi",
+            "4820a7:\te8 14 9d 01 00       \tcall   0x49bdc0"
+          ]
+        },
+        {
+          "start": "0048213e",
+          "end_exclusive": "00482173",
+          "sha256": "eb17c8638d4ae462a71efbe998543e25151a33e2aea80ccba7d925ee59932d6f",
+          "hex": "f605583a7a0002752c8d47038d4f02508d5f01b8389a740089fae8d39b01008d46038d4e02508d5e01b8389a740089f2e8bd9b0100",
+          "disassembly": [
+            "48213e:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "482145:\t75 2c                \tjne    0x482173",
+            "482147:\t8d 47 03             \tlea    eax,[edi+0x3]",
+            "48214a:\t8d 4f 02             \tlea    ecx,[edi+0x2]",
+            "48214d:\t50                   \tpush   eax",
+            "48214e:\t8d 5f 01             \tlea    ebx,[edi+0x1]",
+            "482151:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "482156:\t89 fa                \tmov    edx,edi",
+            "482158:\te8 d3 9b 01 00       \tcall   0x49bd30",
+            "48215d:\t8d 46 03             \tlea    eax,[esi+0x3]",
+            "482160:\t8d 4e 02             \tlea    ecx,[esi+0x2]",
+            "482163:\t50                   \tpush   eax",
+            "482164:\t8d 5e 01             \tlea    ebx,[esi+0x1]",
+            "482167:\tb8 38 9a 74 00       \tmov    eax,0x749a38",
+            "48216c:\t89 f2                \tmov    edx,esi",
+            "48216e:\te8 bd 9b 01 00       \tcall   0x49bd30"
+          ]
+        }
+      ]
+    }
+  },
+  "verified": [
+    "The two selected renderer-byte bit2/JNE branch spans are identical across original,140,150 and final.",
+    "Each skips its captured fall-through work when bit2 is set; no local gate removal in the claimed140->150 pair.",
+    "This does not establish that these spans alone own the advertised opponent/speeds-list bevel."
+  ],
+  "limits": [
+    "No game, renderer, input, callback or extracted instruction execution.",
+    "Only two selected91/53-byte branch spans, not complete enclosing routines or every software-renderer path.",
+    "Identical instructions may consume changed globals, vertices, texture data or provider implementations.",
+    "Final s-type bit2 association uses prior loader evidence; no universal cross-version flag meaning inferred.",
+    "MP150-017 remains unverified; required follow-up is actual list-frame dispatch/resource/provider linkage, not another assertion that nearby geometry changes fix it."
+  ]
+}

@@ -725,3 +725,7 @@ The [three-release audit](original-modern-renderer-loading.md#early-filename-and
 ## Eleven later investigations reproduced against committed evidence
 
 The [checkpoint](evidence/validation/later-static-mechanisms-checkpoint.json) records reviewed revision`1a5b591`,22/22 passing static runs and eleven outputs matching the committed pre-run evidence.12 protected artifacts and12 raw exports retain their prior hashes. The [compact table](original-modern-differences.md#later-startup-loading-and-mode-findings) consolidates the mechanisms and their remaining limits. The primary agent performed these checks; independent semantic review, game/API/instruction execution, new exports, compilation and Ghidra reopening were not performed. Catalog remains93 vendor-only/52 bounded-static/143 partial/2 unresolved; these are release-note classifications, not a game-completion percentage. The goal remains incomplete.
+
+## SoftTri list-bevel attribution remains unresolved after paired gate check
+
+The [four-baseline boundary audit](original-modern-hud-layout.md#softtri-list-bevel-claim-checked-renderer-gates-are-retained) verifies identical91/53-byte bit2/JNE spans, including140→150. These are not established as the complete claimed frame route; nearby dimensions/defaults/spacing changes cannot substitute for that linkage. MP150-017 remains vendor-only and counts unchanged. Required follow-up is frame-resource/submission/provider linkage, not repeating the same local-gate search. No target execution or database changes.
