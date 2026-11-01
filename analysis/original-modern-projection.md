@@ -353,3 +353,23 @@ For the actual new wrapper arguments EAX=`00661220`, EDX1, the ordinary write se
 Ranges in this table have exclusive ends. Remaining writes are to stack locals. With valid source pointers, the verified helper contracts and forward string direction, these destinations do not alias the unresolved projection source cells `005e1020/2c/30/38`. There are no additional indirect/callback calls inside this handler. Thus this **specific fixed-descriptor branch is excluded as their capture writer**; no such exclusion is claimed for arbitrary descriptor pointers or other handlers.
 
 The result still matters to the original/Modern comparison: an added caller uses a changed control input to update shared position/orientation data. It does not recover the projection-cache producer or establish a visible horizon correction. Those remain open, while this branch’s local effects no longer need to be guessed.
+
+## Type1 initializer bulk copies stop before the projection sources
+
+A computed/bulk candidate can now be excluded without repeating the literal-address search. The [focused audit](scripts/audit_projection_initializer_bulk_boundary.py), run with `python3 analysis/scripts/audit_projection_initializer_bulk_boundary.py`, pins both EXEs and retains the identical local block `00422da2..00422f11`, relevant mode/type tables and explicit destination ranges in [its manifest](evidence/audits/projection-initializer-bulk-boundary.json).
+
+Across all24 two-pointer mode rows, the largest descriptor pointer is type1 slot1 at `005e0ef4`; slot0 is `005e0dd8`. These are the last pair in address order, although mode1 is not last in mode-number order. The common initializer uses EAX as descriptor base. For ordinary mode1, its `mode−1` table index0 at `00422c88` selects case `00422ebb` before the existing loop tail. The table target and local instructions are identical in both binaries.
+
+| Initializer write | Record-relative destination, exclusive end |
+|---|---|
+| Matrix copy:9 DWORDs | `+2ch..+50h` |
+| Byte-clear loop:25 bytes | `+58h..+71h` |
+| Local template copy:30 DWORDs | `+74h..+ech` |
+| Common scalar fields | Captured explicit DWORD offsets through `+10ch` |
+| Type1 extension | DWORDs at `+110h`, `+114h`, `+118h`; extra byte at `+69h` and repeated scalar stores remain within the prior bounds |
+
+The manifest enumerates scalar fields, including object/slot fields written before the copies. The type1 extension's last DWORD ends at descriptor+11ch. Thus slot0 writes stop no later than `005e0ef4`, and slot1 writes stop no later than **`005e1010`**, while the unresolved source cells begin at `005e1020`. The bulk-copy instructions do not silently fill the apparent following gap. The separately conditional primary-table publication uses `005e10b0 + 4*slot`, also disjoint under slot0/1.
+
+This establishes bounds for these actual writes, with forward string direction and ordinary initialized mode/slot state. It does **not** infer a universal C structure size from pointer spacing, prove DF for all possible callers, exclude other type cases or earlier/later callees, or establish that the four source cells lack writers. The source pointer to the local template and object matrix affects copied values, not these fixed destination ranges, assuming the ordinary pointer/callee contracts.
+
+The common block and selected type1 tail contain no calls; other initializer calls outside this block retain their prior scope. This closes the specific hypothesis that the highest-address pair's common/type1 initialization spills or copies into the projection sources. The source producer, capture lifetime, finalizer state and rendered horizon remain unresolved. MP160-003 is unchanged; no game or target instructions were run.

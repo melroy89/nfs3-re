@@ -342,3 +342,7 @@ The [checkpoint manifest](evidence/validation/reference-renderer-assets-checkpoi
 The main report now summarizes the reference branch variant, DX5/software code clusters, full suffix-scoped menu/HUD comparison and Postgame Options linkage in its existing table. The function-navigation index is regenerated from current chapter addresses; address mentions remain navigation rather than semantic coverage. Catalog labels remain136 vendor-only,45 bounded static,107 partial and2 unresolved.
 
 The full objective remains incomplete. Priority returns to a concrete EXE producer/consumer gap from the queue above, particularly the unresolved projection capture source/lifetime; reuse the existing negative searches before new inspection. Runtime consequences, historical attribution and authenticated retail provenance retain separate gates. Repeating renderer byte localization or counting catalog labels does not close those gaps.
+
+## Projection type1 bulk-initialization boundary
+
+The [new bulk-boundary audit](original-modern-projection.md#type1-initializer-bulk-copies-stop-before-the-projection-sources) verifies the highest-address pair is mode1 and resolves its retained initializer branch/table. Explicit30-DWORD and9-DWORD copies,25-byte clear and scalar/extension stores end no later than005e1010 for slot1, excluding source cells005e1020/2c/30/38 on that ordinary path. This eliminates a computed/bulk candidate without asserting a global absence of writers. Actual producer/lifetime and MP160-003 remain unresolved; catalog counts unchanged.

@@ -1,0 +1,499 @@
+{
+  "kind": "projection-type1-initializer-bulk-boundary",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "start_va": "00422da2",
+      "end_va_exclusive": "00422f11",
+      "body_sha256": "523515f9e728b82b1b781aa6fd3d9ccef22a7aa962d33cec2505ce30479fee83",
+      "disassembly": [
+        "422da2:\t8b 0d f4 d4 6f 00    \tmov    ecx,DWORD PTR ds:0x6fd4f4",
+        "422da8:\t8b 34 8d 48 fa 5e 00 \tmov    esi,DWORD PTR [ecx*4+0x5efa48]",
+        "422daf:\t89 70 04             \tmov    DWORD PTR [eax+0x4],esi",
+        "422db2:\t89 70 08             \tmov    DWORD PTR [eax+0x8],esi",
+        "422db5:\tf6 86 00 02 00 00 20 \ttest   BYTE PTR [esi+0x200],0x20",
+        "422dbc:\t74 0e                \tje     0x422dcc",
+        "422dbe:\t8b 34 9d e0 2e 55 00 \tmov    esi,DWORD PTR [ebx*4+0x552ee0]",
+        "422dc5:\t89 34 9d b0 10 5e 00 \tmov    DWORD PTR [ebx*4+0x5e10b0],esi",
+        "422dcc:\tc7 40 10 00 00 00 00 \tmov    DWORD PTR [eax+0x10],0x0",
+        "422dd3:\tb9 1e 00 00 00       \tmov    ecx,0x1e",
+        "422dd8:\t89 10                \tmov    DWORD PTR [eax],edx",
+        "422dda:\t8d 75 84             \tlea    esi,[ebp-0x7c]",
+        "422ddd:\t8d 78 74             \tlea    edi,[eax+0x74]",
+        "422de0:\t89 58 0c             \tmov    DWORD PTR [eax+0xc],ebx",
+        "422de3:\tf3 a5                \trep movs DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+        "422de5:\tc7 80 ec 00 00 00 ff \tmov    DWORD PTR [eax+0xec],0xffffffff",
+        "422dec:\tff ff ff",
+        "422def:\t8b 70 04             \tmov    esi,DWORD PTR [eax+0x4]",
+        "422df2:\tb9 09 00 00 00       \tmov    ecx,0x9",
+        "422df7:\t8d 78 2c             \tlea    edi,[eax+0x2c]",
+        "422dfa:\t8d b6 c0 00 00 00    \tlea    esi,[esi+0xc0]",
+        "422e00:\tf3 a5                \trep movs DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+        "422e02:\t8b 48 04             \tmov    ecx,DWORD PTR [eax+0x4]",
+        "422e05:\tc7 40 50 00 00 00 00 \tmov    DWORD PTR [eax+0x50],0x0",
+        "422e0c:\td9 81 98 00 00 00    \tfld    DWORD PTR [ecx+0x98]",
+        "422e12:\t8b 48 04             \tmov    ecx,DWORD PTR [eax+0x4]",
+        "422e15:\td9 58 14             \tfstp   DWORD PTR [eax+0x14]",
+        "422e18:\td9 81 9c 00 00 00    \tfld    DWORD PTR [ecx+0x9c]",
+        "422e1e:\t8b 48 04             \tmov    ecx,DWORD PTR [eax+0x4]",
+        "422e21:\td9 58 18             \tfstp   DWORD PTR [eax+0x18]",
+        "422e24:\td9 81 a0 00 00 00    \tfld    DWORD PTR [ecx+0xa0]",
+        "422e2a:\tc7 40 20 00 00 00 00 \tmov    DWORD PTR [eax+0x20],0x0",
+        "422e31:\tc7 40 24 00 00 00 00 \tmov    DWORD PTR [eax+0x24],0x0",
+        "422e38:\tc7 40 28 00 00 40 c0 \tmov    DWORD PTR [eax+0x28],0xc0400000",
+        "422e3f:\td9 58 1c             \tfstp   DWORD PTR [eax+0x1c]",
+        "422e42:\tc7 40 54 00 00 00 00 \tmov    DWORD PTR [eax+0x54],0x0",
+        "422e49:\t31 c9                \txor    ecx,ecx",
+        "422e4b:\t8d 34 08             \tlea    esi,[eax+ecx*1]",
+        "422e4e:\t41                   \tinc    ecx",
+        "422e4f:\tc6 46 58 00          \tmov    BYTE PTR [esi+0x58],0x0",
+        "422e53:\t83 f9 19             \tcmp    ecx,0x19",
+        "422e56:\t7d 0a                \tjge    0x422e62",
+        "422e58:\t8d 34 08             \tlea    esi,[eax+ecx*1]",
+        "422e5b:\t41                   \tinc    ecx",
+        "422e5c:\tc6 46 58 00          \tmov    BYTE PTR [esi+0x58],0x0",
+        "422e60:\teb f1                \tjmp    0x422e53",
+        "422e62:\tc7 80 f4 00 00 00 00 \tmov    DWORD PTR [eax+0xf4],0x0",
+        "422e69:\t00 00 00",
+        "422e6c:\tc7 80 f8 00 00 00 00 \tmov    DWORD PTR [eax+0xf8],0x0",
+        "422e73:\t00 00 00",
+        "422e76:\tc7 80 fc 00 00 00 00 \tmov    DWORD PTR [eax+0xfc],0x0",
+        "422e7d:\t00 00 00",
+        "422e80:\tc7 80 04 01 00 00 00 \tmov    DWORD PTR [eax+0x104],0x0",
+        "422e87:\t00 00 00",
+        "422e8a:\tc7 80 08 01 00 00 00 \tmov    DWORD PTR [eax+0x108],0x0",
+        "422e91:\t00 00 00",
+        "422e94:\tc7 80 0c 01 00 00 00 \tmov    DWORD PTR [eax+0x10c],0x0",
+        "422e9b:\t00 00 00",
+        "422e9e:\t8d 4a ff             \tlea    ecx,[edx-0x1]",
+        "422ea1:\tc7 80 f0 00 00 00 00 \tmov    DWORD PTR [eax+0xf0],0x0",
+        "422ea8:\t00 00 00",
+        "422eab:\t83 f9 17             \tcmp    ecx,0x17",
+        "422eae:\t0f 87 8b 09 00 00    \tja     0x42383f",
+        "422eb4:\tff 24 8d 88 2c 42 00 \tjmp    DWORD PTR [ecx*4+0x422c88]",
+        "422ebb:\tc7 80 10 01 00 00 00 \tmov    DWORD PTR [eax+0x110],0x0",
+        "422ec2:\t00 00 00",
+        "422ec5:\tc7 80 14 01 00 00 9a \tmov    DWORD PTR [eax+0x114],0x3f19999a",
+        "422ecc:\t99 19 3f",
+        "422ecf:\tc7 80 18 01 00 00 00 \tmov    DWORD PTR [eax+0x118],0xbf800000",
+        "422ed6:\t00 80 bf",
+        "422ed9:\tc7 40 50 00 00 00 00 \tmov    DWORD PTR [eax+0x50],0x0",
+        "422ee0:\tc7 80 04 01 00 00 01 \tmov    DWORD PTR [eax+0x104],0x1",
+        "422ee7:\t00 00 00",
+        "422eea:\tc7 80 08 01 00 00 00 \tmov    DWORD PTR [eax+0x108],0x0",
+        "422ef1:\t00 00 00",
+        "422ef4:\tc7 80 f4 00 00 00 00 \tmov    DWORD PTR [eax+0xf4],0x0",
+        "422efb:\t00 00 00",
+        "422efe:\tc7 80 f0 00 00 00 00 \tmov    DWORD PTR [eax+0xf0],0x0",
+        "422f05:\t00 00 00",
+        "422f08:\tc6 40 69 01          \tmov    BYTE PTR [eax+0x69],0x1",
+        "422f0c:\te9 2e 09 00 00       \tjmp    0x42383f"
+      ],
+      "mode1_pointers": [
+        "005e0dd8",
+        "005e0ef4"
+      ],
+      "mode_table_sha256": "c27e6e1ffc0dacdfa5bb03d06ebfda39dbe3838a76c86f67ab0520892725fd5f",
+      "type_case_table_sha256": "b043a77720449e0a60a8105b6a6b0de58a1a3e543c74e8b992e8fcdf13d25f32",
+      "type1_case": "00422ebb"
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "start_va": "00422da2",
+      "end_va_exclusive": "00422f11",
+      "body_sha256": "523515f9e728b82b1b781aa6fd3d9ccef22a7aa962d33cec2505ce30479fee83",
+      "disassembly": [
+        "422da2:\t8b 0d f4 d4 6f 00    \tmov    ecx,DWORD PTR ds:0x6fd4f4",
+        "422da8:\t8b 34 8d 48 fa 5e 00 \tmov    esi,DWORD PTR [ecx*4+0x5efa48]",
+        "422daf:\t89 70 04             \tmov    DWORD PTR [eax+0x4],esi",
+        "422db2:\t89 70 08             \tmov    DWORD PTR [eax+0x8],esi",
+        "422db5:\tf6 86 00 02 00 00 20 \ttest   BYTE PTR [esi+0x200],0x20",
+        "422dbc:\t74 0e                \tje     0x422dcc",
+        "422dbe:\t8b 34 9d e0 2e 55 00 \tmov    esi,DWORD PTR [ebx*4+0x552ee0]",
+        "422dc5:\t89 34 9d b0 10 5e 00 \tmov    DWORD PTR [ebx*4+0x5e10b0],esi",
+        "422dcc:\tc7 40 10 00 00 00 00 \tmov    DWORD PTR [eax+0x10],0x0",
+        "422dd3:\tb9 1e 00 00 00       \tmov    ecx,0x1e",
+        "422dd8:\t89 10                \tmov    DWORD PTR [eax],edx",
+        "422dda:\t8d 75 84             \tlea    esi,[ebp-0x7c]",
+        "422ddd:\t8d 78 74             \tlea    edi,[eax+0x74]",
+        "422de0:\t89 58 0c             \tmov    DWORD PTR [eax+0xc],ebx",
+        "422de3:\tf3 a5                \trep movs DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+        "422de5:\tc7 80 ec 00 00 00 ff \tmov    DWORD PTR [eax+0xec],0xffffffff",
+        "422dec:\tff ff ff",
+        "422def:\t8b 70 04             \tmov    esi,DWORD PTR [eax+0x4]",
+        "422df2:\tb9 09 00 00 00       \tmov    ecx,0x9",
+        "422df7:\t8d 78 2c             \tlea    edi,[eax+0x2c]",
+        "422dfa:\t8d b6 c0 00 00 00    \tlea    esi,[esi+0xc0]",
+        "422e00:\tf3 a5                \trep movs DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+        "422e02:\t8b 48 04             \tmov    ecx,DWORD PTR [eax+0x4]",
+        "422e05:\tc7 40 50 00 00 00 00 \tmov    DWORD PTR [eax+0x50],0x0",
+        "422e0c:\td9 81 98 00 00 00    \tfld    DWORD PTR [ecx+0x98]",
+        "422e12:\t8b 48 04             \tmov    ecx,DWORD PTR [eax+0x4]",
+        "422e15:\td9 58 14             \tfstp   DWORD PTR [eax+0x14]",
+        "422e18:\td9 81 9c 00 00 00    \tfld    DWORD PTR [ecx+0x9c]",
+        "422e1e:\t8b 48 04             \tmov    ecx,DWORD PTR [eax+0x4]",
+        "422e21:\td9 58 18             \tfstp   DWORD PTR [eax+0x18]",
+        "422e24:\td9 81 a0 00 00 00    \tfld    DWORD PTR [ecx+0xa0]",
+        "422e2a:\tc7 40 20 00 00 00 00 \tmov    DWORD PTR [eax+0x20],0x0",
+        "422e31:\tc7 40 24 00 00 00 00 \tmov    DWORD PTR [eax+0x24],0x0",
+        "422e38:\tc7 40 28 00 00 40 c0 \tmov    DWORD PTR [eax+0x28],0xc0400000",
+        "422e3f:\td9 58 1c             \tfstp   DWORD PTR [eax+0x1c]",
+        "422e42:\tc7 40 54 00 00 00 00 \tmov    DWORD PTR [eax+0x54],0x0",
+        "422e49:\t31 c9                \txor    ecx,ecx",
+        "422e4b:\t8d 34 08             \tlea    esi,[eax+ecx*1]",
+        "422e4e:\t41                   \tinc    ecx",
+        "422e4f:\tc6 46 58 00          \tmov    BYTE PTR [esi+0x58],0x0",
+        "422e53:\t83 f9 19             \tcmp    ecx,0x19",
+        "422e56:\t7d 0a                \tjge    0x422e62",
+        "422e58:\t8d 34 08             \tlea    esi,[eax+ecx*1]",
+        "422e5b:\t41                   \tinc    ecx",
+        "422e5c:\tc6 46 58 00          \tmov    BYTE PTR [esi+0x58],0x0",
+        "422e60:\teb f1                \tjmp    0x422e53",
+        "422e62:\tc7 80 f4 00 00 00 00 \tmov    DWORD PTR [eax+0xf4],0x0",
+        "422e69:\t00 00 00",
+        "422e6c:\tc7 80 f8 00 00 00 00 \tmov    DWORD PTR [eax+0xf8],0x0",
+        "422e73:\t00 00 00",
+        "422e76:\tc7 80 fc 00 00 00 00 \tmov    DWORD PTR [eax+0xfc],0x0",
+        "422e7d:\t00 00 00",
+        "422e80:\tc7 80 04 01 00 00 00 \tmov    DWORD PTR [eax+0x104],0x0",
+        "422e87:\t00 00 00",
+        "422e8a:\tc7 80 08 01 00 00 00 \tmov    DWORD PTR [eax+0x108],0x0",
+        "422e91:\t00 00 00",
+        "422e94:\tc7 80 0c 01 00 00 00 \tmov    DWORD PTR [eax+0x10c],0x0",
+        "422e9b:\t00 00 00",
+        "422e9e:\t8d 4a ff             \tlea    ecx,[edx-0x1]",
+        "422ea1:\tc7 80 f0 00 00 00 00 \tmov    DWORD PTR [eax+0xf0],0x0",
+        "422ea8:\t00 00 00",
+        "422eab:\t83 f9 17             \tcmp    ecx,0x17",
+        "422eae:\t0f 87 8b 09 00 00    \tja     0x42383f",
+        "422eb4:\tff 24 8d 88 2c 42 00 \tjmp    DWORD PTR [ecx*4+0x422c88]",
+        "422ebb:\tc7 80 10 01 00 00 00 \tmov    DWORD PTR [eax+0x110],0x0",
+        "422ec2:\t00 00 00",
+        "422ec5:\tc7 80 14 01 00 00 9a \tmov    DWORD PTR [eax+0x114],0x3f19999a",
+        "422ecc:\t99 19 3f",
+        "422ecf:\tc7 80 18 01 00 00 00 \tmov    DWORD PTR [eax+0x118],0xbf800000",
+        "422ed6:\t00 80 bf",
+        "422ed9:\tc7 40 50 00 00 00 00 \tmov    DWORD PTR [eax+0x50],0x0",
+        "422ee0:\tc7 80 04 01 00 00 01 \tmov    DWORD PTR [eax+0x104],0x1",
+        "422ee7:\t00 00 00",
+        "422eea:\tc7 80 08 01 00 00 00 \tmov    DWORD PTR [eax+0x108],0x0",
+        "422ef1:\t00 00 00",
+        "422ef4:\tc7 80 f4 00 00 00 00 \tmov    DWORD PTR [eax+0xf4],0x0",
+        "422efb:\t00 00 00",
+        "422efe:\tc7 80 f0 00 00 00 00 \tmov    DWORD PTR [eax+0xf0],0x0",
+        "422f05:\t00 00 00",
+        "422f08:\tc6 40 69 01          \tmov    BYTE PTR [eax+0x69],0x1",
+        "422f0c:\te9 2e 09 00 00       \tjmp    0x42383f"
+      ],
+      "mode1_pointers": [
+        "005e0dd8",
+        "005e0ef4"
+      ],
+      "mode_table_sha256": "c27e6e1ffc0dacdfa5bb03d06ebfda39dbe3838a76c86f67ab0520892725fd5f",
+      "type_case_table_sha256": "b043a77720449e0a60a8105b6a6b0de58a1a3e543c74e8b992e8fcdf13d25f32",
+      "type1_case": "00422ebb"
+    }
+  },
+  "destinations": [
+    {
+      "slot": 0,
+      "base": "005e0dd8",
+      "max_end_exclusive": "005e0ef4",
+      "ranges": [
+        {
+          "start": "005e0e04",
+          "end_exclusive": "005e0e28",
+          "mechanism": "matrix-copy9DWORD"
+        },
+        {
+          "start": "005e0e30",
+          "end_exclusive": "005e0e49",
+          "mechanism": "byte-clear25"
+        },
+        {
+          "start": "005e0e4c",
+          "end_exclusive": "005e0ec4",
+          "mechanism": "template-copy30DWORD"
+        },
+        {
+          "start": "005e0dd8",
+          "end_exclusive": "005e0ddc",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ddc",
+          "end_exclusive": "005e0de0",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0de0",
+          "end_exclusive": "005e0de4",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0de4",
+          "end_exclusive": "005e0de8",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0de8",
+          "end_exclusive": "005e0dec",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0dec",
+          "end_exclusive": "005e0df0",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0df0",
+          "end_exclusive": "005e0df4",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0df4",
+          "end_exclusive": "005e0df8",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0df8",
+          "end_exclusive": "005e0dfc",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0dfc",
+          "end_exclusive": "005e0e00",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0e00",
+          "end_exclusive": "005e0e04",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0e28",
+          "end_exclusive": "005e0e2c",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0e2c",
+          "end_exclusive": "005e0e30",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ec4",
+          "end_exclusive": "005e0ec8",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ec8",
+          "end_exclusive": "005e0ecc",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ecc",
+          "end_exclusive": "005e0ed0",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ed0",
+          "end_exclusive": "005e0ed4",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ed4",
+          "end_exclusive": "005e0ed8",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0edc",
+          "end_exclusive": "005e0ee0",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ee0",
+          "end_exclusive": "005e0ee4",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ee4",
+          "end_exclusive": "005e0ee8",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ee8",
+          "end_exclusive": "005e0eec",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0eec",
+          "end_exclusive": "005e0ef0",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ef0",
+          "end_exclusive": "005e0ef4",
+          "mechanism": "scalar-DWORD"
+        }
+      ]
+    },
+    {
+      "slot": 1,
+      "base": "005e0ef4",
+      "max_end_exclusive": "005e1010",
+      "ranges": [
+        {
+          "start": "005e0f20",
+          "end_exclusive": "005e0f44",
+          "mechanism": "matrix-copy9DWORD"
+        },
+        {
+          "start": "005e0f4c",
+          "end_exclusive": "005e0f65",
+          "mechanism": "byte-clear25"
+        },
+        {
+          "start": "005e0f68",
+          "end_exclusive": "005e0fe0",
+          "mechanism": "template-copy30DWORD"
+        },
+        {
+          "start": "005e0ef4",
+          "end_exclusive": "005e0ef8",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ef8",
+          "end_exclusive": "005e0efc",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0efc",
+          "end_exclusive": "005e0f00",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f00",
+          "end_exclusive": "005e0f04",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f04",
+          "end_exclusive": "005e0f08",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f08",
+          "end_exclusive": "005e0f0c",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f0c",
+          "end_exclusive": "005e0f10",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f10",
+          "end_exclusive": "005e0f14",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f14",
+          "end_exclusive": "005e0f18",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f18",
+          "end_exclusive": "005e0f1c",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f1c",
+          "end_exclusive": "005e0f20",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f44",
+          "end_exclusive": "005e0f48",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0f48",
+          "end_exclusive": "005e0f4c",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0fe0",
+          "end_exclusive": "005e0fe4",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0fe4",
+          "end_exclusive": "005e0fe8",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0fe8",
+          "end_exclusive": "005e0fec",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0fec",
+          "end_exclusive": "005e0ff0",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ff0",
+          "end_exclusive": "005e0ff4",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ff8",
+          "end_exclusive": "005e0ffc",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e0ffc",
+          "end_exclusive": "005e1000",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e1000",
+          "end_exclusive": "005e1004",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e1004",
+          "end_exclusive": "005e1008",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e1008",
+          "end_exclusive": "005e100c",
+          "mechanism": "scalar-DWORD"
+        },
+        {
+          "start": "005e100c",
+          "end_exclusive": "005e1010",
+          "mechanism": "scalar-DWORD"
+        }
+      ]
+    }
+  ],
+  "source_cells": [
+    "005e1020",
+    "005e102c",
+    "005e1030",
+    "005e1038"
+  ],
+  "limits": [
+    "Conditional on initialized mode1 table, ordinary slot0/1 dispatch and forward string direction.",
+    "Explicit destination enumeration from retained instructions, not automatic whole-program alias analysis.",
+    "No structure size is inferred solely from pair spacing; this bounds these initializer writes.",
+    "Other type cases, out-of-domain indices, later handlers, external writers and earlier callees are not excluded.",
+    "No projection-source writer recovered and no horizon/render/runtime claim established.",
+    "No target instructions, Ghidra mutations, reconstruction or compilation."
+  ]
+}
