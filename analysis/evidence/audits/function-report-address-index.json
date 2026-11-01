@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5df9c2c51db98c91783384b45973be8956a00fcc04d0915b0671861372b408aa"
+      "sha256": "c175e70b140b9f9b4b98dbdaae1a596f00268c46a43e40d0909a9c3bdfa8c3f6"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -173,11 +173,11 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "147925263ea24b5d8c40fbec078a1fc0fea14115a9aeceb78e4c49629a6dd9b2"
+      "sha256": "bc73874126b50e4486929dd6f0fc95511f1a6abd56bdf88a403e580deee2bd63"
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
-      "sha256": "fe74dbeab7b40737180bb5fcffb7fd2206f41677c5a5239830cabf24236bf45a"
+      "sha256": "704957d3b02ee4db8b48f4ebb9441e9d0f8f750c63fa1c5e3f17f03491056ae4"
     },
     {
       "path": "analysis/original-modern-idle-movie.md",

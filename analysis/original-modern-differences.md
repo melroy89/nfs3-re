@@ -1090,7 +1090,7 @@ The [text-scale follow-up](original-modern-hud-layout.md#fitted-reference-scales
 
 ## Police HUD widget claim remains unverified
 
-The [bounded HUD-editor review](original-modern-hud-settings-policy.md#police-cone-stats-and-tutorial-icon-claim-remains-unresolved) binds Tutorial Icon/Cone Stats to preset slots6/7, records nonzero reference/final defaults, and verifies retained pshud initializer/HudItem rectangle-loader/template bytes. These checked routes do not identify the advertised police-only hiding mechanism. MP100-048 stays vendor-only; counts unchanged. Next is active item-list construction and slot/role draw/input admission, with archive omission kept separate from installed deletion. No menu or target execution.
+The [bounded HUD-editor review](original-modern-hud-settings-policy.md#police-cone-stats-and-tutorial-icon-claim-remains-unresolved) binds Tutorial Icon/Cone Stats to preset slots6/7, records nonzero reference/final defaults, and verifies retained pshud initializer/HudItem rectangle-loader/template bytes. These checked routes do not identify the advertised police-only hiding mechanism. At that historical checkpoint MP100-048 stayed vendor-only; the later role-specific asset comparison below supersedes this status. The next question was active item-list construction and slot/role draw/input admission, with archive omission kept separate from installed deletion. No menu or target execution.
 
 ## Historical software list-border admission
 
@@ -1098,7 +1098,7 @@ The [list-bevel comparison](original-modern-hud-layout.md#historical-list-bevel-
 
 ## Police editor widget draw linkage remains retained
 
-The [registered editor draw-chain review](original-modern-hud-settings-policy.md#registered-editor-draw-chain-retains-both-widget-cases) binds the HudItem callback to the23-case renderer table and retained Tutorial Icon/Cone Stats arms. Selected role-policy helpers are also unchanged. This narrows MP100-048 to earlier instantiated-item/admission or active-asset evidence; it remains vendor-only, with no visible hiding result established. Reuse these checked boundaries rather than repeating the rectangle-loader or draw-case comparison.
+The [registered editor draw-chain review](original-modern-hud-settings-policy.md#registered-editor-draw-chain-retains-both-widget-cases) binds the HudItem callback to the23-case renderer table and retained Tutorial Icon/Cone Stats arms. Selected role-policy helpers are also unchanged. This narrows MP100-048 to earlier instantiated-item/admission or active-asset evidence; at that checkpoint it remained vendor-only. The subsequent asset comparison below establishes partial package support; no visible hiding result is established. Reuse these checked boundaries rather than repeating the rectangle-loader or draw-case comparison.
 
 ## Police editor omission resolved in packaged menu records
 

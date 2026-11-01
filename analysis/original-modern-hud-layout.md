@@ -250,6 +250,8 @@ For equal ordinary positive input metrics, the **unrounded coefficient ratio is1
 
 ## SoftTri list-bevel claim: checked renderer gates are retained
 
+**Historical checkpoint:** the later [actual list-border branch comparison](#historical-list-bevel-fix-retargets-the-software-branch) supplies positive static evidence. The vendor-only assessment below records the earlier negative lead.
+
 **Bounded negative evidence; advertised fix unresolved.** The [software-gate audit](evidence/audits/hud-software-gate-boundary.json), reproduced with `python3 analysis/scripts/audit_hud_software_gate_boundary.py`, pins supplied original, author-hosted1.4.0/1.5.0 and official final EXEs. This follows the opponent/police list research above without assuming a nearby changed field owns the bevel feature.
 
 | Selected branch/fall-through span | Retained test | Retained skip target |

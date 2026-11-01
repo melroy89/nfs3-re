@@ -41,6 +41,18 @@ def main():
         assert sorted((Counter(ids['reference'])-Counter(ids['modern'])).elements())==removed
         assert not(Counter(ids['modern'])-Counter(ids['reference']))
         row['removed_HudItem_ids']=removed;row['added_HudItem_ids']=[];report['menus'].append(row)
+    early_rel='analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z'
+    early_archive=ROOT/early_rel
+    early_hash='31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac'
+    assert sha(early_archive.read_bytes())==early_hash
+    early_rows=[]
+    for menu in report['menus']:
+        member=menu['path'];raw=subprocess.check_output(['7z','x','-so',str(early_archive),member])
+        ids=items(raw);assert ids==menu['modern']['HudItem_ids']
+        early_rows.append({'member':member,'sha256':sha(raw),'bytes':len(raw),'HudItem_ids':ids,
+                           'byte_identical_final':sha(raw)==menu['modern']['sha256']})
+    report['early_history']={'version':'1.1.0','archive':early_rel,'archive_sha256':early_hash,
+        'menus':early_rows,'conclusion':'All six early authored item-ID sequences already match final; no1.0.0 artifact checked.'}
     for label,(relative,digest,_)in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert sha(raw)==digest;pe=pefile.PE(data=raw);rows=[]
         for i,name in enumerate(['ps1prace','ps1pcop','ps2p2r','ps2p2c','ps2p1c2r','ps2p1r2c']):
@@ -59,11 +71,11 @@ def main():
         'Named slot association and item-to-view dispatch reuse the linked rectangle/draw audits; unchanged draw cases need not be deleted to omit authored items.']
     report['limits']=['Static archive records and selected EXE linkage only; active installation, file loading and visible editor behaviour not executed.',
         'Author-hosted reference assets are not authenticated pristine retail or proven paired to supplied original EXE.',
-        'Historical1.0.0 introduction and every generic parser/input route remain unverified.',
+        'Same authored item-ID policy is verified by1.1.0; exact1.0.0 introduction and generic parser/input routes remain unverified.',
         'Other menu property/layout differences are not classified as this widget omission.',
         'MP100-048 has partial package/static support; no new executable police-role gate is asserted.']
     (ROOT/'analysis/evidence/audits/police-editor-asset-admission.json').write_text(json.dumps(report,indent=2)+'\n')
-    print('PASS: six paired menus, exact police-only item removals, retained registrations/initializer')
+    print('PASS: six paired menus plus1.1.0 item-ID history, exact police-only removals and retained EXE bindings')
 
 
 if __name__=='__main__':main()

@@ -2,7 +2,16 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **93 vendor-only,52 bounded-static,143 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The two recent HUD investigations now have concrete mechanisms. These bounded checks are complete at the stated static/package scope; runtime acceptance and the broader executable comparison remain open.
+
+| Item | Established mechanism | Historical boundary | Remaining |
+|---|---|---|---|
+|[MP150-017 software list bevel](original-modern-hud-layout.md#historical-list-bevel-fix-retargets-the-software-branch) |Two-byte JNE retarget admits eight border quads while skipping the separate background |Verified1.4.0→1.5.0; retained final |Visible bevel, Speeds List identity and provider behaviour |
+|[MP100-048 police editor widgets](original-modern-hud-settings-policy.md#police-only-widget-omission-is-authored-in-the-role-specific-menus) |Role-specific menu files omit police Tutorial Icon/Cone Stats items; racer items retained |Already present in retained1.1.0 package; exact1.0.0 introduction unverified |Authenticated retail asset comparison, installed loading and visible editor acceptance |
+
+The earlier “unresolved” HUD checkpoint sections below preserve investigation history; they are superseded by these linked findings. The EXE bytes, saved Ghidra database, raw exports and maintained C were not changed by these investigations. No game or new instruction probe was run.
+
+The [catalog](modern-patch-change-catalog.md) currently has **91 vendor-only,52 bounded-static,145 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
