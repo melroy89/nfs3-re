@@ -138,7 +138,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0046c820` | InitializeIndexedSliderGeometryAndValues | 134 | 35 | [slider-percentage](original-modern-slider-percentage.md) |
 | `00470ad0` | SetThrashState14InputOrResetWhenDisabled | 42 | 42 | [renderer-loading](original-modern-renderer-loading.md), [state14](original-modern-state14.md) |
 | `00472230` | ClearUnsupportedSoundModeThree | 24 | 24 | [config-loading](original-modern-config-loading.md) |
-| `00472248` | InitializeSoundCapabilityDefaults | 77 | 75 | [audit-status](original-modern-audit-status.md), [config-loading](original-modern-config-loading.md), [frontend-sound](original-modern-frontend-sound.md), [language-table](original-modern-language-table.md) |
+| `00472248` | InitializeSoundCapabilityDefaults | 77 | 75 | [audit-status](original-modern-audit-status.md), [config-loading](original-modern-config-loading.md), [frontend-sound](original-modern-frontend-sound.md), [language-table](original-modern-language-table.md), [music-selection](original-modern-music-selection.md) |
 | `00472298` | InitializeIndexedSettingDefaults | 47 | 42 | [config-loading](original-modern-config-loading.md), [viewport-pose](original-modern-viewport-pose.md) |
 | `004723f0` | RefreshPreparationHeaderPrefix | 18 | 16 | [config-loading](original-modern-config-loading.md), [ghost-loading](original-modern-ghost-loading.md) |
 | `00472404` | InitializeDefaultGameConfiguration | 663 | 123 | [config-loading](original-modern-config-loading.md), [ghost-loading](original-modern-ghost-loading.md), [language-table](original-modern-language-table.md), [vehicle-dispatch](original-modern-vehicle-dispatch.md) |

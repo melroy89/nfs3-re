@@ -610,7 +610,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **112 Claimed, 51 Static, 125 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **111 Claimed, 51 Static, 126 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -933,7 +933,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-031 | Two camera views: Heli Cam and In Car (you can restore original set in camera settings). | Claimed |
 | MP100-032 | Mini map has 1x scaling for cops and 3x for racers by default. | Claimed |
 | MP100-033 | Opponent list is displayed by default in splitscreen mode (instead of opponent name which looked a little confusing). | Claimed |
-| MP100-034 | “Romulus 3” is used by default for menu soundtrack (but you can change it in audio settings). | Claimed |
+| MP100-034 | “Romulus 3” is used by default for menu soundtrack (but you can change it in audio settings). | Partial |
 | MP100-035 | New icon in variants from 16×16 to 256×256 pixels. Old icon also available and you can set it for your shortcut in properties. | Static |
 | MP100-036 | Smooth loading indication. Original game does almost nothing between 58% and 100%. | Claimed |
 | MP100-037 | Original game makes a copy of music file when loading gameplay, maybe to solve problem with slow CD-ROMs in 90's. Now game plays gameplay music directly from source file. It saves a little time and 10 MiB of resource of your SSD on every gameplay start. | Claimed |

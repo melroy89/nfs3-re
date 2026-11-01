@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **112 vendor-only,51 bounded-static,125 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **111 vendor-only,51 bounded-static,126 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -641,3 +641,7 @@ The [bounded HUD-editor review](original-modern-hud-settings-policy.md#police-co
 ## Historical nGlide settings before provider loading
 
 The [paired adapter audit](original-modern-renderer-loading.md#historical-nglide-configuration-precedes-provider-loading) verifies1.2.0’s complete NGLIDE-specific helper, packaged six settings and pre-LoadLibrary order. Removing the section skips writes but leaves inherited/previous values untouched; global-settings outcome remains conditional and untested. MP120-025/027 advance to partial, MP120-026 to bounded static; counts112/51/125/2. Final EXE generic ENV remains a separate mechanism. No target execution or database changes.
+
+## Menu music default changes across Modern history
+
+The [three-baseline default audit](original-modern-music-selection.md#historical-romulus-default-is-not-the-final-modern-default) verifies original selector0, early1.1.0 selector2/Romulus 3 and final selector0/Random (All), with six changed bytes in the complete early audio-default block. This qualifies the old release-note claim rather than presenting it as final behavior. MP100-034 advances to partial historical support; counts111/51/126/2. Exact change dates, user-setting admission and playback remain unverified; no target execution or database changes.

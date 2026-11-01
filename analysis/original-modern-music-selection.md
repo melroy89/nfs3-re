@@ -252,3 +252,19 @@ partition. The [gate producer](original-modern-config-loading.md#mediaaudio-gate
 cadence, loaded-file identity, actual playback and user-visible outcomes remain
 unresolved. No game, audio API, loader or instruction probe was executed;
 executable/database bytes were preserved.
+
+## Historical Romulus default is not the final Modern default
+
+**Verified static stores and choice-list bindings; playback untested.** The [default-history audit](evidence/audits/menu-music-default-history.json), reproduced with `python3 analysis/scripts/audit_menu_music_default_history.py`, pins supplied original, author-hosted1.1.0 and official final EXEs. It reuses the independently documented setting/list identity and final selection behavior above.
+
+| Inspected EXE | Default write to menu setting`006fbbec` | Choice-list label ID | Official final English decoding |
+|---|---|---:|---|
+| Supplied original | `00472605` stores EDX=0 after MOV EDX,EDI / XOR EDX,EDI | 466 | Random |
+| Modern1.1.0 | `00472605` stores EAX=2, loaded at`004725cd` | 468 | Romulus 3 |
+| Official final1.6.1 | `00472248` zeroes EAX, then stores it to race/menu selectors at`0047224a/0047224f` | 1946 | Random (All) |
+
+The early/original comparison covers the entire83-byte straight-line audio-default block `004725be..00472611`, exclusive end. Exactly six bytes differ, all at `00472605..0047260b`: original's six-byte `MOV [006fbbec],EDX` becomes five-byte `MOV [006fbbec],EAX` plus NOP. Both blocks load EAX=2 and zero EDX by XOR with its copied source; the change selects the existing constant rather than introducing a new track-number literal. No intervening call occurs inside this block.
+
+Original and1.1.0 descriptor `00556bf4` both bind `menutunes` to `006fbbec` and the same list `[466,467,468,469,470,471,472,473]`. Thus ordinal2 selects ID468. Final uses `[1946,1944,1945,467,468,469,470,471,472,473]`: the same track's fixed-choice ordinal is now4, while the default0 selects the cyclic subset helper. Numeric selector0 in original/final therefore does not imply identical random-selection behavior. The existing final helper excludes track ID6 from its “All” cycle; do not silently expand the label into a universal playlist claim.
+
+**MP100-034 advances to partial historical support:** an inspected early Modern EXE implements the advertised Romulus default, whereas final Modern does not retain it. The exact1.0.0 introduction and later change date remain unresolved; this comparison does not assign that change to a specific intervening release. Label text is decoded from the hash-pinned official final English resource, not authenticated original/early language files. Initialization/reset admission, saved-user overrides, later writers, successful track loading and audible output remain separate requirements. See [configuration loading](original-modern-config-loading.md#removed-inline-defaults-at-00472566-replacement-initialization-matters) for the already established move from original inline defaults to grouped final helpers.

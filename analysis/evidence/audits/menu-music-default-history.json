@@ -1,0 +1,179 @@
+{
+  "kind": "static-menu-music-default-history",
+  "binaries": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "default_selector": 0,
+      "descriptor": [
+        "005382b4",
+        "0055633e",
+        "00000000",
+        "00000000",
+        "006fbbec"
+      ],
+      "label_ids": [
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473
+      ],
+      "default_label_id": 466,
+      "capture": {
+        "start": "004725be",
+        "end_exclusive": "00472611",
+        "sha256": "6feef4f6d66cb3f110e86a37122bfdff84a38e0c3351ad2157030606f5233357",
+        "hex": "bf64000000b97f000000be01000000b802000000893de8bb6f00893df0bb6f0089fa893df4bb6f00890dfcbb6f00893df8bb6f008935e0bb6f008935d8bb6f0031faa3e4bb6f008915ecbb6f008915dcbb6f00",
+        "disassembly": [
+          "4725be:\tbf 64 00 00 00       \tmov    edi,0x64",
+          "4725c3:\tb9 7f 00 00 00       \tmov    ecx,0x7f",
+          "4725c8:\tbe 01 00 00 00       \tmov    esi,0x1",
+          "4725cd:\tb8 02 00 00 00       \tmov    eax,0x2",
+          "4725d2:\t89 3d e8 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbe8,edi",
+          "4725d8:\t89 3d f0 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbf0,edi",
+          "4725de:\t89 fa                \tmov    edx,edi",
+          "4725e0:\t89 3d f4 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbf4,edi",
+          "4725e6:\t89 0d fc bb 6f 00    \tmov    DWORD PTR ds:0x6fbbfc,ecx",
+          "4725ec:\t89 3d f8 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbf8,edi",
+          "4725f2:\t89 35 e0 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbe0,esi",
+          "4725f8:\t89 35 d8 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbd8,esi",
+          "4725fe:\t31 fa                \txor    edx,edi",
+          "472600:\ta3 e4 bb 6f 00       \tmov    ds:0x6fbbe4,eax",
+          "472605:\t89 15 ec bb 6f 00    \tmov    DWORD PTR ds:0x6fbbec,edx",
+          "47260b:\t89 15 dc bb 6f 00    \tmov    DWORD PTR ds:0x6fbbdc,edx"
+        ]
+      }
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "default_selector": 0,
+      "descriptor": [
+        "005382b4",
+        "00556336",
+        "00000000",
+        "00000000",
+        "006fbbec"
+      ],
+      "label_ids": [
+        1946,
+        1944,
+        1945,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473
+      ],
+      "default_label_id": 1946,
+      "capture": {
+        "start": "00472248",
+        "end_exclusive": "00472295",
+        "sha256": "6a11ca264e93a5e05c112bf7398d30e201221ff26f584894daba1201405f9eec",
+        "hex": "31c0a3e4bb6f00a3ecbb6f00a3dcbb6f00b001a3e0bb6f00e88bd8f9ff85c07402b003a300bc6f00b053a3d0d16f00b05fa3e8bb6f00a3f0bb6f00a3f4bb6f00a3f8bb6f00b06ca3fcbb6f00c3",
+        "disassembly": [
+          "472248:\t31 c0                \txor    eax,eax",
+          "47224a:\ta3 e4 bb 6f 00       \tmov    ds:0x6fbbe4,eax",
+          "47224f:\ta3 ec bb 6f 00       \tmov    ds:0x6fbbec,eax",
+          "472254:\ta3 dc bb 6f 00       \tmov    ds:0x6fbbdc,eax",
+          "472259:\tb0 01                \tmov    al,0x1",
+          "47225b:\ta3 e0 bb 6f 00       \tmov    ds:0x6fbbe0,eax",
+          "472260:\te8 8b d8 f9 ff       \tcall   0x40faf0",
+          "472265:\t85 c0                \ttest   eax,eax",
+          "472267:\t74 02                \tje     0x47226b",
+          "472269:\tb0 03                \tmov    al,0x3",
+          "47226b:\ta3 00 bc 6f 00       \tmov    ds:0x6fbc00,eax",
+          "472270:\tb0 53                \tmov    al,0x53",
+          "472272:\ta3 d0 d1 6f 00       \tmov    ds:0x6fd1d0,eax",
+          "472277:\tb0 5f                \tmov    al,0x5f",
+          "472279:\ta3 e8 bb 6f 00       \tmov    ds:0x6fbbe8,eax",
+          "47227e:\ta3 f0 bb 6f 00       \tmov    ds:0x6fbbf0,eax",
+          "472283:\ta3 f4 bb 6f 00       \tmov    ds:0x6fbbf4,eax",
+          "472288:\ta3 f8 bb 6f 00       \tmov    ds:0x6fbbf8,eax",
+          "47228d:\tb0 6c                \tmov    al,0x6c",
+          "47228f:\ta3 fc bb 6f 00       \tmov    ds:0x6fbbfc,eax",
+          "472294:\tc3                   \tret"
+        ]
+      }
+    },
+    "modern_1.1.0": {
+      "path": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z!nfs3.exe",
+      "sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "default_selector": 2,
+      "descriptor": [
+        "005382b4",
+        "0055633e",
+        "00000000",
+        "00000000",
+        "006fbbec"
+      ],
+      "label_ids": [
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473
+      ],
+      "default_label_id": 468,
+      "capture": {
+        "start": "004725be",
+        "end_exclusive": "00472611",
+        "sha256": "d8ac980c3fc9154e5a2142141bd97c94c84b5a2e42df43450ff78c4b160c6da5",
+        "hex": "bf64000000b97f000000be01000000b802000000893de8bb6f00893df0bb6f0089fa893df4bb6f00890dfcbb6f00893df8bb6f008935e0bb6f008935d8bb6f0031faa3e4bb6f00a3ecbb6f00908915dcbb6f00",
+        "disassembly": [
+          "4725be:\tbf 64 00 00 00       \tmov    edi,0x64",
+          "4725c3:\tb9 7f 00 00 00       \tmov    ecx,0x7f",
+          "4725c8:\tbe 01 00 00 00       \tmov    esi,0x1",
+          "4725cd:\tb8 02 00 00 00       \tmov    eax,0x2",
+          "4725d2:\t89 3d e8 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbe8,edi",
+          "4725d8:\t89 3d f0 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbf0,edi",
+          "4725de:\t89 fa                \tmov    edx,edi",
+          "4725e0:\t89 3d f4 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbf4,edi",
+          "4725e6:\t89 0d fc bb 6f 00    \tmov    DWORD PTR ds:0x6fbbfc,ecx",
+          "4725ec:\t89 3d f8 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbf8,edi",
+          "4725f2:\t89 35 e0 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbe0,esi",
+          "4725f8:\t89 35 d8 bb 6f 00    \tmov    DWORD PTR ds:0x6fbbd8,esi",
+          "4725fe:\t31 fa                \txor    edx,edi",
+          "472600:\ta3 e4 bb 6f 00       \tmov    ds:0x6fbbe4,eax",
+          "472605:\ta3 ec bb 6f 00       \tmov    ds:0x6fbbec,eax",
+          "47260a:\t90                   \tnop",
+          "47260b:\t89 15 dc bb 6f 00    \tmov    DWORD PTR ds:0x6fbbdc,edx"
+        ]
+      }
+    }
+  },
+  "original_early_changed_bytes": [
+    "00472605",
+    "00472606",
+    "00472607",
+    "00472608",
+    "00472609",
+    "0047260a"
+  ],
+  "label_source": {
+    "archive": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+    "member": "fedata/text/text.eng",
+    "sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
+    "labels": {
+      "466": "Random",
+      "468": "Romulus 3",
+      "1946": "Random (All)"
+    }
+  },
+  "limits": [
+    "No game, music, instruction or API execution; audible playback and actual saved settings untested.",
+    "1.1.0 is early surviving evidence; no1.0.0 introduction-date proof or exact later default-change date.",
+    "Label strings decoded from official final English resource, not authenticated original/early language files.",
+    "Captured default-writing blocks do not establish every caller, reset admission, persistence override or later writer.",
+    "Final Random (All) selector membership and cycling are separately audited; label is not proof every track is included."
+  ]
+}
