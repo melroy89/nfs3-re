@@ -34,7 +34,10 @@ def main():
             spans += [(site,site+5) for site in calls]
             if driver=='dx8':
                 spans += [(0x600076f0,0x600077c0),(0x60009806,0x6000980c),
-                          (0x60005490,0x6000554b),(0x6000730d,0x60007332)]
+                          (0x60005490,0x6000554b),(0x6000730d,0x60007332),
+                          (0x60008140,0x600083fd),(0x60008400,0x6000843a),
+                          (0x60008626,0x60008676),(0x600086fd,0x6000873a),
+                          (0x60003170,0x600031b8),(0x600031c0,0x6000326c)]
                 if version=='1.6.0':
                     spans += [(0x6000645d,0x600065b4)]
                 else:
@@ -90,11 +93,27 @@ def main():
             result['dx8_setstate_dispatch']={'export':'_THRASH_setstate@8','address':'60005490',
                 'selector_mask':'0000ffff','byte_index_table':'600073f4','target_table':'60007334',
                 'selected_routes':maps,'limits':'Selected fog routes, not full dispatcher semantics or device acceptance.'}
+            for start,end in [(0x8140,0x83fd),(0x8400,0x843a),(0x8626,0x8676),
+                              (0x86fd,0x873a),(0x3170,0x31b8),(0x31c0,0x326c)]:
+                assert images['1.6.0'].get_data(start,end-start)==images['1.6.1'].get_data(start,end-start)
+            pe=images['1.6.1']
+            assert pe.get_data(0x1c08c,4)==bytes.fromhex('02000000')
+            section=next(s for s in pe.sections if s.Name.startswith(b'.data'))
+            assert section.VirtualAddress==0x1c000 and section.SizeOfRawData==0x2000 and section.Misc_VirtualSize==0x2a000
+            assert 0x1edd0>=section.VirtualAddress+section.SizeOfRawData
+            assert 0x201ec<section.VirtualAddress+section.Misc_VirtualSize
+            result['dx8_guard_lifecycle']={'capability_function':'60008140..600083fd',
+                'capability_function_identical':True,'caps_buffer':'6001edf0','raster_caps':'6001ee14',
+                'guard':'600201ec','set_if_raster_bit':'00100000','quirk_clear_sites':['60008630','6000865a','60008727'],
+                'file_backed_initial_mode':2,'enable_and_guard_storage':'virtual-only tail of .data; loader-zero inference, not observed memory',
+                'notification_function':'600031c0..6000326c','notification_identical':True,
+                'limits':'Literal and bounded body evidence; external/computed writers, actual device caps and complete reset ordering not established.'}
             contract='Matched vertex helper has15 retained direct calls; new prefix subtracts0.5 from one supplied vertex X/Y before existing/reworked colour/fog policy. Other helper changes are not declared equivalent.'
         result['drivers'][driver]={'versions':versions,'constant_rva':f'{constant:08x}','constant':0.5,'contract':contract}
     headers={}
     for name,expected in [('d3d8.h','e93563a03f30a83dae6afe20ad0061558f6a56fe7d101b3d883749b47d1edeef'),
-                          ('d3d8types.h','6443383135f69c8199f4c9c1b81717b94ade16ae625f760f198d7c49d864353d')]:
+                          ('d3d8types.h','6443383135f69c8199f4c9c1b81717b94ade16ae625f760f198d7c49d864353d'),
+                          ('d3d8caps.h','242b785317aece7fe477e82fa4dcd293a7f482452e04256cd0082b08703351a2')]:
         path=ROOT/'analysis/captures/modern-differences/dx8-api-headers'/name
         assert hashlib.sha256(path.read_bytes()).hexdigest()==expected
         headers[name]={'snapshot':str(path.relative_to(ROOT)),'sha256':expected,
@@ -103,6 +122,9 @@ def main():
     names=re.findall(r'STDMETHOD(?:_\(\s*[^,]+,\s*|\(\s*)(\w+)\)',declaration)
     slots={name:names.index(name)*4 for name in ['SetRenderState','DrawPrimitive','SetVertexShader','SetStreamSource']}
     assert slots=={'SetRenderState':0xc8,'DrawPrimitive':0x118,'SetVertexShader':0x130,'SetStreamSource':0x14c}
+    assert names.index('GetDeviceCaps')*4==0x1c
+    caps=(ROOT/headers['d3d8caps.h']['snapshot']).read_text()
+    assert re.search(r'#define\s+D3DPRASTERCAPS_WFOG\s+0x00100000',caps)
     types=(ROOT/headers['d3d8types.h']['snapshot']).read_text()
     for name,value in [('FOGENABLE',28),('FOGTABLEMODE',35),('FOGVERTEXMODE',140),('FOGCOLOR',34)]:
         assert re.search(r'D3DRS_'+name+r'\s*=\s*'+str(value)+r'\s*,',types)
