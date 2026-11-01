@@ -1,0 +1,59 @@
+{
+  "kind": "dx7-display-environment-comparison",
+  "versions": {
+    "1.6.0": {
+      "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
+      "member": "drivers/dx7/dx7a.dll",
+      "sha256": "8f3ed9676611d65f40b5dde537aab5813d2e2a854c08fdf3b08b7d19a7a25d5e",
+      "spans": [
+        {
+          "start": "60002060",
+          "end_exclusive": "600020b6",
+          "bytes_sha256": "f7734a93af7bef8661f6b2e440ee586646aa84b0893aa730b0488cca3eda8e53",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-60002060.asm",
+          "assembly_sha256": "fc4498d6786aeb481fdf3c3d5be05858583525905cc147b82ee72373c249e7e0"
+        },
+        {
+          "start": "600020c0",
+          "end_exclusive": "600021e7",
+          "bytes_sha256": "661e8990bf27890e99f6b2b240882ea4eae5d9ac5fddae9aa781f311f5d905f1",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.0-600020c0.asm",
+          "assembly_sha256": "ed655d25abebc3e0ee131093f019fa15c49b78d31f47fccbc40daa98ccd6b932"
+        }
+      ]
+    },
+    "1.6.1": {
+      "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+      "member": "drivers/dx7/dx7a.dll",
+      "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+      "spans": [
+        {
+          "start": "60002060",
+          "end_exclusive": "600020a0",
+          "bytes_sha256": "96196170892f4bc426b7cc8c4e06eaf4007e48b3610bf40c27f8cd9c2ecc874e",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-60002060.asm",
+          "assembly_sha256": "ddafc39de050b04b124a2438ccea20d5e604f7bc91e387bb2af6f9367a54b4c4"
+        },
+        {
+          "start": "600020c0",
+          "end_exclusive": "600021e7",
+          "bytes_sha256": "661e8990bf27890e99f6b2b240882ea4eae5d9ac5fddae9aa781f311f5d905f1",
+          "assembly": "analysis/captures/modern-differences/dx7-display-environment/1.6.1-600020c0.asm",
+          "assembly_sha256": "ed655d25abebc3e0ee131093f019fa15c49b78d31f47fccbc40daa98ccd6b932"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No getenv/atoi, driver/API or target execution.",
+    "Black-polygon attribution, full callback/state lifecycle and visible results unresolved."
+  ],
+  "facts": {
+    "common_admission": "Signed600170bc<0 and either6007b864 or6007b880 nonzero",
+    "missing_environment": "160 passes entryECX savedbyPUSHECX;161 passes getenvNULL=0",
+    "present_environment": "Both passatoi result",
+    "removed_local_store": "160 writesDWORD1 to6005ab60 before callbackguard;161 omitsit",
+    "consumer": "Complete295-byte600020c0..600021e7 identical;validsignedindexselectsentry,invalidfallsbackto0;thenothercallbacks/setup",
+    "limits": "EntryECX is not proved initialized by callers;fallback0 does not prove valid firstentry or side-effect-free selection"
+  }
+}

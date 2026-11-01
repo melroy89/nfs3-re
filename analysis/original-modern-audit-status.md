@@ -567,3 +567,8 @@ The [predecessor comparison](original-modern-nglide-window-history.md#predecesso
 ## Historical dgVoodoo2.53 package identity
 
 The [five-component package audit](original-modern-dgvoodoo-version-history.md) verifies1.5.3/1.6.0 archive hashes, wrapper/setup ProductVersion2.51→2.53, identical adapter/INI and changed binary config. Wrapper FileVersion remains3.10 and must not be used as product version. MP160-014 advances to bounded static package-identity support; provider code/runtime and upstream authentication remain unverified. Current counts127/48/113/2. No target execution.
+
+
+## DX7 display-env wrapper has a hidden-register/default change
+
+The [wrapper/consumer follow-up](original-modern-dx7-mode-admission.md#missing-display-environment-stops-forwarding-saved-ecx) verifies old missing THRASH_DISPLAY→entryECX versus new→0, an omitted local flag store and a byte-identical295-byte selection consumer. This is a concrete independent display-selection difference; black-polygon attribution, caller ECX initialization and runtime effects remain unresolved. No visual catalog claim is promoted; counts unchanged.

@@ -74,3 +74,24 @@ The newly retained [historical pair audit](evidence/audits/dx7-160-161-mode-poli
 This directly establishes removal of an unconditional local640×480×16 seed and replacement of arrival-order insertion with unsigned width/height/resulting-depth sorting between these two supplied releases. With no admitted enumeration candidates, that older seed explains count2 versus the newer reserved-only count1. The older setup witness does not test whether the display interface actually offered the seeded mode before creating it. Subsequent candidates can overwrite records; no unconditional final output for all API results is inferred.
 
 Both named code mechanisms in MP161-004 therefore have **bounded static support from an actual historical pair**, rather than final-build interpretation alone. Actual system support, API failures, all later writers/overrides and rendered acceptance remain untested. The pair establishes that these mechanisms differ between author-hosted1.6.0 and1.6.1; it does not prove every intermediate development revision or independently authenticate archive publication dates. No DLL was loaded or executed, and no original-retail-DLL equivalence is claimed.
+
+
+## Missing display environment stops forwarding saved ECX
+
+The [display-env audit](scripts/audit_dx7_display_environment.py) verifies the pinned1.6.0/1.6.1 DX7 members, captures both complete wrappers at`60002060` (86 versus64 bytes), and verifies complete **295-byte consumer `600020c0..600021e7`** is byte-identical. The [manifest](evidence/audits/dx7-display-environment.json) retains hashes, imports and branch witnesses. This resolves selected argument/consumer details behind the earlier helper reference, not the complete display lifecycle.
+
+Both wrappers only reach the environment/selection calls when signed DWORD`600170bc` is negative and at least one of`6007b864`/`6007b880` is nonzero. They call imported **getenv** with `THRASH_DISPLAY`; a present value is passed to imported **atoi**, whose result reaches consumer`600020c0`.
+
+| Path |1.6.0 |1.6.1 |
+|---|---|---|
+| Missing environment value | `600020aa` loads DWORD`[ESP]`, the entry ECX saved by PUSH ECX, and passes it | Skips atoi and passes the zero getenv result |
+| Present value | Pass atoi result | Same input route |
+| Negative current selector, before the two-cell guard | Writes1 to`6005ab60` at`60002071` | No corresponding local store |
+
+The old missing-value route therefore has a **hidden register input**, even though its wrapper is not conventionally presented as taking an ECX argument. Caller initialization of ECX is not established here, so do not automatically call it uninitialized memory or silently replace it in an original-compatible reconstruction. The newer zero argument is a concrete behavioural change. The removed store is another local effect; complete meaning/other writers of`6005ab60` remain separate, and it is not assigned to a visual workaround by this audit.
+
+The retained consumer clears`600186d8`, conditionally releases an existing object through a helper, then reads its stack index. For signed`0<=index<[600186e0]`, it selects the corresponding pointer from table`60018250` and publishes that index at`600170bc`; otherwise it selects table entry0 and publishes0. It copies selected descriptive data, then performs further callback/setup work before returning1 with RET4. Fallback0 is **not** proof that entry0 exists or is valid, nor is return1 proof every subordinate operation succeeded.
+
+Conditional static consequence: if entry ECX is a valid nonzero index and the environment is absent,1.6.0 can select that entry where1.6.1 requests0. Invalid old ECX also falls back to0 through this consumer, subject to pointer/state prerequisites. No index, environment lookup or driver was executed.
+
+This comparison was inspected while triaging the claimed black-polygon workaround, but **no causal link to MP161-003 is established**. It is documented as an independent display-selection difference. The black-polygon location/rendering claim, full callbacks, selector lifecycle, source-string bounds and actual display acceptance remain unresolved; existing catalog status for that visual claim is unchanged.

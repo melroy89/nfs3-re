@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "64cd7b5ac89c05020b2f01435bb9757207789c178e33010fa962340b98012fad",
-      "relative_links": 177
+      "sha256": "4fdc1e16eb4ea844cd3413ab90bda7052b450deb856bcb39ec50ccf1bd0c29ca",
+      "relative_links": 178
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "69c7110187467ab49e392e1ff4cc1816b38e3fb4d348ad33699a5a60916a84e1",
-      "relative_links": 210
+      "sha256": "cbec65fbeb45fe4b77a3f6e8b221cd50a1811e803e027970a368bd0e51631a2c",
+      "relative_links": 211
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -133,8 +133,8 @@
     },
     {
       "path": "analysis/original-modern-dx7-mode-admission.md",
-      "sha256": "b291847bd4e656f7a17e7c3fce822af694170db2859f7e2542ebbc928d863cff",
-      "relative_links": 7
+      "sha256": "3cbdfc0f91ac1a042754d4b18ed6d5483a12bd92f5bc4679ca9c4c0b8fa44457",
+      "relative_links": 9
     },
     {
       "path": "analysis/original-modern-effect-renderer-masks.md",
@@ -653,7 +653,7 @@
     }
   ],
   "file_count": 130,
-  "relative_link_count": 2384,
+  "relative_link_count": 2388,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

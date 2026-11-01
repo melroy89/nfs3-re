@@ -986,3 +986,8 @@ The [three-release predecessor check](original-modern-nglide-window-history.md#p
 ## Historical dgVoodoo bundled-version update
 
 The [matched package identity comparison](original-modern-dgvoodoo-version-history.md) verifies the dgVoodoo wrapper/setup2.51→2.53 update between1.5.3 and1.6.0, while adapter/INI remain byte-identical and binary config changes. Product metadata supports the narrow bundled-version claim; it does not establish provider code semantics, upstream authentication or runtime compatibility.
+
+
+## Historical DX7 missing-display environment argument
+
+The [DX7 wrapper comparison](original-modern-dx7-mode-admission.md#missing-display-environment-stops-forwarding-saved-ecx) finds that1.6.0 forwards saved entryECX when THRASH_DISPLAY is absent, while1.6.1 forwards0; both reach an identical complete selection consumer. A local flag write is also omitted. These are verified display-selection differences, not an established explanation of the separately advertised black-polygon workaround.
