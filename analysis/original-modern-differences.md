@@ -610,7 +610,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **118 Claimed, 50 Static, 120 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **117 Claimed, 50 Static, 121 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -927,7 +927,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-025 | Suppressing of displaying Windows Error Reporting dialog on fatal errors is disabled by default. So if something go wrong you will know about it. But you can enable suppressing of error reporting via NoErrorReporting setting in the ini file. | Static |
 | MP100-026 | Internal heap memory limit was extended from 16 to 32 MiB. It have to solve “Out of memory” problem on some rare cases. Also you can control it by OwnHeapLimitMb ini setting (it may be from 16 to 512). | Static |
 | MP100-027 | Bugfix for situation when you are cancelled editing audio setting, Engine Volume wasn't restored and set to maximum value, and Sound Effects also sometimes wasn't restored to original value. | Partial |
-| MP100-028 | Fixes for hardware detection function. Original game by mistake tries to simplify intro video graphics for modern computers because internal benchmark thinks that it is 166MHz processor (signed integer, result of benchmark too big and it is treated as negative). This benchmark was replaced to cpuid which sees processor family (i586/i686 or newer), support of MMX/SSE/SSE2, and in result calculates class of processor which is used by game for choosing default settings and deciding which level of video quality user will see. | Claimed |
+| MP100-028 | Fixes for hardware detection function. Original game by mistake tries to simplify intro video graphics for modern computers because internal benchmark thinks that it is 166MHz processor (signed integer, result of benchmark too big and it is treated as negative). This benchmark was replaced to cpuid which sees processor family (i586/i686 or newer), support of MMX/SSE/SSE2, and in result calculates class of processor which is used by game for choosing default settings and deciding which level of video quality user will see. | Partial |
 | MP100-029 | Bugfix for error when game says that on your HDD is less than 1 MiB is free which is not true. | Claimed |
 | MP100-030 | Use km/h for speedometers by default. | Partial |
 | MP100-031 | Two camera views: Heli Cam and In Car (you can restore original set in camera settings). | Claimed |
@@ -1042,3 +1042,7 @@ The [paired Cancel follow-up](original-modern-frontend-sound.md#audio-cancel-res
 ## Historical movie-disable key and switch spelling
 
 The [movie-option history](original-modern-idle-movie.md#historical-movie-option-spelling-and-the-early-title-gate) traces early NoMovie INI reads to the retained title-disable bit and verifies1.5.1→1.5.2 renames both INI key and switch to NoMovies/-nomovies with identical setting-branch/mask-builder code. Final’s environment name is plural; the README’s singular example is historical, not a proven alias. MP100-024 advances vendor-only→partial; counts118/50/120/2. All intro paths,1.0.0 introduction, actual configuration and playback remain unverified; no target execution or database mutation.
+
+## CPU-rating overflow and low-class consequence
+
+The [signed-wrap follow-up](original-modern-cpu-tier.md#original-signed-wrapping-can-select-the-lowest-class) links original’s low32 million-scale IMUL to signed default/movie thresholds and records twelve hypothetical arithmetic cases. Negative stored results select the lowest default class/movie selector1 on the admitted paths; repeated wrapping is not monotonic. “166MHz” denotes a class, not a literal reassignment. MP100-028 advances vendor-only→partial; counts117/50/121/2. Actual calibration inputs, CPU/video outcomes, bypass paths and1.0.0 introduction remain qualified; no benchmark or target execution.

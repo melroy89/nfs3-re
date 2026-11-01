@@ -233,5 +233,128 @@
     "No CPUID, benchmark, game or target instruction execution.",
     "Same-address global changes meaning; not a measured host CPU rating.",
     "Legacy/extended CPUID paths and complete tier consumers remain bounded."
-  ]
+  ],
+  "original_signed_wrap_consequence": {
+    "producer": "004f2076 IMUL EDI,EDI,1000000; EAX/global receive low32 bits, overflow flags not tested in this tail.",
+    "graphics_consumer": "00472dab sign extends returned EAX into EDX:EAX; IDIV1000000; signed threshold ladder166/200/233/266.",
+    "graphics_admission": "Capability branch00472d99..00472da6 can bypass estimator and retain initial tier4.",
+    "movie_consumer": "00496175 signed133000000/200000000 thresholds; below133000000 also forces local+7e to1.",
+    "first_signed_boundary_for_nonnegative_integer_input": 2148,
+    "examples": [
+      {
+        "hypothetical_pre_multiply_integer": 166,
+        "stored_global_hex": "09e4f580",
+        "stored_global_signed": 166000000,
+        "signed_division_quotient": 166,
+        "default_tier_before_renderer_adjustment": 0,
+        "movie_conversion_selector": 2,
+        "movie_local_field_forced_one": false
+      },
+      {
+        "hypothetical_pre_multiply_integer": 200,
+        "stored_global_hex": "0bebc200",
+        "stored_global_signed": 200000000,
+        "signed_division_quotient": 200,
+        "default_tier_before_renderer_adjustment": 1,
+        "movie_conversion_selector": 3,
+        "movie_local_field_forced_one": false
+      },
+      {
+        "hypothetical_pre_multiply_integer": 266,
+        "stored_global_hex": "0fdad680",
+        "stored_global_signed": 266000000,
+        "signed_division_quotient": 266,
+        "default_tier_before_renderer_adjustment": 3,
+        "movie_conversion_selector": 3,
+        "movie_local_field_forced_one": false
+      },
+      {
+        "hypothetical_pre_multiply_integer": 267,
+        "stored_global_hex": "0fea18c0",
+        "stored_global_signed": 267000000,
+        "signed_division_quotient": 267,
+        "default_tier_before_renderer_adjustment": 4,
+        "movie_conversion_selector": 3,
+        "movie_local_field_forced_one": false
+      },
+      {
+        "hypothetical_pre_multiply_integer": 2147,
+        "stored_global_hex": "7ff89ec0",
+        "stored_global_signed": 2147000000,
+        "signed_division_quotient": 2147,
+        "default_tier_before_renderer_adjustment": 4,
+        "movie_conversion_selector": 3,
+        "movie_local_field_forced_one": false
+      },
+      {
+        "hypothetical_pre_multiply_integer": 2148,
+        "stored_global_hex": "8007e100",
+        "stored_global_signed": -2146967296,
+        "signed_division_quotient": -2146,
+        "default_tier_before_renderer_adjustment": 0,
+        "movie_conversion_selector": 1,
+        "movie_local_field_forced_one": true
+      },
+      {
+        "hypothetical_pre_multiply_integer": 2200,
+        "stored_global_hex": "83215600",
+        "stored_global_signed": -2094967296,
+        "signed_division_quotient": -2094,
+        "default_tier_before_renderer_adjustment": 0,
+        "movie_conversion_selector": 1,
+        "movie_local_field_forced_one": true
+      },
+      {
+        "hypothetical_pre_multiply_integer": 3000,
+        "stored_global_hex": "b2d05e00",
+        "stored_global_signed": -1294967296,
+        "signed_division_quotient": -1294,
+        "default_tier_before_renderer_adjustment": 0,
+        "movie_conversion_selector": 1,
+        "movie_local_field_forced_one": true
+      },
+      {
+        "hypothetical_pre_multiply_integer": 4000,
+        "stored_global_hex": "ee6b2800",
+        "stored_global_signed": -294967296,
+        "signed_division_quotient": -294,
+        "default_tier_before_renderer_adjustment": 0,
+        "movie_conversion_selector": 1,
+        "movie_local_field_forced_one": true
+      },
+      {
+        "hypothetical_pre_multiply_integer": 4294,
+        "stored_global_hex": "fff13d80",
+        "stored_global_signed": -967296,
+        "signed_division_quotient": 0,
+        "default_tier_before_renderer_adjustment": 0,
+        "movie_conversion_selector": 1,
+        "movie_local_field_forced_one": true
+      },
+      {
+        "hypothetical_pre_multiply_integer": 4295,
+        "stored_global_hex": "00007fc0",
+        "stored_global_signed": 32704,
+        "signed_division_quotient": 0,
+        "default_tier_before_renderer_adjustment": 0,
+        "movie_conversion_selector": 1,
+        "movie_local_field_forced_one": true
+      },
+      {
+        "hypothetical_pre_multiply_integer": 5000,
+        "stored_global_hex": "2a05f200",
+        "stored_global_signed": 705032704,
+        "signed_division_quotient": 705,
+        "default_tier_before_renderer_adjustment": 4,
+        "movie_conversion_selector": 3,
+        "movie_local_field_forced_one": false
+      }
+    ],
+    "limits": [
+      "Arithmetic derivation, not executing estimator/CPUID/movie/game instructions.",
+      "Pre-multiply integers are hypothetical inputs; not measured CPU MHz or proof the complete calibration produces them.",
+      "Negative values select the lowest <=166 class, not a literal assignment of166 to the global.",
+      "Multiple modulo2^32 wraps mean not every larger input selects the lowest tier."
+    ]
+  }
 }

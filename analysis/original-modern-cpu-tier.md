@@ -83,3 +83,32 @@ The helper uses RET4 and returns a binary32-derived value on ST0. EAX contains s
 ## Named default choices are now mapped
 
 The [named-option follow-up](original-modern-resolution-defaults.md#named-graphics-defaults-and-the-limits-of-automatic-high-settings) connects the feature-derived tier to exact descriptor labels, verifies ECX preservation across the two intervening mode calls and separates renderer halving from selected-mode overrides. Score5 with mask6 clear selects High/Full table entries; the same score with mask6 nonzero uses tier2 and several lower labels. This partially supports MP100-010 without asserting unconditional best graphics, every startup or actual CPU/display behaviour.
+
+## Original signed wrapping can select the lowest class
+
+**Confidence: verified producer/consumer instructions; examples derived arithmetically. Work status: done for this local mechanism, partial for MP100-028’s full hardware-detection claim.** The expanded [CPU audit](scripts/audit_cpu_tier_difference.py) asserts the original multiply/store, signed-division sequence and movie signed thresholds. Its [manifest](evidence/audits/original-modern-cpu-tier.json) records the derivation and twelve hypothetical inputs. No benchmark, CPUID, movie or original instructions were run.
+
+At`004f2076`, the estimator multiplies EDI by **1,000,000 using32-bit IMUL**. It moves the low DWORD to EAX and global`005652a4`; the captured return tail does not test multiplication overflow. Let **N** be the integer reaching this instruction, not a measured host frequency. The stored bits are `(N*1000000) mod2^32`.
+
+On the admitted default-rating path, caller`00472dab..00472db7` sign-extends returned EAX with`MOV EDX,EAX; SAR EDX,31`, then executes **signed IDIV1,000,000**. Its signed threshold ladder selects the tiers already listed above. Movie wrapper`00496175` separately compares the stored global **signed** against133,000,000 and200,000,000.
+
+| Hypothetical N before multiply | Stored signed DWORD | Default quotient, truncating toward zero | Default tier before renderer reduction | Movie conversion selector |
+|---:|---:|---:|---:|---:|
+|2147 |2,147,000,000 |2147 |4 |3 |
+|2148 |−2,146,967,296 |−2146 |0 |1 |
+|2200 |−2,094,967,296 |−2094 |0 |1 |
+|3000 |−1,294,967,296 |−1294 |0 |1 |
+|4000 |−294,967,296 |−294 |0 |1 |
+|4294 |−967,296 |0 |0 |1 |
+|4295 |32,704 |0 |0 |1 |
+|5000 |705,032,704 |705 |4 |3 |
+
+For nonnegative integer N,2148 is the first value at which this multiplication crosses the signed32-bit positive boundary. The table supports the vendor’s **signed overflow→low class** mechanism, conditional on calibration producing such an input and the consumer taking this path. It is not a verified2.148GHz hardware threshold: the full estimator’s calibration, timing, input formation and units remain incompletely reconstructed. The separate original capability branch can bypass estimation and retain initial tier4.
+
+“Thinks it is a166MHz processor” is therefore shorthand for **selecting the lowest `quotient<=166` default class**, not an instruction that replaces the stored global with166 or166,000,000. Movie selector1 is also chosen for negative stored values, and the wrapper forces local field+7eh to1 below the signed133-million threshold. Downstream conversion paths are traced in the [movie chapter](original-modern-idle-movie.md#follow-up-cpu-tier-reaches-display-conversion-with-unchanged-consumers); exact perceived video quality remains untested.
+
+The5000 example matters: repeated modulo2^32 wrapping means **not every larger N selects the lowest tier**. A saturating arithmetic explanation, or an unqualified statement that every fast CPU is misdetected identically, would contradict the inspected instructions.
+
+Modern replaces the shared quantity with the feature/family score and changes both consumers, avoiding this specific frequency-like multiply/divide contract on the reviewed paths. That is coordinated static evidence, not proof of accurate speed measurement, every legacy CPU branch or all hardware-detection fixes. Precise1.0.0 introduction and actual behavior on a particular machine remain unverified.
+
+For an original-faithful C reconstruction, use explicit32-bit wrapping, signed reinterpretation and truncation-toward-zero division under a validated domain. Signed C multiplication overflow cannot model this contract safely; silently widening/saturating it would change the original’s results. Modern’s small score must remain a distinct version-specific field meaning rather than being fed into original frequency thresholds.

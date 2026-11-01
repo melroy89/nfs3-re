@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **118 vendor-only,50 bounded-static,120 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **117 vendor-only,50 bounded-static,121 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -621,3 +621,7 @@ The [paired Cancel follow-up](original-modern-frontend-sound.md#audio-cancel-res
 ## Historical movie-disable key and switch spelling
 
 The [movie-option history](original-modern-idle-movie.md#historical-movie-option-spelling-and-the-early-title-gate) traces early NoMovie INI reads to the retained title-disable bit and verifies1.5.1→1.5.2 renames both INI key and switch to NoMovies/-nomovies with identical setting-branch/mask-builder code. Final’s environment name is plural; the README’s singular example is historical, not a proven alias. MP100-024 advances vendor-only→partial; counts118/50/120/2. All intro paths,1.0.0 introduction, actual configuration and playback remain unverified; no target execution or database mutation.
+
+## CPU-rating overflow and low-class consequence
+
+The [signed-wrap follow-up](original-modern-cpu-tier.md#original-signed-wrapping-can-select-the-lowest-class) links original’s low32 million-scale IMUL to signed default/movie thresholds and records twelve hypothetical arithmetic cases. Negative stored results select the lowest default class/movie selector1 on the admitted paths; repeated wrapping is not monotonic. “166MHz” denotes a class, not a literal reassignment. MP100-028 advances vendor-only→partial; counts117/50/121/2. Actual calibration inputs, CPU/video outcomes, bypass paths and1.0.0 introduction remain qualified; no benchmark or target execution.

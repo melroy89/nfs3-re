@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "12406b93864c72ac1821c782613eb735583983a26d6df49b23f30454316d03e4"
+      "sha256": "dadc72df19ac81b4e06d21c6afe0b76be46cd6c54c145bc39e23f04cd1f23c5f"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -77,7 +77,7 @@
     },
     {
       "path": "analysis/original-modern-cpu-tier.md",
-      "sha256": "499f96038e8d97b3d79b361d3827cd925047d8b21d00eb78c8d8285deb442e3e"
+      "sha256": "e4bdf9213038e04f35b4e1428e9bc3649e4c5db285f520eedb4ccbf69d753c22"
     },
     {
       "path": "analysis/original-modern-credits-panorama.md",
@@ -5421,6 +5421,8 @@
           "addresses": [
             "00472d11",
             "00472d89",
+            "00472dab",
+            "00472db7",
             "00472de3"
           ]
         },
@@ -7467,7 +7469,8 @@
           "path": "analysis/original-modern-cpu-tier.md",
           "entry_mentioned": false,
           "addresses": [
-            "0049616c"
+            "0049616c",
+            "00496175"
           ]
         },
         {

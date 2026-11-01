@@ -63,6 +63,36 @@ def main():
                 'other_product': 'Reload initial binary32 product for ST0 return; includes unordered compare on nontrapping path.',
                 'limit': 'Static arithmetic/caller contract; benchmark accuracy, units and runtime CW/inputs unverified.'}
         result['binaries'][label] = item
+    original=pefile.PE(str(ROOT/SPECS['original'][0]))
+    assert original.get_data(0xf2076,14).hex()=='69ff40420f0089f8893da4525600'
+    assert original.get_data(0x72dab,12).hex()=='89c2be40420f00c1fa1ff7fe'
+    assert original.get_data(0x96175,8).hex()=='81fb406bed077d07'
+    assert original.get_data(0x96198,19).hex()=='813da4525600406bed077d07c7457e01000000'
+    examples=[]
+    for n in (166,200,266,267,2147,2148,2200,3000,4000,4294,4295,5000):
+        bits=(n*1000000)&0xffffffff
+        signed=bits if bits<0x80000000 else bits-0x100000000
+        quotient=abs(signed)//1000000
+        if signed<0:quotient=-quotient
+        tier=sum(quotient>threshold for threshold in (166,200,233,266))
+        movie=1 if signed<133000000 else (2 if signed<200000000 else 3)
+        examples.append({'hypothetical_pre_multiply_integer':n,'stored_global_hex':f'{bits:08x}',
+            'stored_global_signed':signed,'signed_division_quotient':quotient,
+            'default_tier_before_renderer_adjustment':tier,'movie_conversion_selector':movie,
+            'movie_local_field_forced_one':signed<133000000})
+    assert (2147*1000000)<=0x7fffffff<(2148*1000000)
+    assert next(r for r in examples if r['hypothetical_pre_multiply_integer']==2200)['default_tier_before_renderer_adjustment']==0
+    assert next(r for r in examples if r['hypothetical_pre_multiply_integer']==5000)['default_tier_before_renderer_adjustment']==4
+    result['original_signed_wrap_consequence']={
+        'producer':'004f2076 IMUL EDI,EDI,1000000; EAX/global receive low32 bits, overflow flags not tested in this tail.',
+        'graphics_consumer':'00472dab sign extends returned EAX into EDX:EAX; IDIV1000000; signed threshold ladder166/200/233/266.',
+        'graphics_admission':'Capability branch00472d99..00472da6 can bypass estimator and retain initial tier4.',
+        'movie_consumer':'00496175 signed133000000/200000000 thresholds; below133000000 also forces local+7e to1.',
+        'first_signed_boundary_for_nonnegative_integer_input':2148,
+        'examples':examples,'limits':['Arithmetic derivation, not executing estimator/CPUID/movie/game instructions.',
+            'Pre-multiply integers are hypothetical inputs; not measured CPU MHz or proof the complete calibration produces them.',
+            'Negative values select the lowest <=166 class, not a literal assignment of166 to the global.',
+            'Multiple modulo2^32 wraps mean not every larger input selects the lowest tier.']}
     out = ROOT/'analysis/evidence/audits/original-modern-cpu-tier.json'
     out.write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: CPU tier baseline identities, producer/consumer spans and tables')
