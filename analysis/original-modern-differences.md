@@ -596,7 +596,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **127 Claimed, 48 Static, 113 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **126 Claimed, 48 Static, 114 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -610,7 +610,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 |---|---|---|
 | MP161-001 | Fixed the problem with Texel Alignment in the DX6, DX7 and DX8 renderers, so everything looks sharp, like when Glide3x is used. | Static |
 | MP161-002 | DX8 supports fog effect. Thanks to Verok for investigation. | Partial |
-| MP161-003 | The DX7 graphical glitches like the black polygon near the Old Church were workarounded. | Claimed |
+| MP161-003 | The DX7 graphical glitches like the black polygon near the Old Church were workarounded. | Partial |
 | MP161-004 | DX7 doesn't output 640×480×16 if this mode isn't supported. Also it returns sorted list of resolutions now. | Static |
 | MP161-005 | A small optimization of texture loading. The thrash_about isn't called when it is not really needed. | Partial |
 | MP161-006 | More strict checking of validity of a thrash driver (a renderer). | Static |
@@ -991,3 +991,8 @@ The [matched package identity comparison](original-modern-dgvoodoo-version-histo
 ## Historical DX7 missing-display environment argument
 
 The [DX7 wrapper comparison](original-modern-dx7-mode-admission.md#missing-display-environment-stops-forwarding-saved-ecx) finds that1.6.0 forwards saved entryECX when THRASH_DISPLAY is absent, while1.6.1 forwards0; both reach an identical complete selection consumer. A local flag write is also omitted. These are verified display-selection differences, not an established explanation of the separately advertised black-polygon workaround.
+
+
+## Historical DX7 clip-record maximum-depth candidate
+
+The [paired clip-export comparison](original-modern-dx7-viewport-depth.md) identifies the only two differing bytes in its complete150-byte body: a binary32 bound changes1−1/65536→1.0. Record layout and vtable slot match the SDK viewport maximum-depth interface. This is a rendering-state candidate for the separately advertised black-polygon workaround, with object/device/symptom attribution still unverified; it is not an x87 precision-control change.

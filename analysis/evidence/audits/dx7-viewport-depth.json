@@ -1,0 +1,50 @@
+{
+  "kind": "historical-dx7-clip-record-depth",
+  "versions": {
+    "1.6.0": {
+      "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
+      "member": "drivers/dx7/dx7a.dll",
+      "sha256": "8f3ed9676611d65f40b5dde537aab5813d2e2a854c08fdf3b08b7d19a7a25d5e",
+      "entry": "600013c0",
+      "end_exclusive": "60001456",
+      "bytes": 150,
+      "bytes_sha256": "88055bd7d0c381df57bfd0cba7fe4dd67bba89f63356dbd0a7fe6ab79d2dc231",
+      "depth_bits": "3f7fff00",
+      "binary32_value": 0.9999847412109375,
+      "assembly": "analysis/captures/modern-differences/dx7-viewport-depth/1.6.0-600013c0.asm",
+      "assembly_sha256": "9abdeed5a3cbb388f814ddabdf24a72a9b816caa05047255f084104da6df3637"
+    },
+    "1.6.1": {
+      "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+      "member": "drivers/dx7/dx7a.dll",
+      "sha256": "2a3d4bc54471ed351d39d3f10e655ba15162939a850dff6c310ab22d56e4258c",
+      "entry": "600013c0",
+      "end_exclusive": "60001456",
+      "bytes": 150,
+      "bytes_sha256": "6b37d5b7224998d0a1862248a8828ef6fe65d81df4e0c591838cbc16a0552e18",
+      "depth_bits": "3f800000",
+      "binary32_value": 1.0,
+      "assembly": "analysis/captures/modern-differences/dx7-viewport-depth/1.6.1-600013c0.asm",
+      "assembly_sha256": "7221a6023c95bbfcb418f4f08a5827088e179e74e3b82804e77d5bf4207ebfd0"
+    }
+  },
+  "limits": [
+    "No renderer, viewport, API or instruction execution.",
+    "SetViewport identity supported by SDK layout/vtable; complete factory/object lifetime not qualified.",
+    "No demonstrated link to Old Church black-polygon symptom or all rendering paths."
+  ],
+  "sdk_references": [
+    "https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/d3dtypes.h",
+    "https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/d3d.h"
+  ],
+  "changed_addresses": [
+    "60001421",
+    "60001422"
+  ],
+  "interpretation": {
+    "record": "SixDWORDs: x,y,wrap32(x2-x),wrap32(y2-y),float0,changedfloat",
+    "consumer": "Object60058d9c vtable+34h receivespointertorecord",
+    "sdk_correspondence": "D3DVIEWPORT7 hasfourDWORDcoordinates/extents thenfloatdvMinZ/dvMaxZ;IDirect3DDevice7 slot13=SetViewport",
+    "limitation": "Matching other clipbody bytes do not prove unchanged flushhelper effects or successful API call;body returns1withouttestingAPIresult"
+  }
+}

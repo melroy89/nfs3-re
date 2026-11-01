@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "f3aa94bde27cb1e4ab860a4c00f96936c20b778208b139a50039b0231f7990b4",
-      "relative_links": 180
+      "sha256": "d13c5b4610a11a9ea2b20a1988d492ccfb05093c78fc3ab4e08fd81e39bad9e8",
+      "relative_links": 181
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "cbec65fbeb45fe4b77a3f6e8b221cd50a1811e803e027970a368bd0e51631a2c",
-      "relative_links": 211
+      "sha256": "67287fcc6bbf1bf50eac40174b290e0f1d0bfea8491606c718fc8b49d50e0f63",
+      "relative_links": 212
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -135,6 +135,11 @@
       "path": "analysis/original-modern-dx7-mode-admission.md",
       "sha256": "d9a7b0af5c94c49d7312f4bca90f42b7e67977aa6e152778b74dc0cf5f8b47cc",
       "relative_links": 11
+    },
+    {
+      "path": "analysis/original-modern-dx7-viewport-depth.md",
+      "sha256": "f154a9cfb3a627e0844b7bc0a069b54f47df522fac0c2134c7897dc7012f2bd3",
+      "relative_links": 3
     },
     {
       "path": "analysis/original-modern-effect-renderer-masks.md",
@@ -643,8 +648,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "779af632965758419de085a680b7763743f9a4310a54dda561bd4745a41ecd22",
-      "relative_links": 176
+      "sha256": "3cd44c4451f02d1a69c90f78e8dbd5246a4d68e89f0e64518966facc4e3a0c4a",
+      "relative_links": 177
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -652,8 +657,8 @@
       "relative_links": 22
     }
   ],
-  "file_count": 130,
-  "relative_link_count": 2392,
+  "file_count": 131,
+  "relative_link_count": 2398,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

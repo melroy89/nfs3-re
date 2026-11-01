@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **127 vendor-only,48 bounded-static,113 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **126 vendor-only,48 bounded-static,114 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -582,3 +582,8 @@ The [caller follow-up](original-modern-dx7-mode-admission.md#caller-qualificatio
 ## DX7 display count: callback cap is not a global invariant
 
 The [count-path follow-up](original-modern-dx7-mode-admission.md#adapter-count-callback-cap-is-followed-by-an-environment-override) verifies four retained paired-identical spans. A16-entry callback admission cap precedes unclamped DX7_displays/THRASH_displays overrides, then filtered-count publication. This prevents promoting the local cap into a universal global bound and preserves the conditional about-path conclusion. No new visual claim or runtime result; counts unchanged.
+
+
+## DX7 clip-record depth candidate for the visual workaround
+
+The [complete150-byte clip comparison](original-modern-dx7-viewport-depth.md) verifies exactly two changed immediate bytes,1−1/65536→1.0 in a six-DWORD record sent through vtable+34h. SDK layout/slot matches D3DVIEWPORT7/SetViewport; complete object provenance, device acceptance and Old Church black-polygon attribution remain unverified. MP161-003 advances to partial candidate evidence, not confirmed workaround. Current counts126/48/114/2; no target execution.
