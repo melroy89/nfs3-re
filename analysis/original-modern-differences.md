@@ -21,7 +21,7 @@ The [eight-investigation checkpoint](evidence/validation/hud-menu-import-checkpo
 
 The checkpoint also reproduces the earlier negative renderer-gate and editor-draw checks. Their historical “unverified” conclusions are not the current status of the later positive branch/asset findings. A repeatable negative check cannot invalidate evidence from a different, now-bound route. At that checkpoint catalog labels were88 vendor-only/53 bounded-static/147 partial/2 unresolved; these count release-note bullets, not distinct EXE changes or completion percentage.
 
-At that checkpoint the next static priorities were HUD-preview arrangement (MP150-020) and gameplay-exit resolution handling (MP150-035). The later preview comparison below now supplies partial support; gameplay-exit handling remains next, reusing existing window lifecycle evidence. Broader changed-region semantics, external components and cross-version runtime compatibility remain part of the active comparison; this checkpoint does not close them.
+At that checkpoint the next static priorities were HUD-preview arrangement (MP150-020) and gameplay-exit resolution handling (MP150-035). The later preview comparison below now supplies partial support; the later shutdown comparison below now also supplies partial exit-path support, reusing existing window lifecycle evidence. Broader changed-region semantics, external components and cross-version runtime compatibility remain part of the active comparison; this checkpoint does not close them.
 
 ## Recent configuration and HUD mechanisms
 
@@ -660,7 +660,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **87 Claimed, 53 Static, 148 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **86 Claimed, 53 Static, 149 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -780,7 +780,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-032 | IntroSplashTime ini setting, which allows you to set duration of the intro splash image. | Partial |
 | MP150-033 | Fixed a problem with discolored light from the taillights in the menu when DX6 renderer is used and fog support is enabled. | Claimed |
 | MP150-034 | Fixed a bug which cause a crash when using the screenshoter feature on Windows XP. | Claimed |
-| MP150-035 | The game doesn't change resolution to 640×480 when “exit to system” is used during the gameplay, so closing the game is faster in this case. | Claimed |
+| MP150-035 | The game doesn't change resolution to 640×480 when “exit to system” is used during the gameplay, so closing the game is faster in this case. | Partial |
 | MP150-036 | Updated version of nGlide with fixes according to the NFS3 is included. | Claimed |
 | MP150-037 | dgVoodoo v2.5.1 (Napalm). | Claimed |
 | MP150-038 | Fixed a bug in the SoftTri renderer. Now it outputs all available resolutions. | Claimed |
@@ -1140,3 +1140,7 @@ The [complete callback-loop comparison](original-modern-common-menu-buttons.md#c
 ## Historical HUD preview coordinate arrangement
 
 The [HUD preview comparison](original-modern-hud-settings-policy.md#hud-preview-authored-coordinates-change-in150) measures13 linked-image coordinate changes in1.4.0→1.5.0, all retained final. Same38 historical linked controls and unchanged moved-image aliases distinguish arrangement from renaming; paired EXE property descriptors bind x/y stores. MP150-020 advances to partial support, with runtime geometry overrides, actual loading and visual quality explicitly unverified.
+
+## Gameplay exit avoids the frontend mode-request block
+
+The [shutdown-route comparison](original-modern-renderer-lifecycle.md#gameplay-exit-skips-frontend-mode-setup-from150) verifies140→150 adds a zero-input gate around frontend mode/640×480 viewport setup, retaining cleanup. Selected accepted-action5→terminal-state1→shutdown-input0 linkage is retained, including ECX preservation through the intervening finalizer. MP150-035 advances to partial support; configured mode selection, actual OS resolution, network mediation and other exits remain qualified.

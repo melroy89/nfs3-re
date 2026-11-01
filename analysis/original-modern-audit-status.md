@@ -13,7 +13,7 @@ The two recent HUD investigations now have concrete mechanisms. These bounded ch
 
 The earlier “unresolved” HUD checkpoint sections below preserve investigation history; they are superseded by these linked findings. The EXE bytes, saved Ghidra database, raw exports and maintained C were not changed by these investigations. No game or new instruction probe was run.
 
-The [catalog](modern-patch-change-catalog.md) currently has **87 vendor-only,53 bounded-static,148 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **86 vendor-only,53 bounded-static,149 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -764,3 +764,7 @@ Run `python3 analysis/scripts/check_hud_menu_import_mechanisms.py` to reproduce 
 ## HUD preview authored arrangement measured
 
 The [four-snapshot asset audit](original-modern-hud-settings-policy.md#hud-preview-authored-coordinates-change-in150) identifies13 coordinate-pair changes in140→150, retained final, with unchanged moved-image aliases and paired x/y descriptor bindings. MP150-020 is partial. Active geometry/asset loading and visible alignment remain unverified. The next code-level priority is MP150-035 gameplay-exit resolution handling, reusing window lifecycle evidence.
+
+## Gameplay-exit mode request suppressed at150
+
+The [four-build shutdown audit](original-modern-renderer-lifecycle.md#gameplay-exit-skips-frontend-mode-setup-from150) supplies partial support for MP150-035:140→150 adds zero-input suppression of frontend mode/viewport setup, with retained selected action/state/input linkage and cleanup admission. Literal640×480 is a viewport request, not proof of the OS mode. Runtime display, network mediation and full cleanup remain unverified.

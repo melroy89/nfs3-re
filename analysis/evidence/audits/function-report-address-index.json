@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "116c89dc453577accf44bd988913d2e1fd1eb2620cc7bf926e986d08a74fac79"
+      "sha256": "0fd1c50b0c1d5d233a92ef8bf2c6fae4b85b0a9e74c919f6031bfcd8bb8a9341"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -349,7 +349,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-lifecycle.md",
-      "sha256": "fac7b0bba77b60a608575764686e588aa5ee120065ec38cff19652af214e5a9e"
+      "sha256": "b196eec4bfb9f3874f8c8158ab16f048ed1ed4c72e15fc5b6fade7ad722c8c9f"
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
@@ -7511,6 +7511,13 @@
       "modern_sha256": "d31e4bddd84ff85edb5b8fa081cb4a39b70bce03de97b049b9bb99e33abf9e6a",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-renderer-lifecycle.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00495600"
+          ]
+        },
+        {
           "path": "analysis/og-modern-x87-precision.md",
           "entry_mentioned": true,
           "addresses": [
@@ -8140,6 +8147,20 @@
           "addresses": [
             "004a35d0"
           ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-lifecycle.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004a35d0",
+            "004a35d9",
+            "004a361d",
+            "004a3622",
+            "004a3652",
+            "004a3657",
+            "004a365b",
+            "004a3680"
+          ]
         }
       ]
     },
@@ -8192,6 +8213,14 @@
           "entry_mentioned": false,
           "addresses": [
             "004a37c1"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-lifecycle.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a3829",
+            "004a3840"
           ]
         },
         {
@@ -10422,7 +10451,8 @@
           "path": "analysis/original-modern-renderer-lifecycle.md",
           "entry_mentioned": true,
           "addresses": [
-            "004beeb0"
+            "004beeb0",
+            "004bef50"
           ]
         }
       ]

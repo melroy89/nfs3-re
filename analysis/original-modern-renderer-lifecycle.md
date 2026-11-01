@@ -54,3 +54,28 @@ The [mode-selection comparison](original-modern-mode-selection.md) now traces th
 ## Final Glide init failure now connected to platform callers
 
 The [paired driver follow-up](original-modern-glide-reference-identity.md#thrash-init-retries-provider-setup-and-has-a-separate-failure-channel) connects the final Glide init export to EXE slot009ef978 at0052473a. Its admitted path retries internal provider setup independently of the about cache; provider failure returns0. The EXE branches to cleanup, whose wrapper then returns current platform byte0056aff0. If that returns0,00517620 skips later display/mode work and startup reaches its existing init diagnostic. This is conditional static propagation, not observed recovery/termination or proof that every cleanup callback preserves zero.
+
+## Gameplay exit skips frontend mode setup from150
+
+**Verified shutdown admission change and selected action/state chain; OS display result untested.** The [exit-mode audit](evidence/audits/gameplay-exit-mode-history.json), reproduced with `python3 analysis/scripts/audit_gameplay_exit_mode_history.py`, pins original, author-hosted1.4.0/1.5.0 and official final EXEs. It captures complete shutdown bodies and retained route spans.
+
+| Stage | Original/1.4.0 |1.5.0 |Final |
+|---|---|---|---|
+|Shutdown entry`004a35d0` |Always enters setup, saves incoming EAX in ESI |PUSHAD; TEST EAX,EAX; JE`004a365b` |Same zero-input gate, JE`004a3657` |
+|Zero input |Performs frontend mode/viewport setup; skips later conditional`00495600` call |Skips setup and`00495600`, reaches cleanup |Same admission policy with changed cleanup |
+|Nonzero input |Performs setup and conditional call |Performs setup and now-unconditional-on-that-path call |Same admission policy; mode/FOV/cleanup details differ |
+
+Historical1.4.0/1.5.0 setup bytes`004a35d9..004a3652` are identical. The block loads configured frontend mode index`0055fec8` and calls original-role mode application`004bef50`; final uses`004beeb0`, as the [existing mode report](original-modern-mode-selection.md) qualifies. At`004a361d/004a3622`, retained instructions load ECX480 and EBX640 before calling viewport helper`004352d0`. Thus the skipped work contains both a frontend mode-application request and explicit640×480 viewport arguments. **The constants are not proof that the requested OS mode is always640×480:** mode application uses the configured index and driver descriptor, can fail, and has changed internals. Final also uses a different FOV argument representation and cleanup sequence; this is not whole-shutdown equivalence.
+
+### Checked exit state reaches the zero-input branch
+
+The audit retains the following chain, identical in all four builds within its explicit spans:
+
+1. The confirmation callback`0044b0f0..0044b164` can publish byte`00559251=1` and return action10 for its accepted branch. Other selection/cancel paths remain distinct.
+2. The in-race action mapping at`0044bcf6..0044bd3b` converts action10 to return5. The caller at`004c4c07` invokes in-race menu processing, then mediates the result through`004c5720`; **network mediation can change the result**, so the next step is conditional on accepted action5.
+3. The accepted action5 arm`004c4d35..004c4d6f` performs cleanup, explicitly sets ECX1 and ultimately stores ECX into terminal state`007d36b4`. Its intervening finalizer`004ce750..004ce7ff` saves/restores ECX and is byte-identical in all four builds, supporting that published1 rather than assuming a register survives a call.
+4. At`004a3829..004a3840`, the retained postrace caller maps terminal state1 to EAX0, other states to EAX1, then calls shutdown`004a35d0`.
+
+The new zero-input gate therefore suppresses the inspected frontend mode/viewport transition on this accepted terminal-state1 route while retaining cleanup. The original's zero input only controlled the later conditional call, after setup had already happened. The complete captured shutdown envelopes end at`004a3684` (original/140), `004a3680` (150) and`004a3681` (final); the raw body identities and disassembly are retained separately.
+
+**MP150-035 advances to partial static support:** the advertised140→150 boundary contains a concrete mechanism for avoiding the unnecessary frontend display transition on the checked gameplay-exit route. Actual desktop resolution, all exit paths, provider behaviour, callback admission, mediator outcomes and transitive cleanup remain unverified. Retained local code does not establish complete network or lifecycle equivalence. Reconstruction must preserve the conditional setup/cleanup split and register contract, rather than removing shutdown wholesale. No game, mode API, driver, new instruction probe, compiler or Ghidra write was used.
