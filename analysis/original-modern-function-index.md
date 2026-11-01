@@ -264,7 +264,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004bedcc` | FindClosestEligibleDisplayMode | 146 | 141 | [border-geometry](original-modern-border-geometry.md), [display-modes](original-modern-display-modes.md), [mode-selection](original-modern-mode-selection.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `004bee60` | CheckDisplayModeEligibility | 67 | 67 | [display-modes](original-modern-display-modes.md), [dll-candidates](original-modern-dll-candidates.md), [mode-selection](original-modern-mode-selection.md), [resolution-defaults](original-modern-resolution-defaults.md) |
 | `004beea4` | GetDisplayModePixelAreaLow32 | 12 | 12 | [mode-selection](original-modern-mode-selection.md) |
-| `004beeb0` | ApplyDriverDisplayMode | 237 | 226 | [mode-selection](original-modern-mode-selection.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md) |
+| `004beeb0` | ApplyDriverDisplayMode | 237 | 226 | [display-modes](original-modern-display-modes.md), [mode-selection](original-modern-mode-selection.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md) |
 | `004bef9d` | ResetDriverModeSurfaceSequence | 48 | 45 | [mode-selection](original-modern-mode-selection.md) |
 | `004c4480` | ProcessPendingScreenshotRequest | 56 | 52 | [loading-timing](original-modern-loading-timing.md), [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
 | `004c44b8` | NormalizeScreenshotOutputFormat | 48 | 47 | [registry](original-modern-registry.md) |
