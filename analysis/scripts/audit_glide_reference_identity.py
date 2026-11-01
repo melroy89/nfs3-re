@@ -357,6 +357,36 @@ def main():
         'limits': ['Provider signature identifies the third clear argument as the depth-value position; no successful clear or depth-format observation.',
                    'Only all local setstate changed bytes are accounted for; whole driver/global aliases and transitive provider mutations remain unqualified.',
                    'Mode setup suppliesffff/ffffff; retention assumes no intervening writer outside these removed local stores.']}
+    result['texture_tables'] = {'captures': [], 'tables': {}}
+    for role, pe, byte_base, square_base, side_base, count in [
+        ('hosted_reference', ref, 0x100f4, 0x10110, 0x10134, 9),
+        ('official_final', final, 0xfe34, 0xfe40, 0xfe70, 12)]:
+        table = {}
+        for label, rva, width, values in [('lod', byte_base, 1, list(range(count))),
+                                         ('square', square_base, 4, [4**i for i in range(count)]),
+                                         ('side', side_base, 4, [2**i for i in range(count)])]:
+            data = pe.get_data(rva, count*width)
+            decoded = list(data) if width == 1 else list(struct.unpack('<'+'I'*count, data))
+            assert decoded == values
+            table[label] = {'address': f'{0x60000000+rva:08x}', 'bytes_hex': data.hex(),
+                            'sha256': sha(data), 'values': decoded}
+        result['texture_tables']['tables'][role] = table
+        for start, end, label in [(0x24e0, 0x2654, 'complete-talloc'),
+                                   (0x2660, 0x26dd, 'complete-upload-level-loop')]:
+            body = pe.get_data(start, end-start)
+            result['texture_tables']['captures'].append({'role': role, 'label': label,
+                'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+                'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    for start, end, sites in [(0x24e0, 0x2654, [0x2526, 0x2536]),
+                               (0x2660, 0x26dd, [0x2688, 0x26c3])]:
+        changes = intervals(ref.get_data(start, end-start), final.get_data(start, end-start), 0x60000000+start)
+        assert [int(row['start_va'], 16)-0x60000000 for row in changes] == sites
+        assert sum(len(row['reference_hex'])//2 for row in changes) == 6
+    result['texture_tables']['limits'] = [
+        'Tables extend exponent coverage0..8 to0..11, not validated arbitrary inputs or automatic provider support.',
+        'Power-of-two input exponent extraction is exact for these sizes; general inputs retain x87/rounding and domain dependencies.',
+        'Complete allocator/upload-loop differences are table addresses only; larger size/stride values change provider requests and buffer stepping.',
+        'No historical v1.5.0 boundary, complete texture producer inventory, provider acceptance, image quality or actual upload observed.']
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [

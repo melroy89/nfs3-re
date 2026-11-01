@@ -262,6 +262,22 @@ Reference's clear path falls through alignment instructions to the shared return
 
 Combined with mode activation, the local chain is now concrete: final selects depth-clear value**ffffh for non32-bit modes** or**ffffffh for depth32**, and these selector4 branches no longer replace it withffffh. This preserves the selected value through these local branches, assuming no other writer or transitive provider mutation. It is not proof of every global writer,24-bit Z-buffer operation, correct rendered depth, full ABI equivalence or a historical release date. No provider, target instruction or clear operation was executed. Do not silently reintroduce the reference's fixed store when reconstructing Modern.
 
+## Texture tables expand from256 through2048
+
+Complete `_THRASH_talloc@20` body **`600024e0..60002654`** (372 bytes) and upload-level helper **`60002660..600026dd`** (125 bytes) are now compared. Each has exactly six differing bytes, confined to two table-address operands; every other body byte matches. These operands are data-table addresses, not changed provider bindings.
+
+| Table | Hosted reference | Final Modern | Verified contents |
+|---|---|---|---|
+| Exponent-to-LOD byte table |600100f4,9 bytes |6000fe34,12 bytes | Integers0..8 versus0..11 |
+| Square-size DWORD table |60010110,9 DWORDs |6000fe40,12 DWORDs |4^exponent, through65,536 versus4,194,304 |
+| Side-length DWORD table |60010134,9 DWORDs |6000fe70,12 DWORDs |2^exponent, through256 versus2048 |
+
+The allocator redirects its two byte-table reads at60002523/60002534. The upload loop redirects its side-length read at60002686 and square-size-derived buffer step at600026c1; the latter uses a base four bytes beyond the square table with an index decremented by four, retaining the corresponding exponent entry. Existing aspect/format tables and provider-call instructions in these bodies remain unchanged.
+
+For admitted power-of-two dimensions, the retained integer-to-binary32/exponent extraction maps512,1024,2048 to9,10,11 exactly. The final tables supply these entries; the reference's documented nine-entry tables do not. Neither routine adds an upper-bound check merely because the tables become larger. General non-power-of-two/invalid input behavior, x87 state and source-buffer bounds remain dependencies. Reads beyond a reference table must not be described as a clean original rejection without further evidence.
+
+The [existing renderer capability investigation](installed-renderer-capability-inventory.md) and [EXE texture-limit comparison](original-modern-texture-limits.md) explain memory admission, producers and configured extent reduction; reuse their qualifications. This new paired evidence provides **partial support for MP150-011**: final Glide tables and their consumers cover512/1024/2048 where the reference tables end at256. It does not date the change to1.5.0 or establish actual larger-texture allocation, provider acceptance, every upload route, source layout or rendered quality. No DLL, texture or target instructions were executed.
+
 ## Next required comparison
 
 The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and other initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.

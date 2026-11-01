@@ -535,7 +535,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **136 Claimed, 45 Static, 107 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **135 Claimed, 45 Static, 108 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -631,7 +631,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-008 | An ability to enable or disable the fog effect directly from the graphics settings menu. | Partial |
 | MP150-009 | An ability to set volume of menu sounds separately from the volume of the ingame special effects. | Static |
 | MP150-010 | No more "Render_GetTm() raM out of raN" error for high poly cars. Corresponding buffer is increased from 0.8 MiB to 8 MiB. | Partial |
-| MP150-011 | 512×512, 1024×1024 and 2048×2048 textures support in the voodoo2a.dll. Support of such textures was introduced in the 3dfx Voodoo 4 and 5. | Claimed |
+| MP150-011 | 512×512, 1024×1024 and 2048×2048 textures support in the voodoo2a.dll. Support of such textures was introduced in the 3dfx Voodoo 4 and 5. | Partial |
 | MP150-012 | The limit of texture size for track elements was expanded from 128×128 to 256×256 pixels in this release. | Partial |
 | MP150-013 | Support of the big 512×512 and 1024×1024 textures for cars and track elements still available only in beta versions of the patch. | Claimed |
 | MP150-014 | Smooth edges of the cop/player points on the map. | Claimed |
