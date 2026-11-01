@@ -70,3 +70,24 @@ The paired executable consumer `0044a5cb..0044a5e5` is byte-identical in both ve
 The outside-function inventory now independently checks the entire2470-byte interval `0045e95a..0045f300`: six leading bytes precede the1820-byte initializer, and644 trailing bytes follow it. Both surrounding spans are byte-identical across the pinned EXEs. **All242 interval differences** are confined to the already documented initializer policy block`0045e980..0045ea74`. Per-part hashes and changed-byte counts are retained in the [outside-body manifest](evidence/audits/outside-function-differences.json).
 
 This closes localization of the interval’s byte differences to the researched policy; it does not identify the unchanged surrounding bytes as padding or certify every callee, callback, language or runtime outcome. No Ghidra boundary edits were made.
+
+## Police Cone Stats and Tutorial Icon: claim remains unresolved
+
+**Evidence confidence: verified checked boundaries and preset contents; unresolved hiding mechanism. Work status: pending for MP100-048.** The new [bounded role audit](scripts/audit_hud_editor_role_boundary.py) and [manifest](evidence/audits/hud-editor-role-boundary.json) record what the nearby code/assets do establish. This is not acceptance of the release claim, and no HUD editor or target code was executed.
+
+| Checked boundary | Result | What it does not establish |
+|---|---|---|
+| `pshud` callback row`00555db0` and complete initializer`0044d4c0..0044d669`,425 bytes | Registration and initializer are identical in supplied original/final | No new police-only hiding change identified in that initializer |
+| `HudItem` registration`00557bd8` and128-byte template at`00557928` | Same class ID32/template and method bindings | No proof every dynamically constructed editor item uses this route |
+| Complete rectangle loader`0045ca90..0045cb46`,182 bytes | Identical; maps item values below/above23 to view/slot, selects a profile using vehicle role bit20h, copies rectangle and geometry fields | No local special-case test of slots6/7 or new hide-flag write |
+| Registered helper`0045cb50..0045cb55` | Same5-byte balanced-frame no-op | Not a visibility filter |
+
+The previously explained242-byte delta in general HUD settings initializer`0045e960` concerns shared policy and single/split list selection. That difference is not, by itself, evidence of hiding these two widgets for police players. Do not relabel it to match a release-note phrase without a concrete item/role chain.
+
+### Named records do not support a zero-rectangle explanation
+
+The hash-pinned author-reference `EDEF.POS` orders Tutorial Icon and Cone Stats at zero-based slots **6 and7** in each23-record profile. All six profiles’ named records, including Cop-prefixed names, have nonzero coordinate tuples. The audited final embedded table also has nonzero16-byte records at those two slots in all six profiles. Raw table pairs are retained in the manifest; they are not presented as final pixel coordinates. This rules out the simple explanation that the inspected final defaults hide these widgets merely by replacing their stored rectangles with all zeros. It does not prove visible rendering or rule out other flags, overwritten layout data or admission conditions.
+
+Author-reference `PSHUDPOS.MNU` authors17 `HudItem` records covering item values0..16, including6/7. The rectangle loader’s low-ID mapping connects these to the named slot order under its ordinary profile assumptions. This menu is omitted from the final patch archive, as the [existing complete asset inventory](original-modern-reference-assets-index.md) records. **Omission does not prove deletion from an installed base game**, or prove which editor route is active. The author-reference asset is not authenticated pristine retail or independently paired to the supplied original executable.
+
+**Required next evidence:** identify the active editor item-list construction or retained asset actually used in final; follow slot6/7 and police-role variants through descriptor admission and subsequent draw/input flags. Then establish whether the original/final difference occurs in code, authored items or later state. Only after that linkage should MP100-048 advance beyond vendor-only status; visible acceptance and1.0.0 introduction remain separate. The checked method/template and nonzero-preset boundaries are retained to avoid repeating these routes as if unexplored.

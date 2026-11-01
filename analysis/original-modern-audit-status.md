@@ -633,3 +633,7 @@ The [directory/error follow-up](original-modern-startup-requirements.md#director
 ## Fitted reference dimensions reach text scaling
 
 The [text-scale follow-up](original-modern-hud-layout.md#fitted-reference-scales-reach-a-conditional-text-path) connects the changed width/coefficient producer to retained85-byte adapter00451530 and bitmap setter. Wide-branch fitted width is height-derived; backend/font flags and unchanged width-based bitmap paths prevent a universal all-font claim. MP100-004 advances vendor-only→partial; counts115/50/123/2. Actual glyph sizes, other font routes, reference lifetime and1.0.0 introduction remain unverified; no font rendering or target execution.
+
+## Police HUD widget claim remains unverified
+
+The [bounded HUD-editor review](original-modern-hud-settings-policy.md#police-cone-stats-and-tutorial-icon-claim-remains-unresolved) binds Tutorial Icon/Cone Stats to preset slots6/7, records nonzero reference/final defaults, and verifies retained pshud initializer/HudItem rectangle-loader/template bytes. These checked routes do not identify the advertised police-only hiding mechanism. MP100-048 stays vendor-only; counts unchanged. Next is active item-list construction and slot/role draw/input admission, with archive omission kept separate from installed deletion. No menu or target execution.
