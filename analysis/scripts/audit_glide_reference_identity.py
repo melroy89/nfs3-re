@@ -330,6 +330,33 @@ def main():
                    'Lock allocation/provider failure and second-lock result handling are not repaired or assumed successful.',
                    'Stride multiplication is low32-bit arithmetic, not permission to use overflowing signed C multiplication.',
                    'Slot bindings identify named provider interfaces, not loaded implementations or every format constant semantic.']}
+    result['depth_clear_state'] = {'captures': [], 'bindings': {key: slots[key] for key in
+        ('60011030', '60011060', '60011064', '60011068')}}
+    assert list(result['depth_clear_state']['bindings'].values()) == [
+        '_grBufferClear@12', '_grDepthBufferMode@4', '_grDepthBufferFunction@4', '_grDepthMask@4']
+    for role, pe, clear_end in [('hosted_reference', ref, 0x2881), ('official_final', final, 0x2875)]:
+        for start, end, label in [(0x2ab0, 0x326e, 'complete-setstate'),
+                                   (0x2860, clear_end, 'clearwindow-through-return-reference-shares2880')]:
+            body = pe.get_data(start, end-start)
+            result['depth_clear_state']['captures'].append({'role': role, 'label': label,
+                'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+                'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    changes = intervals(ref.get_data(0x2ab0, 0x7be), final.get_data(0x2ab0, 0x7be), 0x60002ab0)
+    assert sum(len(row['reference_hex'])//2 for row in changes) == 61
+    assert all((0x60003068 <= int(row['start_va'], 16) < int(row['end_va_exclusive'], 16) <= 0x6000308a)
+               or (0x600030b9 <= int(row['start_va'], 16) < int(row['end_va_exclusive'], 16) <= 0x600030dc)
+               for row in changes)
+    assert ref.get_data(0x3074, 5).hex() == 'a3b0fc0060'
+    assert ref.get_data(0x30c5, 6).hex() == '8915b0fc0060'
+    result['depth_clear_state']['setstate_changes'] = changes
+    result['depth_clear_state']['contract'] = {
+        'selector': 4, 'changed_payloads': [1, 2],
+        'reference': 'Each changed route stores0000ffff to6000fcb0, calls depth-mask slot with1 and returns1.',
+        'final': 'Calls depth-mask slot with1 and returns1 without the local6000fcb0 reset.',
+        'clear_arguments': ['DWORD6000fcac', '0', 'DWORD6000fcb0'],
+        'limits': ['Provider signature identifies the third clear argument as the depth-value position; no successful clear or depth-format observation.',
+                   'Only all local setstate changed bytes are accounted for; whole driver/global aliases and transitive provider mutations remain unqualified.',
+                   'Mode setup suppliesffff/ffffff; retention assumes no intervening writer outside these removed local stores.']}
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [

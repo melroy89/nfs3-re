@@ -250,6 +250,18 @@ Lock retains the24-byte allocation and writes six DWORDs: offsets00h/04h copy pr
 
 Read/write save the provider result across the optional callback0 and return it. Their callback1/0 bracketing is not a synchronization/reentrancy guarantee. **Verified difference:** depth-dependent stride, write-format selection and returned lock format. **Still unverified:** transferred pixels, endian/channel interpretation, caller buffer sizes, provider failures, full buffer lifetime, runtime32-bit success and historical release attribution. No target or provider code was executed; these findings do not establish replay/multiplayer compatibility or a precision-policy change.
 
+## Depth clear value survives the changed state-setting routes
+
+The paired audit captures the complete **1,982-byte setstate body `60002ab0..6000326e`** in both DLLs. All61 differing bytes lie inside two envelopes, `60003068..6000308a` and `600030b9..600030dc`; the manifest retains every maximal changed interval. This accounts for all changed bytes in this function, not every transitive state effect.
+
+Both envelopes belong to **state selector4**, payload2 and payload1 respectively. Original writes `0000ffffh` into **6000fcb0**, calls slot60011068 with1 and returns1. Modern removes those local stores, still calls that slot with1 and returns1. Payload0 takes a retained different route; unsupported values are not converted into these admitted cases. The earlier comparisons/branches and the remaining state body are byte-identical.
+
+The required bindings identify60011060=`_grDepthBufferMode@4`,60011064=`_grDepthBufferFunction@4`,60011068=`_grDepthMask@4` and60011030=`_grBufferClear@12`. The clearwindow path at60002860 passes **`(DWORD[6000fcac],0,DWORD[6000fcb0])`**. The [3dfx Glide3 reference manual](https://www.3dfxglide.com/download/GL3REF.PDF) defines these positions as color, alpha and depth; the third is an unsigned depth-clear value whose use depends on enabled buffer writes. This API contract supplies the meaning missing from the earlier raw “mask” label; it does not identify the running provider or prove a successful clear.
+
+Reference's clear path falls through alignment instructions to the shared return at60002880. Final uses direct PUSH memory operands and returns at60002874. The argument values are locally equivalent for matching globals, but register clobbers differ (reference loads EDX/ECX; final does not), and calls under changed depth state need not produce equal output.
+
+Combined with mode activation, the local chain is now concrete: final selects depth-clear value**ffffh for non32-bit modes** or**ffffffh for depth32**, and these selector4 branches no longer replace it withffffh. This preserves the selected value through these local branches, assuming no other writer or transitive provider mutation. It is not proof of every global writer,24-bit Z-buffer operation, correct rendered depth, full ABI equivalence or a historical release date. No provider, target instruction or clear operation was executed. Do not silently reintroduce the reference's fixed store when reconstructing Modern.
+
 ## Next required comparison
 
 The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and other initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
