@@ -98,6 +98,13 @@
           "assembly_sha256": "d22f0e5b3d1bfc3690c9c8c4f02b572e5616c2fa39bd4a53915ea60c86b73431"
         },
         {
+          "start": "00425060",
+          "end": "004251ef",
+          "bytes_sha256": "87c257d62a2e3741a30ece41c13eeabda227dde4861f319a3331890356277d21",
+          "assembly": "analysis/captures/modern-differences/projection/original-00425060.asm",
+          "assembly_sha256": "de945959ea58575beb4058a3ddb578804bfc8c1c2857fba88166bd4fd7694396"
+        },
+        {
           "start": "004251f0",
           "end": "00425232",
           "bytes_sha256": "f153ffb3423373e83b4a1a7c8d1f16d5f0e7ae69fc85f76d3da6193b343ca3a6",
@@ -504,6 +511,13 @@
           "bytes_sha256": "f02e9958bc6f227e3d313c73111b5b678d3d23cdde0f4650f45072bb45ab8e69",
           "assembly": "analysis/captures/modern-differences/projection/official_modern-004238b0.asm",
           "assembly_sha256": "51ce0068c100af040ca9b477b539bcc1710961b2c2b9b5fc6e5e19960030b29e"
+        },
+        {
+          "start": "00425060",
+          "end": "004251ef",
+          "bytes_sha256": "87c257d62a2e3741a30ece41c13eeabda227dde4861f319a3331890356277d21",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-00425060.asm",
+          "assembly_sha256": "b2248905e643e793f329b3669777d3c7a2ccb9da9deba36551403cb8655e164c"
         },
         {
           "start": "004251f0",
@@ -995,6 +1009,14 @@
       "Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.",
       "Half-width reload and live extended half-height have distinct spill schedules."
     ]
+  },
+  "retained_type8_handler": {
+    "span": "00425060..004251ef",
+    "bytes": 399,
+    "sha256": "87c257d62a2e3741a30ece41c13eeabda227dde4861f319a3331890356277d21",
+    "bytes_identical": true,
+    "boundary": "Complete handler through RET004251ee; selected by mode8 in paired dispatcher mapping.",
+    "limits": "Instruction equality does not prove equal context state, transitive helpers or ambient x87 state; no missing source capture inferred from the mode label."
   },
   "indexed_slot_initializer_candidate": {
     "paired_identical_spans": [

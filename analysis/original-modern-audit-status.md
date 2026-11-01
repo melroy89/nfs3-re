@@ -116,7 +116,7 @@ The catalog currently labels150 entries vendor-only,39 bounded static,98 partial
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
-| 1 | MP160-003 horizon/camera shift | [Projection report](original-modern-projection.md) now covers ordinary/weather dispatch and direct centre writers; recover conditional type8 source initialization or qualify its admission, then camera orientation/output | Executable inspection can advance this; visible horizon still needs rendering evidence |
+| 1 | MP160-003 horizon/camera shift | [Projection report](original-modern-projection.md) now establishes conditional CCM-to-type8 publication, preparation/render/finalizer ordering and bounded non-producer searches; recover computed/bulk source writes or capture lifetime, then qualify camera orientation/output | Executable inspection can advance this; visible horizon still needs rendering evidence |
 | 2 | MP160-006 remaining output coverage | [Map-marker extent-to-quad chain](original-modern-map-marker-scaling.md) now established; qualify other marker styles, lifecycle and actual rendered size separately | Static source/consumer gap closed; visual scope remains unverified |
 | 3 | MP161-001/002 renderer-specific texel alignment/fog | Use [packaged DLL inventory](original-modern-dll-candidates.md) and authenticated matching older DLLs for component comparisons | EXE changes or DLL names alone cannot establish these DLL implementations/history |
 | 4 | Historical regressions such as MP153-008 or the specific MP152-001 improvement | Obtain the named intermediate-release pairs; reuse [language fallback](original-modern-language-table.md) and [rear-view mechanisms](original-modern-track-detail.md) as final-state context | Original versus final cannot isolate an intermediate regression/fix |
@@ -178,3 +178,7 @@ The bounded increment establishes those mechanisms and leaves actual cleanup fai
 ## DX7 sorted-list claim linkage
 
 MP161-004 now has partial evidence for its bundled sorted-list subclaim: unsigned width/height/depth binary insertion, full duplicate-record replacement and new-key capacity99. The [driver report](original-modern-dx7-mode-admission.md#sorted-list-subclaim-in-mp161-004) distinguishes this from the still-unverified unsupported640×480×16 policy and release-specific history. Current labels:150 vendor-only,39 bounded static,98 partial,3 unresolved.
+
+## Resumed projection boundary review
+
+The complete399-byte type8 handler `00425060..004251ef` is now asserted identical across the pinned EXEs. This narrows local change attribution to the already documented finalizer and surrounding dependencies; unchanged handler instructions do not prove identical context, x87 state or callees. The priority queue has been corrected to reuse the conditional selection and local stage-order evidence rather than investigate those again. Projection source capture/lifetime remains unresolved; no runtime, export, compilation or Ghidra changes were made.

@@ -8,7 +8,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "d31f25ee1e2654dba2ed49c3b6c99ae58f77ae84b7cef18c1b96788b909bacff",
+      "sha256": "e227f8c9fc8be1ed35a4da614c29a576e5f86e4ac8962af958b16dd3bba29980",
       "relative_links": 45
     },
     {
@@ -343,8 +343,8 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "4cf50d4eb79f2aad67472bed0f5ee84e6dbb4a5fed5a83342225ee72d7d0f31c",
-      "relative_links": 18
+      "sha256": "a8f21f6b4c3dfdd65fecdd4d7408442765dee0049b05364e7402ca8e105bd444",
+      "relative_links": 19
     },
     {
       "path": "analysis/original-modern-race-initialization.md",
@@ -588,7 +588,7 @@
     }
   ],
   "file_count": 117,
-  "relative_link_count": 1815,
+  "relative_link_count": 1816,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

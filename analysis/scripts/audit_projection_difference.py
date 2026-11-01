@@ -24,7 +24,7 @@ def main():
         pe=pefile.PE(data=raw);rows=[]
         for start,end in SPANS[label]+[(0x4213b0,0x421441),(0x41bc90,0x41bf26),
                                       (0x422cf0,0x422d9b),(0x422da2,0x422de5),(0x42383f,0x42386b),
-                                      (0x4238b0,0x423959),(0x4251f0,0x425232),
+                                      (0x4238b0,0x423959),(0x425060,0x4251ef),(0x4251f0,0x425232),
                                       (0x421380,0x4213a1),(0x421450,0x421471),(0x4bc470,0x4bc529)]:
             out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
@@ -124,6 +124,12 @@ def main():
         'local_projection':'0041be02..0041be39: scale*inverseZ*component + centre',
         'limits':['Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.','Half-width reload and live extended half-height have distinct spill schedules.']}
     modern = images[1]
+    handler=images[0].get_data(0x25060,0x18f)
+    assert handler==images[1].get_data(0x25060,0x18f)
+    result['retained_type8_handler']={'span':'00425060..004251ef','bytes':399,
+        'sha256':hashlib.sha256(handler).hexdigest(),'bytes_identical':True,
+        'boundary':'Complete handler through RET004251ee; selected by mode8 in paired dispatcher mapping.',
+        'limits':'Instruction equality does not prove equal context state, transitive helpers or ambient x87 state; no missing source capture inferred from the mode label.'}
     init_spans=[]
     for start,end in ((0x422cf0,0x422d9b),(0x422da2,0x422de5),(0x42383f,0x42386b)):
         blob=images[0].get_data(start-0x400000,end-start)
