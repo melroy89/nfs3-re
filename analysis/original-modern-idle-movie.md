@@ -114,3 +114,29 @@ The audit now binds the exact README line315 and its hash to **MP140-031**. Mode
 Both versions’ playback wrapper`004960e0` already checks existence before preparing playback. The Modern difference must therefore be described as an additional **selection/admission policy**, not invention of all missing-file checking. A file removed after the startup scan can leave a stale availability bit; the retained wrapper guard is then separate from mask filtering. A file added later can remain unselected until an independently established rebuild. Current evidence does not enumerate every mask rebuild or movie request path, nor prove decoder/render success.
 
 The catalog label is now Partial. Final-pair code supports this bounded mechanism but does not date it to v1.4.0 or verify every interpretation of “doesn’t try to play.” No files were deleted, movies played, or instruction probes run.
+
+## Historical movie-option spelling and the early title gate
+
+**Confidence: verified static four-build history. Work status: done for the key/switch transition and early title gate; partial for MP100-024.** The [historical audit](scripts/audit_movie_option_history.py) pins author-hosted1.1.0/1.2.0/1.5.1/1.5.2 archives and EXE hashes. Its [manifest](evidence/audits/movie-option-history.json) retains raw instruction spans, actual profile-import identities, key and switch pointers, title setup prefixes and later availability builders. No INI, environment, command line, movie or target instructions were executed.
+
+| Build | INI key actually read | Switch-table slot11 | Local setting mechanism |
+|---|---|---|---|
+|1.1.0 |`NoMovie` at`0053ee74` |`-nomovie` | Default0 passed to integer profile reader; nonzero ORs byte`[0055eb2c+1]` with8 |
+|1.2.0 |`NoMovie` at`0053ee58` |`-nomovie` | Same flag write; reader now first checks environment fallback |
+|1.5.1 |`NoMovie` at`0053ed24` |`-nomovie` | Default0; nonzero BTS bit11 of`0055eb2c` |
+|1.5.2 |`NoMovies` at`0053ed24` |`-nomovies` | Same24-byte setting branch as1.5.1; strings change |
+| Official final |`NoMovies` |`-nomovies` | Existing final-pair audit traces bit11→availability mask→title/idle admission |
+
+The1.1.0/1.2.0 caller explicitly sets EDI=`0055eb2c` and section EBP=`NFS3`, then loads the key, supplies default EDX0 and calls`004fb6f0`. Its normal-return nonzero branch ORs byte+1 with mask08h, exactly DWORD bit11. The reader invokes the PE-resolved **GetPrivateProfileIntA**; its IAT address varies between the early and later historical builds and is recorded per version. This is a key-read-to-state chain, not inference from the string alone.
+
+Both early frontend setup prefixes test that same byte/bit at`0047313d` and jump past the `titleav.mad` request at`00473159` when it is set. The supplied-original setup already checks this bit from its original command-line path; Modern adds the INI-derived producer. Therefore the supported early change is **an additional configuration source feeding a retained title-disable gate**, not invention of all movie suppression. The1.0.0 artifact and every possible intro/movie request route remain uninspected here, so the vendor’s “all intro movies” claim is partial.
+
+At1.5.1→1.5.2, the **complete24-byte INI branch `004b55b6..004b55ce` is identical**, while the pointed string grows from singular to plural. The **complete108-byte availability builder `004a2f90..004a2ffc` also matches**. Thus this pair supplies an actual option-spelling transition with retained disable-bit/mask logic. The switch-table entry independently changes in the same pair; that observation does not exclude every alternate parser or external launch wrapper.
+
+### Compatibility and reconstruction consequences
+
+The captured1.5.2 key-read branch performs no singular-key retry. Its integer reader uses the selected key for the existing environment fallback and profile API. Combined with the separately verified uppercase `SECTION_KEY` constructor, the singular and plural branches construct **`NFS3_NOMOVIE`** and **`NFS3_NOMOVIES`** respectively. This is a static name derivation; no process environment was queried or changed.
+
+The final README’s v1.2.0 example uses `NFS3_NOMOVIE`, matching the historical singular key. It must not be presented as proof that final1.6.1 queries that exact spelling: the final selected reader receives `NoMovies`. No alias between those names is established by this path. Other flag producers remain possible, so an apparent runtime movie-disable outcome alone would not establish which key was consumed.
+
+All inspected setting branches are **set-only locally**: a nonzero result sets bit11; zero skips the write instead of explicitly clearing an existing bit. Preserve that accumulation behaviour and the chosen version’s spellings in reconstruction. Replacing the whole flag DWORD, clearing the bit on zero, inventing a legacy-name alias or treating the playback wrapper as the sole disable gate would change the observed contracts. Actual profile files, initialization/flag lifetime, movie presence, decoder results and1.0.0 introduction remain separate evidence requirements.

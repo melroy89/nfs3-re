@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **119 vendor-only,50 bounded-static,119 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **118 vendor-only,50 bounded-static,120 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -617,3 +617,7 @@ The [default-policy follow-up](original-modern-resolution-defaults.md#named-grap
 ## Audio Cancel volume-source correction
 
 The [paired Cancel follow-up](original-modern-frontend-sound.md#audio-cancel-restores-the-block-without-the-original-cache-overwrite) verifies identical64-byte snapshot instructions and matching audio callbacks, then isolates original’s conditional overwrite from separately saved caches after block restoration. Final retains the configured Engine Volume/Sound Effects block values locally. MP100-027 advances vendor-only→partial; counts119/50/119/2. Actual flag/cache values, audible maximum-volume behavior, later application and1.0.0 introduction remain unverified; no target execution or database mutation.
+
+## Historical movie-disable key and switch spelling
+
+The [movie-option history](original-modern-idle-movie.md#historical-movie-option-spelling-and-the-early-title-gate) traces early NoMovie INI reads to the retained title-disable bit and verifies1.5.1→1.5.2 renames both INI key and switch to NoMovies/-nomovies with identical setting-branch/mask-builder code. Final’s environment name is plural; the README’s singular example is historical, not a proven alias. MP100-024 advances vendor-only→partial; counts118/50/120/2. All intro paths,1.0.0 introduction, actual configuration and playback remain unverified; no target execution or database mutation.

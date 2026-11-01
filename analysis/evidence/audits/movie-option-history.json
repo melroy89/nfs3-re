@@ -1,0 +1,205 @@
+{
+  "kind": "static-movie-disable-key-history",
+  "versions": {
+    "1.1.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+      "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+      "member": "nfs3.exe",
+      "sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "key_pointer": "0053ee74",
+      "key": "NoMovie",
+      "switch_slot": 11,
+      "switch_pointer": "0053d06e",
+      "switch": "-nomovie",
+      "reader_profile_import": "00534674 GetPrivateProfileIntA",
+      "environment_fallback_in_reader": false,
+      "spans": [
+        {
+          "start": "004b62c4",
+          "end_exclusive": "004b62f1",
+          "bytes": 45,
+          "sha256": "6a1e249436b340d036832183f521d5cd09ffd0ad0ca727a5c8588f60f3b1a911",
+          "hex": "555351525657e8e5f2ffffbd28ee5300bf2ceb5500bb74ee530031d2e80b54040085c074088a47010c08884701",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.1.0-004b62c4.asm",
+          "assembly_sha256": "7cdd4cc75f849cac2c8823328aafd428bc060dc1af7e99e47d2e38e62b2548f7"
+        },
+        {
+          "start": "004fb6f0",
+          "end_exclusive": "004fb703",
+          "bytes": 19,
+          "sha256": "5b6d05bf7919dd62ac55e3521ab991a171b115bd9b75cdf6d268035838b6edef",
+          "hex": "5152683c267a00525355ff15744653005a59c3",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.1.0-004fb6f0.asm",
+          "assembly_sha256": "d07b704fb350154c7e2881f7449203d9fd1b93571a56a579d7fea687414ce36e"
+        },
+        {
+          "start": "004730d0",
+          "end_exclusive": "00473169",
+          "bytes": 153,
+          "sha256": "53e0f704b8e80fa7d6806c72836edfa2d60cc3ba147b96ffc2bc79ed19d407e9",
+          "hex": "53515256575589e583ec248d7ddcbec0214700a5a5a58d7de8becc214700a5a5a58d7df4bed8214700bab0bf490031dba5a5a5e88882fcff89156c445600891dfcd46f00891d00d56f00891d28945500891d2c945500e8e5feffff833d54bb6f00007535833d8ce8550000752cf6052deb5500087523833d3cb0550000741ab848b05300bf01000000e8822f0200e87d300200893d4ce55500",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.1.0-004730d0.asm",
+          "assembly_sha256": "8427eed1355eed467759ac7589f455c2ae83d648b672827082f5fb50bca5f37f"
+        }
+      ]
+    },
+    "1.2.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z",
+      "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
+      "member": "nfs3.exe",
+      "sha256": "4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003",
+      "key_pointer": "0053ee58",
+      "key": "NoMovie",
+      "switch_slot": 11,
+      "switch_pointer": "0053d050",
+      "switch": "-nomovie",
+      "reader_profile_import": "00534674 GetPrivateProfileIntA",
+      "environment_fallback_in_reader": true,
+      "spans": [
+        {
+          "start": "004b62c4",
+          "end_exclusive": "004b62f6",
+          "bytes": 50,
+          "sha256": "b011c5cab9fef44a029a90691656d68394c66100d0c19226dd988516ef30e292",
+          "hex": "555351525657e8e5f2ffffe804f3ffffbdf8ed5300bf2ceb5500bb58ee530031d2e80654040085c074088a47010c08884701",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.2.0-004b62c4.asm",
+          "assembly_sha256": "c572e46d5b1932b497fcf0e4771604889e6245fa4ac580e84315ea040b6f2f76"
+        },
+        {
+          "start": "004fb6f0",
+          "end_exclusive": "004fb713",
+          "bytes": 35,
+          "sha256": "df5360dd9a606bb621ba154ee2dfcc88b76adc9ba1bbbb69711025f6a380b2de",
+          "hex": "5152e83d00000085c07407e8304dffff89c2683c267a00525355ff15744653005a59c3",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.2.0-004fb6f0.asm",
+          "assembly_sha256": "59e98b071af693b0d2f85c4ed73e1459a7fbb1c9d3a89d0880947e2f4fe60f5b"
+        },
+        {
+          "start": "004730d0",
+          "end_exclusive": "00473169",
+          "bytes": 153,
+          "sha256": "53e0f704b8e80fa7d6806c72836edfa2d60cc3ba147b96ffc2bc79ed19d407e9",
+          "hex": "53515256575589e583ec248d7ddcbec0214700a5a5a58d7de8becc214700a5a5a58d7df4bed8214700bab0bf490031dba5a5a5e88882fcff89156c445600891dfcd46f00891d00d56f00891d28945500891d2c945500e8e5feffff833d54bb6f00007535833d8ce8550000752cf6052deb5500087523833d3cb0550000741ab848b05300bf01000000e8822f0200e87d300200893d4ce55500",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.2.0-004730d0.asm",
+          "assembly_sha256": "8427eed1355eed467759ac7589f455c2ae83d648b672827082f5fb50bca5f37f"
+        }
+      ]
+    },
+    "1.5.1": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.1.7z",
+      "archive_sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de",
+      "member": "nfs3.exe",
+      "sha256": "4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17",
+      "key_pointer": "0053ed24",
+      "key": "NoMovie",
+      "switch_slot": 11,
+      "switch_pointer": "0055fd60",
+      "switch": "-nomovie",
+      "reader_profile_import": "0053466c GetPrivateProfileIntA",
+      "environment_fallback_in_reader": true,
+      "spans": [
+        {
+          "start": "004b55b6",
+          "end_exclusive": "004b55ce",
+          "bytes": 24,
+          "sha256": "3a9a063675c153b5474097b898a272ea46fd1f7b4752cf1ca4908a96c1e89e8e",
+          "hex": "bb24ed530031d2e82e61040085c074080fba2d2ceb55000b",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.5.1-004b55b6.asm",
+          "assembly_sha256": "85cf51b103e979a51cc7ed4bd25b337a0d2c643a3934a8a63f7bc794224c4a17"
+        },
+        {
+          "start": "004fb6f0",
+          "end_exclusive": "004fb713",
+          "bytes": 35,
+          "sha256": "706bcbc1b7a532690642e26107cc8d3cd83cd30b28f63af64acc0443b15dfa7b",
+          "hex": "5152e83d00000085c07407e8304dffff89c2683c267a00525355ff156c4653005a59c3",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.5.1-004fb6f0.asm",
+          "assembly_sha256": "19f90a6ab83c363e409f0010917c323c3542b5a4ed4c783bd7a7c5c522a598ae"
+        },
+        {
+          "start": "004730d0",
+          "end_exclusive": "00473169",
+          "bytes": 153,
+          "sha256": "5a0d1221e8c3b0314054d2cdc3c98edf43d679fcfdae12ebc27763421feb55ec",
+          "hex": "53515256575589e583ec248d7ddcbec0214700a5a5a58d7de8becc214700a5a5a58d7df4bed8214700bab0bf490031dba5a5a5e88882fcff89156c445600891dfcd46f00891d00d56f00891d28945500891d2c945500891d8ce85500833d3cb05500007418f60568277a0001740fb8acbe5300e8982f0200e893300200e8cefeffff833d3cb0550000743fe860feffffeb3890909090909090",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.5.1-004730d0.asm",
+          "assembly_sha256": "8ae08dca825d2df634e46e150dcd1bce40a899cf2579c7be4bef34a14cc7ee63"
+        },
+        {
+          "start": "004a2f90",
+          "end_exclusive": "004a2ffc",
+          "bytes": 108,
+          "sha256": "4671b374cb251a2747714423bae0a38d4a9a76f4f3b6c335ee1b737cc492da2c",
+          "hex": "515657c70568277a00000000000fba252ceb55000b724cb8b42c7a00e8bb61050085c0743e81ec0401000031c989e7beb42c7a00e8d36305008b348df0614900e8c763050089e0e81062050085c074070fab0d68277a004183f90472d081c404010000a168277a005f5e59c3",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.5.1-004a2f90.asm",
+          "assembly_sha256": "d204d6cd1c04cbbc2004258c497d3c05e6f03d26a566cbe5b6f2e9af7e06f78a"
+        }
+      ]
+    },
+    "1.5.2": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.2.7z",
+      "archive_sha256": "23830061e5ed489900b03c98d81727d951c59e9247d7006803460d38ee9a34cd",
+      "member": "nfs3.exe",
+      "sha256": "d532b0252610d9de2e826efc399d4d733d84d4758e47b5fadc94bf5c1d4449bb",
+      "key_pointer": "0053ed24",
+      "key": "NoMovies",
+      "switch_slot": 11,
+      "switch_pointer": "0055fd60",
+      "switch": "-nomovies",
+      "reader_profile_import": "0053466c GetPrivateProfileIntA",
+      "environment_fallback_in_reader": true,
+      "spans": [
+        {
+          "start": "004b55b6",
+          "end_exclusive": "004b55ce",
+          "bytes": 24,
+          "sha256": "3a9a063675c153b5474097b898a272ea46fd1f7b4752cf1ca4908a96c1e89e8e",
+          "hex": "bb24ed530031d2e82e61040085c074080fba2d2ceb55000b",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.5.2-004b55b6.asm",
+          "assembly_sha256": "85cf51b103e979a51cc7ed4bd25b337a0d2c643a3934a8a63f7bc794224c4a17"
+        },
+        {
+          "start": "004fb6f0",
+          "end_exclusive": "004fb713",
+          "bytes": 35,
+          "sha256": "706bcbc1b7a532690642e26107cc8d3cd83cd30b28f63af64acc0443b15dfa7b",
+          "hex": "5152e83d00000085c07407e8304dffff89c2683c267a00525355ff156c4653005a59c3",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.5.2-004fb6f0.asm",
+          "assembly_sha256": "19f90a6ab83c363e409f0010917c323c3542b5a4ed4c783bd7a7c5c522a598ae"
+        },
+        {
+          "start": "004730d0",
+          "end_exclusive": "00473169",
+          "bytes": 153,
+          "sha256": "5a0d1221e8c3b0314054d2cdc3c98edf43d679fcfdae12ebc27763421feb55ec",
+          "hex": "53515256575589e583ec248d7ddcbec0214700a5a5a58d7de8becc214700a5a5a58d7df4bed8214700bab0bf490031dba5a5a5e88882fcff89156c445600891dfcd46f00891d00d56f00891d28945500891d2c945500891d8ce85500833d3cb05500007418f60568277a0001740fb8acbe5300e8982f0200e893300200e8cefeffff833d3cb0550000743fe860feffffeb3890909090909090",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.5.2-004730d0.asm",
+          "assembly_sha256": "8ae08dca825d2df634e46e150dcd1bce40a899cf2579c7be4bef34a14cc7ee63"
+        },
+        {
+          "start": "004a2f90",
+          "end_exclusive": "004a2ffc",
+          "bytes": 108,
+          "sha256": "4671b374cb251a2747714423bae0a38d4a9a76f4f3b6c335ee1b737cc492da2c",
+          "hex": "515657c70568277a00000000000fba252ceb55000b724cb8b42c7a00e8bb61050085c0743e81ec0401000031c989e7beb42c7a00e8d36305008b348df0614900e8c763050089e0e81062050085c074070fab0d68277a004183f90472d081c404010000a168277a005f5e59c3",
+          "assembly": "analysis/captures/modern-differences/movie-option-history/1.5.2-004a2f90.asm",
+          "assembly_sha256": "d204d6cd1c04cbbc2004258c497d3c05e6f03d26a566cbe5b6f2e9af7e06f78a"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No INI, environment, command-line, movie, API or target execution.",
+    "1.0.0 artifact not inspected;1.1.0 is retained early evidence, not proof of introduction.",
+    "Selected key read and switch slot do not exclude every alternative writer/parser or external wrapper.",
+    "Title-request suppression does not establish every possible intro/movie call path or successful playback."
+  ],
+  "checks": {
+    "151_152_movie_setting_branch_identical": true,
+    "151_152_complete_mask_builder_identical": true,
+    "rename": "Both INI key NoMovie->NoMovies and switch slot11 -nomovie->-nomovies at1.5.1/1.5.2.",
+    "early_title_gate": "1.1.0/1.2.0 setup tests byte0055eb2d mask08h = DWORD0055eb2c bit11 before title request.",
+    "set_only": "Nonzero setting sets bit11; zero path does not explicitly clear it.",
+    "fallback_scope": "No legacy singular-key retry in the captured1.5.2 setting branch; not a whole-program alias exclusion."
+  }
+}

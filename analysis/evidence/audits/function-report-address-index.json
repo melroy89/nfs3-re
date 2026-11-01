@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "69b9643827e085bfc4e7fa5e184b5c577b70e530999ce81a35fc7bffcb3dc676"
+      "sha256": "12406b93864c72ac1821c782613eb735583983a26d6df49b23f30454316d03e4"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -57,7 +57,7 @@
     },
     {
       "path": "analysis/original-modern-command-line.md",
-      "sha256": "fab0fb35ffd4f7861057d94694a326fff7e8991c14edbfc30e8142a31b958ede"
+      "sha256": "9e40c57cc55500cc171a15e2030d54d9af2d0ab22dd87036e2dfebb86d0c91d7"
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
@@ -69,7 +69,7 @@
     },
     {
       "path": "analysis/original-modern-configuration.md",
-      "sha256": "1dcb9af7b334f865dfa0bf366990e45c05dcb566e2bf13c03eb37ccaf901ba79"
+      "sha256": "3d0e1522c3c503a38985996bc8758927d498b51c22ae608cf94965959505c696"
     },
     {
       "path": "analysis/original-modern-control-component-keys.md",
@@ -149,7 +149,7 @@
     },
     {
       "path": "analysis/original-modern-frontend-sound.md",
-      "sha256": "a79385ac36a80d232a791a8e8656be28fb7892faa1c18958784c92768e8b17e7"
+      "sha256": "5a218dd70da61c83bb4cb2fd57fdb721bf135fe3fe39801df12003d385abd22c"
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -181,7 +181,7 @@
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
-      "sha256": "48045ed82c7471117924f604ec4b1256851ff7f25d0518b271e3a3975f980caa"
+      "sha256": "ae207cddc93a9c79bd9cc1e50b2e72380a81cca9dddf9bf136398338c5ba0d0e"
     },
     {
       "path": "analysis/original-modern-input-worker.md",
@@ -5609,8 +5609,10 @@
           "addresses": [
             "004730d0",
             "00473135",
+            "0047313d",
             "00473143",
-            "0047314d"
+            "0047314d",
+            "00473159"
           ]
         },
         {
@@ -8580,7 +8582,9 @@
           "path": "analysis/original-modern-idle-movie.md",
           "entry_mentioned": true,
           "addresses": [
-            "004b5580"
+            "004b5580",
+            "004b55b6",
+            "004b55ce"
           ]
         },
         {
@@ -13599,6 +13603,13 @@
         },
         {
           "path": "analysis/original-modern-heap-initialization.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004fb6f0"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-idle-movie.md",
           "entry_mentioned": true,
           "addresses": [
             "004fb6f0"

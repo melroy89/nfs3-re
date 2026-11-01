@@ -361,7 +361,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f9424` | CopyAsciiToUppercaseBounded | 23 | 22 | [small-conversion-helpers](original-modern-small-conversion-helpers.md) |
 | `004f943c` | CopyUppercaseTextPreservingRegisters | 12 | 11 | [command-line](original-modern-command-line.md) |
 | `004f9448` | AdvanceDestinationPointerToStringTerminator | 9 | 9 | [sound-bank-language](original-modern-sound-bank-language.md) |
-| `004fb6f0` | ReadGameIniInteger | 35 | 33 | [configuration](original-modern-configuration.md), [heap-initialization](original-modern-heap-initialization.md), [renderer-loading](original-modern-renderer-loading.md), [window-geometry](original-modern-window-geometry.md) |
+| `004fb6f0` | ReadGameIniInteger | 35 | 33 | [configuration](original-modern-configuration.md), [heap-initialization](original-modern-heap-initialization.md), [idle-movie](original-modern-idle-movie.md), [renderer-loading](original-modern-renderer-loading.md), [window-geometry](original-modern-window-geometry.md) |
 | `004fb714` | ReadGameIniString | 32 | 32 | [configuration](original-modern-configuration.md), [language-table](original-modern-language-table.md), [registry](original-modern-registry.md) |
 | `004fb734` | LookupIniEnvironmentOverride | 54 | 53 | [configuration](original-modern-configuration.md) |
 | `00517620` | InitializeRasterDisplayModeAndSurfaces | 351 | 146 | [glide-reference-identity](original-modern-glide-reference-identity.md), [mode-selection](original-modern-mode-selection.md), [renderer-initialization](original-modern-renderer-initialization.md), [renderer-lifecycle](original-modern-renderer-lifecycle.md), [resolution-defaults](original-modern-resolution-defaults.md) |

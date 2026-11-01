@@ -610,7 +610,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **119 Claimed, 50 Static, 119 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **118 Claimed, 50 Static, 120 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -923,7 +923,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-021 | The game automatically binds own process to one core for avoiding hang, so there is no more reasons to install any SDB compatibility files to run this game. This behaviour might be disabled, see SingleProcAffinity setting in ini file. | Unresolved |
 | MP100-022 | The game doesn't require file install.win which was created by NFS3 installation utility. All settings which were in this file were moved to ini file (Language and RemoteOnly options). | Claimed |
 | MP100-023 | You can choose thrash video driver from ini file, simply set VideoDriver setting to D3D, Voodoo2, or SoftTri. You can set device number in VideoDeviceId setting (but it affects only D3D mode, as in original version of NFS3). | Claimed |
-| MP100-024 | You can disable all intro movies by NoMovie setting in ini file. | Claimed |
+| MP100-024 | You can disable all intro movies by NoMovie setting in ini file. | Partial |
 | MP100-025 | Suppressing of displaying Windows Error Reporting dialog on fatal errors is disabled by default. So if something go wrong you will know about it. But you can enable suppressing of error reporting via NoErrorReporting setting in the ini file. | Static |
 | MP100-026 | Internal heap memory limit was extended from 16 to 32 MiB. It have to solve “Out of memory” problem on some rare cases. Also you can control it by OwnHeapLimitMb ini setting (it may be from 16 to 512). | Static |
 | MP100-027 | Bugfix for situation when you are cancelled editing audio setting, Engine Volume wasn't restored and set to maximum value, and Sound Effects also sometimes wasn't restored to original value. | Partial |
@@ -1038,3 +1038,7 @@ The [default-policy follow-up](original-modern-resolution-defaults.md#named-grap
 ## Audio Cancel volume-source correction
 
 The [paired Cancel follow-up](original-modern-frontend-sound.md#audio-cancel-restores-the-block-without-the-original-cache-overwrite) verifies identical64-byte snapshot instructions and matching audio callbacks, then isolates original’s conditional overwrite from separately saved caches after block restoration. Final retains the configured Engine Volume/Sound Effects block values locally. MP100-027 advances vendor-only→partial; counts119/50/119/2. Actual flag/cache values, audible maximum-volume behavior, later application and1.0.0 introduction remain unverified; no target execution or database mutation.
+
+## Historical movie-disable key and switch spelling
+
+The [movie-option history](original-modern-idle-movie.md#historical-movie-option-spelling-and-the-early-title-gate) traces early NoMovie INI reads to the retained title-disable bit and verifies1.5.1→1.5.2 renames both INI key and switch to NoMovies/-nomovies with identical setting-branch/mask-builder code. Final’s environment name is plural; the README’s singular example is historical, not a proven alias. MP100-024 advances vendor-only→partial; counts118/50/120/2. All intro paths,1.0.0 introduction, actual configuration and playback remain unverified; no target execution or database mutation.

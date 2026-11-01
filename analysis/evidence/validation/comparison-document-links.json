@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "903a0e84f3a06d532bf3c44ff9dc171bcc8aec4863eeb77e84b7517a52acdd88",
-      "relative_links": 190
+      "sha256": "12406b93864c72ac1821c782613eb735583983a26d6df49b23f30454316d03e4",
+      "relative_links": 191
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -53,8 +53,8 @@
     },
     {
       "path": "analysis/original-modern-command-line.md",
-      "sha256": "fab0fb35ffd4f7861057d94694a326fff7e8991c14edbfc30e8142a31b958ede",
-      "relative_links": 15
+      "sha256": "9e40c57cc55500cc171a15e2030d54d9af2d0ab22dd87036e2dfebb86d0c91d7",
+      "relative_links": 16
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
@@ -68,8 +68,8 @@
     },
     {
       "path": "analysis/original-modern-configuration.md",
-      "sha256": "1dcb9af7b334f865dfa0bf366990e45c05dcb566e2bf13c03eb37ccaf901ba79",
-      "relative_links": 5
+      "sha256": "3d0e1522c3c503a38985996bc8758927d498b51c22ae608cf94965959505c696",
+      "relative_links": 6
     },
     {
       "path": "analysis/original-modern-control-component-keys.md",
@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "9b5a9421dd818f3c38ffa00cb79a39c431e5ea0a866a247f76105698c61e8600",
-      "relative_links": 225
+      "sha256": "0b53561ebdb4a02d612b1f80136813c132bb03fc14a82ab94f651b705eb7be06",
+      "relative_links": 226
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "cbfefffbe6dbbf4f0251bc279336f61b6b99bba060cd01b8dce63a93d218980f",
-      "relative_links": 730
+      "sha256": "ff0e4ae0e876c9e95a31c2f53ede968435d71507cb7a9156e5a3cf5849df5d2f",
+      "relative_links": 731
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -218,8 +218,8 @@
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
-      "sha256": "48045ed82c7471117924f604ec4b1256851ff7f25d0518b271e3a3975f980caa",
-      "relative_links": 11
+      "sha256": "ae207cddc93a9c79bd9cc1e50b2e72380a81cca9dddf9bf136398338c5ba0d0e",
+      "relative_links": 13
     },
     {
       "path": "analysis/original-modern-initialized-data-index.md",
@@ -648,8 +648,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "336de32b9dc421ac20b86d75a95ecdba1988decfe4f143490103084fccd17e2b",
-      "relative_links": 184
+      "sha256": "0ff8f018a0731b54ec5c569494710a32c061206ec4b57a8fbfd975fb8bd4f998",
+      "relative_links": 185
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -658,7 +658,7 @@
     }
   ],
   "file_count": 131,
-  "relative_link_count": 2451,
+  "relative_link_count": 2459,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

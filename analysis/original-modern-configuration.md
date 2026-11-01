@@ -10,7 +10,7 @@ This read-only comparison covers the official package's game-settings INI reader
 | Official archive `nfs3.exe` (`analysis/captures/modern-differences/upstream/package/nfs3.exe`) | `240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6` |
 | Installed and archive `readme_en.txt` | `02bf4684dce1073b4fe7c00c747f020b43508b0cf1407b5dc3f3b864ea46d81d` |
 
-The two README files are byte-identical. The official README says the patch moved system settings to INI files, and its v1.2.0 release note documents the rule: when an INI setting is absent, check `SECTION_SETTINGNAME` in the environment, then use the default if no environment value exists (example: `NFS3_NOMOVIE`). This documentation agrees with the official executable's call sequence below.
+The two README files are byte-identical. The official README says the patch moved system settings to INI files, and its v1.2.0 release note documents the rule: when an INI setting is absent, check `SECTION_SETTINGNAME` in the environment, then use the default if no environment value exists (example: `NFS3_NOMOVIE`). The precedence agrees with the official executable’s call sequence below. The example uses the historical singular key; the [movie-option history](original-modern-idle-movie.md#historical-movie-option-spelling-and-the-early-title-gate) now verifies that1.5.2 changes it to `NoMovies`, so final’s constructed name is `NFS3_NOMOVIES`. This reader does not establish the two spellings as aliases.
 
 ## Official Modern Patch code path
 

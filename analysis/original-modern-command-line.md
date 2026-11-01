@@ -226,3 +226,7 @@ Original bit20 (`-e3demo`) is then tested independently at `004a3ddf`. Its body 
 If both bits are set, both later bodies execute in order; in particular, `005551a2` is written1 by the msdemo body and then0 by the e3demo body. Stores to different addresses, such as `00554fac` versus `00554fae`, do not overwrite each other. Do not conflate this with the two differing fields of the earlier branches or infer the UI meaning of adjacent WORDs.
 
 Final Modern's complete application body has neither of these exact absolute `TEST BYTE [0055eb2e],20/10` encodings. The earlier part of the original sequence overlaps Modern's new jump table/application entry, so describing the entire later branch as a NOP deletion would be incorrect. The supported comparison is removal of these inspected direct demo gates from the replacement application body, alongside the empty named-switch slots. Other flags, aliases, callbacks and transitive demo policies remain outside this bounded negative search. No game launch or race was executed.
+
+## Movie switch spelling changes at1.5.2
+
+The [four-build option history](original-modern-idle-movie.md#historical-movie-option-spelling-and-the-early-title-gate) verifies switch slot11 changes from`-nomovie` in1.5.1 to`-nomovies` in1.5.2, alongside the INI key change`NoMovie`→`NoMovies`. The captured disable-bit branch and movie-mask builder remain byte-identical across that pair. This dates the observed table spelling; it does not exclude every alternative parser/alias or prove an actual launch option was consumed.
