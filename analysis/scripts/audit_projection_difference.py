@@ -25,7 +25,8 @@ def main():
         for start,end in SPANS[label]+[(0x4213b0,0x421441),(0x41bc90,0x41bf26),
                                       (0x422cf0,0x422d9b),(0x422da2,0x422de5),(0x42383f,0x42386b),
                                       (0x4238b0,0x423959),(0x425060,0x4251ef),(0x4251f0,0x425232),
-                                      (0x421380,0x4213a1),(0x421450,0x421471),(0x4bc470,0x4bc529)]:
+                                      (0x421380,0x4213a1),(0x421450,0x421471),(0x4bc470,0x4bc529),
+                                      (0x4349a0,0x4349c1)]:
             out=capture/f'{label}-{start:08x}.asm'
             out.write_bytes(subprocess.check_output(['objdump','-d','-Mintel',
                 f'--start-address={start}',f'--stop-address={end}',relative],cwd=ROOT))
@@ -124,6 +125,14 @@ def main():
         'local_projection':'0041be02..0041be39: scale*inverseZ*component + centre',
         'limits':['Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.','Half-width reload and live extended half-height have distinct spill schedules.']}
     modern = images[1]
+    parity=images[0].get_data(0x349a0,33)
+    assert parity==images[1].get_data(0x349a0,33)
+    assert parity.hex()=='525589e58b1083fa01750489d0eb0231c08b15c4d46f0031d0a34c4e55005d5ac3'
+    result['interstage_parity_helper']={'span':'004349a0..004349c1','bytes':33,'bytes_identical':True,
+        'sha256':hashlib.sha256(parity).hexdigest(),
+        'effect':'EAX=(contextDWORD0==1 ?1:0) XOR rawDWORD006fd4c4; store00554e4c; EDX/EBP restored.',
+        'source_exclusion':'No calls and only that single absolute data store in complete helper; no projection-source write.',
+        'limits':'Raw XOR does not normalize arbitrary006fd4c4 values to Boolean; whole mirror orientation/output and other intervening callees remain unqualified.'}
     handler=images[0].get_data(0x25060,0x18f)
     assert handler==images[1].get_data(0x25060,0x18f)
     result['retained_type8_handler']={'span':'00425060..004251ef','bytes':399,

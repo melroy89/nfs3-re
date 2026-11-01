@@ -305,3 +305,9 @@ This is a broader but still bounded negative search. It excludes a direct litera
 ## Complete type8 update handler is retained
 
 The resumed audit pins all399 bytes of handler `00425060..004251ef`, through RET at `004251ee`, and asserts original/official-Modern equality. The [paired dispatcher mapping](original-modern-view-offset.md#complete-24-selector-dispatch-mapping) identifies this as selector8's target. Thus the inspected local update body is retained while the finalizer's legacy projection stores and sequencing differ. This is stronger than comparing a few call sites, but not whole-camera equivalence: the handler uses mutable context, other helpers and ambient floating-point state. Its mode label must not be treated as evidence that it captures the four projection-source cells. Required follow-up remains computed/bulk writer and capture-lifetime analysis, followed by finalizer ordering under actual state. No target code was executed.
+
+## Interstage viewport flag helper is not the capture writer
+
+Complete `004349a0..004349c1` (33 bytes) is now pinned and byte-identical in both EXEs. The viewport wrapper calls it at `004bc4ae`, between stage0 and the scene calls. It computes `(context DWORD0 == 1 ? 1 : 0) XOR raw DWORD[006fd4c4]`, stores that result at `00554e4c`, restores EDX/EBP and returns. This is a raw bitwise XOR, not a general Boolean normalization of arbitrary configuration values.
+
+The exact body contains no calls and only this one data store. It therefore cannot capture the missing projection-source values on its ordinary path. This eliminates one concrete intervening callee from the writer search; it does not exclude the larger scene callees or establish every use of the resulting flag. The helper's retained instructions also cannot alone explain a Modern-only mirror-orientation change: input producers and downstream consumers remain relevant. No function was executed.

@@ -131,6 +131,13 @@
           "bytes_sha256": "10935aecdeb3f08d61086a7074ca086077fd62c9bea3f7ca031e49cc699b8991",
           "assembly": "analysis/captures/modern-differences/projection/original-004bc470.asm",
           "assembly_sha256": "434f306d78105a9101b896980dfbad622e00da3ccb4a6c8bb914dfcbb9c6f5cd"
+        },
+        {
+          "start": "004349a0",
+          "end": "004349c1",
+          "bytes_sha256": "f10efc8b13fa2955aca0d2688f3bb4f831372e87ea5c8b8cecf67a2ab3183cb6",
+          "assembly": "analysis/captures/modern-differences/projection/original-004349a0.asm",
+          "assembly_sha256": "b59f781cfbc6be8500b08b3ff8b3189478de1ef7630a46c1d35a0be37561a67f"
         }
       ],
       "view_angle_setting": {
@@ -546,6 +553,13 @@
           "bytes_sha256": "10935aecdeb3f08d61086a7074ca086077fd62c9bea3f7ca031e49cc699b8991",
           "assembly": "analysis/captures/modern-differences/projection/official_modern-004bc470.asm",
           "assembly_sha256": "d81a7ffbade1d5e99370be09b39718734e605c8e4ffe63e62ef35b3bde54f35f"
+        },
+        {
+          "start": "004349a0",
+          "end": "004349c1",
+          "bytes_sha256": "f10efc8b13fa2955aca0d2688f3bb4f831372e87ea5c8b8cecf67a2ab3183cb6",
+          "assembly": "analysis/captures/modern-differences/projection/official_modern-004349a0.asm",
+          "assembly_sha256": "dcdc627f165270471eca1de3c2fc571fe944f5920d7a4dc3e6635b6407850109"
         }
       ],
       "view_angle_setting": {
@@ -1009,6 +1023,15 @@
       "Producer and consumer identity is not equality of upstream dimensions/angles or rendered horizon.",
       "Half-width reload and live extended half-height have distinct spill schedules."
     ]
+  },
+  "interstage_parity_helper": {
+    "span": "004349a0..004349c1",
+    "bytes": 33,
+    "bytes_identical": true,
+    "sha256": "f10efc8b13fa2955aca0d2688f3bb4f831372e87ea5c8b8cecf67a2ab3183cb6",
+    "effect": "EAX=(contextDWORD0==1 ?1:0) XOR rawDWORD006fd4c4; store00554e4c; EDX/EBP restored.",
+    "source_exclusion": "No calls and only that single absolute data store in complete helper; no projection-source write.",
+    "limits": "Raw XOR does not normalize arbitrary006fd4c4 values to Boolean; whole mirror orientation/output and other intervening callees remain unqualified."
   },
   "retained_type8_handler": {
     "span": "00425060..004251ef",
