@@ -38,8 +38,13 @@ def main():
         assert callback.hex()=='837c240400741b538b1d8044560053ff15b84453005b8b442404a380715600c204008b0d8044560051ff15884553008b442404a380715600c20400'
         imports={i.address:i.name for d in exe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
         assert imports[0x5344b8]==b'EnterCriticalSection' and imports[0x534588]==b'LeaveCriticalSection'
+        assert imports[0x534584]==b'InitializeCriticalSection'
+        assert exe.get_data(0xeb325,8).hex()=='532eff1584455300'
+        assert exe.get_data(0x124706,10).hex()=='e8d56bfcffa380445600'
+        assert exe.get_data(0xdf78c,10).hex()=='e84fbb0000a380445600'
         exe_spans=[]
-        for lo,hi in [(0x524550,0x52458b),(0x52471d,0x524740)]:
+        for lo,hi in [(0x524550,0x52458b),(0x52471d,0x524740),
+                      (0x4eb2e0,0x4eb333),(0x4df740,0x4df799),(0x5246d2,0x524712)]:
             block=exe.get_data(lo-0x400000,hi-lo)
             out=capture/f'{version}-exe-{lo:08x}.asm'
             out.write_text('\n'.join(disassemble(block,lo))+'\n')
@@ -92,6 +97,16 @@ def main():
                 if version=='1.5.1': assert pe.get_data(0x36c1,13).hex()=='6a00ff15b4000460e982feffff'
             row['failure_branch_witness_hex']=witness.hex()
             result['drivers'].setdefault(driver,{})[version]=row
+    old_spans=result['archives']['1.5.0']['exe_callback']['spans']
+    new_spans=result['archives']['1.5.1']['exe_callback']['spans']
+    assert [(r['start'],r['bytes_sha256']) for r in old_spans] == [(r['start'],r['bytes_sha256']) for r in new_spans]
+    result['critical_section_setup']={
+        'paired_spans_identical':True,
+        'producer':'004eb2e0 takes poolnode, advances00564a64 via node+18h, zeroes18h bytes, callsInitializeCriticalSection, returnsnode',
+        'failure':'Returns0 if pool remains empty after replenishment',
+        'publishers':['004df78c call then004df791 store00564480','00524706 call then0052470b store00564480'],
+        'raster_admission':'005246d2 checks00564480; null takes producer/publish then rejoins005246db without a new local null test',
+        'limits':'Pool replenishment, initialization exceptions, global lifetime/destruction and aliases not fully qualified'}
     result['finding']='Each inspected nonzero surface-lock-result path adds callback0 before returning through its prior failure continuation; DX5/DX6 use null-guarded register-to-stack adapters.'
     (ROOT/'analysis/evidence/audits/historical-lockwindow-failure.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: two archive hashes, six DLL identities/exports, three changed failure paths and two callback adapters')

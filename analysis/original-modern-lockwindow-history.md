@@ -47,4 +47,22 @@ Complete callback **`00524550..0052458b`** is identical in both historical EXEs.
 
 **Conditional mechanism:** with this block installed, a stable/valid critical-section pointer and ordinary callback return, the pre-lock callback1 enters the section. The new failure callback0 leaves it before the prior failure return. The old inspected failure paths omitted that release request; ordinary unlock callbacks were a different route. This is concrete synchronization evidence, not merely an unnamed notification. Do not describe it as a generic kernel-mutex unlock or claim every possible recursive acquisition is balanced.
 
-**Still pending:** creation/destruction and aliases of `[00564480]`, callback-bank mutation, complete registration dispatch and admission, other lock/unlock/error paths, reentrancy and a real failed-lock/deadlock reproduction. The release note remains **partial** despite the stronger mechanism evidence. No critical section, driver callback, API or game instruction was executed.
+**Still pending at this checkpoint:** complete creation/destruction and aliases of `[00564480]` (selected setup paths are qualified below), callback-bank mutation, complete registration dispatch and admission, other lock/unlock/error paths, reentrancy and a real failed-lock/deadlock reproduction. The release note remains **partial** despite the stronger mechanism evidence. No critical section, driver callback, API or game instruction was executed.
+
+
+## Critical-section setup narrows the pointer-lifetime prerequisite
+
+The audit now captures complete **`004eb2e0..004eb333`** (83-byte pool helper), **`004df740..004df799`** (89-byte initialization entry) and raster admission **`005246d2..00524712`**. Each span is byte-identical in the same-archive1.5.0/1.5.1 EXEs; their hashes are asserted equal. This is retained setup context for the driver fix, not an additional historical change.
+
+The pool helper checks initialization flag`009ef5b8`, calls setup if needed, and obtains a node through free-list head`00564a64`. If needed it calls replenisher`004eb260`. If the head remains null, it returns0. Otherwise it advances the free-list head from node+`18h`, requests zeroing of the first`18h` bytes through`004e070c`, calls imported **InitializeCriticalSection** at`004eb326` with that node pointer, and returns the node. The instruction sequence supplies a24-byte object; this is not a claim that every pool field or replenisher contract is reconstructed.
+
+Two verified publication paths are:
+
+| Caller | Observed publication / admission |
+|---|---|
+| `004df740` initialization entry | Sets its initialization flag1, calls producer at`004df78c`, stores returned EAX to`00564480` at`004df791` |
+| Raster startup | At`005246d2`, existing nonnull pointer bypasses creation; null reaches call`00524706`, then store`0052470b`, and jumps back to`005246db` |
+
+The raster path does **not** locally retest the returned pointer after publication. The callback likewise passes the global to Enter/Leave without a null check. Thus this setup trace narrows ownership evidence but does not justify assuming allocation/initialization always succeeds. The pool helper's failure return, initialization exceptions, concurrent first use, other publishers, object destruction and pointer mutation require their own qualification.
+
+For the inspected valid initialized path, the added failure callback0 therefore has a real critical-section release consumer. It still does not prove the section is dedicated solely to renderer locking: the global has additional consumers outside these captured paths. Full shared-lock ordering, recursion and a live deadlock reproduction remain unresolved. No object was allocated, initialized, entered, left or deleted during this analysis.

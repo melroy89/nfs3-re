@@ -491,3 +491,8 @@ The [three-driver comparison](original-modern-lockwindow-history.md) verifies re
 ## Historical failure callback identity: critical-section enter/leave
 
 The [EXE/table follow-up](original-modern-lockwindow-history.md#exe-callback-table-identifies-critical-section-enter-and-leave) verifies same-archive EXEs, eight-pointer callback blocks, the+14h target and complete59-byte RET4 callback. Nonzero calls EnterCriticalSection, zero LeaveCriticalSection, then publishes the raw argument. Under installed-block/valid-stable-pointer assumptions, the added driver failure callback0 supplies the missing release request. Full registration/lifetime and runtime failure effects remain pending; MP151-004 remains partial and counts unchanged.
+
+
+## Historical lock callback setup and failure prerequisite
+
+The [setup follow-up](original-modern-lockwindow-history.md#critical-section-setup-narrows-the-pointer-lifetime-prerequisite) verifies three paired-identical EXE spans: pool-node InitializeCriticalSection producer, general publisher and raster null-check/create/publish route. Producer failure can return0, and the captured raster route does not retest after publication. Setup is therefore evidenced without assuming universal validity; replenishment, destruction, other publishers and concurrency remain pending. MP151-004 remains partial; counts unchanged.

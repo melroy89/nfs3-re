@@ -36,6 +36,27 @@
             "bytes_sha256": "263563bef0ec2bf6f070f94fc2a58d7575ddb5dc3f69baf513954bfd0a0000f0",
             "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.0-exe-0052471d.asm",
             "assembly_sha256": "b0d24ccdfb8fecf1b7a35fefaa432f45803868887d523ac93fdd849b1b9bd38e"
+          },
+          {
+            "start": "004eb2e0",
+            "end_exclusive": "004eb333",
+            "bytes_sha256": "8ff2268d83dc2bb1270c895bd9f0da5a664ddb16f717504bffa379331f4b9302",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.0-exe-004eb2e0.asm",
+            "assembly_sha256": "b404dfa78cc078467e8571f0d9942208c55c90a99bbd624c12555606097196a4"
+          },
+          {
+            "start": "004df740",
+            "end_exclusive": "004df799",
+            "bytes_sha256": "10417ac4b70666df2690e328053def75f1ca4f92c6b416ff4ebaddff34a3b548",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.0-exe-004df740.asm",
+            "assembly_sha256": "d5c1deadefe91d941f36299f4468fb37c2ea55d7c7549e16b6490b84a4eb6d5e"
+          },
+          {
+            "start": "005246d2",
+            "end_exclusive": "00524712",
+            "bytes_sha256": "95aab87bc6375816daff7b364c9722f1a02634b348ac7316c11b5c612e061a92",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.0-exe-005246d2.asm",
+            "assembly_sha256": "39275cf9abe5fc140b56bdb7f1ae278a30c45468058618ad37ccf4033ac07132"
           }
         ]
       }
@@ -75,6 +96,27 @@
             "bytes_sha256": "263563bef0ec2bf6f070f94fc2a58d7575ddb5dc3f69baf513954bfd0a0000f0",
             "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-exe-0052471d.asm",
             "assembly_sha256": "b0d24ccdfb8fecf1b7a35fefaa432f45803868887d523ac93fdd849b1b9bd38e"
+          },
+          {
+            "start": "004eb2e0",
+            "end_exclusive": "004eb333",
+            "bytes_sha256": "8ff2268d83dc2bb1270c895bd9f0da5a664ddb16f717504bffa379331f4b9302",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-exe-004eb2e0.asm",
+            "assembly_sha256": "b404dfa78cc078467e8571f0d9942208c55c90a99bbd624c12555606097196a4"
+          },
+          {
+            "start": "004df740",
+            "end_exclusive": "004df799",
+            "bytes_sha256": "10417ac4b70666df2690e328053def75f1ca4f92c6b416ff4ebaddff34a3b548",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-exe-004df740.asm",
+            "assembly_sha256": "d5c1deadefe91d941f36299f4468fb37c2ea55d7c7549e16b6490b84a4eb6d5e"
+          },
+          {
+            "start": "005246d2",
+            "end_exclusive": "00524712",
+            "bytes_sha256": "95aab87bc6375816daff7b364c9722f1a02634b348ac7316c11b5c612e061a92",
+            "assembly": "analysis/captures/modern-differences/lockwindow-history/1.5.1-exe-005246d2.asm",
+            "assembly_sha256": "39275cf9abe5fc140b56bdb7f1ae278a30c45468058618ad37ccf4033ac07132"
           }
         ]
       }
@@ -230,5 +272,16 @@
     "No DLL, surface lock, callback or failure injection executed.",
     "Registration admission, complete state lifetime and actual success/failure outcomes remain unqualified."
   ],
+  "critical_section_setup": {
+    "paired_spans_identical": true,
+    "producer": "004eb2e0 takes poolnode, advances00564a64 via node+18h, zeroes18h bytes, callsInitializeCriticalSection, returnsnode",
+    "failure": "Returns0 if pool remains empty after replenishment",
+    "publishers": [
+      "004df78c call then004df791 store00564480",
+      "00524706 call then0052470b store00564480"
+    ],
+    "raster_admission": "005246d2 checks00564480; null takes producer/publish then rejoins005246db without a new local null test",
+    "limits": "Pool replenishment, initialization exceptions, global lifetime/destruction and aliases not fully qualified"
+  },
   "finding": "Each inspected nonzero surface-lock-result path adds callback0 before returning through its prior failure continuation; DX5/DX6 use null-guarded register-to-stack adapters."
 }
