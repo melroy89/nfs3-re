@@ -547,3 +547,8 @@ The [config follow-up](original-modern-frame-setting.md#historical-config-versio
 ## Historical nGlide regression: package/header boundary
 
 The [component audit](original-modern-nglide-window-history.md) verifies1.5.2/1.5.3 nGlide provider/INI equality and exactly seven adapter-file changes, confined to checksum/import-directory size/IAT-directory headers. File-backed sections/layout are identical; BSS is not read as file-offset0 payload. Cause/fix remains unresolved, with EXE paths and metadata loader behaviour separate candidates. MP153-007 advances to partial package evidence; current counts128/47/113/2. No target execution.
+
+
+## Historical nGlide EXE-side mode-publication candidate
+
+The [historical follow-up](original-modern-nglide-window-history.md#exe-mode-publication-changes-to-selected-dimension-centring) captures complete239/223-byte mode bodies and verifies three identical sizing helpers.1.5.3 removes the flag-gated desktop-size call and uses selected-dimension centring at the publication point. This supplies a concrete candidate mechanism without proving nGlide/windowed admission, sole causality or runtime recovery. MP153-007 remains partial; counts unchanged.

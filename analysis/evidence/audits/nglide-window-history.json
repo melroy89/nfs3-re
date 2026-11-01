@@ -20,7 +20,42 @@
           "bytes": 69120,
           "sha256": "bea4abc9ff9b3e54ed304d2fd05d6be7005e1933b209e5a3975da4f897b67fab"
         }
-      ]
+      ],
+      "exe": {
+        "member": "nfs3.exe",
+        "sha256": "d532b0252610d9de2e826efc399d4d733d84d4758e47b5fadc94bf5c1d4449bb",
+        "spans": [
+          {
+            "start": "004beeb0",
+            "end_exclusive": "004bef9f",
+            "bytes_sha256": "c4098b78e087db97e57e99add2800aa23f90f55f8cf3e9bb15d17d22a70cbce0",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.2-004beeb0.asm",
+            "assembly_sha256": "8c78e192575fdd5da9a7e59f7c568fb01a8c3fb9bb3c77065bccd91645ed90f6"
+          },
+          {
+            "start": "004cdb10",
+            "end_exclusive": "004cdbcd",
+            "bytes_sha256": "0b60bde4d59033a062c1d7ab5382d52d602e0509a9f4b62a747677d66b22d861",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.2-004cdb10.asm",
+            "assembly_sha256": "fc9e3edd3119dcd1d4e1229479740cab668c6634351ed8c07ccdccec0e3ea62d"
+          },
+          {
+            "start": "004cdbd0",
+            "end_exclusive": "004cdc14",
+            "bytes_sha256": "7f7ee657b8edb6051fd1de1d2d416c643c81040956a620e7b6aeb738f2442289",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.2-004cdbd0.asm",
+            "assembly_sha256": "ea2da37928242ebe123a1d68fe5e93f2c8719780377b1677e50b6964ce9117db"
+          },
+          {
+            "start": "004cdc20",
+            "end_exclusive": "004cdc4c",
+            "bytes_sha256": "76419444daa4894ba15cd928b7328d2851fd81f13a5ec62bf389ea07c7cdfae9",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.2-004cdc20.asm",
+            "assembly_sha256": "a9b853966974cb6773ca48e8280a7d2bec73adf15beae1b4834daaa7edfd9de3"
+          }
+        ],
+        "GetSystemMetrics_iat": "00534750"
+      }
     },
     "1.5.3": {
       "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.3.7z",
@@ -41,13 +76,54 @@
           "bytes": 69120,
           "sha256": "a7f8831bb5e78fcab34714612722201a711868ffe4d2d45c11a86d677cdfcaeb"
         }
-      ]
+      ],
+      "exe": {
+        "member": "nfs3.exe",
+        "sha256": "07e987193ebeb4b30ac3912f90d8b98f2a34b37632dbad232ecfcea12fdb7c0a",
+        "spans": [
+          {
+            "start": "004beeb0",
+            "end_exclusive": "004bef8f",
+            "bytes_sha256": "7bbbb89cba721a06d62c2286868e51709528eca18442a0b5a0f8020c2f8378a5",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.3-004beeb0.asm",
+            "assembly_sha256": "012b695d51a12044fb066aa528398f1e2af192fd7c1063248b4d322243154bd2"
+          },
+          {
+            "start": "004cdb10",
+            "end_exclusive": "004cdbcd",
+            "bytes_sha256": "0b60bde4d59033a062c1d7ab5382d52d602e0509a9f4b62a747677d66b22d861",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.3-004cdb10.asm",
+            "assembly_sha256": "fc9e3edd3119dcd1d4e1229479740cab668c6634351ed8c07ccdccec0e3ea62d"
+          },
+          {
+            "start": "004cdbd0",
+            "end_exclusive": "004cdc14",
+            "bytes_sha256": "7f7ee657b8edb6051fd1de1d2d416c643c81040956a620e7b6aeb738f2442289",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.3-004cdbd0.asm",
+            "assembly_sha256": "ea2da37928242ebe123a1d68fe5e93f2c8719780377b1677e50b6964ce9117db"
+          },
+          {
+            "start": "004cdc20",
+            "end_exclusive": "004cdc4c",
+            "bytes_sha256": "76419444daa4894ba15cd928b7328d2851fd81f13a5ec62bf389ea07c7cdfae9",
+            "assembly": "analysis/captures/modern-differences/nglide-window-history/1.5.3-004cdc20.asm",
+            "assembly_sha256": "a9b853966974cb6773ca48e8280a7d2bec73adf15beae1b4834daaa7edfd9de3"
+          }
+        ],
+        "GetSystemMetrics_iat": "00534750"
+      }
     }
   },
   "limits": [
-    "Component byte/header correspondence only; regression cause and windowed behaviour unresolved.",
+    "Selected package/header and EXE mode-publication comparison; regression cause and windowed behaviour unresolved.",
     "No Windows loader, nGlide, game or API execution."
   ],
+  "exe_mode_publication": {
+    "old_gate": "004bef3e tests00564390 bit0;zero usesselectedmodewidth/height through004cdbd0;nonzero calls004cdc20",
+    "new_route": "004bef3e loadsselectedmodewidth/height and alwayscalls004cdbd0 at004bef43",
+    "retained_helpers": "Three complete sizing-helper bodies identical; centering versus desktop-size differs by caller route",
+    "limits": "No assertion of sole repair cause, selecteddriver success, validcatalogpointer or actual windowed result"
+  },
   "adapter": {
     "member": "drivers/nglide/voodoo2a.dll",
     "changed_file_offsets": [
