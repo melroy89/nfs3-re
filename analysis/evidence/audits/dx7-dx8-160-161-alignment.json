@@ -196,6 +196,27 @@
               "sha256": "3e6bffccb263671a45da02170daf950fad4978f1c6eb2c115a449ba8fa31a245",
               "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60002e94.asm",
               "assembly_sha256": "0be4c0a569860618e1f9b55c90b00375319f1a67bdf8647c5591281b08f98d97"
+            },
+            {
+              "start": "600076f0",
+              "end_exclusive": "600077c0",
+              "sha256": "053402e17d56d221c1a354718bda129066be32dc7e8b69298d96680b4a54d58d",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-600076f0.asm",
+              "assembly_sha256": "d1eb7c2aaf41e63e81b2bea0a03c1952c0915f0b882a65069ef27b801cb40f8d"
+            },
+            {
+              "start": "60009806",
+              "end_exclusive": "6000980c",
+              "sha256": "e11c1f0a1e47053428a387ca200111277b7d23dc07f6cc1cab2c90eb27261d6c",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60009806.asm",
+              "assembly_sha256": "ba0dd5ec2af95a8c56f0a8d67538885213e8e6de1abf1ec13aed3e9994abb34e"
+            },
+            {
+              "start": "60006543",
+              "end_exclusive": "6000656d",
+              "sha256": "c4c4a3ef3183359926e4e2342f8abe97a34b0c33b03ac31cde9ae927ba413a40",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60006543.asm",
+              "assembly_sha256": "4827c3e1c5e4c961bbedd8516540e3abffde5ca0036587e9708798dad42953cb"
             }
           ]
         },
@@ -333,6 +354,20 @@
               "assembly_sha256": "2481f3923a4f71e0c98594d2f26af77eac578ba966c791f03d241f2028acc4b3"
             },
             {
+              "start": "600076f0",
+              "end_exclusive": "600077c0",
+              "sha256": "053402e17d56d221c1a354718bda129066be32dc7e8b69298d96680b4a54d58d",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-600076f0.asm",
+              "assembly_sha256": "ba7f1401be3f8fc3fa0d0aa991667883ea544d398b1740544c595671b8fcc517"
+            },
+            {
+              "start": "60009806",
+              "end_exclusive": "6000980c",
+              "sha256": "e11c1f0a1e47053428a387ca200111277b7d23dc07f6cc1cab2c90eb27261d6c",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60009806.asm",
+              "assembly_sha256": "623e97cfd3e0f51482e72385353fbb4d0af3181e34c0b85e09fbe0d0f2c61251"
+            },
+            {
               "start": "600037a3",
               "end_exclusive": "600037b8",
               "sha256": "4fdfe2491d3a24bedde829973390f5b86d4cb4ef04ea6cc6a22e6998d2881047",
@@ -389,13 +424,6 @@
               "assembly_sha256": "e6120d44305efe545ed7571a215a020150757a3c6f8173f0f8052dcc8b6467c5"
             },
             {
-              "start": "600076f0",
-              "end_exclusive": "600077c0",
-              "sha256": "053402e17d56d221c1a354718bda129066be32dc7e8b69298d96680b4a54d58d",
-              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-600076f0.asm",
-              "assembly_sha256": "ba7f1401be3f8fc3fa0d0aa991667883ea544d398b1740544c595671b8fcc517"
-            },
-            {
               "start": "60011244",
               "end_exclusive": "6001124a",
               "sha256": "e5a9ca13b654196d499af88c94d5995150dbb7826a1cad53d94292cd67f396c1",
@@ -430,6 +458,23 @@
       "SetStreamSource": 332
     },
     "limits": "Primary implementation header snapshots qualify ABI labels; no API execution or device acceptance."
+  },
+  "retained_dx8_table_expansion": {
+    "start": "600076f0",
+    "end_exclusive": "600077c0",
+    "size": 208,
+    "bytes_identical": true,
+    "source_bytes": 64,
+    "destination_bytes": 256,
+    "coefficient_bytes": "1f852bbfc3f5a8be",
+    "conversion_import": "MSVCRT.dll!_ftol",
+    "old_direct_call_candidates": [
+      "60006551"
+    ],
+    "new_direct_call_candidates": [
+      "60006517"
+    ],
+    "limits": "Static dataflow for valid disjoint buffers; external CRT implementation, exceptional inputs and arbitrary overlap not verified."
   },
   "limits": [
     "Official historical renderer pairs, not original-retail DLL pairing.",

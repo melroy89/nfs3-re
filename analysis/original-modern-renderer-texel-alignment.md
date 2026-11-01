@@ -89,3 +89,20 @@ The state constants used by the observed wrapper match the Direct3D8 header:0x1c
 The table routine `600076f0..600077c0` is **not merely a memcpy**: it has two null guards, a64-iteration loop, multiple byte writes per iteration and x87 conversions via `60009806`. Treat it as a table transformation until its exact interpolation and input contract are reconstructed. Its destination aliases the256-byte default table, so using `255-i` for every session would be unjustified.
 
 This follow-up closes the earlier format/channel ambiguity for the two inspected FVF modes and establishes the wrapper's API contract. MP161-002 remains partial: table transformation semantics, complete state-dispatch admission, all drawing paths, device success and actual visible fog still require separate evidence. No driver, game or target instruction was executed.
+
+## Retained table expansion and changed selection
+
+The next paired inspection verifies the complete208-byte routine `600076f0..600077c0` is **byte-identical in1.6.0 and1.6.1**, as are its two binary32 coefficients at `60018230`/`60018234`: approximately−0.6700000167 and−0.3300000131. Both helper calls at `60009806` use an import thunk for `MSVCRT.dll!_ftol` at IAT `6001806c`. The audit asserts these identities, retains both complete bodies and their local caller envelopes, and finds one direct CALL candidate per release: older `60006551`, newer `60006517`.
+
+For valid, non-overlapping source/destination buffers, the dataflow expands64 source bytes into256 destination bytes. Iteration `i=0..63` reads `A=source[i]`, `B=source[min(i+1,63)]`, forms signed difference `B-A`, and writes four output bytes. The first is A and the fourth B. The middle bytes subtract the low-byte results of imported conversions of `(B-A)*coefficient` from A, using the−0.33 coefficient first and−0.67 second. Subtraction/stores use byte arithmetic; the positions are `destination[4*i+0..3]`. The final iteration repeats source[63] as both endpoints. This is interpolation-like expansion with quantized conversion, not simply four copies or exact one-third/two-thirds arithmetic.
+
+The routine returns without writes when either pointer is null. It does not receive lengths or check buffer sizes. Its pointer-difference addressing and forward writes do not establish arbitrary overlap safety. The mathematical description assumes the imported helper follows its expected x87 conversion/stack contract; this audit identifies the import but does not pin or execute the installed CRT implementation. Exact exceptional behavior and machine-state equivalence remain outside this static derivation.
+
+The historical difference is in selection and consumption:
+
+| Release | Caller and consumer evidence |
+|---|---|
+|1.6.0 | Local caller `60006543..6000656d` optionally expands a supplied table, then writes1 to `6001edd4`. The old vertex helper tests that selector and uses its table branch before colour blending at `+0x10`. |
+|1.6.1 | Local caller `60006501..60006535` optionally expands the table, then sets API FOGTABLEMODE to0 and local mode `6001c08c` to0x10. The new helper uses its gated reciprocal-depth index to write the table-derived specular alpha at `+0x14`. |
+
+Thus the renderer reuses the existing expansion algorithm while changing the state route and output channel. This also strengthens the warning against reading the release note as “there was no fog-related implementation before1.6.1.” Whether the new route fixes visible fog on a particular device still requires observation. Remaining static work is complete dispatcher admission/default-state tracing and other submission paths; retained helper conversion semantics require a separately identified CRT if exactness becomes necessary. MP161-002 remains partial.

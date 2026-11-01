@@ -32,12 +32,16 @@ def main():
             spans=([(target,target+44)] if driver=='dx7' else
                    [(target,0x600021f7 if version=='1.6.0' else 0x60002067)])
             spans += [(site,site+5) for site in calls]
+            if driver=='dx8':
+                spans += [(0x600076f0,0x600077c0),(0x60009806,0x6000980c)]
+                if version=='1.6.0':
+                    spans += [(0x60006543,0x6000656d)]
             if driver=='dx8' and version=='1.6.1':
                 spans += [(0x600037a3,0x600037b8),(0x60006486,0x60006498),
                           (0x60006501,0x60006535),(0x60001b40,0x60001b68),
                           (0x60001f20,0x60001fc2),(0x60003740,0x6000375a),
                           (0x60003d2a,0x60003d51),(0x600061ec,0x6000627e),
-                          (0x600076f0,0x600077c0),(0x60011244,0x6001124a)]
+                          (0x60011244,0x6001124a)]
             rows=[]
             for start,end in spans:
                 body=pe.get_data(start-0x60000000,end-start);output=capture/f'{driver}-{version}-{start:08x}.asm'
@@ -58,6 +62,15 @@ def main():
             assert struct.unpack('<f',images['1.6.1'].get_data(0x18140,4))[0]==65535.0
             assert struct.unpack('<f',images['1.6.1'].get_data(0x185c0,4))[0]==255.0
             assert images['1.6.1'].get_data(0x37a3,21).hex()=='33c080c9ff2ac88888a0080260403d000100007ced'
+            assert images['1.6.0'].get_data(0x76f0,208)==images['1.6.1'].get_data(0x76f0,208)
+            assert images['1.6.0'].get_data(0x18230,8)==images['1.6.1'].get_data(0x18230,8)
+            assert images['1.6.1'].get_data(0x18230,8).hex()=='1f852bbfc3f5a8be'
+            for pe in images.values():
+                assert any(entry.dll.lower()==b'msvcrt.dll' and any(
+                    item.name==b'_ftol' and item.address==0x6001806c for item in entry.imports)
+                    for entry in pe.DIRECTORY_ENTRY_IMPORT)
+            assert direct_calls(images['1.6.0'],0x600076f0)==[0x60006551]
+            assert direct_calls(images['1.6.1'],0x600076f0)==[0x60006517]
             contract='Matched vertex helper has15 retained direct calls; new prefix subtracts0.5 from one supplied vertex X/Y before existing/reworked colour/fog policy. Other helper changes are not declared equivalent.'
         result['drivers'][driver]={'versions':versions,'constant_rva':f'{constant:08x}','constant':0.5,'contract':contract}
     headers={}
@@ -83,6 +96,12 @@ def main():
         for entry in pe.DIRECTORY_ENTRY_IMPORT)
     result['api_header_evidence']={'headers':headers,'device8_vtable_byte_offsets':slots,
         'limits':'Primary implementation header snapshots qualify ABI labels; no API execution or device acceptance.'}
+    result['retained_dx8_table_expansion']={
+        'start':'600076f0','end_exclusive':'600077c0','size':208,'bytes_identical':True,
+        'source_bytes':64,'destination_bytes':256,
+        'coefficient_bytes':'1f852bbfc3f5a8be','conversion_import':'MSVCRT.dll!_ftol',
+        'old_direct_call_candidates':['60006551'],'new_direct_call_candidates':['60006517'],
+        'limits':'Static dataflow for valid disjoint buffers; external CRT implementation, exceptional inputs and arbitrary overlap not verified.'}
     result['limits']=['Official historical renderer pairs, not original-retail DLL pairing.',
         'Direct E8 scans are bounded call candidates; indirect calls and complete export reachability not established.',
         'In-place coordinate changes, not direct U/V writes. No rendered sharpness/pixel coverage or callback execution.',
