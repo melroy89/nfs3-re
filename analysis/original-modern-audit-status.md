@@ -709,3 +709,7 @@ The [history/helper audit](original-modern-startup-paths.md#early-four-directory
 ## Early EXE resolution budget removal and depth-policy distinction
 
 The [three-baseline predicate audit](original-modern-display-modes.md#early-modern-already-bypasses-the-budget-gate-and-has-a-broader-depth-test) verifies early1.1.0 skips the original size/budget block while retaining indirect about lookup and using signeddepth>=16, unlike final16/32 equality. Four ordinary derived cases qualify larger local admission and retained restrictions. MP100-003 advances to partial, counts97/51/140/2. Provider support, actual menus/rendering,1.0.0 introduction and later depth-change date remain unverified; no target execution or database changes.
+
+## Mode depth narrowing and cache-source dates resolved separately
+
+The [release-boundary audit](original-modern-display-modes.md#depth-narrowing-and-descriptor-caching-occur-in-different-releases) verifies1.4.0→1.5.0 introduces the16/32 shared eligibility helper, retained through final.1.5.0/1.6.0 selected bodies match;1.6.0→1.6.1 replaces enumerator/search about calls with cached reads and repacks surrounding instructions. Prior1.1.0 bytes match fresh1.4.0 enumeration. Catalog counts unchanged. Source lifetime/provider effects, mode rendering and machine-state equivalence remain unverified; no target execution or database changes.

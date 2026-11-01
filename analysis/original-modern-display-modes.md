@@ -200,4 +200,23 @@ For the following instruction-derived cases, assume ordinary positive fitting di
 
 The last case reinforces the existing limit: these EXE predicates alone do not enforce a640×480 minimum. Conversely, bypassing the old budget gate does not make all resolutions valid. Final still has ratio/depth/flag restrictions, driver enumeration/storage limits and machine-width arithmetic; providers, mode callbacks and allocations can impose additional limits.
 
-**MP100-003 advances to partial historical support:** a concrete original size restriction is removed in early Modern, with useful larger local candidates admitted. “No unreasonable maximum limits” remains broader than this evidence.1.0.0 introduction, the exact later depth-narrowing date, actual mode menus and rendered operation remain unverified. This also separates at least three edits—budget removal, aspect/depth policy and later descriptor-cache refactor—rather than silently assigning final's entire helper to the first release. No driver, game, instruction probe, Ghidra write or executable mutation occurred.
+**MP100-003 advances to partial historical support:** a concrete original size restriction is removed in early Modern, with useful larger local candidates admitted. “No unreasonable maximum limits” remains broader than this evidence.1.0.0 introduction, actual mode menus and rendered operation remain unverified. The follow-up below now dates depth narrowing to1.4.0→1.5.0 and separates later descriptor caching. This also separates at least three edits—budget removal, aspect/depth policy and later descriptor-cache refactor—rather than silently assigning final's entire helper to the first release. No driver, game, instruction probe, Ghidra write or executable mutation occurred.
+
+## Depth narrowing and descriptor caching occur in different releases
+
+**Verified static release boundaries; no mode execution.** The [refactor-boundary audit](evidence/audits/mode-refactor-boundaries.json), reproduced with `python3 analysis/scripts/audit_mode_refactor_boundaries.py`, freshly pins1.4.0,1.5.0 and1.6.0 archives/EXEs plus official final1.6.1. It also checks1.4.0's enumerator against the prior hash-retained1.1.0 bytes, without claiming a fresh early extraction in this follow-up.
+
+| Boundary | Verified selected-body change |
+|---|---|
+|1.1.0→1.4.0 endpoints |Complete226-byte inline enumerator identical |
+|1.4.0→1.5.0 |Inline signed depth>=16 predicate replaced by shared67-byte eligibility helper requiring16 or32; enumerator/search use that helper |
+|1.5.0→1.6.0 endpoints |Complete enumerator, nearest-mode search and eligibility bodies identical |
+|1.6.0→1.6.1 |Enumerator/search replace about-slot calls with cached-descriptor loads; eligibility body unchanged |
+
+The equality statements cover the inspected endpoint bytes, not every intervening beta or release.1.5.0's narrow helper at`004bee60..004beea3` remains byte-identical in1.6.0/final. Thus the earlier24-bit hypothetical admission difference is now dated to the1.4.0→1.5.0 pair rather than left as an undated early/final distinction. No24-bit provider support is inferred.
+
+In1.6.0 both complete consumers call slot`009ef980`: enumerator`004bed90..004bedcb` at`004bed99`, and nearest-search`004bedcc..004bee5f` at`004beddd`. Final replaces both with`MOV EAX,[007a3a5c]` at those sites. Their following count/table reads use descriptor+3ch/+40h as before; the one-byte instruction shrink repacks later instructions and branch displacements. Final envelopes end at`004bedca` and`004bee5e`, respectively. Its nearest-search epilogue also moves the saved-EAX store ahead of restoring ESP. The complete captures retain those differences; this is not described as a sole same-length call patch or a full machine-state equivalence proof.
+
+The [loader](original-modern-renderer-loading.md) and [descriptor lifecycle](original-modern-renderer-lifecycle.md) explain cache acceptance/refresh separately. Eliminating a provider query changes the point at which descriptor state/side effects can be observed; byte-identical eligibility does not prove equivalent mode lists when that source can change. Neither query-result validity, cache lifetime under all callers nor actual initialization/recovery is established by the local substitutions.
+
+**Status: done for these selected release-boundary checks; confidence: verified static.** Budget removal, depth narrowing and descriptor caching must remain distinct changes in reconstruction planning. This does not date every texture-loading cache consumer, prove measured optimization, validate renderer callbacks, qualify arbitrary malformed records or complete the whole EXE comparison. No driver, game, new instruction probes, Ghidra or executable changes occurred.

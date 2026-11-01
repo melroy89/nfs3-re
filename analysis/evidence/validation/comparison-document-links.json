@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "314b181616233c7fdcfdcb82ac8349873cd5bc3f680f34fca741fbfdf9d0ba53",
-      "relative_links": 214
+      "sha256": "b1cff0d15be6df4bc8d96417c6ae56c0b49fcc005bb5a55942bd926a0a479a85",
+      "relative_links": 215
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -113,8 +113,8 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "76e1802f6f4e6b52bc4f1d401b95c6c8330792645b46c26a551fb5dacf9d9981",
-      "relative_links": 19
+      "sha256": "c3372844ee2beb6936be33cd1654374f1bcc84eb5d38437e0ef6343e25461e2a",
+      "relative_links": 22
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2570,
+  "relative_link_count": 2574,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
