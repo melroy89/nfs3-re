@@ -282,3 +282,7 @@ The [complete handler/callee comparison](original-modern-projection.md#fixed-des
 ## Name/IP edit-state claim now bound to constructors
 
 The [dialog follow-up](original-modern-dialog-input.md#replace-first-policy-bound-to-ip-and-player-name-dialogs) verifies unchanged IP/Player One/Two constructor prefixes, their localized labels and initial-text pointers, then links them through shared prefill and replace-first state to insertion. MP140-035 gains partial support; actual typing, all filters/bounds and release introduction remain unverified. Current counts:141 vendor-only,45 bounded static,102 partial,2 unresolved. No target/input execution.
+
+## Edit prefill and filter boundary narrowed
+
+The [filter/copy audit](original-modern-dialog-input.md#retained-filter1-and-bounded-prefill-contract) verifies retained helper bodies and all six file-backed language rows for filter1. It establishes byte20h..ffh admission, full-string validation before truncation, bounded-copy padding behaviour and termination from prior zero-fill/max255. Full-buffer behaviour differs through the existing replace flag, not a new append routine. MP140-035 remains partial; active-language/callback lifetimes, malformed input and live typing remain unverified. Counts unchanged.

@@ -40,6 +40,54 @@
           "end_exclusive": "0045cfd8",
           "sha256": "e6cbb8d7d94093620229f70824dc6de65baa58ae5fb89052f9b988cd86da829b",
           "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-0045cf70.asm"
+        },
+        {
+          "start": "004434f0",
+          "end_exclusive": "00443507",
+          "sha256": "ca710a0d148f6ab8e7677f98000de80553f808e11e75f95462197bd3439ec940",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-004434f0.asm"
+        },
+        {
+          "start": "00443510",
+          "end_exclusive": "0044351f",
+          "sha256": "2e12cd7d619a493ee5de9a746537b55ac5116d5a177e33ae4f0e292d1f5026bc",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-00443510.asm"
+        },
+        {
+          "start": "00443520",
+          "end_exclusive": "00443558",
+          "sha256": "7fe406d5c3f959185485e22275132b799bbfb9b57d94c54a345fec9e1dc4c5c3",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-00443520.asm"
+        },
+        {
+          "start": "004436c0",
+          "end_exclusive": "004436f8",
+          "sha256": "08a5780dd196f0fd4e5d0a3a852ce200a6a6a9ee62b754dbea23956d47190d00",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-004436c0.asm"
+        },
+        {
+          "start": "00443700",
+          "end_exclusive": "00443736",
+          "sha256": "77105917b0c05396b44f2a7788db9368778050a6ac5fd5b891903c26e3cf7487",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-00443700.asm"
+        },
+        {
+          "start": "00443810",
+          "end_exclusive": "0044385b",
+          "sha256": "ebcd2908ac9549b0fde38820dc88974f882ed1333813faaa5374decb9333801f",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-00443810.asm"
+        },
+        {
+          "start": "00443860",
+          "end_exclusive": "004438a8",
+          "sha256": "0c53a84165588841c1841edcc656c4f04725bba7b812b6b8904109e99b5553fc",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-00443860.asm"
+        },
+        {
+          "start": "004e0e30",
+          "end_exclusive": "004e0e59",
+          "sha256": "348244837cdf83566bcd50b45ce02f71b7fa9a0e15fc4af961629b29fab09f8e",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/original-004e0e30.asm"
         }
       ]
     },
@@ -82,6 +130,54 @@
           "end_exclusive": "0045cfd8",
           "sha256": "e6cbb8d7d94093620229f70824dc6de65baa58ae5fb89052f9b988cd86da829b",
           "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-0045cf70.asm"
+        },
+        {
+          "start": "004434f0",
+          "end_exclusive": "00443507",
+          "sha256": "ca710a0d148f6ab8e7677f98000de80553f808e11e75f95462197bd3439ec940",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-004434f0.asm"
+        },
+        {
+          "start": "00443510",
+          "end_exclusive": "0044351f",
+          "sha256": "2e12cd7d619a493ee5de9a746537b55ac5116d5a177e33ae4f0e292d1f5026bc",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-00443510.asm"
+        },
+        {
+          "start": "00443520",
+          "end_exclusive": "00443558",
+          "sha256": "7fe406d5c3f959185485e22275132b799bbfb9b57d94c54a345fec9e1dc4c5c3",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-00443520.asm"
+        },
+        {
+          "start": "004436c0",
+          "end_exclusive": "004436f8",
+          "sha256": "08a5780dd196f0fd4e5d0a3a852ce200a6a6a9ee62b754dbea23956d47190d00",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-004436c0.asm"
+        },
+        {
+          "start": "00443700",
+          "end_exclusive": "00443736",
+          "sha256": "77105917b0c05396b44f2a7788db9368778050a6ac5fd5b891903c26e3cf7487",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-00443700.asm"
+        },
+        {
+          "start": "00443810",
+          "end_exclusive": "0044385b",
+          "sha256": "ebcd2908ac9549b0fde38820dc88974f882ed1333813faaa5374decb9333801f",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-00443810.asm"
+        },
+        {
+          "start": "00443860",
+          "end_exclusive": "004438a8",
+          "sha256": "0c53a84165588841c1841edcc656c4f04725bba7b812b6b8904109e99b5553fc",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-00443860.asm"
+        },
+        {
+          "start": "004e0e30",
+          "end_exclusive": "004e0e59",
+          "sha256": "348244837cdf83566bcd50b45ce02f71b7fa9a0e15fc4af961629b29fab09f8e",
+          "assembly": "analysis/captures/modern-differences/choice-dialog-followup/official_modern-004e0e30.asm"
         }
       ]
     }
@@ -108,6 +204,108 @@
       "modern": 0.48554688692092896
     }
   ],
+  "retained_edit_validation": {
+    "language_table": "00558c70, six20-byte rows",
+    "rows": {
+      "original": [
+        [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ]
+      ],
+      "official_modern": [
+        [
+          "00000000",
+          "00000000",
+          "00000000",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ],
+        [
+          "004435c0",
+          "004435e0",
+          "00443620",
+          "00443510",
+          "00443520"
+        ]
+      ]
+    },
+    "filter1_character": "All six file-backed rows route to00443510 ->004434f0; unsigned byte20h..ffh accepted.",
+    "filter1_string": "All six route to00443520; null/empty rejected, scans untilNUL, rejects first disallowed byte anywhere.",
+    "copy": "004e0e30 writes at most EBX bytes; zero-pads only if source ends before count exhausted; returns original destination.",
+    "dialog_termination": "Initializer requests zero-fill of256 bytes, normalizes max to1..255 and copies at most max; untouched byte[max] terminates.",
+    "limits": [
+      "File-backed callbacks require active language0..5 and no intervening mutation.",
+      "Source must be readable/NUL-terminated for unbounded validation before truncation.",
+      "Termination derivation assumes successful ordinary zero-fill/copy and disjoint caller buffers; no target input exercised."
+    ]
+  },
   "edit_dialog_bindings": {
     "english_sha256": "63e013c04341706543c6e59ec00475cce281bad68dd46220b41fa5ccb8a62886",
     "labels": {
@@ -141,6 +339,6 @@
   },
   "limits": [
     "Static initial state and handler consequences only; no text-entry or rendering execution.",
-    "Selected IP/name constructor binding is verified; all filter/copy contracts, actual prefill contents, other callers and textured-draw semantics remain separate."
+    "Selected IP/name constructors and filter1/copy bodies verified; actual prefill contents, callback/language lifetimes, other filters/callers and textured-draw semantics remain separate."
   ]
 }
