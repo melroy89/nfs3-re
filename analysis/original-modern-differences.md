@@ -21,9 +21,7 @@ Read-only PE parsing, disassembly and Ghidra metadata inspection were used. The 
 
 The [historical renderer comparison](original-modern-renderer-texel-alignment.md) now traces half-unit X/Y corrections in DX6, DX7 and DX8 across author-hosted1.6.0/1.6.1 pairs. DX8 fog has separate state/table/channel evidence; actual rendered alignment and fog remain unverified.
 
-The [DX5 reference/final comparison](original-modern-dx5-reference-pair.md) adds an address-based map of710 differing code-section bytes in25 intervals, unchanged import/data sections and an exact descriptor-pointer publication change. Its [callback follow-up](original-modern-dx5-reference-pair.md#mode-callback-and-selected-initialization-paths) verifies dimension filters, seeds and raw-key scanning; actual32-bit operation and the absolute640×480 depth claim remain unverified. These are separate from the historical DX6/DX7/DX8 findings.
-
-The [DX5 state-handler comparison](original-modern-dx5-reference-pair.md#removed-numeric-state-selector15h-route) also verifies that Modern rejects selector15h where the reference generated a table, stored control values or submitted numeric device-state writes. The helpers themselves remain present and unchanged; visual effects and actual callers remain unverified.
+The [DX5 reference/final comparison](original-modern-dx5-reference-pair.md) assigns all710 differing code-section bytes to six reviewed clusters: descriptor publication, lock callback handling, mode enumeration/adapter, two setup tails and state-selector removal. Modern adds a failure notification, dimension filters and raw-key scanning, and rejects selector15h. Actual32-bit rendering, the absolute640×480 depth claim, other runtime consequences and non-code PE differences remain unverified. These findings are separate from the historical DX6/DX7/DX8 comparisons.
 
 ## Recent findings at a glance
 

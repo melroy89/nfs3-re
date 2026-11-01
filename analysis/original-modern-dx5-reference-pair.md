@@ -96,12 +96,47 @@ The adapter prepares an object if needed, optionally calls a pending-work helper
 
 This removes **one caller route** to retained table helpers and state writes. It does not prove all such calls, table consumers, fog effects or other rendering paths disappeared. Caller use, side effects through aliases and actual rendering remain untested. No release-note claim is promoted solely from this numeric-selector finding.
 
+## Lock failure now notifies the callback
+
+The complete `THRASH_lockwindow` body `600011d4..60001366` has62 differing bytes; its suffix from `6000123a` onward is identical. The complete unlock body `60001368..600013d0` is also identical. The change is concentrated around the surface operation and its failure branch:
+
+| Step | Reference | Modern |
+|---|---|---|
+| Before indirect surface call | If callback `[6001289c]` is nonnull, calls it with stack argument1 | Calls new adapter `60001880` with EAX=1; adapter conditionally invokes the same callback with argument1 |
+| Surface operation | Object from `[60010ee4]`, vtable offset64h; stores returned status at `60010ea4` | Same operation/arguments, moved nine bytes earlier |
+| Returned status zero | Continues to shared success suffix | Same suffix |
+| Returned status nonzero | Returns EAX=0 without a corresponding callback0 in this path | Calls adapter with EAX=0, then reaches the same zero-return tail |
+| Later ordinary unlock | Clears lock state/pointer and conditionally calls callback0 | Byte-identical |
+
+The new17-byte adapter `60001880..60001891` copies its EAX input into EBX, reads the callback pointer, invokes it with one pushed argument if nonnull, restores EBX and returns. Its callback contract requires the callee to remove that argument, as the old direct-call path already did; a malformed callback is not made safe by this wrapper. The wrapper does not specify a useful return value, preserve all caller registers or synchronize pointer changes.
+
+The retained state handler's selector13h accepts a nonnull pointer and copies eight DWORDs to `60012888`; callback cell `6001289c` is offset14h in that copied block. This identifies one registration route, not the final callback target or all possible writes. The retained unlock callback still uses a direct indirect call rather than this new adapter.
+
+The bounded finding is an added failure notification, plausibly balancing the preceding notification. It is not a claim of general lock recovery: both versions still store the surface pointer before the call; this changed failure path does not clear it, and the separate lock flag is set only by the success suffix. Callback behaviour, concurrent mutation, surface-object provenance, actual lock failures and observable recovery remain untested. There is no retry in this new local failure branch.
+
+## Changed-code accounting and stopping boundary
+
+The script now asserts that every differing byte in the shared55,296-byte code-section extent belongs to exactly one of these disjoint reviewed clusters:
+
+| Cluster | Differing bytes |
+|---|---:|
+| Descriptor pointer publication |2 |
+| Lock callback notification |62 |
+| Enumeration callback and new notification adapter |283 |
+| First mode-setup tail |91 |
+| Second mode-setup tail |99 |
+| Removed state-selector route |173 |
+| **Total** | **710** |
+
+There are zero unassigned differing bytes **within that code section**. This is localization coverage supported by bounded explanations above, not whole-DLL semantic equivalence, proof that every runtime consequence is understood, or completion of the EXE investigation. Changed PE headers, relocation/resource/export sections, appended material, runtime initialization and unchanged dependencies remain separate. The script retains the original25 maximal differing-byte intervals, so grouping has not discarded raw differences.
+
 ## Actionable follow-up and acceptance
 
 - **Done, verified:** artifact pairing, full export inventory, whole code-section byte map, import/data section equality, complete `about` comparison and retained selection span.
 - **Done, verified:** complete callback comparison, selected setup seeds/count requests, raw-key scan policy, dimension filter and local quotient cap.
 - **Done, verified:** selector15h now rejects requests; removed table/state tail blocks and unchanged helper bodies are documented.
-- **Pending, unresolved:** exhaustive initialization/consumers, actual32-bit operation, absolute640×480 reporting policy and selector15h callers/effects; classify remaining code intervals into mechanisms.
+- **Done, verified:** lock failure gains callback0 notification; all710 differing code-section bytes are assigned to reviewed clusters.
+- **Pending, unresolved:** exhaustive initialization/consumers, actual32-bit operation, absolute640×480 reporting policy and selector15h callers/effects; qualify the consequences and remaining PE/non-code differences.
 - **Later evidence:** authenticated retail provenance, historical introduction, full relocations/resources, runtime display enumeration and rendering acceptance.
 
 No release-note item is promoted by this bounded pairing alone. The broader original/Modern investigation remains incomplete. Existing EXEs, saved Ghidra state, maintained C and raw exports were not edited; no target instructions, OS graphics calls or new probes were run.

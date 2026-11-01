@@ -155,6 +155,41 @@ def main():
         'Numeric selector15h removal from this export only; no claim of all fog removal.',
         'Device object identity and API enumeration names are not established by numeric state calls alone.',
         'Retained table helpers and other entry routes remain present; caller usage and rendered effects are untested.']
+    result['lock_callback'] = {'captures': []}
+    for role, pe in [('reference', a), ('modern', b)]:
+        for start, end, label in [(0x11d4, 0x1366, 'complete-lockwindow-body'),
+                                   (0x1368, 0x13d0, 'complete-unlockwindow-body')]:
+            raw = pe.get_data(start, end-start)
+            result['lock_callback']['captures'].append({'role': role, 'label': label,
+                'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+                'sha256': sha(raw), 'disassembly': disassemble(raw, 0x60000000+start)})
+    wrapper = b.get_data(0x1880, 0x11)
+    assert wrapper.hex() == '5389c3a19c28016085c0740353ffd05bc3'
+    result['lock_callback']['new_adapter'] = {'start_va': '60001880', 'end_va_exclusive': '60001891',
+        'sha256': sha(wrapper), 'disassembly': disassemble(wrapper, 0x60001880)}
+    assert a.get_data(0x123a, 0x1366-0x123a) == b.get_data(0x123a, 0x1366-0x123a)
+    assert a.get_data(0x1368, 0x68) == b.get_data(0x1368, 0x68)
+    assert b.get_data(0x11f8, 8).hex() == '31c040e880060000'
+    assert b.get_data(0x1229, 0x10).hex() == '85c0740d31c0e84c060000e9ed000000'
+    # Every differing byte in the shared code section must belong to one reviewed cluster.
+    clusters = [(0x1020, 0x10d4, 'descriptor-publication'),
+                (0x11d4, 0x1366, 'lock-callback-notification'),
+                (0x17bc, 0x18e3, 'mode-callback-and-new-notification-adapter'),
+                (0x1b80, 0x1c23, 'first-mode-setup-tail'),
+                (0x21da, 0x2288, 'second-mode-setup-tail'),
+                (0x2b58, 0x34d1, 'removed-state-selector-route')]
+    result['code_byte_accounting'] = []
+    assigned = set()
+    for start, end, label in clusters:
+        changed = {r for r in range(start, end) if a.get_data(r, 1) != b.get_data(r, 1)}
+        assert not assigned.intersection(changed)
+        assigned.update(changed)
+        result['code_byte_accounting'].append({'label': label,
+            'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+            'differing_bytes': len(changed)})
+    all_changed = {0x1000+i for i, (x, y) in enumerate(zip(a.sections[0].get_data(), b.sections[0].get_data())) if x != y}
+    assert assigned == all_changed and len(assigned) == 710
+    result['unassigned_code_section_differing_bytes'] = 0
     result['limits'] = [
         'Reference is author-hosted and matches the previously inventoried local root D3DA hash; not authenticated pristine retail.',
         'Raw changed intervals are byte inventory, not function boundaries or complete semantic attribution.',

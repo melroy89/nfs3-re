@@ -306,3 +306,7 @@ The [callback comparison](original-modern-dx5-reference-pair.md#mode-callback-an
 ## DX5 numeric state15h removal
 
 The [state-handler comparison](original-modern-dx5-reference-pair.md#removed-numeric-state-selector15h-route) checks the complete2425-byte export body: only two changed intervals remove selector15h table/control handling and replace it with EAX=0 rejection. Generator, expander and numeric-device-state adapter remain byte-identical. Reference success did not forward device acceptance. API naming, caller use and visual effects remain unverified; no blanket fog-removal or release-note completion claim. Catalog counts unchanged.
+
+## DX5 lock callback and complete changed-code localization
+
+The [lock comparison](original-modern-dx5-reference-pair.md#lock-failure-now-notifies-the-callback) verifies a new callback0 notification on nonzero surface-call status, while the success suffix and unlock body remain identical. The [accounting table](original-modern-dx5-reference-pair.md#changed-code-accounting-and-stopping-boundary) assigns all710 differing code-section bytes to six reviewed clusters with no omissions/overlap. This is bounded code localization, not complete DLL consequences or full EXE coverage. Non-code PE differences, callback targets and runtime acceptance remain open; catalog counts unchanged.
