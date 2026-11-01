@@ -1,0 +1,33 @@
+# Historical nGlide windowed-mode claim: component and PE-header boundary
+
+**Confidence: verified package/header bytes. Work status: partial for MP153-007; regression mechanism unresolved.** The [audit script](scripts/audit_nglide_window_history.py) pins the author-hosted1.5.2/1.5.3 archives, reads three nGlide members into memory, and compares complete files. The [manifest](evidence/audits/nglide-window-history.json) retains both archive hashes, all six member hashes, every differing adapter-file offset and PE fields. This is a historical Modern package comparison, not retail-original correspondence.
+
+## What changes and what stays identical
+
+| Component |1.5.2→1.5.3 result |
+|---|---|
+| `drivers/nglide/thrash.ini` | Entire166-byte file identical |
+| `drivers/nglide/glide3x.dll` | Entire1,425,408-byte provider identical |
+| `drivers/nglide/voodoo2a.dll` | Both69,120 bytes; exactly seven changed bytes, all in PE headers |
+
+Adapter changed file offsets are **`d8,d9,104,105,158,159,15c`**. Section headers/layout and all actual file-backed section payloads match, including code, import bytes, initialized data, exports, relocations and resources. Unbacked sections are recorded without interpreting file offset0 as their payload. Complete-file comparison also excludes hidden trailing differences outside the sections.
+
+## Exact adapter header changes
+
+| PE field |1.5.2 |1.5.3 |
+|---|---|---|
+| Optional-header checksum | `000112cf` | `0001ee97` |
+| Import directory RVA | `0000e000` | Same |
+| Import directory size | `000006e4` | `0000003c` |
+| IAT directory RVA |0 | `0000e174` |
+| IAT directory size |0 | `000000fc` |
+
+The manifest also records independently computed PE checksums; it does not treat a checksum as a signature or authenticity proof. The directory bytes themselves lie in unchanged section payloads. Their **descriptive header ranges change**, so code-byte equality must not be promoted into identical loader behaviour. Conversely, these field changes alone do not demonstrate that Windows/Wine processes them differently in the failing scenario.
+
+## Attribution and next action
+
+MP153-007 advertises a fix for a1.5.2 nGlide windowed-mode regression. This comparison excludes a provider-binary update, a thrash.ini edit and an adapter code/payload rewrite in these three package members. It identifies a concrete adapter PE metadata delta but **does not establish it as the cause or fix**. The game EXE and other package members were not compared by this audit; EXE-side window/mode logic remains a separate candidate.
+
+Next: compare the matched1.5.2/1.5.3 EXE windowed-mode admission/setup routes against existing [window handling](original-modern-window-handling.md) and [renderer lifecycle](original-modern-renderer-lifecycle.md) evidence. If static traces leave the header's role unresolved, a separately scoped loader/window test would be needed for a behavioural claim. Do not patch/rebuild either DLL or infer that the advertised regression never existed.
+
+The catalog entry becomes **partial package/header evidence**, not a verified windowed-mode repair. No DLL, EXE, Windows loader, API, instruction probe or Ghidra database was executed or modified.

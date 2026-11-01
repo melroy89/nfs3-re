@@ -1,0 +1,187 @@
+{
+  "kind": "historical-nglide-window-package",
+  "versions": {
+    "1.5.2": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.2.7z",
+      "sha256": "23830061e5ed489900b03c98d81727d951c59e9247d7006803460d38ee9a34cd",
+      "members": [
+        {
+          "member": "drivers/nglide/thrash.ini",
+          "bytes": 166,
+          "sha256": "e2c4e128a3c9dd7fb6cddf10a83e29613f70c392e8b938eac0577a66ff98022c"
+        },
+        {
+          "member": "drivers/nglide/glide3x.dll",
+          "bytes": 1425408,
+          "sha256": "87842a85d1bfda4217e691a9d4412915c74905eed818c5a727e2f2d6b814edb6"
+        },
+        {
+          "member": "drivers/nglide/voodoo2a.dll",
+          "bytes": 69120,
+          "sha256": "bea4abc9ff9b3e54ed304d2fd05d6be7005e1933b209e5a3975da4f897b67fab"
+        }
+      ]
+    },
+    "1.5.3": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.3.7z",
+      "sha256": "0f92afacbbc179500ede3d7e22107999f3d4ad9ff0a41feb8cd00ef65559ec64",
+      "members": [
+        {
+          "member": "drivers/nglide/thrash.ini",
+          "bytes": 166,
+          "sha256": "e2c4e128a3c9dd7fb6cddf10a83e29613f70c392e8b938eac0577a66ff98022c"
+        },
+        {
+          "member": "drivers/nglide/glide3x.dll",
+          "bytes": 1425408,
+          "sha256": "87842a85d1bfda4217e691a9d4412915c74905eed818c5a727e2f2d6b814edb6"
+        },
+        {
+          "member": "drivers/nglide/voodoo2a.dll",
+          "bytes": 69120,
+          "sha256": "a7f8831bb5e78fcab34714612722201a711868ffe4d2d45c11a86d677cdfcaeb"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Component byte/header correspondence only; regression cause and windowed behaviour unresolved.",
+    "No Windows loader, nGlide, game or API execution."
+  ],
+  "adapter": {
+    "member": "drivers/nglide/voodoo2a.dll",
+    "changed_file_offsets": [
+      "000000d8",
+      "000000d9",
+      "00000104",
+      "00000105",
+      "00000158",
+      "00000159",
+      "0000015c"
+    ],
+    "changed_runs": [
+      {
+        "start_va": "000000d8",
+        "end_va_exclusive": "000000da",
+        "reference_hex": "cf12",
+        "modern_hex": "97ee"
+      },
+      {
+        "start_va": "00000104",
+        "end_va_exclusive": "00000106",
+        "reference_hex": "e406",
+        "modern_hex": "3c00"
+      },
+      {
+        "start_va": "00000158",
+        "end_va_exclusive": "0000015a",
+        "reference_hex": "0000",
+        "modern_hex": "74e1"
+      },
+      {
+        "start_va": "0000015c",
+        "end_va_exclusive": "0000015d",
+        "reference_hex": "00",
+        "modern_hex": "fc"
+      }
+    ],
+    "sections": [
+      {
+        "name": ".code",
+        "rva": "00001000",
+        "raw_offset": 1024,
+        "raw_bytes": 51712,
+        "file_backed": true,
+        "sha256": "cb532923aec10180ba5eda3a91e27ec2b499f9ca8857642d2724d09a18899659",
+        "identical_layout_and_backed_payload": true
+      },
+      {
+        "name": ".idata",
+        "rva": "0000e000",
+        "raw_offset": 52736,
+        "raw_bytes": 2048,
+        "file_backed": true,
+        "sha256": "8b6c96e7b0c1c47791bfd0d9572bd4db76ab452a65c43002c4f4bd6fcf835116",
+        "identical_layout_and_backed_payload": true
+      },
+      {
+        "name": ".data",
+        "rva": "0000f000",
+        "raw_offset": 54784,
+        "raw_bytes": 7680,
+        "file_backed": true,
+        "sha256": "84a092150ca35b7c65206f90d572e1d3d088afc6a6d3625f7482a53be99d1af8",
+        "identical_layout_and_backed_payload": true
+      },
+      {
+        "name": ".bss",
+        "rva": "00011000",
+        "raw_offset": 0,
+        "raw_bytes": 12288,
+        "file_backed": false,
+        "sha256": null,
+        "identical_layout_and_backed_payload": true
+      },
+      {
+        "name": ".edata",
+        "rva": "00014000",
+        "raw_offset": 62464,
+        "raw_bytes": 1536,
+        "file_backed": true,
+        "sha256": "e75b68465d3d5c5556db8e6f4bd80e9a218820b8651cccda7f562f50862cde87",
+        "identical_layout_and_backed_payload": true
+      },
+      {
+        "name": ".reloc",
+        "rva": "00015000",
+        "raw_offset": 64000,
+        "raw_bytes": 3584,
+        "file_backed": true,
+        "sha256": "1168a4b0f45907794d4bf49173c40ba68c9d3b4ddff88b82e660c507b80205a1",
+        "identical_layout_and_backed_payload": true
+      },
+      {
+        "name": ".rsrc",
+        "rva": "00016000",
+        "raw_offset": 67584,
+        "raw_bytes": 1536,
+        "file_backed": true,
+        "sha256": "5c6c875d642b29b658f6353dd785ead408b6cc9eb86a509237dcb4adce0800be",
+        "identical_layout_and_backed_payload": true
+      }
+    ],
+    "headers": [
+      {
+        "version": "1.5.2",
+        "checksum": "000112cf",
+        "computed_checksum": "000112cf",
+        "directories": {
+          "IMAGE_DIRECTORY_ENTRY_IMPORT": {
+            "rva": "0000e000",
+            "size": 1764
+          },
+          "IMAGE_DIRECTORY_ENTRY_IAT": {
+            "rva": "00000000",
+            "size": 0
+          }
+        }
+      },
+      {
+        "version": "1.5.3",
+        "checksum": "0001ee97",
+        "computed_checksum": "0001ee97",
+        "directories": {
+          "IMAGE_DIRECTORY_ENTRY_IMPORT": {
+            "rva": "0000e000",
+            "size": 60
+          },
+          "IMAGE_DIRECTORY_ENTRY_IAT": {
+            "rva": "0000e174",
+            "size": 252
+          }
+        }
+      }
+    ],
+    "whole_file_limit": "All seven changes confined to these header fields; no unclassified trailing byte changes"
+  }
+}

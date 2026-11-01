@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "10451980e7203041f61db6b0c65e42b60d197c55d1b91a1ca923975ee9bf2d53"
+      "sha256": "4f1aa30fb8543170cd949982837b3b3c8e18d6b1755b57e8a2a11811aa759aac"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -254,6 +254,10 @@
     {
       "path": "analysis/original-modern-network-port-menu.md",
       "sha256": "ee3e679c9485edaedc03a8e72bd7a93f4fbc3de0debe789df35cc3a3cb117364"
+    },
+    {
+      "path": "analysis/original-modern-nglide-window-history.md",
+      "sha256": "057e9578caff1fa8b6a751fb61bd5958f96416e6fb1fcb55961d17573a61957c"
     },
     {
       "path": "analysis/original-modern-night-lighting.md",

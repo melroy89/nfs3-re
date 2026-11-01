@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **129 vendor-only,47 bounded-static,112 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **128 vendor-only,47 bounded-static,113 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -542,3 +542,8 @@ The [constructor follow-up](original-modern-frame-setting.md#historical-construc
 ## Historical Frame Size version-reset gate
 
 The [config follow-up](original-modern-frame-setting.md#historical-config-version5-to6-selects-reset-rather-than-ordinal-conversion) verifies1.5.3/1.6.0 templates5→6, the sole threshold-byte change in the decision range, and Frame Size0 default. An admitted version5 header takes grouped reset in1.6.0, rather than unconditionally reinterpreting old ordinal1. Real files, writers/overrides and rendered behaviour remain pending; counts unchanged.
+
+
+## Historical nGlide regression: package/header boundary
+
+The [component audit](original-modern-nglide-window-history.md) verifies1.5.2/1.5.3 nGlide provider/INI equality and exactly seven adapter-file changes, confined to checksum/import-directory size/IAT-directory headers. File-backed sections/layout are identical; BSS is not read as file-offset0 payload. Cause/fix remains unresolved, with EXE paths and metadata loader behaviour separate candidates. MP153-007 advances to partial package evidence; current counts128/47/113/2. No target execution.
