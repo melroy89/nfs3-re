@@ -2,6 +2,8 @@
 
 ## Current snapshot — 2026-11-01
 
+The [latest renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-history-checkpoint.json) reviews`d57e760`:16/16 static reruns reproduce eight committed outputs, with12 protected artifacts and12 raw exports matching prior hashes. The [compact findings table](original-modern-differences.md#recent-renderer-and-screenshot-findings) records each mechanism and its limits. No independent semantic or runtime acceptance is implied.
+
 The [latest HUD/menu/import checkpoint](evidence/validation/hud-menu-import-checkpoint.json) reviews`be46b2b`:16/16 static runs reproduce eight committed evidence files;12 protected artifacts and12 raw exports match prior hashes. See the [compact current findings table](original-modern-differences.md#recent-hud-menu-and-import-findings). This verifies repeatability/preservation, not independent semantics, runtime compatibility or all remaining differences.
 
 The two recent HUD investigations now have concrete mechanisms. These bounded checks are complete at the stated static/package scope; runtime acceptance and the broader executable comparison remain open.
@@ -792,3 +794,7 @@ The [mode-catalog audit](original-modern-display-modes.md#dx6-public-mode-count-
 ## Screenshot partial-depth-local correction identified
 
 The [three-build worker audit](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) verifies140→150 removes a WORD-write/DWORD-read mismatch in source-stride calculation.150/final core bytes match. MP150-034 is partial: scalar effects are derived, with no screenshot crash or XP-specific runtime result. Existing lifecycle/encoding limitations remain.
+
+## Eight renderer/screenshot investigations reproduced
+
+The [checkpoint](evidence/validation/renderer-screenshot-history-checkpoint.json) verifies eight selected script/output identities against reviewed HEAD, repeats each twice and checks protected artifacts before/after. It includes HUD preview, exit setup, loading budget, DX7 opt-in, fog mode/enable, menu context, DX6 count and screenshot depth-local evidence. Existing unresolved runtime/provider/bounds qualifications remain; the full comparison is incomplete. Follow the actual DX6 count consumers and direct lighting chain rather than redoing the resolved structural mapping.

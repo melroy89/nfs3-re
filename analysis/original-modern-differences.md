@@ -6,6 +6,23 @@ For a shallow inventory, see the [complete release-note change list](#complete-r
 
 **Audit in progress.** This document explains verified differences and indexes the remaining code-level investigation. It does not equate vendor release-note entries, differing bytes or Ghidra functions with independently explained gameplay changes. The original supplied executable, official Modern Patch release and local edited analysis target are kept distinct.
 
+## Recent renderer and screenshot findings
+
+The [renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-history-checkpoint.json) pins reviewed revision`d57e760`,16/16 passing static reruns and eight evidence outputs byte-identical to their committed pre-run files.12 protected artifacts and12 raw reference exports retain the prior checkpoint hashes. Reproduce with`python3 analysis/scripts/check_renderer_screenshot_history.py`. This is primary-agent reproducibility and file preservation, not independent semantic review, live Ghidra validation, target/API execution, new instruction probes, compilation or fresh C exports.
+
+| Investigation | Evidence established | Still unverified |
+|---|---|---|
+|[HUD preview](original-modern-hud-settings-policy.md#hud-preview-authored-coordinates-change-in150) |13 authored image-coordinate changes140→150; retained final |Runtime overrides, loaded assets and visual alignment |
+|[Gameplay exit](original-modern-renderer-lifecycle.md#gameplay-exit-skips-frontend-mode-setup-from150) |150 zero-input shutdown gate skips frontend mode/viewport setup; checked state/input chain |OS resolution, mediated actions, other exits and full cleanup |
+|[Loading budget](original-modern-loading-timing.md#preliminary-setup-elapsed-time-enters-the-budget-in150) |150 baseline precedes preparation; elapsed subtracts from later budget; clamp order changes |Actual network duration, completed synchronization and animation |
+|[DX7 opt-in](original-modern-renderer-loading.md#dx7-fog-opt-in-changes-in152-while-its-driver-bytes-remain-identical) |151→152 FogSupport0→1; whole DX7 DLL identical |Active installed settings and visible fog |
+|[Fog mode/enable](original-modern-renderer-loading.md#fog-formula-setup-separates-from-ordinary-enable-state-in152) |152 separates setup4 from effective1/0, connected to distinct DX7 branches |Complete API107 contract, device success and other providers |
+|[Menu fog context](original-modern-state14.md#menu-fog-admission-becomes-contextual-at150) |150 support/effective split, selected context writers and retained state consumer |All lifecycle writers; taillight-specific attribution |
+|[DX6 mode count](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) |Added increment affects public descriptor count, whose table has a leading slot |Leading-slot contents, inclusive/exclusive consumer bounds and visible modes |
+|[Screenshot depth](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) |150 fixes partial-WORD local initialization before DWORD stride read; final core retained |Observed crash, XP specificity, complete capture/encoding stability |
+
+Current catalog labels are83 vendor-only/53 bounded-static/152 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. In this cluster, DX6 consumer bounds and the direct menu-lighting chain are specific remaining static questions; repeating the now-resolved counter or configuration searches is unnecessary.
+
 ## Recent HUD, menu and import findings
 
 The [eight-investigation checkpoint](evidence/validation/hud-menu-import-checkpoint.json) pins reviewed revision`be46b2b`,16/16 passing static reruns and eight evidence outputs matching their committed pre-run bytes. It also verifies12 protected artifacts (three EXEs, saved Ghidra database, retained probe evidence and maintained reconstruction/harness files) and12 raw reference exports against prior hashes. Reproduce with`python3 analysis/scripts/check_hud_menu_import_mechanisms.py`. This is primary-agent reproducibility, not independent semantic review, new exports, compilation, instruction probes, game testing or live Ghidra verification.
