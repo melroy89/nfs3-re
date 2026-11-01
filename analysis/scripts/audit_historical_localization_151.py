@@ -1,5 +1,6 @@
 """Parse all six retained1.5.0/1.5.1 text assets; no game/text-loader execution."""
 import hashlib
+import difflib
 import json
 import struct
 import subprocess
@@ -36,6 +37,7 @@ def main():
                       'Latin1 is a reversible display convention, not proof of game font/encoding.',
                       'Five added records and changed existing indices do not independently verify every advertised correction.']}
     assets={}
+    menus={}
     helper_images=[]
     capture=ROOT/'analysis/captures/modern-differences/localization-151'
     capture.mkdir(parents=True,exist_ok=True)
@@ -63,6 +65,10 @@ def main():
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
         result['archives'][version]['exe_consumer']={'sha256':expected_exe,'member':'nfs3.exe',
             'track_length_unit_index':unit_index,'lookup_maximum_index':maximum,'spans':spans}
+        for name in ('camera','graphics'):
+            member=f'fedata/menus/{name}.mnu'
+            raw=subprocess.check_output(['7z','x','-so',str(path),member])
+            menus[version,name]=raw
         for lang in ('eng','ger','fre','spa','ita','swe'):
             member=f'fedata/text/text.{lang}'
             raw=subprocess.check_output(['7z','x','-so',str(path),member])
@@ -72,6 +78,24 @@ def main():
                 'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),
                 'entries':len(records),'offset_table_bytes':offsets[0],
                 'complete_payload_partition':True}
+    result['selected_menu_changes']={}
+    for name in ('camera','graphics'):
+        a=menus['1.5.0',name];b=menus['1.5.1',name]
+        old=a.decode('latin1').splitlines();new=b.decode('latin1').splitlines()
+        changes=[(tag,i,j,k,l) for tag,i,j,k,l in difflib.SequenceMatcher(a=old,b=new).get_opcodes() if tag!='equal']
+        if name=='camera':
+            assert all(tag=='insert' for tag,*_ in changes)
+            assert sum(l-k for tag,i,j,k,l in changes)==15
+            assert a.count(b'listname=rearcamera')==0 and b.count(b'listname=rearcamera')==2
+            assert b'text=lang1938' in b and b'maxvisitem=5' in b
+        else:
+            assert a.replace(b'text=lang1537',b'text=lang1937')==b
+            assert a.count(b'text=lang1537')==1
+        result['selected_menu_changes'][name]={
+            'old_sha256':hashlib.sha256(a).hexdigest(),'new_sha256':hashlib.sha256(b).hexdigest(),
+            'member':f'fedata/menus/{name}.mnu',
+            'line_diff':list(difflib.unified_diff(old,new,fromfile='1.5.0',tofile='1.5.1',n=2))}
+    assert assets['1.5.0','eng'][1][1537]==assets['1.5.1','eng'][1][1537]==b'Rear View Mirror'
     assert [0x456590+i for i,(a,b) in enumerate(zip(*helper_images)) if a!=b]==[0x4565f3]
     for lang,row in result['languages'].items():
         old_offsets,old=assets['1.5.0',lang];new_offsets,new=assets['1.5.1',lang]

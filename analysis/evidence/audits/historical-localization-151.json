@@ -530,5 +530,52 @@
     "Static packaged assets only; no game loader/rendering or translation-quality review.",
     "Latin1 is a reversible display convention, not proof of game font/encoding.",
     "Five added records and changed existing indices do not independently verify every advertised correction."
-  ]
+  ],
+  "selected_menu_changes": {
+    "camera": {
+      "old_sha256": "b9d92230d3d542f5cbbd9b185cfcaee4573bd3eafc54681b93a2a4a0d6b7d18a",
+      "new_sha256": "94822f4f819e87074eb057ba568e8ee04321f9e8d1eb10dce402b08cbbba1b2d",
+      "member": "fedata/menus/camera.mnu",
+      "line_diff": [
+        "--- 1.5.0\n",
+        "+++ 1.5.1\n",
+        "@@ -86,4 +86,19 @@\n",
+        " ypos=5",
+        " notitle=0",
+        "+",
+        "+[button]",
+        "+buttontype=arrowtab",
+        "+ypos=6",
+        "+priority=11",
+        "+text=lang1938",
+        "+listname=rearcamera",
+        "+",
+        "+[cascade]",
+        "+ypos=6",
+        "+priority=4",
+        "+notitle=0",
+        "+text=lang1164",
+        "+maxvisitem=5",
+        "+listname=rearcamera",
+        " ",
+        " [image]"
+      ]
+    },
+    "graphics": {
+      "old_sha256": "3c5b58d5ebe31a378fa84801b91646ed417ba719d0ea8584c37adaa13073c9cd",
+      "new_sha256": "8e3e9851fb98c0f8f021a1d46de06c01dee298dd99b95f98626940fd71323558",
+      "member": "fedata/menus/graphics.mnu",
+      "line_diff": [
+        "--- 1.5.0\n",
+        "+++ 1.5.1\n",
+        "@@ -95,5 +95,5 @@\n",
+        " ypos=6",
+        " priority=9",
+        "-text=lang1537",
+        "+text=lang1937",
+        " listname=mirrorlevel",
+        " "
+      ]
+    }
+  }
 }

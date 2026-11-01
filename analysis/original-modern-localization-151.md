@@ -50,3 +50,19 @@ The complete lookup envelope `004d1850..004d187e` is captured for both versions.
 Across all six package languages, old index1932 and new index1936 contain the identical bytes **`km`**. Thus this particular code/asset path preserves the unit token while allowing1932 to be reused. This is stronger than inferring meaning from changed table positions, but remains conditional on the matching table being loaded and the inspected branch being reached. It is not proof that arbitrary mixed-version assets work or that every UI consumer was updated.
 
 The [original/final track-length comparison](original-modern-track-length-text.md) covers a wider formatting rewrite and final index`078ah`; that final index must not be substituted for the historical indices here. Historical string numbering is version-bound. Remaining: bind the new Full/detail and rear-camera entries, all other lookup consumers, fallback compatibility and actual rendered language selection. No formatter or game instruction was executed.
+
+
+## Historical menu assets bind two new labels
+
+The audit now reads `fedata/menus/camera.mnu` and `graphics.mnu` from both pinned archives, retaining complete member hashes and compact line diffs. The following are the **only line changes in these two selected files**; this is not a comparison of every menu asset.
+
+**camera.mnu:**1.5.1 inserts15 lines and retains every original line. They add:
+
+- A `[button]` with `buttontype=arrowtab`, ypos6, priority11, **`text=lang1938`**, `listname=rearcamera`.
+- A `[cascade]` with ypos6, priority4, notitle0, text`lang1164`, maxvisitem5 and the same list name.
+
+The1.5.0 file has no `rearcamera` assignment;1.5.1 has these two. English entry1938 is `Rear View From`, so the new packaged label has an explicit authored control association. This dates the selected menu addition to this historical pair; it does not prove the controls instantiate successfully, expose five valid choices or select a working camera. The [existing final menu/EXE binding](original-modern-viewport-pose.md#rear-camera-menu-binding-identifies-the-fixed-path-selector) supplies separate consumer context.
+
+**graphics.mnu:** the entire raw-file difference is the single replacement **`text=lang1537`→`text=lang1937`** on the button whose listname is **`mirrorlevel`**, ypos6, priority9. English entry1537 remains `Rear View Mirror` in both versions; new1937 is `Rear View Detail`. The selected control therefore changes its authored label while retaining these list/placement fields. This is not evidence that the mirror-detail control itself was first introduced in1.5.1; the existing control was relabelled.
+
+These bindings explain two of the newly added text references without conflating them with a translation-quality fix. The new entry1932 (`Full` and localized equivalents) still lacks a qualified consumer in this pass. Generic `langNNNN` parser resolution, runtime language selection, instantiated control state and rendered outcomes remain outside this asset comparison. No menu or game was run.

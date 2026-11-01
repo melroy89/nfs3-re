@@ -89,3 +89,8 @@ These are actual executable fallback strings, not proof of the selected external
 Under the wrapper's previously verified conditions—nonzero control mode, session `006fd3b0 != 1`, selector nonzero—Modern chooses fixed descriptor `00661220` instead of the normal primary/alternate route. Original has no corresponding branch. The authored choice names and selector binding therefore support the association of the new fixed route with the in-car rear-camera option. The default initializer writes1, but actual ordinal changes from input, malformed values, source-descriptor lifetime and visible camera geometry remain untested. The branch admits any nonzero selector, not only literal1.
 
 **MP151-001: partial static support.** Official controls, two choice labels, selector identity, nonzero default and changed descriptor-selection mechanism are verified. Universal “locked in car” output, visibility/blind-spot improvement, all runtime callers and introduction in v1.5.1 require further evidence. No game, camera input, new instruction probe or Ghidra mutation was performed.
+
+
+## Historical camera-menu addition is now dated directly
+
+The [1.5.0→1.5.1 menu/translation pair](original-modern-localization-151.md#historical-menu-assets-bind-two-new-labels) verifies the exact15-line insertion adding the rear-camera button/cascade and `lang1938` label, with every old camera-menu line retained. This narrows the historical introduction gap for that authored control; it does not date every EXE camera mechanism or prove runtime availability/selection. The same comparison finds the separate mirrorlevel label replacement, which is not a new-control introduction.

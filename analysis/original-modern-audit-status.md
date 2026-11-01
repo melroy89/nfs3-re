@@ -516,3 +516,8 @@ The [complete twelve-asset comparison](original-modern-localization-151.md) part
 ## Historical km remapping has a matched EXE consumer
 
 The [consumer follow-up](original-modern-localization-151.md#track-length-consumer-follows-the-moved-km-entry) verifies the only byte change in the170-byte historical track-length helper:1932→1936, preserving `km` in all six matched asset tables. The lookup maximum also grows1935→1940. This resolves one code/asset remapping without claiming all IDs/consumers or mixed-version compatibility. Catalog counts unchanged; no target execution.
+
+
+## Historical rear-camera and mirror-detail label bindings
+
+The [two-menu audit](original-modern-localization-151.md#historical-menu-assets-bind-two-new-labels) verifies the1.5.1 camera-menu15-line insertion and graphics-menu's sole lang1537→lang1937 label replacement. This binds new language entries1938/1937 to authored controls and dates the selected rear-camera asset addition. Full/new1932 consumer and parser/runtime state remain unresolved. Counts unchanged; no target execution.
