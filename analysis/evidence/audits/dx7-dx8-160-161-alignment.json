@@ -331,6 +331,27 @@
               "sha256": "3e6bffccb263671a45da02170daf950fad4978f1c6eb2c115a449ba8fa31a245",
               "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60002e94.asm",
               "assembly_sha256": "2481f3923a4f71e0c98594d2f26af77eac578ba966c791f03d241f2028acc4b3"
+            },
+            {
+              "start": "600037a3",
+              "end_exclusive": "600037b8",
+              "sha256": "4fdfe2491d3a24bedde829973390f5b86d4cb4ef04ea6cc6a22e6998d2881047",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-600037a3.asm",
+              "assembly_sha256": "31a274c38d943ca3c7d702d554473f82d5776d2943734b6526fe59faf457dc5a"
+            },
+            {
+              "start": "60006486",
+              "end_exclusive": "60006498",
+              "sha256": "760d62923cd2e8d10fc1d06c37fc0fe8caf0e34604b23a4245d96cfb65f7cd49",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60006486.asm",
+              "assembly_sha256": "ea4304733cb0546e122e665ada2e9f3eae9c7cda1d12eeeb6714b4e69cd8a6a8"
+            },
+            {
+              "start": "60006501",
+              "end_exclusive": "60006535",
+              "sha256": "05cf1917eb068db8248c1f785e354c1034cea4430a3fe40499054309c7dc8181",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60006501.asm",
+              "assembly_sha256": "aabad3d7cdcc8f4950f600a8ecde98cc7a76be09336bf4236eeaf3df01f8ef06"
             }
           ]
         }

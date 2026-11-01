@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **149 vendor-only,41 bounded-static,97 partial and3 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **148 vendor-only,41 bounded-static,98 partial and3 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recently narrowed:** type8 descriptor availability/conditional publication, local prepare/render/finalize order, retained399-byte handler and an excluded33-byte viewport-flag helper. See the [projection report](original-modern-projection.md).
@@ -123,7 +123,7 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels149 entries vendor-only,41 bounded static,97 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels148 entries vendor-only,41 bounded static,98 partial and3 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
@@ -209,3 +209,7 @@ The [historical DX6 audit](original-modern-renderer-texel-alignment.md) verifies
 ## Three-driver alignment mechanism closed at static scope
 
 [Historical DX7/DX8 traces](original-modern-renderer-texel-alignment.md#dx7-and-dx8-historical-instruction-traces) now supplement DX6: separate half-unit X/Y adjustment helpers and3/15 direct-call boundaries are pinned. MP161-001 moves to bounded-static support across all three named drivers. Rendered sharpness/all drawing routes remain untested; DX8 fog remains a separate claim. Current labels:149 vendor-only,41 bounded static,97 partial,3 unresolved.
+
+## DX8 fog representation checkpoint
+
+The [paired helper inspection](original-modern-renderer-texel-alignment.md#dx8-fog-related-vertex-policy-partial-historical-evidence) establishes the newer mode0x10 table-derived DWORD store at vertex+0x14, default inverse-byte table and local state writers. The older helper already has depth/table/colour-blending logic; absence of fog in v1.6.0 is not claimed. MP161-002 now has partial support, with API format/state contracts and visible fog explicitly outstanding. Current labels:148 vendor-only,41 bounded static,98 partial,3 unresolved.

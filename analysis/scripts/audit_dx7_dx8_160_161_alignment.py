@@ -32,6 +32,9 @@ def main():
             spans=([(target,target+44)] if driver=='dx7' else
                    [(target,0x600021f7 if version=='1.6.0' else 0x60002067)])
             spans += [(site,site+5) for site in calls]
+            if driver=='dx8' and version=='1.6.1':
+                spans += [(0x600037a3,0x600037b8),(0x60006486,0x60006498),
+                          (0x60006501,0x60006535)]
             rows=[]
             for start,end in spans:
                 body=pe.get_data(start-0x60000000,end-start);output=capture/f'{driver}-{version}-{start:08x}.asm'
@@ -49,6 +52,9 @@ def main():
             calls=direct_calls(images['1.6.0'],target)
             assert len(calls)==15 and calls==direct_calls(images['1.6.1'],target)
             assert images['1.6.1'].get_data(0x1ff0,27).hex()=='578b7c2408d90520820160d907d8e1d91fd94704d8e1d95f04ddd8'
+            assert struct.unpack('<f',images['1.6.1'].get_data(0x18140,4))[0]==65535.0
+            assert struct.unpack('<f',images['1.6.1'].get_data(0x185c0,4))[0]==255.0
+            assert images['1.6.1'].get_data(0x37a3,21).hex()=='33c080c9ff2ac88888a0080260403d000100007ced'
             contract='Matched vertex helper has15 retained direct calls; new prefix subtracts0.5 from one supplied vertex X/Y before existing/reworked colour/fog policy. Other helper changes are not declared equivalent.'
         result['drivers'][driver]={'versions':versions,'constant_rva':f'{constant:08x}','constant':0.5,'contract':contract}
     result['limits']=['Official historical renderer pairs, not original-retail DLL pairing.',

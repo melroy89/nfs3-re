@@ -50,3 +50,22 @@ DX7 loads0.5 from `6001544c`; DX8 loads0.5 from `60018220`. DX7 has a count0 gua
 The DX7 adapter does **not** emulate the DX6 PUSH. Copying one driver's wrapper into another would change the stack contract. All three corrections mutate coordinates in place and perform binary32 stores, with ambient x87 rounding/status/exception behavior still relevant. Repeated buffer reuse, malformed pointer/count inputs, all exported drawing routes and actual screen-space pixel coverage remain outside this static finding.
 
 MP161-001 now has bounded static support for all three named components in an actual1.6.0/1.6.1 pair. The intended alignment explanation is supported by the coordinate adjustments and drawing-call context; no sharper image, universal sampling correctness or original-retail compatibility was observed. The DX8 fog changes are a separate investigation rather than automatically accepted because they share this helper.
+
+## DX8 fog-related vertex policy: partial historical evidence
+
+The same pinned helper bodies provide a concrete change relevant to MP161-002. This is a **verified buffer transformation**, with its interpretation as successful API fog still incomplete. The audit additionally retains the newer table initializer and local state-writing envelopes, and asserts the two arithmetic constants. All addresses below are preferred DX8 DLL addresses; helper ranges end exclusively.
+
+| Aspect | v1.6.0 | v1.6.1 |
+|---|---|---|
+| Vertex admission | Null pointer returns without writes | Coordinates are accessed immediately; no equivalent local null guard |
+| Colour-disabled flag `6001c038 == 0` | Write `ffffffff` at vertex `+0x10`, then return | Write the same value, then continue to the separate mode test |
+| Enabled state | Tests `6001edd0` after the colour gate | Tests `6001edd0` independently of that gate |
+| Remaining mode policy | Several branches for mode values2/4/8 and table selection, then byte-wise colour blending written at `+0x10` | Mode `6001c08c == 0x10` computes a table index and writes `table[index] << 24` to `+0x14` |
+
+In the newer mode0x10 path (`60002024..60002065`), the arithmetic is `(1 / vertex_float[+0x0c]) / 65535.0 * 255.0`, evaluated on x87, then converted by `FISTP` to a signed DWORD. That conversion uses ambient rounding and exception behavior. Signed comparisons clamp the converted integer to0..255; the selected byte from `600208a0` is shifted24 bits before the DWORD store. This overwrites all four bytes at `+0x14`, making its lower24 bits zero. It is not a direct translation to C casting, nor a proof of sensible results for zero, NaN, overflow or unmasked exceptions.
+
+The startup envelope `600037a3..600037b8` fills256 bytes with `table[i] = 255 - i`. This is a default, not an immutable table: the state envelope `60006501..60006535` conditionally passes the same destination to `600076f0`, calls `60001b40` with pushed values0 and0x23, and stores mode0x10 at `6001c08c`. A separate envelope `60006486..60006498` forwards a value through that wrapper with selector0x1c and stores it at `6001edd0`. Those local writes connect the helper gates to actual state paths; their full dispatch admission, wrapper/API contracts and table-copy behavior still require inspection.
+
+The older helper already contains fog-like depth, table and colour-blend calculations. Therefore this comparison does **not** establish that v1.6.0 had no fog-related code. It establishes a changed representation and gate structure in a corresponding helper with15 retained direct callers. Identifying `+0x14` as the API's specular/fog channel requires tracing vertex format, submission and render-state contracts; that interpretation remains inferred here. Successful visible fog, driver acceptance, every drawing route and original-retail behavior remain untested. MP161-002 receives partial support, not full acceptance.
+
+Next static step: trace `60001b40`, the mode/table state dispatch and vertex submission format, preserving the distinction between buffer evidence and API interpretation. Runtime acceptance is a later, separately scoped comparison.
