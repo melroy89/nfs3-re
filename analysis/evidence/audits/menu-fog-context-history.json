@@ -1,0 +1,460 @@
+{
+  "kind": "static-menu-fog-context-history",
+  "versions": {
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "exe_sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "captures": [
+        {
+          "name": "fog_reader",
+          "start": "004b5b0b",
+          "end_exclusive": "004b5b2f",
+          "hex": "6830397a006a0068bced53006898ed5300ff157446530085c0740431c0b004a3643a7a00",
+          "sha256": "d10b5c214854d77ec62b7df9050eaa8be7273804aeb7316bc95d4f1475356c17",
+          "disassembly": [
+            "4b5b0b:\t68 30 39 7a 00       \tpush   0x7a3930",
+            "4b5b10:\t6a 00                \tpush   0x0",
+            "4b5b12:\t68 bc ed 53 00       \tpush   0x53edbc",
+            "4b5b17:\t68 98 ed 53 00       \tpush   0x53ed98",
+            "4b5b1c:\tff 15 74 46 53 00    \tcall   DWORD PTR ds:0x534674",
+            "4b5b22:\t85 c0                \ttest   eax,eax",
+            "4b5b24:\t74 04                \tje     0x4b5b2a",
+            "4b5b26:\t31 c0                \txor    eax,eax",
+            "4b5b28:\tb0 04                \tmov    al,0x4",
+            "4b5b2a:\ta3 64 3a 7a 00       \tmov    ds:0x7a3a64,eax"
+          ]
+        },
+        {
+          "name": "gate_region",
+          "start": "00431c20",
+          "end_exclusive": "00431c40",
+          "hex": "5589e55dc38d80000000008d52008bdb5589e55dc38d80000000008d52008bdb",
+          "sha256": "95ad1ac6d23f9577a3045c28eaa4404d148741d2de2dbf4a8b7aaa8ac9b9a050",
+          "disassembly": [
+            "431c20:\t55                   \tpush   ebp",
+            "431c21:\t89 e5                \tmov    ebp,esp",
+            "431c23:\t5d                   \tpop    ebp",
+            "431c24:\tc3                   \tret",
+            "431c25:\t8d 80 00 00 00 00    \tlea    eax,[eax+0x0]",
+            "431c2b:\t8d 52 00             \tlea    edx,[edx+0x0]",
+            "431c2e:\t8b db                \tmov    ebx,ebx",
+            "431c30:\t55                   \tpush   ebp",
+            "431c31:\t89 e5                \tmov    ebp,esp",
+            "431c33:\t5d                   \tpop    ebp",
+            "431c34:\tc3                   \tret",
+            "431c35:\t8d 80 00 00 00 00    \tlea    eax,[eax+0x0]",
+            "431c3b:\t8d 52 00             \tlea    edx,[edx+0x0]",
+            "431c3e:\t8b db                \tmov    ebx,ebx"
+          ]
+        },
+        {
+          "name": "menu_context_zero",
+          "start": "0044b271",
+          "end_exclusive": "0044b27e",
+          "hex": "31ffa14cbb6f00893d34925500",
+          "sha256": "3aa052a316c3640ba7c538f80ddd4ac7947e077e95338012c30af1b13a6e6cdd",
+          "disassembly": [
+            "44b271:\t31 ff                \txor    edi,edi",
+            "44b273:\ta1 4c bb 6f 00       \tmov    eax,ds:0x6fbb4c",
+            "44b278:\t89 3d 34 92 55 00    \tmov    DWORD PTR ds:0x559234,edi"
+          ]
+        },
+        {
+          "name": "pause_context_one",
+          "start": "0044b958",
+          "end_exclusive": "0044b96a",
+          "hex": "ba01000000a14cbb6f0031c9891534925500",
+          "sha256": "83d6fcf24b2b481350766e869f37196558f4d997abe12ec0ac41b63c6b454e26",
+          "disassembly": [
+            "44b958:\tba 01 00 00 00       \tmov    edx,0x1",
+            "44b95d:\ta1 4c bb 6f 00       \tmov    eax,ds:0x6fbb4c",
+            "44b962:\t31 c9                \txor    ecx,ecx",
+            "44b964:\t89 15 34 92 55 00    \tmov    DWORD PTR ds:0x559234,edx"
+          ]
+        },
+        {
+          "name": "race_context_one",
+          "start": "0044ba38",
+          "end_exclusive": "0044ba4d",
+          "hex": "ba0100000031c931c0890d54925500891534925500",
+          "sha256": "75b4e06102f6c4f7a92f7a98f06d2fc6a7bb160ac137510689fafde4fa233d4d",
+          "disassembly": [
+            "44ba38:\tba 01 00 00 00       \tmov    edx,0x1",
+            "44ba3d:\t31 c9                \txor    ecx,ecx",
+            "44ba3f:\t31 c0                \txor    eax,eax",
+            "44ba41:\t89 0d 54 92 55 00    \tmov    DWORD PTR ds:0x559254,ecx",
+            "44ba47:\t89 15 34 92 55 00    \tmov    DWORD PTR ds:0x559234,edx"
+          ]
+        },
+        {
+          "name": "scene_entry",
+          "start": "004bc160",
+          "end_exclusive": "004bc176",
+          "hex": "53515256575589e583ec5089c385c07505e8ba5af7ff",
+          "sha256": "cf9d7feeb20a20e126d2e9d297927287389fab32ff533087c372d412f58ab510",
+          "disassembly": [
+            "4bc160:\t53                   \tpush   ebx",
+            "4bc161:\t51                   \tpush   ecx",
+            "4bc162:\t52                   \tpush   edx",
+            "4bc163:\t56                   \tpush   esi",
+            "4bc164:\t57                   \tpush   edi",
+            "4bc165:\t55                   \tpush   ebp",
+            "4bc166:\t89 e5                \tmov    ebp,esp",
+            "4bc168:\t83 ec 50             \tsub    esp,0x50",
+            "4bc16b:\t89 c3                \tmov    ebx,eax",
+            "4bc16d:\t85 c0                \ttest   eax,eax",
+            "4bc16f:\t75 05                \tjne    0x4bc176",
+            "4bc171:\te8 ba 5a f7 ff       \tcall   0x431c30"
+          ]
+        },
+        {
+          "name": "menu_refresh",
+          "start": "0044b346",
+          "end_exclusive": "0044b34b",
+          "hex": "b901000000",
+          "sha256": "08bc125513338de3457d890ff8a3e73333341ff267b2380a5615ed160af1ca1d",
+          "disassembly": [
+            "44b346:\tb9 01 00 00 00       \tmov    ecx,0x1"
+          ]
+        },
+        {
+          "name": "scene_state_restore",
+          "start": "00431b40",
+          "end_exclusive": "00431bb4",
+          "hex": "525589e58b1534bc6f0085d2740ca1683a7a00a3603a7a00eb068915603a7a00e8fb5e0900e856fdffffb8040000008b15603a7a00e886fdffffba01000000b80d000000e877fdffffb8150000008b15643a7a00e867fdffffb86800000031d2e85bfdffffb80200000031d2e84ffdffff5d5ac3",
+          "sha256": "0be45eb1a33630502e19c0a44e8cf8ed2bc0173adde0ab408b92f3e264980349",
+          "disassembly": [
+            "431b40:\t52                   \tpush   edx",
+            "431b41:\t55                   \tpush   ebp",
+            "431b42:\t89 e5                \tmov    ebp,esp",
+            "431b44:\t8b 15 34 bc 6f 00    \tmov    edx,DWORD PTR ds:0x6fbc34",
+            "431b4a:\t85 d2                \ttest   edx,edx",
+            "431b4c:\t74 0c                \tje     0x431b5a",
+            "431b4e:\ta1 68 3a 7a 00       \tmov    eax,ds:0x7a3a68",
+            "431b53:\ta3 60 3a 7a 00       \tmov    ds:0x7a3a60,eax",
+            "431b58:\teb 06                \tjmp    0x431b60",
+            "431b5a:\t89 15 60 3a 7a 00    \tmov    DWORD PTR ds:0x7a3a60,edx",
+            "431b60:\te8 fb 5e 09 00       \tcall   0x4c7a60",
+            "431b65:\te8 56 fd ff ff       \tcall   0x4318c0",
+            "431b6a:\tb8 04 00 00 00       \tmov    eax,0x4",
+            "431b6f:\t8b 15 60 3a 7a 00    \tmov    edx,DWORD PTR ds:0x7a3a60",
+            "431b75:\te8 86 fd ff ff       \tcall   0x431900",
+            "431b7a:\tba 01 00 00 00       \tmov    edx,0x1",
+            "431b7f:\tb8 0d 00 00 00       \tmov    eax,0xd",
+            "431b84:\te8 77 fd ff ff       \tcall   0x431900",
+            "431b89:\tb8 15 00 00 00       \tmov    eax,0x15",
+            "431b8e:\t8b 15 64 3a 7a 00    \tmov    edx,DWORD PTR ds:0x7a3a64",
+            "431b94:\te8 67 fd ff ff       \tcall   0x431900",
+            "431b99:\tb8 68 00 00 00       \tmov    eax,0x68",
+            "431b9e:\t31 d2                \txor    edx,edx",
+            "431ba0:\te8 5b fd ff ff       \tcall   0x431900",
+            "431ba5:\tb8 02 00 00 00       \tmov    eax,0x2",
+            "431baa:\t31 d2                \txor    edx,edx",
+            "431bac:\te8 4f fd ff ff       \tcall   0x431900",
+            "431bb1:\t5d                   \tpop    ebp",
+            "431bb2:\t5a                   \tpop    edx",
+            "431bb3:\tc3                   \tret"
+          ]
+        }
+      ],
+      "dx6": {
+        "member": "drivers/dx6/dx6a.dll",
+        "sha256": "d32ee0f11361977ecaa01402b33a0a1ea4f4732b118355a5b98696768f8d25cb",
+        "bytes": 94208,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "bytes": 57344,
+            "sha256": "40a89129a078d4d1f8b9cc97eb62d9e9509e91aabad12350e661218aad2a77e5"
+          },
+          {
+            "name": ".rdata",
+            "rva": 61440,
+            "bytes": 12288,
+            "sha256": "09789d5cbce42d4e9724546d36b1c462942c0e8bb3acc4829bd65bb64f690e81"
+          },
+          {
+            "name": ".data",
+            "rva": 73728,
+            "bytes": 8192,
+            "sha256": "f9c305b418d7d0e3690faa47d182bfe615e90f2ff71c3ea6acc9e8d85fefa153"
+          },
+          {
+            "name": ".reloc",
+            "rva": 262144,
+            "bytes": 8192,
+            "sha256": "2fd5d9b59c261b4d74f38b7c0a9f466fb4d3857806c96173e380608b8ca09384"
+          },
+          {
+            "name": ".rsrc",
+            "rva": 270336,
+            "bytes": 4096,
+            "sha256": "e41f6bac9498d372f10470d6df088a9e9b220ceeb897d66772027f69c35406ec"
+          }
+        ],
+        "changed_initializer": {
+          "start": "60001c50",
+          "end_exclusive": "60001c81",
+          "hex": "57b9e803000031c0bf28f00360f3abc7053cbd03600000000068d01c00606a006a006a00a188490160508b08ff51205fc3",
+          "disassembly": [
+            "60001c50:\t57                   \tpush   edi",
+            "60001c51:\tb9 e8 03 00 00       \tmov    ecx,0x3e8",
+            "60001c56:\t31 c0                \txor    eax,eax",
+            "60001c58:\tbf 28 f0 03 60       \tmov    edi,0x6003f028",
+            "60001c5d:\tf3 ab                \trep stos DWORD PTR es:[edi],eax",
+            "60001c5f:\tc7 05 3c bd 03 60 00 \tmov    DWORD PTR ds:0x6003bd3c,0x0",
+            "60001c66:\t00 00 00",
+            "60001c69:\t68 d0 1c 00 60       \tpush   0x60001cd0",
+            "60001c6e:\t6a 00                \tpush   0x0",
+            "60001c70:\t6a 00                \tpush   0x0",
+            "60001c72:\t6a 00                \tpush   0x0",
+            "60001c74:\ta1 88 49 01 60       \tmov    eax,ds:0x60014988",
+            "60001c79:\t50                   \tpush   eax",
+            "60001c7a:\t8b 08                \tmov    ecx,DWORD PTR [eax]",
+            "60001c7c:\tff 51 20             \tcall   DWORD PTR [ecx+0x20]",
+            "60001c7f:\t5f                   \tpop    edi",
+            "60001c80:\tc3                   \tret"
+          ]
+        }
+      }
+    },
+    "1.5.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "exe_sha256": "d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae",
+      "captures": [
+        {
+          "name": "fog_reader",
+          "start": "004b58c4",
+          "end_exclusive": "004b58e7",
+          "hex": "6830397a006a0068f0ed530068d8ed5300ff156c46530085c0740331c040a3543a7a00",
+          "sha256": "2469acb157ac5db988c1ce9498282a8c8efa2e988443dee1e1698470f4dfd7b8",
+          "disassembly": [
+            "4b58c4:\t68 30 39 7a 00       \tpush   0x7a3930",
+            "4b58c9:\t6a 00                \tpush   0x0",
+            "4b58cb:\t68 f0 ed 53 00       \tpush   0x53edf0",
+            "4b58d0:\t68 d8 ed 53 00       \tpush   0x53edd8",
+            "4b58d5:\tff 15 6c 46 53 00    \tcall   DWORD PTR ds:0x53466c",
+            "4b58db:\t85 c0                \ttest   eax,eax",
+            "4b58dd:\t74 03                \tje     0x4b58e2",
+            "4b58df:\t31 c0                \txor    eax,eax",
+            "4b58e1:\t40                   \tinc    eax",
+            "4b58e2:\ta3 54 3a 7a 00       \tmov    ds:0x7a3a54,eax"
+          ]
+        },
+        {
+          "name": "gate_region",
+          "start": "00431c20",
+          "end_exclusive": "00431c40",
+          "hex": "a1543a7a002305d4d16f0023053492550085c07405b804000000a3643a7a00c3",
+          "sha256": "9dba95386959859182d8f2557a550847e43a30ad45ef179146673447997f28dd",
+          "disassembly": [
+            "431c20:\ta1 54 3a 7a 00       \tmov    eax,ds:0x7a3a54",
+            "431c25:\t23 05 d4 d1 6f 00    \tand    eax,DWORD PTR ds:0x6fd1d4",
+            "431c2b:\t23 05 34 92 55 00    \tand    eax,DWORD PTR ds:0x559234",
+            "431c31:\t85 c0                \ttest   eax,eax",
+            "431c33:\t74 05                \tje     0x431c3a",
+            "431c35:\tb8 04 00 00 00       \tmov    eax,0x4",
+            "431c3a:\ta3 64 3a 7a 00       \tmov    ds:0x7a3a64,eax",
+            "431c3f:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "menu_context_zero",
+          "start": "0044b271",
+          "end_exclusive": "0044b27e",
+          "hex": "31ffa14cbb6f00893d34925500",
+          "sha256": "3aa052a316c3640ba7c538f80ddd4ac7947e077e95338012c30af1b13a6e6cdd",
+          "disassembly": [
+            "44b271:\t31 ff                \txor    edi,edi",
+            "44b273:\ta1 4c bb 6f 00       \tmov    eax,ds:0x6fbb4c",
+            "44b278:\t89 3d 34 92 55 00    \tmov    DWORD PTR ds:0x559234,edi"
+          ]
+        },
+        {
+          "name": "pause_context_one",
+          "start": "0044b958",
+          "end_exclusive": "0044b96a",
+          "hex": "ba01000000a14cbb6f0031c9891534925500",
+          "sha256": "83d6fcf24b2b481350766e869f37196558f4d997abe12ec0ac41b63c6b454e26",
+          "disassembly": [
+            "44b958:\tba 01 00 00 00       \tmov    edx,0x1",
+            "44b95d:\ta1 4c bb 6f 00       \tmov    eax,ds:0x6fbb4c",
+            "44b962:\t31 c9                \txor    ecx,ecx",
+            "44b964:\t89 15 34 92 55 00    \tmov    DWORD PTR ds:0x559234,edx"
+          ]
+        },
+        {
+          "name": "race_context_one",
+          "start": "0044ba38",
+          "end_exclusive": "0044ba4d",
+          "hex": "ba0100000031c931c0890d54925500891534925500",
+          "sha256": "75b4e06102f6c4f7a92f7a98f06d2fc6a7bb160ac137510689fafde4fa233d4d",
+          "disassembly": [
+            "44ba38:\tba 01 00 00 00       \tmov    edx,0x1",
+            "44ba3d:\t31 c9                \txor    ecx,ecx",
+            "44ba3f:\t31 c0                \txor    eax,eax",
+            "44ba41:\t89 0d 54 92 55 00    \tmov    DWORD PTR ds:0x559254,ecx",
+            "44ba47:\t89 15 34 92 55 00    \tmov    DWORD PTR ds:0x559234,edx"
+          ]
+        },
+        {
+          "name": "scene_entry",
+          "start": "004bc160",
+          "end_exclusive": "004bc176",
+          "hex": "53515256575589e583ec5089c3e8ae5af7ffeb029090",
+          "sha256": "d6de4c3477243e1395ed398ba202a44f6d34e958771c672cf7598b80f79f5592",
+          "disassembly": [
+            "4bc160:\t53                   \tpush   ebx",
+            "4bc161:\t51                   \tpush   ecx",
+            "4bc162:\t52                   \tpush   edx",
+            "4bc163:\t56                   \tpush   esi",
+            "4bc164:\t57                   \tpush   edi",
+            "4bc165:\t55                   \tpush   ebp",
+            "4bc166:\t89 e5                \tmov    ebp,esp",
+            "4bc168:\t83 ec 50             \tsub    esp,0x50",
+            "4bc16b:\t89 c3                \tmov    ebx,eax",
+            "4bc16d:\te8 ae 5a f7 ff       \tcall   0x431c20",
+            "4bc172:\teb 02                \tjmp    0x4bc176",
+            "4bc174:\t90                   \tnop",
+            "4bc175:\t90                   \tnop"
+          ]
+        },
+        {
+          "name": "menu_refresh",
+          "start": "0044b346",
+          "end_exclusive": "0044b34b",
+          "hex": "e8d568feff",
+          "sha256": "b01f71fd6a43fc2a5d37941b352ba33a2422a421acb7d70f906b188027a19d8f",
+          "disassembly": [
+            "44b346:\te8 d5 68 fe ff       \tcall   0x431c20"
+          ]
+        },
+        {
+          "name": "scene_state_restore",
+          "start": "00431b40",
+          "end_exclusive": "00431bb4",
+          "hex": "525589e58b1534bc6f0085d2740ca1683a7a00a3603a7a00eb068915603a7a00e8fb5e0900e856fdffffb8040000008b15603a7a00e886fdffffba01000000b80d000000e877fdffffb8150000008b15643a7a00e867fdffffb86800000031d2e85bfdffffb80200000031d2e84ffdffff5d5ac3",
+          "sha256": "0be45eb1a33630502e19c0a44e8cf8ed2bc0173adde0ab408b92f3e264980349",
+          "disassembly": [
+            "431b40:\t52                   \tpush   edx",
+            "431b41:\t55                   \tpush   ebp",
+            "431b42:\t89 e5                \tmov    ebp,esp",
+            "431b44:\t8b 15 34 bc 6f 00    \tmov    edx,DWORD PTR ds:0x6fbc34",
+            "431b4a:\t85 d2                \ttest   edx,edx",
+            "431b4c:\t74 0c                \tje     0x431b5a",
+            "431b4e:\ta1 68 3a 7a 00       \tmov    eax,ds:0x7a3a68",
+            "431b53:\ta3 60 3a 7a 00       \tmov    ds:0x7a3a60,eax",
+            "431b58:\teb 06                \tjmp    0x431b60",
+            "431b5a:\t89 15 60 3a 7a 00    \tmov    DWORD PTR ds:0x7a3a60,edx",
+            "431b60:\te8 fb 5e 09 00       \tcall   0x4c7a60",
+            "431b65:\te8 56 fd ff ff       \tcall   0x4318c0",
+            "431b6a:\tb8 04 00 00 00       \tmov    eax,0x4",
+            "431b6f:\t8b 15 60 3a 7a 00    \tmov    edx,DWORD PTR ds:0x7a3a60",
+            "431b75:\te8 86 fd ff ff       \tcall   0x431900",
+            "431b7a:\tba 01 00 00 00       \tmov    edx,0x1",
+            "431b7f:\tb8 0d 00 00 00       \tmov    eax,0xd",
+            "431b84:\te8 77 fd ff ff       \tcall   0x431900",
+            "431b89:\tb8 15 00 00 00       \tmov    eax,0x15",
+            "431b8e:\t8b 15 64 3a 7a 00    \tmov    edx,DWORD PTR ds:0x7a3a64",
+            "431b94:\te8 67 fd ff ff       \tcall   0x431900",
+            "431b99:\tb8 68 00 00 00       \tmov    eax,0x68",
+            "431b9e:\t31 d2                \txor    edx,edx",
+            "431ba0:\te8 5b fd ff ff       \tcall   0x431900",
+            "431ba5:\tb8 02 00 00 00       \tmov    eax,0x2",
+            "431baa:\t31 d2                \txor    edx,edx",
+            "431bac:\te8 4f fd ff ff       \tcall   0x431900",
+            "431bb1:\t5d                   \tpop    ebp",
+            "431bb2:\t5a                   \tpop    edx",
+            "431bb3:\tc3                   \tret"
+          ]
+        }
+      ],
+      "dx6": {
+        "member": "drivers/dx6/dx6a.dll",
+        "sha256": "6c4a300fd55ed5e6c3c85983d43903717543d1b69146275856322da61a76b152",
+        "bytes": 94208,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "bytes": 57344,
+            "sha256": "e35af7880a0f0c491439fe20a323c935393233aa074af59d3670f30c34ff69b4"
+          },
+          {
+            "name": ".rdata",
+            "rva": 61440,
+            "bytes": 12288,
+            "sha256": "09789d5cbce42d4e9724546d36b1c462942c0e8bb3acc4829bd65bb64f690e81"
+          },
+          {
+            "name": ".data",
+            "rva": 73728,
+            "bytes": 8192,
+            "sha256": "f9c305b418d7d0e3690faa47d182bfe615e90f2ff71c3ea6acc9e8d85fefa153"
+          },
+          {
+            "name": ".reloc",
+            "rva": 262144,
+            "bytes": 8192,
+            "sha256": "1047f9d5de299693591e6862185c834741d78513c1fbffd57b45ba2475128f6d"
+          },
+          {
+            "name": ".rsrc",
+            "rva": 270336,
+            "bytes": 4096,
+            "sha256": "508a4002c88636daf7d583a632f84de2ff6dbb3cd161b28a13f85d3799af160c"
+          }
+        ],
+        "changed_initializer": {
+          "start": "60001c50",
+          "end_exclusive": "60001c87",
+          "hex": "57b9e803000031c0bf28f00360f3abc7053cbd03600000000068d01c00606a006a006a00a188490160508b08ff5120ff053cbd03605fc3",
+          "disassembly": [
+            "60001c50:\t57                   \tpush   edi",
+            "60001c51:\tb9 e8 03 00 00       \tmov    ecx,0x3e8",
+            "60001c56:\t31 c0                \txor    eax,eax",
+            "60001c58:\tbf 28 f0 03 60       \tmov    edi,0x6003f028",
+            "60001c5d:\tf3 ab                \trep stos DWORD PTR es:[edi],eax",
+            "60001c5f:\tc7 05 3c bd 03 60 00 \tmov    DWORD PTR ds:0x6003bd3c,0x0",
+            "60001c66:\t00 00 00",
+            "60001c69:\t68 d0 1c 00 60       \tpush   0x60001cd0",
+            "60001c6e:\t6a 00                \tpush   0x0",
+            "60001c70:\t6a 00                \tpush   0x0",
+            "60001c72:\t6a 00                \tpush   0x0",
+            "60001c74:\ta1 88 49 01 60       \tmov    eax,ds:0x60014988",
+            "60001c79:\t50                   \tpush   eax",
+            "60001c7a:\t8b 08                \tmov    ecx,DWORD PTR [eax]",
+            "60001c7c:\tff 51 20             \tcall   DWORD PTR [ecx+0x20]",
+            "60001c7f:\tff 05 3c bd 03 60    \tinc    DWORD PTR ds:0x6003bd3c",
+            "60001c85:\t5f                   \tpop    edi",
+            "60001c86:\tc3                   \tret"
+          ]
+        }
+      }
+    }
+  },
+  "dx6_changed_section_bytes": {
+    ".text": 8,
+    ".rdata": 0,
+    ".data": 0,
+    ".reloc": 44,
+    ".rsrc": 24
+  },
+  "verified": [
+    "140 config writes effective gate0/4 directly;150 separates normalized support0/1 and adds contextual effective recomputation.",
+    "Checked main menu writes context0;checked pause/in-race initializers write1,with retained writer bytes.",
+    "150 refreshes gate in menu loop and scene entry;context0 forces effective gate0 on this route.",
+    "Retained scene restore requests selector15h using effective gate.",
+    "DX6 whole code-section delta is eight bytes:insert INC[6003bd3c],move POP EDI/RET;other section differences are separately counted."
+  ],
+  "limits": [
+    "No target,menu,API,instruction probe,compiler or Ghidra writes.",
+    "Selected context writers are not all writes/lifetime coverage;do not call context globally immutable.",
+    "No direct taillight rendering chain or visible colour result established;MP150-033 remains vendor-only.",
+    "DX6 counter purpose/producer-consumer lifecycle unresolved;do not label its increment a fog/light fix.",
+    "Relocation/resource differences are counted,not semantically explained here;code-byte coverage is not complete driver equivalence."
+  ]
+}

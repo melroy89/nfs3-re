@@ -1156,3 +1156,7 @@ The [151/152 package and reader comparison](original-modern-renderer-loading.md#
 ## Fog mode and enable requests separate in152
 
 The [EXE/provider follow-up](original-modern-renderer-loading.md#fog-formula-setup-separates-from-ordinary-enable-state-in152) resolves the selected mechanism beyond the prior configuration checkpoint:151→152 stops forcing every nonzero effective intersection to4, adds supported-only mode4 setup, and retains scene restore to submit effective1/0. The unchanged DX7 dispatcher distinguishes those payloads. MP152-002 stays partial; full API107 interoperability and rendered fog remain unverified.
+
+## Historical menu fog context and distinct DX6 initializer edit
+
+The [140/150 comparison](original-modern-state14.md#menu-fog-admission-becomes-contextual-at150) verifies parsed support/effective separation, selected menu0 versus in-race1 context writers, new gate-refresh calls and retained selector15h consumption. It also localizes every DX6 code-section difference to an eight-byte initializer edit, without inventing the counter meaning. MP150-033 remains vendor-only because taillight-specific linkage and visible colour repair are unverified.

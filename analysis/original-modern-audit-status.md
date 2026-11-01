@@ -780,3 +780,7 @@ The [historical DX7 review](original-modern-renderer-loading.md#dx7-fog-opt-in-c
 ## Selected API fog request mechanism now linked
 
 The [mode/enable follow-up](original-modern-renderer-loading.md#fog-formula-setup-separates-from-ordinary-enable-state-in152) supersedes the preceding configuration-only boundary:151→152 changes effective mask normalization and adds separate supported-only mode4 setup. Retained scene restore and cached setter connect it to distinct unchanged DX7 provider branches. MP152-002 remains partial, with no count change; complete API specification, provider success and rendering remain open.
+
+## Menu fog context verified without over-attributing taillight repair
+
+The [historical context audit](original-modern-state14.md#menu-fog-admission-becomes-contextual-at150) verifies140→150 support/effective separation and selected writer/consumer linkage. DX6 has an independent eight-byte code-section edit; its counter meaning remains unresolved. MP150-033 stays vendor-only pending direct lighting/colour evidence. Catalog counts unchanged; no runtime or database changes.

@@ -168,3 +168,34 @@ warns against naming the setter's entire effect from the historical key.
 link; verified static evidence. Complete historical downstream effects,
 intermediate removal date and rendered outcomes remain unresolved. No target,
 API or instruction probes were executed, and no database or executable changed.
+
+## Menu fog admission becomes contextual at150
+
+**Verified historical support/effective split and selected context writers; taillight-specific attribution unresolved.** The [menu-context audit](evidence/audits/menu-fog-context-history.json), reproduced with `python3 analysis/scripts/audit_menu_fog_context_history.py`, pins author-hosted1.4.0/1.5.0 EXEs and their DX6 members. It supplies a concrete earlier boundary for the final scene-admission contract above and complements the later [152 mode/enable split](original-modern-renderer-loading.md#fog-formula-setup-separates-from-ordinary-enable-state-in152).
+
+| Contract |1.4.0 |1.5.0 |
+|---|---|---|
+|FogSupport reader |`004b5b0b..004b5b2f`: fallback0; nonzero→4; store directly to`007a3a64` |`004b58c4..004b58e7`: fallback0; nonzero→1; store support at`007a3a54` |
+|Effective gate helper |`00431c20` is a five-byte balanced-frame no-op |32-byte`00431c20..00431c40`: support AND option`006fd1d4` AND context`00559234`; nonzero→4; store`007a3a64` |
+|Menu loop at`0044b346` |No gate refresh call at that site |CALL`00431c20` |
+|Scene entry at`004bc16d` |Conditional call to retained no-op`00431c30` when incoming EAX is zero |Unconditional CALL`00431c20`; branch over two NOPs |
+
+The checked context producers are byte-identical in both versions:
+
+- Main frontend route`0044b271..0044b27e` clears EDI and stores0 to`00559234`.
+- Pause initializer prefix`0044b958..0044b96a` supplies EDX1 and stores1 to that cell.
+- In-race initializer prefix`0044ba38..0044ba4d` also supplies/stores1.
+
+These are selected writer routes, not a complete write census or a universal “menu/race Boolean” type declaration. With context0, the new bitwise recomputation necessarily publishes effective0 regardless of support/option values. With ordinary support/option/context1 it publishes4 in150. The later152 helper keeps raw intersection1 instead, as the linked report explains. Do not transplant the final normalized-looking mask contract into150.
+
+Complete116-byte scene-state restore`00431b40..00431bb4` remains identical in140/150. It passes effective`007a3a64` as payload to cached selector15h at`00431b89..00431b99`. This gives the changed admission a concrete downstream state consumer while preserving cache/provider and all-caller limits. Actual fog output and the policy of every menu/scene transition remain untested.
+
+### DX6 has a separate small code edit at the same boundary
+
+The paired `drivers/dx6/dx6a.dll` members are94,208 bytes with SHA-256`d32ee0f11361977ecaa01402b33a0a1ea4f4732b118355a5b98696768f8d25cb` (140) and`6c4a300fd55ed5e6c3c85983d43903717543d1b69146275856322da61a76b152` (150). Their complete equal-sized`.text` sections differ at exactly **eight bytes**, `60001c7f..60001c87`.
+
+At the end of initializer`60001c50`,150 inserts `INC DWORD[6003bd3c]` before POP EDI/RET, moving that epilogue six bytes later. The retained prefix zeroes the cell, supplies callback`60001cd0` and performs an indirect call through object`60014988` vtable+20. The added increment is unconditional after that call; it is not guarded by a local result test. It preserves EAX but changes arithmetic flags. The counter's exact purpose and full producer/consumer lifetime are not established here, so this edit is **not labelled a fog or lighting fix**.
+
+Section differences are `.text`8, `.rdata`0, `.data`0, `.reloc`44 and`.rsrc`24 bytes. Relocation/resource and PE-header semantics are not closed by these counts; code-byte localization is not complete driver equivalence. Exact initializer captures and section hashes are retained in the audit.
+
+**MP150-033 remains vendor-only:** contextual fog suppression is a real EXE change at the advertised boundary, and the selected DX6 code edit is localized, but neither alone identifies the taillight draw/light-colour path or proves its visible repair. Follow the actual menu lighting submission and effective state before attributing this release-note claim. The broader fog-option/context mechanism can be reconstructed independently without resolving that visual investigation. No menu, game, DLL/API, instruction probe, compiler or Ghidra modification occurred.
