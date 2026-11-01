@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **97 vendor-only,51 bounded-static,140 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **96 vendor-only,51 bounded-static,141 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -713,3 +713,7 @@ The [three-baseline predicate audit](original-modern-display-modes.md#early-mode
 ## Mode depth narrowing and cache-source dates resolved separately
 
 The [release-boundary audit](original-modern-display-modes.md#depth-narrowing-and-descriptor-caching-occur-in-different-releases) verifies1.4.0→1.5.0 introduces the16/32 shared eligibility helper, retained through final.1.5.0/1.6.0 selected bodies match;1.6.0→1.6.1 replaces enumerator/search about calls with cached reads and repacks surrounding instructions. Prior1.1.0 bytes match fresh1.4.0 enumeration. Catalog counts unchanged. Source lifetime/provider effects, mode rendering and machine-state equivalence remain unverified; no target execution or database changes.
+
+## Early abort-diagnostic presentation change
+
+The [three-baseline handler comparison](original-modern-startup-policy.md#early-release-already-contains-the-diagnostic-dialog-flag-change) verifies early1.1.0/final520-byte equality, original’s two flag-byte differences and retained caption/MessageBox binding. Warning→error icon and explicit topmost requests do not establish a repaired stacking problem; original SYSTEMMODAL remains qualified. MP100-042 advances to partial, counts96/51/141/2. Actual dialogs, all error paths and1.0.0 introduction remain unverified; no target execution or database changes.

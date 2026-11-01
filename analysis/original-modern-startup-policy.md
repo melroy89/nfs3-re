@@ -188,3 +188,20 @@ The [five-audit checkpoint](evidence/validation/startup-static-checkpoint.json),
 | Complete520-byte diagnostic-body difference | Done for instruction-byte comparison | Verified | Transitive callbacks, formatting/termination contracts and actual Windows/Wine UI behaviour |
 
 These follow-ups are ordinary pending investigations, not external blockers and not prerequisites for every other comparison. For the next broader pass, reuse this chapter rather than rescan its literals: prioritize a changed caller/consumer that supplies semantic meaning, or a separate catalog mechanism still supported only by vendor text. Keep static facts, inferred intent and actual runtime observations separate.
+
+## Early release already contains the diagnostic dialog-flag change
+
+**Verified static release presence; no diagnostic displayed.** The [dialog-history audit](evidence/audits/diagnostic-dialog-history.json), reproduced with `python3 analysis/scripts/audit_diagnostic_dialog_history.py`, pins supplied original, author-hosted1.1.0 and official final EXEs. The complete520-byte handler`00401010..00401218` in1.1.0 is byte-identical to final. Relative to original, only`00401196/00401198` differ, both in the flag immediate of PUSH at`00401195`.
+
+| Property | Original |Modern1.1.0 and final |
+|---|---|---|
+|Flag word |00011031h |00051011h |
+|Caption at`00536030` |`Abort message:` |Same bytes |
+|MessageBoxA binding |CS-prefixed indirect call at`004011a6`, IAT`00534764` |Same |
+|Buttons |OK/Cancel |Same |
+|Requested icon |Warning |Error |
+|Explicit topmost bit |Absent |Present |
+
+The full flag decoding and primary-source qualification are in the preceding section. Original already requests SYSTEMMODAL, whose topmost-style implication prevents claiming the added explicit TOPMOST bit cured a demonstrated stacking problem. Both retain SETFOREGROUND; no other local handler instructions change. Caption/code equality does not imply equal formatted text, callbacks, global state, admission or later termination.
+
+**MP100-042 advances to partial support:** an early retained Modern release contains a concrete message-box presentation change, distinct from later common fatal/warning helper changes in the [startup-requirements report](original-modern-startup-requirements.md). This generic release note does not identify an exhaustive set of boxes or a reproduced UI failure.1.0.0 introduction, actual appearance/focus, Windows/Wine behavior, other diagnostics and complete error-path contracts remain unverified. No game, exception, MessageBox API, instruction probe or Ghidra write was executed.
