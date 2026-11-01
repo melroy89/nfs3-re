@@ -1095,3 +1095,7 @@ The [bounded HUD-editor review](original-modern-hud-settings-policy.md#police-co
 ## Historical software list-border admission
 
 The [list-bevel comparison](original-modern-hud-layout.md#historical-list-bevel-fix-retargets-the-software-branch) identifies the1.4.0→1.5.0 two-byte JNE retarget at004847bc: software now reaches the eight-quad border enqueue while continuing to skip the separate background quad. Allocation, layout, enqueue/removal and queue helpers bind the actual border bank. MP150-017 advances to partial static support; visible output, Speeds List identity and provider behaviour remain untested. This supersedes the earlier vendor-only assessment without invalidating its two unchanged nearby gates.
+
+## Police editor widget draw linkage remains retained
+
+The [registered editor draw-chain review](original-modern-hud-settings-policy.md#registered-editor-draw-chain-retains-both-widget-cases) binds the HudItem callback to the23-case renderer table and retained Tutorial Icon/Cone Stats arms. Selected role-policy helpers are also unchanged. This narrows MP100-048 to earlier instantiated-item/admission or active-asset evidence; it remains vendor-only, with no visible hiding result established. Reuse these checked boundaries rather than repeating the rectangle-loader or draw-case comparison.

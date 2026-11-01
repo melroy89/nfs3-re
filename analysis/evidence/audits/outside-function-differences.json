@@ -7633,7 +7633,7 @@
       }
     ],
     "report": "analysis/original-modern-hud-settings-policy.md",
-    "report_sha256": "09e6f7991f8235e89933aff07a3737a67b0cec86cf78ec9631eea2d11cc931e6",
+    "report_sha256": "b0482f664b452de66f9f3f3075756fc1f5ff4bf4adaa9d105ee02c25170f1d79",
     "limit": "All interval differences localized to documented policy; equality of surrounding bytes is not full semantic equivalence."
   },
   "cascade_interval_partition": {

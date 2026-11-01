@@ -177,7 +177,7 @@
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
-      "sha256": "09e6f7991f8235e89933aff07a3737a67b0cec86cf78ec9631eea2d11cc931e6"
+      "sha256": "b0482f664b452de66f9f3f3075756fc1f5ff4bf4adaa9d105ee02c25170f1d79"
     },
     {
       "path": "analysis/original-modern-idle-movie.md",
@@ -4562,6 +4562,20 @@
       "original_sha256": "454dc6a5516fdec6e37b5ce7c41ebc6043e4fcf24fdf577c870fc4d50e4c4e72",
       "modern_sha256": "15ac56fd796251cf4ffbbf5c440f445b396a3c7dea88da3dfc65152061acbcee",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-settings-policy.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0045ab30",
+            "0045ae28",
+            "0045ae29",
+            "0045af5f",
+            "0045b4b2",
+            "0045b664",
+            "0045b837",
+            "0045b8d0"
+          ]
+        },
         {
           "path": "analysis/original-modern-numeric-scale.md",
           "entry_mentioned": true,

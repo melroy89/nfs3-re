@@ -91,3 +91,24 @@ The hash-pinned author-reference `EDEF.POS` orders Tutorial Icon and Cone Stats 
 Author-reference `PSHUDPOS.MNU` authors17 `HudItem` records covering item values0..16, including6/7. The rectangle loader’s low-ID mapping connects these to the named slot order under its ordinary profile assumptions. This menu is omitted from the final patch archive, as the [existing complete asset inventory](original-modern-reference-assets-index.md) records. **Omission does not prove deletion from an installed base game**, or prove which editor route is active. The author-reference asset is not authenticated pristine retail or independently paired to the supplied original executable.
 
 **Required next evidence:** identify the active editor item-list construction or retained asset actually used in final; follow slot6/7 and police-role variants through descriptor admission and subsequent draw/input flags. Then establish whether the original/final difference occurs in code, authored items or later state. Only after that linkage should MP100-048 advance beyond vendor-only status; visible acceptance and1.0.0 introduction remain separate. The checked method/template and nonzero-preset boundaries are retained to avoid repeating these routes as if unexplored.
+
+## Registered editor draw chain retains both widget cases
+
+**Verified static linkage and bounded negative comparison; MP100-048 remains unresolved.** The [draw-dispatch audit](evidence/audits/hud-editor-draw-dispatch.json), reproduced with `python3 analysis/scripts/audit_hud_editor_draw_dispatch.py`, follows the registered callback beyond the previously checked rectangle loader. It pins supplied original/official final hashes, the shared23-entry jump table and eight byte-identical code spans.
+
+Template`00557928` at offset+2c binds`0045bcb0`. That104-byte callback optionally calls`0045a120` for nonzero incoming EDX, then unconditionally calls renderer`0045ab30` at`0045bcc3`. Only afterwards does it compute signed item%23, call classifier`0047bc20` and conditionally invoke`00459440` with one of two colours according to item+70. Thus this later classifier/outline path is not a newly added police-role filter before the main widget draw.
+
+The renderer prefix selects view0 for signed item<23 or view1 otherwise, subtracting23 once on the latter path. It obtains the vehicle through`00422bd0`, chooses colour using item+70 and time state, bounds the slot unsigned against22 and dispatches through`0045aad0`. The table and249-byte prefix through the indirect jump are retained.
+
+| Named slot from prior POS evidence | Retained jump target | Retained case behaviour | Comparison scope |
+|---|---|---|---|
+|6 Tutorial Icon |`0045b8d0` |Calls`00482030`; renderer-bit2 fallback sets state via`00431900`, calls`00482190`, then resets state |74-byte arm identical |
+|7 Cone Stats |`0045b837` |Computes percentage from vehicle+2dc/+2e0, with100 for zero sum, then continues its draw path |153-byte arm identical |
+
+The percentage numerator uses32-bit wrapping arithmetic equivalent to100×the first counter before signed IDIV by the wrapped sum. These fields' complete gameplay semantics, overflow/division corner cases and reachable domain are not established here; a direct signed-C translation could introduce undefined behaviour. The callback's signed remainder is likewise not an always-positive modulo operation for invalid negative item IDs.
+
+The complete3,598-byte renderer envelope differs at just`0045ae28`, `0045ae29`, `0045af5f`, `0045b4b2`, `0045b664`, outside the two captured arms and dispatch prefix. This is not whole-renderer or transitive equivalence: changed operands, callees, globals and assets can alter other paths. The audit retains exact span hashes and decoded instructions, not a runtime result.
+
+A second checked route at`0044d8cd..0044d8e8` calls shared policy`0044c2d0`, then selects`0044c360` for nonzero role-local ECX or`0044c4e0` otherwise. These selected369/289-byte policy bodies are identical between EXEs. They perform named-entry lookups and flag writes; equal code does not establish equal authored item names, objects or earlier admission.
+
+**Next action:** trace the instantiated editor item list and its generic admission/dispatch, binding the actual loaded menu asset and role state. The registered draw routine cannot establish that a callback is ever dispatched. Keep the earlier archive-omission and nonzero-rectangle limitations: neither proves hiding or disproves the vendor claim. No new slot6/7 police-only predicate was identified in the checked callback, prefix, cases or policy helpers. Visible acceptance and historical introduction remain pending; no game, instruction probe, compiler or Ghidra write occurred.
