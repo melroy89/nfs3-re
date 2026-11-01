@@ -215,7 +215,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0049ea70` | BuildNetworkEndpointFromMutableAddress | 99 | 7 | [dialog-input](original-modern-dialog-input.md), [network-endpoints](original-modern-network-endpoints.md) |
 | `004a2f50` | NormalizeCommaSeparatorsAndParseColonSuffix | 61 | 57 | [network-endpoints](original-modern-network-endpoints.md), [network-port-menu](original-modern-network-port-menu.md) |
 | `004a2f90` | ScanAvailableTitleAndDemoMadFiles | 108 | 89 | [idle-movie](original-modern-idle-movie.md) |
-| `004a33d0` | PollLoadingAbortKeyState | 32 | 31 | [loading-timing](original-modern-loading-timing.md), [parameter-preset](original-modern-parameter-preset.md), [pending-overlay](original-modern-pending-overlay.md), [texture-progress](original-modern-texture-progress.md) |
+| `004a33d0` | PollLoadingAbortKeyState | 32 | 31 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [parameter-preset](original-modern-parameter-preset.md), [pending-overlay](original-modern-pending-overlay.md), [texture-progress](original-modern-texture-progress.md) |
 | `004a33f0` | InitializeRaceSession | 347 | 326 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [pending-overlay](original-modern-pending-overlay.md) |
 | `004a354c` | ResetLoadingProgressClock | 11 | 10 | [loading-timing](original-modern-loading-timing.md) |
 | `004a3558` | ResetLoadingProgressTimingState | 77 | 71 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md), [pending-overlay](original-modern-pending-overlay.md) |

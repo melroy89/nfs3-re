@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "eb6369285825b8aacc1942cee9d01ebc099aadeddd1c34b19c67d22c26b74b73"
+      "sha256": "532bf6ee98757c82730922e26b22b1c8503ead41cb50ef9c3f6c7e14e9f57489"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -229,7 +229,7 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "e94451ad55bf42444842e7a9245a74d2e5f3c09d52defba9829f4dc0dedd1fa6"
+      "sha256": "1062e85439fb315721796c10902d53c78296d4f336c006798af9cfcd87f2e6c1"
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -7712,6 +7712,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-music-selection.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004a33d0"
+          ]
+        },
+        {
           "path": "analysis/original-modern-parameter-preset.md",
           "entry_mentioned": true,
           "addresses": [
@@ -7780,6 +7787,7 @@
             "004a3470",
             "004a3489",
             "004a348e",
+            "004a34ad",
             "004a34bd",
             "004a34c2",
             "004a34c7",

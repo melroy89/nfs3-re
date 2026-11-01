@@ -12,10 +12,10 @@ RETAINED = [(0x4e8b60,0x4e8bce),(0x4e0dee,0x4e0e2b),(0x4104f0,0x41057f),(0x4106b
             (0x4109d0,0x410a3c),(0x4e6f0c,0x4e705c),
             (0x4e73d0,0x4e7466),(0x4e7470,0x4e74e1)]
 
-SPANS = {'original': [(0x40ffd0,0x410027),(0x410030,0x410329),(0x4103a0,0x41045d),
+SPANS = {'original': [(0x477fc2,0x478010),(0x4a34ad,0x4a34b2),(0x40ffd0,0x410027),(0x410030,0x410329),(0x4103a0,0x41045d),
         (0x4a3690,0x4a38bc),(0x4107c0,0x4109cc),
         (0x418620,0x418670),(0x4187e0,0x41883f)],
-    'official_modern': [(0x40fefc,0x40ff80),(0x40ff9c,0x40fffb),
+    'official_modern': [(0x477fc2,0x478010),(0x40fefc,0x40ff80),(0x40ff9c,0x40fffb),
         (0x4103a0,0x410446),(0x410606,0x410615),
         (0x4b5d21,0x4b5d3a),(0x4a33f0,0x4a354b),
         (0x40fed0,0x40fefa),(0x51778c,0x5177de),
@@ -116,6 +116,21 @@ def main():
         assert data==images['official_modern'].get_data(start-0x400000,end-start)
         result['identical_music_ranges'].append({'start':f'{start:08x}','end':f'{end:08x}',
             'sha256':hashlib.sha256(data).hexdigest()})
+    old_image,new_image=images['original'],images['official_modern']
+    assert new_image.get_data(0x77fd0,64)==b'\x90'*64
+    old_tail,new_tail=[pe.get_data(0x77fc2,78) for pe in (old_image,new_image)]
+    assert old_tail[:14]==new_tail[:14] and sum(a!=b for a,b in zip(old_tail,new_tail))==64
+    assert old_image.get_data(0x77fd0,36).hex()=='5589e5833d54bb6f00007516a1acd46f00e84a80f9ffe8e5b30200833d8ce85500005dc3'
+    assert old_image.get_data(0x78000,5).hex()=='5589e55dc3'
+    assert old_image.get_data(0xa34ad,5).hex()=='e81e4bfdff'
+    assert new_image.get_data(0xa3489,5).hex()=='e86ecaf6ff'
+    result['removed_race_music_wrapper']={'original':'00477fd0..00477ff4,36 bytes',
+        'caller':'004a34ad',
+        'gate':'006fbb54==0 -> load006fd4ac intoEAX,call00410030,call004a33d0,compare0055e88c with0',
+        'return':'No normalized local return; comparison flags and delegatedEAX survive frame epilogue',
+        'modern_route':'Revised selector0040fefc directly at004a3489,followed by abort poll004a348e; shown caller has no equivalent006fbb54 test at that point',
+        'outside_partition':'00477fc2..00478010:14 unchanged leading alignment,36-byte wrapper,12 alignment,5-byte no-op00478000,11 alignment;64 changed bytes',
+        'limits':'Gate meaning, full alternative admission, playback and loading cadence remain unresolved; no global absence-of-gate claim.'}
     (ROOT/'analysis/evidence/audits/original-modern-music-selection.json').write_text(json.dumps(result,indent=2)+'\n')
     print('PASS: music baselines, selection spans and menu cycle tables')
 

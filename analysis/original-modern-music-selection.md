@@ -206,3 +206,49 @@ The expanded [RNG audit](scripts/audit_rng_callsite_difference.py) verifies the 
 Thus on this startup path the LCG seed is the clock API's raw 32-bit return, without local mixing, masking or an explicit fixed seed. The [clock-source comparison](original-modern-clock-source.md) explains the broader timer replacement; the seed provenance here follows the actual return-value flow rather than inferring it from a nearby timer call. Same captured clock value and same subsequent LCG call sequence yield the same LCG sequence mathematically; neither condition is guaranteed across launches.
 
 **Status: startup seed source verified statically.** Actual seed values, invocation count, clock quality, indirect writes/reseeding and cross-thread ordering remain untested. This does not change the separate shared generator's state or establish gameplay/replay dependence on the music LCG. The earlier “no particular startup seed” limitation concerns the actual numeric seed and remains valid; its source is now identified.
+
+## Removed race-loading music wrapper and adjacent shutdown no-op
+
+The expanded [music audit](scripts/audit_music_selection_difference.py)
+retains original wrapper `00477fd0..00477ff4` (36 bytes), its direct caller at
+`004a34ad`, both complete outside-body intervals and assertions in
+[the manifest](evidence/audits/original-modern-music-selection.json).
+This classifies all64 changed bytes in interval `00477fc2..00478010`:
+
+| Subrange | Original role | Modern |
+|---|---|---|
+| `00477fc2..00477fd0` |14 alignment bytes | Identical |
+| `00477fd0..00477ff4` | Conditional race-music loading wrapper | NOPs |
+| `00477ff4..00478000` |12 alignment bytes | NOPs |
+| `00478000..00478005` | Five-byte frame/return no-op | NOPs |
+| `00478005..00478010` |11 alignment bytes | NOPs |
+
+The original wrapper first checks `006fbb54`. Nonzero skips its work. Zero
+loads selected circuit `006fd4ac` into EAX, calls original music loader
+`00410030`, calls cancellation/service poll `004a33d0`, then compares abort
+global `0055e88c` with0 before restoring EBP and returning. It does not assign
+a local normalized Boolean result. The final comparison's flags and whatever
+EAX the poll returns are distinct outputs; callers must not infer one from
+the other.
+
+Modern's [complete initialization envelope](#modern-playlist-seeding-and-race-load-update-placement)
+already establishes the replacement placement: revised selector `0040fefc`
+is called directly at `004a3489`, followed by poll `004a348e` and a branch
+using its EAX. There is no equivalent `006fbb54` test at that shown call site.
+This is a local gating/placement difference, not proof that all earlier
+admission or downstream music conditions were removed. The original loader
+and Modern selector have separately documented different responsibilities;
+they must not be treated as identical functions solely because both sit on
+this loading route.
+
+The separate original no-op `00478000` is called during original race
+shutdown; the [shutdown-wrapper investigation](original-modern-heap-initialization.md#removed-wrappers-relocate-arena-lifetime-and-shorten-race-shutdown)
+also retains the surrounding shutdown sequence. Its omission does not by
+itself remove a resource release or audio operation. Full register/stack
+state and the rest of shutdown remain separate contracts.
+
+**Status:** done, verified static for the wrapper, caller and64-byte interval
+partition. The high-level identity of gate `006fbb54`, full admission/abort
+cadence, loaded-file identity, actual playback and user-visible outcomes remain
+unresolved. No game, audio API, loader or instruction probe was executed;
+executable/database bytes were preserved.
