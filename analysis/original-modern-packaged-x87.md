@@ -64,3 +64,7 @@ The [selected local DLL inventory](original-modern-dll-candidates.md) now record
 ## Sound reference counterpart: unchanged implementation bytes
 
 The [author-reference/final sound comparison](original-modern-sound-reference-pair.md#complete-file-byte-accounting) now supplies a distinct hash-pinned candidate beyond the previously identical local installed file. Its entire existing code and initialized-data sections match final Modern, so this pair has no changed sound-DLL implementation bytes at the previously inventoried control-word locations. Headers and version resources do change. Equal instruction bytes do not establish equal ambient x87 state: the EXE policy, callers and runtime dependencies remain separate. This is bounded static correspondence, not a universal sound-thread precision or numerical-equivalence claim.
+
+## Four reference/final DLL pairs now compared
+
+The [paired control-site audit](original-modern-paired-dll-x87.md) supplies distinct author-reference counterparts for DX5, software, sound and Glide. All102 primary control candidates and six FSAVE/FRSTOR candidates retain their VAs, bytes and32-byte surrounding contexts in these four pairs. They remain linear-decoding candidates; this does not establish runtime control-word equality or cover other providers/backends. The EXE precision-policy difference and this DLL site-retention result are complementary evidence, not competing global precision claims.

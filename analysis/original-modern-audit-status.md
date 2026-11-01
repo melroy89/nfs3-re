@@ -382,3 +382,7 @@ The [cross-component failure trace](original-modern-glide-reference-identity.md#
 ## Glide exported-init retry and outward failure linkage
 
 The [init comparison](original-modern-glide-reference-identity.md#thrash-init-retries-provider-setup-and-has-a-separate-failure-channel) captures complete paired init bodies and EXE callers. Retained init admission can retry provider setup independently of the about marker; loader0 returns init0. Slot009ef978 feeds a platform cleanup branch, then a stored-status return; outward0 skips later display/mode setup and reaches the startup diagnostic. Cleanup callback state, successful retry and runtime failure/termination remain unverified. The earlier accepted-empty-descriptor result is not whole-startup acceptance or proof of irreversible failure. Catalog counts unchanged.
+
+## Paired DLL control-site correspondence
+
+The [four-pair audit](original-modern-paired-dll-x87.md) verifies both archives/eight members,102 primary x87 control candidates and six FSAVE/FRSTOR candidates. VAs, instruction encodings/operands and32-byte before/after contexts match in all four pairs. These remain linear-decoding candidates, not execution/numerical equivalence or all-component precision policy. This narrows older-DLL correspondence while preserving changed EXE/ambient-state and other-provider limits. Catalog counts unchanged; no target execution.

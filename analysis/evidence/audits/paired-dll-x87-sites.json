@@ -1,0 +1,1888 @@
+{
+  "kind": "four-paired-DLL-control-site-comparison",
+  "archives": {
+    "reference": [
+      "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+      "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127"
+    ],
+    "final": [
+      "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+      "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3"
+    ]
+  },
+  "pairs": [
+    {
+      "label": "dx5",
+      "primary_candidate_count": 31,
+      "environment_candidate_count": 2,
+      "site_and_context_comparison": "identical",
+      "versions": [
+        {
+          "role": "reference",
+          "member": "d3da.dll",
+          "sha256": "ae676272438d93fd7a8da7a19250d6e8b664d8570824ab8042e2b20b38395a02",
+          "bytes": 98641,
+          "image_base": "60000000",
+          "groups": {
+            "primary": [
+              {
+                "va": "60005503",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "600054e3",
+                "context_bytes": 68,
+                "context_sha256": "0e96b579470851e7954c343f7fdabb6c25d479721fe55a2ee18c229a468df05a"
+              },
+              {
+                "va": "60005510",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "600054f0",
+                "context_bytes": 67,
+                "context_sha256": "55898519512b168f5eaac531ba15029493518684ce667e2f90f36eeac78cd641"
+              },
+              {
+                "va": "60005515",
+                "encoding": "d96c2404",
+                "instruction": "fldcw  WORD PTR [esp+0x4]",
+                "context_start_va": "600054f5",
+                "context_bytes": 68,
+                "context_sha256": "adef2fe60bafa0c42f35cfe0cf4054f546e562b26e5f117beabdc8df930b159c"
+              },
+              {
+                "va": "60007aa4",
+                "encoding": "d97c241c",
+                "instruction": "fnstcw WORD PTR [esp+0x1c]",
+                "context_start_va": "60007a84",
+                "context_bytes": 68,
+                "context_sha256": "10fb14171d6503e91c36db9f6ff05b90371c82f55ad77c2f02d1eb62bf50efd3"
+              },
+              {
+                "va": "60007aba",
+                "encoding": "d96c2420",
+                "instruction": "fldcw  WORD PTR [esp+0x20]",
+                "context_start_va": "60007a9a",
+                "context_bytes": 68,
+                "context_sha256": "6adaf20ebe49d0a4be3cd41d26cb67155d58557219af36165d1052bb8a7cac48"
+              },
+              {
+                "va": "60007adc",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60007abc",
+                "context_bytes": 68,
+                "context_sha256": "717033c6fc1e07b621c1ea8a45d14e347ffa732ac9fd0fc084c358ebdb1d5c84"
+              },
+              {
+                "va": "60007af3",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60007ad3",
+                "context_bytes": 68,
+                "context_sha256": "7ba01918b44a8c1d79a1a829a79d9861a9007979bf69160e5548ac74c3473207"
+              },
+              {
+                "va": "60007b12",
+                "encoding": "d97c241c",
+                "instruction": "fnstcw WORD PTR [esp+0x1c]",
+                "context_start_va": "60007af2",
+                "context_bytes": 68,
+                "context_sha256": "714fb6ecd1b95e28963af8d293cbbb7b2601ef53ec64a4ad4c035892e382bba5"
+              },
+              {
+                "va": "60007b28",
+                "encoding": "d96c2420",
+                "instruction": "fldcw  WORD PTR [esp+0x20]",
+                "context_start_va": "60007b08",
+                "context_bytes": 68,
+                "context_sha256": "8266000e0f5b877b443d0d523c3a052b15ab33333e04152ada8fbbca5ac171a4"
+              },
+              {
+                "va": "60007b66",
+                "encoding": "9bd96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60007b46",
+                "context_bytes": 69,
+                "context_sha256": "7c5615f0aef90a3a8594ef1ab589b494acdc13223396fa23031745e005c43c20"
+              },
+              {
+                "va": "60007b70",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60007b50",
+                "context_bytes": 68,
+                "context_sha256": "58f7a3b5decfce0b60ec1ce43044fa25afa9b1ca3e26589f88e61a6b9377653d"
+              },
+              {
+                "va": "600081f1",
+                "encoding": "dbe3",
+                "instruction": "fninit",
+                "context_start_va": "600081d1",
+                "context_bytes": 66,
+                "context_sha256": "63ac2ffdbb48e1f2530bf790ef09311262ecf0ac1b7f39fabfcff372611700d8"
+              },
+              {
+                "va": "600081f3",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "600081d3",
+                "context_bytes": 67,
+                "context_sha256": "d3010a533cd1f7f3826cd6d2d7306ad7e92a2b9a9d9a16fbb819a2b17acde22c"
+              },
+              {
+                "va": "60009d1a",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60009cfa",
+                "context_bytes": 67,
+                "context_sha256": "5c20a52f3fb3839c43964dd819cfb1adae0172de3b5db52bedeb298bedc8474c"
+              },
+              {
+                "va": "60009d32",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60009d12",
+                "context_bytes": 67,
+                "context_sha256": "9978acb5383fceffcb2d5dc58ac0ab485531ec8b264bcff43b8583a445811a00"
+              },
+              {
+                "va": "60009d35",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60009d15",
+                "context_bytes": 67,
+                "context_sha256": "e2f807650d17c5bb55ecfb2b096f781578429b1d46a04d6a29b6e7495ab7adc8"
+              },
+              {
+                "va": "6000b5e8",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000b5c8",
+                "context_bytes": 68,
+                "context_sha256": "d82291a0bb75209d9eac996b25b40e113bec5e448db6290b8e1929eb210ab66d"
+              },
+              {
+                "va": "6000b5fd",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b5dd",
+                "context_bytes": 67,
+                "context_sha256": "3f063868379645e98a2dc388ca28d412a9f37a5c57a88ccd3b5bd30f864ddd4e"
+              },
+              {
+                "va": "6000b64e",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b62e",
+                "context_bytes": 67,
+                "context_sha256": "690a07696c66e15703a792ed0ac2e3bf2f3f16c8f547baac09b1d008c2603a38"
+              },
+              {
+                "va": "6000b6c6",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000b6a6",
+                "context_bytes": 68,
+                "context_sha256": "36229751a83f4c6f0c6e1576f2041b10f8d04940d54626d689d02a95b565a022"
+              },
+              {
+                "va": "6000b6d7",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b6b7",
+                "context_bytes": 67,
+                "context_sha256": "00c2a7ea9ae8ad06eb7b229402a003d9afe71a6e1b063677d75910528548ea1f"
+              },
+              {
+                "va": "6000b830",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000b810",
+                "context_bytes": 68,
+                "context_sha256": "031d6b8522b03e04f8b9af98a29693dfd2007ed949a1ef8ed39b5c5ac3ce8560"
+              },
+              {
+                "va": "6000b83a",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b81a",
+                "context_bytes": 67,
+                "context_sha256": "8ec179ce0bb7d2e0b62baf762a897d9f2ec4951f5d0ce2745f0a2c7bd42b4a31"
+              },
+              {
+                "va": "6000b842",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b822",
+                "context_bytes": 67,
+                "context_sha256": "061832e2c6edb7f5ae1d914eb3ef78139f8cf27ec9dce7bf57ac39b9fdf79cf2"
+              },
+              {
+                "va": "6000b915",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000b8f5",
+                "context_bytes": 68,
+                "context_sha256": "08cad35fe199b0bf957b5dbb83f0daf388489cb3d4d0351cdcef3ce0e421cb0e"
+              },
+              {
+                "va": "6000b91f",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b8ff",
+                "context_bytes": 67,
+                "context_sha256": "68f4f5e253712c9e647307ecbe94a4a7b3f1fa358edc961d8e0a0bb7f15c69b2"
+              },
+              {
+                "va": "6000b927",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b907",
+                "context_bytes": 67,
+                "context_sha256": "06c83cafbf7d40db4988ea2c9e3e1a43e0bd4a5f4563d36a8976f953b335ae1b"
+              },
+              {
+                "va": "6000bae7",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000bac7",
+                "context_bytes": 67,
+                "context_sha256": "4e322e3286994beae291d2f6f3c882bccea211a73dc80b228d11b6a24837b61d"
+              },
+              {
+                "va": "6000ce92",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6000ce72",
+                "context_bytes": 67,
+                "context_sha256": "c0019950c98f6d273d87f91c79c590fcf295764184b653f62350553b3a4e1cbd"
+              },
+              {
+                "va": "6000ceac",
+                "encoding": "36d92f",
+                "instruction": "fldcw  WORD PTR ss:[edi]",
+                "context_start_va": "6000ce8c",
+                "context_bytes": 67,
+                "context_sha256": "23d851e681ecde17151f03e5603b0fa847e8489512dab8cdd6845e47282c26a8"
+              },
+              {
+                "va": "6000ceb2",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6000ce92",
+                "context_bytes": 67,
+                "context_sha256": "bbbea52c8a5067a74ee7fc7c235e865a114f50c739847acc9ab22ae1b93c6272"
+              }
+            ],
+            "environment_state": [
+              {
+                "va": "60008197",
+                "encoding": "9bdd30",
+                "instruction": "fsave  [eax]",
+                "context_start_va": "60008177",
+                "context_bytes": 67,
+                "context_sha256": "a3f0f6a48b11301265fdd9cf5da7bf31f356e01fee409225178338818f133e46"
+              },
+              {
+                "va": "6000819c",
+                "encoding": "dd20",
+                "instruction": "frstor [eax]",
+                "context_start_va": "6000817c",
+                "context_bytes": 66,
+                "context_sha256": "3f9091d4520ea2f17623db396f74cde64f13f2da85587b838d09c601dde308d9"
+              }
+            ]
+          }
+        },
+        {
+          "role": "final",
+          "member": "drivers/dx5/dx5a.dll",
+          "sha256": "6bd5865b05a7a9918da37ad09f643908d9decdcfdb341a23dd60a8cf70c08b42",
+          "bytes": 72704,
+          "image_base": "60000000",
+          "groups": {
+            "primary": [
+              {
+                "va": "60005503",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "600054e3",
+                "context_bytes": 68,
+                "context_sha256": "0e96b579470851e7954c343f7fdabb6c25d479721fe55a2ee18c229a468df05a"
+              },
+              {
+                "va": "60005510",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "600054f0",
+                "context_bytes": 67,
+                "context_sha256": "55898519512b168f5eaac531ba15029493518684ce667e2f90f36eeac78cd641"
+              },
+              {
+                "va": "60005515",
+                "encoding": "d96c2404",
+                "instruction": "fldcw  WORD PTR [esp+0x4]",
+                "context_start_va": "600054f5",
+                "context_bytes": 68,
+                "context_sha256": "adef2fe60bafa0c42f35cfe0cf4054f546e562b26e5f117beabdc8df930b159c"
+              },
+              {
+                "va": "60007aa4",
+                "encoding": "d97c241c",
+                "instruction": "fnstcw WORD PTR [esp+0x1c]",
+                "context_start_va": "60007a84",
+                "context_bytes": 68,
+                "context_sha256": "10fb14171d6503e91c36db9f6ff05b90371c82f55ad77c2f02d1eb62bf50efd3"
+              },
+              {
+                "va": "60007aba",
+                "encoding": "d96c2420",
+                "instruction": "fldcw  WORD PTR [esp+0x20]",
+                "context_start_va": "60007a9a",
+                "context_bytes": 68,
+                "context_sha256": "6adaf20ebe49d0a4be3cd41d26cb67155d58557219af36165d1052bb8a7cac48"
+              },
+              {
+                "va": "60007adc",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60007abc",
+                "context_bytes": 68,
+                "context_sha256": "717033c6fc1e07b621c1ea8a45d14e347ffa732ac9fd0fc084c358ebdb1d5c84"
+              },
+              {
+                "va": "60007af3",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60007ad3",
+                "context_bytes": 68,
+                "context_sha256": "7ba01918b44a8c1d79a1a829a79d9861a9007979bf69160e5548ac74c3473207"
+              },
+              {
+                "va": "60007b12",
+                "encoding": "d97c241c",
+                "instruction": "fnstcw WORD PTR [esp+0x1c]",
+                "context_start_va": "60007af2",
+                "context_bytes": 68,
+                "context_sha256": "714fb6ecd1b95e28963af8d293cbbb7b2601ef53ec64a4ad4c035892e382bba5"
+              },
+              {
+                "va": "60007b28",
+                "encoding": "d96c2420",
+                "instruction": "fldcw  WORD PTR [esp+0x20]",
+                "context_start_va": "60007b08",
+                "context_bytes": 68,
+                "context_sha256": "8266000e0f5b877b443d0d523c3a052b15ab33333e04152ada8fbbca5ac171a4"
+              },
+              {
+                "va": "60007b66",
+                "encoding": "9bd96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60007b46",
+                "context_bytes": 69,
+                "context_sha256": "7c5615f0aef90a3a8594ef1ab589b494acdc13223396fa23031745e005c43c20"
+              },
+              {
+                "va": "60007b70",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60007b50",
+                "context_bytes": 68,
+                "context_sha256": "58f7a3b5decfce0b60ec1ce43044fa25afa9b1ca3e26589f88e61a6b9377653d"
+              },
+              {
+                "va": "600081f1",
+                "encoding": "dbe3",
+                "instruction": "fninit",
+                "context_start_va": "600081d1",
+                "context_bytes": 66,
+                "context_sha256": "63ac2ffdbb48e1f2530bf790ef09311262ecf0ac1b7f39fabfcff372611700d8"
+              },
+              {
+                "va": "600081f3",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "600081d3",
+                "context_bytes": 67,
+                "context_sha256": "d3010a533cd1f7f3826cd6d2d7306ad7e92a2b9a9d9a16fbb819a2b17acde22c"
+              },
+              {
+                "va": "60009d1a",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60009cfa",
+                "context_bytes": 67,
+                "context_sha256": "5c20a52f3fb3839c43964dd819cfb1adae0172de3b5db52bedeb298bedc8474c"
+              },
+              {
+                "va": "60009d32",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60009d12",
+                "context_bytes": 67,
+                "context_sha256": "9978acb5383fceffcb2d5dc58ac0ab485531ec8b264bcff43b8583a445811a00"
+              },
+              {
+                "va": "60009d35",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60009d15",
+                "context_bytes": 67,
+                "context_sha256": "e2f807650d17c5bb55ecfb2b096f781578429b1d46a04d6a29b6e7495ab7adc8"
+              },
+              {
+                "va": "6000b5e8",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000b5c8",
+                "context_bytes": 68,
+                "context_sha256": "d82291a0bb75209d9eac996b25b40e113bec5e448db6290b8e1929eb210ab66d"
+              },
+              {
+                "va": "6000b5fd",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b5dd",
+                "context_bytes": 67,
+                "context_sha256": "3f063868379645e98a2dc388ca28d412a9f37a5c57a88ccd3b5bd30f864ddd4e"
+              },
+              {
+                "va": "6000b64e",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b62e",
+                "context_bytes": 67,
+                "context_sha256": "690a07696c66e15703a792ed0ac2e3bf2f3f16c8f547baac09b1d008c2603a38"
+              },
+              {
+                "va": "6000b6c6",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000b6a6",
+                "context_bytes": 68,
+                "context_sha256": "36229751a83f4c6f0c6e1576f2041b10f8d04940d54626d689d02a95b565a022"
+              },
+              {
+                "va": "6000b6d7",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b6b7",
+                "context_bytes": 67,
+                "context_sha256": "00c2a7ea9ae8ad06eb7b229402a003d9afe71a6e1b063677d75910528548ea1f"
+              },
+              {
+                "va": "6000b830",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000b810",
+                "context_bytes": 68,
+                "context_sha256": "031d6b8522b03e04f8b9af98a29693dfd2007ed949a1ef8ed39b5c5ac3ce8560"
+              },
+              {
+                "va": "6000b83a",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b81a",
+                "context_bytes": 67,
+                "context_sha256": "8ec179ce0bb7d2e0b62baf762a897d9f2ec4951f5d0ce2745f0a2c7bd42b4a31"
+              },
+              {
+                "va": "6000b842",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b822",
+                "context_bytes": 67,
+                "context_sha256": "061832e2c6edb7f5ae1d914eb3ef78139f8cf27ec9dce7bf57ac39b9fdf79cf2"
+              },
+              {
+                "va": "6000b915",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000b8f5",
+                "context_bytes": 68,
+                "context_sha256": "08cad35fe199b0bf957b5dbb83f0daf388489cb3d4d0351cdcef3ce0e421cb0e"
+              },
+              {
+                "va": "6000b91f",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b8ff",
+                "context_bytes": 67,
+                "context_sha256": "68f4f5e253712c9e647307ecbe94a4a7b3f1fa358edc961d8e0a0bb7f15c69b2"
+              },
+              {
+                "va": "6000b927",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000b907",
+                "context_bytes": 67,
+                "context_sha256": "06c83cafbf7d40db4988ea2c9e3e1a43e0bd4a5f4563d36a8976f953b335ae1b"
+              },
+              {
+                "va": "6000bae7",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000bac7",
+                "context_bytes": 67,
+                "context_sha256": "4e322e3286994beae291d2f6f3c882bccea211a73dc80b228d11b6a24837b61d"
+              },
+              {
+                "va": "6000ce92",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6000ce72",
+                "context_bytes": 67,
+                "context_sha256": "c0019950c98f6d273d87f91c79c590fcf295764184b653f62350553b3a4e1cbd"
+              },
+              {
+                "va": "6000ceac",
+                "encoding": "36d92f",
+                "instruction": "fldcw  WORD PTR ss:[edi]",
+                "context_start_va": "6000ce8c",
+                "context_bytes": 67,
+                "context_sha256": "23d851e681ecde17151f03e5603b0fa847e8489512dab8cdd6845e47282c26a8"
+              },
+              {
+                "va": "6000ceb2",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6000ce92",
+                "context_bytes": 67,
+                "context_sha256": "bbbea52c8a5067a74ee7fc7c235e865a114f50c739847acc9ab22ae1b93c6272"
+              }
+            ],
+            "environment_state": [
+              {
+                "va": "60008197",
+                "encoding": "9bdd30",
+                "instruction": "fsave  [eax]",
+                "context_start_va": "60008177",
+                "context_bytes": 67,
+                "context_sha256": "a3f0f6a48b11301265fdd9cf5da7bf31f356e01fee409225178338818f133e46"
+              },
+              {
+                "va": "6000819c",
+                "encoding": "dd20",
+                "instruction": "frstor [eax]",
+                "context_start_va": "6000817c",
+                "context_bytes": 66,
+                "context_sha256": "3f9091d4520ea2f17623db396f74cde64f13f2da85587b838d09c601dde308d9"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "software",
+      "primary_candidate_count": 23,
+      "environment_candidate_count": 1,
+      "site_and_context_comparison": "identical",
+      "versions": [
+        {
+          "role": "reference",
+          "member": "softtria.dll",
+          "sha256": "8ea15aac0a7095b7d750cd75bbc9095553b6f708d1b89ca807864294a1a12b02",
+          "bytes": 304482,
+          "image_base": "60000000",
+          "groups": {
+            "primary": [
+              {
+                "va": "6003505c",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "6003503c",
+                "context_bytes": 67,
+                "context_sha256": "27034c45bd877c89f503fa6234b83ddcd22b3aeac97f49069f27f70afb197872"
+              },
+              {
+                "va": "60035068",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60035048",
+                "context_bytes": 67,
+                "context_sha256": "b9bd97a633ce491916401e39f4dd2558ce70edbef5c95335fc44fc60451ee455"
+              },
+              {
+                "va": "6003506d",
+                "encoding": "d96c2404",
+                "instruction": "fldcw  WORD PTR [esp+0x4]",
+                "context_start_va": "6003504d",
+                "context_bytes": 68,
+                "context_sha256": "c6e02bdef40ce4e928ab57ef4bbf0d173bd29475ad52640dfb65332c037db769"
+              },
+              {
+                "va": "60036db2",
+                "encoding": "dbe3",
+                "instruction": "fninit",
+                "context_start_va": "60036d92",
+                "context_bytes": 66,
+                "context_sha256": "7b2df0254f69d2db64503f025494ebda8ed8a86db510b9f20d9d8e5d0ce7c0cf"
+              },
+              {
+                "va": "60036db4",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "60036d94",
+                "context_bytes": 67,
+                "context_sha256": "dcc6b156cc036f565f7f202ef006a58576bb343c4fe77bc5118079255d68206b"
+              },
+              {
+                "va": "60038c32",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60038c12",
+                "context_bytes": 67,
+                "context_sha256": "a8eb91555b4e3df4fcff4353bc8819b08514c070a5cbf784e7803c651c5ccd14"
+              },
+              {
+                "va": "60038c4a",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60038c2a",
+                "context_bytes": 67,
+                "context_sha256": "4c6a10d69655f8f87e508539fb6ab8ab40c486bbd243c819272c5cea699652af"
+              },
+              {
+                "va": "60038c4d",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60038c2d",
+                "context_bytes": 67,
+                "context_sha256": "701d341e2c1b233ae6f5f0ac94c49f5d5a73685b2d083978fc04c0a3cde7b98f"
+              },
+              {
+                "va": "60039f56",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "60039f36",
+                "context_bytes": 68,
+                "context_sha256": "d82291a0bb75209d9eac996b25b40e113bec5e448db6290b8e1929eb210ab66d"
+              },
+              {
+                "va": "60039f6b",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60039f4b",
+                "context_bytes": 67,
+                "context_sha256": "3f063868379645e98a2dc388ca28d412a9f37a5c57a88ccd3b5bd30f864ddd4e"
+              },
+              {
+                "va": "60039fbc",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60039f9c",
+                "context_bytes": 67,
+                "context_sha256": "690a07696c66e15703a792ed0ac2e3bf2f3f16c8f547baac09b1d008c2603a38"
+              },
+              {
+                "va": "6003a034",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6003a014",
+                "context_bytes": 68,
+                "context_sha256": "2e55ac19b1c374b7dbac676ca64b2f1fce296644ba340759e417d7101f62cf1f"
+              },
+              {
+                "va": "6003a045",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a025",
+                "context_bytes": 67,
+                "context_sha256": "00c2a7ea9ae8ad06eb7b229402a003d9afe71a6e1b063677d75910528548ea1f"
+              },
+              {
+                "va": "6003a19e",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6003a17e",
+                "context_bytes": 68,
+                "context_sha256": "031d6b8522b03e04f8b9af98a29693dfd2007ed949a1ef8ed39b5c5ac3ce8560"
+              },
+              {
+                "va": "6003a1a8",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a188",
+                "context_bytes": 67,
+                "context_sha256": "8ec179ce0bb7d2e0b62baf762a897d9f2ec4951f5d0ce2745f0a2c7bd42b4a31"
+              },
+              {
+                "va": "6003a1b0",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a190",
+                "context_bytes": 67,
+                "context_sha256": "061832e2c6edb7f5ae1d914eb3ef78139f8cf27ec9dce7bf57ac39b9fdf79cf2"
+              },
+              {
+                "va": "6003a283",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6003a263",
+                "context_bytes": 68,
+                "context_sha256": "08cad35fe199b0bf957b5dbb83f0daf388489cb3d4d0351cdcef3ce0e421cb0e"
+              },
+              {
+                "va": "6003a28d",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a26d",
+                "context_bytes": 67,
+                "context_sha256": "68f4f5e253712c9e647307ecbe94a4a7b3f1fa358edc961d8e0a0bb7f15c69b2"
+              },
+              {
+                "va": "6003a295",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a275",
+                "context_bytes": 67,
+                "context_sha256": "06c83cafbf7d40db4988ea2c9e3e1a43e0bd4a5f4563d36a8976f953b335ae1b"
+              },
+              {
+                "va": "6003a455",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a435",
+                "context_bytes": 67,
+                "context_sha256": "4e322e3286994beae291d2f6f3c882bccea211a73dc80b228d11b6a24837b61d"
+              },
+              {
+                "va": "6003bc7a",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6003bc5a",
+                "context_bytes": 67,
+                "context_sha256": "9107167a5c8bdc5ae27adc3e75cbf5e6a1711b474207b3d7c127019c5e9c95af"
+              },
+              {
+                "va": "6003bc94",
+                "encoding": "36d92f",
+                "instruction": "fldcw  WORD PTR ss:[edi]",
+                "context_start_va": "6003bc74",
+                "context_bytes": 67,
+                "context_sha256": "e4e2655bdd124edaa2ec54ac138218d6765b36f710921b08960cd8d1cf6351fa"
+              },
+              {
+                "va": "6003bc9a",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6003bc7a",
+                "context_bytes": 67,
+                "context_sha256": "2f5f9ed147db1b44e1967949bda323ecabbfbba81c5dbde7171d06fe6f8e7bd2"
+              }
+            ],
+            "environment_state": [
+              {
+                "va": "60036d58",
+                "encoding": "dd20",
+                "instruction": "frstor [eax]",
+                "context_start_va": "60036d38",
+                "context_bytes": 66,
+                "context_sha256": "6adceb539abf040a6d2ab219ee1b28ca7fb6cfdb48385b3ac7d048a12deacb40"
+              }
+            ]
+          }
+        },
+        {
+          "role": "final",
+          "member": "drivers/softtri/softtria.dll",
+          "sha256": "9479203471f4dd615788769bac365043d903505af370c48df69e5d6a1e6f8732",
+          "bytes": 277504,
+          "image_base": "60000000",
+          "groups": {
+            "primary": [
+              {
+                "va": "6003505c",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "6003503c",
+                "context_bytes": 67,
+                "context_sha256": "27034c45bd877c89f503fa6234b83ddcd22b3aeac97f49069f27f70afb197872"
+              },
+              {
+                "va": "60035068",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60035048",
+                "context_bytes": 67,
+                "context_sha256": "b9bd97a633ce491916401e39f4dd2558ce70edbef5c95335fc44fc60451ee455"
+              },
+              {
+                "va": "6003506d",
+                "encoding": "d96c2404",
+                "instruction": "fldcw  WORD PTR [esp+0x4]",
+                "context_start_va": "6003504d",
+                "context_bytes": 68,
+                "context_sha256": "c6e02bdef40ce4e928ab57ef4bbf0d173bd29475ad52640dfb65332c037db769"
+              },
+              {
+                "va": "60036db2",
+                "encoding": "dbe3",
+                "instruction": "fninit",
+                "context_start_va": "60036d92",
+                "context_bytes": 66,
+                "context_sha256": "7b2df0254f69d2db64503f025494ebda8ed8a86db510b9f20d9d8e5d0ce7c0cf"
+              },
+              {
+                "va": "60036db4",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "60036d94",
+                "context_bytes": 67,
+                "context_sha256": "dcc6b156cc036f565f7f202ef006a58576bb343c4fe77bc5118079255d68206b"
+              },
+              {
+                "va": "60038c32",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60038c12",
+                "context_bytes": 67,
+                "context_sha256": "a8eb91555b4e3df4fcff4353bc8819b08514c070a5cbf784e7803c651c5ccd14"
+              },
+              {
+                "va": "60038c4a",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60038c2a",
+                "context_bytes": 67,
+                "context_sha256": "4c6a10d69655f8f87e508539fb6ab8ab40c486bbd243c819272c5cea699652af"
+              },
+              {
+                "va": "60038c4d",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60038c2d",
+                "context_bytes": 67,
+                "context_sha256": "701d341e2c1b233ae6f5f0ac94c49f5d5a73685b2d083978fc04c0a3cde7b98f"
+              },
+              {
+                "va": "60039f56",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "60039f36",
+                "context_bytes": 68,
+                "context_sha256": "d82291a0bb75209d9eac996b25b40e113bec5e448db6290b8e1929eb210ab66d"
+              },
+              {
+                "va": "60039f6b",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60039f4b",
+                "context_bytes": 67,
+                "context_sha256": "3f063868379645e98a2dc388ca28d412a9f37a5c57a88ccd3b5bd30f864ddd4e"
+              },
+              {
+                "va": "60039fbc",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60039f9c",
+                "context_bytes": 67,
+                "context_sha256": "690a07696c66e15703a792ed0ac2e3bf2f3f16c8f547baac09b1d008c2603a38"
+              },
+              {
+                "va": "6003a034",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6003a014",
+                "context_bytes": 68,
+                "context_sha256": "2e55ac19b1c374b7dbac676ca64b2f1fce296644ba340759e417d7101f62cf1f"
+              },
+              {
+                "va": "6003a045",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a025",
+                "context_bytes": 67,
+                "context_sha256": "00c2a7ea9ae8ad06eb7b229402a003d9afe71a6e1b063677d75910528548ea1f"
+              },
+              {
+                "va": "6003a19e",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6003a17e",
+                "context_bytes": 68,
+                "context_sha256": "031d6b8522b03e04f8b9af98a29693dfd2007ed949a1ef8ed39b5c5ac3ce8560"
+              },
+              {
+                "va": "6003a1a8",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a188",
+                "context_bytes": 67,
+                "context_sha256": "8ec179ce0bb7d2e0b62baf762a897d9f2ec4951f5d0ce2745f0a2c7bd42b4a31"
+              },
+              {
+                "va": "6003a1b0",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a190",
+                "context_bytes": 67,
+                "context_sha256": "061832e2c6edb7f5ae1d914eb3ef78139f8cf27ec9dce7bf57ac39b9fdf79cf2"
+              },
+              {
+                "va": "6003a283",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6003a263",
+                "context_bytes": 68,
+                "context_sha256": "08cad35fe199b0bf957b5dbb83f0daf388489cb3d4d0351cdcef3ce0e421cb0e"
+              },
+              {
+                "va": "6003a28d",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a26d",
+                "context_bytes": 67,
+                "context_sha256": "68f4f5e253712c9e647307ecbe94a4a7b3f1fa358edc961d8e0a0bb7f15c69b2"
+              },
+              {
+                "va": "6003a295",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a275",
+                "context_bytes": 67,
+                "context_sha256": "06c83cafbf7d40db4988ea2c9e3e1a43e0bd4a5f4563d36a8976f953b335ae1b"
+              },
+              {
+                "va": "6003a455",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6003a435",
+                "context_bytes": 67,
+                "context_sha256": "4e322e3286994beae291d2f6f3c882bccea211a73dc80b228d11b6a24837b61d"
+              },
+              {
+                "va": "6003bc7a",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6003bc5a",
+                "context_bytes": 67,
+                "context_sha256": "9107167a5c8bdc5ae27adc3e75cbf5e6a1711b474207b3d7c127019c5e9c95af"
+              },
+              {
+                "va": "6003bc94",
+                "encoding": "36d92f",
+                "instruction": "fldcw  WORD PTR ss:[edi]",
+                "context_start_va": "6003bc74",
+                "context_bytes": 67,
+                "context_sha256": "e4e2655bdd124edaa2ec54ac138218d6765b36f710921b08960cd8d1cf6351fa"
+              },
+              {
+                "va": "6003bc9a",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6003bc7a",
+                "context_bytes": 67,
+                "context_sha256": "2f5f9ed147db1b44e1967949bda323ecabbfbba81c5dbde7171d06fe6f8e7bd2"
+              }
+            ],
+            "environment_state": [
+              {
+                "va": "60036d58",
+                "encoding": "dd20",
+                "instruction": "frstor [eax]",
+                "context_start_va": "60036d38",
+                "context_bytes": 66,
+                "context_sha256": "6adceb539abf040a6d2ab219ee1b28ca7fb6cfdb48385b3ac7d048a12deacb40"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "sound",
+      "primary_candidate_count": 20,
+      "environment_candidate_count": 2,
+      "site_and_context_comparison": "identical",
+      "versions": [
+        {
+          "role": "reference",
+          "member": "eacsnd.dll",
+          "sha256": "30288653eb2e0b59a3173530433a4adb8ea0dc66cdbc46aadf742dc53ab62b46",
+          "bytes": 42496,
+          "image_base": "00400000",
+          "groups": {
+            "primary": [
+              {
+                "va": "00403808",
+                "encoding": "dbe3",
+                "instruction": "fninit",
+                "context_start_va": "004037e8",
+                "context_bytes": 66,
+                "context_sha256": "1def037dab9923691ed9ccbeeb98c00275553925daf9ffb84632b42ada0f13e5"
+              },
+              {
+                "va": "0040380a",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "004037ea",
+                "context_bytes": 67,
+                "context_sha256": "3fedb7a67a11223f3d810c73738669d5746a94a43a314abc152aae18b10b3f11"
+              },
+              {
+                "va": "00403b7c",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "00403b5c",
+                "context_bytes": 67,
+                "context_sha256": "ca547cd134958dc133f7f9fd68d9d04b3b551e4205b725f92e387e388b3bcdc5"
+              },
+              {
+                "va": "00403b94",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "00403b74",
+                "context_bytes": 67,
+                "context_sha256": "fc72203c77041c816847e9937956f213bbf09d93515c77f62792af6db64eca5a"
+              },
+              {
+                "va": "00403b97",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00403b77",
+                "context_bytes": 67,
+                "context_sha256": "33b56248f68d55ecded9437ef6c5269f470b6efc2b13b56184cf6c3142df5803"
+              },
+              {
+                "va": "00403e96",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "00403e76",
+                "context_bytes": 68,
+                "context_sha256": "d82291a0bb75209d9eac996b25b40e113bec5e448db6290b8e1929eb210ab66d"
+              },
+              {
+                "va": "00403eab",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00403e8b",
+                "context_bytes": 67,
+                "context_sha256": "3f063868379645e98a2dc388ca28d412a9f37a5c57a88ccd3b5bd30f864ddd4e"
+              },
+              {
+                "va": "00403efc",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00403edc",
+                "context_bytes": 67,
+                "context_sha256": "690a07696c66e15703a792ed0ac2e3bf2f3f16c8f547baac09b1d008c2603a38"
+              },
+              {
+                "va": "00403f74",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "00403f54",
+                "context_bytes": 68,
+                "context_sha256": "e72f36e85f5b622b234db0bc9adc8085bd52141b80122aa039aa2e1c79280772"
+              },
+              {
+                "va": "00403f85",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00403f65",
+                "context_bytes": 67,
+                "context_sha256": "00c2a7ea9ae8ad06eb7b229402a003d9afe71a6e1b063677d75910528548ea1f"
+              },
+              {
+                "va": "004040de",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "004040be",
+                "context_bytes": 68,
+                "context_sha256": "031d6b8522b03e04f8b9af98a29693dfd2007ed949a1ef8ed39b5c5ac3ce8560"
+              },
+              {
+                "va": "004040e8",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "004040c8",
+                "context_bytes": 67,
+                "context_sha256": "8ec179ce0bb7d2e0b62baf762a897d9f2ec4951f5d0ce2745f0a2c7bd42b4a31"
+              },
+              {
+                "va": "004040f0",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "004040d0",
+                "context_bytes": 67,
+                "context_sha256": "061832e2c6edb7f5ae1d914eb3ef78139f8cf27ec9dce7bf57ac39b9fdf79cf2"
+              },
+              {
+                "va": "004041c3",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "004041a3",
+                "context_bytes": 68,
+                "context_sha256": "08cad35fe199b0bf957b5dbb83f0daf388489cb3d4d0351cdcef3ce0e421cb0e"
+              },
+              {
+                "va": "004041cd",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "004041ad",
+                "context_bytes": 67,
+                "context_sha256": "68f4f5e253712c9e647307ecbe94a4a7b3f1fa358edc961d8e0a0bb7f15c69b2"
+              },
+              {
+                "va": "004041d5",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "004041b5",
+                "context_bytes": 67,
+                "context_sha256": "06c83cafbf7d40db4988ea2c9e3e1a43e0bd4a5f4563d36a8976f953b335ae1b"
+              },
+              {
+                "va": "00404395",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00404375",
+                "context_bytes": 67,
+                "context_sha256": "4e322e3286994beae291d2f6f3c882bccea211a73dc80b228d11b6a24837b61d"
+              },
+              {
+                "va": "00406e6d",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "00406e4d",
+                "context_bytes": 67,
+                "context_sha256": "00d3c538cce6d153bb672244d33f4627514a1d64f17fbbd8de58360eae983458"
+              },
+              {
+                "va": "00406e87",
+                "encoding": "36d92f",
+                "instruction": "fldcw  WORD PTR ss:[edi]",
+                "context_start_va": "00406e67",
+                "context_bytes": 67,
+                "context_sha256": "cd06306222372a6078e2405f5241ff9670167b41c63918f7c0947bc1bc7c55b1"
+              },
+              {
+                "va": "00406e8d",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "00406e6d",
+                "context_bytes": 67,
+                "context_sha256": "c0d9288019b29115a0d553d7281643ea3c66fecd52bdc92a9a9534f6773fe161"
+              }
+            ],
+            "environment_state": [
+              {
+                "va": "004037ae",
+                "encoding": "9bdd30",
+                "instruction": "fsave  [eax]",
+                "context_start_va": "0040378e",
+                "context_bytes": 67,
+                "context_sha256": "ef82bb72911d493460f5c81942cbf23c310ce59595fdaaa24684a4fc84e43cfa"
+              },
+              {
+                "va": "004037b3",
+                "encoding": "dd20",
+                "instruction": "frstor [eax]",
+                "context_start_va": "00403793",
+                "context_bytes": 66,
+                "context_sha256": "2aa74e52cf1c40fddb8db83d19168d73be14dac5ed17b32abdae8d9af567aea5"
+              }
+            ]
+          }
+        },
+        {
+          "role": "final",
+          "member": "eacsnd.dll",
+          "sha256": "63f3d1bff4e6526753524423be47146e82416d1b170cd7b2e0133699587b01b3",
+          "bytes": 44032,
+          "image_base": "00400000",
+          "groups": {
+            "primary": [
+              {
+                "va": "00403808",
+                "encoding": "dbe3",
+                "instruction": "fninit",
+                "context_start_va": "004037e8",
+                "context_bytes": 66,
+                "context_sha256": "1def037dab9923691ed9ccbeeb98c00275553925daf9ffb84632b42ada0f13e5"
+              },
+              {
+                "va": "0040380a",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "004037ea",
+                "context_bytes": 67,
+                "context_sha256": "3fedb7a67a11223f3d810c73738669d5746a94a43a314abc152aae18b10b3f11"
+              },
+              {
+                "va": "00403b7c",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "00403b5c",
+                "context_bytes": 67,
+                "context_sha256": "ca547cd134958dc133f7f9fd68d9d04b3b551e4205b725f92e387e388b3bcdc5"
+              },
+              {
+                "va": "00403b94",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "00403b74",
+                "context_bytes": 67,
+                "context_sha256": "fc72203c77041c816847e9937956f213bbf09d93515c77f62792af6db64eca5a"
+              },
+              {
+                "va": "00403b97",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00403b77",
+                "context_bytes": 67,
+                "context_sha256": "33b56248f68d55ecded9437ef6c5269f470b6efc2b13b56184cf6c3142df5803"
+              },
+              {
+                "va": "00403e96",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "00403e76",
+                "context_bytes": 68,
+                "context_sha256": "d82291a0bb75209d9eac996b25b40e113bec5e448db6290b8e1929eb210ab66d"
+              },
+              {
+                "va": "00403eab",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00403e8b",
+                "context_bytes": 67,
+                "context_sha256": "3f063868379645e98a2dc388ca28d412a9f37a5c57a88ccd3b5bd30f864ddd4e"
+              },
+              {
+                "va": "00403efc",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00403edc",
+                "context_bytes": 67,
+                "context_sha256": "690a07696c66e15703a792ed0ac2e3bf2f3f16c8f547baac09b1d008c2603a38"
+              },
+              {
+                "va": "00403f74",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "00403f54",
+                "context_bytes": 68,
+                "context_sha256": "e72f36e85f5b622b234db0bc9adc8085bd52141b80122aa039aa2e1c79280772"
+              },
+              {
+                "va": "00403f85",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00403f65",
+                "context_bytes": 67,
+                "context_sha256": "00c2a7ea9ae8ad06eb7b229402a003d9afe71a6e1b063677d75910528548ea1f"
+              },
+              {
+                "va": "004040de",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "004040be",
+                "context_bytes": 68,
+                "context_sha256": "031d6b8522b03e04f8b9af98a29693dfd2007ed949a1ef8ed39b5c5ac3ce8560"
+              },
+              {
+                "va": "004040e8",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "004040c8",
+                "context_bytes": 67,
+                "context_sha256": "8ec179ce0bb7d2e0b62baf762a897d9f2ec4951f5d0ce2745f0a2c7bd42b4a31"
+              },
+              {
+                "va": "004040f0",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "004040d0",
+                "context_bytes": 67,
+                "context_sha256": "061832e2c6edb7f5ae1d914eb3ef78139f8cf27ec9dce7bf57ac39b9fdf79cf2"
+              },
+              {
+                "va": "004041c3",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "004041a3",
+                "context_bytes": 68,
+                "context_sha256": "08cad35fe199b0bf957b5dbb83f0daf388489cb3d4d0351cdcef3ce0e421cb0e"
+              },
+              {
+                "va": "004041cd",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "004041ad",
+                "context_bytes": 67,
+                "context_sha256": "68f4f5e253712c9e647307ecbe94a4a7b3f1fa358edc961d8e0a0bb7f15c69b2"
+              },
+              {
+                "va": "004041d5",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "004041b5",
+                "context_bytes": 67,
+                "context_sha256": "06c83cafbf7d40db4988ea2c9e3e1a43e0bd4a5f4563d36a8976f953b335ae1b"
+              },
+              {
+                "va": "00404395",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "00404375",
+                "context_bytes": 67,
+                "context_sha256": "4e322e3286994beae291d2f6f3c882bccea211a73dc80b228d11b6a24837b61d"
+              },
+              {
+                "va": "00406e6d",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "00406e4d",
+                "context_bytes": 67,
+                "context_sha256": "00d3c538cce6d153bb672244d33f4627514a1d64f17fbbd8de58360eae983458"
+              },
+              {
+                "va": "00406e87",
+                "encoding": "36d92f",
+                "instruction": "fldcw  WORD PTR ss:[edi]",
+                "context_start_va": "00406e67",
+                "context_bytes": 67,
+                "context_sha256": "cd06306222372a6078e2405f5241ff9670167b41c63918f7c0947bc1bc7c55b1"
+              },
+              {
+                "va": "00406e8d",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "00406e6d",
+                "context_bytes": 67,
+                "context_sha256": "c0d9288019b29115a0d553d7281643ea3c66fecd52bdc92a9a9534f6773fe161"
+              }
+            ],
+            "environment_state": [
+              {
+                "va": "004037ae",
+                "encoding": "9bdd30",
+                "instruction": "fsave  [eax]",
+                "context_start_va": "0040378e",
+                "context_bytes": 67,
+                "context_sha256": "ef82bb72911d493460f5c81942cbf23c310ce59595fdaaa24684a4fc84e43cfa"
+              },
+              {
+                "va": "004037b3",
+                "encoding": "dd20",
+                "instruction": "frstor [eax]",
+                "context_start_va": "00403793",
+                "context_bytes": 66,
+                "context_sha256": "2aa74e52cf1c40fddb8db83d19168d73be14dac5ed17b32abdae8d9af567aea5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "glide",
+      "primary_candidate_count": 28,
+      "environment_candidate_count": 1,
+      "site_and_context_comparison": "identical",
+      "versions": [
+        {
+          "role": "reference",
+          "member": "voodoo2a.dll",
+          "sha256": "99b978fd6b0e94cca7ef0b671b9be0d630f929ab3901ebddaafa5d121213503b",
+          "bytes": 92662,
+          "image_base": "60000000",
+          "groups": {
+            "primary": [
+              {
+                "va": "60004d8c",
+                "encoding": "d97c241c",
+                "instruction": "fnstcw WORD PTR [esp+0x1c]",
+                "context_start_va": "60004d6c",
+                "context_bytes": 68,
+                "context_sha256": "bb639b6f77105164a026ee454c2d9aaddb02152ddbeed876525041b1659e3450"
+              },
+              {
+                "va": "60004da2",
+                "encoding": "d96c2420",
+                "instruction": "fldcw  WORD PTR [esp+0x20]",
+                "context_start_va": "60004d82",
+                "context_bytes": 68,
+                "context_sha256": "a37ddfad243c4884dadd594e0e39acb14cecba2249de45885be2c715fdea88c2"
+              },
+              {
+                "va": "60004dc4",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60004da4",
+                "context_bytes": 68,
+                "context_sha256": "026d58a5f27b5506f6dfc2b9822a74d53c64df1311f75dffced86e0761da178a"
+              },
+              {
+                "va": "60004ddb",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60004dbb",
+                "context_bytes": 68,
+                "context_sha256": "c505a30772b84cb17e7d6f5dbca3724f45c623d9cadb7a51b7b032d1499395a6"
+              },
+              {
+                "va": "60004dfa",
+                "encoding": "d97c241c",
+                "instruction": "fnstcw WORD PTR [esp+0x1c]",
+                "context_start_va": "60004dda",
+                "context_bytes": 68,
+                "context_sha256": "714fb6ecd1b95e28963af8d293cbbb7b2601ef53ec64a4ad4c035892e382bba5"
+              },
+              {
+                "va": "60004e10",
+                "encoding": "d96c2420",
+                "instruction": "fldcw  WORD PTR [esp+0x20]",
+                "context_start_va": "60004df0",
+                "context_bytes": 68,
+                "context_sha256": "8266000e0f5b877b443d0d523c3a052b15ab33333e04152ada8fbbca5ac171a4"
+              },
+              {
+                "va": "60004e4e",
+                "encoding": "9bd96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60004e2e",
+                "context_bytes": 69,
+                "context_sha256": "88a39cdbc0bcc7edac98fa30519a73ca0f6b52e80ff591054ae67b3db89ea670"
+              },
+              {
+                "va": "60004e58",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60004e38",
+                "context_bytes": 68,
+                "context_sha256": "056cb7b31cbf206bf238a3e69125951a9401ff54372f60db5af0fbfdbdbe845e"
+              },
+              {
+                "va": "600060f2",
+                "encoding": "dbe3",
+                "instruction": "fninit",
+                "context_start_va": "600060d2",
+                "context_bytes": 66,
+                "context_sha256": "f1fe20be6e8933fd87d758cff6cdad86ff211ed23b82d7c3f28244059b6ad655"
+              },
+              {
+                "va": "600060f4",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "600060d4",
+                "context_bytes": 67,
+                "context_sha256": "3ddc3e3da18447126208349cc8016285ea501013f9e4767a2aa951e264b70ea1"
+              },
+              {
+                "va": "60008c72",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60008c52",
+                "context_bytes": 67,
+                "context_sha256": "a8eb91555b4e3df4fcff4353bc8819b08514c070a5cbf784e7803c651c5ccd14"
+              },
+              {
+                "va": "60008c8a",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60008c6a",
+                "context_bytes": 67,
+                "context_sha256": "56a41dbcea1578da5722bcc9575a8901aeff88e708ac55094049a706c96c841e"
+              },
+              {
+                "va": "60008c8d",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60008c6d",
+                "context_bytes": 67,
+                "context_sha256": "e4d1e07aebad7c887a99686b0ed25f3030653ed7ab5e88893caaf6961e9efd65"
+              },
+              {
+                "va": "6000a4a7",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000a487",
+                "context_bytes": 68,
+                "context_sha256": "d82291a0bb75209d9eac996b25b40e113bec5e448db6290b8e1929eb210ab66d"
+              },
+              {
+                "va": "6000a4bc",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a49c",
+                "context_bytes": 67,
+                "context_sha256": "3f063868379645e98a2dc388ca28d412a9f37a5c57a88ccd3b5bd30f864ddd4e"
+              },
+              {
+                "va": "6000a50d",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a4ed",
+                "context_bytes": 67,
+                "context_sha256": "690a07696c66e15703a792ed0ac2e3bf2f3f16c8f547baac09b1d008c2603a38"
+              },
+              {
+                "va": "6000a585",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000a565",
+                "context_bytes": 68,
+                "context_sha256": "a30605f50f297369e419a7cc62b13602ef9a21ce09a346729106474aa77b06dc"
+              },
+              {
+                "va": "6000a596",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a576",
+                "context_bytes": 67,
+                "context_sha256": "00c2a7ea9ae8ad06eb7b229402a003d9afe71a6e1b063677d75910528548ea1f"
+              },
+              {
+                "va": "6000a6ef",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000a6cf",
+                "context_bytes": 68,
+                "context_sha256": "031d6b8522b03e04f8b9af98a29693dfd2007ed949a1ef8ed39b5c5ac3ce8560"
+              },
+              {
+                "va": "6000a6f9",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a6d9",
+                "context_bytes": 67,
+                "context_sha256": "8ec179ce0bb7d2e0b62baf762a897d9f2ec4951f5d0ce2745f0a2c7bd42b4a31"
+              },
+              {
+                "va": "6000a701",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a6e1",
+                "context_bytes": 67,
+                "context_sha256": "061832e2c6edb7f5ae1d914eb3ef78139f8cf27ec9dce7bf57ac39b9fdf79cf2"
+              },
+              {
+                "va": "6000a7d4",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000a7b4",
+                "context_bytes": 68,
+                "context_sha256": "08cad35fe199b0bf957b5dbb83f0daf388489cb3d4d0351cdcef3ce0e421cb0e"
+              },
+              {
+                "va": "6000a7de",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a7be",
+                "context_bytes": 67,
+                "context_sha256": "68f4f5e253712c9e647307ecbe94a4a7b3f1fa358edc961d8e0a0bb7f15c69b2"
+              },
+              {
+                "va": "6000a7e6",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a7c6",
+                "context_bytes": 67,
+                "context_sha256": "06c83cafbf7d40db4988ea2c9e3e1a43e0bd4a5f4563d36a8976f953b335ae1b"
+              },
+              {
+                "va": "6000a9a6",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a986",
+                "context_bytes": 67,
+                "context_sha256": "4e322e3286994beae291d2f6f3c882bccea211a73dc80b228d11b6a24837b61d"
+              },
+              {
+                "va": "6000be0a",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6000bdea",
+                "context_bytes": 67,
+                "context_sha256": "c57a02fd7b7c10dddc91a7d14c30e5c96a8a21bbc401ea58c5259211fda4b80d"
+              },
+              {
+                "va": "6000be24",
+                "encoding": "36d92f",
+                "instruction": "fldcw  WORD PTR ss:[edi]",
+                "context_start_va": "6000be04",
+                "context_bytes": 67,
+                "context_sha256": "d4b029432893214eb237968f31350e104b25610da13ad9776320c2bd142f2451"
+              },
+              {
+                "va": "6000be2a",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6000be0a",
+                "context_bytes": 67,
+                "context_sha256": "cc3f5da3a5ec044c376c00297bef6d39a1395b714587e0618f2d7304bf44a6a1"
+              }
+            ],
+            "environment_state": [
+              {
+                "va": "60006098",
+                "encoding": "dd20",
+                "instruction": "frstor [eax]",
+                "context_start_va": "60006078",
+                "context_bytes": 66,
+                "context_sha256": "28ab2cbcc71050bb1b15918cc1303fc89ce4056211b23ae076239a7b768e58e5"
+              }
+            ]
+          }
+        },
+        {
+          "role": "final",
+          "member": "drivers/glide3x/voodoo2a.dll",
+          "sha256": "f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b",
+          "bytes": 69120,
+          "image_base": "60000000",
+          "groups": {
+            "primary": [
+              {
+                "va": "60004d8c",
+                "encoding": "d97c241c",
+                "instruction": "fnstcw WORD PTR [esp+0x1c]",
+                "context_start_va": "60004d6c",
+                "context_bytes": 68,
+                "context_sha256": "bb639b6f77105164a026ee454c2d9aaddb02152ddbeed876525041b1659e3450"
+              },
+              {
+                "va": "60004da2",
+                "encoding": "d96c2420",
+                "instruction": "fldcw  WORD PTR [esp+0x20]",
+                "context_start_va": "60004d82",
+                "context_bytes": 68,
+                "context_sha256": "a37ddfad243c4884dadd594e0e39acb14cecba2249de45885be2c715fdea88c2"
+              },
+              {
+                "va": "60004dc4",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60004da4",
+                "context_bytes": 68,
+                "context_sha256": "026d58a5f27b5506f6dfc2b9822a74d53c64df1311f75dffced86e0761da178a"
+              },
+              {
+                "va": "60004ddb",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60004dbb",
+                "context_bytes": 68,
+                "context_sha256": "c505a30772b84cb17e7d6f5dbca3724f45c623d9cadb7a51b7b032d1499395a6"
+              },
+              {
+                "va": "60004dfa",
+                "encoding": "d97c241c",
+                "instruction": "fnstcw WORD PTR [esp+0x1c]",
+                "context_start_va": "60004dda",
+                "context_bytes": 68,
+                "context_sha256": "714fb6ecd1b95e28963af8d293cbbb7b2601ef53ec64a4ad4c035892e382bba5"
+              },
+              {
+                "va": "60004e10",
+                "encoding": "d96c2420",
+                "instruction": "fldcw  WORD PTR [esp+0x20]",
+                "context_start_va": "60004df0",
+                "context_bytes": 68,
+                "context_sha256": "8266000e0f5b877b443d0d523c3a052b15ab33333e04152ada8fbbca5ac171a4"
+              },
+              {
+                "va": "60004e4e",
+                "encoding": "9bd96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60004e2e",
+                "context_bytes": 69,
+                "context_sha256": "88a39cdbc0bcc7edac98fa30519a73ca0f6b52e80ff591054ae67b3db89ea670"
+              },
+              {
+                "va": "60004e58",
+                "encoding": "d96c241c",
+                "instruction": "fldcw  WORD PTR [esp+0x1c]",
+                "context_start_va": "60004e38",
+                "context_bytes": 68,
+                "context_sha256": "056cb7b31cbf206bf238a3e69125951a9401ff54372f60db5af0fbfdbdbe845e"
+              },
+              {
+                "va": "600060f2",
+                "encoding": "dbe3",
+                "instruction": "fninit",
+                "context_start_va": "600060d2",
+                "context_bytes": 66,
+                "context_sha256": "f1fe20be6e8933fd87d758cff6cdad86ff211ed23b82d7c3f28244059b6ad655"
+              },
+              {
+                "va": "600060f4",
+                "encoding": "d93c24",
+                "instruction": "fnstcw WORD PTR [esp]",
+                "context_start_va": "600060d4",
+                "context_bytes": 67,
+                "context_sha256": "3ddc3e3da18447126208349cc8016285ea501013f9e4767a2aa951e264b70ea1"
+              },
+              {
+                "va": "60008c72",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60008c52",
+                "context_bytes": 67,
+                "context_sha256": "a8eb91555b4e3df4fcff4353bc8819b08514c070a5cbf784e7803c651c5ccd14"
+              },
+              {
+                "va": "60008c8a",
+                "encoding": "9bdbe3",
+                "instruction": "finit",
+                "context_start_va": "60008c6a",
+                "context_bytes": 67,
+                "context_sha256": "56a41dbcea1578da5722bcc9575a8901aeff88e708ac55094049a706c96c841e"
+              },
+              {
+                "va": "60008c8d",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "60008c6d",
+                "context_bytes": 67,
+                "context_sha256": "e4d1e07aebad7c887a99686b0ed25f3030653ed7ab5e88893caaf6961e9efd65"
+              },
+              {
+                "va": "6000a4a7",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000a487",
+                "context_bytes": 68,
+                "context_sha256": "d82291a0bb75209d9eac996b25b40e113bec5e448db6290b8e1929eb210ab66d"
+              },
+              {
+                "va": "6000a4bc",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a49c",
+                "context_bytes": 67,
+                "context_sha256": "3f063868379645e98a2dc388ca28d412a9f37a5c57a88ccd3b5bd30f864ddd4e"
+              },
+              {
+                "va": "6000a50d",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a4ed",
+                "context_bytes": 67,
+                "context_sha256": "690a07696c66e15703a792ed0ac2e3bf2f3f16c8f547baac09b1d008c2603a38"
+              },
+              {
+                "va": "6000a585",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000a565",
+                "context_bytes": 68,
+                "context_sha256": "a30605f50f297369e419a7cc62b13602ef9a21ce09a346729106474aa77b06dc"
+              },
+              {
+                "va": "6000a596",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a576",
+                "context_bytes": 67,
+                "context_sha256": "00c2a7ea9ae8ad06eb7b229402a003d9afe71a6e1b063677d75910528548ea1f"
+              },
+              {
+                "va": "6000a6ef",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000a6cf",
+                "context_bytes": 68,
+                "context_sha256": "031d6b8522b03e04f8b9af98a29693dfd2007ed949a1ef8ed39b5c5ac3ce8560"
+              },
+              {
+                "va": "6000a6f9",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a6d9",
+                "context_bytes": 67,
+                "context_sha256": "8ec179ce0bb7d2e0b62baf762a897d9f2ec4951f5d0ce2745f0a2c7bd42b4a31"
+              },
+              {
+                "va": "6000a701",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a6e1",
+                "context_bytes": 67,
+                "context_sha256": "061832e2c6edb7f5ae1d914eb3ef78139f8cf27ec9dce7bf57ac39b9fdf79cf2"
+              },
+              {
+                "va": "6000a7d4",
+                "encoding": "9bd93c24",
+                "instruction": "fstcw  WORD PTR [esp]",
+                "context_start_va": "6000a7b4",
+                "context_bytes": 68,
+                "context_sha256": "08cad35fe199b0bf957b5dbb83f0daf388489cb3d4d0351cdcef3ce0e421cb0e"
+              },
+              {
+                "va": "6000a7de",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a7be",
+                "context_bytes": 67,
+                "context_sha256": "68f4f5e253712c9e647307ecbe94a4a7b3f1fa358edc961d8e0a0bb7f15c69b2"
+              },
+              {
+                "va": "6000a7e6",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a7c6",
+                "context_bytes": 67,
+                "context_sha256": "06c83cafbf7d40db4988ea2c9e3e1a43e0bd4a5f4563d36a8976f953b335ae1b"
+              },
+              {
+                "va": "6000a9a6",
+                "encoding": "d92c24",
+                "instruction": "fldcw  WORD PTR [esp]",
+                "context_start_va": "6000a986",
+                "context_bytes": 67,
+                "context_sha256": "4e322e3286994beae291d2f6f3c882bccea211a73dc80b228d11b6a24837b61d"
+              },
+              {
+                "va": "6000be0a",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6000bdea",
+                "context_bytes": 67,
+                "context_sha256": "c57a02fd7b7c10dddc91a7d14c30e5c96a8a21bbc401ea58c5259211fda4b80d"
+              },
+              {
+                "va": "6000be24",
+                "encoding": "36d92f",
+                "instruction": "fldcw  WORD PTR ss:[edi]",
+                "context_start_va": "6000be04",
+                "context_bytes": 67,
+                "context_sha256": "d4b029432893214eb237968f31350e104b25610da13ad9776320c2bd142f2451"
+              },
+              {
+                "va": "6000be2a",
+                "encoding": "36d93f",
+                "instruction": "fnstcw WORD PTR ss:[edi]",
+                "context_start_va": "6000be0a",
+                "context_bytes": 67,
+                "context_sha256": "cc3f5da3a5ec044c376c00297bef6d39a1395b714587e0618f2d7304bf44a6a1"
+              }
+            ],
+            "environment_state": [
+              {
+                "va": "60006098",
+                "encoding": "dd20",
+                "instruction": "frstor [eax]",
+                "context_start_va": "60006078",
+                "context_bytes": 66,
+                "context_sha256": "28ab2cbcc71050bb1b15918cc1303fc89ce4056211b23ae076239a7b768e58e5"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "primary_total_per_side": 102,
+  "limits": [
+    "GNU objdump linear decoding candidates, not control-flow/reachability validation of every site.",
+    "Contexts cover32 bytes before/after each encoded instruction, not complete functions or all operand producers.",
+    "Initial/runtime memory operands and ambient control words are not inferred equal from instruction equality.",
+    "Only four author-reference/final pairs; no authenticated pristine retail or all-runtime-component claim.",
+    "Imported callees, external threads, generated code and other instructions/indirect state effects remain separate.",
+    "No DLL loading, target instructions, instruction probes, reconstruction, compilation or database mutation."
+  ]
+}

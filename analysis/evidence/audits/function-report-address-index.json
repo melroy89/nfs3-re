@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "9776aa14a484c30778d106ea39894f014c070ae5dcea9e21dba2c5fb62e85f93"
+      "sha256": "7b62412db4ad690aca00e8a54415453b1d477473c93b2054a2ea49f658d99199"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -265,7 +265,11 @@
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
-      "sha256": "0237b5e354d9950de7f5a77a092e2bf276da10bb7a78e0e6f68fac6159130d2e"
+      "sha256": "19af44a0f8e5b8504d3dfaeec64ff0b541fd1555f47f5da459fae5b7e2feacbe"
+    },
+    {
+      "path": "analysis/original-modern-paired-dll-x87.md",
+      "sha256": "b42a3df3e19c8f62357ce02debf4878cc4081db276839823cc59ae4b25d5d5ac"
     },
     {
       "path": "analysis/original-modern-parameter-preset.md",
@@ -481,7 +485,7 @@
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
-      "sha256": "3e9566abd5210b6dfd69f5a99ccec797d6b264f8d29d9a220256a15650fbf51b"
+      "sha256": "48daae2708206a7b66b68c29fd54805bcc2f2a982a1519534fcc34ff8445c266"
     }
   ],
   "counts": {
