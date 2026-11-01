@@ -1,0 +1,215 @@
+{
+  "kind": "static-driver-option-history",
+  "versions": {
+    "1.1.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+      "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+      "sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "key": "VideoDriver",
+      "key_pointer": "0053ee64",
+      "default": "dx5",
+      "captures": [
+        {
+          "start": "004b5748",
+          "end_exclusive": "004b5775",
+          "sha256": "0094e7f4ea8cdd70745e5aadef19c707a033fa9981f28b4756c90c5056f6b20f",
+          "hex": "83ec30b93000000089e7bd28ee5300bb64ee5300ba70ee5300e89e5f0400e8453c040089e6e86200000083c430",
+          "disassembly": [
+            "4b5748:\t83 ec 30             \tsub    esp,0x30",
+            "4b574b:\tb9 30 00 00 00       \tmov    ecx,0x30",
+            "4b5750:\t89 e7                \tmov    edi,esp",
+            "4b5752:\tbd 28 ee 53 00       \tmov    ebp,0x53ee28",
+            "4b5757:\tbb 64 ee 53 00       \tmov    ebx,0x53ee64",
+            "4b575c:\tba 70 ee 53 00       \tmov    edx,0x53ee70",
+            "4b5761:\te8 9e 5f 04 00       \tcall   0x4fb704",
+            "4b5766:\te8 45 3c 04 00       \tcall   0x4f93b0",
+            "4b576b:\t89 e6                \tmov    esi,esp",
+            "4b576d:\te8 62 00 00 00       \tcall   0x4b57d4",
+            "4b5772:\t83 c4 30             \tadd    esp,0x30"
+          ]
+        },
+        {
+          "start": "004b57d4",
+          "end_exclusive": "004b586b",
+          "sha256": "1e71f1135b4a7b11f78c05d14bc10c5c615e7982eed00fa9ccc82a92e297d6df",
+          "hex": "803e000f848d000000bf743a7a00b82e5c0000663906740966813e2e2f740266ab89fa31c0b932000000497418ac3c2f7502b05c3c40750230c0aa3c5c750289fa84c075e54fb82e646c6c3947fc7401ab31c0aa803a64740c803a76740b803a73740aeb09b006eb05b004eb0140a3543a7a00807eff40751d803e307218803e39771368bcfd5500688cd6530056e8e1ac030083c40cc3",
+          "disassembly": [
+            "4b57d4:\t80 3e 00             \tcmp    BYTE PTR [esi],0x0",
+            "4b57d7:\t0f 84 8d 00 00 00    \tje     0x4b586a",
+            "4b57dd:\tbf 74 3a 7a 00       \tmov    edi,0x7a3a74",
+            "4b57e2:\tb8 2e 5c 00 00       \tmov    eax,0x5c2e",
+            "4b57e7:\t66 39 06             \tcmp    WORD PTR [esi],ax",
+            "4b57ea:\t74 09                \tje     0x4b57f5",
+            "4b57ec:\t66 81 3e 2e 2f       \tcmp    WORD PTR [esi],0x2f2e",
+            "4b57f1:\t74 02                \tje     0x4b57f5",
+            "4b57f3:\t66 ab                \tstos   WORD PTR es:[edi],ax",
+            "4b57f5:\t89 fa                \tmov    edx,edi",
+            "4b57f7:\t31 c0                \txor    eax,eax",
+            "4b57f9:\tb9 32 00 00 00       \tmov    ecx,0x32",
+            "4b57fe:\t49                   \tdec    ecx",
+            "4b57ff:\t74 18                \tje     0x4b5819",
+            "4b5801:\tac                   \tlods   al,BYTE PTR ds:[esi]",
+            "4b5802:\t3c 2f                \tcmp    al,0x2f",
+            "4b5804:\t75 02                \tjne    0x4b5808",
+            "4b5806:\tb0 5c                \tmov    al,0x5c",
+            "4b5808:\t3c 40                \tcmp    al,0x40",
+            "4b580a:\t75 02                \tjne    0x4b580e",
+            "4b580c:\t30 c0                \txor    al,al",
+            "4b580e:\taa                   \tstos   BYTE PTR es:[edi],al",
+            "4b580f:\t3c 5c                \tcmp    al,0x5c",
+            "4b5811:\t75 02                \tjne    0x4b5815",
+            "4b5813:\t89 fa                \tmov    edx,edi",
+            "4b5815:\t84 c0                \ttest   al,al",
+            "4b5817:\t75 e5                \tjne    0x4b57fe",
+            "4b5819:\t4f                   \tdec    edi",
+            "4b581a:\tb8 2e 64 6c 6c       \tmov    eax,0x6c6c642e",
+            "4b581f:\t39 47 fc             \tcmp    DWORD PTR [edi-0x4],eax",
+            "4b5822:\t74 01                \tje     0x4b5825",
+            "4b5824:\tab                   \tstos   DWORD PTR es:[edi],eax",
+            "4b5825:\t31 c0                \txor    eax,eax",
+            "4b5827:\taa                   \tstos   BYTE PTR es:[edi],al",
+            "4b5828:\t80 3a 64             \tcmp    BYTE PTR [edx],0x64",
+            "4b582b:\t74 0c                \tje     0x4b5839",
+            "4b582d:\t80 3a 76             \tcmp    BYTE PTR [edx],0x76",
+            "4b5830:\t74 0b                \tje     0x4b583d",
+            "4b5832:\t80 3a 73             \tcmp    BYTE PTR [edx],0x73",
+            "4b5835:\t74 0a                \tje     0x4b5841",
+            "4b5837:\teb 09                \tjmp    0x4b5842",
+            "4b5839:\tb0 06                \tmov    al,0x6",
+            "4b583b:\teb 05                \tjmp    0x4b5842",
+            "4b583d:\tb0 04                \tmov    al,0x4",
+            "4b583f:\teb 01                \tjmp    0x4b5842",
+            "4b5841:\t40                   \tinc    eax",
+            "4b5842:\ta3 54 3a 7a 00       \tmov    ds:0x7a3a54,eax",
+            "4b5847:\t80 7e ff 40          \tcmp    BYTE PTR [esi-0x1],0x40",
+            "4b584b:\t75 1d                \tjne    0x4b586a",
+            "4b584d:\t80 3e 30             \tcmp    BYTE PTR [esi],0x30",
+            "4b5850:\t72 18                \tjb     0x4b586a",
+            "4b5852:\t80 3e 39             \tcmp    BYTE PTR [esi],0x39",
+            "4b5855:\t77 13                \tja     0x4b586a",
+            "4b5857:\t68 bc fd 55 00       \tpush   0x55fdbc",
+            "4b585c:\t68 8c d6 53 00       \tpush   0x53d68c",
+            "4b5861:\t56                   \tpush   esi",
+            "4b5862:\te8 e1 ac 03 00       \tcall   0x4f0548",
+            "4b5867:\t83 c4 0c             \tadd    esp,0xc",
+            "4b586a:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004fb704",
+          "end_exclusive": "004fb719",
+          "sha256": "901bee3442513d5ef7910c57faf1d17ddb2ac99945deb488bba33d30ef5d4d0d",
+          "hex": "5152683c267a005157525355ff15784653005a59c3",
+          "disassembly": [
+            "4fb704:\t51                   \tpush   ecx",
+            "4fb705:\t52                   \tpush   edx",
+            "4fb706:\t68 3c 26 7a 00       \tpush   0x7a263c",
+            "4fb70b:\t51                   \tpush   ecx",
+            "4fb70c:\t57                   \tpush   edi",
+            "4fb70d:\t52                   \tpush   edx",
+            "4fb70e:\t53                   \tpush   ebx",
+            "4fb70f:\t55                   \tpush   ebp",
+            "4fb710:\tff 15 78 46 53 00    \tcall   DWORD PTR ds:0x534678",
+            "4fb716:\t5a                   \tpop    edx",
+            "4fb717:\t59                   \tpop    ecx",
+            "4fb718:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004b5775",
+          "end_exclusive": "004b579f",
+          "sha256": "99d4a978f672c2790290e422f7d770d06f2b232e65ea92680a86dc7a769920fa",
+          "hex": "68743a7a00ff158c45530089c385c0741968a4d3540053ff15584553005389c3ff15dc44530085db752d",
+          "disassembly": [
+            "4b5775:\t68 74 3a 7a 00       \tpush   0x7a3a74",
+            "4b577a:\tff 15 8c 45 53 00    \tcall   DWORD PTR ds:0x53458c",
+            "4b5780:\t89 c3                \tmov    ebx,eax",
+            "4b5782:\t85 c0                \ttest   eax,eax",
+            "4b5784:\t74 19                \tje     0x4b579f",
+            "4b5786:\t68 a4 d3 54 00       \tpush   0x54d3a4",
+            "4b578b:\t53                   \tpush   ebx",
+            "4b578c:\tff 15 58 45 53 00    \tcall   DWORD PTR ds:0x534558",
+            "4b5792:\t53                   \tpush   ebx",
+            "4b5793:\t89 c3                \tmov    ebx,eax",
+            "4b5795:\tff 15 dc 44 53 00    \tcall   DWORD PTR ds:0x5344dc",
+            "4b579b:\t85 db                \ttest   ebx,ebx",
+            "4b579d:\t75 2d                \tjne    0x4b57cc"
+          ]
+        }
+      ]
+    },
+    "1.3.1": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.1.7z",
+      "archive_sha256": "6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934",
+      "sha256": "199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664",
+      "key": "VideoDriver",
+      "key_pointer": "0053ee34",
+      "default": "dx6",
+      "captures": [
+        {
+          "start": "004b5748",
+          "end_exclusive": "004b5775",
+          "sha256": "5945a1d6ec106687f29051d30a4dc904b27ed00f395f74f29ae7ff72d3954cf1",
+          "hex": "83ec38b93800000089e7bdf8ed5300bb34ee5300ba40ee5300e8ae5f0400e85d3c040089e6e8aafeffff83c438",
+          "disassembly": [
+            "4b5748:\t83 ec 38             \tsub    esp,0x38",
+            "4b574b:\tb9 38 00 00 00       \tmov    ecx,0x38",
+            "4b5750:\t89 e7                \tmov    edi,esp",
+            "4b5752:\tbd f8 ed 53 00       \tmov    ebp,0x53edf8",
+            "4b5757:\tbb 34 ee 53 00       \tmov    ebx,0x53ee34",
+            "4b575c:\tba 40 ee 53 00       \tmov    edx,0x53ee40",
+            "4b5761:\te8 ae 5f 04 00       \tcall   0x4fb714",
+            "4b5766:\te8 5d 3c 04 00       \tcall   0x4f93c8",
+            "4b576b:\t89 e6                \tmov    esi,esp",
+            "4b576d:\te8 aa fe ff ff       \tcall   0x4b561c",
+            "4b5772:\t83 c4 38             \tadd    esp,0x38"
+          ]
+        }
+      ]
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "key": "ThrashDriver",
+      "key_pointer": "0053ed04",
+      "default": "dx6",
+      "captures": [
+        {
+          "start": "004b5a23",
+          "end_exclusive": "004b5a50",
+          "sha256": "d762df37f0b7f0377ddd97849d2cd429c53c2c7aa043bdef415763eea2ee9dec",
+          "hex": "83ec38b93800000089e7bdc8ec5300bb04ed5300ba14ed5300e8d35c0400e88239040089e6e87fffffff83c438",
+          "disassembly": [
+            "4b5a23:\t83 ec 38             \tsub    esp,0x38",
+            "4b5a26:\tb9 38 00 00 00       \tmov    ecx,0x38",
+            "4b5a2b:\t89 e7                \tmov    edi,esp",
+            "4b5a2d:\tbd c8 ec 53 00       \tmov    ebp,0x53ecc8",
+            "4b5a32:\tbb 04 ed 53 00       \tmov    ebx,0x53ed04",
+            "4b5a37:\tba 14 ed 53 00       \tmov    edx,0x53ed14",
+            "4b5a3c:\te8 d3 5c 04 00       \tcall   0x4fb714",
+            "4b5a41:\te8 82 39 04 00       \tcall   0x4f93c8",
+            "4b5a46:\t89 e6                \tmov    esi,esp",
+            "4b5a48:\te8 7f ff ff ff       \tcall   0x4b59cc",
+            "4b5a4d:\t83 c4 38             \tadd    esp,0x38"
+          ]
+        }
+      ]
+    }
+  },
+  "early_contract": {
+    "source": "ESI byte-string; empty returns without local state updates",
+    "path_destination": "007a3a74; prepend .\\ unless source starts .\\ or ./; normalize slash during copy",
+    "suffix": "Append .dll if last four copied bytes differ; @ terminates copied filename",
+    "device": "If consumed delimiter was@ and next byte is0..9, scan%d into0055fdbc; otherwise no local device write",
+    "classification": "Basename first byte d/v/s/other writes6/4/1/0 to007a3a54",
+    "loader": "LoadLibraryA receives parsed007a3a74 path at004b5775..004b5780"
+  },
+  "limits": [
+    "No parser, game, DLL, INI or extracted instruction execution; normal filename assumptions only.",
+    "No1.0.0 predecessor or predefined alias implementation; early presence does not independently prove all1.1.0 introduction claims.",
+    "Read-helper success, input normalizer, scanf overflow/failure, long/short strings and provider/device acceptance not fully qualified.",
+    "No key-alias retry in captured branch; no whole-program alias absence claim.",
+    "Final uses different driver-directory/type/fog/device storage contracts; do not transfer early field meanings by address."
+  ]
+}

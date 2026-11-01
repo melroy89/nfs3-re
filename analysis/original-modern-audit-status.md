@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **96 vendor-only,51 bounded-static,141 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **93 vendor-only,52 bounded-static,143 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -717,3 +717,7 @@ The [release-boundary audit](original-modern-display-modes.md#depth-narrowing-an
 ## Early abort-diagnostic presentation change
 
 The [three-baseline handler comparison](original-modern-startup-policy.md#early-release-already-contains-the-diagnostic-dialog-flag-change) verifies early1.1.0/final520-byte equality, original’s two flag-byte differences and retained caption/MessageBox binding. Warning→error icon and explicit topmost requests do not establish a repaired stacking problem; original SYSTEMMODAL remains qualified. MP100-042 advances to partial, counts96/51/141/2. Actual dialogs, all error paths and1.0.0 introduction remain unverified; no target execution or database changes.
+
+## Early driver filename/device parsing and live key rename
+
+The [three-release audit](original-modern-renderer-loading.md#early-filename-and-device-suffix-interface-then-driver-key-rename) verifies early151-byte filename/.dll/@device parser and1.3.1→1.4.0 VideoDriver→ThrashDriver read-key change. It distinguishes early path/type/device globals from final reused addresses. MP110-001/002 advance to partial, MP140-045 to bounded static; counts93/52/143/2.1.0.0 alias/separate-key predecessor, scan edge cases, provider/device success and rendering remain unverified; no target execution or database changes.

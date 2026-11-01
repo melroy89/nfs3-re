@@ -625,7 +625,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **96 Claimed, 51 Static, 141 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **93 Claimed, 52 Static, 143 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -805,7 +805,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-042 | Instead of this the game sets environment variables from the [ENV] section of the current thrash.ini file. | Static |
 | MP140-043 | The nGlide uses general voodoo2a.dll now, its settings can be changed using the [ENV] section of the thrash.ini. | Claimed |
 | MP140-044 | Added separate Glide3x thrash driver for using on the real 3dfx Voodoo hardware. | Claimed |
-| MP140-045 | VideoDriver ini setting was renamed to ThrashDriver (original name). Filenames of all thrash drivers also were renamed using original format. | Claimed |
+| MP140-045 | VideoDriver ini setting was renamed to ThrashDriver (original name). Filenames of all thrash drivers also were renamed using original format. | Static |
 | MP140-046 | Included glide3x.dll from the gGlide v1.05. | Claimed |
 | MP140-047 | Included glide3x.dll from the dgVoodoo v2.5.1 (Napalm, WIP16). | Claimed |
 | MP140-048 | Uses Print Screen key instead of inconvenient combination Alt+P. | Static |
@@ -896,8 +896,8 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 
 | ID | Reported change | Review |
 |---|---|---|
-| MP110-001 | VideoDriver ini setting now accepts a name of a driver file, not one of the predefined values. Thus, you can put several thrash video drivers of the same type in the game's directory and switch between them with a simple changing of the ini setting, without renaming files. It is important to understand that the game uses drivers in different ways depending on the type. The type of driver is determined by the first letter of the name of the driver file (d — d3d; v — voodoo; s — software; the rest — none). | Claimed |
-| MP110-002 | VideoDeviceId ini setting became a part of VideoDriver. If it is necessary to specify device number, just put “@” and device number just after the driver name (e.g. dx8@0). | Claimed |
+| MP110-001 | VideoDriver ini setting now accepts a name of a driver file, not one of the predefined values. Thus, you can put several thrash video drivers of the same type in the game's directory and switch between them with a simple changing of the ini setting, without renaming files. It is important to understand that the game uses drivers in different ways depending on the type. The type of driver is determined by the first letter of the name of the driver file (d — d3d; v — voodoo; s — software; the rest — none). | Partial |
+| MP110-002 | VideoDeviceId ini setting became a part of VideoDriver. If it is necessary to specify device number, just put “@” and device number just after the driver name (e.g. dx8@0). | Partial |
 | MP110-003 | -voodoo2, -d3d and -softtri command line arguments are replaced by one universal -driver=. This argument has the same format as VideoDriver ini setting. | Static |
 | MP110-004 | Improved validation of thrash video drivers. | Claimed |
 | MP110-005 | Original dx5.dll not always works on modern operating systems (e.g. Windows 8.1). That's why dx8.dll was created. | Claimed |

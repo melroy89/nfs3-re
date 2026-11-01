@@ -381,3 +381,25 @@ The complete118-byte configuration helper and217/212-byte loader bodies are reta
 Profile-section return, environment-write results and filename API failure are unchecked locally. Name construction has no local256-byte bound check. Missing sections, truncation and malformed input are not runtime-tested; ordinary well-formed packaged entries are the established interpretation. The helper preserves ESI/EDI but consumes incoming EDI as the filename-suffix destination; it is not an ordinary parameterless portable C routine. Its stack scratch storage does not establish safety of shared filename/environment/provider state or concurrent calls.
 
 This is the historical special `[NGLIDE]` implementation in a DLL. The final EXE's generic `[ENV]` mechanism above is a separate, later configuration route. Neither static mechanism proves successful provider loading, visible rendering or original/Modern race compatibility.
+
+## Early filename and device suffix interface, then driver-key rename
+
+**Verified static parser/settings history; no DLL or INI execution.** The [driver-option audit](evidence/audits/driver-option-history.json), reproduced with `python3 analysis/scripts/audit_driver_option_history.py`, pins author-hosted1.1.0,1.3.1 and1.4.0 EXEs. It connects early filename/device parsing with the adjacent key-rename boundary, without claiming access to the1.0.0 predefined-alias implementation.
+
+| Version | Captured INI key/default | Selected read branch |
+|---|---|---|
+|1.1.0 |`VideoDriver=dx5` fallback |`004b5748..004b5775`,48-byte buffer |
+|1.3.1 |`VideoDriver=dx6` fallback |Same address range; selected-driver directory mechanism already documented above |
+|1.4.0 |`ThrashDriver=dx6` fallback |`004b5a23..004b5a50`,56-byte buffer |
+
+These are code-supplied fallbacks, not observed user settings or guaranteed loaded drivers. They establish **MP140-045's live1.3.1→1.4.0 key rename**, rather than relying on README text or a changed string alone. Captured branches have no alternate-key retry; computed/other caller aliases remain outside this inspection. The final directory/configuration mechanism is separately mapped earlier in this chapter.
+
+Early1.1.0's complete151-byte parser`004b57d4..004b586b` accepts ESI pointing to a byte string. For ordinary nonempty inputs it writes path buffer`007a3a74`, prepending`.\` unless the input begins`.\` or`./`, converts`/` to`\` during copying, and terminates the copied filename when it consumes`@`. It appends`.dll` unless the copied path already ends in those four bytes. The preceding settings branch passes through an input-normalization helper; full locale/exception semantics are not requalified here. LoadLibraryA receives this buffer at`004b5775..004b5780`.
+
+If the consumed delimiter was`@` and the following byte is ASCII0..9, the parser supplies format`%d` and destination`0055fdbc` to`004f0548`. No suffix/invalid-leading-byte path clears that device field locally. The scan return is not checked here; complete overflow, trailing-input and destination-state semantics remain dependencies. Thus filename and device setting can have separate retained lifetimes, as in the later [duplicate-option analysis](original-modern-command-line.md#duplicate-driver-options-name-and-suffix-are-separate-state), but their early storage is different.
+
+For well-formed lowercase inputs, derived requests include`dx5`→`.\dx5.dll` without a local device write, and`dx5@2`→`.\dx5.dll` plus an attempted integer2 write. These are string/instruction deductions, not parser executions or successful device selection. Empty input returns before local path/class/device updates. The decrementing copy counter and extension look-behind are not a general safe-string contract for malformed or unusually short inputs; do not silently replace their access footprint during faithful reconstruction.
+
+Early basename first-byte classification writes d→6, v→4, s→1, other→0 at`007a3a54`. **That address is not a stable cross-version semantic field:** final uses`007a3a54` for FogSupport and type mask`007a3a58`, while its numeric suffix goes to`007a3a70`, not early`0055fdbc`. A port must map contracts by version/producer/consumer, not reuse a final Ghidra label at an early address.
+
+**MP110-001/002 advance to partial historical support:** the early retained EXE has a filename-based loader request and an integrated`@device` parser. The missing1.0.0 predecessor prevents independently verifying replacement of all advertised predefined aliases or removal of a separate VideoDeviceId option. **MP140-045 advances to bounded static support** for the adjacent live key rename only. DLL availability/export checks, actual selected hardware, full parser domains, user configurations and rendered results remain unverified. No DLL, parser, game, API, instruction probe or saved Ghidra database was executed or changed.
