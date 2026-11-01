@@ -199,6 +199,33 @@ def main():
     assert exe.get_data(0xf84e9, 12).hex() == '85c074198b500883fa687511'
     assert exe.get_data(0xbedad, 5).hex() == '3b4df87f14'
     result['about_failure_consumer']['scope'] = 'Cold-about setup followed by internal loader return0; later initialization/selection/recovery not established.'
+    result['export_init_failure_flow'] = {'captures': []}
+    for role, pe, base, start, end, label in [
+        ('hosted_reference', ref, 0x60000000, 0x60001eb0, 0x60001f92, 'complete-THRASH-init'),
+        ('official_final', final, 0x60000000, 0x60001eb0, 0x60001f8c, 'complete-THRASH-init'),
+        ('official_EXE', exe, 0x400000, 0x5246a0, 0x52475b, 'platform-init-main-range'),
+        ('official_EXE', exe, 0x400000, 0x524787, 0x5247ab, 'platform-init-tail-range'),
+        ('official_EXE', exe, 0x400000, 0x517620, 0x51764b, 'mode-init-platform-call-prefix'),
+        ('official_EXE', exe, 0x400000, 0x51777e, 0x517783, 'mode-init-common-return'),
+        ('official_EXE', exe, 0x400000, 0x4b5aa3, 0x4b5ab6, 'startup-platform-result-diagnostic')]:
+        body = pe.get_data(start-base, end-start)
+        result['export_init_failure_flow']['captures'].append({'role': role, 'label': label,
+            'start_va': f'{start:08x}', 'end_va_exclusive': f'{end:08x}', 'sha256': sha(body),
+            'disassembly': disassemble(body, start)})
+    assert ref.get_data(0x1eb0, 0x71) == final.get_data(0x1eb0, 0x71)
+    assert final.get_data(0x1f03, 12).hex() == 'e818f1ffff85c0751589d883'
+    name, slot = struct.unpack('<2I', exe.get_data(0xf8418, 8))
+    assert slot == 0x9ef978 and exe.get_string_at_rva(name-0x400000) == b'_THRASH_init@0'
+    assert exe.get_data(0x12473a, 10).hex() == 'ff1578f99e0085c07456'
+    assert exe.get_data(0x12479a, 12).hex() == 'e80193faff31c0a0f0af5600'
+    assert exe.get_data(0x11763e, 13).hex() == 'e85dd0000085c00f8433010000'
+    assert exe.get_data(0xb5aa3, 19).hex() == 'e8781b060085c0750ab8e3d15300e856fcffff'
+    result['export_init_failure_flow']['init_slot'] = '009ef978'
+    result['export_init_failure_flow']['diagnostic_string'] = exe.get_string_at_rva(0x13d1e3).decode('ascii')
+    result['export_init_failure_flow']['limits'] = [
+        'Driver init retries internal loader only when its retained initialization-bit admission allows the path.',
+        'Platform failure branch calls cleanup then returns current byte0056aff0; transitive cleanup/callback writes are not proved here.',
+        'Later driver fallback, user dialog result, process shutdown and successful recovery are not observed.']
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [

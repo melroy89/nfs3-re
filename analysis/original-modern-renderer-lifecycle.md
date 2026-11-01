@@ -50,3 +50,7 @@ Modern's smaller initializer does not contain this block. It instead has the con
 ## Further evidence required
 
 The [mode-selection comparison](original-modern-mode-selection.md) now traces the original ID decision tree, Modern search rules and final record publication. Pending: complete resize/helper semantics, callback/storage users outside startup, platform helpers and actual driver acceptance/failure behavior. The original `004f8930` post-initialization path and Modern `004f8548` share several calls but differ in timer/input/callback setup; their full equivalence is not claimed. Historical release attribution and runtime compatibility remain separate questions.
+
+## Final Glide init failure now connected to platform callers
+
+The [paired driver follow-up](original-modern-glide-reference-identity.md#thrash-init-retries-provider-setup-and-has-a-separate-failure-channel) connects the final Glide init export to EXE slot009ef978 at0052473a. Its admitted path retries internal provider setup independently of the about cache; provider failure returns0. The EXE branches to cleanup, whose wrapper then returns current platform byte0056aff0. If that returns0,00517620 skips later display/mode work and startup reaches its existing init diagnostic. This is conditional static propagation, not observed recovery/termination or proof that every cleanup callback preserves zero.

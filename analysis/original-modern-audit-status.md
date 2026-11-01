@@ -378,3 +378,7 @@ The [entry audit](original-modern-glide-reference-identity.md#entry-callback-sup
 ## Glide internal-failure descriptor consumer
 
 The [cross-component failure trace](original-modern-glide-reference-identity.md#internal-provider-failure-is-not-a-null-about-result) captures final cold-about setup/return, EXE descriptor validation and complete mode enumeration. Internal provider return0 can yield a nonnull+8=68h descriptor with count0; it passes that local validation but enumerates no modes. Subsequent about calls take the descriptor cache guard absent intervening writes. Later init/recovery and actual provider failure remain untested, so no whole-load success/failure or irreversible-cache claim is made. Catalog counts unchanged.
+
+## Glide exported-init retry and outward failure linkage
+
+The [init comparison](original-modern-glide-reference-identity.md#thrash-init-retries-provider-setup-and-has-a-separate-failure-channel) captures complete paired init bodies and EXE callers. Retained init admission can retry provider setup independently of the about marker; loader0 returns init0. Slot009ef978 feeds a platform cleanup branch, then a stored-status return; outward0 skips later display/mode setup and reaches the startup diagnostic. Cleanup callback state, successful retry and runtime failure/termination remain unverified. The earlier accepted-empty-descriptor result is not whole-startup acceptance or proof of irreversible failure. Catalog counts unchanged.

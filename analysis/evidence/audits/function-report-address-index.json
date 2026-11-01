@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "0b6345c7a72c283d5cd4a40e641829679bd0ace69b8e5f39165b3b1b57a3801e"
+      "sha256": "9776aa14a484c30778d106ea39894f014c070ae5dcea9e21dba2c5fb62e85f93"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -153,7 +153,7 @@
     },
     {
       "path": "analysis/original-modern-glide-reference-identity.md",
-      "sha256": "1ee90e5cf7edb4cc1fd8fe54440be04d5244f3c5326bcd0bcd9b7a658d9e1fd8"
+      "sha256": "10d0a37766c9855092fdf41d2378cc906a8b91ffb9a3dd6405a60aaf4e68b975"
     },
     {
       "path": "analysis/original-modern-graphics-menu-transition.md",
@@ -321,7 +321,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-lifecycle.md",
-      "sha256": "66bef2235a26abb6ebbad308798678022c262dd1b6ed60fa985bfaea642889fe"
+      "sha256": "fac7b0bba77b60a608575764686e588aa5ee120065ec38cff19652af214e5a9e"
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
@@ -8733,6 +8733,14 @@
           ]
         },
         {
+          "path": "analysis/original-modern-glide-reference-identity.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004b5aa3",
+            "004b5ab6"
+          ]
+        },
+        {
           "path": "analysis/original-modern-renderer-initialization.md",
           "entry_mentioned": true,
           "addresses": [
@@ -13224,6 +13232,14 @@
       "modern_sha256": "ac6685db75da3ccf754c2a705fe09e48e9163e9f6e885923656b02f3a081ff1e",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-glide-reference-identity.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0051763e",
+            "0051764b"
+          ]
+        },
+        {
           "path": "analysis/original-modern-mode-selection.md",
           "entry_mentioned": false,
           "addresses": [
@@ -13453,6 +13469,16 @@
       "original_sha256": "7b7e031d66e9b67c3fe1dbe3c7761e129148af290bc5b6d07a4e6ad46953dda8",
       "modern_sha256": "89929357f63acde63a326966321a8e06b79067b0df3b3bb3f294ae3c6ebfe122",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-glide-reference-identity.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0052473a",
+            "00524740",
+            "00524744",
+            "0052479a"
+          ]
+        },
         {
           "path": "analysis/original-modern-raster-session.md",
           "entry_mentioned": true,

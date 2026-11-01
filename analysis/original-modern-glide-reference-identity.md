@@ -164,8 +164,30 @@ The nonzero descriptor marker is also its fast-return guard on subsequent about 
 
 This explains why “loader returned0,” “about returned null,” “EXE accepted a descriptor” and “usable display modes exist” cannot be collapsed into one success Boolean. Preserve these separate contracts in future reconstruction. No provider failure, loader API or target instructions were executed.
 
+## THRASH init retries provider setup and has a separate failure channel
+
+The audit now compares complete hosted-reference init body `60001eb0..60001f92` (226 bytes) and final body `60001eb0..60001f8c` (220 bytes), plus the official EXE platform-init ranges and their direct callers. Export-binding row004f8418 explicitly maps `_THRASH_init@0` to slot009ef978.
+
+The shared init prefix first checks initialized-bit0 at6000fca4. If set, this body returns0; otherwise it prepares its retained float table/event/callback state and calls internal loader60001020 at60001f03. A zero loader result reaches60001f0c and returns the initially zero EBX through EAX. This call is **independent of the about descriptor's nonzero-marker fast path**, so an earlier failed about call does not by itself prevent another provider-acquisition attempt here. Actual re-entry still depends on the retained initialization-bit gate and other callers/state.
+
+On the admitted successful-provider path, reference init directly calls Glide init/error-callback slots, while final jumps over those now-centralized operations. Its mode-helper call changes60001940→600018d8. Reference's tail calls the shutdown slot60011014 before returning; final removes that tail call. Successful status remains derived from display/capability operations, not an invented always1 return. The final loader's own init latch and the separate driver initialized bit must not be merged into one variable.
+
+### EXE consumers test the init result
+
+| Location | Observed branch |
+|---|---|
+|0052473a |Calls THRASH init through009ef978 |
+|00524740..00524744 |Zero result branches to0052479a, bypassing the local success path |
+|0052479a..005247ab |Calls cleanup004cdaa0, then returns the current byte0056aff0 in EAX |
+|0051763e..0051764b |Mode initializer calls platform helper005246a0; zero result branches to its return epilogue0051777e, before selectdisplay/descriptor refresh/mode setup |
+|004b5aa3..004b5ab6 |Startup tests mode-initializer result; zero supplies `Cannot init the thrash driver.` to diagnostic004b570c |
+
+The platform helper's early nonzero-byte gate and success path remain in the captured ranges. Its failure return is **not blindly normalized to0 after cleanup**: it reloads0056aff0. Ordinary cold-entry conditions start that byte at0, but all transitive cleanup/message/callback writers are not qualified here. The table therefore establishes error-branch linkage and a conditional outward zero path, not every runtime cleanup result or termination consequence.
+
+This completes an important distinction from the earlier empty-descriptor finding: passing local about validation does not bypass every later initialization check, and cached about failure is not proved globally unrecoverable. Conversely, a later retry opportunity does not establish successful provider recovery, valid modes, rendered output or complete fallback policy. No provider absence/recovery scenario, diagnostic dialog or target instructions were executed.
+
 ## Next required comparison
 
-The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
+The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and other initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
 
 **Done:** three artifact identities, export correspondence, static dependency differences and selected paired raw-region map. **Also verified:** complete about local differences and reference fixed-table/query contract. **Pending:** remaining hosted/final function/ABI/data comparisons, transitive failure/registered-finalizer lifetimes, authenticated lineage, historical introduction and runtime rendering. No release-note claim is promoted solely by this inventory. Existing EXEs/database, raw exports and maintained C remain unchanged.
