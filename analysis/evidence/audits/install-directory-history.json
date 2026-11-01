@@ -1,0 +1,205 @@
+{
+  "kind": "static-install-directory-history",
+  "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+  "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+  "binaries": {
+    "1.1.0": {
+      "sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "tables": {
+        "required_static_strings": [
+          ".\\GameData\\Tracks\\",
+          ".\\GameData\\CarModel\\",
+          ".\\FeData\\Art\\",
+          ".\\FeData\\Text\\"
+        ]
+      },
+      "captures": [
+        {
+          "start": "004a3974",
+          "end_exclusive": "004a3995",
+          "sha256": "455122482e0c366c78b11f2e219d1ab0641ef76ebbbcd16e4796056e4057ea64",
+          "hex": "515257ff152045530083f8ff740ea9100000007407b801000000eb0231c05a59c3",
+          "disassembly": [
+            "4a3974:\t51                   \tpush   ecx",
+            "4a3975:\t52                   \tpush   edx",
+            "4a3976:\t57                   \tpush   edi",
+            "4a3977:\tff 15 20 45 53 00    \tcall   DWORD PTR ds:0x534520",
+            "4a397d:\t83 f8 ff             \tcmp    eax,0xffffffff",
+            "4a3980:\t74 0e                \tje     0x4a3990",
+            "4a3982:\ta9 10 00 00 00       \ttest   eax,0x10",
+            "4a3987:\t74 07                \tje     0x4a3990",
+            "4a3989:\tb8 01 00 00 00       \tmov    eax,0x1",
+            "4a398e:\teb 02                \tjmp    0x4a3992",
+            "4a3990:\t31 c0                \txor    eax,eax",
+            "4a3992:\t5a                   \tpop    edx",
+            "4a3993:\t59                   \tpop    ecx",
+            "4a3994:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004a39ac",
+          "end_exclusive": "004a39d2",
+          "sha256": "38aae77634512a23c7b812ed9ed616bceae703b79949bd34154dff9a2d709e2b",
+          "hex": "5657be98394a00833e0074128b3e83c604e8b2ffffff85c075ed31c0eb05b8010000005f5ec3",
+          "disassembly": [
+            "4a39ac:\t56                   \tpush   esi",
+            "4a39ad:\t57                   \tpush   edi",
+            "4a39ae:\tbe 98 39 4a 00       \tmov    esi,0x4a3998",
+            "4a39b3:\t83 3e 00             \tcmp    DWORD PTR [esi],0x0",
+            "4a39b6:\t74 12                \tje     0x4a39ca",
+            "4a39b8:\t8b 3e                \tmov    edi,DWORD PTR [esi]",
+            "4a39ba:\t83 c6 04             \tadd    esi,0x4",
+            "4a39bd:\te8 b2 ff ff ff       \tcall   0x4a3974",
+            "4a39c2:\t85 c0                \ttest   eax,eax",
+            "4a39c4:\t75 ed                \tjne    0x4a39b3",
+            "4a39c6:\t31 c0                \txor    eax,eax",
+            "4a39c8:\teb 05                \tjmp    0x4a39cf",
+            "4a39ca:\tb8 01 00 00 00       \tmov    eax,0x1",
+            "4a39cf:\t5f                   \tpop    edi",
+            "4a39d0:\t5e                   \tpop    esi",
+            "4a39d1:\tc3                   \tret"
+          ]
+        }
+      ]
+    },
+    "official_final": {
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "tables": {
+        "required_slots": [
+          "007a27b4",
+          "007a28b4",
+          "007a2934",
+          "007a29b4",
+          "007a2a34",
+          "007a2ab4",
+          "007a2b34",
+          "007a2d34",
+          "007a2db4",
+          "007a2e34",
+          "007a3134",
+          "007a31b4",
+          "007a3234"
+        ],
+        "create_slots": [
+          "007a2f34",
+          "007a2fb4",
+          "007a3034",
+          "007a30b4"
+        ]
+      },
+      "captures": [
+        {
+          "start": "004a3984",
+          "end_exclusive": "004a39c6",
+          "sha256": "d5eb024a8e3736db07797439147785a88061577f05710b3590d348d55f122a65",
+          "hex": "515256be38394a00833e0074108b06e8d457050085c0741f83c604ebebbe70394a00833e0074148b06e86258050085c0740583c604ebeb31c0eb0331c0405e5a59c3",
+          "disassembly": [
+            "4a3984:\t51                   \tpush   ecx",
+            "4a3985:\t52                   \tpush   edx",
+            "4a3986:\t56                   \tpush   esi",
+            "4a3987:\tbe 38 39 4a 00       \tmov    esi,0x4a3938",
+            "4a398c:\t83 3e 00             \tcmp    DWORD PTR [esi],0x0",
+            "4a398f:\t74 10                \tje     0x4a39a1",
+            "4a3991:\t8b 06                \tmov    eax,DWORD PTR [esi]",
+            "4a3993:\te8 d4 57 05 00       \tcall   0x4f916c",
+            "4a3998:\t85 c0                \ttest   eax,eax",
+            "4a399a:\t74 1f                \tje     0x4a39bb",
+            "4a399c:\t83 c6 04             \tadd    esi,0x4",
+            "4a399f:\teb eb                \tjmp    0x4a398c",
+            "4a39a1:\tbe 70 39 4a 00       \tmov    esi,0x4a3970",
+            "4a39a6:\t83 3e 00             \tcmp    DWORD PTR [esi],0x0",
+            "4a39a9:\t74 14                \tje     0x4a39bf",
+            "4a39ab:\t8b 06                \tmov    eax,DWORD PTR [esi]",
+            "4a39ad:\te8 62 58 05 00       \tcall   0x4f9214",
+            "4a39b2:\t85 c0                \ttest   eax,eax",
+            "4a39b4:\t74 05                \tje     0x4a39bb",
+            "4a39b6:\t83 c6 04             \tadd    esi,0x4",
+            "4a39b9:\teb eb                \tjmp    0x4a39a6",
+            "4a39bb:\t31 c0                \txor    eax,eax",
+            "4a39bd:\teb 03                \tjmp    0x4a39c2",
+            "4a39bf:\t31 c0                \txor    eax,eax",
+            "4a39c1:\t40                   \tinc    eax",
+            "4a39c2:\t5e                   \tpop    esi",
+            "4a39c3:\t5a                   \tpop    edx",
+            "4a39c4:\t59                   \tpop    ecx",
+            "4a39c5:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004f915e",
+          "end_exclusive": "004f916a",
+          "sha256": "c6bc2bbba02a625ee1bcad086c5527f2ab4f7c2cbfd264d9e1172ce900e4c2b3",
+          "hex": "515250ff15204553005a59c3",
+          "disassembly": [
+            "4f915e:\t51                   \tpush   ecx",
+            "4f915f:\t52                   \tpush   edx",
+            "4f9160:\t50                   \tpush   eax",
+            "4f9161:\tff 15 20 45 53 00    \tcall   DWORD PTR ds:0x534520",
+            "4f9167:\t5a                   \tpop    edx",
+            "4f9168:\t59                   \tpop    ecx",
+            "4f9169:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004f916c",
+          "end_exclusive": "004f9184",
+          "sha256": "6ca15e6a6434900cdf02affc00367414f11c763d25a0fd2544854cab8afd31e8",
+          "hex": "e8edffffff83f8ff740ba910000000740431c040c331c0c3",
+          "disassembly": [
+            "4f916c:\te8 ed ff ff ff       \tcall   0x4f915e",
+            "4f9171:\t83 f8 ff             \tcmp    eax,0xffffffff",
+            "4f9174:\t74 0b                \tje     0x4f9181",
+            "4f9176:\ta9 10 00 00 00       \ttest   eax,0x10",
+            "4f917b:\t74 04                \tje     0x4f9181",
+            "4f917d:\t31 c0                \txor    eax,eax",
+            "4f917f:\t40                   \tinc    eax",
+            "4f9180:\tc3                   \tret",
+            "4f9181:\t31 c0                \txor    eax,eax",
+            "4f9183:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004f9204",
+          "end_exclusive": "004f9212",
+          "sha256": "91f6318156c3b2ae17a55fa69ad2ccb7ae0b5c77f426ab053c0737672817dddd",
+          "hex": "51526a0050ff15904453005a59c3",
+          "disassembly": [
+            "4f9204:\t51                   \tpush   ecx",
+            "4f9205:\t52                   \tpush   edx",
+            "4f9206:\t6a 00                \tpush   0x0",
+            "4f9208:\t50                   \tpush   eax",
+            "4f9209:\tff 15 90 44 53 00    \tcall   DWORD PTR ds:0x534490",
+            "4f920f:\t5a                   \tpop    edx",
+            "4f9210:\t59                   \tpop    ecx",
+            "4f9211:\tc3                   \tret"
+          ]
+        },
+        {
+          "start": "004f9214",
+          "end_exclusive": "004f9229",
+          "sha256": "264f82e67d261081477b6d905d2929ede125af04fbf28685595262f8d54522a6",
+          "hex": "5389c3e850ffffff85c0750789d8e8ddffffff5bc3",
+          "disassembly": [
+            "4f9214:\t53                   \tpush   ebx",
+            "4f9215:\t89 c3                \tmov    ebx,eax",
+            "4f9217:\te8 50 ff ff ff       \tcall   0x4f916c",
+            "4f921c:\t85 c0                \ttest   eax,eax",
+            "4f921e:\t75 07                \tjne    0x4f9227",
+            "4f9220:\t89 d8                \tmov    eax,ebx",
+            "4f9222:\te8 dd ff ff ff       \tcall   0x4f9204",
+            "4f9227:\t5b                   \tpop    ebx",
+            "4f9228:\tc3                   \tret"
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No game, file/directory/API calls or extracted instructions executed; no directory created.",
+    "Early/final boundary only; no1.0.0 introduction or precise intermediate expansion date.",
+    "Final slot strings/initialization and startup error caller are linked prior evidence, not revalidated as live buffers.",
+    "Attribute success and directory bit do not prove asset contents, access rights, complete installation or later I/O success.",
+    "Paths and CWD can change between checks/use; no atomicity, concurrency or lifecycle safety claim.",
+    "Create helper returns its API result after a failed existence test, without retry/recheck or recursive parent creation."
+  ]
+}

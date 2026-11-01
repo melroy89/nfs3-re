@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "537608ecf6c320207b82f4ec32d32b7fb0454a14704f3861fb27e722ac78b2c0"
+      "sha256": "cabb46165add17b70d46dab83ccce05da21e6fb0a952b189c6f08c28240623d9"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -433,7 +433,7 @@
     },
     {
       "path": "analysis/original-modern-startup-paths.md",
-      "sha256": "1fdb057be947fad023c4fce480774c8f92614ad48fca3de9f42e7aefdcaff94e"
+      "sha256": "fc733a196d93b94336f97cedc49c76e1a0a0b11aea13a607c303dbf8d514d0cd"
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
@@ -8228,7 +8228,10 @@
           "path": "analysis/original-modern-startup-paths.md",
           "entry_mentioned": true,
           "addresses": [
-            "004a3984"
+            "004a3984",
+            "004a3995",
+            "004a3998",
+            "004a39ac"
           ]
         }
       ]
@@ -13107,6 +13110,13 @@
           "addresses": [
             "004f915e"
           ]
+        },
+        {
+          "path": "analysis/original-modern-startup-paths.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f915e"
+          ]
         }
       ]
     },
@@ -13133,6 +13143,13 @@
           "addresses": [
             "004f916c"
           ]
+        },
+        {
+          "path": "analysis/original-modern-startup-paths.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f916c"
+          ]
         }
       ]
     },
@@ -13155,6 +13172,13 @@
       "report_address_references": [
         {
           "path": "analysis/original-modern-screenshots.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004f9184"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-startup-paths.md",
           "entry_mentioned": true,
           "addresses": [
             "004f9184"

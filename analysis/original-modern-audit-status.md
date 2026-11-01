@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **99 vendor-only,51 bounded-static,138 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **98 vendor-only,51 bounded-static,139 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).
@@ -701,3 +701,7 @@ The [expanded caller audit](original-modern-race-dialog.md#checked-direct-caller
 ## Installer-record settings versus early/final INI behavior
 
 The [three-baseline history](original-modern-language-table.md#installer-settings-move-to-early-ini-but-remoteonly-is-not-retained-in-final) verifies early1.1.0 Language/RemoteOnly profile-API wrappers and normalized RemoteOnly publication, contrasting original install-record sources and final literal-zero gate. Early retains INSTALL.WIN only in the checked diagnostic literal census; string presence is not a file-read proof. MP100-022 advances to partial, counts99/51/138/2. Exact removal date, full file-access coverage, actual startup and1.0.0 introduction remain unverified; no target execution or database changes.
+
+## Early installation directory checker and final creation contract
+
+The [history/helper audit](original-modern-startup-paths.md#early-four-directory-installation-check-versus-final-preparation-tables) verifies1.1.0’s four direct-string directory checks versus final13 required/four preparation slots. Both reject API attribute failure/non-directory results; final creation returns API failure without retry/requery or recursive parent creation. MP100-041 advances to partial, counts98/51/139/2. Complete installation/assets, permissions, actual startup and introduction/expansion dates remain unverified; no target execution or filesystem/database mutation.
