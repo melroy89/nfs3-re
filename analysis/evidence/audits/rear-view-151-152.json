@@ -1,0 +1,1564 @@
+{
+  "kind": "static-rear-view-151-152-comparison",
+  "versions": {
+    "1.5.1": {
+      "archive_sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de",
+      "executable_sha256": "4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17",
+      "spans": [
+        {
+          "start": "0041d620",
+          "end_exclusive": "0041d6d8",
+          "bytes_sha256": "cbd5551f88e70a959930354c9a5dc63d4d2f2e914ce887e1787311046b468499",
+          "assembly": "analysis/captures/modern-differences/rear-view-history/1.5.1-0041d620.asm",
+          "assembly_sha256": "74058313be128912e3a2a362204f3f7c078af2eaf185c88018ed95f871de46e7"
+        },
+        {
+          "start": "0041aa60",
+          "end_exclusive": "0041aa97",
+          "bytes_sha256": "9f9c1337a2a62f080d5e625f48c617412e62e3d8ce8df811d560be84d9c83eb6",
+          "assembly": "analysis/captures/modern-differences/rear-view-history/1.5.1-0041aa60.asm",
+          "assembly_sha256": "d1a25558cfd68bb67f86d958fd721fabfc5fe08fd382c6105060cfb2cd9e7700"
+        },
+        {
+          "start": "0041cdc0",
+          "end_exclusive": "0041d1f6",
+          "bytes_sha256": "0b768c487951b9f77fffdbd9beb89b66ba0a7695826ce08a13a7c32c4e4cdddb",
+          "assembly": "analysis/captures/modern-differences/rear-view-history/1.5.1-0041cdc0.asm",
+          "assembly_sha256": "8d3ed1dfc09a0f0489abaa1925551c57685a9338f24282b782a7636f50f62e1b"
+        },
+        {
+          "start": "0041ba3f",
+          "end_exclusive": "0041ba5c",
+          "bytes_sha256": "3f7b77fe81777725979d98817c009287f50d474b4ec225f48c172d77143e058b",
+          "assembly": "analysis/captures/modern-differences/rear-view-history/1.5.1-0041ba3f.asm",
+          "assembly_sha256": "6a4555c5ef77de85539402db9a79db6428795425daf96f85aee5719523bcf05a"
+        }
+      ],
+      "table_start": "0041d6d8",
+      "table_sha256": "ea9fba78c204613874515b7f5861cf361d90bda5b7e8aad03822249e2713c2a9",
+      "table_words": [
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        110,
+        150,
+        500,
+        333,
+        133,
+        266,
+        400,
+        440,
+        60,
+        92,
+        400,
+        440,
+        60,
+        92,
+        500,
+        375,
+        83,
+        113,
+        375,
+        250,
+        100,
+        200,
+        400,
+        330,
+        45,
+        69,
+        400,
+        330,
+        45,
+        69,
+        500,
+        275,
+        61,
+        83,
+        150,
+        100,
+        40,
+        80,
+        400,
+        242,
+        33,
+        51,
+        400,
+        242,
+        33,
+        51,
+        500,
+        205,
+        46,
+        62,
+        150,
+        100,
+        40,
+        80,
+        400,
+        181,
+        25,
+        38,
+        400,
+        181,
+        25,
+        38,
+        500,
+        200,
+        44,
+        60,
+        150,
+        100,
+        40,
+        80,
+        400,
+        176,
+        24,
+        37,
+        400,
+        176,
+        24,
+        37,
+        500,
+        150,
+        33,
+        45,
+        150,
+        100,
+        40,
+        80,
+        400,
+        132,
+        18,
+        28,
+        400,
+        132,
+        18,
+        28
+      ]
+    },
+    "1.5.2": {
+      "archive_sha256": "23830061e5ed489900b03c98d81727d951c59e9247d7006803460d38ee9a34cd",
+      "executable_sha256": "d532b0252610d9de2e826efc399d4d733d84d4758e47b5fadc94bf5c1d4449bb",
+      "spans": [
+        {
+          "start": "0041d620",
+          "end_exclusive": "0041d6e4",
+          "bytes_sha256": "8de86147efcbca1bb489c3e8a410bba265d257005711d48b2b2a200796dd45bd",
+          "assembly": "analysis/captures/modern-differences/rear-view-history/1.5.2-0041d620.asm",
+          "assembly_sha256": "c0cba16cac84937f11b26412a564b7af45f56d445cadffad458d14d2051f948a"
+        },
+        {
+          "start": "0041aa60",
+          "end_exclusive": "0041aa97",
+          "bytes_sha256": "9f9c1337a2a62f080d5e625f48c617412e62e3d8ce8df811d560be84d9c83eb6",
+          "assembly": "analysis/captures/modern-differences/rear-view-history/1.5.2-0041aa60.asm",
+          "assembly_sha256": "b6310b7dc12ab45897c277278cb1d511336b72a6dee6b34aad4995e3618e0b5f"
+        },
+        {
+          "start": "0041cdc0",
+          "end_exclusive": "0041d1f6",
+          "bytes_sha256": "0b768c487951b9f77fffdbd9beb89b66ba0a7695826ce08a13a7c32c4e4cdddb",
+          "assembly": "analysis/captures/modern-differences/rear-view-history/1.5.2-0041cdc0.asm",
+          "assembly_sha256": "8c52895a76887840715b9f78b243298fdc6f593ba8efd8ec05b5162a90ccf44a"
+        },
+        {
+          "start": "0041ba3f",
+          "end_exclusive": "0041ba5c",
+          "bytes_sha256": "3f7b77fe81777725979d98817c009287f50d474b4ec225f48c172d77143e058b",
+          "assembly": "analysis/captures/modern-differences/rear-view-history/1.5.2-0041ba3f.asm",
+          "assembly_sha256": "286e436887492d392f9e6c8100343cf5feff6ba4eb5f8057c88c5f01b13b46fe"
+        }
+      ],
+      "table_start": "0041d6e4",
+      "table_sha256": "ea9fba78c204613874515b7f5861cf361d90bda5b7e8aad03822249e2713c2a9",
+      "table_words": [
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        110,
+        150,
+        500,
+        333,
+        133,
+        266,
+        400,
+        440,
+        60,
+        92,
+        400,
+        440,
+        60,
+        92,
+        500,
+        375,
+        83,
+        113,
+        375,
+        250,
+        100,
+        200,
+        400,
+        330,
+        45,
+        69,
+        400,
+        330,
+        45,
+        69,
+        500,
+        275,
+        61,
+        83,
+        150,
+        100,
+        40,
+        80,
+        400,
+        242,
+        33,
+        51,
+        400,
+        242,
+        33,
+        51,
+        500,
+        205,
+        46,
+        62,
+        150,
+        100,
+        40,
+        80,
+        400,
+        181,
+        25,
+        38,
+        400,
+        181,
+        25,
+        38,
+        500,
+        200,
+        44,
+        60,
+        150,
+        100,
+        40,
+        80,
+        400,
+        176,
+        24,
+        37,
+        400,
+        176,
+        24,
+        37,
+        500,
+        150,
+        33,
+        45,
+        150,
+        100,
+        40,
+        80,
+        400,
+        132,
+        18,
+        28,
+        400,
+        132,
+        18,
+        28
+      ]
+    }
+  },
+  "limits": [
+    "Historical author-hosted identities, not authenticated retail provenance.",
+    "Finite integer-model derivation, not game execution or instruction emulation.",
+    "No rendered mirror quality, x87-state equality or whole-program equivalence claim."
+  ],
+  "unchanged_selected_spans": [
+    {
+      "start": "0041aa60",
+      "end_exclusive": "0041aa97"
+    },
+    {
+      "start": "0041cdc0",
+      "end_exclusive": "0041d1f6"
+    },
+    {
+      "start": "0041ba3f",
+      "end_exclusive": "0041ba5c"
+    },
+    {
+      "start": "00552e20",
+      "end_exclusive": "00552e44"
+    }
+  ],
+  "derived_cases": [
+    {
+      "selector": 0,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "different": false
+    },
+    {
+      "selector": 0,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        500,
+        333,
+        133,
+        266
+      ],
+      "different": true
+    },
+    {
+      "selector": 0,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 0,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "different": false
+    },
+    {
+      "selector": 0,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "different": false
+    },
+    {
+      "selector": 0,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "different": false
+    },
+    {
+      "selector": 0,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "different": false
+    },
+    {
+      "selector": 0,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        375,
+        250,
+        100,
+        200
+      ],
+      "different": true
+    },
+    {
+      "selector": 0,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 0,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "different": false
+    },
+    {
+      "selector": 0,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "different": false
+    },
+    {
+      "selector": 0,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_151": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "second_152": [
+        500,
+        500,
+        500,
+        500
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        500,
+        110,
+        150
+      ],
+      "second_151": [
+        500,
+        333,
+        133,
+        266
+      ],
+      "second_152": [
+        500,
+        333,
+        133,
+        266
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        500,
+        110,
+        150
+      ],
+      "second_151": [
+        500,
+        333,
+        133,
+        266
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": true
+    },
+    {
+      "selector": 1,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        500,
+        110,
+        150
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 0,
+      "first_both": [
+        400,
+        440,
+        60,
+        92
+      ],
+      "second_151": [
+        400,
+        440,
+        60,
+        92
+      ],
+      "second_152": [
+        400,
+        440,
+        60,
+        92
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 1,
+      "first_both": [
+        400,
+        440,
+        60,
+        92
+      ],
+      "second_151": [
+        400,
+        440,
+        60,
+        92
+      ],
+      "second_152": [
+        400,
+        440,
+        60,
+        92
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 2,
+      "first_both": [
+        400,
+        440,
+        60,
+        92
+      ],
+      "second_151": [
+        400,
+        440,
+        60,
+        92
+      ],
+      "second_152": [
+        400,
+        440,
+        60,
+        92
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        375,
+        83,
+        113
+      ],
+      "second_151": [
+        375,
+        250,
+        100,
+        200
+      ],
+      "second_152": [
+        375,
+        250,
+        100,
+        200
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        375,
+        83,
+        113
+      ],
+      "second_151": [
+        375,
+        250,
+        100,
+        200
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": true
+    },
+    {
+      "selector": 1,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        375,
+        83,
+        113
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 0,
+      "first_both": [
+        400,
+        330,
+        45,
+        69
+      ],
+      "second_151": [
+        400,
+        330,
+        45,
+        69
+      ],
+      "second_152": [
+        400,
+        330,
+        45,
+        69
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 1,
+      "first_both": [
+        400,
+        330,
+        45,
+        69
+      ],
+      "second_151": [
+        400,
+        330,
+        45,
+        69
+      ],
+      "second_152": [
+        400,
+        330,
+        45,
+        69
+      ],
+      "different": false
+    },
+    {
+      "selector": 1,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 2,
+      "first_both": [
+        400,
+        330,
+        45,
+        69
+      ],
+      "second_151": [
+        400,
+        330,
+        45,
+        69
+      ],
+      "second_152": [
+        400,
+        330,
+        45,
+        69
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        275,
+        61,
+        83
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        275,
+        61,
+        83
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        275,
+        61,
+        83
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 0,
+      "first_both": [
+        400,
+        242,
+        33,
+        51
+      ],
+      "second_151": [
+        400,
+        242,
+        33,
+        51
+      ],
+      "second_152": [
+        400,
+        242,
+        33,
+        51
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 1,
+      "first_both": [
+        400,
+        242,
+        33,
+        51
+      ],
+      "second_151": [
+        400,
+        242,
+        33,
+        51
+      ],
+      "second_152": [
+        400,
+        242,
+        33,
+        51
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 2,
+      "first_both": [
+        400,
+        242,
+        33,
+        51
+      ],
+      "second_151": [
+        400,
+        242,
+        33,
+        51
+      ],
+      "second_152": [
+        400,
+        242,
+        33,
+        51
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        205,
+        46,
+        62
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        205,
+        46,
+        62
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        205,
+        46,
+        62
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 0,
+      "first_both": [
+        400,
+        181,
+        25,
+        38
+      ],
+      "second_151": [
+        400,
+        181,
+        25,
+        38
+      ],
+      "second_152": [
+        400,
+        181,
+        25,
+        38
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 1,
+      "first_both": [
+        400,
+        181,
+        25,
+        38
+      ],
+      "second_151": [
+        400,
+        181,
+        25,
+        38
+      ],
+      "second_152": [
+        400,
+        181,
+        25,
+        38
+      ],
+      "different": false
+    },
+    {
+      "selector": 2,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 2,
+      "first_both": [
+        400,
+        181,
+        25,
+        38
+      ],
+      "second_151": [
+        400,
+        181,
+        25,
+        38
+      ],
+      "second_152": [
+        400,
+        181,
+        25,
+        38
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        200,
+        44,
+        60
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        200,
+        44,
+        60
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 0,
+      "mode_equals_1": 0,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        200,
+        44,
+        60
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 0,
+      "first_both": [
+        400,
+        176,
+        24,
+        37
+      ],
+      "second_151": [
+        400,
+        176,
+        24,
+        37
+      ],
+      "second_152": [
+        400,
+        176,
+        24,
+        37
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 1,
+      "first_both": [
+        400,
+        176,
+        24,
+        37
+      ],
+      "second_151": [
+        400,
+        176,
+        24,
+        37
+      ],
+      "second_152": [
+        400,
+        176,
+        24,
+        37
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 0,
+      "mode_equals_1": 1,
+      "rear_detail": 2,
+      "first_both": [
+        400,
+        176,
+        24,
+        37
+      ],
+      "second_151": [
+        400,
+        176,
+        24,
+        37
+      ],
+      "second_152": [
+        400,
+        176,
+        24,
+        37
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 0,
+      "first_both": [
+        500,
+        150,
+        33,
+        45
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 1,
+      "first_both": [
+        500,
+        150,
+        33,
+        45
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 1,
+      "mode_equals_1": 0,
+      "rear_detail": 2,
+      "first_both": [
+        500,
+        150,
+        33,
+        45
+      ],
+      "second_151": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "second_152": [
+        150,
+        100,
+        40,
+        80
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 0,
+      "first_both": [
+        400,
+        132,
+        18,
+        28
+      ],
+      "second_151": [
+        400,
+        132,
+        18,
+        28
+      ],
+      "second_152": [
+        400,
+        132,
+        18,
+        28
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 1,
+      "first_both": [
+        400,
+        132,
+        18,
+        28
+      ],
+      "second_151": [
+        400,
+        132,
+        18,
+        28
+      ],
+      "second_152": [
+        400,
+        132,
+        18,
+        28
+      ],
+      "different": false
+    },
+    {
+      "selector": 3,
+      "night": 1,
+      "mode_equals_1": 1,
+      "rear_detail": 2,
+      "first_both": [
+        400,
+        132,
+        18,
+        28
+      ],
+      "second_151": [
+        400,
+        132,
+        18,
+        28
+      ],
+      "second_152": [
+        400,
+        132,
+        18,
+        28
+      ],
+      "different": false
+    }
+  ],
+  "different_second_record_cases": 4,
+  "model_scope": "Selectors0..3, Night0/1, mode-equals-1 false/true, Rear View Detail0..2; tuples before WORD<<16 stores."
+}

@@ -2,7 +2,7 @@
 
 ## Current snapshot — 2026-11-01
 
-The [catalog](modern-patch-change-catalog.md) currently has **148 vendor-only,42 bounded-static,98 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+The [catalog](modern-patch-change-catalog.md) currently has **147 vendor-only,42 bounded-static,99 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recently narrowed:** type8 descriptor availability/conditional publication, local prepare/render/finalize order, retained399-byte handler and an excluded33-byte viewport-flag helper. See the [projection report](original-modern-projection.md).
@@ -123,14 +123,14 @@ At that review checkpoint, downstream field meanings remained open. Subsequent e
 
 ## Current priority queue after View Distance and gear-label follow-ups
 
-The catalog currently labels148 entries vendor-only,42 bounded static,98 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
+The catalog currently labels147 entries vendor-only,42 bounded static,99 partial and2 unresolved. New qualified links include Full view-distance thresholds and mirror record selection, Night/two-player conditions, gear endpoint anchoring/smaller-scale fallback, and the vertical-angle calculation. The HUD base-scale coefficient also changes independently of the dimension-read relocation. These are documented mechanisms, not runtime acceptance or a whole-game completion percentage.
 
 | Priority | Remaining question | Existing evidence / next required action | Evidence boundary |
 |---:|---|---|---|
 | 1 | MP160-003 horizon/camera shift | [Projection report](original-modern-projection.md) now establishes conditional CCM-to-type8 publication, preparation/render/finalizer ordering and bounded non-producer searches; recover computed/bulk source writes or capture lifetime, then qualify camera orientation/output | Executable inspection can advance this; visible horizon still needs rendering evidence |
 | 2 | MP160-006 remaining output coverage | [Map-marker extent-to-quad chain](original-modern-map-marker-scaling.md) now established; qualify other marker styles, lifecycle and actual rendered size separately | Static source/consumer gap closed; visual scope remains unverified |
 | 3 | MP161-002 DX8 fog; MP161-001 visual acceptance | [Historical DX6/DX7/DX8 coordinate corrections](original-modern-renderer-texel-alignment.md#dx7-and-dx8-historical-instruction-traces) are now traced; reuse the traced specular-alpha/state contracts and retained table expansion; reuse selected exported fog routes; reuse the traced capability guard and notifier; qualify remaining reset/callback lifecycle and other submission paths | Alignment mechanisms are verified statically; fog semantics and rendered outcomes require separate evidence |
-| 4 | Specific MP152-001 rear-view improvement | The1.5.1/1.5.2 archives are now retained by the [language-history audit](original-modern-language-table.md#historical-fallback-regression-v150-through-v153); reuse [rear-view mechanisms](original-modern-track-detail.md) to select the historical comparison | MP153-008 structural regression/fix is now verified; rear-view introduction remains separate |
+| 4 | Historical rear-view consequences and remaining release claims | [Historical preset comparison](original-modern-track-detail.md#historical-v152-improvement-second-record-source-selection) now isolates the Medium-detail value change; qualify visual/performance effects separately, and select other claims from the catalog | MP153-008 structural fix verified; MP152-001 mechanism partially supported, not rendered acceptance |
 | 5 | Original/Modern rendered, replay and multiplayer consequences | Compare separately identified inputs/builds within an explicitly stated runtime scope | Existing single-build captures and static derivations are not cross-version equivalence evidence |
 
 Continue with a concrete missing producer/consumer link from this queue. Do not repeat already resolved preset arithmetic, expand into unrelated scratchpad work, or treat historical/runtime requirements as blockers to all remaining static inspection. The bounded reference inventory remains complete; the broader investigation remains active and incomplete.
@@ -233,3 +233,7 @@ The [guard/default/notifier follow-up](original-modern-renderer-texel-alignment.
 ## Historical language regression resolved statically
 
 The [four-release audit](original-modern-language-table.md#historical-fallback-regression-v150-through-v153) pins author-hosted1.5.0/1.5.1/1.5.2/1.5.3 EXEs and fallback data. The admitted range exceeds the embedded offset table by four entries in1.5.1/1.5.2; predecessor and successor fit their ranges. The newer table supplies the missing camera/rear-view labels. MP153-008 moves from unresolved to bounded static; actual consumer failures and localized rendering remain untested. Current counts:148 vendor-only,42 bounded static,98 partial,2 unresolved.
+
+## Historical Rear View Detail mechanism
+
+The [1.5.1/1.5.2 audit](original-modern-track-detail.md#historical-v152-improvement-second-record-source-selection) verifies an unchanged classifier/builder/table and a changed second-record preset policy. Four of48 finite derived cases differ, all Medium detail with Full/Far view-distance and mode!=1; this is not a runtime percentage. MP152-001 moves from vendor-only to partial. Current counts:147 vendor-only,42 bounded static,99 partial,2 unresolved. Rendered improvement/performance and release-wide coverage remain untested.

@@ -496,7 +496,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **148 Claimed, 42 Static, 98 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **147 Claimed, 42 Static, 99 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -562,7 +562,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 
 | ID | Reported change | Review |
 |---|---|---|
-| MP152-001 | Better Rear View Detail setting. Light from the car headlights and cop flashers will be rendered even on Medium value of this setting. View Distance and Car Detail in the Rear View Mirror now depends on Rear View Detail also. So, if you have performance problems with High level of the Rear View Detail setting, just use Medium. It have to be much more usable now. | Claimed |
+| MP152-001 | Better Rear View Detail setting. Light from the car headlights and cop flashers will be rendered even on Medium value of this setting. View Distance and Car Detail in the Rear View Mirror now depends on Rear View Detail also. So, if you have performance problems with High level of the Rear View Detail setting, just use Medium. It have to be much more usable now. | Partial |
 | MP152-002 | Better compatibility with the Thrash API v107 according to fog. So, the DX7 renderer can render fog in the NFS3 now. | Claimed |
 | MP152-003 | Fixed a bug which was a cause of config reset after loading of ghost files from the other versions of the NFS3. | Static |
 | MP152-004 | Fixed a bug which was a cause of using player name from the loaded ghost file instead of the current player name. | Static |

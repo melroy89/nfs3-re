@@ -62,3 +62,29 @@ The track-detail audit now retains and asserts identical selection span **`0041b
 The [optional mirror pass](original-modern-night-lighting.md#context-producer-optional-mirror-setting-gated-pass) already traces tag1 into this wrapper. Together these sources confirm **record1 is selected on that mirror route**. Record1 is not exclusively mirror storage: a tag0 view with context+4 equal1 selects it too. Active invocation, ordering and shared-record lifetime remain runtime questions.
 
 This connects the [Modern second-record source advance](original-modern-parameter-preset.md#modern-explicit-table-and-two-record-writes) to a confirmed mirror consumer, rather than assuming that the second table half belongs to the mirror. Rear View Detail's High/Medium/Low ordinal participates in choosing those values, followed by the separate tag1 classifier policy above. Both mechanisms are necessary to explain the final path.
+
+## Historical v1.5.2 improvement: second-record source selection
+
+The [historical audit](scripts/audit_rear_view_history.py) now compares author-hosted1.5.1 and1.5.2 using archive/EXE identities from the [four-release baseline](original-modern-language-table.md#historical-fallback-regression-v150-through-v153). Run `python3 analysis/scripts/audit_rear_view_history.py`; [its manifest](evidence/audits/rear-view-151-152.json) retains complete preset bodies, both tables, selected unchanged consumers and48 finite integer-model cases. No target instructions, rendering or game tests were run.
+
+The main classifier `0041aa60..0041aa97`, builder `0041cdc0..0041d1f6`, mirror record-selection span `0041ba3f..0041ba5c` and36-byte selection table at `00552e20` are identical between these two releases. Thus their final-pair differences described earlier were already present before1.5.2 and must not be attributed to this particular release note.
+
+The changed preset routine is `0041d620..0041d6d8` in1.5.1 and `0041d620..0041d6e4` in1.5.2, with an identical256-byte WORD table relocated from `0041d6d8` to `0041d6e4`. Those end addresses mark the start of data; disassembling through the old/new table would invent instructions. The first-record selection and four-field stores follow the same scheme. Between first and second records:
+
+- **1.5.1:** normally continue with the adjacent four WORDs. Only when Rear View Detail equals2 and `006fd3b0 != 1`, replace the source with fixed address `0041d7c0`, tuple `{150,100,40,80}`.
+- **1.5.2:** when `006fd3b0 != 1` and wrapped signed `3-selector > 0`, advance the already-incremented source by `min_unsigned(RearViewDetail,3-selector)*64` bytes. Otherwise use the adjacent tuple. This is the setting-dependent mechanism in the final preset report.
+
+For ordinary selectors0..3, Night0/1, mode-equals-1 false/true and detail0..2, the48-case mathematical derivation finds four changed second-record tuples. All are **Medium detail**, `006fd3b0 != 1`, with Full/Far view-distance ordinals0/1. High and Low tuples in this finite domain are unchanged; the new code is not evidence that every detail setting's output changed.
+
+| View-distance ordinal | Night | v1.5.1 second tuple | v1.5.2 second tuple |
+|---:|---:|---|---|
+|0 Full |0 |500,500,500,500 |500,333,133,266 |
+|0 Full |1 |500,500,500,500 |375,250,100,200 |
+|1 Far |0 |500,333,133,266 |150,100,40,80 |
+|1 Far |1 |375,250,100,200 |150,100,40,80 |
+
+Tuple fields are record+24h/+28h/+38h/+3ch before each WORD is shifted left16. The existing producer/consumer chain binds these records to distance/classification policy and confirms record1 on the mirror route. The first-record tuple remains equal in all48 cases. These are scoped derived values, not48 observed rendering tests or a whole-game difference percentage.
+
+The conversion-loop setup is also rearranged: both historical routines skip zero count and otherwise use x86 LOOP with the same field map/scale; neither gains a negative-count guard. General-register preservation uses PUSHAD/POPAD in both. No full machine-state equivalence is claimed from these similarities.
+
+MP152-001 now has **partial historical support**: an actual1.5.1→1.5.2 mechanism changes Medium mirror-related preset values while retaining the inspected consumer bodies and table. Whether it is visually better, its performance effect, complete release-wide attribution and behaviour outside the stated domain remain unverified. The absence of a local upper-bound check on selector/auxiliary values still matters to reconstruction.
