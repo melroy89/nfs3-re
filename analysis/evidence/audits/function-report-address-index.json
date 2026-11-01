@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "f69d1211914d5b34a3401e86bc1266ed2890ade4cd2e5ff39e57dfaf9ea6f5dd"
+      "sha256": "eb399c07ceaa26823299dd4ce827bda615aac22caf308289409794701d26c48b"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -97,7 +97,7 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "4ad4481ee03129f6f218b71b49125d8ac825b8526dff0ae625c0e1c127a9d6cd"
+      "sha256": "cd765385a294a7e21f5f139e794494832f08f662e13c565c1e26915b91a308f5"
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -3486,6 +3486,7 @@
             "004482c0",
             "004482db",
             "004482e1",
+            "004482f0",
             "0044831d"
           ]
         },
@@ -3536,7 +3537,8 @@
           "entry_mentioned": true,
           "addresses": [
             "00448320",
-            "00448326"
+            "00448326",
+            "0044832c"
           ]
         },
         {
@@ -9857,6 +9859,13 @@
       "original_sha256": "6974bb21836dd342d0e4b694611455c7d41bedbccc9af8e4b106be0439fc6804",
       "modern_sha256": "6f140aa2f9aef3eef21462d342a40e51ad35401e5a053e3c58723735fa9f8671",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-display-modes.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004beeb0"
+          ]
+        },
         {
           "path": "analysis/original-modern-mode-selection.md",
           "entry_mentioned": true,

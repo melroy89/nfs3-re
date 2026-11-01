@@ -120,4 +120,14 @@ The second saved name reflects analysis metadata; the directly verified contract
 
 For valid nonempty lists within storage capacity, the unsigned comparison rejects negative-looking/high-bit index values as out of range when they are ≥count. It is not a complete protection against malformed counts, arithmetic wrapping or invalid storage lifetime. No such malformed input was executed.
 
-**Work status: Modern local contracts verified; original functional counterpart mapping pending.** The same-address original region belongs to a different longer copy/selection path and must not be treated as two matching tiny functions. This addition documents changed-region interfaces while leaving original counterpart identification, full caller use and runtime mode behavior explicit. No executable, Ghidra or reconstruction-source changes were made.
+## Original accessor counterparts and the race-init handoff
+
+The audit now captures complete original field-zero getter **004482f0..0044832c** (60 bytes) and verifies the paired caller handoff. Original call004a3418 targets004482f0; Modern call004a3408 targets00448374. Both then store EAX to0055fec4 and immediately call their respective mode-application routines004bef50/004beeb0 with that value still live. These are actual matched consumer paths, not correspondence inferred solely from return-field offsets.
+
+Original getter first calls **004482c0 unconditionally**, which rebuilds its list. It then compares selected index006fbc14 with count00559218 using **signed JL**; if not below count it resets the index to0, then returns field0 from `00661220 + wrap32(index*114h)`. ECX/EDX/EBP are locally saved/restored. Modern's tiny getter instead calls cached selector00448348, whose **unsigned** comparison and side effect are documented above, and reads field0. It does not invoke the list initializer itself.
+
+Consequently the original getter observes a newly rebuilt list on this path, while Modern depends on prior cached-list initialization/lifetime. A negative index can pass the original signed check against an ordinary positive count; Modern's unsigned check rejects it for ordinary small counts. Neither version's local normalization proves a nonempty list: count0 can still lead to a field0 read from record0. These are conditional machine contracts, not observed invalid accesses or proof that arbitrary indices are reachable.
+
+For field10, the [existing graphics-menu dataflow](original-modern-graphics-menu-transition.md#mode-copy-field-correspondence-is-now-established) already maps original00448330's full276-byte record copy plus a caller+10h read to Modern00448368's direct field load. That helper is separately retained in this audit; it must not be confused with original004482f0 merely because nearby addresses overlap the new code.
+
+**Work status: both local accessor counterpart mappings done; evidence: verified static callers/field contracts.** Complete source-record equality, all initialization/invalidation paths, register expectations of every caller and runtime mode behavior remain unresolved. No executable, Ghidra or reconstruction-source changes were made.

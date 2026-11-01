@@ -10,10 +10,12 @@ from audit_thrash_loader_difference import ROOT, SPECS
 
 SPANS = {
     'original': [(0x4bed90, 0x4bee72), (0x448210, 0x4482e8), (0x517610, 0x51788d),
-                 (0x472d10, 0x472f19), (0x4483a0, 0x4483fe), (0x4bef50, 0x4bf10f), (0x44b1a0,0x44b206)],
+                 (0x472d10, 0x472f19), (0x4483a0, 0x4483fe), (0x4bef50, 0x4bf10f), (0x44b1a0,0x44b206),
+                 (0x4482f0,0x44832c),(0x448330,0x448394),(0x4a3418,0x4a3427)],
     'official_modern': [(0x4bed90, 0x4beeb0), (0x448210, 0x448345), (0x4beeb0, 0x4bef9d),
                         (0x448394, 0x448425), (0x472d10, 0x472e1d),
-                        (0x472aac, 0x472aeb), (0x4f9140, 0x4f915e), (0x44b1a0,0x44b206), (0x448348,0x44837c), (0x4bef9d,0x4befcd)],
+                        (0x472aac, 0x472aeb), (0x4f9140, 0x4f915e), (0x44b1a0,0x44b206), (0x448348,0x44837c), (0x4bef9d,0x4befcd),
+                        (0x4a3408,0x4a3417)],
 }
 
 
@@ -62,7 +64,28 @@ def main():
     assert selected_accessors==bytes.fromhex('a15c82a1003b056082a100720731c0a35c82a10069c014010000053083a100c3e8dbffffff8b4010c3909090e8cfffffff8b00c3')
     result['selected_record_accessors']={'selector':'00448348','field10_accessor':'00448368',
         'field0_accessor':'00448374','record_stride':276,'index':'00a1825c','count':'00a18260',
-        'base':'00a18330','limits':'Unsigned index normalization does not reject an empty list; original counterparts unverified.'}
+        'base':'00a18330','limits':'Unsigned index normalization does not reject an empty list; original counterparts are mapped below without result-equivalence claims.'}
+    for pe,site,target,apply in [(images[0],0x4a3418,0x4482f0,0x4bef50),
+                                  (images[1],0x4a3408,0x448374,0x4beeb0)]:
+        body=pe.get_data(site-0x400000,15)
+        assert body[0]==0xe8 and site+5+int.from_bytes(body[1:5],'little',signed=True)==target
+        assert body[5:10].hex()=='a3c4fe5500'
+        assert body[10]==0xe8 and site+15+int.from_bytes(body[11:15],'little',signed=True)==apply
+    assert images[0].get_data(0x482f5,5).hex()=='e8c6ffffff'
+    assert images[0].get_data(0x48305,2).hex()=='7c08'
+    result['accessor_counterparts']={
+        'field0':{'original':'004482f0..0044832c','modern':'00448374..0044837c',
+            'caller_original':'004a3418','caller_modern':'004a3408',
+            'shared_handoff':'Store EAX to0055fec4, then call version-specific mode application with EAX still live.',
+            'original':'Calls list initializer004482c0 unconditionally, then signed index<count check and field0 load.',
+            'modern':'Calls unsigned cached-record selector00448348 and reads field0, without calling list initializer.'},
+        'field10':{'original':'00448330 full record copy plus caller offset10 read',
+                   'modern':'00448368 direct selected-record field10 load',
+                   'existing_evidence':'original-modern-graphics-menu-transition.md#mode-copy-field-correspondence-is-now-established'},
+        'limits':['Maps local functional counterparts through actual callers/field offsets, not same-address guesses.',
+                  'No source-record equality, complete initialization order or runtime mode equivalence.',
+                  'Original signed check can admit a negative index when it is below a normal positive count; Modern unsigned check rejects it for ordinary small counts.',
+                  'Both local index-normalization policies can still read record0 when count0.']}
     original_recovery,modern_recovery=[p.get_data(0x4b1a0,102) for p in images]
     assert [i for i,(a,b) in enumerate(zip(original_recovery,modern_recovery)) if a!=b]==[0x46,0x47]
     assert original_recovery[0x45:0x4a]==bytes.fromhex('e8663d0700')

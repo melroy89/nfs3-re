@@ -54,6 +54,27 @@
           "bytes_sha256": "cf8272242267d5a284aad0db7802e1e178bd3ea412737013cdbbb15903b09da0",
           "assembly": "analysis/captures/modern-differences/display-modes/original-0044b1a0.asm",
           "assembly_sha256": "582af2de72359fea72192be287455643f7b84656bdd7f83ad8e24b36db7b288e"
+        },
+        {
+          "start": "004482f0",
+          "end": "0044832c",
+          "bytes_sha256": "484d31310fa64c6abddbe48fe26f04b88f60c009773a2cd3057ebd14a89774a6",
+          "assembly": "analysis/captures/modern-differences/display-modes/original-004482f0.asm",
+          "assembly_sha256": "3a4f5aa38510e0cd29dfd9a0d3b3a1128cb1e19e1bce128e7564b36e706051c7"
+        },
+        {
+          "start": "00448330",
+          "end": "00448394",
+          "bytes_sha256": "080d2c0599f842e776fe4ac7042a4a4b9824a253011b7d35e9cda4b947b815fa",
+          "assembly": "analysis/captures/modern-differences/display-modes/original-00448330.asm",
+          "assembly_sha256": "7152f923d238f470230f2af0300b7810b8735391e03420399c15cc63fa4bc422"
+        },
+        {
+          "start": "004a3418",
+          "end": "004a3427",
+          "bytes_sha256": "f6654223796521a9adae35aa1b3f2568ff5e25c1a55a10a144fd8d70fb7ead96",
+          "assembly": "analysis/captures/modern-differences/display-modes/original-004a3418.asm",
+          "assembly_sha256": "c12bd2095c8be573f42588eb7bbf33785050e7295334bdb03d2398503bf89173"
         }
       ]
     },
@@ -130,6 +151,13 @@
           "bytes_sha256": "37f6889ab9658f1b7dd9b1cb2d75d2cc320216f52568a4c669297f7870bc9b43",
           "assembly": "analysis/captures/modern-differences/display-modes/official_modern-004bef9d.asm",
           "assembly_sha256": "cec559eeb782bd4805a117928617acff9922b382d7c26b67ffd86cbc716e9ad8"
+        },
+        {
+          "start": "004a3408",
+          "end": "004a3417",
+          "bytes_sha256": "514c60609fa98529390a6387bc0cdb44754674615adbf86c43866b79e55ff83c",
+          "assembly": "analysis/captures/modern-differences/display-modes/official_modern-004a3408.asm",
+          "assembly_sha256": "1591fa4ffb4666ec91605471dc39149da37ab4754217b4aa9ca879190b6591eb"
         }
       ]
     }
@@ -159,7 +187,27 @@
     "index": "00a1825c",
     "count": "00a18260",
     "base": "00a18330",
-    "limits": "Unsigned index normalization does not reject an empty list; original counterparts unverified."
+    "limits": "Unsigned index normalization does not reject an empty list; original counterparts are mapped below without result-equivalence claims."
+  },
+  "accessor_counterparts": {
+    "field0": {
+      "original": "Calls list initializer004482c0 unconditionally, then signed index<count check and field0 load.",
+      "modern": "Calls unsigned cached-record selector00448348 and reads field0, without calling list initializer.",
+      "caller_original": "004a3418",
+      "caller_modern": "004a3408",
+      "shared_handoff": "Store EAX to0055fec4, then call version-specific mode application with EAX still live."
+    },
+    "field10": {
+      "original": "00448330 full record copy plus caller offset10 read",
+      "modern": "00448368 direct selected-record field10 load",
+      "existing_evidence": "original-modern-graphics-menu-transition.md#mode-copy-field-correspondence-is-now-established"
+    },
+    "limits": [
+      "Maps local functional counterparts through actual callers/field offsets, not same-address guesses.",
+      "No source-record equality, complete initialization order or runtime mode equivalence.",
+      "Original signed check can admit a negative index when it is below a normal positive count; Modern unsigned check rejects it for ordinary small counts.",
+      "Both local index-normalization policies can still read record0 when count0."
+    ]
   },
   "recovery_call": {
     "instruction": "0044b1e5",
