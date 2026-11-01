@@ -262,3 +262,7 @@ The [window helper follow-up](original-modern-window-geometry.md#removed-startup
 ## Historical/startup reproducibility checkpoint
 
 At reviewed head7c36f96,11 selected static audit scripts passed, and original/official/local EXE plus saved Ghidra database hashes matched their recorded identities. [The checkpoint](evidence/validation/historical-startup-checkpoint.json) records commands, outputs, identities and limits. Stale overview text about untraced DX7/DX8 alignment and vendor-only historical rear-view work was corrected. This self-check does not independently validate every semantic interpretation or qualify runtime behaviour. The full difference investigation remains active and incomplete.
+
+## Historical abort-presentation routing
+
+The [1.5.3/1.6.0 comparison](original-modern-pending-overlay.md#historical-v160-change-defer-presentation-until-loading-exit) verifies overlay drawing moves from the input poller to the terminal abort branch, alongside the explicit200ms alertable wait. Overlay and wait adapter bodies are retained. MP160-011 stays partial: neither the older500ms claim nor exact visible duration is established. Counts unchanged; no target/API/timing execution.

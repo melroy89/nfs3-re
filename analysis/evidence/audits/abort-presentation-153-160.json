@@ -1,0 +1,94 @@
+{
+  "kind": "historical-abort-presentation",
+  "versions": {
+    "1.5.3": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.3.7z",
+      "archive_sha256": "0f92afacbbc179500ede3d7e22107999f3d4ad9ff0a41feb8cd00ef65559ec64",
+      "executable_sha256": "07e987193ebeb4b30ac3912f90d8b98f2a34b37632dbad232ecfcea12fdb7c0a",
+      "overlay_call_candidates": [
+        "004a33eb"
+      ],
+      "spans": [
+        {
+          "start": "00494bd0",
+          "end_exclusive": "00494c5a",
+          "bytes_sha256": "fd5b3768f386cad17888691767e16a89c02c25c500690cbb44bb35543dcc8eeb",
+          "assembly": "analysis/captures/modern-differences/abort-history/1.5.3-00494bd0.asm",
+          "assembly_sha256": "a4def9a20dc38c720a6f5d0ffb2c6c5121f395f4472979456ff9de717a2486e2"
+        },
+        {
+          "start": "004df8e0",
+          "end_exclusive": "004df8ef",
+          "bytes_sha256": "c01e752961afb05e7dc93f0c0034f061cbe726369184a55ae287579d993536b7",
+          "assembly": "analysis/captures/modern-differences/abort-history/1.5.3-004df8e0.asm",
+          "assembly_sha256": "1e43c766e8589b50155698a5f8756ba59b8c717fdd6e6123bf52d4c252fc8382"
+        },
+        {
+          "start": "004a33d0",
+          "end_exclusive": "004a33fb",
+          "bytes_sha256": "b24e5625e5094e164799b82fd67865499e2d2670dfffcf68cf0b541f7d4c21f0",
+          "assembly": "analysis/captures/modern-differences/abort-history/1.5.3-004a33d0.asm",
+          "assembly_sha256": "bb4b04b6d3d80a468f942373b1a6d5f60d6155b89d20f93792e33c2008921711"
+        },
+        {
+          "start": "004a3542",
+          "end_exclusive": "004a356a",
+          "bytes_sha256": "837250abbd9cad765de52e60302001ba6f3048795d3fb38830351385c1e974ff",
+          "assembly": "analysis/captures/modern-differences/abort-history/1.5.3-004a3542.asm",
+          "assembly_sha256": "72a3ab8363bb043c4f86c4fc3c3ea13d112cd4a945c75297b4abac56f416c552"
+        }
+      ]
+    },
+    "1.6.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.6.0.7z",
+      "archive_sha256": "9e1bb8f034026f6f2641417d59f46203f787771394767ca4c6ae4474e4324bb8",
+      "executable_sha256": "9fd80c4cdc9827f190698f28aa93f1182218d7c557898fb2653abfc4148c7a72",
+      "overlay_call_candidates": [
+        "004a3532"
+      ],
+      "spans": [
+        {
+          "start": "00494bd0",
+          "end_exclusive": "00494c5a",
+          "bytes_sha256": "fd5b3768f386cad17888691767e16a89c02c25c500690cbb44bb35543dcc8eeb",
+          "assembly": "analysis/captures/modern-differences/abort-history/1.6.0-00494bd0.asm",
+          "assembly_sha256": "334ae787641dbdcbf2c92971b51f59662e1e678d39f783df33247c4c331fb39a"
+        },
+        {
+          "start": "004df8e0",
+          "end_exclusive": "004df8ef",
+          "bytes_sha256": "c01e752961afb05e7dc93f0c0034f061cbe726369184a55ae287579d993536b7",
+          "assembly": "analysis/captures/modern-differences/abort-history/1.6.0-004df8e0.asm",
+          "assembly_sha256": "61e2d77ae652513699137788e179778a0b059b5b7f1329ceca310ef6d2672195"
+        },
+        {
+          "start": "004a33d0",
+          "end_exclusive": "004a33f0",
+          "bytes_sha256": "e7871e9a46645051607b0dc488f53cc8d435e2b45522da94cc788d8237855094",
+          "assembly": "analysis/captures/modern-differences/abort-history/1.6.0-004a33d0.asm",
+          "assembly_sha256": "e1dffcc6e74f734abeb84a2e8f53c75eae2ae3d5a556ea41af3c58b955d841fd"
+        },
+        {
+          "start": "004a3514",
+          "end_exclusive": "004a354b",
+          "bytes_sha256": "ba196c1d669f80252a068b7e2c5c307d740b05017e11dde1d79f828978588af9",
+          "assembly": "analysis/captures/modern-differences/abort-history/1.6.0-004a3514.asm",
+          "assembly_sha256": "30f718cdecd0059c052334595b5e2d503e01ac01f7993d2a5042f8a22abeee77"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Static historical pair, not measured presentation duration or all abort routes.",
+    "No proof of original500ms duration; no target instructions, API calls or rendering.",
+    "Direct E8 sites are bounded candidates; indirect callers and callbacks remain outside this scan."
+  ],
+  "retained_overlay_bytes": 138,
+  "retained_wait_adapter_bytes": 15,
+  "new_wait_request": {
+    "milliseconds": 200,
+    "alertable": true,
+    "call": "004a353c",
+    "api": "SleepEx"
+  }
+}

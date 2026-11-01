@@ -51,3 +51,19 @@ Modern's abort-presentation branch loads EAX=200 at `004a3537` and calls that he
 Microsoft's [SleepEx contract](https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-sleepex) defines the first argument in milliseconds and the second as alertability. Accordingly, this is a verified **200 ms alertable wait request**. An I/O completion/APC can end an alertable wait early, and scheduling can delay resumption after timeout. Neither the wrapper nor this abort branch measures elapsed time and retries the remainder. Thus the instructions do not prove a display duration of exactly200 ms.
 
 **MP160-011 has partial static support:** final Modern adds the explicit wait on this inspected abort path. Its wording about an `Aborted` message and an original duration around500 ms still requires a complete original presentation/timing trace and actual language/render evidence. The already captured original session-loading path does not supply that proof. No500→200 runtime measurement, universal abort coverage or historical introduction is claimed. No game or instruction probe was executed.
+
+## Historical v1.6.0 change: defer presentation until loading exit
+
+The [historical audit](scripts/audit_abort_presentation_history.py), run with `python3 analysis/scripts/audit_abort_presentation_history.py`, pins author-hosted1.5.3/1.6.0 EXEs through existing archive baselines and writes [its manifest](evidence/audits/abort-presentation-153-160.json). It retains complete input-poll helpers, selected loading-exit branches, the138-byte overlay body and15-byte SleepEx adapter. Both latter bodies are identical between these releases. This resolves the release-attribution gap above for the selected mechanism, not the original500 ms duration claim.
+
+| Path | v1.5.3 | v1.6.0 |
+|---|---|---|
+| Input poll `004a33d0` | Queries `004eb1c0` with EAX1 each invocation; on nonzero writes abort flag1 and calls overlay at `004a33eb`, then returns1 | First reads abort flag; skips the input query when already nonzero. Otherwise queries and sets flag1 on nonzero; no local overlay call |
+| Loading exit after final progress loop | Abort flag branches to `004a3560`, returns1; successful completion calls `004c62a0` | Abort flag branches to `004a3532`, draws overlay, loads EAX200 and calls wait adapter `004df8e0`, then returns1; successful completion still calls `004c62a0` |
+| Overlay gate/content | Pending-flag-gated draw, complete body `00494bd0..00494c5a` | Same138 bytes |
+
+The only executable-section direct E8 candidate to the overlay changes from the poller call `004a33eb` to the loading-exit call `004a3532`; this scan does not exclude indirect invocation. The route therefore moves the presentation request out of repeated input polling and into this terminal loading branch. It is not merely an immediate500-to200 substitution inside an unchanged wait call. The original poll helper's explicit0/1 return also should not be blindly imposed on the newer raw early-return paths; the inspected loading loop checks the shared abort flag.
+
+The newer branch requests SleepEx(200,TRUE) through the retained adapter. Conditional overlay gating, asynchronous completion/APCs, scheduling, renderer calls and broader loading/cleanup order still prevent equating that request with exactly200 ms of visible text. No corresponding500 ms wait is established in these inspected older bodies. The vendor's earlier-duration statement remains unresolved, rather than inferred from unrelated500 ms waits elsewhere in the image.
+
+MP160-011 remains **partial**, now with verified1.5.3→1.6.0 presentation routing and wait-request introduction. Required follow-up for the full timing claim is a complete older presentation/cleanup timeline or a separately scoped observed display-duration comparison. No game abort, target execution or timing measurement was performed.
