@@ -291,6 +291,23 @@ All named export addresses match between this pair. The two complete functions s
 
 This establishes the specific **shipped1.4.0→1.5.0 table/consumer change** for MP150-011, superseding the preceding original/final-only historical limitation. It does not establish earlier beta/branch history, other driver variants, provider support, successful huge-texture uploads or rendered quality. The release claim remains partial because actual operation is untested. No archive content was installed, loaded or executed.
 
+## Historical initialization boundary:1.3.0 to1.3.1
+
+Run `python3 analysis/scripts/audit_glide_init_release_boundary.py`. The [four-member manifest](evidence/audits/glide-init-release-boundary.json) pins both author-hosted archives and **both** named members, `drivers/dgvoodoo/voodoo2.dll` and `drivers/nglide/nglide.dll`. It captures complete loaders, new cleanup latches, old cleanup RET and the about/is/init/close/restore/mode-worker envelopes. No target instructions or provider calls are executed.
+
+| Member |1.3.0 direct init/shutdown sites |1.3.1 direct init/shutdown sites |New shutdown helper |
+|---|---|---|---|
+|dgvoodoo/voodoo2.dll |4 /6 |1 /1 |6000110c |
+|nglide/nglide.dll |4 /6 |1 /1 |60001110 |
+
+The name/destination tables independently bind60011010 to `_grGlideInit@0`,60011014 to `_grGlideShutdown@0` and600110d8 to the error callback interface. Counts are complete file searches for the captured direct CALL encodings, corroborated by their code envelopes—not observed runtime frequencies or proof of every indirect target.
+
+In1.3.0 both loaders already test cached module handle6000fd0c, and old cleanup60001560 is a RET. Therefore the1.3.1 optimization must not be described as introducing module-handle caching from scratch. Instead,1.3.1 adds initialization state **600128d4**: loader admission skips initialization for a nonzero cell without incrementing it; the zero path calls init/error-callback setup then increments it. Cleanup calls shutdown/decrements only when nonzero. This is the same kind of ordinary0/1 latch later seen in the final driver, but its historical address is different from final600127d0 and must not be conflated.
+
+Old direct init sites include mode worker60002169; old shutdown includes context close60002069. Those direct sites disappear in1.3.1, leaving the centralized loader/cleanup calls. The newly pinned cleanup callers include is-tail60001e1e and restore600020d6. This gives **partial static support for MP131-002**, specifically its removal of init/shutdown calls during the inspected mode-change route. All transitive provider paths, unusual re-entry, actual invocation frequency and measured optimization remain unverified.
+
+Under ordinary zero initial state and serialized acquisition/cleanup, the cell behaves as a latch; it is not a general reference count. No universal once-per-process, balanced arbitrary nesting, reentrancy or shutdown-success guarantee follows. Archive release correspondence does not authenticate every earlier beta/branch. The historical comparison does not transfer every final-driver mechanism into these older members.
+
 ## Context close no longer shuts down the provider directly
 
 Complete context-close helper **60002050** is now captured in both versions (reference57 bytes through60002089; final41 through60002079). Both return immediately when byte6000fca4 bit1 is clear. Otherwise they pass stored context6000fd08 to slot60011020, verified `_grSstWinClose@4`, then clear that context and bit1 without testing the provider result.
