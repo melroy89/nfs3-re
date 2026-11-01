@@ -212,11 +212,25 @@
               "assembly_sha256": "ba0dd5ec2af95a8c56f0a8d67538885213e8e6de1abf1ec13aed3e9994abb34e"
             },
             {
-              "start": "60006543",
-              "end_exclusive": "6000656d",
-              "sha256": "c4c4a3ef3183359926e4e2342f8abe97a34b0c33b03ac31cde9ae927ba413a40",
-              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60006543.asm",
-              "assembly_sha256": "4827c3e1c5e4c961bbedd8516540e3abffde5ca0036587e9708798dad42953cb"
+              "start": "60005490",
+              "end_exclusive": "6000554b",
+              "sha256": "cd46ce165e2ed25b0c9e537a110cc5a75ed1404486098d17190d3c0d8483f8d1",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-60005490.asm",
+              "assembly_sha256": "1eed8a6753aa0dc2712c4746dfd4bead084d3bf7b7590c377915413aa413e3c7"
+            },
+            {
+              "start": "6000730d",
+              "end_exclusive": "60007332",
+              "sha256": "fbf5e278aabb24f044bb346aa60c50cfc8ac10f037c1157ad2b5a2e64037dc9d",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-6000730d.asm",
+              "assembly_sha256": "5aded4a79ba6f668bc1a063ca0cce2cc5aa17e8327632377e163501780febd9d"
+            },
+            {
+              "start": "6000645d",
+              "end_exclusive": "600065b4",
+              "sha256": "d39214debf9d9f5559cd1cf3e540f25b4aef7c21080fbee71075ff80d3bb4610",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.0-6000645d.asm",
+              "assembly_sha256": "a0b1d065b1fdf65dc8b652d4ba081a21c614f24be6dbd7c5deb329f8b25d98b0"
             }
           ]
         },
@@ -368,6 +382,34 @@
               "assembly_sha256": "623e97cfd3e0f51482e72385353fbb4d0af3181e34c0b85e09fbe0d0f2c61251"
             },
             {
+              "start": "60005490",
+              "end_exclusive": "6000554b",
+              "sha256": "cd46ce165e2ed25b0c9e537a110cc5a75ed1404486098d17190d3c0d8483f8d1",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60005490.asm",
+              "assembly_sha256": "48fb7a352a7016f7226b3d21d7130ec5df16c44f52ae58c49ffa2580a5233120"
+            },
+            {
+              "start": "6000730d",
+              "end_exclusive": "60007332",
+              "sha256": "fbf5e278aabb24f044bb346aa60c50cfc8ac10f037c1157ad2b5a2e64037dc9d",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-6000730d.asm",
+              "assembly_sha256": "b5aeba97a23f9b5ca31aa92f0d056be981d04db5e3df01cc8593a10cbcac564b"
+            },
+            {
+              "start": "6000645d",
+              "end_exclusive": "600065b3",
+              "sha256": "3ce0846fddf320221ec969a26e8d1f2a0dd575e250761b4e734712c082b9c54a",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-6000645d.asm",
+              "assembly_sha256": "4e538e6494962634edf3b0ba0b2e57ce7054d102dc03ffd314ddcadd3d973131"
+            },
+            {
+              "start": "60006789",
+              "end_exclusive": "60006795",
+              "sha256": "8c8072f8191bb66ed1bbc4f75d81d052ee1cca84955871c468cf40d078c0bc9e",
+              "assembly": "analysis/captures/modern-differences/dx7-dx8-alignment/dx8-1.6.1-60006789.asm",
+              "assembly_sha256": "f64beed08a987e02f33da16deadcfee8e07b970068c5c3b0ed3c0bffb80c81db"
+            },
+            {
               "start": "600037a3",
               "end_exclusive": "600037b8",
               "sha256": "4fdfe2491d3a24bedde829973390f5b86d4cb4ef04ea6cc6a22e6998d2881047",
@@ -437,6 +479,38 @@
       "constant": 0.5,
       "contract": "Matched vertex helper has15 retained direct calls; new prefix subtracts0.5 from one supplied vertex X/Y before existing/reworked colour/fog policy. Other helper changes are not declared equivalent."
     }
+  },
+  "dx8_setstate_dispatch": {
+    "export": "_THRASH_setstate@8",
+    "address": "60005490",
+    "selector_mask": "0000ffff",
+    "byte_index_table": "600073f4",
+    "target_table": "60007334",
+    "selected_routes": {
+      "1.6.0": {
+        "0e": "60006502",
+        "0f": "6000656d",
+        "14": "60006543",
+        "15": "6000645d",
+        "16": "60006518",
+        "17": "6000652e",
+        "4b": "60006589",
+        "4c": "6000659f",
+        "69": "60006543"
+      },
+      "1.6.1": {
+        "0e": "60006550",
+        "0f": "60006537",
+        "14": "60006501",
+        "15": "6000645d",
+        "16": "60006579",
+        "17": "60006593",
+        "4b": "60007328",
+        "4c": "60007328",
+        "69": "60006501"
+      }
+    },
+    "limits": "Selected fog routes, not full dispatcher semantics or device acceptance."
   },
   "api_header_evidence": {
     "headers": {

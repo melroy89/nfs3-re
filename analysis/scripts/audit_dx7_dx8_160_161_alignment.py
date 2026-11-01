@@ -33,9 +33,12 @@ def main():
                    [(target,0x600021f7 if version=='1.6.0' else 0x60002067)])
             spans += [(site,site+5) for site in calls]
             if driver=='dx8':
-                spans += [(0x600076f0,0x600077c0),(0x60009806,0x6000980c)]
+                spans += [(0x600076f0,0x600077c0),(0x60009806,0x6000980c),
+                          (0x60005490,0x6000554b),(0x6000730d,0x60007332)]
                 if version=='1.6.0':
-                    spans += [(0x60006543,0x6000656d)]
+                    spans += [(0x6000645d,0x600065b4)]
+                else:
+                    spans += [(0x6000645d,0x600065b3),(0x60006789,0x60006795)]
             if driver=='dx8' and version=='1.6.1':
                 spans += [(0x600037a3,0x600037b8),(0x60006486,0x60006498),
                           (0x60006501,0x60006535),(0x60001b40,0x60001b68),
@@ -71,6 +74,22 @@ def main():
                     for entry in pe.DIRECTORY_ENTRY_IMPORT)
             assert direct_calls(images['1.6.0'],0x600076f0)==[0x60006551]
             assert direct_calls(images['1.6.1'],0x600076f0)==[0x60006517]
+            maps={}
+            for version,pe in images.items():
+                assert any(e.name==b'_THRASH_setstate@8' and e.address==0x5490
+                           for e in pe.DIRECTORY_ENTRY_EXPORT.symbols)
+                mapping={}
+                for selector in [0xe,0xf,0x14,0x15,0x16,0x17,0x4b,0x4c,0x69]:
+                    index=pe.get_data(0x73f4+selector,1)[0]
+                    mapping[f'{selector:02x}']=f'{struct.unpack("<I",pe.get_data(0x7334+4*index,4))[0]:08x}'
+                maps[version]=mapping
+            assert maps['1.6.0']==dict(zip(['0e','0f','14','15','16','17','4b','4c','69'],
+                ['60006502','6000656d','60006543','6000645d','60006518','6000652e','60006589','6000659f','60006543']))
+            assert maps['1.6.1']==dict(zip(['0e','0f','14','15','16','17','4b','4c','69'],
+                ['60006550','60006537','60006501','6000645d','60006579','60006593','60007328','60007328','60006501']))
+            result['dx8_setstate_dispatch']={'export':'_THRASH_setstate@8','address':'60005490',
+                'selector_mask':'0000ffff','byte_index_table':'600073f4','target_table':'60007334',
+                'selected_routes':maps,'limits':'Selected fog routes, not full dispatcher semantics or device acceptance.'}
             contract='Matched vertex helper has15 retained direct calls; new prefix subtracts0.5 from one supplied vertex X/Y before existing/reworked colour/fog policy. Other helper changes are not declared equivalent.'
         result['drivers'][driver]={'versions':versions,'constant_rva':f'{constant:08x}','constant':0.5,'contract':contract}
     headers={}

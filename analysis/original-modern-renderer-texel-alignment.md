@@ -106,3 +106,24 @@ The historical difference is in selection and consumption:
 |1.6.1 | Local caller `60006501..60006535` optionally expands the table, then sets API FOGTABLEMODE to0 and local mode `6001c08c` to0x10. The new helper uses its gated reciprocal-depth index to write the table-derived specular alpha at `+0x14`. |
 
 Thus the renderer reuses the existing expansion algorithm while changing the state route and output channel. This also strengthens the warning against reading the release note as “there was no fog-related implementation before1.6.1.” Whether the new route fixes visible fog on a particular device still requires observation. Remaining static work is complete dispatcher admission/default-state tracing and other submission paths; retained helper conversion semantics require a separately identified CRT if exactness becomes necessary. MP161-002 remains partial.
+
+## Exported state dispatch: selected fog routes
+
+Both DLLs export `_THRASH_setstate@8` at `60005490`. Its inspected prologue masks the selector to16 bits, indexes the byte table `600073f4`, then the target table `60007334` for these selectors. The audit now resolves and asserts each route below from the actual tables, retaining both prologues, case envelopes and return tails. This closes the selected route-address gap; it is not a recovery of every case in the much larger dispatcher.
+
+| Low16 selector | v1.6.0 case entry | v1.6.1 case entry | Paired meaning |
+|---|---|---|---|
+|0x14 and0x69 | `60006543` | `60006501` | Shared table-expansion route; newer route selects mode0x10 and disables API table-formula fog |
+|0x15 | `6000645d` | `6000645d` | Enable/formula selection; same entry address, changed body |
+|0x0f | `6000656d` | `60006537` | Mask colour to24 bits; newer route additionally forwards FOGCOLOR to API |
+|0x0e | `60006502` | `60006550` | Older stores raw parameter at `6001eddc`; newer applies its integer-or-bit-pattern rule below and forwards FOGDENSITY |
+|0x16 /0x17 | `60006518` / `6000652e` | `60006579` / `60006593` | Older stores raw parameters; newer converts signed integers through FILD/binary32 stores and forwards FOGSTART/FOGEND |
+|0x4b /0x4c | `60006589` / `6000659f` | `60007328` / `60007328` | Older raw writes to start/end storage; newer direct return0 with the prologue's EDI still zero |
+
+In1.6.1 the mode and table entries first require `600201ec == 0`; failure reaches `60006789` and returns0 without applying those local writes. The physical meaning and lifecycle of this guard remain unresolved. For selector0x15, values0/1 forward API FOGENABLE0/1 and store that value at `6001edd0`. Values2/4/8 select API formula values3/1/2 respectively, configure relevant parameters and table/vertex formula states, and store the requested mode at `6001c08c`; other values return0. Formula selection does not itself write the local enable cell, so it must not be modelled as equivalent to enabling fog. The older value1 path instead stores local enable1 while forwarding API FOGENABLE0, consistent with its software colour-blending route.
+
+For newer selector0x0e, raw values1..4095 become a binary32 reciprocal of the signed integer; zero or values with any bit in `0xfffff000` set retain their original bits. The result is stored at `6001c094` and forwarded as FOGDENSITY. This mixed representation is verified from instructions, not a proposed cleaned-up type. Selectors0x16/0x17 convert signed integer inputs to binary32 at `6001c098`/`6001c09c`; this differs from the older raw-bit stores and from the now-unaccepted0x4b/0x4c aliases.
+
+These newer colour/parameter routes converge on `600065ab`, which sets EDI1; the table route reaches it as well. The mode route likewise reaches this success path after its wrapper calls. They discard `60001b40`'s Boolean result. The common tail `6000731a` notifies `600031c0` with the full original selector and payload, then returns EDI, under its normal callee-preservation contract. Therefore local return1 indicates the case was accepted, **not** that Direct3D accepted each state. Calls can also flush queued geometry before applying a state. Callback/cache side effects, guard initialization, other cases and actual device results remain separate investigation boundaries.
+
+This is a concrete historical API/state-policy difference, beyond the helper's changed output channel. It supports the intended implementation of MP161-002 while leaving rendered fog unverified. No original-retail driver correspondence is asserted from this1.6.0/1.6.1 pair.
