@@ -186,6 +186,31 @@ The platform helper's early nonzero-byte gate and success path remain in the cap
 
 This completes an important distinction from the earlier empty-descriptor finding: passing local about validation does not bypass every later initialization check, and cached about failure is not proved globally unrecoverable. Conversely, a later retry opportunity does not establish successful provider recovery, valid modes, rendered output or complete fallback policy. No provider absence/recovery scenario, diagnostic dialog or target instructions were executed.
 
+## Selected-mode activation and optional extended open
+
+The audit now retains complete paired `_THRASH_setvideomode@12` bodies **`60002400..600024d7`**, complete callbacks **`60002390..600023f3`**, and workers starting **`60002110`** (reference ends exclusive60002389 including outlined tails; final ends60002367). The215-byte exported bodies and99-byte callback bodies are respectively byte-identical. Their direct/callback calls both reach the changed worker; unchanged wrappers do not establish unchanged activation.
+
+| Operation | Hosted reference | Final Modern |
+|---|---|---|
+| Ordinary resolution source | Fixed DWORD enum table600100a4 indexed by argument1 | Eight-byte sidecar at60012cd0+8*index |
+| Special resolutionffh admission | Tests6000fd7c==1 and6000fcfc!=0 | Tests6000fca8!=0 and6000fcfc!=0; meanings of these differing gates not assigned here |
+| Open call | Slot6001101c only | Extra selector0 calls6001101c; nonzero calls optional slot600127c8 |
+| Failed special open | Tries fixed selected enum | Returns to sidecar resolution load and retries; ordinary non-ff failure returns0 |
+| Dimensions when grGet selector26h returns0 | Uses selected fixed record width/height | Uses selected constructed record width/height |
+| Selected depth state | Existing setup path through60001940; no equivalent new depth publication asserted | Copies record+8 to600127d8; depth32 selects600127dc=5/mask6000fcb0=00ffffffh; other depths select4/0000ffffh |
+
+Both normal-open slots are verified as **`_grSstWinOpen@28`**: reference's name literal6000f044 feeds its retained resolver/store600010b9, while final's required name/destination table explicitly binds6001101c. Final's dimension query slot600110c0 is `_grGet@12`. The [existing optional-binding audit](original-modern-dll-candidates.md#dynamic-glide-bindings-behind-the-mode-builder) traces the `grSstWinOpenExt` lookup/result600127c8. These names identify static binding intentions, not the actual loaded provider or its behavior.
+
+### Constructed record and sidecar stay paired
+
+Insertion600012e8 uses a zero-based insertion slot, but writes the40-byte record at `60013028+40*slot` and its two-DWORD sidecar at `60012cd8+8*slot`: both correspond to published **index=slot+1**. The sidecar copies candidate+0ch (resolution payload) and+10h (extra selector); its entries move alongside sorted records. Therefore the worker's index addresses corresponding record and sidecar entries, under the existing valid-index/construction preconditions.
+
+The queried16-bit candidate supplies extra selector0. Only when optional slot600127c8 is nonzero does the builder additionally insert depth32 with extra selector5 at60001b44..60001b55. Worker6000215d tests this stored selector, not the extension pointer. Ordinary arguments are `(window,resolution,0,0,0,arg2,arg3)`; extended arguments add the stored selector before arg2. Both paths may clear arg3 when it is nonzero and signed arg2 exceeds selected record+18h. Raw argument numbering avoids assigning undocumented provider meanings to every zero/count.
+
+After a successful open, final chooses record `60013000+40*index`, stores queried or fallback dimensions into6000fcc8/6000fccc and publishes its depth/format/mask as above. Its success tail sets driver flag bit1 and returns1; open failure returns0. Numerous later state calls remain in the captured worker, but their transitive effects are not fully interpreted by this increment.
+
+**Verified:** changed resolution/extra-selector consumption, ordinary/extended call selection, special-resolution retry, dimension fallback and local depth-dependent state. **Unresolved:** provider constants/ABI semantics beyond the captured call shape, all index producers, subsequent state/render effects and historical introduction. The worker contains no local index bound or extension-null check; constructed-candidate admission is a dependency. A special retry is not universally bounded if a corrupt/exceptional sidecar itself retainsffh. Callback/event code equality does not prove synchronization, reentrancy or successful delivery. This is static evidence for a32-bit activation path, not universal32-bit rendering or Z-buffer support. No DLL/API/target instructions were executed.
+
 ## Next required comparison
 
 The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and other initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.

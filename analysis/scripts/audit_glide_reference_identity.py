@@ -226,6 +226,46 @@ def main():
         'Driver init retries internal loader only when its retained initialization-bit admission allows the path.',
         'Platform failure branch calls cleanup then returns current byte0056aff0; transitive cleanup/callback writes are not proved here.',
         'Later driver fallback, user dialog result, process shutdown and successful recovery are not observed.']
+    result['mode_activation'] = {'captures': [], 'bindings': {key: slots[key] for key in ('6001101c', '600110c0')}}
+    assert slots['6001101c'] == '_grSstWinOpen@28'
+    assert slots['600110c0'] == '_grGet@12'
+    assert ref.get_string_at_rva(0xf044) == b'_grSstWinOpen@28'
+    assert ref.get_data(0x10b9, 5).hex() == 'a31c100160'
+    for role, pe, start, end, label in [
+        ('hosted_reference', ref, 0x2110, 0x2389, 'complete-mode-worker-with-outlined-tails'),
+        ('official_final', final, 0x2110, 0x2367, 'complete-mode-worker'),
+        ('hosted_reference', ref, 0x2390, 0x23f3, 'complete-mode-callback'),
+        ('official_final', final, 0x2390, 0x23f3, 'complete-mode-callback'),
+        ('hosted_reference', ref, 0x2400, 0x24d7, 'complete-exported-setvideomode'),
+        ('official_final', final, 0x2400, 0x24d7, 'complete-exported-setvideomode'),
+        ('official_final', final, 0x12e8, 0x13e9, 'complete-mode-insertion-sidecar-producer')]:
+        body = pe.get_data(start, end-start)
+        result['mode_activation']['captures'].append({'role': role, 'label': label,
+            'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+            'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    assert ref.get_data(0x2390, 0x63) == final.get_data(0x2390, 0x63)
+    assert ref.get_data(0x2400, 0xd7) == final.get_data(0x2400, 0xd7)
+    for offset, encoded in [(0x2145, '8b3ccdd02c0160'), (0x215d, '8b04cdd42c0160'),
+                            (0x2177, 'ff151c100160'), (0x218f, 'ff15c8270160'),
+                            (0x219e, '81ffff000000749f'), (0x21b2, '6b6c24242881c500300160'),
+                            (0x21ec, '8b4508a3d827016083f820'),
+                            (0x138e, '6bf80881c7d82c0160a5a5'),
+                            (0x1b3b, '833dc8270160007416'),
+                            (0x1b44, 'c745ec20000000c745f405000000')]:
+        assert final.get_data(offset, len(bytes.fromhex(encoded))).hex() == encoded
+    result['mode_activation']['sidecar'] = {
+        'mode_record': '60013000 + 40*mode_index', 'resolution': 'DWORD[60012cd0 + 8*mode_index]',
+        'extra_selector': 'DWORD[60012cd4 + 8*mode_index]',
+        'producer': 'Insertion copies input+0c/+10 into sidecar for published index=zero_based_insertion_slot+1; sidecar shifts with sorted records.',
+        'queried_candidate_values': 'Depth16 uses extra selector0; conditional depth32 insertion uses5 and requires nonzero optional extension slot.',
+        'ordinary_open_arguments': ['window', 'resolution', '0', '0', '0', 'argument2', 'possibly_cleared_argument3'],
+        'extended_open_arguments': ['window', 'resolution', '0', '0', '0', 'extra_selector', 'argument2', 'possibly_cleared_argument3']}
+    result['mode_activation']['limits'] = [
+        'No local mode-index validation or extension-null guard in the worker; normal constructed-record preconditions matter.',
+        'Failed special resolutionff retries from sidecar; termination requires the stored resolution not perpetually selecting the same failed special value.',
+        'Complete worker bytes retained, but later state-setting callees, provider ABI semantics and visible output are not fully interpreted.',
+        'Optional extension identity/lookup is linked to the existing final-side audit, not provider execution.',
+        'No universal32-bit support, successful open, synchronization/reentrancy or release-introduction claim.']
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [
