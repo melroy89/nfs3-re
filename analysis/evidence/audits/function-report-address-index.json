@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "877a574c0e2dc0bae352ee5db2d2e504d465be3483ced7e91cf36a29c0506772"
+      "sha256": "f69d1211914d5b34a3401e86bc1266ed2890ade4cd2e5ff39e57dfaf9ea6f5dd"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -97,7 +97,7 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "59da5318328c16526e083aebe0bdcf1650e6b00bd9acea7e88406ab0ae5c990e"
+      "sha256": "4ad4481ee03129f6f218b71b49125d8ac825b8526dff0ae625c0e1c127a9d6cd"
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -3535,7 +3535,8 @@
           "path": "analysis/original-modern-display-modes.md",
           "entry_mentioned": true,
           "addresses": [
-            "00448320"
+            "00448320",
+            "00448326"
           ]
         },
         {

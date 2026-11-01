@@ -69,6 +69,28 @@ At `00448263..0044826c`, Modern checks `count > 0x64` with unsigned **JA**, rath
 
 Therefore this callback alone does not prove a strict 100-entry maximum. Driver enumeration caps, available allocation/storage, all reset/admission paths and ordinary reachability must be reconciled before claiming a runtime overwrite or failure. No such failure was tested or observed. Do not silently change JA to JAE during reconstruction merely because the README says 100.
 
+## Count caching and the declared storage boundary
+
+The expanded display audit scans the complete official EXE for the exact little-endian count address00a18260. All seven occurrences are instruction operands at00448232/65/83,00448326/4f/7d/d4; their instruction contexts are already captured. The sole direct writer is **INC at00448281**. No direct literal zero-reset store was found. This excludes neither computed/bulk/alias writes nor external mutation; it is not proof that the count can never reset.
+
+Initializer00448320 **tests** count==0; it does not zero the count. On that path it clears51 DWORDs of label storage `[00a18264,00a18330)` and enumerates. If enumeration leaves count0, a later call can enumerate again. If count remains positive, this initializer returns without rebuilding. This is a concrete empty-versus-populated cache distinction; complete invalidation/lifetime and every caller remain unresolved.
+
+The effective101-entry admission boundary must also be kept separate from the PE layout:
+
+| Quantity | Verified address/value |
+|---|---|
+| Record bank base/stride |00a18330 /114h bytes |
+|100 records, end exclusive |00a1ef00 |
+|101st record (index100) |00a1ef00..00a1f014 |
+| BSS size-field extent |0056e000..00a1f000 |
+| Following section |`.reloc` starts00a1f000 |
+
+The BSS header has **VirtualSize0, raw-size4b1000h, raw pointer0**, characteristicsc0000080h. The following `.reloc` header has characteristics42000040h. These noncanonical metadata fields are retained exactly; no file-offset-zero bytes are interpreted as initialized BSS, and actual loader mapping/protection/discard behavior is not observed.
+
+For the conditional **101st unique append** (pre-count100, insertion index100), the admitted path at0044828b sets destination to that record and REP STOSD clears69 DWORDs,276 bytes. Its calculated final20 bytes lie beyond the BSS size-field extent, in the following section's declared range. This narrows the storage question beyond the headline count alone. It does **not** establish that any provider supplies101 eligible unique keys, that this path executes, that memory is writable there or that an overwrite/fault occurs. Matching labels or a nominal100-mode claim is insufficient runtime evidence either way.
+
+Preserve the original JA boundary when reproducing machine behavior; an intentional strict100-entry C policy would be a documented behavior change. Further evidence should establish provider/caller admission and actual mapping/lifetime, rather than repeat this address arithmetic. No driver records, instructions or memory writes were executed by this audit.
+
 ## Catalog mapping and remaining work
 
 - **MP100-001:** EXE eligibility changes support broader aspect/depth modes, with the approximate ratio gate above. Complete projection/HUD correction and actual driver availability are independent.

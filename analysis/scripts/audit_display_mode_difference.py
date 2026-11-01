@@ -69,6 +69,37 @@ def main():
     assert modern_recovery[0x45:0x4a]==bytes.fromhex('e8c63c0700')
     result['recovery_call']={'instruction':'0044b1e5','original_target':'004bef50',
         'modern_target':'004beeb0','input_eax':1,'limits':'Caller does not check application return; no runtime recovery test.'}
+    modern=images[1]
+    raw=(ROOT/SPECS['official_modern'][0]).read_bytes()
+    needle=bytes.fromhex('6082a100');positions=[];cursor=0
+    while True:
+        offset=raw.find(needle,cursor)
+        if offset<0:break
+        positions.append(modern.get_rva_from_offset(offset)+0x400000);cursor=offset+1
+    assert positions==[0x448232,0x448265,0x448283,0x448326,0x44834f,0x44837d,0x4483d4]
+    assert modern.get_data(0x48281,6).hex()=='ff056082a100'
+    assert modern.get_data(0x48320,24).hex()=='575131c039056082a1007516bf6482a100b933000000f3ab'
+    assert modern.get_data(0x48297,9).hex()=='b94500000031c0f3ab'
+    bss=next(s for s in modern.sections if s.Name.rstrip(b'\0')==b'.bss')
+    reloc=next(s for s in modern.sections if s.Name.rstrip(b'\0')==b'.reloc')
+    assert (bss.VirtualAddress,bss.Misc_VirtualSize,bss.SizeOfRawData,bss.PointerToRawData)==(0x16e000,0,0x4b1000,0)
+    end=0x400000+bss.VirtualAddress+bss.SizeOfRawData
+    assert end==0xa1f000==0x400000+reloc.VirtualAddress
+    assert 0xa18330+100*276==0xa1ef00 and 0xa18330+101*276==end+20
+    result['count_cache_storage_boundary']={
+        'exact_count_address_operands':[f'{address:08x}' for address in positions],
+        'direct_writer':'00448281 increments count; no direct zero-reset literal store in this complete file scan.',
+        'initializer':'00448320 tests count0; only then clears51 DWORDs of labels and enumerates. It does not directly reset count.',
+        'label_clear_range':['00a18264','00a18330'],
+        'bss_header':{'start':'0056e000','virtual_size':0,'raw_size':bss.SizeOfRawData,'raw_pointer':0,'size_field_end':'00a1f000','characteristics':f'{bss.Characteristics:08x}'},
+        'next_section':{'name':'.reloc','start':f'{0x400000+reloc.VirtualAddress:08x}','characteristics':f'{reloc.Characteristics:08x}'},
+        'conditional_append_101':{'pre_count':100,'insertion_index':100,'record_start':'00a1ef00','record_end_exclusive':'00a1f014',
+            'clear_DWORDs':69,'bytes_beyond_bss_size_field_extent':20},
+        'limits':['Literal-operand scan excludes computed/bulk/alias/external reset paths and does not prove immutable lifetime.',
+                  'VirtualSize0/raw-pointer0 are retained; raw-size metadata is not file-backed BSS bytes or a runtime mapping observation.',
+                  '101st unique admitted append is a conditional local path, not an observed provider list or execution.',
+                  'Section-boundary crossing is arithmetic evidence, not an observed overwrite/fault or proof of OS mapping/protection/discard behavior.',
+                  'Do not silently change JA to JAE in a reconstruction; expose the selected compatibility policy.']}
     output = ROOT/'analysis/evidence/audits/original-modern-display-modes.json'
     output.write_text(json.dumps(result, indent=2)+'\n')
     print('PASS: original/Modern identity and enumerator/menu instruction captures')

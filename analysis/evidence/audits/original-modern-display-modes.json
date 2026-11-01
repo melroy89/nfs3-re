@@ -167,5 +167,50 @@
     "modern_target": "004beeb0",
     "input_eax": 1,
     "limits": "Caller does not check application return; no runtime recovery test."
+  },
+  "count_cache_storage_boundary": {
+    "exact_count_address_operands": [
+      "00448232",
+      "00448265",
+      "00448283",
+      "00448326",
+      "0044834f",
+      "0044837d",
+      "004483d4"
+    ],
+    "direct_writer": "00448281 increments count; no direct zero-reset literal store in this complete file scan.",
+    "initializer": "00448320 tests count0; only then clears51 DWORDs of labels and enumerates. It does not directly reset count.",
+    "label_clear_range": [
+      "00a18264",
+      "00a18330"
+    ],
+    "bss_header": {
+      "start": "0056e000",
+      "virtual_size": 0,
+      "raw_size": 4919296,
+      "raw_pointer": 0,
+      "size_field_end": "00a1f000",
+      "characteristics": "c0000080"
+    },
+    "next_section": {
+      "name": ".reloc",
+      "start": "00a1f000",
+      "characteristics": "42000040"
+    },
+    "conditional_append_101": {
+      "pre_count": 100,
+      "insertion_index": 100,
+      "record_start": "00a1ef00",
+      "record_end_exclusive": "00a1f014",
+      "clear_DWORDs": 69,
+      "bytes_beyond_bss_size_field_extent": 20
+    },
+    "limits": [
+      "Literal-operand scan excludes computed/bulk/alias/external reset paths and does not prove immutable lifetime.",
+      "VirtualSize0/raw-pointer0 are retained; raw-size metadata is not file-backed BSS bytes or a runtime mapping observation.",
+      "101st unique admitted append is a conditional local path, not an observed provider list or execution.",
+      "Section-boundary crossing is arithmetic evidence, not an observed overwrite/fault or proof of OS mapping/protection/discard behavior.",
+      "Do not silently change JA to JAE in a reconstruction; expose the selected compatibility policy."
+    ]
   }
 }
