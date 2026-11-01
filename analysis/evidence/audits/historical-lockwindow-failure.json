@@ -272,6 +272,80 @@
     "No DLL, surface lock, callback or failure injection executed.",
     "Registration admission, complete state lifetime and actual success/failure outcomes remain unqualified."
   ],
+  "original_final_exe_correspondence": {
+    "original": {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "callback_table_sha256": "d738ef521d4f935624583fcbf233d413fb8f73156b2f33b496c22bb4878b2f45",
+      "selected_spans_identical_to_historical": true,
+      "spans": [
+        {
+          "start": "00524550",
+          "end_exclusive": "0052458b",
+          "bytes_sha256": "34328f13ecc163729af61736adfee102318cf9c41c199775ee7db4758574821a",
+          "assembly": "analysis/captures/modern-differences/lockwindow-history/original-exe-00524550.asm",
+          "assembly_sha256": "6564e3804dc8dac664482f04b2c0efa98cab1c940bdb3a54e7be50266641ffbe"
+        },
+        {
+          "start": "004eb2e0",
+          "end_exclusive": "004eb333",
+          "bytes_sha256": "8ff2268d83dc2bb1270c895bd9f0da5a664ddb16f717504bffa379331f4b9302",
+          "assembly": "analysis/captures/modern-differences/lockwindow-history/original-exe-004eb2e0.asm",
+          "assembly_sha256": "b404dfa78cc078467e8571f0d9942208c55c90a99bbd624c12555606097196a4"
+        },
+        {
+          "start": "004df740",
+          "end_exclusive": "004df799",
+          "bytes_sha256": "10417ac4b70666df2690e328053def75f1ca4f92c6b416ff4ebaddff34a3b548",
+          "assembly": "analysis/captures/modern-differences/lockwindow-history/original-exe-004df740.asm",
+          "assembly_sha256": "d5c1deadefe91d941f36299f4468fb37c2ea55d7c7549e16b6490b84a4eb6d5e"
+        },
+        {
+          "start": "0052471d",
+          "end_exclusive": "00524740",
+          "bytes_sha256": "263563bef0ec2bf6f070f94fc2a58d7575ddb5dc3f69baf513954bfd0a0000f0",
+          "assembly": "analysis/captures/modern-differences/lockwindow-history/original-exe-0052471d.asm",
+          "assembly_sha256": "b0d24ccdfb8fecf1b7a35fefaa432f45803868887d523ac93fdd849b1b9bd38e"
+        }
+      ]
+    },
+    "official_modern": {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "callback_table_sha256": "d738ef521d4f935624583fcbf233d413fb8f73156b2f33b496c22bb4878b2f45",
+      "selected_spans_identical_to_historical": true,
+      "spans": [
+        {
+          "start": "00524550",
+          "end_exclusive": "0052458b",
+          "bytes_sha256": "34328f13ecc163729af61736adfee102318cf9c41c199775ee7db4758574821a",
+          "assembly": "analysis/captures/modern-differences/lockwindow-history/official_modern-exe-00524550.asm",
+          "assembly_sha256": "6564e3804dc8dac664482f04b2c0efa98cab1c940bdb3a54e7be50266641ffbe"
+        },
+        {
+          "start": "004eb2e0",
+          "end_exclusive": "004eb333",
+          "bytes_sha256": "8ff2268d83dc2bb1270c895bd9f0da5a664ddb16f717504bffa379331f4b9302",
+          "assembly": "analysis/captures/modern-differences/lockwindow-history/official_modern-exe-004eb2e0.asm",
+          "assembly_sha256": "b404dfa78cc078467e8571f0d9942208c55c90a99bbd624c12555606097196a4"
+        },
+        {
+          "start": "004df740",
+          "end_exclusive": "004df799",
+          "bytes_sha256": "10417ac4b70666df2690e328053def75f1ca4f92c6b416ff4ebaddff34a3b548",
+          "assembly": "analysis/captures/modern-differences/lockwindow-history/official_modern-exe-004df740.asm",
+          "assembly_sha256": "d5c1deadefe91d941f36299f4468fb37c2ea55d7c7549e16b6490b84a4eb6d5e"
+        },
+        {
+          "start": "0052471d",
+          "end_exclusive": "00524740",
+          "bytes_sha256": "263563bef0ec2bf6f070f94fc2a58d7575ddb5dc3f69baf513954bfd0a0000f0",
+          "assembly": "analysis/captures/modern-differences/lockwindow-history/official_modern-exe-0052471d.asm",
+          "assembly_sha256": "b0d24ccdfb8fecf1b7a35fefaa432f45803868887d523ac93fdd849b1b9bd38e"
+        }
+      ]
+    }
+  },
   "critical_section_setup": {
     "paired_spans_identical": true,
     "producer": "004eb2e0 takes poolnode, advances00564a64 via node+18h, zeroes18h bytes, callsInitializeCriticalSection, returnsnode",

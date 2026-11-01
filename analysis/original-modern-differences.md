@@ -948,3 +948,6 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 ## Historical three-driver lockwindow failure handling
 
 The [1.5.0→1.5.1 comparison](original-modern-lockwindow-history.md) identifies a shared mechanism behind MP151-004: DX5, DX6 and SoftTri add a callback0 request on their inspected nonzero surface-lock-result paths. The preceding paths request callback1; DX5/DX6 introduce guarded adapters. The [same-archive EXE callback](original-modern-lockwindow-history.md#exe-callback-table-identifies-critical-section-enter-and-leave) identifies critical-section enter/leave; full registration/lifetime and actual bug/runtime effects remain unresolved, so this is partial support rather than a verified whole feature. These are historical Modern driver pairs, not new original/final EXE differences.
+
+
+The [four-EXE correspondence check](original-modern-lockwindow-history.md#correspondence-with-supplied-original-and-official-final-exes) now confirms that the selected callback table, registration witness and critical-section setup/callback bodies also match the supplied original and official final EXEs. The historical repair is in the driver failure path using retained EXE synchronization code; full lifetime/runtime qualification and DLL provenance limits remain explicit.

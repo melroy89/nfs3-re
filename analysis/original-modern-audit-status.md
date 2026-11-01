@@ -496,3 +496,8 @@ The [EXE/table follow-up](original-modern-lockwindow-history.md#exe-callback-tab
 ## Historical lock callback setup and failure prerequisite
 
 The [setup follow-up](original-modern-lockwindow-history.md#critical-section-setup-narrows-the-pointer-lifetime-prerequisite) verifies three paired-identical EXE spans: pool-node InitializeCriticalSection producer, general publisher and raster null-check/create/publish route. Producer failure can return0, and the captured raster route does not retest after publication. Setup is therefore evidenced without assuming universal validity; replenishment, destruction, other publishers and concurrency remain pending. MP151-004 remains partial; counts unchanged.
+
+
+## Original/final EXE side of the historical lock fix corresponds
+
+The [four-EXE correspondence check](original-modern-lockwindow-history.md#correspondence-with-supplied-original-and-official-final-exes) verifies identical callback table,59-byte callback,83-byte producer,89-byte publisher and35-byte registration witness across supplied original, official final and both historical EXEs, with matching API bindings. The driver failure-path change uses retained EXE synchronization code. This is scoped byte/interface correspondence, not full startup/driver equivalence or retail provenance for all DLLs. Counts unchanged; no target execution.

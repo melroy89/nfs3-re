@@ -66,3 +66,21 @@ Two verified publication paths are:
 The raster path does **not** locally retest the returned pointer after publication. The callback likewise passes the global to Enter/Leave without a null check. Thus this setup trace narrows ownership evidence but does not justify assuming allocation/initialization always succeeds. The pool helper's failure return, initialization exceptions, concurrent first use, other publishers, object destruction and pointer mutation require their own qualification.
 
 For the inspected valid initialized path, the added failure callback0 therefore has a real critical-section release consumer. It still does not prove the section is dedicated solely to renderer locking: the global has additional consumers outside these captured paths. Full shared-lock ordering, recursion and a live deadlock reproduction remain unresolved. No object was allocated, initialized, entered, left or deleted during this analysis.
+
+
+## Correspondence with supplied original and official final EXEs
+
+The audit now also verifies the supplied original and official final executable SHA-256 identities from the [baseline comparison](original-modern-differences.md). Their complete eight-pointer table at`0056afd0` is identical to both historical EXEs. The following selected spans are asserted byte-identical **across all four EXEs**:
+
+| Span (end exclusive) | Bytes | Retained role |
+|---|---:|---|
+| `00524550..0052458b` | 59 | Enter/Leave callback, raw argument publication and RET4 |
+| `004eb2e0..004eb333` | 83 | Pool-node critical-section initialization helper |
+| `004df740..004df799` | 89 | General initialization/publication path |
+| `0052471d..00524740` | 35 | Renderer setup and callback-table registration witness |
+
+All four use matching inspected Initialize/Enter/LeaveCriticalSection import bindings. The audit retains separate hashes and disassembly for original/final instead of transferring historical labels by address alone. This establishes original/final **EXE-side correspondence within these ranges**, not byte equality of every driver, callback target, indirect export slot or surrounding startup path.
+
+The [existing hosted-reference/final DX5 comparison](original-modern-dx5-reference-pair.md#lock-failure-now-notifies-the-callback) independently identifies the same failure-notification mechanism and registration offset in that driver pair. Its reference archive is not authenticated as every retail installation, and DX6/SoftTri's new evidence remains the explicitly dated historical pair. Do not describe all three as original-retail driver comparisons.
+
+The combined interpretation is therefore a changed driver failure path using a **retained EXE critical-section callback**, with1.5.0→1.5.1 dating for the three selected drivers. EXE callback preservation is established; complete call admission, valid object lifetime and actual failure recovery remain pending. No executable/database bytes, driver state or critical-section objects were changed.

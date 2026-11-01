@@ -4,7 +4,7 @@ import json
 import subprocess
 import struct
 import pefile
-from audit_thrash_loader_difference import ROOT
+from audit_thrash_loader_difference import ROOT, SPECS
 from audit_dx5_reference_final import disassemble
 
 ARCHIVES = {'1.5.0':'de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f',
@@ -100,6 +100,30 @@ def main():
     old_spans=result['archives']['1.5.0']['exe_callback']['spans']
     new_spans=result['archives']['1.5.1']['exe_callback']['spans']
     assert [(r['start'],r['bytes_sha256']) for r in old_spans] == [(r['start'],r['bytes_sha256']) for r in new_spans]
+    result['original_final_exe_correspondence']={}
+    historical_hashes={r['start']:r['bytes_sha256'] for r in old_spans}
+    for label in ('original','official_modern'):
+        relative,expected,_=SPECS[label]
+        raw=(ROOT/relative).read_bytes()
+        assert hashlib.sha256(raw).hexdigest()==expected
+        pe=pefile.PE(data=raw)
+        table=pe.get_data(0x16afd0,32)
+        assert table==struct.pack('<8I',0x5244f0,0x4eba70,0x4cc6d0,0x4cc660,0x524500,0x524550,0x5245a0,0x5245f0)
+        assert pe.get_data(0x12472d,13).hex()=='68d0af56006a13ff156cf99e00'
+        imports={i.address:i.name for d in pe.DIRECTORY_ENTRY_IMPORT for i in d.imports if i.name}
+        assert imports[0x5344b8]==b'EnterCriticalSection' and imports[0x534588]==b'LeaveCriticalSection'
+        assert imports[0x534584]==b'InitializeCriticalSection'
+        rows=[]
+        for lo,hi in [(0x524550,0x52458b),(0x4eb2e0,0x4eb333),(0x4df740,0x4df799),(0x52471d,0x524740)]:
+            block=pe.get_data(lo-0x400000,hi-lo)
+            assert hashlib.sha256(block).hexdigest()==historical_hashes[f'{lo:08x}']
+            out=capture/f'{label}-exe-{lo:08x}.asm'
+            out.write_text('\n'.join(disassemble(block,lo))+'\n')
+            rows.append({'start':f'{lo:08x}','end_exclusive':f'{hi:08x}',
+                'bytes_sha256':hashlib.sha256(block).hexdigest(),'assembly':str(out.relative_to(ROOT)),
+                'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
+        result['original_final_exe_correspondence'][label]={'path':relative,'sha256':expected,
+            'callback_table_sha256':hashlib.sha256(table).hexdigest(),'selected_spans_identical_to_historical':True,'spans':rows}
     result['critical_section_setup']={
         'paired_spans_identical':True,
         'producer':'004eb2e0 takes poolnode, advances00564a64 via node+18h, zeroes18h bytes, callsInitializeCriticalSection, returnsnode',
