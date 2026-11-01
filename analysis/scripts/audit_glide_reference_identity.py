@@ -298,6 +298,38 @@ def main():
         'Final writes bytes, while relevant consumers read DWORDs. File-backed initial6000fca8 is0, but arbitrary later upper-byte writes/aliases are not excluded.',
         'Reference special-mode check compares descriptor class DWORD with1, whereas final checks6000fca8 DWORD nonzero; shared6000fcfc gate still applies.',
         'No target execution, null provider-string handling, complete state mutation/lifetime or actual display-mode support proof.']
+    result['pixel_access'] = {'captures': [], 'bindings': {key: slots[key] for key in
+        ('60011078', '6001107c', '60011080', '60011084')}}
+    assert list(result['pixel_access']['bindings'].values()) == [
+        '_grLfbLock@24', '_grLfbUnlock@8', '_grLfbWriteRegion@36', '_grLfbReadRegion@28']
+    for role, pe, read_end, write_end in [('hosted_reference', ref, 0x3407, 0x347b),
+                                         ('official_final', final, 0x33f8, 0x347e)]:
+        for start, end, label in [(0x3270, 0x3346, 'complete-lockwindow'),
+                                   (0x3350, 0x339c, 'complete-unlockwindow'),
+                                   (0x33a0, read_end, 'complete-readrect'),
+                                   (0x3410, write_end, 'complete-writerect')]:
+            body = pe.get_data(start, end-start)
+            result['pixel_access']['captures'].append({'role': role, 'label': label,
+                'start_va': f'{0x60000000+start:08x}', 'end_va_exclusive': f'{0x60000000+end:08x}',
+                'sha256': sha(body), 'disassembly': disassemble(body, 0x60000000+start)})
+    assert ref.get_data(0x3350, 0x4c) == final.get_data(0x3350, 0x4c)
+    for offset in (0x33b6, 0x3426):
+        assert final.get_data(offset, 13).hex() == 'a1d8270160c1e8030faf442420'
+    assert ref.get_data(0x33be, 2).hex() == ref.get_data(0x342e, 2).hex() == '01db'
+    assert ref.get_data(0x32cb, 7).hex() == 'c7420804000000'
+    assert final.get_data(0x32cc, 8).hex() == 'a1dc270160894308'
+    assert final.get_data(0x3443, 14).hex() == '833dd8270160207505b805000000'
+    result['pixel_access']['contract'] = {
+        'reference_pitch': 'wrap32(2*argument3)',
+        'final_pitch': 'wrap32((unsigned_selected_depth >> 3)*argument3)',
+        'write_format': 'reference0; final5 when selected_depth==32, otherwise0',
+        'lock_descriptor_bytes': 24, 'lock_format_field_offset': '08',
+        'lock_format': 'reference4; finalDWORD[600127dc] (mode activation selects4 or5)',
+        'unlock_body_equal': True,
+        'limits': ['Provider read/write return is retained across optional callback0; actual transfer/pixel correctness not observed.',
+                   'Lock allocation/provider failure and second-lock result handling are not repaired or assumed successful.',
+                   'Stride multiplication is low32-bit arithmetic, not permission to use overflowing signed C multiplication.',
+                   'Slot bindings identify named provider interfaces, not loaded implementations or every format constant semantic.']}
     result['export_comparison'] = {'reference_final_entries_equal': 34,
                                    'reference_local_names_equal': 34, 'reference_local_changed_rvas': 34}
     result['limits'] = [

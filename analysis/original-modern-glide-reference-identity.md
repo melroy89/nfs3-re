@@ -231,6 +231,25 @@ Under that ordinary initialized-state premise and the shared6000fcfc!=0 conditio
 
 Preserve the packed table, byte-store widths and DWORD consumers in a reconstruction. Replacing them silently with three Boolean variables would erase both the fallback classification and upper-byte/lifetime dependencies. No name query, provider or target code was executed; historical introduction and rendered consequences remain unresolved.
 
+## Selected depth also changes lock and rectangle-transfer contracts
+
+The paired audit now captures complete exports at60003270 (`_THRASH_lockwindow@0`),60003350 (`_THRASH_unlockwindow@4`),600033a0 (`_THRASH_readrect@20`) and60003410 (`_THRASH_writerect@20`). Lock bodies span214 bytes each; unlock bodies76 bytes each and match exactly. Read bodies are103 reference/88 final bytes; write bodies107 reference/110 final bytes. Retained names/entry addresses establish correspondence, not output equivalence.
+
+| Contract | Hosted reference | Final Modern |
+|---|---|---|
+| Read/write row-stride argument | Low32 bits of `2*argument3` | Low32 bits of `(unsigned_selected_depth >> 3)*argument3` |
+| Write format argument |0 |5 when depth==32, otherwise0 |
+| Allocated lock descriptor+08h | Fixed4 | Current600127dc, set4/5 by mode activation |
+| Unlock body | Calls provider unlock operations, frees descriptor, optional callback0 | Identical instructions |
+
+With valid depth16/32, the final stride factor is2/4 respectively; reference always uses2. This links the previously traced selected-depth producer600021ef directly to transfer arguments, rather than treating depth32 as unused metadata. No local validation in these wrappers establishes that arbitrary stored depths are valid. x86 SHR is logical and IMUL keeps low32 bits; a C reconstruction must make wrapping explicit instead of introducing signed-overflow undefined behavior.
+
+Required final bindings verify slots60011078=`_grLfbLock@24`,6001107c=`_grLfbUnlock@8`,60011080=`_grLfbWriteRegion@36` and60011084=`_grLfbReadRegion@28`. Read forwards `(selected_buffer,arg1,arg2,arg3,arg4,pitch,arg5)`. Write forwards `(selected_buffer,arg1,arg2,format,arg3,arg4,1,pitch,arg5)`. The raw call shape is verified; full provider format definitions and actual loaded implementations remain outside this comparison.
+
+Lock retains the24-byte allocation and writes six DWORDs: offsets00h/04h copy provider result slots from its stack-local structure;08h is the format field;0ch/10h are stored width/height;14h is the selected buffer. Modern changes08h from fixed4 to the mode-dependent global. This does not prove all provider-produced lock information is honoured, or that the returned memory is valid. Both bodies still make a second lock call whose result is not checked locally. Allocation/failure ownership must be preserved and qualified, not silently repaired as part of reconstruction.
+
+Read/write save the provider result across the optional callback0 and return it. Their callback1/0 bracketing is not a synchronization/reentrancy guarantee. **Verified difference:** depth-dependent stride, write-format selection and returned lock format. **Still unverified:** transferred pixels, endian/channel interpretation, caller buffer sizes, provider failures, full buffer lifetime, runtime32-bit success and historical release attribution. No target or provider code was executed; these findings do not establish replay/multiplayer compatibility or a precision-policy change.
+
 ## Next required comparison
 
 The about/count/pointer/helper changes and reference fixed/query machinery are now traced above. The local loader/cleanup change is also traced above; the immediate failed-about/EXE-validation consumer is now traced above; next qualify other partial-bind consumers, indirect/registered detach finalizers and other initialization/recovery callers, then select another changed function from the paired map, retaining the already verified final insertion/extra-slot limits. Do not repeat the local-candidate baseline substitution.
