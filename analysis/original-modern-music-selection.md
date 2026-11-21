@@ -382,3 +382,18 @@ meaning can change. Ordinal 2 names Romulus 3 in 1.5.2 and Random
 (Slow) in 1.5.3. Romulus 3 moves to ordinal 4. This is established by
 the packaged descriptor lists. The complete upgrade path and all
 possible writers of the saved ordinal remain unverified.
+
+The first three race music choices also change meaning if their stored
+ordinal reaches the selector unchanged:
+
+| Ordinal | Packaged 1.5.2 | Packaged 1.5.3 |
+|---:|---|---|
+| 0 | Track default (Rock) | Track default (Rock or Techno) |
+| 1 | Track default (Techno) | Track default (Rock) |
+| 2 | Track default (Rock or Techno) | Track default (Techno) |
+
+Each label was decoded from its own package's English resource. The
+ten fixed tracks retain ordinals 3–12. Preserving the three old
+track-default choices by meaning would map 0→1, 1→2 and 2→0.
+This is a correspondence between the lists. Whether any upgrade code
+applies that mapping remains unverified.
