@@ -425,3 +425,11 @@ block at `006fbb40`. The saved race and menu ordinals lie at offsets
 it transfers their bytes unchanged. This rules out a translation
 inside the direct copy. Later writers after the accepted-header
 decision still need tracing to establish a complete upgrade outcome.
+
+The 1.5.3 config loader's common continuation
+`00472aeb..00472b48` contains no direct store to either music
+ordinal. It publishes timer, language and volume-related values and
+conditionally invokes `00472b60` at `00472b34` when
+`0055b038` is nonzero. This bounds the remaining migration question
+to delegated calls and later initialization. It does not establish
+end-to-end preservation across those calls.
