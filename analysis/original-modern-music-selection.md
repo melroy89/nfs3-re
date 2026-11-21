@@ -397,3 +397,13 @@ ten fixed tracks retain ordinals 3–12. Preserving the three old
 track-default choices by meaning would map 0→1, 1→2 and 2→0.
 This is a correspondence between the lists. Whether any upgrade code
 applies that mapping remains unverified.
+
+Packaged 1.5.3 explicitly clears both music ordinals on its grouped
+reset path: `00472ae6` calls `00472248`, which writes zero at
+`0047224a` (race, `006fbbe4`) and `0047224f` (menu, `006fbbec`).
+Those zero ordinals select Track default (Rock or Techno) and Random
+(All), respectively. The corresponding 1.5.2 grouped reset calls
+`00472230` at `00472ae1`. That helper sets volume fields and returns
+without writing either ordinal. This comparison describes the local
+reset helpers. Earlier full-block initialization and later writes
+remain separate from the observed stores.
