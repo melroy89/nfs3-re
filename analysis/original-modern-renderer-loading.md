@@ -120,7 +120,7 @@ The loader audit now asserts the final parser literals and exact instructions be
 - **MP120-005, configurable capabilities:** `THRASH/FogSupport` and its default0/nonzero-to1 store are verified, and the initializer's state-query gate can clear it again. This supports the fog-override mechanism, not guaranteed visible fog or the entire bundled claim. The final parser does not establish the named `LightBeams` capability; its [historical reader and packaged settings are now verified](#historical-lightbeams-reader-and-capability-defaults), with rendered effects unresolved.
 - **MP120-007, failure reporting:** the Modern initializer routes inspected configuration/load/init failures through the MessageBox-based diagnostic helper `004b570c`, documented in the startup requirements comparison. This supports explicit failure reporting in the final path. The original already has diagnostic paths: for example `004f8830` tests the about pointer and, when absent, supplies diagnostic metadata and calls `00401010` at `004f88a9`. Thus the source bullet's broad absence-of-original-reporting assertion is not established. The [shared terminal ExitProcess boundary](original-modern-startup-requirements.md#shared-termination-chain-reaches-exitprocess) is now verified for paths reaching the exit wrapper; other diagnostic sinks, pre-exit hooks, all failure paths and actual dialogs remain unverified.
 
-**MP120-006 remains unverified as a whole-lifetime claim.** The final low-level loader `004f84a8` starts with a LoadLibraryA request; it has no initial nonzero-handle guard that by itself proves one load for the entire process. Cached descriptor use in enumeration and removal of the original snapshot-bank paths do not establish how often all higher-level initialization/recovery callers run. Establish caller lifetime and unload/reload ownership before upgrading that claim. The separate Voodoo wrapper's cached `glide3x.dll` handle is a different module/dependency and must not be substituted for the EXE's THRASH-driver lifetime.
+**MP120-006 has partial historical support in the follow-up below; its whole-lifetime wording remains unverified.** The final low-level loader `004f84a8` starts with a LoadLibraryA request; it has no initial nonzero-handle guard that by itself proves one load for the entire process. Cached descriptor use in enumeration and removal of the original snapshot-bank paths do not establish how often all higher-level initialization/recovery callers run. Establish caller lifetime and unload/reload ownership before upgrading that claim. The separate Voodoo wrapper's cached `glide3x.dll` handle is a different module/dependency and must not be substituted for the EXE's THRASH-driver lifetime.
 
 The [catalog](modern-patch-change-catalog.md) therefore labels the three supported claims partial and retains the lifetime claim as vendor-only. The evidence manifest records final key/type/fog contracts; earlier original callback-installation captures remain linked through the selection/lifecycle reports. No configuration API, driver or game was executed.
 
@@ -602,3 +602,23 @@ The [dedicated software-renderer report](original-modern-software-reference-pair
 ## Voodoo2 reference pair now has a separate inventory
 
 The [author-reference/final Voodoo2 report](original-modern-voodoo-reference-pair.md) matches34 exports and records all3,307 changed code bytes in141 intervals, alongside import/data differences and the four-byte about-prefix publication change. Its baseline is not the earlier local legacy candidate. Reuse the [existing Glide mechanism and code-routing report](original-modern-glide-reference-identity.md#complete-code-section-cluster-routing). The separate report adds131/140 historical helper comparisons and file-backed data localization; complete data lifetimes, historical attribution and runtime outcomes remain pending.
+
+## Historical110 to120 consolidates direct renderer load sites
+
+The [load-site history audit](evidence/audits/renderer-load-sites-history.json), reproduced with `python3 analysis/scripts/audit_renderer_load_sites_history.py`, pins110/120 EXEs and sweeps executable file-backed sections using the same static disassembler. It retains exact section hashes, selected decoded direct-call addresses and loader/switch/cleanup instruction captures. This is a linear-sweep inventory, not a complete interprocedural graph; indirect calls, tail jumps and pointer aliases remain separate.
+
+|Target |110 decoded direct call sites |120 decoded direct call sites |
+|---|---|---|
+|Old switch wrapper004f87e0 |004b59f9,004b5a32,004b5ad6,004b5c00,004b5cc7,004b5d6f |None in sweep |
+|Low-level loader004f8390 |004f8807,004f8827, both inside switch wrapper |004b58aa |
+|Old cleanup/snapshot wrapper004f87a0 |004f8820 |None in sweep |
+|Snapshot restore00517170 |004f87bd |None in sweep |
+|Snapshot save00517370 |004f87c4 |None in sweep |
+
+120 NOP-fills complete old switch envelope004f87e0..004f882e and cleanup004f87a0..004f87d9. Its new selected call supplies path pointer007a3930 directly to004f8390 at004b58aa. This replaces the six inspected branches' switch-wrapper calls with one decoded direct load site; it does not count how often the surrounding setup runs.
+
+Both low-level loader entries still unconditionally reach imported LoadLibraryA at004f839e after their prologue. Neither captured entry contains a preceding nonzero-handle return guard. Their export-binding/failure tails also differ and must not be inferred identical from that shared prefix. A single call site therefore does **not** prove a single load request per process, successful reuse, balanced references or correct cleanup/recovery.
+
+The complete snapshot bodies00517170..00517362 and00517370..0051755e remain byte-identical110/120, despite the disappearance of the selected direct callers. They are removed/NOP-filled by final Modern, as documented in the earlier snapshot comparison. Do not date their physical removal to120 or equate no decoded direct caller with global unreachability.
+
+**MP120-006 advances vendor-only→partial:** the historical pair establishes concrete consolidation of load/switch sites and removal of the inspected snapshot switch wrapper. Whole-process “loaded only once,” actual DLL mapping/unmapping, repeated initialization and every indirect/recovery path remain unverified. The Voodoo provider's separate Glide-handle cache is a different dependency. No DLL, loader, API or target instructions execute; binaries and Ghidra remain unchanged.

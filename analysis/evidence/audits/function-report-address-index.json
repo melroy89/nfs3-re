@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "4e22f94b265ae9e4ea6f1acf88f0bc61afacca5ac5780195299253734838bc4a"
+      "sha256": "514fe6321e2919cc8295cd5d95d711d48283a1c926dd568fe60c41633154f22a"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -353,7 +353,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "18b93b7426e7f7ae6e4bc0e5b3ecb9b2b26c9fe5fe5be100b8d0bf842ad3a679"
+      "sha256": "61df78a137001a38836f13319ff60546c25e2d15da4786f6b3dd671fd2639e82"
     },
     {
       "path": "analysis/original-modern-renderer-texel-alignment.md",
@@ -9289,6 +9289,7 @@
             "004b586c",
             "004b5874",
             "004b5877",
+            "004b58aa",
             "004b58b5",
             "004b58ba",
             "004b58bf",
@@ -9314,6 +9315,7 @@
             "004b5a10",
             "004b5a23",
             "004b5a2d",
+            "004b5a32",
             "004b5a38"
           ]
         },
@@ -9427,7 +9429,8 @@
             "004b5a6c",
             "004b5a7f",
             "004b5a88",
-            "004b5a8d"
+            "004b5a8d",
+            "004b5ad6"
           ]
         },
         {
@@ -9517,6 +9520,15 @@
             "004b5c76",
             "004b5c92",
             "004b5d65"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-renderer-loading.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004b5c00",
+            "004b5cc7",
+            "004b5d6f"
           ]
         },
         {

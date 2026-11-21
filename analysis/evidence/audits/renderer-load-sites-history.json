@@ -1,0 +1,349 @@
+{
+  "kind": "static-renderer-load-sites-history",
+  "versions": {
+    "1.1.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+      "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+      "member": "nfs3.exe",
+      "sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "linear_sweep_sections": [
+        {
+          "rva": "00001000",
+          "bytes": 1257472,
+          "sha256": "7bfd1cbbc6c627c7c81987e69277b12c64cdc2f0bc8f6ddf3e9fc23642a33c40"
+        }
+      ],
+      "decoded_direct_calls": {
+        "004f8390": [
+          "004f8807",
+          "004f8827"
+        ],
+        "004f87e0": [
+          "004b59f9",
+          "004b5a32",
+          "004b5ad6",
+          "004b5c00",
+          "004b5cc7",
+          "004b5d6f"
+        ],
+        "004f87a0": [
+          "004f8820"
+        ],
+        "00517170": [
+          "004f87bd"
+        ],
+        "00517370": [
+          "004f87c4"
+        ]
+      },
+      "retained_snapshot_hashes": [
+        "fd6d2a8ad505c5a4c2d5d2bdf2322f8f7af2214f2a7ee76a4e853c0c0b5f80b9",
+        "b4adc394b3bc82c0bddc9964a83da44197fe9ae8aef63447f9d68758cbbfe9ef"
+      ],
+      "captures": [
+        {
+          "name": "loader_entry",
+          "start": "004f8390",
+          "end_exclusive": "004f83b4",
+          "hex": "535152565581ec0002000089c6502eff158c45530031dba36c4a560085c00f8466030000",
+          "disassembly": [
+            "4f8390:\t53                   \tpush   ebx",
+            "4f8391:\t51                   \tpush   ecx",
+            "4f8392:\t52                   \tpush   edx",
+            "4f8393:\t56                   \tpush   esi",
+            "4f8394:\t55                   \tpush   ebp",
+            "4f8395:\t81 ec 00 02 00 00    \tsub    esp,0x200",
+            "4f839b:\t89 c6                \tmov    esi,eax",
+            "4f839d:\t50                   \tpush   eax",
+            "4f839e:\t2e ff 15 8c 45 53 00 \tcall   DWORD PTR cs:0x53458c",
+            "4f83a5:\t31 db                \txor    ebx,ebx",
+            "4f83a7:\ta3 6c 4a 56 00       \tmov    ds:0x564a6c,eax",
+            "4f83ac:\t85 c0                \ttest   eax,eax",
+            "4f83ae:\t0f 84 66 03 00 00    \tje     0x4f871a"
+          ]
+        },
+        {
+          "name": "old_switch_envelope",
+          "start": "004f87e0",
+          "end_exclusive": "004f882e",
+          "hex": "5289c2803821752642833d684a560000750ac705684a560001000000833d6c4a560000751b89d0e884fbffff5ac3b800d75400e8b862010085c074cd89c2ebc9e87bffffff89d0e864fbffff5ac3",
+          "disassembly": [
+            "4f87e0:\t52                   \tpush   edx",
+            "4f87e1:\t89 c2                \tmov    edx,eax",
+            "4f87e3:\t80 38 21             \tcmp    BYTE PTR [eax],0x21",
+            "4f87e6:\t75 26                \tjne    0x4f880e",
+            "4f87e8:\t42                   \tinc    edx",
+            "4f87e9:\t83 3d 68 4a 56 00 00 \tcmp    DWORD PTR ds:0x564a68,0x0",
+            "4f87f0:\t75 0a                \tjne    0x4f87fc",
+            "4f87f2:\tc7 05 68 4a 56 00 01 \tmov    DWORD PTR ds:0x564a68,0x1",
+            "4f87f9:\t00 00 00",
+            "4f87fc:\t83 3d 6c 4a 56 00 00 \tcmp    DWORD PTR ds:0x564a6c,0x0",
+            "4f8803:\t75 1b                \tjne    0x4f8820",
+            "4f8805:\t89 d0                \tmov    eax,edx",
+            "4f8807:\te8 84 fb ff ff       \tcall   0x4f8390",
+            "4f880c:\t5a                   \tpop    edx",
+            "4f880d:\tc3                   \tret",
+            "4f880e:\tb8 00 d7 54 00       \tmov    eax,0x54d700",
+            "4f8813:\te8 b8 62 01 00       \tcall   0x50ead0",
+            "4f8818:\t85 c0                \ttest   eax,eax",
+            "4f881a:\t74 cd                \tje     0x4f87e9",
+            "4f881c:\t89 c2                \tmov    edx,eax",
+            "4f881e:\teb c9                \tjmp    0x4f87e9",
+            "4f8820:\te8 7b ff ff ff       \tcall   0x4f87a0",
+            "4f8825:\t89 d0                \tmov    eax,edx",
+            "4f8827:\te8 64 fb ff ff       \tcall   0x4f8390",
+            "4f882c:\t5a                   \tpop    edx",
+            "4f882d:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "old_cleanup",
+          "start": "004f87a0",
+          "end_exclusive": "004f87d9",
+          "hex": "5352568b156c4a56008b1d684a560085d2751a31f631c089356c4a5600e8aee9010089d8e8a7eb01005e5a5bc351522eff15dc44530059ebda",
+          "disassembly": [
+            "4f87a0:\t53                   \tpush   ebx",
+            "4f87a1:\t52                   \tpush   edx",
+            "4f87a2:\t56                   \tpush   esi",
+            "4f87a3:\t8b 15 6c 4a 56 00    \tmov    edx,DWORD PTR ds:0x564a6c",
+            "4f87a9:\t8b 1d 68 4a 56 00    \tmov    ebx,DWORD PTR ds:0x564a68",
+            "4f87af:\t85 d2                \ttest   edx,edx",
+            "4f87b1:\t75 1a                \tjne    0x4f87cd",
+            "4f87b3:\t31 f6                \txor    esi,esi",
+            "4f87b5:\t31 c0                \txor    eax,eax",
+            "4f87b7:\t89 35 6c 4a 56 00    \tmov    DWORD PTR ds:0x564a6c,esi",
+            "4f87bd:\te8 ae e9 01 00       \tcall   0x517170",
+            "4f87c2:\t89 d8                \tmov    eax,ebx",
+            "4f87c4:\te8 a7 eb 01 00       \tcall   0x517370",
+            "4f87c9:\t5e                   \tpop    esi",
+            "4f87ca:\t5a                   \tpop    edx",
+            "4f87cb:\t5b                   \tpop    ebx",
+            "4f87cc:\tc3                   \tret",
+            "4f87cd:\t51                   \tpush   ecx",
+            "4f87ce:\t52                   \tpush   edx",
+            "4f87cf:\t2e ff 15 dc 44 53 00 \tcall   DWORD PTR cs:0x5344dc",
+            "4f87d6:\t59                   \tpop    ecx",
+            "4f87d7:\teb da                \tjmp    0x4f87b3"
+          ]
+        }
+      ]
+    },
+    "1.2.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z",
+      "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
+      "member": "nfs3.exe",
+      "sha256": "4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003",
+      "linear_sweep_sections": [
+        {
+          "rva": "00001000",
+          "bytes": 1257472,
+          "sha256": "4f2ad5bce92a23506369cb01de0e721daaea8b377c8ab5a2622cde583b97214a"
+        }
+      ],
+      "decoded_direct_calls": {
+        "004f8390": [
+          "004b58aa"
+        ],
+        "004f87e0": [],
+        "004f87a0": [],
+        "00517170": [],
+        "00517370": []
+      },
+      "retained_snapshot_hashes": [
+        "fd6d2a8ad505c5a4c2d5d2bdf2322f8f7af2214f2a7ee76a4e853c0c0b5f80b9",
+        "b4adc394b3bc82c0bddc9964a83da44197fe9ae8aef63447f9d68758cbbfe9ef"
+      ],
+      "captures": [
+        {
+          "name": "loader_entry",
+          "start": "004f8390",
+          "end_exclusive": "004f83b4",
+          "hex": "535152565581ec0002000089c6502eff158c45530031dba36c4a560085c00f843a030000",
+          "disassembly": [
+            "4f8390:\t53                   \tpush   ebx",
+            "4f8391:\t51                   \tpush   ecx",
+            "4f8392:\t52                   \tpush   edx",
+            "4f8393:\t56                   \tpush   esi",
+            "4f8394:\t55                   \tpush   ebp",
+            "4f8395:\t81 ec 00 02 00 00    \tsub    esp,0x200",
+            "4f839b:\t89 c6                \tmov    esi,eax",
+            "4f839d:\t50                   \tpush   eax",
+            "4f839e:\t2e ff 15 8c 45 53 00 \tcall   DWORD PTR cs:0x53458c",
+            "4f83a5:\t31 db                \txor    ebx,ebx",
+            "4f83a7:\ta3 6c 4a 56 00       \tmov    ds:0x564a6c,eax",
+            "4f83ac:\t85 c0                \ttest   eax,eax",
+            "4f83ae:\t0f 84 3a 03 00 00    \tje     0x4f86ee"
+          ]
+        },
+        {
+          "name": "old_switch_envelope",
+          "start": "004f87e0",
+          "end_exclusive": "004f882e",
+          "hex": "909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090",
+          "disassembly": [
+            "4f87e0:\t90                   \tnop",
+            "4f87e1:\t90                   \tnop",
+            "4f87e2:\t90                   \tnop",
+            "4f87e3:\t90                   \tnop",
+            "4f87e4:\t90                   \tnop",
+            "4f87e5:\t90                   \tnop",
+            "4f87e6:\t90                   \tnop",
+            "4f87e7:\t90                   \tnop",
+            "4f87e8:\t90                   \tnop",
+            "4f87e9:\t90                   \tnop",
+            "4f87ea:\t90                   \tnop",
+            "4f87eb:\t90                   \tnop",
+            "4f87ec:\t90                   \tnop",
+            "4f87ed:\t90                   \tnop",
+            "4f87ee:\t90                   \tnop",
+            "4f87ef:\t90                   \tnop",
+            "4f87f0:\t90                   \tnop",
+            "4f87f1:\t90                   \tnop",
+            "4f87f2:\t90                   \tnop",
+            "4f87f3:\t90                   \tnop",
+            "4f87f4:\t90                   \tnop",
+            "4f87f5:\t90                   \tnop",
+            "4f87f6:\t90                   \tnop",
+            "4f87f7:\t90                   \tnop",
+            "4f87f8:\t90                   \tnop",
+            "4f87f9:\t90                   \tnop",
+            "4f87fa:\t90                   \tnop",
+            "4f87fb:\t90                   \tnop",
+            "4f87fc:\t90                   \tnop",
+            "4f87fd:\t90                   \tnop",
+            "4f87fe:\t90                   \tnop",
+            "4f87ff:\t90                   \tnop",
+            "4f8800:\t90                   \tnop",
+            "4f8801:\t90                   \tnop",
+            "4f8802:\t90                   \tnop",
+            "4f8803:\t90                   \tnop",
+            "4f8804:\t90                   \tnop",
+            "4f8805:\t90                   \tnop",
+            "4f8806:\t90                   \tnop",
+            "4f8807:\t90                   \tnop",
+            "4f8808:\t90                   \tnop",
+            "4f8809:\t90                   \tnop",
+            "4f880a:\t90                   \tnop",
+            "4f880b:\t90                   \tnop",
+            "4f880c:\t90                   \tnop",
+            "4f880d:\t90                   \tnop",
+            "4f880e:\t90                   \tnop",
+            "4f880f:\t90                   \tnop",
+            "4f8810:\t90                   \tnop",
+            "4f8811:\t90                   \tnop",
+            "4f8812:\t90                   \tnop",
+            "4f8813:\t90                   \tnop",
+            "4f8814:\t90                   \tnop",
+            "4f8815:\t90                   \tnop",
+            "4f8816:\t90                   \tnop",
+            "4f8817:\t90                   \tnop",
+            "4f8818:\t90                   \tnop",
+            "4f8819:\t90                   \tnop",
+            "4f881a:\t90                   \tnop",
+            "4f881b:\t90                   \tnop",
+            "4f881c:\t90                   \tnop",
+            "4f881d:\t90                   \tnop",
+            "4f881e:\t90                   \tnop",
+            "4f881f:\t90                   \tnop",
+            "4f8820:\t90                   \tnop",
+            "4f8821:\t90                   \tnop",
+            "4f8822:\t90                   \tnop",
+            "4f8823:\t90                   \tnop",
+            "4f8824:\t90                   \tnop",
+            "4f8825:\t90                   \tnop",
+            "4f8826:\t90                   \tnop",
+            "4f8827:\t90                   \tnop",
+            "4f8828:\t90                   \tnop",
+            "4f8829:\t90                   \tnop",
+            "4f882a:\t90                   \tnop",
+            "4f882b:\t90                   \tnop",
+            "4f882c:\t90                   \tnop",
+            "4f882d:\t90                   \tnop"
+          ]
+        },
+        {
+          "name": "old_cleanup",
+          "start": "004f87a0",
+          "end_exclusive": "004f87d9",
+          "hex": "909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090",
+          "disassembly": [
+            "4f87a0:\t90                   \tnop",
+            "4f87a1:\t90                   \tnop",
+            "4f87a2:\t90                   \tnop",
+            "4f87a3:\t90                   \tnop",
+            "4f87a4:\t90                   \tnop",
+            "4f87a5:\t90                   \tnop",
+            "4f87a6:\t90                   \tnop",
+            "4f87a7:\t90                   \tnop",
+            "4f87a8:\t90                   \tnop",
+            "4f87a9:\t90                   \tnop",
+            "4f87aa:\t90                   \tnop",
+            "4f87ab:\t90                   \tnop",
+            "4f87ac:\t90                   \tnop",
+            "4f87ad:\t90                   \tnop",
+            "4f87ae:\t90                   \tnop",
+            "4f87af:\t90                   \tnop",
+            "4f87b0:\t90                   \tnop",
+            "4f87b1:\t90                   \tnop",
+            "4f87b2:\t90                   \tnop",
+            "4f87b3:\t90                   \tnop",
+            "4f87b4:\t90                   \tnop",
+            "4f87b5:\t90                   \tnop",
+            "4f87b6:\t90                   \tnop",
+            "4f87b7:\t90                   \tnop",
+            "4f87b8:\t90                   \tnop",
+            "4f87b9:\t90                   \tnop",
+            "4f87ba:\t90                   \tnop",
+            "4f87bb:\t90                   \tnop",
+            "4f87bc:\t90                   \tnop",
+            "4f87bd:\t90                   \tnop",
+            "4f87be:\t90                   \tnop",
+            "4f87bf:\t90                   \tnop",
+            "4f87c0:\t90                   \tnop",
+            "4f87c1:\t90                   \tnop",
+            "4f87c2:\t90                   \tnop",
+            "4f87c3:\t90                   \tnop",
+            "4f87c4:\t90                   \tnop",
+            "4f87c5:\t90                   \tnop",
+            "4f87c6:\t90                   \tnop",
+            "4f87c7:\t90                   \tnop",
+            "4f87c8:\t90                   \tnop",
+            "4f87c9:\t90                   \tnop",
+            "4f87ca:\t90                   \tnop",
+            "4f87cb:\t90                   \tnop",
+            "4f87cc:\t90                   \tnop",
+            "4f87cd:\t90                   \tnop",
+            "4f87ce:\t90                   \tnop",
+            "4f87cf:\t90                   \tnop",
+            "4f87d0:\t90                   \tnop",
+            "4f87d1:\t90                   \tnop",
+            "4f87d2:\t90                   \tnop",
+            "4f87d3:\t90                   \tnop",
+            "4f87d4:\t90                   \tnop",
+            "4f87d5:\t90                   \tnop",
+            "4f87d6:\t90                   \tnop",
+            "4f87d7:\t90                   \tnop",
+            "4f87d8:\t90                   \tnop"
+          ]
+        },
+        {
+          "name": "new_load_site",
+          "start": "004b58a5",
+          "end_exclusive": "004b58af",
+          "hex": "b830397a00e8e12a0400",
+          "disassembly": [
+            "4b58a5:\tb8 30 39 7a 00       \tmov    eax,0x7a3930",
+            "4b58aa:\te8 e1 2a 04 00       \tcall   0x4f8390"
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Linear sweep of executable file-backed sections is not a complete control-flow graph or indirect/tail-call/pointer-use inventory.",
+    "One decoded direct load site does not imply one runtime invocation;low-level entry still callsLoadLibraryA without local handle guard.",
+    "Old snapshot bodies remain byte-identical120 despite disappearing selected direct callers;not proof globally dead or already removed.",
+    "Handle reference ownership,all cleanup/recovery and provider initialization frequency remain unverified.",
+    "No target/API/instruction execution,compilation or executable/Ghidra changes."
+  ]
+}
