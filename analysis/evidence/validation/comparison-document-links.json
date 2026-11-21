@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "f9d45024e078784019291a3ae9b9e0e6ab2158be1562f73ba5699566f6d3437f",
-      "relative_links": 270
+      "sha256": "8061b58f9c6d541614b4b757947da3f76b51c8f4ae67d5a329b6e94dc13e8d3e",
+      "relative_links": 271
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "b35db06cd90b966ec1f3008ff51a9f2170e85adc6203d46cce1bc194400cfc21",
+      "sha256": "4095c4373e996246fd012189f6f6339b5bde254dc7fe9ff501011059447a5e4b",
       "relative_links": 315
     },
     {
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "2e4fec6de57d18330526a1236bf66b6f7529fce9e39ad1648443c38882e600fa",
-      "relative_links": 762
+      "sha256": "a83bc8c940bc5ba7a98738a0f0cdb35b67bf182d64607a277fc5ee280b1c3050",
+      "relative_links": 764
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -208,8 +208,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "9a2ff6801b266762545afcd62696d406da748ca9d5be0c25ab929ededa56c042",
-      "relative_links": 39
+      "sha256": "1fdb727f8a5f06eedb8a2a6a782f2571ac064e487bdc7c36d0acb66ef505972e",
+      "relative_links": 40
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -653,7 +653,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "4f5ade4970175690ce45c5e90d93b64efdc27d79e5002f1c858a217f0cd07915",
+      "sha256": "663f0cdf4ec653dc5da40e6a78fe3fb518d75f7b02b08ad6a90cb0684b3e1e85",
       "relative_links": 240
     },
     {
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2830,
+  "relative_link_count": 2834,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

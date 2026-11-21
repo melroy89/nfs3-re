@@ -333,3 +333,23 @@ The expanded [Name audit](evidence/audits/opponent-name-menu-history.json) also 
 At `00483e57` it tests `006fbc54 + group×348h + role×1a4h`; zero skips to `00483ec8`. On the admitted path it additionally checks the selected object's+220h pointer and prepares text at pointer+34h. Before calling `004897f0` at `00483ec3`, it reads geometry DWORDs at `0074981c`, `00749820` and `00749818`, each indexed by the local `[ESI+4]` value×170h. The Name-to-call linkage is therefore established, independently of List's+08 gate. Pointer lifetimes, full callee ABI and the local index's complete production remain unqualified.
 
 This closes the previous missing Name-consumer link without verifying the move. Next identify writes to these computed geometry cells and trace their profile rectangle sources across131/140, then inspect the callee's coordinate interpretation and mirror placement. A raw literal census alone misses base-plus-offset/alias writes and cannot establish the producer. Unchanged consumer instructions do not imply unchanged geometry or pixels. MP140-071 remains vendor-only until that linkage supports its specific relocation claim.
+
+
+### Slot12 source presets change at131 to140
+
+The same expanded [Name audit](evidence/audits/opponent-name-menu-history.json) now links the geometry storage to scaler `00480910..004809f7` (231 bytes, identical131/140). The scaler writes four DWORDs at `00749758 + localIndex×170h + slot×10h`. Therefore the Name consumer's `00749818/1c/20` reads belong to **slot12**, not an assumed settings-menu control.
+
+Initializer prefix `00485680..004856c5` reads six profiles of96 WORDs at `00540500`, converting each WORD to binary32(value/1000) and swapping each pair into the profile rectangle. The conversion helper moves from `004f9404` to `004f9418`; its complete29-byte body is identical. The two corresponding call displacements account for the copy prefix's changed bytes. This historical WORD table differs from the final DWORD table described earlier; do not apply the final stride to these historical files.
+
+|Profile index |131 slot12 source WORDs |140 slot12 source WORDs |
+|---|---|---|
+|0 |400,953,600,993 |400,156,600,196 |
+|1 |0,0,0,0 |Same |
+|2 |400,453,600,493 |400,121,600,161 |
+|3 |0,0,0,0 |Same |
+|4 |400,953,600,993 |400,621,600,661 |
+|5 |0,0,0,0 |Same |
+
+The source order is preserved above; adjacent pairs are swapped during initialization, so these numbers must not be quoted as final pixel coordinates. The changed second/fourth source bounds preserve extent40 while reducing their positions in profiles0/2/4; first/third remain400/600. The scaler reads the corresponding profile rectangle at header+24h+slot×10h and writes the indexed integer geometry. This is a concrete source-and-consumer mechanism consistent with the advertised relocation.
+
+**MP140-071 advances to partial:** slot12 preset changes and the named Name consumer are linked. Remaining: full call-site admission selecting slot12, intervening layout/attachment writes, the drawing callee's full coordinate ABI and actual mirror-relative pixels. Do not claim the exact “just under the mirror” result solely from these source bounds. No target instructions or Ghidra/executable writes occurred.
