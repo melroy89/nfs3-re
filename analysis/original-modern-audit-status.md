@@ -1,6 +1,22 @@
 # Original versus Modern audit: current stopping point
 
-## Current snapshot — 2026-11-01
+## Current follow-up checkpoint — 2026-11-21
+
+The [seven-audit checkpoint](evidence/validation/renderer-menu-counter-followup-checkpoint.json) reviews `794ddde`: **14/14 static runs**, seven committed evidence outputs reproduced, **12 protected artifacts and12 raw exports unchanged** against prior hashes. Reproduce with `python3 analysis/scripts/check_renderer_menu_counter_followup.py`. This is primary-agent repeatability and preservation evidence, not independent semantic review, target execution or complete comparison acceptance.
+
+| Follow-up | Established | Still open |
+|---|---|---|
+|[DX6 count consumers](original-modern-display-modes.md#dx6-extra-count-slot-reaches-inclusive-scans-but-can-fail-admission) |Inclusive scans; extra zero row rejected under N<100 insertion-only premises |N100, alias writes, direct/same-current switching and visible modes |
+|[Vehicle effect bodies](original-modern-state14.md#selected-vehicle-effect-bodies-remain-unchanged) |Eight ranges,5,567 bytes identical across four EXEs |Changed inputs/state/callees and actual menu-light submission |
+|[DX6 selector](original-modern-state14.md#dx6-provider-distinguishes-the-menu-gate-payloads) |Payload4 versus0 makes different raw-state requests in unchanged provider code |Device acceptance and taillight colour result |
+|[DX6 quad flag](original-modern-state14.md#dx6-quad-attribute-copying-is-not-switched-by-payload4-versus0) |Both payloads clear flag; same vertex attribute copy under unchanged-flag premise |Other primitives, intervening writes and actual input values |
+|[Setup history](original-modern-setup-website.md#early-credits-route-and140-options-replacement-are-present-in-assets) |110/131 Credits route;131→140 Options replacement, retained final |Exact100 introduction, historical activation and pixels |
+|[Counter serialization](original-modern-screenshot-feedback.md#counter-belongs-to-the-saved-configuration-block) |Counter at config+16A0h inside20F0h copy extent; cleared1860h distinct |I/O success, save timing, concurrent snapshots and later resets |
+|[Counter history](original-modern-screenshot-feedback.md#saved-counter-mechanism-appears-at131-to140-boundary) |131→140 counter relocation, atomic increment and filename-format change |Successful cross-launch preservation |
+
+The catalog remains **83 vendor-only,53 bounded-static,152 partial,2 unresolved**. These are evidence labels for290 release-note bullets, not a completion percentage. The taillight claim remains vendor-only; its static follow-up should focus on the actual menu primitive/state lifetime, not repeat the resolved code-identity or flag checks. The broader next work is remaining changed-region semantics and interface/data provenance; no full-game equivalence or reconstruction readiness is claimed. Earlier dated sections below retain history and must be read with these later findings.
+
+## Earlier snapshot — 2026-11-01
 
 The [latest renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-history-checkpoint.json) reviews`d57e760`:16/16 static reruns reproduce eight committed outputs, with12 protected artifacts and12 raw exports matching prior hashes. The [compact findings table](original-modern-differences.md#recent-renderer-and-screenshot-findings) records each mechanism and its limits. No independent semantic or runtime acceptance is implied.
 
