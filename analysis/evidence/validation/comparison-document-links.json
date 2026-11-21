@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "33daa2edc2ad7ca60aa131ac2c681f1a0b21f0c6e1a903ec7bb2c6d2f397c2ff",
-      "relative_links": 323
+      "sha256": "0d6c7fe721663e269f6586f5c128d3b341d5c9ce9b1fca85636ae386387baf3f",
+      "relative_links": 324
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "bb2cee005a5c2cad2b09a92cf7c47e9f52fa82469964ed3b06addece0fa0db79",
+      "sha256": "51f107fefa89eca61ee5a45097934cc138746d3516a30c0d69614a23c924c823",
       "relative_links": 319
     },
     {
@@ -228,8 +228,8 @@
     },
     {
       "path": "analysis/original-modern-input-worker.md",
-      "sha256": "79dbb1ae7e1bdf552554f7f0de71cde0d3e76e912a60859f353cce831b3b517e",
-      "relative_links": 6
+      "sha256": "51bad40e45634e9fed5625a7b4d7906435deac9c231d71dc148c75108c7f7f3a",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-language-table.md",
@@ -243,7 +243,7 @@
     },
     {
       "path": "analysis/original-modern-loading-timing.md",
-      "sha256": "efaa915f57be6c6491b3842f19c5fd0e406cfe001dc9ff642b1f814478d83734",
+      "sha256": "e1605845ddbb56aa5521c0e8f9b70db3174940a8be1c16f223fc76f6d2ed66ee",
       "relative_links": 10
     },
     {
@@ -658,8 +658,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "9268e8cdef914facdb8d28d2597c99714afb5432ad8237bc3e61ac4dd354a191",
-      "relative_links": 272
+      "sha256": "b5718e824c63dd91834721c55df636399b5d9249ace06cd79a2a186e7b581677",
+      "relative_links": 273
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3021,
+  "relative_link_count": 3024,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

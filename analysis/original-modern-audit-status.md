@@ -23,7 +23,9 @@ The subsequent [120→130 race-entry audit](original-modern-loading-timing.md#hi
 
 The [race-entry registrar follow-up](original-modern-loading-timing.md#callback-registrar-preserves-the-zero-reset-value) resolves EDX preservation and proves the first-registration branch resets the tested counter to zero. Subsequent callback timing and actual entry state remain unobserved; MP130-002 stays a partial candidate. This expanded audit is outside these16 checkpoint runs.
 
-Current catalogue: **42 vendor-only,57 bounded-static,191 partial,0 unresolved-category entries** across290 release-note bullets. Labels are evidence classifications, not distinct EXE changes or a completion percentage. The shallow list covers every source bullet; it does not cover every undocumented binary difference. Zero unresolved-category entries does not mean zero unknowns.
+The subsequent [120→130 input-worker audit](original-modern-input-worker.md#historical-cooperative-worker-change-is120-to130) dates cooperative sentinel/event exit and changed shutdown routing, with collector/table/wrappers retained. MP130-003 gains partial candidate support; the vague multiplayer-fix attribution and runtime synchronization remain unverified. This new audit is outside these16 checkpoint runs.
+
+Current catalogue: **41 vendor-only,57 bounded-static,192 partial,0 unresolved-category entries** across290 release-note bullets. Labels are evidence classifications, not distinct EXE changes or a completion percentage. The shallow list covers every source bullet; it does not cover every undocumented binary difference. Zero unresolved-category entries does not mean zero unknowns.
 
 The requested Markdown comparison and reproducible, address-based findings exist, but exhaustive original/Modern semantic coverage is **not complete**. The table above distinguishes new mechanisms from pending behavior instead of making each runtime unknown a prerequisite for other inspection. Next prioritize a remaining concrete mechanism with an available baseline; preserve named component/version boundaries, reuse previous findings and avoid attributing vague fixes from neighboring release notes.
 

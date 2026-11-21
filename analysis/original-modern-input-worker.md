@@ -86,3 +86,25 @@ Original `004a6f70..004a6f75` is exactly PUSH EBP / MOV EBP,ESP / POP EBP / RET.
 The x87 delta parallels the [frontend reset removal](og-modern-x87-precision.md#frontend-background-rendering-removes-a-local-x87-reset): original explicitly resets control/status/tag/stack state and loads the saved control word before its shutdown callees. Modern has no corresponding local reset and first delegates to arena release. This does not establish final x87 precision/state after every callee, nor show a simulation or replay trajectory change from a shutdown path. Saved-control-word ownership and exceptional state remain scoped as in the precision report.
 
 Both ordinary epilogues restore ECX/EDX/EBP and use plain RET. Neither envelope returns an explicit Boolean or checks these teardown-call results. The worker synchronization limitations above still hold. Full shutdown ordering outside these bodies, alternative entry/exit routes, hook ownership and runtime completion remain unverified. The [evidence manifest](evidence/audits/original-modern-input-worker.json) records the complete bodies, ordered calls, exact assertions and bounded limitations; no shutdown/game/API execution or Ghidra mutation occurred.
+
+## Historical cooperative worker change is120 to130
+
+The [historical worker audit](evidence/audits/input-worker-history.json), reproduced with `python3 analysis/scripts/audit_input_worker_history.py`, pins120/130 EXEs and captures both callbacks, startup witnesses, complete shutdown envelopes and shared primitive wrappers. This dates a lifecycle mechanism previously established only original→final; it does not establish the cause of every advertised multiplayer fix.
+
+|Contract |120 |130 |
+|---|---|---|
+|Callback selected at004b6200 |0042dc20 |0041d7c8 |
+|Thread-creation call |004b6205→004df7a0 |Same |
+|Callback event handle |Publishes/reloads005efdf0 |Publishes005efdf0, retains handle in EBX for wait/close |
+|After wait |Always calls collector and loops |Tests descriptor007a3aac; nonzero collects, zero closes local event and returns0 |
+|Selected shutdown |004b6274→forced-stop wrapper004df870 |004b626f→new0042dc20 helper |
+
+The130 shutdown helper closes the stored thread handle, clears descriptor DWORD0 and signals global event005efdf0. Its awakened callback can then close the event and return. The old forced-stop wrapper prefix and its TerminateThread import remain in both files; removal from this selected caller is not removal from every thread path.
+
+The complete collector0048f550..0048f69a, initial six-pointer table00554e34, signal entry0042dc40..0042dc57 and inspected create/wait/signal/close/forced-stop wrappers are byte-identical120/130. The manifest resolves their actual imports. This isolates the selected change to worker admission/exit and call routing, without claiming unchanged scheduling, device results, transitive helpers or network packets.
+
+Keep version roles distinct:120's0042dc20 is a callback;130's same address is a shutdown helper.130's new callback0041d7c8 later moves to final0041d7e4. The existing final Ghidra label must not be applied blindly to120/130 addresses.130's complete shutdown still contains FINIT/FLDCW and the older extra calls; the later final shutdown envelope described above has additional differences.
+
+**MP130-003 advances vendor-only→partial candidate:** the immediate historical pair contains a concrete cooperative input-worker lifecycle change relevant to gameplay input, separate from MP130-002's removed race-entry termination guard. The broad multiplayer-fix sentence does not identify this mechanism uniquely. Exact causal attribution, affected multiplayer scenario and successful runtime repair remain unverified.
+
+Closing the thread handle is not a join. Event publication/readiness, callback timing, failed wait/creation/signal, descriptor reuse and reentrancy remain open as in the existing lifecycle analysis. A sentinel clear alone does not wake a blocked worker, and identical collector instructions do not establish multiplayer/replay equivalence. No worker, thread/API, game or target instruction executes; binaries and Ghidra are unchanged.

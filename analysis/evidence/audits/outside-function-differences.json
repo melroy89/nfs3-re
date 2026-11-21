@@ -7508,7 +7508,7 @@
         "original_entry": "004b6250",
         "role": "Shutdown envelope",
         "report": "analysis/original-modern-input-worker.md",
-        "report_sha256": "79dbb1ae7e1bdf552554f7f0de71cde0d3e76e912a60859f353cce831b3b517e",
+        "report_sha256": "51bad40e45634e9fed5625a7b4d7906435deac9c231d71dc148c75108c7f7f3a",
         "remaining": "Mapped Modern counterpart; no join/runtime shutdown proof.",
         "status": "entry classified; semantic validation partial"
       },
