@@ -300,3 +300,19 @@ These rows are **derived scalar arithmetic**, not original-instruction probes, l
 The complete41-byte selected-entry query`0044a440..0044a469` is identical across all four EXEs. It already checks R=100 and returns−1; otherwise it retains32-bit addition of sign-extended S/R. Modern therefore aligns the callback loop with that query's **none policy**, but not with its arithmetic under16-bit sum overflow. Whether overflow inputs are reachable remains unresolved. Neither the historical equality nor scalar cases establish whole flags/register/local-stack equivalence or complete event/render behaviour.
 
 This is an independently explained EXE change at1.3.1→1.4.0. It is not assigned to MP150-024's later authored dropdown-priority fix or forced into a vaguely worded vendor bullet. Callback consumers, producers of the100 sentinel, live selection and actual UI outcomes remain follow-ups. No target, instruction probe, menu, compiler or Ghidra write was used.
+
+
+## Shared list bounds change padding and special-width admission in140
+
+**MP140-026: partial static support; visible alignment of every list untested.** The [bounds audit](evidence/audits/dropdown-padding-history.json), reproduced with `python3 analysis/scripts/audit_dropdown_padding_history.py`, pins131/140 archives/EXEs and compares complete declared envelopes `004628d0..004629bf` (239 bytes) and `00464560..004646db` (379 bytes). All48/28 differing bytes respectively lie in the captured predicate-selection regions or four changed arithmetic immediates.
+
+| Arithmetic site |131 |140 |Output |
+|---|---:|---:|---|
+|`00462971`, `004645ea` |Add5 |Add15 |Width-like WORD at entry+1Eh after adding measured extent and selected allowance |
+|`0046297f`, `004645f8` |Add5 |Add2 |Height-like WORD at entry+20h after row field shifted left4 |
+
+The width allowance also changes.131's first routine selects35 for names tracks/rectrk regardless of R=`006fd3b8`; the second selects35 for every R=3 case, otherwise15.140 replaces both decisions with shared helper `00472924..00472959`: allowance35 only when **R=3 AND name matches tracks or rectrk**, otherwise15. This is a second mechanism distinct from the5→15 padding term.
+
+Under equal ordinary measured widths, the shared normal allowance15 produces an additive total20→30; retained special allowance35 produces40→50. Where140 removes a former special allowance, the total changes40→30 instead. Height's fixed term decreases by3. These are derived arithmetic effects, not observed pixel dimensions; row fields differ between the two controls (+56h versus+5Ah), and their other geometry/placement consumers remain separate.
+
+Both paths ultimately store WORD results. Preserve low16-bit/truncation and x86 shift behaviour for exceptional inputs; do not translate the ordinary formulas into unconstrained signed C arithmetic or infer bounds safety. Complete byte accounting for these two routines does not prove every dropdown calls them, loaded label metrics are valid, or all on-screen padding is corrected. MP140-026 advances vendor-only→partial. No menu, target instructions, compiler or Ghidra write was used.

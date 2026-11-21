@@ -25,7 +25,7 @@ The [renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-his
 |[DX6 mode count](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) |Added increment affects public descriptor count, whose table has a leading slot |Leading-slot contents, full-capacity/alias/switch bounds and visible modes |
 |[Screenshot depth](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) |150 fixes partial-WORD local initialization before DWORD stride read; final core retained |Observed crash, XP specificity, complete capture/encoding stability |
 
-Current catalog labels are77 vendor-only/54 bounded-static/157 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
+Current catalog labels are76 vendor-only/54 bounded-static/158 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
 
 ## Renderer, menu and screenshot follow-up checkpoint
 
@@ -685,7 +685,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **77 Claimed, 54 Static, 157 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **76 Claimed, 54 Static, 158 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -846,7 +846,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-023 | Noticeable “More...” button in the credits (opens the 3D panoramas of the developers). | Partial |
 | MP140-024 | Credits page with the 3D panoramas of the developers has same controls, as general credits (with Back and Next buttons). | Partial |
 | MP140-025 | Increased quantity of visible elements in some long drop down lists (resolution list, car lists). | Partial |
-| MP140-026 | Fixed unaligned paddings of the all drop down lists. | Claimed |
+| MP140-026 | Fixed unaligned paddings of the all drop down lists. | Partial |
 | MP140-027 | “Reset To Defaults” button in the Controllers menu was shifted one position down. | Partial |
 | MP140-028 | “Predefined Keys”, “View Car Interior”, “Load”, and “IPX connection” are aligned well. | Claimed |
 | MP140-029 | NoMovie ini setting also disables demo movies on menu idle. | Partial |
@@ -1277,3 +1277,8 @@ The [pixel-format follow-up](original-modern-hud-layout.md#game-side-pixel-forma
 ## HUD top-selector availability gains a historical mechanism
 
 The [131/140 policy/asset comparison](original-modern-hud-settings-policy.md#hud-selector-policy-simplifies-at131-to140) verifies removal of the all-three-suppressed branch, local list publication on both session arms and removal of one legacy droplist. Selected retained-control fields and old list arrays remain unchanged. MP140-034 advances to partial; initial flags, other dispatch and visible availability remain unverified. Current catalog labels are77 vendor-only/54 bounded-static/157 partial/2 unresolved.
+
+
+## Shared dropdown padding change identified at131-to140
+
+The [two-routine comparison](original-modern-common-menu-buttons.md#shared-list-bounds-change-padding-and-special-width-admission-in140) accounts for all76 changed bytes in the selected bounds envelopes: additive width5→15, height5→2, and a shared predicate narrowing the35-unit allowance to track-list names in mode3. Widths can increase or decrease depending on that allowance, so this is not a blanket widening. MP140-026 advances to partial; all-list reachability and visual alignment remain untested. Current labels are76 vendor-only/54 bounded-static/158 partial/2 unresolved.

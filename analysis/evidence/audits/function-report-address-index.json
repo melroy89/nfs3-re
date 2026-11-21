@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "add46396e6b39b83b75db2f782f95bd741bca18613044a51528cd2965ea52184"
+      "sha256": "71a82b1a49e6f8167d91af3be6784ab7f0350d88fc759f3b70b580f488d2895b"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -61,7 +61,7 @@
     },
     {
       "path": "analysis/original-modern-common-menu-buttons.md",
-      "sha256": "b84e572b30d89f82a2f2c5ff984cefd8fba33b7d6f7230a129883802e415e575"
+      "sha256": "764ce2828a028845b887013196132fd26e798a905cd394bd8516540433b035cc"
     },
     {
       "path": "analysis/original-modern-config-loading.md",
@@ -4745,7 +4745,9 @@
           "path": "analysis/original-modern-common-menu-buttons.md",
           "entry_mentioned": true,
           "addresses": [
-            "004628d0"
+            "004628d0",
+            "00462971",
+            "0046297f"
           ]
         }
       ]
@@ -5371,6 +5373,13 @@
           "entry_mentioned": false,
           "addresses": [
             "00472940"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-common-menu-buttons.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "00472924"
           ]
         },
         {
