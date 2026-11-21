@@ -375,3 +375,12 @@ The expanded [historical HUD audit](evidence/audits/opponent-name-menu-history.j
 Indices are zero-based. Grouped profile rows represent separate equal changes; the machine-readable manifest enumerates all14 individually. Slot12 has the Name consumer linkage above. Slots3/6/15 remain identified by layout position rather than guessed widget names. Their changed bounds are available for later reconstruction decisions without requiring another table discovery pass. Complete scaler-call admission, all attachment/override writes and visible effects remain unverified.
 
 Historical address note: `004f9404`/`004f9418` here name conversion helpers in the pinned131/140 EXEs. The saved final database assigns different functions to these addresses. Address-index cross-links are navigation aids, not proof of cross-version function identity; use each capture's version/hash before applying a label or annotation.
+
+
+### Local initialization loop explicitly scales slot12
+
+The [historical audit](evidence/audits/opponent-name-menu-history.json) now captures `00484c10..00484c5d` (77 bytes), identical131/140. It loads dimensions from `007cdac8/007cdacc`, initializes local index0 and slot0, and calls `00480910` at `00484c43`. The loop visits slots0 through22 for local indices0 and1, so **slot12 is explicitly included**. This establishes the selected local call path, not entry into the initializer in every session or absence of subsequent writes.
+
+The complete text adapter `004897f0..004898a4` (180 bytes) is also identical131/140. It accepts the Name text pointer through EAX and six stack values, eventually returning with RET18h; it branches on an alignment value and uses lower text helpers including `004d1390`, `004d1480`, `004d10e0` and `004d1000`. The earlier consumer passes the selected geometry values into this adapter. Its retained body does not prove equal output when the supplied geometry changes, or establish the lower text ABI/transitive rendering behaviour.
+
+This supersedes the earlier local scaler-call gap. The still-required evidence is full initializer admission/timing, geometry edits after scaling, mirror rectangle linkage and lower text coordinate interpretation/rendering. The exact “just under the mirror” claim remains partial; no live HUD was observed.

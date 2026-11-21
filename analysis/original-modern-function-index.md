@@ -291,7 +291,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004cd4e0` | RunGameWindowMessageLoop | 387 | 16 | [window-handling](original-modern-window-handling.md), [window-key](original-modern-window-key.md) |
 | `004cd6c0` | InitializeGameWindow | 918 | 514 | [window-handling](original-modern-window-handling.md) |
 | `004cdc50` | UpdateScreenshotRequestRepeatState | 107 | 100 | [input-worker](original-modern-input-worker.md), [movie-screenshots](original-modern-movie-screenshots.md), [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md), [window-handling](original-modern-window-handling.md) |
-| `004d10e0` | RenderBitmapTextAtRightAnchor | 52 | 5 | [numeric-scale](original-modern-numeric-scale.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
+| `004d10e0` | RenderBitmapTextAtRightAnchor | 52 | 5 | [hud-layout](original-modern-hud-layout.md), [numeric-scale](original-modern-numeric-scale.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004d1430` | MeasureTextAdvance | 32 | 31 | [car-alias](original-modern-car-alias.md), [numeric-scale](original-modern-numeric-scale.md), [og-modern-x87-precision](og-modern-x87-precision.md) |
 | `004d1450` | SetBitmapTextColor | 6 | 6 | [car-alias](original-modern-car-alias.md), [numeric-scale](original-modern-numeric-scale.md) |
 | `004d1750` | LoadSelectedLocalizedTextTable | 95 | 92 | [command-line](original-modern-command-line.md), [language-table](original-modern-language-table.md) |

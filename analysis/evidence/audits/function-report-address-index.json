@@ -173,7 +173,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "65f692100c4370e8b1b3a903bf51729db7d72fb686f8ff4de09c3ffcd50ba2b1"
+      "sha256": "473719ba244ce8a27b38bb5a5f73559bf2324ba87563d392da219d7e4fd188c9"
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -11496,6 +11496,13 @@
       "original_sha256": "719f150231e2aac6dcbbe0a79e675d40ae2d259ba6f307eaddd442b29fc2de44",
       "modern_sha256": "5e12886786f33a5ddceb773286abb5d5dd48c1a7574bd953a63e2563d8d33974",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004d10e0"
+          ]
+        },
         {
           "path": "analysis/original-modern-numeric-scale.md",
           "entry_mentioned": true,
