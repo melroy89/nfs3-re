@@ -343,3 +343,12 @@ Aligned disassembly confirms that each loading site follows a call to
 `00495230` and precedes the poll at `004a33d0`. Surrounding control
 flow differs, so the retained local order does not establish equal
 invocation counts per race.
+
+Packaged 1.5.3's `tunenames` descriptor at `00556be0` binds the
+same selector and 16 label IDs as final. Packaged 1.5.2 instead points
+to the shorter list at `00556320`. The 1.5.3 package's
+`fedata/text/text.eng` (SHA-256
+`26b6415603a3bd20645ed905bbcc3f1ca8eb9dc2fa3488ed9ac9b95231bc4dd5`)
+decodes ordinals 13–15 as Random (Rock or Techno), Random (Rock), and
+Random (Techno). This verifies the historical labels and descriptor
+binding alongside the executable's mode rules. Playback remains untested.
