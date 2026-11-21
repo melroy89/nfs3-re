@@ -152,8 +152,330 @@
       ]
     }
   ],
+  "producer_followup": {
+    "captures": [
+      {
+        "name": "complete_path_initializer",
+        "start": "004a6ec4",
+        "end_exclusive": "004a6f2e",
+        "hex": "6031c9be2cf45300bab4277a0089d7acaa84c075fa4181c28000000083f9167cec8b0d503a7a00ba342b7a0089d7e85125050089fbbe34267a00e8b524050066c7075c0089d0e85d22050085c0751389dfbef0ea5300e89924050066c7075c0031c9890d64277a0061c3",
+        "disassembly": [
+          "4a6ec4:\t60                   \tpusha",
+          "4a6ec5:\t31 c9                \txor    ecx,ecx",
+          "4a6ec7:\tbe 2c f4 53 00       \tmov    esi,0x53f42c",
+          "4a6ecc:\tba b4 27 7a 00       \tmov    edx,0x7a27b4",
+          "4a6ed1:\t89 d7                \tmov    edi,edx",
+          "4a6ed3:\tac                   \tlods   al,BYTE PTR ds:[esi]",
+          "4a6ed4:\taa                   \tstos   BYTE PTR es:[edi],al",
+          "4a6ed5:\t84 c0                \ttest   al,al",
+          "4a6ed7:\t75 fa                \tjne    0x4a6ed3",
+          "4a6ed9:\t41                   \tinc    ecx",
+          "4a6eda:\t81 c2 80 00 00 00    \tadd    edx,0x80",
+          "4a6ee0:\t83 f9 16             \tcmp    ecx,0x16",
+          "4a6ee3:\t7c ec                \tjl     0x4a6ed1",
+          "4a6ee5:\t8b 0d 50 3a 7a 00    \tmov    ecx,DWORD PTR ds:0x7a3a50",
+          "4a6eeb:\tba 34 2b 7a 00       \tmov    edx,0x7a2b34",
+          "4a6ef0:\t89 d7                \tmov    edi,edx",
+          "4a6ef2:\te8 51 25 05 00       \tcall   0x4f9448",
+          "4a6ef7:\t89 fb                \tmov    ebx,edi",
+          "4a6ef9:\tbe 34 26 7a 00       \tmov    esi,0x7a2634",
+          "4a6efe:\te8 b5 24 05 00       \tcall   0x4f93b8",
+          "4a6f03:\t66 c7 07 5c 00       \tmov    WORD PTR [edi],0x5c",
+          "4a6f08:\t89 d0                \tmov    eax,edx",
+          "4a6f0a:\te8 5d 22 05 00       \tcall   0x4f916c",
+          "4a6f0f:\t85 c0                \ttest   eax,eax",
+          "4a6f11:\t75 13                \tjne    0x4a6f26",
+          "4a6f13:\t89 df                \tmov    edi,ebx",
+          "4a6f15:\tbe f0 ea 53 00       \tmov    esi,0x53eaf0",
+          "4a6f1a:\te8 99 24 05 00       \tcall   0x4f93b8",
+          "4a6f1f:\t66 c7 07 5c 00       \tmov    WORD PTR [edi],0x5c",
+          "4a6f24:\t31 c9                \txor    ecx,ecx",
+          "4a6f26:\t89 0d 64 27 7a 00    \tmov    DWORD PTR ds:0x7a2764,ecx",
+          "4a6f2c:\t61                   \tpopa",
+          "4a6f2d:\tc3                   \tret"
+        ]
+      },
+      {
+        "name": "attribute_wrapper",
+        "start": "004f915e",
+        "end_exclusive": "004f916a",
+        "hex": "515250ff15204553005a59c3",
+        "disassembly": [
+          "4f915e:\t51                   \tpush   ecx",
+          "4f915f:\t52                   \tpush   edx",
+          "4f9160:\t50                   \tpush   eax",
+          "4f9161:\tff 15 20 45 53 00    \tcall   DWORD PTR ds:0x534520",
+          "4f9167:\t5a                   \tpop    edx",
+          "4f9168:\t59                   \tpop    ecx",
+          "4f9169:\tc3                   \tret"
+        ]
+      },
+      {
+        "name": "directory_predicate",
+        "start": "004f916c",
+        "end_exclusive": "004f9184",
+        "hex": "e8edffffff83f8ff740ba910000000740431c040c331c0c3",
+        "disassembly": [
+          "4f916c:\te8 ed ff ff ff       \tcall   0x4f915e",
+          "4f9171:\t83 f8 ff             \tcmp    eax,0xffffffff",
+          "4f9174:\t74 0b                \tje     0x4f9181",
+          "4f9176:\ta9 10 00 00 00       \ttest   eax,0x10",
+          "4f917b:\t74 04                \tje     0x4f9181",
+          "4f917d:\t31 c0                \txor    eax,eax",
+          "4f917f:\t40                   \tinc    eax",
+          "4f9180:\tc3                   \tret",
+          "4f9181:\t31 c0                \txor    eax,eax",
+          "4f9183:\tc3                   \tret"
+        ]
+      },
+      {
+        "name": "copy_string",
+        "start": "004f93b8",
+        "end_exclusive": "004f93c5",
+        "hex": "5031c0acaa84c075fa4e4f58c3",
+        "disassembly": [
+          "4f93b8:\t50                   \tpush   eax",
+          "4f93b9:\t31 c0                \txor    eax,eax",
+          "4f93bb:\tac                   \tlods   al,BYTE PTR ds:[esi]",
+          "4f93bc:\taa                   \tstos   BYTE PTR es:[edi],al",
+          "4f93bd:\t84 c0                \ttest   al,al",
+          "4f93bf:\t75 fa                \tjne    0x4f93bb",
+          "4f93c1:\t4e                   \tdec    esi",
+          "4f93c2:\t4f                   \tdec    edi",
+          "4f93c3:\t58                   \tpop    eax",
+          "4f93c4:\tc3                   \tret"
+        ]
+      },
+      {
+        "name": "find_terminator",
+        "start": "004f9448",
+        "end_exclusive": "004f9451",
+        "hex": "803f00740347ebf8c3",
+        "disassembly": [
+          "4f9448:\t80 3f 00             \tcmp    BYTE PTR [edi],0x0",
+          "4f944b:\t74 03                \tje     0x4f9450",
+          "4f944d:\t47                   \tinc    edi",
+          "4f944e:\teb f8                \tjmp    0x4f9448",
+          "4f9450:\tc3                   \tret"
+        ]
+      }
+    ],
+    "initialized_path_slots": [
+      {
+        "slot": 0,
+        "destination": "007a27b4",
+        "text": ".\\gamedata\\tracks\\"
+      },
+      {
+        "slot": 1,
+        "destination": "007a2834",
+        "text": ".\\gamedata\\tracks\\tutor\\"
+      },
+      {
+        "slot": 2,
+        "destination": "007a28b4",
+        "text": ".\\gamedata\\carmodel\\"
+      },
+      {
+        "slot": 3,
+        "destination": "007a2934",
+        "text": ".\\gamedata\\render\\pc\\"
+      },
+      {
+        "slot": 4,
+        "destination": "007a29b4",
+        "text": ".\\gamedata\\dashhud\\"
+      },
+      {
+        "slot": 5,
+        "destination": "007a2a34",
+        "text": ".\\gamedata\\audio\\pc\\"
+      },
+      {
+        "slot": 6,
+        "destination": "007a2ab4",
+        "text": ".\\gamedata\\audio\\sfx\\"
+      },
+      {
+        "slot": 7,
+        "destination": "007a2b34",
+        "text": ".\\gamedata\\audio\\speech\\"
+      },
+      {
+        "slot": 8,
+        "destination": "007a2bb4",
+        "text": ".\\fedata\\"
+      },
+      {
+        "slot": 9,
+        "destination": "007a2c34",
+        "text": ".\\fedata\\plac\\car.viv"
+      },
+      {
+        "slot": 10,
+        "destination": "007a2cb4",
+        "text": ".\\fedata\\movies\\"
+      },
+      {
+        "slot": 11,
+        "destination": "007a2d34",
+        "text": ".\\fedata\\menus\\"
+      },
+      {
+        "slot": 12,
+        "destination": "007a2db4",
+        "text": ".\\fedata\\art\\"
+      },
+      {
+        "slot": 13,
+        "destination": "007a2e34",
+        "text": ".\\fedata\\text\\"
+      },
+      {
+        "slot": 14,
+        "destination": "007a2eb4",
+        "text": ".\\fedata\\text\\"
+      },
+      {
+        "slot": 15,
+        "destination": "007a2f34",
+        "text": ".\\fedata\\save\\"
+      },
+      {
+        "slot": 16,
+        "destination": "007a2fb4",
+        "text": ".\\fedata\\stats\\"
+      },
+      {
+        "slot": 17,
+        "destination": "007a3034",
+        "text": ".\\fedata\\config\\"
+      },
+      {
+        "slot": 18,
+        "destination": "007a30b4",
+        "text": ".\\fedata\\stats\\carspecs\\"
+      },
+      {
+        "slot": 19,
+        "destination": "007a3134",
+        "text": ".\\fedata\\art\\slides\\"
+      },
+      {
+        "slot": 20,
+        "destination": "007a31b4",
+        "text": ".\\fedata\\art\\track\\"
+      },
+      {
+        "slot": 21,
+        "destination": "007a3234",
+        "text": ".\\fedata\\art\\showcase\\"
+      }
+    ],
+    "filename_letter_tables": {
+      "original": [
+        {
+          "address": "00409ff0",
+          "pointers": [
+            "005364b4",
+            "005364b8",
+            "005364bc",
+            "005364c0",
+            "005364c4",
+            "005364b4",
+            "005364b4"
+          ],
+          "letters": [
+            "E",
+            "G",
+            "F",
+            "S",
+            "I",
+            "E",
+            "E"
+          ]
+        },
+        {
+          "address": "00412950",
+          "pointers": [
+            "005369b0",
+            "005369b4",
+            "005369b8",
+            "005369bc",
+            "005369c0",
+            "005369b0",
+            "005369b0"
+          ],
+          "letters": [
+            "E",
+            "G",
+            "F",
+            "S",
+            "I",
+            "E",
+            "E"
+          ]
+        }
+      ],
+      "official_modern": [
+        {
+          "address": "00409ff0",
+          "pointers": [
+            "005364b4",
+            "005364b8",
+            "005364bc",
+            "005364c0",
+            "005364c4",
+            "0053a9b4",
+            "005364b4"
+          ],
+          "letters": [
+            "E",
+            "G",
+            "F",
+            "S",
+            "I",
+            "W",
+            "E"
+          ]
+        },
+        {
+          "address": "00412950",
+          "pointers": [
+            "005369b0",
+            "005369b4",
+            "005369b8",
+            "005369bc",
+            "005369c0",
+            "0053a9b4",
+            "005369b0"
+          ],
+          "letters": [
+            "E",
+            "G",
+            "F",
+            "S",
+            "I",
+            "W",
+            "E"
+          ]
+        }
+      ]
+    },
+    "verified": [
+      "Copy/find helpers retainECX;GetFileAttributes wrapper explicitly saves/restoresECX/EDX.",
+      "Directory predicate returns1 for attributes!=ffffffff and directory bit10h set;other outcomes0.",
+      "Selected language string appends to speech base;false predicate replaces suffix withenglish and sets cached selector0.",
+      "FallbackEnglish directory and individual banks are not checked again in this initializer."
+    ],
+    "limits": [
+      "No historical120 boundary established by this original/final producer follow-up.",
+      "No playback/crash proof,all selector writers,pointer validity or concurrency/lifetime model.",
+      "String helpers require valid terminated buffers and ordinary DF;local code has no length bound."
+    ]
+  },
   "limits": [
     "No game or audio execution; no asset availability validation.",
-    "Modern initializer helper contracts and all selector writers are not proved here."
+    "Selected initializer/helper contracts now captured;all selector writers,lifetimes and runtime outcomes remain unverified."
   ]
 }

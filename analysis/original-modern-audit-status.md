@@ -24,7 +24,9 @@ The expanded [early120 DX6 mode audit](original-modern-display-modes.md#early120
 
 The subsequent [130→131 DirectX OS-gate audit](original-modern-startup-requirements.md#historical130-to131-lowers-the-directx-probe-os-gate) proves a single-byte major-version threshold5→4 in the complete540-byte probe, with retained caller/import/header. MP131-003 gains partial support; actual Windows98/Me compatibility remains unverified. This new audit is outside these22 checkpoint runs.
 
-Current catalogue remains **49 vendor-only,56 bounded-static,185 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
+The subsequent [speech producer follow-up](original-modern-sound-bank-language.md#cached-selector-producer-checks-a-directory-and-requests-english-fallback) resolves helper preservation and directory-based English fallback, plus two Swedish E→W tables. MP120-012 gains partial support; fallback does not recheck English/files, and historical introduction/playback remain unverified. This expanded audit is outside these22 checkpoint runs.
+
+Current catalogue remains **48 vendor-only,56 bounded-static,186 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
 
 
 ## Current HUD, Glide, projection and affinity checkpoint — 2026-11-21

@@ -18,7 +18,7 @@ At `0040a1a6`, `00413794`, `00414294`, `00414320` and `00414684`, original loads
 
 The [language-table investigation](original-modern-language-table.md) establishes `006fbb4c` as the active language field in the inspected loader/configuration flow. Modern therefore decouples these sound-bank selections from direct reads of that field. This alone does not prove that every language gets distinct audio assets or that an arbitrary selector is safe: unchanged indexed lookups still require their established domain.
 
-A retained Modern initialization witness `004a6ec4..004a6f2e` reads configured selector `007a3a50`, works on the path buffer `007a2b34`, calls `004f9448`, `004f93b8` and `004f916c`, then writes ECX to `007a2764` at `004a6f26`. The branch after `004f916c` either reaches the store without another local ECX assignment or takes a path that explicitly zeros ECX before the store. The cached field consequently has an initialization/fallback route. The three helpers' full contracts and register preservation are not established by this bounded comparison; interpreting this as a fully verified language-availability test would overstate the evidence. Its original same-address bytes are retained for inspection, not asserted to be a corresponding original initializer.
+A retained Modern initialization witness `004a6ec4..004a6f2e` reads configured selector `007a3a50`, works on the path buffer `007a2b34`, calls `004f9448`, `004f93b8` and `004f916c`, then writes ECX to `007a2764` at `004a6f26`. The branch after `004f916c` either reaches the store without another local ECX assignment or takes a path that explicitly zeros ECX before the store. The cached field consequently has an initialization/fallback route. The initial bounded comparison left helper contracts open; the [producer follow-up below](#cached-selector-producer-checks-a-directory-and-requests-english-fallback) now resolves their selected register/path behavior. Individual-file availability and successful playback remain separate. Its original same-address bytes are retained for inspection, not asserted to be a corresponding original initializer.
 
 ## Language-indexed path switch becomes one shared buffer
 
@@ -41,7 +41,7 @@ After `00413c15`, the entire remaining envelope is byte-identical except the thr
 
 **Work status: done for the three bounded code comparisons. Evidence confidence: verified static bytes and control flow.** Keep the cached selector separate from the active text-language field, and preserve initialization order and the shared path buffer's lifetime in a Modern reconstruction. An original reconstruction needs the original six-way mapping and out-of-range behavior instead.
 
-**Unresolved:** full cached-selector producer/helper contracts, other writes or aliases, path-buffer capacities, installed language/audio assets and actual playback. These affect runtime validation and initialization/data reconstruction. Follow up by reusing the language/configuration research to qualify those helpers and asset provenance; do not treat these three functions as proof of all language/audio behavior. No target instructions, audio tests or Ghidra changes were run in this pass.
+**Unresolved:** complete producer lifecycle, other writes or aliases, path-buffer validity/capacity on arbitrary inputs, installed language/audio assets and actual playback. The selected helper contracts are resolved in the follow-up below. These affect runtime validation and initialization/data reconstruction. Follow up by reusing the language/configuration research to qualify those helpers and asset provenance; do not treat these three functions as proof of all language/audio behavior. No target instructions, audio tests or Ghidra changes were run in this pass.
 
 ## Sequence and police-radio loaders use the same shared-path policy
 
@@ -61,3 +61,30 @@ The sequence loader preserves its incoming index in ECX, selects a pointer from 
 Saved Modern body unions omit each 43-byte gap: their 125/212 body-byte counts must not be mistaken for the 168/255-byte complete envelopes. The audit includes those removed switch instructions, not just the surviving bodies.
 
 **Bounded work status: done; confidence: verified static paths, tables and complete bodies.** The shared-buffer producer and runtime/audio/asset limitations above still apply. This establishes consolidation of additional path consumers, not that all audio localization is fully reconstructed or tested.
+
+## Cached-selector producer checks a directory and requests English fallback
+
+The expanded [sound-bank audit](evidence/audits/sound-bank-language-difference.json) now retains complete official-final path initializer004a6ec4..004a6f2e and its helper bodies. This closes the earlier helper-preservation question; it does not establish every writer, runtime initialization order or historical120 introduction.
+
+The initializer copies22 consecutive zero-terminated literals into128-byte slots starting007a27b4. The manifest records all22 names; each initial literal including terminator fits a slot. Slot7 is the speech base `.\gamedata\audio\speech\` at007a2b34. The constructor then takes configured selector007a3a50 in ECX, finds that base's terminator, appends normalized language-name buffer007a2634 and a trailing backslash, and tests the resulting path.
+
+|Helper |Verified selected contract |
+|---|---|
+|004f9448..004f9451 |Advances EDI to terminating zero; does not modify ECX |
+|004f93b8..004f93c5 |Copies through zero; leaves ESI/EDI at their terminators; preserves EAX and does not modify ECX |
+|004f915e..004f916a |Calls imported GetFileAttributesA; explicitly saves/restores ECX and EDX |
+|004f916c..004f9184 |Returns1 if attributes are notffffffffh and directory bit10h is set; otherwise0 |
+
+The ECX preservation is material: a true directory predicate leaves the configured selector intact for publication to007a2764. On false, the initializer rewinds EDI to the saved append position, copies literal `english`, appends backslash and explicitly clears ECX before publication. The final shared buffer and cached selector therefore have a concrete selected-language-or-English policy.
+
+False includes API failure or a path reported as a nondirectory, not just confirmed absence. The English fallback is **not checked again**, and individual sound-bank files are not validated by this directory predicate. A present language directory with missing banks does not trigger this local fallback; an absent English directory can still leave an unusable requested path. These are limitations of the observed code, not claims of reproduced crashes.
+
+The unbounded string loops require valid terminated source/destination storage and ordinary clear DF. Validated language names fit comfortably in the128-byte speech slot together with its initial prefix, but the local code does not enforce that bound against arbitrary corrupted inputs. Current directories, inherited path edits, aliases, later writers and concurrent loads require separate lifetime evidence.
+
+## Swedish filename code changes in two verified consumers
+
+Both seven-pointer filename-code tables00409ff0 and00412950 change **`E,G,F,S,I,E,E` → `E,G,F,S,I,W,E`** between supplied original and official final. The manifest retains every pointer and decoded byte string. Their corresponding functions copy these tables into locals, then the previously captured selectors0040a1a6/00413794 index them. The language mapping identifies Swedish as ordinal5, so the changed sixth entry is specifically E→W; it is not inferred from filename spelling alone.
+
+On a successful directory test with validated Swedish selection, the final producer preserves ordinal5 and the shared speech path's Swedish suffix, allowing those inspected consumers to select W. On the fallback route it publishes ordinal0 and requests English/E. This does not authenticate installed Swedish banks, prove case-sensitive filesystem behavior or establish all speech filename consumers.
+
+**MP120-012 advances vendor-only→partial:** selected final directory fallback and original/final Swedish filename-code changes support concrete portions of the claim. The exact110→120 introduction, every failure path and the promised absence of crashes/playback success remain unverified. No game, audio/API operation, instruction probe or Ghidra modification occurred; executable/database bytes are unchanged.

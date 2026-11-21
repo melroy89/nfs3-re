@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "49c7281050278b2384f7048d6316edd51657714ef15319b159bd1104e0aaf6c1",
-      "relative_links": 314
+      "sha256": "995de700f984dae6061c44d18818ed40f963361ec817193de351eb70439daffb",
+      "relative_links": 315
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "6e8fa8a3cf6c75ae22364ecdcda1310a48d4c4598090be51220616d509dc1936",
+      "sha256": "99de2878473960e59f26608e4ad677de96899834487f7cbf75c2d0bdaeb99798",
       "relative_links": 318
     },
     {
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "b10120e71275a969abe1300c292cb0952d4732f33946ecf80bb5f3d2b0ec005e",
-      "relative_links": 772
+      "sha256": "a980f7e6d0b8deef54c35e656f12bd25840dfe972e5b27fd4f717fb3ac3dab79",
+      "relative_links": 774
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -538,8 +538,8 @@
     },
     {
       "path": "analysis/original-modern-sound-bank-language.md",
-      "sha256": "182b118f352dffde470fd085cdbb6870a20831cd368c09e1fb0973a0000d6cca",
-      "relative_links": 5
+      "sha256": "103ba9013ca6152989627839841699f01403a41e22c882bed013f43b565ea1be",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-sound-reference-pair.md",
@@ -658,8 +658,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "b0f7eb5ee0b01186e052e254f9ba68890f602e6069160ce75db509918167a9be",
-      "relative_links": 264
+      "sha256": "bc419a8d4b97afdbf707c6d9743df38b5853771759414e54cff7b1b696c0d6b7",
+      "relative_links": 265
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 2986,
+  "relative_link_count": 2992,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
