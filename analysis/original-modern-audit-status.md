@@ -1,6 +1,19 @@
 # Original versus Modern audit: current stopping point
 
-## Current DX8 admission and activation checkpoint — 2026-11-21
+## Current historical DX5, configuration, language and HUD checkpoint — 2026-11-21
+
+The [four-audit checkpoint](evidence/validation/historical-dx5-config-language-hud-checkpoint.json) reviews `c15d718`: **8/8 static runs** reproduce four committed outputs; **12 protected artifacts and12 raw exports** match prior hashes. Reproduce with `python3 analysis/scripts/check_historical_dx5_config_language_hud.py`. This is primary-agent repeatability and preservation, not independent semantic review or runtime acceptance.
+
+|Investigation |Established |Remaining boundary |
+|---|---|---|
+|[DX5 modes](original-modern-dx5-reference-pair.md#historical131-to140-mode-count-and-depth-key-changes) |131→140 guard30→100, exact raw-depth matching and clear1200→4000; callback retained final |Visible catalog, complete capacity ownership and display activation |
+|[RemoteOnly](original-modern-language-table.md#remoteonly-reader-removal-is-dated131-to140) |131→140 shipped key/reader removed; caller supplies literal0 |Complete destination writers, shared overrides and vendor “useless” characterization |
+|[Language package](original-modern-language-table.md#six-language-tables-enter-the140-package) |140 adds six fully partitioned1,933-entry tables absent from131 archive |Installed asset provenance, translation quality and runtime loading |
+|[HUD presets/Name](original-modern-hud-layout.md#complete131-to140-preset-table-difference-inventory) |All144 table records compared:14 change; Name slot12 source/scaler/local loop/draw consumer linked |Slots3/6/15 identities, later writes, mirror-relative placement and rendered output |
+
+Current catalogue: **68 vendor-only,55 bounded-static,165 partial,2 unresolved** across290 release-note entries. These are evidence labels, not distinct EXE change counts or a completion percentage. The full comparison is still incomplete. Reference inventories and address navigation locate differences; they do not establish all changed semantics. Projection capture lifetime, preset−5 meaning and runtime compatibility remain unresolved. Next prioritize new changed mechanisms and the unassigned HUD slots, rather than repeating retained Name/scaler bodies or treating preset values as final pixels.
+
+## Earlier DX8 admission and activation checkpoint — 2026-11-21
 
 The [two-audit checkpoint](evidence/validation/dx8-admission-activation-checkpoint.json) reviews `033f062`: **4/4 static runs** reproduce two committed evidence outputs; **12 protected artifacts and12 raw exports** match the prior checkpoint hashes. Reproduce with `python3 analysis/scripts/check_dx8_admission_activation.py`. This is primary-agent repeatability and preservation, not independent semantic review or runtime acceptance.
 
@@ -9,7 +22,7 @@ The [two-audit checkpoint](evidence/validation/dx8-admission-activation-checkpoi
 |[DX8 catalog history](original-modern-display-modes.md#dx8-early-size-filter-and-later16-bit-admission) |110/140 builder identity;140→150 removes32-only admission; ordinary append/dedup and special-slot rules mapped |API output validity, complete consumers, historical ordering comparison and actual offered modes |
 |[DX8 activation and adjustment](original-modern-display-modes.md#dx8-ancillary-helper-selects-depthstencil-with-a-success-without-write-edge) |Retained140/150 activation, depth override/fallback and depth/stencil search; conditional success-without-write edge recorded |Selector/flag lifetime, slot/index validity, complete errors/synchronization and rendered results |
 
-Current catalog counts are **68 vendor-only,55 bounded-static,165 partial,2 unresolved** across290 release-note entries. They count evidence classifications, not distinct executable changes or completion percentages. The newer [DX5 historical audit](original-modern-dx5-reference-pair.md#historical131-to140-mode-count-and-depth-key-changes) adds partial support for MP140-039; the [RemoteOnly removal audit](original-modern-language-table.md#remoteonly-reader-removal-is-dated131-to140) adds partial support for MP140-067. The [language-package audit](original-modern-language-table.md#six-language-tables-enter-the140-package) adds bounded static support for MP140-070. The [Opponent Name slot12 audit](original-modern-hud-layout.md#slot12-source-presets-change-at131-to140) adds partial support for MP140-071. These four follow-ups are outside this DX8 checkpoint. The helper findings refine the existing partial DX8 claim; unchanged code is not another patch change. The broader comparison remains incomplete. Next prioritize unassigned changed mechanisms and historical claims, rather than repeatedly inspecting these retained helper bodies. Projection capture lifetime, preset−5 meaning and runtime compatibility remain unresolved.
+At this DX8 checkpoint the catalogue had72 vendor-only/54 bounded-static/162 partial/2 unresolved entries. The four later historical investigations are covered by the current checkpoint above. Unchanged helper code is not another patch change; full selector/device lifetime and rendered outcomes remain outside these static checks.
 
 ## Earlier menu policy and keyboard checkpoint — 2026-11-21
 
