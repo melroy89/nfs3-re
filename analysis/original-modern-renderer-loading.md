@@ -467,3 +467,16 @@ The audit retains the dispatcher prefix/table selection and these selected arms.
 The150 INI specifies `File=dx7a.dll`, `Type=d3d`, `FogSupport=0`, `DirectDrawLagFix=1`. The bundled DLL is an i386 PE with THRASH exports, including `_THRASH_setstate@8`. This verifies a configured provider is bundled, not merely a DLL name found in an EXE string. It does not prove which renderer an installed game selects, successful loading/device creation, or visible output. Absence is scoped to the named archive directory, not every renamed binary or earlier external distribution.
 
 This finding does **not** establish MP150-028's Motor City Online source ancestry or MP150-029's default dithering policy. Neither follows from the DLL name, typed3d option or inclusion date. The existing151/152 comparison separately establishes the later FogSupport opt-in change; it is not retroactively assigned to150. No provider, API or target instructions were executed and no Ghidra state was changed.
+
+
+## DX7 contains an explicit dithering-disable request
+
+**MP150-029: partial instruction/API support, not a validated default-state lifetime.** The [DX7 request audit](evidence/audits/dx7-dither-requests.json), reproduced with `python3 analysis/scripts/audit_dx7_dither_requests.py`, pins the150 archive/DLL from the package-introduction audit and cached Microsoft SDK header hashes.
+
+At `6000a6f8..6000a707`, the DLL loads object `60058d9c`, pushes value0 and state1Ah, then calls vtable+50h. The selected successful producer chain requests IID_IDirect3D7 at `600096ec` and uses CreateDevice to write that object at `60009f97..60009fb0`; the audit verifies its IID bytes and instruction witnesses. Microsoft's [IDirect3DDevice7 declaration](https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/d3d.h) places SetRenderState at slot20 (+50h for32-bit pointers), while [the state enum](https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/d3dtypes.h) identifies decimal26 as D3DRENDERSTATE_DITHERENABLE. This establishes a selected request to disable dithering, rather than guessing from an untyped numeric constant.
+
+The same150 dispatcher maps THRASH selector5 through table index5 to `60004b6e`. That branch compares EBX with EDX, selects value1 or0, and calls wrapper `60008a10` with state1Ah. The wrapper reaches the same object's vtable+50h after optional setup/flush work. The selector branch's complete input/EDX provenance and EXE callers remain unqualified here; it demonstrates an alternative request path, not an always-disabled invariant.
+
+The zero-request slice does not test the API result. Its enclosing setup block's entry/callers, all reset routes, subsequent state overrides and actual device output remain follow-up requirements before claiming the advertised default throughout rendering. No original-driver dithering comparison or Motor City Online ancestry is established. The static audit made no DLL/API/target-instruction calls and no Ghidra changes.
+
+Header inputs are cached under ignored `analysis/captures/modern-differences/dx7-api-headers/`; the manifest records source URLs and exact hashes. They are inspection inputs, not a newly installed SDK or toolchain.

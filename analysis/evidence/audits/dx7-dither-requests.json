@@ -1,0 +1,138 @@
+{
+  "kind": "static-dx7-dither-requests",
+  "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+  "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+  "member": "drivers/dx7/dx7a.dll",
+  "sha256": "e9e5671fdc054a0cee1295833d02644b07c765d0cbea9963dc7d27687f86cc11",
+  "sdk_headers": [
+    {
+      "path": "analysis/captures/modern-differences/dx7-api-headers/d3dtypes.h",
+      "sha256": "a111ecba9c6d90d3387a6442f7a8d482850b94cef97c8b43743ca3bbeffb6ba2",
+      "source": "https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/d3dtypes.h"
+    },
+    {
+      "path": "analysis/captures/modern-differences/dx7-api-headers/d3d.h",
+      "sha256": "0912630face1250f3afbbb340c5ff1cda16d23d9a00432ae3358e8595d67809a",
+      "source": "https://raw.githubusercontent.com/microsoft/win32metadata/main/generation/WinSDK/RecompiledIdlHeaders/um/d3d.h"
+    }
+  ],
+  "selector5_target": "60004b6e",
+  "captures": [
+    {
+      "name": "parent_query",
+      "start": "600096e5",
+      "end_exclusive": "60009704",
+      "hex": "a1808d05608b0868988d056068f85b016050ff1133f63bc6bb345701607424",
+      "sha256": "7e7d3bffb18983cbd3f2b2abb60c3205dade37c31006c39b9c12b29ce588d826",
+      "disassembly": [
+        "600096e5:\ta1 80 8d 05 60       \tmov    eax,ds:0x60058d80",
+        "600096ea:\t8b 08                \tmov    ecx,DWORD PTR [eax]",
+        "600096ec:\t68 98 8d 05 60       \tpush   0x60058d98",
+        "600096f1:\t68 f8 5b 01 60       \tpush   0x60015bf8",
+        "600096f6:\t50                   \tpush   eax",
+        "600096f7:\tff 11                \tcall   DWORD PTR [ecx]",
+        "600096f9:\t33 f6                \txor    esi,esi",
+        "600096fb:\t3b c6                \tcmp    eax,esi",
+        "600096fd:\tbb 34 57 01 60       \tmov    ebx,0x60015734",
+        "60009702:\t74 24                \tje     0x60009728"
+      ]
+    },
+    {
+      "name": "device_create",
+      "start": "60009f8a",
+      "end_exclusive": "60009fb4",
+      "hex": "8b15888d0560a1988d05608b08689c8d056052c7056c8d05600100000068e85b016050ff51103bc67423",
+      "sha256": "69d8ff7cd125534a75abbf853110b50e112dfdf478fc199b7fcb1a93d9d703e1",
+      "disassembly": [
+        "60009f8a:\t8b 15 88 8d 05 60    \tmov    edx,DWORD PTR ds:0x60058d88",
+        "60009f90:\ta1 98 8d 05 60       \tmov    eax,ds:0x60058d98",
+        "60009f95:\t8b 08                \tmov    ecx,DWORD PTR [eax]",
+        "60009f97:\t68 9c 8d 05 60       \tpush   0x60058d9c",
+        "60009f9c:\t52                   \tpush   edx",
+        "60009f9d:\tc7 05 6c 8d 05 60 01 \tmov    DWORD PTR ds:0x60058d6c,0x1",
+        "60009fa4:\t00 00 00",
+        "60009fa7:\t68 e8 5b 01 60       \tpush   0x60015be8",
+        "60009fac:\t50                   \tpush   eax",
+        "60009fad:\tff 51 10             \tcall   DWORD PTR [ecx+0x10]",
+        "60009fb0:\t3b c6                \tcmp    eax,esi",
+        "60009fb2:\t74 23                \tje     0x60009fd7"
+      ]
+    },
+    {
+      "name": "zero_request",
+      "start": "6000a6f8",
+      "end_exclusive": "6000a707",
+      "hex": "a19c8d05608b106a006a1a50ff5250",
+      "sha256": "c0404d06285524bdd53d9f0d3f7161f04b94e790c9003ceed8c760d9033e910d",
+      "disassembly": [
+        "6000a6f8:\ta1 9c 8d 05 60       \tmov    eax,ds:0x60058d9c",
+        "6000a6fd:\t8b 10                \tmov    edx,DWORD PTR [eax]",
+        "6000a6ff:\t6a 00                \tpush   0x0",
+        "6000a701:\t6a 1a                \tpush   0x1a",
+        "6000a703:\t50                   \tpush   eax",
+        "6000a704:\tff 52 50             \tcall   DWORD PTR [edx+0x50]"
+      ]
+    },
+    {
+      "name": "selector5_branch",
+      "start": "60004b6e",
+      "end_exclusive": "60004b8d",
+      "hex": "3bda74046a01eb026a006a1ae8913e00008b3d00ab056083c408e9831e0000",
+      "sha256": "d18c5934b1460d96b9de121538bca9c5210427f6f562d76c26e581b9909eeb53",
+      "disassembly": [
+        "60004b6e:\t3b da                \tcmp    ebx,edx",
+        "60004b70:\t74 04                \tje     0x60004b76",
+        "60004b72:\t6a 01                \tpush   0x1",
+        "60004b74:\teb 02                \tjmp    0x60004b78",
+        "60004b76:\t6a 00                \tpush   0x0",
+        "60004b78:\t6a 1a                \tpush   0x1a",
+        "60004b7a:\te8 91 3e 00 00       \tcall   0x60008a10",
+        "60004b7f:\t8b 3d 00 ab 05 60    \tmov    edi,DWORD PTR ds:0x6005ab00",
+        "60004b85:\t83 c4 08             \tadd    esp,0x8",
+        "60004b88:\te9 83 1e 00 00       \tjmp    0x60006a10"
+      ]
+    },
+    {
+      "name": "raw_state_wrapper",
+      "start": "60008a10",
+      "end_exclusive": "60008a47",
+      "hex": "a12c82016085c07505e8f2fdffffa17488056085c07e05e8f4e4ffff8b542408a19c8d05608b08528b5424085250ff5150f7d81bc040c3",
+      "sha256": "010ce1dcb8060dd0a43c647f57b550f39fc00353a87c2a2001ae929a82e10d59",
+      "disassembly": [
+        "60008a10:\ta1 2c 82 01 60       \tmov    eax,ds:0x6001822c",
+        "60008a15:\t85 c0                \ttest   eax,eax",
+        "60008a17:\t75 05                \tjne    0x60008a1e",
+        "60008a19:\te8 f2 fd ff ff       \tcall   0x60008810",
+        "60008a1e:\ta1 74 88 05 60       \tmov    eax,ds:0x60058874",
+        "60008a23:\t85 c0                \ttest   eax,eax",
+        "60008a25:\t7e 05                \tjle    0x60008a2c",
+        "60008a27:\te8 f4 e4 ff ff       \tcall   0x60006f20",
+        "60008a2c:\t8b 54 24 08          \tmov    edx,DWORD PTR [esp+0x8]",
+        "60008a30:\ta1 9c 8d 05 60       \tmov    eax,ds:0x60058d9c",
+        "60008a35:\t8b 08                \tmov    ecx,DWORD PTR [eax]",
+        "60008a37:\t52                   \tpush   edx",
+        "60008a38:\t8b 54 24 08          \tmov    edx,DWORD PTR [esp+0x8]",
+        "60008a3c:\t52                   \tpush   edx",
+        "60008a3d:\t50                   \tpush   eax",
+        "60008a3e:\tff 51 50             \tcall   DWORD PTR [ecx+0x50]",
+        "60008a41:\tf7 d8                \tneg    eax",
+        "60008a43:\t1b c0                \tsbb    eax,eax",
+        "60008a45:\t40                   \tinc    eax",
+        "60008a46:\tc3                   \tret"
+      ]
+    }
+  ],
+  "verified": [
+    "Selected successful factory chain produces IDirect3DDevice7 at60058d9c;SDK SetRenderState slot20 corresponds to+50h.",
+    "6000a6f8..6000a707 requests DITHERENABLE26 with value0 through that object.",
+    "THRASH selector5 targets60004b6e,which selects1/0 based on EBX versus EDX and calls raw state26 wrapper.",
+    "This supplies partial code support forMP150-029 without proving permanent/default runtime state."
+  ],
+  "limits": [
+    "Setup-block entry/callers,whole reset lifecycle,EDX producer for selector branch and all later overrides remain unresolved.",
+    "API/device success and visible dithering not observed;request result is not tested in retained zero-request slice.",
+    "No source lineage,original-driver dither policy or all-provider comparison established.",
+    "SDK headers are hashed cached inputs;fresh retrieval may differ and is not silently accepted.",
+    "No DLL/API/target instruction execution,compilation or Ghidra changes."
+  ]
+}

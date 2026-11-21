@@ -21,7 +21,7 @@ The [renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-his
 |[DX6 mode count](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) |Added increment affects public descriptor count, whose table has a leading slot |Leading-slot contents, full-capacity/alias/switch bounds and visible modes |
 |[Screenshot depth](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) |150 fixes partial-WORD local initialization before DWORD stride read; final core retained |Observed crash, XP specificity, complete capture/encoding stability |
 
-Current catalog labels are82 vendor-only/54 bounded-static/152 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
+Current catalog labels are81 vendor-only/54 bounded-static/153 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
 
 ## Renderer, menu and screenshot follow-up checkpoint
 
@@ -681,7 +681,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **82 Claimed, 54 Static, 152 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **81 Claimed, 54 Static, 153 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -795,7 +795,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-026 | Other insignificant improvements. | Claimed |
 | MP150-027 | DX7 renderer is included into this patch. Just for a collection :) | Static |
 | MP150-028 | Based on the dx7z.dll from the Motor City Online. | Claimed |
-| MP150-029 | Dithering is disabled by default. | Claimed |
+| MP150-029 | Dithering is disabled by default. | Partial |
 | MP150-030 | Resolutions under 640×480 are hidden. | Partial |
 | MP150-031 | Gameplay loading animation takes into account time of preliminary synchronization of a network game. | Partial |
 | MP150-032 | IntroSplashTime ini setting, which allows you to set duration of the intro splash image. | Partial |
@@ -1228,3 +1228,8 @@ The [historical pair](original-modern-screenshot-feedback.md#saved-counter-mecha
 ## DX7 bundling verified at140-to150 boundary
 
 The [archive comparison](original-modern-renderer-loading.md#dx7-provider-is-added-to-the150-package) verifies150 adds the configured i386 DX7 provider and INI under a directory absent in140. MP150-027 advances to bounded-static package support. Source ancestry, dithering policy, installed selection and device/rendering success remain separate; catalog labels now82 vendor-only/54 bounded-static/152 partial/2 unresolved.
+
+
+## DX7 dithering claim now has a concrete request witness
+
+The [150 provider/SDK audit](original-modern-renderer-loading.md#dx7-contains-an-explicit-dithering-disable-request) verifies an explicit DITHERENABLE0 request through the selected IDirect3DDevice7 object, plus a selector5 alternative request branch. MP150-029 advances vendor-only→partial. Enclosing setup reachability, complete default/reset lifetime, later overrides and actual output remain unverified; current labels are81 vendor-only/54 bounded-static/153 partial/2 unresolved.
