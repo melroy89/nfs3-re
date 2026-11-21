@@ -1235,6 +1235,124 @@
     "unchanged_bytes": 245716,
     "scope": "Complete code section only;8 reference-to150 plus36 disjoint later deltas,all locally classified."
   },
+  "reference_to_final_noncode": {
+    "equal_sections": {
+      "imports": {
+        "rva": "0003d000",
+        "bytes": 2048,
+        "identical": true,
+        "sha256": "fe5935e263ac2ec3c0020f3a6aa408a3a422f23290e90791dc80b1462f68c604"
+      },
+      "file_backed_data": {
+        "rva": "0003e000",
+        "bytes": 6656,
+        "identical": true,
+        "sha256": "f98bf7fd90170da4a1fc9dc0f8647f62e70037f172b8ed3c8f9b348bcb8cffdc"
+      },
+      "exports": {
+        "rva": "00043000",
+        "bytes": 1536,
+        "identical": true,
+        "sha256": "8bf0104bcdb5e5e47e3262b052d81cd496f101cb9dd1b74b0abeb55774976ab7"
+      }
+    },
+    "relocations": {
+      "reference_nonabsolute_count": 9115,
+      "final_nonabsolute_count": 9116,
+      "removed": [
+        {
+          "type": 3,
+          "rva": "000037bf"
+        }
+      ],
+      "added": [
+        {
+          "type": 3,
+          "rva": "000036c5"
+        },
+        {
+          "type": 3,
+          "rva": "000037c2"
+        }
+      ]
+    },
+    "reference_overlay": {
+      "file_offset": 275968,
+      "bytes": 28514,
+      "sha256": "6fc8a2ea5cfe3119137fd82716a554db3056fd95a78cb32fd81366dd84378d28",
+      "format": "ELF32 little-endian i386 ET_EXEC,entry0;contains DWARF debug sections",
+      "sections": [
+        {
+          "name": ".debug_info",
+          "type": 1,
+          "offset": 252,
+          "bytes": 22480,
+          "sha256": "b319e4e61f6a53d7ca5252eb920a51ca3dec34bafbbf7ed690438079cdab6a5d"
+        },
+        {
+          "name": ".debug_abbrev",
+          "type": 1,
+          "offset": 22732,
+          "bytes": 38,
+          "sha256": "ea53db6548beabb1d3ad9c2c4798f7addf25b55a099928647caefcf890d69d8d"
+        },
+        {
+          "name": ".debug_aranges",
+          "type": 1,
+          "offset": 22770,
+          "bytes": 5676,
+          "sha256": "15c1103907f4d74e26899a7367d40872f762ea6b3f5daca3ffe2c55a69560c6e"
+        },
+        {
+          "name": ".shstrtab",
+          "type": 3,
+          "offset": 28446,
+          "bytes": 52,
+          "sha256": "9cdff87bbc068bff241ebb83243966a4f683fe15933dfd0addf88b75cccb1dab"
+        }
+      ],
+      "trailing16_hex": "544953000000000000000000626f0000"
+    },
+    "final_overlay_bytes": 0,
+    "added_resource": {
+      "rva": "00049000",
+      "bytes": 1536,
+      "sha256": "eda1fa50d5b70de707d8298f1ffc3bb9d3f7b2314098233c6166854a0ec895e7",
+      "version_tables": [
+        {
+          "CompanyName": "Electronic Arts",
+          "FileDescription": "SoftTri Thrash Driver (API v104)",
+          "FileVersion": "2016.10.25.0006",
+          "InternalName": "SoftTri",
+          "LegalCopyright": "1998 Electronic Arts, 2016 VEG",
+          "OriginalFilename": "softtria.dll",
+          "ProductName": "SoftTri Thrash Driver Modern Patch",
+          "ProductVersion": "1.0.0",
+          "Comments": "Based on the softtria.dll from the Need For Speed III (Build Date: 1998/08/26)"
+        }
+      ]
+    },
+    "section_names": {
+      "reference": [
+        "AUTO",
+        ".idata",
+        "DGROUP",
+        ".bss",
+        ".edata",
+        ".reloc"
+      ],
+      "final": [
+        ".code",
+        ".idata",
+        ".data",
+        ".bss",
+        ".edata",
+        ".reloc",
+        ".rsrc"
+      ]
+    },
+    "limits": "Header fields,debug semantics and every resource node not fully interpreted;BSS pointer0 is not file-backed initial data;not full runtime reconstruction."
+  },
   "api_layout_sources": [
     "https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsysteminfo",
     "https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/ns-sysinfoapi-system_info"

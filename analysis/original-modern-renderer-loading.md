@@ -650,3 +650,25 @@ For selector15h, the preceding unsigned comparisons establish EAX=15h on the tak
 The witnesses begin on verified instruction boundaries and retain the relevant return/branch targets. They are explicitly bounded spans, not an invented complete page-flip ABI. Every36-byte delta is locally assigned, but exact release introduction, callback publication/lifetime, transitive DirectDraw/renderer behavior and visible failure recovery remain unverified. This extends the original-reference/150/final difference map without claiming full SoftTri runtime equivalence. No target code was executed.
 
 Across the complete pinned reference/final SoftTri code extent, the audit now asserts **44 differing bytes and245,716 matching bytes**: the eight reference→150 changes and36 disjoint later changes above. This is a complete raw code-section delta assignment, not a complete PE/data/ABI/runtime reconstruction.
+
+
+### SoftTri non-code ledger: equal data, changed relocations and debug overlay
+
+The same expanded [SoftTri audit](evidence/audits/softtri-mode-fix-history.json) now records the following reference/final PE boundaries independently of the44-byte code delta:
+
+|Area |Reference→final evidence |
+|---|---|
+|Import section |All2,048 bytes at RVA3d000h identical |
+|File-backed data |All6,656 bytes at RVA3e000h identical |
+|Export section |All1,536 bytes at RVA43000h identical, corroborating34 matched exports |
+|Non-ABSOLUTE relocations |9,115→9,116 entries; remove HIGHLOW RVA37bfh, add HIGHLOW RVAs36c5h/37c2h |
+|Version resource |Final adds1,536-byte section at RVA49000h; reference has no such section |
+|Appended payload |Reference has28,514 bytes at file offset275,968; final has no overlay |
+
+The relocation changes correspond to the new lock-failure callback operand and moved page-flip callback operand already assigned above. Raw relocation-section bytes differ more extensively; comparing normalized entries avoids mistaking repacking for thousands of semantic code edits. File-backed data equality does not prove equality of subsequent initialization or runtime globals.
+
+The reference overlay begins ELF32 little-endian/i386 metadata, with type ET_EXEC and entry0. Its five-entry section-header table describes null plus `.debug_info` (22,480 bytes), `.debug_abbrev` (38), `.debug_aranges` (5,676) and `.shstrtab` (52). The audit retains offsets and hashes plus the final16 raw bytes. This establishes an appended DWARF carrier worth inspecting later; no source-code recovery, complete symbols/types or executable-purpose claim follows from its section names. It is not loaded as an ordinary PE section by this file layout.
+
+Section names AUTO/DGROUP become `.code`/`.data`; final also adds `.rsrc`. The new version metadata identifies “SoftTri Thrash Driver Modern Patch”, FileVersion2016.10.25.0006 and ProductVersion1.0.0. Its “Based on…” comment is self-description, not independent authentication of source ancestry. Header-field interpretation, every resource node and debug-payload semantics remain pending. BSS has raw pointer0 in both files, so file-offset0 bytes are not treated as BSS initial values.
+
+This ledger extends the reconstruction reference beyond C function bodies while preserving clear gaps. No ELF/PE payload, resource or target instruction was executed and no original/final bytes changed.

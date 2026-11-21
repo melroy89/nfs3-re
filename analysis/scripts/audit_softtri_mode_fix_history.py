@@ -1,5 +1,5 @@
 """Compare complete140/150 SoftTri code section and selected callback; static only."""
-import hashlib,json,subprocess
+import hashlib,json,subprocess,struct
 import pefile
 from audit_thrash_loader_difference import ROOT
 from audit_endpoint_comma_history import HISTORY
@@ -72,6 +72,26 @@ def main():
     result['later_final_boundary']['semantics']='All36 byte differences assigned to selector15h result retarget,lock-failure callback0 trampoline,and pageflip cleanup/callback order;callback ABI and runtime outcomes unresolved.'
     assert sum(a!=b for a,b in zip(refcode,finalcode))==44
     result['reference_to_final_code_summary']={'bytes':245760,'changed_bytes':44,'unchanged_bytes':245716,'scope':'Complete code section only;8 reference-to150 plus36 disjoint later deltas,all locally classified.'}
+    noncode={}
+    for name,rva,length in [('imports',0x3d000,2048),('file_backed_data',0x3e000,6656),('exports',0x43000,1536)]:
+        a=rp.get_data(rva,length);b=fp.get_data(rva,length);assert a==b
+        noncode[name]={'rva':f'{rva:08x}','bytes':length,'identical':True,'sha256':sha(a)}
+    relocsets=[set((e.type,e.rva)for block in image.DIRECTORY_ENTRY_BASERELOC for e in block.entries if e.type)for image in [rp,fp]]
+    removed=sorted(relocsets[0]-relocsets[1]);added=sorted(relocsets[1]-relocsets[0]);assert removed==[(3,0x37bf)]and added==[(3,0x36c5),(3,0x37c2)]
+    overlay_start=max(s.PointerToRawData+s.SizeOfRawData for s in rp.sections if s.PointerToRawData);overlay=reference[overlay_start:]
+    assert overlay_start==275968 and len(overlay)==28514 and overlay[:7]==b'\x7fELF\x01\x01\x01'
+    eh=struct.unpack_from('<16sHHIIIIIHHHHHH',overlay);assert eh[1:4]==(2,3,1)and eh[6]==52 and eh[11:14]==(40,5,4)
+    section_headers=[struct.unpack_from('<10I',overlay,eh[6]+i*40)for i in range(5)]
+    string_header=section_headers[4];strings=overlay[string_header[4]:string_header[4]+string_header[5]]
+    elfsections=[]
+    for sh in section_headers[1:]:
+        offset=sh[0];name=strings[offset:strings.index(0,offset)].decode();data=overlay[sh[4]:sh[4]+sh[5]]
+        elfsections.append({'name':name,'type':sh[1],'offset':sh[4],'bytes':sh[5],'sha256':sha(data)})
+    assert [s['name']for s in elfsections]==['.debug_info','.debug_abbrev','.debug_aranges','.shstrtab']
+    assert len(finalraw)==max(s.PointerToRawData+s.SizeOfRawData for s in fp.sections if s.PointerToRawData)
+    resource=fp.get_data(0x49000,1536);assert len(resource)==1536
+    tables=[t.entries for group in fp.FileInfo for info in group for t in getattr(info,'StringTable',[])]
+    result['reference_to_final_noncode']={'equal_sections':noncode,'relocations':{'reference_nonabsolute_count':len(relocsets[0]),'final_nonabsolute_count':len(relocsets[1]),'removed':[{'type':t,'rva':f'{v:08x}'}for t,v in removed],'added':[{'type':t,'rva':f'{v:08x}'}for t,v in added]},'reference_overlay':{'file_offset':overlay_start,'bytes':len(overlay),'sha256':sha(overlay),'format':'ELF32 little-endian i386 ET_EXEC,entry0;contains DWARF debug sections','sections':elfsections,'trailing16_hex':overlay[-16:].hex()},'final_overlay_bytes':0,'added_resource':{'rva':'00049000','bytes':1536,'sha256':sha(resource),'version_tables':[{k.decode():v.decode('utf-8')for k,v in t.items()}for t in tables]},'section_names':{'reference':[s.Name.rstrip(b'\0').decode()for s in rp.sections],'final':[s.Name.rstrip(b'\0').decode()for s in fp.sections]},'limits':'Header fields,debug semantics and every resource node not fully interpreted;BSS pointer0 is not file-backed initial data;not full runtime reconstruction.'}
     result['api_layout_sources']=['https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsysteminfo','https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/ns-sysinfoapi-system_info']
     result['findings']=['150 calls GetSystemInfo with ESP before reading local+4 and unsigned dividing by40 for count bound;32-bit SYSTEM_INFO+4 is dwPageSize.',
         '140 instead tests signed input height>=480 at that location,without the local API-buffer initialization in this callback.',
