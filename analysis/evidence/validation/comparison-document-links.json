@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "23ec497cd72c2e9b1b860453ba083b91b9af2dcac9e666265e6d6e0896a7067f",
-      "relative_links": 326
+      "sha256": "1961735ed09c83896c2af809b72c1f35c79143ed1f1c56f65329a479c29a9a23",
+      "relative_links": 327
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -208,8 +208,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "f5b1ed8e35b1f6fbdee2efb7b1acd2aa33bf7adc2be5f894b036663916db65c0",
-      "relative_links": 50
+      "sha256": "03c95da3045d955848af60038a33db30505d9379f1a77d0fa6184e9d3665dc5b",
+      "relative_links": 51
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -658,8 +658,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "b5718e824c63dd91834721c55df636399b5d9249ace06cd79a2a186e7b581677",
-      "relative_links": 273
+      "sha256": "43adc7e9838f31b5e01e680c8c109e5d4dc0646260be689b07fc976bb29b97aa",
+      "relative_links": 274
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3032,
+  "relative_link_count": 3035,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -434,3 +434,22 @@ Examples in source order: profile0/slot0 changes130,4,330,60→130,2,330,58; pro
 Both versions retain byte-identical initializer prefix00485680..004856c5, complete29-byte conversion helper004f9404..004f9421 and complete231-byte scaler00480910..004809f7. The initializer reads this table, converts WORD/1000 to binary32 and swaps adjacent source members into rectangle storage. It is therefore incorrect to describe a two-unit source decrement as automatically two screen pixels or to transfer final's DWORD stride to these historical files. Equal code also does not establish equal inputs, x87 state, later writes or rendered results.
 
 **MP130-004 advances vendor-only→partial:** the immediate120→130 pair supplies a concrete preset-data update consistent with “HUD was updated a little.” It does not establish all other HUD changes, rationale, visual quality or active-session placement. Reuse the separate131→140 inventory for later Name/Wrong Way/tutorial/tachometer evidence rather than attributing those later edits to130. No target instructions, UI, compiler or Ghidra changes occurred; executable/database bytes are unchanged.
+
+## Earlier130 also changes the x87 aspect-adjustment block
+
+The expanded [early HUD audit](evidence/audits/early-hud-preset-history.json) captures complete contiguous region004856c5..0048582c in120/130, including internal helpers and padding. **329 byte positions change.** The preceding69-byte copy prefix,29-byte WORD converter and231-byte downstream scaler remain identical as above; shared refresh/unwind tail0048582c..00485875 also matches. Prefix equality must not be generalized to the whole initializer.
+
+|Selected operation |120 |130 |
+|---|---|---|
+|Dimension operands for ratio work |DWORDs006fd1e4/006fd1e8 |DWORDs007a3920/007a3924 |
+|Small inverse-dimension term |`1/(2*Wold)` via FIDIV W then FIDIV2 |`k/Wnew` and additional `k/Hnew` |
+|Coefficient k |No corresponding pushed coefficient for this term |Binary32 bits3efff2e5, value approximately0.4999000132083893 |
+|Live x87 values discarded before shared tail |Five FSTP ST0 operations |Six iterations of FSTP ST0 |
+
+These formulas are algebraic shorthand for the selected arithmetic with ordinary positive, nonzero dimension operands, not a guarantee of final rounded float equality.120 performs two successive divisions; do not reassociate them into a signed-C `2*Wold` expression that can overflow or change rounding. The new coefficient resembles a half-pixel adjustment, but its rendered purpose and physical/logical provenance are not established solely by these instructions. The two dimension pairs must remain distinct until their producers/lifetimes are qualified.
+
+A concrete changed internal helper illustrates the hidden-register contract.120 helper0048579a..004857a9 loads `[EDI]`, adds its existing ST1 term and stores binary32.130 counterpart0048579b..004857ac adds the corresponding term **and ST4** before storing. At these calls, the newly built ST4 term after the temporary FLD is `k/Hnew`. Other bounding operations and helper addresses also change within the captured region; their full behavior is not replaced by this one example.
+
+These helpers consume ambient x87 stack values established by the parent frame; a direct C export with no arguments would conceal their inputs. Arithmetic stays in the x87 stack until its FSTP stores, so a sequence of binary32 temporary variables could change rounding or exception/status behavior. Width/height zero, negative/corrupt fields, rounding mode, caller precision settings and floating-point exceptions remain separate reconstruction contracts. Do not silently drop the small terms or label329 differing bytes as329 features.
+
+This strengthens MP130-004's partial support beyond changed presets: the same immediate release pair alters the selected aspect arithmetic and operand source. Actual HUD positions, visual improvements, all dimension producers and the full release-note scope remain unverified. This historical block also differs from the simpler final initializer described near the beginning; final helper addresses/stack contracts must not be copied backward. No target instructions, new probes, compilation, executable or Ghidra changes occurred.
