@@ -1,0 +1,178 @@
+{
+  "kind": "static-remoteonly-removal-history",
+  "versions": {
+    "1.3.1": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.1.7z",
+      "archive_sha256": "6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934",
+      "exe_sha256": "199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664",
+      "ini": {
+        "member": "nfs3.ini",
+        "sha256": "127dbcdffcdad92dac83d83aee5834503c5c80815c976e60af94a23ba2fa9669",
+        "text": "[NFS3]\r\nVideoDriver=nglide\r\nNoMovie=0\r\nLanguage=english\r\nSingleProcAffinity=0\r\nOwnHeapLimitMb=32\r\nKeyboardHook=0\r\nNoErrorReporting=0\r\nRemoteOnly=0"
+      },
+      "remoteonly_ascii_count": 1,
+      "captures": [
+        {
+          "name": "config_tail",
+          "start": "00472b38",
+          "end_exclusive": "00472b48",
+          "hex": "e8633704008b1d38b05500a354bb6f00",
+          "sha256": "24bd2a279a5e24212d656d465da8ffaf4da4a88d85daff981005e7fc2b76cb20",
+          "disassembly": [
+            "472b38:\te8 63 37 04 00       \tcall   0x4b62a0",
+            "472b3d:\t8b 1d 38 b0 55 00    \tmov    ebx,DWORD PTR ds:0x55b038",
+            "472b43:\ta3 54 bb 6f 00       \tmov    ds:0x6fbb54,eax"
+          ]
+        },
+        {
+          "name": "reader_or_nops",
+          "start": "004b62a0",
+          "end_exclusive": "004b62c1",
+          "hex": "555352bdf8ed5300bb4cee530031d2e83c54040085c07405b8010000005a5b5dc3",
+          "sha256": "e3e470fc8c14c80529facb5c6fac970c070a8016fbdd37b290e52803b60e6282",
+          "disassembly": [
+            "4b62a0:\t55                   \tpush   ebp",
+            "4b62a1:\t53                   \tpush   ebx",
+            "4b62a2:\t52                   \tpush   edx",
+            "4b62a3:\tbd f8 ed 53 00       \tmov    ebp,0x53edf8",
+            "4b62a8:\tbb 4c ee 53 00       \tmov    ebx,0x53ee4c",
+            "4b62ad:\t31 d2                \txor    edx,edx",
+            "4b62af:\te8 3c 54 04 00       \tcall   0x4fb6f0",
+            "4b62b4:\t85 c0                \ttest   eax,eax",
+            "4b62b6:\t74 05                \tje     0x4b62bd",
+            "4b62b8:\tb8 01 00 00 00       \tmov    eax,0x1",
+            "4b62bd:\t5a                   \tpop    edx",
+            "4b62be:\t5b                   \tpop    ebx",
+            "4b62bf:\t5d                   \tpop    ebp",
+            "4b62c0:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "integer_profile_wrapper",
+          "start": "004fb6f0",
+          "end_exclusive": "004fb713",
+          "hex": "5152e83d00000085c07407e8304dffff89c2683c267a00525355ff15744653005a59c3",
+          "sha256": "df5360dd9a606bb621ba154ee2dfcc88b76adc9ba1bbbb69711025f6a380b2de",
+          "disassembly": [
+            "4fb6f0:\t51                   \tpush   ecx",
+            "4fb6f1:\t52                   \tpush   edx",
+            "4fb6f2:\te8 3d 00 00 00       \tcall   0x4fb734",
+            "4fb6f7:\t85 c0                \ttest   eax,eax",
+            "4fb6f9:\t74 07                \tje     0x4fb702",
+            "4fb6fb:\te8 30 4d ff ff       \tcall   0x4f0430",
+            "4fb700:\t89 c2                \tmov    edx,eax",
+            "4fb702:\t68 3c 26 7a 00       \tpush   0x7a263c",
+            "4fb707:\t52                   \tpush   edx",
+            "4fb708:\t53                   \tpush   ebx",
+            "4fb709:\t55                   \tpush   ebp",
+            "4fb70a:\tff 15 74 46 53 00    \tcall   DWORD PTR ds:0x534674",
+            "4fb710:\t5a                   \tpop    edx",
+            "4fb711:\t59                   \tpop    ecx",
+            "4fb712:\tc3                   \tret"
+          ]
+        }
+      ]
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "exe_sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "ini": {
+        "member": "nfs3.ini",
+        "sha256": "dcdff159a5136baf412159d92d96e63d6f99a7d07830b2e108a56b245b71a664",
+        "text": "[NFS3]\r\nThrashDriver=nglide\r\nLanguage=english\r\nNoMovie=0\r\nLoadingSplashTime=5\r\nSingleProcAffinity=0\r\nOwnHeapLimitMb=32\r\nPreventMinimize=0\r\nNoErrorReporting=0\r\nScreenshoterEnabled=1\r\nScreenshoterFormat=jpg"
+      },
+      "remoteonly_ascii_count": 0,
+      "captures": [
+        {
+          "name": "config_tail",
+          "start": "00472b38",
+          "end_exclusive": "00472b48",
+          "hex": "b8000000008b1d38b05500a354bb6f00",
+          "sha256": "b59509ac23fc6bc0e5c90351475774a07f456dc617e4412f990be2162877f1e0",
+          "disassembly": [
+            "472b38:\tb8 00 00 00 00       \tmov    eax,0x0",
+            "472b3d:\t8b 1d 38 b0 55 00    \tmov    ebx,DWORD PTR ds:0x55b038",
+            "472b43:\ta3 54 bb 6f 00       \tmov    ds:0x6fbb54,eax"
+          ]
+        },
+        {
+          "name": "reader_or_nops",
+          "start": "004b62a0",
+          "end_exclusive": "004b62c1",
+          "hex": "909090909090909090909090909090909090909090909090909090909090909090",
+          "sha256": "ca553c34b1e6d14652185f6e6b47a6f022e4174b868fe9c41809fdb6cbe1f858",
+          "disassembly": [
+            "4b62a0:\t90                   \tnop",
+            "4b62a1:\t90                   \tnop",
+            "4b62a2:\t90                   \tnop",
+            "4b62a3:\t90                   \tnop",
+            "4b62a4:\t90                   \tnop",
+            "4b62a5:\t90                   \tnop",
+            "4b62a6:\t90                   \tnop",
+            "4b62a7:\t90                   \tnop",
+            "4b62a8:\t90                   \tnop",
+            "4b62a9:\t90                   \tnop",
+            "4b62aa:\t90                   \tnop",
+            "4b62ab:\t90                   \tnop",
+            "4b62ac:\t90                   \tnop",
+            "4b62ad:\t90                   \tnop",
+            "4b62ae:\t90                   \tnop",
+            "4b62af:\t90                   \tnop",
+            "4b62b0:\t90                   \tnop",
+            "4b62b1:\t90                   \tnop",
+            "4b62b2:\t90                   \tnop",
+            "4b62b3:\t90                   \tnop",
+            "4b62b4:\t90                   \tnop",
+            "4b62b5:\t90                   \tnop",
+            "4b62b6:\t90                   \tnop",
+            "4b62b7:\t90                   \tnop",
+            "4b62b8:\t90                   \tnop",
+            "4b62b9:\t90                   \tnop",
+            "4b62ba:\t90                   \tnop",
+            "4b62bb:\t90                   \tnop",
+            "4b62bc:\t90                   \tnop",
+            "4b62bd:\t90                   \tnop",
+            "4b62be:\t90                   \tnop",
+            "4b62bf:\t90                   \tnop",
+            "4b62c0:\t90                   \tnop"
+          ]
+        },
+        {
+          "name": "integer_profile_wrapper",
+          "start": "004fb6f0",
+          "end_exclusive": "004fb713",
+          "hex": "5152e83d00000085c07407e8304dffff89c2683c267a00525355ff15744653005a59c3",
+          "sha256": "df5360dd9a606bb621ba154ee2dfcc88b76adc9ba1bbbb69711025f6a380b2de",
+          "disassembly": [
+            "4fb6f0:\t51                   \tpush   ecx",
+            "4fb6f1:\t52                   \tpush   edx",
+            "4fb6f2:\te8 3d 00 00 00       \tcall   0x4fb734",
+            "4fb6f7:\t85 c0                \ttest   eax,eax",
+            "4fb6f9:\t74 07                \tje     0x4fb702",
+            "4fb6fb:\te8 30 4d ff ff       \tcall   0x4f0430",
+            "4fb700:\t89 c2                \tmov    edx,eax",
+            "4fb702:\t68 3c 26 7a 00       \tpush   0x7a263c",
+            "4fb707:\t52                   \tpush   edx",
+            "4fb708:\t53                   \tpush   ebx",
+            "4fb709:\t55                   \tpush   ebp",
+            "4fb70a:\tff 15 74 46 53 00    \tcall   DWORD PTR ds:0x534674",
+            "4fb710:\t5a                   \tpop    edx",
+            "4fb711:\t59                   \tpop    ecx",
+            "4fb712:\tc3                   \tret"
+          ]
+        }
+      ]
+    }
+  },
+  "verified": [
+    "131 reads NFS3/RemoteOnly integer with caller default0 via shared override/profile wrapper;normalizes any nonzero to1.",
+    "140 substitutes MOV EAX,0 for caller CALL,retains store to006fbb54,NOP-fills reader and removes checked ASCII key and shipped INI entry."
+  ],
+  "limits": [
+    "Local reader removal,not exhaustive computed-name or field-writer coverage.",
+    "Shared override helper4fb734 and parser4f0430 not fully qualified here;caller default0 need not be API fallback0 on every route.",
+    "Does not prove the vendor adjective useless,all startup outcomes,or actual media/network effects.",
+    "No game/API/target instructions executed;no executable or database edits."
+  ]
+}

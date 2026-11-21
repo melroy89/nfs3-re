@@ -183,3 +183,20 @@ Final's checked config tail`00472b1d..00472b2b` clears ECX and writes zero to`00
 A literal-search qualification matters: early1.1.0 lacks the lowercase filename literal but retains **one case-insensitive INSTALL.WIN occurrence**, within`RENDITION not yet supported (INSTALL.WIN)`. This diagnostic is not itself a file-open call, nor is its presence evidence that the new INI path still depends on that file. Its complete caller/lifetime is not qualified by this audit. Final has no case-insensitive ASCII occurrence. Original file reading is established through the captured open/read/copy path, not merely its filename string.
 
 **MP100-022 advances to partial historical support:** the original installer-record settings path is replaced by early INI selectors, while the old bullet's “Language and RemoteOnly moved to INI” must not be presented as final Modern's configuration contract. Actual startup without the file, every file-access path, original file/read failures, later gate writers and1.0.0 introduction remain unverified. `RemoteOnly` is the observed key name; it is not independently equated to multiplayer or a particular external-media arrangement. No installer file, INI, game, API, instruction probe or Ghidra database was executed or changed.
+
+
+## RemoteOnly reader removal is dated131 to140
+
+The [historical removal audit](evidence/audits/remoteonly-removal-history.json), reproduced with `python3 analysis/scripts/audit_remoteonly_removal_history.py`, pins both author-hosted archives, EXEs and shipped `nfs3.ini` members. It dates the earlier110/final observation above to131→140.
+
+|Selected evidence |131 |140 |
+|---|---|---|
+|Shipped INI |`RemoteOnly=0` present |Entry absent |
+|Case-insensitive ASCII key census in EXE |One occurrence |Zero occurrences |
+|Reader `004b62a0..004b62c1` |Loads NFS3/RemoteOnly, caller default0; calls shared integer wrapper; normalizes nonzero result to1 |All33 bytes are NOP |
+|Caller `00472b38` |CALL `004b62a0` |MOV EAX,0 |
+|Publication `00472b43` |Stores EAX to `006fbb54` |Same store, now receiving literal0 |
+
+The131 wrapper `004fb6f0..004fb713` includes shared override logic before GetPrivateProfileIntA at `004fb70a`, using filename buffer `007a263c`. Its earlier helper/parser branches are not fully qualified here: **caller default0 is not proof that every wrapper route passes fallback0 to the API**. This differs from blindly carrying the110 wrapper contract forward. The selected reader's final zero/nonzero normalization is explicit.
+
+MP140-067 gains partial static support for removing this named setting/reader. The vendor adjective “useless” is not established. Literal absence does not exclude computed names, and this does not prove all writers of the destination, downstream media/network effects, INI I/O success or whole-game startup. No target/API instructions were executed and no executable or saved database changed.
