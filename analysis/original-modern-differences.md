@@ -21,7 +21,7 @@ The [renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-his
 |[DX6 mode count](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) |Added increment affects public descriptor count, whose table has a leading slot |Leading-slot contents, full-capacity/alias/switch bounds and visible modes |
 |[Screenshot depth](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) |150 fixes partial-WORD local initialization before DWORD stride read; final core retained |Observed crash, XP specificity, complete capture/encoding stability |
 
-Current catalog labels are79 vendor-only/54 bounded-static/155 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
+Current catalog labels are78 vendor-only/54 bounded-static/156 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
 
 ## Renderer, menu and screenshot follow-up checkpoint
 
@@ -681,7 +681,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **79 Claimed, 54 Static, 155 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **78 Claimed, 54 Static, 156 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -780,7 +780,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-011 | 512×512, 1024×1024 and 2048×2048 textures support in the voodoo2a.dll. Support of such textures was introduced in the 3dfx Voodoo 4 and 5. | Partial |
 | MP150-012 | The limit of texture size for track elements was expanded from 128×128 to 256×256 pixels in this release. | Partial |
 | MP150-013 | Support of the big 512×512 and 1024×1024 textures for cars and track elements still available only in beta versions of the patch. | Claimed |
-| MP150-014 | Smooth edges of the cop/player points on the map. | Claimed |
+| MP150-014 | Smooth edges of the cop/player points on the map. | Partial |
 | MP150-015 | Gear numbers are right-aligned now, like the digital speedometer. | Partial |
 | MP150-016 | Gear numbers use smaller font if there is not enough space for them. | Partial |
 | MP150-017 | Opponents List and Speeds List have standard bevel when SoftTri is used (as it was for other renderers). | Partial |
@@ -1258,3 +1258,8 @@ The [131/140 caller comparison](original-modern-network-port-menu.md#connecting-
 ## 140 Field-of-View label maps to the retained widescreen setting
 
 The [label/binding comparison](original-modern-frame-setting.md#140-field-of-view-wording-retains-the-earlier-setting-interface) verifies140 English2:1 Field of View labels with unchanged131/140 descriptor, storage, symbolic bindings and Off/On choice IDs. MP140-033 advances vendor-only→partial; prior English wording, complete consumer equivalence and rendered UI remain unverified. Current labels are79 vendor-only/54 bounded-static/155 partial/2 unresolved.
+
+
+## Map-point smoothing has a bounded shape-payload candidate
+
+The [HUD asset/code audit](original-modern-hud-layout.md#map-marker-smoothing-has-an-asset-level-candidate) links the unchanged140/150 marker draw chain to shape1555. The150 package adds HUD98; versus a pinned local backup, only its32×32 pixel payload differs, adding116 intermediate highest-byte pixels. This is consistent with softened alpha edges, but backup provenance, complete conversion/blending and visible police/player points remain unverified. MP150-014 advances to partial; current labels are78 vendor-only/54 bounded-static/156 partial/2 unresolved.

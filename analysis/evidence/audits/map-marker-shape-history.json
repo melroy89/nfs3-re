@@ -1,0 +1,148 @@
+{
+  "kind": "static-map-marker-shape-history",
+  "versions": {
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "exe_sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "hud98_members": [],
+      "selected_code": [
+        {
+          "name": "map_renderer",
+          "start": "0048d4c0",
+          "end_exclusive": "0048e76d",
+          "bytes": 4781,
+          "sha256": "a6877ce0fb2d644689112d37f438f435f88122fb5eb1d9699db29b4731786c40"
+        },
+        {
+          "name": "marker_rectangle",
+          "start": "0048cc60",
+          "end_exclusive": "0048cce8",
+          "bytes": 136,
+          "sha256": "e61f39243723c61545fa244cb25096884e6fe492c5db79272e2cc9370fd4c0df"
+        },
+        {
+          "name": "hud_loader",
+          "start": "0047f590",
+          "end_exclusive": "0047f645",
+          "bytes": 181,
+          "sha256": "dece064a9ad8eaab3c51cb456a77ccef47f1375d0ef0c4eb2c14123f9c994a93"
+        },
+        {
+          "name": "batch_initializer",
+          "start": "00484070",
+          "end_exclusive": "00484211",
+          "bytes": 417,
+          "sha256": "d4a3670e7777631cc5d882cde3055be53d2d332c55c65364f70b400611905db6"
+        }
+      ]
+    },
+    "1.5.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "exe_sha256": "d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae",
+      "hud98_members": [
+        "gamedata/dashhud/hud98.fsh"
+      ],
+      "selected_code": [
+        {
+          "name": "map_renderer",
+          "start": "0048d4c0",
+          "end_exclusive": "0048e76d",
+          "bytes": 4781,
+          "sha256": "a6877ce0fb2d644689112d37f438f435f88122fb5eb1d9699db29b4731786c40"
+        },
+        {
+          "name": "marker_rectangle",
+          "start": "0048cc60",
+          "end_exclusive": "0048cce8",
+          "bytes": 136,
+          "sha256": "e61f39243723c61545fa244cb25096884e6fe492c5db79272e2cc9370fd4c0df"
+        },
+        {
+          "name": "hud_loader",
+          "start": "0047f590",
+          "end_exclusive": "0047f645",
+          "bytes": 181,
+          "sha256": "dece064a9ad8eaab3c51cb456a77ccef47f1375d0ef0c4eb2c14123f9c994a93"
+        },
+        {
+          "name": "batch_initializer",
+          "start": "00484070",
+          "end_exclusive": "00484211",
+          "bytes": 417,
+          "sha256": "d4a3670e7777631cc5d882cde3055be53d2d332c55c65364f70b400611905db6"
+        }
+      ],
+      "asset": {
+        "member": "gamedata/dashhud/hud98.fsh",
+        "sha256": "86fbd66db92a554e293ebe4a03cf5f42c765152a8ae59053671f37b1552c515c",
+        "bytes": 1021576,
+        "shape1555": {
+          "directory_sha256": "6f6d99b9e16e538564facdf6394979002825c67a3d2c764c03aac1853230e328",
+          "shape_offset": 262416,
+          "header_hex": "7d101000200020000000000000000000",
+          "payload_start": 262432,
+          "payload_end_exclusive": 266528,
+          "payload_sha256": "38ce1d74710e89c5ff4b45bbe4b5a8c86fa8641ceccd930083892c68dea351ee",
+          "highest_byte_histogram": {
+            "0": 260,
+            "1": 8,
+            "24": 8,
+            "26": 8,
+            "43": 8,
+            "88": 8,
+            "104": 8,
+            "128": 8,
+            "140": 8,
+            "142": 8,
+            "152": 4,
+            "188": 8,
+            "205": 8,
+            "209": 8,
+            "224": 8,
+            "247": 8,
+            "255": 648
+          },
+          "intermediate_highest_byte_pixels": 116
+        }
+      }
+    }
+  },
+  "local_backup": {
+    "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/gamedata_org/DashHud/HUD98.FSH",
+    "sha256": "775348ef2840d54851f6249d40239315d013f398c54ea72600ff9d5977649c9e",
+    "bytes": 1021576,
+    "shape1555": {
+      "directory_sha256": "6f6d99b9e16e538564facdf6394979002825c67a3d2c764c03aac1853230e328",
+      "shape_offset": 262416,
+      "header_hex": "7d101000200020000000000000000000",
+      "payload_start": 262432,
+      "payload_end_exclusive": 266528,
+      "payload_sha256": "612a9e607f8b6ecf1caa81376a675fbbdeabd72de7ce159103d17dc50ff356ca",
+      "highest_byte_histogram": {
+        "0": 181,
+        "255": 843
+      },
+      "intermediate_highest_byte_pixels": 0
+    },
+    "retail_provenance_verified": false
+  },
+  "comparison": {
+    "changed_bytes": 1050,
+    "all_changes_within_1555_pixel_payload": true,
+    "all_other_file_bytes_identical": true,
+    "selected_code_identical140_150": true
+  },
+  "verified": [
+    "140 has no HUD98 archive member;150 bundles it;selected map/helper/loader/batch bodies are byte-identical.",
+    "Loader requests tag1555 into00791a94;batch init uses its+4 cell00791a98 for0076da48;marker helper submits that batch address.",
+    "Pinned local backup versus150 asset differs only within32x32 type7d payload1555:1050 bytes,116 new intermediate highest-byte pixels."
+  ],
+  "limits": [
+    "Local backup is not authenticated retail or a demonstrated140 installed asset;absence in140 archive does not prove absence in game.",
+    "Highest-byte softening is consistent with alpha-edge smoothing;complete conversion/upload/blend/rendered effect not validated.",
+    "No universal visual identity of all markers,all caller roles,asset path selection or successful renderer acceptance established.",
+    "No target/API/instruction execution,compilation or Ghidra changes;only hashes/statistics published,not game pixel data."
+  ]
+}

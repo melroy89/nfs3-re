@@ -289,3 +289,22 @@ Allocator`0049bd10` returns the current batch+08 vertex count through ECX's outp
 Queue helper`0049bd30` appends four DWORD indices and increments batch+0c by four; when its signed first index is below batch+04 it first requests removal of the matching group. `0049bdc0` scans groups of four at batch+20010, removes the **first** exact match using overlap mover`004ea4f0`, and subtracts four from batch+0c. Consequently`0047fcb0`, which calls it eight times, is an eight-quad **removal** helper, not a draw or enqueue function. The nearby bank`00791ac8` removed at`00482dc8` is distinct from the border bank`00791ad8`; conflating them would misidentify the list-frame route. Flush`0049be40` passes count/4, vertices and indices to`004d5840` and`004c1e20`, then performs transient-group removal; those downstream consumers and provider behaviour have not been qualified here.
 
 **Remaining:** this establishes the advertised release boundary and a concrete software-path bevel admission mechanism. The exact visible “standard bevel”, the advertised Speeds List identity, every caller/profile, software-provider rendering and stale-queue behaviour across transitions remain separate follow-ups. MP150-017 is partial, not fully verified. Reconstruction must preserve the conditional background/border distinction and queue lifecycle rather than merely drawing an unconditional rectangle. No game, driver, instruction probe, compiler or Ghidra write was used.
+
+
+## Map-marker smoothing has an asset-level candidate
+
+**MP150-014: partial code/asset linkage; not a rendered smoothing result.** The [HUD shape audit](evidence/audits/map-marker-shape-history.json), reproduced with `python3 analysis/scripts/audit_map_marker_shape_history.py`, pins140/150 archives/EXEs and a separately hashed local HUD backup.
+
+The selected map renderer `0048d4c0..0048e76d`, marker helper `0048cc60..0048cce8`, HUD loader `0047f590..0047f645` and batch initializer `00484070..00484211` are byte-identical140/150. The loader requests FSH tag `1555` into descriptor `00791a94`; batch initialization reads its+4 cell `00791a98` for batch `0076da48`, and the centered marker helper submits that batch. This ties the selected map drawing route to an actual shape resource instead of assuming every HUD change is an EXE edit. Complete upload, ownership and all caller-role admission remain qualified by [existing HUD research](detailed-analysis-notes.md).
+
+The140 archive has no `hud98.fsh` member;150 adds `gamedata/dashhud/hud98.fsh`. That is patch-package scope: an earlier game installation can already supply the file. Compared with local `gamedata_org/DashHud/HUD98.FSH`, the150 file has the same1,021,576-byte length and25-entry SHPI directory. **All1,050 differing bytes are inside the32×32 type7Dh `1555` pixel payload** at file offsets40120h..41120h; every other file byte matches.
+
+| Highest byte in each of1,024 pixel DWORDs |Local backup |150 asset |
+|---|---:|---:|
+|0 |181 |260 |
+|255 |843 |648 |
+|Intermediate1..254 |0 |116 |
+
+This is consistent with replacing binary transparency edges with intermediate alpha coverage, while retaining the center pixel and changing the border. The audit records highest-byte statistics explicitly; it does not independently validate the complete decoder, colour ordering, texture conversion or final blend policy. It must not be promoted into proof of visible antialiasing on every renderer.
+
+The backup's **retail provenance is unverified**, and it is not demonstrated to be the installed140 asset. Consequently this is a concrete local-backup/150 payload difference and a package-boundary candidate, not a fully authenticated140→150 pixel comparison. Original retail identity, exact loaded file, police/player-specific coverage, successful upload and rendered edges remain follow-up work. MP150-014 advances vendor-only→partial. No game pixels are republished, no target instructions executed and no executable/Ghidra changes made.
