@@ -1243,3 +1243,8 @@ The [initializer follow-up](original-modern-renderer-loading.md#disable-request-
 ## DX7 mode interface connects to dithering initialization
 
 The [call-chain follow-up](original-modern-renderer-loading.md#mode-export-contains-the-selected-setup-call-chain) verifies direct edges from exported60003750 through60002850 and60009680 to initializer6000a490. This resolves the missing export connection at call-graph scope. It does not establish all branch admission conditions, successful setup or later state lifetime; the dithering claim stays partial.
+
+
+## DX7 dithering selector payload contract resolved
+
+The [dispatcher follow-up](original-modern-renderer-loading.md#selector5-normalizes-its-payload-against-a-verified-zero) verifies selector5 payload0 requests dithering off and nonzero requests on. The preceding dispatcher preserves its initialized EDX0 up to this branch. Actual EXE callers and post-setup state lifetime remain unresolved; the provider's ability to enable dithering is not proof the game does so.

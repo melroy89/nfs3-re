@@ -47,6 +47,12 @@ def main():
     assert get(0x60009ec0,0x60009ec5).hex()=='e8cb050000'
     assert get(0x6000a49e,0x6000a4a1).hex()=='ff5114'
     assert get(0x6000aa2a,0x6000aa2d).hex()=='ff5118'
+    dispatch=disassemble(get(0x60003ca0,0x60003d64),0x60003ca0)
+    edx_lines=[line for line in dispatch if 'edx' in line]
+    assert len(edx_lines)==2
+    assert 'xor    edx,edx' in edx_lines[0] and 'cmp    eax,edx' in edx_lines[1]
+    assert not any('\tcall' in line for line in dispatch)
+    assert get(0x60004b6e,0x60004b7f).hex()=='3bda74046a01eb026a006a1ae8913e0000'
     mode_path=[]
     for entry,call,target_address in [(0x60003750,0x6000383d,0x60002850),
                                       (0x60002850,0x60002c93,0x60009680),
@@ -61,13 +67,14 @@ def main():
                           'decoded_from_entry':matches[0],'call_hex':get(call,call+5).hex(),
                           'entry_to_call_bytes':len(witness),'entry_to_call_sha256':sha(witness)})
     assert any(e.name==b'_THRASH_setvideomode@12' and e.address==0x3750 for e in pe.DIRECTORY_ENTRY_EXPORT.symbols)
-    spans=[('initializer_prefix_to_disable',0x6000a490,0x6000a707),
+    spans=[('selector_dispatch_prefix',0x60003ca0,0x60003d64),('initializer_prefix_to_disable',0x6000a490,0x6000a707),
            ('direct_setup_call',0x60009ec0,0x60009ec5),
            ('initializer_tail',0x6000aa19,0x6000aa3e),('parent_query',0x600096e5,0x60009704),('device_create',0x60009f8a,0x60009fb4),
            ('zero_request',0x6000a6f8,0x6000a707),('selector5_branch',0x60004b6e,0x60004b8d),
            ('raw_state_wrapper',0x60008a10,0x60008a47)]
     result={'kind':'static-dx7-dither-requests','archive':archive,'archive_sha256':ah,'member':'drivers/dx7/dx7a.dll',
         'sha256':sha(raw),'sdk_headers':headers,'selector5_target':f'{target:08x}','initializer_prefix_forward_branches':branches,'conditional_export_call_path':mode_path,
+        'selector5_payload_contract':{'zero':0,'nonzero':1,'edx_at_branch':0,'scope':'Ordinary entry through retained dispatcher prefix,normal raw-state-wrapper return.'},
         'captures':[{'name':n,'start':f'{a:08x}','end_exclusive':f'{b:08x}','hex':get(a,b).hex(),
          'sha256':sha(get(a,b)),'disassembly':disassemble(get(a,b),a)}for n,a,b in spans],
         'verified':['Selected successful factory chain produces IDirect3DDevice7 at60058d9c;SDK SetRenderState slot20 corresponds to+50h.',
@@ -76,8 +83,9 @@ def main():
                     'Direct call60009ec0 reaches initializer6000a490;its seven prefix branches are forward and rejoin before the disable request,with no local early RET.',
                     'On normal return from preceding calls,initializer entry reaches the disable request;vtable+14/+18 calls bracket the broader setup sequence.',
                     'Selected setvideomode export route has decoded direct calls383d->2850,2c93->9680,9ec0->a490;reachability is conditional,not all-mode success.',
+                    'Dispatcher prefix initializes EDX0 and has no further EDX writes or calls before selector5 dispatch;branch maps zero payload to0,nonzero to1.',
                     'This supplies partial code support forMP150-029 without proving permanent/default runtime state.'],
-        'limits':['Selected export call edges verified,not a complete CFG/admission proof;whole reset lifecycle,EDX producer for selector branch and later overrides remain unresolved;callee nonreturn/faults excluded.',
+        'limits':['Selected export call edges verified,not a complete CFG/admission proof;whole reset lifecycle,EXE selector5 callers and later overrides remain unresolved;callee nonreturn/faults excluded.',
                   'API/device success and visible dithering not observed;request result is not tested in retained zero-request slice.',
                   'No source lineage,original-driver dither policy or all-provider comparison established.',
                   'SDK headers are hashed cached inputs;fresh retrieval may differ and is not silently accepted.',

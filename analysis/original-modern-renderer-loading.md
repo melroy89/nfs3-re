@@ -502,3 +502,10 @@ The expanded request audit now verifies these direct call edges, decoding each w
 This connects the initializer to the exported mode interface at the **selected call-graph level**. It supersedes the earlier absence of a parent/export connection. It does not prove every enclosing branch condition is satisfiable together, every mode request takes this path, or every device/helper call succeeds. The entry-to-call intervals are decoding witnesses, not an independent complete CFG recovery; other calls, indirect branches and embedded tables need their own qualification.
 
 The strongest current claim is therefore a verified export/setup call chain plus a normal-path disable request inside its initializer. Complete admission conditions, reset/override lifetime, selector5's effective inputs, actual driver selection and rendered default remain later work. MP150-029 remains partial; no DLL or game was run.
+
+
+### Selector5 normalizes its payload against a verified zero
+
+The expanded request audit now retains the complete `60003ca0..60003d64` dispatcher prefix. It initializes EDX to0 at `60003cb4`; the only other EDX reference in that prefix is a comparison, and there are no calls before the final table dispatch. EBX receives the payload at `60003d26`. Selector5's verified table entry reaches `60004b6e`, where EBX is compared with that zero: equal pushes0, otherwise pushes1, followed by state1Ah and the raw-state wrapper call.
+
+Thus the ordinary entry contract is **payload0→DITHERENABLE0; payload nonzero→DITHERENABLE1**. This resolves the earlier EDX-provenance limitation for this route. It does not demonstrate that the EXE actually invokes selector5 after setup, identify its caller input lifetime, or establish API success. A focused search did not identify such a caller; it is not an alias-aware or indirect-call completeness proof and supplies no absence claim. Full post-setup dithering lifetime remains unresolved; MP150-029 stays partial. No target execution or Ghidra edit occurred.
