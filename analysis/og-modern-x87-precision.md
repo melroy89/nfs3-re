@@ -362,3 +362,29 @@ callback entry, indirect target effects, full math semantics, or replay/network 
 The next precision work should address a specific indirect/callback boundary or a matched
 behavioral experiment when authorized, rather than continue assuming all retained physics
 instructions execute under a single unchanging precision setting.
+
+### Race-loop tick call sites
+
+The supplied original and official Modern retain the same 164 bytes at
+`004c5342..004c53e6` (exclusive end, SHA-256
+`470183c72bbf46053a1f1b3f27eacbb3928618a850df9b96ac335e7d119cbaec`).
+This covers all four identified direct calls from the race loop to
+`004c48d0`. The branch at `004c5346` selects the single-call path when
+the signed division remainder is zero. With a nonzero remainder, mode
+`[007cd94c]` equal to 2 also takes that path, while mode 3 calls twice
+and then increments `[007d36b0]`. On the separate path at `004c53d2`,
+the loop calls `004c81c0` immediately before reloading the sequence in
+EAX and calling the simulation tick.
+
+The 49-byte `004c81c0..004c81f1` body is also identical (SHA-256
+`ad7007bc1ed7a0051701583b59c3d51b59053195945332c03e0b6d5192121d47`).
+It reaches `004c8250` only when signed `[006fd3a0] <= 1`, session
+`[006fd3b0]` is neither 0 nor 1, `[006fd50c]` is nonzero and the
+sequence in AL is odd. The wrapper contains no x87 instructions. This
+identifies a conditional pre-tick dependency for the input/state comparison.
+Its callee, the values feeding the scheduling branches, and actual tick
+cadence remain separate evidence gaps.
+
+The hashes cover file-backed PE bytes at the listed virtual addresses
+using image base `00400000`. Both full executable hashes were checked
+against the original and official-final pins before disassembly.
