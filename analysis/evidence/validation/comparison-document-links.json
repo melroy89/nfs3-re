@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "e87b6df9aa2478c1d0d770eee7af1fec28f3fc85566c3a2df7fed88b938f4119",
-      "relative_links": 339
+      "sha256": "c60342757b7a9fa277ab966568bcbcafbb485b403d037b340187d8895b701b75",
+      "relative_links": 340
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -303,7 +303,7 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "1a98e745dc9f5ed33eb27a81cdeb900646855afc11216dc676e0d899cb1e5605",
+      "sha256": "915baa21cf5cc8197e2011ea87d388f849991425c97ffc12ee7d62ec1cdf8e55",
       "relative_links": 26
     },
     {
@@ -658,7 +658,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "3a97c02f3d16a769508bea02d58299e2e9714f08376d300116856662ead4a3b3",
+      "sha256": "493d980acd2bd9022275bdb2c7224bc76c66ba24162ca88b7e6ac5fb36909e81",
       "relative_links": 275
     },
     {
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3107,
+  "relative_link_count": 3108,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
