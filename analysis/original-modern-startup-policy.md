@@ -30,7 +30,7 @@ Modern `004b559e..004b55cd` reads `SingleProcAffinity` with default **0**:
 
 This is a proven dynamically resolved API use, unlike a DLL/export name merely present in strings. Microsoft's [SetProcessAffinityMask contract](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocessaffinitymask) defines mask bits as logical processors and permits failure. Thus the visible request is specifically bit 0, not an algorithm choosing an arbitrary available core; success on a constrained CPU set or under Wine is not established. The original-versus-final comparison here does not prove the original had no affinity operation anywhere else.
 
-Release notes **MP100-021** describe an early automatic single-core policy, whereas the final package's code default is zero and its README's current option description agrees. **MP130-001** says multicore hangs were fixed. These are historical claims; observing the final optional branch does not prove the claimed hang fix or reproduce the early release's enabled default. No intermediate executable or multicore runtime comparison was inspected for this chapter.
+Release notes **MP100-021** describe an early automatic single-core policy, whereas the final package's code default is zero and its README's current option description agrees. **MP130-001** says multicore hangs were fixed. These are historical claims; observing the final optional branch does not prove the claimed hang fix or reproduce the early release's enabled default. The historical110 follow-up below now verifies an enabled early default; multicore runtime outcomes remain untested.
 
 ## 3. Current settings: exact defaults and immediate effects
 
@@ -205,3 +205,14 @@ These follow-ups are ordinary pending investigations, not external blockers and 
 The full flag decoding and primary-source qualification are in the preceding section. Original already requests SYSTEMMODAL, whose topmost-style implication prevents claiming the added explicit TOPMOST bit cured a demonstrated stacking problem. Both retain SETFOREGROUND; no other local handler instructions change. Caption/code equality does not imply equal formatted text, callbacks, global state, admission or later termination.
 
 **MP100-042 advances to partial support:** an early retained Modern release contains a concrete message-box presentation change, distinct from later common fatal/warning helper changes in the [startup-requirements report](original-modern-startup-requirements.md). This generic release note does not identify an exhaustive set of boxes or a reproduced UI failure.1.0.0 introduction, actual appearance/focus, Windows/Wine behavior, other diagnostics and complete error-path contracts remain unverified. No game, exception, MessageBox API, instruction probe or Ghidra write was executed.
+
+
+## Early110 affinity policy defaults enabled
+
+The [historical affinity audit](evidence/audits/affinity-default-history.json), reproduced with `python3 analysis/scripts/audit_affinity_default_history.py`, pins the author-hosted110 archive and EXE, hashes its shipped INI and compares the selected official-final reader path.110 `nfs3.ini` explicitly sets **SingleProcAffinity=1**. Independently, reader `004b55b4..004b55d6` supplies NFS3/SingleProcAffinity and integer default1 to wrapper `004fb6f0`, which calls imported GetPrivateProfileIntA without the later shared override prefix.
+
+Nonzero result calls `004b558c`, which supplies EAX1 to helper `004b5598`. A nonnull function pointer at `007a38b4` receives GetCurrentProcess and literal mask1. Resolver `004a6e64..004a6e8d` obtains KERNEL32.DLL, resolves SetProcessAffinityMask and publishes that pointer. A selected direct call to the option reader at `004b62ca` is retained in the evidence; full startup ordering and every pointer writer remain outside this bounded check.
+
+The official-final path `004b559e..004b55ce` instead supplies default0 at `004b55a3`, consistent with the final policy above. That capture includes the entire indirect call instruction at `004b55cc`, avoiding the older evidence span's truncated final byte. Defaults describe supplied fallback values, not a guarantee that every installed config/override chooses that policy.
+
+**MP100-021 advances historical-caveat/unresolved→partial:** enabled affinity is verified in110, while final defaults disabled. Exact100 introduction, later change date, real process affinity, API success/performance and the claimed multicore reliability improvement remain unverified. The API's literal mask identifies logical bit0; this is not a portable algorithm choosing any available CPU. No process policy or target instructions were executed, and no executable/Ghidra state changed.

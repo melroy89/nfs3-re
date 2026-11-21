@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5cf26b7242b73d6dc385bfbaf81d5da8fc93c49a014e064ce1eae94b095fe13a",
-      "relative_links": 280
+      "sha256": "7e748822f857053619a10007e8413d3552399889be56b32888095fa4b298afef",
+      "relative_links": 281
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "1f16a9eede61a84b7b45538c189627f831d94b740801624c7245d49260bb2150",
+      "sha256": "69adfca06d379a477c01dfdb9ca07657c3161c2abe5dc4bf629482d4782a275b",
       "relative_links": 316
     },
     {
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "55bd67ae5b2f3bfe41dd864e298d757448cba4cbcc3d8f0f2aaa19bff6de4604",
-      "relative_links": 769
+      "sha256": "b10120e71275a969abe1300c292cb0952d4732f33946ecf80bb5f3d2b0ec005e",
+      "relative_links": 772
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -553,8 +553,8 @@
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
-      "sha256": "08b061b16341e2703db56f50f127ad6ce8fd41b4e74a0307ad8360ed1224e3fd",
-      "relative_links": 33
+      "sha256": "2df0e905c405a8260ff7d1955d42ba03877aa2d66be8f576a942acbf94934b3f",
+      "relative_links": 34
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
@@ -653,7 +653,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "5c47f34778f79e5b743a9bda953aa9b3d14c66e5f13e73aca6d734843f6e24ee",
+      "sha256": "27a6c2af8de0d3dd616280073fca69a256b2321a36049089e4599670cd1c2e46",
       "relative_links": 243
     },
     {
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2875,
+  "relative_link_count": 2880,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

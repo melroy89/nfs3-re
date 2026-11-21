@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5cf26b7242b73d6dc385bfbaf81d5da8fc93c49a014e064ce1eae94b095fe13a"
+      "sha256": "7e748822f857053619a10007e8413d3552399889be56b32888095fa4b298afef"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -437,7 +437,7 @@
     },
     {
       "path": "analysis/original-modern-startup-policy.md",
-      "sha256": "08b061b16341e2703db56f50f127ad6ce8fd41b4e74a0307ad8360ed1224e3fd"
+      "sha256": "2df0e905c405a8260ff7d1955d42ba03877aa2d66be8f576a942acbf94934b3f"
     },
     {
       "path": "analysis/original-modern-startup-requirements.md",
@@ -8703,6 +8703,13 @@
             "004a6e4c",
             "004a6e63"
           ]
+        },
+        {
+          "path": "analysis/original-modern-startup-policy.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a6e64"
+          ]
         }
       ]
     },
@@ -8745,6 +8752,13 @@
           "addresses": [
             "004a6e8d",
             "004a6eaa"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-startup-policy.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a6e8d"
           ]
         }
       ]
@@ -8933,13 +8947,18 @@
           "addresses": [
             "004b5580",
             "004b5586",
+            "004b558c",
             "004b5598",
             "004b559d",
             "004b559e",
+            "004b55a3",
+            "004b55b4",
             "004b55c3",
             "004b55c9",
             "004b55cc",
-            "004b55cd"
+            "004b55cd",
+            "004b55ce",
+            "004b55d6"
           ]
         },
         {
@@ -14060,6 +14079,13 @@
           "addresses": [
             "004fb6f0",
             "004fb70a"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-startup-policy.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004fb6f0"
           ]
         },
         {

@@ -1,0 +1,156 @@
+{
+  "kind": "static-affinity-default-history",
+  "early": {
+    "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+    "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+    "exe_sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+    "ini_sha256": "e05a5d2f272f33c6823a6f22366ed4bd7081c144012c81dcd1cf72aca3f245ad",
+    "ini_text": "[NFS3]\r\nVideoDriver=Voodoo2\r\nNoMovie=0\r\nLanguage=English\r\nSingleProcAffinity=1\r\nOwnHeapLimitMb=32\r\nNoErrorReporting=0\r\nRemoteOnly=0",
+    "imports": {
+      "00534504": "GetCurrentProcess",
+      "00534558": "GetProcAddress",
+      "00534674": "GetPrivateProfileIntA",
+      "0053458c": "LoadLibraryA"
+    },
+    "captures": [
+      {
+        "name": "option_and_mask_helpers",
+        "start": "004b558c",
+        "end_exclusive": "004b55d6",
+        "hex": "5031c040e80300000058c3905351528b1db4387a0085db740a50ff150445530050ffd35a595bc390555352bd28ee5300bb50ee530031d242e82761040085c07405e8baffffff5a5b5dc3",
+        "sha256": "ef90752a339d3d099d4548d6abc04d3cf5aef000df668c3f113cef8fd1b804a2",
+        "disassembly": [
+          "4b558c:\t50                   \tpush   eax",
+          "4b558d:\t31 c0                \txor    eax,eax",
+          "4b558f:\t40                   \tinc    eax",
+          "4b5590:\te8 03 00 00 00       \tcall   0x4b5598",
+          "4b5595:\t58                   \tpop    eax",
+          "4b5596:\tc3                   \tret",
+          "4b5597:\t90                   \tnop",
+          "4b5598:\t53                   \tpush   ebx",
+          "4b5599:\t51                   \tpush   ecx",
+          "4b559a:\t52                   \tpush   edx",
+          "4b559b:\t8b 1d b4 38 7a 00    \tmov    ebx,DWORD PTR ds:0x7a38b4",
+          "4b55a1:\t85 db                \ttest   ebx,ebx",
+          "4b55a3:\t74 0a                \tje     0x4b55af",
+          "4b55a5:\t50                   \tpush   eax",
+          "4b55a6:\tff 15 04 45 53 00    \tcall   DWORD PTR ds:0x534504",
+          "4b55ac:\t50                   \tpush   eax",
+          "4b55ad:\tff d3                \tcall   ebx",
+          "4b55af:\t5a                   \tpop    edx",
+          "4b55b0:\t59                   \tpop    ecx",
+          "4b55b1:\t5b                   \tpop    ebx",
+          "4b55b2:\tc3                   \tret",
+          "4b55b3:\t90                   \tnop",
+          "4b55b4:\t55                   \tpush   ebp",
+          "4b55b5:\t53                   \tpush   ebx",
+          "4b55b6:\t52                   \tpush   edx",
+          "4b55b7:\tbd 28 ee 53 00       \tmov    ebp,0x53ee28",
+          "4b55bc:\tbb 50 ee 53 00       \tmov    ebx,0x53ee50",
+          "4b55c1:\t31 d2                \txor    edx,edx",
+          "4b55c3:\t42                   \tinc    edx",
+          "4b55c4:\te8 27 61 04 00       \tcall   0x4fb6f0",
+          "4b55c9:\t85 c0                \ttest   eax,eax",
+          "4b55cb:\t74 05                \tje     0x4b55d2",
+          "4b55cd:\te8 ba ff ff ff       \tcall   0x4b558c",
+          "4b55d2:\t5a                   \tpop    edx",
+          "4b55d3:\t5b                   \tpop    ebx",
+          "4b55d4:\t5d                   \tpop    ebp",
+          "4b55d5:\tc3                   \tret"
+        ]
+      },
+      {
+        "name": "resolver",
+        "start": "004a6e64",
+        "end_exclusive": "004a6e8d",
+        "hex": "53515268ed475300ff158c45530085c0741389c36828fe530053ff1558455300a3b4387a005a595bc3",
+        "sha256": "ccc63da4de95950db02d9682a3f74c9114fd30cc34b9403d501749c0857fc980",
+        "disassembly": [
+          "4a6e64:\t53                   \tpush   ebx",
+          "4a6e65:\t51                   \tpush   ecx",
+          "4a6e66:\t52                   \tpush   edx",
+          "4a6e67:\t68 ed 47 53 00       \tpush   0x5347ed",
+          "4a6e6c:\tff 15 8c 45 53 00    \tcall   DWORD PTR ds:0x53458c",
+          "4a6e72:\t85 c0                \ttest   eax,eax",
+          "4a6e74:\t74 13                \tje     0x4a6e89",
+          "4a6e76:\t89 c3                \tmov    ebx,eax",
+          "4a6e78:\t68 28 fe 53 00       \tpush   0x53fe28",
+          "4a6e7d:\t53                   \tpush   ebx",
+          "4a6e7e:\tff 15 58 45 53 00    \tcall   DWORD PTR ds:0x534558",
+          "4a6e84:\ta3 b4 38 7a 00       \tmov    ds:0x7a38b4,eax",
+          "4a6e89:\t5a                   \tpop    edx",
+          "4a6e8a:\t59                   \tpop    ecx",
+          "4a6e8b:\t5b                   \tpop    ebx",
+          "4a6e8c:\tc3                   \tret"
+        ]
+      },
+      {
+        "name": "profile_integer_wrapper",
+        "start": "004fb6f0",
+        "end_exclusive": "004fb703",
+        "hex": "5152683c267a00525355ff15744653005a59c3",
+        "sha256": "5b6d05bf7919dd62ac55e3521ab991a171b115bd9b75cdf6d268035838b6edef",
+        "disassembly": [
+          "4fb6f0:\t51                   \tpush   ecx",
+          "4fb6f1:\t52                   \tpush   edx",
+          "4fb6f2:\t68 3c 26 7a 00       \tpush   0x7a263c",
+          "4fb6f7:\t52                   \tpush   edx",
+          "4fb6f8:\t53                   \tpush   ebx",
+          "4fb6f9:\t55                   \tpush   ebp",
+          "4fb6fa:\tff 15 74 46 53 00    \tcall   DWORD PTR ds:0x534674",
+          "4fb700:\t5a                   \tpop    edx",
+          "4fb701:\t59                   \tpop    ecx",
+          "4fb702:\tc3                   \tret"
+        ]
+      },
+      {
+        "name": "option_callsite",
+        "start": "004b62ca",
+        "end_exclusive": "004b62cf",
+        "hex": "e8e5f2ffff",
+        "sha256": "d7e67bc8534531b2ec4d871edc7e427e3f20c21a188dec30c320212c2e8eec76",
+        "disassembly": [
+          "4b62ca:\te8 e5 f2 ff ff       \tcall   0x4b55b4"
+        ]
+      }
+    ]
+  },
+  "final": {
+    "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+    "sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+    "capture": {
+      "start": "004b559e",
+      "end_exclusive": "004b55ce",
+      "hex": "bb08f6530031d2e84661040085c07420b88cf75300ba9cf75300e8ffc8030085c0740d89c3ff15044553006a0150ffd3",
+      "sha256": "106edf65da4793981780e8d6d161b6c3f4e42fb76c516ab77c3ab5a065aa3e9d",
+      "disassembly": [
+        "4b559e:\tbb 08 f6 53 00       \tmov    ebx,0x53f608",
+        "4b55a3:\t31 d2                \txor    edx,edx",
+        "4b55a5:\te8 46 61 04 00       \tcall   0x4fb6f0",
+        "4b55aa:\t85 c0                \ttest   eax,eax",
+        "4b55ac:\t74 20                \tje     0x4b55ce",
+        "4b55ae:\tb8 8c f7 53 00       \tmov    eax,0x53f78c",
+        "4b55b3:\tba 9c f7 53 00       \tmov    edx,0x53f79c",
+        "4b55b8:\te8 ff c8 03 00       \tcall   0x4f1ebc",
+        "4b55bd:\t85 c0                \ttest   eax,eax",
+        "4b55bf:\t74 0d                \tje     0x4b55ce",
+        "4b55c1:\t89 c3                \tmov    ebx,eax",
+        "4b55c3:\tff 15 04 45 53 00    \tcall   DWORD PTR ds:0x534504",
+        "4b55c9:\t6a 01                \tpush   0x1",
+        "4b55cb:\t50                   \tpush   eax",
+        "4b55cc:\tff d3                \tcall   ebx"
+      ]
+    }
+  },
+  "verified": [
+    "110 shipped INI sets1;option reader independently supplies default1 to profile integer API.",
+    "Nonzero reader result calls mask helper1;nonnull resolved SetProcessAffinityMask pointer receives GetCurrentProcess and mask1.",
+    "Official final corresponding option path starts default0;existing startup report details final resolution/call."
+  ],
+  "limits": [
+    "110 presence,not exact100 introduction or date of later default change.",
+    "No affinity API executed or CPU state observed;success,performance and multicore hang repair unverified.",
+    "Selected callsite,not whole startup CFG;actual initialization order and resolver/pointer lifetime remain separate.",
+    "No target instructions,environment changes or executable/database mutation."
+  ]
+}
