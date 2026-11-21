@@ -29,7 +29,7 @@ The audit now records all six `[button]` sections in file order. Their first fou
 
 The README's **MP140-017** (v1.4.0, source line 301) says an Options button is placed near Exit on the first Game Setup screen. This later claim matches the final asset's Options/Exit pair. The earlier **MP100-052** reports Credits in v1.0.0. These are release-history claims, not two simultaneous descriptions of the final first-screen layout. The final asset supplies an explicit Options route; there is no reason to assume this particular final button must activate Credits.
 
-**Confidence:** verified asset fields and unchanged selected executable ranges; inferred chronology linking the later note to the final layout. Actual screen/resource selection, translated label appearance and execution remain untested. Neither the v1.0.0 Credits implementation nor the v1.4.0 introduction date is verified without intermediate packages.
+**Confidence:** verified asset fields and unchanged selected executable ranges; inferred chronology linking the later note to the final layout. Actual screen/resource selection, translated label appearance and execution remain untested. The historical asset comparison below now verifies Credits in retained1.1.0/1.3.1 and the authored Options change at1.3.1→1.4.0. Exact1.0.0 introduction and runtime activation remain unverified.
 
 ## Reconstruction implications and remaining work
 
@@ -58,3 +58,19 @@ The expanded audit verifies byte identity of these bounded code and data ranges:
 For the final asset's ordinary Options button, these witnesses explain a conditional path from the new `nextmenu=options` string to generic transition lookup. They do not establish the actual loaded descriptor list, later item overrides, successful external file loading, current selection or pixels. The full loader differs between binaries and is **not** declared unchanged because its selected dependency-scan region is identical.
 
 For maintained C, keep template defaults, string-field parsing, specialized callback precedence, action codes and descriptor lookup as separate responsibilities. Replacing the old website callback body is not required merely to represent this final asset's Options route. Preserve normal missing-target/default-entry behaviour until separately validated; do not silently turn the conditional path into an unconditional transition.
+
+
+## Early Credits route and140 Options replacement are present in assets
+
+The [historical menu audit](evidence/audits/setup-button-history.json), reproduced with `python3 analysis/scripts/audit_setup_button_history.py`, verifies archive hashes and records member hashes for `fedata/menus/setup.mnu`. It supersedes the earlier uncertainty about intermediate asset availability, while leaving first-release and runtime claims separate.
+
+| Retained package | Fifth button text token | Codelink | Next menu |
+|---|---|---|---|
+|1.1.0 |`kMenuOPTIONSCredits001` |`credits` |`credits` |
+|1.3.1 |`kMenuOPTIONSCredits001` |`credits` |`credits` |
+|1.4.0 |`kMenuMAINOptions001` |Absent |`options` |
+|Official final |`kMenuMAINOptions001` |Absent |`options` |
+
+All four have six buttons. The fifth retains `buttontype=LR1of2`; the sixth Exit entry retains `LR2of2`. The selected text/codelink/nextmenu/buttontype fields of the other five buttons match across all four packages. Other properties and complete file bytes are not declared identical. File ordering and these type names alone do not establish pixel placement.
+
+Thus MP100-052 has explicit **early authored Credits-route evidence**, not merely removal of a website entry inferred from final assets. Its exact1.0.0 introduction still requires that release. MP140-017 has a verified **1.3.1→1.4.0 authored Options replacement**, retained final. The existing paired original/final generic transition witnesses explain the final route conditionally; they have not been revalidated against each historical EXE and do not prove successful historical Credits activation. Loaded resources, callback precedence, translated labels and visible screens remain runtime/loader follow-up work. No target instructions or Ghidra changes were made.

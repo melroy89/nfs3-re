@@ -1204,3 +1204,8 @@ The [selector15h comparison](original-modern-state14.md#dx6-provider-distinguish
 ## DX6 quad attribute flag is unchanged by menu4-to0 policy
 
 The [quad follow-up](original-modern-state14.md#dx6-quad-attribute-copying-is-not-switched-by-payload4-versus0) verifies four retained per-vertex flag checks. Both selector15h payload4 and0 clear that flag, selecting the same source+14h attribute copy if it remains unchanged. Their raw device-state requests differ; a newly disabled CPU-side vertex rewrite is not the established mechanism. Actual taillight inputs and visible repair remain unverified.
+
+
+## Setup Credits-to-Options chronology verified in retained assets
+
+The [four-package menu audit](original-modern-setup-website.md#early-credits-route-and140-options-replacement-are-present-in-assets) finds explicit Credits text/codelink/nextmenu in1.1.0 and1.3.1, replaced by Options in1.4.0 and retained final. This closes the intermediate authored-route gap behind MP100-052/MP140-017. Exact1.0.0 introduction, historical callback activation and visible placement remain unverified; both catalog entries remain partial.
