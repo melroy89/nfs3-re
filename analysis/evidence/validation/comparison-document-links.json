@@ -188,8 +188,8 @@
     },
     {
       "path": "analysis/original-modern-ghost-loading.md",
-      "sha256": "baaa45d2c9f79800978f52fcb0cf5a4c5f4572d8c58f5cd89540555a62b94caf",
-      "relative_links": 6
+      "sha256": "395e6869a84c2b874bc5e30c48db1e85d931a80df31eb447e713517b38b02123",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-glide-reference-identity.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3080,
+  "relative_link_count": 3081,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

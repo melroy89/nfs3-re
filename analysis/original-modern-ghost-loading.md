@@ -120,3 +120,17 @@ the grouped-defaults branch when it reaches that loader in 1.6.0. The
 ghost wrapper instead restores the current header on successful load. The supplied original
 has zero bytes at this address and derives its header through a different
 startup path. See the [config loading comparison](original-modern-config-loading.md#original-startup-populates-the-header-template-from-a-version-resource).
+
+### Ghost admission and ordinary config admission use different fields
+
+Fresh reads from both hash-pinned EXEs reproduce identical reader and
+model resolver bodies. The ghost reader compares the reported resource
+size against `0x41574` at `00477b82`. Its resolver compares the first
+DWORD of the preparation block against `0x20f0` at `00478109` and
+uses the model count at block+0x19d0. The two bodies contain no equivalent
+of the ordinary configuration loader's minimum version test on header+4.
+Consequently, the ordinary version-6 threshold cannot by itself explain
+a ghost being rejected along this path. Resource opening, the first DWORD
+check and model resolution remain separate conditions. Complete file
+acceptance and cross-version playback still require separate evidence.
+See the [ghost format notes](pose-ghost-contract.md#immediate-validator-boundary).
