@@ -465,3 +465,18 @@ After copying, both versions compare **`wrap32(field4 * field8 + field0c)`** wit
 This closes the selected publisher-to-HUD operand link. Other writes/aliases, actual record contents, effective viewport transformations and initialization timing remain unknown. The later final producer described earlier uses a different dimension-change guard; its implementation must not be substituted into120/130.
 
 **MP100-005 advances vendor-only→partial:** the existing original/final comparison proves file-sourced presets become embedded aspect-adjusted initialization, and the selected historical publisher concretely requests a rebuild after a changed mode key. Exact100 introduction, every settings path, universal rebuilding, complete absence of other POS consumers and the advertised visual accuracy remain unverified. No resolution was changed in a running game and no target/API/instruction execution or Ghidra mutation occurred.
+
+### Frontend writes the same selector to all six profiles
+
+At `004517d4`, the original selects ECX=1 when the language field
+`006fbb4c` is zero and ECX=3 otherwise. Modern selects 3
+unconditionally. The shared tail at `004517e9..0045180d` writes the
+value to `006fc154`, `006fc2f8`, `006fbe0c`, `006fbfb0`,
+`006fc49c` and `006fbc68`. In ascending order those are precisely
+the six profile selector cells at `006fbc68 + index*0x1a4`.
+
+This particular write therefore changes all six cells from 1 to 3
+when the original language field would be zero. The
+[track length consumer](original-modern-track-length-text.md) places
+1 and 3 on different unit-selection branches. Later profile edits,
+entry-point reachability and visible units remain separate questions.
