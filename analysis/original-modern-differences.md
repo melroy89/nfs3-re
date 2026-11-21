@@ -1194,3 +1194,8 @@ The [historical consumer comparison](original-modern-display-modes.md#dx6-extra-
 ## Vehicle-effect code is retained across the taillight-fix boundary
 
 The [four-build comparison](original-modern-state14.md#selected-vehicle-effect-bodies-remain-unchanged) verifies5,567 bytes across eight selected vehicle-effect/rendering bodies are identical in the supplied original,140,150 and official final EXEs. Six direct calls to the tagged-effect helper are decoded within these bodies. This narrows where to look for MP150-033: changed state/inputs or other code, rather than edits inside these ranges. It does not prove the menu taillight repair or visual equivalence.
+
+
+## DX6 provider branch behind contextual fog gating
+
+The [selector15h comparison](original-modern-state14.md#dx6-provider-distinguishes-the-menu-gate-payloads) connects the140/150 menu effective4→0 change to distinct unchanged DX6 raw-state requests: payload4 requests1Ch=1 plus parameters, while0 requests1Ch=0. Provider success and the actual taillight draw/colour remain unverified; MP150-033 is still vendor-only.

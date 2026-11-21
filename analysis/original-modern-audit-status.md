@@ -802,3 +802,8 @@ The [checkpoint](evidence/validation/renderer-screenshot-history-checkpoint.json
 ## Selected DX6 count consumers qualified
 
 The [consumer audit](original-modern-display-modes.md#dx6-extra-count-slot-reaches-inclusive-scans-but-can-fail-admission) verifies inclusive scans and150 eligibility ordering. The extra visited row is rejected under the documented N<100 zero-arena/insertion-only premises; N100, external writes and direct/same-current switching retain separate limits. Nearest fallback1 is not proof of an eligible record. This advances the count follow-up without a target run or catalog classification change.
+
+
+## DX6 contextual gate reaches distinct provider requests
+
+The [selected driver linkage](original-modern-state14.md#dx6-provider-distinguishes-the-menu-gate-payloads) verifies both140/150 selector15h dispatch and retained0/4 branches through the raw-state wrapper. The main-menu effective-payload change can select different raw requests; actual cache forwarding, menu-light submission and rendered repair remain qualified. MP150-033 remains vendor-only. The [vehicle-effect comparison](original-modern-state14.md#selected-vehicle-effect-bodies-remain-unchanged) separately establishes eight selected bodies unchanged across four EXEs; it does not establish state/input equivalence.

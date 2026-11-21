@@ -228,3 +228,18 @@ The saved analysis describes `004d9120` calling `009ef938(2)` and, when driver f
 Full-range decoding confirms direct calls to `004b8740` at `004baa37`, `004bab51`, `004badd9`, `004bb0f3`, `004bb1e7` and `004bb479`. This is a census within the selected bodies, not all incoming calls or indirect targets. Existing [vehicle/FCE research](detailed-analysis-notes.md) supplies their qualified names and tag/layout interpretation; no tag is newly declared to be a taillight from spelling alone.
 
 This rules out an instruction edit **inside these ranges** as the140→150 repair. It does not rule out changed inputs, global state, assets, pointed-to data, downstream functions or FPU state. In particular, the independently verified contextual fog change can affect unchanged draw code. The menu-car entry chain, taillight-specific submission and visible colour outcome remain unresolved; MP150-033 stays vendor-only. The next useful comparison is the effective renderer state at the actual menu-effect submission, rather than another comparison of these unchanged bodies. No target execution, compilation or Ghidra change occurred.
+
+
+## DX6 provider distinguishes the menu gate payloads
+
+**Verified selected EXE/provider mechanism; no visible taillight repair established.** The [DX6 selector audit](evidence/audits/dx6-fog-selector-history.json), reproduced with `python3 analysis/scripts/audit_dx6_fog_selector_history.py`, reuses the hash-pinned140/150 drivers from the contextual-fog audit. Both export `_THRASH_setstate@8` at RVA3310. The dispatcher loads its selector into EDI, zeroes EBP, and uses table `60003f0c`; entry15h at `60003f60` targets `6000373e`. The selected dispatcher, payload branches and raw-state wrapper are byte-identical across the pair.
+
+| Selector15h payload | Selected provider action |
+|---|---|
+|4 |Store4 at `6003bcb4`, clear `60014b5c`; request raw state1Ch=1,23h=1, then22h/26h/24h/25h from four global parameter cells |
+|0 |Request raw state1Ch=0; clear `60014b5c` |
+|1 |Request raw state1Ch=1; store1 at `60014b5c` |
+
+Raw-state wrapper `60006950..60006991` may run setup/flush helpers, then passes state/value to object `600150a0` through vtable offset58h. Its NEG/SBB/INC tail returns1 for callback result0, otherwise0. These selected selector branches do not test each wrapper return before setting their own success register. This is evidence of requests, not successful device changes. The complete external object/API identity, helper side effects and lifetime remain outside this bounded audit; raw numeric IDs are retained rather than assuming an authoritative API specification.
+
+Combined with the preceding EXE evidence, main-menu context0 in150 produces effective0 where140's enabled support path produced4. The retained scene-state route can therefore select the0 branch instead of4 when the cached setter forwards the request. This advances the driver-side linkage beyond the earlier independent mode-count edit. It does **not** identify a taillight draw, prove the relevant scene route is reached for that menu asset, or observe repaired colour. MP150-033 remains vendor-only pending that final linkage and visible validation. No target, API or instruction probe was executed; executable and Ghidra bytes were not edited.
