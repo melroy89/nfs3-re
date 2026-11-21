@@ -335,3 +335,11 @@ the state update itself, including the three Random modes and the
 0, 1, 2, 3, 8 progression. The paired comparison supports the
 implementation described by MP153-003. Caller cadence and actual
 track playback remain unverified.
+
+Both final selector call routes are already present in packaged 1.5.3.
+The call at `00410426` is unchanged through final. The race loading
+call sits at `004a34a4` in 1.5.3 and `004a3489` in 1.6.0 and final.
+Aligned disassembly confirms that each loading site follows a call to
+`00495230` and precedes the poll at `004a33d0`. Surrounding control
+flow differs, so the retained local order does not establish equal
+invocation counts per race.
