@@ -1,5 +1,25 @@
 # Original versus Modern audit: current stopping point
 
+## Current texture, clock, speech and loader checkpoint — 2026-11-21
+
+The [eight-audit checkpoint](evidence/validation/texture-clock-speech-loader-checkpoint.json) reviews `b1b26ab`: **16/16 static reruns** reproduce eight committed evidence outputs; **12 protected artifacts and12 retained raw exports** match prior hashes. Reproduce with `python3 analysis/scripts/check_texture_clock_speech_loader.py`. This covers all eight investigation scripts added/changed since the preceding renderer/loading/menu checkpoint; selected shared dependencies and exact output hashes are recorded. It is primary-agent repeatability/preservation, not independent semantic review, runtime acceptance or whole-repository qualification.
+
+|Investigation |Verified static result |Still unknown |
+|---|---|---|
+|[Texture extent](original-modern-texture-limits.md#historical-track-extent-and-experimental-setting-are-separate-changes) |140→150 track argument128→256;151 adds configurable wrapper overriding retained128 |Beta-only claim, all producers and actual uploads |
+|[Clock source](original-modern-clock-source.md#historical-clock-boundary-is152-to153) |152→153 switches16 known calls; timer ranges otherwise retained after operand normalization |Accuracy, pacing, rollover and separate generic startup-fix cause |
+|[DX6 format count](original-modern-texture-limits.md#dx6-format-count-bound-is-separate-from-texture-dimensions) |120 callback guards unsigned count100 before156-byte record writes |Missing prepatch NFS4 driver and reproduced crash repair |
+|[Early DX6 modes](original-modern-display-modes.md#early120-dx6-mode-policies-and-the640-by480-caveat) |120/131 driver identity; capacity/height policy; conditional32-bit overwrite of640×480 seed |Actual mode selection and movie behavior; not universally forced16-bit |
+|[OS admission](original-modern-startup-requirements.md#historical130-to131-lowers-the-directx-probe-os-gate) |130→131 probe changes one byte: major minimum5→4 |Windows98/Me loader, driver and game success |
+|[Speech fallback](original-modern-sound-bank-language.md#cached-selector-producer-checks-a-directory-and-requests-english-fallback) |Directory-false English request; helpers preserve selector; two Swedish E→W tables |English/files not rechecked; playback and full lifetimes |
+|[Speech history](original-modern-sound-bank-language.md#historical110-to120-dates-the-selected-fallback-and-swedish-code) |110→120 dates those selected changes; historical/final cache and helper contracts distinguished |All consumers and crash avoidance |
+|[Renderer load sites](original-modern-renderer-loading.md#historical110-to120-consolidates-direct-renderer-load-sites) |Six switch-wrapper sites become one direct loader site at120; snapshot bodies still retained |Runtime invocation/refcount counts; one site is not one process load |
+
+Current catalogue: **47 vendor-only,56 bounded-static,187 partial,0 unresolved-category entries** across290 release-note bullets. Labels are evidence classifications, not distinct EXE changes or a completion percentage. The shallow list covers every source bullet; it does not cover every undocumented binary difference. Zero unresolved-category entries does not mean zero unknowns.
+
+The requested Markdown comparison and reproducible, address-based findings exist, but exhaustive original/Modern semantic coverage is **not complete**. The table above distinguishes new mechanisms from pending behavior instead of making each runtime unknown a prerequisite for other inspection. Next prioritize a remaining concrete mechanism with an available baseline; preserve named component/version boundaries, reuse previous findings and avoid attributing vague fixes from neighboring release notes.
+
+
 ## Current renderer, loading and menu checkpoint — 2026-11-21
 
 The [eleven-audit checkpoint](evidence/validation/renderer-loading-menu-checkpoint.json) reviews `ea2fc48`: **22/22 static runs** reproduce11 committed evidence outputs; **12 protected artifacts and12 raw exports** retain prior hashes. Reproduce with `python3 analysis/scripts/check_renderer_loading_menu.py`. It covers all nine newly added/changed investigation scripts since the preceding checkpoint, plus the canonical SoftTri and Glide reference-pair audits reused by the follow-ups. The manifest records exact script/output hashes and selected shared dependencies. It does not qualify the entire repository, independently review semantics or execute target code.
@@ -14,24 +34,7 @@ The [eleven-audit checkpoint](evidence/validation/renderer-loading-menu-checkpoi
 |[Loading screenshots](original-modern-screenshots.md#loading-progress-screenshot-service-is-added-at140) |131→140 service addition, local gates and request clearing |Captured frame, input delivery and file success |
 |[Controller/Connect](original-modern-common-menu-buttons.md#controller-and-connect-tab-layout-changes-at130) |120→130 authored positions/order;131→140 Reset6→7 |Parser defaults, loaded assets and rendered alignment |
 
-The subsequent [texture extent history audit](original-modern-texture-limits.md#historical-track-extent-and-experimental-setting-are-separate-changes) directly dates the140→150 track argument128→256 and150→151 configurable setting/wrapper. The151 wrapper overrides a retained caller immediate128, preventing a misleading regression interpretation. MP150-013's beta-only claim remains vendor-only because no beta is inspected. This new audit is outside these22 checkpoint runs.
-
-The subsequent [historical clock audit](original-modern-clock-source.md#historical-clock-boundary-is152-to153) dates all16 known clock calls to152→153 and reproduces timer-body equality after only call-operand changes. MP153-012's API boundary is supported; accuracy and MP153-014's distinct startup-failure cause remain unverified. This new audit is outside these22 checkpoint runs.
-
-The subsequent [DX6 format-count audit](original-modern-texture-limits.md#dx6-format-count-bound-is-separate-from-texture-dimensions) establishes120's unsigned100-record admission guard and156-byte writes, advancing MP120-016 to partial. No prepatch NFS4 DX6 counterpart is available in the inspected archives, so guard introduction and the advertised crash repair remain unverified. This new audit is outside these22 checkpoint runs.
-
-The expanded [early120 DX6 mode audit](original-modern-display-modes.md#early120-dx6-mode-policies-and-the640-by480-caveat) proves120/131 driver identity, capacity/height policy and a conditional counterexample to local “always640×480×16” forcing. MP120-017/018/019 gain partial support with explicit prepatch/runtime limits; seed/preference is not a universal post-enumeration result. This extension is outside these22 checkpoint runs.
-
-The subsequent [130→131 DirectX OS-gate audit](original-modern-startup-requirements.md#historical130-to131-lowers-the-directx-probe-os-gate) proves a single-byte major-version threshold5→4 in the complete540-byte probe, with retained caller/import/header. MP131-003 gains partial support; actual Windows98/Me compatibility remains unverified. This new audit is outside these22 checkpoint runs.
-
-The subsequent [speech producer follow-up](original-modern-sound-bank-language.md#cached-selector-producer-checks-a-directory-and-requests-english-fallback) resolves helper preservation and directory-based English fallback, plus two Swedish E→W tables. MP120-012 gains partial support; fallback does not recheck English/files, and historical introduction/playback remain unverified. This expanded audit is outside these22 checkpoint runs.
-
-The [110→120 speech history audit](original-modern-sound-bank-language.md#historical110-to120-dates-the-selected-fallback-and-swedish-code) now dates the selected fallback/cache and two Swedish E→W changes. It records historical cache007a2774 versus final007a2764 and different string-helper outputs; playback/crash avoidance remain unverified. This new audit is outside these22 checkpoint runs.
-
-The subsequent [110→120 renderer load-site audit](original-modern-renderer-loading.md#historical110-to120-consolidates-direct-renderer-load-sites) establishes six switch-wrapper sites becoming one direct loader site, while snapshot bodies remain physically retained120. MP120-006 gains partial support; one site is not one runtime call, and complete DLL lifetime remains unverified. This new audit is outside these22 checkpoint runs.
-
-Current catalogue remains **47 vendor-only,56 bounded-static,187 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
-
+Later texture/clock/DX6/OS/speech/loader findings are consolidated in the [newer checkpoint](#current-texture-clock-speech-and-loader-checkpoint--2026-11-21), rather than covered by these22 earlier runs. The catalog snapshot at the end of that follow-up sequence is47 vendor-only/56 bounded-static/187 partial; the full comparison remains incomplete.
 
 ## Current HUD, Glide, projection and affinity checkpoint — 2026-11-21
 
@@ -46,7 +49,7 @@ The [six-audit checkpoint](evidence/validation/hud-glide-projection-affinity-che
 |[Projection](original-modern-projection.md#historical-fulldefault-origin-change-reaches-projection-centre) |Bounded camera-region partition and default origin-to-centre linkage; odd-dimension limit explicit |Capture lifetime, other contexts/orientation and actual horizon |
 |[Affinity](original-modern-startup-policy.md#early110-affinity-policy-defaults-enabled) |110 configured/reader default1 and conditional mask1 request; final default0 |Exact100 introduction, API success and multicore reliability |
 
-Current catalogue: **54 vendor-only,56 bounded-static,180 partial,0 unresolved-category entries**, across290 release-note bullets. These are labels, not distinct EXE changes or completion percentages. Zero in the last category does **not** mean no unknowns: vendor-only claims, partial mechanisms, provenance, projection capture, preset−5 meaning and runtime compatibility remain open. The full original/Modern comparison is incomplete.
+Earlier catalogue snapshot: **54 vendor-only,56 bounded-static,180 partial,0 unresolved-category entries**, across290 release-note bullets. These are labels, not distinct EXE changes or completion percentages. Zero in the last category does **not** mean no unknowns: vendor-only claims, partial mechanisms, provenance, projection capture, preset−5 meaning and runtime compatibility remain open. The full original/Modern comparison is incomplete.
 
 The subsequent [140/150 dgVoodoo metadata audit](original-modern-renderer-loading.md#historical140-and150-dgvoodoo-wrappers-share-versions-but-differ-in-bytes) adds bounded support for MP150-037 and partial support for MP140-047; WIP16 identity remains unverified. It is outside these12 checkpoint runs.
 
