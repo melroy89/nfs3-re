@@ -105,6 +105,264 @@
           "clear_navigation_skip_mask1301": false
         }
       ],
+      "class_flag_census": [
+        {
+          "row": "00557a84",
+          "id": 2,
+          "name": "title",
+          "template": "00556d5c",
+          "flags_word": 6145,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557a90",
+          "id": 3,
+          "name": "text",
+          "template": "00556d9c",
+          "flags_word": 2304,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557a9c",
+          "id": 4,
+          "name": "image",
+          "template": "00556df0",
+          "flags_word": 256,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557aa8",
+          "id": 5,
+          "name": "button",
+          "template": "00556e40",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557ab4",
+          "id": 17,
+          "name": "cascade",
+          "template": "00556ea8",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557ac0",
+          "id": 29,
+          "name": "droplist",
+          "template": "00556f0c",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557acc",
+          "id": 21,
+          "name": "selectlist",
+          "template": "00556ff8",
+          "flags_word": 512,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557ad8",
+          "id": 6,
+          "name": "checkbox",
+          "template": "00556f74",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557ae4",
+          "id": 8,
+          "name": "obj3d",
+          "template": "00557374",
+          "flags_word": 512,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557af0",
+          "id": 7,
+          "name": "List",
+          "template": "00557430",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557afc",
+          "id": 9,
+          "name": "edstring",
+          "template": "005574f0",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b08",
+          "id": 10,
+          "name": "edint",
+          "template": "00557480",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b14",
+          "id": 11,
+          "name": "edchar",
+          "template": "00557544",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b20",
+          "id": 12,
+          "name": "edfloat",
+          "template": "005575a8",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b2c",
+          "id": 13,
+          "name": "edfixed",
+          "template": "00557620",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b38",
+          "id": 14,
+          "name": "boxoverlay",
+          "template": "00557698",
+          "flags_word": 256,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557b44",
+          "id": 15,
+          "name": "slider",
+          "template": "00557718",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b50",
+          "id": 18,
+          "name": "carclrselect",
+          "template": "005577d0",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b5c",
+          "id": 19,
+          "name": "colorwheel",
+          "template": "00557834",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b68",
+          "id": 20,
+          "name": "controls",
+          "template": "00556fb8",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b74",
+          "id": 22,
+          "name": "speech",
+          "template": "005576d8",
+          "flags_word": 256,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557b80",
+          "id": 23,
+          "name": "summary",
+          "template": "005570e0",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b8c",
+          "id": 27,
+          "name": "performance",
+          "template": "00557070",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b98",
+          "id": 25,
+          "name": "tourny",
+          "template": "0055716c",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557ba4",
+          "id": 26,
+          "name": "cop",
+          "template": "005571f0",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557bb0",
+          "id": 24,
+          "name": "records",
+          "template": "005572b8",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557bbc",
+          "id": 28,
+          "name": "compare",
+          "template": "00557274",
+          "flags_word": 256,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557bc8",
+          "id": 30,
+          "name": "TextBx",
+          "template": "005578dc",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557bd4",
+          "id": 31,
+          "name": "HudItem",
+          "template": "00557928",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557be0",
+          "id": 32,
+          "name": "Rect",
+          "template": "005579a8",
+          "flags_word": 2304,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557bec",
+          "id": 33,
+          "name": "InteriorBx",
+          "template": "00557a04",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557bf8",
+          "id": 34,
+          "name": "Compass",
+          "template": "00557a44",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        }
+      ],
       "unchanged_code": [
         {
           "name": "loader",
@@ -262,6 +520,264 @@
           "clear_navigation_skip_mask1301": true
         }
       ],
+      "class_flag_census": [
+        {
+          "row": "00557a84",
+          "id": 2,
+          "name": "title",
+          "template": "00556d5c",
+          "flags_word": 6145,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557a90",
+          "id": 3,
+          "name": "text",
+          "template": "00556d9c",
+          "flags_word": 2304,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557a9c",
+          "id": 4,
+          "name": "image",
+          "template": "00556df0",
+          "flags_word": 256,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557aa8",
+          "id": 5,
+          "name": "button",
+          "template": "00556e40",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557ab4",
+          "id": 17,
+          "name": "cascade",
+          "template": "00556ea8",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557ac0",
+          "id": 29,
+          "name": "droplist",
+          "template": "00556f0c",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557acc",
+          "id": 21,
+          "name": "selectlist",
+          "template": "00556ff8",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557ad8",
+          "id": 6,
+          "name": "checkbox",
+          "template": "00556f74",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557ae4",
+          "id": 8,
+          "name": "obj3d",
+          "template": "00557374",
+          "flags_word": 512,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557af0",
+          "id": 7,
+          "name": "List",
+          "template": "00557430",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557afc",
+          "id": 9,
+          "name": "edstring",
+          "template": "005574f0",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b08",
+          "id": 10,
+          "name": "edint",
+          "template": "00557480",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b14",
+          "id": 11,
+          "name": "edchar",
+          "template": "00557544",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b20",
+          "id": 12,
+          "name": "edfloat",
+          "template": "005575a8",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b2c",
+          "id": 13,
+          "name": "edfixed",
+          "template": "00557620",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b38",
+          "id": 14,
+          "name": "boxoverlay",
+          "template": "00557698",
+          "flags_word": 256,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557b44",
+          "id": 15,
+          "name": "slider",
+          "template": "00557718",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b50",
+          "id": 18,
+          "name": "carclrselect",
+          "template": "005577d0",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b5c",
+          "id": 19,
+          "name": "colorwheel",
+          "template": "00557834",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b68",
+          "id": 20,
+          "name": "controls",
+          "template": "00556fb8",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b74",
+          "id": 22,
+          "name": "speech",
+          "template": "005576d8",
+          "flags_word": 256,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557b80",
+          "id": 23,
+          "name": "summary",
+          "template": "005570e0",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557b8c",
+          "id": 27,
+          "name": "performance",
+          "template": "00557070",
+          "flags_word": 512,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557b98",
+          "id": 25,
+          "name": "tourny",
+          "template": "0055716c",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557ba4",
+          "id": 26,
+          "name": "cop",
+          "template": "005571f0",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557bb0",
+          "id": 24,
+          "name": "records",
+          "template": "005572b8",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557bbc",
+          "id": 28,
+          "name": "compare",
+          "template": "00557274",
+          "flags_word": 256,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557bc8",
+          "id": 30,
+          "name": "TextBx",
+          "template": "005578dc",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557bd4",
+          "id": 31,
+          "name": "HudItem",
+          "template": "00557928",
+          "flags_word": 2048,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557be0",
+          "id": 32,
+          "name": "Rect",
+          "template": "005579a8",
+          "flags_word": 2304,
+          "skip_mask1301_set": true
+        },
+        {
+          "row": "00557bec",
+          "id": 33,
+          "name": "InteriorBx",
+          "template": "00557a04",
+          "flags_word": 0,
+          "skip_mask1301_set": false
+        },
+        {
+          "row": "00557bf8",
+          "id": 34,
+          "name": "Compass",
+          "template": "00557a44",
+          "flags_word": 512,
+          "skip_mask1301_set": true
+        }
+      ],
       "unchanged_code": [
         {
           "name": "loader",
@@ -306,15 +822,37 @@
       }
     }
   },
+  "complete_registered_class_flag_changes": [
+    {
+      "name": "selectlist",
+      "template": "00556ff8",
+      "131_flags": 512,
+      "140_flags": 0
+    },
+    {
+      "name": "performance",
+      "template": "00557070",
+      "131_flags": 0,
+      "140_flags": 512
+    },
+    {
+      "name": "Compass",
+      "template": "00557a44",
+      "131_flags": 0,
+      "140_flags": 512
+    }
+  ],
   "verified": [
     "Load replays versus Back/Cancel and IPX gamelist versus Join/Refresh reverse relative authored section order131->140.",
     "Retained loader increments00660bac for parsed section then copies template into00604ee0+ordinal*bc;selected selectors traverse indexed records.",
     "Button template800 clears skip mask in both;selectlist template200->0 removes a bit tested by retained navigation mask1301;runtime writes/race-now policy remain qualified.",
+    "All32 registered class flag WORDs compared;only selectlist,performance,Compass change,and all three changes toggle0200h.",
     "This is a concrete order-producing asset/code candidate forMP140-015,not an observed keyboard traversal."
   ],
   "limits": [
     "Source section ordinals are not actual global runtime indices;loading,base indices,parser success and appended menus remain conditional.",
     "Template flags are initial values,not proof every actual control remains selectable or receives a key.",
+    "Class census covers initial flag WORDs,not all template bytes,source allocation extents or later flag writes.",
     "No all-menu order correctness,mouse/focus effects or live keyboard/UI test established.",
     "No target/API/instruction execution,compilation or Ghidra changes."
   ]

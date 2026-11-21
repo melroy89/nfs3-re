@@ -126,3 +126,16 @@ Class registry row `00557acc` identifies selectlist type21 and that template. Bu
 The complete selected loader, template copier and previous/next bodies are byte-identical131/140. The mechanism therefore lies in data consumed by retained code. Later initializers, parsed fields and callbacks can still modify flags or selection; the Race Now policy predicate and selected-entry callbacks remain separate gates. Missing files, runtime-generated controls and global entry bases are not reconstructed by this package comparison.
 
 These facts advance MP140-015 from vendor-only to a **partial candidate**, without proving correct order in every menu or reproducing a keyboard session. The earlier routing audit remains independently useful for Tab/chat/arrow changes. No target instruction, API, compiler or Ghidra mutation was used.
+
+
+### Complete registered-class flag census finds three changes
+
+The expanded entry-order audit compares the flags WORD at template+4 for **all32 registered frontend classes**, from registry `00557a84` through the zero sentinel at `00557c04`. IDs, names and template pointers match131/140. Exactly three flag WORDs change:
+
+| Class |Template |131 flags |140 flags |Effect of0200h under the retained1301h skip mask |
+|---|---|---|---|---|
+|selectlist |`00556ff8` |0200h |0000h |Removes this initial skip reason |
+|performance |`00557070` |0000h |0200h |Adds this initial skip reason |
+|Compass |`00557a44` |0000h |0200h |Adds this initial skip reason |
+
+The other29 checked flag WORDs match. This refines the preceding selectlist finding: the initial eligibility revision both admits one class and excludes two others on the checked navigation route. It is not a global removal of disabled/skip policy. The census covers these flags only, not every template byte or template allocation extent; runtime parsed fields, initialization and callbacks can change effective flags. It does not prove the semantic interactivity of every performance/Compass instance or correct traversal in every menu. MP140-015 remains partial, with no target execution or database mutation.

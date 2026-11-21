@@ -23,6 +23,16 @@ def main():
         retained.append([get(a,b)for _,a,b in spans])
         assert get(0x44a1fe,0x44a203).hex()=='66f7c20113'
         assert get(0x4496e4,0x4496f6).hex()=='8d4a0189c289c8890dac0b6600e86af9ffff'
+        class_rows=[]
+        for registry in range(0x557a84,0x557c10,12):
+            code,name,template=struct.unpack('<3I',get(registry,registry+12))
+            if code==0:
+                assert registry==0x557c04 and get(registry,registry+12)==b'\0'*12
+                break
+            flags=struct.unpack('<H',get(template+4,template+6))[0]
+            class_rows.append({'row':f'{registry:08x}','id':code,'name':pe.get_string_at_rva(name-0x400000).decode(),
+                               'template':f'{template:08x}','flags_word':flags,'skip_mask1301_set':bool(flags&0x1301)})
+        assert len(class_rows)==32
         templates=[]
         for row,code,name,template,flags in [(0x557aa8,5,b'button',0x556e40,0x800),(0x557acc,21,b'selectlist',0x556ff8,0x200 if version=='1.3.1'else 0)]:
             values=struct.unpack('<3I',get(row,row+12));assert values[0]==code and values[2]==template
@@ -36,11 +46,18 @@ def main():
                   'identity':r['fields'].get('codelink')or r['fields'].get('text')or r['fields'].get('listname')}
                  for i,r in enumerate(rows)if r['section']in controls]
             orders[version][menu]=seq;members[menu]={'member':member,'sha256':sha(data),'authored_control_order':seq}
-        result['versions'][version]={'archive':rel,'archive_sha256':ah,'exe_sha256':eh,'menus':members,'templates':templates,
+        result['versions'][version]={'archive':rel,'archive_sha256':ah,'exe_sha256':eh,'menus':members,'templates':templates,'class_flag_census':class_rows,
             'unchanged_code':[{'name':n,'start':f'{a:08x}','end_exclusive':f'{b:08x}','sha256':sha(get(a,b))}for n,a,b in spans],
             'ordinal_append_witness':{'start':'004496d6','end_exclusive':'004496f8','hex':get(0x4496d6,0x4496f8).hex(),
                                       'disassembly':disassemble(get(0x4496d6,0x4496f8),0x4496d6)}}
     assert retained[0]==retained[1]
+    class_changes=[]
+    for old,new in zip(result['versions']['1.3.1']['class_flag_census'],result['versions']['1.4.0']['class_flag_census']):
+        assert all(old[k]==new[k]for k in ('row','id','name','template'))
+        if old['flags_word']!=new['flags_word']:
+            class_changes.append({'name':old['name'],'template':old['template'],'131_flags':old['flags_word'],'140_flags':new['flags_word']})
+    assert [(r['name'],r['131_flags'],r['140_flags'])for r in class_changes]==[('selectlist',512,0),('performance',0,512),('Compass',0,512)]
+    result['complete_registered_class_flag_changes']=class_changes
     def position(v,menu,identity):
         matches=[r['section_ordinal_zero_based']for r in orders[v][menu]if r['identity']==identity]
         assert len(matches)==1;return matches[0]
@@ -52,9 +69,11 @@ def main():
     result['verified']=['Load replays versus Back/Cancel and IPX gamelist versus Join/Refresh reverse relative authored section order131->140.',
         'Retained loader increments00660bac for parsed section then copies template into00604ee0+ordinal*bc;selected selectors traverse indexed records.',
         'Button template800 clears skip mask in both;selectlist template200->0 removes a bit tested by retained navigation mask1301;runtime writes/race-now policy remain qualified.',
+        'All32 registered class flag WORDs compared;only selectlist,performance,Compass change,and all three changes toggle0200h.',
         'This is a concrete order-producing asset/code candidate forMP140-015,not an observed keyboard traversal.']
     result['limits']=['Source section ordinals are not actual global runtime indices;loading,base indices,parser success and appended menus remain conditional.',
         'Template flags are initial values,not proof every actual control remains selectable or receives a key.',
+        'Class census covers initial flag WORDs,not all template bytes,source allocation extents or later flag writes.',
         'No all-menu order correctness,mouse/focus effects or live keyboard/UI test established.',
         'No target/API/instruction execution,compilation or Ghidra changes.']
     (ROOT/'analysis/evidence/audits/menu-entry-order-history.json').write_text(json.dumps(result,indent=2)+'\n')

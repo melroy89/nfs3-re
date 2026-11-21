@@ -1297,3 +1297,8 @@ The [131/140 audit](original-modern-menu-input.md#tab-and-chat-bypass-routing-ap
 ## Keyboard-order mechanism found in template flags and menu records
 
 The [131/140 data/consumer follow-up](original-modern-menu-input.md#keyboard-order-candidate-combines-template-eligibility-and-asset-order) verifies selectlist flags0200h→0, removes a bit in the retained navigation skip mask, and ties Load/IPX authored section reorders to the unchanged ordinal loader/selectors. MP140-015 advances to a partial candidate. Runtime eligibility, every-menu correctness and actual key traversal remain untested. Current labels are74 vendor-only/54 bounded-static/160 partial/2 unresolved.
+
+
+## Keyboard eligibility revision covers three registered classes
+
+The [complete32-class flag census](original-modern-menu-input.md#complete-registered-class-flag-census-finds-three-changes) finds exactly three131/140 changes: selectlist clears0200h, while performance and Compass set it. The retained navigation mask tests that bit. Other29 flag WORDs match; later flags and actual traversal remain unverified. This refines the existing partial keyboard-order mechanism without changing catalog counts.
