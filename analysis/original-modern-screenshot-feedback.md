@@ -27,7 +27,7 @@ Original increments ordinary counter `005600f8` before formatting `%s\\nfs3_%02d
 
 The existing [lifecycle contract](screenshot-lifecycle-contract.md#filename-counter-initialization-and-wrapping) already establishes the reset/directory path: ordinary MOV0 when directory setup succeeds and the non-dot-entry helper returns zero, including its search-failure case. The cached-ready path checks directory existence and ordinarily avoids that reset. This is retained counter state within the process plus collision skipping; it is **not** a scan to recover the highest directory number.
 
-This supports a bounded interpretation of **MP140-055**, while persistence across process launches and save-file serialization remains unresolved. Four decimal positions are a minimum formatting width, not a 9999 cap. Atomic selection does not reserve a filename, coordinate with the non-atomic reset, prove encoder success or guarantee completion order. The linked lifecycle report covers those limits; no concurrency failure is claimed observed.
+This supports a bounded interpretation of **MP140-055**. The serialization follow-up below establishes counter inclusion in the configuration block; successful cross-launch preservation remains untested. Four decimal positions are a minimum formatting width, not a 9999 cap. Atomic selection does not reserve a filename, coordinate with the non-atomic reset, prove encoder success or guarantee completion order. The linked lifecycle report covers those limits; no concurrency failure is claimed observed.
 
 ## Shutter sound: resource-backed request after launch success
 
@@ -40,3 +40,14 @@ The official PE contains **RCDATA / SNAP.WAV / language 0**, 3,240 bytes, with R
 ## Remaining questions
 
 Actual held-key timing, file success/completion ordering, cross-launch numbering persistence and audible output require separate evidence. Historical introduction dates require prior patch releases. All statements here distinguish observed instructions/resources from runtime behavior.
+
+
+## Counter belongs to the saved configuration block
+
+The [serialization extent audit](evidence/audits/screenshot-counter-serialization.json), reproduced with `python3 analysis/scripts/audit_screenshot_counter_serialization.py`, pins the official final EXE and retains complete selected save/load bodies. Screenshot counter `006fd1e0` is **offset16A0h** from configuration base `006fbb40`, inside the `20F0h`-byte extent. The save body sets source/base and size at `00472869..00472875`, copies to its temporary buffer, and requests writing `20F0h` bytes. Its explicit temporary-field clear at `00472898` targets **1860h**, not16A0h. The load path sets destination `006fbb40` at `00472a7f` and performs the corresponding block copy before header/default decisions.
+
+This supplies a concrete **conditional cross-launch persistence mechanism through config.dat**. It supersedes the earlier serialization-unknown boundary; the counter is not merely isolated process-only state. It is also not proof that every screenshot immediately updates the file: no save call is established here on each capture, and save admission, successful I/O, later startup/default/profile writes and shutdown ordering remain separately qualified. A copied block can contain an older counter snapshot.
+
+The [existing header decision tree](original-modern-config-loading.md#modern-header-decision-tree) and [directory reset](screenshot-lifecycle-contract.md#filename-counter-initialization-and-wrapping) still matter. Directory setup can zero the counter for an empty/non-dot-entry-negative search result, including search failure. Existing-file collision skipping can avoid overwriting old numbers even without a successfully restored counter, so continued numbering alone would not prove serialization. Conversely, a restored counter can retain a larger number after files are removed unless a reset path runs.
+
+**Verified:** field inclusion in declared save/load extents and the distinct temporary-field clear. **Unverified:** successful actual saved bytes, all helper/register and direction-flag preconditions, synchronization with screenshot increments, all later writers and real cross-launch results. MP140-055 remains partial; its historical1.4.0 introduction is not dated by this final-only check. No configuration file was written or loaded, and no target instructions or Ghidra changes were made.

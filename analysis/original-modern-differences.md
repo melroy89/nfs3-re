@@ -1209,3 +1209,8 @@ The [quad follow-up](original-modern-state14.md#dx6-quad-attribute-copying-is-no
 ## Setup Credits-to-Options chronology verified in retained assets
 
 The [four-package menu audit](original-modern-setup-website.md#early-credits-route-and140-options-replacement-are-present-in-assets) finds explicit Credits text/codelink/nextmenu in1.1.0 and1.3.1, replaced by Options in1.4.0 and retained final. This closes the intermediate authored-route gap behind MP100-052/MP140-017. Exact1.0.0 introduction, historical callback activation and visible placement remain unverified; both catalog entries remain partial.
+
+
+## Screenshot counter has a configuration serialization route
+
+The [extent audit](original-modern-screenshot-feedback.md#counter-belongs-to-the-saved-configuration-block) places counter006fd1e0 at config offset16A0h within the20F0h save/load block. The save body's explicit temporary clear targets1860h instead. This establishes a conditional persistence mechanism beyond process-local collision skipping; actual I/O, save timing, resets and cross-launch results remain unverified. MP140-055 remains partial.

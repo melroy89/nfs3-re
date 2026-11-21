@@ -377,7 +377,7 @@
     },
     {
       "path": "analysis/original-modern-screenshot-feedback.md",
-      "sha256": "d4a1dc182bfbef66928140cf96a31cbcb51834dfe5371fb773f489d47bafcef4"
+      "sha256": "04c0cac554c3433e0db3420999128c37b4fa4e4e93cac74b184ca28a7fdc05e7"
     },
     {
       "path": "analysis/original-modern-screenshot-gdiplus.md",
@@ -5287,6 +5287,15 @@
           "addresses": [
             "00472820"
           ]
+        },
+        {
+          "path": "analysis/original-modern-screenshot-feedback.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00472869",
+            "00472875",
+            "00472898"
+          ]
         }
       ]
     },
@@ -5433,6 +5442,13 @@
             "00472aac",
             "00472ad7",
             "00472aea"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-screenshot-feedback.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "00472a7f"
           ]
         },
         {

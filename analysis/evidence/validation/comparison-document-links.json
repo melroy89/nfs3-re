@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "59254f0700aadf71bc34080a0d700c59e0ad001147144b783d76d9faa9a04199",
-      "relative_links": 288
+      "sha256": "faf2f99b7e91066753966baf6d1e807d18de063e75f26ca99dc103437124cc37",
+      "relative_links": 289
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "4bb5b2402f9ed0fa242983120ae0fed2367e828ed82fe2725686f6824f0d9a10",
-      "relative_links": 754
+      "sha256": "f4c9eb9f2f90b613a5ebc3fcfe8f093090eb5106238d65d4860aa08f8c2c8103",
+      "relative_links": 756
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -478,8 +478,8 @@
     },
     {
       "path": "analysis/original-modern-screenshot-feedback.md",
-      "sha256": "d4a1dc182bfbef66928140cf96a31cbcb51834dfe5371fb773f489d47bafcef4",
-      "relative_links": 4
+      "sha256": "04c0cac554c3433e0db3420999128c37b4fa4e4e93cac74b184ca28a7fdc05e7",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-screenshot-gdiplus.md",
@@ -653,7 +653,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "0b075fc9af0de0f1e18fbda58f7363ac5e40d5fddf93ae28bf72bb3102e5f3c7",
+      "sha256": "a8d017e7b19c5048d7e4fc988ab36573afffe2f1ceb6c992471812aa7c7f1536",
       "relative_links": 224
     },
     {
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2725,
+  "relative_link_count": 2731,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
