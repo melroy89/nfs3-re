@@ -327,3 +327,11 @@ race seed calls at `004b5cb6` and `004b5ca7`, respectively. The
 1.5.3, 1.6.0 and final. The seed arithmetic and call order therefore
 already match the final implementation in packaged 1.5.3. This comparison
 does not establish equal incoming seed state or playback choices.
+
+The complete 132-byte race selector `0040fefc..0040ff80` also matches
+final in packaged 1.5.3 and 1.6.0. In packaged 1.5.2, 131 of those
+bytes differ from final. This extends the dated result from seeding to
+the state update itself, including the three Random modes and the
+0, 1, 2, 3, 8 progression. The paired comparison supports the
+implementation described by MP153-003. Caller cadence and actual
+track playback remain unverified.
