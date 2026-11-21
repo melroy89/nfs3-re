@@ -14,7 +14,7 @@ The [seven-audit checkpoint](evidence/validation/renderer-menu-counter-followup-
 |[Counter serialization](original-modern-screenshot-feedback.md#counter-belongs-to-the-saved-configuration-block) |Counter at config+16A0h inside20F0h copy extent; cleared1860h distinct |I/O success, save timing, concurrent snapshots and later resets |
 |[Counter history](original-modern-screenshot-feedback.md#saved-counter-mechanism-appears-at131-to140-boundary) |131→140 counter relocation, atomic increment and filename-format change |Successful cross-launch preservation |
 
-The catalog remains **83 vendor-only,53 bounded-static,152 partial,2 unresolved**. These are evidence labels for290 release-note bullets, not a completion percentage. The taillight claim remains vendor-only; its static follow-up should focus on the actual menu primitive/state lifetime, not repeat the resolved code-identity or flag checks. The broader next work is remaining changed-region semantics and interface/data provenance; no full-game equivalence or reconstruction readiness is claimed. Earlier dated sections below retain history and must be read with these later findings.
+The catalog now has **82 vendor-only,54 bounded-static,152 partial,2 unresolved** after the [DX7 package-introduction audit](original-modern-renderer-loading.md#dx7-provider-is-added-to-the150-package). That audit follows the seven-audit checkpoint and is not included in its14 runs. These are evidence labels for290 release-note bullets, not a completion percentage. The taillight claim remains vendor-only; its static follow-up should focus on the actual menu primitive/state lifetime, not repeat the resolved code-identity or flag checks. The broader next work is remaining changed-region semantics and interface/data provenance; no full-game equivalence or reconstruction readiness is claimed. Earlier dated sections below retain history and must be read with these later findings.
 
 ## Earlier snapshot — 2026-11-01
 
@@ -31,7 +31,7 @@ The two recent HUD investigations now have concrete mechanisms. These bounded ch
 
 The earlier “unresolved” HUD checkpoint sections below preserve investigation history; they are superseded by these linked findings. The EXE bytes, saved Ghidra database, raw exports and maintained C were not changed by these investigations. No game or new instruction probe was run.
 
-The [catalog](modern-patch-change-catalog.md) currently has **83 vendor-only,53 bounded-static,152 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
+At this earlier snapshot, the [catalog](modern-patch-change-catalog.md) had **83 vendor-only,53 bounded-static,152 partial and2 unresolved** entries. These count release-note bullets, including assets/DLLs/history; they are not counts of distinct EXE changes or a completion percentage.
 
 - **Complete:** the bounded reference inventories, address navigation and the individually qualified static investigations.
 - **Recent verified increments:** historical renderer alignment/fog/mode mechanisms, language regression, rear-view presets, config path reversal and x87 release boundary, plus original/final update/reset/toggle paths. See the [compact findings table](original-modern-differences.md#recent-findings-at-a-glance) and [11-script static checkpoint](evidence/validation/historical-startup-checkpoint.json).

@@ -458,3 +458,12 @@ In the pinned identical DX7 DLL, export`_THRASH_setstate@8` enters`60003ca0`. It
 The audit retains the dispatcher prefix/table selection and these selected arms. Raw state IDs, conditional admission and branch destinations are direct evidence; complete device-call semantics, all mode branches, failures and rendered output are not established here. The nonzero mode-versus-enable distinction is visible in the binary contract without pretending that a version string supplies an authoritative Thrash API107 specification.
 
 **MP152-002 remains partial, now supported beyond configuration:**151→152 separates initial mode4 selection from ordinary effective enable1/disable0 requests, and the unchanged DX7 driver distinguishes those payloads. The paired INI change simultaneously opts DX7 into support. This is a concrete mechanism consistent with the advertised compatibility fix; it does not prove successful fog on every device, all driver variants or complete API107 interoperability. No target, DLL, API, instruction probe, compiler or Ghidra write occurred.
+
+
+## DX7 provider is added to the150 package
+
+**MP150-027: verified package inclusion.** The [archive/PE audit](evidence/audits/dx7-package-introduction.json), reproduced with `python3 analysis/scripts/audit_dx7_package_introduction.py`, pins author-hosted140/150 archives. The140 listing has no members under `drivers/dx7/`;150 contains exactly `drivers/dx7/dx7a.dll` and `drivers/dx7/thrash.ini` there. Member hashes, sizes and DLL export names/RVAs are retained in the evidence.
+
+The150 INI specifies `File=dx7a.dll`, `Type=d3d`, `FogSupport=0`, `DirectDrawLagFix=1`. The bundled DLL is an i386 PE with THRASH exports, including `_THRASH_setstate@8`. This verifies a configured provider is bundled, not merely a DLL name found in an EXE string. It does not prove which renderer an installed game selects, successful loading/device creation, or visible output. Absence is scoped to the named archive directory, not every renamed binary or earlier external distribution.
+
+This finding does **not** establish MP150-028's Motor City Online source ancestry or MP150-029's default dithering policy. Neither follows from the DLL name, typed3d option or inclusion date. The existing151/152 comparison separately establishes the later FogSupport opt-in change; it is not retroactively assigned to150. No provider, API or target instructions were executed and no Ghidra state was changed.

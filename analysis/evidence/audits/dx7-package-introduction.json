@@ -1,0 +1,277 @@
+{
+  "kind": "static-dx7-package-introduction",
+  "versions": {
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "dx7_members": []
+    },
+    "1.5.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "dx7_members": [
+        "drivers/dx7/dx7a.dll",
+        "drivers/dx7/thrash.ini"
+      ],
+      "members": [
+        {
+          "member": "drivers/dx7/dx7a.dll",
+          "bytes": 110592,
+          "sha256": "e9e5671fdc054a0cee1295833d02644b07c765d0cbea9963dc7d27687f86cc11"
+        },
+        {
+          "member": "drivers/dx7/thrash.ini",
+          "bytes": 67,
+          "sha256": "6f7d28ef40a1379b1111d6d8600a0061ecbf8dfbea7c05f2ff992917907efa16"
+        }
+      ],
+      "thrash_options": {
+        "file": "dx7a.dll",
+        "type": "d3d",
+        "fogsupport": "0",
+        "directdrawlagfix": "1"
+      },
+      "pe": {
+        "machine": "0x14c",
+        "image_base": "0x60000000",
+        "exports": [
+          {
+            "name": "_THRASH_about@0",
+            "ordinal": 1,
+            "rva": "00001000"
+          },
+          {
+            "name": "_THRASH_clearwindow@0",
+            "ordinal": 2,
+            "rva": "000012e0"
+          },
+          {
+            "name": "_THRASH_clip@16",
+            "ordinal": 3,
+            "rva": "000013c0"
+          },
+          {
+            "name": "_THRASH_createwindow@16",
+            "ordinal": 4,
+            "rva": "00001880"
+          },
+          {
+            "name": "_THRASH_destroywindow@4",
+            "ordinal": 5,
+            "rva": "00001910"
+          },
+          {
+            "name": "_THRASH_drawline@8",
+            "ordinal": 6,
+            "rva": "00001b10"
+          },
+          {
+            "name": "_THRASH_drawlinemesh@12",
+            "ordinal": 7,
+            "rva": "00001b30"
+          },
+          {
+            "name": "_THRASH_drawlinestrip@12",
+            "ordinal": 8,
+            "rva": "00001b50"
+          },
+          {
+            "name": "_THRASH_drawlinestrip@8",
+            "ordinal": 9,
+            "rva": "00001d20"
+          },
+          {
+            "name": "_THRASH_drawpoint@4",
+            "ordinal": 10,
+            "rva": "00001b90"
+          },
+          {
+            "name": "_THRASH_drawpointmesh@12",
+            "ordinal": 11,
+            "rva": "00001bb0"
+          },
+          {
+            "name": "_THRASH_drawpointstrip@8",
+            "ordinal": 12,
+            "rva": "00001d50"
+          },
+          {
+            "name": "_THRASH_drawquad@16",
+            "ordinal": 13,
+            "rva": "00001a90"
+          },
+          {
+            "name": "_THRASH_drawquadmesh@12",
+            "ordinal": 14,
+            "rva": "00001af0"
+          },
+          {
+            "name": "_THRASH_drawsprite@8",
+            "ordinal": 15,
+            "rva": "00001bf0"
+          },
+          {
+            "name": "_THRASH_drawspritemesh@12",
+            "ordinal": 16,
+            "rva": "00001c50"
+          },
+          {
+            "name": "_THRASH_drawtri@12",
+            "ordinal": 17,
+            "rva": "000019d0"
+          },
+          {
+            "name": "_THRASH_drawtrifan@12",
+            "ordinal": 18,
+            "rva": "00001a70"
+          },
+          {
+            "name": "_THRASH_drawtrifan@8",
+            "ordinal": 19,
+            "rva": "00001cf0"
+          },
+          {
+            "name": "_THRASH_drawtrimesh@12",
+            "ordinal": 20,
+            "rva": "00001a30"
+          },
+          {
+            "name": "_THRASH_drawtristrip@12",
+            "ordinal": 21,
+            "rva": "00001a50"
+          },
+          {
+            "name": "_THRASH_drawtristrip@8",
+            "ordinal": 22,
+            "rva": "00001ca0"
+          },
+          {
+            "name": "_THRASH_flushwindow@0",
+            "ordinal": 23,
+            "rva": "00001320"
+          },
+          {
+            "name": "_THRASH_getstate@4",
+            "ordinal": 24,
+            "rva": "00001d80"
+          },
+          {
+            "name": "_THRASH_getwindowtexture@4",
+            "ordinal": 25,
+            "rva": "00001960"
+          },
+          {
+            "name": "_THRASH_idle@0",
+            "ordinal": 26,
+            "rva": "00001370"
+          },
+          {
+            "name": "_THRASH_init@0",
+            "ordinal": 27,
+            "rva": "00003670"
+          },
+          {
+            "name": "_THRASH_is@0",
+            "ordinal": 28,
+            "rva": "00003a50"
+          },
+          {
+            "name": "_THRASH_lockwindow@0",
+            "ordinal": 29,
+            "rva": "00001480"
+          },
+          {
+            "name": "_THRASH_pageflip@0",
+            "ordinal": 30,
+            "rva": "00001330"
+          },
+          {
+            "name": "_THRASH_readrect@20",
+            "ordinal": 31,
+            "rva": "00003b60"
+          },
+          {
+            "name": "_THRASH_restore@0",
+            "ordinal": 32,
+            "rva": "000036c0"
+          },
+          {
+            "name": "_THRASH_selectdisplay@4",
+            "ordinal": 33,
+            "rva": "000020c0"
+          },
+          {
+            "name": "_THRASH_setstate@8",
+            "ordinal": 34,
+            "rva": "00003ca0"
+          },
+          {
+            "name": "_THRASH_settexture@4",
+            "ordinal": 35,
+            "rva": "00008980"
+          },
+          {
+            "name": "_THRASH_setvideomode@12",
+            "ordinal": 36,
+            "rva": "00003750"
+          },
+          {
+            "name": "_THRASH_sync@4",
+            "ordinal": 37,
+            "rva": "00001380"
+          },
+          {
+            "name": "_THRASH_talloc@20",
+            "ordinal": 38,
+            "rva": "00008e70"
+          },
+          {
+            "name": "_THRASH_tfree@4",
+            "ordinal": 39,
+            "rva": "00008eb0"
+          },
+          {
+            "name": "_THRASH_treset@0",
+            "ordinal": 40,
+            "rva": "00008fc0"
+          },
+          {
+            "name": "_THRASH_tupdate@12",
+            "ordinal": 41,
+            "rva": "00008f20"
+          },
+          {
+            "name": "_THRASH_tupdaterect@36",
+            "ordinal": 42,
+            "rva": "00008f60"
+          },
+          {
+            "name": "_THRASH_unlockwindow@4",
+            "ordinal": 43,
+            "rva": "00001830"
+          },
+          {
+            "name": "_THRASH_window@4",
+            "ordinal": 44,
+            "rva": "000011a0"
+          },
+          {
+            "name": "_THRASH_writerect@20",
+            "ordinal": 45,
+            "rva": "00003c00"
+          }
+        ]
+      }
+    }
+  },
+  "verified": [
+    "No drivers/dx7 members in retained140 archive;150 adds dx7a.dll plus thrash.ini.",
+    "150 INI selects the bundled DLL with typed3d,FogSupport0,DirectDrawLagFix1;PE is i386 with THRASH exports."
+  ],
+  "limits": [
+    "Package contents only;no installed DLL selection,successful loading,device acceptance or rendered output.",
+    "No proof of Motor City Online source lineage or disabled dithering from inclusion/config alone.",
+    "Absence is scoped to drivers/dx7 archive paths,not every possible renamed binary or earlier external distribution.",
+    "No DLL/API/target instruction execution,compilation or Ghidra changes."
+  ]
+}
