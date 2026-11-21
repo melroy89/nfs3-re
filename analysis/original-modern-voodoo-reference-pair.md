@@ -86,3 +86,18 @@ The140 parser interprets low resolution identifiers through a WORD-pair table an
 Both helpers have cached completion paths, but cache initialization/invalidation and complete provider lifetime remain unverified. In particular,140 can reach its cache flag write after unsuccessful query attempts; that does not establish valid or current mode data. The about caller reloads its descriptor into EAX after the call, so these sites do not establish dependence on the old producer's incidental EAX result. Other callers and hidden register/flag contracts still need inspection before choosing a C interface.
 
 This strengthens MP140-037's partial support beyond a moved call address: selected fallback, register and data-source policies change. Full metadata classification, insertion/capacity ownership, all query outcomes and runtime mode selection remain pending. No target instructions, provider APIs or saved database were executed/changed.
+
+## Removed import-thunk space is reused for a string-copy loop
+
+The [audit](evidence/audits/voodoo-reference-final.json) now resolves the four reference `JMP [IAT]` instructions in `6000d888..6000d8a0` against the reference import directory:
+
+|Reference instruction |IAT slot |Imported target |
+|---|---|---|
+|`6000d888` |`6000e27c` |`glide3x.dll!_grVertexLayout@12` |
+|`6000d88e` |`6000e274` |`glide3x.dll!_grCoordinateSpace@4` |
+|`6000d894` |`6000e26c` |`DDRAW.dll!DirectDrawCreate` |
+|`6000d89a` |`6000e278` |`glide3x.dll!_grQueryResolutions@8` |
+
+These are exactly the four normalized imports removed in final. All24 byte positions differ. Final instead has a10-byte helper followed by14 NOP bytes: `XOR EAX,EAX; LODSB; STOSB; TEST AL,AL; JNE` back to the load; `DEC EDI; RET`. With direction flag clear and valid nonoverlapping buffers containing a terminating zero, this copies bytes from ESI through the zero into EDI, advances ESI past the source zero and leaves EDI pointing at the destination zero. EAX is zero on ordinary completion. No capacity check or CLD instruction exists in this local body; backward direction, overlapping storage, invalid buffers and callers require separate contracts. Final condition flags also change and must not be inferred from a C string-copy return value.
+
+This is verified reuse of an address range, not four corresponding API replacements or proof that their functionality vanished. Dynamic query resolution is independently established above; the other replacement paths and all callers of the new helper remain pending. The audit preserves both byte sequences, resolved slots and final disassembly. It executes no target code and changes no binary or Ghidra database.

@@ -4018,6 +4018,62 @@
       ]
     }
   ],
+  "reused_import_thunks": {
+    "start": "6000d888",
+    "end_exclusive": "6000d8a0",
+    "reference_hex": "ff257ce20060ff2574e20060ff256ce20060ff2578e20060",
+    "final_hex": "31c0acaa84c075fa4fc39090909090909090909090909090",
+    "removed_thunks": [
+      {
+        "instruction": "6000d888",
+        "iat_slot": "6000e27c",
+        "dll": "glide3x.dll",
+        "name": "_grVertexLayout@12"
+      },
+      {
+        "instruction": "6000d88e",
+        "iat_slot": "6000e274",
+        "dll": "glide3x.dll",
+        "name": "_grCoordinateSpace@4"
+      },
+      {
+        "instruction": "6000d894",
+        "iat_slot": "6000e26c",
+        "dll": "DDRAW.dll",
+        "name": "DirectDrawCreate"
+      },
+      {
+        "instruction": "6000d89a",
+        "iat_slot": "6000e278",
+        "dll": "glide3x.dll",
+        "name": "_grQueryResolutions@8"
+      }
+    ],
+    "final_disassembly": [
+      "6000d888:\t31 c0                \txor    eax,eax",
+      "6000d88a:\tac                   \tlods   al,BYTE PTR ds:[esi]",
+      "6000d88b:\taa                   \tstos   BYTE PTR es:[edi],al",
+      "6000d88c:\t84 c0                \ttest   al,al",
+      "6000d88e:\t75 fa                \tjne    0x6000d88a",
+      "6000d890:\t4f                   \tdec    edi",
+      "6000d891:\tc3                   \tret",
+      "6000d892:\t90                   \tnop",
+      "6000d893:\t90                   \tnop",
+      "6000d894:\t90                   \tnop",
+      "6000d895:\t90                   \tnop",
+      "6000d896:\t90                   \tnop",
+      "6000d897:\t90                   \tnop",
+      "6000d898:\t90                   \tnop",
+      "6000d899:\t90                   \tnop",
+      "6000d89a:\t90                   \tnop",
+      "6000d89b:\t90                   \tnop",
+      "6000d89c:\t90                   \tnop",
+      "6000d89d:\t90                   \tnop",
+      "6000d89e:\t90                   \tnop",
+      "6000d89f:\t90                   \tnop"
+    ],
+    "scope": "Final contains a string-copy loop and14 NOP bytes;DF,valid buffers and callers are not established by this local body."
+  },
   "about_publication": {
     "descriptor": "6000fd10",
     "count_cell": "6000fd4c",

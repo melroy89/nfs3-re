@@ -33,6 +33,16 @@ def main():
         comparisons.append({'name':name,'rva':f'{rva:08x}','bytes':size,'reference_sha256':sha(x),'final_sha256':sha(y),'changed_bytes':sum(u!=v for u,v in zip(x,y)),'changed_intervals':delta})
     assert [x['changed_bytes']for x in comparisons]==[3307,1218,363]
     result['shared_section_comparisons']=comparisons
+    old_thunks=a.get_data(0xd888,24);replacement=b.get_data(0xd888,24)
+    assert old_thunks.hex()=='ff257ce20060ff2574e20060ff256ce20060ff2578e20060'
+    assert replacement.hex()=='31c0acaa84c075fa4fc3'+'90'*14
+    import_by_slot={i.address:(d.dll.decode(),i.name.decode()if i.name else '#'+str(i.ordinal))for d in a.DIRECTORY_ENTRY_IMPORT for i in d.imports}
+    thunks=[]
+    for offset in range(0,24,6):
+        slot=struct.unpack('<I',old_thunks[offset+2:offset+6])[0];dll,name=import_by_slot[slot]
+        thunks.append({'instruction':f'{0x6000d888+offset:08x}','iat_slot':f'{slot:08x}','dll':dll,'name':name})
+    assert { (t['dll'].lower(),t['name'])for t in thunks}==imports[0]-imports[1]
+    result['reused_import_thunks']={'start':'6000d888','end_exclusive':'6000d8a0','reference_hex':old_thunks.hex(),'final_hex':replacement.hex(),'removed_thunks':thunks,'final_disassembly':disassemble(replacement,0x6000d888),'scope':'Final contains a string-copy loop and14 NOP bytes;DF,valid buffers and callers are not established by this local body.'}
     x,y=[p.get_data(0x1bb0,260)for p in images];changed=[0x60001bb0+i for i,(u,v)in enumerate(zip(x,y))if u!=v]
     assert changed==[0x60001c25,0x60001c2a,0x60001c2b,0x60001c2c]
     assert a.get_data(0x1c24,10).hex()=='be10000000bfd4fd0060'
