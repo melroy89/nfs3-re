@@ -445,3 +445,21 @@ The153 stub begins PUSH EBP; MOV EBP,ESP; POP EBP; RET, followed by alignment in
 Both complete-region hashes and the exact partition assertion are retained in the manifest. **Every byte outside those two regions within this address range is identical.** This is stronger than checking only selected camera bodies, while still an address-bounded statement: data tables elsewhere, external callees, other camera code, changed arguments, call ordering and runtime-generated code are outside it.
 
 No additional camera-body edit in this region can be newly attributed to the160 horizon claim. The investigation should follow changed projection interfaces/dimensions and data/orientation provenance outside the region. The unresolved source capture and visible horizon remain open; this partition does not establish an absence of behavioural change. No target code was executed.
+
+
+### Historical Full/default origin change reaches projection centre
+
+The [153/160 audit](evidence/audits/projection-restore-history.json) now connects the existing [historical constructor policy](original-modern-frame-setting.md#historical-constructor-changes-boolean-policy-to-two-independent-bits) to the ordinary projection selector. Its complete262-byte `004dbde0..004dbee6` bodies differ only in three chooser-call operand bytes:153 chooser `004dbcc0`→160 chooser `004dbc94`. All rectangle-dispatch instructions remain identical. The153/160 adapter envelope `004becd0..004bed69` likewise differs only in three wrapper-call operands, `004dbce0`→`004dbcc0`.
+
+Thus for non-mirror context and session`006fd3b0 != 1`, both selectors supply the covering rectangle `007cdb88` through the retained adapter. The separately verified153/160 constructor changes its initial Y: old unconditional `D+(D>>1)` versus newD when setting0 clears the shift bit. Both use synthetic heightS. The retained centre builder computes originY+halfHeight. These facts link a historical geometry-policy change to the projection centre, rather than merely noting renamed options.
+
+|Scoped example:1920×1080, Frame Size ordinal0 |153 Full |160 Full, Centered |
+|---|---:|---:|
+|S=(3×W)>>2 |1440 |1440 |
+|D=(H−S)>>1 |−180 |−180 |
+|Covering Y |−270 |−180 |
+|Derived projection centreY |450 |540 |
+
+540 is the physical display midpoint in this example. These are derived values under ordinary fitting integer dimensions, initialized matching rectangles, the selected non-mirror/non-session1 route and no intervening rectangle writes. The audit records the constructor-evidence hash but does not regenerate that companion audit. Different angles/scales and camera orientation remain separate; this is not a captured horizon or a bit-exact all-input equivalence assertion.
+
+**MP160-003 advances unresolved→partial static support:** a153→160 change removes the unconditional default covering-origin shift and its selected projection path reaches the midpoint. The universal advertised horizon outcome remains unverified because source-cache restoration, initialization/order, later rectangle writes, other contexts and orientation can matter. Full machine/runtime validation is still required before calling it a complete horizon repair. This supersedes the earlier lack of a historically linked default-origin mechanism, without resolving those separate lifetime questions. No target instructions, game or saved database were changed/executed.

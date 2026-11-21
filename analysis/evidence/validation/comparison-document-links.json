@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "5a64b03f616fe3ef2ae205ebd4626a696b79be361c434e10d7045d6922568434",
-      "relative_links": 279
+      "sha256": "50a7ca80beb58e45a2900ce0c4b667887b49d63e9d1a3bfaca3015013ecfce3e",
+      "relative_links": 280
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "ad5155f72b17b737bba5a0461c294abe9caf48950919303f587046d6d01aeb3d",
+      "sha256": "1f16a9eede61a84b7b45538c189627f831d94b740801624c7245d49260bb2150",
       "relative_links": 316
     },
     {
@@ -388,8 +388,8 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "065e2a51c65a8387dcb3d83b39dfd97cb21dc93e7b1addc702b0cbc3a713f150",
-      "relative_links": 30
+      "sha256": "db989e32048089d1022f812c57b0ada367c20ed335292c33e22ad29818fee641",
+      "relative_links": 32
     },
     {
       "path": "analysis/original-modern-race-dialog.md",
@@ -653,7 +653,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "2e231eb1badcd4de4c36e04b0a78c18a3b6927260603ebb69098715f49c01b93",
+      "sha256": "5c47f34778f79e5b743a9bda953aa9b3d14c66e5f13e73aca6d734843f6e24ee",
       "relative_links": 243
     },
     {
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2868,
+  "relative_link_count": 2871,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
