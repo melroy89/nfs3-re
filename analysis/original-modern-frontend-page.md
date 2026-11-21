@@ -404,3 +404,28 @@ pinned executable confirms zero-based slot 8 (`007a2bb4`) receives
 With those initialized values, the BL=1 path produces the same default
 prefix as the original literal. Later writes and the effective path at
 runtime remain open.
+
+The file-backed coordinate tables also change. In direct reads of both
+pinned EXEs, the first ten stride-four rows at `00559c6c` and
+`00559c94` give the following effective Modern minus original
+differences for the text callback, assuming the file-backed values have
+reached the tables without later mutation:
+
+| Row | ΔX | ΔY |
+|---:|---:|---:|
+| 0 | +11 | −22 |
+| 1 | +8 | −22 |
+| 2 | +5 | −22 |
+| 3 | +4 | −22 |
+| 4 | +2 | −22 |
+| 5 | −1 | −22 |
+| 6 | −1 | −22 |
+| 7 | −3 | −22 |
+| 8 | +13 | +293 |
+| 9 | +14 | −22 |
+
+The earlier (+5, +1) comparison isolates the instruction offsets for
+equal table values. It does not describe the default per-row movement.
+For example, row 0 stores (158, 138) in the original and (169, 116) in
+Modern. These are WORD coordinate writes. Row admission, later table
+writes, and screen placement remain separate evidence questions.
