@@ -1,0 +1,216 @@
+{
+  "kind": "static-texture-extent-history",
+  "versions": {
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "member": "nfs3.exe",
+      "sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "ini_sha256": "dcdff159a5136baf412159d92d96e63d6f99a7d07830b2e108a56b245b71a664",
+      "ascii_setting_literal_present": false,
+      "ini_setting_lines": [],
+      "captures": [
+        {
+          "name": "track_caller",
+          "start": "0041db67",
+          "end_exclusive": "0041db8b",
+          "hex": "f605583a7a0002740989fae829660b00eb126a03bb8000000089f989c231c0e8f5640b00",
+          "sha256": "1113fbbf089b0423fac79c8735051b3aa73bfc86df78e840eab397c004e1be2a",
+          "disassembly": [
+            "41db67:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "41db6e:\t74 09                \tje     0x41db79",
+            "41db70:\t89 fa                \tmov    edx,edi",
+            "41db72:\te8 29 66 0b 00       \tcall   0x4d41a0",
+            "41db77:\teb 12                \tjmp    0x41db8b",
+            "41db79:\t6a 03                \tpush   0x3",
+            "41db7b:\tbb 80 00 00 00       \tmov    ebx,0x80",
+            "41db80:\t89 f9                \tmov    ecx,edi",
+            "41db82:\t89 c2                \tmov    edx,eax",
+            "41db84:\t31 c0                \txor    eax,eax",
+            "41db86:\te8 f5 64 0b 00       \tcall   0x4d4080"
+          ]
+        },
+        {
+          "name": "square_builder_prefix",
+          "start": "0049cea0",
+          "end_exclusive": "0049cece",
+          "hex": "56575589e58b7d108d700839fb7e0a8978048938e9bc00000081fb000100007c12c7400400010000c70000010000",
+          "sha256": "a2caf861fec51589805942731952de4a799ae282a585f71fe7eaf66c0cc43feb",
+          "disassembly": [
+            "49cea0:\t56                   \tpush   esi",
+            "49cea1:\t57                   \tpush   edi",
+            "49cea2:\t55                   \tpush   ebp",
+            "49cea3:\t89 e5                \tmov    ebp,esp",
+            "49cea5:\t8b 7d 10             \tmov    edi,DWORD PTR [ebp+0x10]",
+            "49cea8:\t8d 70 08             \tlea    esi,[eax+0x8]",
+            "49ceab:\t39 fb                \tcmp    ebx,edi",
+            "49cead:\t7e 0a                \tjle    0x49ceb9",
+            "49ceaf:\t89 78 04             \tmov    DWORD PTR [eax+0x4],edi",
+            "49ceb2:\t89 38                \tmov    DWORD PTR [eax],edi",
+            "49ceb4:\te9 bc 00 00 00       \tjmp    0x49cf75",
+            "49ceb9:\t81 fb 00 01 00 00    \tcmp    ebx,0x100",
+            "49cebf:\t7c 12                \tjl     0x49ced3",
+            "49cec1:\tc7 40 04 00 01 00 00 \tmov    DWORD PTR [eax+0x4],0x100",
+            "49cec8:\tc7 00 00 01 00 00    \tmov    DWORD PTR [eax],0x100"
+          ]
+        }
+      ]
+    },
+    "1.5.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "member": "nfs3.exe",
+      "sha256": "d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae",
+      "ini_sha256": "84b18444a34d5c4737dd94051e81902a817c28a61ce0a27f3709903d65c41ef9",
+      "ascii_setting_literal_present": false,
+      "ini_setting_lines": [],
+      "captures": [
+        {
+          "name": "track_caller",
+          "start": "0041db67",
+          "end_exclusive": "0041db8b",
+          "hex": "f605583a7a0002740989fae829660b00eb126a03bb0001000089f989c231c0e8f5640b00",
+          "sha256": "d0bbe9457ea13fd9379562e83451c41ba75376070dca9a6883ee0c2d0ddeb5f5",
+          "disassembly": [
+            "41db67:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "41db6e:\t74 09                \tje     0x41db79",
+            "41db70:\t89 fa                \tmov    edx,edi",
+            "41db72:\te8 29 66 0b 00       \tcall   0x4d41a0",
+            "41db77:\teb 12                \tjmp    0x41db8b",
+            "41db79:\t6a 03                \tpush   0x3",
+            "41db7b:\tbb 00 01 00 00       \tmov    ebx,0x100",
+            "41db80:\t89 f9                \tmov    ecx,edi",
+            "41db82:\t89 c2                \tmov    edx,eax",
+            "41db84:\t31 c0                \txor    eax,eax",
+            "41db86:\te8 f5 64 0b 00       \tcall   0x4d4080"
+          ]
+        },
+        {
+          "name": "square_builder_prefix",
+          "start": "0049cea0",
+          "end_exclusive": "0049cec6",
+          "hex": "56575589e58b7d1039fb7e0a8938897804e98a000000bf0001000039fb7c078938897804eb7a",
+          "sha256": "5c161841f8c94983a7dc231f63e64cf4b31d5c32245d3ccaf9df52d39ecddc85",
+          "disassembly": [
+            "49cea0:\t56                   \tpush   esi",
+            "49cea1:\t57                   \tpush   edi",
+            "49cea2:\t55                   \tpush   ebp",
+            "49cea3:\t89 e5                \tmov    ebp,esp",
+            "49cea5:\t8b 7d 10             \tmov    edi,DWORD PTR [ebp+0x10]",
+            "49cea8:\t39 fb                \tcmp    ebx,edi",
+            "49ceaa:\t7e 0a                \tjle    0x49ceb6",
+            "49ceac:\t89 38                \tmov    DWORD PTR [eax],edi",
+            "49ceae:\t89 78 04             \tmov    DWORD PTR [eax+0x4],edi",
+            "49ceb1:\te9 8a 00 00 00       \tjmp    0x49cf40",
+            "49ceb6:\tbf 00 01 00 00       \tmov    edi,0x100",
+            "49cebb:\t39 fb                \tcmp    ebx,edi",
+            "49cebd:\t7c 07                \tjl     0x49cec6",
+            "49cebf:\t89 38                \tmov    DWORD PTR [eax],edi",
+            "49cec1:\t89 78 04             \tmov    DWORD PTR [eax+0x4],edi",
+            "49cec4:\teb 7a                \tjmp    0x49cf40"
+          ]
+        }
+      ]
+    },
+    "1.5.1": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.1.7z",
+      "archive_sha256": "c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de",
+      "member": "nfs3.exe",
+      "sha256": "4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17",
+      "ini_sha256": "ccbbffe23e35cfec938e03bd56202027988fa5cee9daaaa1979401909abd0840",
+      "ascii_setting_literal_present": true,
+      "ini_setting_lines": [
+        "AllowHugeTextures=0"
+      ],
+      "captures": [
+        {
+          "name": "track_caller",
+          "start": "0041db67",
+          "end_exclusive": "0041db8b",
+          "hex": "f605583a7a0002740989fae829660b00eb126a03bb8000000089f989c231c0e829000000",
+          "sha256": "6b8a6dc72cbe359817141361baacbaf08cdc0b633527935efbc7ae70947f1892",
+          "disassembly": [
+            "41db67:\tf6 05 58 3a 7a 00 02 \ttest   BYTE PTR ds:0x7a3a58,0x2",
+            "41db6e:\t74 09                \tje     0x41db79",
+            "41db70:\t89 fa                \tmov    edx,edi",
+            "41db72:\te8 29 66 0b 00       \tcall   0x4d41a0",
+            "41db77:\teb 12                \tjmp    0x41db8b",
+            "41db79:\t6a 03                \tpush   0x3",
+            "41db7b:\tbb 80 00 00 00       \tmov    ebx,0x80",
+            "41db80:\t89 f9                \tmov    ecx,edi",
+            "41db82:\t89 c2                \tmov    edx,eax",
+            "41db84:\t31 c0                \txor    eax,eax",
+            "41db86:\te8 29 00 00 00       \tcall   0x41dbb4"
+          ]
+        },
+        {
+          "name": "square_builder_prefix",
+          "start": "0049cea0",
+          "end_exclusive": "0049cec4",
+          "hex": "56575589e58b75108b3d8c277a0039fb7c0439fe7d09d1ef75f4bf010000008938897804",
+          "sha256": "5c8ba130df052b79535073c9aab075ac411c09bdda476e37928155baf33ebd1d",
+          "disassembly": [
+            "49cea0:\t56                   \tpush   esi",
+            "49cea1:\t57                   \tpush   edi",
+            "49cea2:\t55                   \tpush   ebp",
+            "49cea3:\t89 e5                \tmov    ebp,esp",
+            "49cea5:\t8b 75 10             \tmov    esi,DWORD PTR [ebp+0x10]",
+            "49cea8:\t8b 3d 8c 27 7a 00    \tmov    edi,DWORD PTR ds:0x7a278c",
+            "49ceae:\t39 fb                \tcmp    ebx,edi",
+            "49ceb0:\t7c 04                \tjl     0x49ceb6",
+            "49ceb2:\t39 fe                \tcmp    esi,edi",
+            "49ceb4:\t7d 09                \tjge    0x49cebf",
+            "49ceb6:\td1 ef                \tshr    edi,1",
+            "49ceb8:\t75 f4                \tjne    0x49ceae",
+            "49ceba:\tbf 01 00 00 00       \tmov    edi,0x1",
+            "49cebf:\t89 38                \tmov    DWORD PTR [eax],edi",
+            "49cec1:\t89 78 04             \tmov    DWORD PTR [eax+0x4],edi"
+          ]
+        },
+        {
+          "name": "track_wrapper",
+          "start": "0041dbb4",
+          "end_exclusive": "0041dbbf",
+          "hex": "8b1d8c277a00e9c1640b00",
+          "sha256": "72d2ac6584630e3e7e22d3aaee3fa73768769d1fbe9dd3a65365f16f38a9cf70",
+          "disassembly": [
+            "41dbb4:\t8b 1d 8c 27 7a 00    \tmov    ebx,DWORD PTR ds:0x7a278c",
+            "41dbba:\te9 c1 64 0b 00       \tjmp    0x4d4080"
+          ]
+        },
+        {
+          "name": "setting_read_and_extent",
+          "start": "004b56c2",
+          "end_exclusive": "004b56e3",
+          "hex": "bbc0ed530031d2e82260040031c983f803770288c1b800010000d3e0a38c277a00",
+          "sha256": "fe74f538dd917c84910eafd72be7aa1a19f951a90ac15a0f8bf90a87617d82f3",
+          "disassembly": [
+            "4b56c2:\tbb c0 ed 53 00       \tmov    ebx,0x53edc0",
+            "4b56c7:\t31 d2                \txor    edx,edx",
+            "4b56c9:\te8 22 60 04 00       \tcall   0x4fb6f0",
+            "4b56ce:\t31 c9                \txor    ecx,ecx",
+            "4b56d0:\t83 f8 03             \tcmp    eax,0x3",
+            "4b56d3:\t77 02                \tja     0x4b56d7",
+            "4b56d5:\t88 c1                \tmov    cl,al",
+            "4b56d7:\tb8 00 01 00 00       \tmov    eax,0x100",
+            "4b56dc:\td3 e0                \tshl    eax,cl",
+            "4b56de:\ta3 8c 27 7a 00       \tmov    ds:0x7a278c,eax"
+          ]
+        }
+      ]
+    }
+  },
+  "verified": [
+    "Selected track branch passes immediate128 in140 and256 in150 to004d4080.",
+    "151 restores caller immediate128 but retargets to wrapper0041dbb4,which replacesEBX with007a278c and tail-jumps004d4080;caller immediate is not effective extent.",
+    "151 adds checked ASCII key and packaged default0;reader defaultEDX0,mapping0..3->256..2048,unsigned out-of-range->256.",
+    "150 square builder retains fixed256 threshold and dimension-pass-through branch;151 uses configured-global halving prefix."
+  ],
+  "limits": [
+    "Selected caller/prefix/date evidence only;reuse original/final report for broader producers/reduction,not complete historical function equivalence.",
+    "Absent literal does not exclude other/computed configuration or all larger texture routes;150 pass-through branch prevents a universal256 cap claim.",
+    "No beta package inspected;MP150-013 beta-only claim is not verified by these release builds.",
+    "Driver acceptance,allocation/upload,asset dimensions,visual output and all later writes unverified.",
+    "No target/API/instruction execution,compilation or executable/Ghidra mutation."
+  ]
+}

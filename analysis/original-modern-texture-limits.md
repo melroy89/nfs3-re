@@ -48,3 +48,25 @@ No game, probe, or test was run. No executable or Ghidra project was modified.
 The outside-function interval **`0049cedd..0049cfa0`** consists of195 Modern NOP bytes, all195 differing from original. It begins **inside original instruction`0049cedb`**, `MOV DWORD PTR [EAX+4],128` (`c7 40 04 80 00 00 00`). Remaining original bytes belong to its fixed-threshold dimension selection, resampler-call/epilogue through exclusive`0049cf91`, and alignment. The [outside-body manifest](evidence/audits/outside-function-differences.json) now checks the NOP interval and boundary instruction and links the complete paired builder evidence.
 
 Modern’s shorter complete body ends exactly at`0049cedd`; the removed tail therefore does not represent removal of square texture building or resampling. Those operations remain in its configured-extent counterpart described above. This closes interval routing while retaining zero-descriptor, source-dimension, helper and driver/runtime limitations. No boundary repair or executable/Ghidra edit was made.
+
+## Historical track extent and experimental setting are separate changes
+
+The [three-build audit](evidence/audits/texture-extent-history.json), reproduced with `python3 analysis/scripts/audit_texture_extent_history.py`, pins140/150/151 EXE archives and INI hashes. It captures the selected track caller, square-builder prefixes and151 setting/wrapper. It dates these local mechanisms without claiming complete historical producer or renderer equivalence.
+
+|Build |Selected track call at0041db86 |Effective extent source on that branch |
+|---|---|---|
+|140 |004d4080 |EBX immediate128 at0041db7b |
+|150 |004d4080 |EBX immediate256 at0041db7b |
+|151 |0041dbb4 |Wrapper loads EBX from007a278c, then tail-jumps004d4080 |
+
+The151 caller itself again loads128. Reading only that immediate would incorrectly suggest a return to the old effective limit: the11-byte wrapper overwrites it before the original callee receives control. The alternative bit1 branch to004d41a0 remains distinct, with the previously documented local cap; do not apply this selected path's extent universally.
+
+The150 square-builder prefix retains a fixed256 threshold and a dimension-pass-through branch.151 instead reads007a278c and halves it to fit both supplied dimensions, matching the later configured policy documented above. The pass-through branch means absence of the new setting in150 is **not** proof of a universal256 ceiling.
+
+151's checked key literal at0053edc0 is `AllowHugeTextures`; its packaged INI contains `AllowHugeTextures=0`. The selected reader supplies caller-default EDX0. Its unsigned0..3 mapping produces256/512/1024/2048; out-of-range bit patterns choose256. The literal and INI entry are absent from the checked140/150 release members. This is a bounded literal/package comparison, not exclusion of computed keys, hidden producers or all larger-texture routes. Renderer-dependent reduction, assets and actual uploads still constrain a requested size.
+
+**MP150-012:** historical140→150 now directly dates128→256 at the selected track call, strengthening its existing partial support. **MP151-003:** the new key, mapping and wrapper date the experimental configurable extent to150→151, strengthening the existing static-supported setting claim. Actual high-resolution rendering remains untested.
+
+**MP150-013 remains vendor-only:** no beta package has been inspected. These release builds distinguish the track argument change, later setting and driver table expansion, but cannot establish that512/1024 textures were exclusive to a particular beta or impossible through every release path. Required follow-up is an identified/hash-pinned beta EXE and corresponding producer/driver comparison, followed by behavioral evidence for acceptance. No beta source or functionality is inferred from a release-note sentence.
+
+No target instructions, driver/API calls, asset loads, compilation or Ghidra writes occurred; executable/database bytes are unchanged.
