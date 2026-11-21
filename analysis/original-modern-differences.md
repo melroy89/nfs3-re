@@ -1214,3 +1214,8 @@ The [four-package menu audit](original-modern-setup-website.md#early-credits-rou
 ## Screenshot counter has a configuration serialization route
 
 The [extent audit](original-modern-screenshot-feedback.md#counter-belongs-to-the-saved-configuration-block) places counter006fd1e0 at config offset16A0h within the20F0h save/load block. The save body's explicit temporary clear targets1860h instead. This establishes a conditional persistence mechanism beyond process-local collision skipping; actual I/O, save timing, resets and cross-launch results remain unverified. MP140-055 remains partial.
+
+
+## Screenshot saved-counter change dated to131-to140
+
+The [historical pair](original-modern-screenshot-feedback.md#saved-counter-mechanism-appears-at131-to140-boundary) verifies the counter moves from005600f8 outside the config block to006fd1e0 inside it, becomes atomic, and adopts the four-digit/extension filename format. The selected config save-copy/request suffix is unchanged. This dates the mechanism supporting MP140-055 without claiming a successful cross-launch test.

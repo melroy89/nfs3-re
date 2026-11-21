@@ -377,7 +377,7 @@
     },
     {
       "path": "analysis/original-modern-screenshot-feedback.md",
-      "sha256": "04c0cac554c3433e0db3420999128c37b4fa4e4e93cac74b184ca28a7fdc05e7"
+      "sha256": "641dc48912a1e392647ed684f0c34d1a02e4a9fd92bb72a9e1b58a24ee62cf76"
     },
     {
       "path": "analysis/original-modern-screenshot-gdiplus.md",
@@ -5294,7 +5294,8 @@
           "addresses": [
             "00472869",
             "00472875",
-            "00472898"
+            "00472898",
+            "004728c3"
           ]
         }
       ]
@@ -10682,6 +10683,7 @@
           "path": "analysis/original-modern-screenshot-feedback.md",
           "entry_mentioned": false,
           "addresses": [
+            "004c4531",
             "004c4534"
           ]
         },
@@ -12452,7 +12454,9 @@
           "entry_mentioned": false,
           "addresses": [
             "004e31c4",
-            "004e31dc"
+            "004e31cc",
+            "004e31dc",
+            "004e31f7"
           ]
         },
         {

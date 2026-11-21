@@ -51,3 +51,19 @@ This supplies a concrete **conditional cross-launch persistence mechanism throug
 The [existing header decision tree](original-modern-config-loading.md#modern-header-decision-tree) and [directory reset](screenshot-lifecycle-contract.md#filename-counter-initialization-and-wrapping) still matter. Directory setup can zero the counter for an empty/non-dot-entry-negative search result, including search failure. Existing-file collision skipping can avoid overwriting old numbers even without a successfully restored counter, so continued numbering alone would not prove serialization. Conversely, a restored counter can retain a larger number after files are removed unless a reset path runs.
 
 **Verified:** field inclusion in declared save/load extents and the distinct temporary-field clear. **Unverified:** successful actual saved bytes, all helper/register and direction-flag preconditions, synchronization with screenshot increments, all later writers and real cross-launch results. MP140-055 remains partial; its historical1.4.0 introduction is not dated by this final-only check. No configuration file was written or loaded, and no target instructions or Ghidra changes were made.
+
+
+## Saved-counter mechanism appears at131-to140 boundary
+
+The [historical counter audit](evidence/audits/screenshot-counter-history.json), reproduced with `python3 analysis/scripts/audit_screenshot_counter_history.py`, verifies author-hosted1.3.1/1.4.0 archive and EXE hashes. It narrows the final-only dating limitation above.
+
+| Selected mechanism |1.3.1 |1.4.0 |
+|---|---|---|
+|Counter |`005600f8`, outside config block |`006fd1e0`, config+16A0h |
+|Increment |MOV/INC/MOV in `004c44f9..004c4531` |LOCK XADD then INC of old value in `004e31cc..004e31f7` |
+|Format at `005401d8` |`%s\nfs3_%02d.tga` |`nfs3_%04d.%s` |
+|Config save-copy/request suffix |`00472869..004728c3` |Byte-identical suffix |
+
+The relocation into the existing serialized extent supplies a concrete mechanism for MP140-055 at its advertised boundary. Four decimal positions remain a minimum width, not a cap. The earlier selected counter's location outside this particular block does not prove the absence of every other original persistence mechanism.
+
+Historical introduction of these selected changes is now verified; successful cross-launch preservation remains untested. Save timing, default/reset paths, full I/O/helper contracts, concurrent snapshots and file collisions retain the qualifications above. The audit executed no target instructions and changed no executable or Ghidra database.
