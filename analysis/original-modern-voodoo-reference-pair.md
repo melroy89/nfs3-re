@@ -21,7 +21,7 @@ All34 export names, ordinals, RVAs and forwarders match. Both preferred image ba
 |Imports, RVAe000h |2,048 |1,218 |
 |Data, RVAf000h |7,680 |363 |
 
-Intervals are an address-based work list, not141 functions/features. This chapter does **not** assign all3,307 code bytes to semantics. Raw import differences likewise do not mean1,218 changed APIs. Normalized imports remove DirectDrawCreate from DDRAW and three GLIDE3X names: `_grCoordinateSpace@4`, `_grQueryResolutions@8`, `_grVertexLayout@12`; no normalized import names are added. Runtime resolution, remaining indirect calls and replacement mechanisms must be checked before claiming those capabilities disappeared.
+Intervals are an address-based work list, not141 functions/features. The existing [Glide cluster map](original-modern-glide-reference-identity.md#complete-code-section-cluster-routing) already routes all3,307 changed code bytes into18 nonoverlapping envelopes, with local mechanisms and limitations documented there. This report adds historical131/140 evidence; its raw inventory is not a new unassigned-code backlog. Raw import differences likewise do not mean1,218 changed APIs. Normalized imports remove DirectDrawCreate from DDRAW and three GLIDE3X names: `_grCoordinateSpace@4`, `_grQueryResolutions@8`, `_grVertexLayout@12`; no normalized import names are added. Runtime resolution, remaining indirect calls and replacement mechanisms must be checked before claiming those capabilities disappeared.
 
 ## Matched about prefix changes only count and table pointer
 
@@ -38,9 +38,9 @@ The reference table pointer targets file-backed data. The final pointer instead 
 
 ## Priorities and limitations
 
-First assign changed code intervals to the matched mode producer, provider resolution and initialization paths, reusing the existing about/setup work. Then qualify changed data, callback ABI and static versus dynamic imports. Resources, headers, relocations and reference debug-overlay semantics also need their own scope. The two different legacy baselines must retain distinct labels.
+Reuse the existing [paired Glide analysis](original-modern-glide-reference-identity.md), including completed code-envelope routing, loader/init/cleanup, dynamic DirectDraw lookup and copy-helper caller. Further inspection should qualify a concrete remaining data, callback ABI, lifetime or historical-boundary question rather than repeat that code routing. Resources, headers, relocations and reference debug-overlay semantics also need their own scope. The two different legacy baselines must retain distinct labels.
 
-MP140-037 now has partial historical support from the complete131/140 about comparison below. The reference/final inventory remains an incomplete semantic comparison and does not date every changed provider mechanism to140. Source ancestry, device acceptance, rendered effects and race/replay/network compatibility remain unverified. Existing EXEs, saved Ghidra state, raw exports and maintained C are unchanged.
+MP140-037 now has partial historical support from the complete131/140 about comparison below. The reference/final comparison remains incomplete in data/lifetime and runtime scope; completed address routing does not date every changed provider mechanism to140. Source ancestry, device acceptance, rendered effects and race/replay/network compatibility remain unverified. Existing EXEs, saved Ghidra state, raw exports and maintained C are unchanged.
 
 
 ## Historical131 to140 about calls retarget without changing its publications
@@ -98,6 +98,21 @@ The [audit](evidence/audits/voodoo-reference-final.json) now resolves the four r
 |`6000d894` |`6000e26c` |`DDRAW.dll!DirectDrawCreate` |
 |`6000d89a` |`6000e278` |`glide3x.dll!_grQueryResolutions@8` |
 
-These are exactly the four normalized imports removed in final. All24 byte positions differ. Final instead has a10-byte helper followed by14 NOP bytes: `XOR EAX,EAX; LODSB; STOSB; TEST AL,AL; JNE` back to the load; `DEC EDI; RET`. With direction flag clear and valid nonoverlapping buffers containing a terminating zero, this copies bytes from ESI through the zero into EDI, advances ESI past the source zero and leaves EDI pointing at the destination zero. EAX is zero on ordinary completion. No capacity check or CLD instruction exists in this local body; backward direction, overlapping storage, invalid buffers and callers require separate contracts. Final condition flags also change and must not be inferred from a C string-copy return value.
+These are exactly the four normalized imports removed in final. All24 byte positions differ. The existing [copy-helper and cluster evidence](original-modern-glide-reference-identity.md#complete-code-section-cluster-routing) already documents the replacement ten-byte copy loop,14 NOPs, register/DF preconditions and loader caller6000106e appending `glide3x.dll`. The new audit adds the explicit instruction-to-IAT-to-import mapping above; it does not newly discover that helper or leave its known loader caller unassigned.
 
-This is verified reuse of an address range, not four corresponding API replacements or proof that their functionality vanished. Dynamic query resolution is independently established above; the other replacement paths and all callers of the new helper remain pending. The audit preserves both byte sequences, resolved slots and final disassembly. It executes no target code and changes no binary or Ghidra database.
+Reuse the existing [conditional DirectDraw lookup](original-modern-glide-reference-identity.md#directdraw-creation-moves-from-a-static-import-to-conditional-lookup) and mode-query resolution evidence. These four removed static imports are not four removed capabilities. Complete caller coverage, buffer extent/failure domains, provider execution and lifetime remain separately unresolved. No target code executes and no binary or Ghidra database changes.
+
+## File-backed data differences fall in two bounded regions
+
+The expanded [audit](evidence/audits/voodoo-reference-final.json) assigns all363 changed positions in the shared7,680-byte file-backed data extent to two disjoint envelopes. This completes changed-byte localization for that extent, not a complete data reconstruction.
+
+|Envelope, end exclusive |Changed bytes |Established content |
+|---|---:|---|
+|`6000fdd4..60010158` |239 |Old fixed-record/lookup storage is repacked or cleared; final begins with24 packed width/height WORD pairs used by the low-identifier query path |
+|`60010c90..60010d1c` |124 |Eight added zero-terminated lookup names; each corresponding reference byte including terminator is zero |
+
+The eight literals are `_grCoordinateSpace@4`, `_grQueryResolutions@8`, `_grVertexLayout@12`, `_grGetProcAddress@4`, `grSstWinOpenExt`, `PIXEXT`, `DDRAW.DLL` and `DirectDrawCreate`. The manifest records their exact addresses. Their presence alone is not successful binding or provider support; reuse the [resolver and lifecycle evidence](original-modern-glide-reference-identity.md#loader-and-cleanup-lifecycle-differ) and [DirectDraw caller](original-modern-glide-reference-identity.md#directdraw-creation-moves-from-a-static-import-to-conditional-lookup) for proven uses.
+
+The24 final dimension pairs occupy96 bytes at6000fdd4. They begin320×200,320×240 and400×256, and end1920×1440,2048×1536 and2048×2048. The audit retains every pair. These are lookup dimensions, not24 guaranteed accepted modes: the mode producer has identifier decoding, lower-bound filtering, insertion and optional depth behavior. Reference uses the same address for a different fixed-record layout; sharing an address does not establish sharing a structure type.
+
+All other7,317 byte positions in this paired data extent match. This excludes BSS, imports, resources, PE headers and relocations; equality of initial bytes does not establish equal later writes, aliases, ownership or lifetime. Remaining work should target those specific reconstruction requirements rather than repeat this localization.

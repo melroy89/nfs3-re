@@ -4018,6 +4018,164 @@
       ]
     }
   ],
+  "file_data_routing": {
+    "groups": [
+      {
+        "start": "6000fdd4",
+        "end_exclusive": "60010158",
+        "label": "repacked mode/lookup tables and cleared old storage",
+        "changed_bytes": 239
+      },
+      {
+        "start": "60010c90",
+        "end_exclusive": "60010d1c",
+        "label": "added lookup names",
+        "changed_bytes": 124
+      }
+    ],
+    "unassigned_changed_bytes": 0,
+    "added_names": [
+      {
+        "address": "60010c90",
+        "text": "_grCoordinateSpace@4",
+        "bytes_including_zero": 21
+      },
+      {
+        "address": "60010ca8",
+        "text": "_grQueryResolutions@8",
+        "bytes_including_zero": 22
+      },
+      {
+        "address": "60010cc0",
+        "text": "_grVertexLayout@12",
+        "bytes_including_zero": 19
+      },
+      {
+        "address": "60010cd4",
+        "text": "_grGetProcAddress@4",
+        "bytes_including_zero": 20
+      },
+      {
+        "address": "60010ce8",
+        "text": "grSstWinOpenExt",
+        "bytes_including_zero": 16
+      },
+      {
+        "address": "60010cf8",
+        "text": "PIXEXT",
+        "bytes_including_zero": 7
+      },
+      {
+        "address": "60010d00",
+        "text": "DDRAW.DLL",
+        "bytes_including_zero": 10
+      },
+      {
+        "address": "60010d0c",
+        "text": "DirectDrawCreate",
+        "bytes_including_zero": 17
+      }
+    ],
+    "final_resolution_word_pairs": [
+      [
+        320,
+        200
+      ],
+      [
+        320,
+        240
+      ],
+      [
+        400,
+        256
+      ],
+      [
+        512,
+        384
+      ],
+      [
+        640,
+        200
+      ],
+      [
+        640,
+        350
+      ],
+      [
+        640,
+        400
+      ],
+      [
+        640,
+        480
+      ],
+      [
+        800,
+        600
+      ],
+      [
+        960,
+        720
+      ],
+      [
+        856,
+        480
+      ],
+      [
+        512,
+        256
+      ],
+      [
+        1024,
+        768
+      ],
+      [
+        1280,
+        1024
+      ],
+      [
+        1600,
+        1200
+      ],
+      [
+        400,
+        300
+      ],
+      [
+        1152,
+        864
+      ],
+      [
+        1280,
+        960
+      ],
+      [
+        1600,
+        1024
+      ],
+      [
+        1792,
+        1344
+      ],
+      [
+        1856,
+        1392
+      ],
+      [
+        1920,
+        1440
+      ],
+      [
+        2048,
+        1536
+      ],
+      [
+        2048,
+        2048
+      ]
+    ],
+    "scope": "Changed-byte routing and literal decoding only;not full data layout,write-lifetime or pointer/relocation reconstruction."
+  },
   "reused_import_thunks": {
     "start": "6000d888",
     "end_exclusive": "6000d8a0",
@@ -4072,7 +4230,7 @@
       "6000d89e:\t90                   \tnop",
       "6000d89f:\t90                   \tnop"
     ],
-    "scope": "Final contains a string-copy loop and14 NOP bytes;DF,valid buffers and callers are not established by this local body."
+    "scope": "Final contains a string-copy loop and14 NOP bytes;local body alone does not establish DF or valid buffers. Existing glide-reference-identity audit establishes loader caller6000106e;complete caller coverage remains separate."
   },
   "about_publication": {
     "descriptor": "6000fd10",

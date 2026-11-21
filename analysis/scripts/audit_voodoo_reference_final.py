@@ -33,6 +33,17 @@ def main():
         comparisons.append({'name':name,'rva':f'{rva:08x}','bytes':size,'reference_sha256':sha(x),'final_sha256':sha(y),'changed_bytes':sum(u!=v for u,v in zip(x,y)),'changed_intervals':delta})
     assert [x['changed_bytes']for x in comparisons]==[3307,1218,363]
     result['shared_section_comparisons']=comparisons
+    data_changes={0x6000f000+i for i,(x,y)in enumerate(zip(a.get_data(0xf000,7680),b.get_data(0xf000,7680)))if x!=y}
+    groups=[];assigned=set()
+    for start,end,label in [(0x6000fdd4,0x60010158,'repacked mode/lookup tables and cleared old storage'),(0x60010c90,0x60010d1c,'added lookup names')]:
+        owned=data_changes.intersection(range(start,end));assert not assigned.intersection(owned);assigned.update(owned)
+        groups.append({'start':f'{start:08x}','end_exclusive':f'{end:08x}','label':label,'changed_bytes':len(owned)})
+    assert assigned==data_changes and len(assigned)==363
+    added_names=[]
+    for rva in [0x10c90,0x10ca8,0x10cc0,0x10cd4,0x10ce8,0x10cf8,0x10d00,0x10d0c]:
+        name=b.get_string_at_rva(rva);assert a.get_data(rva,len(name)+1)==bytes(len(name)+1)
+        added_names.append({'address':f'{0x60000000+rva:08x}','text':name.decode(),'bytes_including_zero':len(name)+1})
+    result['file_data_routing']={'groups':groups,'unassigned_changed_bytes':0,'added_names':added_names,'final_resolution_word_pairs':[list(pair)for pair in struct.iter_unpack('<HH',b.get_data(0xfdd4,96))],'scope':'Changed-byte routing and literal decoding only;not full data layout,write-lifetime or pointer/relocation reconstruction.'}
     old_thunks=a.get_data(0xd888,24);replacement=b.get_data(0xd888,24)
     assert old_thunks.hex()=='ff257ce20060ff2574e20060ff256ce20060ff2578e20060'
     assert replacement.hex()=='31c0acaa84c075fa4fc3'+'90'*14
@@ -42,7 +53,7 @@ def main():
         slot=struct.unpack('<I',old_thunks[offset+2:offset+6])[0];dll,name=import_by_slot[slot]
         thunks.append({'instruction':f'{0x6000d888+offset:08x}','iat_slot':f'{slot:08x}','dll':dll,'name':name})
     assert { (t['dll'].lower(),t['name'])for t in thunks}==imports[0]-imports[1]
-    result['reused_import_thunks']={'start':'6000d888','end_exclusive':'6000d8a0','reference_hex':old_thunks.hex(),'final_hex':replacement.hex(),'removed_thunks':thunks,'final_disassembly':disassemble(replacement,0x6000d888),'scope':'Final contains a string-copy loop and14 NOP bytes;DF,valid buffers and callers are not established by this local body.'}
+    result['reused_import_thunks']={'start':'6000d888','end_exclusive':'6000d8a0','reference_hex':old_thunks.hex(),'final_hex':replacement.hex(),'removed_thunks':thunks,'final_disassembly':disassemble(replacement,0x6000d888),'scope':'Final contains a string-copy loop and14 NOP bytes;local body alone does not establish DF or valid buffers. Existing glide-reference-identity audit establishes loader caller6000106e;complete caller coverage remains separate.'}
     x,y=[p.get_data(0x1bb0,260)for p in images];changed=[0x60001bb0+i for i,(u,v)in enumerate(zip(x,y))if u!=v]
     assert changed==[0x60001c25,0x60001c2a,0x60001c2b,0x60001c2c]
     assert a.get_data(0x1c24,10).hex()=='be10000000bfd4fd0060'
