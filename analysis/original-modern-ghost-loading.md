@@ -113,7 +113,10 @@ The same hash-pinned 1.5.1 and 1.5.2 executable members both contain
 `f0200000 05000000 00000000` at file-backed VA `0055e8a0`. Official
 final Modern contains `f0200000 06000000 00000000` there. The 1.5.2
 ghost fix therefore changes when the header is refreshed and which bytes
-are restored while retaining the file-backed version-5 template. The
-version-6 template is a separate later difference. The supplied original
+are restored while retaining the file-backed version-5 template. The [1.5.3 to 1.6.0 comparison](original-modern-frame-setting.md#historical-config-version5-to6-selects-reset-rather-than-ordinal-conversion)
+dates the template change to that later release boundary. It also identifies
+the ordinary config loader’s new minimum version of 6. Version 5 takes
+the grouped-defaults branch when it reaches that loader in 1.6.0. The
+ghost wrapper instead restores the current header on successful load. The supplied original
 has zero bytes at this address and derives its header through a different
 startup path. See the [config loading comparison](original-modern-config-loading.md#original-startup-populates-the-header-template-from-a-version-resource).
