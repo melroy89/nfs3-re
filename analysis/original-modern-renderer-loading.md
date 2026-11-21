@@ -672,3 +672,22 @@ The reference overlay begins ELF32 little-endian/i386 metadata, with type ET_EXE
 Section names AUTO/DGROUP become `.code`/`.data`; final also adds `.rsrc`. The new version metadata identifies “SoftTri Thrash Driver Modern Patch”, FileVersion2016.10.25.0006 and ProductVersion1.0.0. Its “Based on…” comment is self-description, not independent authentication of source ancestry. Header-field interpretation, every resource node and debug-payload semantics remain pending. BSS has raw pointer0 in both files, so file-offset0 bytes are not treated as BSS initial values.
 
 This ledger extends the reconstruction reference beyond C function bodies while preserving clear gaps. No ELF/PE payload, resource or target instruction was executed and no original/final bytes changed.
+
+
+### Reference debug records recover names with34 export anchors
+
+The [bounded debug audit](evidence/audits/softtri-reference-debug.json), reproduced with `python3 analysis/scripts/audit_softtri_reference_debug.py`, inspects the exact appended payload without modifying or executing it. GNU readelf2.42 exits1 with `.debug_abbrev section not zero terminated`: the38-byte section contains four complete abbreviation definitions but no terminating zero abbreviation entry. The audit records the stock reader's output/error evidence; it does not label that decoder successful.
+
+A separate bounded parser accepts the exact declared abbreviation extent and only its observed forms1/8/12/16, enforcing compilation-unit lengths, address size4, version2 and string/field bounds. It consumes the complete22,480-byte info extent, yielding **173 units and1,034 named records**:
+
+|Numeric tag |Records |What is retained |
+|---|---:|---|
+|11h |173 |Unit/source identifiers, including source-file paths and library unit names |
+|0ah |510 |Address-bearing name records |
+|34h |351 |Address-bearing name records |
+
+The parser preserves numeric tags/attributes rather than inventing prototypes or structure definitions. Every extracted record and unit offset is retained in the JSON. This is a supported narrow extraction, not a general DWARF validator or proof of source/type completeness.
+
+All34 PE exports match a debug name after replacing export prefix `_THRASH_` with `_SOFTTRI_`. For **every listed export**, stored debug address+1000h equals its PE RVA; the manifest enumerates all34 anchors. In particular, the mode callback's debug record `_SOFTTRI_modeenum@8` has stored1480h, corresponding to RVA2480h. These anchors corroborate the callback/export correspondence used in this comparison. Applying that adjustment to every unanchored address remains an inference requiring instruction/data validation.
+
+The unit identifiers include `C:\nfs3\sdon\softtri\striasm.asm` and `striabout.c`; other records identify runtime/library units. Paths and symbols do not recover file contents, establish all function boundaries or justify final-version Ghidra signatures. Reference retail provenance remains qualified. No automatic labels/types were applied and no payload bytes were repaired, appended or executed. Use these records to guide later original/final inspection, preserving the raw address and artifact hash alongside any proposed mapping.
