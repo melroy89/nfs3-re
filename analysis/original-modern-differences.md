@@ -697,7 +697,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **54 Claimed, 56 Static, 180 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **53 Claimed, 56 Static, 181 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -950,7 +950,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP120-013 | config.dat was moved to its original destination (./FeData/Config/) for preserving settings of original NFS3 when updating. However, graphics settings are reset to their defaults in this case (because format is changed a little). | Static |
 | MP120-014 | Based on the 3dsetup/d3da.dll from the NFS4, supports fog effect in the NFS3. | Claimed |
 | MP120-015 | Fixed a bug according to non-working fog effect on modern systems. (Thanks Dege for debugging this driver and much valuable information about Direct 3D.) | Claimed |
-| MP120-016 | Fixed a crash when system supports too many texture formats. (Also thanks Dege.) | Claimed |
+| MP120-016 | Fixed a crash when system supports too many texture formats. (Also thanks Dege.) | Partial |
 | MP120-017 | Resolutions count limit was extended up to 100. | Claimed |
 | MP120-018 | The driver hides resolutions with height lower than 480 pixels now. | Claimed |
 | MP120-019 | 640×480 always reported as 16-bit because intro movie doesn't works in 32-bit mode. Other resolutions are reported as 32-bit if they are available. | Claimed |

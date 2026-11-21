@@ -8041,7 +8041,7 @@
     "original_body_end_exclusive": "0049cf91",
     "modern_body_end_exclusive": "0049cedd",
     "report": "analysis/original-modern-texture-limits.md",
-    "report_sha256": "ea0f5f99ae65ccb885d3dc75dd8af576a35e0761f2188bb6e5945576b7e0e479",
+    "report_sha256": "14b1ca3600e24a6c9499064c5649cd53eb09eb6547866749dfb4b6f3c3072914",
     "limit": "Removed original threshold/resampler tail and alignment; texture feature persists through shorter configured-extent counterpart. Driver/runtime acceptance unverified."
   },
   "video_mode_removed_tail": {

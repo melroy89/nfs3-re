@@ -70,3 +70,24 @@ The150 square-builder prefix retains a fixed256 threshold and a dimension-pass-t
 **MP150-013 remains vendor-only:** no beta package has been inspected. These release builds distinguish the track argument change, later setting and driver table expansion, but cannot establish that512/1024 textures were exclusive to a particular beta or impossible through every release path. Required follow-up is an identified/hash-pinned beta EXE and corresponding producer/driver comparison, followed by behavioral evidence for acceptance. No beta source or functionality is inferred from a release-note sentence.
 
 No target instructions, driver/API calls, asset loads, compilation or Ghidra writes occurred; executable/database bytes are unchanged.
+
+## DX6 format-count bound is separate from texture dimensions
+
+This subsection adds **renderer-local format-count evidence**, distinct from the executable extent policy above. The source's MP120-016 bullet belongs under “Changes in the dx6.dll thrash driver”; its condensed catalogue description alone does not identify that component. It must not be attributed to DX5 or confused with a maximum texture side length.
+
+The [DX6 callback audit](evidence/audits/dx6-texture-format-bound.json), reproduced with `python3 analysis/scripts/audit_dx6_texture_format_bound.py`, pins120 `drivers/dx6/dx6.dll`, SHA-256`81cc2b24972d37efca68ad277b714f5053672994df1ed266c529e1e24cd3420f`. This is also the known131 driver identity, not an authenticated unpatched NFS4 predecessor.
+
+|Local contract |Evidence |
+|---|---|
+|Callback registration |60006e65 supplies60007090 to the object call at60006e75, vtable+20h |
+|Initial count |60006e6b clears DWORD6001b880 before that call |
+|Admission bound |60007092 loads count;6000709a compares unsigned with100; JAE60007225 exits before record writes |
+|Record addressing |600070ab multiplies admitted index by156; table base6003d188 |
+|Initialization/copy |Clears156-byte record; copies32 input bytes into record+48h |
+|Ordinary completion |6000721c increments count and publishes it at6000721e |
+
+At count100 or any unsigned larger value, the early route has EAX0 and returns through the shared RET8 without the record initialization/copy. With fresh synchronous enumeration and no intervening writes, admitted indices0..99 occupy15,600 bytes ending exclusive60040e78. This is a local arithmetic/storage-span statement, not proof of every loader mapping, external write or consumer bound. The manifest records the containing section metadata without reading virtual zero-fill as file bytes.
+
+The full410-byte callback is retained. Channel-mask parsing and other fields remain part of its contract; this count guard does not establish that arbitrary malformed descriptors terminate or validate safely. Count writers outside the registration/reset and callback, reentrancy, synchronization, device acceptance and full storage lifetime remain unverified.
+
+**MP120-016 advances vendor-only→partial:** the claimed component contains a concrete pre-write format-count guard consistent with bounding enumeration. The inspected reference bundle and110 archive do not supply the claimed NFS4 DX6 predecessor, so this audit does **not** prove that120 introduced the guard, identify the prior overflowing array or reproduce the reported crash. Required follow-up is an identified prepatch DX6 binary and paired callback/layout comparison, followed by a controlled scenario for runtime acceptance. No driver, API, game, instruction probe or Ghidra database was executed/changed.

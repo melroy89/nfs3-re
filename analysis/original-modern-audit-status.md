@@ -18,7 +18,9 @@ The subsequent [texture extent history audit](original-modern-texture-limits.md#
 
 The subsequent [historical clock audit](original-modern-clock-source.md#historical-clock-boundary-is152-to153) dates all16 known clock calls to152→153 and reproduces timer-body equality after only call-operand changes. MP153-012's API boundary is supported; accuracy and MP153-014's distinct startup-failure cause remain unverified. This new audit is outside these22 checkpoint runs.
 
-Current catalogue remains **54 vendor-only,56 bounded-static,180 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
+The subsequent [DX6 format-count audit](original-modern-texture-limits.md#dx6-format-count-bound-is-separate-from-texture-dimensions) establishes120's unsigned100-record admission guard and156-byte writes, advancing MP120-016 to partial. No prepatch NFS4 DX6 counterpart is available in the inspected archives, so guard introduction and the advertised crash repair remain unverified. This new audit is outside these22 checkpoint runs.
+
+Current catalogue remains **53 vendor-only,56 bounded-static,181 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
 
 
 ## Current HUD, Glide, projection and affinity checkpoint — 2026-11-21
