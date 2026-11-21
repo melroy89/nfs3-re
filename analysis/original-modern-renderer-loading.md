@@ -605,3 +605,16 @@ The callback still requires depth16, a nonzero pixel classifier, and has special
 Packaged `thrash.ini` also drops LightBeams=0, retaining File=softtria.dll, Type=software and DirectDrawLagFix=1. This config edit is distinct from the19 code-byte changes. The DLL's BSS section has raw pointer0; apparent bytes obtained by treating file offset0 as BSS initial data are not used as runtime evidence.
 
 **MP150-038 gains partial static support:** a concrete mode-bound initialization repair is localized, with every code-section difference assigned. The release note's unspecified bug symptom, complete capacity safety, device/display acceptance and visible output remain unverified. No DLL, graphics/system API, game or target instructions were executed, and no executable or saved Ghidra database changed.
+
+
+### SoftTri bound matches its retained page-sized allocation request
+
+The expanded [SoftTri audit](evidence/audits/softtri-mode-fix-history.json) retains setup span `600026e7..600027ac`, identical140/150. GetSystemInfo at `600026ef` fills stack SYSTEM_INFO; the following VirtualAlloc call at `60002707` requests its+4 page-size DWORD, with allocation flags3000h and protection4. The returned pointer is published at `60040050`. The setup seeds fixed640×480×16 and800×600×16 rows1/2, sets count `6004004c` to3, pushes callback `60002480` at `6000277a`, and passes count-address context to object vtable+20h at `600027a9`.
+
+This establishes a local allocation-to-registration chain, not an assertion that allocation always succeeds or every object implements the assumed mode API. No successful provider/device call was observed.
+
+For a successfully allocated P-byte table and a callback reporting the same page sizeP, its new quotient is `C=floor(P/40)`. With ordinary valid count n≥3, the generic insertion proceeds only when **n<C**, selects byte offset40n and increments the count. Hence the new record ends at `40(n+1)≤40C≤P`. The reserved rows1/2 additionally require enough allocated extent for those writes. This is a conditional extent argument, not a global lifetime/bounds proof.
+
+The old callback reads the corresponding stack DWORD without this local GetSystemInfo initialization even though setup already used the API in its separate frame. Those are different stack buffers: setup's earlier query does not establish the callback-local value. The150 addition now obtains the same kind of bound source locally. Actual page-size consistency, allocation failure, corrupted/aliased context counts, classifier side effects, later mutations and non-generic paths remain separately qualified. Do not replace this with an unconditional “all SoftTri mode handling is safe” claim.
+
+The concrete MP150-038 mechanism is now supported by allocation and callback-registration evidence as well as the complete19-byte code delta. The unspecified visible bug symptom still has no runtime reproduction. No target, allocator or graphics instructions were executed.

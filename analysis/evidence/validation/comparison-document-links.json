@@ -448,8 +448,8 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "557c705a1677087ec1feba280a636afcbd9cfbea2a5c29784fcbeff0efaba317",
-      "relative_links": 50
+      "sha256": "535a27e36ed21fc8f94ff783c7bab89d071962f6ac54070ebdccd433d0b28186",
+      "relative_links": 51
     },
     {
       "path": "analysis/original-modern-renderer-texel-alignment.md",
@@ -653,7 +653,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "d3f0f653eedfa6e103ec7a094eea7a3b678b91b749972bba5031d60c4ef88b0b",
+      "sha256": "88547683f974409b77e5945a305d9d66794ab966b842b4fcf0f3811dd1c1a6c5",
       "relative_links": 248
     },
     {
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2899,
+  "relative_link_count": 2900,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
