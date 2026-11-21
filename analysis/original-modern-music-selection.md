@@ -318,3 +318,12 @@ releases. Direct call encodings target it from `004b5cb1` in 1.5.3,
 its initialization call already exist in the inspected 1.5.3 package.
 The finding dates this implementation at the specified addresses.
 An equivalent implementation elsewhere in earlier builds remains open.
+
+The race seed helper `0040fed0..0040fefa` likewise matches final byte
+for byte in 1.5.3 and 1.6.0. In 1.5.2 the same span contains other
+instructions. The menu seed calls above are immediately followed by
+race seed calls at `004b5cb6` and `004b5ca7`, respectively. The
+82-byte private RNG chain at `0051778c..005177de` is also identical in
+1.5.3, 1.6.0 and final. The seed arithmetic and call order therefore
+already match the final implementation in packaged 1.5.3. This comparison
+does not establish equal incoming seed state or playback choices.
