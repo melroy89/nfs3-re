@@ -73,3 +73,29 @@ Parent Ghidra readback covered the progress producer, full pair packer004c8310..
 **DONE:** player-update motion/progress field provenance and segment-step units of its correction delta.
 
 **OPEN:** peer ownership and ordering, sequence/history behavior across seams, stale-reference lifecycle, reverse correction direction, physical motion calibration, actual network timing and rendered smoothing. No two-peer test or packet execution occurred.
+
+## Original versus official Modern comparison
+
+A re-read of both hash-pinned EXEs confirms byte equality for the six saved
+ranges below. The ranges and SHA-256 values are recorded in the
+[paired function inventory](evidence/audits/original-modern-function-diff.json).
+The initial coordinate and layout findings above use the local analysis build.
+The confirmed byte equality extends the instruction-level findings for these
+six bodies to the supplied original and official final Modern.
+
+| Entry | Bytes | Retained role |
+|---|---:|---|
+| `004c7bd0` | 341 | Type 11 sender |
+| `004c7d30` | 285 | Type 11 receiver and pending row update |
+| `004c8040` | 375 | Track-relative correction reader |
+| `004c8250` | 188 | Ready remote pending row to display row before the tick |
+| `004c8310` | 62 | Four-byte motion/progress pair packer |
+| `004c8350` | 21 | Motion/progress pair decoder |
+
+The ordinary participant message retains its sequence at +4, motion/progress
+pair at +8 and input-state byte at +0xc. The pending-to-display copy retains
+the local-row skip and ready-flag clearing. The packer still depends on the
+[changed truncation helper](og-modern-x87-precision.md#changed-drivetrain-truncation-helper).
+Identical field encoding can therefore carry different values if upstream
+vehicle state differs. Provider behavior, other messages and matched-tick
+correction results remain open.

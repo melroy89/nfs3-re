@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "9865fb120ac829f7362b4e704c171b8ae87c76468e562c236142d0c7c05b4ece",
-      "relative_links": 334
+      "sha256": "3b05c628d7af997006b258cd8df02b90de9e87731155537c3af7b1cb8bbd3a65",
+      "relative_links": 335
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3069,
+  "relative_link_count": 3070,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
