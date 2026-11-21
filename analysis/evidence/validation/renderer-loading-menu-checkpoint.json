@@ -1,0 +1,489 @@
+{
+  "kind": "renderer-loading-menu-checkpoint",
+  "reviewed_head": "ea2fc48e18d68c72220cc1be6b27e3d9c960c3fb",
+  "runner_path": "analysis/scripts/check_renderer_loading_menu.py",
+  "runner_sha256": "19539901298ccb7170f43beb3508a5d5f98419d99d48fd4889c54737235a9fef",
+  "prior_checkpoint": "analysis/evidence/validation/hud-glide-projection-affinity-checkpoint.json",
+  "prior_checkpoint_sha256": "1c35a3aadd4c44f2c50653bd74e2fad1c6a43ce84af5a9327e652bc0ab4e2187",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_dgvoodoo_251_packages.py"
+      ],
+      "script_sha256": "1e4030981236ea08ded2493b88c00c52b359c1cd7adc2ec319085632163cad2b",
+      "output": "analysis/evidence/audits/dgvoodoo-251-packages.json",
+      "pre_run_output_sha256": "3e44e3e4f93545c9ec2fa20f281b313238401bb81f811c282036bd493e244c2b",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:140/150 wrappers identify dgVoodoo2.51 Napalm but have different hashes/sizes;WIP16 unverified\n",
+          "stderr": "",
+          "output_sha256": "3e44e3e4f93545c9ec2fa20f281b313238401bb81f811c282036bd493e244c2b"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:140/150 wrappers identify dgVoodoo2.51 Napalm but have different hashes/sizes;WIP16 unverified\n",
+          "stderr": "",
+          "output_sha256": "3e44e3e4f93545c9ec2fa20f281b313238401bb81f811c282036bd493e244c2b"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_nglide_version_packages.py"
+      ],
+      "script_sha256": "a81ca405c6f7bccbcd495adb02d9df39d5c28aa40dfb0c6b938b497243fe3911",
+      "output": "analysis/evidence/audits/nglide-version-packages.json",
+      "pre_run_output_sha256": "2771e161bde1505398534ad47fee757b2873ce60a961b0d5476514fb5de84515",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:120 nGlide1.04.2 to130 1.04.3;130 equals131;140/150 label1.05;fix semantics unverified\n",
+          "stderr": "",
+          "output_sha256": "2771e161bde1505398534ad47fee757b2873ce60a961b0d5476514fb5de84515"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:120 nGlide1.04.2 to130 1.04.3;130 equals131;140/150 label1.05;fix semantics unverified\n",
+          "stderr": "",
+          "output_sha256": "2771e161bde1505398534ad47fee757b2873ce60a961b0d5476514fb5de84515"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_software_reference_final.py"
+      ],
+      "script_sha256": "da7eb0046ed4dfd565bb741060df60dd7332ca131a2fcf2ec2787e5e8f8c577f",
+      "output": "analysis/evidence/audits/software-reference-final.json",
+      "pre_run_output_sha256": "a77aafe171538350e53f4e6a2d7d6e3e9ac72d08ef712c2c8706e3971b959b1b",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:34 matching exports;44 code-section differing bytes in9 intervals; raw16 callback admission; equal import/data sections\n",
+          "stderr": "",
+          "output_sha256": "a77aafe171538350e53f4e6a2d7d6e3e9ac72d08ef712c2c8706e3971b959b1b"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:34 matching exports;44 code-section differing bytes in9 intervals; raw16 callback admission; equal import/data sections\n",
+          "stderr": "",
+          "output_sha256": "a77aafe171538350e53f4e6a2d7d6e3e9ac72d08ef712c2c8706e3971b959b1b"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_softtri_mode_fix_history.py"
+      ],
+      "script_sha256": "fbe2ba10d062909924701afd2cb245a11130ab2612610355395534ff45b22092",
+      "output": "analysis/evidence/audits/softtri-mode-fix-history.json",
+      "pre_run_output_sha256": "45bd20b29116f1aaaebb01e46bdf7f446ebb4e4b1ea73b0fad8a08c82dfa3e2d",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:all19 code-byte changes confined to callback;150 adds GetSystemInfo before local bound read;runtime untested\n",
+          "stderr": "",
+          "output_sha256": "45bd20b29116f1aaaebb01e46bdf7f446ebb4e4b1ea73b0fad8a08c82dfa3e2d"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:all19 code-byte changes confined to callback;150 adds GetSystemInfo before local bound read;runtime untested\n",
+          "stderr": "",
+          "output_sha256": "45bd20b29116f1aaaebb01e46bdf7f446ebb4e4b1ea73b0fad8a08c82dfa3e2d"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_softtri_reference_debug.py"
+      ],
+      "script_sha256": "1e6da70b8ced96d1f74a4342bf24e7ac1381233cfdbff93b7595a562a7221ec7",
+      "output": "analysis/evidence/audits/softtri-reference-debug.json",
+      "pre_run_output_sha256": "dd18d430a425dfeb50a36b72dc7df0dcf41a78b7d43459d1be728a02000addc1",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:173 debug units,1034 bounded records,34 export address anchors;stock reader exit1,original bytes preserved\n",
+          "stderr": "",
+          "output_sha256": "dd18d430a425dfeb50a36b72dc7df0dcf41a78b7d43459d1be728a02000addc1"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:173 debug units,1034 bounded records,34 export address anchors;stock reader exit1,original bytes preserved\n",
+          "stderr": "",
+          "output_sha256": "dd18d430a425dfeb50a36b72dc7df0dcf41a78b7d43459d1be728a02000addc1"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_renderer_reference_debug.py"
+      ],
+      "script_sha256": "2a612d418bcc96daf686351c3e463a170583a94c59e8c2445337b07436828691",
+      "output": "analysis/evidence/audits/renderer-reference-debug.json",
+      "pre_run_output_sha256": "8d63f16988169079f4698d53c603f36c7d87974329d5e848c298cd3f60b816cc",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:DX5 193units/961records,Voodoo176units/877records;34 independent export anchors each;original bytes preserved\n",
+          "stderr": "",
+          "output_sha256": "8d63f16988169079f4698d53c603f36c7d87974329d5e848c298cd3f60b816cc"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:DX5 193units/961records,Voodoo176units/877records;34 independent export anchors each;original bytes preserved\n",
+          "stderr": "",
+          "output_sha256": "8d63f16988169079f4698d53c603f36c7d87974329d5e848c298cd3f60b816cc"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_glide_reference_identity.py"
+      ],
+      "script_sha256": "f1cf952279f77b69431610e053dbd030d44efd205290cdef528fa2649dcd817a",
+      "output": "analysis/evidence/audits/glide-reference-identity.json",
+      "pre_run_output_sha256": "f6379061e60940645c43bd9ad71d611efe4ba959214161b891b349bb2ccdb50a",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:three pinned Glide identities;34 hosted/final export entries match; all34 local RVAs differ; new reference/final region map\n",
+          "stderr": "",
+          "output_sha256": "f6379061e60940645c43bd9ad71d611efe4ba959214161b891b349bb2ccdb50a"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:three pinned Glide identities;34 hosted/final export entries match; all34 local RVAs differ; new reference/final region map\n",
+          "stderr": "",
+          "output_sha256": "f6379061e60940645c43bd9ad71d611efe4ba959214161b891b349bb2ccdb50a"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_voodoo_reference_final.py"
+      ],
+      "script_sha256": "3cabcdb513553c66a3eacf0e5b72b4998c8596fb52fe124e0e13bea1a92fef9c",
+      "output": "analysis/evidence/audits/voodoo-reference-final.json",
+      "pre_run_output_sha256": "1025989a4dd74afab355bcafa58955f8fe12b08bb94d8a2f28114ca35425383c",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:34 matched Voodoo exports;3307 changed code bytes in141 intervals;about count/table publication mapped\n",
+          "stderr": "",
+          "output_sha256": "1025989a4dd74afab355bcafa58955f8fe12b08bb94d8a2f28114ca35425383c"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:34 matched Voodoo exports;3307 changed code bytes in141 intervals;about count/table publication mapped\n",
+          "stderr": "",
+          "output_sha256": "1025989a4dd74afab355bcafa58955f8fe12b08bb94d8a2f28114ca35425383c"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_dx6_mode_admission_history.py"
+      ],
+      "script_sha256": "23b258e85e3ac559b5b6f3c6e5d479900502dbfddb9676b688228ac763460653",
+      "output": "analysis/evidence/audits/dx6-mode-admission-history.json",
+      "pre_run_output_sha256": "16ab7b7584a7ed66adf59f3e84a5ff4053459395e2d4ecb10cb00d3deed07ef6",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:131/140 DX6 seed,depth-key and sorted insertion differences pinned;runtime unverified\n",
+          "stderr": "",
+          "output_sha256": "16ab7b7584a7ed66adf59f3e84a5ff4053459395e2d4ecb10cb00d3deed07ef6"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:131/140 DX6 seed,depth-key and sorted insertion differences pinned;runtime unverified\n",
+          "stderr": "",
+          "output_sha256": "16ab7b7584a7ed66adf59f3e84a5ff4053459395e2d4ecb10cb00d3deed07ef6"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_loading_screenshot_history.py"
+      ],
+      "script_sha256": "cc13afef37b4cea56c4215d3de0906cad917520155a42c69c3e1a42ee5f4eff3",
+      "output": "analysis/evidence/audits/loading-screenshot-history.json",
+      "pre_run_output_sha256": "917e6b3e0e0235c3925ff00a153984bd960ab94d4328d156f4dd0c636e01caa8",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 loading-progress screenshot service addition pinned;frame/output behavior unverified\n",
+          "stderr": "",
+          "output_sha256": "917e6b3e0e0235c3925ff00a153984bd960ab94d4328d156f4dd0c636e01caa8"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 loading-progress screenshot service addition pinned;frame/output behavior unverified\n",
+          "stderr": "",
+          "output_sha256": "917e6b3e0e0235c3925ff00a153984bd960ab94d4328d156f4dd0c636e01caa8"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_controller_connect_layout_history.py"
+      ],
+      "script_sha256": "cd02f4eb26bd8436898ed863827339c8ebb3703f24856221f4ca039e3827d6e4",
+      "output": "analysis/evidence/audits/controller-connect-layout-history.json",
+      "pre_run_output_sha256": "f0aeb7f3158e2b5f7f3b984218c1aed8f61ce0187df3fb0a8d5a60aa4505bca5",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:120->130 Controller/Connect tab changes;131->140 reset6->7;split-screen geometry retained\n",
+          "stderr": "",
+          "output_sha256": "f0aeb7f3158e2b5f7f3b984218c1aed8f61ce0187df3fb0a8d5a60aa4505bca5"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:120->130 Controller/Connect tab changes;131->140 reset6->7;split-screen geometry retained\n",
+          "stderr": "",
+          "output_sha256": "f0aeb7f3158e2b5f7f3b984218c1aed8f61ce0187df3fb0a8d5a60aa4505bca5"
+        }
+      ],
+      "repeatable": true
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "before_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "matches_prior": true,
+      "after_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b"
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "before_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "matches_prior": true,
+      "after_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6"
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "before_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "matches_prior": true,
+      "after_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb"
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "before_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "matches_prior": true,
+      "after_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+    },
+    {
+      "path": "analysis/evidence/probes/line-boundary-helper-probe.json",
+      "before_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0",
+      "matches_prior": true,
+      "after_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0"
+    },
+    {
+      "path": "reconstruction/README.md",
+      "before_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca",
+      "matches_prior": true,
+      "after_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca"
+    },
+    {
+      "path": "reconstruction/line_boundary.c",
+      "before_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437",
+      "matches_prior": true,
+      "after_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437"
+    },
+    {
+      "path": "reconstruction/line_boundary.h",
+      "before_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad",
+      "matches_prior": true,
+      "after_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary.py",
+      "before_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f",
+      "matches_prior": true,
+      "after_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary_windows.py",
+      "before_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab",
+      "matches_prior": true,
+      "after_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab"
+    },
+    {
+      "path": "reconstruction/tests/windows_adapter.S",
+      "before_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f",
+      "matches_prior": true,
+      "after_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f"
+    },
+    {
+      "path": "reconstruction/tests/windows_harness.c",
+      "before_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd",
+      "matches_prior": true,
+      "after_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd"
+    }
+  ],
+  "raw_reference_exports": [
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    }
+  ],
+  "selected_shared_dependencies": [
+    {
+      "path": "analysis/scripts/audit_thrash_loader_difference.py",
+      "sha256": "5bd4d21780b17971061bddf14a3dfb67944ca5556f4bdafb740f5e08e237d73c"
+    },
+    {
+      "path": "analysis/scripts/audit_dx5_reference_final.py",
+      "sha256": "cd7f5e69e9aac66c6dc1bfa2c0f04fe2c3486cf00388b4344b495a46d4b38ab2"
+    },
+    {
+      "path": "analysis/scripts/audit_screenshot_counter_history.py",
+      "sha256": "d129c6b57d425ae6ebe5798ad4ca4b494bc6bcfa2a265a4ee8cc4866ce555363"
+    },
+    {
+      "path": "analysis/scripts/audit_dialog_alignment_history.py",
+      "sha256": "19c000dc7b815cfb038d156fc8e3efae29201d363e080ebd405a4737d3ab0289"
+    },
+    {
+      "path": "analysis/scripts/reference_debug_records.py",
+      "sha256": "f690ee67432c2f97a5969791fa60e18ddd6ad05e7f0cde5a0e2c572d33ad3a3e"
+    },
+    {
+      "path": "analysis/scripts/audit_endpoint_comma_history.py",
+      "sha256": "723ba3cc9a5bf731bed4fca6237c9668bef0e1fc6710dd6cbf3a6965faf92869"
+    }
+  ],
+  "limits": [
+    "Primary-agent22 static reruns, not independent semantic review, runtime, CI or whole-repository qualification.",
+    "No target/API/instruction execution, new exports, compilation, reconstruction edits or Ghidra reopening/mutation.",
+    "Hashes prove these files match recorded identities, not live GUI state, saved annotation correctness or runtime behavior.",
+    "Raw exports compare prior checkpoint hashes, not newly generated exports or freshly parsed original manifests.",
+    "Repeatability cannot prove every interpretation or extend the scripts\u2019 stated path/input coverage.",
+    "Selected shared dependencies are recorded, not a complete environment/package dependency lock."
+  ]
+}

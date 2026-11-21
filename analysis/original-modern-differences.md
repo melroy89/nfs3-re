@@ -1,6 +1,8 @@
 # Original versus Modern Patch: executable differences
 
-The [current six-audit checkpoint](original-modern-audit-status.md#current-hud-glide-projection-and-affinity-checkpoint--2026-11-21) reviews `8706616`: **12/12 static reruns** reproduce the latest HUD, Glide, Frame Size, projection and affinity evidence. Twelve protected artifacts and12 raw exports retain prior hashes. The table separates established mechanisms from remaining runtime/provenance questions; this is not a completed whole-game difference analysis.
+The [current renderer/loading/menu checkpoint](original-modern-audit-status.md#current-renderer-loading-and-menu-checkpoint--2026-11-21) reviews `ea2fc48`: **22/22 static reruns** reproduce11 evidence files, with12 protected artifacts and12 raw exports unchanged. Its compact table links the recent wrapper, reference-driver/debug, DX6, loading screenshot and menu findings to their remaining limitations. This is repeatability/preservation evidence, not complete difference coverage or runtime acceptance.
+
+The [preceding six-audit checkpoint](original-modern-audit-status.md#current-hud-glide-projection-and-affinity-checkpoint--2026-11-21) reviews `8706616`: **12/12 static reruns** reproduce the latest HUD, Glide, Frame Size, projection and affinity evidence. Twelve protected artifacts and12 raw exports retain prior hashes. The table separates established mechanisms from remaining runtime/provenance questions; this is not a completed whole-game difference analysis.
 
 The [earlier historical checkpoint](original-modern-audit-status.md#earlier-historical-dx5-configuration-language-and-hud-checkpoint--2026-11-21) reviews `c15d718`: **8/8 static runs** reproduce four audits covering DX5 modes, RemoteOnly removal, six packaged language tables and all144 historical HUD rectangle records. Twelve protected artifacts and12 raw exports retain prior hashes. Actual display/HUD outcomes remain unverified; the full EXE comparison is incomplete.
 

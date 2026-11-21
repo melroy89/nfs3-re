@@ -1,5 +1,22 @@
 # Original versus Modern audit: current stopping point
 
+## Current renderer, loading and menu checkpoint — 2026-11-21
+
+The [eleven-audit checkpoint](evidence/validation/renderer-loading-menu-checkpoint.json) reviews `ea2fc48`: **22/22 static runs** reproduce11 committed evidence outputs; **12 protected artifacts and12 raw exports** retain prior hashes. Reproduce with `python3 analysis/scripts/check_renderer_loading_menu.py`. It covers all nine newly added/changed investigation scripts since the preceding checkpoint, plus the canonical SoftTri and Glide reference-pair audits reused by the follow-ups. The manifest records exact script/output hashes and selected shared dependencies. It does not qualify the entire repository, independently review semantics or execute target code.
+
+|Area |Established in this checkpoint |Remaining boundary |
+|---|---|---|
+|[Wrapper packages](original-modern-renderer-loading.md#historical-nglide-labels-and-the150-same-version-binary-change) |nGlide120→130 label update and130/131 equality;140/150 same-version build differences; dgVoodoo2.51 metadata |Upstream authentication, WIP identity, wrapper code and minimize/restore behavior |
+|[SoftTri](original-modern-software-reference-pair.md) |Canonical44-byte code map; historical mode-bound policy, allocation linkage and bounded debug parsing |Complete callback ABI, storage lifetimes and actual rendering |
+|[Voodoo/Glide](original-modern-glide-reference-identity.md#complete-code-section-cluster-routing) |Existing18-envelope code map reused; historical131/140 fallback/register contracts and363-byte data localization added |Full data/alias/lifetime model, historical attribution and provider behavior |
+|[Reference debug records](original-modern-original-reference-bundle.md#dx5-and-voodoo-debug-records-have-independent-export-anchors) |Three carriers,542 units/2,872 records and102 matched export anchors |Full types, nonexport mapping and final ABI |
+|[DX6 modes](original-modern-display-modes.md#historical-dx6-depth-keys-and-sorting-change-at140) |131→140 sorted depth-aware keys and seed policy |Actual catalogue, activation and visible order |
+|[Loading screenshots](original-modern-screenshots.md#loading-progress-screenshot-service-is-added-at140) |131→140 service addition, local gates and request clearing |Captured frame, input delivery and file success |
+|[Controller/Connect](original-modern-common-menu-buttons.md#controller-and-connect-tab-layout-changes-at130) |120→130 authored positions/order;131→140 Reset6→7 |Parser defaults, loaded assets and rendered alignment |
+
+Current catalogue remains **54 vendor-only,56 bounded-static,180 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
+
+
 ## Current HUD, Glide, projection and affinity checkpoint — 2026-11-21
 
 The [six-audit checkpoint](evidence/validation/hud-glide-projection-affinity-checkpoint.json) reviews `8706616`: **12/12 static runs** reproduce six committed evidence outputs; **12 protected artifacts and12 raw exports** match the prior checkpoint hashes. Reproduce with `python3 analysis/scripts/check_hud_glide_projection_affinity.py`. The Frame Size dependency is reproduced before the projection audit that records its hash. This is primary-agent repeatability and preservation, not independent semantic review, target execution or complete comparison acceptance.
