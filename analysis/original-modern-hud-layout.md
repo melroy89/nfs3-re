@@ -497,3 +497,13 @@ high version byte and low version byte at least 6 bypasses that Modern
 branch. The unconditional selector 3 inside the initializer therefore
 describes the reset default. Loading an accepted config does not itself
 invoke this writer. See the [configuration comparison](original-modern-config-loading.md).
+
+On the accepted Modern header branch, `00472ac6` calls the sound-mode
+normalizer `00472230` and `00472acb` jumps to the common continuation at
+`00472aeb`. The only direct setting write in the normalizer targets
+`006fbc00` (audio mode), conditional on the capability result. Neither
+this branch nor the normalizer directly writes any of the six HUD
+selectors. This establishes local preservation through the header
+decision and sound normalization. Provider callbacks and later
+initialization remain separate from that result. See the
+[audio capability evidence](original-modern-config-loading.md).
