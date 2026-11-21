@@ -416,3 +416,12 @@ timestamp alone therefore does not trigger the original deletion
 route at this site. This narrows the saved ordinal question to the
 loaded contents and their later consumers.
 [Configuration loader comparison](original-modern-config-loading.md).
+
+The 81-byte read-and-copy span `00472a5b..00472aac` also matches in
+the 1.5.2 and 1.5.3 package executables. After reading into a temporary
+buffer, it copies DWORDs and trailing bytes into the configuration
+block at `006fbb40`. The saved race and menu ordinals lie at offsets
+`0xa4` and `0xac` in that block. When the copy covers those fields,
+it transfers their bytes unchanged. This rules out a translation
+inside the direct copy. Later writers after the accepted-header
+decision still need tracing to establish a complete upgrade outcome.
