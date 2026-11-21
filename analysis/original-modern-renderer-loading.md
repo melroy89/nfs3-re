@@ -529,3 +529,21 @@ All calls reach adapter `004f8b50`; its captured prefix binds imported SetEnviro
 All13 named ASCII literals are absent from the140 EXE. The captured140 setup prefix `004f8a50..004f8a84` retains local initialization/call work without those explicit request sequences. This is partial support for **MP140-041**, rather than proof of every legacy setup path's correspondence or an exhaustive environment-writer census. Computed names, inherited values, provider-side settings and API outcomes remain unverified. The separately documented [selected-driver ENV reader](#5-driver-specific-configuration-before-loading) establishes a configurable mechanism; do not infer it clears inherited values or replaces every old write.
 
 This is a historical change within Modern, distinct from original EXE environment-based renderer selection. No environment variables were set and no target/API instructions, game or Ghidra writes were performed.
+
+
+## Historical nGlide special driver becomes shared Voodoo configuration
+
+The [package audit](evidence/audits/nglide-driver-config-history.json), reproduced with `python3 analysis/scripts/audit_nglide_driver_config_history.py`, compares exact author-hosted131/140 archives. In `drivers/nglide/thrash.ini`, File changes **nglide.dll→voodoo2a.dll**. Type=voodoo, FogSupport=1 and LightBeams=1 remain unchanged.140 omits `drivers/nglide/nglide.dll` and includes an i386 `voodoo2a.dll` whose complete bytes match both140 `drivers/dgvoodoo/voodoo2a.dll` and `drivers/glide3x/voodoo2a.dll`. Archive, config and DLL hashes are retained in the manifest.
+
+|131 `[NGLIDE]` key |140 `[ENV]` key |Retained value |
+|---|---|---|
+|Resolution |NGLIDE_RESOLUTION |0 |
+|Aspect |NGLIDE_ASPECT |0 |
+|Refresh |NGLIDE_REFRESH |0 |
+|Vsync |NGLIDE_VSYNC |1 |
+|Gamma |NGLIDE_GAMMA |5 |
+|Splash |NGLIDE_SPLASH |0 |
+
+This is a concrete configured-driver and settings-format migration supporting **MP140-043 partially**. The earlier [special adapter analysis](#historical-nglide-configuration-precedes-provider-loading) documents a mechanism for prefixing/uppercasing NGLIDE section keys; the140 package instead authors the complete environment names. Its selected values match the six earlier values. Actual loader selection, setting precedence, inherited environment, successful API writes and provider acceptance are not established by the INI or equal sibling DLLs.
+
+Do not infer source ancestry or full implementation equivalence from the renamed/shared file. Full131 special-adapter versus140 general-driver behavior remains a separate comparison. These package bytes explain how the advertised configurable approach is authored without claiming every old hardcoded environment path was replaced. No DLL was loaded, no environment variable was set, and no executable/database changed.

@@ -1,0 +1,57 @@
+{
+  "kind": "static-nglide-driver-config-history",
+  "versions": {
+    "1.3.1": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.1.7z",
+      "archive_sha256": "6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934",
+      "config": {
+        "member": "drivers/nglide/thrash.ini",
+        "sha256": "df7c78608ed8c63b598fe3e373956a5435433c3138489855c146bb32e0833932",
+        "text": "[THRASH]\r\nFile=nglide.dll\r\nType=voodoo\r\nFogSupport=1\r\nLightBeams=1\r\n[NGLIDE]\r\nResolution=0\r\nAspect=0\r\nRefresh=0\r\nVsync=1\r\nGamma=5\r\nSplash=0"
+      },
+      "driver": {
+        "member": "drivers/nglide/nglide.dll",
+        "bytes": 69120,
+        "sha256": "a93f1669752edeb2c658640f6dd580dac046cf3c25a1671db2ccbdb48b40457b",
+        "machine": "014c",
+        "matching_siblings": []
+      }
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "config": {
+        "member": "drivers/nglide/thrash.ini",
+        "sha256": "47260e42fe8c8d457386f91cef986798f97a0879fd1d9cfd174f83ca97fc36de",
+        "text": "[THRASH]\r\nFile=voodoo2a.dll\r\nType=voodoo\r\nFogSupport=1\r\nLightBeams=1\r\n[ENV]\r\nNGLIDE_RESOLUTION=0\r\nNGLIDE_ASPECT=0\r\nNGLIDE_REFRESH=0\r\nNGLIDE_VSYNC=1\r\nNGLIDE_GAMMA=5\r\nNGLIDE_SPLASH=0"
+      },
+      "driver": {
+        "member": "drivers/nglide/voodoo2a.dll",
+        "bytes": 69120,
+        "sha256": "67764a56917fd93fffb847968f2cf90cff7c0fd8ab812d99403bfa88ef0208d3",
+        "machine": "014c",
+        "matching_siblings": [
+          {
+            "member": "drivers/dgvoodoo/voodoo2a.dll",
+            "sha256": "67764a56917fd93fffb847968f2cf90cff7c0fd8ab812d99403bfa88ef0208d3",
+            "equal_bytes": true
+          },
+          {
+            "member": "drivers/glide3x/voodoo2a.dll",
+            "sha256": "67764a56917fd93fffb847968f2cf90cff7c0fd8ab812d99403bfa88ef0208d3",
+            "equal_bytes": true
+          }
+        ]
+      }
+    }
+  },
+  "verified": [
+    "131 special nglide.dll path becomes140 voodoo2a.dll;140 bytes equal dgvoodoo/glide3x sibling drivers.",
+    "Six NGLIDE key/value pairs move to ENV with NGLIDE_ uppercase prefixes;values and selected THRASH capability keys retained."
+  ],
+  "limits": [
+    "Packaged configuration/bytes,not successful installation,selection,provider loading or effective settings.",
+    "Whole driver implementations,ABI/source ancestry and every replacement of old special-adapter behavior unverified.",
+    "Inherited environment and OS/provider precedence may affect outcomes;no target/API/environment execution or binary/database changes."
+  ]
+}
