@@ -383,3 +383,14 @@ ECX=`ffa0a0a0` in Modern to `004d7160` at `00460380`.
 The three gray components rise from 120 to 160. The branch and other
 argument setup retain identical bytes. The observed screen and
 runtime color output remain unverified.
+
+### Frontend path formatting shares the alternate branch
+
+In the original, the BL=1 branch at `00460699` advances the input
+string pointer by one byte and formats it with `.\fedata\%s` into
+`[EBP-0x50]`. Modern retains that pointer advance and instead pushes
+the prefix buffer address `007a2bb4`. It jumps to `004606b9`,
+where the shared formatter uses `%s%s` with the prefix and advanced
+string pointer. The other branch still passes `007a2db4` as its prefix.
+This accounts for the 16 differences at `004606a2..004606b3`.
+The effective output depends on the initialized prefix and input string.
