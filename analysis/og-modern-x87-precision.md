@@ -465,3 +465,15 @@ Together with the tick and codec comparisons, this confirms retained code
 from the default replay entry points into resource I/O and car resolution.
 The actual asset tables, file contents and downstream initialization still
 matter when comparing playback across versions.
+
+Both preparation resolvers call `00439990`. Its 84-byte body
+(`00439990..004399e4`) matches in fresh reads from the pinned EXEs.
+It compares exactly 16 bytes against each registry entry at entry+0x31c,
+returns the index of the first match, and returns -1 at the end of the
+registry. The saved comparison inventory also records identical iterator
+bodies at `00438a80` (26 bytes) and `00438aa0` (33 bytes). For a fixed
+identifier and ordered registry, the lookup rule is retained. Replay car
+identity across installations still depends on registry population, order
+and the assets behind the selected entry. See the
+[car alias comparison](original-modern-car-alias.md) for separate changes
+elsewhere in car naming and selection.
