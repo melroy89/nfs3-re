@@ -394,3 +394,13 @@ where the shared formatter uses `%s%s` with the prefix and advanced
 string pointer. The other branch still passes `007a2db4` as its prefix.
 This accounts for the 16 differences at `004606a2..004606b3`.
 The effective output depends on the initialized prefix and input string.
+
+The [startup path initializer](original-modern-startup-paths.md) supplies
+both prefixes. In official final Modern, the copy loop at `004a6ed1`
+reads consecutive NUL-terminated strings starting at `0053f42c` and
+writes them to 128-byte slots starting at `007a27b4`. A fresh read of the
+pinned executable confirms zero-based slot 8 (`007a2bb4`) receives
+`.\fedata\` and slot 12 (`007a2db4`) receives `.\fedata\art\`.
+With those initialized values, the BL=1 path produces the same default
+prefix as the original literal. Later writes and the effective path at
+runtime remain open.
