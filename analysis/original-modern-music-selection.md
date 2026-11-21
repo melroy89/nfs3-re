@@ -352,3 +352,10 @@ to the shorter list at `00556320`. The 1.5.3 package's
 decodes ordinals 13–15 as Random (Rock or Techno), Random (Rock), and
 Random (Techno). This verifies the historical labels and descriptor
 binding alongside the executable's mode rules. Playback remains untested.
+
+The 1.5.2 pointer resolves to 14 entries followed by a zero terminator.
+Its last entry is ID 172, the single Random choice. The 1.5.3 list
+replaces that tail with IDs 1943, 1941 and 1942, followed by a zero
+terminator. Together with the 1.5.3 English strings and selector code,
+this verifies the addition claimed by MP153-003 at the package level.
+Runtime audio output remains untested.

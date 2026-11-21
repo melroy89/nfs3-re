@@ -25,7 +25,7 @@ The [physics dependency follow-up](og-modern-x87-precision.md#deeper-dependency-
 
 **Compatibility is unresolved.** The supplied binaries establish a real precision-policy change; they do not by themselves prove the other developer's ARM64 port works, or that float/double inevitably causes multiplayer/replay divergence. A connection succeeding is also insufficient to prove matched trajectories. The [claim-by-claim precision assessment](og-modern-x87-precision.md#assessment-of-the-other-users-claims) records those boundaries.
 
-The [290-entry list](#complete-release-note-change-list) is complete for the source release-note bullets. It is not an exhaustive semantic diff of the binaries. There are currently40 vendor-only,57 bounded-static and193 partial entries; these labels are neither distinct change counts nor a completion percentage. The [361-entry function index](original-modern-function-index.md) is navigation, not proof every listed body is explained.
+The [290-entry list](#complete-release-note-change-list) is complete for the source release-note bullets. It is not an exhaustive semantic diff of the binaries. There are currently40 vendor-only,58 bounded-static and192 partial entries; these labels are neither distinct change counts nor a completion percentage. The [361-entry function index](original-modern-function-index.md) is navigation, not proof every listed body is explained.
 
 Next work follows the [core comparison priorities](original-modern-audit-status.md#core-comparison-priorities). Minor historical renderer/menu refinements are parked unless they answer one of those questions. No new reconstruction, compiler/toolchain work, instruction probes or gameplay tests are part of this documentation consolidation.
 
@@ -730,7 +730,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **40 Claimed, 57 Static, 193 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **40 Claimed, 58 Static, 192 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -779,7 +779,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 |---|---|---|
 | MP153-001 | Fixed a bug of the original game which was a cause of different volume of the race music each race. | Partial |
 | MP153-002 | Fixed a bug of the original game which was a cause of ignoring of the latest Rock track and all Techno tracks when Random race music is choosed. | Partial |
-| MP153-003 | Added two additional random race music modes: Random (Rock) and Random (Techno). | Partial |
+| MP153-003 | Added two additional random race music modes: Random (Rock) and Random (Techno). | Static |
 | MP153-004 | Added two additional random menu music modes: Random (Fast) and Random (Slow). Fast: Romulus 3, Triton, Pi. Slow: Minotaur, Whipped, Whacked. | Static |
 | MP153-005 | Random race music actually works as a playlist (each race a new track). It prevents from repeating same music tracks frequently. | Partial |
 | MP153-006 | Prevented double music fading in the audio settings when user presses Race button. | Partial |
