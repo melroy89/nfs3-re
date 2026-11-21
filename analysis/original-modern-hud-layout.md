@@ -384,3 +384,12 @@ The [historical audit](evidence/audits/opponent-name-menu-history.json) now capt
 The complete text adapter `004897f0..004898a4` (180 bytes) is also identical131/140. It accepts the Name text pointer through EAX and six stack values, eventually returning with RET18h; it branches on an alignment value and uses lower text helpers including `004d1390`, `004d1480`, `004d10e0` and `004d1000`. The earlier consumer passes the selected geometry values into this adapter. Its retained body does not prove equal output when the supplied geometry changes, or establish the lower text ABI/transitive rendering behaviour.
 
 This supersedes the earlier local scaler-call gap. The still-required evidence is full initializer admission/timing, geometry edits after scaling, mirror rectangle linkage and lower text coordinate interpretation/rendering. The exact “just under the mirror” claim remains partial; no live HUD was observed.
+
+
+### Slot15 supplies the WRONG WAY text branch
+
+The expanded [historical HUD audit](evidence/audits/opponent-name-menu-history.json) identifies another changed preset without inventing a release-note attribution. Complete branch `0045b787..0045b7dc` (85 bytes) is identical131/140. It reads slot15 geometry at `0074984c/50/48 + localIndex×170h`, supplies lookup ID`0151h` at `0045b7be`, calls language lookup `004d1850` at `0045b7c9`, then text adapter `004897f0` at `0045b7ce`.
+
+The pinned140 `fedata/text/text.eng` table's zero-based entry337 (`0151h`) contains **WRONG WAY**. Its asset hash, entry offset and exact label are retained in the audit; no131 packaged English table is asserted. This links slot15 to the selected WRONG WAY drawing branch. Its profiles0/2/4 have the source-bound changes listed in the complete inventory above, so the HUD table changes extend beyond Opponent Name.
+
+This is an independently identified layout change, not a new count of vendor release-note entries. Full warning admission, selected language/font, later geometry writes and final placement remain unverified. Slots3/6 remain unnamed pending stronger consumer evidence. No game, text renderer or target instructions were executed.

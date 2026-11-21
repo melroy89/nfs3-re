@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "69646d7b1782421c2530eca8468db2fcf5483f1ac811510727ca9b366393a94f"
+      "sha256": "ecd55bef5714cafc79a17ae628f5d47502c8f9a908defa17b8365b2ea92ff14a"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -173,7 +173,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "473719ba244ce8a27b38bb5a5f73559bf2324ba87563d392da219d7e4fd188c9"
+      "sha256": "d357e0ed0706bd01b8e6ee4e83f69cf95571ee1bea5b2bb00fe40c9b960b5153"
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -4621,6 +4621,17 @@
       "original_sha256": "454dc6a5516fdec6e37b5ce7c41ebc6043e4fcf24fdf577c870fc4d50e4c4e72",
       "modern_sha256": "15ac56fd796251cf4ffbbf5c440f445b396a3c7dea88da3dfc65152061acbcee",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0045b787",
+            "0045b7be",
+            "0045b7c9",
+            "0045b7ce",
+            "0045b7dc"
+          ]
+        },
         {
           "path": "analysis/original-modern-hud-settings-policy.md",
           "entry_mentioned": true,
@@ -11702,6 +11713,13 @@
         },
         {
           "path": "analysis/original-modern-dialog-input.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004d1850"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-hud-layout.md",
           "entry_mentioned": true,
           "addresses": [
             "004d1850"

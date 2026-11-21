@@ -126,7 +126,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00456ce0` | UpdateAndRenderFrontendCarColorSelector | 440 | 3 | [colour-control](original-modern-colour-control.md) |
 | `00457030` | HandleFrontendCarColorSelectorInput | 417 | 2 | [colour-control](original-modern-colour-control.md) |
 | `004571e0` | UpdateFrontendColorSelectorLayout | 110 | 2 | [colour-control](original-modern-colour-control.md) |
-| `0045ab30` | RenderHudElementForView | 3598 | 5 | [hud-settings-policy](original-modern-hud-settings-policy.md), [numeric-scale](original-modern-numeric-scale.md) |
+| `0045ab30` | RenderHudElementForView | 3598 | 5 | [hud-layout](original-modern-hud-layout.md), [hud-settings-policy](original-modern-hud-settings-policy.md), [numeric-scale](original-modern-numeric-scale.md) |
 | `0045d7ad` | ClearDuplicateCameraMenuChoicesInPriorityOrder | 135 | 3 | [camera-duplicates](original-modern-camera-duplicates.md), [small-entry-followup](original-modern-small-entry-followup.md) |
 | `004607c0` | RenderFrontendButtonAndUpdateAvailability | 2728 | 8 | [viewport-geometry](original-modern-viewport-geometry.md) |
 | `004628d0` | ConfigureFrontendDropdownBoundsFromLabels | 219 | 28 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md) |
@@ -296,7 +296,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004d1450` | SetBitmapTextColor | 6 | 6 | [car-alias](original-modern-car-alias.md), [numeric-scale](original-modern-numeric-scale.md) |
 | `004d1750` | LoadSelectedLocalizedTextTable | 95 | 92 | [command-line](original-modern-command-line.md), [language-table](original-modern-language-table.md) |
 | `004d17b0` | LookupDynamicText | 153 | 5 | [display-modes](original-modern-display-modes.md), [language-table](original-modern-language-table.md) |
-| `004d1850` | LookupLocalizedText | 63 | 63 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md), [credits-panorama](original-modern-credits-panorama.md), [dialog-input](original-modern-dialog-input.md), [language-table](original-modern-language-table.md), [loading-artwork](original-modern-loading-artwork.md), [localization-151](original-modern-localization-151.md), [menu-text-fields](original-modern-menu-text-fields.md), [race-now](original-modern-race-now.md), [track-length-text](original-modern-track-length-text.md) |
+| `004d1850` | LookupLocalizedText | 63 | 63 | [car-alias](original-modern-car-alias.md), [common-menu-buttons](original-modern-common-menu-buttons.md), [credits-panorama](original-modern-credits-panorama.md), [dialog-input](original-modern-dialog-input.md), [hud-layout](original-modern-hud-layout.md), [language-table](original-modern-language-table.md), [loading-artwork](original-modern-loading-artwork.md), [localization-151](original-modern-localization-151.md), [menu-text-fields](original-modern-menu-text-fields.md), [race-now](original-modern-race-now.md), [track-length-text](original-modern-track-length-text.md) |
 | `004d1890` | ReleaseLocalizedTextOffsetTable | 18 | 17 | [language-table](original-modern-language-table.md) |
 | `004d37a0` | ConvertShapeForRenderer | 1926 | 32 | [shape-conversion](original-modern-shape-conversion.md), [texture-loading-followup](original-modern-texture-loading-followup.md) |
 | `004d3f50` | CreateTextureFromShape | 287 | 2 | [texture-loading-followup](original-modern-texture-loading-followup.md) |

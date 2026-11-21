@@ -298,6 +298,44 @@
             "4898a0:\t5b                   \tpop    ebx",
             "4898a1:\tc2 18 00             \tret    0x18"
           ]
+        },
+        {
+          "name": "wrong_way_branch",
+          "start": "0045b787",
+          "end_exclusive": "0045b7dc",
+          "hex": "8b45f0837870007405bf00fafa9f8d04b50000000029f0c1e00329f0c1e0046a048b884c987400518b9850987400538bb0489874005657b851010000ff353c1b7900e882600700e81de0020089ec5d5f5e5a595bc3",
+          "sha256": "bac3700b68688a13826651a3152efd8ef49e730c1262ec64129dc6697b424c81",
+          "disassembly": [
+            "45b787:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+            "45b78a:\t83 78 70 00          \tcmp    DWORD PTR [eax+0x70],0x0",
+            "45b78e:\t74 05                \tje     0x45b795",
+            "45b790:\tbf 00 fa fa 9f       \tmov    edi,0x9ffafa00",
+            "45b795:\t8d 04 b5 00 00 00 00 \tlea    eax,[esi*4+0x0]",
+            "45b79c:\t29 f0                \tsub    eax,esi",
+            "45b79e:\tc1 e0 03             \tshl    eax,0x3",
+            "45b7a1:\t29 f0                \tsub    eax,esi",
+            "45b7a3:\tc1 e0 04             \tshl    eax,0x4",
+            "45b7a6:\t6a 04                \tpush   0x4",
+            "45b7a8:\t8b 88 4c 98 74 00    \tmov    ecx,DWORD PTR [eax+0x74984c]",
+            "45b7ae:\t51                   \tpush   ecx",
+            "45b7af:\t8b 98 50 98 74 00    \tmov    ebx,DWORD PTR [eax+0x749850]",
+            "45b7b5:\t53                   \tpush   ebx",
+            "45b7b6:\t8b b0 48 98 74 00    \tmov    esi,DWORD PTR [eax+0x749848]",
+            "45b7bc:\t56                   \tpush   esi",
+            "45b7bd:\t57                   \tpush   edi",
+            "45b7be:\tb8 51 01 00 00       \tmov    eax,0x151",
+            "45b7c3:\tff 35 3c 1b 79 00    \tpush   DWORD PTR ds:0x791b3c",
+            "45b7c9:\te8 82 60 07 00       \tcall   0x4d1850",
+            "45b7ce:\te8 1d e0 02 00       \tcall   0x4897f0",
+            "45b7d3:\t89 ec                \tmov    esp,ebp",
+            "45b7d5:\t5d                   \tpop    ebp",
+            "45b7d6:\t5f                   \tpop    edi",
+            "45b7d7:\t5e                   \tpop    esi",
+            "45b7d8:\t5a                   \tpop    edx",
+            "45b7d9:\t59                   \tpop    ecx",
+            "45b7da:\t5b                   \tpop    ebx",
+            "45b7db:\tc3                   \tret"
+          ]
         }
       ],
       "matched_controls": {
@@ -724,6 +762,44 @@
             "4898a0:\t5b                   \tpop    ebx",
             "4898a1:\tc2 18 00             \tret    0x18"
           ]
+        },
+        {
+          "name": "wrong_way_branch",
+          "start": "0045b787",
+          "end_exclusive": "0045b7dc",
+          "hex": "8b45f0837870007405bf00fafa9f8d04b50000000029f0c1e00329f0c1e0046a048b884c987400518b9850987400538bb0489874005657b851010000ff353c1b7900e882600700e81de0020089ec5d5f5e5a595bc3",
+          "sha256": "bac3700b68688a13826651a3152efd8ef49e730c1262ec64129dc6697b424c81",
+          "disassembly": [
+            "45b787:\t8b 45 f0             \tmov    eax,DWORD PTR [ebp-0x10]",
+            "45b78a:\t83 78 70 00          \tcmp    DWORD PTR [eax+0x70],0x0",
+            "45b78e:\t74 05                \tje     0x45b795",
+            "45b790:\tbf 00 fa fa 9f       \tmov    edi,0x9ffafa00",
+            "45b795:\t8d 04 b5 00 00 00 00 \tlea    eax,[esi*4+0x0]",
+            "45b79c:\t29 f0                \tsub    eax,esi",
+            "45b79e:\tc1 e0 03             \tshl    eax,0x3",
+            "45b7a1:\t29 f0                \tsub    eax,esi",
+            "45b7a3:\tc1 e0 04             \tshl    eax,0x4",
+            "45b7a6:\t6a 04                \tpush   0x4",
+            "45b7a8:\t8b 88 4c 98 74 00    \tmov    ecx,DWORD PTR [eax+0x74984c]",
+            "45b7ae:\t51                   \tpush   ecx",
+            "45b7af:\t8b 98 50 98 74 00    \tmov    ebx,DWORD PTR [eax+0x749850]",
+            "45b7b5:\t53                   \tpush   ebx",
+            "45b7b6:\t8b b0 48 98 74 00    \tmov    esi,DWORD PTR [eax+0x749848]",
+            "45b7bc:\t56                   \tpush   esi",
+            "45b7bd:\t57                   \tpush   edi",
+            "45b7be:\tb8 51 01 00 00       \tmov    eax,0x151",
+            "45b7c3:\tff 35 3c 1b 79 00    \tpush   DWORD PTR ds:0x791b3c",
+            "45b7c9:\te8 82 60 07 00       \tcall   0x4d1850",
+            "45b7ce:\te8 1d e0 02 00       \tcall   0x4897f0",
+            "45b7d3:\t89 ec                \tmov    esp,ebp",
+            "45b7d5:\t5d                   \tpop    ebp",
+            "45b7d6:\t5f                   \tpop    edi",
+            "45b7d7:\t5e                   \tpop    esi",
+            "45b7d8:\t5a                   \tpop    edx",
+            "45b7d9:\t59                   \tpop    ecx",
+            "45b7da:\t5b                   \tpop    ebx",
+            "45b7db:\tc3                   \tret"
+          ]
         }
       ],
       "matched_controls": {
@@ -1102,6 +1178,19 @@
       }
     ],
     "scope": "Entire1152-byte table only;not all HUD initialization or all executable differences."
+  },
+  "slot15_identity": {
+    "consumer": "0045b787..0045b7dc",
+    "consumer_identical131_140": true,
+    "lookup_id": 337,
+    "lookup_call": "0045b7c9",
+    "draw_call": "0045b7ce ->004897f0",
+    "text_member": "fedata/text/text.eng",
+    "text_version": "1.4.0",
+    "text_sha256": "00901c5300c0926ad4cb9ad9f8d8514b410500cf434d48ca075df01f72021a24",
+    "text_entry_offset": 11289,
+    "text": "WRONG WAY",
+    "limits": "Version-bound English label and selected branch;not complete overlay lifetime or rendered position."
   },
   "scaler_changed_byte_addresses": [],
   "gameplay_contract": {

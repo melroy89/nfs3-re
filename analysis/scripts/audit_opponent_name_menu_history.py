@@ -8,7 +8,7 @@ from audit_dialog_alignment_history import parse
 
 
 def main():
-    result={'kind':'static-opponent-name-menu-history','versions':{}};geometry=[];consumers=[];producers=[];tables=[];callers=[]
+    result={'kind':'static-opponent-name-menu-history','versions':{}};geometry=[];consumers=[];producers=[];tables=[];callers=[];wrongway=[]
     for version,(ah,eh)in PINS.items():
         rel=f'analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v{version}.7z'
         assert hashlib.sha256((ROOT/rel).read_bytes()).hexdigest()==ah
@@ -23,6 +23,9 @@ def main():
         assert get(0x485694,0x485699).hex()=='be00055400'
         init=get(0x485680,0x4856c5);scale=get(0x480910,0x4809f7);convert_address=0x4f9404 if version=='1.3.1'else 0x4f9418;convert=get(convert_address,convert_address+29)
         producers.append((init,scale,convert))
+        wrongway.append(get(0x45b787,0x45b7dc))
+        assert get(0x45b7be,0x45b7c3).hex()=='b851010000'
+        assert get(0x45b7ce,0x45b7d3).hex()=='e81de00200'
         callers.append((get(0x484c10,0x484c5d),get(0x4897f0,0x4898a4)))
         assert get(0x484c43,0x484c48).hex()=='e8c8bcffff'
         assert get(0x484c33,0x484c39).hex()=='837ddc177d14'
@@ -36,10 +39,10 @@ def main():
         selected={r['fields']['codelink']:{k:r['fields'][k]for k in ['x','y','listname','text']}for r in rows}
         assert len(selected)==12;geometry.append(selected)
         result['versions'][version]={'archive':rel,'archive_sha256':ah,'member':member,
-            'member_sha256':hashlib.sha256(raw).hexdigest(),'preset_table':{'start':'00540500','bytes':1152,'sha256':hashlib.sha256(table).hexdigest(),'hex':table.hex()},'slot12_source_words':slot12,'producer_captures':[{'name':n,'start':f'{a:08x}','end_exclusive':f'{b:08x}','hex':get(a,b).hex(),'sha256':hashlib.sha256(get(a,b)).hexdigest(),'disassembly':disassemble(get(a,b),a)}for n,a,b in [('preset_copy',0x485680,0x4856c5),('word_to_float',convert_address,convert_address+29),('slot_scaler',0x480910,0x4809f7),('all_slot_call_loop',0x484c10,0x484c5d),('text_draw_adapter',0x4897f0,0x4898a4)]],'matched_controls':selected,'exe_sha256':eh,'name_descriptor_words':list(words),
+            'member_sha256':hashlib.sha256(raw).hexdigest(),'preset_table':{'start':'00540500','bytes':1152,'sha256':hashlib.sha256(table).hexdigest(),'hex':table.hex()},'slot12_source_words':slot12,'producer_captures':[{'name':n,'start':f'{a:08x}','end_exclusive':f'{b:08x}','hex':get(a,b).hex(),'sha256':hashlib.sha256(get(a,b)).hexdigest(),'disassembly':disassemble(get(a,b),a)}for n,a,b in [('preset_copy',0x485680,0x4856c5),('word_to_float',convert_address,convert_address+29),('slot_scaler',0x480910,0x4809f7),('all_slot_call_loop',0x484c10,0x484c5d),('text_draw_adapter',0x4897f0,0x4898a4),('wrong_way_branch',0x45b787,0x45b7dc)]],'matched_controls':selected,'exe_sha256':eh,'name_descriptor_words':list(words),
             'gameplay_consumer':{'start':'00483e49','end_exclusive':'00483ec8','bytes':127,
                 'sha256':hashlib.sha256(branch).hexdigest(),'hex':branch.hex(),'disassembly':disassemble(branch,0x483e49)}}
-    assert geometry[0]==geometry[1] and consumers[0]==consumers[1] and producers[0][1:]==producers[1][1:] and callers[0]==callers[1]
+    assert geometry[0]==geometry[1] and consumers[0]==consumers[1] and producers[0][1:]==producers[1][1:] and callers[0]==callers[1] and wrongway[0]==wrongway[1]
     assert [0x485680+i for i,(a,b)in enumerate(zip(producers[0][0],producers[1][0]))if a!=b]==[0x4856ab,0x4856b7]
     assert producers[0][2].hex()=='83ec04890424db0424c70424e8030000da3424d91c248b042483c404c3'
     changes=[]
@@ -51,6 +54,10 @@ def main():
     assert len(changes)==14
     assert sorted(set(r['slot']for r in changes))==[3,6,12,15]
     result['complete_preset_comparison']={'profiles':6,'slots_per_profile':24,'records':144,'changed_records':14,'unchanged_records':130,'changed_words':sum(a!=b for x in changes for a,b in zip(x['131'],x['140'])),'changes':changes,'scope':'Entire1152-byte table only;not all HUD initialization or all executable differences.'}
+    archive=ROOT/'analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z'
+    text=subprocess.check_output(['7z','x','-so',str(archive),'fedata/text/text.eng'])
+    text_offset=struct.unpack_from('<I',text,337*4)[0];assert text[text_offset:text.index(0,text_offset)]==b'WRONG WAY'
+    result['slot15_identity']={'consumer':'0045b787..0045b7dc','consumer_identical131_140':True,'lookup_id':337,'lookup_call':'0045b7c9','draw_call':'0045b7ce ->004897f0','text_member':'fedata/text/text.eng','text_version':'1.4.0','text_sha256':hashlib.sha256(text).hexdigest(),'text_entry_offset':text_offset,'text':'WRONG WAY','limits':'Version-bound English label and selected branch;not complete overlay lifetime or rendered position.'}
     result['scaler_changed_byte_addresses']=[f'{0x480910+i:08x}'for i,(a,b)in enumerate(zip(producers[0][1],producers[1][1]))if a!=b]
     result['gameplay_contract']={'profile_gate':'006fbc50+group*348h+role*1a4h+4','name_storage':'006fbc54','draw_call':'00483ec3 ->004897f0','geometry_reads':['0074981c+localIndex*170h','00749820+localIndex*170h','00749818+localIndex*170h'],'slot':12,'source':'00540500+profile*192+slot*8;WORD pairs converted/1000 and swapped into profile rectangle','scaler_call':'00484c43 loops slots0..22 for local indices0/1,including12;entry/later mutations unresolved.','draw_adapter':'004897f0..004898a4 retained180bytes,RET24;alignment and lower text helpers remain conditional.','remaining':'Full initializer admission,later writes,lower text ABI and mirror-relative final placement unresolved.'}
     result['verified']='127-byte Name consumer also identical131/140;all12 matched Opponent Name settings button/cascade controls retain x,y,listname and text token131/140.'
