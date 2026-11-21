@@ -6,6 +6,10 @@ Static supplied-original/official-Modern comparison; exact fingerprints are in t
 
 The later sections require their named companion audits as well: `audit_projection_callers_followup.py` covers temporary/ordinary caller dispatch; `audit_projection_centre_references.py` covers the complete literal-centre inventory; `audit_viewport_geometry_difference.py` generates the original/Modern rectangle examples; and `audit_frame_setting_difference.py` establishes option labels and selection storage. Run each with `python3 analysis/scripts/<name>` from the repository root. The first script alone does not reproduce the whole expanded chapter.
 
+## Current horizon-claim status
+
+**MP160-003: partial static support, runtime outcome unverified.** The [historical origin-to-centre linkage](#historical-fulldefault-origin-change-reaches-projection-centre) identifies a153→160 Full/default centring mechanism. Earlier unresolved sections below preserve the investigation sequence; they are not the current catalogue classification. Projection-source capture/lifetime, other contexts/orientation and actual visible output remain unresolved. The [integer-rounding examples](#default-centring-retains-half-pixel-integer-rounding) further limit exact midpoint claims.
+
 ## Automatic angle producer and selection
 
 Modern helper **`004dbc48`** loads signed DWORD width/height from `006fd1e4/006fd1e8`, divides width by height on x87, multiplies by file-backed float 0.75, applies FPATAN with 1, doubles and multiplies by float `57.295780181884766`. Ordered comparisons clamp the result to file-backed float limits **90** and **107**, then store binary32 at **`0055fecc`**.
@@ -463,3 +467,17 @@ Thus for non-mirror context and session`006fd3b0 != 1`, both selectors supply th
 540 is the physical display midpoint in this example. These are derived values under ordinary fitting integer dimensions, initialized matching rectangles, the selected non-mirror/non-session1 route and no intervening rectangle writes. The audit records the constructor-evidence hash but does not regenerate that companion audit. Different angles/scales and camera orientation remain separate; this is not a captured horizon or a bit-exact all-input equivalence assertion.
 
 **MP160-003 advances unresolved→partial static support:** a153→160 change removes the unconditional default covering-origin shift and its selected projection path reaches the midpoint. The universal advertised horizon outcome remains unverified because source-cache restoration, initialization/order, later rectangle writes, other contexts and orientation can matter. Full machine/runtime validation is still required before calling it a complete horizon repair. This supersedes the earlier lack of a historically linked default-origin mechanism, without resolving those separate lifetime questions. No target instructions, game or saved database were changed/executed.
+
+
+### Default centring retains half-pixel integer rounding
+
+The [historical audit](evidence/audits/projection-restore-history.json) now calculates four explicit Full/default examples using the verified constructor formulas. This is host-side formula evaluation, not instruction execution or captured frames. It assumes non-mirror context, session≠1, ordinal0, initialized matching rectangles, no intervening writes and ordinary finite arithmetic.
+
+|Dimensions |S /D |153 centreY |160 centreY |Physical midpoint |160 error |
+|---|---|---:|---:|---:|---:|
+|640×480 |480 /0 |240 |240 |240 |0 |
+|1920×1080 |1440 /−180 |450 |540 |540 |0 |
+|1280×1024 |960 /32 |528 |512 |512 |0 |
+|1919×1080 |1439 /−180 |449.5 |539.5 |540 |−0.5 |
+
+For nonoverflowing integer W/H, `D=floor((H−S)/2)` makes the160 centre `D+S/2`: exactly H/2 when H−S is even, and H/2−0.5 when odd. These small half-integer examples are exactly representable in binary32; they do not establish every x87 state or extreme integer input. The old unconditional extra shift affects both wide and tall examples. Thus “centred” describes the changed policy, not an exact physical midpoint for every odd dimension or proof of the final visible horizon.

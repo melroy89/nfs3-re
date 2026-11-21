@@ -8,7 +8,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "50a7ca80beb58e45a2900ce0c4b667887b49d63e9d1a3bfaca3015013ecfce3e",
+      "sha256": "5cf26b7242b73d6dc385bfbaf81d5da8fc93c49a014e064ce1eae94b095fe13a",
       "relative_links": 280
     },
     {
@@ -163,8 +163,8 @@
     },
     {
       "path": "analysis/original-modern-frame-setting.md",
-      "sha256": "bef327f8d154f06c7ebef85121281bb0bf1133f80f7e96d4cb111ec11210b441",
-      "relative_links": 15
+      "sha256": "68cd5843f2f4f6943a3199bfb8be0bad66f4e6c92c4a5a4498f14437bd481c59",
+      "relative_links": 16
     },
     {
       "path": "analysis/original-modern-frontend-page.md",
@@ -388,8 +388,8 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "db989e32048089d1022f812c57b0ada367c20ed335292c33e22ad29818fee641",
-      "relative_links": 32
+      "sha256": "67ef361e85e42de76414de01ec4b311de67d68604de08ed8722576221f95e911",
+      "relative_links": 35
     },
     {
       "path": "analysis/original-modern-race-dialog.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2871,
+  "relative_link_count": 2875,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

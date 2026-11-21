@@ -42,7 +42,7 @@ These are partial-function instruction witnesses and the previously recovered te
 
 ## Release-note and reconstruction boundary
 
-**MP160-004 now has partial static support**: Frame Size expands from two choices to four, explicitly exposing shifted/centred and Full/2:1 modes, with concrete storage/bit consumers. The advertised visual restoration of camera shift, actual horizon position and introduction in v1.6.0 remain unverified. The [projection investigation](original-modern-projection.md) retains related unresolved camera/horizon evidence; these must not be collapsed into one proved render result.
+**MP160-004 now has partial static support**: Frame Size expands from two choices to four, explicitly exposing shifted/centred and Full/2:1 modes, with concrete storage/bit consumers. The [historical evidence below](#historical-constructor-changes-boolean-policy-to-two-independent-bits) dates this mechanism to153→160. The [projection investigation](original-modern-projection.md#historical-fulldefault-origin-change-reaches-projection-centre) links its default-origin policy to a scoped centre correction; actual horizon output remains unverified; these must not be collapsed into one proved render result.
 
 The [covering-rectangle-to-centre chain](original-modern-projection.md#frame-size-covering-rectangle-reaches-the-projection-centre) now additionally traces one non-two-player wide-angle path into the actual projection centre stores, with concrete1920x1080 centered/shifted examples. It establishes data flow rather than merely adjacent code, while retaining the active-camera, resize and final rendered-output limits.
 

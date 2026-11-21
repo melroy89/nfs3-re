@@ -283,7 +283,7 @@ The [checkpoint record](evidence/validation/projection-map-review-checkpoint.jso
 - **Complete within static scope:** original/Modern rectangle examples; temporary weather versus ordinary projection selection; the three changed chooser calls; complete literal-centre writer inventory; retained centre producer/consumer; non-file-backed conditional source classification; map-marker extent-to-quad link; role-profile defaults into map zoom.
 - **Still unresolved:** conditional type8 source producer/admission and ordering, computed aliases, camera orientation/final horizon, active map/profile state, all marker styles and actual rendered output. Historical claims need the appropriate intermediate pairs; runtime compatibility remains separate.
 
-The map-point mechanism gap in MP160-006 and field/consumer gap in MP140-073 are closed at the documented static boundary. The whole vendor claims are still partial. MP160-003 remains unresolved. The broader original/Modern investigation is not marked complete, and this checkpoint does not authorize or imply a rebuilt game.
+The map-point mechanism gap in MP160-006 and field/consumer gap in MP140-073 are closed at the documented static boundary. The whole vendor claims are still partial. MP160-003 was unresolved at this earlier checkpoint; the current historical origin linkage above advances it to partial. The broader original/Modern investigation is not marked complete, and this checkpoint does not authorize or imply a rebuilt game.
 
 ## Logo-claim reconciliation
 
