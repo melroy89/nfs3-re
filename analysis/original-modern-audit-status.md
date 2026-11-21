@@ -1,6 +1,17 @@
 # Original versus Modern audit: current stopping point
 
-## Current menu policy and keyboard checkpoint — 2026-11-21
+## Current DX8 admission and activation checkpoint — 2026-11-21
+
+The [two-audit checkpoint](evidence/validation/dx8-admission-activation-checkpoint.json) reviews `033f062`: **4/4 static runs** reproduce two committed evidence outputs; **12 protected artifacts and12 raw exports** match the prior checkpoint hashes. Reproduce with `python3 analysis/scripts/check_dx8_admission_activation.py`. This is primary-agent repeatability and preservation, not independent semantic review or runtime acceptance.
+
+| Investigation |Established |Remaining boundary |
+|---|---|---|
+|[DX8 catalog history](original-modern-display-modes.md#dx8-early-size-filter-and-later16-bit-admission) |110/140 builder identity;140→150 removes32-only admission; ordinary append/dedup and special-slot rules mapped |API output validity, complete consumers, historical ordering comparison and actual offered modes |
+|[DX8 activation and adjustment](original-modern-display-modes.md#dx8-ancillary-helper-selects-depthstencil-with-a-success-without-write-edge) |Retained140/150 activation, depth override/fallback and depth/stencil search; conditional success-without-write edge recorded |Selector/flag lifetime, slot/index validity, complete errors/synchronization and rendered results |
+
+Current catalog counts remain **72 vendor-only,54 bounded-static,162 partial,2 unresolved** across290 release-note entries. They count evidence classifications, not distinct executable changes or completion percentages. The helper findings refine the existing partial DX8 claim; unchanged code is not another patch change. The broader comparison remains incomplete. Next prioritize unassigned changed mechanisms and historical claims, rather than repeatedly inspecting these retained helper bodies. Projection capture lifetime, preset−5 meaning and runtime compatibility remain unresolved.
+
+## Earlier menu policy and keyboard checkpoint — 2026-11-21
 
 The [five-audit checkpoint](evidence/validation/menu-policy-keyboard-checkpoint.json) reviews `92708c8`: **10/10 static runs** reproduce five committed outputs, with **12 protected artifacts and12 raw exports unchanged** against prior hashes. Reproduce with `python3 analysis/scripts/check_menu_policy_keyboard.py`. This is primary-agent repeatability and preservation, not independent semantic review or runtime acceptance.
 
@@ -12,7 +23,7 @@ The [five-audit checkpoint](evidence/validation/menu-policy-keyboard-checkpoint.
 |[Key routing](original-modern-menu-input.md#tab-and-chat-bypass-routing-appears-at131-to140) |Tab/chat/arrow mechanisms dated; modifier flags contract retained |Callbacks, complete ABI and live focus/timing |
 |[Entry eligibility/order](original-modern-menu-input.md#complete-registered-class-flag-census-finds-three-changes) |32-class census: three flags change; Load/IPX section reorders feed retained indexed code |Later eligibility, actual traversal and every-menu correctness |
 
-Current catalog counts: **72 vendor-only,54 bounded-static,162 partial,2 unresolved** across290 release-note entries, following the [DX8 mode-admission audit](original-modern-display-modes.md#dx8-early-size-filter-and-later16-bit-admission). That audit and its [activation follow-up](original-modern-display-modes.md#dx8-activation-already-contains16-bit-requests-before150) are newer than the menu checkpoint above and are not included in its10 runs. These are evidence classifications, not distinct EXE changes or completion percentages. The comparison remains incomplete: unresolved changed-region semantics, data/interface provenance, projection capture lifetime, preset−5 meaning and runtime compatibility still require work. The next investigations should address remaining mechanisms and dependencies rather than recheck the retained selector bodies or treat authored coordinates as final pixels. Existing executable, database, maintained C and raw export preservation is qualified by the checkpoint's exact file list.
+At this checkpoint the subsequent DX8 investigations bring catalog counts to: **72 vendor-only,54 bounded-static,162 partial,2 unresolved** across290 release-note entries, following the [DX8 mode-admission audit](original-modern-display-modes.md#dx8-early-size-filter-and-later16-bit-admission). The DX8 audits are covered by the newer checkpoint above, not these10 menu runs. These are evidence classifications, not distinct EXE changes or completion percentages. The comparison remains incomplete: unresolved changed-region semantics, data/interface provenance, projection capture lifetime, preset−5 meaning and runtime compatibility still require work. The next investigations should address remaining mechanisms and dependencies rather than recheck the retained selector bodies or treat authored coordinates as final pixels. Existing executable, database, maintained C and raw export preservation is qualified by the checkpoint's exact file list.
 
 ## Earlier DX7, hint and shape checkpoint — 2026-11-21
 

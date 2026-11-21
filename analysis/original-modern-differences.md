@@ -2,7 +2,9 @@
 
 ## Current menu policy and keyboard findings
 
-The [current five-investigation table](original-modern-audit-status.md#current-menu-policy-and-keyboard-checkpoint--2026-11-21) consolidates HUD selector availability, shared padding, four-dialog layout, key routing and template/entry order. The [checkpoint](evidence/validation/menu-policy-keyboard-checkpoint.json) reviews `92708c8`, reproduces five committed outputs twice (**10/10 runs**) and confirms12 protected artifacts plus12 raw exports match prior hashes. Reproduce with `python3 analysis/scripts/check_menu_policy_keyboard.py`. Runtime behaviour and each row's remaining unknowns are separate; this is not complete executable-difference coverage.
+The [earlier five-investigation table](original-modern-audit-status.md#earlier-menu-policy-and-keyboard-checkpoint--2026-11-21) consolidates HUD selector availability, shared padding, four-dialog layout, key routing and template/entry order. The [checkpoint](evidence/validation/menu-policy-keyboard-checkpoint.json) reviews `92708c8`, reproduces five committed outputs twice (**10/10 runs**) and confirms12 protected artifacts plus12 raw exports match prior hashes. Reproduce with `python3 analysis/scripts/check_menu_policy_keyboard.py`. Runtime behaviour and each row's remaining unknowns are separate; this is not complete executable-difference coverage.
+
+The newer [DX8 checkpoint](original-modern-audit-status.md#current-dx8-admission-and-activation-checkpoint--2026-11-21) reviews `033f062`: two committed audits reproduce twice (**4/4 runs**) while the same protected artifacts and raw exports retain their hashes. It distinguishes the changed16-bit catalog admission from retained activation, adjustment and depth/stencil search policies. Actual device acceptance and rendered output remain unverified.
 
 ## Recent DX7, connection-hint and map-shape findings
 
