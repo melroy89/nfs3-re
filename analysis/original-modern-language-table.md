@@ -200,3 +200,21 @@ The [historical removal audit](evidence/audits/remoteonly-removal-history.json),
 The131 wrapper `004fb6f0..004fb713` includes shared override logic before GetPrivateProfileIntA at `004fb70a`, using filename buffer `007a263c`. Its earlier helper/parser branches are not fully qualified here: **caller default0 is not proof that every wrapper route passes fallback0 to the API**. This differs from blindly carrying the110 wrapper contract forward. The selected reader's final zero/nonzero normalization is explicit.
 
 MP140-067 gains partial static support for removing this named setting/reader. The vendor adjective “useless” is not established. Literal absence does not exclude computed names, and this does not prove all writers of the destination, downstream media/network effects, INI I/O success or whole-game startup. No target/API instructions were executed and no executable or saved database changed.
+
+
+## Six language tables enter the140 package
+
+**Bounded static support for MP140-070.** The [package audit](evidence/audits/language-asset-introduction.json), reproduced with `python3 analysis/scripts/audit_language_asset_introduction.py`, verifies the exact author-hosted131/140 archive hashes and inventories every path under `fedata/text/`.131 has none;140 has exactly the six files below. This is a package-content change, separate from the EXE language-selection mechanisms above.
+
+|140 member |Bytes |Entries |
+|---|---:|---:|
+|`fedata/text/text.eng` |35,547 |1,933 |
+|`fedata/text/text.fre` |37,059 |1,933 |
+|`fedata/text/text.ger` |34,777 |1,933 |
+|`fedata/text/text.ita` |35,920 |1,933 |
+|`fedata/text/text.spa` |37,809 |1,933 |
+|`fedata/text/text.swe` |33,824 |1,933 |
+
+Each begins with7,732 bytes of little-endian offsets. The first offset equals that table extent; offsets increase strictly, and each string's NUL terminator ends exactly at the next offset or file end. The audit therefore accounts for the whole byte partition of each pinned asset and records its hash. This validates these files' structure, not a general parser for arbitrary inputs.
+
+The inclusion claim advances vendor-only→bounded-static at this package scope.131 could still use language assets supplied by the installed game; absence from a patch archive does not mean language support was absent. First availability in alternate distributions, retail-versus-patch wording changes, codepage/font interpretation, translation quality and runtime loading remain unverified. Later [150→151 table changes](original-modern-localization-151.md) have different entry counts and must retain their version-specific indices. No assets were installed and no target instructions or Ghidra writes were performed.
