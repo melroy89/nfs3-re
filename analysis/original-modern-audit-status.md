@@ -20,7 +20,9 @@ The subsequent [historical clock audit](original-modern-clock-source.md#historic
 
 The subsequent [DX6 format-count audit](original-modern-texture-limits.md#dx6-format-count-bound-is-separate-from-texture-dimensions) establishes120's unsigned100-record admission guard and156-byte writes, advancing MP120-016 to partial. No prepatch NFS4 DX6 counterpart is available in the inspected archives, so guard introduction and the advertised crash repair remain unverified. This new audit is outside these22 checkpoint runs.
 
-Current catalogue remains **53 vendor-only,56 bounded-static,181 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
+The expanded [early120 DX6 mode audit](original-modern-display-modes.md#early120-dx6-mode-policies-and-the640-by480-caveat) proves120/131 driver identity, capacity/height policy and a conditional counterexample to local “always640×480×16” forcing. MP120-017/018/019 gain partial support with explicit prepatch/runtime limits; seed/preference is not a universal post-enumeration result. This extension is outside these22 checkpoint runs.
+
+Current catalogue remains **50 vendor-only,56 bounded-static,184 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
 
 
 ## Current HUD, Glide, projection and affinity checkpoint — 2026-11-21

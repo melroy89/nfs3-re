@@ -34,6 +34,23 @@ def main():
         result['versions'][version]={'archive':rel,'archive_sha256':ah,'member':member,'sha256':pin,
             'captures':[{'name':n,'start':f'{start:08x}','end_exclusive':f'{end:08x}','hex':get(start,end).hex(),
              'sha256':sha(get(start,end)),'disassembly':disassemble(get(start,end),start)}for n,start,end in spans]}
+    early_rel='analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z';early_ah='151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b'
+    assert sha((ROOT/early_rel).read_bytes())==early_ah
+    early_raw=subprocess.check_output(['7z','x','-so',str(ROOT/early_rel),'drivers/dx6/dx6.dll'])
+    assert sha(early_raw)==result['versions']['1.3.1']['sha256']
+    ep=pefile.PE(data=early_raw);classifier=ep.get_data(0x28e0,0xb3)
+    assert ep.get_data(0x1d02,8).hex()=='81fbe00100000f82'
+    assert ep.get_data(0x1d23,16).hex()=='83c728837f1000742a83f9107425eb79'
+    assert ep.get_data(0x2981,13).hex()=='83f92075085fb8060000005ec3'
+    result['early120_identity']={'archive':early_rel,'archive_sha256':early_ah,'member':'drivers/dx6/dx6.dll','sha256':sha(early_raw),'byte_identical_to131':True,
+        'classifier':{'start':'600028e0','end_exclusive':'60002993','hex':classifier.hex(),'sha256':sha(classifier),'disassembly':disassemble(classifier,0x600028e0)},
+        'selected_policies':['Height below480 rejected before record insertion;minimumwidth640 also retained.',
+            'Count seed2 and new-key guard101 imply at most100 nonreserved records for ordinary synchronous zero-terminated table filling;not count-field100.',
+            '640x480 seeded16 record has flag+10 zero;first admitted32-bit callback can overwrite it,before subsequent16-bit preference applies.',
+            'With matching RGB masks,32-bit classifier returns6,so no classifier3-to15 conversion forces this candidate to16.'],
+        'limits':['120/131 identity establishes policy present120,not introduction against a missing prepatch NFS4 driver.',
+            'Conditional callback counterexample is not target execution or proof final game activates32-bit640x480.',
+            'Later16-bit callback or other writes can replace selected record;movie decoding remains untested.']}
     result['findings']=[
         '131 initializer seeds640x480 with depth16 and sets count2;it already supports a16-bit seed.',
         '131 callback treats matching width/height as one key and rejects when stored depth is unsigned greater than incoming;otherwise overwrites.',

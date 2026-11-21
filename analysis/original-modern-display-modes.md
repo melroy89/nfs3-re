@@ -397,3 +397,19 @@ Both callbacks retain minimum width640 and height480 gates and a classifier-resu
 The140 insertion helper's new-key limit is100. The131 scan's101 guard and1,200-byte clearing request are different facts, not a proved allocation bound or safe visible row count. Reuse the [later count/public-base analysis](#dx6-public-mode-count-gains-its-leading-slot-in150) and [consumer limits](#dx6-extra-count-slot-reaches-inclusive-scans-but-can-fail-admission) rather than equating insertion count with displayed modes. Ambient DF, malformed records, arithmetic/division failures, callback ordering and complete storage lifetimes remain separate contracts.
 
 **MP140-038 advances vendor-only→partial:** the named historical pair proves sorted depth-aware insertion and seed-policy changes consistent with retaining16-bit alternatives. Actual enumeration, menu order, successful16-bit activation, provider/device acceptance and rendered output remain unverified. No DLL/API/target code executes and executable/database bytes remain unchanged.
+
+## Early120 DX6 mode policies and the640 by480 caveat
+
+The expanded [DX6 admission audit](evidence/audits/dx6-mode-admission-history.json) hash-pins120 `drivers/dx6/dx6.dll` and proves it **byte-identical to the131 driver** already captured above. Therefore those complete initializer/callback captures directly establish120 policy without assuming correspondence from reused addresses. The audit also captures its complete classifier600028e0..60002993. No unpatched NFS4 DX6 driver is available in the inspected reference/110 archives, so presence in120 is not proof of introduction there.
+
+|Release claim |Local120 evidence |Qualification |
+|---|---|---|
+|MP120-017:100 resolutions |Seed count2; new-row guard compares with101; scan skips reserved index0 and starts at the640×480 seed |For ordinary fresh synchronous filling, indices1..100 permit100 nonreserved records; count can be101. Allocation/consumer safety and visible counts are separate |
+|MP120-018:hide height below480 |Unsigned height comparison at60001d02 rejects below480 before record writes; width below640 is also rejected |Actual display offers and visible menu, all other providers and prepatch boundary unverified |
+|MP120-019:always640×480×16 |Initializer seeds depth16 with record+10h=0; callback later prefers16 once the slot is occupied |The first accepted input can overwrite the unoccupied seed with another depth; universal16-bit forcing is not established |
+
+The last distinction is a concrete conditional counterexample to **local callback** universality. A valid640×480 input with depth32 and RGB masks00ff0000/0000ff00/000000ff returns classifier6. At60001d26, seed flag+10h==0 branches directly to record writing, before the later `ECX==16` preference test. The depth remains32 because only classifier3 triggers conversion to15. With no later16-bit callback or other overwrite, this route leaves the selected record at32. These are instruction-derived conditions, not a new instruction probe, observed enumeration or proof of actual32-bit game/movie activation.
+
+If a later accepted16-bit input arrives, the occupied-slot path admits it and can replace that32-bit row. Once occupied, non16 incoming depth takes the skip path. Enumeration order and the presence of a16-bit candidate therefore matter. Seed metadata alone must not be rewritten as a guaranteed post-enumeration depth, and the release-note rationale about intro-movie failure is not independently tested here.
+
+**MP120-017/018 advance vendor-only→partial** for the bounded capacity arithmetic and height gate present120. **MP120-019 advances vendor-only→partial with a caveat:** the16-bit seed/preference is verified, but the absolute wording exceeds the local mechanism. Missing prepatch comparison, later state changes, provider ordering, mode-menu/activation and movie behavior remain open. Existing DLL/EXE bytes and Ghidra state are unchanged; no target or API executes.

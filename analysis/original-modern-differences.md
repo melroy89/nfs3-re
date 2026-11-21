@@ -697,7 +697,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **53 Claimed, 56 Static, 181 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **50 Claimed, 56 Static, 184 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -951,9 +951,9 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP120-014 | Based on the 3dsetup/d3da.dll from the NFS4, supports fog effect in the NFS3. | Claimed |
 | MP120-015 | Fixed a bug according to non-working fog effect on modern systems. (Thanks Dege for debugging this driver and much valuable information about Direct 3D.) | Claimed |
 | MP120-016 | Fixed a crash when system supports too many texture formats. (Also thanks Dege.) | Partial |
-| MP120-017 | Resolutions count limit was extended up to 100. | Claimed |
-| MP120-018 | The driver hides resolutions with height lower than 480 pixels now. | Claimed |
-| MP120-019 | 640×480 always reported as 16-bit because intro movie doesn't works in 32-bit mode. Other resolutions are reported as 32-bit if they are available. | Claimed |
+| MP120-017 | Resolutions count limit was extended up to 100. | Partial |
+| MP120-018 | The driver hides resolutions with height lower than 480 pixels now. | Partial |
+| MP120-019 | 640×480 always reported as 16-bit because intro movie doesn't works in 32-bit mode. Other resolutions are reported as 32-bit if they are available. | Partial |
 | MP120-020 | Firstly file glide3x.dll is searched in the same directory from where voodoo2.dll is loaded, then it is searched in current directory, and then in system directory. This change allows to save several different Glide API emulators to neighbour directories and use them when needed. | Partial |
 | MP120-021 | Thrash driver voodoo2.dll distributed with two different Glide API emulators: nGlide and dgVoodoo. You have to choose nglide or dgvoodoo instead of voodoo2 in the VideoDriver ini setting. | Claimed |
 | MP120-022 | If you would like to play NFS3 on the real 3dfx Voodoo or 3dfx Voodoo 2 hardware, create new subdirectory with name voodoo2 in the drivers directory, copy into this subdirectory thrash.ini and voodoo2.dll from the dgvoodoo subdirectory, set VideoDriver ini setting to voodoo2. | Claimed |
