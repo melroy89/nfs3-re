@@ -368,3 +368,17 @@ choices keep IDs 467–473 in order. These labels were decoded through
 the offset table in each package's own English text member. Together
 with the verified seed mapping and selector, this dates the menu
 bindings described in MP153-004. Track tempo and playback remain untested.
+
+### Saved ordinal interpretation at the 1.5.3 boundary
+
+The packaged 1.5.2 and 1.5.3 config decisions at `00472aac` both
+accept a matching size `0x20f0` with zero high version byte and low
+version byte at least 5. The music list expansion therefore did not
+raise the minimum accepted header version. The 1.5.3 accepted branch
+calls the audio-mode normalizer and skips the grouped defaults.
+
+If a saved menu music ordinal arrives unchanged at the selector, its
+meaning can change. Ordinal 2 names Romulus 3 in 1.5.2 and Random
+(Slow) in 1.5.3. Romulus 3 moves to ordinal 4. This is established by
+the packaged descriptor lists. The complete upgrade path and all
+possible writers of the saved ordinal remain unverified.
