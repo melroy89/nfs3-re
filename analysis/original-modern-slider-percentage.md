@@ -199,3 +199,31 @@ Both write widget WORD `+8` directly from `00559c94 + 4*row`. **There is no −1
 The complete 84-byte suffix `0046c859..0046c8ad` is byte-identical: call `0046c640`, then three calls to `0046afe0` with member DWORDs `+48/+4c/+50` and indices 0/1/2, then three calls to `0046add0` with member DWORDs `+54/+58/+5c` and the same indices, followed by the retained epilogue. Modern inserts a jump over seven NOP bytes before that suffix. Saved body union 134 bytes excludes those NOPs; the complete comparison includes them.
 
 **Bounded work status: done; confidence: verified static instructions.** Required follow-up is caller row-domain/table bounds, aliasing and rendered coordinate behavior; no visual or device-compatibility test follows from this geometry change. The [dead-zone comparison](original-modern-deadzone-sliders.md) separately documents its one-based row producer and local layout changes; full call-graph linkage between every slider producer and this initializer is not asserted here. Executables, Ghidra state and maintained C remain unchanged.
+
+## Default coordinates with the changed tables
+
+Both slider routines read the same changed file-backed tables as the
+[frontend text callback](original-modern-frontend-page.md#text-widget-coordinate-callback).
+The instruction-only offsets above assume equal table values. Fresh reads
+from the pinned EXEs establish the following Modern minus original
+differences for the first ten rows, assuming those file values at the
+time of the coordinate writes.
+
+| Row | Both sliders ΔX | Single slider ΔY | Indexed slider ΔY |
+|---:|---:|---:|---:|
+| 0 | +9 | -24 | -23 |
+| 1 | +6 | -24 | -23 |
+| 2 | +3 | -24 | -23 |
+| 3 | +2 | -24 | -23 |
+| 4 | +0 | -24 | -23 |
+| 5 | -3 | -24 | -23 |
+| 6 | -3 | -24 | -23 |
+| 7 | -5 | -24 | -23 |
+| 8 | +11 | +291 | +292 |
+| 9 | +12 | -24 | -23 |
+
+For example, row 0 moves from (160, 138) to (169, 114) for the single
+slider and to (169, 115) for the indexed slider. Row 8 has a different
+vertical delta because its original table value is 103. These values
+describe the stores under the stated table assumption. Actual row
+selection and rendered positions remain open.
