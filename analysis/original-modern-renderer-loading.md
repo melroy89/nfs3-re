@@ -587,3 +587,21 @@ The [three-package audit](evidence/audits/nglide-version-packages.json), reprodu
 **MP140-046 gains partial support with a naming caveat:** the retained release note says **gGlide v1.05**, whereas the packaged directory and self-identification say **nGlide v1.05**. Their association is inferred; the source wording is preserved in the catalogue/index. No `drivers/gglide` component is invented from that wording. **MP150-036 gains partial support** for shipping changed nGlide wrapper bytes; the advertised NFS3-specific repairs are not established by metadata or file differences.
 
 Upstream build authentication, exact wrapper-code changes, successful loading and rendered compatibility remain unverified. This is separate from the THRASH `nglide.dll→voodoo2a.dll` migration above: provider wrapper and adapter are different components. No wrapper or target code was loaded/executed and no executable/database bytes changed.
+
+
+## Historical SoftTri fix initializes a mode-bound input
+
+The [SoftTri audit](evidence/audits/softtri-mode-fix-history.json), reproduced with `python3 analysis/scripts/audit_softtri_mode_fix_history.py`, pins140/150 `drivers/softtri/softtria.dll` members and compares the entire245,760-byte file-backed code section. **Exactly19 bytes change**, all inside complete254-byte mode callback `60002480..6000257e`;245,741 code bytes match. This is code-section coverage, not equality of whole PE files or runtime behavior.
+
+|Changed interval, exclusive end |140 |150 |
+|---|---|---|
+|`60002499..6000249e`,5 bytes |MOV ESI,16 |Jump over three NOPs; prior gate already requires incoming depth16 |
+|`60002537..60002545`,14 bytes |Signed height≥480 filter, jump/padding |TEST EBP; zero exits; otherwise pass ESP to imported GetSystemInfo |
+
+The retained continuation at `60002545` reads DWORD `[ESP+4]`, divides it unsigned by40, then compares that quotient with the context count before a new40-byte record is selected. The150 call binds IAT `6003d200` to **KERNEL32!GetSystemInfo**. [Microsoft's API contract](https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsysteminfo) defines its output as SYSTEM_INFO; the [32-bit structure layout](https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/ns-sysinfoapi-system_info) places dwPageSize at+4. Therefore150 supplies a system-information-derived bound input where140's callback has no corresponding local buffer initialization. For a hypothetical reported4096-byte page, the quotient is102; this is arithmetic illustration, not an observed API value or a promise of102 visible modes.
+
+The callback still requires depth16, a nonzero pixel classifier, and has special640×480/800×600 routes before this generic path. Classifier3 can store depth15. The changed generic path removes the old local height filter; do not silently preserve it in a150 translation. The first edit removes a locally redundant value assignment, not proof of all-state equivalence. Full classifier side effects/aliases, buffer allocation ownership, context lifetime and actual API/catalog values remain separate.
+
+Packaged `thrash.ini` also drops LightBeams=0, retaining File=softtria.dll, Type=software and DirectDrawLagFix=1. This config edit is distinct from the19 code-byte changes. The DLL's BSS section has raw pointer0; apparent bytes obtained by treating file offset0 as BSS initial data are not used as runtime evidence.
+
+**MP150-038 gains partial static support:** a concrete mode-bound initialization repair is localized, with every code-section difference assigned. The release note's unspecified bug symptom, complete capacity safety, device/display acceptance and visible output remain unverified. No DLL, graphics/system API, game or target instructions were executed, and no executable or saved Ghidra database changed.

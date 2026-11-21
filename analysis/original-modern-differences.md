@@ -695,7 +695,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **61 Claimed, 56 Static, 173 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **60 Claimed, 56 Static, 174 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -818,7 +818,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-035 | The game doesn't change resolution to 640×480 when “exit to system” is used during the gameplay, so closing the game is faster in this case. | Partial |
 | MP150-036 | Updated version of nGlide with fixes according to the NFS3 is included. | Partial |
 | MP150-037 | dgVoodoo v2.5.1 (Napalm). | Static |
-| MP150-038 | Fixed a bug in the SoftTri renderer. Now it outputs all available resolutions. | Claimed |
+| MP150-038 | Fixed a bug in the SoftTri renderer. Now it outputs all available resolutions. | Partial |
 | MP150-039 | DX8 renderer outputs 16-bit resolutions also. However, it still can't play movies at all. | Partial |
 | MP150-040 | nfs3.exe sorts resolutions that it gets from the renderer. Refactoring of the graphics initialization and resolution choosing code. | Static |
 | MP150-041 | If ini file with the same name as a executable file name (e.g. nfs3test.ini for nfs3test.exe) is not found, nfs3.ini will be used. | Static |
