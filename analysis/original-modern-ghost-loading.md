@@ -106,3 +106,14 @@ saves and restores it. Thus both wrappers deliver the same signed
 16-bit selector at the lookup boundary even for high-bit-set words.
 The changed wrapper's other configuration writes and the lookup's
 resource inputs can still affect the overall result.
+
+### The restore change precedes the header version change
+
+The same hash-pinned 1.5.1 and 1.5.2 executable members both contain
+`f0200000 05000000 00000000` at file-backed VA `0055e8a0`. Official
+final Modern contains `f0200000 06000000 00000000` there. The 1.5.2
+ghost fix therefore changes when the header is refreshed and which bytes
+are restored while retaining the file-backed version-5 template. The
+version-6 template is a separate later difference. The supplied original
+has zero bytes at this address and derives its header through a different
+startup path. See the [config loading comparison](original-modern-config-loading.md#original-startup-populates-the-header-template-from-a-version-resource).
