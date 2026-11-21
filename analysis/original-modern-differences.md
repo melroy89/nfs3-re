@@ -1168,7 +1168,7 @@ The [historical timing comparison](original-modern-loading-timing.md#preliminary
 
 ## Historical DX7 fog opt-in and unchanged driver
 
-The [151/152 package and reader comparison](original-modern-renderer-loading.md#dx7-fog-opt-in-changes-in152-while-its-driver-bytes-remain-identical) verifies FogSupport0→1 for DX7 with a byte-identical110,592-byte driver, unchanged other parsed INI values and retained selected EXE reader/state contracts. MP152-002 advances to partial configuration support only; the broader API107 adapter mechanism and visible fog remain unresolved.
+The [151/152 package and reader comparison](original-modern-renderer-loading.md#dx7-fog-opt-in-changes-in152-while-its-driver-bytes-remain-identical) verifies FogSupport0→1 for DX7 with a byte-identical110,592-byte driver, unchanged other parsed INI values and retained selected EXE reader/state contracts. The following EXE/provider follow-up extends MP152-002 beyond configuration-only evidence; the complete API107 contract and visible fog remain unresolved.
 
 ## Fog mode and enable requests separate in152
 
@@ -1180,7 +1180,7 @@ The [140/150 comparison](original-modern-state14.md#menu-fog-admission-becomes-c
 
 ## DX6 count increment is mode-catalog bookkeeping
 
-The [descriptor/callback follow-up](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) resolves the150 DX6 counter edit: about exposes the count at+3c and table base one40-byte record before insertion storage, explaining reportedN→N+1 after enumeration. Retained callback and sorted insertion bodies are captured. Leading-slot contents, inclusive/exclusive consumer bounds and actual mode visibility remain unverified; this is not a lighting/fog change.
+The [descriptor/callback follow-up](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) resolves the150 DX6 counter edit: about exposes the count at+3c and table base one40-byte record before insertion storage, explaining reportedN→N+1 after enumeration. Retained callback and sorted insertion bodies are captured. The [consumer follow-up](original-modern-display-modes.md#dx6-extra-count-slot-reaches-inclusive-scans-but-can-fail-admission) verifies inclusive scans and conditional rejection of the extra zero row. Leading-slot contents, full-capacity behaviour, external writes and actual mode visibility remain unresolved; this is not a lighting/fog change.
 
 ## Historical screenshot depth-local correction
 

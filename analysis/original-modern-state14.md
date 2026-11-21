@@ -201,3 +201,10 @@ At the end of initializer`60001c50`,150 inserts `INC DWORD[6003bd3c]` before POP
 Section differences are `.text`8, `.rdata`0, `.data`0, `.reloc`44 and`.rsrc`24 bytes. Relocation/resource and PE-header semantics are not closed by these counts; code-byte localization is not complete driver equivalence. Exact initializer captures and section hashes are retained in the audit.
 
 **MP150-033 remains vendor-only:** contextual fog suppression is a real EXE change at the advertised boundary, and the selected DX6 code edit is localized, but neither alone identifies the taillight draw/light-colour path or proves its visible repair. Follow the actual menu lighting submission and effective state before attributing this release-note claim. The broader fog-option/context mechanism can be reconstructed independently without resolving that visual investigation. No menu, game, DLL/API, instruction probe, compiler or Ghidra modification occurred.
+
+
+### Frontend callback identity does not establish taillight submission
+
+A focused read of the hash-pinned official final EXE's existing [loader witness](scripts/audit_thrash_loader_difference.py) resolves export-table row `004f8490`: slot `009ef938` binds `_THRASH_window@4`. Row `004f8398` binds slot `009ef970` to `_THRASH_clearwindow@0`. These are statically requested export names, not observed successful DLL calls.
+
+The saved analysis describes `004d9120` calling `009ef938(2)` and, when driver flag mask2 is clear, calling `004d5c90`. The latter sets cached state4, calls `009ef970`, then clears state4 ([existing wrapper evidence](detailed-analysis-notes.md)). Thus this lead identifies window/clear setup, not a car-specific light callback. Export names alone establish neither a lamp draw nor the meaning of every state argument. Historical140/150 wrapper identity and the actual menu-car/effect submission remain separate follow-up work. MP150-033 remains vendor-only; no new runtime evidence or Ghidra change was made.
