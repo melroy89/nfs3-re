@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "281185fe44e207b136a10124b9da524ae6796568d460b0ba30532875c37a35f6"
+      "sha256": "8abcaf39352a1ca2ae1a6ba71725e8155b5a073b71f46c107d924ce296e3e1b9"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -281,7 +281,7 @@
     },
     {
       "path": "analysis/original-modern-original-reference-bundle.md",
-      "sha256": "f7a2e4755f41b5bffea53cb73cb00fec4fe7a7fb25475d2ae22df5a42bdc4924"
+      "sha256": "586ab40e8184978e7d3b0ee0aa243daa4f19089d23408dfd2397f86df9efc439"
     },
     {
       "path": "analysis/original-modern-packaged-x87.md",
@@ -353,7 +353,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "2279fbdbfe346fc79ded217a1c825403653cb2f52ecb2cdd5647e9095864d711"
+      "sha256": "b319ec770dd9644dd8bcfa1ee9e54df2636e92fde4f90e898db4165b6eb1a346"
     },
     {
       "path": "analysis/original-modern-renderer-texel-alignment.md",
@@ -421,7 +421,7 @@
     },
     {
       "path": "analysis/original-modern-software-reference-pair.md",
-      "sha256": "c9fb12fe7ce21c46c897e5d3f633a945de688e53c18eaa3b9e796c896115ff99"
+      "sha256": "f15d7a0bc181e1918f1040ac5d13a40af36efc9a6a995175a4f955847cdb0e67"
     },
     {
       "path": "analysis/original-modern-sound-bank-language.md",

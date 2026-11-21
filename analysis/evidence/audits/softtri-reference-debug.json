@@ -4,6 +4,41 @@
   "archive_sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127",
   "member_sha256": "8ea15aac0a7095b7d750cd75bbc9095553b6f708d1b89ca807864294a1a12b02",
   "overlay_sha256": "6fc8a2ea5cfe3119137fd82716a554db3056fd95a78cb32fd81366dd84378d28",
+  "related_carrier_inventory": [
+    {
+      "label": "supplied_original_exe",
+      "sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "file_bytes": 1589248,
+      "raw_section_end": 1589248,
+      "overlay_bytes": 0,
+      "overlay_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "overlay_first16_hex": "",
+      "elf_magic": false,
+      "scope": "Only trailing PE overlay inspected;no in-section debug absence or complete payload semantics asserted."
+    },
+    {
+      "label": "reference_d3da",
+      "sha256": "ae676272438d93fd7a8da7a19250d6e8b664d8570824ab8042e2b20b38395a02",
+      "file_bytes": 98641,
+      "raw_section_end": 72192,
+      "overlay_bytes": 26449,
+      "overlay_sha256": "fce79f316dc9b9dc0cd071d71496b5ad983f7aa50509d692f9b54351217f5c31",
+      "overlay_first16_hex": "7f454c46010101000000000000000000",
+      "elf_magic": true,
+      "scope": "Only trailing PE overlay inspected;no in-section debug absence or complete payload semantics asserted."
+    },
+    {
+      "label": "reference_voodoo2a",
+      "sha256": "99b978fd6b0e94cca7ef0b671b9be0d630f929ab3901ebddaafa5d121213503b",
+      "file_bytes": 92662,
+      "raw_section_end": 68608,
+      "overlay_bytes": 24054,
+      "overlay_sha256": "7c32ed5189a173e320d3efb773dba6f55bb25dca30da03d6f824620857411603",
+      "overlay_first16_hex": "7f454c46010101000000000000000000",
+      "elf_magic": true,
+      "scope": "Only trailing PE overlay inspected;no in-section debug absence or complete payload semantics asserted."
+    }
+  ],
   "abbreviation_hex": "01110110100308000002110103080000030a0011013f0c0308000004340011013f0c03080000",
   "abbreviation_terminating_zero_entry_present": false,
   "parser_policy": "Accept exact declared abbreviation extent after four bounded definitions;no bytes appended or repaired.",

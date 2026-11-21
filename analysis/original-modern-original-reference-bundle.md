@@ -40,3 +40,19 @@ The bundle supplies separately identified candidates for previously missing orig
 |80 menus /6 HUD-position files | Corresponding Modern members | [Complete suffix-scoped pairing and HUD literal comparison](original-modern-reference-assets-index.md); menu-control semantics and runtime layouts remain follow-up |
 
 No semantic driver change is accepted merely because files differ or appear under familiar names. These candidates remove an acquisition gap while leaving original-retail authenticity, complete feature attribution and runtime acceptance open. Local backup equality, if later checked, would corroborate file identity rather than authenticate a retail release. The broader original/Modern investigation remains incomplete.
+
+
+## Reference renderer debug-carrier leads
+
+The [SoftTri debug audit](evidence/audits/softtri-reference-debug.json), reproduced with `python3 analysis/scripts/audit_softtri_reference_debug.py`, now records related trailing-overlay checks under exact artifact hashes:
+
+|Artifact |Trailing bytes |Observed signature |
+|---|---:|---|
+|Supplied-original game EXE |0 |No trailing overlay |
+|Reference `d3da.dll` |26,449 |ELF signature |
+|Reference `voodoo2a.dll` |24,054 |ELF signature |
+|Reference `softtria.dll` |28,514 |ELF32 carrier; bounded debug extraction documented separately |
+
+Offsets are computed from the end of nonzero-pointer raw PE sections, not by treating BSS size as file-backed data. An absent overlay does not prove absence of debug information inside sections. ELF signatures alone do not establish useful symbols, source code or a supported decoder for the two unparsed DLL payloads.
+
+For SoftTri, the [canonical report](original-modern-software-reference-pair.md#reference-debug-records-recover-names-with34-export-anchors) records173 units,1,034 bounded name records and34 export/address anchors, alongside the stock-reader failure and custom-parser limits. DX5/Voodoo payload parsing is pending; reuse their existing comparison reports and verify independent address anchors before applying any names. No PE/ELF payload was executed and no target/database bytes changed.

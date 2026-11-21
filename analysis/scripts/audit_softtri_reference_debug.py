@@ -1,7 +1,7 @@
 """Bounded inspection of the original-reference appended debug carrier; never executes it."""
 import hashlib,json,struct,subprocess,tempfile
 import pefile
-from audit_thrash_loader_difference import ROOT
+from audit_thrash_loader_difference import ROOT,SPECS
 
 
 def sha(raw):return hashlib.sha256(raw).hexdigest()
@@ -59,8 +59,15 @@ def main():
     assert len(anchors)>=20
     with tempfile.NamedTemporaryFile(suffix='.elf')as f:
         f.write(overlay);f.flush();run=subprocess.run(['readelf','--debug-dump=info',f.name],capture_output=True,text=True)
+    carriers=[]
+    original_path,original_hash,_=SPECS['original'];original=(ROOT/original_path).read_bytes();assert sha(original)==original_hash
+    for label,blob in [('supplied_original_exe',original),('reference_d3da',subprocess.check_output(['7z','x','-so',str(archive),'d3da.dll'])),('reference_voodoo2a',subprocess.check_output(['7z','x','-so',str(archive),'voodoo2a.dll']))]:
+        image=pefile.PE(data=blob);end=max(s.PointerToRawData+s.SizeOfRawData for s in image.sections if s.PointerToRawData);extra=blob[end:]
+        carriers.append({'label':label,'sha256':sha(blob),'file_bytes':len(blob),'raw_section_end':end,'overlay_bytes':len(extra),'overlay_sha256':sha(extra),'overlay_first16_hex':extra[:16].hex(),'elf_magic':extra.startswith(b'\x7fELF'),'scope':'Only trailing PE overlay inspected;no in-section debug absence or complete payload semantics asserted.'})
+    assert [r['overlay_bytes']for r in carriers]==[0,26449,24054]
+    assert [r['elf_magic']for r in carriers]==[False,True,True]
     result={'kind':'static-softtri-reference-debug-inspection','archive':rel,'archive_sha256':sha(archive.read_bytes()),'member_sha256':sha(raw),'overlay_sha256':sha(overlay),
-        'abbreviation_hex':abbrev.hex(),'abbreviation_terminating_zero_entry_present':False,'parser_policy':'Accept exact declared abbreviation extent after four bounded definitions;no bytes appended or repaired.',
+        'related_carrier_inventory':carriers,'abbreviation_hex':abbrev.hex(),'abbreviation_terminating_zero_entry_present':False,'parser_policy':'Accept exact declared abbreviation extent after four bounded definitions;no bytes appended or repaired.',
         'units':units,'records':records,'tag_counts':{str(t):sum(r['tag']==t for r in records)for t in [17,10,52]},'export_address_anchors':anchors,
         'stock_reader':{'version':subprocess.check_output(['readelf','--version'],text=True).splitlines()[0],'exit_code':run.returncode,'stdout':run.stdout,'stderr_sha256':sha(run.stderr.encode()),'distinct_stderr_lines':sorted(set(run.stderr.splitlines()))},
         'limits':['Custom bounded record extraction,not a complete DWARF implementation or validation of every debug address.',
