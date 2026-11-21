@@ -326,7 +326,7 @@ The [activation audit](evidence/audits/dx8-mode-activation-history.json), reprod
 
 The export checks signed input index≥0 and<count, then row+10h bit0. Failure substitutes index1 at `600038d6` without rechecking that row locally. It can route through a posted message464h on its cross-thread path, or directly call the worker at `600039a7`; actual message delivery and synchronization are untested. This is not a universally validated-index interface.
 
-The worker reads width/height/depth from an active record. An inactive record supplies fallback640×480×16 before adjustment. It then passes field pointers to helpers `60004010` or `60004140`; their complete policy is outside this audit, so selected catalog values are not assumed to survive unchanged.
+The worker reads width/height/depth from an active record. An inactive record supplies fallback640×480×16 before adjustment. It then passes field pointers to helpers `60004010` or `60004140`; their selected adjustment policies are documented below, so selected catalog values are not assumed to survive unchanged.
 
 After those adjustments, it clears52 bytes at `60020fa0` and builds the thirteen-field presentation record. The checked32-bit SDK layout identifies the first fields as BackBufferWidth/Height/Format:
 
@@ -337,4 +337,22 @@ After those adjustments, it clears52 bytes at `60020fa0` and builds the thirteen
 
 On selected branches, that parameter pointer reaches the previously traced Direct3D8 object/device chain: CreateDevice at vtable+3Ch (`60003d4c`, output object `6001ed28`) or Reset at+38h (`60003d5e`). Local result handling and dimension retries follow; no API acceptance was observed. Unsupported/other depth values do not gain an invented validated mapping here.
 
-Thus the16-bit activation-request branch **already exists in140**;150's new catalog admission can expose it without changing these two bodies. Conversely, the older32-only enumeration gate never proved all activation paths requested32, because fallback/adjustment paths are separate. MP150-039 remains partial: catalog and selected activation requests are linked, while complete helper policy, index/slot lifetime, errors, actual display depth and rendered output remain unverified. No DLL/API or target instructions were executed and no executable/Ghidra state was changed.
+Thus the16-bit activation-request branch **already exists in140**;150's new catalog admission can expose it without changing these two bodies. Conversely, the older32-only enumeration gate never proved all activation paths requested32, because fallback/adjustment paths are separate. MP150-039 remains partial: catalog and selected activation requests are linked, while ancillary-format policy, index/slot lifetime, errors, actual display depth and rendered output remain unverified. No DLL/API or target instructions were executed and no executable/Ghidra state was changed.
+
+
+### DX8 adjustment can override the selected depth
+
+The expanded [activation audit](evidence/audits/dx8-mode-activation-history.json) retains the complete299-byte helper `60004010..6000413b` and203-byte helper `60004140..6000420b`. Each body is identical in140/150. These are retained policies, not newly discovered150 changes.
+
+| Path/helper | Selected policy | Consequence |
+|---|---|---|
+|Windowed adjustment `60004010` |Queries GetDC(0), then GetDeviceCaps indices8/10/12. Requires reported depth16 or32 and signed reported width≥640; clamps requested dimensions downward using signed comparisons. |Successful writeback uses the GDI-reported depth, regardless of incoming selected depth. There is no separate reported-height≥480 guard here. |
+|Other adjustment `60004140` |For requested depth32, tries formats22 then23; for every other requested depth, tries23 then22. |First admitted candidate writes depth32 for format22 or16 for23. Null object or no admitted candidate returns0. |
+
+The pinned `wingdi.h` snapshot maps those indices to HORZRES, VERTRES and BITSPIXEL; [Microsoft's API description](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getdevicecaps) explains the reported dimensions/depth. These are values returned by GDI, not independently measured physical display properties. Header hashes and both complete disassemblies are retained in the audit.
+
+Preserve one unusual branch exactly: windowed CheckDeviceFormat at `600040c5` returning **nonzero** skips CheckDeviceType and continues to helper `600043e0`. A zero first result instead calls CheckDeviceType at `600040e1`, whose result must be zero to continue. This is not a conventional requirement that both checks succeed. No failed API call or resulting symptom was observed, and reconstruction must not silently correct this control flow.
+
+The other helper requires zero results from both CheckDeviceType (`6000419b`) and CheckDeviceFormat (`600041b9`) for each candidate. Both paths then require nonzero from `600043e0`, which receives the ancillary-format output pointer. That helper's full search/write contract remains unresolved; no candidate is asserted actually available.
+
+Consequently, admitting a16-bit catalog row does **not** guarantee16-bit output: windowed adjustment may replace it with reported32, and the other path can fall back from16 to32. Conversely, requesting32 can fall back to16. These statements describe conditional requests/writebacks, not rendered results. Follow-up priorities are ancillary helper `600043e0`, then complete caller/device lifetime and runtime acceptance. No DLL/API/target instructions were executed, and no executable or saved Ghidra database changed.
