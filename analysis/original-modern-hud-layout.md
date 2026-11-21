@@ -353,3 +353,25 @@ Initializer prefix `00485680..004856c5` reads six profiles of96 WORDs at `005405
 The source order is preserved above; adjacent pairs are swapped during initialization, so these numbers must not be quoted as final pixel coordinates. The changed second/fourth source bounds preserve extent40 while reducing their positions in profiles0/2/4; first/third remain400/600. The scaler reads the corresponding profile rectangle at header+24h+slot×10h and writes the indexed integer geometry. This is a concrete source-and-consumer mechanism consistent with the advertised relocation.
 
 **MP140-071 advances to partial:** slot12 preset changes and the named Name consumer are linked. Remaining: full call-site admission selecting slot12, intervening layout/attachment writes, the drawing callee's full coordinate ABI and actual mirror-relative pixels. Do not claim the exact “just under the mirror” result solely from these source bounds. No target instructions or Ghidra/executable writes occurred.
+
+
+### Complete131 to140 preset-table difference inventory
+
+The expanded [historical HUD audit](evidence/audits/opponent-name-menu-history.json) records both complete1,152-byte tables at `00540500..00540980`, including hashes and raw hexadecimal bytes. The initializer's six profiles×24 slots×four WORDs account for the entire extent. **14 of144 rectangle records change, containing26 changed WORDs;130 records are identical.** This is exhaustive for these tables, not for all HUD state or either executable.
+
+|Profile indices |Slot |131 source WORDs |140 source WORDs |
+|---|---:|---|---|
+|0,1 |6 |463,197,538,297 |463,235,538,335 |
+|0 |12 |400,953,600,993 |400,156,600,196 |
+|0 |15 |388,400,612,440 |388,350,612,400 |
+|2,3 |3 |656,0,749,123 |657,0,749,123 |
+|2,3 |6 |463,187,538,287 |463,190,538,290 |
+|2 |12 |400,453,600,493 |400,121,600,161 |
+|2 |15 |388,145,612,185 |388,190,612,240 |
+|4,5 |6 |463,687,538,787 |463,690,538,790 |
+|4 |12 |400,953,600,993 |400,621,600,661 |
+|4 |15 |388,645,612,685 |388,690,612,740 |
+
+Indices are zero-based. Grouped profile rows represent separate equal changes; the machine-readable manifest enumerates all14 individually. Slot12 has the Name consumer linkage above. Slots3/6/15 remain identified by layout position rather than guessed widget names. Their changed bounds are available for later reconstruction decisions without requiring another table discovery pass. Complete scaler-call admission, all attachment/override writes and visible effects remain unverified.
+
+Historical address note: `004f9404`/`004f9418` here name conversion helpers in the pinned131/140 EXEs. The saved final database assigns different functions to these addresses. Address-index cross-links are navigation aids, not proof of cross-version function identity; use each capture's version/hash before applying a label or annotation.

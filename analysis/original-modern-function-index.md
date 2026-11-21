@@ -179,7 +179,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `00488470` | RenderRotatedTileQuadsForVehicle | 1551 | 12 | [hud-layout](original-modern-hud-layout.md), [view-overlay](original-modern-view-overlay.md) |
 | `00488a80` | LoadLocalCarArchiveShapeMetrics | 1979 | 5 | [texture-loading-followup](original-modern-texture-loading-followup.md), [track-length-text](original-modern-track-length-text.md), [view-overlay](original-modern-view-overlay.md) |
 | `00489240` | RenderViewportTilesAndVehicleOverlayQuads | 1000 | 138 | [view-overlay](original-modern-view-overlay.md) |
-| `004897f0` | RenderScaledColoredTextWithAlignment | 180 | 1 | [numeric-scale](original-modern-numeric-scale.md) |
+| `004897f0` | RenderScaledColoredTextWithAlignment | 180 | 1 | [hud-layout](original-modern-hud-layout.md), [numeric-scale](original-modern-numeric-scale.md) |
 | `00489ab0` | RenderLocalizedSteppedNumericScale | 297 | 289 | [numeric-scale](original-modern-numeric-scale.md) |
 | `0048a660` | RenderPolicePursuitStatusList | 990 | 6 | [hud-layout](original-modern-hud-layout.md) |
 | `0048aa40` | CalculateHUDStandingsColumnWidths | 1065 | 18 | [hud-layout](original-modern-hud-layout.md) |
@@ -356,8 +356,8 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f93c8` | CopyAsciiStringToLowercase | 18 | 18 | [small-conversion-helpers](original-modern-small-conversion-helpers.md) |
 | `004f93dc` | LowercaseAsciiStringInPlace | 14 | 14 | [language-table](original-modern-language-table.md) |
 | `004f93ec` | AppendStringWithRemainingCapacity | 18 | 18 | [command-line](original-modern-command-line.md), [menu-input](original-modern-menu-input.md), [startup-requirements](original-modern-startup-requirements.md) |
-| `004f9400` | CopyAsciiToLowercaseBounded | 23 | 23 | [small-conversion-helpers](original-modern-small-conversion-helpers.md), [startup-requirements](original-modern-startup-requirements.md) |
-| `004f9418` | CopyLowercaseTextPreservingRegisters | 12 | 12 | [command-line](original-modern-command-line.md) |
+| `004f9400` | CopyAsciiToLowercaseBounded | 23 | 23 | [hud-layout](original-modern-hud-layout.md), [small-conversion-helpers](original-modern-small-conversion-helpers.md), [startup-requirements](original-modern-startup-requirements.md) |
+| `004f9418` | CopyLowercaseTextPreservingRegisters | 12 | 12 | [command-line](original-modern-command-line.md), [hud-layout](original-modern-hud-layout.md) |
 | `004f9424` | CopyAsciiToUppercaseBounded | 23 | 22 | [small-conversion-helpers](original-modern-small-conversion-helpers.md) |
 | `004f943c` | CopyUppercaseTextPreservingRegisters | 12 | 11 | [command-line](original-modern-command-line.md) |
 | `004f9448` | AdvanceDestinationPointerToStringTerminator | 9 | 9 | [sound-bank-language](original-modern-sound-bank-language.md) |
