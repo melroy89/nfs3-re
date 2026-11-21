@@ -429,3 +429,19 @@ The expanded [153/160 audit](evidence/audits/projection-restore-history.json) co
 Consequently the previously documented original/final added fixed-descriptor call and incoming-EDX contract already exist in153. They are not newly introduced implementation bodies at153→160 and cannot alone identify the release160 horizon fix. Equal bodies can still receive changed inputs or execute in a changed surrounding lifetime; this does not exclude their participation in rendering.
 
 This closes another historical-attribution candidate without claiming the horizon issue resolved. For that claim, prioritize changes outside these retained boundaries and provenance of the projection-source cells. No new whole-program equivalence, source capture writer, runtime order or visible result is established. The exact first introduction of these pre160 camera changes remains unverified.
+
+
+### Complete bounded camera-region partition153 to160
+
+The expanded [historical audit](evidence/audits/projection-restore-history.json) compares **all28,672 bytes at `00420000..00427000`** in the pinned153/160 EXEs. Exactly91 bytes differ;28,581 match. Every difference is accounted for by the following two regions:
+
+|Region |Changed bytes |Meaning |
+|---|---:|---|
+|Type8 restore `004213b0..00421441` |75 |Float load/store rescheduling and four removed legacy integer stores, documented above |
+|`00421480..00421490` |16 |153 empty frame/return stub plus alignment replaced by160 NOPs |
+
+The153 stub begins PUSH EBP; MOV EBP,ESP; POP EBP; RET, followed by alignment instructions.160 fills all16 bytes with90h. This is an implementation removal; it is not proof of universal machine-state equivalence or that callers can safely execute the new NOP region as a standalone function. Its live reachability is not established here.
+
+Both complete-region hashes and the exact partition assertion are retained in the manifest. **Every byte outside those two regions within this address range is identical.** This is stronger than checking only selected camera bodies, while still an address-bounded statement: data tables elsewhere, external callees, other camera code, changed arguments, call ordering and runtime-generated code are outside it.
+
+No additional camera-body edit in this region can be newly attributed to the160 horizon claim. The investigation should follow changed projection interfaces/dimensions and data/orientation provenance outside the region. The unresolved source capture and visible horizon remain open; this partition does not establish an absence of behavioural change. No target code was executed.

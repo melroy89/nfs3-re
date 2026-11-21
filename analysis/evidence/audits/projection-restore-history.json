@@ -709,6 +709,22 @@
             "4251ed:\t5b                   \tpop    ebx",
             "4251ee:\tc3                   \tret"
           ]
+        },
+        {
+          "name": "removed_stub_and_padding",
+          "start": "00421480",
+          "end_exclusive": "00421490",
+          "hex": "5589e55dc38d80000000008d52008bdb",
+          "sha256": "1b3e8513b36ab685ad2ecf450b933eb137adec125f074fa7ff3d9a81aa8daa0d",
+          "disassembly": [
+            "421480:\t55                   \tpush   ebp",
+            "421481:\t89 e5                \tmov    ebp,esp",
+            "421483:\t5d                   \tpop    ebp",
+            "421484:\tc3                   \tret",
+            "421485:\t8d 80 00 00 00 00    \tlea    eax,[eax+0x0]",
+            "42148b:\t8d 52 00             \tlea    edx,[edx+0x0]",
+            "42148e:\t8b db                \tmov    ebx,ebx"
+          ]
         }
       ]
     },
@@ -1443,6 +1459,31 @@
             "4251ed:\t5b                   \tpop    ebx",
             "4251ee:\tc3                   \tret"
           ]
+        },
+        {
+          "name": "removed_stub_and_padding",
+          "start": "00421480",
+          "end_exclusive": "00421490",
+          "hex": "90909090909090909090909090909090",
+          "sha256": "87e36ce5c70a77d0b4bafbe2d6d1f53167344236134dab16808ae0cdd505c54d",
+          "disassembly": [
+            "421480:\t90                   \tnop",
+            "421481:\t90                   \tnop",
+            "421482:\t90                   \tnop",
+            "421483:\t90                   \tnop",
+            "421484:\t90                   \tnop",
+            "421485:\t90                   \tnop",
+            "421486:\t90                   \tnop",
+            "421487:\t90                   \tnop",
+            "421488:\t90                   \tnop",
+            "421489:\t90                   \tnop",
+            "42148a:\t90                   \tnop",
+            "42148b:\t90                   \tnop",
+            "42148c:\t90                   \tnop",
+            "42148d:\t90                   \tnop",
+            "42148e:\t90                   \tnop",
+            "42148f:\t90                   \tnop"
+          ]
         }
       ]
     }
@@ -1528,6 +1569,21 @@
     "0042142e",
     "0042142f"
   ],
+  "complete_camera_region_partition": {
+    "start": "00420000",
+    "end_exclusive": "00427000",
+    "bytes": 28672,
+    "changed_bytes": 91,
+    "unchanged_bytes": 28581,
+    "sha256": [
+      "52e49ce5e732d82172ad47f636514065b64181262911bd4538e9ca02b06ca407",
+      "755941b99255867f152c58ece01d11ee4689fdd6c480dc178ada8e5050c2e42c"
+    ],
+    "restore_changed_bytes": 75,
+    "stub_padding_changed_bytes": 16,
+    "outside_these_two_regions_identical": true,
+    "limits": "Address-bounded region,not every camera function,data,callee or runtime-generated code."
+  },
   "retained_float_mapping": {
     "005e1020": "0056009c",
     "005e1038": "005600a0",
