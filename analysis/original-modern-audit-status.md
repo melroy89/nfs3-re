@@ -22,7 +22,9 @@ The subsequent [DX6 format-count audit](original-modern-texture-limits.md#dx6-fo
 
 The expanded [early120 DX6 mode audit](original-modern-display-modes.md#early120-dx6-mode-policies-and-the640-by480-caveat) proves120/131 driver identity, capacity/height policy and a conditional counterexample to local “always640×480×16” forcing. MP120-017/018/019 gain partial support with explicit prepatch/runtime limits; seed/preference is not a universal post-enumeration result. This extension is outside these22 checkpoint runs.
 
-Current catalogue remains **50 vendor-only,56 bounded-static,184 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
+The subsequent [130→131 DirectX OS-gate audit](original-modern-startup-requirements.md#historical130-to131-lowers-the-directx-probe-os-gate) proves a single-byte major-version threshold5→4 in the complete540-byte probe, with retained caller/import/header. MP131-003 gains partial support; actual Windows98/Me compatibility remains unverified. This new audit is outside these22 checkpoint runs.
+
+Current catalogue remains **49 vendor-only,56 bounded-static,185 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
 
 
 ## Current HUD, Glide, projection and affinity checkpoint — 2026-11-21

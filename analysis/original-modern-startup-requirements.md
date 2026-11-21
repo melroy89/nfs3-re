@@ -247,3 +247,23 @@ The helper calls **CreateMutexA(NULL, 1, name)** and stores its return at `009f3
 The CreateMutexA return is not locally checked before interpreting GetLastError; neither a nonnull stored handle nor successful window restoration is established by the instructions alone. Complete mutex ownership/release and the policy DWORD's producers remain outside this comparison. A named-mutex duplicate branch must not be conflated with the earlier FindWindow class check or described as unconditional successful focus recovery.
 
 In official Modern, **the same address `009f3d40` has a different established producer**: `004a3df2` calls imported **GetProcessHeap**, and `004a3df8` stores EAX there. Original IAT `0053448c` names CompareFileTime; Modern IAT `0053448c` names GetProcessHeap. The original mutex helper and Modern startup producer are not equivalent functions, and matching global/IAT addresses cannot carry their old meanings into reconstruction. Modern still imports CreateMutexA; this witness does not prove all mutex use was removed. The retained class-based detection/fatal-message route remains the paired final-instance check documented above. No API, target instruction or Ghidra mutation was performed.
+
+## Historical130 to131 lowers the DirectX probe OS gate
+
+The [historical version-gate audit](evidence/audits/win9x-version-gate-history.json), reproduced with `python3 analysis/scripts/audit_win9x_version_gate_history.py`, pins130/131 author-hosted archives and EXEs. Their complete540-byte probe `004b6590..004b67ac` differs in **exactly one byte**, at004b65ab: the immediate in `CMP AL,5` becomes4. Call004b65a4 resolves through IAT00534574 to imported GetVersion; unsigned JAE004b65e9 follows that comparison.
+
+|Returned major byte |130 local gate |131 local gate |
+|---:|---|---|
+|Below4 |Return0 through004b679f |Same |
+|4 |Return0 through004b679f |Continue to existing DirectDraw checks |
+|5 or greater |Continue |Continue |
+
+These are static branch consequences for a supplied byte, not API-return injection or observed OS behavior. Microsoft's [GetVersion contract](https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion) identifies the low byte as major version and separately cautions that newer Windows manifest policy affects returned versions. This gate tests neither minor byte nor platform bits; the byte alone does not identify Windows98/Me uniquely.
+
+At the retained continuation, the probe loads `DDRAW.DLL`, resolves `DirectDrawCreate` and performs object/interface/capability checks. Admitting major4 does not guarantee those operations succeed or the probe returns5. Retained caller004b5726 tests its result against5 using signed JGE; below5 calls diagnostic004b5e98 with “The DirectX 5 drivers must be installed to run.” The diagnostic invokes MessageBoxA and the existing termination helper004f2a7d. Caller bytes are identical130/131. Actual dialogs, API results and termination remain unobserved.
+
+The normalized normal-import sets and selected PE OS/subsystem versions/flags are also unchanged. This selected mechanism is therefore a runtime admission-constant change, not a lowered PE header requirement or newly removed static dependency. Delay/dynamic/transitive dependencies and all other compatibility paths remain outside that conclusion.
+
+**MP131-003 advances vendor-only→partial:** the advertised Windows98/Me restoration has a concrete one-byte mechanism consistent with allowing major4 past a previously rejecting DirectX gate. Full Windows98/Me loading, driver acceptance and gameplay are not verified. This is not the separate generic MP153-014 startup-fix claim.
+
+Keep historical endpoints distinct: the original probe described above uses GetVersionExA and a platform-dependent policy; these130/131 bodies use GetVersion's byte; the final Modern same-address region is removed/NOP-filled. No single guessed C body or OS policy represents all three stages. No target/API/instruction execution or executable/Ghidra modification occurred.
