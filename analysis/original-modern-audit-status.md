@@ -15,6 +15,16 @@ A later behavioral comparison would need identical inputs and matched simulation
 
 **Parked:** further minor menu/renderer history, cosmetic offsets, additional version-resource labels and repeated localization of already mapped spans, unless they resolve a priority above. Preserve all existing chapters/evidence and their original scope; no executable/Ghidra edits or new C/toolchain/probe work are needed for this consolidation.
 
+## Current core arithmetic finding
+
+The [bounded race/physics comparison](og-modern-x87-precision.md#bounded-race-scheduling-and-four-wheel-arithmetic-comparison)
+now verifies five byte-identical scheduling, registration, dispatch and four-wheel-integration
+ranges in original/official Modern. The actual velocity stores remain binary32. The selected
+straight-line window has no CW change; inherited CW across dynamically registered callbacks
+and delegated helpers remains unresolved. Next establish callback-field provenance and
+transitive CW ownership, rather than claiming identical physics or inevitable desynchronization.
+Static evidence only; no new instruction probes or game execution.
+
 ## Latest bounded reproducibility checkpoint
 
 The [five-audit checkpoint](evidence/validation/early-hud-package-worker-checkpoint.json) reviews `6e5e9dc`: **10/10 static runs** reproduce five committed outputs (early HUD, wrapper packages, race-entry guard/registrar, input-worker/creator and block relocation). **12 protected artifacts and12 raw exports** retain prior hashes. Reproduce with `python3 analysis/scripts/check_early_hud_package_worker.py`. This closes repeatability/preservation for those follow-ups, not semantic independence, live Ghidra readback, runtime behavior or the full comparison.

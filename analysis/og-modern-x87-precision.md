@@ -187,3 +187,68 @@ Complete helper `004f7c90..004f7cdc` is **76 bytes, identical in both executable
 For the active-guard path, these calls clear mask bits`001f`: invalid operation, denormal operand, divide-by-zero, overflow and underflow become unmasked. They **leave precision/inexact maskbit`0020`, precision-control bits and rounding-control bits unchanged**. This does not select32-,64- or80-bit arithmetic. Existing later FINIT/FLDCW paths can replace this control word; the inspected startup block does not prove a persistent race/menu exception policy.
 
 Final Modern replaces **`004a3d05..004a3d4a` with69 NOP bytes**, removing this conditional startup sequence in addition to emptying the named switch. The helper itself remains. Thus neither removal of all floating-point error support nor a claim that every exception is always masked follows. Other callers, guard initialization, exception delivery and user-visible failures remain unqualified. No floating-point exception or target instruction was executed.
+
+## Bounded race scheduling and four-wheel arithmetic comparison
+
+Fresh static comparison of the hash-pinned original and official final Modern EXEs
+reproduces five identical ranges. The [audit output](evidence/audits/race-arithmetic-path.json)
+retains aligned disassembly, hashes, direct/indirect calls and the selected arithmetic window.
+Reproduce with `python3 analysis/scripts/audit_race_arithmetic_path.py`.
+Names reuse the saved analysis; byte equality is independently checked from the two files.
+All ends below are exclusive.
+
+| Range | Role | Verified comparison |
+|---|---|---|
+| `004c48d0..004c4abc` | Simulation tick | Identical 492 bytes; even pre-increment ticks dispatch list `007d3690`, every tick dispatches `007d368c` |
+| `0042c830..0042c94e` | Vehicle callback registration | Identical 286 bytes; loads function pointers from vehicle fields and inserts them by priority |
+| `004be3a0..004be3cc` | Callback dispatch | Identical 44 bytes; context enters EAX, indirect call at `004be3c1` |
+| `004ae4c1..004ae5c2` | Vehicle physics dispatch | Identical 257 bytes; category bit02 selects AI; selected non-AI branch calls `004ad7a3` at `004ae592` |
+| `004ad7a3..004ae4c1` | Four-wheel integration | Identical 3,358 bytes, including the binary32 velocity update below |
+
+The non-AI integration branch requires byte vehicle+8a==0 and a **signed raw DWORD**
+comparison of vehicle+10c against `3f666666` to pass. This is not generally interchangeable
+with a C floating comparison for negative values, NaNs or arbitrary bit patterns. Other
+paths call `004aa8e7`; this comparison does not qualify those paths or AI dynamics.
+[Existing callback lifecycle evidence](callback-list-lifecycle.md) supplies registration
+and scheduling context. The five compared ranges alone do not prove every constructor's
+callback-field assignments, successful initialization, actual runtime roster or all callback targets.
+
+### A concrete storage boundary inside physics
+
+At `004ae185..004ae1df`, three straight-line sequences load binary32 values from
+vehicle+2e8/+2ec/+2f0, multiply by binary32 constant `0053dea0` (bits `3d000000`, exactly
+1/32), add the binary32 velocity components at +a4/+a8/+ac and store back with `FSTP DWORD`.
+The three stores are at `004ae19d`, `004ae1bb` and `004ae1d9`. Both baselines retain the
+same instructions and constant. There is no call or control-word write in this window.
+Thus these persistent outputs remain binary32 in Modern; the patch does not turn this
+physics state into double or 80-bit storage.
+
+Arithmetic still uses the **inherited** x87 precision/rounding mode before the stores.
+This window does not independently establish that mode. The wider original/Modern CW
+policy difference documented above can affect retained arithmetic elsewhere, especially
+multi-operation intermediates; binary32 stores alone do not prove identical results.
+Conversely, this exact 1/32 scaling window is not evidence of observed divergence: ordinary
+finite scaling by a power of two is exact when representable, and exceptional/range cases
+and upstream inputs require separate treatment. Do not infer desynchronization from its
+presence or promise equivalence from byte equality.
+
+### Control-word ownership remains a precise open boundary
+
+None of these five ranges contains a direct `FINIT`/`FNINIT`, `FLDCW`, environment restore,
+control-word store or integer x87 conversion. This is a **local instruction inventory**,
+not a transitive guarantee: the integration routine delegates helpers, and the scheduler
+executes dynamically populated callback lists. Any such callee may change the inherited
+state. Existing original render-return single-precision selection and Modern render-entry
+`FINIT` are established policy anchors, not a proof that every intervening path preserves CW.
+
+Next static action: establish the selected vehicle's callback-field producer, then audit
+its intervening callbacks/helpers for CW changes and floating stores/conversions. Only
+after that can a particular original/Modern simulation arithmetic path have fully owned
+CW state. Behavioral replay/network compatibility would additionally require matched
+inputs, ticks and states; no new target instructions or probes were executed here.
+
+For reconstruction, preserve the EAX vehicle/context contracts, explicit binary32 stores,
+operation order and raw integer branch tests. A native C float expression, reassociation
+or fused multiply-add is not automatically the original x87 contract. This finding adds
+a concrete physics boundary; it does not qualify a game-facing replacement or whole-game
+precision policy on every thread.
