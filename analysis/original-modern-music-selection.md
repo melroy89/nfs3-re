@@ -269,7 +269,7 @@ The early/original comparison covers the entire83-byte straight-line audio-defau
 
 Original and1.1.0 descriptor `00556bf4` both bind `menutunes` to `006fbbec` and the same list `[466,467,468,469,470,471,472,473]`. Thus ordinal2 selects ID468. Final uses `[1946,1944,1945,467,468,469,470,471,472,473]`: the same track's fixed-choice ordinal is now4, while the default0 selects the cyclic subset helper. Numeric selector0 in original/final therefore does not imply identical random-selection behavior. The existing final helper excludes track ID6 from its “All” cycle; do not silently expand the label into a universal playlist claim.
 
-**MP100-034 advances to partial historical support:** an inspected early Modern EXE implements the advertised Romulus default, whereas final Modern does not retain it. The exact1.0.0 introduction and later change date remain unresolved; this comparison does not assign that change to a specific intervening release. Label text is decoded from the hash-pinned official final English resource, not authenticated original/early language files. Initialization/reset admission, saved-user overrides, later writers, successful track loading and audible output remain separate requirements. See [configuration loading](original-modern-config-loading.md#removed-inline-defaults-at-00472566-replacement-initialization-matters) for the already established move from original inline defaults to grouped final helpers.
+**MP100-034 advances to partial historical support:** an inspected early Modern EXE implements the advertised Romulus default, whereas final Modern does not retain it. The exact 1.0.0 introduction remains unresolved. The packaged 1.4.0 and 1.5.0 comparison below dates the later change. Label text is decoded from the hash-pinned official final English resource, not authenticated original/early language files. Initialization/reset admission, saved-user overrides, later writers, successful track loading and audible output remain separate requirements. See [configuration loading](original-modern-config-loading.md#removed-inline-defaults-at-00472566-replacement-initialization-matters) for the already established move from original inline defaults to grouped final helpers.
 
 ## Original temporary music copy is removed from the inspected loading route
 
@@ -433,3 +433,14 @@ conditionally invokes `00472b60` at `00472b34` when
 `0055b038` is nonzero. This bounds the remaining migration question
 to delegated calls and later initialization. It does not establish
 end-to-end preservation across those calls.
+
+### Romulus default reverts between 1.4.0 and 1.5.0
+
+At `00472605`, retained packaged versions 1.1.0 through 1.4.0
+write EAX to the menu tune ordinal at `006fbbec`. In 1.4.0 the
+preceding block loads EAX=2, selecting Romulus 3. Packaged 1.5.0
+changes the store to EDX. Its preceding setup clears EDI and EDX,
+and XOR EDX,EDI before the store keeps EDX zero. The 1.5.1 and
+1.5.2 packages retain the same EDX store bytes. This dates the
+return to ordinal 0 at this defaults site to the 1.4.0 → 1.5.0
+boundary. Saved settings and playback remain separate.
