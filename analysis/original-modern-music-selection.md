@@ -359,3 +359,12 @@ replaces that tail with IDs 1943, 1941 and 1942, followed by a zero
 terminator. Together with the 1.5.3 English strings and selector code,
 this verifies the addition claimed by MP153-003 at the package level.
 Runtime audio output remains untested.
+
+The packaged menu labels also match the dated code change. In 1.5.2,
+`menutunes` points to `0055633e` and starts with ID 466 (Random).
+In 1.5.3 it points to `00556336` and starts with IDs 1946, 1944 and
+1945 (Random (All), Random (Fast), and Random (Slow)). The seven fixed
+choices keep IDs 467–473 in order. These labels were decoded through
+the offset table in each package's own English text member. Together
+with the verified seed mapping and selector, this dates the menu
+bindings described in MP153-004. Track tempo and playback remain untested.
