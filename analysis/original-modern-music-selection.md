@@ -1,5 +1,7 @@
 # Original versus Modern: music selection state and continuation
 
+Addresses are version-specific: the [120→130 worker-space relocation](original-modern-input-worker.md#historical-worker-placement-relocates-a-pre-existing-block) places a different150-byte block at0040fed0 in130. The final music label at that address must not be transferred to that historical file.
+
 ## Evidence boundary
 
 Static comparison of the supplied original/backup and official Modern v1.6.1, whose fingerprints are in the [baseline](original-modern-differences.md). Reproduce with `python3 analysis/scripts/audit_music_selection_difference.py`. The [manifest](evidence/audits/original-modern-music-selection.json) retains matched contextual policy, original race selector, new Modern race/menu helpers, menu tables and direct caller witnesses. No game/audio/RNG/instruction probes were executed.

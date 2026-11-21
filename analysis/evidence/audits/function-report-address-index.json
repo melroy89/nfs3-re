@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "b715a97f86cac278b8db9b082c11db1f9493bfe351245e08361825a3f349c591"
+      "sha256": "23ec497cd72c2e9b1b860453ba083b91b9af2dcac9e666265e6d6e0896a7067f"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -185,7 +185,7 @@
     },
     {
       "path": "analysis/original-modern-input-worker.md",
-      "sha256": "c778e518accb2216d1dc0328670ebd31bdf1868be3e4cad842c3f48d6b2276dd"
+      "sha256": "d560659d90fa1d33dfd598d60133bb4c3e6a45d1de478c9e6ae7073640586622"
     },
     {
       "path": "analysis/original-modern-language-table.md",
@@ -245,7 +245,7 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "07bac8cf282f9b7be45092126499f7717b603710a7eb5a5fc1683f428a0ad699"
+      "sha256": "1a98e745dc9f5ed33eb27a81cdeb900646855afc11216dc676e0d899cb1e5605"
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -651,6 +651,13 @@
       "modern_sha256": "e8300e4c141b39b4a17d2f457f39e6438b43793bd87b032668afc2445a66c181",
       "report_address_references": [
         {
+          "path": "analysis/original-modern-input-worker.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "0040fed0"
+          ]
+        },
+        {
           "path": "analysis/original-modern-music-selection.md",
           "entry_mentioned": true,
           "addresses": [
@@ -678,6 +685,13 @@
       "original_sha256": "f58cad845b1a1cc3bdf01370cadb73c2447cfb09aa9d313962304af2107f85cd",
       "modern_sha256": "fef6808aca35cfdcbf700f5c3a3c9c439a60a90a2c4c90ea5693e1a32128ee0f",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-input-worker.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "0040ff66"
+          ]
+        },
         {
           "path": "analysis/original-modern-loading-timing.md",
           "entry_mentioned": true,
@@ -1460,7 +1474,8 @@
           "path": "analysis/original-modern-input-worker.md",
           "entry_mentioned": true,
           "addresses": [
-            "0041d7e4"
+            "0041d7e4",
+            "0041d7f7"
           ]
         }
       ]

@@ -1,0 +1,180 @@
+{
+  "kind": "static-worker-space-relocation-history",
+  "versions": {
+    "1.2.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z",
+      "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
+      "member": "nfs3.exe",
+      "sha256": "4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003",
+      "start": "0041d7c8",
+      "end_exclusive": "0041d85e",
+      "block_sha256": "7a5a606f791ac843da728c713d50d6c20fa6ebcc0ea2156b408954b5d1f88fd6",
+      "hex": "a1285c5500c1e0048b805c575500e8797e090085c00f84d549020089c6e8264f0d0085c00f84c6490200bb1000000089c2b8f8b65300e81d3e0c0085c00f84ad49020089c789fa89f0e80a4e0d00a1285c5500c1e0048d906057550089f8e8b5190d0089c631c0668b4606bb4001000029c3d1eb31c0668b4604ba6002000029c2d1ea89f0e89e1b0d0089f8e837400c00e95a490200",
+      "disassembly": [
+        "41d7c8:\ta1 28 5c 55 00       \tmov    eax,ds:0x555c28",
+        "41d7cd:\tc1 e0 04             \tshl    eax,0x4",
+        "41d7d0:\t8b 80 5c 57 55 00    \tmov    eax,DWORD PTR [eax+0x55575c]",
+        "41d7d6:\te8 79 7e 09 00       \tcall   0x4b5654",
+        "41d7db:\t85 c0                \ttest   eax,eax",
+        "41d7dd:\t0f 84 d5 49 02 00    \tje     0x4421b8",
+        "41d7e3:\t89 c6                \tmov    esi,eax",
+        "41d7e5:\te8 26 4f 0d 00       \tcall   0x4f2710",
+        "41d7ea:\t85 c0                \ttest   eax,eax",
+        "41d7ec:\t0f 84 c6 49 02 00    \tje     0x4421b8",
+        "41d7f2:\tbb 10 00 00 00       \tmov    ebx,0x10",
+        "41d7f7:\t89 c2                \tmov    edx,eax",
+        "41d7f9:\tb8 f8 b6 53 00       \tmov    eax,0x53b6f8",
+        "41d7fe:\te8 1d 3e 0c 00       \tcall   0x4e1620",
+        "41d803:\t85 c0                \ttest   eax,eax",
+        "41d805:\t0f 84 ad 49 02 00    \tje     0x4421b8",
+        "41d80b:\t89 c7                \tmov    edi,eax",
+        "41d80d:\t89 fa                \tmov    edx,edi",
+        "41d80f:\t89 f0                \tmov    eax,esi",
+        "41d811:\te8 0a 4e 0d 00       \tcall   0x4f2620",
+        "41d816:\ta1 28 5c 55 00       \tmov    eax,ds:0x555c28",
+        "41d81b:\tc1 e0 04             \tshl    eax,0x4",
+        "41d81e:\t8d 90 60 57 55 00    \tlea    edx,[eax+0x555760]",
+        "41d824:\t89 f8                \tmov    eax,edi",
+        "41d826:\te8 b5 19 0d 00       \tcall   0x4ef1e0",
+        "41d82b:\t89 c6                \tmov    esi,eax",
+        "41d82d:\t31 c0                \txor    eax,eax",
+        "41d82f:\t66 8b 46 06          \tmov    ax,WORD PTR [esi+0x6]",
+        "41d833:\tbb 40 01 00 00       \tmov    ebx,0x140",
+        "41d838:\t29 c3                \tsub    ebx,eax",
+        "41d83a:\td1 eb                \tshr    ebx,1",
+        "41d83c:\t31 c0                \txor    eax,eax",
+        "41d83e:\t66 8b 46 04          \tmov    ax,WORD PTR [esi+0x4]",
+        "41d842:\tba 60 02 00 00       \tmov    edx,0x260",
+        "41d847:\t29 c2                \tsub    edx,eax",
+        "41d849:\td1 ea                \tshr    edx,1",
+        "41d84b:\t89 f0                \tmov    eax,esi",
+        "41d84d:\te8 9e 1b 0d 00       \tcall   0x4ef3f0",
+        "41d852:\t89 f8                \tmov    eax,edi",
+        "41d854:\te8 37 40 0c 00       \tcall   0x4e1890",
+        "41d859:\te9 5a 49 02 00       \tjmp    0x4421b8"
+      ],
+      "stored_target_address": "00441ca4",
+      "stored_target": "0041d7c8"
+    },
+    "1.3.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.0.7z",
+      "archive_sha256": "93b0ecffebb5e6a13ee4d7d3054c3b9dde53ca329d7e87516eaad8dd399a22ad",
+      "member": "nfs3.exe",
+      "sha256": "deac6f7f812d6a1981a3520666adbc9d4f78b9459b4d1eef76408f01729b0146",
+      "start": "0040fed0",
+      "end_exclusive": "0040ff66",
+      "block_sha256": "e825b598d4c4d2008ac7691cae1320a22242540caf03ac84a393ba1fe31c0bb3",
+      "hex": "a1285c5500c1e0048b805c575500e871570a0085c00f84cd22030089c6e81e280e0085c00f84be220300bb1000000089c2b8f8b65300e815170d0085c00f84a522030089c789fa89f0e802270e00a1285c5500c1e0048d906057550089f8e8adf20d0089c631c0668b4606bb4001000029c3d1eb31c0668b4604ba6002000029c2d1ea89f0e896f40d0089f8e82f190d00e952220300",
+      "disassembly": [
+        "40fed0:\ta1 28 5c 55 00       \tmov    eax,ds:0x555c28",
+        "40fed5:\tc1 e0 04             \tshl    eax,0x4",
+        "40fed8:\t8b 80 5c 57 55 00    \tmov    eax,DWORD PTR [eax+0x55575c]",
+        "40fede:\te8 71 57 0a 00       \tcall   0x4b5654",
+        "40fee3:\t85 c0                \ttest   eax,eax",
+        "40fee5:\t0f 84 cd 22 03 00    \tje     0x4421b8",
+        "40feeb:\t89 c6                \tmov    esi,eax",
+        "40feed:\te8 1e 28 0e 00       \tcall   0x4f2710",
+        "40fef2:\t85 c0                \ttest   eax,eax",
+        "40fef4:\t0f 84 be 22 03 00    \tje     0x4421b8",
+        "40fefa:\tbb 10 00 00 00       \tmov    ebx,0x10",
+        "40feff:\t89 c2                \tmov    edx,eax",
+        "40ff01:\tb8 f8 b6 53 00       \tmov    eax,0x53b6f8",
+        "40ff06:\te8 15 17 0d 00       \tcall   0x4e1620",
+        "40ff0b:\t85 c0                \ttest   eax,eax",
+        "40ff0d:\t0f 84 a5 22 03 00    \tje     0x4421b8",
+        "40ff13:\t89 c7                \tmov    edi,eax",
+        "40ff15:\t89 fa                \tmov    edx,edi",
+        "40ff17:\t89 f0                \tmov    eax,esi",
+        "40ff19:\te8 02 27 0e 00       \tcall   0x4f2620",
+        "40ff1e:\ta1 28 5c 55 00       \tmov    eax,ds:0x555c28",
+        "40ff23:\tc1 e0 04             \tshl    eax,0x4",
+        "40ff26:\t8d 90 60 57 55 00    \tlea    edx,[eax+0x555760]",
+        "40ff2c:\t89 f8                \tmov    eax,edi",
+        "40ff2e:\te8 ad f2 0d 00       \tcall   0x4ef1e0",
+        "40ff33:\t89 c6                \tmov    esi,eax",
+        "40ff35:\t31 c0                \txor    eax,eax",
+        "40ff37:\t66 8b 46 06          \tmov    ax,WORD PTR [esi+0x6]",
+        "40ff3b:\tbb 40 01 00 00       \tmov    ebx,0x140",
+        "40ff40:\t29 c3                \tsub    ebx,eax",
+        "40ff42:\td1 eb                \tshr    ebx,1",
+        "40ff44:\t31 c0                \txor    eax,eax",
+        "40ff46:\t66 8b 46 04          \tmov    ax,WORD PTR [esi+0x4]",
+        "40ff4a:\tba 60 02 00 00       \tmov    edx,0x260",
+        "40ff4f:\t29 c2                \tsub    edx,eax",
+        "40ff51:\td1 ea                \tshr    edx,1",
+        "40ff53:\t89 f0                \tmov    eax,esi",
+        "40ff55:\te8 96 f4 0d 00       \tcall   0x4ef3f0",
+        "40ff5a:\t89 f8                \tmov    eax,edi",
+        "40ff5c:\te8 2f 19 0d 00       \tcall   0x4e1890",
+        "40ff61:\te9 52 22 03 00       \tjmp    0x4421b8"
+      ],
+      "stored_target_address": "00441ca4",
+      "stored_target": "0040fed0"
+    }
+  },
+  "relative_transfers": [
+    {
+      "old_instruction": "0041d7d6",
+      "new_instruction": "0040fede",
+      "unchanged_target": "004b5654"
+    },
+    {
+      "old_instruction": "0041d7dd",
+      "new_instruction": "0040fee5",
+      "unchanged_target": "004421b8"
+    },
+    {
+      "old_instruction": "0041d7e5",
+      "new_instruction": "0040feed",
+      "unchanged_target": "004f2710"
+    },
+    {
+      "old_instruction": "0041d7ec",
+      "new_instruction": "0040fef4",
+      "unchanged_target": "004421b8"
+    },
+    {
+      "old_instruction": "0041d7fe",
+      "new_instruction": "0040ff06",
+      "unchanged_target": "004e1620"
+    },
+    {
+      "old_instruction": "0041d805",
+      "new_instruction": "0040ff0d",
+      "unchanged_target": "004421b8"
+    },
+    {
+      "old_instruction": "0041d811",
+      "new_instruction": "0040ff19",
+      "unchanged_target": "004f2620"
+    },
+    {
+      "old_instruction": "0041d826",
+      "new_instruction": "0040ff2e",
+      "unchanged_target": "004ef1e0"
+    },
+    {
+      "old_instruction": "0041d84d",
+      "new_instruction": "0040ff55",
+      "unchanged_target": "004ef3f0"
+    },
+    {
+      "old_instruction": "0041d854",
+      "new_instruction": "0040ff5c",
+      "unchanged_target": "004e1890"
+    },
+    {
+      "old_instruction": "0041d859",
+      "new_instruction": "0040ff61",
+      "unchanged_target": "004421b8"
+    }
+  ],
+  "all_other_bytes_equal": true,
+  "limits": [
+    "Complete150-byte block comparison, not complete parent-frame/dispatch reconstruction.",
+    "Stored target correspondence and normalized relative operands establish relocation, not a new music feature.",
+    "Return/instruction addresses differ; no whole-machine, stack-address or exceptional equivalence claim.",
+    "Final function names/roles at these addresses must not be transferred to historical binaries.",
+    "No target/API/instruction execution, binary edits or Ghidra changes."
+  ]
+}

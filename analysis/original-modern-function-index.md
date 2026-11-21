@@ -14,8 +14,8 @@ The original code comparison also records **21,926 changed code bytes outside th
 |---|---|---:|---:|---|
 | `00401010` | HandleGameAbort | 520 | 2 | [audit-status](original-modern-audit-status.md), [frontend-page](original-modern-frontend-page.md), [heap-initialization](original-modern-heap-initialization.md), [raster-session](original-modern-raster-session.md), [renderer-loading](original-modern-renderer-loading.md), [startup-policy](original-modern-startup-policy.md), [texture-loading-followup](original-modern-texture-loading-followup.md) |
 | `0040a010` | InitializeRacerIdentificationSpeechBanks | 796 | 3 | [sound-bank-language](original-modern-sound-bank-language.md) |
-| `0040fed0` | InitializeRandomMusicTrackAndStyle | 42 | 40 | [music-selection](original-modern-music-selection.md) |
-| `0040fefc` | ApplyConfiguredMusicTrackAndStyle | 132 | 130 | [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md) |
+| `0040fed0` | InitializeRandomMusicTrackAndStyle | 42 | 40 | [input-worker](original-modern-input-worker.md), [music-selection](original-modern-music-selection.md) |
+| `0040fefc` | ApplyConfiguredMusicTrackAndStyle | 132 | 130 | [input-worker](original-modern-input-worker.md), [loading-timing](original-modern-loading-timing.md), [music-selection](original-modern-music-selection.md) |
 | `0040ff9c` | InitializeWeightedShowMusicCursor | 23 | 23 | [music-selection](original-modern-music-selection.md) |
 | `0040ffb4` | SelectNextAllowedShowMusicNumber | 71 | 70 | [music-selection](original-modern-music-selection.md), [music-start](original-modern-music-start.md) |
 | `004103a0` | ApplyContextualMusicSelectionPolicy | 166 | 158 | [music-selection](original-modern-music-selection.md), [music-start](original-modern-music-start.md) |
