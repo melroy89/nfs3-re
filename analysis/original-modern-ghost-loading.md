@@ -60,7 +60,7 @@ The [config-load comparison](original-modern-config-loading.md) now explains siz
 
 ## Remaining work
 
-Verified: changed snapshot order, refreshed/restored header coverage, three additional identity copies and retained reader/resolver instructions. Pending: complete version/header format, all model/asset dependencies, name-field consumers, read/save failures and runtime ghost playback. Physics/x87 and trajectory compatibility remain separate from settings restoration. Historical release introduction requires older patch binaries; no compatible-replay claim follows from this chapter.
+Verified: changed snapshot order, refreshed/restored header coverage, three additional identity copies and retained reader/resolver instructions. Pending: complete version/header format, all model/asset dependencies, name-field consumers, read/save failures and runtime ghost playback. Physics/x87 and trajectory compatibility remain separate from settings restoration. The release boundary is verified below. Cross-version replay behavior remains open.
 
 ## Removed original defaults tail: ordered flag policy
 
@@ -75,3 +75,22 @@ After call`004904f0`, the original tail loads flag byte`0055eb2e` into DH, perfo
 | neither | Skip those conditional writes |
 
 All paths shown join call`00485880` before restoring registers and returning. EBX/EDI values after the earlier call and the meaning of every affected field are not assumed here. Modern’s NOP interval removes these particular instructions; its short`004723f0` prefix-copy helper and other startup/default producers are different evidence, so this is not proof that all corresponding policies or features vanished. Callers, alternative initialization and full defaults reconstruction remain open. No configuration, ghost, game or instruction probe was executed.
+
+## Release boundary verified in packaged 1.5.1 and 1.5.2
+
+Extracting `nfs3.exe` from the retained
+`nfs3_modern_patch_v1.5.1.7z` and `nfs3_modern_patch_v1.5.2.7z` gives:
+
+| Version | Archive SHA-256 | EXE SHA-256 |
+|---|---|---|
+| 1.5.1 | `c7b66da29ef8cd58c56e27a403bd2889d8a4f0f7cac0873c28a1b4b5a09723de` | `4f7064a3fefa1a2598c95fbf72f3aee999360e3bf4d2d285f5e4c969ae2c8a17` |
+| 1.5.2 | `23830061e5ed489900b03c98d81727d951c59e9247d7006803460d38ee9a34cd` | `d532b0252610d9de2e826efc399d4d733d84d4758e47b5fadc94bf5c1d4449bb` |
+
+The 1.5.1 wrapper snapshots from `006fbb4c` before calling the save
+helper. The 1.5.2 wrapper calls it first, snapshots from `006fbb40` and
+restores the header and the three additional identity fields on success.
+The 157-byte wrapper and the first 32 bytes of the save helper match
+official final Modern. At `0047282e`, 1.5.1 tests the debug flag and
+1.5.2 calls the header refresh helper. This dates the verified mechanism
+to the 1.5.1 → 1.5.2 package boundary, consistent with MP152-003.
+The runtime reset symptom remains untested.
