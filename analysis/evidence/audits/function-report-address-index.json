@@ -173,7 +173,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "acc1df9e3a8a1d521adf1a9723b7916d2f8a7bc13e4f21ca2c5d55d7bc7459c5"
+      "sha256": "9a2ff6801b266762545afcd62696d406da748ca9d5be0c25ab929ededa56c042"
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -6252,7 +6252,11 @@
             "004836c4",
             "0048384a",
             "00483895",
-            "0048395a"
+            "0048395a",
+            "00483e49",
+            "00483e57",
+            "00483ec3",
+            "00483ec8"
           ]
         },
         {
@@ -6726,6 +6730,13 @@
       "original_sha256": "de53fe59e1314a7d27380d7f0b5acf96471eb42e8ad92cc3ae2bef92f653964a",
       "modern_sha256": "d1fb768ac832d79768f454dfc4592cbb6654ee1173c694c12962b039fe489a31",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-hud-layout.md",
+          "entry_mentioned": true,
+          "addresses": [
+            "004897f0"
+          ]
+        },
         {
           "path": "analysis/original-modern-numeric-scale.md",
           "entry_mentioned": true,
