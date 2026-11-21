@@ -1568,12 +1568,35 @@
       "source": "https://raw.githubusercontent.com/mingw-w64/mingw-w64/master/mingw-w64-headers/include/d3d8types.h"
     }
   ],
+  "ordering_contract": {
+    "initial_count": 2,
+    "ordinary_first_index": 2,
+    "capacity_count_limit": 256,
+    "ordinary_duplicate_key_offsets": [
+      0,
+      4,
+      8,
+      12
+    ],
+    "duplicate_record_admission_flag_offset": 16,
+    "duplicate_record_admission_flag_mask": 1,
+    "ordinary_order": "First accepted unique records in API enumeration order;no width/height sort in checked builder.",
+    "special_slot1": "640x480;110/140 depth32 gate,150 depth16 condition;written before general capacity/dedup path.",
+    "special_repetition": "Later admitted special records overwrite slot1,without incrementing ordinary append count.",
+    "nop_gap": {
+      "start": "6000462d",
+      "end_exclusive": "60004725",
+      "bytes": 248
+    },
+    "scope": "Checked initialized builder path;valid API outputs and no intervening external/alias table mutations."
+  },
   "verified": [
     "Imported Direct3DCreate8 output published6001ed24;mode builder calls count/enum slots18h/1ch with16-byte display-mode output.",
     "110 and140 complete674-byte mode builder identical;both reject unsigned width<640 orheight<480 before record writes.",
     "140->150 removes depth32-only gate,retains nonzero classifier/depth gates,and reserves640x480 depth16 for slot1.",
     "Format23 R5G6B5 maps token4/depth16:old gate rejects it,new selected640x480 path can write slot1 with depth16.",
-    "All builder differences are within600045de..60004623;prefix/suffix retained."
+    "All builder differences are within600045de..60004623;prefix/suffix retained.",
+    "General modes append from index2 in accepted enumeration order,skipping matching active four-field records;specialslot1 is overwritten separately before capacity guard."
   ],
   "limits": [
     "Static request/admission evidence,not successful enumeration,mode activation,device/rendering or visible menu output.",

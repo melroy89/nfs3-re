@@ -26,6 +26,10 @@ def main():
         assert get(0x6000375f,0x60003764).hex()=='e8ec0d0000'
         assert any(e.name==b'_THRASH_about@0'and e.address==0x1000 for e in pe.DIRECTORY_ENTRY_EXPORT.symbols)
         assert get(0x60001153,0x60001159).hex()=='b8c0280460c3'
+        assert get(0x6000462d,0x60004725)==b'\x90'*248
+        assert get(0x60004725,0x60004731).hex()=='81fb000100000f8d9e000000'
+        assert get(0x6000476b,0x60004776).hex()=='8bcb4385c9895c24107459'
+        assert get(0x60004763,0x6000476b).hex()=='4283c1283bd37cdb'
         old=version!='1.5.0';threshold=0x600045f3 if old else 0x600045ea
         assert get(threshold,threshold+6).hex()=='81fd80020000'
         assert get(threshold+12,threshold+18).hex()=='81ffe0010000'
@@ -62,11 +66,19 @@ def main():
             assert re.findall(r'(?:UINT|D3DFORMAT)\s+(\w+)\s*;',block)==['Width','Height','RefreshRate','Format']
         headers.append({'path':path,'sha256':pin,'source':'https://raw.githubusercontent.com/mingw-w64/mingw-w64/master/mingw-w64-headers/include/'+name})
     result['header_evidence']=headers
+    result['ordering_contract']={'initial_count':2,'ordinary_first_index':2,'capacity_count_limit':256,
+        'ordinary_duplicate_key_offsets':[0,4,8,12],'duplicate_record_admission_flag_offset':16,
+        'duplicate_record_admission_flag_mask':1,'ordinary_order':'First accepted unique records in API enumeration order;no width/height sort in checked builder.',
+        'special_slot1':'640x480;110/140 depth32 gate,150 depth16 condition;written before general capacity/dedup path.',
+        'special_repetition':'Later admitted special records overwrite slot1,without incrementing ordinary append count.',
+        'nop_gap':{'start':'6000462d','end_exclusive':'60004725','bytes':248},
+        'scope':'Checked initialized builder path;valid API outputs and no intervening external/alias table mutations.'}
     result['verified']=['Imported Direct3DCreate8 output published6001ed24;mode builder calls count/enum slots18h/1ch with16-byte display-mode output.',
         '110 and140 complete674-byte mode builder identical;both reject unsigned width<640 orheight<480 before record writes.',
         '140->150 removes depth32-only gate,retains nonzero classifier/depth gates,and reserves640x480 depth16 for slot1.',
         'Format23 R5G6B5 maps token4/depth16:old gate rejects it,new selected640x480 path can write slot1 with depth16.',
-        'All builder differences are within600045de..60004623;prefix/suffix retained.']
+        'All builder differences are within600045de..60004623;prefix/suffix retained.',
+        'General modes append from index2 in accepted enumeration order,skipping matching active four-field records;specialslot1 is overwritten separately before capacity guard.']
     result['limits']=['Static request/admission evidence,not successful enumeration,mode activation,device/rendering or visible menu output.',
         'EnumAdapterModes return is not checked locally before reading output;valid complete API output is a premise,not a guaranteed success.',
         'Builder starts count2 and clears256 forty-byte records;reserved/unpopulated slots and complete EXE consumers need separate qualification.',

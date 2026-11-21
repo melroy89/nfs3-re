@@ -108,13 +108,13 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "e4018f392cbae507380a986b746cbc21cf94caa43ac51b998b0895c970f573d8",
-      "relative_links": 312
+      "sha256": "f0af467b7c8647099f87f76226e25a549f0b32dc1417f0abe98af70bb912d960",
+      "relative_links": 313
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "5b38710f9ea255276b8a2af63333e5af55db703bcc8eae0a917f14b2127dc5cc",
-      "relative_links": 28
+      "sha256": "77c99833efcdd8d2596390e289acc2a300b708a13d42bdc511e0cfe303810859",
+      "relative_links": 29
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -653,8 +653,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "8573c70197729d294a213325b737a11a2d1bfe43b419f9a53ec3347deca97ae0",
-      "relative_links": 235
+      "sha256": "d8d9b454269d061bd42ec83611aae02d2487005c9d82a91954a08c6f086f9d8b",
+      "relative_links": 236
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2805,
+  "relative_link_count": 2808,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

@@ -1311,3 +1311,8 @@ The [complete32-class flag census](original-modern-menu-input.md#complete-regist
 ## DX8 minimum-size and16-bit admission mechanisms verified
 
 The [110/140/150 provider audit](original-modern-display-modes.md#dx8-early-size-filter-and-later16-bit-admission) verifies an early640×480 filter and dates removal of the32-only gate to140→150. A recognized640×480×16 record can then use slot1. SDK/object/output correspondence is pinned; successful API output, reserved-slot validity and device activation remain unverified. MP110-007/MP150-039 advance to partial; current labels are72 vendor-only/54 bounded-static/162 partial/2 unresolved.
+
+
+## DX8 ordering policy documented without inventing a historical comparator
+
+The [ordering follow-up](original-modern-display-modes.md#dx8-ordinary-mode-order-is-append-order-with-a-special-slot) verifies ordinary unique modes append in API order from slot2, with a four-field duplicate key excluding refresh rate, while slot1 is independently overwritten by the special mode. This is not a sorted-size catalog. MP110-008 stays vendor-only as a claimed comparative change; earlier ordering and actual visible modes remain unverified. Catalog counts are unchanged.

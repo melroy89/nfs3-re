@@ -305,3 +305,16 @@ A concrete derived case is API format23, R5G6B5: both retained classifiers map i
 EnumAdapterModes' result is not checked locally before reading its output. Successful complete output is therefore a premise, not a guaranteed API outcome. Other format classifiers, record capacity/deduplication, reserved slots, EXE selection and device activation remain separate. The early32-only builder does not itself prove the advertised ugly-menu symptom was fixed, and source ancestry is not inferred from exported names.
 
 MP110-007 and MP150-039 advance vendor-only→partial. Preserve unsigned size tests, local failure behaviour and the distinct slot1 policy in reconstruction. No DLL/API, game or target instructions were executed, no toolchain was installed and no executable or Ghidra database was changed.
+
+
+### DX8 ordinary mode order is append order, with a special slot
+
+The expanded [three-build audit](evidence/audits/dx8-mode-admission-history.json) records the builder's selected ordering contract. After initialization count2 reserves indices0/1. Ordinary accepted modes use the current count as their index, increment it, and write a40-byte record; the ordinary capacity guard rejects when count≥256. Under fresh initialization and no external/alias mutation, these ordinary records therefore occupy slots2 onward in accepted enumeration order, not a width/height sort.
+
+Before append, the routine checks existing active ordinary rows. Its equality key is record offsets0/4/8/0Ch: width, height, depth and internal format token. The flags bit at+10h must be set for a row to match. A match skips the incoming record. RefreshRate from the API output is **not** included in this compared key. For otherwise admitted records, the first occurrence of a key supplies the ordinary slot; a later equal key does not move it.
+
+The special640×480 case instead writes slot1 before reaching ordinary capacity/deduplication. Later admitted special records overwrite that slot without increasing the ordinary append count. Its depth condition differs by release as shown above. Thus even a late API640×480 entry can populate the earlier slot1, while ordinary1024×768 followed by800×600 entries can remain in that order at slots2/3. This is a derived conditional example, not an observed device catalog. An absent special entry can leave the reserved slot unpopulated despite the initial count2.
+
+The248-byte region `6000462d..60004725` is entirely NOP in all three checked builders. That is a byte fact, not proof of the source or history of removed ordering code. The compared append/deduplication tail is retained140/150.
+
+**MP110-008 remains vendor-only as a comparative claim:** the early DX8 ordering mechanism is now documented, but its precise advertised difference from an earlier provider/catalog is not established. No actual API mode order, final visible list, refresh selection, complete consumer bounds or runtime mutation was observed. Do not equate a documented current ordering algorithm with proof of every historical ordering change.
