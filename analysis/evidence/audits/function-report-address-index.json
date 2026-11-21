@@ -217,7 +217,7 @@
     },
     {
       "path": "analysis/original-modern-menu-input.md",
-      "sha256": "42c147a6f22f421cfaa8d18dae442c2e7112f7cf89b13711cfc2d61d29f27ffd"
+      "sha256": "428f6bbea30f40f3bfe317c858de750e94a47d0915a95af8468d7ae59eb63c08"
     },
     {
       "path": "analysis/original-modern-menu-loader.md",
@@ -4127,7 +4127,8 @@
             "0044a2e9",
             "0044a2f3",
             "0044a30a",
-            "0044a315"
+            "0044a315",
+            "0044a3a0"
           ]
         }
       ]
@@ -12896,6 +12897,13 @@
           "entry_mentioned": true,
           "addresses": [
             "004f1f58"
+          ]
+        },
+        {
+          "path": "analysis/original-modern-menu-input.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004f1f78"
           ]
         },
         {

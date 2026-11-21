@@ -330,7 +330,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004f1ed4` | TrySetDllDirectoryViaDynamicExport | 31 | 31 | [cpu-tier](original-modern-cpu-tier.md), [renderer-loading](original-modern-renderer-loading.md) |
 | `004f1efc` | AllocateGameProcessHeapBytes | 20 | 20 | [heap-initialization](original-modern-heap-initialization.md) |
 | `004f1f30` | FreeGameProcessHeapBlock | 20 | 20 | [heap-initialization](original-modern-heap-initialization.md) |
-| `004f1f58` | LoadAndLockGameRawDataResource | 48 | 48 | [frontend-page](original-modern-frontend-page.md), [heap-initialization](original-modern-heap-initialization.md), [screenshot-feedback](original-modern-screenshot-feedback.md) |
+| `004f1f58` | LoadAndLockGameRawDataResource | 48 | 48 | [frontend-page](original-modern-frontend-page.md), [heap-initialization](original-modern-heap-initialization.md), [menu-input](original-modern-menu-input.md), [screenshot-feedback](original-modern-screenshot-feedback.md) |
 | `004f1fb0` | PlaySoundFromGameRawDataResource | 25 | 25 | [screenshot-feedback](original-modern-screenshot-feedback.md) |
 | `004f1fcc` | IsShiftKeyCurrentlyDown | 4 | 4 | [dialog-input](original-modern-dialog-input.md), [menu-input](original-modern-menu-input.md) |
 | `004f1fd0` | IsControlKeyCurrentlyDown | 4 | 4 | [menu-input](original-modern-menu-input.md), [window-handling](original-modern-window-handling.md) |

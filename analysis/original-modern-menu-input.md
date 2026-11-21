@@ -94,3 +94,14 @@ The Control entry's four saved body bytes are a prefix plus jump; they are not a
 Both EAX and final ZF are outputs. Other general registers are untouched by local instructions beyond EAX/ECX/EDX, with ECX/EDX restored; no standard C Boolean ABI promises the same flags. The direct Shift/Tab consumers documented above demonstrate why reconstruction must keep this hidden condition-code contract when calling original instructions. Complete Control/Alt caller coverage and actual focus/timing behavior remain unverified.
 
 **Work status: Modern local entry/shared-tail contracts done; original functional counterpart mapping pending. Confidence: verified static code/import.** The original same-address region falls within the older timing/calibration code discussed in the [CPU-tier comparison](original-modern-cpu-tier.md); matching numeric addresses does not identify matching modifier helpers. No keyboard or target execution, Ghidra writes or maintained-C changes were made.
+
+
+## Tab and chat-bypass routing appears at131-to140
+
+The [historical routing audit](evidence/audits/menu-key-routing-history.json), reproduced with `python3 analysis/scripts/audit_menu_key_routing_history.py`, pins131/140 archives/EXEs. The complete131 dispatcher `0044a2d0..0044a439` matches the supplied original.140 contains the Tab/Escape multiplayer-gate bypass, Shift-sensitive Tab fallback and named-arrow scanner described above. This dates those selected mechanisms to the immediate retained boundary rather than inferring their introduction from the original/final endpoints.
+
+140's Shift entry is `004f1f78`, with Control/Alt at+4/+8 and the shared tail through `004f1f9c`. Its36 bytes match the official final region `004f1fcc..004f1ff0`; the import binding is verified in140. The dispatcher at `0044a3a0` calls the helper and uses JNE directly. EAX and final ZF therefore remain separate machine outputs at this historical boundary, just as in the final contract above.
+
+The complete previous/next routines and lobby handler are byte-identical131/140. This qualifies **MP140-008/009**, not **MP140-015**: it establishes routing to existing selectors, not a replacement ordering algorithm. Entry-array construction, selection fields, callback side effects and authored navigation data can still change order despite identical selector bodies. The distinct callback-selection/rendering comparison likewise does not independently prove keyboard order. MP140-015 remains vendor-only pending an actual order-producing data/control-flow difference; repeating these unchanged-body checks will not resolve it.
+
+The selected entry callback still precedes fallback navigation and can consume keys. Chat focus, every menu state, actual keyboard timing and complete caller ABI/flags remain untested beyond the retained local witnesses. No game, API, target instructions, compiler or Ghidra change was used.

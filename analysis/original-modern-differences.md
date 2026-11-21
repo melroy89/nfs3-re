@@ -1287,3 +1287,8 @@ The [two-routine comparison](original-modern-common-menu-buttons.md#shared-list-
 ## Four-dialog layout claim has authored coordinate evidence
 
 The [131/140 menu comparison](original-modern-common-menu-buttons.md#four-named-dialogs-have-authored-layout-edits-in140) records nine matched controls across Predefined Keys, Interior, IPX and Load; the Load list also changes maxvis8→10. This is independent of shared EXE padding arithmetic. MP140-028 advances vendor-only→partial; final pixels and every-language alignment remain untested. Current labels are75 vendor-only/54 bounded-static/159 partial/2 unresolved.
+
+
+## Keyboard routing dated without conflating selection order
+
+The [131/140 audit](original-modern-menu-input.md#tab-and-chat-bypass-routing-appears-at131-to140) dates Tab/Shift+Tab, multiplayer Tab/Escape bypass and named-arrow routing. Previous/next selectors and lobby handling remain byte-identical; the140 modifier helper's36 bytes match its relocated final counterpart. The distinct switching-order claim MP140-015 remains vendor-only pending an entry-order producer/consumer difference. Catalog counts are unchanged.
