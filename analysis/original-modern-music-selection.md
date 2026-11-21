@@ -289,3 +289,20 @@ The immediate read/write results are not tested by this loop before it advances 
 The retained earlier path builder appends`.lin` or`.map` according to its branch; the final replacement assumes an appropriate four-character suffix and valid NUL-terminated path. It is a byte-string rewrite, not UTF16. Unbounded construction and shared path/base state remain reconstruction concerns; no new bounds checks or silent bug fixes are proposed.
 
 **MP100-037 advances to partial support:** the inspected original preloading copy is removed and final requests a source-directory`.mus` filename instead of temporary music. That does not prove successful streaming/playback or absence of every other copy path. The vendor's proposed slow-CD rationale, fixed10 MiB per race, SSD-write savings, measured loading improvement, universal race-start admission and1.0.0 introduction remain unverified.512 KiB is a requested chunk capacity, **not total bytes copied or saved**. Existing retained music helpers still have their separate backend/state dependencies. No file copy, game, audio API, instruction probe or Ghidra mutation was performed.
+
+### First track by seed residue
+
+A fresh read of the pinned final Modern EXE confirms the 20 seed entries
+at `0040ff88`. Counting the first accepted track for each residue using
+the six-entry cycle and the three masks gives:
+
+| Mode | Track IDs and counts out of 20 residues |
+|---|---|
+| All | 1: 1, 2: 5, 3: 3, 4: 5, 5: 5, 7: 1 |
+| Fast | 2: 6, 4: 8, 5: 6 |
+| Slow | 1: 6, 3: 8, 7: 6 |
+
+The counts describe the first selection after this seeding path with
+the selected mode already set. They establish the weighting in the
+mapping. Measured probabilities also depend on the incoming RNG state
+and when the seed helper runs. Later selections advance the cycle.
