@@ -556,3 +556,17 @@ The expanded [package audit](evidence/audits/nglide-driver-config-history.json) 
 The new INI selects File=voodoo2a.dll, Type=voodoo, FogSupport=1 and LightBeams=1. Its ENV section contains only **FX_GLIDE_NO_SPLASH=1**. There is **no `glide3x.dll` in this directory**. This is a package fact, not proof of which installed/system provider would resolve successfully or of the full loader search order.
 
 **MP140-044 gains partial support:** a separate named Glide3x driver configuration is added in this exact historical pair. The advertised use on real3dfx hardware, required provider installation, device/API compatibility and rendered results remain untested. “Separate driver” here means separately selectable directory/configuration; the three checked140 THRASH DLL copies are byte-identical. No DLL/provider or environment API was executed and no game/database bytes changed.
+
+
+## Historical140 and150 dgVoodoo wrappers share versions but differ in bytes
+
+The [package metadata audit](evidence/audits/dgvoodoo-251-packages.json), reproduced with `python3 analysis/scripts/audit_dgvoodoo_251_packages.py`, pins both author-hosted archives and their `drivers/dgvoodoo/glide3x.dll` members. Both are i386 PE files with ProductName=dgVoodoo, ProductVersion=2.5.1.0, FileVersion=3.10.0.0 and description “dgVoodoo 2.51 Glide Wrapper (for Glide v3.10 Napalm)”. Do not confuse the product version with the Glide-facing file version.
+
+|Patch archive |Wrapper bytes |SHA-256 |
+|---|---:|---|
+|140 |81,920 |`8cfb00c6de02b8fb8eb255b7f4d8053eefea7aadf1dd2de32674cbc269ebe525` |
+|150 |83,456 |`541b3b367e2fecf6b982ffc1dc300960f3f2fdeeda203186b361fe3608e757c9` |
+
+The files are different despite identical checked version strings;150 is1,536 bytes larger. Per-section hashes/extents are retained to support a later implementation comparison. Size/hash changes alone do not identify a feature or repair.
+
+**MP150-037 gains bounded static support** for including a wrapper identifying as dgVoodoo2.51/Napalm. **MP140-047 gains partial support:**140 contains that identifying wrapper, but its advertised **WIP16** build identity is not corroborated by the checked metadata. Neither file has a case-insensitive ASCII or UTF16LE WIP literal; this absence does not disprove the vendor's build attribution. Authentication against an upstream build, full wrapper-code changes, installation/loading and rendered compatibility remain unverified. No DLL was loaded or target instructions executed, and no game/database bytes changed.

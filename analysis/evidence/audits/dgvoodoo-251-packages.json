@@ -1,0 +1,99 @@
+{
+  "kind": "static-dgvoodoo-251-packages",
+  "versions": {
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "member": "drivers/dgvoodoo/glide3x.dll",
+      "bytes": 81920,
+      "sha256": "8cfb00c6de02b8fb8eb255b7f4d8053eefea7aadf1dd2de32674cbc269ebe525",
+      "version_tables": [
+        {
+          "CompanyName": "D\u00e9g\u00e9",
+          "FileDescription": "dgVoodoo 2.51 Glide Wrapper (for Glide v3.10 Napalm)",
+          "FileVersion": "3.10.0.0",
+          "InternalName": "Glide3x.dll",
+          "LegalCopyright": "Copyright (C) 2013-2016",
+          "OriginalFilename": "Glide3x.dll",
+          "ProductName": "dgVoodoo",
+          "ProductVersion": "2.5.1.0"
+        }
+      ],
+      "wip_ascii_count": 0,
+      "wip_utf16le_count": 0,
+      "sections": [
+        {
+          "name": ".MPRESS1",
+          "rva": "00001000",
+          "raw_bytes": 71168,
+          "sha256": "00286b15e75f8b287beeb0a4d284050e09409bdbf0d4ba099ffd62b531dfd795"
+        },
+        {
+          "name": ".MPRESS2",
+          "rva": "00044000",
+          "raw_bytes": 7168,
+          "sha256": "0bf9e7553d2d07d28a42a68725f004ec207cd27444d903250f4ec3fb093b17bd"
+        },
+        {
+          "name": ".rsrc",
+          "rva": "00046000",
+          "raw_bytes": 3072,
+          "sha256": "6f60d13c248b4e60cae6469c67fcb64d04cad72e671e5ce75e63cd5faac78930"
+        }
+      ]
+    },
+    "1.5.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.5.0.7z",
+      "archive_sha256": "de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f",
+      "member": "drivers/dgvoodoo/glide3x.dll",
+      "bytes": 83456,
+      "sha256": "541b3b367e2fecf6b982ffc1dc300960f3f2fdeeda203186b361fe3608e757c9",
+      "version_tables": [
+        {
+          "CompanyName": "D\u00e9g\u00e9",
+          "FileDescription": "dgVoodoo 2.51 Glide Wrapper (for Glide v3.10 Napalm)",
+          "FileVersion": "3.10.0.0",
+          "InternalName": "Glide3x.dll",
+          "LegalCopyright": "Copyright (C) 2013-2016",
+          "OriginalFilename": "Glide3x.dll",
+          "ProductName": "dgVoodoo",
+          "ProductVersion": "2.5.1.0"
+        }
+      ],
+      "wip_ascii_count": 1,
+      "wip_utf16le_count": 0,
+      "sections": [
+        {
+          "name": ".MPRESS1",
+          "rva": "00001000",
+          "raw_bytes": 72704,
+          "sha256": "12266c62565615b53b5954599d0256af211882306742f9ff1e66d272d9476443"
+        },
+        {
+          "name": ".MPRESS2",
+          "rva": "00044000",
+          "raw_bytes": 7168,
+          "sha256": "b2f6869bfead638b421542d73f83fa2ca964be0d778f0566efe83d01ef748aa7"
+        },
+        {
+          "name": ".rsrc",
+          "rva": "00046000",
+          "raw_bytes": 3072,
+          "sha256": "03b048eff4372310d57cb87e7caca0ba0bcbe5de688ae3b68bb87ab3dc06befd"
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "identical_files": false,
+    "size_delta": 1536,
+    "product_version_equal": true,
+    "file_version_equal": true
+  },
+  "limits": [
+    "Version resources identify packaged claims,not authenticated upstream build ancestry or complete semantics.",
+    "WIP16 build identity unverified;absence of WIP literals does not disprove vendor attribution.",
+    "Different bytes/sizes with equal versions do not identify changed wrapper behavior.",
+    "No DLL/API/game execution,installation or executable/Ghidra mutation."
+  ]
+}
