@@ -8134,7 +8134,7 @@
         "changed_bytes": 116,
         "role": "Original camera dispatcher stub/epilogue tail replaced byNOPs; Modern direct table dispatch separately mapped",
         "report": "analysis/original-modern-projection.md",
-        "report_sha256": "c3bc0c48f0aac0dab05a1509e58348c2a42befda5021e3f0c734b86cbf533575",
+        "report_sha256": "31e74c0d71f0d6574243b9d3baa92facc38bddd641823644a0cb44dbf769fd72",
         "status": "Byte partition verified; semantic claims retain linked-report scope"
       },
       {

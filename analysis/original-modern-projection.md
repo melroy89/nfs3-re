@@ -400,3 +400,23 @@ This closes the hidden-EDX-clobber hypothesis for the inspected counter writer a
 The [CCM admission follow-up](ccm-camera-contract.md#positive-file-counts-do-not-exclude-the-type8-fallback) rechecks all eight current loose-file identities/extents and the retained complete selector/helper chain. Positive count still permits distance rejection and a selected-candidate orientation rejection without retry. The orientation gate consumes a binary32 dot-result store but compares its raw DWORD with signed integer threshold3ecccccdh; ordinary floating comparison is not a universal replacement for exceptional bit patterns.
 
 This prevents an unsupported inactivity shortcut: nonempty supplied CCM files do not by themselves exclude the fallback that publishes type8. Loaded geometry keys, actual selection and upstream/x87 state remain unverified. The capture-source producer/lifetime and visible horizon remain unresolved; no runtime or instruction probes were used. Reuse the detailed CCM contract rather than duplicating its arithmetic here.
+
+
+## Historical153 to160 restore removes integer stores, not float centre mapping
+
+The [historical restore audit](evidence/audits/projection-restore-history.json), reproduced with `python3 analysis/scripts/audit_projection_restore_history.py`, reuses the pinned153/160 archive/EXE identities from the language and official-baseline manifests. Complete type8 restore `004213b0..00421441` differs in75 bytes, all inside `004213d4..00421430`. The prior type8 admission and following bookkeeping are retained in this span.
+
+|Retained float source |Destination in both153/160 |
+|---|---|
+|`005e1020` |`0056009c` |
+|`005e1038` |`005600a0` |
+|`005e102c` |`005600a4` |
+|`005e1030` |`005600a8` |
+
+153 batches four FLDs and uses FXCH/pop scheduling;160 interleaves each load/store. Both have the same selected source/destination mapping. This is not full machine-state equivalence for exceptional x87 values, exception timing or flags.
+
+160 removes the accompanying legacy integer stores: `005e10a0→0056443c`, `005e1034→00564440`, `005e1024→00564434` and `005e1028→00564438`. At `00421404`, a jump skips42 NOP bytes to the retained bookkeeping at `00421430`. Thus the previously documented original/final removal can now be dated to153→160 for this local path.
+
+The complete272-byte float projection builder `004bf260..004bf370` and662-byte consumer `0041bc90..0041bf26` are byte-identical153/160. Their unchanged centre formula and reads are not the new horizon-offset mechanism. Different dimensions, angle interfaces, camera orientation and other state can still change output.
+
+**MP160-003 remains unresolved:** this dates a concrete local implementation removal, but does not recover the float-source capture writer/lifetime or establish the advertised centred horizon. Do not interpret an unmodified local float mapping as proof that all camera inputs, call ordering or rendered results match. Next follow capture provenance and orientation changes; repeating these exact builder/consumer comparisons will not resolve that gap. No target instructions or game/Ghidra writes were performed.

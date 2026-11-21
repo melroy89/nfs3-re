@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "b7a84d2f03271ee5acd7058c0763efba3ddfc41d683556764af1574dbd71ad04"
+      "sha256": "f7bc3dd4ecb046fdd5a65085172996cf56efea69a0cf3709f0bc60f1dfeb0199"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -309,7 +309,7 @@
     },
     {
       "path": "analysis/original-modern-projection.md",
-      "sha256": "c3bc0c48f0aac0dab05a1509e58348c2a42befda5021e3f0c734b86cbf533575"
+      "sha256": "31e74c0d71f0d6574243b9d3baa92facc38bddd641823644a0cb44dbf769fd72"
     },
     {
       "path": "analysis/original-modern-race-dialog.md",
@@ -1529,6 +1529,7 @@
             "004213d4",
             "004213e6",
             "004213f2",
+            "00421404",
             "00421430"
           ]
         }
