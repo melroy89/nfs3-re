@@ -407,3 +407,12 @@ Those zero ordinals select Track default (Rock or Techno) and Random
 without writing either ordinal. This comparison describes the local
 reset helpers. Earlier full-block initialization and later writes
 remain separate from the observed stores.
+
+Both packaged releases also have identical bytes at
+`00472a22..00472a34`. After the size match, they clear EAX and jump
+to the config read path at `00472a5b`, skipping the space formerly
+used by the original executable timestamp check. An older config
+timestamp alone therefore does not trigger the original deletion
+route at this site. This narrows the saved ordinal question to the
+loaded contents and their later consumers.
+[Configuration loader comparison](original-modern-config-loading.md).

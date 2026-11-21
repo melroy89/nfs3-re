@@ -303,8 +303,8 @@
     },
     {
       "path": "analysis/original-modern-music-selection.md",
-      "sha256": "595ee62cf250e179b5963d0a0b5ecca333fa018946cad0b764bfb839902adb88",
-      "relative_links": 26
+      "sha256": "b7b1807c41b2c4d454544251c9f59e4a4540c98de85d58548fb5140d98e4bf59",
+      "relative_links": 27
     },
     {
       "path": "analysis/original-modern-music-start.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3108,
+  "relative_link_count": 3109,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
