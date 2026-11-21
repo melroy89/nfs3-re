@@ -207,3 +207,20 @@ retained producer bytes, output choice, arithmetic and fallback. All other
 writers/aliases, API failure state, valid surface fields, runtime memory,
 selected-record provenance and actual allocation/render results remain
 unverified. No DLL, query, graphics API, game or instruction probe was executed.
+
+
+## Historical131 to140 mode count and depth-key changes
+
+The [historical audit](evidence/audits/dx5-mode-history.json), reproduced with `python3 analysis/scripts/audit_dx5_mode_history.py`, pins author-hosted131 `drivers/dx5/dx5.dll` and140 `drivers/dx5/dx5a.dll`. Their member hashes are respectively `f7f1d79336125c3bac457735939abd78b16930c9341db52280f54d3bf2937c04` and `ad46a5b43871be8cc187da11f55b6f4a13b2ba4750baf3649324f12a0127ebb6`. The complete140 callback matches the official-final callback discussed above.
+
+| Mechanism |131 |140 |
+|---|---|---|
+|New-key count guard |Unsigned count≥30 rejects (`60001808`) |Unsigned count≥100 rejects (`60001804`) |
+|Two initialization clear requests |1200 bytes at `60001b80`/`600021da` |4000 bytes at the same sites |
+|Matching width/height, stored depth differs |At `6000181a`, unsigned stored depth>incoming rejects; otherwise overwrites that same row |At `60001816`, unequal depth continues scanning for another match or empty row |
+|640×480 depth special case |Forces stored depth16, then classifier3 may override to15 |Forced16 block removed; retains incoming raw depth except classifier3→15 |
+|Pixel classifier |Complete `600025f0..600026b1` |Byte-identical |
+
+For otherwise admissible same-size inputs, the new exact raw-depth key allows distinct depth records instead of the earlier replace/reject policy. The comparison precedes classifier3's stored-depth15 conversion; do not silently normalize that ordering. The minimum640×480 dimension gate already exists in131.
+
+**MP140-039 gains partial static support:** the30→100 threshold and depth-key mechanism are verified at131→140. This does not mean131 lacked every16-bit mode: its retained classifier and fixed-depth path already permit such records. Nor does100 mean100 visible resolutions; count seeding, reserved records, duplicates, consumers and actual API catalog matter. Clear requests establish the requested extent, not universal allocation/mapping safety. Device activation and rendered16-bit output remain untested. No DLL/API/target instructions were executed or executable/Ghidra state changed.
