@@ -33,6 +33,22 @@ call path in **both** baselines. It also compares the changed drivetrain truncat
 complete bodies.176 saved entries per file include174 equal ranges, but111 indirect sites
 and one nonentry direct target remain unexpanded; this is not complete transitive CW ownership.
 
+## Outside-function documentation coverage
+
+The [outside-function index](original-modern-outside-function-index.md) inventories
+337 changed intervals and 21,926 differing bytes. Matching exact interval boundaries
+in its linked explanation rows to the JSON inventory identifies 41 intervals
+containing 9,431 differing bytes. The other 296 intervals contain 12,495 differing
+bytes. These counts measure direct navigation from the index. Some remaining
+intervals already have partial notes or links for subranges, and a linked row
+can still have open semantic questions.
+
+Ranking the intervals without an exact linked row by changed Modern bytes other
+than NOP or zero puts `0045cb46..0045d7ad` (71 such bytes),
+`0043773d..0043778c` (66), and `004a3938..004a3984` (51) first.
+These are candidates for matching against existing research before assigning
+new meaning to the changes.
+
 ## Latest bounded reproducibility checkpoint
 
 The [five-audit checkpoint](evidence/validation/early-hud-package-worker-checkpoint.json) reviews `6e5e9dc`: **10/10 static runs** reproduce five committed outputs (early HUD, wrapper packages, race-entry guard/registrar, input-worker/creator and block relocation). **12 protected artifacts and12 raw exports** retain prior hashes. Reproduce with `python3 analysis/scripts/check_early_hud_package_worker.py`. This closes repeatability/preservation for those follow-ups, not semantic independence, live Ghidra readback, runtime behavior or the full comparison.
