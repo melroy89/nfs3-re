@@ -16,6 +16,8 @@ The [eleven-audit checkpoint](evidence/validation/renderer-loading-menu-checkpoi
 
 The subsequent [texture extent history audit](original-modern-texture-limits.md#historical-track-extent-and-experimental-setting-are-separate-changes) directly dates the140→150 track argument128→256 and150→151 configurable setting/wrapper. The151 wrapper overrides a retained caller immediate128, preventing a misleading regression interpretation. MP150-013's beta-only claim remains vendor-only because no beta is inspected. This new audit is outside these22 checkpoint runs.
 
+The subsequent [historical clock audit](original-modern-clock-source.md#historical-clock-boundary-is152-to153) dates all16 known clock calls to152→153 and reproduces timer-body equality after only call-operand changes. MP153-012's API boundary is supported; accuracy and MP153-014's distinct startup-failure cause remain unverified. This new audit is outside these22 checkpoint runs.
+
 Current catalogue remains **54 vendor-only,56 bounded-static,180 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
 
 

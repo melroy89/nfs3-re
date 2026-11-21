@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "2ad6c37c6ca2f4735160e5102bb371dc58edc4d72c6c77f91d8de8edc24434f9"
+      "sha256": "37d1f43f5139e7e9cf17f61403c8937fce8dc64311baae318c561475e5d9fbc0"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -49,7 +49,7 @@
     },
     {
       "path": "analysis/original-modern-clock-source.md",
-      "sha256": "2b712fb851510ad069ba0cdd38d35d188cd34e0fc9fba499e1681c6c8b7bc424"
+      "sha256": "ba5c83fc336b71adb9a079cecec07978383f8f6218a508135aba0b3cdad0b25f"
     },
     {
       "path": "analysis/original-modern-colour-control.md",
@@ -6996,8 +6996,7 @@
           "addresses": [
             "0048eb90",
             "0048eb97",
-            "0048ebe4",
-            "0048ec3c"
+            "0048ebe4"
           ]
         },
         {
@@ -7033,8 +7032,7 @@
           "addresses": [
             "0048ed30",
             "0048ed70",
-            "0048ed8e",
-            "0048ee26"
+            "0048ed8e"
           ]
         }
       ]
@@ -7065,13 +7063,11 @@
           "entry_mentioned": true,
           "addresses": [
             "0048eff0",
-            "0048f06f",
             "0048f075",
             "0048f0d7",
             "0048f13d",
             "0048f160",
-            "0048f17b",
-            "0048f1e4"
+            "0048f17b"
           ]
         },
         {

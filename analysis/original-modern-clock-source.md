@@ -40,9 +40,9 @@ The clock switch is consequently broader than a single frame counter. This does 
 
 For these complete saved function-body ranges, the evidence script substitutes `00534664` for `00534568` **only at the identified call operands in a temporary comparison buffer**. It then requires exact byte equality with Modern:
 
-- `0048eb90..0048ec3c`: two call operands.
-- `0048ed30..0048ee26`: two call operands.
-- `0048eff0..0048f06f` plus `0048f075..0048f1e4`: three call operands.
+- `0048eb90..0048ec3d` (exclusive end): two call operands.
+- `0048ed30..0048ee27` (exclusive end): two call operands.
+- `0048eff0..0048f070` plus `0048f075..0048f1e5` (exclusive ends): three call operands.
 
 No executable is patched. This proves that the other instructions in those ranges are retained, rather than inferring a scheduler rewrite from a changed function hash.
 
@@ -61,3 +61,15 @@ For reconstruction/native-port work, preserve the 32-bit arithmetic and each cal
 ## Next evidence
 
 The separate [loading timing comparison](original-modern-loading-timing.md) follows a caller that changes beyond its clock source. Remaining work includes frame-pacing/simulation consumers, all indirect clock paths, actual timer resolution under the chosen OS/Wine, and controlled compatibility tests if required. Clock API agreement alone does not establish multiplayer or replay equivalence.
+
+## Historical clock boundary is152 to153
+
+The [historical clock audit](evidence/audits/clock-source-history.json), reproduced with `python3 analysis/scripts/audit_clock_source_history.py`, pins the author-hosted152/153 archive and EXE hashes. It reuses the existing16-site list and timer-range definitions rather than conducting another unrelated clock search.
+
+All16 listed call sites target IAT00534568 (`KERNEL32.dll!GetTickCount`) in152 and00534664 (`WINMM.dll!timeGetTime`) in153. The shared reader004f2790 loses its redundant CS prefix as in the final comparison above. The same four disjoint timer ranges, representing the three functions above, are otherwise byte-identical after changing only the seven identified IAT operands within them. Exact exclusive endpoints and per-build hashes are retained in the manifest; the earlier range list now uses the script's exclusive-end convention consistently.
+
+Normalized normal-import sets differ only by added `WINMM.dll!timeGetTime`; no names are removed. GetTickCount remains imported. This does not exclude delay/dynamic dependencies, prove which remaining imports execute or identify every clock alias. The change is not merely a new unused import: each retained site independently verifies its indirect-call operand against the corresponding import entry.
+
+**MP153-012 now has a directly verified historical boundary** for its API replacement, supplementing the original/final comparison. Precision, accuracy, jitter, scheduling and rollover outcomes remain unmeasured. The unchanged surrounding instructions still consume deliberately changed clock values, so byte normalization is not a behavioral equivalence claim.
+
+**MP153-014 remains vendor-only.** Its vague startup-failure description supplies no causal link to this clock change. The import delta and neighboring release bullet must not be promoted into evidence of a startup repair. A specific changed startup branch and affected failure scenario are still required. This audit executes no game, clock API, target instructions or compiler and changes no executable/database bytes.
