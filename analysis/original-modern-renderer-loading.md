@@ -477,6 +477,13 @@ At `6000a6f8..6000a707`, the DLL loads object `60058d9c`, pushes value0 and stat
 
 The same150 dispatcher maps THRASH selector5 through table index5 to `60004b6e`. That branch compares EBX with EDX, selects value1 or0, and calls wrapper `60008a10` with state1Ah. The wrapper reaches the same object's vtable+50h after optional setup/flush work. The selector branch's complete input/EDX provenance and EXE callers remain unqualified here; it demonstrates an alternative request path, not an always-disabled invariant.
 
-The zero-request slice does not test the API result. Its enclosing setup block's entry/callers, all reset routes, subsequent state overrides and actual device output remain follow-up requirements before claiming the advertised default throughout rendering. No original-driver dithering comparison or Motor City Online ancestry is established. The static audit made no DLL/API/target-instruction calls and no Ghidra changes.
+The zero-request slice does not test the API result. The initializer follow-up below identifies its entry and one direct caller. Parent/export reachability, all reset routes, subsequent state overrides and actual device output remain follow-up requirements before claiming the advertised default throughout rendering. No original-driver dithering comparison or Motor City Online ancestry is established. The static audit made no DLL/API/target-instruction calls and no Ghidra changes.
 
 Header inputs are cached under ignored `analysis/captures/modern-differences/dx7-api-headers/`; the manifest records source URLs and exact hashes. They are inspection inputs, not a newly installed SDK or toolchain.
+
+
+### Disable request is on the checked initializer's normal path
+
+The expanded [request audit](evidence/audits/dx7-dither-requests.json) identifies entry `6000a490`, directly called at `60009ec0`. Its complete aligned prefix through `6000a707` has seven local branches; each is forward and rejoins no later than `6000a6f8`, the disable-request start. There is no local early RET or indirect jump in this prefix. Consequently, **if preceding calls return normally**, entry reaches the DITHERENABLE0 request. A fault or nonreturning external/helper call is not excluded by this local argument.
+
+The wider setup sequence includes calls through the same device object's vtable+14h near its entry and+18h at `6000aa2a`, ending with RET at `6000aa3d`; the audit retains the aligned tail. This strengthens the interpretation of a setup sequence, without declaring every intervening indirect target, capability branch or state mutation understood. The full parent routine/export admission leading to `60009ec0`, all initializer callers and later selector5 overrides remain open. MP150-029 stays partial: normal-path reachability within this initializer is verified, while permanent state and rendered dithering are not.

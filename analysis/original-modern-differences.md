@@ -1233,3 +1233,8 @@ The [archive comparison](original-modern-renderer-loading.md#dx7-provider-is-add
 ## DX7 dithering claim now has a concrete request witness
 
 The [150 provider/SDK audit](original-modern-renderer-loading.md#dx7-contains-an-explicit-dithering-disable-request) verifies an explicit DITHERENABLE0 request through the selected IDirect3DDevice7 object, plus a selector5 alternative request branch. MP150-029 advances vendor-only→partial. Enclosing setup reachability, complete default/reset lifetime, later overrides and actual output remain unverified; current labels are81 vendor-only/54 bounded-static/153 partial/2 unresolved.
+
+
+## DX7 dithering-disable initializer path traced
+
+The [initializer follow-up](original-modern-renderer-loading.md#disable-request-is-on-the-checked-initializers-normal-path) identifies entry6000a490 and direct call60009ec0. Seven forward prefix branches converge before the disable request, so it is reached if preceding calls return normally. Parent/export admission, later overrides and device output remain open; MP150-029 remains partial.
