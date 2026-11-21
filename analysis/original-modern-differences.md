@@ -693,7 +693,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **68 Claimed, 55 Static, 165 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **67 Claimed, 55 Static, 166 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -869,7 +869,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-038 | DX6 thrash driver outputs 16bpp resolutions and sorts them. | Claimed |
 | MP140-039 | DX5 thrash driver outputs 16bpp resolutions, limit of resolutions count is expanded from 30 to 100. | Partial |
 | MP140-040 | Refactoring of the thrash driver initialization code. | Partial |
-| MP140-041 | No more hardcoded environment variables for the 3dfx Voodoo. | Claimed |
+| MP140-041 | No more hardcoded environment variables for the 3dfx Voodoo. | Partial |
 | MP140-042 | Instead of this the game sets environment variables from the [ENV] section of the current thrash.ini file. | Static |
 | MP140-043 | The nGlide uses general voodoo2a.dll now, its settings can be changed using the [ENV] section of the thrash.ini. | Claimed |
 | MP140-044 | Added separate Glide3x thrash driver for using on the real 3dfx Voodoo hardware. | Claimed |

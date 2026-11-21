@@ -1,0 +1,265 @@
+{
+  "kind": "static-glide-environment-history",
+  "versions": {
+    "1.3.1": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.1.7z",
+      "archive_sha256": "6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934",
+      "exe_sha256": "199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664",
+      "captures": [
+        {
+          "name": "hardcoded_request_block",
+          "start": "004f8953",
+          "end_exclusive": "004f8a51",
+          "hex": "baacd75400b8b0d7540031dbe8ec010000baacd75400b8c0d7540031dbe8db010000bb01000000bad8d75400b8dcd75400e8c7010000bb01000000baf0d75400b8f4d75400e8b3010000bb01000000baf0d75400b800d85400e89f010000bb01000000baf0d75400b80cd85400e88b010000bb01000000baf0d75400b818d85400e877010000bb01000000bad8d75400b824d85400e863010000bb01000000baf0d75400b834d85400e84f010000bb01000000baf0d75400b844d85400e83b010000bb01000000baf0d75400b854d85400e827010000bb01000000baf0d75400b864d85400e813010000bb01000000bad8d75400b870d85400e8ff000000",
+          "sha256": "10aba8fc07ac794ed0a4171721d453a094682bdf46b878307a932ff920c26ddd",
+          "disassembly": [
+            "4f8953:\tba ac d7 54 00       \tmov    edx,0x54d7ac",
+            "4f8958:\tb8 b0 d7 54 00       \tmov    eax,0x54d7b0",
+            "4f895d:\t31 db                \txor    ebx,ebx",
+            "4f895f:\te8 ec 01 00 00       \tcall   0x4f8b50",
+            "4f8964:\tba ac d7 54 00       \tmov    edx,0x54d7ac",
+            "4f8969:\tb8 c0 d7 54 00       \tmov    eax,0x54d7c0",
+            "4f896e:\t31 db                \txor    ebx,ebx",
+            "4f8970:\te8 db 01 00 00       \tcall   0x4f8b50",
+            "4f8975:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f897a:\tba d8 d7 54 00       \tmov    edx,0x54d7d8",
+            "4f897f:\tb8 dc d7 54 00       \tmov    eax,0x54d7dc",
+            "4f8984:\te8 c7 01 00 00       \tcall   0x4f8b50",
+            "4f8989:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f898e:\tba f0 d7 54 00       \tmov    edx,0x54d7f0",
+            "4f8993:\tb8 f4 d7 54 00       \tmov    eax,0x54d7f4",
+            "4f8998:\te8 b3 01 00 00       \tcall   0x4f8b50",
+            "4f899d:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f89a2:\tba f0 d7 54 00       \tmov    edx,0x54d7f0",
+            "4f89a7:\tb8 00 d8 54 00       \tmov    eax,0x54d800",
+            "4f89ac:\te8 9f 01 00 00       \tcall   0x4f8b50",
+            "4f89b1:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f89b6:\tba f0 d7 54 00       \tmov    edx,0x54d7f0",
+            "4f89bb:\tb8 0c d8 54 00       \tmov    eax,0x54d80c",
+            "4f89c0:\te8 8b 01 00 00       \tcall   0x4f8b50",
+            "4f89c5:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f89ca:\tba f0 d7 54 00       \tmov    edx,0x54d7f0",
+            "4f89cf:\tb8 18 d8 54 00       \tmov    eax,0x54d818",
+            "4f89d4:\te8 77 01 00 00       \tcall   0x4f8b50",
+            "4f89d9:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f89de:\tba d8 d7 54 00       \tmov    edx,0x54d7d8",
+            "4f89e3:\tb8 24 d8 54 00       \tmov    eax,0x54d824",
+            "4f89e8:\te8 63 01 00 00       \tcall   0x4f8b50",
+            "4f89ed:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f89f2:\tba f0 d7 54 00       \tmov    edx,0x54d7f0",
+            "4f89f7:\tb8 34 d8 54 00       \tmov    eax,0x54d834",
+            "4f89fc:\te8 4f 01 00 00       \tcall   0x4f8b50",
+            "4f8a01:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f8a06:\tba f0 d7 54 00       \tmov    edx,0x54d7f0",
+            "4f8a0b:\tb8 44 d8 54 00       \tmov    eax,0x54d844",
+            "4f8a10:\te8 3b 01 00 00       \tcall   0x4f8b50",
+            "4f8a15:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f8a1a:\tba f0 d7 54 00       \tmov    edx,0x54d7f0",
+            "4f8a1f:\tb8 54 d8 54 00       \tmov    eax,0x54d854",
+            "4f8a24:\te8 27 01 00 00       \tcall   0x4f8b50",
+            "4f8a29:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f8a2e:\tba f0 d7 54 00       \tmov    edx,0x54d7f0",
+            "4f8a33:\tb8 64 d8 54 00       \tmov    eax,0x54d864",
+            "4f8a38:\te8 13 01 00 00       \tcall   0x4f8b50",
+            "4f8a3d:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f8a42:\tba d8 d7 54 00       \tmov    edx,0x54d7d8",
+            "4f8a47:\tb8 70 d8 54 00       \tmov    eax,0x54d870",
+            "4f8a4c:\te8 ff 00 00 00       \tcall   0x4f8b50"
+          ]
+        },
+        {
+          "name": "environment_adapter_prefix",
+          "start": "004f8b50",
+          "end_exclusive": "004f8bc3",
+          "hex": "5156575583ec1089c789d6895c240cba02000000bb0100000089542404891c2485f67419803e007514837c240c00750b89f8e8495f010085c0750231f6837c240c00750b89f8e8355f010085c0751756572eff15dc45530085c0750ab8ffffffffe9270100008b5c240c89f289f8e825010000",
+          "sha256": "d1e7b6452b571b3c782ada309a2a14c5696a1c0c7ba7d09a5ccffee118633b89",
+          "disassembly": [
+            "4f8b50:\t51                   \tpush   ecx",
+            "4f8b51:\t56                   \tpush   esi",
+            "4f8b52:\t57                   \tpush   edi",
+            "4f8b53:\t55                   \tpush   ebp",
+            "4f8b54:\t83 ec 10             \tsub    esp,0x10",
+            "4f8b57:\t89 c7                \tmov    edi,eax",
+            "4f8b59:\t89 d6                \tmov    esi,edx",
+            "4f8b5b:\t89 5c 24 0c          \tmov    DWORD PTR [esp+0xc],ebx",
+            "4f8b5f:\tba 02 00 00 00       \tmov    edx,0x2",
+            "4f8b64:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "4f8b69:\t89 54 24 04          \tmov    DWORD PTR [esp+0x4],edx",
+            "4f8b6d:\t89 1c 24             \tmov    DWORD PTR [esp],ebx",
+            "4f8b70:\t85 f6                \ttest   esi,esi",
+            "4f8b72:\t74 19                \tje     0x4f8b8d",
+            "4f8b74:\t80 3e 00             \tcmp    BYTE PTR [esi],0x0",
+            "4f8b77:\t75 14                \tjne    0x4f8b8d",
+            "4f8b79:\t83 7c 24 0c 00       \tcmp    DWORD PTR [esp+0xc],0x0",
+            "4f8b7e:\t75 0b                \tjne    0x4f8b8b",
+            "4f8b80:\t89 f8                \tmov    eax,edi",
+            "4f8b82:\te8 49 5f 01 00       \tcall   0x50ead0",
+            "4f8b87:\t85 c0                \ttest   eax,eax",
+            "4f8b89:\t75 02                \tjne    0x4f8b8d",
+            "4f8b8b:\t31 f6                \txor    esi,esi",
+            "4f8b8d:\t83 7c 24 0c 00       \tcmp    DWORD PTR [esp+0xc],0x0",
+            "4f8b92:\t75 0b                \tjne    0x4f8b9f",
+            "4f8b94:\t89 f8                \tmov    eax,edi",
+            "4f8b96:\te8 35 5f 01 00       \tcall   0x50ead0",
+            "4f8b9b:\t85 c0                \ttest   eax,eax",
+            "4f8b9d:\t75 17                \tjne    0x4f8bb6",
+            "4f8b9f:\t56                   \tpush   esi",
+            "4f8ba0:\t57                   \tpush   edi",
+            "4f8ba1:\t2e ff 15 dc 45 53 00 \tcall   DWORD PTR cs:0x5345dc",
+            "4f8ba8:\t85 c0                \ttest   eax,eax",
+            "4f8baa:\t75 0a                \tjne    0x4f8bb6",
+            "4f8bac:\tb8 ff ff ff ff       \tmov    eax,0xffffffff",
+            "4f8bb1:\te9 27 01 00 00       \tjmp    0x4f8cdd",
+            "4f8bb6:\t8b 5c 24 0c          \tmov    ebx,DWORD PTR [esp+0xc]",
+            "4f8bba:\t89 f2                \tmov    edx,esi",
+            "4f8bbc:\t89 f8                \tmov    eax,edi",
+            "4f8bbe:\te8 25 01 00 00       \tcall   0x4f8ce8"
+          ]
+        }
+      ]
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "exe_sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "captures": [
+        {
+          "name": "replacement_setup_prefix",
+          "start": "004f8a50",
+          "end_exclusive": "004f8a84",
+          "hex": "535231c0e8e76cfeff833d644356000075258b1d8c4356008b1588435600a184435600e858ff0000833d644356000075065a5bc3",
+          "sha256": "4962c6d4f38504d8c4a49b95d478098f647be459ec3a0a8e9d8a11725c84d066",
+          "disassembly": [
+            "4f8a50:\t53                   \tpush   ebx",
+            "4f8a51:\t52                   \tpush   edx",
+            "4f8a52:\t31 c0                \txor    eax,eax",
+            "4f8a54:\te8 e7 6c fe ff       \tcall   0x4df740",
+            "4f8a59:\t83 3d 64 43 56 00 00 \tcmp    DWORD PTR ds:0x564364,0x0",
+            "4f8a60:\t75 25                \tjne    0x4f8a87",
+            "4f8a62:\t8b 1d 8c 43 56 00    \tmov    ebx,DWORD PTR ds:0x56438c",
+            "4f8a68:\t8b 15 88 43 56 00    \tmov    edx,DWORD PTR ds:0x564388",
+            "4f8a6e:\ta1 84 43 56 00       \tmov    eax,ds:0x564384",
+            "4f8a73:\te8 58 ff 00 00       \tcall   0x5089d0",
+            "4f8a78:\t83 3d 64 43 56 00 00 \tcmp    DWORD PTR ds:0x564364,0x0",
+            "4f8a7f:\t75 06                \tjne    0x4f8a87",
+            "4f8a81:\t5a                   \tpop    edx",
+            "4f8a82:\t5b                   \tpop    ebx",
+            "4f8a83:\tc3                   \tret"
+          ]
+        }
+      ]
+    }
+  },
+  "selected_old_requests": [
+    {
+      "name": "SST_VIDEO_24BPP",
+      "value_literal": "",
+      "name_load": "004f8958",
+      "name_address": "0054d7b0",
+      "ascii_occurrences131": 1,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "FX_GLIDE_SHAMELESS_PLUG",
+      "value_literal": "",
+      "name_load": "004f8969",
+      "name_address": "0054d7c0",
+      "ascii_occurrences131": 1,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "FX_GLIDE_NO_SPLASH",
+      "value_literal": "1",
+      "name_load": "004f897f",
+      "name_address": "0054d7dc",
+      "ascii_occurrences131": 1,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SST_RGAMMA",
+      "value_literal": "1.0",
+      "name_load": "004f8993",
+      "name_address": "0054d7f4",
+      "ascii_occurrences131": 2,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SST_GGAMMA",
+      "value_literal": "1.0",
+      "name_load": "004f89a7",
+      "name_address": "0054d800",
+      "ascii_occurrences131": 2,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SST_BGAMMA",
+      "value_literal": "1.0",
+      "name_load": "004f89bb",
+      "name_address": "0054d80c",
+      "ascii_occurrences131": 2,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SST_GAMMA",
+      "value_literal": "1.0",
+      "name_load": "004f89cf",
+      "name_address": "0054d818",
+      "ascii_occurrences131": 2,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SST_DUALHEAD",
+      "value_literal": "1",
+      "name_load": "004f89e3",
+      "name_address": "0054d824",
+      "ascii_occurrences131": 1,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SSTV2_RGAMMA",
+      "value_literal": "1.0",
+      "name_load": "004f89f7",
+      "name_address": "0054d834",
+      "ascii_occurrences131": 2,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SSTV2_GGAMMA",
+      "value_literal": "1.0",
+      "name_load": "004f8a0b",
+      "name_address": "0054d844",
+      "ascii_occurrences131": 2,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SSTV2_BGAMMA",
+      "value_literal": "1.0",
+      "name_load": "004f8a1f",
+      "name_address": "0054d854",
+      "ascii_occurrences131": 2,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SSTV2_GAMMA",
+      "value_literal": "1.0",
+      "name_load": "004f8a33",
+      "name_address": "0054d864",
+      "ascii_occurrences131": 2,
+      "ascii_occurrences140": 0
+    },
+    {
+      "name": "SSTV2_DUALHEAD",
+      "value_literal": "1",
+      "name_load": "004f8a47",
+      "name_address": "0054d870",
+      "ascii_occurrences131": 1,
+      "ascii_occurrences140": 0
+    }
+  ],
+  "limits": [
+    "Selected131 setup block and absence of13 named ASCII literals in140;not exhaustive computed-name/environment-write exclusion.",
+    "Empty value literal can become NULL in adapter;environment-existing/overwrite flags and CRT bookkeeping affect outcomes.",
+    "Replacement prefix omits these local requests but complete caller correspondence,all legacy paths and inherited/provider environment remain unqualified.",
+    "No API/environment/target instruction execution or executable/database mutation."
+  ]
+}

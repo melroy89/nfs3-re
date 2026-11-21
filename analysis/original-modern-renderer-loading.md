@@ -509,3 +509,23 @@ The strongest current claim is therefore a verified export/setup call chain plus
 The expanded request audit now retains the complete `60003ca0..60003d64` dispatcher prefix. It initializes EDX to0 at `60003cb4`; the only other EDX reference in that prefix is a comparison, and there are no calls before the final table dispatch. EBX receives the payload at `60003d26`. Selector5's verified table entry reaches `60004b6e`, where EBX is compared with that zero: equal pushes0, otherwise pushes1, followed by state1Ah and the raw-state wrapper call.
 
 Thus the ordinary entry contract is **payload0→DITHERENABLE0; payload nonzero→DITHERENABLE1**. This resolves the earlier EDX-provenance limitation for this route. It does not demonstrate that the EXE actually invokes selector5 after setup, identify its caller input lifetime, or establish API success. A focused search did not identify such a caller; it is not an alias-aware or indirect-call completeness proof and supplies no absence claim. Full post-setup dithering lifetime remains unresolved; MP150-029 stays partial. No target execution or Ghidra edit occurred.
+
+
+## Historical131 to140 hardcoded Glide environment requests
+
+The [historical audit](evidence/audits/glide-environment-history.json), reproduced with `python3 analysis/scripts/audit_glide_environment_history.py`, pins author-hosted131/140 EXEs and retains disassembly plus exact name/value loads and calls for13 selected requests in131 setup block `004f8953..004f8a51`.
+
+|131 variable names |Value literal |Qualification |
+|---|---|---|
+|`SST_VIDEO_24BPP`, `FX_GLIDE_SHAMELESS_PLUG` |Empty string |Adapter can convert empty to NULL; do not call this a guaranteed value assignment |
+|`FX_GLIDE_NO_SPLASH` |`1` |Request, not observed provider acceptance |
+|`SST_RGAMMA`, `SST_GGAMMA`, `SST_BGAMMA`, `SST_GAMMA` |`1.0` |Four separate requests |
+|`SST_DUALHEAD` |`1` |Request only |
+|`SSTV2_RGAMMA`, `SSTV2_GGAMMA`, `SSTV2_BGAMMA`, `SSTV2_GAMMA` |`1.0` |Four separate requests |
+|`SSTV2_DUALHEAD` |`1` |Request only |
+
+All calls reach adapter `004f8b50`; its captured prefix binds imported SetEnvironmentVariableA at IAT `005345dc`, called at `004f8ba1`. It tests existing values/overwrite policy before that API call and has additional CRT bookkeeping outside this prefix. The first two selected calls use EBX0; the others use1. The caller's setup gates and environment contents therefore matter; a request is not an unconditional successful OS write.
+
+All13 named ASCII literals are absent from the140 EXE. The captured140 setup prefix `004f8a50..004f8a84` retains local initialization/call work without those explicit request sequences. This is partial support for **MP140-041**, rather than proof of every legacy setup path's correspondence or an exhaustive environment-writer census. Computed names, inherited values, provider-side settings and API outcomes remain unverified. The separately documented [selected-driver ENV reader](#5-driver-specific-configuration-before-loading) establishes a configurable mechanism; do not infer it clears inherited values or replaces every old write.
+
+This is a historical change within Modern, distinct from original EXE environment-based renderer selection. No environment variables were set and no target/API instructions, game or Ghidra writes were performed.
