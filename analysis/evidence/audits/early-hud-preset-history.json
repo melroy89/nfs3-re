@@ -6,6 +6,60 @@
       "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
       "member": "nfs3.exe",
       "sha256": "4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003",
+      "mode_publisher_capture": {
+        "start": "004483a0",
+        "end_exclusive": "004483ff",
+        "hex": "56575189c7e816ffffff31c9be2083a1003b0d189255007d0d3b3e74104181c614010000ebeb31c9be2083a100890d14bc6f00e804000000595f5ec3ad8b060faf4604034608bfe4d16f00a5a5a5bf18bc6f00390774078907e882d20300c3",
+        "disassembly": [
+          "4483a0:\t56                   \tpush   esi",
+          "4483a1:\t57                   \tpush   edi",
+          "4483a2:\t51                   \tpush   ecx",
+          "4483a3:\t89 c7                \tmov    edi,eax",
+          "4483a5:\te8 16 ff ff ff       \tcall   0x4482c0",
+          "4483aa:\t31 c9                \txor    ecx,ecx",
+          "4483ac:\tbe 20 83 a1 00       \tmov    esi,0xa18320",
+          "4483b1:\t3b 0d 18 92 55 00    \tcmp    ecx,DWORD PTR ds:0x559218",
+          "4483b7:\t7d 0d                \tjge    0x4483c6",
+          "4483b9:\t3b 3e                \tcmp    edi,DWORD PTR [esi]",
+          "4483bb:\t74 10                \tje     0x4483cd",
+          "4483bd:\t41                   \tinc    ecx",
+          "4483be:\t81 c6 14 01 00 00    \tadd    esi,0x114",
+          "4483c4:\teb eb                \tjmp    0x4483b1",
+          "4483c6:\t31 c9                \txor    ecx,ecx",
+          "4483c8:\tbe 20 83 a1 00       \tmov    esi,0xa18320",
+          "4483cd:\t89 0d 14 bc 6f 00    \tmov    DWORD PTR ds:0x6fbc14,ecx",
+          "4483d3:\te8 04 00 00 00       \tcall   0x4483dc",
+          "4483d8:\t59                   \tpop    ecx",
+          "4483d9:\t5f                   \tpop    edi",
+          "4483da:\t5e                   \tpop    esi",
+          "4483db:\tc3                   \tret",
+          "4483dc:\tad                   \tlods   eax,DWORD PTR ds:[esi]",
+          "4483dd:\t8b 06                \tmov    eax,DWORD PTR [esi]",
+          "4483df:\t0f af 46 04          \timul   eax,DWORD PTR [esi+0x4]",
+          "4483e3:\t03 46 08             \tadd    eax,DWORD PTR [esi+0x8]",
+          "4483e6:\tbf e4 d1 6f 00       \tmov    edi,0x6fd1e4",
+          "4483eb:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+          "4483ec:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+          "4483ed:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+          "4483ee:\tbf 18 bc 6f 00       \tmov    edi,0x6fbc18",
+          "4483f3:\t39 07                \tcmp    DWORD PTR [edi],eax",
+          "4483f5:\t74 07                \tje     0x4483fe",
+          "4483f7:\t89 07                \tmov    DWORD PTR [edi],eax",
+          "4483f9:\te8 82 d2 03 00       \tcall   0x485680",
+          "4483fe:\tc3                   \tret"
+        ]
+      },
+      "dimension_defaults_capture": {
+        "start": "00472566",
+        "end_exclusive": "0047257a",
+        "hex": "c705e4d16f0080020000c705e8d16f00e0010000",
+        "disassembly": [
+          "472566:\tc7 05 e4 d1 6f 00 80 \tmov    DWORD PTR ds:0x6fd1e4,0x280",
+          "47256d:\t02 00 00",
+          "472570:\tc7 05 e8 d1 6f 00 e0 \tmov    DWORD PTR ds:0x6fd1e8,0x1e0",
+          "472577:\t01 00 00"
+        ]
+      },
       "aspect_metadata": {
         "width_cell": "006fd1e4",
         "height_cell": "006fd1e8",
@@ -288,6 +342,60 @@
       "archive_sha256": "93b0ecffebb5e6a13ee4d7d3054c3b9dde53ca329d7e87516eaad8dd399a22ad",
       "member": "nfs3.exe",
       "sha256": "deac6f7f812d6a1981a3520666adbc9d4f78b9459b4d1eef76408f01729b0146",
+      "mode_publisher_capture": {
+        "start": "004483a0",
+        "end_exclusive": "004483ff",
+        "hex": "56575189c7e816ffffff31c9be2083a1003b0d189255007d0d3b3e74104181c614010000ebeb31c9be2083a100890d14bc6f00e804000000595f5ec3ad8b060faf4604034608bf20397a00a5a5a5bf18bc6f00390774078907e882d20300c3",
+        "disassembly": [
+          "4483a0:\t56                   \tpush   esi",
+          "4483a1:\t57                   \tpush   edi",
+          "4483a2:\t51                   \tpush   ecx",
+          "4483a3:\t89 c7                \tmov    edi,eax",
+          "4483a5:\te8 16 ff ff ff       \tcall   0x4482c0",
+          "4483aa:\t31 c9                \txor    ecx,ecx",
+          "4483ac:\tbe 20 83 a1 00       \tmov    esi,0xa18320",
+          "4483b1:\t3b 0d 18 92 55 00    \tcmp    ecx,DWORD PTR ds:0x559218",
+          "4483b7:\t7d 0d                \tjge    0x4483c6",
+          "4483b9:\t3b 3e                \tcmp    edi,DWORD PTR [esi]",
+          "4483bb:\t74 10                \tje     0x4483cd",
+          "4483bd:\t41                   \tinc    ecx",
+          "4483be:\t81 c6 14 01 00 00    \tadd    esi,0x114",
+          "4483c4:\teb eb                \tjmp    0x4483b1",
+          "4483c6:\t31 c9                \txor    ecx,ecx",
+          "4483c8:\tbe 20 83 a1 00       \tmov    esi,0xa18320",
+          "4483cd:\t89 0d 14 bc 6f 00    \tmov    DWORD PTR ds:0x6fbc14,ecx",
+          "4483d3:\te8 04 00 00 00       \tcall   0x4483dc",
+          "4483d8:\t59                   \tpop    ecx",
+          "4483d9:\t5f                   \tpop    edi",
+          "4483da:\t5e                   \tpop    esi",
+          "4483db:\tc3                   \tret",
+          "4483dc:\tad                   \tlods   eax,DWORD PTR ds:[esi]",
+          "4483dd:\t8b 06                \tmov    eax,DWORD PTR [esi]",
+          "4483df:\t0f af 46 04          \timul   eax,DWORD PTR [esi+0x4]",
+          "4483e3:\t03 46 08             \tadd    eax,DWORD PTR [esi+0x8]",
+          "4483e6:\tbf 20 39 7a 00       \tmov    edi,0x7a3920",
+          "4483eb:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+          "4483ec:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+          "4483ed:\ta5                   \tmovs   DWORD PTR es:[edi],DWORD PTR ds:[esi]",
+          "4483ee:\tbf 18 bc 6f 00       \tmov    edi,0x6fbc18",
+          "4483f3:\t39 07                \tcmp    DWORD PTR [edi],eax",
+          "4483f5:\t74 07                \tje     0x4483fe",
+          "4483f7:\t89 07                \tmov    DWORD PTR [edi],eax",
+          "4483f9:\te8 82 d2 03 00       \tcall   0x485680",
+          "4483fe:\tc3                   \tret"
+        ]
+      },
+      "dimension_defaults_capture": {
+        "start": "00472566",
+        "end_exclusive": "0047257a",
+        "hex": "c70520397a0080020000c70524397a00e0010000",
+        "disassembly": [
+          "472566:\tc7 05 20 39 7a 00 80 \tmov    DWORD PTR ds:0x7a3920,0x280",
+          "47256d:\t02 00 00",
+          "472570:\tc7 05 24 39 7a 00 e0 \tmov    DWORD PTR ds:0x7a3924,0x1e0",
+          "472577:\t01 00 00"
+        ]
+      },
       "aspect_metadata": {
         "width_cell": "007a3920",
         "height_cell": "007a3924",
@@ -663,6 +771,21 @@
       "modern_hex": "5f04d9470cdee1d95f0cc3d94708d827d8ced907d8c1d91fd94708dee1d95f08c3"
     }
   ],
+  "mode_publisher_contract": {
+    "source_records": "00a18320,stride114h;discardID then copy+4/+8/+c",
+    "120_destination": "006fd1e4",
+    "130_destination": "007a3920",
+    "all_other_publisher_bytes_equal": true,
+    "rebuild_gate": "Always copy three fields,then comparewrap32(field4*field8+fieldc)with006fbc18;changedkey storeskey and calls00485680.",
+    "default_dimensions": [
+      640,
+      480
+    ],
+    "limits": [
+      "Selected producer/default path only;not all writers/lifetimes or actual active mode.",
+      "Key collisions possible;not unconditional rebuild on every dimension change."
+    ]
+  },
   "changed_records": [
     {
       "profile": 0,
@@ -1945,7 +2068,7 @@
   "limits": [
     "Exhaustive for paired1152-byte preset tables,not all HUD code/data or vague release scope.",
     "WORD sources divide by1000 and adjacent pairs swap;deltas are not pixel movements.",
-    "Aspect block changes329 bytes,new dimension cells/half-pixel-style terms and six x87 live values;global producer meanings and rendered effects not established.",
+    "Aspect block changes329 bytes,new dimension cells/half-pixel-style terms and six x87 live values;selected publisher now established;all writers/lifetimes and rendered effects remain unverified.",
     "Retained converter/scaler bytes do not establish selected live profiles,later writes,all callers,x87 input state or rendered output.",
     "No target/API/instruction execution,compilation or binary/Ghidra mutation."
   ]

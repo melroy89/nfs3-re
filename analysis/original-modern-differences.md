@@ -1,6 +1,6 @@
 # Original versus Modern Patch: executable differences
 
-The [current texture/clock/speech/loader checkpoint](original-modern-audit-status.md#current-texture-clock-speech-and-loader-checkpoint--2026-11-21) reviews `b1b26ab`: **16/16 static reruns** reproduce eight evidence outputs, with12 protected files and12 raw exports unchanged. Its table separates concrete historical changes from missing baselines and runtime claims. The catalogue currently has41 vendor-only,57 bounded-static and192 partial entries; these are not distinct EXE-change counts or a completion percentage.
+The [current texture/clock/speech/loader checkpoint](original-modern-audit-status.md#current-texture-clock-speech-and-loader-checkpoint--2026-11-21) reviews `b1b26ab`: **16/16 static reruns** reproduce eight evidence outputs, with12 protected files and12 raw exports unchanged. Its table separates concrete historical changes from missing baselines and runtime claims. The catalogue currently has40 vendor-only,57 bounded-static and193 partial entries; these are not distinct EXE-change counts or a completion percentage.
 
 The [preceding renderer/loading/menu checkpoint](original-modern-audit-status.md#current-renderer-loading-and-menu-checkpoint--2026-11-21) reviews `ea2fc48`: **22/22 static reruns** reproduce11 evidence files, with12 protected artifacts and12 raw exports unchanged. Its compact table links the recent wrapper, reference-driver/debug, DX6, loading screenshot and menu findings to their remaining limitations. This is repeatability/preservation evidence, not complete difference coverage or runtime acceptance.
 
@@ -699,7 +699,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **41 Claimed, 57 Static, 192 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **40 Claimed, 57 Static, 193 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -993,7 +993,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-002 | All objects will be properly scaled for every aspect ratio and you will see them in correct proportions. | Partial |
 | MP100-003 | There is no unreasonable limits for maximum resolution anymore (e.g. for D3D it was 800×600), you can use almost every resolution which is supported by your system (e.g. 1920×1200). | Partial |
 | MP100-004 | Font size is choosed on the basis of screen height, not screen width. It prevents from choosing too big font for widescreen resolutions. | Partial |
-| MP100-005 | HUD will be completely recalculated with the purpose of different aspect ratio support when resolution is changed in settings. Besides the result looks more accurate than original one even on 4:3 resolutions. Files ./GameData/DashHud/*.POS are unnecessary now and can be removed. | Claimed |
+| MP100-005 | HUD will be completely recalculated with the purpose of different aspect ratio support when resolution is changed in settings. Besides the result looks more accurate than original one even on 4:3 resolutions. Files ./GameData/DashHud/*.POS are unnecessary now and can be removed. | Partial |
 | MP100-006 | HUD borders was reduced twice to look better on modern huge resolutions. Without this change they look too fat. | Partial |
 | MP100-007 | Compact cop's speeds table. Now it looks like the standard opponents list. | Partial |
 | MP100-008 | As a whole positions of all HUD elements were adjusted a little to look better on all supported resolutions. | Partial |
