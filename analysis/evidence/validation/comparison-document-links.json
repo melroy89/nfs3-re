@@ -168,8 +168,8 @@
     },
     {
       "path": "analysis/original-modern-frontend-page.md",
-      "sha256": "d566e770283cdbe2c6dd67136f36de2126f5089d5b03da068342ea7a72cd5774",
-      "relative_links": 15
+      "sha256": "80dbdcce14a17c0583b52a447a465fdbf92a8600645e60c16a0d777dca2f9525",
+      "relative_links": 16
     },
     {
       "path": "analysis/original-modern-frontend-sound.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3097,
+  "relative_link_count": 3098,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

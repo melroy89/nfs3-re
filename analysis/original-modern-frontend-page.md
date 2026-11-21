@@ -429,3 +429,14 @@ equal table values. It does not describe the default per-row movement.
 For example, row 0 stores (158, 138) in the original and (169, 116) in
 Modern. These are WORD coordinate writes. Row admission, later table
 writes, and screen placement remain separate evidence questions.
+
+The audited window `00559c6c..00559cbc` contains two adjacent 40-byte
+spans. Nine bytes differ in the first span and twelve in the second.
+All differences fall in the low WORD of a stride-four entry. The
+adjacency establishes ten entries before the second base, with the
+same ten rows sampled at the second base. A full second-table extent
+and a valid runtime index range still need separate evidence.
+The [force feedback initializer](original-modern-force-menu-layout.md#six-per-widget-layout-branches-are-skipped)
+also reads six rows from the original second span on its direct
+layout path. Modern skips those local writes, so the shared table
+deltas alone cannot predict positions for those controls.
