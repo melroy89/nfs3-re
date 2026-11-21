@@ -1,0 +1,172 @@
+{
+  "kind": "static-opponent-name-menu-history",
+  "versions": {
+    "1.3.1": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.1.7z",
+      "archive_sha256": "6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934",
+      "member": "fedata/menus/hud.mnu",
+      "member_sha256": "b8a5027627e5ebff964789fcc1ac132679d076745a9bcfe4aef8006ea67aef1b",
+      "matched_controls": {
+        "opponentNameButton": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentName",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascade": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentName",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonCOP": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentNamecop",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeCOP": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentNamecop",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonP1": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentName1",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeP1": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentName1",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonCOP_P1": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentNamecop1",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeCOP_P1": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentNamecop1",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonP2": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentName2",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeP2": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentName2",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonCOP_P2": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentNamecop2",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeCOP_P2": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentNamecop2",
+          "text": "kMenuHUDOpponent002"
+        }
+      }
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "member": "fedata/menus/hud.mnu",
+      "member_sha256": "6af22847e6795a552c9993183234cbcfc538eb61d56e91b2f5fbfc0f4bbf83fa",
+      "matched_controls": {
+        "opponentNameButton": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentName",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascade": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentName",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonCOP": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentNamecop",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeCOP": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentNamecop",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonP1": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentName1",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeP1": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentName1",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonCOP_P1": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentNamecop1",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeCOP_P1": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentNamecop1",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonP2": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentName2",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeP2": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentName2",
+          "text": "kMenuHUDOpponent002"
+        },
+        "opponentNameButtonCOP_P2": {
+          "x": "9",
+          "y": "313",
+          "listname": "opponentNamecop2",
+          "text": "kMenuHUDOpponent001"
+        },
+        "opponentNameCascadeCOP_P2": {
+          "x": "135",
+          "y": "314",
+          "listname": "opponentNamecop2",
+          "text": "kMenuHUDOpponent002"
+        }
+      }
+    }
+  },
+  "verified": "All12 matched Opponent Name settings button/cascade controls retain x,y,listname and text token131/140.",
+  "limits": [
+    "These are HUD settings controls,not the gameplay overlay;this neither proves nor disproves MP140-071.",
+    "Gameplay rectangle/default production and named renderer submissions still need linkage;no rendered position observed.",
+    "Not a complete asset-field comparison;other fields and unrelated controls can differ.",
+    "No target execution or executable/database changes."
+  ]
+}

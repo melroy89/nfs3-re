@@ -208,8 +208,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "10a17e39a0eb6a187142242e057996501405e7e1e5b2e1fac33d6ea3f36ed167",
-      "relative_links": 37
+      "sha256": "acc1df9e3a8a1d521adf1a9723b7916d2f8a7bc13e4f21ca2c5d55d7bc7459c5",
+      "relative_links": 38
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -653,8 +653,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "334b8e3f6b7a1a57102cfeea4b87d5aa917f4544dd8cdf115b7c3981b2adb4a8",
-      "relative_links": 239
+      "sha256": "6a29c071e717041d70b8a7adac06641f7d56d42e584e6923ac47265819df7161",
+      "relative_links": 240
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2826,
+  "relative_link_count": 2828,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
