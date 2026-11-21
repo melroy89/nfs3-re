@@ -388,3 +388,29 @@ cadence remain separate evidence gaps.
 The hashes cover file-backed PE bytes at the listed virtual addresses
 using image base `00400000`. Both full executable hashes were checked
 against the original and official-final pins before disassembly.
+
+### Replay input blocks in both executables
+
+Direct PE reads of the hash-pinned original and official Modern confirm
+identical bytes and matching [inventory hashes](evidence/audits/original-modern-function-diff.json)
+for these saved ranges:
+
+| Range (exclusive end) | Bytes | Role |
+|---|---:|---|
+| `004bd380..004bd3dc` | 92 | Select record or playback tick path |
+| `004bd000..004bd087` | 135 | Gather and buffer participant input |
+| `004bd090..004bd1df` | 335 | Decode and apply participant input |
+| `004bda00..004bdb5b` | 347 | Record vehicle event priorities |
+| `00477c20..00477d90` | 368 | Update recorded vehicle pose sample |
+| `00477b00..00477b47` | 71 | Read optional pose extension |
+
+The retained recording code gathers four bytes per tick and buffers them
+in four 32-byte channels. Playback calls decoder `004bcee0` and copies
+128 decoded bytes to `007cd548 + participantIndex*0x80`. The participant
+cursor indexes the four channel starts at offsets 0, 32, 64 and 96.
+See the [original layout investigation](detailed-analysis-notes.md#replay-decode-destination-and-channel-layout-004bd090).
+
+This establishes a shared decoded control layout at the tick boundary.
+It leaves the codec, complete file format, pose-extension handling across
+versions, and matched trajectory results open. Matching recorded input
+does not establish matching initial state or arithmetic.
