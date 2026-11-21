@@ -59,6 +59,19 @@ def main():
     finalcode=pefile.PE(data=finalraw).get_data(0x1000,245760)
     later=[{'address':f'{0x60001000+i:08x}','150':a,'final':b}for i,(a,b)in enumerate(zip(codes[1],finalcode))if a!=b];assert len(later)==36
     result['later_final_boundary']={'archive':finalrel,'archive_sha256':sha((ROOT/finalrel).read_bytes()),'member_sha256':sha(finalraw),'code_sha256':sha(finalcode),'150_to_final_changed_code_bytes':later,'semantics':'Pending;150 callback repair does not establish complete final correspondence.'}
+    fp=pefile.PE(data=finalraw)
+    assert fp.get_data(0x31ac,6).hex()=='76d290909090'
+    assert pe.get_data(0x31ac,6).hex()=='0f8639ffffff'
+    assert fp.get_data(0x362f,6).hex()=='0f858c000000'
+    assert fp.get_data(0x36c1,15).hex()=='6a00ff15b4000460e982feffff9090'
+    assert fp.get_data(0x37bb,11).hex()=='5b5e5f6a00ff15b4000460'
+    assert fp.get_data(0x37dc,2).hex()=='ebe0'
+    witness_spans=[('state_selector_prefix',0x600030c0,0x600031bb),('lock_and_failure_trampoline',0x60003530,0x600036d0),('pageflip_selected_paths',0x60003750,0x600037de)]
+    result['later_final_boundary']['classified_witnesses']={label:[{'name':n,'start':f'{a:08x}','end_exclusive':f'{b:08x}','hex':image.get_data(a-0x60000000,b-a).hex(),'sha256':sha(image.get_data(a-0x60000000,b-a)),'disassembly':disassemble(image.get_data(a-0x60000000,b-a),a)}for n,a,b in witness_spans]for label,image in [('150',pe),('final',fp)]}
+    assert all(any(a<=int(r['address'],16)<b for _,a,b in witness_spans)for r in later)
+    result['later_final_boundary']['semantics']='All36 byte differences assigned to selector15h result retarget,lock-failure callback0 trampoline,and pageflip cleanup/callback order;callback ABI and runtime outcomes unresolved.'
+    assert sum(a!=b for a,b in zip(refcode,finalcode))==44
+    result['reference_to_final_code_summary']={'bytes':245760,'changed_bytes':44,'unchanged_bytes':245716,'scope':'Complete code section only;8 reference-to150 plus36 disjoint later deltas,all locally classified.'}
     result['api_layout_sources']=['https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsysteminfo','https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/ns-sysinfoapi-system_info']
     result['findings']=['150 calls GetSystemInfo with ESP before reading local+4 and unsigned dividing by40 for count bound;32-bit SYSTEM_INFO+4 is dwPageSize.',
         '140 instead tests signed input height>=480 at that location,without the local API-buffer initialization in this callback.',

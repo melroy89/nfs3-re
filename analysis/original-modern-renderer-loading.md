@@ -631,3 +631,22 @@ The eight reference→150 changed bytes encode the entry-depth policy (reference
 **MP100-066 gains partial support** for close correspondence with the original-reference software provider. The bundled reference is not independently authenticated against the supplied original EXE; literal source-code derivation and exact100 introduction remain unverified.
 
 The official-final SoftTri member has SHA-256 `9479203471f4dd615788769bac365043d903505af370c48df69e5d6a1e6f8732`. Its same code extent has36 additional differing bytes versus150; all addresses and before/after byte values are retained in the audit, but their semantics remain pending. Do not treat the150 repair as a complete final-provider difference map. No original, intermediate or final DLL was executed.
+
+
+### All36 later SoftTri code-byte differences now have bounded mechanisms
+
+The expanded [SoftTri audit](evidence/audits/softtri-mode-fix-history.json) retains150/final instruction witnesses covering **all36 differing positions** in the245,760-byte code section. The earlier “semantics pending” boundary above is superseded at the following local scope; callbacks, runtime results and the rest of the PE remain separately qualified.
+
+|Changed cluster |150→final mechanism |
+|---|---|
+|`600031ac..600031b2`,6 bytes |State selector15h's equal/below branch retargets success return `600030eb` (EAX1) to failure return `60003180` (EAX0); remaining bytes become NOPs |
+|`60003631..60003635`,4 operand bytes, plus14 changed positions in `600036c1..600036d0` |Lock's nonzero-result branch now goes through a new PUSH0 / CALL `[600400b4]` trampoline, then returns through the existing failure epilogue |
+|`600037bb..600037c6`,11 bytes, plus`600037dd`,1 byte |Normal page-flip path restores EBX/ESI/EDI before callback0 rather than afterwards; the separate error jump now reaches callback0 before the common epilogue |
+
+For selector15h, the preceding unsigned comparisons establish EAX=15h on the taken branch; this is not a change to every selector≤15h. Payload semantics and full caller handling remain separate. The callback block is not labelled a successful implementation of the requested state merely because the old routine returned1.
+
+`600400b4` is an indirect callback cell, not an imported API identified solely by the CALL shape. The retained lock/page-flip prefixes include earlier callback1 calls. Final adds/reaches callback0 on the selected failure paths; it does not prove every lifecycle is balanced, that callbacks preserve every general register/flag, or that callbacks have no hidden register inputs. Restoring registers before a callback can change both callback-entry state and which clobbers survive return; do not treat the page-flip reorder as automatically machine-equivalent.
+
+The witnesses begin on verified instruction boundaries and retain the relevant return/branch targets. They are explicitly bounded spans, not an invented complete page-flip ABI. Every36-byte delta is locally assigned, but exact release introduction, callback publication/lifetime, transitive DirectDraw/renderer behavior and visible failure recovery remain unverified. This extends the original-reference/150/final difference map without claiming full SoftTri runtime equivalence. No target code was executed.
+
+Across the complete pinned reference/final SoftTri code extent, the audit now asserts **44 differing bytes and245,716 matching bytes**: the eight reference→150 changes and36 disjoint later changes above. This is a complete raw code-section delta assignment, not a complete PE/data/ABI/runtime reconstruction.
