@@ -432,3 +432,20 @@ establishes the 32-byte partition for correctly aligned, intact encoder
 output. This comparison covers the codec used for the selected control
 stream. Loading a complete replay still requires compatible container
 fields, initialization and playback state.
+
+### Default replay resource entry points
+
+Both pinned executables retain identical bodies for default replay save
+(`004bd1e0..004bd2d3`, 243 bytes), default replay load
+(`004bd2e0..004bd37d`, 157 bytes), and optional pose extension write
+(`00477ac0..00477afc`, 60 bytes). The paired function inventory records
+the exact hashes, confirmed by fresh reads from both PE files.
+
+The save and load paths both reference the resource name at `00540168`.
+The load path reads into `007a3e50` and calls the pose extension reader
+`00477b00` when the flag at `007a5f40` is nonzero. Afterwards it calls
+the preparation car-reference and model-index resolvers at `00478090`
+and `00478100`. Asset resolution is thus a separate compatibility
+dependency even when the compressed controls and resource entry points
+match. The complete resource writer/reader chain, loaded asset identities
+and cross-version playback results still require verification.
