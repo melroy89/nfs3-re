@@ -208,8 +208,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "f2d15c2a6652ee88b829b3ca5841e4bead051aac3dfaf9cc370494484e20b5e8",
-      "relative_links": 54
+      "sha256": "305ad2b2539f654928a6db4b9f692b9e0181fd954bda01d411d5202d51ed0ac5",
+      "relative_links": 55
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3104,
+  "relative_link_count": 3105,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

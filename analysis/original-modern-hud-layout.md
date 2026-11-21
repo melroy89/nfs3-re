@@ -488,3 +488,12 @@ executables found no near relative CALL to `004517d0` in their code sections
 and no literal DWORD pointer to that entry in their file-backed sections.
 Its activation remains unresolved. The ordinary defaults initializer is
 the independent evidence for the changed default units policy.
+
+The paired config traces identify the direct calls to the ordinary HUD
+initializer. Original `00472807` calls it in the full defaults tail.
+Modern `00472adc` calls it in the grouped reset branch, after header
+refresh and display defaults. A loaded config with size `0x20f0`, zero
+high version byte and low version byte at least 6 bypasses that Modern
+branch. The unconditional selector 3 inside the initializer therefore
+describes the reset default. Loading an accepted config does not itself
+invoke this writer. See the [configuration comparison](original-modern-config-loading.md).
