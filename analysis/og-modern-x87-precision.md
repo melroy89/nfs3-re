@@ -449,3 +449,19 @@ and `00478100`. Asset resolution is thus a separate compatibility
 dependency even when the compressed controls and resource entry points
 match. The complete resource writer/reader chain, loaded asset identities
 and cross-version playback results still require verification.
+
+Both files store the same NUL-terminated literals: `replay.rp3` at
+`00540168` and `rb+` at `00540174`. Nine immediate dependencies also
+match the full SHA-256 values in the paired function inventory:
+
+| Role | Identical function entries |
+|---|---|
+| Preparation car identifier encoding and population | `00478010`, `004781b0` |
+| Preparation car reference and model lookup | `00478090`, `00478100` |
+| Resource open, read and save | `004e28d0`, `004e2de0`, `004eeae0` |
+| Buffered seek and write used by the pose extension writer | `004e9088`, `004eebd0` |
+
+Together with the tick and codec comparisons, this confirms retained code
+from the default replay entry points into resource I/O and car resolution.
+The actual asset tables, file contents and downstream initialization still
+matter when comparing playback across versions.
