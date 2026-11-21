@@ -69,6 +69,7 @@ These links reconcile selected outside-body spans with already inspected mechani
 
 | Outside span / NOP run | Existing explanation | Remaining boundary |
 |---|---|---|
+| `0040ff80..0040ff9c` | All 28 bytes differ. Modern places the [show music cycle and seed tables](original-modern-music-selection.md) in an original resource-helper tail. Six track IDs and two zero bytes precede the 20-byte seed mapping at 0040ff88. | The mapping is established. Runtime seed distribution and audio output remain untested. |
 | `00451715..00451830` | Modern fixes ECX at 3 where the original selected 1 or 3 from the language field (21 changed bytes). The other 31 changes are in the old [screenshot chord](original-modern-screenshots.md) area reused by the [slideshow wrapper](original-modern-slideshow-navigation.md). | The [six HUD profile writes](original-modern-hud-layout.md#frontend-writes-the-same-selector-to-all-six-profiles) explain the selector. Later state and visible units remain unverified. |
 | `004634c8..00463ff0` | All 36 differences are in the [paired renderer](original-modern-car-alias.md#complete-renderer-difference-coverage-at-004634d0). Modern changes the name-and-mode selector and retargets two name comparisons. | Visible layout depends on active widgets and text metrics. |
 | `004f1f10..004f1f30` | The [heap wrappers](original-modern-heap-initialization.md) expose two HeapReAlloc entries with flags 8 and 0 and a shared tail. | Allocation success and caller ownership remain separate. |
