@@ -19,7 +19,9 @@ def main():
         prefix=get(0x4c4e40,0x4c4e75);prefixes.append(prefix)
         if version=='1.2.0':assert get(0x4c4e63,0x4c4e75).hex()=='8b0df8fd5e008955f885c97f05e808dc0200'
         else:assert get(0x4c4e63,0x4c4e75)==bytes.fromhex('8955f8eb0d')+b'\x90'*13
-        spans=[('race_entry_prefix',0x4c4e40,0x4c4e75),('registered_counter_callback',0x42dc60,0x42dcaf),('counter_registration_initializer',0x42dcb0,0x42dcf7),('termination_entry',0x4f2a7d,0x4f2a84)]
+        spans=[('race_entry_prefix',0x4c4e40,0x4c4e75),('registered_counter_callback',0x42dc60,0x42dcaf),('counter_registration_initializer',0x42dcb0,0x42dcf7),('termination_entry',0x4f2a7d,0x4f2a84),('complete_callback_registrar',0x48ee30,0x48ee83)]
+        assert get(0x48ee30,0x48ee36).hex()=='5351525589e5'
+        assert get(0x48ee7e,0x48ee83).hex()=='5d5a595bc3'
         retained.append([get(a,b)for n,a,b in spans[1:]])
         other_spans=[(0x495230,0x4955fb),(0x4a33d0,0x4a35cb)]
         retained[-1]+=[get(a,b)for a,b in other_spans]
@@ -31,9 +33,13 @@ def main():
         'StoreEDX to local-8 retained but moved earlier;earlier read005efdf8 plus10000 retained.',
         'Callback0042dc60 increments005efdf8 when selected bit0 gate005efdf4 clear;initializer0042dcb0 registers callback via0048ee30.',
         'Selected counter/termination bodies and loading spans byte-identical across pair.']
+    result['registrar_contract']={'entry':'0048ee30','end_exclusive':'0048ee83','bytes':83,'input':'EAX callback pointer','preserved':['EBX','ECX','EDX','EBP','ESI untouched','EDI untouched'],
+        'local_calls':0,'registry':'0079c130,8 DWORD pointers','policy':'Search duplicate callback or first zero slot;only writes callback when absent and a zero slot exists;no capacity error is tested by initializer.',
+        'initializer_consequence':'On its first-registration branch,EDX initialized0 survives registrar,so subsequent005efdf8 store is a real zero reset;already-initialized branch skips that reset.',
+        'limits':'No callback execution before race entry guaranteed;full registry or deferred callback scenarios are hypothetical,not observed failure causes.'}
     result['limits']=['Candidate mechanism forMP130-002,not independently reproduced failure/root cause or exhaustive release attribution.',
         'Counter meaning,callback timing,all aliases/writers,wrap and actual nonpositive race-entry state remain unverified.',
-        'Initializer storesEDX after registration;do not assert guaranteed zero without complete registrar preservation contract.',
+        'Registrar preservation now verified;actual callback admission/timing,all aliases/writers and zero state at race entry remain unobserved.',
         'Existing terminal-chain report establishesExitProcess route separately;runtime callback/cleanup completion unobserved.',
         'Equal selected loading spans do not prove entire loading flow unchanged.',
         'No target/API/instruction execution,compilation or executable/Ghidra mutation.']

@@ -102,6 +102,48 @@
             "4f2a7d:\t31 c0                \txor    eax,eax",
             "4f2a7f:\te8 80 d2 fe ff       \tcall   0x4dfd04"
           ]
+        },
+        {
+          "name": "complete_callback_registrar",
+          "start": "0048ee30",
+          "end_exclusive": "0048ee83",
+          "hex": "5351525589e58b1dc4e2550089c1baffffffff4331c0eb1389c2eb093b0c8530c1790074224083f8087d10833c8530c179000075e785d27cdfebe183faff7407890c9530c179004b891dc4e255005d5a595bc3",
+          "disassembly": [
+            "48ee30:\t53                   \tpush   ebx",
+            "48ee31:\t51                   \tpush   ecx",
+            "48ee32:\t52                   \tpush   edx",
+            "48ee33:\t55                   \tpush   ebp",
+            "48ee34:\t89 e5                \tmov    ebp,esp",
+            "48ee36:\t8b 1d c4 e2 55 00    \tmov    ebx,DWORD PTR ds:0x55e2c4",
+            "48ee3c:\t89 c1                \tmov    ecx,eax",
+            "48ee3e:\tba ff ff ff ff       \tmov    edx,0xffffffff",
+            "48ee43:\t43                   \tinc    ebx",
+            "48ee44:\t31 c0                \txor    eax,eax",
+            "48ee46:\teb 13                \tjmp    0x48ee5b",
+            "48ee48:\t89 c2                \tmov    edx,eax",
+            "48ee4a:\teb 09                \tjmp    0x48ee55",
+            "48ee4c:\t3b 0c 85 30 c1 79 00 \tcmp    ecx,DWORD PTR [eax*4+0x79c130]",
+            "48ee53:\t74 22                \tje     0x48ee77",
+            "48ee55:\t40                   \tinc    eax",
+            "48ee56:\t83 f8 08             \tcmp    eax,0x8",
+            "48ee59:\t7d 10                \tjge    0x48ee6b",
+            "48ee5b:\t83 3c 85 30 c1 79 00 \tcmp    DWORD PTR [eax*4+0x79c130],0x0",
+            "48ee62:\t00",
+            "48ee63:\t75 e7                \tjne    0x48ee4c",
+            "48ee65:\t85 d2                \ttest   edx,edx",
+            "48ee67:\t7c df                \tjl     0x48ee48",
+            "48ee69:\teb e1                \tjmp    0x48ee4c",
+            "48ee6b:\t83 fa ff             \tcmp    edx,0xffffffff",
+            "48ee6e:\t74 07                \tje     0x48ee77",
+            "48ee70:\t89 0c 95 30 c1 79 00 \tmov    DWORD PTR [edx*4+0x79c130],ecx",
+            "48ee77:\t4b                   \tdec    ebx",
+            "48ee78:\t89 1d c4 e2 55 00    \tmov    DWORD PTR ds:0x55e2c4,ebx",
+            "48ee7e:\t5d                   \tpop    ebp",
+            "48ee7f:\t5a                   \tpop    edx",
+            "48ee80:\t59                   \tpop    ecx",
+            "48ee81:\t5b                   \tpop    ebx",
+            "48ee82:\tc3                   \tret"
+          ]
         }
       ],
       "paired_loading_spans": [
@@ -228,6 +270,48 @@
             "4f2a7d:\t31 c0                \txor    eax,eax",
             "4f2a7f:\te8 80 d2 fe ff       \tcall   0x4dfd04"
           ]
+        },
+        {
+          "name": "complete_callback_registrar",
+          "start": "0048ee30",
+          "end_exclusive": "0048ee83",
+          "hex": "5351525589e58b1dc4e2550089c1baffffffff4331c0eb1389c2eb093b0c8530c1790074224083f8087d10833c8530c179000075e785d27cdfebe183faff7407890c9530c179004b891dc4e255005d5a595bc3",
+          "disassembly": [
+            "48ee30:\t53                   \tpush   ebx",
+            "48ee31:\t51                   \tpush   ecx",
+            "48ee32:\t52                   \tpush   edx",
+            "48ee33:\t55                   \tpush   ebp",
+            "48ee34:\t89 e5                \tmov    ebp,esp",
+            "48ee36:\t8b 1d c4 e2 55 00    \tmov    ebx,DWORD PTR ds:0x55e2c4",
+            "48ee3c:\t89 c1                \tmov    ecx,eax",
+            "48ee3e:\tba ff ff ff ff       \tmov    edx,0xffffffff",
+            "48ee43:\t43                   \tinc    ebx",
+            "48ee44:\t31 c0                \txor    eax,eax",
+            "48ee46:\teb 13                \tjmp    0x48ee5b",
+            "48ee48:\t89 c2                \tmov    edx,eax",
+            "48ee4a:\teb 09                \tjmp    0x48ee55",
+            "48ee4c:\t3b 0c 85 30 c1 79 00 \tcmp    ecx,DWORD PTR [eax*4+0x79c130]",
+            "48ee53:\t74 22                \tje     0x48ee77",
+            "48ee55:\t40                   \tinc    eax",
+            "48ee56:\t83 f8 08             \tcmp    eax,0x8",
+            "48ee59:\t7d 10                \tjge    0x48ee6b",
+            "48ee5b:\t83 3c 85 30 c1 79 00 \tcmp    DWORD PTR [eax*4+0x79c130],0x0",
+            "48ee62:\t00",
+            "48ee63:\t75 e7                \tjne    0x48ee4c",
+            "48ee65:\t85 d2                \ttest   edx,edx",
+            "48ee67:\t7c df                \tjl     0x48ee48",
+            "48ee69:\teb e1                \tjmp    0x48ee4c",
+            "48ee6b:\t83 fa ff             \tcmp    edx,0xffffffff",
+            "48ee6e:\t74 07                \tje     0x48ee77",
+            "48ee70:\t89 0c 95 30 c1 79 00 \tmov    DWORD PTR [edx*4+0x79c130],ecx",
+            "48ee77:\t4b                   \tdec    ebx",
+            "48ee78:\t89 1d c4 e2 55 00    \tmov    DWORD PTR ds:0x55e2c4,ebx",
+            "48ee7e:\t5d                   \tpop    ebp",
+            "48ee7f:\t5a                   \tpop    edx",
+            "48ee80:\t59                   \tpop    ecx",
+            "48ee81:\t5b                   \tpop    ebx",
+            "48ee82:\tc3                   \tret"
+          ]
         }
       ],
       "paired_loading_spans": [
@@ -264,10 +348,29 @@
     "Callback0042dc60 increments005efdf8 when selected bit0 gate005efdf4 clear;initializer0042dcb0 registers callback via0048ee30.",
     "Selected counter/termination bodies and loading spans byte-identical across pair."
   ],
+  "registrar_contract": {
+    "entry": "0048ee30",
+    "end_exclusive": "0048ee83",
+    "bytes": 83,
+    "input": "EAX callback pointer",
+    "preserved": [
+      "EBX",
+      "ECX",
+      "EDX",
+      "EBP",
+      "ESI untouched",
+      "EDI untouched"
+    ],
+    "local_calls": 0,
+    "registry": "0079c130,8 DWORD pointers",
+    "policy": "Search duplicate callback or first zero slot;only writes callback when absent and a zero slot exists;no capacity error is tested by initializer.",
+    "initializer_consequence": "On its first-registration branch,EDX initialized0 survives registrar,so subsequent005efdf8 store is a real zero reset;already-initialized branch skips that reset.",
+    "limits": "No callback execution before race entry guaranteed;full registry or deferred callback scenarios are hypothetical,not observed failure causes."
+  },
   "limits": [
     "Candidate mechanism forMP130-002,not independently reproduced failure/root cause or exhaustive release attribution.",
     "Counter meaning,callback timing,all aliases/writers,wrap and actual nonpositive race-entry state remain unverified.",
-    "Initializer storesEDX after registration;do not assert guaranteed zero without complete registrar preservation contract.",
+    "Registrar preservation now verified;actual callback admission/timing,all aliases/writers and zero state at race entry remain unobserved.",
     "Existing terminal-chain report establishesExitProcess route separately;runtime callback/cleanup completion unobserved.",
     "Equal selected loading spans do not prove entire loading flow unchanged.",
     "No target/API/instruction execution,compilation or executable/Ghidra mutation."
