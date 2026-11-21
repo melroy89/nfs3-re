@@ -163,7 +163,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004800a0` | RefreshHudVisibleRectangleQuadsForView | 2063 | 4 | [hud-layout](original-modern-hud-layout.md) |
 | `00480910` | ScaleHudLayoutSlotToViewportPixels | 219 | 8 | [hud-layout](original-modern-hud-layout.md) |
 | `00480fc0` | BuildInsetHudRectangleGeometryForView | 423 | 24 | [border-geometry](original-modern-border-geometry.md), [replay-mirror](original-modern-replay-mirror.md) |
-| `004812e0` | BuildHudLayoutInsetGeometryForView | 556 | 24 | [border-geometry](original-modern-border-geometry.md), [replay-mirror](original-modern-replay-mirror.md) |
+| `004812e0` | BuildHudLayoutInsetGeometryForView | 556 | 24 | [border-geometry](original-modern-border-geometry.md), [hud-layout](original-modern-hud-layout.md), [replay-mirror](original-modern-replay-mirror.md) |
 | `00481aa0` | BuildVariantInsetHudBorderAndQuadForView | 426 | 24 | [border-geometry](original-modern-border-geometry.md), [hud-layout](original-modern-hud-layout.md) |
 | `00481c50` | UpdateHUDStandingsPanelLayout | 831 | 31 | [border-geometry](original-modern-border-geometry.md), [hud-layout](original-modern-hud-layout.md) |
 | `00482b00` | RenderRaceHUD | 5411 | 1 | [hud-layout](original-modern-hud-layout.md), [numeric-scale](original-modern-numeric-scale.md) |

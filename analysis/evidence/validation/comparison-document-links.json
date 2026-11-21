@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "2738055934da2aeddf43fbfc35fff6c57369f019c75005df2bf0702ced260774",
-      "relative_links": 274
+      "sha256": "62b138b0d18cdc05e1c9fbf323da0a0971dae97529c138d65b1e35d984ef29f0",
+      "relative_links": 275
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "368fa110ea3b3fd0b802014126de099455c988e4505fb8e70d7fba632a8dc353",
-      "relative_links": 768
+      "sha256": "55bd67ae5b2f3bfe41dd864e298d757448cba4cbcc3d8f0f2aaa19bff6de4604",
+      "relative_links": 769
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -208,8 +208,8 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "a001da9a55dc5f8e7774d4a12eeb6cb63054c26aeb6a6728a5bccfa7522212af",
-      "relative_links": 47
+      "sha256": "bbdbc17aac5377f695832371ec4529af18d4a2bec92678812ade77f42a1e3103",
+      "relative_links": 49
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2849,
+  "relative_link_count": 2853,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
