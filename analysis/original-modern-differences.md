@@ -25,7 +25,7 @@ The [renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-his
 |[DX6 mode count](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) |Added increment affects public descriptor count, whose table has a leading slot |Leading-slot contents, full-capacity/alias/switch bounds and visible modes |
 |[Screenshot depth](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) |150 fixes partial-WORD local initialization before DWORD stride read; final core retained |Observed crash, XP specificity, complete capture/encoding stability |
 
-Current catalog labels are75 vendor-only/54 bounded-static/159 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
+Current catalog labels are74 vendor-only/54 bounded-static/160 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
 
 ## Renderer, menu and screenshot follow-up checkpoint
 
@@ -685,7 +685,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **75 Claimed, 54 Static, 159 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **74 Claimed, 54 Static, 160 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -835,7 +835,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-012 | Consistent sounds for the top dropdown lists when using the keyboard (the same as for general dropdown lists). | Partial |
 | MP140-013 | A car color dropdown list uses consistent (with other controls) sounds and has a normal padding. | Partial |
 | MP140-014 | List of replays works correctly using keyboard (fixed an invalid positioning of the mouse cursor). Also it uses consistent sounds (like others). | Partial |
-| MP140-015 | Fixed errors of element switching order (when keyboard is used). | Claimed |
+| MP140-015 | Fixed errors of element switching order (when keyboard is used). | Partial |
 | MP140-016 | 3D view of a car interior can be stopped using Space key. Arrow keys change rotating speed more smoothly now. | Partial |
 | MP140-017 | Options button is placed near Exit button on the first menu screen (Game Setup). | Partial |
 | MP140-018 | “Connect Players”, “Connect IPX” and “View Car Interior” menu screens also have standard set of buttons (Exit and Options). | Partial |
@@ -1291,4 +1291,9 @@ The [131/140 menu comparison](original-modern-common-menu-buttons.md#four-named-
 
 ## Keyboard routing dated without conflating selection order
 
-The [131/140 audit](original-modern-menu-input.md#tab-and-chat-bypass-routing-appears-at131-to140) dates Tab/Shift+Tab, multiplayer Tab/Escape bypass and named-arrow routing. Previous/next selectors and lobby handling remain byte-identical; the140 modifier helper's36 bytes match its relocated final counterpart. The distinct switching-order claim MP140-015 remains vendor-only pending an entry-order producer/consumer difference. Catalog counts are unchanged.
+The [131/140 audit](original-modern-menu-input.md#tab-and-chat-bypass-routing-appears-at131-to140) dates Tab/Shift+Tab, multiplayer Tab/Escape bypass and named-arrow routing. Previous/next selectors and lobby handling remain byte-identical; the140 modifier helper's36 bytes match its relocated final counterpart. At that routing-only checkpoint, MP140-015 remained vendor-only; the template/asset follow-up below supplies the missing partial order-producing evidence.
+
+
+## Keyboard-order mechanism found in template flags and menu records
+
+The [131/140 data/consumer follow-up](original-modern-menu-input.md#keyboard-order-candidate-combines-template-eligibility-and-asset-order) verifies selectlist flags0200h→0, removes a bit in the retained navigation skip mask, and ties Load/IPX authored section reorders to the unchanged ordinal loader/selectors. MP140-015 advances to a partial candidate. Runtime eligibility, every-menu correctness and actual key traversal remain untested. Current labels are74 vendor-only/54 bounded-static/160 partial/2 unresolved.

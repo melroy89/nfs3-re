@@ -102,6 +102,27 @@ The [historical routing audit](evidence/audits/menu-key-routing-history.json), r
 
 140's Shift entry is `004f1f78`, with Control/Alt at+4/+8 and the shared tail through `004f1f9c`. Its36 bytes match the official final region `004f1fcc..004f1ff0`; the import binding is verified in140. The dispatcher at `0044a3a0` calls the helper and uses JNE directly. EAX and final ZF therefore remain separate machine outputs at this historical boundary, just as in the final contract above.
 
-The complete previous/next routines and lobby handler are byte-identical131/140. This qualifies **MP140-008/009**, not **MP140-015**: it establishes routing to existing selectors, not a replacement ordering algorithm. Entry-array construction, selection fields, callback side effects and authored navigation data can still change order despite identical selector bodies. The distinct callback-selection/rendering comparison likewise does not independently prove keyboard order. MP140-015 remains vendor-only pending an actual order-producing data/control-flow difference; repeating these unchanged-body checks will not resolve it.
+The complete previous/next routines and lobby handler are byte-identical131/140. This qualifies **MP140-008/009**, not **MP140-015**: it establishes routing to existing selectors, not a replacement ordering algorithm. Entry-array construction, selection fields, callback side effects and authored navigation data can still change order despite identical selector bodies. The distinct callback-selection/rendering comparison likewise does not independently prove keyboard order. At this routing-only checkpoint MP140-015 remained vendor-only. The following template/asset comparison now supplies a partial order-producing mechanism; repeating the unchanged selector-body checks alone would not resolve it.
 
 The selected entry callback still precedes fallback navigation and can consume keys. Chat focus, every menu state, actual keyboard timing and complete caller ABI/flags remain untested beyond the retained local witnesses. No game, API, target instructions, compiler or Ghidra change was used.
+
+
+## Keyboard-order candidate combines template eligibility and asset order
+
+**MP140-015: partial static/package support; live traversal untested.** The [entry-order audit](evidence/audits/menu-entry-order-history.json), reproduced with `python3 analysis/scripts/audit_menu_entry_order_history.py`, pins131/140 archives/EXEs and both Load/IPX menu assets.
+
+The unchanged loader increments ordinal `00660bac` on each parsed section and calls template copier `00449060` at `004496f1`. The retained copier writes a BCh-byte record at `00604ee0 + ordinal×BCh`. The previous/next selectors traverse those indexed records, checking eligibility rather than sorting by screen coordinates. This links authored section order to a conditional keyboard-order input; source section ordinals are not assumed to equal global runtime indices after menu dependencies/base offsets.
+
+Two changes occur together:
+
+| Boundary |131 |140 |
+|---|---|---|
+|Selectlist template at `00556ff8`, flags WORD+4 |`0200h` |`0000h` |
+|Load relative authored order |Back/Cancel before replays list |Replays list before Back/Cancel |
+|IPX relative authored order |Gamelist before Join and Refresh |Join and Refresh before gamelist |
+
+Class registry row `00557acc` identifies selectlist type21 and that template. Button row `00557aa8` identifies type5/template `00556e40`; its flags stay0800h. Retained navigation tests include mask1301h (`0044a1fe`), so0200h excludes an otherwise admitted record on that route. Clearing it in the selectlist template changes initial keyboard eligibility, while the section reorder changes where the newly eligible list sits among buttons. This is not merely swapping two controls known to be equally focusable in the older build.
+
+The complete selected loader, template copier and previous/next bodies are byte-identical131/140. The mechanism therefore lies in data consumed by retained code. Later initializers, parsed fields and callbacks can still modify flags or selection; the Race Now policy predicate and selected-entry callbacks remain separate gates. Missing files, runtime-generated controls and global entry bases are not reconstructed by this package comparison.
+
+These facts advance MP140-015 from vendor-only to a **partial candidate**, without proving correct order in every menu or reproducing a keyboard session. The earlier routing audit remains independently useful for Tab/chat/arrow changes. No target instruction, API, compiler or Ghidra mutation was used.

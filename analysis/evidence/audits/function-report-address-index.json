@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "c75a85571642fed0b81c5a6a702931cbd7aeae56745d0f74aa254e3269c1b12d"
+      "sha256": "8dcfcc71f4da051d511c7494162f62760bb99b38d78e65c928078b00c0300fd3"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -217,7 +217,7 @@
     },
     {
       "path": "analysis/original-modern-menu-input.md",
-      "sha256": "428f6bbea30f40f3bfe317c858de750e94a47d0915a95af8468d7ae59eb63c08"
+      "sha256": "2da0266077d58d2a5fdc88b45f476cc80627a2f6ca8389c802657e24e8d2576f"
     },
     {
       "path": "analysis/original-modern-menu-loader.md",
@@ -3981,6 +3981,13 @@
       "original_sha256": "38ede985f410cf2802392e44841200a6fcdb4ec807616fed625f451062ce66c6",
       "modern_sha256": "8ec344c68a95ab9fa40bd57b1e1ba166eeec8a4e2adab3f1994a4e89b384bea2",
       "report_address_references": [
+        {
+          "path": "analysis/original-modern-menu-input.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004496f1"
+          ]
+        },
         {
           "path": "analysis/original-modern-menu-loader.md",
           "entry_mentioned": true,

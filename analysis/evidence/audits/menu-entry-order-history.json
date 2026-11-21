@@ -1,0 +1,321 @@
+{
+  "kind": "static-menu-entry-order-history",
+  "versions": {
+    "1.3.1": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.1.7z",
+      "archive_sha256": "6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934",
+      "exe_sha256": "199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664",
+      "menus": {
+        "loadsave": {
+          "member": "fedata/menus/loadsave.mnu",
+          "sha256": "5b1868e84bc9597f03c000fcf455e67e80d5645c0175431cffa5cf76d18d7f77",
+          "authored_control_order": [
+            {
+              "section_ordinal_zero_based": 0,
+              "section": "[button]",
+              "identity": "SHOW_REPLAYS"
+            },
+            {
+              "section_ordinal_zero_based": 1,
+              "section": "[button]",
+              "identity": "SHOW_GHOSTS"
+            },
+            {
+              "section_ordinal_zero_based": 2,
+              "section": "[button]",
+              "identity": "SHOW_KNOCKOUTS"
+            },
+            {
+              "section_ordinal_zero_based": 3,
+              "section": "[button]",
+              "identity": "SHOW_TOURNAMENTS"
+            },
+            {
+              "section_ordinal_zero_based": 10,
+              "section": "[button]",
+              "identity": "escape CANCEL_LOAD_OPTIONS"
+            },
+            {
+              "section_ordinal_zero_based": 12,
+              "section": "[selectlist]",
+              "identity": "replays"
+            },
+            {
+              "section_ordinal_zero_based": 13,
+              "section": "[button]",
+              "identity": "loadnow"
+            },
+            {
+              "section_ordinal_zero_based": 14,
+              "section": "[button]",
+              "identity": "DELETE_FILE"
+            },
+            {
+              "section_ordinal_zero_based": 15,
+              "section": "[button]",
+              "identity": "exitprogram"
+            }
+          ]
+        },
+        "ipx": {
+          "member": "fedata/menus/ipx.mnu",
+          "sha256": "20313ceae0804b7edad4c19c3b6e607e9f9b9595b0c4d22a2979e6d8c3e4614e",
+          "authored_control_order": [
+            {
+              "section_ordinal_zero_based": 0,
+              "section": "[button]",
+              "identity": "creategame"
+            },
+            {
+              "section_ordinal_zero_based": 1,
+              "section": "[selectlist]",
+              "identity": "gamelist"
+            },
+            {
+              "section_ordinal_zero_based": 2,
+              "section": "[button]",
+              "identity": "joingame"
+            },
+            {
+              "section_ordinal_zero_based": 3,
+              "section": "[button]",
+              "identity": "refreshlist"
+            },
+            {
+              "section_ordinal_zero_based": 4,
+              "section": "[button]",
+              "identity": "escape"
+            }
+          ]
+        }
+      },
+      "templates": [
+        {
+          "class": "button",
+          "row": "00557aa8",
+          "template": "00556e40",
+          "flags": 2048,
+          "clear_navigation_skip_mask1301": true
+        },
+        {
+          "class": "selectlist",
+          "row": "00557acc",
+          "template": "00556ff8",
+          "flags": 512,
+          "clear_navigation_skip_mask1301": false
+        }
+      ],
+      "unchanged_code": [
+        {
+          "name": "loader",
+          "start": "00449510",
+          "end_exclusive": "00449891",
+          "sha256": "8ec344c68a95ab9fa40bd57b1e1ba166eeec8a4e2adab3f1994a4e89b384bea2"
+        },
+        {
+          "name": "template_copy",
+          "start": "00449060",
+          "end_exclusive": "004490d8",
+          "sha256": "51ceec3d6dee39d285616e7ac95a0c12898903fd1fd32a075fbb9bcb5abdf3ce"
+        },
+        {
+          "name": "previous",
+          "start": "00449f30",
+          "end_exclusive": "0044a0b5",
+          "sha256": "02bb9ce49403fcc843fb691620f63a70ebaef0f702820629c904380da45a2750"
+        },
+        {
+          "name": "next",
+          "start": "0044a0c0",
+          "end_exclusive": "0044a23b",
+          "sha256": "35bc118080281aee5245490f6a072b9de3bebe181b303d22279dd67ebc49bd45"
+        }
+      ],
+      "ordinal_append_witness": {
+        "start": "004496d6",
+        "end_exclusive": "004496f8",
+        "hex": "8b15ac0b660081fad00700007dc48d4a0189c289c8890dac0b6600e86af9ffffebb0",
+        "disassembly": [
+          "4496d6:\t8b 15 ac 0b 66 00    \tmov    edx,DWORD PTR ds:0x660bac",
+          "4496dc:\t81 fa d0 07 00 00    \tcmp    edx,0x7d0",
+          "4496e2:\t7d c4                \tjge    0x4496a8",
+          "4496e4:\t8d 4a 01             \tlea    ecx,[edx+0x1]",
+          "4496e7:\t89 c2                \tmov    edx,eax",
+          "4496e9:\t89 c8                \tmov    eax,ecx",
+          "4496eb:\t89 0d ac 0b 66 00    \tmov    DWORD PTR ds:0x660bac,ecx",
+          "4496f1:\te8 6a f9 ff ff       \tcall   0x449060",
+          "4496f6:\teb b0                \tjmp    0x4496a8"
+        ]
+      }
+    },
+    "1.4.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.4.0.7z",
+      "archive_sha256": "8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9",
+      "exe_sha256": "7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d",
+      "menus": {
+        "loadsave": {
+          "member": "fedata/menus/loadsave.mnu",
+          "sha256": "9d7d2aee57db580938c3564f434ee58f11f08beffe6d6d917740a215e14ed498",
+          "authored_control_order": [
+            {
+              "section_ordinal_zero_based": 0,
+              "section": "[button]",
+              "identity": "SHOW_REPLAYS"
+            },
+            {
+              "section_ordinal_zero_based": 1,
+              "section": "[button]",
+              "identity": "SHOW_GHOSTS"
+            },
+            {
+              "section_ordinal_zero_based": 2,
+              "section": "[button]",
+              "identity": "SHOW_KNOCKOUTS"
+            },
+            {
+              "section_ordinal_zero_based": 3,
+              "section": "[button]",
+              "identity": "SHOW_TOURNAMENTS"
+            },
+            {
+              "section_ordinal_zero_based": 11,
+              "section": "[selectlist]",
+              "identity": "replays"
+            },
+            {
+              "section_ordinal_zero_based": 12,
+              "section": "[button]",
+              "identity": "escape CANCEL_LOAD_OPTIONS"
+            },
+            {
+              "section_ordinal_zero_based": 13,
+              "section": "[button]",
+              "identity": "loadnow"
+            },
+            {
+              "section_ordinal_zero_based": 14,
+              "section": "[button]",
+              "identity": "DELETE_FILE"
+            },
+            {
+              "section_ordinal_zero_based": 15,
+              "section": "[button]",
+              "identity": "exitprogram"
+            }
+          ]
+        },
+        "ipx": {
+          "member": "fedata/menus/ipx.mnu",
+          "sha256": "8144229e9ce0941a81c71ac69bb250bf14fc4217722da24a629b45ddc956216a",
+          "authored_control_order": [
+            {
+              "section_ordinal_zero_based": 0,
+              "section": "[button]",
+              "identity": "creategame"
+            },
+            {
+              "section_ordinal_zero_based": 1,
+              "section": "[button]",
+              "identity": "joingame"
+            },
+            {
+              "section_ordinal_zero_based": 2,
+              "section": "[button]",
+              "identity": "refreshlist"
+            },
+            {
+              "section_ordinal_zero_based": 3,
+              "section": "[selectlist]",
+              "identity": "gamelist"
+            },
+            {
+              "section_ordinal_zero_based": 9,
+              "section": "[button]",
+              "identity": "escape"
+            },
+            {
+              "section_ordinal_zero_based": 11,
+              "section": "[button]",
+              "identity": "kMenuMAINOptions001"
+            },
+            {
+              "section_ordinal_zero_based": 12,
+              "section": "[button]",
+              "identity": "exitprogram"
+            }
+          ]
+        }
+      },
+      "templates": [
+        {
+          "class": "button",
+          "row": "00557aa8",
+          "template": "00556e40",
+          "flags": 2048,
+          "clear_navigation_skip_mask1301": true
+        },
+        {
+          "class": "selectlist",
+          "row": "00557acc",
+          "template": "00556ff8",
+          "flags": 0,
+          "clear_navigation_skip_mask1301": true
+        }
+      ],
+      "unchanged_code": [
+        {
+          "name": "loader",
+          "start": "00449510",
+          "end_exclusive": "00449891",
+          "sha256": "8ec344c68a95ab9fa40bd57b1e1ba166eeec8a4e2adab3f1994a4e89b384bea2"
+        },
+        {
+          "name": "template_copy",
+          "start": "00449060",
+          "end_exclusive": "004490d8",
+          "sha256": "51ceec3d6dee39d285616e7ac95a0c12898903fd1fd32a075fbb9bcb5abdf3ce"
+        },
+        {
+          "name": "previous",
+          "start": "00449f30",
+          "end_exclusive": "0044a0b5",
+          "sha256": "02bb9ce49403fcc843fb691620f63a70ebaef0f702820629c904380da45a2750"
+        },
+        {
+          "name": "next",
+          "start": "0044a0c0",
+          "end_exclusive": "0044a23b",
+          "sha256": "35bc118080281aee5245490f6a072b9de3bebe181b303d22279dd67ebc49bd45"
+        }
+      ],
+      "ordinal_append_witness": {
+        "start": "004496d6",
+        "end_exclusive": "004496f8",
+        "hex": "8b15ac0b660081fad00700007dc48d4a0189c289c8890dac0b6600e86af9ffffebb0",
+        "disassembly": [
+          "4496d6:\t8b 15 ac 0b 66 00    \tmov    edx,DWORD PTR ds:0x660bac",
+          "4496dc:\t81 fa d0 07 00 00    \tcmp    edx,0x7d0",
+          "4496e2:\t7d c4                \tjge    0x4496a8",
+          "4496e4:\t8d 4a 01             \tlea    ecx,[edx+0x1]",
+          "4496e7:\t89 c2                \tmov    edx,eax",
+          "4496e9:\t89 c8                \tmov    eax,ecx",
+          "4496eb:\t89 0d ac 0b 66 00    \tmov    DWORD PTR ds:0x660bac,ecx",
+          "4496f1:\te8 6a f9 ff ff       \tcall   0x449060",
+          "4496f6:\teb b0                \tjmp    0x4496a8"
+        ]
+      }
+    }
+  },
+  "verified": [
+    "Load replays versus Back/Cancel and IPX gamelist versus Join/Refresh reverse relative authored section order131->140.",
+    "Retained loader increments00660bac for parsed section then copies template into00604ee0+ordinal*bc;selected selectors traverse indexed records.",
+    "Button template800 clears skip mask in both;selectlist template200->0 removes a bit tested by retained navigation mask1301;runtime writes/race-now policy remain qualified.",
+    "This is a concrete order-producing asset/code candidate forMP140-015,not an observed keyboard traversal."
+  ],
+  "limits": [
+    "Source section ordinals are not actual global runtime indices;loading,base indices,parser success and appended menus remain conditional.",
+    "Template flags are initial values,not proof every actual control remains selectable or receives a key.",
+    "No all-menu order correctness,mouse/focus effects or live keyboard/UI test established.",
+    "No target/API/instruction execution,compilation or Ghidra changes."
+  ]
+}
