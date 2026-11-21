@@ -480,3 +480,11 @@ when the original language field would be zero. The
 [track length consumer](original-modern-track-length-text.md) places
 1 and 3 on different unit-selection branches. Later profile edits,
 entry-point reachability and visible units remain separate questions.
+
+The ordinary defaults initializer `00485880` and this separate entry at
+`004517d0` implement the same selector rule in each respective version.
+This gives two matching static write policies. A scan of both pinned
+executables found no near relative CALL to `004517d0` in their code sections
+and no literal DWORD pointer to that entry in their file-backed sections.
+Its activation remains unresolved. The ordinary defaults initializer is
+the independent evidence for the changed default units policy.
