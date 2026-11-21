@@ -1,6 +1,20 @@
 # Original versus Modern audit: current stopping point
 
-## Current DX7, hint and shape checkpoint — 2026-11-21
+## Current menu policy and keyboard checkpoint — 2026-11-21
+
+The [five-audit checkpoint](evidence/validation/menu-policy-keyboard-checkpoint.json) reviews `92708c8`: **10/10 static runs** reproduce five committed outputs, with **12 protected artifacts and12 raw exports unchanged** against prior hashes. Reproduce with `python3 analysis/scripts/check_menu_policy_keyboard.py`. This is primary-agent repeatability and preservation, not independent semantic review or runtime acceptance.
+
+| Investigation |Established |Remaining boundary |
+|---|---|---|
+|[HUD selector](original-modern-hud-settings-policy.md#hud-selector-policy-simplifies-at131-to140) |131→140 removes all-three-suppressed branch, always selects a local list and removes a legacy control |Prior/later flags, actual loading and visible availability |
+|[Shared bounds](original-modern-common-menu-buttons.md#shared-list-bounds-change-padding-and-special-width-admission-in140) |All76 changed bytes in two envelopes assigned to padding and special-width predicate |All-list reachability, metrics and pixels |
+|[Four-dialog layout](original-modern-common-menu-buttons.md#four-named-dialogs-have-authored-layout-edits-in140) |Nine matched controls change coordinates; Load maxvis8→10 |Final placement, language/font effects and input |
+|[Key routing](original-modern-menu-input.md#tab-and-chat-bypass-routing-appears-at131-to140) |Tab/chat/arrow mechanisms dated; modifier flags contract retained |Callbacks, complete ABI and live focus/timing |
+|[Entry eligibility/order](original-modern-menu-input.md#complete-registered-class-flag-census-finds-three-changes) |32-class census: three flags change; Load/IPX section reorders feed retained indexed code |Later eligibility, actual traversal and every-menu correctness |
+
+Current catalog counts: **74 vendor-only,54 bounded-static,160 partial,2 unresolved** across290 release-note entries. These are evidence classifications, not distinct EXE changes or completion percentages. The comparison remains incomplete: unresolved changed-region semantics, data/interface provenance, projection capture lifetime, preset−5 meaning and runtime compatibility still require work. The next investigations should address remaining mechanisms and dependencies rather than recheck the retained selector bodies or treat authored coordinates as final pixels. Existing executable, database, maintained C and raw export preservation is qualified by the checkpoint's exact file list.
+
+## Earlier DX7, hint and shape checkpoint — 2026-11-21
 
 The [five-audit checkpoint](evidence/validation/dx7-hint-shape-checkpoint.json) reviews `666a0c8`: **10/10 static runs** reproduce five committed evidence outputs, with **12 protected artifacts and12 raw exports unchanged** against the prior checkpoint. Reproduce with `python3 analysis/scripts/check_dx7_hint_shape.py`. This verifies primary-agent repeatability and preservation, not independent semantic review, runtime acceptance or the whole executable comparison.
 
@@ -12,7 +26,8 @@ The [five-audit checkpoint](evidence/validation/dx7-hint-shape-checkpoint.json) 
 |[Field-of-View label](original-modern-frame-setting.md#140-field-of-view-wording-retains-the-earlier-setting-interface) |140 label binds the retained131 setting/storage/Off-On IDs |Old text baseline, exact rename and full camera consumers |
 |[Map-marker shape](original-modern-hud-layout.md#game-side-pixel-format-corroborates-the-alpha-interpretation) |Retained draw chain; pinned backup/150 shape pixel difference; alpha interpretation corroborated |Backup provenance, loaded texture conversion/blend path and visible smoothing |
 
-Current catalog counts are **74 vendor-only,54 bounded-static,160 partial,2 unresolved** after the [HUD selector](original-modern-hud-settings-policy.md#hud-selector-policy-simplifies-at131-to140) and [shared list bounds](original-modern-common-menu-buttons.md#shared-list-bounds-change-padding-and-special-width-admission-in140) and [four-dialog layout](original-modern-common-menu-buttons.md#four-named-dialogs-have-authored-layout-edits-in140) and [keyboard eligibility/order](original-modern-menu-input.md#keyboard-order-candidate-combines-template-eligibility-and-asset-order) follow-ups, which are newer than the five-audit checkpoint above across290 release-note entries. They are evidence classifications, not distinct EXE-change counts or completion percentages. Broad changed-region semantics, interface/data provenance and runtime compatibility remain incomplete. The projection capture writer and preset−5 meaning remain genuinely unresolved; the bounded recent reviews do not require completing unrelated scratchpad work. Existing executable, database, maintained C and export bytes remain preserved under the checkpoint's stated file scope.
+At that reviewed revision, the catalog had78 vendor-only/54 bounded-static/156 partial/2 unresolved entries. The checkpoint covers only its five named audits. The later menu investigations and current counts are listed above. The projection capture writer, preset−5 meaning, complete changed-region semantics and runtime compatibility remain unresolved; bounded checks do not establish whole-game equivalence.
+
 
 ## Earlier seven-audit checkpoint — 2026-11-21
 

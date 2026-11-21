@@ -1,0 +1,319 @@
+{
+  "kind": "five-menu-policy-keyboard-checkpoint",
+  "reviewed_head": "92708c89882ba897b35325d1d6f1c6dfdad72348",
+  "runner_path": "analysis/scripts/check_menu_policy_keyboard.py",
+  "runner_sha256": "279669ff9e476a90529df4048b3384c0828ce2bddb27855bfd1bb25798ddd133",
+  "prior_checkpoint": "analysis/evidence/validation/dx7-hint-shape-checkpoint.json",
+  "prior_checkpoint_sha256": "3a6f3404eadbf12d398967327e55f3a436efd8abf1da933fc5a43fc85f27ff48",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_hud_selector_history.py"
+      ],
+      "script_sha256": "e6f161dfdd262148bf7c645304b2fdeb65d75d391bacca63dd0936770c8a5bac",
+      "output": "analysis/evidence/audits/hud-selector-history.json",
+      "pre_run_output_sha256": "e9039f26c049a664d64d28c81a439c96197bc8c1dc6798060f2e9cee911913d0",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 replaces four-way HUD selector policy with two P arms;legacy control removed,retained fields/lists match,visibility qualified\n",
+          "stderr": "",
+          "output_sha256": "e9039f26c049a664d64d28c81a439c96197bc8c1dc6798060f2e9cee911913d0"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 replaces four-way HUD selector policy with two P arms;legacy control removed,retained fields/lists match,visibility qualified\n",
+          "stderr": "",
+          "output_sha256": "e9039f26c049a664d64d28c81a439c96197bc8c1dc6798060f2e9cee911913d0"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_dropdown_padding_history.py"
+      ],
+      "script_sha256": "26798cb4ba69147aa2da0057e1fc89018851c42c1c24bf745263e4e762504125",
+      "output": "analysis/evidence/audits/dropdown-padding-history.json",
+      "pre_run_output_sha256": "73b6caa6342114081b258aca3b697ef294c9049cf5175f7f44a6e826ea867a53",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 two shared bounds paths change margins and unify conditional width allowance;all selected body deltas accounted\n",
+          "stderr": "",
+          "output_sha256": "73b6caa6342114081b258aca3b697ef294c9049cf5175f7f44a6e826ea867a53"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 two shared bounds paths change margins and unify conditional width allowance;all selected body deltas accounted\n",
+          "stderr": "",
+          "output_sha256": "73b6caa6342114081b258aca3b697ef294c9049cf5175f7f44a6e826ea867a53"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_dialog_alignment_history.py"
+      ],
+      "script_sha256": "19c000dc7b815cfb038d156fc8e3efae29201d363e080ebd405a4737d3ab0289",
+      "output": "analysis/evidence/audits/dialog-alignment-history.json",
+      "pre_run_output_sha256": "a28bb2282e873a1ee0d7a8b561ad9f6c059cb69699ee05b7a1a1c9ce2a9dfb46",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 nine matched controls across four dialogs have pinned authored layout changes\n",
+          "stderr": "",
+          "output_sha256": "a28bb2282e873a1ee0d7a8b561ad9f6c059cb69699ee05b7a1a1c9ce2a9dfb46"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 nine matched controls across four dialogs have pinned authored layout changes\n",
+          "stderr": "",
+          "output_sha256": "a28bb2282e873a1ee0d7a8b561ad9f6c059cb69699ee05b7a1a1c9ce2a9dfb46"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_menu_key_routing_history.py"
+      ],
+      "script_sha256": "b27870b3da5bed3b128043a32c123ddbb0090bc9345608a5493ac998a4c60f5d",
+      "output": "analysis/evidence/audits/menu-key-routing-history.json",
+      "pre_run_output_sha256": "4285ac162bc58ec584da323fe71ad859eae3b25723b246b48428c44fb1612c45",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 Tab/chat/named-arrow routing dated;previous/next bodies retained,order claim separate\n",
+          "stderr": "",
+          "output_sha256": "4285ac162bc58ec584da323fe71ad859eae3b25723b246b48428c44fb1612c45"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 Tab/chat/named-arrow routing dated;previous/next bodies retained,order claim separate\n",
+          "stderr": "",
+          "output_sha256": "4285ac162bc58ec584da323fe71ad859eae3b25723b246b48428c44fb1612c45"
+        }
+      ],
+      "repeatable": true
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/scripts/audit_menu_entry_order_history.py"
+      ],
+      "script_sha256": "f14fac5a1132c9998fbb067ed96699f045df2c4794dac08f91e2496e71afa0ca",
+      "output": "analysis/evidence/audits/menu-entry-order-history.json",
+      "pre_run_output_sha256": "43d4fd6d20819e17236d262d71d51789562a3d3bb488fc664703b3c6ba13788f",
+      "script_and_output_match_reviewed_head": true,
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 Load/IPX authored control reorders link to retained indexed loader/selectors;runtime admission qualified\n",
+          "stderr": "",
+          "output_sha256": "43d4fd6d20819e17236d262d71d51789562a3d3bb488fc664703b3c6ba13788f"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "PASS:131->140 Load/IPX authored control reorders link to retained indexed loader/selectors;runtime admission qualified\n",
+          "stderr": "",
+          "output_sha256": "43d4fd6d20819e17236d262d71d51789562a3d3bb488fc664703b3c6ba13788f"
+        }
+      ],
+      "repeatable": true
+    }
+  ],
+  "preserved_artifacts": [
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3_org.exe",
+      "before_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b",
+      "matches_prior": true,
+      "after_sha256": "b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b"
+    },
+    {
+      "path": "analysis/captures/modern-differences/upstream/package/nfs3.exe",
+      "before_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6",
+      "matches_prior": true,
+      "after_sha256": "240a083a78ac3b836f0bdf3fe643a1c6568c12eefa5a186a2f6edd808596dca6"
+    },
+    {
+      "path": "nfs3_decomp.rep/Electronic Arts/Need For Speed III/nfs3.exe",
+      "before_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb",
+      "matches_prior": true,
+      "after_sha256": "2a20f80465ed53d320f1a6f41c9dde2c07de0bc5525af1f23f8e6aff3e6181fb"
+    },
+    {
+      "path": "nfs3_decomp.rep/idata/f9/~00000f9f.db/db.3146.gbf",
+      "before_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f",
+      "matches_prior": true,
+      "after_sha256": "7d15851180f215eb14609d4a87148b1cb9a33ae105372f172228f2f5f9c2817f"
+    },
+    {
+      "path": "analysis/evidence/probes/line-boundary-helper-probe.json",
+      "before_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0",
+      "matches_prior": true,
+      "after_sha256": "efab8ccdfc856300459593afa7a0955d799e99331e443b736267436ea64148d0"
+    },
+    {
+      "path": "reconstruction/README.md",
+      "before_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca",
+      "matches_prior": true,
+      "after_sha256": "53923b05978e5f5c281cf6b86a9f8dfcd3bedef62f9a94bb5f165f00fd4936ca"
+    },
+    {
+      "path": "reconstruction/line_boundary.c",
+      "before_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437",
+      "matches_prior": true,
+      "after_sha256": "5fed20df601353419c1ff2548ef6ce1f324bd7e14cd782d839e446eee84dd437"
+    },
+    {
+      "path": "reconstruction/line_boundary.h",
+      "before_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad",
+      "matches_prior": true,
+      "after_sha256": "120c3ee320ba166be6270e95f6e1c420b7385aa105144043e8361a841dc30aad"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary.py",
+      "before_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f",
+      "matches_prior": true,
+      "after_sha256": "b905e05d625af551bfbe580d3e2396c45bab585967b1ddf9c44ae28f2c7f598f"
+    },
+    {
+      "path": "reconstruction/tests/test_line_boundary_windows.py",
+      "before_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab",
+      "matches_prior": true,
+      "after_sha256": "5c806a92f53a75091f00b5118806314a90c649fe56a859fa487ec5a80d4b62ab"
+    },
+    {
+      "path": "reconstruction/tests/windows_adapter.S",
+      "before_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f",
+      "matches_prior": true,
+      "after_sha256": "977aa9d40a1ed32fe52f1e89bf3bf50bba1660fa833464b1ff01ce6a04a7088f"
+    },
+    {
+      "path": "reconstruction/tests/windows_harness.c",
+      "before_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd",
+      "matches_prior": true,
+      "after_sha256": "a117ded4ecc7f2bb84d1783f7cd142f14e6c9bbb00d724014414a120ce6349cd"
+    }
+  ],
+  "raw_reference_exports": [
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-1/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.c",
+      "before_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57",
+      "matches_prior": true,
+      "after_sha256": "56c876d66f5e51002ff37014fbb29c35f486dca56b3e4f3cdeb2684745baca57"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00485c30.h",
+      "before_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2",
+      "matches_prior": true,
+      "after_sha256": "647de8d0691fc65a515c5918f97bddd9c57894ad0bef88f14f873e85277f15b2"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.c",
+      "before_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b",
+      "matches_prior": true,
+      "after_sha256": "b85efb6cb15894b51fd11b68de75bfe5c6807f555f22607c4dcf27c01f59214b"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/004abd9c.h",
+      "before_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523",
+      "matches_prior": true,
+      "after_sha256": "6ffa03c873c05a692811902bd9092c1bb8554ee62e8da9f03cf263c2db586523"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.c",
+      "before_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99",
+      "matches_prior": true,
+      "after_sha256": "9b1f724d952962419a02d2420b3044359280bfda00f457bfaac9ea969b15ec99"
+    },
+    {
+      "path": "analysis/captures/reference-exports/add636a2a9b558f86fc066a7fbd42d67485580ed/eb696b46be8ff5e41c1ae90a6c882582f9b64ce2348d58214224420ec7793d56/run-2/00518640.h",
+      "before_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e",
+      "matches_prior": true,
+      "after_sha256": "7f1ec2458793a8f276f0d60214d0c442f1205e19f4ac6386bb350d16168ad33e"
+    }
+  ],
+  "selected_shared_dependencies": [
+    {
+      "path": "analysis/scripts/audit_thrash_loader_difference.py",
+      "sha256": "5bd4d21780b17971061bddf14a3dfb67944ca5556f4bdafb740f5e08e237d73c"
+    },
+    {
+      "path": "analysis/scripts/audit_dx5_reference_final.py",
+      "sha256": "cd7f5e69e9aac66c6dc1bfa2c0f04fe2c3486cf00388b4344b495a46d4b38ab2"
+    },
+    {
+      "path": "analysis/scripts/audit_screenshot_counter_history.py",
+      "sha256": "d129c6b57d425ae6ebe5798ad4ca4b494bc6bcfa2a265a4ee8cc4866ce555363"
+    },
+    {
+      "path": "analysis/scripts/audit_dialog_alignment_history.py",
+      "sha256": "19c000dc7b815cfb038d156fc8e3efae29201d363e080ebd405a4737d3ab0289"
+    }
+  ],
+  "limits": [
+    "Primary-agent10 static reruns, not independent semantic review, runtime, CI or whole-repository qualification.",
+    "No target/API/instruction execution, new exports, compilation, reconstruction edits or Ghidra reopening/mutation.",
+    "Hashes prove these files match recorded identities, not live GUI state, saved annotation correctness or runtime behavior.",
+    "Raw exports compare prior checkpoint hashes, not newly generated exports or freshly parsed original manifests.",
+    "Repeatability cannot prove every interpretation or extend the scripts\u2019 stated path/input coverage.",
+    "Selected shared dependencies are recorded, not a complete environment/package dependency lock."
+  ]
+}

@@ -1,8 +1,12 @@
 # Original versus Modern Patch: executable differences
 
+## Current menu policy and keyboard findings
+
+The [current five-investigation table](original-modern-audit-status.md#current-menu-policy-and-keyboard-checkpoint--2026-11-21) consolidates HUD selector availability, shared padding, four-dialog layout, key routing and template/entry order. The [checkpoint](evidence/validation/menu-policy-keyboard-checkpoint.json) reviews `92708c8`, reproduces five committed outputs twice (**10/10 runs**) and confirms12 protected artifacts plus12 raw exports match prior hashes. Reproduce with `python3 analysis/scripts/check_menu_policy_keyboard.py`. Runtime behaviour and each row's remaining unknowns are separate; this is not complete executable-difference coverage.
+
 ## Recent DX7, connection-hint and map-shape findings
 
-The [current five-investigation table](original-modern-audit-status.md#current-dx7-hint-and-shape-checkpoint--2026-11-21) consolidates provider bundling, dithering requests, the Esc hint, Field-of-View wording and the map-marker asset candidate. Its [checkpoint](evidence/validation/dx7-hint-shape-checkpoint.json) reproduces five committed outputs twice each (**10/10 runs**) and verifies12 protected artifacts plus12 raw exports against prior hashes. Reviewed revision: `666a0c8`. Reproduce with `python3 analysis/scripts/check_dx7_hint_shape.py`. Runtime effects and each row's documented unknowns remain separate; the broader comparison is incomplete.
+The [current five-investigation table](original-modern-audit-status.md#earlier-dx7-hint-and-shape-checkpoint--2026-11-21) consolidates provider bundling, dithering requests, the Esc hint, Field-of-View wording and the map-marker asset candidate. Its [checkpoint](evidence/validation/dx7-hint-shape-checkpoint.json) reproduces five committed outputs twice each (**10/10 runs**) and verifies12 protected artifacts plus12 raw exports against prior hashes. Reviewed revision: `666a0c8`. Reproduce with `python3 analysis/scripts/check_dx7_hint_shape.py`. Runtime effects and each row's documented unknowns remain separate; the broader comparison is incomplete.
 
 For current acceptance, limits and prioritized next work, see the [audit stopping-point report](original-modern-audit-status.md).
 
