@@ -1199,3 +1199,8 @@ The [four-build comparison](original-modern-state14.md#selected-vehicle-effect-b
 ## DX6 provider branch behind contextual fog gating
 
 The [selector15h comparison](original-modern-state14.md#dx6-provider-distinguishes-the-menu-gate-payloads) connects the140/150 menu effective4→0 change to distinct unchanged DX6 raw-state requests: payload4 requests1Ch=1 plus parameters, while0 requests1Ch=0. Provider success and the actual taillight draw/colour remain unverified; MP150-033 is still vendor-only.
+
+
+## DX6 quad attribute flag is unchanged by menu4-to0 policy
+
+The [quad follow-up](original-modern-state14.md#dx6-quad-attribute-copying-is-not-switched-by-payload4-versus0) verifies four retained per-vertex flag checks. Both selector15h payload4 and0 clear that flag, selecting the same source+14h attribute copy if it remains unchanged. Their raw device-state requests differ; a newly disabled CPU-side vertex rewrite is not the established mechanism. Actual taillight inputs and visible repair remain unverified.
