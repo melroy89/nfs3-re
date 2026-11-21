@@ -1,6 +1,64 @@
 {
   "kind": "static-nglide-version-packages",
   "versions": {
+    "1.1.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+      "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+      "member": "glide3x.dll",
+      "bytes": 1425408,
+      "sha256": "21e5b7e7f2554b876e2b9c9fa357111bde7b612e6ba8aefef70e1785795b6ed9",
+      "version_tables": [
+        {
+          "CompanyName": "3dfx Interactive, Inc.",
+          "FileDescription": "3Dfx Interactive, Inc. Glide DLL",
+          "FileVersion": "3.10.00.0658",
+          "InternalName": "glide3x.dll",
+          "LegalCopyright": "nGlide v1.04.1",
+          "OriginalFilename": "glide3x.dll",
+          "ProductName": "Glide\u00ae for Voodoo Banshee\u00ae, Voodoo3\u00ae, & Velocity(tm) 100/200; Windows 95\u00ae, Windows 98\u00ae, & Windows NT\u00ae",
+          "ProductVersion": "3.10.00.0658",
+          "Graphics Subsystem": " Voodoo Banshee\u00ae, Voodoo3\u00ae, & Velocity(tm) 100/200"
+        }
+      ],
+      "sections": [
+        {
+          "name": ".text",
+          "rva": "00001000",
+          "raw_bytes": 1024000,
+          "sha256": "78072d76bf5bcb53b28a8bc2a8c25e64a043567c04af26f7694a9f2b8f6d1334"
+        },
+        {
+          "name": ".rdata",
+          "rva": "000fb000",
+          "raw_bytes": 102400,
+          "sha256": "9bc8c86a367b2497646154c914aaf4a3ee01b82eea7dd1480b4dd90bc11fc4ce"
+        },
+        {
+          "name": ".data",
+          "rva": "00114000",
+          "raw_bytes": 81920,
+          "sha256": "d4602ad9b7f5aaf7db6635297013a0ed35be607de69cdb44893fd5337ef3ad26"
+        },
+        {
+          "name": ".idata",
+          "rva": "0ffa9000",
+          "raw_bytes": 8192,
+          "sha256": "79fe63fceb3bb95ab23ffa6e30c16e69dff2945c2573cc1fe01887a86d17d792"
+        },
+        {
+          "name": ".rsrc",
+          "rva": "0ffab000",
+          "raw_bytes": 4096,
+          "sha256": "3dd7627861fd469f4e41853c35ddc0d3ab265ac8a9f7476ce5b082c9995cd419"
+        },
+        {
+          "name": ".reloc",
+          "rva": "0ffac000",
+          "raw_bytes": 200704,
+          "sha256": "9b4d4037ecfaa7b8ebdddbe0ab9fbf14eb90c9ecd6990de05b41623a1a115c11"
+        }
+      ]
+    },
     "1.2.0": {
       "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z",
       "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
@@ -305,10 +363,61 @@
     "changed_file_bytes": 598121,
     "same_nglide_label": true
   },
+  "120_provider_adapter_pairs": {
+    "nglide": {
+      "provider_member": "drivers/nglide/glide3x.dll",
+      "provider_sha256": "e4a815c565ffd61d18974ea4d139390ee84ba6918b106c1835f861bb61872e5c",
+      "provider_bytes": 1409024,
+      "version_tables": [
+        {
+          "CompanyName": "3dfx Interactive, Inc.",
+          "FileDescription": "3Dfx Interactive, Inc. Glide DLL",
+          "FileVersion": "3.10.00.0658",
+          "InternalName": "glide3x.dll",
+          "LegalCopyright": "nGlide 1.04.2",
+          "OriginalFilename": "glide3x.dll",
+          "ProductName": "Glide\u00ae for Voodoo Banshee\u00ae, Voodoo3\u00ae, & Velocity(tm) 100/200; Windows 95\u00ae, Windows 98\u00ae, & Windows NT\u00ae",
+          "ProductVersion": "3.10.00.0658",
+          "Graphics Subsystem": " Voodoo Banshee\u00ae, Voodoo3\u00ae, & Velocity(tm) 100/200"
+        }
+      ],
+      "adapter_member": "drivers/nglide/nglide.dll",
+      "adapter_sha256": "bf075c8deec77ce8f87ee76b11662f257dd5cc5e9d91bc69cfd4afcc36b4301b",
+      "adapter_bytes": 69120,
+      "ini_member": "drivers/nglide/thrash.ini",
+      "ini_sha256": "df7c78608ed8c63b598fe3e373956a5435433c3138489855c146bb32e0833932",
+      "ini_text": "[THRASH]\r\nFile=nglide.dll\r\nType=voodoo\r\nFogSupport=1\r\nLightBeams=1\r\n[NGLIDE]\r\nResolution=0\r\nAspect=0\r\nRefresh=0\r\nVsync=1\r\nGamma=5\r\nSplash=0"
+    },
+    "dgvoodoo": {
+      "provider_member": "drivers/dgvoodoo/glide3x.dll",
+      "provider_sha256": "3b6a477900cc16993df1262ea638f8a86a68dea16ec8cc6d0dc23072bc5b4bc2",
+      "provider_bytes": 67584,
+      "version_tables": [
+        {
+          "CompanyName": "D\u00e9g\u00e9",
+          "FileDescription": "dgVoodoo 2.44 Glide Wrapper (for Glide v3.10)",
+          "FileVersion": "3.10.0.0",
+          "InternalName": "Glide3x.dll",
+          "LegalCopyright": "Copyright (C) 2013-2015",
+          "OriginalFilename": "Glide3x.dll",
+          "ProductName": "dgVoodoo",
+          "ProductVersion": "2.4.4.0"
+        }
+      ],
+      "adapter_member": "drivers/dgvoodoo/voodoo2.dll",
+      "adapter_sha256": "857f8dd4dd997006012ae233722f382068c6c41d20c2f3166ba2b5df79122cc0",
+      "adapter_bytes": 69120,
+      "ini_member": "drivers/dgvoodoo/thrash.ini",
+      "ini_sha256": "36c99d5e0f86dbc6a6c161f6a1fabb778a7ab362702b252afb5a76af1975293b",
+      "ini_text": "[THRASH]\r\nFile=voodoo2.dll\r\nType=voodoo\r\nFogSupport=1\r\nLightBeams=1"
+    }
+  },
   "limits": [
     "Packaged self-identification,not upstream signature/build authentication or implementation semantics.",
     "MP140-046 source says gGlide;association with packaged nGlide1.05 is inferred,not silently corrected.",
     "Different140/150 bytes do not establish the advertised NFS3-specific fixes or effective behavior.",
+    "110 retained package label1.04.1 does not establish exact100 introduction or extended API behavior.",
+    "120 bundles distinct provider/adapter pairs;configuration is not successful loading or physical hardware support.",
     "No wrapper/game/API execution,installation or executable/Ghidra mutation."
   ]
 }

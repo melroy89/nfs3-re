@@ -574,10 +574,11 @@ The files are different despite identical checked version strings;150 is1,536 by
 
 ## Historical nGlide labels and the150 same-version binary change
 
-The [five-package audit](evidence/audits/nglide-version-packages.json), reproduced with `python3 analysis/scripts/audit_nglide_version_packages.py`, pins120/130/131/140/150 archives and each `drivers/nglide/glide3x.dll` member. All are i386 PE files; the nGlide label is carried in LegalCopyright, while FileVersion/ProductVersion retain Glide-facing3.10.00.0658.
+The [six-package audit](evidence/audits/nglide-version-packages.json), reproduced with `python3 analysis/scripts/audit_nglide_version_packages.py`, pins110/120/130/131/140/150 archives and each `drivers/nglide/glide3x.dll` member. 110 uses root `glide3x.dll`, while the later checked packages use `drivers/nglide/glide3x.dll`. All are i386 PE files; the nGlide label is carried in LegalCopyright, while FileVersion/ProductVersion retain Glide-facing3.10.00.0658.
 
 |Patch |nGlide label |Wrapper bytes |SHA-256 |
 |---|---|---:|---|
+|110 |nGlide v1.04.1 |1,425,408 |`21e5b7e7f2554b876e2b9c9fa357111bde7b612e6ba8aefef70e1785795b6ed9` |
 |120 |nGlide1.04.2 |1,409,024 |`e4a815c565ffd61d18974ea4d139390ee84ba6918b106c1835f861bb61872e5c` |
 |130 |nGlide1.04.3 |1,409,024 |`b042e03135ba45553aed5e8c93bf0ca0d2c7056d19e52fe7eee41a98dc849f1d` |
 |131 |nGlide1.04.3 |1,409,024 |`b042e03135ba45553aed5e8c93bf0ca0d2c7056d19e52fe7eee41a98dc849f1d` |
@@ -622,3 +623,22 @@ Both low-level loader entries still unconditionally reach imported LoadLibraryA 
 The complete snapshot bodies00517170..00517362 and00517370..0051755e remain byte-identical110/120, despite the disappearance of the selected direct callers. They are removed/NOP-filled by final Modern, as documented in the earlier snapshot comparison. Do not date their physical removal to120 or equate no decoded direct caller with global unreachability.
 
 **MP120-006 advances vendor-only→partial:** the historical pair establishes concrete consolidation of load/switch sites and removal of the inspected snapshot switch wrapper. Whole-process “loaded only once,” actual DLL mapping/unmapping, repeated initialization and every indirect/recovery path remain unverified. The Voodoo provider's separate Glide-handle cache is a different dependency. No DLL, loader, API or target instructions execute; binaries and Ghidra remain unchanged.
+
+## Early120 package contains two configured Glide provider pairs
+
+The expanded [nGlide package audit](evidence/audits/nglide-version-packages.json) now pins the110 root wrapper and120's two provider/adapter/INI triples. It reuses the existing120 identity and [special nGlide adapter evidence](#historical-nglide-configuration-precedes-provider-loading), rather than treating each `glide3x.dll` name as the same component.
+
+|120 directory |INI-selected adapter |Adjacent provider |Provider self-identification |
+|---|---|---|---|
+|drivers/nglide |nglide.dll,69,120 bytes |glide3x.dll,1,409,024 bytes |LegalCopyright `nGlide 1.04.2` |
+|drivers/dgvoodoo |voodoo2.dll,69,120 bytes |glide3x.dll,67,584 bytes |Description `dgVoodoo 2.44 Glide Wrapper (for Glide v3.10)`; ProductVersion2.4.4.0 |
+
+Both INIs specify Type=voodoo, FogSupport=1 and LightBeams=1; the nGlide variant additionally authors six NGLIDE settings. The adapter hashes differ, consistent with the separately inspected configuration helper. Equal adapter sizes do not imply equal bytes or full ABI/behavior equivalence. The manifest records both adapter/provider hashes, complete small INIs and version strings.
+
+110's root wrapper, SHA-256`21e5b7e7f2554b876e2b9c9fa357111bde7b612e6ba8aefef70e1785795b6ed9`, identifies as `nGlide v1.04.1`. Its API-facing FileVersion/ProductVersion remain3.10.00.0658. The120 nGlide provider instead identifies1.04.2, as already established by the later package chronology. Resource labels are build self-identification, not independent upstream authentication.
+
+**MP120-021 gains bounded-static support for the two configured package choices.** The nGlide adapter is actually named `nglide.dll`; the dgVoodoo adapter is `voodoo2.dll`. This qualifies the condensed release note's common-driver wording. It does not prove either triple is selected/loaded successfully or works on real3dfx hardware.
+
+**MP120-028 advances vendor-only→partial:**120 contains a wrapper identifying as1.04.2, but the projected-headlight repair needs code/visual evidence. **MP100-059 advances vendor-only→partial:** the earliest retained110 package corroborates a1.04.1-labelled wrapper; no100 archive is inspected, and support for the advertised extended API is not established by that label. Exact100 inclusion and API acceptance remain unresolved.
+
+The release-note hardware recipe MP120-022 remains vendor-only. Package composition, a matching DLL name or Type=voodoo alone cannot establish native Voodoo/Voodoo2 compatibility. No provider, adapter, game, API or target instruction executes; binaries and Ghidra are unchanged.

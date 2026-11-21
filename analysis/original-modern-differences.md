@@ -1,6 +1,6 @@
 # Original versus Modern Patch: executable differences
 
-The [current texture/clock/speech/loader checkpoint](original-modern-audit-status.md#current-texture-clock-speech-and-loader-checkpoint--2026-11-21) reviews `b1b26ab`: **16/16 static reruns** reproduce eight evidence outputs, with12 protected files and12 raw exports unchanged. Its table separates concrete historical changes from missing baselines and runtime claims. The catalogue currently has46 vendor-only,56 bounded-static and188 partial entries; these are not distinct EXE-change counts or a completion percentage.
+The [current texture/clock/speech/loader checkpoint](original-modern-audit-status.md#current-texture-clock-speech-and-loader-checkpoint--2026-11-21) reviews `b1b26ab`: **16/16 static reruns** reproduce eight evidence outputs, with12 protected files and12 raw exports unchanged. Its table separates concrete historical changes from missing baselines and runtime claims. The catalogue currently has43 vendor-only,57 bounded-static and190 partial entries; these are not distinct EXE-change counts or a completion percentage.
 
 The [preceding renderer/loading/menu checkpoint](original-modern-audit-status.md#current-renderer-loading-and-menu-checkpoint--2026-11-21) reviews `ea2fc48`: **22/22 static reruns** reproduce11 evidence files, with12 protected artifacts and12 raw exports unchanged. Its compact table links the recent wrapper, reference-driver/debug, DX6, loading screenshot and menu findings to their remaining limitations. This is repeatability/preservation evidence, not complete difference coverage or runtime acceptance.
 
@@ -699,7 +699,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **46 Claimed, 56 Static, 188 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **43 Claimed, 57 Static, 190 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -957,14 +957,14 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP120-018 | The driver hides resolutions with height lower than 480 pixels now. | Partial |
 | MP120-019 | 640×480 always reported as 16-bit because intro movie doesn't works in 32-bit mode. Other resolutions are reported as 32-bit if they are available. | Partial |
 | MP120-020 | Firstly file glide3x.dll is searched in the same directory from where voodoo2.dll is loaded, then it is searched in current directory, and then in system directory. This change allows to save several different Glide API emulators to neighbour directories and use them when needed. | Partial |
-| MP120-021 | Thrash driver voodoo2.dll distributed with two different Glide API emulators: nGlide and dgVoodoo. You have to choose nglide or dgvoodoo instead of voodoo2 in the VideoDriver ini setting. | Claimed |
+| MP120-021 | Thrash driver voodoo2.dll distributed with two different Glide API emulators: nGlide and dgVoodoo. You have to choose nglide or dgvoodoo instead of voodoo2 in the VideoDriver ini setting. | Static |
 | MP120-022 | If you would like to play NFS3 on the real 3dfx Voodoo or 3dfx Voodoo 2 hardware, create new subdirectory with name voodoo2 in the drivers directory, copy into this subdirectory thrash.ini and voodoo2.dll from the dgvoodoo subdirectory, set VideoDriver ini setting to voodoo2. | Claimed |
 | MP120-023 | glide3x.dll is loaded only once. | Partial |
 | MP120-024 | Resolutions count limit was extended up to 100. | Partial |
 | MP120-025 | It's a slightly changed version of voodoo2.dll with special code for the nGlide wrapper. It's created to prevent unwanted using global settings of nGlide. | Partial |
 | MP120-026 | This is done by setting NGLIDE_* environment variables before glide3x.dll loading. Every setting is gotten from the [NGLIDE] section of according thrash.ini file. Each setting of this section is formatted like NGLIDE_SETTINGNAME and used as name of an environment variable. Names of settings and their formats can be found at the official nGlide forum: http://www.zeus-software.com/forum/viewtopic.php?f=9&t=796 | Static |
 | MP120-027 | If you would like to use global nGlide settings, just remove [NGLIDE] section in the ./drivers/nglide/thrash.ini file. | Partial |
-| MP120-028 | Bundled with nGlide v1.04.2 (this version also fixes possible problems with projected headlights). | Claimed |
+| MP120-028 | Bundled with nGlide v1.04.2 (this version also fixes possible problems with projected headlights). | Partial |
 
 ### Version 1.1.0 (2015-05-22)
 
@@ -1047,7 +1047,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-056 | Based on voodoo2a.dll from the Future Cop L.A.P.D. game. It seems that it is a slightly updated NFS3 driver which uses Glide3x API instead of Glide2x API. So it seems that these drivers are highly compatible and all special effects are present. Original voodoo2a.dll from NFS3 uses Glide 2x API which doesn't have ability do detect supported resolutions. Official update of this file which uses Glide 3x API is based on NFS4 and it seems that it lacks fog effect. So it doesn't fit us. | Claimed |
 | MP100-057 | Added support of huge Glide resolutions with ability to use Z-buffer. Now list of supported Glide resolutions are: 640×480, 800×600, 960×720, 1024×768, 1280×1024, 1600×1200. Widescreen resolutions aren't possible with standard Glide API. This list is used when extended Glide API isn't supported. | Claimed |
 | MP100-058 | Jointly with the author of nGlide wrapper we are extended Glide API to support all possible resolutions. So if voodoo2a.dll detects that this extended Glide API is supported then it displays all possible resolutions (inclusive widescreen ones). | Claimed |
-| MP100-059 | nGlide 1.04.1 with support of extended API is included in this archive. | Claimed |
+| MP100-059 | nGlide 1.04.1 with support of extended API is included in this archive. | Partial |
 | MP100-060 | If you would like to use other Glide wrapper with support of all resolutions, please write to author of this wrapper a suggestion to add support of extended resolutions Glide API. This extension is easy to implement and it should not take a long time. | Claimed |
 | MP100-061 | Based on the original d3da.dll from NFS3 (works on DirectX 5). Newer versions of this driver not fully compatible with NFS3 and may be a cause of graphical glitches like huge black polygon near Old Church in Hometown. | Claimed |
 | MP100-062 | The driver hides resolutions with height lower than 480 pixels now. It frees space in the list for modern resolutions. | Partial |
