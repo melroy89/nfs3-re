@@ -337,7 +337,7 @@ After those adjustments, it clears52 bytes at `60020fa0` and builds the thirteen
 
 On selected branches, that parameter pointer reaches the previously traced Direct3D8 object/device chain: CreateDevice at vtable+3Ch (`60003d4c`, output object `6001ed28`) or Reset at+38h (`60003d5e`). Local result handling and dimension retries follow; no API acceptance was observed. Unsupported/other depth values do not gain an invented validated mapping here.
 
-Thus the16-bit activation-request branch **already exists in140**;150's new catalog admission can expose it without changing these two bodies. Conversely, the older32-only enumeration gate never proved all activation paths requested32, because fallback/adjustment paths are separate. MP150-039 remains partial: catalog and selected activation requests are linked, while ancillary-format policy, index/slot lifetime, errors, actual display depth and rendered output remain unverified. No DLL/API or target instructions were executed and no executable/Ghidra state was changed.
+Thus the16-bit activation-request branch **already exists in140**;150's new catalog admission can expose it without changing these two bodies. Conversely, the older32-only enumeration gate never proved all activation paths requested32, because fallback/adjustment paths are separate. MP150-039 remains partial: catalog and selected activation requests are linked, while selector/flag and index/slot lifetime, errors, actual display depth and rendered output remain unverified. No DLL/API or target instructions were executed and no executable/Ghidra state was changed.
 
 
 ### DX8 adjustment can override the selected depth
@@ -353,6 +353,27 @@ The pinned `wingdi.h` snapshot maps those indices to HORZRES, VERTRES and BITSPI
 
 Preserve one unusual branch exactly: windowed CheckDeviceFormat at `600040c5` returning **nonzero** skips CheckDeviceType and continues to helper `600043e0`. A zero first result instead calls CheckDeviceType at `600040e1`, whose result must be zero to continue. This is not a conventional requirement that both checks succeed. No failed API call or resulting symptom was observed, and reconstruction must not silently correct this control flow.
 
-The other helper requires zero results from both CheckDeviceType (`6000419b`) and CheckDeviceFormat (`600041b9`) for each candidate. Both paths then require nonzero from `600043e0`, which receives the ancillary-format output pointer. That helper's full search/write contract remains unresolved; no candidate is asserted actually available.
+The other helper requires zero results from both CheckDeviceType (`6000419b`) and CheckDeviceFormat (`600041b9`) for each candidate. Both paths then require nonzero from `600043e0`, which receives the ancillary-format output pointer. Its selected search/write contract is documented below; no candidate is asserted actually available.
 
-Consequently, admitting a16-bit catalog row does **not** guarantee16-bit output: windowed adjustment may replace it with reported32, and the other path can fall back from16 to32. Conversely, requesting32 can fall back to16. These statements describe conditional requests/writebacks, not rendered results. Follow-up priorities are ancillary helper `600043e0`, then complete caller/device lifetime and runtime acceptance. No DLL/API/target instructions were executed, and no executable or saved Ghidra database changed.
+Consequently, admitting a16-bit catalog row does **not** guarantee16-bit output: windowed adjustment may replace it with reported32, and the other path can fall back from16 to32. Conversely, requesting32 can fall back to16. These statements describe conditional requests/writebacks, not rendered results. Follow-up priorities are selector/flag initialization and mutation, complete caller/device lifetime and runtime acceptance. No DLL/API/target instructions were executed, and no executable or saved Ghidra database changed.
+
+
+### DX8 ancillary helper selects depth/stencil, with a success-without-write edge
+
+The same [activation audit](evidence/audits/dx8-mode-activation-history.json) now retains helper `600043e0..60004521` (321 code bytes) and separately decodes its ten-entry jump table `60004524..6000454c` as data. Both code and table match140/150. SDK constants identify the previously opaque output as a depth/stencil format.
+
+Its four stack arguments are adapter index, adapter format, render-target format and output pointer. It chooses a six-candidate list from the current DWORD at `6001eed0`; this is distinct storage from the incoming colour-depth pointer handled by the preceding helpers.
+
+|Selector value |Candidate order, first to last |
+|---|---|
+|16 |D16(80), D32(71), D24S8(75), D24X8(77), D24X4S4(79), D15S1(73) |
+|32 |D32(71), D24S8(75), D24X8(77), D24X4S4(79), D16(80), D15S1(73) |
+|Anything else |Returns1 without a local write to the output pointer |
+
+Each candidate must return zero from CheckDeviceFormat at `6000447c` (usage2, resource type1), then zero from CheckDepthStencilMatch at `60004495`. The pinned interface header establishes vtable slots28h/30h. The first candidate passing both checks is written to the output at `600044c1`; exhaustion writes0 and returns0. Actual device support is untested.
+
+Selected D32/D24S8/D24X8/D24X4S4 writes selector32; D16 writes16. D15S1 writes16 and sets DWORD `6002022c` to1. This helper does not clear that flag on its other paths. Do not infer that it always describes the current selected format without checking initialization and later writes.
+
+The unsupported-selector branch at `6000444c` reaches the success return `600044dc` without performing the search or writing the output. That is an instruction-level edge, not evidence that normal initialization reaches it. A C reconstruction must preserve or explicitly resolve the caller precondition rather than replace this with an invented failure/default.
+
+**Resolved:** selected candidate order, API gate order, output writes and selector/flag effects. **Remaining:** the selector and flag's full initialization/mutation history, output contents on success-without-write, complete device/error lifecycle and rendered behaviour. This narrows the earlier ancillary-helper unknown; it does not establish runtime safety or introduce another140→150 change.

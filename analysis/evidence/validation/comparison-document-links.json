@@ -113,8 +113,8 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "1f7d68168db2043a098ea1871b61f51e8ba5cfa4f57117eccd034f2ff6b5f37b",
-      "relative_links": 31
+      "sha256": "890ba8d6722af3b0efe2cb017af3e765c8f6d14405bcad876011942773bbd31e",
+      "relative_links": 32
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2812,
+  "relative_link_count": 2813,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
