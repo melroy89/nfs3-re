@@ -570,3 +570,20 @@ The [package metadata audit](evidence/audits/dgvoodoo-251-packages.json), reprod
 The files are different despite identical checked version strings;150 is1,536 bytes larger. Per-section hashes/extents are retained to support a later implementation comparison. Size/hash changes alone do not identify a feature or repair.
 
 **MP150-037 gains bounded static support** for including a wrapper identifying as dgVoodoo2.51/Napalm. **MP140-047 gains partial support:**140 contains that identifying wrapper, but its advertised **WIP16** build identity is not corroborated by the checked metadata. Neither file has a case-insensitive ASCII or UTF16LE WIP literal; this absence does not disprove the vendor's build attribution. Authentication against an upstream build, full wrapper-code changes, installation/loading and rendered compatibility remain unverified. No DLL was loaded or target instructions executed, and no game/database bytes changed.
+
+
+## Historical nGlide labels and the150 same-version binary change
+
+The [three-package audit](evidence/audits/nglide-version-packages.json), reproduced with `python3 analysis/scripts/audit_nglide_version_packages.py`, pins131/140/150 archives and each `drivers/nglide/glide3x.dll` member. All are i386 PE files; the nGlide label is carried in LegalCopyright, while FileVersion/ProductVersion retain Glide-facing3.10.00.0658.
+
+|Patch |nGlide label |Wrapper bytes |SHA-256 |
+|---|---|---:|---|
+|131 |nGlide1.04.3 |1,409,024 |`b042e03135ba45553aed5e8c93bf0ca0d2c7056d19e52fe7eee41a98dc849f1d` |
+|140 |nGlide v1.05 |1,425,408 |`16865452af3bc41ae203f9f11808bd94820477070c011790b5fc66ad0e2963ad` |
+|150 |nGlide v1.05 |1,425,408 |`87842a85d1bfda4217e691a9d4412915c74905eed818c5a727e2f2d6b814edb6` |
+
+140/150 have equal size and labels but598,121 differing file-byte positions. That is a raw file comparison, not a count of code changes, fixes or features. Section extents/hashes and complete version strings are retained for later build/implementation comparison.
+
+**MP140-046 gains partial support with a naming caveat:** the retained release note says **gGlide v1.05**, whereas the packaged directory and self-identification say **nGlide v1.05**. Their association is inferred; the source wording is preserved in the catalogue/index. No `drivers/gglide` component is invented from that wording. **MP150-036 gains partial support** for shipping changed nGlide wrapper bytes; the advertised NFS3-specific repairs are not established by metadata or file differences.
+
+Upstream build authentication, exact wrapper-code changes, successful loading and rendered compatibility remain unverified. This is separate from the THRASH `nglide.dll→voodoo2a.dll` migration above: provider wrapper and adapter are different components. No wrapper or target code was loaded/executed and no executable/database bytes changed.

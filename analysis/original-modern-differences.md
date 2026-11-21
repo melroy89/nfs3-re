@@ -695,7 +695,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **63 Claimed, 56 Static, 171 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **61 Claimed, 56 Static, 173 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -816,7 +816,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-033 | Fixed a problem with discolored light from the taillights in the menu when DX6 renderer is used and fog support is enabled. | Claimed |
 | MP150-034 | Fixed a bug which cause a crash when using the screenshoter feature on Windows XP. | Partial |
 | MP150-035 | The game doesn't change resolution to 640×480 when “exit to system” is used during the gameplay, so closing the game is faster in this case. | Partial |
-| MP150-036 | Updated version of nGlide with fixes according to the NFS3 is included. | Claimed |
+| MP150-036 | Updated version of nGlide with fixes according to the NFS3 is included. | Partial |
 | MP150-037 | dgVoodoo v2.5.1 (Napalm). | Static |
 | MP150-038 | Fixed a bug in the SoftTri renderer. Now it outputs all available resolutions. | Claimed |
 | MP150-039 | DX8 renderer outputs 16-bit resolutions also. However, it still can't play movies at all. | Partial |
@@ -876,7 +876,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-043 | The nGlide uses general voodoo2a.dll now, its settings can be changed using the [ENV] section of the thrash.ini. | Partial |
 | MP140-044 | Added separate Glide3x thrash driver for using on the real 3dfx Voodoo hardware. | Partial |
 | MP140-045 | VideoDriver ini setting was renamed to ThrashDriver (original name). Filenames of all thrash drivers also were renamed using original format. | Static |
-| MP140-046 | Included glide3x.dll from the gGlide v1.05. | Claimed |
+| MP140-046 | Included glide3x.dll from the gGlide v1.05. | Partial |
 | MP140-047 | Included glide3x.dll from the dgVoodoo v2.5.1 (Napalm, WIP16). | Partial |
 | MP140-048 | Uses Print Screen key instead of inconvenient combination Alt+P. | Static |
 | MP140-049 | Does one screenshot per second when Print Screen is held for long time instead of hundreds of screnshots without delays. | Static |

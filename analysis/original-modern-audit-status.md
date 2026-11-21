@@ -13,9 +13,11 @@ The [six-audit checkpoint](evidence/validation/hud-glide-projection-affinity-che
 |[Projection](original-modern-projection.md#historical-fulldefault-origin-change-reaches-projection-centre) |Bounded camera-region partition and default origin-to-centre linkage; odd-dimension limit explicit |Capture lifetime, other contexts/orientation and actual horizon |
 |[Affinity](original-modern-startup-policy.md#early110-affinity-policy-defaults-enabled) |110 configured/reader default1 and conditional mask1 request; final default0 |Exact100 introduction, API success and multicore reliability |
 
-Current catalogue: **63 vendor-only,56 bounded-static,171 partial,0 unresolved-category entries**, across290 release-note bullets. These are labels, not distinct EXE changes or completion percentages. Zero in the last category does **not** mean no unknowns: vendor-only claims, partial mechanisms, provenance, projection capture, preset−5 meaning and runtime compatibility remain open. The full original/Modern comparison is incomplete.
+Current catalogue: **61 vendor-only,56 bounded-static,173 partial,0 unresolved-category entries**, across290 release-note bullets. These are labels, not distinct EXE changes or completion percentages. Zero in the last category does **not** mean no unknowns: vendor-only claims, partial mechanisms, provenance, projection capture, preset−5 meaning and runtime compatibility remain open. The full original/Modern comparison is incomplete.
 
 The subsequent [140/150 dgVoodoo metadata audit](original-modern-renderer-loading.md#historical140-and150-dgvoodoo-wrappers-share-versions-but-differ-in-bytes) adds bounded support for MP150-037 and partial support for MP140-047; WIP16 identity remains unverified. It is outside these12 checkpoint runs.
+
+The newer [nGlide label/build audit](original-modern-renderer-loading.md#historical-nglide-labels-and-the150-same-version-binary-change) adds partial support for MP140-046/MP150-036, preserving the source gGlide/nGlide naming discrepancy and unresolved fix semantics. It is also outside the checkpoint.
 
 Next prioritize unassigned original/final changed mechanisms and remaining vendor claims with usable baselines. Reuse the completed HUD table inventory and bounded camera-region partition; their retained bodies need not be rechecked absent new evidence. Resolve runtime questions only within their stated test scope, without treating static reruns or package inclusion as game compatibility evidence.
 
