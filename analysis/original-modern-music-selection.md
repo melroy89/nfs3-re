@@ -306,3 +306,15 @@ The counts describe the first selection after this seeding path with
 the selected mode already set. They establish the weighting in the
 mapping. Measured probabilities also depend on the incoming RNG state
 and when the seed helper runs. Later selections advance the cycle.
+
+### Packaged 1.5.2 to 1.5.3 menu seed boundary
+
+The retained packaged executables have 28 NOP bytes at
+`0040ff80..0040ff9c` in 1.5.1 and 1.5.2. In 1.5.3 and 1.6.0,
+that span contains the same track and seed tables as official final.
+The 23-byte seed helper at `0040ff9c` also matches final in both
+releases. Direct call encodings target it from `004b5cb1` in 1.5.3,
+`004b5ca2` in 1.6.0, and `004b5d30` in final. Thus the mapping and
+its initialization call already exist in the inspected 1.5.3 package.
+The finding dates this implementation at the specified addresses.
+An equivalent implementation elsewhere in earlier builds remains open.
