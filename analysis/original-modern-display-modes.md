@@ -318,3 +318,23 @@ The special640×480 case instead writes slot1 before reaching ordinary capacity/
 The248-byte region `6000462d..60004725` is entirely NOP in all three checked builders. That is a byte fact, not proof of the source or history of removed ordering code. The compared append/deduplication tail is retained140/150.
 
 **MP110-008 remains vendor-only as a comparative claim:** the early DX8 ordering mechanism is now documented, but its precise advertised difference from an earlier provider/catalog is not established. No actual API mode order, final visible list, refresh selection, complete consumer bounds or runtime mutation was observed. Do not equate a documented current ordering algorithm with proof of every historical ordering change.
+
+
+### DX8 activation already contains16-bit requests before150
+
+The [activation audit](evidence/audits/dx8-mode-activation-history.json), reproduced with `python3 analysis/scripts/audit_dx8_mode_activation_history.py`, compares140/150 with the same pinned DLLs and header snapshots. The complete334-byte `_THRASH_setvideomode@12` at `600038b0..600039fe` and1,153-byte worker `60003b80..60004001` are byte-identical. This separates the preceding changed enumeration gate from retained activation code.
+
+The export checks signed input index≥0 and<count, then row+10h bit0. Failure substitutes index1 at `600038d6` without rechecking that row locally. It can route through a posted message464h on its cross-thread path, or directly call the worker at `600039a7`; actual message delivery and synchronization are untested. This is not a universally validated-index interface.
+
+The worker reads width/height/depth from an active record. An inactive record supplies fallback640×480×16 before adjustment. It then passes field pointers to helpers `60004010` or `60004140`; their complete policy is outside this audit, so selected catalog values are not assumed to survive unchanged.
+
+After those adjustments, it clears52 bytes at `60020fa0` and builds the thirteen-field presentation record. The checked32-bit SDK layout identifies the first fields as BackBufferWidth/Height/Format:
+
+|Adjusted depth |Format request at parameter+8 |
+|---|---|
+|16 |23 = R5G6B5 (`60003cc5`) |
+|32 |22 = X8R8G8B8 (`60003cd6`) |
+
+On selected branches, that parameter pointer reaches the previously traced Direct3D8 object/device chain: CreateDevice at vtable+3Ch (`60003d4c`, output object `6001ed28`) or Reset at+38h (`60003d5e`). Local result handling and dimension retries follow; no API acceptance was observed. Unsupported/other depth values do not gain an invented validated mapping here.
+
+Thus the16-bit activation-request branch **already exists in140**;150's new catalog admission can expose it without changing these two bodies. Conversely, the older32-only enumeration gate never proved all activation paths requested32, because fallback/adjustment paths are separate. MP150-039 remains partial: catalog and selected activation requests are linked, while complete helper policy, index/slot lifetime, errors, actual display depth and rendered output remain unverified. No DLL/API or target instructions were executed and no executable/Ghidra state was changed.

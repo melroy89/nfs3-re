@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "83690cf4b6b7ed4a737b1f7daab40edc015b84c6ea07ccaec8fd624f675fcdd3",
-      "relative_links": 264
+      "sha256": "f38f6061f9a0291617c4b76eef4657f78aace1f78ee396b4c77e36e9e49b258f",
+      "relative_links": 265
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -108,13 +108,13 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "f0af467b7c8647099f87f76226e25a549f0b32dc1417f0abe98af70bb912d960",
-      "relative_links": 313
+      "sha256": "203ff645ad6950d4ab3fbc6e3ba2d5b791d8363114b273d0237e7ecaad800f97",
+      "relative_links": 314
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "77c99833efcdd8d2596390e289acc2a300b708a13d42bdc511e0cfe303810859",
-      "relative_links": 29
+      "sha256": "587a30dae001f2c3b65b8da4de4c2140d2601f182a6927fac63fd2d900dac4b9",
+      "relative_links": 30
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -653,7 +653,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "d8d9b454269d061bd42ec83611aae02d2487005c9d82a91954a08c6f086f9d8b",
+      "sha256": "128b78dc245a33727290c50610c346bf250a67a3a10802863efe35238e5ecc84",
       "relative_links": 236
     },
     {
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2808,
+  "relative_link_count": 2811,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

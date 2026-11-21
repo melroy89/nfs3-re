@@ -1316,3 +1316,8 @@ The [110/140/150 provider audit](original-modern-display-modes.md#dx8-early-size
 ## DX8 ordering policy documented without inventing a historical comparator
 
 The [ordering follow-up](original-modern-display-modes.md#dx8-ordinary-mode-order-is-append-order-with-a-special-slot) verifies ordinary unique modes append in API order from slot2, with a four-field duplicate key excluding refresh rate, while slot1 is independently overwritten by the special mode. This is not a sorted-size catalog. MP110-008 stays vendor-only as a claimed comparative change; earlier ordering and actual visible modes remain unverified. Catalog counts are unchanged.
+
+
+## DX8 catalog expansion reuses existing activation branches
+
+The [140/150 activation comparison](original-modern-display-modes.md#dx8-activation-already-contains16-bit-requests-before150) verifies the complete mode export and worker unchanged. They already map adjusted16/32-bit depths into presentation-format requests and contain fallback/threaded paths.150 changes catalog admission, rather than adding these branches. Complete helpers, successful device activation and rendered depth remain unverified; catalog counts are unchanged.
