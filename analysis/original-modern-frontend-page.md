@@ -371,3 +371,15 @@ zero-extended in Modern. The two table results are still written to
 widget WORDs +6 and +8. For the same valid row the added offsets change
 from (146, 0) to (151, 1). The template identifies the widget class.
 Specific rendered instances remain unverified.
+
+### Color argument for the tbkn branch
+
+In the pinned original and official final Modern EXEs, the 53-byte
+span `00460352..00460387` differs only at `0046036a..0046036d`
+(exclusive ends). The branch checks that widget+0x3c is non-null and
+that comparison with the file-backed token `tbkn` at `0053a9a0`
+returns zero. It passes ECX=`ff787878` in the original and
+ECX=`ffa0a0a0` in Modern to `004d7160` at `00460380`.
+The three gray components rise from 120 to 160. The branch and other
+argument setup retain identical bytes. The observed screen and
+runtime color output remain unverified.

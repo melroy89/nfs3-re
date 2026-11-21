@@ -8000,7 +8000,7 @@
       }
     ],
     "report": "analysis/original-modern-frontend-page.md",
-    "report_sha256": "363ec2118c6e6df2063e8dc0ea7a396cc817210f3c01848b5fc3ef8182a29d52",
+    "report_sha256": "c911a7f2fc33fb1bf3448137a6ea8c6220261acae16f77a943eb893dbeeafe51",
     "limit": "Same-address partitions overlap different old/new function roles; counterpart calls/registration and report evidence govern semantics, not these partitions."
   },
   "startup_interval_partition": {
