@@ -344,3 +344,18 @@ The eight16-byte records at`0055e8dc..0055e95c` are **identical** in1.4.0 and1.5
 This establishes the advertised **MP150-022 conditional LOGO2 animation mechanism** at its1.4.0→1.5.0 boundary. It does not establish the contents or manufacturer identities of an external historical LOGO2 file, exact selected-index distributions, successful uploads or visible animation. In particular, primary-file failure does not leave a standalone LOGO2-only mode in this inspected loader.
 
 Final1.6.1 uses the separately audited **logos.qfs → LTBL →12-byte records** mechanism. The final atlas and conditional model keys must not be substituted for these historical16-byte records/two handles. This pass resolves the existence of the historical optional two-image route; when/how the later consolidation occurred and its full asset correspondence remain follow-up work. For reconstruction, preserve version-specific count/identifier addresses: using1.4.0’s meaning of`007a1b90` in1.5.0 would overwrite its first uploaded identifier.
+
+### Adjacent resource-size helper and caller evidence
+
+Official final Modern places a separate helper at `004f1f88..004f1fad`.
+It passes the EAX name and type 10 to `FindResourceA`, returns zero on a
+failed lookup, and otherwise returns `SizeofResource` for the found
+resource. The file-backed import slots are `0053453c` and `00534578`.
+This differs from the adjacent pointer loader at `004f1f58`.
+
+A byte scan of the pinned Modern code section found no relative near call,
+near jump or short jump targeting `004f1f88`. A scan across raw-backed
+sections found no literal little-endian DWORD for that address. These
+checks cover those encodings only. Computed entries and other jumps
+remain possible. The inspected About resource path calls the pointer
+loader, and the size helper's actual callers remain unresolved.
