@@ -12,6 +12,86 @@
   },
   "ranges": [
     {
+      "start": "0042c400",
+      "end_exclusive": "0042c51f",
+      "name": "InitializeVehicleUpdateCallbacks",
+      "bytes": 287,
+      "identical": true,
+      "sha256": "7e048b2d68807b29ae01d534d3f6133515dc4b75c7fc120e615eaebf255bbeb1",
+      "disassembly": [
+        "42c400:\t53                   \tpush   ebx",
+        "42c401:\t52                   \tpush   edx",
+        "42c402:\t55                   \tpush   ebp",
+        "42c403:\t89 e5                \tmov    ebp,esp",
+        "42c405:\tc7 80 fc 05 00 00 80 \tmov    DWORD PTR [eax+0x5fc],0x4bd380",
+        "42c40c:\td3 4b 00",
+        "42c40f:\tc7 80 00 06 00 00 30 \tmov    DWORD PTR [eax+0x600],0x431430",
+        "42c416:\t14 43 00",
+        "42c419:\tc7 80 04 06 00 00 80 \tmov    DWORD PTR [eax+0x604],0x4ce280",
+        "42c420:\te2 4c 00",
+        "42c423:\tc7 80 08 06 00 00 c1 \tmov    DWORD PTR [eax+0x608],0x4ae4c1",
+        "42c42a:\te4 4a 00",
+        "42c42d:\tc7 80 0c 06 00 00 30 \tmov    DWORD PTR [eax+0x60c],0x4a2830",
+        "42c434:\t28 4a 00",
+        "42c437:\tc7 80 10 06 00 00 60 \tmov    DWORD PTR [eax+0x610],0x4a2c60",
+        "42c43e:\t2c 4a 00",
+        "42c441:\tc7 80 14 06 00 00 30 \tmov    DWORD PTR [eax+0x614],0x4a2f30",
+        "42c448:\t2f 4a 00",
+        "42c44b:\tc7 80 18 06 00 00 d0 \tmov    DWORD PTR [eax+0x618],0x4311d0",
+        "42c452:\t11 43 00",
+        "42c455:\tc7 80 1c 06 00 00 00 \tmov    DWORD PTR [eax+0x61c],0x42b900",
+        "42c45c:\tb9 42 00",
+        "42c45f:\t8a 90 00 02 00 00    \tmov    dl,BYTE PTR [eax+0x200]",
+        "42c465:\tc7 80 f8 05 00 00 c0 \tmov    DWORD PTR [eax+0x5f8],0x4a08c0",
+        "42c46c:\t08 4a 00",
+        "42c46f:\tf6 c2 02             \ttest   dl,0x2",
+        "42c472:\t74 50                \tje     0x42c4c4",
+        "42c474:\tc7 80 00 06 00 00 00 \tmov    DWORD PTR [eax+0x600],0x409c00",
+        "42c47b:\t9c 40 00",
+        "42c47e:\t8a b0 00 02 00 00    \tmov    dh,BYTE PTR [eax+0x200]",
+        "42c484:\tc7 80 fc 05 00 00 00 \tmov    DWORD PTR [eax+0x5fc],0x0",
+        "42c48b:\t00 00 00",
+        "42c48e:\tf6 c6 10             \ttest   dh,0x10",
+        "42c491:\t74 0a                \tje     0x42c49d",
+        "42c493:\tc7 80 00 06 00 00 f0 \tmov    DWORD PTR [eax+0x600],0x40c9f0",
+        "42c49a:\tc9 40 00",
+        "42c49d:\tf6 80 00 02 00 00 20 \ttest   BYTE PTR [eax+0x200],0x20",
+        "42c4a4:\t74 0a                \tje     0x42c4b0",
+        "42c4a6:\tc7 80 00 06 00 00 e0 \tmov    DWORD PTR [eax+0x600],0x4032e0",
+        "42c4ad:\t32 40 00",
+        "42c4b0:\tc7 80 14 06 00 00 10 \tmov    DWORD PTR [eax+0x614],0x4a2f10",
+        "42c4b7:\t2f 4a 00",
+        "42c4ba:\tc7 80 08 06 00 00 f0 \tmov    DWORD PTR [eax+0x608],0x4088f0",
+        "42c4c1:\t88 40 00",
+        "42c4c4:\t83 3d 0c d5 6f 00 00 \tcmp    DWORD PTR ds:0x6fd50c,0x0",
+        "42c4cb:\t74 4e                \tje     0x42c51b",
+        "42c4cd:\t83 3d b0 d3 6f 00 01 \tcmp    DWORD PTR ds:0x6fd3b0,0x1",
+        "42c4d4:\t7e 45                \tjle    0x42c51b",
+        "42c4d6:\t8b 1d f4 d4 6f 00    \tmov    ebx,DWORD PTR ds:0x6fd4f4",
+        "42c4dc:\t8b 90 f0 01 00 00    \tmov    edx,DWORD PTR [eax+0x1f0]",
+        "42c4e2:\t39 da                \tcmp    edx,ebx",
+        "42c4e4:\t74 35                \tje     0x42c51b",
+        "42c4e6:\t3b 15 14 d5 6f 00    \tcmp    edx,DWORD PTR ds:0x6fd514",
+        "42c4ec:\t7d 2d                \tjge    0x42c51b",
+        "42c4ee:\tc7 80 00 06 00 00 50 \tmov    DWORD PTR [eax+0x600],0x40bf50",
+        "42c4f5:\tbf 40 00",
+        "42c4f8:\tc7 80 08 06 00 00 f0 \tmov    DWORD PTR [eax+0x608],0x4088f0",
+        "42c4ff:\t88 40 00",
+        "42c502:\t8a b8 01 02 00 00    \tmov    bh,BYTE PTR [eax+0x201]",
+        "42c508:\tc7 80 14 06 00 00 10 \tmov    DWORD PTR [eax+0x614],0x4a2f10",
+        "42c50f:\t2f 4a 00",
+        "42c512:\t80 cf 02             \tor     bh,0x2",
+        "42c515:\t88 b8 01 02 00 00    \tmov    BYTE PTR [eax+0x201],bh",
+        "42c51b:\t5d                   \tpop    ebp",
+        "42c51c:\t5a                   \tpop    edx",
+        "42c51d:\t5b                   \tpop    ebx",
+        "42c51e:\tc3                   \tret"
+      ],
+      "control_or_integer_conversion_instructions": [],
+      "direct_calls": [],
+      "indirect_calls": []
+    },
+    {
       "start": "004c48d0",
       "end_exclusive": "004c4abc",
       "name": "AdvanceRaceSimulationTick",
@@ -1325,6 +1405,336 @@
     "4ae1d3:\td8 80 ac 00 00 00    \tfadd   DWORD PTR [eax+0xac]",
     "4ae1d9:\td9 98 ac 00 00 00    \tfstp   DWORD PTR [eax+0xac]"
   ],
+  "integration_direct_helpers": [
+    {
+      "entry": "004e0110",
+      "name": "TransposeMatrix3x3",
+      "ranges": [
+        [
+          "004e0110",
+          "004e0156"
+        ]
+      ],
+      "identical": true,
+      "sha256": "2f3865511133228c970aa54ae392c5b267c5a192c1b1c3560030051c5c9507f5",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": []
+    },
+    {
+      "entry": "004ad250",
+      "name": "InitializeWheelPhysicsScratch",
+      "ranges": [
+        [
+          "004ad250",
+          "004ad2e1"
+        ]
+      ],
+      "identical": true,
+      "sha256": "213d4bf66f026993391c95f2477315897a9cf03cf378e778f79df5b6e6f2114b",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": []
+    },
+    {
+      "entry": "004ad672",
+      "name": "UpdateVehicleComponentRatio",
+      "ranges": [
+        [
+          "004ad672",
+          "004ad6eb"
+        ]
+      ],
+      "identical": true,
+      "sha256": "00d527a59709ac4354e84e9099a4d9cc73037b24b2eab53204950278ca8ed8d9",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": []
+    },
+    {
+      "entry": "004ad6eb",
+      "name": "UpdateSignedPlanarMotionMagnitude",
+      "ranges": [
+        [
+          "004ad6eb",
+          "004ad7a3"
+        ]
+      ],
+      "identical": true,
+      "sha256": "a254c01d7d328d44b8b32b00ff04a165472c3ae90f55dabe9aa9719aa566dc4c",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": [
+        "4ad772:\te8 69 90 fe ff       \tcall   0x4967e0"
+      ]
+    },
+    {
+      "entry": "004af254",
+      "name": "ComputeAttenuatedVehicleResponseScalar",
+      "ranges": [
+        [
+          "004af254",
+          "004af3a2"
+        ]
+      ],
+      "identical": true,
+      "sha256": "e1e38bda8e7a63bdfc829e917bb68c49013d3a4de0208c8517271a83ebb77d42",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": []
+    },
+    {
+      "entry": "004a9bc4",
+      "name": "UpdateVehicleSmoothedControlsAndModeState",
+      "ranges": [
+        [
+          "004a9bc4",
+          "004aa4f4"
+        ]
+      ],
+      "identical": true,
+      "sha256": "70847682b88b946cc4ec27a3c5f0dde8673873a1029d82d1645ed3c35d3be3dd",
+      "control_instructions": [],
+      "integer_conversions": [
+        "4a9d7d:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "4a9e8f:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "4a9ee2:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "4a9f35:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "4a9f8f:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "4aa2cb:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "4aa35d:\tdb 1c 24             \tfistp  DWORD PTR [esp]"
+      ],
+      "calls": [
+        "4a9c0d:\te8 b9 fb ff ff       \tcall   0x4a97cb",
+        "4a9cab:\te8 a0 63 03 00       \tcall   0x4e0050",
+        "4a9ccc:\te8 7f 63 03 00       \tcall   0x4e0050",
+        "4a9d1d:\te8 b1 e6 ff ff       \tcall   0x4a83d3",
+        "4aa078:\te8 13 cd f6 ff       \tcall   0x416d90",
+        "4aa112:\te8 79 cc f6 ff       \tcall   0x416d90",
+        "4aa1e2:\te8 a9 cb f6 ff       \tcall   0x416d90",
+        "4aa25d:\te8 8e 72 fc ff       \tcall   0x4714f0"
+      ]
+    },
+    {
+      "entry": "004ad2e1",
+      "name": "ComputeScaledVehicleControlResponse",
+      "ranges": [
+        [
+          "004ad2e1",
+          "004ad672"
+        ]
+      ],
+      "identical": true,
+      "sha256": "fa9bf25f2d4da26d6e6c6b84635116200a6768d5c6e5b8aa7bffd13fabb0cb67",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": []
+    },
+    {
+      "entry": "004aeffc",
+      "name": "DampVehicleVectorsUnderLowControlGates",
+      "ranges": [
+        [
+          "004aeffc",
+          "004af140"
+        ]
+      ],
+      "identical": true,
+      "sha256": "358939da846ae37f69fedf9b5c0a8025221988ff94dbc672d22078a6d7d0d369",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": [
+        "4af111:\te8 3a 0f 03 00       \tcall   0x4e0050",
+        "4af132:\te8 19 0f 03 00       \tcall   0x4e0050"
+      ]
+    },
+    {
+      "entry": "004aaed1",
+      "name": "UpdateEngineRPMAndComputeDriveResponse",
+      "ranges": [
+        [
+          "004aaed1",
+          "004abd9c"
+        ]
+      ],
+      "identical": true,
+      "sha256": "0b7f0d73b4041dddbc7b4b39b40785a8ec3fa58cc947683ce0ecf972f76dbcff",
+      "control_instructions": [],
+      "integer_conversions": [
+        "4ab111:\tdb 5d d8             \tfistp  DWORD PTR [ebp-0x28]",
+        "4ab447:\tdb 1c 24             \tfistp  DWORD PTR [esp]",
+        "4ab7bd:\tdb 9d 50 ff ff ff    \tfistp  DWORD PTR [ebp-0xb0]"
+      ],
+      "calls": [
+        "4ab10c:\te8 45 4c 03 00       \tcall   0x4dfd56",
+        "4ab415:\te8 86 dc ff ff       \tcall   0x4a90a0",
+        "4ab41f:\te8 45 e3 ff ff       \tcall   0x4a9769",
+        "4ab493:\te8 01 d6 ff ff       \tcall   0x4a8a99",
+        "4ab4c5:\te8 cf d5 ff ff       \tcall   0x4a8a99",
+        "4ab7b8:\te8 99 45 03 00       \tcall   0x4dfd56",
+        "4abc75:\te8 1f ce ff ff       \tcall   0x4a8a99"
+      ]
+    },
+    {
+      "entry": "004aab41",
+      "name": "UpdateVehicleWheelAndProfileCoefficients",
+      "ranges": [
+        [
+          "004aab41",
+          "004aaed1"
+        ]
+      ],
+      "identical": true,
+      "sha256": "48c3edbdf91b462b73860d6d063e7d6567f772bb93b0a4aa6c2e486974fc2c29",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": [
+        "4aabce:\te8 6d ef f7 ff       \tcall   0x429b40"
+      ]
+    },
+    {
+      "entry": "004ae5c2",
+      "name": "ScaleVehiclePhysicsScalarByMode",
+      "ranges": [
+        [
+          "004ae5c2",
+          "004ae68e"
+        ]
+      ],
+      "identical": true,
+      "sha256": "2a05a987373a5c393a2367e9fe8389b932b5f3933aaa8b76cad021a15967bad0",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": []
+    },
+    {
+      "entry": "004aca4f",
+      "name": "CalculateWheelPlanarResponseRecord",
+      "ranges": [
+        [
+          "004aca4f",
+          "004ad250"
+        ]
+      ],
+      "identical": true,
+      "sha256": "2f84d76cf90e519eb7725b94a02b5193fd6e91ddf6547eba6ef4ebf7febfe17e",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": [
+        "4acaa0:\te8 f7 f2 ff ff       \tcall   0x4abd9c",
+        "4acada:\te8 11 a1 fe ff       \tcall   0x496bf0",
+        "4acd42:\te8 4d f3 ff ff       \tcall   0x4ac094",
+        "4ace3b:\te8 80 db 03 00       \tcall   0x4ea9c0",
+        "4ace5e:\te8 cd da 03 00       \tcall   0x4ea930",
+        "4ace84:\te8 a7 da 03 00       \tcall   0x4ea930",
+        "4acea8:\te8 83 da 03 00       \tcall   0x4ea930",
+        "4aced0:\te8 5b da 03 00       \tcall   0x4ea930",
+        "4acef6:\te8 35 da 03 00       \tcall   0x4ea930",
+        "4acf1a:\te8 11 da 03 00       \tcall   0x4ea930",
+        "4ad1e9:\te8 c1 f1 ff ff       \tcall   0x4ac3af",
+        "4ad21a:\te8 d1 99 fe ff       \tcall   0x496bf0"
+      ]
+    },
+    {
+      "entry": "004ae68e",
+      "name": "NormalizeVehicleComponentWithProfileGain",
+      "ranges": [
+        [
+          "004ae68e",
+          "004ae79b"
+        ]
+      ],
+      "identical": true,
+      "sha256": "572de3824c449a3fbbe5b195e1cfafe8a3affac9595f6d21fb345ccd17cac17a",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": []
+    },
+    {
+      "entry": "004ae79b",
+      "name": "SuppressVehicleVectorForSteeringThresholds",
+      "ranges": [
+        [
+          "004ae79b",
+          "004ae85b"
+        ]
+      ],
+      "identical": true,
+      "sha256": "24b7dceda9899a838c2cc3e5411db0f95f1a4628064b01b999eb5eb8ae0fc647",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": [
+        "4ae84d:\te8 fe 17 03 00       \tcall   0x4e0050"
+      ]
+    },
+    {
+      "entry": "004ae85b",
+      "name": "ApplyMagnitudeDependentVehicleDamping",
+      "ranges": [
+        [
+          "004ae85b",
+          "004ae98b"
+        ]
+      ],
+      "identical": true,
+      "sha256": "93e33309e30f194a5de9f1258578d94fcfcb0332e066749a3e5b2da471ff63fe",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": []
+    },
+    {
+      "entry": "004ae98b",
+      "name": "ApplyFlaggedVehicleComponentDamping",
+      "ranges": [
+        [
+          "004ae98b",
+          "004aea88"
+        ]
+      ],
+      "identical": true,
+      "sha256": "6ac6d377ba20b7065462af53cf58fce83961bfb3d8a4d6027f0b668b51f53a7c",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": []
+    },
+    {
+      "entry": "004aea88",
+      "name": "ApplyLocalMotionDependentVehicleDamping",
+      "ranges": [
+        [
+          "004aea88",
+          "004aeffc"
+        ]
+      ],
+      "identical": true,
+      "sha256": "67b9588bf24bf95899e2ba817f33d9980c8644d2f661b7f31ad2fcf427ef9dd4",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": [
+        "4aeddf:\te8 bc 18 03 00       \tcall   0x4e06a0",
+        "4aefcb:\te8 80 10 03 00       \tcall   0x4e0050",
+        "4aefee:\te8 5d 10 03 00       \tcall   0x4e0050"
+      ]
+    },
+    {
+      "entry": "004af140",
+      "name": "DampVehicleVectorsBySteeringAndGravityGate",
+      "ranges": [
+        [
+          "004af140",
+          "004af254"
+        ]
+      ],
+      "identical": true,
+      "sha256": "15552e9333dc09c1c834434a28cfb4da881e0d6c04400079df77aafa321e825c",
+      "control_instructions": [],
+      "integer_conversions": [],
+      "calls": [
+        "4af221:\te8 2a 0e 03 00       \tcall   0x4e0050",
+        "4af246:\te8 05 0e 03 00       \tcall   0x4e0050"
+      ]
+    }
+  ],
   "scale_constant": {
     "original": {
       "address": "0053dea0",
@@ -1340,7 +1750,8 @@
   "limits": [
     "Names and boundaries reuse the saved inventory; equality is freshly checked against pinned EXEs.",
     "No direct CW instruction in these ranges does not establish inherited CW across delegated/indirect calls.",
-    "Registration reads vehicle callback fields; full constructor/roster binding is not proven by these ranges.",
+    "Initializer assignments are verified; later writers, actual roster and callback publication lifetime remain open.",
+    "The18 immediate helpers are compared; their further calls are listed but not transitively qualified.",
     "The selected velocity window has no call; its arithmetic inherits CW at window entry.",
     "No target execution, probes, C translation, compilation or executable/Ghidra changes.",
     "No replay, multiplayer, whole-physics or cross-version behavioral equivalence claim."

@@ -252,3 +252,50 @@ operation order and raw integer branch tests. A native C float expression, reass
 or fused multiply-add is not automatically the original x87 contract. This finding adds
 a concrete physics boundary; it does not qualify a game-facing replacement or whole-game
 precision policy on every thread.
+
+### Callback producer and immediate-helper follow-up
+
+The same reproducible audit now also checks initializer `0042c400..0042c51f`
+(287 identical bytes) and all **18 distinct direct callees** of `004ad7a3`.
+Their saved ranges are re-read from both pinned files; all are byte-identical.
+The evidence retains each helper's range/hash, call sites and integer conversions.
+This extends the five-range finding above rather than replacing its limits.
+
+Initializer `0042c423` writes `004ae4c1` into vehicle+608. Registration
+`0042c8a2..0042c8b4` loads that field and inserts it into even-tick list
+`007d3690` at priority30 with the vehicle as context. The preceding +60c callback
+has the same priority and is inserted first for each vehicle. The [existing lifecycle
+analysis](callback-list-lifecycle.md) establishes stable equal-priority insertion.
+The dispatcher loads context into EAX before its indirect call. These instructions
+establish the selected static assignment-to-dispatch chain in both baselines, subject
+to successful setup and no subsequent overwrite/list mutation.
+
+There are explicit alternatives: category bit02 replaces +608 with AI dynamics
+`004088f0` at `0042c4ba`; the network-associated branch also writes that target at
+`0042c4f8`. The latter requires `006fd50c!=0`, signed session value `006fd3b0>1`,
+vehicle index+1f0 different from local index `006fd4f4` and signed index below
+`006fd514`. Do not describe every multiplayer participant as executing the same
+full four-wheel callback. This routing is retained in both EXEs; its existence does
+not prove the network synchronization algorithm or a particular observed roster.
+
+No direct CW-changing instruction occurs in the 18 immediate helpers, but:
+
+| Helper | Retained integer conversions | Further dependency |
+|---|---|---|
+| `004a9bc4` smoothed controls/mode state | Seven `FISTP DWORD`: `004a9d7d`, `004a9e8f`, `004a9ee2`, `004a9f35`, `004a9f8f`, `004aa2cb`, `004aa35d` | Eight call sites; their transitive state effects remain outside this follow-up |
+| `004aaed1` engine RPM/drive response | Three `FISTP DWORD`: `004ab111`, `004ab447`, `004ab7bd` | Seven call sites, including temporary rounding helper `004dfd56` discussed above |
+| Other16 immediate helpers | No direct `FIST*` instruction | Some delegate additional math/response helpers; see evidence call lists |
+
+`FISTP` conversion obeys the then-current rounding mode; x87 precision control and
+rounding control are separate fields. Ten retained conversion sites do not imply ten
+behavior changes, and no difference in their actual results has been measured. A C
+cast truncates rather than automatically reproducing x87 conversion under an arbitrary
+CW, and exceptional/out-of-range conversions need explicit treatment. The existing
+`004dfd56` temporary-CW evidence must be followed through its actual callers rather
+than assumed to set the entire integration routine's policy.
+
+Remaining action for CW ownership: trace those further calls and earlier callbacks
+on the selected list, including the +60c contact callback that precedes +608. The
+producer question is now answered for this initializer; exhaustive later field writers,
+active list contents and complete transitive state preservation remain open. No new
+runtime test, instruction probe or executable/Ghidra mutation was performed.

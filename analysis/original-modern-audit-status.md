@@ -21,8 +21,10 @@ The [bounded race/physics comparison](og-modern-x87-precision.md#bounded-race-sc
 now verifies five byte-identical scheduling, registration, dispatch and four-wheel-integration
 ranges in original/official Modern. The actual velocity stores remain binary32. The selected
 straight-line window has no CW change; inherited CW across dynamically registered callbacks
-and delegated helpers remains unresolved. Next establish callback-field provenance and
-transitive CW ownership, rather than claiming identical physics or inevitable desynchronization.
+and delegated helpers remains unresolved. The [follow-up](og-modern-x87-precision.md#callback-producer-and-immediate-helper-follow-up)
+verifies the callback initializer and18 immediate helpers, including ten retained integer
+conversion sites and explicit AI/network overrides. Next trace further callees and preceding
+callbacks for transitive CW ownership; do not claim identical physics or inevitable desynchronization.
 Static evidence only; no new instruction probes or game execution.
 
 ## Latest bounded reproducibility checkpoint

@@ -9,6 +9,7 @@ from audit_thrash_loader_difference import ROOT, SPECS
 from audit_dx5_reference_final import disassemble
 
 SPANS = [
+    (0x42c400, 0x42c51f, 'InitializeVehicleUpdateCallbacks'),
     (0x4c48d0, 0x4c4abc, 'AdvanceRaceSimulationTick'),
     (0x42c830, 0x42c94e, 'RegisterVehicleUpdateCallbacks'),
     (0x4be3a0, 0x4be3cc, 'DispatchCallbackList'),
@@ -44,6 +45,30 @@ def main():
     physics = result['ranges'][-1]['disassembly']
     result['velocity_update_window'] = [line for line in physics if 0x4ae185 <= int(line.split(':')[0], 16) < 0x4ae1df]
     assert len(result['velocity_update_window']) == 18
+    inventory = json.loads((ROOT / 'analysis/evidence/audits/original-modern-function-diff.json').read_text())
+    by_entry = {row['entry']: row for row in inventory['functions']}
+    result['integration_direct_helpers'] = []
+    for call in result['ranges'][-1]['direct_calls']:
+        entry = int(re.search(r'call\s+0x([0-9a-f]+)', call)[1], 16)
+        saved = by_entry[f'{entry:08x}']
+        chunks = {}
+        for baseline, image in images.items():
+            chunks[baseline] = b''.join(image.get_data(int(a, 16) - 0x400000, int(b, 16) - int(a, 16))
+                                        for a, b in saved['ranges'])
+        assert chunks['original'] == chunks['official_modern']
+        lines = []
+        for a, b in saved['ranges']:
+            lines += disassemble(images['original'].get_data(int(a, 16) - 0x400000, int(b, 16) - int(a, 16)), int(a, 16))
+        assert not any('(bad)' in line or '.byte' in line for line in lines)
+        result['integration_direct_helpers'].append({
+            'entry': saved['entry'], 'name': saved['name'], 'ranges': saved['ranges'],
+            'identical': True, 'sha256': hashlib.sha256(chunks['original']).hexdigest(),
+            'control_instructions': [line for line in lines if re.search(r'\b(finit|fninit|fldcw|fldenv|frstor|fxrstor)\b', line)],
+            'integer_conversions': [line for line in lines if re.search(r'\bfist\w*\b', line)],
+            'calls': [line for line in lines if re.search(r'\bcall\b', line)],
+        })
+    assert len(result['integration_direct_helpers']) == 18
+    assert not any(row['control_instructions'] for row in result['integration_direct_helpers'])
     constants = {}
     for name, p in images.items():
         raw = p.get_data(0x53dea0 - 0x400000, 4)
@@ -53,14 +78,15 @@ def main():
     result['limits'] = [
         'Names and boundaries reuse the saved inventory; equality is freshly checked against pinned EXEs.',
         'No direct CW instruction in these ranges does not establish inherited CW across delegated/indirect calls.',
-        'Registration reads vehicle callback fields; full constructor/roster binding is not proven by these ranges.',
+        'Initializer assignments are verified; later writers, actual roster and callback publication lifetime remain open.',
+        'The18 immediate helpers are compared; their further calls are listed but not transitively qualified.',
         'The selected velocity window has no call; its arithmetic inherits CW at window entry.',
         'No target execution, probes, C translation, compilation or executable/Ghidra changes.',
         'No replay, multiplayer, whole-physics or cross-version behavioral equivalence claim.',
     ]
     out = ROOT / 'analysis/evidence/audits/race-arithmetic-path.json'
     out.write_text(json.dumps(result, indent=2) + '\n')
-    print('PASS: five race/callback/physics ranges identical; binary32 velocity stores and scale verified')
+    print('PASS: six race/callback/physics ranges and18 immediate helpers identical; binary32 velocity stores and scale verified')
 
 
 if __name__ == '__main__':
