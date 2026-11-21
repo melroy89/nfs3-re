@@ -13,7 +13,7 @@ The [six-audit checkpoint](evidence/validation/hud-glide-projection-affinity-che
 |[Projection](original-modern-projection.md#historical-fulldefault-origin-change-reaches-projection-centre) |Bounded camera-region partition and default origin-to-centre linkage; odd-dimension limit explicit |Capture lifetime, other contexts/orientation and actual horizon |
 |[Affinity](original-modern-startup-policy.md#early110-affinity-policy-defaults-enabled) |110 configured/reader default1 and conditional mask1 request; final default0 |Exact100 introduction, API success and multicore reliability |
 
-Current catalogue: **56 vendor-only,56 bounded-static,178 partial,0 unresolved-category entries**, across290 release-note bullets. These are labels, not distinct EXE changes or completion percentages. Zero in the last category does **not** mean no unknowns: vendor-only claims, partial mechanisms, provenance, projection capture, preset−5 meaning and runtime compatibility remain open. The full original/Modern comparison is incomplete.
+Current catalogue: **55 vendor-only,56 bounded-static,179 partial,0 unresolved-category entries**, across290 release-note bullets. These are labels, not distinct EXE changes or completion percentages. Zero in the last category does **not** mean no unknowns: vendor-only claims, partial mechanisms, provenance, projection capture, preset−5 meaning and runtime compatibility remain open. The full original/Modern comparison is incomplete.
 
 The subsequent [140/150 dgVoodoo metadata audit](original-modern-renderer-loading.md#historical140-and150-dgvoodoo-wrappers-share-versions-but-differ-in-bytes) adds bounded support for MP150-037 and partial support for MP140-047; WIP16 identity remains unverified. It is outside these12 checkpoint runs.
 
@@ -30,6 +30,8 @@ The [new Voodoo2 reference pair](original-modern-voodoo-reference-pair.md) disti
 The expanded [nGlide package audit](original-modern-renderer-loading.md#historical-nglide-labels-and-the150-same-version-binary-change) now verifies120→130 self-label1.04.2→1.04.3, with130/131 wrappers byte-identical. MP130-007 gains partial support for the package update; safe minimize/restore remains unverified. This extension is outside the checkpoint.
 
 The [131→140 DX6 admission audit](original-modern-display-modes.md#historical-dx6-depth-keys-and-sorting-change-at140) adds partial support for MP140-038: dimension-only depth selection becomes sorted width/height/depth insertion; the prior16-bit seed prevents claiming wholly new16-bit support. Actual catalogue/activation and rendered behavior remain unverified. This new audit is outside the checkpoint.
+
+The [loading screenshot follow-up](original-modern-screenshots.md#loading-progress-screenshot-service-is-added-at140) dates the queued service call to131→140, advancing MP140-058 to partial. Complete selected progress bodies and local gates are captured; current-frame identity and actual file output remain unverified. This new audit is outside the checkpoint.
 
 Next prioritize unassigned original/final changed mechanisms and remaining vendor claims with usable baselines. Reuse the completed HUD table inventory and bounded camera-region partition; their retained bodies need not be rechecked absent new evidence. Resolve runtime questions only within their stated test scope, without treating static reruns or package inclusion as game compatibility evidence.
 

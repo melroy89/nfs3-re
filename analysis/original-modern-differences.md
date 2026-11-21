@@ -695,7 +695,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **56 Claimed, 56 Static, 178 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **55 Claimed, 56 Static, 179 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -888,7 +888,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-055 | Remembers last screenshot number. If you would like to reset this counter, just empty screenshots directory. | Partial |
 | MP140-056 | Makes shutter sound while screenshoting. | Static |
 | MP140-057 | Saving a screenshot file was moved to a separate thread, so the game have to freeze for less time while the screenshot is taking. | Static |
-| MP140-058 | Ability of making screenshots of the gameplay loading screen. | Claimed |
+| MP140-058 | Ability of making screenshots of the gameplay loading screen. | Partial |
 | MP140-059 | Screenshoting doesn't stop intro movie. | Partial |
 | MP140-060 | Super quick gameplay loading on modern systems (thanks Zeus for a hint). | Claimed |
 | MP140-061 | LoadingSplashTime ini setting for slowing down gameplay loading, set desired time in seconds or 0 to disable this feature (and get maximum possible speed). | Static |

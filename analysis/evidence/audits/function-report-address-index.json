@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "783b2eb1b67d87bfe439035fab9d862ef66e6700a967ecdf30c7736387cf1bf6"
+      "sha256": "9187c9a31f6aa127a5773d0ec079ce3d74cdee9e2b3d0a38407a613ac80c5182"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -101,7 +101,7 @@
     },
     {
       "path": "analysis/original-modern-display-modes.md",
-      "sha256": "8b9cecd4769d4130effb15de64fd4698c3fd478e537750bb88063c69e82c5feb"
+      "sha256": "777451ca34ff45e9021f537378bf46d45a64695f4ad4530dd6f7335aada35a29"
     },
     {
       "path": "analysis/original-modern-dll-candidates.md",
@@ -389,7 +389,7 @@
     },
     {
       "path": "analysis/original-modern-screenshots.md",
-      "sha256": "f1b96e78e5f322d6e598bdbc0cb095190a19130bb3e60c4f1bae100f97aa6103"
+      "sha256": "3019bea7ac5fcb058cb20fd69ab9c7946d228488cf6633eedc73f659f62b2d62"
     },
     {
       "path": "analysis/original-modern-setup-website.md",
@@ -7546,8 +7546,10 @@
         },
         {
           "path": "analysis/original-modern-screenshots.md",
-          "entry_mentioned": false,
+          "entry_mentioned": true,
           "addresses": [
+            "00495230",
+            "0049526d",
             "00495274"
           ]
         },

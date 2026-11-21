@@ -131,3 +131,15 @@ Complete loop/callback register contracts, physical key delivery, input reset,
 frame identity, capture timing and actual screenshots remain unverified. No
 keyboard, game, screenshot API or instruction probe was executed, and no
 executable/database bytes were changed.
+
+## Loading-progress screenshot service is added at140
+
+The [historical loading audit](evidence/audits/loading-screenshot-history.json), reproduced with `python3 analysis/scripts/audit_loading_screenshot_history.py`, reuses the hash-pinned131/140 EXE archives from the screenshot-counter comparison. It retains both complete progress bodies,140's separate early-exit stub and the two versions'004c4480 entries. It does not infer a semantic counterpart from an address alone:131's004c4480 is only a five-byte return stub, whereas its synchronous capture begins004c4490.
+
+The131 progress body `00495230..004955fb` has no decoded direct call to either004c4480 or004c4490. The140 body `00495230..004955c6` calls004c4480 at **0049526d**, immediately after preparation00434b20. This historical introduction supplements the final-build loading call00495274 already listed above; the shifted call address is not a second separate feature. The full routines' decoded direct-call lists are retained. Indirect/transitive calls and every other original loading path are outside this absence claim.
+
+In140 the screenshot service is reached only after active cell0079f288 is nonzero, abort latch0055e88c is zero and the timing estimator's signed result is nonnegative. Early exits use stub00495229 and common epilogue004955bb. These gates explain why an invocation or a key request alone does not guarantee that loading processes a screenshot immediately.
+
+Processor004c4480 returns immediately when pending latch007a2778 is zero. Otherwise it normalizes format, prepares the destination and conditionally launches capture; its ordinary exit clears the request, including preparation/launch failure paths. It does not retain an unsuccessful request automatically. Existing worker/format/lifetime research supplies later contracts, without implying successful writing.
+
+**MP140-058 advances vendor-only→partial:** a screenshot service is concretely added to the loading-progress continuation at131→140. The service precedes that iteration's progress drawing, so this does not prove fresh/current-frame identity, visible loading artwork in the file, successful worker completion or actual keyboard delivery. Controlled loading captures would be required for that behavioral acceptance. No game, keyboard, screenshot API or target instructions execute; binaries and Ghidra remain unchanged.
