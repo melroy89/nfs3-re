@@ -337,3 +337,36 @@ Both paths ultimately store WORD results. Preserve low16-bit/truncation and x86 
 The Load list additionally changes authored `maxvis=8` to10. These are selected fields from `hardkeys.mnu`, `interior.mnu`, `ipx.mnu` and `loadsave.mnu`; other additions/removals and keyboard-label changes are not presented as alignment effects. The shared bounds arithmetic documented immediately above is a separate EXE mechanism and must not absorb these authored coordinate changes.
 
 This supplies concrete package changes corresponding to the four named dialogs. It does not prove final pixels, successful control/resource loading, text metrics in every language or actual input behaviour. MP140-028 advances vendor-only→partial. The manifest retains selected geometry and all member hashes without duplicating full assets. No game, target instructions, compiler or Ghidra writes were used.
+
+## Controller and Connect tab layout changes at130
+
+The [historical asset audit](evidence/audits/controller-connect-layout-history.json), reproduced with `python3 analysis/scripts/audit_controller_connect_layout_history.py`, pins120/130 archives and `control1.mnu`, `connect.mnu`, `pscntl1.mnu` members. It also reads131/140 Controller definitions to distinguish the later reset movement. Existing menu parsing is reused; no UI is opened.
+
+|Controller entry |120 `ypos` |130 `ypos` |
+|---|---:|---:|
+|Dead Zone |2 |1 |
+|Force Feedback |3 |2 |
+|Audio Feedback |4 |3 |
+|Function Keys |5 |4 |
+|Predefined |6 |5 |
+|Reset to Defaults |7 |6 |
+
+Each entry is matched by its symbolic text token. Selected text, callback/menu binding, button type, x/y and align fields remain equal. These are tab-position metadata changes, not six one-pixel movements. Done/Cancel controls retain position0. `pscntl1.mnu`, the separate split-screen Controller definition, has identical parsed records after removing the two demo-admission fields; the selected restructuring must not be generalized to that menu.
+
+|Connect binding |120 `ypos` |130 `ypos` |120 authored x/y |
+|---|---:|---:|---|
+|racenet |1 |5 |5/173 |
+|ipx |2 |2 |2/208 |
+|tcp |3 |1 |1/243 |
+|modem |4 |3 |4/278 |
+|serial |5 |4 |9/313 |
+
+The130 Connect definitions omit those explicit x/y fields and retain `buttontype=tab` with the positions above. Text tokens, protocol callback names and next-menu values stay associated with each named entry. Omission does not independently establish parser defaults or actual aligned pixels. Both files also remove legacy demo fields; this audit does not assign runtime effects to that cleanup or prove executable protocol equivalence.
+
+**MP130-006 advances vendor-only→partial:** the historical assets substantiate Controller position normalization and Connect tab-order/coordinate-policy changes. Their actual rendering, loaded-resource selection and consistency with every other menu remain unverified. This complements the [Connect dispatch crosswalk](connect-menu-dispatch-crosswalk.md), rather than replacing its separate executable evidence.
+
+### Reset moves6 to7 at131 to140, distinct from final8
+
+The same audit verifies Reset `ypos` history **120=7,130=6,131=6,140=7**. Thus the advertised one-position downward movement in MP140-027 has a direct131→140 asset counterpart, in addition to the earlier backup7→final8 observation above. Those endpoints represent different comparisons and must not be conflated. The final8 value does not date all later layout changes to140. Complete intermediate introduction of position8, active menu defaults and rendered coordinates remain unverified. MP140-027 remains partial, with its historical boundary now supported.
+
+No menu interaction, settings reset, target instructions or Ghidra changes occurred. Executable and database bytes are unchanged.
