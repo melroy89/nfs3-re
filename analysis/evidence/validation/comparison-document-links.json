@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "8abcaf39352a1ca2ae1a6ba71725e8155b5a073b71f46c107d924ce296e3e1b9",
-      "relative_links": 293
+      "sha256": "f1863f717453e9883246f2859db6b517e3fc239a6bc35a59023e47fe17238f44",
+      "relative_links": 294
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -128,8 +128,8 @@
     },
     {
       "path": "analysis/original-modern-dx5-reference-pair.md",
-      "sha256": "412f03c0d5a668c163264281d1fe02245b328cb1c3edee66f0b1bdb77aaae9c6",
-      "relative_links": 12
+      "sha256": "35e40775caa1a9f54f59e7008257d039311ac574a43d375d3d1bbc342fd0c6ea",
+      "relative_links": 14
     },
     {
       "path": "analysis/original-modern-dx7-mode-admission.md",
@@ -348,8 +348,8 @@
     },
     {
       "path": "analysis/original-modern-original-reference-bundle.md",
-      "sha256": "586ab40e8184978e7d3b0ee0aa243daa4f19089d23408dfd2397f86df9efc439",
-      "relative_links": 9
+      "sha256": "053aff346f40ebb491c672c11819bf72bba0908fad05a2c7761bfc391d48f137",
+      "relative_links": 12
     },
     {
       "path": "analysis/original-modern-outside-function-index.md",
@@ -663,7 +663,7 @@
     }
   ],
   "file_count": 132,
-  "relative_link_count": 2917,
+  "relative_link_count": 2923,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

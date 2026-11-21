@@ -224,3 +224,8 @@ The [historical audit](evidence/audits/dx5-mode-history.json), reproduced with `
 For otherwise admissible same-size inputs, the new exact raw-depth key allows distinct depth records instead of the earlier replace/reject policy. The comparison precedes classifier3's stored-depth15 conversion; do not silently normalize that ordering. The minimum640×480 dimension gate already exists in131.
 
 **MP140-039 gains partial static support:** the30→100 threshold and depth-key mechanism are verified at131→140. This does not mean131 lacked every16-bit mode: its retained classifier and fixed-depth path already permit such records. Nor does100 mean100 visible resolutions; count seeding, reserved records, duplicates, consumers and actual API catalog matter. Clear requests establish the requested extent, not universal allocation/mapping safety. Device activation and rendered16-bit output remain untested. No DLL/API/target instructions were executed or executable/Ghidra state changed.
+
+
+## Reference debug names are available separately
+
+The [bounded reference-debug extraction](original-modern-original-reference-bundle.md#dx5-and-voodoo-debug-records-have-independent-export-anchors) records961 names across193 units for this pinned `d3da.dll`, with all34 exports independently anchored to `_D3D_` names. The same parser also handles the Voodoo/SoftTri references. Use the [debug manifest](evidence/audits/renderer-reference-debug.json) for raw stored addresses and unit ownership; nonexport mapping, signatures and complete types remain unverified. This supplements the existing byte/control-flow comparison rather than identifying another set of code changes. No labels or prototypes were automatically applied.

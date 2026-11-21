@@ -23,6 +23,8 @@ The newer [SoftTri mode-bound audit](original-modern-software-reference-pair.md#
 
 The [SoftTri reference-debug audit](original-modern-software-reference-pair.md#reference-debug-records-recover-names-with34-export-anchors) extracts1,034 bounded records/173 units and corroborates all34 export addresses. Stock readelf fails on the unterminated abbreviation table; the custom parser preserves exact bytes and does not establish complete source/types or final ABI. This new audit is outside the checkpoint.
 
+The new [DX5/Voodoo debug audit](original-modern-original-reference-bundle.md#dx5-and-voodoo-debug-records-have-independent-export-anchors) adds1,838 bounded records and68 independently matched exports, reusing the SoftTri parser without changing its existing output. Complete types, nonexport address mapping and final ABI remain unverified. It is outside the checkpoint.
+
 Next prioritize unassigned original/final changed mechanisms and remaining vendor claims with usable baselines. Reuse the completed HUD table inventory and bounded camera-region partition; their retained bodies need not be rechecked absent new evidence. Resolve runtime questions only within their stated test scope, without treating static reruns or package inclusion as game compatibility evidence.
 
 ## Earlier historical DX5, configuration, language and HUD checkpoint — 2026-11-21

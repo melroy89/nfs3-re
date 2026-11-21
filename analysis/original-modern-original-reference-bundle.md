@@ -55,4 +55,20 @@ The [SoftTri debug audit](evidence/audits/softtri-reference-debug.json), reprodu
 
 Offsets are computed from the end of nonzero-pointer raw PE sections, not by treating BSS size as file-backed data. An absent overlay does not prove absence of debug information inside sections. ELF signatures alone do not establish useful symbols, source code or a supported decoder for the two unparsed DLL payloads.
 
-For SoftTri, the [canonical report](original-modern-software-reference-pair.md#reference-debug-records-recover-names-with34-export-anchors) records173 units,1,034 bounded name records and34 export/address anchors, alongside the stock-reader failure and custom-parser limits. DX5/Voodoo payload parsing is pending; reuse their existing comparison reports and verify independent address anchors before applying any names. No PE/ELF payload was executed and no target/database bytes changed.
+For SoftTri, the [canonical report](original-modern-software-reference-pair.md#reference-debug-records-recover-names-with34-export-anchors) records173 units,1,034 bounded name records and34 export/address anchors, alongside the stock-reader failure and custom-parser limits. The [DX5/Voodoo extraction below](#dx5-and-voodoo-debug-records-have-independent-export-anchors) now supplies bounded records and independent export anchors; general address/signature application remains unverified. No PE/ELF payload was executed and no target/database bytes changed.
+
+
+## DX5 and Voodoo debug records have independent export anchors
+
+Run `python3 analysis/scripts/audit_renderer_reference_debug.py`; the [manifest](evidence/audits/renderer-reference-debug.json) pins the same reference archive and both members, preserves every extracted unit/record and records the shared parser's hash. Both payloads have the same four-definition abbreviation layout as SoftTri. The parser accepts that declared extent without adding the missing zero terminator; its bounds/form restrictions remain explicit.
+
+|Reference member |Units |Named records |Independent export anchors |
+|---|---:|---:|---:|
+|`d3da.dll` |193 |961 |34/34 |
+|`voodoo2a.dll` |176 |877 |34/34 |
+
+For DX5, replacing export prefix `_THRASH_` with `_D3D_` finds a debug record for each export; Voodoo uses `_VOODOO2_`. Each listed record independently satisfies stored address+1000h=PE export RVA. The manifest retains stored addresses and exact anchors. This corroborates names for those entries; it does not validate every nonexport address, structure layout or internal ABI.
+
+Together with SoftTri's173 units/1,034 records/34 anchors, these three reference providers now expose **542 units,2,872 named records and102 export anchors** under the bounded parser. Unit and name records include runtime/library material as well as provider code. They do not reconstruct source files, authenticate pristine retail provenance, supply complete types or establish final-patch signatures. A debug name can guide analysis while its contract remains unresolved.
+
+Reuse the [DX5 reference/final report](original-modern-dx5-reference-pair.md) and existing Voodoo loader/driver evidence before assigning semantics. Proposed names must remain tied to the reference hash and checked instruction/data addresses; none were applied to Ghidra. The supplied-original EXE still has no trailing overlay in this check. No target/payload instructions were executed and no executable/database bytes changed.
