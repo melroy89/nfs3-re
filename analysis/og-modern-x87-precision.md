@@ -411,6 +411,24 @@ cursor indexes the four channel starts at offsets 0, 32, 64 and 96.
 See the [original layout investigation](detailed-analysis-notes.md#replay-decode-destination-and-channel-layout-004bd090).
 
 This establishes a shared decoded control layout at the tick boundary.
-It leaves the codec, complete file format, pose-extension handling across
-versions, and matched trajectory results open. Matching recorded input
+Complete file format, pose-extension handling across versions, and matched
+trajectory results remain open. Matching recorded input
 does not establish matching initial state or arithmetic.
+
+The compressed control blocks also use the same run-length codec. Direct
+PE reads from the same pinned executables matched each of these ranges
+and their hashes in the paired function inventory:
+
+| Range (exclusive end) | Bytes | Role |
+|---|---:|---|
+| `004bcda0..004bced1` | 305 | Append four encoded channels |
+| `004bcee0..004bcffd` | 285 | Decode four channels and advance the compressed cursor |
+| `004bc9b0..004bca7f` | 207 | Encode one 32-byte channel |
+| `004bca80..004bcaf1` | 113 | Decode one channel |
+
+Disassembly of both wrappers confirms four calls to their respective
+per-channel helper. The [encoder analysis](detailed-analysis-notes.md#replay-encoder-paired-stream-partition-and-expansion)
+establishes the 32-byte partition for correctly aligned, intact encoder
+output. This comparison covers the codec used for the selected control
+stream. Loading a complete replay still requires compatible container
+fields, initialization and playback state.
