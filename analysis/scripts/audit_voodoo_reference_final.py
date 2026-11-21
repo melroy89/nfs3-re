@@ -48,7 +48,21 @@ def main():
         targets={}
         for call in [0x60001d11,0x60001d2d,0x60001d3e]:
             op=hp.get_data(call-0x60000000,5);assert op[0]==0xe8;targets[f'{call:08x}']=f'{call+5+struct.unpack("<i",op[1:])[0]:08x}'
-        historical[version]={'archive':rel,'archive_sha256':ah,'member':member,'sha256':pin,'about_start':'60001bb0','about_end_exclusive':'60001d4d','about_sha256':sha(body),'about_hex':body.hex(),'disassembly':disassemble(body,0x60001bb0),'direct_targets':targets}
+        producer_start,producer_end=(0x600012f0,0x60001545)if version=='1.3.1'else(0x600018d8,0x60001b5a)
+        producer=hp.get_data(producer_start-0x60000000,producer_end-producer_start)
+        query_slot=0x600128c0 if version=='1.3.1'else 0x600127c0;query_binding=None
+        for table_index in range(128):
+            name_address,destination=struct.unpack('<II',hp.get_data(0x1120+8*table_index,8))
+            if not name_address:break
+            if destination==query_slot:query_binding=hp.get_string_at_rva(name_address-0x60000000).decode()
+        assert query_binding=='_grQueryResolutions@8'
+        if version=='1.3.1':
+            assert hp.get_data(0x1352,14).hex()=='c7463c1000000089f0e8e0050000'
+            assert hp.get_data(0x1373,17).hex()=='bed4fd0060bf00300160b9b4000000f3a5'
+        else:
+            assert hp.get_data(0x1a63,8).hex()=='8d45e4e87df8ffff'
+            assert hp.get_data(0x1aaa,16).hex()=='c745d0ffffffffc745d4ffffffffebb1'
+        historical[version]={'archive':rel,'archive_sha256':ah,'member':member,'sha256':pin,'about_start':'60001bb0','about_end_exclusive':'60001d4d','about_sha256':sha(body),'about_hex':body.hex(),'disassembly':disassemble(body,0x60001bb0),'direct_targets':targets,'mode_producer':{'start':f'{producer_start:08x}','end_exclusive':f'{producer_end:08x}','bytes':len(producer),'sha256':sha(producer),'hex':producer.hex(),'disassembly':disassemble(producer,producer_start),'query_slot':f'{query_slot:08x}','query_binding':query_binding}}
     hd=[0x60001bb0+i for i,(x,y)in enumerate(zip(*historical_bodies))if x!=y]
     assert hd==[0x60001d12,0x60001d13,0x60001d2e,0x60001d3f,0x60001d40]
     assert historical['1.3.1']['direct_targets']=={'60001d11':'600012f0','60001d2d':'6000110c','60001d3e':'600012f0'}
