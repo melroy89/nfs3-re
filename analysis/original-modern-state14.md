@@ -208,3 +208,23 @@ Section differences are `.text`8, `.rdata`0, `.data`0, `.reloc`44 and`.rsrc`24 b
 A focused read of the hash-pinned official final EXE's existing [loader witness](scripts/audit_thrash_loader_difference.py) resolves export-table row `004f8490`: slot `009ef938` binds `_THRASH_window@4`. Row `004f8398` binds slot `009ef970` to `_THRASH_clearwindow@0`. These are statically requested export names, not observed successful DLL calls.
 
 The saved analysis describes `004d9120` calling `009ef938(2)` and, when driver flag mask2 is clear, calling `004d5c90`. The latter sets cached state4, calls `009ef970`, then clears state4 ([existing wrapper evidence](detailed-analysis-notes.md)). Thus this lead identifies window/clear setup, not a car-specific light callback. Export names alone establish neither a lamp draw nor the meaning of every state argument. Historical140/150 wrapper identity and the actual menu-car/effect submission remain separate follow-up work. MP150-033 remains vendor-only; no new runtime evidence or Ghidra change was made.
+
+
+## Selected vehicle-effect bodies remain unchanged
+
+**Verified byte identity, not rendered equivalence.** The [four-build audit](evidence/audits/vehicle-effect-body-history.json), reproduced with `python3 analysis/scripts/audit_vehicle_effect_body_history.py`, compares the supplied original, author-hosted1.4.0/1.5.0 EXEs and official final EXE. Archive and executable hashes are checked before comparison. Eight selected ranges total **5,567 bytes**, identical across all four baselines. Each exclusive end below follows the terminal RET; this does not independently prove CFG completeness.
+
+| Routine | Start | Exclusive end |
+|---|---|---|
+|Tagged vehicle effects |`004b8740` |`004b90dc` |
+|FCE part11 |`004ba960` |`004baa44` |
+|FCE part10 |`004baa50` |`004bab69` |
+|Masked body/wheels |`004bab70` |`004badf5` |
+|Unmasked body/wheels |`004bae00` |`004bb10f` |
+|FCE part5 |`004bb110` |`004bb1ff` |
+|Parts0 through4 |`004bb200` |`004bb495` |
+|Variant dispatch |`004bb4c0` |`004bb5ce` |
+
+Full-range decoding confirms direct calls to `004b8740` at `004baa37`, `004bab51`, `004badd9`, `004bb0f3`, `004bb1e7` and `004bb479`. This is a census within the selected bodies, not all incoming calls or indirect targets. Existing [vehicle/FCE research](detailed-analysis-notes.md) supplies their qualified names and tag/layout interpretation; no tag is newly declared to be a taillight from spelling alone.
+
+This rules out an instruction edit **inside these ranges** as the140→150 repair. It does not rule out changed inputs, global state, assets, pointed-to data, downstream functions or FPU state. In particular, the independently verified contextual fog change can affect unchanged draw code. The menu-car entry chain, taillight-specific submission and visible colour outcome remain unresolved; MP150-033 stays vendor-only. The next useful comparison is the effective renderer state at the actual menu-effect submission, rather than another comparison of these unchanged bodies. No target execution, compilation or Ghidra change occurred.

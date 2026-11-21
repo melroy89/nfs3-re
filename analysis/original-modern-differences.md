@@ -1189,3 +1189,8 @@ The [worker-width comparison](original-modern-screenshot-pixels.md#historical150
 ## DX6 count consumers and zero-slot admission
 
 The [historical consumer comparison](original-modern-display-modes.md#dx6-extra-count-slot-reaches-inclusive-scans-but-can-fail-admission) verifies inclusive140/150 scans and150 flag-first rejection. Under an explicit fresh-clear/insertion-only premise, the extra slot is zero/rejected forN<100; atN100 that proof stops at the arena boundary. Nearest fallback1 and direct/same-current switching remain distinct contracts. No runtime safety or missing-last-mode claim is inferred.
+
+
+## Vehicle-effect code is retained across the taillight-fix boundary
+
+The [four-build comparison](original-modern-state14.md#selected-vehicle-effect-bodies-remain-unchanged) verifies5,567 bytes across eight selected vehicle-effect/rendering bodies are identical in the supplied original,140,150 and official final EXEs. Six direct calls to the tagged-effect helper are decoded within these bodies. This narrows where to look for MP150-033: changed state/inputs or other code, rather than edits inside these ranges. It does not prove the menu taillight repair or visual equivalence.
