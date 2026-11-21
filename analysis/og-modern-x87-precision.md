@@ -299,3 +299,66 @@ on the selected list, including the +60c contact callback that precedes +608. Th
 producer question is now answered for this initializer; exhaustive later field writers,
 active list contents and complete transitive state preservation remain open. No new
 runtime test, instruction probe or executable/Ghidra mutation was performed.
+
+### Deeper dependency inventory: retained local extended-state math
+
+The [direct-edge inventory](evidence/audits/physics-fpu-dependencies.json), reproduced by
+`python3 analysis/scripts/audit_physics_fpu_dependencies.py`, follows syntactic direct calls
+and external direct branches from `004ad7a3`, separately in the pinned original and official
+Modern bytes. Both visit176 saved-function entries;174 paired saved ranges are identical.
+The two differing ranges are abort handler `00401010` and truncation helper `004dfd56`.
+This is **not** a runtime reachability or complete call-graph claim: each inventory leaves
+111 indirect call/jump sites unexpanded and one nonentry direct target, `004fe81e`, on an
+abort/runtime path. Zero linear decode warnings do not prove that embedded data or all
+function boundaries were recovered. The manifest records shortest syntactic routes,
+call edges, imports, hashes and these omissions. It reuses Modern's saved range inventory;
+explicit anchors below recover the original truncation helper's longer tail separately.
+
+A concrete retained physics-to-angle route is:
+
+`004ad7a3` → (`004adff3`) `004aca4f` → (`004ace3b`) `004ea9c0` →
+(`004ea9c9`) `004e06d9` → (`004e06e8`) `004ff624` → (`004ff637`) `0051f320`.
+
+These named ranges match in both files. At `004ff628`, the wrapper stores an operand as
+80-bit TBYTE; `004ff62c FNSAVE [ESP]` saves the environment/registers and **initializes the
+FPU**, including CW037f. FNSAVE is therefore a state-changing instruction, not merely a
+memory copy. The wrapper reloads two TBYTE operands and calls the angle routine; the normal
+tail writes its result into the saved register image, merges low status bits and executes
+`004ff650 FRSTOR [ESP]`. This preserves the caller's saved CW while returning the computed
+register result; it does not promise an untouched complete FPU state. Intel documents the
+save-and-initialize behavior in [Software Developer's Manual Volume1, x87 state saving](https://cdrdv2-public.intel.com/843827/253665-sdm-vol-1-dec-24.pdf).
+
+Inside the retained angle routine, `0051f386 FNSTCW` records CW. The sequence through
+`0051f39e FLDCW` computes `(savedCW | 033f) & f3ff`: masked exceptions, PC11 (64-bit
+significand), nearest rounding. Special input branches can bypass this sequence, and
+its indirect jump tables remain unexpanded here. The inspected normal route nevertheless
+contains local extended-mode setup **inside a physics dependency in the original too**.
+Do not equate the original's ordinary race single-precision baseline with every nested
+math operation. Runtime branch frequency, complete exceptional paths and trajectory
+impact were not measured. These retained helpers are not new Modern-only changes.
+
+### Changed drivetrain truncation helper
+
+The direct drivetrain route `004ad7a3` → (`004adc0a`) `004aaed1` → (`004ab10c`)
+`004dfd56` reaches different implementations:
+
+| Original `004dfd56..004dfd73` | Official Modern `004dfd56..004dfd6d` |
+|---|---|
+| Saves CW, copies it, replaces high byte with1f, loads temporary CW, FRNDINT, restores CW; waiting save/wait instructions | Pushes0c3f, saves CW into upper WORD of stack allocation, loads0c3f, FRNDINT, restores CW |
+| Temporary PC11, RC11; low CW byte retained | Temporary PC00, RC11; all six exception masks set |
+| 29-byte body | 23-byte body |
+
+Ends are exclusive. Both select truncation toward zero and restore incoming CW on their
+inspected normal return. FRNDINT is not controlled by PC, so the PC difference alone is
+not evidence of different ordinary finite truncation results. Exception masking/waiting
+behavior and exceptional operands are distinct unresolved behavioral questions; do not
+silently discard them in a native replacement. Modern's saved function boundary would
+truncate the original tail if reused without inspection; explicit complete anchors in
+the new evidence avoid that mistake.
+
+This closes the question of whether the selected physics dependency tree contains local
+FPU setup: it does, in both versions. It does **not** close the inherited CW at every
+callback entry, indirect target effects, full math semantics, or replay/network equivalence.
+The next precision work should address a specific indirect/callback boundary or a matched
+behavioral experiment when authorized, rather than continue assuming all retained physics
+instructions execute under a single unchanging precision setting.

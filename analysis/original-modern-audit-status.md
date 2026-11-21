@@ -27,6 +27,12 @@ conversion sites and explicit AI/network overrides. Next trace further callees a
 callbacks for transitive CW ownership; do not claim identical physics or inevitable desynchronization.
 Static evidence only; no new instruction probes or game execution.
 
+The [deeper dependency inventory](og-modern-x87-precision.md#deeper-dependency-inventory-retained-local-extended-state-math)
+now identifies retained FNSAVE/reset/FRSTOR and explicit extended-mode angle math on a physics
+call path in **both** baselines. It also compares the changed drivetrain truncation helper's
+complete bodies.176 saved entries per file include174 equal ranges, but111 indirect sites
+and one nonentry direct target remain unexpanded; this is not complete transitive CW ownership.
+
 ## Latest bounded reproducibility checkpoint
 
 The [five-audit checkpoint](evidence/validation/early-hud-package-worker-checkpoint.json) reviews `6e5e9dc`: **10/10 static runs** reproduce five committed outputs (early HUD, wrapper packages, race-entry guard/registrar, input-worker/creator and block relocation). **12 protected artifacts and12 raw exports** retain prior hashes. Reproduce with `python3 analysis/scripts/check_early_hud_package_worker.py`. This closes repeatability/preservation for those follow-ups, not semantic independence, live Ghidra readback, runtime behavior or the full comparison.
