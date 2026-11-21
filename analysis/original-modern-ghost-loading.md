@@ -94,3 +94,15 @@ official final Modern. At `0047282e`, 1.5.1 tests the debug flag and
 1.5.2 calls the header refresh helper. This dates the verified mechanism
 to the 1.5.1 → 1.5.2 package boundary, consistent with MP152-003.
 The runtime reset symptom remains untested.
+
+The wrapper's input widening difference is narrower than the raw register
+comparison suggests. Both pinned EXEs have identical bytes at
+`004cef00..004cef78` (exclusive end). The helper saves incoming EAX in
+EDX. The flag-0x20 branch returns 1 directly. On the two lookup branches,
+`004cef2c` and `004cef4d` use `MOVSX EAX,DX` before passing the
+selector to `0044f670`. The intervening flag-check helper
+`0044f5d0` leaves EDX intact, and the optional load at `0044f510`
+saves and restores it. Thus both wrappers deliver the same signed
+16-bit selector at the lookup boundary even for high-bit-set words.
+The changed wrapper's other configuration writes and the lookup's
+resource inputs can still affect the overall result.
