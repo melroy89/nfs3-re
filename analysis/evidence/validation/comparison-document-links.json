@@ -108,8 +108,8 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "3b05c628d7af997006b258cd8df02b90de9e87731155537c3af7b1cb8bbd3a65",
-      "relative_links": 335
+      "sha256": "fd657e60df5f184359793aab88471cc8960b07b2f5bc13d1b970c0f4a40d4693",
+      "relative_links": 337
     },
     {
       "path": "analysis/original-modern-display-modes.md",
@@ -663,12 +663,12 @@
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
-      "sha256": "8bb0f287d8e71728722fe561e792e9f07049267da730171bd1ac4c63813ef0a9",
-      "relative_links": 31
+      "sha256": "446e43832b807f3e7ebd2a945d62610bda738c71121c2859b08fcec728d7d447",
+      "relative_links": 32
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3075,
+  "relative_link_count": 3078,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

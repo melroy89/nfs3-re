@@ -486,3 +486,15 @@ that replay lookup compares. The known consumer affects Hot Pursuit
 eligibility. Evidence of a different replay lookup result would require
 a change in the ordered identifier list or in the assets that a matching
 entry resolves to. The registry audit reproduced from both pinned EXEs.
+
+### Ghost loading changes the surrounding configuration
+
+The default replay resource path above and the current-race ghost wrapper
+are separate entry points. The changed ghost wrapper at `004466a0` retains
+the call to reader `00477b50`, but changes the snapshot timing and the
+configuration it restores after a successful load. Modern restores the
+refreshed 12-byte race configuration header and three additional 11-byte
+identity fields. This is a verified loading-state difference beside the
+retained replay codec. It gives a concrete reason to compare initial
+configuration as well as recorded controls in a cross-version test.
+[Paired ghost loading audit](original-modern-ghost-loading.md).
