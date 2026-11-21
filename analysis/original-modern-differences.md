@@ -21,7 +21,7 @@ The [renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-his
 |[DX6 mode count](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) |Added increment affects public descriptor count, whose table has a leading slot |Leading-slot contents, full-capacity/alias/switch bounds and visible modes |
 |[Screenshot depth](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) |150 fixes partial-WORD local initialization before DWORD stride read; final core retained |Observed crash, XP specificity, complete capture/encoding stability |
 
-Current catalog labels are80 vendor-only/54 bounded-static/154 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
+Current catalog labels are79 vendor-only/54 bounded-static/155 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
 
 ## Renderer, menu and screenshot follow-up checkpoint
 
@@ -681,7 +681,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **80 Claimed, 54 Static, 154 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **79 Claimed, 54 Static, 155 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -849,7 +849,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-030 | Demo movies aren't starting when the game is minimized in the menu mode (useful for the nGlide driver). | Partial |
 | MP140-031 | If demo video files are removed, the game doesn't try to play them. | Partial |
 | MP140-032 | Length of a track in the track info is displayed in units, which is choosed in the HUD of the 1st player. | Partial |
-| MP140-033 | “Wide Screen” setting was renamed to “2:1 Field of View”, just to avoid ambiguity. | Claimed |
+| MP140-033 | “Wide Screen” setting was renamed to “2:1 Field of View”, just to avoid ambiguity. | Partial |
 | MP140-034 | The top dropdown with the player type selection is always displayed in the HUD settings. | Claimed |
 | MP140-035 | Fixed bug, when previous text was lost on first key press when entering player name or IP address. | Partial |
 | MP140-036 | A hint about an ability to abort using Esc button in the “Connecting...” window. | Partial |
@@ -1253,3 +1253,8 @@ The [dispatcher follow-up](original-modern-renderer-loading.md#selector5-normali
 ## Connection Esc hint traced to a new two-line notice helper
 
 The [131/140 caller comparison](original-modern-network-port-menu.md#connecting-notice-gains-an-explicit-esc-hint-in140) verifies the Connecting path replaces its notice call with a helper resolving text12 plus hint11. All six140 language assets are bounded/hashed, and the44-byte helper matches final. MP140-036 advances vendor-only→partial; visible output and actual cancellation remain untested. Current labels are80 vendor-only/54 bounded-static/154 partial/2 unresolved.
+
+
+## 140 Field-of-View label maps to the retained widescreen setting
+
+The [label/binding comparison](original-modern-frame-setting.md#140-field-of-view-wording-retains-the-earlier-setting-interface) verifies140 English2:1 Field of View labels with unchanged131/140 descriptor, storage, symbolic bindings and Off/On choice IDs. MP140-033 advances vendor-only→partial; prior English wording, complete consumer equivalence and rendered UI remain unverified. Current labels are79 vendor-only/54 bounded-static/155 partial/2 unresolved.

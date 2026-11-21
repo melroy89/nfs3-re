@@ -105,3 +105,21 @@ Within the captured1.6.0 display defaults, **`00472d92` clears EDX and`00472d94`
 Accepted version6+ headers with zero high byte instead bypass these grouped defaults in this local decision; arbitrary future versions are not rejected solely for being above6. Their existing Frame Size fields can retain loaded values absent other writes. Do not infer that every old file has version5, that a patched/mixed header is genuine, or that later initialization cannot change the result.
 
 **Resolved locally:** version bump, changed acceptance threshold and direct Frame Size reset consumer. **Still pending:** actual save/read success and file provenance, all template/header writers, later settings overrides and visible camera behaviour. This supplies a concrete compatibility gate without claiming a tested upgrade migration. No config file was read by the game, saved, changed or executed during this analysis.
+
+
+## 140 Field-of-View wording retains the earlier setting interface
+
+**MP140-033: partial label/binding evidence, not a complete before/after text or camera comparison.** The [historical label audit](evidence/audits/widescreen-label-history.json), reproduced with `python3 analysis/scripts/audit_widescreen_label_history.py`, pins131/140 archives and EXEs, hashes both graphics menus and140 English text, and verifies the following retained interfaces:
+
+| Binding |131 and140 |
+|---|---|
+|Descriptor |`005567a8`,20 identical bytes |
+|Internal key |`widescreen` at `00538008` |
+|Selection storage |`006fbc4c` |
+|Terminated choice list |`005561be`: WORDs229,228,0 |
+|Menu symbolic IDs |1283 paused label;1504 advanced label;1505 description |
+|Selected menu fields |Matching WIDESCREEN codelinks, symbolic text names and `listname=widescreen` |
+
+The140 English entries1283/1504 read **2:1 Field of View**;1505 reads **2:1 Field of View is...**. Its choice entries229/228 read Off/On. The symbol-pointer table at `00561c44` verifies these indices against the menu's exact symbolic names, rather than treating a text search alone as a consumer link.
+
+This establishes the advertised140 wording on the same selected setting interface. It does not establish a new storage field or new choice list at this boundary. Conversely, descriptor identity is not proof that every camera/render consumer is unchanged. The retained131 package lacks the English text asset needed for this comparison, so exact old Wide Screen wording and the precise text replacement remain unverified. All locales, actual loaded text and visible UI remain untested. Later Frame Size labels/choice expansion are separately dated above and must not be projected backward onto140. No target instructions or Ghidra changes were made.
