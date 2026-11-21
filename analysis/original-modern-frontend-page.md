@@ -359,3 +359,15 @@ sections found no literal little-endian DWORD for that address. These
 checks cover those encodings only. Computed entries and other jumps
 remain possible. The inspected About resource path calls the pointer
 loader, and the size helper's actual callers remain unresolved.
+
+### Text widget coordinate callback
+
+Both pinned EXEs retain registry row `00557a90` with type 3, the
+`text` token pointer `00538358`, and template pointer `00556d9c`.
+Template+0x24 at `00556dc0` points to callback `004600b0` in both.
+The changed branch requires WORD widget+0x44 to equal 3. It uses
+WORD widget+0x46 as a table index, signed in the original and
+zero-extended in Modern. The two table results are still written to
+widget WORDs +6 and +8. For the same valid row the added offsets change
+from (146, 0) to (151, 1). The template identifies the widget class.
+Specific rendered instances remain unverified.
