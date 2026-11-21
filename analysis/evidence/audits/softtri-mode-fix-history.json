@@ -356,6 +356,341 @@
     ],
     "scope": "Complete file-backed code section;not complete PE files or transitive runtime behavior."
   },
+  "original_reference": {
+    "archive": "analysis/captures/modern-differences/upstream/history/nfs3_orig.7z",
+    "archive_sha256": "374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127",
+    "member": "softtria.dll",
+    "sha256": "8ea15aac0a7095b7d750cd75bbc9095553b6f708d1b89ca807864294a1a12b02",
+    "code_sha256": "d32834638cc0c8d81d44aacdada9ff82e8434951dbcface31ccbb9256ead2004",
+    "code_bytes": 245760,
+    "reference_to150_changed_bytes": [
+      {
+        "address": "60002496",
+        "reference": 15,
+        "150": 16
+      },
+      {
+        "address": "60002498",
+        "reference": 5,
+        "150": 109
+      },
+      {
+        "address": "60002499",
+        "reference": 190,
+        "150": 235
+      },
+      {
+        "address": "6000249a",
+        "reference": 16,
+        "150": 3
+      },
+      {
+        "address": "6000249b",
+        "reference": 0,
+        "150": 144
+      },
+      {
+        "address": "6000249c",
+        "reference": 0,
+        "150": 144
+      },
+      {
+        "address": "6000249d",
+        "reference": 0,
+        "150": 144
+      },
+      {
+        "address": "6000253a",
+        "reference": 155,
+        "150": 203
+      }
+    ],
+    "matched_exports": 34,
+    "callback": {
+      "start": "60002480",
+      "end_exclusive": "6000257e",
+      "hex": "5356575583ec288b5c243c8b7c24408b735431d283fe0f7505be100000008d4348e8da09000089c585c0745ab9020000008b430c894c24243d800200007556817b08e0010000754d83fe1075488b155000046083c2288b430c89028b430889420483fd037505be0f000000c7421800000000c7421001000000896a0c8b442424897208894214b80100000083c4285d5f5e5bc20800817b0c200300007519817b0858020000751083fe10750b8b155000046083c250eb9f85ed749b89e0502eff1500d20360b9280000008b44240431d2f7f18b1739d0761c89d08b0fc1e2024101d08b1550000460c1e003890f01c2e962ffffff31c083c4285d5f5e5bc2",
+      "sha256": "79494aeff250132c6275791dcb24dbeb58275b8c6391c45e2837fb3cf6dfb612",
+      "disassembly": [
+        "60002480:\t53                   \tpush   ebx",
+        "60002481:\t56                   \tpush   esi",
+        "60002482:\t57                   \tpush   edi",
+        "60002483:\t55                   \tpush   ebp",
+        "60002484:\t83 ec 28             \tsub    esp,0x28",
+        "60002487:\t8b 5c 24 3c          \tmov    ebx,DWORD PTR [esp+0x3c]",
+        "6000248b:\t8b 7c 24 40          \tmov    edi,DWORD PTR [esp+0x40]",
+        "6000248f:\t8b 73 54             \tmov    esi,DWORD PTR [ebx+0x54]",
+        "60002492:\t31 d2                \txor    edx,edx",
+        "60002494:\t83 fe 0f             \tcmp    esi,0xf",
+        "60002497:\t75 05                \tjne    0x6000249e",
+        "60002499:\tbe 10 00 00 00       \tmov    esi,0x10",
+        "6000249e:\t8d 43 48             \tlea    eax,[ebx+0x48]",
+        "600024a1:\te8 da 09 00 00       \tcall   0x60002e80",
+        "600024a6:\t89 c5                \tmov    ebp,eax",
+        "600024a8:\t85 c0                \ttest   eax,eax",
+        "600024aa:\t74 5a                \tje     0x60002506",
+        "600024ac:\tb9 02 00 00 00       \tmov    ecx,0x2",
+        "600024b1:\t8b 43 0c             \tmov    eax,DWORD PTR [ebx+0xc]",
+        "600024b4:\t89 4c 24 24          \tmov    DWORD PTR [esp+0x24],ecx",
+        "600024b8:\t3d 80 02 00 00       \tcmp    eax,0x280",
+        "600024bd:\t75 56                \tjne    0x60002515",
+        "600024bf:\t81 7b 08 e0 01 00 00 \tcmp    DWORD PTR [ebx+0x8],0x1e0",
+        "600024c6:\t75 4d                \tjne    0x60002515",
+        "600024c8:\t83 fe 10             \tcmp    esi,0x10",
+        "600024cb:\t75 48                \tjne    0x60002515",
+        "600024cd:\t8b 15 50 00 04 60    \tmov    edx,DWORD PTR ds:0x60040050",
+        "600024d3:\t83 c2 28             \tadd    edx,0x28",
+        "600024d6:\t8b 43 0c             \tmov    eax,DWORD PTR [ebx+0xc]",
+        "600024d9:\t89 02                \tmov    DWORD PTR [edx],eax",
+        "600024db:\t8b 43 08             \tmov    eax,DWORD PTR [ebx+0x8]",
+        "600024de:\t89 42 04             \tmov    DWORD PTR [edx+0x4],eax",
+        "600024e1:\t83 fd 03             \tcmp    ebp,0x3",
+        "600024e4:\t75 05                \tjne    0x600024eb",
+        "600024e6:\tbe 0f 00 00 00       \tmov    esi,0xf",
+        "600024eb:\tc7 42 18 00 00 00 00 \tmov    DWORD PTR [edx+0x18],0x0",
+        "600024f2:\tc7 42 10 01 00 00 00 \tmov    DWORD PTR [edx+0x10],0x1",
+        "600024f9:\t89 6a 0c             \tmov    DWORD PTR [edx+0xc],ebp",
+        "600024fc:\t8b 44 24 24          \tmov    eax,DWORD PTR [esp+0x24]",
+        "60002500:\t89 72 08             \tmov    DWORD PTR [edx+0x8],esi",
+        "60002503:\t89 42 14             \tmov    DWORD PTR [edx+0x14],eax",
+        "60002506:\tb8 01 00 00 00       \tmov    eax,0x1",
+        "6000250b:\t83 c4 28             \tadd    esp,0x28",
+        "6000250e:\t5d                   \tpop    ebp",
+        "6000250f:\t5f                   \tpop    edi",
+        "60002510:\t5e                   \tpop    esi",
+        "60002511:\t5b                   \tpop    ebx",
+        "60002512:\tc2 08 00             \tret    0x8",
+        "60002515:\t81 7b 0c 20 03 00 00 \tcmp    DWORD PTR [ebx+0xc],0x320",
+        "6000251c:\t75 19                \tjne    0x60002537",
+        "6000251e:\t81 7b 08 58 02 00 00 \tcmp    DWORD PTR [ebx+0x8],0x258",
+        "60002525:\t75 10                \tjne    0x60002537",
+        "60002527:\t83 fe 10             \tcmp    esi,0x10",
+        "6000252a:\t75 0b                \tjne    0x60002537",
+        "6000252c:\t8b 15 50 00 04 60    \tmov    edx,DWORD PTR ds:0x60040050",
+        "60002532:\t83 c2 50             \tadd    edx,0x50",
+        "60002535:\teb 9f                \tjmp    0x600024d6",
+        "60002537:\t85 ed                \ttest   ebp,ebp",
+        "60002539:\t74 9b                \tje     0x600024d6",
+        "6000253b:\t89 e0                \tmov    eax,esp",
+        "6000253d:\t50                   \tpush   eax",
+        "6000253e:\t2e ff 15 00 d2 03 60 \tcall   DWORD PTR cs:0x6003d200",
+        "60002545:\tb9 28 00 00 00       \tmov    ecx,0x28",
+        "6000254a:\t8b 44 24 04          \tmov    eax,DWORD PTR [esp+0x4]",
+        "6000254e:\t31 d2                \txor    edx,edx",
+        "60002550:\tf7 f1                \tdiv    ecx",
+        "60002552:\t8b 17                \tmov    edx,DWORD PTR [edi]",
+        "60002554:\t39 d0                \tcmp    eax,edx",
+        "60002556:\t76 1c                \tjbe    0x60002574",
+        "60002558:\t89 d0                \tmov    eax,edx",
+        "6000255a:\t8b 0f                \tmov    ecx,DWORD PTR [edi]",
+        "6000255c:\tc1 e2 02             \tshl    edx,0x2",
+        "6000255f:\t41                   \tinc    ecx",
+        "60002560:\t01 d0                \tadd    eax,edx",
+        "60002562:\t8b 15 50 00 04 60    \tmov    edx,DWORD PTR ds:0x60040050",
+        "60002568:\tc1 e0 03             \tshl    eax,0x3",
+        "6000256b:\t89 0f                \tmov    DWORD PTR [edi],ecx",
+        "6000256d:\t01 c2                \tadd    edx,eax",
+        "6000256f:\te9 62 ff ff ff       \tjmp    0x600024d6",
+        "60002574:\t31 c0                \txor    eax,eax",
+        "60002576:\t83 c4 28             \tadd    esp,0x28",
+        "60002579:\t5d                   \tpop    ebp",
+        "6000257a:\t5f                   \tpop    edi",
+        "6000257b:\t5e                   \tpop    esi",
+        "6000257c:\t5b                   \tpop    ebx",
+        "6000257d:\tc2                   \t.byte 0xc2"
+      ]
+    },
+    "provenance": "Author-hosted reference bundle;not authenticated pristine retail or independently paired to supplied original EXE."
+  },
+  "later_final_boundary": {
+    "archive": "analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z",
+    "archive_sha256": "c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3",
+    "member_sha256": "9479203471f4dd615788769bac365043d903505af370c48df69e5d6a1e6f8732",
+    "code_sha256": "e7cf5b89742c89f95b807a3c0af9ef7112ea0ff741c78124b55c2d9b3b0b9d33",
+    "150_to_final_changed_code_bytes": [
+      {
+        "address": "600031ac",
+        "150": 15,
+        "final": 118
+      },
+      {
+        "address": "600031ad",
+        "150": 134,
+        "final": 210
+      },
+      {
+        "address": "600031ae",
+        "150": 57,
+        "final": 144
+      },
+      {
+        "address": "600031af",
+        "150": 255,
+        "final": 144
+      },
+      {
+        "address": "600031b0",
+        "150": 255,
+        "final": 144
+      },
+      {
+        "address": "600031b1",
+        "150": 255,
+        "final": 144
+      },
+      {
+        "address": "60003631",
+        "150": 27,
+        "final": 140
+      },
+      {
+        "address": "60003632",
+        "150": 255,
+        "final": 0
+      },
+      {
+        "address": "60003633",
+        "150": 255,
+        "final": 0
+      },
+      {
+        "address": "60003634",
+        "150": 255,
+        "final": 0
+      },
+      {
+        "address": "600036c1",
+        "150": 141,
+        "final": 106
+      },
+      {
+        "address": "600036c2",
+        "150": 128,
+        "final": 0
+      },
+      {
+        "address": "600036c3",
+        "150": 0,
+        "final": 255
+      },
+      {
+        "address": "600036c4",
+        "150": 0,
+        "final": 21
+      },
+      {
+        "address": "600036c5",
+        "150": 0,
+        "final": 180
+      },
+      {
+        "address": "600036c7",
+        "150": 141,
+        "final": 4
+      },
+      {
+        "address": "600036c8",
+        "150": 146,
+        "final": 96
+      },
+      {
+        "address": "600036c9",
+        "150": 0,
+        "final": 233
+      },
+      {
+        "address": "600036ca",
+        "150": 0,
+        "final": 130
+      },
+      {
+        "address": "600036cb",
+        "150": 0,
+        "final": 254
+      },
+      {
+        "address": "600036cc",
+        "150": 0,
+        "final": 255
+      },
+      {
+        "address": "600036cd",
+        "150": 141,
+        "final": 255
+      },
+      {
+        "address": "600036ce",
+        "150": 64,
+        "final": 144
+      },
+      {
+        "address": "600036cf",
+        "150": 0,
+        "final": 144
+      },
+      {
+        "address": "600037bb",
+        "150": 106,
+        "final": 91
+      },
+      {
+        "address": "600037bc",
+        "150": 0,
+        "final": 94
+      },
+      {
+        "address": "600037bd",
+        "150": 255,
+        "final": 95
+      },
+      {
+        "address": "600037be",
+        "150": 21,
+        "final": 106
+      },
+      {
+        "address": "600037bf",
+        "150": 180,
+        "final": 0
+      },
+      {
+        "address": "600037c0",
+        "150": 0,
+        "final": 255
+      },
+      {
+        "address": "600037c1",
+        "150": 4,
+        "final": 21
+      },
+      {
+        "address": "600037c2",
+        "150": 96,
+        "final": 180
+      },
+      {
+        "address": "600037c3",
+        "150": 91,
+        "final": 0
+      },
+      {
+        "address": "600037c4",
+        "150": 94,
+        "final": 4
+      },
+      {
+        "address": "600037c5",
+        "150": 95,
+        "final": 96
+      },
+      {
+        "address": "600037dd",
+        "150": 232,
+        "final": 224
+      }
+    ],
+    "semantics": "Pending;150 callback repair does not establish complete final correspondence."
+  },
   "api_layout_sources": [
     "https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsysteminfo",
     "https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/ns-sysinfoapi-system_info"

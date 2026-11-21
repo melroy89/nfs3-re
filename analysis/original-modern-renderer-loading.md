@@ -618,3 +618,16 @@ For a successfully allocated P-byte table and a callback reporting the same page
 The old callback reads the corresponding stack DWORD without this local GetSystemInfo initialization even though setup already used the API in its separate frame. Those are different stack buffers: setup's earlier query does not establish the callback-local value. The150 addition now obtains the same kind of bound source locally. Actual page-size consistency, allocation failure, corrupted/aliased context counts, classifier side effects, later mutations and non-generic paths remain separately qualified. Do not replace this with an unconditional “all SoftTri mode handling is safe” claim.
 
 The concrete MP150-038 mechanism is now supported by allocation and callback-registration evidence as well as the complete19-byte code delta. The unspecified visible bug symptom still has no runtime reproduction. No target, allocator or graphics instructions were executed.
+
+
+### Original-reference SoftTri already has the local system-info query
+
+The expanded [SoftTri audit](evidence/audits/softtri-mode-fix-history.json) pins `softtria.dll` from the author-hosted reference bundle: SHA-256 `8ea15aac0a7095b7d750cd75bbc9095553b6f708d1b89ca807864294a1a12b02`. Its245,760-byte first code section differs from150 in **only eight bytes**, all inside callback `60002480..6000257e`. All34 export names/ordinals/RVAs/forwarders match. This is strong implementation correspondence, not authenticated source ancestry or pristine-retail provenance.
+
+The reference callback already calls GetSystemInfo at `6000253e`.140 instead replaces that local block with the height filter above, and150 restores the query. Thus the inspected reference→140→150 sequence supports a **local regression-and-repair interpretation**, not a claim that the missing initialization was inherited from that reference. The exact first release introducing the140 behavior remains unverified.
+
+The eight reference→150 changed bytes encode the entry-depth policy (reference treats15 specially by converting its working value to16;150 requires16 and removes the redundant assignment), plus a zero-test branch displacement in the restored block. The repeated EBP test follows an earlier nonzero-classifier gate, so its zero branch is not asserted reachable in the ordinary captured path. Classification and actual offered depths remain separate from source-level intent or visible mode support.
+
+**MP100-066 gains partial support** for close correspondence with the original-reference software provider. The bundled reference is not independently authenticated against the supplied original EXE; literal source-code derivation and exact100 introduction remain unverified.
+
+The official-final SoftTri member has SHA-256 `9479203471f4dd615788769bac365043d903505af370c48df69e5d6a1e6f8732`. Its same code extent has36 additional differing bytes versus150; all addresses and before/after byte values are retained in the audit, but their semantics remain pending. Do not treat the150 repair as a complete final-provider difference map. No original, intermediate or final DLL was executed.

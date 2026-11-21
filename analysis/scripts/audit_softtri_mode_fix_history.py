@@ -41,6 +41,24 @@ def main():
     changed=[0x60001000+i for i,(a,b)in enumerate(zip(*codes))if a!=b]
     assert changed==list(range(0x60002499,0x6000249e))+list(range(0x60002537,0x60002545))
     result['complete_code_partition']={'changed_bytes':19,'unchanged_bytes':245741,'ranges_exclusive':[['60002499','6000249e'],['60002537','60002545']],'scope':'Complete file-backed code section;not complete PE files or transitive runtime behavior.'}
+    refrel='analysis/captures/modern-differences/upstream/history/nfs3_orig.7z'
+    assert sha((ROOT/refrel).read_bytes())=='374b30edda891569327091e14828a3df04ac9350f73ba0f190ce4d3c54b6f127'
+    reference=subprocess.check_output(['7z','x','-so',str(ROOT/refrel),'softtria.dll'])
+    assert sha(reference)=='8ea15aac0a7095b7d750cd75bbc9095553b6f708d1b89ca807864294a1a12b02'
+    rp=pefile.PE(data=reference);assert rp.sections[0].VirtualAddress==0x1000 and rp.sections[0].SizeOfRawData==245760
+    refcode=rp.get_data(0x1000,245760)
+    refdelta=[{'address':f'{0x60001000+i:08x}','reference':a,'150':b}for i,(a,b)in enumerate(zip(refcode,codes[1]))if a!=b]
+    assert len(refdelta)==8 and all(0x60002480<=int(r['address'],16)<0x6000257e for r in refdelta)
+    exports=lambda p:[(e.name.decode()if e.name else None,e.ordinal,e.address,e.forwarder)for e in p.DIRECTORY_ENTRY_EXPORT.symbols]
+    assert exports(rp)==exports(pe) and len(exports(rp))==34
+    refcallback=rp.get_data(0x2480,254)
+    assert refcallback[0xb7:0xc5].hex()=='85ed749b89e0502eff1500d20360'
+    result['original_reference']={'archive':refrel,'archive_sha256':sha((ROOT/refrel).read_bytes()),'member':'softtria.dll','sha256':sha(reference),'code_sha256':sha(refcode),'code_bytes':len(refcode),'reference_to150_changed_bytes':refdelta,'matched_exports':34,'callback':{'start':'60002480','end_exclusive':'6000257e','hex':refcallback.hex(),'sha256':sha(refcallback),'disassembly':disassemble(refcallback,0x60002480)},'provenance':'Author-hosted reference bundle;not authenticated pristine retail or independently paired to supplied original EXE.'}
+    finalrel='analysis/captures/modern-differences/upstream/nfs3_modern_patch.7z';assert sha((ROOT/finalrel).read_bytes())=='c023058bde17d1430d874c29dae71b61cf998a66e8a1b6994dae401205b444b3'
+    finalraw=subprocess.check_output(['7z','x','-so',str(ROOT/finalrel),'drivers/softtri/softtria.dll']);assert sha(finalraw)=='9479203471f4dd615788769bac365043d903505af370c48df69e5d6a1e6f8732'
+    finalcode=pefile.PE(data=finalraw).get_data(0x1000,245760)
+    later=[{'address':f'{0x60001000+i:08x}','150':a,'final':b}for i,(a,b)in enumerate(zip(codes[1],finalcode))if a!=b];assert len(later)==36
+    result['later_final_boundary']={'archive':finalrel,'archive_sha256':sha((ROOT/finalrel).read_bytes()),'member_sha256':sha(finalraw),'code_sha256':sha(finalcode),'150_to_final_changed_code_bytes':later,'semantics':'Pending;150 callback repair does not establish complete final correspondence.'}
     result['api_layout_sources']=['https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsysteminfo','https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/ns-sysinfoapi-system_info']
     result['findings']=['150 calls GetSystemInfo with ESP before reading local+4 and unsigned dividing by40 for count bound;32-bit SYSTEM_INFO+4 is dwPageSize.',
         '140 instead tests signed input height>=480 at that location,without the local API-buffer initialization in this callback.',

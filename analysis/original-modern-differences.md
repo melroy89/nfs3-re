@@ -695,7 +695,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **60 Claimed, 56 Static, 174 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **59 Claimed, 56 Static, 175 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -1050,7 +1050,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-063 | The driver works in 32-bit mode if it is available in the system. It improves quality of dust or splashes from wheels. | Partial |
 | MP100-064 | 640×480 always reported as 16-bit. Original title movie doesn't works in 32-bit mode. | Partial |
 | MP100-065 | Light beams effect now works in D3D mode. In original version this effect available in Voodoo2 mode only. | Claimed |
-| MP100-066 | Based on the original softtria.dll from NFS3. Newer versions of this driver render worse image or crash. | Claimed |
+| MP100-066 | Based on the original softtria.dll from NFS3. Newer versions of this driver render worse image or crash. | Partial |
 | MP100-067 | The driver reports only 16-bit resolutions now. Original version was reported that 32-bit resolutions are supported, but it isn't true. This driver can't work in 32-bit modes. | Partial |
 
 <!-- END GENERATED MODERN CHANGE LIST -->
