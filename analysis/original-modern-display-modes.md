@@ -274,3 +274,34 @@ At N=100 the extra row lies beyond the explicit clearing extent. That does not p
 150 application`004bef50` clamps incoming indices below1 to1 and forms its record offset. The same-current-index route branches away before the changed-index count gate. The changed-index gate`004befc2..004befdb` admits signed indices1..count **inclusive**; it is not the eligibility helper used by enumeration/nearest search. Follow-up driver calls, failure handling and actual selection must not be replaced by an assumption that “it was in range, so it was eligible.” The [mode-application report](original-modern-mode-selection.md) retains the later final implementation's independently qualified behaviour.
 
 **Resolved:** selected inclusive visitation, zero-slot rejection ordering and a bounded N<100 clearing/insert-lifetime argument. **Remaining:** counter/record alias writes, capacity-edge contents, fallback/same-current/direct-switch outcomes, all external clients and device acceptance. These findings do not establish a universal missing-last-mode repair or a runtime bounds failure. No game, DLL, mode API, instruction probe, compiler or Ghidra write was used.
+
+
+## DX8 early size filter and later16-bit admission
+
+**Partial static provider evidence for MP110-007 and MP150-039; no display-mode execution.** The [three-build audit](evidence/audits/dx8-mode-admission-history.json), reproduced with `python3 analysis/scripts/audit_dx8_mode_admission_history.py`, pins110 `dx8.dll` and140/150 `drivers/dx8/dx8a.dll` from their exact author-hosted archives. The inspected component is distinct from the game EXE and the DX5/DX6 providers discussed above.
+
+### Enumeration producer and published records
+
+Imported `d3d8.dll!Direct3DCreate8` is reached through thunk `60011244` and its output is published at `6001ed24`. The mode builder `60004550..600047f2` uses that object's slots18h/1Ch. The pinned [MinGW-w64 interface header](https://raw.githubusercontent.com/mingw-w64/mingw-w64/master/mingw-w64-headers/include/d3d8.h) identifies these as GetAdapterModeCount/EnumAdapterModes; the [types header](https://raw.githubusercontent.com/mingw-w64/mingw-w64/master/mingw-w64-headers/include/d3d8types.h) defines the output as Width, Height, RefreshRate and Format. Cached header hashes and instruction captures are retained in the audit.
+
+The builder clears256 forty-byte records at `600429a0`, publishes that table through `60042900`, and starts its count at2. `_THRASH_about@0` returns descriptor `600428c0`, whose+3Ch count is `600428fc` and+40h table pointer is `60042900`. Reserved/unpopulated rows and all EXE consumers are not fully qualified by this builder audit.
+
+### Two separate policies
+
+| Selected policy |110 |140 |150 |
+|---|---|---|---|
+|Minimum input dimensions |Unsigned width≥640 AND height≥480 |Same |Same |
+|Depth admission after recognized format |Require32 |Require32 |Require nonzero reported depth;32-only check removed |
+|Special slot1 |640×480 after32-only gate |Same |640×480 only when depth16 |
+
+The complete674-byte110/140 builder bodies are identical. In the early body, `600045f3/600045ff` compare width/height against640/480; unsigned-below branches go to next-mode iteration before record writes. This verifies the lower-size filter is already present in110, not its exact introduction versus an unavailable100 baseline. It is not proof that every published slot contains a valid filtered mode: the function reserves entries and API/output lifetime remains conditional.
+
+All140→150 builder differences are inside `600045de..60004623`; the earlier prefix and later suffix match. The old `CMP EAX,32 / JNE next-mode` disappears.150 retains the preceding nonzero classifier/depth tests and adds depth16 to the640×480 special-slot condition.
+
+A concrete derived case is API format23, R5G6B5: both retained classifiers map it to internal token4 and depth16. With a valid640×480 enumeration output and the other local preconditions,140 rejects it at its32-only gate;150 can store width640, height480, depth16 and token4 at slot1. This explains a selected16-bit admission mechanism without asserting that arbitrary formats are limited to16/32 or that a device actually offers/accepts the mode.
+
+### Limits and reconstruction implications
+
+EnumAdapterModes' result is not checked locally before reading its output. Successful complete output is therefore a premise, not a guaranteed API outcome. Other format classifiers, record capacity/deduplication, reserved slots, EXE selection and device activation remain separate. The early32-only builder does not itself prove the advertised ugly-menu symptom was fixed, and source ancestry is not inferred from exported names.
+
+MP110-007 and MP150-039 advance vendor-only→partial. Preserve unsigned size tests, local failure behaviour and the distinct slot1 policy in reconstruction. No DLL/API, game or target instructions were executed, no toolchain was installed and no executable or Ghidra database was changed.

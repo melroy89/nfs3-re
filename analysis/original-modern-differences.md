@@ -29,7 +29,7 @@ The [renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-his
 |[DX6 mode count](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) |Added increment affects public descriptor count, whose table has a leading slot |Leading-slot contents, full-capacity/alias/switch bounds and visible modes |
 |[Screenshot depth](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) |150 fixes partial-WORD local initialization before DWORD stride read; final core retained |Observed crash, XP specificity, complete capture/encoding stability |
 
-Current catalog labels are74 vendor-only/54 bounded-static/160 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
+Current catalog labels are72 vendor-only/54 bounded-static/162 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
 
 ## Renderer, menu and screenshot follow-up checkpoint
 
@@ -689,7 +689,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **74 Claimed, 54 Static, 160 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **72 Claimed, 54 Static, 162 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -813,7 +813,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-036 | Updated version of nGlide with fixes according to the NFS3 is included. | Claimed |
 | MP150-037 | dgVoodoo v2.5.1 (Napalm). | Claimed |
 | MP150-038 | Fixed a bug in the SoftTri renderer. Now it outputs all available resolutions. | Claimed |
-| MP150-039 | DX8 renderer outputs 16-bit resolutions also. However, it still can't play movies at all. | Claimed |
+| MP150-039 | DX8 renderer outputs 16-bit resolutions also. However, it still can't play movies at all. | Partial |
 | MP150-040 | nfs3.exe sorts resolutions that it gets from the renderer. Refactoring of the graphics initialization and resolution choosing code. | Static |
 | MP150-041 | If ini file with the same name as a executable file name (e.g. nfs3test.ini for nfs3test.exe) is not found, nfs3.ini will be used. | Static |
 | MP150-042 | Hide16bitModes ini setting which hides 16 bit resolutions if similar 32 bit resolutions are available. | Static |
@@ -966,7 +966,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP110-004 | Improved validation of thrash video drivers. | Claimed |
 | MP110-005 | Original dx5.dll not always works on modern operating systems (e.g. Windows 8.1). That's why dx8.dll was created. | Claimed |
 | MP110-006 | Based on the dx8z.dll from the Motor City Online (uses DirectX 8). | Claimed |
-| MP110-007 | The driver hides resolutions lower than 640×480 pixels. | Claimed |
+| MP110-007 | The driver hides resolutions lower than 640×480 pixels. | Partial |
 | MP110-008 | The driver reports resolutions in a slightly different order. | Claimed |
 | MP110-009 | The problem with ugly 16-bit menu was fixed by using 32-bit mode. | Claimed |
 | MP110-010 | The problem with non-working video still not solved. It's recommended to disable the intro video by the NoMovie ini setting. | Claimed |
@@ -1306,3 +1306,8 @@ The [131/140 data/consumer follow-up](original-modern-menu-input.md#keyboard-ord
 ## Keyboard eligibility revision covers three registered classes
 
 The [complete32-class flag census](original-modern-menu-input.md#complete-registered-class-flag-census-finds-three-changes) finds exactly three131/140 changes: selectlist clears0200h, while performance and Compass set it. The retained navigation mask tests that bit. Other29 flag WORDs match; later flags and actual traversal remain unverified. This refines the existing partial keyboard-order mechanism without changing catalog counts.
+
+
+## DX8 minimum-size and16-bit admission mechanisms verified
+
+The [110/140/150 provider audit](original-modern-display-modes.md#dx8-early-size-filter-and-later16-bit-admission) verifies an early640×480 filter and dates removal of the32-only gate to140→150. A recognized640×480×16 record can then use slot1. SDK/object/output correspondence is pinned; successful API output, reserved-slot validity and device activation remain unverified. MP110-007/MP150-039 advance to partial; current labels are72 vendor-only/54 bounded-static/162 partial/2 unresolved.
