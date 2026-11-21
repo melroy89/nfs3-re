@@ -487,3 +487,18 @@ Header inputs are cached under ignored `analysis/captures/modern-differences/dx7
 The expanded [request audit](evidence/audits/dx7-dither-requests.json) identifies entry `6000a490`, directly called at `60009ec0`. Its complete aligned prefix through `6000a707` has seven local branches; each is forward and rejoins no later than `6000a6f8`, the disable-request start. There is no local early RET or indirect jump in this prefix. Consequently, **if preceding calls return normally**, entry reaches the DITHERENABLE0 request. A fault or nonreturning external/helper call is not excluded by this local argument.
 
 The wider setup sequence includes calls through the same device object's vtable+14h near its entry and+18h at `6000aa2a`, ending with RET at `6000aa3d`; the audit retains the aligned tail. This strengthens the interpretation of a setup sequence, without declaring every intervening indirect target, capability branch or state mutation understood. The full parent routine/export admission leading to `60009ec0`, all initializer callers and later selector5 overrides remain open. MP150-029 stays partial: normal-path reachability within this initializer is verified, while permanent state and rendered dithering are not.
+
+
+### Mode export contains the selected setup call chain
+
+The expanded request audit now verifies these direct call edges, decoding each witness from its declared routine entry and recording the entry-to-call byte extent/hash:
+
+| Routine entry | Call address | Target |
+|---|---|---|
+|`60003750` (`_THRASH_setvideomode@12`) |`6000383d` |`60002850` |
+|`60002850` |`60002c93` |`60009680` |
+|`60009680` |`60009ec0` |`6000a490` |
+
+This connects the initializer to the exported mode interface at the **selected call-graph level**. It supersedes the earlier absence of a parent/export connection. It does not prove every enclosing branch condition is satisfiable together, every mode request takes this path, or every device/helper call succeeds. The entry-to-call intervals are decoding witnesses, not an independent complete CFG recovery; other calls, indirect branches and embedded tables need their own qualification.
+
+The strongest current claim is therefore a verified export/setup call chain plus a normal-path disable request inside its initializer. Complete admission conditions, reset/override lifetime, selector5's effective inputs, actual driver selection and rendered default remain later work. MP150-029 remains partial; no DLL or game was run.

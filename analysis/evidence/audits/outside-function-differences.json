@@ -8125,7 +8125,7 @@
         "changed_bytes": 250,
         "role": "Modern34 name/slot pairs plus zero terminator replace original loader instructions",
         "report": "analysis/original-modern-renderer-loading.md",
-        "report_sha256": "f822dfcf5fd20bca7a83f8f3c213cd40506ac43a81259a329de69d00451b0a5a",
+        "report_sha256": "527e56da5eb176f6f018d136f7e7ec308da012c52e11ff0530b9a14a40be01ba",
         "status": "Byte partition verified; semantic claims retain linked-report scope"
       },
       {

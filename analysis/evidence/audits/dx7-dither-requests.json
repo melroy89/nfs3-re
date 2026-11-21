@@ -54,6 +54,35 @@
       "target": "6000a6f8"
     }
   ],
+  "conditional_export_call_path": [
+    {
+      "entry": "60003750",
+      "call": "6000383d",
+      "target": "60002850",
+      "decoded_from_entry": "6000383d:\te8 0e f0 ff ff       \tcall   0x60002850",
+      "call_hex": "e80ef0ffff",
+      "entry_to_call_bytes": 242,
+      "entry_to_call_sha256": "2a10e96449300c5efbef008ec43f5113a615e6e9c3ce19ecc665b40b85642ea8"
+    },
+    {
+      "entry": "60002850",
+      "call": "60002c93",
+      "target": "60009680",
+      "decoded_from_entry": "60002c93:\te8 e8 69 00 00       \tcall   0x60009680",
+      "call_hex": "e8e8690000",
+      "entry_to_call_bytes": 1096,
+      "entry_to_call_sha256": "86c228f7eb4321351c6354d1e32a02f6e8c39a82c0998013e2bdef2816b8d7c3"
+    },
+    {
+      "entry": "60009680",
+      "call": "60009ec0",
+      "target": "6000a490",
+      "decoded_from_entry": "60009ec0:\te8 cb 05 00 00       \tcall   0x6000a490",
+      "call_hex": "e8cb050000",
+      "entry_to_call_bytes": 2117,
+      "entry_to_call_sha256": "db652869f8e2d56e97968ea91874f3cef6da311e8e79ab050129387ccc51a5b3"
+    }
+  ],
   "captures": [
     {
       "name": "initializer_prefix_to_disable",
@@ -447,10 +476,11 @@
     "THRASH selector5 targets60004b6e,which selects1/0 based on EBX versus EDX and calls raw state26 wrapper.",
     "Direct call60009ec0 reaches initializer6000a490;its seven prefix branches are forward and rejoin before the disable request,with no local early RET.",
     "On normal return from preceding calls,initializer entry reaches the disable request;vtable+14/+18 calls bracket the broader setup sequence.",
+    "Selected setvideomode export route has decoded direct calls383d->2850,2c93->9680,9ec0->a490;reachability is conditional,not all-mode success.",
     "This supplies partial code support forMP150-029 without proving permanent/default runtime state."
   ],
   "limits": [
-    "Initializer caller parent/export reachability,whole reset lifecycle,EDX producer for selector branch and all later overrides remain unresolved;callee nonreturn/faults excluded from prefix argument.",
+    "Selected export call edges verified,not a complete CFG/admission proof;whole reset lifecycle,EDX producer for selector branch and later overrides remain unresolved;callee nonreturn/faults excluded.",
     "API/device success and visible dithering not observed;request result is not tested in retained zero-request slice.",
     "No source lineage,original-driver dither policy or all-provider comparison established.",
     "SDK headers are hashed cached inputs;fresh retrieval may differ and is not silently accepted.",

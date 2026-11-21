@@ -1238,3 +1238,8 @@ The [150 provider/SDK audit](original-modern-renderer-loading.md#dx7-contains-an
 ## DX7 dithering-disable initializer path traced
 
 The [initializer follow-up](original-modern-renderer-loading.md#disable-request-is-on-the-checked-initializers-normal-path) identifies entry6000a490 and direct call60009ec0. Seven forward prefix branches converge before the disable request, so it is reached if preceding calls return normally. Parent/export admission, later overrides and device output remain open; MP150-029 remains partial.
+
+
+## DX7 mode interface connects to dithering initialization
+
+The [call-chain follow-up](original-modern-renderer-loading.md#mode-export-contains-the-selected-setup-call-chain) verifies direct edges from exported60003750 through60002850 and60009680 to initializer6000a490. This resolves the missing export connection at call-graph scope. It does not establish all branch admission conditions, successful setup or later state lifetime; the dithering claim stays partial.
