@@ -1,5 +1,29 @@
 # Original versus Modern Patch: executable differences
 
+## Main comparison and reconstruction focus
+
+The goal is to explain **supplied original versus official Modern behavior** well enough to make deliberate reconstruction choices. Each linked chapter pins its own artifacts: a historical release pair, a renderer DLL and the locally edited analysis EXE are not interchangeable with the primary EXE pair. See the [three-way baseline](#1-three-way-provenance).
+
+|Area |Established difference |Consequence and limit |
+|---|---|---|
+|[x87 policy](og-modern-x87-precision.md) |Original single-precision switches coexist with extended frontend/race-render regions; Modern removes those switches, with153→160 boundary verified |Preserve arithmetic scope, stores and conversions; neither “double everywhere” nor “OG extended only in menu/HUD” is accurate |
+|[Clock source](original-modern-clock-source.md) |16 known calls switch GetTickCount→timeGetTime; selected timer instructions otherwise retained |Different timing input, not a proved simulation-frequency rewrite or measured accuracy benefit |
+|[Network endpoints](original-modern-network-endpoints.md) |Fixed1030 becomes configurable default9803, with mutable address/port parsing |Connection settings differ; this does not establish packet schema or cross-version simulation compatibility |
+|[Replay presentation](original-modern-replay-mirror.md) |Mirror admission and related UI gates change |Presentation evidence must not be used as replay-file/trajectory compatibility evidence |
+|[Worker lifecycles](original-modern-input-worker.md) |Selected forced-stop paths become sentinel/event exit; historical change dated120→130 |Preserve ownership/order; CloseHandle is not a join and event readiness remains separate |
+|[HUD and data sources](original-modern-hud-layout.md) |External preset initialization becomes embedded/aspect-adjusted data; historical tables and x87 adjustments vary |Retain versioned data layout, dimension producers and hidden x87 inputs; source-coordinate deltas are not pixels |
+|[Texture limits](original-modern-texture-limits.md) |Configured extents, producer branches and driver limits change in different stages |A requested512/1024/2048 is not successful allocation/upload or universal support |
+|[Renderer/configuration interfaces](original-modern-renderer-loading.md) |Selection, required exports, configuration and conditional dependencies change |Separate EXE, adapter and provider; a DLL name or resource label is not observed successful loading |
+|[Reconstruction samples](original-modern-reconstruction-baselines.md) |Three selected function bodies match all three baselines despite surrounding changes |Equal code is reusable evidence, not proof of equal callers, globals or machine state |
+
+**Compatibility is unresolved.** The supplied binaries establish a real precision-policy change; they do not by themselves prove the other developer's ARM64 port works, or that float/double inevitably causes multiplayer/replay divergence. A connection succeeding is also insufficient to prove matched trajectories. The [claim-by-claim precision assessment](og-modern-x87-precision.md#assessment-of-the-other-users-claims) records those boundaries.
+
+The [290-entry list](#complete-release-note-change-list) is complete for the source release-note bullets. It is not an exhaustive semantic diff of the binaries. There are currently40 vendor-only,57 bounded-static and193 partial entries; these labels are neither distinct change counts nor a completion percentage. The [361-entry function index](original-modern-function-index.md) is navigation, not proof every listed body is explained.
+
+Next work follows the [core comparison priorities](original-modern-audit-status.md#core-comparison-priorities). Minor historical renderer/menu refinements are parked unless they answer one of those questions. No new reconstruction, compiler/toolchain work, instruction probes or gameplay tests are part of this documentation consolidation.
+
+## Audit checkpoints and supporting investigations
+
 The [current texture/clock/speech/loader checkpoint](original-modern-audit-status.md#current-texture-clock-speech-and-loader-checkpoint--2026-11-21) reviews `b1b26ab`: **16/16 static reruns** reproduce eight evidence outputs, with12 protected files and12 raw exports unchanged. Its table separates concrete historical changes from missing baselines and runtime claims. The catalogue currently has40 vendor-only,57 bounded-static and193 partial entries; these are not distinct EXE-change counts or a completion percentage.
 
 The [preceding renderer/loading/menu checkpoint](original-modern-audit-status.md#current-renderer-loading-and-menu-checkpoint--2026-11-21) reviews `ea2fc48`: **22/22 static reruns** reproduce11 evidence files, with12 protected artifacts and12 raw exports unchanged. Its compact table links the recent wrapper, reference-driver/debug, DX6, loading screenshot and menu findings to their remaining limitations. This is repeatability/preservation evidence, not complete difference coverage or runtime acceptance.
@@ -39,7 +63,7 @@ The [renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-his
 |[DX6 mode count](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) |Added increment affects public descriptor count, whose table has a leading slot |Leading-slot contents, full-capacity/alias/switch bounds and visible modes |
 |[Screenshot depth](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) |150 fixes partial-WORD local initialization before DWORD stride read; final core retained |Observed crash, XP specificity, complete capture/encoding stability |
 
-Current catalog labels are72 vendor-only/54 bounded-static/162 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
+At that earlier checkpoint, catalog labels were72 vendor-only/54 bounded-static/162 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
 
 ## Renderer, menu and screenshot follow-up checkpoint
 
@@ -1290,7 +1314,7 @@ The [pixel-format follow-up](original-modern-hud-layout.md#game-side-pixel-forma
 
 ## HUD top-selector availability gains a historical mechanism
 
-The [131/140 policy/asset comparison](original-modern-hud-settings-policy.md#hud-selector-policy-simplifies-at131-to140) verifies removal of the all-three-suppressed branch, local list publication on both session arms and removal of one legacy droplist. Selected retained-control fields and old list arrays remain unchanged. MP140-034 advances to partial; initial flags, other dispatch and visible availability remain unverified. Current catalog labels are77 vendor-only/54 bounded-static/157 partial/2 unresolved.
+The [131/140 policy/asset comparison](original-modern-hud-settings-policy.md#hud-selector-policy-simplifies-at131-to140) verifies removal of the all-three-suppressed branch, local list publication on both session arms and removal of one legacy droplist. Selected retained-control fields and old list arrays remain unchanged. MP140-034 advances to partial; initial flags, other dispatch and visible availability remain unverified. That earlier catalog snapshot was77 vendor-only/54 bounded-static/157 partial/2 unresolved.
 
 
 ## Shared dropdown padding change identified at131-to140

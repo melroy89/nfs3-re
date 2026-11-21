@@ -1,5 +1,25 @@
 # Original versus Modern audit: current stopping point
 
+## Core comparison priorities
+
+The primary deliverable is an evidence-backed original/Modern comparison for reconstruction. Historical DLL/menu details support it; completing every historical/runtime unknown is not the next action. The shallow release-note inventory is complete, while exhaustive binary semantics and cross-version compatibility remain unproved.
+
+|Priority |Question / starting evidence |Required result before a broader claim |
+|---|---|---|
+|1 |[Race arithmetic and x87 scope](og-modern-x87-precision.md): start with race loop004c4e40/render boundary004bc680 and a named simulation callee |One bounded original/official-Modern path with verified CW ownership, arithmetic/storage/conversion boundaries and changed versus retained instructions; do not extrapolate menu arithmetic to physics |
+|2 |[Input dispatch](original-modern-input-worker.md), [network endpoints](original-modern-network-endpoints.md) and replay evidence |Map a selected input/state serialization path and its record layout in both baselines; separate protocol, timing, physics and replay presentation. Existing connection tests do not prove OG/Modern equivalence |
+|3 |[Reconstruction baselines](original-modern-reconstruction-baselines.md) and [readiness audit](recompilation-readiness.md) |Keep module ABI, shared scratch, data/init dependencies and chosen target version explicit. The tested00485c30 sample and [caller-status review](line-boundary-x87-callers.md) do not qualify whole-game replacement |
+|4 |[Remaining release claims](modern-patch-change-catalog.md) |For a consequential unanswered claim, name the exact pair/address and closure evidence; otherwise label missing artifact, static gap, runtime requirement or vague attribution. Do not force a nearby edit into a vendor claim |
+
+A later behavioral comparison would need identical inputs and matched simulation ticks/state against the chosen original/Modern baseline, followed by scoped replay/network exchange. This is a documented evidence gate, not an instruction to run new probes now or a prerequisite to every static finding. The claimed third-party ARM64 implementation has not been supplied for comparison.
+
+**Parked:** further minor menu/renderer history, cosmetic offsets, additional version-resource labels and repeated localization of already mapped spans, unless they resolve a priority above. Preserve all existing chapters/evidence and their original scope; no executable/Ghidra edits or new C/toolchain/probe work are needed for this consolidation.
+
+## Latest bounded reproducibility checkpoint
+
+The [five-audit checkpoint](evidence/validation/early-hud-package-worker-checkpoint.json) reviews `6e5e9dc`: **10/10 static runs** reproduce five committed outputs (early HUD, wrapper packages, race-entry guard/registrar, input-worker/creator and block relocation). **12 protected artifacts and12 raw exports** retain prior hashes. Reproduce with `python3 analysis/scripts/check_early_hud_package_worker.py`. This closes repeatability/preservation for those follow-ups, not semantic independence, live Ghidra readback, runtime behavior or the full comparison.
+
+
 ## Current texture, clock, speech and loader checkpoint — 2026-11-21
 
 The [eight-audit checkpoint](evidence/validation/texture-clock-speech-loader-checkpoint.json) reviews `b1b26ab`: **16/16 static reruns** reproduce eight committed evidence outputs; **12 protected artifacts and12 retained raw exports** match prior hashes. Reproduce with `python3 analysis/scripts/check_texture_clock_speech_loader.py`. This covers all eight investigation scripts added/changed since the preceding renderer/loading/menu checkpoint; selected shared dependencies and exact output hashes are recorded. It is primary-agent repeatability/preservation, not independent semantic review, runtime acceptance or whole-repository qualification.
