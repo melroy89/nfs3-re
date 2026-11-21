@@ -695,7 +695,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **58 Claimed, 56 Static, 176 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **57 Claimed, 56 Static, 177 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -927,7 +927,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP130-004 | HUD was updated a little. | Claimed |
 | MP130-005 | The Wide Screen setting has no any relation to proper widescreen support, so its location next to the Resolution setting is confusing. This is why this setting was moved from the Graphics to the Advanced Graphics settings. Now it's placed near the View Angle setting because it is more logical. The View Distance setting was moved to freed space in the Graphics settings. | Claimed |
 | MP130-006 | Menu subitems in the Controller and in the Connect menus aligned vertically like in the other menus. | Claimed |
-| MP130-007 | nGlide is updated to version 1.04.3. Now you can safely minimize and restore NFS3. (Thanks Zeus for it.) | Claimed |
+| MP130-007 | nGlide is updated to version 1.04.3. Now you can safely minimize and restore NFS3. (Thanks Zeus for it.) | Partial |
 
 ### Version 1.2.0 (2015-06-10)
 

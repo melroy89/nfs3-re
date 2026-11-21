@@ -574,13 +574,19 @@ The files are different despite identical checked version strings;150 is1,536 by
 
 ## Historical nGlide labels and the150 same-version binary change
 
-The [three-package audit](evidence/audits/nglide-version-packages.json), reproduced with `python3 analysis/scripts/audit_nglide_version_packages.py`, pins131/140/150 archives and each `drivers/nglide/glide3x.dll` member. All are i386 PE files; the nGlide label is carried in LegalCopyright, while FileVersion/ProductVersion retain Glide-facing3.10.00.0658.
+The [five-package audit](evidence/audits/nglide-version-packages.json), reproduced with `python3 analysis/scripts/audit_nglide_version_packages.py`, pins120/130/131/140/150 archives and each `drivers/nglide/glide3x.dll` member. All are i386 PE files; the nGlide label is carried in LegalCopyright, while FileVersion/ProductVersion retain Glide-facing3.10.00.0658.
 
 |Patch |nGlide label |Wrapper bytes |SHA-256 |
 |---|---|---:|---|
+|120 |nGlide1.04.2 |1,409,024 |`e4a815c565ffd61d18974ea4d139390ee84ba6918b106c1835f861bb61872e5c` |
+|130 |nGlide1.04.3 |1,409,024 |`b042e03135ba45553aed5e8c93bf0ca0d2c7056d19e52fe7eee41a98dc849f1d` |
 |131 |nGlide1.04.3 |1,409,024 |`b042e03135ba45553aed5e8c93bf0ca0d2c7056d19e52fe7eee41a98dc849f1d` |
 |140 |nGlide v1.05 |1,425,408 |`16865452af3bc41ae203f9f11808bd94820477070c011790b5fc66ad0e2963ad` |
 |150 |nGlide v1.05 |1,425,408 |`87842a85d1bfda4217e691a9d4412915c74905eed818c5a727e2f2d6b814edb6` |
+
+**MP130-007 gains partial historical support:**120→130 changes the packaged wrapper's self-identification from1.04.2 to1.04.3. FileVersion/ProductVersion remain3.10.00.0658 and must not be mistaken for the nGlide product label. Both files are1,409,024 bytes, with719,158 differing file-byte positions; this large raw count includes layout/build effects and is not a feature count. The130 wrapper is byte-identical to131. Archives, members, complete version strings and section hashes are pinned in the audit.
+
+The full source bullet also promises safe minimization/restoration. Package identity does not establish that behavior: the relevant wrapper window/device loss-and-restore paths and controlled runtime observations remain required. Neither the metadata transition nor identical130/131 bytes demonstrates successful recovery on any OS/provider. No wrapper is executed or installed. This is a dated dependency change relevant to reconstruction, not a newly established EXE fix.
 
 140/150 have equal size and labels but598,121 differing file-byte positions. That is a raw file comparison, not a count of code changes, fixes or features. Section extents/hashes and complete version strings are retained for later build/implementation comparison.
 
@@ -595,4 +601,4 @@ The [dedicated software-renderer report](original-modern-software-reference-pair
 
 ## Voodoo2 reference pair now has a separate inventory
 
-The [author-reference/final Voodoo2 report](original-modern-voodoo-reference-pair.md) matches34 exports and records all3,307 changed code bytes in141 intervals, alongside import/data differences and the four-byte about-prefix publication change. Its baseline is not the earlier local legacy candidate. Full mode/initialization semantics, historical refactor dating and runtime outcomes remain pending.
+The [author-reference/final Voodoo2 report](original-modern-voodoo-reference-pair.md) matches34 exports and records all3,307 changed code bytes in141 intervals, alongside import/data differences and the four-byte about-prefix publication change. Its baseline is not the earlier local legacy candidate. Reuse the [existing Glide mechanism and code-routing report](original-modern-glide-reference-identity.md#complete-code-section-cluster-routing). The separate report adds131/140 historical helper comparisons and file-backed data localization; complete data lifetimes, historical attribution and runtime outcomes remain pending.

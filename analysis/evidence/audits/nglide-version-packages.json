@@ -1,6 +1,122 @@
 {
   "kind": "static-nglide-version-packages",
   "versions": {
+    "1.2.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z",
+      "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
+      "member": "drivers/nglide/glide3x.dll",
+      "bytes": 1409024,
+      "sha256": "e4a815c565ffd61d18974ea4d139390ee84ba6918b106c1835f861bb61872e5c",
+      "version_tables": [
+        {
+          "CompanyName": "3dfx Interactive, Inc.",
+          "FileDescription": "3Dfx Interactive, Inc. Glide DLL",
+          "FileVersion": "3.10.00.0658",
+          "InternalName": "glide3x.dll",
+          "LegalCopyright": "nGlide 1.04.2",
+          "OriginalFilename": "glide3x.dll",
+          "ProductName": "Glide\u00ae for Voodoo Banshee\u00ae, Voodoo3\u00ae, & Velocity(tm) 100/200; Windows 95\u00ae, Windows 98\u00ae, & Windows NT\u00ae",
+          "ProductVersion": "3.10.00.0658",
+          "Graphics Subsystem": " Voodoo Banshee\u00ae, Voodoo3\u00ae, & Velocity(tm) 100/200"
+        }
+      ],
+      "sections": [
+        {
+          "name": ".text",
+          "rva": "00001000",
+          "raw_bytes": 1019904,
+          "sha256": "57f1c3cbe73e6e8ef19965097086e800cd8af51691dbe4afda283ff9a91fcb6f"
+        },
+        {
+          "name": ".rdata",
+          "rva": "000fa000",
+          "raw_bytes": 102400,
+          "sha256": "7208f13b46c7e1433d6fa0784ee522d4484d2b7c1888fd8bcf7b3910617dc6e1"
+        },
+        {
+          "name": ".data",
+          "rva": "00113000",
+          "raw_bytes": 69632,
+          "sha256": "e06f12270a14c8fffcb9dac8741de5ebb73ead0cc4f415f9e3bfe517a55f5d36"
+        },
+        {
+          "name": ".idata",
+          "rva": "0ffa5000",
+          "raw_bytes": 8192,
+          "sha256": "3f9eb71f88061c592ed84531dceb289111584f618a2ed299555b2fe83f85f908"
+        },
+        {
+          "name": ".rsrc",
+          "rva": "0ffa7000",
+          "raw_bytes": 4096,
+          "sha256": "9529992825dd27653bb6ad005f96f43ff52e2dd83804a1c87097420337a29bd2"
+        },
+        {
+          "name": ".reloc",
+          "rva": "0ffa8000",
+          "raw_bytes": 200704,
+          "sha256": "a95b995d527d39bb979baba521a6c5f370e62aaeca8f0153d19d49bc12483771"
+        }
+      ]
+    },
+    "1.3.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.0.7z",
+      "archive_sha256": "93b0ecffebb5e6a13ee4d7d3054c3b9dde53ca329d7e87516eaad8dd399a22ad",
+      "member": "drivers/nglide/glide3x.dll",
+      "bytes": 1409024,
+      "sha256": "b042e03135ba45553aed5e8c93bf0ca0d2c7056d19e52fe7eee41a98dc849f1d",
+      "version_tables": [
+        {
+          "CompanyName": "3dfx Interactive, Inc.",
+          "FileDescription": "3Dfx Interactive, Inc. Glide DLL",
+          "FileVersion": "3.10.00.0658",
+          "InternalName": "glide3x.dll",
+          "LegalCopyright": "nGlide 1.04.3",
+          "OriginalFilename": "glide3x.dll",
+          "ProductName": "Glide\u00ae for Voodoo Banshee\u00ae, Voodoo3\u00ae, & Velocity(tm) 100/200; Windows 95\u00ae, Windows 98\u00ae, & Windows NT\u00ae",
+          "ProductVersion": "3.10.00.0658",
+          "Graphics Subsystem": " Voodoo Banshee\u00ae, Voodoo3\u00ae, & Velocity(tm) 100/200"
+        }
+      ],
+      "sections": [
+        {
+          "name": ".text",
+          "rva": "00001000",
+          "raw_bytes": 1019904,
+          "sha256": "99338b00af6aee0b06f94b62f343111669d47d1372b8146fd1110a90546e436c"
+        },
+        {
+          "name": ".rdata",
+          "rva": "000fa000",
+          "raw_bytes": 102400,
+          "sha256": "b439f3de408157413c0b17d3f552a76a2514d499723a2784a736248bf4709233"
+        },
+        {
+          "name": ".data",
+          "rva": "00113000",
+          "raw_bytes": 69632,
+          "sha256": "32b6a316c212c8f5c0c27720e70e7a51eddd655ab6218e76b99801c162fb8540"
+        },
+        {
+          "name": ".idata",
+          "rva": "0f9ed000",
+          "raw_bytes": 8192,
+          "sha256": "0f36199b5a2b7caa14e450f974bd0843bb149239c29e21eec75a84dace982663"
+        },
+        {
+          "name": ".rsrc",
+          "rva": "0f9ef000",
+          "raw_bytes": 4096,
+          "sha256": "02d277f03af84edb2a2d0fd6ab5164bd98174e09c20b63c7fe2e771650d0ce15"
+        },
+        {
+          "name": ".reloc",
+          "rva": "0f9f0000",
+          "raw_bytes": 200704,
+          "sha256": "952068a552e186bfa0adb9afad88569e3e14e34c9c22d9c6aae0fefa288513e3"
+        }
+      ]
+    },
     "1.3.1": {
       "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.1.7z",
       "archive_sha256": "6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934",
@@ -175,6 +291,14 @@
         }
       ]
     }
+  },
+  "120_130_comparison": {
+    "bytes_each": 1409024,
+    "changed_file_bytes": 719158,
+    "label_before": "nGlide1.04.2",
+    "label_after": "nGlide1.04.3",
+    "130_131_byte_identical": true,
+    "scope": "Package transition and metadata;minimize/restore implementation or safety not established."
   },
   "140_150_comparison": {
     "bytes_each": 1425408,
