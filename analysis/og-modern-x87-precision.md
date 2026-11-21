@@ -477,3 +477,12 @@ identity across installations still depends on registry population, order
 and the assets behind the selected entry. See the
 [car alias comparison](original-modern-car-alias.md) for separate changes
 elsewhere in car naming and selection.
+
+Registry discovery itself differs. The [paired car registry audit](original-modern-car-registry-flags.md)
+locates the change at `0043a20e..0043a25c`. The original conditionally
+sets record+0x380 bit 0x20 for Ferrari and Mercedes. Modern skips that
+block. The flag write is separate from the identifier bytes at +0x31c
+that replay lookup compares. The known consumer affects Hot Pursuit
+eligibility. Evidence of a different replay lookup result would require
+a change in the ordered identifier list or in the assets that a matching
+entry resolves to. The registry audit reproduced from both pinned EXEs.

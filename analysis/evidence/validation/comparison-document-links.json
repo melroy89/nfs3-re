@@ -663,12 +663,12 @@
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
-      "sha256": "6c3d326ebd899b970a1e22020d8af37f3f8fa00ab9bc6451768a977da8b10151",
-      "relative_links": 30
+      "sha256": "8bb0f287d8e71728722fe561e792e9f07049267da730171bd1ac4c63813ef0a9",
+      "relative_links": 31
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3074,
+  "relative_link_count": 3075,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",
