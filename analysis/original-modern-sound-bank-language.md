@@ -87,4 +87,22 @@ Both seven-pointer filename-code tables00409ff0 and00412950 change **`E,G,F,S,I,
 
 On a successful directory test with validated Swedish selection, the final producer preserves ordinal5 and the shared speech path's Swedish suffix, allowing those inspected consumers to select W. On the fallback route it publishes ordinal0 and requests English/E. This does not authenticate installed Swedish banks, prove case-sensitive filesystem behavior or establish all speech filename consumers.
 
-**MP120-012 advances vendor-only→partial:** selected final directory fallback and original/final Swedish filename-code changes support concrete portions of the claim. The exact110→120 introduction, every failure path and the promised absence of crashes/playback success remain unverified. No game, audio/API operation, instruction probe or Ghidra modification occurred; executable/database bytes are unchanged.
+**MP120-012 advances vendor-only→partial:** selected final directory fallback and original/final Swedish filename-code changes support concrete portions of the claim. The [historical follow-up below](#historical110-to120-dates-the-selected-fallback-and-swedish-code) now dates these selected changes110→120; every failure path and the promised absence of crashes/playback success remain unverified. No game, audio/API operation, instruction probe or Ghidra modification occurred; executable/database bytes are unchanged.
+
+## Historical110 to120 dates the selected fallback and Swedish code
+
+The [historical speech audit](evidence/audits/speech-language-history.json), reproduced with `python3 analysis/scripts/audit_speech_language_history.py`, pins author-hosted110/120 archives and EXEs, both complete selected path initializers,120 helpers,24-slot literal banks and two filename tables. This directly dates the previously described selected final mechanisms without assuming their final addresses/contracts were already in use.
+
+|Selected behavior |110 |120 |
+|---|---|---|
+|Path initializer |004a6f0c..004a6f2d copies24 literals and returns |004a6f04..004a6f6e copies24 literals, appends language and tests speech directory |
+|Speech slot7 initial value |`.\GameData\Audio\Speech\English\`; separate following language paths |`.\GameData\Audio\Speech\`; selected suffix constructed afterward |
+|Directory-false route in this initializer |Absent from captured body |Replaces suffix with `english` and publishes cached selector0 |
+|Two inspected consumer selector reads |006fbb4c |007a2774 |
+|Ordinal5 in tables00409ff0/00412950 |E |W |
+
+120's complete directory predicate004a38f0..004a3911 calls GetFileAttributesA and explicitly preserves ECX/EDX. It accepts a nonfailure attributes result with directory bit10h, so cached selector publication has the same local true/false policy later verified in final. No second check of English or individual bank files occurs in this initializer.110's short initializer lacks that predicate, but this bounded comparison does not exclude every possible fallback elsewhere in110.
+
+The24-slot historical layout must remain distinct from final's22-slot bank. Likewise **120 selector007a2774 differs from final007a2764**. The historical copy helper004f939c returns EAX0, advances ESI past source zero and leaves EDI at destination zero; final's later helper preserves EAX and leaves ESI at source zero. Both leave ECX unchanged. These are relevant register/output contracts for C reconstruction even though the higher-level suffix policy is similar. Full incoming register/DF/pointer-validity assumptions and every caller remain separate.
+
+**MP120-012 retains partial status with its selected historical boundary now verified.** Speech path/fallback and two Swedish-code changes occur110→120 in the inspected pair. Successful Swedish/English asset loading, complete consumer coverage and avoidance of every claimed crash remain untested. No game, audio, filesystem API or target instruction executes, and binaries/Ghidra are unchanged.

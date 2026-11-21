@@ -26,6 +26,8 @@ The subsequent [130→131 DirectX OS-gate audit](original-modern-startup-require
 
 The subsequent [speech producer follow-up](original-modern-sound-bank-language.md#cached-selector-producer-checks-a-directory-and-requests-english-fallback) resolves helper preservation and directory-based English fallback, plus two Swedish E→W tables. MP120-012 gains partial support; fallback does not recheck English/files, and historical introduction/playback remain unverified. This expanded audit is outside these22 checkpoint runs.
 
+The [110→120 speech history audit](original-modern-sound-bank-language.md#historical110-to120-dates-the-selected-fallback-and-swedish-code) now dates the selected fallback/cache and two Swedish E→W changes. It records historical cache007a2774 versus final007a2764 and different string-helper outputs; playback/crash avoidance remain unverified. This new audit is outside these22 checkpoint runs.
+
 Current catalogue remains **48 vendor-only,56 bounded-static,186 partial,0 unresolved-category entries** across290 release-note bullets. These labels are not distinct EXE changes or a completion percentage; zero unresolved-category entries does not mean no unknowns. The whole original/Modern comparison remains incomplete. Next select a concrete unanswered mechanism or historical boundary from the catalogue; reuse completed code/data localization and keep runtime acceptance separate.
 
 

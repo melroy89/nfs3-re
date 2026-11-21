@@ -8,8 +8,8 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "995de700f984dae6061c44d18818ed40f963361ec817193de351eb70439daffb",
-      "relative_links": 315
+      "sha256": "4e22f94b265ae9e4ea6f1acf88f0bc61afacca5ac5780195299253734838bc4a",
+      "relative_links": 316
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -178,8 +178,8 @@
     },
     {
       "path": "analysis/original-modern-function-index.md",
-      "sha256": "a980f7e6d0b8deef54c35e656f12bd25840dfe972e5b27fd4f717fb3ac3dab79",
-      "relative_links": 774
+      "sha256": "ef6a1c92af012542803e7342e44e430914c3d7f11276ac962b75915d80a058cb",
+      "relative_links": 775
     },
     {
       "path": "analysis/original-modern-geometry-color-admission.md",
@@ -538,8 +538,8 @@
     },
     {
       "path": "analysis/original-modern-sound-bank-language.md",
-      "sha256": "103ba9013ca6152989627839841699f01403a41e22c882bed013f43b565ea1be",
-      "relative_links": 7
+      "sha256": "85df76a179e43e71820c28ff1d50222b1da199295393300bd4c088f3fe9f8257",
+      "relative_links": 9
     },
     {
       "path": "analysis/original-modern-sound-reference-pair.md",
@@ -658,8 +658,8 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "bc419a8d4b97afdbf707c6d9743df38b5853771759414e54cff7b1b696c0d6b7",
-      "relative_links": 265
+      "sha256": "bda48861e7f7577f0c440b45877773b4ce78fc06d207116e78f0f7e2e8e8dacd",
+      "relative_links": 266
     },
     {
       "path": "analysis/og-modern-x87-precision.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 2992,
+  "relative_link_count": 2997,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

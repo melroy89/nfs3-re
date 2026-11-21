@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "995de700f984dae6061c44d18818ed40f963361ec817193de351eb70439daffb"
+      "sha256": "4e22f94b265ae9e4ea6f1acf88f0bc61afacca5ac5780195299253734838bc4a"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -425,7 +425,7 @@
     },
     {
       "path": "analysis/original-modern-sound-bank-language.md",
-      "sha256": "103ba9013ca6152989627839841699f01403a41e22c882bed013f43b565ea1be"
+      "sha256": "85df76a179e43e71820c28ff1d50222b1da199295393300bd4c088f3fe9f8257"
     },
     {
       "path": "analysis/original-modern-sound-reference-pair.md",
@@ -8381,6 +8381,13 @@
           ]
         },
         {
+          "path": "analysis/original-modern-sound-bank-language.md",
+          "entry_mentioned": false,
+          "addresses": [
+            "004a3911"
+          ]
+        },
+        {
           "path": "analysis/original-modern-startup-paths.md",
           "entry_mentioned": true,
           "addresses": [
@@ -8801,7 +8808,10 @@
           "entry_mentioned": true,
           "addresses": [
             "004a6ec4",
-            "004a6f26"
+            "004a6f04",
+            "004a6f0c",
+            "004a6f26",
+            "004a6f2d"
           ]
         },
         {

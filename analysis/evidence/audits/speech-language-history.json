@@ -1,0 +1,474 @@
+{
+  "kind": "static-speech-language-history",
+  "versions": {
+    "1.1.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.1.0.7z",
+      "archive_sha256": "31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac",
+      "member": "nfs3.exe",
+      "sha256": "59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72",
+      "selected_consumer_selector": "006fbb4c",
+      "letter_tables": [
+        {
+          "address": "00409ff0",
+          "letters": [
+            "E",
+            "G",
+            "F",
+            "S",
+            "I",
+            "E",
+            "E"
+          ],
+          "pointers": [
+            "005364b4",
+            "005364b8",
+            "005364bc",
+            "005364c0",
+            "005364c4",
+            "005364b4",
+            "005364b4"
+          ]
+        },
+        {
+          "address": "00412950",
+          "letters": [
+            "E",
+            "G",
+            "F",
+            "S",
+            "I",
+            "E",
+            "E"
+          ],
+          "pointers": [
+            "005369b0",
+            "005369b4",
+            "005369b8",
+            "005369bc",
+            "005369c0",
+            "005369b0",
+            "005369b0"
+          ]
+        }
+      ],
+      "initialized24_path_slots": [
+        {
+          "index": 0,
+          "destination": "007a27b4",
+          "text": ".\\GameData\\Tracks\\"
+        },
+        {
+          "index": 1,
+          "destination": "007a2834",
+          "text": ".\\GameData\\Tracks\\Tutor\\"
+        },
+        {
+          "index": 2,
+          "destination": "007a28b4",
+          "text": ".\\GameData\\CarModel\\"
+        },
+        {
+          "index": 3,
+          "destination": "007a2934",
+          "text": ".\\GameData\\Render\\PC\\"
+        },
+        {
+          "index": 4,
+          "destination": "007a29b4",
+          "text": ".\\GameData\\DashHud\\"
+        },
+        {
+          "index": 5,
+          "destination": "007a2a34",
+          "text": ".\\GameData\\Audio\\PC\\"
+        },
+        {
+          "index": 6,
+          "destination": "007a2ab4",
+          "text": ".\\GameData\\Audio\\SFX\\"
+        },
+        {
+          "index": 7,
+          "destination": "007a2b34",
+          "text": ".\\GameData\\Audio\\Speech\\English\\"
+        },
+        {
+          "index": 8,
+          "destination": "007a2bb4",
+          "text": ".\\GameData\\Audio\\Speech\\German\\"
+        },
+        {
+          "index": 9,
+          "destination": "007a2c34",
+          "text": ".\\GameData\\Audio\\Speech\\French\\"
+        },
+        {
+          "index": 10,
+          "destination": "007a2cb4",
+          "text": ".\\GameData\\Audio\\Speech\\Spanish\\"
+        },
+        {
+          "index": 11,
+          "destination": "007a2d34",
+          "text": ".\\GameData\\Audio\\Speech\\Italian\\"
+        },
+        {
+          "index": 12,
+          "destination": "007a2db4",
+          "text": ".\\FeData\\Art\\"
+        },
+        {
+          "index": 13,
+          "destination": "007a2e34",
+          "text": ".\\FeData\\Text\\"
+        },
+        {
+          "index": 14,
+          "destination": "007a2eb4",
+          "text": ".\\FeData\\Text\\"
+        },
+        {
+          "index": 15,
+          "destination": "007a2f34",
+          "text": ".\\FeData\\Save\\"
+        },
+        {
+          "index": 16,
+          "destination": "007a2fb4",
+          "text": ".\\FeData\\Stats\\"
+        },
+        {
+          "index": 17,
+          "destination": "007a3034",
+          "text": ".\\"
+        },
+        {
+          "index": 18,
+          "destination": "007a30b4",
+          "text": ".\\FeData\\Audio\\"
+        },
+        {
+          "index": 19,
+          "destination": "007a3134",
+          "text": ".\\FeData\\Art\\Slides\\"
+        },
+        {
+          "index": 20,
+          "destination": "007a31b4",
+          "text": ".\\FeData\\Art\\Track\\"
+        },
+        {
+          "index": 21,
+          "destination": "007a3234",
+          "text": ".\\FeData\\Art\\Showcase\\"
+        },
+        {
+          "index": 22,
+          "destination": "007a32b4",
+          "text": ".\\FeData\\Movies\\"
+        },
+        {
+          "index": 23,
+          "destination": "007a3334",
+          "text": ".\\FeData\\Stats\\PRH\\"
+        }
+      ],
+      "captures": [
+        {
+          "name": "complete_path_initializer",
+          "start": "004a6f0c",
+          "end_exclusive": "004a6f2d",
+          "hex": "31c9be2cec5300bab4277a0089d7acaa84c075fa4181c28000000083f9187cecc3",
+          "disassembly": [
+            "4a6f0c:\t31 c9                \txor    ecx,ecx",
+            "4a6f0e:\tbe 2c ec 53 00       \tmov    esi,0x53ec2c",
+            "4a6f13:\tba b4 27 7a 00       \tmov    edx,0x7a27b4",
+            "4a6f18:\t89 d7                \tmov    edi,edx",
+            "4a6f1a:\tac                   \tlods   al,BYTE PTR ds:[esi]",
+            "4a6f1b:\taa                   \tstos   BYTE PTR es:[edi],al",
+            "4a6f1c:\t84 c0                \ttest   al,al",
+            "4a6f1e:\t75 fa                \tjne    0x4a6f1a",
+            "4a6f20:\t41                   \tinc    ecx",
+            "4a6f21:\t81 c2 80 00 00 00    \tadd    edx,0x80",
+            "4a6f27:\t83 f9 18             \tcmp    ecx,0x18",
+            "4a6f2a:\t7c ec                \tjl     0x4a6f18",
+            "4a6f2c:\tc3                   \tret"
+          ]
+        }
+      ]
+    },
+    "1.2.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z",
+      "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
+      "member": "nfs3.exe",
+      "sha256": "4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003",
+      "selected_consumer_selector": "007a2774",
+      "letter_tables": [
+        {
+          "address": "00409ff0",
+          "letters": [
+            "E",
+            "G",
+            "F",
+            "S",
+            "I",
+            "W",
+            "E"
+          ],
+          "pointers": [
+            "005364b4",
+            "005364b8",
+            "005364bc",
+            "005364c0",
+            "005364c4",
+            "0053a9b4",
+            "005364b4"
+          ]
+        },
+        {
+          "address": "00412950",
+          "letters": [
+            "E",
+            "G",
+            "F",
+            "S",
+            "I",
+            "W",
+            "E"
+          ],
+          "pointers": [
+            "005369b0",
+            "005369b4",
+            "005369b8",
+            "005369bc",
+            "005369c0",
+            "0053a9b4",
+            "005369b0"
+          ]
+        }
+      ],
+      "initialized24_path_slots": [
+        {
+          "index": 0,
+          "destination": "007a27b4",
+          "text": ".\\GameData\\Tracks\\"
+        },
+        {
+          "index": 1,
+          "destination": "007a2834",
+          "text": ".\\GameData\\Tracks\\Tutor\\"
+        },
+        {
+          "index": 2,
+          "destination": "007a28b4",
+          "text": ".\\GameData\\CarModel\\"
+        },
+        {
+          "index": 3,
+          "destination": "007a2934",
+          "text": ".\\GameData\\Render\\PC\\"
+        },
+        {
+          "index": 4,
+          "destination": "007a29b4",
+          "text": ".\\GameData\\DashHud\\"
+        },
+        {
+          "index": 5,
+          "destination": "007a2a34",
+          "text": ".\\GameData\\Audio\\PC\\"
+        },
+        {
+          "index": 6,
+          "destination": "007a2ab4",
+          "text": ".\\GameData\\Audio\\SFX\\"
+        },
+        {
+          "index": 7,
+          "destination": "007a2b34",
+          "text": ".\\GameData\\Audio\\Speech\\"
+        },
+        {
+          "index": 8,
+          "destination": "007a2bb4",
+          "text": ".\\GameData\\Audio\\Speech\\"
+        },
+        {
+          "index": 9,
+          "destination": "007a2c34",
+          "text": ".\\FeData\\%s"
+        },
+        {
+          "index": 10,
+          "destination": "007a2cb4",
+          "text": ".\\FeData\\Plac\\car.viv"
+        },
+        {
+          "index": 11,
+          "destination": "007a2d34",
+          "text": ".\\FeData\\Menus\\"
+        },
+        {
+          "index": 12,
+          "destination": "007a2db4",
+          "text": ".\\FeData\\Art\\"
+        },
+        {
+          "index": 13,
+          "destination": "007a2e34",
+          "text": ".\\FeData\\Text\\"
+        },
+        {
+          "index": 14,
+          "destination": "007a2eb4",
+          "text": ".\\FeData\\Text\\"
+        },
+        {
+          "index": 15,
+          "destination": "007a2f34",
+          "text": ".\\FeData\\Save\\"
+        },
+        {
+          "index": 16,
+          "destination": "007a2fb4",
+          "text": ".\\FeData\\Stats\\"
+        },
+        {
+          "index": 17,
+          "destination": "007a3034",
+          "text": ".\\FeData\\Config\\"
+        },
+        {
+          "index": 18,
+          "destination": "007a30b4",
+          "text": ".\\FeData\\Audio\\"
+        },
+        {
+          "index": 19,
+          "destination": "007a3134",
+          "text": ".\\FeData\\Art\\Slides\\"
+        },
+        {
+          "index": 20,
+          "destination": "007a31b4",
+          "text": ".\\FeData\\Art\\Track\\"
+        },
+        {
+          "index": 21,
+          "destination": "007a3234",
+          "text": ".\\FeData\\Art\\Showcase\\"
+        },
+        {
+          "index": 22,
+          "destination": "007a32b4",
+          "text": ".\\FeData\\Movies\\"
+        },
+        {
+          "index": 23,
+          "destination": "007a3334",
+          "text": ".\\FeData\\Stats\\PRH\\"
+        }
+      ],
+      "captures": [
+        {
+          "name": "complete_path_initializer",
+          "start": "004a6f04",
+          "end_exclusive": "004a6f6e",
+          "hex": "31c9be2cec5300bab4277a0089d7acaa84c075fa4181c28000000083f9187cec8b0d503a7a00ba342b7a0089d7e85a24050089fbbe34267a00e85a24050066b85c0066ab89d0e8a1c9ffff85c0751489dfbef0ea5300e83d24050066b85c0066ab31c9890d74277a00c3",
+          "disassembly": [
+            "4a6f04:\t31 c9                \txor    ecx,ecx",
+            "4a6f06:\tbe 2c ec 53 00       \tmov    esi,0x53ec2c",
+            "4a6f0b:\tba b4 27 7a 00       \tmov    edx,0x7a27b4",
+            "4a6f10:\t89 d7                \tmov    edi,edx",
+            "4a6f12:\tac                   \tlods   al,BYTE PTR ds:[esi]",
+            "4a6f13:\taa                   \tstos   BYTE PTR es:[edi],al",
+            "4a6f14:\t84 c0                \ttest   al,al",
+            "4a6f16:\t75 fa                \tjne    0x4a6f12",
+            "4a6f18:\t41                   \tinc    ecx",
+            "4a6f19:\t81 c2 80 00 00 00    \tadd    edx,0x80",
+            "4a6f1f:\t83 f9 18             \tcmp    ecx,0x18",
+            "4a6f22:\t7c ec                \tjl     0x4a6f10",
+            "4a6f24:\t8b 0d 50 3a 7a 00    \tmov    ecx,DWORD PTR ds:0x7a3a50",
+            "4a6f2a:\tba 34 2b 7a 00       \tmov    edx,0x7a2b34",
+            "4a6f2f:\t89 d7                \tmov    edi,edx",
+            "4a6f31:\te8 5a 24 05 00       \tcall   0x4f9390",
+            "4a6f36:\t89 fb                \tmov    ebx,edi",
+            "4a6f38:\tbe 34 26 7a 00       \tmov    esi,0x7a2634",
+            "4a6f3d:\te8 5a 24 05 00       \tcall   0x4f939c",
+            "4a6f42:\t66 b8 5c 00          \tmov    ax,0x5c",
+            "4a6f46:\t66 ab                \tstos   WORD PTR es:[edi],ax",
+            "4a6f48:\t89 d0                \tmov    eax,edx",
+            "4a6f4a:\te8 a1 c9 ff ff       \tcall   0x4a38f0",
+            "4a6f4f:\t85 c0                \ttest   eax,eax",
+            "4a6f51:\t75 14                \tjne    0x4a6f67",
+            "4a6f53:\t89 df                \tmov    edi,ebx",
+            "4a6f55:\tbe f0 ea 53 00       \tmov    esi,0x53eaf0",
+            "4a6f5a:\te8 3d 24 05 00       \tcall   0x4f939c",
+            "4a6f5f:\t66 b8 5c 00          \tmov    ax,0x5c",
+            "4a6f63:\t66 ab                \tstos   WORD PTR es:[edi],ax",
+            "4a6f65:\t31 c9                \txor    ecx,ecx",
+            "4a6f67:\t89 0d 74 27 7a 00    \tmov    DWORD PTR ds:0x7a2774,ecx",
+            "4a6f6d:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "directory_predicate",
+          "start": "004a38f0",
+          "end_exclusive": "004a3911",
+          "hex": "515250ff152045530083f8ff740ea9100000007407b801000000eb0231c05a59c3",
+          "disassembly": [
+            "4a38f0:\t51                   \tpush   ecx",
+            "4a38f1:\t52                   \tpush   edx",
+            "4a38f2:\t50                   \tpush   eax",
+            "4a38f3:\tff 15 20 45 53 00    \tcall   DWORD PTR ds:0x534520",
+            "4a38f9:\t83 f8 ff             \tcmp    eax,0xffffffff",
+            "4a38fc:\t74 0e                \tje     0x4a390c",
+            "4a38fe:\ta9 10 00 00 00       \ttest   eax,0x10",
+            "4a3903:\t74 07                \tje     0x4a390c",
+            "4a3905:\tb8 01 00 00 00       \tmov    eax,0x1",
+            "4a390a:\teb 02                \tjmp    0x4a390e",
+            "4a390c:\t31 c0                \txor    eax,eax",
+            "4a390e:\t5a                   \tpop    edx",
+            "4a390f:\t59                   \tpop    ecx",
+            "4a3910:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "find_terminator",
+          "start": "004f9390",
+          "end_exclusive": "004f9399",
+          "hex": "803f00740347ebf8c3",
+          "disassembly": [
+            "4f9390:\t80 3f 00             \tcmp    BYTE PTR [edi],0x0",
+            "4f9393:\t74 03                \tje     0x4f9398",
+            "4f9395:\t47                   \tinc    edi",
+            "4f9396:\teb f8                \tjmp    0x4f9390",
+            "4f9398:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "copy_string",
+          "start": "004f939c",
+          "end_exclusive": "004f93a6",
+          "hex": "31c0acaa84c075fa4fc3",
+          "disassembly": [
+            "4f939c:\t31 c0                \txor    eax,eax",
+            "4f939e:\tac                   \tlods   al,BYTE PTR ds:[esi]",
+            "4f939f:\taa                   \tstos   BYTE PTR es:[edi],al",
+            "4f93a0:\t84 c0                \ttest   al,al",
+            "4f93a2:\t75 fa                \tjne    0x4f939e",
+            "4f93a4:\t4f                   \tdec    edi",
+            "4f93a5:\tc3                   \tret"
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Selected110 initializer only copies path literals;not whole-program absence of every fallback.",
+    "120 caches selector007a2774;final007a2764 and helper register contracts must not be substituted.",
+    "Directory false includes missing,nondirectory and API failure;English/files are not rechecked here.",
+    "No playback,crash-free outcome,asset provenance,all consumers or lifetime/concurrency proof.",
+    "No target/API/instruction execution or binary/Ghidra mutation."
+  ]
+}
