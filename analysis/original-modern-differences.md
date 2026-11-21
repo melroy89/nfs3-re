@@ -1,6 +1,6 @@
 # Original versus Modern Patch: executable differences
 
-The [current texture/clock/speech/loader checkpoint](original-modern-audit-status.md#current-texture-clock-speech-and-loader-checkpoint--2026-11-21) reviews `b1b26ab`: **16/16 static reruns** reproduce eight evidence outputs, with12 protected files and12 raw exports unchanged. Its table separates concrete historical changes from missing baselines and runtime claims. The catalogue currently has47 vendor-only,56 bounded-static and187 partial entries; these are not distinct EXE-change counts or a completion percentage.
+The [current texture/clock/speech/loader checkpoint](original-modern-audit-status.md#current-texture-clock-speech-and-loader-checkpoint--2026-11-21) reviews `b1b26ab`: **16/16 static reruns** reproduce eight evidence outputs, with12 protected files and12 raw exports unchanged. Its table separates concrete historical changes from missing baselines and runtime claims. The catalogue currently has46 vendor-only,56 bounded-static and188 partial entries; these are not distinct EXE-change counts or a completion percentage.
 
 The [preceding renderer/loading/menu checkpoint](original-modern-audit-status.md#current-renderer-loading-and-menu-checkpoint--2026-11-21) reviews `ea2fc48`: **22/22 static reruns** reproduce11 evidence files, with12 protected artifacts and12 raw exports unchanged. Its compact table links the recent wrapper, reference-driver/debug, DX6, loading screenshot and menu findings to their remaining limitations. This is repeatability/preservation evidence, not complete difference coverage or runtime acceptance.
 
@@ -699,7 +699,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **47 Claimed, 56 Static, 187 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **46 Claimed, 56 Static, 188 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -928,7 +928,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP130-001 | Hangs on multicore systems were completely fixed, so you don't have to use SingleProcAffinity kludge now. The game works much smoother without this kludge (expecially with nGlide and dgVoodoo drivers). | Partial |
 | MP130-002 | Unexpected game termination at the end of gameplay loading was fixed. (Thanks Zeus for help with debugging.) | Claimed |
 | MP130-003 | Multiplayer game bug were fixed. It had been introduced by the first version of this patch. (Thanks Ivan_83 for testing.) | Claimed |
-| MP130-004 | HUD was updated a little. | Claimed |
+| MP130-004 | HUD was updated a little. | Partial |
 | MP130-005 | The Wide Screen setting has no any relation to proper widescreen support, so its location next to the Resolution setting is confusing. This is why this setting was moved from the Graphics to the Advanced Graphics settings. Now it's placed near the View Angle setting because it is more logical. The View Distance setting was moved to freed space in the Graphics settings. | Claimed |
 | MP130-006 | Menu subitems in the Controller and in the Connect menus aligned vertically like in the other menus. | Partial |
 | MP130-007 | nGlide is updated to version 1.04.3. Now you can safely minimize and restore NFS3. (Thanks Zeus for it.) | Partial |

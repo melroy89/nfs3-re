@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "c8d8003768eddb955e17770b8bf7d142cdaa63bda0b64836590fca9708e6c2de"
+      "sha256": "a8c045b30ff3d04913a954f4656ef4851368fd44ba843e6d22179d8284734673"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -173,7 +173,7 @@
     },
     {
       "path": "analysis/original-modern-hud-layout.md",
-      "sha256": "bbdbc17aac5377f695832371ec4529af18d4a2bec92678812ade77f42a1e3103"
+      "sha256": "f5b1ed8e35b1f6fbdee2efb7b1acd2aa33bf7adc2be5f894b036663916db65c0"
     },
     {
       "path": "analysis/original-modern-hud-settings-policy.md",
@@ -13981,7 +13981,8 @@
           "path": "analysis/original-modern-hud-layout.md",
           "entry_mentioned": true,
           "addresses": [
-            "004f9418"
+            "004f9418",
+            "004f9421"
           ]
         }
       ]

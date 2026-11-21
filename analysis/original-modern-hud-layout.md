@@ -413,3 +413,24 @@ Historical builder prefix `004812e0..004813d0` (240 bytes) is identical131/140. 
 The only slot3 source-table change in131→140 is first WORD **656→657** for profiles2/3; the other three WORDs and other slot3 profiles match. Call it a one-unit preset adjustment, not automatically a one-pixel movement: initialization divides by1000, scaling/rounding and insets follow.
 
 **Changed-slot identity map:** slot3 Analog Tachometer (qualified reference ordinal plus geometry linkage); slot6 Tutorial Icon (reference/editor and shared quad linkage); slot12 Opponent Name (named setting and consumer); slot15 WRONG WAY (version-bound text lookup and drawing branch). Every changed table slot now has an explicit identity basis and limitation. Authenticated original provenance, runtime loading/lifetime and complete rendered effects remain open. No executable, saved database or target instructions were changed/executed.
+
+## Earlier120 to130 updates55 preset records
+
+The [early HUD audit](evidence/audits/early-hud-preset-history.json), reproduced with `python3 analysis/scripts/audit_early_hud_preset_history.py`, pins120/130 author-hosted EXEs and compares the complete1,152-byte WORD table00540500..00540980. This is the same six-profile×24-slot×four-WORD layout documented for131/140, not final's differently sized DWORD table.
+
+**55 of144 records change;89 remain identical.** There are118 changed WORDs and118 changed file-byte positions. Every changed record, address, before/after WORD quadruple and signed delta is retained in the manifest. This exhausts this paired table, not the vague release note's complete HUD scope.
+
+|Profile |Changed rectangle records |
+|---:|---:|
+|0 |8 |
+|1 |7 |
+|2 |11 |
+|3 |9 |
+|4 |11 |
+|5 |9 |
+
+Examples in source order: profile0/slot0 changes130,4,330,60→130,2,330,58; profile2/slot1 changes250,0,344,125→251,0,343,123; profile4/slot3 changes656,500,750,625→657,500,749,623. These identify concrete coordinate/bound edits without assigning unverified live profile selection or a pixel interpretation.
+
+Both versions retain byte-identical initializer prefix00485680..004856c5, complete29-byte conversion helper004f9404..004f9421 and complete231-byte scaler00480910..004809f7. The initializer reads this table, converts WORD/1000 to binary32 and swaps adjacent source members into rectangle storage. It is therefore incorrect to describe a two-unit source decrement as automatically two screen pixels or to transfer final's DWORD stride to these historical files. Equal code also does not establish equal inputs, x87 state, later writes or rendered results.
+
+**MP130-004 advances vendor-only→partial:** the immediate120→130 pair supplies a concrete preset-data update consistent with “HUD was updated a little.” It does not establish all other HUD changes, rationale, visual quality or active-session placement. Reuse the separate131→140 inventory for later Name/Wrong Way/tutorial/tachometer evidence rather than attributing those later edits to130. No target instructions, UI, compiler or Ghidra changes occurred; executable/database bytes are unchanged.

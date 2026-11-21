@@ -1,0 +1,40 @@
+"""Compare complete120/130 HUD WORD tables and retained conversion/scaler bodies."""
+import hashlib,json,struct,subprocess
+import pefile
+from audit_thrash_loader_difference import ROOT
+from audit_dx5_reference_final import disassemble
+
+
+def sha(raw):return hashlib.sha256(raw).hexdigest()
+
+
+def main():
+    pins={'1.2.0':('151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b','4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003'),
+          '1.3.0':('93b0ecffebb5e6a13ee4d7d3054c3b9dde53ca329d7e87516eaad8dd399a22ad','deac6f7f812d6a1981a3520666adbc9d4f78b9459b4d1eef76408f01729b0146')}
+    result={'kind':'static-early-hud-preset-history','versions':{}};tables=[];bodies=[]
+    for version,(ah,eh)in pins.items():
+        rel=f'analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v{version}.7z';assert sha((ROOT/rel).read_bytes())==ah
+        raw=subprocess.check_output(['7z','x','-so',str(ROOT/rel),'nfs3.exe']);assert sha(raw)==eh
+        p=pefile.PE(data=raw);get=lambda a,b:p.get_data(a-0x400000,b-a);table=get(0x540500,0x540980);tables.append(table)
+        spans=[('preset_copy_prefix',0x485680,0x4856c5),('word_divide1000_to_float',0x4f9404,0x4f9421),('slot_scaler',0x480910,0x4809f7)]
+        bodies.append([get(a,b)for n,a,b in spans]);assert bodies[-1][1].hex()=='83ec04890424db0424c70424e8030000da3424d91c248b042483c404c3'
+        result['versions'][version]={'archive':rel,'archive_sha256':ah,'member':'nfs3.exe','sha256':eh,'table':{'start':'00540500','end_exclusive':'00540980','bytes':len(table),'hex':table.hex(),'sha256':sha(table)},'captures':[{'name':n,'start':f'{a:08x}','end_exclusive':f'{b:08x}','sha256':sha(get(a,b)),'disassembly':disassemble(get(a,b),a)}for n,a,b in spans]}
+    assert bodies[0]==bodies[1]
+    changes=[];counts=[0]*6
+    for profile in range(6):
+        for slot in range(24):
+            offset=profile*192+slot*8;a,b=[struct.unpack('<4H',t[offset:offset+8])for t in tables]
+            if a!=b:
+                counts[profile]+=1;changes.append({'profile':profile,'slot':slot,'address':f'{0x540500+offset:08x}','120_words':list(a),'130_words':list(b),'deltas':[y-x for x,y in zip(a,b)]})
+    changed_words=sum(x!=y for x,y in zip(struct.unpack('<576H',tables[0]),struct.unpack('<576H',tables[1])));changed_bytes=sum(x!=y for x,y in zip(*tables))
+    assert counts==[8,7,11,9,11,9]and len(changes)==55 and changed_words==changed_bytes==118
+    result.update({'changed_records':changes,'changed_record_count':55,'unchanged_record_count':89,'changed_word_count':changed_words,'changed_byte_count':changed_bytes,'changed_records_by_profile':counts,'limits':[
+        'Exhaustive for paired1152-byte preset tables,not all HUD code/data or vague release scope.',
+        'WORD sources divide by1000 and adjacent pairs swap;deltas are not pixel movements.',
+        'Retained converter/scaler bytes do not establish selected live profiles,later writes,all callers,x87 input state or rendered output.',
+        'No target/API/instruction execution,compilation or binary/Ghidra mutation.']})
+    (ROOT/'analysis/evidence/audits/early-hud-preset-history.json').write_text(json.dumps(result,indent=2)+'\n')
+    print('PASS:120->130 HUD55/144 records change118 WORDs;copy/conversion/scaler bodies retained')
+
+
+if __name__=='__main__':main()
