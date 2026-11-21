@@ -393,3 +393,12 @@ The expanded [historical HUD audit](evidence/audits/opponent-name-menu-history.j
 The pinned140 `fedata/text/text.eng` table's zero-based entry337 (`0151h`) contains **WRONG WAY**. Its asset hash, entry offset and exact label are retained in the audit; no131 packaged English table is asserted. This links slot15 to the selected WRONG WAY drawing branch. Its profiles0/2/4 have the source-bound changes listed in the complete inventory above, so the HUD table changes extend beyond Opponent Name.
 
 This is an independently identified layout change, not a new count of vendor release-note entries. Full warning admission, selected language/font, later geometry writes and final placement remain unverified. Slots3/6 remain unnamed pending stronger consumer evidence. No game, text renderer or target instructions were executed.
+
+
+### Slot6 connects to the Tutorial Icon quad path
+
+The expanded [historical HUD audit](evidence/audits/opponent-name-menu-history.json) verifies complete builder `004818b0..00481aa0` (496 bytes) and editor arm `0045b8d0..0045b91a` (74 bytes), both identical131/140. It also checks jump-table slot6 at `0045aae8` targets `0045b8d0`. The [existing POS/editor classification](original-modern-hud-settings-policy.md#registered-editor-draw-chain-retains-both-widget-cases) names this slot **Tutorial Icon**; this is reused evidence, not a widget name inferred from coordinates.
+
+The builder reads geometry `007497b8..007497c4 + localIndex×170h`, exactly scaler slot6, and builds thirteen quads in `[00791a58]+localIndex×680h`. Its full layout contract is already documented under [thirteen-quad scaling](detailed-analysis-notes.md#thirteen-quad-hud-rectangle-scaling). The checked editor case calls selection helper `00482030` at `0045b8e1`; its renderer-bit2 fallback calls submission helper `00482190` at `0045b900`. Those helpers' existing [buffer/selection analysis](detailed-analysis-notes.md#hud-quad-pair-selection-and-color-update) links the same vertex storage and records the extra-view colour-offset limitation.
+
+This connects the slot6 source-bound changes in all six profiles to the Tutorial Icon geometry/editor path. Full live selection, texture identity, every gameplay consumer, later writes and rendered movement are not established. In particular, the retained unusual colour-address calculation must not be silently normalized during reconstruction. Slot3 remains the only changed table slot without a named-widget linkage in this historical audit. No new target execution or Ghidra changes occurred.
