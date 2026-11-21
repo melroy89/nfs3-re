@@ -420,3 +420,12 @@ The [historical restore audit](evidence/audits/projection-restore-history.json),
 The complete272-byte float projection builder `004bf260..004bf370` and662-byte consumer `0041bc90..0041bf26` are byte-identical153/160. Their unchanged centre formula and reads are not the new horizon-offset mechanism. Different dimensions, angle interfaces, camera orientation and other state can still change output.
 
 **MP160-003 remains unresolved:** this dates a concrete local implementation removal, but does not recover the float-source capture writer/lifetime or establish the advertised centred horizon. Do not interpret an unmodified local float mapping as proof that all camera inputs, call ordering or rendered results match. Next follow capture provenance and orientation changes; repeating these exact builder/consumer comparisons will not resolve that gap. No target instructions or game/Ghidra writes were performed.
+
+
+### The fixed-descriptor camera branch already exists in153
+
+The expanded [153/160 audit](evidence/audits/projection-restore-history.json) compares additional complete boundaries:402-byte fixed-descriptor handler `004240c0..00424252`,74-byte dispatch wrapper `00426450..0042649a`,96-byte table `004263f0..00426450` (retained as data), and399-byte type8 handler `00425060..004251ef`. **All four match exactly153/160.**
+
+Consequently the previously documented original/final added fixed-descriptor call and incoming-EDX contract already exist in153. They are not newly introduced implementation bodies at153→160 and cannot alone identify the release160 horizon fix. Equal bodies can still receive changed inputs or execute in a changed surrounding lifetime; this does not exclude their participation in rendering.
+
+This closes another historical-attribution candidate without claiming the horizon issue resolved. For that claim, prioritize changes outside these retained boundaries and provenance of the projection-source cells. No new whole-program equivalence, source capture writer, runtime order or visible result is established. The exact first introduction of these pre160 camera changes remains unverified.
