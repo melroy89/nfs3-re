@@ -9,6 +9,9 @@
         "sha256": "df7c78608ed8c63b598fe3e373956a5435433c3138489855c146bb32e0833932",
         "text": "[THRASH]\r\nFile=nglide.dll\r\nType=voodoo\r\nFogSupport=1\r\nLightBeams=1\r\n[NGLIDE]\r\nResolution=0\r\nAspect=0\r\nRefresh=0\r\nVsync=1\r\nGamma=5\r\nSplash=0"
       },
+      "hardware_glide3x_directory": {
+        "paths": []
+      },
       "driver": {
         "member": "drivers/nglide/nglide.dll",
         "bytes": 69120,
@@ -24,6 +27,15 @@
         "member": "drivers/nglide/thrash.ini",
         "sha256": "47260e42fe8c8d457386f91cef986798f97a0879fd1d9cfd174f83ca97fc36de",
         "text": "[THRASH]\r\nFile=voodoo2a.dll\r\nType=voodoo\r\nFogSupport=1\r\nLightBeams=1\r\n[ENV]\r\nNGLIDE_RESOLUTION=0\r\nNGLIDE_ASPECT=0\r\nNGLIDE_REFRESH=0\r\nNGLIDE_VSYNC=1\r\nNGLIDE_GAMMA=5\r\nNGLIDE_SPLASH=0"
+      },
+      "hardware_glide3x_directory": {
+        "paths": [
+          "drivers/glide3x/thrash.ini",
+          "drivers/glide3x/voodoo2a.dll"
+        ],
+        "config_sha256": "dd7d771702a2669e8c3e3ff9195f685228ff13887fb85eaa0135142be95767da",
+        "config_text": "[THRASH]\r\nFile=voodoo2a.dll\r\nType=voodoo\r\nFogSupport=1\r\nLightBeams=1\r\n[ENV]\r\nFX_GLIDE_NO_SPLASH=1",
+        "provider_glide3x_dll_packaged_here": false
       },
       "driver": {
         "member": "drivers/nglide/voodoo2a.dll",
@@ -51,6 +63,7 @@
   ],
   "limits": [
     "Packaged configuration/bytes,not successful installation,selection,provider loading or effective settings.",
+    "140 adds separate glide3x directory/config but no glide3x.dll inside it;real Voodoo hardware/provider compatibility not tested.",
     "Whole driver implementations,ABI/source ancestry and every replacement of old special-adapter behavior unverified.",
     "Inherited environment and OS/provider precedence may affect outcomes;no target/API/environment execution or binary/database changes."
   ]

@@ -30,12 +30,23 @@ def main():
             for name in ['dgvoodoo','glide3x']:
                 path=f'drivers/{name}/voodoo2a.dll';other=subprocess.check_output(['7z','x','-so',str(archive),path]);assert other==blob
                 siblings.append({'member':path,'sha256':sha(other),'equal_bytes':True})
+        hardware_paths=sorted(p for p in paths if p.startswith('drivers/glide3x/'))
+        hardware={'paths':hardware_paths}
+        if old:assert not hardware_paths
+        else:
+            assert hardware_paths==['drivers/glide3x/thrash.ini','drivers/glide3x/voodoo2a.dll']
+            hwini=subprocess.check_output(['7z','x','-so',str(archive),'drivers/glide3x/thrash.ini'])
+            hwcfg=configparser.ConfigParser();hwcfg.optionxform=str;hwcfg.read_file(io.StringIO(hwini.decode()))
+            assert dict(hwcfg['THRASH'])==dict(cfg['THRASH'])
+            assert dict(hwcfg['ENV'])=={'FX_GLIDE_NO_SPLASH':'1'}
+            hardware.update({'config_sha256':sha(hwini),'config_text':hwini.decode(),'provider_glide3x_dll_packaged_here':False})
         result['versions'][version]={'archive':rel,'archive_sha256':ah,'config':{'member':member,'sha256':sha(raw),'text':raw.decode()},
-            'driver':{'member':driver,'bytes':len(blob),'sha256':sha(blob),'machine':'014c','matching_siblings':siblings}}
+            'hardware_glide3x_directory':hardware,'driver':{'member':driver,'bytes':len(blob),'sha256':sha(blob),'machine':'014c','matching_siblings':siblings}}
     assert settings[0]==settings[1]
     result['verified']=['131 special nglide.dll path becomes140 voodoo2a.dll;140 bytes equal dgvoodoo/glide3x sibling drivers.',
         'Six NGLIDE key/value pairs move to ENV with NGLIDE_ uppercase prefixes;values and selected THRASH capability keys retained.']
     result['limits']=['Packaged configuration/bytes,not successful installation,selection,provider loading or effective settings.',
+        '140 adds separate glide3x directory/config but no glide3x.dll inside it;real Voodoo hardware/provider compatibility not tested.',
         'Whole driver implementations,ABI/source ancestry and every replacement of old special-adapter behavior unverified.',
         'Inherited environment and OS/provider precedence may affect outcomes;no target/API/environment execution or binary/database changes.']
     (ROOT/'analysis/evidence/audits/nglide-driver-config-history.json').write_text(json.dumps(result,indent=2)+'\n')

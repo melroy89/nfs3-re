@@ -547,3 +547,12 @@ The [package audit](evidence/audits/nglide-driver-config-history.json), reproduc
 This is a concrete configured-driver and settings-format migration supporting **MP140-043 partially**. The earlier [special adapter analysis](#historical-nglide-configuration-precedes-provider-loading) documents a mechanism for prefixing/uppercasing NGLIDE section keys; the140 package instead authors the complete environment names. Its selected values match the six earlier values. Actual loader selection, setting precedence, inherited environment, successful API writes and provider acceptance are not established by the INI or equal sibling DLLs.
 
 Do not infer source ancestry or full implementation equivalence from the renamed/shared file. Full131 special-adapter versus140 general-driver behavior remains a separate comparison. These package bytes explain how the advertised configurable approach is authored without claiming every old hardcoded environment path was replaced. No DLL was loaded, no environment variable was set, and no executable/database changed.
+
+
+### Separate140 Glide3x configuration omits a bundled provider
+
+The expanded [package audit](evidence/audits/nglide-driver-config-history.json) inventories every member under `drivers/glide3x/`:131 has none;140 contains exactly `thrash.ini` and `voodoo2a.dll`. The DLL is the same complete file as the140 nGlide/dgVoodoo copies above, not a separately proven hardware-specific implementation.
+
+The new INI selects File=voodoo2a.dll, Type=voodoo, FogSupport=1 and LightBeams=1. Its ENV section contains only **FX_GLIDE_NO_SPLASH=1**. There is **no `glide3x.dll` in this directory**. This is a package fact, not proof of which installed/system provider would resolve successfully or of the full loader search order.
+
+**MP140-044 gains partial support:** a separate named Glide3x driver configuration is added in this exact historical pair. The advertised use on real3dfx hardware, required provider installation, device/API compatibility and rendered results remain untested. “Separate driver” here means separately selectable directory/configuration; the three checked140 THRASH DLL copies are byte-identical. No DLL/provider or environment API was executed and no game/database bytes changed.

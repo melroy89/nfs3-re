@@ -21,7 +21,7 @@
     },
     {
       "path": "analysis/original-modern-audit-status.md",
-      "sha256": "f8a1e6d16e9918d34afdebb524fafcf61a700e9b207507fa158b8bb433e8dca0"
+      "sha256": "b7a84d2f03271ee5acd7058c0763efba3ddfc41d683556764af1574dbd71ad04"
     },
     {
       "path": "analysis/original-modern-border-geometry.md",
@@ -353,7 +353,7 @@
     },
     {
       "path": "analysis/original-modern-renderer-loading.md",
-      "sha256": "345691706ef29aa764aae48fe1f37c80913d6de4c4087cceaf2f82290e5b8497"
+      "sha256": "58ff2d8224cf7b00336889daef616264c8af47c7816fd48788e56728c9787910"
     },
     {
       "path": "analysis/original-modern-renderer-texel-alignment.md",
