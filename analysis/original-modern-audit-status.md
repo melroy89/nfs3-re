@@ -1,6 +1,20 @@
 # Original versus Modern audit: current stopping point
 
-## Current follow-up checkpoint — 2026-11-21
+## Current DX7, hint and shape checkpoint — 2026-11-21
+
+The [five-audit checkpoint](evidence/validation/dx7-hint-shape-checkpoint.json) reviews `666a0c8`: **10/10 static runs** reproduce five committed evidence outputs, with **12 protected artifacts and12 raw exports unchanged** against the prior checkpoint. Reproduce with `python3 analysis/scripts/check_dx7_hint_shape.py`. This verifies primary-agent repeatability and preservation, not independent semantic review, runtime acceptance or the whole executable comparison.
+
+| Investigation | Established | Remaining boundary |
+|---|---|---|
+|[DX7 inclusion](original-modern-renderer-loading.md#dx7-provider-is-added-to-the150-package) |150 adds a configured i386 provider under a directory absent from140 |Installed selection, source ancestry and device success |
+|[Dithering](original-modern-renderer-loading.md#selector5-normalizes-its-payload-against-a-verified-zero) |Mode-export call chain; normal initializer path requests off; selector5 zero/nonzero requests off/on |Full branch admission, EXE overrides, state lifetime and pixels |
+|[Connecting Esc hint](original-modern-network-port-menu.md#connecting-notice-gains-an-explicit-esc-hint-in140) |131→140 caller substitution adds two-line notice; helper retained final |Actual visibility and cancellation across network phases |
+|[Field-of-View label](original-modern-frame-setting.md#140-field-of-view-wording-retains-the-earlier-setting-interface) |140 label binds the retained131 setting/storage/Off-On IDs |Old text baseline, exact rename and full camera consumers |
+|[Map-marker shape](original-modern-hud-layout.md#game-side-pixel-format-corroborates-the-alpha-interpretation) |Retained draw chain; pinned backup/150 shape pixel difference; alpha interpretation corroborated |Backup provenance, loaded texture conversion/blend path and visible smoothing |
+
+Current catalog counts are **78 vendor-only,54 bounded-static,156 partial,2 unresolved** across290 release-note entries. They are evidence classifications, not distinct EXE-change counts or completion percentages. Broad changed-region semantics, interface/data provenance and runtime compatibility remain incomplete. The projection capture writer and preset−5 meaning remain genuinely unresolved; the bounded recent reviews do not require completing unrelated scratchpad work. Existing executable, database, maintained C and export bytes remain preserved under the checkpoint's stated file scope.
+
+## Earlier seven-audit checkpoint — 2026-11-21
 
 The [seven-audit checkpoint](evidence/validation/renderer-menu-counter-followup-checkpoint.json) reviews `794ddde`: **14/14 static runs**, seven committed evidence outputs reproduced, **12 protected artifacts and12 raw exports unchanged** against prior hashes. Reproduce with `python3 analysis/scripts/check_renderer_menu_counter_followup.py`. This is primary-agent repeatability and preservation evidence, not independent semantic review, target execution or complete comparison acceptance.
 
@@ -14,7 +28,8 @@ The [seven-audit checkpoint](evidence/validation/renderer-menu-counter-followup-
 |[Counter serialization](original-modern-screenshot-feedback.md#counter-belongs-to-the-saved-configuration-block) |Counter at config+16A0h inside20F0h copy extent; cleared1860h distinct |I/O success, save timing, concurrent snapshots and later resets |
 |[Counter history](original-modern-screenshot-feedback.md#saved-counter-mechanism-appears-at131-to140-boundary) |131→140 counter relocation, atomic increment and filename-format change |Successful cross-launch preservation |
 
-The catalog now has **78 vendor-only,54 bounded-static,156 partial,2 unresolved** after the [DX7 package-introduction](original-modern-renderer-loading.md#dx7-provider-is-added-to-the150-package) and [dithering-request](original-modern-renderer-loading.md#dx7-contains-an-explicit-dithering-disable-request) audits. Those audits and the [Connecting Esc-hint comparison](original-modern-network-port-menu.md#connecting-notice-gains-an-explicit-esc-hint-in140) and [140 Field-of-View label comparison](original-modern-frame-setting.md#140-field-of-view-wording-retains-the-earlier-setting-interface) and [map-marker asset candidate](original-modern-hud-layout.md#map-marker-smoothing-has-an-asset-level-candidate) follow the seven-audit checkpoint and are not included in its14 runs. These are evidence labels for290 release-note bullets, not a completion percentage. The taillight claim remains vendor-only; its static follow-up should focus on the actual menu primitive/state lifetime, not repeat the resolved code-identity or flag checks. The broader next work is remaining changed-region semantics and interface/data provenance; no full-game equivalence or reconstruction readiness is claimed. Earlier dated sections below retain history and must be read with these later findings.
+At this seven-audit checkpoint the catalog had83 vendor-only/53 bounded-static/152 partial/2 unresolved entries. Later findings and current counts are listed above. The taillight claim remains vendor-only; its remaining static question is the actual menu primitive/state lifetime, beyond the resolved selected code-identity and flag checks.
+
 
 ## Earlier snapshot — 2026-11-01
 

@@ -1,5 +1,9 @@
 # Original versus Modern Patch: executable differences
 
+## Recent DX7, connection-hint and map-shape findings
+
+The [current five-investigation table](original-modern-audit-status.md#current-dx7-hint-and-shape-checkpoint--2026-11-21) consolidates provider bundling, dithering requests, the Esc hint, Field-of-View wording and the map-marker asset candidate. Its [checkpoint](evidence/validation/dx7-hint-shape-checkpoint.json) reproduces five committed outputs twice each (**10/10 runs**) and verifies12 protected artifacts plus12 raw exports against prior hashes. Reviewed revision: `666a0c8`. Reproduce with `python3 analysis/scripts/check_dx7_hint_shape.py`. Runtime effects and each row's documented unknowns remain separate; the broader comparison is incomplete.
+
 For current acceptance, limits and prioritized next work, see the [audit stopping-point report](original-modern-audit-status.md).
 
 For a shallow inventory, see the [complete release-note change list](#complete-release-note-change-list) below. For address-based navigation, use the [361-entry changed-function index](original-modern-function-index.md); chapter mentions are not completion evidence.
@@ -25,7 +29,7 @@ Current catalog labels are78 vendor-only/54 bounded-static/156 partial/2 unresol
 
 ## Renderer, menu and screenshot follow-up checkpoint
 
-The [seven-audit checkpoint](evidence/validation/renderer-menu-counter-followup-checkpoint.json) reviews `794ddde` and reproduces seven committed evidence outputs twice each: **14/14 runs**, with12 protected artifacts and12 raw exports unchanged against prior hashes. It covers DX6 count consumers, retained vehicle-effect bodies, DX6 selector/quad flag routes, Setup button history and screenshot counter serialization/history. The [current audit table](original-modern-audit-status.md#current-follow-up-checkpoint--2026-11-21) states each finding and remaining boundary. Reproduce with `python3 analysis/scripts/check_renderer_menu_counter_followup.py`. This is primary-agent static reproducibility, not independent semantic review, runtime validation or evidence that all EXE differences are explained.
+The [seven-audit checkpoint](evidence/validation/renderer-menu-counter-followup-checkpoint.json) reviews `794ddde` and reproduces seven committed evidence outputs twice each: **14/14 runs**, with12 protected artifacts and12 raw exports unchanged against prior hashes. It covers DX6 count consumers, retained vehicle-effect bodies, DX6 selector/quad flag routes, Setup button history and screenshot counter serialization/history. The [current audit table](original-modern-audit-status.md#earlier-seven-audit-checkpoint--2026-11-21) states each finding and remaining boundary. Reproduce with `python3 analysis/scripts/check_renderer_menu_counter_followup.py`. This is primary-agent static reproducibility, not independent semantic review, runtime validation or evidence that all EXE differences are explained.
 
 ## Recent HUD, menu and import findings
 
