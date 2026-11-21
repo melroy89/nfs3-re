@@ -1263,3 +1263,8 @@ The [label/binding comparison](original-modern-frame-setting.md#140-field-of-vie
 ## Map-point smoothing has a bounded shape-payload candidate
 
 The [HUD asset/code audit](original-modern-hud-layout.md#map-marker-smoothing-has-an-asset-level-candidate) links the unchanged140/150 marker draw chain to shape1555. The150 package adds HUD98; versus a pinned local backup, only its32×32 pixel payload differs, adding116 intermediate highest-byte pixels. This is consistent with softened alpha edges, but backup provenance, complete conversion/blending and visible police/player points remain unverified. MP150-014 advances to partial; current labels are78 vendor-only/54 bounded-static/156 partial/2 unresolved.
+
+
+## Map-marker alpha interpretation corroborated by game code
+
+The [pixel-format follow-up](original-modern-hud-layout.md#game-side-pixel-format-corroborates-the-alpha-interpretation) verifies type7Dh maps to32-bit pixels, a built-in producer writes that format with packed colour/high-byteff, and a separate compositor uses the high byte for transparency/blending. This strengthens the alpha-coverage interpretation of the HUD asset change without proving the actual map texture's complete renderer path or visible smoothing.

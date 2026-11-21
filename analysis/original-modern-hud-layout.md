@@ -308,3 +308,12 @@ The140 archive has no `hud98.fsh` member;150 adds `gamedata/dashhud/hud98.fsh`. 
 This is consistent with replacing binary transparency edges with intermediate alpha coverage, while retaining the center pixel and changing the border. The audit records highest-byte statistics explicitly; it does not independently validate the complete decoder, colour ordering, texture conversion or final blend policy. It must not be promoted into proof of visible antialiasing on every renderer.
 
 The backup's **retail provenance is unverified**, and it is not demonstrated to be the installed140 asset. Consequently this is a concrete local-backup/150 payload difference and a package-boundary candidate, not a fully authenticated140→150 pixel comparison. Original retail identity, exact loaded file, police/player-specific coverage, successful upload and rendered edges remain follow-up work. MP150-014 advances vendor-only→partial. No game pixels are republished, no target instructions executed and no executable/Ghidra changes made.
+
+
+### Game-side pixel format corroborates the alpha interpretation
+
+The expanded shape audit checks additional retained140/150 code and data instead of relying solely on a file-format convention. `GetShapePixelDepth` at `00499e90` masks the format code with7Fh and indexes byte table `00566d54`; entry7Dh is32. Built-in hue-shape producer `0043db20` writes format7Dh and DWORD pixels from `0043de20`. That packer places three low-eight-bit channels at bit positions16/8/0 and ORs `ff000000`.
+
+Separately, the checked raster compositor at `0052379f` extracts the packed input's highest byte. In its ordinary branch, zero returns without drawing,255 takes the opaque arm, and intermediate values enter a channel-blending arm. The retained prefix at `0052387e` separates the three colour channels and derives a complementary weight using `65536-(highByte<<8)` before reading the destination colour. The audit compares these selected bodies across140/150 and finds them unchanged.
+
+Together these are code-level corroboration that the changed highest-byte values represent alpha-style coverage rather than an added colour channel. They do **not** prove this map texture traverses that raster compositor: conversion/upload, selected driver texture format and final blending remain separate links. The asset difference remains a partial smoothing candidate with unverified backup provenance and rendered output; no runtime or database changes were made.

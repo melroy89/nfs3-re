@@ -34,6 +34,41 @@
           "end_exclusive": "00484211",
           "bytes": 417,
           "sha256": "d4a3670e7777631cc5d882cde3055be53d2d332c55c65364f70b400611905db6"
+        },
+        {
+          "name": "shape_depth",
+          "start": "00499e90",
+          "end_exclusive": "00499ea0",
+          "bytes": 16,
+          "sha256": "a3a0d30a1aefe3c5efa8a5992857d2ca202a0e55dfa9ce9baa2303c454f907d8"
+        },
+        {
+          "name": "hue_shape_producer",
+          "start": "0043db20",
+          "end_exclusive": "0043dbd4",
+          "bytes": 180,
+          "sha256": "2fb8d45cea727b0b1bcd94cf1647d998403037ff18d6901a0b89c3bc0686494e"
+        },
+        {
+          "name": "opaque_colour_packer",
+          "start": "0043de20",
+          "end_exclusive": "0043de60",
+          "bytes": 64,
+          "sha256": "6f46de35b5f5dce853af25720130133e1ac053f9022c6f2d5387cd9fe51c7464"
+        },
+        {
+          "name": "argb_compositor_admission",
+          "start": "00523760",
+          "end_exclusive": "005237c6",
+          "bytes": 102,
+          "sha256": "93097efbe9899a155d6287c4e6c93b3807ef4fd66e57a5ac42faaf4a5fc2d081"
+        },
+        {
+          "name": "argb_blend_weights",
+          "start": "0052387e",
+          "end_exclusive": "005238bf",
+          "bytes": 65,
+          "sha256": "297133bfa2ff98208c6c21b655cd327527938e6d1a3ee9cbbb377d51ae404fa7"
         }
       ]
     },
@@ -72,6 +107,41 @@
           "end_exclusive": "00484211",
           "bytes": 417,
           "sha256": "d4a3670e7777631cc5d882cde3055be53d2d332c55c65364f70b400611905db6"
+        },
+        {
+          "name": "shape_depth",
+          "start": "00499e90",
+          "end_exclusive": "00499ea0",
+          "bytes": 16,
+          "sha256": "a3a0d30a1aefe3c5efa8a5992857d2ca202a0e55dfa9ce9baa2303c454f907d8"
+        },
+        {
+          "name": "hue_shape_producer",
+          "start": "0043db20",
+          "end_exclusive": "0043dbd4",
+          "bytes": 180,
+          "sha256": "2fb8d45cea727b0b1bcd94cf1647d998403037ff18d6901a0b89c3bc0686494e"
+        },
+        {
+          "name": "opaque_colour_packer",
+          "start": "0043de20",
+          "end_exclusive": "0043de60",
+          "bytes": 64,
+          "sha256": "6f46de35b5f5dce853af25720130133e1ac053f9022c6f2d5387cd9fe51c7464"
+        },
+        {
+          "name": "argb_compositor_admission",
+          "start": "00523760",
+          "end_exclusive": "005237c6",
+          "bytes": 102,
+          "sha256": "93097efbe9899a155d6287c4e6c93b3807ef4fd66e57a5ac42faaf4a5fc2d081"
+        },
+        {
+          "name": "argb_blend_weights",
+          "start": "0052387e",
+          "end_exclusive": "005238bf",
+          "bytes": 65,
+          "sha256": "297133bfa2ff98208c6c21b655cd327527938e6d1a3ee9cbbb377d51ae404fa7"
         }
       ],
       "asset": {
@@ -128,6 +198,14 @@
     },
     "retail_provenance_verified": false
   },
+  "format_correspondence": {
+    "depth_lookup_base": "00566d54",
+    "format7d_depth": 32,
+    "builtin_shape_producer": "0043db20 writes type7d and DWORD pixels from0043de20",
+    "packer": "0043de20 packs three low8 channels into bits16/8/0 and ORsff000000",
+    "compositor": "0052379f shifts packed input24;zero returns without drawing,255 branches to opaque path,intermediate to blend path",
+    "scope": "Corroborates ARGB/alpha interpretation;does not prove this map texture traverses that raster compositor."
+  },
   "comparison": {
     "changed_bytes": 1050,
     "all_changes_within_1555_pixel_payload": true,
@@ -142,6 +220,7 @@
   "limits": [
     "Local backup is not authenticated retail or a demonstrated140 installed asset;absence in140 archive does not prove absence in game.",
     "Highest-byte softening is consistent with alpha-edge smoothing;complete conversion/upload/blend/rendered effect not validated.",
+    "Builtin32-bit shape producer and ARGB compositor corroborate alpha interpretation,not proof this texture uses that compositor.",
     "No universal visual identity of all markers,all caller roles,asset path selection or successful renderer acceptance established.",
     "No target/API/instruction execution,compilation or Ghidra changes;only hashes/statistics published,not game pixel data."
   ]
