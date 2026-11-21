@@ -8143,7 +8143,7 @@
         "changed_bytes": 167,
         "role": "Removed original defaults tail and ordered20h/10h flag policy",
         "report": "analysis/original-modern-ghost-loading.md",
-        "report_sha256": "28aeba21f434d266ad3afe3bb89947c2216d2e41a43f58666aa1c768b4ca414d",
+        "report_sha256": "395e6869a84c2b874bc5e30c48db1e85d931a80df31eb447e713517b38b02123",
         "status": "Byte partition verified; semantic claims retain linked-report scope"
       },
       {
