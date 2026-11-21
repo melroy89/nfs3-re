@@ -143,3 +143,22 @@ These are non-wrapping scalar examples, not original-instruction probes or measu
 The complete98-byte wrapper`00477f60..00477fc2` is byte-identical across these three builds. The [existing setup lifecycle audit](multiplayer-setup-abort-lifecycle-audit.md) qualifies its session/playback/abort gates before network setup`004c5e80`. Equal wrapper bytes do not prove equal transitive protocol handling, successful synchronization or equal elapsed duration. The new audit independently resolves each historical clock IAT operand to **KERNEL32.GetTickCount** and final's operand to **WINMM.timeGetTime**; both APIs expose milliseconds, but their state/resolution/scheduling are not asserted equivalent.
 
 **MP150-031 advances to partial static support:** the claimed140→150 boundary moves timing capture before the checked setup interval and subtracts that interval from the later animation budget. This establishes a concrete accounting change, not a promise of smooth animation, synchronization completion, a fixed splash duration or full original/Modern compatibility. Original's fixed-argument route, estimator throttling and nonmonotonic/smoothing boundaries remain as documented above. No game, clock API, network, instruction probe, compiler or Ghidra write was used.
+
+## Historical130 removes a nonpositive-counter termination at race entry
+
+The [race-entry history audit](evidence/audits/race-entry-termination-history.json), reproduced with `python3 analysis/scripts/audit_race_entry_termination_history.py`, pins120/130 EXEs and the complete53-byte entry prefix004c4e40..004c4e75. Exactly17 byte positions differ. This is a race-entry termination-policy change, distinct from the later progress estimator/screenshot work above.
+
+|Condition after common004e7630 call |120 |130 |
+|---|---|---|
+|Signed DWORD005efdf8>0 |Continue at004c4e75 |Continue at004c4e75 |
+|Zero or signed-negative value |Call termination thunk004f2a7d at004c4e70 |Continue at004c4e75 |
+
+120 loads that DWORD into ECX, stores EDX to local−8, tests ECX and uses signed JG to bypass termination.130 moves the local EDX store to004c4e63, jumps directly to004c4e75 and NOP-fills the removed read/test/call. The earlier read of the same field plus10000 remains; this is not removal of every use or a conversion to an unsigned field.
+
+The seven-byte termination thunk is identical120/130: EAX0 then call004dfd04. Reuse the [verified terminal chain](original-modern-startup-requirements.md#shared-termination-chain-reaches-exitprocess), with its callback/cleanup qualifications, rather than treating this as a guessed crash instruction or normal error return.
+
+The audit also retains byte-identical registered callback0042dc60..0042dcaf and initializer0042dcb0..0042dcf7. The callback increments005efdf8 when bit0 of005efdf4 is clear. The initializer supplies that callback to0048ee30 and later stores EDX into the counter. EDX is initialized0 before the call, but its post-call value is not proved by that fact alone; the complete registrar preservation contract is a separate requirement. The field is therefore described as an observed counter, without inventing its units or claiming an actual zero/timing race at entry.
+
+Selected loading spans00495230..004955fb and004a33d0..004a35cb are also byte-identical120/130. This rules out instruction changes in those bounded spans as the new mechanism, not every change in the entire loading flow or its data/callees.
+
+**MP130-002 advances vendor-only→partial candidate:** the exact historical pair removes an explicit termination route at the race-loop boundary, consistent with the reported unexpected termination after loading. Whether that guard caused the advertised failure, what produced the problematic counter state, whether other fixes contributed and actual successful startup remain unverified. Later152 fog setup reuses part of this cleared entry region; it is a different change, not the date of this guard removal. No target/API/instruction execution or executable/Ghidra change occurred.

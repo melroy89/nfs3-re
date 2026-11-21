@@ -1,0 +1,275 @@
+{
+  "kind": "static-race-entry-termination-history",
+  "versions": {
+    "1.2.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.2.0.7z",
+      "archive_sha256": "151e8832f5b39d007d20aeacc8de5b2e91b53408a63ea023eb12ffc31b0e603b",
+      "member": "nfs3.exe",
+      "sha256": "4802ee2948d18f0c24fa50c1300ce1df1de285f135d6441c374b267ffcab4003",
+      "captures": [
+        {
+          "name": "race_entry_prefix",
+          "start": "004c4e40",
+          "end_exclusive": "004c4e75",
+          "hex": "53515256575589e583ec08a1f8fd5e00051027000031d28945fc31c031ffe8cd2702008b0df8fd5e008955f885c97f05e808dc0200",
+          "disassembly": [
+            "4c4e40:\t53                   \tpush   ebx",
+            "4c4e41:\t51                   \tpush   ecx",
+            "4c4e42:\t52                   \tpush   edx",
+            "4c4e43:\t56                   \tpush   esi",
+            "4c4e44:\t57                   \tpush   edi",
+            "4c4e45:\t55                   \tpush   ebp",
+            "4c4e46:\t89 e5                \tmov    ebp,esp",
+            "4c4e48:\t83 ec 08             \tsub    esp,0x8",
+            "4c4e4b:\ta1 f8 fd 5e 00       \tmov    eax,ds:0x5efdf8",
+            "4c4e50:\t05 10 27 00 00       \tadd    eax,0x2710",
+            "4c4e55:\t31 d2                \txor    edx,edx",
+            "4c4e57:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+            "4c4e5a:\t31 c0                \txor    eax,eax",
+            "4c4e5c:\t31 ff                \txor    edi,edi",
+            "4c4e5e:\te8 cd 27 02 00       \tcall   0x4e7630",
+            "4c4e63:\t8b 0d f8 fd 5e 00    \tmov    ecx,DWORD PTR ds:0x5efdf8",
+            "4c4e69:\t89 55 f8             \tmov    DWORD PTR [ebp-0x8],edx",
+            "4c4e6c:\t85 c9                \ttest   ecx,ecx",
+            "4c4e6e:\t7f 05                \tjg     0x4c4e75",
+            "4c4e70:\te8 08 dc 02 00       \tcall   0x4f2a7d"
+          ]
+        },
+        {
+          "name": "registered_counter_callback",
+          "start": "0042dc60",
+          "end_exclusive": "0042dcaf",
+          "hex": "52565589e5ff05f4fd5e00a100fe5e00ff0500fe5e00f605f4fd5e0001752cff05f8fd5e00f605f8fd5e0001751d8b35fcfd5e00b8ac3a7a00468b15f0fd5e008935fcfd5e00e8751e0b005d5e5ac3",
+          "disassembly": [
+            "42dc60:\t52                   \tpush   edx",
+            "42dc61:\t56                   \tpush   esi",
+            "42dc62:\t55                   \tpush   ebp",
+            "42dc63:\t89 e5                \tmov    ebp,esp",
+            "42dc65:\tff 05 f4 fd 5e 00    \tinc    DWORD PTR ds:0x5efdf4",
+            "42dc6b:\ta1 00 fe 5e 00       \tmov    eax,ds:0x5efe00",
+            "42dc70:\tff 05 00 fe 5e 00    \tinc    DWORD PTR ds:0x5efe00",
+            "42dc76:\tf6 05 f4 fd 5e 00 01 \ttest   BYTE PTR ds:0x5efdf4,0x1",
+            "42dc7d:\t75 2c                \tjne    0x42dcab",
+            "42dc7f:\tff 05 f8 fd 5e 00    \tinc    DWORD PTR ds:0x5efdf8",
+            "42dc85:\tf6 05 f8 fd 5e 00 01 \ttest   BYTE PTR ds:0x5efdf8,0x1",
+            "42dc8c:\t75 1d                \tjne    0x42dcab",
+            "42dc8e:\t8b 35 fc fd 5e 00    \tmov    esi,DWORD PTR ds:0x5efdfc",
+            "42dc94:\tb8 ac 3a 7a 00       \tmov    eax,0x7a3aac",
+            "42dc99:\t46                   \tinc    esi",
+            "42dc9a:\t8b 15 f0 fd 5e 00    \tmov    edx,DWORD PTR ds:0x5efdf0",
+            "42dca0:\t89 35 fc fd 5e 00    \tmov    DWORD PTR ds:0x5efdfc,esi",
+            "42dca6:\te8 75 1e 0b 00       \tcall   0x4dfb20",
+            "42dcab:\t5d                   \tpop    ebp",
+            "42dcac:\t5e                   \tpop    esi",
+            "42dcad:\t5a                   \tpop    edx",
+            "42dcae:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "counter_registration_initializer",
+          "start": "0042dcb0",
+          "end_exclusive": "0042dcf7",
+          "hex": "53525589e531d2891500fe5e00833da437550000752dbb01000000b860dc4200891da4375500e8551106008915f4fd5e008915f8fd5e008915fcfd5e008915acc479005d5a5bc3",
+          "disassembly": [
+            "42dcb0:\t53                   \tpush   ebx",
+            "42dcb1:\t52                   \tpush   edx",
+            "42dcb2:\t55                   \tpush   ebp",
+            "42dcb3:\t89 e5                \tmov    ebp,esp",
+            "42dcb5:\t31 d2                \txor    edx,edx",
+            "42dcb7:\t89 15 00 fe 5e 00    \tmov    DWORD PTR ds:0x5efe00,edx",
+            "42dcbd:\t83 3d a4 37 55 00 00 \tcmp    DWORD PTR ds:0x5537a4,0x0",
+            "42dcc4:\t75 2d                \tjne    0x42dcf3",
+            "42dcc6:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "42dccb:\tb8 60 dc 42 00       \tmov    eax,0x42dc60",
+            "42dcd0:\t89 1d a4 37 55 00    \tmov    DWORD PTR ds:0x5537a4,ebx",
+            "42dcd6:\te8 55 11 06 00       \tcall   0x48ee30",
+            "42dcdb:\t89 15 f4 fd 5e 00    \tmov    DWORD PTR ds:0x5efdf4,edx",
+            "42dce1:\t89 15 f8 fd 5e 00    \tmov    DWORD PTR ds:0x5efdf8,edx",
+            "42dce7:\t89 15 fc fd 5e 00    \tmov    DWORD PTR ds:0x5efdfc,edx",
+            "42dced:\t89 15 ac c4 79 00    \tmov    DWORD PTR ds:0x79c4ac,edx",
+            "42dcf3:\t5d                   \tpop    ebp",
+            "42dcf4:\t5a                   \tpop    edx",
+            "42dcf5:\t5b                   \tpop    ebx",
+            "42dcf6:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "termination_entry",
+          "start": "004f2a7d",
+          "end_exclusive": "004f2a84",
+          "hex": "31c0e880d2feff",
+          "disassembly": [
+            "4f2a7d:\t31 c0                \txor    eax,eax",
+            "4f2a7f:\te8 80 d2 fe ff       \tcall   0x4dfd04"
+          ]
+        }
+      ],
+      "paired_loading_spans": [
+        {
+          "start": "00495230",
+          "end_exclusive": "004955fb",
+          "sha256": "8d1660a1adbf12742892ad449f048a18be5d10c4022a2098beac954998308b9d"
+        },
+        {
+          "start": "004a33d0",
+          "end_exclusive": "004a35cb",
+          "sha256": "575731df46e3329f4d450481f953c9b4e59a889e275b2c9a304f21df974ab1d5"
+        }
+      ]
+    },
+    "1.3.0": {
+      "archive": "analysis/captures/modern-differences/upstream/history/nfs3_modern_patch_v1.3.0.7z",
+      "archive_sha256": "93b0ecffebb5e6a13ee4d7d3054c3b9dde53ca329d7e87516eaad8dd399a22ad",
+      "member": "nfs3.exe",
+      "sha256": "deac6f7f812d6a1981a3520666adbc9d4f78b9459b4d1eef76408f01729b0146",
+      "captures": [
+        {
+          "name": "race_entry_prefix",
+          "start": "004c4e40",
+          "end_exclusive": "004c4e75",
+          "hex": "53515256575589e583ec08a1f8fd5e00051027000031d28945fc31c031ffe8cd2702008955f8eb0d90909090909090909090909090",
+          "disassembly": [
+            "4c4e40:\t53                   \tpush   ebx",
+            "4c4e41:\t51                   \tpush   ecx",
+            "4c4e42:\t52                   \tpush   edx",
+            "4c4e43:\t56                   \tpush   esi",
+            "4c4e44:\t57                   \tpush   edi",
+            "4c4e45:\t55                   \tpush   ebp",
+            "4c4e46:\t89 e5                \tmov    ebp,esp",
+            "4c4e48:\t83 ec 08             \tsub    esp,0x8",
+            "4c4e4b:\ta1 f8 fd 5e 00       \tmov    eax,ds:0x5efdf8",
+            "4c4e50:\t05 10 27 00 00       \tadd    eax,0x2710",
+            "4c4e55:\t31 d2                \txor    edx,edx",
+            "4c4e57:\t89 45 fc             \tmov    DWORD PTR [ebp-0x4],eax",
+            "4c4e5a:\t31 c0                \txor    eax,eax",
+            "4c4e5c:\t31 ff                \txor    edi,edi",
+            "4c4e5e:\te8 cd 27 02 00       \tcall   0x4e7630",
+            "4c4e63:\t89 55 f8             \tmov    DWORD PTR [ebp-0x8],edx",
+            "4c4e66:\teb 0d                \tjmp    0x4c4e75",
+            "4c4e68:\t90                   \tnop",
+            "4c4e69:\t90                   \tnop",
+            "4c4e6a:\t90                   \tnop",
+            "4c4e6b:\t90                   \tnop",
+            "4c4e6c:\t90                   \tnop",
+            "4c4e6d:\t90                   \tnop",
+            "4c4e6e:\t90                   \tnop",
+            "4c4e6f:\t90                   \tnop",
+            "4c4e70:\t90                   \tnop",
+            "4c4e71:\t90                   \tnop",
+            "4c4e72:\t90                   \tnop",
+            "4c4e73:\t90                   \tnop",
+            "4c4e74:\t90                   \tnop"
+          ]
+        },
+        {
+          "name": "registered_counter_callback",
+          "start": "0042dc60",
+          "end_exclusive": "0042dcaf",
+          "hex": "52565589e5ff05f4fd5e00a100fe5e00ff0500fe5e00f605f4fd5e0001752cff05f8fd5e00f605f8fd5e0001751d8b35fcfd5e00b8ac3a7a00468b15f0fd5e008935fcfd5e00e8751e0b005d5e5ac3",
+          "disassembly": [
+            "42dc60:\t52                   \tpush   edx",
+            "42dc61:\t56                   \tpush   esi",
+            "42dc62:\t55                   \tpush   ebp",
+            "42dc63:\t89 e5                \tmov    ebp,esp",
+            "42dc65:\tff 05 f4 fd 5e 00    \tinc    DWORD PTR ds:0x5efdf4",
+            "42dc6b:\ta1 00 fe 5e 00       \tmov    eax,ds:0x5efe00",
+            "42dc70:\tff 05 00 fe 5e 00    \tinc    DWORD PTR ds:0x5efe00",
+            "42dc76:\tf6 05 f4 fd 5e 00 01 \ttest   BYTE PTR ds:0x5efdf4,0x1",
+            "42dc7d:\t75 2c                \tjne    0x42dcab",
+            "42dc7f:\tff 05 f8 fd 5e 00    \tinc    DWORD PTR ds:0x5efdf8",
+            "42dc85:\tf6 05 f8 fd 5e 00 01 \ttest   BYTE PTR ds:0x5efdf8,0x1",
+            "42dc8c:\t75 1d                \tjne    0x42dcab",
+            "42dc8e:\t8b 35 fc fd 5e 00    \tmov    esi,DWORD PTR ds:0x5efdfc",
+            "42dc94:\tb8 ac 3a 7a 00       \tmov    eax,0x7a3aac",
+            "42dc99:\t46                   \tinc    esi",
+            "42dc9a:\t8b 15 f0 fd 5e 00    \tmov    edx,DWORD PTR ds:0x5efdf0",
+            "42dca0:\t89 35 fc fd 5e 00    \tmov    DWORD PTR ds:0x5efdfc,esi",
+            "42dca6:\te8 75 1e 0b 00       \tcall   0x4dfb20",
+            "42dcab:\t5d                   \tpop    ebp",
+            "42dcac:\t5e                   \tpop    esi",
+            "42dcad:\t5a                   \tpop    edx",
+            "42dcae:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "counter_registration_initializer",
+          "start": "0042dcb0",
+          "end_exclusive": "0042dcf7",
+          "hex": "53525589e531d2891500fe5e00833da437550000752dbb01000000b860dc4200891da4375500e8551106008915f4fd5e008915f8fd5e008915fcfd5e008915acc479005d5a5bc3",
+          "disassembly": [
+            "42dcb0:\t53                   \tpush   ebx",
+            "42dcb1:\t52                   \tpush   edx",
+            "42dcb2:\t55                   \tpush   ebp",
+            "42dcb3:\t89 e5                \tmov    ebp,esp",
+            "42dcb5:\t31 d2                \txor    edx,edx",
+            "42dcb7:\t89 15 00 fe 5e 00    \tmov    DWORD PTR ds:0x5efe00,edx",
+            "42dcbd:\t83 3d a4 37 55 00 00 \tcmp    DWORD PTR ds:0x5537a4,0x0",
+            "42dcc4:\t75 2d                \tjne    0x42dcf3",
+            "42dcc6:\tbb 01 00 00 00       \tmov    ebx,0x1",
+            "42dccb:\tb8 60 dc 42 00       \tmov    eax,0x42dc60",
+            "42dcd0:\t89 1d a4 37 55 00    \tmov    DWORD PTR ds:0x5537a4,ebx",
+            "42dcd6:\te8 55 11 06 00       \tcall   0x48ee30",
+            "42dcdb:\t89 15 f4 fd 5e 00    \tmov    DWORD PTR ds:0x5efdf4,edx",
+            "42dce1:\t89 15 f8 fd 5e 00    \tmov    DWORD PTR ds:0x5efdf8,edx",
+            "42dce7:\t89 15 fc fd 5e 00    \tmov    DWORD PTR ds:0x5efdfc,edx",
+            "42dced:\t89 15 ac c4 79 00    \tmov    DWORD PTR ds:0x79c4ac,edx",
+            "42dcf3:\t5d                   \tpop    ebp",
+            "42dcf4:\t5a                   \tpop    edx",
+            "42dcf5:\t5b                   \tpop    ebx",
+            "42dcf6:\tc3                   \tret"
+          ]
+        },
+        {
+          "name": "termination_entry",
+          "start": "004f2a7d",
+          "end_exclusive": "004f2a84",
+          "hex": "31c0e880d2feff",
+          "disassembly": [
+            "4f2a7d:\t31 c0                \txor    eax,eax",
+            "4f2a7f:\te8 80 d2 fe ff       \tcall   0x4dfd04"
+          ]
+        }
+      ],
+      "paired_loading_spans": [
+        {
+          "start": "00495230",
+          "end_exclusive": "004955fb",
+          "sha256": "8d1660a1adbf12742892ad449f048a18be5d10c4022a2098beac954998308b9d"
+        },
+        {
+          "start": "004a33d0",
+          "end_exclusive": "004a35cb",
+          "sha256": "575731df46e3329f4d450481f953c9b4e59a889e275b2c9a304f21df974ab1d5"
+        }
+      ]
+    }
+  },
+  "changed_intervals": [
+    {
+      "start_va": "004c4e63",
+      "end_va_exclusive": "004c4e65",
+      "reference_hex": "8b0d",
+      "modern_hex": "8955"
+    },
+    {
+      "start_va": "004c4e66",
+      "end_va_exclusive": "004c4e75",
+      "reference_hex": "fd5e008955f885c97f05e808dc0200",
+      "modern_hex": "eb0d90909090909090909090909090"
+    }
+  ],
+  "verified": [
+    "120 race entry calls004f2a7d unless signed005efdf8>0;130 removes test/read/call and jumps to same continuation004c4e75.",
+    "StoreEDX to local-8 retained but moved earlier;earlier read005efdf8 plus10000 retained.",
+    "Callback0042dc60 increments005efdf8 when selected bit0 gate005efdf4 clear;initializer0042dcb0 registers callback via0048ee30.",
+    "Selected counter/termination bodies and loading spans byte-identical across pair."
+  ],
+  "limits": [
+    "Candidate mechanism forMP130-002,not independently reproduced failure/root cause or exhaustive release attribution.",
+    "Counter meaning,callback timing,all aliases/writers,wrap and actual nonpositive race-entry state remain unverified.",
+    "Initializer storesEDX after registration;do not assert guaranteed zero without complete registrar preservation contract.",
+    "Existing terminal-chain report establishesExitProcess route separately;runtime callback/cleanup completion unobserved.",
+    "Equal selected loading spans do not prove entire loading flow unchanged.",
+    "No target/API/instruction execution,compilation or executable/Ghidra mutation."
+  ]
+}

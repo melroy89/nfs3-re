@@ -272,7 +272,7 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `004c452c` | CaptureDisplayPixelsAndLaunchScreenshotWorker | 159 | 157 | [screenshot-feedback](original-modern-screenshot-feedback.md), [screenshots](original-modern-screenshots.md) |
 | `004c45f0` | InitializeRaceSimulationCallbacks | 298 | 36 | [race-initialization](original-modern-race-initialization.md) |
 | `004c4740` | ResetSimulationAndInitializeRaceSubsystems | 221 | 36 | [race-initialization](original-modern-race-initialization.md) |
-| `004c4e40` | RunRaceLoop | 1666 | 50 | [frame-resize](original-modern-frame-resize.md), [renderer-loading](original-modern-renderer-loading.md), [replay-mirror](original-modern-replay-mirror.md), [screenshots](original-modern-screenshots.md) |
+| `004c4e40` | RunRaceLoop | 1666 | 50 | [frame-resize](original-modern-frame-resize.md), [loading-timing](original-modern-loading-timing.md), [renderer-loading](original-modern-renderer-loading.md), [replay-mirror](original-modern-replay-mirror.md), [screenshots](original-modern-screenshots.md) |
 | `004c6f00` | ProjectAndQueueNearbySpatialQuadBatches | 481 | 2 | [state14](original-modern-state14.md) |
 | `004c94e0` | BuildIndexedSequenceBankPathAndTryLoad | 125 | 6 | [sound-bank-language](original-modern-sound-bank-language.md) |
 | `004c9890` | LoadPoliceRadioVoiceBank | 212 | 6 | [sound-bank-language](original-modern-sound-bank-language.md) |
