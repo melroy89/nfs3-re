@@ -166,3 +166,21 @@ Both supplied original/final EXEs retain named common descriptor`00557c10` for x
 The same historical HUD asset also changes list policy and`ypos` metadata. Those do not supply a substitute explanation for the13 explicit image-coordinate deltas; earlier sections separately map the policy and list bindings. Conversely this coordinate table does not establish every change in the menu or EXE.
 
 **MP150-020 advances to partial package/static support:** a directly measured preview rearrangement exists at the advertised boundary, with one screen control and twelve other linked image controls moved by differing amounts. The subjective claim “arranged well”, visible overlap/alignment, active installed asset loading, runtime overrides and image rendering remain unverified. Author-reference files are not authenticated retail or proven paired to the supplied original EXE. Reconstruction must preserve the chosen authored positions and any verified runtime transforms rather than assuming a single uniform offset. No menu, game, instruction probe, compiler or Ghidra write occurred.
+
+
+## HUD selector policy simplifies at131-to140
+
+**MP140-034: partial static/package support, not guaranteed visibility.** The [historical selector audit](evidence/audits/hud-selector-history.json), reproduced with `python3 analysis/scripts/audit_hud_selector_history.py`, pins131/140 archives/EXEs and menu assets. The131 initializer prefix `0045e960..0045ea79` matches the supplied original exactly, connecting the preceding four-way P/R policy to a retained historical build.
+
+In140, the policy at `0045e998..0045e9fa` no longer reads R=`006fd3b8`. Both arms of P=`006fd3b0` write a list pointer:
+
+|140 condition |Suppression lookup targets |Published list |
+|---|---|---|
+|P=1 |`singlePlayerDefaults`, then `splitScreenDefaults` |`005562c8` |
+|P≠1 |`hotSplitScreenDefaults`, then `splitScreenDefaults` |`005562c2` |
+
+Each successful lookup ORs entry byte+5 with10h. The shared callback consumer `0044a5cb..0044a5e5` is retained and skips its entry+2Ch callback when that bit is set. The original/131 P≠1,R≠3 route suppresses all three alternatives without directly publishing a new list pointer;140 removes that local branch. The selected lookup/null checks are preserved in the evidence.
+
+The authored131 `hud.mnu` has three droplists.140 removes **splitScreenDefaults**, retaining `singlePlayerDefaults` and `hotSplitScreenDefaults` with matching selected x/y/priority/codelink/listname/maxvisitem fields. Thus140's common suppression lookup for splitScreenDefaults finds no such authored item on this ordinary asset path and skips its write. Other runtime-created/mixed-version controls are not excluded. All three old WORD list arrays remain byte-identical at this boundary, including the now-unselected list at `005562d2`. The final names forsingle/forsplit and later list zeroing are separate changes, not silently dated to140 by the original/final comparison.
+
+This supplies a concrete mechanism consistent with keeping a top selector available: one of the two authored alternatives is not newly suppressed by this block, and a list pointer is always selected locally. It does **not** prove initial flags are clear, successful asset loading/lookups, every callback/input route or actual pixels. The broader initializer also changes shared Credits policy and snapshot placement; those bytes are not all attributed to MP140-034. No game, instruction probe, compiler or Ghidra mutation occurred.

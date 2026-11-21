@@ -25,7 +25,7 @@ The [renderer/screenshot checkpoint](evidence/validation/renderer-screenshot-his
 |[DX6 mode count](original-modern-display-modes.md#dx6-public-mode-count-gains-its-leading-slot-in150) |Added increment affects public descriptor count, whose table has a leading slot |Leading-slot contents, full-capacity/alias/switch bounds and visible modes |
 |[Screenshot depth](original-modern-screenshot-pixels.md#historical150-correction-initializes-the-full-depth-local) |150 fixes partial-WORD local initialization before DWORD stride read; final core retained |Observed crash, XP specificity, complete capture/encoding stability |
 
-Current catalog labels are78 vendor-only/54 bounded-static/156 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
+Current catalog labels are77 vendor-only/54 bounded-static/157 partial/2 unresolved across290 release-note entries. This is evidence classification, not a distinct-change count or completion percentage. All361 changed saved-function ranges have address-navigation links; that does not establish complete semantic coverage. The next work must still explain remaining changed-region semantics and qualify unresolved interfaces, assets and runtime compatibility. Selected DX6 consumer bounds are now qualified in the follow-up below; full-capacity/alias/switch behaviour and the actual menu-lighting chain remain open. Repeating the resolved count, selected body-identity or flag checks is unnecessary.
 
 ## Renderer, menu and screenshot follow-up checkpoint
 
@@ -685,7 +685,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **78 Claimed, 54 Static, 156 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **77 Claimed, 54 Static, 157 Partial, 2 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -854,7 +854,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-031 | If demo video files are removed, the game doesn't try to play them. | Partial |
 | MP140-032 | Length of a track in the track info is displayed in units, which is choosed in the HUD of the 1st player. | Partial |
 | MP140-033 | “Wide Screen” setting was renamed to “2:1 Field of View”, just to avoid ambiguity. | Partial |
-| MP140-034 | The top dropdown with the player type selection is always displayed in the HUD settings. | Claimed |
+| MP140-034 | The top dropdown with the player type selection is always displayed in the HUD settings. | Partial |
 | MP140-035 | Fixed bug, when previous text was lost on first key press when entering player name or IP address. | Partial |
 | MP140-036 | A hint about an ability to abort using Esc button in the “Connecting...” window. | Partial |
 | MP140-037 | Refactoring of the Voodoo thrash driver. 32bpp support for 3dfx Voodoo 4 or 5 was added. | Claimed |
@@ -1272,3 +1272,8 @@ The [HUD asset/code audit](original-modern-hud-layout.md#map-marker-smoothing-ha
 ## Map-marker alpha interpretation corroborated by game code
 
 The [pixel-format follow-up](original-modern-hud-layout.md#game-side-pixel-format-corroborates-the-alpha-interpretation) verifies type7Dh maps to32-bit pixels, a built-in producer writes that format with packed colour/high-byteff, and a separate compositor uses the high byte for transparency/blending. This strengthens the alpha-coverage interpretation of the HUD asset change without proving the actual map texture's complete renderer path or visible smoothing.
+
+
+## HUD top-selector availability gains a historical mechanism
+
+The [131/140 policy/asset comparison](original-modern-hud-settings-policy.md#hud-selector-policy-simplifies-at131-to140) verifies removal of the all-three-suppressed branch, local list publication on both session arms and removal of one legacy droplist. Selected retained-control fields and old list arrays remain unchanged. MP140-034 advances to partial; initial flags, other dispatch and visible availability remain unverified. Current catalog labels are77 vendor-only/54 bounded-static/157 partial/2 unresolved.
