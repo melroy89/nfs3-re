@@ -592,3 +592,7 @@ Upstream build authentication, exact wrapper-code changes, successful loading an
 ## SoftTri comparison is maintained separately
 
 The [dedicated software-renderer report](original-modern-software-reference-pair.md) is the canonical reference/final44-byte code map. Its [historical follow-ups](original-modern-software-reference-pair.md#historical-and-debug-follow-ups) add140/150 mode-bound dating, allocation/registration linkage, normalized relocations/resources and the appended debug records. These remain static evidence with explicit provenance and runtime limits.
+
+## Voodoo2 reference pair now has a separate inventory
+
+The [author-reference/final Voodoo2 report](original-modern-voodoo-reference-pair.md) matches34 exports and records all3,307 changed code bytes in141 intervals, alongside import/data differences and the four-byte about-prefix publication change. Its baseline is not the earlier local legacy candidate. Full mode/initialization semantics, historical refactor dating and runtime outcomes remain pending.

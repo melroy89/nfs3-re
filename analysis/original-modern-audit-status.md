@@ -25,6 +25,8 @@ The [SoftTri reference-debug audit](original-modern-software-reference-pair.md#r
 
 The new [DX5/Voodoo debug audit](original-modern-original-reference-bundle.md#dx5-and-voodoo-debug-records-have-independent-export-anchors) adds1,838 bounded records and68 independently matched exports, reusing the SoftTri parser without changing its existing output. Complete types, nonexport address mapping and final ABI remain unverified. It is outside the checkpoint.
 
+The [new Voodoo2 reference pair](original-modern-voodoo-reference-pair.md) distinguishes the author reference from the earlier local candidate, matches34 exports and inventories3,307 changed code bytes. Most interval semantics and historical refactor attribution remain pending; this new audit is outside the checkpoint.
+
 Next prioritize unassigned original/final changed mechanisms and remaining vendor claims with usable baselines. Reuse the completed HUD table inventory and bounded camera-region partition; their retained bodies need not be rechecked absent new evidence. Resolve runtime questions only within their stated test scope, without treating static reruns or package inclusion as game compatibility evidence.
 
 ## Earlier historical DX5, configuration, language and HUD checkpoint — 2026-11-21
