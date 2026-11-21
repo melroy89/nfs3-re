@@ -1,6 +1,23 @@
 # Original versus Modern audit: current stopping point
 
-## Current historical DX5, configuration, language and HUD checkpoint — 2026-11-21
+## Current HUD, Glide, projection and affinity checkpoint — 2026-11-21
+
+The [six-audit checkpoint](evidence/validation/hud-glide-projection-affinity-checkpoint.json) reviews `8706616`: **12/12 static runs** reproduce six committed evidence outputs; **12 protected artifacts and12 raw exports** match the prior checkpoint hashes. Reproduce with `python3 analysis/scripts/check_hud_glide_projection_affinity.py`. The Frame Size dependency is reproduced before the projection audit that records its hash. This is primary-agent repeatability and preservation, not independent semantic review, target execution or complete comparison acceptance.
+
+|Area |Established |Remaining boundary |
+|---|---|---|
+|[HUD presets](original-modern-hud-layout.md#complete131-to140-preset-table-difference-inventory) |144 records compared;14 change; all four changed slots have identity evidence with stated qualifications |Actual active profiles, later writes and rendered placement |
+|[Glide environment](original-modern-renderer-loading.md#historical131-to140-hardcoded-glide-environment-requests) |13 explicit131 requests/API adapter pinned; names absent140 |Computed/inherited/provider settings and exhaustive writer coverage |
+|[nGlide/Glide3x packages](original-modern-renderer-loading.md#historical-nglide-special-driver-becomes-shared-voodoo-configuration) |Six settings migrate to ENV; shared140 driver copies and separate provider-free Glide3x directory |Installation/loading, provider resolution and real hardware acceptance |
+|[Frame Size](original-modern-frame-setting.md#historical-constructor-changes-boolean-policy-to-two-independent-bits) |153→160 Boolean-to-bit constructor, two-to-four labels and config reset route |All lifecycle/override paths and live upgrade behaviour |
+|[Projection](original-modern-projection.md#historical-fulldefault-origin-change-reaches-projection-centre) |Bounded camera-region partition and default origin-to-centre linkage; odd-dimension limit explicit |Capture lifetime, other contexts/orientation and actual horizon |
+|[Affinity](original-modern-startup-policy.md#early110-affinity-policy-defaults-enabled) |110 configured/reader default1 and conditional mask1 request; final default0 |Exact100 introduction, API success and multicore reliability |
+
+Current catalogue: **65 vendor-only,55 bounded-static,170 partial,0 unresolved-category entries**, across290 release-note bullets. These are labels, not distinct EXE changes or completion percentages. Zero in the last category does **not** mean no unknowns: vendor-only claims, partial mechanisms, provenance, projection capture, preset−5 meaning and runtime compatibility remain open. The full original/Modern comparison is incomplete.
+
+Next prioritize unassigned original/final changed mechanisms and remaining vendor claims with usable baselines. Reuse the completed HUD table inventory and bounded camera-region partition; their retained bodies need not be rechecked absent new evidence. Resolve runtime questions only within their stated test scope, without treating static reruns or package inclusion as game compatibility evidence.
+
+## Earlier historical DX5, configuration, language and HUD checkpoint — 2026-11-21
 
 The [four-audit checkpoint](evidence/validation/historical-dx5-config-language-hud-checkpoint.json) reviews `c15d718`: **8/8 static runs** reproduce four committed outputs; **12 protected artifacts and12 raw exports** match prior hashes. Reproduce with `python3 analysis/scripts/check_historical_dx5_config_language_hud.py`. This is primary-agent repeatability and preservation, not independent semantic review or runtime acceptance.
 
@@ -15,7 +32,7 @@ The subsequent [slot15 follow-up](original-modern-hud-layout.md#slot15-supplies-
 
 The newer [153→160 projection restore audit](original-modern-projection.md#historical153-to160-restore-removes-integer-stores-not-float-centre-mapping) dates four removed legacy stores while retaining the float mapping/builder/consumer and the fixed-descriptor camera dispatch/handler already present in153. Its complete28,672-byte camera-region partition assigns all91 changed bytes to the restore and one removed empty stub/alignment block. Its [default-origin linkage](original-modern-projection.md#historical-fulldefault-origin-change-reaches-projection-centre) now gives MP160-003 partial static support: the scoped153 centre450 becomes160 midpoint540 at1920×1080. These additions remain outside the checkpoint; cache lifetime and universal rendered horizon remain unresolved.
 
-Current catalogue: **65 vendor-only,55 bounded-static,170 partial,0 unresolved** across290 release-note entries. These are evidence labels, not distinct EXE change counts or a completion percentage. The [early affinity audit](original-modern-startup-policy.md#early110-affinity-policy-defaults-enabled) advances the last historical-caveat entry to partial and is outside the checkpoint. Zero entries in the unresolved category does **not** mean zero unknowns:65 vendor-only claims and the limitations of170 partial entries remain. The full comparison is still incomplete. Reference inventories and address navigation locate differences; they do not establish all changed semantics. Projection capture lifetime, preset−5 meaning and runtime compatibility remain unresolved. Next prioritize new changed mechanisms and projection capture/orientation provenance, rather than repeating retained Name/scaler bodies or treating preset values as final pixels.
+Catalogue after the later follow-ups: **65 vendor-only,55 bounded-static,170 partial,0 unresolved** across290 release-note entries. These are evidence labels, not distinct EXE change counts or a completion percentage. The [early affinity audit](original-modern-startup-policy.md#early110-affinity-policy-defaults-enabled) advances the last historical-caveat entry to partial and is outside the checkpoint. Zero entries in the unresolved category does **not** mean zero unknowns:65 vendor-only claims and the limitations of170 partial entries remain. The full comparison is still incomplete. Reference inventories and address navigation locate differences; they do not establish all changed semantics. Projection capture lifetime, preset−5 meaning and runtime compatibility remain unresolved. Next prioritize new changed mechanisms and projection capture/orientation provenance, rather than repeating retained Name/scaler bodies or treating preset values as final pixels.
 
 ## Earlier DX8 admission and activation checkpoint — 2026-11-21
 
