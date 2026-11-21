@@ -74,8 +74,8 @@ The original code comparison also records **21,926 changed code bytes outside th
 | `0043fd38` | SetConfiguredNetworkSuffixToAlternateValue | 11 | 11 | [network-port-menu](original-modern-network-port-menu.md) |
 | `0043fd44` | FormatNetworkSuffixSelectionLabel | 41 | 40 | [network-port-menu](original-modern-network-port-menu.md) |
 | `0043fd70` | InitializeNetworkServiceWithSuffixFallback | 48 | 48 | [network-port-menu](original-modern-network-port-menu.md) |
-| `0043fda0` | ShowLocalizedTwoLineUntimedNotice | 44 | 40 | [dialog-input](original-modern-dialog-input.md) |
-| `0043fdd0` | JoinSelectedNetworkGameFromFrontend | 116 | 4 | [dialog-input](original-modern-dialog-input.md) |
+| `0043fda0` | ShowLocalizedTwoLineUntimedNotice | 44 | 40 | [dialog-input](original-modern-dialog-input.md), [network-port-menu](original-modern-network-port-menu.md) |
+| `0043fdd0` | JoinSelectedNetworkGameFromFrontend | 116 | 4 | [dialog-input](original-modern-dialog-input.md), [network-port-menu](original-modern-network-port-menu.md) |
 | `0043fe50` | InitializeTCPConnectionDialog | 140 | 136 | [network-port-menu](original-modern-network-port-menu.md) |
 | `004405c0` | InitializeConnectPlayersMenuCallbacks | 346 | 12 | [race-now](original-modern-race-now.md) |
 | `00441b20` | HandleNetworkTextKeyboardInput | 317 | 94 | [menu-input](original-modern-menu-input.md) |

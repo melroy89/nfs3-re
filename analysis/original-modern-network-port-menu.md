@@ -32,3 +32,21 @@ Modern menu choices returning 0/1 from `004446c0` call `0043fd70`. Its zero-inpu
 - Existing Modern-side helper analysis is in [detailed analysis notes](detailed-analysis-notes.md#network-service-suffix-selection-and-provider-retry) and the original/Modern binary fingerprints are recorded in [the difference overview](original-modern-differences.md).
 - The name “suffix” is intentional: helper `004a2f50` parses a colon suffix and adapter/caller semantics are treated in a separate network review. This report does not claim the value is a universal socket port setting, that every provider honors it, or that the two builds can interoperate.
 - No game, UI, network session, or probe was run; no executable or Ghidra project was modified.
+
+
+## Connecting notice gains an explicit Esc hint in140
+
+**MP140-036: partial instruction/asset support; cancellation behaviour not retested.** The [historical notice audit](evidence/audits/connect-escape-hint-history.json), reproduced with `python3 analysis/scripts/audit_connect_escape_hint_history.py`, pins131/140 archives/EXEs and the official final EXE.
+
+The complete selected caller `0043fdd0..0043fe44` loads text index12 at `0043fdff`. Its131 call at `0043fe09` targets `00444be0`;140 targets new helper `0043fda0`. Outside that five-byte call, the caller's bytes match. The retained later call to `0049e800` is the selected network-join path, not evidence that all transports or connection phases use this notice.
+
+New helper `0043fda0..0043fdcc` resolves the incoming text, then index11, stores the two pointers at `00661090`, and requests a two-line notice through `00444a80` with zeroed auxiliary inputs. Its complete44-byte body is retained in the official final EXE. The old131 bytes at the helper's eventual address are not treated as the same function entry; the paired caller establishes the historical substitution.
+
+|140 English text entry |Contents |
+|---|---|
+|12 |Connecting... |
+|11 |Press escape to cancel |
+
+The audit validates complete offset/string boundaries for all six140 language files (1,933 entries each), retaining both selected strings as raw hex and reversible Latin1 display. It does not establish the game's encoding/font or translation quality. The131 package supplies no corresponding text assets for this comparison, so the finding dates the **new two-line display mechanism**, not necessarily creation of the hint string itself.
+
+Actual loaded-language selection, visible layout and Escape cancellation across every networking state remain unverified. An added hint must not be mistaken for a newly implemented abort mechanism or proof the existing abort succeeds. No network session, target instruction or Ghidra modification was made.
