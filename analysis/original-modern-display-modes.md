@@ -377,3 +377,23 @@ Selected D32/D24S8/D24X8/D24X4S4 writes selector32; D16 writes16. D15S1 writes16
 The unsupported-selector branch at `6000444c` reaches the success return `600044dc` without performing the search or writing the output. That is an instruction-level edge, not evidence that normal initialization reaches it. A C reconstruction must preserve or explicitly resolve the caller precondition rather than replace this with an invented failure/default.
 
 **Resolved:** selected candidate order, API gate order, output writes and selector/flag effects. **Remaining:** the selector and flag's full initialization/mutation history, output contents on success-without-write, complete device/error lifecycle and rendered behaviour. This narrows the earlier ancillary-helper unknown; it does not establish runtime safety or introduce another140→150 change.
+
+## Historical DX6 depth keys and sorting change at140
+
+The [131/140 admission audit](evidence/audits/dx6-mode-admission-history.json), reproduced with `python3 analysis/scripts/audit_dx6_mode_admission_history.py`, pins `drivers/dx6/dx6.dll` SHA-256`81cc2b24972d37efca68ad277b714f5053672994df1ed266c529e1e24cd3420f` and140 `drivers/dx6/dx6a.dll` SHA-256`d32ee0f11361977ecaa01402b33a0a1ea4f4732b118355a5b98696768f8d25cb`. It retains both complete initializers and callbacks and the140 insertion body. These are historical provider changes, not newly identified EXE instructions.
+
+|Selected policy |131 |140 |
+|---|---|---|
+|Initializer at60001c50 |Clears1,200 bytes through the published pointer; seeds640×480×16 and sets count2 |Clears4,000 bytes at6003f028, resets count0, omits fixed seed |
+|Ordinary equal-width/height callback route |Stored depth greater than incoming, unsigned, rejects; otherwise overwrites that row |Builds a40-byte temporary record and calls6000e500 |
+|Record key/order |Ordinary scan matches width/height; new unmatched records use encountered empty slots |Unsigned lexicographic width,height,stored-depth key; binary search and ordered insertion |
+|Equal key |Depth selection can replace existing dimensions' row |Equal triple overwrites; different depth is a separate key |
+|Classifier3 |Stores normalized depth15 after ordinary depth comparison |Normalizes to15 before insertion compares the complete key |
+
+Under the ordinary131 branch, an existing800×600×32 row rejects a later800×600×16 input at60001d51; the reverse arrival order overwrites16 with32. In140, assuming both candidates pass classification/filtering, retain stored depths16 and32 after normalization and capacity is available,16 and32 are distinct keys and sort in that order. This is a static derivation from the captured comparisons, not a new instruction probe or observed device catalogue. The special640×480 route in131 separately tests its seeded slot and incoming depth16; the ordinary example must not be generalized to that branch.
+
+Both callbacks retain minimum width640 and height480 gates and a classifier-result rejection. Neither locally requires every input depth to equal16. The claim therefore has a specific mechanism: lower-depth alternatives need no longer be lost solely because a higher-depth record shares their dimensions.131 already seeds a16-bit mode, so these findings do not establish that16-bit operation was previously absent.
+
+The140 insertion helper's new-key limit is100. The131 scan's101 guard and1,200-byte clearing request are different facts, not a proved allocation bound or safe visible row count. Reuse the [later count/public-base analysis](#dx6-public-mode-count-gains-its-leading-slot-in150) and [consumer limits](#dx6-extra-count-slot-reaches-inclusive-scans-but-can-fail-admission) rather than equating insertion count with displayed modes. Ambient DF, malformed records, arithmetic/division failures, callback ordering and complete storage lifetimes remain separate contracts.
+
+**MP140-038 advances vendor-only→partial:** the named historical pair proves sorted depth-aware insertion and seed-policy changes consistent with retaining16-bit alternatives. Actual enumeration, menu order, successful16-bit activation, provider/device acceptance and rendered output remain unverified. No DLL/API/target code executes and executable/database bytes remain unchanged.
