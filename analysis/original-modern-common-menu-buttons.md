@@ -316,3 +316,24 @@ The width allowance also changes.131's first routine selects35 for names tracks/
 Under equal ordinary measured widths, the shared normal allowance15 produces an additive total20→30; retained special allowance35 produces40→50. Where140 removes a former special allowance, the total changes40→30 instead. Height's fixed term decreases by3. These are derived arithmetic effects, not observed pixel dimensions; row fields differ between the two controls (+56h versus+5Ah), and their other geometry/placement consumers remain separate.
 
 Both paths ultimately store WORD results. Preserve low16-bit/truncation and x86 shift behaviour for exceptional inputs; do not translate the ordinary formulas into unconstrained signed C arithmetic or infer bounds safety. Complete byte accounting for these two routines does not prove every dropdown calls them, loaded label metrics are valid, or all on-screen padding is corrected. MP140-026 advances vendor-only→partial. No menu, target instructions, compiler or Ghidra write was used.
+
+
+## Four named dialogs have authored layout edits in140
+
+**MP140-028: partial package evidence; final visual alignment untested.** The [dialog audit](evidence/audits/dialog-alignment-history.json), reproduced with `python3 analysis/scripts/audit_dialog_alignment_history.py`, pins131/140 archives and all eight menu members. Nine controls are matched by exact section and unique symbolic text/codelink, or by the single InteriorBx section, rather than assuming section order survives added controls.
+
+| Menu/control |131 authored position |140 authored position |
+|---|---|---|
+|Predefined Keys: Escape label |42,138 |35,173 |
+|Predefined Keys: Tab label |35,173 |32,208 |
+|Predefined Keys: Keypad Plus label |32,208 |31,243 |
+|Predefined Keys: Keypad Minus label |31,243 |34,278 |
+|Interior view box |y187 |y147 |
+|Interior ZoomSlider |227,400 |222,360 |
+|IPX gamelist |230,180 |250,158 |
+|Load DESCRIPTION_BOX |400,176 |395,205 |
+|Load replays list |185,176 |183,158 |
+
+The Load list additionally changes authored `maxvis=8` to10. These are selected fields from `hardkeys.mnu`, `interior.mnu`, `ipx.mnu` and `loadsave.mnu`; other additions/removals and keyboard-label changes are not presented as alignment effects. The shared bounds arithmetic documented immediately above is a separate EXE mechanism and must not absorb these authored coordinate changes.
+
+This supplies concrete package changes corresponding to the four named dialogs. It does not prove final pixels, successful control/resource loading, text metrics in every language or actual input behaviour. MP140-028 advances vendor-only→partial. The manifest retains selected geometry and all member hashes without duplicating full assets. No game, target instructions, compiler or Ghidra writes were used.
