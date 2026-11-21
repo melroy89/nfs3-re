@@ -40,4 +40,28 @@ The reference table pointer targets file-backed data. The final pointer instead 
 
 First assign changed code intervals to the matched mode producer, provider resolution and initialization paths, reusing the existing about/setup work. Then qualify changed data, callback ABI and static versus dynamic imports. Resources, headers, relocations and reference debug-overlay semantics also need their own scope. The two different legacy baselines must retain distinct labels.
 
-MP140-037's historical “refactoring” claim remains vendor-only as a release-specific attribution: this reference/final inventory is not a140 introduction proof or a complete semantic comparison. Source ancestry, device acceptance, rendered effects and race/replay/network compatibility remain unverified. Existing EXEs, saved Ghidra state, raw exports and maintained C are unchanged.
+MP140-037 now has partial historical support from the complete131/140 about comparison below. The reference/final inventory remains an incomplete semantic comparison and does not date every changed provider mechanism to140. Source ancestry, device acceptance, rendered effects and race/replay/network compatibility remain unverified. Existing EXEs, saved Ghidra state, raw exports and maintained C are unchanged.
+
+
+## Historical131 to140 about calls retarget without changing its publications
+
+The expanded [Voodoo audit](evidence/audits/voodoo-reference-final.json) pins131 `drivers/dgvoodoo/voodoo2.dll` and140 `drivers/glide3x/voodoo2a.dll`. Their complete413-byte about bodies `60001bb0..60001d4d` differ in **exactly five byte positions**, all operands of three direct calls:
+
+|Call instruction |131 target |140 target |
+|---|---|---|
+|`60001d11` |`600012f0` |`600018d8` |
+|`60001d2d` |`6000110c` |`60001108` |
+|`60001d3e` |`600012f0` |`600018d8` |
+
+The two first/last sites select the mode-producing helper under distinct existing branches; the middle site retargets the local cleanup helper. Target-body semantics and complete provider lifetime are separate from this exact caller comparison. All other about instructions are identical131/140, including its initial count16 and table pointer60013000 publications. The archive directory/name change does not itself prove implementation behavior.
+
+|Inspected baseline |Initial published count |Initial published table |
+|---|---:|---|
+|Author reference |16 |`6000fdd4` |
+|131 |16 |`60013000` |
+|140 |16 |`60013000` |
+|Official final |0 |`60013000` |
+
+This separates changes previously easy to conflate: the new table pointer already exists in131; the selected about call retargets occur131→140; the initial count0 publication is later than140 in the checked lineage. None of these initial values is a final visible-resolution count. Exact first introduction and every intermediate behavior remain unverified.
+
+**MP140-037 advances vendor-only→partial:** the historical pair has a concrete internal-call refactor example, with exhaustive byte accounting for this one caller. It does not prove that all3,307 reference/final changed code bytes belong to140, that helper semantics are equal or that device/rendering outcomes improve. Existing setup/mode-helper research should be reused for those next target-body checks. No target instructions or Ghidra writes occurred.

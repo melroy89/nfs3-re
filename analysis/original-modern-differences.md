@@ -695,7 +695,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **59 Claimed, 56 Static, 175 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **58 Claimed, 56 Static, 176 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -867,7 +867,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP140-034 | The top dropdown with the player type selection is always displayed in the HUD settings. | Partial |
 | MP140-035 | Fixed bug, when previous text was lost on first key press when entering player name or IP address. | Partial |
 | MP140-036 | A hint about an ability to abort using Esc button in the “Connecting...” window. | Partial |
-| MP140-037 | Refactoring of the Voodoo thrash driver. 32bpp support for 3dfx Voodoo 4 or 5 was added. | Claimed |
+| MP140-037 | Refactoring of the Voodoo thrash driver. 32bpp support for 3dfx Voodoo 4 or 5 was added. | Partial |
 | MP140-038 | DX6 thrash driver outputs 16bpp resolutions and sorts them. | Claimed |
 | MP140-039 | DX5 thrash driver outputs 16bpp resolutions, limit of resolutions count is expanded from 30 to 100. | Partial |
 | MP140-040 | Refactoring of the thrash driver initialization code. | Partial |
