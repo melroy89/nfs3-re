@@ -105,9 +105,18 @@ returns the model record's `+0x10` name on its ordinary registry path.
 The six other row slots are untouched by this writer. The loaded registry
 and file determine the actual names. Replay playback compatibility remains open.
 
+All 11 retained Modern packages from 1.1.0 through 1.6.1 match in the
+372-byte metadata writer, the 446-byte selection and dispatch span
+`00447190..0044734e`, and the 55-byte car-name helper. The check reads these
+virtual-address spans from each archive's own `nfs3.exe`. This confirms
+that the 1.4.0 description layout change leaves these three routines
+unchanged. Other replay readers, validation callees and runtime inputs
+remain outside this comparison.
+
 **Done, verified static:** complete callback and binding,90 changed-byte
 localization, removed heading, initial row offsets, retained loop and narrowed
-coordinate reads. **Unresolved:** record population and string validity,
+coordinate reads and the selected replay row producer. **Unresolved:**
+other menu-mode producers and runtime string contents,
 actual component/resource selection, coordinate units, text-helper effects,
 full callback lifecycle and rendered acceptance. Callback+54h is an observed
 registration field; no generic ABI is inferred solely from that offset.
