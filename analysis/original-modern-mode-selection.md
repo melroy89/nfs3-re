@@ -159,3 +159,32 @@ give the two fields distinct names and use the address map for the exact
 build. The matched ranges establish the storage move and retained
 local policy. Indirect references and runtime mode persistence remain
 unverified. See the [packaged loading setting](original-modern-loading-timing.md#packaged-loading-setting-and-separate-title-delay).
+
+### 1.5.0 changes the stored request format and sentinel trigger
+
+The retained 1.5.0 archive's `nfs3.exe` (SHA-256
+`d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae`)
+already uses the packed request documented for final. Compare disassembly
+of the 1.4.0 writer at `004483dc..004483f8` with the 1.5.0 writer at
+`00448508..0044854a` and reader at `0044838e..004483c3` using
+`objdump -d -Mintel` on the extracted executables.
+
+| Checked behavior | 1.4.0 | 1.5.0 |
+|---|---|---|
+| Ordinary request in `006fbc18` | Scalar width × height + depth | Width in the low WORD, height in the high WORD |
+| Special request | `7fffffffh` when the chosen row's score equals the tracked maximum | `7fff7fffh` when the chosen row pointer equals the final row pointer |
+| Replay of the stored request | Scalar score passed to `004bee80` | Zero-extended width and height plus separately selected depth passed to `004bedcc` |
+
+In 1.5.0, helper `00448378` returns the final row pointer as
+`00a18330 + (count - 1) * 0x114` for nonzero count. The writer compares
+that pointer at `00448516` and stores the packed sentinel at `0044851a`.
+The ordinary branch writes the two WORDs at `00448539` and `00448542`.
+The reader takes them from `006fbc18` and `006fbc1a` before calling
+the selector at `004483be`.
+
+This dates the format change to the checked 1.4.0 → 1.5.0 boundary.
+If an old scalar sentinel reached the new reader verbatim, it would
+decode as width 65535 and height 32767. Whether an actual upgrade
+preserves, resets or migrates that DWORD requires tracing the saved
+configuration lifecycle. Runtime mode choice and display behavior
+remain untested.
