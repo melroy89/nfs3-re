@@ -95,6 +95,8 @@ The [original installer reader](original-modern-language-table.md#original-insta
 
 The original local movie root is `G:\FeData\movies\` at `007a32b4`, beyond the 22 final slots. Address correspondence alone cannot establish subsystem correspondence. For example, the English slot becomes a shared speech base with a [separate language append](original-modern-sound-bank-language.md), while the final movie slot overlays an original speech record. `G:` is specific to the inspected installer file. These are initial path values derived from the file and executable, with actual media access unobserved.
 
+For one directly paired audio consumer, both executables read `007a2a34` at `004105e0` on selector `18h`, pass `%sshow6` from `005368c4`, and call the formatter at `004105f3`. The original local installer therefore yields `G:\GameData\Audio\pc\show6`, while the final initializer yields `.\gamedata\audio\pc\show6` for the same branch. The numbered `show%d` branch also uses this slot, although its number producer differs. This verifies a path change for a retained audio route. Race playlist selection and startup have [separate executable changes](original-modern-music-selection.md), and neither audio access nor playback was observed here.
+
 ## 5. Consequences for earlier chapters
 
 - **INI:** complete ordinary producer-to-reader linkage is now traced. Original setting-by-setting registry migration and later aliases/writes remain separate.
