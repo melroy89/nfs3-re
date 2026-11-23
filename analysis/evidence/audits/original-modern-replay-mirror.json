@@ -98,18 +98,18 @@
           "assembly_sha256": "76ddcf7ccb35ee542f52842a0e263305e80656439d3b0b827448c583638b2e54"
         },
         {
-          "start": "0048d287",
+          "start": "0048d274",
           "end": "0048d2b1",
-          "bytes_sha256": "0d082f62a2097255858872514aca9f3418c780df5182d6be891d2499dfe67025",
-          "assembly": "analysis/captures/modern-differences/replay-mirror/original-0048d287.asm",
-          "assembly_sha256": "a1760682fded4971c260d0618a1ffd0de5934c387b815571f04d558eaaed8e4b"
+          "bytes_sha256": "683c4a6fe3915dcf177cd756208f1892df0e32025e73362d3ec90f61cfc3cde3",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-0048d274.asm",
+          "assembly_sha256": "0cde2a3c09a19e99264008fb2197cc8bdb2803e46202e71b075d2d29397a3a0e"
         },
         {
-          "start": "004bc751",
+          "start": "004bc729",
           "end": "004bc77c",
-          "bytes_sha256": "099c0a5464678098a7e4c197af8ef14cf623b31d5d9ed84e4bd7f57f46407c55",
-          "assembly": "analysis/captures/modern-differences/replay-mirror/original-004bc751.asm",
-          "assembly_sha256": "2e99cae7d58e9f95a807b78bfd768b6ac1df3bc95a505860084c7a796f0a700e"
+          "bytes_sha256": "a3a61a5fa680f2136a915c2ad65af426b0f93347b907af63b3c9a457da02b03c",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-004bc729.asm",
+          "assembly_sha256": "ceaa7643415a1064531606be3be19a07545f95a4d153cfe5e24dc8d7fb670c83"
         }
       ]
     },
@@ -209,18 +209,18 @@
           "assembly_sha256": "cd3d6e99d64c219f90fcd547bcdec5ca9ed351270b3365be5c1fb1e9ca7185ae"
         },
         {
-          "start": "0048d287",
+          "start": "0048d274",
           "end": "0048d2b1",
-          "bytes_sha256": "0d082f62a2097255858872514aca9f3418c780df5182d6be891d2499dfe67025",
-          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-0048d287.asm",
-          "assembly_sha256": "e7e66a37ca38e2193e1ed32c68efd7f8cda49b539b077912e0c8570a62c4436e"
+          "bytes_sha256": "683c4a6fe3915dcf177cd756208f1892df0e32025e73362d3ec90f61cfc3cde3",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-0048d274.asm",
+          "assembly_sha256": "d9c3d886d7d6606fef1bb9e618ba6808f074fdc82f00120bb43858d915efd410"
         },
         {
-          "start": "004bc751",
+          "start": "004bc729",
           "end": "004bc77c",
-          "bytes_sha256": "099c0a5464678098a7e4c197af8ef14cf623b31d5d9ed84e4bd7f57f46407c55",
-          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-004bc751.asm",
-          "assembly_sha256": "553084c0d7845d2167e465e19fe56d3c71fe29124d8aac3227f07e779ce77357"
+          "bytes_sha256": "a3a61a5fa680f2136a915c2ad65af426b0f93347b907af63b3c9a457da02b03c",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-004bc729.asm",
+          "assembly_sha256": "ae42cd7ebbddd08deab84a2ebf501364f670cefc19d68fae945ca2c574c18488"
         }
       ]
     }
@@ -247,8 +247,8 @@
     "004c5097"
   ],
   "retained_render_path_starts": [
-    "0048d287",
-    "004bc751"
+    "0048d274",
+    "004bc729"
   ],
   "changed_starts": [
     "00422aa0",
@@ -274,8 +274,8 @@
         "0048f970": "f4c577590bc8c49ba5c4ea15d376f3870d4205e9436b154bc947858ec7074526",
         "0048f550": "b008ac4a4b20f2b403063952ae1417421c263190c6675ed036f9db8a5e472f72",
         "00431800": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997",
-        "0048d287": "0d082f62a2097255858872514aca9f3418c780df5182d6be891d2499dfe67025",
-        "004bc751": "099c0a5464678098a7e4c197af8ef14cf623b31d5d9ed84e4bd7f57f46407c55"
+        "0048d274": "683c4a6fe3915dcf177cd756208f1892df0e32025e73362d3ec90f61cfc3cde3",
+        "004bc729": "a3a61a5fa680f2136a915c2ad65af426b0f93347b907af63b3c9a457da02b03c"
       }
     },
     "1.4.0": {
@@ -297,8 +297,8 @@
         "0048f970": "f4c577590bc8c49ba5c4ea15d376f3870d4205e9436b154bc947858ec7074526",
         "0048f550": "b008ac4a4b20f2b403063952ae1417421c263190c6675ed036f9db8a5e472f72",
         "00431800": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997",
-        "0048d287": "0d082f62a2097255858872514aca9f3418c780df5182d6be891d2499dfe67025",
-        "004bc751": "099c0a5464678098a7e4c197af8ef14cf623b31d5d9ed84e4bd7f57f46407c55"
+        "0048d274": "683c4a6fe3915dcf177cd756208f1892df0e32025e73362d3ec90f61cfc3cde3",
+        "004bc729": "a3a61a5fa680f2136a915c2ad65af426b0f93347b907af63b3c9a457da02b03c"
       }
     }
   },

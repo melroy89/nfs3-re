@@ -10,7 +10,7 @@ SPANS=[(0x484450,0x4844c0),(0x422aa0,0x422bd0),
        (0x482f5b,0x482f7f),(0x4c5097,0x4c50af),
        (0x484070,0x4840ae),(0x484260,0x4842de),(0x4c5017,0x4c5031),
        (0x48f7b0,0x48f81b),(0x48f970,0x48fa09),(0x48f550,0x48f69a),
-       (0x431800,0x43182d),(0x48d287,0x48d2b1),(0x4bc751,0x4bc77c)]
+       (0x431800,0x43182d),(0x48d274,0x48d2b1),(0x4bc729,0x4bc77c)]
 
 HISTORICAL_ARCHIVES = {
     '1.3.1': ('6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934', 'original'),
@@ -41,7 +41,7 @@ def main():
     retained_gates = {'004844c0', '00482d6b', '00482f5b'}
     retained_hud_paths = {'00484070', '00484260', '004c5017', '0048f970'}
     retained_f7_paths = {'004c5097', '0048f7b0', '0048f550', '00431800'}
-    retained_render_paths = {'0048d287', '004bc751'}
+    retained_render_paths = {'0048d274', '004bc729'}
     retained_starts = retained_gates | retained_hud_paths | retained_f7_paths | retained_render_paths
     changed_starts = {'00484450', '00422aa0'}
     span_hashes = {
