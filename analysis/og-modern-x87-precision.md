@@ -411,8 +411,17 @@ offsets, and the 272 bytes from `0056cbb0` through the start of
 the next helper's classification table. The angle routine converts
 its scaled operand with FISTP at `0051f3c4`, shifts the integer
 left by four, and reads a TBYTE at that offset from `0056cbb0`.
-That establishes a 16-byte stride. The byte comparison does not
-independently establish the possible index range for every operand.
+That establishes a 16-byte stride. On the ordinary path, the
+absolute-value comparison at `0051f3a4` and conditional exchange at
+`0051f3ad` place the smaller magnitude in ST(0). The slot-15 helper
+divides the smaller by the larger. If that result is finite and
+lies in [0, 1], multiplying by 16 and rounding to nearest at
+`0051f3c4` yields an index from 0 through 16. These 17 slots occupy
+the full 272-byte span. Decoding the TBYTE at the start of each slot
+and converting to binary64 agrees with arctangent of index/16
+within 2^-53. This check identifies the table's role. It does not
+verify extended-precision rounding or bound exceptional intermediate
+results.
 
 ### The nested divide helper restores precision before division
 
