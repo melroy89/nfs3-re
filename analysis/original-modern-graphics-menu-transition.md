@@ -189,3 +189,12 @@ to `004be5e0`. That initializer itself changes between versions.
 The retained call site therefore carries restored settings into
 version-specific viewport geometry. See the
 [viewport comparison](original-modern-viewport-geometry.md).
+
+A paired read of the registered setup entry `0044d2a0..0044d3de`
+through its RET identifies exactly 17 differing bytes. Sixteen
+belong to the snapshot-tail replacement at `0044d2b9..0044d2c9`
+and one to the SFX intensity mask at `0044d373`. The following
+two alignment bytes match. Together with the three transition
+displacement bytes, these account for all 20 differences in the
+indexed interval `0044c2ce..0044de80`. Runtime menu and driver
+behavior remain outside this static comparison.
