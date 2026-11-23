@@ -69,6 +69,7 @@ These links reconcile selected outside-body spans with already inspected mechani
 
 | Outside span / NOP run | Existing explanation | Remaining boundary |
 |---|---|---|
+| `004b5a3c..004b5a58` | Seven [renderer type dispatch pointers](original-modern-renderer-initialization.md#modern-load-configured-driver-then-dispatch-by-type) occupy 28 bytes formerly used by original renderer startup instructions. Modern uses the lowest set type bit to index the table after checking the index. This accounts for all 27 differences. | Runtime driver selection and initialization outcomes remain untested. |
 | `0045d9d5..0045dae0` | All 37 differences lie in the [camera transition callback](original-modern-camera-duplicates.md), covering retargeted branches, revised Cancel restoration and the added duplicate cleanup call. | Menu execution and persistence outcomes remain open. |
 | `004ccd76..004ccd98` | The [power-message handler](original-modern-window-handling.md) occupies this former original instruction span. The 28-byte callback at 004ccd78 is surrounded by six NOP bytes, accounting for all 33 differences. | The dispatcher returns the result slot rather than callback EAX. OS suspend behavior remains untested. |
 | `0040ff80..0040ff9c` | All 28 bytes differ. Modern places the [show music cycle and seed tables](original-modern-music-selection.md) in an original resource-helper tail. Six track IDs and two zero bytes precede the 20-byte seed mapping at 0040ff88. | The mapping is established. Runtime seed distribution and audio output remain untested. |
