@@ -224,3 +224,21 @@ The backup `TRK008/TR0804.CAN` differs from those variants.
 Whole-file byte comparisons establish these identities. They
 do not establish why the files were copied or whether either
 executable opens the added filenames.
+
+### The retained camera loader constructs standard CAN names
+
+Both executables retain the filename-building loop at
+`0040f2bb..0040f322` and its format strings at
+`005367fc` and `00536808`. It takes a caller-supplied prefix
+and starts by formatting `%s%02da.can` with index zero. After
+loading a present file, it increments the index, stores the
+returned pointer at `00570a30 + 4 * index`, and builds the
+next filename with `%s%02d.can`. It stops at a missing file or
+before opening index 7.
+
+With a `TR08` prefix and all earlier files present, this loop
+requests `TR0804.CAN` at index 4. Neither format appends a
+`.TRK000` suffix. A different prefix or another loader could
+still open the copied files. This evidence establishes the
+shared naming policy and conditional request, with actual
+file opens and camera effects unobserved.
