@@ -877,3 +877,20 @@ and a separate response return. It supplies no direct edge
 from the newly written RPM to that return within this tail.
 Later RPM consumers and any effect across simulation ticks
 remain open.
+
+A later call can consume the RPM field when the vehicle leaves the
+free-rev route. At `004aaf52`, the routine reads vehicle offset
+`590h` and compares it with profile offset `1c4h`. On the
+torque-interpolation path, the above-redline case passes the
+profile redline in EDX at `004ab493`. The other case reloads
+current RPM at `004ab4bc` and passes it to the same interpolator
+at `004ab4c5`. Both branches multiply its x87 result by the
+per-gear factor and spill it to binary32 at `[EBP-1ch]`.
+The entire `004aaed1..004abd9c` body matches between executables.
+
+This identifies two possible later consumers of an RPM difference:
+the branch that chooses the interpolation input, and the input
+itself if the current-RPM branch runs. The intervening gear helper
+and other RPM writers can change the value first. No observation
+shows a difference surviving across ticks or changing a torque
+sample. See the [drivetrain evidence](police-torque-runtime.md#full-drivetrain-entry-versus-actual-torque-interpolation).
