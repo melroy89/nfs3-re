@@ -113,6 +113,16 @@ The player loader selects `player1` for input EAX0 and `player2` for EAX1 using 
 
 The deletion adapter calls imported `KERNEL32.dll!DeleteFileA` through IAT `005344b0` in both binaries; this is API identity evidence rather than a guessed function name. Combined with the config load comparison, this gives bounded static support for MP100-045: the inspected timestamp-to-executable deletion gates are removed for config.dat and both selected player specifications. It does **not** promise files are never deleted or rewritten: missing-file handling, config size rejection, validation/default routes and I/O failures still exist. Actual update scenarios, file permissions, helper error contracts and precise first-release introduction remain untested.
 
+The earliest retained Modern member, 1.1.0, already bypasses both
+timestamp checks. At `00472a22` the config loader zeros EAX and jumps
+to `00472a5b` instead of using the original timestamp comparison.
+The player-spec loader's span `004dc9c7..004dc9eb` matches across
+1.1.0, 1.4.0 and 1.5.0, including the jump to its read path.
+The original direct call to `00472940` at `00472a2e` has no counterpart
+in the config-load windows of the 11 retained Modern packages. This
+dates the selected bypasses to at least 1.1.0. The 1.0.0 executable
+and actual upgrade behavior remain unverified.
+
 The player filename builder changes independently. Original copies prefix `007a2fb4`, appends literal `carspecs\`, the selected player name, then `.spc`, into shared buffer `00564188`. Modern copies prefix `007a30b4`, skips the `carspecs\` append with `JMP 004dc85c` and37 NOPs, then appends name/extension. The audit verifies all other builder bytes identical. These buffers and unbounded string-copy loops imply shared scratch/length dependencies; reentrancy and arbitrary path safety are not established.
 
 The final prefix producers are not traced here, so this builder change alone does not prove a root-directory location. Likewise, both config routines using `%sconfig.dat` with prefix `007a3034` does not establish what initializes that prefix. MP100-044's complete config relocation and MP100-046's driver-change reset policy therefore remain separate questions; neither is silently accepted from the timestamp finding.
