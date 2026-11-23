@@ -566,6 +566,18 @@ of the direct call at that address.
 | `004be706`, `004be714`, `004be72e`, `004be73c` | Viewport initialization | 1.6.0 |
 | `004f9411` | Binary32-to-signed-DWORD conversion through a stack slot | 1.6.0 |
 
+In the 1.5.2 → 1.5.3 pair, the menu store to `006fd1d0` and
+the logo store to `[EBP-10h]` move five bytes earlier, directly
+into the former call slots. The rewritten slider path stores to
+the same `[EBP+72h]` at `0046a55b` after its multiply. In the
+1.5.3 → 1.6.0 pair, the numeric-scale and binary32 conversion
+stores similarly move into the former call addresses `00489b88`
+and `004f9411`. All five inspected stores therefore follow the
+ambient rounding mode at FISTP without the preceding FRNDINT
+truncation. The slider rewrite also changes the operand
+preparation, so this comparison alone cannot predict the result
+from an original slider input.
+
 Together with the earlier viewport rows, this accounts for every
 intermediate-only address in the census. The disappearance column
 does not establish the resulting value or operation at every site.
