@@ -540,10 +540,18 @@ address set.
 | 1.5.3 | 446 | 0 | 12 | 6 |
 | 1.6.0–1.6.1 | 436 | 0 | 10 | 0 |
 
-The unchanged count at 1.4.0 conceals four address substitutions.
-The original/final comparison alone misses these intermediate
-changes. An added address may reflect moved code. The census does
-not identify semantic correspondence for the added addresses.
+The four 1.4.0 substitutions are all inside the
+[viewport initializer](original-modern-viewport-geometry.md).
+The 126-byte span at `004be70d..004be78b` in 1.3.1 moves five
+bytes earlier to `004be708..004be786` in 1.4.0. The only changed
+bytes in the paired spans are the low bytes of four CALL
+displacements. Calls at `004be73d`, `004be744`, `004be777` and
+`004be77e` move to `004be738`, `004be73f`, `004be772` and
+`004be779`, respectively. Each still calls `004dfd56`, and the
+following FISTP stores still use the same four stack offsets.
+This identifies the substitutions as movement of the same local
+conversion sequence. Inputs from the enclosing initializer and
+other releases' intermediate-only addresses require separate checks.
 
 The inspected helper change therefore affects retained callers well
 beyond the RPM conversion. The menu and HUD bypasses are separately
