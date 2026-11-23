@@ -56,6 +56,17 @@ what has already published them. This orders these three call
 sites. It does not establish the first dimension write across all
 startup branches or renderer callbacks.
 
+A literal reference scan alone cannot identify every publisher.
+The two width/height DWORDs are at offsets `16a4h` and `16a8h`
+from the configuration block destination `006fbb40`. The
+loader's bulk copy at `00472a94..00472aa3` can therefore reach
+both if the effective copy count covers at least `16ach` bytes
+and DF is clear. That copy runs after the first angle calculation
+on the startup route above. A complete writer inventory must
+account for overlapping bulk transfers as well as the explicit
+mode publisher. The effective copy count and field contents on
+each load were not observed.
+
 The cache at `0055fecc` is file-backed and starts at binary32
 90.0 (`42b40000h`) in both 1.6.0 and 1.6.1. In the final
 executable, linear disassembly and the HIGHLOW relocation list
