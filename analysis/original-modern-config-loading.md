@@ -111,6 +111,18 @@ The player loader selects `player1` for input EAX0 and `player2` for EAX1 using 
 | Timestamp helper returns nonzero | `004dc9e0` calls `004e28a0`, then enters default/rewrite route `004dca37` | This local deletion route is bypassed;30 NOP bytes occupy `004dc9cd..004dc9eb` |
 | Other load/default/validation work | Surrounding paths retained | Same bytes outside changed envelope `004dc9c7..004dc9eb` in the complete loader |
 
+The byte-identical suffix at `004dc9eb..004dca4e` in the paired loader
+distinguishes three paths. If the call to `004e0fe0` returns zero,
+`004dca2e` calls the default helper `004dc670` and exits without
+calling `004dca50`. With a nonzero result, the loader calls `004dc8b0`
+only if the earlier return from `004e43a0` is signed-positive. It then
+calls `004e1890` and tests the low byte returned by `004dc710`. A
+nonzero low byte leads to `004dca50`; zero exits directly. The retained
+default-and-rewrite entry at `004dca37` calls both `004dc670` and
+`004dca50`, which distinguishes it from the zero-result path. These
+are local branch contracts. The helper return meanings, on-disk field
+validation and write success require separate evidence.
+
 The deletion adapter calls imported `KERNEL32.dll!DeleteFileA` through IAT `005344b0` in both binaries; this is API identity evidence rather than a guessed function name. Combined with the config load comparison, this gives bounded static support for MP100-045: the inspected timestamp-to-executable deletion gates are removed for config.dat and both selected player specifications. It does **not** promise files are never deleted or rewritten: missing-file handling, config size rejection, validation/default routes and I/O failures still exist. Actual update scenarios, file permissions, helper error contracts and precise first-release introduction remain untested.
 
 The earliest retained Modern member, 1.1.0, already bypasses both
