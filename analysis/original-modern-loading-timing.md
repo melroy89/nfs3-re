@@ -184,3 +184,22 @@ that setting as described above. The separately configured
 The title delay and the race loading budget can therefore be
 configured independently. See the
 [title delay comparison](original-modern-title-delay.md#packaged-title-delay-release-boundary).
+
+### Zero loading budget still runs the progress path
+
+With `LoadingSplashTime=0`, 1.4.0 publishes a zero budget. In
+1.5.0 and final, the signed clamp also publishes zero when preliminary
+elapsed time is within the ordinary signed 32-bit millisecond range.
+The latter result follows from subtracting elapsed from zero before the
+clamp. Extreme clock deltas can change the signed interpretation of
+the wrapped subtraction.
+
+In final, a zero target skips the estimator's elapsed-time division.
+An exact 100% request also bypasses the 50 ms admission check, but
+still uses the prior-progress-plus-five fallback. Starting at zero
+progress, the first admitted completion request therefore returns 5%
+under ordinary floating-point state. The caller can retry until the
+result reaches 100% or the abort path wins. A zero setting removes the
+configured time budget. Progress updates, input handling and renderer
+work can still take time. This is derived from the audited instructions.
+Visible splash duration with a zero setting remains unmeasured.
