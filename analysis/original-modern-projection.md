@@ -53,6 +53,17 @@ retains the binary32 startup argument. This particular startup
 path supplies a fixed 90° in both releases. The change is in its
 representation and downstream projection calculation.
 
+The same cutover applies to all three adapter call sites
+(`004becf7`, `004bed34`, `004bed61`). Across the 11 retained
+archives, each targets `004dbce0` through 1.5.3 and `004dbcc0`
+from 1.6.0. The original's 183-byte span starting at `004dbce0`
+matches every retained build through 1.5.3. The 117-byte span
+starting at `004dbcc0` matches between 1.6.0 and final 1.6.1.
+The 272-byte builder span at `004bf260` matches
+the original in every archive. This dates the argument handling
+and projection arithmetic change while preserving the distinction
+between the wrapper and the builder it calls.
+
 ## The downstream builder is retained
 
 Complete **`004bf260..004bf36f`**, 272 bytes, is byte-identical in both executables. Its seven stack inputs include four rectangle floats, horizontal/vertical half-angles and a final field. It uses the same degree constant and FPTAN-based projection arithmetic, storing globals near `0056009c`.
