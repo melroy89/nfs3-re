@@ -271,11 +271,21 @@ traces `004a6ec4` copying the first literal at `0053f42c`,
 `.\gamedata\tracks\`, into that slot. The derived default
 request is therefore `.\gamedata\tracks\TRK008\Tr0804.can`
 relative to the process working directory. The original prefix
-builder reads the same slot. The original executable has no
-matching printable `gamedata\tracks\` literal in a whole-file
-ASCII strings scan, so its root producer still needs tracing.
-The backup directory name `gamedata_org` describes the local
-comparison inputs. Its use by either process has not been observed.
+builder reads the same slot, populated by the
+[original `install.win` reader](original-modern-language-table.md#upstream-language-selection-installwin-becomes-ini-setting).
+Original startup calls `004a6e10` at `004a3d4a`. The copy
+at `004a6ece..004a6efc` stores the fourth nonempty processed
+record at `007a2634 + 3 * 0x80 = 007a27b4`. The local
+`install.win` (SHA-256
+`00787ec3b3c71303843946ad5116607baf17111f7f7632efd72bd94b2f0a7456`)
+has `english`, `local`, `.\GameData\`, and
+`.\GameData\Tracks\` as its first four records. With this
+file and the same working directory, both routes yield the
+same path components apart from case. The original takes
+the root from installer data, while Modern initializes a
+fixed relative root. Neither of these inputs names the
+local `gamedata_org` backup. Actual working directories,
+later path writes and file opens remain unobserved.
 
 Filename index 4 is written to slot `00570a44`: the loader
 increments ECX before its store at `0040f30f`. Consumers use
