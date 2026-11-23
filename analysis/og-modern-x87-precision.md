@@ -894,3 +894,28 @@ itself if the current-RPM branch runs. The intervening gear helper
 and other RPM writers can change the value first. No observation
 shows a difference surviving across ticks or changing a torque
 sample. See the [drivetrain evidence](police-torque-runtime.md#full-drivetrain-entry-versus-actual-torque-interpolation).
+
+### The torque interpolator keeps the same scaling and spill points
+
+The complete `004a8a99..004a8bb9` body and the binary32
+constant at `0053dc9c` match. The routine takes signed RPM in
+EDX, scales it by exactly 1/256, and spills the coordinate to
+binary32. For ordinary finite values the following comparisons
+bound the coordinate to 0 through 40. It passes the coordinate
+as binary64 to `004f1c30` and spills that result to binary32.
+A zero absolute difference selects a single table sample.
+Otherwise it uses FISTP on the returned value for index i,
+and reads samples i and i+1 at profile offset `114h`, using
+the profile pointer at vehicle offset `528h`.
+
+In the two-sample branch, the routine forms the slope as the
+second sample minus the first and spills it to binary32. It
+then spills the intercept (first sample minus i times slope)
+before evaluating the slope times the original coordinate
+plus that intercept. It spills the final response to binary32
+before reloading it for return in ST0. These intermediate
+stores are part of the comparison contract. A fused linear
+interpolation formula can round differently. The checked EXE
+bytes establish the same implementation, with matching input
+tables, live control words and output equivalence still to
+be established for a particular vehicle and tick.
