@@ -748,3 +748,19 @@ in divide-and-multiply arithmetic rather than reading a CPU
 model identifier at the flag write. Its result also depends
 on the x87 environment in effect when the initializer runs.
 No hardware or Wine result was measured.
+
+The startup dispatch is also retained. In both executables,
+`004ff370` calls `004ff41c` with priority limit `21h`.
+The runner scans ten six-byte records at `0056b7de..0056b81a`,
+ignores records marked 2, selects the lowest eligible priority,
+calls its pointer through `004ff410`, marks it 2 and repeats.
+The file-backed table and the runner bytes match.
+
+The FPU initializer `004ff5dc` has priority 2. Its admitted
+path executes FNINIT and can publish the FPU classification
+byte at `005644c1`. The arithmetic check `0051f2a0` has
+priority 3 and reads that byte. From the file-backed initial
+record state, the runner therefore dispatches the FPU initializer
+before the arithmetic check. The initializer has its own skip
+conditions, so that ordering alone does not establish the
+control word or classification on every startup.
