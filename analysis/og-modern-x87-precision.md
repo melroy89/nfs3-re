@@ -519,3 +519,19 @@ unless intervening code changes it. It does not prove the precision
 in effect throughout the frame. Final Modern Patch removes those
 tests and reuses the same address for the adapter index, as traced
 in the [renderer comparison](original-modern-renderer-lifecycle.md#retail-uses-a-different-adapter-field-and-a-fixed-follow-up-mode).
+
+The software candidate paths (selectors 1 and 2) explicitly leave
+the gate at zero. They clear ECX at `004b5a92`, call `00431c50`,
+then store ECX at `004b5aaa`. The complete helper
+`00431c50..00431d50` saves ECX at entry and restores it at
+`00431d4d`. Its internal integer colour-table calculations do
+not carry an ECX result back to the caller. The Rage candidate
+branch at `004b5bef..004b5c76` has no direct write to the gate
+after the common clear.
+
+Thus the ordinary software path requests the retail race-frame
+control-word transitions described above. This concerns the
+candidate branches and the named state writes. The actual driver
+selected by an override and any indirect changes during a frame
+remain outside the result. See the
+[retail selector table](original-modern-renderer-initialization.md#original-selector).
