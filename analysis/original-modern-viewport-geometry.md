@@ -91,6 +91,23 @@ initializer's incoming EAX before RET. The other six saved
 registers are restored in both versions. Caller dependence on
 the old EAX value and runtime inputs remain unverified.
 
+Across the 11 retained archives, the ordinary epilogue switches
+from individual pops to POPAD in 1.4.0 and retains POPAD through
+1.6.1. The supplied original also uses individual pops. The
+ordinary return locations identify the specific bodies checked:
+
+| Executable | Initial save | RET |
+|---|---|---|
+| Supplied original | Individual pushes | `004be8d1` |
+| 1.1.0–1.3.1 | Individual pushes | `004be871` |
+| 1.4.0 | PUSHAD | `004be867` |
+| 1.5.0–1.5.3 | PUSHAD | `004be84f` |
+| 1.6.0–1.6.1 | PUSHAD | `004be859` |
+
+The individual saves do not by themselves establish the EAX value
+on every earlier return path. The explicit EAX dataflow above is
+verified for 1.3.1.
+
 Linear disassembly finds the same five direct initializer calls
 in 1.3.1 and 1.4.0. Both builds overwrite EAX before its next use
 at every inspected site. At `0044d28c`, `0044d4b2`, `004a3439`
