@@ -783,3 +783,22 @@ the classifier, its immediate caller and the initializer.
 Actual publication still depends on the initializer's gates.
 The classification is an arithmetic observation encoded by the
 program, with no live result measured in this comparison.
+
+For these fixed inputs, ordinary correctly rounded arithmetic
+under the classifier's `127fh` control word (24-bit significand,
+round to nearest) produces a zero residual. This follows by
+rounding each operation at the selected precision and then
+rounding each spill to binary64. At 24 bits the quotient is
+exactly `11188897 / 8388608` after rounding, and multiplying
+back rounds to 4,195,835. Exact rational calculation with
+53-bit and 64-bit operation precision, retaining the binary64
+spills, also gives a zero residual.
+
+Directed rounding can change the outcome. With 24-bit precision
+and rounding toward negative infinity, the product rounds to
+4,195,834.5 and the residual is 0.5, above the threshold even
+with a correctly rounded divide. With rounding toward positive
+infinity, the residual is −0.5 and the one-sided check stays
+clear. These are derived cases for the direct divide path with
+the bit initially clear. They neither reproduce faulty hardware
+nor measure the effective startup control word.
