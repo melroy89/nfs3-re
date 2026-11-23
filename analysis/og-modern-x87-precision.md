@@ -474,6 +474,16 @@ five-byte call at `004ab10c` stays `e8 45 4c 03 00` throughout.
 This local change therefore predates the 1.5.3 → 1.6.0 removal of
 the broader single-precision switches.
 
+The drivetrain is one consumer of a shared helper. Running
+`objdump -d -Mintel` on each file pinned in the dependency manifest
+and counting decoded direct calls to `0x4dfd56` gives 467 sites in
+the supplied original and 436 in official Modern. All 436 Modern
+sites appear at the same addresses in the original scan. This is
+a linear-disassembly census. It leaves runtime reachability,
+indirect callers and replacements for the 31 original-only sites
+open. The local helper change therefore has a wider potential
+scope than the RPM conversion traced here.
+
 Ends are exclusive. Both select truncation toward zero and restore incoming CW on their
 inspected normal return. FRNDINT is not controlled by PC, so the PC difference alone is
 not evidence of different ordinary finite truncation results. Exception masking/waiting
