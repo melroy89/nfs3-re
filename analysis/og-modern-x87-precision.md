@@ -859,3 +859,21 @@ lower cap and state gates can also make a difference in the
 limit immaterial to this write. This is a static dependency
 shared by both executables. No divergent RPM or trajectory
 was observed.
+
+After the free-rev RPM write, the matching block at
+`004ab3e0..004ab3ff` clears vehicle DWORDs `598h` and `594h`
+and jumps to the shared response tail. That tail at
+`004abd2b..004abd9c` selects the returned response using
+vehicle state `164h`, the comparison against zero of float
+`4f4h`, and the response locals. It does not reload the RPM
+field `590h` on this path. The two file-backed response
+coefficients at `0053dd44..0053dd4c` also match.
+
+The caller at `004adc0a` stores the returned x87 value as
+binary32 and splits it into a fraction scaled by profile float
+`1d0h` and the remaining difference. This sequence matches in
+both files. The trace therefore establishes an RPM state write
+and a separate response return. It supplies no direct edge
+from the newly written RPM to that return within this tail.
+Later RPM consumers and any effect across simulation ticks
+remain open.
