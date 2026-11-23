@@ -162,3 +162,18 @@ profile writes remain unverified. The
 [executable comparison](og-modern-x87-precision.md#the-torque-interpolator-keeps-the-same-scaling-and-spill-points)
 separately verifies the matching reader and the empty-token
 conversion path.
+
+The matching EXE path is now also verified. Both binaries retain
+the police constructor prefix at `00473890..004739d0`, the
+archive resolver at `0042c950..0042ca7c`, and the relevant
+name-helper span at `004392b0..00439336`. For model IDs
+500–505, both file-backed name tables resolve to `0000`,
+`0002`, `0003`, `0004`, `0005`, and `0001`, respectively.
+The shared format at `0053735c` forms the pursuit path and
+the helper supplies the basename `car`. The parser handoff
+at `0042c2e0..0042c310` also matches.
+
+This connects model 501 to the same relative `0002/CAR.VIV`
+path in both executables. It establishes neither the effective
+asset root on a live original run nor which constructor path
+that run takes.
