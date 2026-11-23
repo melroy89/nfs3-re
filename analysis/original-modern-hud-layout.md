@@ -72,6 +72,8 @@ For records `P0..P5` at `006fbc50 + i*0x1a4`, the following DWORD stores are dir
 
 Original also sets `006fbbb8/006fbbbc` to 1 in this body; Modern has no corresponding local stores. Other initialization/persistence writers must be traced before inferring final values of those globals. The old preset helper preserves EDX, supporting original default initializer's retained literal 1 across its call; Modern initializes its zero/one registers after the helper returns.
 
+The archived 1.4.0 initializer still writes `006fbbb8/bc` at `0048588b/91`. In 1.5.0 the writes are in separate helper `00472258`: it clears EAX, then sets AL to 3 before storing EAX at `00472272/77`. On the selected 1.5.0 defaults chain, `00472ad2` calls the HUD initializer and `00472ad7` immediately calls this helper. Indexed readers remain at `0042540e` and `00425421`. Thus the missing stores in the HUD routine do not imply that this defaults path stops setting the pair to 3. Other entry points and persisted overrides remain unverified.
+
 These defaults can later be replaced by saved settings or user edits. The table is not a claim that all six profiles are always active, or that raw header offsets correspond to a named minimap/unit/widget field without consumer evidence. In particular, a modern value of 3.0 alone does not verify the vendor's complete minimap-zoom claim.
 
 The later [map-scale consumer comparison](original-modern-map-marker-scaling.md#profile-scale-defaults-reach-map-zoom-independently-of-marker-extents) now establishes the +10h field's map-zoom use and cop/racer variant linkage. It narrows that earlier field-identity limitation without proving persisted-state or rendered coverage.
