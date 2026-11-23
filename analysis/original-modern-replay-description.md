@@ -90,6 +90,18 @@ the destination argument at `00446151`. The other menu modes share the
 row area. Complete row population and actual selected-file inputs remain
 outside this trace.
 
+For the selected `.rp3` route, the complete writer and jump table
+`00446050..004461c4` are byte-identical in the original and final. After
+its file and metadata checks succeed, it writes four consecutive rows.
+Row 0 looks up ID `102 + header[0x196c]`, which selects Hometown through
+Empire City for accepted indices 0–8 in the inspected English backup.
+Row 1 formats the DWORD at header `+0x1974` with ID 5 (`Laps`). Row 2
+maps the DWORD at `+0x1878` to IDs 213, 214, 215 or 220 (`Single Race`,
+`Tournament`, `Knockout`, `Hot Pursuit`). Row 3 formats the string
+returned by `00439250`. The six other row slots are untouched by this
+writer. These checks establish the selected path's text sources. They
+leave the row-3 label source and replay playback compatibility open.
+
 **Done, verified static:** complete callback and binding,90 changed-byte
 localization, removed heading, initial row offsets, retained loop and narrowed
 coordinate reads. **Unresolved:** record population and string validity,
