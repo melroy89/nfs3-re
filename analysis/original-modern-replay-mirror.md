@@ -57,6 +57,6 @@ The original also exposes the separate HUD-enable branch through action 12. Bind
 
 ## Conclusion and further work
 
-Static evidence supports coordinated replay-state admission changes in the toggle, eligibility predicate and refresh path. The default F7 shortcut chain is now established; **MP140-064 remains partial** because complete mirror-render consumer mapping and runtime output are not established. The removal of renderer-mask admission is an additional observed delta, not proof that all those renderers now support the feature.
+Static evidence supports changes in the F7 toggle and eligibility predicate that feed retained refresh and presentation gates. **MP140-064 remains partial** because the final mirror render chain and output are unverified. The removal of renderer-mask admission is a separate observed change. Actual support across renderers remains untested.
 
 Pending: all enable-global initialization/reset paths, layout-field role across profiles, complete camera eligibility, nondefault input/remapping and rendered replay mirror behavior. This does not alter or validate replay trajectory/file compatibility; the audited changes concern presentation admission.

@@ -6,7 +6,8 @@ import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
 SPANS=[(0x484450,0x4844c0),(0x422aa0,0x422b65),
-       (0x4844c0,0x484588),(0x4c5097,0x4c50af),
+       (0x4844c0,0x484599),(0x482d6b,0x482d8e),
+       (0x482f5b,0x482f7f),(0x4c5097,0x4c50af),
        (0x48f7b0,0x48f81b),(0x48f970,0x48fa09),(0x48f550,0x48f69a),
        (0x431800,0x43182d)]
 
@@ -32,6 +33,15 @@ def main():
         builders[label]=pe.get_data(0x48f550-0x400000,0x14a)
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows}
     assert builders['original']==builders['official_modern']
+    retained_gates = {'004844c0', '00482d6b', '00482f5b'}
+    gate_hashes = {
+        label: {row['start']: row['bytes_sha256'] for row in binary['spans']
+                if row['start'] in retained_gates}
+        for label, binary in result['binaries'].items()
+    }
+    assert gate_hashes['original'].keys() == retained_gates
+    assert gate_hashes['original'] == gate_hashes['official_modern']
+    result['retained_gate_starts'] = sorted(retained_gates)
     result['binding_chain']={'encoded':'00004104','slot':'0079c3cc',
         'shared_action_base':'0079c3a0','action_index':11,'scan_index':'0041',
         'action_builder_identical':True}
