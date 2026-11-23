@@ -110,6 +110,16 @@ at `00472442` also addresses it. The version-only reset bypasses
 that full fill. This establishes the local reset boundaries.
 Transitive writes and eventual playback-state admission remain open.
 
+In the supplied original, full defaults starts at `004723f0`.
+It fills the same `20f0h` bytes at `006fbb40` using `004e0640`.
+Final Modern moves this fill to `00472404`, then calls its separate
+header refresher. Both full-defaults bodies explicitly write
+ECX to the playback selector at `00472442` and the session selector
+at `00472448`. Final Modern zeros ECX at `00472427` before
+`004f2790`, whose ordinary epilogue restores it. The fill and the
+later selector stores are thus retained reset mechanisms even
+though Modern separates header refresh from full initialization.
+
 ## Removed save gate belongs to the original -msdemo flag
 
 The [command-line audit](original-modern-command-line.md#table-contents-change-while-layout-remains) establishes that switch index21 sets bit21 of DWORD `0055eb2c`, equivalent to mask20h of byte `0055eb2e`. The config audit now independently pins slot21 at `0055eb88`: original points to literal `-msdemo`; final Modern points to an empty string. Thus the original save bypass described above has a concrete named-switch producer. Calling it a universal “disable saves” option would overstate its contract: the same bit has multiple consumers, and the name's intended demo-mode semantics are not inferred from its spelling.
