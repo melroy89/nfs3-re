@@ -304,6 +304,17 @@ The [1.5.3→1.6.0 header/default audit](original-modern-frame-setting.md#histor
 
 ## The 1.5.0 header gate resets the ordinary 1.4.0 resolution request
 
+The earlier archive members establish a different post-copy policy.
+In 1.1.0, `00472ac0` checks the declared block size against `0x20f0`.
+A match skips this local defaults call and reset-flag store. The
+61-byte span `00472aac..00472ae9` is identical in 1.2.0 through 1.4.0.
+In those builds, a size mismatch calls defaults and marks the reset
+flag. A size match still marks the flag if the unsigned stored
+display request at `006fbc18` is below `0x2710`. Neither prefix checks
+the version WORD. The minimum-version reset documented below appears
+in 1.5.0. These checks describe the post-copy route. File-time gates,
+flag consumers and actual mode selection are separate.
+
 The [resolution format comparison](original-modern-mode-selection.md#150-changes-the-stored-request-format-and-sentinel-trigger)
 pins the two packaged executables by SHA-256. Their header and load
 paths explain what happens when the ordinary 1.4.0 configuration
