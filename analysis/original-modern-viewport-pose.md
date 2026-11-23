@@ -103,6 +103,10 @@ Under the wrapper's previously verified conditions—nonzero control mode, sessi
 
 ## Historical camera-menu addition is now dated directly
 
+### Earlier mirror-direction claim
+
+The 1.4.0 and 1.5.0 archive members match across the selected scene initializer `00422cf0..004238a8`, pose wrapper `004228e0..00422a30`, extractor `00422520..00422604`, blend helper `004223c0..00422512`, and finalizer `00422850..004228df`. The projection caller `004dbde0..004dbee6` also matches, including its mirror rectangle selection. The adapter at `004bed20` matches through its return at `004bed8b`; the first difference in the wider window is at the next routine, `004bed90`. These checks narrow the search for MP150-006 to inputs, other consumers or downstream behavior. The reported horizon change remains vendor-claimed. The later 1.5.1 selector below has separate evidence.
+
 The [1.5.0→1.5.1 menu/translation pair](original-modern-localization-151.md#historical-menu-assets-bind-two-new-labels) verifies the exact15-line insertion adding the rear-camera button/cascade and `lang1938` label, with every old camera-menu line retained. This narrows the historical introduction gap for that authored control; it does not date every EXE camera mechanism or prove runtime availability/selection. The same comparison finds the separate mirrorlevel label replacement, which is not a new-control introduction.
 
 The same release boundary adds executable consumers. In 1.5.1, the pose branch at `00422922` tests `006fd1cc` before choosing fixed descriptor `00661220` at `0042292b`. The selected branch also requires a nonzero incoming control mode and `006fd3b0 != 1`. The dispatch route at `00426482` tests that selector after the ordinary indirect handler, then calls `004240c0` with EAX=`00661220` and EDX=1 if both global gates admit it. The corresponding 1.5.0 paths lack both selector tests. A direct-operand scan also finds the 1.5.1 snapshot, restore and default stores at `0045d957`, `0045da32` and `00472266`. This dates the selected menu, initialization and camera paths together. Runtime rendering remains unverified.
