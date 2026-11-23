@@ -41,6 +41,18 @@ Modern's exact constants are retained: 0.5, degree factor **0.017453279346227646
 
 The 0.75 relationship is a reference aspect factor; this wrapper itself does not load live width/height to compute the vertical angle. Actual projection depends on the dimensions passed to the builder and other camera/state consumers. Do not claim that this one helper proves every widescreen effect is correct.
 
+The renderer startup caller dates this interface change to the
+checked 1.5.3 → 1.6.0 boundary. In 1.5.3, `004b5c17` loads EDX
+with integer 90 (`0000005a`) and `004b5c23` calls `004bed50`.
+In 1.6.0, `004b5c08` loads the binary32 representation of 90
+(`42b40000`) and `004b5c14` calls the same adapter. The adapter
+pushes EDX at `004bed58` before replacing EDX with a rectangle
+field. Its call at `004bed61` changes from the integer wrapper
+at `004dbce0` to the binary32 wrapper at `004dbcc0`. Final 1.6.1
+retains the binary32 startup argument. This particular startup
+path supplies a fixed 90° in both releases. The change is in its
+representation and downstream projection calculation.
+
 ## The downstream builder is retained
 
 Complete **`004bf260..004bf36f`**, 272 bytes, is byte-identical in both executables. Its seven stack inputs include four rectangle floats, horizontal/vertical half-angles and a final field. It uses the same degree constant and FPTAN-based projection arithmetic, storing globals near `0056009c`.
