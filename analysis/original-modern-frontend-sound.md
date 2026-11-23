@@ -6,6 +6,17 @@ Static comparison of the supplied original/backup and official Modern v1.6.1, wi
 
 ## Changed caller contract at 004181d0
 
+The retained archives date the dedicated volume source to 1.5.0. The
+1.4.0 body calculates the request byte from EDX and `006fbbf4`.
+All retained packages from 1.5.0 through 1.6.1 instead load `006fd1d0`
+and mask AL with `0x7f` at `0041821c..00418223`. Between 1.5.1 and 1.5.2
+the later request-mode checks are reorganized at `0041822a`: both
+`006fbc00 == 2` and `005525a4 != 0` still reach the same mode-1
+record writes, but 1.5.2 shares that block. The volume instructions match
+across this rewrite. The [replay-list sound call](original-modern-replay-list-cursor.md#corrected-shared-positioning-tail)
+bypasses its former EDX-setting wrapper starting in 1.5.0. Actual sound
+levels and backend success remain unverified.
+
 Original `004181d0..0041827f` consumes EAX as the sound identifier and EDX as a caller-supplied volume multiplier. It preserves that multiplier in EBX, checks globals `00559234` (must be zero) and `0055290c` (must be nonzero), then builds a 16-byte request record. There is no local ID-range or per-ID elapsed-counter gate in this routine.
 
 For record byte `+8`, original computes the low-32-bit product of **55 × `[006fbbf4]` × caller multiplier**, arithmetic-shifts it right by **14**, and stores its low byte (`00418204..0041822e`). The intermediate multiplications wrap at machine width; this is not unrestricted real-number multiplication. Different caller multipliers can therefore produce different requested levels even with the same shared setting.
