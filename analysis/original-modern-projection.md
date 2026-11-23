@@ -24,6 +24,18 @@ The selected-dimension producer is traced in the [HUD](original-modern-hud-layou
 
 Modern chooser **`004dbc94`** returns binary32 bits in EAX according to `[006fbc40]`: 1→75.0, 2→90.0, 3→105.0, zero or other values→cached automatic value. Original chooser **`004dbcc0`** instead returns an integer: setting 1→75, every other value→90. These are corresponding choice roles at different addresses, not matching same-address bodies.
 
+The retained archives show an intermediate integer chooser. Through
+1.3.1, its bytes match the original. In 1.4.0–1.5.3 it reads only the
+low byte of `006fbc40` and returns integer 105 for 1, 75 for 2 and
+90 otherwise. In 1.6.0, the three ordinary chooser calls at
+`004dbdff`, `004dbe24` and `004dbe41` switch to `004dbc94`.
+The automatic producer at `004dbc48`, its initializer call at
+`004be748` and the new chooser match between 1.6.0 and 1.6.1.
+For reconstruction, the same stored byte can select a different
+angle across these boundaries. This establishes the chooser
+contract, while saved-file admission and menu labels have their
+own evidence.
+
 ## Projection wrapper moves and changes its argument representation
 
 Original projection wrapper **`004dbce0`** corresponds to Modern **`004dbcc0`**. Three paired calls change target accordingly: **`004becf7`, `004bed34`, `004bed61`**. These callers obtain four integer rectangle fields and push two additional arguments. Their direct linkage establishes the moved-wrapper correspondence; disassembling original at Modern's entry would instead find the old chooser.
