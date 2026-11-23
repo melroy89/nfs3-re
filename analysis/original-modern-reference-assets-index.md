@@ -97,6 +97,17 @@ set are `mattmnu.mnu`, `racetype.mnu` and `sub.mnu`. A local case-folded
 map must retain both filenames and compare content before choosing
 reference inputs. Actual game or Wine path resolution remains unobserved.
 
+Streaming `fedata/menus/setup.mnu` from the official 1.6.1 archive
+confirms that it matches the lowercase backup. The installed file adds
+one text control carrying a `v1.6.2` website label and replaces the
+localized title field in a second text control with a literal multiplayer
+title. A complete byte-line diff finds only these two edit blocks.
+This distinguishes the official setup asset from the local preparation
+copy, whose version label alone cannot identify an official release.
+The [three-way baseline](original-modern-differences.md#1-three-way-provenance)
+also identifies the installed EXE separately by SHA-256. The menu
+comparison does not establish whether either control renders at runtime.
+
 
 ## Reference-only assets
 
