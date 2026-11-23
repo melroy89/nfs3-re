@@ -177,3 +177,21 @@ This connects model 501 to the same relative `0002/CAR.VIV`
 path in both executables. It establishes neither the effective
 asset root on a live original run nor which constructor path
 that run takes.
+
+### Local vehicle archive inventory
+
+A recursive comparison of the two `CarModel` trees, keyed by
+case-folded relative path and hashed by SHA-256, found 46 VIV
+paths in the local backup and 58 in the installed tree. All
+46 backup paths have byte-identical installed counterparts.
+The installed tree adds eight `car.viv` files under
+`456g`, `ffal`, `hgts`, `jxkr`, `lstm`, `sr42`, `vict`
+and `walm`, plus four `ipspche.viv` files under `jxkr`,
+`lstm`, `sr42` and `walm`.
+
+These are installation differences. The official 1.6.1 archive
+contains no VIV files, so its archive contents do not account
+for the twelve additions. For a car present in both local trees,
+the matching VIV supplies the same packaged profile text if
+both runs resolve that path. Model registration, tuning, and
+runtime profile state still require their own evidence.
