@@ -175,3 +175,23 @@ The same mode-result gate applies on this route.
 This establishes the behavior for a nonzero state at the tested
 entries. Whether repeated startup is reachable in normal gameplay,
 and which other callers can supply that state, remain unverified.
+
+### Display selection moves ahead of mode lookup in 1.6.1
+
+On the zero-state startup path, the 1.6.0 and 1.6.1 executables
+perform these operations in different orders:
+
+| 1.6.0 | 1.6.1 |
+|---|---|
+| `00517681`: look up the mode through `004bedcc`, which queries the renderer descriptor | `00517665`: call `_THRASH_selectdisplay@4` |
+| `00517686`: store the index at `0055fec0` | `0051766b`: refresh the cached descriptor through `004f853c` |
+| `00517691`: call `_THRASH_selectdisplay@4` | `00517682`: look up the mode through `004bedcc` using that descriptor |
+| `005176a1`: apply the stored index | `00517687`: store the index, then apply it at `00517696` |
+
+Both display-selection calls pass `[007a3a70]`. Neither uses the
+display-selection return value as a local gate. The later mode
+result check in 1.6.1 is separate. If a driver changes its mode list
+when the selected display changes, 1.6.0 can carry an index chosen
+from the earlier list into the later display. Version 1.6.1 queries
+in the opposite order. Whether any supplied driver changes its
+list on this route or exhibits a visible difference remains open.
