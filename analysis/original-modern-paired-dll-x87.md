@@ -144,3 +144,19 @@ swap arithmetic sees. The rate is therefore an explicit input to
 the millisecond calculation. This trace leaves open which argument
 the adapter supplies on every mode-open route and whether the
 actual display uses the requested rate.
+
+The nGlide adapter supplies refresh selector zero on both checked
+mode-open routes. The ordinary path pushes the third argument at
+`6000216e` before calling `_grSstWinOpen@28` through `6001101c`.
+The optional extended-open path pushes the same third argument at
+`60002186` before calling slot `600127c8`. These push sequences
+match in the 1.5.3, 1.6.0 and 1.6.1 nGlide archive members.
+See the [adapter binding evidence](original-modern-glide-reference-identity.md)
+for the two provider slots.
+
+For the ordinary open, the provider decoding above maps that zero
+to a live rate of 60 at `10003e4f`. This establishes a constant
+requested selector across the executable's 1.6.0 x87 policy
+change. The later saved rate and the actual hardware refresh rate
+can depend on subsequent setup. The extended-open provider body
+and live presentation timing remain outside this result.
