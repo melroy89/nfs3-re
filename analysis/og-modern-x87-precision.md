@@ -486,7 +486,7 @@ against Modern's bytes gives three groups:
 | Sites | Modern bytes at the original call address |
 |---:|---|
 | 13 | `EB 03 90 90 90` skips exactly the former call. These are the seven [menu music scaling](original-modern-music-start.md) sites at `004379a1..00437a81`, two [deadzone slider](original-modern-deadzone-sliders.md) sites, and four [HUD layout](original-modern-hud-layout.md) sites. |
-| 2 | Five NOP bytes at `00489bf6` and `00489c1e`. |
+| 2 | Padding at `00489bf6` and `00489c1e` after the [relocated numeric scale routine](original-modern-numeric-scale.md#correspondence-and-evidence). |
 | 16 | Other bytes within rewritten spans. A same-address comparison does not establish an equivalent operation or its absence in the new control flow. |
 
 Checking the five bytes at each of the 15 explicit bypass or NOP sites
@@ -494,7 +494,7 @@ across all 11 retained archives gives three release boundaries:
 
 | First retained build with change | Sites changed | Prior retained build |
 |---|---|---|
-| 1.5.0 | Two NOP replacements at `00489bf6` and `00489c1e` | Both still call the helper in 1.4.0 |
+| 1.5.0 | Numeric scale relocation leaves padding at `00489bf6` and `00489c1e` | Both still call the helper in 1.4.0 |
 | 1.5.3 | Seven menu music and two deadzone short-jump bypasses | All nine still call the helper in 1.5.2 |
 | 1.6.0 | Four HUD short-jump bypasses | All four still call the helper in 1.5.3 |
 

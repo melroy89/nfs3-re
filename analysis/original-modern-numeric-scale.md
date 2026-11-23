@@ -6,6 +6,15 @@
 
 Run `python3 analysis/scripts/audit_numeric_scale_difference.py` (pefile, GNU objdump). The [manifest](evidence/audits/original-modern-numeric-scale.json) retains baseline SHA-256 identities, complete paired function spans, helper witnesses and assertions that calls at `0045ae27`, `0045af5e`, `00483a62` target original `00489b30` versus Modern `00489ab0`. Ends are exclusive. Existing contracts are in [detailed notes](detailed-analysis-notes.md#localized-stepped-numeric-scale).
 
+The three caller retargetings first appear in 1.5.0 in the checked
+1.4.0/1.5.0 archive pair. In the original routine, the calls to
+`004dfd56` at `00489bf6` and `00489c1e` truncate the loaded binary32
+position before FISTP converts it to the drawing coordinate. In 1.5.0
+the call addresses are both within the padding after the relocated
+routine. The Modern counterpart converts positions directly with
+FISTP, using the current x87 rounding mode. This is part of the
+relocation and layout rewrite.
+
 ## Layout changes
 
 Both functions receive count in EAX, selection indices in EDX/EBX, and seven stack DWORDs: scale, three colors, left/right endpoints and vertical anchor. The selected indices are adjusted by minus one for the interior label comparisons. This is a register/stack contract, not a standard compiler-inferred prototype.
@@ -30,7 +39,7 @@ Modern concatenates with `004f93b8`, an unbounded NUL-terminated byte copy that 
 
 Modern PUSHAD/POPAD restores all general registers, including EAX; original saves ECX/ESI/EDI/EBP but does not establish the same full preservation. Both modify rendering text state through scale/color setup. Modern also overwrites the caller-provided stack slots for scale and left position before popping the seven arguments; this matters to an exact assembly contract even though ordinary caller cleanup discards them. Neither routine restores the previous global text scale/color locally.
 
-**Verified:** moved counterpart, three caller retargetings, formulas, text-helper changes, fallback branch and machine-rounding operations. **Inferred:** a layout change intended to account for label widths. **Unresolved:** exact screen/option identity for every caller, localized assets and length admission, helper return/anchoring contracts beyond existing research, invalid counts, rendered appearance and release introduction. No catalog claim is promoted solely from a similar UI description.
+**Verified:** moved counterpart, three caller retargetings, formulas, text-helper changes, fallback branch and machine-rounding operations. **Inferred:** a layout change intended to account for label widths. **Unresolved:** exact screen/option identity for every caller, localized assets and length admission, helper return/anchoring contracts beyond existing research, invalid counts and rendered appearance. No catalog claim is promoted solely from a similar UI description.
 
 The follow-ups below inspect three caller setup regions, installed labels and profile counts. Next: complete upstream branch/state admission and compare render output in a later authorized runtime phase. Executables, raw reference exports, reconstruction sources and Ghidra are unchanged.
 
