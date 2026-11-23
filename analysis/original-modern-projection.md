@@ -32,6 +32,17 @@ write to the cache, Automatic therefore reads the initialized
 90.0 value. Computed references and actual initialization order
 are outside this static check.
 
+The final executable's [held-action frame resize](original-modern-frame-resize.md)
+at `004be970` does not refresh the cache within its own call tree.
+The three calls to `004bea40` adjust rectangle records, then
+`004be3d0` updates derived geometry. Those two helpers have no
+further calls. The additional overlay refresh at `004be85c`
+only calls the field setter at `004be89c`. None of these inspected
+bodies references `0055fecc` or calls the angle producer. Thus a
+frame-size adjustment has a different local update path from
+viewport initialization. Later work by the enclosing race loop
+or other display-mode changes remains outside this check.
+
 Modern chooser **`004dbc94`** returns binary32 bits in EAX according to `[006fbc40]`: 1→75.0, 2→90.0, 3→105.0, zero or other values→cached automatic value. Original chooser **`004dbcc0`** instead returns an integer: setting 1→75, every other value→90. These are corresponding choice roles at different addresses, not matching same-address bodies.
 
 The retained archives show an intermediate integer chooser. Through
