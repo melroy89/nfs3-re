@@ -23,6 +23,8 @@ The predicate is evaluated **before** first-enable changes the global; it is not
 
 ## Eligibility changes in the shared predicate
 
+The enable flag already has producers in the supplied original. The HUD batch/layout initializer at `00484070` clears EDX at `0048407d` and stores zero to `00791b1c` at `0048409c`. A separate replay-state branch at `004842a8..004842de` sets both the selected layout master DWORD and `00791b1c` to 1 when the flag is clear and state `006fd3a0` is 2. Both spans match byte for byte in the original, archived 1.3.1 and 1.4.0, and final 1.6.1. The 1.4.0 change therefore adds use of this existing flag in the mirror toggle and eligibility helper. The separate branch's full input route and reset coverage across replay transitions remain unresolved.
+
 Both `00422aa0` entries first obtain a view/camera object and check multiple gates: a signed threshold of 320 on global `007d3684` (identified as the race tick in existing simulation research, not a screen-size field), non-null object and absence of object byte `+0x200` mask 0x02, among others.
 
 Original additionally rejects renderer mask bits **0x180** at `007a3a58`. Later it rejects playback state **2** unconditionally unless the earlier `00559264` override has already returned success.
