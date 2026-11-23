@@ -819,3 +819,26 @@ the initially clear bit, so it uses direct FDIV. These checks
 establish the matching direct consumers and branch targets.
 The complete divide workaround and any indirect users remain
 outside this trace.
+
+### The drivetrain conversion writes an integer RPM limit after restoring CW
+
+The original and Modern caller instructions at
+`004ab0e6..004ab13c` match. Two upstream arms materialize
+binary32 at `[EBP-48h]`. One multiplies the integer at
+profile offset `1c4h` by the vehicle float at `5f0h`.
+The other converts the integer at profile offset `1c0h`.
+The caller reloads that binary32 value and enters the differing
+FRNDINT helper at `004ab10c`.
+
+After the helper restores its incoming control word, the caller
+performs FISTP to a signed DWORD local at `004ab111`.
+For an in-range finite integer returned by FRNDINT this second
+conversion preserves the value. The caller then takes the signed
+minimum with profile offset `1c4h` and keeps it in `[EBP-28h]`
+for later drivetrain branches. Because the multiply and binary32
+spill precede FRNDINT, matching finite truncation behavior alone
+does not establish an identical limit. The conversion also has
+no local invalid-result check before the signed cap. The
+[drivetrain trace](police-torque-runtime.md#full-drivetrain-entry-versus-actual-torque-interpolation)
+covers the later branch conditions. No live RPM or exceptions were
+measured here.
