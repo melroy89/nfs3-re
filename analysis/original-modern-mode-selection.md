@@ -233,3 +233,26 @@ separate changes to the checked release pair. The descriptor query
 moves later on same-index and successful paths, and dimension setup
 can now precede a rejected driver mode request. Actual window effects
 and transitive recovery remain unverified.
+
+#### A rejected 1.6.1 request can still update window geometry
+
+The complete centring and rectangle helpers at
+`004cdbd0..004cdc14` and `004cdb10..004cdbcd` are byte-identical in
+1.6.0 and 1.6.1. The [window geometry comparison](original-modern-window-geometry.md#three-complete-sizing-helpers-are-unchanged)
+identifies their imports and register inputs. Moving the call earlier
+in 1.6.1 means that before the driver decides whether to switch modes,
+the game has already requested SetWindowPos at `004cdb64` using the
+candidate dimensions. It then reads back the client rectangle and
+publishes origin to `009f3d34/38` and size to `009f38e4/e8`. Those
+stores execute on ordinary API returns regardless of their success
+codes.
+
+If the driver returns zero, `004bef2c` branches to `004bef94`.
+That path calls `004bef9d` and returns without updating the current
+mode index or taking the shared publication path. The cleanup helper
+calls renderer slots and `00431900`; its direct body does not call
+the rectangle helpers or restore a saved rectangle. An indirect
+renderer effect remains possible. Thus a rejected request can leave
+the current mode index and observed client geometry reflecting
+different operations. Actual window movement and later recovery
+remain untested.
