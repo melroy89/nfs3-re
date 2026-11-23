@@ -269,3 +269,19 @@ offset `114h`.
 This establishes the slot and two consumer routes. It does
 not show when callers select index 4 or what visible output
 the altered payload produces.
+
+The complete pose reader at `0040f880..0040f8c7` matches
+between executables. It reads a little-endian WORD at file
+offset 4 and selects the last 20-byte record at offset
+`8 + 20 * (count - 1)`. It copies the first three DWORDs
+directly to the destination and passes the final two DWORDs
+to helper `004b6ca0`.
+
+Both local `TR0804.CAN` copies have count 51, so the reader
+selects offset 1008 in either file. The three directly copied
+DWORDs, displayed as signed integers without assuming units,
+are `(-1210, 40968, -222822)` in the installed copy and
+`(522, 53160, -179278)` in the backup. Thus the changed
+asset can change the raw pose values independently of the
+matched reader instructions. Actual selection of this file
+and the resulting screen position remain unobserved.
