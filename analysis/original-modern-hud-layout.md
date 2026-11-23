@@ -14,9 +14,10 @@ The six locale-prefixed presets in the [author-hosted reference archive](origina
 
 Original `00485680`:
 
-- Selects a character using `[006fbb4c]` and byte table `0047bbb8` (`egfsiw` plus NUL).
+- Selects a character using `[006fbb4c]` and byte table `0047bbb8` (`egfsiw` plus NUL). The [original defaults-time language mapper](original-modern-language-table.md#removed-defaults-time-language-mapper-00472250) writes indices 0–5 for English, German, French, Spanish, Italian and Swedish, respectively. The local installer starts with `english`, so that path supplies `edef.pos` when the defaults mapper runs and its selection reaches this initializer.
 - Formats `%s%cdef.pos` using prefix pointer `007a29b4` and that character, then calls loader `004e0ec0` at `004856cd`. Prefix and locale admission are not re-established here.
 - If load returns null, branches directly to the common epilogue `0048586d`.
+- This path has no retry with `DEF.POS`. Index 6 would supply a NUL byte to `%c`, terminating the visible C string after the directory prefix. The initializer has no local index bounds check. Other potential consumers of the unprefixed file remain outside this trace.
 - Otherwise tokenizes using delimiter literal `: -(,)`, parses name/float tokens, and writes 23 rectangle slots per profile across three groups of two profiles. The nested bounds are visible at `004856ef/004857b2/004857bf`.
 - Copies a separate four-DWORD slot from table `0055d454` into the last rectangle area of each profile (`004857d6..0048582a`), then enters the shared refresh tail.
 
