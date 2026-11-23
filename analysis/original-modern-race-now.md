@@ -132,3 +132,17 @@ references `0045d620` from slot `00555ef8`. Modern clears both slots
 and keeps each row's neighboring callback pointers. The extended tails
 at `0045d2dc` and `0045d60f` occupy the former stub regions. This
 accounts for the static references to both displaced entries.
+
+### Callback removal and state writes at the 1.4.0 boundary
+
+The retained 1.3.1 package EXE (SHA-256
+`199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664`)
+still holds all three stub references. The 1.4.0 EXE (SHA-256
+`7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d`)
+has zero in all three slots and installs the same ten-byte
+`MOV DWORD PTR [007a276c],1` at `004405a7`, `0045d2dc` and
+`0045d60f` as final Modern. Across the retained 1.1.0–1.6.0 packages,
+the three slots all have the original pointer values through 1.3.1
+and all remain zero from 1.4.0 onward. This dates the paired
+registration and store changes without establishing when the
+callbacks actually run.
