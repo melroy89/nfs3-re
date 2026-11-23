@@ -8,6 +8,17 @@ The official `fedata/menus/loadsave.mnu` contains **`[selectlist]`, `codelink=re
 
 ## Corrected shared positioning tail
 
+The full input-handler span matches the original in packages 1.1.0
+through 1.3.1. Package 1.4.0 already has the revised cursor position,
+including the Y offset of 68 and the retargeted navigation branch.
+It calls the sound helper at `004181c4`; the sole handler byte changed
+in 1.5.0 is the relative-call operand at `00463399`, which retargets it
+to `004181d0`. The 1.5.0 handler matches all retained builds through
+1.6.1. The three drawing, geometry and mouse-row spans discussed below
+match the original throughout the archive series. This dates the cursor
+fix independently of the later sound-helper relocation. Runtime cursor
+placement and sound remain untested.
+
 Most of the input handler is identical. Changed instructions are confined to the jump at **`0046326f`** and tail **`00463370..004633a7`**. The manifest separately asserts equality for the remaining prefix, middle and final callback/return regions.
 
 On the branch for numeric input code **5000h**, the retained code increments selection DWORD control+4ch, constrains it and adjusts the two WORD fields at+54h/+56h when needed. Its cursor calculation then changes as follows, using signed16-bit field values:
