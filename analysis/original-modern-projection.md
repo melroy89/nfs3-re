@@ -44,6 +44,18 @@ This establishes distinct publication and calculation steps.
 Actual ordering for each mode change still requires caller
 or runtime evidence.
 
+On the final renderer startup path, `004a3e8d` calls
+`004b5c00`. Within that routine, the viewport initialization call
+at `004b5c91` recomputes Automatic before the fixed-90 projection
+call at `004b5ca2` and before the configuration loader call at
+`004b5d21`. A graphics-default publication reached through that
+later load is therefore too late to supply the earlier calculation
+on the same invocation. The two dimension cells are in the PE's
+zero-filled .bss, so their values at the earlier call depend on
+what has already published them. This orders these three call
+sites. It does not establish the first dimension write across all
+startup branches or renderer callbacks.
+
 The cache at `0055fecc` is file-backed and starts at binary32
 90.0 (`42b40000h`) in both 1.6.0 and 1.6.1. In the final
 executable, linear disassembly and the HIGHLOW relocation list
