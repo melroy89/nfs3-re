@@ -243,8 +243,8 @@
     },
     {
       "path": "analysis/original-modern-loading-timing.md",
-      "sha256": "e1605845ddbb56aa5521c0e8f9b70db3174940a8be1c16f223fc76f6d2ed66ee",
-      "relative_links": 10
+      "sha256": "7a77dc59938849d0c2fbc004899bfc377fe444d463216c4964b26b5c2ab978f8",
+      "relative_links": 11
     },
     {
       "path": "analysis/original-modern-localization-151.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3153,
+  "relative_link_count": 3154,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

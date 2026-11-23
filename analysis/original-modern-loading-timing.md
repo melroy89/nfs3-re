@@ -172,3 +172,15 @@ Initializer0042dcb0 clears EDX before the call, so its later store at0042dce1 **
 The registrar scans eight DWORD callback slots at0079c130, avoids adding a duplicate and uses the first empty slot if available. With all slots occupied by other pointers it adds nothing; the initializer does not test a separate success result. The returned EAX is incidental search/index state, not a proved Boolean registration-success interface. This eight-slot registry is separate from the termination callback facility discussed in the exit-chain report.
 
 After the verified zero reset, the traced callback must subsequently increment the counter, or another writer must change it, before120's signed-positive entry guard can pass. Full-registry or delayed-callback cases are possible instruction-level scenarios, not observed diagnoses. Removing the guard in130 avoids this one explicit termination request; it does not prove every later loop makes progress without the counter. Complete callback scheduling, lifetime, all writers/aliases, active flags and a controlled reproduction are still required to establish the root cause. No callback, API or target instructions execute.
+
+### Packaged loading setting and separate title delay
+
+The retained 1.3.1 package's `nfs3.ini` lacks
+`LoadingSplashTime`. The 1.4.0 package adds `LoadingSplashTime=5`
+under `[NFS3]`. Its executable computes the loading budget from
+that setting as described above. The separately configured
+`IntroSplashTime` appears in 1.5.0 and has its own consumer at
+`00472fc0`. Both settings are present in the 1.5.0 package.
+The title delay and the race loading budget can therefore be
+configured independently. See the
+[title delay comparison](original-modern-title-delay.md#packaged-title-delay-release-boundary).
