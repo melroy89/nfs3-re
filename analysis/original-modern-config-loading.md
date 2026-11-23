@@ -115,6 +115,8 @@ The final prefix producers are not traced here, so this builder change alone doe
 
 The subsequent [versioned prefix audit](original-modern-startup-paths.md#config-path-history-root-relative-then-restored) now establishes final default prefixes and the1.1.0→1.2.0 config relocation reversal. This narrows the prefix limitation above for ordinary initialization; later mutation and actual I/O remain unverified.
 
+The [paired startup slot comparison](original-modern-startup-paths.md#original-installer-records-and-final-path-slots) also resolves the original local values. With the inspected `install.win`, original startup writes `.\FeData\stats\` to `007a2fb4` and `.\FeData\config\` to `007a3034`. The original and final builders therefore derive the same relative `FeData\stats\carspecs\player1.spc`, `FeData\stats\carspecs\player2.spc` and `FeData\config\config.dat` under their respective working directories, apart from case. The changed player builder moves the `carspecs\` component into the initialized prefix. A direct immediate-operand scan of the original disassembly found no reference to `007a30b4`, which the inspected installer fills with `G:\FeData\audio\`. An indirect original consumer of that record remains possible. This comparison establishes the ordinary path derivation for the inspected inputs. Actual working directories, reads and writes remain unobserved.
+
 ## Renderer-type mismatch no longer requests the original startup reset
 
 The audit now retains paired startup prefixes `004730d0..0047319a` and original saved-type producer `00472e70..00472e88`, alongside the complete config-load bodies. These tie an already observed loader comparison to a concrete graphics-defaults consumer.
