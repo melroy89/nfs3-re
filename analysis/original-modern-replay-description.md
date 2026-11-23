@@ -38,6 +38,17 @@ box is 180×115 throughout. The check reads the blocks named by their exact
 `codelink` values in each package's own `fedata/menus/loadsave.mnu`. It
 establishes continuity of these fields, while other menu properties may vary.
 
+The author-hosted `fedata/MENUS/LOADSAVE.MNU` matches the uppercase
+local backup `fedata_org/menus/LOADSAVE.MNU` byte for byte (SHA-256
+`6308194657d28f1205fca6fafb598c248fb6736e6bf4f827da778f9ce189b968`).
+Both have the same two positions and box dimensions as pre-1.4.0 Modern.
+The lowercase backup `fedata_org/menus/loadsave.mnu` instead matches the
+installed `FEDATA/MENUS/loadsave.mnu` (SHA-256
+`ac14717b7a8a4bfe2c3cbf5267212ff2d164edf1da6ad75a315e576bf00cf329`)
+and uses the later positions. The two local backup files coexist under
+case-distinct names. Their identities establish the comparison inputs.
+The runtime path and case resolution remain unobserved.
+
 ## Heading removed, details begin earlier
 
 | Property | Original | Final Modern |
