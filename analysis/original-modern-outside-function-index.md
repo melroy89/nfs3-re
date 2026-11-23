@@ -69,6 +69,7 @@ These links reconcile selected outside-body spans with already inspected mechani
 
 | Outside span / NOP run | Existing explanation | Remaining boundary |
 |---|---|---|
+| `00412918..004129a0` | Two [speech table pointers](original-modern-sound-bank-language.md#swedish-filename-code-changes-in-two-verified-consumers) change at 00412964 and 00412980. The Swedish entries select W and swe instead of E and eng. Two bytes change in each pointer. | Asset availability and successful playback remain untested. |
 | `00442a95..00442b10` | The original local lookup and signed session gate at 00442ae1 become a call to the [shared Race Now policy](original-modern-race-now.md), followed by an earlier return and NOPs. All 47 differences lie in that replacement. | Menu admission depends on the new helper inputs. |
 | `00452dd7..004530c0` | The [Options setup path](original-modern-options-postgame.md) adds a zero store to 007a276c and moves its epilogue into the following alignment. All 12 differences are in the expanded tail. | Subsequent policy calls depend on menu sequencing. |
 | `00445e48..00445e60` | The [dialog input table](original-modern-dialog-input.md#tab-normalization-and-direct-handler-table) switches from local wrappers to direct handler addresses. | Actual input dispatch remains untested. |
