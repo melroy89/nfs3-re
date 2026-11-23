@@ -80,6 +80,16 @@ cannot overflow.
 
 ## Status and follow-up
 
+The menu selection path supplies the detail rows through a retained producer.
+The original and final match across `00447190..0044734e`, including the
+four-entry dispatch table. The handler clears the 1,200-byte row area at
+`00558d0c`, reads the selected list entry, and builds a path using prefix
+`007a2f34`. Dispatch case 0 appends `rp3` on the selected-file route and
+calls `00446060`. That routine formats a string into the first row via
+the destination argument at `00446151`. The other menu modes share the
+row area. Complete row population and actual selected-file inputs remain
+outside this trace.
+
 **Done, verified static:** complete callback and binding,90 changed-byte
 localization, removed heading, initial row offsets, retained loop and narrowed
 coordinate reads. **Unresolved:** record population and string validity,
