@@ -314,6 +314,17 @@ function boundaries were recovered. The manifest records shortest syntactic rout
 call edges, imports, hashes and these omissions. It reuses Modern's saved range inventory;
 explicit anchors below recover the original truncation helper's longer tail separately.
 
+**Shared epilogue resolved by inspection.** The surviving nonentry
+edge is a conditional jump at `004fe8b2` from the routine entered at
+`004fe828`. The source prologue saves ECX, ESI, EDI and EBP and
+allocates four local bytes. Target `004fe81e..004fe826` frees those
+four bytes, restores those four registers in reverse order and
+returns. Both the source through the jump and the complete epilogue
+match byte for byte between the pinned executables. The target is a
+shared unwind sequence with no x87 instruction or further call.
+The generated inventory still records the branch as a nonentry edge.
+The 111 indirect sites remain unexpanded.
+
 A concrete retained physics-to-angle route is:
 
 `004ad7a3` → (`004adff3`) `004aca4f` → (`004ace3b`) `004ea9c0` →

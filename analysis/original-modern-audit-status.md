@@ -30,8 +30,8 @@ Static evidence only; no new instruction probes or game execution.
 The [deeper dependency inventory](og-modern-x87-precision.md#deeper-dependency-inventory-retained-local-extended-state-math)
 now identifies retained FNSAVE/reset/FRSTOR and explicit extended-mode angle math on a physics
 call path in **both** baselines. It also compares the changed drivetrain truncation helper's
-complete bodies.176 saved entries per file include174 equal ranges, but111 indirect sites
-and one nonentry direct target remain unexpanded; this is not complete transitive CW ownership.
+complete bodies.176 saved entries per file include174 equal ranges, but 111 indirect sites remain unexpanded. The sole nonentry direct
+target is a verified shared epilogue. Transitive CW ownership remains open.
 
 ## Outside-function documentation coverage
 
