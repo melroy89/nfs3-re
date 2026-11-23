@@ -230,3 +230,30 @@ For ordinary records from the audited collector, field10 is normalized0/1 from t
 The initializer also requests either640×480 or the packed large-area sentinel according to tier/renderer conditions already documented above. That request is filtered through the actual mode list; it is not a promise that a desktop-sized or highest-quality display mode exists or succeeds.
 
 **MP100-010 conclusion:** Modern changes CPU rating and its table consumers so a maximum ordinary feature score on the non-reduced renderer path requests the table’s High/Full choices. The renderer-reduced path and selected-mode overrides can choose lower labels. Persisted settings/default-reset admission are separate from this routine: the [configuration investigation](original-modern-config-loading.md) traces grouped defaults after a rejected version header, but this finding does not establish that every startup overwrites saved user choices. Exact1.0.0 introduction, every legacy CPU branch, active settings on particular PCs/VMs and visual quality remain unverified. No CPU detection, display API, instruction probe or game was run.
+
+### 1.1.0 startup and missing-config entry paths
+
+In the same pinned 1.1.0 executable, startup calls `004a6e10` at
+`004a3a55`, which reaches the desktop metrics call at `004a6e40`.
+The inspected startup sequence later calls graphics defaults at
+`004a3dda` and then calls `004730d0` at `004a3e65`. The desktop
+query is therefore part of startup before the inspected defaults
+call. It is not gated locally on the existence of a config file.
+
+There is also a missing-config route through `00472980`. It
+initializes the local handle at `0047299d` and skips opening the
+file when the path check at `004729d9` returns zero. If the handle
+is still zero at `004729fd`, it sets `0067900c=1` and calls
+`004723f0`. A later entry into `004730d0` can consume that marker
+at `00473186` and call graphics defaults at `00473195`. This
+requires `0055b03c != 0`, `0055e88c == 0`, and the marker to
+survive to the test after `00472fc0`. The zero-handle branch can
+also be reached without a missing file, such as when the earlier
+flag test bypasses the open path.
+
+Together these paths establish that 1.1.0 samples desktop dimensions
+before a startup default-mode selection, and that missing settings
+can request a later graphics reset. Actual first-run gate values,
+subsequent overwrites, and the mode that ultimately renders remain
+unverified. This evidence applies to 1.1.0. The 1.0.0 binary behavior
+is still open.
