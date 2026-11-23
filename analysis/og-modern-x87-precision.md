@@ -502,6 +502,15 @@ range. An address match inside a replacement is not a call mapping.
 | `004be819`, `004be820`, `004be853`, `004be85a` | [Viewport initialization rewrite](original-modern-viewport-geometry.md). |
 | `004d1453` | The [text measurement wrapper](original-modern-car-alias.md#width-dependency-removes-an-intermediate-integer-conversion) keeps its entry at `004d1430` but returns fractional advance directly starting in 1.5.0. The former call address lies inside the new colour setter. |
 
+The same-address call encoding is already absent in 1.1.0 at the
+eight loading-artwork and four viewport sites. The four remaining
+sites (`0046a5ad`, `00489b95`, `004a4553`, `004d1453`) retain
+the original call through 1.4.0 and lose it in 1.5.0. A comparison
+of the five bytes at each address across all 11 retained archives
+shows no subsequent reappearance. This dates removal at the original
+addresses. The exact 1.0.0 behavior and corresponding operations at
+other addresses in the early Modern builds remain unverified.
+
 Checking the five bytes at each of the 15 explicit bypass or NOP sites
 across all 11 retained archives gives three release boundaries:
 
