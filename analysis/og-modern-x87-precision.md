@@ -402,6 +402,18 @@ syntactic sites. They do not establish runtime frequency, effects
 of imports on the x87 environment or equivalence for exceptional
 angle inputs.
 
+The two executables also match across all 408 file-backed bytes
+at `0056cb28..0056ccc0` (SHA-256
+`707f0eb66bbf36b9915137dc65b49a18241a3a6a6850d87e0eef458088db65f4`).
+This span includes the dispatch table, the binary32 scale factors
+16.0 and 0.0625, the extended-precision coefficients and result
+offsets, and the 272 bytes from `0056cbb0` through the start of
+the next helper's classification table. The angle routine converts
+its scaled operand with FISTP at `0051f3c4`, shifts the integer
+left by four, and reads a TBYTE at that offset from `0056cbb0`.
+That establishes a 16-byte stride. The byte comparison does not
+independently establish the possible index range for every operand.
+
 ### The nested divide helper restores precision before division
 
 The slot-15 helper `005269d4..00526aeb` and its 28 file-backed data
@@ -667,42 +679,6 @@ The retained 1.5.3 package supplies `Type=voodoo` in
 to different frame-boundary policies when loading and renderer
 initialization succeed. Other producers of bit 3 and runtime
 control words remain unverified.
-
-The angle routine's file-backed constant span
-`0056cb28..0056ccd0` is also byte-identical in the two executables.
-It includes the 16.0 and 0.0625 binary32 scaling constants, the
-extended-precision polynomial coefficients and result offsets,
-and the indexed table region beginning at `0056cbb0`.
-
-Both normal-path calls to `00526aeb` load selector `0fh`.
-The corresponding DWORD at `0056cd18` is `00526b9f` in both
-files. That branch spills both x87 operands as TBYTEs and
-calls the retained divide helper at `005269d4`. The helper body
-through `00526aeb` matches, including the branch into a scoped
-control-word adjustment. This resolves the dispatch target for
-these two known callers. Other selectors, exceptional operands
-and live state remain outside this comparison.
-
-### The shared divide helper restores precision before the final divide
-
-On the checked scaling paths in `005269d4`, the local control word
-sets extended precision and nearest rounding and masks exceptions.
-The helper multiplies both operands by the same binary32 constant.
-It uses 0.9375 at `00526a40` or 1.0625 at `00526a57` depending on
-the exponent check. The constants at `0056ccd0..0056ccd8` match
-in the two executables. Each path restores the word saved at
-`[ESP+1ch]` **before** its final FDIVP.
-
-The separate branch at `00526a86` can scale one operand by
-`2^63` (matching binary32 bytes at `0056ccd8`), spill it as
-TBYTE, restore the caller's word, and retry classification at
-`005269dc`. Its other exit restores the word before dividing
-at `00526ae8`. Direct divide paths bypass these local changes.
-Thus the extended scope covers operand preparation. The divide
-itself executes with the restored word or the incoming word.
-This is static control-flow evidence for the matching bodies.
-Exception outcomes and complete numerical equivalence were
-not tested.
 
 ### The angle fallback uses FPATAN before any local control-word change
 
