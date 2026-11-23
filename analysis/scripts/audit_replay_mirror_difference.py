@@ -8,6 +8,7 @@ from audit_thrash_loader_difference import ROOT, SPECS
 SPANS=[(0x484450,0x4844c0),(0x422aa0,0x422bd0),
        (0x4844c0,0x484599),(0x482d6b,0x482d8e),
        (0x482f5b,0x482f7f),(0x4c5097,0x4c50af),
+       (0x484070,0x4840ae),(0x484260,0x4842de),(0x4c5017,0x4c5031),
        (0x48f7b0,0x48f81b),(0x48f970,0x48fa09),(0x48f550,0x48f69a),
        (0x431800,0x43182d)]
 
@@ -35,19 +36,24 @@ def main():
                 'assembly':str(out.relative_to(ROOT)),
                 'assembly_sha256':hashlib.sha256(out.read_bytes()).hexdigest()})
         assert pe.get_data(0x48f9c8-0x400000,5)==bytes.fromhex('be04410000')
+        assert pe.get_data(0x48f9be-0x400000, 5) == bytes.fromhex('b9043f0000')
+        assert pe.get_data(0x48f9dd-0x400000, 6) == bytes.fromhex('890dd0c37900')
         builders[label]=pe.get_data(0x48f550-0x400000,0x14a)
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows}
     assert builders['original']==builders['official_modern']
     retained_gates = {'004844c0', '00482d6b', '00482f5b'}
+    retained_hud_paths = {'00484070', '00484260', '004c5017', '0048f970'}
+    retained_starts = retained_gates | retained_hud_paths
     gate_hashes = {
         label: {row['start']: row['bytes_sha256'] for row in binary['spans']
-                if row['start'] in retained_gates}
+                if row['start'] in retained_starts}
         for label, binary in result['binaries'].items()
     }
-    assert gate_hashes['original'].keys() == retained_gates
+    assert gate_hashes['original'].keys() == retained_starts
     assert gate_hashes['original'] == gate_hashes['official_modern']
     result['retained_gate_starts'] = sorted(retained_gates)
-    release_starts = retained_gates | {'00484450', '00422aa0'}
+    result['retained_hud_path_starts'] = sorted(retained_hud_paths)
+    release_starts = retained_starts | {'00484450', '00422aa0'}
     result['historical'] = {}
     for version, (digest, baseline) in HISTORICAL_ARCHIVES.items():
         archive = (ROOT / 'analysis/captures/modern-differences/upstream/history'
