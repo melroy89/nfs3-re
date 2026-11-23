@@ -86,6 +86,17 @@ The table below lists the ten most frequently removed authored keys. A changed v
 
 All80 local uppercase backup menus are byte-identical to their author-reference counterparts. The52 paired identities also match the previously retained [visible-count evidence](evidence/audits/menu-visible-counts.json), connecting its nine unique count increases and unmatched fields to this reference source. This crosscheck does not rerun that audit or authenticate a pristine retail release. See [the existing control/count analysis](original-modern-common-menu-buttons.md#long-list-authored-visible-counts); do not repeat it from text differences alone.
 
+The local `fedata_org/menus` directory contains 135 `.mnu` files across
+83 case-folded names. All 52 two-file groups contain different bytes.
+In 51 groups, one file matches the author-hosted reference and the other
+matches the installed Modern copy. The exception is `setup.mnu`. Its
+uppercase backup matches the reference, while the lowercase backup and
+installed copies have distinct SHA-256 prefixes `ed91cd1678470e35` and
+`d55b7c5a1e169408`. The three backup names outside the 80-member reference
+set are `mattmnu.mnu`, `racetype.mnu` and `sub.mnu`. A local case-folded
+map must retain both filenames and compare content before choosing
+reference inputs. Actual game or Wine path resolution remains unobserved.
+
 
 ## Reference-only assets
 
