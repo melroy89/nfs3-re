@@ -138,3 +138,21 @@ is a separate baseline. A fatal renderer diagnostic already existed
 in 1.6.0, but the startup mode request did not branch on the driver's
 return. The two checks should not be treated as equivalent. No live
 failure path was exercised.
+
+### The old startup state check could pass after a rejected mode
+
+In both 1.6.0 and 1.6.1, the common tail sets EAX to 1 at
+`00517721` and writes it to `00564364` at `0051772d`, before
+calling the record setup at `00517732`. In 1.6.0, control reaches
+this store from the driver mode call even if the driver returns
+zero. In 1.6.1, that zero result branches around the store and
+returns to the startup diagnostic check.
+
+Consequently, if the 1.6.0 initialization tail and its wrapper
+return normally with that state intact, the startup check at
+`004b5a32` passes even though the driver rejected the mode.
+The store marks progress through the initializer. It does not
+record the driver's result. Other code also compares this state
+against 7, for example at `00503cf1` in 1.6.0, so a reconstruction
+should retain its DWORD representation. The full state lifecycle
+and live effects of rejection remain unverified.
