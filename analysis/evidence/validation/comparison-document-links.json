@@ -588,8 +588,8 @@
     },
     {
       "path": "analysis/original-modern-title-delay.md",
-      "sha256": "c9b091b9f2510eb27bcc4c8c1234fd82e922b332a8b1dc59d086cb1e851e660c",
-      "relative_links": 6
+      "sha256": "3ecd80477375a4a33dc4f320963168dad909f08368ace2cdb81fe94edecb5801",
+      "relative_links": 7
     },
     {
       "path": "analysis/original-modern-track-detail.md",
@@ -668,7 +668,7 @@
     }
   ],
   "file_count": 133,
-  "relative_link_count": 3152,
+  "relative_link_count": 3153,
   "errors": [],
   "limits": [
     "Recognizes inline Markdown links without spaces or closing parentheses in destination.",

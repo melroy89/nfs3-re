@@ -30,7 +30,7 @@ The retained Modern caller witness **`00473152..00473160`** checks `0055b03c != 
 
 Modern’s helper no longer contains original’s `006fbb54` draw suppression; it gates all its work on the configured duration instead. The [movie startup comparison](original-modern-idle-movie.md) separately handles title-movie availability. **A title-splash wait and movie admission are distinct policies**: zero delay here does not by itself prove the title movie is disabled.
 
-**MP150-032:** partial static support for the configuration producer,0..10 consumer clamp, zero-skip behavior and millisecond elapsed loop. Actual display duration, title visibility, callback timing, input behavior and historical introduction remain unverified. No timing or instruction probes were run.
+**MP150-032:** partial static support for the configuration producer,0..10 consumer clamp, zero-skip behavior and millisecond elapsed loop. Actual display duration, title visibility, callback timing and input behavior remain unverified. See the package comparison below for the release boundary. No timing or instruction probes were run.
 
 ## Original clock follow-up: shared counter and requested rate
 
@@ -45,3 +45,17 @@ Worker `0048eb90` creates/stores an event-like wait object through `004dfb00`, w
 **Inference, explicitly conditional:** if the requested128 rate is realized as128 counter increments per second,384 ticks correspond nominally to3 seconds, and5120 ticks to40 seconds. This is not an established wall-clock guarantee: complete event production/coalescing, failure handling, reinitialization (including renderer-side calls), scheduler delays, resets and all counter writers remain to be qualified. The earlier decision not to label the original threshold as a measured three-second wait therefore stands.
 
 For reconstruction, keep this logical counter distinct from Modern’s direct millisecond duration. Substituting the same integer384 into a millisecond timeout would not preserve the demonstrated clock contract. No timer, event, sleep, game or instruction probe was executed.
+
+### Packaged title-delay release boundary
+
+The 1.4.0 executable retains the older title-delay entry, including
+the draw gate on `006fbb54` and the call to the library delta clock.
+The 86-byte title routine in 1.5.0, 1.5.1 and 1.5.2 matches final
+except for four displacement bytes across the calls at `00472fe2`
+and `00473008`. Those calls reach `004f1ea0`, which calls the
+`GetTickCount` import in 1.5.0. From 1.5.3 they reach `004f2790`
+and the full routine matches final, consistent with the separate
+[clock-source change](original-modern-clock-source.md).
+This dates the configurable routine to the 1.4.0 → 1.5.0
+package boundary. The later clock change leaves its clamp and
+elapsed-time logic intact. Actual title duration remains unmeasured.
