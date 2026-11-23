@@ -487,7 +487,9 @@ The [retained track-chain comparison](original-modern-track-detail.md) separatel
 
 ## 31. Viewport camera selection
 
-The [viewport-pose comparison](original-modern-viewport-pose.md) traces Modern’s new fixed-descriptor branch, retained temporary primary-camera restoration and identical pose finalizer. Extraction/blend/finalizer bodies are identical; snapshot and partial-update producers are mapped. Source initialization, call order and runtime output remain pending.
+The original defaults are In Car, Roof Cam, Heli Cam and None. Modern 1.1.0 already uses Heli Cam, In Car, None and None, with the full choice list retained. 1.5.0 moves those writes into a separate helper. The shared fallback forwards In Car in the original and Heli Cam in final when the respective defaults are intact and its camera table has been rebuilt.
+
+Modern 1.5.1 adds the rear-camera menu control, initializes it to In Car, and adds pose-selection and dispatch checks. The new route uses a separate 284-byte scene descriptor snapshot in zero-filled storage. The source descriptor and selected initialization code, including its position and orientation inputs, already exist in the original. The reviewed selector checks, dispatch table and menu binding remain byte-identical through 1.6.1. Live selection, update ordering and rendered output remain unverified. [Viewport and camera evidence](original-modern-viewport-pose.md)
 
 ## 32. Resource-backed frontend page
 
