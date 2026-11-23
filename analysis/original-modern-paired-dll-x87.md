@@ -125,3 +125,22 @@ EDX. Swap reads the saved value for arithmetic and the live value
 for the equality check at `1000922f`. A reconstruction should
 preserve that distinction. Complete refresh-rate provenance and
 the measured effect of this wait on game timing remain open.
+
+The provider's `_grSstWinOpen@28` export jumps from
+`1000119a` to `10003a70`. After frame allocation and two
+register pushes, `10003a82` loads its third stack argument into
+EBP. On the inspected refresh selection path at
+`10003e3f..10003efb`, that value determines the live rate
+`1f01699c`:
+
+| Third argument | Rate written |
+|---|---|
+| 0–8 respectively | 60, 70, 72, 75, 80, 90, 100, 85, 120 |
+| Other signed values up to 255 | 60 |
+| Signed value greater than 255 | Bits 16–31 of the original argument |
+
+The later snapshot described above determines which rate the
+swap arithmetic sees. The rate is therefore an explicit input to
+the millisecond calculation. This trace leaves open which argument
+the adapter supplies on every mode-open route and whether the
+actual display uses the requested rate.
