@@ -466,6 +466,14 @@ The direct drivetrain route `004ad7a3` → (`004adc0a`) `004aaed1` → (`004ab10
 | Temporary PC11, RC11; low CW byte retained | Temporary PC00, RC11; all six exception masks set |
 | 29-byte body | 23-byte body |
 
+The historical boundary is **1.5.2 → 1.5.3**. Extracting `nfs3.exe`
+from each of the 11 retained archives shows that 1.1.0 through 1.5.2
+retain the 29-byte original body. Starting at 1.5.3, all retained
+builds use the same 23-byte replacement followed by six NOPs. The
+five-byte call at `004ab10c` stays `e8 45 4c 03 00` throughout.
+This local change therefore predates the 1.5.3 → 1.6.0 removal of
+the broader single-precision switches.
+
 Ends are exclusive. Both select truncation toward zero and restore incoming CW on their
 inspected normal return. FRNDINT is not controlled by PC, so the PC difference alone is
 not evidence of different ordinary finite truncation results. Exception masking/waiting
