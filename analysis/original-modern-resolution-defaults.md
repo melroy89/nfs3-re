@@ -268,3 +268,27 @@ can request a later graphics reset. Actual first-run gate values,
 subsequent overwrites, and the mode that ultimately renders remain
 unverified. This evidence applies to 1.1.0. The 1.0.0 binary behavior
 is still open.
+
+### 1.5.0 requests 32-bit colour on the fallback branch
+
+The [pinned 1.5.0 executable](original-modern-mode-selection.md#150-changes-the-stored-request-format-and-sentinel-trigger)
+already writes the packed fallback `01e00280h` (640 × 480) and sets
+`006fbc14=1` at `00472dd4`. Its call at `00472dde` reaches
+`0044838e`. That helper starts with depth 32 at `00448396` and
+allows depth 16 only if `007a2798` is zero and bit 0 of `006fbc14`
+is clear. The default's bit is set, so the depth pushed at
+`004483ad` is 32 on both the fallback and large-request branches.
+
+The retained 1.5.1 through 1.6.0 executables keep those default writes.
+Their call at `00472dde` instead reaches `00448398`, with the
+equivalent depth-bit test at `004483ab` and selector call at
+`004483c8`. The final build's corresponding path is documented above.
+Reproduce by disassembling `00472dbb..00472de3` and
+`0044838e..004483cd` in the retained builds.
+
+This distinguishes the earlier scalar fallback `640 × 480 + 16`
+from a packed 640 × 480 request with a separate depth of 32. In
+1.5.0, the selector at `004bedcc` accepts an eligible exact size and
+depth immediately. An eligible exact-size mode with mismatched depth
+can still enter the ranking with zero area error. The selected mode
+depends on the renderer's eligible records. No rendering was tested.
