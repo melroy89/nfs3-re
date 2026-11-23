@@ -93,3 +93,21 @@ at that point. Earlier provider calls and later indirect calls
 remain outside the trace, so this does not establish preservation
 of the caller's control word across the entire swap. No timing
 or floating-point state was observed at runtime.
+
+The arithmetic feeds a conditional wait before the graphics call
+at `1000926b`. The binary32 constant at `100fd034` is exactly
+1000.0. The provider zero-extends the DWORD from `1f2972c4` into
+the 64-bit operand for FILD, divides 1000.0 by it, multiplies by
+the signed swap argument, and truncates. It adds the low DWORD
+of that result to the saved counter, with a further increment on
+the conditional path at `1000922e`.
+
+At `10009248..1000925c`, the code compares the callback's current
+counter with that target using signed comparisons. It polls while
+the result is below the target and the gate at `13262148` equals 1.
+Another branch can bypass the wait. The follow-up callback result
+is stored at `1f00ec74` before the graphics call. A precision
+difference that changes the truncated integer can therefore change
+the wait target on this path. The counter's units, callback identity
+and actual timing remain unverified. This trace establishes a
+presentation wait and leaves its relationship to simulation timing open.
