@@ -359,8 +359,7 @@ save-and-initialize behavior in [Software Developer's Manual Volume1, x87 state 
 
 Inside the retained angle routine, `0051f386 FNSTCW` records CW. The sequence through
 `0051f39e FLDCW` computes `(savedCW | 033f) & f3ff`: masked exceptions, PC11 (64-bit
-significand), nearest rounding. Special input branches can bypass this sequence, and
-its indirect jump tables remain unexpanded here. The inspected normal route nevertheless
+significand), nearest rounding. Special input branches can bypass this sequence. The inspected normal route
 contains local extended-mode setup **inside a physics dependency in the original too**.
 Do not equate the original's ordinary race single-precision baseline with every nested
 math operation. Runtime branch frequency, complete exceptional paths and trajectory
@@ -373,7 +372,16 @@ at `0056cb38..0056cb58`. Both executables have the same table and
 the same code through the eight returns at `0051f480..0051f510`.
 The index starts at zero at `0051f3a2`, can increment once, and
 then takes two successive doubling-plus-carry operations, so the
-normal path selects an index from zero through seven.
+normal path selects an index from zero through seven. The two calls
+at `0051f3b6` and `0051f3ef` both pass EAX = 15 to `00526aeb`.
+In both pinned files, table slot 15 at `0056cd18` points to
+`00526b9f`, which spills two x87 operands and calls `005269d4`.
+The selector entry, target and helper bytes match, and the inspected
+call path preserves EDX. The first index bit comes from the
+absolute-magnitude comparison, followed by the sign bits from
+`[ESP+14h]` and `[ESP+8h]`, in that order. The early branch at
+`0051f510` instead reloads both saved operands and executes
+`FPATAN` without the angle routine's local control-word override.
 
 | Table index | Target | Saved control-word reload |
 |---:|---|---|
