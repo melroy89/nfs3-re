@@ -60,6 +60,16 @@ The mirror rectangle is slot 9 because `006fbd04 - 006fbc50 = 0x24 + 9 * 0x10`. 
 
 Across all nine retained packages from 1.1.0 through 1.5.3, slot 9 has the same four WORDs for profiles 0 and 1, and all four coordinates are zero in profiles 2–5. The 1.6.0 table changes only profiles 0 and 1 in that slot. Profiles 2–5 contain four positive-zero binary32 values, and 1.6.1 retains the 1.6.0 table. This also establishes that the 1.5.0 mirror centering change did not coincide with a change to the authored mirror bounds. Whether a zero preset suppresses rendering on every path remains unverified.
 
+The [six matching local and reference `.POS` inputs](original-modern-hud-layout.md#1-file-sourced-presets-become-embedded-data) show a locale-dependent difference in the original's authored data. Reading the tenth row of each 23-row profile group gives the following `RearView` inventory, with coordinates in `(left, top, right, bottom)` order:
+
+| Original preset files | Racer | Cop | Split-screen profiles |
+|---|---|---|---|
+| `EDEF`, `FDEF`, `SDEF`, `WDEF` | `(0.350, 0.010, 0.650, 0.143)` | `(0.346875, 0.0125, 0.646875, 0.145833)` | All four zero |
+| `GDEF` | Same Racer bounds | Same as Racer | Both Player 1 profiles repeat Racer. Both Player 2 profiles add 0.5 to the vertical bounds. |
+| `IDEF` | Same Racer bounds | Same as `EDEF` Cop | Racer profiles zero. Player 1 Cop repeats Cop. Player 2 Cop adds 0.5 to its vertical bounds. |
+
+The early Modern table uses the Racer horizontal bounds for both standalone profiles and shifts both Racer vertical bounds up by 0.010. Its zero split-screen presets eliminate the authored German and Italian exceptions when the embedded initializer runs. These are input differences. Profile eligibility and visible split-screen mirror output remain unverified.
+
 Original `004be7d4..004be88f` uses the same profile table neighborhood but explicitly calls truncation helper `004dfd56` before its integer stores. Its extent differences include `+1`. Modern's direct FISTP uses the active rounding control and does not add the same inclusive endpoint adjustment. Therefore integer edge placement cannot be assumed bit-identical even where profile floats match. The separate [x87 policy comparison](og-modern-x87-precision.md) also matters; this chapter does not infer the live control word on every caller path.
 
 The 1.5.0–1.5.3 mirror-edge span `004be6f4..004be74b` is byte-identical in all four retained builds. It calls `004dfd56` before each of four FISTP stores and computes both extents as upper edge minus lower edge plus one. In 1.6.0, the corresponding `004be752..004be7a5` uses direct FISTP and insets each converted edge by `0055fed0` before taking the difference. For the same four converted edges and an inset of `B`, each 1.6.0 extent is smaller by `2*B + 1`, assuming ordinary fitting integer arithmetic. The comparison holds the converted edges fixed. Actual edge rounding and the inset value depend on runtime state.
