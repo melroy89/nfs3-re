@@ -195,3 +195,21 @@ for the twelve additions. For a car present in both local trees,
 the matching VIV supplies the same packaged profile text if
 both runs resolve that path. Model registration, tuning, and
 runtime profile state still require their own evidence.
+
+### Local track asset inventory
+
+Case-insensitive relative-path matching and whole-file SHA-256
+comparison found 225 files in the backup `Tracks` tree and
+227 in the installed tree. Of the shared paths, 224 match byte
+for byte. The one changed file is `TRK008/TR0804.CAN`. Both
+copies are 1,028 bytes with 900 differing byte positions.
+The backup hash is
+`4ff3d539d8bd53c1778f5d3c3ce9167b169d7ab28b90f084e20b7e96f7d42b67`
+and the installed hash is
+`ee274ae27b316b9f88d99d38db540ac8aa3b0ea7c68aef8a441c699231bfc805`.
+
+The installation also contains `TRK004/TR0400.TRK000.CAN` and
+`TRK004/TR0400A.TRK000.CAN`, which are absent from the backup.
+The official 1.6.1 archive has no `gamedata/tracks/` members or
+`.can` files. These are local asset differences whose origin
+and runtime use remain unverified.
