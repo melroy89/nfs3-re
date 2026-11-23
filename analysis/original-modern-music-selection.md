@@ -444,3 +444,10 @@ and XOR EDX,EDI before the store keeps EDX zero. The 1.5.1 and
 1.5.2 packages retain the same EDX store bytes. This dates the
 return to ordinal 0 at this defaults site to the 1.4.0 → 1.5.0
 boundary. Saved settings and playback remain separate.
+
+The packaged 1.4.0 and 1.5.0 menu descriptors both point to
+`0055633e`, with the same eight label IDs (466–473) and zero
+terminator. Each package's own English text resolves ordinal 2 to
+Romulus 3 and ordinal 0 to Random. This confirms that the reset
+default changed between those builds while the two option ordinals
+kept their meaning.
