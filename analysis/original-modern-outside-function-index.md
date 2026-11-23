@@ -69,6 +69,9 @@ These links reconcile selected outside-body spans with already inspected mechani
 
 | Outside span / NOP run | Existing explanation | Remaining boundary |
 |---|---|---|
+| `004bbce3..004bbd70` | Modern NOPs replace 141 bytes of the [original generic registry wrapper group](original-modern-registry.md), including the open and query entries. | Driver-specific replacements and registry results depend on the caller. |
+| `004dbd35..004dbda0` | Modern NOPs replace 107 bytes starting inside the original CALL at 004dbd33. The original tail converts integer arguments to binary32, calls 004bf260, returns with RET 8, and ends with alignment. See the [projection comparison](original-modern-projection.md). | Full argument semantics remain open. |
+| `004859f7..00485a60` | Modern NOPs replace 105 bytes starting inside an original HUD profile store at 004859f5. The interval covers the remaining stores, epilogue and alignment of the longer original [HUD defaults initializer](original-modern-hud-layout.md). | The Modern defaults are mapped in the linked comparison. |
 | `004b5db1..004b6a30` | All 2,557 differences lie in the NOP run ending at 004b67b0. The manifest lists 12 original entry overlaps and their research links, including [startup checks](original-modern-startup-requirements.md), registry handling and worker lifecycle. | These links map original entry points. Internal instruction roles and some Modern replacements remain open. |
 | `004901c3..004904d0` | All 619 differences fall before 00490430, in the region of [original DDE URL command construction and callback code](original-modern-removed-dde.md). The rest of this interval matches. | Runtime browser launch behavior remains untested. |
 | `004fd272..004fd490` | The leading 14 bytes match. All 528 differences lie in the NOP replacement of the [original projection helpers](original-modern-projection.md). | Replacement and retained projection behavior are scoped in that report. |
