@@ -919,3 +919,20 @@ interpolation formula can round differently. The checked EXE
 bytes establish the same implementation, with matching input
 tables, live control words and output equivalence still to
 be established for a particular vehicle and tick.
+
+The index helper `004f1c30` calls `0050ea4e`, which duplicates
+the input and truncates one copy through the changed FRNDINT
+helper. It stores the integral part as binary64 and returns the
+fractional remainder in ST0. If that remainder compares strictly
+below zero, `004f1c30` adds the binary64 constant −1.0 to the
+integral part. It then returns the integral part in ST0. Both
+wrapper bodies and the −1.0 constant match across the executables.
+
+For the ordinary finite, nonnegative torque coordinates, this
+selects the floor. For example, 5377 RPM gives 21 + 1/256, so it
+uses samples 21 and 22. At exactly 5376 RPM the coordinate is
+21 and the caller reads only sample 21. The later integer
+conversion receives an exactly representable small integer in
+these cases. The FRNDINT helper's changed exception handling
+still matters outside ordinary inputs. No target instructions
+were executed for these examples.
