@@ -108,7 +108,7 @@
     },
     {
       "path": "analysis/original-modern-differences.md",
-      "sha256": "063f095d07292dcfd8382172f0c810fb6d4b5a248fc3925845fab6b15610068f",
+      "sha256": "1507ac4f8cb8b22d1af935da7a444e97f7b696b281fceba444617b2f0ad4f5f0",
       "relative_links": 340
     },
     {
@@ -588,7 +588,7 @@
     },
     {
       "path": "analysis/original-modern-title-delay.md",
-      "sha256": "3ecd80477375a4a33dc4f320963168dad909f08368ace2cdb81fe94edecb5801",
+      "sha256": "e63b7e1dee4d688e0713e5ebd7b7169f2d8fd4e2babeb674359a4ea8f690af68",
       "relative_links": 7
     },
     {
@@ -658,7 +658,7 @@
     },
     {
       "path": "analysis/modern-patch-change-catalog.md",
-      "sha256": "da4f207b0c0a4ab13ecd034851a62b0f6def4e58e433aee9244fb07ad21eca58",
+      "sha256": "0ccb48735150dd6d2b6ec569eb3a41266284c82137137cd11bff48f27f101bd0",
       "relative_links": 275
     },
     {

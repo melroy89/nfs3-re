@@ -30,7 +30,7 @@ The retained Modern caller witness **`00473152..00473160`** checks `0055b03c != 
 
 Modern’s helper no longer contains original’s `006fbb54` draw suppression; it gates all its work on the configured duration instead. The [movie startup comparison](original-modern-idle-movie.md) separately handles title-movie availability. **A title-splash wait and movie admission are distinct policies**: zero delay here does not by itself prove the title movie is disabled.
 
-**MP150-032:** partial static support for the configuration producer,0..10 consumer clamp, zero-skip behavior and millisecond elapsed loop. Actual display duration, title visibility, callback timing and input behavior remain unverified. See the package comparison below for the release boundary. No timing or instruction probes were run.
+**MP150-032:** bounded static support for the configuration producer,0..10 consumer clamp, zero-skip behavior and millisecond elapsed loop. Actual display duration, title visibility, callback timing and input behavior remain unverified. See the package comparison below for the release boundary. No timing or instruction probes were run.
 
 ## Original clock follow-up: shared counter and requested rate
 
@@ -59,3 +59,11 @@ and the full routine matches final, consistent with the separate
 This dates the configurable routine to the 1.4.0 → 1.5.0
 package boundary. The later clock change leaves its clamp and
 elapsed-time logic intact. Actual title duration remains unmeasured.
+
+The 1.5.0 package's `nfs3.ini` supplies `IntroSplashTime=0`
+under `[NFS3]`. The 1.4.0 package contains `LoadingSplashTime=5`
+but no `IntroSplashTime` key. In the 1.5.0 executable,
+`004b5620` loads the `IntroSplashTime` literal at `0053ed60`,
+passes zero in EDX to the settings reader, and stores the result
+at `007a279c` at `004b562c`. This verifies the packaged default
+and its connection to the new title-delay consumer.
