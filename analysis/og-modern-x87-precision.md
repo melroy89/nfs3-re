@@ -323,7 +323,25 @@ returns. Both the source through the jump and the complete epilogue
 match byte for byte between the pinned executables. The target is a
 shared unwind sequence with no x87 instruction or further call.
 The generated inventory still records the branch as a nonentry edge.
-The 111 indirect sites remain unexpanded.
+The retained inventory identifies the operand form and static imports for
+all 111 indirect sites in each baseline. Both have the same breakdown:
+
+| Operand form | Sites per executable |
+|---|---:|
+| Call through a named PE import slot | 27 |
+| Call through other fixed memory | 51 |
+| Call through a register-based memory operand | 16 |
+| Call through a register | 12 |
+| Jump through a table indexed by a register | 5 |
+
+The 27 imports have named external destinations. Their implementation
+and floating-point effects remain outside the inventory. The five
+indexed jumps belong to `004149e0` (two), `00417080`, `0051f320`
+and `00526aeb`. For the angle path traced below, the relevant table
+operand is `[edx*4+0x56cb38]` inside `0051f320`. Recovering its index
+bounds and destinations would extend the precision audit to branches
+outside the inspected normal route. The operand breakdown alone
+establishes neither target reachability nor x87 state preservation.
 
 A concrete retained physics-to-angle route is:
 
