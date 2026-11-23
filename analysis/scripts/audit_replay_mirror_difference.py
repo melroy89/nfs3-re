@@ -5,11 +5,16 @@ import subprocess
 import pefile
 from audit_thrash_loader_difference import ROOT, SPECS
 
-SPANS=[(0x484450,0x4844c0),(0x422aa0,0x422b65),
+SPANS=[(0x484450,0x4844c0),(0x422aa0,0x422bd0),
        (0x4844c0,0x484599),(0x482d6b,0x482d8e),
        (0x482f5b,0x482f7f),(0x4c5097,0x4c50af),
        (0x48f7b0,0x48f81b),(0x48f970,0x48fa09),(0x48f550,0x48f69a),
        (0x431800,0x43182d)]
+
+HISTORICAL_ARCHIVES = {
+    '1.3.1': ('6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934', 'original'),
+    '1.4.0': ('8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9', 'official_modern'),
+}
 
 
 def main():
@@ -42,6 +47,28 @@ def main():
     assert gate_hashes['original'].keys() == retained_gates
     assert gate_hashes['original'] == gate_hashes['official_modern']
     result['retained_gate_starts'] = sorted(retained_gates)
+    release_starts = retained_gates | {'00484450', '00422aa0'}
+    result['historical'] = {}
+    for version, (digest, baseline) in HISTORICAL_ARCHIVES.items():
+        archive = (ROOT / 'analysis/captures/modern-differences/upstream/history'
+                   / f'nfs3_modern_patch_v{version}.7z')
+        assert hashlib.sha256(archive.read_bytes()).hexdigest() == digest
+        binary = subprocess.check_output(['7z', 'x', '-so', str(archive), 'nfs3.exe'])
+        pe = pefile.PE(data=binary, fast_load=True)
+        matches = {}
+        for row in result['binaries'][baseline]['spans']:
+            if row['start'] in release_starts:
+                start = int(row['start'], 16)
+                span = pe.get_data(start - pe.OPTIONAL_HEADER.ImageBase,
+                                   int(row['end'], 16) - start)
+                matches[row['start']] = hashlib.sha256(span).hexdigest()
+                assert matches[row['start']] == row['bytes_sha256'], (version, row['start'])
+        assert matches.keys() == release_starts
+        result['historical'][version] = {
+            'archive': str(archive.relative_to(ROOT)), 'archive_sha256': digest,
+            'exe_sha256': hashlib.sha256(binary).hexdigest(),
+            'matched_baseline': baseline, 'span_hashes': matches,
+        }
     result['binding_chain']={'encoded':'00004104','slot':'0079c3cc',
         'shared_action_base':'0079c3a0','action_index':11,'scan_index':'0041',
         'action_builder_identical':True}

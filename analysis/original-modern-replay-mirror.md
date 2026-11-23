@@ -2,7 +2,7 @@
 
 ## Evidence boundary
 
-Static supplied-original/official-Modern comparison, with exact identities in the [baseline](original-modern-differences.md). Reproduce with `python3 analysis/scripts/audit_replay_mirror_difference.py`. The [manifest](evidence/audits/original-modern-replay-mirror.json) retains toggle, eligibility, refresh-gate and input witnesses. No replay, keyboard or target instruction was executed.
+Static supplied-original/official-Modern comparison, with exact identities in the [baseline](original-modern-differences.md). Reproduce with `python3 analysis/scripts/audit_replay_mirror_difference.py`. The [manifest](evidence/audits/original-modern-replay-mirror.json) retains toggle, eligibility, refresh-gate and input witnesses, plus hash-pinned checks of the 1.3.1 and 1.4.0 archive members. No replay, keyboard or target instruction was executed.
 
 The current saved analysis names `00484450` as the primary-view variant toggle. Its shared eligibility and HUD paths are relevant to **MP140-064**'s replay-mirror claim, and its default F7 input chain is now traced below; rendered output remains untested.
 
