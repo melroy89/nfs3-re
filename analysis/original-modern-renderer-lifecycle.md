@@ -212,3 +212,19 @@ These are local adapter-index decisions. They do not establish
 adapter availability, a successful selection, or the driver's
 mode description after setup. The executable uses the later
 mode-setting result for its startup failure gate.
+
+The display selector entry spans match byte for byte between the
+retained 1.6.0 and 1.6.1 DLLs for DX6
+(`60001880..6000194a`), DX7 (`600020c0..600021e7`) and DX8
+(`60003800..600038a7`). The spans end just after the return
+instructions. Equal export bodies leave room for changed behavior in
+their callees, as the DX7 rebuild shows.
+
+In both DX8 builds the selection flag at `6001ed6c` starts in the
+zero-filled tail of PE `.data`, beyond the file-backed bytes. The
+selector tests it at entry and sets it to 1 at `6000389f` on the
+first-selection path. A linear disassembly search found only those
+two direct references to the absolute address in either build.
+The early return is therefore present in 1.6.0 already. Indirect
+writers, resets through bulk writes, and behavior across DLL reloads
+were outside this check.
