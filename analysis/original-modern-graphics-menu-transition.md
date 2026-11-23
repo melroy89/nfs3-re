@@ -158,3 +158,14 @@ restore path, which sets up a copy from `00662ca0` at
 `0044d476`. This identifies the second fog-aware call as the
 player settings graphics Cancel path. Actual menu transitions
 remain untested.
+
+The restore instructions at `0044d476..0044d495` are identical in
+both pinned EXEs. With the expected clear direction flag, they copy
+`0x176c` bytes from `00662ca0` back to `006fbb4c`, ending just
+before `006fd2b8`. The two fog settings restored by Modern's helper,
+`006fd1d4` and `006fd1d8`, lie inside that destination range.
+On a matching Cancel path that reaches and completes the bulk copy,
+the snapshot therefore supplies the final values for both fields.
+The helper's earlier writes alone cannot establish a different final
+Cancel value. The nonmatching path has a separate gate and bypasses
+the bulk restore.
