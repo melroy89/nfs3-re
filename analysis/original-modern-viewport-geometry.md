@@ -74,6 +74,23 @@ Original `004be7d4..004be88f` uses the same profile table neighborhood but expli
 
 The 1.5.0–1.5.3 mirror-edge span `004be6f4..004be74b` is byte-identical in all four retained builds. It calls `004dfd56` before each of four FISTP stores and computes both extents as upper edge minus lower edge plus one. In 1.6.0, the corresponding `004be752..004be7a5` uses direct FISTP and insets each converted edge by `0055fed0` before taking the difference. For the same four converted edges and an inset of `B`, each 1.6.0 extent is smaller by `2*B + 1`, assuming ordinary fitting integer arithmetic. The comparison holds the converted edges fixed. Actual edge rounding and the inset value depend on runtime state.
 
+The four intermediate-only calls in the
+[x87 census](og-modern-x87-precision.md#changed-drivetrain-truncation-helper)
+map directly to the four 1.6.0 stores. Each pair uses the same
+profile-table operand and stack destination.
+
+| Profile DWORD operand | Stack destination | 1.5.3 truncation call / FISTP | 1.6.0 direct FISTP |
+|---|---|---|---|
+| `[EDX+006fbd08]` | `[EBP-18h]` | `004be706` / `004be70b` | `004be76a` |
+| `[EDX+006fbd10]` | `[EBP-10h]` | `004be714` / `004be719` | `004be776` |
+| `[EDX+006fbd04]` | `[EBP-14h]` | `004be72e` / `004be733` | `004be78d` |
+| `[EDX+006fbd0c]` | `[EBP-0ch]` | `004be73c` / `004be741` | `004be799` |
+
+For a fixed finite in-range product of 10.75, the old sequence
+stores 10, while the direct store gives 11 if the active rounding
+mode is nearest. This isolates the conversion difference. The
+example does not represent an observed viewport coordinate.
+
 The 1.6.0 path calls the [border updater](original-modern-border-geometry.md#modern-wrapper-and-call-site-mapping) at `004be74d`, before reading the freshly written value at `004be759`. The updater computes the inset from the fitted 4:3 reference width, twice the stored binary32 approximation of `1/640`, and the active x87 rounding mode. For a 1280×720 mode with fitted width 960 and nearest rounding, the product is approximately 3 and FISTP stores 3. Holding converted edges fixed, the new physical extent would then be seven units smaller in each dimension. This is a conditional arithmetic example. It excludes any separate changes to the profile coordinates, edge rounding and presentation.
 
 In the first group of `007cdb48`, original supplies logical height derived from H/4, whereas Modern `004be7ca..004be7e1` derives height from `(physical_width*10)>>4` and centres that height relative to the second group's vertical bounds. For positive fitting dimensions the Modern logical width/height ratio is approximately 8:5, subject to truncation. This is relevant to mirror-proportion release claims, but all consumers and the actual rendered mirror image remain untested; the record address alone is not universal proof of camera behavior.
