@@ -137,3 +137,14 @@ original length. That remainder is zero. Modern copies the same
 direction flag, the snapshot covers the same 5,996 bytes in both
 versions. The additional fog policy is a separate effect after
 the copy.
+
+A second setup site applies the same SFX intensity mask change.
+Both pinned EXEs load token `SFX_INTENSITY` from `005393d0` at
+`0044d35d`, then look it up through `00442a40`. For a present
+item, `0044d36d` tests byte `007a3a58` with mask `0x40` in the
+original and `0x50` in Modern. If only bit `0x10` is set among
+those tested bits, original sets item+4 bit 0 and skips setup.
+Modern instead enters `0044d37c`, which begins by loading the
+intensity value at `006fbc38`. The one-byte difference at
+`0044d373` therefore belongs to the same control policy as
+`0044873e`, in a separate setup path.
