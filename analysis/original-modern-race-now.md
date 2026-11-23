@@ -146,3 +146,13 @@ the three slots all have the original pointer values through 1.3.1
 and all remain zero from 1.4.0 onward. This dates the paired
 registration and store changes without establishing when the
 callbacks actually run.
+
+The state writes predate the final shared policy helper. The retained
+1.4.0 wrapper bytes at `00437600..00437612` still differ from final.
+In 1.5.0 that 18-byte wrapper matches final and calls `00437614`.
+The 231-byte target matches final except for four bytes in two
+operands, at `00437657..00437659` and `004376b7..004376b9`.
+Versions 1.5.1 and 1.5.2 retain those same operand differences.
+The complete target matches final in 1.5.3 and 1.6.0. This separates
+the 1.4.0 state writes and callback removal from the 1.5.0 wrapper
+and the later operand changes.
