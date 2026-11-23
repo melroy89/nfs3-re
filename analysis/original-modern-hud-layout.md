@@ -10,6 +10,8 @@ The matched pair is preset initializer `00485680`, followed by default-header in
 
 ## 1. File-sourced presets become embedded data
 
+The six locale-prefixed presets in the [author-hosted reference archive](original-modern-original-reference-bundle.md) (`EDEF`, `FDEF`, `GDEF`, `IDEF`, `SDEF`, `WDEF`) each match both local copies byte for byte. This was checked by streaming each member from the hash-verified `nfs3_orig.7z` through `cmp` and comparing the installed and backup members with each other. The existing [coordinate comparison](original-modern-reference-assets-index.md#hud-coordinate-literal-comparison) therefore applies to all six local locale-prefixed files. The unprefixed `DEF.POS` is present locally and outside this archive comparison. This establishes input identity for the six pairs. Runtime parser output and retail-disc provenance remain unresolved.
+
 Original `00485680`:
 
 - Selects a character using `[006fbb4c]` and byte table `0047bbb8` (`egfsiw` plus NUL).
