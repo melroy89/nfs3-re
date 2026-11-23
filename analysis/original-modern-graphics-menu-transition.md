@@ -148,3 +148,13 @@ Modern instead enters `0044d37c`, which begins by loading the
 intensity value at `006fbc38`. The one-byte difference at
 `0044d373` therefore belongs to the same control policy as
 `0044873e`, in a separate setup path.
+
+The companion transition at `0044d45d` uses the literal
+`PSGRAPH_CANCEL` at `005393f8` in both pinned EXEs. The item type
+must be 5 before the comparison runs. Original calls `004429c0`
+and Modern calls `0043778c`. On a match, Modern restores the fog
+shadow pair in that helper before entering the shared snapshot
+restore path, which sets up a copy from `00662ca0` at
+`0044d476`. This identifies the second fog-aware call as the
+player settings graphics Cancel path. Actual menu transitions
+remain untested.
