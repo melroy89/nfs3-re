@@ -440,7 +440,7 @@ The two retained package members both use the WORD source table at `00540500..00
 | 2, 3 | 0 | `(130, 0, 330, 56)` | `(130, 0, 330, 54)` |
 | 4, 5 | 0 | `(130, 500, 330, 556)` | `(130, 500, 330, 554)` |
 
-The 1.4.0 table SHA-256 is `4812d9a1657e3d90b83353e74e5598d76b2580e2c1c6c66461b7ebc9fa6a03a9`. The 1.5.0 table matches the later 1.5.x releases as recorded above. The comparison was made by streaming each archive's `nfs3.exe` to `pefile` and decoding six groups of 24 little-endian `4H` records. On-screen geometry and release-note attribution remain unverified.
+The 1.4.0 table SHA-256 is `4812d9a1657e3d90b83353e74e5598d76b2580e2c1c6c66461b7ebc9fa6a03a9`. The 1.5.0 table matches the later 1.5.x releases as recorded above. The comparison was made by streaming each archive's `nfs3.exe` to `pefile` and decoding six groups of 24 little-endian `4H` records. In the hash-matched reference `EDEF.POS`, slot 0 is named `DigitalSpeedometer` for all six profile prefixes, and slot 2 is named `DigitalTachometer` for the standalone Racer and Cop prefixes. The names come from records 1 and 3 of each 23-record file group, before the original initializer's extra rectangle. This identifies the corresponding authored slots by ordinal. On-screen geometry, runtime profile selection and release-note attribution remain unverified.
 
 ## Earlier120 to130 updates55 preset records
 
