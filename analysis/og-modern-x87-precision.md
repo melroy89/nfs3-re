@@ -955,3 +955,19 @@ Matching loops and defaults leave the loaded text and later
 profile modifications as separate inputs. The
 [police torque observations](police-torque-runtime.md) cover
 one installed profile and its reachability.
+
+The numeric reader used by the 41-entry torque loop is retained
+too. The parser prefix through that loop
+(`004b1380..004b16ac`), indexed reader
+(`004b07d0..004b0871`), and decimal conversion span
+(`004f8122..004f8390`) match byte for byte in the two executables.
+The indexed reader calls `004f82b6`; when token conversion at
+`004f8122` returns zero, that wrapper initializes its binary64
+result to +0 and loads it into ST0 at `004f8386`. The parser then
+stores binary32 into the torque table.
+
+This qualifies the [installed police profile observation](police-torque-runtime.md).
+The same empty-token conversion path exists in the original
+executable. Whether the original loads the same profile text and
+ultimately uses the same table remains a separate asset and runtime
+question.
