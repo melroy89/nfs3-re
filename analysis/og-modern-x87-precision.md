@@ -618,3 +618,18 @@ The retained 1.5.3 package supplies `Type=voodoo` in
 to different frame-boundary policies when loading and renderer
 initialization succeed. Other producers of bit 3 and runtime
 control words remain unverified.
+
+The angle routine's file-backed constant span
+`0056cb28..0056ccd0` is also byte-identical in the two executables.
+It includes the 16.0 and 0.0625 binary32 scaling constants, the
+extended-precision polynomial coefficients and result offsets,
+and the indexed table region beginning at `0056cbb0`.
+
+Both normal-path calls to `00526aeb` load selector `0fh`.
+The corresponding DWORD at `0056cd18` is `00526b9f` in both
+files. That branch spills both x87 operands as TBYTEs and
+calls the retained divide helper at `005269d4`. The helper body
+through `00526aeb) matches, including the branch into a scoped
+control-word adjustment. This resolves the dispatch target for
+these two known callers. Other selectors, exceptional operands
+and live state remain outside this comparison.
