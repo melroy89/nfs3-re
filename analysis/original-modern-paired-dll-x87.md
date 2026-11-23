@@ -160,3 +160,17 @@ requested selector across the executable's 1.6.0 x87 policy
 change. The later saved rate and the actual hardware refresh rate
 can depend on subsequent setup. The extended-open provider body
 and live presentation timing remain outside this result.
+
+The adapter's swap argument at `6000fcbc` has a file-backed
+initial value of 1. In `_THRASH_setstate@8`, selector `67h`
+branches from `60002b54..60002b63` to `60003155`, which
+stores the second argument without a local clamp. Page flip
+loads that DWORD at `600028b8` and passes it to the provider.
+The initializer bytes, selector branch, and complete setter
+block `60003155..6000316d` match in the three retained nGlide
+adapter builds.
+
+This identifies the ordinary initial multiplier and its update
+interface. The actual multiplier depends on whether a caller
+has issued that selector. It is separate from the mode-open
+refresh selector and from the provider's saved rate.
