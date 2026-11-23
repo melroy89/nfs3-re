@@ -228,3 +228,23 @@ two direct references to the absolute address in either build.
 The early return is therefore present in 1.6.0 already. Indirect
 writers, resets through bulk writes, and behavior across DLL reloads
 were outside this check.
+
+### The adapter index input is retained across the reorder
+
+Both executables place `007a3a70` in the uninitialized `.bss`
+section, so its loader-supplied value starts at zero. The renderer
+name parser in 1.6.0 checks for an `@` followed by an ASCII digit
+at `004b580b..004b581b`, calls the decimal converter `004f0430`,
+and stores its result at `004b5822`. Final retains those checks,
+converter and destination at `004b5823..004b583f`. Neither checked
+suffix branch clears the field when the checks fail. See the
+[command-line analysis](original-modern-command-line.md#duplicate-driver-options-name-and-suffix-are-separate-state)
+for how a previously parsed suffix can survive a later name change.
+
+A linear disassembly search found one direct store and one direct
+read of `007a3a70` in each executable. The readers are the two
+startup display calls above. The evidence thus ties the observed
+reorder to the same adapter-index input, with no additional bounds
+check on that input in the checked EXE routes. The selected DLL
+interprets the index. Indirect writes and live adapter selection
+remain outside this check.
