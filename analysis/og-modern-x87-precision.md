@@ -713,3 +713,21 @@ the outer multiply and store, even when the isolated angle
 calculation matches. The inspected caller makes no integer
 conversion at this boundary. Stored values and trajectory
 effects remain untested.
+
+### The angle dispatch bit comes from a retained startup arithmetic check
+
+In both executables the file-backed byte at `00567858` is zero.
+The matching routine at `0051f2a0..0051f31e` is referenced by
+a relocated function pointer at `0056b810` in both images.
+It loads fixed operands and skips the check when the unsigned
+byte at `005644c1` is below 3. Otherwise it runs the arithmetic
+sequence at `0051f2ce..0051f30e`. The signed-greater branch outcome
+after `0052699c` sets bit 0 through OR at `0051f310`. The other
+returns leave the byte unchanged.
+
+This is the direct producer for the bit tested by the angle
+dispatcher at `004e06db`. It also feeds other math dispatchers.
+The original and Modern retain the same producer instructions,
+initial value and relocation. The pointer alone does not establish
+initialization order, the arithmetic check's result on a given
+CPU or Wine configuration, or the branch taken in an observed race.
