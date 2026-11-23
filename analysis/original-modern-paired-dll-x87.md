@@ -111,3 +111,17 @@ difference that changes the truncated integer can therefore change
 the wait target on this path. The counter's units, callback identity
 and actual timing remain unverified. This trace establishes a
 presentation wait and leaves its relationship to simulation timing open.
+
+The provider's PE import table resolves the polling callback at
+`1f9f0824` to **WINMM.timeGetTime**, also reached by thunk
+`100c0080`. The target compared at `1000924a` and `10009258`
+therefore uses millisecond clock readings. The signed comparisons
+are visible in the instructions. They do not implement a separate
+wrap-safe elapsed-time comparison in this loop.
+
+The divisor is a saved value. At `1000355b..10003571` the provider
+copies `1f01699c` to `1f2972c4` before replacing the former with
+EDX. Swap reads the saved value for arithmetic and the live value
+for the equality check at `1000922f`. A reconstruction should
+preserve that distinction. Complete refresh-rate provenance and
+the measured effect of this wait on game timing remain open.
