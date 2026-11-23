@@ -764,3 +764,22 @@ record state, the runner therefore dispatches the FPU initializer
 before the arithmetic check. The initializer has its own skip
 conditions, so that ordering alone does not establish the
 control word or classification on every startup.
+
+The classifier called by that initializer is also retained.
+`004ff59c` loads the same file-backed word `127fh` from
+`0056acf8` in both images and calls `0051f272`. The latter
+executes FINIT, computes 1 divide by zero with the initialized
+exception masks, then compares the result with its negation.
+It returns classification 2 if the comparison sets ZF through
+FNSTSW/SAHF, or 3 if ZF is clear. Before returning it executes
+FINIT again and loads the word passed in AX at entry. That load
+uses the supplied word and does not recover whatever control
+word was active before the classifier call.
+
+The initializer at `004ff5dc` can publish this classification
+to `005644c1` at `004ff618`. The arithmetic check at priority 3
+admits classifications of at least 3. The compared bytes cover
+the classifier, its immediate caller and the initializer.
+Actual publication still depends on the initializer's gates.
+The classification is an arithmetic observation encoded by the
+program, with no live result measured in this comparison.
