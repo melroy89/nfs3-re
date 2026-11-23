@@ -498,3 +498,24 @@ identity fields. This is a verified loading-state difference beside the
 retained replay codec. It gives a concrete reason to compare initial
 configuration as well as recorded controls in a cross-version test.
 [Paired ghost loading audit](original-modern-ghost-loading.md).
+
+### Retail renderer setup controls the race-frame x87 boundary
+
+In the supplied original, the renderer dispatcher clears
+`007a3a70` at `004b59d7`. How it leaves that cell depends on the
+selected branch. The `nulla.dll` branch writes 1 at `004b5a16`.
+The Voodoo and PowerVR candidate branches load 1 into ESI and EDI
+respectively before their renderer state calls and store those
+registers at `004b5bdb` and `004b5dfc`. With the ordinary callback
+register-preservation contract those stores also write 1. The D3D
+candidate branch has no direct store to that cell after the common
+clear, through its local continuation. This is a branch analysis,
+with indirect writes and alternative loaded DLLs still possible.
+
+A nonzero value at the two race-frame tests bypasses both the
+entry control-word reload and the exit reset to single precision.
+The bypass preserves the incoming control word at those boundaries
+unless intervening code changes it. It does not prove the precision
+in effect throughout the frame. Final Modern Patch removes those
+tests and reuses the same address for the adapter index, as traced
+in the [renderer comparison](original-modern-renderer-lifecycle.md#retail-uses-a-different-adapter-field-and-a-fixed-follow-up-mode).
