@@ -37,3 +37,22 @@ A global statement such as “every component uses one fixed80-bit policy” sti
 - **Not run:** DLL loading, game/API calls, new instruction probes, reconstruction or compilation.
 
 Two successful runs produced identical manifests. Existing EXEs, saved Ghidra database, maintained C and raw exports were preserved. This bounded comparison does not complete the overall original/Modern investigation.
+
+## nGlide adapter page flip retains the same x87 boundary
+
+The `drivers/nglide/voodoo2a.dll` members in the retained 1.5.3
+and final archives export `_THRASH_pageflip@0` at `60002890`.
+Their DLL SHA-256 values are
+`a7f8831bb5e78fcab34714612722201a711868ffe4d2d45c11a86d677cdfcaeb`
+and `f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b`.
+The entire 65-byte span `60002890..600028d1` matches.
+
+This export polls the provider through slot `600110c0` with
+selector `14h`, compares the output with `6000fcd8` and has
+a four-million-iteration countdown. It then calls provider
+slot `60011034` once. The wrapper itself has no x87 instruction
+and does not save or restore the control word around either provider
+call. This narrows the precision question to the caller's incoming
+state and the provider's behavior for this handoff. It does not
+establish what the provider does or how long the poll takes.
+See the [executable precision transition](og-modern-x87-precision.md).
