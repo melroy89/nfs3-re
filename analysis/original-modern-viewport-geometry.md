@@ -72,6 +72,18 @@ The early Modern table uses the Racer horizontal bounds for both standalone prof
 
 Original `004be7d4..004be88f` uses the same profile table neighborhood but explicitly calls truncation helper `004dfd56` before its integer stores. Its extent differences include `+1`. Modern's direct FISTP uses the active rounding control and does not add the same inclusive endpoint adjustment. Therefore integer edge placement cannot be assumed bit-identical even where profile floats match. The separate [x87 policy comparison](og-modern-x87-precision.md) also matters; this chapter does not infer the live control word on every caller path.
 
+In the retained 1.3.1 → 1.4.0 pair, the five-byte shift of
+the conversion sequence comes from the initializer's prologue
+at `004be5e0`: six individual register pushes become one
+PUSHAD. From the frame setup through the first mirror conversion,
+the decoded instructions match after shifting addresses and
+accounting for branch and call targets. In particular, the two
+rectangle setters move from `004be898` and `004be8a4` to
+`004be88c` and `004be898`, respectively. Their register-to-field
+stores match in both archives. This explains the local movement
+without establishing equality of the runtime inputs to the
+initializer or the full register contract at return.
+
 The 1.5.0–1.5.3 mirror-edge span `004be6f4..004be74b` is byte-identical in all four retained builds. It calls `004dfd56` before each of four FISTP stores and computes both extents as upper edge minus lower edge plus one. In 1.6.0, the corresponding `004be752..004be7a5` uses direct FISTP and insets each converted edge by `0055fed0` before taking the difference. For the same four converted edges and an inset of `B`, each 1.6.0 extent is smaller by `2*B + 1`, assuming ordinary fitting integer arithmetic. The comparison holds the converted edges fixed. Actual edge rounding and the inset value depend on runtime state.
 
 The four intermediate-only calls in the
