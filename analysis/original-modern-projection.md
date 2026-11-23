@@ -32,6 +32,18 @@ comparison or the eventual on-screen coverage.
 
 The selected-dimension producer is traced in the [HUD](original-modern-hud-layout.md) and [resolution-default](original-modern-resolution-defaults.md) reports. A direct call at `004be748` computes the cached automatic angle in the viewport-initialization neighborhood. Later dimension changes must reach an appropriate update path for that cache to remain current; this chapter does not establish every reset/caller.
 
+In the final executable, the mode publisher at `00448400`
+takes the selected mode record in EAX. With clear DF it copies
+record DWORDs at +4 and +8 into `006fd1e4` and `006fd1e8` via
+STOSD at `00448411` and `00448418`. Its conditional direct call
+at `0044841e` targets the HUD scaler. The Automatic angle
+calculation instead runs at `004be748` in viewport initialization,
+immediately after the rectangle store to `007a2740`. It reads
+the published mode dimensions and does not read that rectangle.
+This establishes distinct publication and calculation steps.
+Actual ordering for each mode change still requires caller
+or runtime evidence.
+
 The cache at `0055fecc` is file-backed and starts at binary32
 90.0 (`42b40000h`) in both 1.6.0 and 1.6.1. In the final
 executable, linear disassembly and the HIGHLOW relocation list
