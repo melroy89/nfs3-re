@@ -40,6 +40,17 @@ audible timing remain outside the static comparison.
 
 This gates repeated requests for the same ID independently. The [timer worker trace](frontend-dialog-contract.md#dialog-clock-producer) identifies `0048ebd8` as one increment of `0079c1a4` per serviced active iteration. The same increment is present in the inspected 1.3.1, 1.5.0 and 1.6.0 members. The [timer startup trace](sound-stream-notification-units.md) records a requested rate of 128 pulses per second. Five serviced iterations are nominally about 39 ms if the worker services every requested pulse at that rate. The check observes the counter, and actual cadence, initial timestamps and audio playback remain unverified. The read/update sequence is non-atomic in the inspected instructions. Original's inspected routine has no corresponding local gate.
 
+In 1.6.0 the eight timestamp DWORDs at `00664750..00664770` lie in the
+uninitialized `.bss` section, which has no backing file offset. The loader
+initializes them to zero. A direct-address disassembly scan finds the
+indexed writer through EDI in the request builder and a separate reader
+in the caller at `0043776d`. The latter checks the last timestamp for
+sound ID 1 against a threshold of `0x30` before calling `004181d0`.
+The same local caller sequence is present in 1.5.0 and absent at that
+location in 1.4.0. This is a stricter precheck on that caller path. The
+generic request builder still checks five serviced iterations. Later
+computed writes and runtime request frequency remain unverified.
+
 The sound-slider preview callback adds a stricter outer check: with nonzero action/context input it tries ID 1 only when unsigned counter difference from ID 1's timestamp is **at least 0x30 (48)** (`00437758..0043777b`). It then delegates slider handling to `0046cae0`. The outer check and inner five-unit gate are distinct; do not collapse them into a guessed repeat duration.
 
 ## Record fields and retained initialization
