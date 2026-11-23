@@ -243,6 +243,17 @@ still open the copied files. This evidence establishes the
 shared naming policy and conditional request, with actual
 file opens and camera effects unobserved.
 
+Both local trees contain the full seven-name sequence `TR0800A.CAN`
+and `TR0801.CAN` through `TR0806.CAN`. A case-insensitive directory
+comparison and pairwise byte checks show that all six other files in
+the sequence match. The plain `TR0800.CAN` also exists in both trees
+and matches, but this loop requests the `A` variant at index zero.
+The paired instructions also share the early return at `0040f2c5`
+when `0055e88c` is nonzero. When that gate admits loading and the
+effective root resolves to either tree, the on-disk inventory has
+no missing predecessor that would stop the scan before index 4.
+Actual root resolution and successful opens remain unobserved.
+
 The original and Modern caller spans `0041d975..0041d991`
 and prefix builder `0041d8a0..0041d8cc` also match. On the
 admitted path, the caller supplies an empty suffix to the
