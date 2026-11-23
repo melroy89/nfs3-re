@@ -554,3 +554,14 @@ x87 path and the reuse of its old flag address therefore
 occur at the same packaged boundary. Address-based data types
 and names should follow the selected executable version.
 See the [later adapter input trace](original-modern-renderer-lifecycle.md#the-adapter-index-input-is-retained-across-the-reorder).
+
+In both 1.5.2 and 1.5.3, the dispatcher at `004b5a4a`
+uses BSF on the renderer mask at `007a3a58`. For a nonzero
+mask, jump-table entries 3 and 4 at `004b59e0` and `004b59e4`
+both lead to `004b5b1b`, the branch that sets the x87 bypass
+flag. Thus the branch is selected when the **lowest set bit**
+is bit 3 or bit 4. A mask with a lower bit set reaches a
+different entry even if bit 3 or 4 is also set. This describes
+the dispatcher and its direct store. A zero mask, earlier driver
+initialization failure, and indirect state changes are outside
+the verified branch contract.
