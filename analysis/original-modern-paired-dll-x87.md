@@ -174,3 +174,20 @@ This identifies the ordinary initial multiplier and its update
 interface. The actual multiplier depends on whether a caller
 has issued that selector. It is separate from the mode-open
 refresh selector and from the provider's saved rate.
+
+A linear `objdump -d -Mintel` scan found no literal
+`push 0x67` or `mov eax,0x67` in the supplied original or the
+retained 1.5.3, 1.6.0 and 1.6.1 executables. This checks two
+common argument encodings only. Table-driven values and other
+register or stack writes remain possible.
+
+For swap argument 1 and a saved rate of 60, the computed
+duration before any conditional increment truncates to 16 ms
+under either 24-bit or 64-bit significand precision with
+round-to-nearest arithmetic. The exact quotient is 16⅔, far
+enough from an integer for either rounding to produce the same
+truncation. The same check for the nine listed fixed rates
+gives 16, 14, 13, 13, 12, 11, 10, 11 and 8 ms, respectively,
+under both precisions. These are arithmetic results under stated
+inputs. Other swap arguments, effective rates and live frame
+pacing remain outside the comparison.
