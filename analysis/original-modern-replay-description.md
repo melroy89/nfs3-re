@@ -31,6 +31,13 @@ description box. If the authored Y reaches the callback unchanged, the
 combined first-row Y is 201 in 1.3.1 and 225 in 1.4.0. Actual anchoring,
 scaling and pixel placement remain unverified.
 
+The packaged positions follow the same history as the callback. All four
+retained packages from 1.1.0 through 1.3.1 use the earlier coordinates. All
+seven from 1.4.0 through 1.6.1 use the later coordinates. The description
+box is 180×115 throughout. The check reads the blocks named by their exact
+`codelink` values in each package's own `fedata/menus/loadsave.mnu`. It
+establishes continuity of these fields, while other menu properties may vary.
+
 ## Heading removed, details begin earlier
 
 | Property | Original | Final Modern |
