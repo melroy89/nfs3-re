@@ -59,6 +59,17 @@ The returned driver index goes to `004483a0`. The
 compares scalar scores, so this is a desktop-area target with a depth
 term. Aspect-ratio or per-dimension proximity is not established.
 
+Both bypasses in 1.1.0–1.3.0 preserve EAX=`0004b010h`, loaded at
+`00472e31`. That score is 640 × 480 + 16. A set renderer mask
+branches around the desktop calculation, as does a signed tier
+below 4. The selector receives a scalar target, so the literal
+does not guarantee that the driver supplies or selects a
+640 × 480 × 16 mode. Version 1.3.1 retains the same fallback and
+uses the large sentinel on the qualifying path. Version 1.4.0
+retains both literals, now at `00472e2c` and `00472e4f`. Compare
+these with final's packed 640 × 480 request and separately chosen
+32-bit requested depth above.
+
 The same producer and consumer use `007a2760/007a2764` in 1.2.0 and 1.3.0.
 The packaged 1.3.1 binary still calls the producer at `004a6e40`, but the
 same qualifying defaults branch instead loads `7fffffffh` at
