@@ -565,3 +565,17 @@ different entry even if bit 3 or 4 is also set. This describes
 the dispatcher and its direct store. A zero mask, earlier driver
 initialization failure, and indirect state changes are outside
 the verified branch contract.
+
+The ordinary INI path maps the bypass to a named renderer type.
+In both releases, the bytes at `004b58ce..004b58f5` match.
+After reading `[THRASH] Type` and lowercasing it, the loader
+maps first bytes `d`, `v`, and `s` to masks `40h`, `10h`,
+and `02h`, with a default of `01h`. It writes the mask at
+`004b58f0`. Thus the normal INI route can reach the bypass
+through bit 4 (`v`). None of those four outputs sets bit 3.
+The retained 1.5.3 package supplies `Type=voodoo` in
+`drivers/nglide/thrash.ini` and `Type=d3d` in
+`drivers/dx7/thrash.ini`. This ties those two authored choices
+to different frame-boundary policies when loading and renderer
+initialization succeed. Other producers of bit 3 and runtime
+control words remain unverified.
