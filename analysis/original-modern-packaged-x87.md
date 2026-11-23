@@ -85,3 +85,19 @@ that shipped alongside the 1.6.0 executable's extended-precision
 change. The 1.6.1 video-mode initialization refactor did not
 rewrite this renderer routine. The incoming control word and
 the behavior of the loaded MSVCRT are still runtime dependencies.
+
+The saved DWORD at `6001ef78` lies at offset `2f78h` in
+`.data` in both builds. That is past the section's `2000h`
+file-backed bytes and inside its `2a000h` virtual size, so the
+loader supplies its initial zero. Both DLLs have HIGHLOW
+relocations on the write and read operands at RVAs `b64dh`
+and `b656h`. Both helpers therefore refer to the same
+module-relative cell even when the DLL loads at a different base.
+
+A linear disassembly scan in each build found only the save
+at `6000b64c` and reload at `6000b655` as direct references
+to that absolute address. The cell belongs to the module rather
+than the thread or stack frame. If two scopes overlap in the
+same loaded DLL, the second save can overwrite the word the first
+scope will restore. No such overlap was observed. Caller
+serialization and indirect references remain unverified.
