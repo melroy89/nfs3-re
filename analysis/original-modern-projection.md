@@ -59,13 +59,16 @@ startup branches or renderer callbacks.
 A literal reference scan alone cannot identify every publisher.
 The two width/height DWORDs are at offsets `16a4h` and `16a8h`
 from the configuration block destination `006fbb40`. The
-loader's bulk copy at `00472a94..00472aa3` can therefore reach
-both if the effective copy count covers at least `16ach` bytes
-and DF is clear. That copy runs after the first angle calculation
-on the startup route above. A complete writer inventory must
-account for overlapping bulk transfers as well as the explicit
-mode publisher. The effective copy count and field contents on
-each load were not observed.
+loader's bulk copy at `00472a94..00472aa3` reaches both on
+ordinary return with clear DF. The size-match gate sets EDI to
+`20f0h`, then `00472a6d` copies it to ECX. The allocation, read
+and close wrappers at `004e1620`, `004e2de0` and `004e2da0`
+save and restore ECX before the copy. The configured count is
+therefore `20f0h` bytes, independent of the read helper's return.
+The sequence from `00472a68` through the copy and the inspected
+wrapper bytes match the supplied original. The startup ordering
+above is established for final Modern. Actual read success and
+the loaded field values remain unverified.
 
 The cache at `0055fecc` is file-backed and starts at binary32
 90.0 (`42b40000h`) in both 1.6.0 and 1.6.1. In the final
