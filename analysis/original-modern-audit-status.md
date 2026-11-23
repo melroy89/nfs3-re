@@ -37,8 +37,8 @@ and one nonentry direct target remain unexpanded; this is not complete transitiv
 
 The [outside-function index](original-modern-outside-function-index.md) inventories
 337 changed intervals and 21,926 differing bytes. Matching exact interval boundaries
-in its linked explanation rows to the JSON inventory identifies 57 intervals
-containing 10,252 differing bytes. The other 280 intervals contain 11,674 differing
+in its linked explanation rows to the JSON inventory identifies 60 intervals
+containing 10,321 differing bytes. The other 277 intervals contain 11,605 differing
 bytes. These counts measure direct navigation from the index. Some remaining
 intervals already have partial notes or links for subranges, and a linked row
 can still have open semantic questions.
