@@ -38,7 +38,7 @@ timestamp. The five-count value is present in every retained later build.
 This predates the separate 1.5.0 volume-source change. Counter units and
 audible timing remain outside the static comparison.
 
-This gates repeated requests for the same ID independently. It does not prove backend playback succeeded, establish elapsed milliseconds, or prevent all concurrent access: no atomic read/update sequence appears here. The counter's producer/unit and timestamp initialization are not established in this chapter. Original's inspected routine has no corresponding local gate.
+This gates repeated requests for the same ID independently. The [timer worker trace](frontend-dialog-contract.md#dialog-clock-producer) identifies `0048ebd8` as one increment of `0079c1a4` per serviced active iteration. The same increment is present in the inspected 1.3.1, 1.5.0 and 1.6.0 members. The [timer startup trace](sound-stream-notification-units.md) records a requested rate of 128 pulses per second. Five serviced iterations are nominally about 39 ms if the worker services every requested pulse at that rate. The check observes the counter, and actual cadence, initial timestamps and audio playback remain unverified. The read/update sequence is non-atomic in the inspected instructions. Original's inspected routine has no corresponding local gate.
 
 The sound-slider preview callback adds a stricter outer check: with nonzero action/context input it tries ID 1 only when unsigned counter difference from ID 1's timestamp is **at least 0x30 (48)** (`00437758..0043777b`). It then delegates slider handling to `0046cae0`. The outer check and inner five-unit gate are distinct; do not collapse them into a guessed repeat duration.
 
