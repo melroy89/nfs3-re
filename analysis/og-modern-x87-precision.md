@@ -480,9 +480,18 @@ and counting decoded direct calls to `0x4dfd56` gives 467 sites in
 the supplied original and 436 in official Modern. All 436 Modern
 sites appear at the same addresses in the original scan. This is
 a linear-disassembly census. It leaves runtime reachability,
-indirect callers and replacements for the 31 original-only sites
-open. The local helper change therefore has a wider potential
-scope than the RPM conversion traced here.
+and indirect callers open. Comparing the original-only sites
+against Modern's bytes gives three groups:
+
+| Sites | Modern bytes at the original call address |
+|---:|---|
+| 13 | `EB 03 90 90 90` skips exactly the former call. These are the seven [menu music scaling](original-modern-music-start.md) sites at `004379a1..00437a81`, two [deadzone slider](original-modern-deadzone-sliders.md) sites, and four [HUD layout](original-modern-hud-layout.md) sites. |
+| 2 | Five NOP bytes at `00489bf6` and `00489c1e`. |
+| 16 | Other bytes within rewritten spans. A same-address comparison does not establish an equivalent operation or its absence in the new control flow. |
+
+The inspected helper change therefore affects retained callers well
+beyond the RPM conversion. The menu and HUD bypasses are separately
+verified changes at the call sites.
 
 Ends are exclusive. Both select truncation toward zero and restore incoming CW on their
 inspected normal return. FRNDINT is not controlled by PC, so the PC difference alone is
