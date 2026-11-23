@@ -42,7 +42,32 @@ This connects default requests to actual selection code. It does not prove a non
 
 Modern also contains helper `004f9140..004f915d`: EAX points to two output DWORDs, populated by imported GetSystemMetrics with arguments 0 and 1. That is a concrete metric-read mechanism, not proof of its use by default initialization. The inspected `00472d10 -> 00448394 -> 004bedcc` route does not call it. A bounded search of the retained linear Modern disassembly found no direct `CALL 004f9140`; indirect calls and data-held function pointers are not excluded.
 
-**MP100-011** says the first run tries a gameplay resolution nearest the Windows default. The final binary contains a nearest-area helper, but the directly traced default path supplies fixed/large sentinel requests instead of values from the metric helper. The historical claim therefore remains **unresolved/partial**, not confirmed and not universally disproven. Establishing the precise first-run path requires tracing the caller's saved-setting validity branch and all relevant indirect/configuration producers; dating behavior additionally needs the earlier release binary.
+**MP100-011** says the first run tries a gameplay resolution nearest the Windows default. The retained releases establish a conditional desktop-based default in 1.1.0 through 1.3.0 and a different policy starting in 1.3.1. The exact 1.0.0 implementation and first-run lifecycle remain unverified.
+
+### Packaged 1.1.0–1.3.0 defaults use desktop pixel area
+
+In the retained 1.1.0 executable (SHA-256
+`59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72`),
+`004a6e3b` passes `007a3a2c` to `004f9140`. The latter calls
+GetSystemMetrics with arguments 0 and 1 and stores the results in two
+adjacent DWORDs. The default branch at `00472e36..00472e67` uses those
+values only when renderer mask `007a3a58 & 6` is clear and the adjusted
+tier in ECX is at least 4. At `00472e54` it computes the low 32 bits of
+desktop width × height + 32 and passes that score in EAX to `004bee80`.
+The returned driver index goes to `004483a0`. The
+[historical score selector](original-modern-mode-selection.md#historical131-uses-a-different-scalar-sentinel)
+compares scalar scores, so this is a desktop-area target with a depth
+term. Aspect-ratio or per-dimension proximity is not established.
+
+The same producer and consumer use `007a2760/007a2764` in 1.2.0 and 1.3.0.
+The packaged 1.3.1 binary still calls the producer at `004a6e40`, but the
+same qualifying defaults branch instead loads `7fffffffh` at
+`00472e54`. This dates the removal of desktop dimensions from this
+defaults branch independently of whether the metric helper still runs.
+To reproduce, extract the retained archives with `7z x -so` and
+disassemble `004a6e3b..004a6e45`, `004f9140..004f915e` and
+`00472e36..00472e6e` using `objdump -d -Mintel`. Actual mode lists,
+first-run admission and rendered output remain untested.
 
 The [config-load comparison](original-modern-config-loading.md) now traces exact size/version-byte decisions at `00472aac..00472aea` before default setup (`00472ad7 -> 00472d10`). It remains a reset/default path rather than an unconditional first-run route; complete serialization and saved-setting validity remain unresolved.
 
