@@ -115,3 +115,12 @@ Modern `00437600..00437612` sets the same global, calls `00437614`, and returns 
 The official `hardkeys.mnu`, checked directly against the pinned patch archive, contains **zero `codelink=FUNTXT_*` assignments**. The selected uppercase backup contains five: `FUNTXT_2`, `FUNTXT_3`, `FUNTXT_4`, `FUNTXT_56`, `FUNTXT_7`. The audit retains those line locations and both file hashes. The original callback's nine lookups are conditional, so absence of four tokens from this backup is consistent with their stores being skipped. The final asset's lack of all nine codelinks explains why retaining this particular coordinate-write block is not needed for those named entries in that asset. It does not prove help text is absent: entries can be represented differently, and actual selected assets/rendering remain unverified. Backup provenance is not authenticated retail provenance.
 
 This accounts for the fourth redirected field in the 57-row static registration comparison. The eight nulled fields were independently verified as return-zero stubs; graphics and `credits1` counterparts have separate reports. That bounded table review is complete at the level of registration deltas and first callback counterparts, while complete transitive helper equivalence, lifecycle admission, alternate layout producers and runtime effects remain pending. No game session, instruction probes, executable edits or Ghidra changes were performed.
+
+The displaced zero-return stub at `004405b0` had a registered
+reference in the original. The `mainmult` row at `00555ed0`
+points to it through the callback slot at `00555ee0`. Modern clears
+that slot and retains the adjacent callback pointers `00440470`
+and `004403f0`. A scan of the pinned original found no near relative
+CALL or JMP to the stub. The paired registration bytes establish
+its reference and removal without requiring a direct call. Runtime
+dispatch frequency remains unverified.
