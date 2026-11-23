@@ -51,8 +51,15 @@ establishes continuity of these fields, while other menu properties may vary.
 | Empty record | Skip drawing, still advance row | Same |
 
 The original heading is supplied with X+10 and the original Y, colour bits
-`ff5abeff`, ECX18 and stack value3. Its exact localized wording and units are
-not established here. Modern jumps directly to row iteration at `0044716e`
+`ff5abeff`, ECX18 and stack value3. At `004470f9` it calls `004d1850` with
+EAX=`0x1e0`. For that ID the lookup reads the little-endian DWORD at language
+base plus `480 * 4` and returns base plus the stored offset. In local backup
+`fedata_org/text/TEXT.ENG` (SHA-256
+`fb27fe75c9f8f6ee3d65058db0b2732ed14e1dd7aef9f1c5e5481d4078a74bcc`),
+that entry points to `Loading`. The installed `FEDATA/TEXT/text.eng` also
+contains `Loading` at index 480. With either English table, the callback's
+format yields `Loading...`. Actual loaded table and font placement remain
+unverified. Modern jumps directly to row iteration at `0044716e`
 and NOP-fills `00447100..00447144` (68 bytes). Complete row-loop/tail
 `00447144..0044718f` (75 bytes) is byte-identical, including draw colour
 `ff649dfd`, ECX18, stack value3, increment, ten-record bound and epilogue.
