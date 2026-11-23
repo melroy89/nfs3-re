@@ -198,3 +198,28 @@ two alignment bytes match. Together with the three transition
 displacement bytes, these account for all 20 differences in the
 indexed interval `0044c2ce..0044de80`. Runtime menu and driver
 behavior remain outside this static comparison.
+
+## Requested settings and applied renderer mode have separate commit points
+
+In final 1.6.1, the graphics menu writes the packed request before
+calling `00448400`. That helper stores the selected row's dimensions
+and depth at `00448411..0044841a` and calls the HUD preset initializer
+if either dimension changed. It makes no direct renderer mode request.
+The menu's zero return at `00448550..00448553` therefore carries no
+mode-application result. See the [HUD dependency](original-modern-hud-layout.md)
+for the consumers of those configured dimensions.
+
+Two renderer paths have different write ordering for `0055fec0`:
+
+| Path | When the mode index is written | If the driver returns zero |
+|---|---|---|
+| Runtime mode application at `004beeb0` | At `004bef2e`, after the driver succeeds | Keeps the previous index and skips live-record publication |
+| Renderer initialization at `00517620` | At `00517687`, before the driver call at `00517696` | Branches to `0051777e`, which returns zero without restoring the index |
+
+The second path uses its separate initialization width, height and
+depth globals. It is not evidence that the menu immediately invokes
+it. The inspected renderer-failure branches neither restore the menu
+snapshot nor undo the HUD writes locally. A later caller can still
+restore or override these fields. Disk persistence and visible recovery
+remain unverified. See the [mode-application comparison](original-modern-mode-selection.md)
+and [renderer lifecycle](original-modern-renderer-lifecycle.md).
