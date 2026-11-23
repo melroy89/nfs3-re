@@ -534,4 +534,4 @@ control-word transitions described above. This concerns the
 candidate branches and the named state writes. The actual driver
 selected by an override and any indirect changes during a frame
 remain outside the result. See the
-[retail selector table](original-modern-renderer-initialization.md#original-selector).
+[retail selector table](original-modern-renderer-initialization.md#original-numeric-selection-before-loading).
