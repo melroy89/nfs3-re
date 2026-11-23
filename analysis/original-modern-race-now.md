@@ -124,3 +124,11 @@ and `004403f0`. A scan of the pinned original found no near relative
 CALL or JMP to the stub. The paired registration bytes establish
 its reference and removal without requiring a direct call. Runtime
 dispatch frequency remains unverified.
+
+The same registration change occurs on two more main menus. In the
+pinned original EXE, `main` at `00555c60` references the zero-return
+stub `0045d2f0` from slot `00555c70`, and `mainsplt` at `00555ee8`
+references `0045d620` from slot `00555ef8`. Modern clears both slots
+and keeps each row's neighboring callback pointers. The extended tails
+at `0045d2dc` and `0045d60f` occupy the former stub regions. This
+accounts for the static references to both displaced entries.
