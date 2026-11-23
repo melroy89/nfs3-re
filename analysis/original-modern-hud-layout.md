@@ -429,6 +429,19 @@ The only slot3 source-table change in131→140 is first WORD **656→657** for p
 
 **Changed-slot identity map:** slot3 Analog Tachometer (qualified reference ordinal plus geometry linkage); slot6 Tutorial Icon (reference/editor and shared quad linkage); slot12 Opponent Name (named setting and consumer); slot15 WRONG WAY (version-bound text lookup and drawing branch). Every changed table slot now has an explicit identity basis and limitation. Authenticated original provenance, runtime loading/lifetime and complete rendered effects remain open. No executable, saved database or target instructions were changed/executed.
 
+## 1.4.0 to 1.5.0 updates eight preset rectangles
+
+The two retained package members both use the WORD source table at `00540500..00540980`. A complete comparison finds 10 changed WORDs in eight of 144 rectangles. Indices are zero-based and values below are in source order before the pair swap and layout arithmetic.
+
+| Profiles | Slot | 1.4.0 | 1.5.0 |
+|---|---|---|---|
+| 0, 1 | 0 | `(130, 2, 330, 58)` | `(130, 4, 330, 58)` |
+| 0, 1 | 2 | `(655, 2, 850, 83)` | `(655, 4, 850, 85)` |
+| 2, 3 | 0 | `(130, 0, 330, 56)` | `(130, 0, 330, 54)` |
+| 4, 5 | 0 | `(130, 500, 330, 556)` | `(130, 500, 330, 554)` |
+
+The 1.4.0 table SHA-256 is `4812d9a1657e3d90b83353e74e5598d76b2580e2c1c6c66461b7ebc9fa6a03a9`. The 1.5.0 table matches the later 1.5.x releases as recorded above. The comparison was made by streaming each archive's `nfs3.exe` to `pefile` and decoding six groups of 24 little-endian `4H` records. On-screen geometry and release-note attribution remain unverified.
+
 ## Earlier120 to130 updates55 preset records
 
 At the next boundary, 1.3.0→1.3.1 retains the complete 1,152-byte coordinate table at `00540500` (SHA-256 `191ab6e8206f777222ab65597531997c326eafd7d27cc755b153b123fd4fe922`) and the 69-byte copy prefix. The remaining 432-byte initializer span has exactly 24 changed bytes, all within eight operands that switch from `007a3920/24` back to `006fd1e4/e8`. The 1.3.1 defaults at `00472566` write 640×480 to that restored pair. On the reviewed mode-publisher path `004483f8..00448419`, the publisher compares the two incoming dimensions against the current pair, copies both dimensions and the following DWORD, and calls `00485680` only if either dimension changed. In 1.3.0 the reviewed rebuild gate instead uses the composite key described below. No runtime modes were exercised.
