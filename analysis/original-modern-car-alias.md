@@ -100,6 +100,13 @@ Thus equal local width-helper bytes do **not** prove equal text widths across ve
 
 ## Width dependency removes an intermediate integer conversion
 
+The change dates to **1.5.0**. In all retained 1.1.0–1.4.0
+archives, the 65-byte range at `004d1430..004d1471` matches the
+supplied original. From 1.5.0 through the final archive, the same
+range contains the shortened measurement wrapper, the six-byte
+colour setter at `004d1450`, and padding. The original truncation
+call at `004d1453` now falls inside the setter's store instruction.
+
 Following the nonzero-renderer-flag branch reveals a substantive difference inside **`004d1430`**. Paired complete bodies are **original`004d1430..004d1471` (65 bytes)** and **Modern`004d1430..004d1450` (32 bytes)**, with exclusive ends. The audit pins their common call target`004d1000` and the original conversion instructions.
 
 Original loads global`00561b3c` into ECX, stores1 to that global, zeroes EBX/EDX, and calls`004d1000`. It then calls`004dfd56`, FISTP-stores a signed DWORD, copies that integer through EAX, writes ECX back to the global, and FILD-loads the integer as the x87 return value. The old global value is held in ECX across the calls; full callee register preservation remains a dependency of interpreting that as an unconditional restore.

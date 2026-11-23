@@ -500,7 +500,7 @@ range. An address match inside a replacement is not a call mapping.
 | `00494c71`, `00494c7c`, `00494e68`, `00494e6f`, `00494e76`, `00494e7d`, `00494f20`, `00494f2f` | [Loading artwork and localized label rewrite](original-modern-loading-artwork.md). |
 | `004a4553` | [Logo centring and fade rewrite](original-modern-frontend-page.md#position-dependent-logo-fade-replaces-hard-admission-cutoffs) uses direct FISTP for the new centring expression. |
 | `004be819`, `004be820`, `004be853`, `004be85a` | [Viewport initialization rewrite](original-modern-viewport-geometry.md). |
-| `004d1453` | Falls in Modern's `SetBitmapTextColor` range at `004d1450` according to the [saved function comparison](evidence/audits/original-modern-function-diff.json). Its original operation's replacement remains unmapped. |
+| `004d1453` | The [text measurement wrapper](original-modern-car-alias.md#width-dependency-removes-an-intermediate-integer-conversion) keeps its entry at `004d1430` but returns fractional advance directly starting in 1.5.0. The former call address lies inside the new colour setter. |
 
 Checking the five bytes at each of the 15 explicit bypass or NOP sites
 across all 11 retained archives gives three release boundaries:
