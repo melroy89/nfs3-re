@@ -295,3 +295,30 @@ The original imports `GetFileVersionInfoA`, `GetFileVersionInfoSizeA` and `VerQu
 ## Historical version5 to6 resets the changed Frame Size ordinal
 
 The [1.5.3→1.6.0 header/default audit](original-modern-frame-setting.md#historical-config-version5-to6-selects-reset-rather-than-ordinal-conversion) verifies template version5→6 and the matching acceptance-threshold byte. Version5 takes grouped defaults in1.6.0, whose display-default routine explicitly writes Frame Size0. This narrows the ordinal-migration unknown to a conditional reset mechanism, not a tested real-file upgrade or a1→new-value conversion. Actual files, template/later writers and overrides remain unverified.
+
+## The 1.5.0 header gate resets the ordinary 1.4.0 resolution request
+
+The [resolution format comparison](original-modern-mode-selection.md#150-changes-the-stored-request-format-and-sentinel-trigger)
+pins the two packaged executables by SHA-256. Their header and load
+paths explain what happens when the ordinary 1.4.0 configuration
+reaches 1.5.0:
+
+- In 1.4.0, the file-backed template at `0055e8b8` is
+  `02 00 00 00 00 00 00 00`. Default initialization writes size
+  `20f0h` and copies the template at `0047242a..0047242c`. The save
+  path copies from `006fbb40` at `00472870..0047288b` without stamping
+  a new header in its entry prefix.
+- In 1.5.0, the template at `0055e8a0` is
+  `f0 20 00 00 04 00 00 00 00 00 00 00`. After loading, the branch
+  at `00472aac..00472acd` accepts size `20f0h` and version WORD
+  `0004h..00ffh`. A matching-size version-2 block reaches the grouped
+  reset at `00472acd`. Its display-default call to `00472d10` writes
+  a new packed resolution request at `00472dce`, and the loader
+  then stamps version WORD 4 at `00472ae1`.
+
+Thus a successfully loaded 1.4.0 block with its ordinary version-2
+header takes the reset path and replaces the stored resolution before
+reselection. A block bearing an accepted header bypasses this local
+reset. The evidence comes from the data bytes and disassembly of those
+ranges. Actual save provenance, other writers and live upgrade behavior
+remain unverified.

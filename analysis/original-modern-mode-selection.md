@@ -184,7 +184,7 @@ the selector at `004483be`.
 
 This dates the format change to the checked 1.4.0 → 1.5.0 boundary.
 If an old scalar sentinel reached the new reader verbatim, it would
-decode as width 65535 and height 32767. Whether an actual upgrade
-preserves, resets or migrates that DWORD requires tracing the saved
-configuration lifecycle. Runtime mode choice and display behavior
-remain untested.
+decode as width 65535 and height 32767. The [1.5.0 header gate](original-modern-config-loading.md#the-150-header-gate-resets-the-ordinary-140-resolution-request)
+replaces the request for a successfully loaded block with the ordinary
+1.4.0 version-2 header. Runtime mode choice and display behavior remain
+untested.
