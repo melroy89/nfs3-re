@@ -16,8 +16,18 @@ in 1.5.0 is the relative-call operand at `00463399`, which retargets it
 to `004181d0`. The 1.5.0 handler matches all retained builds through
 1.6.1. The three drawing, geometry and mouse-row spans discussed below
 match the original throughout the archive series. This dates the cursor
-fix independently of the later sound-helper relocation. Runtime cursor
+fix independently of the later sound-call change. Runtime cursor
 placement and sound remain untested.
+
+The 1.4.0 target `004181c4` is a wrapper. It saves EDX, sets EDX to
+127, calls `004181d0`, then restores EDX. The shared entry address
+`004181d0` already exists in 1.4.0, so the 1.5.0 call bypasses the wrapper.
+The callee also changes at that release boundary. At `0041821c`, 1.4.0
+computes the request volume byte from EDX, the multiplier 90, and
+`006fbbf4`, then shifts right by 14. The 1.5.0 body instead uses
+the low seven bits of `006fd1d0`, as in the
+[frontend sound comparison](original-modern-frontend-sound.md).
+The sound ID remains zero. Audible volume and request success remain unverified.
 
 Most of the input handler is identical. Changed instructions are confined to the jump at **`0046326f`** and tail **`00463370..004633a7`**. The manifest separately asserts equality for the remaining prefix, middle and final callback/return regions.
 
