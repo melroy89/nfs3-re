@@ -387,6 +387,19 @@ The [input comparison](original-modern-menu-input.md) traces Tab/Shift+Tab routi
 
 ## 15. HUD presets and loading artwork
 
+| Build or transition | Verified preset change |
+|---|---|
+| Original → 1.1.0 | The locale-specific `.POS` reader gives way to six embedded HUD profiles and aspect calculations. The exact 1.0.0 implementation remains unverified. |
+| 1.1.0 → 1.2.0 | All 144 embedded rectangles match. The converter moves to a new address with identical instructions. |
+| 1.2.0 → 1.3.0 | 55 rectangles change. The selected scaling code changes its arithmetic and dimension sources. |
+| 1.3.0 → 1.3.1 | All 144 rectangles match. The reviewed mode publisher now rebuilds the HUD when width or height changes. |
+| 1.3.1 → 1.4.0 | 14 rectangles change. |
+| 1.4.0 → 1.5.0 | Eight rectangles change in slots associated with the digital speedometer and tachometer. The 1.5.x tables match through 1.5.3. |
+| 1.5.3 → 1.6.0 | The initializer switches from converting 16-bit scaled integers to copying binary32 values. After nearest rounding of the old data, 74 rectangles differ. |
+| 1.6.0 → 1.6.1 | The full table, initializer and scaling constants match. The reviewed dimension-driven refresh rule is retained. |
+
+The [HUD comparison](original-modern-hud-layout.md) gives the addresses, exact counts, and input assumptions. The timeline covers the preset tables and selected callers. On-screen output remains untested.
+
 The [HUD initializer comparison](original-modern-hud-layout.md) traces original locale-selected `*def.pos` parsing versus Modern embedded coordinate data and x87 aspect adjustment, plus exact six-profile header defaults. The [loading-artwork comparison](original-modern-loading-artwork.md) traces 300 small-tile iterations versus six larger/overlapping tiles, reference-rectangle placement and changed progress calculations. Both retain the original floor/ceil helper bodies; this is not a new floor/ceil algorithm. Original asset-to-preset correspondence, full progress meaning and rendered output remain pending.
 
 ## 16. Startup paths, INI basename selection and directories
