@@ -56,3 +56,20 @@ call. This narrows the precision question to the caller's incoming
 state and the provider's behavior for this handoff. It does not
 establish what the provider does or how long the poll takes.
 See the [executable precision transition](og-modern-x87-precision.md).
+
+The actual packaged nGlide provider, `drivers/nglide/glide3x.dll`,
+and `drivers/nglide/thrash.ini` are each byte-identical across
+1.5.3, 1.6.0, and 1.6.1. Extracting each member with `7z x -so`
+gives SHA-256
+`87842a85d1bfda4217e691a9d4412915c74905eed818c5a727e2f2d6b814edb6`
+for the DLL and
+`e2c4e128a3c9dd7fb6cddf10a83e29613f70c392e8b938eac0577a66ff98022c`
+for the INI. The provider exports `_grGet@12` and
+`_grBufferSwap@4` as direct jumps from `10001096` and
+`100011c2` to `10008950` and `10009190`, respectively.
+
+The 1.6.0 executable's x87 transition therefore has no matching
+replacement of this packaged provider or its INI. The static
+identities leave open the actual loaded DLL, provider-internal
+control-word behavior, and differences in the state supplied by
+each executable.
