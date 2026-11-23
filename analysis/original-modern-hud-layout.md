@@ -24,6 +24,8 @@ The local layout established by these writes is therefore **0x24 bytes of header
 
 No original preset-file read remains in this Modern initializer. This is a concrete source/initialization change, not proof that the whole game no longer reads external HUD/layout resources elsewhere.
 
+The [paired startup path audit](original-modern-startup-paths.md#original-installer-records-and-final-path-slots) resolves the original prefix for the inspected installation. Record eight in `install.win` supplies `.\GameData\DashHud\` at `007a29b4`. For the `e` table entry, the original initializer therefore passes `.\GameData\DashHud\edef.pos` to the file loader. Modern initializes the same directory path apart from case, but this initializer copies embedded data. A case-insensitive filename inventory and pairwise SHA-256 comparison show that all seven local `*DEF.POS` files (`DEF`, `EDEF`, `FDEF`, `GDEF`, `IDEF`, `SDEF`, and `WDEF`) match between the installed `GAMEDATA/DASHHUD` and backup `gamedata_org/DashHud` trees. Their presence and identity establish the local inputs available to the original file-based path. Actual file selection, retail-disc provenance and visual equivalence remain unverified.
+
 ## 2. Aspect adjustment and the retained shared-frame tail
 
 Modern derives two x87 factors from DWORDs `006fd1e4/006fd1e8`. Producer `00448400` copies width and height from selected mode-record `+4/+8` to those addresses, and calls `00485680` if either changes. Let W/H denote those configured dimensions, C the binary32 literal `0x3faaaaab`:
