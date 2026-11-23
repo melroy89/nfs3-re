@@ -142,3 +142,23 @@ Counts below compare binary32 encodings of parsed decimal literals. This is an o
 | `WDEF.POS` | 91 | 352 |
 
 The manifest lists changed record names per profile for follow-up. No original-language file is silently substituted for the established EXE baseline. Header defaults, the extra24th rectangle, parser edge cases, runtime reset/persistence and actual appearance remain separate evidence requirements.
+
+## Local pursuit vehicle archives
+
+The installed `GAMEDATA/CARMODEL/TRAFFIC/PURSUIT` and local
+backup `gamedata_org/CarModel/Traffic/PURSUIT` contain the same
+six `CAR.VIV` archives, numbered `0000` through `0005`. The
+whole-file SHA-256 matches for each pair. The official 1.6.1
+archive lists no VIV members. In particular, both copies of
+`0002/CAR.VIV` hash to
+`0c217e047e25e525dc3abb3f0916685672191505db528d96fa58e924b74aef8d`.
+They therefore contain the same torque-profile text, including
+the empty field documented in the
+[police torque report](police-torque-runtime.md).
+
+This establishes identity between the two local asset trees.
+Retail-disc provenance, original runtime selection and later
+profile writes remain unverified. The
+[executable comparison](og-modern-x87-precision.md#the-torque-interpolator-keeps-the-same-scaling-and-spill-points)
+separately verifies the matching reader and the empty-token
+conversion path.
