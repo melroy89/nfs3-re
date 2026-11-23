@@ -427,6 +427,8 @@ The only slot3 source-table change in131→140 is first WORD **656→657** for p
 
 ## Earlier120 to130 updates55 preset records
 
+The preceding 1.1.0→1.2.0 release pair retains all 144 rectangles. A PE virtual-address read of `00540500..00540980` from each archive-matched EXE gives identical 1,152-byte tables, SHA-256 `c1061f11bfa9b79f76fcf49098c1e4b93486b02d3fc1d8cacfbe8046c22992fc`. The only differing bytes in the copy prefix `00485680..004856c5` are at `004856ab` and `004856b7`, redirecting the two calls from `004f93ec` to `004f9404`. Those 29-byte converters match, as do all 432 bytes in `004856c5..00485875`. This establishes table and selected initializer continuity through 1.2.0. The subsequent 1.2.0→1.3.0 changes below therefore start from the same embedded coordinates seen in 1.1.0. Caller inputs and runtime layout remain outside the byte comparison.
+
 The [early HUD audit](evidence/audits/early-hud-preset-history.json), reproduced with `python3 analysis/scripts/audit_early_hud_preset_history.py`, pins120/130 author-hosted EXEs and compares the complete1,152-byte WORD table00540500..00540980. This is the same six-profile×24-slot×four-WORD layout documented for131/140, not final's differently sized DWORD table.
 
 **55 of144 records change;89 remain identical.** There are118 changed WORDs and118 changed file-byte positions. Every changed record, address, before/after WORD quadruple and signed delta is retained in the manifest. This exhausts this paired table, not the vague release note's complete HUD scope.
