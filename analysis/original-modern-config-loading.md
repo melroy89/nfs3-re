@@ -183,6 +183,17 @@ The comparison uses PE-mapped bytes at the listed virtual addresses.
 It establishes where the inspected instructions diverge. Other callees,
 global initialization and runtime file behavior can still differ.
 
+All 11 retained Modern builds have the same four-byte config bypass
+at `00472a22` (`31 c0 eb 35`). It clears EAX and jumps to `00472a5b`.
+The skipped bytes have a separate release history. Through 1.4.0,
+the skipped code still contains the original reset-flag store to
+`0067900c` at `00472a37` and a jump at `00472a59` to `00472aac`.
+In 1.5.0 that store is replaced by padding and the skipped block
+jumps from `00472a54` to `00472ac8`. Starting in 1.5.3 the target
+is `00472acd`. These changes are in bytes skipped by the inspected
+entry path, whose bypass destination remains constant. Other incoming
+branches to the skipped span were not checked.
+
 The player filename builder changes independently. Original copies prefix `007a2fb4`, appends literal `carspecs\`, the selected player name, then `.spc`, into shared buffer `00564188`. Modern copies prefix `007a30b4`, skips the `carspecs\` append with `JMP 004dc85c` and 37 NOPs, then appends name/extension. The audit verifies all other builder bytes identical. These buffers and unbounded string-copy loops imply shared scratch/length dependencies; reentrancy and arbitrary path safety are not established.
 
 The change first appears in **1.4.0** across the 11 retained release archives. At `004dc809`, 1.1.0 through 1.3.1 load `007a2fb4` and still append `carspecs\`. The 1.3.1 initializer loads its slot table from `0053ec2c` at `004a6f06`, supplying `.\FeData\Stats\` in slot 16 and `.\FeData\Audio\` in slot 18. From 1.4.0 through the final 1.6.1 archive, the builder loads `007a30b4` and skips the append. The 1.4.0 initializer loads its table from `0053eb20` at `004a6ec7`, supplying `.\fedata\stats\` in slot 16 and `.\fedata\stats\carspecs\` in slot 18. The later releases retain these slot values. The initialized relative player path therefore stays the same apart from case across this boundary. This is verified by static inspection of the archived executables.
