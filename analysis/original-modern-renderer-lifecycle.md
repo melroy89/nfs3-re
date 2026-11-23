@@ -102,3 +102,20 @@ official final package. For 1.4.0, extract the archive member
 `nfs3.exe` with `7z x -so`. These instructions date the inspected
 startup gate to the 1.6.0 → 1.6.1 package boundary. They leave
 driver return behavior and observed startup recovery unverified.
+
+### A rejected startup mode reaches the fatal renderer diagnostic
+
+The 1.6.1 zero return at `0051777e` reaches the test at
+`004b5aa8`. The caller supplies **Cannot init the thrash driver.**
+from `0053d1e3` to `004b570c` at `004b5ab1`. The helper displays
+the message through MessageBoxA and calls `004f2a7d` regardless of the
+dialog result. That thunk supplies exit status zero to the
+[shared termination chain](original-modern-startup-requirements.md#shared-termination-chain-reaches-exitprocess).
+Under ordinary cleanup returns, startup terminates before reaching the
+renderer-specific setup at `004b5ab6`.
+
+The same diagnostic also receives earlier renderer-initialization
+failures, as shown in the [Glide comparison](original-modern-glide-reference-identity.md#thrash-init-retries-provider-setup-and-has-a-separate-failure-channel).
+The message alone therefore cannot distinguish failed driver setup
+from a rejected startup mode. This is a static caller trace. No
+failure, dialog, or process exit was observed.
