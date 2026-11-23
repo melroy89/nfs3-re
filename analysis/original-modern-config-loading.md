@@ -348,3 +348,24 @@ The 1.5.1 through 1.5.3 loaders accept ordinary version-5 headers and
 skip the local display reset. These branches establish how an admitted
 block is treated. Actual files, later overrides, and the selected
 display mode were not observed.
+
+### Save-time stamping can change the version of an accepted block
+
+The [1.5.2 ghost fix comparison](original-modern-ghost-loading.md#release-boundary-verified-in-packaged-151-and-152)
+dates the switch from a flag gate to header refresh at `0047282e`.
+The complete 179-byte save body at `00472820..004728d3` differs only
+in those 13 bytes across the retained 1.5.0–1.6.0 executables. In
+1.5.2, 1.5.3 and 1.6.0, the call copies three DWORDs from `0055e8a0`
+to `006fbb40` before the remaining save checks. Their templates come
+from the release table above.
+
+For example, a version-6 block with size `20f0h` passes the inspected
+1.5.3 header gate because its version high byte is zero and its low
+byte is at least 5. If the save entry subsequently runs with the
+unmodified template, it stamps version 5 in memory. A successful
+write through that path produces a version-5 header, which enters
+the grouped reset on the next load in 1.6.0. The version stamp itself
+covers only the first 12 bytes and performs no conversion of the
+packed resolution or other payload fields. This is a consequence
+of the checked branches and copy ranges. No downgrade or file write
+was observed.
