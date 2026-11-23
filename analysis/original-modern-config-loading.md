@@ -123,6 +123,19 @@ default-and-rewrite entry at `004dca37` calls both `004dc670` and
 are local branch contracts. The helper return meanings, on-disk field
 validation and write success require separate evidence.
 
+The save wrapper at `004dca50..004dcae2` is also byte-identical
+across the supplied original and official final. EAX 0 selects the
+`player1` name and buffer `008b9200`; EAX 1 selects `player2` and
+`008b88a0`. Other selectors exit before filename construction. The
+wrapper checks `004721f0` before calling the filename builder, so the
+same save instructions inherit Modern's changed prefix. The save path
+sets EBX to `0x960` (2,400 bytes) before calling `004dc710`, then passes
+the pathname in EAX and the buffer in EDX to the
+[resource save adapter](physics-parser-defaults.md) at `004eebb0`.
+The wrapper returns the adapter's result. The payload size actually
+written and the meaning of the individual fields require further
+inspection of the save implementation.
+
 The deletion adapter calls imported `KERNEL32.dll!DeleteFileA` through IAT `005344b0` in both binaries; this is API identity evidence rather than a guessed function name. Combined with the config load comparison, this gives bounded static support for MP100-045: the inspected timestamp-to-executable deletion gates are removed for config.dat and both selected player specifications. It does **not** promise files are never deleted or rewritten: missing-file handling, config size rejection, validation/default routes and I/O failures still exist. Actual update scenarios, file permissions, helper error contracts and precise first-release introduction remain untested.
 
 The earliest retained Modern member, 1.1.0, already bypasses both
