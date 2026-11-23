@@ -97,10 +97,13 @@ Row 0 looks up ID `102 + header[0x196c]`, which selects Hometown through
 Empire City for accepted indices 0–8 in the inspected English backup.
 Row 1 formats the DWORD at header `+0x1974` with ID 5 (`Laps`). Row 2
 maps the DWORD at `+0x1878` to IDs 213, 214, 215 or 220 (`Single Race`,
-`Tournament`, `Knockout`, `Hot Pursuit`). Row 3 formats the string
-returned by `00439250`. The six other row slots are untouched by this
-writer. These checks establish the selected path's text sources. They
-leave the row-3 label source and replay playback compatibility open.
+`Tournament`, `Knockout`, `Hot Pursuit`). Row 3 displays the car model
+name. At `00446123..00446143` the writer reads the saved index at header
+`+0x19b4`, uses its `0x6c` record stride and reads the model ID at header
+`+0x1a00 + index * 0x6c`. The identical name helper at `00439250..00439287`
+returns the model record's `+0x10` name on its ordinary registry path.
+The six other row slots are untouched by this writer. The loaded registry
+and file determine the actual names. Replay playback compatibility remains open.
 
 **Done, verified static:** complete callback and binding,90 changed-byte
 localization, removed heading, initial row offsets, retained loop and narrowed
