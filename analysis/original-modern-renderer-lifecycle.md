@@ -119,3 +119,22 @@ failures, as shown in the [Glide comparison](original-modern-glide-reference-ide
 The message alone therefore cannot distinguish failed driver setup
 from a rejected startup mode. This is a static caller trace. No
 failure, dialog, or process exit was observed.
+
+### The startup caller switches from a state check to a return-value check
+
+The retained 1.6.0 executable calls wrapper `004f8a50` at
+`004b5a2d`. The wrapper uses `00564364` to decide whether to call
+the video initializer at `00517630` and whether to run its own
+continuation. At `004b5a32`, the startup caller tests that same
+global. If zero, it passes **Cannot init thrash video driver.**
+from `0053d147` to fatal helper `004b56f8`. That helper calls
+the message-box slot and the common termination thunk.
+
+Final 1.6.1 calls `00517620` directly from startup and tests EAX,
+as documented above. The change from 1.6.0 is therefore removal of a
+direct wrapper and a switch from the state check to the initializer's
+return value. The original retail route through the indirect callback
+is a separate baseline. A fatal renderer diagnostic already existed
+in 1.6.0, but the startup mode request did not branch on the driver's
+return. The two checks should not be treated as equivalent. No live
+failure path was exercised.
