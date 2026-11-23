@@ -23,7 +23,6 @@ def main():
     capture.mkdir(parents=True,exist_ok=True)
     result={'kind':'static-replay-mirror-comparison','range_end':'exclusive','binaries':{},
         'limits':['No replay, input or target execution.','Default F7-to-action chain is static; actual keyboard delivery/rendered mirror unverified.']}
-    builders={}
     for label,(relative,expected,_) in SPECS.items():
         raw=(ROOT/relative).read_bytes();assert hashlib.sha256(raw).hexdigest()==expected
         pe=pefile.PE(data=raw);rows=[]
@@ -38,22 +37,25 @@ def main():
         assert pe.get_data(0x48f9c8-0x400000,5)==bytes.fromhex('be04410000')
         assert pe.get_data(0x48f9be-0x400000, 5) == bytes.fromhex('b9043f0000')
         assert pe.get_data(0x48f9dd-0x400000, 6) == bytes.fromhex('890dd0c37900')
-        builders[label]=pe.get_data(0x48f550-0x400000,0x14a)
         result['binaries'][label]={'path':relative,'sha256':expected,'spans':rows}
-    assert builders['original']==builders['official_modern']
     retained_gates = {'004844c0', '00482d6b', '00482f5b'}
     retained_hud_paths = {'00484070', '00484260', '004c5017', '0048f970'}
-    retained_starts = retained_gates | retained_hud_paths
-    gate_hashes = {
-        label: {row['start']: row['bytes_sha256'] for row in binary['spans']
-                if row['start'] in retained_starts}
+    retained_f7_paths = {'004c5097', '0048f7b0', '0048f550', '00431800'}
+    retained_starts = retained_gates | retained_hud_paths | retained_f7_paths
+    changed_starts = {'00484450', '00422aa0'}
+    span_hashes = {
+        label: {row['start']: row['bytes_sha256'] for row in binary['spans']}
         for label, binary in result['binaries'].items()
     }
-    assert gate_hashes['original'].keys() == retained_starts
-    assert gate_hashes['original'] == gate_hashes['official_modern']
+    for start in retained_starts:
+        assert span_hashes['original'][start] == span_hashes['official_modern'][start], start
+    for start in changed_starts:
+        assert span_hashes['original'][start] != span_hashes['official_modern'][start], start
     result['retained_gate_starts'] = sorted(retained_gates)
     result['retained_hud_path_starts'] = sorted(retained_hud_paths)
-    release_starts = retained_starts | {'00484450', '00422aa0'}
+    result['retained_f7_path_starts'] = sorted(retained_f7_paths)
+    result['changed_starts'] = sorted(changed_starts)
+    release_starts = retained_starts | changed_starts
     result['historical'] = {}
     for version, (digest, baseline) in HISTORICAL_ARCHIVES.items():
         archive = (ROOT / 'analysis/captures/modern-differences/upstream/history'

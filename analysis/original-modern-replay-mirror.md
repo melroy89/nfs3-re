@@ -53,6 +53,8 @@ Microsoft's Scan 1 table maps scan index **0x41** to **F7**. This is a scan-code
 
 The static default chain is therefore established. Actual OS/Wine keyboard delivery, remapping, ring scheduling and pressing F7 during replay remain untested. Unchanged binding/mask code also shows that this default key was not newly invented by the replay-admission change.
 
+The historical audit verifies that the binding initializer, keyboard decoder witness, mask builder, action reader and selected race-loop callsite match in 1.3.1 and 1.4.0 as well as the original and final. The toggle and eligibility spans differ. This isolates the verified release change after the input dispatch, with no inference about live keyboard delivery.
+
 The original also exposes the separate HUD-enable branch through action 12. Binding initializer `0048f9be` loads `0x3f04` and `0048f9dd` stores it to `0079c3d0`, the next slot after action 11. This selects keyboard scan index `0x3f` through the same binding decoder. At `004c5017..004c5031`, the race loop requests action 12 with EDX=1 and calls `00484260` with EAX=0 when the edge is detected. For view 0 this reaches the branch that sets `00791b1c` in replay state 2 if the flag is clear. The binding prefix, action callsite and selected toggle prefix match in the original, 1.5.0 and final. This identifies an input route to the original flag producer. The original mirror-specific toggle still has its separate playback rejection.
 
 ## Conclusion and further work
