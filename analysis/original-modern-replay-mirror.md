@@ -6,6 +6,8 @@ Static supplied-original/official-Modern comparison, with exact identities in th
 
 The current saved analysis names `00484450` as the primary-view variant toggle. Its shared eligibility and HUD paths are relevant to **MP140-064**'s replay-mirror claim, and its default F7 input chain is now traced below; rendered output remains untested.
 
+The retained 1.3.1 and 1.4.0 archive members date both local changes to the reported release boundary. The 112-byte toggle span `00484450..004844c0` and 304-byte eligibility span `00422aa0..00422bd0` in 1.3.1 match the supplied original byte for byte. Both spans in 1.4.0 match final 1.6.1 byte for byte, including the checks of `00791b1c`. This dates the switch from rejecting replay state to a stateful opt-in at the two selected entry points. The renderer outcome and full replay lifecycle remain untested.
+
 ## Original broad rejection becomes a stateful enable path
 
 Original `00484450` returns when mode `006fd3b0==1`, and also when **`006fd3a0!=0`**. Otherwise it obtains primary view 0 through `00422bd0`, chooses one of two layout records using bit 0x20 of view byte `+0x200`, toggles the DWORD at `006fbc5c + variant*0x1a4`, and calls `004844c0` with EAX=0.
