@@ -253,3 +253,19 @@ For circuit 8 this yields `TRK008/Tr08` under that root, tying
 the loader's index 4 request to the changed local file.
 Name resolution, the effective root, preceding file checks,
 and actual camera behavior remain runtime dependencies.
+
+Filename index 4 is written to slot `00570a44`: the loader
+increments ECX before its store at `0040f30f`. Consumers use
+the first populated slot `00570a34` as their base, so their
+zero-based index 4 reads that same pointer. Two matching
+consumer spans show what can happen next. At
+`0040f3da..0040f3fb`, the effect allocator copies the selected
+pointer into a race-effect record and returns −1 if it is
+null. At `0040f8e4`, the pose reader loads the selected
+pointer before calling `0040f880`. The matching caller
+at `00425685` supplies its resource index from context
+offset `114h`.
+
+This establishes the slot and two consumer routes. It does
+not show when callers select index 4 or what visible output
+the altered payload produces.
