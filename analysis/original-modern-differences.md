@@ -25,13 +25,13 @@ The [physics dependency follow-up](og-modern-x87-precision.md#deeper-dependency-
 
 **Compatibility is unresolved.** The supplied binaries establish a real precision-policy change; they do not by themselves prove the other developer's ARM64 port works, or that float/double inevitably causes multiplayer/replay divergence. A connection succeeding is also insufficient to prove matched trajectories. The [claim-by-claim precision assessment](og-modern-x87-precision.md#assessment-of-the-other-users-claims) records those boundaries.
 
-The [290-entry list](#complete-release-note-change-list) is complete for the source release-note bullets. It is not an exhaustive semantic diff of the binaries. There are currently40 vendor-only,59 bounded-static and191 partial entries; these labels are neither distinct change counts nor a completion percentage. The [361-entry function index](original-modern-function-index.md) is navigation, not proof every listed body is explained.
+The [290-entry list](#complete-release-note-change-list) is complete for the source release-note bullets. It is not an exhaustive semantic diff of the binaries. There are currently 39 vendor-only, 59 bounded-static and 192 partial entries; these labels are neither distinct change counts nor a completion percentage. The [361-entry function index](original-modern-function-index.md) is navigation, not proof every listed body is explained.
 
 Next work follows the [core comparison priorities](original-modern-audit-status.md#core-comparison-priorities). Minor historical renderer/menu refinements are parked unless they answer one of those questions. No new reconstruction, compiler/toolchain work, instruction probes or gameplay tests are part of this documentation consolidation.
 
 ## Audit checkpoints and supporting investigations
 
-The [current texture/clock/speech/loader checkpoint](original-modern-audit-status.md#current-texture-clock-speech-and-loader-checkpoint--2026-11-21) reviews `b1b26ab`: **16/16 static reruns** reproduce eight evidence outputs, with12 protected files and12 raw exports unchanged. Its table separates concrete historical changes from missing baselines and runtime claims. The catalogue currently has40 vendor-only,57 bounded-static and193 partial entries; these are not distinct EXE-change counts or a completion percentage.
+The [current texture/clock/speech/loader checkpoint](original-modern-audit-status.md#current-texture-clock-speech-and-loader-checkpoint--2026-11-21) reviews `b1b26ab`: **16/16 static reruns** reproduce eight evidence outputs, with12 protected files and12 raw exports unchanged. Its table separates concrete historical changes from missing baselines and runtime claims. At that checkpoint the catalogue had 40 vendor-only, 57 bounded-static and 193 partial entries; these are not distinct EXE-change counts or a completion percentage.
 
 The [preceding renderer/loading/menu checkpoint](original-modern-audit-status.md#current-renderer-loading-and-menu-checkpoint--2026-11-21) reviews `ea2fc48`: **22/22 static reruns** reproduce11 evidence files, with12 protected artifacts and12 raw exports unchanged. Its compact table links the recent wrapper, reference-driver/debug, DX6, loading screenshot and menu findings to their remaining limitations. This is repeatability/preservation evidence, not complete difference coverage or runtime acceptance.
 
@@ -748,7 +748,7 @@ The [window-key translator comparison](original-modern-window-key.md) identifies
 <!-- BEGIN GENERATED MODERN CHANGE LIST -->
 ## Complete release-note change list
 
-Current catalog labels: **40 Claimed, 59 Static, 191 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
+Current catalog labels: **39 Claimed, 59 Static, 192 Partial, 0 Unresolved**. These are evidence labels, not a completion percentage.
 
 This first-reference index includes all **290 release-note entries across 12 releases**, grouped newest first. Descriptions below reproduce the full source bullets, including vendor claims; they are not all independently verified differences between the supplied original and final Modern executables. Historical fixes, reversals, DLLs, assets and configuration changes are included. This is a release-history inventory, not an exhaustive inventory of undocumented binary changes.
 
@@ -839,7 +839,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-003 | Rear View Mirror can use better 3D models of the track, so the problem with the holes in the objects (displayed in the mirror) is solved now. | Partial |
 | MP150-004 | “Rear View Mirror” detail setting. Low is equivalent to the original; Medium is for better track 3D model and view distance; High is for the best track 3D model, clouds, lightnings, and light from the car headlights and cop flashers rendering. | Partial |
 | MP150-005 | Better proportions of the objects in the rear view mirror. | Claimed |
-| MP150-006 | Fixed direction of the camera of the rear view mirror. The horizon is on the middle of the mirror now (for a better view). | Claimed |
+| MP150-006 | Fixed direction of the camera of the rear view mirror. The horizon is on the middle of the mirror now (for a better view). | Partial |
 | MP150-007 | Fixed a small horizon glitch at the edge of a screen when the wide view angle is enabled. | Claimed |
 | MP150-008 | An ability to enable or disable the fog effect directly from the graphics settings menu. | Partial |
 | MP150-009 | An ability to set volume of menu sounds separately from the volume of the ingame special effects. | Static |
