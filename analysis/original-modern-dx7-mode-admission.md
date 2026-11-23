@@ -123,3 +123,24 @@ The producer at`60001f40` then stores the returned raw count at`600186e0`, itera
 For the old about-call fallback discussion, the explicit count condition therefore remains necessary. With no applicable overrides and an ordinary valid initialized set, the callback bound supports small counts; with arbitrary overrides/other writers, it is not a proof. Do not eliminate the old hidden-register path from a faithful reconstruction solely because a nearby enumeration cap exists, and do not silently add a clamp to repair suspected original behaviour.
 
 **Resolved:** selected count-producer/override chain and why the simple cap is insufficient. **Pending:** full filter/callback side effects, valid object/buffer extents and all writers, the second wrapper caller, and actual runtime selection. No environment, DLL, API or target instruction was executed or changed. Black-polygon attribution remains unresolved.
+
+## Display selection can rebuild the DX7 mode table
+
+Both retained 1.6.0 and 1.6.1 DX7 DLLs export
+`_THRASH_selectdisplay@4` at `600020c0`. The complete export
+through `600021e7` is byte-identical. For an in-range display
+index it selects the adapter entry at `600020e9` and stores the
+adapter pointer and index at `600020f9` and `600020fe`. An
+out-of-range index takes the index-zero path at `60002132`.
+
+In final, the branch at `600021d9` calls `600030b0`. That helper
+reads the selected adapter pointer, and its admitted path calls the
+mode-table producer at `60003398 → 60002578`. The producer clears
+and repopulates the same table that `_THRASH_about@0` publishes.
+This establishes a concrete path from display selection to mode
+table regeneration for the pinned final DX7 driver. The nested helper
+is not byte-identical across the two releases. The export also has
+a different continuation via `600034c0`, so this is a conditional
+rebuild, with actual enumerated records and cross-adapter differences
+still unobserved. See the
+[executable call order](original-modern-renderer-lifecycle.md#display-selection-moves-ahead-of-mode-lookup-in-161).
