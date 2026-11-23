@@ -188,3 +188,25 @@ decode as width 65535 and height 32767. The [1.5.0 header gate](original-modern-
 replaces the request for a successfully loaded block with the ordinary
 1.4.0 version-2 header. Runtime mode choice and display behavior remain
 untested.
+
+### The packed request ranking is retained through 1.6.1
+
+The complete selector at `004bedcc..004bee5f` is byte-identical in
+the retained 1.5.0, 1.5.1, 1.5.2, 1.5.3 and 1.6.0 executables.
+The eligibility and area-helper span `004bee60..004beeb0` also matches
+the final 1.6.1 build. All ranges are half-open.
+
+In 1.6.1, the selector reads the cached descriptor where 1.6.0 made
+a renderer call. After accounting for the one-byte shrink at that
+instruction, the ranking and fallback span `004bede3..004bee56`
+in 1.6.0 matches `004bede2..004bee55` in 1.6.1 except for the two
+relative call displacements. Those calls still reach `004bee60` and
+`004beea4`. The suffix reorders the saved-EAX store and stack
+restoration as described in the
+[descriptor caching comparison](original-modern-display-modes.md#depth-narrowing-and-descriptor-caching-occur-in-different-releases).
+
+The ordinary area ranking, exact-dimensions override and index-1
+fallback therefore carry across the checked versions. The renderer
+query and the cached pointer can supply different records or have
+different side effects. An identical ranking loop does not establish
+identical mode selection during a live session.
