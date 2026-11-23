@@ -88,6 +88,17 @@ fraction before user changes is `83/127`. The cancel path at `004381b7`
 restores the saved value from `00664680`. These are defaults and one
 restore witness. Persisted values and audible loudness remain unverified.
 
+On the final [config.dat load and save paths](original-modern-config-loading.md),
+`006fd1d0` is at offset `0x1690` from block base `006fbb40`, within the
+`0x20f0`-byte payload. The save path selects that base at `00472870` and
+copies the block to its write buffer. The load path copies the payload
+back to that base at `00472a7f..00472aa3`. For an accepted version-6
+configuration, the reviewed post-copy helper checks audio mode without
+overwriting the menu volume. The grouped reset path can instead restore
+83. This establishes the field's serialized position and the selected
+load policy. It does not establish successful persistence under a live
+save and restart or validation of every stored value.
+
 These producer/consumer links statically support **MP150-009**'s separate menu-sound setting. The removed per-call multiplier supports the mechanism relevant to **MP140-010**'s consistent-volume claim; sample loudness, backend mixing and audible equality are not established.
 
 ## Remaining work
