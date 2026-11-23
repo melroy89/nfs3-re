@@ -22,6 +22,16 @@ This yields approximately 90 degrees at 4:3 and 106.26 at 16:9, before accountin
 
 The selected-dimension producer is traced in the [HUD](original-modern-hud-layout.md) and [resolution-default](original-modern-resolution-defaults.md) reports. A direct call at `004be748` computes the cached automatic angle in the viewport-initialization neighborhood. Later dimension changes must reach an appropriate update path for that cache to remain current; this chapter does not establish every reset/caller.
 
+The cache at `0055fecc` is file-backed and starts at binary32
+90.0 (`42b40000h`) in both 1.6.0 and 1.6.1. In the final
+executable, linear disassembly and the HIGHLOW relocation list
+identify only the store at `004dbc8a` and the chooser read at
+`004dbca6` as literal references to this address. The scan finds
+one direct call to the producer, at `004be748`. Before a runtime
+write to the cache, Automatic therefore reads the initialized
+90.0 value. Computed references and actual initialization order
+are outside this static check.
+
 Modern chooser **`004dbc94`** returns binary32 bits in EAX according to `[006fbc40]`: 1→75.0, 2→90.0, 3→105.0, zero or other values→cached automatic value. Original chooser **`004dbcc0`** instead returns an integer: setting 1→75, every other value→90. These are corresponding choice roles at different addresses, not matching same-address bodies.
 
 The retained archives show an intermediate integer chooser. Through
