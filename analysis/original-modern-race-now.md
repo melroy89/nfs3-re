@@ -156,3 +156,11 @@ Versions 1.5.1 and 1.5.2 retain those same operand differences.
 The complete target matches final in 1.5.3 and 1.6.0. This separates
 the 1.4.0 state writes and callback removal from the 1.5.0 wrapper
 and the later operand changes.
+
+Both changed operands load the lookup token into EDX before calling
+`00442a40`. In 1.5.2 they reference `00539494`, while 1.5.3 and
+final reference `0053714c`. Both addresses contain the same
+NUL-terminated `racenow` string in the inspected 1.5.2 and final
+files. The operand changes select another file-backed copy of that
+token. The two lookup calls and the intervening policy instructions
+match at this boundary.
