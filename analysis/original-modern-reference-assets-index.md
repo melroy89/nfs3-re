@@ -285,3 +285,16 @@ are `(-1210, 40968, -222822)` in the installed copy and
 asset can change the raw pose values independently of the
 matched reader instructions. Actual selection of this file
 and the resulting screen position remain unobserved.
+
+The final eight record bytes are four signed little-endian
+WORDs consumed by the integer rotation-matrix helper
+`004b6ca0..004b6d81`. All 225 instruction bytes match between
+the executables. The installed file supplies
+`(-11648, -519, -525, 11497)`; the backup supplies
+`(11239, 99, -31, -11920)`. For the first output DWORD,
+the helper subtracts twice the square of each middle component
+from `10000000h` and shifts right arithmetically by 12. This
+gives 65269 for the installed file and 65530 for the backup.
+Those are derived fixed-point matrix entries. This part of
+the pose difference follows from the asset bytes and retained
+integer operations, independently of x87 precision.
