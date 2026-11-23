@@ -842,3 +842,20 @@ no local invalid-result check before the signed cap. The
 [drivetrain trace](police-torque-runtime.md#full-drivetrain-entry-versus-actual-torque-interpolation)
 covers the later branch conditions. No live RPM or exceptions were
 measured here.
+
+The free-rev route supplies a concrete consumer of that limit.
+In the matching span `004ab13c..004ab203`, a nonzero vehicle
+WORD at `164h` adds profile DWORD `1ch` to the limit before
+comparison. When current RPM at vehicle offset `590h` is below
+that limit and shift state `510h` is zero, the routine adds
+250 to RPM, takes the signed minimum with the adjusted limit,
+then takes the signed maximum with the profile value at `1c0h`.
+It writes the result back to vehicle offset `590h` at
+`004ab1f8`. The additions are 32-bit wrapping operations.
+
+Thus a changed converted limit can affect whether this branch
+runs or the value it writes when its upper cap applies. The
+lower cap and state gates can also make a difference in the
+limit immaterial to this write. This is a static dependency
+shared by both executables. No divergent RPM or trajectory
+was observed.
