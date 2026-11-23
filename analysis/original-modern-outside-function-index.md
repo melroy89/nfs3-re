@@ -69,6 +69,9 @@ These links reconcile selected outside-body spans with already inspected mechani
 
 | Outside span / NOP run | Existing explanation | Remaining boundary |
 |---|---|---|
+| `004b5db1..004b6a30` | All 2,557 differences lie in the NOP run ending at 004b67b0. The manifest lists 12 original entry overlaps and their research links, including [startup checks](original-modern-startup-requirements.md), registry handling and worker lifecycle. | These links map original entry points. Internal instruction roles and some Modern replacements remain open. |
+| `004901c3..004904d0` | All 619 differences fall before 00490430, in the region of [original DDE URL command construction and callback code](original-modern-removed-dde.md). The rest of this interval matches. | Runtime browser launch behavior remains untested. |
+| `004fd272..004fd490` | The leading 14 bytes match. All 528 differences lie in the NOP replacement of the [original projection helpers](original-modern-projection.md). | Replacement and retained projection behavior are scoped in that report. |
 | `004f85c0..004f9060` | All 1,417 differences are in the NOP run through 004f8b50. The [renderer loader comparison](original-modern-renderer-loading.md) maps selected loader functionality to its Modern counterpart. | Original overlap boundaries and all removed branches remain open. |
 | `00517169..00517580` | The [original renderer snapshot bank](original-modern-renderer-loading.md#removed-original-renderer-snapshot-bank) occupies the bulk of this interval. Modern replaces 1,038 byte positions with NOPs. | The leading bytes precede the first mapped snapshot entry. |
 | `004f1ff0..004f22b0` | The [CPU calibration comparison](original-modern-cpu-tier.md#removed-calibration-helper-span) maps the original estimator tail and calibration helpers. Modern replaces 701 byte positions with NOPs. | The replacement tier policy is traced separately. |
