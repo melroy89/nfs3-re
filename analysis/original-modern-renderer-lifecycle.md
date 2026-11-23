@@ -156,3 +156,22 @@ record the driver's result. Other code also compares this state
 against 7, for example at `00503cf1` in 1.6.0, so a reconstruction
 should retain its DWORD representation. The full state lifecycle
 and live effects of rejection remain unverified.
+
+### A nonzero renderer state takes different startup paths
+
+In 1.6.0, an already nonzero `00564364` causes the startup wrapper
+at `004f8a50` to bypass `00517630` entirely. If another caller
+entered `00517630` directly with that state, its own branch at
+`00517640` would instead call the display and mode slots using
+the stored index `0055fec0`, skipping the mode lookup.
+
+In 1.6.1, startup calls `00517620` directly. A nonzero state
+branches at `0051762b` to `0051765f`, skipping the platform
+initialization block. It still selects the display, refreshes the
+renderer descriptor, looks up a mode from the three requested
+dimensions/depth globals, and submits that index to the driver.
+The same mode-result gate applies on this route.
+
+This establishes the behavior for a nonzero state at the tested
+entries. Whether repeated startup is reachable in normal gameplay,
+and which other callers can supply that state, remain unverified.
