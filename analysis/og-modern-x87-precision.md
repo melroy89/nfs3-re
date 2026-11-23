@@ -731,3 +731,20 @@ The original and Modern retain the same producer instructions,
 initial value and relocation. The pointer alone does not establish
 initialization order, the arithmetic check's result on a given
 CPU or Wine configuration, or the branch taken in an observed race.
+
+With the dispatch bit initially clear, the startup check uses
+the direct FDIV at `00526476`. The fixed binary64 inputs are
+4,195,835 and 3,145,727. It computes the quotient, multiplies it
+by the second input, and subtracts the product from the first.
+The helpers store each arithmetic result as binary64 before
+passing it on in registers. For these ordinary finite operands,
+the comparator at `0052699c` causes the flag to be set when
+the residual exceeds the encoded binary64 threshold of
+approximately `1e-8`. This is a one-sided check.
+
+The inspected divide, multiply, subtract and compare paths
+match in the two executables. The test detects a discrepancy
+in divide-and-multiply arithmetic rather than reading a CPU
+model identifier at the flag write. Its result also depends
+on the x87 environment in effect when the initializer runs.
+No hardware or Wine result was measured.
