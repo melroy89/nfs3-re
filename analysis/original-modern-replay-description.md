@@ -15,6 +15,13 @@ in this callback. The old/new body lengths happen to match because Modern
 leaves NOPs before the retained row loop. Other code and the trailing table
 in the larger interval are not newly interpreted as changed behaviour.
 
+The retained release archives date the rewrite to 1.4.0. The full 175-byte
+callback hashes match the original from 1.1.0 through 1.3.1 and match final
+1.6.1 from 1.4.0 through 1.6.0. The 23-byte registration span
+`0044748f..004474a6` matches in every inspected build. Thus 1.4.0 changes the
+registered callback body while preserving its binding. Menu assets and
+rendered output are outside this comparison.
+
 ## Heading removed, details begin earlier
 
 | Property | Original | Final Modern |
