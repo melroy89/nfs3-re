@@ -692,3 +692,24 @@ The final result spill occurs after the inner status snapshot, so
 flags raised by that spill are outside the merge. This records
 the normal instruction sequence and leaves pending exceptions
 and exceptional unwinds untested.
+
+### The selected physics caller stores the scaled angle as binary32
+
+The original and Modern executables match across the caller span
+`004ace32..004ace43`, scaler `004ea9c0..004ea9d8` and dispatcher
+`004e06d9..004e06ee`. The scaler loads two binary32 arguments
+and calls the dispatcher. That routine exchanges the operands
+and checks bit 0 of `00567858`. A clear bit executes FPATAN
+directly. A set bit enters the previously mapped FNSAVE wrapper.
+The flag's runtime value is not established by this branch trace.
+
+On either return, `004ea9ce` multiplies the angle by the same
+binary64 value at `0054b6c0` in both executables (approximately
+0.159154958). That multiply is outside the wrapper's isolated
+x87 environment. Then `004ace40` stores the result as binary32
+at `[EBP-0ch]`, before the following vehicle-state branch.
+A comparison must therefore account for the environment of
+the outer multiply and store, even when the isolated angle
+calculation matches. The inspected caller makes no integer
+conversion at this boundary. Stored values and trajectory
+effects remain untested.
