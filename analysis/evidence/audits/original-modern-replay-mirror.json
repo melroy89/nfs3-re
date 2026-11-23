@@ -96,6 +96,20 @@
           "bytes_sha256": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997",
           "assembly": "analysis/captures/modern-differences/replay-mirror/original-00431800.asm",
           "assembly_sha256": "76ddcf7ccb35ee542f52842a0e263305e80656439d3b0b827448c583638b2e54"
+        },
+        {
+          "start": "0048d287",
+          "end": "0048d2b1",
+          "bytes_sha256": "0d082f62a2097255858872514aca9f3418c780df5182d6be891d2499dfe67025",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-0048d287.asm",
+          "assembly_sha256": "a1760682fded4971c260d0618a1ffd0de5934c387b815571f04d558eaaed8e4b"
+        },
+        {
+          "start": "004bc751",
+          "end": "004bc77c",
+          "bytes_sha256": "099c0a5464678098a7e4c197af8ef14cf623b31d5d9ed84e4bd7f57f46407c55",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/original-004bc751.asm",
+          "assembly_sha256": "2e99cae7d58e9f95a807b78bfd768b6ac1df3bc95a505860084c7a796f0a700e"
         }
       ]
     },
@@ -193,6 +207,20 @@
           "bytes_sha256": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997",
           "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-00431800.asm",
           "assembly_sha256": "cd3d6e99d64c219f90fcd547bcdec5ca9ed351270b3365be5c1fb1e9ca7185ae"
+        },
+        {
+          "start": "0048d287",
+          "end": "0048d2b1",
+          "bytes_sha256": "0d082f62a2097255858872514aca9f3418c780df5182d6be891d2499dfe67025",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-0048d287.asm",
+          "assembly_sha256": "e7e66a37ca38e2193e1ed32c68efd7f8cda49b539b077912e0c8570a62c4436e"
+        },
+        {
+          "start": "004bc751",
+          "end": "004bc77c",
+          "bytes_sha256": "099c0a5464678098a7e4c197af8ef14cf623b31d5d9ed84e4bd7f57f46407c55",
+          "assembly": "analysis/captures/modern-differences/replay-mirror/official_modern-004bc751.asm",
+          "assembly_sha256": "553084c0d7845d2167e465e19fe56d3c71fe29124d8aac3227f07e779ce77357"
         }
       ]
     }
@@ -218,6 +246,10 @@
     "0048f7b0",
     "004c5097"
   ],
+  "retained_render_path_starts": [
+    "0048d287",
+    "004bc751"
+  ],
   "changed_starts": [
     "00422aa0",
     "00484450"
@@ -241,7 +273,9 @@
         "0048f7b0": "894fe2e94ba38af61ef916786048941a281c43b9c2abfe612f162d88861a5a65",
         "0048f970": "f4c577590bc8c49ba5c4ea15d376f3870d4205e9436b154bc947858ec7074526",
         "0048f550": "b008ac4a4b20f2b403063952ae1417421c263190c6675ed036f9db8a5e472f72",
-        "00431800": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997"
+        "00431800": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997",
+        "0048d287": "0d082f62a2097255858872514aca9f3418c780df5182d6be891d2499dfe67025",
+        "004bc751": "099c0a5464678098a7e4c197af8ef14cf623b31d5d9ed84e4bd7f57f46407c55"
       }
     },
     "1.4.0": {
@@ -262,7 +296,9 @@
         "0048f7b0": "894fe2e94ba38af61ef916786048941a281c43b9c2abfe612f162d88861a5a65",
         "0048f970": "f4c577590bc8c49ba5c4ea15d376f3870d4205e9436b154bc947858ec7074526",
         "0048f550": "b008ac4a4b20f2b403063952ae1417421c263190c6675ed036f9db8a5e472f72",
-        "00431800": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997"
+        "00431800": "abf8d4936f4ff5fd1779e3b641b492e172da40801cdf2801c70054032006f997",
+        "0048d287": "0d082f62a2097255858872514aca9f3418c780df5182d6be891d2499dfe67025",
+        "004bc751": "099c0a5464678098a7e4c197af8ef14cf623b31d5d9ed84e4bd7f57f46407c55"
       }
     }
   },
