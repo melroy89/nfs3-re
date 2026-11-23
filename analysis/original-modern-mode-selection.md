@@ -135,3 +135,27 @@ Modern therefore can have performed local resize/setup even when the later drive
 The Modern outside-body interval **`005177de..00517890`** is178 NOP bytes, all changed from original. Its original bytes lie in the longer registered video-mode callback`00517610..0051788d`, followed by three zero alignment bytes. The final original JMP at`00517888` ends at exclusive`0051788d`; that endpoint corrects the earlier report’s one-byte-short notation and matches the existing retained capture. The interval’s initial address is not a new original function entry.
 
 Modern RNG helpers at`00517784..005177de` occupy part of the former video-mode address range. They are separately established by their caller/dataflow evidence in the [music/RNG comparison](original-modern-music-selection.md), not counterparts of original video-mode blocks at those addresses. The video-mode operation instead has mapped Modern renderer/application counterparts above. The outside-body inventory now routes this removed original tail accordingly; provider mode-ID meanings, complete callee contracts and actual driver/display acceptance remain unverified.
+
+### 1.4.0 moves the scalar maximum to a different address
+
+The retained 1.3.1 and 1.4.0 package executables (SHA-256
+`199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664`
+and `7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d`)
+preserve the same scalar sentinel policy in the checked bodies. In
+1.4.0 the operands at `0044826d`, `00448275`, `004482c9` and
+`004483e6` all change from `007a27b0` to `00559214`.
+
+To repeat the comparison, extract `nfs3.exe` from each retained archive
+with `7z x -so` and compare the PE bytes in the half-open VA ranges
+`00448210..004482b9`, `004482c0..004482e7` and
+`004483a0..00448419`. Each range matches after replacing its old
+little-endian address operands `b0 27 7a 00` with `14 92 55 00`.
+The score selector at `004bee80..004bef4b` matches byte for byte.
+
+Version 1.4.0 uses the former address for the loading budget setting.
+Its settings loader writes `007a27b0` at `004b5629`, and its
+loading-clock helper reads it at `004a357e`. A reconstruction should
+give the two fields distinct names and use the address map for the exact
+build. The matched ranges establish the storage move and retained
+local policy. Indirect references and runtime mode persistence remain
+unverified. See the [packaged loading setting](original-modern-loading-timing.md#packaged-loading-setting-and-separate-title-delay).
