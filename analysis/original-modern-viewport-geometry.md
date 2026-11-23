@@ -98,7 +98,13 @@ and `004b611a`, the overwrite is in the caller. At `00485626`,
 the next instruction calls `0047fd80`, which loads EAX from
 `007cdac8` at `0047fd8b` before reading it. The earlier EAX value
 therefore has no observed consumer on these direct paths.
-Indirect callers remain outside this scan.
+A follow-up found no decoded direct jump to the same entry and
+no literal `004be5e0` DWORD anywhere in the file-backed PE sections
+of either archive. The HIGHLOW relocation sites also have no
+matching operand (46,140 checked in 1.3.1 and 45,987 in 1.4.0).
+This rules out a stored absolute pointer to the exact entry in
+these bytes. Computed pointers and alternate entries remain
+outside the scan.
 
 The 1.5.0–1.5.3 mirror-edge span `004be6f4..004be74b` is byte-identical in all four retained builds. It calls `004dfd56` before each of four FISTP stores and computes both extents as upper edge minus lower edge plus one. In 1.6.0, the corresponding `004be752..004be7a5` uses direct FISTP and insets each converted edge by `0055fed0` before taking the difference. For the same four converted edges and an inset of `B`, each 1.6.0 extent is smaller by `2*B + 1`, assuming ordinary fitting integer arithmetic. The comparison holds the converted edges fixed. Actual edge rounding and the inset value depend on runtime state.
 
