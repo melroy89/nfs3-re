@@ -210,3 +210,26 @@ fallback therefore carry across the checked versions. The renderer
 query and the cached pointer can supply different records or have
 different side effects. An identical ranking loop does not establish
 identical mode selection during a live session.
+
+### 1.6.1 changes the ordering of descriptor refresh and mode setup
+
+The [paired-release evidence](original-modern-display-modes.md#depth-narrowing-and-descriptor-caching-occur-in-different-releases)
+also provides the pinned 1.6.0 and 1.6.1 executables for comparing
+mode application at `004beeb0`. Disassemble from that entry through
+`004bef8f` in 1.6.0 and through `004bef9d` in 1.6.1, with
+exclusive end addresses.
+
+| Path | 1.6.0 | 1.6.1 |
+|---|---|---|
+| Descriptor used to form the record pointer | Queries the renderer at `004beec0` | Reads the cached descriptor at `004beec0` |
+| Same index | Skips the driver mode call and enters publication at `004bef3e` | Skips the driver mode call and refreshes the cache at `004bef47` before publication |
+| Different valid index | Calls the driver at `004bef1b` before invoking the dimension helper on the success path | Adds a dimension-helper call at `004bef18` before calling the driver at `004bef24`. Success then reaches the shared refresh and publication path |
+| Driver returns zero | Skips shared publication | Skips shared refresh and publication after the early dimension-helper call has run |
+
+The 1.6.1 refresh helper `004f853c` queries the same renderer slot
+and writes the result to `007a3a5c` at `004f8542`. The caller
+continues to use its earlier ESI record pointer. This dates two
+separate changes to the checked release pair. The descriptor query
+moves later on same-index and successful paths, and dimension setup
+can now precede a rejected driver mode request. Actual window effects
+and transitive recovery remain unverified.
