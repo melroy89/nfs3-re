@@ -20,6 +20,16 @@ For ordinary positive dimensions and finite arithmetic, its mathematical summary
 
 This yields approximately 90 degrees at 4:3 and 106.26 at 16:9, before accounting for exact x87 rounding. These are formula illustrations, not rendered/probed results. Zero height, trapping exceptions and arbitrary malformed settings still require machine-level treatment. The conditional unordered clamp path is now traced below; the mathematical summary is not a substitute for that contract.
 
+Using the stored degree factor in that formula, the lower clamp
+transition is at width/height ≈ 1.33333331 and the upper transition
+is at ≈ 1.80189654. For example, 1920×1200 gives about 100.39°,
+1920×1080 gives about 106.26°, and 2560×1080 hits the 107° cap.
+These estimates apply to the dimensions entering the producer.
+They provide comparison cases for the clamp and show where a
+wider mode ceases to increase the requested angle. The thresholds
+are formula estimates and do not specify the last bit of an x87
+comparison or the eventual on-screen coverage.
+
 The selected-dimension producer is traced in the [HUD](original-modern-hud-layout.md) and [resolution-default](original-modern-resolution-defaults.md) reports. A direct call at `004be748` computes the cached automatic angle in the viewport-initialization neighborhood. Later dimension changes must reach an appropriate update path for that cache to remain current; this chapter does not establish every reset/caller.
 
 The cache at `0055fecc` is file-backed and starts at binary32
@@ -119,7 +129,7 @@ The shared float builder itself computes centre coordinates from rectangle origi
 
 ## Reconstruction and catalog limits
 
-**MP160-001**, automatic FOV/H+ mode: the dimension-based producer, clamp, cached selection and changed projection route provide static support for the mechanism. Exact v1.6.0 introduction requires prior-release binaries; UI labels and rendered horizontal coverage remain untested.
+**MP160-001**, automatic FOV/H+ mode: the dimension-based producer, clamp, cached selection and changed projection route provide static support for the mechanism. Retained 1.5.3 and 1.6.0 executables establish the cutover, and the packaged English option list identifies Automatic. Rendered horizontal coverage remains untested.
 
 **MP160-002**, more accurate vertical angle: the paired wrapper replaces the original truncated integer approximation with the tangent/arctangent calculation above. For an ordinary90-degree horizontal input, original computes half-angle45 then truncates `13*45/16` to36; Modern's reference-aspect formula gives approximately36.87 degrees before its binary32 store. This concrete calculation change supports the claim partially. It is not a visual or whole-camera accuracy measurement: reference/live aspect, exact constants, downstream dimensions and x87 execution remain dependencies. The catalog therefore records partial support rather than leaving this mechanism vendor-only or declaring complete accuracy verified.
 
