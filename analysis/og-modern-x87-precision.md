@@ -550,8 +550,25 @@ displacements. Calls at `004be73d`, `004be744`, `004be777` and
 `004be779`, respectively. Each still calls `004dfd56`, and the
 following FISTP stores still use the same four stack offsets.
 This identifies the substitutions as movement of the same local
-conversion sequence. Inputs from the enclosing initializer and
-other releases' intermediate-only addresses require separate checks.
+conversion sequence. Inputs from the enclosing initializer require separate checks.
+
+In 1.5.0–1.5.2 the nine addresses absent from the original census
+are listed below. Their placement comes from disassembling the
+retained 1.5.0 executable. The last column dates disappearance
+of the direct call at that address.
+
+| Address | Conversion context | Call absent starting |
+|---|---|---|
+| `0043774e` | Scaled menu value stored by FISTP to `006fd1d0` | 1.5.3 |
+| `0046a57a` | Slider percentage local at `[EBP+72h]` | 1.5.3 |
+| `004a4544` | Logo centring local at `[EBP-10h]` | 1.5.3 |
+| `00489b88` | Numeric-scale position local at `[EBP+34h]` | 1.6.0 |
+| `004be706`, `004be714`, `004be72e`, `004be73c` | Viewport initialization | 1.6.0 |
+| `004f9411` | Binary32-to-signed-DWORD conversion through a stack slot | 1.6.0 |
+
+Together with the earlier viewport rows, this accounts for every
+intermediate-only address in the census. The disappearance column
+does not establish the resulting value or operation at every site.
 
 The inspected helper change therefore affects retained callers well
 beyond the RPM conversion. The menu and HUD bypasses are separately
