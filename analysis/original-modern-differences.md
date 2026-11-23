@@ -491,6 +491,8 @@ The original defaults are In Car, Roof Cam, Heli Cam and None. Modern 1.1.0 alre
 
 Modern 1.5.1 adds the rear-camera menu control, initializes it to In Car, and adds pose-selection and dispatch checks. The new route uses a separate 284-byte scene descriptor snapshot in zero-filled storage. The source descriptor and selected initialization code, including its position and orientation inputs, already exist in the original. The reviewed selector checks, dispatch table and menu binding remain byte-identical through 1.6.1. Live selection, update ordering and rendered output remain unverified. [Viewport and camera evidence](original-modern-viewport-pose.md)
 
+The rear-view mirror geometry changes at two separate release boundaries. Version 1.5.0 centers the logical projection rectangle vertically within the physical mirror bounds. Version 1.6.0 makes the logical height depend only on physical width, retains centering, and applies a border inset to the physical bounds before clipping. Version 1.6.1 retains those calculations and writes. These findings support parts of MP150-006 and MP160-005. Camera pitch, horizon position and visible image proportions still need runtime evidence. [Mirror centering](original-modern-viewport-pose.md#earlier-mirror-direction-claim) · [Mirror bounds and aspect](original-modern-viewport-geometry.md#4-profile-rectangle-conversion-and-rounding-change)
+
 ## 32. Resource-backed frontend page
 
 The [frontend-page comparison](original-modern-frontend-page.md) verifies a one-byte dispatch extension plus an out-of-line resource arm, and page record 75 changing from localized text to `ABOUT.QFS`/`cred`. Payload/render validation remains pending.
