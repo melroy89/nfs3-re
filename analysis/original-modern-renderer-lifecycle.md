@@ -79,3 +79,26 @@ The audit retains the following chain, identical in all four builds within its e
 The new zero-input gate therefore suppresses the inspected frontend mode/viewport transition on this accepted terminal-state1 route while retaining cleanup. The original's zero input only controlled the later conditional call, after setup had already happened. The complete captured shutdown envelopes end at`004a3684` (original/140), `004a3680` (150) and`004a3681` (final); the raw body identities and disassembly are retained separately.
 
 **MP150-035 advances to partial static support:** the advertised140→150 boundary contains a concrete mechanism for avoiding the unnecessary frontend display transition on the checked gameplay-exit route. Actual desktop resolution, all exit paths, provider behaviour, callback admission, mediator outcomes and transitive cleanup remain unverified. Retained local code does not establish complete network or lifecycle equivalence. Reconstruction must preserve the conditional setup/cleanup split and register contract, rather than removing shutdown wholesale. No game, mode API, driver, new instruction probe, compiler or Ghidra write was used.
+
+## The startup mode-result gate appears in 1.6.1
+
+In the retained 1.1.0–1.4.0 executables, startup's driver mode
+request through `009ef958` is at `005176a4`. It falls directly into
+the common tail at `005176aa`. In 1.5.0–1.6.0 the request moves to
+`005176a1` and the unconditional jump at `005176a7` reaches the
+same tail. Neither route branches on the driver's returned EAX.
+
+The final 1.6.1 request at `00517696` adds a test at `0051769c`
+and a zero branch to `0051777e`, which restores registers and
+returns with EAX still zero. This skips the surface cleanup and
+remaining success-path initialization described above. The requested
+index has already been stored at `00517687`. This startup check is
+a separate change from the failure check in the runtime mode
+application, which the supplied original already has.
+
+Reproduce by disassembling `00517620..00517900` with
+`objdump -d -Mintel` on the retained historical executables and
+official final package. For 1.4.0, extract the archive member
+`nfs3.exe` with `7z x -so`. These instructions date the inspected
+startup gate to the 1.6.0 → 1.6.1 package boundary. They leave
+driver return behavior and observed startup recovery unverified.
