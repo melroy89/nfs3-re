@@ -633,3 +633,24 @@ through `00526aeb` matches, including the branch into a scoped
 control-word adjustment. This resolves the dispatch target for
 these two known callers. Other selectors, exceptional operands
 and live state remain outside this comparison.
+
+### The shared divide helper restores precision before the final divide
+
+On the checked scaling paths in `005269d4`, the local control word
+sets extended precision and nearest rounding and masks exceptions.
+The helper multiplies both operands by the same binary32 constant.
+It uses 0.9375 at `00526a40` or 1.0625 at `00526a57` depending on
+the exponent check. The constants at `0056ccd0..0056ccd8` match
+in the two executables. Each path restores the word saved at
+`[ESP+1ch]` **before** its final FDIVP.
+
+The separate branch at `00526a86` can scale one operand by
+`2^63` (matching binary32 bytes at `0056ccd8`), spill it as
+TBYTE, restore the caller's word, and retry classification at
+`005269dc`. Its other exit restores the word before dividing
+at `00526ae8`. Direct divide paths bypass these local changes.
+Thus the extended scope covers operand preparation. The divide
+itself executes with the restored word or the incoming word.
+This is static control-flow evidence for the matching bodies.
+Exception outcomes and complete numerical equivalence were
+not tested.
