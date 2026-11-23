@@ -431,6 +431,8 @@ The only slot3 source-table change in131→140 is first WORD **656→657** for p
 
 ## 1.4.0 to 1.5.0 updates eight preset rectangles
 
+Both releases retain scaler `00480910..004809f7` byte for byte. It writes rectangles at `00749758 + localIndex * 0x170 + slot * 0x10`. The paired 74-byte span `00483772..004837bc` forms the same local-index stride and reads `00749780` and `0074977c` plus that stride using `FILD`. These are slot 2 offsets `+8` and `+4`. Thus at least one downstream geometry path reads the scaled slot whose first two profiles have source edits below. The address match establishes the consumed slot and retained instructions. It does not establish which profile is active or whether the small input edits survive rounding in a selected display mode.
+
 The two retained package members both use the WORD source table at `00540500..00540980`. A complete comparison finds 10 changed WORDs in eight of 144 rectangles. Indices are zero-based and values below are in source order before the pair swap and layout arithmetic.
 
 | Profiles | Slot | 1.4.0 | 1.5.0 |
