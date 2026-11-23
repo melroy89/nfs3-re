@@ -936,3 +936,22 @@ conversion receives an exactly representable small integer in
 these cases. The FRNDINT helper's changed exception handling
 still matters outside ordinary inputs. No target instructions
 were executed for these examples.
+
+The interpolator's upper coordinate is 40, corresponding to
+10,240 RPM. At that endpoint or after a clamp to it, the zero
+fraction branch reads only index 40. For ordinary integer RPM
+below that endpoint, a fractional coordinate uses at most
+indices 39 and 40. Inputs at or below zero select index 0.
+These bounds describe the inspected interpolator at `004a8a99`.
+
+Both executables populate all 41 slots at profile offset
+`114h` when either checked producer runs. The matching text
+parser loop at `004b167b..004b16ac` calls `004b07d0` for each
+index and stores a binary32 value. The matching default loop
+at `004b0d73..004b0d99` copies 41 samples from `0055f988`.
+That 164-byte default table is identical (SHA-256
+`ffd70a5fd9e69f0b99fc27f58ee59bbd44541d8428d5869174c8d65b3fb70b32`).
+Matching loops and defaults leave the loaded text and later
+profile modifications as separate inputs. The
+[police torque observations](police-torque-runtime.md) cover
+one installed profile and its reachability.
