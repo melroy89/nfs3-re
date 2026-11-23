@@ -30,8 +30,26 @@ Static evidence only; no new instruction probes or game execution.
 The [deeper dependency inventory](og-modern-x87-precision.md#deeper-dependency-inventory-retained-local-extended-state-math)
 now identifies retained FNSAVE/reset/FRSTOR and explicit extended-mode angle math on a physics
 call path in **both** baselines. It also compares the changed drivetrain truncation helper's
-complete bodies.176 saved entries per file include174 equal ranges, but 111 indirect sites remain unexpanded. The sole nonentry direct
-target is a verified shared epilogue. Transitive CW ownership remains open.
+complete bodies. Of 176 saved entries per file, 174 ranges match. The sole
+nonentry direct target is a verified shared epilogue. The
+[indirect-edge review](og-modern-x87-precision.md#deeper-dependency-inventory-retained-local-extended-state-math)
+identifies 27 named import sites, 79 other indirect call sites and five indexed
+jumps per executable. The [angle follow-up](og-modern-x87-precision.md#the-retained-angle-dispatch-restores-the-saved-word-on-all-eight-table-routes)
+resolves one indexed jump for all eight entries and another for the two
+calls using selector 15. The 17-entry lookup data and the scoped divide
+operations match. Transitive control-word ownership through the remaining
+callbacks and other selectors remains open.
+
+For an eventual numeric comparison, use both signs of each operand with
+magnitude pairs on either side of the exchange boundary and at equality.
+Include ratios immediately below, at and above the half-step lookup
+thresholds `(2k + 1)/32` for k = 0 through 15, and use the same binary
+inputs in both implementations. Compare the selected index, reduced
+angle, quadrant result and final binary32 store. Separately exercise
+signed zero, subnormals and infinities through the fallback branch.
+Record the incoming and outgoing control word and status around the
+wrapper. This is a proposed comparison set. Game trajectories and
+multiplayer compatibility require additional tick-matched evidence.
 
 ## Outside-function documentation coverage
 
