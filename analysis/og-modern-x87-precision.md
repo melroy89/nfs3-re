@@ -629,7 +629,7 @@ Both normal-path calls to `00526aeb` load selector `0fh`.
 The corresponding DWORD at `0056cd18` is `00526b9f` in both
 files. That branch spills both x87 operands as TBYTEs and
 calls the retained divide helper at `005269d4`. The helper body
-through `00526aeb) matches, including the branch into a scoped
+through `00526aeb` matches, including the branch into a scoped
 control-word adjustment. This resolves the dispatch target for
 these two known callers. Other selectors, exceptional operands
 and live state remain outside this comparison.
