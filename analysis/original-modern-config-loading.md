@@ -123,6 +123,20 @@ default-and-rewrite entry at `004dca37` calls both `004dc670` and
 are local branch contracts. The helper return meanings, on-disk field
 validation and write success require separate evidence.
 
+The load-side copy helper at `004dc8b0..004dc932` is byte-identical
+in both executables. It selects the same destination buffer for each
+player as the save wrapper below. With a non-null source in EDX, a
+valid player selector in EAX and a positive byte count in EBX, it
+copies 48-byte records. A count below 48 skips copying. After that
+first check, `004dc8eb` compares the record's **starting offset**
+against the byte count and `004dc8f3` caps the loop at 50 records.
+Assuming clear DF, a count of 2,400 therefore copies exactly 50
+records, matching the write request. Counts of at least 48 that
+are not multiples of 48 can select a final full-record copy beyond
+the nominal byte count, subject to the 50-record cap. The helper
+alone does not establish which lengths reach it or how the resource
+loader sizes its allocation. No malformed files were tested.
+
 The save wrapper at `004dca50..004dcae2` is also byte-identical
 across the supplied original and official final. EAX 0 selects the
 `player1` name and buffer `008b9200`; EAX 1 selects `player2` and
