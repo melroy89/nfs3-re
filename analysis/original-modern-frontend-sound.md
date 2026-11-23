@@ -65,6 +65,16 @@ Other field/backend semantics remain opaque. Equal initializer bytes do not prov
 
 Modern `004376fc` reads integer `006fd1d0`, converts it to floating point and multiplies by a retained double approximating **1/127** before initializing a slider through `0046c950`. It installs update callback `00437740` and preview/action callback `00437758`.
 
+The 1.5.0–1.5.2 constructors store preview target `0043775c` at
+`0043772b` and the same update target `00437740` at `00437732`.
+The early preview tests the incoming EDX, applies the 48-count check
+to sound ID 1, and forwards the action to `0046cae0`. In 1.5.3 the
+constructor changes the preview pointer to `00437758`, retaining
+these instructions and their two call targets at the new location.
+This verifies that the stricter gate belongs to the menu sound slider
+by 1.5.0 and survives the later callback move. Input delivery and
+audible feedback remain untested.
+
 Update callback `00437740` obtains the slider value through `0046c9b0`, multiplies by exact double **127**, and FISTP-stores to `006fd1d0`. The conversion therefore depends on current x87 rounding; it is not a proven truncating integer cast. The helper's allowed slider range and all setting-load validation remain separate.
 
 Defaults path `00472270` writes AL=`0x53` before storing full EAX to `006fd1d0`; that instruction alone does not prove all upper bytes are zero on every caller state. A cancel/restore neighborhood copies `[00664680]` back to this field at `004381b7`, providing a concrete restore path but not a complete settings transaction audit.
@@ -73,7 +83,7 @@ These producer/consumer links statically support **MP150-009**'s separate menu-s
 
 ## Remaining work
 
-Pending: counter unit/initialization, all ID callers and removed-multiplier meanings, backend sample assets/mixing, complete saved-setting serialization/range checks and runtime slider/cancel behavior. Historical introduction dates require earlier patch releases. This chapter does not establish music-volume fixes, all dialog sound choices or race-effect behavior.
+Pending: any later timestamp resets, all ID callers and their original multipliers, backend sample assets and mixing, complete saved-setting serialization and range checks, and runtime slider and cancel behavior. The 1.4.0 request gate and 1.5.0 volume and slider paths are dated above. Music volume, other dialog sounds, and race effects have separate paths.
 
 ## Five hover-call immediates change, but Modern ignores that argument
 
