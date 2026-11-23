@@ -66,6 +66,8 @@ The exact release boundary is 1.5.3→1.6.0. The 73-byte mirror producer span `0
 
 The archive-matched 1.6.0 and final 1.6.1 executables share all 148 bytes at `004be752..004be7e6`, including the profile rounding, both setter calls and the width-derived logical height. Both setter bodies at `004be89c..004be8b5` match as well. The first group feeds projection through `004bed20` on the mirror path, while the second group retains the physical bounds. The matching code establishes continuity through 1.6.1 for this calculation. Actual profile inputs and the rendered result remain unverified.
 
+The physical bounds have a separate consumer. In both archived 1.5.3 and 1.6.0, the identical adapter span `004bed39..004bed4a` loads the four DWORDs at record `+0x10..+0x1c` into EAX/EDX/EBX/ECX and calls `004bebe0`. Its complete 234-byte body also matches across the pair. The setup clamps the physical origin and compares the requested extents against the space remaining within the published viewport dimensions. Thus the 1.6.0 physical inset reaches the retained clipping path, where clamping can affect the final extents. The logical rectangle goes through the projection wrapper separately. Actual clipping and presentation remain untested.
+
 ## 5. Reference width feeds border thickness
 
 After writing the reference rectangle, Modern calls `0047f9a4` at `004be74d`. That helper uses `007a2748`, now traced as **reference width**, to calculate the stored border thickness. See the [border comparison](original-modern-border-geometry.md). For ordinary widescreen modes the reference width derives from `4*H/3`; for taller modes it remains W. Hence “based on vertical resolution” has a specific aspect-dependent implementation, rather than a universal multiplication by H.
