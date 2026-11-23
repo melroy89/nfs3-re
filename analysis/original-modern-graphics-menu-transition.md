@@ -126,3 +126,14 @@ Thus the local-test rewrite preserves the **field offset**, while replacing two2
 The outside-function inventory now partitions the complete2759-byte interval **`00448439..00448f00`**, with266 differing positions, into contiguous hashed spans. Differences are confined to the seven leading boundary bytes, graphics init/transition region`00448440..00448570`, related setup rewrite`00448631..00448659`, local field-test rewrite`00448709..00448710`, SFX tail`00448728..00448765`, and Cancel callback`00448770..004487ce`. All other partition spans match. The manifest records per-part counts rather than treating the whole saved-function gap as a new function.
 
 The leading boundary is particularly unsuitable for decompilation: original instruction`00448437` is an alignment LEA whose operands cross the inventory start`00448439`. The Cancel callback differs only in its call at`004487a8`: original calls string comparator`004429c0`, Modern calls fog-aware restore/comparison helper`0043778c`, already documented above; the64-byte settings restore and return tail are retained. This completes byte localization and research routing for the interval, while record-value correspondence, enclosing callback registration/lifecycle and runtime behaviour remain bounded by their individual findings. No Ghidra function boundary was changed.
+
+### Snapshot extent at the fog-policy call site
+
+Both pinned EXEs load ECX=`0x176c`, ESI=`006fbb4c` and
+EDI=`00662ca0` at `0044d2aa..0044d2b9`. The original copies
+`0x5db` DWORDs and computes a trailing-byte count from the
+original length. That remainder is zero. Modern copies the same
+`0x5db` DWORDs, then calls `004377c4`. With the expected clear
+direction flag, the snapshot covers the same 5,996 bytes in both
+versions. The additional fog policy is a separate effect after
+the copy.
