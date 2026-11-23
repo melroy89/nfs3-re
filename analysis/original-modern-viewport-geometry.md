@@ -123,6 +123,18 @@ This rules out a stored absolute pointer to the exact entry in
 these bytes. Computed pointers and alternate entries remain
 outside the scan.
 
+Across all 11 retained releases the linear scan still finds five
+direct calls per executable. Three stay at `0044d28c`, `0044d4b2`
+and `00485626`. The call at `004a3439` moves to `004a3428` in
+1.6.0 and retains the following local-address setup that overwrites
+EAX. The fifth call moves within renderer startup: `004b611a`
+through 1.4.0, `004b5bb1` in 1.5.0, `004b5bfc` in 1.5.1,
+`004b5c12` in 1.5.2–1.5.3, `004b5c03` in 1.6.0 and `004b5c91`
+in 1.6.1. Each startup sequence loads EAX with `007cdb68`
+before its next call, with only EDX/EBX setup preceding that load
+in the later variants. The retained direct continuations provide
+no evidence of EAX-result dependence.
+
 The 1.5.0–1.5.3 mirror-edge span `004be6f4..004be74b` is byte-identical in all four retained builds. It calls `004dfd56` before each of four FISTP stores and computes both extents as upper edge minus lower edge plus one. In 1.6.0, the corresponding `004be752..004be7a5` uses direct FISTP and insets each converted edge by `0055fed0` before taking the difference. For the same four converted edges and an inset of `B`, each 1.6.0 extent is smaller by `2*B + 1`, assuming ordinary fitting integer arithmetic. The comparison holds the converted edges fixed. Actual edge rounding and the inset value depend on runtime state.
 
 The four intermediate-only calls in the
