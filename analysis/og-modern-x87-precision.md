@@ -673,3 +673,22 @@ the wrapper has already initialized the FPU with FNSAVE before
 calling this routine. Other callers can supply a different incoming
 environment. The exact result and exception flags for special
 operands remain untested.
+
+### The physics wrapper merges only the angle call's low status byte
+
+The complete 52-byte wrapper `004ff624..004ff658` is identical
+in both executables (SHA-256
+`582c24d8849b7d0ff5083f5ec3bbd46a82dbbc3d6abd4fa4c0f559ec48db755b`).
+It snapshots the angle call's status with FNSTSW at `004ff63c`,
+before spilling the result at `004ff63e`. The merge at
+`004ff642..004ff650` ORs bits 0–7 of that snapshot into the
+saved status word at `[ESP+4]`, then reloads the saved image.
+
+This carries the six exception flags, stack-fault flag and
+exception-summary bit into the restored image. The inner call's
+condition codes and TOP are outside the low byte. Those bits come
+from the image captured after the wrapper's initial operand pop.
+The final result spill occurs after the inner status snapshot, so
+flags raised by that spill are outside the merge. This records
+the normal instruction sequence and leaves pending exceptions
+and exceptional unwinds untested.
