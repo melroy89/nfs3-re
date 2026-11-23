@@ -383,16 +383,25 @@ absolute-magnitude comparison, followed by the sign bits from
 `0051f510` instead reloads both saved operands and executes
 `FPATAN` without the angle routine's local control-word override.
 
-| Table index | Target | Saved control-word reload |
-|---:|---|---|
-| 0 | `0051f480` | `0051f480` |
-| 1 | `0051f48b` | `0051f48d` |
-| 2 | `0051f498` | `0051f4a0` |
-| 3 | `0051f4ab` | `0051f4b5` |
-| 4 | `0051f4c0` | `0051f4c8` |
-| 5 | `0051f4d3` | `0051f4dd` |
-| 6 | `0051f4e8` | `0051f4f0` |
-| 7 | `0051f4fb` | `0051f505` |
+For the ordinary finite path, let A be the reduced-angle result
+before dispatch, P the stored 80-bit approximation of π at
+`0056cb58`, and H the stored approximation of π/2 at `0056cb62`.
+With x initially in ST(0) and y in ST(1), the three index bits from
+high to low are the exchange flag (set when |y| ≥ |x|), the sign
+of x and the sign of y. Both executables use the same result
+operations, in the order shown. The additions and subtractions
+execute before the saved control word is restored.
+
+| Table index | Target | Saved control-word reload | Result |
+|---:|---|---|---|
+| 0 | `0051f480` | `0051f480` | A |
+| 1 | `0051f48b` | `0051f48d` | −A |
+| 2 | `0051f498` | `0051f4a0` | P − A |
+| 3 | `0051f4ab` | `0051f4b5` | −(P − A) |
+| 4 | `0051f4c0` | `0051f4c8` | H − A |
+| 5 | `0051f4d3` | `0051f4dd` | −(H − A) |
+| 6 | `0051f4e8` | `0051f4f0` | H + A |
+| 7 | `0051f4fb` | `0051f505` | −(H + A) |
 
 Each route reloads the WORD from `[ESP+18h]` before unwinding.
 This resolves one of the inventory's five indirect jump sites
