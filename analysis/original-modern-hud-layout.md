@@ -166,6 +166,8 @@ Modern's replacement preset table `0053eb20..0053f420` instead overlaps storage 
 
 ## Default speed units: header selector reaches the digital KPH path
 
+The retained 1.1.0 executable already sets all six speed-unit selectors to 3. At `00485974` it loads EBX with 3, then `00485979..0048599d` writes it to `006fbc68 + profile * 0x1a4` for all six profiles. This matches final's default selector policy and dates the removal of the original language-dependent default to at least 1.1.0. The same early initializer independently writes 3 to `006fbbb8/bc` at `00485891/97`, where the original writes 1 and final has no corresponding stores in this routine. Those two globals are distinct from the six speed-unit selectors. Their later writers and runtime values remain outside this comparison.
+
 Run `python3 analysis/scripts/audit_speed_unit_default_difference.py` alongside the HUD initializer audit. The [speed-unit evidence](evidence/audits/speed-unit-default-difference.json) pins paired consumer `0048384a..0048395a` and complete formatter `00489d70..00489df7`; both spans are byte-identical between original and official Modern. This adds consumer evidence to header offset `+18`, rather than guessing its meaning from defaults alone.
 
 The consumer indexes `006fbc68` with `348h*bank + 1a4h*profile` (two profile strides per bank). Selector values2 or4 enter another display branch. Values1 or3 enter the inspected digital-formatting branch. There, the selected profile value1 or2 produces an argument1 to formatter `00489d70`; other values produce0. Consequently, admitted digital selector1 takes the nonzero formatter path, while admitted digital selector3 takes the zero path. Input bank/profile validity remains an external precondition.
