@@ -213,3 +213,14 @@ The installation also contains `TRK004/TR0400.TRK000.CAN` and
 The official 1.6.1 archive has no `gamedata/tracks/` members or
 `.can` files. These are local asset differences whose origin
 and runtime use remain unverified.
+
+The two added files are exact copies of existing track assets.
+`TRK004/TR0400.TRK000.CAN` matches `TRK000/TR0000.CAN`,
+and `TRK004/TR0400A.TRK000.CAN` matches `TRK000/TR0000A.CAN`.
+The installed `TRK008/TR0804.CAN` also matches the installed
+`04.CAN` variants for tracks 000–007
+(`TR0004.CAN`, `TR0104.CAN`, through `TR0704.CAN`).
+The backup `TRK008/TR0804.CAN` differs from those variants.
+Whole-file byte comparisons establish these identities. They
+do not establish why the files were copied or whether either
+executable opens the added filenames.
