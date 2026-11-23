@@ -79,6 +79,22 @@ That helper returns success if the directory already exists, otherwise calls Cre
 
 Paths are relative unless a preceding initialization/configuration path changes them. No real directory was created or removed for this audit.
 
+### Original installer records and final path slots
+
+The [original installer reader](original-modern-language-table.md#original-installation-reader-also-produces-the-remote-prefix-source) fills 128-byte slots starting at `007a2634` from nonempty `install.win` records. Comparing the [retained local installer file identity](original-modern-reference-assets-index.md#the-retained-camera-loader-constructs-standard-can-names) with the final initializer manifest gives 15 case-insensitive matches at the same address across the 22 final slots. These include track, tutor, car model, renderer, HUD, SFX, art, text, save, stats, config, slides, track art and showcase paths. The seven differing slots are:
+
+| Address | Local original `install.win` | Final 1.6.1 initial value |
+|---|---|---|
+| `007a2a34` | `G:\GameData\Audio\pc\` | `.\gamedata\audio\pc\` |
+| `007a2b34` | `.\GameData\Audio\Speech\English\` | `.\gamedata\audio\speech\` |
+| `007a2bb4` | `.\GameData\Audio\Speech\German\` | `.\fedata\` |
+| `007a2c34` | `.\GameData\Audio\Speech\French\` | `.\fedata\plac\car.viv` |
+| `007a2cb4` | `.\GameData\Audio\Speech\Spanish\` | `.\fedata\movies\` |
+| `007a2d34` | `.\GameData\Audio\Speech\Italian\` | `.\fedata\menus\` |
+| `007a30b4` | `G:\FeData\audio\` | `.\fedata\stats\carspecs\` |
+
+The original local movie root is `G:\FeData\movies\` at `007a32b4`, beyond the 22 final slots. Address correspondence alone cannot establish subsystem correspondence. For example, the English slot becomes a shared speech base with a [separate language append](original-modern-sound-bank-language.md), while the final movie slot overlays an original speech record. `G:` is specific to the inspected installer file. These are initial path values derived from the file and executable, with actual media access unobserved.
+
 ## 5. Consequences for earlier chapters
 
 - **INI:** complete ordinary producer-to-reader linkage is now traced. Original setting-by-setting registry migration and later aliases/writes remain separate.
