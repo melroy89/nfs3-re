@@ -35,7 +35,7 @@ Its normal epilogue explicitly preserves EDX, which explains how the caller's la
 
 ## Refresh gate also follows the enable global
 
-Modern `004844c0`'s inspected prefix tests `00791b1c` before its state-2 early-out: when enabled, it proceeds to layout-building calls including `00480fc0` and `004812e0`; when disabled and state 2, it skips that route. This is a third coordinated gate, not just a changed hotkey branch. The complete refresh body and render consumers remain separate work.
+The refresh prefix `004844c0..00484599` tests `00791b1c` before its state-2 early-out. When the HUD master field allows refresh and the flag is set, the prefix reaches the layout-building calls `00480fc0` and `004812e0`. Byte comparison shows that this 217-byte prefix matches in the original, 1.3.1, 1.4.0 and final. The two HUD presentation gates at `00482d6b..00482d8e` and `00482f5b..00482f7f` also match across those four builds and already test the flag. Thus 1.4.0's revised F7 toggle and eligibility helper feed existing refresh and presentation gates. The complete render chain and output remain unverified.
 
 ## Default F7 binding to action 11: complete static chain
 
