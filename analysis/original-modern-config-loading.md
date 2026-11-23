@@ -33,6 +33,8 @@ Grouped reset route calls header refresh `004723f0`, display defaults `00472d10`
 
 The accepted version check is a **WORD interpreted as separate bytes**, not an exact DWORD equality against 6. Ordinary values 6..255 with zero high byte follow the accepted route; the code does not reject all unknown future versions. Higher header fields are not validated by these tests.
 
+For the installed version-6 file sampled in the [frontend sound audit](original-modern-frontend-sound.md), the `0x20f0` size and version 6 satisfy the final post-copy header checks. The supplied original's post-copy span `00472aac..00472ae9` first copies `006fbbf4` to `00552920`, then checks the block size and renderer setting. That span has no version-6 rejection. Reaching it in the original still requires the timestamp gate and successful file access described above. A renderer mismatch can set the original reset flag even when the size matches. This is a conditional static comparison of two loader paths. The original was not launched against the installed file.
+
 `00472230` only checks sound mode `006fbc00==3`; if capability helper `0040faf0` returns zero, it writes zero there. This is a narrow normalization step, not a full migration/validation of every serialized setting.
 
 ## Header producer and original reset behavior
