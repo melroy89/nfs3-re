@@ -77,7 +77,16 @@ audible feedback remain untested.
 
 Update callback `00437740` obtains the slider value through `0046c9b0`, multiplies by exact double **127**, and FISTP-stores to `006fd1d0`. The conversion therefore depends on current x87 rounding; it is not a proven truncating integer cast. The helper's allowed slider range and all setting-load validation remain separate.
 
-Defaults path `00472270` writes AL=`0x53` before storing full EAX to `006fd1d0`; that instruction alone does not prove all upper bytes are zero on every caller state. A cancel/restore neighborhood copies `[00664680]` back to this field at `004381b7`, providing a concrete restore path but not a complete settings transaction audit.
+The 1.5.0–1.5.2 defaults entry at `00472230` clears EAX, loads
+AL=`0x53`, then stores the full DWORD to `006fd1d0`. From 1.5.3 onward,
+the store moves to `00472272`. On normal entry, the intervening call at
+`00472260` returns either 0 or 1 from the [capability predicate](original-modern-config-loading.md).
+The caller leaves zero or changes AL to 3 for the audio-mode default,
+then replaces AL with `0x53`. Both paths therefore write the same
+full DWORD value 83 to the frontend volume default. The nominal slider
+fraction before user changes is `83/127`. The cancel path at `004381b7`
+restores the saved value from `00664680`. These are defaults and one
+restore witness. Persisted values and audible loudness remain unverified.
 
 These producer/consumer links statically support **MP150-009**'s separate menu-sound setting. The removed per-call multiplier supports the mechanism relevant to **MP140-010**'s consistent-volume claim; sample loudness, backend mixing and audible equality are not established.
 
