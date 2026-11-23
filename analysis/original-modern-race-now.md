@@ -164,3 +164,11 @@ NUL-terminated `racenow` string in the inspected 1.5.2 and final
 files. The operand changes select another file-backed copy of that
 token. The two lookup calls and the intervening policy instructions
 match at this boundary.
+
+The 1.5.2 and 1.5.3 lookup bodies
+(`00442a40..00442a95`) also match official final, and the
+comparator at `004429c0..00442a32` matches between 1.5.2 and 1.5.3.
+The predicate at `004cf090..004cf11e` is byte-identical in all three.
+For the same menu entries and token bytes, the address substitution
+leaves the local lookup rule intact. The table contents and state
+read by the predicate remain distinct inputs.
