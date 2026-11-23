@@ -50,6 +50,8 @@ For the selected bounds, each helper forms extended delta `(hi-lo)*(1-factor)/2`
 
 Modern jumps at `00485713` into **unchanged bytes** at `0048582c..00485875`. That tail conditionally refreshes two views and 23 slots when `0055d440` is nonzero, then restores the parent frame and six saved registers. It is reached inside the initializer; exporting it as a normal isolated C function would invent an ABI. The previous [HUD helper contract](detailed-analysis-notes.md#internal-x87-hud-bounds-helpers-00485718-0048573b) already records the two required x87 inputs and preservation behavior.
 
+The complete 501-byte span `00485680..00485875` and the 12-byte constants at `0053f420..0053f42c` match 1.6.0 and 1.6.1. The direct-call scan finds three sites in each build. Two remain at `0044de29` and `00485881`; the mode-publisher call moves from `00448422` to `0044841e`. In both publishers the selected path compares the two incoming dimensions with `006fd1e4/e8`, copies those dimensions and the following DWORD, and calls the initializer only if either dimension differs. This establishes continuity of the initializer, constants and selected refresh gate. It leaves other caller inputs and rendered output unverified.
+
 Zero dimensions, exceptional x87 inputs and all saved-configuration producers are not validated by this path. No new runtime bounds or aspect test was performed.
 
 ## 3. Header default changes: preserve offsets, not guessed widget names
