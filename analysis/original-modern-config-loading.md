@@ -99,6 +99,17 @@ live selector. A reconstruction should reproduce both the
 admission test and the buffer write. The original reason for
 keeping both operations is unknown.
 
+The load-side `20f0h` copy includes this playback field. In final
+Modern, the accepted-header path at `00472ac6` calls the sound
+normalizer and jumps over the full defaults routine. The loader
+body after the copy contains no direct store to `006fd3a0` on
+this path. The separate network-related clear at `00472b1f`
+targets `006fd50c`. The bad-size route calls `00472404`,
+whose initial zero-fill covers playback and whose later store
+at `00472442` also addresses it. The version-only reset bypasses
+that full fill. This establishes the local reset boundaries.
+Transitive writes and eventual playback-state admission remain open.
+
 ## Removed save gate belongs to the original -msdemo flag
 
 The [command-line audit](original-modern-command-line.md#table-contents-change-while-layout-remains) establishes that switch index21 sets bit21 of DWORD `0055eb2c`, equivalent to mask20h of byte `0055eb2e`. The config audit now independently pins slot21 at `0055eb88`: original points to literal `-msdemo`; final Modern points to an empty string. Thus the original save bypass described above has a concrete named-switch producer. Calling it a universal “disable saves” option would overstate its contract: the same bit has multiple consumers, and the name's intended demo-mode semantics are not inferred from its spelling.
