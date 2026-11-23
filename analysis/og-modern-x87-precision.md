@@ -535,3 +535,22 @@ candidate branches and the named state writes. The actual driver
 selected by an override and any indirect changes during a frame
 remain outside the result. See the
 [retail selector table](original-modern-renderer-initialization.md#original-numeric-selection-before-loading).
+
+### The flag becomes the adapter index in 1.6.0
+
+Packaged 1.5.2 and 1.5.3 both clear `007a3a70` at
+`004b59fd` and set it to 1 on the renderer branch at
+`004b5b2f`. Version 1.5.2 tests it around inline control-word
+sequences. Version 1.5.3 still tests it at `004bc689` and
+`004bc7de`, but calls the factored helpers at `004bc692`
+and `004bc7e7` respectively.
+
+In 1.5.3 the renderer-name suffix parser stores the adapter
+index to `0055fdbc` at `004b5822`. The startup display
+call reads it at `0051768b`. Both operand addresses change
+to `007a3a70` in 1.6.0, at the same instruction sites,
+while the race-frame tests disappear. The change to the
+x87 path and the reuse of its old flag address therefore
+occur at the same packaged boundary. Address-based data types
+and names should follow the selected executable version.
+See the [later adapter input trace](original-modern-renderer-lifecycle.md#the-adapter-index-input-is-retained-across-the-reorder).
