@@ -348,6 +348,34 @@ Do not equate the original's ordinary race single-precision baseline with every 
 math operation. Runtime branch frequency, complete exceptional paths and trajectory
 impact were not measured. These retained helpers are not new Modern-only changes.
 
+### The retained angle dispatch restores the saved word on all eight table routes
+
+The indirect branch at `0051f479` uses the eight file-backed DWORDs
+at `0056cb38..0056cb58`. Both executables have the same table and
+the same code through the eight returns at `0051f480..0051f510`.
+The index starts at zero at `0051f3a2`, can increment once, and
+then takes two successive doubling-plus-carry operations, so the
+normal path selects an index from zero through seven.
+
+| Table index | Target | Saved control-word reload |
+|---:|---|---|
+| 0 | `0051f480` | `0051f480` |
+| 1 | `0051f48b` | `0051f48d` |
+| 2 | `0051f498` | `0051f4a0` |
+| 3 | `0051f4ab` | `0051f4b5` |
+| 4 | `0051f4c0` | `0051f4c8` |
+| 5 | `0051f4d3` | `0051f4dd` |
+| 6 | `0051f4e8` | `0051f4f0` |
+| 7 | `0051f4fb` | `0051f505` |
+
+Each route reloads the WORD from `[ESP+18h]` before unwinding.
+This resolves one of the inventory's five indirect jump sites
+per build. The inventory also records 27 import-bound sites and
+79 other indirect call sites per build. These counts describe
+syntactic sites. They do not establish runtime frequency, effects
+of imports on the x87 environment or equivalence for exceptional
+angle inputs.
+
 ### Changed drivetrain truncation helper
 
 The direct drivetrain route `004ad7a3` → (`004adc0a`) `004aaed1` → (`004ab10c`)
