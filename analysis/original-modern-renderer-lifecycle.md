@@ -193,5 +193,22 @@ display-selection return value as a local gate. The later mode
 result check in 1.6.1 is separate. If a driver changes its mode list
 when the selected display changes, 1.6.0 can carry an index chosen
 from the earlier list into the later display. Version 1.6.1 queries
-in the opposite order. Whether any supplied driver changes its
-list on this route or exhibits a visible difference remains open.
+in the opposite order. The [DX7 comparison](original-modern-dx7-mode-admission.md#display-selection-can-rebuild-the-dx7-mode-table)
+verifies the table rebuild on a qualifying path in both releases.
+Whether the rebuilt records differ on a particular adapter remains open.
+
+The final package's DX6, DX7 and DX8 display selectors also clarify
+what an out-of-range adapter request means before mode lookup. The
+retained DLL hashes match the members under `drivers/dx6`,
+`drivers/dx7` and `drivers/dx8` in the official archive.
+
+| Driver export | Out-of-range selection policy |
+|---|---|
+| DX6 `60001880` | The signed range checks branch to `600018c7`, which loads the first adapter entry and stores index zero. |
+| DX7 `600020c0` | The signed range checks branch to `60002132`, which loads the first adapter entry and stores index zero. |
+| DX8 `60003800` | The first-selection path initializes the selected index to zero at `6000384a` and only overwrites it for an in-range index. A separate early return at `60003809` preserves the earlier selection once its flag is set. |
+
+These are local adapter-index decisions. They do not establish
+adapter availability, a successful selection, or the driver's
+mode description after setup. The executable uses the later
+mode-setting result for its startup failure gate.
