@@ -479,7 +479,7 @@ The drivetrain is one consumer of a shared helper. Running
 and counting decoded direct calls to `0x4dfd56` gives 467 sites in
 the supplied original and 436 in official Modern. All 436 Modern
 sites appear at the same addresses in the original scan. This is
-a linear-disassembly census. It leaves runtime reachability,
+a linear-disassembly census. It leaves runtime reachability
 and indirect callers open. Comparing the original-only sites
 against Modern's bytes gives three groups:
 
@@ -488,6 +488,21 @@ against Modern's bytes gives three groups:
 | 13 | `EB 03 90 90 90` skips exactly the former call. These are the seven [menu music scaling](original-modern-music-start.md) sites at `004379a1..00437a81`, two [deadzone slider](original-modern-deadzone-sliders.md) sites, and four [HUD layout](original-modern-hud-layout.md) sites. |
 | 2 | Five NOP bytes at `00489bf6` and `00489c1e`. |
 | 16 | Other bytes within rewritten spans. A same-address comparison does not establish an equivalent operation or its absence in the new control flow. |
+
+Checking the five bytes at each of the 15 explicit bypass or NOP sites
+across all 11 retained archives gives three release boundaries:
+
+| First retained build with change | Sites changed | Prior retained build |
+|---|---|---|
+| 1.5.0 | Two NOP replacements at `00489bf6` and `00489c1e` | Both still call the helper in 1.4.0 |
+| 1.5.3 | Seven menu music and two deadzone short-jump bypasses | All nine still call the helper in 1.5.2 |
+| 1.6.0 | Four HUD short-jump bypasses | All four still call the helper in 1.5.3 |
+
+Each replacement persists through the final archive. The nine 1.5.3
+bypasses coincide with the helper-body replacement, while the four
+HUD bypasses coincide with the later precision-policy change. This
+dates the instructions. It does not attribute a common motivation
+or establish the numerical result at every site.
 
 The inspected helper change therefore affects retained callers well
 beyond the RPM conversion. The menu and HUD bypasses are separately
