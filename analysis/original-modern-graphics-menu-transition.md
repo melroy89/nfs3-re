@@ -169,3 +169,12 @@ the snapshot therefore supplies the final values for both fields.
 The helper's earlier writes alone cannot establish a different final
 Cancel value. The nonmatching path has a separate gate and bypasses
 the bulk restore.
+
+Both pinned EXEs retain the same 24-byte `psgraph` registration at
+`00555d98`. The name points to `00537c94` and the three callback
+slots point to `0044d2a0` (setup), `0044d420` (transition containing
+the Cancel comparison), and `0044d3e0`. The official package's
+`fedata/menus/psgraph.mnu` contains codelinks `SFX_INTENSITY` and
+`PSGRAPH_CANCEL`. Thus the shared registration and packaged controls
+tie both changes to the player settings graphics screen. Observed
+menu behavior remains unverified.
