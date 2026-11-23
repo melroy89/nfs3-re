@@ -248,3 +248,28 @@ reorder to the same adapter-index input, with no additional bounds
 check on that input in the checked EXE routes. The selected DLL
 interprets the index. Indirect writes and live adapter selection
 remain outside this check.
+
+### Retail uses a different adapter field and a fixed follow-up mode
+
+In the supplied original executable, `004b5ce4..004b5cf1` passes
+`0055fdbc` to the renderer display-selection slot. Two direct
+writers are visible. The successful registry query for
+[`D3D Device`](original-modern-registry.md) stores its result at
+`004b6487`. The argument path at `004a5198..004a51f8` matches
+`-D3D`, scans the following text using `%d`, and writes the
+parsed DWORD at `004a51f3` when the scan succeeds.
+
+On the same original branch, the display-selection call follows
+video initialization and is followed by a separate driver mode
+request with stack arguments `(1, 2, 1)` at `004b5cf7`. The
+branch then calls `004b5940` without testing that request's return.
+Final instead selects the adapter from the renderer-name suffix,
+refreshes its descriptor, and submits the looked-up mode index
+with a result check. This comparison covers the original branch
+containing the direct display-selection call.
+
+The original's `007a3a70` is a separate state cell. Its reads
+at `004bc689` and `004bc7e8` gate x87 initialization sequences
+and do not supply the adapter argument. Address-based annotations
+must preserve the two versions' different meanings. No setup or
+mode switch was executed.
