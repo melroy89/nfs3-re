@@ -450,7 +450,7 @@ The [language comparison](original-modern-language-table.md) traces the v1.6.0 m
 
 ## 25. Replay mirror/variant admission
 
-The [replay presentation comparison](original-modern-replay-mirror.md) traces coordinated toggle, eligibility and refresh gates around state 2 and an enable global. The default F7 binding-to-action-11 chain is now traced through the unchanged mask builder and edge reader. Full mirror consumers, reset paths and rendered behavior remain pending; replay trajectory compatibility is separate.
+Modern 1.4.0 changes the F7 toggle and replay eligibility while retaining the existing input, HUD refresh and render call sites. Both ordinary mirror consumers check the same layout field that F7 toggles. One submits the HUD rectangle and the other admits the secondary viewport render. Live rendering and complete reset coverage remain unverified. Replay trajectory compatibility requires separate evidence. [Replay presentation comparison](original-modern-replay-mirror.md)
 
 ## 26. Retained and replaced registry paths
 
