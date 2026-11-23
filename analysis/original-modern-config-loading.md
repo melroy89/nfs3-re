@@ -89,6 +89,16 @@ remain unverified.
 
 This narrows the migration story further: Modern actively stamps its header on this save entry, rather than relying solely on a first-load reset. The remainder of the original defaults routine and actual saved-file history remain separate unknowns; the prefix evidence above must not be promoted into a whole-lifetime version invariant.
 
+Offset `1860h` in the save buffer maps back to live DWORD
+`006fd3a0`, the [playback selector](original-modern-replay-mirror.md).
+It is the same field checked at save admission. Both versions
+skip the write if that live value is nonzero at the check.
+If the write path proceeds, `00472898` explicitly stores zero
+in the serialized copy. That instruction does not write to the
+live selector. A reconstruction should reproduce both the
+admission test and the buffer write. The original reason for
+keeping both operations is unknown.
+
 ## Removed save gate belongs to the original -msdemo flag
 
 The [command-line audit](original-modern-command-line.md#table-contents-change-while-layout-remains) establishes that switch index21 sets bit21 of DWORD `0055eb2c`, equivalent to mask20h of byte `0055eb2e`. The config audit now independently pins slot21 at `0055eb88`: original points to literal `-msdemo`; final Modern points to an empty string. Thus the original save bypass described above has a concrete named-switch producer. Calling it a universal “disable saves” option would overstate its contract: the same bit has multiple consumers, and the name's intended demo-mode semantics are not inferred from its spelling.
