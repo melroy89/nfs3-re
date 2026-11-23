@@ -33,6 +33,8 @@ Modern removes that renderer-mask rejection in this inspected predicate. It reta
 
 Its normal epilogue explicitly preserves EDX, which explains how the caller's layout pointer survives this predicate call. Early assumptions that EDX is an output here would misread the toggle's stores.
 
+Two downstream consumers of that predicate are byte-identical in the original, 1.3.1, 1.4.0 and final. At `0048d289`, a successful view-0 predicate result admits four scaled slot-9 coordinates from `007497e8..007497f7` to the float-record append helper `00487350`. At `004bc753`, a successful view-0 result admits the call to `RenderRaceViewport` (`004bc470`) with EAX=1. The latter block also has an independent admission check at `004bc75c` on `00559264`. This confirms that the 1.4.0 eligibility change can affect both rectangle submission and the secondary viewport render call without changing those call sites. The visible image and earlier caller conditions remain unverified.
+
 ## Refresh gate also follows the enable global
 
 The refresh prefix `004844c0..00484599` tests `00791b1c` before its state-2 early-out. When the HUD master field allows refresh and the flag is set, the prefix reaches the layout-building calls `00480fc0` and `004812e0`. Byte comparison shows that this 217-byte prefix matches in the original, 1.3.1, 1.4.0 and final. The two HUD presentation gates at `00482d6b..00482d8e` and `00482f5b..00482f7f` also match across those four builds and already test the flag. Thus 1.4.0's revised F7 toggle and eligibility helper feed existing refresh and presentation gates. The complete render chain and output remain unverified.
