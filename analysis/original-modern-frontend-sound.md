@@ -29,6 +29,15 @@ Modern uses PUSHAD/POPAD on its admitted path. Its EDX input is unused and resto
 
 Modern uses one timestamp DWORD per ID at `00664750 + 4*ID`. It subtracts that entry from shared counter `[0079c1a4]`, and returns when the unsigned low-32-bit difference is **less than 5**. An admitted request stores the current counter **before** constructing/submitting the sound record (`004181f2..00418207`).
 
+The package history dates both this elapsed-counter check and the unsigned
+ID limit to 1.4.0. In the retained 1.1.0–1.3.1 members, the request-builder
+span has neither the ID-8 comparison nor the two counter operands. In
+1.4.0, `004181e2` rejects IDs at or above 8 and `004181f2..00418207` reads
+the per-ID timestamp, checks the five-count threshold, and stores the new
+timestamp. The five-count value is present in every retained later build.
+This predates the separate 1.5.0 volume-source change. Counter units and
+audible timing remain outside the static comparison.
+
 This gates repeated requests for the same ID independently. It does not prove backend playback succeeded, establish elapsed milliseconds, or prevent all concurrent access: no atomic read/update sequence appears here. The counter's producer/unit and timestamp initialization are not established in this chapter. Original's inspected routine has no corresponding local gate.
 
 The sound-slider preview callback adds a stricter outer check: with nonzero action/context input it tries ID 1 only when unsigned counter difference from ID 1's timestamp is **at least 0x30 (48)** (`00437758..0043777b`). It then delegates slider handling to `0046cae0`. The outer check and inner five-unit gate are distinct; do not collapse them into a guessed repeat duration.
