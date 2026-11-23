@@ -295,6 +295,17 @@ This provides partial static support for MP140-063: the retained narrow angle is
 
 The paired graphics-default envelopes retained in the [display-mode report](original-modern-display-modes.md) resolve a concrete producer beyond the option descriptor. Modern `00472d92` clears EDX, then `00472d9a` writes that zero into `006fbc40`, selecting Automatic through the verified chooser. The projection audit asserts the14-byte sequence and hashes the complete original `00472d10..00472f18` and Modern `00472d10..00472e1c` envelopes. The complete original envelope contains no literal operand for this selector, so the Modern direct reset write is additional within this bounded comparison; computed or transitive original writes are not excluded.
 
+The explicit zero store at `00472d9a` first appears in 1.5.0
+and the 14-byte clearing/store sequence matches through 1.6.1.
+The checked default routine window in 1.1.0–1.4.0 contains no
+literal operand for `006fbc40`. When the store executes, zero
+selects fixed 90° in 1.5.0–1.5.3, then Automatic starting in
+1.6.0. The default write stays the same across that boundary.
+Its result changes because the chooser changes. Whether a saved
+file reaches the defaults path follows the separate
+[configuration admission rules](original-modern-config-loading.md).
+
+
 The [configuration-load report](original-modern-config-loading.md) identifies the invalid-size/version route into this default routine. Consequently this is an explicit reset/default policy, not evidence that every startup discards a saved View Angle. Full serialization/migration and later menu writes remain unresolved. In a reconstruction, keep that reset policy distinct from merely interpreting a loaded ordinal: both can select0, but their causes and compatibility implications differ. No settings file or running game was changed.
 
 ## Indexed viewport-slot initialization is another bounded non-producer
