@@ -144,3 +144,20 @@ a different continuation via `600034c0`, so this is a conditional
 rebuild, with actual enumerated records and cross-adapter differences
 still unobserved. See the
 [executable call order](original-modern-renderer-lifecycle.md#display-selection-moves-ahead-of-mode-lookup-in-161).
+
+The 1.6.0 DX7 driver also rebuilds the table on that continuation.
+Its adapter setup reads the selected pointer at `600030f6` and
+`6000311a`. Where final calls the shared producer at `60003398`,
+1.6.0 has an inline producer at `60003398..600033f1`. It clears
+990 DWORDs through the descriptor's table pointer, seeds index 1
+with 640 × 480 × 16, sets the count to 2, and passes callback
+`60002710` to interface slot +20h. The seed is therefore present
+on this adapter-selection path as well as on the separate
+enumeration path documented above. Final replaces this inline
+producer with the same unseeded producer used by its other path.
+
+This verifies a mechanism by which 1.6.0 could choose an index
+before the subsequent display-selection call rebuilt that table.
+The code establishes the rebuild and seed policy. Whether those
+two tables differ on a particular run or the chosen index resolves
+to a different mode remains untested.
