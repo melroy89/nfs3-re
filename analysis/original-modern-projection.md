@@ -293,6 +293,23 @@ This provides partial static support for MP140-063: the retained narrow angle is
 
 ### Default/reset path explicitly selects Automatic
 
+All 11 retained executable descriptors keep the same storage cell,
+but the label list changes alongside the chooser:
+
+| Retained releases | List address | Ordered text IDs |
+|---|---|---|
+| 1.1.0–1.3.1 | `005561e8` | 274, 275 |
+| 1.4.0–1.5.3 | `005591ec` | 175, 274, 275 |
+| 1.6.0–1.6.1 | `005591ec` | 1947, 1948, 1949, 1950 |
+
+The English assets extracted from 1.4.0 and 1.5.3 both decode
+the middle list as Normal, Wide, Narrow, in that order. Their
+integer chooser returns 90, 105 and 75 respectively. The 1.6.0
+English asset decodes to the same labels as the final list
+above. These checks use the text offsets in each package's
+own `fedata/text/text.eng`. Other languages and runtime menu
+selection remain outside this comparison.
+
 The paired graphics-default envelopes retained in the [display-mode report](original-modern-display-modes.md) resolve a concrete producer beyond the option descriptor. Modern `00472d92` clears EDX, then `00472d9a` writes that zero into `006fbc40`, selecting Automatic through the verified chooser. The projection audit asserts the14-byte sequence and hashes the complete original `00472d10..00472f18` and Modern `00472d10..00472e1c` envelopes. The complete original envelope contains no literal operand for this selector, so the Modern direct reset write is additional within this bounded comparison; computed or transitive original writes are not excluded.
 
 The explicit zero store at `00472d9a` first appears in 1.5.0
