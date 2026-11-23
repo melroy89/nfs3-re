@@ -80,9 +80,16 @@ the decoded instructions match after shifting addresses and
 accounting for branch and call targets. In particular, the two
 rectangle setters move from `004be898` and `004be8a4` to
 `004be88c` and `004be898`, respectively. Their register-to-field
-stores match in both archives. This explains the local movement
-without establishing equality of the runtime inputs to the
-initializer or the full register contract at return.
+stores match in both archives.
+
+The ordinary return also changes. In 1.3.1, the six individual
+pops leave EAX holding the DWORD read from `007cdb88` by the final
+helper at `004be874`. The helper's copy to `007a2750` preserves
+that EAX value. In 1.4.0, the relocated helper at `004be868`
+performs the same copy, but POPAD at `004be866` restores the
+initializer's incoming EAX before RET. The other six saved
+registers are restored in both versions. Caller dependence on
+the old EAX value and runtime inputs remain unverified.
 
 The 1.5.0–1.5.3 mirror-edge span `004be6f4..004be74b` is byte-identical in all four retained builds. It calls `004dfd56` before each of four FISTP stores and computes both extents as upper edge minus lower edge plus one. In 1.6.0, the corresponding `004be752..004be7a5` uses direct FISTP and insets each converted edge by `0055fed0` before taking the difference. For the same four converted edges and an inset of `B`, each 1.6.0 extent is smaller by `2*B + 1`, assuming ordinary fitting integer arithmetic. The comparison holds the converted edges fixed. Actual edge rounding and the inset value depend on runtime state.
 
