@@ -71,9 +71,21 @@ The prefix establishes neither every later original header write nor the content
 
 The audit now compares complete `00472820..004728d3` (179 bytes) in both executables. All differences are confined to the13-byte region `0047282e..0047283b`; the initial14 bytes and remaining152 bytes are identical. Original tests byte `0055eb2e` against mask20h and skips to epilogue `004728ca` when set. Modern replaces that test/conditional jump with a call to its header refresh `004723f0` and eight NOPs.
 
-This is a real policy difference: the inspected Modern save entry no longer honors that local flag as a bypass, and refreshes the three header DWORDs before its remaining admission checks. Those retained checks include nonzero `006fd3a0`, a disk-space request of`20f0` bytes, and nonzero `0055e88c`. They can still prevent writing. The header refresh nevertheless happens before them, so it can mutate memory even on a later no-save return. This is not an unconditional-save claim or proof that all callers ignore the flag.
+This is a real policy difference: the inspected Modern save entry no longer honors that local flag as a bypass, and refreshes the three header DWORDs before its remaining admission checks. The retained checks require `006fd3a0 == 0`, a nonzero result from the `20f0h`-byte disk-space check, and `0055e88c == 0` to proceed to copying and writing. The header refresh nevertheless happens before them, so it can mutate memory even on a later no-save return. This is not an unconditional-save claim or proof that all callers ignore the flag.
 
 The identical suffix copies the configuration block to a temporary buffer, clears temporary offset`1860h`, formats `%sconfig.dat`, requests writing through `004eeae0`, then frees the buffer. Equality of this sequence does not establish allocation/read/write success, external helper purity or complete serialized-field validation. In particular, Modern's earlier header refresh means equal copy instructions can copy different header contents. The ordinary template is size`20f0`, version6, third DWORD0; earlier template writes remain unexcluded. No save routine or file API was executed.
+
+The save copy includes the two [mode dimension fields](original-modern-projection.md)
+at offsets `16a4h` and `16a8h` and the View Angle selector at
+`100h`. At `00472869` ECX is set to `20f0h` and the allocator
+at `004e1620` preserves it on ordinary return. With clear DF, the
+copy starting at `00472882` transfers all three fields into the
+temporary buffer. The subsequent clear at `00472898` touches
+only offset `1860h`. This is the byte range passed to the writer
+in both versions. It establishes serialization of the current
+field bytes, while actual persistence and later field values
+remain unverified.
+
 
 This narrows the migration story further: Modern actively stamps its header on this save entry, rather than relying solely on a first-load reset. The remainder of the original defaults routine and actual saved-file history remain separate unknowns; the prefix evidence above must not be promoted into a whole-lifetime version invariant.
 
