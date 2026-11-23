@@ -68,3 +68,20 @@ The [author-reference/final sound comparison](original-modern-sound-reference-pa
 ## Four reference/final DLL pairs now compared
 
 The [paired control-site audit](original-modern-paired-dll-x87.md) supplies distinct author-reference counterparts for DX5, software, sound and Glide. All102 primary control candidates and six FSAVE/FRSTOR candidates retain their VAs, bytes and32-byte surrounding contexts in these four pairs. They remain linear-decoding candidates; this does not establish runtime control-word equality or cover other providers/backends. The EXE precision-policy difference and this DLL site-retention result are complementary evidence, not competing global precision claims.
+
+## DX8 retains this rounding scope from 1.6.0 to 1.6.1
+
+The retained `dx8a-1.6.0.dll` and `dx8a-1.6.1.dll` have
+SHA-256 hashes
+`92e352738012fe1098d98e125bdafae089275ceb7d40a9c1aca9c5b31423a1f7`
+and `ddb8a55514bc650384e349cf3830946c149f71234e90a41327f69aca793e81b8`.
+Reading the PE bytes at image base `60000000` verifies equality
+in the complete caller `6000c281..6000c352`, the helper pair
+`6000b631..6000b664`, and the floor thunk `6001124a..60011250`.
+In both builds slot `60018070` binds to `MSVCRT.floor`.
+
+This places the same temporary rounding scope in the renderer
+that shipped alongside the 1.6.0 executable's extended-precision
+change. The 1.6.1 video-mode initialization refactor did not
+rewrite this renderer routine. The incoming control word and
+the behavior of the loaded MSVCRT are still runtime dependencies.
