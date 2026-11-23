@@ -265,6 +265,18 @@ the loader's index 4 request to the changed local file.
 Name resolution, the effective root, preceding file checks,
 and actual camera behavior remain runtime dependencies.
 
+In final 1.6.1, the prefix builder pushes the first path slot
+`007a27b4` at `0041d8ad`. The [startup path audit](original-modern-startup-paths.md)
+traces `004a6ec4` copying the first literal at `0053f42c`,
+`.\gamedata\tracks\`, into that slot. The derived default
+request is therefore `.\gamedata\tracks\TRK008\Tr0804.can`
+relative to the process working directory. The original prefix
+builder reads the same slot. The original executable has no
+matching printable `gamedata\tracks\` literal in a whole-file
+ASCII strings scan, so its root producer still needs tracing.
+The backup directory name `gamedata_org` describes the local
+comparison inputs. Its use by either process has not been observed.
+
 Filename index 4 is written to slot `00570a44`: the loader
 increments ECX before its store at `0040f30f`. Consumers use
 the first populated slot `00570a34` as their base, so their
