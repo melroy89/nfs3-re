@@ -402,6 +402,29 @@ syntactic sites. They do not establish runtime frequency, effects
 of imports on the x87 environment or equivalence for exceptional
 angle inputs.
 
+### The nested divide helper restores precision before division
+
+The slot-15 helper `005269d4..00526aeb` and its 28 file-backed data
+bytes at `0056ccc0..0056ccdc` match in the two hash-pinned executables.
+Several branches divide directly with `FDIVP` under the incoming
+control word. Two guarded paths temporarily apply
+`(savedCW | 033fh) & f3ffh` at `00526a2e` and `00526a9c`.
+
+- The first path scales both operands by the binary32 constant
+  0.9375 or 1.0625. It reloads the saved word at `00526a50` or
+  `00526a67` before dividing.
+- The second path can multiply an operand by the binary32 constant
+  2^63, spill it to an 80-bit stack slot, reload the saved word at
+  `00526ada` and retry the classification at `005269dc`. Its other
+  exit reloads at `00526ae4` before dividing.
+
+Every direct division in this helper uses the incoming control word
+on ordinary execution. In the two angle calls above, that word already
+selects extended precision and nearest rounding. The helper's temporary
+mode and operand scaling are shared by the original and Modern Patch.
+Control-word restoration does not imply identical status flags or
+exception delivery. No runtime operand distribution was measured.
+
 ### Changed drivetrain truncation helper
 
 The direct drivetrain route `004ad7a3` → (`004adc0a`) `004aaed1` → (`004ab10c`)
