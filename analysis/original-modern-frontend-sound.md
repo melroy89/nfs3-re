@@ -99,6 +99,16 @@ overwriting the menu volume. The grouped reset path can instead restore
 load policy. It does not establish successful persistence under a live
 save and restart or validation of every stored value.
 
+A read-only check of the installed `FEDATA/CONFIG/config.dat` found an
+8,432-byte payload, header size `0x20f0`, version 6, and DWORD 83 at
+offset `0x1690`. It also contains 95 at offset `0xb4`, corresponding to
+`006fbbf4`, the volume operand used by the original request builder at
+`00418204`. The two fields coexist in the inspected save. A direct
+operand scan finds no `006fd1d0` reference in the original disassembly.
+That scan does not resolve indirect access to the corresponding bytes
+or imply that the original accepts the current file. No file was changed
+or loaded by the game for this check.
+
 These producer/consumer links statically support **MP150-009**'s separate menu-sound setting. The removed per-call multiplier supports the mechanism relevant to **MP140-010**'s consistent-volume claim; sample loudness, backend mixing and audible equality are not established.
 
 ## Remaining work
