@@ -272,6 +272,18 @@ The [author-hosted original-reference bundle](original-modern-original-reference
 
 The precision blocks studied in the first chapter are the same between official and local Modern builds. Thus that precision finding is not an accidental consequence of our local attribution edit.
 
+A targeted PE byte comparison also verifies the recent camera, HUD, and replay findings against both Modern hashes above. The official EXE was streamed from the retained `nfs3_modern_patch.7z`. The intervals below matched in full. End addresses are exclusive.
+
+| Evidence | Matching virtual-address intervals |
+|---|---|
+| Track camera filename and decoder | `0040f280..0040f322`, `004b6ca0..004b6d81` |
+| Track path initializer and literal block | `004a6ec4..004a6f2e`, `0053f42c..0053f630` |
+| HUD presets, initializer, mirror bounds | `0053eb20..0053f42c`, `00485680..00485875`, `004be752..004be7e6` |
+| Rear-camera pose, dispatch, snapshot, and scene pointer table | `00422913..00422932`, `00426472..004264ec`, `00552ec8..00552f90` |
+| Replay description callback, binding, and selected metadata path | `004470e0..0044718f`, `0044748f..004474a6`, `00447190..0044734e`, `00446050..004461c4`, `00439250..00439287` |
+
+This cross-check covers the listed code and data. The [local menu inventory](original-modern-reference-assets-index.md) documents asset differences separately.
+
 ## 2. Whole-section and function-range inventory
 
 The [outside-function address map](original-modern-outside-function-index.md) now ranks all337 uncovered intervals containing changed bytes and retains their full changed-run/hash inventory. Its NOP/zero/other classes are byte observations, not semantic completion.
