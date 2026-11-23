@@ -242,3 +242,14 @@ requests `TR0804.CAN` at index 4. Neither format appends a
 still open the copied files. This evidence establishes the
 shared naming policy and conditional request, with actual
 file opens and camera effects unobserved.
+
+The original and Modern caller spans `0041d975..0041d991`
+and prefix builder `0041d8a0..0041d8cc` also match. On the
+admitted path, the caller supplies an empty suffix to the
+builder, which formats `%sTRK%03x\\Tr%02x%s` with the track
+root and two copies of the selected circuit DWORD at `006fd4ac`.
+The returned prefix is then passed directly to `0040f280`.
+For circuit 8 this yields `TRK008/Tr08` under that root, tying
+the loader's index 4 request to the changed local file.
+Name resolution, the effective root, preceding file checks,
+and actual camera behavior remain runtime dependencies.
