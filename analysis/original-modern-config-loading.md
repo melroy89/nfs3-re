@@ -132,9 +132,14 @@ same save instructions inherit Modern's changed prefix. The save path
 sets EBX to `0x960` (2,400 bytes) before calling `004dc710`, then passes
 the pathname in EAX and the buffer in EDX to the
 [resource save adapter](physics-parser-defaults.md) at `004eebb0`.
-The wrapper returns the adapter's result. The payload size actually
-written and the meaning of the individual fields require further
-inspection of the save implementation.
+The wrapper returns the adapter's result. In both binaries, the complete
+body of `004dc710` preserves EBX, so the `0x960` set at `004dcac4`
+survives that call. The adapter delegates to the byte-identical
+`004eeae0..004eeba2`. It saves the count in EBP at `004eeaeb` and,
+after a successful open, restores it into EBX for the write call
+`004e2e20` at `004eeb4b`. Thus both versions request a 2,400-byte
+write. Actual bytes committed to disk and serialized field meanings
+remain unverified.
 
 The deletion adapter calls imported `KERNEL32.dll!DeleteFileA` through IAT `005344b0` in both binaries; this is API identity evidence rather than a guessed function name. Combined with the config load comparison, this gives bounded static support for MP100-045: the inspected timestamp-to-executable deletion gates are removed for config.dat and both selected player specifications. It does **not** promise files are never deleted or rewritten: missing-file handling, config size rejection, validation/default routes and I/O failures still exist. Actual update scenarios, file permissions, helper error contracts and precise first-release introduction remain untested.
 
