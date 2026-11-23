@@ -802,3 +802,20 @@ infinity, the residual is −0.5 and the one-sided check stays
 clear. These are derived cases for the direct divide path with
 the bit initially clear. They neither reproduce faulty hardware
 nor measure the effective startup control word.
+
+The four direct reads of bit 0 of `00567858` found in each
+executable take the same alternatives in the matched spans:
+
+| Test | Bit clear | Bit set |
+|---|---|---|
+| `004e06c6` | One-argument angle path loads 1 and executes FPATAN | Calls the saved-state angle wrapper with the same prepared operands |
+| `004e06db` | Two-operand angle path exchanges the operands and executes FPATAN | Calls the same saved-state wrapper |
+| `005233fa` | Executes FDIVRP after loading 1 | Calls the previously mapped divide dispatch with selector `0fh` |
+| `00526466` | Divides by the binary64 stack operand directly | Calls `0052700c`, which checks exponent bits and x87 TOP before dispatching |
+
+The last read is inside the helper used by the startup arithmetic
+check itself. The residual calculation documented above assumes
+the initially clear bit, so it uses direct FDIV. These checks
+establish the matching direct consumers and branch targets.
+The complete divide workaround and any indirect users remain
+outside this trace.
