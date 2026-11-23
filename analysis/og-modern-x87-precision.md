@@ -654,3 +654,22 @@ itself executes with the restored word or the incoming word.
 This is static control-flow evidence for the matching bodies.
 Exception outcomes and complete numerical equivalence were
 not tested.
+
+### The angle fallback uses FPATAN before any local control-word change
+
+Both pinned executables have the same complete 512-byte body at
+`0051f320..0051f520`, with SHA-256
+`bed104cc803cbc0cc31697509db6f3d020cd476757d7110fa3093bd7da8b9d5f`.
+After spilling its operands as TBYTEs, the entry branches to
+`0051f510` if either operand's explicit significand integer bit
+is clear or its masked exponent is zero or `7fffh`. The six
+tests all precede the saved control-word sequence at `0051f386`.
+
+The fallback reloads both TBYTE operands, executes FPATAN at
+`0051f517`, unwinds and returns. It makes no local control-word
+change. This distinguishes the fallback from the polynomial
+path and its eight restore routes. On the documented physics path,
+the wrapper has already initialized the FPU with FNSAVE before
+calling this routine. Other callers can supply a different incoming
+environment. The exact result and exception flags for special
+operands remain untested.
