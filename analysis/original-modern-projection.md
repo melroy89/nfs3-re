@@ -347,6 +347,25 @@ This traces the local loader and chooser decisions. The version-6
 column models a preserved payload with an accepted header. No
 actual migration, rewrite or later menu override was observed.
 
+The reverse direction is asymmetric. For the same successful read
+and post-copy size, 1.5.3 accepts a version-6 header and takes the
+sound-only path, leaving the ordinal to its integer chooser. The
+four canonical 1.6.0 values then select these angles:
+
+| Ordinal | 1.6.0 choice | 1.5.3 interpretation |
+|---:|---|---|
+| 0 | Automatic | Normal (90°) |
+| 1 | Narrow (75°) | Wide (105°) |
+| 2 | Normal (90°) | Narrow (75°) |
+| 3 | Wide (105°) | Normal (90°) |
+
+A subsequent successful 1.5.3 save through the ordinary header
+refresh stamps version 5. That stamp touches the first 12 bytes,
+while the View Angle field is at offset `100h`. A subsequent 1.6.0
+load of the resulting version-5 block reaches the default path above.
+This is derived from the checked code with no intervening overrides
+or file I/O failures. No downgrade or round trip was executed.
+
 ## Indexed viewport-slot initialization is another bounded non-producer
 
 The source search now checks a computed-address candidate that a literal-cell scan alone misses. Paired initializer witnesses `00422cf0..00422d9b` and loop tail `00423845..0042386b` are byte-identical and retained by the projection audit. EBX starts0; the saved upper bound is1 when session `006fd3b0==1`, otherwise0. The normal loop increments EBX at `00423865`. Its two clear stores at `00422d78/00422d86` target `005e1010+8*EBX` and `005e1014+8*EBX`.
