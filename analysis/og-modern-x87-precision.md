@@ -526,6 +526,25 @@ HUD bypasses coincide with the later precision-policy change. This
 dates the instructions. It does not attribute a common motivation
 or establish the numerical result at every site.
 
+Repeating the direct-call census for each archived executable also
+finds intermediate-only call addresses. Counts below compare decoded
+addresses against the preceding row. Grouped releases share the same
+address set.
+
+| Release | Calls | Added addresses | Removed addresses | Addresses absent from original |
+|---|---:|---:|---:|---:|
+| Supplied original | 467 | — | — | 0 |
+| 1.1.0–1.3.1 | 459 | 4 | 12 | 4 |
+| 1.4.0 | 459 | 4 | 4 | 4 |
+| 1.5.0–1.5.2 | 458 | 9 | 10 | 9 |
+| 1.5.3 | 446 | 0 | 12 | 6 |
+| 1.6.0–1.6.1 | 436 | 0 | 10 | 0 |
+
+The unchanged count at 1.4.0 conceals four address substitutions.
+The original/final comparison alone misses these intermediate
+changes. An added address may reflect moved code. The census does
+not identify semantic correspondence for the added addresses.
+
 The inspected helper change therefore affects retained callers well
 beyond the RPM conversion. The menu and HUD bypasses are separately
 verified changes at the call sites.
