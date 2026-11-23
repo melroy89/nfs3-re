@@ -322,3 +322,29 @@ reselection. A block bearing an accepted header bypasses this local
 reset. The evidence comes from the data bytes and disassembly of those
 ranges. Actual save provenance, other writers and live upgrade behavior
 remain unverified.
+
+### Later header revisions also reset the packed resolution
+
+The retained release executables match the SHA-256 of the `nfs3.exe`
+members extracted from their corresponding archives. Compare the 12
+data bytes at `0055e8a0` and disassemble `00472aac..00472aeb` and
+`00472d10..00472e70` with `objdump -d -Mintel`. For a successfully
+loaded block of size `20f0h`, the checked decisions are:
+
+| Release | Template version and minimum accepted low byte | Reset path | Accepted path |
+|---|---:|---|---|
+| 1.5.0 | 4 | Display defaults at `00472acd`, then direct version WORD store | Jumps past defaults |
+| 1.5.1 | 5 | Display defaults at `00472acd`, then direct version WORD store | Jumps past defaults |
+| 1.5.2 | 5 | Header refresh at `00472acd`, display defaults at `00472ad2` | Jumps past defaults |
+| 1.5.3 | 5 | Header refresh at `00472ad2`, display defaults at `00472ad7` | Runs the sound normalizer and skips display defaults |
+| 1.6.0 | 6 | Header refresh at `00472ad2`, display defaults at `00472ad7` | Runs the sound normalizer and skips display defaults |
+
+Every checked gate also requires a zero high byte. Every checked
+display-default path writes a packed request to `006fbc18` at
+`00472dce`. Consequently, version 4 enters the reset route starting
+in 1.5.1, and version 5 enters it starting in 1.6.0. The latter boundary
+also covers the [Frame Size change](original-modern-frame-setting.md#historical-config-version5-to6-selects-reset-rather-than-ordinal-conversion).
+The 1.5.1 through 1.5.3 loaders accept ordinary version-5 headers and
+skip the local display reset. These branches establish how an admitted
+block is treated. Actual files, later overrides, and the selected
+display mode were not observed.
