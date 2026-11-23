@@ -10,6 +10,8 @@ The matched pair is preset initializer `00485680`, followed by default-header in
 
 ## 1. File-sourced presets become embedded data
 
+The author-hosted 1.1.0 package already contains the embedded-preset path. Its `nfs3.exe` member hashes to `59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72`. At `00485694`, the paired initializer loads source `00540500` and consumes six profiles of 96 WORDs each. It zero-extends each WORD and calls `004f93ec`, which divides the integer by 1000 on x87 and stores binary32. The loop then enters dimension-dependent arithmetic at `004856c5`. This dates the selected embedded table and aspect computation to at least 1.1.0 and distinguishes its WORD conversion from the final preset format. The exact 1.0.0 implementation and visible placement remain unverified.
+
 The six locale-prefixed presets in the [author-hosted reference archive](original-modern-original-reference-bundle.md) (`EDEF`, `FDEF`, `GDEF`, `IDEF`, `SDEF`, `WDEF`) each match both local copies byte for byte. This was checked by streaming each member from the hash-verified `nfs3_orig.7z` through `cmp` and comparing the installed and backup members with each other. The existing [coordinate comparison](original-modern-reference-assets-index.md#hud-coordinate-literal-comparison) therefore applies to all six local locale-prefixed files. The unprefixed `DEF.POS` is present locally and outside this archive comparison. This establishes input identity for the six pairs. Runtime parser output and retail-disc provenance remain unresolved.
 
 Original `00485680`:
