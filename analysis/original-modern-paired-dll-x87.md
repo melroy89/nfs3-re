@@ -73,3 +73,23 @@ replacement of this packaged provider or its INI. The static
 identities leave open the actual loaded DLL, provider-internal
 control-word behavior, and differences in the state supplied by
 each executable.
+
+### nGlide swap arithmetic uses the current precision and scopes truncation
+
+In that common provider, the swap path uses `FILD`, `FDIVR` and
+`FIMUL` at `100091f5..10009203`, then calls conversion helper
+`100c02d0`. No control-word load separates those arithmetic
+instructions. The helper saves the current word at `100c02d6`,
+sets rounding bits 10 and 11 through `OR AH,0ch`, converts through
+`FISTP` to a 64-bit integer, and restores the saved word at
+`100c02ec` on ordinary return. It leaves the precision bits
+unchanged. The caller adds the low DWORD of the converted result
+to its saved counter value at `10009219`.
+
+This establishes an explicit temporary truncation scope inside
+the provider even though the adapter page-flip wrapper has none.
+The arithmetic before conversion uses the precision in effect
+at that point. Earlier provider calls and later indirect calls
+remain outside the trace, so this does not establish preservation
+of the caller's control word across the entire swap. No timing
+or floating-point state was observed at runtime.
