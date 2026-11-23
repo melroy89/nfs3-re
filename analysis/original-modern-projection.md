@@ -325,6 +325,28 @@ file reaches the defaults path follows the separate
 
 The [configuration-load report](original-modern-config-loading.md) identifies the invalid-size/version route into this default routine. Consequently this is an explicit reset/default policy, not evidence that every startup discards a saved View Angle. Full serialization/migration and later menu writes remain unresolved. In a reconstruction, keep that reset policy distinct from merely interpreting a loaded ordinal: both can select0, but their causes and compatibility implications differ. No settings file or running game was changed.
 
+### View Angle on the ordinary 1.5.3 to 1.6.0 upgrade path
+
+The [header gate comparison](original-modern-config-loading.md#later-header-revisions-also-reset-the-packed-resolution)
+shows that 1.6.0 rejects an otherwise admitted version-5 header
+and calls display defaults at `00472ad7`. That call writes zero
+to `006fbc40`. For a successfully loaded size-`20f0h` configuration
+saved with the ordinary 1.5.3 header, this yields Automatic for
+each of the three old choices. If a block instead arrives with
+an accepted version-6 header and its old ordinal intact, it skips
+this defaults call. The chooser then interprets the retained value
+under the new mapping:
+
+| 1.5.3 choice | Ordinal | 1.6.0 with version-5 header | 1.6.0 with accepted version-6 header |
+|---|---:|---|---|
+| Normal | 0 | Automatic | Automatic |
+| Wide | 1 | Automatic | Narrow (75°) |
+| Narrow | 2 | Automatic | Normal (90°) |
+
+This traces the local loader and chooser decisions. The version-6
+column models a preserved payload with an accepted header. No
+actual migration, rewrite or later menu override was observed.
+
 ## Indexed viewport-slot initialization is another bounded non-producer
 
 The source search now checks a computed-address candidate that a literal-cell scan alone misses. Paired initializer witnesses `00422cf0..00422d9b` and loop tail `00423845..0042386b` are byte-identical and retained by the projection audit. EBX starts0; the saved upper bound is1 when session `006fd3b0==1`, otherwise0. The normal loop increments EBX at `00423865`. Its two clear stores at `00422d78/00422d86` target `005e1010+8*EBX` and `005e1014+8*EBX`.
