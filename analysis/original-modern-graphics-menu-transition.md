@@ -178,3 +178,14 @@ the Cancel comparison), and `0044d3e0`. The official package's
 `PSGRAPH_CANCEL`. Thus the shared registration and packaged controls
 tie both changes to the player settings graphics screen. Observed
 menu behavior remains unverified.
+
+In the registered transition body `0044d420..0044d4c0`, only
+the three call-displacement bytes at `0044d45e..0044d461` differ.
+Both versions compare the saved Frame Size value at `00662da0`
+against the live value at `006fbc4c` before restoring the snapshot.
+If those values differ, the retained tail obtains the view-0 vehicle
+from `00422bd0` and passes its category bit 0x20 as a normalized 0/1
+to `004be5e0`. That initializer itself changes between versions.
+The retained call site therefore carries restored settings into
+version-specific viewport geometry. See the
+[viewport comparison](original-modern-viewport-geometry.md).
