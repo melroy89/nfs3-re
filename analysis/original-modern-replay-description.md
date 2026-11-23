@@ -19,8 +19,17 @@ The retained release archives date the rewrite to 1.4.0. The full 175-byte
 callback hashes match the original from 1.1.0 through 1.3.1 and match final
 1.6.1 from 1.4.0 through 1.6.0. The 23-byte registration span
 `0044748f..004474a6` matches in every inspected build. Thus 1.4.0 changes the
-registered callback body while preserving its binding. Menu assets and
-rendered output are outside this comparison.
+registered callback body while preserving its binding. Rendered output
+remains untested.
+
+At the same boundary, the packaged `fedata/menus/loadsave.mnu` moves
+the `DESCRIPTION_BOX` rectangle from `(400, 176)` to `(395, 205)`
+and keeps width 180 and height 115. The adjacent `replays` list moves
+from `(185, 176)` to `(183, 158)`, retaining its codelink. The callback's
+five-unit reduction in the first detail row offset is relative to the
+description box. If the authored Y reaches the callback unchanged, the
+combined first-row Y is 201 in 1.3.1 and 225 in 1.4.0. Actual anchoring,
+scaling and pixel placement remain unverified.
 
 ## Heading removed, details begin earlier
 
