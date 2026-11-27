@@ -179,11 +179,11 @@ Do not infer a permanent invariant that `009f3d2d == (00564390 & 1)`: the separa
 
 A separate original [named-mutex/title recovery helper](original-modern-startup-requirements.md#separate-original-mutextitle-recovery-and-repurposed-handle-storage) also requests foreground focus during startup. Its duplicate-instance handling is distinct from this recurring loop and must not be counted as the same mechanism.
 
-This adds a direct mechanism to **MP100-040** beyond the activation-hook refactor. It remains partial evidence for the whole release-note claim: initial foreground/active requests at `004cd55d` and `004cd571` survive in the identical prefix, and the existing [mode-publication path](original-modern-mode-selection.md) also retains a foreground request. Removal of this loop tail does not establish absence of every possible focus-restoration route. Actual focus behavior and attribution to 1.0.0 remain unverified.
+This adds a direct mechanism to **MP100-040** beyond the activation-hook refactor. It remains partial evidence for the whole release-note claim: initial foreground/active requests at `004cd55d` and `004cd571` survive in the identical prefix, and the existing [mode-publication path](original-modern-mode-selection.md) also retains a foreground request. Removal of this loop tail does not establish absence of every possible focus-restoration route. The retained 1.0.0 executable verifies removal from this loop. Actual focus behavior remains unverified.
 
 ## Release-note mapping and next evidence
 
-The lifecycle changes are relevant to **MP100-040**, the claim that the game no longer repeatedly restores lost focus. They are not sufficient to verify that entire claim: activation consumers and any focus-restoration API paths still need tracing. No release-introduction date can be proven from only original and final Modern binaries.
+The lifecycle changes are relevant to **MP100-040**, the claim that the game no longer repeatedly restores lost focus. They are not sufficient to verify that entire claim: activation consumers and any focus-restoration API paths still need tracing. The retained builds date the loop change to 1.0.0 and the activation refactor to 1.4.0.
 
 Next: inspect any alternate callback/alias writers and all focus/foreground API use sites; trace the earlier module/class-name producers; trace style/context producers and replacement cursor/input setup; keep the power callback anomaly separate from confirmed runtime behavior. The original and maintained Modern Ghidra databases and both executables remain unchanged.
 
