@@ -161,6 +161,14 @@ calls `0044ba30` within a frame; Modern reaches that same target directly at
 `004bc793`. These findings qualify incidental call removals separately from
 the substantive x87 policy change already described above.
 
+A linear disassembly census finds one decoded direct call to original
+`004bc660`, at `004bc793`. The call still targets the wrapper in every retained
+release through 1.4.0. In retained 1.5.0 it changes to a direct call to
+`0044ba30`, and the old wrapper tail at `004bc664..004bc670` becomes NOPs in the
+same release. Both byte sequences persist through final Modern. This check
+covers decoded direct calls and the retained release members. Indirect callers
+and runtime invocation frequency remain unverified.
+
 Outside-body interval `004bc7e4..004bc830` is76 NOP-replaced bytes, beginning
 inside the operand of original CALL `004bc7e3`. It contains the old conditional
 control-word tail, original epilogue, alignment and separate five-byte no-op
