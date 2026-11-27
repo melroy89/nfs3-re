@@ -1152,7 +1152,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP110-007 | The driver hides resolutions lower than 640×480 pixels. | Partial |
 | MP110-008 | The driver reports resolutions in a slightly different order. | Claimed |
 | MP110-009 | The problem with ugly 16-bit menu was fixed by using 32-bit mode. | Partial |
-| MP110-010 | The problem with non-working video still not solved. It's recommended to disable the intro video by the NoMovie ini setting. | Claimed |
+| MP110-010 | The problem with non-working video still not solved. It's recommended to disable the intro video by the NoMovie ini setting. | Partial |
 | MP110-011 | Renamed from voodoo2a.dll to voodoo2.dll. | Partial |
 | MP110-012 | Always reports that all resolutios are 16-bit even when nGlide is used. Otherwise making screenshots by pressing Alt+P will not work because in low-level all Glide resolutions are still 16-bit modes from the game's side. | Partial |
 | MP110-013 | Renamed from d3da.dll to dx5.dll similar to dx8.dll, because it uses DirectX 5. | Partial |

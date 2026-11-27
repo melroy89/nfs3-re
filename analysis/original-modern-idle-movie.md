@@ -134,6 +134,9 @@ The1.1.0/1.2.0 caller explicitly sets EDI=`0055eb2c` and section EBP=`NFS3`, the
 
 Both early frontend setup prefixes test that same byte/bit at`0047313d` and jump past the `titleav.mad` request at`00473159` when it is set. The supplied-original setup already checks this bit from its original command-line path; Modern adds the INI-derived producer. Therefore the supported early change is **an additional configuration source feeding a retained title-disable gate**, not invention of all movie suppression. The 1.0.0 producer and title gate are verified below. Other intro/movie request routes remain unqualified, so the vendor’s “all intro movies” claim is partial.
 
+For **MP110-010**, the archived 1.1.0 INI ships `NoMovie=0`, so its recommended workaround requires changing the setting. The verified reader and title gate above show that a nonzero result bypasses the title playback request before the renderer handles it. This verifies the bypass mechanism independently of the DX8 failure claim. The default INI does not activate it, and the evidence leaves the reported playback failure and its cause unresolved.
+
+
 At1.5.1→1.5.2, the **complete24-byte INI branch `004b55b6..004b55ce` is identical**, while the pointed string grows from singular to plural. The **complete108-byte availability builder `004a2f90..004a2ffc` also matches**. Thus this pair supplies an actual option-spelling transition with retained disable-bit/mask logic. The switch-table entry independently changes in the same pair; that observation does not exclude every alternate parser or external launch wrapper.
 
 ### Compatibility and reconstruction consequences
