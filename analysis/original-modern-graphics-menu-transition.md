@@ -223,3 +223,12 @@ snapshot nor undo the HUD writes locally. A later caller can still
 restore or override these fields. Disk persistence and visible recovery
 remain unverified. See the [mode-application comparison](original-modern-mode-selection.md)
 and [renderer lifecycle](original-modern-renderer-lifecycle.md).
+
+The 61-byte graphics-menu setup tail at PE RVA `48728h`
+matches in all 12 retained Modern releases. The original
+uses `40h` at `0044873e`, while 1.0.0 already uses `50h`.
+This dates admission of the Voodoo renderer bit to the
+slider setup and callback registration path, alongside
+the [effect-side mask changes](original-modern-effect-renderer-masks.md).
+The admitted path does not by itself clear a disabled
+item's flags. Actual menu interactivity remains untested.
