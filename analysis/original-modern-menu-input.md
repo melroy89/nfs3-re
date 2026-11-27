@@ -116,6 +116,16 @@ The [historical routing audit](evidence/audits/menu-key-routing-history.json), r
 
 140's Shift entry is `004f1f78`, with Control/Alt at+4/+8 and the shared tail through `004f1f9c`. Its36 bytes match the official final region `004f1fcc..004f1ff0`; the import binding is verified in140. The dispatcher at `0044a3a0` calls the helper and uses JNE directly. EAX and final ZF therefore remain separate machine outputs at this historical boundary, just as in the final contract above.
 
+The Shift, Control and Alt helper's complete 36-byte block matches across all seven retained releases from 1.4.0 onward. The call at `0044a3a0` follows its two moves, and the next instruction remains `JNE +0x32` in each EXE. The import slot `00534738` resolves to `USER32.GetAsyncKeyState` throughout.
+
+| Retained releases | Shift entry | Control entry | Alt entry |
+|---|---|---|---|
+| 1.4.0 | `004f1f78` | `004f1f7c` | `004f1f80` |
+| 1.5.0–1.5.2 | `004f1fd8` | `004f1fdc` | `004f1fe0` |
+| 1.5.3–1.6.1 | `004f1fcc` | `004f1fd0` | `004f1fd4` |
+
+Reproduce by resolving the relative call, comparing 36 bytes at its destination and checking the PE import slot in each extracted executable. The intermediate placement accounts for the [temporary reuse of the old CPU calibration range](original-modern-outside-function-index.md#when-old-code-ranges-become-all-nops). Moving the block preserves its register and flag behaviour at this caller.
+
 The complete previous/next routines and lobby handler are byte-identical131/140. This qualifies **MP140-008/009**, not **MP140-015**: it establishes routing to existing selectors, not a replacement ordering algorithm. Entry-array construction, selection fields, callback side effects and authored navigation data can still change order despite identical selector bodies. The distinct callback-selection/rendering comparison likewise does not independently prove keyboard order. At this routing-only checkpoint MP140-015 remained vendor-only. The following template/asset comparison now supplies a partial order-producing mechanism; repeating the unchanged selector-body checks alone would not resolve it.
 
 The selected entry callback still precedes fallback navigation and can consume keys. Chat focus, every menu state, actual keyboard timing and complete caller ABI/flags remain untested beyond the retained local witnesses. No game, API, target instructions, compiler or Ghidra change was used.
