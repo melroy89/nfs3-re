@@ -345,3 +345,14 @@ In both executables, ordinary navigation at `0044a76c` tests the accumulated ite
 
 
 The first-screen gate at `00453068..004530ad` is byte-identical in the hosted original, retained 1.0.0 and official 1.6.1. In all three, the same addresses resolve to the three Setup tokens. With a nonzero flag, it disables ordinary selection of any matching items before continuing at `004530ad`. With zero, it skips all three lookups. This links the flag to ordinary local-game entry choices as well as music, movies and the separate connection menu.
+
+### Two car artwork checks report unavailable when the flag is set
+
+Both helpers first resolve the car model through `004392b0`. A nonzero `006fbb54` then makes them return zero before formatting the artwork path or calling the resource existence check at `004e0e60`.
+
+| Checked PE VA span (end exclusive) | Filename on the ordinary path | SHA-256 |
+|---|---|---|
+| `004530c0..00453155` | `SH<model>.qfs` | `e5795437b6d924fff45a9b7603bb763481e95f7610c5fe9353fef38d34da0f57` |
+| `00453160..004531fd` | `IN_<model>.fsh` | `b4716ad33ac3bf0d80e7417bf5532953717ac4737b0929000fce32229048d7d5` |
+
+The spans and format strings match in the hosted original, Modern 1.0.0 and official 1.6.1. The reads are at `004530d4` and `00453174`, respectively. The flag changes the availability result from these two helpers. Actual artwork display and other file access paths remain untested.
