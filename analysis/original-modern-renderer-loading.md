@@ -795,3 +795,18 @@ EXEs and locate direct calls to `004f8390` or, in final,
 `004f84a8` using `objdump -d -Mintel` to reproduce. The check
 dates the observed failure-signal change for MP161-006. It does
 not establish runtime diagnostics or the behavior of other callers.
+
+#### Startup error text becomes generic in 1.4.0
+
+The 1.2.0, 1.3.0 and 1.3.1 zero-about branches all format the
+selected name from `007a3a74` into the same invalid-driver message.
+The format moves from `0053c9a0` in 1.2.0 to `0053c99c` in both
+1.3 releases. The 1.4.0 branch at `004b5c1d` instead directly
+passes the fixed text at `0053c985` to the diagnostic helper.
+A separate later check of `00564364` supplies “Cannot init thrash
+video driver.” from `0053c9a2`. Version 1.5.0 retains those two
+fixed strings at `0053d12a` and `0053d147`.
+
+This dates the change in diagnostic detail while the about-pointer
+gate remains in use. Actual dialogs and provider behavior were
+not exercised.
