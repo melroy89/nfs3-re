@@ -375,6 +375,24 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `0047f9a2..0047f9a4` | NOPs replace the first two bytes of the original MOV [EBP-4],EAX. | Local byte comparison. |
 | `00494c5a..00494c5c` | NOPs after the Modern return replace the last two bytes of the original FLD [EBP-0xc]. | Local byte comparison. |
 
+| `00422b5c..00422b5e` | Final two bytes of the original jump-table address. | Replaced by two NOPs. |
+| `004952b9..004952bb` | Final two immediate bytes of MOV EDI,43ea8000h. | Replaced by two NOPs. |
+| `004b5746..004b5748` | Opcode and ModR/M of the original stack-local increment. | Replaced by two NOPs. |
+| `004bc174..004bc176` | Final two displacement bytes of the original call to 00431c30. | Replaced by two NOPs. |
+| `004be85a..004be85c` | First two bytes of the original call to 004dfd56. | Replaced by two NOPs. |
+| `004bedca..004bedcc` | Original ADD EAX,ECX before the Modern mode selector. | Replaced by two NOPs. |
+| `004bee5e..004bee60` | Original MOV EAX,ESI at the Modern mode selector boundary. | Replaced by two NOPs. |
+| `004ccce2..004ccce4` | Two immediate bytes of the original stack-local store at 004ccce1. | Replaced by two NOPs. |
+| `004ccd02..004ccd04` | Final comparison byte and following JE opcode in the original hook callback. | Replaced by two NOPs. |
+| `004dbcbe..004dbcc0` | Two original zero bytes before the Modern projection wrapper. | Replaced by two NOPs. |
+| `004f1ed2..004f1ed4` | Final RET operand byte and first opcode byte of the original FLD. | Replaced by two NOPs. |
+| `004f916a..004f916c` | Two displacement bytes of the original alignment LEA. | Replaced by two NOPs. |
+| `004f9212..004f9214` | First two absolute-address bytes of the original ECX load. | Replaced by two NOPs. |
+| `004f93da..004f93dc` | Final immediate byte of ADD ESI,2 and first byte of the original byte store. | Replaced by two NOPs. |
+| `004f93ea..004f93ec` | Final immediate byte of MOV EAX,1 and the original POP ESI. | Replaced by two NOPs. |
+| `004f93fe..004f9400` | Opcode and first immediate byte of the original AND EAX,0xff. | Replaced by two NOPs. |
+| `0051778a..0051778c` | Final two immediate bytes of the original MOV EDI,005505b0. | Replaced by two NOPs. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -409,7 +427,9 @@ across 274 intervals**, leaving 92 bytes across 63 intervals at `846caa1`.
 The four operand and data rows bring coverage to **21,839 bytes
 across 278 intervals**, leaving 87 changed bytes across 59 intervals at `e7c6bd6`.
 The eleven two-byte rows bring coverage to **21,861 bytes across
-289 intervals**, leaving 65 changed bytes across 48 intervals. These counts measure documented evidence links for this fixed
+289 intervals**, leaving 65 changed bytes across 48 intervals at `67c6e0f`.
+The remaining two-byte rows bring coverage to **21,895 bytes across
+306 intervals**, leaving 31 one-byte intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
