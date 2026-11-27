@@ -447,6 +447,12 @@ The [viewport comparison](original-modern-viewport-geometry.md) derives the cent
 
 The [input comparison](original-modern-menu-input.md) traces Tab/Shift+Tab routing, explicit Tab/Escape bypass of the lobby handler, generalized named-arrow actions and the new empty-text send guard. The lobby handler, previous/next routines and send routine are byte-identical; the relevant changes are in their callers. Active entry callbacks can still consume keys, and actual original/Modern UI behavior remains untested.
 
+### What changed in the 1.6.1 archive
+
+The retained 1.6.0 and 1.6.1 archives contain the same 85 regular-file paths. SHA-256 comparison of extracted payloads finds 69 unchanged and 16 changed. The changed files are `nfs3.exe`, the eight configured renderer DLLs, five renderer INIs (DX5, DX6, DX7, DX8 and SoftTri), and the English and Russian readmes. The menu and language assets, auxiliary Glide DLLs, `eacsnd.dll` and packaged `nfs3.ini` all match.
+
+Reproduce by extracting each archive to a separate temporary directory and hashing each regular file by relative path. This inventory compares payloads and paths. Timestamps, compression and effective installed files are outside it. See the [renderer package comparison](original-modern-renderer-loading.md#all-eight-configured-161-renderers-export-the-required-interface) for the specific INI and export differences.
+
 ## 15. HUD presets and loading artwork
 
 | Build or transition | Verified preset change |
