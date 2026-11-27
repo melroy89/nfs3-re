@@ -98,7 +98,7 @@ Original adds a special filter after Next's ordinary increment/wrap: call predic
 
 Modern Next replaces the original filter at `004423a0..004423c3` with `JMP 004423c3` plus 33 NOP bytes, asserted by the script. Modern Previous is rewritten without that predicate/skip. Therefore final Modern navigation no longer uses this local conditional exclusion of record74, whose +4 field is `046ah`. This complements the established text consolidation: Modern record74 covers `046ah..0475h`, and record75 is the About resource.
 
-Retained 1.0.0 already removes both navigation checks. Next has the jump and padding above, and Previous at `004423e0..0044240c` uses only the decrement or sentinel-scan wrap before storing the new page. The original predicate body `00439ce0..00439d12` remains byte-identical in 1.0.0. The [model-presence analysis](#shared-presence-consumer-background-resource-substitution) traces the predicate to a registry lookup for model key `0x25` and explains a separate caller that still uses it. The installed identity of that key and the original navigation result for a particular installation remain unverified.
+Retained 1.0.0 already removes both navigation checks. Next has the jump and padding above, and Previous at `004423e0..0044240c` uses only the decrement or sentinel-scan wrap before storing the new page. The original predicate body `00439ce0..00439d12` remains byte-identical in 1.0.0. The [model-presence analysis](#shared-presence-consumer-background-resource-substitution) traces the predicate to a registry lookup for model key `0x25` and explains a separate caller that still uses it. The installed metadata identifies key `0x25` as the Ford Falcon GT, as shown below. The original navigation result still depends on which models are loaded.
 
 ## Initial selection differs as well
 
@@ -141,7 +141,18 @@ The same string pointer is then published into record+`0x40` at **`00427164`** a
 
 Across all twelve retained Modern EXEs, the call at `00427142` targets the one-key predicate at `00439ce0` through 1.5.3. In 1.6.0 and 1.6.1 it targets `00439d00`, where the wrapper checks `0x25` followed by `0x26`. To repeat the release check, extract `nfs3.exe` from each archive, resolve the relative call at `00427142`, and disassemble the destination. The 1.6.0 boundary applies to the background resource choice. Both Credits navigation callbacks had already dropped their lookup in 1.0.0.
 
-For otherwise equal registry contents containing key`0x25` but missing`0x26`, original therefore selects `opp4.qfs` while Modern selects `opp3.qfs` on the selector3 path. If both keys exist, both select `opp4.qfs`; if key`0x25` is absent, both retain `opp3.qfs`. This conditional consequence follows statically from the paired bodies. Actual resource availability, visual differences and the keys’ identities remain untested/unresolved.
+For otherwise equal registry contents containing key`0x25` but missing`0x26`, original therefore selects `opp4.qfs` while Modern selects `opp3.qfs` on the selector3 path. If both keys exist, both select `opp4.qfs`; if key`0x25` is absent, both retain `opp3.qfs`. This conditional consequence follows statically from the paired bodies. Actual resource availability and visual differences remain untested.
+
+### Model keys in the installed car archives
+
+The [hashed car inventory](evidence/inventories/installed-car-selector-categories.json) records the 16-byte identifiers at `FEDATA+0x18`. The existing [inventory parser](scripts/inventory_car_selector_categories.py) reproduces the matches from the installed archives. Each listed identifier is the indicated little-endian DWORD followed by twelve zero bytes. All six inventoried language members for each archive agree. Reading the NUL-terminated English name from the same member gives:
+
+| Key | Archive under `GAMEDATA/CARMODEL` | Name in `fedata.eng` |
+|---|---|---|
+| `0x25` | `FFAL/CAR.VIV` | Ford Falcon GT at `+0xde` |
+| `0x26` | `HGTS/CAR.VIV` | HSV VT GTS at `+0xda` |
+
+This identifies the exact keys in the inspected installation. Registry admission, alternate car packs and the artwork in `opp3.qfs` and `opp4.qfs` are separate questions.
 
 ## Additional Modern consumer: logo-table model filtering
 
