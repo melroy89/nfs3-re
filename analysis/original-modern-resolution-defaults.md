@@ -105,6 +105,8 @@ The complete same-address transition functions `00473020..0047307e` (94 bytes) a
 
 Original entry at `00473041..00473056` reads current depth DWORD `0056438c`, stores it in shadow `00679008`, then writes 16 to `0056438c`. Original restore at `0047309b..004730a5` copies that shadow back to the depth field. Modern replaces those regions with jumps over 19 and eight NOPs, respectively. No other bytes differ in either complete envelope.
 
+The complete changed spans retain their original bytes in the archived 1.1.0–1.4.0 executables. Both switch to the final jump-and-padding sequences in **1.5.0**, the first retained release where the entry and exit both leave the depth field alone. Compare `00473041..00473056` and `0047309b..004730a5` after extracting the executable from each archive. The same [transition archive and executable hashes](original-modern-state14.md#scene-paths-skip-original-placeholder-calls) apply.
+
 This extends the startup-depth evidence above: the change is not only a different initial depth choice. Modern removes these local menu-transition save/force/restore operations, allowing the field's surrounding state to persist across this pair unless changed elsewhere. It does not prove that every menu uses an identical physical display mode or that no other depth write exists.
 
 The separate state DWORD `00564390` still has its original transition protocol: entry saves it to `00679004` and ORs byte bit 2, while exit restores it. All other calls and their order in these functions remain byte-identical, including renderer/menu setup and teardown calls. Those calls can have their own version differences; equal caller bytes are not full transition equivalence.
