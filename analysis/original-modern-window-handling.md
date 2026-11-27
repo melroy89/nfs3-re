@@ -119,6 +119,20 @@ The two predicate bodies at `004f9070..004f908a` and `004f9120..004f913f` match 
 
 The recurring foreground request is therefore absent by retained 1.1.0, consistent with MP100-040. The 1.0.0 executable has not been verified. The residual cursor branch survives through 1.3.1 and disappears at the 1.3.1 → 1.4.0 boundary.
 
+### Direct foreground requests across builds
+
+A linear `objdump -d -Mintel` sweep for calls through the SetForegroundWindow import slot `00534788` identifies nine addresses in every checked build: `004cd21f`, `004cd55d`, `004cda6b`, `004eb7ed`, `004ece12`, `0050558e`, `00507b9b`, `00507e20` and `0050846c`. The remaining sites distinguish the builds:
+
+| Executable | Additional direct call sites |
+|---|---|
+| Original | `004cd6a2` (recurring loop), `004f9231` |
+| 1.1.0 and 1.3.1 | `004f9231` |
+| 1.4.0 and 1.5.0 | None |
+| 1.6.0 | `004bef4e` |
+| Installed 1.6.1 | `004bef5c` |
+
+Thus the 1.3.1 → 1.4.0 comparison also loses the separate site at `004f9231`. The table records locations only. It leaves the purpose and reachability of the separate sites, indirect calls and OS focus outcomes open.
+
 ### Original mode-state producers: a bounded link
 
 The extended focus audit also retains original producer witnesses. At `0050818a`, raster setup tests **bit0 of `00564390`** and writes a normalized byte to `009f3d2d`: bit set loads AL=1; bit clear branches to `00508265`, clears AL and jumps back to the common store at `0050819f`. This operation is downstream of a `005644fc` check; its missing-state diagnostic route is not asserted to be nonreturning. This is an exact bit-to-state link, not a complete enumeration of renderer flags.
