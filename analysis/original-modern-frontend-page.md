@@ -299,6 +299,8 @@ The first-pass centring expression also changes. Original halves a signed DWORD 
 
 The retained 1.4.0 and 1.5.0 executables date the fade separately from the final centring change. The 1.4.0 draw path still uses the four hard bounds at `004a4571..004a4590`. In 1.5.0, `004a454c..004a457f` already applies the same four position penalties described above and skips the draw only for negative adjusted intensity. Its first-pass centring still reads a DWORD extent and calls `004dfd56` before `FISTP` at `004a4549`. The 29-byte truncation helper is byte-identical in both historical builds. The fade is therefore present at the 1.5.0 boundary, while the final WORD extent and removal of explicit truncation are later changes.
 
+The rounding and extent changes occur at different release boundaries. The retained 1.5.0–1.5.2 builds call the truncation helper at `004a4544`. In 1.5.3, the DWORD load from `0055e8e0 + 16*index`, halving and `FISUBR` remain, but `FISTP` now follows `FISUBR` directly at `004a4544`. This makes the conversion obey the active x87 rounding mode. In 1.6.0 and 1.6.1, `004a452c` instead zero-extends a WORD from `00661344 + 12*index` and still converts directly. These checks date the instruction changes. They leave the active rounding mode at the draw call and the resulting pixel differences unmeasured.
+
 This gives bounded static support for **MP150-023**, the smoother-disappearance claim, while also identifying a numeric conversion difference relevant to C reconstruction. No logo frame or timing sequence was rendered; the complete animation update cadence and physical coordinate scaling remain unresolved.
 
 ## Retained update cadence and twelve local draw passes
