@@ -409,9 +409,24 @@ lists also match.
 
 To reproduce, read each descriptor as five little-endian DWORDs
 from the executable's PE RVA, resolve its first two pointers, and
-read the WORDs through the first zero. The fourth and third DWORDs
+read the WORDs through the first zero. The third and fourth DWORDs
 are zero in both records. The [View Distance analysis](original-modern-parameter-preset.md#user-facing-binding-view-distance-and-the-full-preset)
 and [Frame Size analysis](original-modern-frame-setting.md) trace
 the corresponding settings into their consumers. Descriptor equality
 establishes continuity of setting storage and choice IDs across the
 move. It leaves layout, localization and projection effects open.
+
+The two inspected consumers also retain identical instruction bytes
+in 1.2.0, 1.3.0 and 1.3.1. The viewport constructor tests
+`006fbc4c` at `004be625`. The distance preset routine reads
+`006fbc28` at `0041d62a`.
+
+| PE VA range, end exclusive | SHA-256 in all three builds |
+|---|---|
+| `004be5e0..004be872` | `721c9740440a2f6393ca2b03c72662d3c3ff19b0f69781960fdce902d52178f5` |
+| `0041d620..0041d6c6` | `b85a0bb88eda14d18a2d363d98dea59fc4b551663f65ce0c61c0e0d3d7d3418a` |
+
+Extract each archived EXE and hash the bytes at the corresponding
+PE RVAs through the terminating RET. This establishes that the menu
+move left these two instruction ranges intact. Inputs, tables and
+callees can still differ, so overall rendering equivalence is open.
