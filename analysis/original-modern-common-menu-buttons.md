@@ -507,3 +507,21 @@ retained builds through 1.6.1 ship the same 52 basenames.
 This dates the change in the archive member list. Individual
 file contents and the installed menu selected by the executable
 are separate questions.
+
+The car tuning menu first included in 1.1.0 is a byte-for-byte
+copy of the hosted original `CEDBASIC.MNU`. Both 1.1.0 and
+1.2.0 have the same 7,908 bytes, with SHA-256
+`4f11c887f984597786af7ea723413320ccc580873f898e32b0457854644d58b6`.
+The first content change in the retained patch archives is 1.3.0.
+
+| Patch releases | Menu bytes | SHA-256 prefix |
+|---|---:|---|
+| 1.1.0–1.2.0 | 7908 | `4f11c887f9845977` |
+| 1.3.0–1.3.1 | 6788 | `36cca1de10c9c36a` |
+| 1.4.0 | 5642 | `38b6e81c7c7b9117` |
+| 1.5.0–1.6.1 | 5467 | `3e78623958fe48c6` |
+
+Extract the uppercase member from the hosted original and
+the lowercase member from each patch to reproduce. These are
+content boundaries for the asset. The [slider analysis](original-modern-slider-percentage.md)
+covers selected tuning controls separately.
