@@ -357,6 +357,12 @@ The248-byte region `6000462d..60004725` is entirely NOP in all three checked bui
 **MP110-008 remains vendor-only as a comparative claim:** the early DX8 ordering mechanism is now documented, but its precise advertised difference from an earlier provider/catalog is not established. No actual API mode order, final visible list, refresh selection, complete consumer bounds or runtime mutation was observed. Do not equate a documented current ordering algorithm with proof of every historical ordering change.
 
 
+### The 1.1.0 DX8 provider and game store different startup depths
+
+The archived 1.1.0 game EXE (SHA-256 `59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72`) still stores 640×480×16 at `004b6027..004b6052`, matching the original setup's three initial values. Its DX8 mode builder independently rejects ordinary enumerated modes of depth other than 32 and writes qualifying 640×480 rows into special slot 1. These are different variables in different components. The 16-bit EXE store therefore coexists with a provider record advertising 32 bits if a matching row is enumerated.
+
+This gives MP110-009 partial static support for a concrete provider mechanism. The record selected at menu startup, the final back-buffer format and the reported visual repair remain unverified. A 32-bit row in the provider catalog alone cannot settle those questions.
+
 ### DX8 activation already contains16-bit requests before150
 
 The [activation audit](evidence/audits/dx8-mode-activation-history.json), reproduced with `python3 analysis/scripts/audit_dx8_mode_activation_history.py`, compares140/150 with the same pinned DLLs and header snapshots. The complete334-byte `_THRASH_setvideomode@12` at `600038b0..600039fe` and1,153-byte worker `60003b80..60004001` are byte-identical. This separates the preceding changed enumeration gate from retained activation code.
