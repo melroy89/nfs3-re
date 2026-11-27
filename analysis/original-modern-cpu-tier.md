@@ -30,6 +30,15 @@ On the standard CPUID leaf 1 path, both versions first publish EDX bit 23 to `00
 
 Final Modern replaces that local lookup and overwrite with its CPU score store, family diagnostic check and jump to the shared epilogue. The old call, result store and alternate epilogue at `004f1e13..004f1e26` are 19 NOPs. Reproduce with `objdump -d --start-address=0x4f1d44 --stop-address=0x4f1e26` on the paired executables and confirm the original key with `objdump -s --start-address=0x54c9a8 --stop-address=0x54c9b0`. This establishes removal of the override from this detection path. Other writers and actual machine-specific dispatch remain outside this check.
 
+The original lookup at `0050ead0..0050eb29` reads the runtime environment vector at `00a0b154`. It compares each entry against the key up to the key length, requires an immediately following equals sign and returns the address after that sign. An existing empty value therefore reaches the decimal parser, which returns zero when no digits are consumed. An absent key leaves the detected flag in place. See the [environment lookup comparison](original-modern-renderer-loading.md) for the shared reader.
+
+The earliest retained Modern archive, **1.1.0**, already stores the detected MMX value at `004f1dbd` and jumps back to the common epilogue at `004f1dfe` after publishing its CPU score. The original override tail is all NOPs in that build and every later retained release. This dates the observed removal to **1.1.0 or earlier**. The 1.0.0 transition remains unknown.
+
+| 1.1.0 input | SHA-256 |
+|---|---|
+| `nfs3_modern_patch_v1.1.0.7z` | `31365ebb12f826a031378d5555aadd899873eb1a896f1e10ba49c464c0e4d7ac` |
+| `nfs3.exe` extracted with `7z x -so <archive> nfs3.exe` | `59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72` |
+
 ## Default graphics tier consumer changes with it
 
 Original default initializer calls CPU detection, then the estimate routine, divides its EAX result by 1,000,000, and chooses ECX tiers using signed comparisons (`00472d89..00472de3`):
