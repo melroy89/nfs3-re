@@ -14,7 +14,7 @@ The implementation records original rounding points, uses binary32 volatile stor
 
 ## Reproduce
 
-Run from the repository root. Linux native i386 comparison (304 rows):
+Run from the repository root. Linux native i386 comparison (304 baseline rows plus nine precision rows):
 
 ```sh
 python3 -m unittest reconstruction.tests.test_line_boundary -v
