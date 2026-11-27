@@ -215,3 +215,9 @@ Scanning `004a33d0..004a3690` in all thirteen retained executable baselines give
 | Modern 1.4.0–1.6.1 | 8 | 0, 10, 12.5, 95.7, 96, 99.8, 99.9, 100 |
 
 Reproduce with `objdump -d -Mintel` over the window and decode the immediate PUSH preceding each direct call as binary32. These are static call sites, not a sequence observed in one loading session. The [scene initializer comparison](original-modern-viewport-pose.md#direct-callers-of-the-snapshot-producing-routines) identifies the two submissions around scene setup. The helper's separate throttling, retry and presentation logic still governs what appears on screen.
+
+At the 1.3.1 → 1.4.0 boundary, the neighbouring calls distinguish the two early zero submissions. The zero call at `004a347c`, between calls to `00477a50` and `004f0240`, is removed. The zero call immediately before `00477fd0` survives, moving from `004a34a8` to `004a349a`. In 1.4.0 the timing helper at `004a3568` runs immediately before this surviving submission on the path that passes the abort check.
+
+The late call at `004a3566` with immediate bits `0x42c76666` (about 99.7%) also disappears. The call to `00422cf0` remains, but moves from immediately before the 99.8% submission in 1.3.1 to immediately after it in 1.4.0 (`004a3524` submits progress and `004a3529` calls `00422cf0`). Thus 1.4.0 both removes a submission and changes which side of the remaining submission that work runs on. The visible progress and timing impact remain unmeasured.
+
+For this two-build comparison, extract `nfs3.exe` from the retained 1.3.1 and 1.4.0 archives. Their executable SHA-256 values are respectively `199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664` and `7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d`. Use the disassembly window above to compare neighbouring call targets as well as the immediate progress arguments.
