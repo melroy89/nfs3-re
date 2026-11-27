@@ -24,6 +24,12 @@ The routine retains vendor/legacy branches, including a path requesting leaf `80
 
 Modern startup directly calls `004f1c70` at `004a3e07`. The original rating routine's former address space is reused by other Modern helpers/NOP areas; same-address disassembly is not a corresponding frequency routine.
 
+## Original MMX detection allows an ISMMX override
+
+On the standard CPUID leaf 1 path, both versions first publish EDX bit 23 to `005643b4` (original store `004f1dd4`, including the zero branch at `004f1e76`, and Modern store `004f1db8`). Original then passes the file-backed key `ISMMX` at `0054c9a8` to `0050ead0` at `004f1e06`. If that lookup returns a non-null pointer, `004f1e13` calls the signed decimal parser `004f0430` and overwrites `005643b4` with the full parsed value. A null result branches to the shared epilogue and retains the detected bit. This cell is read by the [line-boundary implementation dispatcher](line-boundary-x87-callers.md).
+
+Final Modern replaces that local lookup and overwrite with its CPU score store, family diagnostic check and jump to the shared epilogue. The old call, result store and alternate epilogue at `004f1e13..004f1e26` are 19 NOPs. Reproduce with `objdump -d --start-address=0x4f1d44 --stop-address=0x4f1e26` on the paired executables and confirm the original key with `objdump -s --start-address=0x54c9a8 --stop-address=0x54c9b0`. This establishes removal of the override from this detection path. Other writers and actual machine-specific dispatch remain outside this check.
+
 ## Default graphics tier consumer changes with it
 
 Original default initializer calls CPU detection, then the estimate routine, divides its EAX result by 1,000,000, and chooses ECX tiers using signed comparisons (`00472d89..00472de3`):
