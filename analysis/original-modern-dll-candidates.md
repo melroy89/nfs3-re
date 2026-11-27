@@ -278,6 +278,26 @@ information). The resource payload and headers are outside the code-byte
 count. The zero-raw-pointer `.bss` is excluded from file-backed byte
 comparisons.
 
+#### DX5 version-resource identity
+
+Both resources have string table `040904b0`. Parsing the extracted DLLs
+with `pefile.PE(...).FileInfo` gives the following fields.
+
+| Version string | Reference | Modern 1.1.0 |
+|---|---|---|
+| File description | D3D 3rash Module | DirectX 5 Thrash Video Driver |
+| Internal name | D3D | DX5 |
+| Original filename | d3da.dll | dx5.dll |
+| File version | 1998.08.10.1148 | 2015.05.23.0038 |
+| Product version | Empty | 1.1.0 |
+
+Modern's Comments field credits `d3da.dll` and names NFS III build
+`6552.8.16.4424/1998.08.10.1148`. The trailing version agrees with the
+reference resource, and the paired code comparison shows that differences
+are confined to the mode callback. The build credit is embedded attribution.
+The file-version string also differs from the catalog's release date, so
+it does not independently date public availability.
+
 #### DX5 callback history
 
 Extract the exact DX5 member from each retained archive and compare the
