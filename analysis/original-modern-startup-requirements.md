@@ -611,3 +611,24 @@ including each entry's IAT address. The integer profile reader
 [tracks the relocated slot](ini-environment-contract.md#integer-reader-history).
 The import comparison identifies the slot changes. A complete
 audit of the instructions that reference those slots remains open.
+
+A linear disassembly of the executable sections finds nine absolute
+indirect CALL/JMP instructions in 1.5.2 targeting those four imports.
+All nine still resolve to the same symbols in 1.5.3. Seven profile
+reader sites stay at their original addresses and use the new slots.
+The PlaySoundA call moves from `004f1fcc` to `004f1fc0`, and its
+jump thunk stays at `00533e80`. Both use the new `00534668` slot.
+
+| Import | Decoded 1.5.3 sites |
+|---|---|
+| GetPrivateProfileIntA | `004b5909`, `004b592c`, `004fb70a` |
+| GetPrivateProfileStringA | `004b58c1`, `004b599f`, `004fb72b` |
+| GetPrivateProfileSectionA | `004b594f` |
+| PlaySoundA | `004f1fc0`, `00533e80` |
+
+Reproduce with `objdump -d -Mintel` on each archived EXE, filtering
+absolute indirect CALL/JMP operands for the old and new slot addresses
+and resolving each operand against that build's import table. Slot
+`00534664` resolves to sixteen decoded clock calls in 1.5.3. The
+scan covers decoded instruction operands. Loaded function pointers
+and computed references remain outside its scope.
