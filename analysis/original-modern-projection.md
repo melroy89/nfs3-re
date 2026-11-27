@@ -654,3 +654,9 @@ The [historical audit](evidence/audits/projection-restore-history.json) now calc
 |1919×1080 |1439 /−180 |449.5 |539.5 |540 |−0.5 |
 
 For nonoverflowing integer W/H, `D=floor((H−S)/2)` makes the160 centre `D+S/2`: exactly H/2 when H−S is even, and H/2−0.5 when odd. These small half-integer examples are exactly representable in binary32; they do not establish every x87 state or extreme integer input. The old unconditional extra shift affects both wide and tall examples. Thus “centred” describes the changed policy, not an exact physical midpoint for every odd dimension or proof of the final visible horizon.
+
+### Both direct routes to the integer projection helpers disappear in 1.6.0
+
+The 1.5.3 executable has two decoded direct calls to each old helper. The projection wrapper calls the origin updater `004fd280` at `004dbd26` and the angle updater `004fd3f0` at `004dbd33`. The [renderer startup wrapper](original-modern-renderer-lifecycle.md#startup-call-sites-for-the-140160-renderer-wrapper) also calls the angle updater at `004f8b38` and the origin updater at `004f8b41`. It passes the renderer's dimensions and fixed angle arguments on that path.
+
+In 1.6.0 none of those four direct transfers remains. The rewritten projection wrapper still calls the float builder `004bf260` at `004dbd2a`, while the renderer wrapper returns before its old projection tail. The complete 528-byte old helper range `004fd280..004fd490` is already all NOPs in 1.6.0. Reproduce with PE RVA `0xfd280` and a linear disassembly search for direct calls or jumps to the two helper entries. This dates the removal at both identified callers and at the old bodies. It does not establish all reads or writes of the old state fields.
