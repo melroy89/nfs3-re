@@ -69,9 +69,15 @@ and invokes the bounded copy at `004f943c`, with the original
 argument as the source and scratch as the destination. The
 `-driver=` setter likewise changes its input from the lowercased
 scratch suffix in 1.6.0 to the original argument suffix in
-1.6.1. This establishes what bytes are supplied to the setter.
-Filename interpretation and actual driver loads depend on the
-setter and filesystem.
+1.6.1. The setter itself also changes at this boundary. In 1.6.0,
+`004b57dc` copies each filename byte to `007a3a74` after slash
+normalization and delimiter handling, with no case conversion.
+In 1.6.1, `004b5818` calls the ASCII lowercase mapper before
+the store. Consequently an ordinary command-line filename is
+lowercased before storage in both builds. The stage that
+performs the conversion moves from the command-line scratch
+path into the shared setter. In 1.6.1 this also applies to names
+passed by the INI reader. File resolution remains untested.
 
 
 
