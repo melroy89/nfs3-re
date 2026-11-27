@@ -356,3 +356,20 @@ Both helpers first resolve the car model through `004392b0`. A nonzero `006fbb54
 | `00453160..004531fd` | `IN_<model>.fsh` | `b4716ad33ac3bf0d80e7417bf5532953717ac4737b0929000fce32229048d7d5` |
 
 The spans and format strings match in the hosted original, Modern 1.0.0 and official 1.6.1. The reads are at `004530d4` and `00453174`, respectively. The flag changes the availability result from these two helpers. Actual artwork display and other file access paths remain untested.
+
+### Direct reference map from original to final
+
+The map covers every decoded direct operand referring to `006fbb54` in the hosted original and official 1.6.1. Reproduce with `objdump -d -Mintel <exe>` and filter for `0x6fbb54`. The [release census](#remoteonly-reader-removal-is-dated-131-to-140) explains changes between the endpoints.
+
+| Path | Original read addresses | Final change |
+|---|---|---|
+| Audio allocation, state update and cleanup | `00410335`, `00410375`, `00410532`, `004107eb`, `004109d6`, `00410a45`, `00410aa4` | All seven remain at the same addresses. |
+| Pathfinder events and indexed sound | `00413343`, `004189a4`, `00418c76` | All three remain. See [audio branch details](original-modern-music-selection.md#two-retained-remoteonly-audio-checks). |
+| TCP dialog substitute | `0043fe57` | Removed in 1.4.0. |
+| Menu item state | `00440682`, `00440936`, `00442ab5`, `0044d141`, `00453068` | All five remain. |
+| Car artwork availability | `004530d4`, `00453174` | Both remain. |
+| Title drawing, helper and movie admission | `00472fc4`, `00473013`, `0047312b` | The helper disappears in 1.4.0. The title movie check moves to `0047312f` in 1.4.0, then disappears with the drawing check in 1.5.0. |
+| Music loading | `0041004d`, `00477fd3` | Both removed in 1.5.3. |
+| Idle demo movie | `00496217` | Moves to `00496213` in 1.4.0 and remains there. |
+
+That accounts for 24 original and 18 final reads or comparisons. The respective direct producer stores are `00472b43` and `00472b25`. Indirect accesses and runtime reachability are outside this census.
