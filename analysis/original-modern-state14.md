@@ -255,7 +255,7 @@ Crucially, the preceding selector audit shows **both payload4 and payload0 clear
 
 Actual menu-car/taillight primitive selection, vertex values, intervening state lifetime, other primitive paths and device colour output remain unverified. MP150-033 stays vendor-only. No target, DLL/API or instruction probe was executed, and no Ghidra or executable edit occurred.
 
-## Two scene paths skip original placeholder calls
+## Scene paths skip original placeholder calls
 
 The original and official Modern 1.6.1 executables in the [baseline comparison](original-modern-differences.md) differ at two equivalent points in the scene routine. The branch at `004bc23e` selects the path according to DWORD `007a3a60`.
 
@@ -276,3 +276,5 @@ Extract each historical member with `7z x -so <archive> nfs3.exe`. The transitio
 |---|---|---|
 | 1.4.0 | `8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9` | `7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d` |
 | 1.5.0 | `de6cbbbce4b77765f96472aaf8c12a4e245e2abceaf26dd9b84215442b1f4a0f` | `d9db8ead63a9697c4c6c3933e720cd93565f67bd4b264e8bbc0d98d03c236dae` |
+
+A third site, `004bc1f7..004bc20c`, changes at the same retained release boundary. Original tests EBX and, if zero, calls `00431c40` with EAX=0 at `004bc1fd` and `00431c30` with EAX=1 at `004bc207`. Modern jumps straight to `004bc20c` (`EB 13`, then 19 NOPs). The complete 21-byte site matches the original in the retained 1.1.0–1.4.0 builds and matches final Modern in every retained build from 1.5.0 onward. The same archive hashes and disassembly procedure apply, using this site's address range.
