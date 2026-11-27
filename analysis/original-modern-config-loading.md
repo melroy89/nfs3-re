@@ -560,3 +560,21 @@ The complete 44-byte startup block and 77-byte helper match the
 hosted original in all four releases from 1.2.0 through 1.4.0.
 The low score therefore requests a deferred graphics reset on this
 path. Alternate startup outcomes and actual file upgrades remain open.
+
+### The old reset cell becomes the windowed-mode setting
+
+The 1.5.0 post-copy tail replaces the `2710h` test and deferred
+flag store with the size/version gates and immediate grouped
+defaults described above. A decoded direct-operand scan of 1.5.0
+and 1.5.1 finds one remaining reference to `0067900c`, the
+config-loader store at `00472a63`. Neither contains the literal
+`WindowedMode` key.
+
+In 1.5.2, the key at `0053edd8` is passed to the integer-profile
+reader at `004b56ea` with default zero. The result is stored to
+`0067900c` at `004b56ef` and read by display setup at `004b5bd1`.
+The old config-loader store still exists in that release. This
+dates the selected reuse to 1.5.2 and distinguishes it from the
+1.5.0 removal of the deferred reset consumer. Execution ordering
+outside the inspected paths and actual windowed presentation
+remain outside this check.
