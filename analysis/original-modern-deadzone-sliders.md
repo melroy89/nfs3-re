@@ -134,3 +134,14 @@ disassembling the checks and two recursive calls. The cache
 refresh loop's reduction to 15 slots leaves these query
 admission instructions intact. Query results and the number
 of devices supplied by DirectInput remain untested.
+
+The complete 600-byte query routine through the RET at `004358e7`
+also matches the hosted original and all twelve retained releases.
+The SHA-256 of PE RVA `0x35690` for `0x258` bytes is
+`b62fda8b6ea09eade6d5b0b570ebe4c911494552c38add673250f8199901bde7`.
+The eight DWORD offsets copied from `00434ef4` also match
+(0, 4, 8, 12, 16, 20, 24, 28). On the ordinary success path,
+the return calculation at `004358cd` gives
+`005f1ff8 + 136 * index`. This covers the query body and its
+copied axis offsets. Device initialization and driver responses
+remain external to this comparison.
