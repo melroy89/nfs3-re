@@ -86,7 +86,7 @@ All three strip submitters call the shared projector at `00479370`. Its full `00
 
 ### Original and Modern release history
 
-The hosted original and all twelve retained Modern executables form two exact byte groups for each of the following complete ranges. The installed retail backup has separate provenance and is outside this archive census.
+The hosted original and all twelve retained Modern executables form two exact byte groups for each of the following complete ranges. The installed `nfs3_org.exe` (SHA-256 `b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b`) independently matches the hosted original in both ranges below and the dispatcher at `0047a190..0047a1e8`. This establishes agreement for those three routines. The installed backup has separate provenance.
 
 | Range | Hosted original | Modern 1.0.0–1.4.0 | Modern 1.5.0–1.6.1 |
 |---|---|---|---|
