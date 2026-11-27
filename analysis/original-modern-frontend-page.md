@@ -487,3 +487,15 @@ Comparing the complete 48-byte About resource loader across the retained builds,
 | 1.4.0–1.6.1 | `009f3d48` | `004a3a2e` in 1.4.0 |
 
 Each representative store takes EAX directly from `GetModuleHandleA(NULL)`. These witnesses link the relocated cells to the executable's own module. They leave later writes, failure behavior in the OS and in-game rendering untested.
+
+### Dispatch-table history
+
+At `00441d01`, the original compares EDX with unsigned maximum 4, then indexes the DWORD table at `00441c90`. Every retained Modern release changes the maximum to 5 and retains the first five targets. The sixth slot at `00441ca4` tracks the type-5 arm across both relocations:
+
+| Retained releases | Type-5 target |
+|---|---|
+| 1.1.0–1.2.0 | `0041d7c8` |
+| 1.3.0–1.5.2 | `0040fed0` |
+| 1.5.3–1.6.1 | `00437820` |
+
+This check connects the resource loader and renderer bodies above to the actual indexed branch. In the original, the bytes at the sixth slot are alignment outside the admitted index range. The 1.0.0 dispatch table remains unverified.
