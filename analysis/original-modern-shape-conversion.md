@@ -26,3 +26,20 @@ All differing bytes in this envelope are confined to two maximal runs: `004d37be
 For reconstruction, preserve the selected version's descriptor source, fallback policy and signed comparisons. Do not silently restore the original fallback in a Modern-compatible implementation or assume calling `_THRASH_about@0` has no side effects. The maximum/minimum equality paths choose equal DWORD values, but instruction flags and transient register contents are not claimed equivalent.
 
 **Status: done for this bounded static difference; evidence confidence: verified.** Renderer descriptor lifetime, all caller contracts, pixel output and runtime safety remain unverified. This report does not prove full function equivalence: identical instructions can consume different descriptor data.
+
+## The converter changes in 1.6.1
+
+The complete 1,954-byte envelope at `004d37a0..004d3f42`
+matches the hosted original in all eleven retained Modern releases
+from 1.0.0 through 1.6.0. Both the cached descriptor read and the
+removal of the local null fallback first appear in official 1.6.1.
+Extract the root EXE from each archive and hash the file-backed
+span at PE RVA `d37a0h` for `7a2h` bytes.
+
+| Builds | Envelope SHA-256 |
+|---|---|
+| Hosted original and Modern 1.0.0–1.6.0 | `6f864840a51d4ce290bcb26ff4f9ce67a22679f84dc1598d142f408e2a32f1d2` |
+| Official 1.6.1 | `db79a0abc42f5f323f2fafc2e92d99cab5f9addaa4c80f76e0d6447ebca5a56f` |
+
+This dates the converter's local changes. Renderer data and rendered
+output can still differ between builds with identical code.
