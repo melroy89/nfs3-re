@@ -440,3 +440,9 @@ The [force feedback initializer](original-modern-force-menu-layout.md#six-per-wi
 also reads six rows from the original second span on its direct
 layout path. Modern skips those local writes, so the shared table
 deltas alone cannot predict positions for those controls.
+
+## Numeric About resource in 1.3.1
+
+In retained 1.3.1, page record 75 at `00555c08` contains DWORDs `5, 200, 0x64657263, 0`. The third DWORD holds the inline bytes `cred`. The type-5 path at `0040fed0` indexes the 16-byte record table through `00555c28`, loads resource identifier 200 from record+4 and passes it in EAX to `004f1ea0` at `0040fede`. That helper pushes resource type 10 and the incoming identifier before calling `FindResourceA` through `0053453c`. On the successful route the caller passes the resource pointer to the size reader `004f2710`.
+
+In 1.4.0, the same record has type 5 and replaces the inline fields with pointers `0053ee28` and `0053ee34`. The [resource history](original-modern-pe-resources.md#resource-history-across-retained-releases) records the corresponding replacement of numeric `10/200/0` by named `10/ABOUT.QFS/0`. This identifies the numeric resource's use on the 1.3.1 About route. Successful resource loading and decoded pixels remain unverified.
