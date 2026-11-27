@@ -326,3 +326,19 @@ writes the corresponding menu index to `006fbc14`. A miss selects
 menu index 0. These are separate fallbacks. They explain why a
 desktop-derived score can still yield the first menu slot even when
 the desktop dimensions are available to the game.
+
+### The packed default request begins in 1.5.0
+
+Version 1.4.0 still places the scalar fallback `0004b010h` and
+qualifying sentinel `7fffffffh` at `00472e2c` and `00472e4f`.
+In 1.5.0, the default producer instead selects packed `01e00280h`
+(640×480) or `7fff7fffh` and stores it at `006fbc18` via
+`00472dce`. The latter selection requires renderer mask bits 1 and 2
+clear and an adjusted tier of at least 4.
+
+The complete 25-byte choice and store at `00472dbb..00472dd4` match
+byte for byte in all six retained releases from 1.5.0 through 1.6.1.
+To reproduce, extract the root `nfs3.exe` from each archive and
+compare PE RVA `72dbb` for `19h` bytes. This dates the default writer
+independently of the menu's sentinel trigger and the reader's ranking
+rules, which are traced in the [mode-selection comparison](original-modern-mode-selection.md#150-changes-the-stored-request-format-and-sentinel-trigger).
