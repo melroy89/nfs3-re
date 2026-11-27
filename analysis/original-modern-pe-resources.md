@@ -74,3 +74,23 @@ The 603-byte manifest first appears in retained **1.4.0** and is byte-identical 
 | `1.4.0.0` | `a74a453c565f3b485ab30c359a7b61f8146bd8f145d230653d47c925e283d4ec` |
 | `1.6.0.0` | `5b225855803ab1a36494e46f4edd2e1003a72957183392ea1a6b5be3157c624a` |
 | `1.6.1.0` | `9dab66dde3ecb916b9ba533b478e5059ea0f190b2dd65948fa3edc65c307c45c` |
+
+## Version resource identifies the retained builds
+
+The fixed product version in resource `16/1/0` matches the archive's release label with an appended zero in every retained Modern executable. The product version string matches the three-component label. The file version is a separate date-and-build field.
+
+| Retained Modern release | File version string |
+|---|---|
+| 1.1.0 | `2015.05.23.0039` |
+| 1.2.0 | `2015.06.10.0063` |
+| 1.3.0 | `2015.06.22.0078` |
+| 1.3.1 | `2015.07.14.0085` |
+| 1.4.0 | `2016.02.16.0164` |
+| 1.5.0 | `2016.03.20.0227` |
+| 1.5.1 | `2016.03.25.0235` |
+| 1.5.2 | `2016.04.10.0241` |
+| 1.5.3 | `2016.05.03.0262` |
+| 1.6.0 | `2016.09.22.0286` |
+| 1.6.1 | `2016.10.28.0301` |
+
+The supplied original reports fixed file version `2.0.0.0` and fixed product version `1.0.0.1`, with strings `27, 2.0` and `3, 0`, respectively. Read the fixed pairs from `pefile.PE(...).VS_FIXEDFILEINFO` and the strings from `FileInfo` → `StringTable`. A manifest alone cannot distinguish Modern 1.4.0–1.5.3 because those builds share the manifest version. Use executable SHA-256 for exact identity.
