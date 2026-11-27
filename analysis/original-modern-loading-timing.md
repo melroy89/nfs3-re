@@ -132,6 +132,17 @@ Version1.4.0 refresh calls its clock only after the setup wrapper, writes now to
 
 Version1.5.0 first records a clock baseline at`007a27a0`, before loading-artwork/other preparation and the setup wrapper. Its later refresh computes elapsed=now−baseline, resets the same timing/progress state, computes the low32 product seconds×1000, subtracts elapsed modulo2^32, interprets the result signed and clamps to0..10000 milliseconds. Thus time spent in admitted network preparation is included in elapsed, **along with other work in that interval**. This is not a network-only duration measurement. Final retains the same refresh suffix after its relocated clock call; its baseline is earlier in its repacked sequence and must not be described as an identical historical timing window.
 
+The intervening releases retain the elapsed-time arithmetic. In every
+retained 1.5.x build, the refresh call at `004a3498` targets
+`004a3578`. The call and helper move to `004a347d` and `004a3558`
+in 1.6.0 and remain there in 1.6.1. Across all six retained builds
+from 1.5.0 through 1.6.1, the 70 bytes after the initial clock call
+match exactly. To reproduce, read 77 bytes from the corresponding
+helper entry in each PE and compare bytes 7–76, which cover the
+post-clock body through RET. This verifies continuity of the budget
+calculation while leaving baseline placement and clock source as
+separate comparisons.
+
 | Ordinary derived setting/elapsed |1.4.0 remaining budget |1.5.0/final formula |
 |---|---:|---:|
 |5 seconds;2,000 ms elapsed |5,000 ms |3,000 ms |
