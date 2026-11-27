@@ -178,3 +178,16 @@ The 1.4.0 policy already looks up both background tokens, at its earlier entry `
 Decoded references to the two string addresses were already present at `00460312` and `00460320` in 1.0.0–1.3.1. The new 1.4.0 sites extend their use into this policy. In 1.5.0 the policy references move to `00437627` and `00437648`. Reproduce by disassembling the instructions naming `0053a990` and `0053a998` and checking the Options caller. This establishes the lookup binding, while actual entry visibility still depends on menu state.
 
 The 231-byte policy at `004377c0` in 1.4.0 and `00437614` in 1.5.0 differs only in 14 bytes belonging to seven relative CALL operands. Resolving the displacements produces identical targets: five calls to the menu lookup at `00442a40`, one to `004cf090` and one to `004d1850`. The branch displacements, absolute operands and both return paths match. This dates the body used by 1.5.0 back to 1.4.0. The moved wrapper and callers remain separate changes, and the equal body does not imply that its inputs or the callees behave identically.
+
+### Direct call-site history of the Race Now policy
+
+Every retained build from 1.4.0 through 1.6.1 has eleven decoded direct calls to its policy entry. Six instruction addresses stay fixed throughout: `004374d7`, `0043d5de`, `00442ae3`, `004432eb`, `00447e09`, `0045e993`. A seventh call is at `0045d991` through 1.5.0, then moves to `0045d923` in 1.5.1 and remains there through 1.6.1. Four other call addresses change at the relocation:
+
+| 1.4.0 | 1.5.0–1.6.1 |
+|---|---|
+| `00437611` | `0043760a` |
+| `00437e3b` | `00437e44` |
+| `004484b3` | `00448451` |
+| `0044863e` | `0044863b` |
+
+Reproduce by filtering decoded CALL destinations for `004377c0` in 1.4.0 and `00437614` in 1.5.0–1.6.1. Addresses map the direct call sites. Their surrounding callback gates and indirect paths require separate traces.
