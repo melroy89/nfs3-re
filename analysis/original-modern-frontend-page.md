@@ -80,7 +80,22 @@ Helper `0044240c` scans the +4 sentinel field from index zero and returns the la
 
 The archived 1.0.0 `nfs3.exe` (SHA-256 `988fbf599af256d1486bef967959893c6b26c9fa8ed21b76310bbb7798b4d9df`) already extends record 74 to text IDs `046a..0475` and replaces record 75 with `{5, 200, "cred", 0}`. The dispatch limit at `00441d03` is already 5. Its sixth switch target is `0041d7c8`, where the code reads the selected record's +4 field, calls `004b55d8`, and then uses the unpack and shape-lookup helpers `004f2620` and `004ef1e0`. The PE resource tree contains type 10, numeric ID 200, language 0, with a 49,862-byte payload (SHA-256 `078e2b0f9a4a435f8f7518bbd248480865816e9e079bb410b02ad59f57285977`). Final 1.6.1 uses the named `ABOUT.QFS` resource and a different switch target as described above.
 
-This dates the type-5 credits-page change in MP100-047 to the first retained Modern release. The intermediate resource-ID transition, navigation, payload decoding and displayed content remain unverified.
+This dates the type-5 credits-page change in MP100-047 to the first retained Modern release. Navigation, payload decoding and displayed content remain unverified.
+
+### The resource reference becomes a name in 1.4.0
+
+All twelve retained releases keep type 5 and shape tag `cred` in record 75. At the 1.3.1 → 1.4.0 boundary, record +4 changes from numeric resource ID 200 to a pointer to `ABOUT.QFS`, and record +8 changes from the inline four-byte tag to a pointer to the same tag. The PE resource directory switches to the named entry at the same boundary. The dispatch target moves separately.
+
+| Releases | Sixth dispatch target | Resource key | Tag storage |
+|---|---|---|---|
+| 1.0.0–1.2.0 | `0041d7c8` | `200` | Inline |
+| 1.3.0–1.3.1 | `0040fed0` | `200` | Inline |
+| 1.4.0–1.5.2 | `0040fed0` | `ABOUT.QFS` | Pointer |
+| 1.5.3–1.6.1 | `00437820` | `ABOUT.QFS` | Pointer |
+
+Each release has a distinct embedded payload SHA-256. At the naming boundary, the stored payload changes from 49,893 bytes (SHA-256 `8aa8e7f7627eafa5539880c351e759d4a2814c3d40fc7f356208640bac042288`) to 50,747 bytes (SHA-256 `173129df320dd8004752b848ade5f268680fafbdfc8055ea7685b6d8c8025a16`). The payloads were compared as stored, so differences in decoded artwork remain unresolved.
+
+To reproduce, extract `nfs3.exe` from each retained archive with `7z x -so`. Read four little-endian DWORDs at VA `00555c08` and the sixth dispatch entry at `00441ca4`. Subtract the image base for RVA reads, including when resolving the name and tag pointers. Hash each referenced resource's data under PE type 10, language 0.
 
 ## Installed text range: blank separator and row positions
 
