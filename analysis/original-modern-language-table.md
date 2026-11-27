@@ -396,6 +396,21 @@ None of the six `fedata/text/text.*` language members appears in the retained 1.
 
 The comparison verifies all 42 packaged tables. The first little-endian DWORD gives the byte length of the offset array. In each file, offsets increase strictly and each string's first NUL ends exactly at the next offset or at EOF. Reproduce with `7z l -slt`, then hash each decoded member and validate its offset array. These counts describe packaged entries. They leave the meaning of individual changes and runtime compatibility open.
 
+### Existing localization slots also change
+
+Comparing the decoded string bytes at each shared zero-based index separates changes to existing slots from growth at the end of the table. The offset array itself is excluded from this comparison.
+
+| Transition | English | German | French | Spanish | Italian | Swedish | Extra slots per language | Shared indices changed in all six |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| 1.4.0 → 1.5.0 | 7 | 4 | 3 | 4 | 4 | 4 | 3 | 157, 1283, 1504 |
+| 1.5.0 → 1.5.1 | 1 | 1 | 2 | 1 | 1 | 1 | 5 | 1932 |
+| 1.5.1 → 1.5.2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | None |
+| 1.5.2 → 1.5.3 | 3 | 3 | 2 | 3 | 3 | 5 | 6 | 1283, 1504 |
+| 1.5.3 → 1.6.0 | 6 | 6 | 6 | 7 | 7 | 6 | 8 | 1929–1933, 1936 |
+| 1.6.0 → 1.6.1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | None |
+
+The first six numeric columns count changed shared indices, excluding the extra slots. To reproduce, split each validated table at its offsets, strip the terminating NUL from each slice, and compare the two lists index by index through their common length. Extra slots are the difference in list length. This comparison tracks byte changes at numeric IDs. It leaves string meaning, moves between IDs and the corresponding executable consumers to the relevant feature traces.
+
 ### Local Swedish text installation
 
 The original and final language loaders both map ordinal 5 to `text.swe`. Older installations could already have supplied this file separately from the patch archive.
