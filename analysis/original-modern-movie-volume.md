@@ -96,3 +96,23 @@ is `00a09b3c + 60h*index` on this path. Thus a movie parameter byte of
 80 reaches channel setup as `00500000h`; the original default 127
 produces `007f0000h`. This closes the config-to-channel transfer.
 Conversion from the channel field to the backend gain remains open.
+
+### Channel volume enters the voice submission
+
+At `00511446`, voice setup calls `005014a0` with the new channel index.
+The helper reads the integer part of channel dword `+20h`, multiplies it
+by the signed byte at `+30h`, the integer part of dword `+28h` and the
+signed global byte at `00a09af5`. It divides the signed product by
+`1f417fh` (127 cubed) and stores the low result byte at channel
+`+31h`. The multiplication uses x86 low-dword results and the division
+truncates toward zero.
+
+The optional table branches can replace that byte when channel
+`+58h` or `+4ch` is nonzero. The inspected setup clears both before
+the call. At `00511453..00511477` the caller then reads signed byte
+`+38h`, multiplies it by global dword `00a0a260` and signed byte
+`+39h`, divides by `3f01h` (127 squared) and pushes the result as
+a separate input to `00523d94`. In particular, that later push alone
+is not a read of `+31h`. The calculated movie-dependent byte is
+verified in channel state. Which backend code reads it, and the
+resulting audible gain, remain unverified.
