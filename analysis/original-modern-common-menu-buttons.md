@@ -463,3 +463,17 @@ Graphics link to Advanced Graphics is also present at line 274.
 This establishes the baseline against the hosted original package
 for these two menus. Retail disc provenance and other backup
 members remain outside this check.
+
+A case-sensitive inventory extends this provenance check to the
+whole hosted menu set. All 80 `fedata/MENUS/*.MNU` archive members
+match their exact uppercase filenames under the local
+`fedata_org/menus` directory byte for byte. The local directory
+has three additional uppercase menus without hosted counterparts
+(`MATTMNU.MNU`, `RACETYPE.MNU`, `SUB.MNU`) and 52 lowercase
+`.mnu` files, which were excluded from this comparison. Case
+matters here because uppercase and lowercase files can coexist
+with different contents. To reproduce, list exact member paths
+with `7z l -slt`, extract each uppercase member with `7z x -so`
+and compare to the exact local basename. This ties the 80 matching
+files to the hosted artifact. Retail disc provenance and the
+selection of active files at runtime remain open.
