@@ -116,3 +116,18 @@ match the hosted original and the three Modern builds compared
 above. A nonpositive value therefore matters to the audio start
 path, but this check establishes no process-wide startup failure
 or actual audio device outcome.
+
+### Where the DLL sets the capability bit used by the game
+
+On the fresh-query path, `_iSNDdirectcaps@4` initializes its
+result DWORD to zero at DLL RVA `0x1431`. After three register
+pushes, that DWORD is at `[ESP+0x94]`. The branch following the
+successful capability method call at RVA `0x1477` tests the
+DWORD at `[ESP+0x38]` at RVA `0x15ab`. If it is nonzero,
+the instruction at RVA `0x15b2` sets bit 1 of the result's third
+byte at `[ESP+0x96]`. This is bit `0x20000` of the result
+DWORD, the same mask used by the
+[game's saved-mode predicate](original-modern-config-loading.md#sound-mode-identity-d3deax-falls-back-to-stereo).
+The relevant DLL code is shared by the hosted original and
+final Modern Patch. The provider field's meaning and its live
+values remain unverified.
