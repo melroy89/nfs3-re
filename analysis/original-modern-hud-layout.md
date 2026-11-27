@@ -269,7 +269,15 @@ The renderer computes the corresponding metric through the second coefficient, s
 
 For equal ordinary positive input metrics, the **unrounded coefficient ratio is12.414/20 =0.6207**. This is not a guaranteed37.93% reduction in integer row spacing or displayed panel height: truncation, font bank/scale, actual entries, width-derived padding, clipping and x87 state remain dependencies. Integer count multiplication wraps at32 bits; translating it as overflowing signed C arithmetic would not preserve the machine contract.
 
-**MP100-007 advances to partial support:** there is a concrete mechanism for more compact police-list spacing in both row advance and panel layout. The advertised resemblance to the standard opponents list, actual speed fields/images, complete visual layout, every caller and1.0.0 introduction remain unverified. The default-selection change in the preceding section is separate from these spacing coefficients. No game, renderer, font load, instruction probe or Ghidra write occurred.
+**MP100-007 advances to partial support:** there is a concrete mechanism for more compact police-list spacing in both row advance and panel layout. The advertised resemblance to the standard opponents list, actual speed fields/images, complete visual layout, and every caller remain unverified. The default-selection change in the preceding section is separate from these spacing coefficients. No game, renderer, font load, instruction probe or Ghidra write occurred.
+
+The hosted original stores 20.0 at both coefficient sites.
+All 12 retained Modern EXEs, starting with 1.0.0, store 12.414
+at both. The six-byte x87 multiply instructions that reference
+them are identical across the 13 EXEs. For reproduction, read
+binary64 values at PE RVAs `13b598h` and `13b8cch`, and compare
+instruction bytes at RVAs `81cbeh` and `8a70eh`. This dates
+the spacing coefficient change to 1.0.0.
 
 ## SoftTri list-bevel claim: checked renderer gates are retained
 
