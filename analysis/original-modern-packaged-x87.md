@@ -165,3 +165,16 @@ The complete local upload bodies, including their formerly unchecked tails, matc
 The DX7 upload body itself is retained, but its reachable flush helper changes. Both versions can call `60006f10` at `6000cfb3`. That stub returns for a nonpositive pending count and otherwise jumps to `60006f20`. With both pending fields nonzero, 1.6.1 now calls coordinate adjustment helper `6000d580` at `60006f5e` before the device submission at `60006f77`. In 1.6.0, the corresponding path submits directly at `60006f79` without that helper. This links a retained texture-update entry to the [DX7 texel-alignment change](original-modern-renderer-texel-alignment.md). The new helper subtracts the configured offset from binary32 X and Y through x87 and stores binary32 results. It does not select a different control word. Effective precision and whether an update flushes pending geometry remain runtime questions.
 
 DX6 has a corresponding conditional route from texture update to the 1.6.1 coordinate adjustment. In the upload helper, a nonzero `6001434c` at `60007872` admits the flush call at `6000787b`. The flush stub `600056c0` returns when its signed pending count is nonpositive. Otherwise it reaches `60005712`, where 1.6.1 replaces the 1.6.0 `PUSH 1c4h` with a call to `6000e514`. The [texel-alignment comparison](original-modern-renderer-texel-alignment.md) verifies that the helper subtracts 0.5 from X and Y and reproduces the replaced push before the same device call at `6000571a`. This links both DX6 and DX7 texture updates to their respective pending-geometry adjustments. The upload wrapper alone does not reveal either downstream change. Actual flush frequency and rendering output remain unverified.
+
+## Renderer comparison at a glance
+
+The selected DX5 cooperative-level call blocks, flag writes and initial flag DWORD match the installed original D3D DLL across all eleven retained Modern packages, extending the 1.6.1 comparison above.
+
+| Renderer | Checked FPU-related setup request | Full-texture update evidence |
+|---|---|---|
+| Original D3D and Modern DX5 | DirectDraw FPU bits stay clear from the initial state under the inspected writes | Original export and both inspected helpers match every retained DX5 member |
+| Modern DX6 | Mode changes set `DDSCL_FPUSETUP` from the earliest retained DX6 package, 1.2.0 | 1.6.1 can reach the new x87 half-pixel adjustment when an update flushes pending geometry |
+| Modern DX7 | Inspected flag writes preserve the two FPU bits, which start clear | 1.6.1 can reach its own x87 half-pixel adjustment during a texture-update flush |
+| Modern DX8 | Checked CreateDevice call leaves `D3DCREATE_FPU_PRESERVE` clear in all retained releases | A fallback temporarily changes rounding direction while retaining the incoming precision bits |
+
+These findings separate the game's control-word policy, the renderer's own arithmetic, and the flags passed to the graphics runtime. The effective control word at simulation entry or a particular rendering call still requires runtime evidence for the selected build and driver.
