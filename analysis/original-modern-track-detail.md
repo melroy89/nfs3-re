@@ -88,3 +88,21 @@ Tuple fields are record+24h/+28h/+38h/+3ch before each WORD is shifted left16. T
 The conversion-loop setup is also rearranged: both historical routines skip zero count and otherwise use x86 LOOP with the same field map/scale; neither gains a negative-count guard. General-register preservation uses PUSHAD/POPAD in both. No full machine-state equivalence is claimed from these similarities.
 
 MP152-001 now has **partial historical support**: an actual1.5.1→1.5.2 mechanism changes Medium mirror-related preset values while retaining the inspected consumer bodies and table. Whether it is visually better, its performance effect, complete release-wide attribution and behaviour outside the stated domain remain unverified. The absence of a local upper-bound check on selector/auxiliary values still matters to reconstruction.
+
+### The mirror track-model selection changes in 1.5.0
+
+The retained EXEs through 1.4.0 match the hosted original
+in the classifier and the first 1,078 bytes of the track-chain
+builder. All six retained releases from 1.5.0 through 1.6.1
+match the final classifier and builder in the same windows.
+Compare 55 bytes at PE RVA `1aa60h` and 1,078 bytes at
+`1cdc0h` from each archived EXE. The shorter classifier window
+covers the complete Modern function and the original context
+check. The builder window covers the complete Modern body
+and the original forced-zero selection at `0041cea2`.
+
+This dates the change behind MP150-003. The mirror can retain
+a classified model selection on High starting in 1.5.0.
+The subsequent 1.5.2 change to the distance presets affects
+the inputs to this policy. Model quality and actual mirror
+output remain unverified.
