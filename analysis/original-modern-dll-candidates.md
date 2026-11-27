@@ -381,3 +381,10 @@ The fallback copies this table to `600127c0`. On the inspected retry,
 `600021bc`. Thus the reordered records carry matching lookup values into
 the open route. The actual dimensions the provider selects for token
 `0d` remain unverified.
+
+The [3dfx Glide 3 header](https://sources.debian.org/src/glide/2002.04.10ds1-12/glide3x/cvg/incsrc/sst1vid.h)
+defines token `0x0d` as `GR_RESOLUTION_1280x1024`. The 1.1.0 fallback
+therefore brings the adapter's declared dimensions into agreement with
+the Glide token it already passed. This establishes the API meaning.
+The shipped nGlide provider's internal mapping and successful live
+mode creation remain unverified.
