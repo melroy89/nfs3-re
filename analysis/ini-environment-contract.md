@@ -25,3 +25,9 @@ No executable or environment settings were changed.
 The retained 1.1.0 reader at `004fb6f0..004fb702` passes the caller's EDX fallback directly to GetPrivateProfileIntA. The 1.2.0 reader adds a call to `004fb734` before that API. When the lookup returns nonzero, the reader calls the integer parser at `004f0430` and uses its EAX result as the fallback passed to GetPrivateProfileIntA. This dates the environment fallback path to 1.1.0 → 1.2.0 for the inspected integer reader. The environment value feeds the API's default argument, with the INI lookup still performed.
 
 All retained 1.2.0–1.6.1 members keep this instruction sequence apart from the import operand. The PE thunk names GetPrivateProfileIntA at slot `00534674` through 1.4.0, `0053466c` in 1.5.0–1.5.2, and `00534670` in 1.5.3–1.6.1. These are static call contracts. Actual parsed values and operating-system INI behavior were not exercised.
+
+## String reader history
+
+Version 1.1.0 passes the caller's EDX string fallback directly to GetPrivateProfileStringA from entry `004fb704`. Version 1.2.0 moves the entry to `004fb714`, calls the environment lookup at `004fb734`, and substitutes the returned pointer for the EDX fallback when nonnull. The Windows INI call still runs with the same file, section, key and output arguments.
+
+All retained 1.2.0–1.6.1 archive members retain this setup sequence. The import operand names GetPrivateProfileStringA at `00534678` through 1.4.0, `00534670` in 1.5.0–1.5.2, and `00534674` in 1.5.3–1.6.1. Thus both string and integer environment fallbacks appear at the same checked release boundary. Actual INI lookup and environment pointer lifetime remain outside the static comparison.
