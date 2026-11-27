@@ -265,3 +265,22 @@ the callback span beginning at `600017c7`.
 This identifies a code-level change behind the paired filenames. The
 renderer API's enumeration order, the resulting in-game list, and any other
 differences within the 283-byte section comparison remain separate questions.
+
+#### DX5 callback history
+
+Extract the exact DX5 member from each retained archive and compare the
+complete callback from PE RVA `17bc` up to the exclusive end below. The
+callback survives in three byte-identical groups across the 11 archives.
+
+| Releases | Member | End RVA | SHA-256 prefix | Callback policy |
+|---|---|---|---|---|
+| 1.1.0 | `dx5.dll` | `1897` | `93cf8f359657f8c8` | Signed height floor of 480. Width/height matching replaces an entry only if its stored depth is no greater than the incoming depth. New-slot count guard at 30. |
+| 1.2.0–1.3.1 | `drivers/dx5/dx5.dll` | `1895` | `2c67f48570cd464d` | Unsigned 640×480 floors. Retains width/height matching, now with an unsigned depth comparison, and the 30-count guard. Calculates the memory-derived fields after the depth overrides and writes 3 to both when the quotient exceeds 3. |
+| 1.4.0–1.6.1 | `drivers/dx5/dx5a.dll` | `187d` | `ab47edabb85608fb` | Retains the size floors and memory-derived fields. Matching requires width, height and depth. The new-slot count guard rises to 100 and the 640×480-specific depth override disappears. |
+
+The callback's 1.5.1 neighboring code changes occur after its return.
+The complete final callback and the separate caller-side seed record are
+covered in the [DX5 reference comparison](original-modern-dx5-reference-pair.md#mode-callback-and-selected-initialization-paths).
+The count operands describe local insertion guards. The game-facing mode
+catalog also depends on the caller and on the display modes supplied by the
+renderer API.
