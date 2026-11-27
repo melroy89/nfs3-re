@@ -415,7 +415,7 @@ For well-formed lowercase inputs, derived requests include`dx5`→`.\dx5.dll` wi
 
 Early basename first-byte classification writes d→6, v→4, s→1, other→0 at`007a3a54`. **That address is not a stable cross-version semantic field:** final uses`007a3a54` for FogSupport and type mask`007a3a58`, while its numeric suffix goes to`007a3a70`, not early`0055fdbc`. A port must map contracts by version/producer/consumer, not reuse a final Ghidra label at an early address.
 
-**MP110-001/002 advance to partial historical support:** the early retained EXE has a filename-based loader request and an integrated`@device` parser. The missing1.0.0 predecessor prevents independently verifying replacement of all advertised predefined aliases or removal of a separate VideoDeviceId option. **MP140-045 advances to bounded static support** for the adjacent live key rename only. DLL availability/export checks, actual selected hardware, full parser domains, user configurations and rendered results remain unverified. No DLL, parser, game, API, instruction probe or saved Ghidra database was executed or changed.
+**MP110-001/002 advance to partial historical support:** the early retained EXE has a filename-based loader request and an integrated`@device` parser. The [recovered 1.0.0 comparison below](#version-100-reads-a-separate-device-key) now establishes the predecessor’s table match and separate device read. **MP140-045 advances to bounded static support** for the adjacent live key rename only. DLL availability/export checks, actual selected hardware, full parser domains, user configurations and rendered results remain unverified. No DLL, parser, game, API, instruction probe or saved Ghidra database was executed or changed.
 
 ## DX7 fog opt-in changes in152 while its driver bytes remain identical
 
@@ -699,3 +699,23 @@ The missing-export diagnostic becomes generic at the 1.3.1 → 1.4.0 boundary. I
 The fatal helper changes its input contract at that boundary. In 1.3.1, `004b5e98` takes the caption in EAX and body in EBX. In 1.4.0, `004b5720` takes the body in EAX and supplies the caption pointer `0053ce2c` internally. Both pass owner zero and flags `0x51010` to MessageBoxA through `00534764`, then call `004f2a7d` without testing the dialog result. The 1.4.0 change therefore simplifies the caller contract while retaining the local dialog-to-termination sequence.
 
 A decoded direct-call sweep finds eight callers of the shared fatal helper in 1.4.0, eight in 1.6.0, and twelve in installed 1.6.1. The final renderer messages distinguish driver configuration or file lookup failure (`004b5a67`), DLL load or validation failure (`004b5a8d`), and video initialization failure (`004b5ab1`). Other direct callers cover duplicate instance detection, root path length, required files, desktop depth, minimum memory, window-class registration and a missing DirectDraw import. The required-files text is supplied from three distinct call sites in 1.6.1. In 1.4.0, the shared helper also has a direct caller for the DirectX 5 requirement at `004b57ee`; the inspected 1.6.0 and 1.6.1 helpers have no equivalent direct caller. These counts describe decoded sites, with reachability and diagnostics through other helpers outside the sweep.
+
+### Version 1.0.0 reads a separate device key
+
+The [recovered archive and EXE hashes](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames)
+pin the earlier baseline. Its `VideoDriver` reader at
+`004b62c4..004b62ef` calls the string-profile wrapper with a 64-byte
+buffer. The selector loop at `004b5749..004b5784` compares that buffer
+against entries obtained from the original 11-slot filename table
+`0055fd68`. It uses the configured string length for the comparison
+and publishes the selected index. The original-style command-line
+overrides follow this lookup.
+
+Independently, setup at `004b6323..004b6339` passes section `NFS3`,
+key `VideoDeviceId` and default zero to the integer-profile wrapper
+at `004fb6f0` and publishes EAX to `0055fdbc`. The device setup at
+`004b5ce4..004b5cf1` passes that dword through renderer export slot
+`009ef944`. In 1.1.0 the inspected producer is instead the
+`VideoDriver` parser's `@digit` branch, which writes to the same
+device cell. This dates the separate-key to suffix transition.
+Full parser edge cases and hardware device selection remain untested.
