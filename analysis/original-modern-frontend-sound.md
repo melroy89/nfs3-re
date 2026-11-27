@@ -94,7 +94,7 @@ This verifies that the stricter gate belongs to the menu sound slider
 by 1.5.0 and survives the later callback move. Input delivery and
 audible feedback remain untested.
 
-Update callback `00437740` obtains the slider value through `0046c9b0`, multiplies by exact double **127**, and FISTP-stores to `006fd1d0`. The conversion therefore depends on current x87 rounding; it is not a proven truncating integer cast. The helper's allowed slider range and all setting-load validation remain separate.
+Update callback `00437740` obtains the slider value through `0046c9b0`, multiplies by exact binary64 **127**, and FISTP-stores to `006fd1d0`. In 1.5.0–1.5.2, the call at `0043774e` first invokes `004dfd56`. That helper saves the x87 control word, sets its high byte to `1fh` (round toward zero), executes FRNDINT and restores the saved word on ordinary return. In 1.5.3–1.6.1, the callback omits that call and converts the product directly with FISTP, so the active x87 rounding mode now governs the integer conversion. For an input of exactly 0.5, this implies stored 63 in the earlier routine and 64 in the later routine with nearest-even rounding. The example is a static derivation. It does not establish the active control word or exact input reached by a live slider gesture.
 
 The 1.5.0–1.5.2 defaults entry at `00472230` clears EAX, loads
 AL=`0x53`, then stores the full DWORD to `006fd1d0`. From 1.5.3 onward,
