@@ -280,3 +280,24 @@ In the paired 1.5.0 renderer, type 1 uses the unipolar `v * 100`
 branch, while type 2 retains the signed mapping for tuning controls.
 This dates the coordinated asset and executable changes behind
 MP150-021. Actual rendering and exact numeric output remain untested.
+
+## Dead-zone percentage path at the 1.5.3 boundary
+
+The `deadzone.mnu` and `psdeadz.mnu` members are byte-identical
+between 1.5.2 and 1.5.3. Each declares eight sliders with
+`slidertype=2` and `percenttype=0`. The type-2 widget renderer
+at `0046b3a0..0046c2e6` and its step quantizer at
+`004693c0..00469479` are likewise byte-identical across the pair.
+The renderer still calls `004dfd56` before FISTP. That callee
+changes from the inherited exception masks and forced high byte
+`1f` in 1.5.2 to the literal control word `0c3f` in 1.5.3.
+Both request truncation. This separates a changed shared x87
+helper on the dead-zone display path from the direct FISTP
+conversion added to the single-slider display path in 1.5.3.
+
+Reproduce by extracting the two menu members and checking their
+slider sections, comparing the two PE ranges above (exclusive
+endpoints), and disassembling `004dfd56..004dfd73`. The
+catalog's claim that dead-zone values are rounded correctly
+still requires observed outputs or a demonstrated numerical
+difference under relevant input and x87 state.
