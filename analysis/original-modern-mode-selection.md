@@ -286,6 +286,18 @@ despite relocation. The first and last call targets move, and the
 comparison does not establish their transitive equivalence or the
 validity of the fallback row.
 
+The final helper publishes the chosen row's width, height and depth
+(`+0x04/+0x08/+0x0c`) to `006fd1e4/006fd1e8/006fd1ec` with DF clear.
+Its complete 37-byte body differs only in the relative displacement
+of the call at `+0x1e`, which always targets `00485680`. The helper
+runs that call if width or height changed. A depth-only change still
+writes the new depth and skips the call. The publisher is at
+`004483f7` in 1.5.0, `00448404` in 1.5.1–1.6.0 and
+`00448400` in 1.6.1. Follow the replay wrapper's call at `+0x62`
+to reproduce the comparison. A fallback uses these same writes with
+row zero's contents. Actual row population and downstream rendering
+remain outside this check.
+
 The graphics-menu commit path sets bit 0 at `00448500` before
 examining the selected and final rows. If those pointers match,
 it saves the packed sentinel and leaves the bit set. Otherwise it
