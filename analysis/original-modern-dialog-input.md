@@ -20,6 +20,10 @@ Paired prefix **`00445e60..00445e9a`** and complete tail **`00445ec7..00445efa`*
 
 Handler result3’s action identity, full per-dialog navigation behavior, callback preservation and audible consistency remain unresolved. The finding gives partial support for the mini-dialog keyboard-sound claim, but is not complete validation of every dialog or every navigation action. No keyboard layout, held-key timing or UI state was tested.
 
+### Release boundary for Tab and Escape feedback
+
+The 45-byte dispatcher span `00445e9a..00445ec7` matches the hosted original through retained 1.3.1. The original passes Tab through to the selected handler as value 9. In 1.4.0 the same span gains Tab normalization, direct handler-table dispatch and the result-3 sound call together. From 1.4.0 through 1.6.1, the only differences in this span are relative call displacements at `00445ea4` (Shift test) and `00445ebf` (sound request). Mask those four-byte operands when comparing the seven archived builds. See the [modifier relocation table](original-modern-menu-input.md#tab-and-chat-bypass-routing-appears-at131-to140) for the Shift targets. This dates the dispatcher changes. It leaves individual handler history and audible feedback separate.
+
 ## First handler: Escape versus navigation feedback
 
 The expanded audit retains complete paired first handler **`00444910..004449c6`**. Exactly four byte positions differ, all within the two relative CALL operands at **`0044496b`** and **`0044498d`**. Original calls dialog cursor-position helper **`00444570`**; Modern calls wrapper **`0043eb88`**. Existing [cursor-position analysis](original-modern-cursor-position.md) verifies that wrapper requests sound0 only when cursor positioning reports a valid item. No other local instruction changes occur in this handler.
