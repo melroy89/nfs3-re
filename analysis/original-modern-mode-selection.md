@@ -273,6 +273,19 @@ The resulting depth is passed alongside the saved width
 and height to `004bedcc`. It is a request used in ranking,
 and the available eligible rows still determine the result.
 
+The complete 105-byte replay wrapper also matches across the six
+retained releases after masking the four displacement bytes of each
+CALL at entry offsets `+0x01`, `+0x30` and `+0x62`.
+Follow the call at `00472dde` to locate its entry in each EXE.
+The middle call always targets the ranking routine `004bedcc`.
+The wrapper then scans 276-byte menu rows for the returned renderer
+mode index, publishes the matching row index at `00a1825c`, and
+passes that row to a final helper. A miss publishes index zero and
+passes the base row address. This confirms stable wrapper logic
+despite relocation. The first and last call targets move, and the
+comparison does not establish their transitive equivalence or the
+validity of the fallback row.
+
 The graphics-menu commit path sets bit 0 at `00448500` before
 examining the selected and final rows. If those pointers match,
 it saves the packed sentinel and leaves the bit set. Otherwise it
