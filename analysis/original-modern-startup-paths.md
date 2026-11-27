@@ -196,3 +196,23 @@ The walker only checks existence and attributes. Save and
 Stats are required at this stage, before the later
 check-and-create policy. File contents, permissions and
 execution on a real installation remain unverified.
+
+### Version 1.4.0 separates required and creatable directories
+
+The 1.4.0 walker at `004a393c` first checks the thirteen
+required pointers at `004a38f0` using `004f916c`. Compared
+with 1.3.1, this list drops only Save and Stats. The walker
+then processes a second list at `004a3928` using `004f9214`.
+The four pointers resolve to slots 15–18 in order:
+`fedata\save`, `fedata\stats`, `fedata\config`, and
+`fedata\stats\carspecs`. Save and Stats therefore move from
+required to creatable. Config and Carspecs join the creation
+stage. The ordering lets the Stats parent be prepared before
+Carspecs.
+
+The 142-byte window at PE RVA `a38f0h`, covering both lists
+and the walker, matches in all six retained EXEs from
+1.4.0 through 1.6.0. The same two-stage policy appears in
+the relocated final walker documented above. This dates
+the table split behind MP140-065. Actual directory creation,
+permissions and error handling remain untested.
