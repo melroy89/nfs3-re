@@ -196,8 +196,8 @@ In 1.6.1, the settings loader supplies section `NFS3`, key
 `LoadingSplashTime` and default 5 to `004fb6f0`. The scenario where the
 INI key is absent has one additional input. The wrapper calls
 `004fb734`, which joins the section and key with an underscore and
-passes `NFS3_LoadingSplashTime` to the
-[environment lookup](original-modern-renderer-loading.md#6-original-environment-override-and-selection-wrapper).
+passes the uppercase name `NFS3_LOADINGSPLASHTIME` to the
+[environment lookup](ini-environment-contract.md#environment-key-construction-by-release).
 If a value pointer is returned, the wrapper parses it at `004f0430`
 and uses the result in place of 5 as the default argument to
 `GetPrivateProfileIntA`. The API call at `004fb70a` still receives the
@@ -221,9 +221,13 @@ same wrapper entry and store its return at `007a27b0`.
 
 To reproduce, disassemble 20 bytes from the listed address in each
 retained executable, resolve the key pointer, then check the branch and
-import slot in `004fb6f0..004fb713`. The older lookup-name builder also
-passes its assembled name through `004f93dc` before lookup. The exact
-case-matching behaviour across builds remains outside this check.
+import slot in `004fb6f0..004fb713`. The older builder uppercases the assembled name through
+`004f93dc` before lookup. In 1.4.0 that routine calls `004eede0`,
+which subtracts `0x20` from ASCII bytes `a` through `z` and leaves
+other bytes alone. The executable therefore constructs the same
+uppercase lookup name in 1.4.0 and 1.6.1. This establishes the spelling
+passed to the comparator. Runtime locale and environment behaviour
+remain outside this check.
 Modern 1.3.1 already has the shared wrapper, but the inspected settings
 loader window `004b5500..004b5800` lacks this caller sequence.
 
