@@ -51,6 +51,14 @@ For nonempty input, Modern sets ECX=99, preinitializes the last byte of its 100-
 
 Sender `0042d810..0042d855` is **70 identical bytes** in both executables. It has no corresponding empty-string guard: it builds its message and invokes `004a60e0`. Therefore the release note's protection is verified for this input caller, not as a universal contract of every possible sender invocation or provider path. Successful transmission/delivery and all other routes remain untested.
 
+The 1.3.1 and 1.4.0 executables date the local Enter guard.
+At `00441b8e`, 1.3.1 begins building the sender string, while
+1.4.0 loads `005f3fdc` and checks its first byte before formatting.
+The first 1.4.0 copy also sets ECX to 99. The same release starts
+padding the 42-byte old tail at `00441bef..00441c19`, which
+remains padding in all later retained releases. Message delivery
+and other paths to the sender were not tested.
+
 ## Catalog mapping and next work
 
 - **MP140-007:** static empty-string rejection at the UI send caller is verified; whitespace filtering and universal send rejection are not claimed.
