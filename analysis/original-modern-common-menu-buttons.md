@@ -640,3 +640,17 @@ miss a path through an original file still on disk. In particular,
 result leaves the installed car-selection route open. The installed
 graph checked above accounts for retained files in the current Wine
 prefix, with runtime dispatch still unresolved.
+
+A case-insensitive replacement overlay resolves the archive-only
+gap for 1.0.0. Start with the 80 hosted original menus, replace
+each basename supplied by a patch and keep the other original
+members. Running the same reverse traversal on each resulting
+set gives 42 basenames with a path to or including `cedmain`
+in every retained 1.0.0–1.4.0 build. All four inspected entry
+menus have a path, including `car1` and `car2` via the original
+`cedbasic.mnu` in 1.0.0. From 1.5.0 through 1.6.1 the traversal
+gives 16 basenames including `cedmain`, with none of the four
+entry menus. The Wine prefix inspected above has two additional
+legacy sources, `MATTMNU.MNU` and `SUB.MNU`. The overlay models
+file replacement only. Installer cleanup and runtime navigation
+remain outside that model.
