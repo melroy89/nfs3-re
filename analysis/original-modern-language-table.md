@@ -277,24 +277,6 @@ Direct extraction of `nfs3.exe` from each retained Modern archive and disassembl
 
 The byte mapper itself matches in all eleven releases (span SHA-256 `12faceab764ccdbbbeeaffb3213def7775e07263b5d2a97f620a888f07514172`). Thus 1.6.1 is the first retained release to switch this selector to the EAX wrapper, with the same ASCII mapping throughout the retained Modern history. This comparison covers the normalization step after the configuration reader returns. Reader precedence and handling of overlong values are separate questions.
 
-### Version 1.0.0 already reads the two settings from INI
-
-The [recovered 1.0.0 archive](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames)
-establishes the earliest retained Modern baseline. Its EXE passes
-`NFS3/Language` to the string-profile wrapper at `004a6ecd`, with
-destination `007a2634` and capacity 8. The read is followed by
-`004f93b0` at `004a6ed2`. The RemoteOnly helper at
-`004b62a0..004b62c1` passes `NFS3/RemoteOnly` and default zero to
-the integer-profile wrapper at `004b62af`. It normalizes nonzero
-results to 1. The config-tail call and store to `006fbb54` match
-1.1.0 byte for byte.
-
-This dates the replacement of the original installer-record producers
-to the retained 1.0.0 release. Its only case-insensitive ASCII
-`install.win` occurrence is in the Rendition diagnostic. That
-string census leaves other file-access routes and successful startup
-without the file unverified.
-
 ### Both installer-setting replacements are present in 1.0.0
 
 The retained 1.0.0 archive ships `Language=English` and
@@ -314,3 +296,15 @@ its ordinal at `004a6f07`. These two paths establish the
 1.0.0 migration for the inspected settings. Complete file
 access coverage and startup without the installer file
 remain unverified.
+
+
+In both 1.0.0 and 1.1.0, the only case-insensitive ASCII
+`install.win` match is at file offset `13e7d1h`, inside
+the Rendition diagnostic at VA `0053fdb4`. The executable
+pushes that string at `004b5e11` and passes it to
+`USER32.MessageBoxA` through IAT slot `00534764` at
+`004b5e18`. The 1.0.0 renderer dispatch table at `004b5994`
+lists `004b5e0a` as the branch for indices 9 and 10.
+This identifies the retained literal's direct use as dialog
+text. The scan leaves computed filenames and runtime
+reachability open.
