@@ -68,3 +68,13 @@ selector 1, or from 12 to 13 on selector 0. This assumes the
 changed-value branch runs and round-to-nearest is active in
 1.5.3. The verified release difference is in the conversion
 before that wrapper. Device acceptance remains unmeasured.
+
+The downstream property routine also matches in the hosted original
+and all twelve retained Modern EXEs. Read 296 bytes from PE RVA
+`0x36b10` (VA `00436b10..00436c38`, end exclusive) to reproduce
+the SHA-256
+`0333b70c16ea6dece5e13ed5e5a9ec0f9efb70a6c2563e6c08d5529a0a4f2509`.
+The range covers the setter dispatch through the device vtable at
+`00436c0d` and both return sites. This verifies continuity of
+the game's DirectInput call code. The driver-supplied vtable and
+the results of the property call remain runtime dependencies.
