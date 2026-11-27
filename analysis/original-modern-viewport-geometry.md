@@ -293,3 +293,24 @@ setup,42-byte classification and bounded caller census. Caller registration,
 source-record lifetime, full shared-state effects and rendered results remain
 unverified. No viewport helper, renderer or instruction probe was executed;
 executable, database and maintained C bytes were preserved.
+
+### Historical mode-dimension input
+
+A linear `objdump -d -Mintel` scan finds one decoded direct call
+to `004be570` in the hosted original and each of the 12 retained
+Modern EXEs. All calls immediately follow an EAX load from
+`0055fec4`, so the viewport initializer still passes the same
+mode-index cell after the helper switches to the
+[cached descriptor](original-modern-renderer-lifecycle.md#eight-final-exe-sites-read-the-cached-descriptor)
+in 1.6.1.
+
+| EXE | Call to dimension helper |
+|---|---|
+| Hosted original | `004be5ff` |
+| 1.0.0–1.3.1 | `004be5fe` |
+| 1.4.0 | `004be5f9` |
+| 1.5.0–1.6.1 | `004be5fb` |
+
+The immediate load and call establish the argument source.
+They do not establish that the index identifies the same mode
+across builds or that every invocation is direct.
