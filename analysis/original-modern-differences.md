@@ -468,6 +468,8 @@ Each row compares the package with the preceding retained Modern release using e
 
 All 52 shared menu files change at 1.3.0 and again at 1.4.0. At 1.6.0 the only added path is `fedata/art/logos.qfs`. A file moved to another path is counted as a removal and an addition. Payload equality alone does not establish semantic equivalence.
 
+In the 1.2.0 → 1.3.0 change, all 52 menu files still differ after normalizing line endings, trimming surrounding whitespace, and dropping blank lines. The 1.2.0 set contains 994 assignments each to `EnableForDemo` and `EnableForE3Demo`. The 1.3.0 set contains neither key. Ignoring those two keys in the ordered line comparison leaves 45 of the 52 files equal. The seven with additional changes are `advgrph.mnu`, `cedbasic.mnu`, `connect.mnu`, `control1.mnu`, `graphics.mnu`, `options.mnu` and `psgraph.mnu`. This isolates the widespread asset cleanup from the remaining menu edits. The comparison does not establish the defaults or behavioral effect of omitting either field.
+
 ### What changed in the 1.6.1 archive
 
 The retained 1.6.0 and 1.6.1 archives contain the same 85 regular-file paths. SHA-256 comparison of extracted payloads finds 69 unchanged and 16 changed. The changed files are `nfs3.exe`, the eight configured renderer DLLs, five renderer INIs (DX5, DX6, DX7, DX8 and SoftTri), and the English and Russian readmes. The menu and language assets, auxiliary Glide DLLs, `eacsnd.dll` and packaged `nfs3.ini` all match.
