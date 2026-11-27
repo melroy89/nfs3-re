@@ -337,3 +337,27 @@ comparison is in the [display-mode report](original-modern-display-modes.md#orig
 The startup seed describes that store alone. It does not
 identify the mode ultimately applied by the driver or exclude
 indirect updates to the cell.
+
+The startup viewport call survives the 1.5.0 rewrite. A
+direct-call scan for `004be5e0` finds five sites in each of
+the 13 EXEs. Three remain at `0044d28c`, `0044d4b2` and
+`00485626`. The race call moves from `004a3439` to
+`004a3428` in 1.6.0. The startup call moves as follows.
+
+| EXE | Startup viewport call |
+|---|---|
+| Hosted original and 1.0.0–1.4.0 | `004b611a` |
+| 1.5.0 | `004b5bb1` |
+| 1.5.1 | `004b5bfc` |
+| 1.5.2–1.5.3 | `004b5c12` |
+| 1.6.0 | `004b5c03` |
+| 1.6.1 | `004b5c91` |
+
+In 1.4.0 the call follows the mode-lookup write to
+`0055fec4` and clears EAX and EBX. In 1.5.0 and 1.6.1 the
+call follows a copy from `0055fec0` to `0055fec8` and
+clears EAX. The viewport still obtains its mode index
+through `004be570`. This establishes that startup retains
+the viewport call after removing the second direct mode-index
+write. Indirect calls and actual display results are outside
+the scan.
