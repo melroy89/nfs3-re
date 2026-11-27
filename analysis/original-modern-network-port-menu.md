@@ -23,7 +23,7 @@ These are comparisons of the menu initializer and callback bodies in both binari
 
 ### Nonzero RemoteOnly selected a different menu path before 1.4.0
 
-The supplied original and retained 1.3.1 read the media/audio flag `006fbb54` at `0043fe57`. Zero jumps to the normal three-row constructor at `0043fe78`. Nonzero instead calls `0049e9d0` with EAX pointing to `006fd2fc`. If that call returns nonzero, the initializer calls the separate service-selection menu builder at `0043f4e0`. Either result bypasses the normal constructor. The builder supplies a different callback, `0043f680`.
+The supplied original and retained 1.0.0 and 1.3.1 read the media/audio flag `006fbb54` at `0043fe57`. Zero jumps to the normal three-row constructor at `0043fe78`. Nonzero instead calls `0049e9d0` with EAX pointing to `006fd2fc`. If that call returns nonzero, the initializer calls the separate service-selection menu builder at `0043f4e0`. Either result bypasses the normal constructor. The builder supplies a different callback, `0043f680`.
 
 The value at `006fd2fc` is the [local player-name buffer](original-modern-ghost-loading.md#player-identity-fields-are-explicitly-restored). In the supplied original, the normal dialog's callback also passes that buffer to `0049e9d0` at `0043f76e`. The distinction is when initialization happens. The nonzero flag invokes it before constructing the alternate menu. With the normal dialog, initialization happens in its callback. In `0049e9d0`, an existing service state of 2 returns success immediately. Otherwise the helper runs the initialization path and sets state 2 on success. Failure displays localized notice `0xc2` and returns zero, so the nonzero-flag branch never reaches the alternate menu builder on that failure path.
 

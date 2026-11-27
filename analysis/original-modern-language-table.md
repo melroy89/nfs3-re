@@ -218,11 +218,13 @@ A linear `objdump -d -Mintel` scan of the supplied original and all eleven retai
 
 | Build | Direct reads or comparisons | Direct store |
 |---|---:|---|
-| Supplied original and retained 1.1.0–1.3.1 | 24 | `00472b43` |
+| Supplied original and retained 1.0.0–1.3.1 | 24 | `00472b43` |
 | 1.4.0 | 22 | `00472b43` |
 | 1.5.0 and 1.5.1 | 20 | `00472b24` |
 | 1.5.2 | 20 | `00472b20` |
 | 1.5.3, 1.6.0 and 1.6.1 | 18 | `00472b25` |
+
+A follow-up scan of the retained 1.0.0 archive found the same 25 decoded instruction lines as 1.1.0, identical in address and bytes. It includes the one config-tail store and the same 24 reads or comparisons.
 
 The 1.4.0 change therefore removes the documented INI source while leaving many consumers in the executable. Counts describe decoded direct operands. They do not establish reachability or account for computed addresses, aliased or bulk writes, or instructions missed by linear disassembly.
 
