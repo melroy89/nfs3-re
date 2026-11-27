@@ -165,3 +165,19 @@ Consequently, with stable saved storage and clear DF, let **S** be the configure
 Final also restores its added menu-sound setting`006fd1d0` from`00664680` only when`00559234==0`. This is separate from the two configured volume fields and does not reintroduce their cache overwrite. The subsequent music-preview stop/restart paths can have further effects; this finding does not assert unchanged backend calls or immediate audible state.
 
 **MP100-027 conclusion:** removal of the conditional cache-to-configured-volume overwrite gives concrete partial support for the advertised Cancel fix affecting Engine Volume and Sound Effects. The shared snapshot was not removed, and Modern does not simply stop restoring audio state. Still unverified: the flag/cache lifecycle for an actual affected session, all UI transition admission, later audio application, audible maximum-volume behavior and precise1.0.0 introduction. A faithful reconstruction must preserve the chosen version’s two saved-value sources and post-copy order rather than merging their globals or silently fixing the original path.
+
+### Modern 1.0.0 already removes the Cancel overwrite
+
+The original's two cache-to-settings stores occupy the
+20-byte window at PE RVA `381a7h`. That window is all
+NOPs in every retained Modern EXE from 1.0.0 through 1.4.0.
+The branch at `004381a3` in 1.0.0 skips it and resumes
+at `004381bb`. The 37-byte snapshot sequence at PE RVA
+`3803ch` matches the hosted original in all 12 retained
+Modern EXEs. Later Modern builds reuse the removed-store
+window for other restore instructions. Its NOP count is
+therefore evidence for the early implementation only.
+
+This dates the local removal behind MP100-027 to 1.0.0.
+The saved cache values, active mixer behavior and audible
+result remain unverified.
