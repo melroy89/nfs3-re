@@ -153,7 +153,7 @@ Final uses the same attribute-success/directory-bit rule through complete helper
 
 For preparation, complete21-byte helper`004f9214..004f9229` first tests whether the directory exists. If true, it returns1 without CreateDirectoryA. If false, it passes the same saved path to complete14-byte wrapper`004f9204..004f9212`, supplying null security attributes, and returns that API result. It does **not** distinguish a missing path from other attribute failures, recursively create parents, retry or requery after failed creation. Consequently an API-reported create failure remains a local failure even if another actor creates the path between check and create. That is a conditional code consequence, not an observed race. No rollback of directories created earlier in the table occurs in this walker.
 
-**MP100-041 advances to partial historical support:** early Modern has a concrete four-directory installation check, and final expands the inspected mechanism to thirteen prerequisites plus four preparations. The 1.0.0 and 1.1.0 EXEs match across the 94 bytes at PE RVA `a3974h`, including the predicate, pointer table and checker. The four pointers resolve to the same paths, and IAT slot `00534520` resolves to `KERNEL32.GetFileAttributesA` in both builds. The four-directory check is therefore verified in 1.0.0. The intermediate expansion date remains open. The existing MP140-065 creation mechanism remains separately qualified. A passing directory check does not prove a complete installation, readable/correct assets, writable existing destinations, successful later I/O or startup completion. Effective CWD, slot overrides, concurrent changes, error diagnostics and all original installation-discovery paths remain separate requirements. No directory, executable, saved Ghidra database or maintained C was changed.
+**MP100-041 advances to partial historical support:** early Modern has a concrete four-directory installation check, and final expands the inspected mechanism to thirteen prerequisites plus four preparations. The 1.0.0 and 1.1.0 EXEs match across the 94 bytes at PE RVA `a3974h`, including the predicate, pointer table and checker. The four pointers resolve to the same paths, and IAT slot `00534520` resolves to `KERNEL32.GetFileAttributesA` in both builds. The four-directory check is therefore verified in 1.0.0. The intermediate expansion is dated below. The existing MP140-065 creation mechanism remains separately qualified. A passing directory check does not prove a complete installation, readable/correct assets, writable existing destinations, successful later I/O or startup completion. Effective CWD, slot overrides, concurrent changes, error diagnostics and all original installation-discovery paths remain separate requirements. No directory, executable, saved Ghidra database or maintained C was changed.
 
 ### The executable-name fallback appears in 1.5.0
 
@@ -176,3 +176,23 @@ The load route uses the same slot and format at `004729aa..004729c0`.
 Thus both operations build `.\config.dat` with the initialized
 1.0.0 default. The working directory and successful file I/O were
 outside the static comparison.
+
+### Version 1.2.0 expands the directory check to 15 slots
+
+In 1.2.0 the startup call at `004a3a72` reaches the walker
+at `004a3954`. It walks the 15 pointers and zero terminator at
+`004a3914`, calling the attribute check at `004a38f0`.
+The predicate still rejects an API result of `ffffffffh` or
+an entry without directory bit `10h`. Slot indices are
+0, 2–7, 11–13, 15, 16 and 19–21, calculated as
+`(pointer - 007a27b4h) / 128`. Resolve these indices in the
+NUL-separated path table at `0053ec2c`. The four earlier
+directories remain in the list. The new entries include the
+render, dashboard, audio, menu, save, stats and artwork
+subdirectories. The same pointers, path strings and predicate
+are present in retained 1.3.0 and 1.3.1.
+
+The walker only checks existence and attributes. Save and
+Stats are required at this stage, before the later
+check-and-create policy. File contents, permissions and
+execution on a real installation remain unverified.
