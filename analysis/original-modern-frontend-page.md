@@ -586,6 +586,8 @@ The hosted original and the 1.0.0 package both dispatch `texteffects` widgets th
 
 To reproduce, list `nfs3_orig.7z` and `nfs3_modern_patch_v1.0.0.7z` from the retained history directory with `7z l -ba`, then extract and count case-insensitive `codelink=texteffects` assignments in each top-level `fedata/menus/*.mnu` member. Normalize paths to lowercase for pairing. The original has six matching layouts out of 80 and 1.0.0 has twelve out of 51. Five matching layouts are shared and retain the widget, seven shared layouts gain it, and the original-only `perdata.mnu` accounts for the remaining original match.
 
+All seven layouts retain exactly one `texteffects` image in every retained Modern release through 1.6.1. Comparing key/value lines in each enclosing section shows that all seven keep `image=nfsl`, position (236, 118), and `fadelevel=0`. Their priorities also stay fixed, ranging from 4 in `connect.mnu` to 15 in `audio.mnu`. In 1.3.0, all seven drop the two demo switches, and `advgrph.mnu` and `graphics.mnu` also drop `postonly` and `mainonly`. In 1.4.0, the remaining five drop those two fields and all seven drop `borderColor=0`. No other key/value changes occur in these seven widget sections. The asset comparison leaves the effects of omitted fields dependent on loader defaults.
+
 This verifies expansion on seven packaged menus. The vendor's “all slides without large amount of text” criterion and actual rendering remain unverified.
 
 ## 1.0.0 changes the graphics and opponent menu effect bindings
