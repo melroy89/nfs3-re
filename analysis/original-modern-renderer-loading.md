@@ -760,3 +760,14 @@ which can also be zero after an export lookup fails. This branch
 does not distinguish that case from a DLL load failure. Local
 control flow does not establish how the diagnostic returns or
 whether the slot could contain a pointer left by an earlier load.
+
+The 1.2.0 invalid-driver diagnostic at `004b5e98` calls
+`USER32.MessageBoxA` through `00534764`, with flags `51010h`.
+It ignores the dialog result and calls the zero-status exit thunk
+`004f2a7d` at `004b5ea7`. The thunk and finalizer spans
+`004f2a7d..004f2a84`, `004dfd04..004dfd55` and
+`004ff38c..004ff3ce` match 1.6.1 byte for byte. The 1.2.0 PE also
+binds `005344c0` to `KERNEL32.ExitProcess`. Thus the selected
+failure path requests process exit after the dialog, provided
+the intervening cleanup calls return normally. See the
+[shared exit chain](original-modern-startup-requirements.md#shared-termination-chain-reaches-exitprocess).
