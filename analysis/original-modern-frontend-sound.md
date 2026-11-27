@@ -181,3 +181,14 @@ therefore evidence for the early implementation only.
 This dates the local removal behind MP100-027 to 1.0.0.
 The saved cache values, active mixer behavior and audible
 result remain unverified.
+
+The reused window begins restoring a separate setting in
+1.5.0. After the 64-byte block copy, the zero-status path
+loads `00664680` and writes it to menu-sound volume
+`006fd1d0`. The 1.5.0–1.5.2 store is at `004381b7`;
+in 1.5.3–1.6.1 it moves to `004381b9`. Both compare
+`00559234` with zero before the restore and skip it
+when nonzero. This dates a distinct Cancel behavior
+associated with the added menu-sound setting. Both
+versions leave the restored Engine Volume and Sound
+Effects DWORDs alone on the inspected continuation.
