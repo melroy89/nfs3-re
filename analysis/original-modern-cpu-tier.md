@@ -32,7 +32,7 @@ Final Modern replaces that local lookup and overwrite with its CPU score store, 
 
 The original lookup at `0050ead0..0050eb29` reads the runtime environment vector at `00a0b154`. It compares each entry against the key up to the key length, requires an immediately following equals sign and returns the address after that sign. An existing empty value therefore reaches the decimal parser, which returns zero when no digits are consumed. An absent key leaves the detected flag in place. See the [environment lookup comparison](original-modern-renderer-loading.md) for the shared reader.
 
-The earliest retained Modern archive, **1.1.0**, already stores the detected MMX value at `004f1dbd` and jumps back to the common epilogue at `004f1dfe` after publishing its CPU score. The original override tail is all NOPs in that build and every later retained release. This dates the observed removal to **1.1.0 or earlier**. The 1.0.0 transition remains unknown.
+Modern **1.1.0** stores the detected MMX value at `004f1dbd` and jumps back to the common epilogue at `004f1dfe` after publishing its CPU score. The original override tail is all NOPs in that build and every later retained release. The [recovered 1.0.0 comparison below](#modern-100-already-uses-the-feature-score) dates the observed removal to the first retained release.
 
 | 1.1.0 input | SHA-256 |
 |---|---|
@@ -135,3 +135,17 @@ Retained 1.4.0 tests DWORD `005643ac` at `004f1dfb` after computing the score. T
 The same dialog behavior persists in every retained release from 1.4.0 through 1.6.1. The call at `004f1e09` moves among helper entries `004b573c`, `004b56e0`, `004b5704`, `004b5714` and `004b5728` as surrounding code shifts. Each 30-byte helper has the same instructions apart from the relative call displacement to termination thunk `004f2a7d`. The import slot still resolves to `MessageBoxA`. It calls the thunk only for return value 2. Other values proceed to the helper's RET. This verifies the local Cancel policy across these releases without requiring the dialog to be exercised.
 
 The family flag itself predates the warning. Original and final Modern both zero `005643ac` at `004f1cb8` on entry, then set it to 1 on the inspected CPUID path for family 5 or higher. Original continues through its feature tests and optional `ISMMX` lookup without the Modern warning on that path. Both executables branch at `004f1ccb` to the same no-CPUID fallback when `0050ea68` returns zero. The fallback calls `0050eaa7`, stores EAX to `005643c8`, restores registers and returns without reaching the new dialog. Thus the warning is an added consumer of the existing family flag on the path that reaches the score tail. Other startup checks remain outside this comparison.
+
+### Modern 1.0.0 already uses the feature score
+
+Extract the root EXE from the [pinned 1.0.0 archive](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames)
+and compare PE RVA `f1c70` for `200h` bytes with 1.1.0. The entire
+span matches (SHA-256
+`e51b0598373a517cfddb360e69ef3a38476e715a1fc76b1c206e54e476800910`),
+including the MMX and score publications and the 19 NOPs at
+`004f1e13..004f1e26` that replace the original `ISMMX` override tail.
+The defaults prefix at `00472d10` also matches for `36h` bytes,
+including the direct score read, cap and renderer-dependent adjustment.
+This dates both the selected scoring mechanism and the local override
+removal to 1.0.0. Other writers and the actual hardware-selected tier
+remain outside the comparison.
