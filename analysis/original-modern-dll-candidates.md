@@ -447,3 +447,16 @@ record loop shift by 25 bytes in 1.5.0, including the retained 640×480
 seed and optional 32-bit insertion. The early cached branch is retargeted
 to the moved exit. The selector's provider-specific result and the
 downstream effects of those two stores remain open.
+
+Selector 10 is `GR_MAX_TEXTURE_SIZE`, defined as `0x0a` in the
+[3dfx Glide header](https://sources.debian.org/src/glide/2002.04.10ds1-12/glide3x/h3/glide3/src/glide.h).
+The [Glide reference manual](https://www.bitsavers.org/components/3dfx/Glide_Reference_Manual_3.0_199806.pdf)
+defines its output as the maximum supported texture width, in pixels.
+The two destinations are offsets `+14h` and `+20h` in the descriptor
+returned by `THRASH_about` at base `6000fd10`. The about setup seeds
+both fields with 256 at `60001c34` and `60001c5e`. The added query can
+therefore replace both defaults with the provider's reported size before
+the game receives the descriptor. A decoded direct-operand scan of 1.5.0
+found only those initial stores and the two query-output stores. Game
+consumers can read the fields through the returned pointer, so the scan
+does not establish their downstream effect.
