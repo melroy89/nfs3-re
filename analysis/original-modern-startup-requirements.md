@@ -335,3 +335,23 @@ literal at `0053fe30` is overwritten. This confirms removal
 of the original direct startup edge by 1.0.0. Complete
 replacement policy and execution without the installer
 file remain outside the static check.
+
+The shifted-sum check introduced in 1.4.0 stays byte-identical
+across all seven retained releases through 1.6.1. Read 19 bytes
+at the listed VA in each archived EXE. The sequence is
+`c1ea148b0dd43a7a00c1e91401ca83fa10730a`. It shifts EDX,
+loads and shifts ECX, adds the results and branches on an
+unsigned comparison with 16.
+
+| Release | Start of shifted-sum check |
+|---|---|
+| 1.4.0 | `004b5785` |
+| 1.5.0 | `004b5729` |
+| 1.5.1 | `004b574d` |
+| 1.5.2–1.6.0 | `004b575d` |
+| 1.6.1 | `004b5765` |
+
+The hosted original and 1.0.0–1.3.1 instead compare the
+sum of bytes with 16 MiB at `004b5f55`. Their nearby
+right shift feeds logging. This comparison covers the local
+admission instructions and leaves actual API values untested.
