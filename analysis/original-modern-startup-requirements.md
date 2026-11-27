@@ -773,3 +773,15 @@ values, the preceding DWORD resolves to the descriptor key.
 This distinguishes unchanged relocation coverage from changed
 menu data. The [music selection comparison](original-modern-music-selection.md)
 covers the playlist changes separately.
+
+Reading the target lists through their terminating zero WORD
+distinguishes relocation from a change in available choices.
+All other DWORDs in the three descriptors match. The
+`enginesound` list retains IDs 159 and 160 in the same order.
+`tunenames` grows from 14 to 16 choices: its first three IDs
+reorder from 463, 464, 465 to 465, 463, 464, and its final ID
+172 gives way to 1943, 1941, 1942. `menutunes` grows from
+eight to ten choices by replacing the first ID 466 with 1946,
+1944, 1945 and retaining IDs 467–473. The
+[music selection analysis](original-modern-music-selection.md)
+maps the changed choices to labels and playback selection.
