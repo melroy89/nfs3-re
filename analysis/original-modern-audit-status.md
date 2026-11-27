@@ -169,7 +169,7 @@ The [four-audit checkpoint](evidence/validation/historical-dx5-config-language-h
 |Investigation |Established |Remaining boundary |
 |---|---|---|
 |[DX5 modes](original-modern-dx5-reference-pair.md#historical131-to140-mode-count-and-depth-key-changes) |131→140 guard30→100, exact raw-depth matching and clear1200→4000; callback retained final |Visible catalog, complete capacity ownership and display activation |
-|[RemoteOnly](original-modern-language-table.md#remoteonly-reader-removal-is-dated131-to140) |131→140 shipped key/reader removed; caller supplies literal0 |Complete destination writers, shared overrides and vendor “useless” characterization |
+|[RemoteOnly](original-modern-language-table.md#remoteonly-reader-removal-is-dated-131-to-140) |131→140 shipped key/reader removed; caller supplies literal0 |Complete destination writers, shared overrides and vendor “useless” characterization |
 |[Language package](original-modern-language-table.md#six-language-tables-enter-the140-package) |140 adds six fully partitioned1,933-entry tables absent from131 archive |Installed asset provenance, translation quality and runtime loading |
 |[HUD presets/Name](original-modern-hud-layout.md#complete131-to140-preset-table-difference-inventory) |All144 table records compared:14 change; Name slot12 source/scaler/local loop/draw consumer linked |Slots3/6/15 identities at checkpoint time, later writes, mirror-relative placement and rendered output |
 
@@ -949,7 +949,7 @@ The [expanded caller audit](original-modern-race-dialog.md#checked-direct-caller
 
 ## Installer-record settings versus early/final INI behavior
 
-The [three-baseline history](original-modern-language-table.md#installer-settings-move-to-early-ini-but-remoteonly-is-not-retained-in-final) verifies early1.1.0 Language/RemoteOnly profile-API wrappers and normalized RemoteOnly publication, contrasting original install-record sources and final literal-zero gate. Early retains INSTALL.WIN only in the checked diagnostic literal census; string presence is not a file-read proof. MP100-022 advances to partial, counts99/51/138/2. Exact removal date, full file-access coverage, actual startup and1.0.0 introduction remain unverified; no target execution or database changes.
+The [three-baseline history](original-modern-language-table.md#installer-settings-move-to-early-ini-but-remoteonly-is-not-retained-in-final) verifies early1.1.0 Language/RemoteOnly profile-API wrappers and normalized RemoteOnly publication, contrasting original install-record sources and final literal-zero gate. Early retains INSTALL.WIN only in the checked diagnostic literal census; string presence is not a file-read proof. MP100-022 advances to partial, counts99/51/138/2. The [1.3.1–1.4.0 comparison](original-modern-language-table.md#remoteonly-reader-removal-is-dated-131-to-140) dates the removal to 1.4.0. Full file-access coverage, actual startup and 1.0.0 introduction remain unverified; no target execution or database changes.
 
 ## Early installation directory checker and final creation contract
 
