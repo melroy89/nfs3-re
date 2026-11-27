@@ -202,6 +202,16 @@ Thus the registration move preserves the inspected coordinate helper
 and the distinction between down/double-click notification and up/move.
 The installed callback and live clipping and capture state can differ.
 
+The frontend notification target is also retained. In the hosted
+original and all 12 retained Modern EXEs, the 21-byte setup at
+`004730f9..0047310e` loads `0049bfb0` into EDX and publishes it
+to `0056446c` after the EDX-preserving call to `0043b390`.
+The complete 11-byte target at `0049bfb0` matches in all those
+builds and ORs incoming EAX into `0055e5ec`. Reproduce by comparing
+both file-backed spans in each root EXE. The verified setup and
+target cover this frontend notification path. Other pointer writers
+and accumulator clearing can still affect runtime behavior.
+
 **Status:** done, verified static for ten retained registrations, both complete
 callback bodies, register forwarding and the61 changed-byte tail. Full
 `004fb470` state/clip/capture processing, external message delivery, mouse
