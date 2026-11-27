@@ -93,6 +93,8 @@ All twelve retained releases keep type 5 and shape tag `cred` in record 75. At t
 | 1.4.0–1.5.2 | `0040fed0` | `ABOUT.QFS` | Pointer |
 | 1.5.3–1.6.1 | `00437820` | `ABOUT.QFS` | Pointer |
 
+The rendering arm at `0040fed0` consumes both representations directly. In 1.3.1 and 1.4.0, `0040fed8` loads record +4 into EAX. The respective wrappers at `004f1ea0` and `004f1f04` pass EAX unchanged as the identifier to `FindResourceA` with type 10, then use `LoadResource` and `LockResource`. The imports resolve to the same three slots in both executables. For shape lookup, `0040ff26` changes from LEA to MOV: 1.3.1 passes the address of record +8, where the inline tag resides, while 1.4.0 passes the pointer stored in that field. Both call `004ef1e0` with the unpacked shape object in EAX and the tag address in EDX. The call to the allocator at `0040ff06` also receives a different EAX operand, whose wider allocator context is outside this comparison.
+
 Each release has a distinct embedded payload SHA-256. At the naming boundary, the stored payload changes from 49,893 bytes (SHA-256 `8aa8e7f7627eafa5539880c351e759d4a2814c3d40fc7f356208640bac042288`) to 50,747 bytes (SHA-256 `173129df320dd8004752b848ade5f268680fafbdfc8055ea7685b6d8c8025a16`). The payloads were compared as stored, so differences in decoded artwork remain unresolved.
 
 To reproduce, extract `nfs3.exe` from each retained archive with `7z x -so`. Read four little-endian DWORDs at VA `00555c08` and the sixth dispatch entry at `00441ca4`. Subtract the image base for RVA reads, including when resolving the name and tag pointers. Hash each referenced resource's data under PE type 10, language 0.
