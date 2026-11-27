@@ -581,3 +581,9 @@ selectors. This establishes local preservation through the header
 decision and sound normalization. Provider callbacks and later
 initialization remain separate from that result. See the
 [audio capability evidence](original-modern-config-loading.md).
+
+### 1.0.0 draws the selected-player HUD outlines in an earlier priority group
+
+The hosted original `fedata/MENUS/HUD.MNU` and 1.0.0 `fedata/menus/hud.mnu` differ only in the two `priority=8` → `priority=10` edits on the `player1selected` and `player2selected` rectangle blocks. Both keep the same 320×120 size, thickness 4, Y positions 0 and 120, and corner colour `0xffffff00`. The paired member SHA-256 values are `1186648c5352fadfd94632cf2b43cc716e23d9c078863b563fa1602f3b14d60c` and `1c633422ecf718596dbbb44a887648848a22dcce8f6774f66a9f63667b9a1384`.
+
+The four [priority draw-loop spans](original-modern-common-menu-buttons.md#location-and-opponents-dropdown-priority-changes-in150) at `0044a524..0044a536`, `0044a59c..0044a5a6`, `0044a5cb..0044a5e5` and `0044a634..0044a63a` match between the installed original and the archived 1.0.0 EXE. The loop visits higher groups first. The authored change therefore moves both outline callbacks earlier, allowing lower-priority controls to draw later. This supports MP100-054's layering mechanism. Actual compositing and overlap in rendered frames remain unverified.

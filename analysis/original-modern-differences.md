@@ -866,7 +866,7 @@ This first-reference index includes all **290 release-note entries across 12 rel
 Use the stable IDs when choosing original or Modern behaviour for a reconstructed C module. An executable comparison can guide reconstruction of original behaviour; it does not supply the original source code. The [detailed catalog](modern-patch-change-catalog.md) retains source line numbers, categories, evidence links and qualifications. **Static** means bounded static support, **Partial** means only part of the claim is supported, **Unresolved** includes historical claims needing other releases, and **Claimed** means vendor-only. None of these labels establishes runtime equivalence.
 
 The current table contains **290 unique release-note IDs**: 60 Static,
-204 Partial and 26 Claimed. The count comes from the status column below.
+205 Partial and 25 Claimed. The count comes from the status column below.
 A row can bundle multiple changes, and the executable inventory includes
 differences outside the release notes. Function-navigation coverage and
 catalog status therefore measure different things.
@@ -1215,7 +1215,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP100-051 | Flying brands effect added to all slides without large amount of text for consistency. For example, in original version this effect is present on main singleplayer game screen, but it is absent on main splitscreen game screen. | Claimed |
 | MP100-052 | On the first menu screen irrelevant link to Need For Speed website was replaced to “Credits...” button. Really, you can't find any mention about NFS3 on this website for 10 years or even more. | Partial |
 | MP100-053 | In choose car menu “Download car...” button is hidden because it doesn't work properly anymore. | Partial |
-| MP100-054 | Yellow rect which indicates current player in HUD settings screen doesn't overlaps other controls. | Claimed |
+| MP100-054 | Yellow rect which indicates current player in HUD settings screen doesn't overlaps other controls. | Partial |
 | MP100-055 | Standard bottom set of buttons was added to camera settings screen. | Partial |
 | MP100-056 | Based on voodoo2a.dll from the Future Cop L.A.P.D. game. It seems that it is a slightly updated NFS3 driver which uses Glide3x API instead of Glide2x API. So it seems that these drivers are highly compatible and all special effects are present. Original voodoo2a.dll from NFS3 uses Glide 2x API which doesn't have ability do detect supported resolutions. Official update of this file which uses Glide 3x API is based on NFS4 and it seems that it lacks fog effect. So it doesn't fit us. | Claimed |
 | MP100-057 | Added support of huge Glide resolutions with ability to use Z-buffer. Now list of supported Glide resolutions are: 640×480, 800×600, 960×720, 1024×768, 1280×1024, 1600×1200. Widescreen resolutions aren't possible with standard Glide API. This list is used when extended Glide API isn't supported. | Claimed |
