@@ -83,6 +83,16 @@ In1.6.0, both helper envelopes are NOP-filled, no direct E8 candidates to either
 
 This verifies a concrete x87 policy transition in the release pair named by MP160-012. It does not prove that every path, thread, external DLL or later control-word write uses extended precision. Binary32 memory stores and conversion rounding remain separate. Direct-call and exact-mask scans are bounded corroboration, not exhaustive semantic recovery. No additional replay, multiplayer or ARM64 compatibility conclusion follows from the historical attribution.
 
+The loading artwork routine changes both control-word sites at the same release boundaries. The entry site is conditional on reaching `00494fc1`. The exit site follows the indirect renderer call at `00495153`.
+
+| Build | Entry at `00494fc1` | Exit at `00495159` |
+|---|---|---|
+| 1.5.2 | Inline FINIT, load saved control word and wait | Inline reset, save the default word and load the single-precision word |
+| 1.5.3 | Call `004955c8`, then jump to `00494fcc` | Call `004955d4`, then restore the register frame |
+| 1.6.0 | Jump straight to `00494fcc` | Restore the register frame immediately |
+
+These paired sites establish centralization in 1.5.3 and local removal in 1.6.0. The 1.5.3 entry helper has fewer explicit waits than the inline sequence. The table covers these two sites only. It does not establish the incoming x87 state or floating-point effects of the indirect renderer call.
+
 ## Assessment of the other user's claims
 
 | Claim | Assessment |
