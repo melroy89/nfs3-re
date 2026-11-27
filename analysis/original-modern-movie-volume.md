@@ -55,3 +55,17 @@ initializer and then reads `006fbbe8`, masks the low seven bits and
 writes byte `+8`. This pins the setting source and transform to the
 same 1.5.3 boundary as the call-site retargeting. Compare PE RVA
 `962c2` for `14h` bytes in the three archive members to reproduce.
+
+### The stream context retains the parameter block
+
+On the admitted creation path at `004f3fec`, the caller's parameter
+pointer is saved at `004f3ff6`. At `004f413e..004f4149`, four
+dword copies move the full 16-byte block into context offset
+`+3ch`, placing the movie volume byte at context offset `+44h`.
+The creation path publishes the context pointer to the active slot
+array at `004f4172`. This success path matches byte for byte in the
+hosted reference, 1.5.3 and final across `004f3fec..004f418b`.
+
+This verifies that the changed byte survives stream construction.
+The eventual gain application and audible output still need separate
+evidence.
