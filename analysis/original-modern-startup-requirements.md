@@ -547,3 +547,21 @@ their corresponding raw sections, and reading optional-header data
 directories 1 and 12. This establishes a concrete loader-facing change
 even though the DLL instructions match. Whether it explains MP153-014
 requires evidence from the affected loader or system.
+
+The game executable receives the same kind of PE directory update.
+In 1.5.3 the import directory at RVA `0x134000` shrinks from
+`0x14bd` to `0xdc` bytes. The new size covers ten 20-byte import
+descriptors and the null terminator. The new IAT directory covers
+`0x134458..0x1347c0` (end exclusive), from the first import thunk
+through the last thunk-list terminator. The executable also adds
+the `timeGetTime` import already traced above, so its import
+content changes as well as its directory metadata.
+
+In the checked 1.5.3 DX5, SoftTri and sound DLLs, the new directory
+sizes likewise match the descriptor count plus terminator, and each
+IAT range ends at the last thunk-list terminator. In the nGlide
+`voodoo2a.dll`, the IAT directory starts at the first thunk but
+ends four bytes beyond that computed endpoint. Reproduce using
+PE directory entries 1 and 12 and each descriptor's FirstThunk
+plus four bytes per import and terminator. These details establish
+a common packaging change. Startup causality remains unverified.
