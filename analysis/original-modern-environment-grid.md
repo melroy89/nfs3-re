@@ -51,3 +51,19 @@ The verified change is a numerical argument decrease of 0.5, not merely constant
 **Bounded work status: done for the listed code differences. Confidence: verified static predicates, bytes and argument values.** Preserve zero-versus-one distinctions, all other nonzero values, skipped-path tick publication, bit-mask OR semantics and the exact binary32 argument. Do not silently normalize malformed settings to Boolean values.
 
 **Pending:** complete context/setting producers, the vector callee's parameter semantics, all caller cadence, renderer command data and visual behavior. These affect interface/data reconstruction and runtime validation. No executable bytes, Ghidra state or maintained C were changed.
+
+### Mirror admission dates to Modern 1.5.0
+
+The 31-byte helper at PE RVA `7b380h` and 39-byte dispatcher
+window at RVA `7a1a4h` match the final EXE in all six retained
+releases from 1.5.0 onward. In the hosted original and 1.0.0–1.4.0,
+the dispatcher window instead matches the original inline gate.
+The original bytes at the helper address are simply an
+address-aligned comparison.
+
+This dates the environment-grid path's mirror admission to
+1.5.0, with Horizon Detail ordinal 0 and Rear View Detail
+High on that branch. The change is separate from the
+[vehicle-lighting admission](original-modern-night-lighting.md#medium-first-admits-mirror-vehicle-lighting-in-152).
+The grid gate alone does not identify which visible weather
+effects the grid supplies or whether they draw in a live race.
