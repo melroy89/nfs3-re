@@ -133,3 +133,18 @@ replaces the EBX-pointed output with `((127 - pan) * level) >> 6`.
 These are signed arithmetic shifts. This establishes consumption of
 the movie-dependent gain during platform packet setup. Hardware or
 wrapper output and perceived loudness remain untested.
+
+### The two levels initialize the mixer record
+
+On the admitted packet path, `00523e5a..00523e63` pushes both level
+outputs from the locals written by the pan helper. In the call at
+`00523e7a` to `005000b8`, they arrive as stack arguments 5 and 6,
+counting from the return address. After the mixer prologue those
+arguments are at `[ESP+28h]` and `[ESP+2ch]`. The shared setup tail
+at `005001ff..00500218` copies their low bytes into mixer record
+offsets `+1/+2` and duplicates them at `+4/+5`. The record becomes
+active at `00500243` after the setup callback returns.
+
+This verifies the movie setting's propagation to the active mixer
+record on the inspected path. It leaves the selected DSP callback's
+sample scaling and measured playback outside the static trace.
