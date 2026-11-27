@@ -314,3 +314,15 @@ in 1.0.0. The alternate branches retain the 640×480×16 score.
 This dates the target-score calculation in MP100-011. It does not
 establish first-run reachability in every configuration, exact
 dimension matching, or successful selection on a running machine.
+
+The 1.0.0 branch calls the score selector at `00472e62` and passes
+its result directly to the driver-index mapper at `00472e67`.
+The complete selector (`004bee80..004bef4b`) and mapper
+(`004483a0..004483dc`) match their 1.1.0 counterparts byte for byte.
+The selector keeps the first eligible candidate on a score tie and
+returns driver index 1 if it finds none. The mapper rebuilds the mode
+list through `004482c0`, searches its stored driver indices, and
+writes the corresponding menu index to `006fbc14`. A miss selects
+menu index 0. These are separate fallbacks. They explain why a
+desktop-derived score can still yield the first menu slot even when
+the desktop dimensions are available to the game.
