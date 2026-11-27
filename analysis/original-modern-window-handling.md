@@ -131,7 +131,7 @@ A linear `objdump -d -Mintel` sweep for calls through the SetForegroundWindow im
 | 1.6.0 | `004bef4e` |
 | Installed 1.6.1 | `004bef5c` |
 
-Thus the 1.3.1 → 1.4.0 comparison also loses the separate site at `004f9231`. The table records locations only. It leaves the purpose and reachability of the separate sites, indirect calls and OS focus outcomes open.
+Thus the 1.3.1 → 1.4.0 comparison also loses the separate site at `004f9231`. The 1.6.0 and 1.6.1 additions both occur in runtime display-mode application at `004beeb0`. Each calls SetForegroundWindow on the game HWND after publishing the selected record dimensions through `004cdbd0`. The same-index path reaches publication without calling the driver, while a different index reaches it only on the admitted, nonzero driver-result path. A zero driver result skips the foreground request. See the [mode application comparison](original-modern-mode-selection.md). The purpose of the removed `004f9231` site, indirect calls and OS focus outcomes remain open.
 
 ### Original mode-state producers: a bounded link
 
