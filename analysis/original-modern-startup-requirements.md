@@ -646,3 +646,14 @@ sites above. No additional relocated data pointer to those slots
 appears in either build. This check covers absolute operands
 registered for rebasing. It leaves references calculated at
 runtime outside the search.
+
+The new `eacsnd.dll` resource is a version record (type 16,
+ID 1). It identifies the DLL as `EacSnd (API v100003)`, gives
+file version `2016.05.02.0259` and product version `1.5.3`.
+The final 1.6.1 package still ships a sound DLL marked 1.5.3.
+The hosted original, 1.5.2, 1.5.3 and final sound DLLs all
+have PE entry-point RVA zero. Thus the resource addition does
+not add a DLL entry-point routine. Reproduce by inspecting the
+resource tree, version strings and optional header of the exact
+`eacsnd.dll` members. Loading and exported API calls were not
+exercised.
