@@ -35,6 +35,12 @@ Original `0045d7ad` is a RET. The next 132 bytes, `0045d7ae..0045d832`, are byte
 
 The [music-selection comparison](original-modern-music-selection.md#modern-playlist-seeding-and-race-load-update-placement) traces the Modern generator using `007a32b4`. The [idle-movie comparison](original-modern-idle-movie.md) documents reuse of that address from an original path buffer. The seed store does not imply a cross-version shared union or identical random sequence initialization.
 
+## Original import thunks beneath the DirectDraw fallback
+
+The original thunk at `00533e86` jumps through IAT slot `00534668` to `DDRAW.dll!DirectDrawCreate`. The next three original jumps target `VERSION.dll`: `00533e8c` uses `0053467c` for `VerQueryValueA`, `00533e92` uses `00534674` for `GetFileVersionInfoA`, and `00533e98` uses `00534678` for `GetFileVersionInfoSizeA`. Modern's diagnostic wrapper overlays parts of these jumps. The final 11 bytes from `00533e93` to `00533e9e` become NOPs.
+
+The decoded calls at `004eb445` and `005051ec` still target `00533e86` in final Modern, where that entry is now the diagnostic. Equal call bytes therefore hide a callee change. The original VERSION callers in the configuration timestamp path are covered in the [configuration comparison](original-modern-config-loading.md). Reproduce by disassembling `00533e80..00533e9e`, then resolving the six-byte jumps against the original PE import table. This establishes the static callees. Runtime reachability of the DirectDraw diagnostic remains unresolved.
+
 ## Application wrapper retargets one call
 
 The complete same-address wrapper `00524290..005242ed` is 93 bytes in both versions. Only two CALL-displacement bytes change at `005242de`: original invokes `004a39f0`, Modern invokes `004a3db0`. The argument loads remain EAX=`[00a18210]`, EDX=`[00a18214]`. Stack-workspace setup, global `00567824` publication, helper `0052b640`, and following runtime call `004dfd04` are byte-identical. The [startup policy report](original-modern-startup-policy.md) covers the Modern application path; this wrapper comparison does not establish equivalence of the two application bodies or give the retained runtime call a newly verified contract.
