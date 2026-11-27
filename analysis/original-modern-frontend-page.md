@@ -98,7 +98,7 @@ Original adds a special filter after Next's ordinary increment/wrap: call predic
 
 Modern Next replaces the original filter at `004423a0..004423c3` with `JMP 004423c3` plus 33 NOP bytes, asserted by the script. Modern Previous is rewritten without that predicate/skip. Therefore final Modern navigation no longer uses this local conditional exclusion of record74, whose +4 field is `046ah`. This complements the established text consolidation: Modern record74 covers `046ah..0475h`, and record75 is the About resource.
 
-The original predicate body `00439ce0..00439d12` is retained too: it obtains a value using selector `25h` through `00438ad0`, passes the stack object to `00439990`, and returns zero for result `ffffffffh`, one otherwise. Its resource/installation meaning is not assigned here; those callees and actual runtime result remain dependencies. Removing its calls from these navigation callbacks is proven without inventing that meaning.
+Retained 1.0.0 already removes both navigation checks. Next has the jump and padding above, and Previous at `004423e0..0044240c` uses only the decrement or sentinel-scan wrap before storing the new page. The original predicate body `00439ce0..00439d12` remains byte-identical in 1.0.0. The [model-presence analysis](#shared-presence-consumer-background-resource-substitution) traces the predicate to a registry lookup for model key `0x25` and explains a separate caller that still uses it. The installed identity of that key and the original navigation result for a particular installation remain unverified.
 
 ## Initial selection differs as well
 
@@ -138,6 +138,8 @@ The audit now retains the complete paired **`004270c0..00427182`**, named `Updat
 At **`00427126`**, both versions load the low byte of selector **`006fd4d4`**, add ASCII`0`, and store it into character3 of the writable file-backed string **`00537090`**, initially **`opp1.qfs`**. They also compare the complete selector DWORD with3. Only for exactly3 does the predicate run; a nonzero result replaces that character with ASCII`4` at **`0042714b`**. Hence that branch chooses **`opp3.qfs`** when the predicate fails and **`opp4.qfs`** when it succeeds.
 
 The same string pointer is then published into record+`0x40` at **`00427164`** and **`00427179`**, alongside retained WORD layout/resource fields. This establishes resource-name selection, not successful loading or what the images depict. For other selector values, low-byte addition can wrap and need not produce a decimal digit; no global range guarantee is inferred from this caller.
+
+Across all twelve retained Modern EXEs, the call at `00427142` targets the one-key predicate at `00439ce0` through 1.5.3. In 1.6.0 and 1.6.1 it targets `00439d00`, where the wrapper checks `0x25` followed by `0x26`. To repeat the release check, extract `nfs3.exe` from each archive, resolve the relative call at `00427142`, and disassemble the destination. The 1.6.0 boundary applies to the background resource choice. Both Credits navigation callbacks had already dropped their lookup in 1.0.0.
 
 For otherwise equal registry contents containing key`0x25` but missing`0x26`, original therefore selects `opp4.qfs` while Modern selects `opp3.qfs` on the selector3 path. If both keys exist, both select `opp4.qfs`; if key`0x25` is absent, both retain `opp3.qfs`. This conditional consequence follows statically from the paired bodies. Actual resource availability, visual differences and the keys’ identities remain untested/unresolved.
 
