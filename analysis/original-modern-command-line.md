@@ -35,6 +35,22 @@ The two copy wrappers preserve ESI/EDI/ECX. Later `004f943c` recopies the origin
 
 Original uses an unbounded local copy followed by `004f8020` and has a different special-prefix parsing block in this region (`004a515f..004a51f7`). This comparison does not assign the Modern driver route to those original bytes or claim a complete audit of all original parameterized arguments.
 
+The [outside-function interval](original-modern-outside-function-index.md)
+at `004a51ae..004a51f8` contains the original numeric Direct3D
+argument body. The preceding comparison uses the four-byte
+literal `-D3D` at `0053d684`. On a match, `004a51bb` scans the
+suffix using `%d` from `0053d68c`. On the ordinary successful parse
+of a nonnegative integer, the body sets bit 5 in the flag byte
+selected by the integer's 32-value group, marks the argument
+recognized, and stores the parsed value to `0055fdbc` at
+`004a51f3`. That is the original
+[Direct3D device field](original-modern-registry.md). Final Modern
+replaces all 74 bytes in the interval with NOPs and uses the
+separate driver-option path above. The trace covers the local
+argument effects. Actual renderer acceptance and priority against
+other device-selection producers remain unverified.
+
+
 ## Help presentation and precedence limits
 
 Modern's help-building loop explicitly tests each switch text's first byte and skips empty entries (`004a543a..004a544a`). Consequently only nonempty current table entries contribute switch rows in that loop. This supports **MP100-043**'s reduced debug-option display mechanism, but not the historical assertion that each old debug option never worked.
