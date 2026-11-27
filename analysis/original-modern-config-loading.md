@@ -541,3 +541,22 @@ That comparison is absent from the matched 1.0.0 and 1.1.0 tails.
 As documented above, 1.2.0 adds a separate stored-resolution check
 and 1.5.0 introduces the version-WORD test. These are bounded
 post-copy decisions, independent of the earlier file-read checks.
+
+### The low saved score requests graphics defaults later
+
+For a matching-size block in 1.2.0–1.4.0, the unsigned comparison
+at `00472acc` sends values below `2710h` (10,000) directly to the
+flag store at `00472adf`. That path skips the general config
+defaults call at `00472ada`. A score of exactly 10,000 skips both
+operations. The score is the stored scalar request at `006fbc18`,
+as described in the [historical mode comparison](original-modern-mode-selection.md#historical131-uses-a-different-scalar-sentinel).
+
+The eventual consumer is the retained startup block at
+`0047316e..0047319a`. With `0055b03c` nonzero and abort flag
+`0055e88c` zero, it calls the EDX-preserving helper `00472fc0`,
+then tests the reset flag. A set flag is cleared with the preserved
+zero in EDX and triggers graphics defaults at `00473195`.
+The complete 44-byte startup block and 77-byte helper match the
+hosted original in all four releases from 1.2.0 through 1.4.0.
+The low score therefore requests a deferred graphics reset on this
+path. Alternate startup outcomes and actual file upgrades remain open.
