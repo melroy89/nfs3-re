@@ -48,3 +48,10 @@ This dates the call-site change independently of the
 [CPU-based conversion choice](original-modern-cpu-tier.md#the-movie-conversion-tier-changes-in-100),
 which was already present in 1.0.0. The playback bytes alone leave
 decoder and sound-backend behavior outside the compared span.
+
+The complete 20-byte wrapper at `004962c2..004962d6` is byte-identical
+in 1.5.3, 1.6.0 and 1.6.1. In all three releases it calls the default
+initializer and then reads `006fbbe8`, masks the low seven bits and
+writes byte `+8`. This pins the setting source and transform to the
+same 1.5.3 boundary as the call-site retargeting. Compare PE RVA
+`962c2` for `14h` bytes in the three archive members to reproduce.
