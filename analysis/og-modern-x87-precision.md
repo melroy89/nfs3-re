@@ -1391,3 +1391,13 @@ For these two synthetic cases, separately rounded binary64 operations predict th
 Binary64 does diverge from x87 extended precision on a different input to the same helper. Set `e = 2^-55`, take line endpoints `(1, 1)` and `(e, 0)`, and pass the second endpoint as the candidate. Use bounds `{1, 1, 2, 2}`, a nonzero return policy and an initially zero mask. The stored X difference rounds to 1 in binary32, so the stored slope is 1 and the stored intercept is `-e`. The candidate X is below minX, so the helper tries the left edge first.
 
 The live Y at `00485cb8` is `1 - e` in x87 extended precision, although the preceding FST writes binary32 1 to scratch. The live comparison sees Y below minY and tries the lower edge. The resulting live X is `1 + e`, which passes the lower-X comparison, then the reloaded scratch X is 1 and passes the upper check. The helper sets mask bit `0x01`. With nearest-rounded binary64 arithmetic the live Y rounds to 1, so the lower-Y comparison passes and the helper sets the left-edge bit `0x04` instead. Both paths return stored coordinates `(1, 1)`. A port test that compares only the coordinates would miss this difference. This is derived from the instructions and checked rounding arithmetic. The game and ARM64 code were not executed.
+
+A standalone host x87 check confirms the decisive comparison. Starting with an empty x87 stack, load each control word below, then execute `FLD m32(1)`, `FADD m32(-2^-55)`, `FST m32(scratch)`, `FCOMP m32(1)` and `FNSTSW AX`. Restore the prior control word after the sequence.
+
+| Control word | Binary32 scratch | Status masked with `0x4500` | Live comparison |
+|---|---|---|---|
+| `007f` | `0x3f800000` | `0x4000` | Equal |
+| `027f` | `0x3f800000` | `0x4000` | Equal |
+| `037f` | `0x3f800000` | `0x0100` | Below |
+
+This checks the arithmetic and status-producing instruction sequence on host hardware. The full NFS III helper and ARM64 code were not executed for this check.
