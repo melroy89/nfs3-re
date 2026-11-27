@@ -367,3 +367,17 @@ these two DLLs. Both import `_grQueryResolutions@8` at the same IAT slot.
 The observed changes are the new callers that reach the query, the depth
 written on that branch, and the fallback table's content and order.
 The fallback's 16-bit depth predates the patch.
+
+The companion fallback table at PE RVA `100a4` contains 18 dwords.
+Joining each entry to the 40-byte record at the same slot shows that all
+15 unchanged width/height pairs keep their lookup value despite the
+reordering. The substituted mode also retains token `0d`: the reference
+pairs it with 1280×1200 at slot 14, and 1.1.0 pairs it with 1280×1024 at
+slot 5. Slots 0 and 17 retain `0` and `1000h` respectively.
+
+The fallback copies this table to `600127c0`. On the inspected retry,
+`600021ad` reads a dword by mode index from that table and pushes it at
+`600021b4` for the normal Glide open call through `6001101c` at
+`600021bc`. Thus the reordered records carry matching lookup values into
+the open route. The actual dimensions the provider selects for token
+`0d` remain unverified.
