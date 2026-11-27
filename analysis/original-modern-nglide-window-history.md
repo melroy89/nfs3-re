@@ -83,3 +83,10 @@ A decoded direct-call census of the complete1.5.1 body finds **no call to`004cdb
 The1.5.1 adapter `drivers/nglide/voodoo2a.dll` is **entirely identical to1.5.2's adapter**. Thus the1.5.3 import/IAT-header edits are new relative to both predecessors, rather than restoration of a distinct1.5.1 metadata layout. The manifest records provider/INI comparisons against1.5.1 as well. Identical predecessor adapter bytes do not rule out a changed EXE/loader context exposing their header layout differently.
 
 This supplies a three-release chronology consistent with an EXE-side regression candidate:1.5.1 different mode body;1.5.2 new flag-gated desktop-size request;1.5.3 selected-size request. Causality is still inferred. Complete surrounding window setup, selected provider state, header-loader behaviour and a real reproduction remain pending. MP153-007 stays partial; no package was installed or executed.
+
+The game's [WindowedMode startup mapping](original-modern-config-loading.md#the-old-reset-cell-becomes-the-windowed-mode-setting)
+is byte-identical in 1.5.2 and 1.5.3. It publishes the inverted INI
+value to the display flags before the legacy config loader can
+clear the input cell on the inspected 1.5.2 path. The package and
+EXE differences above therefore concern a separate part of the
+windowed presentation chain.
