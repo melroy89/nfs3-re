@@ -175,6 +175,12 @@ A rejected-key route skips both payload DWORDs and executes `LOOP` at **`004a441
 
 The code establishes model-dependent logo admission and a30-entry stop check on the ordinary copy path. It does not identify which key denotes Ford, HSV, Lister or Spectre, prove the archive schema beyond these consumed fields, or establish complete input bounds. The original executable’s legacy logo route and Modern’s rendered animation remain separate comparisons. No release-note item is promoted solely from the archive filename or nearby manufacturer claims.
 
+### The per-logo registry filter first appears in 1.6.0
+
+Across the twelve retained Modern executables, the call at `00460489` targets `004a4390` through 1.5.3 and `004a4374` starting in 1.6.0. The latter loader calls the single-key registry predicate at `004a440a` for each nonzero model key, independently of the car-selection background's two-key wrapper. Its record-loop span `004a4400..004a442e` is byte-identical in 1.6.0 and 1.6.1 (SHA-256 `17bb44e6fc520034385648d902f0f4dd6ada5dfab03202b5a7e3897f6017258a`). This includes the terminal-rejection fall-through described above.
+
+Both release packages contain the same `fedata/art/logos.qfs` (SHA-256 `af45f1f6fff4fc6a9e2681c96c87fdcde2629fb490b2f511725ea97e7cad1a30`). Reproduce by resolving the relative call in each archived executable, comparing the loop span and hashing the exact archive member. The ordinary route checks the Ford Falcon GT and HSV VT GTS records separately when their keys occur in the table. Actual slideshow output remains untested.
+
 ## Official logo asset: conditional trailing records exist
 
 The audit now extracts `fedata/art/logos.qfs` directly from the hash-pinned official archive and decodes its `10fb` RefPack stream with maintained `decode_logo_refpack.py`. It checks the declared output length, back-reference bounds and final size, retaining packed/decoded SHA-256 hashes. Decoded output is524516 bytes with an `SHPI` header. A bounded magic scan finds two `LTBL` blocks:
@@ -184,7 +190,7 @@ The audit now extracts `fedata/art/logos.qfs` directly from the hash-pinned offi
 | `0x40038` | 6 | `0,0,0,0,0,0` |
 | `0x800a0` | 5 | `0,37,38,26,27` decimal (`0,25h,26h,1ah,1bh`) |
 
-All record payload DWORDs are retained in the manifest. This is a decoded-asset scan, not a complete proof of how every archive-entry helper finds metadata; the consumer linkage through `004f24e0` still needs a separate field/layout audit. The two nonzero selectors used by the shared background predicate,37/38, also occur in the second block, but manufacturer identities remain unassigned.
+All record payload DWORDs are retained in the manifest. This is a decoded-asset scan, not a complete proof of how every archive-entry helper finds metadata; the consumer linkage through `004f24e0` still needs a separate field/layout audit. The two nonzero selectors used by the shared background predicate,37/38, also occur in the second block, and correspond to the Ford Falcon GT and HSV VT GTS in the inspected car archives.
 
 The second block ends with conditional key27 rather than an unconditional sentinel record. Therefore the previously documented final-record rejection case is relevant to this asset’s actual ordering **if** that block reaches the loader and key27 is absent from the runtime registry. This does not establish that either condition occurs in normal play, nor that a visible failure results. It narrows the next check to metadata extraction and registry population, rather than assuming all official tables end with unconditional admission. No game/resource code was executed; decoding ran only on inert asset bytes.
 
@@ -367,7 +373,7 @@ The eight16-byte records at`0055e8dc..0055e95c` are **identical** in1.4.0 and1.5
 
 This establishes the advertised **MP150-022 conditional LOGO2 animation mechanism** at its1.4.0→1.5.0 boundary. It does not establish the contents or manufacturer identities of an external historical LOGO2 file, exact selected-index distributions, successful uploads or visible animation. In particular, primary-file failure does not leave a standalone LOGO2-only mode in this inspected loader.
 
-Final1.6.1 uses the separately audited **logos.qfs → LTBL →12-byte records** mechanism. The final atlas and conditional model keys must not be substituted for these historical16-byte records/two handles. This pass resolves the existence of the historical optional two-image route; when/how the later consolidation occurred and its full asset correspondence remain follow-up work. For reconstruction, preserve version-specific count/identifier addresses: using1.4.0’s meaning of`007a1b90` in1.5.0 would overwrite its first uploaded identifier.
+Final1.6.1 uses the separately audited **logos.qfs → LTBL →12-byte records** mechanism. The final atlas and conditional model keys must not be substituted for these historical16-byte records/two handles. This pass resolves the existence of the historical optional two-image route; the caller and package checks above date the metadata-driven consolidation to 1.6.0. Full asset correspondence remains follow-up work. For reconstruction, preserve version-specific count/identifier addresses: using1.4.0’s meaning of`007a1b90` in1.5.0 would overwrite its first uploaded identifier.
 
 ### Adjacent resource-size helper and caller evidence
 
