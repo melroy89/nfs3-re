@@ -151,6 +151,8 @@ The [hashed car inventory](evidence/inventories/installed-car-selector-categorie
 |---|---|---|
 | `0x25` | `FFAL/CAR.VIV` | Ford Falcon GT at `+0xde` |
 | `0x26` | `HGTS/CAR.VIV` | HSV VT GTS at `+0xda` |
+| `0x1a` | `LSTM/car.viv` | Lister Storm at `+0xdc` |
+| `0x1b` | `SR42/car.viv` | Spectre R42 at `+0xdb` |
 
 This identifies the exact keys in the inspected installation. Registry admission and alternate car packs remain outside this check.
 
@@ -173,7 +175,7 @@ For each admitted archive entry, it obtains data through `004f24e0`, checks DWOR
 
 A rejected-key route skips both payload DWORDs and executes `LOOP` at **`004a4415`**. When the decremented count remains nonzero it retries another key. **When that count becomes zero, execution falls through to `004a4417`**, the output-copy route, with the source already advanced past the rejected record. There is no intervening jump to the next archive entry. The subsequent `LOOP` at `004a442c` can then decrement zero to`0xffffffff` unless the output-count cap takes its exit. This is an observed conditional control-flow boundary, not a tested malformed-input case or an established actual asset defect. Asset record ordering, trailing storage and normal initialization must be checked before claiming a runtime failure.
 
-The code establishes model-dependent logo admission and a30-entry stop check on the ordinary copy path. It does not identify which key denotes Ford, HSV, Lister or Spectre, prove the archive schema beyond these consumed fields, or establish complete input bounds. The original executable’s legacy logo route and Modern’s rendered animation remain separate comparisons. No release-note item is promoted solely from the archive filename or nearby manufacturer claims.
+The code establishes model-dependent logo admission and a30-entry stop check on the ordinary copy path. The installed metadata above identifies the four nonzero keys used by the official archive. The loader trace establishes only the consumed fields and local stop check. The original executable’s legacy logo route and Modern’s rendered animation remain separate comparisons. No release-note item is promoted solely from the archive filename or nearby manufacturer claims.
 
 ### The per-logo registry filter first appears in 1.6.0
 
@@ -192,7 +194,7 @@ The audit now extracts `fedata/art/logos.qfs` directly from the hash-pinned offi
 
 All record payload DWORDs are retained in the manifest. This is a decoded-asset scan, not a complete proof of how every archive-entry helper finds metadata; the consumer linkage through `004f24e0` still needs a separate field/layout audit. The two nonzero selectors used by the shared background predicate,37/38, also occur in the second block, and correspond to the Ford Falcon GT and HSV VT GTS in the inspected car archives.
 
-The second block ends with conditional key27 rather than an unconditional sentinel record. Therefore the previously documented final-record rejection case is relevant to this asset’s actual ordering **if** that block reaches the loader and key27 is absent from the runtime registry. This does not establish that either condition occurs in normal play, nor that a visible failure results. It narrows the next check to metadata extraction and registry population, rather than assuming all official tables end with unconditional admission. No game/resource code was executed; decoding ran only on inert asset bytes.
+The second block ends with conditional key 27 (Spectre R42 in the inspected metadata). Therefore the previously documented final-record rejection case is relevant to this asset’s actual ordering **if** that block reaches the loader and key27 is absent from the runtime registry. This does not establish that either condition occurs in normal play, nor that a visible failure results. It narrows the next check to metadata extraction and registry population, rather than assuming all official tables end with unconditional admission. No game/resource code was executed; decoding ran only on inert asset bytes.
 
 ## Logo metadata accessor linkage
 
