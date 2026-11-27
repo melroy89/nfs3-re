@@ -260,3 +260,23 @@ three groups and ends after the return in 1.5.3–1.6.1. The older
 tails extend beyond it. The comparison establishes that the
 1.5.3 conversion sequence survives in the final executable.
 The runtime control word and observed percentages remain open.
+
+## Volume and effects percentage fields ship in 1.5.0
+
+The hosted original and all six retained patch archives through 1.4.0
+declare `percenttype=0` for five shared audio sliders and
+`SFX_INTENSITY`. All six retained archives from 1.5.0 through 1.6.1
+declare `percenttype=1` for those controls, plus the separate menu
+sound slider first present at this boundary.
+
+| Member | Codelinks checked |
+|---|---|
+| `audio.mnu` | `ASLD_MENUMUSIC`, `ASLD_RACEMUSIC`, `ASLD_SOUNDFX`, `ASLD_ENGINEVOLUME`, `ASLD_SPEECHVOLUME`, and from 1.5.0 `ASLD_MENUSOUND` |
+| `advgrph.mnu` | `SFX_INTENSITY` |
+
+To reproduce, extract both members from each archive using its stored
+path and compare the `percenttype` in each matching codelink section.
+In the paired 1.5.0 renderer, type 1 uses the unipolar `v * 100`
+branch, while type 2 retains the signed mapping for tuning controls.
+This dates the coordinated asset and executable changes behind
+MP150-021. Actual rendering and exact numeric output remain untested.
