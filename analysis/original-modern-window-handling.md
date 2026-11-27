@@ -40,6 +40,25 @@ direct call to `004cc6d0`. This covers registrations in the
 matched initializer. It leaves other writers and OS delivery
 outside the comparison.
 
+The same registration scan gives the close and private-request
+timeline:
+
+| Checked builds | Close handler | Private request handler |
+|---|---|---|
+| Hosted original and Modern 1.0.0–1.3.1 | `004cce40` | `004cce60` |
+| Modern 1.4.0 | `004cce48` | `004cce64` |
+| Modern 1.5.0–1.6.1 | `004ccd5c` | `004ccd98` |
+
+The private handler's 27-byte body matches across all 13 EXEs.
+With a nonnull context it sets `00561270` to 1. The close
+handler keeps its nonnull-context check and `PostQuitMessage(0)`
+call. Version 1.4.0 drops the redundant CS prefix on that call
+and shortens the preceding jump by one byte. The resulting
+25-byte body matches through 1.6.1. Both handlers return 1
+and pop the same 24 bytes of arguments. This comparison verifies
+local behavior despite relocation. Actual window destruction and
+consumption of the private request are separate paths.
+
 ## 2. Focus handling becomes application activation handling
 
 Original WM_SETFOCUS callback `004ccd60..004ccdc7`:
