@@ -538,3 +538,18 @@ the root EXE from each retained archive and inspect six
 file-backed bytes at each listed VA. Earlier different bytes
 establish only that the exact site did not contain the call.
 The reorganized texture-limit path remains a separate comparison.
+
+### Startup call sites for the 1.4.0–1.6.0 renderer wrapper
+
+A linear disassembly finds one direct call to the wrapper at `004f8a50` in each retained release that uses it. The startup call moves while the wrapper entry stays fixed.
+
+| Release | Direct call site | Initializer called at `004f8a73` |
+|---|---|---|
+| 1.4.0 | `004b5c35` | `005089d0` |
+| 1.5.0 | `004b59fe` | `00517630` |
+| 1.5.1 | `004b5a22` | `00517630` |
+| 1.5.2–1.5.3 | `004b5a32` | `00517630` |
+| 1.6.0 | `004b5a2d` | `00517630` |
+| 1.6.1 | No decoded direct call | Wrapper removed |
+
+Reproduce by filtering `objdump -d -Mintel` for direct calls ending at `0x4f8a50` in the retained EXEs and checking the target at `004f8a73`. The [loader history](original-modern-renderer-loading.md#renderer-wrapper-removal-and-snapshot-body-retention) records when padding replaces the old code. Indirect calls and provider behavior remain outside the census.
