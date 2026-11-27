@@ -380,3 +380,24 @@ has different code. The packed-request path above documents
 the later selection mechanism. The comparison establishes
 the first observed release and the local algorithm, while
 selected resolutions depend on the available mode rows.
+
+A linear disassembly census finds three direct calls to the
+scalar selector in the hosted original and every retained
+Modern EXE through 1.4.0. No decoded direct call or jump targets
+`004bee80` from 1.5.0 through 1.6.1.
+
+| EXE | Defaults call | Frontend replay | Startup lookup |
+|---|---|---|---|
+| Hosted original | `00472ecd` | `0047327e` | `004b610c` |
+| 1.0.0–1.3.0 | `00472e62` | `0047327e` | `004b610c` |
+| 1.3.1 | `00472e5e` | `0047327e` | `004b610c` |
+| 1.4.0 | `00472e59` | `0047327e` | `004b610c` |
+
+In 1.5.0 the old entry address lands inside the instruction
+at `004bee7f`, an integer division in the new mode-row
+eligibility check. The frontend replay calls `0044838e` at
+`00473279`, and the
+[startup path](original-modern-viewport-geometry.md#historical-mode-dimension-input)
+seeds the viewport index instead of invoking the scalar
+lookup. This tracks the retirement of the old direct call
+sites. Calls through computed pointers are outside the census.
