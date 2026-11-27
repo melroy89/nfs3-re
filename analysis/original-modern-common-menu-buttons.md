@@ -606,3 +606,19 @@ The installed executable was identified by SHA-256
 This establishes file retention for this installation and shows why
 archive omission alone cannot establish feature removal. Whether
 the game can enter any of those nine legacy menus remains untested.
+
+The installed menu graph narrows that reachability question. A
+reverse traversal from `cedmain`, using only active whole-line
+`nextmenu` fields in immediate `FEDATA/MENUS/*.mnu` files, reaches
+18 basenames including `cedmain` itself. The other 17 are
+`ced01dbg` through `ced07dbg`, `ced2bdbg`, `ced2cdbg`,
+`ced2ddbg`, `ced3bdbg`, `ced3cdbg`, `ced3ddbg`, `ced4bdbg`,
+`ced4cdbg`, `mattmnu` and `sub`. Neither `pause` nor
+`car1`, `car2` or `cedbasic` belongs to that set.
+
+To reproduce, case-fold the source basename and target of each
+whole-line `nextmenu` assignment. Start with `cedmain` and
+repeatedly add sources whose target is already in the set until
+it stops growing. This rules out an authored path from those
+four menus in the inspected graph. Executable callbacks, computed
+links and runtime menu selection remain outside the traversal.
