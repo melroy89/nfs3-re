@@ -46,7 +46,7 @@ Modern WM_CREATE calls the install helper and sets active flag 1; WM_DESTROY set
 
 The original installer begins at `004cdc90` and returns at `004cdccb`. The final Modern keyboard repeat handler occupies part of that address range and returns at `004cdcba`. All 21 bytes at `004cdcbb..004cdcd0` become NOPs. They cover the last three bytes of the original `MOV ECX,1` at `004cdcb9`, the stores of the returned handle to `0056127c` and request flag to `00561280`, the epilogue and the alignment before the next entry. Modern's hook setup at `004ccc40` instead puts the handle in `00561280` and uses `0056127c` as the fallback marker.
 
-Comparing this exact 21-byte slice of the [retained release executables](original-modern-differences.md#5-confirmed-menu-routing-difference), 1.1.0–1.3.1 match the original. Versions 1.4.0–1.5.2 have a RET at `004cdcbb` followed by 20 NOPs. The all-NOP slice first appears in the retained 1.5.3 and persists through final 1.6.1. Reproduce by extracting each `nfs3.exe` and reading the slice with `objdump -s --start-address=0x4cdcbb --stop-address=0x4cdcd0`. This dates the bytes at the old site. Hook installation success remains a runtime question.
+Comparing this exact 21-byte slice of the [retained release executables](original-modern-differences.md#5-confirmed-menu-routing-difference), 1.0.0–1.3.1 match the original. Versions 1.4.0–1.5.2 have a RET at `004cdcbb` followed by 20 NOPs. The all-NOP slice first appears in the retained 1.5.3 and persists through final 1.6.1. Reproduce by extracting each `nfs3.exe` and reading the slice with `objdump -s --start-address=0x4cdcbb --stop-address=0x4cdcd0`. This dates the bytes at the old site. Hook installation success remains a runtime question.
 
 ## 3. Preserved dispatcher exposes a power-handler anomaly
 
@@ -197,10 +197,17 @@ The retained archives give the following shipped defaults and installer call sit
 
 | Release | Shipped INI | Original-style installer call |
 |---|---|---|
-| 1.1.0 | No `KeyboardHook` setting | Startup calls `004cdc90` directly at `004b6178`. |
+| 1.0.0–1.1.0 | No `KeyboardHook` setting | Startup calls `004cdc90` directly at `004b6178`. |
 | 1.2.0–1.3.0 | `KeyboardHook=0` | Gated call at `004b564a`. |
 | 1.3.1 | `KeyboardHook=0` | Gated call at `004b55d2`. |
 | 1.4.0 | `PreventMinimize=0` replaces `KeyboardHook`. | No decoded direct call to `004cdc90`. The final replacement lifecycle is documented above. |
+
+The 1.0.0 call passes EAX=1 and EDX=0. The 64-byte installer
+window at `004cdc90..004cdcd0`, including its trailing padding,
+matches the hosted original and 1.1.0 (SHA-256
+`bc6b3886ec41a22ff52abc872880bd7e2fe15d799c7cb68c10f4fc364b164c36`).
+Neither `KeyboardHook` nor `PreventMinimize` appears in the shipped
+1.0.0 INI or as an exact ASCII string in its executable.
 
 Extract both `nfs3.ini` and `nfs3.exe` from the matching archive when comparing these defaults. The shipped value and executable fallback agree in the three retained builds with the old key. A user's effective value or OS hook behavior requires separate evidence.
 
