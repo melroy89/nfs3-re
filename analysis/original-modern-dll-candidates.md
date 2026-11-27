@@ -177,3 +177,21 @@ the capacity input in this routine before the division. Consequently the
 static comparison establishes the added filters and lost API call, while
 actual enumeration results and reproducibility of the capacity check remain
 unverified. No renderer was loaded or run.
+
+The retained archives date the two changes separately. Extract the exact
+member listed by `7z l -slt` and compare PE RVAs `2494` (5 bytes) and
+`2537` (14 bytes). Both windows were checked in every retained Modern release
+from 1.1.0 through 1.6.1.
+
+| Retained releases | Archive member | Depth gate at `60002494` | General-size path at `60002537` |
+|---|---|---|---|
+| 1.1.0 | `softtri.dll` | Requires 16 | Height floor of 480, skips system-info query |
+| 1.2.0, 1.3.0, 1.3.1 | `drivers/softtri/softtri.dll` | Same | Same |
+| 1.4.0 | `drivers/softtri/softtria.dll` | Same | Same |
+| 1.5.0 through 1.6.1 | `drivers/softtri/softtria.dll` | Same | Height floor removed, system-info query restored |
+
+The directory move is first observed in 1.2.0 and the original basename
+returns in 1.4.0. The 1.5.0 bug-fix span matches the restored-path bytes
+through 1.6.1, while the exact-16 depth filter persists. See the
+[1.5.0 fix analysis](original-modern-software-reference-pair.md#historical-softtri-fix-initializes-a-mode-bound-input)
+for the separate allocation and registration evidence.
