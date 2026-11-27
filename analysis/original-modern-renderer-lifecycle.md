@@ -6,7 +6,7 @@ Static analysis of the supplied original/backup and official Modern v1.6.1. Exac
 
 ## Original indirection versus Modern direct entry
 
-Original selector branches call `004f8830` and `004f8930` after loading, as mapped in the [initialization report](original-modern-renderer-initialization.md). `004f8830` tests about-export slot `009ef980`. When present, it installs five internal callbacks at `00567dc4`, `00567dcc`, `00567dd0`, `00567dd4` and **`00567dc8`**, the last pointing to **`00517610`** (`004f8844..004f887a`). Missing about export follows a diagnostic path, rather than installing those callbacks on the inspected branch.
+Original selector branches call `004f8830` and `004f8930` after loading, as mapped in the [initialization report](original-modern-renderer-initialization.md). `004f8830` tests about-export slot `009ef980`. When present, it installs five internal callbacks at `00567dc4`, `00567dcc`, `00567dd0`, `00567dd4` and **`00567dc8`**, the last pointing to **`00517610`** (`004f8844..004f887a`). A missing about export calls diagnostic helper `00401010` at `004f88a9`. If that call returns, the jump at `004f88b2` rejoins callback installation at `004f8844`.
 
 `004f8930` first calls `004df740` with EAX=0 and allocates the backing pool through `004f92d0` if `005644fc` is null. When `00564364` is zero, it applies environment settings and calls `005089d0` with values from `00564384/88/8c`. That dispatcher loads callback slot `00567dc8` and, if nonzero, calls through it (`005089d8..00508a15`). Thus **original `00517610`**, not same-address `00517620`, is the relevant video-initialization counterpart.
 
