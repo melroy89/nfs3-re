@@ -132,7 +132,7 @@ The narrow normalizer now has a verified setting identity. Both descriptors at `
 
 Complete capability helper `0040faf0..0040fb0f` is byte-identical between original and final Modern. It supplies EAX`ffffffff` to `004e21b0`, tests returned mask`20000h`, and returns normalized0/1. The audited mechanism is therefore a changed configuration consumer using a retained capability predicate, not evidence that the underlying audio provider itself was replaced. Backend flag production, refresh timing and actual device availability transitions remain unverified.
 
-This supplies partial static support for MP153-010, whose wording describes a previously selected EAX mode becoming unavailable. The accepted-header route demonstrably reaches this normalizer; it is not merely an unused helper or a string match. The exact v1.5.3 introduction, all other callers, provider/device behavior, audible fallback and original retail label provenance remain open. No audio backend, device or game instructions were run.
+This supplies partial static support for MP153-010, whose wording describes a previously selected EAX mode becoming unavailable. The accepted-header route demonstrably reaches this normalizer; it is not merely an unused helper or a string match. The historical comparison below dates the introduction to 1.5.3. Other callers, provider/device behavior, audible fallback and original retail label provenance remain open. No audio backend, device or game instructions were run.
 
 ### Capability predicate dispatches rather than returning a cached flag
 
@@ -670,3 +670,23 @@ MP153-010. The normalizer's own instructions leave the saved
 music ordinals untouched. Its capability call can dispatch to
 the audio backend, so indirect effects and actual device
 availability remain outside this static check.
+
+
+### The capability mask test also accepts certain DLL error results
+
+The bundled sound DLL's capability export at RVA `0x1428`
+has concrete negative-result paths. A failed capability method
+call at RVA `0x1477` takes the path assigning −1 at `0x1482`.
+The creation-call result branches at `0x14e5..0x150b` can
+assign −10 or −18. These paths converge on the store at
+`0x14bf` and return the assigned value. The game-side wrapper
+passes such nonpositive values through unchanged, and the
+outer predicate tests bit `0x20000`. All three negative values
+have that bit set, so under these failure paths the predicate
+would report the bit present and the saved EAX ordinal would
+survive. This is conditional static behavior. The underlying
+API failures and subsequent audio initialization were not observed.
+
+Reproduce by resolving `_iSNDdirectcaps@4` in the paired sound
+DLLs and disassembling the result paths, then following
+`004e220a..004e2221` and `0040faf0..0040fb0f` in the game EXE.
