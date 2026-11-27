@@ -76,8 +76,11 @@ In 1.6.1, `004b5818` calls the ASCII lowercase mapper before
 the store. Consequently an ordinary command-line filename is
 lowercased before storage in both builds. The stage that
 performs the conversion moves from the command-line scratch
-path into the shared setter. In 1.6.1 this also applies to names
-passed by the INI reader. File resolution remains untested.
+path into the shared setter. The INI path likewise lowercases in both builds. In 1.6.0
+`004b5851` calls the in-place lowercase helper immediately
+after reading the INI value, then calls the setter with ESI.
+In 1.6.1 `004b586f` calls the shared setter directly with EAX
+pointing to the freshly read value. File resolution remains untested.
 
 
 

@@ -70,6 +70,19 @@ Modern `004b5844` implements a configuration-driven path absent as a correspondi
 
 API identities follow the binaries' import tables, not string inference. The path walk assumes an appropriate backslash exists; this inspection does not establish robust handling of every truncated/API-failure input. The parser `004b57f4` lowercases ASCII, converts `/` to `\\`, splits an `@` suffix and stores a decimal numeric suffix at `007a3a70`; its 55-byte copying/termination limitations are already documented in [detailed notes](detailed-analysis-notes.md#renderer-driver-path-and-numeric-suffix-004b57f4). An absent/invalid numeric suffix retains the previous value. The [command-line follow-up](original-modern-command-line.md#duplicate-driver-options-name-and-suffix-are-separate-state) traces how reverse argument iteration can combine a name and retained suffix from different options, and how an empty driver option still suppresses the INI read.
 
+The 1.6.0 setter at `004b57dc` additionally sets EDX to the
+start of the output and updates it after every normalized
+backslash. It still stores the entire normalized path in
+`007a3a74`. The 1.6.1 setter wraps its body in PUSHAD/POPAD
+and drops that EDX tracking. In both inspected INI startup
+paths, the following directory construction reads the entire
+buffer and makes no use of the earlier EDX value. The 1.6.0
+INI caller lowercases its buffer before calling the setter,
+while 1.6.1 delegates that work to the setter. This comparison
+covers the local path assembly and ABI. It does not establish
+every consumer of the old EDX value or runtime file resolution.
+
+
 This verifies the Modern-side mechanism and a changed loader, not a complete map of original driver selection. Original `004f87e0` separately handles `THRASH_DRIVERNAME` and a leading `!`; callers and historical selection tables still need mapping before a complete precedence comparison is claimed.
 
 ## 6. Original environment override and selection wrapper
