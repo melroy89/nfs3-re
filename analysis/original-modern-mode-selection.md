@@ -358,3 +358,22 @@ On restore, the reader requests 1280×720×32. That row is an
 exact match and wins over the 16-bit row in the same driver
 table. This is an instruction-derived example with an unchanged
 mode table, rather than a captured driver session.
+
+### 1.5.2 redirects four mode-application callers
+
+The adjacent 1.5.1 and 1.5.2 EXEs show that the descriptor call at
+`004beec0` arrives with a new application body. The inspected
+entry window `004beeb0..004bef16` is NOP-filled in 1.5.1.
+In 1.5.2, the body starts at `004beeb0`, clamps signed requested
+indices below 1, and queries the renderer for the mode count and
+record base. Four direct caller sites switch together:
+
+| Call sites | 1.5.1 target | 1.5.2 target |
+|---|---|---|
+| `0044b1e5`, `004a3422`, `004a35e8`, `00517776` | `004bef50` | `004beeb0` |
+
+Reproduce by extracting each archive's root EXE and disassembling
+the five-byte CALLs and the entry window above. The instruction
+comparison dates the redirection and the new descriptor read at this
+site. It does not establish that the earlier target never queried
+the renderer or that both paths choose the same mode at runtime.
