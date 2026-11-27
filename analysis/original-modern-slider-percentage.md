@@ -245,3 +245,18 @@ converts directly with FISTP at `0046a55b`, using ambient rounding.
 To reproduce, disassemble `0046a52b..0046a5e0` in the four
 retained EXEs. This dates the local mapping and conversion
 changes. Actual displayed values and dead-zone coverage remain open.
+
+The conversion change persists through 1.6.1. Reading 132 bytes
+from PE RVA `0x6a52b` gives the same SHA-256 within each group:
+
+| Retained releases | SHA-256 of the fixed comparison window |
+|---|---|
+| 1.4.0 | `6601877304728377fbcb3b8840aa107d2efb7c18cb43f8d44f7db857abc3250a` |
+| 1.5.0–1.5.2 | `566292f625b36741ce43a364f49e747123569919ce03b5798f79822236453fbb` |
+| 1.5.3–1.6.1 | `76f9850d9eb562319d6902f9a687ffedac3f26d895fdb122b353d264955aa2aa` |
+
+The window includes the integer-conversion instructions in all
+three groups and ends after the return in 1.5.3–1.6.1. The older
+tails extend beyond it. The comparison establishes that the
+1.5.3 conversion sequence survives in the final executable.
+The runtime control word and observed percentages remain open.
