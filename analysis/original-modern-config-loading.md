@@ -512,3 +512,20 @@ covers only the first 12 bytes and performs no conversion of the
 packed resolution or other payload fields. This is a consequence
 of the checked branches and copy ranges. No downgrade or file write
 was observed.
+
+### Early Modern version 2 moves from startup stores to file data
+
+The recovered 1.0.0 EXE retains the original config block size
+`20f0h` and the two-dword copy from `0055e8b8` at
+`0047242a..0047242c`. Its eight file-backed template bytes start
+at zero. The 1.0.0, 1.1.0 and 1.2.0 EXEs contain identical stores
+at `004a3a43` and `004a3a4c` that write WORDs 2 and 0 to
+`0055e8b8` and `0055e8ba`. This produces the version-2 prefix
+on the path that executes those stores before the template copy.
+
+In the retained 1.3.0, 1.3.1 and 1.4.0 EXEs, the template already
+contains `02 00 00 00 00 00 00 00` on disk and the old same-address
+stores are absent. Compare PE RVA `15e8b8` for eight bytes and
+RVA `a3a43` for 18 bytes. This dates the change in the initial
+source of the version bytes. Actual saved-file headers and later
+writes are outside this comparison.
