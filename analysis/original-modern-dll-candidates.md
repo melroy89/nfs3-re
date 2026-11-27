@@ -195,3 +195,26 @@ returns in 1.4.0. The 1.5.0 bug-fix span matches the restored-path bytes
 through 1.6.1, while the exact-16 depth filter persists. See the
 [1.5.0 fix analysis](original-modern-software-reference-pair.md#historical-softtri-fix-initializes-a-mode-bound-input)
 for the separate allocation and registration evidence.
+
+### Early Voodoo2 adapter changes display setup references
+
+For the same archive pair, the hosted reference `voodoo2a.dll` hashes to
+`99b978fd6b0e94cca7ef0b671b9be0d630f929ab3901ebddaafa5d121213503b`
+and 1.1.0 `voodoo2.dll` hashes to
+`b1ef2f398978584ccf5891a2fd4a1b94d406e4a68afc2f823be3107692c7ba5b`.
+Comparing the first section at equal raw offsets places 43 of the 345
+differing bytes between `60001c2a` and `60002374` inclusive. The other
+302 fall in `6000d8a0..6000d9ff` inclusive.
+
+| Instruction addresses | Verified 1.1.0 change |
+|---|---|
+| `60001c29`, `6000215e`, `60002368`, `6000236f` | Retargets the record base from `6000fdd4` to `60012880`, including indexed field accesses at offsets 0, 4 and 24. |
+| `600021ad`, `600021e0` | Retargets a separately indexed dword table from `600100a4` to `600127c0`. |
+| `60001c4a`, `60001cba` | Replaces two stores to `6000fd4c` and `6000fd7c` with jumps over padding. |
+| `60001d22`, `60001d3e`, `60001f64`, `60002218` | Calls the new entry at `6000d8a0` instead of calling `60001940` directly. The new code still calls `60001940` at `6000d908`. |
+
+The references can be reproduced by extracting the named members and
+disassembling the two ranges with `objdump -d -Mintel`. The call and table
+changes are verified statically. Table contents and initialization, the new
+entry's complete behavior, and the effect on available display modes remain
+open. The supplied installed Voodoo2 copy is a different baseline.
