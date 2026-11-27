@@ -91,3 +91,15 @@ A reconstruction that returns only the version number would
 leave the cache's initial zero in place, allowing the
 capability export to take its cached-result branch unless
 another writer changed the cell first.
+
+The game resolves `_iSNDdirectcaps@4` at `004e1e7c` and
+stores the pointer to `009ef61c` at `004e1e8f`. The checked
+indirect calls to that slot at `004e220a` and `004e22a9`
+each test the returned value and take a separate branch for
+values at or below zero. The local caller instructions and
+pointer publication match in the hosted original and Modern
+1.5.2, 1.5.3 and 1.6.1. Reproduce by inspecting those
+instruction sites in each game EXE and resolving the export-name
+pointer `00549db0`. The cache reset can therefore matter to a
+subsequent game-side admission decision. Actual device results
+and the order of these calls in a live session remain untested.
