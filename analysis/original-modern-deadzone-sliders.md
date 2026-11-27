@@ -184,3 +184,15 @@ then compare the GUID bytes behind the first DWORD of each
 record with a nonzero pointer. This extends the local identity
 check to the full static format passed to DirectInput. Driver
 interpretation and device support remain unmeasured.
+
+The enumeration entry also matches across all thirteen executables.
+Its 129-byte body at `00435600..00435681` has SHA-256
+`2f8004f701799b37cf66a20cc93c5a812e8416ea34984c7c1d742c1432e5cd18`.
+On the branch that enumerates devices, the indirect call at
+`00435651` supplies callback `00436980`. Immediately afterward,
+the caller passes EAX=16 to `00435690` to query all sixteen
+indices. To reproduce, compare the body at PE RVA `0x35600`
+and decode these call sites. The changes to the separate
+frontend cache-refresh loop leave this enumeration and sweep
+sequence intact. Runtime device counts and branch selection
+remain unverified.
