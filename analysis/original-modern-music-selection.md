@@ -457,6 +457,18 @@ conditionally invokes `00472b60` at `00472b34` when
 to delegated calls and later initialization. It does not establish
 end-to-end preservation across those calls.
 
+A 1.5.3 relocation cross-check finds 20 HIGHLOW operands
+whose stored DWORD equals one of the two ordinal addresses.
+Eighteen are in code. Linear disassembly resolves sixteen reads
+or comparisons and two direct stores, both in the grouped
+reset helper at `0047224a` and `0047224f`. The two data matches
+are the descriptor destinations at `00556bf0` and `00556c04`.
+This finds no additional absolute direct store that could
+remap an accepted config. Descriptor-based writes, block copies
+and computed addresses remain possible. To reproduce, enumerate
+type-3 base relocations in the archived 1.5.3 EXE and compare each
+file-backed target DWORD with `006fbbe4` and `006fbbec`.
+
 ### Romulus default reverts between 1.4.0 and 1.5.0
 
 At `00472605`, retained packaged versions 1.1.0 through 1.4.0
