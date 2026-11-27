@@ -484,8 +484,8 @@ representable coordinates. Subsequent clipping and drawn output
 remain untested.
 
 On the projection builder's two-tangent branch
-(`004bf2fc..004bf320`), logical height from `[EBP+0x1c]`
-is divided by the tangent computed at `004bf2ff`. The builder
+(`004bf2fc..004bf320`), logical height from `[EBP+0x20]`
+is divided by the tangent computed at `004bf30c`. The builder
 negates and halves that result for the vertical scale at
 `005600a0`. With the same finite nonzero tangent and the
 fixed 385 × 96 example above, moving from logical height
@@ -494,3 +494,14 @@ this scale by approximately 16.7%, before binary32 rounding.
 This quantifies the projection effect of the height change
 under fixed angles. It leaves actual camera inputs, clipping
 and visible proportions untested.
+
+The mirror path in 1.5.0 supplies that branch for the three
+ordinary View Angle choices. The chooser at `004dbcc0` returns
+75, 90 or 105 degrees. The wrapper at `004dbce0` computes
+integer half-angles of 37/30, 45/36 or 52/42 respectively,
+with the second angle truncated after multiplication by 13/16.
+Both angle inputs are nonzero for each choice. In the builder,
+`[EBP+0x1c]` is width and `[EBP+0x20]` is height. The
+height uses the second tangent at `004bf30c` before the
+vertical scale store, as confirmed by the two divisions and
+the stack exchange at `004bf318`.
