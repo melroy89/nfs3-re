@@ -21,6 +21,12 @@ The original executable has a different body at `0043fe50`. Its initializer uses
 
 These are comparisons of the menu initializer and callback bodies in both binaries, not an assumption that equal addresses retain equal meanings. In Modern, those locations contain the added suffix path; the original page has fewer rows and no suffix display/toggle in the inspected route. This does not exclude a separate original networking option elsewhere.
 
+### Nonzero RemoteOnly selected a different menu path before 1.4.0
+
+The supplied original and retained 1.3.1 read the media/audio flag `006fbb54` at `0043fe57`. Zero jumps to the normal three-row constructor at `0043fe78`. Nonzero instead calls `0049e9d0` with EAX pointing to `006fd2fc`. If that call returns nonzero, the initializer calls the separate service-selection menu builder at `0043f4e0`. Either result bypasses the normal constructor. The builder supplies a different callback, `0043f680`.
+
+The retained 1.4.0 executable already builds the four-row suffix menu at `0043fe50` without reading this flag or making those two calls in the initializer. This is a verified menu-flow change. The source and everyday meaning of the original installation mode, and the connection outcome on the alternate path, remain outside this check. See the [setting and flag history](original-modern-language-table.md#remoteonly-reader-removal-is-dated-131-to-140).
+
 ## Retry behavior at the caller boundary
 
 Modern menu choices returning 0/1 from `004446c0` call `0043fd70`. Its zero-input branch attempts the configured value once. Its nonzero-input branch first tries the configured value, then, on failure, tries the alternate value from `0043fd20` (`0043fd86..0043fd99`). This retries service initialization, without writing that alternate back to the configured global. Assigning host/join meaning and proving occupied-port success still require the downstream paths; the branch itself is static evidence. Both failed choices reach the menu notice ID `0x78d` at `0043f7b1`, rather than reporting a failure merely when opening this menu. See [endpoint and reinitialization comparison](original-modern-network-endpoints.md).
