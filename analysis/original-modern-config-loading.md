@@ -529,3 +529,15 @@ stores are absent. Compare PE RVA `15e8b8` for eight bytes and
 RVA `a3a43` for 18 bytes. This dates the change in the initial
 source of the version bytes. Actual saved-file headers and later
 writes are outside this comparison.
+
+The recovered 1.0.0 post-copy span `00472aac..00472ae9` matches
+1.1.0 byte for byte. Both compare the declared size at `006fbb40`
+with `20f0h` at `00472ac0`. A match jumps straight to
+`00472ae9`; a mismatch sets `0067900c` to 1 and calls defaults.
+In this span, the version WORD does not participate in the decision.
+The hosted original has a further renderer-identity comparison
+between `007a3a58` and saved field `006fbc10` after the size gate.
+That comparison is absent from the matched 1.0.0 and 1.1.0 tails.
+As documented above, 1.2.0 adds a separate stored-resolution check
+and 1.5.0 introduces the version-WORD test. These are bounded
+post-copy decisions, independent of the earlier file-read checks.
