@@ -553,3 +553,7 @@ A linear disassembly finds one direct call to the wrapper at `004f8a50` in each 
 | 1.6.1 | No decoded direct call | Wrapper removed |
 
 Reproduce by filtering `objdump -d -Mintel` for direct calls ending at `0x4f8a50` in the retained EXEs and checking the target at `004f8a73`. The [loader history](original-modern-renderer-loading.md#renderer-wrapper-removal-and-snapshot-body-retention) records when padding replaces the old code. Indirect calls and provider behavior remain outside the census.
+
+Across the full 251-byte wrapper window `004f8a50..004f8b4b`, only the three call-displacement bytes at `004f8a74..004f8a77` change between 1.4.0 and 1.5.0. The window then matches through 1.5.3. In 1.6.0 the continuation instead restores ECX, EDI, EDX and EBX and returns at `004f8b26`. Padding replaces the former tail from `004f8b27`. That tail supplied the current dimensions and constants 30 and 20 to `004fd3f0`, then called `004fd280` with EAX and EDX zero. The [projection comparison](original-modern-projection.md) covers the old helpers and their later replacements separately.
+
+In 1.6.1 the entire window is NOPs. Compare 251 bytes at PE RVA `0xf8a50` across the retained release members and disassemble the two tails from `004f8b22` to reproduce the change. The removed calls establish a change in this wrapper's continuation. They leave projection initialization through other routes outside this comparison.
