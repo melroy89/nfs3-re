@@ -226,6 +226,31 @@ The [CPU-tier investigation](original-modern-cpu-tier.md) establishes the ordina
 
 These labels come from the descriptor-linked official English entries, not assumptions that larger numeric values mean better quality. In particular High/Full are ordinal0 for the corresponding lists; carlight/carchrome On and projtex Projected are ordinal1. The actual rendering meaning and effectiveness of each setting remain its consumer’s separate contract.
 
+### Graphics default table changes in 1.4.0 and 1.5.0
+
+Through 1.4.0, the initializer copies eight five-entry WORD tables
+from `00472168..004721b8` to its stack frame. Across retained versions
+1.0.0–1.3.1 those 80 bytes match. In 1.4.0, two rows change:
+
+| Destination | 1.0.0–1.3.1, tiers 0–4 | 1.4.0, tiers 0–4 |
+|---|---|---|
+| `viewlevel` (`006fbc28`) | 3, 3, 2, 1, 0 | 3, 2, 1, 1, 0 |
+| `cardetail` (`006fbc1c`) | 2, 2, 1, 0, 0 | 2, 2, 1, 1, 0 |
+
+The other six WORD rows are unchanged at that boundary. In 1.5.0
+the direct-index byte tables replace the stack copies. The seven
+rows with matching named destinations retain their 1.4.0 values at
+indices 0–4 and repeat each row's tier-4 value at index 5. The added
+`mirrorlevel` row distinguishes tiers 4 and 5 (1 versus 0).
+The complete 54-byte block at `00472e20..00472e56` matches across all
+six retained releases from 1.5.0 through 1.6.1 (SHA-256
+`ae60f3484f312b17134059ef17d189f8fac16f9f7215282db14d7751c4dac4da`).
+
+Reproduce by extracting the archived EXEs, decoding the WORD block
+as 40 little-endian values, and comparing the later byte block directly.
+This comparison covers table values and their local selection.
+Mode overrides and later configuration writes can change the result.
+
 ### ECX tier survives the two intervening mode calls
 
 The later mirror byte read at`00472e02` occurs after calls to mode selector`00448394` and field10 accessor`00448368`. The expanded audit retains their exact bytes: the selector uses balanced PUSHAD/POPAD on its normal return; the accessor and its leaf`00448348` write EAX and the selected-index global, but not ECX. Thus the original effective tier survives these two calls under ordinary valid-stack/no-alias-mutation conditions. This closes the earlier specific callee-register question for the later table lookup, without certifying every mode helper or failure path.
