@@ -143,6 +143,15 @@ Consequently, with outer byte `009f3d2d != 0`, the recurring foreground route is
 
 Modern replaces that entire tail with a direct jump at `004cd655` back to `004cd582`, moves the epilogue and fills `004cd663..004cd6b7` with NOPs. The local IsIconic test, conditional foreground request and ShowCursor(0) request are removed together. The complete producers of these predicate inputs and `009f3d2d` are not reconstructed here, so this should not be simplified to “every lost-focus event always forces restoration” in the original.
 
+The separate startup calls survive across the hosted original and
+all 12 retained Modern EXEs. The 27-byte span `004cd55d..004cd578`
+matches exactly. In each PE import table, `00534788` resolves to
+`SetForegroundWindow` and `0053477c` resolves to
+`SetActiveWindow`. The window thread calls them in that order,
+with writes to the shared origin fields in between. This
+distinguishes the retained startup requests from the removed
+recurring request. OS acceptance of the calls remains untested.
+
 ### The foreground and cursor branches disappear at different points
 
 Retained 1.0.0–1.3.1 match over the 88-byte window `004cd655..004cd6ad`. They retain the test of `009f3d2d`, both predicate calls, and the conditional ShowCursor(0) call. However, their jump at `004cd669` targets the back edge at `004cd680`, bypassing the original IsIconic / SetForegroundWindow branch. That original branch at `004cd685..004cd6ad` is entirely NOP-filled in these five releases. The `nfs3.exe` member from the retained 1.4.0 archive (SHA-256 `7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d`) instead jumps directly to `004cd582` and places the epilogue at `004cd65a`, as in 1.5.0 and installed 1.6.1. The handle-clear instruction at `004cd64f` remains in place. To check the boundary, stream the 1.4.0 member with `7z x -so` and use `objdump -d -Mintel --start-address=0x4cd64d --stop-address=0x4cd665` on it and the retained 1.3.1 EXE.
