@@ -285,3 +285,20 @@ On the zero-renderer-state entry path, the early mode callback tests that helper
 The cleanup helper at `004cdaa0..004cdb0e` is byte-identical in the original, 1.1.0, 1.2.0 and installed 1.6.1 (span SHA-256 `fbb330d3c7a1fd17059ba0bcf2fb6da8c86f10dbc162c92165da6ce73e2c947c`). If window-session flag `009f3d24` is zero on entry, `004cdaae` jumps straight to the epilogue and leaves `0056aff0` untouched. If the window-session flag is nonzero, the helper sends the cleanup request at `004cdaeb` and polls that flag at `004cdaf0` while servicing calls at `004cdafb` and `004cdb02`. It contains no direct store to `0056aff0`. In the early initializer, `005246c9` ensures the platform byte is zero before taking the driver-init path. On the no-window cleanup path, the reload therefore returns zero provided the intervening calls left that byte untouched. The active-window branch requires separate tracing of its callees and callbacks to establish the resulting byte.
 
 The active-window request `0x0466` uses the same pending-latch mechanism in the four inspected EXEs. In the original, 1.1.0 and 1.2.0, registration at `004cd849` installs `004cce60`, which sets DWORD `00561270` at `004cce69` when its first argument is nonzero. In installed 1.6.1 the corresponding registration, handler and store are `004cd8e7`, `004ccd98` and `004ccda1`. The inspected dispatch supplies the context pointer `009f38d0` as that argument, so a zero wParam still sets the latch. The window thread consumes the latch, optionally calls `004ecd50`, calls DestroyWindow at `004cd646`, then clears the shared HWND `009f3d24` at `004cd64f` in each build. That store explains how the cleanup wait can end. The consumer contains no direct store to platform status `0056aff0`. Effects through the optional callee or window callbacks, and runtime progress of the wait, remain unverified. See the [callback argument and pending latch evidence](detailed-analysis-notes.md#request-0x466-pending-latch-and-deferred-destruction).
+
+### The 1.4.0 startup check uses the older initializer target
+
+In retained 1.4.0, startup calls `004f8a50` at `004b5c35` and
+tests `00564364` at `004b5c3a`. Zero calls the diagnostic with
+the “Cannot init thrash video driver.” string. The wrapper tests the
+same cell at `004f8a59` and `004f8a78`, just as in 1.6.0, but
+its call at `004f8a73` targets `005089d0` in 1.4.0 and
+`00517630` in 1.6.0.
+
+The older target has multiple paths, including a call to
+`00508390` at `00508a72`. A zero return from that call reaches the
+store from EDI to `00564364` at `00508a7b`. An alternate branch
+publishes EDX at `00508b12`. These witnesses separate the historical
+initializer from the later common-tail store of 1. The shared caller
+check alone does not establish identical failure coverage across
+the two versions.
