@@ -460,3 +460,13 @@ the game receives the descriptor. A decoded direct-operand scan of 1.5.0
 found only those initial stores and the two query-output stores. Game
 consumers can read the fields through the returned pointer, so the scan
 does not establish their downstream effect.
+
+The final EXE consumes both descriptor fields during renderer initialization.
+At `004b5bd6..004b5bf5` it takes their unsigned minimum and repeatedly halves
+the requested texture extent at `007a278c` until it fits. For example, a
+request of 1024 with both fields reporting 512 produces a configured extent
+of 512 on this path. The resulting extent is still subject to the downstream
+limits documented in the [texture extent comparison](original-modern-texture-limits.md).
+This establishes the producer-to-consumer chain for the paired final DLL
+and EXE. The DLL producer is dated to 1.5.0. The first EXE release to apply
+this exact clamp and live provider values remain separate questions.
