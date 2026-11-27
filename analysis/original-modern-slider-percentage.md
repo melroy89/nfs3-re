@@ -315,3 +315,14 @@ the caption positioning branch described above. This dates the
 layout change to 1.5.0. The renderer's instructions for percentage
 arithmetic remain byte-identical across that boundary, while the
 shared conversion helper changes separately in 1.5.3.
+
+The paired renderer's checked numeric dependencies also survive
+the 1.5.0 layout change. Comparing 1.4.0, 1.5.0 and 1.5.3, the
+185-byte quantizer at `004693c0` is identical (SHA-256
+`b59a74a75fb7b06a3c65f1550347d4319587c01508c2c2cd1fcc71f046d3ade0`).
+The 12 bytes at `0053aea8` are `0000c8420ad7a3bb0ad7a33b` in
+all three builds, encoding binary32 100 and the negative/positive
+bias constants. At 1.4.0 → 1.5.0, the 29-byte conversion-helper
+window also matches. These comparisons isolate the observed 1.5.0
+renderer edit to caption placement within the inspected code and
+constants. Runtime inputs and the active control word remain open.
