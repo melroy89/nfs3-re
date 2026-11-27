@@ -231,9 +231,21 @@ viewport-read window at `004beb80`. The wrapper first calls
 `00435310` to read mouse state, then scales only the two coordinate
 outputs when `00559234` is nonzero. Button and wheel outputs
 bypass these conversions. This verifies the scaling instructions
-and their gate. The lower reader, live viewport values and
+and their gate. Live device state, viewport values and
 the [release-specific context writers](original-modern-frontend-sound.md)
 can still affect the result.
+
+The lower buffered mouse reader also matches in the hosted original
+and all 12 retained Modern EXEs. The 768-byte window
+`00435310..00435610` includes its final RET at `004355fd` and the
+start of the next routine. Compare PE RVA `35310h` for `300h`
+bytes (SHA-256
+`b60c4d0f711faa4d29c82eb79bd6c7db0e3a82f2d4b2055d740e339c73d77edc`).
+The release notification path masks EAX with `0xf00` before calling
+the same callback slot as the window mouse path. This confirms
+continuity of the EXE-side reader and that bit domain. Device setup,
+buffered events supplied by DirectInput, and runtime ordering remain
+separate from the byte match.
 
 **Status:** done, verified static for ten retained registrations, both complete
 callback bodies, register forwarding and the61 changed-byte tail. Full
