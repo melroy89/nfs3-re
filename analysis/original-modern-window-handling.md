@@ -99,6 +99,15 @@ Microsoft documents the event selector in **wParam** for [WM_POWERBROADCAST](htt
 The original initializer calls GetModuleHandleA(NULL) at `004cd6f1` and stores it at `009f3d48`; Modern reads an already stored handle there at `004cd6ef`. Original also supplies a fallback class-name pointer when `[005612a4]` is null (`004cd6f8..004cd723`); Modern's shown initializer uses the existing value without this local fallback. The final startup call at `004a3de7` obtains GetModuleHandleA(NULL)
 and stores the result at `004a3ded` before the class initializer reads it.
 
+This lookup first moves into startup in retained 1.4.0.
+The 13 bytes for pushing NULL, calling `GetModuleHandleA` and
+publishing EAX match at `004a3a26..004a3a33` in 1.4.0–1.6.0
+and `004a3de5..004a3df2` in 1.6.1. Each import table binds
+slot `0053454c` to the same API. A scan for the direct EAX
+store encoding finds it at `004cd6fe` in the hosted original
+and retained 1.0.0–1.3.1. This tracks the direct write and
+leaves indirect writers outside the scan.
+
 The file-backed class-name pointer starts at zero in the hosted
 original and retained Modern 1.0.0–1.3.1. From 1.4.0 onward it is
 `0053ce40`, which points to the same class name in the checked 1.4.0
