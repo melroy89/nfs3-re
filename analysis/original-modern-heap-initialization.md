@@ -83,8 +83,7 @@ three original wrappers and their alignment.
 | `004bc990..004bc99f` | Arena free `004bbdc0`, then `00434b10` | Teardown directly calls mapped free `004bbda4` at `004b5d89` |
 | `004bc950..004bc978` | Seven-call shutdown sequence | Three of those calls appear directly at the shown race-shutdown site |
 
-Original `00434b00` itself calls `004eb3c0` and `00434870`; only the latter
-link is asserted at the shown Modern setup tail. Original `00434af0` and
+Original `00434b00` itself calls `004eb3c0` and `00434870`. Both calls survive in the same order immediately before arena allocation in 1.6.1, at `004b5d6e` and `004b5d73`. Original `00434af0` and
 `00434b10` are each exactly five-byte frame/no-op bodies. No full replacement
 claim is made for every transitive setup operation.
 
@@ -159,3 +158,5 @@ Across the supplied original, retained 1.4.0 and 1.5.0, and installed 1.6.1, bot
 Decoded direct calls show that 1.4.0 and 1.5.0–1.5.3 all allocate through `004a3398 → 004bc980`, then `004bc988 → 004bbd80`. Teardown changes in 1.5.0. The call at `004a33a3` goes straight to the new free entry `004bbda4`, replacing the 1.4.0 route through `004bc990` and its call at `004bc993` to the old pool-free entry `004bbdc0`. The direct teardown route persists through 1.5.3.
 
 By retained 1.6.0, calls at `004b5cea` and `004b5cfd` directly allocate and free the arena. Installed 1.6.1 retains that structure at the shifted sites listed above. Thus the allocator changes in 1.5.0 and the allocation wrapper disappears at the 1.5.3 → 1.6.0 boundary. This is a direct-call inventory of the named entries. It leaves indirect callers and runtime lifetime ordering open.
+
+The retained 1.5.3 wrapper calls `00434b00` immediately before allocation. Its two calls, to `004eb3c0` and `00434870`, move directly into the 1.6.0 setup tail at `004b5ce0` and `004b5ce5`. Thus all three named operations retain their local order across the wrapper removal. This does not establish equivalence of the preceding setup or the bodies of those callees.
