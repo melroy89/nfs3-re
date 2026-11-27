@@ -599,3 +599,15 @@ the window initializer at `0050844e`. The INI option therefore
 feeds an existing window setup input through two Boolean conversions.
 Values read on other initializer paths and live window presentation
 remain separate.
+
+In the 1.5.2 window code, `004cd946` stores BL to `009f3d2d`.
+That address equals context base `009f38d0` plus `45dh`. The
+window creation wrapper passes that exact base in EAX at
+`004cd4eb` and calls `004cd350`. The callee reads the same byte
+at `004cd35d` to select the style branch before CreateWindowExA
+at `004cd46e`. A zero byte selects the adjusted client-rectangle
+path. A nonzero byte selects origin zero and dimensions from the
+system metrics. The [window geometry comparison](original-modern-window-geometry.md)
+records the style constants and API arguments. This is the static
+link from the saved raster flag to window style selection, conditional
+on reaching that creation path with the same context state.
