@@ -33,3 +33,7 @@ The audit now enumerates every differing byte in the complete containing envelop
 Together the left/right selection and Enter-opening routes give additional support for the top-dropdown keyboard-sound claim. Up/down/page selection in the expanded list, callback policy and exact audible effects remain separate. No input route was executed.
 
 Expanded-list positioning ends with retained cursor call **`0046454e`**. Original’s tail at **`00464553`** returns EDI directly; Modern loads EAX0 and jumps to **`004642e0`**, reusing the same sound call while retaining sound identifier0 rather than the sound1 supplied by the other entry. EAX is then replaced by EDI in the common return sequence. This extra epilogue change is included in the ninth region; complete path admission and whether every movement changes the selected item remain unresolved.
+
+## Release boundary for the shared sound tail
+
+The complete `00463ff0..0046455d` envelope matches the hosted original in retained 1.0.0–1.3.1. The closed-list selection and Enter paths, common close/update tail and expanded-list sound-0 path all change in 1.4.0. The only later change in this envelope is one byte at `004642e1` in 1.5.0, within the relative sound-call operand. The 1.5.0 envelope then matches through 1.6.1. Reproduce by extracting each archive's `nfs3.exe` and comparing RVA `0x63ff0` for `0x56d` bytes. This dates the local routing changes. Audible effects and changes inside called helpers remain outside that byte comparison.
