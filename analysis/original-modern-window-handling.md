@@ -25,6 +25,21 @@ The other 21 registrations retain their message/handler-address pairs; this does
 
 Message names/IDs were checked against the installed MinGW `winuser.h`, not inferred from current Ghidra names. The registration sets are observable facts even on hosts where these Windows messages behave differently.
 
+The retained release sequence dates the focus-to-activation switch
+to 1.4.0 and the power-message registration to 1.5.0.
+
+| Checked builds | Focus or activation registrations | Power registration |
+|---|---|---|
+| Hosted original and Modern 1.0.0–1.3.1 | `0007 → 004ccd60`, `0008 → 004ccdd0` | Absent |
+| Modern 1.4.0 | `001c → 004ccdf0` | Absent |
+| Modern 1.5.0–1.6.1 | `001c → 004ccd04` | `0218 → 004ccd78` |
+
+Reproduce by disassembling `004cd6c0..004cd939` in the retained
+root EXEs and reading the message and handler pushes before each
+direct call to `004cc6d0`. This covers registrations in the
+matched initializer. It leaves other writers and OS delivery
+outside the comparison.
+
 ## 2. Focus handling becomes application activation handling
 
 Original WM_SETFOCUS callback `004ccd60..004ccdc7`:
