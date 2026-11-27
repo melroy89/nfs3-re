@@ -87,3 +87,16 @@ callback. The inspected lookups alone do not establish
 which setup contexts receive the item or whether other
 paths install a callback. The authored `nextmenu=credits`
 remains independent evidence of the shipped route.
+
+The hosted original and retained 1.0.0–1.3.1 EXEs each
+have three decoded instruction operands naming the
+`credits` string at `00537494`. The 1.4.0 EXE retains
+one lookup at `00437845`. It sets item flag bit 0 whenever
+the lookup returns an item, without the earlier
+`006fd3b0 > 1` test. The corresponding lookup moves to
+`00437699` in 1.5.0 and remains there through 1.6.1.
+The code therefore still recognises the item name after
+the shipped setup asset changes to Options. Reproduce
+with `objdump -d -Mintel` and search for `0x537494`.
+This census covers those explicit operands. Active contexts
+and visibility of a matching item remain untested.
