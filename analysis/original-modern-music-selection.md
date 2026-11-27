@@ -508,3 +508,15 @@ The loader window `00410046..0041008e`, poll body
 match in all six retained EXEs from 1.0.0 through 1.4.0. See the
 [game pool comparison](original-modern-heap-initialization.md)
 for the independently identified allocator and release helpers.
+
+
+## Two retained RemoteOnly audio checks
+
+The hosted original, retained 1.0.0 and official 1.6.1 executable match byte for byte over both spans below. These checks survive the [1.4.0 removal of the INI producer](original-modern-language-table.md#remoteonly-reader-removal-is-dated-131-to-140).
+
+| PE VA range (end exclusive) | SHA-256 | Effect of nonzero `006fbb54` |
+|---|---|---|
+| `00418990..004189f0` | `85bd6c371fd46ea07b4ffaef5abaaa7303f671ec057005671b05aecd26127a4b` | Branches at `004189ab` to the indexed value path. If the requested value changes, that path updates `00552844 + 4*index`, calling `00418930` first only for a signed increase. It bypasses the alternate branch at `004189f0`. |
+| `00418c60..00418cbb` | `9d49b06c6c60f3cb52d43b67f2c41cc49c3f479e377b262da13e24f4774e8f78` | Branches at `00418c7d` directly to the return, skipping the Pathfinder event interrupt at `004e7208` and subsequent call to `004e70fc`. |
+
+Reproduce by reading each span from its PE RVA and disassembling from the listed entry. The zero case still checks the other audio state fields before admitting the alternate path. This establishes local control flow and a surviving state update. Audibility and call-site reachability in a live session remain untested.
