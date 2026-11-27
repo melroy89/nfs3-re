@@ -212,6 +212,18 @@ both file-backed spans in each root EXE. The verified setup and
 target cover this frontend notification path. Other pointer writers
 and accumulator clearing can still affect runtime behavior.
 
+Both frontend polling bodies, `0049c000..0049c075` and
+`0049c080..0049c0d1`, also match across the hosted original and all
+12 retained Modern EXEs. In the first path, when polling is enabled,
+pending bits 8–11 select the clear-and-return branch. Bit 8 produces
+`0x0d`; the other bits alone produce zero. The second poll instead
+tests the low nibble of the freshly polled button output at
+`0055e5f4`. If nonzero, it clears the same accumulator and returns
+`0x0d` for bit 0 or `0x1b` otherwise. Compare those half-open
+file-backed spans in the extracted EXEs. This establishes continuity
+of these two local consumers. Race and list consumers, event ordering,
+and actual input behavior remain outside this check.
+
 **Status:** done, verified static for ten retained registrations, both complete
 callback bodies, register forwarding and the61 changed-byte tail. Full
 `004fb470` state/clip/capture processing, external message delivery, mouse
