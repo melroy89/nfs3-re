@@ -210,10 +210,20 @@ The last case reinforces the existing limit: these EXE predicates alone do not e
 |---|---|
 |1.1.0→1.4.0 endpoints |Complete226-byte inline enumerator identical |
 |1.4.0→1.5.0 |Inline signed depth>=16 predicate replaced by shared67-byte eligibility helper requiring16 or32; enumerator/search use that helper |
-|1.5.0→1.6.0 endpoints |Complete enumerator, nearest-mode search and eligibility bodies identical |
+|1.5.0–1.6.0, all five retained releases |Complete enumerator, nearest-mode search and eligibility bodies identical |
 |1.6.0→1.6.1 |Enumerator/search replace about-slot calls with cached-descriptor loads; eligibility body unchanged |
 
-The equality statements cover the inspected endpoint bytes, not every intervening beta or release.1.5.0's narrow helper at`004bee60..004beea3` remains byte-identical in1.6.0/final. Thus the earlier24-bit hypothetical admission difference is now dated to the1.4.0→1.5.0 pair rather than left as an undated early/final distinction. No24-bit provider support is inferred.
+The complete 67-byte eligibility helper at `004bee60..004beea3`
+also matches in all six retained releases from 1.5.0 through 1.6.1
+(SHA-256 `caa1e8a8639b8e171f5884195237da48bad3748b0ba79e38e627df6a32daa860`).
+The 1.4.0 inline depth threshold already admitted 32-bit rows if
+the other checks passed. The 1.5.0 change retains 32 and 16 while
+excluding other depths that could pass the earlier threshold, such
+as 24. This is a statement about EXE eligibility, with actual
+provider modes outside the comparison. Reproduce the equality checks
+by extracting each retained `nfs3.exe` and hashing PE RVA `bee60h`
+for 67 bytes, `bed90h` for 59 bytes, and `bedcch` for 147 bytes.
+The latter two lengths apply to 1.5.0 through 1.6.0.
 
 In1.6.0 both complete consumers call slot`009ef980`: enumerator`004bed90..004bedcb` at`004bed99`, and nearest-search`004bedcc..004bee5f` at`004beddd`. Final replaces both with`MOV EAX,[007a3a5c]` at those sites. Their following count/table reads use descriptor+3ch/+40h as before; the one-byte instruction shrink repacks later instructions and branch displacements. Final envelopes end at`004bedca` and`004bee5e`, respectively. Its nearest-search epilogue also moves the saved-EAX store ahead of restoring ESP. The complete captures retain those differences; this is not described as a sole same-length call patch or a full machine-state equivalence proof.
 
