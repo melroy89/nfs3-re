@@ -468,5 +468,6 @@ request of 1024 with both fields reporting 512 produces a configured extent
 of 512 on this path. The resulting extent is still subject to the downstream
 limits documented in the [texture extent comparison](original-modern-texture-limits.md).
 This establishes the producer-to-consumer chain for the paired final DLL
-and EXE. The DLL producer is dated to 1.5.0. The first EXE release to apply
-this exact clamp and live provider values remain separate questions.
+and EXE. The DLL producer is dated to 1.5.0. The [adjacent EXE comparison](original-modern-texture-limits.md#the-exe-clamp-first-appears-in-retained-151)
+dates insertion of the clamp in the shared renderer setup tail to 1.5.1.
+Live provider values and texture upload outcomes remain open.
