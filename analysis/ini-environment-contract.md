@@ -19,3 +19,9 @@ Unrecognized indirect calls, altered/aliased strings and arbitrary generic
 helper inputs are outside this conclusion. Search-table/environment-value
 ownership and other INI boundaries remain independent unresolved contracts.
 No executable or environment settings were changed.
+
+## Integer reader history
+
+The retained 1.1.0 reader at `004fb6f0..004fb702` passes the caller's EDX fallback directly to GetPrivateProfileIntA. The 1.2.0 reader adds a call to `004fb734` before that API. When the lookup returns nonzero, the reader calls the integer parser at `004f0430` and uses its EAX result as the fallback passed to GetPrivateProfileIntA. This dates the environment fallback path to 1.1.0 → 1.2.0 for the inspected integer reader. The environment value feeds the API's default argument, with the INI lookup still performed.
+
+All retained 1.2.0–1.6.1 members keep this instruction sequence apart from the import operand. The PE thunk names GetPrivateProfileIntA at slot `00534674` through 1.4.0, `0053466c` in 1.5.0–1.5.2, and `00534670` in 1.5.3–1.6.1. These are static call contracts. Actual parsed values and operating-system INI behavior were not exercised.
