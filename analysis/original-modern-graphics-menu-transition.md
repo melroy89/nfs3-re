@@ -89,6 +89,14 @@ For the comparison, local uppercase backup `fedata_org/menus/ADVGRPH.MNU` contai
 
 **MP150-008 now has partial static support:** a concrete menu route and bound fog-control mechanism are verified in final Modern, with a qualified backup contrast. Complete input dispatch, actual ordinal changes, renderer output and historical introduction remain unverified. No menu, driver, game or new instruction probe was executed, and the established Ghidra project is unchanged.
 
+### Fog first appears in Advanced Graphics at the 1.5.0 boundary
+
+The retained 1.4.0 and 1.5.0 `graphics.mnu` both route to `advgrph`. The 1.4.0 `advgrph.mnu` has neither fog item. The 1.5.0 member adds both `GRAPH_FOG` and `GRAPH_FOG_CASCADE`, each with `listname=fog`. Their paired Advanced Graphics member SHA-256 values are `b6f849e1042d04f532d854996914e3726b1b7a1f71d2364a44f0f7ceebee8a74` and `0b6a4c2bd318a554b9a2c1743391e56505a5594c15bf41ca4feba88a66878bb9`.
+
+The descriptor slot at `00556924` changes from `buyERTS_at75` in 1.4.0 to `fog` in 1.5.0. It binds list `005561be` and live selector `006fd1d4` in 1.5.0. The list entries 229 and 228 decode as **Off** and **On** in that release's own English asset. The support helper starting at `004377c8` looks up both authored codelinks and clears the live selector when support `007a3a54` is zero. This dates the menu and code binding for MP150-008 to 1.5.0. Actual input dispatch and renderer output remain unverified.
+
+Reproduce with the retained 1.4.0 and 1.5.0 archives: compare `fedata/menus/advgrph.mnu`, read the five DWORDs at descriptor VA `00556924` in each EXE, and resolve the English offsets at `4 * text ID` in `fedata/text/text.eng`.
+
 ## SFX intensity control admits an additional renderer-state bit
 
 The complete paired local tail **`00448728..00448765`**,61 bytes, differs at exactly one byte: TEST mask at`0044873e` changes **40h → 50h**. Both versions look up token **`SFX_INTENSITY`** at`00538e3c` through`00442a40`; a missing item skips setup. For a present item they test global byte`007a3a58`.
