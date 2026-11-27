@@ -308,4 +308,10 @@ PE RVA `0xdfd56` has two byte identities. SHA-256 prefixes are
 1.5.3 through 1.6.1. The two-axis renderer changes one release
 sequence earlier: its full range has prefixes `b907c032e5724e4a`
 through 1.4.0 and `6217a0a2bf564d1b` from 1.5.0 onward.
-The renderer and helper therefore have distinct release boundaries.
+A byte-by-byte comparison of the full renderer range in 1.4.0
+and 1.5.0 finds exactly one changed byte, at `0046c1f0`. The
+immediate changes from decimal 10 to 20 in `SUB EDX, imm8` on
+the caption positioning branch described above. This dates the
+layout change to 1.5.0. The renderer's instructions for percentage
+arithmetic remain byte-identical across that boundary, while the
+shared conversion helper changes separately in 1.5.3.
