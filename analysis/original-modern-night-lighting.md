@@ -81,3 +81,25 @@ The named setting therefore predates the
 The descriptor and asset checks cover the menu binding. They
 leave historical visual effects and the feature's full lighting
 and track-model behavior open.
+
+### Medium first admits mirror vehicle lighting in 1.5.2
+
+The 884-byte lighting body at PE RVA `1c670h` matches the
+hosted original in every retained release from 1.0.0 through
+1.4.0. Versions 1.5.0 and 1.5.1 share the next body. At
+`0041c687` it tests context tag 1, then compares Rear View
+Detail with 0 and rejects on inequality. Version 1.5.2
+changes that comparison to 1 and the reject branch to
+unsigned JA. The entire 884-byte body then matches through
+1.6.1.
+
+| Retained EXEs | Rear View Detail choices that pass the context-1 gate |
+|---|---|
+| Hosted original and 1.0.0–1.4.0 | None |
+| 1.5.0–1.5.1 | High |
+| 1.5.2–1.6.1 | High and Medium |
+
+The independent night-lighting enable check still applies.
+This dates admission of vehicle lighting in the mirror for
+MP150-002. Clouds, lightning and visible output require
+separate evidence.
