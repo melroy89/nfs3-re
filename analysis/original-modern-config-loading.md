@@ -578,3 +578,14 @@ dates the selected reuse to 1.5.2 and distinguishes it from the
 1.5.0 removal of the deferred reset consumer. Execution ordering
 outside the inspected paths and actual windowed presentation
 remain outside this check.
+
+The normal 1.5.2 startup sequence calls the INI reader
+`004b5580` at `004a3a6f`, then calls the display startup wrapper
+`004a3390` at `004a3d6c`. That wrapper calls `004b5b86`.
+Its read of `0067900c` at `004b5bd1` writes the Boolean inverse
+to `00564390`: zero requests the value 1, any nonzero setting
+requests 0. The same initializer calls the config loader at
+`004b5ca2` later. Thus the inspected display flag captures the
+INI result before the config load can write the shared cell.
+Other later reads or writers and actual window creation remain
+outside this ordering check.
