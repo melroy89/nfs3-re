@@ -177,3 +177,5 @@ The retained archives give the following shipped defaults and installer call sit
 | 1.4.0 | `PreventMinimize=0` replaces `KeyboardHook`. | No decoded direct call to `004cdc90`. The final replacement lifecycle is documented above. |
 
 Extract both `nfs3.ini` and `nfs3.exe` from the matching archive when comparing these defaults. The shipped value and executable fallback agree in the three retained builds with the old key. A user's effective value or OS hook behavior requires separate evidence.
+
+In retained 1.4.0, the integer reader stores `PreventMinimize` with fallback zero to `00561284` at `004b5615` and `ScreenshoterEnabled` with fallback one to `00561288` at `004b563b`. Installer `004ccd2c` adds the two DWORDs and attempts installation only if the wrapping sum is nonzero and the handle at `00561280` is zero. It tries hook type `0x0d` first, then type 2 with the current thread ID on failure. Both attempts take callback `004ccc70`. Thus with ordinary values 0 and 1, disabling minimization prevention alone still permits installation for screenshots. These addresses are specific to 1.4.0. Actual hook installation remains untested.
