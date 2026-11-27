@@ -269,7 +269,13 @@ The early/original comparison covers the entire83-byte straight-line audio-defau
 
 Original and1.1.0 descriptor `00556bf4` both bind `menutunes` to `006fbbec` and the same list `[466,467,468,469,470,471,472,473]`. Thus ordinal2 selects ID468. Final uses `[1946,1944,1945,467,468,469,470,471,472,473]`: the same track's fixed-choice ordinal is now4, while the default0 selects the cyclic subset helper. Numeric selector0 in original/final therefore does not imply identical random-selection behavior. The existing final helper excludes track ID6 from its “All” cycle; do not silently expand the label into a universal playlist claim.
 
-**MP100-034 advances to partial historical support:** an inspected early Modern EXE implements the advertised Romulus default, whereas final Modern does not retain it. The exact 1.0.0 introduction remains unresolved. The packaged 1.4.0 and 1.5.0 comparison below dates the later change. Label text is decoded from the hash-pinned official final English resource, not authenticated original/early language files. Initialization/reset admission, saved-user overrides, later writers, successful track loading and audible output remain separate requirements. See [configuration loading](original-modern-config-loading.md#removed-inline-defaults-at-00472566-replacement-initialization-matters) for the already established move from original inline defaults to grouped final helpers.
+**MP100-034 advances to partial historical support:** an inspected early Modern EXE implements the advertised Romulus default, whereas final Modern does not retain it. The retained 1.0.0 EXE already implements the setting. Its 83-byte
+defaults block matches 1.1.0 (SHA-256
+`d8ac980c3fc9154e5a2142141bd97c94c84b5a2e42df43450ff78c4b160c6da5`),
+as do the 20-byte descriptor at `00556bf4`, the `menutunes` key
+at `005382b4`, and the terminated choice table at `0055633e`.
+The 1.0.0 EXE extracted from `history/nfs3_modern_patch_v1.0.0.7z`
+has SHA-256 `988fbf599af256d1486bef967959893c6b26c9fa8ed21b76310bbb7798b4d9df`. The packaged 1.4.0 and 1.5.0 comparison below dates the later change. Label text is decoded from the hash-pinned official final English resource, not authenticated original/early language files. Initialization/reset admission, saved-user overrides, later writers, successful track loading and audible output remain separate requirements. See [configuration loading](original-modern-config-loading.md#removed-inline-defaults-at-00472566-replacement-initialization-matters) for the already established move from original inline defaults to grouped final helpers.
 
 ## Original temporary music copy is removed from the inspected loading route
 
