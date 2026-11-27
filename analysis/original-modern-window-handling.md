@@ -166,3 +166,14 @@ mouse support, not proof of identical end-to-end mouse behaviour.
 ### The 1.2.0 KeyboardHook setting gates the original-style installer
 
 Retained 1.2.0 startup calls `004b562c` at `004b616f`. The helper passes section `NFS3`, key `KeyboardHook` and fallback zero to the integer reader `004fb6f0`. A zero result skips installation. A nonzero result calls `004cdc90` with EAX=1 and EDX=0 at `004b564a`, the same installer arguments observed on the original startup route. The literal key is absent from retained 1.1.0. This verifies the 1.2.0 setting's startup gate. Actual key suppression and hook acceptance remain untested.
+
+The retained archives give the following shipped defaults and installer call sites. In 1.3.1 the gate moved, but it still uses a zero fallback and skips the installer when the resulting value is zero.
+
+| Release | Shipped INI | Original-style installer call |
+|---|---|---|
+| 1.1.0 | No `KeyboardHook` setting | Startup calls `004cdc90` directly at `004b6178`. |
+| 1.2.0–1.3.0 | `KeyboardHook=0` | Gated call at `004b564a`. |
+| 1.3.1 | `KeyboardHook=0` | Gated call at `004b55d2`. |
+| 1.4.0 | `PreventMinimize=0` replaces `KeyboardHook`. | No decoded direct call to `004cdc90`. The final replacement lifecycle is documented above. |
+
+Extract both `nfs3.ini` and `nfs3.exe` from the matching archive when comparing these defaults. The shipped value and executable fallback agree in the three retained builds with the old key. A user's effective value or OS hook behavior requires separate evidence.
