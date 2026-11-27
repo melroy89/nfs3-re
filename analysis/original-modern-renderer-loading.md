@@ -848,3 +848,17 @@ The matching 1.6.0 package has the same eight configured DLL paths. Each of its 
 The paired `thrash.ini` files retain the same `File=` values. DX5, DX6, DX7 and SoftTri remove `DirectDrawLagFix=1` from `[THRASH]` and add `DisableMaxWindowedMode=0` and `NoDwmOffForPrimaryLock=0` under `[DDRAW]`. DX8 changes `FogSupport` from 0 to 1. The dgVoodoo, Glide3x and nGlide INI files match byte for byte. Reproduce by pairing archive members by path, comparing payload SHA-256 and parsing the INI section/key values. This verifies configuration and export names. Individual DLL implementation changes and runtime compatibility need their own evidence.
 
 For DX8 specifically, the package change from `FogSupport=0` to `FogSupport=1` reaches the same parsed capability DWORD, `007a3a54`. The 1.6.0 reader stores its normalized result at `004b5916`; the 1.6.1 reader stores at `004b5999`. Both read the selected driver's `THRASH/FogSupport` and use zero if the key is absent. With the unchanged packaged INIs selected and successfully read, this publishes zero in 1.6.0 and one in 1.6.1. The final executable's subsequent driver trial can clear that value at `004b5bc7` if the selector-`0x15` request returns zero. The package opt-in therefore changes the input capability gate. Whether it remains enabled depends on the [DX8 driver's state handling](original-modern-renderer-texel-alignment.md#dx8-fog-related-vertex-policy-partial-historical-evidence) and later game state.
+
+### DX8 package history
+
+The first retained DX8 package is 1.1.0, with a root-level DLL. Every packaged DX8 profile from its introduction in 1.2.0 through 1.6.0 explicitly sets `FogSupport=0`. Version 1.6.1 is the first retained profile with `FogSupport=1`. The member name and payload history is:
+
+| Releases | DX8 member | Member SHA-256 |
+|---|---|---|
+| 1.1.0 | `dx8.dll` | `c58ffb6810ca335602766d9179f2fcd8ecf9c9127c98ffa43cd76c0f8fb91e62` |
+| 1.2.0–1.3.1 | `drivers/dx8/dx8.dll` | `451435c5161b934d3d95d8457a17710cd463c98e965857fcb1fb1cfe1d325348` |
+| 1.4.0 | `drivers/dx8/dx8a.dll` | `09d3289f5246ec633fdf9f92f9e154a669bb3bf7a33c641c030015f7a0de2e23` |
+| 1.5.0–1.6.0 | `drivers/dx8/dx8a.dll` | `92e352738012fe1098d98e125bdafae089275ceb7d40a9c1aca9c5b31423a1f7` |
+| 1.6.1 | `drivers/dx8/dx8a.dll` | `ddb8a55514bc650384e349cf3830946c149f71234e90a41327f69aca793e81b8` |
+
+Reproduce with `7z l -slt` and hash the named member extracted by `7z x -so`. Inspect `drivers/dx8/thrash.ini` when present. This dates the package defaults and identifies the DLL baselines for the separate instruction comparison. It leaves runtime fog behavior in 1.1.0 and under modified profiles open.
