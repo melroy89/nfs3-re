@@ -358,6 +358,15 @@ The existing [connect menu crosswalk](connect-menu-dispatch-crosswalk.md) direct
 
 The official/local code comparison establishes that this region is the same in the downloaded Modern release. The earlier mistake of treating original registration as active Modern evidence must not recur in broader cross-version analysis.
 
+The 23-byte registration block `004406c7..004406de` matches the original in every retained release from 1.1.0 through 1.3.1. It loads the `racenet` key from `005378f8`, looks it up through `00442a40` and writes callback `0043fd10` to the result's `+0x64` field on a hit. **1.4.0** is the first retained release with `EB 15` and 21 NOPs at this site. The replacement persists through final 1.6.1.
+
+Extract `nfs3.exe` with `7z x -so <archive> nfs3.exe` and compare with `objdump -d --start-address=0x4406c7 --stop-address=0x4406de`. Transition SHA-256 values:
+
+| Release | Archive | Extracted executable |
+|---|---|---|
+| 1.3.1 | `6f12b2806378c4b2c843f82265b0c7d20ee8427b963d017e940717c468a23934` | `199aa49dc76e7a2549949760b3d00d9118340a288cc77d4642c4a4d37c9a4664` |
+| 1.4.0 | `8181722b8aadd9b7a0a5de6f9d16a6db4034c71ef755aec21d4d64b76e933aa9` | `7cfecaac5e78dcbd8de059ea4e25bee1922c37df867e4d794c9b05960984d80d` |
+
 ## 6. Renderer loading: verified semantic comparison
 
 The [renderer-loading comparison](original-modern-renderer-loading.md) establishes the original `004f8390` / Modern `004f84a8` correspondence: all 34 export names retain their pointer slots, while Modern adds mandatory export/null-descriptor checks, table-driven cleanup and changes local fallback/return behavior. It also traces driver-specific INI/ENV configuration. Original selection precedence, renderer DLL implementation changes and runtime acceptance remain separate work.
