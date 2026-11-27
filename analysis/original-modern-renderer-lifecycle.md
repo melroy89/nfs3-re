@@ -275,3 +275,9 @@ at `004bc689` and `004bc7e8` gate x87 initialization sequences
 and do not supply the adapter argument. Address-based annotations
 must preserve the two versions' different meanings. No setup or
 mode switch was executed.
+
+### Early startup checks driver initialization separately from mode setting
+
+The supplied original, 1.1.0 and 1.2.0 have identical code at `005246a0..005247b7` (span SHA-256 `2a6be886204a3c85bb6911453661da1f1950d6bbae1c3d9d0499077700f10025`). The platform initializer calls the driver's `_THRASH_init` slot at `0052473a` and tests EAX at `00524740`. Zero leads to cleanup at `0052479a`, followed by a zero-extended load of the post-cleanup byte `0056aff0` as the helper's return value.
+
+On the zero-renderer-state entry path, the early mode callback tests that helper result at `00517675`. Zero branches to the epilogue at `00517782`, skipping both the mode request and the store of state 1. If the shared renderer state is still zero when control returns to the outer gate, 1.2.0 reaches the new dialog. Thus the early path already checks initialization failure, with propagation dependent on cleanup and shared state. The later 1.6.1 branch adds the distinct check on the result of the mode request itself. This comparison establishes static control flow; it does not establish which driver or cleanup outcomes occur on any particular machine.
