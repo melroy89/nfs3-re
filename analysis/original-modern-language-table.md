@@ -426,3 +426,9 @@ The local Wine copy at `FEDATA/TEXT/text.swe` matches the 1.6.1 archive member (
 All 30 shipped language tables from 1.4.0 through 1.5.3 cover ID 1929 and lack the exact `v1.6.0` marker there. All 12 tables shipped with 1.6.0 and 1.6.1 contain it at ID 1929. Both executables compare that entry against the same marker, so either accepts the marker in either release's six tables. With an older table successfully loaded, ordinarily covered IDs below 1929 still use the external strings, while IDs 1929–1954 use embedded strings. A mismatch therefore produces a mix of external and embedded text.
 
 Decoding all 27 embedded strings from `0053d294` in 1.6.0 and `0053d310` in 1.6.1 produces identical byte strings at every index. Reproduce by resolving the DWORD at file offset `1929 * 4` in each packaged table, then decoding 27 relative DWORD offsets at each executable's embedded table base. This verifies the packaged marker and fallback payloads. It leaves successful loading and rendering outside the comparison.
+
+### Embedded fallback matches the English extension range
+
+In the 1.6.1 package, the 26 embedded strings for IDs 1929–1954 match the external English table byte for byte at the same IDs. ID 1928 is the sole difference in the 27-entry comparison. Its external English entry is `Exit Game`, while embedded slot zero is empty. The lookup's version-mismatch branch starts at ID 1929, so a mismatched file still supplies its own ID 1928 if that entry is covered. A failed coverage check at ID 1928, or at any lower ordinary ID, returns the empty embedded slot instead.
+
+Reproduce by resolving the 27 embedded offsets at `0053d310` and comparing the NUL-terminated payloads with the corresponding indices of archived `fedata/text/text.eng`. This explains why the version-mismatch route uses English bytes for the extension range. It leaves the resulting screen text unobserved.
