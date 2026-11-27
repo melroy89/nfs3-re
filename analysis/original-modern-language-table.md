@@ -308,3 +308,19 @@ lists `004b5e0a` as the branch for indices 9 and 10.
 This identifies the retained literal's direct use as dialog
 text. The scan leaves computed filenames and runtime
 reachability open.
+
+### Modern 1.4.0 removes the remaining installer filename literal
+
+Each retained EXE from 1.0.0 through 1.3.1 has one
+case-insensitive ASCII `install.win` match, at file offset
+`13e7d1h` in the Rendition message. The complete 26-byte
+dialog and exit-call sequence at `004b5e0a..004b5e24`
+matches in those five builds. In 1.4.0 that code window
+contains 26 NOPs and the filename match disappears.
+It remains absent through 1.6.1. The hosted original has
+three matches, including the renderer message and the
+filename used by its installer-record reader.
+
+This dates removal of the literal and the obsolete dialog
+sequence. The check covers ASCII literals and the named
+instruction window, leaving computed paths outside its scope.
