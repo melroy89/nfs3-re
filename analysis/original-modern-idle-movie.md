@@ -272,3 +272,19 @@ selected filename over the first terminator. The unchanged
 file-attribute call follows at `004a2fd7`. This verifies the same
 local path assembly given the same input bytes. The directory
 producer and actual filesystem results are separate.
+
+### The relative movie path predates the slot move
+
+The playback wrapper's source operand at `00496104` points to
+`007a32b4` in the hosted original and every retained Modern build
+from 1.0.0 through 1.3.1. It switches to `007a2cb4` in 1.4.0 and
+keeps that address through 1.6.1.
+
+In 1.0.0, the initializer at `004a6f10` copies 24 NUL-terminated
+strings from `0053ec2c` into 128-byte slots starting at
+`007a27b4`. Zero-based slot 22 is `007a32b4` and receives
+`.\FeData\Movies\`. Thus the executable supplies a relative movie
+directory already in 1.0.0, while the old address remains in use.
+The [original and final path comparison](original-modern-startup-paths.md#original-installer-records-and-final-path-slots)
+traces the original installer record and final slot layout.
+Effective working directory and filesystem results remain untested.
