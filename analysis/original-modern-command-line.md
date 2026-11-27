@@ -50,6 +50,17 @@ separate driver-option path above. The trace covers the local
 argument effects. Actual renderer acceptance and priority against
 other device-selection producers remain unverified.
 
+The original numeric body is already absent from the parser in the
+earliest retained release, 1.1.0. That build compares an eight-byte
+driver prefix and calls the replacement setter at `004b57d4`.
+The remaining instructions inside the old 74-byte body range are
+part of the replacement parser, including the call at `004a51b1`
+and jump to the common continuation at `004a51f8`. In 1.4.0–1.6.0
+the last call and jump occupy `004a51ae..004a51b5`; the remaining
+67 bytes are NOPs. The entire range only becomes NOPs in 1.6.1.
+The exact 1.0.0 transition remains unverified.
+
+
 
 ## Help presentation and precedence limits
 
