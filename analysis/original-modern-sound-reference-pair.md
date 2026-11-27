@@ -103,3 +103,16 @@ instruction sites in each game EXE and resolving the export-name
 pointer `00549db0`. The cache reset can therefore matter to a
 subsequent game-side admission decision. Actual device results
 and the order of these calls in a live session remain untested.
+
+The two nonpositive-result branches have different local effects.
+At `004e220a`, the wrapper returns a nonpositive capability
+value unchanged. For a positive result it sets bit `0x10000`
+before returning. At `004e22a9`, a nonpositive result jumps to
+`004e235a`, skipping the downstream call through the
+`_iSNDdirectstart@8` slot at `004e230f`. The branch stores the
+raw value at `009ef60c`, sets the byte at `009ef607` to 1
+and returns zero. These local return and state-update sequences
+match the hosted original and the three Modern builds compared
+above. A nonpositive value therefore matters to the audio start
+path, but this check establishes no process-wide startup failure
+or actual audio device outcome.
