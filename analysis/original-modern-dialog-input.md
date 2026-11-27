@@ -147,3 +147,9 @@ The constructor supplies the missing termination premise: it requests a256-byte 
 At a full prefilled length, Modern's cleared replace flag causes the retained capacity gate to reject an additional ordinary character, preserving the existing text. Original's initial flag can bypass that capacity gate, clear the buffer and accept replacement. This boundary is part of the policy change, rather than proof of a new overflow or an unlimited append path. Other key branches and real input timing were not exercised.
 
 MP140-035 remains partial: the local mechanism, selected caller/filter binding and ordinary termination contract are verified statically; all filters, callback/active-language lifetimes, malformed storage and actual typing remain unverified. No target instructions or external input API were executed.
+
+## Glide conversion of the dialog texture coordinates
+
+In the packaged 1.6.1 `drivers/glide3x/voodoo2a.dll` (SHA-256 `f15f4f574ddd94b057c7b6e43c17c290d12baf9f362d34004c488487033c689b`), `_THRASH_drawquad@16` at `60003480` makes four local vertex copies. For vertex 0, it adds `0x04000000` to the raw DWORD at source offset `0x0c`, interprets that result as a binary32 scale, and multiplies both texture coordinates by it at `600034bc..600034d3`. The other three copies repeat the conversion. The two triangle calls at `600035cc` and `600035df` receive the converted copies. See the [Glide callback analysis](detailed-analysis-notes.md#nglide-triangle-callback-identity-and-state-replacement) for the callback selection.
+
+The changed U values therefore reach Glide's triangle path after a per-vertex conversion. For ordinary positive normal reciprocal-depth inputs whose biased exponent remains normal, the bit addition scales that input by 256. The instruction operates on raw bits, so this equivalence is conditional. Live driver state and the visible sampling difference remain untested.
