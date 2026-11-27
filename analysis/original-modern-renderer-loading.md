@@ -742,3 +742,21 @@ at `004f83a5`. Neither local route reaches the export resolution
 or descriptor calls. This identifies the preserved failure result
 and removed retry without assuming anything about export slots
 left over from earlier loads or actions by the caller.
+
+### Early startup checks the about export after the load
+
+The inspected 1.1.0 setup branch calls the switch wrapper at
+`004b59f9` and proceeds to `004f8830` without testing its EAX
+return. That helper reads about slot `009ef980` at `004f8835`.
+The branch later tests `00564364` at `004b5a08`.
+In 1.2.0 the consolidated startup caller at `004b58aa` invokes the
+low-level loader directly, then tests `009ef980` at `004b58af`.
+A zero slot formats the selected name using the diagnostic at
+`0053c9a0` and calls `004b5e98` at `004b58da`.
+The format says that the named file is not a valid THRASH driver.
+
+The 1.2.0 message is thus selected by the about slot's value,
+which can also be zero after an export lookup fails. This branch
+does not distinguish that case from a DLL load failure. Local
+control flow does not establish how the diagnostic returns or
+whether the slot could contain a pointer left by an earlier load.
