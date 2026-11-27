@@ -525,3 +525,12 @@ Extract the uppercase member from the hosted original and
 the lowercase member from each patch to reproduce. These are
 content boundaries for the asset. The [slider analysis](original-modern-slider-percentage.md)
 covers selected tuning controls separately.
+
+Normalizing line endings, trimming each line and dropping blank
+lines isolates the first edit to 60 deleted lines in 1.3.0.
+These are 29 occurrences each of `EnableForDemo=0` and
+`EnableForE3Demo=0`, plus two commented `;nextmenu=car1` lines.
+Removing those lines from the normalized 1.2.0 member produces
+the exact normalized 1.3.0 sequence. The seven tuning controls
+keep their authored bindings and fields at this boundary.
+The runtime defaults for omitted demo flags remain unverified.
