@@ -1362,3 +1362,14 @@ write supplies the reset word `037f` to subsequent loads. The scan
 does not establish which writer runs first or exclude indirect or
 overlapping writes. Reproduce with `objdump -d -Mintel` on each
 archive member and filter decoded operands for `79f3f4`.
+
+The historical section headers also place both cells in zero-filled
+storage. In the hosted original, 1.0.0, 1.5.3 and 1.6.0, the section
+begins at RVA `16e000`, has a zero raw-data pointer, and contains both
+cells within its declared span. The size fields used for that span are
+respectively `4aa400`, `4ada00`, `4b1000` and `4b1000` bytes
+(the VirtualSize fields are zero). Neither control word has a
+file-backed initializer. In particular, on the inspected normal 1.5.3
+startup path, the call at `004b5cef` publishes `037f` before the
+restore call at `004b5d01` can read it. Initializing the saved cell to
+`037f` directly in a reconstruction would bypass that ordering.
