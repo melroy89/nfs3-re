@@ -156,3 +156,13 @@ The candidate predicate at `004f91ec..004f9203` and its API adapter at `004f915e
 Comparing the full 1.6.0 body at `004a6e48..004a6e9c` with its 1.6.1 counterpart at `004a6e10..004a6e64` yields exactly two changed bytes, both in relative call operands. The candidate predicate stays at `004f91ec`, while the fallback string-copy routine moves from `004f939c` to `004f93b8` with its complete 13-byte body intact. The literal fallback pointer is the same in both and still names `nfs3.ini`. This verifies preservation of the local selection sequence across the final relocation.
 
 The startup call order also survives the relocation. Version 1.6.0 calls the filename selector at `004a3a6a`, the language reader at `004a3a6f`, the path initializer at `004a3a74`, and the main settings loader at `004a3a79`. Version 1.6.1 makes those four calls in order at `004a3e3f`, `004a3e44`, `004a3e49` and `004a3e4e`. The language routine calls `004fb714`, so the selected filename is already in place before that early INI read as well as before the main settings load.
+
+The recovered 1.0.0 save route also uses slot 17. At `0047288c`
+and `00472893` it pushes `007a3034` and the `%sconfig.dat` format
+at `0053b00c`. It formats the filename into `[EBP-fch]` at
+`004728ae`, then passes that buffer in EAX to the save helper
+`004eeae0` at `004728be`, with byte count `20f0h` in EBX.
+The load route uses the same slot and format at `004729aa..004729c0`.
+Thus both operations build `.\config.dat` with the initialized
+1.0.0 default. The working directory and successful file I/O were
+outside the static comparison.
