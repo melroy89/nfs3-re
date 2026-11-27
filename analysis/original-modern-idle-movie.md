@@ -260,3 +260,15 @@ retarget from `004f939c` to `004f93b8`. The mask logic and the
 call to the file-attribute wrapper at `004a2fd7` retain their
 bytes. The comparison establishes stability of the local policy.
 Path helper behavior and live filesystem results are separate.
+
+The retargeted path-copy routine is a relocation. The complete
+13-byte body at `004f939c..004f93a9` in 1.6.0 equals the body at
+`004f93b8..004f93c5` in 1.6.1. With the direction flag clear,
+it copies through the NUL byte and leaves ESI and EDI pointing at
+the source and destination terminators. EAX is preserved. In the
+builder, the first call copies the directory from `007a2cb4` into
+the stack buffer. The second uses the resulting EDI to write the
+selected filename over the first terminator. The unchanged
+file-attribute call follows at `004a2fd7`. This verifies the same
+local path assembly given the same input bytes. The directory
+producer and actual filesystem results are separate.
