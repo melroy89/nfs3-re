@@ -44,13 +44,23 @@ Original release helper begins at `004d1880`; Modern begins at `004d1890`. Moder
 
 ## Upstream language selection: install.win becomes INI setting
 
-Original selector **`004a6e10..004a6f60`** opens embedded filename `install.win` with mode `rt`, reads/parses lines and compares the resulting buffer at `007a2634` against six strings from `0055fd24`. Its final comparison uses each candidate name's length through `004eb390`, so it is a prefix comparison on the inspected path, not an independently verified exact-token check. If none match it explicitly supplies EAX0 to `004b5e50`; the [verified diagnostic/exit follow-up](original-modern-startup-requirements.md#corruption-diagnostic-callers-supply-zero-or-a-language-value) establishes that this is a termination route, so its apparent later index6 store is not ordinary returning behavior. Open failure returns zero before that final selection route.
+Original selector **`004a6e10..004a6f60`** opens embedded filename `install.win` with mode `rt`, reads/parses lines and compares the resulting buffer at `007a2634` against six strings from `0055fd24`. Its final comparison uses each candidate name's length through `004eb390`, so it is a case-sensitive prefix comparison. If none match it explicitly supplies EAX0 to `004b5e50`; the [verified diagnostic/exit follow-up](original-modern-startup-requirements.md#corruption-diagnostic-callers-supply-zero-or-a-language-value) establishes that this is a termination route, so its apparent later index6 store is not ordinary returning behavior. Open failure returns zero before that final selection route.
 
 Modern selector **`004a6e68..004a6ec0`** instead calls configuration string reader `004fb714` with section **NFS3**, key **Language**, fallback **english**, destination **`007a2634`** and count **8**. The [configuration comparison](original-modern-configuration.md) documents the reader's INI/environment/caller-default precedence. It then lowercases ASCII in place through `004f93dc`, and compares against the six complete names:
 
 `english, german, french, spanish, italian, swedish`
 
 A match stores its index **0..5** at `007a3a50`. No match copies `english` to the buffer and stores zero. This guarantees a six-entry index from the ordinary selector return path, without relying on the resource loader's removed local guard. String truncation follows the reader's count argument; no overlong-setting test was run.
+
+The original line-copy loop at `004a6ee3..004a6ef9` preserves the bytes after CR/LF trimming. The comparison call at `004a6f32` passes the table name in EAX, the copied text in EDX and the table name's length in EBX. The helper at `004eb390..004eb3be` compares raw bytes and returns zero when the requested length is exhausted. Modern instead folds ASCII uppercase and requires a full name match.
+
+| Text in the selector buffer before matching | Supplied original | Official Modern 1.6.1 |
+|---|---|---|
+| `german` | German (index 1) | German (index 1) |
+| `GERMAN` | No match, diagnostic/exit | German (index 1) |
+| `germanX` | German (index 1) | No match, English fallback (index 0) |
+
+These are outcomes derived from the instructions for the stated buffer contents. File parsing, INI truncation and game startup were outside this check.
 
 Modern config initialization later copies `007a3a50` into active field **`006fbb4c`** (`00472aff..00472b08`). Both inspected loader callers read EAX from that active field before calling `004d1750` at **`0044b28a`** and **`0044b976`**. This provides a producer-to-consumer route for normal startup; it does not exclude later writes, saved-state restoration or indirect callers changing the active field. The INI selector index is not a global proof for arbitrary loader inputs.
 
