@@ -452,7 +452,7 @@ The [input comparison](original-modern-menu-input.md) traces Tab/Shift+Tab routi
 | Original → 1.1.0 | The locale-specific `.POS` reader gives way to six embedded HUD profiles and aspect calculations. The exact 1.0.0 implementation remains unverified. |
 | 1.1.0 → 1.2.0 | All 144 embedded rectangles match. The converter moves to a new address with identical instructions. |
 | 1.2.0 → 1.3.0 | 55 rectangles change. The selected scaling code changes its arithmetic and dimension sources. |
-| 1.3.0 → 1.3.1 | All 144 rectangles match. The reviewed mode publisher now rebuilds the HUD when width or height changes. |
+| 1.3.0 → 1.3.1 | All 144 rectangles match. The mode publisher switches from comparing width × height + colour depth to comparing width and height separately. A depth-only change updates the stored mode without rebuilding the HUD. |
 | 1.3.1 → 1.4.0 | 14 rectangles change. |
 | 1.4.0 → 1.5.0 | Eight rectangles change in slots associated with the digital speedometer and tachometer. The 1.5.x tables match through 1.5.3. |
 | 1.5.3 → 1.6.0 | The initializer switches from converting 16-bit scaled integers to copying binary32 values. After nearest rounding of the old data, 74 rectangles differ. |
@@ -666,6 +666,8 @@ At that historical checkpoint, the 290-entry catalog distinguished **37 bounded-
 This supersedes the earlier numerical checkpoint counts while preserving their historical results. Next priorities are the remaining ordinary menu policy claims (including postgame controls), then further high-change regions selected from the retained function-difference inventory. Reuse the completed menu callback/loader evidence rather than repeatedly treating those bounded comparisons as untouched work.
 
 ## Options controls in postgame context
+
+The [Setup history trace](original-modern-options-postgame.md#the-display-helper-stops-overwriting-the-history-pointer-in-120) dates a menu-routing regression to Modern 1.0.0. The original display helper preserves EDX, which carries the selected history pointer. In 1.0.0 and 1.1.0, a multiply can overwrite it with zero and cause the menu loop to skip restoring the history. Version 1.2.0 preserves EDX on both HUD paths, and later wrappers retain that property through 1.6.1. This provides static support for MP120-009. The actual menu reached in a running game remains unverified.
 
 [The postgame Options comparison](original-modern-options-postgame.md) connects removal of three asset `mainonly` fields to unchanged template defaults, parser destinations, context producer and suppression consumer. This partially supports MP140-019. The first-screen follow-up also verifies the five-byte setup-state store inserted by Modern and connects it to conditional Options Race suppression (MP140-020). Actual nested-menu admission, later flag writes and runtime visibility remain unresolved.
 
