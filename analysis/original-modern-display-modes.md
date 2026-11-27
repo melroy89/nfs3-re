@@ -170,7 +170,7 @@ Thus the51st/101st entries are not excluded by these specific label-routing boun
 
 ### Release-note conclusions and limits
 
-- **MP100-009**, advertised20→50: original20 is verified, and author-hosted1.1.0 already contains the expanded mechanism, but its exact local cap is51. A1.0.0 artifact was not inspected, so first introduction remains unresolved. Label it partial rather than claiming an exact50 cap or verified1.0.0 release boundary.
+- **MP100-009**, advertised 20→50: the original cap is 20 and the retained 1.0.0 and 1.1.0 builds both admit 51 entries locally. The collector, initializer, menu descriptor, label router and label accessor match byte for byte between those releases. Compare PE VAs `00448210` (169 bytes), `004482c0` (40), `005566b8` (20), `004d17b0` (26) and `00448400` (35) in their archived EXEs. Runtime capacity remains unverified.
 - **MP120-008**, advertised100 EXE modes: the direct1.1.0→1.2.0 pair now verifies expansion51→101 and corresponding label/clear/accessor changes. The introducing historical boundary for this mechanism is established; the strict headline number is not the local bound.
 - **MP120-017/024** concern renderer components in the release-note context. This EXE comparison cannot independently establish either DLL’s capacity or provider behaviour; retain their separate evidence status.
 
