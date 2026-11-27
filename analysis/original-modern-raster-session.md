@@ -33,6 +33,12 @@ Original entry `00524640` loads EAX=1 and falls through padding into `00524650`;
 
 These witnesses support a removed cleanup-callback route. Actual callback registration, invocation order at exit, other pointer writers and replacement cleanup responsibility remain unresolved. The removed code is not proof of a leak or safe equivalent teardown.
 
+The removal first appears in **1.6.1**. In every retained archive
+through 1.6.0, the entire callback span `00524620..00524650` and
+registration span `0052474d..00524787` match the supplied original.
+The final archive changes both. This dates the local cleanup route
+without establishing the ownership of every shutdown path.
+
 ## Inactive shutdown branch is shortened
 
 Both shutdown bodies test active byte `0056aff0` after saving incoming EAX in EBX. Original's zero branch at `0052465b` goes to a second conditional jump at `005247ab`, which reaches common `XOR EAX,EAX; POP EBX; RET` at `0052468f`. No instruction between those jumps changes flags. Modern directly branches to `0052468f` and NOP-fills both the unused bytes and remote tail. The ordinary inactive path consequently retains its zero result without the extra branch.
