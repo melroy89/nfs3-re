@@ -149,3 +149,17 @@ including the direct score read, cap and renderer-dependent adjustment.
 This dates both the selected scoring mechanism and the local override
 removal to 1.0.0. Other writers and the actual hardware-selected tier
 remain outside the comparison.
+
+### The movie conversion tier changes in 1.0.0
+
+The 62-byte movie setup block at `0049616c..004961aa` is byte-identical
+in all 12 retained Modern releases. Its SHA-256 is
+`28276a828a6905100f029721910172efaaab1207966a5064f1534293dae22617`.
+The hosted reference instead has the two CPU-frequency thresholds in
+that same block. Extract each archive's root `nfs3.exe` and compare
+PE RVA `9616c` for `3eh` bytes.
+
+This dates the switch to the feature-derived movie tier to 1.0.0,
+alongside the replacement CPU score producer. The setup block's
+stability does not establish identical movie decoding, conversion
+routines or visible quality across releases.
