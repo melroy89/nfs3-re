@@ -254,3 +254,16 @@ Four checks at `60005ffb`, `60006089`, `60006117` and `600061a6` read `60014b5c`
 Crucially, the preceding selector audit shows **both payload4 and payload0 clear this flag**. Under the premise that no intervening call/write changes it, both use the same attribute-copy branch. Consequently, the verified menu4→0 change must not be described as newly disabling this CPU-side attribute rewrite: the selected rewrite was already bypassed for4. The provider's raw state1Ch requests still differ (1 versus0), and identical vertex data can be consumed under different device state. This is a distinction in the established mechanism, not proof of the visual explanation.
 
 Actual menu-car/taillight primitive selection, vertex values, intervening state lifetime, other primitive paths and device colour output remain unverified. MP150-033 stays vendor-only. No target, DLL/API or instruction probe was executed, and no Ghidra or executable edit occurred.
+
+## Two scene paths skip original placeholder calls
+
+The original and official Modern 1.6.1 executables in the [baseline comparison](original-modern-differences.md) differ at two equivalent points in the scene routine. The branch at `004bc23e` selects the path according to DWORD `007a3a60`.
+
+| Scene path | Original | Modern |
+|---|---|---|
+| DWORD is zero | `004bc24a` tests EBX. When EBX is zero, `004bc253` calls `00431c40` with EAX=1, then `004bc25d` calls `00431c30` with EAX=2. | An unconditional jump at `004bc24a` reaches `004bc262`. The intervening 22 bytes are NOPs. |
+| DWORD is nonzero | `004bc2c5` tests EBX. When EBX is zero, `004bc2ce` calls `00431c40` with EAX=1, then `004bc2d8` calls `00431c30` with EAX=2. | An unconditional jump at `004bc2c5` reaches `004bc2dd`. The intervening 22 bytes are NOPs. |
+
+Both original callees consist of the five bytes `55 89 e5 5d c3` (save EBP, set up a frame, restore EBP, return). In both versions the join immediately replaces EAX with `007a3d14` before the next call to `004c6f00`. The original EBX tests still differed in their effects on FLAGS, and the original calls wrote temporary stack slots. Full machine-state equivalence and the release that first removed these two sequences remain unverified.
+
+Reproduce with `objdump -d --start-address=0x4bc240 --stop-address=0x4bc2ea` on both executables and `objdump -d --start-address=0x431c30 --stop-address=0x431c45` on the original.
