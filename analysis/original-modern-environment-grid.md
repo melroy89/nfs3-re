@@ -83,3 +83,14 @@ The positional field at `004787e8` corresponds to the installed HRZ label **Has 
 The pixmap-disabled tracks only control for the optional `00479b90` pass. The two other direct callers of the changed geometry helper are at `004796cb` and `00479a03`. Both are reached from the ordinary scene branch at `0047a90e` and `0047a92d`, before it checks Has a pixmap at `0047a932`. Their respective quad-command allocation sites are `00479814` and `00479b4b`. The caller ranges `00479680..00479850`, `004799d0..00479b90` and the dispatch window `0047a8fe..0047a942` match byte for byte across 1.4.0 and 1.5.0. A pixmap-disabled track can therefore still exercise the 4.0→3.5 change through these passes. To isolate the multiplier in a frame comparison, distinguish the three submitters by call site and hold the track and view constant.
 
 All three strip submitters call the shared projector at `00479370`. Its full `00479370..004794fc` body matches between 1.4.0 and 1.5.0. It writes projected coordinates into 32-byte vertex records and publishes one outcode byte per vertex. For ordinary nonnegative finite screen coordinates and a passing depth test, bits `1/2` mark X below/above the bounds and bits `8/4` mark Y below/above. Depth rejection writes `10h` instead. The bounds are the binary32 endpoints set at `004bf1e8/1f0/1f8/205`, including through the [physical clip wrapper](original-modern-projection.md#the-game-sends-the-physical-viewport-to-the-renderer-clip-call) at `004becbf`. That bound setter also matches through its return. Thus the altered strip inputs reach a retained projection and outcode calculation using physical clip bounds. This confirms an available route for edge coverage to change without a rewrite of the clip tests. Observing a changed vertex or outcode for an actual Wide frame remains pending.
+
+### Original and Modern release history
+
+The hosted original and all twelve retained Modern executables form two exact byte groups for each of the following complete ranges. The installed retail backup has separate provenance and is outside this archive census.
+
+| Range | Hosted original | Modern 1.0.0–1.4.0 | Modern 1.5.0–1.6.1 |
+|---|---|---|---|
+| Strip builder `00479500..00479671` | 4.0, span SHA-256 prefix `636b5c66917e` | Same as original | 3.5, `ac0bd4b558fb` |
+| Grid quad builder `0047b850..0047ba68` | Mask `40h`, `fc724009e806` | Mask `50h`, `f0ed8d5fd869` | Same as 1.0.0 |
+
+Reproduce by extracting `nfs3.exe` from `history/nfs3_orig.7z`, the eleven `history/nfs3_modern_patch_v*.7z` archives, and the final `nfs3_modern_patch.7z` under `analysis/captures/modern-differences/upstream/`. Read the corresponding PE RVA ranges and compare the complete bytes. For reconstruction, retain 4.0 for the hosted original strip behavior and use 3.5 for the final Modern behavior. The grid renderer admission diverges earlier and can be selected independently.
