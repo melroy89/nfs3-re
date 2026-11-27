@@ -627,7 +627,7 @@ This is reproducible static coverage, not a count of fully explained vendor chan
 
 ## Complete menu loader comparison
 
-[The menu graph loader](original-modern-menu-loader.md) differs only in three immediate-operand bytes: original literal directory becomes a Modern initialized path buffer. The full local body comparison narrows the code delta while preserving asset, helper, initialization and filesystem limitations.
+[The menu graph loader](original-modern-menu-loader.md) matches the original through 1.1.0. Version 1.2.0 changes three immediate-operand bytes to use a startup-initialized directory buffer, and that loader body is retained through 1.6.1. Version 1.4.0 lowercases the buffer’s default path. The full local body comparison narrows the code delta while preserving asset, helper, initialization and filesystem limitations.
 
 ## Menu text conversion and callback helpers
 
