@@ -53,3 +53,16 @@ No DPI-awareness element is present in this complete manifest. These are declara
 The local analysis target's manifest is byte-identical after replacing only assembly version`1.6.1.0` with`1.6.2.0`. Of all13 resource keys shared with official Modern, only `16/1/0` (version information) and `24/1/0` have changed payloads locally. Icons, `ABOUT.QFS` and `SNAP.WAV` remain byte-identical. The separately redirected local About string is outside these payload identities; see the [three-way provenance](original-modern-differences.md#1-three-way-provenance). Do not attribute local version preparation to the official patch.
 
 **Bounded status: done; confidence: verified resource payloads, references, headers and XML.** Runtime resource selection, visual/audio results, OS enforcement and full version-history attribution remain unverified. No executable, Ghidra database, game configuration or raw reference export was modified; no target code ran.
+
+## Resource history across retained releases
+
+Comparing resource keys of the form type/name/language and SHA-256 of their payload bytes gives the following release boundaries. Extract `nfs3.exe` from each retained archive with `7z x -so <archive> nfs3.exe`. Use the resource-directory traversal in the linked audit to repeat the comparison. This dates payload and key changes. Resource RVAs and directory order can move independently.
+
+| Retained release | Resource change |
+|---|---|
+| 1.1.0 | The original icon payload `3/1/0` survives byte-for-byte as `3/106/0`. Numeric resource `10/200/0` is already present and begins with the same five-byte compression header as the later About resource. |
+| 1.2.0–1.3.1 | Numeric resource `10/200/0` and version resource `16/1/0` change in every retained release. Main group `14/32512/0` and icon `3/105/0` also change in 1.3.0. |
+| 1.4.0 | The icon payload moves from `3/106/0` to `3/200/0` unchanged. Named groups `MAIN.ICO` and `ORIG.ICO` replace numeric groups `32512` and `32513`. Numeric resource `10/200/0` is removed. Named `ABOUT.QFS`, `SNAP.WAV` and manifest `24/1/0` appear. |
+| 1.5.0–1.6.1 | The resource keys stay fixed. About and version payloads change in every retained release. Manifest bytes change in 1.6.0 and again in 1.6.1. The screenshot WAV and all icon and group payloads remain byte-identical from 1.4.0 through 1.6.1. |
+
+The original icon's three IDs identify identical 744-byte payloads. The matching compression header alone leaves the decoded content and callers of the early numeric resource unverified. The retained sequence begins at 1.1.0, so the 1.0.0 resource layout remains open.
