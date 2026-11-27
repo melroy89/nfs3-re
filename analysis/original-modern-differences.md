@@ -478,7 +478,13 @@ The [CPU comparison](original-modern-cpu-tier.md) traces original’s million-sc
 
 ## 19. Frontend sound requests and separate volume
 
-The [frontend sound comparison](original-modern-frontend-sound.md) traces the removed caller volume multiplier, separate menu-volume field and slider, new ID bounds and per-ID timing gates. The normal record initializer is byte-identical. Counter units, sample/backend behavior, all callers and audible equality remain pending.
+| Modern Patch release | Verified change in the inspected frontend sound paths |
+|---|---|
+| 1.4.0 | Limits request IDs to 0–7, adds a five-count cooldown per ID, and routes dialog and dropdown feedback through shared sound calls. |
+| 1.5.0 | Uses a dedicated frontend volume setting and slider. Eight decoded calls switch from a wrapper that forced the volume multiplier to the main sound handler. |
+| 1.5.2 | Consolidates the branches that select request mode 1 while retaining the checked mode conditions and record writes. |
+
+All twelve retained releases use the original instructions for frontend bank setup, bank directory rebasing, ID-to-entry lookup and the two inspected tagged-patch routines. When `FESFX.BNK` is loaded, IDs 0–7 map to its eight entries in file order. The installed bank and its local backup match. Audible content, actual cooldown timing and backend playback remain untested. [Frontend sound comparison](original-modern-frontend-sound.md)
 
 The [audio-mode fallback](original-modern-config-loading.md#sound-mode-identity-d3deax-falls-back-to-stereo) now binds D3D/EAX ordinal3 and Stereo ordinal0 to the normalization path. The retained capability query dispatches to a driver callback rather than returning a cached capability flag. Provider result domains, actual availability transitions and audible output remain unverified.
 
@@ -729,7 +735,7 @@ Modern 1.4.0 adds Shift-sensitive Tab routing, calls the four dialog handlers di
 
 Modern 1.0.0 and 1.6.0 each adjust four horizontal texture-coordinate arguments for the dialog quads. The shared quad builder, partial-clipping path and inspected Glide conversion retain their original bytes. The visible texture-sampling effect remains untested. [Dialog rendering evidence](original-modern-dialog-input.md#four-renderer-float-arguments-receive-small-adjustments)
 
-See also [dropdown input shared sound tail](original-modern-dropdown-input.md): selection-route feedback and consolidated close/update ordering.
+Modern 1.4.0 consolidates dropdown sound requests and moves the Enter-opening sound after cursor positioning. A 1.5.0 call retarget follows the frontend volume change. [Dropdown input comparison](original-modern-dropdown-input.md#release-boundary-for-the-shared-sound-tail)
 
 The [droplist count follow-up](original-modern-common-menu-buttons.md#droplist-effective-count-signed-word-minimum) corrects the overlapping stack-read interpretation: the handler compares the signed low WORD of the actual list count with the authored limit. Within0..32767 this is a minimum, shared by both executable baselines. This handler belongs to droplist; the nine cascade authored increases require separate callback/field tracing. Populated lists, active instance selection and rendered row counts remain unverified.
 
