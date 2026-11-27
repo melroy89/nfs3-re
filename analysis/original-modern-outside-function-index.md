@@ -340,6 +340,16 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `004a6e65..004a6e68` | Modern alignment before its [language selector](original-modern-language-table.md) overlaps three immediate bytes of the original `MOV EDX,0x7f`. | The original instruction straddles the new boundary. |
 | `004a6ec1..004a6ec4` | Alignment after the Modern [language selector](original-modern-language-table.md) replaces the original XOR EAX,EAX and REPNE prefix of the following string scan. | Original language parsing continues across the boundary. |
 
+| `004b5709..004b570c` | NOPs after the Modern RET overlap the last three displacement bytes of the original call to `004e1890`. | The original call starts at `004b5707`. |
+| `004b5725..004b5728` | NOPs after the Modern diagnostic return overlap the original frame setup (`PUSH EBP; MOV EBP,ESP`). | The old function starts before this interval. |
+| `004b57c1..004b57c4` | Three NOPs replace the original final two pops and RET. Modern returns immediately before the interval. | Local epilogue boundary. |
+| `004b5841..004b5844` | NOPs replace the original RET and two bytes of the subsequent `TEST AH,2`. | The old next branch begins inside the new alignment. |
+| `004b5bfd..004b5c00` | NOPs replace the final address bytes of the original store to `007a3a6c`. | The store begins at `004b5bfa`, before the Modern return boundary. |
+| `004f9399..004f939c` | NOPs after a Modern return replace the last three displacement bytes of the original string-helper call at `004f9397`. | The original string routine continues at `004f939c`. |
+| `004f93a5..004f93a8` | NOPs replace `DEC ECX; SUB EBX,ECX` in the old string length calculation. | The Modern routine returns before these bytes. |
+| `004f93b5..004f93b8` | NOPs replace the original `CMP ECX,EBX` and the opcode of its following unsigned branch. | The original branch crosses the Modern boundary. |
+| `004f93c5..004f93c8` | NOPs replace `SUB ECX,ECX; DEC ECX` before the old string scan. | The Modern routine returns before this interval. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -366,7 +376,9 @@ intervals**, leaving 188 changed bytes across 95 intervals at `e942a54`.
 Eight further rows bring coverage to **21,762 bytes across 250
 intervals**, leaving 164 changed bytes across 87 intervals at `6d098d8`.
 The HUD and startup rows bring the total to **21,786 bytes across
-258 intervals**, leaving 140 changed bytes across 79 intervals. These counts measure documented evidence links for this fixed
+258 intervals**, leaving 140 changed bytes across 79 intervals at `6f324d2`.
+The nine startup and string-helper rows bring coverage to **21,813
+bytes across 267 intervals**, leaving 113 bytes across 70 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
