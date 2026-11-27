@@ -317,3 +317,21 @@ The three error-path spans in the [helper comparison](#directory-and-error-paths
 The original and retained 1.3.1 compare the pool initializer's signed return against `0xfce000` at `004b60a6`. The original invokes diagnostic helper `00401010` at `004b60b3` and has a local continuation if it returns. Version 1.3.1 routes the below-threshold branch to the shared fatal dialog at `004b60b7`. The same comparison is present at `004b5b88` in 1.6.0 and at `004b5c16` in 1.6.1. The final failure call at `004b5c22` reports that at least 16 MiB could not be allocated, but the literal threshold is 16,572,416 bytes, or 200 KiB below 16 MiB. This gate consumes the pool initialization result, while the advisory resource warning consumes two memory-status fields and allows continuation. For the backing-size configuration, see the [RAM pool comparison](original-modern-heap-initialization.md).
 
 On the inspected successful pool-creation path, `004e1230` returns the initialized free block's payload length, rather than the backing allocation pointer or requested size. The setup calls `004e1080` at `004e1481` to insert the free block. That helper computes the difference between the next block address and the current header minus 16 bytes and stores it at header offset `+4` at `004e10b0`. The epilogue at `004e1492..004e14a7` loads that field into EAX. The compared return and size-publication instruction spans match in the original, 1.3.1, 1.6.0 and installed 1.6.1. This explains why the startup check can compare a payload length against a value below the backing request. Full pool layout and exceptional allocation outcomes remain separate.
+
+### The original has separate record-reader and media-path literals
+
+In the hosted original, the standalone filename at `0053dc40`
+goes to the record reader's open wrapper at `004a6e3f`.
+The second standalone filename at `0053fe30` is loaded into
+EDX at `004b633b` and passed to the startup media path builder
+at `004b634b`. The third ASCII match is inside the
+[Rendition dialog](original-modern-language-table.md#modern-140-removes-the-remaining-installer-filename-literal).
+
+The retained 1.0.0 and 1.1.0 EXEs have a NOP at the
+original startup call site `004a3d67`. A linear
+`objdump -d -Mintel` scan finds no direct call to the old
+`004b6320` entry in either EXE, and the old media-path
+literal at `0053fe30` is overwritten. This confirms removal
+of the original direct startup edge by 1.0.0. Complete
+replacement policy and execution without the installer
+file remain outside the static check.
