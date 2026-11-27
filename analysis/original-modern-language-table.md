@@ -373,3 +373,9 @@ The map covers every decoded direct operand referring to `006fbb54` in the hoste
 | Idle demo movie | `00496217` | Moves to `00496213` in 1.4.0 and remains there. |
 
 That accounts for 24 original and 18 final reads or comparisons. The respective direct producer stores are `00472b43` and `00472b25`. Indirect accesses and runtime reachability are outside this census.
+
+### The flag record and the temporary music directory occupy separate slots
+
+In the hosted original, a linear `objdump -d -Mintel` scan finds one decoded operand naming the exact second-record address `007a26b4`. It is the classifier argument at `004b62f1`. The install reader writes that slot by calculating its address from the record index. Computed and interior references are outside this operand scan.
+
+The next slot, `007a2734`, receives processed record 2 (the third nonempty result) by the same indexing rule. The original music loader pushes that slot at `00410214` and passes it with the format `%stemp.mus` at `00536880` to `004df690` at `00410222`. This establishes a path prefix from a separate installer record. The second record controls admission via the flag. The third supplies the prefix for this temporary music filename. See the [music-copy comparison](original-modern-music-selection.md) for Modern's source-file path. Actual installer record contents and effective filesystem paths remain unverified.
