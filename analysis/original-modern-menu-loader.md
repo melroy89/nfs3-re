@@ -14,6 +14,12 @@ At `004495ff..00449676`, the loader copies the selected NUL-terminated directory
 
 Modern's [startup path audit](original-modern-startup-paths.md#4-path-slots-and-directory-preparation) independently maps initialization of `007a2d34` to `.\fedata\menus\`, one of 22 runtime path slots. The original literal and Modern initialized default therefore name the same ordinary relative directory on a case-insensitive Windows filesystem. The change makes the loader consume initialized state rather than its own literal. It does **not** prove that this slot is a user-configurable override, that its value never changes later, or that Windows/Wine/native Linux resolve every spelling identically. Working-directory success and later changes remain separate concerns.
 
+## Release boundary and first initialized prefix
+
+The instruction at `004495ff` still loads `00538f84` in Modern 1.0.0 and 1.1.0. Every retained version from 1.2.0 through 1.6.1 loads `007a2d34`. In 1.2.0 the startup call at `004a6e36` reaches the path-table initializer at `004a6f04`. Its loop copies NUL-terminated strings from `0053ec2c` into slots spaced `0x80` bytes apart beginning at `007a27b4`. The zero-based slot 11 lands at `007a2d34` and receives `.\FeData\Menus\`, from `0053ed18`. The original literal and the first replacement name the same relative directory with a different trailing separator. The 1.6.1 table uses lowercase, as described above.
+
+To reproduce, extract `nfs3.exe` from each retained archive and disassemble `004495ff..00449604`. For the first buffer-based release, also inspect `004a6f04..004a6f24` and read the twelfth string in the source table. The [Setup menu graph comparison](original-modern-options-postgame.md#the-display-helper-stops-overwriting-the-history-pointer-in-120) confirms that the relevant archived menu assets themselves are unchanged across this boundary. Actual file resolution and later buffer writes remain unverified.
+
 ## What is retained locally
 
 Every byte outside that operand is identical within the complete function. Reusing the [existing loader research](detailed-analysis-notes.md), the observed body:
