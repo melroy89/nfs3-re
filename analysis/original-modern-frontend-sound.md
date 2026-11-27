@@ -295,3 +295,9 @@ The hosted original and all twelve retained Modern executables match byte for by
 | `00501de8..005021ab` | Tagged patch playback interpreter | `798afbc6b090e340c85b9124bf478a5a34fd7b7e3160c05987ccfeb5ee4f70b9` |
 
 The dated frontend request changes therefore enter a retained bank lookup. The compared ranges now extend through the tagged patch preparation and playback interpreter bodies. They establish local code identity. Active bank data, backend callees and audible output remain separate.
+
+### The 1.5.0 Audio menu adds the matching slider
+
+The retained 1.5.0 `fedata/menus/audio.mnu` adds a slider with `codelink=ASLD_MENUSOUND`, `ypos=1`, and `text=lang1934`. The same release's English text member resolves ID 1934 to **Menu Sounds**. The 1.4.0 Audio menu has no matching codelink, and the shipped `psaudio.mnu` matches across this release boundary. The Audio menu asset hashes are `abd8b8f918fa9a3385b5338e049d931cddf87391b65a030b164971a98a4178ea` (1.4.0) and `8f15f73685ef8421a9e886db28d99a369c7515f1adde926bd55167fa3b05339e` (1.5.0).
+
+In 1.5.0, the setup path at `00437e4b` calls the constructor at `004376fc`. Its lookup at `00437707` passes the literal `ASLD_MENUSOUND` at `00538f84`; successful lookup initializes the slider from `006fd1d0` before installing the update and preview callbacks. This binds the shipped menu element to the separate volume field at its introduction. Audio output and live menu interaction remain untested.
