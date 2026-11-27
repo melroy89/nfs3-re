@@ -453,3 +453,12 @@ Thus the changed operand is evidence of a relocated resolver.
 A startup failure caused by settings, API results or deeper
 callees remains unverified. See the
 [startup policy trace](original-modern-startup-policy.md).
+
+The relocated module helper is identical as well. Compare the
+27 bytes at `004f1eac` in 1.5.2 and `004f1ea0` in 1.5.3
+through RET. In both builds, it calls KERNEL32.GetModuleHandleA
+through `0053454c` and calls LoadLibraryA through `0053458c`
+only on a null result. The export resolver then uses the same
+GetProcAddress import at `00534558`. The matching code and
+import names establish continuity for the local lookup sequence.
+The returned handles and affinity call result depend on runtime.
