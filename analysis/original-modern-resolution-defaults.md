@@ -288,6 +288,29 @@ The table is not the final authority for every destination. After selection, fie
 - Nonzero sets the Z-buffer selector to1 while retaining the tier’s projtex choice.
 - Fog selector`006fd1d4` receives that raw EAX value, despite the separate load of the ninth table into EDX. The previously documented load/store mismatch is preserved; do not describe fog as a ninth CPU-table-selected default.
 
+The original and retained Modern builds through 1.4.0 already had
+the later mode-dependent writes. They copy the selected record through
+`00448330` and test the copied field at `[EBP-0x164]`, 16 bytes into
+the record at `[EBP-0x174]`. They also zero both selectors earlier
+when renderer mask `0x06` is set. The 1.5.0 initializer removes that
+earlier pair of stores, and reads the selected field through an accessor.
+
+| Checked builds | Earlier renderer-mask Z-buffer clear | Later Z-buffer set / clear |
+|---|---|---|
+| Hosted original | `00472ec0` | `00472eec` / `00472efe` |
+| 1.0.0–1.3.1 | `00472e47` | `00472eec` / `00472efe` |
+| 1.4.0 | `00472e42` | `00472e78` / `00472e8a` |
+| 1.5.0 and final 1.6.1 | Absent | `00472dec` / `00472dfd` |
+
+At the later branch in both implementations, a nonzero mode field
+sets Z-buffer to 1 and leaves the current projected-texture value
+alone. A zero field clears both. Consequently, on the earlier
+renderer-mask path, a nonzero field can restore Z-buffer to 1 while
+leaving projected textures cleared. In 1.5.0 and final, that later
+nonzero branch can instead leave the tier's projected-texture value.
+This describes the local write order. It does not establish which
+mode records are available on an actual device.
+
 For ordinary records from the audited collector, field10 is normalized0/1 from the provider-record threshold. Empty or invalid records, source lifetime and other writers retain the preceding caveats. Selector1 also does not prove actual fog support; the independent support trial still applies.
 
 The initializer also requests either640×480 or the packed large-area sentinel according to tier/renderer conditions already documented above. That request is filtered through the actual mode list; it is not a promise that a desktop-sized or highest-quality display mode exists or succeeds.
