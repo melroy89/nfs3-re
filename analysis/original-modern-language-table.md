@@ -294,3 +294,23 @@ to the retained 1.0.0 release. Its only case-insensitive ASCII
 `install.win` occurrence is in the Rendition diagnostic. That
 string census leaves other file-access routes and successful startup
 without the file unverified.
+
+### Both installer-setting replacements are present in 1.0.0
+
+The retained 1.0.0 archive ships `Language=English` and
+`RemoteOnly=0` in `nfs3.ini`. Its RemoteOnly reader at
+`004b62a0..004b62c1` differs from 1.1.0 only in the key
+pointer, which resolves to `RemoteOnly` at `0053ee98`.
+It uses section `NFS3`, defaults to zero, normalizes a
+nonzero result to 1, and reaches the same publication at
+`00472b43`.
+
+The 1.0.0 language setup at `004a6eb4..004a6ed2`
+passes the `Language` key at `0053ee30`, default
+`english`, an eight-byte capacity and destination
+`007a2634` to the same profile-string wrapper as 1.1.0.
+The selector checks the same six names and publishes
+its ordinal at `004a6f07`. These two paths establish the
+1.0.0 migration for the inspected settings. Complete file
+access coverage and startup without the installer file
+remain unverified.
