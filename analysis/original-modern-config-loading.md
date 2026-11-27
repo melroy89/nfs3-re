@@ -653,3 +653,20 @@ at `004b5d21`. Consequently the legacy clear on the matching-length
 config path does not undo the display flag already published by
 this initializer. This is a static ordering result for the selected
 startup path, independent of successful renderer or window creation.
+
+### Accepted-config audio-mode normalization in 1.5.3
+
+The accepted version-5 config branch in 1.5.3 calls `00472230`
+at `00472ac6`. The new 24-byte body at that target has one
+direct setting write, to `006fbc00` (audio mode), on the
+D3D/EAX rejection branch. It returns before the adjacent
+grouped-defaults helper at `00472248`. That separate helper
+contains the two music ordinal clears. The capability predicate
+at `0040faf0..0040fb0f` matches 1.5.2, where `00472230`
+instead enters the grouped audio defaults code.
+
+This dates the accepted-config normalization mechanism for
+MP153-010. The normalizer's own instructions leave the saved
+music ordinals untouched. Its capability call can dispatch to
+the audio backend, so indirect effects and actual device
+availability remain outside this static check.
