@@ -148,3 +148,15 @@ active at `00500243` after the setup callback returns.
 This verifies the movie setting's propagation to the active mixer
 record on the inspected path. It leaves the selected DSP callback's
 sample scaling and measured playback outside the static trace.
+
+The setup immediately calls `00500654` at `00500228`. If mixer
+record byte `+3` is zero, the helper clears `+8` and returns.
+Otherwise it reads unaligned dwords at offsets `+1` and `+2`
+and extracts their high bytes, which are the duplicated stereo
+levels at `+4` and `+5`. It averages them with a signed right shift
+and stores the result temporarily at `+8`. Before returning it
+overwrites `+8` with `(signed(+3) * signed(+8)) >> 7` and passes
+that final byte twice to the callback at record `+ddch`, along with
+the subrecord pointer at `+dc4h`. This is the mixer setup's secondary
+level path. The separate stereo pair remains in the record, and the
+callback's effect on output samples still requires inspection.
