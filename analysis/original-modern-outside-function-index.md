@@ -63,6 +63,18 @@ The [CPU calibration follow-up](original-modern-cpu-tier.md#removed-calibration-
 
 The [DDE browser-code follow-up](original-modern-removed-dde.md) identifies original URL-command construction and its callback beneath the 621-byte NOP run `004901c3..00490430`. The run begins inside an original branch operand; lack of autoanalysis entries is not evidence of padding. Original caller reachability remains unresolved, and Modern still retains all seven DDE imports.
 
+## When three old code ranges become all NOPs
+
+The final image contains three fully padded ranges whose padding arrived in separate releases. Read each complete PE VA range from the archive executables and count bytes equal to `0x90`. The earlier counts may include instruction operands. The all-NOP result establishes the state of the whole range.
+
+| Range and existing counterpart | Last retained build with other bytes | First all-NOP build, retained through 1.6.1 |
+|---|---|---|
+| `004ccdb4..004cce90`, [window callbacks](original-modern-window-handling.md) | 1.4.0 (22 of 220 bytes are `0x90`) | 1.5.0 |
+| `00472566..0047262b`, [config defaults](original-modern-config-loading.md#removed-inline-defaults-at-00472566-replacement-initialization-matters) | 1.5.2 (127 of 197) | 1.5.3 |
+| `0048575b..0048582c`, [HUD parser](original-modern-hud-layout.md) | 1.5.3 (1 of 209) | 1.6.0 |
+
+The dates apply to the old address ranges. See the paired reports for relocated implementations and earlier behaviour changes.
+
 ## Mechanism triage from existing comparisons
 
 These links reconcile selected outside-body spans with already inspected mechanisms. They are not declarations that every instruction, caller or output in a row has been validated. In particular, the Modern saved-body boundary can split an original instruction or function.
