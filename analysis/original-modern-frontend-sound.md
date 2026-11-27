@@ -185,10 +185,20 @@ result remain unverified.
 The reused window begins restoring a separate setting in
 1.5.0. After the 64-byte block copy, the zero-status path
 loads `00664680` and writes it to menu-sound volume
-`006fd1d0`. The 1.5.0–1.5.2 store is at `004381b7`;
-in 1.5.3–1.6.1 it moves to `004381b9`. Both compare
+`006fd1d0`. The 1.5.0–1.5.2 store is at `004381b1`;
+in 1.5.3–1.6.1 it moves to `004381b7`. Both compare
 `00559234` with zero before the restore and skip it
 when nonzero. This dates a distinct Cancel behavior
 associated with the added menu-sound setting. Both
 versions leave the restored Engine Volume and Sound
 Effects DWORDs alone on the inspected continuation.
+
+In all six retained releases from 1.5.0 through 1.6.1, the
+audio initializer snapshots volume at `00437e50..00437e5a`
+after calling the menu-sound slider setup at `00437e4b`.
+The snapshot copies `006fd1d0` to `00664680`. The preceding
+status gate at `00437e39` skips the snapshot when
+`00559234` is nonzero. These instructions match in all
+six builds. The initializer and Cancel independently
+test that status, so the local logic does not establish
+freshness if the flag changes between entry and exit.
