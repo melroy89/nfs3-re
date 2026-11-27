@@ -50,3 +50,18 @@ Identical message-loop span **`004cd5b9..004cd5d3`**,26 bytes, supplies saved ke
 The supplementary audit checks complete outside-function interval **`004ccaf6..004ccb84`**:142 bytes with116 differing positions. Modern contains two NOPs, then the92-byte primary table (22 mappings plus terminator) and48-byte keypad table (11 mappings plus terminator). These are WORD/WORD data records replacing original branch-tree instructions. The original function continues through`004ccc67`; this inventory boundary does not define a paired function.
 
 This chapter is the canonical keyboard comparison. The earlier audit retains baseline translator/table/import and TranslateMessage/DispatchMessage evidence; the supplementary audit adds the complete189-byte key-down callback, repeat-register lifetime and interval partition. Their static scopes overlap deliberately as retained evidence, while this prose provides one consolidated conclusion. No new input/OS test or whole-subsystem equivalence claim follows.
+
+## The message translator changes in 1.5.0
+
+The complete original translator window `004ccaa0..004ccc67`
+matches the hosted original in all retained Modern builds through
+1.4.0. Version 1.5.0 introduces the two tables and Num Lock query
+described above. The new translator and both tables, including the
+second terminator ending at `004ccb84`, match through 1.6.1.
+The larger original-sized window changes again in 1.5.3, but its
+three differing bytes are after those tables, at
+`004ccbd7`, `004ccbd8` and `004ccbe8`. Compare file-backed
+bytes at PE RVA `ccaa0h` in the extracted archive members.
+The separate removal of [OS toggle resets at window creation](original-modern-window-geometry.md#removed-startup-reset-of-keyboard-toggles)
+already appears in 1.0.0. Actual message translation under Wine
+or different keyboard layouts remains untested.
