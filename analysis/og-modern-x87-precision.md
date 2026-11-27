@@ -1292,3 +1292,16 @@ helpers described above. In 1.6.0 those helpers are themselves NOP-filled.
 This distinguishes the 1.5.3 refactor from the 1.6.0 policy change. Actual control words inside
 race, replay and network processing remain dependent on the executed
 path and intervening calls.
+
+The two original inline masks outside those spans moved earlier. Their
+five-byte encoding `25 ff f0 ff ff` at `004955df` survives through 1.3.1.
+In 1.4.0 the reset/mask/load sequence is visible instead at
+`00495589..004955af`, with the mask at `0049559f`. At `004b622f` the
+original mask survives through 1.4.0 and becomes NOPs in 1.5.0.
+
+In 1.5.0 the helper at `004955d4` already implements the reset, mask and
+reload, with the mask at `004955ea` and FLDCW at `004955f4`.
+Direct calls at `00495589` and `004b5c84` reach that helper. Thus the
+loss of either original address is insufficient evidence of a loss of
+single-precision selection. These witnesses date the selected code sites
+and calls. They leave path frequency and runtime precision unmeasured.
