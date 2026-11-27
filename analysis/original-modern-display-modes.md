@@ -373,6 +373,8 @@ The game-side state route predates DX8. The hosted original, 1.0.0 and 1.1.0 exe
 
 On the original driver's nonzero-state path, the first `CreateSurface` call at `60001d17` sets `DDSURFACEDESC.dwSize=0x6c`, `dwFlags=1` and `ddsCaps.dwCaps=0x200`. These fields request a primary surface with `DDSD_CAPS` alone. The request supplies neither dimensions nor an explicit pixel format, so the prepared 15→16 depth does not constrain this first surface. The resulting surface properties and later render-target formats are separate. [DirectDraw structure and flag definitions](https://raw.githubusercontent.com/wine-mirror/wine/master/include/ddraw.h)
 
+After a successful `SetDisplayMode` on the original driver's zero-state path, the surface request at `60001e95..60001ee9` instead sets `dwFlags=0x21` (caps and back-buffer count) and `dwCaps=0x2218` (primary, flipping, complex and 3D-capable). A nonzero `60012ba8` adds video-memory capability, producing `0x6218`. The initial back-buffer count is the routine's last stack argument minus one. If `CreateSurface` returns `0x8876017c` and the unsigned count exceeds one, the retry at `60001ef5..60001f28` decrements the count and tries again. The descriptor still omits an explicit pixel format. Thus the explicit colour depth on this path comes from the preceding display-mode request. The actual surface formats and memory placement remain unverified.
+
 This gives MP110-009 partial static support for a concrete provider mechanism. The record selected at menu startup, the final back-buffer format and the reported visual repair remain unverified. A 32-bit row in the provider catalog alone cannot settle those questions.
 
 ### DX8 activation already contains16-bit requests before150
