@@ -143,6 +143,16 @@ post-clock body through RET. This verifies continuity of the budget
 calculation while leaving baseline placement and clock source as
 separate comparisons.
 
+The clock transition occurred one release before the helper relocation.
+In 1.5.2, both the baseline call at `004a356c` and the refresh call at
+`004a357a` target `004f1ea0`, which calls GetTickCount via `00534568`.
+In 1.5.3, both sites target `004f2790`, which calls timeGetTime via
+`00534664`. Decode both relative calls and resolve the corresponding
+import slots to reproduce the comparison. The arithmetic after the
+refresh call is unchanged at this boundary. See the
+[clock-source comparison](original-modern-clock-source.md) for the
+broader API migration.
+
 | Ordinary derived setting/elapsed |1.4.0 remaining budget |1.5.0/final formula |
 |---|---:|---:|
 |5 seconds;2,000 ms elapsed |5,000 ms |3,000 ms |
