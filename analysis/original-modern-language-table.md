@@ -326,3 +326,15 @@ filename used by its installer-record reader.
 This dates removal of the literal and the obsolete dialog
 sequence. The check covers ASCII literals and the named
 instruction window, leaving computed paths outside its scope.
+
+### Menu item flags still depend on the stored value
+
+The hosted original and official 1.6.1 retain the following checks at the same addresses. With a nonzero `006fbb54`, each successful lookup through `00442a40` sets bit 0 in the byte at item+4. With zero, these branches skip the OR and leave the existing bit untouched.
+
+| Flag read | Lookup names resolved in both EXEs |
+|---|---|
+| `00440682` | `racenet`, `modem`, `serial` |
+| `00440936` | `creategame` |
+| `00442ab5`, `0044d141` | `AudioB` in two separate call paths |
+
+Reproduce by disassembling the named branches and resolving the lookup arguments as PE strings. These item-state changes are separate from the [alternate TCP menu branch removed in 1.4.0](original-modern-network-port-menu.md#nonzero-remoteonly-selected-a-different-menu-path-before-140). The [Connect menu comparison](connect-menu-dispatch-crosswalk.md) documents the separate removal of the RaceNet callback store. The resulting visibility of each item depends on the loaded menu and other state writes.
