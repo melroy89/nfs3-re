@@ -153,6 +153,18 @@ refresh call is unchanged at this boundary. See the
 [clock-source comparison](original-modern-clock-source.md) for the
 broader API migration.
 
+The 1.6.0 caller also starts measuring earlier relative to viewport
+setup. In 1.5.3, the baseline capture at `004a345e` follows calls to
+`004be5e0`, `004beb80` and `004352d0`. In 1.6.0 it occurs at
+`004a3417`, ahead of all three call sites, which now appear at
+`004a3428`, `004a3439` and `004a3448`. On paths that execute
+those calls and reach the refresh, their work falls inside the measured
+interval in 1.6.0. The first target is the
+[viewport geometry initializer](original-modern-viewport-geometry.md).
+Compare the direct calls in `004a33d0..004a349f` in the retained
+1.5.3 and 1.6.0 builds. This locates a change in the measurement
+window without assigning a duration to the added work.
+
 | Ordinary derived setting/elapsed |1.4.0 remaining budget |1.5.0/final formula |
 |---|---:|---:|
 |5 seconds;2,000 ms elapsed |5,000 ms |3,000 ms |
