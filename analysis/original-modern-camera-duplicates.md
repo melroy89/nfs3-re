@@ -65,3 +65,15 @@ The live selector at `006fd1cc` occupies bytes `0x168c..0x1690` (end exclusive) 
 A whole-file scan for the little-endian selector VA finds no literal in the hosted original or 1.5.0. It finds six in both 1.5.1 and 1.6.1: two viewport comparisons, the snapshot read, the Cancel write, the default store and the menu descriptor's selection pointer. The bulk configuration copy explains a persistence path outside that literal census. This establishes saved-block inclusion and a reset condition. No save-and-restart test or exhaustive startup-write trace was performed.
 
 The inspected Wine installation's `FEDATA/CONFIG/config.dat` is 8,432 bytes, declares size 8,432 and version 6, and stores DWORD 1 at file offset `0x168c` (file SHA-256 `2f0b05ad7d0f86e396b61e7c07fad9b28a395952beb80ca1bfd2bd8b411947c7`). In the two-entry list, index 1 is **In Car Camera** (ID 1940); index 0 is **Active Camera** (ID 1939). The installed value agrees with the checked default in 1.5.1 (store at `00472266`) and 1.6.0–1.6.1 (store at `004722a6`). A version-5 settings block that reaches the 1.6.x [post-copy header gate](original-modern-config-loading.md#modern-header-decision-tree) takes grouped defaults, including that rear-view reset. The file read confirms this installation's saved value. It does not establish how that value was selected or what a running renderer displays.
+
+### The 1.0.0 Camera menu gains the standard bottom controls
+
+The hosted original `fedata/MENUS/CAMERA.MNU` and Modern Patch 1.0.0 `fedata/menus/camera.mnu` preserve the same authored items through the original ending. The 1.0.0 member appends three `mainonly=1` buttons and their `3btt` background image at `(281,434)`.
+
+| Codelink | Button type | Authored text or route |
+|---|---|---|
+| `racenow` | `LR1of3` | `kMenuOPTIONSRACE001` |
+| `credits` | `LR2of3` | `kMenuOPTIONSCredits001`, `nextmenu=credits` |
+| `exitprogram` | `LR3of3` | `kMenuOPTIONSExitGame001` |
+
+The same three codelinks and background image appear in the 1.0.0 Audio and Graphics menus. This verifies the authored addition for MP100-055. Visibility under different menu contexts, actual input dispatch and rendered position remain untested. Reproduce by extracting the named members from the retained `nfs3_orig.7z` and `nfs3_modern_patch_v1.0.0.7z`. The Camera menu SHA-256 values are `bdeeb5b38abb48858e27467eb3bb37d0ba78821bd0c0e755ed3251df1b059b04` and `164480687764236044e3c753de250869443e5c9df4c4bd7e58cc8cd5c5962b44`, respectively.
