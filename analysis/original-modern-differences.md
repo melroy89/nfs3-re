@@ -447,6 +447,27 @@ The [viewport comparison](original-modern-viewport-geometry.md) derives the cent
 
 The [input comparison](original-modern-menu-input.md) traces Tab/Shift+Tab routing, explicit Tab/Escape bypass of the lobby handler, generalized named-arrow actions and the new empty-text send guard. The lobby handler, previous/next routines and send routine are byte-identical; the relevant changes are in their callers. Active entry callbacks can still consume keys, and actual original/Modern UI behavior remains untested.
 
+### File changes across retained patch archives
+
+Each row compares the package with the preceding retained Modern release using exact relative paths and SHA-256 of extracted regular files.
+
+| Release | Files | Added paths | Removed paths | Changed at same path | Unchanged at same path |
+|---|---:|---:|---:|---:|---:|
+| 1.0.0 | 60 | — | — | — | — |
+| 1.1.0 | 62 | 5 | 3 | 4 | 53 |
+| 1.2.0 | 72 | 17 | 7 | 2 | 53 |
+| 1.3.0 | 72 | 0 | 0 | 57 | 15 |
+| 1.3.1 | 72 | 0 | 0 | 9 | 63 |
+| 1.4.0 | 80 | 14 | 6 | 65 | 1 |
+| 1.5.0 | 84 | 4 | 0 | 57 | 23 |
+| 1.5.1 | 84 | 0 | 0 | 18 | 66 |
+| 1.5.2 | 84 | 0 | 0 | 9 | 75 |
+| 1.5.3 | 84 | 0 | 0 | 19 | 65 |
+| 1.6.0 | 85 | 1 | 0 | 18 | 66 |
+| 1.6.1 | 85 | 0 | 0 | 16 | 69 |
+
+All 52 shared menu files change at 1.3.0 and again at 1.4.0. At 1.6.0 the only added path is `fedata/art/logos.qfs`. A file moved to another path is counted as a removal and an addition. Payload equality alone does not establish semantic equivalence.
+
 ### What changed in the 1.6.1 archive
 
 The retained 1.6.0 and 1.6.1 archives contain the same 85 regular-file paths. SHA-256 comparison of extracted payloads finds 69 unchanged and 16 changed. The changed files are `nfs3.exe`, the eight configured renderer DLLs, five renderer INIs (DX5, DX6, DX7, DX8 and SoftTri), and the English and Russian readmes. The menu and language assets, auxiliary Glide DLLs, `eacsnd.dll` and packaged `nfs3.ini` all match.
