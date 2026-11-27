@@ -131,3 +131,15 @@ To reproduce, use the 1.1.0 and 1.2.0 executable hashes pinned in the [historica
 The regression is already present in the checked first Modern release. The original display helper at `004483a0` saves EDX at `004483a1`, uses it as the mode-search index and restores it on both the match return (`004483e1`) and the fallback return (`004483fb`). It copies a stored mode value to `006fbc18` on both routes. Modern 1.0.0 instead uses ECX for the search and calls the new mode-product helper at `004483d3` on both routes, with no outer EDX save. The whole `004483a0..004483ff` window matches 1.1.0, including the EDX-clobbering multiply. This dates the register-contract change to the original-to-1.0.0 boundary in the checked builds and the repair to 1.2.0.
 
 The original executable SHA-256 is `b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b`. The extracted 1.0.0 executable SHA-256 is `988fbf599af256d1486bef967959893c6b26c9fa8ed21b76310bbb7798b4d9df`. Compare the window from `004483a0` to `004483ff` (end exclusive).
+
+Later retained releases keep the repair at the Setup-to-display call boundary:
+
+| Modern release | Display helper called from Setup | Register-preservation mechanism |
+|---|---|---|
+| 1.2.0–1.3.0 | `004483a0` | Two-operand `IMUL` at `004483df` leaves EDX intact. |
+| 1.3.1–1.4.0 | `004483a0` | The multiply reads a different field displacement at `004483df` and still writes only EAX. The HUD update moves to a helper at `004483f8`, which can call `00485680` at `00448413`. |
+| 1.5.0 | `0044838e` | `PUSHAD` at entry and `POPAD` at `004483f5` preserve incoming EDX. |
+| 1.5.1–1.6.0 | `00448398` | The same save and restore pair ends at `004483ff`. |
+| 1.6.1 | `00448394` | The same save and restore pair ends at `004483fb`. |
+
+In 1.5.0 and later, Setup calls the new wrapper at `00473279` and still enters the menu loop at `0047328d`. The final wrapper's inner HUD updater at `00448400` compares the two incoming DWORDs separately at `0044840c` and `00448413`, counts changes in ECX and calls the recalculator only when that count is nonzero. The outer register restoration therefore covers either HUD path. Reproduce by extracting `nfs3.exe` from the retained release archives and disassembling the Setup call site and the corresponding display helper from the listed entry. This comparison addresses preservation across that call. It does not establish how all callers select or populate menu history.
