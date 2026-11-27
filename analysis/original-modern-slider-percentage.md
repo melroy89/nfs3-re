@@ -46,7 +46,7 @@ The conversion helper itself is also different:
 
 Both words request RC=11 (toward zero). Original's forced high byte also sets PC=11; Modern's literal sets PC=00 and masks all six floating exceptions in the low six bits. Original instead inherits those low-byte masks. This describes installed control bits, not a claim that precision-control bits alter FRNDINT in the same way as every arithmetic instruction. Waiting/nonwaiting save sequences and exception handling also differ; those are machine-state contracts outside a plain integer return.
 
-The original percentage tail invokes its original conversion helper before FISTP; Modern's changed tail invokes neither implementation and uses direct ambient-rounding FISTP. Consequently “both executables contain a truncation helper” would not establish identical slider rounding. Ordinary/boundary numeric comparisons and exact active control words remain untested in this phase.
+The original percentage tail invokes its original conversion helper before FISTP; Modern's changed tail uses direct ambient-rounding FISTP for the final conversion. Its upstream quantizer can still reach the shared helper. Consequently “both executables contain a truncation helper” would not establish identical slider rounding. Ordinary/boundary numeric comparisons and exact active control words remain untested in this phase.
 
 ## Installed percent-type definitions and parser descriptor
 
@@ -337,3 +337,16 @@ bias constants. At 1.4.0 → 1.5.0, the 29-byte conversion-helper
 window also matches. These comparisons isolate the observed 1.5.0
 renderer edit to caption placement within the inspected code and
 constants. Runtime inputs and the active control word remain open.
+
+### Upstream quantization still reaches the x87 helper
+
+In official 1.6.1, the single-slider tail has no direct call to the
+truncation helper. Its quantizer can still call `004f1c30` at
+`00469401`. That routine calls `0050ea4e` at `004f1c45`, and
+the latter calls `004dfd56` at `0050ea55`. This occurs on the
+quantizer path that divides by a nonzero step and splits the
+quotient into integer and fractional parts. The helper restores the
+saved control word before returning normally. The final FISTP
+therefore still uses the ambient rounding mode. Removing the direct
+helper call changed final display conversion while leaving that
+upstream use in place. Actual entry control words remain unmeasured.
