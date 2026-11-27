@@ -312,3 +312,15 @@ Earlier builds have a different call at the same address and
 are outside this wrapper comparison. Final 1.6.1 instead calls
 its revised initializer directly from startup. This dates the call
 routing independently of whether the driver accepts a requested mode.
+
+The startup-mode instructions from `00517630..0051776b` match in
+1.5.0 through 1.5.3. They differ from 1.6.0 in only three bytes,
+at `0051768d..0051768f`, which change the absolute device selector
+source from `0055fdbc` to `007a3a70`. In all five releases, the
+mode call through `009ef958` at `005176a1` is followed by an
+unconditional jump to `005176aa`. The common tail publishes
+`00564364=1` at `0051772d`. Thus the inspected startup route
+can publish success state after a zero mode return starting
+in 1.5.0, subject to the shared tail returning normally.
+This byte comparison covers the named span, not earlier
+initialization failures or live driver behavior.
