@@ -234,3 +234,15 @@ The full 161-byte comparison routine at `004ee310..004ee3b0` is byte-identical i
 The 1.6.1 selector also changes the lowercase helper's register interface. In 1.6.0, the call at `004a6ebf` passes the buffer in EDI to the in-place loop at `004f93cc`. In official 1.6.1, the call at `004a6e89` passes it in EAX to `004f93dc`, which supplies the same pointer as both source (ESI) and destination (EDI) to the shared loop at `004f93c8`. Both entry points preserve ESI and EDI. The 1.6.0 loop leaves EAX zero on normal completion, while the 1.6.1 wrapper returns the original pointer in EAX. Both selectors reload EAX from the name table before comparing.
 
 Disassembly of the retained releases confirms that the 14-byte mapper at `004f0ae0..004f0aed` is identical in 1.6.0 and official 1.6.1. It adds `0x20` only to ASCII `A` through `Z`. With the direction flag clear and a NUL-terminated buffer, both selector call paths convert the same bytes in place and write through the terminator. This establishes the local normalization behavior by static inspection.
+
+Direct extraction of `nfs3.exe` from each retained Modern archive and disassembly of the selector gives the following call sites. Each of the ten pre-1.6.1 helpers has the same 20 instruction bytes apart from the relative displacement of its call to `004f0ae0`.
+
+| Retained releases | Selector call | Lowercase entry | Buffer register |
+|---|---|---|---|
+| 1.1.0 | `004a6ece` | `004f93b0` | EDI |
+| 1.2.0, 1.3.0, 1.3.1 | `004a6ec8` | `004f93c8` | EDI |
+| 1.4.0 | `004a6e87` | `004f93c8` | EDI |
+| 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.6.0 | `004a6ebf` | `004f93cc` | EDI |
+| 1.6.1 | `004a6e89` | `004f93dc` | EAX |
+
+The byte mapper itself matches in all eleven releases (span SHA-256 `12faceab764ccdbbbeeaffb3213def7775e07263b5d2a97f620a888f07514172`). Thus 1.6.1 is the first retained release to switch this selector to the EAX wrapper, with the same ASCII mapping throughout the retained Modern history. This comparison covers the normalization step after the configuration reader returns. Reader precedence and handling of overlong values are separate questions.
