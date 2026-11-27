@@ -42,9 +42,9 @@ This connects default requests to actual selection code. It does not prove a non
 
 Modern also contains helper `004f9140..004f915d`: EAX points to two output DWORDs, populated by imported GetSystemMetrics with arguments 0 and 1. That is a concrete metric-read mechanism, not proof of its use by default initialization. The inspected `00472d10 -> 00448394 -> 004bedcc` route does not call it. A bounded search of the retained linear Modern disassembly found no direct `CALL 004f9140`; indirect calls and data-held function pointers are not excluded.
 
-**MP100-011** says the first run tries a gameplay resolution nearest the Windows default. The retained releases establish a conditional desktop-based default in 1.1.0 through 1.3.0 and a different policy starting in 1.3.1. The exact 1.0.0 implementation and first-run lifecycle remain unverified.
+**MP100-011** says the first run tries a gameplay resolution nearest the Windows default. The retained releases establish a conditional desktop-based default in 1.0.0 through 1.3.0 and a different policy starting in 1.3.1. First-run reachability remains unverified.
 
-### Packaged 1.1.0–1.3.0 defaults use desktop pixel area
+### Packaged 1.0.0–1.3.0 defaults use desktop pixel area
 
 In the retained 1.1.0 executable (SHA-256
 `59456e52d7ec06fafcc170fd23ba1b1c241d849c66249b653013b33389f39a72`),
@@ -342,3 +342,19 @@ To reproduce, extract the root `nfs3.exe` from each archive and
 compare PE RVA `72dbb` for `19h` bytes. This dates the default writer
 independently of the menu's sentinel trigger and the reader's ranking
 rules, which are traced in the [mode-selection comparison](original-modern-mode-selection.md#150-changes-the-stored-request-format-and-sentinel-trigger).
+
+Across those six releases, the complete 268-byte defaults initializer
+at `00472d10..00472e1c` differs at just two byte positions, both
+inside relative-call operands. The adjacent 58-byte span at
+`00472e1c..00472e56` also matches across all six.
+
+| Release | Call at `00472dde` | Call at `00472de3` |
+|---|---|---|
+| 1.5.0 | `0044838e` | `00448367` |
+| 1.5.1–1.6.0 | `00448398` | `0044836c` |
+| 1.6.1 | `00448394` | `00448368` |
+
+The local tier computation, table bytes and stores therefore stay
+stable in the inspected span. Matching local bytes leaves changes in
+the tier producer, the called routines and live user settings in scope
+for the resulting graphics configuration.
