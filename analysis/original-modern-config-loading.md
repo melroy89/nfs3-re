@@ -630,3 +630,16 @@ Compare the root archive members at these VAs using
 `objdump -d -Mintel`. This verifies that the local Boolean
 mapping persists despite relocation. It leaves renderer-specific
 presentation and other flag producers outside the comparison.
+
+The legacy store at `00472a63` survives in all four releases
+from 1.5.2 through 1.6.1. On the matching-file-length path,
+`00472a22` clears EAX and `00472a24` jumps to `00472a5b`,
+where the loader proceeds to store that zero to `0067900c`
+before allocating the load buffer. This write depends on
+the earlier file admission and length checks. It does not
+depend on the later declared-size or version checks. A decoded
+direct-operand scan in final finds the INI store, the display
+flag read and this legacy store. The checked normal 1.5.2
+startup already captures the display flag before that zero write.
+Other aliases and any effect of rereading the cell after config
+load remain outside the scan.
