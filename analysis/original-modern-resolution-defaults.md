@@ -294,3 +294,9 @@ from a packed 640 × 480 request with a separate depth of 32. In
 depth immediately. An eligible exact-size mode with mismatched depth
 can still enter the ranking with zero area error. The selected mode
 depends on the renderer's eligible records. No rendering was tested.
+
+### Frontend restores the stored request through the same selector
+
+At `00473279`, the original and retained 1.1.0–1.4.0 load the scalar score from `006fbc18`, call `004bee80`, and pass its result to `004483a0`. From 1.5.0 the frontend instead calls the dimension-based selector directly. Its target is `0044838e` in 1.5.0, `00448398` in retained 1.5.1–1.6.0, and `00448394` in final 1.6.1.
+
+At each of those entry points the helper initializes the requested depth to 32, allowing depth 16 only when `007a2798` is zero and bit 0 of `006fbc14` is clear. It reads width and height as unsigned WORDs at `006fbc18` and `006fbc1a`. The historical address changes preserve that local policy. The frontend caller uses the current settings, so the default initializer's separate write of `006fbc14=1` does not establish a 32-bit request for every frontend entry. Requested depth and the chosen display mode remain distinct because the selector can consider eligible mismatched modes.
