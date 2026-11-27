@@ -151,3 +151,9 @@ Later retained releases keep the repair at the Setup-to-display call boundary:
 | 1.6.1 | `00448394` | The same save and restore pair ends at `004483fb`. |
 
 In 1.5.0 and later, Setup calls the new wrapper at `00473279` and still enters the menu loop at `0047328d`. The final wrapper's inner HUD updater at `00448400` compares the two incoming DWORDs separately at `0044840c` and `00448413`, counts changes in ECX and calls the recalculator only when that count is nonzero. The outer register restoration therefore covers either HUD path. Reproduce by extracting `nfs3.exe` from the retained release archives and disassembling the Setup call site and the corresponding display helper from the listed entry. This comparison addresses preservation across that call. It does not establish how all callers select or populate menu history.
+
+### Where the 1.4.0 package drops main-only restrictions
+
+In the retained 1.3.1 archive, all 48 `mainonly=1` assignments occur in twelve menu files, four per file: `advgrph`, `audfeed`, `audio`, `camera`, `deadzone`, `force`, `funkeys`, `graphics`, `hardkeys`, `hud`, `options` and `records` (each with extension `.mnu`). Each set includes its Race and Exit controls and an `image=3btt` section. The fourth entry is a Credits control except in Records, where it is the Options button.
+
+Match sections in the same filename using the first available `codelink`, `text` or `image` value. Of the 48 original sections flagged in 1.3.1, 36 have a unique match in 1.4.0 without the assignment. The other twelve have no same-token match: eleven `image=3btt` sections and the Force menu's `FORCE_CREDITS` control. The token check does not establish whether an unmatched section was removed or replaced by a renamed control. It establishes broader authored coverage for the change while leaving actual postgame visibility to the callback and runtime checks.
