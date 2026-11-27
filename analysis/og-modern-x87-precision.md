@@ -798,6 +798,10 @@ A linear disassembly of the supplied original finds six explicit stores to `007a
 
 On the original replay redraw path the screenshot helper changes `006fd3a0`, while those two comparisons still read the renderer-selected flag. For example, the normal software candidate's zero therefore allows both transitions if the flag stays zero, while the Voodoo candidate's one bypasses both if retained. This is conditional static evidence. It does not cover indirect stores or establish the renderer used during a recorded replay.
 
+The PE section tables place `007a3a70` and both control-word cells (`0079f3ec`, `0079f3f4`) in loader-zero-filled `.bss` in both baselines. That section starts at preferred VA `0056e000` and has no file-data pointer in either executable. In the original, the zero in the saved-word cell is only the load-time value. The decoded direct writes at `0049516a`, `004955da`, `004a3e7e`, `004a3ec4`, `004b622a` and `004bc802` populate it from preceding x87 reset/save sequences. A reconstruction must preserve those initialization steps on paths that later load the saved word.
+
+The final official executable has no decoded direct accesses to either former control-word cell. Its two explicit references to `007a3a70` are the adapter-index store at `004b583a` and the push at `0051765f`. The storage starts at zero in both executables, but the code assigns it different meanings. This direct-operand scan leaves computed and bulk accesses outside its coverage.
+
 ### The flag becomes the adapter index in 1.6.0
 
 Packaged 1.5.2 and 1.5.3 both clear `007a3a70` at
