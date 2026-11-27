@@ -865,6 +865,19 @@ This first-reference index includes all **290 release-note entries across 12 rel
 
 Use the stable IDs when choosing original or Modern behaviour for a reconstructed C module. An executable comparison can guide reconstruction of original behaviour; it does not supply the original source code. The [detailed catalog](modern-patch-change-catalog.md) retains source line numbers, categories, evidence links and qualifications. **Static** means bounded static support, **Partial** means only part of the claim is supported, **Unresolved** includes historical claims needing other releases, and **Claimed** means vendor-only. None of these labels establishes runtime equivalence.
 
+The current table contains **290 unique release-note IDs**: 60 Static,
+200 Partial and 30 Claimed. The count comes from the status column below.
+A row can bundle multiple changes, and the executable inventory includes
+differences outside the release notes. Function-navigation coverage and
+catalog status therefore measure different things.
+
+Several Claimed rows need different kinds of evidence. MP130-005 can be
+checked by comparing Graphics and Advanced Graphics control descriptors
+across 1.2.0 and 1.3.0. MP150-028 needs a pinned upstream driver to test
+the claimed lineage. MP140-060 needs a controlled loading measurement
+and evidence tying the result to a specific mechanism. The known loading
+budget changes alone do not establish that speed claim.
+
 Generated from the hash-pinned English README and the catalog by `python3 analysis/scripts/update_change_list_appendix.py`. Refresh after catalog status changes; do not edit this generated section manually.
 
 ### Version 1.6.1 (2016-10-28)
