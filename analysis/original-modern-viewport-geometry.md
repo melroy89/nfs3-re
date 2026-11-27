@@ -400,3 +400,25 @@ the descriptor, so the caller's literal 90 is unused by the
 local selection logic. These rules describe ordinary mode
 records and the checked lookup body, with no runtime table
 captured for this comparison.
+
+### Mirror projection proportions change in 1.5.0
+
+For MP150-005, the historical constructor comparison verifies a
+change in logical height as well as centering. In 1.4.0,
+`004be72b..004be735` derives a quarter-height term from the
+viewport height and saves it at `004be751`. The value is
+restored into EDX at `004be78d` and written to mirror record
+`007cdb48+0x0c` by `004be88c`. The physical rectangle is
+written separately at `004be7a7`.
+
+In 1.5.0, the logical-height calculation at
+`004be761..004be77d` instead uses two terms:
+`A = trunc(physical_height * 1000 / 533)` and
+`B = (physical_width * 10) >> 4`. It writes
+`B - ((B - A) >> 1)`, with an arithmetic shift in the
+difference, through the logical setter at `004be78f`.
+These formulas assume positive fitting dimensions and no
+intermediate overflow. The changed logical height feeds the
+mirror projection rectangle. It supplies a code-level
+mechanism relevant to the advertised proportions, while
+the visual judgment in the release note remains untested.

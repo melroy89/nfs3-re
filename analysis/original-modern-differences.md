@@ -594,7 +594,7 @@ The original defaults are In Car, Roof Cam, Heli Cam and None. Modern 1.1.0 alre
 
 Modern 1.5.1 adds the rear-camera menu control, initializes it to In Car, and adds pose-selection and dispatch checks. The new route uses a separate 284-byte scene descriptor snapshot in zero-filled storage. The source descriptor and selected initialization code, including its position and orientation inputs, already exist in the original. The reviewed selector checks, dispatch table and menu binding remain byte-identical through 1.6.1. Live selection, update ordering and rendered output remain unverified. [Viewport and camera evidence](original-modern-viewport-pose.md)
 
-The rear-view mirror geometry changes at two separate release boundaries. Version 1.5.0 centers the logical projection rectangle vertically within the physical mirror bounds. Version 1.6.0 makes the logical height depend only on physical width, retains centering, and applies a border inset to the physical bounds before clipping. Version 1.6.1 retains those calculations and writes. These findings support parts of MP150-006 and MP160-005. Camera pitch, horizon position and visible image proportions still need runtime evidence. [Mirror centering](original-modern-viewport-pose.md#earlier-mirror-direction-claim) · [Mirror bounds and aspect](original-modern-viewport-geometry.md#4-profile-rectangle-conversion-and-rounding-change)
+The rear-view mirror geometry changes at two separate release boundaries. Version 1.5.0 changes the logical height calculation and centers the logical projection rectangle vertically within the physical mirror bounds. Version 1.6.0 makes the logical height depend only on physical width, retains centering, and applies a border inset to the physical bounds before clipping. Version 1.6.1 retains those calculations and writes. These findings support parts of MP150-005, MP150-006 and MP160-005. Camera pitch, horizon position and visible image proportions still need runtime evidence. [Mirror centering](original-modern-viewport-pose.md#earlier-mirror-direction-claim) · [Mirror bounds and aspect](original-modern-viewport-geometry.md#4-profile-rectangle-conversion-and-rounding-change)
 
 ## 32. Resource-backed frontend page
 
@@ -866,7 +866,7 @@ This first-reference index includes all **290 release-note entries across 12 rel
 Use the stable IDs when choosing original or Modern behaviour for a reconstructed C module. An executable comparison can guide reconstruction of original behaviour; it does not supply the original source code. The [detailed catalog](modern-patch-change-catalog.md) retains source line numbers, categories, evidence links and qualifications. **Static** means bounded static support, **Partial** means only part of the claim is supported, **Unresolved** includes historical claims needing other releases, and **Claimed** means vendor-only. None of these labels establishes runtime equivalence.
 
 The current table contains **290 unique release-note IDs**: 60 Static,
-201 Partial and 29 Claimed. The count comes from the status column below.
+202 Partial and 28 Claimed. The count comes from the status column below.
 A row can bundle multiple changes, and the executable inventory includes
 differences outside the release notes. Function-navigation coverage and
 catalog status therefore measure different things.
@@ -962,7 +962,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP150-002 | Rear View Mirror can display clouds, lightnings, and light from the headlights of cars and from the flashers of cops. | Partial |
 | MP150-003 | Rear View Mirror can use better 3D models of the track, so the problem with the holes in the objects (displayed in the mirror) is solved now. | Partial |
 | MP150-004 | “Rear View Mirror” detail setting. Low is equivalent to the original; Medium is for better track 3D model and view distance; High is for the best track 3D model, clouds, lightnings, and light from the car headlights and cop flashers rendering. | Partial |
-| MP150-005 | Better proportions of the objects in the rear view mirror. | Claimed |
+| MP150-005 | Better proportions of the objects in the rear view mirror. | Partial |
 | MP150-006 | Fixed direction of the camera of the rear view mirror. The horizon is on the middle of the mirror now (for a better view). | Partial |
 | MP150-007 | Fixed a small horizon glitch at the edge of a screen when the wide view angle is enabled. | Claimed |
 | MP150-008 | An ability to enable or disable the fog effect directly from the graphics settings menu. | Partial |
