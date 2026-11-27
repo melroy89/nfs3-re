@@ -534,3 +534,19 @@ Removing those lines from the normalized 1.2.0 member produces
 the exact normalized 1.3.0 sequence. The seven tuning controls
 keep their authored bindings and fields at this boundary.
 The runtime defaults for omitted demo flags remain unverified.
+
+The normalized 1.3.0 → 1.4.0 diff drops explicit zero fields,
+including `postonly`, `mainonly`, `borderColor` and selected
+navigation fields. The 1.4.0 → 1.5.0 diff changes the authored
+car-tuning controls and navigation:
+
+| Field | 1.4.0 | 1.5.0 |
+|---|---|---|
+| Advanced button `CEB_GOTOADVANCED` | Links to `cedmain` | Button and link absent from this menu |
+| All seven tuning sliders | `percenttype=1`, `ypos=0..6` | `percenttype=2`, `ypos=1..7` |
+| Slider type | `slidertype=0` | `slidertype=0` |
+
+The title moves to the start of the definition and several background
+image coordinates change. The [slider analysis](original-modern-slider-percentage.md)
+covers how the executable interprets the percentage field. Removing
+this authored link leaves any other route to `cedmain` open.
