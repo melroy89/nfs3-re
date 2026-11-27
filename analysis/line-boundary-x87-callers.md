@@ -118,3 +118,17 @@ The three integer leaves preserve live x87 condition bits on normal return; they
 The 981-byte contiguous window `00485f20..004862f5` contains both complete direct callers, their intervening padding and all six calls to `00485c30`. It matches byte for byte in the hosted original and all twelve retained Modern executables (SHA-256 `fae9acd277d09de9f7c91b5aa7fc94bae7347ff3bab6f1c52c5e4bdc30b458a5`). Reproduce by extracting `nfs3.exe` from each retained archive and hashing 981 bytes from PE RVA `0x85f20`.
 
 Combined with the [unchanged leaf instructions and direct call sites](og-modern-x87-precision.md#the-first-reconstruction-helper-is-unchanged-across-retained-releases), this extends the local instruction-level condition-bit finding to all these builds. Paths that return with C0/C2/C3 still live can still propagate them to outer callers. This comparison leaves the surrounding control word, outer callers and game-facing replacement validation open.
+
+The outer trace's seven saved instruction windows also match in all thirteen archived executables. The comparison used the manifest's inclusive body endpoints and PE RVA reads. These windows include the HUD line append, tinted-triangle clipping, batch cursor, quad and triangle emitters, track-map renderer and RPM needle renderer.
+
+| Start VA | End VA (exclusive) |
+|---|---|
+| `00486f70` | `004870b2` |
+| `004870c0` | `00487206` |
+| `004873e0` | `004875ff` |
+| `00487a30` | `00488026` |
+| `00489e00` | `0048a215` |
+| `0048d4c0` | `0048e76d` |
+| `0049bf40` | `0049bf59` |
+
+This lets the instruction-level portions of the saved outer trace be reused for the checked builds. Changed callees outside those spans, different precision settings and different initialized data can still affect execution. The unresolved propagation boundaries above remain relevant.
