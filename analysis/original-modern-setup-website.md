@@ -66,11 +66,11 @@ The [historical menu audit](evidence/audits/setup-button-history.json), reproduc
 
 | Retained package | Fifth button text token | Codelink | Next menu |
 |---|---|---|---|
-|1.1.0 |`kMenuOPTIONSCredits001` |`credits` |`credits` |
+|1.0.0–1.3.0 |`kMenuOPTIONSCredits001` |`credits` |`credits` |
 |1.3.1 |`kMenuOPTIONSCredits001` |`credits` |`credits` |
 |1.4.0 |`kMenuMAINOptions001` |Absent |`options` |
 |Official final |`kMenuMAINOptions001` |Absent |`options` |
 
-All four have six buttons. The fifth retains `buttontype=LR1of2`; the sixth Exit entry retains `LR2of2`. The selected text/codelink/nextmenu/buttontype fields of the other five buttons match across all four packages. Other properties and complete file bytes are not declared identical. File ordering and these type names alone do not establish pixel placement.
+The original audit’s four packages and the inspected 1.0.0 package each have six buttons. The fifth retains `buttontype=LR1of2`; the sixth Exit entry retains `LR2of2`. The selected text/codelink/nextmenu/buttontype fields of the other five buttons match across all four packages. Other properties and complete file bytes are not declared identical. File ordering and these type names alone do not establish pixel placement.
 
-Thus MP100-052 has explicit **early authored Credits-route evidence**, not merely removal of a website entry inferred from final assets. Its exact1.0.0 introduction still requires that release. MP140-017 has a verified **1.3.1→1.4.0 authored Options replacement**, retained final. The existing paired original/final generic transition witnesses explain the final route conditionally; they have not been revalidated against each historical EXE and do not prove successful historical Credits activation. Loaded resources, callback precedence, translated labels and visible screens remain runtime/loader follow-up work. No target instructions or Ghidra changes were made.
+Thus MP100-052 has explicit **early authored Credits-route evidence**, not merely removal of a website entry inferred from final assets. The retained 1.0.0 archive already ships this fifth button and its target `fedata/menus/credits.mnu`. Its `setup.mnu` SHA-256 is `30e1bf780668caa1c471d67494671c6256bf2d0c2dd503ef94f5a2ce7a23310a`. The intermediate 1.2.0 and 1.3.0 assets retain the Credits text, codelink and next-menu fields. MP140-017 has a verified **1.3.1→1.4.0 authored Options replacement**, retained final. The existing paired original/final generic transition witnesses explain the final route conditionally; they have not been revalidated against each historical EXE and do not prove successful historical Credits activation. Loaded resources, callback precedence, translated labels and visible screens remain runtime/loader follow-up work. No target instructions or Ghidra changes were made.
