@@ -90,8 +90,9 @@ It does not establish equal textures or equal asset dimensions. The builder call
 
 | Version | Complete correction helper, exclusive end | Local extent policy |
 |---|---|---|
-|1.1.0 | `004be874..004be898`,36 bytes | `{X,Y,W+1,H+1}` with32-bit wrapping |
-|1.5.3 | `004be850..004be874`,36 bytes | Byte-identical to1.1.0 |
+|1.0.0–1.3.1 | `004be874..004be898`,36 bytes | `{X,Y,W+1,H+1}` with32-bit wrapping |
+|1.4.0 | `004be868..004be88c`,36 bytes | Byte-identical to 1.0.0 |
+|1.5.0–1.5.3 | `004be850..004be874`,36 bytes | Byte-identical to 1.0.0 |
 |1.6.0 | `004be85c..004be89b`,63 bytes | `{X,Y,W+N,H+floor(3*N/4)}` under ordinary nonoverflowing conditions |
 |Final1.6.1 | Same63-byte helper as1.6.0 | Byte-identical to1.6.0 |
 
@@ -107,4 +108,4 @@ All load source DWORDs `007cdb88/8c/90/94` and publish to `007a2750/54/58/5c` th
 
 These are coordinate-extent derivations, not measured pixel changes. This directly dates the replacement of the fixed policy to the1.5.3→1.6.0 pair and explains why the1.6.0 release note differs from the old one-pixel note. It also demonstrates that “0–3” is not a global upper bound. Original/final source-rectangle construction can differ, so the table is not a universal original-versus-final image-size comparison.
 
-**MP100-018 advances to partial historical support:** an early retained EXE has the advertised fixed+1/+1 mechanism, but1.0.0 introduction, actual pixels and gap elimination remain unverified. **MP160-008 remains partial**, now with its historical code boundary established. The old helper does not save its working EAX/EBX/ECX/EDX/EDI; the later helper adds PUSHAD/POPAD, preserving general registers but not flags. A C replacement must distinguish the rectangle results from the exposed register/flag contract. Raw direct-E8 candidates are retained as a bounded search, not an exhaustive decoded reachability proof. No runtime probes, Ghidra writes or executable changes were made.
+**MP100-018 advances to partial historical support:** The retained 1.0.0 EXE has the fixed +1/+1 mechanism and calls it at `004be864` and `004bea2a`. The same 36 bytes match at the listed locations in every retained release through 1.5.3. Actual pixel coverage and gap elimination remain unverified. **MP160-008 remains partial**, now with its historical code boundary established. The old helper does not save its working EAX/EBX/ECX/EDX/EDI; the later helper adds PUSHAD/POPAD, preserving general registers but not flags. A C replacement must distinguish the rectangle results from the exposed register/flag contract. Raw direct-E8 candidates are retained as a bounded search, not an exhaustive decoded reachability proof. No runtime probes, Ghidra writes or executable changes were made.
