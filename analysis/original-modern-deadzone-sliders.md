@@ -117,3 +117,20 @@ PE RVA `0x72b60`, checking offset `0x133` for the immediate.
 Thus the reduction appears in 1.0.0, reverses in 1.3.0 and
 returns in 1.3.1. This is one cache-refresh bound. Actual
 device enumeration limits and controller behavior were not tested.
+
+### The device query retains a separate sixteen-slot sweep
+
+The hosted original and all twelve retained Modern EXEs share
+the 90-byte query prefix `00435690..004356ea` (SHA-256
+`655a0a566ccb2a15712541a53afc76aaf1f5d6a1d7df326b3466fe399da44dd2`).
+The prefix rejects signed inputs below 0 or above 16.
+Input 16 is a command value: it calls the same routine for
+indices 15 down through 1, then calls it for index 0 and
+returns the result of that last call. Inputs 0–15 enter the
+ordinary query path at `004356ea`.
+
+Reproduce by reading PE RVA `0x35690` for 90 bytes and
+disassembling the checks and two recursive calls. The cache
+refresh loop's reduction to 15 slots leaves these query
+admission instructions intact. Query results and the number
+of devices supplied by DirectInput remain untested.
