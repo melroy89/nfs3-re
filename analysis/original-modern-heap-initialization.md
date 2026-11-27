@@ -141,3 +141,7 @@ This is not whole race-shutdown equivalence: caller register preservation,
 other envelope changes, stack-memory writes, exceptions/unwinding, interrupt
 observations and the transitive behaviour of the three retained callees remain
 outside this local result. No shutdown routine or instruction probe was run.
+
+### Process-heap adapters appear at the 1.4.0 boundary
+
+The retained 1.3.1 executable has no decoded push of DWORD `009f3d40`. The 1.4.0 archive member has four: `004f1ead`, `004f1eca`, `004f1ee1` and `004f1ef5`. Each immediately precedes a call through one of the four IAT slots `00534644`, `00534518`, `00534648` and `00534528`, which the 1.4.0 PE binds to HeapAlloc, HeapReAlloc, HeapFree and HeapSize respectively. This ties the new consumers to the [startup heap-handle producer](original-modern-startup-requirements.md#the-mutex-slot-becomes-the-process-heap-slot-in-140) at the same release boundary. In 1.5.0 the four pushes move to `004f1f0d`, `004f1f2a`, `004f1f41` and `004f1f55`, then move again in 1.6.1 to the adapters described above. This direct-instruction comparison leaves indirect accesses and migration of individual allocation callers open.
