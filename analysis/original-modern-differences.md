@@ -1224,7 +1224,7 @@ The [two-image follow-up](original-modern-frontend-page.md#historical-logo2-load
 
 ## Named default graphics policy
 
-The [default-policy follow-up](original-modern-resolution-defaults.md#named-graphics-defaults-and-the-limits-of-automatic-high-settings) binds eight tier-table destinations through descriptor labels, verifies effective-tier ECX preservation across mode calls and records score5’s renderer-dependent choices. Maximum-score High/Full defaults remain conditional on renderer bits and selected-mode overrides; fog receives record EAX rather than the ninth table. MP100-010 advances vendor-only→partial; counts120/50/118/2. Actual settings, full initialization lifetime, visual quality and1.0.0 introduction remain unverified; no target execution or database mutation.
+The [default-policy follow-up](original-modern-resolution-defaults.md#named-graphics-defaults-and-the-limits-of-automatic-high-settings) binds eight tier-table destinations through descriptor labels, verifies effective-tier ECX preservation across mode calls and records score5’s renderer-dependent choices. Maximum-score High/Full defaults remain conditional on renderer bits and selected-mode overrides; fog receives record EAX rather than the ninth table. MP100-010 advances vendor-only→partial; counts120/50/118/2. The [release table comparison](original-modern-resolution-defaults.md#graphics-default-table-changes-in-100-140-and-150) verifies the earliest retained top-tier view-distance change in 1.0.0. Actual settings, full initialization lifetime and visual quality remain unverified.
 
 ## Audio Cancel volume-source correction
 
