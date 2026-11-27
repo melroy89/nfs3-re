@@ -19,6 +19,8 @@ levels and backend success remain unverified.
 
 The same 1.5.0 boundary redirects four frontend calls: the dropdown shared tail at `004642e0`, the two cursor wrappers at `0043eb95` and `0043ebad`, and dialog Escape feedback at `00445ebf`. In 1.4.0 each calls `004181c4`, which saves EDX, sets it to 127, calls `004181d0`, and restores EDX. From 1.5.0 all four call `004181d0` directly. The handler address is unchanged. The call-site change removes the forced multiplier as the handler switches to the dedicated volume field.
 
+A linear disassembly of 1.4.0 finds eight decoded direct callers of the multiplier wrapper. The four additional sites are `0043ef6e`, `0044a423`, `004626aa` and `00463398`. Resolving each of the eight five-byte CALLs in every retained release from 1.4.0 through 1.6.1 confirms that all eight retarget in 1.5.0 and retain the direct destination afterward. A final disassembly scan finds no decoded direct call to the old wrapper. Indirect entry use is outside that scan.
+
 Original `004181d0..0041827f` consumes EAX as the sound identifier and EDX as a caller-supplied volume multiplier. It preserves that multiplier in EBX, checks globals `00559234` (must be zero) and `0055290c` (must be nonzero), then builds a 16-byte request record. There is no local ID-range or per-ID elapsed-counter gate in this routine.
 
 For record byte `+8`, original computes the low-32-bit product of **55 × `[006fbbf4]` × caller multiplier**, arithmetic-shifts it right by **14**, and stores its low byte (`00418204..0041822e`). The intermediate multiplications wrap at machine width; this is not unrestricted real-number multiplication. Different caller multipliers can therefore produce different requested levels even with the same shared setting.
