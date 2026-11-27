@@ -134,6 +134,8 @@ The regression is already present in the checked first Modern release. The origi
 
 The original executable SHA-256 is `b390be67925b2ad0857fc67dd6431ce68be597253eaa47c30789dc885a19d51b`. The extracted 1.0.0 executable SHA-256 is `988fbf599af256d1486bef967959893c6b26c9fa8ed21b76310bbb7798b4d9df`. Compare the window from `004483a0` to `004483ff` (end exclusive).
 
+With the history pointer intact, the first name controls the first descriptor. The loop clears the history slots, then `0044af50` resolves each name and stores it at its original index. The restore helper reads slot zero at `0044aec5`, shifts slot one into slot zero, and publishes the saved descriptor to `00559230` at `0044aefb`. The loop passes that descriptor to the initializer at `0044b31e`. Thus successful lookup picks `main`, `mainsplt` or `mainmult` first, with `setup` left in history. A failed first lookup leaves slot zero empty and uses the base descriptor `006040d0`, even if the second name resolves. A zero history pointer uses the same base descriptor directly at `0044b301` without looking up either name. The helper instructions match in 1.1.0 and 1.2.0. Loaded descriptors and the menu rendered in a running game remain unverified.
+
 Later retained releases keep the repair at the Setup-to-display call boundary:
 
 | Modern release | Display helper called from Setup | Register-preservation mechanism |
