@@ -320,3 +320,14 @@ it returns without calling the API. The same helper services the
 shared shortcut and screenshot hook. This comparison establishes
 the executable's teardown policy. It does not establish that the
 OS accepted the removal or what callbacks remained in flight.
+
+The complete 88-byte `WM_ACTIVATEAPP` handler moves from
+`004ccdf0` in 1.4.0 to `004ccd04` in 1.5.0. Only two bytes
+differ, both in the displacement of the call to `004e070c`.
+The installer and unhook calls retain their relative offsets
+because their targets move by the same amount. The handler
+stays byte-identical from 1.5.0 through 1.6.1. Thus the same
+context, HWND and active-state checks gate hook changes throughout
+these releases. Deactivation still unhooks before clearing the
+128-byte keyboard state and calling the optional notification.
+Actual message delivery and hook acceptance remain untested.
