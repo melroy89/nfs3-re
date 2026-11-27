@@ -32,3 +32,19 @@ Both executables retain identical bytes **`00495e06..00495e3e`**. They pass EDX=
 The full **`00495bc0..004960e0`** address envelope is retained for context, and the expanded audit verifies that its only changed bytes are `00495e02..00495e04`, three bytes of this initializer-call displacement. This is not equivalence of the full movie subsystem: callees and input providers can differ. The new helper’s location `004962c2` belongs to different original control flow; it must not be paired with an “old helper” by address alone.
 
 **Conclusion:** MP153-009 has bounded static support: movie playback now overrides default parameter127 with the configured menu music level’s low seven bits. Complete backend field interpretation, every movie entry route, decoder/provider effects, audio timing and audible acceptance remain unverified. The next useful extension is following the parameter through `004f3fec`, alongside the separate NoMovie and idle/minimized admission policies; those are distinct release-note claims.
+
+### Movie sound setup switches to the volume wrapper in 1.5.3
+
+The hosted reference and every retained Modern archive through 1.5.2
+match across the complete 1,312-byte playback envelope
+`00495bc0..004960e0`. In 1.5.3, 1.6.0 and 1.6.1 the same three
+bytes differ at `00495e02..00495e04`. They retarget the call at
+`00495e01` from `004e9b20` to `004962c2`. To reproduce, extract
+each root `nfs3.exe` and compare PE RVA `95bc0` for `520h` bytes.
+The call target is the signed displacement at RVA `95e02` added
+to VA `00495e06`.
+
+This dates the call-site change independently of the
+[CPU-based conversion choice](original-modern-cpu-tier.md#the-movie-conversion-tier-changes-in-100),
+which was already present in 1.0.0. The playback bytes alone leave
+decoder and sound-backend behavior outside the compared span.
