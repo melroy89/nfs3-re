@@ -228,6 +228,8 @@ The 1.4.0 change therefore removes the documented INI source while leaving many 
 
 Comparing the addresses between consecutive releases isolates the changes. In 1.4.0, direct references at `0043fe57` and `00473013` disappear. The frontend movie gate moves from `0047312b` to `0047312f` and still branches to `00473169` on a nonzero value. The idle-movie gate moves from `00496217` to `00496213` and still rejects a nonzero value, now via a branch to `004962bb`. The new locations therefore account for two address changes without reducing the count of consumers.
 
+The lost reference at `00473013` was inside a 12-byte helper at `00473010` in the original and 1.3.1. It compares the gate to zero, preserves EBP, and leaves the result in flags without changing EAX. Its only decoded direct call, at `00473126`, immediately repeats the same comparison at `0047312b` before branching, overwriting the helper's flags. Version 1.4.0 pads the old body with NOPs and replaces the call with a test of title-movie availability bit 0 at `007a2768`. The surviving inline gate check follows that new test. This accounts for a redundant read disappearing while a separate availability condition was added.
+
 In 1.5.0, the remaining frontend movie reference at `0047312f` and the title-draw reference at `00472fc4` disappear. In 1.5.3, the original music loader's reference at `0041004d` and its race-loading wrapper's reference at `00477fd3` disappear. The final 18 read addresses are already present at the same addresses in 1.5.3.
 
 ## Six language tables enter the140 package
