@@ -710,3 +710,21 @@ Reproduce by extracting the two DLLs from both archives and
 reading their PE resource trees and version string tables.
 These are resource metadata changes alongside the import-header
 updates. The resource comparison supplies no startup outcome.
+
+### File layout changes alongside the import update
+
+At the 1.5.2 → 1.5.3 boundary, the executable keeps all six
+section RVAs, virtual sizes and flags. The raw relocation
+section shrinks from `0x17800` to `0x17200` bytes. The resource
+section moves on disk from file offset `0x183800` to `0x183200`
+and shrinks from `0x1b400` to `0x1b200`. Both keep their original
+virtual addresses. In the inspected DX5, nGlide and SoftTri
+DLLs, corresponding section addresses, sizes and flags match.
+The existing sound DLL sections also retain those geometry
+fields, while the version resource adds a section.
+
+Reproduce by comparing the raw pointer, raw size, RVA, virtual
+size and characteristics for each section in the paired PE
+headers. The executable's file layout changed without moving
+its mapped section addresses. This comparison leaves open
+the loader's behavior on the affected systems.
