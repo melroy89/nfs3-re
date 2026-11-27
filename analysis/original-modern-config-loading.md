@@ -699,3 +699,15 @@ reproduce. The local bit test therefore retains the same handling
 of negative values through final. The receiving header minimum
 rises from 5 to 6 in 1.6.0, so an otherwise valid version-5 file
 takes the reset route there instead of reaching this branch.
+
+The separate sound-start path performs a signed check. If the
+capability callback returns any of these negative values at
+`004e22a9`, the branch at `004e22b1` skips the backend start
+call at `004e230f` and records the error at `009ef60c`. The
+14-byte query/branch block, six-byte start call and 20-byte
+error return block at `004e235a` match the hosted original
+and all twelve retained Modern releases. This confirms that
+a negative result can preserve the EAX selection in the saved
+configuration check while a separate start attempt skips the
+audio backend on the same result. The two paths can issue
+separate queries. No shared runtime result is assumed.
