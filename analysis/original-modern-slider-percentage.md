@@ -350,3 +350,15 @@ saved control word before returning normally. The final FISTP
 therefore still uses the ambient rounding mode. Removing the direct
 helper call changed final display conversion while leaving that
 upstream use in place. Actual entry control words remain unmeasured.
+
+The 25-byte quotient-split routine at `0050ea4e..0050ea67`
+also matches in 1.5.2 and 1.5.3. It duplicates the binary64
+quotient on the x87 stack, calls `004dfd56` to truncate one copy,
+and subtracts that integral copy from the other at `0050ea5a`.
+It stores the integral part as binary64 through the caller's
+pointer and returns the fractional part in ST0. The subtraction
+and store occur after the helper restores the caller's control
+word. This locates the 1.5.3 control-word change within the
+upstream split without inferring that it changes ordinary
+finite slider results. Reproduce by disassembling that range
+in both archived executables.
