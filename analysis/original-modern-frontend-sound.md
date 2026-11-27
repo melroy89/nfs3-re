@@ -264,4 +264,10 @@ remains unverified.
 
 The hosted original and final 1.6.1 match over the loader `00410b50..00410c2b` and the caller branch `00413c32..00413cd9`. On that branch, the caller selects one of the stems `strex`, `scrate`, `struck` or `slimo`, combines it with path slot `007a2ab4`, and passes EDX zero at `00413cd4`. The loader appends the retained `.bnk` suffix and stores its bank-load result into record zero at `00571124` when it reaches the publication path. The frontend request's read of that slot therefore does not by itself identify a fixed bank filename across game states.
 
-The official final patch archive lists no loose `.bnk` members. This leaves the installed assets, any banks inside other containers, and the frontend-specific initialization sequence to be checked before assigning a sample name to a frontend sound ID.
+The official final patch archive lists no loose `.bnk` members. The installed frontend bank and its initializer are identified below. Individual sample names remain unresolved.
+
+### Frontend setup loads FESFX.BNK into slot zero
+
+The frontend setup call at `0047306c` targets `004136e0` in both the hosted original and final 1.6.1. The complete 111-byte helper is byte-identical. It copies path slot `007a2ab4`, appends the `fesfx` stem from `00536a20`, and calls `00410b50` at `00413741` with EDX zero and EBX `0x10`. The loader appends `.bnk` and publishes to slot zero if it reaches the bank-result store. Final initializes this path slot to `.\gamedata\audio\sfx\`.
+
+The installed `GAMEDATA/AUDIO/SFX/FESFX.BNK` and its local `gamedata_org/Audio/SFX/FESFX.BNK` counterpart both hash to `0a6a947b64801b0034e7d42c882893dfa1904d88afa314316f2fa687bd2199a9`. This verifies the installed file and expected frontend load route. It leaves successful loading, the live bank handle and per-ID sample decoding unverified.
