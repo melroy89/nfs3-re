@@ -117,3 +117,22 @@ The fixed product version in resource `16/1/0` matches the archive's release lab
 | 1.6.1 | `2016.10.28.0301` |
 
 The supplied original reports fixed file version `2.0.0.0` and fixed product version `1.0.0.1`, with strings `27, 2.0` and `3, 0`, respectively. Read the fixed pairs from `pefile.PE(...).VS_FIXEDFILEINFO` and the strings from `FileInfo` → `StringTable`. A manifest alone cannot distinguish Modern 1.4.0–1.5.3 because those builds share the manifest version. Use executable SHA-256 for exact identity.
+
+### Complete resource comparison for the final three transitions
+
+The 13 resource keys (type, name or ID, and language) are identical
+from 1.5.2 to 1.6.1. Comparing the extracted payloads by key gives
+the following complete inventory of changed resources:
+
+| Transition | Changed payloads | Identical payloads |
+|---|---|---:|
+| 1.5.2 → 1.5.3 | `ABOUT.QFS`, version record | 11 |
+| 1.5.3 → 1.6.0 | `ABOUT.QFS`, version record, manifest | 10 |
+| 1.6.0 → 1.6.1 | `ABOUT.QFS`, version record, manifest | 10 |
+
+In particular, the manifest is byte-identical across the reported
+1.5.3 startup fix. Its later changes are the assembly version updates
+described above. To reproduce, parse each archived executable's
+resource tree and compare bytes at each leaf's data RVA and size.
+The [decoded About image comparison](original-modern-frontend-page.md#decoded-about-resource-across-retained-builds)
+explains the changed QFS payload. Startup causality remains unverified.
