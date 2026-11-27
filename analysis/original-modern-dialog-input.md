@@ -90,6 +90,12 @@ Both pairs increase by approximately 0.001171887. The respective sequences still
 
 The retained releases show two edits. In 1.0.0–1.5.3 the four immediates use `0x3f0d4fdf` and `0x3ef89fc7` (each twice). In 1.6.0–1.6.1 they use the slightly lower Modern values in the table. The full 848-byte renderer matches within each group, and each boundary changes only the low two bytes of the four immediates. Reproduce by reading RVA `0x44000` for 848 bytes in each archive and comparing the PUSH operands as little-endian binary32. The display effect remains unverified.
 
+### The changed values reach two vertex fields
+
+For both draw calls the changed immediates occupy stack arguments 5 and 11, counting from the first DWORD after the return address. The intervening rounding helper `004dfd56` returns without consuming the pending arguments. The draw helper saves ESI and EDI before establishing its frame, then subtracts `0x4a` from EBP. In that adjusted frame it reads the two values at `[EBP+0x6a]` and `[EBP+0x82]` at `004db0f5` and `004db163`. It copies the DWORDs unchanged to `[EBP-0x4e]` and `[EBP+0x12]`, respectively, at `004db0f8` and `004db16c`.
+
+Each destination is offset `0x18` within its 32-byte vertex record, in vertices 0 and 3 of the local quad starting at `[EBP-0x66]`. This identifies the affected vertex field in the original and final draw helper. The renderer's interpretation of that field and the resulting texture sample remain unverified.
+
 **Bounded work status: done; confidence: verified static initializer/consumer relationship and renderer constants.** Actual text-entry behavior, input limits/aliases, dialog-type coverage, draw-argument interpretation and rendered output remain untested. No target execution, Ghidra writes or reconstruction edits were performed. Preserve the original's replace-first policy or Modern's append policy as appropriate rather than silently choosing a preferred UX.
 
 ## Network-service callback changes only its notice wrapper
