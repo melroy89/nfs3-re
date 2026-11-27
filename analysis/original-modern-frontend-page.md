@@ -456,15 +456,15 @@ The numeric resource route is already present in retained **1.0.0**. The origina
 | 1.3.0 | `0040fede` | `004b5654` |
 | 1.3.1 | `0040fede` | `004f1ea0` |
 
-At each listed location the caller reads record+4 into EAX and the loader passes type 10 and the EAX resource identifier to `FindResourceA`. This dates the executable route to 1.0.0. The 1.4.0 change is from a numeric ID to a named resource. The decoded comparison below starts at 1.1.0.
+At each listed location the caller reads record+4 into EAX and the loader passes type 10 and the EAX resource identifier to `FindResourceA`. This dates the executable route to 1.0.0. The 1.4.0 change is from a numeric ID to a named resource. The decoded comparison below covers all twelve retained Modern releases.
 
 ### Decoded About resource across retained builds
 
-The repository's [RefPack decoder](scripts/decode_logo_refpack.py) expands every retained About resource from 1.1.0 through 1.6.1 to 691,496 bytes. All eleven decoded headers are identical: an `SHPI` container, one `cred` entry at offset `0x18`, shape type `0x7d`, and dimensions 584 × 296. The remaining 691,456 bytes after offset `0x28` have eleven distinct SHA-256 hashes. Thus the decoded image data changes in every retained release, including the numeric-to-named transition in 1.4.0. This check compares image bytes and dimensions. Visual differences and successful in-game rendering remain unverified.
+The repository's [RefPack decoder](scripts/decode_logo_refpack.py) expands every retained About resource from 1.0.0 through 1.6.1 to 691,496 bytes. All twelve decoded headers are identical: an `SHPI` container, one `cred` entry at offset `0x18`, shape type `0x7d`, and dimensions 584 × 296. The remaining 691,456 bytes after offset `0x28` have twelve distinct SHA-256 hashes. Thus the decoded image data changes in every retained release, including the numeric-to-named transition in 1.4.0. This check compares image bytes and dimensions. Visual differences and successful in-game rendering remain unverified.
 
 To reproduce, extract each archive executable and pass the language-zero type-10 payload to `decode()` from the linked script. Select numeric ID 200 through 1.3.1 and name `ABOUT.QFS` thereafter. Compare the decoded prefix through offset `0x28` separately from the remaining bytes.
 
-All ten adjacent release comparisons have the same changed-pixel bounds in the decoded storage order, `x=28..543` and `y=62..233` inclusive, zero-based within the 584 × 296 image. Pixels outside that rectangle are identical across all eleven builds. The smallest change is 16,387 pixel slots from 1.3.0 to 1.3.1, and the largest is 33,437 from 1.3.1 to 1.4.0. Reproduce by comparing four-byte groups after offset `0x28` and mapping each changed group index to its remainder and quotient by 584. This establishes which stored pixel slots changed and does not depend on channel order or display orientation.
+All eleven adjacent release comparisons have the same changed-pixel bounds in the decoded storage order, `x=28..543` and `y=62..233` inclusive, zero-based within the 584 × 296 image. Pixels outside that rectangle are identical across all twelve builds. The 1.0.0 → 1.1.0 boundary changes 25,001 pixel slots. The 1.0.0 pixel area has SHA-256 `c62f34506d07c9fd727828fc7330c5de6596b5940ffa0649f64d296a04c6065a`. The smallest change is 16,387 pixel slots from 1.3.0 to 1.3.1, and the largest is 33,437 from 1.3.1 to 1.4.0. Reproduce by comparing four-byte groups after offset `0x28` and mapping each changed group index to its remainder and quotient by 584. This establishes which stored pixel slots changed and does not depend on channel order or display orientation.
 
 ### The 1.4.0 shape-name interface changes with the resource ID
 
