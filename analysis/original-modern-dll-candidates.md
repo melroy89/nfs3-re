@@ -154,3 +154,26 @@ The retained reference `nfs3_orig.7z` (SHA-256 `374b30edda891569327091e14828a3df
 | `voodoo2a.dll` | `voodoo2.dll` | 345 / 52,224 |
 
 The reference D3D and SoftTri members match the corresponding installed files by SHA-256. The reference Voodoo2 member is a distinct artifact from the installed copy. The archive evidence supports the three filename correspondences and shows that each pair also differs in code. It leaves the exact introduction release before or at 1.1.0, the authors' source lineage, and the behavior of the changed bytes open.
+
+### SoftTri mode-list callback changes by 1.1.0
+
+The 16 differing file bytes in this DLL pair are all in the same routine at
+`60002480`. Extract the two DLL members from the archives above with
+`7z x -so`, then disassemble each with
+`objdump -d -Mintel --start-address=0x60002480 --stop-address=0x60002580`.
+The original-reference SHA-256 is
+`8ea15aac0a7095b7d750cd75bbc9095553b6f708d1b89ca807864294a1a12b02`.
+The 1.1.0 SHA-256 is
+`5b956278ca5444badf233f571140ff6fc8767534467c7ea6c0e7a1e71e6a6cd9`.
+
+| DLL address | Original reference | Modern 1.1.0 |
+|---|---|---|
+| `60002494..60002499` | Converts the incoming descriptor value 15 at offset `+0x54` to 16 and passes other values through to the format helper at `60002e80`. | Requires exactly 16 before calling the helper. Other values return 1 without adding a record. |
+| `60002537..60002545` | The reachable general-size path calls `KERNEL32.GetSystemInfo` through IAT slot `6003d200` into the stack local. The shared tail divides the dword at local offset 4 by 40 and compares it against the output count. | Skips record insertion for a signed height below 480. Otherwise jumps directly to the shared capacity calculation, which still reads local offset 4. |
+
+The 640×480 and 800×600 special paths still use fixed record locations for
+admitted modes. The 1.1.0 general-size path has no visible initialization of
+the capacity input in this routine before the division. Consequently the
+static comparison establishes the added filters and lost API call, while
+actual enumeration results and reproducibility of the capacity check remain
+unverified. No renderer was loaded or run.
