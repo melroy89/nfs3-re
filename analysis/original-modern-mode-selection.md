@@ -256,3 +256,19 @@ renderer effect remains possible. Thus a rejected request can leave
 the current mode index and observed client geometry reflecting
 different operations. Actual window movement and later recovery
 remain untested.
+
+### Hide16bitModes also changes the depth requested on replay
+
+From 1.5.0 onward, replay of the packed resolution requests
+depth 32 when `Hide16bitModes` is nonzero, regardless of
+bit 0 in saved cell `006fbc14`. When the setting is zero,
+bit 0 selects 32 if set or 16 if clear. This is separate
+from the [menu's grouping of equal dimensions](original-modern-display-modes.md#3-menu-list-append-becomes-sorted-insertiondeduplication).
+
+The 25-byte branch begins at `00448394` in 1.5.0,
+`0044839e` in 1.5.1–1.6.0, and `0044839a` in 1.6.1.
+It has identical bytes in all six retained releases:
+`31c0b020833d98277a0000750c0fba2514bc6f00007202b010`.
+The resulting depth is passed alongside the saved width
+and height to `004bedcc`. It is a request used in ranking,
+and the available eligible rows still determine the result.
