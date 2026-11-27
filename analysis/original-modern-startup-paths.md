@@ -216,3 +216,23 @@ and the walker, matches in all six retained EXEs from
 the relocated final walker documented above. This dates
 the table split behind MP140-065. Actual directory creation,
 permissions and error handling remain untested.
+
+### Startup uses a shared diagnostic for directory failures
+
+In 1.2.0 a zero result from the directory walker reaches
+`004b5e50` via `004a3a7b`. The helper builds a message from
+the version banner and installation instructions at
+`0053d698` and `0053c929`, with the required-files caption
+at `0053c8fc`. The instructions ask the player to copy
+FEDATA and GAMEDATA into the current directory.
+
+In 1.4.0 both table stages return zero on the first failure.
+Startup uses one failure branch at `004a3a95`, calling
+`004b575c` with no failed-path argument. That wrapper passes
+the message at `0053c8fc` to `004b5720`. The final build
+passes its revised message at `0053d0a6` via `004a3e79`.
+It advises using a new empty directory and extracting the patch
+over the copied game data. These paths share the required-files
+diagnostic for a missing prerequisite or failed save-directory
+creation. The local branch and strings do not establish what
+would be displayed for every startup failure.
