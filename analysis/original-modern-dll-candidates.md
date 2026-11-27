@@ -419,3 +419,20 @@ shows that the inspected 1.3.1 dgVoodoo helper can still copy the fixed
 table into that destination. The inspected 1.4.0 Glide3x helper instead
 uses query retries and has no corresponding copy. This dates the pointer
 move to 1.2.0 and distinguishes it from the later helper rewrite.
+
+#### Shared adapters after the provider split
+
+In each retained archive from 1.4.0 through 1.6.1, the three
+`drivers/{dgvoodoo,glide3x,nglide}/voodoo2a.dll` members are byte-identical
+within that archive. The comparison covers 21 extracted DLLs across seven
+releases. Thus the 1.4.0 mode-builder result above applies to all three
+packaged copies. Provider DLLs and directory configurations can still
+differ.
+
+The complete final-sized mode builder at `600018d8..60001b79` and the
+413-byte about routine at `60001bb0..60001d4d` are already byte-identical
+to final in 1.5.0 and stay so in every retained release thereafter.
+Extract each exact archive member and compare those two PE RVA slices
+to reproduce the result. This dates the captured instructions only.
+Provider binding, configuration and other code outside those spans can
+still affect the live mode list.
