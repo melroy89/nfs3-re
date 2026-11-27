@@ -411,6 +411,8 @@ Comparing the decoded string bytes at each shared zero-based index separates cha
 
 The first six numeric columns count changed shared indices, excluding the extra slots. To reproduce, split each validated table at its offsets, strip the terminating NUL from each slice, and compare the two lists index by index through their common length. Extra slots are the difference in list length. This comparison tracks byte changes at numeric IDs. It leaves string meaning, moves between IDs and the corresponding executable consumers to the relevant feature traces.
 
+One of the changed slots is a verified relocation. The track-length formatter `00456590` loads ID 1936 at `004565f2` in 1.5.3 and ID 1930 there in 1.6.0, then calls the localization lookup at `00456605`. All six packaged tables contain the same `km` bytes at the selected index in each release, including index 1930 in 1.6.1. This follows the same consumer that [moved from ID 1932 to 1936 in 1.5.1](original-modern-localization-151.md). Separately, the [frame option trace](original-modern-frame-setting.md) maps the old IDs 1932–1933 to four new choices at 1951–1954. Mixing executable and table releases can therefore change what a numeric ID refers to, even when a table contains enough slots. This check establishes the packaged strings and executable operands. Display and fallback paths have separate evidence.
+
 ### Local Swedish text installation
 
 The original and final language loaders both map ordinal 5 to `text.swe`. Older installations could already have supplied this file separately from the patch archive.
