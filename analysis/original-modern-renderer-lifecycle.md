@@ -445,8 +445,13 @@ the hosted original and all retained Modern releases through
 A linear disassembly scan for explicit operands naming
 `007a3a5c` finds only the mask store in 1.5.0 through 1.6.0,
 at `004b5aa7`, `004b5acb`, `004b5adb`, `004b5adb` and
-`004b5ad6` respectively. The 1.4.0 helper's direct read is
-its own accumulator reload. In 1.6.1 the same address instead
+`004b5ad6` respectively. The hosted original and 1.0.0–1.4.0 have exactly
+three decoded direct operands naming the cell, all within the
+result helper: the clear at `004b594c`, accumulator read at
+`004b597a`, and update at `004b5985`. The only decoded direct
+call to the helper is at `004b5cfd` through 1.3.1 (including
+the hosted original), and at `004b5cd2` in 1.4.0. No outside
+reader was found by this scan. In 1.6.1 the same address instead
 holds the [cached renderer descriptor pointer](original-modern-renderer-loading.md),
 with direct stores at `004f84f5` and `004f8542`. The scan
 cannot exclude reads through a computed address in the earlier builds.
