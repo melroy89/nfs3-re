@@ -230,3 +230,18 @@ wrapper performs its own file check. This is conditional on the
 cached state. The evidence counts direct call sites and address
 operands. It leaves indirect rebuilds and repeated execution of the
 startup path unresolved.
+
+### Idle controller release history
+
+The 253-byte controller at `00496200..004962fd` matches the hosted
+reference in all five retained releases from 1.0.0 through 1.3.1.
+From 1.4.0 through 1.6.1, all seven retained releases have the same
+194-byte replacement at `00496200..004962c2` (SHA-256 prefix
+`baf8ac5f93293eaa`). Resolving the four dwords at `004961f0` in
+each of these seven EXEs gives the same ordered filenames
+`titleav.mad`, `demoav1.mad`, `demoav2.mad` and `demoav3.mad`.
+
+Compare the root EXE members by PE RVA with exclusive ends and
+dereference each filename pointer relative to image base `00400000`.
+The controller's stability leaves its input producers, option
+spellings and movie playback callees free to change separately.
