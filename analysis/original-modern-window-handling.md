@@ -310,3 +310,13 @@ Compare the 100 file-backed bytes in the extracted EXEs to reproduce.
 This dates the final install policy to 1.4.0 and the callback
 redirection at those call sites to 1.5.0. Callback behavior and OS
 hook acceptance are separate from the installer comparison.
+
+The 29-byte teardown body also matches from 1.4.0 through 1.6.1.
+It moves from `004ccd90` to `004ccca4` in 1.5.0. All seven EXEs
+bind `005347a8` to `UnhookWindowsHookEx`. For a nonzero stored
+handle, the helper calls the API and clears `00561280` on its
+ordinary return, regardless of the API result. For a zero handle,
+it returns without calling the API. The same helper services the
+shared shortcut and screenshot hook. This comparison establishes
+the executable's teardown policy. It does not establish that the
+OS accepted the removal or what callbacks remained in flight.
