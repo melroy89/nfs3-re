@@ -240,3 +240,28 @@ The fallback stores 0 at `600127bc` and the query path stores 1. Both set
 the setup latch to 1 before returning. These checks establish how the
 adapter populates the tables. Actual provider output, the meaning of the
 offset-8 field and the resulting in-game list remain unverified.
+
+### Early DX5 adapter rewrites mode insertion
+
+The reference `d3da.dll` SHA-256 is
+`ae676272438d93fd7a8da7a19250d6e8b664d8570824ab8042e2b20b38395a02`.
+The 1.1.0 `dx5.dll` SHA-256 is
+`8609a2f9d67bbb3be61b8519f1339d2854354b60046f59ec2618c27c0484966e`.
+Disassemble both archive members with `objdump -d -Mintel` and compare
+the callback span beginning at `600017c7`.
+
+- The original treats incoming 16-bit 640×480 and 800×600 modes as fixed
+  slot updates. Its general path appends in 40-byte steps and returns 0
+  when the unsigned count reaches 30.
+- In 1.1.0, `6000181c` rejects signed heights below 480 after the
+  memory-per-mode calculation. The search starts at slot 1. It updates
+  a matching width/height slot unless its stored depth exceeds the incoming
+  depth. At the first empty slot it increments the count only when the
+  unsigned count is below 30. The full-count branch returns 1.
+- At `60001852`, 640×480 forces the outgoing depth to 16 before the existing
+  format-class-3 override can set it to 15. The comparison against a
+  populated slot uses the incoming depth, before either output override.
+
+This identifies a code-level change behind the paired filenames. The
+renderer API's enumeration order, the resulting in-game list, and any other
+differences within the 283-byte section comparison remain separate questions.
