@@ -232,3 +232,11 @@ slider setup and callback registration path, alongside
 the [effect-side mask changes](original-modern-effect-renderer-masks.md).
 The admitted path does not by itself clear a disabled
 item's flags. Actual menu interactivity remains untested.
+
+The callback setter, writeback callback and item-value getter
+are byte-identical in the hosted original and every retained
+Modern EXE. Read the spans at PE RVAs `6cac0h` (8 bytes),
+`48570h` (40 bytes) and `6c9b0h` (67 bytes). Thus 1.0.0's
+newly admitted renderer path uses the existing callback mechanism
+and writes the same setting. This comparison stops at the getter's
+dispatched leaves and leaves runtime callback invocation untested.
