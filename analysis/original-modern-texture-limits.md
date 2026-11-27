@@ -113,3 +113,14 @@ starts publishing Glide's maximum texture size into those fields in
 1.5.0. The exact consumer above follows in 1.5.1, alongside the
 configurable-extent change. The negative exact-byte search does not
 exclude a differently encoded limit in earlier builds.
+
+The adjacent initializer disassembly confirms insertion on the shared
+renderer setup tail. In 1.5.0, jumps at `004b5a6a` and `004b5ae5` reach
+`004b5b29`, the `POPAD; RET` immediately after the last set-state call
+at `004b5b23`. In 1.5.1 those jumps move to `004b5a8e` and
+`004b5b09` and target the new about-and-clamp block at `004b5b4d`.
+The third path falls into the same block after its set-state call at
+`004b5b47`. The clamp therefore extends these three existing setup
+paths. The 1.5.0 paths return without applying an equivalent operation
+at this point. This comparison leaves limits at unrelated call sites
+outside its scope.
