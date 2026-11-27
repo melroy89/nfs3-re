@@ -215,3 +215,17 @@ each build. If no snapshot has run and no alias has written
 the cell, an admitted restore therefore reads zero.
 Indirect writes and the runtime status transition needed
 to take that path remain unverified.
+
+The shared flag `00559234` also gates frontend paths outside
+audio. A linear disassembly scan for direct MOV destinations
+finds the same four writes in all retained 1.5.0–1.6.1 EXEs.
+The normal frontend path clears it at `0044b278`. Two
+other menu entries set it to 1 at `0044b964` and `0044ba47`,
+including the pause-menu setup. A further path clears it at
+`004a35e2` before the display-mode call. The hosted original
+has those four direct MOV sites plus `0044be26`.
+
+These writers establish that the snapshot and restore tests
+read shared menu context state. Whether a writer can intervene
+between the two callbacks for a single Audio Cancel interaction
+remains unverified.
