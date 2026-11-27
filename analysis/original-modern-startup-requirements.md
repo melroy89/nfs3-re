@@ -435,3 +435,21 @@ helper at `004b56f8`, then branches to `004a3f6c`.
 This excludes a local change in the inspected existing-window
 rejection branch as the explanation for MP153-014. The API was
 not called and the live window state remains untested.
+
+### Command-line gate and affinity resolver at the same boundary
+
+The command-line parser's 965-byte window from PE RVA
+`0xa5080` matches between 1.5.2 and 1.5.3 (SHA-256
+`a78dae89c5d6bb9accdd9b078c5439636dcee881a31733fa96daaa250943f554`).
+The application still branches to `004a3f6c` on a zero result.
+
+In the checked settings window `004b5580..004b56e0`, the
+only disassembly change is the call at `004b55a0`: the
+affinity export resolver moves from `004f1ec8` to `004f1ebc`.
+The two 22-byte resolver bodies are identical at their
+respective addresses, including their relative calls to the
+module lookup helper and their dispatch through `00534558`.
+Thus the changed operand is evidence of a relocated resolver.
+A startup failure caused by settings, API results or deeper
+callees remains unverified. See the
+[startup policy trace](original-modern-startup-policy.md).
