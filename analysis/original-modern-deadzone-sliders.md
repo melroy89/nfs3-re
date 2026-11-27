@@ -50,3 +50,21 @@ Both call `00435690` with the ordinal and map the frontend/config cache to `006f
 Existing [device-slot lifecycle evidence](controller-device-slot-lifecycle.md#result) establishes a separate primary 16-slot domain: normal registration can populate slot 15, initial capability query traverses all sixteen, and the race reader accepts slot 15. That evidence describes the selected Modern executable; it does not by itself prove every original interface path identical. Coupled with the direct paired refresh comparison, it shows why this edit should **not** be labelled a verified bounds fix: Modern omits refreshing a frontend slot that remains in its primary device domain.
 
 **Bounded comparison status: done; confidence: verified full refresh bodies and previously qualified Modern slot lifecycle.** Actual sixteen-device availability and stale/unrefreshed frontend consequences are unobserved. Cache extent/other writers, every original device path and author intent remain separate. Preserve the version-specific bound in reconstruction rather than silently “correcting” it. No new hardware, game or instruction probes were run; executables/Ghidra/maintained C are unchanged.
+
+### Property mapping at the 1.5.3 rounding boundary
+
+The 32-byte setter wrapper at `00435b40..00435b60` matches
+byte for byte in 1.5.2, 1.5.3 and official 1.6.1. Its selector-1
+branch subtracts the rounded percentage from 100 before calling
+`00436b10`. Selector 0 passes the rounded percentage directly.
+The [installed controller trace](controller-axis-property-setup.md#property-write-path-and-call-site-boundary)
+maps the first UI slot to selector 1, cache pair offset +4 and
+raw property 6. The second slot uses selector 0, offset +0 and
+raw property 5. The property method scales the clamped value by 100.
+
+For the example above, a product of 12.75 that changes from 12 to
+13 changes the pre-scaling setter argument from 88 to 87 on
+selector 1, or from 12 to 13 on selector 0. This assumes the
+changed-value branch runs and round-to-nearest is active in
+1.5.3. The verified release difference is in the conversion
+before that wrapper. Device acceptance remains unmeasured.
