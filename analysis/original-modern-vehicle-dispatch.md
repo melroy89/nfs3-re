@@ -188,12 +188,20 @@ texture and mirror outcomes remain unverified.
 | Build | Call admission to retained budget helper`004bbad0` |
 |---|---|
 | Supplied original and1.4.0 | Unconditional call at`004bbbdf`; complete276-byte dispatcher bodies match |
-|1.5.0 | At`004bbbeb`, tests`006fbc1c`; zero skips to`004bbbfb`, nonzero calls at`004bbbf6` |
-| Official final | Uses the expanded predicate already documented above: `cardetail!=0 OR (context[0]==1 AND mirrorlevel!=0)` |
+|1.5.0–1.5.1 | At`004bbbeb`, tests`006fbc1c`; zero skips to`004bbbfb`, nonzero calls at`004bbbf6` |
+|1.5.2–1.6.1 | Uses the expanded predicate already documented above: `cardetail!=0 OR (context[0]==1 AND mirrorlevel!=0)` |
 
 In1.5.0, **High0 bypasses the whole budget helper**, whereas Medium1/Low2 still admit it. The helper’s complete196-byte body is identical across all four EXEs. It can downgrade selectors1→2 and0→1 under the weighted budget, and also has the distinct final`+9a4` override pass. Skipping it skips both mechanisms; describing this as merely changing a threshold inside the helper would be inaccurate.
 
-The final predicate also now has named settings: [Rear View Detail](original-modern-night-lighting.md#modern-option-binding-rear-view-detail-values02) binds`006fd1d8` to High0/Medium1/Low2, and the optional mirror render route supplies context tag1. Consequently final High Car Detail **can still enter the budget helper on that mirror route when Rear View Detail is nonzero**. The1.5.0 High bypass must not be generalized into an unconditional final-version guarantee. This pass does not date the later expanded predicate.
+The final predicate also now has named settings: [Rear View Detail](original-modern-night-lighting.md#modern-option-binding-rear-view-detail-values02) binds`006fd1d8` to High0/Medium1/Low2, and the optional mirror render route supplies context tag1. Consequently final High Car Detail **can still enter the budget helper on that mirror route when Rear View Detail is nonzero**. The1.5.0 High bypass must not be generalized into an unconditional final-version guarantee. The expanded predicate first appears in retained 1.5.2.
+The instructions at `004bbbeb..004bbc09` match through 1.6.1.
+They test the context tag at `004bbbeb` and rear-view setting at
+`004bbbf0` before falling back to the car-detail test at
+`004bbbf9`. In retained 1.5.1 the first test is still car detail
+and the call is still at `004bbbf6`. Reproduce by disassembling
+this window from each archived EXE. The branch establishes
+admission to the helper. Visible detail depends on the helper's
+downstream decisions and the rendered scene.
 
 ### Wheel animation changes share the1.5.0 boundary
 
