@@ -495,9 +495,16 @@ the allocator result from EAX to `[EBP+0x7a]` at
 `00410094`. The copy-bypass path reloads that same pointer
 at `00410214` and passes it to `004e1890` if nonzero.
 The 1.5.0–1.5.2 rewrite removes both the allocation and its
-paired release on this path. The earlier loader puts
-`0x80000` in EDX on entry, but calls `004a33d0` before
-allocating. The exact size reaching the allocator depends
-on that intervening call. See the
+paired release on this path. On the ordinary non-abort path this allocation still requests
+`0x80000` bytes (512 KiB). The loader puts that value in EDX
+at `00410046`. The poll at `0041006d` calls `004a33d0`,
+which reads key index 1 via `004eb1c0`. When the key byte is
+zero, both helpers return without modifying EDX, and the
+loader reaches the allocation if the abort flag remains zero.
+The alternate key-down path sets the abort flag and calls
+the loading overlay before the loader rechecks the flag.
+The loader window `00410046..0041008e`, poll body
+`004a33d0..004a33fb` and getter `004eb1c0..004eb1c8`
+match in all six retained EXEs from 1.0.0 through 1.4.0. See the
 [game pool comparison](original-modern-heap-initialization.md)
 for the independently identified allocator and release helpers.
