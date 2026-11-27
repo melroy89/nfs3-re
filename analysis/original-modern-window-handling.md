@@ -115,6 +115,8 @@ Retained 1.1.0, 1.2.0, 1.3.0 and 1.3.1 still begin this tail at `004cd655` with 
 
 Across the full 472-byte window-thread span `004cd4e0..004cd6b7`, 1.4.0 and installed 1.6.1 are byte-identical (span SHA-256 `0094e35550f96e19a93badbbebba0bd604843c574aa4eddc36e5c44fc9e3fd61`). Compared with 1.3.1, only the exit-branch displacement bytes at `004cd58a..004cd58b` differ before `004cd655`. The branch now targets the relocated epilogue, and all bytes from `004cd663` through the old end are NOPs. This also pins the pending-request consumer and handle-clear sequence as preserved locally across the transition. Called helpers and Windows callback effects remain outside the span.
 
+The two predicate bodies at `004f9070..004f908a` and `004f9120..004f913f` match byte for byte in the original, 1.3.1, 1.4.0 and installed 1.6.1. An `objdump -d -Mintel` sweep across 1.3.1 and 1.4.0 finds one removed direct call to each: `004cd66b` to `004f9070` (10 → 9 sites) and `004cd662` to `004f9120` (6 → 5 sites). Every other decoded direct call to either predicate stays at the same address. The sweep covers decoded direct calls only. Both predicates still have callers and remain relevant when reconstructing the rest of the window code.
+
 This dates the removal of this particular loop tail to the inspected 1.3.1 → 1.4.0 boundary. MP100-040 describes an earlier focus change. Its attribution to this specific mechanism remains unverified, and other focus paths may account for the release note.
 
 ### Original mode-state producers: a bounded link
