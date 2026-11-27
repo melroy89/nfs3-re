@@ -153,3 +153,21 @@ the return calculation at `004358cd` gives
 `005f1ff8 + 136 * index`. This covers the query body and its
 copied axis offsets. Device initialization and driver responses
 remain external to this comparison.
+
+The enumeration callback at `00436980..00436b10` and the
+24-byte data-format header it uses at `0052f300` both match
+across the hosted original and all twelve retained Modern EXEs.
+Read PE RVAs `0x36980` (400 bytes) and `0x12f300` (24 bytes)
+to reproduce these SHA-256 values:
+
+| Range | SHA-256 |
+|---|---|
+| Callback | `b0967c7240bf7ae0248b05ef381c8432d514c403ade2d070f714e1a0bedd198f` |
+| Format header | `f1473c0aac7e7c25abb7057d36929598ee829e1decd6265bfb01430eab1c5661` |
+
+This confirms that the cache-refresh limit change leaves the
+enumeration callback and its format header intact. The header's
+referenced object descriptors and the driver's actual enumeration
+remain separate dependencies. See the
+[controller setup trace](controller-axis-property-setup.md#device-creation-and-data-format)
+for the callback's device-creation and format calls.
