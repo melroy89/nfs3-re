@@ -1285,8 +1285,10 @@ the listed intervals by PE RVA after subtracting image base `00400000`.
 | `00495159..00495180` | Loading-artwork tail retains the reset, mask and single-precision load. |
 | `004bc7f1..004bc818` | Race-render tail retains the single-precision restoration sequence. |
 
-The same-address spans differ in the sampled 1.5.3 and 1.6.0 archives.
-This establishes that the first retained Modern release still uses the
-original switches at these boundaries. Actual control words inside
+The three complete spans remain byte-identical to the hosted reference in
+every retained release through 1.5.2. In 1.5.3 the four inline masks in
+these spans are NOP-filled and the control changes route through the shared
+helpers described above. In 1.6.0 those helpers are themselves NOP-filled.
+This distinguishes the 1.5.3 refactor from the 1.6.0 policy change. Actual control words inside
 race, replay and network processing remain dependent on the executed
 path and intervening calls.
