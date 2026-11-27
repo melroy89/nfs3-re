@@ -268,3 +268,9 @@ The 1.6.0 block still has the same codelink but sets
 layout and presentation edits. The asset and EXE checks
 establish the shipped control and its setup path from 1.0.0.
 Actual control availability still depends on active menu state.
+
+### The two Fog Cancel paths already differ in 1.5.0
+
+The 1.4.0 callbacks at `004487a8` and `0044d45d` both call the token comparator `004429c0`. In 1.5.0 both call the fog-aware wrapper at `00437790`. It restores the separate fog/rear-view shadow pair on a matching token, and on a nonmatch restores only fog when the renderer support flag is zero. The same policy is present at the relocated final wrapper described above.
+
+The callbacks then apply different matching-token snapshots. The ordinary graphics Cancel copies 64 bytes to `006fbc10..006fbc50`, which leaves both shadow-restored selectors intact. Player Settings Graphics Cancel copies `0x176c` bytes to `006fbb4c..006fd2b8`, which includes both selectors. On that route the broad snapshot supplies their final values when the copy completes. This distinction is verified in the shipped 1.5.0 code and matters when preserving Cancel behavior in C. It does not establish disk persistence or a visible menu result.
