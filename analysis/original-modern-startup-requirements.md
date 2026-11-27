@@ -740,3 +740,19 @@ the PE resource tree and hash each payload using its data RVA
 and size. The comparison identifies the changed payloads.
 The [decoded About comparison](original-modern-frontend-page.md#decoded-about-resource-across-retained-builds)
 confirms changed image data. Startup causality remains open.
+
+The relocation directory itself shrinks by 164 bytes
+(94,660 → 94,496), while the raw section shrinks by 1,536 bytes.
+The remaining 1,372-byte reduction is in the raw span beyond
+the declared directory. Both builds contain 332 relocation
+blocks. The count of HIGHLOW entries falls from 45,847 to
+45,762, entirely in `.code` by entry count. Both retain 4,617
+HIGHLOW entries in `.data`. Comparing the set of target RVAs
+finds 268 sites exclusive to 1.5.2 and 183 exclusive to 1.5.3.
+These site counts include relocation of existing instructions.
+
+To reproduce, read optional-header directory 5 and its section's
+raw size, then enumerate each relocation block. Sum block sizes
+and compare the type-3 target RVAs. The counts describe the
+rebasing records, with their behavioral causes classified
+separately where the referenced instructions have been traced.
