@@ -102,7 +102,12 @@ Under a separately established sequential reset followed by a bounded number of 
 
 ## Initialization-qualified values of previously untouched fields
 
-The audit additionally verifies the four-target insertion jump table at `0041defc` and the initializer neighborhood `0041d9a3..0041da06`, all byte-identical across versions. That neighborhood resets records, then inserts **types1 and2 when mode==1**, or **types0 and3 otherwise**, before selecting record0 and applying presets. The table maps types1/2 to the same template. The four fixed-point template values at +24h/+28h/+38h/+3ch are:
+The audit additionally verifies the four-target insertion jump table at `0041defc` and the initializer neighborhood `0041d9a3..0041da06`, all byte-identical across versions. The reset and insertion bodies, the 16-byte jump table, and the
+99-byte initializer window also match in the hosted original and all
+12 retained Modern releases. Compare the file-backed bytes at those
+addresses in each extracted EXE.
+
+That neighborhood resets records, then inserts **types1 and2 when mode==1**, or **types0 and3 otherwise**, before selecting record0 and applying presets. The table maps types1/2 to the same template. The four fixed-point template values at +24h/+28h/+38h/+3ch are:
 
 | Template type | Values before shifting left16 |
 |---|---|
