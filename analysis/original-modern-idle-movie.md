@@ -183,3 +183,19 @@ The early INI setting therefore has a verified direct effect on title
 playback admission. Whether higher-level callers can prevent entry to
 the idle controller remains separate. The later availability-mask
 mechanism supplies the independently verified option-to-idle path.
+
+### Version 1.4.0 connects the option to idle playback
+
+The retained 1.4.0 EXE calls its availability builder at
+`004a3a87` (target `004a2f84`). The builder clears `007a2768`
+at `004a2f87` and tests bit 11 of `0055eb2c` at `004a2f91`.
+The rewritten idle controller tests mask bits 1–3 at `00496206`
+and checks the selected candidate's bit at `0049626c`. The title
+path separately tests bit 0 at `00473126`. These are the 1.4.0
+addresses, distinct from those in the final EXE.
+
+The 1.3.1 controller still matches the hosted original across its
+253-byte body. This adjacent comparison dates the idle controller's
+availability-mask admission in MP140-029 and MP140-031 to 1.4.0.
+Whether the mask is rebuilt after a file or setting changes is
+outside this check.
