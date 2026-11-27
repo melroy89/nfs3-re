@@ -68,6 +68,16 @@ The expanded audit retains the second start routine, **`004107c0`** (original en
 | 1,5 | 6 | 0 |
 | 3,7,8,9 | 0 | 0 |
 
+The second start path's suffix decision changes in **1.5.3**.
+Through 1.5.2, the archived executables retain the flag and
+configuration checks from the original at `00410862`. From
+1.5.3 onward the jump at that address skips to `00410891`,
+leaving 45 bytes of NOP padding. The remaining check selects
+`tech` only when style state `00552854` equals 1; otherwise it
+selects `rock`. The local path now uses the already selected
+style instead of applying those additional overrides. Actual
+asset access and playback remain unverified.
+
 These are initial image bytes, not proof of every subsequent write or a valid circuit domain extending to9. Existing selected-circuit work establishes ordinary circuit IDs separately. The array's index here is **selected circuit `006fd4ac`**, not playlist index `005525f8`; the two must not be conflated when translating the policy to C.
 
 Original code applies the adjustment when **music setting `006fbbe4 == 1` OR style state `00552854 == 1`**. Its original choice list labels setting1 Track default (Techno), and style1 selects `tech`, as traced in the [selection report](original-modern-music-selection.md). Otherwise it passes the configured level unchanged. The predicate tests state, not the successfully opened asset’s identity; restriction flags can affect filename selection elsewhere.
