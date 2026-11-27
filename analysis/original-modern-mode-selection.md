@@ -298,6 +298,21 @@ to reproduce the comparison. A fallback uses these same writes with
 row zero's contents. Actual row population and downstream rendering
 remain outside this check.
 
+In final 1.6.1, the count at `00a18260` and row zero at
+`00a18330` lie in the zero-fill `.bss` extent. On the first
+rebuild with count zero and DF clear, `00448320` clears 51
+DWORDs of labels, ending exactly at the row bank, then calls
+`004bed90`. The enumerator starts at driver row 1, exits before
+any callback if the descriptor count is zero, and invokes the
+collector only for rows accepted by `004bee60`. If no callback
+runs and no other writer has touched either cell, the menu count
+and first row remain zero. The wrapper's row search then exits
+without inspecting a record and passes the base row to the
+publisher, which copies zero width, height and depth. This is a
+conditional path derived from the executable. Whether an actual
+driver supplies this state and how later rendering responds
+remain untested.
+
 The graphics-menu commit path sets bit 0 at `00448500` before
 examining the selected and final rows. If those pointers match,
 it saves the packed sentinel and leaves the bit set. Otherwise it
