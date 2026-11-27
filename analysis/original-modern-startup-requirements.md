@@ -521,3 +521,29 @@ This excludes a change to the bundled INI bytes at this
 boundary. The archive inventory identifies DLL changes worth
 checking against the startup claim, without establishing which
 DLL loaded or which change addresses MP153-014.
+
+### Changed DLLs retain executable bytes but revise import directory metadata
+
+All six DLLs flagged by the archive inventory retain their code, import
+section, initialized data, exports and base relocation section bytes
+across 1.5.2 → 1.5.3. This includes `eacsnd.dll`, whose `AUTO` and
+`DGROUP` sections become `.code` and `.data` and which gains a resource
+section. The DX5 and SoftTri resources also differ. The `.bss` sections
+have zero raw pointers in both releases and supply no file-backed bytes
+for this comparison.
+
+All six change the import directory size and add an explicit Import
+Address Table directory. The import directory RVA stays fixed.
+
+| DLL | Import size before → after (hex) | New IAT RVA |
+|---|---|---|
+| All three `voodoo2a.dll` copies | `6e4 → 3c` | `e174` |
+| `dx5a.dll` | `761 → 50` | `f168` |
+| `softtria.dll` | `76f → 50` | `3d168` |
+| `eacsnd.dll` | `574 → 50` | `911c` |
+
+Reproduce by extracting the six exact members listed above, comparing
+their corresponding raw sections, and reading optional-header data
+directories 1 and 12. This establishes a concrete loader-facing change
+even though the DLL instructions match. Whether it explains MP153-014
+requires evidence from the affected loader or system.
