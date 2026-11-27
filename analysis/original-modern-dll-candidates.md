@@ -471,3 +471,27 @@ This establishes the producer-to-consumer chain for the paired final DLL
 and EXE. The DLL producer is dated to 1.5.0. The [adjacent EXE comparison](original-modern-texture-limits.md#the-exe-clamp-first-appears-in-retained-151)
 dates insertion of the clamp in the shared renderer setup tail to 1.5.1.
 Live provider values and texture upload outcomes remain open.
+
+### Recovered 1.0.0 package separates code changes from renames
+
+The [author-hosted 1.0.0 archive](https://veg.by/files/nfs3/nfs3_modern_patch_v1.0.0.7z)
+passes `7z t` and is retained locally next to the other historical
+archives. SHA-256 is
+`2aba87f9e35017af2335784bccc1e0025f6a34f9d00818369f591b4f9bbec305`.
+Its root `nfs3.exe` hashes to
+`988fbf599af256d1486bef967959893c6b26c9fa8ed21b76310bbb7798b4d9df`.
+The shipped INI contains `VideoDriver=Voodoo2` and `VideoDeviceId=0`.
+This establishes the packaged configuration. EXE consumption of the
+separate device key remains to be traced.
+
+| 1.0.0 member | Member SHA-256 | Changed code bytes versus hosted reference | Changed code bytes versus 1.1.0 |
+|---|---|---:|---:|
+| `d3da.dll` | `e6cd04d30fe2a835b6746625024eb91679aa751a65499868cab41111f3c1c180` | 283 | 0 |
+| `softtria.dll` | `8735317e81cff458e9d4c35bcd3fde6440337c10559678555926181749188452` | 16 | 0 |
+| `voodoo2a.dll` | `a0baafb4053b4fefb3ae7d2f83d28fd4fa86d38ea50835c0d659e7cebee37196` | 343 shared, plus 512 raw bytes | 328 |
+
+Compare the first PE sections at equal raw offsets. The DX5 callback
+rewrite and SoftTri filters are already present in 1.0.0 under the
+original names. The three package names change at the verified
+1.0.0→1.1.0 boundary. Voodoo2 also changes code at that boundary.
+The 328 changed bytes still need instruction-level comparison.
