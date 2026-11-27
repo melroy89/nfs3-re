@@ -76,6 +76,8 @@ Both call record initializer `004e9b20`; its normal-path **61 bytes** are identi
 
 Both versions choose the same observed branch policy: if `[006fbc00]==2` or `[005525a4]!=0`, set byte `+11=1` and WORD `+12=0`; otherwise set byte `+7=0x40` and byte `+11=0`. They call `004e9ba0` and increment `00552928`. That counter is incremented without establishing successful audible output; do not label it a count of successfully played sounds.
 
+Across the hosted original and all twelve retained Modern releases, the handler reads the same byte at `00571124` for request field `+4`. A retained producer at `00410c1e` writes a load result into the corresponding 12-byte bank record, at `00571124 + 12*index`. The frontend handler uses the first record and passes its incoming sound ID separately in request field `+0`. The 1.4.0 range check therefore changes admission while the checked bank selector and ID fields retain their roles. This does not identify the installed sample for each ID or establish unchanged sound-bank contents.
+
 Other field/backend semantics remain opaque. Equal initializer bytes do not prove all submission/provider behavior is unchanged.
 
 ## Separate slider and restore path
