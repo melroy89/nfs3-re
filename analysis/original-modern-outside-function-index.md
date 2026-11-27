@@ -303,6 +303,9 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `004daffc..004db000` | Four bytes of original LEA alignment become NOPs after the Modern return at `004daffb`. | This identifies the padding only. |
 | `005176a6..005176aa` | Four NOPs follow the new short jump to the shared continuation at `005176aa` in the [renderer mode callback](original-modern-renderer-lifecycle.md). | They replace the final operand bytes of the original indirect call. |
 
+| `00452a9b..00452db0` | All four changed bytes belong to the instruction at `00452cf1`. The [race dialog](original-modern-race-dialog.md) replaces the stored-mode load with a call that swaps dialog ordinals 1 and 3. | Only the nonzero-ESI route takes this call. |
+| `0049f93a..0049fb10` | The four changed bytes are in the import operands of the calls at `0049faba` and `0049fad9`. Both switch from GetTickCount to timeGetTime in the [clock-source comparison](original-modern-clock-source.md). | This establishes the source swap at two call sites. Session timing effects remain untested. |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -319,7 +322,9 @@ total to **21,631 bytes across 213 intervals** at `2c56e8c`. The five
 additional rows above raise coverage to **21,656 bytes across 218
 intervals**, leaving 270 changed bytes across 119 intervals at `caca397`.
 The next eight rows raise coverage to **21,688 bytes across 226
-intervals**, leaving 238 changed bytes across 111 intervals. These counts measure documented evidence links for this fixed
+intervals**, leaving 238 changed bytes across 111 intervals at `700897d`.
+The race dialog and clock rows bring the total to **21,696 bytes
+across 228 intervals**, leaving 230 changed bytes across 109 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
