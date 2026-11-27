@@ -493,6 +493,17 @@ through 1.6.1. Read the ranges from each PE by RVA to
 reproduce the comparison. Actual disk I/O, playback and
 performance remain unverified.
 
+The full 761-byte window at PE RVA `0x10030` has three byte
+identities across the twelve retained Modern executables. These
+fingerprints cover the entire original loader window, including
+code that earlier Modern versions already bypassed.
+
+| Modern Patch | SHA-256 of the loader window |
+|---|---|
+| 1.0.0–1.4.0 | `136c009acbd9b8ba7ab4cec2eb2e8b48737497dd727c225fc9b0ea38c5284f8b` |
+| 1.5.0–1.5.2 | `77faf0db87f42c5818193c8cd9dffc4b4e4ffba5e00bf7ebe6e65aa92438ef48` |
+| 1.5.3–1.6.1 | `f98d653d591c851e37bb93216b6f503a1c5c53ac28c2ded1591cf44d4845f2c9` (761 NOPs) |
+
 A case-insensitive ASCII scan finds one `temp.mus` occurrence in each retained 1.0.0–1.4.0 executable, in the original format slot at `00536880`. Starting with 1.5.0, the ten bytes in that slot are zero and the literal is absent through 1.6.1. The old source-name slots at `00536898` and `005368a4` still resolve to `rock.mus` and `tech.mus` through 1.5.2. Both start with NUL in 1.5.3–1.6.1. The copy bypass thus precedes removal of the temporary filename in 1.5.0 and clearing of the source-name slots alongside the old loader in 1.5.3. These are fixed-slot observations for the two source names.
 
 In 1.5.0–1.5.2 the direct call at `00477fe1` still reaches
