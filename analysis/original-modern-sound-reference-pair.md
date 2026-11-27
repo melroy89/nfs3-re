@@ -131,3 +131,14 @@ DWORD, the same mask used by the
 The relevant DLL code is shared by the hosted original and
 final Modern Patch. The provider field's meaning and its live
 values remain unverified.
+
+The capability buffer starts at `[ESP+0x0c]` after the three
+register pushes and has size `0x60`. That makes the tested DWORD
+at `[ESP+0x38]` offset `0x2c` in the buffer. Matching the
+size and field order to the
+[Microsoft DSCAPS layout](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ee416821(v=vs.85))
+identifies the field as `dwMaxHw3DAllBuffers`, the maximum
+hardware 3D buffer count. The bit can therefore indicate a
+nonzero maximum even when the number of free 3D buffers is
+zero. This is a static layout match. Actual driver values and
+EAX effect availability remain unverified.
