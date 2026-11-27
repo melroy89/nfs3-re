@@ -420,3 +420,9 @@ The relocated `km` entry is protected by the 1.6.x marker check. Both 1.6.0 and 
 The original and final language loaders both map ordinal 5 to `text.swe`. Older installations could already have supplied this file separately from the patch archive.
 
 The local Wine copy at `FEDATA/TEXT/text.swe` matches the 1.6.1 archive member (SHA-256 `c64f1ac7be5bfe762c9b6a961415c994e132c66dc3660bd5763d54eeedfc9b9a`). The same installation has [English speech banks and no Swedish speech directory](original-modern-sound-bank-language.md#local-installation-has-english-banks-and-no-swedish-speech-directory). Those files are consistent with the executable's independent Swedish text and English speech requests. Actual loading and display remain untested.
+
+### Version-marker compatibility across packaged tables
+
+All 30 shipped language tables from 1.4.0 through 1.5.3 cover ID 1929 and lack the exact `v1.6.0` marker there. All 12 tables shipped with 1.6.0 and 1.6.1 contain it at ID 1929. Both executables compare that entry against the same marker, so either accepts the marker in either release's six tables. With an older table successfully loaded, ordinarily covered IDs below 1929 still use the external strings, while IDs 1929–1954 use embedded strings. A mismatch therefore produces a mix of external and embedded text.
+
+Decoding all 27 embedded strings from `0053d294` in 1.6.0 and `0053d310` in 1.6.1 produces identical byte strings at every index. Reproduce by resolving the DWORD at file offset `1929 * 4` in each packaged table, then decoding 27 relative DWORD offsets at each executable's embedded table base. This verifies the packaged marker and fallback payloads. It leaves successful loading and rendering outside the comparison.
