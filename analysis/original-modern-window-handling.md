@@ -247,6 +247,15 @@ continuity of the EXE-side reader and that bit domain. Device setup,
 buffered events supplied by DirectInput, and runtime ordering remain
 separate from the byte match.
 
+The mouse-device setup window `004350c0..004351f0` also has
+the same bytes in the hosted original and all 12 retained Modern
+EXEs. It passes `00554ee8` as the output pointer at `00435111`,
+then uses that slot for the device's format call at `0043512f`
+and for the buffered reader. Compare 304 bytes at PE RVA
+`350c0h` in the extracted executables. This verifies reuse of
+the local creation and setup sequence. It leaves the referenced
+data format, indirect device methods and runtime results separate.
+
 **Status:** done, verified static for ten retained registrations, both complete
 callback bodies, register forwarding and the61 changed-byte tail. Full
 `004fb470` state/clip/capture processing, external message delivery, mouse
