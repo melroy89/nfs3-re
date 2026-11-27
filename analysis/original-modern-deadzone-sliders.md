@@ -97,3 +97,23 @@ in 1.5.3.
 Reproduce by extracting each archived executable and reading the
 fixed window from PE RVA `0x43070`. The comparison dates the code
 change. Actual visibility of the named controls remains untested.
+
+### The controller refresh bound briefly reverts in 1.3.0
+
+The 429-byte refresh routine at `00472b60..00472d0d` has two
+byte identities across the hosted original and all twelve
+retained Modern executables. Its only changing byte is the
+comparison immediate at `00472c93`.
+
+| Executables | Slot count in this refresh loop |
+|---|---:|
+| Hosted original | 16 |
+| Modern 1.0.0–1.2.0 | 15 |
+| Modern 1.3.0 | 16 |
+| Modern 1.3.1–1.6.1 | 15 |
+
+To reproduce, extract each `nfs3.exe` and compare 429 bytes at
+PE RVA `0x72b60`, checking offset `0x133` for the immediate.
+Thus the reduction appears in 1.0.0, reverses in 1.3.0 and
+returns in 1.3.1. This is one cache-refresh bound. Actual
+device enumeration limits and controller behavior were not tested.
