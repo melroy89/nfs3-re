@@ -114,5 +114,22 @@ the call. At `00511453..00511477` the caller then reads signed byte
 `+39h`, divides by `3f01h` (127 squared) and pushes the result as
 a separate input to `00523d94`. In particular, that later push alone
 is not a read of `+31h`. The calculated movie-dependent byte is
-verified in channel state. Which backend code reads it, and the
-resulting audible gain, remain unverified.
+verified in channel state. Its platform consumer is traced below. The
+resulting audible gain remains unverified.
+
+The movie-dependent channel byte does reach platform voice submission.
+The unaligned dword read at `00511481` starts at channel offset
+`+2eh`. Its high byte is offset `+31h` on little-endian x86, so
+`SAR EAX,24` at `00511487` sign-extends the calculated gain.
+The caller moves it to ECX at `0051148d` and calls `00523d94`.
+That routine saves incoming ECX in EDX, then uses EDX as the level
+argument to `005222f0` at `00523e01` on the inspected format path.
+This is distinct from the preceding stack input described above.
+
+The helper initializes both output levels to the input level. At pan
+64 it returns both unchanged. For pan below 64 it replaces the
+ECX-pointed output with `(pan * level) >> 6`. For pan above 64 it
+replaces the EBX-pointed output with `((127 - pan) * level) >> 6`.
+These are signed arithmetic shifts. This establishes consumption of
+the movie-dependent gain during platform packet setup. Hardware or
+wrapper output and perceived loudness remain untested.
