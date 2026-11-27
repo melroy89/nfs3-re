@@ -467,3 +467,18 @@ physical bounds at offsets `+0x10..+0x1c` to `004bebe0`.
 The 46-byte adapter and 192 bytes from `004dbce0` match in both
 builds. This traces the changed logical height to the projection
 builder's input while keeping clipping and observed output separate.
+
+The 272-byte projection builder at `004bf260` and binary32
+constant 0.5 at `005401c0` also match in 1.4.0 and 1.5.0.
+The builder stores half-height and the sum of that half-height
+and the logical origin Y. The [projection analysis](original-modern-projection.md)
+traces those results to `005600b0` and `005600a8`, respectively.
+
+For ordinary fitting dimensions, the 1.5.0 integer centering
+formula gives logical Y = physical Y + floor((physical height −
+logical height)/2). Adding the logical half-height places the
+projected center at the physical midpoint when the height
+difference is even, or half a coordinate unit above it when the
+difference is odd. This is a derived result for exactly
+representable coordinates. Subsequent clipping and drawn output
+remain untested.
