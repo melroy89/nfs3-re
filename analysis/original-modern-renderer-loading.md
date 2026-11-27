@@ -877,4 +877,4 @@ Following each renderer profile's `File=` value and comparing the selected paylo
 | 1.6.0 | None | None |
 | 1.6.1 | None | All eight |
 
-In particular, the selected renderer DLLs in 1.6.0 match their 1.5.3 counterparts byte for byte. Renderer behavior can still change across that boundary through executable callers, settings and device state. The table dates package payloads and leaves the individual instruction changes to the paired driver reports.
+From 1.5.3 to 1.6.0 all eight selected DLLs and all eight shipped `thrash.ini` profiles match byte for byte, as does the packaged `nfs3.ini`. The nGlide dependency also matches. The auxiliary dgVoodoo `glide3x.dll` changes from 83,456 to 89,600 bytes and is then retained in 1.6.1. See the [dgVoodoo package audit](original-modern-dgvoodoo-version-history.md) for its product version and setup binary. This separates the 1.6.0 executable and dgVoodoo dependency changes from any change to the eight shipped adapter DLLs or their profiles. The comparison covers named archive members. Effective installed settings and runtime results remain outside it.
