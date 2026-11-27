@@ -96,6 +96,16 @@ For both draw calls the changed immediates occupy stack arguments 5 and 11, coun
 
 Each destination is offset `0x18` within its 32-byte vertex record, in vertices 0 and 3 of the local quad starting at `[EBP-0x66]`. This identifies the affected vertex field in the original and final draw helper. In final 1.6.1, the submitter at `004db365` passes all four vertex pointers to `004c12e0`. On its all-zero-outcode path, the latter rewrites depth at vertex offset `0x08` but leaves offset `0x18` intact before calling slot `009ef94c` at `004c1433`. The [renderer export mapping](detailed-analysis-notes.md#pursuit-marker-backend-quad-export-boundary) identifies that slot as `_THRASH_drawquad@16`. Thus an unclipped submission hands the four changed values to the renderer in their respective quads. The partial-clipping path and visible sample remain outside this check.
 
+The hosted original and all twelve retained Modern EXEs match over the following three ranges. Read the half-open ranges by PE RVA to reproduce the SHA-256 checks.
+
+| VA range | Contents | SHA-256 |
+|---|---|---|
+| `004db000..004db373` | Complete quad builder | `78c85956a5a4b65f73694fadd852de3a7d2d038ab52e40ede6b66a8ad7cb0eec` |
+| `004d5740..004d57c0` | Initial four-vertex template | `6ef7a35e56bdfbf063a53c31a6e5d36a42c5da90a26b747d4797775623476dc3` |
+| `004c12e0..004c143f` | Quad admission and unclipped submission | `c321e05984fc08f9753450bde36d7a2b27b7450a2946b8aa7c4038a06a602a6a` |
+
+Both edits to the dialog's texture coordinates therefore change arguments to the same builder and unclipped submission instructions. The comparison leaves runtime view state and partial clipping open.
+
 In the packaged 1.6.1 DX8 driver (SHA-256 `ddb8a55514bc650384e349cf3830946c149f71234e90a41327f69aca793e81b8`), that export at `60002790` copies input vertices to the vertex buffer using the configured stride. The first copy starts at `60002872`; the other copies use consecutive positions at the same stride. The per-vertex adjustment at `60001ff0` writes X/Y and can write diffuse and specular, leaving `+0x18` intact. The [DX8 format and submission analysis](original-modern-renderer-texel-alignment.md) verifies the 32-byte `0x1c4` format: four position floats, diffuse and specular DWORDs, then one texture-coordinate pair. In that format, `+0x18` is the first texture coordinate (U). The dialog changes the U coordinate on one edge of each quad on this path. No actual format selection, clipping outcome or rendered sample was observed.
 
 **Bounded work status: done; confidence: verified static initializer/consumer relationship and renderer constants.** Actual text-entry behavior, input limits/aliases, dialog-type coverage, draw-argument interpretation and rendered output remain untested. No target execution, Ghidra writes or reconstruction edits were performed. Preserve the original's replace-first policy or Modern's append policy as appropriate rather than silently choosing a preferred UX.
