@@ -1234,7 +1234,7 @@ The following original and official 1.6.1 instruction ranges match and contain n
 
 | Compared span (exclusive end) | Next dependency |
 |---|---|
-| `004cc870..004cc88b` | Poll `004ead90`, with callback removal and termination on the alternate path |
+| `004cc870..004cc88b` | Deselect raster window via `004ead90`, unregister the callback, then enter termination |
 | `004e6d68..004e6d78` | Call `004e8320` |
 | `004e85a8..004e85b4` | Integer flag helper `004f9070..004f908b` |
 | `004f0d20..004f0d98` | Queue helpers and indirect call through record offset `+24h` at `004f0d77` |
@@ -1243,3 +1243,5 @@ The following original and official 1.6.1 instruction ranges match and contain n
 The `004e85a8` route has no x87 operation through its only local callee. For the other entries the matching local code identifies where to trace next. In particular, the queue-record callback is a separate indirect edge from the scheduler's own callback table. A match at the scheduler entry does not bind that second target.
 
 The full Pathfinder audio callback `004e6d68..004e6d92` and its three direct callees match between the original and final Modern. All four local bodies use integer instructions. The short return reads the stream end-chunk count through `004e8320..004e8326` and returns zero when it is below the signed threshold at `005645c8`. That route ends after the getter, with no x87 access. The other route queries the stream via `004e7ce0..004e7d1b` and can advance its state through `004e6be0..004e6d66`. Those bodies reach synchronization and stream-queue helpers, respectively. Their byte matches establish retained local decisions. The longer route's transitive x87 effects and whether the callback is active at race entry remain unresolved.
+
+The matched `004cc870` callback is a window-quit path. After the raster deselection call at `004cc873` returns, it unconditionally unregisters itself at `004cc87d` and calls the [process termination thunk](original-modern-startup-requirements.md#corruption-diagnostic-callers-supply-zero-or-a-language-value) at `004cc882`. Both executable thunks at `004f2a7d..004f2a84` match. The trailing RET is outside a normal continuing race path. The raster deselection can still invoke a runtime handler before exit, so this classification establishes the control-flow boundary without assigning an x87 contract to that handler.
