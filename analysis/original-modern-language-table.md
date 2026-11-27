@@ -380,8 +380,24 @@ In the hosted original, a linear `objdump -d -Mintel` scan finds one decoded ope
 
 The next slot, `007a2734`, receives processed record 2 (the third nonempty result) by the same indexing rule. The original music loader pushes that slot at `00410214` and passes it with the format `%stemp.mus` at `00536880` to `004df690` at `00410222`. This establishes a path prefix from a separate installer record. The second record controls admission via the flag. The third supplies the prefix for this temporary music filename. See the [music-copy comparison](original-modern-music-selection.md) for Modern's source-file path. Actual installer record contents and effective filesystem paths remain unverified.
 
-### Swedish text packaging and local installation
+### Packaging and entry counts across releases
 
-The original and final language loaders both map ordinal 5 to `text.swe`. The retained Modern archives through 1.3.1 have no direct `fedata/text/text.swe` member. Version 1.4.0 includes it, and the decoded member bytes change at 1.5.0, 1.5.1, 1.5.3 and 1.6.0. The 1.5.1 and 1.5.2 member bytes match, as do 1.6.0 and 1.6.1. Reproduce with `7z l -slt` and hash the output of `7z x -so <archive> fedata/text/text.swe` for archives containing that member. This dates packaging and byte changes. Older installations could already have supplied the file separately.
+None of the six `fedata/text/text.*` language members appears in the retained 1.0.0–1.3.1 archives. All six appear from 1.4.0 onward and follow the same byte-change boundaries.
+
+| Modern release | Entries per language | Member bytes compared with the previous retained release |
+|---|---:|---|
+| 1.4.0 | 1,933 | All six first appear |
+| 1.5.0 | 1,936 | All six change |
+| 1.5.1 | 1,941 | All six change |
+| 1.5.2 | 1,941 | All six match |
+| 1.5.3 | 1,947 | All six change |
+| 1.6.0 | 1,955 | All six change |
+| 1.6.1 | 1,955 | All six match |
+
+The comparison verifies all 42 packaged tables. The first little-endian DWORD gives the byte length of the offset array. In each file, offsets increase strictly and each string's first NUL ends exactly at the next offset or at EOF. Reproduce with `7z l -slt`, then hash each decoded member and validate its offset array. These counts describe packaged entries. They leave the meaning of individual changes and runtime compatibility open.
+
+### Local Swedish text installation
+
+The original and final language loaders both map ordinal 5 to `text.swe`. Older installations could already have supplied this file separately from the patch archive.
 
 The local Wine copy at `FEDATA/TEXT/text.swe` matches the 1.6.1 archive member (SHA-256 `c64f1ac7be5bfe762c9b6a961415c994e132c66dc3660bd5763d54eeedfc9b9a`). The same installation has [English speech banks and no Swedish speech directory](original-modern-sound-bank-language.md#local-installation-has-english-banks-and-no-swedish-speech-directory). Those files are consistent with the executable's independent Swedish text and English speech requests. Actual loading and display remain untested.
