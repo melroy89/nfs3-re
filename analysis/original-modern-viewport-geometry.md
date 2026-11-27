@@ -482,3 +482,15 @@ difference is even, or half a coordinate unit above it when the
 difference is odd. This is a derived result for exactly
 representable coordinates. Subsequent clipping and drawn output
 remain untested.
+
+On the projection builder's two-tangent branch
+(`004bf2fc..004bf320`), logical height from `[EBP+0x1c]`
+is divided by the tangent computed at `004bf2ff`. The builder
+negates and halves that result for the vertical scale at
+`005600a0`. With the same finite nonzero tangent and the
+fixed 385 × 96 example above, moving from logical height
+180 in 1.4.0 to 210 in 1.5.0 increases the magnitude of
+this scale by approximately 16.7%, before binary32 rounding.
+This quantifies the projection effect of the height change
+under fixed angles. It leaves actual camera inputs, clipping
+and visible proportions untested.
