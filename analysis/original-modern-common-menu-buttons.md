@@ -497,3 +497,13 @@ bytes using each member's exact stored path. This supplies a hosted
 original counterpart for all 52 pairs in the visible-count audit.
 Archive omission leaves installation retention and executable
 reachability unresolved.
+
+Across all twelve retained Modern Patch archives, the 28 omitted
+basenames are already absent in 1.0.0. That first archive ships
+51 of the final 52 files and omits `cedbasic.mnu` as well.
+The hosted original includes `CEDBASIC.MNU`. Version 1.1.0
+adds the patch copy at `fedata/menus/cedbasic.mnu`, and all
+retained builds through 1.6.1 ship the same 52 basenames.
+This dates the change in the archive member list. Individual
+file contents and the installed menu selected by the executable
+are separate questions.
