@@ -122,4 +122,8 @@ The Setup wrapper calls `004483a0` at `00473283` immediately before loading the 
 | 1.1.0 | `MUL DWORD PTR [ESI+8]` at `004483df` | Replaces EDX with the high DWORD of the unsigned product. For ordinary display dimensions the high DWORD is zero. |
 | 1.2.0 | `IMUL EAX,DWORD PTR [ESI+4]` at `004483df` | Writes only the low product in EAX and leaves EDX intact. |
 
-The preceding Setup helpers at `004b56d0` and `004bee80` save and restore EDX, as does the mode preparation entry `004482c0`. On the path where recalculation is skipped, there is no subsequent EDX write before the menu-loop call. In 1.1.0 that path can pass zero even when the caller selected a game-mode history list. In 1.2.0 it passes the selected pointer, allowing the name-list restore to enter the corresponding mode menu. This supplies a static mechanism for MP120-009 on the checked path. Mode recalculation, actual history resolution and live menu behaviour remain separate.
+The preceding Setup helpers at `004b56d0` and `004bee80` save and restore EDX, as does the mode preparation entry `004482c0`. If the mode comparison requires HUD recalculation, both builds call `00485680` at `004483f9`. The callee saves EDX at `00485682` and restores it at `00485872` before returning at `00485875`. It therefore preserves the value supplied **after** the multiply. The branch that skips recalculation goes directly to the return at `004483fe`.
+
+Both paths can pass zero in 1.1.0 even when Setup selected a game-mode history list. In 1.2.0 both pass the selected pointer through to the menu loop on normal return, allowing the name-list restore to run. This supplies a static mechanism for MP120-009. Actual history resolution and live menu behaviour remain unverified.
+
+To reproduce, use the 1.1.0 and 1.2.0 executable hashes pinned in the [historical mode audit](scripts/audit_mode_capacity_history.py) and disassemble `004483dc..004483ff` and `00485680..00485876` with `objdump -d -Mintel`.
