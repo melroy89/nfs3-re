@@ -414,3 +414,18 @@ The retained dgVoodoo, Glide3x and nGlide `voodoo2a.dll` copies match within eac
 The adapter's triangle, quad, clip and state-setting entry regions are byte-identical in `60002830..60003270` and `600032ed..60004000`. The intervening `_THRASH_lockwindow@0` path is one concrete change. After the successful first lock and allocation of the 24-byte output, 1.4.0 writes literal 4 at output offset `+8` at `600032cb`. In 1.5.0, `600032cc..600032d4` writes the value from `600127dc`. The depth selection block at `600021ef..60002223` sets that value to 5 for depth 32 and 4 otherwise. The selected write therefore changes a lock descriptor field for 32-bit mode, alongside the separately documented static import change. No lock caller or frame was exercised.
 
 These findings narrow the [wide-angle horizon investigation](original-modern-projection.md#the-150-wide-angle-edge-glitch-remains-unattributed). Adapter state and inputs can change even where draw instructions match. The dgVoodoo and nGlide provider DLLs remain separate binaries and their implementation changes are outside this comparison.
+
+### The bundled Glide providers retain their import and export names
+
+The 1.4.0 and 1.5.0 `drivers/dgvoodoo/glide3x.dll` payload SHA-256 values are `8cfb00c6de02b8fb8eb255b7f4d8053eefea7aadf1dd2de32674cbc269ebe525` and `541b3b367e2fecf6b982ffc1dc300960f3f2fdeeda203186b361fe3608e757c9`. The corresponding `drivers/nglide/glide3x.dll` hashes are `16865452af3bc41ae203f9f11808bd94820477070c011790b5fc66ad0e2963ad` and `87842a85d1bfda4217e691a9d4412915c74905eed818c5a727e2f2d6b814edb6`.
+
+For each pair, the parsed normal-import identities (DLL, symbol name or ordinal) match. The dgVoodoo providers share 122 export names and ordinals, with 98 export RVAs changed. The entries are in packed `.MPRESS1` data, which leaves semantic comparison pending. The nGlide providers share all 129 export names, ordinals and RVAs. Four nGlide API entries keep their relative-jump thunks in place but point 16 bytes earlier into the later executable:
+
+| nGlide export | 1.4.0 target RVA | 1.5.0 target RVA |
+|---|---:|---:|
+| `_grClipWindow@16` | `103a0` | `10390` |
+| `_grDrawTriangle@12` | `1db40` | `1db30` |
+| `_grDrawVertexArray@12` | `22ef0` | `22ee0` |
+| `_grDrawVertexArrayContiguous@16` | `23430` | `23420` |
+
+The first 64 bytes at each paired nGlide target differ at two positions. Reproduce with `pefile` export/import tables and decode each initial `E9` as a signed rel32 from the following instruction. This localizes where to compare clip and draw implementations. Stable export coordinates alone do not establish stable implementation or identify the horizon correction. Neither provider was loaded.
