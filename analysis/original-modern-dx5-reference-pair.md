@@ -245,3 +245,15 @@ zero. The original reference and final DX5 selector share this
 policy. The EXE's device-number parsing and storage changed
 separately, as traced in the [renderer lifecycle comparison](original-modern-renderer-lifecycle.md#the-140-startup-check-uses-the-older-initializer-target).
 Actual enumeration and hardware selection remain unverified.
+
+All 12 retained Modern archives export the selector at PE RVA
+`1654h`. Its complete 224-byte body is byte-identical, with
+SHA-256 `b4aafda0b173a1003098db586d8c5911a8d4a22b52e59bdbede77ea32faf70a9`.
+This includes 1.0.0's root `d3da.dll`, 1.1.0's root `dx5.dll`,
+1.2.0–1.3.1's `drivers/dx5/dx5.dll`, and
+1.4.0–1.6.1's `drivers/dx5/dx5a.dll`. Resolve
+`_THRASH_selectdisplay@4` from each member's export table and read
+`e0h` bytes from its RVA to reproduce the comparison. The
+out-of-range fallback survives throughout these releases. The
+enumerated device count and the outcome of opening the selected
+adapter depend on code outside the compared body.
