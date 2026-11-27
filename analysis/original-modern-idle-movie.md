@@ -142,3 +142,18 @@ The captured1.5.2 key-read branch performs no singular-key retry. Its integer re
 The final README’s v1.2.0 example uses `NFS3_NOMOVIE`, matching the historical singular key. It must not be presented as proof that final1.6.1 queries that exact spelling: the final selected reader receives `NoMovies`. No alias between those names is established by this path. Other flag producers remain possible, so an apparent runtime movie-disable outcome alone would not establish which key was consumed.
 
 All inspected setting branches are **set-only locally**: a nonzero result sets bit11; zero skips the write instead of explicitly clearing an existing bit. Preserve that accumulation behaviour and the chosen version’s spellings in reconstruction. Replacing the whole flag DWORD, clearing the bit on zero, inventing a legacy-name alias or treating the playback wrapper as the sole disable gate would change the observed contracts. Actual profile files, initialization/flag lifetime, movie presence, decoder results and1.0.0 introduction remain separate evidence requirements.
+
+### Movie display conversion bodies match across all retained releases
+
+Extract the root `nfs3.exe` from the hosted reference and all 12 retained
+Modern archives, including [1.0.0](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames).
+For each of the five bodies in the table above, subtract image base
+`00400000` from the start VA and read the PE bytes through the exclusive
+end. Every body matches the reference byte for byte in every release.
+
+The [tier selection change](original-modern-cpu-tier.md#the-movie-conversion-tier-changes-in-100)
+is already present in 1.0.0. This ties MP100-019 to a changed choice
+among the existing conversion paths. The byte comparison covers
+the five display bodies. Decoder behavior, callees outside those
+ranges, backend selection on a live system and resulting image
+quality remain outside this check.
