@@ -188,14 +188,14 @@ Early complete33-byte helper`004b62a0..004b62c1` sets EBP to section`NFS3`, EBX 
 
 Early language selector`004a6eb0..004a6f0a` supplies key`Language`, default`english`, destination`007a2634` and capacity8 to`004fb704`. That complete21-byte wrapper calls GetPrivateProfileStringA using the same filename buffer. The selector then normalizes/compares language names and publishes the selected index; full string/failure behavior remains governed by the linked language analysis. Filename-buffer initialization is a separate startup-path requirement; a static buffer address is not an observed valid filename.
 
-Final's checked config tail`00472b1d..00472b2b` clears ECX and writes zero to`006fbb54`. The former early33-byte RemoteOnly helper span is NOPs, and the final file contains no case-insensitive ASCII`RemoteOnly` literal. This is a local changed producer plus a bounded string census, **not proof that every later alias/bulk write or computed setting name is absent**. The exact intervening release removing RemoteOnly is not dated here.
+Final's checked config tail`00472b1d..00472b2b` clears ECX and writes zero to`006fbb54`. The former early33-byte RemoteOnly helper span is NOPs, and the final file contains no case-insensitive ASCII`RemoteOnly` literal. This is a local changed producer plus a bounded string census, **not proof that every later alias/bulk write or computed setting name is absent**. The next section dates the removal to 1.4.0.
 
 A literal-search qualification matters: early1.1.0 lacks the lowercase filename literal but retains **one case-insensitive INSTALL.WIN occurrence**, within`RENDITION not yet supported (INSTALL.WIN)`. This diagnostic is not itself a file-open call, nor is its presence evidence that the new INI path still depends on that file. Its complete caller/lifetime is not qualified by this audit. Final has no case-insensitive ASCII occurrence. Original file reading is established through the captured open/read/copy path, not merely its filename string.
 
 **MP100-022 advances to partial historical support:** the original installer-record settings path is replaced by early INI selectors, while the old bullet's “Language and RemoteOnly moved to INI” must not be presented as final Modern's configuration contract. Actual startup without the file, every file-access path, original file/read failures, later gate writers and1.0.0 introduction remain unverified. `RemoteOnly` is the observed key name; it is not independently equated to multiplayer or a particular external-media arrangement. No installer file, INI, game, API, instruction probe or Ghidra database was executed or changed.
 
 
-## RemoteOnly reader removal is dated131 to140
+## RemoteOnly reader removal is dated 1.3.1 to 1.4.0
 
 The [historical removal audit](evidence/audits/remoteonly-removal-history.json), reproduced with `python3 analysis/scripts/audit_remoteonly_removal_history.py`, pins both author-hosted archives, EXEs and shipped `nfs3.ini` members. It dates the earlier110/final observation above to131→140.
 
@@ -211,6 +211,20 @@ The131 wrapper `004fb6f0..004fb713` includes shared override logic before GetPri
 
 MP140-067 gains partial static support for removing this named setting/reader. The vendor adjective “useless” is not established. Literal absence does not exclude computed names, and this does not prove all writers of the destination, downstream media/network effects, INI I/O success or whole-game startup. No target/API instructions were executed and no executable or saved database changed.
 
+
+### Direct references to the media/audio gate persist after removal
+
+A linear `objdump -d -Mintel` scan of the supplied original and all eleven retained Modern `nfs3.exe` archive members counted decoded operands explicitly naming `0x6fbb54`. For every build the config-tail store was the only direct write found. The other decoded references were loads or comparisons.
+
+| Build | Direct reads or comparisons | Direct store |
+|---|---:|---|
+| Supplied original and retained 1.1.0–1.3.1 | 24 | `00472b43` |
+| 1.4.0 | 22 | `00472b43` |
+| 1.5.0 and 1.5.1 | 20 | `00472b24` |
+| 1.5.2 | 20 | `00472b20` |
+| 1.5.3, 1.6.0 and 1.6.1 | 18 | `00472b25` |
+
+The 1.4.0 change therefore removes the documented INI source while leaving many consumers in the executable. Counts describe decoded direct operands. They do not establish reachability or account for computed addresses, aliased or bulk writes, or instructions missed by linear disassembly.
 
 ## Six language tables enter the140 package
 
