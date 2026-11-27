@@ -862,3 +862,19 @@ The first retained DX8 package is 1.1.0, with a root-level DLL. Every packaged D
 | 1.6.1 | `drivers/dx8/dx8a.dll` | `ddb8a55514bc650384e349cf3830946c149f71234e90a41327f69aca793e81b8` |
 
 Reproduce with `7z l -slt` and hash the named member extracted by `7z x -so`. Inspect `drivers/dx8/thrash.ini` when present. This dates the package defaults and identifies the DLL baselines for the separate instruction comparison. It leaves runtime fog behavior in 1.1.0 and under modified profiles open.
+
+### Configured renderer changes by package
+
+Following each renderer profile's `File=` value and comparing the selected payloads gives the history below for the eight renderer families in the final package. This follows the active file named by each shipped profile, so auxiliary Glide DLLs are outside the table.
+
+| Release | Newly present profile | Existing configured DLLs whose payload changes |
+|---|---|---|
+| 1.4.0 | Baseline with seven profiles | Baseline |
+| 1.5.0 | DX7 | dgVoodoo, DX5, DX6, DX8, Glide3x, nGlide, SoftTri |
+| 1.5.1 | None | DX5, DX6, DX7, SoftTri |
+| 1.5.2 | None | None |
+| 1.5.3 | None | dgVoodoo, DX5, Glide3x, nGlide, SoftTri |
+| 1.6.0 | None | None |
+| 1.6.1 | None | All eight |
+
+In particular, the selected renderer DLLs in 1.6.0 match their 1.5.3 counterparts byte for byte. Renderer behavior can still change across that boundary through executable callers, settings and device state. The table dates package payloads and leaves the individual instruction changes to the paired driver reports.
