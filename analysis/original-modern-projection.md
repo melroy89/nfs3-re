@@ -40,6 +40,12 @@ The clip target dimensions are copied from the selected driver's mode record in 
 
 Thus an identical selected mode record yields the same target bounds at these writes. A comparison based on a menu index alone can still select different records. The [display-mode audit](original-modern-display-modes.md) documents enumeration changes at the same release boundary. A controlled frame comparison should match the actual width, height, depth and refresh, then record the physical viewport and emitted clip endpoints. This comparison does not establish runtime mode selection or exhaust writes through aliases.
 
+### Track sky assets and loader at the 1.5.0 boundary
+
+Neither patch archive ships a `SKY.FSH` member or a track data directory. The only 1.5.0 `gamedata/` file is `dashhud/hud98.fsh`; 1.4.0 has no files under `gamedata/`. This can be checked with `7z l -slt` against the pinned archives. The nine installed track sky files `TRK000..TRK008/SKY.FSH` also match their corresponding local `gamedata_org/Tracks` backup copies byte for byte. That local backup comparison does not establish retail provenance.
+
+The loader envelope `0047ac30..0047ae10` and procedural grid initializer `0047ae10..0047b347` match across the two EXEs. The caller at `004789cf` still reaches the loader, and the same format string at `0053b340` requests the selected track's `sky.fsh` under the configured path. The patch therefore does not supply replacement track sky files, and these local loading/initialization bodies are unchanged. Runtime condition selection, downstream rendering, and the separate [mirror grid admission change](original-modern-environment-grid.md#mirror-admission-dates-to-modern-150) still matter.
+
 ## Automatic angle producer and selection
 
 Modern helper **`004dbc48`** loads signed DWORD width/height from `006fd1e4/006fd1e8`, divides width by height on x87, multiplies by file-backed float 0.75, applies FPATAN with 1, doubles and multiplies by float `57.295780181884766`. Ordered comparisons clamp the result to file-backed float limits **90** and **107**, then store binary32 at **`0055fecc`**.
