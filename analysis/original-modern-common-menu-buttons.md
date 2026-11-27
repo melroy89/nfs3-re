@@ -477,3 +477,23 @@ with `7z l -slt`, extract each uppercase member with `7z x -so`
 and compare to the exact local basename. This ties the 80 matching
 files to the hosted artifact. Retail disc provenance and the
 selection of active files at runtime remain open.
+
+### Official 1.6.1 menu archive coverage
+
+Pairing by case-insensitive basename across the two archives yields
+52 shared menus, all with different contents. The official 1.6.1
+archive has no menu basename absent from the hosted original, and
+28 hosted originals have no counterpart in the patch archive.
+Those 28 are `ad`, `aituner`, `ced01dbg`, `ced02dbg`, `ced03dbg`,
+`ced04dbg`, `ced05dbg`, `ced06dbg`, `ced07dbg`, `ced2bdbg`,
+`ced2cdbg`, `ced2ddbg`, `ced3bdbg`, `ced3cdbg`, `ced3ddbg`,
+`ced4bdbg`, `ced4cdbg`, `cedmain`, `instcar`, `makecsv`,
+`mspause`, `msquitto`, `perdata`, `pshudpos`, `psoption`,
+`psoptn2`, `pstats` and `quitto` (all `.mnu`).
+
+To reproduce, list the `fedata/menus` members of both archives with
+`7z l -slt`, pair unique basenames ignoring case and compare extracted
+bytes using each member's exact stored path. This supplies a hosted
+original counterpart for all 52 pairs in the visible-count audit.
+Archive omission leaves installation retention and executable
+reachability unresolved.
