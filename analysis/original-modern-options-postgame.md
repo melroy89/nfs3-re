@@ -112,3 +112,14 @@ The menu-history helpers are also unchanged in all four early images. Compare th
 Linear disassembly of 1.1.0 and 1.2.0 finds one decoded direct call to name-list restore, at `0044b2fa`. The menu loop saves incoming EDX in ESI at `0044b23c`, clears its history slots and calls restore only if ESI is nonzero. Both EXEs have the same two decoded direct callers of the loop: Setup at `0047328d` and Postgame at `0047331a`. Postgame explicitly supplies EDX zero in both, so it bypasses name-list restore on entry. The Setup path calls other helpers before entering the menu loop, so its effective EDX value needs a separate register trace. This direct-call census leaves indirect entry paths outside its scope.
 
 The Setup wrapper does prepare candidate history inputs in both 1.1.0 and 1.2.0. The three 12-byte tables at `004721c0`, `004721cc` and `004721d8` resolve to `{main, setup, NULL}`, `{mainsplt, setup, NULL}` and `{mainmult, setup, NULL}`, respectively, in both builds. The wrapper copies them to its frame at `004730db..00473103`. With `0055b03c` zero, the branches at `004731e7` and `004731ef` select the split-screen and single-player lists in EDX according to `006fd3b0`. Both jump past the separate EDX-clear entry at `00473265`. This establishes identical authored histories and local selection branches. The incoming state and the remaining register trace through display setup still govern which pointer reaches the menu loop.
+
+### The display helper stops overwriting the history pointer in 1.2.0
+
+The Setup wrapper calls `004483a0` at `00473283` immediately before loading the menu name and entering the menu loop. The selected-mode helper at `004483dc` changes its multiply at this release boundary:
+
+| Release | Mode product instruction | Effect on EDX |
+|---|---|---|
+| 1.1.0 | `MUL DWORD PTR [ESI+8]` at `004483df` | Replaces EDX with the high DWORD of the unsigned product. For ordinary display dimensions the high DWORD is zero. |
+| 1.2.0 | `IMUL EAX,DWORD PTR [ESI+4]` at `004483df` | Writes only the low product in EAX and leaves EDX intact. |
+
+The preceding Setup helpers at `004b56d0` and `004bee80` save and restore EDX, as does the mode preparation entry `004482c0`. On the path where recalculation is skipped, there is no subsequent EDX write before the menu-loop call. In 1.1.0 that path can pass zero even when the caller selected a game-mode history list. In 1.2.0 it passes the selected pointer, allowing the name-list restore to enter the corresponding mode menu. This supplies a static mechanism for MP120-009 on the checked path. Mode recalculation, actual history resolution and live menu behaviour remain separate.

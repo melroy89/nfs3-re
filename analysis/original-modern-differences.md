@@ -1066,7 +1066,7 @@ Generated from the hash-pinned English README and the catalog by `python3 analys
 | MP120-006 | Thrash driver is loaded only once. | Partial |
 | MP120-007 | When game can't init thrash driver error message box is displayed. In the original version there was no error reporting. | Partial |
 | MP120-008 | Resolutions count limit was extended up to 100. | Partial |
-| MP120-009 | Fixed a bug of the first release of this patch: returning to the main setup menu instead of a menu of a current game mode. | Claimed |
+| MP120-009 | Fixed a bug of the first release of this patch: returning to the main setup menu instead of a menu of a current game mode. | Partial |
 | MP120-010 | Added an ini setting DirectDrawLagFix which fixes performance problems of DirectX 5/6/7 in Windows 8+ via enabling “DXPrimaryEmulation -DisableMaxWindowedMode” compatibility mode (enabled by default). | Partial |
 | MP120-011 | Added an ini setting KeyboardHook which allows to disable keyboard hook that has been used by the game for blocking Win key and keystrokes like Ctrl+Esc, but this code doesn't work in Windows 7+ so it is better to disable it (disabled by default). | Static |
 | MP120-012 | Slightly better multilanguage support. When language directory is absent in the ./GameData/Audio/Speech/ directory the game doesn't crash and uses sound files from the English subdirectory. Also Swedish language can use own speech sounds (original game uses English sounds for it) now. The name of the language directory have to be Swedish, and the one-letter code in file names is W. | Partial |
