@@ -399,3 +399,15 @@ round-to-nearest at the final dispatcher reset (`004a3ea0`).
 This supplies a concrete upstream source for the nearest-rounding
 example. The trace does not establish that the mode survives every
 call between dispatch and rendering or writeback.
+
+### The shipped 5% step and later 1% snap have separate release dates
+
+All six sliders in the archived `fedata/menus/audio.mnu` and the `SFX_INTENSITY` slider in `advgrph.mnu` change as follows:
+
+| Release | Audio `r0_step` | Intensity `r0_step` | `snap` on all seven |
+|---|---:|---:|---:|
+| 1.5.1 | 0.01 | 0.10 | 0 |
+| 1.5.2 | 0.05 | 0.05 | 0 |
+| 1.5.3–1.6.1 | 0.05 | 0.05 | 0.01 |
+
+The full single-slider step handler `0046a860..0046a97c` matches byte for byte from 1.5.1 through 1.6.1. With the authored values present at the two instance offsets, it selects the 5% fallback in 1.5.2 and the 1% snap field in 1.5.3 onward. The two authored changes therefore explain different historical outcomes under the same handler. Reproduce by extracting the two menu members and EXE from each retained archive and comparing the slider blocks and PE RVA `0x6a860` for `0x11c` bytes. Live instance values and input delivery remain unverified.
