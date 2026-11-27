@@ -367,6 +367,8 @@ The archived 1.1.0 `dx8.dll` (SHA-256 `c58ffb6810ca335602766d9179f2fcd8ecf9c9127
 
 The two colour-depth adjustment helpers and depth/stencil selection also match across 1.1.0, 1.4.0 and 1.5.0. Concatenating `60004010..6000413b`, `60004140..6000420b`, `600043e0..60004521` and the jump table `60004524..6000454c` in address order gives SHA-256 `0a478f721366b138c893ee31112ec3c6d71a962b27a1b9f64d310cdbe83958b4` in all three DLLs. The checked `(4, 2, 1)` game call selects the D16-first depth/stencil candidate order through its third argument, while the back-buffer colour depth follows the separate adjustment rules below. Where the windowed helper succeeds, it uses the GDI-reported colour depth. The other helper can fall back from an enumerated 32-bit colour row to 16-bit if its format checks require that fallback. Neither path establishes the format accepted by an actual device.
 
+The worker chooses the first adjustment attempt at `60003be8`. A nonzero DWORD at `6001ed50` permits the GDI-based helper at `60003c04`. A zero flag or a zero helper return takes the format-selection helper at `60003c26`. If that helper also returns zero on this route, execution branches to `60003fdc` before building the presentation record. A decoded write at `60006431` copies a caller-supplied value into the gate. The state-setting route and which value the game supplies at menu startup still need verification.
+
 This gives MP110-009 partial static support for a concrete provider mechanism. The record selected at menu startup, the final back-buffer format and the reported visual repair remain unverified. A 32-bit row in the provider catalog alone cannot settle those questions.
 
 ### DX8 activation already contains16-bit requests before150
