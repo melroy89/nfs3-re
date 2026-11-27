@@ -114,7 +114,7 @@ The [eleven-audit checkpoint](evidence/validation/later-static-mechanisms-checkp
 
 | Investigation | Verified local mechanism/history | Remaining limit |
 |---|---|---|
-|[Music file copying](original-modern-music-selection.md#original-temporary-music-copy-is-removed-from-the-inspected-loading-route) |761-byte original copy routine replaced by NOPs; final requests source`.mus` path |Successful playback, complete I/O handling and fixed10MiB/performance claims untested |
+|[Music file copying](original-modern-music-selection.md#original-temporary-music-copy-is-removed-from-the-inspected-loading-route) |1.0.0 bypasses the copy and requests the source `.mus` path. 1.5.0 clears the temporary filename. 1.5.3 pads the old loader with NOPs and clears its two source-name slots |Successful playback, complete I/O handling and fixed10MiB/performance claims untested |
 |[Progress estimator](original-modern-loading-timing.md#smoothing-is-branch-specific-not-a-monotonic-five-point-invariant) |50ms admission and branch-specific five-point fallback; exact100 bypasses throttle |Visible smoothness and monotonic lifecycle not established |
 |[Loading artwork](original-modern-loading-artwork.md#early-modern-already-has-the-six-tile-loading-artwork-path) |Early1.1.0 already has the six-tile path retained in final |Better visual quality and separate sprite-edge fix remain unverified |
 |[Race-dialog preselection](original-modern-race-dialog.md) |1.1.0→1.2.0 introduces1↔3 remap; checked direct callers establish ordinary order and helper stores/clamps row index |Indirect/restricted admission and live menu interaction remain separate |

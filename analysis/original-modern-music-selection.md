@@ -476,7 +476,7 @@ through 1.6.1. Read the ranges from each PE by RVA to
 reproduce the comparison. Actual disk I/O, playback and
 performance remain unverified.
 
-A case-insensitive ASCII scan finds one `temp.mus` occurrence in each retained 1.0.0–1.4.0 executable, in the original format slot at `00536880`. Starting with 1.5.0, the ten bytes in that slot are zero and the literal is absent through 1.6.1. This distinguishes three changes: the 1.0.0 copy bypass, the 1.5.0 literal removal and the 1.5.3 retirement of the old loader.
+A case-insensitive ASCII scan finds one `temp.mus` occurrence in each retained 1.0.0–1.4.0 executable, in the original format slot at `00536880`. Starting with 1.5.0, the ten bytes in that slot are zero and the literal is absent through 1.6.1. The old source-name slots at `00536898` and `005368a4` still resolve to `rock.mus` and `tech.mus` through 1.5.2. Both start with NUL in 1.5.3–1.6.1. The copy bypass thus precedes removal of the temporary filename in 1.5.0 and clearing of the source-name slots alongside the old loader in 1.5.3. These are fixed-slot observations for the two source names.
 
 In 1.5.0–1.5.2 the direct call at `00477fe1` still reaches
 the old loader at `00410030`. The source-building path
