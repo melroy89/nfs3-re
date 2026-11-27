@@ -69,3 +69,20 @@ hosted reference, 1.5.3 and final across `004f3fec..004f418b`.
 This verifies that the changed byte survives stream construction.
 The eventual gain application and audible output still need separate
 evidence.
+
+### Stream startup passes the parameters into voice setup
+
+On the stream-header path, `004f3c3f` supplies context `+3ch` in
+ECX to `005112d0`, the voice setup routine. At `005112fd..00511309`
+that routine passes the config pointer in EAX and literal 1 in EDX
+to `00523f90`, with its local output record addressed in ECX
+afterward. The config helper explicitly checks the signed byte at
+input offset 8 at `00523fa4`, branching for negative values.
+The movie override produces values in 0–127, so its byte alone cannot
+take that negative-value branch.
+
+This is an observed consumer of the saved parameter. The separate
+load of `[EBP+8]` at `005113c1` uses the header pointer that arrived
+in EBX, so it does not by itself establish that the movie's config
+byte is copied into that channel field. The gain calculation and
+backend submission still need a value trace.
