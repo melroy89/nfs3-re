@@ -685,3 +685,14 @@ disassembling the load and export checks and resolving their
 import slots. The API version gate uses an exported function
 return. The new PE version resource is outside that check.
 DLL search results and actual loader acceptance remain untested.
+
+The hosted original, 1.5.3 and final sound DLLs export
+`_iSNDdllversion@0` as ordinal 1 at DLL RVA `0x13c4`.
+The identical 17-byte routine returns `0x100003` in EAX and
+writes `0xffffffff` to DLL VA `0040a8fc` at the preferred base.
+The game therefore receives its expected version from either
+checked DLL if loading and symbol lookup succeed. The call
+also initializes a DLL state cell, which matters for any
+future reconstruction of the interface. Reproduce by resolving
+the named export in each DLL and disassembling its 17 bytes.
+The purpose of that state cell and live loading remain open.
