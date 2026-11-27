@@ -324,3 +324,14 @@ can publish success state after a zero mode return starting
 in 1.5.0, subject to the shared tail returning normally.
 This byte comparison covers the named span, not earlier
 initialization failures or live driver behavior.
+
+The matching writer moves in the same 1.5.3→1.6.0 transition.
+At `004b581b..004b5828`, both parsers pass ESI to the decimal parser
+`004f0430` and store EAX at `004b5822`. The store's destination
+changes from `0055fdbc` to `007a3a70`, matching the changed
+startup read at `0051768b` before invocation of
+`_THRASH_selectdisplay@4`. This verifies the paired writer and
+reader relocation for a parsed device suffix. Earlier uses of
+`007a3a70` include literal stores from renderer setup, so the
+numeric device meaning cannot be carried backward by address.
+Other callers and actual device selection remain unverified.
