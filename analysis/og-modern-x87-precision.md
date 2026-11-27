@@ -792,6 +792,12 @@ selected by an override and any indirect changes during a frame
 remain outside the result. See the
 [retail selector table](original-modern-renderer-initialization.md#original-numeric-selection-before-loading).
 
+### Original direct gate writers and the fatal Rendition path
+
+A linear disassembly of the supplied original finds six explicit stores to `007a3a70`. Five are the common clear and the four renderer-branch stores described above. The sixth, `004b5e24`, follows the Rendition warning and an unconditional call at `004b5e1f` to `004f2a7d`. That thunk enters the [verified termination path](original-modern-startup-requirements.md#corruption-diagnostic-callers-supply-zero-or-a-language-value). The apparent store of 1 after it therefore does not establish a returning renderer setup path. The only decoded direct reads are the race-frame entry and exit comparisons.
+
+On the original replay redraw path the screenshot helper changes `006fd3a0`, while those two comparisons still read the renderer-selected flag. For example, the normal software candidate's zero therefore allows both transitions if the flag stays zero, while the Voodoo candidate's one bypasses both if retained. This is conditional static evidence. It does not cover indirect stores or establish the renderer used during a recorded replay.
+
 ### The flag becomes the adapter index in 1.6.0
 
 Packaged 1.5.2 and 1.5.3 both clear `007a3a70` at
