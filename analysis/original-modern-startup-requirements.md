@@ -378,3 +378,21 @@ diagnostic branch. The hosted original, retained 1.4.0 and
 final EXEs also lack a named `ReleaseDC` PE import. This
 records the checked handle-use sequence. Indirect resolution,
 OS handling and runtime resource impact remain unverified.
+
+### The 1.5.3 startup-fix claim and the PE entry path
+
+For MP153-014, the retained 1.5.2 and 1.5.3 executables have
+the same PE entry RVA `0xf7fa0`, GUI subsystem (2), OS and
+subsystem versions (4.0), DLL characteristics (0) and absent
+TLS directory. At the entry point both contain `e9 fb d8 01 00`,
+which transfers to `005158a0`. The following 81-byte window
+at that target has the same SHA-256 in both builds:
+`1339b4d5414f3df822dafec145982809393a9bc820c019360afebcd4bbc76841`.
+
+Reproduce from the retained archive members with a PE parser and
+read the five entry bytes and 81 bytes at RVA `0x1158a0`.
+These checks narrow the search for the claimed startup fix.
+The entry stub and initial runtime code are unchanged in the
+captured range. Imported targets, called routines, and actual
+startup on the affected systems remain separate questions.
+MP153-014 remains vendor-claimed.
