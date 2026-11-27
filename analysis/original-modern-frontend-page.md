@@ -283,6 +283,8 @@ At their corresponding final scale step, both load binary32 **`007a1b60 + 4*slot
 
 Slot9 retains initial scale bits **`0x3fcccccd`** (binary32 approximately1.6), but changes the DWORD written to **`007a1ac0 + 4*slot`** from **60 to0**, and the DWORD written to **`0055e95c + 4*slot`** from **410 (`0x19a`) to390 (`0x186`)**. Its other inspected state writes remain0 at `007a1ae8 + 4*slot` and3 at `007a1b10 + 4*slot`. These cells participate in animation/update state, but no physical time units or visible smoothing effect are assigned here.
 
+Both constant changes first occur in 1.5.0. Comparing the 63-byte span `004a40f7..004a4136` in the hosted original and all twelve retained Modern executables finds exactly two differing offsets: `004a40fd` changes from `3c` to `00`, and `004a4110` changes from `9a` to `86`. The span matches the original through 1.4.0 and matches 1.5.0 through 1.6.1. This comparison starts after the division, whose inputs and surrounding instructions can change independently.
+
 This provides bounded evidence of changed slot state alongside retained final scaling. It does not yet verify the release-note claim about smoother logo disappearance: the draw/update consumer and time-to-state conversion must be compared before making that attribution.
 
 ## Position-dependent logo fade replaces hard admission cutoffs
