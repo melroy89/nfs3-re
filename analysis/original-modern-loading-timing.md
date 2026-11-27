@@ -190,7 +190,7 @@ The title delay and the race loading budget can therefore be
 configured independently. See the
 [title delay comparison](original-modern-title-delay.md#packaged-title-delay-release-boundary).
 
-### Final executable's fallback for a missing setting
+### Executable fallback for a missing setting
 
 In 1.6.1, the settings loader supplies section `NFS3`, key
 `LoadingSplashTime` and default 5 to `004fb6f0`. The scenario where the
@@ -208,6 +208,24 @@ This separates the shipped INI value, the literal caller default and
 the environment-derived API fallback. The environment value changes the
 fallback supplied to the profile API. Actual handling of missing or
 malformed entries in Windows or Wine was not exercised.
+
+The fallback branch already existed when the setting shipped in 1.4.0.
+All seven retained executables with the setting pass default 5, call the
+same wrapper entry and store its return at `007a27b0`.
+
+| Release | Start of key/default/call/store sequence |
+|---|---|
+| 1.4.0 | `004b561a` |
+| 1.5.0–1.6.0 | `004b560c` |
+| 1.6.1 | `004b5624` |
+
+To reproduce, disassemble 20 bytes from the listed address in each
+retained executable, resolve the key pointer, then check the branch and
+import slot in `004fb6f0..004fb713`. The older lookup-name builder also
+passes its assembled name through `004f93dc` before lookup. The exact
+case-matching behaviour across builds remains outside this check.
+Modern 1.3.1 already has the shared wrapper, but the inspected settings
+loader window `004b5500..004b5800` lacks this caller sequence.
 
 ### Zero loading budget still runs the progress path
 
