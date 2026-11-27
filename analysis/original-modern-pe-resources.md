@@ -29,7 +29,7 @@ Modern additionally has group `14/MAIN.ICO/0` with six entries:
 
 For100..104, the BITMAPINFOHEADER has the stated width and twice the image height for the stored icon/mask layout. For105, the group width/height bytes are zero and the PNG IHDR independently records256×256. Every group entry resolves to an existing icon payload of the advertised byte size. Original's retained icon is32×32 with group bit depth4 and colour count16.
 
-**MP100-035 has static payload support:** the stated16..256 size variants exist in Modern and are absent from the supplied original resource tree. Which image a shell/window chooses, perceived icon quality and historical introduction remain unverified. No icon was displayed by this audit.
+**MP100-035 has static payload support:** the stated16..256 size variants exist in Modern and are absent from the supplied original resource tree. The retained 1.0.0 comparison below dates these variants. Which image a shell/window chooses and perceived icon quality remain unverified. No icon was displayed by this audit.
 
 ## Added raw-data payloads have independently traced consumers
 
@@ -60,12 +60,23 @@ Comparing resource keys of the form type/name/language and SHA-256 of their payl
 
 | Retained release | Resource change |
 |---|---|
-| 1.1.0 | The original icon payload `3/1/0` survives byte-for-byte as `3/106/0`. Numeric resource `10/200/0` is already present and begins with the same five-byte compression header as the later About resource. |
+| 1.0.0 | Eleven leaves. Numeric group `14/32512/0` references all six 16×16 through 256×256 variants, and `14/32513/0` references the original icon payload, now at `3/106/0`. Numeric resource `10/200/0` and version information are present. |
+| 1.1.0 | Same eleven keys. Only numeric resource `10/200/0` and version information change. |
 | 1.2.0–1.3.1 | Numeric resource `10/200/0` and version resource `16/1/0` change in every retained release. Main group `14/32512/0` and icon `3/105/0` also change in 1.3.0. |
 | 1.4.0 | The icon payload moves from `3/106/0` to `3/200/0` unchanged. Named groups `MAIN.ICO` and `ORIG.ICO` replace numeric groups `32512` and `32513`. Numeric resource `10/200/0` is removed. Named `ABOUT.QFS`, `SNAP.WAV` and manifest `24/1/0` appear. |
 | 1.5.0–1.6.1 | The resource keys stay fixed. About and version payloads change in every retained release. Manifest bytes change in 1.6.0 and again in 1.6.1. The screenshot WAV and all icon and group payloads remain byte-identical from 1.4.0 through 1.6.1. |
 
-The original icon's three IDs identify identical 744-byte payloads. The [About page comparison](original-modern-frontend-page.md#numeric-about-resource-in-131) identifies the early numeric resource consumer in 1.3.1. The same report compares decoded image bytes across the retained releases. In-game rendering remains unverified. The retained sequence begins at 1.1.0, so the 1.0.0 resource layout remains open.
+The original icon's three IDs identify identical 744-byte payloads. The [About page comparison](original-modern-frontend-page.md#numeric-about-resource-in-131) identifies the early numeric resource consumer in 1.3.1. The same report compares decoded image bytes across the retained releases. In-game rendering remains unverified. The [retained 1.0.0 archive](original-modern-dll-candidates.md#recovered-100-package-separates-code-changes-from-renames) contains an EXE with SHA-256 `988fbf599af256d1486bef967959893c6b26c9fa8ed21b76310bbb7798b4d9df`.
+
+For each group, hash the group payload followed by each referenced image payload in group-entry order, resolving images in the same resource language. The digests below cover the group and image bytes. The table records resource names and IDs separately.
+
+| Retained versions | Group | SHA-256 of group and image payloads |
+|---|---|---|
+| 1.0.0–1.2.0 | `32512` | `092670f17c153cf11c1bb39de39d474d25cfc87f9e572f96ec826c8f0a052c8c` |
+| 1.3.0–1.3.1 | `32512` | `670e08886a4a331cba65767622f6d222147f7f7e33d9e219dd68d40e7afa48e6` |
+| 1.4.0–1.6.1 | `MAIN.ICO` | `670e08886a4a331cba65767622f6d222147f7f7e33d9e219dd68d40e7afa48e6` |
+| 1.0.0–1.3.1 | `32513` | `4b8d1aecbd37b4c007b2e7403cd431f788027c3eb3f0b367c8beedf1942c9545` |
+| 1.4.0–1.6.1 | `ORIG.ICO` | `068d579cd61973df8e838f5cfc8059dfd58e8e29bcdc5d7a826dc5ce4a460d76` |
 
 The 603-byte manifest first appears in retained **1.4.0** and is byte-identical through 1.5.3. Its own assembly version stays `1.4.0.0` across those builds. The only payload changes in 1.6.0 and 1.6.1 replace that assembly version with `1.6.0.0` and `1.6.1.0`, respectively. The execution level, UI access, Common Controls dependency and absence of a DPI-awareness declaration are consistent across these manifests.
 
@@ -81,6 +92,7 @@ The fixed product version in resource `16/1/0` matches the archive's release lab
 
 | Retained Modern release | File version string |
 |---|---|
+| 1.0.0 | `2015.05.17.0034` |
 | 1.1.0 | `2015.05.23.0039` |
 | 1.2.0 | `2015.06.10.0063` |
 | 1.3.0 | `2015.06.22.0078` |
