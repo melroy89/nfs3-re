@@ -430,3 +430,13 @@ and signed depth-at-least-16 predicate as 1.1.0. This dates the
 mechanisms for MP100-001 and MP100-003 to the named release. Driver
 enumeration, other eligibility checks and successful use of large
 resolutions remain separate.
+
+The 1.0.0 and 1.1.0 EXEs also match byte for byte across the complete
+collector (`00448210`, 169 bytes), reset/enumeration initializer
+(`004482c0`, 40 bytes), menu descriptor (`005566b8`, 20 bytes),
+dynamic-label route (`004d17b0`, 26 bytes), and record-label accessor
+(`00448400`, 35 bytes). This extends the matched producer-to-menu
+chain for MP100-009 to 1.0.0. The ordinary zero-based collector allows
+51 records in both builds, versus 20 in the supplied original. The
+release note's wording of 50 and the actual number displayed at
+runtime remain distinct from that local limit.
