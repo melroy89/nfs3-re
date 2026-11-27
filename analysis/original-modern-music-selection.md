@@ -475,3 +475,16 @@ loader window first becomes NOPs in 1.5.3 and remains so
 through 1.6.1. Read the ranges from each PE by RVA to
 reproduce the comparison. Actual disk I/O, playback and
 performance remain unverified.
+
+In 1.5.0–1.5.2 the direct call at `00477fe1` still reaches
+the old loader at `00410030`. The source-building path
+now falls into an epilogue at `00410214` and returns at
+`00410220`. The earlier jump to the conditional cleanup at
+`00410311` is gone. The old call to `004e1620` at
+`00410089` is also replaced with NOPs, with the altered
+branch at `00410081` jumping to `0041008e`. In 1.5.3
+the direct loader call is absent and the whole loader window
+is NOPs. These observations separate retirement of the
+remaining loader call from the earlier removal of the
+temporary copy. They do not establish the lifetime of
+every resource managed by the old helpers.
