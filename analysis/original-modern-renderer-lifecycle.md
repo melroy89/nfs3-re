@@ -302,3 +302,13 @@ publishes EDX at `00508b12`. These witnesses separate the historical
 initializer from the later common-tail store of 1. The shared caller
 check alone does not establish identical failure coverage across
 the two versions.
+
+The wrapper's call at `004f8a73` changes from `005089d0` in
+1.4.0 to `00517630` in 1.5.0. All five retained releases from
+1.5.0 through 1.6.0 keep the latter target. The target can be
+reproduced by adding the signed dword at PE RVA `f8a74` to
+`004f8a78` after confirming the E8 opcode.
+Earlier builds have a different call at the same address and
+are outside this wrapper comparison. Final 1.6.1 instead calls
+its revised initializer directly from startup. This dates the call
+routing independently of whether the driver accepts a requested mode.
