@@ -80,3 +80,14 @@ at RVA `0x14bf`. Thus querying the version invalidates the
 cached capability result. This behavior is shared by the
 hosted original and final DLL code. The device-dependent
 value returned by a fresh query remains unmeasured.
+
+The cell at RVA `0xa8fc` starts at zero in file-backed
+initialized data in both DLLs. It lies at offset `0x8fc`
+within original `DGROUP` and final `.data`, both at RVA
+`0xa000`. The negative sentinel is installed by the version
+call. On the [checked game loader route](original-modern-startup-requirements.md),
+the game calls that export before resolving the setup export.
+A reconstruction that returns only the version number would
+leave the cache's initial zero in place, allowing the
+capability export to take its cached-result branch unless
+another writer changed the cell first.

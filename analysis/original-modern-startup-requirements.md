@@ -695,4 +695,6 @@ checked DLL if loading and symbol lookup succeed. The call
 also initializes a DLL state cell, which matters for any
 future reconstruction of the interface. Reproduce by resolving
 the named export in each DLL and disassembling its 17 bytes.
-The purpose of that state cell and live loading remain open.
+The [sound DLL analysis](original-modern-sound-reference-pair.md#the-api-version-call-invalidates-the-capability-cache)
+identifies that cell as the cached capability result. Live loading
+and device results remain untested.
