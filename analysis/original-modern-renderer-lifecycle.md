@@ -82,6 +82,8 @@ The new zero-input gate therefore suppresses the inspected frontend mode/viewpor
 
 ## The startup mode-result gate appears in 1.6.1
 
+The supplied original, 1.1.0 and 1.2.0 share all 637 bytes of the callback at `00517610..0051788c` (span SHA-256 `3d0032952d268d72bea311fb9bb58aa4eb08faecf82ccd58e0e96a74b889ba8d`). If the driver's mode call returns normally with EAX zero at `005176a4`, execution still enters the common tail. That tail overwrites EAX with 1 at `00517721` and publishes it to `00564364` at `0051772d`. If the rest of initialization returns without clearing that state, the six earlier failure gates pass, including the gates with the new dialog in 1.2.0. The dialog addition and the later check for rejected startup modes are distinct changes. See the [six failure paths](original-modern-renderer-loading.md#renderer-initialization-failure-dialog-introduced-in-120).
+
 In the retained 1.1.0–1.4.0 executables, startup's driver mode
 request through `009ef958` is at `005176a4`. It falls directly into
 the common tail at `005176aa`. In 1.5.0–1.6.0 the request moves to
