@@ -202,3 +202,16 @@ status gate at `00437e39` skips the snapshot when
 six builds. The initializer and Cancel independently
 test that status, so the local logic does not establish
 freshness if the flag changes between entry and exit.
+
+The snapshot DWORD at `00664680` is in uninitialized
+`.bss` in all six retained releases from 1.5.0 through
+1.6.1. The section starts at RVA `16e000h`, has a declared
+size of `4b1000h` in the section's size field used by
+objdump, and has a zero raw-data pointer. Its initial value
+is loader zero-fill. A linear disassembly scan of operands
+naming any of the four byte addresses finds the snapshot
+store at `00437e55` and the corresponding Cancel load in
+each build. If no snapshot has run and no alias has written
+the cell, an admitted restore therefore reads zero.
+Indirect writes and the runtime status transition needed
+to take that path remain unverified.
