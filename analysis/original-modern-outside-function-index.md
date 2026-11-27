@@ -322,6 +322,15 @@ For the five 16-byte NOP replacements below, release dates come from extracting 
 | `0043fd35..0043fd38` | Three NOPs after the [alternate suffix getter](original-modern-network-port-menu.md) overlap the start of the original store to `005f4064`. | Only the removed store's first bytes lie in this interval. |
 | `0043fd6d..0043fd70` | Alignment after the [network menu helper](original-modern-network-port-menu.md) overlaps the final byte of an original immediate load and a two-byte PUSH. | The surrounding replacement code determines runtime menu behavior. |
 
+| `00442425..00442428` | Three NOPs follow the Modern return. They replace the final shift byte at `00442423` and the start of the original indexed compare at `00442426`. | The original search continued across the new return boundary. |
+| `00442e05..00442e08` | Three NOPs replace the final displacement bytes of the original call to `004dfd56`. Modern jumps to `00442e08`. | Local call removal. |
+| `00442e0f..00442e12` | The second call to `004dfd56` is replaced the same way, with a jump to `00442e12` and three NOPs. | Local call removal. |
+| `0044673d..00446740` | Three NOPs follow the Modern return and replace the end of the original alignment LEA. | Padding in both layouts. |
+| `0045183d..00451840` | Three NOPs follow the Modern return and replace the final three bytes of the original alignment LEA at `0045183c`. | Padding in both layouts. |
+| `0046455d..00464560` | Three NOPs replace most of the original alignment LEA. The Modern [dropdown path](original-modern-dropdown-input.md) jumps to its shared tail immediately before them. | Padding in both layouts at these three bytes. |
+| `00472295..00472298` | Three NOPs follow the Modern return and replace the final displacement bytes of the original call at `00472293` to `004ee310`. | The original call crosses the Modern boundary. |
+| `0047248a..0047248d` | Three NOPs replace the last displacement bytes of the original call to `00472300`. Modern jumps directly to `0047248d`. | Local call removal within the [configuration code](original-modern-config-loading.md). |
+
 Intervals not listed here remain available in the full JSON inventory. A row here is a research-routing decision, not semantic coverage credit. Whole-code counts and the stage limits above remain unchanged.
 
 ## Research index coverage
@@ -344,7 +353,9 @@ across 228 intervals**, leaving 230 changed bytes across 109 intervals at `1a9fd
 The six additional boundary rows bring coverage to **21,714 bytes
 across 234 intervals**, with 212 changed bytes across 103 intervals still unindexed at `58e2186`.
 The next eight rows bring coverage to **21,738 bytes across 242
-intervals**, leaving 188 changed bytes across 95 intervals. These counts measure documented evidence links for this fixed
+intervals**, leaving 188 changed bytes across 95 intervals at `e942a54`.
+Eight further rows bring coverage to **21,762 bytes across 250
+intervals**, leaving 164 changed bytes across 87 intervals. These counts measure documented evidence links for this fixed
 inventory. They do not measure how much of the executable's
 behavior is understood.
 
