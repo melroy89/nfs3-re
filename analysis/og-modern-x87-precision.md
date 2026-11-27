@@ -1195,6 +1195,20 @@ The pre-dispatch service wrapper at `00451940..00451953` and its queue consumer 
 
 ### Race-session setup reaches an indirect callback before the race loop
 
-The full paired race-session bodies at `004a3690..004a38bc` have no local x87 precision instruction. The successful continuation at `004a37d7..004a37e8` is byte-identical. It clears EAX, services periodic callbacks via `004e7630`, synchronizes the input rings via `004c63f0`, then enters the race loop at `004c4e40`. The scheduler body `004e7630..004e76dc` and input-ring range `004c63f0..004c6530` also match.
+The full paired race-session bodies at `004a3690..004a38bc` have no local x87 precision instruction. The successful continuation at `004a37d7..004a37e8` is byte-identical. It clears EAX, services periodic callbacks via `004e7630`, synchronizes the input rings via `004c63f0`, then enters the race loop at `004c4e40`. The scheduler body `004e7630..004e7712` and input-ring range `004c63f0..004c6530` also match.
 
 The scheduler uses integer instructions locally, but can call a registered function through EBX at `004e76a0`. It forwards the saved EAX context and the elapsed counter difference in EDX. This is a concrete boundary for tracing the inherited x87 word. Matching scheduler bytes establish the same dispatch logic, while the callback target and its effects depend on registration and timing. The input-ring helper has its own callees, so its byte match also leaves transitive behavior open.
+
+The complete scheduler through the optional timing branches and the registration range `004e7520..004e75e0` match in both executables. A decoded direct-call census of the registration entry gives the same seven sites. Six pass literal callback addresses. The seventh loads its callback from the local at `[EBP-0x18]`.
+
+| Registration call | Callback input in EAX |
+|---|---|
+| `0049e487` | From `[EBP-0x18]` |
+| `004cd60d` | `004cc870` |
+| `004e7001` | `004e6d68` |
+| `004e89e6` | `004e85a8` |
+| `004f0e89` | `004f0d20` |
+| `004f4163` | `004f3ebc` |
+| `00524793` | `005244e0` |
+
+The last callback is the byte-identical renderer idle adapter. It calls the runtime slot at `009ef93c` bound as `_THRASH_idle@0` in the renderer interface. Identical registration logic cannot establish identical x87 behavior for this route because the loaded renderer implements the callback. The table records candidate registrations. It does not establish which slots are active or due before a particular race loop.
