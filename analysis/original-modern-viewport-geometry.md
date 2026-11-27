@@ -456,3 +456,14 @@ change can therefore leave one rectangle unchanged in height and
 change another by 30 units. These are derived examples with
 assumed dimensions. Actual viewport inputs and rendered mirror
 proportions remain untested.
+
+The mirror consumer is stable across the 1.4.0 → 1.5.0 boundary.
+The branch at `004dbe06` passes `007cdb48` to `004bed20`,
+which loads logical height from record offset `+0x0c` into
+ECX and calls `004dbce0` at `004bed34`. That wrapper saves ECX
+and converts the height to binary32 for its call to `004bf260`
+at `004dbd8a`. The geometry adapter separately passes the
+physical bounds at offsets `+0x10..+0x1c` to `004bebe0`.
+The 46-byte adapter and 192 bytes from `004dbce0` match in both
+builds. This traces the changed logical height to the projection
+builder's input while keeping clipping and observed output separate.
