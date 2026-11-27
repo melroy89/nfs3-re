@@ -19,6 +19,20 @@ In the byte-zero path, `context+0x454` selects either stored coordinates or loca
 
 These are observed constants/offsets; neither identical instructions nor the names “windowed/fullscreen” prove identical context values or driver display state. The base style producer and complete context initialization are not re-audited here. AdjustWindowRect computes the surrounding window extent from a requested client rectangle; it does not itself change display mode. [Microsoft documentation](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-adjustwindowrect)
 
+The complete 293-byte creation prefix matches in the hosted original
+and all 12 retained Modern EXEs (SHA-256
+`e0add23982d1febe223063fc069a625cf5102662d0b5fe08c3f18f6e2a432d13`).
+Its file-backed input differs. The DWORD at `0056128c` starts at
+`10000000h` in the hosted original and `10080000h` in every retained
+Modern EXE. Thus 1.0.0 already adds the `WS_SYSMENU` bit to the
+base `WS_VISIBLE` style. The byte-zero context branch also supplies
+caption bits, which Microsoft specifies for displaying the system
+menu. Compare 293 bytes at PE RVA `cd350h` and four bytes at
+`16128ch` in the extracted EXEs. This verifies the requested style
+from the initial data. Actual title-bar behavior and later style
+changes remain outside this comparison.
+[Microsoft window styles](https://learn.microsoft.com/en-us/windows/win32/winmsg/window-styles)
+
 ## Modern shortens post-creation setup
 
 The creation routines diverge immediately after CreateWindowExA:
