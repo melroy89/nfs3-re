@@ -355,3 +355,14 @@ The hosted original and 1.0.0–1.3.1 instead compare the
 sum of bytes with 16 MiB at `004b5f55`. Their nearby
 right shift feeds logging. This comparison covers the local
 admission instructions and leaves actual API values untested.
+
+The original desktop-depth branch passes the result of
+`GetWindowDC` directly to `GetDeviceCaps` with index 12.
+The 1.4.0 common guard and final guard keep that sequence.
+In final it is at `004b579a..004b57b3`. These local paths
+have no intervening null-handle test and no matching
+`ReleaseDC` call before the check returns or takes its
+diagnostic branch. The hosted original, retained 1.4.0 and
+final EXEs also lack a named `ReleaseDC` PE import. This
+records the checked handle-use sequence. Indirect resolution,
+OS handling and runtime resource impact remain unverified.
